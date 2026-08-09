@@ -17,7 +17,7 @@ open scoped MeasureTheory
 open Filter
 
 /-!
-# CQM 超导：第一性推导链 (First-Principles Derivation)
+# CQM 超导：推导链 (Derivation Chain)
 
 本模块把超导的**推导起点从文献公式下沉到物理第一原理**，铺开完整链条：
 
@@ -30,13 +30,13 @@ open Filter
       → BCS 自洽积分方程（能隙积分方程作为最低层物理输入）
       → 严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)
         （把"能隙方程 → arsinh 闭式"的台阶从文献输入提升为严格定理）
-      → 能隙闭式 Δ = ω_D/sinh(1/λ)（第一性解）
+      → 能隙闭式 Δ = ω_D/sinh(1/λ)（闭式解）
       → 临界温度（弱耦合消失定理）与能隙比（复用 Reduction 闭式/极限/强耦合链）
       → 再生产维持（锁定因子 e^{−Γ|τ|} 衰减定理：涌现态的确定性需被反复再生产维持）
       → 金属氢实例（氢原子 = 单质子有限本体，禁闭几何直接是 A₄，
         A₄ 谱间隙标定刚度 + 质子质量 → 德拜频率；大量氢 = A₄ 直接拼接）
 
-**输入与非推导声明**（不冒充第一性）：
+**输入与非推导声明**（诚实声明）：
 1. A₄ 本征向量的显式构造属 CartanAlgebra 待办；本模块以谱为输入。
 2. 晶格刚度参考标度、配对强度 V 为正参数（理想化输入）。
 3. 电子的费米面态密度 N(0) 采用主流电子结构/能动张量结果（不重新推导）。
@@ -45,7 +45,7 @@ open Filter
    能隙/T_c 的其余闭式与极限由 Reduction 承载。
 5. 弱耦合对数渐近已有 `bcs_gap_weak_coupling_limit`（比值型）承载。
 
-## 第一性定理
+## 推导链定理
 - [latticeStiffnessFromA4_pos] / [phononFrequencyFromA4_pos] /
   [phononFrequencyFromA4_mono_in_stiffness]：质子 A₄ 谱间隙标定晶格刚度与声子频率
 - [electronPhononCoupling_pos]：λ = N(0)·V 为正
@@ -58,16 +58,16 @@ open Filter
 - [hydrogenPhononFrequency_pos]：金属氢实例——氢 = 单质子有限本体（A₄ 直接拼接），
   德拜频率正性
 - [hydrogen_bcs_gap_equation_solved]：金属氢能隙闭式 Δ_H = √(k₀·λ₁/m_p)/sinh(1/λ)
-  精确满足能隙积分方程（第一性解实例化到氢材料）
+  精确满足能隙积分方程（闭式解实例化到氢材料）
 - [hydrogen_phonon_higher_than_deuterium]：金属氢同位素方向——氘晶格声子截止
   不高于氢晶格（最轻有限本体给出最高 T_c 上限）
 - [bcsCriticalTemperature_mono_in_debye] / [bcsCriticalTemperature_mono_in_coupling]：
   室温方向骨架——T_c 随德拜频率与耦合常数单调不减（轻晶格/高压 + 强耦合路线）
 - [hydrogenPhononFrequency_calibrated_eq] / [hydrogenBcsGap_calibrated_eq] /
-  [hydrogenCriticalTemperature_calibrated_eq]：第一性数值例链——以主流 ω_D 标定
+  [hydrogenCriticalTemperature_calibrated_eq]：推导链数值例——以主流 ω_D 标定
   A₄ 刚度 k₀ 后，金属氢链精确还原输入的德拜频率、能隙闭式与 T_c（记号还原到输入，
   不冒充独立预测）
-- [firstPrinciples_chain_pos]：张量序参量（A₄ 谱）与第一性能隙闭式同为正
+- [firstPrinciples_chain_pos]：张量序参量（A₄ 谱）与推导链能隙闭式同为正
 
 ## 参考文献
 - ruster (2026). CQM 数学 嘉当结构（07 推导与数学）§2.1–§2.2.
@@ -128,7 +128,7 @@ theorem electronPhononCoupling_pos {densityOfStates pairStrength : ℝ}
   unfold electronPhononCoupling
   exact mul_pos hn hv
 
-/-! ## 第三步：BCS 能隙积分方程（第一性严格步） -/
+/-! ## 第三步：BCS 能隙积分方程（严格步） -/
 
 /-- 能隙积分的被积函数：f(ξ) = 1/√(ξ² + Δ²)，ξ 为费米面附近单粒子能量。 -/
 noncomputable def gapIntegrand (xi gap : ℝ) : ℝ :=
@@ -150,7 +150,7 @@ private lemma sqrt_one_add_div_mul_gap {xi gap : ℝ} (hg : 0 < gap) :
         congr 1
         ac_rfl
 
-/-- [第一性] 积分恒等式：∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（Δ > 0）。
+/-- [推导] 积分恒等式：∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（Δ > 0）。
     ├ 由 `Real.hasDerivAt_arsinh`（d/dx arsinh x = 1/√(1+x²)）与链式法则：
     │   d/dξ arsinh(ξ/Δ) = 1/√(ξ²+Δ²)；
     └ 由微积分基本定理 `intervalIntegral.integral_eq_sub_of_hasDerivAt` 完成。
@@ -190,14 +190,14 @@ theorem gapIntegral_pr {wDebye gap : ℝ} (hw : 0 ≤ wDebye) (hg : 0 < gap) :
 def bcsGapIntegralEquation (lam wDebye gap : ℝ) : Prop :=
   lam * ∫ xi in 0..wDebye, gapIntegrand xi gap = 1
 
-/-- 积分能隙方程 ⟺ 单参 arsinh 方程（第一性积分恒等式直接代入）。 -/
+/-- 积分能隙方程 ⟺ 单参 arsinh 方程（推导链积分恒等式直接代入）。 -/
 theorem bcsGapIntegralEquation_iff_arsinh {lam wDebye gap : ℝ} (hw : 0 ≤ wDebye)
     (hg : 0 < gap) :
     bcsGapIntegralEquation lam wDebye gap ↔ lam * Real.arsinh (wDebye / gap) = 1 := by
   unfold bcsGapIntegralEquation
   rw [gapIntegral_pr hw hg]
 
-/-- [第一性解] 能隙积分方程的解 = ω_D/sinh(1/λ)。
+/-- [闭式解] 能隙积分方程的解 = ω_D/sinh(1/λ)。
     ├ 积分恒等式（[gapIntegral_pr]）把积分方程化为 arsinh 方程；
     └ arsinh 方程的唯一闭式解（`bcs_gap_equation_unique`）。 -/
 theorem bcsGapIntegralEquation_solved {lam wDebye gap : ℝ} (hw : 0 < wDebye)
@@ -228,9 +228,9 @@ theorem bcsCriticalTemperature_tendsto_zero {wDebye : ℝ} (_hw : wDebye > 0) :
     simpa using tendsto_const_nhds.mul h₃
   exact hc
 
-/-- 端到端链（第一性正性合成）：质子 A₄ 循环刚度 → 声子频率 > 0，
+/-- 端到端链（正性合成）：质子 A₄ 循环刚度 → 声子频率 > 0，
     电子-声子耦合 λ > 0，能隙积分方程的闭式解 > 0，张量超导序参量
-    （A₄ 全部本征通道）> 0——超导态沿第一性链严格涌现。 -/
+    （A₄ 全部本征通道）> 0——超导态沿推导链严格涌现。 -/
 theorem firstPrinciples_chain_pos {stiffnessRef ionMass N0 V s Γ τ : ℝ}
     (hk : 0 < stiffnessRef) (hM : 0 < ionMass) (hn : 0 < N0) (hv : 0 < V)
     (hs : 0 < s) :
@@ -276,7 +276,7 @@ theorem phaseLockingFactor_tendsto_zero {GammaPhase : ℝ} (hg : 0 < GammaPhase)
 
 /-- 金属氢：氢原子 = 单个质子有限本体，禁闭几何直接为正四单纯型（A₄ 嘉当矩阵）。
     无需跨种类有限本体拼接——A₄ 谱间隙标定晶格刚度、离子质量即质子质量，
-    德拜频率完全由 CQM 第一性量（谱间隙 × 质子质量）决定。
+    德拜频率完全由 CQM 本体量（谱间隙 × 质子质量）决定。
     这是第二步"大量金属氢材料的 CQM 超导机制"的计算起点。 -/
 noncomputable def hydrogenPhononFrequency (stiffnessRef : ℝ) : ℝ :=
   phononFrequencyFromA4 stiffnessRef protonMass
@@ -295,7 +295,7 @@ noncomputable def hydrogenBcsGap (stiffnessRef coupling : ℝ) : ℝ :=
   bcsGapFromGapEquation (hydrogenPhononFrequency stiffnessRef) coupling
 
 /-- [推导] 金属氢能隙闭式精确满足能隙积分方程 1 = λ·arsinh(ω_D^H/Δ_H)。
-    这是第一性解链（积分恒等式 → arsinh 方程 → 唯一闭式解）在氢材料上的
+    这是闭式解链（积分恒等式 → arsinh 方程 → 唯一闭式解）在氢材料上的
     直接实例：不需要任何经验参数，仅用质子 A₄ 谱间隙的输入。 -/
 theorem hydrogen_bcs_gap_equation_solved {stiffnessRef coupling : ℝ}
     (hk : 0 < stiffnessRef) (hlam : 0 < coupling) :
@@ -405,17 +405,17 @@ theorem roomTemperatureDebyeLowerBound_antitone_in_coupling {roomTemp lam1 lam2 
     le_of_lt (div_pos hr bcsExactConstant_pos)
   exact mul_le_mul_of_nonneg_left hle hc
 
-/-! ## 第十步：第一性数值例链（主流输入标定） -/
+/-! ## 第十步：推导链数值例（主流输入标定） -/
 
 /-- 刚度标定（主流输入标定）：给定想还原的目标频率 ω_D^target，
    反解 A₄ 循环刚度参考标度 k₀ = (ω_D^target)²·M_p/λ₁。
-   这是金属氢数值例链的通式输入：H₃S/LaH10 的 ω_ln 由第一性
-   α²F(ω) 计算或实验给出，CQM 第一性链由此还原该输入
+   这是金属氢数值例链的通式输入：H₃S/LaH10 的 ω_ln 由推导链
+   α²F(ω) 计算或实验给出，CQM 本体推导链由此还原该输入
    （记号还原到输入，不冒充独立预测）。 -/
 noncomputable def stiffnessRefCalibrated (targetOmega : ℝ) : ℝ :=
   targetOmega ^ 2 * protonMass / spectralGap
 
-/-- [校准恒等式] 以主流 ω_D 标定 k₀ 后，CQM 第一性链（氢 = 单质子有限本体，
+/-- [校准恒等式] 以主流 ω_D 标定 k₀ 后，CQM 本体推导链（氢 = 单质子有限本体，
    A₄ 谱间隙标定刚度、质子质量为离子质量）精确还原该输入德拜频率。 -/
 theorem hydrogenPhononFrequency_calibrated_eq {targetOmega : ℝ} (h : 0 ≤ targetOmega) :
     hydrogenPhononFrequency (stiffnessRefCalibrated targetOmega) = targetOmega := by
@@ -442,13 +442,13 @@ theorem hydrogenCriticalTemperature_calibrated_eq {targetOmega coupling : ℝ}
       coupling = bcsCriticalTemperature targetOmega coupling := by
   rw [hydrogenPhononFrequency_calibrated_eq h]
 
-/-! ## 第十一步：SPAF 连接（半唯像参数与第一性链的对应，SPAF §3–§5） -/
+/-! ## 第十一步：SPAF 连接（半唯像参数与推导链的对应，SPAF §3–§5） -/
 
-/-- SPAF §3.2 中子缺陷参数 ε 与第一性链的一致性：
-    若 ε < 5/4（C_n 正定区间），则第一性链的全部正性保持不变——
+/-- SPAF §3.2 中子缺陷参数 ε 与推导链的一致性：
+    若 ε < 5/4（C_n 正定区间），则推导链的全部正性保持不变——
     声子频率、电子-声子耦合、能隙闭式、张量序参量均严格为正。
-    这建立了半唯像参数（ε）与第一性推导链（A₄ → ω_D → λ → Δ → T_c）
-    之间的双向约束：ε 必须在正定区间内，否则第一性链的正性前提被破坏。 -/
+    这建立了半唯像参数（ε）与推导链（A₄ → ω_D → λ → Δ → T_c）
+    之间的双向约束：ε 必须在正定区间内，否则推导链的正性前提被破坏。 -/
 theorem spaf_firstPrinciples_chain_consistent {stiffnessRef ionMass N0 V s Γ τ eps : ℝ}
     (hk : 0 < stiffnessRef) (hM : 0 < ionMass) (hn : 0 < N0) (hv : 0 < V)
     (hs : 0 < s) (heps : eps < 5/4) :
@@ -463,7 +463,7 @@ theorem spaf_firstPrinciples_chain_consistent {stiffnessRef ionMass N0 V s Γ τ
   have h_chain := firstPrinciples_chain_pos (Γ := Γ) (τ := τ) hk hM hn hv hs
   exact ⟨h_posDef, h_chain.1, h_chain.2.1, h_chain.2.2.1, h_chain.2.2.2⟩
 
-/-- SPAF 中子缺陷的 T_c 修正：将第一性 T_c 乘以中子缺陷修正因子
+/-- SPAF 中子缺陷的 T_c 修正：将推导链 T_c 乘以中子缺陷修正因子
     f(ε) = neutronDefectTcFactor ε。
     当 ε = 0（纯质子）时 f = 1，T_c 不变；
     当 ε > 0 时 f < 1，T_c 被压低。

@@ -12,7 +12,7 @@ import Superconductivity.CartanSuperconductivity
 # BCS 能隙积分方程的渐近分析（G13 闭合）
 
 本模块闭合 G13——BCS 临界温度方程的"tanh 积分 → 对数近似"渐近。
-将 BCS 的 T_c 积分方程从第一性推导为对数方程，严格证明弱耦合极限下
+将 BCS 的 T_c 积分方程严格推导为对数方程，严格证明弱耦合极限下
 T_c = (2e^γ/π)·ω_D·exp(−1/λ)。
 
 ## 数学内容

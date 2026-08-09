@@ -15,8 +15,8 @@ import Superconductivity.MolecularGeometry
 # CQM 超导形式化 (Superconductivity)
 
 CQM 中"强引力场下的超导态"的完整形式化框架。理论文档见
-`CQMFormal/08 超导/CQM 超导 涌现论.md` 与
-`CQMFormal/08 超导/CQM 超导 涌现积分.md`。
+`CQMFormal/CQM 超导核心理论.md` 与
+`CQMFormal/08 超导/CQM 超导 SPAF 半唯像框架.md`。
 
 ## 模块结构（对应理论层级）
 
@@ -30,7 +30,7 @@ CQM 中"强引力场下的超导态"的完整形式化框架。理论文档见
 | `Superconductivity.StrongGravity` | 九 | 引力拓扑因子、中子星修正 |
 | `Superconductivity.Reduction` | 还原层 | **BCS 退化与还原**：能隙方程闭式解与弱耦合极限、精确能隙比 2πe^{−γ}、同位素定律 α = 1/2、McMillan–Dynes、London、相干长度、磁通量子 |
 | `Superconductivity.CartanSuperconductivity` | 张量层 | **嘉当张量超导方程**：§6.8 张量涌现公式在 A₄ 本征谱上展开；A₄ 同时作为离散哈密顿量与能动张量；谱间隙退化到 BCS；Tr(A₄⁻¹)=4 勘误 |
-| `Superconductivity.FirstPrinciples` | 第一性层 | **第一性推导链**：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙标定）→ 电子-声子耦合 λ = N(0)·V（N(0) 采用主流结果）→ BCS 能隙积分方程；严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（FTC 证明）；积分方程的解 = ω_D/sinh(1/λ)；弱耦合 T_c → 0；再生产维持（锁定因子衰减）；金属氢实例（单质子 = A₄ 直接拼接，能隙闭式 + 同位素方向）；室温方向双单调骨架（ω_D 与 λ）与**室温可行域量化判据（T_c ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}，下界反单调于 λ）** |
+| `Superconductivity.FirstPrinciples` | 推导链层 | **推导链（derivation chain）**：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙标定）→ 电子-声子耦合 λ = N(0)·V（N(0) 采用主流结果）→ BCS 能隙积分方程；严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（FTC 证明）；积分方程的解 = ω_D/sinh(1/λ)；弱耦合 T_c → 0；再生产维持（锁定因子衰减）；金属氢实例（单质子 = A₄ 直接拼接，能隙闭式 + 同位素方向）；室温方向双单调骨架（ω_D 与 λ）与**室温可行域数学判据（T_c ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}，下界反单调于 λ；此为纯数学等价关系，非物理预测）** |
 | `Superconductivity.SPAF` | 半唯像层 | **SPAF 半唯像应用框架（可严格证明部分）**：因果耦合族 t_ij（截断内正性、截断外恒零、对距离单调衰减、全局非负）、组装对称性（对称矩阵叠加保对称、A₄ 直接拼接、标量单位矩阵块对称）、中子缺陷 C_n = A₄ − ε·diag(1,0,0,0)（对称、ε=0 退化、对角元、ε<2 时缺陷位对角元为正、**SOS 二次型分解与正定判据**）、味空间概率流 Γ_rel ≥ 0、Regge 边长 l_e = κ/√λ_e > 0 |
 
 ## 核心定理
@@ -59,18 +59,18 @@ CQM 中"强引力场下的超导态"的完整形式化框架。理论文档见
 - `cartanHamiltonian_trace_eq_stressEnergyTrace`：A₄ 双重角色——离散哈密顿量迹 = 能动张量迹 = 8
 - `gapChannel_gapRatio_invariant`：谱间隙通道退化到 BCS，普适能隙比不受谱间隙缩放影响
 - `cartanInvTrace_eq_four`：Tr(A₄⁻¹) = 4（勘误：07 嘉当结构文档 §4.2 的 2 应为 4）
-- `gapIntegral_pr`：[第一性] 严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（由 arsinh 导数与微积分基本定理证明）
-- `bcsGapIntegralEquation_iff_arsinh` / `bcsGapIntegralEquation_solved`：积分能隙方程 ⟺ arsinh 方程；其解 = ω_D/sinh(1/λ)（第一性解）
+- `gapIntegral_pr`：严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（由 arsinh 导数与微积分基本定理证明）
+- `bcsGapIntegralEquation_iff_arsinh` / `bcsGapIntegralEquation_solved`：积分能隙方程 ⟺ arsinh 方程；其解 = ω_D/sinh(1/λ)（闭式解）
 - `latticeStiffnessFromA4_pos` / `phononFrequencyFromA4_pos` / `electronPhononCoupling_pos`：A₄ 谱间隙标定晶格刚度与声子频率、λ = N(0)·V 为正
 - `bcsCriticalTemperature_tendsto_zero`：弱耦合 T_c → 0（λ → 0⁺ 时配对退隐）
 - `phaseLockingFactor_tendsto_zero`：再生产维持——锁定因子 e^{−Γ|τ|} 随再生产间隔衰减（坍缩难题②"确定性"的再生产解答：涌现态需反复耦合事件维持）
 - `hydrogenPhononFrequency_pos`：金属氢实例——氢 = 单质子有限本体（A₄ 直接拼接），德拜频率 = √(k₀·λ₁/m_p) > 0
-- `hydrogen_bcs_gap_equation_solved`：金属氢能隙闭式 Δ_H = √(k₀·λ₁/m_p)/sinh(1/λ) 精确满足能隙积分方程（第一性解实例化）
+- `hydrogen_bcs_gap_equation_solved`：金属氢能隙闭式 Δ_H = √(k₀·λ₁/m_p)/sinh(1/λ) 精确满足能隙积分方程（闭式解实例化）
 - `hydrogen_phonon_higher_than_deuterium`：金属氢同位素方向——氘晶格声子截止 ≤ 氢晶格（T_c(D) < T_c(H) 的家系）
-- `bcsCriticalTemperature_mono_in_debye` / `bcsCriticalTemperature_mono_in_coupling`：室温方向骨架——T_c 随 ω_D 与 λ 单调不减（轻晶格/高压 + 强耦合路线）
-- `roomTemperature_iff_debyeLowerBound`：**室温可行域量化判据**——T_c(ω_D, λ) ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}（严格等价，双杠杆越过下界即入室温可行域）
-- `roomTemperatureDebyeLowerBound_antitone_in_coupling`：下界反单调于 λ——强耦合系统性降低达成室温所需的 ω_D（双杠杆可沿等值下界互换/叠加）
-- `hydrogenPhononFrequency_calibrated_eq` / `hydrogenBcsGap_calibrated_eq` / `hydrogenCriticalTemperature_calibrated_eq`：第一性数值例链——以主流 ω_D 标定 A₄ 刚度 k₀ 后，金属氢链精确还原输入的德拜频率/能隙闭式/T_c（记号还原，不冒充独立预测）
+- `bcsCriticalTemperature_mono_in_debye` / `bcsCriticalTemperature_mono_in_coupling`：室温方向骨架——T_c 随 ω_D 与 λ 单调不减（轻晶格/高压 + 强耦合路线的数学框架）
+- `roomTemperature_iff_debyeLowerBound`：**室温可行域数学判据**——T_c(ω_D, λ) ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}（纯数学等价关系；达成室温所需的 ω_D 下界，非物理预测）
+- `roomTemperatureDebyeLowerBound_antitone_in_coupling`：下界反单调于 λ——强耦合系统性降低达成室温所需的 ω_D（数学关系，须配合实验可达参数）
+- `hydrogenPhononFrequency_calibrated_eq` / `hydrogenBcsGap_calibrated_eq` / `hydrogenCriticalTemperature_calibrated_eq`：推导链数值例——以主流 ω_D 标定 A₄ 刚度 k₀ 后，金属氢链精确还原输入的德拜频率/能隙闭式/T_c（记号还原，不冒充独立预测）
 - `cartanA4Stack_zero_of_proton_ne` / `cartanA4Stack_block_eq` / `cartanA4Stack_diag` / `cartanA4Stack_trace_eq` / `cartanA4Stack_det_eq`：**A₄ 直接拼接（大量金属氢）**——块对角拼接保持 2-自环、块内仍为 A₄、跨质子零耦合、Tr=8n、det=5ⁿ（禁闭几何尺度按质子数线性累加，不因拼接稀释）
 - `firstPrinciples_chain_pos`：端到端正性链（声子频率、耦合、能隙闭式、张量序参量同为正）
 - `causalCoupling_pos` / `causalCoupling_zero_of_cutoff` / `causalCoupling_antitone_in_distance` / `causalCoupling_nonneg`：**因果耦合族 t_ij = t₀·e^{−d_ij/λ}·Θ(d_cut − d_ij)（SPAF §3.4）**——截断内严格为正、截断外恒零（Heaviside 严格形式）、对距离单调衰减、全局非负
@@ -83,12 +83,12 @@ CQM 中"强引力场下的超导态"的完整形式化框架。理论文档见
 
 ## 严格性缺口（详见理论文档）
 
-- G9：因果截断共振窗口 σ 的第一性来源与数值标定
+- G9：因果截断共振窗口 σ 的本体来源与数值标定
 - G10：Θ_loop 闭环条件函数的动力学形式
 - G11：D_lattice 从正四单纯型组合构型到声子谱的具体推导
 - G12：引力拓扑因子 T_grav 的完整度规依赖形式
 - G13：T_c 积分方程的"tanh 积分 → 对数方程"渐近（文献 BCS 弱耦合）未形式化；
-  第一性层只严格化能隙积分方程的 ∫ → arsinh 台阶（见 `gapIntegral_pr`）
+  推导链层只严格化能隙积分方程的 ∫ → arsinh 台阶（见 `gapIntegral_pr`）
 - G14：SPAF §4.2 宏观频谱判据的 Rayleigh/Weyl 型谱引理未建立（数学库未提供）——
   其**可用内容已由初等 SOS 严格化**：正方向 ε < spectralGap ⟹ C_n 正定
   （`neutronCartan_posDef_of_lt_spectralGap`，强度放宽到 ε < 1）、反方向 ε ≥ 5/4 非正定
@@ -102,7 +102,7 @@ CQM 中"强引力场下的超导态"的完整形式化框架。理论文档见
 ## 参考文献
 
 1. ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380.
-2. ruster (2026). CQM 超导 涌现论 / CQM 超导 涌现积分.
+2. ruster (2026). CQM 超导核心理论；CQM 超导 SPAF 半唯像框架.
 3. Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 4. Rovelli (1996). Relational Quantum Mechanics.
 -/

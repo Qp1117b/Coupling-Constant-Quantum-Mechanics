@@ -512,7 +512,7 @@ theorem networkIntegrity_maxTc_at_pureProtons {wDebye lam : ℝ} :
   simp
   rw [neutronDefectTcFactor_zero, one_mul]
 
-/-! ## 4. CQM 第一性约束（SPAF-PT §4） -/
+/-! ## 4. CQM 推导链约束（SPAF-PT §4） -/
 
 /-- CQM 压强-缺陷-温度的三方约束：
     若 ε(P, T) < 5/4（正定区间），则因果网络可支撑超导；

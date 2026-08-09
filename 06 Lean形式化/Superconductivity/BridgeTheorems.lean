@@ -86,7 +86,7 @@ theorem spectralGap_bcsCoupling_critical (lam : ℝ) (h_critical : spectralGap �
 
     物理含义：A₄ 谱间隙 λ₁ 是因果网络的最小"量子化能量"，
     它直接限制了 BCS 配对强度 λ 的上限，从而限制了 T_c 的上限。
-    这是 CQM 对室温超导可能性的第一性约束——任何材料的 T_c
+    这是 CQM 对室温超导可能性的推导链约束——任何材料的 T_c
     不能超过其因果网络谱间隙所允许的极限。 -/
 theorem spectralGap_bcsTc_bound {omegaD lam : ℝ}
     (h_omegaD : 0 < omegaD) (h_lam : 0 < lam) (h_lam_lt_sg : lam < spectralGap) :
@@ -689,7 +689,7 @@ theorem twoAtomSuperCartan_posDef
        （`spectralGap_to_ricciScalar_chain` 和 `spectralGap_to_metric_chain`，本模块 + MolecularGeometry.lean）
 
     全部 9 步在 Lean 中已完全形式化，
-    构成从 CQM 第一性（A₄ 谱间隙）到超导可观测量（T_c, g_μν）的完整推导链。 -/
+    构成从 CQM 本体推导（A₄ 谱间隙）到超导可观测量（T_c, g_μν）的完整推导链。 -/
 theorem cqm_superconductivity_end_to_end_chain (omegaD lam : ℝ) (h_omegaD : 0 < omegaD) (h_lam : 0 < lam)
     (h_lam_lt_sg : lam < spectralGap) :
     -- 谱间隙通道 T_c > 0

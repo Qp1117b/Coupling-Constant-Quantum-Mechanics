@@ -901,7 +901,7 @@ def extremeGravity_causalResolution_enhancement {G M r : ℝ} (h_extreme : stron
     - 超强引力（γ_strong ∼ O(1)）：牛顿引力退化失效，需完整 GR 度规
     - 黑洞视界（γ_strong → 1/2）：因果分辨率增强，Regge 离散结构完全暴露
 
-    全部 7 步构成从 CQM 第一性（A₄ 因果网络）到经典引力
+    全部 7 步构成从 CQM 本体推导（A₄ 因果网络）到经典引力
     的完整推导链，含例外情况的适用范围界定。
     引力场是同一个引力场——CQM 的 Regge 度规在弱场/大尺度极限下
     退化为牛顿引力，在强场/小尺度极限下展现离散因果结构。 -/
@@ -948,12 +948,12 @@ theorem cqm_element_to_newtonian_end_to_end_chain (Z N : ℕ) (eps G M r : ℝ)
     
     ## 物理意义
     
-    CQM 不推翻 BCS，而是从因果网络第一性推导出 BCS——
+    CQM 不推翻 BCS，而是从因果网络推导出 BCS——
     BCS 是 CQM 在单元素、无中子缺陷极限下的特例。
     CQM 的额外贡献全部来自中子扇区的缺陷参数 ε(N)，
     它通过同位素效应体现为 T_c 对中子数的依赖。
     CQM 对 BCS 的推广在于：将 BCS 的唯像耦合常数 λ
-    替换为 CQM 第一性的有效谱间隙 λ_eff = λ₁ − ε(N)。 -/
+    替换为 CQM 本体推导的有效谱间隙 λ_eff = λ₁ − ε(N)。 -/
 
 /-- [定理] 单元素材料 T_c（CQM 闭式）：
     对于单元素材料 (Z, N)，有效谱间隙 λ_eff = λ₁ − ε(N)，
@@ -976,11 +976,11 @@ theorem singleElementTc_pos {omegaD eps : ℝ} (h_omegaD : 0 < omegaD) (heps : e
     退化为标准 BCS 公式，其中 λ₁ = spectralGap 是 A₄ 谱间隙。
     
     这是 CQM 框架与 BCS 理论的精确连接点——
-    CQM 不否定 BCS，而是从因果网络第一性推导出
+    CQM 不否定 BCS，而是从因果网络推导出
     BCS 的耦合常数 λ = λ₁（A₄ 谱间隙作为耦合强度的自然尺度）。
     
     BCS 的历史起点（Hg、Pb、Nb 等单元素超导体）在此得到
-    CQM 的第一性解释：这些材料的超导性来自其质子扇区的
+    CQM 的本体解释：这些材料的超导性来自其质子扇区的
     A₄ 因果网络，中子缺陷 ε 很小（因 N 接近幻数），
     故 λ_eff ≈ λ₁，T_c 接近 BCS 预测。 -/
 theorem singleElement_BCS_degeneracy {omegaD : ℝ} (h_omegaD : 0 < omegaD) :
@@ -1026,7 +1026,7 @@ theorem singleElement_isotopeTc_ratio {omegaD1 omegaD2 eps1 eps2 : ℝ}
     中子扇区的缺陷参数 ε(N)，它通过同位素效应体现。
     
     换言之：CQM 不推翻 BCS，而是为 BCS 的唯像耦合常数 λ
-    提供了第一性的因果网络解释：λ = λ₁ − ε(N)。 -/
+    提供了因果网络解释：λ = λ₁ − ε(N)。 -/
 theorem cqm_bcs_singleElement_bridge {omegaD eps : ℝ}
     (h_omegaD : 0 < omegaD) (heps : eps < spectralGap) :
     singleElementTc omegaD eps = bcsCriticalTemperature omegaD (spectralGap - eps) := rfl
