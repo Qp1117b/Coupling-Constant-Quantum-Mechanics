@@ -9,9 +9,7 @@ import Superconductivity.CartanSuperconductivity
 open scoped Matrix
 
 /-!
-# CQM SPAF 半唯像应用框架（可严格证明部分）
-
-理论文档：`08 超导/CQM SPAF 半唯像应用框架.md`（§3–§5 的严格可证子集）。
+# CQM 超导：元素嘉当矩阵与因果几何框架（可严格证明部分）
 
 原则（与本库一贯的严格性铁律一致）：**只形式化能严格证明的内容**。
 本节不做任何定义化推导或冒充：
@@ -30,14 +28,12 @@ open scoped Matrix
 3. **中子缺陷（§3.2）**：缺陷矩阵 Δ = diag(−ε,0,0,0) 与缺陷嘉当矩阵
    C_n = A₄ − Δ 的对称性、ε = 0 退化、对角元、ε < 2 时缺陷位对角元为正，
    以及二次型分解与正定判据（SOS 版本）。
-4. **味概率流（§5 步骤 13）**：Γ_rel = Σ_{a,b} |dP_{a→b}/dτ| ≥ 0
-   （锁定条件 Γ_rel(T_lock) → 0 与 T_c ≡ T_lock 判据的目洽性前提）。
-5. **Regge 边长（§5 步骤 15）**：l_e = κ/√λ_e 的正性。
+4. **Regge 边长（§5 步骤 15）**：l_e = κ/√λ_e 的正性。
 -/
 
 namespace CQM
 
-/-! ## 1. 因果耦合族（SPAF §3.4） -/
+/-! ## 1. 因果耦合族（§3.4） -/
 
 /-- SPAF §3.4：原子对 (i,j) 的因果连接强度 t_ij = t₀·e^{−d_ij/λ}·Θ(d_cut − d_ij)。
     d_ij 为欧氏距离（脚手架假设，L0 赎回），Θ 为 Heaviside 截断。 -/
@@ -269,14 +265,6 @@ theorem neutronCartan_not_posDef_of_five_fourths_le {eps : ℝ} (heps : 5 / 4 �
   have hnonpos : 20 - 16 * eps ≤ 0 := by nlinarith
   rw [hq'] at hq
   exact (not_lt_of_ge hnonpos) hq
-
-/-! ## 味空间概率流（SPAF §5 步骤 13） -/
-
-/-- SPAF §5 步骤 13：宏观再生产相对偏移率 Γ_rel(T) = Σ_{a,b} |dP_{a→b}/dτ| ≥ 0
-   （锁定条件 Γ_rel(T_lock) → 0 与超导判据 T_c = T_lock 的非负性前提）。 -/
-theorem flavorFlowRate_nonneg {N : Type*} [Fintype N] (dP : N → N → ℝ) :
-    0 ≤ ∑ a, ∑ b, |dP a b| := by
-  exact Finset.sum_nonneg (fun a _ => Finset.sum_nonneg (fun b _ => abs_nonneg (dP a b)))
 
 /-! ## Regge 边长（SPAF §5 步骤 15） -/
 
@@ -652,83 +640,7 @@ theorem molecularCartan_posDef_of_allProtons_zeroCoupling (n : ℕ) (eps : ℝ) 
   rw [h_eq]
   exact molecularCartanBlockDiag_posDef_of_allProtons n eps
 
-/-! ## 中子缺陷 T_c 修正因子（SPAF §3.2 唯项实现） -/
-
-/-- 中子缺陷对 T_c 的修正因子：f(ε) ∈ (0, 1]。
-    当 ε = 0（纯质子）时 f = 1（无修正）；
-    当 0 < ε < 5/4 时 C_n 正定，f 线性衰减；
-    当 ε ≥ 5/4 时 C_n 非正定，f 指数衰减 → 0。
-    函数在 ε = 5/4 处连续（左极限 = 右极限 = 1/2）。
-    对应 Python: neutron_defect_correction_factor。 -/
-noncomputable def neutronDefectTcFactor (eps : ℝ) : ℝ :=
-  if eps < 5/4 then
-    1 - (eps / (5/4)) * (1/2)
-  else
-    (1/2) * Real.exp (-5 * (eps - 5/4))
-
-/-- 修正因子在 (0, 1] 内（对非负 ε）：正定性保持时 f ≥ 1/2，丧失后 f ∈ (0, 1/2]。 -/
-theorem neutronDefectTcFactor_range {eps : ℝ} (heps : 0 ≤ eps) : 0 < neutronDefectTcFactor eps ∧
-    neutronDefectTcFactor eps ≤ 1 := by
-  unfold neutronDefectTcFactor
-  by_cases h : eps < 5/4
-  · -- eps < 5/4: linear region
-    rw [if_pos h]
-    have h_div_nonneg : 0 ≤ eps / (5/4) := div_nonneg heps (by norm_num : 0 ≤ (5/4 : ℝ))
-    have h_div_lt_one : eps / (5/4) < 1 := (div_lt_one (by norm_num : 0 < (5/4 : ℝ))).mpr h
-    constructor
-    · have : (eps / (5/4)) * (1/2) < 1/2 := by nlinarith
-      nlinarith
-    · nlinarith
-  · -- eps ≥ 5/4: exponential region
-    rw [if_neg h]
-    constructor
-    · have hhalf : 0 < (1/2 : ℝ) := by norm_num
-      have hpos : 0 < Real.exp (-5 * (eps - 5/4)) := Real.exp_pos _
-      exact mul_pos hhalf hpos
-    · have h_nonpos : -5 * (eps - 5/4) ≤ 0 := by nlinarith
-      have h_exp : Real.exp (-5 * (eps - 5/4)) ≤ 1 := by
-        rw [Real.exp_le_one_iff]
-        nlinarith
-      calc
-        (1/2) * Real.exp (-5 * (eps - 5/4)) ≤ (1/2) * 1 :=
-          mul_le_mul_of_nonneg_left h_exp (by norm_num : 0 ≤ (1/2 : ℝ))
-        _ = 1/2 := by norm_num
-        _ ≤ 1 := by norm_num
-
-/-- ε = 0（纯质子）时修正因子 = 1：无缺陷、无修正。 -/
-theorem neutronDefectTcFactor_zero : neutronDefectTcFactor 0 = 1 := by
-  unfold neutronDefectTcFactor
-  norm_num
-
-/-- 修正因子的单调性：ε 越大（缺陷越重），修正因子越小（T_c 越低）。
-    对应物理：中子缺陷削弱禁闭几何的配对能力。
-    函数在 ε = 5/4 处连续（左极限 = 右极限 = 1/2），整体单调递减。 -/
-theorem neutronDefectTcFactor_antitone (eps1 eps2 : ℝ) (h : eps1 ≤ eps2) :
-    neutronDefectTcFactor eps2 ≤ neutronDefectTcFactor eps1 := by
-  unfold neutronDefectTcFactor
-  by_cases h1 : eps1 < 5/4
-  · by_cases h2 : eps2 < 5/4
-    · -- both < 5/4: linear decay
-      simp [h1, h2]
-      nlinarith
-    · -- eps1 < 5/4 ≤ eps2: linear ≥ 1/2, exponential ≤ 1/2
-      rw [if_pos h1, if_neg (by linarith : ¬ eps2 < 5/4)]
-      have h_left : 1 - (eps1 / (5/4)) * (1/2) ≥ 1/2 := by nlinarith
-      have h_right : (1/2) * Real.exp (-5 * (eps2 - 5/4)) ≤ 1/2 := by
-        have : Real.exp (-5 * (eps2 - 5/4)) ≤ 1 := by
-          rw [Real.exp_le_one_iff]
-          nlinarith
-        nlinarith
-      nlinarith
-  · -- 5/4 ≤ eps1 ≤ eps2: exponential decay
-    have h2 : ¬ eps2 < 5/4 := by linarith
-    rw [if_neg h1, if_neg h2]
-    have h_exp : -5 * (eps2 - 5/4) ≤ -5 * (eps1 - 5/4) := by nlinarith
-    have h_exp_val : Real.exp (-5 * (eps2 - 5/4)) ≤ Real.exp (-5 * (eps1 - 5/4)) :=
-      Real.exp_monotone h_exp
-    nlinarith
-
-/-! ## 体嘉当矩阵迹与尺度分析（SPAF §4 步骤 7-9 补完） -/
+/-! ## 体嘉当矩阵迹与尺度分析 -/
 
 /-- 体嘉当矩阵的迹：Tr(C_bulk) = 8·n·N - ε·n_n。
     n·N 为总原子数，n_n 为中子数。

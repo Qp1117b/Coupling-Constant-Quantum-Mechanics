@@ -387,7 +387,7 @@ theorem elementSpectralGap_determinedByNeutronSector {eps : ℝ}
     - ¹H（Z=1, N=0）：ε=0，T_c 最高
     - ²D（Z=1, N=1）：ε>0，T_c 降低
     - ³T（Z=1, N=2）：ε 更大，T_c 更低
-    这与 CQM 预测的 H₃S/D₃S 同位素效应一致。
+    这与 CQM 同位素效应（α=1/2 在简单极限下，可因几何因子偏离）的框架结论一致。
 
     BCS 同位素指数 α_BCS = 1/2 来自 ω_D ∝ M^(-1/2)。
     CQM 修正 δα 来自 ε(N) 对谱间隙的修正。
@@ -449,7 +449,7 @@ theorem bcsTc_ratio_formula {omegaD1 omegaD2 lam1 lam2 : ℝ}
     1/λ(N₂) > 1/λ(N₁)，故第二因子 > 1（部分抵消质量压制效应）。
     
     物理含义：CQM 的中子缺陷修正使同位素效应偏离简单的 T_c ∝ M^(-1/2)，
-    解释了为何 H₃S/D₃S 的同位素指数 α 偏离 0.5。
+    解释了为何具体材料的同位素指数 α 可偏离 0.5。
     同位素效应仅来自中子扇区（次结构）——质子扇区（主结构）不变。 -/
 theorem cqmIsotopeEffect_Tc_ratio_formula {eps0 beta N_ref N1 N2 M1 M2 : ℝ}
     (hM1 : 0 < M1) (hM2 : 0 < M2)
@@ -959,7 +959,7 @@ theorem cqm_element_to_newtonian_end_to_end_chain (Z N : ℕ) (eps G M r : ℝ)
     对于单元素材料 (Z, N)，有效谱间隙 λ_eff = λ₁ − ε(N)，
     T_c = bcsCriticalTemperature(ω_D, λ_eff) = (2e^γ/π)·ω_D·exp(−1/λ_eff)。
     
-    这是 CQM 框架对单元素材料超导临界温度的核心预测——
+    这是 CQM 框架对单元素材料超导临界温度的框架结论——
     所有 CQM 修正都通过 λ_eff = λ₁ − ε(N) 进入 BCS 公式。 -/
 noncomputable def singleElementTc (omegaD eps : ℝ) : ℝ :=
   bcsCriticalTemperature omegaD (spectralGap - eps)
@@ -1007,7 +1007,7 @@ theorem singleElement_isotopeTc_ratio {omegaD1 omegaD2 eps1 eps2 : ℝ}
   · linarith
 
 /-- [定理] CQM↔BCS 桥接定理（单元素材料）：
-    CQM 框架对单元素材料的超导预测通过以下方式桥接到 BCS：
+    CQM 框架对单元素材料的超导结论通过以下方式桥接到 BCS：
     
     1. **有效耦合常数**：λ_eff = λ₁ − ε = spectralGap − ε
        - 当 ε = 0（纯质子）：λ_eff = λ₁，BCS 耦合常数 = A₄ 谱间隙

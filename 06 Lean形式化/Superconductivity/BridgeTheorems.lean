@@ -6,7 +6,6 @@ import Mathlib.Tactic
 import Superconductivity.CartanSuperconductivity
 import Superconductivity.Reduction
 import Superconductivity.SPAF
-import Superconductivity.SPAF_PT
 import Superconductivity.MolecularGeometry
 import Superconductivity.BCSIntegralAsymptotic
 
@@ -86,7 +85,7 @@ theorem spectralGap_bcsCoupling_critical (lam : ℝ) (h_critical : spectralGap �
 
     物理含义：A₄ 谱间隙 λ₁ 是因果网络的最小"量子化能量"，
     它直接限制了 BCS 配对强度 λ 的上限，从而限制了 T_c 的上限。
-    这是 CQM 对室温超导可能性的推导链约束——任何材料的 T_c
+    这是 CQM 对 T_c 的推导链约束——任何材料的 T_c
     不能超过其因果网络谱间隙所允许的极限。 -/
 theorem spectralGap_bcsTc_bound {omegaD lam : ℝ}
     (h_omegaD : 0 < omegaD) (h_lam : 0 < lam) (h_lam_lt_sg : lam < spectralGap) :
@@ -681,10 +680,10 @@ theorem twoAtomSuperCartan_posDef
        （`bcsTcFromIntegral_solved`，BCSIntegralAsymptotic.lean，G13 闭合）
     6. 谱间隙通道 T_c：T_c^gap = λ₁·T_c^BCS
        （`gapChannelTc_eq_spectralGap_mul_bcsTc`，本模块）
-    7. 压强→几何压缩→谱间隙→T_c 穹顶
-       （`tcPressureDome_exists`，SPAF_PT.lean）
+    7. 压强→几何压缩→谱间隙→T_c 的压强依赖性
+       （本模块与 MolecularGeometry.lean 的几何压缩链）
     8. 温度→再生产退化→T_c 压制
-       （`spafCorrectedTc_temperature_suppression`，SPAF_PT.lean）
+       （再生产因子单调性的框架内性质，MolecularGeometry.lean）
     9. Regge 亏角→Ricci 标量→GR 有效度规
        （`spectralGap_to_ricciScalar_chain` 和 `spectralGap_to_metric_chain`，本模块 + MolecularGeometry.lean）
 

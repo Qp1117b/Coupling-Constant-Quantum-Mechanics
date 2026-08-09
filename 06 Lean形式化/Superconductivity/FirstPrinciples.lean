@@ -61,12 +61,6 @@ open Filter
   精确满足能隙积分方程（闭式解实例化到氢材料）
 - [hydrogen_phonon_higher_than_deuterium]：金属氢同位素方向——氘晶格声子截止
   不高于氢晶格（最轻有限本体给出最高 T_c 上限）
-- [bcsCriticalTemperature_mono_in_debye] / [bcsCriticalTemperature_mono_in_coupling]：
-  室温方向骨架——T_c 随德拜频率与耦合常数单调不减（轻晶格/高压 + 强耦合路线）
-- [hydrogenPhononFrequency_calibrated_eq] / [hydrogenBcsGap_calibrated_eq] /
-  [hydrogenCriticalTemperature_calibrated_eq]：推导链数值例——以主流 ω_D 标定
-  A₄ 刚度 k₀ 后，金属氢链精确还原输入的德拜频率、能隙闭式与 T_c（记号还原到输入，
-  不冒充独立预测）
 - [firstPrinciples_chain_pos]：张量序参量（A₄ 谱）与推导链能隙闭式同为正
 
 ## 参考文献
@@ -304,11 +298,11 @@ theorem hydrogen_bcs_gap_equation_solved {stiffnessRef coupling : ℝ}
   unfold hydrogenBcsGap
   exact bcs_gap_equation (hydrogenPhononFrequency_pos hk) hlam
 
-/-! ## 第八步：同位素方向与室温方向骨架 -/
+/-! ## 第八步：同位素方向与 T_c 单调性 -/
 
 /-- 金属氢同位素方向：氘晶格（离子质量 2·m_p）的声子截止不高于氢晶格——
     最轻的有限本体（质子）给出最高 ω_D，对应同位素位移的家系
-    T_c(D) < T_c(H)（H3S/D3S 等）。 -/
+    T_c(D) < T_c(H)。 -/
 theorem hydrogen_phonon_higher_than_deuterium {stiffnessRef : ℝ} (hk : 0 ≤ stiffnessRef) :
     phononFrequencyFromA4 stiffnessRef (2 * protonMass) ≤
     hydrogenPhononFrequency stiffnessRef := by
@@ -321,11 +315,10 @@ theorem hydrogen_phonon_higher_than_deuterium {stiffnessRef : ℝ} (hk : 0 ≤ s
   rw [inv_eq_one_div, inv_eq_one_div]
   exact mul_le_mul_of_nonneg_left hrecip hkk
 
-/-! ## 第九步：室温方向骨架（第三步） -/
+/-! ## 第九步：T_c 单调性 -/
 
-/-- 室温方向（数学骨架）：T_c 关于德拜频率单调不减。
-    体禀：T_c = 常·ω_D·e^{−1/λ} 对 ω_D 线性单调——双光子截止越高、T_c 越高。
-    对应室温路线①：轻晶格（氢/氢化物）与高压在刚度（晶格硬化）中提升 ω_D。 -/
+/-- T_c 关于德拜频率单调不减（数学性质）：
+    T_c = 常·ω_D·e^{−1/λ} 对 ω_D 线性单调——声子截止越高、T_c 越高。 -/
 theorem bcsCriticalTemperature_mono_in_debye {w1 w2 n0V : ℝ} (hw : w1 ≤ w2) :
     bcsCriticalTemperature w1 n0V ≤ bcsCriticalTemperature w2 n0V := by
   unfold bcsCriticalTemperature
@@ -334,10 +327,9 @@ theorem bcsCriticalTemperature_mono_in_debye {w1 w2 n0V : ℝ} (hw : w1 ≤ w2) 
     mul_le_mul_of_nonneg_left hw hconst
   exact mul_le_mul_of_nonneg_right hmul (le_of_lt (Real.exp_pos _))
 
-/-- 室温方向交叉骨架：T_c 关于耦合常数 λ 单调不减。
-    体禀：e^{−1/λ} 随 1/λ 下降而下降、随 λ 增长而增长——强耦合路线
-   （多声子介入、氢-硫/氢-镍等强电子-声子体系的电子-声子耦合增强）同样上推 T_c。
-    两条单调性合起来正是室温超导的方向坐标：高 ω_D（轻晶格 + 高压）与高 λ。 -/
+/-- T_c 关于耦合常数 λ 单调不减（数学性质）：
+    e^{−1/λ} 随 1/λ 下降而下降、随 λ 增长而增长——强耦合同样上推 T_c。
+    两条单调性共同给出 T_c 随 ω_D 与 λ 增大的方向坐标。 -/
 theorem bcsCriticalTemperature_mono_in_coupling {wDebye lam1 lam2 : ℝ}
     (hw : 0 < wDebye) (hl : lam1 ≤ lam2) (hp : 0 < lam1) :
     bcsCriticalTemperature wDebye lam1 ≤ bcsCriticalTemperature wDebye lam2 := by
@@ -352,97 +344,8 @@ theorem bcsCriticalTemperature_mono_in_coupling {wDebye lam1 lam2 : ℝ}
     mul_nonneg (le_of_lt bcsExactConstant_pos) (le_of_lt hw)
   exact mul_le_mul_of_nonneg_left hle hpos
 
-/-- 室温可行域的量化判据：给出目标室温 T_room，则
-    T_c(ω_D, λ) ≥ T_room  ⟺  ω_D ≥ (T_room / 2e^γ/π) · e^{1/λ}。
-    这把「室温方向」从文字叙述落成严格不等式：左边是可行域，
-    右边给出达成室温所必需的德拜频率下界——高 ω_D 或高 λ
-    任一杠杆越过该下界即进入室温可行域（两杠杆可互换、可叠加）。 -/
-theorem roomTemperature_iff_debyeLowerBound {wDebye n0V roomTemp : ℝ} :
-    bcsCriticalTemperature wDebye n0V ≥ roomTemp ↔
-      bcsExactConstant * wDebye ≥ roomTemp * Real.exp (1 / n0V) := by
-  unfold bcsCriticalTemperature
-  have hexpA : Real.exp (-1 / n0V) * Real.exp n0V⁻¹ = 1 := by
-    rw [← Real.exp_add]
-    have hsum : -1 / n0V + n0V⁻¹ = 0 := by ring
-    rw [hsum, Real.exp_zero]
-  have hexpB : Real.exp n0V⁻¹ * Real.exp (-1 / n0V) = 1 := by
-    rw [← Real.exp_add]
-    have hsum : n0V⁻¹ + -1 / n0V = 0 := by ring
-    rw [hsum, Real.exp_zero]
-  constructor
-  · intro h
-    have hv : 0 ≤ Real.exp (1 / n0V) := le_of_lt (Real.exp_pos _)
-    have hstep := mul_le_mul_of_nonneg_right h hv
-    have hmain : (bcsExactConstant * wDebye * Real.exp (-1 / n0V)) *
-        Real.exp n0V⁻¹ = bcsExactConstant * wDebye := by
-      calc
-        (bcsExactConstant * wDebye * Real.exp (-1 / n0V)) * Real.exp n0V⁻¹
-            = bcsExactConstant * wDebye * (Real.exp (-1 / n0V) * Real.exp n0V⁻¹) := by ring
-        _ = bcsExactConstant * wDebye := by rw [hexpA, mul_one]
-    simpa [hmain] using hstep
-  · intro h
-    have hv : 0 ≤ Real.exp (-1 / n0V) := le_of_lt (Real.exp_pos _)
-    have hstep := mul_le_mul_of_nonneg_right h hv
-    have hR : (roomTemp * Real.exp n0V⁻¹) * Real.exp (-1 / n0V) = roomTemp := by
-      calc
-        (roomTemp * Real.exp n0V⁻¹) * Real.exp (-1 / n0V)
-            = roomTemp * (Real.exp n0V⁻¹ * Real.exp (-1 / n0V)) := by ring
-        _ = roomTemp := by rw [hexpB, mul_one]
-    simpa [hR] using hstep
 
-/-- 双杠杆的可互换性：达成室温所需的德拜频率下界 f(λ)=(T_room/2e^γ/π)·e^{1/λ}
-    关于耦合 λ 反单调——强耦合（高 λ）系统性降低所需的 ω_D 下界。
-    与 bcsCriticalTemperature_mono_in_debye 合读：两大室温杠杆
-    （轻晶格/高压 → 高 ω_D；强电子-声子耦合 → 高 λ）可沿等值下界互换。 -/
-theorem roomTemperatureDebyeLowerBound_antitone_in_coupling {roomTemp lam1 lam2 : ℝ}
-    (hr : 0 < roomTemp) (hl : lam1 ≤ lam2) (hp : 0 < lam1) :
-    (roomTemp / bcsExactConstant) * Real.exp (1 / lam2) ≤
-      (roomTemp / bcsExactConstant) * Real.exp (1 / lam1) := by
-  have hif : 1 / lam2 ≤ 1 / lam1 := by
-    exact (one_div_le_one_div (lt_of_lt_of_le hp hl) hp).2 hl
-  have hle : Real.exp (1 / lam2) ≤ Real.exp (1 / lam1) := Real.exp_monotone hif
-  have hc : 0 ≤ roomTemp / bcsExactConstant :=
-    le_of_lt (div_pos hr bcsExactConstant_pos)
-  exact mul_le_mul_of_nonneg_left hle hc
-
-/-! ## 第十步：推导链数值例（主流输入标定） -/
-
-/-- 刚度标定（主流输入标定）：给定想还原的目标频率 ω_D^target，
-   反解 A₄ 循环刚度参考标度 k₀ = (ω_D^target)²·M_p/λ₁。
-   这是金属氢数值例链的通式输入：H₃S/LaH10 的 ω_ln 由推导链
-   α²F(ω) 计算或实验给出，CQM 本体推导链由此还原该输入
-   （记号还原到输入，不冒充独立预测）。 -/
-noncomputable def stiffnessRefCalibrated (targetOmega : ℝ) : ℝ :=
-  targetOmega ^ 2 * protonMass / spectralGap
-
-/-- [校准恒等式] 以主流 ω_D 标定 k₀ 后，CQM 本体推导链（氢 = 单质子有限本体，
-   A₄ 谱间隙标定刚度、质子质量为离子质量）精确还原该输入德拜频率。 -/
-theorem hydrogenPhononFrequency_calibrated_eq {targetOmega : ℝ} (h : 0 ≤ targetOmega) :
-    hydrogenPhononFrequency (stiffnessRefCalibrated targetOmega) = targetOmega := by
-  unfold hydrogenPhononFrequency stiffnessRefCalibrated phononFrequencyFromA4
-    debyeFrequency latticeStiffnessFromA4
-  have hinner : (targetOmega ^ 2 * protonMass / spectralGap) * spectralGap /
-      protonMass = targetOmega ^ 2 := by
-    field_simp [ne_of_gt spectralGap_pos, ne_of_gt protonMass_pos]
-  rw [hinner]
-  exact Real.sqrt_sq h
-
-/-- 数值例链：以主流 ω_D 标定的金属氢能隙闭式 = 以该 ω_D 直接代入 ω_D/sinh(1/λ)—— 
-   金属氢链（标度 → 刚度 → 声子 → 能隙）与输入记号还原。 -/
-theorem hydrogenBcsGap_calibrated_eq {targetOmega coupling : ℝ} (h : 0 ≤ targetOmega) :
-    hydrogenBcsGap (stiffnessRefCalibrated targetOmega) coupling =
-      bcsGapFromGapEquation targetOmega coupling := by
-  unfold hydrogenBcsGap
-  rw [hydrogenPhononFrequency_calibrated_eq h]
-
-/-- 数值例链（临界温度）：以主流 ω_D 输入时的金属氢 T_c 闭式 = BCS 闭式本身。 -/
-theorem hydrogenCriticalTemperature_calibrated_eq {targetOmega coupling : ℝ}
-    (h : 0 ≤ targetOmega) :
-    bcsCriticalTemperature (hydrogenPhononFrequency (stiffnessRefCalibrated targetOmega))
-      coupling = bcsCriticalTemperature targetOmega coupling := by
-  rw [hydrogenPhononFrequency_calibrated_eq h]
-
-/-! ## 第十一步：SPAF 连接（半唯像参数与推导链的对应，SPAF §3–§5） -/
+/-! ## 第十一步：中子缺陷与推导链的一致性约束 -/
 
 /-- SPAF §3.2 中子缺陷参数 ε 与推导链的一致性：
     若 ε < 5/4（C_n 正定区间），则推导链的全部正性保持不变——
@@ -463,36 +366,7 @@ theorem spaf_firstPrinciples_chain_consistent {stiffnessRef ionMass N0 V s Γ τ
   have h_chain := firstPrinciples_chain_pos (Γ := Γ) (τ := τ) hk hM hn hv hs
   exact ⟨h_posDef, h_chain.1, h_chain.2.1, h_chain.2.2.1, h_chain.2.2.2⟩
 
-/-- SPAF 中子缺陷的 T_c 修正：将推导链 T_c 乘以中子缺陷修正因子
-    f(ε) = neutronDefectTcFactor ε。
-    当 ε = 0（纯质子）时 f = 1，T_c 不变；
-    当 ε > 0 时 f < 1，T_c 被压低。
-    对应 Python: neutron_defect_tc_correction。 -/
-noncomputable def spafCorrectedTc (wDebye lam eps : ℝ) : ℝ :=
-  neutronDefectTcFactor eps * bcsCriticalTemperature wDebye lam
-
-/-- T_c 修正因子非负且不超过 1：中子缺陷只能压低 T_c、不能抬高。 -/
-theorem spafCorrectedTc_le_original {wDebye lam eps : ℝ} (hw : 0 < wDebye) (h_eps : 0 ≤ eps) :
-    spafCorrectedTc wDebye lam eps ≤ bcsCriticalTemperature wDebye lam := by
-  unfold spafCorrectedTc
-  have h_factor : neutronDefectTcFactor eps ≤ 1 :=
-    (neutronDefectTcFactor_range h_eps).2
-  have hTc : 0 ≤ bcsCriticalTemperature wDebye lam :=
-    le_of_lt (bcsCriticalTemperature_pos hw)
-  nlinarith
-
-/-- T_c 修正因子严格为正：即使有大中子缺陷，T_c 仍保持正性
-    （修正因子永不为零，除非 ε → ∞）。 -/
-theorem spafCorrectedTc_pos {wDebye lam eps : ℝ} (hw : 0 < wDebye) (h_eps : 0 ≤ eps) :
-    spafCorrectedTc wDebye lam eps > 0 := by
-  unfold spafCorrectedTc
-  have h_factor : 0 < neutronDefectTcFactor eps :=
-    (neutronDefectTcFactor_range h_eps).1
-  have hTc : 0 < bcsCriticalTemperature wDebye lam :=
-    bcsCriticalTemperature_pos hw
-  exact mul_pos h_factor hTc
-
-/-! ## 第十二步：同位素效应的 CQM 几何因子修正（SPAF §5 / FirstPrinciples 第八步补完） -/
+/-! ## 第十二步：同位素效应的 CQM 几何因子修正（FirstPrinciples 第八步补完） -/
 
 /-- CQM 同位素指数（含几何因子修正）：
     α_CQM = 1/2 + ln(f(M₁)/f(M₂)) / ln(M₂/M₁)。
