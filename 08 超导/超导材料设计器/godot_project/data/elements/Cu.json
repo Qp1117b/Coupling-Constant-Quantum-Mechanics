@@ -1,0 +1,38 @@
+{
+  "symbol": "Cu",
+  "name": "铜",
+  "name_en": "Copper",
+  "atomic_number": 29,
+  "atomic_mass": 63.546,
+  "category": "transition_metal",
+  "group": 11,
+  "period": 4,
+  "block": "d",
+  "valence_electrons": 1,
+  "electronegativity": 1.9,
+  "atomic_radius_pm": 128,
+  "covalent_radius_pm": 132,
+  "color": "#C88040",
+  "isotopes": [
+    {
+      "mass_number": 63,
+      "neutrons": 34,
+      "mass_da": 62.929598,
+      "abundance": 0.6915,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 65,
+      "neutrons": 36,
+      "mass_da": 64.927793,
+      "abundance": 0.3085,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    }
+  ]
+}

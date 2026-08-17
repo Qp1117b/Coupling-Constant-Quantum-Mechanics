@@ -1,0 +1,48 @@
+{
+  "symbol": "Ne",
+  "name": "氖",
+  "name_en": "Neon",
+  "atomic_number": 10,
+  "atomic_mass": 20.1797,
+  "category": "noble_gas",
+  "group": 18,
+  "period": 2,
+  "block": "p",
+  "valence_electrons": 8,
+  "electronegativity": 0,
+  "atomic_radius_pm": 38,
+  "covalent_radius_pm": 58,
+  "color": "#B3E3F5",
+  "isotopes": [
+    {
+      "mass_number": 20,
+      "neutrons": 10,
+      "mass_da": 19.99244,
+      "abundance": 0.9048,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 21,
+      "neutrons": 11,
+      "mass_da": 20.993847,
+      "abundance": 0.0027,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 22,
+      "neutrons": 12,
+      "mass_da": 21.991386,
+      "abundance": 0.0925,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    }
+  ]
+}

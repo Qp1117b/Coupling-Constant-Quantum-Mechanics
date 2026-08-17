@@ -1,0 +1,38 @@
+{
+  "symbol": "Ir",
+  "name": "铱",
+  "name_en": "Iridium",
+  "atomic_number": 77,
+  "atomic_mass": 192.217,
+  "category": "transition_metal",
+  "group": 9,
+  "period": 6,
+  "block": "d",
+  "valence_electrons": 9,
+  "electronegativity": 2.2,
+  "atomic_radius_pm": 192,
+  "covalent_radius_pm": 141,
+  "color": "#1676A1",
+  "isotopes": [
+    {
+      "mass_number": 191,
+      "neutrons": 114,
+      "mass_da": 190.960604,
+      "abundance": 0.373,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 193,
+      "neutrons": 116,
+      "mass_da": 192.962926,
+      "abundance": 0.627,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    }
+  ]
+}

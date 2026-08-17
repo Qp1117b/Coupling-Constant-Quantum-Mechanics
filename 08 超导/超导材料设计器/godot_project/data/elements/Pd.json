@@ -1,0 +1,78 @@
+{
+  "symbol": "Pd",
+  "name": "钯",
+  "name_en": "Palladium",
+  "atomic_number": 46,
+  "atomic_mass": 106.42,
+  "category": "transition_metal",
+  "group": 10,
+  "period": 5,
+  "block": "d",
+  "valence_electrons": 10,
+  "electronegativity": 2.2,
+  "atomic_radius_pm": 169,
+  "covalent_radius_pm": 139,
+  "color": "#6F6DA0",
+  "isotopes": [
+    {
+      "mass_number": 102,
+      "neutrons": 56,
+      "mass_da": 101.905634,
+      "abundance": 0.0102,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 104,
+      "neutrons": 58,
+      "mass_da": 103.904035,
+      "abundance": 0.1114,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 105,
+      "neutrons": 59,
+      "mass_da": 104.905584,
+      "abundance": 0.2233,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 2.5
+    },
+    {
+      "mass_number": 106,
+      "neutrons": 60,
+      "mass_da": 105.903484,
+      "abundance": 0.2733,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 108,
+      "neutrons": 62,
+      "mass_da": 107.903894,
+      "abundance": 0.2646,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 110,
+      "neutrons": 64,
+      "mass_da": 109.905152,
+      "abundance": 0.1172,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    }
+  ]
+}

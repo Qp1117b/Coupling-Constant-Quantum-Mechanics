@@ -1,0 +1,48 @@
+{
+  "symbol": "U",
+  "name": "铀",
+  "name_en": "Uranium",
+  "atomic_number": 92,
+  "atomic_mass": 238.029,
+  "category": "actinide",
+  "group": 3,
+  "period": 7,
+  "block": "f",
+  "valence_electrons": 6,
+  "electronegativity": 1.38,
+  "atomic_radius_pm": 186,
+  "covalent_radius_pm": 142,
+  "color": "#008FFF",
+  "isotopes": [
+    {
+      "mass_number": 234,
+      "neutrons": 142,
+      "mass_da": 234.04095,
+      "abundance": 5.4e-05,
+      "is_stable": false,
+      "half_life_s": 24550000000000.0,
+      "decay_mode": "alpha",
+      "spin": 0.0
+    },
+    {
+      "mass_number": 235,
+      "neutrons": 143,
+      "mass_da": 235.04393,
+      "abundance": 0.007204,
+      "is_stable": false,
+      "half_life_s": 2.222e+16,
+      "decay_mode": "alpha",
+      "spin": 3.5
+    },
+    {
+      "mass_number": 238,
+      "neutrons": 146,
+      "mass_da": 238.050788,
+      "abundance": 0.992742,
+      "is_stable": false,
+      "half_life_s": 1.41e+17,
+      "decay_mode": "alpha",
+      "spin": 0.0
+    }
+  ]
+}

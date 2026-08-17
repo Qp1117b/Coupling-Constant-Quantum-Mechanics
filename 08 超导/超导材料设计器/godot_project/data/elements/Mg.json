@@ -1,0 +1,48 @@
+{
+  "symbol": "Mg",
+  "name": "镁",
+  "name_en": "Magnesium",
+  "atomic_number": 12,
+  "atomic_mass": 24.305,
+  "category": "alkaline_earth",
+  "group": 2,
+  "period": 3,
+  "block": "s",
+  "valence_electrons": 2,
+  "electronegativity": 1.31,
+  "atomic_radius_pm": 150,
+  "covalent_radius_pm": 141,
+  "color": "#8AFF00",
+  "isotopes": [
+    {
+      "mass_number": 24,
+      "neutrons": 12,
+      "mass_da": 23.985042,
+      "abundance": 0.7899,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 25,
+      "neutrons": 13,
+      "mass_da": 24.985837,
+      "abundance": 0.1,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 2.5
+    },
+    {
+      "mass_number": 26,
+      "neutrons": 14,
+      "mass_da": 25.982593,
+      "abundance": 0.1101,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    }
+  ]
+}

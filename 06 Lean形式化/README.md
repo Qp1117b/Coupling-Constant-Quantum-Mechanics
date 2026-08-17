@@ -4,7 +4,7 @@
 
 ## 编译状态
 
-✅ **全部 9 个库编译通过**（3342 jobs） | Lean 4.29.1 | **零 CQM 警告**
+✅ **全部 9 个库编译通过**（3313 jobs） | Lean 4.29.1 | **零 CQM 警告**
 
 > 注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，
 > 非 CQM 代码问题，无法从本项目消除。`lake build` 完全成功。 -/
@@ -21,7 +21,7 @@
 | **Decoherence** | `Basic.lean` | `confinementScale`、`CausalLayer`、三层结构 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现公式结构性表达、庸俗隐变量分解对比（公理为主） |
-| **Superconductivity** | `Ontology.lean`, `Gravity.lean`, `Mechanism.lean`, `Integral.lean`, `TransitionTemperature.lean`, `StrongGravity.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `SPAF_PT.lean`, `SPAF_PTH.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean` | 强引力超导（16 模块）：有限本体论、τ_res/ω_causal、三方因果闭环、涌现积分、T_c、T_grav、**BCS 退化与还原**、**嘉当张量超导方程（A₄ 谱分解）**、**第一性推导链**、**SPAF 半唯像框架（因果耦合族、组装对称性、中子缺陷）**、**SPAF 压强-温度几何构型**、**SPAF 三相框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理（谱间隙↔BCS↔Regge↔GR）**、**元素嘉当矩阵（质/中子主次结构→同位素效应→CQM→BCS 退化）**、**分子几何→Weyl嵌入→Regge亏角→GR有效度规** |
+| **Superconductivity** | `Ontology.lean`, `Gravity.lean`, `Mechanism.lean`, `Integral.lean`, `TransitionTemperature.lean`, `StrongGravity.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `SPAF_PT.lean`, `SPAF_PTH.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `MultiComponent.lean` | 强引力超导（17 模块）：有限本体论、τ_res/ω_causal、三方因果闭环、涌现积分、T_c、T_grav、**BCS 退化与还原**、**嘉当张量超导方程（A₄ 谱分解）**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→Regge→GR**、**多分量序参量与分步相变（对应 LaH₁₀ 四极 T₂g 相变）** |
 
 ## 形式化推导链
 
@@ -106,8 +106,8 @@ Axioms
 | Decoherence | 15 | 2 |
 | PhysicalConstants | 20 | 0 |
 | Methodology | 6 | 11 |
-| Superconductivity | 310 | 5 |
-| **总计** | **617** | **30** |
+| Superconductivity | 340 | 5 |
+| **总计** | **647** | **30** |
 
 ## 已知缺口
 
@@ -159,7 +159,13 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 | 禁闭-退相干等价 | `Decoherence` | 15 |
 | G_N 谱公式与 α⁻¹ | `PhysicalConstants` | 20 |
 | 方法论基础 | `Methodology` | 6 |
-| 强引力超导涌现 | `Superconductivity` | 317 |
+| 强引力超导涌现 | `Superconductivity` | 340 |
+
+## 本次更新亮点 (v0.6.0)
+
+- **多分量序参量与分步相变（MultiComponent.lean）**：新增 23 定理，形式化 CQM §10.3 多分量凝聚与分步相变，对应 2026 年 8 月最新实验 LaH₁₀ 四极 T₂g 相变（arXiv:2608.10428）。核心定理：`condensationTemperature_gapChannel_highest`（谱间隙通道凝聚温度最高）、`stepwisePhaseTransition`（分步相变——部分凝聚相：只有谱间隙通道凝聚，其余通道未凝聚）、`partialCondensationPhase_exists`（部分凝聚相存在性）、`condensedChannelCount_full_below_channel3`（T < T_{c,3} 时全部 4 通道凝聚）、`laH10_quadrupolarTransition_correspondsTo_gapChannel`（LaH₁₀ 四极相变对应谱间隙通道凝聚）。配对通道数 = A₄ 秩 = 4（`pairingChannelCount_eq_rank`），对应 Higgs + 3 个 BS 激子（arXiv:2608.12461）
+- **2026 年最新超导文献调研**：新增研究推进文档 `08 超导/CQM 超导推进 2026最新探索.md`，调研 arXiv cond-mat.supr-con 2026-08-10 至 2026-08-14 共 40 篇近期提交，识别两个核心实验契合点：(1) LaH₁₀ 四极 T₂g 相变 ↔ CQM §10.3 分步相变（★★★），(2) Higgs-BS 竞争配对 ↔ CQM A₄ 根系多分量序参量（★★★）。提出四个 Lean 形式化扩展模块大纲（MultiComponent、CompetingChannels、QuadrupolarOrder、PseudogapCQM）与 12 个新严格性缺口
+- **定理总数**：从 624 → 647（+23 个严格证明的定理），Superconductivity 库从 317 → 340（+23），模块数从 16 → 17
 
 ## 本次更新亮点 (v0.5.9)
 
@@ -206,7 +212,7 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 - **再生产维持（坍缩难题②的解答）**：`phaseLockingFactor_tendsto_zero`——锁定因子 e^{−Γ|τ|} 随再生产间隔趋于 0：涌现态的确定性不能一次获得、必须被反复耦合事件再生产维持（涌现公式再生产项的必要性定理）
 - **金属氢实例（第二步计算起点）**：`hydrogenPhononFrequency_pos`——氢 = 单质子有限本体，禁闭几何直接是 A₄，德拜频率由谱间隙 λ₁ × 质子质量完全决定（A₄ 直接拼接，无需跨种类有限本体）
 - **输入与非推导声明**：A₄ 本征向量显式构造、晶格刚度参考标度、配对强度 V、费米面态密度 N(0) 均为理想化/主流输入；G13（T_c 方程 tanh→对数渐近）如实列入缺口，不冒充定理
- 
+
 ## 本次更新亮点 (v0.5.4)
 
 - **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 张量涌现公式 𝒯_emergent = e^{−Γτ}·𝒫̂_𝒞(∫𝒟⊗𝒫 dμ) 理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（Tr_𝒞 理想化）

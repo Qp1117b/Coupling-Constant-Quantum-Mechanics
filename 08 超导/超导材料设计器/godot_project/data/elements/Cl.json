@@ -1,0 +1,38 @@
+{
+  "symbol": "Cl",
+  "name": "氯",
+  "name_en": "Chlorine",
+  "atomic_number": 17,
+  "atomic_mass": 35.453,
+  "category": "halogen",
+  "group": 17,
+  "period": 3,
+  "block": "p",
+  "valence_electrons": 7,
+  "electronegativity": 3.16,
+  "atomic_radius_pm": 79,
+  "covalent_radius_pm": 99,
+  "color": "#1FF01F",
+  "isotopes": [
+    {
+      "mass_number": 35,
+      "neutrons": 18,
+      "mass_da": 34.968853,
+      "abundance": 0.7576,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 37,
+      "neutrons": 20,
+      "mass_da": 36.965903,
+      "abundance": 0.2424,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    }
+  ]
+}

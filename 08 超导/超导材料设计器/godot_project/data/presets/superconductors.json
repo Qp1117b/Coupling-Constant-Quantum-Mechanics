@@ -1,0 +1,47 @@
+{
+  "presets": [
+    {
+      "name": "LaH10 (203 K @ 170 GPa)",
+      "description": "镧十氢，高温超导氢化物",
+      "tc_experimental": 203,
+      "pressure_gpa": 170,
+      "atoms": [
+        {"element": "La", "isotope": 139, "pos": [0, 0, 0]},
+        {"element": "H",  "isotope": 1,  "pos": [1.0, 0, 0]},
+        {"element": "H",  "isotope": 1,  "pos": [-1.0, 0, 0]},
+        {"element": "H",  "isotope": 1,  "pos": [0, 1.0, 0]},
+        {"element": "H",  "isotope": 1,  "pos": [0, -1.0, 0]},
+        {"element": "H",  "isotope": 1,  "pos": [0, 0, 1.0]},
+        {"element": "H",  "isotope": 1,  "pos": [0, 0, -1.0]},
+        {"element": "H",  "isotope": 1,  "pos": [0.7, 0.7, 0.7]},
+        {"element": "H",  "isotope": 1,  "pos": [-0.7, -0.7, 0.7]},
+        {"element": "H",  "isotope": 1,  "pos": [0.7, -0.7, -0.7]},
+        {"element": "H",  "isotope": 1,  "pos": [-0.7, 0.7, -0.7]}
+      ],
+      "bonds": "auto"
+    },
+    {
+      "name": "MgB2 (39 K)",
+      "description": "二硼化镁，经典超导体",
+      "tc_experimental": 39,
+      "pressure_gpa": 0,
+      "atoms": [
+        {"element": "Mg", "isotope": 24, "pos": [0, 0, 0]},
+        {"element": "B",  "isotope": 11, "pos": [1.0, 0, 0]},
+        {"element": "B",  "isotope": 11, "pos": [-1.0, 0, 0]}
+      ],
+      "bonds": "auto"
+    },
+    {
+      "name": "FeSe (8 K)",
+      "description": "铁硒，铁基超导体",
+      "tc_experimental": 8,
+      "pressure_gpa": 0,
+      "atoms": [
+        {"element": "Fe", "isotope": 56, "pos": [0, 0, 0]},
+        {"element": "Se", "isotope": 80, "pos": [1.0, 0, 0]}
+      ],
+      "bonds": "auto"
+    }
+  ]
+}

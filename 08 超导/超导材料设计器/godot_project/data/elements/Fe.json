@@ -1,0 +1,48 @@
+{
+  "symbol": "Fe",
+  "name": "铁",
+  "name_en": "Iron",
+  "atomic_number": 26,
+  "atomic_mass": 55.845,
+  "category": "transition_metal",
+  "group": 8,
+  "period": 4,
+  "block": "d",
+  "valence_electrons": 2,
+  "electronegativity": 1.83,
+  "atomic_radius_pm": 126,
+  "covalent_radius_pm": 125,
+  "color": "#E06600",
+  "isotopes": [
+    {
+      "mass_number": 54,
+      "neutrons": 28,
+      "mass_da": 53.939611,
+      "abundance": 0.05845,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 56,
+      "neutrons": 30,
+      "mass_da": 55.934938,
+      "abundance": 0.91754,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 57,
+      "neutrons": 31,
+      "mass_da": 56.935394,
+      "abundance": 0.02119,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.5
+    }
+  ]
+}

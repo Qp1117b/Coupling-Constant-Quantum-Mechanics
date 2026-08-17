@@ -1,0 +1,737 @@
+{
+    "version":  "1.1",
+    "element_count":  118,
+    "isotope_count":  320,
+    "elements":  {
+                     "H":  {
+                               "Z":  1,
+                               "file":  "H.json",
+                               "isotope_count":  3
+                           },
+                     "He":  {
+                                "Z":  2,
+                                "file":  "He.json",
+                                "isotope_count":  2
+                            },
+                     "Li":  {
+                                "Z":  3,
+                                "file":  "Li.json",
+                                "isotope_count":  2
+                            },
+                     "Be":  {
+                                "Z":  4,
+                                "file":  "Be.json",
+                                "isotope_count":  1
+                            },
+                     "B":  {
+                               "Z":  5,
+                               "file":  "B.json",
+                               "isotope_count":  2
+                           },
+                     "C":  {
+                               "Z":  6,
+                               "file":  "C.json",
+                               "isotope_count":  2
+                           },
+                     "N":  {
+                               "Z":  7,
+                               "file":  "N.json",
+                               "isotope_count":  2
+                           },
+                     "O":  {
+                               "Z":  8,
+                               "file":  "O.json",
+                               "isotope_count":  3
+                           },
+                     "F":  {
+                               "Z":  9,
+                               "file":  "F.json",
+                               "isotope_count":  1
+                           },
+                     "Ne":  {
+                                "Z":  10,
+                                "file":  "Ne.json",
+                                "isotope_count":  3
+                            },
+                     "Na":  {
+                                "Z":  11,
+                                "file":  "Na.json",
+                                "isotope_count":  1
+                            },
+                     "Mg":  {
+                                "Z":  12,
+                                "file":  "Mg.json",
+                                "isotope_count":  3
+                            },
+                     "Al":  {
+                                "Z":  13,
+                                "file":  "Al.json",
+                                "isotope_count":  1
+                            },
+                     "Si":  {
+                                "Z":  14,
+                                "file":  "Si.json",
+                                "isotope_count":  3
+                            },
+                     "P":  {
+                               "Z":  15,
+                               "file":  "P.json",
+                               "isotope_count":  1
+                           },
+                     "S":  {
+                               "Z":  16,
+                               "file":  "S.json",
+                               "isotope_count":  3
+                           },
+                     "Cl":  {
+                                "Z":  17,
+                                "file":  "Cl.json",
+                                "isotope_count":  2
+                            },
+                     "Ar":  {
+                                "Z":  18,
+                                "file":  "Ar.json",
+                                "isotope_count":  3
+                            },
+                     "K":  {
+                               "Z":  19,
+                               "file":  "K.json",
+                               "isotope_count":  3
+                           },
+                     "Ca":  {
+                                "Z":  20,
+                                "file":  "Ca.json",
+                                "isotope_count":  6
+                            },
+                     "Sc":  {
+                                "Z":  21,
+                                "file":  "Sc.json",
+                                "isotope_count":  1
+                            },
+                     "Ti":  {
+                                "Z":  22,
+                                "file":  "Ti.json",
+                                "isotope_count":  5
+                            },
+                     "V":  {
+                               "Z":  23,
+                               "file":  "V.json",
+                               "isotope_count":  2
+                           },
+                     "Cr":  {
+                                "Z":  24,
+                                "file":  "Cr.json",
+                                "isotope_count":  4
+                            },
+                     "Mn":  {
+                                "Z":  25,
+                                "file":  "Mn.json",
+                                "isotope_count":  1
+                            },
+                     "Fe":  {
+                                "Z":  26,
+                                "file":  "Fe.json",
+                                "isotope_count":  3
+                            },
+                     "Co":  {
+                                "Z":  27,
+                                "file":  "Co.json",
+                                "isotope_count":  1
+                            },
+                     "Ni":  {
+                                "Z":  28,
+                                "file":  "Ni.json",
+                                "isotope_count":  5
+                            },
+                     "Cu":  {
+                                "Z":  29,
+                                "file":  "Cu.json",
+                                "isotope_count":  2
+                            },
+                     "Zn":  {
+                                "Z":  30,
+                                "file":  "Zn.json",
+                                "isotope_count":  5
+                            },
+                     "Ga":  {
+                                "Z":  31,
+                                "file":  "Ga.json",
+                                "isotope_count":  2
+                            },
+                     "Ge":  {
+                                "Z":  32,
+                                "file":  "Ge.json",
+                                "isotope_count":  5
+                            },
+                     "As":  {
+                                "Z":  33,
+                                "file":  "As.json",
+                                "isotope_count":  1
+                            },
+                     "Se":  {
+                                "Z":  34,
+                                "file":  "Se.json",
+                                "isotope_count":  5
+                            },
+                     "Br":  {
+                                "Z":  35,
+                                "file":  "Br.json",
+                                "isotope_count":  2
+                            },
+                     "Kr":  {
+                                "Z":  36,
+                                "file":  "Kr.json",
+                                "isotope_count":  6
+                            },
+                     "Rb":  {
+                                "Z":  37,
+                                "file":  "Rb.json",
+                                "isotope_count":  2
+                            },
+                     "Sr":  {
+                                "Z":  38,
+                                "file":  "Sr.json",
+                                "isotope_count":  4
+                            },
+                     "Y":  {
+                               "Z":  39,
+                               "file":  "Y.json",
+                               "isotope_count":  1
+                           },
+                     "Zr":  {
+                                "Z":  40,
+                                "file":  "Zr.json",
+                                "isotope_count":  5
+                            },
+                     "Nb":  {
+                                "Z":  41,
+                                "file":  "Nb.json",
+                                "isotope_count":  1
+                            },
+                     "Mo":  {
+                                "Z":  42,
+                                "file":  "Mo.json",
+                                "isotope_count":  7
+                            },
+                     "Tc":  {
+                                "Z":  43,
+                                "file":  "Tc.json",
+                                "isotope_count":  1
+                            },
+                     "Ru":  {
+                                "Z":  44,
+                                "file":  "Ru.json",
+                                "isotope_count":  7
+                            },
+                     "Rh":  {
+                                "Z":  45,
+                                "file":  "Rh.json",
+                                "isotope_count":  1
+                            },
+                     "Pd":  {
+                                "Z":  46,
+                                "file":  "Pd.json",
+                                "isotope_count":  6
+                            },
+                     "Ag":  {
+                                "Z":  47,
+                                "file":  "Ag.json",
+                                "isotope_count":  2
+                            },
+                     "Cd":  {
+                                "Z":  48,
+                                "file":  "Cd.json",
+                                "isotope_count":  8
+                            },
+                     "In":  {
+                                "Z":  49,
+                                "file":  "In.json",
+                                "isotope_count":  2
+                            },
+                     "Sn":  {
+                                "Z":  50,
+                                "file":  "Sn.json",
+                                "isotope_count":  10
+                            },
+                     "Sb":  {
+                                "Z":  51,
+                                "file":  "Sb.json",
+                                "isotope_count":  2
+                            },
+                     "Te":  {
+                                "Z":  52,
+                                "file":  "Te.json",
+                                "isotope_count":  7
+                            },
+                     "I":  {
+                               "Z":  53,
+                               "file":  "I.json",
+                               "isotope_count":  1
+                           },
+                     "Xe":  {
+                                "Z":  54,
+                                "file":  "Xe.json",
+                                "isotope_count":  9
+                            },
+                     "Cs":  {
+                                "Z":  55,
+                                "file":  "Cs.json",
+                                "isotope_count":  1
+                            },
+                     "Ba":  {
+                                "Z":  56,
+                                "file":  "Ba.json",
+                                "isotope_count":  7
+                            },
+                     "La":  {
+                                "Z":  57,
+                                "file":  "La.json",
+                                "isotope_count":  2
+                            },
+                     "Ce":  {
+                                "Z":  58,
+                                "file":  "Ce.json",
+                                "isotope_count":  4
+                            },
+                     "Pr":  {
+                                "Z":  59,
+                                "file":  "Pr.json",
+                                "isotope_count":  1
+                            },
+                     "Nd":  {
+                                "Z":  60,
+                                "file":  "Nd.json",
+                                "isotope_count":  6
+                            },
+                     "Pm":  {
+                                "Z":  61,
+                                "file":  "Pm.json",
+                                "isotope_count":  1
+                            },
+                     "Sm":  {
+                                "Z":  62,
+                                "file":  "Sm.json",
+                                "isotope_count":  6
+                            },
+                     "Eu":  {
+                                "Z":  63,
+                                "file":  "Eu.json",
+                                "isotope_count":  2
+                            },
+                     "Gd":  {
+                                "Z":  64,
+                                "file":  "Gd.json",
+                                "isotope_count":  7
+                            },
+                     "Tb":  {
+                                "Z":  65,
+                                "file":  "Tb.json",
+                                "isotope_count":  1
+                            },
+                     "Dy":  {
+                                "Z":  66,
+                                "file":  "Dy.json",
+                                "isotope_count":  7
+                            },
+                     "Ho":  {
+                                "Z":  67,
+                                "file":  "Ho.json",
+                                "isotope_count":  1
+                            },
+                     "Er":  {
+                                "Z":  68,
+                                "file":  "Er.json",
+                                "isotope_count":  6
+                            },
+                     "Tm":  {
+                                "Z":  69,
+                                "file":  "Tm.json",
+                                "isotope_count":  1
+                            },
+                     "Yb":  {
+                                "Z":  70,
+                                "file":  "Yb.json",
+                                "isotope_count":  7
+                            },
+                     "Lu":  {
+                                "Z":  71,
+                                "file":  "Lu.json",
+                                "isotope_count":  2
+                            },
+                     "Hf":  {
+                                "Z":  72,
+                                "file":  "Hf.json",
+                                "isotope_count":  6
+                            },
+                     "Ta":  {
+                                "Z":  73,
+                                "file":  "Ta.json",
+                                "isotope_count":  2
+                            },
+                     "W":  {
+                               "Z":  74,
+                               "file":  "W.json",
+                               "isotope_count":  5
+                           },
+                     "Re":  {
+                                "Z":  75,
+                                "file":  "Re.json",
+                                "isotope_count":  2
+                            },
+                     "Os":  {
+                                "Z":  76,
+                                "file":  "Os.json",
+                                "isotope_count":  7
+                            },
+                     "Ir":  {
+                                "Z":  77,
+                                "file":  "Ir.json",
+                                "isotope_count":  2
+                            },
+                     "Pt":  {
+                                "Z":  78,
+                                "file":  "Pt.json",
+                                "isotope_count":  6
+                            },
+                     "Au":  {
+                                "Z":  79,
+                                "file":  "Au.json",
+                                "isotope_count":  1
+                            },
+                     "Hg":  {
+                                "Z":  80,
+                                "file":  "Hg.json",
+                                "isotope_count":  7
+                            },
+                     "Tl":  {
+                                "Z":  81,
+                                "file":  "Tl.json",
+                                "isotope_count":  2
+                            },
+                     "Pb":  {
+                                "Z":  82,
+                                "file":  "Pb.json",
+                                "isotope_count":  4
+                            },
+                     "Bi":  {
+                                "Z":  83,
+                                "file":  "Bi.json",
+                                "isotope_count":  1
+                            },
+                     "Po":  {
+                                "Z":  84,
+                                "file":  "Po.json",
+                                "isotope_count":  1
+                            },
+                     "At":  {
+                                "Z":  85,
+                                "file":  "At.json",
+                                "isotope_count":  1
+                            },
+                     "Rn":  {
+                                "Z":  86,
+                                "file":  "Rn.json",
+                                "isotope_count":  1
+                            },
+                     "Fr":  {
+                                "Z":  87,
+                                "file":  "Fr.json",
+                                "isotope_count":  1
+                            },
+                     "Ra":  {
+                                "Z":  88,
+                                "file":  "Ra.json",
+                                "isotope_count":  1
+                            },
+                     "Ac":  {
+                                "Z":  89,
+                                "file":  "Ac.json",
+                                "isotope_count":  1
+                            },
+                     "Th":  {
+                                "Z":  90,
+                                "file":  "Th.json",
+                                "isotope_count":  2
+                            },
+                     "Pa":  {
+                                "Z":  91,
+                                "file":  "Pa.json",
+                                "isotope_count":  1
+                            },
+                     "U":  {
+                               "Z":  92,
+                               "file":  "U.json",
+                               "isotope_count":  3
+                           },
+                     "Np":  {
+                                "Z":  93,
+                                "file":  "Np.json",
+                                "isotope_count":  1
+                            },
+                     "Pu":  {
+                                "Z":  94,
+                                "file":  "Pu.json",
+                                "isotope_count":  2
+                            },
+                     "Am":  {
+                                "Z":  95,
+                                "file":  "Am.json",
+                                "isotope_count":  2
+                            },
+                     "Cm":  {
+                                "Z":  96,
+                                "file":  "Cm.json",
+                                "isotope_count":  1
+                            },
+                     "Bk":  {
+                                "Z":  97,
+                                "file":  "Bk.json",
+                                "isotope_count":  1
+                            },
+                     "Cf":  {
+                                "Z":  98,
+                                "file":  "Cf.json",
+                                "isotope_count":  1
+                            },
+                     "Es":  {
+                                "Z":  99,
+                                "file":  "Es.json",
+                                "isotope_count":  1
+                            },
+                     "Fm":  {
+                                "Z":  100,
+                                "file":  "Fm.json",
+                                "isotope_count":  1
+                            },
+                     "Md":  {
+                                "Z":  101,
+                                "file":  "Md.json",
+                                "isotope_count":  1
+                            },
+                     "No":  {
+                                "Z":  102,
+                                "file":  "No.json",
+                                "isotope_count":  1
+                            },
+                     "Lr":  {
+                                "Z":  103,
+                                "file":  "Lr.json",
+                                "isotope_count":  1
+                            },
+                     "Rf":  {
+                                "Z":  104,
+                                "file":  "Rf.json",
+                                "isotope_count":  1
+                            },
+                     "Db":  {
+                                "Z":  105,
+                                "file":  "Db.json",
+                                "isotope_count":  1
+                            },
+                     "Sg":  {
+                                "Z":  106,
+                                "file":  "Sg.json",
+                                "isotope_count":  1
+                            },
+                     "Bh":  {
+                                "Z":  107,
+                                "file":  "Bh.json",
+                                "isotope_count":  1
+                            },
+                     "Hs":  {
+                                "Z":  108,
+                                "file":  "Hs.json",
+                                "isotope_count":  1
+                            },
+                     "Mt":  {
+                                "Z":  109,
+                                "file":  "Mt.json",
+                                "isotope_count":  1
+                            },
+                     "Ds":  {
+                                "Z":  110,
+                                "file":  "Ds.json",
+                                "isotope_count":  1
+                            },
+                     "Rg":  {
+                                "Z":  111,
+                                "file":  "Rg.json",
+                                "isotope_count":  1
+                            },
+                     "Cn":  {
+                                "Z":  112,
+                                "file":  "Cn.json",
+                                "isotope_count":  1
+                            },
+                     "Nh":  {
+                                "Z":  113,
+                                "file":  "Nh.json",
+                                "isotope_count":  1
+                            },
+                     "Fl":  {
+                                "Z":  114,
+                                "file":  "Fl.json",
+                                "isotope_count":  1
+                            },
+                     "Mc":  {
+                                "Z":  115,
+                                "file":  "Mc.json",
+                                "isotope_count":  1
+                            },
+                     "Lv":  {
+                                "Z":  116,
+                                "file":  "Lv.json",
+                                "isotope_count":  1
+                            },
+                     "Ts":  {
+                                "Z":  117,
+                                "file":  "Ts.json",
+                                "isotope_count":  1
+                            },
+                     "Og":  {
+                                "Z":  118,
+                                "file":  "Og.json",
+                                "isotope_count":  1
+                            }
+                 },
+    "categories":  {
+                       "actinide":  [
+                                        "Ac",
+                                        "Am",
+                                        "Bk",
+                                        "Cf",
+                                        "Cm",
+                                        "Es",
+                                        "Fm",
+                                        "Lr",
+                                        "Md",
+                                        "No",
+                                        "Np",
+                                        "Pa",
+                                        "Pu",
+                                        "Th",
+                                        "U"
+                                    ],
+                       "transition_metal":  [
+                                                "Ag",
+                                                "Au",
+                                                "Bh",
+                                                "Cd",
+                                                "Cn",
+                                                "Co",
+                                                "Cr",
+                                                "Cu",
+                                                "Db",
+                                                "Ds",
+                                                "Fe",
+                                                "Hf",
+                                                "Hg",
+                                                "Hs",
+                                                "Ir",
+                                                "Mn",
+                                                "Mo",
+                                                "Mt",
+                                                "Nb",
+                                                "Ni",
+                                                "Os",
+                                                "Pd",
+                                                "Pt",
+                                                "Re",
+                                                "Rf",
+                                                "Rg",
+                                                "Rh",
+                                                "Ru",
+                                                "Sc",
+                                                "Sg",
+                                                "Ta",
+                                                "Tc",
+                                                "Ti",
+                                                "V",
+                                                "W",
+                                                "Y",
+                                                "Zn",
+                                                "Zr"
+                                            ],
+                       "post_transition_metal":  [
+                                                     "Al",
+                                                     "Bi",
+                                                     "Fl",
+                                                     "Ga",
+                                                     "In",
+                                                     "Lv",
+                                                     "Mc",
+                                                     "Nh",
+                                                     "Pb",
+                                                     "Po",
+                                                     "Sn",
+                                                     "Tl"
+                                                 ],
+                       "noble_gas":  [
+                                         "Ar",
+                                         "He",
+                                         "Kr",
+                                         "Ne",
+                                         "Og",
+                                         "Rn",
+                                         "Xe"
+                                     ],
+                       "metalloid":  [
+                                         "As",
+                                         "B",
+                                         "Ge",
+                                         "Sb",
+                                         "Si",
+                                         "Te"
+                                     ],
+                       "halogen":  [
+                                       "At",
+                                       "Br",
+                                       "Cl",
+                                       "F",
+                                       "I",
+                                       "Ts"
+                                   ],
+                       "alkaline_earth":  [
+                                              "Ba",
+                                              "Be",
+                                              "Ca",
+                                              "Mg",
+                                              "Ra",
+                                              "Sr"
+                                          ],
+                       "nonmetal":  [
+                                        "C",
+                                        "H",
+                                        "N",
+                                        "O",
+                                        "P",
+                                        "S",
+                                        "Se"
+                                    ],
+                       "lanthanide":  [
+                                          "Ce",
+                                          "Dy",
+                                          "Er",
+                                          "Eu",
+                                          "Gd",
+                                          "Ho",
+                                          "La",
+                                          "Lu",
+                                          "Nd",
+                                          "Pm",
+                                          "Pr",
+                                          "Sm",
+                                          "Tb",
+                                          "Tm",
+                                          "Yb"
+                                      ],
+                       "alkali_metal":  [
+                                            "Cs",
+                                            "Fr",
+                                            "K",
+                                            "Li",
+                                            "Na",
+                                            "Rb"
+                                        ]
+                   }
+}

@@ -9,6 +9,7 @@ import Superconductivity.CartanSuperconductivity
 import Superconductivity.FirstPrinciples
 import Superconductivity.SPAF
 import Superconductivity.MolecularGeometry
+import Superconductivity.MultiComponent
 
 /-!
 # CQM 超导形式化 (Superconductivity)

@@ -1,0 +1,38 @@
+{
+  "symbol": "Eu",
+  "name": "铕",
+  "name_en": "Europium",
+  "atomic_number": 63,
+  "atomic_mass": 151.964,
+  "category": "lanthanide",
+  "group": 3,
+  "period": 6,
+  "block": "f",
+  "valence_electrons": 7,
+  "electronegativity": 1.2,
+  "atomic_radius_pm": 198,
+  "covalent_radius_pm": 198,
+  "color": "#D6FFE6",
+  "isotopes": [
+    {
+      "mass_number": 151,
+      "neutrons": 88,
+      "mass_da": 150.91985,
+      "abundance": 0.4781,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 2.5
+    },
+    {
+      "mass_number": 153,
+      "neutrons": 90,
+      "mass_da": 152.92123,
+      "abundance": 0.5219,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 2.5
+    }
+  ]
+}

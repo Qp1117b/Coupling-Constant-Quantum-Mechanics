@@ -1,0 +1,38 @@
+{
+  "symbol": "Br",
+  "name": "溴",
+  "name_en": "Bromine",
+  "atomic_number": 35,
+  "atomic_mass": 79.904,
+  "category": "halogen",
+  "group": 17,
+  "period": 4,
+  "block": "p",
+  "valence_electrons": 7,
+  "electronegativity": 2.96,
+  "atomic_radius_pm": 114,
+  "covalent_radius_pm": 114,
+  "color": "#A62900",
+  "isotopes": [
+    {
+      "mass_number": 79,
+      "neutrons": 44,
+      "mass_da": 78.918338,
+      "abundance": 0.5069,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 81,
+      "neutrons": 46,
+      "mass_da": 80.916291,
+      "abundance": 0.4931,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    }
+  ]
+}
