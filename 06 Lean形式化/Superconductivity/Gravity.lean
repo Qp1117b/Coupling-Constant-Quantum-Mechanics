@@ -8,8 +8,7 @@ import Decoherence.Basic
 /-!
 # CQM 超导：引力因果限制场与退相干核 (Gravitational Causal-Limiting Field)
 
-本模块形式化《CQM 超导 涌现论》第三层的可计算结构：
-引力场 = 因果限制退相干场。
+本模块形式化《CQM 超导核心理论》的引力因果限制场（原"涌现论"第三层已并入该统一文档 §3 引力因果限制）。引力场 = 因果限制退相干场。
 
 ## 核心定义（自然单位 ℏ = c = 1）
 - **因果分辨率** τ_res = ℏ/(M c²) = 1/M
@@ -24,7 +23,7 @@ import Decoherence.Basic
 - 共振窗口严格为正（退相干筛选权重）
 
 ## 参考文献
-- ruster (2026). CQM 超导 涌现积分 第七层. CQMFormal/08 超导/.
+- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
 - ruster (2026). CQM 退相干 引力因果场. CQMFormal/03 引力与退相干/.
 -/
 

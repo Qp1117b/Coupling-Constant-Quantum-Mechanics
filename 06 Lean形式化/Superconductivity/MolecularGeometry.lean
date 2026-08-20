@@ -9,10 +9,12 @@ import Superconductivity.SPAF
 import Superconductivity.CartanSuperconductivity
 
 /-!
-# CQM 分子几何构型 → 有效超级嘉当矩阵 → Weyl嵌入 → Regge亏角 → GR有效度规
+# CQM 分子几何构型 → 有效超级嘉当矩阵 → 晶胞嘉当矩阵（链B）→ Regge晶胞/角亏（链A）→ FG退相干场
 
-本模块实现完整的形式化管线：从分子构型出发，经过原子级嘉当矩阵、
-有效超级嘉当矩阵、内禀Weyl矩阵嵌入、Regge亏角，最终到达GR有效度规场。
+本模块实现完整的形式化管线：从分子构型出发，经过原子级嘉当矩阵、有效超级嘉当矩阵，
+得到**晶胞嘉当矩阵**（链B：仅约束可实现曲率谱，不直接生成 Regge 晶胞，见核心文档 §3.2）；
+**Regge 晶胞/角亏**由链A（晶胞几何分布）独立生成，最终给出 FG 退相干场强度。
+§4 的 g_μν^eff 仅为 FG 强度的度量记号——CQM 不走 Regge→GR 连续极限路径（见核心文档 §4.2）。
 
 ## 管线概览
 
@@ -34,10 +36,11 @@ import Superconductivity.CartanSuperconductivity
   │   Weyl矩阵 W = diag(λ_1..λ_m)
   │   有效几何构型：χ_eff = (det W / det W_ref)^(1/3m)
   │
-  ├─ §4 Regge亏角与GR有效度规 ─────────────────────────
-  │   多分子体系：Regge单纯剖分
+  ├─ §4 Regge亏角与FG退相干场 ─────────────────────────
+  │   晶胞体系（链A几何分布）：Regge单纯剖分
   │   亏角 δ_v = 2π − Σ_{围绕v} θ_tet（四面体二面角和）
-  │   GR有效度规：g_μν^eff = η_μν + h_μν(δ_v)
+  │   嘉当矩阵谱（链B）约束边长标度 l_ij = κ/√(λ_i·λ_j)
+  │   FG强度度量：g_μν^eff = η_μν + h_μν(δ_v)（非 Regge→GR 连续极限）
   │
   └─ §5 压强→几何构型 + 温度→再生产效应 ─────────────────
       压强：P → χ(P) → 标度 ω_D, λ, κ
@@ -55,7 +58,7 @@ import Superconductivity.CartanSuperconductivity
 - [weylEmbedding_diagonal]：Weyl嵌入 = diag(本征值)
 - [effectiveGeometricCompression_pos]：χ_eff > 0
 - [reggeDeficitAngle_nonneg]：Regge亏角 ≥ 0（正曲率）
-- [grEffectiveMetric_symmetric]：g_μν^eff 对称
+- [grEffectiveMetric_symmetric]：g_μν^eff 对称（FG强度度量记号，非 Regge→GR 连续极限）
 
 ## 参考文献
 - Regge (1961). General relativity without coordinates. Nuovo Cim. 19, 558.
@@ -747,10 +750,12 @@ theorem molecularSuperCartanTrace_eq (mol : MoleculeConfig) (eps_n : ℝ) :
     (List.sum (mol.atoms.map (fun a => (a.protonCount : ℝ) * 8 + (a.neutronCount : ℝ) * (8 - eps_n)))) := by
   rfl
 
-/-! ## §4. Regge亏角与GR有效度规 -/
+/-! ## §4. Regge亏角与FG退相干场 -/
 
-/-- Regge单纯剖分中的四面体：4 个顶点（分子位置）构成一个 4-单纯形。
-    每个分子为一个顶点，其嘉当矩阵的本征值决定该顶点的"质量"（曲率源）。 -/
+/-- Regge单纯剖分中的四面体：4 个顶点（晶胞位置）构成一个 4-单纯形。
+    每个晶胞为一个顶点，其嘉当矩阵的本征值决定该顶点的"质量"（曲率源）。
+    Regge 晶胞由链A（晶胞几何分布）生成；嘉当矩阵谱（链B）仅约束边长标度，
+    不直接生成 Regge 晶胞（见核心文档 §3.2）。 -/
 structure ReggeTetrahedron where
   vertices : Fin 4 → EuclideanCoord
   eigenvalues : Fin 4 → ℝ  -- 每个顶点的嘉当矩阵谱间隙
@@ -893,28 +898,31 @@ theorem deficitAngleDensity_scaling_from_spectralGap {kappa lam deltaV : ℝ}
   have h6 : (6 * Real.sqrt 2 : ℝ) ≠ 0 := by positivity
   field_simp [hk.ne', hlam.ne', h6]
 
-/-! ### §4.4 GR有效度规扰动与亏角密度的关系 -/
+/-! ### §4.4 FG强度度量扰动与亏角密度的关系 -/
 
-/-- GR有效度规（Regge连续极限）：
+/-- FG 强度度量（仅作为退相干场强度的记号，非 Regge→GR 连续极限路径）：
     g_μ_ν^eff = η_μ_ν + h_μ_ν，其中 h_μ_ν 由 Regge 亏量分布决定。
     在 Regge 微积分中，度规扰动 h_μ_ν 与亏量 δ_v 的关系为：
     h_00 = Σ_v δ_v · (标量传播子)_v，h_ij = (各向同性近似) −(1/3)h_00 · δ_ij。
-    此处给出最简形式：h_μ_ν = δ · diag(1, −1/3, −1/3, −1/3)。 -/
+    此处给出最简形式：h_μ_ν = δ · diag(1, −1/3, −1/3, −1/3)。
+    CQM 中此量仅度量因果限制/退相干场强度，不表示时空几何引力（见核心文档 §4.2）。 -/
 noncomputable def grEffectiveMetricPerturbation (delta : ℝ) : Matrix (Fin 4) (Fin 4) ℝ :=
   fun i j =>
     if i = j then
       if i = 0 then delta else -delta / 3
     else 0
 
-/-- GR有效度规 = 闵氏度规 + 扰动。 -/
+/-- FG 强度度量 = 闵氏度规记号 + 扰动（非 Regge→GR 连续极限）。 -/
 noncomputable def grEffectiveMetric (delta : ℝ) : Matrix (Fin 4) (Fin 4) ℝ :=
   let eta : Matrix (Fin 4) (Fin 4) ℝ := fun i j =>
     if i = j then (if i = 0 then -1 else 1) else 0
   eta + grEffectiveMetricPerturbation delta
 
-/-- [定理] GR有效度规的时-时分量与亏角密度的线性关系：
+/-- [定理] FG强度度量（g_μν^eff 记号）的时-时分量与亏角密度的线性关系：
     g_00 = -1 + α · δ_eff，其中 α 为耦合常数（标量传播子在零距离的取值）。
-    物理含义：亏角密度越大 → 引力势阱越深 → g_00 越负。 -/
+    物理含义：亏角密度越大 → 因果限制/退相干场强度越大（以 g_00 偏离闵氏度规记号度量）→ g_00 越负。
+    注意：CQM 中精细引力不表现为几何吸引力/时空测地线约束，而是因果限制强度的体现，
+    不走 Regge→GR 连续极限路径（见核心文档 §4.2）。 -/
 theorem grMetric_from_deficitDensity {deltaV tetVolume alpha : ℝ}
     (hV : 0 < tetVolume) (halpha : 0 < alpha) :
     grEffectiveMetric (alpha * deficitAngleDensity deltaV tetVolume) 0 0 =
@@ -922,7 +930,7 @@ theorem grMetric_from_deficitDensity {deltaV tetVolume alpha : ℝ}
   unfold grEffectiveMetric grEffectiveMetricPerturbation
   simp
 
-/-- GR有效度规对称。 -/
+/-- FG 强度度量（g_μν^eff 记号）对称。 -/
 theorem grEffectiveMetric_symmetric (delta : ℝ) :
     ∀ i j : Fin 4, grEffectiveMetric delta i j = grEffectiveMetric delta j i := by
   intro i j
@@ -933,18 +941,19 @@ theorem grEffectiveMetric_symmetric (delta : ℝ) :
   · have h' : j ≠ i := fun hji => h hji.symm
     simp [h, h']
 
-/-- Regge亏角与GR有效度规的因果关系：
-    亏角 δ_v > 0 → 有效度规 g_00 = −1 + δ > −1（引力势阱变浅）。
-    这对应"质量（嘉当矩阵的谱权重）产生引力场"的 CQM 版本。 -/
+/-- Regge亏角与FG强度度量（g_μν^eff 记号）的关系：
+    亏角 δ_v > 0 → 度量记号 g_00 = −1 + δ > −1（因果限制强度减弱，趋于平直记号）。
+    这对应"质量（嘉当矩阵的谱权重）产生因果限制/退相干场"的 CQM 版本——而非经典几何吸引力
+    （FG 不走 Regge→GR 连续极限路径，见核心文档 §4.2）。 -/
 theorem reggeDeficit_to_metric_timeComponent {delta : ℝ} (hd : 0 < delta) :
     -1 < grEffectiveMetric delta 0 0 := by
   unfold grEffectiveMetric grEffectiveMetricPerturbation
   simp
   linarith
 
-/-- [定理] GR有效度规的洛伦兹号差：当 |δ| < 3 时，g_μν^eff 保持洛伦兹号差 (−,+,+,+)。
+/-- [定理] FG强度度量（g_μν^eff 记号）的洛伦兹号差：当 |δ| < 3 时，保持洛伦兹号差 (−,+,+,+)。
     即 g_00 < 0 且 g_ii > 0（i=1,2,3）。
-    当 δ ≥ 3 时，g_11 = 1 − δ/3 ≤ 0，空间分量号差反转。 -/
+    当 δ ≥ 3 时，g_11 = 1 − δ/3 ≤ 0，空间分量号差反转（仅为度量记号性质，非时空几何）。 -/
 theorem grEffectiveMetric_lorentzSignature {delta : ℝ} (hd1 : delta < 1) :
     grEffectiveMetric delta 0 0 < 0 ∧
     (∀ i : Fin 4, i ≠ 0 → 0 < grEffectiveMetric delta i i) := by
@@ -960,7 +969,7 @@ theorem grEffectiveMetric_lorentzSignature {delta : ℝ} (hd1 : delta < 1) :
 
 /-- [定理] Regge亏角确定度规扰动的幅值：h_00 = δ，h_ii = −δ/3。
     因此亏角 δ 直接度量了引力势的强度：
-    δ = 0 → 闵氏时空，δ > 0 → 引力势阱，δ < 0 → 引力势垒。 -/
+    δ = 0 → 闵氏时空（无因果限制），δ > 0 → 因果限制/退相干场增强，δ < 0 → 因果限制减弱。 -/
 theorem reggeDeficit_determines_perturbation (delta : ℝ) :
     grEffectiveMetricPerturbation delta 0 0 = delta ∧
     grEffectiveMetricPerturbation delta 1 1 = -delta / 3 := by
@@ -988,12 +997,12 @@ theorem quadraticForm_lowerBound_to_spectralGap_bound {t : ℝ} (ht_nonneg : 0 �
     6. C_mol = ⊕C_atom(k) + ΣT_ij → [概念定义，类型级 blockDiagonal 限制]
     7. 对角化 C_mol → 本征值谱 λ_1..λ_m（Weyl嵌入）→ [已形式化: Weyl条件数、行列式界、谱间隙界]
     8. 计算有效几何压缩因子 χ_eff → [已形式化: effectiveGeometricCompression, 单调性, 谱间隙界]
-    9. 对多分子体系：Regge四面体边长 l_ij = κ/√(λ_i·λ_j) → [已形式化: 边长单调性]
+    9. 对晶胞体系（链A几何分布）：Regge四面体边长 l_ij = κ/√(λ_i·λ_j)（链B谱仅约束标度）→ [已形式化: 边长单调性]
     10. 正四面体二面角 θ_reg = arccos(1/3) → [已形式化: 二面角定义、范围、余弦]
     11. 亏角密度 δ_eff = δ_v / V_tet → [已形式化: 标度律 δ_eff ∝ λ^(3/2)]
-    12. 构造 GR 有效度规 g_μν^eff = η_μν + h_μν(δ_eff) → [已形式化: 度规-亏角密度关系]
+    12. 构造 FG 强度度量记号 g_μν^eff = η_μν + h_μν(δ_eff)（非 Regge→GR 连续极限）→ [已形式化: 度规-亏角密度关系]
     13. 压强 P → χ(P) → λ_min → l_ij → δ_eff → g_μν 完整因果链 → [已形式化: 严格7步链]
-    14. 谱间隙 → Regge边长 → 亏角密度 → GR度规 桥接定理 → [已形式化: 严格4步链]
+    14. 谱间隙 → Regge边长 → 亏角密度 → FG强度度量 桥接定理 → [已形式化: 严格4步链]
     15. 压强 P → χ(P) → 标度 ω_D, λ, κ → [已形式化: 三个桥梁定理, 穹顶极限]
     16. 温度 T → R(T) → 再生产修正 T_c^eff → [已形式化: 再生产因子, 单调性, 自洽方程]
     17. 磁场不显式考虑 → [已声明]

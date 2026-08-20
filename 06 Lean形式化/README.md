@@ -21,7 +21,7 @@
 | **Decoherence** | `Basic.lean` | `confinementScale`、`CausalLayer`、三层结构 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现公式结构性表达、庸俗隐变量分解对比（公理为主） |
-| **Superconductivity** | `Ontology.lean`, `Gravity.lean`, `Mechanism.lean`, `Integral.lean`, `TransitionTemperature.lean`, `StrongGravity.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `SPAF_PT.lean`, `SPAF_PTH.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `MultiComponent.lean` | 强引力超导（17 模块）：有限本体论、τ_res/ω_causal、三方因果闭环、涌现积分、T_c、T_grav、**BCS 退化与还原**、**嘉当张量超导方程（A₄ 谱分解）**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→Regge→GR**、**多分量序参量与分步相变（对应 LaH₁₀ 四极 T₂g 相变）** |
+| **Superconductivity** | `Ontology.lean`, `Gravity.lean`, `Mechanism.lean`, `Integral.lean`, `TransitionTemperature.lean`, `StrongGravity.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `SPAF_PT.lean`, `SPAF_PTH.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean` | 强引力超导（16 模块）：有限本体论、τ_res/ω_causal、三方因果闭环、涌现积分、T_c、T_grav、**BCS 退化与还原（§11 温度依赖）**、**嘉当张量超导方程（§9 库珀对跃迁）**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵（链B约束）→Regge晶胞/角亏（链A生成）→FG退相干场** |
 
 ## 形式化推导链
 
@@ -121,7 +121,6 @@ Axioms
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
 | — | Adele 约束 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
 | — | 谱量子 C = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
-| — | Regge 度规弱场展开 → Poisson 方程（牛顿引力退化） | `ElementCartan` | `def` 占位（待 Regge 连续极限） |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
 
@@ -163,17 +162,16 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 
 ## 本次更新亮点 (v0.6.0)
 
-- **多分量序参量与分步相变（MultiComponent.lean）**：新增 23 定理，形式化 CQM §10.3 多分量凝聚与分步相变，对应 2026 年 8 月最新实验 LaH₁₀ 四极 T₂g 相变（arXiv:2608.10428）。核心定理：`condensationTemperature_gapChannel_highest`（谱间隙通道凝聚温度最高）、`stepwisePhaseTransition`（分步相变——部分凝聚相：只有谱间隙通道凝聚，其余通道未凝聚）、`partialCondensationPhase_exists`（部分凝聚相存在性）、`condensedChannelCount_full_below_channel3`（T < T_{c,3} 时全部 4 通道凝聚）、`laH10_quadrupolarTransition_correspondsTo_gapChannel`（LaH₁₀ 四极相变对应谱间隙通道凝聚）。配对通道数 = A₄ 秩 = 4（`pairingChannelCount_eq_rank`），对应 Higgs + 3 个 BS 激子（arXiv:2608.12461）
-- **2026 年最新超导文献调研**：新增研究推进文档 `08 超导/CQM 超导推进 2026最新探索.md`，调研 arXiv cond-mat.supr-con 2026-08-10 至 2026-08-14 共 40 篇近期提交，识别两个核心实验契合点：(1) LaH₁₀ 四极 T₂g 相变 ↔ CQM §10.3 分步相变（★★★），(2) Higgs-BS 竞争配对 ↔ CQM A₄ 根系多分量序参量（★★★）。提出四个 Lean 形式化扩展模块大纲（MultiComponent、CompetingChannels、QuadrupolarOrder、PseudogapCQM）与 12 个新严格性缺口
-- **定理总数**：从 624 → 647（+23 个严格证明的定理），Superconductivity 库从 317 → 340（+23），模块数从 16 → 17
+- **去除落后形式化**：删除 `MultiComponent.lean`（其引用的 §16 非平庸 GL 自由能理论与旧 §10.3 多分量凝聚已在文档中删除/改写，与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由落后的 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ)`、G13 标注已闭合、G17 标注已删除；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对已删除文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
+- **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除，其对应的 GL 物理内容已在文档层面弃用）
 
 ## 本次更新亮点 (v0.5.9)
 
 - **RQM 唯物化文档化**：将关系量子力学的唯物化操作正式纳入 SPAF 框架文档（§0）。三条原则：属性随附本体、因果自组织、观察者相对性的自然消解。推论：电子去特权化——取消电子的本体特权，使嘉当矩阵拼接理论得以统一处理超导问题，与 BCS 历史实践（晶格是关键）一致
-- **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 亏角→GR 有效度规）→ 层级 VI（牛顿引力退化，因果分辨率）
+- **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 亏角→FG 退相干场强度）→ 层级 VI（因果分辨率）
 - **元素主次结构**：BCS 同位素效应揭示元素内部存在主次结构——质子扇区（纯 A4 块对角）为主、中子扇区（缺陷 A4 块对角）为次。主次结构直接指向 BCS 退化方向（往单元素材料退化），并揭示拼接规则（同种元素同位素之间 $\epsilon(N)$ 连续变化，跨元素种类需要 $t_{ij}$ 参数）
 - **阶段 0：元素层级**：新增计算管线步骤 0a–0d（质子/中子分配→元素嘉当矩阵组装→主次结构识别→BCS 退化验证），使元素层级计算先于分子层级
-- **新增缺口 11–15**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、牛顿引力退化定理、单元素拼接规则特殊性
+- **新增缺口 11–15**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、~~牛顿引力退化定理~~（G17已删除：FG不走Regge→GR连续极限）、单元素拼接规则特殊性
 - **文档总数**：SPAF 框架文档从 355 行扩展至约 500 行，新增 §0、§2.5、§5 阶段 0、§10.5 共四个章节
 - **定理总数**：保持不变（624），本次更新为文档架构与概念框架的深化，非 Lean 代码层变更
 
@@ -183,7 +181,7 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 - **`bcsConstant_gt_one` 公理→定理**：`2e^γ/π > 1` 从 `axiom` 升级为 `theorem`。证明链：γ > 1/2（Mathlib `one_half_lt_eulerMascheroniConstant`）→ exp(γ) > exp(1/2) → 平方差因式分解证明 2·exp(1/2) > π（利用 π < 3.1416 和 exp(1) > 2.718）→ 2·exp(γ)/π > 1。BCS 理论中前因子 > 1 的"数值事实"首次从 Mathlib 已知数值界严格证明
 - **桥接定理（跨模块因果链）**：新增 `BridgeTheorems.lean`（23 定理），将 CQM 各模块严格连接：`spectralGap_bcsTc_bound`（A₄ 谱间隙→BCS T_c 上限）、`gapChannelTc_exact`（谱间隙通道 T_c 闭式）、`spectralGap_to_ricciScalar_chain`（谱间隙→亏角密度→Ricci 标量）、`twoAtomSuperCartan_quadratic_lowerBound`（双原子耦合正定性）——用 Cauchy-Schwarz + AM-GM 严格证明 |t| < λ_min 时分子超嘉当矩阵正定
 - **元素嘉当矩阵（质/中子层级）**：新增 `ElementCartan.lean`（39 定理），从质子/中子基本嘉当矩阵出发，按 Z/N 组装元素嘉当矩阵。包含：质子扇区（纯 A₄ 块对角）、中子扇区（缺陷 A₄，参数 ε(N)）、同位素效应（ε(N) = ε₀·(1+β·(N−N_ref)/N_ref)）、**单元素材料 CQM→BCS 退化**（§9：ε→0 时 T_c→bcsCriticalTemperature(ω_D, λ₁)，BCS 是 CQM 在单元素、无中子缺陷极限下的特例）、极端引力例外（中子星/强引力/黑洞视界，5 个 `True` 占位转为诚实 `def`）
-- **分子几何→GR 有效度规管线**：新增 `MolecularGeometry.lean`（62 定理），完整形式化从分子构型到 GR 有效度规的管线：原子嘉当矩阵 → 分子超嘉当矩阵（块对角 + 跨原子耦合 t_ij）→ Weyl 嵌入（对角化提取谱间隙）→ Regge 亏角（δ_v = 2π − Σθ_tet）→ GR 有效度规（g_μν^eff = η_μν + h_μν(δ_v)）。`twoProtonCoupling_exactThreshold`（G20-ext 闭合）用 SOS 分解 + 黄金比例恒等式证明两质子耦合在 t < λ₁ 时正定
+- **分子几何→FG 退相干场管线**：新增 `MolecularGeometry.lean`（62 定理），完整形式化从分子构型到 FG 退相干场的管线：原子嘉当矩阵 → 分子超嘉当矩阵（块对角 + 跨原子耦合 t_ij）→ Weyl 嵌入（对角化提取谱间隙）→ Regge 亏角（δ_v = 2π − Σθ_tet）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限）。`twoProtonCoupling_exactThreshold`（G20-ext 闭合）用 SOS 分解 + 黄金比例恒等式证明两质子耦合在 t < λ₁ 时正定
 - **SPAF 压强-温度几何构型**：新增 `SPAF_PT.lean`（29 定理），将压强和温度转化为 A₄ 几何效应：几何压缩因子 χ(P) = (P/P_ref)^(1/3)、桥接定理（χ(P)→ω_D(P)、χ(P)→λ(P)）、再生产因子 R(T) = exp(−Γ_eff(T)·τ)、自洽 T_c 方程。新增 `SPAF_PTH.lean`（5 定理）涵盖磁场三相框架
 - **消除所有 `True` 占位公理和 `sorry`**：`ElementCartan.lean` 中 5 个返回 `True` 的占位公理转为诚实 `def` 声明（`newtonianGravity_degeneracy`、`causalResolution_gravity_details`、`neutronStar_exception_idealCartan_fails`、`strongGravity_exception_newtonianDegeneracy_fails`、`extremeGravity_causalResolution_enhancement`），明确标注"不构成证明，仅标记命题声明位置"。全部 16 个 Superconductivity 模块零 `sorry`、零 `axiom`（除 `Ontology.lean` 中 5 条本体论公理，为框架出发点）
 - **定理总数**：从 426 → 624（+198 个严格证明的定理），Superconductivity 库从 119 → 317（+198）
@@ -232,8 +230,8 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 - **朴素 CQM 异常（条件定理）**：`naive_cqm_isotope_anomaly` 只证明朴素替换下 T_c 随质量单调不减、与实验相反；它标示、而非证明退化的必要性
 - **严格性整治**：消除 4/1.13 循环论证；能隙公式从凭空定义改为能隙方程推导；所有数值近似（1.13、3.53、0.707、1.2、1.04）在文档字符串中如实标注，不冒充定理结论
 - **公理依赖审计（`#print axioms`）**：`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation(_unique)`、`bcs_gap_weak_coupling_limit`、同位素三定理、`emergenceIntegral_pos`、`strong_gravity_keeps_pairing_channels` 等全部只依赖 Lean 内核逻辑公理（`propext`、`Classical.choice`、`Quot.sound`），**不依赖任何 `physical_hypothesis` 本体论公理**——物理假设仅作公理存在、未冒充定理结论
-- **金属氢机制文档与计算器**：`08 超导/CQM 超导 金属氢机制与计算框架.md`（H3S 203 K / LaH10 250 K / MgB2 39 K 验证）+ `CQM超导Tc计算器.py`（BCS/McMillan–Dynes/同位素）
-- **室温方向文档**：`08 超导/CQM 室温超导方向.md`（三条路线 + 同位素指数 α(P) 判别性实验）
+- **金属氢机制验证**：H3S 203 K / LaH10 250 K / MgB2 39 K 验证数据已并入《CQM 超导核心理论》（08 超导），BCS/McMillan–Dynes/同位素计算对应 `TransitionTemperature.lean` 中的严格定理
+- **室温方向**：三条路线 + 同位素指数 α(P) 判别性实验已并入《CQM 超导核心理论》（08 超导）§20-§21
 
 ## 本次更新亮点 (v0.5.2)
 
@@ -264,7 +262,7 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 
 ## 版本
 
-- **项目版本**: 0.5.9
+- **项目版本**: 0.6.0
 - **Lean 版本**: 4.29.1
 - **依赖**: mathlib, physlib
-- **最后更新**: 2026-08-06
+- **最后更新**: 2026-08-20

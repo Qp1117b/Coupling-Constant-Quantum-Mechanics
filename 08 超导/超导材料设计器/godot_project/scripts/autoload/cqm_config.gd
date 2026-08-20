@@ -31,8 +31,8 @@ func _init_defaults():
         "universal_gap_ratio": 3.5278
     }
     models = {
-        "defect_mode": {"type": "diagonal", "pattern": [1,0,0,0]},
-        "neutron_defect_function": {"type": "linear", "default_eps_0": 0.0012, "default_beta": 0.1},
+        "defect_mode": {"type": "off_diagonal_alpha4", "position": [2,3]},
+        "neutron_defect_function": {"type": "linear", "default_delta_0": 0.9988, "default_beta": 0.1},
         "proton_sector_model": {"type": "pure_A4"},
         "cross_element_coupling": {"type": "scalar_identity"},
         "tc_estimation": {"method": "bcs_cqm_corrected"}
@@ -69,8 +69,14 @@ func get_universal_gap_ratio() -> float:
 func get_defect_pattern() -> Array:
     return models.get("defect_mode", {}).get("pattern", [1,0,0,0])
 
-func get_eps_0() -> float:
-    return float(models.get("neutron_defect_function", {}).get("default_eps_0", 0.0012))
+func get_defect_type() -> String:
+    return models.get("defect_mode", {}).get("type", "off_diagonal_alpha4")
+
+func get_defect_position() -> Array:
+    return models.get("defect_mode", {}).get("position", [2,3])
+
+func get_delta_0() -> float:
+    return float(models.get("neutron_defect_function", {}).get("default_delta_0", 0.9988))
 
 func get_beta() -> float:
     return float(models.get("neutron_defect_function", {}).get("default_beta", 0.1))

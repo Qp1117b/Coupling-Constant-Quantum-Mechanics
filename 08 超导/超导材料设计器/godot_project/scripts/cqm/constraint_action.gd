@@ -1,8 +1,8 @@
 extends RefCounted
 class_name CQMConstraintAction
 
-# CQM 约束作用量 S_constraint — §3.1
-# A4-Regge几何骨架 + 压强-距离结构
+# CQM 约束作用量 S_constraint — §4(Regge几何) + §5(精细引力纤维丛)
+# A4-Regge几何骨架 + 压强-距离结构 (链A: 几何分布)
 # S = Σ_T Σ_h tr(Θ_h[Γ_T] ∘ M_h[R]) + Σ_<TT'> tr(P(d_TT') ∘ Γ_TT')
 #
 # Θ_h[Γ_T]    : 绕hinge h的矩阵和乐(holonomy), A4嘉当矩阵路径排序乘积
@@ -10,7 +10,7 @@ class_name CQMConstraintAction
 # P(d_TT')    : 压强-距离张量, d_TT' = |ln(r_T/r_T')|
 # Γ_TT'       : 超级嘉当矩阵T-T'块连接子矩阵 (块间耦合 = -β·I₄, molecular_cartan.gd)
 #
-# 严格化实现 (对应 G16/G17 桥接):
+# 严格化实现 (对应 G16 桥接, G17已删除):
 #   Θ_h = |∏_{环路跃迁} w_i · tr(P4^N)| / 4, P4 = A4/(2+√2) 谱半径归一化
 #         环路跃迁权重取环绕四面体对面顶点间的关系网络关联 R_{c_i d_i}
 #         P4 本征值 {3-2√2, 2-√2, 2-√2, 1} ⊂ (0,1], 幂次有界, 和乐良定义

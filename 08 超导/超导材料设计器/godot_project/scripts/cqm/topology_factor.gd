@@ -1,14 +1,14 @@
 extends RefCounted
 class_name CQMTopologyFactor
 
-# CQM 拓扑增强因子 F[Top] — §3.2
-# 从约束作用量对 R_ij 的二阶变分出发：
-#   K_ij,kl = δ²S_constraint / δR_ij δR_kl |_{R̄}  (拓扑刚度矩阵)
+# CQM 曲率涨落调制因子 F[curv] — §5(精细引力纤维丛)
+# 从Regge几何导出曲率刚度:
+#   K_ij,kl = δ²S_constraint / δR_ij δR_kl |_{R̄}  (曲率刚度矩阵)
 #   S_top = -Tr(ρ_top · ln(ρ_top))  (冯·诺依曼熵, ρ_top = K/Tr(K))
-#   F[Top] = exp(-S_top)
+#   F[curv] = exp(-S_top)
 #
-# 非周期拼接(Q>0) → 能隙 → S_top > 0 → F[Top] < 1
-# 平庸极限(周期晶格) → S_top = 0 → F[Top] = 1
+# 非周期拼接(Q>0) → 能隙 → S_top > 0 → F[curv] < 1
+# 平庸极限(周期晶格) → S_top = 0 → F[curv] = 1
 
 static func compute_from_stiffness(stiffness_matrix: Array) -> float:
 	if stiffness_matrix.is_empty():

@@ -8,8 +8,7 @@ import PhysicalConstants.Basic
 /-!
 # CQM 超导：本体论与禁闭几何 (Ontology & Confinement Geometry)
 
-本模块形式化《CQM 超导 涌现论》的第一层（有限本体与禁闭几何）与
-第二层（电子作为第一阶涌现物）。
+本模块形式化《CQM 超导核心理论》的本体论与禁闭几何（原"涌现论"第一、二层已并入该统一文档 §1-§2）。
 
 ## 第一层：有限本体与禁闭几何
 - **命题 1.1** 有限本体 = 质子（自我维持再生产闭环）
@@ -28,7 +27,7 @@ import PhysicalConstants.Basic
 可计算事实（如电子电荷符号、4-单纯形 Euler 示性数）则以定义 + 定理严格形式化。
 
 ## 参考文献
-- ruster (2026). CQM 超导 涌现论. CQMFormal/08 超导/.
+- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
 - ruster (2026). CQM 核心 一证七联. CQMFormal/01 核心理论/.
 -/
 

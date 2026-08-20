@@ -1,10 +1,10 @@
 extends RefCounted
 class_name CrystalFormLayer
 
-## 第四层：晶型 (Crystal Form / Polymorph)
-## 同一种分子在固态中通过分子间作用力形成的不同周期性堆积方式
-## 包括晶胞参数、空间群、分子在晶格中的取向与位置
-## 可控性：间接调控 — 通过结晶条件诱导，非直接设计
+## L3 第四层：晶胞 (Unit Cell)
+## 分子间/多面体间的周期性堆积：空间群、布拉维格子、晶格参数、Wyckoff位坐标
+## 晶胞是具体参数化实体（晶型是分类标签如"晶型I/II"）
+## 可控性：模式库 — 从已知超导家族提取堆积经验规则
 
 signal crystal_form_changed()
 signal polymorph_detected(polymorph_id: String)
@@ -21,16 +21,16 @@ var _intermolecular_bonds: Array = []  # H-bonds, van der Waals, pi-pi stacking
 var _z: int = 1  # Number of formula units per unit cell
 
 func get_layer_name() -> String:
-	return "晶型"
+	return "晶胞"
 
 func get_layer_index() -> int:
 	return 4
 
 func get_controllability() -> String:
-	return "间接调控 (条件诱导, 非直接设计)"
+	return "模式库 (从已知超导家族提取堆积经验)"
 
 func get_description() -> String:
-	return "分子间周期性堆积方式。决定溶解度、熔点、密度、固态稳定性。相对位置是单个分子形状，晶型是一堆分子怎么抱团。"
+	return "分子间周期性堆积方式。决定溶解度、熔点、密度、固态稳定性。相对位置是单个分子形状，晶胞是一堆分子怎么抱团。晶胞分布可作为Regge单元（嘉当矩阵），角亏场直接给出FG退相干场强度。"
 
 func set_cell_parameters(a: float, b: float, c: float, alpha: float, beta: float, gamma: float) -> void:
 	_cell_params = {"a": a, "b": b, "c": c, "alpha": alpha, "beta": beta, "gamma": gamma}

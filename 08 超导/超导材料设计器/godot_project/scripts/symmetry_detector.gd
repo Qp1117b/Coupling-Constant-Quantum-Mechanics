@@ -249,7 +249,7 @@ static func _check_octahedral(atoms: Array) -> bool:
 	return false
 
 static func _classify_group(n: int, inv: bool, mirror: bool, perp_c2: bool,
-							mirror_count: int, n_v: int, n_h: int,
+							_mirror_count: int, n_v: int, n_h: int,
 							is_tet: bool, is_oct: bool, is_ico: bool) -> Dictionary:
 	if is_ico:
 		if inv:
@@ -326,10 +326,10 @@ static func _identify_crystal_system(a, b, c, alpha, beta, gamma) -> String:
 		return "单斜晶系"
 	return "三斜晶系"
 
-static func _identify_bravais_lattice(a, b, c, alpha, beta, gamma, atoms) -> String:
+static func _identify_bravais_lattice(_a, _b, _c, _alpha, _beta, _gamma, _atoms) -> String:
 	return "P"
 
-static func _estimate_space_group_number(bravais: String, point_group: String) -> int:
+static func _estimate_space_group_number(_bravais: String, _point_group: String) -> int:
 	return 1
 
 # === 辅助函数 ===

@@ -1,10 +1,10 @@
 extends RefCounted
 class_name ReggeCartanBridge
 
-## G16/G17 Regge-嘉当耦合数值桥接
+## G16 Regge-嘉当耦合数值桥接 (G17已删除: FG不走Regge→GR连续极限)
 ## 严格对应 Lean 形式化 (06 Lean形式化/Superconductivity/):
 ##   - MolecularGeometry.lean §4: reggeTetrahedronEdgeLength (l = κ/√(λᵢλⱼ)),
-##     deficitAngleDensity (δ_eff = δ/V), grEffectiveMetric (h = δ·diag(1,-⅓,-⅓,-⅓))
+##     deficitAngleDensity (δ_eff = δ/V), FG退相干场强度由角亏直接给出
 ##   - BridgeTheorems.lean: reggeDualArea (A = √3/4·l²),
 ##     reggeEffectiveRicciScalar (R = 2δ/A), reggeDeficit_ricciScalar_closedForm
 ##     (R = (8δ/√3)·λ²/κ²)
@@ -14,10 +14,9 @@ class_name ReggeCartanBridge
 ##           对偶面积 A_dual = (√3/4)l² → R_eff = 2ε/A_dual
 ##   交叉验证: 正四面体闭式 R = (8ε/√3)·λ²/κ² 与逐 hinge 数值的一致性
 ##
-## G17 (牛顿引力退化): Regge 有效度规 → Poisson 方程
-##   数值链: δ_eff(T) = Σ_{h∈T} ε_h / V_T → h₀₀ = α·δ_eff → Φ_R = -c²/2·h₀₀
-##   验证: 高斯定理积分形式 ∮∇Φ·dS = -4πG·M_enclosed 的相对残差
-##   (泊松方程 ∇²Φ = 4πGρ 的积分形式, 避开点源 δ 函数的格点奇异)
+## G17 (牛顿引力退化): ~~已删除~~ — FG不表现为几何吸引/测地线约束,
+##   不走 Regge→GR 连续极限→Poisson 方程路径。FG 是耦合空间纤维丛上的
+##   因果限制/退相干场强度, 由 Regge 角亏直接给出 (见三种引力§3.3-3.4)
 
 const SPEED_OF_LIGHT = 2.998e8
 const GRAVITATIONAL_CONSTANT = 6.674e-11

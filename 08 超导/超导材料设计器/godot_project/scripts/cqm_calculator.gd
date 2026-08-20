@@ -3,7 +3,7 @@ class_name CQMCalculator
 
 ## CQM 超导计算引擎
 ## 计算链: 分子嘉当矩阵 → 谱分析 → 态密度 → 耦合 → McMillan/BCS-CQM Tc →
-##          临界场 → 涌现积分 → 分步相变 → GL 自由能 → 三大作用量
+##          临界场 → 耦合空间曲率判定 → 序参量张量正性 → 耦合空间曲率机制(§7-10)
 ## 数值物理专业化:
 ##   - 德拜温度优先取文献值 (SCData, Kittel/NIST/McMillan 编译), 无文献时回落到估算公式
 ##   - ω_log 以 θD 为代理 (文档注明近似)
@@ -39,11 +39,10 @@ const EVIDENCE_LEVELS: Dictionary = {
 	"tc_estimate": "semi_empirical",
 	"critical_fields": "phenomenological",
 	"emergence_integral": "phenomenological",
-	"stepwise_transition": "semi_empirical",
-	"gl_free_energy": "phenomenological",
+
 	"actions": "phenomenological",
 	"regge_cartan_G16": "lean_bridge_numeric",
-	"regge_cartan_G17": "lean_bridge_numeric",
+	"regge_cartan_G17": "deprecated",
 	"isotope_exponent": "semi_empirical",
 }
 
@@ -64,7 +63,7 @@ static func compute_dos_from_eigenvalues(eigenvalues: Array, ef: float = NAN, si
 	if is_nan(ef):
 		var sorted = eigenvalues.duplicate()
 		sorted.sort()
-		ef = sorted[sorted.size() / 2]
+		ef = sorted[int(sorted.size() / 2.0)]
 	var dos = 0.0
 	var norm = 1.0 / (sqrt(2.0 * PI) * sigma)
 	var two_sigma_sq = 2.0 * sigma * sigma
@@ -392,12 +391,9 @@ static func evaluate_molecule(atoms: Array, bonds: Array,
 			emergence_full = CQMEmergenceIntegral.evaluate_full_bz(
 				mol_cartan["matrix"], dim, temperature, tc, gap, 16)
 
-	var stepwise = CQMStepwiseTransition.compute(mol_eigenvalues, tc)
-	var condensate = CQMStepwiseTransition.condensate_state(temperature, stepwise.transitions)
-	var gl = CQMGLFreeEnergy.compute(order_params, temperature, tc)
 	var bcs_path = CQMEmergenceIntegral.bcs_degradation(mol_eigenvalues, gap, dos_f, tc)
 
-	# 三大作用量 (理论 §3; Regge-嘉当耦合为唯像实现, 严格化见缺口 G16/G17)
+	# 耦合空间曲率机制 (理论 §3-9; Regge-嘉当耦合为唯像实现, 严格化见缺口 G16)
 	var actions = _compute_actions(atoms, bonds, order_params, mol_eigenvalues, temperature,
 			topology_factor, delta_0, pressure)
 
@@ -441,9 +437,6 @@ static func evaluate_molecule(atoms: Array, bonds: Array,
 		"cqm_emergence": emergence,
 		"cqm_emergence_full": emergence_full,
 		"cqm_topology_factor": topology_factor,
-		"cqm_stepwise": stepwise,
-		"cqm_condensate": condensate,
-		"cqm_gl_free_energy": gl,
 		"cqm_bcs_degradation": bcs_path,
 		"cqm_actions": actions,
 		"evidence_levels": EVIDENCE_LEVELS,
@@ -456,7 +449,7 @@ static func evaluate_molecule(atoms: Array, bonds: Array,
 	_cache_store(cache_key, result)
 	return result
 
-## 三大 CQM 作用量数值实现 (§3.1 约束 / §3.3 再生产 / §3.4 电子)
+## CQM 作用量数值实现 (§5 约束 / §7 再生产 / §5 电子) + 耦合空间曲率机制(§7-10)
 static func _compute_actions(atoms: Array, bonds: Array, order_params: Array,
 								eigenvalues: Array, temperature: float,
 								topology_factor: float, energy_gap: float,
@@ -471,15 +464,15 @@ static func _compute_actions(atoms: Array, bonds: Array, order_params: Array,
 	# 关系网络 R_ij: 键连接强度 (距离衰减)
 	var relation_network = _build_relation_network(positions, pairs)
 
-	# Regge 四面体 (作为约束作用量几何骨架)
+	# Regge 四面体 (作为耦合空间曲率机制几何骨架)
 	var regge = ReggeCalculator.compute_regge_3d(positions, pairs, 1)
 	var s_constraint = CQMConstraintAction.compute(regge.get("tetrahedra", []), relation_network, pressure)
 
-	# G16/G17: Regge-嘉当耦合数值桥接 (严格化对应 Lean 形式化)
+	# G16: Regge-嘉当耦合数值桥接 (G17已删除: FG不走Regge→GR连续极限)
 	var g16 = ReggeCartanBridge.compute_g16(regge, atoms)
-	var g17 = ReggeCartanBridge.compute_g17(regge, atoms, positions)
+	var g17 = ReggeCartanBridge.compute_g17(regge, atoms, positions)  # G17保留作历史记录, 已弃用
 
-	# 因果潜能张量 T_T: 由 A₄ 四通道序参量构成对角张量
+	# A4根系多分量序参量: 由 A₄ 四通道序参量构成对角张量
 	var causal_tensor = _causal_tensor_from_order_params(order_params)
 	var s_reproduction = CQMReproductionAction.compute(causal_tensor, eigenvalues, temperature,
 			topology_factor, energy_gap)
@@ -492,6 +485,9 @@ static func _compute_actions(atoms: Array, bonds: Array, order_params: Array,
 	var s_electron = CQMElectronAction.compute(electron_states, causal_tensor, a4,
 			relation_network, Vector3.ZERO)
 
+	# 耦合空间曲率机制 (§7-10): 固有时流速→耦合动量→不确定性→ln4跃迁→超导判据→七步展开
+	var coupling_space = _compute_coupling_space(regge, temperature, energy_gap)
+
 	return {
 		"S_constraint": s_constraint,
 		"S_reproduction": s_reproduction,
@@ -500,7 +496,36 @@ static func _compute_actions(atoms: Array, bonds: Array, order_params: Array,
 		"tetrahedra_count": regge.get("tetrahedra_count", 0),
 		"G16_ricci": g16,
 		"G17_newtonian": g17,
+		"coupling_space": coupling_space,
 	}
+
+## 耦合空间曲率机制计算 (§7-10)
+## 从 Regge 角亏提取 δ_v 和 Δδ_v, 计算固有时流速→耦合动量→不确定性→超导判据→七步展开
+static func _compute_coupling_space(regge: Dictionary, temperature: float,
+									energy_gap: float) -> Dictionary:
+	var deficit_angles: Array = regge.get("deficit_angles", [])
+	if deficit_angles.is_empty():
+		return {"available": false}
+
+	var mean_delta_v = 0.0
+	for d in deficit_angles:
+		mean_delta_v += absf(float(d))
+	mean_delta_v /= float(deficit_angles.size())
+
+	var variance = 0.0
+	for d in deficit_angles:
+		var diff = absf(float(d)) - mean_delta_v
+		variance += diff * diff
+	variance /= float(deficit_angles.size())
+	var delta_delta_v = sqrt(variance) if variance > 0.0 else mean_delta_v * 0.1
+
+	var Omega_0 = energy_gap / HBAR if energy_gap > 0.0 else 1e13
+	var beta = CQMConfig.get_beta()
+	var C = CQMConfig.get_spectral_quantum_c()
+	var tc_cqm = CQMCouplingSpace.critical_temperature(Omega_0, delta_delta_v, beta)
+
+	return CQMCouplingSpace.analyze(mean_delta_v, delta_delta_v, delta_delta_v,
+			Omega_0, temperature, beta, C)
 
 static func _build_relation_network(positions: Array, pairs: Array) -> Array:
 	var n = positions.size()

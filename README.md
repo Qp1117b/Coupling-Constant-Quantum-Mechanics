@@ -61,7 +61,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [06 Lean形式化/](06 Lean形式化/) | CQM 的 Lean 4 形式化验证项目。9 库全部编译通过：CausalSet、CouplingSpace、CartanAlgebra、SpectralGeometry、Decoherence、PhysicalConstants、PrimeGeometry、Methodology、Superconductivity（模块，涵盖：本体论、BCS 退化与还原、嘉当张量超导方程、推导链、元素嘉当矩阵 CQM→BCS 退化、分子几何→Regge 亏角→GR 有效度规、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合） |
+| [06 Lean形式化/](06 Lean形式化/) | CQM 的 Lean 4 形式化验证项目。9 库全部编译通过：CausalSet、CouplingSpace、CartanAlgebra、SpectralGeometry、Decoherence、PhysicalConstants、PrimeGeometry、Methodology、Superconductivity（模块，涵盖：本体论、BCS 退化与还原、嘉当张量超导方程、推导链、元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B约束）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合） |
 
 ### 07 推导与数学
 
@@ -79,8 +79,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [CQM 超导核心理论](08 超导/CQM 超导核心理论.md) | 强引力下超导涌现的本体论与机制：有限本体论（质子=自再产生环、中子=缺陷体）、禁闭几何=正四单纯形、电子=质子-中子关系性封装产物、引力因果限制场（τ_res=ħ/Mc²）、RQM 组合超导定理（电子-晶格-电子三方因果闭环）、涌现积分与 T_c 公式、CQM→BCS 退化（能隙比 2πe^{−γ}、同位素 α=1/2）、强引力扩展、引力退相干场与迈斯纳/GL 涌现、主要缺口 |
-| [CQM 超导推进 2026最新探索](08 超导/CQM 超导推进 2026最新探索.md) | 2026 年 8 月最新超导文献调研：LaH₁₀ 四极 T₂g 相变 ↔ CQM §10.3 分步相变（★★★）、Higgs-BS 竞争配对 ↔ CQM A₄ 根系多分量序参量（★★★）、赝能隙 ↔ 因果截断分离、平带量子度规 ↔ 耦合空间度规；四个 Lean 形式化扩展模块大纲（MultiComponent、CompetingChannels、QuadrupolarOrder、PseudogapCQM）；12 个新严格性缺口；实验检验建议 |
+| [CQM 超导核心理论](08 超导/CQM 超导核心理论.md) | 超导涌现的完整框架：三种引力（QG/GR/FG，FG!=GR）本体论、核子层（质子A4+中子D(delta)非对角缺陷）、三条独立链（几何/嘉当/拓扑）、Regge几何->精细引力纤维丛->电子涌现、声子=曲率量子、固有时流速、耦合空间不确定性、库珀对=ln4跃迁、自组织七步展开、临界温度闭式、多分量BCS方程、迈斯纳效应、可证伪预言、Lean形式化对应 |
 
 ### 归档 CNT
 
@@ -174,9 +173,8 @@ CQMFormal/
 │   └── CQM 方法论 HilbertPolya批判.md
 ├── 06 Lean形式化/                      ← Lean 4 形式化验证
 ├── 07 推导与数学/                      ← 从 CNT 归档提取的关键推导文档
-├── 08 超导/                            ← 强引力超导涌现论
-│   ├── CQM 超导核心理论.md             ← 核心本体论、作用量、涌现积分与机制链
-│   └── CQM 超导推进 2026最新探索.md    ← 2026 年 8 月最新超导文献调研与形式化扩展
+├── 08 超导/                            ← 超导涌现论
+│   └── CQM 超导核心理论.md             ← 完整超导理论（本体论→三条链→纤维丛→七步展开→Tc）
 └── 归档 CNT/                           ← CNT 阶段历史文档（只读）
 ```
 

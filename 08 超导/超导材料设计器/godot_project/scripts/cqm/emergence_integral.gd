@@ -1,18 +1,18 @@
 extends RefCounted
 class_name CQMEmergenceIntegral
 
-# CQM 超导涌现积分 — §5
-# ψ(r,T) = ∫_BZ d³k D_lattice(k) · P_electron(k,T) · C_triple(k) · K_causal(k) · e^{-Γ_φ(T)|τ|}
+# CQM 耦合空间曲率判定 — §11
+# ψ(r,T) = ∫_BZ d³k D_lattice(k) · P_electron(k,T) · C_curv(k) · K_causal(k) · e^{-Γ_φ(T)|τ|}
 #
 # 各项本体论地位:
 #   D_lattice  : 原料层, 晶格因果潜能谱, 不依赖温度
 #   P_electron : 被动载体, 电子配对倾向权重, BCS极限≈f(E)(1-f(E))
-#   C_triple   : CQM最具原创性项, 三方因果闭环建立强度
-#   K_causal   : 因果截断核, 引力因果限制场筛选
+#   C_curv     : 曲率涨落调制, 耦合空间曲率机制的核心项
+#   K_causal   : 因果截断核, FG退相干场筛选
 #   e^{-Γ|τ|} : 相位再生产锁定因子, 稳定性维持
 #
-# 强引力推广(§5.6): 追加 T_grav(g_μν) 因子
-# BCS退化: C_triple→V_eff, K_causal→Θ(ω_D-ω), F[Top]→1, B̂→I
+# 强引力推广(§5): 追加 T_grav(g_μν) 因子
+# BCS退化: C_curv→V_eff, K_causal→Θ(ω_D-ω), F[curv]→1, B̂→I
 
 const HBAR = 1.055e-34
 const BOLTZMANN = 1.381e-23

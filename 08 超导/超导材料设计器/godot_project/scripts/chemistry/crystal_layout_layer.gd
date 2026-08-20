@@ -1,10 +1,11 @@
 extends RefCounted
 class_name CrystalLayoutLayer
 
-## 第五层：晶型布局 (Crystal Layout / Microstructure)
-## 晶型确定后，在介观到宏观尺度上的组织方式
-## 包括晶粒尺寸、晶粒取向(织构)、晶界特征、孔隙率、缺陷密度
-## 可控性：工艺涌现 — 非分子设计范畴, 通过烧结/退火/外延等调控
+## L4 第五层：晶胞分布 (Grain Distribution / Microstructure)
+## 晶胞确定后，晶胞在空间中的分布排列（晶粒结构）
+## 包括单晶/多晶/薄膜/线材/粉末，及加工条件
+## 可控性：用户自由定义 — 系统仅提供参考建议，不封装经验模式
+## L4晶胞分布是Regge单元剖分的对象，角亏场直接给出FG退相干场强度
 
 signal microstructure_changed()
 
@@ -14,21 +15,21 @@ var _texture_type: String = "random"  # random, fiber, cube, sheet
 var _porosity: float = 0.0  # 0-1
 var _defect_density: float = 0.0  # per cm²
 var _residual_stress: float = 0.0  # MPa
-var _morphology: String = "bulk"  # powder, bulk, thin_film, single_crystal, nanowire
+var _grain_distribution: String = "single_crystal"  # single_crystal, polycrystal, film, wire, powder
 var _film_thickness_nm: float = 0.0  # nm, for thin films
 var _grain_boundary_type: String = "random"  # random, low_angle, special (CSL)
 
 func get_layer_name() -> String:
-	return "晶型布局"
+	return "晶胞分布"
 
 func get_layer_index() -> int:
 	return 5
 
 func get_controllability() -> String:
-	return "工艺涌现 (非分子设计范畴)"
+	return "用户自由定义 (系统仅提供参考建议)"
 
 func get_description() -> String:
-	return "介观到宏观尺度组织方式。决定力学、传输、加工性能。晶型是砖块形状，晶型布局是墙怎么砌。"
+	return "晶胞分布（晶粒结构）。决定Regge剖分、FG退相干场、力学/传输/加工性能。晶胞是砖块，晶胞分布是墙怎么砌。包括单晶/多晶/薄膜/线材/粉末等。"
 
 func set_grain_size(size_nm: float) -> void:
 	_grain_size_nm = maxf(size_nm, 0.1)
@@ -69,12 +70,12 @@ func set_residual_stress(stress: float) -> void:
 func get_residual_stress() -> float:
 	return _residual_stress
 
-func set_morphology(morph: String) -> void:
-	_morphology = morph
+func set_grain_distribution(morph: String) -> void:
+	_grain_distribution = morph
 	microstructure_changed.emit()
 
-func get_morphology() -> String:
-	return _morphology
+func get_grain_distribution() -> String:
+	return _grain_distribution
 
 func set_film_thickness(thickness_nm: float) -> void:
 	_film_thickness_nm = maxf(thickness_nm, 0.0)
@@ -91,7 +92,7 @@ func get_grain_boundary_type() -> String:
 	return _grain_boundary_type
 
 func is_single_crystal() -> bool:
-	return _grain_size_nm >= 1e6 or _morphology == "single_crystal"
+	return _grain_size_nm >= 1e6 or _grain_distribution == "single_crystal"
 
 func is_nanocrystalline() -> bool:
 	return _grain_size_nm < 100.0
@@ -132,7 +133,7 @@ func get_microstructure_summary() -> Dictionary:
 		"porosity": _porosity,
 		"defect_density": _defect_density,
 		"residual_stress": _residual_stress,
-		"morphology": _morphology,
+		"grain_distribution": _grain_distribution,
 		"is_single_crystal": is_single_crystal(),
 		"is_nanocrystalline": is_nanocrystalline(),
 		"is_polycrystalline": is_polycrystalline(),
@@ -147,7 +148,7 @@ func to_dict() -> Dictionary:
 		"porosity": _porosity,
 		"defect_density": _defect_density,
 		"residual_stress": _residual_stress,
-		"morphology": _morphology,
+		"grain_distribution": _grain_distribution,
 		"film_thickness_nm": _film_thickness_nm,
 		"grain_boundary_type": _grain_boundary_type,
 	}
@@ -159,7 +160,7 @@ func from_dict(data: Dictionary) -> void:
 	_porosity = data.get("porosity", 0.0)
 	_defect_density = data.get("defect_density", 0.0)
 	_residual_stress = data.get("residual_stress", 0.0)
-	_morphology = data.get("morphology", "bulk")
+	_grain_distribution = data.get("grain_distribution", "bulk")
 	_film_thickness_nm = data.get("film_thickness_nm", 0.0)
 	_grain_boundary_type = data.get("grain_boundary_type", "random")
 	microstructure_changed.emit()

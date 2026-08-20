@@ -217,22 +217,8 @@ func _test_critical_fields():
 
 func _test_cqm_modules():
 	var eigenvalues: Array = [0.1, 0.3, 0.7, 1.2, 2.0]
-	var stepwise = CQMStepwiseTransition.compute(eigenvalues, 9.0)
-	_check(stepwise.get("transitions", []).size() >= 1, "分步相变产生转变点")
-	var cond = CQMStepwiseTransition.condensate_state(4.0, stepwise.get("transitions", []))
-	_check(cond is Dictionary, "凝聚态计算不崩溃")
-	var quad = CQMStepwiseTransition.lah10_quadrupole_check(eigenvalues, 200.0)
-	_check(quad is Dictionary, "LaH10 四极检验不崩溃")
-
-	var order_params = CQMCalculator.order_parameters(9.25, 4.2, 0)
-	var gl = CQMGLFreeEnergy.compute(order_params, 4.2, 9.25)
-	_check(gl is Dictionary and gl.has("F_GL"), "GL 自由能计算")
-	var gl_hi = CQMGLFreeEnergy.compute(order_params, 9.0, 9.25)
-	_check(float(gl_hi.get("F_GL", 0.0)) > float(gl.get("F_GL", 0.0)),
-		"GL: T→Tc 时自由能升高")
-
 	var emergence = CQMEmergenceIntegral.evaluate(eigenvalues, 0.5, 4.2, 0.4, 9.25, 0)
-	_check(emergence is Dictionary, "涌现积分计算")
+	_check(emergence is Dictionary, "耦合空间曲率判定计算")
 
 	var topo = CQMTopologyFactor.compute_from_spectral_gap(0.5)
 	_check(topo > 0.0 and topo <= 1.0, "拓扑因子 ∈ (0,1]: %.4f" % topo)
@@ -240,7 +226,54 @@ func _test_cqm_modules():
 		CQMCartanBuilder.spectral_gap())
 	_check(abs(topo_ideal - 1.0) < 1e-9, "理想 A4 谱隙 → 拓扑因子 = 1")
 
+	_test_coupling_space()
 	_test_g16_g17_bridge()
+
+# ---------- 耦合空间曲率机制 (§7-10) ----------
+func _test_coupling_space():
+	var beta = 0.1
+	var C = CQMConfig.get_spectral_quantum_c()
+	var ln4 = log(4.0)
+
+	# 固有时流速: dτ/dt = 1 + β·δ_v
+	var dtau_dt = CQMCouplingSpace.proper_time_flow(0.5, beta)
+	_check(abs(dtau_dt - (1.0 + beta * 0.5)) < 1e-9, "固有时流速 dτ/dt = 1+βδ_v")
+
+	# 耦合动量: p_u = (1/C)·(dτ/dt)
+	var p_u = CQMCouplingSpace.coupling_momentum(dtau_dt, C)
+	_check(abs(p_u - dtau_dt / C) < 1e-6, "耦合动量 p_u = (1/C)·dτ/dt")
+
+	# 超导阈值: Δδ_v ≥ C/(2β·ln4)
+	var threshold = CQMCouplingSpace.superconductivity_threshold(beta, C)
+	var expected_threshold = C / (2.0 * beta * ln4)
+	_check(abs(threshold - expected_threshold) < 1e-9, "超导阈值 C/(2β·ln4)")
+
+	# 超导判据
+	_check(CQMCouplingSpace.is_superconducting(threshold * 2.0, beta, C), "Δδ_v > 阈值 → 超导")
+	_check(not CQMCouplingSpace.is_superconducting(threshold * 0.5, beta, C), "Δδ_v < 阈值 → 不超导")
+
+	# 临界温度闭式: Tc = ℏΩ₀/(2kB·arctanh[(ln4/(β·Δδ₀))²])
+	# 公式有效域: β·Δδ₀ > ln4 (弱耦合极限)
+	var Omega_0 = 1e13
+	var delta_delta_0 = log(4.0) / beta * 2.0  # β·Δδ₀ = 2·ln4, 在有效域内
+	var tc = CQMCouplingSpace.critical_temperature(Omega_0, delta_delta_0, beta)
+	_check(tc > 0.0, "临界温度 Tc > 0 (弱耦合有效域)")
+
+	# 临界温度为零 (强耦合域 β·Δδ₀ < ln4, arctanh参数≥1)
+	var tc_zero = CQMCouplingSpace.critical_temperature(Omega_0, log(4.0) / beta * 0.5, beta)
+	_check(tc_zero == 0.0, "临界温度 Tc = 0 (强耦合域外)")
+
+	# 七步展开
+	var steps = CQMCouplingSpace.seven_step_evaluation(0.5, delta_delta_0, 0.0, tc, Omega_0, beta, C)
+	_check(steps is Dictionary, "七步展开评估")
+	_check(bool(steps.get("step1_curvature_excitation", false)), "步骤1: 曲率涨落激发")
+	_check(bool(steps.get("step3_topology_attempt", false)), "步骤3: ln4 跃迁可行")
+
+	# 完整分析
+	var analysis = CQMCouplingSpace.analyze(0.5, delta_delta_0, delta_delta_0, Omega_0, 0.0, beta, C)
+	_check(analysis is Dictionary, "耦合空间完整分析")
+	_check(float(analysis.get("dtau_dt", 0.0)) > 0.0, "固有时流速 > 0")
+	_check(float(analysis.get("tc", 0.0)) > 0.0, "临界温度 > 0")
 
 # ---------- G16/G17 Regge-嘉当耦合桥接 ----------
 func _dense_lattice_atoms() -> Array:
@@ -308,7 +341,7 @@ func _test_g16_g17_bridge():
 	_check(bool(g17.get("lorentz_signature_valid", false)),
 		"G17 洛伦兹号差有效 |h₀₀|max = %s" % str(g17.get("h00_max", -1.0)))
 
-	# 约束作用量: 矩阵和乐严格化
+	# 链A几何: 矩阵和乐严格化
 	var network: Array = []
 	for i in range(atoms.size()):
 		var row: Array = []

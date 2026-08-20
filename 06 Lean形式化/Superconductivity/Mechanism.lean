@@ -8,8 +8,7 @@ import Superconductivity.Gravity
 /-!
 # CQM 超导：涌现机制与强引力 (Emergence Mechanism & Strong Gravity)
 
-本模块形式化《CQM 超导 涌现论》的第四层（超导涌现定理）与第五层
-（强引力场与超导）的可计算结构。
+本模块形式化《CQM 超导核心理论》的超导涌现机制与强引力推广（原"涌现论"第四、五层已并入该统一文档 §3、§5.6）。
 
 ## 第四层：超导涌现定理
 - **命题 4.1** 超导自由度来自大量有限本体的关系网络（单本体无超导）
@@ -23,7 +22,7 @@ import Superconductivity.Gravity
 - **命题 5.3** 中子星壳层作为天然强引力超导实验室
 
 ## 参考文献
-- ruster (2026). CQM 超导 涌现论 第四、五层. CQMFormal/08 超导/.
+- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
 - Rovelli (1996). Relational Quantum Mechanics.
 -/
 
@@ -122,7 +121,8 @@ noncomputable def protonFractionInNeutronStar : ℝ := 0.05
     因果截断频率被强引力（有效质量增强）放大，引力拓扑越丰富，
     可同时打开的因果截断窗口越多——强引力支持更丰富的几何拓扑图像。
     本定理给出 `strong_gravity_does_not_lower_causal_cutoff` 的
-    引力拓扑因子表述：对任意引力势 Φ ≥ 0，截断频率不降。 -/
+    引力拓扑因子表述：对任意因果限制强度参数 Φ ≥ 0（精细引力不表现为几何吸引，
+    而是因果限制/退相干场的增强），截断频率不降。 -/
 theorem strong_gravity_keeps_pairing_channels {M phi : ℝ} (hM : M > 0) (hphi : phi ≥ 0) :
     causalCutoffFrequency (M * (1 + phi)) ≥ causalCutoffFrequency M := by
   have hg : (1 : ℝ) + phi ≥ 1 := by linarith

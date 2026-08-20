@@ -9,7 +9,6 @@ import Superconductivity.CartanSuperconductivity
 import Superconductivity.FirstPrinciples
 import Superconductivity.SPAF
 import Superconductivity.MolecularGeometry
-import Superconductivity.MultiComponent
 
 /-!
 # CQM 超导形式化 (Superconductivity)
@@ -22,12 +21,13 @@ CQM 超导理论的完整形式化框架。理论文档见
 - **§1.2 RQM 唯物化**：属性随附本体→因果实现→相对物理系统→超导立足点→取消电子本体特权
 - **§1.3 电子历史性涌现**：电子是质子-中子有限本体对的关系性历史产物（非独立本体）
 - **§2 元素嘉当矩阵**：元素（而非质子或中子）是理想因果积木；BCS 同位素效应揭示主次结构
-- **§2.5 半唯像框架路线**：质子/中子嘉当矩阵 → 元素 → 分子有效超级嘉当矩阵 → Weyl 嵌入 → Regge 亏角 → GR 有效度规；分子为当前建模对象
+- **§2.5 半唯像框架路线**：质子/中子嘉当矩阵 → 元素 → 分子有效超级嘉当矩阵 → 晶胞嘉当矩阵（链B：仅约束可实现谱）→ Regge 晶胞/角亏（链A：晶胞几何分布生成）→ FG 退相干场；晶胞为当前建模对象
 - **§5 涌现积分公式**：张量+泛函结构；精细引力退相干场作为"指定约束"（数学不可达的自组织事实）
 - **§5.4.4 因果截断核**：CQM ω_causal 与 BCS ω_D 的关键区别——平庸引力场下无法判断，强引力/非常规材料下分道扬镳
 - **§5.4.6 坍缩难题的 CQM 解答**：①唯一性=相容性筛选（引力退相干），②确定性=再生产机制；一个本体论全部解决
+- **§12 耦合空间曲率机制**：超导 = 耦合坐标 $u=\ln\alpha$ 发生 $\ln4$（$\alpha\to4\alpha$）跃迁；角亏场 $\delta_v$ 驱动固有时流速 $v_\tau=d\tau/dt=\sqrt{1-\beta\delta_v}$（两时间之比，基准 1）→耦合动量 $p_u=v_\tau/C$→不确定性 $\Delta u\cdot\Delta\delta_v\ge C\sqrt{1-\beta\delta_v}/\beta$→超导判据 $\Delta\delta_v\ge C\sqrt{1-\beta\delta_v}/(\beta\ln4)$；BCS = 三维费米统计平均场近似（$\zeta(3)$）；二维出现 $\zeta(2)$
 - **§5.6 强引力推广**：CQM 层级涌现论自然推出——强引力不必然破坏超导，反而可探索强引力下超导态
-- **§13 形式化路线**：第零步半唯像→第一步 Lean 还原 BCS→第二步完整机制→第三步室温方向
+- **§20 形式化路线**：第零步半唯像→第一步 Lean 还原 BCS（对应文档章节已精简）→第二步完整机制→第三步室温方向
 
 ## 模块结构（对应理论层级）
 
@@ -39,11 +39,12 @@ CQM 超导理论的完整形式化框架。理论文档见
 | `Superconductivity.Integral` | §5 涌现积分 | 理想涌现积分（BZ 离散形式）与逐项正性 |
 | `Superconductivity.TransitionTemperature` | §7.1 T_c | T_c 公式、因果截断频率、因果屏蔽同位素 |
 | `Superconductivity.StrongGravity` | §5.6 强引力 | 引力拓扑因子、中子星修正 |
-| `Superconductivity.Reduction` | §7 BCS 还原 | **BCS 退化与还原**：能隙方程闭式解与弱耦合极限、精确能隙比 2πe^{−γ}、同位素定律 α = 1/2、McMillan–Dynes、London、相干长度、磁通量子 |
-| `Superconductivity.CartanSuperconductivity` | §10 张量 GL | **嘉当张量超导方程**：§10 张量涌现公式在 A₄ 本征谱上展开；A₄ 同时作为离散哈密顿量与能动张量；谱间隙退化到 BCS；Tr(A₄⁻¹)=4 勘误 |
-| `Superconductivity.FirstPrinciples` | §5.5 推导链 | **推导链（derivation chain）**：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙标定）→ 电子-声子耦合 λ = N(0)·V → BCS 能隙积分方程；严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（FTC 证明）；积分方程的解 = ω_D/sinh(1/λ)；弱耦合 T_c → 0；再生产维持（锁定因子衰减，坍缩难题②的再生产解答）；金属氢实例（单质子 = A₄ 直接拼接，能隙闭式 + 同位素方向） |
-| `Superconductivity.SPAF` | §2.5 分子路线 | **元素嘉当矩阵与因果几何**：因果耦合 t_ij = t₀·e^{−d/λ}·Θ(d_cut−d)；组装对称性；中子缺陷谱判据（SOS 正方向 + 反方向见证）；Regge 边长正性 |
-| `Superconductivity.MolecularGeometry` | §2.5 分子路线 | **分子有效超级嘉当矩阵 → Weyl 嵌入 → Regge 亏角 → GR 有效度规**：原子嘉当矩阵 → C_mol 块对角 + 跨原子耦合 → 内禀 Weyl 矩阵 → 亏角 δ_v = 2π − Σθ_tet → g_μν^eff = η_μν + h_μν(δ_v) |
+| `Superconductivity.Reduction` | （BCS 公式的形式化声明，对应文档章节已精简） | **BCS 退化与还原（方向锚定保留）**：能隙方程闭式解与弱耦合极限、精确能隙比 2πe^{−γ}、同位素定律 α = 1/2、McMillan–Dynes、London、相干长度、磁通量子 |
+| `Superconductivity.CartanSuperconductivity` | （张量 GL 代码，对应文档章节已精简） | **嘉当张量超导方程（方向锚定保留）**：A₄ 本征谱上的序参量展开；A₄ 同时作为离散哈密顿量与能动张量；谱间隙退化到 BCS；Tr(A₄⁻¹)=4 勘误 |
+| `Superconductivity.FirstPrinciples` | §11.3 统计极限 | **推导链（derivation chain）**：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙标定）→ 电子-声子耦合 λ = N(0)·V → BCS 能隙积分方程；严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（FTC 证明）；积分方程的解 = ω_D/sinh(1/λ)；弱耦合 T_c → 0；再生产维持（锁定因子衰减，坍缩难题②的再生产解答）；金属氢实例（单质子 = A₄ 直接拼接，能隙闭式 + 同位素方向） |
+| `Superconductivity.SPAF` | §2.5 晶胞路线 | **元素嘉当矩阵与因果几何**：因果耦合 t_ij = t₀·e^{−d/λ}·Θ(d_cut−d)；组装对称性；中子缺陷谱判据（SOS 正方向 + 反方向见证）；Regge 边长正性 |
+| `Superconductivity.MolecularGeometry` | §2.5 晶胞路线 | **分子→晶胞嘉当矩阵（链B约束）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场**：原子嘉当矩阵 → C_mol 块对角 + 跨原子耦合 → 晶胞嘉当矩阵（仅约束可实现谱，不直接生成 Regge 晶胞，见 §3.2）→ 亏角 δ_v = 2π − Σθ_tet（链A晶胞几何分布）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限，见 G17 已删除） |
+| `Superconductivity.CouplingSpace` | §12 耦合空间曲率机制 | **超导 = 耦合空间曲率驱动的精细结构常数量子跃迁**：Regge 角亏 δ_v → 固有时流速 v_τ = dτ/dt = √(1-βδ_v) → 耦合动量 p_u = v_τ/C → 不确定性 Δu·Δδ_v ≥ C√(1-βδ_v)/β → 跃迁 u→u+ln4（α→4α）→ 超导判据 Δδ_v ≥ C√(1-βδ_v)/(βln4)；ζ(s) 母积分与费米统计投影；纯氢不超导（阈值正性） |
 
 ## 核心定理
 
@@ -66,15 +67,25 @@ CQM 超导理论的完整形式化框架。理论文档见
 - `causalResolutionTime_pos` / `causalCutoffFrequency_pos`：因果分辨率与截断频率为正
 - `causalCutoff_eq_two_pi_over_resolution`：ω_causal = 2π/τ_res 一致性
 - `strong_gravity_does_not_lower_causal_cutoff`：强引力不降低因果截断（命题 5.1 的截断层面表述）
-- `strong_gravity_keeps_pairing_channels`：命题 5.1 机制层面——对任意引力势 Φ ≥ 0，截断频率不降
+- `strong_gravity_keeps_pairing_channels`：命题 5.1 机制层面——对任意因果限制强度参数 Φ ≥ 0（精细引力不表现为几何吸引），截断频率不降
 - `gravitationalTopologyFactor_ge_one`：引力拓扑因子 ≥ 1（强引力只增强不削弱）
 - `neutronStar_cutoff_blueshift`：中子星截断蓝移
+
+### §3.6 耦合空间曲率机制
+
+- `reggeAngleDeficit` / `properTimeFlow` / `properTimeFlow_pos`：角亏场 → 固有时流速（两时间之比，基准 1）$v_\tau = d\tau/dt = \sqrt{1-\beta\delta_v}$（正性）
+- `couplingMomentum` / `couplingMomentum_pos`：耦合动量 $p_u = v_\tau/C = \sqrt{1-\beta\delta_v}/C$（正性）
+- `uncertaintyThreshold` / `uncertaintyThreshold_pos`：曲率-耦合不确定性阈值 $C\sqrt{1-\beta\delta_v}/\beta$（正性）
+- `ln4` / `ln4_pos` / `ln4TransitionCriterion`：跃迁幅度 $\ln4$（$\alpha\to4\alpha$）与判据 $\Delta u\ge\ln4$
+- `curvatureFluctuationThreshold` / `curvatureFluctuationThreshold_pos` / `superconductivityCriterion`：曲率涨落阈值 $\Delta\delta_v\ge C\sqrt{1-\beta\delta_v}/(\beta\ln4)$ 与超导判据
+- `fermiIntegralFactor` / `fermiIntegral3` / `fermiIntegral2`：费米积分母积分因子 $(1-2^{1-s})\zeta(s)$；三维 $s=3$ 得 $\frac{3}{2}\zeta(3)$，二维 $s=2$ 得 $\frac{1}{2}\zeta(2)$
+- `pureHydrogenNotSuperconducting`：预言 1——纯氢（角亏涨落 $\Delta\delta_v=0$）不超导（由判据 $\Delta\delta_v\ge\text{阈值}>0$ 直接得 ¬判据）
 
 ### §5 涌现积分
 
 - `emergenceIntegral_pos`：理想涌现积分严格为正（超导序参量非平凡）
 
-### §7 BCS 还原与公式
+### BCS 还原与公式（对应文档 §19 模块：Reduction，对应章节已精简，作为方向锚定保留）
 
 - `criticalTemperature_pos` / `criticalTemperature_monotone_in_cutoff`：T_c 为正且随截断单调
 - `cqm_reduces_to_bcs` / `cqm_debye_reduction`：CQM 退化为 BCS（晶格扇区）
@@ -88,7 +99,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 - `hydrogen_deuterium_isotope_shift`：T_c(D) = T_c(H)/√2（H3S/D3S 实验 0.72 ≈ 0.707）
 - `naive_cqm_isotope_anomaly`：朴素 CQM（ω_causal ∝ M）下 T_c 随质量单调不减、与实验相反（条件定理；标示而非证明退化的必要性）
 
-### §10 张量 GL 与嘉当双重角色
+### 张量 GL 与嘉当双重角色（对应文档 §19 模块：CartanSuperconductivity，对应章节已精简，作为方向锚定保留）
 
 - `superconductingOrderTensor_pos`：张量超导序参量（§10 公式在 A₄ 本征谱上的 Tr_𝒞）严格为正
 - `cartanHamiltonian_trace_eq_stressEnergyTrace`：A₄ 双重角色——离散哈密顿量迹 = 能动张量迹 = 8
@@ -122,8 +133,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 - G10：Θ_loop 闭环条件函数的动力学形式
 - G11：D_lattice 从正四单纯型组合构型到声子谱的具体推导
 - G12：引力拓扑因子 T_grav 的完整度规依赖形式；涌现方程由张量结构上升为泛函约束结构的严格化——精细引力退相干场作为指定约束，其泛函形式的构造方式仍为开放问题
-- G13：T_c 积分方程的"tanh 积分 → 对数方程"渐近（文献 BCS 弱耦合）未形式化；
-  推导链层只严格化能隙积分方程的 ∫ → arsinh 台阶（见 `gapIntegral_pr`）
+- G13：**已闭合**（见 `BCSIntegralAsymptotic.bcsTcFromIntegral_solved`）：T_c 积分方程的"tanh 积分 → 对数方程"渐近已严格化，`bcsTcFromIntegral_solved` 证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程唯一正解；能隙积分方程的 ∫ → arsinh 台阶由 `gapIntegral_pr` 严格化
 - G14：中子缺陷谱判据的完整闭合——**可用内容已由初等 SOS 严格化**：正方向
   ε < spectralGap ⟹ C_n 正定（`neutronCartan_posDef_of_lt_spectralGap`，强度放宽到
   ε < 1）、反方向 ε ≥ 5/4 非正定（`neutronCartan_not_posDef_of_five_fourths_le`，
@@ -133,7 +143,7 @@ CQM 超导理论的完整形式化框架。理论文档见
   作为严格阈值 min{2, λ₂, ...} 的进一步认证）——**部分闭合**
 - G15：主次结构谱间隙差→同位素效应映射
 - G16：因果分辨率的形式化（Regge 亏角密度→Ricci 标量）
-- G17：牛顿引力退化定理（Regge 有效度规→Poisson 方程）
+- G17：**已删除**：牛顿引力退化定理（Regge 有效度规→Poisson 方程）——FG 不表现为几何吸引/测地线约束，不走 Regge→GR 连续极限→Poisson 方程路径（见文档 §18 缺口表）
 
 ## 参考文献
 

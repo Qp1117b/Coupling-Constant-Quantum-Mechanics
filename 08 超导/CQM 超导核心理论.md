@@ -1,553 +1,537 @@
 # CQM 超导核心理论
 
-> 耦合常数量子力学（CQM）超导涌现框架 —— 核心作用量、涌现积分与元素层级
+> 耦合常数量子力学（CQM）超导涌现框架 —— 耦合空间曲率机制、完整因果链与元素层级
 
 **作者**：ruster
 **状态**：理论框架定型中，数值关系与实验检验待验证
 
-**诚实声明**：本文仅给出 CQM 超导理论的框架性内容——本体论前提、三大作用量、涌现积分公式、机制链及与 BCS/Eliashberg 的退化关系；**不含任何从具体材料导出的数值或拟合数据**。本文不宣称"室温超导可达"或"已严格证明 $T_c$ 唯一解"。
+**诚实声明**：本文仅给出 CQM 超导理论的框架性内容——本体论前提、耦合空间曲率机制、完整因果链；**不含任何从具体材料导出的数值或拟合数据**。本文不宣称"室温超导可达"或"已严格证明 $T_c$ 唯一解"。
+
+> **配套文档**：`CQM 核心 三种引力存在论前提.md` 给出三种引力（QG/GR/FG）本体论前提与精细引力纤维丛的数学结构，与本文互补。本文提供超导耦合空间曲率机制的完整理论（本体论→三条链→纤维丛→声子=曲率量子→固有时流速→不确定性→ln4跃迁→晶胞振荡→Tc）。
 
 ---
 
 ## 摘要
 
-本文在 CQM 框架下构建超导的涌现理论。核心结构为**三大作用量**通过编织算符耦合：
+本文在 CQM 框架下构建超导的涌现理论。核心结论：**CQM 超导不是"筛选 + 吸引"的二分机制，而是单一的几何-动力学过程**——耦合空间曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，当涨落超过 $\ln 4$ 阈值时触发耦合常数跃迁，电子在精细引力的因果约束下自组织为库珀对。配对/相干过程即晶胞振荡本身（声子=曲率量子）：**温度通过改变晶胞振荡模式的声子数，影响自组织——再生产（晶胞振荡的维持）是自组织的一个环节，声子数变化经由此环节进入自组织**。
 
-1. **约束作用量** $S_{\text{constraint}}$：A4-Regge 几何骨架 + 压强-距离结构
-2. **再生产作用量** $S_{\text{reproduction}}$：温度-因果时动力学 + 拓扑增强因子渗透
-3. **电子作用量** $S_{\text{electron}}$：历史性封装物响应 + 外部电磁场耦合
-
-**元素嘉当矩阵**（而非质子或中子）是理想因果积木。BCS 同位素效应揭示元素内部存在主次结构（质子扇区为主，中子扇区为次），指向 BCS 退化方向：单元素材料。
-
-平庸极限（周期晶格、平直几何、编织平庸）下，CQM 作用量形式退化为 Eliashberg 强耦合理论（严格证明待完成）。本文进一步给出超导序参量的**涌现积分公式**，并据此建立从有限本体到 $T_c$ 的完整机制链，以及 CQM 对 BCS 公式的还原与超出 BCS 的判别性窗口（如同位素指数偏离 $\alpha=1/2$ 的方向）。
+**元素嘉当矩阵**（而非质子或中子）是理想因果积木。同位素效应揭示元素内部存在主次结构（质子扇区为主，中子扇区为次），中子扇区的缺陷是精细引力角亏的主要结构性来源（见 §2.4；质子-质子对原理上亦可形成铰链，但几何上极难）。
 
 ---
 
 ## 1. 本体论前提
 
-### 1.1 有限本体层级
+### 1.1 三种引力
+
+| 引力 | 存在论地位 | 数学结构 | 因果网络 |
+|------|-----------|---------|---------|
+| **量子引力 QG** | 基础前提 | 黎曼零点谱 $\gamma_n$ | 质数前组织网络 |
+| **经典引力 GR** | 广度前提 | 伪黎曼流形 | 平庸因果网络（基态时空） |
+| **精细引力 FG** | 深度前提 | Regge 纤维丛 | 层级因果网络（激发态） |
+
+**核心区分**：
+
+$$\boxed{\text{FG} \neq \text{GR}}$$
+
+- GR 是时空曲率，受 $G_N$ 约束，量级 $\sim 10^{-43}$
+- FG 是纤维丛曲率，**不受 $G_N$ 约束**，量级 $O(1)$
+- FG 不走 Regge→GR 连续极限→Poisson 方程路径——它直接由 Regge 角亏给出（见 `三种引力存在论前提.md` §3）
+
+### 1.2 谱常数
+
+$$\boxed{C = \frac{\xi'(1)}{\xi(1)} \approx 0.0231}$$
+
+严格无量纲，作为全部后续层级的普适比例基准。
+
+### 1.3 有限本体层级
 
 | 实体 | 本体论地位 | 内部结构 |
 |------|-----------|---------|
 | **质子** | 理想有限本体 | A4 嘉当矩阵（完美） |
-| **中子** | 有缺陷的有限本体 | A4 + 缺陷项 |
-| **电子** | 历史性封装物 | 非独立本体，自由度来自质子-中子关系网络 |
+| **中子** | 有缺陷的有限本体 | A4 + 缺陷项；精细引力角亏的结构性来源（**非触发器**，见 §2.4） |
+| **电子** | 基态耦合对应 | 基态耦合常数 $\alpha$ 的对应，已在系统中存在（跃迁前未配对） |
 | **电磁场** | 外部独立自由度 | 不可压缩，与电子响应耦合 |
 
-### 1.2 RQM 唯物化：属性随附、因果实现与超导立足点
+### 1.4 RQM 唯物化：属性随附、因果实现与超导立足点
 
 CQM 对关系量子力学（RQM）进行唯物主义重构——这是超导理论的本体论基石：
 
 1. **属性（物理上即自由度）随附于物质本体**：属性不是独立实体，而是有限本体的随附物。
 2. **属性在因果关系中实现自身**：属性的现实化发生于具体的因果关系中，因而属性自然**相对物理系统而言**——并非相对"观察者"，而是相对构成该系统的有限本体关系网络。
-3. **超导原理由此获得立足点**：大量有限本体（质子/中子）构成的关系网络，通过引力退相干机制对电子基础自由度进行操作，涌现超导态。
-4. **取消电子的本体特权**：若将电子视为独立本体，则电磁相互作用在系统中占据优先地位，使问题复杂化。CQM 将操作对象下移为"有限本体关系网络对电子基础自由度的操作"——电子自由度来自质子-中子关系网络的历史拓扑路径，而非先验存在。
+3. **超导原理由此获得立足点**：大量有限本体（质子/中子）构成的关系网络，通过 FG 退相干机制对电子基础自由度进行操作，涌现超导态。
+4. **取消电子的本体特权**：电子不是独立本体，而是基态耦合常数 $\alpha$ 的对应——它是质子-中子关系网络历史拓扑路径的产物，但该产物在超导问题中已经"在场"：系统中已有电子，只是耦合常数停在 $\alpha$ 而未跃迁。CQM 将操作对象下移为"有限本体关系网络对电子基础自由度的操作"——电子自由度来自质子-中子关系网络的历史拓扑路径，而非先验存在；配对与否的区别仅在于耦合常数是否完成 $\alpha\to4\alpha$ 跃迁（见 §5.3 本体论分层）。
 
-由此，RQM 唯物化的涌现链为：**RQM（关系性实现前提）→ 引力场精细结构（既是关系性实现前提又是其结果）→ 自组织（因果锚定，关系性实现过程）→ 属性（自由度）实现**。
-
-### 1.3 电子的历史性涌现
-
-电子不是独立本体，而是质子-中子关系网络的历史拓扑路径涌现的封装物：
-
-$$\psi_e^{(i)}(\tau) = \int_{-\infty}^{\tau} d\tau' \, K_e(\tau - \tau') \, \hat{\mathcal{B}}[\Gamma(\tau'), \mathcal{R}_{pn}(\tau')] \cdot \Phi_{\text{proton}}^{(i)}(\tau')$$
-
-- $K_e(\Delta\tau) = \exp(-\Delta\tau / \tau_e) \cdot \Theta(\Delta\tau)$：电子形成记忆核
-- $\tau_e \sim \hbar / E_{\text{bind}}$：电子绑定特征时间
-- $\hat{\mathcal{B}}$：历史编织算符
-
-**电荷、质量、自旋**全部编码于关系网络的历史拓扑路径中，通过历史记忆核从约束作用量自举涌现。
+由此，RQM 唯物化的涌现链为：**RQM（关系性实现前提）→ 精细引力纤维丛（既是关系性实现前提又是其结果）→ 自组织（因果锚定，关系性实现过程）→ 属性（自由度）实现**。
 
 ---
 
-## 2. 元素嘉当矩阵：理想因果积木
+## 2. 核子层
 
-### 2.1 核心命题
+### 2.1 质子
 
-> **元素——而非质子或中子——才是 CQM 超导理论的理想因果积木。**
+质子嘉当矩阵（标准 $A_4$ 型）：
 
-### 2.2 为什么元素是理想积木？
+$$A_4 = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}$$
+
+**严格生成正四单纯型**：A4 的 10 个正根 = 正四单纯型的 10 条边向量。正四单纯型的 5 个顶点由 $\mathbb{R}^5$ 标准基投影到超平面 $x_1+\cdots+x_5=0$ 得到。
+
+### 2.2 中子
+
+中子嘉当矩阵（缺陷形变）：
+
+$$D(\delta) = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -\delta \\ 0 & 0 & -\delta & 2 \end{pmatrix}$$
+
+缺陷位置锁定在 $\alpha_4$ 末端，$\delta \approx 0.9988$（由质量差反推）。$\det D(\delta) = 8 - 3\delta^2$，正定条件 $|\delta| < \sqrt{8/3} \approx 1.633$。中子 A4 与质子同构但在同位旋空间中处于不同 Weyl 轨道。
+
+该末端缺陷 $\alpha_4$ 正是精细引力角亏的微观结构性来源（见 §2.4：中子提供角亏，FG 由角亏直接给出，**中子并非 FG 的触发器**；质子-质子对原理上也能经非平直二面角形成铰链激活 FG，但几何上极难实现）。
+
+### 2.3 元素嘉当矩阵
+
+**元素——而非质子或中子——才是 CQM 超导理论的理想因果积木。**
 
 BCS 理论揭示**同位素效应**：同一元素的不同同位素（不同中子数 $N$）$T_c$ 差异极大。这证明元素内部存在**主次结构**：
 
 | 扇区 | 结构 | 角色 |
 |------|------|------|
 | **质子扇区（主结构）** | $\bigoplus^{Z} A_4$，纯 A4 块对角，谱间隙 $\lambda_1=(3-\sqrt{5})/2$ | **主结构** |
-| **中子扇区（次结构）** | $\bigoplus^{N} C_n(\epsilon)$，缺陷 A4 块对角 | **次结构** |
+| **中子扇区（次结构）** | $\bigoplus^{N} D(\delta)$，缺陷 A4 非对角元（$\alpha_4$ 末端） | **次结构** |
 
 元素嘉当矩阵：
 
-$$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} C_p\right) \oplus \left(\bigoplus_{j=1}^{N} C_n(\epsilon_j)\right)$$
+$$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \left(\bigoplus_{j=1}^{N} D(\delta_j)\right)$$
 
-其中中子缺陷参数 $\epsilon(N) = \epsilon_0 \cdot \bigl(1+\beta\,(N-N_{\text{ref}})/N_{\text{ref}}\bigr)$ 描述中子扇区对纯 A4 的偏离。
+其中中子缺陷参数 $\delta(N) = \delta_0 \cdot \bigl(1+\beta\,(N-N_{\text{ref}})/N_{\text{ref}}\bigr)$ 描述中子扇区对纯 A4 的偏离。
 
-### 2.3 同位素效应的根源
+### 2.4 中子扇区作为精细引力的结构性来源（非触发器）
 
-中子缺陷参数 $\epsilon(N)$ 的连续变化导致 $T_c$ 的同位素位移。这是**拼接规则**的微观来源：
+中子不是精细引力的"触发器"。精细引力 FG 由 Regge 角亏 $\delta_v$ **直接给出**（见 §5.4），它是背景因果场，不存在"中子按下开关才触发 FG"的动态过程。中子扇区的角色是**结构性来源**而非触发器：中子缺陷 $\alpha_4$ 提供 Regge 铰链，从而**决定角亏的数值与谱**（即 FG 场的强度分布），但 FG 本身是角亏的直接后果，不依赖任何额外"触发"事件。
 
-- 同种元素内部（同位素之间）：拼接规则由 $\epsilon(N)$ 的连续函数决定
-- 跨元素种类：需要额外的因果耦合参数 $t_{ij}$
+质子-质子对也能形成 Regge 铰链并激活 FG。两个完整 $A_4$ 通过单纯复形粘合时，若共享三角面且二面角非平直，同样产生非零亏角、同样激活 FG。只是一般情形下质子-质子对难以形成铰链：纯质子系统中质子间库仑排斥强，难以达到形成内部铰链所需的紧密几何构型。**中子-质子对之所以成为元素的 FG 存在论前提**，是因为（1）中子的电中性允许质子-中子紧密粘合，避开库仑排斥壁垒；（2）$\delta\neq 1$ 的缺陷使铰链更容易形成。因此中子不是 FG 的唯一来源，而是**元素尺度上 FG 得以稳定存在的构造性前提**——无中子时 FG 在原理上仍可被质子-质子铰链激活，但几何上极难实现。
 
-### 2.4 BCS 退化方向
+元素内部的主次结构（§2.3）对应精细引力的角亏来源：中子扇区的末端缺陷 $\alpha_4$ 提供 Regge 铰链（见 `三种引力存在论前提.md` §二），是晶胞角亏 $\delta_v$ 的微观起源；纯主结构（无中子缺陷）则无角亏涨落——这是"有无角亏来源"的区别，不是"是否触发 FG"的区别。派生链为：
 
-BCS 理论虽然适用范围广泛，但**单元素超导体（Pb、Nb、Hg）是最简单的 BCS 对象**——它们没有跨元素种类的因果耦合复杂性。
+$$\boxed{\text{有限本体粘合（中子缺陷 }\alpha_4\text{ 或质子-质子非平直二面角）} \;\Rightarrow\; \text{Regge 铰链} \;\Rightarrow\; \text{角亏 } \delta_v \;\Rightarrow\; \text{FG 背景场（直接给出，非触发）}}$$
 
-**退化路径**：在单元素材料中，若中子缺陷 $\epsilon \to 0$（所有中子扇区趋于纯 A4），则 CQM 超导理论形式退化为 BCS 理论（严格证明待完成）。
+**金属氢（Z=1, N=0）是纯主结构的极限**——氢核 = 单个质子，无中子扇区，晶格无 Regge 角亏涨落（$\Delta\delta_v=0$），故不超导。这与"金属氢相需含畸变/缺陷方提供角亏"一致（见 G18）。注意：此极限不排斥"质子-质子铰链在原理上可激活 FG"，只说明单质子氢核在元素尺度无铰链几何。
 
-**金属氢（Z=1, N=0）是这一退化方向的极限**——唯一一个主次结构退化为纯主结构的元素：氢核 = 单个质子，无中子扇区，$\epsilon$ 恒为 0，CQM 与 BCS 在金属氢中**精确重合**。
+### 2.5 从元素到晶胞：半唯像框架路线
 
-### 2.5 从元素到分子：半唯像框架路线
+元素嘉当矩阵向上组装为**分子有效超级嘉当矩阵**，再经周期性凝聚得到**晶胞嘉当矩阵**；Regge 晶胞/角亏由晶胞几何分布**独立生成**。晶胞嘉当矩阵与 Regge 晶胞共同构成当前 CQM 超导的唯象建模对象（正式分工见 §3 晶胞层三条独立链）：
 
-元素嘉当矩阵向上组装为**分子有效超级嘉当矩阵**，构成当前 CQM 超导的唯象建模对象：
+1. **质子嘉当矩阵** $C_p = A_4$（纯 A4，无缺陷）
+2. **中子嘉当矩阵** $C_n(\delta) = D(\delta)$（$\alpha_4$ 末端非对角元缺陷）
+3. **元素嘉当矩阵** $C_{\text{el}} = \bigoplus^Z C_p \oplus \bigoplus^N C_n$（理想拼接）
+4. **分子有效超级嘉当矩阵** $C_{\text{mol}} = \bigoplus_k C_{\text{el}}(k) + \sum_{i<j} T_{ij}$（跨原子因果耦合 $T_{ij} = t_{ij}\cdot I_4$，需相对位置计算）
+5. **晶胞嘉当矩阵** $C_{\text{unit\_cell}}$（链B：分子杂化 → 周期性凝聚，构造性计算非粗粒化；经内禀 Weyl 矩阵嵌入给出结构群，**仅约束**可实现的曲率谱，**不直接生成** Regge 晶胞）
+6. **Regge 晶胞与角亏 $\delta_v$**（链A：晶胞几何分布独立生成，见 §4）→ FG 退相干场
 
-1. **质子嘉当矩阵** $C_p = A_4$（纯 A4，无缺陷）→ **中子嘉当矩阵** $C_n = A_4 - \varepsilon\cdot\text{diag}(1,0,0,0)$（带缺陷）
-2. **元素嘉当矩阵** $C_{\text{el}} = \bigoplus^Z C_p \oplus \bigoplus^N C_n$（理想拼接）
-3. **分子有效超级嘉当矩阵** $C_{\text{mol}} = \bigoplus_k C_{\text{el}}(k) + \sum_{i<j} T_{ij}$（跨原子因果耦合 $T_{ij} = t_{ij}\cdot I_4$，需相对位置计算）
-4. **大量分子构成材料** → 识别并提取内禀 Weyl 矩阵嵌入 → 构造 **Regge 亏角** → 写出有效作用量 → GR 有效度规
-
-当前建模对象是**分子**——多种分子类型联合超导属于实验前沿但非主流，CQM 超导原理至少与最前沿实验在方向上保持一致。形式化管线见 `MolecularGeometry.lean`。
-
-### 2.6 例外情况
-
-中子星等极端引力环境不适用上述拼接规则——理想块对角结构失效，牛顿引力退化失效，需独立处理（见 §6 强引力推广与缺口表 G17）。
+当前建模对象是**晶胞**——链A（几何分布）生成角亏数值，链B（晶胞嘉当矩阵）决定角亏可实现谱，两者在精细引力纤维丛处汇合（§3.2、§5）。真实材料的超导发生在晶胞及其分布层面，CQM 原理与最前沿实验（复杂晶胞/多相联合超导）在方向上保持一致。形式化管线见 `MolecularGeometry.lean`。
 
 ---
 
-## 3. 三大作用量
+## 3. 晶胞层：三条独立链
 
-### 3.1 约束作用量：几何-压强骨架
+### 3.1 三条链的定义
 
-$$S_{\text{constraint}} = \sum_{T} \sum_{h \in T} \text{tr}\left( \Theta_h[\Gamma_T] \circ \mathcal{M}_h[\mathcal{R}] \right) + \sum_{\langle TT' \rangle} \text{tr}\left( \mathcal{P}(d_{TT'}) \circ \Gamma_{TT'} \right)$$
+| 链 | 内容 | 输出 |
+|----|------|------|
+| **链 A** | 核子 → 原子核 → 原子 → 分子 → 晶胞空间分布 | 实际几何：键长、键角、缺陷、晶界、向错 |
+| **链 B** | 核子 A4 → 原子核交织 → 原子商空间 → 分子杂化 → 晶胞嘉当矩阵 | 纤维 + 结构群（构造性计算，非粗粒化） |
+| **链 C** | 晶胞分布 → 拓扑抽象 | 底空间邻接关系 |
 
-| 符号 | 含义 |
+### 3.2 三条链的关系要点
+
+- **链 B 不是粗粒化**，而是一套从质子/中子 A4 到晶胞嘉当矩阵的**构造性计算**（逐级发生学：核子交织 → 原子商空间 → 分子杂化 → 周期性凝聚）。
+- **电子不需要显式输入**：电子是基态耦合常数 $\alpha$ 的对应，已在系统中存在（角亏涨落越阈前不表现为配对态）。
+- **链 A 决定角亏数值**；**链 B 决定角亏可实现谱**；两者在纤维丛处汇合。
+- 晶胞嘉当矩阵**不直接生成** Regge 晶胞，但通过结构群约束可实现的曲率。
+
+### 3.3 嘉当矩阵计算链
+
+从质子A4嘉当矩阵出发，一路给出晶胞嘉当矩阵：
+
+$$\mathcal{C}_{\text{proton}} = A_4 \xrightarrow{\text{链B}} \mathcal{C}_{\text{element}} \xrightarrow{\text{链B}} \mathcal{C}_{\text{molecule}} \xrightarrow{\text{链B}} \mathcal{C}_{\text{unit\_cell}} \xrightarrow{\text{链B}} \mathcal{C}_{\text{crystal}}$$
+
+链 A 同时给出晶胞的空间分布几何（键长、键角、缺陷位置），链 C 给出底空间拓扑。
+
+---
+
+## 4. Regge 几何
+
+由链 A 的晶胞分布独立计算：
+
+$$\boxed{\delta_v = 2\pi - \sum_{\Delta \ni v} \arccos\left(\frac{l_{ij}^2 + l_{ik}^2 - l_{jk}^2}{2l_{ij} l_{ik}}\right)}$$
+
+### 4.1 维度门槛
+
+| 外部维度 | Regge 铰链 | 角亏 | 精细引力 |
+|---------|-----------|------|---------|
+| 1D | 无 | 0 | **无** |
+| 2D | 有 | 非零（缺陷处） | **激活** |
+| 3D | 有 | 更丰富 | 更强 |
+
+### 4.2 角亏不受牛顿常数限制
+
+Regge 角亏由晶格几何直接给出，**不受牛顿常数 $G_N$ 限制**（精细引力不表现为几何吸引/测地线约束）。FG 不走 Regge→GR 连续极限→Poisson 方程路径——它直接由 Regge 角亏给出。
+
+---
+
+## 5. 精细引力纤维丛
+
+### 5.1 纤维丛要素
+
+| 要素 | 来源 |
 |------|------|
-| $\Theta_h[\Gamma_T]$ | 绕 hinge $h$ 的**矩阵和乐**（holonomy），A4 嘉当矩阵的路径排序乘积，非交换性完整保留 |
-| $\mathcal{M}_h[\mathcal{R}]$ | 关系网络 $\mathcal{R}$ 在面 $h$ 上的**关联模式矩阵** |
-| $\mathcal{P}(d_{TT'})$ | **压强-距离张量**，$d_{TT'} = |\ln(r_T/r_{T'})|$ |
-| $\Gamma_{TT'}$ | 超级嘉当矩阵中 $T$-$T'$ 块的连接子矩阵 |
+| 底空间 $M$ | 链 A + 链 C |
+| 纤维 $F$ | 链 B（A4 根空间 $\simeq \mathbb{C}^4$） |
+| 结构群 $G_{\text{FG}}$ | 链 B（$U(1)_{\text{em}} \times SO(2)_{\text{space}} \times SU(4)_{\text{internal}}$） |
+| 联络 $\mathcal{A}_{\text{FG}}$ | 由 $\delta_v$ 生成 |
+| 和乐 $W_v$ | 绕向错闭合回路：$W_v = \exp(i\delta_v \hat{T})$ |
 
-**压强的真实作用**：压强只能压缩晶格间距和由之自举的精细引力结构，不能压缩电磁场。
+### 5.2 和乐相位
 
-压强通过压缩耦合常数空间距离 $d_{TT'}$，破坏关系网络的周期 A4 拼接，产生非平庸的引力精细结构拓扑。
+$$\phi_\alpha^{(v)} \approx \delta_v \cdot \theta_\alpha$$
 
-### 3.2 拓扑增强因子
+其中 $\theta_\alpha$ 是 A4 根空间特征角，由 Dynkin 图几何决定。
 
-从约束作用量对 $\mathcal{R}_{ij}$ 的二阶变分出发：
+### 5.3 电子作为基态耦合对应
 
-$$\frac{\delta^2 S_{\text{constraint}}}{\delta \mathcal{R}_{ij} \delta \mathcal{R}_{kl}} \bigg|_{\bar{\mathcal{R}}} = \mathcal{K}_{ij,kl}$$
+$$\boxed{\text{电子} = \text{基态耦合常数 }\alpha\text{ 的对应}}$$
 
-定义**拓扑刚度矩阵** $\mathcal{K}$ 的**冯·诺依曼熵**：
+电子携带 A4 根指标，在纤维丛上运动。它是关系性历史产物（来自质子-中子关系网络的历史拓扑路径），但在超导问题中已经"在场"——系统中已有电子。**电荷、质量、自旋**全部编码于纤维丛的拓扑结构中。配对与否的区别仅在于耦合常数是否完成 $\alpha\to4\alpha$ 跃迁（见下方本体论分层）。
 
-$$S_{\text{top}} = -\text{Tr}\left( \hat{\rho}_{\text{top}} \ln \hat{\rho}_{\text{top}} \right), \quad \hat{\rho}_{\text{top}} = \frac{\mathcal{K}}{\text{Tr}(\mathcal{K})}$$
+**本体论分层（电子 vs 库珀对）**：电子是**基态耦合常数 $\alpha$** 的对应——它是关系性历史产物，但在超导问题中已经"在场"：系统中已有电子，只是耦合常数停在 $\alpha$ 而未跃迁。**库珀对是跃迁耦合常数 $4\alpha$ 的对应**。因此"配对"的本质不是"制造出电子"，而是**耦合常数从 $\alpha$ 跃迁到 $4\alpha$**——电子（基态对应）因角亏涨落不足、阈值未达而未被激发为配对态；一旦 $\Delta\delta_v$ 越过阈值、$\alpha\to4\alpha$ 跃迁触发，同一批电子便在精细引力的因果约束下自组织为库珀对。电子是前提，库珀对是前提的跃迁结果。
 
-**拓扑增强因子**：
+### 5.4 FG 的精确定义
 
-$$\mathcal{F}[\text{Top}] = \exp(-S_{\text{top}})$$
+FG 是 GR 在深度层级上的非吸引力效应，不表现为几何吸引/测地线约束，而是**耦合空间纤维丛上的因果限制/退相干场强度**，由 Regge 角亏直接给出，不受 $G_N$ 限制。FG 对应非平庸因果网络（纤维丛），GR 对应平庸因果网络（时空）。**FG 是角亏的直接后果，不存在"中子触发 FG"的动态过程**——中子缺陷（或质子-质子非平直粘合）提供角亏的微观结构性来源（见 §2.4）。在超导机制中，FG 的角色是：
+- **因果约束**：通过角亏场对电子配对通道施加相容性筛选
+- **退相干场**：将叠加态投影到与因果拓扑相容的子空间
+- **非吸引力**：不提供配对吸引力（吸引力仍来自电子-声子耦合），只筛选哪些通道可以配对
 
-在 A4 根系空间，非周期拼接（$\mathcal{Q} > 0$）导致本征值谱出现能隙，$S_{\text{top}} > 0$，$\mathcal{F}[\text{Top}] < 1$。
+### 5.5 FG vs GR：对比总表
 
-### 3.3 再生产作用量：温度-因果时动力学
 
-$$S_{\text{reproduction}} = \int dt \sum_{T} \text{tr}\left( \mathcal{T}_T \circ \left( \mathcal{D}_t + \mathcal{F}[\text{Top}(\mathcal{G}_{\text{A4}}^{\text{fine}})] \cdot \Gamma_0 e^{-E_{\text{gap}}/k_B T} \right) \mathcal{T}_T \right) + \sum_{T} \text{tr}\left( \frac{\mathcal{T}_T \circ \mathcal{T}_T^\dagger}{g_{\text{eff}}[\Gamma_T]} \right)$$
-
-| 符号 | 含义 |
-|------|------|
-| $\mathcal{T}_T$ | **因果潜能张量**，A4 根系空间的 4×4 复矩阵序参量 |
-| $\mathcal{D}_t = v_\tau[\mathcal{G}] \cdot \partial_\tau + \hat{C}(u)$ | 坐标时协变导数 |
-| $\mathcal{F}[\text{Top}(\mathcal{G}_{\text{A4}}^{\text{fine}})]$ | **拓扑增强因子**，从约束作用量形式导出（严格证明待完成） |
-| $g_{\text{eff}}[\Gamma_T]$ | 由嘉当矩阵谱决定的等效耦合强度 |
-
-**两步操作**：
-1. **相容性筛选**（唯一性）：引力退相干场对叠加态的几何-拓扑测试
-2. **再生产锁定**（确定性）：筛选出的分支能否持续存在
-
-### 3.4 电子作用量：历史性封装物与外部电磁场
-
-$$S_{\text{electron}} = S_{\text{kin}}[\psi_e; \mathcal{R}] + S_{\text{braid}}[\psi_e, \mathcal{T}; \Gamma, \mathcal{R}] + S_{\text{mag}}[\psi_e; \mathbf{B}]$$
-
-**动能项**：
-$$S_{\text{kin}} = \sum_{\langle ij \rangle \in \mathcal{R}} \text{tr}\left( \bar{\psi}_e^{(i)} \circ \left( i\mathcal{D}_t - \mathcal{H}_{\text{kin}}[\mathcal{R}] \right) \circ \psi_e^{(j)} \right)$$
-
-**编织耦合项（核心）**：
-$$S_{\text{braid}} = \sum_{T} \text{tr}\left( \mathcal{T}_T \circ \hat{\mathcal{B}}[\Gamma_T, \mathcal{R}_T] \circ (\psi_e \otimes \psi_e)_T \right)$$
-
-**编织算符**：
-$$\hat{\mathcal{B}}[\Gamma_T, \mathcal{R}_T] = \sum_{\alpha,\beta,\gamma,\delta=1}^{4} \mathcal{R}_{T,ij}^{\alpha\beta} \cdot \Gamma_{T,\gamma\delta} \cdot \gamma_{\alpha} \otimes \gamma_{\beta} \cdot \exp\left( i \oint_{\langle ij \rangle \in T} \mathcal{A}_{\text{eff}}[\mathcal{G}] \cdot d\mathbf{l} \right)$$
-
-**磁场耦合项**：
-$$S_{\text{mag}} = \sum_{i} \text{tr}\left( \bar{\psi}_e^{(i)} \circ (\boldsymbol{\sigma} \cdot \mathbf{B}_i) \circ \psi_e^{(i)} \right)$$
-
-$\mathbf{B}$ 为**外部输入，不可压缩**。
-
-### 3.5 "乘"而非"加"的数学本质
-
-编织耦合项是**张量空间的编织操作**：
-
-$$\mathcal{T}_T \in \mathcal{F}_{\text{A4}}^{\otimes 2}, \quad \hat{\mathcal{B}} \in \text{End}(\mathcal{F}_{\text{A4}}^{\otimes 4}), \quad \psi_e \otimes \psi_e \in \mathcal{F}_{\text{A4}}^{\otimes 2}$$
-
-这不是微扰展开中的相互作用顶点，而是**关系网络几何内禀的配对通道**。
+|             | **量子引力 QG**             | **精细引力 FG**                          | **经典引力 GR**                                  |
+| ----------- | ----------------------- | ------------------------------------ | -------------------------------------------- |
+| **存在论地位**   | 基础前提                    | 深度前提（层级激发）                           | 广度前提（平滑展开）                                   |
+| **本体根基**    | 终极物质关系网络                | 质子/中子关系网络                            | 质子/中子关系网络                                    |
+| **因果网络状态**  | 前组织/全局幺正                | 激发态/层级态                              | 基态/平庸态                                       |
+| **底空间**     | 前几何（尚未分化）               | 物质晶胞分布本身（离散 Regge 网络）                | 时空流形（平滑化的物质分布抽象）                             |
+| **源**       | 前源（尚未显现）                | 晶胞几何缺陷（物质分布自身的内禀不均匀性）                | 能动张量（物质能量-动量的宏观平均）                           |
+| **源的位置**    | —                       | 内禀：源即底空间自身的结构                        | 外部：源作为内容作用于先验背景（表现）                          |
+| **纤维/内部结构** | 前结构（尚未层级化）              | 异质：A4 根空间（物质内部层级的涌现）                 | 同质：切空间（时空的线性化，无内部层级）                         |
+| **曲率结构**    | 黎曼零点谱 $\gamma_n$（前几何约束） | 离散角亏 → 联络曲率 → 和乐相位                   | 黎曼曲率（平滑极限下的统计平均）                             |
+| **曲率作用**    | 前组织约束（质数分布 → 物质有限化）     | 资格审查（决定哪种自组织/层级跃迁被允许）                | 测地线约束（决定已有实体如何运动）                            |
+| **关系网络性质**  | 前展开：物质对无限"质"的自组织        | 表现为自我展开：物质同时是网络构成者又是曲率源，生成新层级（电子、配对） | **是 QG 下物质自我展开在平滑化后的表现**：物质被统计为能量密度，在背景中被动运动 |
+| **层级创生**    | 尚未分化                    | 有：从核子到晶胞到电子到配对，新层级持续涌现               | 无：物质始终停留在经典质点/场层级，无新层级生成                     |
+| **层级性**     | 无（前层级）                  | 有：底空间与纤维异质，不可化约                      | 无：纤维是底空间的自我近似                                |
+> 注："激发态/基态"仅为类比说法，核心是**平庸与非平庸因果网络**的关系（见 `01 核心理论/CQM 核心 三种引力存在论前提.md` §3）。FG 与 GR 同源、不同层：GR 是广度（平庸时空背景），FG 是深度（物质结构内部的层级因果约束）。本表为 FG 焦点视图；含 QG 列的三种引力完整全览见 `01 核心理论/CQM 核心 三种引力存在论前提.md` §4"QG vs FG vs GR：对比总表"。
 
 ---
 
-## 4. 统一作用量与闭合方程组
+## 6. 声子 = 曲率量子
 
-### 4.1 总作用量
+晶胞振动导致角亏涨落：
 
-$$S_{\text{CQM}} = S_{\text{constraint}}[\Gamma; \mathcal{R}, P] + S_{\text{reproduction}}[\mathcal{T}; \Gamma, T] + S_{\text{electron}}[\psi_e; \mathcal{R}, \mathcal{T}, \Gamma, \mathbf{B}]$$
+$$\delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t)$$
 
-### 4.2 完整闭合方程组
+量子化：
 
-$$\begin{cases}
-\displaystyle \frac{\delta S_{\text{constraint}}}{\delta \Gamma_T} = 0 \quad \forall T & \text{(A4 自举)} \\
-\displaystyle \frac{\delta S_{\text{reproduction}}}{\delta \mathcal{T}_T} = 0 & \text{(再生产稳态)} \\
-\displaystyle \frac{\delta S_{\text{electron}}}{\delta \psi_e^{(i)}} = 0 & \text{(电子运动方程)} \\
-\mathcal{G}_{\text{A4}}[\mathcal{R}] = \text{Regge}\left( \bigsqcup_{k} \text{A4}^{(k)} \xrightarrow{\mathcal{R}} \text{复合骨架} \right) & \text{(引力退相干场)} \\
-\mathcal{R}_{ij}^{\alpha\beta}(t) = \bar{\mathcal{R}}_{ij}^{\alpha\beta} + \delta\mathcal{R}_{ij}^{\alpha\beta}(t) & \text{(关系网络涨落)}
-\end{cases}$$
+$$\Delta\delta_v(\mathbf{r},t) = \sum_{\mathbf{q}} \sqrt{\frac{\hbar}{2\rho_m \omega_{\mathbf{q}}}} \left( b_{\mathbf{q}} + b_{-\mathbf{q}}^{\dagger} \right) e^{i\mathbf{q}\cdot\mathbf{r}}$$
+
+$$\boxed{\text{声子} = \text{量子化曲率涨落} = \text{耦合空间的动态几何激发}}$$
+
+声子在此不是独立晶格振动，而是耦合空间曲率的量子涨落。频率由曲率刚度决定 $\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2$。
 
 ---
 
-## 5. 超导涌现积分公式
+## 7. 固有时流速
 
-本节给出超导序参量的理想涌现积分，逐项给出物理意义、数学结构与本体论地位。这是 CQM 从一般涌现公式到 $T_c$ 的核心推导步骤。
+### 7.1 曲率决定固有时
 
-### 5.1 起点：涌现的一般公式
+$$\boxed{\frac{d\tau}{dt} = 1 + \beta \,\delta_v}$$
 
-从 CQM 的一般涌现公式出发：
+这是 GR 时间膨胀的类比：
 
-$$\mathcal{O}_{\text{emergent}} = \int_{\mathcal{M}} \mathcal{D}(\lambda_i) \cdot \mathcal{P}(\lambda) \cdot \mathcal{K}(\lambda, \xi) \cdot e^{-\Gamma(\xi) \tau} \, d\lambda \, d\xi$$
+$$\frac{d\tau}{dt} = \sqrt{-g_{00}} \approx 1 + \frac{\Phi}{c^2}$$
 
-其中：
-- $\mathcal{D}(\lambda_i)$：有限本体的基础自由度（原料层）
-- $\mathcal{P}(\lambda)$：因果潜能分布（可能性权重）
-- $\mathcal{K}(\lambda, \xi)$：引力退相干核（因果筛选机制）
-- $e^{-\Gamma(\xi) \tau}$：再生产衰减因子（稳定性锁定）
+> **$\beta$ 的微观来源**（`三种引力存在论前提.md` §8.5）：$\beta$ 是离散拉普拉斯算子的格林函数，$\beta \sim \frac{1}{4\pi}\ln\frac{L}{a}$，其中 $L$ 为系统尺寸，$a$ 为晶格常数。$\beta$ **对数依赖于系统尺寸**，不是材料常数。纳米颗粒 $\beta$ 减小 $\Rightarrow$ $T_c$ 降低（有限尺寸效应）。
 
-### 5.2 映射到超导：各项的物理对应
+### 7.2 固有时 = 再生产周期
 
-| 一般项 | 超导中的对应 | 物理意义 |
-|--------|------------|---------|
-| $\lambda_i$（有限本体） | 晶格中的质子/中子（构成有效离子） | 原料的提供者 |
-| $\mathcal{D}(\lambda_i)$ | $\mathcal{D}_{\text{lattice}}(\mathbf{k})$ | 晶格全部可能的因果配对模式 |
-| $\mathcal{P}(\lambda)$ | $\mathcal{P}_{\text{electron}}(\mathbf{k}, T)$ | 电子（第一阶涌现物）的配对倾向权重 |
-| $\mathcal{K}(\lambda, \xi)$ | $\mathcal{C}_{\text{triple}}(\mathbf{k}) \cdot \mathcal{K}_{\text{causal}}(\mathbf{k})$ | 三方因果闭环强度 + 因果截断核 |
-| $e^{-\Gamma(\xi) \tau}$ | $e^{-\Gamma_\phi(T)|\tau|}$ | 相位再生产锁定因子 |
+固有时不是抽象时间参数，而是**物质再生产周期的几何化身**。曲率改变固有时流速，就是改变再生产周期在坐标时间中的流逝率。
 
-在一般涌现公式中，$\mathcal{K}$ 是引力退相干核；但在超导这个特定涌现中，退相干操作是通过**三方因果闭环**（电子-晶格-电子）完成的，因此 $\mathcal{K}$ 分解为：
-
-$$\mathcal{K} \to \mathcal{C}_{\text{triple}} \cdot \mathcal{K}_{\text{causal}}$$
-
-- $\mathcal{C}_{\text{triple}}$：三方因果闭环的**建立强度**——晶格作为因果中介的效能
-- $\mathcal{K}_{\text{causal}}$：因果截断核——引力因果限制场对闭环的**筛选条件**
-
-### 5.3 完整涌现积分公式
-
-$$\boxed{\psi(\mathbf{r}, T) = \int_{\text{BZ}} d^3k \; \mathcal{D}_{\text{lattice}}(\mathbf{k}) \; \cdot \; \mathcal{P}_{\text{electron}}(\mathbf{k}, T) \; \cdot \; \mathcal{C}_{\text{triple}}(\mathbf{k}) \; \cdot \; \mathcal{K}_{\text{causal}}(\mathbf{k}) \; \cdot \; e^{-\Gamma_\phi(T)|\tau|}}$$
-
-积分域是**布里渊区**（Brillouin Zone），因为电子自由度在动量空间组织，配对发生在费米面附近。
-
-### 5.4 各项详解
-
-#### 5.4.1 $\mathcal{D}_{\text{lattice}}(\mathbf{k})$：晶格因果潜能谱
-
-**本体论地位**：原料层。由质子和中子的**正四单纯型组合构型**决定的全部可能因果配对模式。包含声子谱 $\omega_{\mathbf{q}}$、电子能带结构 $E_n(\mathbf{k})$、费米面几何、配对对称性通道（s, p, d, f 等）与电子-声子耦合顶点 $|g_{\mathbf{q}}|^2$ 的允许范围。
-
-- $\mathcal{D}_{\text{lattice}}$ **不依赖于温度**，是晶格的固定属性；
-- 它只包含"什么配对模式在原则上是可能的"，不包含"配对是否发生"。
-
-#### 5.4.2 $\mathcal{P}_{\text{electron}}(\mathbf{k}, T)$：电子配对倾向权重
-
-**本体论地位**：被动载体。BCS 极限下数学形式：
-
-$$\mathcal{P}_{\text{electron}}(\mathbf{k}, T) \approx f(E_{\mathbf{k}})\bigl(1 - f(E_{\mathbf{k}})\bigr), \quad f(E) = \frac{1}{e^{\beta E} + 1}$$
-
-在费米面附近（$E \approx E_F$）达到最大。$T \to 0$ 时最大；$T \to T_c$ 时热展宽抹平配对倾向；$T > T_c$ 时虽 $\mathcal{P}_{\text{electron}} \neq 0$，但因果截断与相位锁定失效。
-
-#### 5.4.3 $\mathcal{C}_{\text{triple}}(\mathbf{k})$：三方因果闭环强度
-
-**本体论地位**：这是 CQM 最具原创性的项——关系性封装的操作强度。两个电子不能直接配对，需晶格作为因果中介：电子 1 扰动晶格（发射虚声子）→ 虚声子传播 → 电子 2 吸收 → 状态变化反向传播 → 因果闭环建立。
-
-$$\mathcal{C}_{\text{triple}}(\mathbf{k}) \approx |g_{\mathbf{k}}|^2 \cdot D(\mathbf{k}, \omega) \cdot \Theta_{\text{loop}}$$
-
-在 BCS 极限下退化为有效吸引势 $V_{\text{eff}}(\mathbf{k}, \mathbf{k'})$ 的费米面平均。
-
-#### 5.4.4 $\mathcal{K}_{\text{causal}}(\mathbf{k})$：因果截断核
-
-**本体论地位**：引力因果限制场的筛选函数——引力与超导在 CQM 中交汇的核心。
-
-配对因果时差 $\Delta\tau \approx 2\pi/\omega_{\mathbf{q}}$ 须达到晶格因果分辨率 $\tau_{\text{res}} = \hbar/(M_{\text{eff}} c^2)$，即：
-
-$$\omega_{\mathbf{q}} \leq \frac{2\pi M_{\text{eff}} c^2}{\hbar} = \omega_{\text{causal}}$$
-
-最简单形式（阶梯函数）：
-
-$$\mathcal{K}_{\text{causal}}(\mathbf{k}) = \Theta(\omega_{\text{causal}} - \omega_{\mathbf{k}})$$
-
-更精细形式（因果共振窗口）：
-
-$$\mathcal{K}_{\text{causal}}(\mathbf{k}) = \exp\left[-\frac{(\Delta\tau(\mathbf{k}) - \tau_{\text{res}})^2}{2\sigma^2}\right]$$
-
-**CQM 与 BCS 的关键区别**：
-
-| | BCS | CQM |
-|--|-----|-----|
-| 截断频率 | $\omega_D$（德拜频率，晶格动力学） | $\omega_{\text{causal}} \propto M_{\text{eff}} c^2/\hbar$（引力因果限制场） |
-| 截断原因 | 声子能谱上限 | 因果分辨率物理极限 |
-| 同位素效应 | $\omega_D \propto M^{-1/2}$ | $\omega_{\text{causal}} \propto M_{\text{eff}}$ |
-| 简单金属中 | 数值可能与 CQM 接近 | 数值可能与 BCS 接近 |
-
-在常规超导体中 $\omega_{\text{causal}}$ 与 $\omega_D$ 数值接近，解释了 BCS 的成功；但在强引力场、非常规超导、高压/应变下二者分道扬镳。
-
-#### 5.4.5 $e^{-\Gamma_\phi(T)|\tau|}$：相位再生产锁定因子
-
-**本体论地位**：稳定性维持。$T < T_c$ 时 $\Gamma_\phi \to 0$，长程相位关联被晶格引力场网络锁定，宏观相干涌现；$T > T_c$ 时相位被热涨落随机化，序参量衰减为零。CQM 视相位衰减本质是**因果网络再生产断裂**。
-
-### 5.4.6 坍缩难题的 CQM 解答（唯一性与确定性的统一）
-
-丢掉"波函数坍缩"假设后，完全接受退相干面临两个难题：
-
-| 难题 | 内容 | CQM 解答 |
-|:---|:---|:---|
-| **① 唯一性** | 退相干后哪一个分支成为现实？ | 引力退相干场的**相容性筛选**（§3.3 两步操作之一）：因果结构对叠加态的几何-拓扑测试锁定唯一因果链——唯一性来自物质本体自身因果结构的自我锁定，而非外部坍缩 |
-| **② 确定性** | 状态如何被持续维持？ | **再生产机制**（§3.3 两步操作之二、§5.4.5 相位锁定因子）：涌现态不是一次性生成，而是被因果网络反复再生产所维持——确定性来自因果网络自我再生产的持续性，而非一次性坍缩 |
-
-> **两个难题，一个本体论全部解决**：有限本体（质子/中子）→ 引力退相干场（相容性筛选→唯一性）→ 再生产锁定（因果网络反复维持→确定性）。坍缩被扬弃为因果结构自我锁定的实现环节，多世界分支被扬弃为退相干前叠加态（非平行实在）。
-
-### 5.5 严格性注记（重要）
-
-涌现积分 §5.4 的"积分 → 对数渐近 $T_c$"步骤，在 Lean 中已由 `BCSIntegralAsymptotic.bcsTcFromIntegral_solved`（G13 缺口闭合）严格化；BCS 能隙积分方程的"$\int \to \text{arsinh}$"台阶由 `FirstPrinciples.gapIntegral_pr` 严格化。但"涌现积分中 $\mathcal{C}_{\text{triple}}$、$\mathcal{K}_{\text{causal}}$ 的完整微观推导"仍为开放缺口（见 §14 缺口表）。
-
-### 5.6 强引力场推广
-
-从 CQM 层级涌现论自然推出：强（精细）引力场不仅不必然破坏超导，反而——因为引力场在 CQM 中承担退相干效果——能够探索强引力场下的超导态。平庸引力场下 $\omega_{\text{causal}}$ 与 $\omega_D$ 数值接近，无法判断引力是否承担超导角色；只有在引力场足够强的区域，因果截断频率与德拜频率分道扬镳，才能区分 CQM 因果截断机制与 BCS 声子截断机制。
-
-在强引力场（如中子星表面）引入引力拓扑因子 $\mathcal{T}_{\text{grav}}(g_{\mu\nu})$：
-
-$$\psi(\mathbf{r}, T, g_{\mu\nu}) = \int_{\text{BZ}} d^3k \; \mathcal{D}_{\text{lattice}} \cdot \mathcal{P}_{\text{electron}} \cdot \mathcal{C}_{\text{triple}} \cdot \mathcal{K}_{\text{causal}} \cdot \mathcal{T}_{\text{grav}}(g_{\mu\nu}) \cdot e^{-\Gamma_\phi|\tau|}$$
-
-弱引力极限下 $\mathcal{T}_{\text{grav}} \to 1$；强引力场中通过调制因果分辨率（$\tau_{\text{res}} \to \tau_{\text{res}}\sqrt{-g_{00}}$）、因果时差与打开新的因果截断通道改变涌现。极端引力环境（如致密星壳层）可作为 CQM 引力拓扑修正的远期检验对象。
+- 因果限制越强（$\delta_v$ 越大），固有时流速越慢（$d\tau/dt = \sqrt{1-\beta\delta_v} < 1$），再生产周期变慢——与黑洞冻结一致（§7.1）
+- 平直极限 $\delta_v = 0$ 时 $d\tau/dt = 1$，固有时与坐标时同步
 
 ---
 
-## 6. CQM 完整超导机制链
+## 8. 耦合空间不确定性
 
-从有限本体到 $T_c$ 的逐项映射，每一环均有对应的 Lean 符号对象：
+### 8.1 耦合坐标与耦合动量
 
-```
-有限本体（质子 = 自再产生因果环）
-  │  晶格 = 有限本体关系网络（金属氢 = 最密最纯网络）
-  ▼
-晶格振动 = 网络因果锁定的周期性调制
-  │  因果截断频率 ω_D = √(k/M)（最大离子质量对应最低截断）
-  ▼
-声子 = CQM 晶格扇区的因果截断激发（第 3 层引力因果限制场的晶格实现）
-  │  电子与晶格因果结构的相互作用
-  ▼
-三方因果闭环：电子 — 晶格 — 电子（第 4 层，tripleLoopStrength_locked_pos）
-  │  闭环锁定 → 配对通道开启（superconductivity_requires_relation_network）
-  ▼
-Cooper 对 = 关系性封装（RQM 组合操作）
-  │  宏观相位相干 = 网络中全部因果环的同步锁定
-  ▼
-涌现积分 ψ(r,T) = ∫ d³k D_lattice·P_electron·C_triple·K_causal·e^{−Γ|τ|}（§5）
-  │  emergenceIntegral_pos：序参量严格为正
-  ▼
-T_c = (2e^γ/π)·ω_causal·exp(−1/(N(0)V₀))（第 8 层，criticalTemperature_pos）
-  │  退化条件：ω_causal → ω_D = √(k/M)，N(0)V₀ → d·c
-  ▼
-BCS（弱耦合核心，cqm_reduces_to_bcs）→ McMillan–Dynes（强耦合扩展）
-```
+耦合坐标 $u = \ln\alpha$（$\alpha$ 为精细结构常数），耦合动量：
 
-### 6.1 每个要素的本体论地位与 Lean 对应
+$$\boxed{p_u = \frac{1}{C}\frac{d\tau}{dt}}$$
 
-| 计算要素 | 物理含义 | CQM 本体论地位 | Lean 对应 |
-|:---|:---|:---|:---|
-| $\omega_D$（$\omega_{\ln}$） | 德拜/对数声子频率 | 有限本体网络因果锁定的周期 | `debyeFrequency` |
-| $\lambda = N(0)V$ | 电子-声子耦合 | 网络密度 × 因果闭环操作强度 | `densityOfStates*coupling` |
-| $\mu^*$ | 库仑赝势 | 未屏蔽的缺陷本体间斥力（网络缺陷项） | `muStar` |
-| $\Delta_0$ | 零温能隙 | 三方闭环锁定的能量尺度 | `bcsGap` |
-| $f(\text{geometry})$ | 几何因子（因果屏蔽） | 禁闭在正四单纯形内部、不参与因果截断的质量份额 | `effectiveMass = M_ion·f` |
-| $\mathcal{T}_{\text{grav}}$ | 引力拓扑因子 | 强引力只增强因果锁定（不破坏配对） | `gravitationalTopologyFactor` |
+其中 $C = \xi'(1)/\xi(1)$ 是谱常数。
+
+### 8.2 海森堡代数
+
+耦合空间 CQM 海森堡代数：
+
+$$[\hat{u}, \hat{p}_u] = i$$
+
+### 8.3 曲率-耦合不确定性关系
+
+由海森堡代数得 $\Delta u\cdot\Delta p_u \ge 1/2$。代入 $p_u = (1+\beta\delta_v)/C$，有 $\Delta p_u = \beta\,\Delta\delta_v / C$，因此：
+
+$$\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{C}{2\beta}}$$
+
+**物理意义**：曲率涨落通过固有时流速涨落，强制精细结构常数产生量子涨落。阈值与背景角亏无关，仅由谱常数 $C$ 和几何耦合参数 $\beta$ 决定。
 
 ---
 
-## 7. CQM 对 BCS 公式的还原与超出
+## 9. 库珀对 = 耦合常数跃迁
 
-### 7.1 退化条件（晶格扇区）
+### 9.1 跃迁
 
-CQM 的 $T_c$ 公式在自然单位下：
+库珀对携带电荷 $2e$，有效精细结构常数跃迁：
 
-$$k_B T_c = \frac{2e^\gamma}{\pi} \cdot \hbar\omega_{\text{causal}} \cdot \exp\left(-\frac{1}{N(0)\cdot V_0}\right)$$
+$$\boxed{\alpha \to 4\alpha \iff u \to u + \ln 4}$$
 
-**退化到 BCS 的两个条件**（`Reduction.cqm_reduces_to_bcs`、`cqm_debye_reduction`）：
-1. **配对通道 = 晶格声子扇区**：因果截断频率取德拜频率 $\omega_D = \sqrt{k/M_{\text{ion}}}$。
-2. **耦合常数对应**：态密度 × 耦合乘积 $N(0)\cdot V_0 \equiv d\cdot c$。
+> **配对本质**：电子是基态耦合常数 $\alpha$ 的对应，已在系统中存在；库珀对是同一耦合常数跃迁到 $4\alpha$ 的对应。**配对的本质即耦合常数的 $\alpha\to4\alpha$ 跃迁**——不是"无中生有地产生电子"，而是已存在的电子在角亏涨落越过阈值后被激发为配对态。超导与否的区别仅在于耦合常数是否完成了这次跃迁（见 §5.3 本体论分层）。
 
-### 7.2 三层严格区分（定义 / 定理）
+$\ln 4 = 2\ln 2$ 对应两个自旋比特的重组，也可从 A4 表示的维度压缩导出：
 
-> **严格性注记（勿把定义当证明）**：下表"公式层"列给出 BCS 公式的结构；"Lean 定义"列是**公式的正式声明**（`noncomputable def`，即"把 BCS 公式本身定义为数学对象"，不是"证明公式成立"）；"性质定理"列才是 **Lean 已证明的结论**（正性、单调性、方程解、恒等式、极限）。这些定义所依据的物理前提（声子机制、BCS 近似成立域）不在模块内证明，而是 `physical_hypothesis` 公理或文献输入。
+> **$\ln 4$ 的 $A_4$ 表示论来源**（`三种引力存在论前提.md` §8.3）：$\mathbf{4} \otimes \mathbf{4} = \mathbf{10}_s \oplus \mathbf{6}_a$，配对后有效内部空间维度从 16 压缩到 4，$\ln(16/4) = \ln 4$。这是 $A_4$ 表示论的严格推论，非唯象参数。
 
-| BCS 公式（超导基础理论推导结果） | Lean 定义 | 性质定理（已证） |
-|:---|:---|:---|
-| $T_c = (2e^\gamma/\pi)\cdot\omega_D\cdot\exp(−1/(N(0)V))$ | `bcsCriticalTemperature`、`criticalTemperature` | `bcsCriticalTemperature_pos`、`criticalTemperature_pos`、`criticalTemperature_monotone_in_cutoff`、`bcsTcEquation_solved`（公式确为 $T_c$ 方程 $1 = \lambda\ln((2e^\gamma/\pi)\omega_D/k_B T_c)$ 的解）、`bcsTcEquation_unique`（唯一正解） |
-| CQM→BCS 退化（记号对应） | `cqm_reduces_to_bcs`、`cqm_debye_reduction` | 二者均仅 `rfl`/定义展开的记号等同，**非** BCS 物理的独立推导 |
-| 零温能隙 $\Delta_0 = 2\omega_D\exp(−1/(N(0)V))$ | `bcsGap` | `bcsGap_pos`（弱耦合极限式；有限 $\lambda$ 逼近见下两行） |
-| 能隙方程闭式解 $\Delta = \omega_D/\sinh(1/\lambda)$ | `bcsGapFromGapEquation` | `bcs_gap_equation`（确为能隙方程的解）、`bcs_gap_equation_unique`（唯一解） |
-| 弱耦合退化 | — | `bcs_gap_weak_coupling_limit`（$\lambda\to0^+$ 极限定理）、`bcs_gap_ratio_eq`（比值恒等式 $(1-e^{-2/\lambda})^{-1}$） |
-| **普适能隙比** $2\Delta_0/(k_B T_c) = 2\pi e^{-\gamma}(1-e^{-2/\lambda})^{-1}$ | — | `bcs_gap_ratio_closed_form`（有限 $\lambda$ 闭式）、`bcs_universal_gap_ratio`（$\lambda\to0^+$ 弱耦合极限定理）、`bcs_gap_ratio_strong_coupling_excess`（有限 $\lambda$ 能隙比恒大于 $2\pi e^{-\gamma}$） |
-| **同位素定律** $T_c \propto M^{-1/2}$ | `debyeFrequency` | `debyeFrequency_decreases_with_mass`、`criticalTemperature_isotope_shift`、`criticalTemperature_decreases_with_ion_mass` |
-| 氢/氘位移 $T_c(D) = T_c(H)/\sqrt{2}$ | — | `hydrogen_deuterium_isotope_shift` |
-| McMillan–Dynes 强耦合 | `mcmillanDynesTc` | `mcmillanDynesTc_pos`、`mcmillan_strong_coupling_condition` |
-| London 穿透深度 $\lambda_L$ | `londonPenetrationDepth` | `londonPenetrationDepth_pos` |
-| BCS 相干长度 $\xi_0$ | `bcsCoherenceLength` | `bcsCoherenceLength_pos` |
-| 磁通量子 $\Phi_0 = h/2e$ | `fluxQuantum` | `fluxQuantum_eq_pi` |
+### 9.2 阈值条件
 
-> **注意**：$T_c$、能隙、London、$\xi_0$、$\Phi_0$ 的"公式本身"在 Lean 中都是**定义**——把 BCS/Meissner/London 已知结果转为符号对象，正确性来自超导基础理论与实验，**非**由 Lean 导出；Lean 导出的是这些定义所满足的运算性质。
+由不确定性关系 $\Delta u \cdot \Delta\delta_v \ge C\sqrt{1-\beta\delta_v}/\beta$（见 §8），满足 $\Delta u \ge \ln 4$ 所需最小曲率涨落阈值：
 
-### 7.3 朴素 CQM 异常（条件定理）
+$$\boxed{\Delta u \ge \ln 4 \iff \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta\ln 4}}$$
 
-`naive_cqm_isotope_anomaly`：若**不**退化到晶格扇区，朴素 CQM 的 $\omega_{\text{causal}} = 2\pi M_{\text{eff}}$ 与离子质量成正比，给出 $T_c$ 随质量单调不减（按 $T_c \propto M^{-\alpha}$ 约定 $\alpha = -1$），与 BCS 同位素定律（$\alpha = 1/2$）方向相反。这是一个**条件定理**——证明"若采用朴素替换则方向与实验相反"，是对模型选择的判别，**非**"退化是逻辑必然"的证明。"配对通道取晶格声子扇区"是与实验一致性的物理选择。
-
-### 7.4 强耦合扩展
-
-超出 BCS 弱耦合有效域时，采用 McMillan–Dynes 强耦合公式（`mcmillanDynesTc`）：
-
-$$k_B T_c = \frac{\omega_{\ln}}{1.2}\exp\left[-\frac{1.04(1+\lambda)}{\lambda - \mu^*(1+0.62\lambda)}\right]$$
-
-分母正性条件 $\lambda > \mu^*(1+0.62\lambda)$ 已形式化为 `mcmillan_strong_coupling_condition`。
+当晶胞振动的曲率涨落超过此阈值时，耦合空间中的 $\ln 4$ 跃迁被触发，电子在精细引力的因果约束下形成配对。
 
 ---
 
-## 8. Eliashberg 退化路径
+## 10. 晶胞振荡与自组织-再生产
 
-### 8.1 平庸极限
+配对/相干这一整套过程**就是晶胞振荡本身**——晶胞振动（声子 = 曲率量子）携带角亏涨落、耦合空间响应与相位关联的全部信息。本节陈述这一**单一几何-动力学过程**。
 
-**设定**：单元素材料，关系网络 $\mathcal{R}$ 为周期晶格，A4 嘉当矩阵 $\Gamma_T = \Gamma_{\text{A4}}^{(0)}$ 为常数块，几何平直（$\Theta_h \to \varepsilon_h \cdot \mathbf{I} \to 0$），编织算符平庸（$\hat{\mathcal{B}} \to \mathbf{I}$），历史记忆核退化为 $\delta$ 函数（$K_e \to \delta$）。
+$$\boxed{\text{晶胞振动（声子=曲率量子）} \;\Rightarrow\; \delta_v(t)=\delta_v^{(0)}+\Delta\delta_v(t) \;\Rightarrow\; \text{不确定性 } \Delta u\cdot\Delta\delta_v\ge \frac{C\sqrt{1-\beta\delta_v}}{\beta} \;\Rightarrow\; \ln 4\text{ 跃迁 } (\alpha\to4\alpha) \;\Rightarrow\; \text{超导态}}$$
 
-**结论**：CQM 统一作用量形式退化为 Eliashberg 强耦合理论（严格数学证明待完成）。
+**温度的统一作用**：温度通过改变晶胞振动模式的声子数 $n_B(\omega_{\mathbf{q}})=(e^{\hbar\omega_{\mathbf{q}}/k_BT}-1)^{-1}$，改变角亏涨落 $\Delta\delta_v(t)$ 的幅度谱与相位关联长度，从而**影响自组织——再生产（晶胞振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干**。所有温度效应都出自这一条声子数，自然体现在角亏涨落的统计分布中。临界温度 $T_c$ 对应 $\Delta\delta_v$ 的统计分布使超导判据在全局平均上归零的临界点（见 §12.3）。
 
-### 8.2 退化对照表
+### 10.1 和乐相位闭合约束（晶胞振荡的内在单值性条件）
 
-| CQM 对象 | 平庸极限 | Eliashberg 对应 |
-|---------|---------|----------------|
-| $\mathcal{T}_T$ | $\to \Delta_k$（动量空间标量） | 序参量 |
-| $\mathcal{F}[\text{Top}]$ | $\to 1$ | 无拓扑增强 |
-| $\hat{\mathcal{B}}$ | $\to \mathbf{I}$ | 平庸配对 |
-| $g_{\text{eff}}[\Gamma_T]$ | $\to g$（常数耦合） | 电子-声子耦合 |
-| $\alpha^2F(\omega)$ | 拓扑声子支 $\to$ 普通声子谱 | Eliashberg 谱函数 |
+绕局域缺陷（向错）一周后，A4 根指标的相位必须闭合。这是晶胞振荡过程中自然满足的**单值性约束**：
 
----
+$$\mathcal{H}_{ij} = \exp\left(i\oint_C \omega_{\alpha_i\alpha_j}\right) \approx 1 \pmod{2\pi}$$
 
-## 9. 迈斯纳效应的本体论推导
+**空间不均匀性的作用**（赝能隙的因果核心）：
+- **向错芯**（$\delta_v$ 大）：单值性窗口宽 → $\mathcal{H}_{ij}$ 容易 $\approx 1$ → 通过
+- **晶粒内部**（$\delta_v$ 小）：窗口窄 → 热漂移易使 $\mathcal{H}_{ij}$ 偏离 $1$ → 失败
 
-### 9.1 平庸极限路径
+热漂移 $\Delta\phi_{thermal}$ 由晶胞振动声子数给出：有效窗口宽度 = $\delta_v \cdot \xi_{coher} - \Delta\phi_{thermal}(T)$，温度升高 → 窗口收窄。
 
-CQM 在平庸极限形式退化为 Eliashberg 理论，而 Eliashberg 理论通过 Ginzburg-Landau 展开给出迈斯纳效应，因此 CQM 在平庸极限相应包含迈斯纳效应（严格推导链待完成）。
+### 10.2 赝能隙的本质：和乐相位闭合约束的空间梯度
 
-### 9.2 CQM 内禀直接推导
+在同一温度 $T$ 下，上述和乐相位闭合约束在空间上不均匀满足：
 
-磁场通过外部电磁场与电子自旋/轨道耦合进入编织算符：
+| 空间区域 | 局域曲率 $\delta_v$ | 有效窗口 | 结果 | 可观测表现 |
+|---------|-------------------|---------|------|-----------|
+| 向错芯 | 大 | 宽 | 通过 | 局域配对关联 |
+| 晶粒内部 | 小 | 窄 | 失败 | 正常态 |
+| 全局平均 | 中等 | 中等 | 临界 | 取决于 $T$ 与平均窗口的关系 |
 
-$$\hat{\mathcal{B}}[\mathcal{R}, \mathbf{B}] = \hat{\mathcal{B}}[\mathcal{R}] \cdot \exp\left( i \oint_{\langle ij \rangle} \mathbf{A} \cdot d\mathbf{l} \right)$$
+**赝能隙** = 高曲率区局域配对关联已建立、但全局相位关联长度 $\xi_{phase}$（由晶胞振动的相位关联长度直接给出）尚未跨越晶粒的中间态。这是晶胞振荡空间不均匀性的直接产物。
 
-当再生产锁定 $\Gamma[\mathcal{G}] \to 0$，因果潜能张量 $\mathcal{T}_T$ 获得非零期望值。编织耦合项对磁场变分：
-
-$$\frac{\delta S_{\text{eff}}}{\delta \mathbf{A}} = 0 \quad \Rightarrow \quad \mathbf{J} = -\frac{n_s e^2}{m^*} \mathbf{A} \quad \text{（伦敦方程）}$$
-
-结合 $\nabla \times \mathbf{B} = \mu_0 \mathbf{J}$：
-
-$$\nabla^2 \mathbf{B} = \frac{1}{\lambda_L^2} \mathbf{B}, \quad \lambda_L^{-2} \sim \text{tr}(\mathcal{T}_T \circ \mathcal{T}_T^\dagger) \cdot \mathcal{F}[\text{Top}(\mathcal{G}_{\text{A4}}^{\text{fine}})]$$
-
-**迈斯纳效应直接出现**：磁场指数衰减，穿透深度由因果潜能张量的锁定强度与精细引力拓扑共同决定。
 
 ---
 
-## 10. 非平庸 Ginzburg-Landau 理论
+## 11. 温度依赖与临界温度
 
-### 10.1 张量序参量的梯度展开
+### 11.1 相干曲率涨落
 
-因果潜能张量 $\mathcal{T}_T$ 作为 A4 根系空间的 **4×4 复矩阵**（16 复分量 = 32 实自由度），其各分量可独立凝聚。
+温度通过玻色-爱因斯坦统计抑制相干曲率涨落：
 
-### 10.2 A4 根系张量 GL 自由能
+$$\Delta\delta_v(T) = \Delta\delta_0 \sqrt{\frac{1}{1 + 2n_B(\Omega_0)}}$$
 
-$$\mathcal{F}_{\text{GL}}^{\text{(CQM)}} = \sum_{\alpha,\beta=1}^{4} \left[ \alpha_{\alpha\beta} |\mathcal{T}_{\alpha\beta}|^2 + \frac{\beta_{\alpha\beta}}{2} |\mathcal{T}_{\alpha\beta}|^4 + \frac{1}{2m^*_{\alpha\beta}} \left| (-i\hbar\nabla - 2e\mathbf{A}) \mathcal{T}_{\alpha\beta} \right|^2 \right] + \mathcal{F}_{\text{cubic}}[\mathcal{T}]$$
+其中 $n_B(\Omega_0) = 1/(e^{\hbar\Omega_0/k_BT}-1)$ 是 Bose-Einstein 分布给出的平均声子数，$\Omega_0$ 是主导曲率振荡模式频率，$\Delta\delta_0$ 是零温曲率涨落幅度。
 
-### 10.3 多分量凝聚与分步相变
+### 11.2 临界温度
 
-由于 A4 根系各简单根方向的凝聚温度不同，CQM 推断：
+$$\boxed{T_c = \frac{\hbar\Omega_0}{2k_B \,\text{arctanh}\left[ \left( \frac{\ln 4}{\beta \Delta\delta_0} \right)^2 \right]}}$$
 
-1. **分步相变**：不同 A4 根系分量可在不同温度下独立凝聚
-2. **部分凝聚相**：某些分量已凝聚，某些分量仍正常
-3. **多芯涡旋结构**：框架允许每个涡旋包含多个 A4 根系分量子涡旋（结构推论，待实验验证）
+### 11.3 统计极限与 $\zeta(s)$
+
+配对后电子服从费米-狄拉克统计。母积分 $I_s = \int_0^\infty x^{s-1}/(e^x+1)\,dx = \Gamma(s)(1-2^{1-s})\zeta(s)$。三维费米子配对取 $s=3$：
+
+$$\int_0^\infty \frac{x^2}{e^x+1}dx = \frac{3}{2}\zeta(3)$$
+
+二维超导对应 $s=2$，出现 $\zeta(2) = \pi^2/6$（费米积分因子）。
+
+### 11.4 温度破坏机制
+
+温度不是"能量注入"，而是**通过晶胞振动声子数改变自组织的再生产环节**——声子数 $n_B(\omega_{\mathbf{q}})$ 升高使角亏涨落 $\Delta\delta_v$ 幅度谱展宽、相位关联长度压缩，再生产（自组织的一个环节）的周期一致性被破坏。当热相位噪声超过和乐相位闭合的单值性窗口时，配对波函数的全局一致性被破坏，超导通道指数级关闭。
 
 ---
 
-## 11. 严格性缺口表（G 类）
+## 12. 完整因果链
 
-为诚实标示框架的未闭合环节：
+完整因果链分为**基础本体链**（§12.1，给出电子（基态耦合对应）与耦合空间的来源）和**晶胞振荡中的耦合空间动力学**（§12.2，对应§10：配对/相干即晶胞振荡这一单一几何-动力学过程，温度由 Bose 分布给出的声子数统一进入）。
+
+### 12.1 基础本体链
+
+$$\boxed{\begin{aligned}
+&\text{三种引力（QG/GR/FG，FG}\neq\text{GR）} + \text{谱常数 } \xi(1) \\
+&\Downarrow \\
+&\text{质子 } A_4 + \text{中子 } D(\delta) \\
+&\Downarrow \\
+&\text{链A（晶胞几何分布）} + \text{链B（晶胞嘉当矩阵，构造性）} + \text{链C（拓扑抽象）} \\
+&\Downarrow \\
+&\text{Regge 角亏 } \delta_v \\
+&\Downarrow \\
+&\text{精细引力纤维丛（曲率 } F \text{，联络 } \omega_{\alpha_i\alpha_j}\text{）} \\
+&\Downarrow \\
+&\text{电子作为基态耦合常数 }\alpha\text{ 的对应（已在系统中存在）} \\
+&\Downarrow \\
+&\text{声子 } = \text{曲率量子 } \Delta\delta_v \\
+&\Downarrow \\
+&\frac{d\tau}{dt} = \sqrt{\,1 - \beta\delta_v\,} \quad (\text{固有时流速=两时间之比，基准 1；见 §7}) \\
+&\Downarrow \\
+&p_u = \frac{1}{C}\frac{d\tau}{dt} = \frac{\sqrt{\,1-\beta\delta_v\,}}{C}, \quad C = \frac{\xi'(1)}{\xi(1)} \\
+&\Downarrow \\
+&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta}
+\end{aligned}}$$
+
+基础本体链止于耦合空间不确定性关系，为耦合空间动力学提供**动力学舞台**——耦合坐标 $u$ 与曲率涨落 $\Delta\delta_v$ 的量子对偶。配对/相干过程即晶胞振荡本身（见 §10），其展开即 §12.2 的单一因果链。
+
+### 12.2 晶胞振荡中的耦合空间动力学（对应§10）
+
+$$\boxed{\begin{aligned}
+&\text{晶胞振动（声子 = 曲率量子）} \Rightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
+&\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
+&\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta} \\
+&\Downarrow \\
+&\ln 4 \text{ 跃迁 } u \to u+\ln 4 \;\Rightarrow\; \alpha\to4\alpha \text{（耦合常数跃迁）} \\
+&\Downarrow \;(\text{和乐相位闭合约束 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j})\approx 1 \text{ 在晶胞振荡中自然满足}) \\
+&\text{超导态作为晶胞振荡全局相干模式涌现}
+\end{aligned}}$$
+
+### 12.3 判据与临界温度的涌现位置
+
+超导判据 $\Delta\delta_v \ge C\sqrt{1-\beta\delta_v}/(\beta\ln 4)$ 在晶胞振荡动力学中的**涌现位置**（与 §9.2 阈值条件一致）：
+
+$$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \ln 4 \text{ 跃迁} \;\Rightarrow\; \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta\ln 4} \;\Rightarrow\; \text{和乐相位闭合约束在晶胞振荡中有非零满足概率}}$$
+
+临界温度 $T_c$ 对应**角亏涨落统计分布使超导判据在全局平均上归零**的临界点：
+
+$$\boxed{T_c = \frac{\hbar\Omega_0}{2k_B \,\text{arctanh}\left[ \left( \frac{\ln 4}{\beta \Delta\delta_0} \right)^2 \right]}}$$
+
+### 12.4 赝能隙在因果链中的定位
+
+**赝能隙** = 和乐相位闭合约束在空间上的不均匀通过：高曲率区（向错芯）闭合约束满足 → 局域配对关联建立，但全局相位关联长度 $\xi_{phase}$（由晶胞振动相位关联长度直接给出）尚未跨越晶粒 → 全局超导未形成。这是晶胞振荡空间不均匀性的直接产物。
+
+### 12.5 结构要点：单值性瓶颈与空间不均匀性
+
+"晶胞振动 → $d\tau/dt$ → 不确定性 → $\ln 4$ 跃迁 → 超导"是不可再拆解的单一几何-动力学过程，其结构要点：
+1. **和乐相位闭合约束是瓶颈**——并非所有 $\ln 4$ 试探都成功，约束 $\mathcal{H}_{ij}\approx 1$ 是晶胞振荡过程中必须满足的单值性条件；
+2. **空间不均匀性是一阶效应**——赝能隙是约束通过率的空间梯度直接产物；
+3. **温度统一进入**——温度只通过晶胞振动模式的声子数进入角亏涨落统计分布，再生产是自组织的一个环节。
+
+---
+## 18. 严格性缺口表（G 类）
+
+框架中尚未闭合的环节：
 
 | 缺口 | 内容 | 状态 |
 |:---|:---|:---:|
 | **G9** | 因果截断共振窗口 $\sigma$ 的来源与标定 | 未闭合 |
-| **G10** | $\Theta_{\text{loop}}$ 闭环条件函数的动力学形式 | 未闭合 |
+| **G10** | 闭环条件函数的动力学形式 | 未闭合 |
 | **G11** | $\mathcal{D}_{\text{lattice}}$ 从正四单纯型组合构型到声子谱的具体推导 | 未闭合 |
-| **G12** | 引力拓扑因子 $\mathcal{T}_{\text{grav}}$ 的完整度规依赖形式；涌现方程由张量结构上升为泛函约束结构的严格化——精细引力退相干场作为"指定约束"（数学不可达的自组织事实），其泛函形式的构造方式仍为开放问题 | 未闭合 |
-| **G13** | BCS 积分方程 $\tanh\to$ 对数渐近（"积分→$T_c$"） | **已闭合**：`BCSIntegralAsymptotic.bcsTcFromIntegral_solved` |
-| **G14** | 中子缺陷谱判据的完整闭合——**可用内容已由初等 SOS 严格化**：正方向 $\varepsilon < \text{spectralGap}$ $\Rightarrow$ $C_n$ 正定（`neutronCartan_posDef_of_lt_spectralGap`，强度放宽到 $\varepsilon < 1$）、反方向 $\varepsilon \geq 5/4$ 非正定（`neutronCartan_not_posDef_of_five_fourths_le`，见证向量 $(4,3,2,1)$：$x^\dagger C_n x = 20 - 16\varepsilon \leq 0$）。**唯一残留**：区间 $[1, 5/4)$ 内正定保持（等于 $C_n$ 行列式 $\det = 5 - 4\varepsilon > 0$ 的余子式展开 / Sylvester 判据，涉及 4 阶矩阵全子式族，数学库未直接建立；及 $\gamma_{\min} = (3-\sqrt{5})/2 \approx 0.699$ 作为严格阈值 $\min\{2, \lambda_2, \ldots\}$ 的进一步认证） | 部分闭合 |
+| **G12** | 引力拓扑因子 $\mathcal{T}_{\text{grav}}$ 的完整度规依赖形式 | 未闭合 |
+| **G13** | BCS 积分方程 $\tanh\to$ 对数渐近（"积分→$T_c$"） | 已闭合：`bcsTcFromIntegral_solved` |
+| **G14** | 中子缺陷谱判据的完整闭合——**非对角元形式**：$D(\delta)$ 的 $(2,3)/(3,2)$ 元为 $-\delta$，$\det D = 8 - 3\delta^2$，正定条件 $|\delta| < \sqrt{8/3}$。待办：Lean 形式化迁移至非对角形式，重新验证正定性判据 | 部分闭合 |
 | **G15** | 主次结构谱间隙差→同位素效应映射 | 未闭合 |
 | **G16** | 因果分辨率的形式化（Regge 亏角密度→Ricci 标量） | 未闭合 |
-| **G17** | 牛顿引力退化定理（Regge 有效度规→Poisson 方程） | 未闭合 |
+| **G18** | §12 耦合空间曲率机制关键参数从第一性原理提取：$\beta \sim \frac{1}{4\pi}\ln\frac{L}{a}$（离散拉普拉斯格林函数）、$K_{\text{eff}}$（曲率刚度）；$\Delta\delta_v \ge C\sqrt{1-\beta\delta_v}/(\beta\ln4)$ 阈值在具体材料中的数值计算。$\ln 4$ 来自 $A_4$ 表示论 $\mathbf{4}\otimes\mathbf{4}=\mathbf{10}\oplus\mathbf{6}$ 维度压缩。待完成：$K_{\text{eff}}$ 的微观推导、具体材料数值计算 | 部分闭合 |
+| **G19** | §10.1 和乐相位闭合条件 $\mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1$ 中"$\approx 1$"的**容差标定**：容差与温度、向错芯曲率 $\delta_v$、相干长度 $\xi_{coher}$ 的定量关系；有效窗口宽度 $\delta_v \xi_{coher} - \Delta\phi_{thermal}(T)$ 的严格推导 | 未闭合 |
+| **G21** | §10.2 赝能隙相图：和乐相位闭合约束空间不均匀满足率到可观测量（ARPES 谱 $A(\mathbf{k},\omega)$、STM 局域态密度）的**映射关系**。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |
+| **G22** | §12.3 临界温度 $T_c$ 作为"角亏涨落统计分布使超导判据在全局平均上归零"的**严格推导**：从晶胞振荡声子数与不确定性关系导出 $T_c = \hbar\Omega_0/(2k_B\,\text{arctanh}[(\ln4/(\beta\Delta\delta_0))^2])$，当前 $T_c$ 公式来自§11.2 的不确定性+统计论证 | 未闭合 |
 
 ---
 
-## 12. 与 Lean 形式化的对应
+## 19. 与 Lean 形式化的对应
 
 超导形式化库位于 `06 Lean形式化/Superconductivity/`。本文涉及的已形式化对象与模块：
 
 | 模块 | 本文对应层 | 关键对象 |
 |:---|:---|:---|
-| `Ontology` | §1 本体论 | 有限本体公理、RQM 唯物化（属性随附本体）、电子封装（质子-中子对关系性历史产物） |
-| `Gravity` | §5.4.4 因果截断 | `causalResolutionTime`、`causalCutoffFrequency`、`causalCutoffKernel`、`causalResonanceWindow` |
-| `Mechanism` | §5.4.3 三方闭环；§5.4.6 坍缩难题；§5.6 强引力 | `tripleLoopStrength`、`PairingSymmetry`、`superconductivity_requires_relation_network`（唯一性）、`relationalManifestation_grows_with_coupling`（RQM 唯物化）、`strong_gravity_keeps_pairing_channels`（强引力不破坏） |
-| `Integral` | §5 涌现积分 | `orderParameterKernel`、`emergenceIntegral`（正性定理） |
-| `TransitionTemperature` | §7.1 $T_c$ | `criticalTemperature`、同位素（几何因子） |
-| `StrongGravity` | §5.6 强引力 | `gravitationalTopologyFactor`、`correctedCausalResolution` |
-| `Reduction` | §7 BCS 还原 | BCS 退化、能隙方程、$T_c$ 方程、普适能隙比、同位素 $\alpha=1/2$ |
-| `CartanSuperconductivity` | §10 张量 GL | A4 谱分解、序参量正性（`superconductingOrderTensor_pos`） |
-| `FirstPrinciples` | §5.5 严格性注记 | A4→晶格声子→耦合→能隙→$T_c$；`gapIntegral_pr`（$\int\to\text{arsinh}$ 严格化） |
-| `ElementCartan` | §2 元素层级 | 质/中子主次结构、同位素效应 $\epsilon(N)$、CQM→BCS 退化 |
-| `SPAF` | §2.5 分子路线 | 元素嘉当矩阵、因果耦合 $t_{ij}$、Regge 边长、中子缺陷谱判据 |
-| `MolecularGeometry` | §2.5 分子路线 | 分子有效超级嘉当矩阵 → Weyl 嵌入 → Regge 亏角 → GR 有效度规 |
-| `BCSIntegralAsymptotic` | §5.5 | G13 闭合：`bcsTcFromIntegral_solved` |
-| `BridgeTheorems` | 跨模块桥接 | 谱间隙↔BCS↔Regge↔GR |
-
-关于从因果几何到材料设计的形式化细节，见 `06 Lean形式化/Superconductivity/` 中各模块。
+| `Ontology` | §1 本体论 | 有限本体公理、RQM 唯物化、电子作为基态耦合对应 |
+| `Gravity` | §5 精细引力纤维丛 | `causalResolutionTime`、`causalCutoffFrequency`、`causalCutoffKernel` |
+| `Mechanism` | §9 库珀对跃迁 | `tripleLoopStrength`、`superconductivity_requires_relation_network`、`strong_gravity_keeps_pairing_channels` |
+| `SelfOrganization` | §10 晶胞振荡与自组织-再生产 | 晶胞振荡（声子=曲率量子）、和乐相位闭合条件 $\mathcal{H}_{ij}\approx 1$、赝能隙=约束空间梯度（待形式化 G19、G21-G22） |
+| `Integral` | §11 温度依赖 | `orderParameterKernel`、`emergenceIntegral`（正性定理） |
+| `TransitionTemperature` | §11.2 $T_c$ | `criticalTemperature`、同位素（几何因子） |
+| `StrongGravity` | §5 精细引力纤维丛 | `gravitationalTopologyFactor`、`correctedCausalResolution` |
+| `Reduction` | §11 温度依赖（BCS 退化与还原） | 能隙方程、$T_c$ 方程、普适能隙比、同位素 $\alpha=1/2$ |
+| `CartanSuperconductivity` | §9 库珀对跃迁（A4 谱分解与序参量） | A4 谱分解、序参量正性（`superconductingOrderTensor_pos`） |
+| `FirstPrinciples` | §11.3 统计极限 | A4→晶格声子→耦合→能隙→$T_c$；`gapIntegral_pr` |
+| `ElementCartan` | §2 元素层级 | 质/中子主次结构、同位素效应 $\delta(N)$ |
+| `SPAF` | §2.5 晶胞路线 | 元素嘉当矩阵、因果耦合 $t_{ij}$、Regge 边长、中子缺陷谱判据 |
+| `MolecularGeometry` | §2.5 晶胞路线 | 分子→晶胞嘉当矩阵（链B约束）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场强度 |
+| `BCSIntegralAsymptotic` | §11.3 | G13 闭合：`bcsTcFromIntegral_solved` |
+| `CouplingSpace` | §12 耦合空间曲率机制 | 角亏→固有时流速→耦合动量 $p_u$→不确定性 $\Delta u\cdot\Delta\delta_v$→$\ln4$ 跃迁；$\zeta(s)$ 母积分 |
+| `BridgeTheorems` | 跨模块桥接 | 谱间隙↔BCS↔Regge 角亏↔FG 退相干场 |
 
 ---
 
-## 13. 形式化路线
+## 20. 形式化路线
 
 CQM 超导理论的形式化推进分三步（另有一个前置的第零步）：
 
 | 步骤 | 内容 | 当前状态 |
 |:---|:---|:---|
-| **第零步** | **半唯像框架**：第一性需要中子和电子涌现机制，但质量矩阵属于半量子引力退相干产物，因此半唯像建模是必要的阶段性工作而非终点。分子为当前建模对象，管线见 `MolecularGeometry.lean`。 | 代码已铺设，微观推导待闭合（G11、G14、G15） |
-| **第一步** | **Lean4 形式化推导——退化与还原**：CQM 必须退化和还原已有超导理论（BCS / Eliashberg / McMillan–Dynes），这是方向锚定。 | BCS 还原已形式化（§7.2），Eliashberg 退化待完成（§8） |
-| **第二步** | **CQM 完整超导机制及计算框架**：从涌现积分到 $T_c$ 的完整推导链。金属氢（单质子 = A4 直接拼接）是理想推导对象，已实例化（`hydrogenPhononFrequency_pos`、`hydrogen_bcs_gap_equation_solved`、`cartanA4Stack_*`）。 | 机制链已给出（§6），完整计算框架待闭合缺口 G9–G17 |
-| **第三步** | **指出室温超导的方向**：不是宣称可达，而是基于 CQM 机制指出强精细引力结构不破坏超导的方向性——常规 BCS 区 $\omega_{\text{causal}}$ 与 $\omega_D$ 数值接近，在强引力/高压/非常规材料中二者分道扬镳（§5.4.4），CQM 因果截断框架提供 BCS 之外的探索空间。 | 框架已给出，具体方向待实验检验 |
+| **第零步** | **半唯像框架**：第一性需要中子和电子涌现机制，但质量矩阵属于半量子引力退相干产物，因此半唯像建模是必要的阶段性工作而非终点。晶胞为当前建模对象（晶胞嘉当矩阵 + Regge 晶胞，见 §2.5、§3），管线见 `MolecularGeometry.lean`。 | 代码已铺设，微观推导待闭合（G11、G14、G15） |
+| **第一步** | **Lean4 形式化推导——退化与还原**：CQM 与已有超导理论（BCS / Eliashberg / McMillan–Dynes）的对应关系已在代码中形式化。 | BCS 还原见 `Reduction.lean`（§11 温度依赖）；其余还原待补 |
+| **第二步** | **CQM 完整超导机制及计算框架**：从耦合空间曲率机制到 $T_c$ 的完整推导链（§12）。注意：纯氢按 §2.4 不超导（角亏涨落为零），故金属氢实例是退化近似，需含晶格畸变/缺陷提供角亏来源方与 §2.4 协调（见 G18）。 | 机制链已给出（§12），完整计算框架待闭合缺口 G9–G22 |
+| **第三步** | **指出室温超导的方向**：不是宣称可达，而是基于 CQM 机制指出强精细引力结构不破坏超导的方向性——常规 BCS 区 $\omega_{\text{causal}}$ 与 $\omega_D$ 数值接近，在强引力/高压/非常规材料中二者分道扬镳，CQM 因果截断框架提供 BCS 之外的探索空间。 | 框架已给出，具体方向待实验检验 |
 
 > 由于量子引力禁闭退相干需同构黎曼猜想的证明而遥遥无期，GN 实验提升精度也遥遥无期；超导作为最活跃的实验对象且属于涌现对象，反而是 CQM 当前最值得投入、且相对于前两者明显能够形式化的方向。
 
 ---
 
-## 14. 结论
+## 21. 当前开放问题
+
+| 优先级 | 问题 | 影响 |
+|--------|------|------|
+| 🔴 最高 | $\beta$ 的微观来源（离散拉普拉斯格林函数 / A4 群论） | 决定全部 $T_c$ 预言的量级 |
+| 🔴 最高 | 中子 $D(\delta)$ 的代数类型（有限 / 仿射 / 双曲） | 决定核子交织算子的形式 |
+| 🟡 高 | 电子费米统计的严格来源（$SU(4)\simeq Spin(6)$ 旋量表示？） | 决定纤维丛的表示论 |
+| 🟡 高 | $T_c$ 双阈值（量子涨落 vs 声子振幅）的一致性 | 决定公式的自洽性 |
+| 🟢 中 | $\ln 4$ 的表示论严格证明 | 决定跃迁的群论根基 |
+| 🟢 中 | 具体材料数值验证（二维超导体） | 决定框架的实验可检验性 |
+
+---
+
+## 22. 结论
 
 CQM 超导框架的核心结构：
 
-1. **元素嘉当矩阵**是理想因果积木，BCS 同位素效应揭示其主次结构；金属氢（Z=1, N=0）是退化极限
-2. **三大作用量**通过编织算符耦合，不是微扰相加
-3. **涌现积分公式** $\psi(\mathbf{r},T)$ 给出从晶格、电子、三方闭环、因果截断到相位锁定的逐项映射（"积分→$T_c$" 由 G13 闭合，微观项仍待补）
-4. **平庸极限**下形式退化为 Eliashberg 理论（严格证明待完成）；退化为晶格扇区后还原 BCS 全部公式（含普适能隙比 $2\pi e^{-\gamma}$、同位素 $\alpha=1/2$）
-5. **非平庸拓扑**推断多分量序参量、分步相变、非周期涡旋晶格（待实验验证）
+1. **三种引力区分**：FG ≠ GR，FG 是纤维丛曲率，不受 $G_N$ 约束，直接由 Regge 角亏给出
+2. **元素嘉当矩阵**是理想因果积木，同位素效应揭示其主次结构（中子扇区为角亏的主要结构性来源，质子-质子对原理上亦可但几何极难）；金属氢（Z=1, N=0）是纯主结构极限（无角亏涨落，不超导）
+3. **三条独立链**（链A几何 + 链B嘉当矩阵 + 链C拓扑）在精细引力纤维丛处汇合，电子作为基态耦合常数 $\alpha$ 的对应已在系统中存在
+4. **耦合空间曲率机制**：曲率涨落→固有时流速（两时间之比）→耦合动量→海森堡不确定性→$\Delta u \ge \ln 4$→$\alpha\to 4\alpha$→库珀对
+5. **晶胞振荡与自组织-再生产**：配对/相干即晶胞振荡（声子=曲率量子）本身；温度改变晶胞振荡模式声子数，影响自组织——再生产（晶胞振荡的维持）是自组织的一个环节
+6. **临界温度**：$T_c = \hbar\Omega_0/(2k_B\,\text{arctanh}[(\ln4/(\beta\Delta\delta_0))^2])$
+7. **赝能隙本质**：和乐相位闭合约束在空间上的不均匀满足——高曲率区局域配对，低曲率区被阻断
+8. **曲率不均匀材料**中和乐相位闭合约束空间梯度响应，是赝能隙与多芯涡旋结构的来源（见 §12.4–§12.5）
+
+**核心结论**：自组织不是开关，而是晶胞振荡中的单一几何-动力学过程。温度不是外部破坏一个已成之态，而是改变晶胞振荡声子数、影响自组织——再生产（晶胞振荡的维持）是自组织的一个环节，声子数变化经由此环节进入自组织。曲率不均匀的材料中，和乐相位闭合约束在空间上梯度响应，导致同一温度下高曲率区先满足（局域配对/赝能隙），低曲率区后不满足，直到温度足够低使全局同步完成。
 
 ---
 
@@ -555,22 +539,25 @@ CQM 超导框架的核心结构：
 
 | 符号 | 含义 | 数学类型 |
 |------|------|---------|
-| $C_{\text{A4}}$ | A4 嘉当矩阵 | 4 × 4 整数矩阵 |
-| $\Gamma_T$ | 单纯型 $T$ 上的嘉当矩阵实现 | 4 × 4 复矩阵 |
-| $\mathcal{R}_{ij}^{\alpha\beta}$ | 关系网络耦合张量 | 4 × 4 复矩阵 |
-| $\Theta_h$ | 绕 hinge $h$ 的矩阵和乐 | 4 × 4 复矩阵 |
-| $\mathcal{P}(d)$ | 压强-距离张量 | 4 × 4 实矩阵 |
-| $\mathcal{T}_T^{\mu\nu}$ | 因果潜能张量（多分量序参量） | 4 × 4 复矩阵 |
-| $\hat{\mathcal{B}}[\Gamma, \mathcal{R}]$ | 编织算符 | $\text{End}(\mathcal{F}_{\text{A4}}^{\otimes 4})$ |
-| $\psi_e^{(i)}$ | 电子有效自由度 | 2 分量旋量 |
-| $\mathcal{F}[\text{Top}]$ | 拓扑增强因子 | 实数泛函 |
-| $\mathcal{K}_{ij,kl}$ | 拓扑刚度矩阵 | 张量 |
-| $S_{\text{top}}$ | 拓扑熵 | 实数 |
-| $\mathcal{Q}$ | 拼接非周期性 | [0,1] 实数 |
-| $\lambda_L$ | 伦敦穿透深度 | 长度 |
+| $A_4$ | 质子嘉当矩阵 | 4 × 4 整数矩阵 |
+| $D(\delta)$ | 中子嘉当矩阵（缺陷形变） | 4 × 4 实矩阵 |
+| $\mathcal{C}_{\text{element}}$ | 元素嘉当矩阵 | $4(Z+N)$ × $4(Z+N)$ 矩阵 |
+| $\mathcal{C}_{\text{mol}}$ | 分子有效超级嘉当矩阵 | 大方矩阵 |
+| $\delta_v$ | Regge 顶点角亏 | 实数 |
+| $\Delta\delta_v$ | 曲率涨落（声子） | 实数 |
+| $C$ | 谱常数 $\xi'(1)/\xi(1) \approx 0.0231$ | 无量纲实数 |
+| $\beta$ | 几何耦合参数 $\sim \frac{1}{4\pi}\ln\frac{L}{a}$ | 无量纲实数 |
+| $u$ | 耦合坐标 $\ln\alpha$ | 无量纲实数 |
+| $p_u$ | 耦合动量 $(1/C)(d\tau/dt)$ | 无量纲实数 |
+| $\tau$ | 固有时 | 时间 |
+| $t$ | 坐标时 | 时间 |
 | $\omega_{\text{causal}}$ | 因果截断频率 | 频率 |
-| $\mathcal{C}_{\text{triple}}(\mathbf{k})$ | 三方因果闭环强度 | 动量函数 |
-| $\mathcal{K}_{\text{causal}}(\mathbf{k})$ | 因果截断核 | 动量函数 |
+| $\omega_D$ | 德拜频率 | 频率 |
+| $\Omega_0$ | 主导曲率振荡模式频率 | 频率 |
+| $\Delta_0$ | 零温曲率涨落幅度 | 无量纲实数 |
+| $\lambda_L$ | 伦敦穿透深度 | 长度 |
+| $\Delta_{\alpha\beta}$ | A4 根系多分量序参量 | 4 × 4 复矩阵 |
+| $\mathcal{T}_{\text{grav}}$ | 引力拓扑因子 | 实数泛函 |
 
 ---
 
@@ -589,4 +576,91 @@ CQM 超导框架的核心结构：
 
 ---
 
-*本文档为 CQM 超导核心理论框架。涌现积分、机制链与第一性数值例链已在 Lean 中部分形式化；数值预言、同位素异常解释与实验检验仍待后续工作验证。*
+## 23. 软件实现：五层双轨架构
+
+CQM超导理论已在Godot引擎中实现为**3D专业引力超导实验软件**（`08 超导/超导材料设计器/`），将理论层次具象化为可操作的五层模型：
+
+### 23.1 五环节（五层）对应
+
+超导发生学五环节，每环节依次展开：
+
+| 环节 | 理论概念 | 软件层次 | 物理意义 | 实现方式 |
+|:---:|:---|:---:|:---|:---|
+| ① | 元素嘉当矩阵组装 | **L0** 化学式 | 全局锚点，元素组成 | 工作区原子自动推导 |
+| ② | 链B：结合方式 | **L1** 结合方式 | 保守子结构+可变模块 | 模式库（4超导家族） |
+| ③ | 链B：相对位置 | **L2** 相对位置 | 键长/键角/构象 | 模式库key_parameters |
+| ④ | 链A：晶胞+Regge骨架 | **L3** 晶胞 | 空间群/Bravais/Wyckoff | Regge单元→嘉当矩阵 |
+| ⑤ | 链A：晶胞分布(晶粒) | **L4** 晶胞分布 | 单晶/多晶/薄膜/线材/粉末 | **画笔材料设计** |
+
+**L4晶胞分布是介观精细引力结构发挥作用的地方**——自由度主要锚定在此环节。
+
+### 23.2 嘉当矩阵计算链
+
+从质子A4嘉当矩阵出发，一路给出晶胞嘉当矩阵：
+
+$$\mathcal{C}_{\text{proton}} = A_4 \xrightarrow{\text{L0 组装}} \mathcal{C}_{\text{element}} \xrightarrow{\text{L1 结合}} \mathcal{C}_{\text{molecule}} \xrightarrow{\text{L2 几何}} \mathcal{C}_{\text{unit\_cell}} \xrightarrow{\text{L3 晶胞}} \mathcal{C}_{\text{crystal}} \xrightarrow{\text{L4 分布}} \mathcal{C}_{\text{Regge}}$$
+
+软件实现此链的数值桥（G16 Regge-嘉当耦合数值桥）。
+
+### 23.3 三条链与软件对应
+
+| 链 | 理论角色 | 软件环节 | 状态 |
+|:---|:---|:---|:---:|
+| 链A（几何分布） | **生成**（离散Regge角亏→FG退相干场强度） | L3晶胞+L4晶胞分布 | ✅ 已实现 |
+| 链B（嘉当矩阵） | **约束**（结构群决定可实现曲率谱） | L0-L3嘉当矩阵计算 | ✅ 已实现 |
+| 链C（拓扑抽象） | **筛选**（底空间邻接关系） | L4拓扑分析 | ✅ 已实现 |
+
+### 23.4 CQM超导原理（软件表述）
+
+**晶胞的离散Regge结构 + 晶胞分布结构 主导超导发生学条件。**
+
+超导本质：晶粒中大量质子-中子构成的关系网络 → 精细引力纤维丛 → 电子作为基态耦合 $\alpha$ 的对应已在 → 曲率涨落超过阈值 → 耦合常数 $\alpha\to4\alpha$ 跃迁 → 库珀对涌现
+
+软件实现路径：
+1. L3晶胞等效为Regge单元 → 构造离散Regge曲率 → 角亏 $\delta_v$
+2. L4晶胞分布结构 → 画笔材料设计 → 曲率涨落 $\Delta\delta_v$
+3. 耦合空间曲率机制：$\Delta\delta_v \ge C\sqrt{1-\beta\delta_v}/(\beta\ln4)$ → 超导判定 → $T_c$ 计算
+
+### 23.5 五维设计模式
+
+从已有超导材料中提取五维环节经验展开模式（`data/pattern_library.json`）：
+
+| 模式家族 | L1保守子结构 | L2键参数 | L3空间群 | 置信度 |
+|:---|:---|:---|:---|:---:|
+| CUPRATE_LAYERED | CuO₂平面 | Cu-O键长 | I4/mmm | 0.95 |
+| PNICTIDE_FeAs | FeAs₄四面体 | Fe-As键长 | P4/nmm | 0.90 |
+| HYDRIDE_CAGED | H笼状结构 | M-H键长 | Fm-3m | 0.80 |
+| BCS_CONVENTIONAL | 常规金属 | 声子耦合 | 各空间群 | 0.99 |
+
+用户可选择模式，软件自动按所选模式展开五环节。
+
+### 23.6 双轨工作流
+
+- **模式设计**：L1-L3挂载经验规则，对应CQM中"平庸极限退化为Eliashberg"的已知家族
+- **自由设计**：仅受物理硬约束，对应CQM中"非平庸纤维丛"的新材料探索
+
+### 23.7 还原论不可达性
+
+**自由度主要锚定在晶粒环节（L4），还原论不可达为组织事实——需人工参与，不排除AI可达。**
+
+软件体现：L4晶胞分布由画笔材料设计（用户自由绘制），而非从L0-L3自动推导。这反映了CQM理论中涌现不可还原的本体论立场。
+
+### 23.8 上下分屏与理论对应
+
+```
+┌─────────────────────────────────────────┐
+│  上屏: 分子/原子设计 (L0-L2)            │
+│  放置原子 → 右键结合连接 → 自动推导化学式 │
+│  → 自动匹配超导家族模式 → 挂载L1-L3规则  │
+├─────────────────────────────────────────┤
+│  下屏: 画笔材料 = L4晶胞分布设计          │
+│  画笔绘制晶胞分布(晶粒) → Regge单元       │
+│  → 嘉当矩阵 → FG退相干场（角亏场）        │
+│  → CQM超导计算                            │
+│  TubeMesh粗细实体几何 + 离散密度场        │
+└─────────────────────────────────────────┘
+```
+
+---
+
+*本文档为 CQM 超导核心理论框架。耦合空间曲率机制、完整因果链与第一性数值例链已在 Lean 中部分形式化；数值预言、同位素异常解释与实验检验仍待后续工作验证。*

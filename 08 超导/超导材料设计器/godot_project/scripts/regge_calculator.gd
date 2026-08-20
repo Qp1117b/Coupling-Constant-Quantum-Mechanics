@@ -4,7 +4,7 @@ class_name ReggeCalculator
 ## Regge 微积分计算引擎 (3D 空间剖分)
 ## 亏角: ε_l = 2π − Σ_{围绕边 l 的四面体} θ_二面角
 ## Regge 作用量: Σ_l ε_l · l_l
-## 输出 hinge 数据 (边亏角/长度) 供约束作用量 S_constraint 与 G16/G17 桥接使用
+## 输出 hinge 数据 (边亏角/长度) 供链A几何计算与 G16 桥接使用
 
 static func compute_regge_3d(atom_positions: Array, bond_pairs: Array, scale: int = 1) -> Dictionary:
 	var scale_factor = float(scale)

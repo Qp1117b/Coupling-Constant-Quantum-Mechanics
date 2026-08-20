@@ -65,7 +65,7 @@ open Filter
 
 ## 参考文献
 - ruster (2026). CQM 数学 嘉当结构（07 推导与数学）§2.1–§2.2.
-- ruster (2026). CQM 超导 涌现积分 / 金属氢机制（08 超导）.
+- ruster (2026). CQM 超导核心理论（08 超导）.
 - Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 -/
 

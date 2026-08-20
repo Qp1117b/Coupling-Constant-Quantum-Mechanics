@@ -13,7 +13,7 @@ var _label_font_size: int = 16
 var _show_atom_labels: bool = true
 var _show_bond_labels: bool = false
 var _show_angle_arcs: bool = true
-var _label_bg_color: Color = Color(0.08, 0.1, 0.15, 0.85)
+
 var _label_fg_color: Color = Color(0.85, 0.9, 1.0)
 var _bond_label_color: Color = Color(0.4, 0.9, 0.5)
 var _measure_color: Color = Color(0.95, 0.8, 0.2)
@@ -23,23 +23,23 @@ func _ready():
 	_label_root.name = "AnnotationLabels"
 	add_child(_label_root)
 
-func set_show_atom_labels(visible: bool):
-	_show_atom_labels = visible
+func set_show_atom_labels(p_visible: bool):
+	_show_atom_labels = p_visible
 	for label in _atom_labels.values():
 		if is_instance_valid(label):
-			label.visible = visible
+			label.visible = p_visible
 
-func set_show_bond_labels(visible: bool):
-	_show_bond_labels = visible
+func set_show_bond_labels(p_visible: bool):
+	_show_bond_labels = p_visible
 	for label in _bond_labels.values():
 		if is_instance_valid(label):
-			label.visible = visible
+			label.visible = p_visible
 
-func set_show_angle_arcs(visible: bool):
-	_show_angle_arcs = visible
+func set_show_angle_arcs(p_visible: bool):
+	_show_angle_arcs = p_visible
 	for arc in _angle_arcs.values():
 		if is_instance_valid(arc):
-			arc.visible = visible
+			arc.visible = p_visible
 
 # === 原子标签 ===
 

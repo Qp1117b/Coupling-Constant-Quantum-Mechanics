@@ -67,7 +67,7 @@ func _draw():
 	if _show_legend:
 		_draw_legend(rect)
 
-func _draw_grid(plot_rect: Rect2, x_min, x_max, y_min, y_max):
+func _draw_grid(plot_rect: Rect2, _x_min, _x_max, _y_min, _y_max):
 	var n_x = 5
 	var n_y = 4
 	for i in range(n_x + 1):
@@ -118,12 +118,12 @@ func _draw_legend(rect: Rect2):
 	var x = rect.size.x - _margin_right - 100
 	var y = _margin_top + 5
 	for s in _series:
-		var name = s.get("name", "")
-		if name.is_empty():
+		var label_name = s.get("name", "")
+		if label_name.is_empty():
 			continue
 		var color = s.get("color", Color.WHITE)
 		draw_rect(Rect2(x, y, 12, 12), color, true)
-		draw_string(font, Vector2(x + 16, y + 10), name, HORIZONTAL_ALIGNMENT_LEFT, -1, _font_size - 1, _text_color)
+		draw_string(font, Vector2(x + 16, y + 10), label_name, HORIZONTAL_ALIGNMENT_LEFT, -1, _font_size - 1, _text_color)
 		y += 16
 
 func _compute_ranges() -> Array:
@@ -186,16 +186,16 @@ func set_auto_range(auto: bool):
 	_auto_range = auto
 	queue_redraw()
 
-func add_line_series(points: Array, color: Color, name: String = "", width: float = 2.0):
-	_series.append({"kind": "line", "points": points, "color": color, "name": name, "width": width})
+func add_line_series(points: Array, color: Color, label_name: String = "", width: float = 2.0):
+	_series.append({"kind": "line", "points": points, "color": color, "name": label_name, "width": width})
 	queue_redraw()
 
-func add_scatter_series(points: Array, color: Color, name: String = "", radius: float = 3.0):
-	_series.append({"kind": "scatter", "points": points, "color": color, "name": name, "radius": radius})
+func add_scatter_series(points: Array, color: Color, label_name: String = "", radius: float = 3.0):
+	_series.append({"kind": "scatter", "points": points, "color": color, "name": label_name, "radius": radius})
 	queue_redraw()
 
-func add_line_scatter_series(points: Array, color: Color, name: String = "", width: float = 2.0, radius: float = 3.0):
-	_series.append({"kind": "both", "points": points, "color": color, "name": name, "width": width, "radius": radius})
+func add_line_scatter_series(points: Array, color: Color, label_name: String = "", width: float = 2.0, radius: float = 3.0):
+	_series.append({"kind": "both", "points": points, "color": color, "name": label_name, "width": width, "radius": radius})
 	queue_redraw()
 
 # === 预设图表 ===
@@ -252,7 +252,7 @@ func plot_tc_vs_pressure(tc_func: Callable, p_range: Array = [0.0, 300.0], n_poi
 		points.append(Vector2(p, tc))
 	add_line_series(points, Color(0.9, 0.5, 0.3), "Tc(P)", 2.5)
 
-func plot_gap_vs_temperature(tc: float, delta_0: float, n_points: int = 80):
+func plot_gap_vs_temperature(_tc: float, _delta_0: float, n_points: int = 80):
 	clear()
 	set_title("BCS 能隙 Δ(T)")
 	set_labels("T/Tc", "Δ(T)/Δ₀")
@@ -274,31 +274,6 @@ func plot_order_parameters(order_params: Array):
 		var amp = abs(float(order_params[i].get("amplitude", 0)))
 		points.append(Vector2(float(i + 1), amp))
 	add_line_scatter_series(points, Color(0.8, 0.6, 1.0), "|Δk|", 2.0, 5.0)
-
-func plot_stepwise_transitions(transitions: Array):
-	clear()
-	set_title("分步相变")
-	set_labels("温度 T (K)", "凝聚通道数")
-	if transitions.is_empty():
-		return
-	var sorted_t = transitions.duplicate()
-	sorted_t.sort_custom(func(a, b): return float(a.get("tc_channel", 0)) > float(b.get("tc_channel", 0)))
-	var points: Array = []
-	var t_max = float(sorted_t[0].get("tc_channel", 0)) * 1.2
-	var n = 100
-	for i in range(n + 1):
-		var T = float(i) / n * t_max
-		var count = 0
-		for tr in sorted_t:
-			if T < float(tr.get("tc_channel", 0)):
-				count += 1
-		points.append(Vector2(T, count))
-	add_line_series(points, Color(0.9, 0.7, 0.3), "凝聚通道数", 2.5)
-	for tr in sorted_t:
-		var tc = float(tr.get("tc_channel", 0))
-		var ch = int(tr.get("channel", 0))
-		var line: Array = [Vector2(tc, 0), Vector2(tc, transitions.size() + 0.5)]
-		add_line_series(line, Color(0.5, 0.5, 0.5), "Tc%d=%.1f" % [ch, tc], 1.0)
 
 func plot_critical_fields(hc1: float, hc2: float, n_points: int = 80):
 	clear()

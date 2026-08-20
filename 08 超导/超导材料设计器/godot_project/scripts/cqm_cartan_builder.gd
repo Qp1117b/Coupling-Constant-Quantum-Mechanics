@@ -10,11 +10,20 @@ static func A4_eigenvalues() -> PackedFloat32Array:
 static func spectral_gap() -> float:
 	return CQMConfig.get_spectral_gap()
 
-static func defect_matrix(epsilon: float) -> PackedFloat32Array:
-	var pattern = CQMConfig.get_defect_pattern()
+static func defect_matrix(delta: float) -> PackedFloat32Array:
 	var mat = A4()
-	for i in range(4):
-		mat[i * 4 + i] -= epsilon * float(pattern[i])
+	var defect_type = CQMConfig.get_defect_type()
+	match defect_type:
+		"off_diagonal_alpha4":
+			var pos = CQMConfig.get_defect_position()
+			var i = int(pos[0])
+			var j = int(pos[1])
+			mat[i * 4 + j] = -delta
+			mat[j * 4 + i] = -delta
+		"diagonal":
+			var pattern = CQMConfig.get_defect_pattern()
+			for i in range(4):
+				mat[i * 4 + i] -= delta * float(pattern[i])
 	return mat
 
 static func proton_matrix() -> PackedFloat32Array:
@@ -28,7 +37,7 @@ static func neutron_defect(N: int, symbol: String) -> float:
 	if ov.has("force_neutron_defect"):
 		return float(ov.force_neutron_defect)
 
-	var eps_0 = CQMConfig.get_eps_0()
+	var delta_0 = CQMConfig.get_delta_0()
 	var beta = CQMConfig.get_beta()
 	var N_ref = _estimate_N_ref(symbol)
 	if N_ref == 0:
@@ -36,13 +45,13 @@ static func neutron_defect(N: int, symbol: String) -> float:
 
 	match CQMConfig.get_defect_function_type():
 		"linear":
-			return eps_0 * (1.0 + beta * float(N - N_ref) / float(N_ref))
+			return delta_0 * (1.0 + beta * float(N - N_ref) / float(N_ref))
 		"quadratic":
 			var dN = float(N - N_ref) / float(N_ref)
-			return eps_0 * (1.0 + beta * dN * dN)
+			return delta_0 * (1.0 + beta * dN * dN)
 		"exponential":
-			return eps_0 * exp(beta * float(N - N_ref) / float(N_ref))
-	return eps_0
+			return delta_0 * exp(beta * float(N - N_ref) / float(N_ref))
+	return delta_0
 
 static func element_cartan(Z: int, N: int, symbol: String) -> Dictionary:
 	var eps = neutron_defect(N, symbol)
@@ -59,7 +68,7 @@ static func element_cartan(Z: int, N: int, symbol: String) -> Dictionary:
 	for j in range(N):
 		_place_block(mat, size, cn, 4 * (Z + j))
 
-	return {"matrix": mat, "size": size, "Z": Z, "N": N, "epsilon": eps}
+	return {"matrix": mat, "size": size, "Z": Z, "N": N, "delta": eps}
 
 static func _place_block(mat: PackedFloat32Array, size: int,
 						  block: PackedFloat32Array, offset: int):

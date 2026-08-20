@@ -9,8 +9,7 @@ import Superconductivity.Mechanism
 /-!
 # CQM 超导：理想涌现积分 (Emergence Integral)
 
-本模块形式化《CQM 超导 涌现积分》的第六层（完整公式）与第七层
-（逐项详解）的可计算骨架。
+本模块形式化《CQM 超导核心理论》的理想涌现积分（原"涌现积分"第六、七层已并入该统一文档 §3 理想涌现积分）。
 
 ## 核心公式
 ψ(r, T) = ∫_BZ d³k · D_lattice(k) · P_electron(k, T) · C_triple(k) · K_causal(k) · e^{−Γ_φ(T)|τ|}
@@ -27,7 +26,7 @@ import Superconductivity.Mechanism
 序参量的正性（存在非平凡超导序参量）。
 
 ## 参考文献
-- ruster (2026). CQM 超导 涌现积分 第六、七层. CQMFormal/08 超导/.
+- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
 -/
 
 namespace CQM

@@ -7,7 +7,7 @@ import Superconductivity.Gravity
 /-!
 # CQM 超导：T_c 公式与同位素效应 (Transition Temperature)
 
-本模块形式化《CQM 超导 涌现积分》第八层：从涌现积分到 T_c 公式。
+本模块形式化《CQM 超导核心理论》的 T_c 公式与同位素效应（原"涌现积分"第八层已并入该统一文档 §11）。
 
 ## 核心公式（自然单位 k_B = ℏ = 1）
 k_B T_c = (2e^γ/π) · ℏ ω_causal · exp(−1/(N(0)·V₀))，  ω_causal = 2π M_eff c²/ℏ
@@ -30,7 +30,7 @@ k_B T_c = (2e^γ/π) · ℏ ω_causal · exp(−1/(N(0)·V₀))，  ω_causal = 
 - 有效质量 = 离子质量 × 几何因子（因果屏蔽）
 
 ## 参考文献
-- ruster (2026). CQM 超导 涌现积分 第八层. CQMFormal/08 超导/.
+- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
 - Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 -/
 

@@ -1,17 +1,17 @@
 extends RefCounted
 class_name CQMReproductionAction
 
-# CQM 再生产作用量 S_reproduction — §3.3
-# 温度-因果时动力学 + 拓扑增强因子渗透
-# S = ∫dt Σ_T tr(T_T ∘ (D_t + F[Top]·Γ_0·e^{-E_gap/kT}) · T_T) + Σ_T tr(T_T∘T_T†/g_eff[Γ_T])
+# CQM 再生产作用量 S_reproduction — §7(固有时流速) + §11(温度依赖)
+# 温度-因果时动力学 (耦合空间曲率机制)
+# S = ∫dt Σ_T tr(T_T ∘ (D_t + F[curv]·Γ_0·e^{-E_gap/kT}) · T_T) + Σ_T tr(T_T∘T_T†/g_eff[Γ_T])
 #
-# T_T     : 因果潜能张量, A4根系空间4×4复矩阵序参量
-# D_t     : 坐标时协变导数 = v_τ[G]·∂_τ + Ĉ(u)
-# F[Top]  : 拓扑增强因子 (从约束作用量形式导出)
+# T_T     : A4根系多分量序参量, 4×4复矩阵
+# D_t     : 坐标时协变导数, 固有时流速 dτ/dt = 1+βδ_v
+# F[curv] : 曲率涨落调制因子 (旧称拓扑增强因子)
 # g_eff   : 由嘉当矩阵谱决定的等效耦合强度
 #
 # 两步操作:
-#   1. 相容性筛选(唯一性): 引力退相干场对叠加态的几何-拓扑测试
+#   1. 相容性筛选(唯一性): FG退相干场对叠加态的几何-拓扑测试
 #   2. 再生产锁定(确定性): 筛选出的分支能否持续存在
 
 const BOLTZMANN = 1.381e-23

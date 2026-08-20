@@ -19,15 +19,15 @@
 
   "model_choices": {
     "defect_mode": {
-      "type": "diagonal",
-      "pattern": [1, 0, 0, 0],
-      "description": "左上角缺陷: A4 - ε·diag(1,0,0,0)"
+      "type": "off_diagonal_alpha4",
+      "position": [2, 3],
+      "description": "α₄末端单根缺陷: 非对角元(2,3)/(3,2)从-1变为-δ, δ≠1. 以知乎文章为准"
     },
 
     "neutron_defect_function": {
       "type": "linear",
-      "formula": "eps_0 * (1 + beta * (N - N_ref) / N_ref)",
-      "default_eps_0": 0.0012,
+      "formula": "delta_0 * (1 + beta * (N - N_ref) / N_ref)",
+      "default_delta_0": 0.9988,
       "default_beta": 0.1,
       "description": "线性缺陷模型"
     },

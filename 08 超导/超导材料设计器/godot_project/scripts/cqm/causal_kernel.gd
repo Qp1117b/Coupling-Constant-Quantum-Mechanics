@@ -2,7 +2,7 @@ extends RefCounted
 class_name CQMCausalKernel
 
 # CQM 因果截断核 K_causal(k) — §5.4.4
-# 引力因果限制场的筛选函数：配对因果时差须达到晶格因果分辨率
+# FG退相干场的筛选函数：配对因果时差须达到晶格因果分辨率
 # ω_q ≤ ω_causal = 2π·M_eff·c²/ℏ
 #
 # 两种形式：

@@ -1,16 +1,16 @@
 extends RefCounted
 class_name CQMTripleLoop
 
-# CQM 三方因果闭环强度 C_triple(k) — §5.4.3
-# CQM最具原创性的项：两个电子不能直接配对，需晶格作为因果中介
-# 电子1扰动晶格(发射虚声子) → 虚声子传播 → 电子2吸收 → 状态反向传播 → 因果闭环
+# CQM 曲率涨落调制 C_curv(k) — §6(声子=曲率量子)
+# 耦合空间曲率机制的核心项：电子-曲率量子(声子)耦合强度
+# 电子1扰动晶格(发射虚声子/曲率量子) → 虚声子传播 → 电子2吸收 → 状态反向传播 → 因果闭环
 #
-# C_triple(k) ≈ |g_k|² · D(k,ω) · Θ_loop
+# C_curv(k) ≈ |g_k|² · D(k,ω) · Θ_loop
 #   |g_k|²    : 电子-声子耦合顶点
-#   D(k,ω)    : 声子传播子
+#   D(k,ω)    : 声子传播子(曲率量子传播子)
 #   Θ_loop    : 闭环条件函数 [G10未闭合，动力学形式待定]
 #
-# BCS退化: C_triple → V_eff(k,k') 费米面平均
+# BCS退化: C_curv → V_eff(k,k') 费米面平均
 
 static func evaluate(k_vec: Vector3, omega_k: float, spectral_gap: float,
 					 g_squared: float = 0.0, phonon_spectrum: float = 0.0) -> float:

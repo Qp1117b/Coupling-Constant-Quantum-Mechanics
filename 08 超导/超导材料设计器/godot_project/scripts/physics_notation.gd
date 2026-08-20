@@ -55,9 +55,6 @@ static func symbol_psi() -> String:
 static func symbol_cartan() -> String:
 	return "𝒞"
 
-static func symbol_braid() -> String:
-	return "𝐵̂"
-
 static func symbol_topo() -> String:
 	return "𝐹[Top]"
 

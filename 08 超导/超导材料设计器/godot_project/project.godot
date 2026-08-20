@@ -23,6 +23,8 @@ CQMConfig="*res://scripts/autoload/cqm_config.gd"
 SCDB="*res://scripts/autoload/superconductor_database.gd"
 SCData="*res://scripts/autoload/superconductivity_data.gd"
 ChemValidator="*res://scripts/autoload/chemistry_validator.gd"
+PresetMols="*res://scripts/autoload/preset_molecules.gd"
+PatternEngine="*res://scripts/autoload/pattern_engine.gd"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [display]

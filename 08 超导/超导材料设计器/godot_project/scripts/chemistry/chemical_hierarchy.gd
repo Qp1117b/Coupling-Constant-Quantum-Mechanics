@@ -3,11 +3,11 @@ class_name ChemicalHierarchy
 
 ## 化学物质五层层次模型统一管理器
 ##
-## 第一层：化学式 (FormulaLayer)       — 完全可控
-## 第二层：结合方式 (ConnectivityLayer) — 高度可控
-## 第三层：相对位置 (GeometryLayer)     — 部分可控
-## 第四层：晶型 (CrystalFormLayer)      — 间接调控
-## 第五层：晶型布局 (CrystalLayoutLayer)— 工艺涌现
+## L0 第一层：化学式 (FormulaLayer)       — 用户前置定义（全局锚点）
+## L1 第二层：结合方式 (ConnectivityLayer) — 模式库（骨架拓扑）
+## L2 第三层：相对位置 (GeometryLayer)     — 模式库（几何参数）
+## L3 第四层：晶胞 (CrystalFormLayer)      — 模式库（周期性堆积）
+## L4 第五层：晶胞分布 (CrystalLayoutLayer)    — 用户自由定义（晶粒结构）
 ##
 ## 核心规律：越往上层，自由度越离散，控制越精确；
 ##          越往下层，自由度越连续(或越复杂)，控制越依赖外部条件。
@@ -102,9 +102,9 @@ func set_crystal_form(cell_params: Dictionary, space_group: int, z: int = 1) -> 
 	crystal_form_layer.set_space_group(space_group)
 	crystal_form_layer.set_z(z)
 
-func set_microstructure(grain_size: float, morphology: String = "bulk") -> void:
+func set_microstructure(grain_size: float, grain_distribution: String = "single_crystal") -> void:
 	crystal_layout_layer.set_grain_size(grain_size)
-	crystal_layout_layer.set_morphology(morphology)
+	crystal_layout_layer.set_grain_distribution(grain_distribution)
 
 func cascade_down(from_layer: int = 1) -> void:
 	match from_layer:
@@ -181,9 +181,9 @@ func get_control_flow_description() -> String:
   ↓ 涌现: 从拓扑到形状
 第三层 相对位置 → 决定立体化学与精细物性 (部分可控)
   ↓ 涌现: 从分子到固体
-第四层 晶型 → 决定溶解度/熔点/密度/稳定性 (间接调控)
+L3 第四层 晶胞 → 决定溶解度/熔点/密度/稳定性 (周期性堆积)
   ↓ 涌现: 从固体到材料
-第五层 晶型布局 → 决定力学/传输/加工性能 (工艺涌现)
+L4 第五层 晶胞分布 → 决定Regge剖分/FG退相干场/力学/传输/加工性能 (晶粒结构)
 
 核心规律: 越往上, 自由度越离散, 控制越精确
          越往下, 自由度越连续, 控制越依赖外部条件

@@ -58,8 +58,18 @@ var _scale_init: bool = false
 var _selected_atoms: Array = []
 var _molecule_groups: Array = []
 var _atom_to_molecule: Dictionary = {}
-var _secondary_selected_atoms: Array = []
-var _secondary_connect_menu: PopupMenu
+
+enum SelectionMode { FREE, ATOM, MOLECULE, CRYSTAL_FORM, GRAIN }
+var _selection_mode: int = SelectionMode.FREE
+var _sel_mode_btns: Array = []
+var _work_mode_btns: Array = []
+var _pattern_selector: OptionButton
+var _pattern_layer_selector: OptionButton
+var _pattern_mount_btn: Button
+var _pattern_unmount_btn: Button
+var _pattern_info_lbl: Label
+
+var _grain_selector: OptionButton
 
 var _calc_pending: bool = false
 var _calc_timer: float = 0.0
@@ -74,7 +84,7 @@ var _brush_last_3d: Vector3 = Vector3.ZERO
 var _brush_strokes: Array = []
 var _current_stroke: Dictionary = {}
 var _selected_strokes: Array = []
-var _brush_panel_visible: bool = false
+
 const BRUSH_SPACING: float = 1.2
 const BRUSH_BOND_DIST: float = 1.8
 const BRUSH_SCALE_MAX: int = 10000000000
@@ -117,13 +127,15 @@ var _boundary_count_lbl: Label
 var _sc_selector: OptionButton
 var _sc_info_lbl: Label
 var _sc_gen_btn: Button
+var _preset_mol_selector: OptionButton
+var _preset_mol_gen_btn: Button
 var _custom_mol_list: ItemList
 var _custom_molecules: Array = []
 
 var _brush_tube_mmi: MultiMeshInstance3D
 var _brush_tube_mm: MultiMesh
 var _brush_radius: float = 0.18
-var _brush_radius_lbl: Label
+
 var _brush_atom_mmi: MultiMeshInstance3D
 var _brush_atom_mm: MultiMesh
 var _brush_trail_mesh: ImmediateMesh
@@ -148,7 +160,7 @@ var _physics_arrow_mesh: ImmediateMesh
 var _physics_arrow_mat: StandardMaterial3D
 var _arrow_drag_mode: int = 0
 var _arrow_drag_init_dir: Vector3 = Vector3.ZERO
-var _arrow_hover_mode: int = 0
+
 
 var _physics_panel: VBoxContainer
 var _physics_temp_spin: SpinBox
@@ -354,14 +366,14 @@ func _setup_viewports():
 	$UI.add_child(divider)
 
 	var top_lbl = Label.new()
-	top_lbl.text = "分子/原子设计"
+	top_lbl.text = "分子/原子设计 (L0-L2) | L3 晶胞"
 	top_lbl.position = Vector2(vp_x + 8, vp_y + 4)
 	top_lbl.add_theme_font_size_override("font_size", 13)
 	top_lbl.add_theme_color_override("font_color", Color(0.7, 0.8, 0.95, 0.7))
 	$UI.add_child(top_lbl)
 
 	var bottom_lbl = Label.new()
-	bottom_lbl.text = "画笔材料"
+	bottom_lbl.text = "晶胞分布（晶粒）(L4)"
 	bottom_lbl.position = Vector2(vp_x + 8, _vp_divider_y + 4)
 	bottom_lbl.add_theme_font_size_override("font_size", 13)
 	bottom_lbl.add_theme_color_override("font_color", Color(0.3, 0.85, 0.4, 0.7))
@@ -1089,6 +1101,10 @@ func _build_left_panel(panel: Panel):
 
 	_build_sc_selector_section(container)
 
+	_build_preset_mol_section(container)
+
+	_build_pattern_panel_section(container)
+
 	_build_custom_mol_section(container)
 
 	var sep_help = ColorRect.new()
@@ -1101,8 +1117,8 @@ func _build_left_panel(panel: Panel):
 
 	var help = Label.new()
 	help.text = "左键: 选中/框选  双击空白: 放置当前元素
-点击分子=整组选中并整体移动 (G后移动,点击确认)
-S+点击分子内原子=二级选中单个原子
+选中模式: 原子/分子/晶型 (顶部按钮切换)
+		自由选中=不限类型  原子选中=选单个原子  分子选中=选整个分子  晶胞选中=选整个晶胞(需右键结合)  晶粒选中=选整个晶粒(可计算超导性)
 Ctrl+左键: 多选  Alt+左键拖动: 旋转视角
 右键拖动: 平移  右键点击: 菜单(删除/连接)
 中键: 旋转  Shift+中键: 平移  滚轮: 缩放
@@ -1289,7 +1305,7 @@ func _build_brush_panel_section(container: VBoxContainer):
 	sep.color = Color(0.4, 0.5, 0.7, 0.4)
 	container.add_child(sep)
 
-	var title = _make_title("画笔设置", 16)
+	var title = _make_title("画笔: L4晶胞分布设计", 16)
 	container.add_child(title)
 
 	_brush_status_lbl = Label.new()
@@ -1533,6 +1549,178 @@ func _build_sc_selector_section(container: VBoxContainer):
 	_sc_gen_btn.pressed.connect(_generate_sc_material)
 	container.add_child(_sc_gen_btn)
 
+func _build_preset_mol_section(container: VBoxContainer):
+	var sep = ColorRect.new()
+	sep.custom_minimum_size = Vector2(LEFT_W - 40, 1)
+	sep.color = Color(0.5, 0.7, 0.9, 0.5)
+	container.add_child(sep)
+
+	var title = _make_title("预设分子库", 16)
+	container.add_child(title)
+
+	_preset_mol_selector = OptionButton.new()
+	_preset_mol_selector.custom_minimum_size = Vector2(LEFT_W - 40, 28)
+	_preset_mol_selector.add_theme_font_size_override("font_size", 12)
+	_preset_mol_selector.add_item("-- 选择分子 --", 0)
+	var keys = PresetMols.get_keys_sorted()
+	for key in keys:
+		_preset_mol_selector.add_item(PresetMols.get_display_name(key))
+	container.add_child(_preset_mol_selector)
+
+	_preset_mol_gen_btn = Button.new()
+	_preset_mol_gen_btn.text = "生成预设分子"
+	_preset_mol_gen_btn.custom_minimum_size = Vector2(LEFT_W - 40, 28)
+	_preset_mol_gen_btn.add_theme_font_size_override("font_size", 12)
+	_preset_mol_gen_btn.pressed.connect(_generate_preset_mol)
+	container.add_child(_preset_mol_gen_btn)
+
+	var hint = Label.new()
+	hint.text = "含H₂O/NH₃/CH₄/CO₂/C₆H₆等标准实验构型"
+	hint.add_theme_font_size_override("font_size", 11)
+	hint.add_theme_color_override("font_color", Color(0.6, 0.75, 0.65))
+	container.add_child(hint)
+
+func _generate_preset_mol():
+	var idx = _preset_mol_selector.selected
+	if idx <= 0:
+		_update_status("请先选择一个预设分子")
+		return
+	var keys = PresetMols.get_keys_sorted()
+	var key = keys[idx - 1]
+	var atoms_data = PresetMols.get_atoms(key)
+	if atoms_data.is_empty():
+		_update_status("预设分子 %s 数据为空" % key)
+		return
+	var center = Vector3.ZERO
+	for a in atoms_data:
+		center += a.pos
+	center /= max(atoms_data.size(), 1)
+	var scale = 0.6
+	var placed: Array = []
+	for a in atoms_data:
+		var pos = (a.pos - center) * scale
+		pos = pos.snapped(Vector3(0.01, 0.01, 0.01))
+		var atom = _workspace.add_atom(a.sym, ElementDB.most_abundant_isotope(a.sym), pos)
+		placed.append(atom)
+	var bonds_data = PresetMols.get_bonds(key)
+	if bonds_data.size() > 0 and placed.size() >= 2:
+		for bd in bonds_data:
+			var ai = bd.a
+			var bi = bd.b
+			if ai >= 0 and ai < placed.size() and bi >= 0 and bi < placed.size():
+				_workspace.add_bond(placed[ai], placed[bi], bd.get("order", 1))
+		_auto_tag_molecules(placed)
+	else:
+		if placed.size() >= 2:
+			_auto_connect(placed)
+			_auto_tag_molecules(placed)
+	var formula = PresetMols.get_formula(key)
+	var cn_name = PresetMols.get_molecule(key).get("name", "")
+	_current_material_name = cn_name
+	_update_status("生成预设分子: %s (%s) → %d原子" % [formula, cn_name, placed.size()])
+	_sync_formula_to_pattern_engine()
+
+func _build_pattern_panel_section(container: VBoxContainer):
+	var sep = ColorRect.new()
+	sep.custom_minimum_size = Vector2(LEFT_W - 40, 1)
+	sep.color = Color(0.8, 0.6, 0.3, 0.5)
+	container.add_child(sep)
+
+	var title = _make_title("模式引擎 (L0-L4)", 16)
+	container.add_child(title)
+
+	var l0_lbl = Label.new()
+	l0_lbl.text = "L0 化学式: (由原子自动推导)"
+	l0_lbl.add_theme_font_size_override("font_size", 12)
+	l0_lbl.add_theme_color_override("font_color", Color(0.9, 0.85, 0.5))
+	container.add_child(l0_lbl)
+
+	var sep2 = HSeparator.new()
+	sep2.add_theme_constant_override("separation", 2)
+	container.add_child(sep2)
+
+	var layer_row = HBoxContainer.new()
+	layer_row.add_theme_constant_override("separation", 4)
+	var layer_lbl = Label.new()
+	layer_lbl.text = "层:"
+	layer_lbl.add_theme_font_size_override("font_size", 12)
+	layer_row.add_child(layer_lbl)
+	_pattern_layer_selector = OptionButton.new()
+	_pattern_layer_selector.add_theme_font_size_override("font_size", 12)
+	_pattern_layer_selector.add_item("L1 结合方式", 0)
+	_pattern_layer_selector.add_item("L2 相对位置", 1)
+	_pattern_layer_selector.add_item("L3 晶胞", 2)
+	_pattern_layer_selector.item_selected.connect(_on_pattern_layer_selected)
+	layer_row.add_child(_pattern_layer_selector)
+	container.add_child(layer_row)
+
+	_pattern_selector = OptionButton.new()
+	_pattern_selector.custom_minimum_size = Vector2(LEFT_W - 40, 28)
+	_pattern_selector.add_theme_font_size_override("font_size", 12)
+	_pattern_selector.add_item("-- 选择模式 --", 0)
+	_pattern_selector.item_selected.connect(_on_pattern_selected)
+	container.add_child(_pattern_selector)
+
+	var btn_row = HBoxContainer.new()
+	btn_row.add_theme_constant_override("separation", 6)
+	_pattern_mount_btn = Button.new()
+	_pattern_mount_btn.text = "挂载"
+	_pattern_mount_btn.custom_minimum_size = Vector2(70, 28)
+	_pattern_mount_btn.add_theme_font_size_override("font_size", 12)
+	_pattern_mount_btn.pressed.connect(_mount_pattern)
+	btn_row.add_child(_pattern_mount_btn)
+	_pattern_unmount_btn = Button.new()
+	_pattern_unmount_btn.text = "卸载"
+	_pattern_unmount_btn.custom_minimum_size = Vector2(70, 28)
+	_pattern_unmount_btn.add_theme_font_size_override("font_size", 12)
+	_pattern_unmount_btn.pressed.connect(_unmount_pattern)
+	btn_row.add_child(_pattern_unmount_btn)
+	container.add_child(btn_row)
+
+	_pattern_info_lbl = Label.new()
+	_pattern_info_lbl.add_theme_font_size_override("font_size", 11)
+	_pattern_info_lbl.add_theme_color_override("font_color", Color(0.7, 0.85, 0.75))
+	_pattern_info_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_pattern_info_lbl.custom_minimum_size = Vector2(LEFT_W - 40, 100)
+	container.add_child(_pattern_info_lbl)
+
+	var sep3 = HSeparator.new()
+	sep3.add_theme_constant_override("separation", 2)
+	container.add_child(sep3)
+
+	var l4_lbl = Label.new()
+	l4_lbl.text = "L4 晶胞分布 (晶粒):"
+	l4_lbl.add_theme_font_size_override("font_size", 12)
+	l4_lbl.add_theme_color_override("font_color", Color(0.8, 0.7, 0.9))
+	container.add_child(l4_lbl)
+
+	_grain_selector = OptionButton.new()
+	_grain_selector.custom_minimum_size = Vector2(LEFT_W - 40, 28)
+	_grain_selector.add_theme_font_size_override("font_size", 12)
+	_grain_selector.add_item("单晶 (single_crystal)", 0)
+	_grain_selector.add_item("多晶 (polycrystal)", 1)
+	_grain_selector.add_item("薄膜 (film)", 2)
+	_grain_selector.add_item("线材 (wire)", 3)
+	_grain_selector.add_item("粉末 (powder)", 4)
+	_grain_selector.item_selected.connect(_on_grain_selected)
+	container.add_child(_grain_selector)
+
+	var chain_btn = Button.new()
+	chain_btn.text = "计算嘉当矩阵链→引力场"
+	chain_btn.custom_minimum_size = Vector2(LEFT_W - 40, 28)
+	chain_btn.add_theme_font_size_override("font_size", 12)
+	chain_btn.pressed.connect(_compute_cartan_gravity_chain)
+	container.add_child(chain_btn)
+
+	var hint = Label.new()
+	hint.text = "模式设计: 挂载已知超导家族经验规则\n自由设计: 仅受物理硬约束，直接输入参数"
+	hint.add_theme_font_size_override("font_size", 11)
+	hint.add_theme_color_override("font_color", Color(0.6, 0.75, 0.65))
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	container.add_child(hint)
+
+	_refresh_pattern_panel()
+
 func _build_custom_mol_section(container: VBoxContainer):
 	var sep = ColorRect.new()
 	sep.custom_minimum_size = Vector2(LEFT_W - 40, 1)
@@ -1606,6 +1794,7 @@ func _generate_sc_material():
 		_auto_tag_molecules(placed)
 	_current_material_name = m.name
 	_update_status("生成: %s (%s, Tc=%.1fK) → %d原子" % [m.name, m.formula, m.tc, placed.size()])
+	_sync_formula_to_pattern_engine()
 
 func _add_to_custom_molecules():
 	if _selected_atoms.is_empty():
@@ -1644,6 +1833,7 @@ func _generate_custom_mol():
 		_auto_connect(placed)
 		_auto_tag_molecules(placed)
 	_update_status("生成自定义分子: %s → %d原子" % [mol.formula, placed.size()])
+	_sync_formula_to_pattern_engine()
 
 func _delete_custom_mol():
 	var sel = _custom_mol_list.get_selected_items()
@@ -2790,19 +2980,45 @@ func _build_top_bar(panel: Panel):
 	panel.add_child(hbox)
 
 
-	var calc_btn = Button.new()
-	calc_btn.text = "计算 (F5)"
-	calc_btn.custom_minimum_size = Vector2(90, 30)
-	calc_btn.add_theme_font_size_override("font_size", 12)
-	calc_btn.pressed.connect(_execute_calculation)
-	hbox.add_child(calc_btn)
 
 	var clear_btn = Button.new()
 	clear_btn.text = "清空"
 	clear_btn.custom_minimum_size = Vector2(60, 30)
 	clear_btn.add_theme_font_size_override("font_size", 12)
-	clear_btn.pressed.connect(func(): _reset_selection_state(); _workspace.clear(); _take_undo_snapshot())
+	clear_btn.pressed.connect(func(): _reset_selection_state(); _workspace.clear(); _take_undo_snapshot(); _sync_formula_to_pattern_engine())
 	hbox.add_child(clear_btn)
+
+	var sep_sel_mode = _make_toolbar_sep()
+	hbox.add_child(sep_sel_mode)
+
+	_sel_mode_btns.clear()
+	for i in range(5):
+		var btn = Button.new()
+		btn.text = ["自由选中", "原子选中", "分子选中", "晶胞选中", "晶粒选中"][i]
+		btn.custom_minimum_size = Vector2(90, 30)
+		btn.add_theme_font_size_override("font_size", 12)
+		btn.toggle_mode = true
+		btn.button_pressed = (i == _selection_mode)
+		var mode_val = i
+		btn.pressed.connect(func(): _set_selection_mode(mode_val))
+		hbox.add_child(btn)
+		_sel_mode_btns.append(btn)
+
+	var sep_work_mode = _make_toolbar_sep()
+	hbox.add_child(sep_work_mode)
+
+	_work_mode_btns.clear()
+	for i in range(2):
+		var wbtn = Button.new()
+		wbtn.text = ["模式设计", "自由设计"][i]
+		wbtn.custom_minimum_size = Vector2(90, 30)
+		wbtn.add_theme_font_size_override("font_size", 12)
+		wbtn.toggle_mode = true
+		wbtn.button_pressed = (i == 0)
+		var wm_val = i
+		wbtn.pressed.connect(func(): _set_work_mode(wm_val))
+		hbox.add_child(wbtn)
+		_work_mode_btns.append(wbtn)
 
 	var sep1 = _make_toolbar_sep()
 	hbox.add_child(sep1)
@@ -2908,12 +3124,6 @@ func _build_top_bar(panel: Panel):
 	template_btn.pressed.connect(_show_lattice_template_menu)
 	hbox.add_child(template_btn)
 
-	var supercell_btn = Button.new()
-	supercell_btn.text = "超胞"
-	supercell_btn.custom_minimum_size = Vector2(70, 30)
-	supercell_btn.add_theme_font_size_override("font_size", 12)
-	supercell_btn.pressed.connect(_show_supercell_dialog)
-	hbox.add_child(supercell_btn)
 
 	_show_labels_btn = Button.new()
 	_show_labels_btn.text = "原子标签"
@@ -3155,6 +3365,7 @@ func _build_supercell(nx: int, ny: int, nz: int):
 	_current_material_name += " 超胞%dx%dx%d" % [nx, ny, nz]
 	_take_undo_snapshot()
 	_update_status("超胞 %d×%d×%d: %d → %d 原子 (正交近似)" % [nx, ny, nz, src.size(), placed.size()])
+	_sync_formula_to_pattern_engine()
 
 func _select_element(symbol: String):
 	_current_element = symbol
@@ -3219,7 +3430,7 @@ func _update_isotope_details(iso: Dictionary):
 
 	_detail_labels.info.text = "选中: %d%s" % [_current_isotope, _current_element]
 	_detail_labels.neutrons.text = "中子数: %d" % n
-	_detail_labels.defect.text = "中子缺陷 ε: %.6f" % defect
+	_detail_labels.defect.text = "中子缺陷 δ: %.6f" % defect
 	_detail_labels.abundance.text = "丰度: %.3f%%" % (float(iso.get("abundance", 0)) * 100)
 	_update_element_sc_info()
 
@@ -3287,6 +3498,12 @@ func _unhandled_input(event):
 				if event.pressed:
 					_left_down_pos = event.position
 					_left_dragged = false
+					if _is_in_bottom_viewport(event.position):
+						if _selection_mode != SelectionMode.GRAIN:
+							_set_selection_mode(SelectionMode.GRAIN)
+					elif _is_in_top_viewport(event.position):
+						if _selection_mode == SelectionMode.GRAIN:
+							_set_selection_mode(SelectionMode.FREE)
 					var arrow_hit = _check_arrow_hit(event.position)
 					if arrow_hit > 0:
 						_arrow_drag_mode = arrow_hit
@@ -3312,9 +3529,7 @@ func _unhandled_input(event):
 					elif Input.is_key_pressed(KEY_L) and (_workspace.selected_atom or _selected_atoms.size() > 1):
 						_try_l_connect(event.position)
 						_left_dragged = true
-					elif Input.is_key_pressed(KEY_S) and _is_molecule_selected():
-						_try_secondary_select(event.position, event.ctrl_pressed)
-						_left_dragged = true
+
 					elif event.ctrl_pressed:
 						_try_ctrl_select(event.position)
 						_left_dragged = true
@@ -3517,8 +3732,254 @@ func _set_transform_axis(axis: int):
 	elif _scale_mode:
 		_scale_axis = axis if _scale_axis != axis else 0
 
+func _set_selection_mode(mode: int):
+	_selection_mode = mode
+	for i in range(_sel_mode_btns.size()):
+		if is_instance_valid(_sel_mode_btns[i]):
+			_sel_mode_btns[i].button_pressed = (i == mode)
+	var mode_names = ["自由选中（不限类型，上屏默认）", "原子选中（L2：分子内选原子）", "分子选中（L3：晶胞内选分子）", "晶胞选中（L3：选整个晶胞，需右键结合标记）", "晶粒选中（L4：晶胞分布内选晶粒，可计算超导性）"]
+	var layer_names = ["L2：相对位置", "L3：晶胞", "L4：晶胞分布"]
+	_update_status("选中模式 → %s | %s" % [mode_names[mode], layer_names[mode]])
+
+func _sync_formula_to_pattern_engine():
+	if not is_instance_valid(_workspace):
+		return
+	if _workspace.atoms.is_empty():
+		PatternEngine.set_formula("")
+		_refresh_pattern_panel()
+		return
+	var formula = _compute_formula(_workspace.atoms)
+	PatternEngine.set_formula(formula)
+	_refresh_pattern_panel()
+	if PatternEngine.get_work_mode() == PatternEngine.WorkMode.PATTERN:
+		var patterns = PatternEngine.get_applicable_patterns()
+		if patterns.size() > 0:
+			var names: Array = []
+			for p in patterns:
+				names.append(p.get("pattern_id", ""))
+			_update_status("化学式 %s → 适用模式: %s" % [formula, ", ".join(names)])
+
+func _compute_cartan_gravity_chain():
+	if _selection_mode != SelectionMode.GRAIN:
+		_update_status("请切换到\"晶粒选中\"模式后再计算超导性")
+		return
+	var source_strokes: Array = []
+	if _selected_strokes.size() > 0:
+		for idx in _selected_strokes:
+			if idx >= 0 and idx < _brush_strokes.size():
+				source_strokes.append(_brush_strokes[idx])
+	if source_strokes.is_empty():
+		source_strokes = _brush_strokes
+	var first_element = ""
+	for s in source_strokes:
+		var elem = s.get("element", "H")
+		if first_element == "":
+			first_element = elem
+		elif elem != first_element:
+			_update_status("选中晶粒包含不同晶胞(%s/%s)，只能选同一种晶胞" % [first_element, elem])
+			return
+	var grain_points: Array = []
+	var grain_elements: Array = []
+	for s in source_strokes:
+		var pts = s.points if s.has("points") else s.get("points", [])
+		var elem = s.get("element", "H")
+		for p in pts:
+			grain_points.append(p)
+			grain_elements.append(elem)
+	if grain_points.is_empty():
+		_update_status("下屏无晶胞分布，请先用画笔绘制晶胞分布")
+		return
+	var atoms: Array = []
+	for i in range(grain_points.size()):
+		var sym = grain_elements[i] if i < grain_elements.size() else "H"
+		var z = int(ElementDB.get_element(sym).get("number", 1))
+		var n = ElementDB.most_abundant_isotope(sym)
+		atoms.append({
+			"id": i,
+			"atomic_number": z,
+			"neutron_count": n
+		})
+	var bonds: Array = []
+	for i in range(grain_points.size()):
+		for j in range(i + 1, grain_points.size()):
+			var dist = grain_points[i].distance_to(grain_points[j])
+			if dist < 2.5:
+				bonds.append({"a_id": i, "b_id": j, "order": 1})
+	var grain_idx = _grain_selector.selected if is_instance_valid(_grain_selector) else 0
+	var grains = ["single_crystal", "polycrystal", "film", "wire", "powder"]
+	var grain = grains[grain_idx] if grain_idx < grains.size() else "single_crystal"
+	var n_formula_units = 2
+	var chain = CartanChain.compute_full_chain(atoms, bonds, n_formula_units, grain)
+	var atom_positions: Array = grain_points.duplicate()
+	var regge = CrystalRegge.compute_from_cartan_chain(chain, 0.0, atom_positions)
+	var field = GravitationalField.compute_from_cartan_chain(chain, grain, 0.0)
+	field["regge_action"] = regge.regge_action
+	field["geometry_factor"] = float(regge.get("geometry_factor", 1.0))
+	var cond = GravitationalField.compute_superconductivity_condition(field, 0.0)
+	var dual = GravitationalField.compute_dual_gravity(chain, grain, 0.0)
+	var dims = chain.dimensions
+	var gaps = chain.spectral_gaps
+	var has_lattice = bool(chain.get("has_lattice", false))
+	var n_neighbors = int(chain.get("n_neighbors", 1))
+	var lines: Array = []
+	lines.append("=== 嘉当矩阵计算链 ===")
+	lines.append("质子A4(%d) → 元素(%d) → 分子(%d) → 晶胞(%d) → Regge(%d)" % dims)
+	lines.append("谱间隙: %.6f → %.6f → %.6f → %.6f → %.6f" % gaps)
+	lines.append("")
+	lines.append("=== 晶格结构 ===")
+	lines.append("公式单元数: %d | 晶胞邻居数: %d | 晶格大小: %d" % [n_formula_units, n_neighbors, n_formula_units * n_neighbors])
+	lines.append("晶胞分布: %s | 有晶格结构: %s" % [grain, "是" if has_lattice else "否"])
+	lines.append("")
+	lines.append("=== 离散Regge曲率 ===")
+	lines.append("S_Regge = %.6f" % regge.regge_action)
+	lines.append("总亏角 = %.6f" % regge.total_deficit)
+	lines.append("平均曲率 = %.6f" % regge.mean_curvature)
+	lines.append("")
+	lines.append("=== FG退相干场 ===")
+	lines.append("Γ_φ(因果衰减率) = %.6f" % field.gamma_phi)
+	lines.append("ω_causal(因果频率) = %.6f" % field.omega_causal)
+	lines.append("场强 = %.6f" % field.field_strength)
+	lines.append("退相干场 = %.6f" % field.decoherence_field)
+	lines.append("拓扑: %s" % field.topology)
+	lines.append("")
+	lines.append("=== FG=GR层级效应 (§4) ===")
+	var _fg = dual.get("fg_output", {})
+	var _gr = dual.get("gr_output", {})
+	var _s2 = dual.get("stage_II", {})
+	lines.append("网络依赖: %s (Z=%d, N=%d)" % ["✓" if dual.network_satisfied else "✗", dual.Z, dual.N])
+	lines.append("FG(精细引力): S=%.6f, 亏角=%.6f, 铰链=%d, 拓扑=%s" % [_fg.get("regge_action", 0.0), _fg.get("total_deficit", 0.0), _fg.get("hinge_count", 0), _fg.get("topology", "trivial")])
+	lines.append("GR(经典引力): ρ=%.6f, P=%.6f, Tr(T)=%.6f, 时空=%s" % [_gr.get("energy_density", 0.0), _gr.get("pressure", 0.0), _gr.get("trace_T", 0.0), "是" if _gr.get("has_spacetime", false) else "否"])
+	lines.append("退相干II: FG/GR同时涌现: %s" % ("✓" if _s2.get("simultaneous", false) else "✗"))
+	lines.append("")
+	lines.append("=== 超导条件 ===")
+	lines.append("网络依赖: %s" % ("✓" if cond.get("network_satisfied", true) else "✗ 无中子→FG=0,GR=0"))
+	lines.append("因果约束: %s" % ("✓" if cond.causal_constraint else "✗"))
+	lines.append("退相干充分: %s" % ("✓" if cond.decoherence_sufficient else "✗"))
+	lines.append("配对条件: %s" % ("✓" if cond.pairing_condition else "✗"))
+	lines.append("拓扑保护: %s" % ("✓" if cond.topology_favorable else "✗"))
+	lines.append("涌现分数: %.2f" % cond.emergence_score)
+	lines.append("超导可能: %s" % ("是" if cond.superconductivity_likely else "否"))
+	lines.append("机制: %s" % cond.mechanism)
+	if is_instance_valid(_pattern_info_lbl):
+		_pattern_info_lbl.text = "\n".join(lines)
+	_update_status("晶粒%d个(%d点, %s) | 链: %d→%d→%d→%d→%d | 晶格=%d×%d | S=%.4f | 涌现=%.2f | %s" % [source_strokes.size(), grain_points.size(), first_element, dims[0], dims[1], dims[2], dims[3], dims[4], n_formula_units, n_neighbors, regge.regge_action, cond.emergence_score, "超导可能" if cond.superconductivity_likely else "超导不确定"])
+
+func _on_grain_selected(idx: int):
+	var grains = ["single_crystal", "polycrystal", "film", "wire", "powder"]
+	if idx >= 0 and idx < grains.size():
+		PatternEngine.set_grain_distribution(grains[idx])
+		_update_status("L4晶胞分布: %s" % grains[idx])
+	_refresh_pattern_panel()
+
+func _set_work_mode(mode: int):
+	PatternEngine.set_work_mode(mode)
+	for i in range(_work_mode_btns.size()):
+		if is_instance_valid(_work_mode_btns[i]):
+			_work_mode_btns[i].button_pressed = (i == mode)
+	var mode_name = ["模式设计（L1-L3经验规则）", "自由设计（仅受物理硬约束）"][mode]
+	_update_status("工作模式 → %s" % mode_name)
+	_refresh_pattern_panel()
+
+func _refresh_pattern_panel():
+	if not is_instance_valid(_pattern_selector):
+		return
+	_pattern_selector.clear()
+	_pattern_selector.add_item("-- 选择模式 --", 0)
+	if PatternEngine.get_work_mode() == PatternEngine.WorkMode.PATTERN:
+		var patterns = PatternEngine.get_applicable_patterns()
+		for p in patterns:
+			var pid: String = p.get("pattern_id", "")
+			var family: String = p.get("pattern_family", "")
+			_pattern_selector.add_item("%s [%s]" % [pid, family])
+		_pattern_selector.disabled = false
+		if is_instance_valid(_pattern_mount_btn):
+			_pattern_mount_btn.disabled = false
+	else:
+		_pattern_selector.disabled = true
+		if is_instance_valid(_pattern_mount_btn):
+			_pattern_mount_btn.disabled = true
+	if is_instance_valid(_pattern_info_lbl):
+		_pattern_info_lbl.text = PatternEngine.get_session_summary()
+
+func _on_pattern_layer_selected(idx: int):
+	_refresh_pattern_panel()
+
+func _on_pattern_selected(idx: int):
+	if idx <= 0:
+		if is_instance_valid(_pattern_info_lbl):
+			_pattern_info_lbl.text = PatternEngine.get_session_summary()
+		return
+	var patterns = PatternEngine.get_applicable_patterns()
+	if idx - 1 >= patterns.size():
+		return
+	var p = patterns[idx - 1]
+	var pid: String = p.get("pattern_id", "")
+	var family: String = p.get("pattern_family", "")
+	var confidence: float = float(p.get("metadata", {}).get("confidence", 0))
+	var tc_range: String = p.get("metadata", {}).get("tc_range", "?")
+	var layer_idx = _pattern_layer_selector.selected if is_instance_valid(_pattern_layer_selector) else 0
+	var layer = layer_idx + 1
+	var layer_key = ["L1", "L2", "L3"][layer_idx]
+	var layers: Dictionary = p.get("layers", {})
+	var layer_data: Dictionary = layers.get(layer_key, {})
+	var preview_lines: Array = ["模式: %s | 家族: %s | 置信度: %.2f | Tc: %s" % [pid, family, confidence, tc_range]]
+	preview_lines.append("── %s 层规则预览 ──" % layer_key)
+	match layer:
+		1:
+			var cs: Array = layer_data.get("conserved_substructures", [])
+			if not cs.is_empty():
+				preview_lines.append("保守子结构: %s" % ", ".join(cs))
+			var vm: Array = layer_data.get("variable_modules", [])
+			if not vm.is_empty():
+				preview_lines.append("可变模块: %s" % ", ".join(vm))
+			var sr: String = layer_data.get("skeleton_rule", "")
+			if sr != "":
+				preview_lines.append("骨架: %s" % sr)
+		2:
+			var kp: Dictionary = layer_data.get("key_parameters", {})
+			for pn in kp:
+				var pd: Dictionary = kp[pn]
+				preview_lines.append("  %s = %s %s" % [pn, pd.get("formula", "?"), pd.get("unit", "")])
+		3:
+			var sgm: Dictionary = layer_data.get("space_group_map", {})
+			for ck in sgm:
+				preview_lines.append("  %s → %s" % [ck, sgm[ck]])
+	var ce: Array = p.get("counter_examples", [])
+	if not ce.is_empty():
+		preview_lines.append("反例警示: %s" % ce[0].get("lesson", ""))
+	if is_instance_valid(_pattern_info_lbl):
+		_pattern_info_lbl.text = "\n".join(preview_lines)
+
+func _mount_pattern():
+	var layer_idx = _pattern_layer_selector.selected if is_instance_valid(_pattern_layer_selector) else 0
+	var pattern_idx = _pattern_selector.selected if is_instance_valid(_pattern_selector) else 0
+	if pattern_idx <= 0:
+		_update_status("请先选择一个模式")
+		return
+	var patterns = PatternEngine.get_applicable_patterns()
+	if pattern_idx - 1 >= patterns.size():
+		return
+	var p = patterns[pattern_idx - 1]
+	var pid: String = p.get("pattern_id", "")
+	var layer = layer_idx + 1
+	if PatternEngine.mount_pattern(layer, pid):
+		var summary = PatternEngine.get_layer_output_summary(layer)
+		_update_status("已挂载模式 %s → L%d" % [pid, layer])
+		if is_instance_valid(_pattern_info_lbl):
+			_pattern_info_lbl.text = PatternEngine.get_session_summary()
+	else:
+		_update_status("模式 %s 不适用于当前化学式" % pid)
+	_refresh_pattern_panel()
+
+func _unmount_pattern():
+	var layer_idx = _pattern_layer_selector.selected if is_instance_valid(_pattern_layer_selector) else 0
+	var layer = layer_idx + 1
+	PatternEngine.unmount_pattern(layer)
+	_update_status("已卸载 L%d 模式" % layer)
+	_refresh_pattern_panel()
+
 func _deselect():
-	_clear_secondary()
+
 	for atom in _selected_atoms:
 		if is_instance_valid(atom):
 			atom.set_selected(false)
@@ -3532,7 +3993,7 @@ func _deselect():
 
 func _reset_selection_state():
 	_selected_atoms.clear()
-	_secondary_selected_atoms.clear()
+
 	_selected_strokes.clear()
 	_atom_to_molecule.clear()
 	_molecule_groups.clear()
@@ -3572,21 +4033,55 @@ func _try_select_atom(screen_pos: Vector2):
 	if _is_in_top_viewport(screen_pos):
 		var best_atom = _find_atom_at(screen_pos)
 		if best_atom:
-			_clear_secondary()
 			for atom in _selected_atoms:
 				atom.set_selected(false)
 			_selected_atoms.clear()
 			_selected_strokes.clear()
-			if _atom_to_molecule.has(best_atom):
-				var gid = _atom_to_molecule[best_atom]
-				_select_molecule_group(gid)
-			else:
-				if _workspace.selected_atom and _workspace.selected_atom != best_atom:
-					_workspace.selected_atom.set_selected(false)
-				_workspace.selected_atom = best_atom
-				best_atom.set_selected(true)
-				_selected_atoms.append(best_atom)
-				Events.emit_signal("atom_selected", best_atom)
+			match _selection_mode:
+				SelectionMode.FREE:
+					if _workspace.selected_atom and _workspace.selected_atom != best_atom:
+						_workspace.selected_atom.set_selected(false)
+					_workspace.selected_atom = best_atom
+					best_atom.set_selected(true)
+					_selected_atoms.append(best_atom)
+					Events.emit_signal("atom_selected", best_atom)
+				SelectionMode.ATOM:
+					if _workspace.selected_atom and _workspace.selected_atom != best_atom:
+						_workspace.selected_atom.set_selected(false)
+					_workspace.selected_atom = best_atom
+					best_atom.set_selected(true)
+					_selected_atoms.append(best_atom)
+					Events.emit_signal("atom_selected", best_atom)
+				SelectionMode.MOLECULE:
+					if _atom_to_molecule.has(best_atom):
+						_select_molecule_group(_atom_to_molecule[best_atom])
+					else:
+						var mol_atoms = _find_connected_component(best_atom)
+						if mol_atoms.size() > 1:
+							for a in mol_atoms:
+								a.set_selected(true)
+								_selected_atoms.append(a)
+							_workspace.selected_atom = best_atom
+							_update_gizmo_pos()
+							_gizmo.visible = true
+							var formula = _compute_formula(mol_atoms)
+							_update_status("分子选中: %s (%d 原子)" % [formula, mol_atoms.size()])
+						else:
+							_workspace.selected_atom = best_atom
+							best_atom.set_selected(true)
+							_selected_atoms.append(best_atom)
+							Events.emit_signal("atom_selected", best_atom)
+				SelectionMode.CRYSTAL_FORM:
+					for a in _workspace.atoms:
+						a.set_selected(true)
+						_selected_atoms.append(a)
+					if _selected_atoms.size() > 0:
+						_workspace.selected_atom = best_atom
+						_update_gizmo_pos()
+						_gizmo.visible = true
+					_update_status("晶胞选中: %d 原子 (整个晶胞)" % _selected_atoms.size())
+				SelectionMode.GRAIN:
+					pass
 		else:
 			_deselect()
 	elif _is_in_bottom_viewport(screen_pos):
@@ -4020,12 +4515,6 @@ func _on_results(results: Dictionary):
 		ev_text += "\n  " + PhysicsNotation.format_ginzburg_landau(cf.get("kappa", 0.0))
 		ev_text += "\n  " + PhysicsNotation.format_coherence_length(cf.get("xi", 0.0))
 		ev_text += "\n  " + PhysicsNotation.format_penetration_depth(cf.get("lambda_L", 0.0))
-		var stepwise = results.get("cqm_stepwise", {})
-		if stepwise.get("has_stepwise", false):
-			ev_text += "\n\n分步相变 (A₄多分量):"
-			for tr in stepwise.get("transitions", []):
-				ev_text += "\n  通道%d: T_c=%s (λ=%.4f)" % [
-					int(tr.channel), PhysicsNotation.format_temperature(float(tr.tc_channel)), float(tr.eigenvalue)]
 		var actions = results.get("cqm_actions", {})
 		if not actions.is_empty():
 			ev_text += "\n\nCQM作用量 (§3):"
@@ -4048,10 +4537,9 @@ func _on_results(results: Dictionary):
 				ev_text += "\n  S_reproduction = %s" % _fmt_sci(float(sr))
 			var se = actions.get("S_electron", {})
 			if se is Dictionary:
-				ev_text += "\n  S_electron = %s (动能 %s + 辫群 %s + 磁 %s)" % [
+				ev_text += "\n  S_electron = %s (动能 %s + 磁 %s)" % [
 					_fmt_sci(float(se.get("S_electron", 0.0))),
 					_fmt_sci(float(se.get("S_kin", 0.0))),
-					_fmt_sci(float(se.get("S_braid", 0.0))),
 					_fmt_sci(float(se.get("S_mag", 0.0)))]
 			else:
 				ev_text += "\n  S_electron = %s" % _fmt_sci(float(se))
@@ -4070,7 +4558,7 @@ func _on_results(results: Dictionary):
 					"成立" if g16.get("monotonicity_holds", false) else "不成立"]
 			var g17 = actions.get("G17_newtonian", {})
 			if g17 is Dictionary and int(g17.get("tet_count", 0)) > 0:
-				ev_text += "\n\nG17 牛顿退化 (有效度规→Poisson方程):"
+				ev_text += "\n\nG17 ~~牛顿退化~~ (已弃用: FG不走Regge→GR连续极限):"
 				ev_text += "\n  泊松残差(Regge) = %.1f%% | (牛顿基准) = %.1f%%" % [
 					100.0 * float(g17.get("poisson_residual_regge", 0.0)),
 					100.0 * float(g17.get("poisson_residual_newton", 0.0))]
@@ -4489,7 +4977,8 @@ func _on_atom_removed(_atom):
 			if _molecule_groups[gid]["atoms"].is_empty():
 				_molecule_groups[gid] = null
 	_selected_atoms.erase(_atom)
-	_secondary_selected_atoms.erase(_atom)
+	_sync_formula_to_pattern_engine()
+
 
 func _update_gizmo_pos():
 	if _workspace.selected_atom and _gizmo:
@@ -4641,6 +5130,12 @@ func _setup_context_menu():
 	geo_menu.id_pressed.connect(_on_geometry_menu_id)
 	_context_menu.add_child(geo_menu)
 	_context_menu.add_submenu_item("结合连接", "GeometryMenu")
+	_context_menu.add_separator()
+	_context_menu.add_item("结合为晶胞", 20)
+	_context_menu.add_item("结合为原子复合物", 21)
+	_context_menu.add_item("结合为分子复合结构", 22)
+	_context_menu.add_item("结合为原子分子复合结构", 23)
+
 
 	_context_menu.id_pressed.connect(_on_context_menu_id)
 	$UI.add_child(_context_menu)
@@ -4656,18 +5151,7 @@ func _setup_context_menu():
 	_mol_connect_menu.add_item("八面体排列", 207)
 	_mol_connect_menu.id_pressed.connect(_on_mol_connect_menu_id)
 	$UI.add_child(_mol_connect_menu)
-	_secondary_connect_menu = PopupMenu.new()
-	_secondary_connect_menu.add_item("全部锚点连接", 300)
-	_secondary_connect_menu.add_item("最近锚点连接", 301)
-	_secondary_connect_menu.add_item("质心锚点连接", 302)
-	_secondary_connect_menu.add_separator()
-	_secondary_connect_menu.add_item("线型排列", 303)
-	_secondary_connect_menu.add_item("折线型排列", 304)
-	_secondary_connect_menu.add_item("三角平面排列", 305)
-	_secondary_connect_menu.add_item("四面体排列", 306)
-	_secondary_connect_menu.add_item("八面体排列", 307)
-	_secondary_connect_menu.id_pressed.connect(_on_secondary_connect_menu_id)
-	$UI.add_child(_secondary_connect_menu)
+
 
 func _setup_box_select():
 	_box_rect = ColorRect.new()
@@ -4703,6 +5187,11 @@ func _show_context_menu(pos: Vector2):
 	_context_menu.set_item_disabled(_context_menu.get_item_index(8), in_bottom or not has_sel)
 	_context_menu.set_item_disabled(_context_menu.get_item_index(9), in_bottom or not has_sel)
 	_context_menu.set_item_disabled(_context_menu.get_item_index(3), in_bottom)
+	var combine_disabled = in_bottom or _selected_atoms.size() < 2
+	for combine_id in [20, 21, 22, 23]:
+		var ci = _context_menu.get_item_index(combine_id)
+		if ci >= 0:
+			_context_menu.set_item_disabled(ci, combine_disabled)
 	var sub_idx = _context_menu.get_item_count() - 1
 	_context_menu.set_item_disabled(sub_idx, in_bottom or not has_sel)
 	_context_menu.size = Vector2i(200, 0)
@@ -4724,6 +5213,77 @@ func _on_context_menu_id(id: int):
 		8: _set_fill_molecule_template()
 		9: _add_to_custom_molecules()
 		10: _replace_stroke_element()
+		20: _combine_to_crystal_form()
+		21: _combine_to_atom_complex()
+		22: _combine_to_molecule_complex()
+		23: _combine_to_mixed_complex()
+
+
+func _check_combine_constraints(atoms: Array, label: String) -> bool:
+	if atoms.size() < 2:
+		_update_status("%s需至少2个原子" % label)
+		return false
+	var total_charge = 0
+	for a in atoms:
+		if is_instance_valid(a):
+			total_charge += int(a.get("formal_charge", 0))
+	if total_charge != 0:
+		_update_status("%s约束失败: 总电荷=%d (需电中性)" % [label, total_charge])
+		return false
+	var min_dist = 0.5
+	var i = 0
+	while i < atoms.size():
+		var j = i + 1
+		while j < atoms.size():
+			if is_instance_valid(atoms[i]) and is_instance_valid(atoms[j]):
+				var d = atoms[i].position.distance_to(atoms[j].position)
+				if d < min_dist:
+					_update_status("%s约束失败: 原子间距%.2f<%.2f" % [label, d, min_dist])
+					return false
+			j += 1
+		i += 1
+	return true
+
+func _combine_to_crystal_form():
+	var atoms = _selected_atoms.duplicate()
+	if not _check_combine_constraints(atoms, "晶胞"):
+		return
+	var group_id = "crystal_%d" % Time.get_ticks_msec()
+	for a in atoms:
+		_atom_to_molecule[a] = group_id
+	_take_undo_snapshot()
+	_update_status("已结合为晶胞: %d原子 (标记:%s)" % [atoms.size(), group_id])
+
+func _combine_to_atom_complex():
+	var atoms = _selected_atoms.duplicate()
+	if not _check_combine_constraints(atoms, "原子复合物"):
+		return
+	var group_id = "atom_complex_%d" % Time.get_ticks_msec()
+	for a in atoms:
+		_atom_to_molecule[a] = group_id
+	_take_undo_snapshot()
+	_update_status("已结合为原子复合物: %d原子 (标记:%s)" % [atoms.size(), group_id])
+
+func _combine_to_molecule_complex():
+	var atoms = _selected_atoms.duplicate()
+	if not _check_combine_constraints(atoms, "分子复合结构"):
+		return
+	var group_id = "mol_complex_%d" % Time.get_ticks_msec()
+	for a in atoms:
+		_atom_to_molecule[a] = group_id
+	_take_undo_snapshot()
+	_update_status("已结合为分子复合结构: %d原子 (标记:%s)" % [atoms.size(), group_id])
+
+func _combine_to_mixed_complex():
+	var atoms = _selected_atoms.duplicate()
+	if not _check_combine_constraints(atoms, "原子分子复合结构"):
+		return
+	var group_id = "mixed_complex_%d" % Time.get_ticks_msec()
+	for a in atoms:
+		_atom_to_molecule[a] = group_id
+	_take_undo_snapshot()
+	_update_status("已结合为原子分子复合结构: %d原子 (标记:%s)" % [atoms.size(), group_id])
+
 
 ## 删除选中内容: 原子/分子组(整组)/画笔笔划; 无选中时删除点击处原子
 func _delete_selected():
@@ -4982,13 +5542,11 @@ func _select_all():
 		for atom in _workspace.atoms:
 			atom.set_selected(false)
 		_selected_atoms.clear()
-		_clear_secondary()
 		_workspace.selected_atom = null
 		_gizmo.visible = false
 		_update_status("已取消全选")
 	else:
 		_selected_atoms.clear()
-		_clear_secondary()
 		for atom in _workspace.atoms:
 			atom.set_selected(true)
 			_selected_atoms.append(atom)
@@ -5089,16 +5647,7 @@ func _try_l_connect(screen_pos: Vector2):
 	var target = _find_atom_at(screen_pos)
 	if not target:
 		return
-	if _secondary_selected_atoms.size() == 1:
-		var sec = _secondary_selected_atoms[0]
-		if target != sec:
-			_connect_and_arrange(sec, target)
-		return
-	if _secondary_selected_atoms.size() > 1:
-		if not (target in _secondary_selected_atoms):
-			_l_connect_target = target
-			_show_secondary_connect_menu(screen_pos)
-		return
+
 	if _selected_atoms.size() > 1 and not (target in _selected_atoms):
 		_l_connect_target = target
 		_show_mol_connect_menu(screen_pos)
@@ -5118,6 +5667,7 @@ func _connect_and_arrange(a: Atom3D, b: Atom3D):
 	b.position = a.position + direction * ideal_length
 	_workspace.add_bond(a, b)
 	_update_status("L连接: %s-%s (键长%.3fÅ)" % [a.element_symbol, b.element_symbol, ideal_length])
+	_sync_formula_to_pattern_engine()
 
 func _on_geometry_menu_id(id: int):
 	match id:
@@ -5134,6 +5684,7 @@ func _on_geometry_menu_id(id: int):
 			else:
 				_update_status("已自动连接 → 分子: %s (%d 原子)" % [", ".join(formulas), targets.size()])
 				_formula_label.text = "化学式: %s" % " + ".join(formulas)
+				_sync_formula_to_pattern_engine()
 		101: _arrange_geometry("linear", _selected_atoms)
 		102: _arrange_geometry("bent", _selected_atoms)
 		103: _arrange_geometry("trigonal_planar", _selected_atoms)
@@ -5157,6 +5708,7 @@ func _arrange_geometry(geometry: String, atoms: Array):
 	var gname = _geometry_name(geometry)
 	_formula_label.text = "化学式: %s (%s)" % [formula, gname]
 	_update_status("已按%s排列 %d 原子 → %s" % [gname, atoms.size(), formula])
+	_sync_formula_to_pattern_engine()
 
 func _arrange_around_center(center: Atom3D, surrounding: Array, geometry: String):
 	var center_pos = center.position
@@ -5244,6 +5796,7 @@ func _connect_all_in_mol(target: Atom3D):
 		if atom != target:
 			_connect_and_arrange(atom, target)
 	_update_status("已连接全部 %d 原子到 %s" % [_selected_atoms.size(), target.element_symbol])
+	_sync_formula_to_pattern_engine()
 
 func _arrange_mol_to_target(geometry: String, target: Atom3D):
 	var surrounding = []
@@ -5257,6 +5810,7 @@ func _arrange_mol_to_target(geometry: String, target: Atom3D):
 	var gname = _geometry_name(geometry)
 	_formula_label.text = "化学式: %s (%s)" % [formula, gname]
 	_update_status("已按%s排列分子到%s → %s" % [gname, target.element_symbol, formula])
+	_sync_formula_to_pattern_engine()
 
 func _geometry_name(g: String) -> String:
 	match g:
@@ -5295,6 +5849,25 @@ func _is_connected_group(atoms: Array) -> bool:
 				queue.append(neighbor)
 	return visited.size() == atoms.size()
 
+func _find_connected_component(start_atom: Atom3D) -> Array:
+	var result: Array = []
+	var visited: Dictionary = {}
+	var queue: Array = [start_atom]
+	visited[start_atom] = true
+	while queue.size() > 0:
+		var current = queue.pop_front()
+		result.append(current)
+		for bond in _workspace.bonds:
+			var neighbor = null
+			if bond.atom_a == current and not visited.has(bond.atom_b):
+				neighbor = bond.atom_b
+			elif bond.atom_b == current and not visited.has(bond.atom_a):
+				neighbor = bond.atom_a
+			if neighbor:
+				visited[neighbor] = true
+				queue.append(neighbor)
+	return result
+
 ## 标记分子; silent=true 时供自动标记路径调用 (不成组/已分组则静默跳过)
 ## 返回是否成功成组
 func _tag_as_molecule(atoms: Array, silent: bool = false) -> bool:
@@ -5321,7 +5894,7 @@ func _tag_as_molecule(atoms: Array, silent: bool = false) -> bool:
 	for atom in atoms:
 		_atom_to_molecule[atom] = gid
 	if not silent:
-		_update_status("已标记分子: %s (%d 原子) | S+点击=二级选中" % [group["label"], atoms.size()])
+		_update_status("已标记分子: %s (%d 原子)" % [group["label"], atoms.size()])
 	return true
 
 func _get_molecule_group(gid: int):
@@ -5348,55 +5921,7 @@ func _select_molecule_group(gid: int):
 	_update_gizmo_pos()
 	_gizmo.visible = true
 	Events.emit_signal("atom_selected", _workspace.selected_atom)
-	_update_status("已选中分子: %s (%d 原子) | S+点击=二级选中 | L+点击=连接" % [group["label"], group["atoms"].size()])
-
-func _try_secondary_select(screen_pos: Vector2, multi: bool):
-	var target = _find_atom_at(screen_pos)
-	if not target:
-		return
-	if not _atom_to_molecule.has(target):
-		_update_status("该原子不属于分子，无法二级选中")
-		return
-	var gid = _atom_to_molecule[target]
-	var group = _get_molecule_group(gid)
-	if group == null:
-		_update_status("该分子已失效，无法二级选中")
-		return
-	var in_selected = false
-	for atom in _selected_atoms:
-		if atom == target:
-			in_selected = true
-			break
-	if not in_selected:
-		_select_molecule_group(gid)
-		_clear_secondary()
-	if multi:
-		if target in _secondary_selected_atoms:
-			_secondary_selected_atoms.erase(target)
-			target.set_secondary(false)
-			target.set_selected(true)
-		else:
-			_secondary_selected_atoms.append(target)
-			target.set_secondary(true)
-	else:
-		_clear_secondary()
-		_secondary_selected_atoms.append(target)
-		target.set_secondary(true)
-	_workspace.selected_atom = target
-	_update_gizmo_pos()
-	_gizmo.visible = true
-	if _secondary_selected_atoms.size() > 1:
-		var syms = []
-		for a in _secondary_selected_atoms:
-			syms.append(a.element_symbol)
-		_update_status("二级选中 %d 锚点 %s | L+点击=以锚点连接(保持分子结构)" % [_secondary_selected_atoms.size(), str(syms)])
-	else:
-		_update_status("二级选中: %s | L+点击=连接 | Ctrl+S=多选锚点" % target.get_info_text())
-
-func _clear_secondary():
-	for atom in _secondary_selected_atoms:
-		atom.set_secondary(false)
-	_secondary_selected_atoms.clear()
+	_update_status("已选中分子: %s (%d 原子) | L+点击=连接" % [group["label"], group["atoms"].size()])
 
 func _try_ctrl_select(screen_pos: Vector2):
 	if _is_in_bottom_viewport(screen_pos):
@@ -5409,204 +5934,63 @@ func _try_ctrl_select(screen_pos: Vector2):
 	var target = _find_atom_at(screen_pos)
 	if not target:
 		return
-	_clear_secondary()
-	if _atom_to_molecule.has(target):
-		var gid = _atom_to_molecule[target]
-		var group = _get_molecule_group(gid)
-		if group == null:
-			_update_status("该分子已失效")
-			return
-		var already = true
-		for atom in group["atoms"]:
-			if not (atom in _selected_atoms):
-				already = false
-				break
-		if already:
-			for atom in group["atoms"]:
-				atom.set_selected(false)
-				_selected_atoms.erase(atom)
-		else:
-			for atom in group["atoms"]:
-				if not (atom in _selected_atoms):
-					atom.set_selected(true)
-					_selected_atoms.append(atom)
-		if _selected_atoms.size() > 0:
-			_workspace.selected_atom = _selected_atoms[0]
-			_update_gizmo_pos()
-			_gizmo.visible = true
-		else:
-			_workspace.selected_atom = null
-			_gizmo.visible = false
-		_update_status("Ctrl多选: %d 原子/分子 | 右键=结合连接" % _selected_atoms.size())
+	match _selection_mode:
+		SelectionMode.FREE:
+			if target in _selected_atoms:
+				target.set_selected(false)
+				_selected_atoms.erase(target)
+			else:
+				target.set_selected(true)
+				_selected_atoms.append(target)
+		SelectionMode.ATOM:
+			if target in _selected_atoms:
+				target.set_selected(false)
+				_selected_atoms.erase(target)
+			else:
+				target.set_selected(true)
+				_selected_atoms.append(target)
+		SelectionMode.MOLECULE:
+			var mol_atoms: Array = []
+			if _atom_to_molecule.has(target):
+				var gid = _atom_to_molecule[target]
+				var group = _get_molecule_group(gid)
+				if group:
+					mol_atoms = group["atoms"]
+			else:
+				mol_atoms = _find_connected_component(target)
+			var already = true
+			for a in mol_atoms:
+				if not (a in _selected_atoms):
+					already = false
+					break
+			if already:
+				for a in mol_atoms:
+					a.set_selected(false)
+					_selected_atoms.erase(a)
+			else:
+				for a in mol_atoms:
+					if not (a in _selected_atoms):
+						a.set_selected(true)
+						_selected_atoms.append(a)
+		SelectionMode.CRYSTAL_FORM:
+			if _selected_atoms.size() > 0:
+				for a in _selected_atoms:
+					a.set_selected(false)
+				_selected_atoms.clear()
+			else:
+				for a in _workspace.atoms:
+					a.set_selected(true)
+					_selected_atoms.append(a)
+		SelectionMode.GRAIN:
+			pass
+	if _selected_atoms.size() > 0:
+		_workspace.selected_atom = _selected_atoms[0]
+		_update_gizmo_pos()
+		_gizmo.visible = true
 	else:
-		if target in _selected_atoms:
-			target.set_selected(false)
-			_selected_atoms.erase(target)
-		else:
-			target.set_selected(true)
-			_selected_atoms.append(target)
-		if _selected_atoms.size() > 0:
-			_workspace.selected_atom = _selected_atoms[0]
-			_update_gizmo_pos()
-			_gizmo.visible = true
-			Events.emit_signal("atom_selected", _workspace.selected_atom)
-		else:
-			_workspace.selected_atom = null
-			_gizmo.visible = false
-		_update_status("Ctrl多选: %d 原子 | 右键=结合连接" % _selected_atoms.size())
-
-func _show_secondary_connect_menu(screen_pos: Vector2):
-	var anchors = _secondary_selected_atoms
-	var target = _l_connect_target
-	var mol_formula = ""
-	for atom in _selected_atoms:
-		if _atom_to_molecule.has(atom):
-			var gid = _atom_to_molecule[atom]
-			var g = _get_molecule_group(gid)
-			if g != null:
-				mol_formula = g["label"]
-				break
-	if mol_formula == "":
-		mol_formula = _compute_formula(_selected_atoms)
-	var combined = _selected_atoms.duplicate()
-	if not (target in combined):
-		combined.append(target)
-	var combined_formula = _compute_formula(combined)
-	_update_status("锚点%d + %s → %s | 保持原分子结构" % [anchors.size(), target.element_symbol, combined_formula])
-	_secondary_connect_menu.hide()
-	_secondary_connect_menu.size = Vector2i(220, 0)
-	_secondary_connect_menu.popup(Rect2(screen_pos, Vector2(220, 0)))
-
-func _on_secondary_connect_menu_id(id: int):
-	if _secondary_selected_atoms.is_empty() or not _l_connect_target:
-		return
-	var target = _l_connect_target
-	match id:
-		300: _connect_all_anchors(target)
-		301: _connect_nearest_anchor(target)
-		302: _connect_centroid_anchor(target)
-		303: _arrange_via_anchors("linear", target)
-		304: _arrange_via_anchors("bent", target)
-		305: _arrange_via_anchors("trigonal_planar", target)
-		306: _arrange_via_anchors("tetrahedral", target)
-		307: _arrange_via_anchors("octahedral", target)
-
-func _anchor_centroid() -> Vector3:
-	if _secondary_selected_atoms.is_empty():
-		return Vector3.ZERO
-	var c = Vector3.ZERO
-	for a in _secondary_selected_atoms:
-		if is_instance_valid(a):
-			c += a.global_position
-	return c / _secondary_selected_atoms.size()
-
-func _anchor_normal() -> Vector3:
-	if _secondary_selected_atoms.is_empty() or not is_instance_valid(_l_connect_target):
-		return Vector3.UP
-	if _secondary_selected_atoms.size() == 1:
-		return (_l_connect_target.global_position - _secondary_selected_atoms[0].global_position).normalized()
-	var c = _anchor_centroid()
-	var n = Vector3.ZERO
-	for a in _secondary_selected_atoms:
-		if not is_instance_valid(a):
-			continue
-		var d = (a.global_position - c).normalized()
-		n += d
-	if n.length() < 0.01 and _secondary_selected_atoms.size() >= 2:
-		var a0 = _secondary_selected_atoms[0].global_position
-		var a1 = _secondary_selected_atoms[1].global_position
-		var bond_dir = (a1 - a0).normalized()
-		n = bond_dir.cross(Vector3.UP).normalized()
-		if n.length() < 0.01:
-			n = bond_dir.cross(Vector3.FORWARD).normalized()
-	else:
-		n = -n.normalized()
-	return n
-
-func _connect_all_anchors(target: Atom3D):
-	if _secondary_selected_atoms.is_empty() or not is_instance_valid(target):
-		return
-	var data_t = ElementDB.get_element(target.element_symbol)
-	var r_t = float(data_t.get("covalent_radius_pm", 50)) / 100.0
-	var avg_bond = 0.0
-	for a in _secondary_selected_atoms:
-		if not is_instance_valid(a):
-			continue
-		var data_a = ElementDB.get_element(a.element_symbol)
-		var r_a = float(data_a.get("covalent_radius_pm", 50)) / 100.0
-		avg_bond += r_a + r_t
-		_workspace.add_bond(a, target)
-	avg_bond /= max(_secondary_selected_atoms.size(), 1)
-	var n = _anchor_normal()
-	target.position = _anchor_centroid() + n * avg_bond
-	_update_status("全部锚点连接: %d锚点→%s (保持分子结构)" % [_secondary_selected_atoms.size(), target.element_symbol])
-
-func _connect_nearest_anchor(target: Atom3D):
-	if _secondary_selected_atoms.is_empty() or not is_instance_valid(target):
-		return
-	var nearest = _secondary_selected_atoms[0]
-	var min_d = nearest.global_position.distance_to(target.global_position)
-	for a in _secondary_selected_atoms:
-		var d = a.global_position.distance_to(target.global_position)
-		if d < min_d:
-			min_d = d
-			nearest = a
-	_connect_and_arrange(nearest, target)
-	_update_status("最近锚点连接: %s→%s (保持分子结构)" % [nearest.element_symbol, target.element_symbol])
-
-func _connect_centroid_anchor(target: Atom3D):
-	var centroid = _anchor_centroid()
-	var nearest = _secondary_selected_atoms[0]
-	var min_d = nearest.global_position.distance_to(centroid)
-	for a in _secondary_selected_atoms:
-		var d = a.global_position.distance_to(centroid)
-		if d < min_d:
-			min_d = d
-			nearest = a
-	var data_n = ElementDB.get_element(nearest.element_symbol)
-	var data_t = ElementDB.get_element(target.element_symbol)
-	var r_n = float(data_n.get("covalent_radius_pm", 50)) / 100.0
-	var r_t = float(data_t.get("covalent_radius_pm", 50)) / 100.0
-	var bond_len = r_n + r_t
-	var n = _anchor_normal()
-	target.position = centroid + n * bond_len
-	_workspace.add_bond(nearest, target)
-	_update_status("质心锚点连接: 质心→%s (保持分子结构)" % target.element_symbol)
-
-func _arrange_via_anchors(geometry: String, target: Atom3D):
-	if _secondary_selected_atoms.is_empty() or not is_instance_valid(target):
-		return
-	var centroid = _anchor_centroid()
-	var n = _anchor_normal()
-	var data_t = ElementDB.get_element(target.element_symbol)
-	var r_t = float(data_t.get("covalent_radius_pm", 50)) / 100.0
-	var avg_r = 0.0
-	for a in _secondary_selected_atoms:
-		if not is_instance_valid(a):
-			continue
-		var data_a = ElementDB.get_element(a.element_symbol)
-		avg_r += float(data_a.get("covalent_radius_pm", 50)) / 100.0
-	avg_r /= max(_secondary_selected_atoms.size(), 1)
-	var bond_len = avg_r + r_t
-	var offset_dir = n
-	match geometry:
-		"linear":
-			target.position = centroid + offset_dir * bond_len
-		"bent":
-			var angle = 104.5 * PI / 180.0
-			target.position = centroid + (offset_dir * cos(angle) + Vector3.UP * sin(angle)) * bond_len
-		"trigonal_planar":
-			var angle = 120.0 * PI / 180.0
-			target.position = centroid + (offset_dir * cos(angle) + Vector3.UP * sin(angle)) * bond_len
-		"tetrahedral":
-			var angle = 109.47 * PI / 180.0
-			target.position = centroid + (offset_dir * cos(angle) + Vector3.UP * sin(angle)) * bond_len
-		"octahedral":
-			target.position = centroid + offset_dir * bond_len
-	for a in _secondary_selected_atoms:
-		_workspace.add_bond(a, target)
-	var gname = _geometry_name(geometry)
-	_update_status("锚点%s排列: %d锚点→%s (保持分子结构)" % [gname, _secondary_selected_atoms.size(), target.element_symbol])
+		_workspace.selected_atom = null
+		_gizmo.visible = false
+	_update_status("Ctrl多选: %d 原子" % _selected_atoms.size())
 
 # === 保存/加载/导出 ===
 
@@ -5686,6 +6070,7 @@ func _on_file_selected(path: String):
 			_take_undo_snapshot()
 			_update_status("项目已加载: %d原子 %d键 %d笔划%s" % [_workspace.atoms.size(), _workspace.bonds.size(), _brush_strokes.size(),
 				" (含计算结果)" if not saved_results.is_empty() else ""])
+			_sync_formula_to_pattern_engine()
 		2:
 			var ext = path.get_extension().to_lower()
 			if ext == "csv":
@@ -6016,13 +6401,6 @@ func _show_chart_window():
 		order_tab.name = "序参量"
 		tabs.add_child(order_tab)
 		order_tab.plot_order_parameters(order_params)
-
-	var transitions = _last_results.get("cqm_stepwise", {}).get("transitions", [])
-	if not transitions.is_empty():
-		var step_tab = ChartPlotter.new()
-		step_tab.name = "分步相变"
-		tabs.add_child(step_tab)
-		step_tab.plot_stepwise_transitions(transitions)
 
 	var cf = _last_results.get("critical_fields", {})
 	var hc1 = float(cf.get("hc1", 0.0))
