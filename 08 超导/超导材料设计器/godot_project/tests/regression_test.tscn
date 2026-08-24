@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqm_regression_test"]
-
-[ext_resource type="Script" path="res://tests/regression_test.gd" id="1"]
-
-[node name="RegressionTest" type="Node"]
-script = ExtResource("1")

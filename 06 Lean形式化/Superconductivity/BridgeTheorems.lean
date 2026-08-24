@@ -8,6 +8,7 @@ import Superconductivity.Reduction
 import Superconductivity.SPAF
 import Superconductivity.MolecularGeometry
 import Superconductivity.BCSIntegralAsymptotic
+import Superconductivity.FirstPrinciples
 
 /-!
 # CQM 桥接定理 (Bridge Theorems)
@@ -293,8 +294,11 @@ theorem reggeDeficit_ricciScalar_closedForm {kappa lam deltaV : ℝ}
 lemma blockDiagonal'_mulVec_eq {n : ℕ}
     (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ) (x : (Σ _ : Fin n, Fin 4) → ℝ) (i : Fin n) (j : Fin 4) :
     (Matrix.blockDiagonal' blocks *ᵥ x) ⟨i, j⟩ = (blocks i *ᵥ (fun j' => x ⟨i, j'⟩)) j := by
-  simp [Matrix.mulVec, dotProduct, Finset.sum_sigma, Matrix.blockDiagonal'_apply_eq,
-    Finset.sum_ite_eq]
+  simp only [Matrix.mulVec, dotProduct]
+  rw [← Finset.univ_sigma_univ, Finset.sum_sigma]
+  apply Finset.sum_congr rfl
+  intro j'
+  simp [Matrix.blockDiagonal'_apply_eq]
 
 /-- 辅助引理：块对角矩阵的二次型分解。
     xᵀ(blockDiagonal' blocks)x = Σ_k x_kᵀ(blocks k)x_k。
@@ -309,7 +313,7 @@ lemma blockDiagonal'_quadratic_form {n : ℕ}
         = ∑ p : (Σ _ : Fin n, Fin 4), x p * ((Matrix.blockDiagonal' blocks *ᵥ x) p) := by
       simp [dotProduct]
     _ = ∑ k : Fin n, ∑ j : Fin 4, x ⟨k, j⟩ * ((Matrix.blockDiagonal' blocks *ᵥ x) ⟨k, j⟩) := by
-      simp [Finset.sum_sigma]
+      simp [← Finset.univ_sigma_univ, Finset.sum_sigma]
     _ = ∑ k : Fin n, ∑ j : Fin 4, x ⟨k, j⟩ * ((blocks k *ᵥ (fun j' => x ⟨k, j'⟩)) j) := by
       simp_rw [blockDiagonal'_mulVec_eq]
     _ = ∑ k : Fin n, (star (fun j => x ⟨k, j⟩) ⬝ᵥ (blocks k *ᵥ (fun j => x ⟨k, j⟩))) := by
@@ -329,8 +333,7 @@ lemma blockDiagonal'_isHermitian {n : ℕ}
   · subst h_eq
     simp [Matrix.conjTranspose_apply, Matrix.blockDiagonal'_apply']
     have hk := h_symm i
-    rw [hk]
-    simp
+    simp [hk]
   · simp [Matrix.conjTranspose_apply, Matrix.blockDiagonal'_apply_ne, h_eq]
 
 /-- [定理] 块对角矩阵的本征值下界（由各块本征值下界保证）：
@@ -344,7 +347,7 @@ lemma blockDiagonal'_isHermitian {n : ℕ}
 
     物理含义：块对角系统的谱下界由最弱块的谱下界决定——
     这是"木桶效应"在嘉当矩阵谱理论中的严格代数表达。 -/
-theorem blockDiagonal_quadratic_lowerBound {n : ℕ}
+theorem blockDiagonal_quadratic_lowerBound {n : ℕ} [Nonempty (Fin n)]
     (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
     (alpha : Fin n → ℝ) (h_bound : ∀ (k : Fin n) (x : Fin 4 → ℝ),
       star x ⬝ᵥ (blocks k *ᵥ x) ≥ alpha k * (∑ i : Fin 4, x i ^ 2))
@@ -370,7 +373,7 @@ theorem blockDiagonal_quadratic_lowerBound {n : ℕ}
     _ = alpha_min * (∑ k : Fin n, ∑ j : Fin 4, x ⟨k, j⟩ ^ 2) := by
       simp_rw [Finset.mul_sum]
     _ = alpha_min * (∑ i : (Σ _ : Fin n, Fin 4), x i ^ 2) := by
-      rw [Finset.sum_sigma]
+      rw [← Finset.univ_sigma_univ, Finset.sum_sigma]
 
 /-- [定理] 块对角谱间隙：块对角矩阵的谱间隙 = 各块谱间隙的最小值。
     对于 C_mol = ⊕C_atom(k)，其正定性由最弱的原子嘉当块决定——
@@ -403,18 +406,18 @@ theorem blockDiagonal_spectralGap_min {n : ℕ}
       apply hx
       ext ⟨k, j⟩
       have hk := h_all k
-      exact funext hk ⟨j⟩
+      exact congrFun hk ⟨j⟩
     rcases h_exists with ⟨k, hk⟩
     -- 对块 k，x_k ≠ 0，故 x_kᵀB_k x_k > 0
     have h_pos_k : 0 < star (fun j => x ⟨k, j⟩) ⬝ᵥ (blocks k *ᵥ (fun j => x ⟨k, j⟩)) :=
-      (Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k)).2 (fun j => x ⟨k, j⟩) hk
+      (Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k)).2 hk
     -- 对其他块，x_kᵀB_k x_k ≥ 0（正定矩阵二次型非负）
     have h_nonneg_others : ∀ k' : Fin n,
         0 ≤ star (fun j => x ⟨k', j⟩) ⬝ᵥ (blocks k' *ᵥ (fun j => x ⟨k', j⟩)) := by
       intro k'
       by_cases h_zero : (fun j : Fin 4 => x ⟨k', j⟩) = 0
       · simp [h_zero]
-      · exact le_of_lt ((Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k')).2 _ h_zero)
+      · exact le_of_lt ((Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k')).2 h_zero)
     -- 一项为正、其余非负 ⇒ 总和为正
     have h_sum_pos : 0 < ∑ k' : Fin n,
         star (fun j => x ⟨k', j⟩) ⬝ᵥ (blocks k' *ᵥ (fun j => x ⟨k', j⟩)) := by
@@ -472,8 +475,9 @@ lemma twoAtomCoupling_quadratic_expand (t : ℝ) (x : Fin 2 × Fin 4 → ℝ) :
     2 * t * (∑ a : Fin 4, x (0, a) * x (1, a)) := by
   unfold twoAtomCouplingMatrix
   -- 展开 dotProduct 和 mulVec
-  simp [Matrix.mulVec, dotProduct, Matrix.of_apply, Finset.sum_product,
-    Fin.sum_univ_two, Finset.sum_finset_product]
+  simp only [Matrix.mulVec, dotProduct, Matrix.of_apply]
+  rw [Finset.sum_product, Fin.sum_univ_two]
+  simp [two_mul, mul_add, add_mul, mul_assoc, mul_left_comm, mul_comm]
   ring
 
 /-- [引理] 两原子耦合矩阵二次型绝对值上界：
@@ -511,7 +515,7 @@ lemma twoAtomCoupling_quadratic_abs_bound (t : ℝ) (x : Fin 2 × Fin 4 → ℝ)
       -- 从 (Σ a_i b_i)² ≤ (Σ a_i²)(Σ b_i²) 两边取平方根
       have h_cs_abs : |∑ a : Fin 4, x (0, a) * x (1, a)| ^ 2 ≤
           (∑ a : Fin 4, x (0, a) ^ 2) * (∑ a : Fin 4, x (1, a) ^ 2) := by
-        rw [abs_sq]
+        rw [sq_abs]
         exact h_cs
       calc
         |∑ a : Fin 4, x (0, a) * x (1, a)|
@@ -530,7 +534,8 @@ lemma twoAtomCoupling_quadratic_abs_bound (t : ℝ) (x : Fin 2 × Fin 4 → ℝ)
     have hsq1 : Real.sqrt s1 ^ 2 = s1 := Real.sq_sqrt h1
     nlinarith
   have h_total : (∑ p : Fin 2 × Fin 4, x p ^ 2) = s0 + s1 := by
-    simp [hs0, hs1, Finset.sum_product, Fin.sum_univ_two]
+    rw [Finset.sum_product, Fin.sum_univ_two]
+    rw [hs0, hs1]
   calc
     |2 * t * (∑ a : Fin 4, x (0, a) * x (1, a))|
         = 2 * |t| * |∑ a : Fin 4, x (0, a) * x (1, a)| := by
@@ -559,37 +564,46 @@ theorem twoAtomSuperCartan_quadratic_lowerBound
     (h_C2_bound : ∀ (x : Fin 4 → ℝ),
       star x ⬝ᵥ (C2 *ᵥ x) ≥ lambda_min * (∑ i : Fin 4, x i ^ 2))
     (x : Fin 2 × Fin 4 → ℝ) :
-    star x ⬝ᵥ (((Matrix.blockDiagonal' (fun (k : Fin 2) =>
-      match k with | 0 => C1 | 1 => C2) : Matrix (Fin 2 × Fin 4) (Fin 2 × Fin 4) ℝ) +
+    star x ⬝ᵥ (((Matrix.reindex (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+      (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+      (Matrix.blockDiagonal' (fun (k : Fin 2) =>
+        match k with | 0 => C1 | 1 => C2))) +
       twoAtomCouplingMatrix t) *ᵥ x) ≥
     (lambda_min - |t|) * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
-  -- 步骤 1：二次型分解 xᵀ(D+B)x = xᵀD x + xᵀB x
-  have h_add : star x ⬝ᵥ (((Matrix.blockDiagonal' (fun (k : Fin 2) =>
-      match k with | 0 => C1 | 1 => C2) : Matrix (Fin 2 × Fin 4) (Fin 2 × Fin 4) ℝ) +
-      twoAtomCouplingMatrix t) *ᵥ x) =
-      star x ⬝ᵥ ((Matrix.blockDiagonal' (fun (k : Fin 2) =>
-        match k with | 0 => C1 | 1 => C2) : Matrix (Fin 2 × Fin 4) (Fin 2 × Fin 4) ℝ) *ᵥ x) +
-      star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x) := by
-    simp [Matrix.add_mulVec, dot_product_add]
+  -- 记号：e 将 blockDiagonal' 的 Sigma 索引桥接到积索引 Fin 2 × Fin 4
+  let e : (Σ _ : Fin 2, Fin 4) ≃ Fin 2 × Fin 4 :=
+    Equiv.sigmaEquivProd (Fin 2) (Fin 4)
+  let blocks : Fin 2 → Matrix (Fin 4) (Fin 4) ℝ :=
+    fun k => match k with | 0 => C1 | 1 => C2
+  let D : Matrix (Fin 2 × Fin 4) (Fin 2 × Fin 4) ℝ :=
+    Matrix.reindex e e (Matrix.blockDiagonal' blocks)
+  -- 步骤 1：线性拆分 (D + B)x = Dx + Bx
+  have h_add : star x ⬝ᵥ ((D + twoAtomCouplingMatrix t) *ᵥ x) =
+      star x ⬝ᵥ (D *ᵥ x) + star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x) := by
+    simp [Matrix.add_mulVec]
   rw [h_add]
-  -- 步骤 2：块对角部分的二次型下界
-  have h_block : star x ⬝ᵥ (Matrix.blockDiagonal' (fun (k : Fin 2) =>
-      match k with | 0 => C1 | 1 => C2) *ᵥ x) ≥
+  -- 步骤 2：块对角部分的二次型下界（二次型在 reindex 下不变）
+  have h_block : star x ⬝ᵥ (D *ᵥ x) ≥
       lambda_min * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
-    rw [blockDiagonal'_quadratic_form (fun (k : Fin 2) =>
-      match k with | 0 => C1 | 1 => C2) x]
+    -- xᵀ(reindex B)x = (x∘e)ᵀ B (x∘e)：换元到 Sigma 索引侧
+    have h_inv : star x ⬝ᵥ (D *ᵥ x) =
+        star (fun s => x (e s)) ⬝ᵥ (Matrix.blockDiagonal' blocks *ᵥ (fun s => x (e s))) := by
+      simp [D, Matrix.mulVec, dotProduct, Matrix.reindex_apply,
+        Finset.sum_product, ← Finset.univ_sigma_univ, Finset.sum_sigma]
+    rw [h_inv, blockDiagonal'_quadratic_form blocks (fun s => x (e s))]
     calc
-      ∑ k : Fin 2, star (fun j => x (k, j)) ⬝ᵥ
-        ((match k with | 0 => C1 | 1 => C2) *ᵥ (fun j => x (k, j)))
-          ≥ ∑ k : Fin 2, (lambda_min * (∑ j : Fin 4, x (k, j) ^ 2)) := by
+      ∑ k : Fin 2, star (fun j => x (e ⟨k, j⟩)) ⬝ᵥ
+          (blocks k *ᵥ (fun j => x (e ⟨k, j⟩)))
+            ≥ ∑ k : Fin 2, (lambda_min * (∑ j : Fin 4, x (e ⟨k, j⟩) ^ 2)) := by
         refine Finset.sum_le_sum (fun k _ => ?_)
         fin_cases k
-        · exact h_C1_bound (fun j => x (0, j))
-        · exact h_C2_bound (fun j => x (1, j))
-      _ = lambda_min * (∑ k : Fin 2, ∑ j : Fin 4, x (k, j) ^ 2) := by
+        · simpa [blocks] using h_C1_bound (fun j => x (e ⟨0, j⟩))
+        · simpa [blocks] using h_C2_bound (fun j => x (e ⟨1, j⟩))
+      _ = lambda_min * (∑ k : Fin 2, ∑ j : Fin 4, x (e ⟨k, j⟩) ^ 2) := by
         simp [Finset.mul_sum]
       _ = lambda_min * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
         rw [Finset.sum_product]
+        simp
   -- 步骤 3：耦合部分的二次型下界
   have h_coup : star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x) ≥
       -|t| * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
@@ -597,8 +611,7 @@ theorem twoAtomSuperCartan_quadratic_lowerBound
     have h_neg : -|star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x)| ≤
         star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x) := by
       -- 对任意实数 a，有 −|a| ≤ a ≤ |a|
-      have h := neg_abs_le (star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x))
-      exact h
+      exact neg_abs_le (star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x))
     -- 链式推导：xᵀB x ≥ −|xᵀB x| ≥ −|t|·|x|²
     linarith
   -- 步骤 4：合并
@@ -618,26 +631,36 @@ theorem twoAtomSuperCartan_posDef
     (h_C2_bound : ∀ (x : Fin 4 → ℝ),
       star x ⬝ᵥ (C2 *ᵥ x) ≥ lambda_min * (∑ i : Fin 4, x i ^ 2))
     (h_t_lt : |t| < lambda_min) (h_lambda_min : 0 < lambda_min) :
-    (((Matrix.blockDiagonal' (fun (k : Fin 2) =>
-      match k with | 0 => C1 | 1 => C2) : Matrix (Fin 2 × Fin 4) (Fin 2 × Fin 4) ℝ) +
+    (((Matrix.reindex (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+      (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+      (Matrix.blockDiagonal' (fun (k : Fin 2) =>
+        match k with | 0 => C1 | 1 => C2))) +
       twoAtomCouplingMatrix t)).PosDef := by
   rw [Matrix.posDef_iff_dotProduct_mulVec]
   constructor
-  · -- Hermitian 性质：块对角 Hermitian + 耦合矩阵 Hermitian
-    have h_block_herm : (Matrix.blockDiagonal' (fun (k : Fin 2) =>
-        match k with | 0 => C1 | 1 => C2)).IsHermitian :=
-      blockDiagonal'_isHermitian (fun (k : Fin 2) =>
+  · -- Hermitian 性质：块对角 Hermitian（reindex 保持）+ 耦合矩阵 Hermitian
+    have hB_herm : (Matrix.blockDiagonal' (fun (k : Fin 2) =>
+        match k with | 0 => C1 | 1 => C2)).IsHermitian := by
+      exact blockDiagonal'_isHermitian (fun (k : Fin 2) =>
         match k with | 0 => C1 | 1 => C2) (by
-        intro k; fin_cases k
-        · exact h_C1_posDef.1
-        · exact h_C2_posDef.1)
+          intro k
+          fin_cases k <;> simp
+          · exact h_C1_posDef.1
+          · exact h_C2_posDef.1)
+    have h_block_herm : (Matrix.reindex (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+        (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
+        (Matrix.blockDiagonal' (fun (k : Fin 2) =>
+          match k with | 0 => C1 | 1 => C2))).IsHermitian := by
+      unfold Matrix.IsHermitian
+      rw [Matrix.conjTranspose_reindex, hB_herm]
+      rfl
     have h_coup_herm : (twoAtomCouplingMatrix t).IsHermitian := by
       unfold twoAtomCouplingMatrix
       ext ⟨i, a⟩ ⟨j, b⟩
       simp [Matrix.of_apply, Matrix.conjTranspose_apply]
       by_cases hij : i = j
       · subst hij; simp
-      · simp [hij]; ring
+      · simp [hij]
     -- 两个 Hermitian 矩阵之和仍为 Hermitian
     exact Matrix.IsHermitian.add h_block_herm h_coup_herm
   · -- 正定性：x ≠ 0 ⇒ xᵀC x > 0
@@ -650,12 +673,12 @@ theorem twoAtomSuperCartan_posDef
       have h_zero : x = 0 := by
         ext p
         have h_sq : x p ^ 2 ≤ 0 := by
-          have h_nonneg' : 0 ≤ x p ^ 2 := sq_nonneg _
           have h_sum_zero : ∑ p : Fin 2 × Fin 4, x p ^ 2 ≤ 0 := h_nonpos
           -- 单个平方项 ≤ 总和 ≤ 0，故必须为 0
           have h_le_sum : x p ^ 2 ≤ ∑ p' : Fin 2 × Fin 4, x p' ^ 2 :=
             Finset.single_le_sum (by intro; exact sq_nonneg _) (Finset.mem_univ p)
           linarith
+        have h_sq_nonneg : 0 ≤ x p ^ 2 := sq_nonneg _
         nlinarith
       exact hx h_zero
     have h_coeff_pos : 0 < lambda_min - |t| := by linarith

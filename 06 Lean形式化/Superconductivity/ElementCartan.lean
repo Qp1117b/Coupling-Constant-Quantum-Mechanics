@@ -353,10 +353,10 @@ theorem elementCartan_trace_primarySecondary_split (Z N : ℕ) (eps : ℝ) :
     中子扇区谱间隙 = λ₁ − ε（中子缺陷降低谱间隙），
     且 λ₁ − ε < λ₁（当 ε > 0），故元素整体谱间隙由次结构（中子扇区）决定。
     
-    物理含义：元素的超导临界温度由其中子缺陷决定——
-    中子越多（ε 越大），谱间隙越小，T_c 越低。
-    这是"木桶效应"在 CQM 因果网络中的严格体现：
-    最弱的因果链（中子扇区）决定整体的超导稳定性。 -/
+    物理含义：正的谱间隙削减量 ε 压缩谱间隙（λ₁ − ε < λ₁）。
+    中子缺陷 ε(N) 对谱间隙的具体方向随中子数 N 单调递减
+    （见 `isotopeDefectParameter`），谱间隙对同位素的整体变化
+    由 `isotopeSpectralGap_shift` 刻画（重同位素谱间隙更大）。 -/
 theorem elementSpectralGap_determinedByNeutronSector {eps : ℝ}
     (heps_nonneg : 0 ≤ eps) (heps_lt_sg : eps < spectralGap) :
     spectralGap - eps < spectralGap := by
@@ -379,46 +379,50 @@ theorem elementSpectralGap_determinedByNeutronSector {eps : ℝ}
     1. **标准 BCS 层**：ω_D ∝ M^(-1/2)（德拜频率与离子质量的关系），
        故 T_c ∝ ω_D ∝ M^(-1/2)。
     
-    2. **CQM 层**：中子缺陷参数 ε(N) 随中子数 N 变化，
+    2. **CQM 层**：中子缺陷参数 ε(N) = ε₀·(1 − β·(N−N_ref)/N_ref) 随中子数 N 变化，
        改变谱间隙 λ₁−ε(N)，从而改变 T_c。
-       中子越多 → ε 越大 → 谱间隙越小 → T_c 越低。
+       中子越多 → ε 越小 → 谱间隙越大（重同位素谱间隙增大，与 m ∝ λ_min 一致）。
     
     两层共同作用给出完整的同位素效应。对于氢同位素（H、D、T）：
-    - ¹H（Z=1, N=0）：ε=0，T_c 最高
-    - ²D（Z=1, N=1）：ε>0，T_c 降低
-    - ³T（Z=1, N=2）：ε 更大，T_c 更低
+    - ¹H（Z=1, N=0）：无中子扇区（纯质子，λ = λ₁）
+    - ²D（Z=1, N=1）：N = N_ref，ε = ε₀
+    - ³T（Z=1, N=2）：ε = ε₀·(1−β) < ε₀，谱间隙较 D 更大
     这与 CQM 同位素效应（α=1/2 在简单极限下，可因几何因子偏离）的框架结论一致。
 
     BCS 同位素指数 α_BCS = 1/2 来自 ω_D ∝ M^(-1/2)。
     CQM 修正 δα 来自 ε(N) 对谱间隙的修正。
     总同位素指数 α_total = α_BCS + δα_CQM。 -/
 
-/-- 同位素缺陷参数：ε(N) = ε₀·(1 + β·(N − N_ref)/N_ref)。
-    中子数 N 越大，缺陷参数 ε 越大（线性近似）。
+/-- 同位素缺陷参数：ε(N) = ε₀·(1 − β·(N − N_ref)/N_ref)。
+    中子数 N 越大，缺陷参数 ε 越小（减号：重同位素谱间隙增大，
+    与 m ∝ λ_min 的质量-谱映射方向一致）。
     ε₀ 为参考同位素（N_ref）的缺陷参数。
     β 为同位素敏感系数（由中子结合能决定）。 -/
 noncomputable def isotopeDefectParameter (eps0 beta N_ref N : ℝ) : ℝ :=
-  eps0 * (1 + beta * (N - N_ref) / N_ref)
+  eps0 * (1 - beta * (N - N_ref) / N_ref)
 
-/-- [定理] 同位素缺陷参数的单调性：N 越大 → ε 越大（β > 0 时）。
-    即中子数越多，缺陷越重，谱间隙越小。 -/
+/-- [定理] 同位素缺陷参数的单调性：N 越大 → ε 越小（β > 0 时）。
+    即中子数越多，缺陷参数向负方向偏移（谱间隙增大方向）。 -/
 theorem isotopeDefectParameter_monotone {eps0 beta N_ref N1 N2 : ℝ}
     (heps0 : 0 ≤ eps0) (hbeta : 0 < beta) (hN_ref : 0 < N_ref) (hN : N1 ≤ N2) :
-    isotopeDefectParameter eps0 beta N_ref N1 ≤ isotopeDefectParameter eps0 beta N_ref N2 := by
+    isotopeDefectParameter eps0 beta N_ref N2 ≤ isotopeDefectParameter eps0 beta N_ref N1 := by
   unfold isotopeDefectParameter
   have h_div : (N1 - N_ref) / N_ref ≤ (N2 - N_ref) / N_ref := by
     gcongr
+  have hb' : 0 ≤ beta := le_of_lt hbeta
+  have hprod : 0 ≤ eps0 * beta := mul_nonneg heps0 hb'
+  have hlem := mul_le_mul_of_nonneg_left h_div hprod
   nlinarith
 
 /-- [定理] 同位素谱间隙变化：两个同位素 (Z, N₁) 和 (Z, N₂) 的谱间隙差
-    Δλ = λ(N₂) − λ(N₁) = −(ε(N₂) − ε(N₁)) = −ε₀·β·(N₂−N₁)/N_ref。
-    中子数越多 → 谱间隙越小（负相关）。 -/
+    Δλ = λ(N₂) − λ(N₁) = −(ε(N₂) − ε(N₁)) = +ε₀·β·(N₂−N₁)/N_ref。
+    中子数越多 → 谱间隙越大（正相关，与 m ∝ λ_min 一致）。 -/
 theorem isotopeSpectralGap_shift {eps0 beta N_ref N1 N2 : ℝ}
     (heps0 : 0 ≤ eps0) (hbeta : 0 < beta) (hN_ref : 0 < N_ref) (hN : N1 ≤ N2) :
-    (spectralGap - isotopeDefectParameter eps0 beta N_ref N2) ≤
-    (spectralGap - isotopeDefectParameter eps0 beta N_ref N1) := by
-  have h_eps : isotopeDefectParameter eps0 beta N_ref N1 ≤
-      isotopeDefectParameter eps0 beta N_ref N2 :=
+    (spectralGap - isotopeDefectParameter eps0 beta N_ref N1) ≤
+    (spectralGap - isotopeDefectParameter eps0 beta N_ref N2) := by
+  have h_eps : isotopeDefectParameter eps0 beta N_ref N2 ≤
+      isotopeDefectParameter eps0 beta N_ref N1 :=
     isotopeDefectParameter_monotone heps0 hbeta hN_ref hN
   linarith
 
@@ -440,13 +444,14 @@ theorem bcsTc_ratio_formula {omegaD1 omegaD2 lam1 lam2 : ℝ}
     对于两个同位素 (Z, N₁, M₁) 和 (Z, N₂, M₂)，
     T_c(N₁) / T_c(N₂) = (M₂/M₁)^(1/2) · exp(1/λ(N₂) − 1/λ(N₁))。
     其中 ω_D ∝ M^(-1/2)（标准 BCS 同位素效应），
-    λ(N) = λ₁ − ε(N) = λ₁ − ε₀·(1 + β·(N−N_ref)/N_ref)（CQM 中子缺陷修正）。
+    λ(N) = λ₁ − ε(N) = λ₁ − ε₀·(1 − β·(N−N_ref)/N_ref)（CQM 中子缺陷修正）。
     
     第一因子 (M₂/M₁)^(1/2) 是标准 BCS 同位素效应（质量效应），
     第二因子 exp(1/λ(N₂) − 1/λ(N₁)) 是 CQM 中子缺陷修正。
     
-    当 N₂ > N₁ 时，ε(N₂) > ε(N₁)，λ(N₂) < λ(N₁)，
-    1/λ(N₂) > 1/λ(N₁)，故第二因子 > 1（部分抵消质量压制效应）。
+    当 N₂ > N₁ 时，ε(N₂) < ε(N₁)，λ(N₂) > λ(N₁)，
+    1/λ(N₂) < 1/λ(N₁)，故第二因子 < 1（增强质量压制效应，
+    重同位素 T_c 更低，同位素指数 α 偏向 > 1/2 侧）。
     
     物理含义：CQM 的中子缺陷修正使同位素效应偏离简单的 T_c ∝ M^(-1/2)，
     解释了为何具体材料的同位素指数 α 可偏离 0.5。

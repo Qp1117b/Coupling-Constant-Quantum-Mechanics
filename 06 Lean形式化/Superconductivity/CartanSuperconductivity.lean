@@ -6,7 +6,14 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 import CartanAlgebra.Basic
 import Superconductivity.Reduction
-import Superconductivity.Integral
+/-- 相位再生产锁定因子 e^{−Γ|τ|}：稳定性维持。
+     恒正，用于序参量各通道的衰减调制。 -/
+noncomputable def phaseLockingFactor (GammaPhase dotTau : ℝ) : ℝ :=
+  Real.exp (-GammaPhase * |dotTau|)
+
+theorem phaseLockingFactor_pos (GammaPhase dotTau : ℝ) : phaseLockingFactor GammaPhase dotTau > 0 := by
+  unfold phaseLockingFactor
+  exact Real.exp_pos _
 
 /-!
 # CQM 超导：嘉当张量超导方程 (Cartan Superconductivity)

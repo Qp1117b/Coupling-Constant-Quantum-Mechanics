@@ -11,7 +11,7 @@ import Mathlib.Tactic
 ## 形式化范围
 
 - 涌现属性的四维结构：随附基础属性、因果潜能、耦合深度、再生产衰减
-- 庸俗隐变量分解（正题） vs CQM 退相干深耦合形式（合题）
+- 庸俗隐变量分解（旧还原论形式） vs CQM 退相干深耦合形式（新涌现论形式）
 - 互信息变化度量（占位）
 
 ## 关于"基础自由度"的说明
@@ -90,7 +90,7 @@ open scoped BigOperators
 6. 引入**本体发展关系** `ontologyDevelopsInto`，表达有限本体的历史转化。
 
 涌现属性 `emergentProperty` 仍保持为一个结构性关系命题，但它现在
-可以与基础自由度和发展关系共同构成更完整的辩证结构。
+可以与基础自由度和发展关系共同构成更完整的理论结构。
 
 公式中的积分号 ∫ 应理解为"多重约束的结构性综合"，不是勒贝格积分。
 -/
@@ -324,7 +324,7 @@ abbrev HiddenVariable := ℝ
 /-- 耦合场类型。 -/
 abbrev CouplingField := ℝ
 
-/-- 庸俗隐变量分解（正题）：联合概率可分解为局部隐变量的乘积。
+/-- 庸俗隐变量分解（旧还原论形式）：联合概率可分解为局部隐变量的乘积。
     上层（测量设备）对下层（量子态）的作用被限定为被动读取。 -/
 def vulgarHVTDecomposition
     (P_joint : MeasurementOutcome → MeasurementOutcome → MeasurementSetting → MeasurementSetting → HiddenVariable → ℝ)
@@ -333,7 +333,7 @@ def vulgarHVTDecomposition
   ∀ a b A B lambda,
     P_joint a b A B lambda = P_local_A a A lambda * P_local_B b B lambda
 
-/-- CQM 退相干深耦合形式（合题）：联合概率包含测量设置与量子态的双向耦合。
+/-- CQM 退相干深耦合形式（新涌现论形式）：联合概率包含测量设置与量子态的双向耦合。
     ξ 为跨层级耦合场，P(ξ|A,B,λ) 描述测量设置与量子态通过 ξ 的相互作用。
     当 ξ 的涨落不可忽略时，乘积分解式被破坏，贝尔不等式被违反。 -/
 def cqmDeepCouplingForm

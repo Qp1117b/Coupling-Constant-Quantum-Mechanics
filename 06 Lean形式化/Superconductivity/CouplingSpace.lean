@@ -79,30 +79,35 @@ noncomputable def uncertaintyThreshold_pos {beta delta C : ℝ}
     uncertaintyThreshold beta delta C > 0 :=
   mul_pos hC (div_pos (properTimeFlow_pos hbeta hdelta hbound) hbeta)
 
-/-! ## 4. 库珀对作为精细结构常数跃迁 -/
+/-! ## 4. 库珀对作为精细结构常数跃迁（n=2 特例） -/
 
 /- 库珀对携带电荷 $2e$，有效精细结构常数配对后 $\alpha_{\text{pair}} = 4\alpha_{\text{eff}}$。
-    耦合坐标中 $u = \ln\alpha_{\text{eff}} \to u' = u + \ln4$，定义跃迁幅度 $\ln4$。 -/
+    耦合坐标中 $u = \ln\alpha_{\text{eff}} \to u' = u + \ln4$，定义跃迁幅度 $\ln4$。
+    一般情形：$\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），$\alpha \to n^2\alpha$，资格条件
+    $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，主导群由自由能竞争选出。 -/
 noncomputable def ln4 : ℝ := Real.log 4
 
 /- $\ln4 > 0$（因为 $4 > 1$）。 -/
 noncomputable def ln4_pos : ln4 > 0 := Real.log_pos (by norm_num)
 
-/- 跃迁判定：耦合坐标涨落须覆盖跃迁幅度 $\Delta u \ge \ln4$。 -/
+/- 跃迁判定（n=2 特例）：耦合坐标涨落须覆盖跃迁幅度 $\Delta u \ge \ln4$。
+    一般情形：$\Delta u \ge 2\ln n$，$n=2,4,6,\ldots$。 -/
 noncomputable def ln4TransitionCriterion (du : ℝ) : Prop := du ≥ ln4
 
-/- 超导临界耦合涨落阈值：满足 $\ln4$ 跃迁所需最小 $\Delta u$。 -/
+/- 超导临界耦合涨落阈值（n=2 特例）：满足 $\ln4$ 跃迁所需最小 $\Delta u$。
+    一般情形：$2\ln n$，$n=2,4,6,\ldots$。 -/
 noncomputable def superconductingDuThreshold : ℝ := ln4
 
 /- 该阈值 $\Delta u_{\text{th}} = \ln4 > 0$。 -/
 noncomputable def superconductingDuThreshold_pos : superconductingDuThreshold > 0 := ln4_pos
 
-/- 由不确定性关系，满足 $\Delta u \ge \ln4$ 所需最小曲率涨落阈值：
-    $\Delta\delta_v \ge C\sqrt{1-\beta\delta}/(\beta\ln4)$。 -/
+/- 由不确定性关系，满足 $\Delta u \ge \ln4$ 所需最小曲率涨落（n=2 资格条件特例）：
+    $\Delta\delta_v \ge C\sqrt{1-\beta\delta}/(\beta\ln4)$。
+    一般情形：$\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，$n=2,4,6,\ldots$。 -/
 noncomputable def curvatureFluctuationThreshold (beta delta C : ℝ) : ℝ :=
   uncertaintyThreshold beta delta C / ln4
 
-/- 曲率涨落阈值为正（在 $\beta>0, 0\le\delta<1/\beta, C>0$ 下）。 -/
+/- 曲率涨落阈值为正（在 $\beta>0, 0\le\delta<1/\beta, C>0$ 下）。n=2 特例。 -/
 noncomputable def curvatureFluctuationThreshold_pos {beta delta C : ℝ}
     (hbeta : beta > 0) (hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) (hC : C > 0) :
     curvatureFluctuationThreshold beta delta C > 0 :=

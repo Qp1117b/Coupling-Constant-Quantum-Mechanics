@@ -28,8 +28,10 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [CQM 核心 集成理论](01 核心理论/CQM 核心 集成理论.md) | CQM 完整理论框架：本体论公理、系统—尺度—层级递进、耦合空间相空间、时间三层结构、因果集统一框架、耦合运动学与动力学、引力退相干、4-单纯形与 SU(5) 涌现、混合矩阵、非交换几何、Adele 统一框架、谱方程与黎曼零点、物理常数推导、量子力学诠释 |
+| [CQM 核心 集成理论](01 核心理论/CQM 核心 集成理论.md) | CQM 完整理论框架（十三部分）：哲学与本体论（物质先在、存在先于过程、再生产）、理论定位与关系、海森堡代数与谱量子 $C$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry-Keating 对应）、退相干 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导）、谱方程与黎曼零点（Sierra-CQM 定理）、三种引力（QG/GR/FG 同源分化）、核子结构与元素层级（中子缺陷矩阵）、超导涌现完整机制、与标准理论的关系（贝尔不等式取消、测量问题消解） |
 | [CQM 核心 一证七联](01 核心理论/CQM 核心 一证七联.md) | 核心证明（未完成）：引力禁闭退相干的稳态是正四单纯形。七大关联：$C$ 三重锁定、正四单纯形三重对应、SU(5) = 大统一群、双曲度规与黎曼零点谱、维度匹配、真空涨落隔离、精细结构常数 $\alpha^{-1}$ |
+| [CQM 核心 三种引力存在论前提](01 核心理论/CQM 核心 三种引力存在论前提.md) | 三种引力（QG/FG/GR）本体论前提与精细引力纤维丛数学结构；QG/FG/GR 对比总表、中子缺陷矩阵、缺口编号 N1–N4、Lean 形式化对应 |
+| [CQM 核心 因果网络同步理论](01 核心理论/CQM 核心 因果网络同步理论.md) | 因果网络同步理论（CNST）：物质先在，物理实在通过物质自我限制（退相干）同步化而涌现，质数前网络是描述该物质关系的数学结构。从黎曼结构提取七条同步要素；三种引力的同步诠释（与主体系术语统一）；超导 = 同步再锁定与同步动力学（锁定 / 破坏 / 再锁定）；黎曼猜想作为关键缺口诚实标注 |
 
 ### 02 量子引力
 
@@ -55,7 +57,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [CQM 方法论 HilbertPolya批判](05 方法论与批判/CQM 方法论 HilbertPolya批判.md) | 对 Hilbert–Pólya 猜想的百年历史的根本性方法论批判。CQM 提出"扬弃"：保留"厄米算符—实谱"的合理内核，超越至"物理过程必然铸造算符"的唯物主义路径 |
+| [CQM 方法论 HilbertPolya批判](05 方法论与批判/CQM 方法论 HilbertPolya批判.md) | 对 Hilbert–Pólya 猜想的百年历史的根本性方法论批判。CQM 提出"批判性继承"：保留"厄米算符—实谱"的合理内核，超越至"物理过程必然铸造算符"的唯物主义路径 |
 
 ### 06 Lean形式化
 
@@ -70,7 +72,6 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 | [CQM 推导 完整方程组](07 推导与数学/CQM 推导 完整方程组.md) | CNT 完整方程组：两条独立路径（因果集路径与经典路径）的交汇点 |
 | [CQM 推导 推导链](07 推导与数学/CQM 推导 推导链.md) | CNT 唯一逻辑骨架：合并推导链、研究展开链、状态总览 |
 | [CQM 推导 经典路径](07 推导与数学/CQM 推导 经典路径.md) | 从作用量到谱的严格推导（经典路径），虽本体论上走不通但方程形式已被因果集路径验证 |
-| [CQM 推导 相空间等价性](07 推导与数学/CQM 推导 相空间等价性.md) | 循环论相空间与标准 RG 参数空间的等价性推导 |
 | [CQM 数学 Adele纲领](07 推导与数学/CQM 数学 Adele纲领.md) | 数学化纲领：从引力限制场到 Adele 值波函数 |
 | [CQM 数学 SU5群论](07 推导与数学/CQM 数学 SU5群论.md) | SU(5) 群论与角向耦合算符的严格推导 |
 | [CQM 数学 嘉当结构](07 推导与数学/CQM 数学 嘉当结构.md) | 离散哈密顿量与嘉当结构：从哈密顿量到群与场的研究笔记 |
@@ -79,7 +80,29 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [CQM 超导核心理论](08 超导/CQM 超导核心理论.md) | 超导涌现的完整框架：三种引力（QG/GR/FG，FG!=GR）本体论、核子层（质子A4+中子D(delta)非对角缺陷）、三条独立链（几何/嘉当/拓扑）、Regge几何->精细引力纤维丛->电子涌现、声子=曲率量子、固有时流速、耦合空间不确定性、库珀对=ln4跃迁、自组织七步展开、临界温度闭式、多分量BCS方程、迈斯纳效应、可证伪预言、Lean形式化对应 |
+| [CQM 超导核心理论](08 超导/CQM 超导核心理论.md) | 超导涌现的完整框架（因果网络同步理论）：三种引力（QG/GR/FG，FG≠GR）本体论、核子层（质子 $A_4$ + 中子 $D(\delta)$ 缺陷矩阵、元素嘉当矩阵）、三条独立链（几何/嘉当/拓扑）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、严格性缺口表（G 类）、Lean 形式化对应、五层双轨软件实现 |
+| [CQM超导形式化严谨化](08 超导/docs/CQM超导形式化严谨化.md) | 严谨化文档：定理3（β=8π+1推导）、四部分自由能构造、作用量泛函 |
+
+**08 超导/cqm_analysis/** — 计算验证脚本（16个Python + 2个Wolfram）：
+
+| 脚本 | 功能 |
+|:---|:---|
+| `cqm_core.py` | 核心计算模块（β=8π+1, 黎曼零点, Tc公式） |
+| `csv_database_test.py` | **CSV数据库226个材料大规模测试（100%成功率）** |
+| `large_scale_test.py` | 187个材料测试（含非超导体对照） |
+| `cell_subdivision.py` | 晶胞剖分双尺度涨落（Δδ_inter²+Δδ_intra²） |
+| `universal_criterion.py` | 非超导体对照+普适超导判据分析 |
+| `beta_first_principles.py` | β=8π+1第一性推导验证（A4群论） |
+| `V_element_to_super_sync.py` | V_element→S_super连接+Tc闭式推导 |
+| `material_Tc_prediction.py` | 材料Tc数值预测（H3S/LaH10/ThH10等） |
+| `element_genesis.py` | 元素发生学：A4嘉当矩阵→周期表 |
+| `complete_shell_derivation.py` | 完整壳层推导（SU(5)→2,6,10,14） |
+| `spin_origin_and_emergence.py` | SU(2)自旋来源与A4→SO(3)涌现 |
+| `V_element_explicit_construction.py` | V_element显式构造 |
+| `delta_spectral_constraint.py` | δ(Z,N)谱约束求解 |
+| `hund_rules_quantitative.py` | 洪特规则定量推导 |
+| `wolfram_verify.wl` | Wolfram系统性验证（19项全部通过） |
+| `superconductors_deduplicated.csv` | 超导数据库（226条记录，12个类别） |
 
 ### 归档 CNT
 
@@ -160,7 +183,9 @@ CQMFormal/
 ├── README.md                           ← 本文件
 ├── 01 核心理论/                        ← 理论主干
 │   ├── CQM 核心 集成理论.md
-│   └── CQM 核心 一证七联.md
+│   ├── CQM 核心 一证七联.md
+│   ├── CQM 核心 三种引力存在论前提.md
+│   └── CQM 核心 因果网络同步理论.md
 ├── 02 量子引力/
 │   └── CQM 引力 量子引力集成.md
 ├── 03 引力与退相干/
@@ -174,7 +199,32 @@ CQMFormal/
 ├── 06 Lean形式化/                      ← Lean 4 形式化验证
 ├── 07 推导与数学/                      ← 从 CNT 归档提取的关键推导文档
 ├── 08 超导/                            ← 超导涌现论
-│   └── CQM 超导核心理论.md             ← 完整超导理论（本体论→三条链→纤维丛→七步展开→Tc）
+│   ├── CQM 超导核心理论.md             ← 完整超导理论（170KB，§1-§17）
+│   ├── docs/
+│   │   └── CQM超导形式化严谨化.md       ← 严谨化文档（定理3等）
+│   ├── cqm_analysis/                   ← 计算验证脚本（16个Python + 2个Wolfram）
+│   │   ├── cqm_core.py                 ← 核心计算模块
+│   │   ├── csv_database_test.py        ← 226材料100%成功率测试
+│   │   ├── large_scale_test.py         ← 187材料测试
+│   │   ├── cell_subdivision.py         ← 双尺度涨落
+│   │   ├── universal_criterion.py      ← 非超导体对照
+│   │   ├── beta_first_principles.py    ← β=8π+1推导
+│   │   ├── V_element_to_super_sync.py  ← Tc闭式推导
+│   │   ├── material_Tc_prediction.py   ← 材料Tc预测
+│   │   ├── element_genesis.py          ← 元素发生学
+│   │   ├── complete_shell_derivation.py← 壳层推导
+│   │   ├── spin_origin_and_emergence.py← 自旋来源
+│   │   ├── V_element_explicit_construction.py
+│   │   ├── delta_spectral_constraint.py
+│   │   ├── hund_rules_quantitative.py
+│   │   ├── sync_operator_spectrum_v3.py
+│   │   ├── dedup_csv.py
+│   │   ├── wolfram_verify.wl / wolfram_final.wl
+│   │   └── superconductors_deduplicated.csv
+│   ├── cqm_framework/                  ← 纯CQM实现
+│   │   ├── cqm_pure_v7.py
+│   │   └── constants.py
+│   └── 超导材料设计器/                  ← 材料设计文档（7个设计文档）
 └── 归档 CNT/                           ← CNT 阶段历史文档（只读）
 ```
 

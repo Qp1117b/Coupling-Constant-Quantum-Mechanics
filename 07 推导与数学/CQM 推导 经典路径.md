@@ -56,7 +56,7 @@ $$e^u\Psi(-u) = \Psi(u) \implies e^{u/2}\phi(-u) = e^{u/2}\phi(u) \implies \phi(
 
 ## 三、作用量假设：一阶与二阶的独立构造
 
-**关键修正**：一阶与二阶是两个独立的作用量分量，分别描述再生产子（repliction）的单向演化与再生产密度波（repliction density wave）的谱结构。它们共享几何背景与 Robin/Neumann 边界条件，但非数学平方关系。
+**关键修正**：一阶与二阶是两个独立的作用量分量，分别描述再生产子（replication）的单向演化与再生产密度波（replication density wave）的谱结构。它们共享几何背景与 Robin/Neumann 边界条件，但非数学平方关系。
 
 ### 3.1 一阶实数扇区（Dirac 型）
 

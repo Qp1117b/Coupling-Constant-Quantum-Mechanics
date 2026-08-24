@@ -21,7 +21,7 @@
 | **Decoherence** | `Basic.lean` | `confinementScale`、`CausalLayer`、三层结构 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现公式结构性表达、庸俗隐变量分解对比（公理为主） |
-| **Superconductivity** | `Ontology.lean`, `Gravity.lean`, `Mechanism.lean`, `Integral.lean`, `TransitionTemperature.lean`, `StrongGravity.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `SPAF_PT.lean`, `SPAF_PTH.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean` | 强引力超导（16 模块）：有限本体论、τ_res/ω_causal、三方因果闭环、涌现积分、T_c、T_grav、**BCS 退化与还原（§11 温度依赖）**、**嘉当张量超导方程（§9 库珀对跃迁）**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵（链B约束）→Regge晶胞/角亏（链A生成）→FG退相干场** |
+| **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean` | 超导形式化（12 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）** |
 
 ## 形式化推导链
 
@@ -162,7 +162,7 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 
 ## 本次更新亮点 (v0.6.0)
 
-- **去除落后形式化**：删除 `MultiComponent.lean`（其引用的 §16 非平庸 GL 自由能理论与旧 §10.3 多分量凝聚已在文档中删除/改写，与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由落后的 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ)`、G13 标注已闭合、G17 标注已删除；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对已删除文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
+- **去除落后形式化**：删除 `MultiComponent.lean`（其引用的 §16 非平庸 GL 自由能理论与旧 §10.3 多分量凝聚已在文档中删除/改写，与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由落后的 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ_v)`、G13 标注已闭合、G17 标注已删除；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对已删除文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
 - **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除，其对应的 GL 物理内容已在文档层面弃用）
 
 ## 本次更新亮点 (v0.5.9)
@@ -180,10 +180,10 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 - **BCS 渐近分析（G13 闭合）**：新增 `BCSIntegralAsymptotic.lean`（9 定理），将 BCS 积分方程从第一性推导为对数方程。`bcsTcFromIntegral_solved` 严格证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程的唯一正解；`bcsTcFromIntegral_exists_unique` 证明存在唯一性。积分方程 ⟺ 对数方程 ⟺ 闭式 T_c 的完整推导链全部严格化
 - **`bcsConstant_gt_one` 公理→定理**：`2e^γ/π > 1` 从 `axiom` 升级为 `theorem`。证明链：γ > 1/2（Mathlib `one_half_lt_eulerMascheroniConstant`）→ exp(γ) > exp(1/2) → 平方差因式分解证明 2·exp(1/2) > π（利用 π < 3.1416 和 exp(1) > 2.718）→ 2·exp(γ)/π > 1。BCS 理论中前因子 > 1 的"数值事实"首次从 Mathlib 已知数值界严格证明
 - **桥接定理（跨模块因果链）**：新增 `BridgeTheorems.lean`（23 定理），将 CQM 各模块严格连接：`spectralGap_bcsTc_bound`（A₄ 谱间隙→BCS T_c 上限）、`gapChannelTc_exact`（谱间隙通道 T_c 闭式）、`spectralGap_to_ricciScalar_chain`（谱间隙→亏角密度→Ricci 标量）、`twoAtomSuperCartan_quadratic_lowerBound`（双原子耦合正定性）——用 Cauchy-Schwarz + AM-GM 严格证明 |t| < λ_min 时分子超嘉当矩阵正定
-- **元素嘉当矩阵（质/中子层级）**：新增 `ElementCartan.lean`（39 定理），从质子/中子基本嘉当矩阵出发，按 Z/N 组装元素嘉当矩阵。包含：质子扇区（纯 A₄ 块对角）、中子扇区（缺陷 A₄，参数 ε(N)）、同位素效应（ε(N) = ε₀·(1+β·(N−N_ref)/N_ref)）、**单元素材料 CQM→BCS 退化**（§9：ε→0 时 T_c→bcsCriticalTemperature(ω_D, λ₁)，BCS 是 CQM 在单元素、无中子缺陷极限下的特例）、极端引力例外（中子星/强引力/黑洞视界，5 个 `True` 占位转为诚实 `def`）
+- **元素嘉当矩阵（质/中子层级）**：新增 `ElementCartan.lean`（39 定理），从质子/中子基本嘉当矩阵出发，按 Z/N 组装元素嘉当矩阵。包含：质子扇区（纯 A₄ 块对角）、中子扇区（缺陷 A₄，参数 ε(N)）、同位素效应（ε(N) = ε₀·(1−β·(N−N_ref)/N_ref)）、**单元素材料 CQM→BCS 退化**（§9：ε→0 时 T_c→bcsCriticalTemperature(ω_D, λ₁)，BCS 是 CQM 在单元素、无中子缺陷极限下的特例）、极端引力例外（中子星/强引力/黑洞视界，5 个 `True` 占位转为诚实 `def`）
 - **分子几何→FG 退相干场管线**：新增 `MolecularGeometry.lean`（62 定理），完整形式化从分子构型到 FG 退相干场的管线：原子嘉当矩阵 → 分子超嘉当矩阵（块对角 + 跨原子耦合 t_ij）→ Weyl 嵌入（对角化提取谱间隙）→ Regge 亏角（δ_v = 2π − Σθ_tet）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限）。`twoProtonCoupling_exactThreshold`（G20-ext 闭合）用 SOS 分解 + 黄金比例恒等式证明两质子耦合在 t < λ₁ 时正定
-- **SPAF 压强-温度几何构型**：新增 `SPAF_PT.lean`（29 定理），将压强和温度转化为 A₄ 几何效应：几何压缩因子 χ(P) = (P/P_ref)^(1/3)、桥接定理（χ(P)→ω_D(P)、χ(P)→λ(P)）、再生产因子 R(T) = exp(−Γ_eff(T)·τ)、自洽 T_c 方程。新增 `SPAF_PTH.lean`（5 定理）涵盖磁场三相框架
-- **消除所有 `True` 占位公理和 `sorry`**：`ElementCartan.lean` 中 5 个返回 `True` 的占位公理转为诚实 `def` 声明（`newtonianGravity_degeneracy`、`causalResolution_gravity_details`、`neutronStar_exception_idealCartan_fails`、`strongGravity_exception_newtonianDegeneracy_fails`、`extremeGravity_causalResolution_enhancement`），明确标注"不构成证明，仅标记命题声明位置"。全部 16 个 Superconductivity 模块零 `sorry`、零 `axiom`（除 `Ontology.lean` 中 5 条本体论公理，为框架出发点）
+- **SPAF 压强-温度几何构型**：已合并入 `SPAF.lean`，将压强和温度转化为 A₄ 几何效应：几何压缩因子 χ(P) = (P/P_ref)^(1/3)、桥接定理（χ(P)→ω_D(P)、χ(P)→λ(P)）、再生产因子 R(T) = exp(−Γ_eff(T)·τ)、自洽 T_c 方程
+- **消除所有 `True` 占位公理和 `sorry`**：`ElementCartan.lean` 中 5 个返回 `True` 的占位公理转为诚实 `def` 声明，明确标注"不构成证明，仅标记命题声明位置"。全部 12 个 Superconductivity 模块零 `sorry`、零 `axiom`（除 `Ontology.lean` 中 5 条本体论公理，为框架出发点）
 - **定理总数**：从 426 → 624（+198 个严格证明的定理），Superconductivity 库从 119 → 317（+198）
 
 ## 本次更新亮点 (v0.5.7)
@@ -235,9 +235,9 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 
 ## 本次更新亮点 (v0.5.2)
 
-- **新增强引力超导库**：`Superconductivity`（6 模块，38 定理 / 5 公理），对应 [08 超导](../08%20超导/) 两卷文档
-- **分层映射**：Ontology（第 1–2 层有限本体论）→ Gravity（第 3 层引力因果限制场）→ Mechanism（第 4–5 层超导机制）→ Integral（第 6–7 层涌现积分）→ TransitionTemperature（第 8 层 T_c）→ StrongGravity（第 9 层强引力修正）
-- **核心定理**：`fourSimplex_euler_char_zero`、`causalCutoff_eq_two_pi_over_resolution`（ω_causal=2π/τ_res）、`strong_gravity_does_not_lower_causal_cutoff`、`superconductivity_requires_relation_network`、`tripleLoopStrength_locked_pos`、`emergenceIntegral_pos`、`criticalTemperature_pos`、`neutronStar_cutoff_blueshift`
+- **超导形式化库**：`Superconductivity`（12 模块），对应 [08 超导](../08%20超导/) 两卷文档
+- **分层映射**：Ontology（第 1–2 层有限本体论）→ TransitionTemperature（T_c）→ TransitionTemperatureCQM（G22 闭合）→ Reduction（BCS 退化与还原）→ CartanSuperconductivity（嘉当张量超导方程）→ FirstPrinciples（第一性推导链）→ SPAF（半唯像框架）→ MolecularGeometry（分子→晶胞→Regge→FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱与自由能竞争）
+- **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`
 - **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部量子引力/电子封装），沿用 CausalSet.Axioms 不透明公理模式
 
 ## 本次更新亮点 (v0.5.0)

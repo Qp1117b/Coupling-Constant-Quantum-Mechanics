@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Matrix.Block
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Tactic
 import CartanAlgebra.Basic
 import Superconductivity.CartanSuperconductivity
@@ -14,10 +15,15 @@ open scoped Matrix
 原则（与本库一贯的严格性铁律一致）：**只形式化能严格证明的内容**。
 本节不做任何定义化推导或冒充：
 - 因果耦合族 t_ij、Regge 边长等可证正性/单调性 → 定理；
-- 中子缺陷谱判据**正方向**（ε < γ_min ⟹ 缺陷矩阵保持正定）以初等平方和
-  （SOS）分解严格证明 → 定理；**反方向**已证 ε ≥ 5/4 时非正定
-  （见证向量 (4,3,2,1)：xᴴC_nx = 20 − 16ε ≤ 0）。
-  区间 [1, 5/4) 内正定保持未形式化（由 Sylvester 行列式判据成立），如实列为缺口。
+- 中子缺陷谱判据（对角元形式，§3.2）**完全闭合**：C_n(ε) 正定 ⟺ ε < 5/4。
+  正方向 = SOS 分解（ε < 1）+ Cauchy-Schwarz 下界（1 ≤ ε < 5/4）；
+  反方向 = 见证向量 (4,3,2,1)（xᴴC_nx = 20 − 16ε ≤ 0）。Sylvester 判据闭环。
+- 中子缺陷谱判据（非对角元形式，§2.2，G14 闭合）：D(δ) 在 (2,3)/(3,2) 元
+  引入 −δ，det D(δ) = 8 − 3δ²，正定 ⟺ |δ| < √(8/3) ≈ 1.633。
+  二次型 LDL 分解逐项平方和 + 见证向量 w = (δ/4, δ/2, 3δ/4, 1) 双向闭合。
+  δ = 1 退化为质子 A₄；物理中子 δ(Z,N) 紧邻 1 落在窗口内（D(δ) 正定）。
+  δ(Z,N) 的具体数值是未确认的开放问题，不假设具体定值，不采用质量反推。
+  N2 闭合：det 匹配 ε(δ) = (3/4)(δ²−1) 联系两种参数化。
 
 内容：
 
@@ -28,7 +34,9 @@ open scoped Matrix
 3. **中子缺陷（§3.2）**：缺陷矩阵 Δ = diag(−ε,0,0,0) 与缺陷嘉当矩阵
    C_n = A₄ − Δ 的对称性、ε = 0 退化、对角元、ε < 2 时缺陷位对角元为正，
    以及二次型分解与正定判据（SOS 版本）。
-4. **Regge 边长（§5 步骤 15）**：l_e = κ/√λ_e 的正性。
+4. **中子缺陷的非对角元形式（§2.2，G14 闭合）**：D(δ) 的对称性、δ = 1 退化、
+   LDL 二次型分解、det = 8 − 3δ²、正定 ⟺ |δ| < √(8/3)、物理窗口、N2 参数化。
+5. **Regge 边长（§5 步骤 15）**：l_e = κ/√λ_e 的正性。
 -/
 
 namespace CQM
@@ -664,5 +672,271 @@ theorem bulkLowEnergyProjection_trace (n N : ℕ) (atoms : Fin (n * N) → AtomT
         if val ≤ E_cut then 1 else 0) := by
   unfold bulkLowEnergyProjection
   simp [Matrix.trace, Matrix.of_apply]
+
+/-! ## 中子缺陷的非对角元形式 D(δ)（§2.2，G14 闭合） -/
+
+/-- SPAF §2.2：非对角元缺陷嘉当矩阵 D(δ)。
+    A₄ 的 (2,3)/(3,2) 元由 −1 形变为 −δ：
+    D(δ) = [[2,−1,0,0],[−1,2,−1,0],[0,−1,2,−δ],[0,0,−δ,2]]。
+    δ = 1 时退化为质子 A₄；物理中子缺陷 δ(Z,N) 紧邻 1（具体数值未确认）。
+    与 §3.2 的对角元形式 C_n(ε) = A₄ − ε·diag(1,0,0,0) 互为两种参数化。 -/
+noncomputable def neutronDefectCartan (delta : ℝ) : Matrix (Fin 4) (Fin 4) ℝ :=
+  !![2, -1, 0, 0; -1, 2, -1, 0; 0, -1, 2, -delta; 0, 0, -delta, 2]
+
+/-- D(δ) 对称。 -/
+theorem neutronDefectCartan_symmetric (delta : ℝ) : ∀ i j : Fin 4,
+    neutronDefectCartan delta i j = neutronDefectCartan delta j i := by
+  intro i j
+  fin_cases i <;> fin_cases j <;> simp [neutronDefectCartan]
+
+/-- D(δ) 自伴（Hermitian）：矩阵正定的共轭对称前提。 -/
+lemma neutronDefectCartan_isHermitian (delta : ℝ) :
+    (neutronDefectCartan delta).IsHermitian := by
+  ext i j
+  simp [Matrix.conjTranspose_apply, neutronDefectCartan_symmetric delta j i]
+
+/-- δ = 1 时非对角缺陷退化：D(1) 与质子 A₄ 逐元一致（缺陷形变回到嘉当矩阵）。 -/
+theorem neutronDefectCartan_one_eq_cartanA4_entries (i j : Fin 4) :
+    neutronDefectCartan 1 i j = (cartanA4 i j : ℝ) := by
+  fin_cases i <;> fin_cases j <;> simp [neutronDefectCartan, cartanA4]
+
+/-- D(δ) 的二次型 LDL 分解（逐项平方和）：
+    xᴴD(δ)x = (1/2)(2x₀−x₁)² + (1/6)(3x₁−2x₂)² + (1/12)(4x₂−3δx₃)²
+              + ((8−3δ²)/4)x₃²。
+    正定性信息全部藏在末项系数 (8−3δ²)/4 的符号里：
+    |δ| < √(8/3) ⟹ 四系数全正 ⟹ 正定；|δ| ≥ √(8/3) ⟹ 末项系数 ≤ 0。 -/
+lemma neutronDefectCartan_quadratic (delta : ℝ) (x : Fin 4 → ℝ) :
+    star x ⬝ᵥ (neutronDefectCartan delta *ᵥ x) =
+      (1 / 2) * (2 * x 0 - x 1) ^ 2 + (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2
+      + (1 / 12) * (4 * x 2 - 3 * delta * x 3) ^ 2
+      + ((8 - 3 * delta ^ 2) / 4) * x 3 ^ 2 := by
+  unfold neutronDefectCartan
+  simp [dotProduct]
+  simp [Fin.sum_univ_four]
+  ring
+
+/-- [G14 辅助] Fin 4 上 succAbove 的数字化简（simp 无法自动归约，需逐值宣告）。
+    用于 det 余因子展开中子矩阵条目的归约。 -/
+@[simp] theorem fin4_succAbove_two_zero : (2 : Fin 4).succAbove 0 = (0 : Fin 4) := by decide
+@[simp] theorem fin4_succAbove_two_one : (2 : Fin 4).succAbove 1 = (1 : Fin 4) := by decide
+@[simp] theorem fin4_succAbove_two_two : (2 : Fin 4).succAbove 2 = (3 : Fin 4) := by decide
+@[simp] theorem fin4_succAbove_three_zero : (3 : Fin 4).succAbove 0 = (0 : Fin 4) := by decide
+@[simp] theorem fin4_succAbove_three_one : (3 : Fin 4).succAbove 1 = (1 : Fin 4) := by decide
+@[simp] theorem fin4_succAbove_three_two : (3 : Fin 4).succAbove 2 = (2 : Fin 4) := by decide
+
+/-- D(δ) 的行列式：det D(δ) = 8 − 3δ²。
+    沿第 4 列（索引 3）作余因子展开，仅 (2,3)、(3,3) 两项贡献：
+    det = 2·4 + δ·(−3δ) = 8 − 3δ²。 -/
+theorem neutronDefectCartan_det (delta : ℝ) :
+    (neutronDefectCartan delta).det = 8 - 3 * delta ^ 2 := by
+  unfold neutronDefectCartan
+  rw [Matrix.det_succ_column
+    (!![2, -1, 0, 0; -1, 2, -1, 0; 0, -1, 2, -delta; 0, 0, -delta, 2]) (3 : Fin 4)]
+  simp only [Fin.sum_univ_four]
+  norm_num [Matrix.det_fin_three, Matrix.submatrix_apply, Matrix.cons_val_zero,
+    Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three]
+  ring
+
+/-- [G14 闭合] 正向：|δ| < √(8/3) ⟹ D(δ) 正定。
+    LDL 分解中四个系数 1/2、1/6、1/12、(8−3δ²)/4 全部严格正；
+    平方和仅当 x₃ = x₂ = x₁ = x₀ = 0 时为零，故 x ≠ 0 ⟹ xᴴDx > 0。 -/
+theorem neutronDefectCartan_posDef_of_lt_sqrt_eight_thirds {delta : ℝ}
+    (hδ : |delta| < Real.sqrt (8 / 3)) : (neutronDefectCartan delta).PosDef := by
+  rw [Matrix.posDef_iff_dotProduct_mulVec]
+  constructor
+  · exact neutronDefectCartan_isHermitian delta
+  · intro x hx
+    rw [neutronDefectCartan_quadratic]
+    -- δ² < 8/3 ⟹ 末项系数严格正
+    have hsq : delta ^ 2 < 8 / 3 := by
+      rw [← Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 8 / 3)]
+      exact sq_lt_sq.mpr (by
+        rw [abs_of_nonneg (Real.sqrt_nonneg (8 / 3))]
+        exact hδ)
+    have hnum : 0 < 8 - 3 * delta ^ 2 := by nlinarith
+    have hc : 0 < (8 - 3 * delta ^ 2) / 4 := div_pos hnum (by norm_num)
+    -- 前三项平方和 ≥ 0
+    have hfirst : 0 ≤ (1 / 2) * (2 * x 0 - x 1) ^ 2 + (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2
+        + (1 / 12) * (4 * x 2 - 3 * delta * x 3) ^ 2 := by
+      have h1 : 0 ≤ (1 / 2) * (2 * x 0 - x 1) ^ 2 := mul_nonneg (by norm_num) (sq_nonneg _)
+      have h2 : 0 ≤ (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2 := mul_nonneg (by norm_num) (sq_nonneg _)
+      have h3 : 0 ≤ (1 / 12) * (4 * x 2 - 3 * delta * x 3) ^ 2 :=
+        mul_nonneg (by norm_num) (sq_nonneg _)
+      nlinarith
+    by_cases hx3 : x 3 = 0
+    · -- x₃ = 0：末项为零，Q = 前三项平方和 > 0（反证：若 Q = 0 则 x = 0）
+      simp [hx3]
+      by_contra! hle
+      have hQge : 0 ≤ (1 / 2) * (2 * x 0 - x 1) ^ 2 + (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2
+          + (1 / 12) * (4 * x 2) ^ 2 := by
+        have h1 : 0 ≤ (1 / 2) * (2 * x 0 - x 1) ^ 2 := mul_nonneg (by norm_num) (sq_nonneg _)
+        have h2 : 0 ≤ (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2 := mul_nonneg (by norm_num) (sq_nonneg _)
+        have h3 : 0 ≤ (1 / 12) * (4 * x 2) ^ 2 := mul_nonneg (by norm_num) (sq_nonneg _)
+        nlinarith
+      have hQ0 : (1 / 2) * (2 * x 0 - x 1) ^ 2 + (1 / 6) * (3 * x 1 - 2 * x 2) ^ 2
+          + (1 / 12) * (4 * x 2) ^ 2 = 0 := by nlinarith
+      have hx2 : x 2 = 0 := by
+        have hsq' : (4 * x 2) ^ 2 = 0 := by nlinarith
+        have h4 : 4 * x 2 = 0 := eq_zero_of_pow_eq_zero hsq'
+        nlinarith
+      have hx1 : x 1 = 0 := by
+        have hsq' : (3 * x 1 - 2 * x 2) ^ 2 = 0 := by nlinarith
+        have h3' : 3 * x 1 - 2 * x 2 = 0 := eq_zero_of_pow_eq_zero hsq'
+        nlinarith
+      have hx0 : x 0 = 0 := by
+        have hsq' : (2 * x 0 - x 1) ^ 2 = 0 := by nlinarith
+        have h2' : 2 * x 0 - x 1 = 0 := eq_zero_of_pow_eq_zero hsq'
+        nlinarith
+      have hzero : x = 0 := by
+        funext i
+        fin_cases i <;> simp [hx0, hx1, hx2, hx3]
+      exact hx hzero
+    · -- x₃ ≠ 0：末项严格正（系数 > 0 且 x₃² > 0），Q = 非负项 + 正项 > 0
+      have hpos : 0 < ((8 - 3 * delta ^ 2) / 4) * x 3 ^ 2 := mul_pos hc (sq_pos_iff.mpr hx3)
+      nlinarith
+
+/-- [G14 闭合] 反向：|δ| ≥ √(8/3) ⟹ D(δ) 非正定。
+    见证向量 w = (δ/4, δ/2, 3δ/4, 1)：前三项平方恰在 w 处消失，
+    xᴴD(δ)x = (8−3δ²)/4 ≤ 0，与正定的严格正性矛盾。 -/
+theorem neutronDefectCartan_not_posDef_of_sqrt_eight_thirds_le {delta : ℝ}
+    (hδ : Real.sqrt (8 / 3) ≤ |delta|) : ¬ (neutronDefectCartan delta).PosDef := by
+  intro hpd
+  let w : Fin 4 → ℝ := ![delta / 4, delta / 2, 3 * delta / 4, 1]
+  have hw : w ≠ 0 := by
+    intro hzero
+    have h3 : w 3 = 0 := congrFun hzero 3
+    norm_num [w, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+      Matrix.cons_val_three] at h3
+  have hQ : star w ⬝ᵥ (neutronDefectCartan delta *ᵥ w) = (8 - 3 * delta ^ 2) / 4 := by
+    rw [neutronDefectCartan_quadratic]
+    norm_num [w, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two,
+      Matrix.cons_val_three]
+    ring
+  have hsq : (8 / 3 : ℝ) ≤ delta ^ 2 := by
+    calc
+      (8 / 3 : ℝ) = (√(8 / 3)) ^ 2 := (Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 8 / 3)).symm
+      _ ≤ |delta| ^ 2 := (sq_le_sq₀ (Real.sqrt_nonneg (8 / 3)) (abs_nonneg delta)).mpr hδ
+      _ = delta ^ 2 := by rw [sq_abs]
+  have hnum : 8 - 3 * delta ^ 2 ≤ 0 := by nlinarith
+  have hle : (8 - 3 * delta ^ 2) / 4 ≤ 0 := div_nonpos_of_nonpos_of_nonneg hnum (by norm_num)
+  have hpos : 0 < star w ⬝ᵥ (neutronDefectCartan delta *ᵥ w) :=
+    (Matrix.posDef_iff_dotProduct_mulVec.mp hpd).2 hw
+  rw [hQ] at hpos
+  nlinarith
+
+/-- [G14 闭合] 正定区间的完整刻画：D(δ) 正定 ⟺ |δ| < √(8/3)。
+    与对角元形式 C_n(ε) 的阈值 ε < 5/4 互补（两种参数化的正定窗口）。
+    物理意义：缺陷窗口 |δ| < √(8/3) ≈ 1.633 同时包含质子值 δ = 1
+    与中子值 δ(Z,N)（紧邻 1），说明中子缺陷未破坏嘉当矩阵的正定性结构。 -/
+theorem neutronDefectCartan_posDef_iff_abs_lt_sqrt_eight_thirds {delta : ℝ} :
+    (neutronDefectCartan delta).PosDef ↔ |delta| < Real.sqrt (8 / 3) := by
+  constructor
+  · intro hpd
+    by_contra! hge
+    exact neutronDefectCartan_not_posDef_of_sqrt_eight_thirds_le hge hpd
+  · exact neutronDefectCartan_posDef_of_lt_sqrt_eight_thirds
+
+/-! ## N2 闭合：非对角缺陷 δ 与对角缺陷 ε 的等价参数化（行列式匹配） -/
+
+/-- N2 闭合形式 ε(δ) = (3/4)(δ² − 1)：
+    对角缺陷参数 ε 与非对角缺陷参数 δ 通过行列式（体积）匹配联系。
+    δ = 1（质子）时 ε = 0；δ ∈ (0,1)（中子微扰）时 ε < 0
+    （对角化等价于轻微增强 (0,0) 位对角元，即缺陷向高能方向移动）。 -/
+noncomputable def diagonalDefectParam (delta : ℝ) : ℝ := (3 / 4) * (delta ^ 2 - 1)
+
+/-- 对角元形式 C_n(ε) 的行列式：det C_n(ε) = 5 − 4ε。
+    沿第 4 列余因子展开：det = 2·(4−3ε) + (−1)·(−(3−2ε)) = 5 − 4ε。
+    与 det D(δ) = 8 − 3δ² 互补，构成 N2 参数化匹配的基础。 -/
+theorem neutronCartan_det (eps : ℝ) : (neutronCartan eps).det = 5 - 4 * eps := by
+  rw [neutronCartan_eq_explicit]
+  rw [Matrix.det_succ_column
+    (!![(2 - eps), -1, 0, 0; -1, 2, -1, 0; 0, -1, 2, -1; 0, 0, -1, 2]) (3 : Fin 4)]
+  simp only [Fin.sum_univ_four]
+  norm_num [Matrix.det_fin_three, Matrix.submatrix_apply, Matrix.cons_val_zero,
+    Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three]
+  ring
+
+/-- [N2 闭合] 行列式匹配：det D(δ) = det C_n(ε(δ))。
+    两种缺陷参数化在行列式（体积）意义下等价：
+    det D(δ) = 8 − 3δ² = 5 − 4·(3/4)(δ²−1) = det C_n(ε(δ))。 -/
+theorem neutronCartan_det_eq_diagonalParam (delta : ℝ) :
+    (neutronCartan (diagonalDefectParam delta)).det = (neutronDefectCartan delta).det := by
+  rw [neutronCartan_det, neutronDefectCartan_det, diagonalDefectParam]
+  ring
+
+/-- [G14 闭合] 物理中子缺陷 δ(Z,N) 落在正定窗口内：对任意 δ ∈ (0,1)，D(δ) 严格正定。
+    δ(Z,N) 紧邻质子值 1（微扰级形变），中子嘉当矩阵保持正定性（禁闭几何未破裂）。
+    δ(Z,N) 的具体数值是未确认的开放问题。 -/
+theorem neutronDefectCartan_phys_posDef {delta : ℝ} (hδ : 0 < delta ∧ delta < 1) :
+    (neutronDefectCartan delta).PosDef := by
+  apply neutronDefectCartan_posDef_of_lt_sqrt_eight_thirds
+  rw [abs_of_nonneg hδ.1.le]
+  have hsq : delta ^ 2 < 1 := by nlinarith [hδ.1, hδ.2]
+  have h83 : (1 : ℝ) < 8 / 3 := by norm_num
+  linarith
+
+/-! ## N2 微扰质量：δ = 1 质子极限附近的谱体积展开 -/
+
+/-- 质子极限：δ = 1 时 D(1) = A₄，det D(1) = 5 = det A₄（谱体积基准）。 -/
+theorem neutronDefectCartan_det_one : (neutronDefectCartan 1).det = 5 := by
+  rw [neutronDefectCartan_det]
+  norm_num
+
+/-- ε(δ) 在质子极限 δ = 1 + η 处的微扰展开：
+    ε(1+η) = (3/4)((1+η)²−1) = (3/2)η + (3/4)η²。
+    一阶系数 3/2，二阶修正 (3/4)η² 同号增强（η > 0 时 ε 单调正偏）。 -/
+theorem diagonalDefectParam_perturb (eta : ℝ) :
+    diagonalDefectParam (1 + eta) = (3 / 2) * eta + (3 / 4) * eta ^ 2 := by
+  unfold diagonalDefectParam
+  ring
+
+/-- det D(δ) 在质子极限 δ = 1 + η 处的微扰展开：
+    det D(1+η) = 8 − 3(1+η)² = 5 − 6η − 3η²。
+    一阶系数 −6：谱体积以 δ 偏移 6 倍的速率线性压缩；
+    二阶项 −3η² 同号增强（η ≠ 0 时谱体积相对质子严格收窄）。 -/
+theorem neutronDefectCartan_det_perturb (eta : ℝ) :
+    (neutronDefectCartan (1 + eta)).det = 5 - 6 * eta - 3 * eta ^ 2 := by
+  rw [neutronDefectCartan_det]
+  ring
+
+/-- det D(δ) 在 δ ≥ 0 半轴严格单调递减：δ 增大 ⟹ 谱体积压缩。
+    d/dδ det D = −6δ < 0（δ > 0）。正定窗口 [0, √(8/3)) 内单调性整体成立。 -/
+theorem neutronDefectCartan_det_strictAntiOn_nonneg {d1 d2 : ℝ}
+    (hd1 : 0 ≤ d1) (hd12 : d1 < d2) :
+    (neutronDefectCartan d2).det < (neutronDefectCartan d1).det := by
+  rw [neutronDefectCartan_det, neutronDefectCartan_det]
+  have hsq : d1 ^ 2 < d2 ^ 2 := (sq_lt_sq₀ hd1 (le_trans hd1 (le_of_lt hd12))).mpr hd12
+  nlinarith
+
+/-- [同位素方向] δ > 1 ⟹ det D(δ) < 5 = det A₄：
+    缺陷超过质子值（谱上"更紧"的一侧）时谱体积严格小于质子基准。 -/
+theorem neutronDefectCartan_det_lt_five_of_one_lt {delta : ℝ} (hd : 1 < delta) :
+    (neutronDefectCartan delta).det < 5 := by
+  have h := neutronDefectCartan_det_strictAntiOn_nonneg (d1 := 1) (d2 := delta)
+    (by norm_num) hd
+  rwa [neutronDefectCartan_det_one] at h
+
+/-- [同位素方向] 0 ≤ δ < 1 ⟹ det D(δ) > 5 = det A₄：
+    缺陷低于质子值（谱"更松"的一侧）时谱体积严格大于质子基准。 -/
+theorem neutronDefectCartan_det_gt_five_of_nonneg_lt_one {delta : ℝ}
+    (hd0 : 0 ≤ delta) (hd : delta < 1) :
+    5 < (neutronDefectCartan delta).det := by
+  have h := neutronDefectCartan_det_strictAntiOn_nonneg (d1 := delta) (d2 := 1) hd0 hd
+  rwa [neutronDefectCartan_det_one] at h
+
+/-- 中子谱体积 > 质子谱体积（δ ∈ (0,1) 落在谱体积微扩侧）。
+    δ(Z,N) 的具体数值是未确认的开放问题。 -/
+theorem neutronDefectCartan_phys_det_gt_proton {delta : ℝ} (hδ : 0 < delta ∧ delta < 1) :
+    5 < (neutronDefectCartan delta).det := by
+  exact neutronDefectCartan_det_gt_five_of_nonneg_lt_one hδ.1.le hδ.2
+
+/-- 中子物理值的对角参数：δ ∈ (0,1) 时 ε(δ) < 0。
+    ε < 0 等价于向 (0,0) 位添加正对角元（缺陷向高能方向移动），
+    与谱体积微扩（det ↑）自洽：主对角增强 → 谱上移。
+    δ(Z,N) 的具体数值是未确认的开放问题。 -/
+theorem diagonalDefectParam_phys_neg {delta : ℝ} (hδ : 0 < delta ∧ delta < 1) :
+    diagonalDefectParam delta < 0 := by
+  unfold diagonalDefectParam
+  nlinarith [hδ.1, hδ.2]
 
 end CQM

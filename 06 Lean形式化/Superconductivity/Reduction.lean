@@ -7,7 +7,7 @@ import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Topology.Defs.Filter
 import Mathlib.Tactic
 import Superconductivity.TransitionTemperature
-import Superconductivity.Gravity
+
 import Superconductivity.Ontology
 import PhysicalConstants.Basic
 
@@ -440,16 +440,6 @@ theorem criticalTemperature_decreases_with_ion_mass {k M₁ M₂ d c : ℝ} (hk 
   exact criticalTemperature_monotone_in_cutoff (debyeFrequency k M₂) (debyeFrequency k M₁) d c
     (debyeFrequency_decreases_with_mass hk hM₁ hM₂ hM)
 
-/-- 朴素 CQM 同位素异常（条件定理）：若配对通道的因果截断频率取朴素值
-     ω_causal = 2πM_eff ∝ M_ion，则 T_c 是离子质量的单调不减函数——
-     与 BCS 同位素定律（T_c ∝ M^(−1/2)）及实验方向（重同位素 T_c 更低）相反。
-     注意：这是"朴素替换与实验矛盾"的条件陈述，标示退化到晶格声子扇区是
-     与实例一致的模型选择，**不是**"退化是逻辑必然"的证明。 -/
-theorem naive_cqm_isotope_anomaly {M₁ M₂ d c : ℝ} (hM : M₁ ≤ M₂) :
-    criticalTemperature (causalCutoffFrequency M₁) d c ≤
-      criticalTemperature (causalCutoffFrequency M₂) d c := by
-  exact criticalTemperature_monotone_in_cutoff _ _ _ _
-    (causalCutoff_frequency_monotone_in_mass hM)
 
 /-! ## 强耦合扩展：McMillan–Dynes 公式 -/
 

@@ -12,7 +12,7 @@
 
 本文**不给出具体度规形式或数值验证**——所引用的任何度规仅为示意性举例，实际禁闭边界的几何结构远比此复杂。本文的核心贡献在于建立以下概念等价链：
 
-$$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(\tau) \to \ln L \;\Leftrightarrow\; \rho(u) \to \infty \;\Leftrightarrow\; \text{Decoherence}$$
+$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(\tau) \to \ln L \;\Leftrightarrow\; \rho(u) \to \infty \;\Leftrightarrow\; \text{退相干}$
 
 **关键词**：禁闭；退相干；质数分布；耦合常数空间；Sprinkling 密度；CQM
 
@@ -182,7 +182,7 @@ $$D_{\text{eff}}(u) \to \infty \quad \text{当} \quad u \to u_{\text{max}}$$
 
 本文的核心命题是以下概念的严格等价：
 
-$$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(\tau) \to \ln L \;\Leftrightarrow\; \rho(u) \to \infty \;\Leftrightarrow\; \text{Decoherence}$$
+$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(\tau) \to \ln L \;\Leftrightarrow\; \rho(u) \to \infty \;\Leftrightarrow\; \text{退相干}$
 
 **证明概要**（概念性）：
 
