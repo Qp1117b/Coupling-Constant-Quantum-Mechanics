@@ -113,7 +113,7 @@ $$T_c = C \cdot \sqrt{\frac{3\hbar^2}{4 k_B \cdot 9\ln 2}} \cdot \sqrt{K_{\text{
 
 $$K_{\text{eff}} = K_0^{\text{cat}} \cdot G^a \cdot \theta_D^b$$
 
-其中 $K_0^{\text{cat}}$ 是类别常数，$a, b$ 是普适幂指数。
+其中 $K_0^{\text{cat}}$ 是类别常数（各类别中位数），$a, b$ 是普适幂指数。单材料的 $K_0$ 值围绕 $K_0^{\text{cat}}$ 波动（类别内 CV 约 11%）。
 
 ### 5.2 拟合结果（`k_eff_derivation.py`）
 
@@ -205,7 +205,7 @@ $K_0^{\text{cat}}$ 编码了电子结构的细节（Fermi面拓扑、轨道杂�
 | 2倍内 | 73% |
 | 5倍内 | 90% |
 
-### 7.2 $K_{\text{eff}} = K_0^{\text{cat}} \cdot G^{-0.77} \cdot \theta_D^{1.13}$
+### 7.2 $K_{\text{eff}} = K_0^{\text{cat}} \cdot G^{-0.769} \cdot \theta_D^{1.132}$
 
 | 指标 | 值 |
 |------|-----|
@@ -243,7 +243,7 @@ BCS需要 $\lambda_{ep}$（电子-声子耦合常数）和 $\mu^*$（Coulomb赝�
 
 ### 8.2 CQM自由能公式
 
-$$T_c^{\text{CQM}} = \sqrt{\frac{8 \cdot \Delta\delta_0^2 \cdot K_0^{\text{cat}} \cdot G^{-0.77} \cdot \theta_D^{1.13} \cdot \theta_D}{9\ln 2}}$$
+$$T_c^{\text{CQM}} = \sqrt{\frac{8 \cdot \Delta\delta_0^2 \cdot K_0^{\text{cat}} \cdot G^{-0.769} \cdot \theta_D^{1.132} \cdot \theta_D}{9\ln 2}}$$
 
 CQM需要 $K_0^{\text{cat}}$（类别曲率刚度常数），当前为类别校准参数。
 
@@ -357,12 +357,12 @@ $$K = 18.5918 = \frac{3\beta^2}{16 \cdot (\gamma_2-\gamma_1)}$$
 | 脚本 | 功能 | 关键结果 |
 |------|------|---------|
 | `free_energy_tc_derivation.py` | 自由能Tc推导 | $T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，LOOCV 59% |
-| `k_eff_derivation.py` | $K_{\text{eff}}$ 分解 | $K_{\text{eff}} = K_0^{\text{cat}} G^{-0.77} \theta_D^{1.13}$，LOOCV 60% |
+| `k_eff_derivation.py` | $K_{\text{eff}}$ 分解 | $K_{\text{eff}} = K_0^{\text{cat}} G^{-0.769} \theta_D^{1.132}$，LOOCV 60% |
 | `k0_microscopic.py` | $K_0$ 与 $\lambda_{ep}$ 关系 | $K_0 \propto \lambda_{ep}^{2.5}$，$R^2 = 0.48$ |
 | `k0_direct_regression.py` | $K_0$ 材料参数回归 | $R^2 = 0.28$，LOOCV 68%（纯）/ 53%（+类别） |
 | `k0_cqm_derivation.py` | $K_0$ 晶格拓扑回归 | $R^2 = 0.17$，LOOCV 85% |
 | `scaling_relation_analysis.py` | 标度关系分析 | $1-\beta\delta_v = 18.59 \cdot \Delta\delta_0^2$，$R^2 = 1.000$（恒等式） |
-| `final_analysis.py` | arccoth形式困难 | 需15位精度，前向计算失败 |
+| `final_analysis.py` | arccoth形式困难 | 需15位精度，arccoth前向计算失败（已被自由能公式克服，LOOCV中位46%） |
 | `derive_C_squared.py` | $C^2 = 2/3$ 推导 | 几何因子 $4/3$ × 边共享 $1/2$ |
 | `verify_doc_tc_table.py` | 文档Tc表验证 | 全部错误（反推法数学假象） |
 
@@ -509,8 +509,8 @@ $$\boxed{K_0^{\text{cat}} = 7.77 \times 10^{11} \cdot \exp(0.369 \cdot \gamma_n)
 
 | 类别 | $n$ | $\gamma_n$ | $\ln K_0$ | $T_c$ 范围 |
 |------|-----|-----------|-----------|-----------|
-| 石墨插层超导体 | 1 | 14.13 | 31.82 | 0.1-15K |
-| 其他金属间化合物 | 2 | 21.02 | 36.24 | 0-39K |
+| 石墨插层超导体 | 1 | 14.1347 | 31.82 | 0.1-15K |
+| 其他金属间化合物 | 2 | 21.022 | 36.24 | 0-39K |
 | 有机超导体 | 3 | 25.01 | 37.01 | 0.8-13K |
 | 其他特殊超导体 | 4 | 30.42 | 38.95 | 0.4-30K |
 | 富勒烯超导体 | 5 | 32.94 | 39.46 | 8-38K |
@@ -736,6 +736,8 @@ $$T_c = \exp\left(\text{GBR}(\ln G, \ln\theta_D, \ln\Delta\delta_0, \ln M, \ln Z
 
 ## 18. GL(1)/GL(2)分层与显式公式（`gl2_sync_operator.py`, `final_tc_chain.py`）
 
+> **理论更新（2026-08）**：$C_f = 0$ 已证明（rank=0 椭圆曲线函数方程严格推导：$w_E = 1 \Rightarrow \Lambda'(1) = 0 \Rightarrow C_f = 0$）。GL(2) 不通过谱量子 $C_f$ 进入 $T_c$，而通过**零点差** $\gamma_2^{(f)}-\gamma_1^{(f)}$ 进入本征值交叉（d 波 $\approx 0.367$，p 波 $\approx 0.346$）。本节中 $j(j+1)$ Casimir 项是零点差的**代数参数化**（数值验证 $j(j+1)$ 与零点差在线性回归框架中携带相同信息量——两者是同一物理量的两种参数化）。完整推导见 `CQM 超导 底空间几何到GL2.md` §7-§12。
+
 ### 18.1 发生学分层
 
 按SU(5)破缺后的GL(n)因子分层：
@@ -795,7 +797,7 @@ $R^2 = 0.6034$，所有参数从LOOCV优化获得。
 ### 18.7 关键发现
 
 1. **GL(2)非常规超导精度极好**：中位36%，2倍内84%，5倍内96%——纯第一性显式公式。
-2. **同步算符本征值**$\gamma_{\text{eff}} = \gamma_n + 0.39 \cdot j(j+1)$统一GL(1)和GL(2)。
+2. **同步算符本征值**$\gamma_{\text{eff}} = \gamma_n + 0.39 \cdot j(j+1)$统一GL(1)和GL(2)。$C_f = 0$（rank=0 椭圆曲线函数方程严格推导），故 GL(2) 不通过谱量子进入；$j(j+1)$ 是零点差 $\gamma_2^{(f)}-\gamma_1^{(f)}$ 的代数参数化（d 波 $\approx 0.367$，p 波 $\approx 0.346$）。
 3. **重费米子**用n=1（γ_n=14.13）而非n=5——f电子局域化降低同步模式。
 4. **体模量B**是重要的几何参数（系数0.795）——编码晶格抗压缩能力。
 5. **R²=0.603**——显式公式解释60%的ln(K_eff)变异。

@@ -5,11 +5,11 @@
 > **数学框架**: FG底空间上的主丛 P(M,G)，联络-曲率-和乐机制，丛作用量竞争
 > **对应CQM原始文档**: `08 超导/CQM 超导核心理论.md`
 > **Lean形式化**: `06 Lean形式化/Superconductivity/FormalizationRigor.lean`
-> **Python数值验证**: `08 超导/cqm_framework/cqm_formalization_verify.py`
+> **Python数值验证**: `08 超导/cqm_analysis/cqm_core.py`（自由能交叉Tc计算）、`08 超导/cqm_analysis/free_energy_tc_derivation.py`
 > **版本**: 1.1（纤维丛语言主导）
 > **日期**: 2026-08-23
 
-> **相变判据层级说明**：本文档证明可计算丛作用量模型与CQM §11.2严格一致。§11.2的丛作用量交叉 $F_1(T_c)=F_2(T_c)$ 是唯象层；深层根基为同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$（超导同步算符 = 叠加的超导群 = QG 黎曼结构再现），丛作用量交叉是其热力学投影。详见 `CQM 超导核心理论.md` §11.6。本形式化验证针对唯象层（丛作用量），深层同步算符形式待严格推导。
+> **相变判据层级说明**：本文档证明可计算丛作用量模型与CQM §11.2严格一致。§11.2的丛作用量交叉 $F_1(T_c)=F_2(T_c)$ 是唯象层；深层根基为同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$（超导同步算符 = 叠加的超导群 = QG 基态紧化结构（GL(5)/SU(5)）破缺后电磁因子（GL(1)）子结构的再现），丛作用量交叉是其热力学投影。详见 `CQM 超导核心理论.md` §11.6。深层同步算符形式已部分闭合：$C_f = 0$ 已证明（rank=0 椭圆曲线函数方程严格推导），GL(2) 通过零点差 $\gamma_2^{(f)}-\gamma_1^{(f)}$ 进入本征值交叉，详见 `CQM 超导 底空间几何到GL2.md` §7-§12。
 
 ---
 
@@ -82,11 +82,11 @@ $$C = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0
 
 $$\Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n} \tag{A8}$$
 
-序参量（`free_energy.py:100-113`）：
+序参量（`cqm_core.py` 自由能计算）：
 
 $$\Delta_n(T) = \Delta\delta_0 \cdot \sqrt{\tanh\frac{\theta_D}{2T}} \cdot \frac{\ln n}{\ln 2}$$
 
-凝聚能（`free_energy.py:124-136`）：
+凝聚能（`cqm_core.py` 自由能计算）：
 
 $$E_{\text{cond}} = -\frac{\theta_D \lambda \Delta_n(T)^2}{2 V_n}$$
 
@@ -164,7 +164,7 @@ $$\Delta\delta_0 \approx \delta_{\text{crit}} \cdot \sqrt{1-\beta\delta_v} \tag{
 
 **步骤3：$\delta_{\text{crit}}$ 与 $C/(2\beta\ln n)$ 的对应**
 
-模型中（`first_principles_two_param.py`）：
+模型中（`first_principles_tc_chain.py`）：
 
 $$\delta_{\text{crit}} = \sqrt{2\ln 2 \cdot \left(\frac{\lambda\delta_v^2}{\pi^2} + \frac{\ln^2 2}{\pi^2}\right)}$$
 
@@ -174,7 +174,7 @@ $$\delta_{\text{crit}} \to \frac{\ln 2 \cdot \sqrt{2\ln 2}}{\pi} \approx 0.2598$
 
 CQM资格条件（A）中 $n=2$ 时的阈值：
 
-$$\frac{C}{2\beta\ln 2} = \frac{0.0231}{2 \times 26.13 \times 0.693} \approx 0.000638$$
+$$\frac{C}{2\beta\ln 2} = \frac{0.0230957}{2 \times 26.13 \times 0.693} \approx 0.000638$$
 
 两者关系：$\delta_{\text{crit}}$ 是**群论推广的阈值**，编码了A4表示论的结构信息（$\ln 2$, $\sqrt{2\ln 2}$），而 $C/(2\beta\ln n)$ 是**纯CQM阈值**。模型的 $\delta_{\text{crit}}$ 是CQM阈值在A4群论框架下的增强实现。
 
@@ -210,7 +210,7 @@ $$\Delta\delta_0 = \delta_{\text{crit}} \cdot (1 - \beta\delta_v \cdot \text{mod
 
 A4群的Klein四元群 $V_4 = \{e, (12)(34), (13)(24), (14)(23)\}$，$|V_4| = 4$。
 
-$\beta$ 的群论构造（`cqm_a4_derive_beta.py`）：
+$\beta$ 的群论构造（`beta_first_principles.py`）：
 
 $$\beta = 2|V_4|\pi + 1 = 8\pi + 1 \approx 26.1327$$
 
@@ -456,7 +456,7 @@ CQM §11.2："$E_{\text{凝聚}} < 0$，序参量凝聚时系统能量降低。"
 
 $$F_1(T_c) = F_2(T_c) \implies T_c = \frac{E_2 - E_1}{S_2 - S_1}$$
 
-模型实现（`free_energy.py:199-261`）：对所有 $(n_1, n_2)$ 对求解 $F_{n_1}(T) = F_{n_2}(T)$，取最低 $T_c$（物理上最先发生的跃迁）。 $\square$
+模型实现（`cqm_core.py:free_energy_crossing_tc`）：对所有 $(n_1, n_2)$ 对求解 $F_{n_1}(T) = F_{n_2}(T)$，取最低 $T_c$（物理上最先发生的跃迁）。 $\square$
 
 ---
 
@@ -511,7 +511,7 @@ CQM §11.2 G18缺口："CQM尚未给出可计算的作用量 $S_{U(1)/\mathbb{Z}
 
 ### 8.4 形式化验证
 
-所有6个定理已通过数值验证（`cqm_formalization_verify.py`）：
+所有6个定理已通过数值验证（`cqm_core.py`、`free_energy_tc_derivation.py`）：
 
 ```
 定理1: √(1-βδ_v)在自由能中的体现 — ✓ 通过
@@ -541,7 +541,7 @@ CQM §11.2 G18缺口："CQM尚未给出可计算的作用量 $S_{U(1)/\mathbb{Z}
 
 | 符号 | 含义 | CQM出处 |
 |:---:|:---|:---|
-| $C$ | 谱常数 $\xi'(1)/\xi(1) \approx 0.0231$ | §1.2 |
+| $C$ | 谱常数 $\xi'(1)/\xi(1) \approx 0.0230957$ | §1.2 |
 | $\beta$ | 几何耦合参数 $8\pi+1$ | §7.1, 定理3 |
 | $\delta_v$ | Regge角亏 | §4 |
 | $\Delta\delta_0$ | 零温曲率涨落幅度 | §11.1 |
@@ -617,7 +617,7 @@ Lean形式化证明位于 `06 Lean形式化/Superconductivity/FormalizationRigor
 
 ### 9.4 Python数值验证
 
-Python验证脚本 `cqm_formalization_verify.py` 对所有定理进行数值验证，作为Lean证明的补充：
+Python验证脚本 `cqm_core.py` 和 `free_energy_tc_derivation.py` 对所有定理进行数值验证，作为Lean证明的补充：
 
 ```
 定理1: √(1-βδ_v)在自由能中的体现 — ✓ 通过

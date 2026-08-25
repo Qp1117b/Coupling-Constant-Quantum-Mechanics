@@ -174,7 +174,7 @@ $$\langle dW^{(yz)} dW^{(xz)} \rangle = 0$$
 
 ### 7.3 展望
 
-上述缺口是 CNT 框架从纲领走向严格理论的自然前沿。特别是 $\Sigma_{ij}$ 的第一性计算，可能与 Adele 框架中 $p=2,3,5$ 分支的 Vladimirov 指数或谱方程边界条件 $\vartheta$ 的相位锁定有关。
+上述缺口是 CQM 框架从纲领走向严格理论的自然前沿。特别是 $\Sigma_{ij}$ 的第一性计算，可能与 Adele 框架中 $p=2,3,5$ 分支的 Vladimirov 指数或谱方程边界条件 $\vartheta$ 的相位锁定有关。
 
 ---
 

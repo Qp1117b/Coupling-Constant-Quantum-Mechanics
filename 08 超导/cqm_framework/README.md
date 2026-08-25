@@ -5,15 +5,10 @@
 ```
 cqm_framework/
 ├── constants.py          # 物理常数与CQM理论常数
-├── lattice.py            # 晶格结构 → Regge角亏计算
-├── free_energy.py        # 可计算自由能 F_n(T) 模型 [核心]
-├── tc_estimator.py       # Tc估算器（多方法集成）
-├── pipeline.py           # 完整流水线
-├── validate.py           # 全量验证与报告
-├── framework_report.json # 验证报告
-└── materials/
-    └── known_sc.py       # 已知超导体数据库
+└── cqm_pure_v7.py        # CQM纯理论计算核心（v7）
 ```
+
+> **注**：自由能模型、Tc估算器、流水线等功能已迁移至 `08 超导/cqm_analysis/` 目录下的独立脚本（`free_energy_tc_derivation.py`、`cqm_core.py`、`final_tc_chain.py` 等）。本目录仅保留核心常数定义和纯理论计算模块。
 
 ## 自由能模型 F_n(T) [核心突破]
 
@@ -48,13 +43,12 @@ F_n(T) = E_regge(n) + E_gauge(n) + E_cond(n, T) - T · S_n(T)
 ## 使用
 
 ```python
-from pipeline import CQMPipeline
-from free_energy import MaterialParameters
+from cqm_framework.constants import *
+from cqm_framework.cqm_pure_v7 import *
 
-pipe = CQMPipeline()
-params = MaterialParameters(theta_D=275, lambda_epc=0.98, delta_v=0.01, delta_delta_0=0.15)
-result = pipe.run("Nb", params, tc_experimental=9.25)
-print(result.classification)
+# 自由能计算和Tc估算见 cqm_analysis/ 目录
+# from cqm_analysis.cqm_core import free_energy_crossing_tc
+# from cqm_analysis.free_energy_tc_derivation import derive_tc
 ```
 
 ## 验证结果（68条已知超导体）

@@ -399,7 +399,7 @@ cqm_analysis/
 
 **结果**：反推法226/226"成功"，**但这是数学恒等式，不是物理预言**
 
-> **重要警告**：以下"100%成功率"使用的是**反推法**——从实验$T_c$反推$\delta_v$，再检查$\delta_v$是否在合理范围。给定任何$T_c>0$都能反推$\delta_v\approx 1/\beta$，这是公式结构而非独立预言。代码中`tc_calc = tc_exp`直接赋值。**前向计算**（从材料参数独立计算$T_c$）目前失败：$\delta_{\text{intrinsic}}=0$时大部分材料$T_c=0$，$\delta_{\text{intrinsic}}=0.99/\beta$时Nb算出322K vs 实验9.2K。详见`honest_forward_check.py`。
+> **重要警告**：以下"100%成功率"使用的是**反推法**——从实验$T_c$反推$\delta_v$，再检查$\delta_v$是否在合理范围。给定任何$T_c>0$都能反推$\delta_v\approx 1/\beta$，这是公式结构而非独立预言。代码中`tc_calc = tc_exp`直接赋值。**前向计算**（从材料参数独立计算$T_c$）的arccoth公式形式确实失败：$\delta_{\text{intrinsic}}=0$时大部分材料$T_c=0$，$\delta_{\text{intrinsic}}=0.99/\beta$时Nb算出322K vs 实验9.2K。详见`honest_forward_check.py`。**但自由能公式已建立前向预测框架**（$T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，LOOCV中位46%，2倍内81%），克服了arccoth公式的前向失败，详见`CQM超导Tc自由能推导链_技术报告.md` §15-§18。
 
 | 类别 | 测试数 | 反推"成功率" |
 |------|--------|--------|
@@ -459,7 +459,7 @@ cqm_analysis/
 | 关联因子 $f$ 严格计算 | **半推导** | Debye模型下严格公式：$f = \mathrm{sinc}^2(k_D R/2)$，$k_D=(6\pi^2 n)^{1/3}$。数值验证通过。BCC: $f\approx0.16$, FCC: $f\approx0.14$。与唯象值0.5有差异（Debye各向同性近似），精确值需DFT声子谱。氢化物：$f=(f_{ac}+w \cdot f_{op})/(1+w)$，$w=(M/m_H)(\omega_{ac}/\omega_{op})^2$。验证：`derive_f_correlation.py` |
 | $\delta_{\text{intrinsic}}$ 严格推导 | **半推导** | 公式已写出：$\delta_{\text{intrinsic}} = \frac{1}{2\pi}\int_{\text{FS}}|\Omega(\mathbf{k})|dS/A_{\text{FS}}$（Berry曲率积分）。球形Fermi面→$\delta=0$（Cu/Ag/Au不超导✓），van Hove→$\delta$最大（铜氧化物✓）。$\delta_v\approx 1/\beta$是$T_c\ll\theta_D$时的数学必然，物理内容在于非超导体$\delta_v<1/\beta$。数值需DFT。验证：`derive_delta_intrinsic.py` |
 | 原子参数精度 | 估算 | Debye温度、体积模量等从原子组成估算，应从DFT计算获取 |
-| **前向计算** | **失败** | 反推法是数学恒等式（任何$T_c$→$\delta_v\approx 1/\beta$）。前向计算（$\delta_{\text{intrinsic}}=0$）大部分$T_c=0$；$\delta_{\text{intrinsic}}=0.99/\beta$时Nb→322K vs 9.2K。$T_c$对$\delta_{\text{intrinsic}}$极度敏感。$\Delta\delta_0$不能区分超导/非超导。**当前是拟合框架，非预言框架**。详见`honest_forward_check.py` |
+| **前向计算** | **已部分闭合** | arccoth公式是拟合框架（反推法是数学恒等式）。**自由能公式已建立前向预测框架**：$T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，LOOCV中位46%，2倍内81%（166材料）。$K_{\text{eff}}$从材料参数（$\gamma_{\text{eff}}, G, \theta_D, B, N, V$）第一性计算。详见`CQM超导Tc自由能推导链_技术报告.md` §15-§18。 |
 
 ---
 
