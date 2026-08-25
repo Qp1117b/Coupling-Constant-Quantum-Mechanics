@@ -321,4 +321,4 @@ $$\boxed{E_0 = \frac{c^2}{4}}$$
 
 ---
 
-**核心修正总结**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的严格平方给出 $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$（变系数），而二阶作用量中的 $\hat{H}_\infty = c^2(-\partial_u^2+\partial_u)$（常系数）是独立构造。两者不等价，但共享谱间隙 $c^2/4$ 与 Robin/Neumann 边界条件。
+**关键关系**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的严格平方给出 $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$（变系数），而二阶作用量中的 $\hat{H}_\infty = c^2(-\partial_u^2+\partial_u)$（常系数）是独立构造。两者不等价，但共享谱间隙 $c^2/4$ 与 Robin/Neumann 边界条件。

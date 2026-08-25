@@ -141,7 +141,7 @@ FG 的曲率作用是**自组织**：物质通过角亏—联络—曲率机制*
 
 $$\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta \,\delta_v}}$$
 
-其中 $\beta$ 是几何耦合参数，$\delta_v$ 是局域角亏。角亏 $\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\tau/dt<1$）；小角亏极限 $\sqrt{1-\beta\delta_v}\approx 1-\beta\delta_v/2$；平直极限 $\delta_v=0$ 时 $d\tau/dt=1$。（早期写法 $1+\beta\delta_v$ 的符号与物理相反，已修正，与超导文档 §7.1 及 `CouplingSpace.properTimeFlow` 的形式化一致。）
+其中 $\beta$ 是几何耦合参数，$\delta_v$ 是局域角亏。角亏 $\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\tau/dt<1$）；小角亏极限 $\sqrt{1-\beta\delta_v}\approx 1-\beta\delta_v/2$；平直极限 $\delta_v=0$ 时 $d\tau/dt=1$。（与超导文档 §7.1 及 `CouplingSpace.properTimeFlow` 的形式化一致。）
 
 这与 GR 中固有时由引力势决定的公式结构完全对应（弱场极限）：
 
