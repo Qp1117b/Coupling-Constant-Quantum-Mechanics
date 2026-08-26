@@ -220,8 +220,7 @@ CQMFormal/
 │   ├── CQM 超导 底空间几何到GL2.md      ← 底空间几何→椭圆曲线→GL(2) L函数
 │   ├── docs/                           ← 技术报告
 │   │   ├── CQM超导Tc自由能推导链_技术报告.md
-│   │   ├── CQM超导形式化严谨化.md       ← 严谨化文档（定理3等）
-│   │   └── CQM超导计算框架完整文档.md
+│   │   └── CQM超导形式化严谨化.md       ← 严谨化文档（定理3等）
 │   ├── cqm_analysis/                   ← 计算验证脚本（78个Python + 1个Wolfram）
 │   │   ├── cqm_core.py                 ← 核心计算模块
 │   │   ├── final_tc_chain.py           ← 最终Tc推导链

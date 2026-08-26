@@ -16,34 +16,27 @@ CQM 超导理论核心计算模块
 import math
 from dataclasses import dataclass
 from typing import Optional
+import os
+import sys
 
-# ============================================================
-# 物理常数 (SI)
-# ============================================================
-HBAR = 1.054571817e-34
-KB = 1.380649e-23
-PI = math.pi
-GAMMA_EULER = 0.5772156649015329
+_super_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _super_dir not in sys.path:
+    sys.path.insert(0, _super_dir)
 
-# ============================================================
-# CQM 理论固定常数
-# ============================================================
-A4_EIGENVALUES = [0.38196601125, 1.38196601125, 2.61803398875, 3.61803398875]
-SPECTRAL_GAP = 0.38196601125
-SPECTRAL_QUANTUM_C = 0.02309570897
-FIRST_COUPLING_E1 = 200.04045483
-MATHIEU_CRITICAL = 1.316022911
-DYNKIN_INDEX = 1.66666666667
+from cqm_framework.constants import (
+    HBAR, KB, PI, GAMMA_EULER,
+    A4_EIGENVALUES, SPECTRAL_GAP, SPECTRAL_QUANTUM_C,
+    FIRST_COUPLING_E1, MATHIEU_CRITICAL, DYNKIN_INDEX,
+    LN4, BETA_CQM, TRANSITION_N_VALUES,
+    transition_coupling, spectral_constant,
+)
+
 BCS_PREFACTOR = 1.1339
 UNIVERSAL_GAP_RATIO = 3.5278
 
-DEFAULT_BETA = 8.0 * math.pi + 1.0  # β = 8π+1 ≈ 26.13, 从A4群论第一性推导 (定理3)
-DEFAULT_DELTA_0 = None  # δ(Z,N) 未确认的开放问题, 不假设具体定值
+DEFAULT_BETA = BETA_CQM
+DEFAULT_DELTA_0 = None
 DEFAULT_MU_STAR = 0.13
-LN4 = math.log(4.0)
-
-TRANSITION_N_VALUES = [2, 4, 6, 8, 10]
-TRANSITION_COUPLING = {n: 2.0 * math.log(n) for n in TRANSITION_N_VALUES}
 
 
 @dataclass
@@ -78,9 +71,6 @@ class SuperconductorRecord:
     flux_quantum_factor: int = 2
 
 
-def spectral_constant() -> float:
-    return 1.0 + GAMMA_EULER / 2.0 - math.log(2.0 * math.sqrt(PI))
-
 
 def debye_to_omega(theta_D: float) -> float:
     return KB * theta_D / HBAR
@@ -95,9 +85,6 @@ def debye_to_omega_rms_K(theta_D: float) -> float:
     """德拜模型均方根声子频率 √⟨ω²⟩ (K单位)"""
     return 0.77 * theta_D
 
-
-def transition_coupling_log(n: int) -> float:
-    return 2.0 * math.log(n)
 
 
 def estimate_delta_v_layered(n_layers: int, mismatch: float = 0.05) -> float:
@@ -146,7 +133,7 @@ def estimate_delta_delta_0(delta_0: float, beta: float, n_total: int,
 def bcs_cqm_tc(params: CQMParameters) -> float:
     C = spectral_constant()
     sqr = math.sqrt(max(1.0 - params.beta * params.delta_v, 1e-10))
-    coupling_log = transition_coupling_log(params.n_transition)
+    coupling_log = transition_coupling(params.n_transition)
     denominator = params.beta * coupling_log * params.delta_delta_0
     if denominator < 1e-15:
         return 0.0
