@@ -265,4 +265,3 @@ lake build Superconductivity.SPAF  # 编译 SPAF 半唯像框架模块
 - **项目版本**: 0.6.0
 - **Lean 版本**: 4.29.1
 - **依赖**: mathlib, physlib
-- **最后更新**: 2026-08-20
