@@ -555,7 +555,7 @@ $j(j+1)$ 比值（3.0）与零点差比值（1.03）显著不同。这表明 $j(
 
 ## 12. 数值验证：GL(2) 零点差在当前 CQM 框架中的真实角色
 
-**验证脚本**：`cqm_analysis/gl2_contribution_analysis.py`（路径5）
+**验证脚本**：`cqm_analysis/cqm_first_principles_strict.py`
 
 **数据集**：164 种超导材料（70 种 GL(2) 非常规 + 94 种 GL(1) 常规），LOOCV 留一法交叉验证。
 
@@ -599,7 +599,7 @@ $\gamma_n$ 映射：铜氧化物 $n=9$（$\gamma=48.0$），铁基 $n=8$（$\gam
 | K（相对） | $\gamma_n + \lambda \cdot \Delta\gamma_f / \gamma_n$ | 34.1 |
 | N（耦合） | $\gamma_n + \lambda \cdot \Delta\gamma_f \cdot \gamma_n$ | 32.9 |
 
-（本表为以精确零点差（工作包1）重新标定后的结果；方案 A、B、I–N 由 `gl2_contribution_analysis.py` 路径3 复现。）
+（本表为以精确零点差（工作包1）重新标定后的结果；方案 A、B、I–N 由 `cqm_first_principles_strict.py` 复现。）
 
 **所有非线性方案精度相近（~33%），没有任何方案能显著提升精度**（以精确零点差重新标定后，基准线性方案 A 与其非线性变体几乎持平）。
 

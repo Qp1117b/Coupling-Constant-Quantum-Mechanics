@@ -5,7 +5,7 @@
 > **数学框架**: FG底空间上的主丛 P(M,G)，联络-曲率-和乐机制，丛作用量竞争
 > **对应CQM原始文档**: `08 超导/CQM_超导核心理论.md`
 > **Lean形式化**: `06 Lean形式化/Superconductivity/FormalizationRigor.lean`
-> **Python数值验证**: `08 超导/cqm_analysis/cqm_core.py`（自由能交叉Tc计算）、`08 超导/cqm_analysis/free_energy_tc_derivation.py`
+> **Python数值验证**: `08 超导/cqm_analysis/cqm_first_principles_strict.py`（纯第一性Tc预测）
 > **版本**: 1.1（纤维丛语言主导）
 
 
@@ -82,11 +82,11 @@ $$C = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0
 
 $$\Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n} \tag{A8}$$
 
-序参量（`cqm_core.py` 自由能计算）：
+序参量（`cqm_first_principles_strict.py` 自由能计算）：
 
 $$\Delta_n(T) = \Delta\delta_0 \cdot \sqrt{\tanh\frac{\theta_D}{2T}} \cdot \frac{\ln n}{\ln 2}$$
 
-凝聚能（`cqm_core.py` 自由能计算）：
+凝聚能（`cqm_first_principles_strict.py` 自由能计算）：
 
 $$E_{\text{cond}} = -\frac{\theta_D \lambda \Delta_n(T)^2}{2 V_n}$$
 
@@ -456,7 +456,7 @@ CQM §11.2："$E_{\text{凝聚}} < 0$，序参量凝聚时系统能量降低。"
 
 $$F_1(T_c) = F_2(T_c) \implies T_c = \frac{E_2 - E_1}{S_2 - S_1}$$
 
-模型实现（`cqm_core.py:free_energy_crossing_tc`）：对所有 $(n_1, n_2)$ 对求解 $F_{n_1}(T) = F_{n_2}(T)$，取最低 $T_c$（物理上最先发生的跃迁）。 $\square$
+模型实现（`cqm_first_principles_strict.py:free_energy_crossing_tc`）：对所有 $(n_1, n_2)$ 对求解 $F_{n_1}(T) = F_{n_2}(T)$，取最低 $T_c$（物理上最先发生的跃迁）。 $\square$
 
 ---
 
@@ -511,7 +511,7 @@ CQM §11.2 G18缺口："CQM尚未给出可计算的作用量 $S_{U(1)/\mathbb{Z}
 
 ### 8.4 形式化验证
 
-所有6个定理已通过数值验证（`cqm_core.py`、`free_energy_tc_derivation.py`）：
+所有6个定理已通过数值验证（`cqm_first_principles_strict.py`、`cqm_first_principles_strict.py`）：
 
 ```
 定理1: √(1-βδ_v)在自由能中的体现 — ✓ 通过
@@ -617,7 +617,7 @@ Lean形式化证明位于 `06 Lean形式化/Superconductivity/FormalizationRigor
 
 ### 9.4 Python数值验证
 
-Python验证脚本 `cqm_core.py` 和 `free_energy_tc_derivation.py` 对所有定理进行数值验证，作为Lean证明的补充：
+Python验证脚本 `cqm_first_principles_strict.py` 和 `cqm_first_principles_strict.py` 对所有定理进行数值验证，作为Lean证明的补充：
 
 ```
 定理1: √(1-βδ_v)在自由能中的体现 — ✓ 通过

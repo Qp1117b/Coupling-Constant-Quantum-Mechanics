@@ -10,7 +10,7 @@ cqm_framework/
 └── README.md              # 本文件
 ```
 
-> **注**：自由能模型、Tc估算器、流水线等功能已迁移至 `08 超导/cqm_analysis/` 目录下的独立脚本（`free_energy_tc_derivation.py`、`cqm_core.py`、`final_tc_chain.py` 等）。本目录仅保留核心常数定义和纯理论计算模块。
+> **注**：Tc预测脚本位于 `08 超导/cqm_analysis/` 目录下（`cqm_first_principles_strict.py` 纯第一性预测）。本目录仅保留核心常数定义和纯理论计算模块。
 
 ## 自由能模型 F_n(T) [核心突破]
 
@@ -48,9 +48,7 @@ F_n(T) = E_regge(n) + E_gauge(n) + E_cond(n, T) - T · S_n(T)
 from cqm_framework.constants import *
 from cqm_framework.cqm_pure_v7 import *
 
-# 自由能计算和Tc估算见 cqm_analysis/ 目录
-# from cqm_analysis.cqm_core import free_energy_crossing_tc
-# from cqm_analysis.free_energy_tc_derivation import derive_tc
+# 自由能计算和Tc预测见 cqm_analysis/cqm_first_principles_strict.py
 ```
 
 ## 验证结果（226个超导材料数据库）
@@ -64,6 +62,6 @@ from cqm_framework.cqm_pure_v7 import *
 
 ## 已知限制
 
-1. arccoth公式依赖反推δ_v（拟合框架），自由能公式已建立前向预测框架（LOOCV中位45%）
+1. 自由能公式已建立纯第一性前向预测框架（LOOCV中位76.6%）
 2. 化合物德拜温度取元素近似值，需DFT精确计算
 3. K_0^cat含电子结构细节，纯材料参数不足，需DFT数据
