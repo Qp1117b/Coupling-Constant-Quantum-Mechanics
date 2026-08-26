@@ -27,9 +27,11 @@ RIEMANN_ZEROS = [14.134725, 21.022040, 25.010858, 30.424876, 32.935062,
 MODULAR_ZEROS = [9.222379, 13.907111, 17.442776, 19.656513, 22.184253,
                  23.744231, 26.110258, 27.849594, 29.913455, 31.683538]
 
+# 工作包1精确值 (PARI/GP, 40位精度)
+# E1: y^2=x^3-x (d波, N=32), E2: y^2=x^3-1 (p波, N=27)
 GL1_ZERO_GAP = 21.022040 - 14.134725
-GL2_ZERO_GAP_D = 0.367
-GL2_ZERO_GAP_P = 0.346
+GL2_ZERO_GAP_D = 2.19668196195747224157
+GL2_ZERO_GAP_P = 2.12851526858656716464
 GAMMA1 = 14.134725
 GAMMA2 = 21.022040
 
@@ -438,10 +440,10 @@ def path2_contribution_decomposition():
     gamma_n_fixed5 = lambda d: RIEMANN_ZEROS[4]
 
     schemes = [
-        ("A: 原方案 (γ_n + λ·j(j+1))", gamma_n_orig, f_casimir, 0.39),
+        ("A: 原方案 (γ_n + λ·j(j+1))", gamma_n_orig, f_casimir, 0.1692),
         ("E: 无GL2修正 (γ_n only)", gamma_n_orig, f_zero, 0.0),
         ("F: 无GL2修正 + 零点差", gamma_n_orig, f_zero_gap, 5.0),
-        ("G: 固定n=5 + j(j+1)修正", gamma_n_fixed5, f_casimir, 0.39),
+        ("G: 固定n=5 + j(j+1)修正", gamma_n_fixed5, f_casimir, 0.1692),
         ("H: 固定n=5 + 无修正", gamma_n_fixed5, f_zero, 0.0),
     ]
 
@@ -555,7 +557,7 @@ def path3_crossing_nonlinear():
     g_N = lambda d, lam: d['gamma_n'] + lam * d['zero_gap'] * d['gamma_n']
 
     schemes = [
-        ("A: 线性j(j+1) [基准]", g_A, 0.39),
+        ("A: 线性j(j+1) [基准]", g_A, 0.1692),
         ("B: 线性Δγ_f", g_B, 5.0),
         ("I: 平方(Δγ_f)²", g_I, 50.0),
         ("J: 乘法 γ_n·(1+λ·Δγ_f)", g_J, 1.0),
@@ -798,7 +800,7 @@ def path5_zero_gap_vs_casimir():
     f_zero_gap = lambda d: d['zero_gap']
     f_zero_gap_norm = lambda d: d['zero_gap_norm']
 
-    res_A = run_scheme("A: j(j+1) Casimir [原方案]", f_casimir, 0.39)
+    res_A = run_scheme("A: j(j+1) Casimir [原方案]", f_casimir, 0.1692)
     res_B = run_scheme("B: GL(2)零点差 Δγ_f", f_zero_gap, 5.0)
     res_C = run_scheme("C: 标准化零点差 Δγ_f/Δγ₁", f_zero_gap_norm, 30.0)
 

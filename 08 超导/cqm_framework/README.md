@@ -4,8 +4,10 @@
 
 ```
 cqm_framework/
-├── constants.py          # 物理常数与CQM理论常数
-└── cqm_pure_v7.py        # CQM纯理论计算核心（v7）
+├── atom_db.py             # 共享原子数据库（82个元素，被41个脚本引用）
+├── constants.py           # 物理常数与CQM理论常数
+├── cqm_pure_v7.py         # CQM纯理论计算核心（v7）
+└── README.md              # 本文件
 ```
 
 > **注**：自由能模型、Tc估算器、流水线等功能已迁移至 `08 超导/cqm_analysis/` 目录下的独立脚本（`free_energy_tc_derivation.py`、`cqm_core.py`、`final_tc_chain.py` 等）。本目录仅保留核心常数定义和纯理论计算模块。
@@ -51,7 +53,7 @@ from cqm_framework.cqm_pure_v7 import *
 # from cqm_analysis.free_energy_tc_derivation import derive_tc
 ```
 
-## 验证结果（68条已知超导体）
+## 验证结果（226个超导材料数据库）
 
 | 关联 | 系数 | 意义 |
 |:-----|:-----|:-----|
@@ -62,6 +64,6 @@ from cqm_framework.cqm_pure_v7 import *
 
 ## 已知限制
 
-1. 自由能交叉Tc偏高，需校准凝聚能/熵的相对权重
+1. arccoth公式依赖反推δ_v（拟合框架），自由能公式已建立前向预测框架（LOOCV中位45%）
 2. 化合物德拜温度取元素近似值，需DFT精确计算
-3. 角亏从家族特征估算，有3D坐标时可精确计算
+3. K_0^cat含电子结构细节，纯材料参数不足，需DFT数据

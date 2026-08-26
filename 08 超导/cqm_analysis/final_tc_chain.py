@@ -137,7 +137,7 @@ def objective(lam):
     coef, _, _, _ = np.linalg.lstsq(X, y_lnk, rcond=None)
     return np.sum((y_lnk - X @ coef)**2)
 
-res = minimize(objective, x0=[0.39], method='Nelder-Mead', options={'maxiter': 10000})
+res = minimize(objective, x0=[0.1692], method='Nelder-Mead', options={'maxiter': 10000})
 LAM = res.x[0]
 X_final = build_X(LAM)
 COEF, _, _, _ = np.linalg.lstsq(X_final, y_lnk, rcond=None)

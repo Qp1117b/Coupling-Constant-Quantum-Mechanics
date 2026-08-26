@@ -1,4 +1,4 @@
-# CQM 3D专业引力超导实验软件
+﻿# CQM 3D专业引力超导实验软件
 
 > 基于 Godot 引擎的3D专业引力超导实验软件，从质子A4嘉当矩阵出发，经五环节展开至晶胞分布结构，实现CQM超导理论的交互式计算
 
@@ -114,27 +114,14 @@ $$\psi(\mathbf{r}, T) = \int_{\text{BZ}} d^3k \; \mathcal{D}_{\text{lattice}} \c
 ├── 06_文献调研与专业化路线.md          ← 文献调研与后续路线
 ├── 07_目标超导搜索策略.md              ← 常压室温超导搜索策略
 └── godot_project/                     ← Godot 项目骨架
-    ├── project.godot                  ← Godot 项目配置
-    ├── scenes/                        ← 场景文件
-    │   ├── Main.tscn                  ← 主场景
-    │   ├── MoleculeBuilder.tscn       ← 分子构建器
-    │   ├── ElementPalette.tscn        ← 元素周期表面板
-    │   └── ResultPanel.tscn           ← 计算结果面板
-    ├── scripts/                       ← GDScript 脚本
-    │   ├── main.gd                    ← 主控制器
-    │   ├── atom.gd                    ← 原子节点
-    │   ├── bond.gd                    ← 化学键节点
-    │   ├── cqm_calculator.gd          ← CQM 超导计算器
-    │   ├── element_database.gd        ← 元素数据库管理
-    │   └── visualization.gd           ← 物理量可视化
-    ├── data/                          ← 数据文件
-    │   └── elements/                  ← 元素数据（JSON）
-    │       ├── H.json                 ← 氢元素数据
-    │       ├── He.json                ← 氦元素数据
-    │       └── ...
-    └── assets/                        ← 美术资源
-        ├── atom_textures/             ← 原子纹理
-        └── ui_icons/                  ← UI 图标
+    └── scripts/                       ← GDScript 脚本
+        └── cqm/                       ← CQM 核心计算模块
+            ├── causal_kernel.gd       ← 因果核计算
+            ├── emergence_integral.gd  ← 涌现积分
+            ├── gravitational_field.gd ← 引力场
+            ├── gravity_factor.gd      ← 引力因子
+            ├── topology_factor.gd     ← 拓扑因子
+            └── triple_loop.gd         ← 三环耦合
 ```
 
 ---
@@ -161,9 +148,9 @@ $$\psi(\mathbf{r}, T) = \int_{\text{BZ}} d^3k \; \mathcal{D}_{\text{lattice}} \c
 |:---|:---:|:---:|:---|
 | 谱量子（GL(1)） | C₁ | 0.02309570897 | ξ'(1)/ξ(1) |
 | 谱量子（GL(2)） | C_f | 0 | rank=0 椭圆曲线函数方程严格推导 |
-| GL(2) 零点差（d 波） | γ₂^(f)−γ₁^(f) | ≈ 0.367 | E: y²=x³−x, N=32 |
-| GL(2) 零点差（p 波） | γ₂^(f)−γ₁^(f) | ≈ 0.346 | E: y²=x³−1, N=27 |
-| 黎曼零点差 | γ₂−γ₁ | ≈ 6.887 | γ₂−γ₁ = 21.022−14.135 |
+| GL(2) 零点差（d 波） | γ₂^(f)−γ₁^(f) | 2.196681962 | E: y²=x³−x, N=32（工作包1） |
+| GL(2) 零点差（p 波） | γ₂^(f)−γ₁^(f) | 2.128515269 | E: y²=x³−1, N=27（工作包1） |
+| 黎曼零点差 | γ₂−γ₁ | ≈ 6.887315 | γ₂−γ₁ = 21.022−14.135 |
 | 第一耦级 | 𝔠₁ | 200.04045483 | 1/4 + γ₁² |
 | Mathieu 临界 | λ_c | 1.316022911 | b₁(q) = 2q |
 | Dynkin 指数 | I | 5/3 | SU(5) 群论 |
@@ -214,7 +201,7 @@ $$k_B T_c = \frac{2e^\gamma}{\pi} \cdot \hbar\Omega_0 \cdot \exp\left(-\frac{1}{
 1. **理论可视化**：将 CQM 抽象数学结构具象化为可交互的 3D 体验
 2. **教育工具**：帮助理解超导理论与分子结构的关系
 3. **探索辅助**：为理论研究者提供快速结构-性质映射的工具
-4. **半预测工具**：自由能公式已建立前向预测框架（$T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，LOOCV 中位 46%），arccoth 公式为拟合框架，设计器兼有预测与可视化功能
+4. **半预测工具**：自由能公式已建立前向预测框架（$T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，LOOCV 中位 45%），arccoth 公式为拟合框架，设计器兼有预测与可视化功能
 
 ---
 

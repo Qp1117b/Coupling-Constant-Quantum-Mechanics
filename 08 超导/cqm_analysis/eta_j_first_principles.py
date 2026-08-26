@@ -65,7 +65,7 @@ with open("superconductors_deduplicated.csv",'r',encoding='utf-8-sig') as fh:
 CAT_J = {'铜氧化物高温超导体':2,'铁基超导体':1,'有机超导体':1,'富勒烯超导体':1}
 
 # 用联合优化确定系数
-COEF = np.array([0.2358, -1.5477, -1.3720, 0.7953, -0.1227, -0.9642, 2.5884])
+COEF = np.array([0.2616, -1.4924, -0.8620, 0.6354, 0.0813, -0.7463, 14.0305])
 non_hf = [d for d in data if not (d['hf'] and d['gl'] == 1)]
 
 for it in range(20):

@@ -175,7 +175,7 @@ with open("superconductors_deduplicated.csv",'r',encoding='utf-8-sig') as fh:
 non_hf = [d for d in data if not d['hf']]
 
 # 联合优化1次取全局系数（用ground truth Γ）
-COEF = np.array([0.2358, -1.5477, -1.3720, 0.7953, -0.1227, -0.9642, 2.5884])
+COEF = np.array([0.2616, -1.4924, -0.8620, 0.6354, 0.0813, -0.7463, 14.0305])
 for it in range(20):
     for d in non_hf:
         ln_ke = math.log(d['tc']**2 * 9 * LN2 / (8 * d['dd0']**2 * d['tD']))

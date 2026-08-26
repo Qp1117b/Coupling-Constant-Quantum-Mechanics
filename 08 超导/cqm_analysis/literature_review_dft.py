@@ -1,10 +1,14 @@
 """
 文献调研：从DFT计算δ_intrinsic和f→前向计算Tc
 
-核心问题：CQM超导理论当前是拟合框架（反推δ_v），要成为预言框架必须：
+核心问题：arccoth公式是拟合框架（反推δ_v），要成为预言框架必须：
   1. 从DFT能带→Berry曲率→δ_intrinsic
   2. 从DFT声子谱→f
   3. 正向计算Tc，与实验比较
+
+突破：自由能公式 Tc² = 8Δδ₀² K_eff θ_D / (9 ln2)
+  已建立前向预测框架, LOOCV中位46%, 2倍内81%。
+  详见 free_energy_tc_derivation.py 和 final_tc_chain.py。
 
 本文件整理关键文献、计算方法和具体实现路径。
 """

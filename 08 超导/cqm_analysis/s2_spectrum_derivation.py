@@ -75,7 +75,7 @@ non_hf_idx = [i for i,d in enumerate(data) if not (d['hf'] and d['gl'] == 1)]
 non_hf = [data[i] for i in non_hf_idx]
 
 # 初始系数
-COEF = np.array([0.2358, -1.5477, -1.3720, 0.7953, -0.1227, -0.9642, 2.5884])
+COEF = np.array([0.2616, -1.4924, -0.8620, 0.6354, 0.0813, -0.7463, 14.0305])
 
 for it in range(20):
     # 反推 Γ_k

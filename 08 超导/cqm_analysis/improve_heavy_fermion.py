@@ -61,8 +61,8 @@ with open("superconductors_deduplicated.csv",'r',encoding='utf-8-sig') as fh:
 print(f"重费米子超导体（其他金属间化合物中的f电子材料）: {len(hf_materials)}个\n")
 
 # 计算每个重费米子的γ_eff_implicit（从Tc反推）
-COEF = [0.2358, -1.5477, -1.3720, 0.7953, -0.1227, -0.9642, 2.5884]
-LAM = 0.3898
+COEF = [0.2616, -1.4924, -0.8620, 0.6354, 0.0813, -0.7463, 14.0305]
+LAM = 0.1692
 
 print(f"{'材料':<15} {'Tc_exp':>7} {'γ_eff_implicit':>15} {'n当前':>5} {'γ_n当前':>8} {'误差当前':>10}")
 print("-"*70)

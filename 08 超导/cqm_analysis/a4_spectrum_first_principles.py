@@ -61,7 +61,7 @@ with open("superconductors_deduplicated.csv",'r',encoding='utf-8-sig') as fh:
         data.append({**mp,'formula':row['材料(化学式)'],'cat':cat,'tc':tc,'gl':gl})
 
 # 反推 Γ
-COEF = np.array([0.2358, -1.5477, -1.3720, 0.7953, -0.1227, -0.9642, 2.5884])
+COEF = np.array([0.2616, -1.4924, -0.8620, 0.6354, 0.0813, -0.7463, 14.0305])
 non_hf = [d for d in data if not (d['hf'] and d['gl'] == 1)]
 for it in range(20):
     for d in non_hf:
