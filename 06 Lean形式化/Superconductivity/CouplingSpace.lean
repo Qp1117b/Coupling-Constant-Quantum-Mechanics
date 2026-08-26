@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import Mathlib.Tactic
@@ -7,7 +7,7 @@ import Superconductivity.MolecularGeometry
 /-!
 # CQM 超导：耦合空间曲率机制 (Coupling-Space Curvature Mechanism)
 
-本模块形式化《CQM 超导核心理论》§3.6：超导是耦合空间曲率驱动的精细结构常数量子跃迁。
+本模块形式化《CQM_超导核心理论》§3.6：超导是耦合空间曲率驱动的精细结构常数量子跃迁。
 
 核心命题：库珀对是耦合坐标 $u = \ln\alpha$ 发生 $\ln4$ 跃迁（$\alpha\to4\alpha$）的物理表现；
 超导条件为相干曲率振荡使 $\Delta u \ge \ln4$。

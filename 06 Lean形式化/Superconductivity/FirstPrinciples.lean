@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Data.Real.Sqrt
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Analysis.SpecialFunctions.Arsinh
@@ -64,8 +64,8 @@ open Filter
 - [firstPrinciples_chain_pos]：张量序参量（A₄ 谱）与推导链能隙闭式同为正
 
 ## 参考文献
-- ruster (2026). CQM 数学 嘉当结构（07 推导与数学）§2.1–§2.2.
-- ruster (2026). CQM 超导核心理论（08 超导）.
+- ruster (2026). CQM_数学_嘉当结构（07 推导与数学）§2.1–§2.2.
+- ruster (2026). CQM_超导核心理论（08 超导）.
 - Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 -/
 

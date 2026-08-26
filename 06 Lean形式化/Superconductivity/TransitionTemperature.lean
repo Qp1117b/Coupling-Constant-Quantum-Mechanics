@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 import Mathlib.Tactic
@@ -23,7 +23,7 @@ Lean 内一律用精确常数 `bcsExactConstant`，数值近似仅在文档字�
 
 ## 参考文献
 - Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
-- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/.
+- ruster (2026). CQM_超导核心理论. CQMFormal/08 超导/.
 -/
 
 namespace CQM

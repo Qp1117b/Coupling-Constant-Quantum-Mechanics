@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Artanh
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
@@ -7,8 +7,8 @@ import Mathlib.Tactic
 /-!
 # CQM 超导：临界温度严格推导（G22 闭合）
 
-本模块形式化《CQM 超导核心理论》§11.2 的临界温度严格推导（闭合缺口 G22），
-对应 2026-08-20 的推导修正：早期公式写作 `(ln4/(β·Δδ₀))²`，把配对阈值误取为
+本模块形式化《CQM_超导核心理论》§11.2 的临界温度严格推导（闭合缺口 G22），
+对应推导修正：早期公式写作 `(ln4/(β·Δδ₀))²`，把配对阈值误取为
 `ln4/β`，遗漏谱常数 `C = ξ'(1)/ξ(1)` 与阈值中的 `1/ln4` 因子；严格推导
 （§8 海森堡代数 → §9.2 阈值 → §11.2）给出：
 
@@ -35,7 +35,7 @@ T_c = ℏΩ₀ / (2k_B · artanh[ratio²]),   ratio = C·√(1−βδ_v) / (β·
 - `boseSuppression_eq_tanh`：推导链第一步的恒等式。
 
 ## 参考文献
-- ruster (2026). CQM 超导核心理论. CQMFormal/08 超导/ §9.2, §11.1, §11.2, G22.
+- ruster (2026). CQM_超导核心理论. CQMFormal/08 超导/ §9.2, §11.1, §11.2, G22.
 -/
 
 namespace CQM

@@ -205,4 +205,4 @@ $$k_B T_c = \frac{2e^\gamma}{\pi} \cdot \hbar\Omega_0 \cdot \exp\left(-\frac{1}{
 
 ---
 
-*本设计器基于 CQM 超导核心理论（08 超导/CQM 超导核心理论.md）。*
+*本设计器基于 CQM 超导核心理论（08 超导/CQM_超导核心理论.md）。*

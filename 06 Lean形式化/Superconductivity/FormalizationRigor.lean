@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Order.Filter.Basic
@@ -11,7 +11,7 @@ import Superconductivity.TransitionTemperatureCQM
 # CQM 超导模型形式化严谨化
 
 本模块形式化《CQM超导模型形式化严谨化.md》中的6个定理，证明可计算自由能模型
-与CQM原始理论框架（《CQM 超导核心理论》§11.2）严格一致。
+与CQM原始理论框架（《CQM_超导核心理论》§11.2）严格一致。
 
 ## 定理列表
 
@@ -39,7 +39,7 @@ import Superconductivity.TransitionTemperatureCQM
    F_n = E_regge + E_gauge + E_cond − T·S_n 严格实现CQM §11.2形式结构。
 
 ## 参考文献
-- ruster (2026). CQM 超导核心理论. §7.1, §8.3, §9.1, §9.2, §11.1, §11.2.
+- ruster (2026). CQM_超导核心理论. §7.1, §8.3, §9.1, §9.2, §11.1, §11.2.
 - ruster (2026). CQM超导模型形式化严谨化. `08 超导/docs/CQM超导形式化严谨化.md`.
 -/
 

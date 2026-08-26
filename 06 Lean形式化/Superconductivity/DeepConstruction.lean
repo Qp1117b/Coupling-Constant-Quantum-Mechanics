@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
@@ -32,7 +32,7 @@ A5（正二十面体对称群）的关键性质：
   - A5跃迁耦级: 3⊗3 = 1⊕3⊕5 → Δu₂ = ln(9/3) = ln(3) < 2ln(2) = ln(4)
 
 ## 参考文献
-- ruster (2026). CQM 超导核心理论. §6, §11.2, G18.
+- ruster (2026). CQM_超导核心理论. §6, §11.2, G18.
 - ruster (2026). CQM超导模型形式化严谨化.
 -/
 

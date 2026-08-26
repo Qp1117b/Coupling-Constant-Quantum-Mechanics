@@ -1,4 +1,4 @@
-import Superconductivity.Ontology
+﻿import Superconductivity.Ontology
 import Superconductivity.TransitionTemperature
 import Superconductivity.TransitionTemperatureCQM
 import Superconductivity.Reduction
@@ -14,7 +14,7 @@ import Superconductivity.DeepResearch
 # CQM 超导形式化 (Superconductivity)
 
 CQM 超导理论的完整形式化框架。理论文档见
-`CQMFormal/08 超导/CQM 超导核心理论.md`。
+`CQMFormal/08 超导/CQM_超导核心理论.md`。
 
 ## 理论要点（对应文档章节）
 
@@ -126,7 +126,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 ## 参考文献
 
 1. ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380.
-2. ruster (2026). CQM 超导核心理论.
+2. ruster (2026). CQM_超导核心理论.
 3. Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 4. Rovelli (1996). Relational Quantum Mechanics.
 -/

@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Matrix.Block
 import Mathlib.LinearAlgebra.Matrix.PosDef
@@ -62,7 +62,7 @@ import Superconductivity.CartanSuperconductivity
 
 ## 参考文献
 - Regge (1961). General relativity without coordinates. Nuovo Cim. 19, 558.
-- ruster (2026). CQM 数学 嘉当结构. CQMFormal/07 推导与数学/.
+- ruster (2026). CQM_数学_嘉当结构. CQMFormal/07 推导与数学/.
 -/
 
 namespace CQM

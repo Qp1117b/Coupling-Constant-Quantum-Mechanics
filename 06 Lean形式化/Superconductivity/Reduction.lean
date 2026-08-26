@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.Real.Pi.Bounds
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Arsinh
@@ -19,7 +19,7 @@ open Filter
 # CQM 超导：BCS 退化与还原 (Reduction to BCS)
 
 本模块形式化第一步：**CQM 超导理论必须退化为已有的 BCS 超导理论**
-（晶格声子扇区），并还原其核心公式。对应理论文档《CQM 超导核心理论》
+（晶格声子扇区），并还原其核心公式。对应理论文档《CQM_超导核心理论》
 §11 温度依赖：所还原的 BCS 公式为文献标准内容。
 
 **严格性约定**：本模块中的每个 `theorem` 都从明确的定义出发经 Lean 证明。

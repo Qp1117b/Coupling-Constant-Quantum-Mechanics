@@ -15,7 +15,7 @@ import SpectralGeometry.MathieuContinuedFraction
 
 CQM 的谱几何：谱量子 C、Mathieu 临界值 λ_c、Sierra-CQM 耦谱定理。
 
-> **发生学分层定位（2026-08）**：本文件形式化的 ζ 零点谱
+> **发生学分层定位**：本文件形式化的 ζ 零点谱
 > （γ₁、耦级 𝔠₁ = 1/4 + γ₁²、Sierra-CQM 耦谱定理）属
 > **电磁因子（GL(1)）层**——黎曼猜想是广义黎曼猜想在 GL(1)
 > （SU(5) 破缺后 U(1) 电磁因子）的特例，非质数分布基态的全部。

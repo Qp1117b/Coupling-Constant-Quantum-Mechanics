@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Matrix.Block
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
@@ -20,7 +20,7 @@ theorem phaseLockingFactor_pos (GammaPhase dotTau : ℝ) : phaseLockingFactor Ga
 
 本模块形式化**张量超导方程**：将 CQM 张量涌现结构
 （因果结构 𝒞 理想化为 SU(5) 嘉当矩阵 A₄ 的本征子空间）应用到超导序参量。
-对应理论文档《CQM 超导核心理论》§9 库珀对跃迁。依据《CQM 数学 嘉当结构》（07 推导与数学）：
+对应理论文档《CQM_超导核心理论》§9 库珀对跃迁。依据《CQM_数学_嘉当结构》（07 推导与数学）：
 - **A₄ 同时是离散哈密顿量**（§2.1 嘉当方程，A₄ 作为离散 Laplacian）与
   **能动张量的谱结构**（§3.1，⟨T_μν⟩ 由谱结构 E_n 确定）；
 - 本征值 λ_k = 2 − 2cos(kπ/5)（§2.2），谱间隙为最小本征值
@@ -61,8 +61,8 @@ theorem phaseLockingFactor_pos (GammaPhase dotTau : ℝ) : phaseLockingFactor Ga
   （禁闭几何尺度按质子数线性累加，不因拼接稀释）
 
 ## 参考文献
-- ruster (2026). CQM 数学 嘉当结构（07 推导与数学）§2.1–§4.2.
-- ruster (2026). CQM 超导核心理论（08 超导）.
+- ruster (2026). CQM_数学_嘉当结构（07 推导与数学）§2.1–§4.2.
+- ruster (2026). CQM_超导核心理论（08 超导）.
 -/
 
 namespace CQM

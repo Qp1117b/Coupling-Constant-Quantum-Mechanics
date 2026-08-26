@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
@@ -42,7 +42,7 @@ A4是唯一同时满足3个物理约束的群：
   (已在Reduction.lean中形式化: criticalTemperature_isotope_shift)
 
 ## 参考文献
-- ruster (2026). CQM 超导核心理论. §2.2, §2.3, §5.4, §11.1.
+- ruster (2026). CQM_超导核心理论. §2.2, §2.3, §5.4, §11.1.
 - ruster (2026). CQM超导深入构建.
 - Python验证: cqm_deep_research.py
 -/
