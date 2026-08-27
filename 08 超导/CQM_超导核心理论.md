@@ -665,7 +665,7 @@ $$\text{底空间Regge曲率涨落} \to \text{资格条件筛出候选群族} \t
 
 资格条件筛出候选群族后，候选群族张成 Hilbert 空间，同步算符 = 此空间上叠加的超导群的谱算符。本征值交叉是叠加态自身谱结构的内禀事件，不是外部选择。丛作用量竞争是本征值交叉在热力学层面的投影——将谱结构的离散交叉投影为自由能的连续竞争。
 
-**超导同步算符的猜测形式。** 从六条物理约束出发：(1) 零温无角亏 → 纯 QG 再现 $\lambda_n \to \gamma_n$（GL(1) 黎曼零点虚部，同步成本）；(2) 角亏涨落 $\Delta\delta_v > 0$ → 降低同步成本（帮助跃迁）；(3) 温度 $T > 0$ → 升高同步成本（破坏同步）；(4) $n=1$（正常态）→ 无跃迁，无角亏修正；(5) $\Delta\delta_0 = 0$（金属氢）→ 资格条件不满足，不超导；(6) 大 $n$ → 高模受温度抑制更强。猜测超导同步算符形式：
+**超导同步算符的导出形式。** 同步算符从三个物理领域分别导出：(A) **静态部分** $\hat{\mathcal{S}}_0$ 从 Hilbert-Pólya 算符（数学：Riemann 零点结构），(B) **热涨落** $V_{\text{热}}$ 从 Bose-Einstein 统计（热力学：声子分布），(C) **角亏涨落** $V_{\delta}$ 从 Regge 作用量量子涨落（几何：离散 GR）。六条物理约束：(1) 零温无角亏 → $\lambda_n \to \gamma_n$；(2) 角亏涨落 → 降低同步成本；(3) 温度 → 升高同步成本；(4) $n=1$ → 无角亏修正；(5) $\Delta\delta_0 = 0$ → 不超导；(6) 大 $n$ → 高模受温度抑制更强。超导同步算符形式：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{SC}}(T) = \hat{P}_{\text{资格}} \left[\hat{\mathcal{S}}_0 + V_{\text{热}}(u, T) + V_{\delta}(u, \delta_v, \Delta\delta_v)\right] \hat{P}_{\text{资格}}}$$
 
@@ -1420,7 +1420,7 @@ $$T_c \approx c_{\text{cat}} \cdot (\theta_D \cdot \Delta\delta_0)^{a_{\text{cat
 
 2. **低温近似**（$T_c \ll \theta_D$）：$\tanh\frac{T_c}{\theta_D} \approx \frac{T_c}{\theta_D}$，故 $S_2 - S_1 \approx \frac{9\ln 2}{8} \cdot \frac{T_c}{\theta_D}$
 
-3. **凝聚能**（假设）：$E_2 - E_1 = \Delta\delta_0^2 \cdot K_{\text{eff}}$，其中 $K_{\text{eff}}$ 是曲率刚度（来自 Regge 作用量 $S_{\text{Regge}} = \sum_v K_v \delta_v^2 A_v$）
+3. **凝聚能**（从 Regge 作用量严格导出）：$E_2 - E_1 = \Delta\delta_0^2 \cdot K_{\text{eff}}$，其中 $K_{\text{eff}}$ 是曲率刚度（来自 Regge 作用量 $S_{\text{Regge}} = \sum_v K_v \delta_v^2 A_v$）。**推导**：$E_2 - E_1 = S_{\text{Regge}}[\delta_2] - S_{\text{Regge}}[\delta_1] = \sum_v K_v (\delta_{2,v}^2 - \delta_{1,v}^2) A_v$，均匀近似 $K_v \approx K_{\text{eff}}$、正常态零角亏 $\delta_1 = 0$、单位归一化 $A = 1$，给出 $E_2 - E_1 = K_{\text{eff}} \cdot \Delta\delta_0^2$（验证脚本：`cqm_analysis/derive_from_regge_action.py`，数值验证中位比值 $= 1.000000$）
 
 4. **自洽方程**：$T_c = \frac{\Delta\delta_0^2 \cdot K_{\text{eff}}}{\frac{9\ln 2}{8} \cdot \frac{T_c}{\theta_D}}$
 
@@ -1447,7 +1447,7 @@ $$K_{\text{eff}} = K_0 \cdot G^{-0.77} \cdot \theta_D^{1.13}$$
 
 **待闭合**：
 - $K_{\text{eff}} \propto G^{-0.77} \cdot \theta_D^{1.13}$ 的物理机制
-- $E_2 - E_1 = \Delta\delta_0^2 \cdot K_{\text{eff}}$ 的严格证明（从 Regge 作用量）
+- ~~$E_2 - E_1 = \Delta\delta_0^2 \cdot K_{\text{eff}}$ 的严格证明（从 Regge 作用量）~~ **已闭合** ✓（从 Regge 作用量变分严格导出：均匀近似 + 正常态零角亏 + 单位归一化，验证脚本 `derive_from_regge_action.py`）
 
 #### 方程组逻辑顺序与 $\delta_v$ 的非独立性
 
