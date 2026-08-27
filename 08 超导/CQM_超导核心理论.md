@@ -1449,6 +1449,28 @@ $$K_{\text{eff}} = K_0 \cdot G^{-0.77} \cdot \theta_D^{1.13}$$
 - $K_{\text{eff}} \propto G^{-0.77} \cdot \theta_D^{1.13}$ 的物理机制
 - $E_2 - E_1 = \Delta\delta_0^2 \cdot K_{\text{eff}}$ 的严格证明（从 Regge 作用量）
 
+#### 方程组逻辑顺序与 $\delta_v$ 的非独立性
+
+**关键澄清**：自由能公式（方程11+14）与 arccoth 闭式（方程8+9+10）的等价关系需要明确逻辑顺序：
+
+1. **$T_c$ 从自由能公式计算**（方程11+14，基本定义）：
+$$T_c = \sqrt{\frac{8 \Delta\delta_0^2 K_{\text{eff}} \theta_D}{9\ln 2}}$$
+
+2. **$\delta_v$ 从方程8+9+10反推**（非独立参数）：
+   从本征值交叉 $\lambda_2(T_c) = \lambda_1(T_c)$，令 $x = \coth(\theta_D/2T_c)$：
+$$1 - \beta\delta_v = \frac{3\beta^2 \Delta\delta_0^2}{16x[\Delta\gamma + (x-1)(\ln 2)^2]}$$
+   其中 $\Delta\gamma = \gamma_2 - \gamma_1 \approx 6.89$。
+
+3. **方程17是步骤2的近似显式**（忽略 $(\ln 2)^2$ 热项）：
+$$1 - \beta\delta_v \approx \frac{3\beta^2 \Delta\delta_0^2}{16\Delta\gamma \cdot \coth\!\left(\sqrt{\frac{9\ln 2 \cdot \theta_D}{32\Delta\delta_0^2 K_{\text{eff}}}}\right)}$$
+   适用条件：$x \approx 1$（即 $T_c \ll \theta_D$），对 78% 材料有效。对元素超导体（$x \to \infty$）失效，但反推公式（步骤2）始终有效。
+
+**自洽性验证**（193材料）：中位差异 $0.000000\%$，90分位 $0.0001\%$。$\beta\delta_v$ 中位 $= 0.9979$（临界同步），$1-\beta\delta_v$ 中位 $= 0.0021$（小量）。
+
+**结论**：$\delta_v$ 不是独立参数，而是从 $T_c$ 反推的导出量。方程组完全自洽，两条路径给出相同 $T_c$。
+
+（验证脚本：`cqm_analysis/verify_correct_logic.py`）
+
 #### $K_0$ 直接回归检验
 
 尝试从材料参数（$B$, $M$, $Z$, $V_{\text{cell}}$, $\theta_D$）直接回归 $K_0$，检验是否可消除第一性推导（脚本：`cqm_analysis/cqm_first_principles_strict.py`）：
