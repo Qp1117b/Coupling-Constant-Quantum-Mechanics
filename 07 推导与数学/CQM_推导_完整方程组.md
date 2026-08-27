@@ -258,7 +258,7 @@ $$\prod_{p\in\{2,3,5\}}\mathbb{Z}_p = \frac{1}{30} \tag{A2}$$
 
 ### 10.1 SU(5) 精细结构常数
 
-$$\boxed{\alpha^{-1} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = \frac{16384\pi}{375} = 137.258} \tag{Q1}$$
+$$\boxed{\alpha^{-1} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = \frac{16384\pi}{375} = 137.2583} \tag{Q1}$$
 
 ### 10.2 引力常数
 
@@ -280,7 +280,7 @@ $$\boxed{\tau = \frac{e^{-u_0}(1-1/e)\hbar}{C\varepsilon m_p}, \quad u_0 = -\sqr
 |:---|:---:|:---|
 | Q1 ($\alpha^{-1}$) | ✅ 定理 | 禁闭精细结构常数（SU(5)） |
 | Q2 ($G_N^{(0)}$) | ⚠️ 数值自洽 | 大头公式 |
-| Q3 ($\kappa$) | ✅ 定理 | $\kappa=(31+C)/30$，−2.55 ppm |
+| Q3 ($\kappa$) | ✅ 定理 | $\kappa=(31+C)/30$，约 −3 ppm |
 | Q4 ($\Delta m$) | ✅ 数值自洽 | −0.09 ppm |
 | Q5 ($\tau$) | ⚠️ 数值自洽 | +4 ppm |
 

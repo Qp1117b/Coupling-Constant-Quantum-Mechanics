@@ -53,7 +53,7 @@
 | $C = \sum_n 1/(1/4+\gamma_n^2) = \xi'(1)/\xi(1)$ | 谱理论 | ✅ 定理 |
 | $\hat{\mu}_{\downarrow\text{dc}} = \hat{\mathcal{P}}_{\mathcal{C}_{\text{self}}}^{(\mu)}$ | 退相干通道中的下游表现（被再生产筛选后的自耦退相干投影） | ⚠️ 形式化（因果结构推论） |
 | $\hat{\mu}_{\downarrow\text{dc},1} = 0$ | 投影算符微扰论 | ✅ 定理 |
-| $G_N = I \cdot \lambda_c \cdot C^2 \cdot E_1 \cdot \exp(-2/C) \cdot \left(1 + \frac{31+C}{30}C\right) / m_p^2$ | 各因子独立推导，$\kappa = (31+C)/30$ | ⚠️ 数值验证（−2.55 ppm），κ 公式证明待建 |
+| $G_N = I \cdot \lambda_c \cdot C^2 \cdot E_1 \cdot \exp(-2/C) \cdot \left(1 + \frac{31+C}{30}C\right) / m_p^2$ | 各因子独立推导，$\kappa = (31+C)/30$ | ⚠️ 数值验证（约 −3 ppm），κ 公式证明待建 |
 | $\alpha^{-1}_{\text{SU(5)}} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = 137.258$ | adele 周期 | ✅ 禁闭精细结构常数 |
 
 ## 5. 缺口状态

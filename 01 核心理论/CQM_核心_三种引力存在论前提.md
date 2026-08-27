@@ -87,7 +87,7 @@ $$\boxed{G_N = \frac{I \cdot \lambda_c \cdot C^2 \cdot \mathfrak{c}_1}{m_p^2} \c
 - $\mathfrak{c}_1 = 1/4 + \gamma_1^2$；
 - $\kappa = (31+C)/30$。
 
-该公式与实验值偏差约 -3 ppm。
+该公式与实验值偏差约 -3 ppm（构造后验数字校验，待第三方独立复现；该推导为框架内构造公式，未被主流学界接受为公认的独立第一性推导）。
 
 #### 2.5 功能
 
