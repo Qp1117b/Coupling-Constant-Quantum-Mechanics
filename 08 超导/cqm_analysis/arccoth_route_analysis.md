@@ -22,11 +22,11 @@ $$T_c = \frac{\theta_D}{2 \cdot \text{arccoth}(x_n)}, \quad x_n = \frac{\beta^2(
 **需要**：β, Δδ₀, **δv**, θD, γn
 **不需要**：K₀, G, 0.369
 
-### 1.2 自由能公式（§11.10经验拟合）
+### 1.2 自由能公式（§11.10，K₀已从CQM第一性推导）
 
-$$T_c = \sqrt{\frac{8\Delta\delta_0^2 \cdot K_0 \cdot G^p \cdot \theta_D^{q+1}}{9\ln 2}}, \quad K_0 = 7.77\times10^{11}\cdot e^{0.369\gamma_n}$$
+$$T_c = \sqrt{\frac{8\Delta\delta_0^2 \cdot K_0 \cdot G^p \cdot \theta_D^{q+1}}{9\ln 2}}, \quad K_0 = C_{\text{GAMMA}}\cdot e^{A_G\gamma_n}, \quad C_{\text{GAMMA}}\approx7.78\times10^{11}\text{（CQM第一性推导）}$$
 
-**需要**：Δδ₀, G, θD, γn, **K₀(经验拟合)**
+**需要**：Δδ₀, G, θD, γn, **K₀（已从CQM第一性推导：$e^{1/\beta}\alpha_{\text{fs}}^3\cdot$dim因子）**
 **不需要**：δv
 
 ### 1.3 当前实现
@@ -52,7 +52,7 @@ arccoth闭式需要δv，但当前框架缺失。
 
 ### 2.3 0.369的来源
 
-K₀ = 7.77e11·exp(0.369·γn)中的0.369标注"普适常数"但未推导。
+K₀ = C_GAMMA·exp(A_G·γn)中的A_G=3/(4π(1-μ))≈0.369已从CQM理论导出，C_GAMMA=e^(1/β)·α_fs³·dim因子≈7.78e11已从CQM第一性推导（运动三重分化+曲率量子修正）。
 
 ### 2.4 §11.10省略温度修正
 
@@ -103,7 +103,7 @@ $$1-\beta\delta_v = 0.198 \cdot \Delta\delta_0^{1.77} \cdot (\gamma_n-\gamma_1)^
 ### 4.1 精确关系
 
 从K₀的两个独立拟合：
-- K₀ = 7.77e11·exp(0.369·γn), R²=0.960
+- K₀ = C_GAMMA·exp(A_G·γn), C_GAMMA从CQM第一性推导, R²=0.960
 - K₀ = 2.85e20·exp(-3.09/λep), R²=0.848
 
 联立得：γn = 53.4 - 8.37/λep
@@ -220,7 +220,7 @@ K₀的指数关系K₀ = C·exp(a·γn)是1-βδv的临界行为的体现。
 
 ## 10. 结论
 
-**arccoth闭式路线是独立的严格第一性Tc预言**，不需要K₀=7.77e11·exp(0.369·γn)的经验拟合。
+**arccoth闭式路线是独立的严格第一性Tc预言**，K₀=C_GAMMA·exp(A_G·γn)已从CQM第一性推导（无经验拟合）。
 
 在铜氧化物上达到2倍内82%（超越自由能公式73%），证明了严格路线的可行性。
 

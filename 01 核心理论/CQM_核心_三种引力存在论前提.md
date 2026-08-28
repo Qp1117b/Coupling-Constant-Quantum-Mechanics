@@ -325,7 +325,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | δ 数值 | δ(Z,N) 未确认 | ⚠️ 开放问题（N1） |
 | 质量差 | 1.293 MeV | ✅ 实验输入 |
 | 量子引力谱参数 | $C, \mathfrak{c}_1$ | ✅ 解析数论（`Gravity.lean`） |
-| $G_N$ | 谱公式 | ✅ 数值与实验吻合 |
+| $G_N$ | 谱公式 | ⚠️ 框架内构造后验数值校验，偏差约 −3 ppm，待第三方独立复现 |
 | FG Regge 曲率 | $\delta_v$ | ✅ 定义明确（`MolecularGeometry.deficitAngleDensity`） |
 | FG 联络 | $\mathcal{A}_{\text{FG}}$（由 $\delta_v$ 分步生成） | ⚠️ 框架定义（未形式化） |
 | FG 伴丛曲率 | $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$，$W_v=\exp(i\delta_v\hat T)$ | ⚠️ 框架定义（未形式化） |

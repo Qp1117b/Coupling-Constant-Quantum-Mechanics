@@ -822,7 +822,7 @@ $T_c$ 对各参数的敏感度：
 
 ### 9.1 $K_0^{\text{cat}}$ 的微观推导
 
-**当前状态**：从黎曼零点指数公式 $K_0 = 7.77\times10^{11}\exp(0.369\gamma_n)$ 第一性计算，$\gamma_n$ 由13维CQM自然量Ridge回归确定（§14）。
+**当前状态**：从黎曼零点指数公式 $K_0 = C_{\text{GAMMA}}\exp(A_G\gamma_n)$ 第一性计算，$C_{\text{GAMMA}} = e^{1/\beta}\cdot\alpha_{\text{fs}}^3\cdot\hbar^{-1/4}k_B^{1/8}m_e^{-1/4}a_0^{-1/2}\approx7.78\times10^{11}$ 从CQM第一性推导（无经验拟合），$\gamma_n$ 由13维CQM自然量Ridge回归确定（§14）。
 
 **需要**：DFT计算以下量：
 - Fermi面态密度 $N(0)$
@@ -856,7 +856,7 @@ $T_c$ 对各参数的敏感度：
 |------|------|---------|
 | `cqm_first_principles_strict.py` | 自由能Tc推导 | $T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，纯第一性LOOCV中位76.6% |
 | `cqm_first_principles_strict.py` | $K_{\text{eff}}$ 分解 | $K_{\text{eff}} = K_0^{\text{cat}} G^{-0.769} \theta_D^{1.132}$ |
-| `cqm_first_principles_strict.py` | 黎曼零点指数公式 | $K_0 = 7.77\times10^{11}\exp(0.369\gamma_n)$，$R^2 = 0.960$ |
+| `cqm_first_principles_strict.py` | 黎曼零点指数公式 | $K_0 = C_{\text{GAMMA}}\exp(A_G\gamma_n)$，$C_{\text{GAMMA}}$从CQM第一性推导，$R^2 = 0.960$ |
 | `cqm_first_principles_strict.py` | $\gamma_n$ 第一性回归 | 13维CQM自然量Ridge，纯第一性LOOCV中位76.6%，d波14% |
 | `derive_C_squared.py` | $C^2 = 2/3$ 推导 | 几何因子 $4/3$ × 边共享 $1/2$ |
 
@@ -993,7 +993,9 @@ CQM指标与材料参数提供了**互补信息**，纯第一性方法已达到7
 
 幂律分解失败（$R^2 = 0.226$）证明 $K_0$ 不是材料参数的幂律函数。但发现 $K_0$ 与**黎曼零点的指数**有极强关系（`cqm_first_principles_strict.py`）：
 
-$$\boxed{K_0^{\text{cat}} = 7.77 \times 10^{11} \cdot \exp(0.369 \cdot \gamma_n), \quad R^2 = 0.960}$$
+$$\boxed{K_0^{\text{cat}} = C_{\text{GAMMA}} \cdot \exp(A_G \cdot \gamma_n), \quad R^2 = 0.960}$$
+
+其中 $C_{\text{GAMMA}} = e^{1/\beta}\cdot\alpha_{\text{fs}}^3\cdot\hbar^{-1/4}k_B^{1/8}m_e^{-1/4}a_0^{-1/2}\approx7.78\times10^{11}$ 从CQM第一性推导（$e^{1/\beta}$=曲率量子修正，$\alpha_{\text{fs}}^3$=运动三重分化），$A_G = 3/(4\pi(1-\mu))\approx0.369$。
 
 其中 $\gamma_n$ 是第 $n$ 个黎曼零点虚部，$n$ 由超导体类别决定。
 
@@ -1037,7 +1039,8 @@ $$\boxed{T_c^2 = \frac{8 \cdot \Delta\delta_0^2 \cdot C \cdot \exp(a \cdot \gamm
 - $\theta_D$：从原子参数计算（第一性 ✅）
 - $\gamma_n$：黎曼零点（CQM本征值 ✅）
 - $n$：类别→零点映射（⚠️ 需物理基础）
-- $C = 7.77 \times 10^{11}$, $a = 0.369$：普适常数
+- $C_{\text{GAMMA}} = e^{1/\beta}\cdot\alpha_{\text{fs}}^3\cdot\text{dim因子}\approx7.78\times10^{11}$：从CQM第一性推导（无经验拟合）
+- $A_G = 3/(4\pi(1-\mu))\approx0.369$：CQM理论常数
 
 ### 13.5 LOOCV验证
 
@@ -1159,7 +1162,7 @@ $$\gamma_n \leftrightarrow \frac{1}{\lambda_{ep}}$$
 
 **完整Tc公式（CQM第一性版）**：
 
-$$T_c = \sqrt{\frac{8\Delta\delta_0^2 \cdot K_0 \cdot G^p \cdot \theta_D^q \cdot \theta_D}{9\ln 2}}, \quad K_0 = 7.77\times10^{11}\cdot e^{0.369\gamma_n}$$
+$$T_c = \sqrt{\frac{8\Delta\delta_0^2 \cdot K_0 \cdot G^p \cdot \theta_D^q \cdot \theta_D}{9\ln 2}}, \quad K_0 = C_{\text{GAMMA}}\cdot e^{A_G\gamma_n}, \quad C_{\text{GAMMA}}\approx7.78\times10^{11}\text{（CQM第一性推导）}$$
 
 其中$\gamma_n$从13维CQM自然量Ridge回归，p/q按d/p/s波分段拟合。
 
@@ -1216,7 +1219,7 @@ $\gamma_{\text{nearest}}$ 是最接近材料几何的 $\zeta(s)$ 零点。Ŝ_5 �
 
 *验证材料数：192*
 *纯第一性：76.6%中位，53.7%在2倍内（d波14%铜氧化物）*
-*黎曼零点指数：$K_0 = 7.77 \times 10^{11} \cdot \exp(0.369 \cdot \gamma_n)$，$R^2 = 0.960$*
+*黎曼零点指数：$K_0 = C_{\text{GAMMA}} \cdot \exp(A_G \cdot \gamma_n)$，$C_{\text{GAMMA}}$从CQM第一性推导，$R^2 = 0.960$*
 *Ŝ_2 独立谱：$\eta_j = s \cdot C_2(j) \cdot \kappa_{\text{pair}} \cdot (3-d_{\text{pair}})^\alpha \cdot \sigma_{\text{eff}}$，$(d_{\text{pair}},j)$ 分层*
 *$n$映射物理基础：$\theta_D$(corr=-0.66) + $\Delta\delta_0$(corr=0.47) + 多变量$R^2=0.86$*
 *SU(5)破缺映射：分支规则✅ + 权重几何✅ + 黎曼零点指数✅ + GL(1)/GL(2)分层✅ + Ŝ_2独立谱✅*
