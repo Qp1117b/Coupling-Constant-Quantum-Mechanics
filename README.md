@@ -1,4 +1,4 @@
-﻿# 耦合常数量子力学（CQM）形式化框架
+# 耦合常数量子力学（CQM）形式化框架
 
 **Coupled Constant Quantum Mechanics — CQM**
 
@@ -172,13 +172,13 @@ $$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u
 
 | 缺口 | 内容 | 优先级 |
 |:---|:---|---:|
-| **缺口 C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 🔴 核心 |
-| **G2** | 耦合空间 $\to$ 双曲 Laplacian 的必要性 | 🔴 |
-| **G3** | $\hat{D} = -i(\partial_u - 1/2)$ 的唯一性 | 🔴 |
-| **G4** | $\hat{D} \to \hat{H} = c^2(\hat{D}^2 + 1/4)$ 的涌现 | 🔴 |
-| **G5** | 退相干 $\to$ 边界条件 $\vartheta_n$ 锁定 | 🔴 |
-| **G7** | $\Sigma_{ij}$ 的第一性数值来源 | 🔴 |
-| **G8** | CP 破坏相位 $\delta$ 的严格来源 | 🔴 |
+| **缺口 C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |
+| **G2** | 耦合空间 $\to$ 双曲 Laplacian 的必要性 | |
+| **G3** | $\hat{D} = -i(\partial_u - 1/2)$ 的唯一性 | |
+| **G4** | $\hat{D} \to \hat{H} = c^2(\hat{D}^2 + 1/4)$ 的涌现 | |
+| **G5** | 退相干 $\to$ 边界条件 $\vartheta_n$ 锁定 | |
+| **G7** | $\Sigma_{ij}$ 的第一性数值来源 | |
+| **G8** | CP 破坏相位 $\delta$ 的严格来源 | |
 
 ---
 
@@ -186,52 +186,52 @@ $$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u
 
 ```
 CQMFormal/
-├── README.md                           ← 本文件
-├── 01 核心理论/                        ← 理论主干
-│   ├── CQM_核心_集成理论.md
-│   ├── CQM_核心_一证七联.md
-│   ├── CQM_核心_三种引力存在论前提.md
-│   ├── CQM_核心_因果网络同步理论.md
-│   └── CQM_核心_朗兰兹分层共振与谱量子.md
+├── README.md ← 本文件
+├── 01 核心理论/ ← 理论主干
+│ ├── CQM_核心_集成理论.md
+│ ├── CQM_核心_一证七联.md
+│ ├── CQM_核心_三种引力存在论前提.md
+│ ├── CQM_核心_因果网络同步理论.md
+│ └── CQM_核心_朗兰兹分层共振与谱量子.md
 ├── 02 量子引力/
-│   ├── CQM_引力_量子引力集成.md
-│   └── CQM_框架路线与理论纪要.md
+│ ├── CQM_引力_量子引力集成.md
+│ └── CQM_框架路线与理论纪要.md
 ├── 03 引力与退相干/
-│   ├── CQM_引力_GN谱公式.md
-│   ├── CQM_退相干_质数数轴.md
-│   ├── CQM_退相干_引力因果场.md
-│   └── CQM_退相干_跨层级深耦合与唯一性难题.md
-├── 04 谱与混合/  （混合矩阵机制未定，原推导已归档）
+│ ├── CQM_引力_GN谱公式.md
+│ ├── CQM_退相干_质数数轴.md
+│ ├── CQM_退相干_引力因果场.md
+│ └── CQM_退相干_跨层级深耦合与唯一性难题.md
+├── 04 谱与混合/ （混合矩阵机制未定，原推导已归档）
 ├── 05 方法论与批判/
-│   ├── CQM_方法论_HilbertPolya批判.md
-│   └── CQM_方法论_资本主义-旧物理-层级还原论批判.md
-├── 06 Lean形式化/                      ← Lean 4 形式化验证（9库）
-├── 07 推导与数学/                      ← 从 CNT 归档提取的关键推导文档
-│   ├── CQM_推导_完整方程组.md
-│   ├── CQM_推导_推导链.md
-│   ├── CQM_推导_经典路径.md
-│   ├── CQM_数学_Adele纲领.md
-│   ├── CQM_数学_SU5群论.md
-│   └── CQM_数学_嘉当结构.md
-├── 08 超导/                            ← 超导涌现论
-│   ├── CQM_超导核心理论.md             ← 完整超导理论（§1-§17）
-│   ├── CQM_超导_FG层级同步算符体系.md   ← FG层级同步算符公理
-│   ├── CQM_超导_底空间推导与形式化.md    ← 底空间几何→GL(2) L函数+形式化+Tc推导链（合并三个文档）
-│   ├── cqm_analysis/                   ← 计算验证脚本（55个Python + 1个Wolfram）
-│   │   ├── cqm_core.py                 ← 核心计算模块
-│   │   ├── final_tc_chain.py           ← 最终Tc推导链
-│   │   ├── csv_database_test.py        ← 226材料100%成功率测试
-│   │   ├── superconductors_deduplicated.csv ← 超导数据库（226条记录）
-│   │   ├── cf_functional_equation.py   ← C_f=0理论推导+GL(2)零点差
-│   │   ├── gl2_contribution_analysis.py ← GL(2)贡献分解/重新标定（合并原零点差vs Casimir等脚本）
-│   │   └── ... (其余49个脚本)
-│   ├── cqm_framework/                  ← 纯CQM实现
-│   │   ├── atom_db.py                  ← 共享原子数据库（82个元素，被41个脚本引用）
-│   │   ├── constants.py                ← 物理常数与CQM理论常数
-│   │   ├── cqm_pure_v7.py              ← CQM纯理论计算核心
-│   │   └── README.md                   ← 框架说明
-│   └── 超导材料设计器/                  ← Godot 3D材料设计软件（8个设计文档）
-└── 归档 CNT/                           ← CNT 阶段历史文档（只读）
+│ ├── CQM_方法论_HilbertPolya批判.md
+│ └── CQM_方法论_资本主义-旧物理-层级还原论批判.md
+├── 06 Lean形式化/ ← Lean 4 形式化验证（9库）
+├── 07 推导与数学/ ← 从 CNT 归档提取的关键推导文档
+│ ├── CQM_推导_完整方程组.md
+│ ├── CQM_推导_推导链.md
+│ ├── CQM_推导_经典路径.md
+│ ├── CQM_数学_Adele纲领.md
+│ ├── CQM_数学_SU5群论.md
+│ └── CQM_数学_嘉当结构.md
+├── 08 超导/ ← 超导涌现论
+│ ├── CQM_超导核心理论.md ← 完整超导理论（§1-§17）
+│ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理
+│ ├── CQM_超导_底空间推导与形式化.md ← 底空间几何→GL(2) L函数+形式化+Tc推导链（合并三个文档）
+│ ├── cqm_analysis/ ← 计算验证脚本（55个Python + 1个Wolfram）
+│ │ ├── cqm_core.py ← 核心计算模块
+│ │ ├── final_tc_chain.py ← 最终Tc推导链
+│ │ ├── csv_database_test.py ← 226材料100%成功率测试
+│ │ ├── superconductors_deduplicated.csv ← 超导数据库（226条记录）
+│ │ ├── cf_functional_equation.py ← C_f=0理论推导+GL(2)零点差
+│ │ ├── gl2_contribution_analysis.py ← GL(2)贡献分解/重新标定（合并原零点差vs Casimir等脚本）
+│ │ └── ... (其余49个脚本)
+│ ├── cqm_framework/ ← 纯CQM实现
+│ │ ├── atom_db.py ← 共享原子数据库（82个元素，被41个脚本引用）
+│ │ ├── constants.py ← 物理常数与CQM理论常数
+│ │ ├── cqm_pure_v7.py ← CQM纯理论计算核心
+│ │ └── README.md ← 框架说明
+│ └── 超导材料设计器/ ← Godot 3D材料设计软件（8个设计文档）
+└── 归档 CNT/ ← CNT 阶段历史文档（只读）
 ```
 
 ---

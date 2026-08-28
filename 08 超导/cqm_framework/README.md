@@ -4,10 +4,10 @@
 
 ```
 cqm_framework/
-├── atom_db.py             # 共享原子数据库（82个元素，被41个脚本引用）
-├── constants.py           # 物理常数与CQM理论常数
-├── cqm_pure_v7.py         # CQM纯理论计算核心（v7）
-└── README.md              # 本文件
+├── atom_db.py # 共享原子数据库（82个元素，被41个脚本引用）
+├── constants.py # 物理常数与CQM理论常数
+├── cqm_pure_v7.py # CQM纯理论计算核心（v7）
+└── README.md # 本文件
 ```
 
 > **注**：Tc预测脚本位于 `08 超导/cqm_analysis/` 目录下（`cqm_first_principles_strict.py` 纯第一性预测）。本目录仅保留核心常数定义和纯理论计算模块。

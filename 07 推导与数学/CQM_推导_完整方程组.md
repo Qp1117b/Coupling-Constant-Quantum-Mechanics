@@ -1,4 +1,4 @@
-﻿# CQM 完整方程组
+# CQM 完整方程组
 
 > **方法论定位**：本文方程是两条独立路径的交汇点，路径无关。
 >
@@ -67,7 +67,7 @@ $$\hat{H}_\infty = c^2\left(-\partial_u^2 + \partial_u\right) = c^2\left[\hat{D}
 
 谱结构 $E_n = c^2(1/4 + \gamma_n^2)$ 直接从 $\mathbb{H}^2$ 的几何涌出（详见 §七）。
 
-**状态**：CS0–CS4 ✅ 公理；CS5–CS6 ✅ 定理（`07-论文/01` 定理 3.1）；CS7–CS8 ✅ 公理；CS9–CS10 ✅ 构造；CS11–CS12 ✅ 严格极限
+**状态**：CS0–CS4 公理；CS5–CS6 定理（`07-论文/01` 定理 3.1）；CS7–CS8 公理；CS9–CS10 构造；CS11–CS12 严格极限
 
 ---
 
@@ -91,7 +91,7 @@ $$\mathcal{H}_\infty = \{\Psi \in L^2(\mathcal{M},d\mu) : \hat{\mu}\Psi = \Psi\}
 
 $$\mathcal{H}_p = L^2(\mathbb{Q}_p, dx), \qquad \hat{H}_p = f_{\text{rep}}(D^{\alpha_p}+V_p)$$
 
-**状态**：$\mathcal{H}_\infty$ ✅ 构造性（$R$ 酉对合，$\hat{\mu}$ 投影）；$\mathcal{H}_p$ ✅ 标准
+**状态**：$\mathcal{H}_\infty$ 构造性（$R$ 酉对合，$\hat{\mu}$ 投影）；$\mathcal{H}_p$ 标准
 
 ---
 
@@ -147,7 +147,7 @@ $$\boxed{(i\partial_\tau - \hat{H}_p)\Psi_p = -\lambda\eta_p^\dagger \mathbf{1}_
 
 $$\boxed{(i\partial_\tau - \omega_p)\eta_p = -\lambda\mathcal{C}_p} \tag{M3}$$
 
-**状态**：M0 ✅ 自伴 + 变分严格；M ✅ 独立变分严格；M2 ✅ 变分严格；M3 ✅ 变分严格
+**状态**：M0 自伴 + 变分严格；M 独立变分严格；M2 变分严格；M3 变分严格
 
 ---
 
@@ -155,13 +155,9 @@ $$\boxed{(i\partial_\tau - \omega_p)\eta_p = -\lambda\mathcal{C}_p} \tag{M3}$$
 
 $$\hat{\mathcal{D}}^2 = c^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right) \neq \hat{H}_\infty$$
 
-| | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立） |
-|:---|:---|:---|
-| 形式 | $c^2 e^{2u}(-\partial_u^2+1/4)$ | $c^2(-\partial_u^2+\partial_u)$ |
-| 系数 | 变系数 | 常系数 |
-| 漂移项 | 无 | $+\partial_u$ |
+| | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立） | |:---|:---|:---| | 形式 | $c^2 e^{2u}(-\partial_u^2+1/4)$ | $c^2(-\partial_u^2+\partial_u)$ | | 系数 | 变系数 | 常系数 | | 漂移项 | 无 | $+\partial_u$ |
 
-**状态**：✅ 严格代数证明（`08-经典路径.md` §5）
+**状态**：严格代数证明（`08-经典路径.md` §5）
 
 ---
 
@@ -182,7 +178,7 @@ $$U(\tau) = \exp(-i\hat{H}_{\text{tot}}\tau), \qquad U^\dagger U = I$$
 - 对角块：$\hat{\mathcal{D}}$（Neumann 自伴），$\hat{H}_\infty$（Sturm-Liouville 自伴），$\hat{H}_p$（Vladimirov + Kato-Rellich），$\omega_p\in\mathbb{R}$
 - 非对角块互伴：$(\lambda\delta_p^{(e)}\eta_p,\Psi)_{d\mu} = \lambda\eta_p^\dagger \Psi(u_p,\theta_p) = (\eta_p,\lambda\delta_p^\dagger\Psi)_{\mathbb{C}}$
 
-**状态**：✅ Stone 定理 $\Rightarrow$ 强连续幺正群（`08-经典路径.md` §6）
+**状态**：Stone 定理 $\Rightarrow$ 强连续幺正群（`08-经典路径.md` §6）
 
 ---
 
@@ -194,7 +190,7 @@ $$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi
 
 特征线：$\displaystyle\frac{du}{d\tau} = c\,e^u \;\Rightarrow\; r(\tau) = \frac{1}{-c\tau + \text{const}} \tag{T2}$
 
-**状态**：✅ 严格导出（测度补偿代数恒等，无近似）
+**状态**：严格导出（测度补偿代数恒等，无近似）
 
 ---
 
@@ -216,7 +212,7 @@ $$A_{ij} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 
 
 Robin/Neumann 条件 $\partial_u\phi(0)=0$ 筛选 $s = 1/2 + i\gamma_n$ 满足 $\xi(s) = \xi(1-s)$。
 
-**状态**：S1 ✅ 定理（自伴已证）；S2 ⚠️ 猜想（Hilbert-Pólya）；谱间隙 ✅ 双路径（Sturm-Liouville + 嘉当矩阵 Friedrichs）
+**状态**：S1 定理（自伴已证）；S2 猜想（Hilbert-Pólya）；谱间隙 双路径（Sturm-Liouville + 嘉当矩阵 Friedrichs）
 
 ---
 
@@ -234,7 +230,7 @@ $$\eta_p \approx \frac{1}{\epsilon_p}\mathcal{C}_p, \quad \chi_p \approx -\frac{
 
 强耦合极限 $\epsilon_p \to 0$：$\chi_p \to \Psi_{\infty,p}$，$\mathcal{C}_p \to 0$，$\eta_p \to 0$，源项消失。
 
-**状态**：✅ $\epsilon_p \to 0$ 渐近严格
+**状态**：$\epsilon_p \to 0$ 渐近严格
 
 ---
 
@@ -250,7 +246,7 @@ $$D^{\alpha_p}\psi_{k;j,a} = p^{\alpha_p j}\psi_{k;j,a} \tag{P2}$$
 
 $$\prod_{p\in\{2,3,5\}}\mathbb{Z}_p = \frac{1}{30} \tag{A2}$$
 
-**状态**：P1 ✅ 严格定义；P2 ✅ Kozyrev 基严格对角化；A2 🔴 假设（"仅 2,3,5" 证明开放）
+**状态**：P1 严格定义；P2 Kozyrev 基严格对角化；A2 假设（"仅 2,3,5" 证明开放）
 
 ---
 
@@ -274,15 +270,7 @@ $$\boxed{\Delta m = 2\theta_4\cdot C^2\cdot m_p\cdot\left[1-\alpha_5(C)C\right]}
 
 $$\boxed{\tau = \frac{e^{-u_0}(1-1/e)\hbar}{C\varepsilon m_p}, \quad u_0 = -\sqrt{\frac{E_1^{\text{eff}}}{\pi C}}} \tag{Q5}$$
 
-**状态**：
-
-| 方程 | 状态 | 备注 |
-|:---|:---:|:---|
-| Q1 ($\alpha^{-1}$) | ✅ 定理 | 禁闭精细结构常数（SU(5)） |
-| Q2 ($G_N^{(0)}$) | ⚠️ 数值自洽 | 大头公式 |
-| Q3 ($\kappa$) | ✅ 定理 | $\kappa=(31+C)/30$，约 −3 ppm |
-| Q4 ($\Delta m$) | ✅ 数值自洽 | −0.09 ppm |
-| Q5 ($\tau$) | ⚠️ 数值自洽 | +4 ppm |
+| 方程 | 状态 | 备注 | |:---|:---:|:---| | Q1 ($\alpha^{-1}$) | 定理 | 禁闭精细结构常数（SU(5)） | | Q2 ($G_N^{(0)}$) | 数值自洽 | 大头公式 | | Q3 ($\kappa$) | 定理 | $\kappa=(31+C)/30$，约 −3 ppm | | Q4 ($\Delta m$) | 数值自洽 | −0.09 ppm | | Q5 ($\tau$) | 数值自洽 | +4 ppm |
 
 ---
 
@@ -304,26 +292,13 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 
 **推导链**：一阶/二阶耦合系统 $\to$ 统计收敛 $N\to\infty$ $\to$ Jacobson 热力学 $\to$ Lovelock 唯一性 $\to$ E3。
 
-**状态**：E1 ⚠️ 启发式（Jacobson）；E2 ⚠️ 物理图像清晰；E3 ⚠️ 形式写定
+**状态**：E1 启发式（Jacobson）；E2 物理图像清晰；E3 形式写定
 
 ---
 
 ## 严格性总览
 
-| # | 环节 | 方程 | 状态 | 缺口 |
-|:---|:---|:---|:---:|:---|
-| 0 | 本体论公理 | A0–A1 | ✅ 预设 | — |
-| 1 | 几何与 Hilbert 空间 | $R,\hat{\mu},\mathcal{H}_\infty,\mathcal{H}_p$ | ✅ 构造性 | — |
-| 2 | 作用量 | $S_\infty^{(1)}, S_\infty^{(2)}, S_p, S_{\eta,p}$ | ✅ 形式写定 | — |
-| 3 | 母方程 | M0–M3 | ✅ 变分严格 | — |
-| 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$ | ✅ 严格代数 | — |
-| 5 | 全局幺正 | $\hat{H}_{\text{tot}}$ 自伴 | ✅ Stone 定理 | — |
-| 6 | 传输方程 | T1–T2 | ✅ 测度补偿 | — |
-| 7 | 二阶谱与间隙 | S1–S2, $E_0=c^2/4$ | ⚠️ 猜想 | Hilbert-Pólya |
-| 8 | 边界匹配 | $\epsilon_p\to0$ | ✅ 渐近严格 | — |
-| 9 | $p$ 进扇区 | P1–P2, A2 | ⚠️ 严格+假设 | "仅 2,3,5" |
-| 10 | 物理常数 | Q1–Q5 | ⚠️ 数值自洽 | 缺口 1,6,7,N-2 |
-| 11 | 涌现几何 | E1–E3 | ⚠️ 启发式/形式写定 | — |
+| # | 环节 | 方程 | 状态 | 缺口 | |:---|:---|:---|:---:|:---| | 0 | 本体论公理 | A0–A1 | 预设 | — | | 1 | 几何与 Hilbert 空间 | $R,\hat{\mu},\mathcal{H}_\infty,\mathcal{H}_p$ | 构造性 | — | | 2 | 作用量 | $S_\infty^{(1)}, S_\infty^{(2)}, S_p, S_{\eta,p}$ | 形式写定 | — | | 3 | 母方程 | M0–M3 | 变分严格 | — | | 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$ | 严格代数 | — | | 5 | 全局幺正 | $\hat{H}_{\text{tot}}$ 自伴 | Stone 定理 | — | | 6 | 传输方程 | T1–T2 | 测度补偿 | — | | 7 | 二阶谱与间隙 | S1–S2, $E_0=c^2/4$ | 猜想 | Hilbert-Pólya | | 8 | 边界匹配 | $\epsilon_p\to0$ | 渐近严格 | — | | 9 | $p$ 进扇区 | P1–P2, A2 | 严格+假设 | "仅 2,3,5" | | 10 | 物理常数 | Q1–Q5 | 数值自洽 | 缺口 1,6,7,N-2 | | 11 | 涌现几何 | E1–E3 | 启发式/形式写定 | — |
 
 ---
 

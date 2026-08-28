@@ -19,7 +19,7 @@
 
 $$T_c = \frac{\theta_D}{2 \cdot \text{arccoth}(x_n)}, \quad x_n = \frac{\beta^2(n^2-1)\Delta\delta_0^2}{4n^2(1-\beta\delta_v)(\gamma_n - \gamma_1)}$$
 
-**需要**：β, Δδ₀, **δv**, θD, γn
+**需要**：β, Δδ₀, **δv**, 继续θD, γn
 **不需要**：K₀, G, 0.369
 
 ### 1.2 自由能公式（§11.10，K₀已从CQM第一性推导）

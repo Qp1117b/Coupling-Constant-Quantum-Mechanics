@@ -1,4 +1,4 @@
-﻿# CQM Adele 纲领：从黎曼 ξ 函数到引力常数与精细结构常数
+# CQM Adele 纲领：从黎曼 ξ 函数到引力常数与精细结构常数
 
 ---
 
@@ -181,12 +181,12 @@ $$\Delta\tau_p = \frac{\ln p}{C}$$
 
 | 层次 | 方程 | 身份 | 严格性 | 计算依赖 |
 |:---|:---|:---|:---|:---|
-| I | $\hat{H}_\infty = \hat{D}^2 + 1/4$ | 谱哈密顿量（二阶） | ✅ 严格（Sturm-Liouville + Friedrichs） | 全部定量预言 |
-| I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | ✅ 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
-| II | $\hat{\mathcal{D}} = -iCe^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | ✅ 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
-| III | $\partial_\tau\phi + Ce^u\partial_u\phi = 0$ | 传输方程（一阶退化） | ✅ 严格（测度补偿） | RG 流经典极限 |
-| — | $[\hat{\tau}, \hat{u}] = iC$ | 能标-时间对易子 | ⚠️ 导出/公理化 | 不确定性关系 |
-| — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | ✅ 定理 | 结构分离 |
+| I | $\hat{H}_\infty = \hat{D}^2 + 1/4$ | 谱哈密顿量（二阶） | 严格（Sturm-Liouville + Friedrichs） | 全部定量预言 |
+| I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
+| II | $\hat{\mathcal{D}} = -iCe^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
+| III | $\partial_\tau\phi + Ce^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限 |
+| — | $[\hat{\tau}, \hat{u}] = iC$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
+| — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | 定理 | 结构分离 |
 
 ---
 
@@ -660,7 +660,7 @@ $$\partial_\tau \Psi + C \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i
 
 | 优先级 | 问题 | 状态 | 理论接口 | 是否影响核心预言 |
 |--------|------|------|----------|------------------|
-| **A** | $E_n$ 谱公式的解析来源 | **已闭合**：$E_n = \rho_n(1-\rho_n) = 1/4+\gamma_n^2$ 为第一性可推导（BK/Dirac xp-模型哈密顿量本征值，文献 1205.6755/2505.21192）。$G_N$ 偏差已降至 +2.16 ppm | 从 Berry-Keating / Dirac xp-模型第一性推导 | 否（已闭合） |
+| **A** | $E_n$ 谱公式的解析来源 | $E_n = \rho_n(1-\rho_n) = 1/4+\gamma_n^2$ 为第一性可推导（BK/Dirac xp-模型哈密顿量本征值，文献 1205.6755/2505.21192）。$G_N$ 偏差已降至 +2.16 ppm | 从 Berry-Keating / Dirac xp-模型第一性推导 | 否（闭合） |
 | **B** | $\delta\theta_W^{(1)}$ 的解析来源 | 结果 7.2 为唯象匹配 | Berry-Keating + 电弱破缺 | 是（影响 $\sin^2\theta_W$） |
 | **B'** | $\delta\theta_W^{(1)}$ 的真空极化候选机制（待对齐，非结论） | 表示论×数论：$-W_1\cdot\alpha_{GUT}$（见 `../归档/03-候选研究/候选_零唯象参数消除尝试_统一记录.md`；与 7.2 的 $-0.156$ 偏差 2.6%，且 $\alpha_{GUT}$ 定义待与 §10.4 对齐） | 第一代费米子屏蔽图像 | 候选 |
 | **C** | 希格斯机制（$g_w$ 偏差 $-3.1\%$）→ p进大小 $|x|_p = p^{-v_p(x)}$ 确定耦合层级，$W/Z$ 质量涌现待建立 | 部分转化，进一步探索 |
@@ -802,7 +802,7 @@ $$\beta_1^{\text{candidate}} = \frac{C}{W_1^2} = \frac{C}{25} = 0.000924$$
 CQM 已建立从物质先在公设（L0）到以下物理量的完整第一性链条：
 $$\Lambda_{\text{QCD}}, \quad G_N, \quad \sin^2\theta_W, \quad \alpha^{-1}, \quad \alpha_{\text{GUT}}, \quad g_s, \quad g_w$$
 
-$g_w$ 的 $-3.1\%$ 偏差已被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量涌现的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 已实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CNT}}$ 分解，$\delta_{\text{CNT}} = -C(1+1/N_{\text{cycle}})\ln/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 已从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 约束 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
+$g_w$ 的 $-3.1\%$ 偏差已被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量涌现的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CNT}}$ 分解，$\delta_{\text{CNT}} = -C(1+1/N_{\text{cycle}})\ln/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 已从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 约束 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
 
 > **直白定位（文献核查）**：上面"完整第一性链条""无任意可调参数"是框架**内部**的构造性表述——不变量（如 $C$、$N_{\text{cycle}}=30$、SU(5) 组合指数）是人为选定后不再拟合、余量靠构造后验校验。它**不等于**这些物理常数已被主流学界接受的独立第一性推导：$G_N$、$\alpha^{-1}$、$\sin^2\theta_W$ 等在标准物理中仍是实验参数/基本输入（见 `01 核心理论/CQM_核心_集成理论.md` §7 与 `README`）。"99.8%""残差 0.18%"等数字应视作框架内数字校验，而非公认精度。
 

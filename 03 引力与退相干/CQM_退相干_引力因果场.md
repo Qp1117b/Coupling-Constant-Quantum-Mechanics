@@ -1,4 +1,4 @@
-﻿# 引力因果场退相干理论
+# 引力因果场退相干理论
 
 ## Gravitational Causal-Field Decoherence Theory
 
@@ -109,11 +109,11 @@ CQM 将此"宏观性特权"替换为"质子集体因果截断的普遍自举网�
 
 ```
 截断（Truncation）
-    ↓ 筛选
+ ↓ 筛选
 相容性（Compatibility）
-    ↓ 匹配
+ ↓ 匹配
 可能性空间（Possibility Space）
-    ↓ 压缩
+ ↓ 压缩
 唯一性（Uniqueness）
 ```
 
@@ -210,8 +210,8 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 **核心图像**：
 ```
 分子 A 截断分子 B → 分子 B 截断分子 C → 分子 C 截断分子 A
-        ↓
-   循环闭合，确定性涌现
+ ↓
+ 循环闭合，确定性涌现
 ```
 
 每个分子既是"原因"（截断者），又是"结果"（被截断者）。**没有外部设计者**。
@@ -225,38 +225,38 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 **推导链条**：
 
 1. **质量密度差异**（本体不变量）：
-   $$\delta\rho(\mathbf{r}) = \rho_1(\mathbf{r}) - \rho_2(\mathbf{r})$$
+ $$\delta\rho(\mathbf{r}) = \rho_1(\mathbf{r}) - \rho_2(\mathbf{r})$$
 
 2. **引力势差异**（泊松方程）：
-   $$\nabla^2\delta\Phi(\mathbf{r}) = 4\pi G\delta\rho(\mathbf{r})$$
-   $$\delta\Phi(\mathbf{r}) = -G\int_{V_{\text{sys}}}\frac{\delta\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\,d^3r'$$
+ $$\nabla^2\delta\Phi(\mathbf{r}) = 4\pi G\delta\rho(\mathbf{r})$$
+ $$\delta\Phi(\mathbf{r}) = -G\int_{V_{\text{sys}}}\frac{\delta\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\,d^3r'$$
 
 3. **环境探针积累**（经典探针，无再生产机制）：
-   环境分子在两种引力场配置中积累不同固有时：
-   $$\Delta\tau(\mathbf{r},t) = \frac{|\delta\Phi(\mathbf{r})|}{c^2}\,t$$
+ 环境分子在两种引力场配置中积累不同固有时：
+ $$\Delta\tau(\mathbf{r},t) = \frac{|\delta\Phi(\mathbf{r})|}{c^2}\,t$$
 
 4. **测量设备截断**（质子集体，因果分辨率 $\tau_{\text{res}}$）：
-   当环境探针的固有时差异达到 $\tau_{\text{res}}$，该探针对两配置的因果可达性被截断：
-   $$\frac{|\delta\Phi|}{c^2}\,t \geq \frac{\hbar}{M_{\text{det}}c^2}$$
+ 当环境探针的固有时差异达到 $\tau_{\text{res}}$，该探针对两配置的因果可达性被截断：
+ $$\frac{|\delta\Phi|}{c^2}\,t \geq \frac{\hbar}{M_{\text{det}}c^2}$$
 
 5. **单探针退相干时间**：
-   $$t_D(\mathbf{r}) = \frac{\hbar}{M_{\text{det}}|\delta\Phi(\mathbf{r})|}$$
+ $$t_D(\mathbf{r}) = \frac{\hbar}{M_{\text{det}}|\delta\Phi(\mathbf{r})|}$$
 
 6. **集体退相干率**（连续环境密度 $\rho_{\text{env}}$）：
-   $$\Gamma = \frac{M_{\text{det}}}{\hbar M_{\text{env}}}\int_{V_{\text{env}}}\rho_{\text{env}}(\mathbf{r})\,|\delta\Phi(\mathbf{r})|\,d^3r$$
-   紧凑形式：
-   $$\Gamma = \frac{M_{\text{det}}}{\hbar}\,\langle|\delta\Phi|\rangle_{\text{env}}$$
+ $$\Gamma = \frac{M_{\text{det}}}{\hbar M_{\text{env}}}\int_{V_{\text{env}}}\rho_{\text{env}}(\mathbf{r})\,|\delta\Phi(\mathbf{r})|\,d^3r$$
+ 紧凑形式：
+ $$\Gamma = \frac{M_{\text{det}}}{\hbar}\,\langle|\delta\Phi|\rangle_{\text{env}}$$
 
 7. **自引力极限**（$M_{\text{env}} \sim \delta M \sim M_{\text{det}}$）：
-   $$\Gamma \approx \frac{\Delta E_G}{\hbar}, \quad \Delta E_G \sim \frac{G(\delta M)^2}{R}$$
+ $$\Gamma \approx \frac{\Delta E_G}{\hbar}, \quad \Delta E_G \sim \frac{G(\delta M)^2}{R}$$
 
 **结果**：强确定（Strong Determinacy），唯一性涌现。
 
 **与 Penrose-Diósi 的对应**：
 - **形式一致**：$\Gamma \approx \Delta E_G/\hbar$
 - **本体论根本不同**：
-  - Penrose：引力导致**客观态缩减**（本体性坍缩，全局幺正破坏）
-  - CQM：引力差异导致**关系性因果截断**（全局幺正保住，被截断分支继续演化）
+ - Penrose：引力导致**客观态缩减**（本体性坍缩，全局幺正破坏）
+ - CQM：引力差异导致**关系性因果截断**（全局幺正保住，被截断分支继续演化）
 
 **与电子-电子散射的区分**：电子-电子散射无质子参与，无截断，全局幺正。环境退相干有质子环境分子参与，有截断。
 
@@ -408,84 +408,84 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
 **推导链条**：
 
 1. **偏振器的作用**（纯电磁调制器）：
-   偏振器通过折射率 $n > 1$ 引入等效光程差：
-   $$\Delta L_{\text{eff}} = (n-1)d$$
-   其中 $d$ 为偏振器厚度。
+ 偏振器通过折射率 $n > 1$ 引入等效光程差：
+ $$\Delta L_{\text{eff}} = (n-1)d$$
+ 其中 $d$ 为偏振器厚度。
 
 2. **坐标时差异**：
-   光通过臂 1（有偏振器）所需坐标时：
-   $$t_1 = \frac{L - d}{c} + \frac{nd}{c} = \frac{L}{c} + \frac{(n-1)d}{c}$$
-   光通过臂 2（无偏振器）所需坐标时：
-   $$t_2 = \frac{L}{c}$$
-   **坐标时差异**：
-   $$\Delta t = t_1 - t_2 = \frac{(n-1)d}{c} = \frac{\Delta L_{\text{eff}}}{c}$$
+ 光通过臂 1（有偏振器）所需坐标时：
+ $$t_1 = \frac{L - d}{c} + \frac{nd}{c} = \frac{L}{c} + \frac{(n-1)d}{c}$$
+ 光通过臂 2（无偏振器）所需坐标时：
+ $$t_2 = \frac{L}{c}$$
+ **坐标时差异**：
+ $$\Delta t = t_1 - t_2 = \frac{(n-1)d}{c} = \frac{\Delta L_{\text{eff}}}{c}$$
 
 3. **测量设备引力场转化**（核心物理）：
-   测量设备（探测器 D，质量 $M$）的引力场在偏振片位置 $\mathbf{r}_{\text{pol}}$ 决定局部固有时流速：
-   $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} = \sqrt{-g_{00}(\mathbf{r}_{\text{pol}})} \approx 1 + \frac{\Phi_{\text{det}}(\mathbf{r}_{\text{pol}})}{c^2}$$
-   其中 $\Phi_{\text{det}}(\mathbf{r}_{\text{pol}}) = -G\int_{V_{\text{det}}}\frac{\rho_{\text{det}}(\mathbf{r}')}{|\mathbf{r}_{\text{pol}}-\mathbf{r}'|}d^3r'$ 为设备在偏振片位置的引力势。
+ 测量设备（探测器 D，质量 $M$）的引力场在偏振片位置 $\mathbf{r}_{\text{pol}}$ 决定局部固有时流速：
+ $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} = \sqrt{-g_{00}(\mathbf{r}_{\text{pol}})} \approx 1 + \frac{\Phi_{\text{det}}(\mathbf{r}_{\text{pol}})}{c^2}$$
+ 其中 $\Phi_{\text{det}}(\mathbf{r}_{\text{pol}}) = -G\int_{V_{\text{det}}}\frac{\rho_{\text{det}}(\mathbf{r}')}{|\mathbf{r}_{\text{pol}}-\mathbf{r}'|}d^3r'$ 为设备在偏振片位置的引力势。
 
-   固有时差异：
-   $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot \frac{\Delta L_{\text{eff}}}{c}$$
+ 固有时差异：
+ $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot \frac{\Delta L_{\text{eff}}}{c}$$
 
 4. **弱场极限**（实验室中设备引力修正可忽略）：
-   测量设备质量 $M \sim 10^{-3}$ kg 到 1 kg，偏振器距离设备 $r \sim 0.1$ m 到 1 m，设备引力势在偏振片位置：
-   $$\Phi_{\text{det}}(\mathbf{r}_{\text{pol}}) \sim -\frac{GM}{r} \sim 10^{-10} \text{ 到 } 10^{-7} \text{ m}^2/\text{s}^2$$
-   修正项：
-   $$\frac{\Phi_{\text{det}}}{c^2} \sim 10^{-27} \text{ 到 } 10^{-24} \ll 1$$
+ 测量设备质量 $M \sim 10^{-3}$ kg 到 1 kg，偏振器距离设备 $r \sim 0.1$ m 到 1 m，设备引力势在偏振片位置：
+ $$\Phi_{\text{det}}(\mathbf{r}_{\text{pol}}) \sim -\frac{GM}{r} \sim 10^{-10} \text{ 到 } 10^{-7} \text{ m}^2/\text{s}^2$$
+ 修正项：
+ $$\frac{\Phi_{\text{det}}}{c^2} \sim 10^{-27} \text{ 到 } 10^{-24} \ll 1$$
 
-   因此固有时流速**退化为 1**：
-   $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \approx 1$$
-   固有时差异简化为：
-   $$\Delta\tau \approx \frac{\Delta L_{\text{eff}}}{c}$$
+ 因此固有时流速**退化为 1**：
+ $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \approx 1$$
+ 固有时差异简化为：
+ $$\Delta\tau \approx \frac{\Delta L_{\text{eff}}}{c}$$
 
-   **注意**：退化为 1 的是**测量设备在偏振片位置的引力修正**，不是偏振器本身。偏振器质量小，其引力场可忽略。
+ **注意**：退化为 1 的是**测量设备在偏振片位置的引力修正**，不是偏振器本身。偏振器质量小，其引力场可忽略。
 
 5. **设备截断**：
-   $$\frac{\Delta L_{\text{eff}}}{c} \geq \frac{\hbar}{Mc^2}$$
+ $$\frac{\Delta L_{\text{eff}}}{c} \geq \frac{\hbar}{Mc^2}$$
 
 6. **二元判据**（宏观设备极限）：
-   对实际光学实验：偏振器厚度 $d \sim 10^{-3}$ m，折射率差异 $n-1 \sim 0.5$，等效光程差 $\Delta L_{\text{eff}} \sim 5 \times 10^{-4}$ m，固有时差异 $\Delta\tau \sim 1.7 \times 10^{-12}$ s。
+ 对实际光学实验：偏振器厚度 $d \sim 10^{-3}$ m，折射率差异 $n-1 \sim 0.5$，等效光程差 $\Delta L_{\text{eff}} \sim 5 \times 10^{-4}$ m，固有时差异 $\Delta\tau \sim 1.7 \times 10^{-12}$ s。
 
-   对实际探测器（光屏/CCD 质量 $M \sim 10^{-3}$ kg）：因果分辨率 $\tau_{\text{res}} = \hbar/(Mc^2) \sim 1.2 \times 10^{-48}$ s。
+ 对实际探测器（光屏/CCD 质量 $M \sim 10^{-3}$ kg）：因果分辨率 $\tau_{\text{res}} = \hbar/(Mc^2) \sim 1.2 \times 10^{-48}$ s。
 
-   **比较**：$\Delta\tau \sim 10^{-12}$ s $\gg \tau_{\text{res}} \sim 10^{-48}$ s，截断条件**必然满足**。
+ **比较**：$\Delta\tau \sim 10^{-12}$ s $\gg \tau_{\text{res}} \sim 10^{-48}$ s，截断条件**必然满足**。
 
-   - **无偏振器**（$\Delta L_{\text{eff}} = 0$）：$\Delta\tau = 0 < \tau_{\text{res}}$ → 不截断 → **波动性**
-   - **有偏振器**（$\Delta L_{\text{eff}} \neq 0$）：$\Delta\tau \gg \tau_{\text{res}}$ → 截断 → **粒子性**
+ - **无偏振器**（$\Delta L_{\text{eff}} = 0$）：$\Delta\tau = 0 < \tau_{\text{res}}$ → 不截断 → **波动性**
+ - **有偏振器**（$\Delta L_{\text{eff}} \neq 0$）：$\Delta\tau \gg \tau_{\text{res}}$ → 截断 → **粒子性**
 
 7. **擦除机制**（Erasure Mechanism）：
-   擦除器（如与标记器正交的偏振片）在臂 1 中引入**反向**等效光程差：
-   $$\Delta L_{\text{eraser}} = -\Delta L_{\text{marker}}$$
-   总等效光程差：
-   $$\Delta L_{\text{total}} = \Delta L_{\text{marker}} + \Delta L_{\text{eraser}} = 0$$
-   坐标时差异归零：
-   $$\Delta t = 0$$
-   固有时差异归零：
-   $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot 0 = 0$$
-   截断条件不再满足：
-   $$0 < \tau_{\text{res}}$$
-   设备重新同时与两臂建立稳定耦合 → **波动性恢复**。
+ 擦除器（如与标记器正交的偏振片）在臂 1 中引入**反向**等效光程差：
+ $$\Delta L_{\text{eraser}} = -\Delta L_{\text{marker}}$$
+ 总等效光程差：
+ $$\Delta L_{\text{total}} = \Delta L_{\text{marker}} + \Delta L_{\text{eraser}} = 0$$
+ 坐标时差异归零：
+ $$\Delta t = 0$$
+ 固有时差异归零：
+ $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot 0 = 0$$
+ 截断条件不再满足：
+ $$0 < \tau_{\text{res}}$$
+ 设备重新同时与两臂建立稳定耦合 → **波动性恢复**。
 
-   **不是"信息被销毁"**，而是**"因果时差被补偿，设备无法区分两臂"**。
+ **不是"信息被销毁"**，而是**"因果时差被补偿，设备无法区分两臂"**。
 
 8. **因果倒置的澄清**（Resolution of Causal Paradox）：
-   **坐标时描述**（Coordinate Time Description）：
-   - 光通过分束器 BS1（$t=0$）
-   - 光通过偏振器（$t \sim L/c$）
-   - 研究者"决定"插入偏振器（$t \sim L/c + \epsilon$）
-   - 光到达探测器（$t \sim 2L/c$）
+ **坐标时描述**（Coordinate Time Description）：
+ - 光通过分束器 BS1（$t=0$）
+ - 光通过偏振器（$t \sim L/c$）
+ - 研究者"决定"插入偏振器（$t \sim L/c + \epsilon$）
+ - 光到达探测器（$t \sim 2L/c$）
 
-   看起来"决定"发生在光通过偏振器"之后"。
+ 看起来"决定"发生在光通过偏振器"之后"。
 
-   **因果时描述**（Causal Time Description）：
-   1. 偏振器一旦插入，其质量分布立即改变局部电磁结构（折射率 $n$）
-   2. 这个结构是**全局因果限制网络的一部分**
-   3. 光传播时已经"携带"了这个调制（在偏振器处多停留）
-   4. 探测器在**自身固有时**上完成截断（$t \sim 2L/c$）
-   5. 人读取在**人的固有时**上完成（$t > 2L/c$）
+ **因果时描述**（Causal Time Description）：
+ 1. 偏振器一旦插入，其质量分布立即改变局部电磁结构（折射率 $n$）
+ 2. 这个结构是**全局因果限制网络的一部分**
+ 3. 光传播时已经"携带"了这个调制（在偏振器处多停留）
+ 4. 探测器在**自身固有时**上完成截断（$t \sim 2L/c$）
+ 5. 人读取在**人的固有时**上完成（$t > 2L/c$）
 
-   **在因果时上，偏振器调制（$t \sim L/c$）先于探测器截断（$t \sim 2L/c$），从未倒置。**
+ **在因果时上，偏振器调制（$t \sim L/c$）先于探测器截断（$t \sim 2L/c$），从未倒置。**
 
 ---
 
@@ -520,11 +520,11 @@ $$\text{光子} \rightarrow \text{视网膜感光细胞质子集体（观测退�
 **层级关系**：
 ```
 微观环境自举退相干（弱确定，单个分子）
-        ↓ 统计叠加
+ ↓ 统计叠加
 宏观环境自举退相干（强确定，环境网络）
-        ↓ 作为背景
+ ↓ 作为背景
 环境退相干（系统被环境截断）
-        ↓ 实验介入
+ ↓ 实验介入
 观测退相干（系统被设备截断）
 ```
 
