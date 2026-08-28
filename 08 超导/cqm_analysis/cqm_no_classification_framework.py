@@ -404,7 +404,7 @@ def gamma_n_from_spectrum(C_mol, atom_features=None, dd0_sq=0.0):
     n = len(eigvals)
 
     if n < 2:
-        return RIEMANN_ZEROS[0], {'gamma_n': RIEMANN_ZEROS[0], 'n_continuous': 1.0}
+        return RIEMANN_ZEROS[0], {'gamma_n': RIEMANN_ZEROS[0], 'n_continuous': 1.0, 'd_eff': 1.0}
 
     # 谱特征1: 谱间隙
     sg = eigvals[1] - eigvals[0]
@@ -422,6 +422,19 @@ def gamma_n_from_spectrum(C_mol, atom_features=None, dd0_sq=0.0):
     # 谱特征4: 条件数(各向异性指标)
     # cond_A = λ_max/λ_min, 低条件数→近各向同性→无优先配对方向→弱超导
     cond_A = eigvals[-1] / eigvals[0] if eigvals[0] > 0 else 1000.0
+
+    # 谱特征5: 有效维度(从谱熵导出)
+    # CQM第一性: 嘉当矩阵谱熵 H = -Σ(λ_i/Σλ)·log(λ_i/Σλ)
+    # 3D各向同性: 谱均匀分布 → H≈log(N) → d_eff≈3
+    # 2D: 谱集中于子空间 → H<log(N) → d_eff<3
+    # 1D: �谱集中于一个方向 → H<<log(N) → d_eff≈1
+    p_spec = eigvals / np.sum(eigvals)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        log_p = np.where(p_spec > 1e-15, np.log(p_spec), 0.0)
+    H_spec = -np.sum(p_spec * log_p)
+    H_max = math.log(n)
+    d_eff = 3.0 * H_spec / H_max if H_max > 0 else 3.0
+    d_eff = max(1.0, min(3.0, d_eff))
 
     # 原子特征
     dp_hybrid = atom_features.get('dp_hybrid', 0) if atom_features else 0
@@ -473,6 +486,7 @@ def gamma_n_from_spectrum(C_mol, atom_features=None, dd0_sq=0.0):
         'n_continuous': n_continuous,
         'gamma_n': gamma_n,
         'eq8_term': eq8_term,
+        'd_eff': d_eff,
     }
     return gamma_n, info
 
@@ -516,6 +530,15 @@ def predict_tc_first_principles(formula):
 
     # 1. 构造第一性C_mol (含根向量质量归一化 s=0.5)
     C_mol, block_info = build_first_principles_Cmol(atoms, s_root=0.5)
+
+    # 1a. s-only非超导判据: 所有价轨道均为s → 无d/p波配对通道 → Tc=0
+    # CQM第一性: 超导需要同步算符本征值交叉, s-only(嘉当矩阵=A1直和)无简并→无交叉
+    all_s_only = all(l == 0 for el, val, r in
+                     [(el, valence_orbitals(ATOMIC_NUMBERS.get(el, 50)), ATOM_DB[el][2] if el in ATOM_DB else 1.5)
+                      for el in atoms.keys()]
+                     for l, occ, cap in (val or []))
+    if all_s_only and C_mol.shape[0] < 4:
+        return 0, {'reason': 's_only_no_crossing'}
 
     # 2. 计算原子特征
     atom_features = compute_atom_features(atoms)
@@ -577,7 +600,41 @@ def predict_tc_first_principles(formula):
     d0_frac = atom_features['d0_fraction']
     Tc *= math.exp(-3.0 * d0_frac)
 
-    info = {**spec_info, 'G': G, 'dd0': dd0, 'K_eff': K_eff, 'theta_d': theta_d}
+    # 10. 有效维度修正(从CQM轨道结构导出)
+    # CQM第一性: sp2碳形成2D层状结构(石墨烯), 无d电子+碳+碱金属→石墨插层→2D
+    # 相位涨落耗散: exp(-β/(2π)), β/(2π)=(8π+1)/(2π)≈4.16, 主丛曲率/相位场周期
+    d_eff = spec_info.get('d_eff', 3.0)
+    dim_correction = 1.0
+
+    # 石墨插层2D判据: 无d电子 + 有C + 有碱金属 → sp2层状结构
+    alkali_metals = {'Li', 'Na', 'K', 'Rb', 'Cs'}
+    has_d_electron = False
+    for el in atoms:
+        z = ATOMIC_NUMBERS.get(el, 50)
+        for l, occ, cap in (valence_orbitals(z) or []):
+            if l == 2 and occ > 0:
+                has_d_electron = True
+                break
+        if has_d_electron:
+            break
+    has_carbon = 'C' in atoms
+    has_alkali = any(el in alkali_metals for el in atoms)
+
+    if not has_d_electron and has_carbon and has_alkali:
+        # 石墨插层 vs 富勒烯区分: C:碱金属比例
+        # 石墨插层(MC6, MC8): 比例≤10, 高密度插层→2D层状
+        # 富勒烯(M3C60): 比例=20, 低密度→3D分子晶格
+        n_carbon = atoms.get('C', 0)
+        n_alkali = sum(atoms[el] for el in atoms if el in alkali_metals)
+        if n_carbon / max(n_alkali, 1) <= 10:
+            # 石墨插层: 2D sp2碳 → 相位涨落强抑制
+            C_PHASE = BETA / (2 * math.pi)
+            dim_correction = math.exp(-C_PHASE)
+
+    Tc *= dim_correction
+
+    info = {**spec_info, 'G': G, 'dd0': dd0, 'K_eff': K_eff, 'theta_d': theta_d,
+            'dim_correction': dim_correction}
     return Tc, info
 
 # ============================================================
@@ -592,7 +649,7 @@ with open(r'D:\WorkSpace\物理\CQMFormal\08 超导\cqm_analysis\superconductors
         if tc > 0: data.append({'formula': row['材料(化学式)'], 'cat': row['类别'], 'tc_exp': tc})
 
 print(f"加载 {len(data)} 个材料")
-print(f"\n无分类第一性框架（方程8同步条件 + 根向量质量归一化 + 能动张量高阶矩 + 条件数各向异性）")
+print(f"\n无分类第一性框架（方程8同步条件 + 根向量质量归一化 + 能动张量高阶矩 + 条件数各向异性 + 2D石墨插层修正 + s-only判据）")
 print(f"K_eff = K_0 · G^(-3/4) · θ_D^(9/8)")
 print(f"K_0 = C_GAMMA · exp(AG·γ_n), C_GAMMA = e^(1/β)·α_fs³·ℏ^(-1/4)·k_B^(1/8)·m_e^(-1/4)·a₀^(-1/2) = {C_GAMMA:.4e} (第一性推导)")
 print(f"H_ij = C_ij · cosh(0.5·ln(m_i/m_j))  (根向量质量归一化, 算术/几何平均)")
