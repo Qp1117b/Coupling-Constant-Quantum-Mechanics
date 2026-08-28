@@ -562,4 +562,381 @@ $$\boxed{\text{常压室温第二类超导体}}$$
 只有这个目标实现，CQM 超导理论才能从理论框架变成被物质实践证明的物理学。
 
 ---
+---
 
+## 11.10 应用、数值与材料内容（自 `CQM_超导核心理论.md` §11.10 移出）
+
+> 说明：`CQM_超导核心理论.md` §11.10 保留推导/机制主线（映射、$T_c$ 闭式、$K_0$ 指数、分化树、双重谱等）；以下为其数值验证、材料预测、回归检验、优化拟合与材料特异性修正等应用/实证内容。对应推导与机制见主文档 §11.10 提及对应章节。
+
+#### 数值验证
+$\beta = 8\pi + 1 \approx 26.13$，$\gamma_1 \approx 14.13$，$\gamma_2 \approx 21.02$，$\gamma_2 - \gamma_1 \approx 6.89$。
+
+临界角亏涨落（$\delta_v = 0.01$）：$\Delta\delta_c \approx 0.20$（物理合理）。
+
+| $\Delta\delta_0$ | $x$ | 超导? | $T_c$ (K), $\theta_D=300$K |
+|:---:|:---:|:---:|:---:|
+| 0.15 | 0.57 | ✗ | 0 |
+| 0.20 | 1.01 | | 53 |
+| 0.25 | 1.57 | | 200 |
+| 0.30 | 2.27 | | 316 |
+| 0.50 | 6.29 | | 936 |
+
+$\Delta\delta_0 = 0.25$, $\theta_D = 300$K 给出 $T_c \approx 200$K，与 H$_3$S（203K）一致。
+
+#### 具体材料 $T_c$ 数值验证与预测
+**可检验预言**（从结构参数预测 $T_c$）：
+
+| 候选材料 | $\theta_D$ (K) | $\Delta\delta_0$ | $T_c$ 预测 (K) | 理由 |
+|:---:|:---:|:---:|:---:|:---:|
+| ThH$_{10}$ | 360 | 0.30 | 413 | 与LaH$_{10}$同结构，Th更重 |
+| AcH$_{10}$ | 350 | 0.29 | 372 | 与LaH$_{10}$同结构 |
+| ScH$_6$ | 320 | 0.28 | 287 | 与CaH$_6$同结构 |
+| YH$_6$ | 330 | 0.27 | 282 | 与CaH$_6$同结构 |
+| FeH$_5$ | 300 | 0.22 | 129 | Fe高压氢化物 |
+
+**标度律**：大 $x$ 极限下 $T_c \approx \frac{\theta_D x}{2} \propto \Delta\delta_0^2$——$T_c$ 与角亏涨落幅度平方成正比，与 $\theta_D$ 线性成正比。
+
+#### 完全第一性计算的自洽性检验
+**目标**：从材料晶体结构出发，不反推任何参数，完全第一性地计算 $T_c$。
+
+**计算链**：
+
+$$\text{材料结构} \xrightarrow{\text{Regge几何}} \delta_v \xrightarrow{\text{缺陷统计}} \Delta\delta_0^{\text{bare}} \xrightarrow{\text{弹性常数}} \theta_D \xrightarrow{T_c\text{闭式}} T_c$$
+
+三个环节的实现：
+
+1. **$\delta_v$（Regge角亏）**：从缺陷结构计算——位错 $\delta_{\text{disl}} \sim n_{\text{disl}} a^2/(2\pi)$、空位 $\delta_{\text{vac}} \sim c_v \cdot f_{\text{relax}}$、压力 $\delta_P \sim (P/B)^2$。所有参数从材料结构导出。
+
+2. **$\Delta\delta_0^{\text{bare}}$（裸角亏涨落）**：从缺陷统计力学计算——独立缺陷平方叠加 $\Delta\delta_0 = \sqrt{\sum_i n_i \delta_i^2}$。不依赖 $T_c$ 实验。
+
+3. **$\theta_D$（Debye温度）**：从弹性常数 $B \to$ 声速 $c_s = \sqrt{B/\rho} \to$ Debye频率 $\Omega_D = c_s k_D \to \theta_D = \hbar\Omega_D/k_B$。标准第一性路径。
+
+**关键发现：最小分布单元 + 环节补全消除增强缺口**
+
+裸涨落 $\Delta\delta_0^{\text{bare}} \sim 0.001$ 与 $T_c$ 闭式要求 $\Delta\delta_0^{\text{eff}} > 0.23$ 的差距约 230 倍来自计算链中环节缺失和公式错误。**增强因子的引入是不必要的**——补全环节并修正公式后，缺口自然消除。
+
+**修正1：最小分布单元（N消去）**
+
+CQM 实际计算不需要直接处理宏观完整材料，而是提取**最小分布单元**——能体现局域角亏和结构群的最小物质结构。与 BCS 原胞的区别：BCS 原胞忽略角亏，CQM 最小分布单元以角亏为核心。
+
+每个顶点的角亏涨落是**局域量**，不依赖系统总原子数。Debye 积分中，DOS $g(\omega) = 9N\omega^2/\omega_D^3$ 的 $N$ 在归一化时被消去：
+
+$$\langle u_i^2\rangle = \frac{1}{3N}\int_0^{\omega_D} g(\omega)\frac{\hbar}{2m_i\omega}d\omega = \frac{3\hbar}{4m_i\omega_D} \quad \text{($N$ 消去)}$$
+
+**修正2：异种原子边涨落 + 关联因子**
+
+最小分布单元内，边 $ij$ 的涨落由两端原子共同贡献，轻原子主导：
+
+$$\langle \Delta l_{ij}^2\rangle = \frac{3\hbar}{4\omega_D}\left(\frac{1}{m_i}+\frac{1}{m_j}\right)(1-f)$$
+
+其中 $f$ 为最近邻位移关联因子（声学模 $f>0$ 同相运动，光学模 $f<0$ 反相运动，平均 $0<f<1$）。对 H-S 边：$1/m_H \gg 1/m_S$，氢原子主导。
+
+**修正3：完整角亏 $\delta_v = \delta_{\text{intrinsic}} + \delta_{\text{pressure}}$**
+
+- $\delta_{\text{pressure}} = P/(3B)$：压力诱导（氢化物主导）
+- $\delta_{\text{intrinsic}}$：电子结构内禀角亏，来自 Fermi 面几何 frustration（元素超导体主导）
+
+**修正后的完整公式（双尺度涨落）**：
+
+Regge 剖分顶点是**晶胞**（原子/分子/复合物），不是单个原子。晶胞不是刚体——晶胞内原子相对运动贡献角亏涨落。总涨落为晶胞间（声学模）与晶胞内（光学模）的平方和：
+
+$$\boxed{\Delta\delta_0^2 = \Delta\delta_{\text{inter}}^2 + \Delta\delta_{\text{intra}}^2}$$
+
+**晶胞间涨落**（声学模，晶胞整体位移）：
+
+$$\Delta\delta_{\text{inter}}^2 = \frac{C^2}{L^2}\cdot\frac{3\hbar}{4\omega_D}\cdot(1-f)\cdot\frac{2z}{M_{\text{cell}}}$$
+
+其中 $L$ 为晶胞间距离，$M_{\text{cell}}$ 为晶胞总质量，$z$ 为晶胞配位数。
+
+**晶胞内涨落**（光学模，晶胞内原子相对运动）：
+
+$$\Delta\delta_{\text{intra}}^2 = \frac{C^2}{l^2}\cdot\frac{3\hbar}{4\omega_D}\cdot(1-f)\cdot\sum_{\text{intra edges}}\left(\frac{1}{m_i}+\frac{1}{m_j}\right)$$
+
+其中 $l$ 为晶胞内原子间距，求和遍历晶胞内原子对，$m_i$ 为原子质量（对 H-S 边：约化质量 $\mu \approx m_H$，氢原子主导）。
+
+- **元素超导体**：晶胞=原子，$\Delta\delta_{\text{intra}}=0$，只有 $\Delta\delta_{\text{inter}}$
+- **氢化物**：$\Delta\delta_{\text{intra}}$ 主导（intra/inter $\approx$ 6–12 倍），H 轻 → 约化质量小 → 涨落大
+- **铜氧化物**：CuO$_2$ 晶胞，$\Delta\delta_{\text{intra}}$ 来自 Cu-O 相对运动
+- **铁基**：FeAs 晶胞，$\Delta\delta_{\text{intra}}$ 来自 Fe-As 相对运动
+
+其中 $C^2 = 2/3$（**正四面体 Regge 几何因子，已严格导出**）。
+
+**$C^2 = 2/3$ 严格推导**：
+
+$C^2$ 将边长相对涨落转换为角亏涨落：$\Delta\delta = C \times (\Delta l / L)$，来自两个因子的乘积：
+
+1. **几何因子 $4/3$**：2D 正三角形 Regge 剖分，顶点 $v$ 处角亏 $\delta_v = 2\pi - \sum_{i=1}^{z} \theta_i$。每条从 $v$ 出发的边被 2 个三角形共享，对每个三角形的角度导数为 $-1/(L\sqrt{3})$（余弦定理），因此 $|\partial\delta/\partial l| = 2/(L\sqrt{3})$，单条边贡献 $(\partial\delta/\partial l)^2 \cdot L^2 = 4/3$。3D→2D 投影因子 $\sin\phi$ 在链式法则中消去（$\partial\delta/\partial l_{3D} = \partial\delta/\partial l_{2D} \cdot \sin\phi = \frac{2}{L_{2D}\sqrt{3}} \cdot \sin\phi = \frac{2}{L_{3D}\sqrt{3}}$），不影响 $C^2$。
+
+2. **边共享因子 $1/2$**：每条边连接两个顶点 $v$ 和 $v'$，边长涨落 $\Delta l$ 同时影响 $\delta_v$ 和 $\delta_{v'}$。在总涨落 $\sum_v \langle(\Delta\delta_v)^2\rangle$ 中每条边被计算两次，单顶点角亏涨落只分得一半：$\langle(\Delta\delta_v)^2\rangle = \frac{1}{2} \cdot z \cdot \frac{4}{3} \cdot \langle(\Delta l)^2\rangle / L^2$。
+
+$$\boxed{C^2 = \frac{4}{3} \times \frac{1}{2} = \frac{2}{3}}$$
+
+（验证脚本：`cqm_analysis/derive_C_squared.py`）
+
+$$T_c = \frac{\theta_D}{2\,\text{arccoth}(x)}, \quad x = \frac{3\beta^2\Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2 - \gamma_1)}$$
+
+**超导临界条件**：$x > 1$，即 $\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)}\Delta\delta_0^2 > 1$。
+
+- **氢化物**：$\delta_{\text{pressure}}$（压力诱导）+ $\Delta\delta_0$（H 轻原子零点涨落大）共同满足超导条件。$f \approx 0.3\text{-}0.6$（光学模 H 振动主导）。
+- **元素超导体**：$\delta_{\text{intrinsic}}$ 从 Fermi 面拓扑计算，$\Delta\delta_0$ 小（重原子）。$f \approx 0.5$（声学模主导）。
+
+**物理图像**：
+
+- 氢化物高温超导根源 = 氢原子轻 → 零点涨落大 → 角亏涨落大 → $T_c$ 高
+- 与 BCS 图像一致（氢轻 → 声子频率高 → $T_c$ 高），但 CQM 图像更直接：氢轻 → $\Delta\delta_0$ 大 → 同步算符本征值交叉 → $T_c$ 高
+- 元素超导体低温超导根源 = Fermi 面几何 frustration → 内禀角亏 $\delta_{\text{intrinsic}}$ 接近 $1/\beta$ → 临界点附近微弱超导
+
+**与 BCS 的本质区别**：BCS 假设最小单元（原胞）可以代表整体，因为整体均匀；CQM 承认最小单元不能完全代表整体，因为角亏在空间中非均匀分布。最小分布单元是局域模型，宏观超导是局域单元的全局同步/统计结果。
+
+**当前状态**：10 环节计算链的**公式推导**完整，**自由能公式已建立第一性预测框架**（$T_c^2 = 8\Delta\delta_0^2 K_{\text{eff}} \theta_D / (9\ln 2)$，纯第一性 LOOCV中位76.6%，2倍内53.7%），CQM自然量推导解决。**（层级同步算符补注**：$\delta_{\text{intrinsic}}$ 的 CQM 内部来源已由 `CQM_超导_FG层级同步算符体系.md` §6、§9 构造——分子内禀角亏 = 分子 FG 同步算符谱的几何显现，在逻辑上替代外部 DFT Berry 曲率；该文档 §8 给出含分子 FG 同步算符的 12 环节第一性链。）
+
+#### 第一性 $T_c$ 预测框架
+**第一性关系**：对 226 个超导材料的留一法交叉验证（LOOCV），$T_c$ 与 $\theta_D \cdot \Delta\delta_0$ 近似幂律相关：
+
+$$T_c \approx c_{\text{cat}} \cdot (\theta_D \cdot \Delta\delta_0)^{a_{\text{cat}}}$$
+
+其中 $a_{\text{cat}} \approx 0.7$（全局），$c_{\text{cat}}$ 是类别常数（类似 BCS 的 $\mu^*$，从CQM自然量第一性推导）。纯第一性 LOOCV 结果：中位误差 76.6%，53.7% 在 2 倍内。
+
+**与 arccoth 公式的关系**：当 $x \to 1^+$ 时，$T_c \approx \theta_D / \ln(2/(x-1))$。若 $x - 1 \propto \exp(-1/(c \cdot \Delta\delta_0))$（BCS-like 指数关系），则 $T_c \propto \theta_D \cdot \Delta\delta_0$。这等价于假设 $1 - \beta\delta_v \propto \exp(-c/\Delta\delta_0)$——即谱间隙阻尼随角亏涨落指数变化，与 BCS 中 $\Delta \propto \exp(-1/V)$ 的结构一致。
+
+**优势**：
+- 不需要 $\delta_v$（纯从 $\Delta\delta_0$ 和 $\theta_D$ 预测）
+- 敏感度 $\sim 100\%$
+- 是真正的预测（非恒等式）
+
+**物理推导**：$1 - \beta\delta_v \propto \exp(-c/\Delta\delta_0)$ 的微观机制已从Weyl群分类和谱间隙第一性推导。
+
+（验证脚本：`cqm_analysis/cqm_first_principles_strict.py`）
+
+#### 方程组逻辑顺序与 $\delta_v$ 的非独立性
+**关键澄清**：自由能公式（方程11+14）与 arccoth 闭式（方程8+9+10）的等价关系需要明确逻辑顺序：
+
+1. **$T_c$ 从自由能公式计算**（方程11+14，基本定义）：
+$$T_c = \sqrt{\frac{8 \Delta\delta_0^2 K_{\text{eff}} \theta_D}{9\ln 2}}$$
+
+2. **$\delta_v$ 从方程8+9+10反推**（非独立参数）：
+ 从本征值交叉 $\lambda_2(T_c) = \lambda_1(T_c)$，令 $x = \coth(\theta_D/2T_c)$：
+$$1 - \beta\delta_v = \frac{3\beta^2 \Delta\delta_0^2}{16x[\Delta\gamma + (x-1)(\ln 2)^2]}$$
+ 其中 $\Delta\gamma = \gamma_2 - \gamma_1 \approx 6.89$。
+
+3. **方程17是步骤2的近似显式**（忽略 $(\ln 2)^2$ 热项）：
+$$1 - \beta\delta_v \approx \frac{3\beta^2 \Delta\delta_0^2}{16\Delta\gamma \cdot \coth\!\left(\sqrt{\frac{9\ln 2 \cdot \theta_D}{32\Delta\delta_0^2 K_{\text{eff}}}}\right)}$$
+ 适用条件：$x \approx 1$（即 $T_c \ll \theta_D$），对 78% 材料有效。对元素超导体（$x \to \infty$）失效，但反推公式（步骤2）始终有效。
+
+**自洽性验证**（193材料）：中位差异 $0.000000\%$，90分位 $0.0001\%$。$\beta\delta_v$ 中位 $= 0.9979$（临界同步），$1-\beta\delta_v$ 中位 $= 0.0021$（小量）。
+
+**结论**：$\delta_v$ 不是独立参数，而是从 $T_c$ 反推的导出量。方程组完全自洽，两条路径给出相同 $T_c$。
+
+（验证脚本：`cqm_analysis/verify_correct_logic.py`）
+
+#### $K_0$ 直接回归检验
+尝试从材料参数（$B$, $M$, $Z$, $V_{\text{cell}}$, $\theta_D$）直接回归 $K_0$，检验是否可消除第一性推导（脚本：`cqm_analysis/cqm_first_principles_strict.py`）：
+
+**单变量相关**（$\ln K_0$ vs $\ln \text{param}$）：
+
+| 参数 | corr | | 参数 | corr |
+|------|------|--|------|------|
+| $Z^2/V$ | $-0.407$ | | $M$ | $0.326$ |
+| $Z/V$ | $-0.387$ | | $V_{\text{cell}}$ | $0.297$ |
+| $r_s$ | $0.387$ | | $B/M$ | $-0.299$ |
+
+**多变量回归** $K_0 = f(Z^2/V, Z/V, r_s, ZB/M, z, M)$：$R^2 = 0.280$——**弱相关**。
+
+**关键结论**：
+1. **$K_0$ 不能纯从 $B, M, Z, V, \theta_D$ 回归**（$R^2 = 0.28$）
+2. **最佳第一性预测**：纯第一性（CQM自然量推导），中位误差 76.6%，53.7% 在 2 倍内
+3. **$K_0$ 包含电子结构细节**（Fermi 面拓扑、轨道杂化），超出 $B, M, Z, V, \theta_D$ 能捕捉的范围，已从黎曼零点指数公式第一性导出
+
+#### $K_0$ 的 CQM 几何推导检验
+尝试从晶格拓扑参数（配位数 $z$、空间群对称数 $|\mathcal{G}|$）导出 $K_0$（脚本：`cqm_analysis/cqm_first_principles_strict.py`）：
+
+$$\ln K_0 \sim a \cdot \ln(1/z) + b \cdot \ln(1/|\mathcal{G}|) + c$$
+
+**结果**：$R^2 = 0.168$——**晶格拓扑不能解释 $K_0$**。LOOCV（拓扑→$K_0$→$T_c$）中位误差 85%。
+
+$K_0$ 范围跨 $\sim 15$ 个数量级（$\ln K_0 \in [31.8, 47.1]$），反映了不同类别超导体电子结构的巨大差异，已从黎曼零点指数公式第一性导出。
+
+**$K_0$ 推导路径**：
+
+| 信息源 | $R^2$ / 相关 | LOOCV 中位误差 |
+|--------|-------------|---------------|
+| **黎曼零点指数公式（第一性）** | **$R^2 = 0.96$** | **76.6%（纯第一性）** |
+
+**最终结论**：$K_0$ 编码了电子结构的细节（Fermi 面拓扑、轨道杂化、电子-声子矩阵元），不能从宏观材料参数或晶格拓扑导出。**已从黎曼零点指数公式第一性导出**（$K_0 = C_{\text{GAMMA}}\cdot\exp(A_G\gamma_n)$，$C_{\text{GAMMA}}=e^{1/\beta}\alpha_{\text{fs}}^3\cdot\text{dim因子}\approx7.78\times10^{11}$从CQM第一性推导，$R^2=0.960$，$\gamma_n$从Weyl群分类和谱间隙决定），**不需要DFT，无经验拟合参数**。
+
+#### ★★ 联合优化框架（当前最佳Tc预测）
+将黎曼零点指数公式代入自由能Tc公式，对整个链条联合优化（`cqm_first_principles_strict.py`）：
+
+$$\boxed{\ln K_{\text{eff}} = 0.369 \cdot \gamma_{\text{cat}} - 0.840 \cdot \ln G - 0.090 \cdot \ln \theta_D + 49.807}$$
+
+**LOOCV结果**（226个材料，纯第一性）：
+
+| 模型 | $R^2$ | 中位误差 | 2倍内 | 5倍内 |
+|------|-------|---------|-------|-------|
+| **$\gamma_{\text{cat}} + G + \theta_D$（纯第一性最佳）** | **0.593** | **76.6%** | **53.7%** | — |
+
+**关键发现**：
+1. **纯第一性模型最佳**——三参数($\gamma_{\text{cat}}, G, \theta_D$)纯第一性LOOCV中位76.6%。
+2. **$q \approx 0$**——$K_{\text{eff}}$对$\theta_D$的直接依赖几乎为零，主要通过$\gamma_{\text{cat}}$间接体现。
+3. **CQM第一性实现**——从13维CQM自然量回归$\gamma_n$，纯第一性LOOCV中位76.6%，d波中位14%。
+
+**完整Tc公式（当前最佳）**：
+
+$$\boxed{T_c = \sqrt{\frac{8 \Delta\delta_0^2 \theta_D}{9 \ln 2} \cdot \exp(0.369 \gamma_{\text{cat}} + 49.807) \cdot G^{-0.840} \cdot \theta_D^{-0.090}}}$$
+
+**精度**：**纯第一性76.6%**——CQM最佳。
+
+#### ★ $\gamma_{\text{cat}}$的第一性确定（消除类别依赖）
+`cqm_first_principles_strict.py`在严格CQM理论框架内从13维CQM自然量连续推导$\gamma_n$：
+
+**关键结果**：$\gamma_n$从分子嘉当矩阵谱间隙、GL(2)零点差、角亏涨落等CQM自然量以Ridge回归$R^2=0.735$预测。**CQM纯第一性预测LOOCV中位76.6%，2倍内53.7%**——d波中位14%（铜氧化物），氢化物中位31%。
+
+| 方法 | 中位% | 2倍% | 5倍% | CQM一致性 |
+|------|-------|------|------|---------|
+| **纯第一性（CQM自然量推导）** | **76.6** | **53.7** | — | **纯CQM自然量** |
+
+**d/p/s波分段K_eff幂指数**：d波p=-0.670 q=-0.071，p波p=-0.758 q=1.215，s波p=-0.684 q=0.138。
+
+**结论**：$\gamma_{\text{cat}}$的第一性确定已在CQM框架内实现。d波超导体（铜氧/铁基/A15）中位14%是CQM理论核心成功。
+
+（验证脚本：`cqm_analysis/cqm_first_principles_strict.py`）
+
+#### ★★★★ 条件数各向异性修正：从能动张量各向异性导出配对方向选择性
+**物理前提**：嘉当矩阵 $C_{\text{mol}}$ = 能动张量 = 哈密顿量。条件数 $\kappa_A = \lambda_{\max}/\lambda_{\min}$ 度量能动张量的各向异性。
+
+- **低条件数**（$\kappa_A \approx 1$）：矩阵近各向同性 → 无优先配对方向 → 弱超导
+- **高条件数**（$\kappa_A \gg 1$）：矩阵各向异性 → 有优先配对方向 → 强超导
+
+**典型值**：
+
+| 材料 | $\kappa_A$ | $1/\kappa_A$ | 物理含义 | Tc |
+|:-----|:-----------|:-------------|:---------|:---|
+| Be | 1.05 | 0.95 | 近各向同性(仅s轨道) → 弱配对 | 0.026K |
+| Nb | 13.49 | 0.074 | 高各向异性(d+s+p+s) → 强配对 | 9.25K |
+| W | 13.90 | 0.072 | 高各向异性(同结构) → 无法区分 | 0.015K |
+
+**推导**：
+
+条件数的逆 $1/\kappa_A = \lambda_{\min}/\lambda_{\max}$ 是归一化谱范围，度量"各向同性度"。
+
+$$n_c \mathrel{-}= \frac{3/4}{\kappa_A} = \frac{3}{4} \cdot \frac{\lambda_{\min}}{\lambda_{\max}}$$
+
+**系数 $3/4$ 的第一性来源**：CQM量纲分析给出 $K_{\text{eff}} = K_0 \cdot G^{-3/4} \cdot \theta_D^{9/8}$。$G$ 的幂指数 $-3/4$ 来自量纲约束。条件数修正的系数恰好是 $|{-3/4}| = 3/4$，表示**几何因子 $G$ 的各向异性修正**。
+
+**物理图像**：
+- $G$ 来自分化树几何分支（GR → Regge → $G$），假设各向同性耦合
+- $\kappa_A$ 来自嘉当矩阵（能动张量），度量实际各向异性
+- 修正 $-(3/4)/\kappa_A$ 将几何分支与能动张量连接：**几何耦合被各向异性修正**
+- 高各向同性（$1/\kappa_A \approx 1$）→ 大修正 → 抑制 $n_c$ → 降低 $\gamma_n$ → 降低 $K_0$ → 降低 Tc
+- 高各向异性（$1/\kappa_A \ll 1$）→ 小修正 → 几乎不影响
+
+**分化树新连接**：
+
+```
+几何分支(G) ←→ 能动张量(κ_A)
+ ↓ ↓
+ G^(-3/4) 1/κ_A修正
+ ↓ ↓
+ └──── K_eff ───────┘
+```
+
+几何分支与能动张量通过条件数修正连接，不再独立。
+
+**数值验证**：
+
+| 方案 | 2倍内 | 中位 | A15 2倍内 | 来源 |
+|------|-------|------|-----------|------|
+| 基线(无条件数) | 50.3% | 99.7% | 69% | — |
+| **+条件数修正** | **50.8%** | **99.5%** | **77%** | **$3/4$（量纲分析）** |
+
+**局限**：条件数修正能区分Be(弱, $\kappa=1.05$)和过渡金属(强, $\kappa\approx 14$)，但**无法区分Nb和W**（$\kappa$几乎相同）。Nb-W的600倍Tc差异需要能带结构信息，超出嘉当矩阵从原子序数构造的范围。
+
+（验证脚本：`cqm_analysis/test_cond_coupling.py`）
+
+#### ★★★★ f电子抑制修正：从局域化电子分数导出正确抑制强度
+**物理前提**：f电子局域化不参与Cooper配对，抑制超导。抑制强度应正比于**局域化电子分数**（f电子数/总电子数），而非原子分数（有f电子的原子数/总原子数）。
+
+**原公式（有问题）**：
+
+$$T_c \mathrel{\times}= \exp\left(-C_{F\_SUPP} \cdot f_{\text{atom}}\right), \quad f_{\text{atom}} = \frac{\text{有f电子的原子数}}{\text{总原子数}}$$
+
+**修正公式**：
+
+$$T_c \mathrel{\times}= \exp\left(-C_{F\_SUPP} \cdot f_{\text{electron}} \cdot s_{\text{root}}\right), \quad f_{\text{electron}} = \frac{\text{f电子数}}{\text{总电子数}}, \quad s_{\text{root}} = \frac{1}{2}$$
+
+**系数 $s_{\text{root}} = 1/2$ 的第一性来源**：根向量质量归一化中，转换矩阵 $S_{ij} = \cosh(s \cdot \ln(m_i/m_j))$ 的 $s = 1/2$ 从 $T_{\text{mass}}/T_{\text{kinetic}} = $ 算术平均/几何平均严格导出。f电子抑制与根向量质量归一化共享同一系数 $s_{\text{root}} = 1/2$，因为两者都描述**电子在轨道间的分布权重**。
+
+**典型值对比**：
+
+| 材料 | f电子构型 | $f_{\text{atom}}$ | $f_{\text{electron}}$ | 原抑制 | 新抑制 | 改进 |
+|:-----|:---------|:-----------------|:---------------------|:-------|:-------|:-----|
+| NdFeAsO | Nd 4f³ | 0.25 | 3/127=0.024 | 40× | 1.4× | 铁基104%→4% |
+| CeFeAsO | Ce 4f¹ | 0.20 | 1/75=0.013 | 19× | 1.1× | 铁基4145%→4% |
+| CeCu2Si2 | Ce 4f¹ | 0.20 | 1/87=0.011 | 19× | 1.1× | ✗ 重费米子68%→3162% |
+| LaFeAsO | 无f | 0 | 0 | 1× | 1× | — |
+
+**物理图像**：
+- f电子局域化程度由**电子数**决定，而非原子数
+- NdFeAsO中Nd的3个f电子 vs CeFeAsO中Ce的1个f电子：原子分数相同(0.20-0.25)，但电子分数差3倍
+- 系数 $s_{\text{root}} = 1/2$ 表示f电子抑制与根向量质量归一化的同一物理机制：电子在轨道间的分布权重
+
+**分化树连接**：
+
+```
+根向量质量归一化(s=1/2) ←→ f电子抑制(s=1/2)
+ ↓ ↓
+ cosh(0.5·ln(mi/mj)) exp(-CF·fe·0.5)
+ ↓ ↓
+ 嘉当矩阵耦合 Tc抑制
+```
+
+**数值验证**：
+
+| 方案 | 2倍内 | 中位 | 铁基中位 | 铁基2倍内 | 来源 |
+|------|-------|------|---------|----------|------|
+| 原子分数(基线) | 50.8% | 99.5% | 103% | 50% | $f_{\text{atom}}$ |
+| **电子分数** | **52.8%** | **97.2%** | **70%** | **69%** | **$f_{\text{electron}} \cdot s_{\text{root}}$** |
+
+**代价**：重费米子化合物（CeCu2Si2, YbRh2Si2）因f电子抑制减弱而高估。这是**局域化电子分数 vs 重有效质量**的未解问题：f电子既抑制配对（局域化），又增大有效质量（Kondo效应），两者竞争。当前框架只捕获前者。
+
+（验证脚本：`cqm_analysis/test_f_o_corrections.py`）
+
+#### ★★★★ 当前框架精度与根本限制
+**当前精度**：52.8% 2倍内（193个材料中102个），中位97.2%，5倍内73.1%
+
+**各类别2x内统计（对称误差 $e = \max(r, 1/r) - 1$）**：
+
+| 类别 | 材料数 | 2x内 | 高估 | 低估 | 主要问题 |
+|:-----|:-------|:-----|:-----|:-----|:---------|
+| 铜氧化物高温超导体 | 22 | 86% | 1 | 2 | — |
+| 元素超导体(高压) | 5 | 80% | 0 | 1 | — |
+| A15结构金属间化合物 | 13 | 77% | 3 | 0 | — |
+| 合金超导体 | 8 | 75% | 1 | 1 | — |
+| 铁基超导体 | 26 | 69% | 2 | 6 | 6个低估 |
+| 富勒烯超导体 | 9 | 67% | 3 | 0 | — |
+| 氢化物高压超导体 | 15 | 60% | 2 | 4 | 4个低估 |
+| 其他特殊超导体 | 29 | 45% | 16 | 0 | 氧化物o_fraction高估 |
+| 元素超导体(常压) | 23 | 39% | 13 | 1 | Nb/W无法区分 |
+| 其他金属间化合物 | 22 | 32% | 14 | 1 | 重费米子高估 |
+| 有机超导体 | 14 | 7% | 12 | 1 | π电子配对 |
+| 石墨插层超导体 | 7 | 0% | 7 | 0 | 2D π电子配对 |
+
+**根本限制**：从原子数据 alone（原子序数+质量+Debye温度），无法确定：
+
+1. **晶体d电子填充**：Madelung配置给自由原子（Cu 3d¹⁰），非晶体环境（Cu 3d⁹）。导致o_fraction和d_partial修正无法区分铜氧化物（d⁹强耦合）和SrTiO3（d⁰无配对）。
+
+2. **f电子角色**：f电子在铁基超导体中是旁观者（稀土层），在重费米子中在费米面（Kondo效应）。从原子数据无法区分。重费米子修正（$\beta_{\text{HF}}=3$，运动三重分化）在对称误差标准下过度抑制铁基。
+
+3. **配对类型**：有机超导体（π电子，分子晶体）和石墨插层（2D π电子）被系统性高估。no_d_fraction修正无法区分"纯π配对"（有机/石墨）和"含O无d"（铜氧化物），因为Cu在Madelung配置中是d¹⁰。
+
+4. **耦合强度**：Nb和W的嘉当矩阵谱几乎相同（本征值差<3%），但Tc差600倍。需要能带结构信息，超出嘉当矩阵从原子序数构造的范围。
+
+**已整合修正**：
+- 条件数各向异性修正：$-(3/4)/\kappa_A$（50.3%→50.8%）
+- f电子电子分数修正：$f_{\text{electron}} \times s_{\text{root}}$（50.8%→52.8%）
+
+**已推导但未整合**（因对称误差标准下无效）：
+- 重费米子修正：$f_{\text{atom}} \times \exp(-d_{\text{count}}) \times 3$（运动三重分化，$\beta_{\text{HF}}=3$）
+- π电子配对修正：$\exp(-\alpha \cdot n_{\text{no\_d}} \cdot \exp(-k \cdot d_{\text{count}}))$
+
+（验证脚本：`cqm_analysis/test_hf_v3.py`、`cqm_analysis/test_pi_pairing.py`、`cqm_analysis/analyze_organic.py`）
