@@ -81,31 +81,18 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文档 | 内容 |
 |:---|:---|
-| [CQM 超导核心理论](08 超导/CQM_超导核心理论.md) | 超导涌现的完整框架（因果网络同步理论）：三种引力（QG/GR/FG，FG≠GR）本体论、核子层（质子 $A_4$ + 中子 $D(\delta)$ 缺陷矩阵、元素嘉当矩阵）、三条独立链（几何/嘉当/拓扑）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、严格性缺口表（G 类）、Lean 形式化对应、五层双轨软件实现 |
+| [CQM 超导核心理论](08 超导/CQM_超导核心理论.md) | 超导涌现的完整框架（因果网络同步理论）：三种引力（QG/GR/FG，FG≠GR）本体论、核子层（质子 $A_4$ + 中子 $D(\delta)$ 缺陷矩阵、元素嘉当矩阵）、三条独立链（几何/嘉当/拓扑）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、界面超导与边界定理（§17）。纯理论主线，已精简：材料/应用与进展/状态内容移出至 [CQM 超导 专题与扩展] |
+| [CQM 超导 专题与扩展](08 超导/CQM_超导_专题与扩展.md) | 承接 `CQM_超导核心理论.md` 精简后移出的内容：材料/应用方向（元素周期表推导框架、中子缺陷参数、同位素效应、全面超导体测试）与进展/状态/meta 方向（严格性缺口表 G 类、Lean 形式化对应、路线、当前开放问题、实际计算路线、已确立与未解决、最终目标） |
 | [CQM 超导 FG层级同步算符体系](08 超导/CQM_超导_FG层级同步算符体系.md) | FG 层级同步算符公理（每种 FG——电子/元素/分子/晶胞——都有自己的同步算符，均为紧化算符在该层级主丛上的实现，纤维丛四元组 $(M_\ell,P_\ell,\mathcal{A}_\ell,\hat{\mathcal{S}}_\ell)$）。核心新构造：分子 FG 同步算符 $\hat{\mathcal{S}}_{\text{mol}}=V_0+L_{\text{mol}}$（点群投影构造），使内禀角亏 $\delta_{v,\text{intrinsic}}^{\text{mol}}$ 成为分子 FG 谱的几何显现，闭合 $\delta_{\text{intrinsic}}$ 缺口（消除外部 DFT 依赖）；给出 12 环节第一性 $T_c$ 预测链 |
-| [CQM 超导 底空间推导与形式化](08 超导/CQM_超导_底空间推导与形式化.md) | 底空间几何到GL(2)自守对象的第一性推导（合并原底空间GL2、形式化严谨化、Tc自由能推导链三个文档）：Regge角亏各向异性→2D配对子流形复结构→椭圆曲线→模形式→GL(2) L函数。A4 Weyl群分类配对对称性。定理3（β=8π+1推导）、四部分自由能构造、Tc自由能推导链 |
+| [CQM 超导 统一方法论](08 超导/CQM_超导_统一方法论.md) | 三层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\theta_D/(2\,\text{arccoth}(x))$ |
 
 
-**08 超导/cqm_analysis/** — 计算验证脚本（55个Python + 1个Wolfram），核心脚本：
+**08 超导/cqm_analysis/** — 超导材料数据库：
 
-| 脚本 | 功能 |
+| 文件 | 功能 |
 |:---|:---|
-| `cqm_core.py` | 核心计算模块（β=8π+1, 黎曼零点, Tc公式） |
-| `csv_database_test.py` | **CSV数据库226个材料大规模测试（100%成功率）** |
-| `large_scale_test.py` | 187个材料测试（含非超导体对照） |
-| `cell_subdivision.py` | 晶胞剖分双尺度涨落（Δδ_inter²+Δδ_intra²） |
-| `universal_criterion.py` | 非超导体对照+普适超导判据分析 |
-| `beta_first_principles.py` | β=8π+1第一性推导验证（A4群论） |
-| `V_element_to_super_sync.py` | V_element→S_super连接+Tc闭式推导 |
-| `material_Tc_prediction.py` | 材料Tc数值预测（H3S/LaH10/ThH10等） |
-| `element_genesis.py` | 元素发生学：A4嘉当矩阵→周期表 |
-| `complete_shell_derivation.py` | 完整壳层推导（SU(5)→2,6,10,14） |
-| `spin_origin_and_emergence.py` | SU(2)自旋来源与A4→SO(3)涌现 |
+| `superconductors_deduplicated.csv` | 超导数据库（224条记录，含Tc/结构/Debye温度等） |
 
-| `delta_spectral_constraint.py` | δ(Z,N)谱约束求解 |
-| `hund_rules_quantitative.py` | 洪特规则定量推导 |
-| `wolfram_verify.wl` | Wolfram系统性验证（19项全部通过） |
-| `superconductors_deduplicated.csv` | 超导数据库（226条记录，12个类别） |
 
 ### 归档 CNT
 
@@ -214,22 +201,14 @@ CQMFormal/
 │ ├── CQM_数学_SU5群论.md
 │ └── CQM_数学_嘉当结构.md
 ├── 08 超导/ ← 超导涌现论
-│ ├── CQM_超导核心理论.md ← 完整超导理论（§1-§17）
+│ ├── CQM_超导核心理论.md ← 完整超导理论（§1-§17，纯理论主线）
+│ ├── CQM_超导_专题与扩展.md ← 精简移出的材料/应用与进展/状态内容
 │ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理
-│ ├── CQM_超导_底空间推导与形式化.md ← 底空间几何→GL(2) L函数+形式化+Tc推导链（合并三个文档）
-│ ├── cqm_analysis/ ← 计算验证脚本（55个Python + 1个Wolfram）
-│ │ ├── cqm_core.py ← 核心计算模块
-│ │ ├── final_tc_chain.py ← 最终Tc推导链
-│ │ ├── csv_database_test.py ← 226材料100%成功率测试
-│ │ ├── superconductors_deduplicated.csv ← 超导数据库（226条记录）
-│ │ ├── cf_functional_equation.py ← C_f=0理论推导+GL(2)零点差
-│ │ ├── gl2_contribution_analysis.py ← GL(2)贡献分解/重新标定（合并原零点差vs Casimir等脚本）
-│ │ └── ... (其余49个脚本)
+│ ├── CQM_超导_统一方法论.md ← 三层FG剖分方法论与统一计算链
+│ ├── cqm_analysis/ ← 计算验证脚本与数据
+│ │ └── superconductors_deduplicated.csv ← 超导数据库（224条记录）
 │ ├── cqm_framework/ ← 纯CQM实现
-│ │ ├── atom_db.py ← 共享原子数据库（82个元素，被41个脚本引用）
-│ │ ├── constants.py ← 物理常数与CQM理论常数
-│ │ ├── cqm_pure_v7.py ← CQM纯理论计算核心
-│ │ └── README.md ← 框架说明
+│ │ └── atom_db.py ← 共享原子数据库（118个元素）
 │ └── 超导材料设计器/ ← Godot 3D材料设计软件（8个设计文档）
 └── 归档 CNT/ ← CNT 阶段历史文档（只读）
 ```
