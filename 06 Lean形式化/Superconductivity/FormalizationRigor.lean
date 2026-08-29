@@ -135,32 +135,43 @@ theorem modulation_realizes_eligibility_weakCoupling
   rw [h]
   ring
 
-/-! ## 定理3：β的群论定义与微观来源的对应
+/-! ## 定理3：β的基本定义与宏观极限
 
-CQM §7.1: β ~ (1/4π)·ln(L/a)（离散拉普拉斯格林函数）
-A4群论:  β = 8π+1 = 2·|V₄|·π+1（|V₄|=4, Klein四元群）
-
-对应: ln(L/a) = 4π·β = 32π²+4π ⟹ L/a = exp(32π²+4π)。                      -/
+CQM §7.1: β = (1/4π)·ln(L/a)（基本定义，严格等式；离散拉普拉斯格林函数）
+宏观极限: β = 8π+1 = 2·|V₄|·π+1（|V₄|=4, Klein四元群），对应 L/a = exp(32π²+4π)。                      -/
 
 /-- Klein四元群 V₄ 的阶。 -/
 def kleinFourOrder : ℕ := 4
 
-/-- A4群论 β 值：β = 2·|V₄|·π + 1 = 8π+1。 -/
+/-- β 的基本定义：β = (1/4π)·ln(L/a)（严格等式）。
+    L 为系统尺寸，a 为微观截断，β 由系统尺寸严格确定。 -/
+noncomputable def betaMicroscopic (L a : ℝ) : ℝ := Real.log (L / a) / (4 * Real.pi)
+
+/-- β 的宏观热力学极限值：β_macro = 2·|V₄|·π + 1 = 8π+1。
+    当 L/a = exp(32π²+4π) 时，betaMicroscopic = betaGroupTheory。 -/
 noncomputable def betaGroupTheory : ℝ := 2 * (kleinFourOrder : ℝ) * Real.pi + 1
 
-/-- β = 8π+1 的展开形式。 -/
+/-- β 宏观极限 = 8π+1 的展开形式。 -/
 theorem betaGroupTheory_eq : betaGroupTheory = 8 * Real.pi + 1 := by
   unfold betaGroupTheory kleinFourOrder; push_cast; ring
 
-/-- CQM微观定义：β = (1/4π)·ln(L/a)。
-    给定 β，对应系统尺寸比 L/a = exp(4π·β)。 -/
+/-- 系统尺寸比：给定 β，对应 L/a = exp(4π·β)。 -/
 noncomputable def systemSizeRatio (beta : ℝ) : ℝ := Real.exp (4 * Real.pi * beta)
 
-/-- **定理3**：β=8π+1 对应 L/a = exp(32π²+4π)。
+/-- **定理3**：宏观极限 L/a = exp(32π²+4π) 时 β = 8π+1。
     β = (1/4π)·ln(L/a) ⟹ ln(L/a) = 4π·β = 4π·(8π+1) = 32π²+4π。 -/
 theorem beta_group_theory_eq_microscopic :
     systemSizeRatio betaGroupTheory = Real.exp (32 * Real.pi^2 + 4 * Real.pi) := by
   unfold systemSizeRatio betaGroupTheory kleinFourOrder
+  push_cast
+  ring_nf
+
+/-- **基本定义验证**：betaMicroscopic(exp(32π²+4π), 1) = betaGroupTheory = 8π+1。
+    即宏观极限下基本定义 β=(1/4π)ln(L/a) 给出 8π+1。 -/
+theorem betaMicroscopic_macro_limit_eq_betaGroupTheory :
+    betaMicroscopic (Real.exp (32 * Real.pi^2 + 4 * Real.pi)) 1 = betaGroupTheory := by
+  unfold betaMicroscopic betaGroupTheory kleinFourOrder
+  rw [Real.log_exp, div_eq_mul_inv]
   push_cast
   ring_nf
 
