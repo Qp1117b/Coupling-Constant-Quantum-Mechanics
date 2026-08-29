@@ -381,7 +381,7 @@ theorem debyeFrequency_pos {k M : ℝ} (hk : k > 0) (hM : M > 0) :
   exact Real.sqrt_pos.2 (div_pos hk hM)
 
 /-- 德拜频率随离子质量单调递减：ω_D ∝ M^(−1/2)。
-     轻离子 → 高频晶格振动（金属氢的因果截断最高）。 -/
+     轻离子 → 高频晶格量子振荡（金属氢的因果截断最高）。 -/
 theorem debyeFrequency_decreases_with_mass {k M₁ M₂ : ℝ} (hk : k ≥ 0) (hM₁ : M₁ > 0)
     (hM₂ : M₂ > 0) (hM : M₁ ≤ M₂) :
     debyeFrequency k M₂ ≤ debyeFrequency k M₁ := by

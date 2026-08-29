@@ -146,7 +146,7 @@ def main():
     print(f"    - S5 = SU(5)的Weyl群")
     print(f"    - CQM已用 W_m = 5*2^(m-1)")
     print(f"  tr(C)={trC} (嘉当矩阵迹):")
-    print(f"    - beta = 2*pi*tr(C^-1)+1 = 8*pi+1")
+    print(f"    - beta = 2*pi*tr(C^-1)+1 = 8*pi+1 (宏观极限; 基本定义 beta=(1/4pi)ln(L/a))")
     print(f"    - tr(C^-1) = {4}, 2*pi*4 = {8*math.pi:.6f}")
 
     # ============================================================

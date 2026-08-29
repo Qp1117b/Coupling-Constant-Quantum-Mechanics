@@ -45,7 +45,7 @@ $$\alpha_W = \frac{2h-1}{\text{tr}(C_{A_4})} \cdot \pi^{-r} \cdot \left(\frac{\p
 |:---|:---|:---|
 | $h$（Coxeter 数） | 5 | 决定本征值分布、$Z_{\max}=118$、$l_{\max}=3$ |
 | $r$（秩） | 4 | 决定 4 个本征群（3 空间 + 1 时间） |
-| $\text{tr}(C_{A_4})$ | 8 | $\beta = 2\pi\cdot\text{tr}(C_{A_4}^{-1})+1 = 8\pi+1$ |
+| $\text{tr}(C_{A_4})$ | 8 | $\beta = 2\pi\cdot\text{tr}(C_{A_4}^{-1})+1 = 8\pi+1$（宏观极限；基本定义 $\beta = \frac{1}{4\pi}\ln\frac{L}{a}$） |
 | $\|W(A_4)\|$（Weyl 群阶） | 120 | $S_5$ 对称性，CQM 已用 $W_m = 5\cdot 2^{m-1}$ |
 
 ### 2.2 与 CQM 各组件的对应
