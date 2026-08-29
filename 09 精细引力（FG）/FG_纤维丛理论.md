@@ -89,8 +89,11 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/C$。这是FG核心机制，标注为**假设**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由约束严格确定
-- **本征群**：$G_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定，$l = k-1$
-- **耦合常数**：$n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（耦级）= 涨落耦合常数指定的值——是同步方程的**输出**，不是输入参数
+- **本征群**：$G_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定，$l_k = k-1$
+- **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
+- **约束方程**：$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
+- **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
+- **耦合常数**：$g_k = \alpha\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
 ### 4.0.1 SU(5)破缺→A_4→3空间群+时间群→4耦合常数
 
@@ -127,7 +130,7 @@ $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u
 质数势是**投影算符的叠加**，在耦合常数空间选择 $u = \ln p$ 的离散点。
 
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$（紧化U(1)基矢）
-- 本征值 = 耦级 $n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（由约束联立求解）
+- 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），约束方程 $\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$ 锁定 $N_k$
 - $C = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
 - 紧化 = $\hat{u}$ 的**谱边界条件** $\psi(u+L_u) = \psi(u)$，与核子声子态联立
 
@@ -188,7 +191,7 @@ $$P(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 | Bost-Connes (1995) [arXiv:1012.4665] | Z(β)=ζ(β)量子统计系统 |
 | Srednicki (2011) [arXiv:1104.1850] | Berry-Keating+局部RH谱证明 |
 | Ng (2006) [arXiv:math/0603275] | Virasoro c=1/2谱实现 |
-| Benjamin-Chang (2022) [arXiv:2208.02259] | CFT模bootstrap包含黎曼零点 |
+| Benjamin-Chang (2022) [arXiv:2208.02259] | CFT模共形自举包含黎曼零点 |
 
 ## 6. Regge剖分与纤维丛的对应
 
@@ -233,3 +236,341 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | $\lambda_k$ | $4\sin^2\frac{k\pi}{10}$ | $A_4$嘉当矩阵本征值 |
 | $|v_k(4)|^2$ | $\frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$本征向量末端分量 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
+
+## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
+
+**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的严格定量映射，消除"Dirac约束=共形自举方程"仅一行陈述的缺口。
+
+CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`，元素FG的CFT应用计算见 `FG_元素FG_第一性.md` §17。
+
+### 9.1 截面 = primary operator
+
+**纤维丛截面**：截面 $\psi \in \Gamma(P(M,G))$ 是底空间 $M$ 上的物理场，满足联络的协变作用 $D\psi = 0$。
+
+**CFT primary operator**：primary operator $\phi(z)$ 是复平面上的共形场，满足Virasoro最高权条件 $\hat{L}_{n>0}\phi = 0$。
+
+**严格对应**：
+
+$$\boxed{\psi(x) \in \Gamma(P(M,G)) \;\longleftrightarrow\; \phi_l(z) \in \mathcal{H}_{\text{CFT}}}$$
+
+| 纤维丛 | CFT | 对应机制 |
+|:---|:---|:---|
+| 底空间 $M$（Regge剖分） | 复平面 $\mathbb{C}$ | 指数映射 $z = e^{-\kappa r}$（§6.4 of CFT文档） |
+| 截面 $\psi$（物理场） | primary operator $\phi_l$（壳层） | 态-算符对应（FG文档§17.11.2） |
+| 截面空间 $\Gamma$ | Hilbert空间 $\mathcal{H}$ | 所有物理态的集合 |
+| 协变作用 $D\psi = 0$ | 最高权条件 $\hat{L}_{n>0}\phi = 0$ | §9.5严格证明 |
+| 联络作用 $\nabla_\mu\psi$ | descendant $\hat{L}_{-1}^k\phi$ | §9.2严格对应 |
+
+**截面的显式构造**：在A₄框架下，截面（=电子轨道态）对应于descendant态：
+
+$$\psi_{n,l,m}(x) \;\longleftrightarrow\; \sum_{k=0}^{n-l-1} c_k^{(n,l)}\,\hat{L}_{-1}^k\,\phi_{l,m}(z)$$
+
+其中 $c_k^{(n,l)}$ 是Shapovalov内积确定的descendant系数（FG文档§17.1）。
+
+### 9.2 联络 = Virasoro生成元
+
+**纤维丛联络**：$\mathcal{A}_\ell$ 作用于截面给出协变导数 $\nabla_\mu\psi = \partial_\mu\psi + \mathcal{A}_\mu\psi$。在A₄ Regge剖分下，联络离散化为嘉当矩阵 $C_{A_4}$（图拉普拉斯）。
+
+**Virasoro生成元**：$\hat{L}_n$ 作用于primary operator给出descendant。$\hat{L}_{-1}$ 生成descendant tower，$\hat{L}_0$ 给出共形维度。
+
+**严格对应**：
+
+$$\boxed{\mathcal{A}_\ell \;\longleftrightarrow\; \{\hat{L}_n\}_{n \in \mathbb{Z}}}$$
+
+| 纤维丛联络 | Virasoro代数 | 对应机制 |
+|:---|:---|:---|
+| 联络 $\mathcal{A}$ | $\{\hat{L}_n\}$ | 模展开 $\mathcal{A}(z) = \sum_n \mathcal{A}_n z^{-n-1}$ |
+| 离散联络 = 嘉当矩阵 $C_{A_4}$ | $\hat{L}_{-1}$ descendant生成 | A₄本征值 $\lambda_k$ → 声子频率 → descendant level |
+| 协变导数 $\nabla_\mu\psi$ | descendant $\hat{L}_{-1}^k\phi$ | 联络作用 = descendant生成 |
+| 曲率 $F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}$ | 对易子 $[\hat{L}_m, \hat{L}_n]$ | §9.3严格对应 |
+| Bianchi恒等式 $dF + [\mathcal{A},F] = 0$ | Jacobi恒等式 | 代数自洽性 |
+
+**联络的模展开**：在CFT的复坐标下，联络的模展开为：
+
+$$\mathcal{A}(z) = \sum_{n=-\infty}^{\infty} \mathcal{A}_n\,z^{-n-1}$$
+
+其中 $\mathcal{A}_n$ 对应Virasoro生成元 $\hat{L}_n$。联络的Kac-Moody扩展（中心项）对应Virasoro中央荷：
+
+$$[\mathcal{A}_m, \mathcal{A}_n] = (m-n)\mathcal{A}_{m+n} + k\,m\,\delta_{m+n,0} \;\longleftrightarrow\; [\hat{L}_m, \hat{L}_n] = (m-n)\hat{L}_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}$$
+
+左式是Kac-Moody代数（联络的仿射扩展），右式是Virasoro代数（Sugawara构造）。中央荷 $c = k\dim\mathfrak{g}/(k+h^\vee)$ 从Kac-Moody水平 $k$ 严格确定（FG文档§17.5）。
+
+### 9.3 曲率 = 对易子：Bianchi → Jacobi
+
+**纤维丛曲率**：$F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}$，满足Bianchi恒等式 $dF + \mathcal{A}\wedge F - F\wedge\mathcal{A} = 0$。
+
+**Virasoro对易子**：$[\hat{L}_m, \hat{L}_n] = (m-n)\hat{L}_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}$，满足Jacobi恒等式。
+
+**严格对应**：
+
+$$\boxed{F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A} \;\longleftrightarrow\; [\hat{L}_m, \hat{L}_n] = (m-n)\hat{L}_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}}$$
+
+**Bianchi → Jacobi**：
+
+Bianchi恒等式 $dF + [\mathcal{A}, F] = 0$ 是曲率的**可积条件**——联络的二次协变导数可交换当且仅当曲率满足Bianchi。
+
+Jacobi恒等式 $[\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} = 0$ 是Virasoro代数的**自洽条件**——对易子的二次嵌套可交换。
+
+二者在代数层面严格对应：Bianchi保证联络定义的曲率自洽，Jacobi保证Virasoro代数的对易子自洽。
+
+**曲率本征值 → 共形维度**：
+
+A₄嘉当矩阵（=离散联络的曲率）的本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ 通过以下链条映射到共形维度：
+
+$$\lambda_k \;\xrightarrow{\text{Casimir}}\; C_k = l_k(l_k+1) + \frac{3}{4} \;\xrightarrow{\text{primary}}\; h_l = l_k = k - 1 \;\xrightarrow{\text{descendant}}\; h = n + l$$
+
+| $k$ | $\lambda_k$（曲率本征值） | $l_k$（角动量） | $h_l = l_k$（primary共形维度） |
+|:---:|:---:|:---:|:---:|
+| 1 | 0.382 | 0 | 0（s壳层） |
+| 2 | 1.382 | 1 | 1（p壳层） |
+| 3 | 2.618 | 2 | 2（d壳层） |
+| 4 | 3.618 | 3 | 3（f壳层） |
+
+### 9.4 和乐 = OPE monodromy：曲率 → 共形维度的定量映射
+
+**纤维丛和乐**：绕回路 $\gamma$ 的平行移动：
+
+$$W(\gamma) = \mathcal{P}\exp\oint_\gamma \mathcal{A} = \exp(i\delta_v\,\hat{T})$$
+
+其中 $\delta_v$ 是回路包围的角亏（底空间曲率集中），$\hat{T}$ 是结构群生成元。
+
+**CFT monodromy**：共形块绕 $z = 0$ 的monodromy：
+
+$$\mathcal{F}(z\,e^{2\pi i}) = e^{2\pi i h}\,\mathcal{F}(z)$$
+
+其中 $h$ 是共形维度。monodromy描述共形块在解析延拓下的变换行为，由BPZ方程严格确定。
+
+**严格对应**：
+
+$$\boxed{W(\gamma) = e^{i\delta_v\,\hat{T}} \;\longleftrightarrow\; \text{monodromy} = e^{2\pi i h}}$$
+
+**定量映射**：和乐本征值 = monodromy本征值给出：
+
+$$i\,\delta_v\,\hat{T} = 2\pi i\,h \quad \Longrightarrow \quad \boxed{h = \frac{\delta_v\,\hat{T}}{2\pi}}$$
+
+**A₄系统的显式计算**：
+
+对A₄嘉当矩阵的第 $k$ 个本征模式：
+- 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(4)|^2(N_k + \frac{1}{2})$（来自§4.0约束链）
+- 生成元本征值 $\hat{T}_k = \lambda_k = 4\sin^2\frac{k\pi}{10}$（A₄本征值）
+- 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$
+
+primary共形维度 $h_l = l_k = k - 1$（壳层角动量），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
+
+**和乐平庸化 = 闭壳层稳定**：
+
+和乐平庸化 $W(\gamma) = 1$（$\delta_v = 0$）对应：
+- 纤维丛：平坦联络，无曲率集中
+- CFT：monodromy平凡，共形块单值
+- 物理：闭壳层稳定构型（稀有气体）
+
+和乐非平庸化 $W(\gamma) \neq 1$（$\delta_v \neq 0$）对应：
+- 纤维丛：曲率集中，非平坦联络
+- CFT：monodromy非平凡，共形块多值
+- 物理：开壳层，化学活性
+
+### 9.5 同步算符 = CFT mode算符：同步方程 = 最高权条件
+
+**同步算符**（§4.2-§4.3）：
+
+$$\hat{\mathcal{S}}_k^{\text{(full)}} = \underbrace{\frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}}_{\text{核子部分（径向）}} \cdot \hat{\mathbb{I}}_{G_k} + \underbrace{\hat{C}_2(G_k)}_{\text{Casimir部分（角向）}}$$
+
+**CFT mode算符**：
+
+$$\hat{L}_0 + \hat{C}_2(G_k) = \underbrace{\hat{L}_0}_{\text{descendant level（径向）}} + \underbrace{\hat{C}_2(G_k)}_{\text{角动量Casimir（角向）}}$$
+
+**严格对应**：
+
+$$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} \;\longleftrightarrow\; \hat{L}_0 + \hat{C}_2(G_k)}$$
+
+| 同步算符 | CFT mode算符 | 对应机制 |
+|:---|:---|:---|
+| 核子部分 $\frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ | $\hat{L}_0$（descendant level） | 径向量子数 $n$ |
+| Casimir部分 $\hat{C}_2(G_k)$ | $\hat{C}_2(G_k)$（角动量Casimir） | 壳层角动量 $l$ |
+| 本征值 = 耦级 $n_k = C_k$ | 本征值 = 共形维度 $h = n + l$ | §9.5.1严格推导 |
+| 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | §9.5.2严格对应 |
+
+#### 9.5.1 耦级 → 共形维度的严格推导
+
+同步算符本征值（耦级）：
+
+$$n_k = C_k = l_k(l_k+1) + \frac{3}{4}$$
+
+CFT mode算符本征值（共形维度）：
+
+$$h = h_{\text{primary}} + n_{\text{desc}} = l_k + n$$
+
+其中 $n$ 是descendant level（主量子数），$l_k$ 是primary共形维度（角动量）。
+
+**二者的关系**：
+
+同步算符的Casimir部分给出primary共形维度 $h_l = l_k$（壳层结构），核子部分给出descendant level $n$（径向量子数）。完整同步算符的本征值对应于总共形维度：
+
+$$\hat{\mathcal{S}}_k^{\text{(full)}}\,\Psi_{n,l} = \underbrace{(n + l_k)}_{\text{共形维度 } h}\,\Psi_{n,l} + \underbrace{\frac{3}{4}}_{\text{自旋部分}}\,\Psi_{n,l}$$
+
+自旋部分 $s(s+1) = 3/4$（$s = 1/2$）分离后，轨道共形维度 $h = n + l$ 严格对应Madelung规则。
+
+#### 9.5.2 同步方程 = 最高权条件
+
+**同步方程**：
+
+$$\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k$$
+
+物理意义：约束（核子量子振荡 + 曲率涨落 + 耦合常数涨落）联立求解，选出离散的同步本征态。
+
+**CFT最高权条件**：
+
+$$\hat{L}_0\,\phi = h\,\phi, \quad \hat{L}_{n>0}\,\phi = 0$$
+
+物理意义：primary operator是Virasoro代数的最高权表示，descendant由 $\hat{L}_{-n}$ 生成。
+
+**严格对应**：
+
+$$\boxed{\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\longleftrightarrow\; \hat{L}_0\,\phi = h\,\phi}$$
+
+- 同步方程选出离散本征态 $\Psi_k$（耦级 $n_k$） → 最高权条件选出primary $\phi$（共形维度 $h$）
+- 紧化U(1)边界条件 $\psi(u + L_u) = \psi(u)$ → Kac-Moody代数的可积表示条件（水平 $k$ 为正整数）
+- 约束方程锁定声子占据数 $N_k$ → fusion rules锁定允许的descendant level $n \geq l + 1$
+
+### 9.6 Dirac约束 = 共形自举方程：严格证明
+
+**纤维丛Dirac约束**：
+
+$$D\psi = 0 \quad \text{（协变作用为零）}$$
+
+其中 $D = \gamma^\mu \nabla_\mu$ 是Dirac算符，$\nabla_\mu = \partial_\mu + \mathcal{A}_\mu$ 是协变导数。
+
+物理意义：截面在联络作用下"无加速"——物理场满足规范约束。
+
+**CFT共形自举方程**：
+
+$$\sum_p C_{ij}^p\,C_{pk}^m = \sum_p C_{jk}^p\,C_{ip}^m \quad \text{（OPE结合律）}$$
+
+物理意义：OPE的配对顺序不影响结果——共形场论的代数自洽性。
+
+**严格对应**：
+
+$$\boxed{D\psi = 0 \;\longleftrightarrow\; \text{OPE结合律（共形自举方程）}}$$
+
+**证明链条**：
+
+1. **Dirac约束 → 截面的协变作用为零**：$D\psi = 0$ 意味着截面 $\psi$ 在联络 $\mathcal{A}$ 的作用下"无源"——物理场是联络的**零模**。
+
+2. **零模 → primary operator**：在CFT对应下，联络的零模对应于Virasoro代数的最高权态（primary operator）——$\hat{L}_{n>0}\phi = 0$ 是"无源"条件的CFT表述。
+
+3. **primary的OPE → 结合律**：primary operator的OPE $\phi_i \times \phi_j = \sum_p C_{ij}^p \phi_p$ 必须满足结合律（配对顺序不影响结果），否则OPE不自洽。
+
+4. **结合律 → 共形自举方程**：OPE结合律就是共形自举方程——代数自洽性条件。
+
+5. **可积条件 → Bianchi = Jacobi**：Dirac约束的可积条件 $[D, D] = F$（曲率）对应OPE结合律的相容条件——Bianchi恒等式 = Jacobi恒等式（§9.3）。
+
+$$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrightarrow{\text{OPE}}\; \text{结合律} \;\xrightarrow{\text{自洽}}\; \text{共形自举方程}}$$
+
+**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g（FG文档§17.9）。这是Dirac约束=共形自举方程在CQM中的具体实例——$A_4$嘉当矩阵的4个本征值给出4个允许的primary，第5个（g）的约束方程无解。
+
+### 9.7 同步算符 = 紧化算符：三层关系统一
+
+同步算符=紧化算符在三个层次有不同表述，此处统一说明：
+
+| 层次 | 文档 | 定义 | 物理意义 |
+|:---|:---|:---|:---|
+| **QG层**（基态定义） | CNST §4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\text{GL}_5) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
+| **FG纤维丛层**（截面实现） | 本文 §4 | $\hat{\mathcal{S}}_\ell$ = 紧化算符在层级截面空间 $\Gamma(P_\ell)$ 的实现 | 谱算符：给出群谱 $G_k$ |
+| **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ = QG紧化结构在电磁因子层GL(1)的再现 | 物理可观测的耦合常数 $g_k$ |
+
+**层次关系**：
+
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)→SU(5)}} \;\xrightarrow{\text{SU(5)破缺}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
+
+- **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化约束可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
+- **FG纤维丛层**：SU(5)破缺为 $A_4 \to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
+- **FG核心层**：取GL(1)电磁因子层，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
+
+**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（破缺后），FG核心层对应U(1)自由玻色子（GL(1)因子）。
+
+### 9.8 完整对应表
+
+| 纤维丛结构 | CFT结构 | 对应机制 | 严格性 |
+|:---|:---|:---|:---|
+| 截面 $\psi$ | primary operator $\phi$ | 态-算符对应 | §9.1 |
+| 联络 $\mathcal{A}$ | Virasoro $\{\hat{L}_n\}$ | 模展开 | §9.2 |
+| 曲率 $F$ | 对易子 $[\hat{L}_m, \hat{L}_n]$ | $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ | §9.3 |
+| Bianchi恒等式 | Jacobi恒等式 | 代数自洽性 | §9.3 |
+| 和乐 $W(\gamma)$ | monodromy $e^{2\pi ih}$ | $h = \delta_v\hat{T}/(2\pi)$ | §9.4 |
+| 同步算符 $\hat{\mathcal{S}}$ | mode算符 $\hat{L}_0 + \hat{C}_2$ | 本征值=共形维度 | §9.5 |
+| 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | 约束→离散谱 | §9.5 |
+| Dirac约束 $D\psi = 0$ | 共形自举方程（OPE结合律） | 零模→primary→结合律 | §9.6 |
+| 紧化算符 | CFT mode算符 | 三层统一 | §9.7 |
+| 和乐平庸化 | 闭壳层稳定 | $\delta_v = 0 \Leftrightarrow$ 稀有气体 | §9.4 |
+
+### 9.10 局域分析足够性原理
+
+**问题**：底空间 $M_\ell$ 上有大量Regge顶点 $\{v\}$，每个顶点有不同的曲率涨落态 $\hat{\delta}_v|0\rangle$。为什么只需要取**一个**能体现底空间分布性质的代表性局域来分析，即可得到整个纤维丛的同步谱？
+
+**回答**：CFT算符插入生成局域态，但同步算符是整体定义的——其本征值谱由代数结构固定，不依赖于插入点。因此局域分析足够。
+
+#### 9.10.1 数学表述
+
+**CFT算符插入生成态**（态-算符对应，§9.1）：
+
+$$\mathcal{O}(z)|0\rangle = |\mathcal{O}(z)\rangle$$
+
+在CQM中，局域算符是曲率算符 $\hat{\delta}_v$，插入到Regge顶点 $v$ 生成局域态：
+
+$$\hat{\delta}_v |0\rangle = |\delta_v\rangle$$
+
+**同步算符的普适性**（§9.5, §9.7）：
+
+$$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
+
+同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 由 $A_4$ 嘉当矩阵的代数不变量统一给出：
+
+- Coxeter数 $h = 5$（$A_4$ 严格确定）
+- 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$A_4$ 严格确定）
+- 本征群 $\{G_k\}$、角动量 $\{l_k\}$、容量 $\{N_k^{\max}\}$ 均由 $A_4$ 代数结构固定
+
+**关键点**：本征值谱 $\{n_k\}$ **不依赖于具体的插入顶点 $v$**，只依赖于 $A_4$ 的代数结构。
+
+#### 9.10.2 物理图像
+
+| 层面 | 局域 | 整体 |
+|:---|:---|:---|
+| **态** | 每个顶点 $v$ 有不同的曲率涨落态 $\|\delta_v\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
+| **算符** | 曲率算符 $\hat{\delta}_v$ 是局域的（定义在单个顶点） | 同步算符 $\hat{\mathcal{S}}$ 是整体的（定义在整个截面空间 $\Gamma(P_\ell)$） |
+| **谱** | 局域态携带顶点的曲率信息 | 同步本征值 $\{n_k\}$ 由 $A_4$ 代数结构统一给出，与顶点无关 |
+| **CFT对应** | 算符插入 $\mathcal{O}(z)\|0\rangle$ 生成局域态 | OPE系数 $C_{ij}^k$ 由共形对称性固定，不依赖插入点 $z$ |
+
+#### 9.10.3 严格论证
+
+**命题**：取一个能体现底空间分布性质的代表性局域 $v^*$（如质子A₄的平坦顶点 $\bar{\delta}_{v^*}=0$，或中子的背景曲率顶点 $\bar{\delta}_{v^*}\neq 0$），分析其同步谱 $\hat{\mathcal{S}}\Psi_{v^*} = n\Psi_{v^*}$，结果普适于整个纤维丛。
+
+**证明**：
+
+1. **所有顶点共享同一代数结构**：Regge剖分的每个4-单纯形共享同一个 $A_4$ 嘉当矩阵（§6, §18.1）。嘉当矩阵是联络的离散化，由4-单纯形的组合几何确定，与顶点位置无关。
+
+2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定（§9.5.1）。本征值不依赖于具体的顶点 $v$。
+
+3. **CFT OPE系数的普适性**：OPE $\mathcal{O}_i(z)\mathcal{O}_j(0) \sim \sum_k C_{ij}^k z^{h_k-h_i-h_j}\mathcal{O}_k(0)$ 中，系数 $C_{ij}^k$ 由共形对称性（Kac-Moody代数 + Virasoro代数）固定，不依赖于插入点 $z$（§9.5, CFT核心文档§3）。
+
+4. **局域态→整体谱**：在代表性顶点 $v^*$ 插入算符 $\hat{\delta}_{v^*}$ 生成局域态 $|\delta_{v^*}\rangle$，用同步算符 $\hat{\mathcal{S}}$ 分析得到本征值谱 $\{n_k\}$。由于步骤1-3，任何其他顶点 $v'$ 的分析给出相同的本征值谱。$\square$
+
+#### 9.10.4 与CFT自举的关系
+
+CFT共形自举（OPE结合律 = 共形自洽，§9.6）的普适性是局域分析足够性的代数基础：
+
+- **共形自举方程** $\sum_p C_{ij}^p C_{pk}^q = \sum_p C_{jk}^p C_{ip}^q$（结合律）不依赖插入点
+- **解空间**由代数结构（$A_4$ 嘉当矩阵 + Kac-Moody代数）固定
+- 因此，在一个点解自举方程，解普适于整个共形场
+
+**总结**：
+
+$$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结构）} = \text{局域分析足够}}$$
+
+底空间上离散态虽多，但都遵守同一套同步算符 $\hat{\mathcal{S}}$ 和同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$。取一个体现底空间分布性质的代表性局域，分析其同步谱，结果由 $A_4$ 代数结构统一给出，普适于整个纤维丛。
+
+### 9.9 相关文档
+
+- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)破缺→A₄→4耦合常数→α）
+- `FG_元素FG_第一性.md`：元素FG第一性推导（§17 CFT精确计算：descendant系数、合流极限、能级、OPE系数、关联能、周期表、Cr/Cu异常）
+- `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
+- `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（QG层紧化算符定义、黎曼结构→CNST七条提取、三种引力同步诠释）

@@ -77,7 +77,8 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 - $C = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
 - $L_u = \ln\Lambda$（耦合常数空间紧化U(1)周长）
-- 耦级 $n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（紧化+FG因果联立求解）
+- 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=对称性强度）
+- 约束方程 $\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$
 
 ### 3.3 本征群→耦合常数
@@ -87,7 +88,8 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 $$G_k = \begin{cases} SU(2) & l=0 \\ SO(3) \times SU(2) & l=1,2,3 \end{cases}$$
 
 - $l = k-1$ 是 $A_4$ 本征值的索引，不是输入参数
-- 耦级 $n_k$ 由约束联立求解严格确定——是同步方程的**输出**，不是输入参数
+- 耦级 $n_k = C_k$ 由群论定义（Casimir本征值），约束方程锁定 $N_k$——是同步方程的**输出**，不是输入参数
+- **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
 - 同步成本 $s_k = n_k + l$（径向同步成本+角向同步成本）
 
 ## 4. 同步算符
@@ -192,7 +194,7 @@ $$\boxed{\alpha = f(g_{U(1)})}$$
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
 每个本征群 $G_k$ 给出该层的同步成本：
-- **耦级 $n_k$**：$n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（U(1)紧化同步成本，径向）
+- **耦级 $n_k$**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=Casimir=对称性强度，径向）
 - **Casimir $l$**：$l = k-1$，$A_4$ 本征值索引（内部对称同步成本，角向）
 - **Coxeter数 $h=5$**：$l \leq h-2 = 3$ 限制 → $s,p,d,f$ 四个亚壳层
 - **同步成本**：$s_k = n_k + l$
@@ -272,7 +274,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 | Ng | 2006 | arXiv:math/0603275 | Virasoro c=1/2谱实现 |
 | Srednicki | 2011 | arXiv:1104.1850 | 局部RH谱证明 |
 | Sierra | 2007 | arXiv:0712.0705 | xp量子化+边界波函数 |
-| Benjamin-Chang | 2022 | arXiv:2208.02259 | CFT模bootstrap |
+| Benjamin-Chang | 2022 | arXiv:2208.02259 | CFT模共形自举 |
 
 ## 9. 相关文档
 

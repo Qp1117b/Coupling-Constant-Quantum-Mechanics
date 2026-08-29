@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+﻿import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
 import CausalSet.Axioms
@@ -41,7 +41,7 @@ CQM 提出"跨层级退相干深耦合"机制：
 
 ## 两种退相干深耦合
 
-- **自举退相干深耦合**：由环境引力结构和环境自举完成，与上层
+- **互耦退相干深耦合**：由环境引力结构和环境自举完成，与上层
   无关。这解释了宏观时空的经典确定性。
 - **情景退相干深耦合**：需要进一步主动退相干深耦合，对应测量、选择、
   能动干预过程。
@@ -232,7 +232,7 @@ theorem agency_enables_uniqueness (a : Agency) (P : ClassicalProbability)
 
 /-! ## 两种退相干深耦合模式 -/
 
-/-- 自举退相干深耦合 (Bootstrapped Deep Coupling)：由环境引力结构
+/-- 互耦退相干深耦合 (Bootstrapped Deep Coupling)：由环境引力结构
     和环境自举完成的退相干深耦合，不需要上层参与。
 
     这解释了宏观时空的经典确定性：大量环境引力自由度
@@ -249,7 +249,7 @@ structure BootstrappedDeepCoupling extends DeepCrossLayerCoupling where
 structure SituationalDeepCoupling extends DeepCrossLayerCoupling where
   hrequiresAgency : depth > classicalCouplingThreshold
 
-/-- 自举退相干深耦合足以产生确定结果。 -/
+/-- 互耦退相干深耦合足以产生确定结果。 -/
 theorem bootstrapped_yields_uniqueness (b : BootstrappedDeepCoupling) (P : ClassicalProbability) :
     ∃! (i : ℕ), i ∈ P.outcomes := by
   let c : DeepCrossLayerCoupling := b.toDeepCrossLayerCoupling
