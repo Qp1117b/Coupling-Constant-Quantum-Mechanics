@@ -256,6 +256,8 @@ $$\prod_{p\in\{2,3,5\}}\mathbb{Z}_p = \frac{1}{30} \tag{A2}$$
 
 $$\boxed{\alpha^{-1} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = \frac{16384\pi}{375} = 137.2583} \tag{Q1}$$
 
+> **此粗略表达式是GL(5)整体的反映**，不是GL(1)层的产物。源于SU(5)破缺→$A_4$嘉当矩阵→4本征群（3空间群+1时间群）的整体结构，$\alpha$来自$U(1)$电磁群耦合常数。
+
 ### 10.2 引力常数
 
 $$\boxed{G_N^{(0)} = \frac{I\cdot\lambda_c\cdot C^2\cdot E_1}{m_p^2}\cdot\exp\left(-\frac{2}{C}\right)} \tag{Q2}$$

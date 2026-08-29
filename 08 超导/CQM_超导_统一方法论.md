@@ -134,7 +134,7 @@ $$\lambda_n(T) = \gamma_n - \frac{\beta^2 \Delta\delta_v(T)^2 (n^2-1)}{4n^2 (1-\
 
 其中：
 - $\gamma_n$：第 $n$ 个黎曼零点虚部（零温极限，从S1谱方程给出）
-- $\beta = 8\pi+1$：Klein四元群和乐
+- $\beta = \frac{1}{4\pi}\ln\frac{L}{a}$：系统尺寸严格确定（$L$系统尺寸，$a$晶格常数）
 - $\delta_v$：底空间角亏（从Regge剖分计算）
 - $\Delta\delta_v(T) = \Delta\delta_0 \sqrt{\tanh(\hbar\Omega_0 / 2k_B T)}$：温度依赖的角亏涨落
 
@@ -176,7 +176,7 @@ $$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 - 元素FG纤维丛构造：从Z→核子分布→结构群→主丛，无外部输入
 - 从剖分到Tc的步骤：步骤A-F全部从CQM方程严格导出
-- 物理常数：$\beta=8\pi+1$, $C^2=2/3$, $\gamma_1$, $\gamma_2$ 等从CQM方程给出
+- 物理常数：$\beta=\frac{1}{4\pi}\ln\frac{L}{a}$, $C^2=2/3$, $\gamma_1$, $\gamma_2$ 等从CQM方程给出
 
 ### 5.2 需要外部数据的部分
 

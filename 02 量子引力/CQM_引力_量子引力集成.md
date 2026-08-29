@@ -396,6 +396,8 @@ $$\mathcal{E}_k^{\text{phys}} = \frac{c^2}{a^2} m_p^2 \mathfrak{c}_k \xrightarro
 **路径 B：精细结构常数**
 $$\mathfrak{c}_k \xrightarrow{A_4 \text{ 本征值比例 } 9:4:1} P = \frac{16384\pi}{375} \xrightarrow{} \alpha^{-1} \approx 137.2583$$
 
+> **此粗略表达式是GL(5)整体的反映**，不是GL(1)层的产物。$\alpha$来自SU(5)破缺→$A_4$→4本征群中$U(1)$电磁群的耦合常数。
+
 **路径 C：混合矩阵**
 $$\Sigma = V \Lambda V^\dagger \xrightarrow{\text{退相干后本征矢量冻结}} \text{CKM/PMNS 矩阵}$$
 

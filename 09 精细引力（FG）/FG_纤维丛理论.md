@@ -36,11 +36,11 @@ $$\boxed{(M_\ell,\; P(M_\ell, G_\ell),\; \mathcal{A}_\ell,\; \hat{\mathcal{S}}_\
 | 元素FG | 质子+中子分布 | $U(1) \times SO(2) \times SU(4)$ | 核子间联络 |
 | 分子FG | 原子分布 | 分子点群 | 原子间联络（化学键） |
 | 晶胞FG | 原子/分子分布 | 空间群 | 晶胞中联络 |
-| 超导 | 单位分布 | $U(1)/\mathbb{Z}_n$ | 超导同步联络 |
+
 
 ### 2.2 层级嵌套
 
-$$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}} \hookrightarrow P_{\text{super}}$$
+$$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
 
 每层底空间是上层的纤维。
 
@@ -61,7 +61,7 @@ $$W_v^{(\ell)} = \exp(i\delta_v^{(\ell)} \hat{T}_\ell) \in G_\ell$$
 和乐平庸化条件给出该层级的"稳定构型"：
 - 元素FG：和乐平庸化 = 闭壳层稳定构型（稀有气体）
 - 分子FG：和乐平庸化 = 稳定杂化几何（理想键角）
-- 晶胞FG：和乐平庸化 = 超导凝聚（全局相位锁定）
+- 晶胞FG：和乐平庸化 = 稳定晶格构型
 
 ### 3.2 层级角亏传递
 
@@ -73,45 +73,71 @@ $$\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\te
 
 ### 4.0 核心问题：约束→同步方程→本征群→耦合常数
 
-FG的核心问题之一是：**给定约束（振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群，本征群对应的耦合常数就是涨落耦合常数指定的。**
+FG的核心问题之一是：**给定约束（核子量子振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群，本征群对应的耦合常数就是涨落耦合常数指定的。**
 
-$$\boxed{\text{约束} \;\xrightarrow{\text{注入}}\; \hat{\mathcal{S}}_\ell(\delta_v, \omega_k)\,|G_n\rangle = \lambda_n\,|G_n\rangle \;\longrightarrow\; \{G_n\} \;\longrightarrow\; \lambda_n = \text{涨落耦合常数}}$$
+$$\boxed{\text{约束} \;\xrightarrow{\text{注入}}\; \hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k \;\longrightarrow\; G_k \;\longrightarrow\; n_k = \text{涨落耦合常数}}$$
 
-- **约束**：振荡频率 $\omega_k = \sqrt{\lambda_k}$（嘉当矩阵本征值）、曲率涨落 $\delta_v$（Regge角亏）、耦合常数涨落 $\Delta g/g \propto \delta_v$
-- **同步方程**：同步算符含约束，本征方程给出本征群
-- **本征群**：$\{|G_n\rangle\}$，每个本征态是结构群的一个表示
-- **耦合常数**：$\lambda_n$（本征值）= 涨落耦合常数指定的值——是同步方程的**输出**，不是输入参数
+约束链：
 
-### 4.1 核心同一性
+$$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k \xrightarrow{\text{同步方程}} G_k$$
 
-**同步算符不是外在于结构群叠加态的选择机制——它就是叠加的结构群自身的谱算符。**
+- **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
+- **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
+- **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，**不是假设**而是Regge剖分的必然结果。$A_4$ 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
+- **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
+- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
+- **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
+- **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/C$。这是FG核心机制，标注为**假设**
+- **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由约束严格确定
+- **本征群**：$G_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定，$l = k-1$
+- **耦合常数**：$n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（耦级）= 涨落耦合常数指定的值——是同步方程的**输出**，不是输入参数
 
-$$\hat{\mathcal{S}}_{\text{super}}\,|U(1)/\mathbb{Z}_n\rangle = \lambda_n(T)\,|U(1)/\mathbb{Z}_n\rangle$$
+### 4.0.1 SU(5)破缺→A_4→3空间群+时间群→4耦合常数
 
-- 本征态 = 结构群基矢 $|U(1)/\mathbb{Z}_n\rangle$
-- 本征值 = 相变有效谱 $\lambda_n(T)$
-- 零温无角亏极限退化为 $\gamma_n$（GL(1)黎曼零点虚部）
+完整框架就是SU(5)破缺。SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，破缺时$A_4$嘉当矩阵（$4\times 4$）的4个本征值对应4个本征群：3个空间群（$U(1)$、$SU(2)$、$SU(3)$）+ 1个时间群：
 
-### 4.2 同步算符的一般形式
+$$\boxed{\text{SU}(5) \;\xrightarrow{\text{破缺}}\; A_4 \;\xrightarrow{\text{4本征值}}\; \underbrace{U(1) \times SU(2) \times SU(3)}_{\text{3空间群}} \times \underbrace{G_{\text{time}}}_{\text{时间群}} \;\xrightarrow{\text{4耦合常数}}\; \alpha}$$
 
-$$\boxed{\hat{\mathcal{S}}_\ell = V_0 + V_\ell}$$
+**精细结构常数 $\alpha$ 来自SU(5)破缺后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
 
-- $V_0 = \sum_{p} \frac{\ln p}{\sqrt{p}}\delta(u - \ln p)$：**质数势**，所有层级共享（GL(1)电磁因子层谱的普适显现）
-- $V_\ell$：**层级结构项**，编码层级 $\ell$ 的主丛对称性与几何
+### 4.1 耦合常数算符 $\hat{u}$
 
-### 4.3 同步算符的导出形式
+$$\boxed{\hat{u} = \ln \hat{g}, \quad [\hat{u}, \hat{p}_u] = i}$$
 
-$$\boxed{\hat{\mathcal{S}}_{\text{SC}}(T) = \hat{P}_{\text{资格}} \left[\hat{\mathcal{S}}_0 + V_{\text{热}}(u, T) + V_{\delta}(u, \delta_v, \Delta\delta_v)\right] \hat{P}_{\text{资格}}}$$
+- $\hat{u}$：耦合常数对数算符，本征值 $u \in [0, L_u)$
+- $\hat{g} = e^{\hat{u}}$：耦合常数算符，本征值 $g = e^u$
+- $\Delta u \cdot \Delta p_u \geq \frac{1}{2}$
 
-其中：
-- **QG再现（GL(1)层谱实现）**：$\hat{\mathcal{S}}_0 = \sqrt{\hat{H}_{\text{HP}} - 1/4}$
-- **Hilbert-Pólya型算符**：$\hat{H}_{\text{HP}} = -d^2/du^2 + 1/4 + \sum_{p<\Lambda} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p)$
-- **温度修正**：$V_{\text{热}}(u, T) = \left[\coth\frac{\hbar\Omega_0}{2k_BT} - 1\right] \cdot \frac{u^2}{4}$
-- **角亏激活**：$V_{\delta}(u, \delta_v, \Delta\delta_v) = -\frac{\beta^2 \Delta\delta_v^2}{4(1-\beta\delta_v)} \cdot \frac{e^u - 1}{e^u}$
+### 4.2 双空间同步算符
 
-### 4.4 有效本征值
+同步算符**同时**作用于核子空间和耦合常数空间：
 
-$$\boxed{\lambda_n(T) = \gamma_n + \underbrace{\left[\coth\frac{\hbar\Omega_0}{2k_BT} - 1\right] (\ln n)^2}_{\text{温度修正}} - \underbrace{\frac{\beta^2(n^2-1)\,\Delta\delta_v^2}{4\, n^2(1-\beta\delta_v)}}_{\text{角亏激活}}}$$
+$$\boxed{\hat{\mathcal{S}} = \hat{\mathcal{S}}_{\text{nucleon}} \otimes \hat{\mathbb{I}}_{U(1)} + \hat{\mathbb{I}}_{\text{nucleon}} \otimes \hat{\mathcal{S}}_{U(1)}(\hat{u})}$$
+
+**核子部分**（由FG因果严格确定）：
+
+$$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v}$$
+
+其中曲率算符 $\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$ 严格来自 **Regge剖分约束** + **$[\hat{X},\hat{P}]=i\hbar$**：经典背景曲率 + 位置涨落平方的量子期望 + Regge几何非线性，不是唯象假设。
+
+**耦合常数部分**（GL(1)探针层）：
+
+$$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u} - \ln p)$$
+
+质数势是**投影算符的叠加**，在耦合常数空间选择 $u = \ln p$ 的离散点。
+
+- 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$（紧化U(1)基矢）
+- 本征值 = 耦级 $n_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}}$（由约束联立求解）
+- $C = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
+- 紧化 = $\hat{u}$ 的**谱边界条件** $\psi(u+L_u) = \psi(u)$，与核子声子态联立
+
+### 4.3 同步算符的完整形式（含 Casimir）
+
+$$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \cdot \hat{\mathbb{I}}_{G_k} + \hat{C}_2(G_k)}$$
+
+- 耦级项：U(1)紧化的同步成本（径向）
+- Casimir项：$G_k$ 内部对称的同步成本（角向）
+- 同步成本 $s_k = n_k + l$
 
 ## 5. 群谱与朗兰兹纲领
 
@@ -119,27 +145,29 @@ $$\boxed{\lambda_n(T) = \gamma_n + \underbrace{\left[\coth\frac{\hbar\Omega_0}{2
 
 FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想（GL(1)）只是特例。
 
-同步算符的完整谱是各GL(n)层自守谱的直和：
+**正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)/O(5)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。
 
-$$\boxed{\hat{\mathcal{S}}_\ell = \bigoplus_{n} \hat{\mathcal{S}}_{\text{GL}(n)}}$$
+同步算符由物理约束严格确定，本征群由 $A_4$ Coxeter数 $h=5$ 分类：
+
+$$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
 物质自组织基态同步是SU(5)（GL(5)自守谱），破缺后各因子层GL(n)谱是残留：
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
-| GL(1) | $\zeta(s)$ | RH | 电磁因子层 |
+| GL(1) | $\zeta(s)$ | RH | 电磁因子层（GL(5)中心特征） |
 | GL(2) | $L(s, \pi)$ | GRH(GL2) | 模对称层 |
 | GL(3) | $L(s, \pi)$ | GRH(GL3) | 色因子层 |
-| GL(4) | $L(s, \pi)$ | GRH(GL4) | $SU(4)$内部对称 |
-| GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步 |
+| GL(4) | $L(s, \pi)$ | GRH(GL4) | $SU(4)$内部对称（GL(5)的$K$-type） |
+| GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） |
 
 ### 5.2 群谱的前提
 
-$$\boxed{\text{GRH（所有GL(n)层）} \iff \text{各层紧化算符自伴性} \iff \text{物质各层级同步稳定性}}$$
+$$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$
 
-- 黎曼猜想成立 → GL(1)层本征值在临界线上 → 电磁因子层谱唯一
+- 黎曼猜想成立 → GL(1)层本征值在临界线上 → 电磁因子层谱唯一（GL(5)中心特征）
 - 广义黎曼猜想成立 → 各层本征值在临界线上 → FG完整谱唯一
-- **FG完整理论需要各层GRH同时成立**
+- **FG完整理论需要各层GRH同时成立**（数学前提，未证明）
 
 ### 5.3 GUE统计
 
@@ -182,7 +210,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 ## 7. 统一计算步骤
 
-给定任意层FG的纤维丛 $(M_\ell, P_\ell, \pi_\ell, G_\ell)$，从剖分到Tc的步骤完全统一：
+给定任意层FG的纤维丛 $(M_\ell, P_\ell, \pi_\ell, G_\ell)$，从剖分到谱的步骤完全统一：
 
 | 步骤 | 内容 | 公式 |
 |:---|:---|:---|
@@ -191,7 +219,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | C. 动力学矩阵 | 联络离散化 | $D_{ij} = K_{ij}/\sqrt{m_i m_j}$ |
 | D. 声子谱 | 纤维上量子谐振子 | $\omega_q = \sqrt{\text{eig}(D)}$ |
 | E. 角亏涨落 | 曲率零温量子涨落 | $\Delta\delta_0^2 = \sum_q \|\partial\delta_v/\partial u_q\|^2 \cdot \hbar/(2\omega_q)$ |
-| F. Tc闭式 | 同步算符本征值交叉 | $T_c = \theta_D / (2\,\text{arccoth}(x))$ |
+
 
 每步都是CQM方程严格导出，无经验拟合参数。
 
@@ -199,9 +227,9 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
-| $\beta$ | $8\pi+1 \approx 26.13$ | Klein四元群和乐 |
-| $C^2$ | $2/3$ | 几何因子 $4/3$ × 边共享因子 $1/2$ |
-| $\gamma_1$ | $\approx 14.1347$ | 第1黎曼零点（从ζ第一性计算） |
-| $\gamma_2$ | $\approx 21.0220$ | 第2黎曼零点（从ζ第一性计算） |
-| $B_2$ | $2$ | Cooper对贡献 |
+| $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
+| $C$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
 | $h$ | $5$ | $A_4$嘉当矩阵的Coxeter数 |
+| $\lambda_k$ | $4\sin^2\frac{k\pi}{10}$ | $A_4$嘉当矩阵本征值 |
+| $|v_k(4)|^2$ | $\frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$本征向量末端分量 |
+| $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |

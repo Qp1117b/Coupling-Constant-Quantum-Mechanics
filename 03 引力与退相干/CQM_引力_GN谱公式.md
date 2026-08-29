@@ -267,7 +267,7 @@ $$\boxed{\mathcal{J} = \exp\left(-\frac{2}{C}\right)}$$
 
 $$\kappa = \frac{N_{\text{faces}} + C}{N_{\text{cycle}}} = \frac{2^h - 1 + C}{\operatorname{primorial}(h)} = \frac{31 + C}{30}$$
 
-其中 $h = 4$ 为 SU(5) Coxeter 数。
+其中 $h = 5$ 为 SU(5) Coxeter 数（$A_4$ 型根系）。
 
 ### 7.2 $+C$ 项的来源
 
