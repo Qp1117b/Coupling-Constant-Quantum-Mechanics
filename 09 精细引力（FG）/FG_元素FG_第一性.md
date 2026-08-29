@@ -28,6 +28,20 @@ $$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \le
 
 ## 2. 同步算符
 
+### 2.0 核心问题：约束→同步方程→本征群→耦合常数
+
+元素FG的核心问题之一是：**给定约束（振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群，本征群对应的耦合常数就是涨落耦合常数指定的。**
+
+$$\boxed{\text{约束} \;\xrightarrow{\text{注入}}\; \hat{\mathcal{S}}_{\text{el}}(\delta_v, \omega_k)\,|G_n\rangle = \lambda_n\,|G_n\rangle \;\longrightarrow\; \{G_n\} \;\longrightarrow\; \lambda_n = \text{涨落耦合常数}}$$
+
+- **约束**：
+  - 振荡频率 $\omega_k = \sqrt{\lambda_k}$，$\lambda_k$ 是 $A_4$ 嘉当矩阵本征值（0.382, 1.382, 2.618, 3.618）
+  - 曲率涨落 $\delta_v$，从中子变形 $D(\delta_j)$ 的Regge角亏给出
+  - 耦合常数涨落 $\Delta g/g \propto \delta_v$，曲率涨落指定耦合常数涨落幅度
+- **同步方程**：$\hat{\mathcal{S}}_{\text{el}}(\delta_v, \omega_k)\,|G_n\rangle = \lambda_n\,|G_n\rangle$，同步算符含约束
+- **本征群**：$\{|G_n\rangle\}$，本征态是结构群 $U(1) \times SO(2) \times SU(4)$ 的表示
+- **耦合常数**：$\lambda_n$（本征值）= 涨落耦合常数指定的值——是同步方程的**输出**
+
 ### 2.1 元素同步算符
 
 $$\boxed{\hat{\mathcal{S}}_{\text{el}} = V_0 + L_{\text{orbital}}}$$

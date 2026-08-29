@@ -71,6 +71,17 @@ $$\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\te
 
 ## 4. 同步算符：纤维丛的谱算符
 
+### 4.0 核心问题：约束→同步方程→本征群→耦合常数
+
+FG的核心问题之一是：**给定约束（振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群，本征群对应的耦合常数就是涨落耦合常数指定的。**
+
+$$\boxed{\text{约束} \;\xrightarrow{\text{注入}}\; \hat{\mathcal{S}}_\ell(\delta_v, \omega_k)\,|G_n\rangle = \lambda_n\,|G_n\rangle \;\longrightarrow\; \{G_n\} \;\longrightarrow\; \lambda_n = \text{涨落耦合常数}}$$
+
+- **约束**：振荡频率 $\omega_k = \sqrt{\lambda_k}$（嘉当矩阵本征值）、曲率涨落 $\delta_v$（Regge角亏）、耦合常数涨落 $\Delta g/g \propto \delta_v$
+- **同步方程**：同步算符含约束，本征方程给出本征群
+- **本征群**：$\{|G_n\rangle\}$，每个本征态是结构群的一个表示
+- **耦合常数**：$\lambda_n$（本征值）= 涨落耦合常数指定的值——是同步方程的**输出**，不是输入参数
+
 ### 4.1 核心同一性
 
 **同步算符不是外在于结构群叠加态的选择机制——它就是叠加的结构群自身的谱算符。**
