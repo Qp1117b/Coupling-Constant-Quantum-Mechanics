@@ -760,7 +760,7 @@ Regge剖分 R = (V,E,F)
 | 项目 | 性质 | 说明 |
 |:---|:---:|:---|
 | 径向波函数绝对归一化 / $\omega_0, E_{\text{bind}}$ 绝对值 | **物质先在公理的体现**（非缺口） | 代数结构（节点数、多项式系数、descendant系数）已由CFT严格确定，Bohr半径标度关系已导出，比值$\eta$从$A_4$严格导出。绝对标度需1个基本物理标度（$m_N$←物质先在公理），非经验拟合参数。**$c$和$\hbar$均从GL(5)涌现**：$c=\gamma_1\ell_{\text{QG}}$（$\gamma_1$←GL(1)因子层←SU(5)破缺←GL(5)紧化，$\ell_{\text{QG}}$←QG层=GL(5)自守形式）；$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$嘉当矩阵←SU(5)破缺←GL(5)紧化。CQM参数计数：基本标度1个（$m_N$，物质先在公理给出）+ 经验拟合参数0个（对比标准模型20+个） |
-| 关联能 $E_c$ 的精确数值 | 🟢 平庸方程已实现，完整同步方程已构造 | 平庸方程（通用$A_4$代数骨架）已给出d波(Cr/Cu)增强$25\%$、s波(He)$E_c=0$，**无Hamiltonian对角化**。**完整同步方程**$\hat{\mathcal{S}}^{(Z)}_{\text{full}}$已构造（`FG_完整同步方程_构造.md`），包含元素特定剖分$\mathcal{R}_Z$、归一化$E_{\text{bind}}^{(Z)}$、电子反馈$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$，通过非线性自洽方程求解，退化为平庸方程时给出壳层结构 |
+| 关联能 $E_c$ 的精确数值 | 🟢 平庸方程已实现，完整同步方程已构造 | 平庸方程（通用$A_4$代数骨架）已给出d波(Cr/Cu)增强$25\%$、s波(He)$E_c=0$，**无Hamiltonian对角化**。**完整同步方程**$\hat{\mathcal{S}}^{(Z)}_{\text{full}}$已构造（§18.2），包含元素特定剖分$\mathcal{R}_Z$、归一化$E_{\text{bind}}^{(Z)}$、电子反馈$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$，通过非线性自洽方程求解，退化为平庸方程时给出壳层结构 |
 | $m_N$ 从 GL(5) 涌现 | 🟡 **原则上可能，实践中待完成** | 见§13.3.1 |
 
 ### 13.3.1 $m_N$ 从 GL(5) 涌现的可能性
@@ -1473,7 +1473,7 @@ g波通道（$l=4$）被$A_4$截止禁戒，权重$1/5$民主重分配到4个允
    - 或Dotsenko-Fateev积分的有限$k$修正（screening charge贡献）
    - 或同步方程在有限$k$下的完整修正（曲率耦合）
 3. **全部从CFT代数计算**，无Hamiltonian矩阵构造，无对角化，无经验拟合参数
-4. **完整同步方程与平庸退化**：上述结果（s波$E_c=0$、d波25%增强）是**平庸方程**（通用$A_4$代数骨架）给出的。**完整同步方程** $\hat{\mathcal{S}}^{(Z)}_{\text{full}}|\Psi_Z\rangle = s_Z|\Psi_Z\rangle$ 包含元素特定的剖分 $\mathcal{R}_Z$ 和自组织数据，当忽略元素特定信息时退化为平庸方程。**完整同步方程的具体构造已完成**——元素特定曲率算符 + 电子反馈曲率 + 非线性自洽条件，详见 `FG_完整同步方程_构造.md`。平庸方程给出壳层结构和周期表，完整方程给出元素特定精确关联能。
+4. **完整同步方程与平庸退化**：上述结果（s波$E_c=0$、d波25%增强）是**平庸方程**（通用$A_4$代数骨架）给出的。**完整同步方程** $\hat{\mathcal{S}}^{(Z)}_{\text{full}}|\Psi_Z\rangle = s_Z|\Psi_Z\rangle$ 包含元素特定的剖分 $\mathcal{R}_Z$ 和自组织数据，当忽略元素特定信息时退化为平庸方程。**完整同步方程的具体构造已完成**（§18.2）——元素特定曲率算符 + 电子反馈曲率 + 非线性自洽条件。平庸方程给出壳层结构和周期表，完整方程给出元素特定精确关联能。
 
 ### 17.9 $A_4$结合律验证：锁定s,p,d,f，禁戒g
 
@@ -1841,15 +1841,59 @@ $$\boxed{\hat{\mathcal{S}}_k^{(Z)} = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}
 
 $$\hat{\mathcal{S}}^{(Z)} = \hat{\mathcal{S}}_{\text{nucleon}}^{(Z)} \otimes \hat{\mathbb{I}}_{U(1)} + \hat{\mathbb{I}}_{\text{nucleon}} \otimes \hat{\mathcal{S}}_{U(1)}(\hat{u})$$
 
-**完整同步方程与平庸退化**：
+**完整同步方程的构造**：
 
-$$\boxed{\hat{\mathcal{S}}^{(Z)}_{\text{full}}|\Psi_Z\rangle = s_Z|\Psi_Z\rangle}$$
+完整同步方程 $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$ 包含元素特定的剖分 $\mathcal{R}_Z$、曲率数据 $\hat{\delta}_v^{(Z)}$、自组织数据。**元素特定曲率算符的三个来源**：
 
-完整同步方程 $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$ 包含元素特定的剖分 $\mathcal{R}_Z$、曲率数据 $\hat{\delta}_v^{(Z)}$、自组织数据。当忽略元素特定剖分差异（取通用 $A_4$ 正4-单形极限，所有元素共享同一个嘉当矩阵），完整方程退化为已有的平庸方程：
+1. **几何信息** $\mathcal{R}_Z$：经典角亏 $\bar{\delta}_v^{(Z)}$（由边长 $\bar{L}_{ij}^{(Z)}$ 确定）+ 动力学矩阵形变 $D^{(Z)}$（边长不等 → $\lambda_k^{(Z)} \neq 4\sin^2\frac{k\pi}{10}$）
+2. **归一化信息** $E_{\text{bind}}^{(Z)}$：元素特定结合能，$\hbar\omega_k^{(Z)}/E_{\text{bind}}^{(Z)}$ 保留元素特定能量标度
+3. **自组织信息** $\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$：电子反馈曲率（关键新增项）
 
-$$\hat{\mathcal{S}}^{(Z)}_{\text{full}} \;\xrightarrow{\text{忽略元素特定信息}}\; \hat{\mathcal{S}}_{\text{trivial}}, \quad \hat{\mathcal{S}}_{\text{trivial}}\Psi = n\Psi \;\text{（通用 $A_4$ 代数骨架）}$$
+**完整曲率算符**：
 
-平庸方程给出壳层结构和周期表（$Z_{\max}=118$），但抹除了元素特定信息——关联能等元素特定物理量需要完整同步方程。**完整同步方程的具体构造已完成**——元素特定曲率算符包含三个来源（几何信息 $\mathcal{R}_Z$、归一化信息 $E_{\text{bind}}^{(Z)}$、自组织信息 $\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$），通过非线性自洽方程求解，退化关系已证明。详见 `FG_完整同步方程_构造.md`。
+$$\boxed{\hat{\delta}_v^{(Z)}[\rho_Z] = \bar{\delta}_v^{(Z)} + \sum_k \frac{\hbar\omega_k^{(Z)}}{E_{\text{bind}}^{(Z)}}|v_k^{(Z)}(v)|^2\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right) + \Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]}$$
+
+**电子反馈曲率**：
+
+$$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z] = \sum_{v'} K_{vv'}^{(Z)} \rho_Z(v'), \quad K_{vv'}^{(Z)} = \frac{\alpha}{\beta} \cdot \frac{1}{|\bar{X}_v^{(Z)} - \bar{X}_{v'}^{(Z)}|} \cdot \mathcal{G}_{vv'}$$
+
+其中 $\rho_Z(v')$ 是顶点 $v'$ 附近的电子密度，$K_{vv'}^{(Z)}$ 是电子-核子耦合核（$\alpha$ 为精细结构常数，$\mathcal{G}_{vv'}$ 为几何因子）。电子分布通过电磁相互作用改变核子有效曲率。
+
+**完整同步方程（非线性自洽）**：
+
+$$\boxed{\hat{\mathcal{S}}^{(Z)}_{\text{full}}[\rho_Z]|\Psi_{Z,i}\rangle = s_{Z,i}|\Psi_{Z,i}\rangle, \quad \rho_Z(v) = \sum_{i \in \text{occ}} |\Psi_{Z,i}(v)|^2}$$
+
+$$\hat{\mathcal{S}}^{(Z)}_{\text{full}}[\rho_Z] = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(Z)}[\rho_Z]}$$
+
+$\hat{\mathcal{S}}^{(Z)}_{\text{full}}$ 依赖电子密度 $\rho_Z$，$\rho_Z$ 依赖解 $\Psi_{Z,i}$——非线性自洽方程。非线性来源：(1) 几何非线性（$\sqrt{1-\beta\hat{\delta}_v}$）；(2) 自洽非线性（$\hat{\delta}_v^{(Z)}[\rho_Z]$ 依赖 $\rho_Z$）。平庸方程只保留几何非线性，忽略自洽非线性。
+
+**退化关系**（两个层面）：
+
+| 层面 | 内容 | 退化性质 |
+|:---|:---|:---|
+| **代数结构** | 本征群分类、壳层结构、Madelung规则、$Z_{\max}=118$ | **精确不变**（$A_4$ Coxeter数 $h=5$ 是拓扑不变量） |
+| **数值** | 本征值 $s_{Z,i}$、增强因子、关联能 | **零阶近似退化**（三重近似） |
+
+**数值退化条件**（三重近似）：
+1. **Born-Oppenheimer近似**：$\Delta\hat{\delta}_v^{\text{e-n}} \approx 0$（$m_p/m_e \approx 1836 \gg 1$，核子不感受电子反馈。注意这不是 $\rho_Z \to 0$，而是质子质量主导使电子反馈可忽略）
+2. **等边近似**：$\bar{L}_{ij}^{(Z)} \approx \bar{L}$（$A_4$ 正4-单形零阶近似）
+3. **通用归一化近似**：$E_{\text{bind}}^{(Z)} \approx E_{\text{bind}}$（核子结合能变化缓慢）
+
+$$\hat{\mathcal{S}}^{(Z)}_{\text{full}} \;\xrightarrow[\text{等边 + 通用归一化}]{\text{Born-Oppenheimer}}\; \hat{\mathcal{S}}_{\text{trivial}} \quad \text{（数值层面，零阶近似）}$$
+
+**平庸方程有效性的物理依据**：代数结构结果（$Z_{\max}=118$、壳层结构）**精确正确**（由 $A_4$ Coxeter数确定，不受三重近似影响）；数值结果（Cr/Cu增强25%）**零阶近似下正确**；元素特定关联能**需要完整方程**。
+
+**关联能计算**：
+
+$$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z), \quad f_{\text{full}}(Z) = 1 + \frac{\sum_{i \in \text{occ}} (s_{Z,i} - n_i)}{\sum_{i \in \text{occ}} n_i}$$
+
+$\rho_Z$ 从平庸方程导出（如Cr/Cu的 $5/4$），$f_{\text{full}}(Z)$ 从完整方程本征值差异导出。退化时 $f_{\text{full}}(Z) \to 1$。
+
+**迭代求解**：(1) 从平庸方程解初始化 $\rho_Z^{(0)}$；(2) 构造完整曲率算符 $\hat{\delta}_v^{(Z)}[\rho_Z^{(n)}]$；(3) 解完整同步方程得 $\Psi_{Z,i}^{(n+1)}$；(4) 更新 $\rho_Z^{(n+1)}$；(5) 检查收敛。收敛依据：$\Delta\hat{\delta}_v^{\text{e-n}} / \hat{\delta}_v^{(1)} \sim \alpha / \alpha_s \ll 1$。
+
+**与Hartree-Fock/DFT的结构类比**：平庸方程↔Thomas-Fermi（平均场），完整方程↔Kohn-Sham DFT（自洽场）。CQM优势：几何统一（电子和核子在同一Regge框架）、代数严格（离散化后纯代数）、无量纲优雅（归一化后纯代数运算）。
+
+**边长 $\bar{L}_{ij}^{(Z)}$ 的来源**：边长 = 核子间距离，由QG层同步方程（$\hat{\mathcal{S}}_0$: GL(5)→SU(5)紧化）的输出给出。层级结构：$\hat{\mathcal{S}}_0 \to \text{核子分布} \to \bar{L}_{ij}^{(Z)} \to \hat{\delta}_v^{(Z)} \to \hat{\mathcal{S}}^{(Z)}_{\text{full}}$。QG层完整同步方程是开放问题，当前可从核物理实验输入（半第一性）。
 
 **步骤3：同步方程 → 本征群**
 
@@ -2160,7 +2204,7 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 |:---|:---|:---|
 | $E_h$ | $\alpha^2 m_e c^2$（层次3） | $\alpha$有一阶近似，$m_e$有涌现机制（§19.4） |
 | $\rho_Z$ | 平庸同步方程（§17.8.6） | ✅ 已完成（Cr/Cu增强25%） |
-| $f_{\text{full}}(Z)$ | 完整同步方程（§18.2） | ✅ 已构造（`FG_完整同步方程_构造.md`） |
+| $f_{\text{full}}(Z)$ | 完整同步方程（§18.2） | ✅ 已构造（§18.2） |
 
 **层次总结**：
 
@@ -2218,7 +2262,7 @@ $\Lambda \sim 10^{116}$ 的物理意义：这是耦合空间的能量截断标�
 $m_e/m_N$ 的代数涌现使层次3和层次4的标度恢复原则上完成：
 
 - **层次3**：$E_h = \alpha^2 m_e c^2 = \alpha^2 (m_e/m_N) m_N c^2$，其中 $\alpha$ 从 $A_4$ 导出，$m_e/m_N$ 从§19.4涌现，$m_N$ 是公理，$c$ 从GL(5)涌现
-- **层次4**：$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$，标度因子 $E_h$ 原则上已确定，$f_{\text{full}}(Z)$ 从完整同步方程给出（已构造，`FG_完整同步方程_构造.md`）
+- **层次4**：$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$，标度因子 $E_h$ 原则上已确定，$f_{\text{full}}(Z)$ 从完整同步方程给出（已构造，§18.2）
 
 ### 19.5 量纲恢复的严格计算方法
 
@@ -2258,7 +2302,7 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 
 **计算步骤**：
 1. 从平庸同步方程计算增强因子 $\rho_Z$（已完成，如Cr/Cu的 $5/4$）
-2. 从完整同步方程计算元素特定因子 $f_{\text{full}}(Z)$（已构造，`FG_完整同步方程_构造.md`）
+2. 从完整同步方程计算元素特定因子 $f_{\text{full}}(Z)$（已构造，§18.2）
 3. 从层次3标度恢复计算Hartree尺度 $E_h = \alpha^2 m_e c^2 = \alpha^2 (2\pi C/L_u) m_N c^2$
 4. $E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$
 
@@ -2299,7 +2343,7 @@ $$\hat{\mathcal{S}}^{(Z)}_{\text{full}} \xrightarrow{\text{忽略元素特定信
 
 $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{忽略元素特定信息}} \eta = \frac{\hbar\omega_0}{E_{\text{bind}}}$$
 
-**结论**：完整同步方程的问题本质上是在问：**FG纤维丛截断处的量纲归一化如何保留元素特定的能量标度信息？** 当前归一化用通用 $E_{\text{bind}}$，完整归一化需要元素特定的 $E_{\text{bind}}^{(Z)}$，而这依赖元素特定的剖分 $\mathcal{R}_Z$ 和自组织数据。**完整同步方程的具体构造已给出**——通过元素特定曲率算符 + 电子反馈曲率 + 非线性自洽条件实现，详见 `FG_完整同步方程_构造.md`。
+**结论**：完整同步方程的问题本质上是在问：**FG纤维丛截断处的量纲归一化如何保留元素特定的能量标度信息？** 当前归一化用通用 $E_{\text{bind}}$，完整归一化需要元素特定的 $E_{\text{bind}}^{(Z)}$，而这依赖元素特定的剖分 $\mathcal{R}_Z$ 和自组织数据。**完整同步方程的具体构造已给出**（§18.2）——通过元素特定曲率算符 + 电子反馈曲率 + 非线性自洽条件实现。
 
 ### 19.7 量纲归一化-恢复的全景图
 
@@ -2343,11 +2387,11 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
 | 层次结构 | 4个层次：核子标度→电磁标度→原子能级→关联能 | ✅ §19.3 |
 | $m_e/m_N$ 涌现 | $m_e/m_N = 2\pi C/L_u$，从归一化结构代数涌现 | ✅ §19.4 |
 | 计算方法 | 3种方法：代数-标度分离、η-标度恢复、增强因子-绝对值分离 | ✅ §19.5 |
-| 完整同步方程 | 需要元素特定归一化 $E_{\text{bind}}^{(Z)}$，保留元素特定能量标度 | ✅ 已构造（`FG_完整同步方程_构造.md`） |
+| 完整同步方程 | 需要元素特定归一化 $E_{\text{bind}}^{(Z)}$，保留元素特定能量标度 | ✅ 已构造（§18.2） |
 
 **CQM的能量处理能力**：CQM原则上能处理所有层次的能量。当前：
 - 层次1-2已成功（$G_N, \Lambda_{\text{QCD}}, \alpha$ 等）
 - 层次3有涌现机制（$m_e/m_N = 2\pi C/L_u$），$L_u$ 精确值待定
-- 层次4需要完整同步方程（元素特定归一化）——已构造（`FG_完整同步方程_构造.md`）
+- 层次4需要完整同步方程（元素特定归一化）——已构造（§18.2）
 
 **参数计数**：基本标度1个（$m_N$ ← 物质先在公理）+ 经验拟合参数0个。若 $L_u$ 从GL(5)紧化条件确定，$m_e/m_N$ 完全从代数涌现，层次3标度恢复完全闭合。
