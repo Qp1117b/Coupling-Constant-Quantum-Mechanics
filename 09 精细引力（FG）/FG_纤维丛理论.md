@@ -69,13 +69,62 @@ $$\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\te
 
 上层内禀角亏是下层角亏的组成部分。
 
+### 3.3 伴丛运动方程形式化
+
+主丛 $P(M_\ell, G_\ell)$ 的**伴丛**（adjoint bundle）：
+
+$$\boxed{\text{ad}(P) = P \times_{G_\ell} \mathfrak{g}_\ell \;\xrightarrow{\pi}\; M_\ell}$$
+
+其中 $\mathfrak{g}_\ell = \text{Lie}(G_\ell)$，$G_\ell$ 通过伴随表示 $\text{Ad}: G_\ell \to \text{Aut}(\mathfrak{g}_\ell)$ 作用。**结构群 $G_\ell$ 必须是紧致李群**（§4.0.1），否则伴随表示非幺正、Killing形式非负定，伴丛上的几何失去正定性。
+
+**伴丛上的几何量**：
+
+| 量 | 数学定义 | 空间 | 物理意义 |
+|:---|:---|:---|:---|
+| 联络 $\mathcal{A}$ | $G_\ell$-联络 | $\Omega^1(M_\ell) \otimes \text{ad}(P)$ | Regge几何生成 |
+| **伴丛曲率** $F$ | $d\mathcal{A} + \mathcal{A} \wedge \mathcal{A}$ | $\Omega^2(M_\ell) \otimes \text{ad}(P)$ | 同步场强 |
+| 外协变导数 $D$ | $d + [\mathcal{A}, \cdot]$ | $\Omega^k \otimes \text{ad}(P) \to \Omega^{k+1} \otimes \text{ad}(P)$ | 规范协变 |
+| 同步场 $\Phi$ | 伴丛截面 | $\Gamma(\text{ad}(P))$ | 物质分布 |
+| 同步流 $J_\Phi$ | $J_\Phi = \frac{\delta S_{\text{matter}}}{\delta \mathcal{A}}$ | $\Omega^1(M_\ell) \otimes \text{ad}(P)$ | 物质源 |
+
+**伴丛运动方程**（Yang-Mills型）：
+
+$$\boxed{D * F = *J_\Phi}$$
+
+物理意义：
+- **左端 $D * F$**：伴丛曲率的协变散度，描述同步场强的规范协变变化
+- **右端 $*J_\Phi$**：同步场 $\Phi$（物质分布）生成的流，是同步场强的源
+- **方程整体**：物质分布（核子量子振荡）通过伴丛曲率决定同步场强，同步场强反过来约束物质分布——**自洽方程**
+
+**Bianchi恒等式**（几何自洽性）：
+
+$$D F = 0 \quad \iff \quad [\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} = 0 \quad \text{（Jacobi恒等式）}$$
+
+伴丛曲率的协变外导数为零，对应Kac-Moody代数的Jacobi恒等式（§9.3纤维丛与CFT严格对应）。这是同步方程相容性的几何保证。
+
+**同步方程与伴丛运动方程的关系**：
+
+| | 伴丛运动方程 | 同步方程 |
+|:---|:---|:---|
+| **方程** | $D * F = *J_\Phi$ | $\hat{\mathcal{S}}_k \Psi_k = s_k \Psi_k$ |
+| **类型** | Yang-Mills型场方程 | 本征值方程 |
+| **空间** | $\Omega^1(M_\ell) \otimes \text{ad}(P)$ | $\Gamma(\text{ad}(P))$ |
+| **角色** | 曲率-物质自洽关系 | 谱分解（本征群分类） |
+| **关系** | 运动方程的解给出允许的曲率配置 | 本征值方程对解空间做谱分解 |
+
+同步方程是伴丛运动方程的**谱分解**：运动方程确定允许的曲率配置，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1 - \beta \hat{\delta}_v^{(k)}}$ 对这些配置做本征值分解，本征值 $s_k$ 分类本征群 $G_k$。
+
 ## 4. 同步算符：纤维丛的谱算符
 
-### 4.0 核心问题：约束→同步方程→本征群→耦合常数
+### 4.0 核心问题：底空间+约束→同步方程→本征群→耦合常数
 
-FG的核心问题之一是：**给定约束（核子量子振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群，本征群对应的耦合常数就是涨落耦合常数指定的。**
+FG的核心问题之一是：**给定底空间（Regge剖分）+约束（核子量子振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群（自守形式），本征群对应的耦合常数就是涨落耦合常数指定的。**
 
-$$\boxed{\text{约束} \;\xrightarrow{\text{注入}}\; \hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k \;\longrightarrow\; G_k \;\longrightarrow\; n_k = \text{涨落耦合常数}}$$
+$$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符）}} + \underbrace{G_k}_{\text{对称性}} \;\Rightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
+
+**底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
+
+**GL(n) 由底空间指定（发生学顺序强制）**：标准数学构造中 $GL(n)$ 和 $\Gamma$ 是输入，底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM从几何反推，Regge底空间提供离散骨架（离散对称群可直接定义），连续群 $GL(n)$ 在连续极限或额外局部齐性假设下显现。底空间对 $GL(n)$ 的指定分三层：(1) **n值锁定**——4-单纯形五顶点组合结构锁定 $n=5$（CQM发生学公理，无外部文献先例，明示标注）；(2) **形式空间约束**——骨架上同调承载自守形式空间（算术锚定版本中此层为 Eichler–Shimura 型定理）；(3) **具体形式筛选**——由作用量算符（同步算符）本征筛选完成，唯一性由强多重性一定理保障。物理主丛不能指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面，"底空间指定"与"丛模空间指定"在此合一。详见 `FG_核心理论.md` §3.0。
 
 约束链：
 
@@ -95,13 +144,21 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
 - **耦合常数**：$g_k = \alpha\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
-### 4.0.1 SU(5)破缺→A_4→3空间群+时间群→4耦合常数
+### 4.0.1 SU(5)破缺→A_4→4紧致本征群→4耦合常数
 
-完整框架就是SU(5)破缺。SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，破缺时$A_4$嘉当矩阵（$4\times 4$）的4个本征值对应4个本征群：3个空间群（$U(1)$、$SU(2)$、$SU(3)$）+ 1个时间群：
+SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，破缺产生两个独立效应：
 
-$$\boxed{\text{SU}(5) \;\xrightarrow{\text{破缺}}\; A_4 \;\xrightarrow{\text{4本征值}}\; \underbrace{U(1) \times SU(2) \times SU(3)}_{\text{3空间群}} \times \underbrace{G_{\text{time}}}_{\text{时间群}} \;\xrightarrow{\text{4耦合常数}}\; \alpha}$$
+**规范破缺**（不属于本征群效应，三个空间群直积，全紧致，**时间内禀没有群**）：
 
-**精细结构常数 $\alpha$ 来自SU(5)破缺后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
+$$\text{SU}(5) \;\xrightarrow{\text{规范破缺}}\; U(1) \times SU(2) \times SU(3) \;\xrightarrow{g_{U(1)}}\; \alpha$$
+
+**本征群效应**（同步方程本征群，全紧致）：
+
+$$\boxed{A_4\text{（}4\times4\text{嘉当矩阵）} \;\xrightarrow{\text{4本征值}}\; \{G_k = SU(2)\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
+
+四个本征群 $G_k = SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
+
+**精细结构常数 $\alpha$ 来自SU(5)规范破缺后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
 
 ### 4.1 耦合常数算符 $\hat{u}$
 

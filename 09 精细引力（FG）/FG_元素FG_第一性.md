@@ -114,7 +114,7 @@ $$\boxed{\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}}$$
 
 $$\boxed{\hat{v}_\tau = \sqrt{1 - \beta\hat{\delta}_v}}$$
 
-$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$ 由系统尺寸严格确定。**FG核心机制**：角亏 $\neq$ 几何吸引，而是固有时流速的因果约束。
+$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$ 由系统尺寸严格确定。**FG核心机制**：角亏 $\neq$ 几何吸引，而是固有时流速的因果约束。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。$\beta$ 的物理身份因此是角亏到牛顿引力势的比例常数，原则上由Regge剖分的牛顿极限定值，从拟合参数降格为可推导量（定值计算待完成）。
 
 ### 5.2 耦合动量
 
@@ -137,6 +137,8 @@ $$\boxed{\hat{u} = \ln \hat{g}, \quad [\hat{u}, \hat{p}_u] = i}$$
 $$\Delta u \cdot \Delta p_u \geq \frac{1}{2}$$
 
 耦合常数 $g$ 有**本征态** $|u\rangle$，满足 $\hat{u}|u\rangle = u|u\rangle$，$\langle u|u'\rangle = \delta(u-u')$。
+
+> **定位注（定义域约束）**：海森堡代数 $[\hat{u},\hat{p}_u]=i$ 是一维的——$u=\ln g$ 作为全局单坐标定义，当且仅当结构群是一维阿贝尔群（$S^1$ 及其商 $U(1)/\mathbb{Z}_n$；$U(1)/\mathbb{Z}_n\cong S^1$ 经覆盖映射 $z\mapsto z^n$，成员间差别是表示内容：权 $q$ 表示当且仅当 $n\mid q$ 时下降）。非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对。因此耦合常数算符的合法定义域是电磁因子 $U(1)$（内部性+阿贝尔性双重强制），$SU(2)$、$SU(3)$ 因子的耦合不经海森堡代数量子化，而是经 Casimir 阶梯 $g_k=\alpha\exp(-(n_k-n_1)/n_1)$（单圈重整化群跑动形式）从 $U(1)$ 锚导出。见 `FG_核心理论.md` §4.1。
 
 **Dirac约束**（共形自举方程的CQM具体化，详见 §8.5）：
 
@@ -198,6 +200,8 @@ $$\chi_0: \mathbb{A}^\times/\mathbb{Q}^\times \to \mathbb{C}^\times, \quad \chi_
 
 $$\boxed{L(s, \chi_0) = \zeta(s)}$$
 
+**自守形式的唯一性**：一般而言自守形式可能不唯一，需指定权（K-类型）、Hecke本征特征等额外数据。Hecke本征时由强多重性一定理保证唯一（至多差标量）。GL(1)平凡Hecke特征标是其最简单特例。
+
 ### 7.2 质数势的作用（共振选择）
 
 $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}|u = \ln p\rangle\langle u = \ln p|$$
@@ -241,20 +245,110 @@ $l_k$ 由 $A_4$ 嘉当矩阵本征值索引 $k-1$ 唯一给出，不是输入参
 
 **结构群**：
 
-$$\boxed{G_k = \begin{cases} SU(2) & l=0 \\ SO(3)\times SU(2) & l=1,2,3 \end{cases}}$$
+$$\boxed{G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}}$$
+
+其中 $SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $SU(2)_{\text{orb}}^{(0)}$ 为平凡表示，$G_1 = SU(2)_{\text{spin}} \cong SU(2)$。
 
 | $k$ | $l_k$ | $n_k = C_k$（定义） | 本征群 $G_k$ | 壳层 |
 |:---:|:---:|:---:|:---|:---|
-| 1 | 0 | $3/4$ | $SU(2)$ | s |
-| 2 | 1 | $11/4$ | $SO(3)\times SU(2)$ | p |
-| 3 | 2 | $27/4$ | $SO(3)\times SU(2)$ | d |
-| 4 | 3 | $51/4$ | $SO(3)\times SU(2)$ | f |
+| 1 | 0 | $3/4$ | $SU(2)_{\text{spin}}$ | s |
+| 2 | 1 | $11/4$ | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | p |
+| 3 | 2 | $27/4$ | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | d |
+| 4 | 3 | $51/4$ | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | f |
 
 **动力学公式成为约束方程**（不是耦级的定义）：
 
 $$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$$
 
 此约束方程锁定声子占据数 $N_k$（详见 §9.5），将动力学自由度消除。耦级由群论定义，动力学公式约束物理参数，二者角色分离。
+
+### 8.1.1 四个本征群的紧致李群证明
+
+**定理**：CQM同步方程的四个本征群 $G_k$（$k=1,2,3,4$）均为**紧致连通李群**。
+
+**证明**：
+
+Casimir算符分解为轨道部分与自旋部分：
+
+$$C_k = \underbrace{l_k(l_k+1)}_{\text{轨道}\, SU(2)_{\text{orb}}} + \underbrace{\frac{3}{4}}_{\text{自旋}\, SU(2)_{\text{spin}}}$$
+
+其中 $3/4 = s(s+1)$，$s=1/2$。因此完整对称群为：
+
+$$G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
+
+| $k$ | $l_k$ | $G_k$ | 紧致性 | 流形 |
+|:---:|:---:|:---:|:---:|:---|
+| 1 | 0 | $SU(2)_{\text{spin}}$ | ✓ | $S^3$ |
+| 2 | 1 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
+| 3 | 2 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
+| 4 | 3 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
+
+紧致性逐条验证：
+- $SU(2) \cong S^3$（三维球面）：**紧致连通**（Heine-Borel：$S^3 \subset \mathbb{R}^4$ 闭且有界）
+- $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$：**紧致**（紧致群的直积紧致，Tychonoff定理）
+
+**CFT框架的数学前提**：Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 的中心扩展构造。以下结构均要求紧致李群：
+
+| 数学结构 | 紧致性要求 | CQM中的角色 |
+|:---|:---|:---|
+| Kac-Moody代数 $\widehat{\mathfrak{g}}_k$ | $\mathfrak{g}$ 紧致 → 水平 $k$ 正整数 → 幺正表示 | §17.5 壳层OPE |
+| Verlinde公式 $N_{ij}^p = \sum_s \frac{S_{is}S_{js}S_{ps}^*}{S_{0s}}$ | $G$ 紧致 → $S$-矩阵幺正 → 融合系数非负整数 | §17.6 融合规则 |
+| Sugawara构造 $T(z) = \frac{1}{2(k+h^\vee)}\sum :J^a J^a:$ | $\mathfrak{g}$ 紧致 → Killing形式负定 → $T(z)$ 正定 | §17.4 关联能 |
+| Shapovalov形式 | $\mathfrak{g}$ 紧致 → 形式正定 → 范数非负 | §17.7 OPE系数 |
+
+**结论**：四个本征群全紧致 → CFT框架（Kac-Moody + Verlinde + Sugawara + Shapovalov）数学严格。若本征群非紧致（如 $SL(2,\mathbb{R})$），则水平 $k$ 可负、$S$-矩阵非幺正、融合系数可负，CFT框架失效。
+
+### 8.1.2 元素FG的伴丛形式化
+
+元素FG的纤维丛结构为**主丛+伴丛**双层架构：
+
+**主丛**（规范结构）：
+
+$$P(M_{\text{FG}},\; G_k) \;\xrightarrow{\pi}\; M_{\text{FG}}$$
+
+其中 $M_{\text{FG}}$ 是Regge剖分的离散底空间（核子分布几何），$G_k$ 是紧致结构群（§8.1.1）。
+
+**伴丛**（曲率与同步场的载体）：
+
+$$\boxed{\text{ad}(P) = P \times_{G_k} \mathfrak{g}_k \;\xrightarrow{\pi}\; M_{\text{FG}}}$$
+
+其中 $\mathfrak{g}_k = \text{Lie}(G_k)$ 是 $G_k$ 的李代数，$G_k$ 通过伴随表示 $\text{Ad}: G_k \to \text{Aut}(\mathfrak{g}_k)$ 作用。
+
+**伴丛上的几何量**：
+
+| 几何量 | 数学定义 | 所在空间 | 物理意义 |
+|:---|:---|:---|:---|
+| 联络 $\mathcal{A}$ | $G_k$-联络 | $\Omega^1(M_{\text{FG}}) \otimes \text{ad}(P)$ | Regge几何生成的平行移动 |
+| **伴丛曲率** $F$ | $d\mathcal{A} + \mathcal{A} \wedge \mathcal{A}$ | $\Omega^2(M_{\text{FG}}) \otimes \text{ad}(P)$ | **同步场的场强** |
+| 和乐 $W(\gamma)$ | $\mathcal{P}\exp\oint_\gamma \mathcal{A}$ | $G_k$ | 同步相位 |
+| 同步场 $\Psi_k$ | 伴丛截面 | $\Gamma(\text{ad}(P))$ | 同步本征态 |
+| **同步算符** $\hat{\mathcal{S}}_k$ | 曲率泛函 | $\text{End}(\Gamma(\text{ad}(P)))$ | **谱算符** |
+
+**一个联络生成两种曲率**（底空间曲率与伴丛曲率分离）：
+
+$$\mathcal{A} \longrightarrow \begin{cases} \text{底空间曲率：Regge角亏 } \delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta & \text{进入不确定性关系} \\ \text{伴丛曲率：} F = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A} & \text{进入运动方程} \end{cases}$$
+
+**伴丛运动方程**（Yang-Mills型，同步场为源）：
+
+$$\boxed{D * F = *J_\Phi}$$
+
+其中：
+- $D = d + [\mathcal{A}, \cdot]$：伴丛上的外协变导数
+- $F \in \Omega^2(M_{\text{FG}}) \otimes \text{ad}(P)$：伴丛曲率（2-形式）
+- $*$：Regge底空间上的Hodge星算符
+- $J_\Phi \in \Omega^1(M_{\text{FG}}) \otimes \text{ad}(P)$：同步场 $\Phi$ 生成的流
+
+**同步方程是伴丛上的本征值方程**：
+
+$$\boxed{\hat{\mathcal{S}}_k \Psi_k = s_k \Psi_k, \quad \Psi_k \in \Gamma(\text{ad}(P)), \quad \hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1 - \beta \hat{\delta}_v^{(k)}}}$$
+
+其中 $\hat{\delta}_v^{(k)}$ 是伴丛曲率的量子算符（Regge角亏的量子化 + 位置涨落）。同步本征态 $\Psi_k$ 是伴丛截面，同步本征值 $s_k$ 是伴丛谱。
+
+**Bianchi恒等式**（伴丛曲率的自洽性）：
+
+$$D F = 0 \quad \text{（Jacobi恒等式的几何对应）}$$
+
+此恒等式保证同步方程的相容性：伴丛曲率的协变外导数为零，对应Kac-Moody代数的Jacobi恒等式（§9.3纤维丛与CFT严格对应）。
 
 ### 8.2 为什么没有g壳层（$l=4$）？——代数必然
 
@@ -548,11 +642,11 @@ $$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\f
 - $L_u > 2\pi C \cdot C_4 \approx 1.85$（保证所有 $\delta_v^{(k)} > 0$）
 - $\beta, E_{\text{bind}}/\hbar\omega_0$ 由核物理确定，约束方程验证 $N_k \in \mathbb{Z}_{\geq 0}$
 
-**映射唯一性**：
+**映射唯一性（方向性）**：
 
-$$G_k \xleftrightarrow{l_k = k-1} n_k = C_k \xleftrightarrow{g_k = \alpha\exp(-(n_k-n_1)/n_1)} g_k$$
+$$\underbrace{A_4\text{ 根系（}h=5\text{）}}_{\text{底空间}} \;\Rightarrow\; G_k \;\xrightarrow{l_k = k-1}\; n_k = C_k \;\xrightarrow{g_k = \alpha\exp(-(n_k-n_1)/n_1)}\; g_k$$
 
-三者一一对应。本征群由嘉当矩阵唯一确定，耦级由 Casimir 定义唯一确定，耦合常数由耦级唯一确定。声子占据数 $N_k$ 由约束方程锁定，不再是自由参数。
+链条前向每步唯一：本征群由嘉当矩阵（$A_4$ Coxeter数）唯一确定，耦级由 Casimir 定义唯一确定，耦合常数由耦级唯一确定。$g_k$ 代数式可逆，但逆方向仅是数值反解，不承担由本征值反推群的角色——逆谱问题（等谱不同构：存在谱完全相同而不等价的群/空间）保证本征值谱不能唯一确定群。声子占据数 $N_k$ 由约束方程锁定，不再是自由参数。
 
 ### 9.6 $\omega_0$ 与 $E_{\text{bind}}$ 从 $A_4$ 严格导出
 
@@ -625,7 +719,7 @@ $$E_{\text{scale}} = \frac{\hbar\omega_0}{\eta} = E_{\text{bind}} = \frac{\hbar 
 
 $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$
 
-**正确结构**（修正文档异常）：
+**正确结构**：
 - 不是GL(1)+GL(4)+GL(5)直和
 - 而是**单个GL(5)自守表示**
 - GL(1)和GL(4)/O(5)是其**子结构**（中心特征和$K$-type）
@@ -721,12 +815,12 @@ Regge剖分 R = (V,E,F)
 | 质数势 = 投影算符叠加 $\sum_p\frac{\ln p}{\sqrt{p}}\delta(\hat{u}-\ln p)$ | **严格**（$\hat{u}$的算符函数） |
 | 紧化 = $\hat{u}$的谱边界条件 | **严格联立求解** |
 | GL(1)平凡特征标 ↔ $\zeta(s)$ | **严格**（类域论） |
-| 耦级 → 本征群 $G_k$ | **结构严格**（$A_4$ Coxeter数），耦级 $n_k \equiv C_k$ 是同步的物理定义 |
+| 底空间 → 本征群 $G_k$ → 耦级 $n_k$ | **结构严格**（$A_4$ Coxeter数分类本征群，耦级 $n_k \equiv C_k$ 是 Casimir 定义的同步物理定义；不由本征值反推群——逆谱问题） |
 | CFT OPE：同步⊗耦合→群本征态 | **严格**（共形固定点OPE），OPE系数由大 $k$ 展开给出（§17.7），Dirac约束 = 共形自举方程的CQM具体化（纤维丛文档§9.6严格证明） |
 | 共形自举 = OPE结合律 = 共形自洽 | **严格**（CFT自洽性条件），$A_4$结合律锁定s,p,d,f禁戒g |
 | 耦合常数→Casimir→$l_k$→$N_k^{\max}$ | **严格**（$g_k \to C_k \to l_k \to 2(2l_k+1)$），$n_k = C_k$ 是物理定义，Kac-Moody水平 $k(g_k) = 4\pi/g_k^2 - 2$（§17.5），fusion rules + OPE系数（§17.6-§17.7） |
 | GRH(GL(4)) + GRH(GL(5)) | **数学前提**（未证明） |
-| GL(1)+GL(4)+GL(5)直和 | **文档异常**，正确为GL(5)单层表示 |
+| GL(1)+GL(4)+GL(5)直和 | 非直和，正确为GL(5)单层表示 |
 
 ### 13.1 致命缺口
 
@@ -738,8 +832,8 @@ Regge剖分 R = (V,E,F)
 |:---|:---|
 | **Madelung规则 $n+l$** | 共形维度 $h = n + l$（Kac-Moody descendant level + 角动量），CFT fusion rules给出 $n \geq l+1$，$A_4$给出截止 $h_{\max} = \text{tr}(C_{A_4}) = 2r = 8$ |
 | **耦级→Casimir正则化** | $n_k \equiv C_k$ 是同步的物理定义（同步成本=对称性强度） |
-| **耦级重标度** | �耦级由群论定义 $n_k = C_k = O(1)$。约束方程+自洽条件联立求解：$L_u$由紧化U(1)周长确定、$\beta=\frac{1}{4\pi}\ln(L/a)$由系统尺寸确定、$\eta$由自洽方程严格确定、$\{N_k\}$由整数条件唯一锁定（§9.5-§9.6）。电子结构只依赖无量纲比值$\eta$，不需绝对标度 |
-| **耦级→群映射唯一性** | $G_k \leftrightarrow n_k \leftrightarrow g_k$ 三者一一对应，声子占据数 $N_k$ 由约束方程锁定 |
+| **耦级重标度** | 耦级由群论定义 $n_k = C_k = O(1)$。约束方程+自洽条件联立求解：$L_u$由紧化U(1)周长确定、$\beta=\frac{1}{4\pi}\ln(L/a)$由系统尺寸确定、$\eta$由自洽方程严格确定、$\{N_k\}$由整数条件唯一锁定（§9.5-§9.6）。电子结构只依赖无量纲比值$\eta$，不需绝对标度 |
+| **底空间→群→耦级链条唯一性** | 底空间 $A_4$ 根系 $\Rightarrow G_k$（Coxeter数分类）$\Rightarrow n_k = C_k$（Casimir 格）$\Rightarrow g_k$（重整化群跑动形式），前向每步唯一；由本征值反推群受逆谱问题（等谱不同构）限制，不作为推导方向。声子占据数 $N_k$ 由约束方程锁定 |
 | **周期表 $Z_{\max}=118$** | $h_{\max}=\text{tr}(C_{A_4})=2r=8$ + fusion rules $n \geq l+1$ → 7周期 → 118元素 |
 | **$n_{\max}$ 群论证明** | $h_{\max} = \text{tr}(C_{A_4}) = 2r = 8$（嘉当矩阵迹 = 总连接强度），$n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7$ |
 | **径向波函数代数结构** | 节点数 $= n-l-1$ = descendant level（CFT代数必然），$R_{nl}(r) \leftrightarrow \mathcal{F}_{n,l}(z)$（指数映射+合流极限），详见§17.11 |
@@ -1049,7 +1143,7 @@ $$\boxed{k(g) = \frac{4\pi}{g^2} - h^\vee}$$
 
 #### 17.5.2 CQM中各壳层的Kac-Moody水平
 
-SU(5)破缺为GL(1)×GL(2)×GL(3)后，各壳层的Kac-Moody代数与对偶Coxeter数：
+SU(5)规范破缺给出**三个空间群直积** $U(1)\times SU(2)\times SU(3)$（电磁$U(1)$、弱$SU(2)$、强$SU(3)$），**时间内禀没有群**。三者均为**紧致李群**。破缺后各壳层的Kac-Moody代数与对偶Coxeter数：
 
 | 壳层 | 规范群 | $\dim\mathfrak{g}$ | $h^\vee$ | 耦合常数 $g_k$ |
 |:---:|:---:|:---:|:---:|:---|
@@ -1058,7 +1152,7 @@ SU(5)破缺为GL(1)×GL(2)×GL(3)后，各壳层的Kac-Moody代数与对偶Coxet
 | d ($l=2$) | $SU(2)$ | 3 | 2 | $g_3 = 3.35\times10^{-4}\,\alpha$ |
 | f ($l=3$) | $SU(2)$ | 3 | 2 | $g_4 = 1.13\times10^{-7}\,\alpha$ |
 
-**说明**：SU(5)破缺后，每个壳层的角动量部分由 $SU(2)$ Kac-Moody代数描述（轨道角动量的仿射扩展），$h^\vee = 2$。GL(1)给出U(1)荷部分（自旋-轨道分离），GL(3)给出规范结构部分（不影响轨道OPE）。
+**说明**：SU(5)规范破缺给出三个空间群直积 $U(1)\times SU(2)\times SU(3)$，时间内禀没有群。每个壳层的角动量部分由 $SU(2)$ Kac-Moody代数描述（轨道角动量的仿射扩展），$h^\vee = 2$。$U(1)$ 给出电磁荷部分（自旋-轨道分离），$SU(3)$ 给出规范结构部分（不影响轨道OPE）。**注意**：SU(5)规范破缺不属于本征群效应——本征群效应是 $A_4$ 嘉当矩阵→4本征值→$\{SU(2)_k\}_{k=1}^{4}$，两个独立效应详见 `FG_核心理论.md` §5.1.1。
 
 各壳层的Kac-Moody水平：
 
@@ -1528,9 +1622,9 @@ $$\lambda_k \xrightarrow{\text{本征向量}} \omega_k \xrightarrow{\text{最高
 | $k$ | 本征值 $\lambda_k$ | 基本权 $\omega_k$ | Casimir $C_k$ | 角动量 $l$ | 壳层 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | $4\sin^2\frac{\pi}{10} \approx 0.382$ | $\omega_1$ | $3/4$ | 0 | s |
-| 2 | $4\sin^2\frac{2\pi}{10} \approx 1.382$ | $\omega_2$ | $7/4$ | 1 | p |
-| 3 | $4\sin^2\frac{3\pi}{10} \approx 2.618$ | $\omega_3$ | $15/4$ | 2 | d |
-| 4 | $4\sin^2\frac{4\pi}{10} \approx 3.618$ | $\omega_4$ | $27/4$ | 3 | f |
+| 2 | $4\sin^2\frac{2\pi}{10} \approx 1.382$ | $\omega_2$ | $11/4$ | 1 | p |
+| 3 | $4\sin^2\frac{3\pi}{10} \approx 2.618$ | $\omega_3$ | $27/4$ | 2 | d |
+| 4 | $4\sin^2\frac{4\pi}{10} \approx 3.618$ | $\omega_4$ | $51/4$ | 3 | f |
 
 Casimir $C_k = l_k(l_k+1)+3/4$ 由基本权 $\omega_k$ 通过二次Casimir不变量 $C_2 = \sum_{i,j} (C_{A_4})_{ij} \omega_i \omega_j$ 严格确定。
 
@@ -1763,7 +1857,11 @@ $$\boxed{\text{Cr/Cu异常} = \text{OPE系数在半满/全满点的共振} = \te
 
 ### 18.0 架构总览
 
-$$\boxed{\underbrace{\text{FG纤维丛}}_{\text{几何约束}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\text{同步方程}}_{\text{谱约束}} \;\xrightarrow{\{G_k, l_k, N_k^{\max}\}}\; \underbrace{\text{CFT}}_{\text{代数约束}} \;\longrightarrow\; \text{周期表}(Z_{\max}=118)}$$
+$$\boxed{\underbrace{\text{底空间}\,M_\ell + \text{FG纤维丛}}_{\text{几何约束}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\text{底空间截面} + \text{同步方程}}_{\text{谱约束}} \;\xrightarrow{\{G_k, l_k, N_k^{\max}\}}\; \underbrace{\text{CFT}}_{\text{代数约束}} \;\longrightarrow\; \text{周期表}(Z_{\max}=118)}$$
+
+**底空间贯穿三模块**：模块1构造底空间 $M_\ell$（Regge剖分）+曲率算符，模块2在底空间截面空间 $\Gamma(\text{ad}(P))$ 上求解同步方程（自守形式），模块3在底空间局域插入点做OPE。底空间不可省略——算符、对称性、自守形式均定义在底空间上。
+
+**GL(n) 由底空间指定（发生学顺序强制）**：底空间对 $GL(n)$ 的指定分三层：(1) **n值锁定**——4-单纯形五顶点组合结构锁定 $n=5$；(2) **形式空间约束**——骨架上同调承载自守形式空间；(3) **具体形式筛选**——由作用量算符（同步算符）本征筛选完成，唯一性由强多重性一定理保障。物理主丛不能指定 $GL(n)$：主丛结构群是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 | 模块 | 约束类型 | 输入 | 输出 | 详细文档 |
 |:---|:---|:---|:---|:---|
@@ -1828,7 +1926,7 @@ $$\mathcal{A}_\ell \longrightarrow \begin{cases} \text{底空间曲率：Regge�
 
 ### 18.2 模块2：同步方程 — 谱约束
 
-**输入**：曲率算符 $\hat{\delta}_v^{(Z)}$（来自模块1，元素特定——每个元素 $Z$ 有自己的剖分 $\mathcal{R}_Z$ 和曲率数据）
+**输入**：底空间 $M_\ell^{(Z)}$（Regge剖分离散几何，来自模块1）+ 曲率算符 $\hat{\delta}_v^{(Z)}$（元素特定——每个元素 $Z$ 有自己的剖分 $\mathcal{R}_Z$ 和曲率数据）。作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell^{(Z)}$ 的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上。
 
 **公理**：
 1. FG因果：固有时流速 $v_\tau = \sqrt{1-\beta\delta_v^{(Z)}}$（FG核心机制，标注为假设）
@@ -1976,9 +2074,11 @@ $$\boxed{E_c(Z) = \sum_{i < j}^{\text{occ}} \sum_{p \in \text{desc}} \frac{C_{ij
 
 **边长 $\bar{L}_{ij}^{(Z)}$ 的来源**：边长 = 核子间距离，由QG层同步方程（$\hat{\mathcal{S}}_0$: GL(5)→SU(5)紧化）的输出给出。层级结构：$\hat{\mathcal{S}}_0 \to \text{核子分布} \to \bar{L}_{ij}^{(Z)} \to \hat{\delta}_v^{(Z)} \to \hat{\mathcal{S}}^{(Z)}_{\text{full}}$。QG层完整同步方程是开放问题，当前可从核物理实验输入（半第一性）。
 
-**步骤3：同步方程 → 本征群**
+**步骤3：同步方程输出耦级，本征群由底空间分类**
 
-$$\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\longrightarrow\; G_k \;\text{（本征群）}$$
+$$\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\;\text{（耦级）}，\qquad A_4\text{ 根系（Coxeter数 } h=5\text{）} \;\Rightarrow\; G_k \;\text{（本征群）}$$
+
+链条方向：底空间（$A_4$ 根系）$\Rightarrow G_k \Rightarrow n_k = C_k$——本征值是群确定后的输出，不由本征值反推群（逆谱问题：等谱不同构）。
 
 本征群由 $A_4$ Coxeter数 $h=5$ 严格确定：
 
@@ -2004,7 +2104,7 @@ $$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k \;\longrightarrow\; N_k \
 - 角动量 $\{l_k\} = \{0,1,2,3\}$（s,p,d,f）
 - 耦级 $\{n_k\} = \{C_k\}$（Casimir本征值）
 - 耦合常数 $\{g_k\}$（同步方程输出，非输入参数）
-- 壳层容量 $\{N_k^{\max}\} = \{2,6,10,14) = \{2(2l_k+1)\}$
+- 壳层容量 $\{N_k^{\max}\} = \{2,6,10,14\} = \{2(2l_k+1)\}$
 
 **严格性**：同步算符由曲率算符（模块1输出）+ 紧化U(1)严格确定。本征群由 $A_4$ Coxeter数严格分类。耦级=Casimir是同步的物理定义（同步成本=对称性强度）。耦合常数是同步方程的输出，不是输入参数。
 
@@ -2128,7 +2228,7 @@ CFT代数约束（fusion rules + $A_4$截止）直接给出周期表。
 
 ### 18.7 完整推导链（三模块标注）
 
-$$\underbrace{\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{联络}} \hat{\delta}_v}_{\text{模块1：FG纤维丛}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\xrightarrow{\text{紧化+同步}} \{G_k, l_k, N_k^{\max}\}}_{\text{模块2：同步方程}} \;\xrightarrow{\{G_k\}}\; \underbrace{\xrightarrow{\text{OPE+共形自举}} \text{周期表}(Z_{\max}=118)}_{\text{模块3：CFT}}$$
+$$\underbrace{\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{联络}} \hat{\delta}_v}_{\text{模块1：底空间+FG纤维丛}} \;\xrightarrow{M_\ell + \hat{\delta}_v}\; \underbrace{\text{作用在}\,\Gamma(\text{ad}(P))\,\text{上} \xrightarrow{\text{紧化+同步}} \{G_k, l_k, N_k^{\max}\}}_{\text{模块2：底空间截面+同步方程}} \;\xrightarrow{\{G_k\}}\; \underbrace{\xrightarrow{\text{OPE+共形自举}} \text{周期表}(Z_{\max}=118)}_{\text{模块3：CFT}}$$
 
 **每个箭头都是严格推导，无经验拟合参数。** 唯一的外部输入是质子质量 $m_p$（物质先在公理——物质自组织的第一个有限本体的质量标度）。$c$ 和 $\hbar$ 均从 GL(5) 涌现（$c=\gamma_1\ell_{\text{QG}}$，$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$←GL(5)），非外部输入。CQM参数计数：基本标度1个（$m_p$）+ 经验拟合参数0个（对比标准模型20+个）。
 

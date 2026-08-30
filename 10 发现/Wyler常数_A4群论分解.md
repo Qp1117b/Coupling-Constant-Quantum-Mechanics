@@ -76,8 +76,8 @@ $A_4$ 的 Coxeter 数 $h = 5$ 是最核心的群论不变量：
 
 $A_4$ 的秩 $r = 4$：
 
-- **本征群数量**：4 个本征群 = 3 空间群（$U(1)$、$SU(2)$、$SU(3)$）+ 1 时间群
-- **时空维度**：3 空间 + 1 时间 = 4
+- **本征群数量**：4 紧致本征群 = $\{SU(2)_k\}_{k=1}^{4}$（全紧致壳层群）
+- **时空维度**：4 = 秩 = 本征群数量 = 时空维度（数值巧合，非群论对应；规范破缺给出 $U(1)\times SU(2)\times SU(3)$ 三个空间群，时间内禀没有群）
 - **$1/r$ 次幂**：可能对应 4 维时空体积归一化
 
 ### 3.3 Weyl 群阶 $|W(A_4)| = 5! = 120$
@@ -109,7 +109,7 @@ $$2h - 1 = 2 \times 5 - 1 = 9$$
 
 CQM 的核心框架是：
 
-$$\text{SU}(5) \;\xrightarrow{\text{破缺}}\; A_4 \;\xrightarrow{\text{4本征群}}\; \underbrace{U(1) \times SU(2) \times SU(3)}_{\text{3空间群}} \times \underbrace{G_{\text{time}}}_{\text{时间群}} \;\xrightarrow{\text{U(1)耦合常数}}\; \alpha$$
+$$\text{SU}(5) \;\xrightarrow{\text{破缺}}\; A_4 \;\xrightarrow{\text{4本征群}}\; \{SU(2)_k\}_{k=1}^{4}\text{（全紧致壳层群）} \;\xrightarrow{\text{U(1)耦合常数}}\; \alpha$$
 
 Wyler 常数完全由 $A_4$ 的群论不变量决定，因此自然嵌入这个链条：
 

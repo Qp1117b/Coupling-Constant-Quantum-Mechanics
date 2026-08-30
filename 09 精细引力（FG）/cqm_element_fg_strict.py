@@ -91,6 +91,12 @@ def test_a4_structure():
 # ============================================================
 @dataclass
 class EigenGroup:
+    """同步方程本征群 (紧致李群)
+
+    四个本征群 G_k = SU(2) (≅ S³, 紧致连通), k=1,2,3,4
+    Casimir C_k = l_k(l_k+1) + 3/4 (轨道SU(2) + 自旋SU(2))
+    Kac-Moody代数 su(2)_k 由紧致李代数 su(2) 中心扩展构造
+    """
     k: int           # 群指标 k=1,2,3,4
     l: int           # 角动量 l_k = k-1
     N_max: int       # 电子容量 N_k^max = 2(2l+1)

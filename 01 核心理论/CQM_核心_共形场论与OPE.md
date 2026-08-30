@@ -247,8 +247,8 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 
 | 本征群 | $\dim\mathfrak{g}$ | $h^\vee$ | Kac-Moody水平 $k$ |
 |:---|:---:|:---:|:---|
-| $SU(2)$（s壳层） | 3 | 2 | 由 $g_1 = \alpha$ 确定 |
-| $SO(3)\times SU(2)$（p,d,f壳层） | 6 | 4 | 由 $g_k$ 确定 |
+| $SU(2)_{\text{spin}}$（s壳层，$l=0$） | 3 | 2 | 由 $g_1 = \alpha$ 确定 |
+| $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$（p,d,f壳层，$l \geq 1$） | 6 | 4 | 由 $g_k$ 确定 |
 
 ### 5.4 中央荷 $c$ 与谱量子 $C$ 的关系
 

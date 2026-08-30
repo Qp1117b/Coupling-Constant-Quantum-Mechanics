@@ -140,7 +140,7 @@ def main():
     print(f"    - Z_max = 118 (元素周期表上限)")
     print(f"    - l_max = h-2 = {h-2} (无g壳层)")
     print(f"  r={r} (秩):")
-    print(f"    - 决定{r}个本征群 (3空间+1时间)")
+    print(f"    - 决定{r}个本征群 (4紧致SU(2)壳层群)")
     print(f"    - 时空维度 = {r}")
     print(f"  |W|={W_order} (Weyl群阶):")
     print(f"    - S5 = SU(5)的Weyl群")
