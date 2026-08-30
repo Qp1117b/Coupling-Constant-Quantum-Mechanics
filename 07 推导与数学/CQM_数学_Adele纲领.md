@@ -89,7 +89,7 @@ $$\boxed{\partial_\tau\phi + C e^u \partial_u \phi = 0}$$
 
 **推导**（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
 
-**身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无约束假设。特征线 $du/d\tau = C e^u$ 即经典 RG 流 $dr/d\tau = C r^2$。
+**身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无约束假设。特征线 $du/d\tau = C e^u$ 即经典 RG 流 $dr/d\tau = C r^2$。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖），非低能标 4D 时空动力学。
 
 ### 2.4 定理 2.2（Berry-Keating 截断）
 
@@ -184,7 +184,7 @@ $$\Delta\tau_p = \frac{\ln p}{C}$$
 | I | $\hat{H}_\infty = \hat{D}^2 + 1/4$ | 谱哈密顿量（二阶） | 严格（Sturm-Liouville + Friedrichs） | 全部定量预言 |
 | I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
 | II | $\hat{\mathcal{D}} = -iCe^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
-| III | $\partial_\tau\phi + Ce^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限 |
+| III | $\partial_\tau\phi + Ce^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限（禁闭边界及之外） |
 | — | $[\hat{\tau}, \hat{u}] = iC$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
 | — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | 定理 | 结构分离 |
 
