@@ -84,8 +84,8 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
 - **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，**不是假设**而是Regge剖分的必然结果。$A_4$ 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
-- **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
-- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
+- **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（QG前几何/GR时空度规/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
+- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。量纲归一化与量纲恢复的严格机制详见 `FG_元素FG_第一性.md` §19
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/C$。这是FG核心机制，标注为**假设**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由约束严格确定
@@ -503,7 +503,7 @@ $$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)→SU(5)}} \;\xrightarrow
 | 紧化算符 | CFT mode算符 | 三层统一 | §9.7 |
 | 和乐平庸化 | 闭壳层稳定 | $\delta_v = 0 \Leftrightarrow$ 稀有气体 | §9.4 |
 
-### 9.10 局域分析足够性原理
+### 9.9 局域分析足够性原理
 
 **问题**：底空间 $M_\ell$ 上有大量Regge顶点 $\{v\}$，每个顶点有不同的曲率涨落态 $\hat{\delta}_v|0\rangle$。为什么只需要取**一个**能体现底空间分布性质的代表性局域来分析，即可得到整个纤维丛的同步谱？
 
@@ -568,9 +568,9 @@ $$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结�
 
 底空间上离散态虽多，但都遵守同一套同步算符 $\hat{\mathcal{S}}$ 和同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$。取一个体现底空间分布性质的代表性局域，分析其同步谱，结果由 $A_4$ 代数结构统一给出，普适于整个纤维丛。
 
-### 9.9 相关文档
+### 9.10 相关文档
 
 - `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)破缺→A₄→4耦合常数→α）
-- `FG_元素FG_第一性.md`：元素FG第一性推导（§17 CFT精确计算：descendant系数、合流极限、能级、OPE系数、关联能、周期表、Cr/Cu异常）
+- `FG_元素FG_第一性.md`：元素FG第一性推导（§17 CFT精确计算：descendant系数、合流极限、能级、OPE系数、关联能、周期表、Cr/Cu异常；§19 量纲归一化与量纲恢复的严格机制）
 - `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
 - `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（QG层紧化算符定义、黎曼结构→CNST七条提取、三种引力同步诠释）
