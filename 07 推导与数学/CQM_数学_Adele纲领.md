@@ -4,7 +4,7 @@
 
 ## 摘要
 
-> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i c e^u(\partial_u-1/2)$）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = c^2(\hat{D}^2+1/4)$）描述谱结构。两者独立构造，非平方关系。详见 `03-方法论/08-经典路径：从作用量到谱的严格推导.md` §3–§5。
+> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i c e^u(\partial_u-1/2)$）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = c^2(\hat{D}^2+1/4)$）描述谱结构。两者独立构造，非平方关系。详见 `CQM_推导_经典路径.md` §3–§5。
 
 本文提出耦合常数量子力学（CQM），一种从本体论到实验预言的物理学框架。其核心在于：引力不是四种相互作用之一，而是约束所有再生产循环之因果序的**元条件**（限制场）。从这一本体论出发，CQM 从**一个本体论公设**（物质先在 L0）、**三个涌出结构原理**和**一个启发性约束**严格导出了：
 
@@ -27,7 +27,7 @@
 - 电荷离散化（$1/3$ 整数倍）
 - 三代结构截断 $m \leq 3$
 
-所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$C, E_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/C), \kappa$）确定。$E_n$ 谱公式（定理 4.1）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CQM}} = -C(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10197$, 残差 0.32%）。$G_N$ $\kappa = (31+C)/30 = 1.034103$，偏差 **约 −3 ppm**（`03-方法论/07-完整方程组.md` §8.3）。
+所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$C, E_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/C), \kappa$）确定。$E_n$ 谱公式（定理 4.1）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CQM}} = -C(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10197$, 残差 0.32%）。$G_N$ $\kappa = (31+C)/30 = 1.034103$，偏差 **约 −3 ppm**（`CQM_推导_完整方程组.md` §8.3）。
 
 ---
 
@@ -67,7 +67,7 @@ $$\boxed{\hat{D} = -i\left(\partial_u - \frac{1}{2}\right)}$$
 CQM 的**谱哈密顿量**（二阶谱结构，标准微分几何，严格）：
 $$\boxed{\hat{H}_\infty = \hat{D}^2 + \frac{1}{4} = -\partial_u^2 + \partial_u}, \qquad (i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$$
 
-一阶动力学（再生产子单向演化，见 `03-方法论/08-经典路径.md` §3.1）：
+一阶动力学（再生产子单向演化，见 `CQM_推导_经典路径.md` §3.1）：
 $$\hat{\mathcal{D}} = -i\,c\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
 **原理 II（辛拓扑量子化）**：再生产循环作为辛流形上的闭合轨道，其最小非平凡周期包围的辛面积为 $2\pi$（Berry-Keating 单位胞条件 [Berry & Keating, SIAM Rev. **41**, 236 (1999)]）。此拓扑要求与耦合常数空间的硬壁边界条件自洽地确定截断尺度。
@@ -87,7 +87,7 @@ $$[\hat{\tau}, \hat{u}] = iC$$
 
 $$\boxed{\partial_\tau\phi + C e^u \partial_u \phi = 0}$$
 
-**推导**（`03-方法论/08-经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
+**推导**（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
 
 **身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无约束假设。特征线 $du/d\tau = C e^u$ 即经典 RG 流 $dr/d\tau = C r^2$。
 
@@ -127,7 +127,7 @@ $$\boxed{\text{层次 II: } \hat{\mathcal{G}} = -iCe^u\partial_u \quad\text{（�
 
 $$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{Ce^u-1}{2} = 0 \quad\text{（旧约束，已被一阶方程替代）}}$$
 
-**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（$\hat{\mathcal{G}} = \hat{\mathcal{D}}/c$）是一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的体区域退化形式，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `03-方法论/08-经典路径.md` §3–§5。
+**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（$\hat{\mathcal{G}} = \hat{\mathcal{D}}/c$）是一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的体区域退化形式，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
 
 ### 3.1 传输方程：一阶退化
 
@@ -135,7 +135,7 @@ $$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{Ce^u-1}{2} = 0 \
 
 $$\partial_\tau\phi + C e^u \partial_u \phi = 0$$
 
-*推导*（`08-经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$，得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。无 WKB 近似，无约束壳假设。
+*推导*（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$，得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。无 WKB 近似，无约束壳假设。
 
 特征线 $du/d\tau = C e^u$ 的解 $r(\tau) = 1/(-C\tau+\text{const})$ 即经典 RG 流 $dr/d\tau = C r^2$。
 
@@ -169,7 +169,7 @@ $$\Delta\tau_p = \frac{\ln p}{C}$$
 
 ### 3.6 Dirac 量子化不自洽问题（历史注记）
 
-> 以约束 $\chi=0$ 为出发点推导传输方程会破坏 Dirac 约束量子化的自洽性。传输方程独立地来自一阶方程 $(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$ 的体区域退化（**无需约束壳假设**），二阶谱方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 是独立构造（**非一阶平方**）。两者通过中介场 $\eta_p$ 在源点耦合，全局幺正由 $\hat{H}_{\text{tot}}$ 自伴性保证。详见 `03-方法论/08-经典路径.md`。
+> 以约束 $\chi=0$ 为出发点推导传输方程会破坏 Dirac 约束量子化的自洽性。传输方程独立地来自一阶方程 $(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$ 的体区域退化（**无需约束壳假设**），二阶谱方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 是独立构造（**非一阶平方**）。两者通过中介场 $\eta_p$ 在源点耦合，全局幺正由 $\hat{H}_{\text{tot}}$ 自伴性保证。详见 `CQM_推导_经典路径.md`。
 
 以下为框内保留内容：
 
@@ -571,7 +571,7 @@ $$\boxed{\mathcal{J} = \exp\left(-\frac{2}{C}\right)}$$
 **定理 10.4**：
 $$\boxed{G_N = \frac{I \cdot \lambda_c \cdot C^2 \cdot E_1}{m_p^2} \cdot \exp\left(-\frac{2}{C}\right) \cdot \left(1 + \frac{31 + C}{30} \cdot C\right)}$$
 
-其中 $\kappa = (31+C)/30 = 1.034103$（详见 `03-方法论/07-完整方程组.md` §8.3）。
+其中 $\kappa = (31+C)/30 = 1.034103$（详见 `CQM_推导_完整方程组.md` §8.3）。
 
 **数值**：$G_N \approx 6.71 \times 10^{-39}$ GeV$^{-2}$，与实验值 $6.7088\times10^{-39}$ 偏差 $\mathbf{+2.16\,ppm}$。
 
@@ -586,7 +586,7 @@ $$G_N = \frac{(g_s^{\text{IR}})^2 \cdot C^2 \cdot E_1}{m_p^2} \cdot \exp\left(-\
 | $C = \xi'(1)/\xi(1)$ | 解析恒等式（定理 4.3） | 数论定理 |
 | $E_1 = \rho_1(1-\rho_1) = \tfrac14 + \gamma_1^2$ | 壳层双曲Laplacian H=D²+1/4 本征值（定理 4.1, 严格第一性） | 双曲几何导出 |
 | $\exp(-2/C)$ | Adele 全局归一化（定理 10.X） | 几何-数论条件 |
-| $(1+\kappa C)$ | 4-单纯形面元数 + Adele 周期（`03-方法论/07` §8.3） | 组合涌出 |
+| $(1+\kappa C)$ | 4-单纯形面元数 + Adele 周期（`CQM_推导_完整方程组.md` §8.3） | 组合涌出 |
 
 **数值**：
 $$G_N \approx 6.71 \times 10^{-39}\ \text{GeV}^{-2}$$
@@ -595,7 +595,7 @@ $$G_N \approx 6.71 \times 10^{-39}\ \text{GeV}^{-2}$$
 
 **偏差**：$\mathbf{+2.16\,ppm}$。
 
-**偏差来源**：κ 因子来自 4-单纯形面元数与 Adele 周期的组合，κ = (31+C)/30。详见 `03-方法论/07-完整方程组.md` Q3 及 §8.3。
+**偏差来源**：κ 因子来自 4-单纯形面元数与 Adele 周期的组合，κ = (31+C)/30。详见 `CQM_推导_完整方程组.md` Q3 及 §8.3。
 
 ---
 
@@ -664,7 +664,7 @@ $$\partial_\tau \Psi + C \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i
 |--------|------|------|----------|------------------|
 | **A** | $E_n$ 谱公式的解析来源 | $E_n = \rho_n(1-\rho_n) = 1/4+\gamma_n^2$ 为第一性可推导（BK/Dirac xp-模型哈密顿量本征值，文献 1205.6755/2505.21192）。$G_N$ 偏差已降至 +2.16 ppm | 从 Berry-Keating / Dirac xp-模型第一性推导 | 否（闭合） |
 | **B** | $\delta\theta_W^{(1)}$ 的解析来源 | 结果 7.2 为唯象匹配 | Berry-Keating + 电弱破缺 | 是（影响 $\sin^2\theta_W$） |
-| **B'** | $\delta\theta_W^{(1)}$ 的真空极化候选机制（待对齐，非结论） | 表示论×数论：$-W_1\cdot\alpha_{GUT}$（见 `../归档/03-候选研究/候选_零唯象参数消除尝试_统一记录.md`；与 7.2 的 $-0.156$ 偏差 2.6%，且 $\alpha_{GUT}$ 定义待与 §10.4 对齐） | 第一代费米子屏蔽图像 | 候选 |
+| **B'** | $\delta\theta_W^{(1)}$ 的真空极化候选机制（待对齐，非结论） | 表示论×数论：$-W_1\cdot\alpha_{GUT}$（见 `../归档 CNT/09 前期探索/03-候选研究/候选 零唯象参数消除尝试 统一记录.md`；与 7.2 的 $-0.156$ 偏差 2.6%，且 $\alpha_{GUT}$ 定义待与 §10.4 对齐） | 第一代费米子屏蔽图像 | 候选 |
 | **C** | 希格斯机制（$g_w$ 偏差 $-3.1\%$）→ p进大小 $|x|_p = p^{-v_p(x)}$ 确定耦合层级，$W/Z$ 质量涌现待建立 | 部分转化，进一步探索 |
 | **D** | 2-loop CQM-RG（$g_s$ 从 $+0.9\%$ 到 $<0.1\%$） | 传输方程非线性扩展 | 强耦合精度提升 | 否（1-loop 已足够） |
 | **E** | $m_p$ 先验来源（$G_N/\Lambda_{\text{QCD}}$ 基础） | Adele 质量标度涌现 | 消除 1.6% 偏差 | 是 |
