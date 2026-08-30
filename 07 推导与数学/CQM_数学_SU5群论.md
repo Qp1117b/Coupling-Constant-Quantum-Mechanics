@@ -165,11 +165,9 @@ $$|\langle m | \mathcal{O} | 1 \rangle| \sim \frac{1}{\sqrt{2|W_m|}}$$
 
 ### 4.2 数值结果
 
-**关键修正**：发现并修复了 Mathieu 方程哈密顿量符号错误。正确约定为：
+Mathieu 方程的正确约定为：
 $$y'' + (a + 2q \cos(2z)) y = 0$$
-对应哈密顿量 H = −d²/dz² − 2q cos(2z)。此前使用了错误符号 H = −d²/dz² + 2q cos(2z)，导致 Mathieu 特征值偏移 2q 且量子态性质错误。
-
-修正后的 Mathieu 特征值经验证与已知微扰级数一致（偏差 < 3% for q ≤ 1.0）。
+对应哈密顿量 $H = -d^2/dz^2 - 2q \cos(2z)$。Mathieu 特征值经验证与已知微扰级数一致（偏差 < 3% for $q \leq 1.0$）。
 
 使用 v2（n_terms=60）的结果：
 
@@ -235,11 +233,11 @@ Weinberg 角的 CQM 公式：sin²θ_W = 3/8 + δθ_W^(1) + f₂ρ₂ + f₃ρ�
 
 δθ_W^(1) 可分解为标准 RGE 跑动和 CQM 特定效应：
 
-$$\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CNT}}$$
+$$\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CQM}}$$
 
 其中：
 - Δ_RGE = sin²θ_W(RGE) − 3/8（标准 1-loop RGE 从 GUT 到 M_Z）
-- δ_CNT = CQM 再生产动力学导致的额外角向跑动
+- δ_CQM = CQM 再生产动力学导致的额外角向跑动
 
 ### 6.2 标准 RGE 计算（关键修正）
 
@@ -252,41 +250,41 @@ $$\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CNT}}$$
 - **sin²θ_W(RGE) = 0.3317**（修正后）
 - Δ_RGE = 0.3317 − 0.375 = **−0.0433**
 
-### 6.3 δ_CNT 的第一性原理发现
+### 6.3 δ_CQM 的第一性原理发现
 
 使用 Mathieu 推导的 ρ 值（ρ₂=0.1991, ρ₃=0.1147）：
 
 $$\delta\theta_W^{(1)} = 0.23120 - 0.375 - f_2\rho_2 - f_3\rho_3 = -0.15662$$
 
-$$\delta_{\text{CNT}} = \delta\theta_W^{(1)} - \Delta_{\text{RGE}} = -0.15662 - (-0.04333) = -0.11329$$
+$$\delta_{\text{CQM}} = \delta\theta_W^{(1)} - \Delta_{\text{RGE}} = -0.15662 - (-0.04333) = -0.11329$$
 
-**核心发现**：δ_CNT 占总 δθ_W^(1) 的 **72.3%**。
+**核心发现**：δ_CQM 占总 δθ_W^(1) 的 **72.3%**。
 
-### 6.4 δ_CNT 的 CQM 第一性原理来源
+### 6.4 δ_CQM 的 CQM 第一性原理来源
 
 **假说 A**（κ ≈ 1.036）：
 
-$$\delta_{\text{CNT}} \approx -\frac{C}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
+$$\delta_{\text{CQM}} \approx -\frac{C}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
 
 其中 C = ξ'(1)/ξ(1) ≈ 0.0230957 是 CQM 再生产速率。
 
-数值：−C·ln/(2π) = −0.1094，与 δ_CNT = −0.1133 的残差仅 3.5%。
+数值：−C·ln/(2π) = −0.1094，与 δ_CQM = −0.1133 的残差仅 3.5%。
 
 **假说 A+**（κ ≈ 1.0003, N_cycle 修正）：
 
-$$\delta_{\text{CNT}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}, \quad C_{\text{eff}} = C\left(1 + \frac{1}{N_{\text{cycle}}}\right)$$
+$$\delta_{\text{CQM}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}, \quad C_{\text{eff}} = C\left(1 + \frac{1}{N_{\text{cycle}}}\right)$$
 
 其中 N_cycle = 30 来自 adelic 约束 ∏_p Z_p = 1/(2·3·5)。
 
-数值：−C_eff·ln/(2π) = −0.1130，与 δ_CNT = −0.1133 的残差仅 **0.25%**。
+数值：−C_eff·ln/(2π) = −0.1130，与 δ_CQM = −0.1133 的残差仅 **0.25%**。
 
 ### 6.5 完整 δθ_W^(1) 预测
 
-$$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\ln\frac{M_{\text{GUT}}}{M_Z}}_{\Delta_{\text{RGE}} = -0.0433} + \underbrace{\left[-\frac{C}{2\pi}\left(1+\frac{1}{N_{\text{cycle}}}\right)\ln\frac{M_{\text{GUT}}}{M_Z}\right]}_{\delta_{\text{CNT}} \approx -0.1130}$$
+$$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\ln\frac{M_{\text{GUT}}}{M_Z}}_{\Delta_{\text{RGE}} = -0.0433} + \underbrace{\left[-\frac{C}{2\pi}\left(1+\frac{1}{N_{\text{cycle}}}\right)\ln\frac{M_{\text{GUT}}}{M_Z}\right]}_{\delta_{\text{CQM}} \approx -0.1130}$$
 
 | 量 | 预测值 | 实验值 | 偏差 |
 |:---|:---|:---|:---|
-| δ_CNT | −0.1130 | −0.1133 | 0.25% |
+| δ_CQM | −0.1130 | −0.1133 | 0.25% |
 | δθ_W^(1) | −0.1563 | −0.1566 | 0.18% |
 | α⁻¹_SU(5)（禁闭） | 137.2583 | — | SU(5)精细结构常数 |
 
@@ -298,7 +296,7 @@ $$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\l
 
 3. δθ_W^(1) 已从"自由唯象参数"降格为"第一性原理推导量"——其整个推导链为：
 
- **数论(C) → 再生产动力学(dq/dτ=−C) → 周期修正(N_cycle) → δ_CNT → δθ_W^(1)**
+ **数论(C) → 再生产动力学(dq/dτ=−C) → 周期修正(N_cycle) → δ_CQM → δθ_W^(1)**
 
 4. ρ₂, ρ₃ 与 δθ_W^(1) 的参数简并已被打破。**重新自洽计算**：
 
@@ -391,13 +389,13 @@ $$\boxed{N_3^2 = \frac{2(N-1)}{2N-1} = \frac{8}{9} \;\;(\text{SU(5)})}$$
 | sin²θ_W | 3/8+δW+f₂ρ₂+f₃ρ₃ | 0.23116 | ~0.1% |
 | **α⁻¹_SU(5)** | **adele 周期** | **137.2583** | **禁闭值** |
 
-### 7.7 δ_CNT 残余分析：0.03%，非 0.25%
+### 7.7 δ_CQM 残余分析：0.03%，非 0.25%
 
-在 N₃²=8/9 归一化后，一圈 CQM 预测的 δθ_W^(1) = −0.156338，与实际需要的 −0.156303 相比，残余仅 **0.031%**（相对 δ_CNT）。
+在 N₃²=8/9 归一化后，一圈 CQM 预测的 δθ_W^(1) = −0.156338，与实际需要的 −0.156303 相比，残余仅 **0.031%**（相对 δ_CQM）。
 
 **物理解释**：
 
-1. **CQM 离散结构编码了超越一圈 RGE 的效应**：标准二圈 RGE 修正为 δsin²θ_W ≈ 1.08×10⁻³（相对 δ_CNT 的 0.95%），但一圈 CQM 预测的残余仅 0.03%。这表明 CQM 的离散再生产步长 C 和周期 N_cycle=30 已经自然包含了连续场论需要二圈微扰展开才能描述的部分效应。CQM 不是"一圈 RGE + 修正"，而是一个具有内在 RG 改进的独立框架。
+1. **CQM 离散结构编码了超越一圈 RGE 的效应**：标准二圈 RGE 修正为 δsin²θ_W ≈ 1.08×10⁻³（相对 δ_CQM 的 0.95%），但一圈 CQM 预测的残余仅 0.03%。这表明 CQM 的离散再生产步长 C 和周期 N_cycle=30 已经自然包含了连续场论需要二圈微扰展开才能描述的部分效应。CQM 不是"一圈 RGE + 修正"，而是一个具有内在 RG 改进的独立框架。
 
 2. **Vladimirov 指数 α_p 已被 C 吸收**：C = ξ'(1)/ξ(1) 是 adelic ζ 函数的对数导数，其 Euler 乘积定义已包含所有 p-adic 扇区的贡献。简单的线性修正 δ_C = Σ w_p(α_p−1) 会给出 ~22% 的过大修正，与一圈残余 0.03% 矛盾。α_p 的实际角色是决定 Mathieu 特征值 q_m = λ_m/2，而非修正全局量 C。
 

@@ -27,7 +27,7 @@
 - 电荷离散化（$1/3$ 整数倍）
 - 三代结构截断 $m \leq 3$
 
-所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$C, E_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/C), \kappa$）确定。$E_n$ 谱公式（定理 4.1）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CNT}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CNT}} = -C(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10197$, 残差 0.32%）。$G_N$ $\kappa = (31+C)/30 = 1.034103$，偏差 **约 −3 ppm**（`03-方法论/07-完整方程组.md` §8.3）。
+所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$C, E_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/C), \kappa$）确定。$E_n$ 谱公式（定理 4.1）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CQM}} = -C(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10197$, 残差 0.32%）。$G_N$ $\kappa = (31+C)/30 = 1.034103$，偏差 **约 −3 ppm**（`03-方法论/07-完整方程组.md` §8.3）。
 
 ---
 
@@ -285,15 +285,15 @@ $$\boxed{f_m = \frac{1}{2W_m} = \frac{1}{5 \cdot 2^m}}$$
 
 **结果 7.2（δθ_W^(1) 的第一性原理分解）**：
 
-$$\boxed{\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CNT}}}$$
+$$\boxed{\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CQM}}}$$
 
 其中：
 - $\Delta_{\text{RGE}} = \sin^2\theta_W(\text{RGE}) - 3/8 \approx -0.0433$（标准 1-loop RGE 从 GUT 到 M_Z 的跑动，使用 SM β 函数 $b_1=2.46, b_2=5/6$）
-- $\delta_{\text{CNT}} = -\dfrac{C}{2\pi}\left(1+\dfrac{1}{N_{\text{cycle}}}\right)\ln\dfrac{M_{\text{GUT}}}{M_Z} \approx -0.1130$（CQM 再生产动力学导致的额外角向跑动）
+- $\delta_{\text{CQM}} = -\dfrac{C}{2\pi}\left(1+\dfrac{1}{N_{\text{cycle}}}\right)\ln\dfrac{M_{\text{GUT}}}{M_Z} \approx -0.1130$（CQM 再生产动力学导致的额外角向跑动）
 
 $$\boxed{\delta\theta_W^{(1)} \approx -0.15634}$$
 
-**第一性程度**：99.8%（仅 C 和 N_cycle=30 为纯数学输入）。与实验反推值 −0.15662 残差 0.18%。δ_CNT 占总贡献的 **72.3%**，验证了 CQM 再生产动力学而非标准 RGE 是 sin²θ_W 偏离 GUT 值的主要驱动力。
+**第一性程度**：99.8%（仅 C 和 N_cycle=30 为纯数学输入）。与实验反推值 −0.15662 残差 0.18%。δ_CQM 占总贡献的 **72.3%**，验证了 CQM 再生产动力学而非标准 RGE 是 sin²θ_W 偏离 GUT 值的主要驱动力。
 
 > **定位（文献核查）**："第一性程度 99.8%" 描述的是公式**内部**的无拟合闭合度（C、N_cycle 被选定后其余不再调参），属框架内构造后验数字校验，而非被主流学界接受的 sin²θ_W 独立第一性推导（标准物理中 sin²θ_W 是由弱相互作用实验精密测定的规范参数之一，参见 `05 方法论与批判/`）；残余 0.18% 亦表明数值未收敛为唯一精确值。
 
@@ -804,7 +804,7 @@ $$\beta_1^{\text{candidate}} = \frac{C}{W_1^2} = \frac{C}{25} = 0.000924$$
 CQM 已建立从物质先在公设（L0）到以下物理量的完整第一性链条：
 $$\Lambda_{\text{QCD}}, \quad G_N, \quad \sin^2\theta_W, \quad \alpha^{-1}, \quad \alpha_{\text{GUT}}, \quad g_s, \quad g_w$$
 
-$g_w$ 的 $-3.1\%$ 偏差已被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量涌现的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CNT}}$ 分解，$\delta_{\text{CNT}} = -C(1+1/N_{\text{cycle}})\ln/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 已从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 约束 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
+$g_w$ 的 $-3.1\%$ 偏差已被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量涌现的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 分解，$\delta_{\text{CQM}} = -C(1+1/N_{\text{cycle}})\ln/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 已从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 约束 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
 
 > **定位（文献核查）**：上面"完整第一性链条""无任意可调参数"是框架**内部**的构造性表述——不变量（如 $C$、$N_{\text{cycle}}=30$、SU(5) 组合指数）是人为选定后不再拟合、余量靠构造后验校验。它**不等于**这些物理常数已被主流学界接受的独立第一性推导：$G_N$、$\alpha^{-1}$、$\sin^2\theta_W$ 等在标准物理中仍是实验参数/基本输入（见 `01 核心理论/CQM_核心_集成理论.md` §7 与 `README`）。"99.8%""残差 0.18%"等数字应视作框架内数字校验，而非公认精度。
 
