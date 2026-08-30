@@ -605,7 +605,7 @@ $\eta$ 是无量纲比值，电子结构（能级、波函数、周期表）只�
 
 $$E_{\text{scale}} = \frac{\hbar\omega_0}{\eta} = E_{\text{bind}} = \frac{\hbar c}{a_0 \alpha \eta}$$
 
-其中 $a_0$（Bohr半径）从 §17.3 导出，$\alpha$ 从 $A_4$ 导出，$\eta$ 从自洽方程导出。$c$ 和 $\hbar$ 均从 GL(5) 涌现（$c=\gamma_1\ell_{\text{QG}}$，$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$←GL(5)）。唯一的外部输入是核子质量 $m_N$（物质先在公理——物质自组织的第一个有限本体的质量标度）。
+其中 $a_0$（Bohr半径）从 §17.3 导出，$\alpha$ 从 $A_4$ 导出，$\eta$ 从自洽方程导出。$c$ 和 $\hbar$ 均从 GL(5) 涌现（$c=\gamma_1\ell_{\text{QG}}$，$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$←GL(5)）。唯一的外部输入是质子质量 $m_p$（物质先在公理——物质自组织的第一个有限本体的质量标度）。
 
 #### 9.6.5 结论
 
@@ -617,9 +617,9 @@ $$E_{\text{scale}} = \frac{\hbar\omega_0}{\eta} = E_{\text{bind}} = \frac{\hbar 
 | $C$（谱量子） | $\xi'(1)/\xi(1) \approx 0.0230957$ | **严格** |
 | $\beta$（对数因子） | $\frac{1}{4\pi}\ln(L/a)$ | **严格** |
 | $\eta = \hbar\omega_0/E_{\text{bind}}$ | 自洽方程 | **严格**（$A_4$ + 约束方程联立求解） |
-| $\omega_0, E_{\text{bind}}$ 绝对值 | 需 $m_N$ 标度（$c$, $\hbar$ 从GL(5)涌现） | **一维外部输入** |
+| $\omega_0, E_{\text{bind}}$ 绝对值 | 需 $m_p$ 标度（$c$, $\hbar$ 从GL(5)涌现） | **一维外部输入** |
 
-**$\omega_0$ 和 $E_{\text{bind}}$ 的比值 $\eta$ 从 $A_4$ 严格导出**，不再是唯象输入。$c$ 和 $\hbar$ 均从 GL(5) 涌现，绝对标度只需核子质量 $m_N$（物质先在公理——物质提供标度，代数提供结构）。
+**$\omega_0$ 和 $E_{\text{bind}}$ 的比值 $\eta$ 从 $A_4$ 严格导出**，不再是唯象输入。$c$ 和 $\hbar$ 均从 GL(5) 涌现，绝对标度只需质子质量 $m_p$（物质先在公理——物质提供标度，代数提供结构）。
 
 ## 10. 第九部分：完整GRH前提
 
@@ -759,17 +759,17 @@ Regge剖分 R = (V,E,F)
 
 | 项目 | 性质 | 说明 |
 |:---|:---:|:---|
-| 径向波函数绝对归一化 / $\omega_0, E_{\text{bind}}$ 绝对值 | **物质先在公理的体现**（非缺口） | 代数结构（节点数、多项式系数、descendant系数）已由CFT严格确定，Bohr半径标度关系已导出，比值$\eta$从$A_4$严格导出。绝对标度需1个基本物理标度（$m_N$←物质先在公理），非经验拟合参数。**$c$和$\hbar$均从GL(5)涌现**：$c=\gamma_1\ell_{\text{QG}}$（$\gamma_1$←GL(1)因子层←SU(5)破缺←GL(5)紧化，$\ell_{\text{QG}}$←QG层=GL(5)自守形式）；$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$嘉当矩阵←SU(5)破缺←GL(5)紧化。CQM参数计数：基本标度1个（$m_N$，物质先在公理给出）+ 经验拟合参数0个（对比标准模型20+个） |
-| 关联能 $E_c$ 的精确数值 | 🟢 平庸方程已实现，完整同步方程已构造 | 平庸方程（通用$A_4$代数骨架）已给出d波(Cr/Cu)增强$25\%$、s波(He)$E_c=0$，**无Hamiltonian对角化**。**完整同步方程**$\hat{\mathcal{S}}^{(Z)}_{\text{full}}$已构造（§18.2），包含元素特定剖分$\mathcal{R}_Z$、归一化$E_{\text{bind}}^{(Z)}$、电子反馈$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$，通过非线性自洽方程求解，退化为平庸方程时给出壳层结构 |
-| $m_N$ 从 GL(5) 涌现 | 🟡 **原则上可能，实践中待完成** | 见§13.3.1 |
+| 径向波函数绝对归一化 / $\omega_0, E_{\text{bind}}$ 绝对值 | **物质先在公理的体现**（非缺口） | 代数结构（节点数、多项式系数、descendant系数）已由CFT严格确定，Bohr半径标度关系已导出，比值$\eta$从$A_4$严格导出。绝对标度需1个基本物理标度（$m_p$←物质先在公理），非经验拟合参数。**$c$和$\hbar$均从GL(5)涌现**：$c=\gamma_1\ell_{\text{QG}}$（$\gamma_1$←GL(1)因子层←SU(5)破缺←GL(5)紧化，$\ell_{\text{QG}}$←QG层=GL(5)自守形式）；$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$嘉当矩阵←SU(5)破缺←GL(5)紧化。CQM参数计数：基本标度1个（$m_p$，物质先在公理给出）+ 经验拟合参数0个（对比标准模型20+个） |
+| 关联能 $E_c$ 的精确数值 | 🟢 平庸方程已实现，完整同步方程已构造 | 平庸方程（通用$A_4$代数骨架）已给出d波(Cr/Cu)增强$25\%$、s波(He)$E_c=0$，**无Hamiltonian对角化**。**完整同步方程**$\hat{\mathcal{S}}^{(Z)}_{\text{full}}$已构造（§18.2），包含元素特定剖分$\mathcal{R}_Z$、归一化$E_{\text{bind}}^{(Z)}$、电子反馈$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$、**电子-电子同步耦合**$\hat{\mathcal{S}}_{ij}^{\text{e-e}}$（CFT OPE构造，§17.6-§17.8严格对接），通过非线性自洽方程求解，退化为平庸方程时给出壳层结构 |
+| $m_p$ 从 GL(5) 涌现 | 🟡 **原则上可能，实践中待完成** | 见§13.3.1 |
 
-### 13.3.1 $m_N$ 从 GL(5) 涌现的可能性
+### 13.3.1 $m_p$ 从 GL(5) 涌现的可能性
 
-**问题**：$c$ 和 $\hbar$ 均已从 GL(5) 涌现，唯一剩余的基本标度是核子质量 $m_N$（物质先在公理给出）。$m_N$ 是否也能从 GL(5) 涌现？
+**问题**：$c$ 和 $\hbar$ 均已从 GL(5) 涌现，唯一剩余的基本标度是质子质量 $m_p$（物质先在公理给出）。$m_p$ 是否也能从 GL(5) 涌现？
 
 **原则上可能的涌现链**：
 
-$$\boxed{m_N \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} \leftarrow \text{紧化算符} \leftarrow \text{Hilbert-Pólya算符} \leftarrow \text{GL(5)自守L函数零点谱}}$$
+$$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} \leftarrow \text{紧化算符} \leftarrow \text{Hilbert-Pólya算符} \leftarrow \text{GL(5)自守L函数零点谱}}$$
 
 具体步骤：
 
@@ -783,7 +783,7 @@ $$\boxed{m_N \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 
 5. **SU(5)破缺 → 质量谱**：GL(5)紧化伴随SU(5)→SU(3)×SU(2)×U(1)破缺，破缺后紧化能谱投影到物理质量谱 $\{m_i\}$。
 
-6. **核子质量**：$m_N$ 是质量谱中对应核子态（物质自组织的第一个有限本体）的本征值：$m_N = m_{i^*}$，其中 $i^*$ 由物质先在公理选定（物质自组织的最低有限本体）。
+6. **质子质量**：$m_p$ 是质量谱中对应质子态（物质自组织的第一个有限本体）的本征值：$m_p = m_{i^*}$，其中 $i^*$ 由物质先在公理选定（物质自组织的最低有限本体）。
 
 **当前依赖（两项待完成）**：
 
@@ -792,13 +792,13 @@ $$\boxed{m_N \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 | **GRH(GL(5))证明** | 数学前提（未证明） | 保证Hilbert-Pólya算符厄米，零点谱可解释为本征值 |
 | **紧化算符 $\mathcal{T}$ 的GL(5)完整实现** | 框架已有（Connes GL(1)情形），GL(5)推广待完成 | 将零点谱显式映射到物理质量谱 |
 
-**若两项均完成**：CQM参数计数从「基本标度1个（$m_N$）+ 经验拟合参数0个」减为「基本标度0个 + 经验拟合参数0个」，即**所有物理标度均从GL(5)涌现**，CQM成为完全无外部参数的第一性理论。
+**若两项均完成**：CQM参数计数从「基本标度1个（$m_p$）+ 经验拟合参数0个」减为「基本标度0个 + 经验拟合参数0个」，即**所有物理标度均从GL(5)涌现**，CQM成为完全无外部参数的第一性理论。
 
 **当前标注**：
 
-- **原则上**：$m_N$ 从 GL(5) 涌现的链路逻辑自洽，与 $c$ 和 $\hbar$ 的涌现链同源（均源于GL(5)自守结构 + 紧化）。
+- **原则上**：$m_p$ 从 GL(5) 涌现的链路逻辑自洽，与 $c$ 和 $\hbar$ 的涌现链同源（均源于GL(5)自守结构 + 紧化）。
 - **实践中**：需GRH(GL(5))证明 + 紧化算符 $\mathcal{T}$ 的GL(5)完整实现，当前均为开放问题。
-- **物质先在公理的角色**：即使 $m_N$ 从 GL(5) 涌现，物质先在公理仍选定**哪个**本征值是核子（物质自组织的第一个有限本体），即公理从「给出标度」细化为「从谱中选定本征值」。公理本身不消除，但其载荷从「提供数值」降为「提供选择」。
+- **物质先在公理的角色**：即使 $m_p$ 从 GL(5) 涌现，物质先在公理仍选定**哪个**本征值是核子（物质自组织的第一个有限本体），即公理从「给出标度」细化为「从谱中选定本征值」。公理本身不消除，但其载荷从「提供数值」降为「提供选择」。
 
 ## 14. 物理常数
 
@@ -874,7 +874,7 @@ $$\boxed{m_N \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 | Kac-Moody大水平极限 $k_s \approx 236000 \gg 1$ | $\epsilon_s = 4.24 \times 10^{-6}$ | ✓ |
 | 周期表 $Z_{\max} = 118$ | 7周期结构正确 | ✓ |
 | Cr/Cu关联能增强 $= 5/4 = 25\%$ | g波权重$1/5$转移到4个允许通道 | ✓ |
-| 参数计数: 基本标度1个($m_N$) + 经验拟合0个 | 对比标准模型20+个 | ✓ |
+| 参数计数: 基本标度1个($m_p$) + 经验拟合0个 | 对比标准模型20+个 | ✓ |
 | s波关联能(代数公式): $E_c=0$ | SU(2)$_k$真空平庸: $\hat{J}^a\|0\rangle=0$（通用代数骨架） | ✓ |
 | d波关联能增强(代数公式): $5/4=25\%$ | g波禁戒→民主重分配, 无Hamiltonian对角化（通用代数骨架） | ✓ |
 | 元素特定关联能: 完整同步方程已构造 | $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$退化为平庸方程给出壳层结构, 完整方程给出元素特定关联能 | ✅ 已构造 |
@@ -1909,7 +1909,60 @@ $$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z), \quad f_{\text{full}}(Z)
 
 $\rho_Z$ 从平庸方程导出（如Cr/Cu的 $5/4$），$f_{\text{full}}(Z)$ 从完整方程本征值差异导出，主要来自电子-电子同步耦合。退化时 $f_{\text{full}}(Z) \to 1$。
 
-**迭代求解**：(1) 从平庸方程解初始化（独立电子 + 等边 + 通用归一化）；(2) 加入电子-电子同步耦合，解多体同步方程；(3) 加入电子-核子反馈，自洽迭代（压缩常数 $\sim 10^{-6}$，快速收敛）；(4) 计算关联能。
+**电子-电子同步耦合的CFT构造**：
+
+上述示意形式 $\hat{\mathcal{S}}_{ij}^{\text{e-e}} \sim C_{ijk}\hat{\phi}_i\hat{\phi}_j$ 的严格构造从OPE给出。两个电子场算符 $\hat{\phi}_i$、$\hat{\phi}_j$ 的OPE分解为descendant通道：
+
+$$\boxed{\hat{\mathcal{S}}_{ij}^{\text{e-e}} = \sum_{p \in \text{OPE}(i,j)} C_{ij}^p \,\hat{\mathcal{O}}_p \,\mathcal{F}_p(z_{ij})}$$
+
+其中各因子严格对应§17的CFT计算框架：
+
+| 因子 | 含义 | 严格来源 | 章节 |
+|:---|:---|:---|:---|
+| $C_{ij}^p$ | OPE系数 | Verlinde公式 + 大 $k$ 展开 | §17.6, §17.7 |
+| $\hat{\mathcal{O}}_p$ | descendant通道算符 | Kac-Moody descendant tower | §17.1 |
+| $\mathcal{F}_p(z_{ij})$ | 共形块 | BPZ方程 → 超几何函数 | §17.2 |
+| $\text{OPE}(i,j)$ | 允许通道集合 | fusion rules（SU(2) CG + 径向加法） | §17.6 |
+
+**OPE系数的大 $k$ 展开**（§17.7）：
+
+$$C_{ij}^p = \underbrace{C_{ij}^{p,(0)}}_{\text{SU(2) CG系数}} + \epsilon_l\,\underbrace{C_{ij}^{p,(1)}}_{\text{Sugawara修正}} + O(\epsilon_l^2), \quad \epsilon_l = \frac{1}{k_l} = \frac{g_{l+1}^2}{4\pi} \ll 1$$
+
+- **零阶** $C_{ij}^{p,(0)}$：自由场极限，给出Hartree-Fock能量（direct + exchange通道）
+- **一阶** $\epsilon_l C_{ij}^{p,(1)}$：Kac-Moody中央扩展修正，给出关联能
+
+**关键**：OPE系数由共形自举方程（结合律）严格确定，无经验参数。Frobenius reciprocity $\sum_p C_{ij}^p C_{pk}^m = \sum_p C_{jk}^p C_{ip}^m$ 是共形自举的CQM具体化（§17.7.4）。
+
+**关联能的CFT计算流程**（CQM第一性，无Hamiltonian对角化）：
+
+$$\boxed{E_c(Z) = \sum_{i < j}^{\text{occ}} \sum_{p \in \text{desc}} \frac{C_{ij}^{p,(1)} \,C_{ij}^{p,(0)}}{B_{pp}^{(l_p)}(k)} \,\Delta h_p \,\langle \mathcal{F}_p(z_{ij}) \rangle}$$
+
+计算步骤：
+
+| 步骤 | 计算内容 | 来源 | 状态 |
+|:---:|:---|:---|:---|
+| 1 | 确定占据模式（Madelung填充） | 平庸方程（§18.2步骤3-4） | ✅ 已实现 |
+| 2 | 确定OPE通道（fusion rules） | Verlinde公式（§17.6） | ✅ 已计算 |
+| 3 | 计算OPE系数 $C_{ij}^p$ | 大 $k$ 展开（§17.7） | ✅ 已计算 |
+| 4 | 计算Shapovalov内积 $B_{pp}^{(l_p)}(k)$ | Virasoro代数 + null state修正（§17.1, §17.8） | ✅ 已计算 |
+| 5 | 计算共形块 $\langle\mathcal{F}_p\rangle$ | BPZ方程 → Dotsenko-Fateev积分（§17.2） | ✅ 已建立 |
+| 6 | 求和：所有占据对 × 所有descendant通道 | 代数公式 | ✅ 已验证 |
+
+**占据模式依赖性**（平庸方程 → 完整方程的桥梁）：
+
+关联能主要依赖**占据模式**（从平庸方程已知），不同占据模式的OPE通道不同：
+
+| 元素 | 占据模式 | 主导OPE | 关键通道 | 关联能特征 | 来源 |
+|:---:|:---:|:---:|:---:|:---|:---|
+| He | 1s² | s-s OPE | $l_3=0$（direct） | $E_c^{\text{s波}}=0$（真空平庸） | §17.8.6 |
+| Cr | d⁵s¹ | d-d OPE | g波禁戒→权重转移 | 增强 $5/4=25\%$ | §17.8.4 |
+| Cu | d¹⁰s¹ | d-d OPE | 全满共振→同Cr机制 | 增强 $25\%$ | §17.8.4 |
+
+**d-d OPE通道**（§17.7.3）：$2\otimes2 = 0\oplus1\oplus2\oplus3\oplus4$，g波（$l_3=4$）被 $A_4$ 截止禁戒，权重 $|C_{22}^{4,(0)}|^2=1/5$ 民主重分配到4个允许通道（s,p,d,f），增强 $1+\frac{1/5}{4/5}=\frac{5}{4}$。
+
+**$\epsilon_l$ 约去机制**（§17.8.2-§17.8.3）：对 $l=0$ 的null state，$B_{11}^{(0)}(k)\approx 2/k = 2\epsilon_s$，分子中的 $\epsilon_s$（来自 $C^{(1)}$）与分母中的 $\epsilon_s$（来自null state修正）约去。**关联能不依赖 $\epsilon_l$ 的具体值**，只依赖代数系数——CFT框架的普适性。
+
+**迭代求解**：(1) 从平庸方程解初始化（独立电子 + 等边 + 通用归一化），获得占据模式；(2) 从占据模式确定OPE通道，计算OPE系数（§17.7）；(3) 代入关联能代数公式（§17.8.3），获得 $f_{\text{full}}(Z)$；(4) 加入电子-核子反馈，自洽迭代（压缩常数 $\sim 10^{-6}$，快速收敛）。**关联能计算不需要迭代解多体方程**——直接从占据模式 → OPE系数 → 代数公式。
 
 **与Hartree-Fock/DFT的结构类比**：平庸方程↔Thomas-Fermi（平均场），完整方程↔Kohn-Sham DFT（自洽场）。电子-电子同步耦合↔交换-关联势 $V_{xc}[\rho]$。CQM优势：几何统一（电子和核子在同一Regge框架）、代数严格（离散化后纯代数）、OPE严格（电子-电子耦合由共形自举确定）。
 
@@ -2069,15 +2122,15 @@ CFT代数约束（fusion rules + $A_4$截止）直接给出周期表。
 
 $$\underbrace{\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{联络}} \hat{\delta}_v}_{\text{模块1：FG纤维丛}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\xrightarrow{\text{紧化+同步}} \{G_k, l_k, N_k^{\max}\}}_{\text{模块2：同步方程}} \;\xrightarrow{\{G_k\}}\; \underbrace{\xrightarrow{\text{OPE+共形自举}} \text{周期表}(Z_{\max}=118)}_{\text{模块3：CFT}}$$
 
-**每个箭头都是严格推导，无经验拟合参数。** 唯一的外部输入是核子质量 $m_N$（物质先在公理——物质自组织的第一个有限本体的质量标度）。$c$ 和 $\hbar$ 均从 GL(5) 涌现（$c=\gamma_1\ell_{\text{QG}}$，$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$←GL(5)），非外部输入。CQM参数计数：基本标度1个（$m_N$）+ 经验拟合参数0个（对比标准模型20+个）。
+**每个箭头都是严格推导，无经验拟合参数。** 唯一的外部输入是质子质量 $m_p$（物质先在公理——物质自组织的第一个有限本体的质量标度）。$c$ 和 $\hbar$ 均从 GL(5) 涌现（$c=\gamma_1\ell_{\text{QG}}$，$\hbar$←预量子化线丛联络曲率←Regge剖分←$A_4$←GL(5)），非外部输入。CQM参数计数：基本标度1个（$m_p$）+ 经验拟合参数0个（对比标准模型20+个）。
 
 ## 19. 量纲归一化与量纲恢复的严格机制
 
 ### 19.0 核心命题
 
-CQM的所有方程（同步方程、CFT/OPE、Kac-Moody descendant）都是无量纲的。这不是缺陷，而是**在FG纤维丛截断处主动进行量纲归一化**的设计。归一化把有量纲的 $\hbar$ 和 $E_{\text{bind}}$ 吸收到无量纲曲率算符中，之后的代数运算全部在无量纲层面进行。能量标度信息没有丢失，编码在无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数严格确定。量纲恢复是归一化的逆映射，通过 $m_N$（物质先在公理）重建有量纲物理量。
+CQM的所有方程（同步方程、CFT/OPE、Kac-Moody descendant）都是无量纲的。这不是缺陷，而是**在FG纤维丛截断处主动进行量纲归一化**的设计。归一化把有量纲的 $\hbar$ 和 $E_{\text{bind}}$ 吸收到无量纲曲率算符中，之后的代数运算全部在无量纲层面进行。能量标度信息没有丢失，编码在无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数严格确定。量纲恢复是归一化的逆映射，通过 $m_p$（物质先在公理）重建有量纲物理量。
 
-$$\boxed{\text{代数提供结构（无量纲），物质提供标度（}m_N\text{）} \Longrightarrow \text{有量纲物理量} = \text{标度因子} \times \text{代数结果}}$$
+$$\boxed{\text{代数提供结构（无量纲），物质提供标度（}m_p\text{）} \Longrightarrow \text{有量纲物理量} = \text{标度因子} \times \text{代数结果}}$$
 
 ### 19.1 FG纤维丛截断处的量纲归一化
 
@@ -2127,7 +2180,7 @@ $$\boxed{\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k
 | **代价** | 吸收了 $\hbar$（步骤2）和 $E_{\text{bind}}$（步骤3）的量纲信息 |
 | **收益** | 得到无量纲曲率算符 $\hat{\delta}_v$，之后的同步方程和CFT都是纯代数运算 |
 | **信息保持** | 量纲信息编码在无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数严格确定（§19.2） |
-| **可逆性** | 量纲恢复 $\mathcal{N}^{-1}$ 通过 $m_N$ 标度重建有量纲物理量（§19.3） |
+| **可逆性** | 量纲恢复 $\mathcal{N}^{-1}$ 通过 $m_p$ 标度重建有量纲物理量（§19.3） |
 
 **定理（归一化的信息保持）**：量纲归一化 $\mathcal{N}$ 不丢失能量标度信息。信息被编码在无量纲比值 $\eta$ 中，$\eta$ 从 $A_4$ 代数结构 + 约束方程自洽求解严格确定。
 
@@ -2174,23 +2227,23 @@ $$\boxed{E_{\text{scale}} = \frac{\hbar\omega_0}{\eta} = E_{\text{bind}} = \frac
 | $\alpha$ | $A_4$ 嘉当矩阵 → SU(5)破缺 → U(1)耦合 | 无量纲 | 一阶近似 |
 | $a_0$ | $\hbar/(m_e c\alpha)$（§17.3） | $[L]$ | 待 $m_e$ 严格化 |
 | $\eta$ | 自洽方程（§19.2） | 无量纲 | 严格 |
-| $m_N$ | 物质先在公理 | $[M]$ | 公理 |
+| $m_p$ | 物质先在公理 | $[M]$ | 公理 |
 
-**唯一外部输入**：$m_N$（物质先在公理——物质自组织的第一个有限本体的质量标度）。
+**唯一外部输入**：$m_p$（物质先在公理——物质自组织的第一个有限本体的质量标度）。
 
 不同的物理量需要不同层次的量纲恢复：
 
-#### 19.3.1 层次1：核子标度（只需 $m_N$ 幂次）
+#### 19.3.1 层次1：质子标度（只需 $m_p$ 幂次）
 
-$$Q = m_N^p \times f_{\text{CQM}}(\text{代数结构})$$
+$$Q = m_p^p \times f_{\text{CQM}}(\text{代数结构})$$
 
 | 物理量 | 公式 | 偏差 | 状态 |
 |:---|:---|:---|:---|
-| $G_N$ | $\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_N^2}e^{-2/C}(1+\kappa C) \approx 6.71\times10^{-39}$ GeV$^{-2}$ | ~2 ppm | ✅ |
-| $\Lambda_{\text{QCD}}$ | $m_N \times 0.209 \approx 196$ MeV | ~2% | ✅ |
+| $G_N$ | $\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_p^2}e^{-2/C}(1+\kappa C) \approx 6.71\times10^{-39}$ GeV$^{-2}$ | ~2 ppm | ✅ |
+| $\Lambda_{\text{QCD}}$ | $m_p \times 0.209 \approx 196$ MeV | ~2% | ✅ |
 | $M_{\text{GUT}}$ | $\sim 7.6\times10^{14}$ GeV | — | ✅ |
 
-特点：量纲结构简单（$m_N$ 的幂次），无量纲代数结果直接乘以 $m_N$ 幂次。
+特点：量纲结构简单（$m_p$ 的幂次），无量纲代数结果直接乘以 $m_p$ 幂次。
 
 #### 19.3.2 层次2：电磁标度（需要 $\alpha$）
 
@@ -2230,12 +2283,12 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 
 | 层次 | 标度需求 | 物理量 | CQM状态 |
 |:---:|:---|:---|:---|
-| 1 | $m_N$ 幂次 | $G_N, \Lambda_{\text{QCD}}, M_{\text{GUT}}$ | ✅ 已成功 |
+| 1 | $m_p$ 幂次 | $G_N, \Lambda_{\text{QCD}}, M_{\text{GUT}}$ | ✅ 已成功 |
 | 2 | $\alpha$ | Bohr半径, $\alpha$本身 | ✅ 一阶近似 |
 | 3 | $\alpha, m_e$ | 原子能级 $E_n$ | ⚠️ $m_e$ 涌现机制已给出（§19.4） |
 | 4 | 完整同步方程 + $\alpha + m_e$ | 关联能绝对值 $E_c(Z)$ | ✅ 完整同步方程已构造 |
 
-### 19.4 $m_e/m_N$ 从归一化结构的代数涌现
+### 19.4 $m_e/m_p$ 从归一化结构的代数涌现
 
 #### 19.4.1 关键关系
 
@@ -2248,21 +2301,21 @@ CQM导出式中 $L_u, C, \alpha$ 均无量纲，因此 $a_0$ 的长度量纲必�
 
 $$a_0 = \ell_0 \cdot \frac{L_u}{2\pi C\alpha}$$
 
-从CQM的基本标度，唯一有量纲输入是 $m_N$。从 $m_N$ 和GL(5)涌现量（$\hbar, c$）构造的自然长度标度是核子康普顿波长 $\lambda_N = \hbar/(m_N c)$。
+从CQM的基本标度，唯一有量纲输入是 $m_p$。从 $m_p$ 和GL(5)涌现量（$\hbar, c$）构造的自然长度标度是质子康普顿波长 $\lambda_p = \hbar/(m_p c)$。
 
 #### 19.4.2 涌现公式
 
-取 $\ell_0 = \lambda_N = \hbar/(m_N c)$：
+取 $\ell_0 = \lambda_p = \hbar/(m_p c)$：
 
-$$a_0 = \frac{\hbar}{m_N c} \cdot \frac{L_u}{2\pi C\alpha}$$
+$$a_0 = \frac{\hbar}{m_p c} \cdot \frac{L_u}{2\pi C\alpha}$$
 
 联立 $a_0 = \hbar/(m_e c\alpha)$，消去 $\hbar, c, \alpha$：
 
-$$\boxed{\frac{m_e}{m_N} = \frac{2\pi C}{L_u}}$$
+$$\boxed{\frac{m_e}{m_p} = \frac{2\pi C}{L_u}}$$
 
-**定理（$m_e/m_N$ 的代数涌现）**：电子-核子质量比从CQM代数结构涌现：
+**定理（$m_e/m_p$ 的代数涌现）**：电子-质子质量比从CQM代数结构涌现：
 
-$$\frac{m_e}{m_N} = \frac{2\pi C}{L_u}, \quad C = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957, \quad L_u = \ln\Lambda$$
+$$\frac{m_e}{m_p} = \frac{2\pi C}{L_u}, \quad C = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957, \quad L_u = \ln\Lambda$$
 
 其中 $C$ 是黎曼ξ函数谱量子，$L_u$ 是耦合空间紧化U(1)周长，$\Lambda$ 是能量截断标度。
 
@@ -2271,17 +2324,17 @@ $$\frac{m_e}{m_N} = \frac{2\pi C}{L_u}, \quad C = \frac{\xi'(1)}{\xi(1)} \approx
 | 量 | 值 | 来源 |
 |:---|:---|:---|
 | $2\pi C$ | $\approx 0.1451$ | 黎曼ξ函数 |
-| $m_e/m_N$（实验值） | $\approx 5.447 \times 10^{-4}$ | CODATA 2022 |
-| $L_u$（反推） | $\approx 266.4$ | $L_u = 2\pi C / (m_e/m_N)$ |
+| $m_e/m_p$（实验值） | $\approx 5.447 \times 10^{-4}$ | CODATA 2022 |
+| $L_u$（反推） | $\approx 266.4$ | $L_u = 2\pi C / (m_e/m_p)$ |
 | $\Lambda = e^{L_u}$ | $\approx 10^{115.7}$ | 能量截断标度 |
 
 $\Lambda \sim 10^{116}$ 的物理意义：这是耦合空间的能量截断标度，接近Planck标度与低能标度的比值。$L_u$ 的精确值需要从GL(5)紧化的完整条件确定（待完成）。
 
 #### 19.4.4 对层次3和层次4的影响
 
-$m_e/m_N$ 的代数涌现使层次3和层次4的标度恢复原则上完成：
+$m_e/m_p$ 的代数涌现使层次3和层次4的标度恢复原则上完成：
 
-- **层次3**：$E_h = \alpha^2 m_e c^2 = \alpha^2 (m_e/m_N) m_N c^2$，其中 $\alpha$ 从 $A_4$ 导出，$m_e/m_N$ 从§19.4涌现，$m_N$ 是公理，$c$ 从GL(5)涌现
+- **层次3**：$E_h = \alpha^2 m_e c^2 = \alpha^2 (m_e/m_p) m_p c^2$，其中 $\alpha$ 从 $A_4$ 导出，$m_e/m_p$ 从§19.4涌现，$m_p$ 是公理，$c$ 从GL(5)涌现
 - **层次4**：$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$，标度因子 $E_h$ 原则上已确定，$f_{\text{full}}(Z)$ 从完整同步方程给出（已构造，§18.2）
 
 ### 19.5 量纲恢复的严格计算方法
@@ -2290,11 +2343,11 @@ $m_e/m_N$ 的代数涌现使层次3和层次4的标度恢复原则上完成：
 
 任何有量纲物理量 $Q$ 分解为：
 
-$$Q = \text{Scale}(m_N, \hbar, c, \alpha) \times f_{\text{CQM}}(\text{代数结构})$$
+$$Q = \text{Scale}(m_p, \hbar, c, \alpha) \times f_{\text{CQM}}(\text{代数结构})$$
 
 **计算步骤**：
 1. 确定物理量 $Q$ 的量纲 $[Q] = [M]^a [L]^b [T]^c$
-2. 从 $m_N, \hbar, c, \alpha$ 构造具有相同量纲的标度因子 $\text{Scale} = m_N^p \hbar^q c^r \alpha^s$
+2. 从 $m_p, \hbar, c, \alpha$ 构造具有相同量纲的标度因子 $\text{Scale} = m_p^p \hbar^q c^r \alpha^s$
 3. 从CQM代数结构计算无量纲函数 $f_{\text{CQM}}$
 4. $Q = \text{Scale} \times f_{\text{CQM}}$
 
@@ -2309,7 +2362,7 @@ $$\boxed{E_n = E_{\text{scale}} \times \epsilon_n = \frac{\hbar\omega_0}{\eta} \
 **计算步骤**：
 1. 从CQM代数导出无量纲能级 $\epsilon_n$（如 $\epsilon_n = -1/(2n^2)$）
 2. 从§19.2自洽方程导出 $\eta$
-3. 从GL(5)涌现 $\hbar\omega_0$（$\hbar$ ← 线丛联络曲率，$\omega_0 = \omega_0(\lambda_k, m_N)$ ← 声子谱）
+3. 从GL(5)涌现 $\hbar\omega_0$（$\hbar$ ← 线丛联络曲率，$\omega_0 = \omega_0(\lambda_k, m_p)$ ← 声子谱）
 4. $E_n = (\hbar\omega_0/\eta) \times \epsilon_n$
 
 **适用范围**：原子能级（层次3）。
@@ -2323,7 +2376,7 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 **计算步骤**：
 1. 从平庸同步方程计算增强因子 $\rho_Z$（已完成，如Cr/Cu的 $5/4$）
 2. 从完整同步方程计算元素特定因子 $f_{\text{full}}(Z)$（已构造，§18.2）
-3. 从层次3标度恢复计算Hartree尺度 $E_h = \alpha^2 m_e c^2 = \alpha^2 (2\pi C/L_u) m_N c^2$
+3. 从层次3标度恢复计算Hartree尺度 $E_h = \alpha^2 m_e c^2 = \alpha^2 (2\pi C/L_u) m_p c^2$
 4. $E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$
 
 **适用范围**：关联能绝对值（层次4）。
@@ -2334,7 +2387,7 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 |:---|:---|:---|
 | 1. 增强因子 $\rho_Z$ | ✅ | Cr/Cu: $5/4$，He: $0$（平庸方程） |
 | 2. 元素特定因子 $f_{\text{full}}(Z)$ | ✅ | 完整同步方程已构造 |
-| 3. Hartree尺度 $E_h$ | ⚠️ | $\alpha$一阶近似，$m_e/m_N = 2\pi C/L_u$涌现，$L_u$精确值待定 |
+| 3. Hartree尺度 $E_h$ | ⚠️ | $\alpha$一阶近似，$m_e/m_p = 2\pi C/L_u$涌现，$L_u$精确值待定 |
 | 4. 绝对值 $E_c(Z)$ | ❌ | 需要步骤2和3完成 |
 
 ### 19.6 量纲归一化与完整同步方程的关系
@@ -2387,13 +2440,13 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
                     ┌──────────────────────────────┘
                     │  量纲恢复 N⁻¹
                     │
-                    ├─ 层次1: × m_N^p        → G_N, Λ_QCD ✅
+                    ├─ 层次1: × m_p^p        → G_N, Λ_QCD ✅
                     ├─ 层次2: × ℏ^a c^b α^c  → a₀, α ✅
                     ├─ 层次3: × α²m_ec²      → E_n ⚠️
                     └─ 层次4: × E_h × f_full → E_c(Z) ❌
 
-                    m_e/m_N = 2πC/L_u (代数涌现)
-                    唯一外部输入: m_N (物质先在公理)
+                    m_e/m_p = 2πC/L_u (代数涌现)
+                    唯一外部输入: m_p (物质先在公理)
 ```
 
 ### 19.8 总结
@@ -2403,15 +2456,15 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
 | 归一化发生点 | FG纤维丛截断（从 $[\hat{X},\hat{P}]=i\hbar$ 到 $\hat{\delta}_v$） | ✅ §19.1 |
 | 归一化机制 | $\hbar\omega_k/E_{\text{bind}}$ 把有量纲能量转换为无量纲曲率 | ✅ §19.1.2 |
 | 信息保持 | 能量标度编码在 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数确定 | ✅ §19.2 |
-| 量纲恢复 | $E_{\text{scale}} = \hbar c/(a_0 \alpha \eta)$，唯一外部输入 $m_N$ | ✅ §19.3 |
-| 层次结构 | 4个层次：核子标度→电磁标度→原子能级→关联能 | ✅ §19.3 |
-| $m_e/m_N$ 涌现 | $m_e/m_N = 2\pi C/L_u$，从归一化结构代数涌现 | ✅ §19.4 |
+| 量纲恢复 | $E_{\text{scale}} = \hbar c/(a_0 \alpha \eta)$，唯一外部输入 $m_p$ | ✅ §19.3 |
+| 层次结构 | 4个层次：质子标度→电磁标度→原子能级→关联能 | ✅ §19.3 |
+| $m_e/m_p$ 涌现 | $m_e/m_p = 2\pi C/L_u$，从归一化结构代数涌现 | ✅ §19.4 |
 | 计算方法 | 3种方法：代数-标度分离、η-标度恢复、增强因子-绝对值分离 | ✅ §19.5 |
 | 完整同步方程 | 需要元素特定归一化 $E_{\text{bind}}^{(Z)}$，保留元素特定能量标度 | ✅ 已构造（§18.2） |
 
 **CQM的能量处理能力**：CQM原则上能处理所有层次的能量。当前：
 - 层次1-2已成功（$G_N, \Lambda_{\text{QCD}}, \alpha$ 等）
-- 层次3有涌现机制（$m_e/m_N = 2\pi C/L_u$），$L_u$ 精确值待定
+- 层次3有涌现机制（$m_e/m_p = 2\pi C/L_u$），$L_u$ 精确值待定
 - 层次4需要完整同步方程（元素特定归一化）——已构造（§18.2）
 
-**参数计数**：基本标度1个（$m_N$ ← 物质先在公理）+ 经验拟合参数0个。若 $L_u$ 从GL(5)紧化条件确定，$m_e/m_N$ 完全从代数涌现，层次3标度恢复完全闭合。
+**参数计数**：基本标度1个（$m_p$ ← 物质先在公理）+ 经验拟合参数0个。若 $L_u$ 从GL(5)紧化条件确定，$m_e/m_p$ 完全从代数涌现，层次3标度恢复完全闭合。

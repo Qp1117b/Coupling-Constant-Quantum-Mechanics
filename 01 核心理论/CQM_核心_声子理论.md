@@ -350,11 +350,11 @@ $$\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\
 
 ### 8.2 声子频率的代数确定性
 
-声子频率 $\omega_k = \omega_0\sqrt{\lambda_k}$，其中 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ 由 $A_4$ 嘉当矩阵严格确定。声子频率的**相对值**（$\omega_k/\omega_0 = \sqrt{\lambda_k}$）由代数严格确定，**绝对值**（$\omega_0$）通过量纲恢复从 $m_N$ 标度导出。
+声子频率 $\omega_k = \omega_0\sqrt{\lambda_k}$，其中 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ 由 $A_4$ 嘉当矩阵严格确定。声子频率的**相对值**（$\omega_k/\omega_0 = \sqrt{\lambda_k}$）由代数严格确定，**绝对值**（$\omega_0$）通过量纲恢复从 $m_p$ 标度导出。
 
-### 8.3 声子与 $m_e/m_N$ 涌现
+### 8.3 声子与 $m_e/m_p$ 涌现
 
-声子频率 $\omega_0$ 进入无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$，$\eta$ 从 $A_4$ 代数严格确定。通过Bohr半径关系 $a_0 = \hbar/(m_e c\alpha)$ 和 $a_0 = \lambda_N L_u/(2\pi C\alpha)$，导出 $m_e/m_N = 2\pi C/L_u$（§19.4）。声子是 $m_e/m_N$ 代数涌现的关键环节。
+声子频率 $\omega_0$ 进入无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$，$\eta$ 从 $A_4$ 代数严格确定。通过Bohr半径关系 $a_0 = \hbar/(m_e c\alpha)$ 和 $a_0 = \lambda_p L_u/(2\pi C\alpha)$，导出 $m_e/m_p = 2\pi C/L_u$（§19.4）。声子是 $m_e/m_p$ 代数涌现的关键环节。
 
 ## 9. 声子与超导
 
