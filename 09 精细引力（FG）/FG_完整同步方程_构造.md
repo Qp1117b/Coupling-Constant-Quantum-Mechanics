@@ -182,7 +182,7 @@ $$K_{vv'}^{(Z)} = \frac{\alpha}{\beta} \cdot \frac{1}{|\bar{X}_v^{(Z)} - \bar{X}
 
 **物理意义**：电子在顶点 $v'$ 的分布通过电磁相互作用（强度 $\alpha$）影响顶点 $v$ 的核子，改变其有效曲率。距离越远，影响越弱（$1/r$ 衰减）。
 
-**退化**：忽略电子反馈 $\rho_Z \to 0$，$\Delta\hat{\delta}_v^{\text{e-n}} \to 0$。
+**退化**：Born-Oppenheimer近似（$m_N \gg m_e$，核子不感受电子反馈）下 $\Delta\hat{\delta}_v^{\text{e-n}} \approx 0$。注意这不是 $\rho_Z \to 0$（无电子），而是核子质量主导使电子反馈可忽略。
 
 ---
 
@@ -229,51 +229,88 @@ $$\hat{\mathcal{S}}^{(Z)}_{\text{full}} = \hat{\mathcal{S}}_{\text{nucleon}}^{(Z
 
 ---
 
-## 5. 退化关系的证明
+## 5. 退化关系的分析
 
-### 5.1 退化条件
+### 5.1 退化的两个层面
 
-完整方程在以下极限下退化为平庸方程：
+完整方程与平庸方程的关系需要区分两个层面：
 
-$$\bar{L}_{ij}^{(Z)} \to \bar{L} \quad \text{（等边正4-单形）}, \quad E_{\text{bind}}^{(Z)} \to E_{\text{bind}} \quad \text{（通用归一化）}, \quad \rho_Z \to 0 \quad \text{（忽略电子反馈）}$$
+| 层面 | 内容 | 退化性质 |
+|:---|:---|:---|
+| **代数结构** | 本征群分类 $\{G_k\}$、角动量 $\{l_k\}$、容量 $\{N_k^{\max}\}$、壳层结构、Madelung规则、$Z_{\max}=118$ | **精确不变**（拓扑不变量） |
+| **数值** | 本征值 $s_{Z,i}$、增强因子 $\rho_Z$、关联能 $E_c(Z)$ | **近似退化**（零阶近似） |
 
-### 5.2 退化链
+### 5.2 代数结构不变性（精确）
 
-**步骤1：经典角亏退化**
+**定理**：完整方程 $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$ 与平庸方程 $\hat{\mathcal{S}}_{\text{trivial}}$ 给出**相同的本征群分类**。
 
-$$\bar{\delta}_v^{(Z)} \xrightarrow{\bar{L}_{ij}^{(Z)} \to \bar{L}} \bar{\delta}_v = 0 \quad \text{（质子平坦）}$$
+**证明**：
 
-**步骤2：动力学矩阵退化**
+1. 本征群分类由 $A_4$ 嘉当矩阵的Coxeter数 $h=5$ 确定
+2. 嘉当矩阵是图的**拓扑不变量**（由 $A_4$ 链的连接结构确定），不依赖边长 $\bar{L}_{ij}^{(Z)}$
+3. 边长形变改变动力学矩阵 $D^{(Z)}$ 的本征值 $\lambda_k^{(Z)}$，但不改变图的拓扑结构
+4. 电子反馈 $\Delta\hat{\delta}_v^{\text{e-n}}$ 改变曲率的数值，但不改变 $A_4$ 代数结构
+5. 因此本征群 $\{G_k\}$、角动量 $\{l_k = k-1\}$、容量 $\{N_k^{\max} = 2(2l_k+1)\}$ **精确不变**
 
-$$D_{vv'}^{(Z)} \xrightarrow{k_e^{(Z)} \to k} \frac{k}{m}\mathcal{C}_{vv'} \quad \text{（正比于嘉当矩阵）}$$
+**推论**：壳层结构（s, p, d, f）、Madelung规则（$n+l$）、$Z_{\max}=118$ 由代数结构确定，**完整方程和平庸方程给出相同结果**。这不是退化，而是**代数结构不变性**。
 
-**步骤3：简正模式退化**
+### 5.3 数值退化（近似）
 
-$$\lambda_k^{(Z)} \to \lambda_k = 4\sin^2\frac{k\pi}{10}, \quad v_k^{(Z)}(v) \to v_k(v), \quad \omega_k^{(Z)} \to \omega_k$$
+**退化条件**（三重近似）：
 
-**步骤4：量子涨落退化**
+1. **Born-Oppenheimer近似**：$\Delta\hat{\delta}_v^{\text{e-n}} \approx 0$（核子不感受电子反馈）
+   - 物理依据：$m_N/m_e \approx 1836 \gg 1$，核子运动比电子慢得多
+   - 电子反馈是 $O(m_e/m_N) \sim 10^{-3}$ 修正
+   - **注意**：这不是 $\rho_Z \to 0$（无电子），而是核子不感受电子反馈（电子存在，但其对核子曲率的影响可忽略）
 
-$$\hat{\delta}_v^{(1,Z)} \xrightarrow{E_{\text{bind}}^{(Z)} \to E_{\text{bind}}} \hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + 1/2)$$
+2. **等边近似**：$\bar{L}_{ij}^{(Z)} \approx \bar{L}$（正4-单形）
+   - 物理依据：$A_4$ 正4-单形是核子分布的零阶近似
+   - 边长形变是一阶修正
 
-**步骤5：电子反馈退化**
+3. **通用归一化近似**：$E_{\text{bind}}^{(Z)} \approx E_{\text{bind}}$
+   - 物理依据：核子结合能随 $Z$ 变化缓慢
+   - 归一化差异是一阶修正
 
-$$\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z] \xrightarrow{\rho_Z \to 0} 0$$
+**退化链**（数值层面）：
 
-**步骤6：曲率算符退化**
+**步骤1**：Born-Oppenheimer近似 → $\Delta\hat{\delta}_v^{\text{e-n}} \approx 0$
 
-$$\hat{\delta}_v^{(Z)}[\rho_Z] \to \hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$$
+**步骤2**：等边近似 → $\bar{\delta}_v^{(Z)} \to 0$，$D^{(Z)} \to \frac{k}{m}\mathcal{C}$，$\lambda_k^{(Z)} \to 4\sin^2\frac{k\pi}{10}$
 
-**步骤7：同步算符退化**
+**步骤3**：通用归一化 → $E_{\text{bind}}^{(Z)} \to E_{\text{bind}}$，$\omega_k^{(Z)} \to \omega_k$
 
-$$\hat{\mathcal{S}}^{(Z)}_{\text{full}}[\rho_Z] \xrightarrow{\text{忽略元素特定信息}} \hat{\mathcal{S}}_{\text{trivial}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v}$$
+**步骤4**：曲率算符退化 → $\hat{\delta}_v^{(Z)}[\rho_Z] \to \hat{\delta}_v$
 
-### 5.3 退化定理
+**步骤5**：同步算符退化 → $\hat{\mathcal{S}}^{(Z)}_{\text{full}} \to \hat{\mathcal{S}}_{\text{trivial}}$
 
-$$\boxed{\hat{\mathcal{S}}^{(Z)}_{\text{full}} \;\xrightarrow{\text{等边极限 + 通用归一化 + 忽略电子反馈}}\; \hat{\mathcal{S}}_{\text{trivial}}}$$
+**步骤6**：本征值退化 → $s_{Z,i} \to n_i$
 
-**推论**：完整方程的本征值 $s_{Z,i}$ 在退化极限下趋于平庸本征值 $n_i$：
+### 5.4 退化定理
 
-$$s_{Z,i} \xrightarrow{\text{退化}} n_i$$
+$$\boxed{\hat{\mathcal{S}}^{(Z)}_{\text{full}} \;\xrightarrow[\text{等边近似 + 通用归一化}]{\text{Born-Oppenheimer近似}}\; \hat{\mathcal{S}}_{\text{trivial}} \quad \text{（数值层面，零阶近似）}}$$
+
+**代数结构层面**：$\text{分类}(\hat{\mathcal{S}}^{(Z)}_{\text{full}}) = \text{分类}(\hat{\mathcal{S}}_{\text{trivial}})$（精确不变）
+
+### 5.5 平庸方程有效性的物理依据
+
+**问题**：退化需要三重近似，为何平庸方程给出的结果（$Z_{\max}=118$、Cr/Cu增强25%等）正确？
+
+**回答**：
+
+1. **代数结构结果**（$Z_{\max}=118$、壳层结构、Madelung规则）：**精确正确**——由 $A_4$ Coxeter数确定，不受三重近似影响
+
+2. **数值结果**（Cr/Cu增强25%）：**零阶近似下正确**——三重近似是好的近似：
+   - Born-Oppenheimer：$m_e/m_N \sim 10^{-3}$，电子反馈修正 $\sim 0.1\%$
+   - 等边近似：核子分布接近正4-单形，形变修正 $\sim$ 核子形变幅度
+   - 通用归一化：核子结合能变化 $\sim$ 几%，归一化修正 $\sim$ 几%
+
+3. **元素特定关联能**：**需要完整方程**——元素特定差异是高阶修正，平庸方程无法捕捉
+
+### 5.6 退化的非物理极限
+
+**注意**：退化条件中的等边极限和通用归一化是**非物理极限**（真实元素不是等边，结合能不同）。这与相对论→牛顿力学类似（$v/c \to 0$ 是非物理极限，但牛顿力学在低速下有效）。
+
+**物理上**：平庸方程是完整方程在**核子质量主导**（$m_N \gg m_e$）+ **核子分布接近对称**（$A_4$ 近似）+ **结合能变化缓慢**三个条件下的零阶近似。
 
 ---
 
@@ -307,9 +344,11 @@ $$\boxed{f_{\text{full}}(Z) = 1 + \frac{\sum_{i \in \text{occ}} (s_{Z,i} - n_i)}
 - 求和遍历所有占据态
 - $f_{\text{full}}(Z) = 1$ 时无元素特定修正（退化到平庸方程）
 
-**退化验证**：
+**退化验证**（Born-Oppenheimer近似 + 等边 + 通用归一化）：
 
-$$f_{\text{full}}(Z) \xrightarrow{\text{退化}} 1 + \frac{\sum_i (n_i - n_i)}{\sum_i n_i} = 1$$
+$$f_{\text{full}}(Z) \xrightarrow{\text{三重近似}} 1 + \frac{\sum_i (n_i - n_i)}{\sum_i n_i} = 1$$
+
+**注意**：这是**数值层面的零阶近似退化**。代数结构（本征群分类、壳层结构）**精确不变**，不受三重近似影响（§5.2）。
 
 ### 6.4 本征值差异的微扰展开
 
@@ -506,7 +545,7 @@ $$E_{\text{bind}}^{(Z)} \approx E_{\text{bind}}^{\text{nucleon}}(Z)$$
 | 元素特定曲率算符的构造 | ✅ §3 |
 | 电子反馈曲率的构造 | ✅ §3.4 |
 | 自洽条件的构造 | ✅ §4 |
-| 退化关系的证明 | ✅ §5 |
+| 退化关系的分析 | ✅ §5（代数结构精确不变 + 数值零阶近似退化） |
 | 关联能的计算方法 | ✅ §6 |
 | 迭代求解流程 | ✅ §7 |
 | 与Hartree-Fock/DFT的关系 | ✅ §8 |
@@ -542,7 +581,7 @@ $$E_{\text{bind}}^{(Z)} \approx E_{\text{bind}}^{\text{nucleon}}(Z)$$
 | 完整归一化用 $E_{\text{bind}}^{(Z)}$ | ✅ §3.3 量子涨落用 $E_{\text{bind}}^{(Z)}$ |
 | 完整方程保留元素特定能量标度 | ✅ §3 元素特定曲率算符 |
 | 完整方程给出元素特定关联能 | ✅ §6 关联能计算方法 |
-| 退化到平庸方程 | ✅ §5 退化关系证明 |
+| 退化到平庸方程 | ✅ 代数结构精确不变 + 数值零阶近似退化（§5） |
 | 问题本质：归一化如何保留元素特定信息 | ✅ §3-§4 元素特定归一化 + 电子反馈 |
 
 ---
@@ -567,7 +606,7 @@ $$\hat{\mathcal{S}}^{(Z)}_{\text{full}}[\rho_Z] = \frac{L_u}{2\pi C}\sqrt{1-\bet
 ### 13.2 关键特征
 
 1. **非线性自洽**：曲率依赖电子密度，电子密度依赖解——非线性自洽方程
-2. **退化保证**：等边极限 + 通用归一化 + 忽略电子反馈 → 平庸方程
+2. **退化保证**：代数结构精确不变（§5.2）；数值在Born-Oppenheimer近似 + 等边 + 通用归一化下零阶近似退化（§5.3）
 3. **第一性框架**：从CQM第一性原理构造，无经验参数（边长和结合能从QG层推导）
 4. **关联能计算**：$E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)$，$f_{\text{full}}(Z)$ 从本征值差异导出
 
