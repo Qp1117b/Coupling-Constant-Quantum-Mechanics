@@ -971,7 +971,7 @@ $$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 | 参数计数: 基本标度1个($m_p$) + 经验拟合0个 | 对比标准模型20+个 | 是 |
 | s波关联能(代数公式): $E_c=0$ | SU(2)$_k$真空平庸: $\hat{J}^a\|0\rangle=0$（通用代数骨架） | 是 |
 | d波关联能增强(代数公式): $25/16\approx56\%$ | g波禁戒→S矩阵权重重分配, 无Hamiltonian对角化（通用代数骨架） | 是 |
-| 元素特定关联能: 完整同步方程已构造 | $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$退化为平庸方程给出壳层结构, 完整方程给出元素特定关联能 | ✅ 已构造 |
+| 元素特定关联能: 完整同步方程已构造 | $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$退化为平庸方程给出壳层结构, 完整方程给出元素特定关联能 | 已构造 |
 | Dotsenko-Fateev积分: $I_s\approx1, I_d\approx1$ | CFT共形块(screening charge), 非Coulomb积分 | 是 |
 | 流-流相互作用: $\langle0\|J\cdot J\|0\rangle=0$ | Kac-Moody代数(Sugawara), 同步方程修正 | 是 |
 
@@ -2047,12 +2047,12 @@ $$\boxed{E_c(Z) = \sum_{i < j}^{\text{occ}} \sum_{p \in \text{desc}} \frac{C_{ij
 
 | 步骤 | 计算内容 | 来源 | 状态 |
 |:---:|:---|:---|:---|
-| 1 | 确定占据模式（Madelung填充） | 平庸方程（§18.2步骤3-4） | ✅ 已实现 |
-| 2 | 确定OPE通道（fusion rules） | Verlinde公式（§17.6） | ✅ 已计算 |
-| 3 | 计算OPE系数 $C_{ij}^p$ | 大 $k$ 展开（§17.7） | ✅ 已计算 |
-| 4 | 计算Shapovalov内积 $B_{pp}^{(l_p)}(k)$ | Virasoro代数 + null state修正（§17.1, §17.8） | ✅ 已计算 |
-| 5 | 计算共形块 $\langle\mathcal{F}_p\rangle$ | BPZ方程 → Dotsenko-Fateev积分（§17.2） | ✅ 已建立 |
-| 6 | 求和：所有占据对 × 所有descendant通道 | 代数公式 | ✅ 已验证 |
+| 1 | 确定占据模式（Madelung填充） | 平庸方程（§18.2步骤3-4） | 已实现 |
+| 2 | 确定OPE通道（fusion rules） | Verlinde公式（§17.6） | 已计算 |
+| 3 | 计算OPE系数 $C_{ij}^p$ | 大 $k$ 展开（§17.7） | 已计算 |
+| 4 | 计算Shapovalov内积 $B_{pp}^{(l_p)}(k)$ | Virasoro代数 + null state修正（§17.1, §17.8） | 已计算 |
+| 5 | 计算共形块 $\langle\mathcal{F}_p\rangle$ | BPZ方程 → Dotsenko-Fateev积分（§17.2） | 已建立 |
+| 6 | 求和：所有占据对 × 所有descendant通道 | 代数公式 | 已验证 |
 
 **占据模式依赖性**（平庸方程 → 完整方程的桥梁）：
 
@@ -2347,9 +2347,9 @@ $$Q = m_p^p \times f_{\text{CQM}}(\text{代数结构})$$
 
 | 物理量 | 公式 | 偏差 | 状态 |
 |:---|:---|:---|:---|
-| $G_N$ | $\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_p^2}e^{-2/C}(1+\kappa C) \approx 6.71\times10^{-39}$ GeV$^{-2}$ | ~2 ppm | ✅ |
-| $\Lambda_{\text{QCD}}$ | $m_p \times 0.209 \approx 196$ MeV | ~2% | ✅ |
-| $M_{\text{GUT}}$ | $\sim 7.6\times10^{14}$ GeV | — | ✅ |
+| $G_N$ | $\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_p^2}e^{-2/C}(1+\kappa C) \approx 6.71\times10^{-39}$ GeV$^{-2}$ | ~2 ppm | |
+| $\Lambda_{\text{QCD}}$ | $m_p \times 0.209 \approx 196$ MeV | ~2% | |
+| $M_{\text{GUT}}$ | $\sim 7.6\times10^{14}$ GeV | — | |
 
 特点：量纲结构简单（$m_p$ 的幂次），无量纲代数结果直接乘以 $m_p$ 幂次。
 
@@ -2384,17 +2384,17 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 | 分量 | 来源 | 当前状态 |
 |:---|:---|:---|
 | $E_h$ | $\alpha^2 m_e c^2$（层次3） | $\alpha$有一阶近似，$m_e$有涌现机制（§19.4） |
-| $\rho_Z$ | 平庸同步方程（§17.8.6） | ✅ 已完成（Cr/Cu增强 $25/16\approx56\%$） |
-| $f_{\text{full}}(Z)$ | 完整同步方程（§18.2） | ✅ 已构造（§18.2） |
+| $\rho_Z$ | 平庸同步方程（§17.8.6） | 已完成（Cr/Cu增强 $25/16\approx56\%$） |
+| $f_{\text{full}}(Z)$ | 完整同步方程（§18.2） | 已构造（§18.2） |
 
 **层次总结**：
 
 | 层次 | 标度需求 | 物理量 | CQM状态 |
 |:---:|:---|:---|:---|
-| 1 | $m_p$ 幂次 | $G_N, \Lambda_{\text{QCD}}, M_{\text{GUT}}$ | ✅ 已成功 |
-| 2 | $\alpha$ | Bohr半径, $\alpha$本身 | ✅ 一阶近似 |
-| 3 | $\alpha, m_e$ | 原子能级 $E_n$ | ⚠️ $m_e$ 涌现机制已给出（§19.4） |
-| 4 | 完整同步方程 + $\alpha + m_e$ | 关联能绝对值 $E_c(Z)$ | ✅ 完整同步方程已构造 |
+| 1 | $m_p$ 幂次 | $G_N, \Lambda_{\text{QCD}}, M_{\text{GUT}}$ | 已成功 |
+| 2 | $\alpha$ | Bohr半径, $\alpha$本身 | 一阶近似 |
+| 3 | $\alpha, m_e$ | 原子能级 $E_n$ | 部分：$m_e$ 涌现机制已给出（§19.4） |
+| 4 | 完整同步方程 + $\alpha + m_e$ | 关联能绝对值 $E_c(Z)$ | 完整同步方程已构造 |
 
 ### 19.4 $m_e/m_p$ 从归一化结构的代数涌现
 
@@ -2493,9 +2493,9 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 
 | 步骤 | 状态 | 结果 |
 |:---|:---|:---|
-| 1. 增强因子 $\rho_Z$ | ✅ | Cr/Cu: $25/16$，He: $0$（平庸方程） |
-| 2. 元素特定因子 $f_{\text{full}}(Z)$ | ✅ | 完整同步方程已构造 |
-| 3. Hartree尺度 $E_h$ | ⚠️ | $\alpha$一阶近似，$m_e/m_p = 2\pi C/L_u$涌现，$L_u$精确值待定 |
+| 1. 增强因子 $\rho_Z$ | | Cr/Cu: $25/16$，He: $0$（平庸方程） |
+| 2. 元素特定因子 $f_{\text{full}}(Z)$ | | 完整同步方程已构造 |
+| 3. Hartree尺度 $E_h$ | 部分：| $\alpha$一阶近似，$m_e/m_p = 2\pi C/L_u$涌现，$L_u$精确值待定 |
 | 4. 绝对值 $E_c(Z)$ | 否 | 需要步骤2和3完成 |
 
 ### 19.6 量纲归一化与完整同步方程的关系
@@ -2548,9 +2548,9 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
                     ┌──────────────────────────────┘
                     │  量纲恢复 N⁻¹
                     │
-                    ├─ 层次1: × m_p^p        → G_N, Λ_QCD ✅
-                    ├─ 层次2: × ℏ^a c^b α^c  → a₀, α ✅
-                    ├─ 层次3: × α²m_ec²      → E_n ⚠️
+                    ├─ 层次1: × m_p^p        → G_N, Λ_QCD 是
+                    ├─ 层次2: × ℏ^a c^b α^c  → a₀, α 是
+                    ├─ 层次3: × α²m_ec²      → E_n 待定
                     └─ 层次4: × E_h × f_full → E_c(Z)
 
                     m_e/m_p = 2πC/L_u (代数涌现)
@@ -2561,14 +2561,14 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
 
 | 命题 | 内容 | 状态 |
 |:---|:---|:---|
-| 归一化发生点 | FG纤维丛截断（从 $[\hat{X},\hat{P}]=i\hbar$ 到 $\hat{\delta}_v$） | ✅ §19.1 |
-| 归一化机制 | $\hbar\omega_k/E_{\text{bind}}$ 把有量纲能量转换为无量纲曲率 | ✅ §19.1.2 |
-| 信息保持 | 能量标度编码在 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数确定 | ✅ §19.2 |
-| 量纲恢复 | $E_{\text{scale}} = \hbar c/(a_0 \alpha \eta)$，唯一外部输入 $m_p$ | ✅ §19.3 |
-| 层次结构 | 4个层次：质子标度→电磁标度→原子能级→关联能 | ✅ §19.3 |
-| $m_e/m_p$ 涌现 | $m_e/m_p = 2\pi C/L_u$，从归一化结构代数涌现 | ✅ §19.4 |
-| 计算方法 | 3种方法：代数-标度分离、η-标度恢复、增强因子-绝对值分离 | ✅ §19.5 |
-| 完整同步方程 | 需要元素特定归一化 $E_{\text{bind}}^{(Z)}$，保留元素特定能量标度 | ✅ 已构造（§18.2） |
+| 归一化发生点 | FG纤维丛截断（从 $[\hat{X},\hat{P}]=i\hbar$ 到 $\hat{\delta}_v$） | §19.1 |
+| 归一化机制 | $\hbar\omega_k/E_{\text{bind}}$ 把有量纲能量转换为无量纲曲率 | §19.1.2 |
+| 信息保持 | 能量标度编码在 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中，由 $A_4$ 代数确定 | §19.2 |
+| 量纲恢复 | $E_{\text{scale}} = \hbar c/(a_0 \alpha \eta)$，唯一外部输入 $m_p$ | §19.3 |
+| 层次结构 | 4个层次：质子标度→电磁标度→原子能级→关联能 | §19.3 |
+| $m_e/m_p$ 涌现 | $m_e/m_p = 2\pi C/L_u$，从归一化结构代数涌现 | §19.4 |
+| 计算方法 | 3种方法：代数-标度分离、η-标度恢复、增强因子-绝对值分离 | §19.5 |
+| 完整同步方程 | 需要元素特定归一化 $E_{\text{bind}}^{(Z)}$，保留元素特定能量标度 | 已构造（§18.2） |
 
 **CQM的能量处理能力**：CQM原则上能处理所有层次的能量。当前：
 - 层次1-2已成功（$G_N, \Lambda_{\text{QCD}}, \alpha$ 等）
