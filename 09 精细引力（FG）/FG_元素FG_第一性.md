@@ -278,10 +278,10 @@ $$G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
 
 | $k$ | $l_k$ | $G_k$ | 紧致性 | 流形 |
 |:---:|:---:|:---:|:---:|:---|
-| 1 | 0 | $SU(2)_{\text{spin}}$ | ✓ | $S^3$ |
-| 2 | 1 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
-| 3 | 2 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
-| 4 | 3 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | ✓ | $S^3 \times S^3$ |
+| 1 | 0 | $SU(2)_{\text{spin}}$ | 是 | $S^3$ |
+| 2 | 1 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
+| 3 | 2 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
+| 4 | 3 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
 
 紧致性逐条验证：
 - $SU(2) \cong S^3$（三维球面）：**紧致连通**（Heine-Borel：$S^3 \subset \mathbb{R}^4$ 闭且有界）
@@ -956,24 +956,24 @@ $$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 
 | 验证项 | 结果 | 状态 |
 |:---|:---|:---:|
-| $A_4$嘉当矩阵 $\text{tr}(C)=2r=8$, $\det(C)=h=5$ | 数值精确匹配 | ✓ |
-| 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ | 4个本征值精确匹配 | ✓ |
-| 本征群 $s(2)+p(6)+d(10)+f(14)=32$ | 总容量=32 | ✓ |
-| g波($l=4$)禁戒 | $\text{rank}(A_4)=4$, 第5个基本权不存在 | ✓ |
-| descendant系数 = 拉盖尔多项式系数 | 完全一致（如3s: $[3, -3, 0.5]$） | ✓ |
-| 节点定理: 节点数 $= n-l-1$ = descendant level | 10个轨道全部验证通过 | ✓ |
-| 径向波函数正交性 $\langle R_{nl}|R_{n'l}\rangle = \delta_{nn'}$ | 12对全部验证通过 | ✓ |
-| 能级 $E_n = -1/(2n^2)$ | $n=1..7$ 全部正确 | ✓ |
-| Madelung填充顺序 ($h=n+l$) | 19个轨道顺序正确 | ✓ |
-| Kac-Moody大水平极限 $k_s \approx 236000 \gg 1$ | $\epsilon_s = 4.24 \times 10^{-6}$ | ✓ |
-| 周期表 $Z_{\max} = 118$ | 7周期结构正确 | ✓ |
-| Cr/Cu关联能增强 $= 25/16 \approx 56\%$ | g波权重$9/25$转移到4个允许通道（S矩阵严格） | ✓ |
-| 参数计数: 基本标度1个($m_p$) + 经验拟合0个 | 对比标准模型20+个 | ✓ |
-| s波关联能(代数公式): $E_c=0$ | SU(2)$_k$真空平庸: $\hat{J}^a\|0\rangle=0$（通用代数骨架） | ✓ |
-| d波关联能增强(代数公式): $25/16\approx56\%$ | g波禁戒→S矩阵权重重分配, 无Hamiltonian对角化（通用代数骨架） | ✓ |
+| $A_4$嘉当矩阵 $\text{tr}(C)=2r=8$, $\det(C)=h=5$ | 数值精确匹配 | 是 |
+| 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ | 4个本征值精确匹配 | 是 |
+| 本征群 $s(2)+p(6)+d(10)+f(14)=32$ | 总容量=32 | 是 |
+| g波($l=4$)禁戒 | $\text{rank}(A_4)=4$, 第5个基本权不存在 | 是 |
+| descendant系数 = 拉盖尔多项式系数 | 完全一致（如3s: $[3, -3, 0.5]$） | 是 |
+| 节点定理: 节点数 $= n-l-1$ = descendant level | 10个轨道全部验证通过 | 是 |
+| 径向波函数正交性 $\langle R_{nl}|R_{n'l}\rangle = \delta_{nn'}$ | 12对全部验证通过 | 是 |
+| 能级 $E_n = -1/(2n^2)$ | $n=1..7$ 全部正确 | 是 |
+| Madelung填充顺序 ($h=n+l$) | 19个轨道顺序正确 | 是 |
+| Kac-Moody大水平极限 $k_s \approx 236000 \gg 1$ | $\epsilon_s = 4.24 \times 10^{-6}$ | 是 |
+| 周期表 $Z_{\max} = 118$ | 7周期结构正确 | 是 |
+| Cr/Cu关联能增强 $= 25/16 \approx 56\%$ | g波权重$9/25$转移到4个允许通道（S矩阵严格） | 是 |
+| 参数计数: 基本标度1个($m_p$) + 经验拟合0个 | 对比标准模型20+个 | 是 |
+| s波关联能(代数公式): $E_c=0$ | SU(2)$_k$真空平庸: $\hat{J}^a\|0\rangle=0$（通用代数骨架） | 是 |
+| d波关联能增强(代数公式): $25/16\approx56\%$ | g波禁戒→S矩阵权重重分配, 无Hamiltonian对角化（通用代数骨架） | 是 |
 | 元素特定关联能: 完整同步方程已构造 | $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$退化为平庸方程给出壳层结构, 完整方程给出元素特定关联能 | ✅ 已构造 |
-| Dotsenko-Fateev积分: $I_s\approx1, I_d\approx1$ | CFT共形块(screening charge), 非Coulomb积分 | ✓ |
-| 流-流相互作用: $\langle0\|J\cdot J\|0\rangle=0$ | Kac-Moody代数(Sugawara), 同步方程修正 | ✓ |
+| Dotsenko-Fateev积分: $I_s\approx1, I_d\approx1$ | CFT共形块(screening charge), 非Coulomb积分 | 是 |
+| 流-流相互作用: $\langle0\|J\cdot J\|0\rangle=0$ | Kac-Moody代数(Sugawara), 同步方程修正 | 是 |
 
 ## 17. 径向波函数、能级与关联能的CFT精确计算
 
@@ -1380,7 +1380,7 @@ $$|C_{l_1 l_2}^{l_3}|^2 = \frac{(2l_3+1) \, N_{l_1 l_2}^{l_3}}{(2l_1+1)(2l_2+1)}
 | f波 | 3 | $\sqrt{7}/5$ | $7/25$ | 关联 |
 | g波 | 4 | $3/5$ | $9/25$ | **禁戒**（$A_4$截止 $l \leq 3$） |
 
-**归一化验证**：$\sum_{l_3=0}^{4} |C_{22}^{l_3}|^2 = \frac{1+3+5+7+9}{25} = \frac{25}{25} = 1$ ✓
+**归一化验证**：$\sum_{l_3=0}^{4} |C_{22}^{l_3}|^2 = \frac{1+3+5+7+9}{25} = \frac{25}{25} = 1$
 
 **关键**：d-d OPE的g波通道（$l_3 = 4$）被 $A_4$ 群论截止（$l_{\max} = 3$）排除。g波权重 $|C_{22}^{4}|^2 = 9/25$ 被重新分配到4个允许通道（s,p,d,f），导致关联能修正增强。这是Cr/Cu异常的**代数机制**。
 
@@ -2496,7 +2496,7 @@ $$\boxed{E_c(Z) = E_h \times \rho_Z \times f_{\text{full}}(Z)}$$
 | 1. 增强因子 $\rho_Z$ | ✅ | Cr/Cu: $25/16$，He: $0$（平庸方程） |
 | 2. 元素特定因子 $f_{\text{full}}(Z)$ | ✅ | 完整同步方程已构造 |
 | 3. Hartree尺度 $E_h$ | ⚠️ | $\alpha$一阶近似，$m_e/m_p = 2\pi C/L_u$涌现，$L_u$精确值待定 |
-| 4. 绝对值 $E_c(Z)$ | ❌ | 需要步骤2和3完成 |
+| 4. 绝对值 $E_c(Z)$ | 否 | 需要步骤2和3完成 |
 
 ### 19.6 量纲归一化与完整同步方程的关系
 
@@ -2551,7 +2551,7 @@ $$\eta_Z = \frac{\hbar\omega_0^{(Z)}}{E_{\text{bind}}^{(Z)}} \xrightarrow{\text{
                     ├─ 层次1: × m_p^p        → G_N, Λ_QCD ✅
                     ├─ 层次2: × ℏ^a c^b α^c  → a₀, α ✅
                     ├─ 层次3: × α²m_ec²      → E_n ⚠️
-                    └─ 层次4: × E_h × f_full → E_c(Z) ❌
+                    └─ 层次4: × E_h × f_full → E_c(Z)
 
                     m_e/m_p = 2πC/L_u (代数涌现)
                     唯一外部输入: m_p (物质先在公理)
