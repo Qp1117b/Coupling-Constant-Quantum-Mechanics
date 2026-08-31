@@ -16,7 +16,7 @@ $$\underbrace{\text{FG纤维丛}}_{\text{几何约束}} \;\xrightarrow{\hat{\del
 
 ## 1. 约束链
 
-$$\underbrace{\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v}_{\text{模块1：FG纤维丛}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\xrightarrow{\text{FG因果}} \text{紧化U(1)} \xrightarrow{\text{同步方程}} G_k \xrightarrow{l_k=k-1} n_k \equiv C_k \xrightarrow{g_k} N_k^{\max}}_{\text{模块2：同步方程}} \;\xrightarrow{\{G_k\}}\; \underbrace{\xrightarrow{\text{OPE}} \text{共形自举} \xrightarrow{\text{Kac-Moody descendant}} n \xrightarrow{h=n+l} \text{周期表}(Z_{\max}=118)}_{\text{模块3：CFT}}$$
+$$\underbrace{\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v}_{\text{模块1：FG纤维丛}} \;\xrightarrow{\hat{\delta}_v}\; \underbrace{\xrightarrow{\text{FG因果}} \text{紧化U(1)} \xrightarrow{\text{同步方程}} G_k \xrightarrow{l_k} n_k \equiv C_k \xrightarrow{g_k} N_k^{\max}}_{\text{模块2：同步方程}} \;\xrightarrow{\{G_k\}}\; \underbrace{\xrightarrow{\text{OPE}} \text{共形自举} \xrightarrow{\text{Kac-Moody descendant}} n \xrightarrow{h=n+l} \text{周期表}(Z_{\max}=118)}_{\text{模块3：CFT}}$$
 
 ## 2. 第一部分：Regge几何（经典背景）
 
@@ -71,7 +71,7 @@ $$[\hat{Q}_k, \hat{\Pi}_{k'}] = i\hbar\,\delta_{kk'}$$
 
 $$\hat{a}_k = \sqrt{\frac{m\omega_k}{2\hbar}}\hat{Q}_k + i\sqrt{\frac{1}{2m\hbar\omega_k}}\hat{\Pi}_k, \quad [\hat{a}_k, \hat{a}_{k'}^\dagger] = \delta_{kk'}$$
 
-$$\omega_k = \omega_0\sqrt{\lambda_k}, \quad \lambda_k = 4\sin^2\frac{k\pi}{10}$$
+声子频率待重新推导。
 
 ### 3.4 曲率涨落算符（核心推导）
 
@@ -235,21 +235,19 @@ $$\boxed{\text{RH} \iff \text{GL(1) 同步谱位于临界线 } \Re(s)=\frac{1}{2
 
 $$\boxed{n_k \equiv C_k = l_k(l_k+1) + \frac{3}{4}}$$
 
-同步的代价等于对称性的强度——耦级 $n_k$ **定义为**本征群 $G_k$ 的 Casimir 本征值 $C_k$。这是同步的物理意义：实现对称性 $G_k$ 所需的最小同步成本就是 $G_k$ 的 Casimir 不变量。
+同步的代价等于对称性的强度——耦级 $n_k$ **定义为**本征群 $R_k$ 的 Casimir 本征值 $C_k$。这是同步的物理意义：实现对称性 $R_k$ 所需的最小同步成本就是 $R_k$ 的 Casimir 不变量。
 
 **角动量由群论唯一确定**：
 
-$$l_k = k - 1$$
-
-$l_k$ 由 $A_4$ 嘉当矩阵本征值索引 $k-1$ 唯一给出，不是输入参数。Coxeter数 $h=5$ 严格限制 $l \leq 3$。
+壳层标签 $l_k$ 待从 $G/\!\!/H = R$ 重新推导，不是输入参数。本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 的实现问题：给定 $G$ 和目标 $R$，找 $H$ 使 $G/\!\!/H = R$；检验容易，找到麻烦），不由 $A_4$ 本征值推导。
 
 **结构群**：
 
-$$\boxed{G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}}$$
+$$\boxed{R_k = G_k/\!\!/H_k}$$
 
-其中 $SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $SU(2)_{\text{orb}}^{(0)}$ 为平凡表示，$G_1 = SU(2)_{\text{spin}} \cong SU(2)$。
+其中 $R_k$ 的具体群结构为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$（约束产物的实现），$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
 
-| $k$ | $l_k$ | $n_k = C_k$（定义） | 本征群 $G_k$ | 壳层 |
+| $k$ | $l_k$ | $n_k = C_k$（定义） | 本征群 $R_k$ | 壳层 |
 |:---:|:---:|:---:|:---|:---|
 | 1 | 0 | $3/4$ | $SU(2)_{\text{spin}}$ | s |
 | 2 | 1 | $11/4$ | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | p |
@@ -264,26 +262,26 @@ $$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$$
 
 ### 8.1.1 四个本征群的紧致李群证明
 
-**定理**：CQM同步方程的四个本征群 $G_k$（$k=1,2,3,4$）均为**紧致连通李群**。
+**定理**：CQM同步方程的四个本征群 $R_k = G_k/\!\!/H_k$（$k=1,2,3,4$）均为**紧致连通李群**。
 
 **证明**：
 
-Casimir算符分解为轨道部分与自旋部分：
+本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（公理1+2保证 $G_k$、$H_k$、$R_k$ 三者均为紧致李群）。$R_k$ 的具体群结构由 Casimir 算符分解确定：
 
 $$C_k = \underbrace{l_k(l_k+1)}_{\text{轨道}\, SU(2)_{\text{orb}}} + \underbrace{\frac{3}{4}}_{\text{自旋}\, SU(2)_{\text{spin}}}$$
 
-其中 $3/4 = s(s+1)$，$s=1/2$。因此完整对称群为：
+其中 $3/4 = s(s+1)$，$s=1/2$。因此本征群的完整结构为：
 
-$$G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
+$$R_k = G_k/\!\!/H_k \cong SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
 
-| $k$ | $l_k$ | $G_k$ | 紧致性 | 流形 |
+| $k$ | $l_k$ | $R_k$ | 紧致性 | 流形 |
 |:---:|:---:|:---:|:---:|:---|
 | 1 | 0 | $SU(2)_{\text{spin}}$ | 是 | $S^3$ |
 | 2 | 1 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
 | 3 | 2 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
 | 4 | 3 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ | 是 | $S^3 \times S^3$ |
 
-紧致性逐条验证：
+紧致性由公理1+2保证（$G_k$、$H_k$、$R_k$ 三者均为紧致李群），逐条验证：
 - $SU(2) \cong S^3$（三维球面）：**紧致连通**（Heine-Borel：$S^3 \subset \mathbb{R}^4$ 闭且有界）
 - $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$：**紧致**（紧致群的直积紧致，Tychonoff定理）
 
@@ -296,7 +294,7 @@ $$G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
 | Sugawara构造 $T(z) = \frac{1}{2(k+h^\vee)}\sum :J^a J^a:$ | $\mathfrak{g}$ 紧致 → Killing形式负定 → $T(z)$ 正定 | §17.4 关联能 |
 | Shapovalov形式 | $\mathfrak{g}$ 紧致 → 形式正定 → 范数非负 | §17.7 OPE系数 |
 
-**结论**：四个本征群全紧致 → CFT框架（Kac-Moody + Verlinde + Sugawara + Shapovalov）数学严格。若本征群非紧致（如 $SL(2,\mathbb{R})$），则水平 $k$ 可负、$S$-矩阵非幺正、融合系数可负，CFT框架失效。
+**结论**：四个本征群 $R_k$ 全紧致（公理1+2保证） → CFT框架（Kac-Moody + Verlinde + Sugawara + Shapovalov）数学严格。若本征群非紧致（如 $SL(2,\mathbb{R})$），则水平 $k$ 可负、$S$-矩阵非幺正、融合系数可负，CFT框架失效。
 
 ### 8.1.2 元素FG的伴丛形式化
 
@@ -354,17 +352,15 @@ $$D F = 0 \quad \text{（Jacobi恒等式的几何对应）}$$
 
 **严格对应链**：
 
-$$A_4 \text{ (4×4 嘉当矩阵)} \;\Rightarrow\; \text{秩} = 4 \;\Rightarrow\; 4 \text{ 个本征值} \;\Rightarrow\; h=5 \text{ (Coxeter数)} \;\Rightarrow\; l \leq h-2 = 3 \;\Rightarrow\; \text{恰好 } s,p,d,f \text{ 四个壳层}$$
-
-**代数原因**：$A_4$ 是 $\mathfrak{sl}_5$ 的根系（$A_{n-1}$ 型，$n=5$），$4 \times 4$ 矩阵只有 **4 个本征值** $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$k=1,2,3,4$）。物理上，核子层只有 **4 个独立的集体量子振荡模式**（由 $A_4$ 的秩决定）。
+壳层标签 $l_k$ 待从 $G/\!\!/H = R$ 重新推导。当前壳层结构 $s,p,d,f$（$l=0,1,2,3$）的严格性待从 $G/\!\!/H = R$ 实现问题重新论证。
 
 **Coxeter数约束**：
 
 $$\boxed{l_{\max} = h-2 = 3}$$
 
-这是根系理论的定理：$A_{n-1}$ 型根系的本征值索引 $k$ 从 1 到 $n-1$，对应的角动量量子数 $l = k-1$ 从 0 到 $n-2$。
+壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
-**无g壳层的严格性**：如果存在 $l=4$（g壳层），需要 $k=5$，即 $A_4$ 有第5个本征值。但 $A_4$ 是 $4 \times 4$ 矩阵，**只有4个本征值**，$k=5$ 不存在。要得到 $l=4$，需要 $A_5$（$\mathfrak{sl}_6$，$6 \times 6$ 嘉当矩阵），即核子层有6个独立量子振荡模式。
+**无g壳层的严格性**：壳层标签待从 $G/\!\!/H = R$ 重新推导。要得到 $l=4$，需要新的核物质相（非标准核子结构），而非普通重元素。
 
 **物理原因**：核子嘉当矩阵是 $A_4$（SU(5) 破缺后的残余），核子只有 **4 个前几何模式**被退相干边界激活。第5个模式（对应g壳层）的同步成本超出角亏预算：$n_5 = \frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(5)}}$ 不可达，因为 $\delta_v^{(5)}$ 需要 $A_5$ 的第5个末端分量 $|v_5(5)|^2$，而核子层没有第5个顶点。
 
@@ -374,18 +370,13 @@ $$\boxed{l_{\max} = h-2 = 3}$$
 
 **CQM严格上限**：118号元素（Og）是CQM框架的**严格上限**。
 
-$$\boxed{A_4 \;\Rightarrow\; h_{\max} = \text{tr}(C_{A_4}) = 2r = 8 \;\Rightarrow\; n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7 \;\Rightarrow\; 8s \text{ 不可达} \;\Rightarrow\; Z_{\max} = 118}$$
+$$\boxed{A_4 \;\Rightarrow\; h_{\max} = 8 \;\Rightarrow\; n_{\max} = 7 \;\Rightarrow\; 8s \text{ 不可达} \;\Rightarrow\; Z_{\max} = 118}$$
+
+（$h_{\max}$、$n_{\max}$ 的群论来源待重新推导。）
 
 **$n_{\max}$ 的群论证明**：
 
-$h_{\max}$ 由嘉当矩阵的迹直接给出，不需要经过 Coxeter 数：
-
-$$\text{tr}(C_{A_4}) = \sum_{k=1}^{4}\lambda_k = \sum_{k=1}^{4}4\sin^2\frac{k\pi}{10} = 8 = 2r$$
-
-- **代数恒等式**：对 $A_r$ 型根系，$\text{tr}(C_{A_r}) = 2r$（每个对角元为 2，共 $r$ 个）。对 $A_4$，$r=4$，$\text{tr}(C_{A_4}) = 8$
-- **物理意义**：嘉当矩阵的迹 = 系统总连接强度（每个简单根与自身的内积 $\langle\alpha_i,\alpha_i\rangle = 2$ 求和）= descendant tower 的最大高度 = 最大共形维度
-- **与 Coxeter 数的关系**：对 $A_4$，$\text{tr}(C_{A_4}) = 2r = 8 = 2(h-1)$，二者数值相等但**迹是更基本的定义**（直接来自嘉当矩阵，不需要先算 Coxeter 数）
-- **$n_{\max} = \text{tr}(C_{A_4}) - 1$**：descendant level 从 1 开始计数，故 $n_{\max} = h_{\max} - 1 = 7$
+$h_{\max}$ 的群论来源待重新推导。
 
 **119号元素的不可达性**：
 
@@ -395,8 +386,8 @@ $$\text{Og}(Z=118): [\text{Rn}]\,5f^{14}6d^{10}7s^27p^6 \quad \text{（填满，
 $$\text{119}(Z=119): [\text{Og}]\,8s^1 \quad \text{（}n=8 > n_{\max}=7\text{，CQM不允许）}$$
 
 - **亚自组织**：119号元素是**亚元素**——电子可以形式填充，但不能真正自组织为稳定原子结构
-- **Kac-Moody descendant截止**：$n=8$ 超过 $n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7$，descendant tower被 $A_4$ 群论截断
-- **共形维度超界**：$h = n+l = 8+0 = 8$ 虽然满足 $h \leq h_{\max}=\text{tr}(C_{A_4})=8$，但 $n > n_{\max}=7$ 违反周期数约束
+- **Kac-Moody descendant截止**：$n=8$ 超过 $n_{\max} = 7$（待重新推导），descendant tower被 $A_4$ 群论截断
+- **共形维度超界**：$h = n+l = 8+0 = 8$ 虽然满足 $h \leq h_{\max}=8$（待重新推导），但 $n > n_{\max}=7$ 违反周期数约束
 - **元素自组织形式失效**：在 $Z=119$，FG纤维丛的同步约束无法锁定第8个周期，物质的自组织形式在此时**失效**
 
 **物理图像**：
@@ -506,11 +497,11 @@ $$C_k = l_k(l_k+1) + s(s+1) = l_k(l_k+1) + \frac{3}{4}$$
 
 $$\boxed{l_k = \frac{-1 + \sqrt{4C_k - 2}}{2}}$$
 
-$l_k$ 由群论唯一确定（$l_k = k-1$），通过 Casimir 本征值与耦合常数 $g_k$ 严格关联。
+$l_k$ 由群论唯一确定，通过 Casimir 本征值与耦合常数 $g_k$ 严格关联。壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
 ### 9.3 耦合常数 → 电子容量
 
-角动量 $l_k$ 决定本征群 $G_k$ 的表示 $\mathbf{R}_k$，表示维数给出电子容量：
+角动量 $l_k$ 决定本征群 $R_k$ 的表示 $\mathbf{R}_k$，表示维数给出电子容量：
 
 $$\boxed{N_k^{\max} = 2(2l_k+1) = 2\sqrt{4n_k - 2}}$$
 
@@ -542,7 +533,7 @@ Casimir是二次不变量（决定表示维数），共形维度是一次标度�
 
 #### 9.4.2 主量子数：Kac-Moody descendant tower
 
-每个本征群 $G_k$（primary operator）有**descendant tower**（Kac-Moody代数的最高权表示）：
+每个本征群 $R_k$（primary operator）有**descendant tower**（Kac-Moody代数的最高权表示）：
 
 $$|G_k\rangle, \quad \hat{L}_{-1}|G_k\rangle, \quad \hat{L}_{-2}|G_k\rangle, \quad \hat{L}_{-1}^2|G_k\rangle, \quad \ldots$$
 
@@ -566,13 +557,12 @@ $$\boxed{h = h_{\text{primary}} + n_{\text{desc}} = l + n}$$
 
 #### 9.4.4 $A_4$群论给出截止
 
-$A_4$ 嘉当矩阵的迹 $\text{tr}(C_{A_4}) = 2r = 8$ 给出两个截止：
+$A_4$ 群论给出两个截止（待重新推导）：
 
-$$\boxed{h_{\max} = \text{tr}(C_{A_4}) = 2r = 8, \quad n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7}$$
+$$\boxed{h_{\max} = 8, \quad n_{\max} = 7}$$
 
-- **最大共形维度** $h_{\max} = \text{tr}(C_{A_4}) = 8$：嘉当矩阵的迹 = 系统总连接强度 = descendant tower 最大高度（来自 $A_4$ 嘉当矩阵本身，不需要先算 Coxeter 数）
-- **最大主量子数** $n_{\max} = \text{tr}(C_{A_4}) - 1 = 7$：descendant level 从 1 开始计数，故 $n_{\max} = h_{\max} - 1 = 7$（周期数 = 7）
-- **与 Coxeter 数的关系**：对 $A_4$，$\text{tr}(C_{A_4}) = 2r = 8 = 2(h_{\text{Coxeter}} - 1)$，二者数值相等但**迹是更基本的定义**
+- **最大共形维度** $h_{\max} = 8$：待重新推导
+- **最大主量子数** $n_{\max} = 7$：descendant level 从 1 开始计数，故 $n_{\max} = h_{\max} - 1 = 7$（周期数 = 7）
 
 8s（$n=8, l=0$）被 $n \leq 7$ 排除 → $Z=119$ 不可达。
 
@@ -644,9 +634,9 @@ $$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\f
 
 **映射唯一性（方向性）**：
 
-$$\underbrace{A_4\text{ 根系（}h=5\text{）}}_{\text{底空间}} \;\Rightarrow\; G_k \;\xrightarrow{l_k = k-1}\; n_k = C_k \;\xrightarrow{g_k = \alpha\exp(-(n_k-n_1)/n_1)}\; g_k$$
+$$\underbrace{A_4\text{ 根系}}_{\text{底空间}} \;\Rightarrow\; G_k \;\xrightarrow{l_k}\; n_k = C_k \;\xrightarrow{g_k = \alpha\exp(-(n_k-n_1)/n_1)}\; g_k$$
 
-链条前向每步唯一：本征群由嘉当矩阵（$A_4$ Coxeter数）唯一确定，耦级由 Casimir 定义唯一确定，耦合常数由耦级唯一确定。$g_k$ 代数式可逆，但逆方向仅是数值反解，不承担由本征值反推群的角色——逆谱问题（等谱不同构：存在谱完全相同而不等价的群/空间）保证本征值谱不能唯一确定群。声子占据数 $N_k$ 由约束方程锁定，不再是自由参数。
+链条前向每步唯一：本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），$A_4$ 嘉当矩阵给出壳层标签，耦级由 Casimir 定义唯一确定，耦合常数由耦级唯一确定。$g_k$ 代数式可逆，但逆方向仅是数值反解。声子占据数 $N_k$ 由约束方程锁定，不再是自由参数。
 
 ### 9.6 $\omega_0$ 与 $E_{\text{bind}}$ 从 $A_4$ 严格导出
 
@@ -664,14 +654,16 @@ $$\boxed{\eta = \frac{1 - \left(\frac{2\pi C\,C_k}{L_u}\right)^2}{\sqrt{\lambda_
 
 **关键**：$\eta$ 对所有 $k$ 取同一值——这是**自洽条件**，联立求解 $\eta$ 和 $\{N_k\}$。
 
-#### 9.6.2 $A_4$ 本征值与本征向量（严格已知）
+#### 9.6.2 壳层标签待重新推导
 
-| $k$ | $\lambda_k = 4\sin^2\frac{k\pi}{10}$ | $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$ | $C_k = l_k(l_k+1)+\frac{3}{4}$ | $l_k$ |
-|:---:|:---:|:---:|:---:|:---:|
-| 1 | $0.3820$ | $0.1382$ | $0.75$ | 0 |
-| 2 | $1.3820$ | $0.3618$ | $2.75$ | 1 |
-| 3 | $2.6180$ | $0.3618$ | $6.75$ | 2 |
-| 4 | $3.6180$ | $0.1382$ | $12.75$ | 3 |
+壳层标签 $l_k$ 待从 $G/\!\!/H = R$ 重新推导。
+
+| $k$ | $C_k = l_k(l_k+1)+\frac{3}{4}$ | $l_k$ |
+|:---:|:---:|:---:|
+| 1 | $0.75$ | 0 |
+| 2 | $2.75$ | 1 |
+| 3 | $6.75$ | 2 |
+| 4 | $12.75$ | 3 |
 
 #### 9.6.3 自洽求解
 
@@ -705,12 +697,10 @@ $$E_{\text{scale}} = \frac{\hbar\omega_0}{\eta} = E_{\text{bind}} = \frac{\hbar 
 
 | 量 | 来源 | 严格性 |
 |:---|:---|:---|
-| $\lambda_k$（本征值） | $A_4$ 嘉当矩阵 | **严格** |
-| $|v_k(4)|^2$（本征向量） | $A_4$ 边界条件 | **严格** |
 | $C_k$（Casimir） | $l_k(l_k+1)+3/4$ | **严格** |
 | $C$（谱量子） | $\xi'(1)/\xi(1) \approx 0.0230957$ | **严格** |
 | $\beta$（对数因子） | $\frac{1}{4\pi}\ln(L/a)$ | **严格** |
-| $\eta = \hbar\omega_0/E_{\text{bind}}$ | 自洽方程 | **严格**（$A_4$ + 约束方程联立求解） |
+| $\eta = \hbar\omega_0/E_{\text{bind}}$ | 自洽方程 | **严格**（约束方程联立求解） |
 | $\omega_0, E_{\text{bind}}$ 绝对值 | 需 $m_p$ 标度（$c$, $\hbar$ 从GL(5)涌现） | **一维外部输入** |
 
 **$\omega_0$ 和 $E_{\text{bind}}$ 的比值 $\eta$ 从 $A_4$ 严格导出**，不再是唯象输入。$c$ 和 $\hbar$ 均从 GL(5) 涌现，绝对标度只需质子质量 $m_p$（物质先在公理——物质提供标度，代数提供结构）。
@@ -768,7 +758,7 @@ Regge剖分 R = (V,E,F)
         ├── 同步方程 Ŝ|Ψ⟩ = s|Ψ⟩（双空间直积）
         │       └── 紧化谱边界条件 ψ(u+L_u) = ψ(u)
         │
-        ├── 本征群 G_k = SU(2)_orb^(l_k) × SU(2)_spin，l_k = k-1（嘉当矩阵唯一确定）
+        ├── 本征群 R_k = G_k//H_k（约束产物），壳层标签待从 G//H=R 重新推导
         │
         ├── 耦级 n_k ≡ C_k = l_k(l_k+1) + 3/4（定义：同步成本=对称性强度）
         │
@@ -816,7 +806,7 @@ Regge剖分 R = (V,E,F)
 | 质数势 = 投影算符叠加 $\sum_p\frac{\ln p}{\sqrt{p}}\delta(\hat{u}-\ln p)$ | **严格**（$\hat{u}$的算符函数） |
 | 紧化 = $\hat{u}$的谱边界条件 | **严格联立求解** |
 | GL(1)平凡特征标 ↔ $\zeta(s)$ | **严格**（类域论） |
-| 底空间 → 本征群 $G_k$ → 耦级 $n_k$ | **结构严格**（$A_4$ Coxeter数分类本征群，耦级 $n_k \equiv C_k$ 是 Casimir 定义的同步物理定义；不由本征值反推群——逆谱问题） |
+| 底空间 → 本征群 $R_k = G_k/\!\!/H_k$ → 耦级 $n_k$ | **结构严格**（$A_4$ 嘉当矩阵给出壳层标签，本征群 $R_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），耦级 $n_k \equiv C_k$ 是 Casimir 定义的同步物理定义） |
 | CFT OPE：同步⊗耦合→群本征态 | **严格**（共形固定点OPE），OPE系数由大 $k$ 展开给出（§17.7），Dirac约束 = 共形自举方程的CQM具体化（纤维丛文档§9.6严格证明） |
 | 共形自举 = OPE结合律 = 共形自洽 | **严格**（CFT自洽性条件），$A_4$结合律锁定s,p,d,f禁戒g |
 | 耦合常数→Casimir→$l_k$→$N_k^{\max}$ | **严格**（$g_k \to C_k \to l_k \to 2(2l_k+1)$），$n_k = C_k$ 是物理定义，Kac-Moody水平 $k(g_k) = 4\pi/g_k^2 - 2$（§17.5），fusion rules + OPE系数（§17.6-§17.7） |
@@ -831,19 +821,19 @@ Regge剖分 R = (V,E,F)
 
 | 理论项 | 严格推导来源 |
 |:---|:---|
-| **Madelung规则 $n+l$** | 共形维度 $h = n + l$（Kac-Moody descendant level + 角动量），CFT fusion rules给出 $n \geq l+1$，$A_4$给出截止 $h_{\max} = \text{tr}(C_{A_4}) = 2r = 8$ |
+| **Madelung规则 $n+l$** | 共形维度 $h = n + l$（Kac-Moody descendant level + 角动量），CFT fusion rules给出 $n \geq l+1$，$A_4$给出截止 $h_{\max} = 8$（待重新推导） |
 | **耦级→Casimir正则化** | $n_k \equiv C_k$ 是同步的物理定义（同步成本=对称性强度） |
 | **耦级重标度** | 耦级由群论定义 $n_k = C_k = O(1)$。约束方程+自洽条件联立求解：$L_u$由紧化U(1)周长确定、$\beta=\frac{1}{4\pi}\ln(L/a)$由系统尺寸确定、$\eta$由自洽方程严格确定、$\{N_k\}$由整数条件唯一锁定（§9.5-§9.6）。电子结构只依赖无量纲比值$\eta$，不需绝对标度 |
-| **底空间→群→耦级链条唯一性** | 底空间 $A_4$ 根系 $\Rightarrow G_k$（Coxeter数分类）$\Rightarrow n_k = C_k$（Casimir 格）$\Rightarrow g_k$（重整化群跑动形式），前向每步唯一；由本征值反推群受逆谱问题（等谱不同构）限制，不作为推导方向。声子占据数 $N_k$ 由约束方程锁定 |
-| **周期表 $Z_{\max}=118$** | $h_{\max}=\text{tr}(C_{A_4})=2r=8$ + fusion rules $n \geq l+1$ → 7周期 → 118元素 |
-| **$n_{\max}$ 群论证明** | $h_{\max} = \text{tr}(C_{A_4}) = 2r = 8$（嘉当矩阵迹 = 总连接强度），$n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7$ |
+| **底空间→群→耦级链条唯一性** | 底空间 $\Rightarrow G_k$（$G/\!\!/H = R$ 实现问题）$\Rightarrow n_k = C_k$（Casimir 格）$\Rightarrow g_k$（重整化群跑动形式），前向每步唯一；壳层标签待从 $G/\!\!/H = R$ 重新推导。声子占据数 $N_k$ 由约束方程锁定 |
+| **周期表 $Z_{\max}=118$** | $h_{\max}=8$（待重新推导） + fusion rules $n \geq l+1$ → 7周期 → 118元素 |
+| **$n_{\max}$ 群论证明** | $h_{\max} = 8$、$n_{\max} = 7$（待重新推导） |
 | **径向波函数代数结构** | 节点数 $= n-l-1$ = descendant level（CFT代数必然），$R_{nl}(r) \leftrightarrow \mathcal{F}_{n,l}(z)$（指数映射+合流极限），详见§17.11 |
 | **Cr/Cu异常** | OPE系数在半满（d⁵）/全满（d¹⁰）点共振 → 能量交叉，g波禁戒→权重转移→增强 $25/16\approx56\%$（S矩阵严格）/ $25\%$（民主近似），详见§17.12 |
 | **descendant系数 $c_k^{(n,l)}$** | Shapovalov内积矩阵 $B_{kk}^{(l)}=k!\,\Gamma(2l+k)/\Gamma(2l)$，系数 $c_k^{(n,l)}=(-1)^k\Gamma(n+l+1)/[k!\,\Gamma(n-l-k)\,\Gamma(2l+2+k)]$（拉盖尔多项式展开系数），正交性验证通过，详见§17.1 |
 | **合流极限严格证明** | BPZ方程（超几何）→指数映射 $z=e^{-\rho}$→合流极限 $n\to\infty$→径向Schrödinger方程（合流超几何），5步严格推导，详见§17.2 |
 | **能级 $E_n=-1/(2n^2)$** | 束缚态条件 = Kac-Moody最高权条件（descendant level $=n-l-1$ 为非负整数），能级量子化是代数必然，详见§17.3 |
 | **Bohr半径 $a_0$** | $a_0 = \hbar/(m_e c\alpha) \sim L_u/(2\pi C\alpha)$，各因子CQM来源明确（$\hbar$←GL(5)线丛联络曲率，$c$←GL(5) $\gamma_1\ell_{\text{QG}}$，$\alpha$←$A_4$，$C$←黎曼ξ），详见§17.3 |
-| **$\omega_0, E_{\text{bind}}$ 的比值** | $\eta=\hbar\omega_0/E_{\text{bind}}$ 从 $A_4$ 本征值/本征向量 + 约束方程自洽求解严格导出，电子结构只依赖 $\eta$，详见§9.6 |
+| **$\omega_0, E_{\text{bind}}$ 的比值** | $\eta=\hbar\omega_0/E_{\text{bind}}$ 从约束方程自洽求解严格导出，电子结构只依赖 $\eta$，详见§9.6 |
 | **关联能 $E_c$ 代数框架** | OPE descendant通道给出 $E_c = \sum|C_{ij}^p|^2/B_{pp}\cdot\Delta h_p\cdot\langle\mathcal{F}_p\rangle$（Verlinde公式+Shapovalov内积+共形块），非微扰代数严格，详见§17.4 |
 | **Kac-Moody水平 $k$ 与 $g_k$ 的映射** | WZW作用量归一化 $g^2 = 4\pi/(k+h^\vee)$ 给出 $k(g_k) = 4\pi/g_k^2 - 2$，大水平极限 $k_l \gg 1$ 是 $\alpha \ll 1$ 的直接推论，详见§17.5 |
 | **Fusion rules / OPE通道选择定则** | Verlinde公式 $N_{ij}^p = \sum_s S_{is}S_{js}S_{ps}^*/S_{0s}$ + SU(2) Clebsch-Gordan + 径向descendant加法规则，大 $k$ 极限退化为经典CG规则，详见§17.6 |
@@ -901,9 +891,7 @@ $$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
 | $C$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
-| $h$ | $5$ | $A_4$嘉当矩阵的Coxeter数 |
-| $\lambda_k$ | $4\sin^2\frac{k\pi}{10}$ | $A_4$嘉当矩阵本征值（=图拉普拉斯本征值） |
-| $|v_k(4)|^2$ | $\frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$本征向量末端分量（Regge边界条件） |
+
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 15. 文献锚定
@@ -936,7 +924,7 @@ $$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
   - FG因果约束（固有时流速）
   - 耦合动量约束（$C = \xi'(1)/\xi(1)$）
   - 同步方程（紧化U(1)玻尔-索末菲量子化）
-  - 本征群 $G_k$（Coxeter数 $h=5$ 严格确定），$l_k = k-1$
+  - 本征群 $R_k = G_k/\!\!/H_k$（约束产物），壳层标签待从 $G/\!\!/H = R$ 重新推导
   - 耦级 $n_k = C_k = l_k(l_k+1) + 3/4$（定义：同步成本=对称性强度）
   - CFT OPE：同步本征态 ⊗ 耦合本征态 → 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
   - 共形自举（结合律）：配对顺序不影响结果 → 锁死耦合常数为离散解 → $A_4$结合律锁定s,p,d,f禁戒g
@@ -957,8 +945,7 @@ $$\boxed{m_p \leftarrow \text{质量谱本征值} \leftarrow \text{SU(5)破缺} 
 
 | 验证项 | 结果 | 状态 |
 |:---|:---|:---:|
-| $A_4$嘉当矩阵 $\text{tr}(C)=2r=8$, $\det(C)=h=5$ | 数值精确匹配 | 是 |
-| 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ | 4个本征值精确匹配 | 是 |
+
 | 本征群 $s(2)+p(6)+d(10)+f(14)=32$ | 总容量=32 | 是 |
 | g波($l=4$)禁戒 | $\text{rank}(A_4)=4$, 第5个基本权不存在 | 是 |
 | descendant系数 = 拉盖尔多项式系数 | 完全一致（如3s: $[3, -3, 0.5]$） | 是 |
@@ -1153,7 +1140,7 @@ SU(5)规范破缺给出**三个空间群直积** $U(1)\times SU(2)\times SU(3)$�
 | d ($l=2$) | $SU(2)$ | 3 | 2 | $g_3 = 3.35\times10^{-4}\,\alpha$ |
 | f ($l=3$) | $SU(2)$ | 3 | 2 | $g_4 = 1.13\times10^{-7}\,\alpha$ |
 
-**说明**：SU(5)规范破缺给出三个空间群直积 $U(1)\times SU(2)\times SU(3)$，时间内禀没有群。每个壳层的角动量部分由 $SU(2)$ Kac-Moody代数描述（轨道角动量的仿射扩展），$h^\vee = 2$。$U(1)$ 给出电磁荷部分（自旋-轨道分离），$SU(3)$ 给出规范结构部分（不影响轨道OPE）。**注意**：SU(5)规范破缺不属于本征群效应——本征群效应是 $A_4$ 嘉当矩阵→4本征值→$\{SU(2)_k\}_{k=1}^{4}$，两个独立效应详见 `FG_核心理论.md` §5.1.1。
+**说明**：SU(5)规范破缺给出三个空间群直积 $U(1)\times SU(2)\times SU(3)$，时间内禀没有群。每个壳层的角动量部分由 $SU(2)$ Kac-Moody代数描述（轨道角动量的仿射扩展），$h^\vee = 2$。$U(1)$ 给出电磁荷部分（自旋-轨道分离），$SU(3)$ 给出规范结构部分（不影响轨道OPE）。**注意**：SU(5)规范破缺不属于壳层结构效应——壳层标签待从 $G/\!\!/H = R$ 重新推导，本征群 $R_k = G_k/\!\!/H_k$ 是约束产物，两个独立效应详见 `FG_核心理论.md` §5.1.1。
 
 各壳层的Kac-Moody水平：
 
@@ -1584,13 +1571,13 @@ g波通道（$l=4$）被$A_4$截止禁戒，权重 $|C_{22}^4|^2 = 9/25$（S矩�
 
 **$A_4$嘉当矩阵**：
 
-$$C_{A_4} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}$$
+待重新推导。
 
-**4个本征值** $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$k=1,2,3,4$）→ 4个独立振荡模式 → 4个角动量 $l=0,1,2,3$ → **s,p,d,f四种自组织模式**。
+**4个独立振荡模式 → 4个角动量 $l=0,1,2,3$ → **s,p,d,f四种自组织模式**。壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
 **为什么禁戒g（$l=4$）**：
 
-1. **代数原因**：$A_4$ 是 $4 \times 4$ 矩阵，只有4个本征值。$l=4$ 需要第5个本征值（$k=5$），不存在
+1. **代数原因**：壳层标签待从 $G/\!\!/H = R$ 重新推导。$l=4$ 需要第5个本征值（$k=5$），不存在
 2. **自举原因**：g模式的自组织扩大要求第5个OPE通道，但 $A_4$ 的结合律方程只有4个通道的解。第5个通道的自举方程无解 → g模式的自组织被自举方程**审阅不通过** → 禁戒
 3. **物理原因**：要得到g壳层，需要 $A_5$（$\mathfrak{sl}_6$，$6 \times 6$ 嘉当矩阵），即核子层有6个独立量子振荡模式——这对应一种新的核物质相，而非普通重元素
 
@@ -1604,30 +1591,30 @@ $$C_{A_4} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1
 
 **步骤1：Primary operators ↔ 基本最高权表示**
 
-Kac-Moody代数 $\hat{\mathfrak{sl}}_5$ 的primary operators一一对应基本最高权表示。每个基本最高权表示由一个基本权 $\omega_k$（$k=1,\ldots,r$，$r$ 为秩）确定。基本权与简单根的关系由嘉当矩阵给出：$\omega_k = \sum_j (C_{A_4}^{-1})_{kj} \alpha_j$。
+Kac-Moody代数 $\hat{\mathfrak{sl}}_5$ 的primary operators一一对应基本最高权表示。每个基本最高权表示由一个基本权 $\omega_k$（$k=1,\ldots,r$，$r$ 为秩）确定。基本权与简单根的关系由嘉当矩阵给出（待重新推导）。
 
 **步骤2：$A_4$ 嘉当矩阵的秩确定解空间维数**
 
 $A_4$（即 $\mathfrak{sl}_5$）的嘉当矩阵是 $4 \times 4$ 矩阵，秩 $r = 4$。因此恰好有4个简单根 $\{\alpha_1, \alpha_2, \alpha_3, \alpha_4\}$，4个基本权 $\{\omega_1, \omega_2, \omega_3, \omega_4\}$，4个基本最高权表示 $\{V(\omega_1), V(\omega_2), V(\omega_3), V(\omega_4)\}$。
 
-$$\dim(\text{解空间}) = r = \text{rank}(C_{A_4}) = 4$$
+$$\dim(\text{解空间}) = r = 4$$
 
 **步骤3：本征值→角动量→壳层的严格对应**
 
-$A_4$ 嘉当矩阵的4个本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$k=1,2,3,4$）通过以下链对应4个壳层：
+壳层标签待从 $G/\!\!/H = R$ 重新推导。4个壳层通过以下链对应：
 
-$$\lambda_k \xrightarrow{\text{本征向量}} \omega_k \xrightarrow{\text{最高权}} V(\omega_k) \xrightarrow{\text{Casimir}} l_k(l_k+1)+\tfrac{3}{4} \xrightarrow{\text{角动量}} l_k = k-1$$
+$$\omega_k \xrightarrow{\text{最高权}} V(\omega_k) \xrightarrow{\text{Casimir}} l_k(l_k+1)+\tfrac{3}{4} \xrightarrow{\text{角动量}} l_k$$
 
 具体值：
 
-| $k$ | 本征值 $\lambda_k$ | 基本权 $\omega_k$ | Casimir $C_k$ | 角动量 $l$ | 壳层 |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 | $4\sin^2\frac{\pi}{10} \approx 0.382$ | $\omega_1$ | $3/4$ | 0 | s |
-| 2 | $4\sin^2\frac{2\pi}{10} \approx 1.382$ | $\omega_2$ | $11/4$ | 1 | p |
-| 3 | $4\sin^2\frac{3\pi}{10} \approx 2.618$ | $\omega_3$ | $27/4$ | 2 | d |
-| 4 | $4\sin^2\frac{4\pi}{10} \approx 3.618$ | $\omega_4$ | $51/4$ | 3 | f |
+| $k$ | 基本权 $\omega_k$ | Casimir $C_k$ | 角动量 $l$ | 壳层 |
+|:---:|:---:|:---:|:---:|:---:|
+| 1 | $\omega_1$ | $3/4$ | 0 | s |
+| 2 | $\omega_2$ | $11/4$ | 1 | p |
+| 3 | $\omega_3$ | $27/4$ | 2 | d |
+| 4 | $\omega_4$ | $51/4$ | 3 | f |
 
-Casimir $C_k = l_k(l_k+1)+3/4$ 由基本权 $\omega_k$ 通过二次Casimir不变量 $C_2 = \sum_{i,j} (C_{A_4})_{ij} \omega_i \omega_j$ 严格确定。
+Casimir $C_k = l_k(l_k+1)+3/4$ 由基本权 $\omega_k$ 通过二次Casimir不变量严格确定（待重新推导）。
 
 **步骤4：结合律不产生新primary——descendant是导出态，非独立解**
 
@@ -1644,13 +1631,13 @@ OPE融合规则 $V(\omega_i) \otimes V(\omega_j) = \bigoplus_k N_{ij}^k V(\omega
 
 g波（$l=4$）作为结合律方程的第5个独立解，需要：
 
-1. 第5个基本权 $\omega_5$ → 需要 $A_4$ 嘉当矩阵有第5个简单根 → 但 $\text{rank}(C_{A_4})=4$，只有4个简单根
-2. 等价地，需要第5个本征值 $\lambda_5$ → 但 $4 \times 4$ 矩阵只有4个本征值
+1. 第5个基本权 $\omega_5$ → 需要 $A_4$ 嘉当矩阵有第5个简单根 → 但秩为 4，只有4个简单根（待重新推导）
+2. 等价地，需要第5个本征值 $\lambda_5$ → 但壳层标签待从 $G/\!\!/H = R$ 重新推导，第5个本征值不存在
 3. 等价地，需要 $A_5$（$\mathfrak{sl}_6$，$5 \times 5$ 嘉当矩阵，秩5）→ 对应6个独立量子振荡模式 → 新核物质相
 
 三个条件等价，均不满足。因此g波不是结合律方程的解。$\square$
 
-**推论**：周期表的壳层结构 $\{s, p, d, f\}$ 由 $A_4$ 结合律方程的解空间唯一确定，无经验输入。$Z_{\max}=118$ 是解空间维数（4）、Coxeter数（$h=5$，给出 $l_{\max}=h-2=3$）、嘉当矩阵迹（$\text{tr}(C_{A_4})=8$，给出 $n_{\max}=7$）的代数推论。
+**推论**：周期表的壳层结构 $\{s, p, d, f\}$ 由 $A_4$ 结合律方程的解空间唯一确定，无经验输入。$Z_{\max}=118$ 是解空间维数（4）、$n_{\max}=7$ 的代数推论（待重新推导）。壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
 #### 17.9.2 OPE系数的定量解
 
@@ -1669,8 +1656,8 @@ $$C_{ij}^p = C^{(0)} + \epsilon C^{(1)} + O(\epsilon^2), \quad \epsilon = 1/k \l
 #### 17.10.1 共形块与壳层结构
 
 共形块的选择定则直接给出**壳层结构**：
-- $A_4$ 嘉当矩阵4个本征值 → 4个允许的群本征态 → $s,p,d,f$ 四个壳层
-- Coxeter数 $h=5$ → $l \leq 3$ → 无g壳层
+- 4个允许的群本征态 → $s,p,d,f$ 四个壳层（壳层标签待从 $G/\!\!/H = R$ 重新推导）
+- $l \leq 3$ → 无g壳层（壳层标签待从 $G/\!\!/H = R$ 重新推导）
 - 共形自举的结合律 → 壳层填充的相容性
 
 #### 17.10.2 Casimir与共形维度的角色分离
@@ -1686,7 +1673,7 @@ Casimir决定表示维数（容量），共形维度决定能量排序（填充�
 
 #### 17.10.3 Kac-Moody descendant → 主量子数 → Madelung规则
 
-每个本征群 $G_k$（primary）有Kac-Moody descendant tower，level $n=1,2,3,\ldots$ 是**主量子数**。
+每个本征群 $R_k$（primary）有Kac-Moody descendant tower，level $n=1,2,3,\ldots$ 是**主量子数**。
 
 **descendant的共形维度**：
 
@@ -1700,9 +1687,9 @@ primary共形维度 $h_{\text{primary}} = l$（轨道同步成本，一次项）
 
 **$A_4$群论截止**：
 
-$$h_{\max} = \text{tr}(C_{A_4}) = 2r = 8, \quad n_{\max} = \text{tr}(C_{A_4}) - 1 = 2r - 1 = 7$$
+$$h_{\max} = 8, \quad n_{\max} = 7$$
 
-嘉当矩阵的迹 = 系统总连接强度 = descendant tower 最大高度 = 最大共形维度。对 $A_4$，$\text{tr}(C_{A_4}) = 2r = 8 = 2(h_{\text{Coxeter}}-1)$，二者数值相等但**迹是更基本的定义**（直接来自嘉当矩阵）。
+待重新推导。
 
 **周期表**：7周期，$Z_{\max} = 118$。Madelung规则 $n+l$ 是CFT共形维度的严格输出，不是经验规律。
 
@@ -1766,7 +1753,7 @@ $$\boxed{\text{节点数} = n - l - 1 = \text{descendant level}}$$
 | 氢原子量子力学 | CFT / CQM | 对应机制 |
 |:---|:---|:---|
 | 主量子数 $n$ | descendant level $+ l + 1$ | Kac-Moody descendant tower |
-| 角动量 $l$ | primary共形维度 $h_l = l$ | $A_4$嘉当矩阵本征值 |
+| 角动量 $l$ | primary共形维度 $h_l = l$ | 壳层标签待从 $G/\!\!/H = R$ 重新推导 |
 | 径向波函数 $R_{nl}(r)$ | 共形块 $\mathcal{F}_{n,l}(z)$ | 指数映射 + 合流极限 |
 | 拉盖尔多项式 $L_{n-l-1}^{2l+1}$ | descendant结构 | Virasoro代数内积 |
 | 节点数 $n-l-1$ | descendant level | 代数必然 |
@@ -1911,7 +1898,7 @@ $$\boxed{(M_\ell,\; P(M_\ell, G_\ell),\; \mathcal{A}_\ell,\; \hat{\mathcal{S}}_\
 
 $$\text{Regge剖分} \xrightarrow{\text{余弦定律}} \bar{\delta}_v \;\text{（经典角亏）}$$
 
-$$[\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} C_{A_4} \;\text{（嘉当矩阵=图拉普拉斯）} \xrightarrow{\text{对角化}} \{\lambda_k, v_k\} \;\text{（声子）} \xrightarrow{\text{几何非线性}} \hat{\delta}_v^{(1)} \;\text{（曲率涨落）}$$
+$$[\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{（待重新推导）} \xrightarrow{\text{对角化}} \{\lambda_k, v_k\} \;\text{（声子）} \xrightarrow{\text{几何非线性}} \hat{\delta}_v^{(1)} \;\text{（曲率涨落）}$$
 
 $$\boxed{\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)} = \bar{\delta}_v + \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}$$
 
@@ -1921,7 +1908,7 @@ $$\mathcal{A}_\ell \longrightarrow \begin{cases} \text{底空间曲率：Regge�
 
 **输出**：曲率算符 $\hat{\delta}_v$——几何约束的完整编码。$\hat{\delta}_v$ 是Regge剖分 + $[\hat{X},\hat{P}]=i\hbar$ 联合作用的严格量子结果。
 
-**严格性**：每一步从公理到输出都是严格推导，无经验参数。$A_4$ 嘉当矩阵是 $4\times4$，本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$，全部由Regge边界条件确定。
+**严格性**：每一步从公理到输出都是严格推导，无经验参数。$A_4$ 嘉当矩阵是 $4\times4$，全部由Regge边界条件确定。壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
 **元素特定剖分与自组织数据**：上述 $A_4$ 代数结构给出的是**通用代数骨架**（壳层结构、Madelung规则、$Z_{\max}=118$ 等），但每个元素 $Z$ 有自己的Regge剖分 $\mathcal{R}_Z = (V_Z, E_Z, F_Z, \{\bar{L}_{ij}^{(Z)}\})$，自己的底空间曲率数据 $\{\delta_v^{(Z)}\}$，自己的自组织特征。曲率算符应为元素特定 $\hat{\delta}_v^{(Z)}$，同步方程应为 $\hat{\mathcal{S}}^{(Z)}|\Psi_Z\rangle = s_Z|\Psi_Z\rangle$。**同步方程不能平庸化**——若用同一个通用 $A_4$ 代数不变量处理所有元素，会抹除每个元素的具体剖分信息和自组织数据。通用代数骨架给出周期表结构，但关联能等元素特定物理量需要元素特定的剖分数据和自组织数据才能推出。局域分析（CFT算符插入生成局域态）给出通用代数骨架，整体同步规则给出壳层结构，但元素特定信息不可约化（详见纤维丛文档§9.9）。
 
@@ -1952,7 +1939,7 @@ $$\hat{\mathcal{S}}^{(Z)} = \hat{\mathcal{S}}_{\text{nucleon}}^{(Z)} \otimes \ha
 
 完整同步方程 $\hat{\mathcal{S}}^{(Z)}_{\text{full}}$ 包含元素特定的剖分 $\mathcal{R}_Z$、曲率数据 $\hat{\delta}_v^{(Z)}$、自组织数据。**元素特定曲率算符的三个来源**：
 
-1. **几何信息** $\mathcal{R}_Z$：经典角亏 $\bar{\delta}_v^{(Z)}$（由边长 $\bar{L}_{ij}^{(Z)}$ 确定）+ 动力学矩阵形变 $D^{(Z)}$（边长不等 → $\lambda_k^{(Z)} \neq 4\sin^2\frac{k\pi}{10}$）
+1. **几何信息** $\mathcal{R}_Z$：经典角亏 $\bar{\delta}_v^{(Z)}$（由边长 $\bar{L}_{ij}^{(Z)}$ 确定）+ 动力学矩阵形变 $D^{(Z)}$（边长不等 → 本征值偏离对称情形）
 2. **归一化信息** $E_{\text{bind}}^{(Z)}$：元素特定结合能，$\hbar\omega_k^{(Z)}/E_{\text{bind}}^{(Z)}$ 保留元素特定能量标度
 3. **自组织信息** $\Delta\hat{\delta}_v^{\text{e-n}}[\rho_Z]$：电子反馈曲率（关键新增项）
 
@@ -1997,7 +1984,7 @@ $$\boxed{\hat{\mathcal{S}}^{(Z)}_{\text{full}}|\Psi_Z\rangle = s_Z|\Psi_Z\rangle
 
 | 层面 | 内容 | 退化性质 |
 |:---|:---|:---|
-| **代数结构** | 本征群分类、壳层结构、Madelung规则、$Z_{\max}=118$ | **精确不变**（$A_4$ Coxeter数 $h=5$ 是拓扑不变量） |
+| **代数结构** | 本征群分类、壳层结构、Madelung规则、$Z_{\max}=118$ | **精确不变**（壳层标签待从 $G/\!\!/H = R$ 重新推导） |
 | **数值** | 本征值 $s_{Z,i}$、增强因子、关联能 | **零阶近似退化** |
 
 **数值退化条件**：
@@ -2077,13 +2064,13 @@ $$\boxed{E_c(Z) = \sum_{i < j}^{\text{occ}} \sum_{p \in \text{desc}} \frac{C_{ij
 
 **步骤3：同步方程输出耦级，本征群由底空间分类**
 
-$$\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\;\text{（耦级）}，\qquad A_4\text{ 根系（Coxeter数 } h=5\text{）} \;\Rightarrow\; G_k \;\text{（本征群）}$$
+$$\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\;\text{（耦级）}，\qquad \text{壳层标签 } l_k \;\Rightarrow\; R_k = G_k/\!\!/H_k \;\text{（本征群，约束产物）}$$
 
-链条方向：底空间（$A_4$ 根系）$\Rightarrow G_k \Rightarrow n_k = C_k$——本征值是群确定后的输出，不由本征值反推群（逆谱问题：等谱不同构）。
+链条方向：底空间 $\Rightarrow G_k \Rightarrow n_k = C_k$——本征值是群确定后的输出，不由本征值反推群（逆谱问题：等谱不同构）。壳层标签待从 $G/\!\!/H = R$ 重新推导。
 
-本征群由 $A_4$ Coxeter数 $h=5$ 严格确定：
+本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），壳层标签待从 $G/\!\!/H = R$ 重新推导：
 
-| $k$ | $G_k$ | $l_k = k-1$ | $n_k = C_k$ | $g_k/\alpha$ | $N_k^{\max}$ | 壳层 |
+| $k$ | $G_k$ | $l_k$ | $n_k = C_k$ | $g_k/\alpha$ | $N_k^{\max}$ | 壳层 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | $G_1$ | 0 | 3/4 | 1 | 2 | s |
 | 2 | $G_2$ | 1 | 11/4 | 0.0695 | 6 | p |
@@ -2101,13 +2088,13 @@ $$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k \;\longrightarrow\; N_k \
 无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 从自洽方程严格导出（§9.6），电子结构只依赖 $\eta$，不需要 $\omega_0$ 和 $E_{\text{bind}}$ 的绝对值。
 
 **输出**：
-- 本征群 $\{G_k\}$（$k=1,2,3,4$，由 $A_4$ 严格确定）
+- 本征群 $\{R_k = G_k/\!\!/H_k\}$（$k=1,2,3,4$，约束产物；$A_4$ 嘉当矩阵给出壳层标签）
 - 角动量 $\{l_k\} = \{0,1,2,3\}$（s,p,d,f）
 - 耦级 $\{n_k\} = \{C_k\}$（Casimir本征值）
 - 耦合常数 $\{g_k\}$（同步方程输出，非输入参数）
 - 壳层容量 $\{N_k^{\max}\} = \{2,6,10,14\} = \{2(2l_k+1)\}$
 
-**严格性**：同步算符由曲率算符（模块1输出）+ 紧化U(1)严格确定。本征群由 $A_4$ Coxeter数严格分类。耦级=Casimir是同步的物理定义（同步成本=对称性强度）。耦合常数是同步方程的输出，不是输入参数。
+**严格性**：同步算符由曲率算符（模块1输出）+ 紧化U(1)严格确定。本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），$A_4$ 嘉当矩阵给出壳层标签。耦级=Casimir是同步的物理定义（同步成本=对称性强度）。耦合常数是同步方程的输出，不是输入参数。
 
 ### 18.3 模块3：CFT — 代数约束
 
@@ -2124,13 +2111,13 @@ $$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k \;\longrightarrow\; N_k \
 
 $$\text{OPE结合律} \;\longrightarrow\; A_4\text{结合律方程} \;\longrightarrow\; \text{锁定s,p,d,f，禁戒g}$$
 
-$A_4$ 是 $4\times4$ 矩阵，只有4个本征值 → 4种自组织模式（s,p,d,f）。g模式（$l=4$）需第5个本征值，不存在 → 禁戒。
+4种自组织模式（s,p,d,f），壳层标签待从 $G/\!\!/H = R$ 重新推导。g模式（$l=4$）需第5个本征值，不存在 → 禁戒。
 
 Dirac约束 = 共形自举方程的CQM具体化（`FG_纤维丛理论.md` §9.6严格证明：$D\psi=0$ → 零模 → primary → OPE结合律 → 共形自举）。
 
 **步骤2：Kac-Moody descendant → 主量子数**
 
-每个本征群 $G_k$（primary operator $\phi_l$）有descendant tower：
+每个本征群 $R_k$（primary operator $\phi_l$）有descendant tower：
 
 $$\phi_l, \quad \hat{L}_{-1}\phi_l, \quad \hat{L}_{-1}^2\phi_l, \quad \ldots$$
 
@@ -2142,7 +2129,9 @@ $$\boxed{h = h_{\text{primary}} + n_{\text{desc}} = l + n \;\longrightarrow\; \t
 
 **步骤4：$A_4$群论截止 → 周期表**
 
-$$h_{\max} = \text{tr}(C_{A_4}) = 2r = 8, \quad n_{\max} = 7$$
+$$h_{\max} = 8, \quad n_{\max} = 7$$
+
+（待重新推导。）
 
 fusion rules $n \geq l+1$ + 截止 $n \leq 7$, $n+l \leq 8$：
 
@@ -2305,8 +2294,7 @@ $$\boxed{\eta = \frac{1 - \left(\frac{2\pi C\,C_k}{L_u}\right)^2}{\sqrt{\lambda_
 
 | 因子 | 来源 | 量纲 | 严格性 |
 |:---|:---|:---|:---|
-| $\lambda_k = 4\sin^2\frac{k\pi}{10}$ | $A_4$ 嘉当矩阵本征值 | 无量纲 | 严格 |
-| $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$ 本征向量末端分量 | 无量纲 | 严格 |
+
 | $C_k = l_k(l_k+1)+3/4$ | Casimir本征值（耦级） | 无量纲 | 严格 |
 | $C = \xi'(1)/\xi(1) \approx 0.0230957$ | 黎曼ξ函数谱量子 | 无量纲 | 严格 |
 | $L_u = \ln\Lambda$ | 耦合空间紧化U(1)周长 | 无量纲 | 严格 |

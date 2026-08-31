@@ -174,7 +174,7 @@ $$\text{共形自举} = \text{共形自洽}$$
 
 ### 3.5.5 $A_4$结合律验证：锁定s,p,d,f，禁戒g
 
-$A_4$结合律恰好锁定4种自组织模式（s,p,d,f）并禁戒g（$l=4$）——代数原因（$4\times4$矩阵只有4个本征值）、自举原因（第5通道自举方程无解）、物理原因（g需$A_5$即新核物质相）。详见 `09 精细引力（FG）/FG_元素FG_第一性.md` §17.9。
+$A_4$结合律恰好锁定4种自组织模式（s,p,d,f）并禁戒g（$l=4$）——自举原因（第5通道自举方程无解）、物理原因（g需$A_5$即新核物质相）。壳层标签待从 $G/\!\!/H = R$ 重新推导。详见 `09 精细引力（FG）/FG_元素FG_第一性.md` §17.9。
 
 ## 4. Dirac约束 = 共形自举方程的CQM具体化
 
@@ -261,7 +261,7 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 
 二者处于朗兰兹分层的不同层级：
 
-$$\text{GL}(5) \xrightarrow{\text{破缺}} A_4 \xrightarrow{\text{4本征群}} \underbrace{\text{GL}(1)}_{C\text{所在}} \times \underbrace{\text{GL}(2)} \times \underbrace{\text{GL}(3)}$$
+$$\text{GL}(5) \xrightarrow{\text{破缺}} \underbrace{\text{GL}(1)}_{C\text{所在}} \times \underbrace{\text{GL}(2)} \times \underbrace{\text{GL}(3)}$$
 
 #### 5.4.2 SU(5)破缺时中央荷的分解
 
@@ -324,7 +324,7 @@ $$c_{\text{GL}(1)}^{\text{eff}} = \frac{k_1^{\text{eff}} \cdot 1}{k_1^{\text{eff
 | **同步成本** | $C$ 控制GL(1)层耦合动量约束 $p_u = 2\pi n/L_u$ 的谱 | CNST §4 |
 | **OPE系数** | $C$ 通过Kac-Moody水平 $k_1 = 1/\alpha - 2$ 影响OPE系数大 $k$ 展开 | FG §17.7 |
 | **关联能** | $C$ 通过OPE系数进入关联能 $E_c = \sum |C_{ij}^p|^2/B_{pp} \cdot \Delta h_p \cdot \langle\mathcal{F}_p\rangle$ | FG §17.4 |
-| **耦合常数** | $g_1 = \sqrt{4\pi\alpha}$，$\alpha$ 由 $A_4$ 嘉当矩阵本征值确定，$C$ 通过 $k_1$ 约束 $\alpha$ | FG §17.5 |
+| **耦合常数** | $g_1 = \sqrt{4\pi\alpha}$，$\alpha$ 来自 $U(1)$ 电磁群耦合常数，$C$ 通过 $k_1$ 约束 $\alpha$ | FG §17.5 |
 
 **物理意义**：
 
@@ -552,7 +552,7 @@ CFT视角：紧化算符是**共形映射**，同步本征态是**初级算子**
 
 `CQM_核心_朗兰兹分层共振与谱量子.md`中的GL(n)分层：
 
-$$GL(5) \xrightarrow{\text{破缺}} A_4 \xrightarrow{\text{4本征值}} 4\text{本征群}$$
+$$GL(5) \xrightarrow{\text{破缺}} \text{规范群}$$
 
 CFT视角：GL(n)分层是**Kac-Moody代数的水平分层**，每个本征群对应一个Kac-Moody水平 $k$，中央荷 $c$ 由Sugawara构造确定。
 
@@ -608,7 +608,7 @@ CQM核心理论
 | 共形自举 = OPE结合律 = 交叉对称性 | **严格**（CFT标准理论） |
 | 共形自举 = 共形自洽 | **严格**（CFT自洽性条件） |
 | Dirac约束 = 共形自举方程的CQM具体化 | **严格**，$D\psi=0$→零模→primary→OPE结合律→共形自举（FG纤维丛文档§9.6） |
-| $A_4$结合律锁定s,p,d,f，禁戒g | **严格**（$A_4$只有4个本征值，代数必然） |
+| $A_4$结合律锁定s,p,d,f，禁戒g | **严格**（壳层标签待从 $G/\!\!/H = R$ 重新推导） |
 | 紧致群 → Kac-Moody代数 | **严格**（仿射代数理论） |
 | Sugawara构造 → Virasoro代数 | **严格**（CFT标准构造） |
 | Kac-Moody水平 $k$ 由 $g_k$ 确定 | **严格**，$k(g_k) = 4\pi/g_k^2 - h^\vee$（WZW作用量归一化，FG文档§17.5） |
@@ -625,7 +625,7 @@ CQM核心理论
 |:---|:---:|:---|
 | OPE系数 $C_{ij}^k$ 的具体值 | 已闭合 | 大 $k$ 展开 $C_{ij}^p = C^{(0)} + \epsilon C^{(1)} + O(\epsilon^2)$，零阶=SU(2) CG系数，一阶=Sugawara修正，d-d OPE的g波通道被 $A_4$ 截止禁戒（FG文档§17.7） |
 | Kac-Moody水平 $k$ 与 $g_k$ 的映射 | 已闭合 | WZW作用量归一化 $g^2 = 4\pi/(k+h^\vee)$ 给出 $k(g_k) = 4\pi/g_k^2 - 2$，大水平极限 $k_l \gg 1$ 是 $\alpha \ll 1$ 的直接推论（FG文档§17.5） |
-| 共形自举方程的完整解空间 | 已闭合 | $A_4$结合律方程解空间恰好4维，唯一对应s,p,d,f；g波需第5个基本权但$\text{rank}(C_{A_4})=4$不存在；定量解由Verlinde公式+大$k$展开给出（FG文档§17.9.1-§17.9.2） |
+| 共形自举方程的完整解空间 | 已闭合 | $A_4$结合律方程解空间恰好4维，唯一对应s,p,d,f；g波需第5个基本权但秩为4不存在（待重新推导）；定量解由Verlinde公式+大$k$展开给出（FG文档§17.9.1-§17.9.2） |
 | descendant系数 $c_k^{(n,l)}$ 的精确值 | 已闭合 | Shapovalov内积矩阵 $B_{kk}^{(l)}=k!\,\Gamma(2l+k)/\Gamma(2l)$，$c_k^{(n,l)}=(-1)^k\Gamma(n+l+1)/[k!\,\Gamma(n-l-k)\,\Gamma(2l+2+k)]$（FG文档§17.1） |
 | 合流极限的严格证明 | 已闭合 | FG文档§17.2给出5步严格证明：超几何方程→指数映射→Kummer变换→合流极限→径向Schrödinger方程 |
 | Fusion rules / OPE通道选择定则 | 已闭合 | Verlinde公式 + SU(2) Clebsch-Gordan + 径向descendant加法规则，大 $k$ 极限退化为经典CG规则（FG文档§17.6） |

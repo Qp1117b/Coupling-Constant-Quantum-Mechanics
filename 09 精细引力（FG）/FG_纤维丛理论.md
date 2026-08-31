@@ -181,6 +181,8 @@ $$\boxed{\underbrace{G/\!\!/H}_{\text{动力学（约束）}} \;\underbrace{\xri
 - **公理 1（母群紧致性）**：$G$ 是紧致连通李群。紧致性保证：有限维幺正表示存在、Casimir 谱离散（物理量子化）、Kac-Moody 代数可积表示存在、Killing 形式非负定。若 $G$ 非紧致，则无分立能级与量子化荷，框架崩溃。
 - **公理 2（约束子群正规性）**：$H \triangleleft G$ 是闭正规子群，且 $H$ 是紧致李群（紧致群的闭子群自动紧致）。约束产物 $R = G/\!\!/H$ 是紧致李群——$R$ 紧致性由 $G$ 继承，群结构由商群定理保证。**$G$、$H$、$R$ 三者均为紧致李群**。若 $H$ 不正规，$G/\!\!/H$ 只是齐性空间而非群，不叫约束 $//$，叫真空选择——连续破缺在表示层 $V$ 中通过真空期望值处理（见下文"真空破缺"）。
 
+**本征群 = $R$**：$R = G/\!\!/H$ 就是本征群。$G/\!\!/H = R$ 是**实现问题**：$R$ 是要实现的目标本征群，$G$ 是已有群，$H$ 是 $G$ 中内禀实现 $R$ 的正规子群——需要在 $G$ 里面找到内禀实现 $R$ 的 $H$ 群，$R$ 才能实现。检验容易（给定 $H$ 验证 $G/\!\!/H = R$），找到麻烦（搜索合适的 $H$）。壳层标签待从 $G/\!\!/H = R$ 重新推导。
+
 **完整展开链**：
 
 $$\boxed{\underbrace{G/\!\!/H}_{\text{约束}} \;\longrightarrow\; \underbrace{R}_{\text{紧致李群}} \;\xrightarrow{\rho}\; \underbrace{GL(V)}_{\text{表示}} \;\longrightarrow\; \underbrace{R\times_\rho V}_{\text{伴丛}} \;\longrightarrow\; \underbrace{\Gamma(R\times_\rho V)}_{\text{物质}}}$$
@@ -246,16 +248,16 @@ $$\underbrace{SU(5) \xrightarrow{\rho_5} GL(5)}_{\text{整体自守}} \;\supset\
 - $GL(5)$：整体自守表示的承载空间
 - $GL(4)$：来自 $SO(5)$ 旋量表示（4 维），标记 $K$-type（角动量）
 - $GL(3), GL(2), GL(1)$：来自破缺因子的基本表示
-- 元素 FG 的 4 个 $SU(2)$ 本征群：属于 $GL(2)$ 层内的物理实现，由 $A_4$ 同步谱区分
+- 元素 FG 的 4 个壳层（$s/p/d/f$）：壳层标签待从 $G/\!\!/H = R$ 重新推导，每个壳层的本征群 $R_k = G_k/\!\!/H_k$ 是约束产物
 
 **两个不同层级的 $SU(2)$（不应混淆）**：
 
 | 层级 | $SU(2)$ 的来源 | 对应 $GL(n)$ | 作用 |
 |:---|:---|:---|:---|
 | 朗兰兹分层 | $SU(5)\to U(1)\times SU(2)\times SU(3)$ 的破缺因子 | $GL(2)$ | 规范群的模对称层 |
-| 元素 FG 本征群 | $A_4$ 同步方程解出的 4 个 $G_k=SU(2)$ | 不直接对应独立 $GL(n)$ | 核子壳层结构（$s/p/d/f$） |
+| 元素 FG 壳层 | 待从 $G/\!\!/H = R$ 重新推导 | $GL(2)$（各壳层共享） | 核子壳层结构（$s/p/d/f$） |
 
-四个本征群 $SU(2)$ 不是四个独立的 $GL(2)$ 层。它们是同一个 $GL(2)$ 框架（来自规范破缺中的 $SU(2)$ 因子）在元素 FG 层的四个不同本征模式（由 $A_4$ 嘉当矩阵的 4 个本征值区分）。它们的耦合常数 $g_k$ 是 $GL(2)$ 层内不同声子模式的同步输出，不是四个不同的朗兰兹层。二者共享 $SU(2)$ 的群结构，但处于不同层级：一个是规范群的模对称层（朗兰兹），一个是该层在核子系统中的本征激发（同步方程）。
+**本征群就是 $R$**：每个壳层的本征群 $R_k = G_k/\!\!/H_k$ 是约束产物——$G_k$ 是已有群，$H_k$ 是 $G_k$ 中内禀实现 $R_k$ 的正规子群。壳层标签待从 $G/\!\!/H = R$ 重新推导。本征群由 $G/\!\!/H = R$ 的实现问题给出：给定 $G$ 和目标 $R$，找 $H$ 使 $G/\!\!/H = R$（检验容易，找到麻烦）。四个壳层共享同一个 $GL(2)$ 框架（来自规范破缺中的 $SU(2)$ 因子），$s/p/d/f$ 的区分在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type。
 
 **统一机制**：约束完成后，动力学自动退化为运动学——$R = G/\!\!/H$ 被冻结为新能标下的固定背景，$\rho$ 成为输入参数，容器框架作为约束框架的低能有效极限出现（§1.5.5）。
 
@@ -467,13 +469,13 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 
 - **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
-- **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，是Regge剖分的必然结果。$A_4$ 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
+- **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，是Regge剖分的必然结果
 - **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（QG前几何/GR时空度规/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。量纲归一化与量纲恢复的严格机制详见 `FG_元素FG_第一性.md` §19
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/C$。这是FG核心机制，标注为**假设**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由约束严格确定
-- **本征群**：$G_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定，$l_k = k-1$
+- **本征群**：$R_k = G_k/\!\!/H_k$ 是约束产物，壳层标签待从 $G/\!\!/H = R$ 重新推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
 - **约束方程**：$\frac{L_u}{2\pi C}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
@@ -489,9 +491,9 @@ $$\text{SU}(5) \;\xrightarrow{\text{规范破缺}}\; U(1) \times SU(2) \times SU
 
 **本征群效应**（同步方程本征群，全紧致）：
 
-$$\boxed{A_4\text{（}4\times4\text{嘉当矩阵）} \;\xrightarrow{\text{4本征值}}\; \{G_k = SU(2)\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
+$$\boxed{\{R_k = G_k/\!\!/H_k\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
 
-四个本征群 $G_k = SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
+本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），壳层标签待从 $G/\!\!/H = R$ 重新推导。四个本征群 $R_k \cong SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
 
 **精细结构常数 $\alpha$ 来自SU(5)规范破缺后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
 
@@ -542,7 +544,7 @@ FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH�
 
 **正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 破缺因子。
 
-同步算符由物理约束严格确定，本征群由 $A_4$ Coxeter数 $h=5$ 分类：
+同步算符由物理约束严格确定，本征群由 $G/\!\!/H = R$ 实现问题给出：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
@@ -624,9 +626,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
 | $C$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
-| $h$ | $5$ | $A_4$嘉当矩阵的Coxeter数 |
-| $\lambda_k$ | $4\sin^2\frac{k\pi}{10}$ | $A_4$嘉当矩阵本征值 |
-| $|v_k(4)|^2$ | $\frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$本征向量末端分量 |
+
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
@@ -661,7 +661,7 @@ $$\psi_{n,l,m}(x) \;\longleftrightarrow\; \sum_{k=0}^{n-l-1} c_k^{(n,l)}\,\hat{L
 
 ### 9.2 联络 = Virasoro生成元
 
-**纤维丛联络**：$\mathcal{A}_\ell$ 作用于截面给出协变导数 $\nabla_\mu\psi = \partial_\mu\psi + \mathcal{A}_\mu\psi$。在A₄ Regge剖分下，联络离散化为嘉当矩阵 $C_{A_4}$（图拉普拉斯）。
+**纤维丛联络**：$\mathcal{A}_\ell$ 作用于截面给出协变导数 $\nabla_\mu\psi = \partial_\mu\psi + \mathcal{A}_\mu\psi$。在A₄ Regge剖分下，联络离散化形式待重新推导。
 
 **Virasoro生成元**：$\hat{L}_n$ 作用于primary operator给出descendant。$\hat{L}_{-1}$ 生成descendant tower，$\hat{L}_0$ 给出共形维度。
 
@@ -672,7 +672,7 @@ $$\boxed{\mathcal{A}_\ell \;\longleftrightarrow\; \{\hat{L}_n\}_{n \in \mathbb{Z
 | 纤维丛联络 | Virasoro代数 | 对应机制 |
 |:---|:---|:---|
 | 联络 $\mathcal{A}$ | $\{\hat{L}_n\}$ | 模展开 $\mathcal{A}(z) = \sum_n \mathcal{A}_n z^{-n-1}$ |
-| 离散联络 = 嘉当矩阵 $C_{A_4}$ | $\hat{L}_{-1}$ descendant生成 | A₄本征值 $\lambda_k$ → 声子频率 → descendant level |
+| 离散联络 = 嘉当矩阵 | $\hat{L}_{-1}$ descendant生成 | 声子频率 → descendant level |
 | 协变导数 $\nabla_\mu\psi$ | descendant $\hat{L}_{-1}^k\phi$ | 联络作用 = descendant生成 |
 | 曲率 $F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}$ | 对易子 $[\hat{L}_m, \hat{L}_n]$ | §9.3严格对应 |
 | Bianchi恒等式 $dF + [\mathcal{A},F] = 0$ | Jacobi恒等式 | 代数自洽性 |
@@ -707,16 +707,7 @@ Jacobi恒等式 $[\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} = 0$ 是Vir
 
 **曲率本征值 → 共形维度**：
 
-A₄嘉当矩阵（=离散联络的曲率）的本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$ 通过以下链条映射到共形维度：
-
-$$\lambda_k \;\xrightarrow{\text{Casimir}}\; C_k = l_k(l_k+1) + \frac{3}{4} \;\xrightarrow{\text{primary}}\; h_l = l_k = k - 1 \;\xrightarrow{\text{descendant}}\; h = n + l$$
-
-| $k$ | $\lambda_k$（曲率本征值） | $l_k$（角动量） | $h_l = l_k$（primary共形维度） |
-|:---:|:---:|:---:|:---:|
-| 1 | 0.382 | 0 | 0（s壳层） |
-| 2 | 1.382 | 1 | 1（p壳层） |
-| 3 | 2.618 | 2 | 2（d壳层） |
-| 4 | 3.618 | 3 | 3（f壳层） |
+壳层标签待从 $G/\!\!/H = R$ 重新推导。primary共形维度 $h_l = l_k$（壳层角动量），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
 
 ### 9.4 和乐 = OPE monodromy：曲率 → 共形维度的定量映射
 
@@ -744,10 +735,10 @@ $$i\,\delta_v\,\hat{T} = 2\pi i\,h \quad \Longrightarrow \quad \boxed{h = \frac{
 
 对A₄嘉当矩阵的第 $k$ 个本征模式：
 - 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(4)|^2(N_k + \frac{1}{2})$（来自§4.0约束链）
-- 生成元本征值 $\hat{T}_k = \lambda_k = 4\sin^2\frac{k\pi}{10}$（A₄本征值）
+
 - 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$
 
-primary共形维度 $h_l = l_k = k - 1$（壳层角动量），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
+primary共形维度 $h_l = l_k$（壳层角动量，标签待从 $G/\!\!/H = R$ 重新推导），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
 
 **和乐平庸化 = 闭壳层稳定**：
 
@@ -858,7 +849,7 @@ $$\boxed{D\psi = 0 \;\longleftrightarrow\; \text{OPE结合律（共形自举方�
 
 $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrightarrow{\text{OPE}}\; \text{结合律} \;\xrightarrow{\text{自洽}}\; \text{共形自举方程}}$$
 
-**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g（FG文档§17.9）。这是Dirac约束=共形自举方程在CQM中的具体实例——$A_4$嘉当矩阵的4个本征值给出4个允许的primary，第5个（g）的约束方程无解。
+**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g（FG文档§17.9）。这是Dirac约束=共形自举方程在CQM中的具体实例——壳层标签待从 $G/\!\!/H = R$ 重新推导，第5个（g）的约束方程无解。
 
 ### 9.7 同步算符 = 紧化算符：三层关系统一
 
@@ -915,13 +906,11 @@ $$\hat{\delta}_v |0\rangle = |\delta_v\rangle$$
 
 $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
-同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 由 $A_4$ 嘉当矩阵的代数不变量统一给出：
+同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 待从 $G/\!\!/H = R$ 重新推导：
 
-- Coxeter数 $h = 5$（$A_4$ 严格确定）
-- 本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$A_4$ 严格确定）
-- 本征群 $\{G_k\}$、角动量 $\{l_k\}$、容量 $\{N_k^{\max}\}$ 均由 $A_4$ 代数结构固定
+- 本征群 $\{R_k = G_k/\!\!/H_k\}$、角动量 $\{l_k\}$、容量 $\{N_k^{\max}\}$ 均待从 $G/\!\!/H = R$ 实现问题重新推导
 
-**关键点**：本征值谱 $\{n_k\}$ **不依赖于具体的插入顶点 $v$**，只依赖于 $A_4$ 的代数结构。
+**关键点**：本征值谱 $\{n_k\}$ **不依赖于具体的插入顶点 $v$**，只依赖于代数结构。
 
 #### 9.10.2 物理图像
 
@@ -929,7 +918,7 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 |:---|:---|:---|
 | **态** | 每个顶点 $v$ 有不同的曲率涨落态 $\|\delta_v\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
 | **算符** | 曲率算符 $\hat{\delta}_v$ 是局域的（定义在单个顶点） | 同步算符 $\hat{\mathcal{S}}$ 是整体的（定义在整个截面空间 $\Gamma(P_\ell)$） |
-| **谱** | 局域态携带顶点的曲率信息 | 同步本征值 $\{n_k\}$ 由 $A_4$ 代数结构统一给出，与顶点无关 |
+| **谱** | 局域态携带顶点的曲率信息 | 同步本征值 $\{n_k\}$ 待从 $G/\!\!/H = R$ 重新推导，与顶点无关 |
 | **CFT对应** | 算符插入 $\mathcal{O}(z)\|0\rangle$ 生成局域态 | OPE系数 $C_{ij}^k$ 由共形对称性固定，不依赖插入点 $z$ |
 
 #### 9.10.3 严格论证
@@ -940,7 +929,7 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 1. **所有顶点共享同一代数结构**：Regge剖分的每个4-单纯形共享同一个 $A_4$ 嘉当矩阵（§6, §18.1）。嘉当矩阵是联络的离散化，由4-单纯形的组合几何确定，与顶点位置无关。
 
-2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k$ 由 $A_4$ Coxeter数 $h=5$ 严格确定（§9.5.1）。本征值不依赖于具体的顶点 $v$。
+2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k$ 待从 $G/\!\!/H = R$ 重新推导（§9.5.1）。本征值不依赖于具体的顶点 $v$。
 
 3. **CFT OPE系数的普适性**：OPE $\mathcal{O}_i(z)\mathcal{O}_j(0) \sim \sum_k C_{ij}^k z^{h_k-h_i-h_j}\mathcal{O}_k(0)$ 中，系数 $C_{ij}^k$ 由共形对称性（Kac-Moody代数 + Virasoro代数）固定，不依赖于插入点 $z$（§9.5, CFT核心文档§3）。
 

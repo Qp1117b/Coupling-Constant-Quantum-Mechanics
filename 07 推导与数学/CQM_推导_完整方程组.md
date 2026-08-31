@@ -206,7 +206,7 @@ $$\hat{H}_\infty = c^2\left(\hat{D}^2 + \frac{1}{4}\right) \geq \frac{c^2}{4}, \
 
 $$A_{ij} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}$$
 
-连续化 $\displaystyle\frac{1}{(\Delta u)^2}(A\psi)_i \to \left(-\partial_u^2 + \partial_u\right)\phi(u)$，谱 $\lambda_k = 2-2\cos(k\pi/5)$。
+连续化 $\displaystyle\frac{1}{(\Delta u)^2}(A\psi)_i \to \left(-\partial_u^2 + \partial_u\right)\phi(u)$，谱待重新推导。
 
 有效边界势：$\displaystyle V_{\text{eff}}(0) = \frac{c^2}{(\Delta u)^2}\cdot\frac{1}{\text{Tr}(A^{-1})} = \frac{c^2}{4}$，一致给出 $\boxed{E_0 = c^2/4}$。
 

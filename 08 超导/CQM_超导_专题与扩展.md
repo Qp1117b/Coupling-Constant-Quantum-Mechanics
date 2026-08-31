@@ -11,7 +11,7 @@
 
 #### SU(5)形成与破缺的发生学
 
-**$A_4$ 型嘉当矩阵对应 $SU(5)$**（4×4嘉当矩阵是 $A_4$ 型，特征值 $\lambda_k = 2-2\cos(k\pi/5)$，Coxeter数 $h=5$，基礎表示5维）。$SU(5)$ 是 QG 退相干后物质自组织出的第一个完整规范结构，对应 $A_4$ 根空间，是核子潜能的载体。
+**$A_4$ 型嘉当矩阵对应 $SU(5)$**（4×4嘉当矩阵是 $A_4$ 型，基礎表示5维）。$SU(5)$ 是 QG 退相干后物质自组织出的第一个完整规范结构，对应 $A_4$ 根空间，是核子潜能的载体。
 
 **分层定位**：质数分布的基态伽罗瓦表示 $\rho_5: G_{\mathbb{Q}} \to GL_5(\mathbb{Q}_\ell)$ 经朗兰兹对应指定 GL(5) 自守形式（Regge 底空间几何），其确定的自守谱经紧化（同步算符 $\hat{\mathcal{S}}_0$，紧化算符）投影为 SU(5) 表示空间——**基态同步是 SU(5)，不是 GL(1)**。**在 GL(n) 层级谱中，物质自组织选中 GL(5)（而非其他 GL(n)）正是物质自组织的体现**：SU(5) 是含标准模型的最小单群（$\operatorname{rank}SU(5)=4=\operatorname{rank}(U(1)\times SU(2)\times SU(3))$），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导；GL(1)、GL(2)、GL(3) 是 SU(5) 破缺后电磁、弱、色各因子的自守对偶残留。GL(n) 各层级的零点猜想（广义黎曼猜想各特例）正是物质自组织在相应层级上的数学体现。
 
@@ -102,7 +102,7 @@ $\lambda_l$ 在 $\varphi_l$ 中被 $l/\lambda_l$ 抵消：$V_{\text{el}} = \sum_
 
 #### A4表示论与饱和电子数
 
-**关键代数事实**：$A_4$ 型嘉当矩阵对应 $SU(5)$（Coxeter数 $h=5$，基礎表示5维）。$SU(5) \supset SU(4) \times U(1)$，$SU(5)$ 的5维基礎表示限制到 $SU(4)$ 给出 $\mathbf{4} \oplus \mathbf{1}$。$SU(4)$ 的4维基础表示的张量积分解：
+**关键代数事实**：$A_4$ 型嘉当矩阵对应 $SU(5)$（基礎表示5维）。$SU(5) \supset SU(4) \times U(1)$，$SU(5)$ 的5维基礎表示限制到 $SU(4)$ 给出 $\mathbf{4} \oplus \mathbf{1}$。$SU(4)$ 的4维基础表示的张量积分解：
 
 $$\mathbf{4} \otimes \mathbf{4} = \mathbf{10}_s \oplus \mathbf{6}_a$$
 
@@ -127,7 +127,7 @@ $$\mathbf{4} \otimes \mathbf{4} = \mathbf{10}_s \oplus \mathbf{6}_a$$
 | 3 | 2+6+10 | 18 |
 | 4 | 2+6+10+14 | 32 |
 
-**统一公式**：饱和电子数 $= 2(2l+1)$，$l=0,1,2,3$，来自 $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$（轨道$A_4$ 嘉当矩阵本征值给出轨道角动量 $l_k=k-1$，$SU(2)_{\text{spin}}$ 给出自旋1/2）。p和d的6和10从 $SU(4)$ 表示论得到（$SU(5) \supset SU(4)$），s的2来自 $SU(2)$ 自旋（$SU(5)$ 破缺产物），f的14来自 $G_2$ 伴随表示——s和f的群论来源需要进一步从核子结构导出。**在元素FG同步方程框架中**（`09 精细引力（FG）/FG_元素FG_第一性.md` §9），每个本征群的耦合常数 $g_k$ 通过 Casimir 本征值 $C_k = n_k$ 决定角动量 $l_k$，从而决定饱和电子数 $N_k^{\max} = 2(2l_k+1) = 2\sqrt{4n_k-2}$——耦合常数是壳层容量的来源。
+**统一公式**：饱和电子数 $= 2(2l+1)$，$l=0,1,2,3$，来自 $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$（$SU(2)_{\text{spin}}$ 给出自旋1/2，轨道角动量待从 $G/\!\!/H = R$ 重新推导）。p和d的6和10从 $SU(4)$ 表示论得到（$SU(5) \supset SU(4)$），s的2来自 $SU(2)$ 自旋（$SU(5)$ 破缺产物），f的14来自 $G_2$ 伴随表示——s和f的群论来源需要进一步从核子结构导出。**在元素FG同步方程框架中**（`09 精细引力（FG）/FG_元素FG_第一性.md` §9），每个本征群的耦合常数 $g_k$ 通过 Casimir 本征值 $C_k = n_k$ 决定角动量 $l_k$，从而决定饱和电子数 $N_k^{\max} = 2(2l_k+1) = 2\sqrt{4n_k-2}$——耦合常数是壳层容量的来源。
 
 #### 两条路径交叉验证
 
@@ -154,24 +154,20 @@ $A_4$（正四面体群）是 $SO(3)$ 的有限子群，核子数增大时离散
 
 p和d的饱和数在两条独立路径上一致——这不是巧合，而是 $\mathfrak{su}(4) \cong \mathfrak{so}(6)$ 同构的物理体现。
 
-#### Coxeter数限制壳层范围
+#### 壳层范围
 
-**为什么 $l$ 只取 $0, 1, 2, 3$（到f为止）？** $A_4$ 型嘉当矩阵的Coxeter数 $h = 5$，从最高根高度严格导出：
+**为什么 $l$ 只取 $0, 1, 2, 3$（到f为止）？** 壳层标签待从 $G/\!\!/H = R$ 重新推导。当前给出 $s, p, d, f$ 四个壳层的饱和数：
 
-$$h = 1 + \text{ht}(\theta), \quad \theta = \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4, \quad \text{ht}(\theta) = 4, \quad h = 5$$
+| 壳层 | $SO(3)$ 维数 $2l+1$ | 饱和数 $2(2l+1)$ |
+|---|---|---|
+| s | 1 | 2 |
+| p | 3 | 6 |
+| d | 5 | 10 |
+| f | 7 | 14 |
 
-$A_4$ 特征值 $\lambda_k = 2 - 2\cos(k\pi/h)$，$k = 1, \ldots, h-1$。令 $k = l+1$，则 $l = 0, \ldots, h-2$：
+周期长度：
 
-| $k$ | $\lambda_k$ | $l = k-1$ | 壳层 | $SO(3)$ 维数 $2l+1$ | 饱和数 $2(2l+1)$ |
-|---|---|---|---|---|---|
-| 1 | 0.382 | 0 | s | 1 | 2 |
-| 2 | 1.382 | 1 | p | 3 | 6 |
-| 3 | 2.618 | 2 | d | 5 | 10 |
-| 4 | 3.618 | 3 | f | 7 | 14 |
-
-Coxeter数 $h = 5$ 限制了从 $SU(5)$ 涌现的 $SO(3)$ 表示的最高角动量 $l \leq h-2 = 3$，恰好给出 $s, p, d, f$ 四个壳层。周期长度：
-
-$$\sum_{l=0}^{h-2} 2(2l+1) = 2(h-1)^2 = 2 \times 16 = 32 \quad (\text{第4周期})$$
+$$\sum_{l=0}^{3} 2(2l+1) = 2 \times 16 = 32 \quad (\text{第4周期})$$
 
 #### $A_4 \to SO(3)$ 涌现机制
 
@@ -179,7 +175,7 @@ $A_4 \to SO(3)$ 不是正四面体群→连续旋转，而是通过李代数子�
 
 $$A_4 \text{ 型嘉当矩阵} \;\to\; SU(5) \;\supset\; SU(4) \times U(1) \;\cong\; SO(6) \times U(1) \;\supset\; SO(3)_{\text{orbit}} \oplus SO(3)_{\text{spin}}$$
 
-- $SO(3)_{\text{orbit}}$：给出轨道角动量 $l = 0, 1, \ldots, h-2$（Coxeter数限制）
+- $SO(3)_{\text{orbit}}$：给出轨道角动量 $l = 0, 1, 2, 3$（壳层标签待从 $G/\!\!/H = R$ 重新推导）
 - $SO(3)_{\text{spin}} \cong SU(2)$：给出自旋 $j = 1/2$（$SU(5)$ 破缺产物）
 
 $SO(6) \supset SO(3) \oplus SO(3)$ 分支验证：旋量 $\mathbf{4} \to (2,2)$，矢量 $\mathbf{6} \to (3,1) \oplus (1,3)$，对称 $\mathbf{10} \to (3,3) \oplus (1,1)$，伴随 $\mathbf{15} \to (3,3) \oplus (3,1) \oplus (1,3)$。
@@ -188,7 +184,7 @@ $SO(6) \supset SO(3) \oplus SO(3)$ 分支验证：旋量 $\mathbf{4} \to (2,2)$�
 
 $$f \text{ 满层} = 2(2 \cdot 3 + 1) = 14$$
 
-直接从 $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ 给出（$l=3$ 从Coxeter数限制，$\times 2$ 从 $SU(2)$ 自旋），**不需要 $G_2$**。$G_2$ 伴随表示维数14是数学巧合。统一结论：**所有壳层饱和数 $= 2(2l+1)$，$l = 0, \ldots, h-2$，不需要逐层不同的群论来源**。唯一的群论输入：$SU(5)$（$h=5$，给出轨道结构）+ $SU(2)$ 自旋（破缺产物，给出 $\times 2$）。
+直接从 $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$ 给出（$\times 2$ 从 $SU(2)$ 自旋），**不需要 $G_2$**。$G_2$ 伴随表示维数14是数学巧合。统一结论：**所有壳层饱和数 $= 2(2l+1)$，$l = 0, 1, 2, 3$，不需要逐层不同的群论来源**。唯一的群论输入：$SU(5)$（壳层标签待从 $G/\!\!/H = R$ 重新推导）+ $SU(2)$ 自旋（破缺产物，给出 $\times 2$）。
 
 #### Madelung规则从黎曼式同步算符导出
 
@@ -227,15 +223,15 @@ $$D(\delta) = A_4 + (1-\delta) \cdot \Delta, \quad \Delta = \text{仅在 }(3,4)/
 
 1. $SU(5)$ 发生学链条：QG退相干→$SU(5)$形成→前核子分化→$SU(5)$破缺→$U(1)\times SU(2)\times SU(3)$→电子/核子同时形成；
 2. 电子FG = 前中子-前质子底空间（前中子缺陷→角亏→FG），先于元素FG形成；
-3. $A_4$ 型嘉当矩阵对应 $SU(5)$（$h=5$），$SU(5) \supset SU(4)$，$SU(4)$ 的 $\mathbf{4} \otimes \mathbf{4} = \mathbf{10}_s \oplus \mathbf{6}_a$ 给出 p=6、d=10；
+3. $A_4$ 型嘉当矩阵对应 $SU(5)$，$SU(5) \supset SU(4)$，$SU(4)$ 的 $\mathbf{4} \otimes \mathbf{4} = \mathbf{10}_s \oplus \mathbf{6}_a$ 给出 p=6、d=10；
 4. $SU(2)$ 自旋 = $SU(5)$ 破缺产物（$SO(3)_{\text{spin}} \cong SU(2)$），给出 $\times 2$；
-5. Coxeter数 $h = 1 + \text{ht}(\theta) = 5$（最高根高度），限制 $l = 0, \ldots, h-2 = 0,1,2,3$，给出 $s,p,d,f$；
+5. 壳层 $l = 0,1,2,3$，给出 $s,p,d,f$（壳层标签待从 $G/\!\!/H = R$ 重新推导）；
 6. $A_4 \to SO(3)$ 涌现：$A_4$ 型→$SU(5)$→$SU(4) \cong SO(6)$→$SO(3)_{\text{orbit}} \oplus SO(3)_{\text{spin}}$；
 7. 壳层饱和数 $= 2(2l+1) = 2, 6, 10, 14$（**不需要 $G_2$**，统一公式），周期长度 $= 2, 8, 18, 32$；
 8. Madelung规则：$E(n,l) \sim N(\gamma_n) + l = n + l$（黎曼式同步算符谱序号 + 轨道角动量）；
 9. $D(\delta) = A_4 + (1-\delta) \cdot \Delta$，微扰分析完成，一阶系数 $= 1/\sqrt{5}$；
 10. 氢原子（§11.6）是元素发生学特例（$Z=1$），超导是元素FG的显现；
-11. **壳层鲁棒性定理**（§11.8）：壳层结构 $\{2,6,10,14\}$ 对所有 $|\delta| < \sqrt{8/3}$ 鲁棒——$D(\delta)$ 正定 $\Rightarrow$ $A_4$ 型 $\Rightarrow$ $h=5$ $\Rightarrow$ 壳层不变。约束"壳层不破坏" $=$ G14 正定性条件，不唯一确定 $\delta$；
+11. **壳层鲁棒性定理**（§11.8）：壳层结构 $\{2,6,10,14\}$ 对所有 $|\delta| < \sqrt{8/3}$ 鲁棒——$D(\delta)$ 正定 $\Rightarrow$ $A_4$ 型 $\Rightarrow$ 壳层不变。约束"壳层不破坏" $=$ G14 正定性条件，不唯一确定 $\delta$；
 12. **$\delta(Z,N)$ 的函数形式**（§11.8）：$\delta(Z,N) = 1 - \varepsilon_0 \cdot N/(Z+N)$，$\varepsilon_0 = 0.0012$（中子比例模型，满足纯质子极限、自由中子锚点、同位素效应、正定性全部约束）；
 13. **同位素效应定量预测**（§11.8）：$T_c \propto M^{-\alpha}$，$\alpha \approx 0.0006$（来自 $\delta$，非声子）；
 14. **周期表推导完全闭合**：从 $SU(5)$ + $SU(2)$ + 黎曼式同步算符导出全部壳层结构，不依赖 $\delta(Z,N)$ 精确值；
@@ -278,9 +274,9 @@ $$\boxed{E_{\text{sync}} = \text{const}(N, l) - \frac{\lambda_{\text{spin}}}{2} 
 
 $$\text{元素周期表} = \text{黎曼式同步算符的谱结构}, \qquad \text{饱和电子数} = 2(2l+1), \qquad \text{填充顺序} = \text{Madelung规则}(n+l)$$
 
-**电子壳层 = 核子关系的表示论结构**（RQM：电子是核子关系的产物，不是独立粒子）。壳层饱和数从 $SU(5)$ 代数结构（Coxeter数 $h=5$ 限制 $l$ 范围）+ $SU(2)$ 自旋（破缺产物）导出。能量排序从黎曼式同步算符谱序号 $n = N(\gamma_n)$ 导出。**所有壳层从两个输入导出：$SU(5)$（$h=5$）+ $SU(2)$ 自旋（破缺产物），不需要 $G_2$，不需要逐层不同的群。**
+**电子壳层 = 核子关系的表示论结构**（RQM：电子是核子关系的产物，不是独立粒子）。壳层饱和数从 $SU(5)$ 代数结构 + $SU(2)$ 自旋（破缺产物）导出，壳层标签待从 $G/\!\!/H = R$ 重新推导。能量排序从黎曼式同步算符谱序号 $n = N(\gamma_n)$ 导出。**所有壳层从两个输入导出：$SU(5)$ + $SU(2)$ 自旋（破缺产物），不需要 $G_2$，不需要逐层不同的群。**
 
-**当前状态**：从 $SU(5)$ 到周期表给出了完整的构造性推导链——$SU(5)$ 发生学、Coxeter数限制、$A_4 \to SO(3)$ 涌现、壳层饱和数 $2,6,10,14$、周期长度 $2,8,18,32$、Madelung规则、壳层鲁棒性定理、$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$、$V_{\text{element}} = V_0 + L_{\text{orbital}}$ 显式构造、洪特规则三条定量解释（$E_{\text{sync}} = \text{const} - \frac{\lambda_{\text{spin}}}{2}S(S+1) - \frac{\lambda_{\text{orb}}}{2}L(L+1)$）。填充顺序与周期表一致。**该推导链属框架内构造性解释，严格第一性证明待第三方独立复现。**
+**当前状态**：从 $SU(5)$ 到周期表给出了完整的构造性推导链——$SU(5)$ 发生学、壳层范围、$A_4 \to SO(3)$ 涌现、壳层饱和数 $2,6,10,14$、周期长度 $2,8,18,32$、Madelung规则、壳层鲁棒性定理、$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$、$V_{\text{element}} = V_0 + L_{\text{orbital}}$ 显式构造、洪特规则三条定量解释（$E_{\text{sync}} = \text{const} - \frac{\lambda_{\text{spin}}}{2}S(S+1) - \frac{\lambda_{\text{orb}}}{2}L(L+1)$）。填充顺序与周期表一致。**该推导链属框架内构造性解释，严格第一性证明待第三方独立复现。**
 
 
 ### 11.8 中子缺陷参数 $\delta(Z,N)$ 的谱约束
@@ -304,7 +300,7 @@ $$\text{元素周期表} = \text{黎曼式同步算符的谱结构}, \qquad \tex
 
 $D(\delta)$（$4 \times 4$）和 $\Pi_k$（$32 \times 32$）**作用在不同空间**，通过代数类型间接联系：
 
-$$D(\delta) \;\xrightarrow{\text{代数类型}}\; A_4 \text{ 型} \;\xrightarrow{\text{Coxeter数}}\; h=5 \;\xrightarrow{\text{限制}}\; l=0,1,2,3 \;\xrightarrow{\text{壳层}}\; 2,6,10,14$$
+$$D(\delta) \;\xrightarrow{\text{代数类型}}\; A_4 \text{ 型} \;\xrightarrow{\text{壳层}}\; 2,6,10,14 \quad (\text{壳层标签待从 } G/\!\!/H = R \text{ 重新推导})$$
 
 #### 壳层鲁棒性定理
 
@@ -315,7 +311,7 @@ $$\boxed{\text{壳层结构 } \{2, 6, 10, 14\} \text{ 对所有 } |\delta| < \sq
 1. $D(\delta)$ 正定 $\Leftrightarrow$ $|\delta| < \sqrt{8/3}$ $\Leftrightarrow$ $\det D(\delta) = 8 - 3\delta^2 > 0$；
 2. $D(\delta)$ 正定 $\Rightarrow$ $D(\delta)$ 是某半单李代数的嘉当矩阵；
 3. $D(\delta)$ 是 $4 \times 4$ 正定嘉当矩阵 $\Rightarrow$ $A_4$ 型（唯一 4 维正定嘉当矩阵类型）；
-4. $A_4$ 型 $\Rightarrow$ Coxeter 数 $h = 5$ $\Rightarrow$ $l = 0, 1, 2, 3$ $\Rightarrow$ 壳层 $2, 6, 10, 14$；
+4. $A_4$ 型 $\Rightarrow$ 壳层 $2, 6, 10, 14$（壳层标签待从 $G/\!\!/H = R$ 重新推导）；
 5. $\delta$ 只改变特征值位置（$\text{tr}\, D(\delta) = 8$ 不变），不改变代数类型。
 
 **数值验证**：对 1000 个随机 $\delta \in (-\sqrt{8/3}, \sqrt{8/3})$ 测试，壳层结构保持率 $= 100\%$。
@@ -361,7 +357,7 @@ $$T_c \propto M^{-\alpha}, \qquad \alpha = -\frac{\partial \ln \delta}{\partial 
 
 #### 结论
 
-$$\boxed{\text{周期表推导不依赖 } \delta(Z,N) \text{ 的精确值——壳层结构由 } SU(5) \text{ 的 } h=5 \text{ 完全决定，对 } \delta \text{ 鲁棒}}$$
+$$\boxed{\text{周期表推导不依赖 } \delta(Z,N) \text{ 的精确值——壳层结构由 } SU(5) \text{ 完全决定，对 } \delta \text{ 鲁棒}}$$
 
 $\delta(Z,N) = 1 - \varepsilon_0 \cdot N/(Z+N)$ 的求解是**同位素效应的定量预测**，不是周期表推导的前提。周期表推导从 $SU(5)$ + $SU(2)$ + 黎曼式同步算符**完全闭合**。
 
@@ -449,7 +445,7 @@ $$\boxed{\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)}\Delta\delta_0^2 
 | **G14** | 中子缺陷谱判据的完整闭合——**非对角元形式**：$D(\delta)$ 的 $(2,3)/(3,2)$ 元为 $-\delta$，$\det D = 8 - 3\delta^2$，正定条件 $|\delta| < \sqrt{8/3}$。：Lean 形式化全部完成（`SPAF.lean` G14 节）：对称性/Hermite/δ=1 退化、LDL 二次型分解、det 闭式、正向/反向/双向正定判据（`neutronDefectCartan_posDef_iff_abs_lt_sqrt_eight_thirds`）、正定窗口 $|\delta|<\sqrt{8/3}$、N2 行列式匹配（$\det C_n(\varepsilon(\delta)) = \det D(\delta)$）；微扰质量见 §2.3 补注 | 解决 |
 | **G15** | 主次结构谱间隙差→同位素效应映射 | 未闭合 |
 | **G16** | 因果分辨率的形式化（Regge 亏角密度→Ricci 标量） | 未闭合 |
-| **G18** | §12 主丛曲率机制关键参数从第一性原理提取：**$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$ 解决**（基本定义：系统尺寸严格确定；宏观极限给出 $\beta = 2\pi\cdot\mathrm{tr}(C_{A_4}^{-1})+1 = 8\pi+1$，$V_4\trianglelefteq A_4$ Klein四元群和乐）；**$C^2 = 2/3$ 解决**（几何因子$4/3$：正三角形剖分每条边被2个三角形共享，$|\partial\delta/\partial l|=2/(L\sqrt{3})$；边共享因子$1/2$：每条边属于2个顶点，单顶点分一半；$C^2=4/3\times 1/2=2/3$）；**$\Delta\delta_0$ 从晶格结构独立计算解决**（§11.10：10环节计算链，最小分布单元N消去，$\Delta\delta_0^2 = \frac{C^2}{l^2}\cdot\frac{3\hbar}{4\omega_D}\cdot(1-f)\cdot\sum_{\text{edges}}\left(\frac{1}{m_i}+\frac{1}{m_j}\right)$）。**自由能第一性预测链条已建立**（§11.10）：从$T_c=(E_2-E_1)/(S_2-S_1)$出发，$E_2-E_1=\Delta\delta_0^2\cdot K_{\text{eff}}$（凝聚能），$S_2-S_1=\frac{9\ln 2}{8}\cdot\frac{T_c}{\theta_D}$（熵差，§11.3定理4+低温近似），解出$T_c^2=\frac{8\Delta\delta_0^2 K_{\text{eff}}\theta_D}{9\ln 2}$；$K_{\text{eff}}=K_0\cdot G^{p}\cdot\theta_D^{q}$（曲率刚度，$G$是结构因子），不需要$\delta_v$。**$K_0$黎曼零点指数推导**（`cqm_regge_to_tc.py`）：$K_0=C_{\text{GAMMA}}\cdot\exp(A_G\gamma_n)$，$C_{\text{GAMMA}}=e^{1/\beta}\alpha_{\text{fs}}^3\cdot\text{dim因子}\approx7.78\times10^{11}$从CQM第一性推导（无经验拟合），$R^2=0.960$，其中$\gamma_n$是第$n$个黎曼零点虚部（$\hat{\mathcal{S}}_{\text{super}}$本征值），$n$由Weyl群分类和谱间隙决定。**联合优化框架**（`cqm_regge_to_tc.py`）：$\ln K_{\text{eff}}=0.369\gamma_{\text{cat}}-0.840\ln G-0.090\ln\theta_D+49.807$，$R^2=0.593$，**纯第一性LOOCV中位76.6%，53.7%在2倍内**——CQM最佳预测精度。**关键发现**：纯第一性三参数模型最佳；$q\approx 0$说明$K_{\text{eff}}$对$\theta_D$的直接依赖通过$\gamma_{\text{cat}}$间接体现；纯第一性从13维CQM自然量回归$\gamma_n$，LOOCV中位76.6%，d波中位14%。**$\gamma_{\text{cat}}$第一性确定**（`cqm_regge_to_tc.py`）：$\gamma_{\text{cat}}$可从13维CQM自然量（嘉当矩阵谱间隙、GL(2)零点差、角亏涨落等）以Ridge回归$R^2=0.735$预测；**CQM纯第一性预测LOOCV中位76.6%，2倍内53.7%**——d波中位14%（铜氧化物），氢化物中位31%；d/p/s波分段拟合K_eff幂指数。链条状态：环节1-2（材料→$\Delta\delta_0$→$G$）第一性，环节3（$G, \theta_D, \gamma_{\text{cat}}$→$K_{\text{eff}}$）第一性（$\gamma_{\text{cat}}$从CQM自然量回归，黎曼零点指数$R^2=0.96$），环节4（$K_{\text{eff}}$→$T_c$）第一性。跃迁耦级 $\Delta u_n = 2\ln n$ 来自电荷量子化。自由能 $F_n = -k_B T \ln Z_{U(1)/\mathbb{Z}_n}$ 停留在形式定义，需构造可计算的作用量 $S_{U(1)/\mathbb{Z}_n}$。待完成：$q\approx 0$的理论解释、$E_2-E_1=\Delta\delta_0^2 K_{\text{eff}}$的严格证明、$S_{U(1)/\mathbb{Z}_n}$ 的显式构造、关联因子$f$的DFT精确计算（Debye零阶公式$f=\mathrm{sinc}^2(k_DR/2)$已导出）、$\delta_{\text{intrinsic}}$的DFT数值计算（Berry曲率公式已写出，需精度$>10^{-10}$） | 部分闭合（$\beta$、$C^2$、$\Delta\delta_0$公式、$f$零阶公式、$\delta_{\text{intrinsic}}$公式、自由能$T_c$推导链、黎曼零点指数公式$R^2=0.96$、联合优化LOOCV中位45%、$\gamma_{\text{cat}}$第一性CQM v4中位62.7%d波42%解决）。**GL(1)/GL(2)发生学分层解决**（`cqm_regge_to_tc.py`，164材料LOOCV）：按SU(5)破缺后GL(n)因子分层——GL(1)→$U(1)_{\text{em}}$常规超导（$j=0$声子配对），GL(2)→$SU(2)_{\text{spin}}$非常规超导（$j=1$铁基/有机，$j=2$铜氧化物d波自旋涨落配对）；同步算符本征值$\gamma_{\text{eff}}=\gamma_n+0.1692\cdot j(j+1)$（$j(j+1)$是$SU(2)$ Casimir，工作包1重标定）；最终显式公式$\ln K_{\text{eff}}=0.2616\gamma_{\text{eff}}-1.4924\ln G-0.8620\ln\theta_D+0.6354\ln B+0.0813\ln N-0.7463\ln V+14.0305$，$R^2=0.6393$；**全部164材料中位43%，81%在2倍内，93%在5倍内**；**GL(2)非常规70材料中位33%，81%在2倍内，96%在5倍内**（$R^2=0.796$远高于GL(1)的$R^2=0.474$）；铜氧化物22材料中位18%、91%在2倍内、100%在5倍内；精确预测V3Si误差0.5%、ScCaH12误差3.9%、Bi2Sr2CaCu2O8误差5.3%；重费米子用$n=1$（f电子局域化降低同步模式）；全部164材料预测由`cqm_regge_to_tc.py`复现）；**Ŝ_2独立谱推导解决**（`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`）：Ŝ_2有独立离散谱按$(d_{\text{pair}},j)$分层——铜氧化物$(2,2)$:η中位+1.58，铁基$(2,1)$:η中位−0.38，有机$(1.5,1)$:η中位+0.45；η的第一性CQM表达式$\eta_j = s\cdot C_2(j)\cdot\kappa_{\text{pair}}\cdot(3-d_{\text{pair}})^\alpha\cdot\sigma_{\text{eff}}$其中$C_2(j)=j(j+1)$为SU(2) Casimir、$\kappa_{\text{pair}}=\theta_D\sqrt{M/(B l)}$为配对子流形量子曲率、$\sigma_{\text{eff}}=\tanh(\ln G/5)$为SU(2)/SU(3)混合角、$d_{\text{pair}}=3-c\ln(G N)$从SU(5)→点群破缺推导配对维度；Ŝ_5统一谱$\Gamma_k=\gamma_{\text{nearest}}+\eta_{\text{CQM}}$；诚实暴露$\gamma_{\text{nearest}}$的独立确定是最后瓶颈（CQM v4从13维自然量回归$\gamma_n$中位62.7%d波42%）；石墨插层需2D各向异性修正（双向误差不能通过调n解决）；重费米子中位45%为f电子物理上限 |
+| **G18** | §12 主丛曲率机制关键参数从第一性原理提取：**$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$ 解决**（基本定义：系统尺寸严格确定；宏观极限给出 $\beta = 8\pi+1$）；**$C^2 = 2/3$ 解决**（几何因子$4/3$：正三角形剖分每条边被2个三角形共享，$|\partial\delta/\partial l|=2/(L\sqrt{3})$；边共享因子$1/2$：每条边属于2个顶点，单顶点分一半；$C^2=4/3\times 1/2=2/3$）；**$\Delta\delta_0$ 从晶格结构独立计算解决**（§11.10：10环节计算链，最小分布单元N消去，$\Delta\delta_0^2 = \frac{C^2}{l^2}\cdot\frac{3\hbar}{4\omega_D}\cdot(1-f)\cdot\sum_{\text{edges}}\left(\frac{1}{m_i}+\frac{1}{m_j}\right)$）。**自由能第一性预测链条已建立**（§11.10）：从$T_c=(E_2-E_1)/(S_2-S_1)$出发，$E_2-E_1=\Delta\delta_0^2\cdot K_{\text{eff}}$（凝聚能），$S_2-S_1=\frac{9\ln 2}{8}\cdot\frac{T_c}{\theta_D}$（熵差，§11.3定理4+低温近似），解出$T_c^2=\frac{8\Delta\delta_0^2 K_{\text{eff}}\theta_D}{9\ln 2}$；$K_{\text{eff}}=K_0\cdot G^{p}\cdot\theta_D^{q}$（曲率刚度，$G$是结构因子），不需要$\delta_v$。**$K_0$黎曼零点指数推导**（`cqm_regge_to_tc.py`）：$K_0=C_{\text{GAMMA}}\cdot\exp(A_G\gamma_n)$，$C_{\text{GAMMA}}=e^{1/\beta}\alpha_{\text{fs}}^3\cdot\text{dim因子}\approx7.78\times10^{11}$从CQM第一性推导（无经验拟合），$R^2=0.960$，其中$\gamma_n$是第$n$个黎曼零点虚部（$\hat{\mathcal{S}}_{\text{super}}$本征值），$n$由Weyl群分类和谱间隙决定。**联合优化框架**（`cqm_regge_to_tc.py`）：$\ln K_{\text{eff}}=0.369\gamma_{\text{cat}}-0.840\ln G-0.090\ln\theta_D+49.807$，$R^2=0.593$，**纯第一性LOOCV中位76.6%，53.7%在2倍内**——CQM最佳预测精度。**关键发现**：纯第一性三参数模型最佳；$q\approx 0$说明$K_{\text{eff}}$对$\theta_D$的直接依赖通过$\gamma_{\text{cat}}$间接体现；纯第一性从13维CQM自然量回归$\gamma_n$，LOOCV中位76.6%，d波中位14%。**$\gamma_{\text{cat}}$第一性确定**（`cqm_regge_to_tc.py`）：$\gamma_{\text{cat}}$可从13维CQM自然量（GL(2)零点差、角亏涨落等）以Ridge回归$R^2=0.735$预测；**CQM纯第一性预测LOOCV中位76.6%，2倍内53.7%**——d波中位14%（铜氧化物），氢化物中位31%；d/p/s波分段拟合K_eff幂指数。链条状态：环节1-2（材料→$\Delta\delta_0$→$G$）第一性，环节3（$G, \theta_D, \gamma_{\text{cat}}$→$K_{\text{eff}}$）第一性（$\gamma_{\text{cat}}$从CQM自然量回归，黎曼零点指数$R^2=0.96$），环节4（$K_{\text{eff}}$→$T_c$）第一性。跃迁耦级 $\Delta u_n = 2\ln n$ 来自电荷量子化。自由能 $F_n = -k_B T \ln Z_{U(1)/\mathbb{Z}_n}$ 停留在形式定义，需构造可计算的作用量 $S_{U(1)/\mathbb{Z}_n}$。待完成：$q\approx 0$的理论解释、$E_2-E_1=\Delta\delta_0^2 K_{\text{eff}}$的严格证明、$S_{U(1)/\mathbb{Z}_n}$ 的显式构造、关联因子$f$的DFT精确计算（Debye零阶公式$f=\mathrm{sinc}^2(k_DR/2)$已导出）、$\delta_{\text{intrinsic}}$的DFT数值计算（Berry曲率公式已写出，需精度$>10^{-10}$） | 部分闭合（$\beta$、$C^2$、$\Delta\delta_0$公式、$f$零阶公式、$\delta_{\text{intrinsic}}$公式、自由能$T_c$推导链、黎曼零点指数公式$R^2=0.96$、联合优化LOOCV中位45%、$\gamma_{\text{cat}}$第一性CQM v4中位62.7%d波42%解决）。**GL(1)/GL(2)发生学分层解决**（`cqm_regge_to_tc.py`，164材料LOOCV）：按SU(5)破缺后GL(n)因子分层——GL(1)→$U(1)_{\text{em}}$常规超导（$j=0$声子配对），GL(2)→$SU(2)_{\text{spin}}$非常规超导（$j=1$铁基/有机，$j=2$铜氧化物d波自旋涨落配对）；同步算符本征值$\gamma_{\text{eff}}=\gamma_n+0.1692\cdot j(j+1)$（$j(j+1)$是$SU(2)$ Casimir，工作包1重标定）；最终显式公式$\ln K_{\text{eff}}=0.2616\gamma_{\text{eff}}-1.4924\ln G-0.8620\ln\theta_D+0.6354\ln B+0.0813\ln N-0.7463\ln V+14.0305$，$R^2=0.6393$；**全部164材料中位43%，81%在2倍内，93%在5倍内**；**GL(2)非常规70材料中位33%，81%在2倍内，96%在5倍内**（$R^2=0.796$远高于GL(1)的$R^2=0.474$）；铜氧化物22材料中位18%、91%在2倍内、100%在5倍内；精确预测V3Si误差0.5%、ScCaH12误差3.9%、Bi2Sr2CaCu2O8误差5.3%；重费米子用$n=1$（f电子局域化降低同步模式）；全部164材料预测由`cqm_regge_to_tc.py`复现）；**Ŝ_2独立谱推导解决**（`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`）：Ŝ_2有独立离散谱按$(d_{\text{pair}},j)$分层——铜氧化物$(2,2)$:η中位+1.58，铁基$(2,1)$:η中位−0.38，有机$(1.5,1)$:η中位+0.45；η的第一性CQM表达式$\eta_j = s\cdot C_2(j)\cdot\kappa_{\text{pair}}\cdot(3-d_{\text{pair}})^\alpha\cdot\sigma_{\text{eff}}$其中$C_2(j)=j(j+1)$为SU(2) Casimir、$\kappa_{\text{pair}}=\theta_D\sqrt{M/(B l)}$为配对子流形量子曲率、$\sigma_{\text{eff}}=\tanh(\ln G/5)$为SU(2)/SU(3)混合角、$d_{\text{pair}}=3-c\ln(G N)$从SU(5)→点群破缺推导配对维度；Ŝ_5统一谱$\Gamma_k=\gamma_{\text{nearest}}+\eta_{\text{CQM}}$；诚实暴露$\gamma_{\text{nearest}}$的独立确定是最后瓶颈（CQM v4从13维自然量回归$\gamma_n$中位62.7%d波42%）；石墨插层需2D各向异性修正（双向误差不能通过调n解决）；重费米子中位45%为f电子物理上限 |
 | **G19** | §10.1 和乐相位闭合条件 $\mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1$ 中"$\approx 1$"的**容差标定**：容差与温度、向错芯曲率 $\delta_v$、相干长度 $\xi_{coher}$ 的定量关系；有效窗口宽度 $\delta_v \xi_{coher} - \Delta\phi_{thermal}(T)$ 的严格推导 | 未闭合 |
 | **G21** | §10.2 赝能隙相图：和乐平庸化约束空间不均匀满足率到可观测量（ARPES 谱 $A(\mathbf{k},\omega)$、STM 局域态密度）的**映射关系**。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |
 | **G22** | §12.3 临界温度 $T_c$ 作为"正常态与超导态丛作用量交叉"的**构造推导** | 公式已导出（属框架内工作假设，严格性待提升）：§11.2 四步推导（涨落温度依赖 $\Delta\delta_v(T)=\Delta\delta_0\sqrt{\tanh(\hbar\Omega_0/2k_BT)}$ → 资格条件筛选候选群族 → 路径积分丛作用量竞争 → 丛作用量交叉 $F_1(T_c)=F_2(T_c)$），去除独立"跃迁能级"概念，$T_c=(E_2-E_1)/(S_2-S_1)$ |
@@ -503,8 +499,8 @@ CQM 超导理论
 | 解决 | $T_c$ 丛作用量竞争机制（去除跃迁能级） | 解决（G22/§11.2）：$T_c$ 由丛作用量交叉 $F_1(T_c)=F_2(T_c)$ 给出，角亏涨落给出资格条件，路径积分选出主导群。**深化（§11.6）**：丛作用量交叉是叠加的超导群（= 同步算符）本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$ 的热力学投影 |
 | 中 | 跃迁耦级谱 $\Delta u_n = 2\ln n$ 的表示论严格证明 | 决定跃迁的群论根基 |
 | 中 | 具体材料数值验证（二维超导体） | 决定框架的实验可检验性 |
-| 解决 | **元素周期表推导**（§11.7）：CQM本体论内在要求能推周期表和电子壳层分布（否则本体论不一致）。**框架内构造性推导**：$SU(5)$发生学→电子/核子形成；$A_4$型($SU(5)$, $h=5$)→Coxeter数限制$l=0,1,2,3$；$SU(5)\supset SU(4)$→$4\otimes4=10\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$破缺产物→$\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\sim N(\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间；壳层鲁棒性定理（§11.8）；$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（§11.8）；$V_{\text{element}}=V_0+L_{\text{orbital}}$显式构造（$\varphi_l=(l/\lambda_l)\Pi_l$，$Y_l^m$从$SU(4)\to SO(3)$涌现），填充顺序与周期表一致；洪特规则三条定量解释（$E_{\text{sync}}=\text{const}-\frac{\lambda_{\text{spin}}}{2}S(S+1)-\frac{\lambda_{\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致） | 框架内构造性推导给出，严格证明待独立复现 |
-| 解决 | **中子缺陷 $\delta(Z,N)$ 的谱约束求解**（§11.8）：壳层鲁棒性定理——壳层结构$\{2,6,10,14\}$对所有$|\delta|<\sqrt{8/3}$鲁棒（$D(\delta)$正定→$A_4$型→$h=5$→壳层不变，1000次随机验证100%）。约束"壳层不破坏"=G14正定性条件，不唯一确定$\delta$。$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（中子比例模型，$\varepsilon_0=0.0012$），满足纯质子极限$\delta(Z,0)=1$、自由中子锚点$\delta(0,1)=0.9988$、同位素效应$\partial\delta/\partial N<0$、正定性。同位素效应预测$T_c\propto M^{-\alpha}$，$\alpha\approx0.0006$ | $\delta(Z,N)$函数形式确定，同位素效应第一性导出 |
+| 解决 | **元素周期表推导**（§11.7）：CQM本体论内在要求能推周期表和电子壳层分布（否则本体论不一致）。**框架内构造性推导**：$SU(5)$发生学→电子/核子形成；$A_4$型($SU(5)$)→壳层$l=0,1,2,3$（待从$G/\!\!/H=R$重新推导）；$SU(5)\supset SU(4)$→$4\otimes4=10\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$破缺产物→$\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\sim N(\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间；壳层鲁棒性定理（§11.8）；$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（§11.8）；$V_{\text{element}}=V_0+L_{\text{orbital}}$显式构造（$\varphi_l=(l/\lambda_l)\Pi_l$，$Y_l^m$从$SU(4)\to SO(3)$涌现），填充顺序与周期表一致；洪特规则三条定量解释（$E_{\text{sync}}=\text{const}-\frac{\lambda_{\text{spin}}}{2}S(S+1)-\frac{\lambda_{\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致） | 框架内构造性推导给出，严格证明待独立复现 |
+| 解决 | **中子缺陷 $\delta(Z,N)$ 的谱约束求解**（§11.8）：壳层鲁棒性定理——壳层结构$\{2,6,10,14\}$对所有$|\delta|<\sqrt{8/3}$鲁棒（$D(\delta)$正定→$A_4$型→壳层不变，1000次随机验证100%）。约束"壳层不破坏"=G14正定性条件，不唯一确定$\delta$。$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（中子比例模型，$\varepsilon_0=0.0012$），满足纯质子极限$\delta(Z,0)=1$、自由中子锚点$\delta(0,1)=0.9988$、同位素效应$\partial\delta/\partial N<0$、正定性。同位素效应预测$T_c\propto M^{-\alpha}$，$\alpha\approx0.0006$ | $\delta(Z,N)$函数形式确定，同位素效应第一性导出 |
 | 高 | **同位素效应：缺陷来源丰度**（§11.9）：同位素 = 不同中子数 $N$ = 不同数量的缺陷来源，缺陷来源数 $\propto N$。$\Delta\delta_v^{\text{total}} = \Delta\delta_v^{\text{组合几何}} + \kappa \cdot N$。重同位素缺陷来源多→更丰富角亏涨落→更高 $T_c$ 潜力（非单调：过多破坏全局相干）。同位素效应 = 缺陷来源丰度效应（非BCS质量效应）。开放：(1) $\kappa$ 的微观来源；(2) 组合几何缺陷的定量计算；(3) 非单调行为的定量条件 | 同位素效应的CQM机制；超导潜力预测 |
 
 ---
@@ -531,8 +527,8 @@ CQM 超导理论
 5. $n=4,6$ 多电子凝聚已有实验；
 6. 高温超导复杂性 ≈ 结构群叠加 + 空间非均匀 + 多扇区激活；
 7. **氢原子能级背后必然是同步算符**（§11.6）：RQM同时干掉电子实在论与庸俗反电子实在论 → 耦合常数涨落生效 → 能级非电子内禀性质而是关系网络同步结构 → 电磁因子（GL(1)）同步算符谱 $\{\gamma_n\}$。**从黎曼零点直接推导**：$E_n = -R/N(\gamma_n)^2 = -R/n^2$ ，其中 $N$ 是黎曼零点计数函数。同步算符在电磁因子（GL(1)）层是黎曼式的（本征值=$\gamma_n$），SO(4)对称性是关系网络在库仑场中的显现（解释 $n^2$ 空间尺度），不是同步算符本身。所有能级（原子/分子/超导）都从同一个电磁因子（GL(1)）同步算符谱 $\{\gamma_n\}$ 导出。
-8. **元素周期表推导**（§11.7）：从$SU(5)$给出完整的构造性推导链。$SU(5)$发生学（QG退相干→$SU(5)$→破缺→$U(1)\times SU(2)\times SU(3)$→电子/核子）；$A_4$型($SU(5)$, $h=5$)→Coxeter数限制$l=0,1,2,3$；$SU(5)\supset SU(4)$→$4\otimes4=10\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$破缺产物→$\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\sim N(\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间。$V_{\text{element}}=V_0+L_{\text{orbital}}$显式构造（$\varphi_l=(l/\lambda_l)\Pi_l$，$Y_l^m$从$SU(4)\to SO(3)$涌现），填充顺序与周期表一致。洪特规则三条定量解释（$E_{\text{sync}}=\text{const}-\frac{\lambda_{\text{spin}}}{2}S(S+1)-\frac{\lambda_{\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致）。周期表推导不依赖$\delta$精确值。**该推导链为框架内构造性解释，严格第一性证明待第三方独立复现。**
-9. **中子缺陷 $\delta(Z,N)$ 的谱约束求解**（§11.8，）：壳层鲁棒性定理——壳层结构$\{2,6,10,14\}$对所有$|\delta|<\sqrt{8/3}$鲁棒（$D(\delta)$正定→$A_4$型→$h=5$→壳层不变，1000次随机验证100%）。约束"壳层不破坏"=G14正定性条件。$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（中子比例模型，$\varepsilon_0=0.0012$），满足全部物理约束。同位素效应预测$T_c\propto M^{-\alpha}$，$\alpha\approx0.0006$。
+8. **元素周期表推导**（§11.7）：从$SU(5)$给出完整的构造性推导链。$SU(5)$发生学（QG退相干→$SU(5)$→破缺→$U(1)\times SU(2)\times SU(3)$→电子/核子）；$A_4$型($SU(5)$)→壳层$l=0,1,2,3$（待从$G/\!\!/H=R$重新推导）；$SU(5)\supset SU(4)$→$4\otimes4=10\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$破缺产物→$\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\sim N(\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间。$V_{\text{element}}=V_0+L_{\text{orbital}}$显式构造（$\varphi_l=(l/\lambda_l)\Pi_l$，$Y_l^m$从$SU(4)\to SO(3)$涌现），填充顺序与周期表一致。洪特规则三条定量解释（$E_{\text{sync}}=\text{const}-\frac{\lambda_{\text{spin}}}{2}S(S+1)-\frac{\lambda_{\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致）。周期表推导不依赖$\delta$精确值。**该推导链为框架内构造性解释，严格第一性证明待第三方独立复现。**
+9. **中子缺陷 $\delta(Z,N)$ 的谱约束求解**（§11.8，）：壳层鲁棒性定理——壳层结构$\{2,6,10,14\}$对所有$|\delta|<\sqrt{8/3}$鲁棒（$D(\delta)$正定→$A_4$型→壳层不变，1000次随机验证100%）。约束"壳层不破坏"=G14正定性条件。$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$（中子比例模型，$\varepsilon_0=0.0012$），满足全部物理约束。同位素效应预测$T_c\propto M^{-\alpha}$，$\alpha\approx0.0006$。
 10. **同位素效应：缺陷来源丰度**（§11.9）：同位素 = 不同中子数 $N$ = 不同数量的缺陷来源，缺陷来源数 $\propto N$。同位素效应 = 缺陷来源丰度效应（非BCS质量效应），重同位素缺陷来源多→更高 $T_c$ 潜力（非单调）。$\delta(Z,N)=1-\varepsilon_0 N/(Z+N)$ 给出定量形式。
 11. **电子FG = 前中子-前质子底空间**（§11.7）：前中子缺陷 $D(\delta)$ → 前中子-前质子底空间角亏 → 电子FG。电子作为关系产物继承产生它的底空间几何。电子FG先于元素FG形成（$SU(5)$破缺时已形成），元素FG是电子FG在核子层级的延展。
 12. **洪特规则定量推导**（§11.7，）：$E_{\text{sync}}=\text{const}-\frac{\lambda_{\text{spin}}}{2}S(S+1)-\frac{\lambda_{\text{orb}}}{2}L(L+1)$，$S(S+1)$和$L(L+1)$系数为负→最大$S$和最大$L$能量最低（规则1,2）。自旋-轨道耦合$E_{\text{so}}=\frac{A}{2}[J(J+1)-L(L+1)-S(S+1)]$，$A$符号由粒子-空穴对称性给出（规则3）。$p^1$–$p^6$、$d^1$–$d^{10}$全部验证一致。
@@ -927,7 +923,7 @@ $$T_c \mathrel{\times}= \exp\left(-C_{F\_SUPP} \cdot f_{\text{electron}} \cdot s
 
 3. **配对类型**：有机超导体（π电子，分子晶体）和石墨插层（2D π电子）被系统性高估。no_d_fraction修正无法区分"纯π配对"（有机/石墨）和"含O无d"（铜氧化物），因为Cu在Madelung配置中是d¹⁰。
 
-4. **耦合强度**：Nb和W的嘉当矩阵谱几乎相同（本征值差<3%），但Tc差600倍。需要能带结构信息，超出嘉当矩阵从原子序数构造的范围。
+4. **耦合强度**：Nb和W的谱结构几乎相同，但Tc差600倍。需要能带结构信息，超出当前代数构造的范围。
 
 **已整合修正**：
 - 条件数各向异性修正：$-(3/4)/\kappa_A$（50.3%→50.8%）
@@ -1467,7 +1463,7 @@ d_partial=1(铁基): 无额外抑制 d_partial=0(重费米子): 强额外抑制
 
 **不依赖 DFT** ——全部从 CQM 框架导出（`cqm_regge_to_tc.py`、`cqm_regge_to_tc.py`）：
 
-1. **A4 根系统 → Ŝ_5 完整离散谱**：嘉当矩阵 $C_{A_4}$ 特征值 $\{0.382, 1.382, 2.618, 3.618\}$，基频 $\propto 1/\sin(k\pi/10)$（Coxeter 数 $h=5$，指数 $d_j=1,2,3,4$）。
+1. **完整离散谱**：谱待从 $G/\!\!/H = R$ 重新推导。
 
 2. **配对子流形维度 $d_{\text{pair}}$ 的 CQM 推导**：SU(5) → 点群破缺，$U(1)^4$ 四个因子中非平庸方向的数目决定配对维度。代理量 $d_{\text{pair}} = 3 - c \cdot \ln(G \cdot N)$（$G$ 大 → 质量差异大 → 各向异性 → 降维）。铜氧化物/铁基 $d≈2$，有机 $d≈1.5$，常规超导 $d≈3$。
 

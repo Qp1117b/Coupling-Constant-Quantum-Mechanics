@@ -47,13 +47,13 @@ $$\text{前中子缺陷 } D(\delta) \;\to\; \text{底空间角亏} \;\to\; \text
 
 ### 3.0 核心逻辑
 
-FG的核心问题之一是：**给定底空间（Regge剖分）+约束（算符+对称性），求解同步方程的本征群（自守形式），本征群对应的耦合常数就是涨落耦合常数指定的。**
+FG的核心问题之一是：**给定底空间（Regge剖分）+约束（算符+对称性），求解同步方程的自守形式，本征群 $R = G/\!\!/H$（约束产物）对应的耦合常数就是涨落耦合常数指定的。**
 
 $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符）}} + \underbrace{G_k}_{\text{对称性}} \;\Rightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
 
 **底空间不可省略**：作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 必须作用在底空间上的函数空间（自守形式是底空间上的函数/截面），对称性条件 $f(\gamma x)=\chi(\gamma)f(x)$ 依赖群在底空间上的作用，底空间几何/拓扑**约束**作用量算符的谱和自守形式空间（非唯一决定）。正确顺序：$\text{底空间} + \text{作用量算符} + \text{对称性} \Rightarrow \text{自守形式}$。
 
-**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$GL(n)$ 的 $n$ 不由底空间几何读出，而由约束产物 $R$（紧致李群，公理 1+2 保证）的基本表示严格确定。给定约束产物 $R$，取其在约束框架中的基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$，则 $n = \dim V_{\text{fund}}$，$GL(V_{\text{fund}}) \cong GL(n,\mathbb{C})$。$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子（连同基态 $SU(5)$）通过基本表示给出各自的自守框架：基态 $SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5) \cong GL(5)$、色 $SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$、弱 $SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、电磁 $U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$——$n$ 由表示空间 $V_{\text{fund}}$ 的维度唯一指定，与基底选取无关。$SU(5)$ 本身由"含标准模型的最小单群"锚定：$\operatorname{rank}\,SU(5)=4=\operatorname{rank}\big(U(1)\times SU(2)\times SU(3)\big)$（现象学输入/公理），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导。标准数学构造中 $GL(n)$ 与 $\Gamma$ 是输入、底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM 从动力学反推：先定群（约束产物 $R$），再通过基本表示定 $n$，再定底空间约束。底空间（Regge 晶胞）不在这一层决定 $n$，只在各 $GL(n)$ 框架内约束具体谱（角亏 $\delta_v$、壳层、耦合常数，非唯一决定）。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面。$A_4$ 四本征群与壳层对应：若各本征群含 $SU(2)$ 因子，则每个 $SU(2)$ 的基本表示 $V=\mathbb{C}^2$ 给出 $GL(2)$，$s/p/d/f$ 四壳层的区分不在 $GL(n)$ 的 $n$ 上，而在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type（角动量 $l$ 作为 $SO(5)$ 的表示标签）。反证（为何不能由底空间指定 $n$）：(a) **Katz–Sarnak 普遍性**——一族 $GL(n)$ 的 L 函数在高密度极限下，零点统计服从紧经典群（酉/辛/正交）的随机矩阵系综，主情形为 GUE（如 $GL(1)$ 的 $\zeta$），特定对称型退化为 GOE/GSE；零点统计由对称类型与 $GL(n)$ 决定，不由 L 函数的具体算术实现（CQM 中即底空间具体结构）决定——若由底空间指定，统计应随底空间漂移，而非稳定落在同一系综。(b) **底空间锁 $n$ 使其在 $n$ 层无用且丧失丰富度**——若底空间唯一锁定某个 $n$，则"底空间指定 $n$"退化（$n$ 恒为常数、无区分度），而 $n$ 本有的丰富度来自群破缺层级 $SU(5)\to U(1)\times SU(2)\times SU(3)$，与底空间无关。
+**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$GL(n)$ 的 $n$ 不由底空间几何读出，而由约束产物 $R$（紧致李群，公理 1+2 保证）的基本表示严格确定。给定约束产物 $R$，取其在约束框架中的基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$，则 $n = \dim V_{\text{fund}}$，$GL(V_{\text{fund}}) \cong GL(n,\mathbb{C})$。$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子（连同基态 $SU(5)$）通过基本表示给出各自的自守框架：基态 $SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5) \cong GL(5)$、色 $SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$、弱 $SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、电磁 $U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$——$n$ 由表示空间 $V_{\text{fund}}$ 的维度唯一指定，与基底选取无关。$SU(5)$ 本身由"含标准模型的最小单群"锚定：$\operatorname{rank}\,SU(5)=4=\operatorname{rank}\big(U(1)\times SU(2)\times SU(3)\big)$（现象学输入/公理），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导。标准数学构造中 $GL(n)$ 与 $\Gamma$ 是输入、底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM 从动力学反推：先定群（约束产物 $R$），再通过基本表示定 $n$，再定底空间约束。底空间（Regge 晶胞）不在这一层决定 $n$，只在各 $GL(n)$ 框架内约束具体谱（角亏 $\delta_v$、壳层、耦合常数，非唯一决定）。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面。每个壳层的本征群 $R_k = G_k/\!\!/H_k$ 是约束产物。若 $R_k$ 含 $SU(2)$ 因子，则 $SU(2)$ 的基本表示 $V=\mathbb{C}^2$ 给出 $GL(2)$，$s/p/d/f$ 四壳层的区分不在 $GL(n)$ 的 $n$ 上，而在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type（角动量 $l$ 作为 $SO(5)$ 的表示标签）。壳层结构待从 $G/\!\!/H = R$ 重新推导。反证（为何不能由底空间指定 $n$）：(a) **Katz–Sarnak 普遍性**——一族 $GL(n)$ 的 L 函数在高密度极限下，零点统计服从紧经典群（酉/辛/正交）的随机矩阵系综，主情形为 GUE（如 $GL(1)$ 的 $\zeta$），特定对称型退化为 GOE/GSE；零点统计由对称类型与 $GL(n)$ 决定，不由 L 函数的具体算术实现（CQM 中即底空间具体结构）决定——若由底空间指定，统计应随底空间漂移，而非稳定落在同一系综。(b) **底空间锁 $n$ 使其在 $n$ 层无用且丧失丰富度**——若底空间唯一锁定某个 $n$，则"底空间指定 $n$"退化（$n$ 恒为常数、无区分度），而 $n$ 本有的丰富度来自群破缺层级 $SU(5)\to U(1)\times SU(2)\times SU(3)$，与底空间无关。
 
 **作用量算符 = 同步算符**：同步算符 $\hat{\mathcal{S}}_k$ 的本征值 $n_k$ 通过玻尔-索末菲量子化 $\oint p_u \, du = 2\pi n_k$ 给出量子化作用量积分 $J = \oint p_u \, du$，即 $n_k = J/(2\pi)$。本征值就是量子化作用量，因此同步算符即作用量算符。
 
@@ -61,17 +61,16 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 约束链：
 
-$$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k$$
+$$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k$$
 
-本征群与耦级的**方向性分工**：本征群 $G_k$ 由底空间 $A_4$ 根系结构（Coxeter 数 $h=5$）分类，耦级 $n_k$ 由群的 Casimir 格给出。链条方向是 $\text{底空间} \Rightarrow G_k \Rightarrow n_k$，**不是**由本征值反推群——逆谱问题（等谱不同构：存在谱完全相同而不等价的群/空间）保证本征值谱不能唯一确定群。本征值是群确定后的输出，群是底空间结构的输出。
+本征群与耦级的**方向性分工**：本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 的实现问题：给定 $G$ 和目标 $R$，找 $H$ 使 $G/\!\!/H = R$；检验容易，找到麻烦），耦级 $n_k$ 由群的 Casimir 格给出。壳层结构（$s/p/d/f$）待从 $G/\!\!/H = R$ 重新推导。链条方向是 $G/\!\!/H \Rightarrow R_k \Rightarrow n_k$。
 
 ### 3.1 约束的来源
 
 约束不是外加的，而是从**Regge剖分**和**位置-动量对易关系** $[\hat{X},\hat{P}]=i\hbar$ 第一性严格导出：
 
-- **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
+- **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子（4-单纯形）：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
-- **嘉当矩阵 = 图拉普拉斯**：离散协变导数 $(\nabla\phi)_v = \sum_{v'\sim v}(\phi_v-\phi_{v'})$ 的矩阵形式，是Regge剖分的必然结果。$A_4$ 嘉当矩阵本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，本征向量末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
@@ -93,13 +92,13 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 ### 3.3 本征群→耦合常数
 
-本征群由 $A_4$ Coxeter数 $h=5$ 严格确定：
+本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（$G/\!\!/H = R$ 实现问题），$A_4$ 嘉当矩阵给出壳层标签：
 
-$$G_k = SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$$
+$$R_k = G_k/\!\!/H_k$$
 
-其中 $SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $G_1 = SU(2)_{\text{spin}} \cong SU(2)$。
+其中 $R_k$ 的具体群结构为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$（约束产物的实现），$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
 
-- $l = k-1$ 是 $A_4$ 本征值的索引，不是输入参数
+- 壳层标签 $l_k$ 待从 $G/\!\!/H = R$ 重新推导，不是输入参数
 - 耦级 $n_k = C_k$ 由群论定义（Casimir本征值），约束方程锁定 $N_k$——是同步方程的**输出**，不是输入参数
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
 - 同步成本 $s_k = n_k + l$（径向同步成本+角向同步成本）
@@ -174,7 +173,7 @@ $$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转�
 | GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） | 轨道角动量 $l$、壳层饱和数 |
 | GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） | 物质自组织、$SU(5)$、Coxeter数 |
 
-### 5.1.1 SU(5)破缺→A_4→4紧致本征群→4耦合常数→α
+### 5.1.1 SU(5)破缺→规范群+壳层本征群→α
 
 SU(5)是物质自组织的基态同步群，其李代数$\mathfrak{su}_5$的根系为$A_4$型。SU(5)破缺产生两个独立效应：
 
@@ -192,29 +191,29 @@ $$\boxed{\text{SU}(5) \;\xrightarrow{\text{规范破缺}}\; U(1) \times SU(2) \t
 
 规范破缺给出3个空间群，总秩 $= 1+1+2 = 4 = \text{rank}(SU(5))$。**此效应与本征群无关**。
 
-#### 效应二：本征群效应（同步方程本征群）
+#### 效应二：壳层结构（待从 $G/\!\!/H = R$ 重新推导）
 
-$$\boxed{A_4\text{（}4\times4\text{嘉当矩阵）} \;\xrightarrow{\text{4本征值}}\; \{G_k = SU(2)\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
+壳层结构（$s/p/d/f$）的来源待从 $G/\!\!/H = R$ 的实现问题重新推导。每个壳层的本征群 $R_k = G_k/\!\!/H_k$ 是约束产物（给定 $G$ 和目标 $R$，找 $H$ 使 $G/\!\!/H = R$；检验容易，找到麻烦）：
 
-$A_4$嘉当矩阵的4个本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$k=1,2,3,4$）对应4个集体振荡模式，每个模式的角动量对称群为 $SU(2)$（**紧致李群** $\cong S^3$）：
+| $k$ | 本征群 $R_k = G_k/\!\!/H_k$ | 紧致性 | Casimir $C_k$ | 壳层 | 容量 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | $R_1$ | 紧致（公理1+2） | $3/4$ | s | 2 |
+| 2 | $R_2$ | 紧致（公理1+2） | $11/4$ | p | 6 |
+| 3 | $R_3$ | 紧致（公理1+2） | $27/4$ | d | 10 |
+| 4 | $R_4$ | 紧致（公理1+2） | $51/4$ | f | 14 |
 
-| $k$ | $l_k = k-1$ | 本征群 $G_k$ | 紧致性 | Casimir $C_k$ | 壳层 | 容量 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 | 0 | $SU(2)$ | $\cong S^3$ | $3/4$ | s | 2 |
-| 2 | 1 | $SU(2)$ | $\cong S^3$ | $11/4$ | p | 6 |
-| 3 | 2 | $SU(2)$ | $\cong S^3$ | $27/4$ | d | 10 |
-| 4 | 3 | $SU(2)$ | $\cong S^3$ | $51/4$ | f | 14 |
+**四个本征群 $R_k$ 全部是紧致李群**（公理1+2保证：$G$、$H$、$R$ 三者均为紧致李群）。这是CFT框架的数学前提：Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 的中心扩展构造，Verlinde公式、OPE系数、共形块均要求紧致李群结构。
 
-**四个本征群全部是紧致李群**（$SU(2) \cong S^3$，三维球面，紧致连通）。这是CFT框架的数学前提：Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 的中心扩展构造，Verlinde公式、OPE系数、共形块均要求紧致李群结构。
+> **待重新推导**：之前基于 $A_4$ 嘉当矩阵本征值给出壳层标签 $l_k = k-1$ 的推导路径不成立，已删除。壳层结构需从 $G/\!\!/H = R$ 的实现问题重新推导。
 
 #### 两个效应的关系
 
-| | 规范破缺（效应一） | 本征群效应（效应二） |
+| | 规范破缺（效应一） | 壳层结构（效应二） |
 |:---|:---|:---|
-| **是否本征群** | **否** | **是** |
-| **来源** | $SU(5) \to U(1) \times SU(2) \times SU(3)$ | $A_4$ 嘉当矩阵 → 4本征值 |
-| **群数** | 3个空间群 | 4个壳层群 |
-| **紧致性** | 全紧致 | 全紧致 |
+| **是否本征群** | **否** | **是**（$R_k = G_k/\!\!/H_k$） |
+| **来源** | $SU(5) \to U(1) \times SU(2) \times SU(3)$ | $G/\!\!/H = R$ 实现问题（待重新推导） |
+| **群数** | 3个空间群 | 4个壳层本征群 $R_k$ |
+| **紧致性** | 全紧致 | 全紧致（公理1+2） |
 | **时间群** | **无**（时间内禀没有群） | **无** |
 | **物理意义** | 规范相互作用（电磁/弱/强） | 角动量壳层（s/p/d/f） |
 | **耦合常数** | $g_{U(1)}, g_{SU(2)}, g_{SU(3)}$ | $g_k = \alpha\exp(-(n_k-n_1)/n_1)$ |
@@ -228,14 +227,13 @@ $$\boxed{\alpha = f(g_{U(1)})}$$
 
 ### 5.2 同步算符的完整谱结构
 
-作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理约束严格确定，本征群由 $A_4$ Coxeter数 $h=5$ 分类：
+作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理约束严格确定，本征群 $R_k = G_k/\!\!/H_k$ 是约束产物：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
-每个本征群 $G_k$ 给出该层的同步成本：
+每个本征群 $R_k$ 给出该层的同步成本：
 - **耦级 $n_k$**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=Casimir=对称性强度，径向）
-- **Casimir $l$**：$l = k-1$，$A_4$ 本征值索引（内部对称同步成本，角向）
-- **Coxeter数 $h=5$**：$l \leq h-2 = 3$ 限制 → $s,p,d,f$ 四个亚壳层
+- **Casimir $l$**：壳层标签（待从 $G/\!\!/H = R$ 重新推导）
 - **同步成本**：$s_k = n_k + l$
 
 > **定位注（格约束而非唯一值）**：紧致李群内禀确定的不是某个唯一的作用量数值，而是作用量的**格结构**（Casimir 格 $\{l(l+1)+3/4\}$，量子化轨道方法中即权格整性条件 $\langle\lambda,\alpha^\vee\rangle\in\mathbb{Z}$）；具体取值依赖归一化约定与移位选择，格的选择依赖群的全局形式（$SU(2)$ 允许半整数权，$SO(3)$ 仅整数权；同李代数的连通群有相同伴随轨道但可量子化轨道集不同）。玻尔-索末菲量子化 $\oint p_u\,du=2\pi n_k$ 正是该格约束的体现；$l\le h-2=3$ 的有限截断来自底空间 $A_4$ Coxeter 数据而非群内禀——群给出无穷格，底空间给出截断，二者分工明确。
@@ -252,9 +250,9 @@ $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \te
 
 ### 5.4 群谱决定对称性
 
-本征群 $G_k$ 决定物质分布的对称性：
+本征群 $R_k = G_k/\!\!/H_k$ 决定物质分布的对称性：
 - **耦级 $n_k$**：由约束联立求解 → U(1)紧化同步成本（径向）
-- **本征群 $G_k$**：$A_4$ Coxeter数 $h=5$ 严格确定 → $l = k-1$，$l \leq 3$ → $s,p,d,f$ 四个亚壳层
+- **本征群 $R_k$**：约束产物（$G/\!\!/H = R$ 实现问题），壳层结构待重新推导
 - **耦合常数 $g_k$**：同步方程输出 → Casimir本征值 $C_k = n_k$ → 角动量 $l_k$ → 电子容量 $N_k^{\max} = 2(2l_k+1) = 2, 6, 10, 14$
 - **同步成本**：$s_k = n_k + l_k$ → Aufbau填充顺序
 - 对称性决定物质分布（电子组态、分子构型、晶格结构）
@@ -300,9 +298,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
 | $C$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
-| $h$ | $5$ | $A_4$嘉当矩阵的Coxeter数 |
-| $\lambda_k$ | $4\sin^2\frac{k\pi}{10}$ | $A_4$嘉当矩阵本征值 |
-| $|v_k(4)|^2$ | $\frac{2}{5}\sin^2\frac{k\pi}{5}$ | $A_4$本征向量末端分量 |
+
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 8. 文献锚定
