@@ -276,13 +276,19 @@ CQM 的耦合常数涨落需明确指定所属结构群：$u_G = \ln g_G$，$[u_
 
 #### 涨落伴丛（耦合常数涨落的产物）
 
-耦合常数涨落作用在主丛结构群 $G$ 上，产生涨落伴丛——涨落伴丛是耦合常数涨落的**产物**，不是涨落作用的舞台。耦合涨落不能唯一确定涨落伴丛的结构群，只能约束它：
+耦合常数涨落作用在主丛结构群 $G$ 上，产生涨落伴丛——涨落伴丛是耦合常数涨落的**产物**，不是涨落作用的舞台。约束是分层的：
 
-$$\text{耦合常数涨落作用于主丛结构群 } G \ \Longrightarrow\ \text{涨落伴丛 } \mathcal{G}_{\text{涨落伴丛}} \ \Longrightarrow\ G_{\text{剩余}} \in \mathcal{G}_{\text{涨落伴丛}}$$
+$$\underbrace{[\hat{u},\hat{p}_u]=i}_{\substack{\text{约束}_1\\\text{海森堡一维性}}}\;\Rightarrow\;\underbrace{U(1)}_{\substack{\text{约束}_1\text{产物}\\\text{=约束}_2\text{对象}}}\;\xrightarrow{\;\mathbb{Z}_n\text{ 商}\;}\;\underbrace{U(1)/\mathbb{Z}_n}_{\substack{\text{约束}_2\text{产物}\\\text{=丛构造输入}}}\;\Rightarrow\;\underbrace{E_n}_{\text{产物}}$$
 
-$$\mathcal{G}_{\text{涨落伴丛}} = \{ G' \mid \mathfrak{g}' \subseteq \mathfrak{g},\ \text{满足和乐约束 + 拓扑约束 + 表示约束} \}$$
+- **约束$_1$**：海森堡代数一维性 → 结构群必须一维阿贝尔 → 产物 $U(1)$
+- **约束$_2$**：$\mathbb{Z}_n$（电荷量子化：权 $q$ 表示当且仅当 $n\mid q$ 时下降）商约束 $U(1)$ → 产物 $U(1)/\mathbb{Z}_n$
+- **丛构造**：每个 $U(1)/\mathbb{Z}_n$ 给出伴丛 $E_n = P\times_{G_n}\mathbb{C}$
 
-三重约束圈定涨落伴丛中的结构群族，不唯一决定。具体剩余群是 $\{e\}$、$\mathbb{Z}_2$ 还是 $U(1)/\mathbb{Z}_2$，由序参量表示和拓扑决定，实验上通过磁通量子化确定。路径积分在涨落伴丛上选出主导结构群（§5.6 结构群族路径积分）。
+涨落伴丛是**伴丛族**（不是群族——承载序参量的是伴丛，不是群集合）：
+
+$$\mathcal{E}_{\text{涨落}} = \{E_n = P\times_{G_n}\mathbb{C} \mid G_n \in \mathcal{G}\}, \quad \mathcal{G} = \{U(1)/\mathbb{Z}_n \mid n\text{ 偶}\}$$
+
+三重约束（和乐+拓扑+表示）圈定候选群族 $\mathcal{G}$，不唯一决定。具体剩余群是 $\{e\}$、$\mathbb{Z}_2$ 还是 $U(1)/\mathbb{Z}_2$，由序参量表示和拓扑决定，实验上通过磁通量子化确定。路径积分在**伴丛族** $\mathcal{E}_{\text{涨落}}$ 上选出主导伴丛 $E_{n^*}$（选群的目的是选丛）。
 
 #### 先在规范直积群
 
@@ -302,11 +308,11 @@ $$|\Psi_{\text{对称性}}\rangle = \sum_{n=2,4,6,\ldots} c_n\, |U(1)/\mathbb{Z}
 - 超导态：$c_{\{e\}}$ 或 $c_{\mathbb{Z}_2}$ 占主导
 - 临界点 $T_c$：叠加最完整，两组权重相等
 
-#### 结构群族路径积分
+#### 伴丛族路径积分
 
-$$Z = \sum_{G' \in \mathcal{G}_{\text{涨落伴丛}}} \int D[A,\psi]\, e^{-S_{G'}[A,\psi]}$$
+$$Z = \sum_{E_n \in \mathcal{E}_{\text{涨落}}} \int D[A,\psi]\, e^{-S_{E_n}[A,\psi]}$$
 
-主导结构群由丛作用量最小决定；跃迁条件（两个群丛作用量相等）给出 $T_c$；离散子群保留（如 $U(1)/\mathbb{Z}_2$）决定磁通量子化。超导大群是事后结果而非先验预设：
+主导伴丛由丛作用量最小决定；跃迁条件（两个伴丛作用量相等）给出 $T_c$；离散子群保留（如 $U(1)/\mathbb{Z}_2$）决定磁通量子化。超导大群是事后结果而非先验预设：
 
 $$G_{\text{超导大群}} = \left( \prod_{\text{所有扇区}} G_i \right) \Big/ \left( \text{被超导冻结的扇区} \right)$$
 

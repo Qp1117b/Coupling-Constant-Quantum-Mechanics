@@ -1014,19 +1014,19 @@ $$D_\mu = \partial_\mu - i g_G A_\mu^a T^a$$
 
 ### 13.3 约束而非唯一确定
 
-耦合常数涨落不能唯一确定伴丛/破缺丛的结构群，只能约束它：
+耦合常数涨落不能唯一确定伴丛/破缺丛的结构群，只能约束它。约束是分层的：
 
-$$\text{耦合涨落} \ \Longrightarrow\ \mathfrak{hol} \subseteq \mathfrak{g} \ \Longrightarrow\ G_{\text{剩余}} \in \mathcal{G}_{\text{涨落伴丛}}$$
+$$\underbrace{[\hat{u},\hat{p}_u]=i}_{\substack{\text{约束}_1\\\text{海森堡一维性}}}\;\Rightarrow\;\underbrace{U(1)}_{\substack{\text{约束}_1\text{产物}\\\text{=约束}_2\text{对象}}}\;\xrightarrow{\;\mathbb{Z}_n\text{ 商}\;}\;\underbrace{U(1)/\mathbb{Z}_n}_{\substack{\text{约束}_2\text{产物}\\\text{=丛构造输入}}}\;\Rightarrow\;\underbrace{E_n}_{\text{产物}}$$
 
-其中：
-
-$$\mathcal{G}_{\text{涨落伴丛}} = \{ G' \mid \text{和乐约束 + 拓扑约束 + 表示约束 + 历史约束} \}$$
+- **约束$_1$**：海森堡代数一维性 → 结构群必须一维阿贝尔 → 产物 $U(1)$
+- **约束$_2$**：$\mathbb{Z}_n$（电荷量子化：权 $q$ 表示当且仅当 $n\mid q$ 时下降）商约束 $U(1)$ → 产物 $U(1)/\mathbb{Z}_n$
+- **丛构造**：每个 $U(1)/\mathbb{Z}_n$ 给出伴丛 $E_n = P\times_{G_n}\mathbb{C}$
 
 ### 13.4 涨落伴丛
 
-涨落伴丛不是固定结构群的主丛，而是**所有可能结构群构成的约束族**：
+涨落伴丛是**伴丛族**（不是群族——承载序参量的是伴丛，不是群集合）：
 
-$$\mathcal{G}_{\text{涨落伴丛}} = \{ G' \mid \mathfrak{g}' \subseteq \mathfrak{g},\ \text{满足耦合涨落的和乐约束} \}$$
+$$\mathcal{E}_{\text{涨落}} = \{E_n = P\times_{G_n}\mathbb{C} \mid G_n \in \mathcal{G}\}, \quad \mathcal{G} = \{U(1)/\mathbb{Z}_n \mid n\text{ 偶}\}$$
 
 三重约束：
 
@@ -1034,7 +1034,7 @@ $$\mathcal{G}_{\text{涨落伴丛}} = \{ G' \mid \mathfrak{g}' \subseteq \mathfr
 2. **底空间拓扑约束**：陈类、离散对称性、边界条件
 3. **物质场表示约束**：序参量属于哪个表示，凝聚后保持哪个子群不变
 
-三重约束圈定结构群族，不唯一决定。
+三重约束圈定候选群族 $\mathcal{G}$，不唯一决定。路径积分在**伴丛族** $\mathcal{E}_{\text{涨落}}$ 上选出主导伴丛 $E_{n^*}$（选群的目的是选丛）。
 
 ### 13.5 先在规范直积群与物质自组织
 
@@ -1054,7 +1054,7 @@ $$\begin{aligned}
 & \longrightarrow p_u = \frac{v_\tau}{C} = \frac{\sqrt{1-\beta\delta_v}}{C} \\
 & \longrightarrow \Delta u_G \cdot \Delta\delta_v \ge \frac{C\sqrt{1-\beta\delta_v}}{\beta} \\
 & \xrightarrow{\text{资格条件}} g_G \to g_G' \\
-& \xrightarrow{\text{约束}} \text{涨落伴丛结构群族}
+& \xrightarrow{\text{约束}} \text{涨落伴丛族}
 \end{aligned}$$
 
 ### 13.7 扇区化表现形式
@@ -1085,14 +1085,14 @@ $$|\Psi_{\text{对称性}}\rangle = \sum_{G'\in\mathcal{G}} c_{G'}\, |G'\rangle$
 - 旧量子场论：粒子态可以叠加，但结构群固定
 - CQM：结构群本身处于叠加态，由角亏涨落与温度决定哪个群被宏观实现
 
-### 13.10 结构群族路径积分
+### 13.10 伴丛族路径积分
 
-$$Z = \sum_{G' \in \mathcal{G}_{\text{涨落伴丛}}} \int D[A,\psi]\, e^{-S_{G'}[A,\psi]}$$
+$$Z = \sum_{E_n \in \mathcal{E}_{\text{涨落}}} \int D[A,\psi]\, e^{-S_{E_n}[A,\psi]}$$
 
 能算出的规律：
 
-- **主导结构群**：宏观上自由能最小的群胜出
-- **跃迁条件**：两个群自由能相等处给出 $T_c$
+- **主导伴丛**：宏观上自由能最小的伴丛胜出
+- **跃迁条件**：两个伴丛自由能相等处给出 $T_c$
 - **离散子群保留**：如 $U(1)/\mathbb{Z}_2$，决定磁通量子化
 - **拓扑扇区**：涡旋类型、马约拉纳零模
 - **事后大群**：超导态剩余对称性直积
