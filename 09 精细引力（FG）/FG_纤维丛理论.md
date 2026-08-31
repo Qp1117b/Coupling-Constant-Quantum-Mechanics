@@ -876,7 +876,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 
 **层次关系**：
 
-$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)→SU(5)}} \;\xrightarrow{\text{SU(5)破缺}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)破缺}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化约束可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
 - **FG纤维丛层**：SU(5)破缺为 $A_4 \to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。

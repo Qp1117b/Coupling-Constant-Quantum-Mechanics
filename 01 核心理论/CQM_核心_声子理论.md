@@ -78,7 +78,7 @@ $$\omega_k = \omega_0\sqrt{\lambda_k}, \quad \lambda_k = 4\sin^2\frac{k\pi}{10}$
 
 $$\boxed{E_k = \hbar\omega_k\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}$$
 
-声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8，`FG_元素FG_第一性.md` §19）。
+声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8，`09 精细引力（FG）/FG_元素FG_第一性.md` §19）。
 
 ## 2. 声子是振荡的量子
 
@@ -342,7 +342,7 @@ FG层同步速度 = GR层同步速度 = $c$，因为FG是GR基态的激发态，
 
 ### 8.1 声子能量在量纲归一化中的角色
 
-FG纤维丛截断处的量纲归一化（`FG_元素FG_第一性.md` §19）：
+FG纤维丛截断处的量纲归一化（`09 精细引力（FG）/FG_元素FG_第一性.md` §19）：
 
 $$\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)$$
 

@@ -201,7 +201,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 ---
 
-## 四、互耦退相干 Mutual-Coupled Decoherence
+## 四、互耦退相干
 
 ### 4.1 定义与总论 Definition and Overview
 
@@ -216,7 +216,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 每个分子既是"原因"（截断者），又是"结果"（被截断者）。**没有外部设计者**。
 
-### 4.2 宏观环境互耦退相干 Macro-Environmental Mutual-Coupled Decoherence
+### 4.2 宏观环境互耦退相干
 
 **主体**：大量环境分子集体（$N \sim 10^{23}$，空气、尘埃、背景辐射中的原子）。
 
@@ -262,7 +262,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 **由此可得出一个重要推论：CQM 不依赖"宏观-微观界限"来定义退相干。** 退相干率 $\Gamma$ 唯一取决于质量密度差异 $\delta\rho(\mathbf{r})$ 和探测器的有效质量 $M_{\text{eff}}$。一个 $M_{\text{eff}}$ 足够小的探测器（比如一个轻原子）面对一个 $10^6$ 原子的大分子，后者可能仍处于弱确定端——尽管它的尺度"宏观"。反之，一个重探测器面对一个单原子，后者可能已经处于强确定端。决定退相干的是耦合双方的质量-因果限制结构关系，而不是任何一方的绝对尺度。
 
-### 4.3 微观环境互耦退相干 Micro-Environmental Mutual-Coupled Decoherence
+### 4.3 微观环境互耦退相干
 
 **前置声明**：本节讨论的"微观环境"（单个分子）对应的状态是**弱确定**（浅截断），不是**完全不确定**。须严格区分二者：
 - **完全不确定（零截断）**：$U = 0$，仅存在于无任何质子耦合的理想情形（如自由光子）。
@@ -298,7 +298,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 >
 > **结论**：同一个空气分子，确定度是一个三元关系 $D = f(\text{对象},\text{探测者},\text{环境背景})$。空气分子之间仅 $10\%$ 确定，但对探测器和你则是 $100\%$ 确定。这不矛盾——**确定性从来不是固有属性**。
 
-### 4.4 第三类互耦退相干 Type-III Mutual-Coupled Decoherence
+### 4.4 第三类互耦退相干
 
 **主体**：特殊物理条件下的质子集体（如超导、玻色-爱因斯坦凝聚、拓扑绝缘体等）。
 
