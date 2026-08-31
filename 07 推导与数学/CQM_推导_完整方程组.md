@@ -125,7 +125,7 @@ $$S_{\eta,p} = \int_{\mathbb{R}} d\tau\left[\eta_p^\dagger(i\partial_\tau - \ome
 
 $$\mathcal{C}_p = \int_{\mathbb{Z}_p}\Psi_p\,dx - \Psi_\infty(u_p,\theta_p)$$
 
-**关键修正**：一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方给出变系数 $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$，不同于 $\hat{H}_\infty$。详见 `CQM_推导_经典路径.md` §3–§5。
+一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方给出变系数 $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$，不同于 $\hat{H}_\infty$。详见 `CQM_推导_经典路径.md` §3–§5。
 
 ---
 
