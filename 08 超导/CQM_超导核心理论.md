@@ -568,7 +568,7 @@ $$\int_0^\infty \frac{x^2}{e^x+1}dx = \frac{3}{2}\zeta(3)$$
 
 $$\hat{\mathcal{S}}_{\text{super}}\,|U(1)/\mathbb{Z}_n\rangle = \lambda_n(T)\,|U(1)/\mathbb{Z}_n\rangle$$
 
-其中 $\lambda_n(T)$ 是**相变有效谱**（有限温度下的有效本征值，见下文 $\lambda_n(T)$ 公式），零温无角亏极限下退化为 $\gamma_n$（GL(1) 黎曼零点虚部，同步成本）。分层定位：超导同步算符作用于**电磁因子（$U(1) \leftrightarrow GL(1)$）结构群空间**——它是基态紧化算符 $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{phys}}(SU(5))$ 在 SU(5) 破缺后电磁因子子结构上的再现，黎曼零点通过该因子的紧化约束方程 $\mathcal{C}_1(\lambda_{\text{phys}}, \gamma_n) = 0$ 间接进入。
+其中 $\lambda_n(T)$ 是**相变有效谱**（有限温度下的有效本征值，见下文 $\lambda_n(T)$ 公式），零温无角亏极限下退化为 $\gamma_n$（GL(1) 黎曼零点虚部，同步成本）。分层定位：超导同步算符作用于**电磁因子（$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$）结构群空间**——它是基态紧化算符 $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{phys}}(SU(5))$ 在 SU(5) 破缺后电磁因子子结构上的再现，黎曼零点通过该因子的紧化约束方程 $\mathcal{C}_1(\lambda_{\text{phys}}, \gamma_n) = 0$ 间接进入。
 
 **同步算符与 Hilbert–Pólya 算符的关系（修正版）。** 同步算符是紧化算符（投影/约束型算符），**不是** Hilbert–Pólya 算符（微分算符）：Hilbert–Pólya 型算符 $\hat{H}_{\text{HP}} = -d^2/du^2 + 1/4 + \sum_{p<\Lambda} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p) + \text{（高阶修正）}$ 是 GL(1) 因子谱的候选实现（其本征值给出耦级 $1/4 + \gamma_n^2$），而同步算符的本征值（相变有效谱 $\lambda_n(T)$，零温极限 $\gamma_n$，同步成本）与之不同层级。两者的形式关系：
 

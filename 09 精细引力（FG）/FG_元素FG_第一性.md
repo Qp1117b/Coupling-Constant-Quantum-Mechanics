@@ -1861,7 +1861,7 @@ $$\boxed{\underbrace{\text{底空间}\,M_\ell + \text{FG纤维丛}}_{\text{几�
 
 **底空间贯穿三模块**：模块1构造底空间 $M_\ell$（Regge剖分）+曲率算符，模块2在底空间截面空间 $\Gamma(\text{ad}(P))$ 上求解同步方程（自守形式），模块3在底空间局域插入点做OPE。底空间不可省略——算符、对称性、自守形式均定义在底空间上。
 
-**GL(n) 由涨落/破缺事件落在的群指定（发生学顺序强制）**：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子按极大紧子群给出各自 $GL(n)$（$SU(5)\leftrightarrow GL(5)$、$SU(3)\leftrightarrow GL(3)$、$SU(2)\leftrightarrow GL(2)$、$U(1)\leftrightarrow GL(1)$）；事件落在哪个群，就激活哪个 $GL(n)$。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4）。物理主丛不能反向指定 $GL(n)$：主丛结构群是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
+**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自 $GL(n)$（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4）。物理主丛不能反向指定 $GL(n)$：主丛结构群是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 | 模块 | 约束类型 | 输入 | 输出 | 详细文档 |
 |:---|:---|:---|:---|:---|

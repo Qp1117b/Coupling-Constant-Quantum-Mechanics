@@ -112,7 +112,7 @@ $$\hat{\mathcal{S}}_0 : \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{p
 
 其中 $\mathcal{H}_{\text{auto}}(GL_5)$ 是**底空间**（Regge复形 / 约化商空间 $\Gamma\backslash GL_5(\mathbb{A})/K$）上的自守形式空间。**底空间不可省略**：自守形式 $f$ 是底空间上的函数（满足 $f(\gamma x)=\chi(\gamma)f(x)$，需群在底空间上作用），作用量算符（同步算符）作用在底空间函数空间上，底空间几何/拓扑**约束**作用量算符的谱和自守形式空间（非唯一决定）。正确顺序：$\text{底空间} + \text{作用量算符} + \text{对称性} \Rightarrow \text{自守形式}$。
 
-> **定位注（算符作用层级）**：紧化投影 $\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(GL_5)\to\mathcal{H}_{\text{phys}}(SU(5))$ 是**表示层面**的转移（希尔伯特空间之间的谱投影，与朗兰兹函子性同型——函子性转移表示，不转移群本身），**不是**群层面的态射：GL(5)（阿代尔约化群，非紧）与 SU(5)（紧实李群）处于不同范畴，不存在典范群同态。同步算符在群层面不执行任何转换——这正是谱论三分法的深层原因（紧化投影谱 ⊆ {0,1} 不可能携带零点谱，零点谱由 GL(1) 层谱算符 $\hat{H}_{\text{HP}}$ 承担）。GL(n) 由涨落/破缺事件落在的群指定（发生学顺序强制，见 `09 精细引力（FG）/FG_核心理论.md` §3.0）：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子按极大紧子群给出各自 $GL(n)$；物理主丛结构群是紧化投影的输出，不能反向指定 GL(n)（循环论证）。
+> **定位注（算符作用层级）**：紧化投影 $\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(GL_5)\to\mathcal{H}_{\text{phys}}(SU(5))$ 是**表示层面**的转移（希尔伯特空间之间的谱投影，与朗兰兹函子性同型——函子性转移表示，不转移群本身），**不是**群层面的态射：GL(5)（阿代尔约化群，非紧）与 SU(5)（紧实李群）处于不同范畴，不存在典范群同态。同步算符在群层面不执行任何转换——这正是谱论三分法的深层原因（紧化投影谱 ⊆ {0,1} 不可能携带零点谱，零点谱由 GL(1) 层谱算符 $\hat{H}_{\text{HP}}$ 承担）。GL(n) 由约束产物的基本表示严格确定（发生学顺序强制，见 `09 精细引力（FG）/FG_核心理论.md` §3.0）：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自 $GL(n)$，$n = \dim V_{\text{fund}}$；物理主丛结构群是紧化投影的输出，不能反向指定 GL(n)（循环论证）。
 
 - **功能**：紧化投影——从非紧约化群 GL(5) 的自守形式空间投影到物理紧群 SU(5) 的表示空间；
 - **本征值**：物理紧群谱不变量（SU(5) 的 Casimir 不变量、表示权重、根系数据）；
@@ -120,7 +120,7 @@ $$\hat{\mathcal{S}}_0 : \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{p
 - **自伴性**：同步算符（紧化算符）自伴 ⇔ 紧化约束可解 ⇔ 各因子 L 函数零点位于临界线上——黎曼猜想（GL(1)）及广义黎曼猜想（GL(2)、GL(3)、GL(5)）作为紧化约束的自洽性条件。
 - **同步四阶段：预备→发生→过程→完成**（CFT视角，详见 `CQM_核心_共形场论与OPE.md` §8）：预备（FG纤维丛——各种赝状态）→发生（同步方程——共振量子化）→过程（CFT——幂律传播 $r^{-2h}$ 描述扩大的动力学）→完成（状态跃迁）。态-算符对应是触发，共形维度 $h$ 控制扩大速率。
 
-**SU(5) 破缺后**，紧化算符在每个因子上分别作用，投影到对应物理群表示：$U(1)_{\text{em}} \leftrightarrow GL(1)$、$SU(2)_{\text{isospin}} \leftrightarrow GL(2)$、$SU(3)_{\text{color}} \leftrightarrow GL(3)$。其中 GL(1) 因子的谱实现具有 Hilbert–Pólya 型微分算符形式（综合上述七条提取在 GL(1) 层的构造）：
+**SU(5) 破缺后**，紧化算符在每个因子上分别作用，投影到对应物理群表示：$U(1)_{\text{em}} \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$、$SU(2)_{\text{isospin}} \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、$SU(3)_{\text{color}} \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$。其中 GL(1) 因子的谱实现具有 Hilbert–Pólya 型微分算符形式（综合上述七条提取在 GL(1) 层的构造）：
 
 $$\hat{H}_{\text{HP}} = -\frac{d^2}{du^2} + \frac{1}{4} + \sum_{p<\Lambda} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p) + \text{(高阶修正)}$$
 

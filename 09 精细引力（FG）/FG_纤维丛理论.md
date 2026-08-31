@@ -241,7 +241,7 @@ $//H$ 编码荷的量子化（拓扑折叠，如 $2e, 4e, ne$），$\rho$ 编码
 
 $$\boxed{GL(n) \text{ 的 } n \;\Longleftrightarrow\; \text{基本表示的态数} = \dim V}$$
 
-这与 `FG_核心理论.md` §3.0 的 GL(n) 来源一致：$n$ 由涨落/破缺事件落在的群指定（$SU(k)\leftrightarrow GL(k)$），$GL(n)$ 的 $n$ 即该群基本表示的态数。
+这与 `FG_核心理论.md` §3.0 的 GL(n) 来源一致：约束产物 $R$ 通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 严格确定 $n = \dim V_{\text{fund}}$（$SU(k) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^k) \cong GL(k)$，表示的像决定 $n$，非群标签匹配）。
 
 **统一机制**：约束完成后，动力学自动退化为运动学——$R = G/\!\!/H$ 被冻结为新能标下的固定背景，$\rho$ 成为输入参数，容器框架作为约束框架的低能有效极限出现（§1.5.5）。
 
@@ -300,7 +300,7 @@ $Z_n$ 只改变荷的刻度，不改变 $V$ 的维度（定理 4）。$V = \math
 | 夸克 | $(1/3,1/2,\mathbf{3})$ | $\mathbb{C}\otimes\mathbb{C}^2\otimes\mathbb{C}^3$ | $GL(6)$ |
 | 胶子 | $(0,0,\mathbf{8})$ | $\mathbb{C}^8$ | $GL(8)$ |
 
-最后一行 $GL(5)/\!\!/SU(5) \to SU(5)$ 是 QG 层紧化：$GL(5)$（非紧约化群，自由相）经 $SU(5)$ 约束紧化为物理紧群 $SU(5)$，自守表示 $\rho_{\text{自守}}$ 给出同步谱（§1.5.3 类型 V 结构约化）。$GL(5)$ 的 $n=5$ 由涨落/破缺事件落在的群指定（见 `FG_核心理论.md` §3.0），不由底空间指定。
+最后一行 $GL(5)/\!\!/SU(5) \to SU(5)$ 是 QG 层紧化：$GL(5)$（非紧约化群，自由相）经 $SU(5)$ 约束紧化为物理紧群 $SU(5)$，自守表示 $\rho_{\text{自守}}$ 给出同步谱（§1.5.3 类型 V 结构约化）。$GL(5)$ 的 $n=5$ 由约束产物 $SU(5)$ 的基本表示 $V=\mathbb{C}^5$ 的 $\dim V = 5$ 严格确定（见 `FG_核心理论.md` §3.0），不由底空间指定。
 
 **真空破缺（连续破缺在表示层 $V$ 中发生）**：约束 $//$ 生成紧致李群 $R$，连续破缺 $R\to R'$ 不在约束层发生，而在表示空间 $V$ 中通过真空期望值（VEV）实现。
 
@@ -445,7 +445,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 **底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
 
-**GL(n) 由涨落/破缺事件落在的群指定（发生学顺序强制）**：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子按极大紧子群 $GL(k)\supset U(k)\supset SU(k)$ 给出各自自守框架（$SU(5)\leftrightarrow GL(5)$、$SU(3)\leftrightarrow GL(3)$、$SU(2)\leftrightarrow GL(2)$、$U(1)\leftrightarrow GL(1)$）；事件落在哪个群，就激活哪个 $GL(n)$。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
+**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 约束链：
 
