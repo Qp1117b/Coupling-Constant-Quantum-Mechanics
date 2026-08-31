@@ -255,8 +255,8 @@ A4 Dynkin 图：$\alpha_1-\alpha_2-\alpha_3-\alpha_4$
 
 | 缺陷位置 | 后果 | 是否符合 |
 |----------|------|----------|
-| $\alpha_1$ 或 $\alpha_2$ | SU(3) 色破坏 | ❌ |
-| $\alpha_3$（中心） | 过度破坏且非末端 | ❌ |
+| $\alpha_1$ 或 $\alpha_2$ | SU(3) 色破坏 | 否 |
+| $\alpha_3$（中心） | 过度破坏且非末端 | 否 |
 | $\alpha_4$（末端） | SU(3) 完整，U(1) 退耦，提供开放面 | |
 
 **结论**：缺陷唯一锁定在 $\alpha_4$ 末端。
@@ -377,7 +377,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |
 | FG 顶点角亏 $\delta_v$ | `MolecularGeometry.deficitAngleDensity` | |
 | 角亏—Ricci 关系 | `BridgeTheorems.reggeDeficit_ricciScalar_*` | |
-| FG 联络 $\mathcal{A}_{\text{FG}}$、伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$、伴丛运动方程 $D*F=*J_\Phi$ | 暂无 | ❌ 待形式化（框架定义见 §3.3） |
+| FG 联络 $\mathcal{A}_{\text{FG}}$、伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$、伴丛运动方程 $D*F=*J_\Phi$ | 暂无 | 待形式化（框架定义见 §3.3） |
 | FG 固有时流速 | `CouplingSpace.properTimeFlow` | （超导机制见超导文档） |
 
 缺口编号体系（与超导文档 G18 同系列）：**N1** 质量-谱映射、 **N2** 角亏-δ 显式公式、 **N3** β 衰变动力学、 **N4** 氘核结合能。

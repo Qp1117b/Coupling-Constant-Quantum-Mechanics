@@ -53,7 +53,7 @@ $\phi^4$理论在不同时空维度下的共形性：
 |:---:|:---:|:---:|:---:|:---|
 | $d=2$ | $\Delta_\phi = 0$ | $\phi^4$ 无量纲 | $\beta=0$（经典精确） | ✅ **是CFT** |
 | $d=3$ | $\Delta_\phi = 1/2$ | $\phi^4$ 有量纲 | $\beta \neq 0$（但存在Wilson-Fisher固定点） | ✅ 在固定点是CFT |
-| $d=4$ | $\Delta_\phi = 1$ | $\lambda$ 无量纲 | $\beta(\lambda) = 3\lambda^2/(16\pi^2) \neq 0$ | ❌ **不是CFT**（耦合跑动） |
+| $d=4$ | $\Delta_\phi = 1$ | $\lambda$ 无量纲 | $\beta(\lambda) = 3\lambda^2/(16\pi^2) \neq 0$ | **不是CFT**（耦合跑动） |
 
 **$d=4$ 不是CFT的原因**：虽然 $\lambda$ 无量纲，但量子修正使 $\beta(\lambda) \neq 0$，耦合常数随能标跑动，标度不变性被量子涨落破坏。
 
