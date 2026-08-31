@@ -77,6 +77,20 @@ $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 | **IV 对角锁定** | $H \subset Z(G_1\times G_2)$ | 直积商 | 电荷量子化（$U(N) = U(1)\times SU(N)/\!\!/Z_N$） |
 | **V 结构约化** | $H$-联络存在 | 约化空间截面 | 度规/自旋结构（$GL(n)/\!\!/O(n)$） |
 
+**紧致性判据：$G/\!\!/H$ 何时仍是紧致李群**。五种子类型中，只有三种情形约束商保留群结构：
+
+1. **类型 I（正规商）**：$H \triangleleft G$，$H$ 闭。此时 $G/\!\!/H = G/H$ 是商群，紧致性由 $G$ 继承。例：$U(1)/Z_n \cong U(1)$、$SU(2)/Z_2 \cong SO(3)$、$SU(N)/Z_N \cong PSU(N)$。
+
+2. **类型 III（核盲视）**：$H = \ker(\rho)$，$\rho: G \to GL(V)$ 连续。此时 $G/\!\!/H \cong \rho(G) \subset GL(V)$，紧致群的连续同态像仍是紧致李群。例：$SU(2) \xrightarrow{\text{自旋-1}} SO(3) \subset GL(3,\mathbb{R})$（核 $Z_2$）；$U(1) \xrightarrow{\rho_n} U(1) \subset GL(1,\mathbb{C})$（核 $Z_n$）。
+
+3. **类型 IV（对角锁定）**：$H \subset Z(G_1 \times G_2)$，$H$ 闭。此时 $(G_1 \times G_2)/H$ 是中心商，自然紧致。例：$U(N) = (U(1) \times SU(N))/Z_N$、$\mathrm{Spin}^c(n) = (\mathrm{Spin}(n) \times U(1))/Z_2$。
+
+**类型 II（齐性破缺）与其余非群情形**：若 $H$ 不正规且不是任何表示的核，则 $G/\!\!/H = G/H$ 只是紧致齐性流形（如 $S^2$、$\mathbb{CP}^2$），不是群。
+
+**表示核是正规子群**：类型 III 之所以是群，本质在于 $\ker(\rho)$ 是正规子群——对任意 $h \in \ker(\rho)$ 与 $g \in G$，$\rho(ghg^{-1}) = \rho(g)\rho(h)\rho(g)^{-1} = \rho(g)\cdot I \cdot \rho(g)^{-1} = I$，故 $ghg^{-1} \in \ker(\rho)$，即 $\ker(\rho) \triangleleft G$。由群同态基本定理，$G/\ker(\rho) \cong \rho(G)$。
+
+综上：$G/\!\!/H$ 是紧致李群，仅当 $H$ 是闭正规子群、表示核、或中心对角子群；否则它只是紧致流形。
+
 ### 1.5.4 核心对比
 
 | 对比项 | 运动学（容器，传统物理） | 动力学（约束，CQM） |
