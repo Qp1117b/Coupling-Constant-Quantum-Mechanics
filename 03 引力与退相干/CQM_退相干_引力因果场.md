@@ -139,7 +139,7 @@ $$\Delta\tau_{\text{eff}} \geq \tau_{\text{res}} = \frac{\hbar}{M_{\text{det}}c^
 
 **定义**：被截断后留在可能性空间中的分支，必须与观测器的因果限制结构**可建立稳定耦合**。
 
-**关键**：相容性**不是截断的外部前提**，而是**截断机制本身**。
+**关键**：相容性是**截断机制本身**。
 
 **相容性层级**：
 - **强相容**（Strong Compatibility）：分支的再生产时标与设备因果分辨率完全对接 → 可建立稳定耦合闭环 → 唯一性涌现
@@ -205,7 +205,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 ### 4.1 定义与总论 Definition and Overview
 
-**互耦退相干**是质子集体之间互相截断形成的**内部循环确定性网络**（internal cyclic determinacy network），无外部经典基础。确定性不是从外部"注入"的，而是内部循环耦合的涌现（emergence）。
+**互耦退相干**是质子集体之间互相截断形成的**内部循环确定性网络**（internal cyclic determinacy network），无外部经典基础。确定性是内部循环耦合的涌现（emergence）。
 
 **核心图像**：
 ```
@@ -337,7 +337,7 @@ $$\boxed{\hat{\mu}_{\downarrow\text{dc}} = \hat{\mathcal{P}}_{\mathcal{C}_{\text
 - $\hat{\mu}_{\downarrow\text{dc}}$：下游退相干算符，$\hat{\mu}_{\downarrow\text{dc}}^2 = \hat{\mu}_{\downarrow\text{dc}}$，本征值 1 = 存在维持，0 = 存在终止
 - $\hat{\mathcal{P}}_{\mathcal{C}_{\text{self}}}^{(\mu)}$：被再生产幂等性筛选后的因果自洽子空间投影——系统自身因果结构 $\mathcal{C}_{\text{self}}$ 所张成的子空间的正交投影，经 $\mu^2=\mu$ 赋值后转为存在维持
 
-**"自耦"的语义**：退相干不是系统与外部环境的耦合，而是**系统内部因果循环网络与自身的耦合**——因果分辨率不足以分辨所有自由度时，系统自我截断到可维持闭环的子空间。
+**"自耦"的语义**：退相干是**系统内部因果循环网络与自身的耦合**——因果分辨率不足以分辨所有自由度时，系统自我截断到可维持闭环的子空间。
 
 ### 5.3 投影算符的数学性质
 

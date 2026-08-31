@@ -71,7 +71,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 
 - **Regge剖分约束**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
-- **嘉当矩阵 = 图拉普拉斯**：离散协变导数 $(\nabla\phi)_v = \sum_{v'\sim v}(\phi_v-\phi_{v'})$ 的矩阵形式，**不是假设**而是Regge剖分的必然结果。$A_4$ 嘉当矩阵本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，本征向量末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
+- **嘉当矩阵 = 图拉普拉斯**：离散协变导数 $(\nabla\phi)_v = \sum_{v'\sim v}(\phi_v-\phi_{v'})$ 的矩阵形式，是Regge剖分的必然结果。$A_4$ 嘉当矩阵本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$，本征向量末端分量 $|v_k(4)|^2 = \frac{2}{5}\sin^2\frac{k\pi}{5}$
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
@@ -224,7 +224,7 @@ $A_4$嘉当矩阵的4个本征值 $\lambda_k = 4\sin^2\frac{k\pi}{10}$（$k=1,2,
 
 $$\boxed{\alpha = f(g_{U(1)})}$$
 
-精细结构常数不是经验参数，而是**SU(5)规范破缺的输出**——$U(1)$电磁群耦合常数。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
+精细结构常数是**SU(5)规范破缺的输出**——$U(1)$电磁群耦合常数。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
 
 ### 5.2 同步算符的完整谱结构
 
