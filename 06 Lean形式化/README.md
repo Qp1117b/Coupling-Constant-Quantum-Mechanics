@@ -7,7 +7,7 @@
 **全部 9 个库编译通过**（3313 jobs） | Lean 4.29.1 | **零 CQM 警告**
 
 > 注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，
-> 非 CQM 代码问题，无法从本项目消除。`lake build` 完全成功。 -/
+> 非 CQM 代码问题，无法从本项目消除。`lake build` 完全成功。
 
 ## 库结构
 
@@ -142,7 +142,7 @@ lake build # 编译全部
 lake build CausalSet # 编译单个库
 lake build CartanAlgebra # 编译嘉当代数库
 lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
-lake build Superconductivity # 编译强引力超导库（10 模块）
+lake build Superconductivity # 编译强引力超导库（12 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 ```
 
@@ -247,7 +247,9 @@ lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 - **修复文档错误**：`firstCoupling_sierraCQM_matches` → `firstCoupling_sierraCQM_deviation`、`spectralProduct_lt_one` → `spectralProduct_lt_ten`
 - **定理总数**：从 96 → 160（+64 个严格证明的定理，得益于完整计数）
 - **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）
-- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138 - **G_N 谱公式**：严格正性 + CODATA 偏差 < 10 ppm ## 本次更新亮点 (v0.5.1)
+- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138 - **G_N 谱公式**：严格正性 + CODATA 偏差 < 10 ppm
+
+## 本次更新亮点 (v0.5.1)
 
 - **Adele 约束严格化**：将 `adeleConstraint` 从公理改为由 `native_decide` 直接证明的定理，消除一个不必要的公理
 - **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意约束，且无任何定理引用）
