@@ -261,13 +261,13 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 
 二者处于朗兰兹分层的不同层级：
 
-$$\text{GL}(5) \xrightarrow{\text{重组/实现}} \underbrace{\text{GL}(1)}_{C\text{所在}} \times \underbrace{\text{GL}(2)} \times \underbrace{\text{GL}(3)}$$
+$$\text{GL}(5) \xrightarrow{\text{重组实现}} \underbrace{\text{GL}(1)}_{C\text{所在}} \times \underbrace{\text{GL}(2)} \times \underbrace{\text{GL}(3)}$$
 
-#### 5.4.2 SU(5)重组/实现时中央荷的分解
+#### 5.4.2 SU(5)重组实现时中央荷的分解
 
-SU(5)重组/实现时，GL(5)层的中央荷分解为各层贡献：
+SU(5)重组实现时，GL(5)层的中央荷分解为各层贡献：
 
-$$c_{\text{GL}(5)} \;\xrightarrow{\text{重组/实现}}\; c_{\text{GL}(1)} + c_{\text{GL}(2)} + c_{\text{GL}(3)}$$
+$$c_{\text{GL}(5)} \;\xrightarrow{\text{重组实现}}\; c_{\text{GL}(1)} + c_{\text{GL}(2)} + c_{\text{GL}(3)}$$
 
 其中各层的中央荷由该层的Kac-Moody代数确定：
 
@@ -362,7 +362,7 @@ $$\underbrace{C}_{\text{GL(1)层}} \;\longleftrightarrow\; \underbrace{c_{\text{
 | 环节 | 状态 |
 |:---|:---|
 | $c$ 和 $C$ 处于不同朗兰兹层级 | **严格**（朗兰兹分层结构） |
-| SU(5)重组/实现时 $c$ 分解为各层贡献 | **结构严格**，具体分解系数待推导 |
+| SU(5)重组实现时 $c$ 分解为各层贡献 | **结构严格**，具体分解系数待推导 |
 | $C$ 是GL(1)层的正则化自由度 | **结构严格**，zeta正则化的CFT诠释待严格化 |
 | $c_{\text{GL}(1)}^{\text{eff}} = 1$（$\eta = 0$，U(1)中央荷 $k$-无关性） | **严格**，Sugawara构造 + GRH保证共形对称性（§5.4.4） |
 | $C$ 通过OPE系数/同步成本进入物理，非通过中央荷 | **严格**，物理角色分离（§5.4.4推论） |
@@ -552,7 +552,7 @@ CFT视角：紧化算符是**共形映射**，同步本征态是**初级算子**
 
 `CQM_核心_朗兰兹分层共振与谱量子.md`中的GL(n)分层：
 
-$$GL(5) \xrightarrow{\text{重组/实现}} \text{规范群}$$
+$$GL(5) \xrightarrow{\text{重组实现}} \text{规范群}$$
 
 CFT视角：GL(n)分层是**Kac-Moody代数的水平分层**，每个本征群对应一个Kac-Moody水平 $k$，中央荷 $c$ 由Sugawara构造确定。
 
