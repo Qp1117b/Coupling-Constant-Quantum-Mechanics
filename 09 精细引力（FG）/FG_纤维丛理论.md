@@ -27,7 +27,7 @@ $$\boxed{\text{FG} \neq \text{GR}}$$
 | **哲学** | 丛是**先验舞台**，物理在其上展开 | 丛是**涌现产物**，物理即约束过程 |
 | **底空间** | 先验容器（给定背景） | 物质自组织的空间形态本身（§1） |
 | **核心方程** | $D_\mu \psi = (\partial_\mu + A_\mu)\psi$ | $(p\cdot g,\, f) \sim (p,\, g\cdot f)$ |
-| **主丛角色** | 固定背景（规范场 $A_\mu$ 的载体） | 自由相（待破缺的高对称态） |
+| **主丛角色** | 固定背景（规范场 $A_\mu$ 的载体） | 自由相（约束/重组前的高对称态） |
 | **伴丛角色** | 物质取值空间（向量空间 $V$） | 约束结果（紧致李群 $R$） |
 | **约束位置** | **外部**：微分方程强加于截面 | **内部**：等价关系定义空间本身 |
 
@@ -73,7 +73,7 @@ $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 
 | 对比项 | 运动学（容器，传统物理） | 动力学（约束，CQM） |
 |--------|--------------|--------------|
-| **主丛群 $G$** | 规范对称性（背景） | 未破缺母群（自由相） |
+| **主丛群 $G$** | 规范对称性（背景） | 母群（自由相，约束/重组前） |
 | **约束群 $H$** | 不出现或外部参数 | 内部子群，定义等价关系 |
 | **纤维 $F$** | 向量空间 $V$（$\mathbb{C}, \mathbb{C}^n, \mathfrak{g}$） | 紧致李群 $R$（约束产物） |
 | **伴丛** | $E = P \times_\rho V$ | $E_{R} = P \times_G R$ |
@@ -90,7 +90,7 @@ $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 
 **容器 → 约束（追问起源）**：从线丛 $L_2$（容器）追溯到 $U(1)/Z_2$（约束）——库珀对是 $Z_2$ 约束的产物。
 
-**约束 → 容器（低能有效理论）**：破缺完成后，$R$ 的伴丛成为新能标下的固定背景——$SO(3)$ 规范场论把 $SO(3)$-向量丛当作容器，忘记它来自 $SU(2)/Z_2$。
+**约束 → 容器（低能有效理论）**：约束/重组完成后，$R$ 的伴丛成为新能标下的固定背景——$SO(3)$ 规范场论把 $SO(3)$-向量丛当作容器，忘记它来自 $SU(2)/Z_2$。
 
 $$\text{运动学} \xrightarrow{\text{追问 } H \text{ 的起源}} \text{动力学}$$
 
@@ -105,7 +105,7 @@ CQM选择动力学（约束）框架的原因：
 3. **约束是内部的**——等价关系定义空间本身，非外部强加的微分方程
 4. **发生学顺序**：物质先在→自组织→底空间涌现→丛涌现→约束→有效几何
 
-容器框架仅在低能有效理论中出现——破缺完成后，约束产物被"冻结"为新能标下的固定背景，此时可暂时采用容器框架描述，但需记住其约束起源。
+容器框架仅在低能有效理论中出现——约束/重组完成后，约束产物被"冻结"为新能标下的固定背景，此时可暂时采用容器框架描述，但需记住其约束起源。
 
 ### 1.5.7 约束框架的深层统一：伴丛截面 = 序参量 = 物质场
 
@@ -114,9 +114,9 @@ CQM选择动力学（约束）框架的原因：
 **伴丛截面 = 序参量**：约束框架中，伴丛定义为 $E_{R} = P \times_G R \cong P/H$，其截面是映射 $\phi: M \to P/H$。在时空每一点 $x \in M$，$\phi(x)$ 是 $G/H$ 中的一个**陪集**，即一个**真空方向**——这正是序参量。
 
 实例（约束生成群 $R$，VEV 在 $V$ 中选方向）：
-- **电弱破缺**：约束 $(SU(2)\times U(1))/Z_2 \to U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，破缺至 $U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
+- **电弱**：约束 $(SU(2)\times U(1))/Z_2 \to U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，约束至 $U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
 - **超导**：约束 $U(1)/Z_2 \to U(1)$，库珀对凝聚相位 $\phi(x) \in U(1)$
-- **铁磁体**：约束 $SO(3)/\{e\} \to SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，破缺 $SO(3)\to SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
+- **铁磁体**：约束 $SO(3)/\{e\} \to SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，约束 $SO(3)\to SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
 
 在约束框架中，"物质场"就是背景自身通过约束折叠后涌现的截面。
 
@@ -128,7 +128,7 @@ CQM选择动力学（约束）框架的原因：
 | **纤维** | 向量空间 $V$（线性） | 齐性空间 $G/H$（非线性） |
 | **截面** | 物质场 $\psi: M \to V$ | 序参量 $\phi: M \to G/H$ |
 | **变换法则** | $\psi \to \rho(g)\psi$（线性） | $\phi \to g\cdot\phi$（非线性） |
-| **真空** | $\psi = 0$（平凡） | $\phi = \text{常值}$（破缺方向） |
+| **真空** | $\psi = 0$（平凡） | $\phi = \text{常值}$（约束方向） |
 
 **关键统一**：在两种情况下，物理场都是**伴丛的截面**。容器框架是约束框架在"纤维可线性化"时的特例。
 
@@ -140,7 +140,7 @@ CQM选择动力学（约束）框架的原因：
 | **真空 vs 激发** | 真空是 $\psi=0$，激发是 $\psi \neq 0$ | 真空是 $\phi = \langle\phi\rangle$（非零截面），激发是 $\phi(x)$ 在 $G/H$ 上的振动 |
 | **对称性 vs 破缺** | 对称性是背景属性，破缺是物质属性 | 对称性折叠**定义了**物质场的取值空间 |
 
-约束框架下，自发对称性破缺是"约束定义了新的伴丛，其非零截面就是物理真空"。
+约束框架对通常说的自发对称性破缺的诠释：约束定义了新的伴丛，其非零截面就是物理真空。
 
 **退化情形：约束框架回到容器**：如果 $G/H$ 允许忠实线性表示（如 $SO(3) \hookrightarrow GL(3,\mathbb{R})$），则 $G/H$ 的坐标可以嵌入向量空间 $V$，非线性序参量 $\phi: M \to G/H$ 退化为线性物质场 $\psi: M \to V$，约束框架的伴丛截面就是容器框架的物质场。其实质为约束伴丛与容器伴丛的同构：
 
@@ -297,7 +297,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 **底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
 
-**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 破缺 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
+**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经约束/重组 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 约束链：
 
@@ -307,7 +307,8 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
 - **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，是Regge剖分的必然结果
 - **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（QG前几何/GR时空度规/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
-- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。量纲归一化与量纲恢复的严格机制详- **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
+- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
+- **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/C$。这是FG核心机制，标注为**假设**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由约束严格确定
 - **本征群**：$R_k$ 是约束产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
@@ -316,13 +317,13 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac约束=共形自举方程的CQM具体化）
 - **耦合常数**：$g_k = \alpha\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
-### 4.0.1 SU(5)破缺→A_4→4紧致本征群→4耦合常数
+### 4.0.1 SU(5)约束/重组→A_4→4紧致本征群→4耦合常数
 
-SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，破缺产生两个独立效应：
+SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，约束/重组产生两个独立效应：
 
-**规范破缺**（不属于本征群效应，三个空间群直积，全紧致，**时间内禀没有群**）：
+**规范重组**（不属于本征群效应，三个空间群直积，全紧致，**时间内禀没有群**）：
 
-$$\text{SU}(5) \;\xrightarrow{\text{规范破缺}}\; U(1) \times SU(2) \times SU(3) \;\xrightarrow{g_{U(1)}}\; \alpha$$
+$$\text{SU}(5) \;\xrightarrow{\text{规范重组}}\; U(1) \times SU(2) \times SU(3) \;\xrightarrow{g_{U(1)}}\; \alpha$$
 
 **本征群效应**（同步方程本征群，全紧致）：
 
@@ -330,7 +331,7 @@ $$\boxed{\{R_k\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^
 
 本征群 $R_k$ 是约束产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。四个本征群 $R_k \cong SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
 
-**精细结构常数 $\alpha$ 来自SU(5)规范破缺后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
+**精细结构常数 $\alpha$ 来自SU(5)规范重组后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
 
 ### 4.1 耦合常数算符 $\hat{u}$
 
@@ -377,13 +378,13 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\h
 
 FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想（GL(1)）只是特例。
 
-**正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 破缺因子。
+**正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 重组因子。
 
 同步算符由物理约束严格确定，本征群 $R$ 是约束产物：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
-物质自组织基态同步是SU(5)（GL(5)自守谱），破缺后各因子层GL(n)谱是残留：
+物质自组织基态同步是SU(5)（GL(5)自守谱），约束/重组后各因子层GL(n)谱是残留：
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
@@ -461,14 +462,15 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
 | $C$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
-
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
 
 **目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的严格定量映射，消除"Dirac约束=共形自举方程"仅一行陈述的缺口。
 
-CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`，元素FG的CFT应用计算### 9.1 截面 = primary operator
+CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`。
+
+### 9.1 截面 = primary operator
 
 **纤维丛截面**：截面 $\psi \in \Gamma(P(M,G))$ 是底空间 $M$ 上的物理场，满足联络的协变作用 $D\psi = 0$。
 
@@ -481,7 +483,7 @@ $$\boxed{\psi(x) \in \Gamma(P(M,G)) \;\longleftrightarrow\; \phi_l(z) \in \mathc
 | 纤维丛 | CFT | 对应机制 |
 |:---|:---|:---|
 | 底空间 $M$（Regge剖分） | 复平面 $\mathbb{C}$ | 指数映射 $z = e^{-\kappa r}$（§6.4 of CFT文档） |
-| 截面 $\psi$（物理场） | primary operator $\phi_l$（壳层） | 态-算符对应（FG文档§17.11.2） |
+| 截面 $\psi$（物理场） | primary operator $\phi_l$（壳层） | 态-算符对应 |
 | 截面空间 $\Gamma$ | Hilbert空间 $\mathcal{H}$ | 所有物理态的集合 |
 | 协变作用 $D\psi = 0$ | 最高权条件 $\hat{L}_{n>0}\phi = 0$ | §9.5严格证明 |
 | 联络作用 $\nabla_\mu\psi$ | descendant $\hat{L}_{-1}^k\phi$ | §9.2严格对应 |
@@ -490,7 +492,7 @@ $$\boxed{\psi(x) \in \Gamma(P(M,G)) \;\longleftrightarrow\; \phi_l(z) \in \mathc
 
 $$\psi_{n,l,m}(x) \;\longleftrightarrow\; \sum_{k=0}^{n-l-1} c_k^{(n,l)}\,\hat{L}_{-1}^k\,\phi_{l,m}(z)$$
 
-其中 $c_k^{(n,l)}$ 是Shapovalov内积确定的descendant系数（FG文档§17.1）。
+其中 $c_k^{(n,l)}$ 是Shapovalov内积确定的descendant系数。
 
 ### 9.2 联络 = Virasoro生成元
 
@@ -518,7 +520,7 @@ $$\mathcal{A}(z) = \sum_{n=-\infty}^{\infty} \mathcal{A}_n\,z^{-n-1}$$
 
 $$[\mathcal{A}_m, \mathcal{A}_n] = (m-n)\mathcal{A}_{m+n} + k\,m\,\delta_{m+n,0} \;\longleftrightarrow\; [\hat{L}_m, \hat{L}_n] = (m-n)\hat{L}_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}$$
 
-左式是Kac-Moody代数（联络的仿射扩展），右式是Virasoro代数（Sugawara构造）。中央荷 $c = k\dim\mathfrak{g}/(k+h^\vee)$ 从Kac-Moody水平 $k$ 严格确定（FG文档§17.5）。
+左式是Kac-Moody代数（联络的仿射扩展），右式是Virasoro代数（Sugawara构造）。中央荷 $c = k\dim\mathfrak{g}/(k+h^\vee)$ 从Kac-Moody水平 $k$ 严格确定（Sugawara构造）。
 
 ### 9.3 曲率 = 对易子：Bianchi → Jacobi
 
@@ -540,7 +542,7 @@ Jacobi恒等式 $[\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} = 0$ 是Vir
 
 **曲率本征值 → 共形维度**：
 
-壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。primary共形维度 $h_l = l_k$（壳层角动量），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
+壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。primary共形维度 $h_l = l_k$（壳层角动量），descendant共形维度 $h = n + l$（Madelung规则）。
 
 ### 9.4 和乐 = OPE monodromy：曲率 → 共形维度的定量映射
 
@@ -567,11 +569,11 @@ $$i\,\delta_v\,\hat{T} = 2\pi i\,h \quad \Longrightarrow \quad \boxed{h = \frac{
 **A₄系统的显式计算**：
 
 对A₄嘉当矩阵的第 $k$ 个本征模式：
-- 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(4)|^2(N_k + \frac{1}{2})$（来自§4.0约束链）
+- 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(N_k + \frac{1}{2})$（来自§4.0约束链，$N_k$ 为声子占据数）
 
-- 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$
+- 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值）
 
-primary共形维度 $h_l = l_k$（壳层角动量，$l_k = k-1$ 由 SU(5) Dynkin图深度严格推导，），descendant共形维度 $h = n + l$（Madelung规则，FG文档§17.10）。
+primary共形维度 $h_l = l_k$（壳层角动量，$l_k = k-1$ 由 SU(5) Dynkin图深度严格推导），descendant共形维度 $h = n + l$（Madelung规则）。
 
 **和乐平庸化 = 闭壳层稳定**：
 
@@ -682,7 +684,7 @@ $$\boxed{D\psi = 0 \;\longleftrightarrow\; \text{OPE结合律（共形自举方�
 
 $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrightarrow{\text{OPE}}\; \text{结合律} \;\xrightarrow{\text{自洽}}\; \text{共形自举方程}}$$
 
-**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g（FG文档§17.9）。这是Dirac约束=共形自举方程在CQM中的具体实例——壳层标签 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导，第5个（g）的约束方程无解。
+**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g。这是Dirac约束=共形自举方程在CQM中的具体实例——壳层标签 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导，第5个（g）的约束方程无解。
 
 ### 9.7 同步算符 = 紧化算符：三层关系统一
 
@@ -696,13 +698,13 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 
 **层次关系**：
 
-$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)破缺}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)约束/重组}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化约束可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
-- **FG纤维丛层**：SU(5)破缺为 $A_4 \to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
+- **FG纤维丛层**：SU(5)经约束/重组，$A_4$ 根系 $\to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
 - **FG核心层**：取GL(1)电磁因子层，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
-**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（破缺后），FG核心层对应U(1)自由玻色子（GL(1)因子）。
+**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（约束/重组后），FG核心层对应U(1)自由玻色子（GL(1)因子）。
 
 ### 9.8 完整对应表
 
@@ -739,7 +741,7 @@ $$\hat{\delta}_v |0\rangle = |\delta_v\rangle$$
 
 $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
-同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（$l_k = k-1$，）：
+同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（$l_k = k-1$）：
 
 - 本征群 $\{R_k\}$、角动量 $\{l_k = k-1\}$、容量 $\{N_k^{\max} = 2(2l_k+1)\}$ 均由 SU(5) 简单根的 Dynkin 图深度严格推导
 
@@ -762,7 +764,7 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 1. **所有顶点共享同一代数结构**：Regge剖分的每个4-单纯形共享同一个 $A_4$ 嘉当矩阵（§6, §18.1）。嘉当矩阵是联络的离散化，由4-单纯形的组合几何确定，与顶点位置无关。
 
-2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（§9.5.1，）。本征值不依赖于具体的顶点 $v$。
+2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（§9.5.1）。本征值不依赖于具体的顶点 $v$。
 
 3. **CFT OPE系数的普适性**：OPE $\mathcal{O}_i(z)\mathcal{O}_j(0) \sim \sum_k C_{ij}^k z^{h_k-h_i-h_j}\mathcal{O}_k(0)$ 中，系数 $C_{ij}^k$ 由共形对称性（Kac-Moody代数 + Virasoro代数）固定，不依赖于插入点 $z$（§9.5, CFT核心文档§3）。
 
@@ -784,7 +786,6 @@ $$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结�
 
 ### 9.10 相关文档
 
-- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)破缺→A₄→4耦合常数→α）
-- ：元素FG第一性推导（§17 CFT精确计算：descendant系数、合流极限、能级、OPE系数、关联能、周期表、Cr/Cu异常；§19 量纲归一化与量纲恢复的严格机制）
+- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)约束/重组→A₄→4耦合常数→α）
 - `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
 - `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（QG层紧化算符定义、黎曼结构→CNST七条提取、三种引力同步诠释）

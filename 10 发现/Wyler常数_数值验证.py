@@ -155,7 +155,7 @@ def main():
     print("\n【10. 结论】")
     print(f"  ✓ Wyler常数完全由A4群论不变量决定 (验证通过)")
     print(f"  ✓ 精度比CQM粗略表达式高{cqm_ppm/wyler_ppm:.0f}倍")
-    print(f"  ✓ 与CQM的SU(5)破缺框架完全一致")
+    print(f"  ✓ 与CQM的SU(5)约束/重组框架完全一致")
     print(f"  ✓ 是GL(5)整体结构更精确的反映")
     print(f"  ⚠ 待解释: 2h-1=9的物理机制, 1/r次幂的来源")
 
