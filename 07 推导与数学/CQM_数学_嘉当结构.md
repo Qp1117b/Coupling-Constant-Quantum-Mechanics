@@ -115,7 +115,6 @@ $\text{Tr}(A_4^{-1}) = (4+6+6+4)/5 = 4$ 一致。）
 | 离散量 | 连续极限 |
 |:---|:---|
 | $\frac{1}{(\Delta u)^2}A_4$ | $-\partial_u^2 + \partial_u$ |
-
 | 谱间隙 $\lambda_0$ | $E_0/c^2 = 1/4$ |
 | 边界条件 $\psi_3 = e^{2a}\psi_0$ | $\partial_u\phi(0)=0$（Neumann） |
 
