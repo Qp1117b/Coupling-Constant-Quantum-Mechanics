@@ -39,7 +39,7 @@ $$\text{QG（基态 } GL(5)/SU(5) \text{ 谱结构活跃）} \xrightarrow{\text{
 
 $$\text{前中子缺陷 } D(\delta) \;\to\; \text{底空间角亏} \;\to\; \text{电子FG} \;\to\; \text{元素FG} \;\to\; \text{分子FG} \;\to\; \text{晶胞FG}$$
 
-- 电子FG先于元素FG形成：$SU(5)$经约束/重组时底空间已携带角亏
+- 电子FG先于元素FG形成：$SU(5)$经重组/实现时底空间已携带角亏
 - 每层FG是下层FG在更高物质组织层级的延展
 
 
@@ -47,13 +47,13 @@ $$\text{前中子缺陷 } D(\delta) \;\to\; \text{底空间角亏} \;\to\; \text
 
 ### 3.0 核心逻辑
 
-FG的核心问题之一是：**给定底空间（Regge剖分）+约束（算符+对称性），求解同步方程的自守形式，本征群 $R$（约束产物）对应的耦合常数就是涨落耦合常数指定的。**
+FG的核心问题之一是：**给定底空间（Regge剖分）+约束（算符+对称性），求解同步方程的自守形式，本征群 $R$（重组产物）对应的耦合常数就是涨落耦合常数指定的。**
 
 $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符）}} + \underbrace{G_k}_{\text{对称性}} \;\Rightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
 
 **底空间不可省略**：作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 必须作用在底空间上的函数空间（自守形式是底空间上的函数/截面），对称性条件 $f(\gamma x)=\chi(\gamma)f(x)$ 依赖群在底空间上的作用，底空间几何/拓扑**约束**作用量算符的谱和自守形式空间（非唯一决定）。正确顺序：$\text{底空间} + \text{作用量算符} + \text{对称性} \Rightarrow \text{自守形式}$。
 
-**GL(n) 由约束产物的基本表示严格确定（发生学顺序强制）**：$GL(n)$ 的 $n$ 不由底空间几何读出，而由约束产物 $R$（紧致李群，公理 1+2 保证）的基本表示严格确定。给定约束产物 $R$，取其在约束框架中的基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$，则 $n = \dim V_{\text{fund}}$，$GL(V_{\text{fund}}) \cong GL(n,\mathbb{C})$。$SU(5)$ 经约束/重组 $\to U(1)\times SU(2)\times SU(3)$，各因子（连同基态 $SU(5)$）通过基本表示给出各自的自守框架：基态 $SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5) \cong GL(5)$、色 $SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$、弱 $SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、电磁 $U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$——$n$ 由表示空间 $V_{\text{fund}}$ 的维度唯一指定，与基底选取无关。$SU(5)$ 本身由"含标准模型的最小单群"锚定：$\operatorname{rank}\,SU(5)=4=\operatorname{rank}\big(U(1)\times SU(2)\times SU(3)\big)$（现象学输入/公理），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导。标准数学构造中 $GL(n)$ 与 $\Gamma$ 是输入、底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM 从动力学反推：先定群（约束产物 $R$），再通过基本表示定 $n$，再定底空间约束。底空间（Regge 晶胞）不在这一层决定 $n$，只在各 $GL(n)$ 框架内约束具体谱（角亏 $\delta_v$、壳层、耦合常数，非唯一决定）。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面。每个壳层的本征群 $R_k$ 是约束产物。若 $R_k$ 含 $SU(2)$ 因子，则 $SU(2)$ 的基本表示 $V=\mathbb{C}^2$ 给出 $GL(2)$，$s/p/d/f$ 四壳层的区分不在 $GL(n)$ 的 $n$ 上，而在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type（角动量 $l$ 作为 $SO(5)$ 的表示标签）。壳层结构 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。反证（为何不能由底空间指定 $n$）：(a) **Katz–Sarnak 普遍性**——一族 $GL(n)$ 的 L 函数在高密度极限下，零点统计服从紧经典群（酉/辛/正交）的随机矩阵系综，主情形为 GUE（如 $GL(1)$ 的 $\zeta$），特定对称型退化为 GOE/GSE；零点统计由对称类型与 $GL(n)$ 决定，不由 L 函数的具体算术实现（CQM 中即底空间具体结构）决定——若由底空间指定，统计应随底空间漂移，而非稳定落在同一系综。(b) **底空间锁 $n$ 使其在 $n$ 层无用且丧失丰富度**——若底空间唯一锁定某个 $n$，则"底空间指定 $n$"退化（$n$ 恒为常数、无区分度），而 $n$ 本有的丰富度来自群约束/重组层级 $SU(5)\to U(1)\times SU(2)\times SU(3)$，与底空间无关。
+**GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$GL(n)$ 的 $n$ 不由底空间几何读出，而由重组产物 $R$（紧致李群，公理 1+2 保证）的基本表示严格确定。给定重组产物 $R$，取其在重组框架中的基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$，则 $n = \dim V_{\text{fund}}$，$GL(V_{\text{fund}}) \cong GL(n,\mathbb{C})$。$SU(5)$ 经重组/实现 $\to U(1)\times SU(2)\times SU(3)$，各因子（连同基态 $SU(5)$）通过基本表示给出各自的自守框架：基态 $SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5) \cong GL(5)$、色 $SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$、弱 $SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、电磁 $U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$——$n$ 由表示空间 $V_{\text{fund}}$ 的维度唯一指定，与基底选取无关。$SU(5)$ 本身由"含标准模型的最小单群"锚定：$\operatorname{rank}\,SU(5)=4=\operatorname{rank}\big(U(1)\times SU(2)\times SU(3)\big)$（现象学输入/公理），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导。标准数学构造中 $GL(n)$ 与 $\Gamma$ 是输入、底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM 从动力学反推：先定群（重组产物 $R$），再通过基本表示定 $n$，再定底空间约束。底空间（Regge 晶胞）不在这一层决定 $n$，只在各 $GL(n)$ 框架内约束具体谱（角亏 $\delta_v$、壳层、耦合常数，非唯一决定）。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面。每个壳层的本征群 $R_k$ 是重组产物。若 $R_k$ 含 $SU(2)$ 因子，则 $SU(2)$ 的基本表示 $V=\mathbb{C}^2$ 给出 $GL(2)$，$s/p/d/f$ 四壳层的区分不在 $GL(n)$ 的 $n$ 上，而在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type（角动量 $l$ 作为 $SO(5)$ 的表示标签）。壳层结构 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。反证（为何不能由底空间指定 $n$）：(a) **Katz–Sarnak 普遍性**——一族 $GL(n)$ 的 L 函数在高密度极限下，零点统计服从紧经典群（酉/辛/正交）的随机矩阵系综，主情形为 GUE（如 $GL(1)$ 的 $\zeta$），特定对称型退化为 GOE/GSE；零点统计由对称类型与 $GL(n)$ 决定，不由 L 函数的具体算术实现（CQM 中即底空间具体结构）决定——若由底空间指定，统计应随底空间漂移，而非稳定落在同一系综。(b) **底空间锁 $n$ 使其在 $n$ 层无用且丧失丰富度**——若底空间唯一锁定某个 $n$，则"底空间指定 $n$"退化（$n$ 恒为常数、无区分度），而 $n$ 本有的丰富度来自群重组/实现层级 $SU(5)\to U(1)\times SU(2)\times SU(3)$，与底空间无关。
 
 **作用量算符 = 同步算符**：同步算符 $\hat{\mathcal{S}}_k$ 的本征值 $n_k$ 通过玻尔-索末菲量子化 $\oint p_u \, du = 2\pi n_k$ 给出量子化作用量积分 $J = \oint p_u \, du$，即 $n_k = J/(2\pi)$。本征值就是量子化作用量，因此同步算符即作用量算符。
 
@@ -63,7 +63,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k$$
 
-本征群与耦级的**方向性分工**：本征群 $R_k$ 是约束产物，耦级 $n_k$ 由群的 Casimir 格给出。壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。链条方向是 $R_k \Rightarrow n_k$。
+本征群与耦级的**方向性分工**：本征群 $R_k$ 是重组产物，耦级 $n_k$ 由群的 Casimir 格给出。壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。链条方向是 $R_k \Rightarrow n_k$。
 
 ### 3.1 约束的来源
 
@@ -92,11 +92,11 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 ### 3.3 本征群→耦合常数
 
-本征群 $R_k$ 是约束产物，壳层标签由 SU(5) Dynkin图深度给出：
+本征群 $R_k$ 是重组产物，壳层标签由 SU(5) Dynkin图深度给出：
 
-$$R_k \text{（约束产物）}$$
+$$R_k \text{（重组产物）}$$
 
-其中 $R_k$ 的具体群结构为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$（约束产物的实现），$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
+其中 $R_k$ 的具体群结构为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$（重组产物的实现），$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
 
 - 壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导，不是输入参数
 - 耦级 $n_k = C_k$ 由群论定义（Casimir本征值），约束方程锁定 $N_k$——是同步方程的**输出**，不是输入参数
@@ -157,9 +157,9 @@ FG的完整数学对象是**朗兰兹纲领的GL(n)各层+广义黎曼猜想（G
 
 **正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 重组因子。
 
-物质自组织的基态同步是SU(5)（对应GL(5)自守谱），SU(5)约束/重组后各因子层的GL(n)谱是重组后残留：
+物质自组织的基态同步是SU(5)（对应GL(5)自守谱），SU(5)重组/实现后各因子层的GL(n)谱是重组后残留：
 
-$$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转移）}} \text{SU}(5)\ \text{表示空间} \xrightarrow{\text{约束/重组}} U(1) \times SU(2) \times SU(3)$$
+$$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转移）}} \text{SU}(5)\ \text{表示空间} \xrightarrow{\text{重组/实现}} U(1) \times SU(2) \times SU(3)$$
 
 > **定位注（算符作用层级）**：紧化投影是**表示层面**的转移——希尔伯特空间之间的谱投影 $\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(GL_5)\to\mathcal{H}_{\text{phys}}(SU(5))$，与朗兰兹函子性同型（函子性转移表示，不转移群本身）——不是群层面的态射。GL(5)（阿代尔约化群，非紧，含分裂中心）与SU(5)（紧实李群）处于不同范畴，不存在典范群同态；紧群SU(5)是投影的**靶表示空间**，物理表示由SU(5)不可约表示分类。同步算符在群层面不执行任何转换，这正是谱论三分法的深层原因：紧化投影谱 $\subseteq\{0,1\}$ 不可能携带零点谱，零点谱由GL(1)层谱算符 $\hat{H}_{\text{HP}}$ 承担。
 
@@ -173,9 +173,11 @@ $$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转�
 | GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） | 轨道角动量 $l$、壳层饱和数 |
 | GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） | 物质自组织、$SU(5)$、Coxeter数 |
 
-### 5.1.1 SU(5)约束/重组→规范群+壳层本征群→α
+### 5.1.1 SU(5)重组/实现→规范群+壳层本征群→α
 
-SU(5)是物质自组织的基态同步群，其李代数$\mathfrak{su}_5$的根系为$A_4$型。SU(5)约束/重组产生两个独立效应：
+> **GL(5)大统一框架**：$GL(5)$ 是真正的宇宙大统一群，有两个实现：$GL(5,\mathbb{C})$（紧致部分，含 $SU(5)$，对应**重组/实现**相变）和 $GL(5,\mathbb{R})$（非紧部分，含洛伦兹群 $SO(1,3)$，对应**破缺**相变）。紧致部分 $\leftrightarrow$ 内自组织 $\leftrightarrow$ 重组（色禁闭、电弱希格斯机制均属此类，无对称性破缺）；非紧部分 $\leftrightarrow$ 外自组织 $\leftrightarrow$ 若规范化则破缺（洛伦兹/庞加莱群作为全局对称性完好，若纳入规范群则产生负动能，需破缺或冻结）。$GL(5)$ 本身是物质更前面的自组织的产物。规范群必须紧致，故物理上可行的大统一规范群候选是 $SU(5) \subset GL(5,\mathbb{C})$。
+
+SU(5)是物质自组织的基态同步群，其李代数$\mathfrak{su}_5$的根系为$A_4$型。SU(5)重组/实现产生两个独立效应：
 
 #### 效应一：规范重组（不属于本征群效应）
 
@@ -193,7 +195,7 @@ $$\boxed{\text{SU}(5) \;\xrightarrow{\text{规范重组}}\; U(1) \times SU(2) \t
 
 #### 效应二：壳层结构（$l_k = k-1$ 由 SU(5) Dynkin图深度严格推导）
 
-壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。每个壳层的本征群 $R_k$ 是约束产物：
+壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。每个壳层的本征群 $R_k$ 是重组产物：
 
 | $k$ | 本征群 $R_k$ | 紧致性 | Casimir $C_k$ | 壳层 | 容量 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -227,7 +229,7 @@ $$\boxed{\alpha = f(g_{U(1)})}$$
 
 ### 5.2 同步算符的完整谱结构
 
-作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理约束严格确定，本征群 $R_k$ 是约束产物：
+作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理约束严格确定，本征群 $R_k$ 是重组产物：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
@@ -252,7 +254,7 @@ $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \te
 
 本征群 $R_k$ 决定物质分布的对称性：
 - **耦级 $n_k$**：由约束联立求解 → U(1)紧化同步成本（径向）
-- **本征群 $R_k$**：约束产物，壳层结构 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导
+- **本征群 $R_k$**：重组产物，壳层结构 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导
 - **耦合常数 $g_k$**：同步方程输出 → Casimir本征值 $C_k = n_k$ → 角动量 $l_k$ → 电子容量 $N_k^{\max} = 2(2l_k+1) = 2, 6, 10, 14$
 - **同步成本**：$s_k = n_k + l_k$ → Aufbau填充顺序
 - 对称性决定物质分布（电子组态、分子构型、晶格结构）

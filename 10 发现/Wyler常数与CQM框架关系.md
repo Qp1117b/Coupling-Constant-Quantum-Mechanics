@@ -1,19 +1,19 @@
 # Wyler常数与 CQM 框架的关系
 
-> **本文档分析 Wyler 常数如何嵌入 CQM 的 SU(5) 约束/重组框架，以及它对精细结构常数 $\alpha$ 来源的意义。**
+> **本文档分析 Wyler 常数如何嵌入 CQM 的 SU(5) 重组/实现框架，以及它对精细结构常数 $\alpha$ 来源的意义。**
 
 ---
 
 ## 1. CQM 框架回顾
 
-### 1.1 SU(5) 约束/重组链条
+### 1.1 SU(5) 重组/实现链条
 
 CQM 的精细结构常数来源框架：
 
-$$\text{SU}(5) \;\xrightarrow{\text{约束/重组}}\; A_4\text{嘉当矩阵} \;\xrightarrow{\text{4本征群}}\; \{SU(2)_k\}_{k=1}^{4}\text{（全紧致壳层群）} \;\xrightarrow{\text{U(1)耦合常数}}\; \alpha$$
+$$\text{SU}(5) \;\xrightarrow{\text{重组/实现}}\; A_4\text{嘉当矩阵} \;\xrightarrow{\text{4本征群}}\; \{SU(2)_k\}_{k=1}^{4}\text{（全紧致壳层群）} \;\xrightarrow{\text{U(1)耦合常数}}\; \alpha$$
 
 核心逻辑：
-1. **SU(5) 约束/重组**：物质自组织（=自发组织）基态群 SU(5) 约束/重组
+1. **SU(5) 重组/实现**：物质自组织（=自发组织）基态群 SU(5) 重组/实现
 2. **$A_4$ 嘉当矩阵**：SU(5) 李代数根系为 $A_4$ 型，$4\times 4$ 嘉当矩阵对角化
 3. **4 紧致本征群**：4 个本征值对应 4 紧致本征群$\{SU(2)_k\}_{k=1}^{4}$（全紧致）
 4. **$\alpha$ 来源**：$\alpha$ 来自 $U(1)$ 电磁群（3 空间群之一）的耦合常数
@@ -33,9 +33,9 @@ $$\alpha_{\text{CQM}}^{-1} = \frac{16384\pi}{375} = \frac{2^{14}\pi}{3 \cdot 5^3
 
 ### 2.1 嵌入方式
 
-Wyler 常数完全由 $A_4$ 的群论不变量决定，因此自然嵌入 CQM 的 SU(5) 约束/重组链条：
+Wyler 常数完全由 $A_4$ 的群论不变量决定，因此自然嵌入 CQM 的 SU(5) 重组/实现链条：
 
-$$\text{SU}(5) \;\xrightarrow{\text{约束/重组}}\; A_4 \;\xrightarrow{\text{群论不变量}}\; \alpha_W$$
+$$\text{SU}(5) \;\xrightarrow{\text{重组/实现}}\; A_4 \;\xrightarrow{\text{群论不变量}}\; \alpha_W$$
 
 具体地，Wyler 常数使用了 $A_4$ 的**四个基本群论不变量**：
 
@@ -60,7 +60,7 @@ CQM 中 $h = 5$ 已经是核心参数：
 
 CQM 中 $r = 4$ 决定：
 - 4 紧致本征群 = $\{SU(2)_k\}_{k=1}^{4}$（全紧致壳层群，s/p/d/f）
-- 时空维度 = 4（与秩 $r=4$ 数值巧合，非群论对应；规范约束/重组给出 $U(1)\times SU(2)\times SU(3)$ 三个空间群，时间内禀没有群）
+- 时空维度 = 4（与秩 $r=4$ 数值巧合，非群论对应；规范重组/实现给出 $U(1)\times SU(2)\times SU(3)$ 三个空间群，时间内禀没有群）
 
 #### Weyl 群 $S_5$ 与 CQM
 
@@ -120,12 +120,12 @@ CQM 框架现在有 $\alpha$ 的两种候选表达式：
 
 **如果 Wyler 常数是正确的**，则 $\alpha$ 的来源框架变为：
 
-$$\text{SU}(5) \;\xrightarrow{\text{约束/重组}}\; A_4 \;\xrightarrow{\text{全部群论不变量}}\; \alpha_W = \frac{2h-1}{\text{tr}(C)} \pi^{-r} \left(\frac{\pi^h}{2^r |W|}\right)^{1/r}$$
+$$\text{SU}(5) \;\xrightarrow{\text{重组/实现}}\; A_4 \;\xrightarrow{\text{全部群论不变量}}\; \alpha_W = \frac{2h-1}{\text{tr}(C)} \pi^{-r} \left(\frac{\pi^h}{2^r |W|}\right)^{1/r}$$
 
 这个框架的优美之处：
 1. **无任意参数**：全部由 $A_4$ 的群论结构决定
 2. **精度极高**：0.61 ppm，接近实验测量精度
-3. **与 CQM 完全一致**：SU(5) 约束/重组 → $A_4$ → $\alpha$
+3. **与 CQM 完全一致**：SU(5) 重组/实现 → $A_4$ → $\alpha$
 4. **Weyl 群自然出现**：$5! = |S_5|$ 是 SU(5) 的 Weyl 群阶
 
 ### 4.3 对"GL(5) 整体反映"的强化
@@ -212,5 +212,5 @@ $$\text{Regge剖分} \to [\hat{X},\hat{P}]=i\hbar \to \text{嘉当矩阵} \to \t
 - `Wyler常数_A4群论分解.md` — Wyler 常数的群论分解主文档
 - `Wyler常数_数值验证.py` — 数值验证脚本
 - `../01 核心理论/CQM_核心_集成理论.md` §7 — CQM 的 $\alpha$ 推导
-- `../09 精细引力（FG）/FG_核心理论.md` §5.1.1 — SU(5) 约束/重组链条
+- `../09 精细引力（FG）/FG_核心理论.md` §5.1.1 — SU(5) 重组/实现链条
 - `../07 推导与数学/CQM_数学_Adele纲领.md` §7.5 — Adele 周期推导
