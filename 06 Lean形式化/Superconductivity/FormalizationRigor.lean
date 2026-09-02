@@ -115,13 +115,43 @@ theorem modulationFactor_weakCoupling (alpha : ℝ) :
     modulationFactor alpha 1 = 1 := by
   unfold modulationFactor; ring
 
-/-- √(1−x) 的一阶Taylor展开主导项：√(1−x) = 1 − x/2 + O(x²)。 -/
+/-- √(1−x) 的一阶Taylor展开主导项：√(1−x) = 1 − x/2 + O(x²)。
+    余项 r = 1 - x/2 - √(1-x)，通过有理化得 r = (x²/4)/((1-x/2)+√(1-x))。 -/
 theorem sqrt_firstOrder_expansion (x : ℝ) (hx : abs x < 1) :
     ∃ r : ℝ, abs r ≤ x^2 / (1 - abs x) ∧
     Real.sqrt (1 - x) = 1 - x/2 - r := by
-  -- Taylor展开：√(1−x) = 1 − x/2 − x²/8 − ...
-  -- 余项 r = O(x²)，|r| ≤ x²/(1−|x|)
-  sorry  -- 完整证明需要Taylor级数定理
+  -- 构造余项 r = 1 - x/2 - √(1-x)
+  set r := 1 - x/2 - Real.sqrt (1 - x)
+  use r
+  constructor
+  · -- 证明 |r| ≤ x²/(1-|x|)
+    -- 有理化：r = ((1-x/2)² - (1-x)) / ((1-x/2) + √(1-x)) = (x²/4) / ((1-x/2) + √(1-x))
+    have h1x : 1 - x > 0 := by linarith [abs_lt.mp hx]
+    have hsqrt : Real.sqrt (1 - x) ≥ 0 := Real.sqrt_nonneg _
+    have h1x2 : 1 - x/2 > 0 := by linarith [abs_lt.mp hx]
+    -- 分母 (1-x/2) + √(1-x) ≥ 1 - |x|
+    have hdenom_pos : (1 - x/2) + Real.sqrt (1 - x) > 0 := by linarith
+    -- |r| = |x²/4| / ((1-x/2) + √(1-x)) ≤ x²/4 / (1-|x|) ≤ x²/(1-|x|)
+    have hr_eq : r = (x^2/4) / ((1 - x/2) + Real.sqrt (1 - x)) := by
+      field_simp
+      ring_nf
+      have : Real.sqrt (1 - x) * Real.sqrt (1 - x) = 1 - x := by
+        rw [Real.mul_self_sqrt h1x.le]
+      linarith
+    -- 由于有理化证明在Lean中需要较多步骤，此处用不等式估计
+    have habs_r : abs r ≤ x^2 / (4 * ((1 - x/2) + Real.sqrt (1 - x))) := by
+      rw [hr_eq]
+      exact abs_div_le_of_le (by positivity) hdenom_pos
+    -- 4 * ((1-x/2) + √(1-x)) ≥ 1 - |x|
+    have hdenom_bound : 4 * ((1 - x/2) + Real.sqrt (1 - x)) ≥ 1 - abs x := by
+      have : Real.sqrt (1 - x) ≥ 1 - abs x := by
+        have : 1 - x ≥ (1 - abs x)^2 := by nlinarith [abs_mul_self_le x]
+        exact Real.sqrt_le_sqrt this
+      nlinarith [abs_lt.mp hx]
+    exact (div_le_div_iff₀ (by positivity) (by linarith [abs_lt.mp hx])).mpr
+      (le_trans habs_r (div_le_div_of_le_left (by positivity) hdenom_bound))
+  · -- 证明 √(1-x) = 1 - x/2 - r
+    simp [r]
 
 /-- **定理2**：弱耦合极限下，临界调制退化为 (1−βδ_v) 形式。
     λ=1 ⟹ mod=1 ⟹ Δδ_0 = δ_crit·(1−βδ_v)。
@@ -442,18 +472,24 @@ noncomputable def pairingTc (thetaD lambda muStar : ℝ) : ℝ :=
     (-1.04 * (1 + lambdaEff 2 lambda) /
      (lambdaEff 2 lambda - muStar * (1 + 0.62 * lambdaEff 2 lambda)))
 
-/-- **定理8**：配对Tc在弱耦合极限λ→0时指数抑制到0
-    Tc_pair ~ θ_D·exp(-1/λ) → 0 (λ→0)
-    这证明CQM §1.4 "BCS是CQM平均场退化"：
-    弱耦合 → McMillan → BCS (λ→0) -/
-theorem pairingTc_weakCoupling_limit :
-    Tendsto (fun lambda : ℝ => pairingTc 300 lambda 0.10)
-      (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
-  -- exp(-1.04(1+λ)/(λ-μ*(1+0.62λ))) → exp(-∞) = 0 当 λ→0+
-  -- 因为分母 λ-μ*(1+0.62λ) → -μ* < 0, 指数 → +∞, exp → +∞
-  -- 但McMillan公式要求 λ > μ*(1+0.62λ), 即 λ > μ*/(1-0.62μ*) ≈ 0.107
-  -- 所以 λ→0+ 时公式无物理意义, Tc=0
-  sorry
+/- **定理8（待修正）**：配对Tc在弱耦合极限λ→0时的行为。
+
+    McMillan公式: Tc = θ_D/1.45·exp(-1.04(1+λ)/(λ-μ*(1+0.62λ)))
+
+    当λ→0+时（μ*=0.10）:
+    - lambdaEff 2 lambda = lambda → 0
+    - 分母 = λ - 0.10·(1+0.62λ) → -0.10 < 0
+    - 指数 → -1.04/(-0.10) = 10.4
+    - Tc → 300/1.45·exp(10.4) ≈ 682万 ≠ 0
+
+    **问题**：原定理陈述"Tc→0"不正确。McMillan公式在λ<μ*/(1-0.62μ*)≈0.107时
+    分母为负，公式无物理意义（Tc不应为正无穷大）。
+
+    **理论修证方案（供用户决议）**:
+    方案A：将定理改为"Tc在物理有效域λ>μ*/(1-0.62μ*)上，当λ→(μ*/(1-0.62μ*))+时Tc→0"
+    方案B：将定理改为"Tc在强耦合极限λ→∞时Tc→0"
+    方案C：在λ<μ*/(1-0.62μ*)时定义Tc=0（物理截断），证明截断后Tc在λ→0+时Tc=0
+    当前以注释形式记录此理论问题，待用户决议后补充严格证明。 -/
 
 /-- **定理8推论**：n=2时λ_eff=λ，配对Tc退化为标准McMillan -/
 theorem pairingTc_n2_standardMcMillan (thetaD lambda muStar : ℝ) :

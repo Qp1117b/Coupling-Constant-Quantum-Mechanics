@@ -48,7 +48,7 @@ noncomputable def properTimeFlow_pos {beta delta : ℝ}
 structure CouplingHeisenbergPair where
   uOp : Type
   pOp : Type
-  commutator_is_i : True  -- 占位公理：$[\hat{u},\hat{p}_u]=i$
+  commutator_is_i : Prop  -- 对易关系 $[\hat{u},\hat{p}_u]=i$，具体实现见缺口 G18
 
 /- 谱量子 $C = \xi'(1)/\xi(1)$，此处以实参数表示（谱函数 $\xi$ 待第一性提取）。 -/
 noncomputable def spectralQuantum (C : ℝ) : ℝ := C

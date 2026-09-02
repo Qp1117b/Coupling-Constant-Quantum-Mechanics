@@ -289,7 +289,7 @@ theorem a4_minimal_order_among_valid :
 
 /-! ## 6. G15缺口：同位素效应 (引用Reduction.lean) -/
 
-/-- **G15缺口闭合**: 同位素效应指数 α = 1/2。
+/- **G15缺口闭合**: 同位素效应指数 α = 1/2。
 
     CQM推导链:
     1. Debye频率: ω_D = √(k/M), k = λ₁(A4)·E_bond/a³
@@ -305,15 +305,11 @@ theorem a4_minimal_order_among_valid :
     形式化证明: 见 Reduction.lean 中
     - `criticalTemperature_isotope_shift`: Tc(M₂) = Tc(M₁)·√(M₁/M₂)
     - `hydrogen_deuterium_isotope_shift`: Tc(D) = Tc(H)/√2
--/
-theorem g15_isotope_effect_alpha_half :
-    -- α = 1/2 来自 ω_D = √(k/M) 的质量依赖
-    -- 完整证明在 Reduction.lean: criticalTemperature_isotope_shift
-    True := trivial
+    此处不重复声明theorem，完整证明在Reduction.lean中。 -/
 
 /-! ## 深入研究缺口闭合总结 -/
 
-/-- **新闭合缺口总结**:
+/- **新闭合缺口总结**:
 
     | 缺口     | 状态   | 闭合依据                          |
     |----------|--------|-----------------------------------|
@@ -323,10 +319,8 @@ theorem g15_isotope_effect_alpha_half :
     | θ_D推导  | 闭合   | debyeTemperatureA4                |
     | λ推导    | 闭合   | electronPhononCouplingA4           |
 
-    **关键发现**: √λ₁(A4) = 1/φ (黄金比恒等式) -/
-theorem deep_research_gaps_closed :
-    -- 所有新缺口已闭合
-    True := trivial
+    **关键发现**: √λ₁(A4) = 1/φ (黄金比恒等式)
+    各缺口已在上文分别以独立theorem严格证明，此处不再重复声明。 -/
 
 /-- **精细结构常数的A4群论公式**:
     ln(1/α) = π²·λ₁(A4) + 2·ln(2) + 2·λ₁(A4) - 1
@@ -349,13 +343,11 @@ noncomputable def fineStructureConstantTheory : ℝ :=
 theorem fineStructureConstantTheory_pos : fineStructureConstantTheory > 0 :=
   Real.exp_pos _
 
-/-- **更精确的精细结构常数公式**:
+/- **更精确的精细结构常数公式**:
     ln(1/α) = 2π²·λ₁ + 3C + ln(2) - 3 - λ₁
-    误差: 0.007% -/
-theorem fine_structure_constant_precise :
-    -- ln(1/α) = 2π²λ₁ + 3C + ln2 - 3 - λ₁
-    -- 误差0.007%, 包含谱量子C的修正
-    True := trivial
+    误差: 0.007%
+    此公式为数值拟合结果，非严格定理，此处仅记录公式形式。
+    严格化需要谱量子C与A4谱间隙的精确关系证明（开放问题）。 -/
 
 
 end CQM
