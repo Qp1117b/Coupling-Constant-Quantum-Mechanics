@@ -74,7 +74,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果约束。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，原则上由Regge剖分的牛顿极限定值，从拟合参数降格为可推导量（定值计算待完成）
+- **FG因果约束（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果约束。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，原则上由Regge剖分的牛顿极限定值，从拟合参数降格为可推导量（定值计算待完成）。**耦合动量 $p_u = v_\tau/C$（谱量子 $C$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$，$C$ 为单一普适谱量子。注意：此处谱量子 $C$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
 
 ### 3.2 同步方程
 
@@ -168,7 +168,7 @@ $$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转�
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 | 物理对应 |
 |:---|:---|:---|:---|:---|
 | GL(1) | $\zeta(s)$（黎曼zeta） | RH | 电磁因子层（GL(5)中心特征） | 主量子数 $n$ |
-| GL(2) | $L(s, \pi)$（模形式） | GRH(GL2) | 弱/模对称层 | p波/d波对称性、GL(2)零点差 |
+| GL(2) | $L(s, \pi)$（模形式） | GRH(GL2) | 弱/模对称层 | p波/d波对称性 |
 | GL(3) | $L(s, \pi)$ | GRH(GL3) | 色因子层 | 强相互作用对称性 |
 | GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） | 轨道角动量 $l$、壳层饱和数 |
 | GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） | 物质自组织、$SU(5)$、Coxeter数 |
@@ -245,7 +245,7 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$
 
 - **RH（GL(1)）**：电磁因子层同步稳定性 → 主量子数唯一（GL(5)中心特征）
-- **GRH(GL(2))**：模对称层同步稳定性 → GL(2)零点差存在
+- **GRH(GL(2))**：模对称层同步稳定性
 - **GRH(GL(4))**：$SO(5)$ 旋量表示层同步稳定性 → 壳层结构唯一（GL(5)的$K$-type）
 - **GRH(GL(5))**：基态同步稳定性 → 物质自组织唯一（单层自守表示）
 - **FG完整理论需要所有层GRH同时成立**（数学前提，未证明）

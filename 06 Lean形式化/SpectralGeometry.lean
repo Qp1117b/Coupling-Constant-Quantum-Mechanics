@@ -1,2 +1,3 @@
 import SpectralGeometry.Basic
-import SpectralGeometry.GL2SpectralQuantum
+
+import SpectralGeometry.GLnTrivialSpectralQuantum

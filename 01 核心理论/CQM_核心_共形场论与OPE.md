@@ -194,6 +194,8 @@ $$\hat{p}_u = \frac{1}{C}\sqrt{1-\beta\hat{\delta}_v}$$
 
 $$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{C}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
 
+**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$，$C$ 为单一普适谱量子。**
+
 **关键**：Dirac约束是**共形自举方程**（结合律）的**数学必然**。共形自洽要求耦合常数被锁死为离散值。
 
 ### 4.3 约束方程

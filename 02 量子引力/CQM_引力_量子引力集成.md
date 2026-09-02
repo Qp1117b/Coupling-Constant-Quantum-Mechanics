@@ -115,7 +115,7 @@ $C = \xi'(1)/\xi(1) \approx 0.0230957$ 是耦合空间的真正量子：
 |:---|:---|
 | **作用量量子** | 耦合空间中最小可分辨的"相位单元" |
 | **统计周期** | 再生产幂等性 $\mu^2=\mu$ 在连续流中的完成尺度 |
-| **不确定性关系的极限** | $\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{C}{2}$——$C$ 标记了压缩的极限 |
+| **不确定性关系的极限** | $\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{C}{2}$——$C$ 标记了压缩的极限。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$，$C$ 为单一普适谱量子** |
 
 $\tau_0 = a/c$ 是粗粒化采样的技术参数（嘉当方程的时间步进），而 $C$ 是本体论层面的最小约束——前者是后者的涌现尺度。
 
@@ -442,7 +442,7 @@ $$\mathcal{E}_k^{\text{phys}} = \frac{c^2}{a^2} m_p^2 \mathfrak{c}_k \xrightarro
 **路径 B：精细结构常数**
 $$\alpha^{-1} \approx 137.2583 \text{（待重新推导）}$$
 
-> **此粗略表达式是GL(5)整体的反映**，不是GL(1)层的产物。$\alpha$来自SU(5)重组实现→$A_4$→4个本征群中$U(1)$电磁群的耦合常数。
+> **此表达式是GL(5)整体的反映**，不是GL(1)层的产物。$\alpha$来自SU(5)重组实现→$A_4$→4个本征群中$U(1)$电磁群的耦合常数。
 
 **路径 C：混合矩阵**
 $$\Sigma = V \Lambda V^\dagger \xrightarrow{\text{退相干后本征矢量冻结}} \text{CKM/PMNS 矩阵}$$

@@ -8,7 +8,7 @@
 >
 > **直接动机**：第一性 $T_c$ 计算链（`CQM_超导核心理论.md` §11.10）通过本征值交叉 $T_c=\frac{\theta_D}{2\,\text{arccoth}(x)}$ 建立前向预测框架，从Regge剖分→角亏→声子→涨落→Tc闭式，无数值拟合。本文论证：分子层级的内禀角亏是分子 FG 同步算符谱的几何显现，第一性链闭合。详见`CQM_超导_统一方法论.md`。
 >
-> **依赖文档**：`CQM_超导核心理论.md` §2.5（晶胞路线）、§3（三条链）、§5（主丛）、§11.6–§11.10（同步算符与 $T_c$ 闭式）；`CQM_超导_统一方法论.md`（四层FG剖分方法论与统一计算步骤）；`06 Lean形式化/Superconductivity/MolecularGeometry.lean`（分子嘉当矩阵形式化）。
+> **依赖文档**：`CQM_超导核心理论.md` §2.5（晶胞路线）、§3（两条链）、§5（主丛）、§11.6–§11.10（同步算符与 $T_c$ 闭式）；`CQM_超导_统一方法论.md`（四层FG剖分方法论与统一计算步骤）；`06 Lean形式化/Superconductivity/MolecularGeometry.lean`（分子嘉当矩阵形式化）。
 
 ---
 
@@ -32,7 +32,7 @@
 
 ### 1.1 已确立的进展
 
-**（一）FG 的纤维丛定义已定型**（`CQM_超导核心理论.md` §5）。FG 是 GR 基态的非平庸激发态：底空间 $M$ 由物质晶胞分布经 Regge 剖分给出（链 A + 链 C），结构群 $G_{\text{FG}}$ 由嘉当矩阵链给出（链 B），联络 $\mathcal{A}_{\text{FG}}$ 由 Regge 晶胞分步生成，产生两种曲率（底空间角亏 $\delta_v$ 与伴丛曲率 $F$），和乐 $W_v = \exp(i\delta_v \hat{T})$。超导 = 和乐平庸化。
+**（一）FG 的纤维丛定义已定型**（`CQM_超导核心理论.md` §5）。FG 是 GR 基态的非平庸激发态：底空间 $M$ 由物质晶胞分布经 Regge 剖分给出（链 A），结构群 $G_{\text{FG}}$ 由嘉当矩阵链给出（链 B），联络 $\mathcal{A}_{\text{FG}}$ 由 Regge 晶胞分步生成，产生两种曲率（底空间角亏 $\delta_v$ 与伴丛曲率 $F$），和乐 $W_v = \exp(i\delta_v \hat{T})$。超导 = 和乐平庸化。
 
 **（二）嘉当矩阵链已贯通到晶胞**（链 B，`MolecularGeometry.lean`）：
 
@@ -177,7 +177,7 @@ $$\hat{\mathcal{S}}_{\text{elec}} = V_0 \quad (\text{自由库仑场，无额外
 
 $$a_n = n^2 a_0, \qquad E_n = -\frac{R}{N(\gamma_n)^2} = -\frac{R}{n^2}$$
 
-- ：能级精度 $10^{-12}$；$|E_n| \cdot a_n = R \cdot a_0$ 不确定关系。
+- **精度**：能级精度 $10^{-12}$；$|E_n| \cdot a_n = R \cdot a_0$ 不确定关系。
 - **本体论地位**：电子 FG 是前中子-前质子底空间的 FG（$SU(5)$ 重组实现时形成，早于元素 FG），氢原子是其最简实例（§11.6）。
 - **状态**：谱结构与可观测对应已确立（唯象验证，Riemann-von Mangoldt 渐近精确公式待严格化）。
 
@@ -191,7 +191,7 @@ $$\hat{\mathcal{S}}_{\text{el}} = V_0 + L_{\text{orbital}}, \qquad L_{\text{orbi
 
 结构项权重来源：$\varphi_l(u) = \frac{l}{\lambda_l}\Pi_l(u)$，$\lambda_l$——正是 §4.3 规则的实例：层级谱结构 → 表示权重 → 投影构造。
 
-- ：周期表完整推导（壳层 $2,6,10,14$、周期长度 $2,8,18,32$、填充顺序、洪特规则三条全部一致）。
+- **验证**：周期表完整推导（壳层 $2,6,10,14$、周期长度 $2,8,18,32$、填充顺序、洪特规则三条全部一致）。
 - **状态**：构造并验证（周期表推导不依赖 $\delta$ 精确值）。
 
 ---
@@ -311,13 +311,13 @@ $$\boxed{
 &\xrightarrow{\text{⑧ 弹性链}} \theta_D\\
 &\xrightarrow{\text{⑨}} \hat{\mathcal{S}}_{\text{super}} = V_0 + V_{\text{角亏激活}}(T)\\
 &\xrightarrow{\text{⑩}} \lambda_n(T) = \gamma_n - V_{\text{角亏激活}}(n,T)\\
-&\xrightarrow{\text{⑩' GL(2)}} \text{链A角亏各向异性+链B Weyl群+链C拓扑} \to E \to C_f=0,\ \Delta\gamma_f\\
-&\xrightarrow{\text{⑪ 交叉}} \lambda_1(T_c) = \lambda_2(T_c)\ \text{（GL(2) 零点差进入）}\\
-&F\left(\gamma_2-\gamma_1;\ \gamma_2^{(f)}-\gamma_1^{(f)};\ \delta_v,\ \theta_D\right)\\
+&\xrightarrow{\text{⑩' Casimir 修正}} \hat{\mathcal{S}}_2 \text{ 独立离散谱} \to j(j+1) \text{ Casimir 修正}\\
+&\xrightarrow{\text{⑪ 交叉}} \lambda_1(T_c) = \lambda_2(T_c)\ \text{（本征值交叉）}\\
+&F\left(\gamma_2-\gamma_1;\ j(j+1);\ \delta_v,\ \theta_D\right)\\
 &\xrightarrow{\text{⑫}} T_c = \frac{\theta_D}{2\,\mathrm{arccoth}\,x}
 \end{aligned}}$$
 
-**GL(2) 环节⑩'说明**：三条链汇合指定 rank=0 CM 椭圆曲线（d 波→$y^2=x^3-x$，p 波→$y^2=x^3-1$），函数方程严格给出 $C_f = 0$。GL(2) 不通过谱量子进入 $T_c$，而通过零点差 $\gamma_2^{(f)}-\gamma_1^{(f)}$ 进入本征值交叉（d 波 $= 2.196681962$，p 波 $= 2.128515269$，工作包1）。数值验证表明零点差与 $j(j+1)$ Casimir 在线性框架中携带相同信息（LOOCV 中位 33.3% vs 33.1%，工作包1 重新标定），$\gamma_n$ 从Weyl群分类和谱间隙第一性推导。完整推导见 `CQM_超导_统一方法论.md`。
+**Casimir 修正环节⑩'说明**：$j(j+1)$ Casimir 修正在线性框架中给出非常规超导中位 33.3% 精度，$\gamma_n$ 从嘉当矩阵谱间隙第一性推导。完整推导见 `CQM_超导_统一方法论.md`。
 
 **与 §11.10 十环节链的对比**：原链的第 4–5 环节（分子嘉当矩阵→原子分布）是纯嘉当矩阵/几何操作，无谱结构参与；新链在第 ④–⑤ 环节插入分子 FG 同步算符——**这是唯一改动，且正是断链所在位置**。
 
@@ -331,7 +331,7 @@ $$\boxed{
 | ⑥–⑦ | 分子谱输出（⑤）+ 缺陷统计 | 缺陷部分已有；内禀部分被⑤替代外部 DFT |
 | ⑧ | 弹性常数 | 标准第一性路径 |
 | ⑨–⑩ | $\hat{\mathcal{S}}_{\text{super}}$、$\lambda_n(T)$（GL(1) 层谱） | 公式闭合 |
-| ⑩' | GL(2) 椭圆曲线指定 + $C_f=0$ + 零点差 | $C_f=0$ 已证明；$\gamma_n$ 从Weyl群分类和谱间隙第一性推导 |
+| ⑩' | $j(j+1)$ Casimir 修正 | $\gamma_n$ 从嘉当矩阵谱间隙第一性推导 |
 | ⑪–⑫ | 本征值交叉 → $T_c$ | 公式闭合；双指数敏感度要求 $\delta_v$ 精度 $> 10^{-10}$（§11.10 审计，仍开放） |
 
 **诚实结论**：补上分子 FG 同步算符后，链条在**逻辑上**全程第一性（无外部 DFT 依赖）；但 ③ 的耦合参数第一性化与 ⑫ 的双指数敏感度仍是独立的严格性缺口，不因本文闭合而消失。

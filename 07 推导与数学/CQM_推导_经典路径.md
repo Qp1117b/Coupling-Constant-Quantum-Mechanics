@@ -147,7 +147,12 @@ $$\boxed{\hat{\mathcal{D}}^2 = c^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right
 
 **与 $\hat{H}_\infty$ 的比较**：
 
-| | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立构造） | |:---|:---|:---| | 形式 | $c^2 e^{2u}(-\partial_u^2 + 1/4)$ | $c^2(-\partial_u^2 + \partial_u)$ | | 系数 | 变系数（含 $e^{2u}$） | 常系数 | | 漂移项 | 无 | 有（$+\partial_u$） | | 来源 | 一阶算符的严格代数平方 | Sturm-Liouville 独立构造 |
+| | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立构造） |
+|:---|:---|:---|
+| 形式 | $c^2 e^{2u}(-\partial_u^2 + 1/4)$ | $c^2(-\partial_u^2 + \partial_u)$ |
+| 系数 | 变系数（含 $e^{2u}$） | 常系数 |
+| 漂移项 | 无 | 有（$+\partial_u$） |
+| 来源 | 一阶算符的严格代数平方 | Sturm-Liouville 独立构造 |
 
 **结论**：$(i\partial_\tau)^2\Psi = \hat{\mathcal{D}}^2\Psi$ 与 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 不等价。二阶作用量 $S_\infty^{(2)}$ 是独立假设，不是一阶方程的数学推论。两者通过共享的 Robin/Neumann 边界条件关联。
 
@@ -272,7 +277,7 @@ $$A_{ij} = \frac{2(\alpha_i,\alpha_j)}{(\alpha_j,\alpha_j)} = \begin{pmatrix} 2 
 
 ### 10.2 几何对偶
 
-$A_{ij}$ 对偶于正四单纯型（4-simplex）的边长关联矩阵。非对角元 $-1$ 编码曲率集中。
+$A_{ij}$ 对偶于正四单纯形（4-simplex）的边长关联矩阵。非对角元 $-1$ 编码曲率集中。
 
 ### 10.3 连续化映射
 
@@ -296,9 +301,23 @@ $$\boxed{E_0 = \frac{c^2}{4}}$$
 
 ---
 
-## 十一、严格性总览（修正后）
+## 十一、严格性总览
 
-| 推导环节 | 状态 | 依赖/备注 | |:---|:---:|:---| | 测度 $d\mu = e^{-u}du$ | 公理选择 | 与几何体积元 $e^{-2u}du$ 区分 | | Robin = Neumann | 引理 2.2 严格 | 反射对称性 | | $\hat{\mathcal{D}}$ 自伴性 | Sturm-Liouville | Neumann 消除边界项 | | $\hat{H}_\infty$ 自伴性 | Sturm-Liouville 唯一 | Friedrichs 扩张 | | 一阶母方程 | 变分严格 | Dirac 源支集局限 | | 二阶母方程 | 独立变分严格 | 非一阶平方 | | $\hat{\mathcal{D}}^2$ 计算 | 修正后严格 | $c^2 e^{2u}(-\partial_u^2+1/4)$ | | $\hat{H}_\infty$ 配方 | 严格 | $-\partial_u^2+\partial_u = \hat{D}^2+1/4$ | | 谱间隙 $c^2/4$ | Sturm-Liouville | 嘉当矩阵 Friedrichs 扩张涌入 | | 全局幺正 | Stone 定理 | $\hat{H}_{\text{tot}}$ 自伴 | | 体传输方程 | 严格 | 无近似 | | 边界匹配 | $\epsilon_p \to 0$ | 渐近严格 | | 黎曼零点 | 后验匹配 | 仍开放 |
+| 推导环节 | 状态 | 依赖/备注 |
+|:---|:---:|:---|
+| 测度 $d\mu = e^{-u}du$ | 公理选择 | 与几何体积元 $e^{-2u}du$ 区分 |
+| Robin = Neumann | 引理 2.2 严格 | 反射对称性 |
+| $\hat{\mathcal{D}}$ 自伴性 | Sturm-Liouville | Neumann 消除边界项 |
+| $\hat{H}_\infty$ 自伴性 | Sturm-Liouville 唯一 | Friedrichs 扩张 |
+| 一阶母方程 | 变分严格 | Dirac 源支集局限 |
+| 二阶母方程 | 独立变分严格 | 非一阶平方 |
+| $\hat{\mathcal{D}}^2$ 计算 | 严格 | $c^2 e^{2u}(-\partial_u^2+1/4)$ |
+| $\hat{H}_\infty$ 配方 | 严格 | $-\partial_u^2+\partial_u = \hat{D}^2+1/4$ |
+| 谱间隙 $c^2/4$ | Sturm-Liouville | 嘉当矩阵 Friedrichs 扩张涌入 |
+| 全局幺正 | Stone 定理 | $\hat{H}_{\text{tot}}$ 自伴 |
+| 体传输方程 | 严格 | 无近似 |
+| 边界匹配 | $\epsilon_p \to 0$ | 渐近严格 |
+| 黎曼零点 | 后验匹配 | 仍开放 |
 
 ---
 

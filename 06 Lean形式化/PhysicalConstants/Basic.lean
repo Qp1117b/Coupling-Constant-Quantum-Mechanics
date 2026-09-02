@@ -114,57 +114,57 @@ theorem GN_spectral_formula_decomposed : GN_spectral_formula =
 /-! ### 推导链概述
 
     α⁻¹_SU(5) = 16384π/375 的群论推导：
-    
+
     1. A₄ 嘉当矩阵 → SU(5) 李代数结构
        - dim(SU(5)) = 5² - 1 = 24
        - rank(SU(5)) = 4
        - |Φ⁺| = 正根数 = (dim - rank)/2 = 10
        - det(A₄) = 5
-    
+
     2. 分子因子 2^14 的群论来源：
        14 = dim(SU(5)) - |Φ⁺| = 24 - 10
        即：2^14 = 2^(dim(SU(5)) - |Φ⁺|)
-    
+
     3. 分母因子 375 的群论来源：
        375 = 3 × 5^3
        - 3 = denom(I) = Dynkin 指数 I = 5/3 的分母
        - 5^3 = det(A₄)^(rank(SU(5)) - 1) = 5^3
-    
+
     4. 因此：
        α⁻¹_SU(5) = 2^(dim - |Φ⁺|) / (denom(I) × det^(rank-1)) × π
                  = 2^14 / (3 × 5^3) × π
                  = 16384π/375
-    
+
     5. 数值：16384π/375 ≈ 137.26（理论值）
        此值与低能电磁精细结构常数 α⁻¹_EM ≈ 137.036 的数量级一致，
        差异来自 SU(5) GUT 标度与低能标度之间的重整化群跑动。
-    
+
     注意：步骤 1-3 是严格的群论恒等式（从 A₄ 嘉当矩阵定义直接得出）。
     步骤 4 中 π 因子的出现来自 CQM 谱方程在 SU(5) 标度的解，
     当前以显式 `Real.pi` 因子形式体现，待从谱方程严格推导。 -/
 
 /-! [AXIOMATIC INPUT] CQM 耦合常数公式中的 π 因子假设：
     在 SU(5) GUT 标度下，精细结构常数倒数由群论因子乘以 π 给出。
-    
+
     此假设是 CQM 谱方程 ∏_p F_p(s) = 1 在 SU(5) 标度的推论，
     当前以公理形式引入，待从谱方程严格证明。
-    
+
     在 Lean 形式化中，π 因子的出现通过 `alpha_inverse_SU5_explicit`
     定理中的显式因子 `Real.pi` 直接体现，无需额外公理声明。 -/
 
 /-- [THEOREM] CQM 耦合常数公式的群论因子（不含 π）：
-    
+
     group_factor = 2^(dim(SU(5)) - |Φ⁺|) / (denom(I) × det(A₄)^(rank(SU(5)) - 1))
                 = 2^14 / (3 × 5^3)
                 = 16384 / 375
-    
+
     此因子完全由 A₄ 嘉当矩阵的群论不变量确定：
     - dim(SU(5)) = 24（SU(5) 李代数维度）
     - |Φ⁺| = 10（正根数）
     - denom(I) = 3（Dynkin 指数 I = 5/3 的分母）
     - det(A₄) = 5（嘉当矩阵行列式）
     - rank(SU(5)) = 4（李代数秩）
-    
+
     所有量均从 A₄ 嘉当矩阵定义直接计算，无自由参数。 -/
 noncomputable def alpha_inverse_SU5_group_factor : ℝ :=
   ((2 : ℝ) ^ (14 : ℕ)) / ((3 : ℝ) * ((5 : ℝ) ^ (3 : ℕ)))
@@ -199,10 +199,10 @@ theorem group_factor_approx : alpha_inverse_SU5_group_factor > 43 ∧
 
 /-- [THEOREM] SU(5) GUT 标度下的精细结构常数倒数：
     α⁻¹_SU(5) = 16384π/375
-    
+
     由群论因子乘以 π 得到：
     α⁻¹_SU(5) = group_factor × π = (16384/375) × π
-    
+
     此公式完全由 A₄ 嘉当矩阵的群论不变量确定，
     无自由参数（π 是数学常数）。 -/
 noncomputable def alpha_inverse_SU5 : ℝ := alpha_inverse_SU5_group_factor * Real.pi
@@ -216,7 +216,7 @@ theorem alpha_inverse_SU5_explicit : alpha_inverse_SU5 = 16384 * Real.pi / 375 :
 
 /-- [THEOREM] α⁻¹_SU(5) 的群论分解：
     α⁻¹_SU(5) = 2^14 / (3 × 5^3) × π
-    
+
     其中指数来自：
     - 14 = dim(SU(5)) - |Φ⁺| = 24 - 10
     - 3 = denom(Dynkin 指数 I = 5/3)
@@ -322,7 +322,7 @@ theorem alpha_SU5_gt_0007 : alpha_SU5 > 0.007 := by
     | 群论因子 | 16384/375 | ≈ 43.69 | 上述因子之商 |
     | π 因子 | π | ≈ 3.1416 | 数学常数（来自 CQM 谱方程） |
     | **α⁻¹_SU(5)** | **16384π/375** | **≈ 137.26** | 群论因子 × π |
-    
+
     所有群论因子均从 A₄ 嘉当矩阵定义严格计算，无自由参数。
     π 因子的引入来自 CQM 谱方程在 SU(5) 标度的解，
     当前以显式 `Real.pi` 因子形式体现。 -/
@@ -360,10 +360,10 @@ noncomputable def planckMass : ℝ := 1.2209e19
 
 /-- 质子质量与 Planck 质量的比值：m_p / m_P ≈ 7.69×10⁻²⁰。
     这个巨大的层级差异（层级问题）在 CQM 中由
-    exp(-2/C) ≈ exp(-86.6) ≈ 2.3×10⁻³⁸ 因子解释。 -/
+    exp(-2/C) ≈ exp(-86.596) ≈ 2.46×10⁻³⁸ 因子解释。 -/
 noncomputable def protonPlanckRatio : ℝ := protonMass / planckMass
 
-/-- 层级因子 exp(-2/C) ≈ 2.27×10⁻³⁸ -/
+/-- 层级因子 exp(-2/C) ≈ 2.464677412×10⁻³⁸ -/
 noncomputable def hierarchyFactor : ℝ := Real.exp (-2 / spectralQuantum)
 
 /-- 层级因子严格为正 -/
@@ -372,7 +372,7 @@ theorem hierarchyFactor_pos : hierarchyFactor > 0 := by
 
 /-! 层级因子的数量级（声明）：
 
-    exp(-2/C) = exp(-2/0.02309570897) ≈ exp(-86.6) ≈ 2.27 × 10⁻³⁸。
+    exp(-2/C) = exp(-2/0.02309570897) ≈ exp(-86.59617303) ≈ 2.464677412 × 10⁻³⁸。
     此因子解释了质子质量与 Planck 质量之间的巨大层级差异（层级问题）。
     精确数值验证见 `hierarchyFactor_pos`（严格正性已证）。 -/
 

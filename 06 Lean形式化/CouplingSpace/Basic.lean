@@ -92,6 +92,7 @@ theorem uncertaintyRelation_nontrivial_bound (C : ℝ) (hC : C > 0) :
   have h : C / 2 > 0 := by linarith
   nlinarith
 
+
 /-! ## 耦合空间与因果集的连接 -/
 
 /-- 耦合坐标 u 与 Sprinkling 密度的关系：

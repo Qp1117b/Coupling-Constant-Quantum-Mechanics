@@ -16,12 +16,12 @@
 | **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |
 | **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |
 | **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |
-| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `RiemannXi.lean`, `GL2SpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**C_f=0 严格推导（rank=0+w_E=1+函数方程）**、GL(2) 零点差 |
+| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示谱量子 C_n=n·C₁ 缩放律与归一化普适性** |
 | **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |
-| **Decoherence** | `Basic.lean` | `confinementScale`、`CausalLayer`、三层结构 |
+| **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现公式结构性表达、庸俗隐变量分解对比（公理为主） |
-| **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean` | 超导形式化（12 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）** |
+| **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
 
 ## 形式化推导链
 
@@ -142,7 +142,7 @@ lake build # 编译全部
 lake build CausalSet # 编译单个库
 lake build CartanAlgebra # 编译嘉当代数库
 lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
-lake build Superconductivity # 编译强引力超导库（12 模块）
+lake build Superconductivity # 编译强引力超导库（16 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 ```
 
@@ -154,7 +154,7 @@ lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 | 耦合空间与不确定性 | `CouplingSpace` | 21 |
 | SU(5) 嘉当矩阵 | `CartanAlgebra` | 30 |
 | 谱几何与 Mathieu 方程 | `SpectralGeometry` | 114 |
-| 因果时几何 | `PrimeGeometry` | 81 |
+| 因果时几何 | `PrimeGeometry` | 79 |
 | 禁闭-退相干等价 | `Decoherence` | 15 |
 | G_N 谱公式与 α⁻¹ | `PhysicalConstants` | 20 |
 | 方法论基础 | `Methodology` | 6 |
@@ -162,8 +162,8 @@ lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 
 ## 本次更新亮点 (v0.6.0)
 
-- **去除落后形式化**：删除 `MultiComponent.lean`（其引用的 §16 非平庸 GL 自由能理论与旧 §10.3 多分量凝聚已在文档中删除/改写，与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由落后的 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ_v)`、G13 标注闭合、G17 标注删除；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对删除文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
-- **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除，其对应的 GL 物理内容已在文档层面弃用）
+- **去除落后形式化**：删除 `MultiComponent.lean`（与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ_v)`、G13 标注闭合、G17 不作为缺口；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
+- **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除）
 
 ## 本次更新亮点 (v0.5.9)
 
@@ -171,7 +171,7 @@ lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 - **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 亏角→FG 退相干场强度）→ 层级 VI（因果分辨率）
 - **元素主次结构**：BCS 同位素效应揭示元素内部存在主次结构——质子扇区（纯 A4 块对角）为主、中子扇区（缺陷 A4 块对角）为次。主次结构直接指向 BCS 退化方向（往单元素材料退化），并揭示拼接规则（同种元素同位素之间 $\epsilon(N)$ 连续变化，跨元素种类需要 $t_{ij}$ 参数）
 - **阶段 0：元素层级**：新增计算管线步骤 0a–0d（质子/中子分配→元素嘉当矩阵组装→主次结构识别→BCS 退化验证），使元素层级计算先于分子层级
-- **新增缺口 11–15**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、~~牛顿引力退化定理~~（G17删除：FG不走Regge→GR连续极限）、单元素拼接规则特殊性
+- **新增缺口 11–15**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、牛顿引力退化定理（G17：FG不走Regge→GR连续极限，不作为缺口）、单元素拼接规则特殊性
 - **文档总数**：SPAF 框架文档从 355 行扩展至约 500 行，新增 §0、§2.5、§5 阶段 0、§10.5 共四个章节
 - **定理总数**：保持不变（624），本次更新为文档架构与概念框架的深化，非 Lean 代码层变更
 

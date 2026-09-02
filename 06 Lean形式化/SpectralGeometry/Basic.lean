@@ -208,11 +208,11 @@ theorem firstCoupling_gt_100 : firstCoupling > 100 := by
     如果此定理被证明，则 CQM 与黎曼假设直接关联。 -/
 noncomputable def sierraCQMTheorem (_n : ℕ) (γ_n : ℝ) : ℝ := 1/4 + γ_n^2
 
-/-- Sierra-CQM 定理的数值验证：n=1, γ₁ = 14.134725 -/
-noncomputable def sierraCQM_n1 : ℝ := sierraCQMTheorem 1 14.134725
+/-- Sierra-CQM 定理的数值验证：n=1, γ₁ = 14.1347251417 -/
+noncomputable def sierraCQM_n1 : ℝ := sierraCQMTheorem 1 riemannZero1
 
 /-- 验证 n=1 时 Sierra-CQM 公式给出 𝔠₁ ≈ 200.04 -/
-theorem sierraCQM_n1_value : sierraCQM_n1 = 1/4 + (14.134725)^2 := by
+theorem sierraCQM_n1_value : sierraCQM_n1 = 1/4 + riemannZero1^2 := by
   unfold sierraCQM_n1 sierraCQMTheorem; rfl
 
 /-! ## Adele 周期与 4-单纯形维度 -/
