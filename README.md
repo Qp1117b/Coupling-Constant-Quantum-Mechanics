@@ -1,6 +1,6 @@
 # 耦合常数量子力学（CQM）形式化框架
 
-**Coupled Constant Quantum Mechanics — CQM**
+**Coupling Constant Quantum Mechanics — CQM**
 
 **作者**：ruster
 
