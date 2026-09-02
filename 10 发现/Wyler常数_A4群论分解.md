@@ -32,7 +32,7 @@ Wyler常数比 CQM 粗略表达式精确 **2659 倍**。
 
 Wyler常数可以精确表示为 $A_4$ 嘉当矩阵的基本群论不变量的组合：
 
-$$\boxed{\alpha_W = \frac{2h-1}{\text{（待重新推导）}} \cdot \pi^{-r} \cdot \left(\frac{\pi^h}{2^r \cdot |W(A_4)|}\right)^{1/r}}$$
+$$\boxed{\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot \left(\frac{\pi^h}{2^r \cdot |W(A_4)|}\right)^{1/r}}$$
 
 其中：
 
@@ -89,7 +89,11 @@ $A_4$ 的 Weyl 群是 $S_5$（5 个对象的排列群），阶为 $5! = 120$：
 
 ### 3.4 嘉当矩阵的迹
 
-待重新推导。
+$A_4$ 嘉当矩阵为 $4\times 4$ 矩阵，对角线元素全为 2：
+
+$$\text{tr}(A_4) = 2 \times 4 = 8$$
+
+这是 Wyler 常数群论分解中分母的来源：$\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot (\cdots)^{1/r}$，其中 $2h-1=9$，$\text{tr}(A_4)=8$，$9/8$ 正是 Wyler 常数定义中的前因子。
 
 ### 3.5 因子 $2h - 1 = 9$
 
@@ -165,7 +169,9 @@ $$\text{SU}(5) \;\xrightarrow{\text{重组实现}}\; A_4 \;\xrightarrow{\text{�
 
 ### 6.1 嘉当矩阵
 
-待重新推导。
+$$A_4 = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}$$
+
+这是 SU(5) 的嘉当矩阵，秩 $r=4$，Coxeter 数 $h=5$，Weyl 群阶 $|W(A_4)|=5!=120$，迹 $\text{tr}(A_4)=8$。
 
 ### 6.2 本征值
 

@@ -24,7 +24,7 @@ $$\text{SU}(5) \;\xrightarrow{\text{重组实现}}\; A_4\text{嘉当矩阵} \;\x
 $$\alpha_{\text{CQM}}^{-1} = \frac{16384\pi}{375} = \frac{2^{14}\pi}{3 \cdot 5^3} \approx 137.2583$$
 
 - **偏差**：1622 ppm
-- **来源**：近似比例 $9:4:1$（待重新推导）
+- **来源**：近似比例 $9:4:1$（来源待严格推导）
 - **性质**：GL(5) 整体的**粗略**反映
 
 ---
@@ -39,7 +39,7 @@ $$\text{SU}(5) \;\xrightarrow{\text{重组实现}}\; A_4 \;\xrightarrow{\text{�
 
 具体地，Wyler 常数使用了 $A_4$ 的**四个基本群论不变量**：
 
-$$\alpha_W = \frac{2h-1}{\text{（待重新推导）}} \cdot \pi^{-r} \cdot \left(\frac{\pi^h}{2^r \cdot |W(A_4)|}\right)^{1/r}$$
+$$\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot \left(\frac{\pi^h}{2^r \cdot |W(A_4)|}\right)^{1/r}$$
 
 | 不变量 | 值 | 在 CQM 中的角色 |
 |:---|:---|:---|
@@ -71,7 +71,7 @@ CQM 已经大量使用 Weyl 群对称性：
 
 #### 嘉当矩阵迹 与 CQM
 
-待重新推导。
+$\text{tr}(A_4) = 8$ 是 $A_4$ 嘉当矩阵的对角元素之和（$2\times 4 = 8$）。在 CQM 中，$A_4$ 嘉当矩阵是 SU(5) 重组实现后禁闭边界涌现的代数结构，其迹对应 4 个壳层本征群 $\{SU(2)_k\}_{k=1}^{4}$ 各自 Casimir 值 2 的总和。Wyler 常数中 $9/8 = (2h-1)/\text{tr}(A_4)$ 正是 Coxeter 数线性组合与嘉当矩阵迹的比值。
 
 ---
 
