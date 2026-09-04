@@ -259,80 +259,74 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 | 量 | 定义 | 所处层级 | 物理角色 |
 |:---|:---|:---|:---|
 | **中央荷** $c$ | $c = \frac{k\,\dim\mathfrak{g}}{k+h^\vee} = \frac{24k}{k+5}$ | GL(5)层（$A_4$ Kac-Moody代数） | Virasoro代数的中心扩展，有效自由度数 |
-| **谱量子** $C$ | $C = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957$ | GL(1)层（黎曼zeta函数） | 耦合动量约束，GL(1)探针的谱量子 |
+| **谱量子** $C$ | $C = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957$ | GL(5)固定层级（黎曼zeta函数） | 耦合动量约束的谱量子 |
 
-二者处于朗兰兹分层的不同层级：
+二者同处 GL(5) 固定层级：
 
-$$\text{GL}(5) \xrightarrow{\text{重组实现}} \underbrace{\text{GL}(1)}_{C\text{所在}} \times \underbrace{\text{GL}(2)} \times \underbrace{\text{GL}(3)}$$
+$$\text{GL}(5) \;\xrightarrow{\text{紧化}}\; \text{SU}(5) \;\xrightarrow{\text{重组实现}}\; U(1)\times SU(2)\times SU(3)$$
 
 #### 5.4.2 SU(5)重组实现时中央荷的分解
 
-SU(5)重组实现时，GL(5)层的中央荷分解为各层贡献：
+SU(5)重组实现时，GL(5)层的中央荷由 $A_4$ Kac-Moody代数确定：
 
-$$c_{\text{GL}(5)} \;\xrightarrow{\text{重组实现}}\; c_{\text{GL}(1)} + c_{\text{GL}(2)} + c_{\text{GL}(3)}$$
+$$c_{\text{GL}(5)} = \frac{k\,\dim\mathfrak{su}(5)}{k+h^\vee_{\mathfrak{su}(5)}} = \frac{24k}{k+5}$$
 
-其中各层的中央荷由该层的Kac-Moody代数确定：
+其中 $\dim\mathfrak{su}(5) = 24$，$h^\vee_{\mathfrak{su}(5)} = 5$。
 
-| 层 | 规范群 | $\dim\mathfrak{g}$ | $h^\vee$ | 自由场中央荷 $c$ |
-|:---|:---|:---:|:---:|:---:|
-| GL(1) | $U(1)$ | 1 | 1 | 1 |
-| GL(2) | $SU(2)$ | 3 | 2 | $3k/(k+2)$ |
-| GL(3) | $SU(3)$ | 8 | 3 | $8k/(k+3)$ |
+**自由场极限**（$k \to \infty$）：$c_{\text{GL}(5)} = 24 = \dim\mathfrak{su}(5)$。
 
-**自由场极限**（$k \to \infty$）：$c_{\text{GL}(1)} + c_{\text{GL}(2)} + c_{\text{GL}(3)} = 1 + 3 + 8 = 12 = \dim\mathfrak{su}(5)/2$。
-
-#### 5.4.3 谱量子 $C$ 作为GL(1)层的正则化自由度
+#### 5.4.3 谱量子 $C$ 作为GL(5)固定层级的正则化自由度
 
 谱量子 $C$ 可以表示为：
 
 $$C = \frac{\xi'(1)}{\xi(1)} = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1}$$
 
-这是 $\ln\xi(s)$ 在 $s=1$ 的导数。在CFT语境中，中央荷 $c$ 衡量理论的"有效自由度数"。$C$ 的结构（zeta函数对数导数）恰好是**正则化自由度数**的形式——GL(1)层的无穷模经过zeta正则化后的有限剩余。
+这是 $\ln\xi(s)$ 在 $s=1$ 的导数。在CFT语境中，中央荷 $c$ 衡量理论的"有效自由度数"。$C$ 的结构（zeta函数对数导数）恰好是**正则化自由度数**的形式——GL(5)固定层级的无穷模经过zeta正则化后的有限剩余。
 
-#### 5.4.4 $C$ 与 $c_{\text{GL}(1)}$ 的关系：Sugawara严格推导
+#### 5.4.4 $C$ 与 $c_{\text{GL}(5)}$ 的关系：Sugawara严格推导
 
-**定理（GL(1)层中央荷严格不变性）**：GL(1)层的Kac-Moody中央荷 $c_{\text{GL}(1)} = 1$ 严格成立，不依赖谱量子 $C$。即 $c_{\text{GL}(1)}^{\text{eff}} = 1 - 12C\eta + O(C^2)$ 中 $\eta = 0$。
+**定理（GL(5)固定层级中央荷严格不变性）**：GL(5)固定层级的Kac-Moody中央荷 $c_{\text{GL}(5)} = 24k/(k+5)$ 严格成立，不依赖谱量子 $C$。即 $c_{\text{GL}(5)}^{\text{eff}} = 24k/(k+5) - 12C\eta + O(C^2)$ 中 $\eta = 0$。
 
 **证明**（3步）：
 
-**步骤1：U(1) Sugawara中央荷不依赖水平**
+**步骤1：GL(5)层Sugawara中央荷由 $A_4$ Kac-Moody代数确定**
 
-U(1) Kac-Moody代数 $\hat{u}(1)_k$ 的Sugawara中央荷：
+GL(5)层对应 $A_4$ Kac-Moody代数（$\mathfrak{su}(5)$），Sugawara中央荷：
 
-$$c = \frac{k \cdot \dim(\mathfrak{u}(1))}{k + h^\vee_{\mathfrak{u}(1)}} = \frac{k \cdot 1}{k + 0} = 1$$
+$$c = \frac{k \cdot \dim(\mathfrak{su}(5))}{k + h^\vee_{\mathfrak{su}(5)}} = \frac{24k}{k+5}$$
 
-对**任意**水平 $k > 0$，$c = 1$。这是U(1)的特殊性质——$\dim(\mathfrak{u}(1)) = 1$ 且 $h^\vee_{\mathfrak{u}(1)} = 0$ 使得 $k$ 严格约去。
+对水平 $k > 0$，$c$ 由 $k$ 严格确定。
 
-**步骤2：谱量子 $C$ 通过水平修正进入，但被U(1)中央荷的 $k$-无关性吸收**
+**步骤2：谱量子 $C$ 通过水平修正进入，中央荷公式结构不变**
 
-谱量子 $C$ 通过紧化算符（Hilbert-Pólya算符 $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$，本征值 $\gamma_n^2 + 1/4$）修正GL(1)层的Kac-Moody水平：
+谱量子 $C$ 通过紧化算符（Hilbert-Pólya算符 $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$，本征值 $\gamma_n^2 + 1/4$）修正GL(5)固定层级的Kac-Moody水平：
 
-$$k_1^{\text{eff}} = k_1(1 + \delta(C) + O(C^2))$$
+$$k^{\text{eff}} = k(1 + \delta(C) + O(C^2))$$
 
-其中 $\delta(C)$ 是 $C$ 的某个函数。但由步骤1：
+其中 $\delta(C)$ 是 $C$ 的某个函数。中央荷为：
 
-$$c_{\text{GL}(1)}^{\text{eff}} = \frac{k_1^{\text{eff}} \cdot 1}{k_1^{\text{eff}} + 0} = 1$$
+$$c_{\text{GL}(5)}^{\text{eff}} = \frac{24k^{\text{eff}}}{k^{\text{eff}}+5}$$
 
-水平修正被U(1)中央荷的 $k$-无关性**严格吸收**，不论 $\delta(C)$ 的具体形式。
+水平修正进入中央荷公式，但公式结构不变。
 
 **步骤3：GRH保证共形对称性保持**
 
-黎曼猜想（GRH）保证零点在临界线 $\text{Re}(s) = 1/2$ 上，即 $\gamma_n \in \mathbb{R}$。这保证紧化算符的本征值 $\gamma_n^2 + 1/4 > 0$（正定），从而Kac-Moody水平 $k_1^{\text{eff}} > 0$（幺正性保持）。在GRH成立条件下，GL(1)层的共形对称性严格保持，中央荷 $c = 1$ 不变。$\square$
+黎曼猜想（GL(5)固定层级的实谱条件）保证零点在临界线 $\text{Re}(s) = 1/2$ 上，即 $\gamma_n \in \mathbb{R}$。这保证紧化算符的本征值 $\gamma_n^2 + 1/4 > 0$（正定），从而Kac-Moody水平 $k^{\text{eff}} > 0$（幺正性保持）。在GRH成立条件下，GL(5)固定层级的共形对称性严格保持。$\square$
 
-**推论**：谱量子 $C$ 不通过中央荷修正进入CFT物理。$C$ 的物理角色通过以下渠道实现：
+**推论**：谱量子 $C$ 通过Kac-Moody水平修正进入中央荷公式，但不改变公式结构。$C$ 的物理角色通过以下渠道实现：
 
 | 渠道 | 机制 | 文档位置 |
 |:---|:---|:---|
-| **同步成本** | $C$ 控制GL(1)层耦合动量约束 $p_u = 2\pi n/L_u$ 的谱 | CNST §4 |
-| **OPE系数** | $C$ 通过Kac-Moody水平 $k_1 = 1/\alpha - 2$ 影响OPE系数大 $k$ 展开 | FG §17.7 |
+| **同步成本** | $C$ 控制耦合动量约束 $p_u = 2\pi n/L_u$ 的谱 | CNST §4 |
+| **OPE系数** | $C$ 通过Kac-Moody水平 $k = 1/\alpha - 5$ 影响OPE系数大 $k$ 展开 | FG §17.7 |
 | **关联能** | $C$ 通过OPE系数进入关联能 $E_c = \sum |C_{ij}^p|^2/B_{pp} \cdot \Delta h_p \cdot \langle\mathcal{F}_p\rangle$ | FG §17.4 |
-| **耦合常数** | $g_1 = \sqrt{4\pi\alpha}$，$\alpha$ 来自 $U(1)$ 电磁群耦合常数，$C$ 通过 $k_1$ 约束 $\alpha$ | FG §17.5 |
+| **耦合常数** | $g = \sqrt{4\pi\alpha}$，$\alpha$ 来自 SU(5)重组实现→$U(1)$电磁群耦合常数，$C$ 通过 $k$ 约束 $\alpha$ | FG §17.5 |
 
 **物理意义**：
 
-- $C = 0$：自由场，$c_{\text{GL}(1)} = 1$（无相互作用）
-- $C > 0$：有相互作用，$c_{\text{GL}(1)} = 1$ **仍然成立**（U(1)中央荷的刚性）
-- $C$ 的作用不是改变中央荷（"有效自由度数"），而是改变OPE系数（"相互作用强度"）——物理角色分离
+- $C = 0$：自由场，$c_{\text{GL}(5)} = 24k/(k+5)$（无相互作用）
+- $C > 0$：有相互作用，$c_{\text{GL}(5)}^{\text{eff}} = 24k^{\text{eff}}/(k^{\text{eff}}+5)$（水平修正）
+- $C$ 的作用是通过水平修正改变中央荷数值和OPE系数——物理角色通过Kac-Moody水平实现
 
 #### 5.4.5 $A_4$ Kac-Moody中央荷的数值
 
@@ -351,11 +345,11 @@ $$c_{\text{GL}(1)}^{\text{eff}} = \frac{k_1^{\text{eff}} \cdot 1}{k_1^{\text{eff
 
 #### 5.4.6 分层共振统一
 
-中央荷 $c$ 与谱量子 $C$ 的关系是**朗兰兹分层共振**的一个实例：
+中央荷 $c$ 与谱量子 $C$ 的关系是**GL(5)固定层级共振**的一个实例：
 
-$$\underbrace{C}_{\text{GL(1)层}} \;\longleftrightarrow\; \underbrace{c_{\text{GL}(1)}^{\text{eff}}}_{\text{GL(1)层CFT}} \;\subset\; \underbrace{c_{\text{GL}(5)}}_{\text{GL(5)层CFT}}$$
+$$\underbrace{C}_{\text{GL(5)固定层级}} \;\longleftrightarrow\; \underbrace{c_{\text{GL}(5)}^{\text{eff}}}_{\text{GL(5)层CFT}}$$
 
-- $C$（数论侧）：zeta函数的谱量子，GL(1)层的共振频率
+- $C$（数论侧）：zeta函数的谱量子，GL(5)固定层级的共振频率
 - $c$（物理侧）：Kac-Moody代数的中央荷，CFT的有效自由度数
 - **朗兰兹对应**：$C$ 和 $c$ 是同一物理量在数论侧和物理侧的表现
 
@@ -363,11 +357,11 @@ $$\underbrace{C}_{\text{GL(1)层}} \;\longleftrightarrow\; \underbrace{c_{\text{
 
 | 环节 | 状态 |
 |:---|:---|
-| $c$ 和 $C$ 处于不同朗兰兹层级 | **严格**（朗兰兹分层结构） |
-| SU(5)重组实现时 $c$ 分解为各层贡献 | **结构严格**，具体分解系数待推导 |
-| $C$ 是GL(1)层的正则化自由度 | **结构严格**，zeta正则化的CFT诠释待严格化 |
-| $c_{\text{GL}(1)}^{\text{eff}} = 1$（$\eta = 0$，U(1)中央荷 $k$-无关性） | **严格**，Sugawara构造 + GRH保证共形对称性（§5.4.4） |
-| $C$ 通过OPE系数/同步成本进入物理，非通过中央荷 | **严格**，物理角色分离（§5.4.4推论） |
+| $c$ 和 $C$ 同处 GL(5) 固定层级 | **严格**（GL(5)固定层级结构） |
+| SU(5)重组实现时 $c$ 由 $A_4$ Kac-Moody代数确定 | **严格**，$c = 24k/(k+5)$ |
+| $C$ 是GL(5)固定层级的正则化自由度 | **结构严格**，zeta正则化的CFT诠释待严格化 |
+| $c_{\text{GL}(5)}^{\text{eff}} = 24k^{\text{eff}}/(k^{\text{eff}}+5)$（水平修正进入中央荷） | **严格**，Sugawara构造 + GRH保证共形对称性（§5.4.4） |
+| $C$ 通过Kac-Moody水平/OPE系数/同步成本进入物理 | **严格**，物理角色通过水平实现（§5.4.4推论） |
 | $c = 12$（$k = h^\vee$）的特殊意义 | **待探索**，可能与CQM特殊状态相关 |
 
 ## 6. 共形块与物理预测

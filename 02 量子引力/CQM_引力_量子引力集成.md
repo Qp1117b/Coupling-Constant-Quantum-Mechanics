@@ -442,7 +442,7 @@ $$\mathcal{E}_k^{\text{phys}} = \frac{c^2}{a^2} m_p^2 \mathfrak{c}_k \xrightarro
 **路径 B：精细结构常数**
 $$\alpha^{-1} \approx 137.2583 \text{（待重新推导）}$$
 
-> **此表达式是GL(5)整体的反映**，不是GL(1)层的产物。$\alpha$来自SU(5)重组实现→$A_4$→4个本征群中$U(1)$电磁群的耦合常数。
+> **此表达式是GL(5)整体的反映**。$\alpha$来自SU(5)重组实现→$A_4$→4个本征群中$U(1)$电磁群的耦合常数。
 
 **路径 C：混合矩阵**
 $$\Sigma = V \Lambda V^\dagger \xrightarrow{\text{退相干后本征矢量冻结}} \text{CKM/PMNS 矩阵}$$

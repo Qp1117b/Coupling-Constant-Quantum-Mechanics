@@ -331,7 +331,7 @@ $$\boxed{\{R_k\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^
 
 本征群 $R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。四个本征群 $R_k \cong SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
 
-**精细结构常数 $\alpha$ 来自SU(5)规范重组后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映，不是GL(1)层的产物。
+**精细结构常数 $\alpha$ 来自SU(5)规范重组后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映。
 
 ### 4.1 耦合常数算符 $\hat{u}$
 
@@ -353,7 +353,7 @@ $$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delt
 
 其中曲率算符 $\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$ 严格来自 **Regge剖分约束** + **$[\hat{X},\hat{P}]=i\hbar$**：经典背景曲率 + 位置涨落平方的量子期望 + Regge几何非线性，不是唯象假设。
 
-**耦合常数部分**（GL(1)探针层）：
+**耦合常数部分**：
 
 $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u} - \ln p)$$
 
@@ -376,7 +376,7 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi C}\sqrt{1-\beta\h
 
 ### 5.1 FG的完整数学对象
 
-FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想（GL(1)）只是特例。
+FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想是GL(5)固定层级的实谱条件。
 
 **正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 重组因子。
 
@@ -388,9 +388,6 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
-| GL(1) | $\zeta(s)$ | RH | 电磁因子层（GL(5)中心特征） |
-| GL(2) | $L(s, \pi)$ | GRH(GL2) | 模对称层 |
-| GL(3) | $L(s, \pi)$ | GRH(GL3) | 色因子层 |
 | GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） |
 | GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） |
 
@@ -398,7 +395,7 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$
 
-- 黎曼猜想成立 → GL(1)层本征值在临界线上 → 电磁因子层谱唯一（GL(5)中心特征）
+- 黎曼猜想成立 → 本征值在临界线上 → GL(5)固定层级谱唯一
 - 广义黎曼猜想成立 → 各层本征值在临界线上 → FG完整谱唯一
 - **FG完整理论需要各层GRH同时成立**（数学前提，未证明）
 
@@ -694,17 +691,17 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 |:---|:---|:---|:---|
 | **QG层**（基态定义） | CNST §4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\text{GL}_5) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
 | **FG纤维丛层**（截面实现） | 本文 §4 | $\hat{\mathcal{S}}_\ell$ = 紧化算符在层级截面空间 $\Gamma(P_\ell)$ 的实现 | 谱算符：给出群谱 $G_k$ |
-| **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ = QG紧化结构在电磁因子层GL(1)的再现 | 物理可观测的耦合常数 $g_k$ |
+| **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ = QG紧化结构在GL(5)固定层级的再现 | 物理可观测的耦合常数 $g_k$ |
 
 **层次关系**：
 
-$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(1)因子}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：电磁因子}}$$
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化约束可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
 - **FG纤维丛层**：SU(5)经重组实现，$A_4$ 根系 $\to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
-- **FG核心层**：取GL(1)电磁因子层，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
+- **FG核心层**：取GL(5)固定层级，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
-**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(1)因子）。
+**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
 
 ### 9.8 完整对应表
 
