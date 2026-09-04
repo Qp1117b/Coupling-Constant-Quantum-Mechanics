@@ -68,7 +68,7 @@ $$\text{材料结构} \xrightarrow{\text{Regge几何}} \delta_v \xrightarrow{\te
 
 $$\hat{\mathcal{S}}_\ell : \mathcal{H}_{\text{auto}}(G_\ell) \to \mathcal{H}_{\text{phys}}(\text{层}\ell\text{的物理结构群})$$
 
-各层级同步算符是**同一个紧化算符在不同物质组织层级上的层级化实现**（与发生学分层共识一致：基态同步是 SU(5)，各因子层 GL(n) 谱是重组实现后残留；层级谱传递是 GL(n) 谱结构在物质组织各层级显现的具体机制）。
+各层级同步算符是**同一个紧化算符在不同物质组织层级上的层级化实现**（与发生学分层共识一致：基态同步是 SU(5)，重组实现后残留谱结构在物质组织各层级显现；层级谱传递是残留谱结构在物质组织各层级显现的具体机制）。
 
 ### 2.2 公理的物理依据
 
@@ -311,13 +311,13 @@ $$\boxed{
 &\xrightarrow{\text{⑧ 弹性链}} \theta_D\\
 &\xrightarrow{\text{⑨}} \hat{\mathcal{S}}_{\text{super}} = V_0 + V_{\text{角亏激活}}(T)\\
 &\xrightarrow{\text{⑩}} \lambda_n(T) = \gamma_n - V_{\text{角亏激活}}(n,T)\\
-&\xrightarrow{\text{⑩' Casimir 修正}} \hat{\mathcal{S}}_2 \text{ 独立离散谱} \to \text{从嘉当矩阵谱间隙第一性推导}\\
+&\xrightarrow{\text{⑩' 谱间隙推导}} \hat{\mathcal{S}}_2 \text{ 独立离散谱} \to \text{从嘉当矩阵谱间隙第一性推导}\\
 &\xrightarrow{\text{⑪ 交叉}} \lambda_1(T_c) = \lambda_2(T_c)\ \text{（本征值交叉）}\\
 &F\left(\gamma_2-\gamma_1;\ \text{嘉当矩阵谱间隙};\ \delta_v,\ \theta_D\right)\\
 &\xrightarrow{\text{⑫}} T_c = \frac{\theta_D}{2\,\mathrm{arccoth}\,x}
 \end{aligned}}$$
 
-**Casimir 修正环节⑩'说明**：从嘉当矩阵谱间隙第一性推导给出非常规超导中位 33.3% 精度，$\gamma_n$ 从嘉当矩阵谱间隙第一性推导。完整推导见 `CQM_超导_统一方法论.md`。
+**谱间隙推导环节⑩'说明**：从嘉当矩阵谱间隙第一性推导给出非常规超导中位 33.3% 精度，$\gamma_n$ 从嘉当矩阵谱间隙第一性推导。完整推导见 `CQM_超导_统一方法论.md`。
 
 **与 §11.10 十环节链的对比**：原链的第 4–5 环节（分子嘉当矩阵→原子分布）是纯嘉当矩阵/几何操作，无谱结构参与；新链在第 ④–⑤ 环节插入分子 FG 同步算符——**这是唯一改动，且正是断链所在位置**。
 

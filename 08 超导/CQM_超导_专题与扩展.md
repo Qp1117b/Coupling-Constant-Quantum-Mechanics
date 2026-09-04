@@ -13,7 +13,7 @@
 
 **$A_4$ 型嘉当矩阵对应 $SU(5)$**（4×4嘉当矩阵是 $A_4$ 型，基础表示5维）。$SU(5)$ 是 QG 退相干后物质自组织出的第一个完整规范结构，对应 $A_4$ 根空间，是核子潜能的载体。
 
-**分层定位**：质数分布的基态伽罗瓦表示 $\rho_5: G_{\mathbb{Q}} \to GL_5(\mathbb{Q}_\ell)$ 经朗兰兹对应指定 GL(5) 自守形式（Regge 底空间几何），其确定的自守谱经紧化（同步算符 $\hat{\mathcal{S}}_0$，紧化算符）投影为 SU(5) 表示空间——**基态同步是 SU(5)，不是 GL(1)**。**在 GL(n) 层级谱中，物质自组织选中 GL(5)（而非其他 GL(n)）正是物质自组织的体现**：SU(5) 是含标准模型的最小单群（$\operatorname{rank}SU(5)=4=\operatorname{rank}(U(1)\times SU(2)\times SU(3))$），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导；n > 5 层级不排除，但 GL(5) 主导物理谱。
+**分层定位**：质数分布的基态伽罗瓦表示 $\rho_5: G_{\mathbb{Q}} \to GL_5(\mathbb{Q}_\ell)$ 经朗兰兹对应指定 GL(5) 自守形式（Regge 底空间几何），其确定的自守谱经紧化（同步算符 $\hat{\mathcal{S}}_0$，紧化算符）投影为 SU(5) 表示空间——**基态同步是 SU(5)**。**物质自组织选中 GL(5) 正是物质自组织的体现**：SU(5) 是含标准模型的最小单群（$\operatorname{rank}SU(5)=4=\operatorname{rank}(U(1)\times SU(2)\times SU(3))$），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导；n > 5 层级不排除，但 GL(5) 主导物理谱。
 
 **发生学链条**：
 
@@ -1358,12 +1358,12 @@ $$\boxed{\frac{C_O}{C_{\text{DP}}} = \frac{2\pi^2 e^2/27}{1/20} = \frac{40\pi^2 
 | 惯性(QCD→原子核质量) | $\Delta\delta_0^2 \sim \sum(1/m)$ | 共同 | QCD束缚能（非p进大小） |
 | 几何(Regge→$\theta_D$) | $\theta_D^{9/8}$ | 共同 | Regge角亏 |
 | 几何·各向异性修正 | $-(3/4)/\kappa_A$ | 共同 | 几何分支←→能动张量 |
-| 能动张量·GL(1) | $\log(1/\Delta_{\text{gap}}) + C_{\text{ANISO}} \cdot \text{aniso}$ | GL(1) | 嘉当谱投影 |
-| 能动张量·GL(2) | $C_{\text{ANISO}} \cdot \text{aniso}$ | GL(2) | 从嘉当矩阵谱间隙第一性推导 |
+| 能动张量·谱间隙 | $\log(1/\Delta_{\text{gap}}) + C_{\text{ANISO}} \cdot \text{aniso}$ | GL(5)固定层级 | 嘉当谱投影 |
+| 能动张量·各向异性 | $C_{\text{ANISO}} \cdot \text{aniso}$ | GL(5)固定层级 | 从嘉当矩阵谱间隙第一性推导 |
 | 能动张量·高阶矩 | $t_0 \cdot \text{skew} + t_0 \cdot \text{kurt}$ | 共同 | 嘉当矩阵3/4阶矩 |
-| 作用量·GL(1) | $K_0 = C \cdot e^{A_G \cdot \gamma_n}$ | GL(1) | 黎曼零点 |
-| 配对·$U(1)$ | $C_O \cdot o_{\text{frac}} \cdot d_{\text{filling}}$ | GL(1) | SU(5)分支: $2^2 \cdot 3^3$ |
-| 配对·$SU(2)$ | $C_{\text{DP}} \cdot dp_{\text{hybrid}}$ | GL(2) | SU(5)分支: 1 |
+| 作用量·黎曼零点 | $K_0 = C \cdot e^{A_G \cdot \gamma_n}$ | GL(5)固定层级 | 黎曼零点 |
+| 配对·$U(1)$ | $C_O \cdot o_{\text{frac}} \cdot d_{\text{filling}}$ | GL(5)固定层级 | SU(5)分支: $2^2 \cdot 3^3$ |
+| 配对·$SU(2)$ | $C_{\text{DP}} \cdot dp_{\text{hybrid}}$ | GL(5)固定层级 | SU(5)分支: 1 |
 | 同步条件 | $1.5 \cdot 3\beta^2\Delta\delta_0^2/16$ | 共同 | 方程8 |
 | 惯性·f电子抑制 | $\exp(-C_F \cdot f_e \cdot s_{\text{root}})$ | 共同 | 根向量质量归一化($s=1/2$) |
 | 惯性+能动张量·重费米子 | $\exp(-C_F \cdot f_a \cdot (1-d_p) \cdot \frac{3}{2})$ | 共同 | 运动三重分化 |
@@ -1417,13 +1417,13 @@ d_partial=1(铁基): 无额外抑制 d_partial=0(重费米子): 强额外抑制
 
 > 完整理论见 `01 核心理论/CQM_核心_朗兰兹分层共振与谱量子.md` §6。本节给出超导核心理论中的定位与数值证据。
 
-**超导使用谱量子 $C_1$（GL(5)固定层级）**。$C_1 \neq 0$ 进入不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$：
+**超导使用谱量子 $C$（GL(5)固定层级）**。$C \neq 0$ 进入不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$：
 
 | 物理扇区 | 朗兰兹层级 | 谱量子 | 作用 | CQM 状态 |
 |:---|:---|:---|:---|:---|
-| **电磁 $U(1)$** | GL(5)固定层级 | $C_1 = \sum_n 1/(\gamma_n^2+1/4) \approx 0.0230957$ | 耦合常数涨落 → $T_c$ 公式 | 已引入 |
+| **电磁 $U(1)$** | GL(5)固定层级 | $C = \sum_n 1/(\gamma_n^2+1/4) \approx 0.0230957$ | 耦合常数涨落 → $T_c$ 公式 | 已引入 |
 
-**常规 s 波超导**：自旋配对是平庸单态，仅需 $C_1$。现有 CQM 公式 $T_c \sim \theta_D/(2\,\text{arccoth}(x))$ 作为框架内前向公式仍在使用。
+**常规 s 波超导**：自旋配对是平庸单态，仅需 $C$。现有 CQM 公式 $T_c \sim \theta_D/(2\,\text{arccoth}(x))$ 作为框架内前向公式仍在使用。
 
 **非常规 d/p 波超导**：自旋结构非平凡，从嘉当矩阵谱间隙第一性推导进入 $T_c$ 计算。$\gamma_n$ 映射从嘉当矩阵谱间隙第一性推导。当前 CQM 从嘉当矩阵谱间隙第一性推导给出非常规超导中位 33.3% 精度。
 
@@ -1431,7 +1431,7 @@ d_partial=1(铁基): 无额外抑制 d_partial=0(重费米子): 强额外抑制
 
 $$T_c = F\left(\gamma_2-\gamma_1;\ \text{嘉当矩阵谱间隙};\ \delta_v,\ \theta_D\right)$$
 
-**与零点猜想的关系**：$C_1$ 需黎曼猜想（GL(5)固定层级的实谱条件）。**超导完整理论需要 RH 成立。**
+**与零点猜想的关系**：$C$ 需黎曼猜想（GL(5)固定层级的实谱条件）。**超导完整理论需要 RH 成立。**
 
 
 ## 11.6 同步机制猜测与氢原子能级推导

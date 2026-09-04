@@ -243,15 +243,15 @@ $$\ln \mathcal{J} = -2 \ln\left(\prod_p \det(D_p)\right)$$
 
 **Step 5：极点锁定**
 
-非交换几何的谱行列式对数由 $\xi(s)$ 在 $s=1$ 处的极点结构锁定：
+非交换几何的谱行列式对数由 $\xi(s)$ 在 $s=1$ 处的极点结构锁定（极点倒数关系）：
 
-$$\ln\left(\prod_p \det(D_p)\right) = \frac{\xi'(1)}{\xi(1)} + \mathcal{O}(C^2) = C + \mathcal{O}(C^2)$$
+$$\ln\left(\prod_p \det(D_p)\right) = \frac{1}{C} + \mathcal{O}(1) = \frac{\xi(1)}{\xi'(1)} + \mathcal{O}(1)$$
 
-其中 $\mathcal{O}(C^2)$ 是正规化函数，领头阶为 $C$。
+其中 $\mathcal{O}(1)$ 是正规化函数，领头阶为 $1/C$。
 
 **结果**：
 
-$$\ln \mathcal{J} = -2C \cdot \frac{1}{C} = -\frac{2}{C}$$
+$$\ln \mathcal{J} = -2 \cdot \frac{1}{C} = -\frac{2}{C}$$
 
 $$\boxed{\mathcal{J} = \exp\left(-\frac{2}{C}\right)}$$
 

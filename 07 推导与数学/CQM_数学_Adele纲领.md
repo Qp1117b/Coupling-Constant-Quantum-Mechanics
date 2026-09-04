@@ -260,7 +260,7 @@ $$\xi(s_n) = \int_{\mathbb{A}^\times/\mathbb{Q}^\times} \Psi_n \, d^\times x_{\m
 
 ### 6.3 标准模型规范群的来源
 
-**公理 6.3**（结构选择）：标准模型规范群 $G = SU(3) \times SU(2) \times U(1)$ 的朗兰兹对偶 $\hat{G}$ 提供角向算符 $(\hat{\theta}, \hat{\phi})$ 的数学来源。
+**公理 6.3**（结构选择）：标准模型规范群 $G = U(1) \times SU(2) \times SU(3)$ 的朗兰兹对偶 $\hat{G}$ 提供角向算符 $(\hat{\theta}, \hat{\phi})$ 的数学来源。
 
 ---
 

@@ -69,7 +69,7 @@ $$\boxed{\hat{a}_k = \sqrt{\frac{m\omega_k}{2\hbar}}\hat{Q}_k + i\sqrt{\frac{1}{
 
 $$\boxed{E_k = \hbar\omega_k\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}$$
 
-声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8， §19）。
+声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8与 `09 精细引力（FG）/FG_纤维丛理论.md` §19）。
 
 ## 2. 声子是振荡的量子
 
@@ -293,7 +293,7 @@ $$\text{QG声子（前几何）} \xrightarrow{\text{退相干}} \text{GR声子�
 
 $$\boxed{c = \gamma_1 \cdot \ell_{\text{QG}}}$$
 
-其中 $\gamma_1$ 是GL(1)因子层同步标度，$\ell_{\text{QG}}$ 是QG层特征长度。
+其中 $\gamma_1$ 是固定层级同步标度，$\ell_{\text{QG}}$ 是QG层特征长度。
 
 **物理意义**：光速是同步过程的涌现速率。同步以光速 $c$ 传播——这是时空声子（度规涨落量子）的传播速度，也是引力波的传播速度。
 
