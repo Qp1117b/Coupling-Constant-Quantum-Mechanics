@@ -17,8 +17,7 @@ CQM 的谱几何：谱量子 C、Mathieu 临界值 λ_c、Sierra-CQM 耦谱定�
 
 > **发生学分层定位**：本文件形式化的 ζ 零点谱
 > （γ₁、耦级 𝔠₁ = 1/4 + γ₁²、Sierra-CQM 耦谱定理）属
-> **电磁因子（GL(1)）层**——黎曼猜想是广义黎曼猜想在 GL(1)
-> （SU(5) 破缺后 U(1) 电磁因子）的特例，非质数分布基态的全部。
+> **GL(5) 固定层级下的 ζ 零点谱**——黎曼猜想是 GL(5) 实谱条件。
 > 基态层对应 GL(5) 自守 L 函数零点谱（基态同步是 SU(5)），
 > 经紧化约束方程与各因子谱匹配；GL(n) 各层级的零点猜想正是
 > 物质自组织在相应层级上的数学体现。基态层形式化待构造。
@@ -969,8 +968,7 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
 ### 形式化状态（本文件）
 - 本文件当前包含 55 个已证明定理，以及 `spectralQuantum_numerical_bounds` 一个显式数值桥梁公理。
 - 项目整体统计与剩余缺口请参见 `README.md`。
-- 已清理的遗留问题：
-  - `adeleConstraint` 已由公理改为 `native_decide` 严格证明的定理；
-  - `mathieu_critical_condition`（未使用）已从 `Mathieu.lean` 删除；
-  - 含 `sorry` 的未注册测试文件 `TestNum.lean` 已删除。
+- `adeleConstraint` 由 `native_decide` 严格证明。
+- `mathieu_critical_condition`（未使用）不在 `Mathieu.lean` 中。
+- 未注册测试文件 `TestNum.lean` 不在本项目中。
 -/

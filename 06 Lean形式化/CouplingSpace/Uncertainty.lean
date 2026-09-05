@@ -328,7 +328,7 @@ theorem cqm_uncertainty_conditional
 - **`dimensionless_uncertainty`**：无量纲化不确定性关系 ✅
 - **`cqm_uncertainty_conditional`**：条件性 CQM 不确定性关系（显式假设）✅
 
-## 已解决的缺口
-- 缺口 U1（不确定性关系证明）：✅ 完全解决，无 `sorry` 残留
-- 缺口 U2：✅ 已替换为严格定理
+## 缺口状态
+- 缺口 U1（不确定性关系证明）：✅ 完全解决，无 `sorry` 招留
+- 缺口 U2：✅ 严格定理
 -/

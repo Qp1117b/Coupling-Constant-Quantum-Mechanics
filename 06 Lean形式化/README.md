@@ -1,5 +1,7 @@
 # CQMFormal — CQM 的 Lean 4 形式化验证
 
+**作者**：ruster
+
 本目录包含**耦合常数量子力学（CQM）**的 Lean 4 形式化验证项目。
 
 ## 编译状态
@@ -22,6 +24,7 @@
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现公式结构性表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
+| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=iC$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\xleftrightarrow{}R=G\xleftrightarrow{}\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化约束进入 $\mathfrak{s}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**待编译验证** |
 
 ## 形式化推导链
 
@@ -144,6 +147,7 @@ lake build CartanAlgebra # 编译嘉当代数库
 lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
 lake build Superconductivity # 编译强引力超导库（16 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
+lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证）
 ```
 
 ## 理论对应

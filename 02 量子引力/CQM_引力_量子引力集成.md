@@ -442,7 +442,7 @@ $$\mathcal{E}_k^{\text{phys}} = \frac{c^2}{a^2} m_p^2 \mathfrak{c}_k \xrightarro
 **路径 B：精细结构常数**
 $$\alpha^{-1} \approx 137.2583 \text{（待重新推导）}$$
 
-> **此表达式是GL(5)整体的反映**。$\alpha$来自SU(5)重组实现→$A_4$→3个本征空间（$V_1,V_4,V_5$ 分别对应 SU(3)/SU(2)/U(1)）中$U(1)$电磁扇区的耦合常数。
+> **此表达式是 GL(5) 固定层级整体的反映**。$\alpha$来自 SU(5) 重组实现 → $A_4$ → 3个本征空间（$V_5,V_4,V_1$ 分别对应 $U(1)/SU(2)/SU(3)$）中 $U(1)$ 电磁扇区的耦合常数。
 
 **路径 C：混合矩阵**
 $$\Sigma = V \Lambda V^\dagger \xrightarrow{\text{退相干后本征矢量冻结}} \text{CKM/PMNS 矩阵}$$

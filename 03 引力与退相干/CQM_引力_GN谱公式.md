@@ -311,14 +311,14 @@ $$G_N = \underbrace{\left(\frac{I \cdot \lambda_c \cdot C^2 \cdot \mathfrak{c}_1
 
 $G_N$ 公式中的层级因子 $\exp(-2/C)$ 当前使用谱量子 $C = C_1 \approx 0.0230957$。对于 GL(n) 平凡自守表示，谱量子缩放为 $C_n = n \cdot C_1$（数学事实，见 `01 核心理论/CQM_核心_朗兰兹分层共振与谱量子.md` §5.4），层级因子相应缩放：
 
-$$\exp\!\left(-\frac{2}{C_n}\right) = \exp\!\left(-\frac{2}{n \cdot C}\right) = \exp\!\left(-\frac{2}{C}\right)^{1/n}$$
+$$\exp\!\left(-\frac{2}{C_n}\right) = \exp\!\left(-\frac{2}{n \cdot C}\right) = \left[\exp\!\left(-\frac{2}{C}\right)\right]^{1/n}$$
 
 | GL(n) 层 | $C_n$ | 层级因子 $\exp(-2/C_n)$ | 相对于 GL(1) |
 |:---:|:---:|:---:|:---:|
 | GL(1) | $C$ | $\exp(-2/C) \approx 2.46 \times 10^{-38}$ | 1（基准） |
-| GL(2) | $2C$ | $\exp(-2/C)^{1/2} \approx 1.57 \times 10^{-19}$ | $1/2$ 次幂 |
-| GL(3) | $3C$ | $\exp(-2/C)^{1/3} \approx 2.91 \times 10^{-13}$ | $1/3$ 次幂 |
-| GL(5) | $5C$ | $\exp(-2/C)^{1/5} \approx 3.01 \times 10^{-8}$ | $1/5$ 次幂 |
+| GL(2) | $2C$ | $[\exp(-2/C)]^{1/2} \approx 1.57 \times 10^{-19}$ | $1/2$ 次幂 |
+| GL(3) | $3C$ | $[\exp(-2/C)]^{1/3} \approx 2.91 \times 10^{-13}$ | $1/3$ 次幂 |
+| GL(5) | $5C$ | $[\exp(-2/C)]^{1/5} \approx 3.01 \times 10^{-8}$ | $1/5$ 次幂 |
 
 **低层主导定理**：$n_1 < n_2 \Rightarrow \exp(-2/C_{n_1}) < \exp(-2/C_{n_2})$——低层 GL(n) 给出更强层级抑制。当前 $G_N$ 公式使用 $C = C_1$，对应**最强层级抑制**。物理系统固定在 GL(5) 层级，$n > 5$ 不排除但 GL(5) 主导物理谱。
 

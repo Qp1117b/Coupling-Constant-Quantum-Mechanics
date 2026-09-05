@@ -1,6 +1,6 @@
 name = "CQMFormal"
 version = "0.5.3"
-defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "Superconductivity"]
+defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "Superconductivity", "FGChain"]
 
 [[lean_lib]]
 name = "CausalSet"
@@ -32,6 +32,10 @@ leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 
 [[lean_lib]]
 name = "Superconductivity"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+
+[[lean_lib]]
+name = "FGChain"
 leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 
 [[lean_lib]]

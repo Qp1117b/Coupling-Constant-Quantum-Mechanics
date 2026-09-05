@@ -39,7 +39,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 | `Superconductivity.CartanSuperconductivity` | （张量 GL 代码，对应文档章节已精简） | **嘉当张量超导方程（方向锚定保留）**：A₄ 本征谱上的序参量展开；A₄ 同时作为离散哈密顿量与能动张量；谱间隙退化到 BCS；Tr(A₄⁻¹)=4 勘误 |
 | `Superconductivity.FirstPrinciples` | §11.3 统计极限 | **推导链（derivation chain）**：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙标定）→ 电子-声子耦合 λ = N(0)·V → BCS 能隙积分方程；严格积分恒等式 ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)（FTC 证明）；积分方程的解 = ω_D/sinh(1/λ)；弱耦合 T_c → 0；再生产维持（锁定因子衰减，坍缩难题②的再生产解答）；金属氢实例（单质子 = A₄ 直接拼接，能隙闭式 + 同位素方向） |
 | `Superconductivity.SPAF` | §2.5 晶胞路线 | **元素嘉当矩阵与因果几何**：因果耦合 t_ij = t₀·e^{−d/λ}·Θ(d_cut−d)；组装对称性；中子缺陷谱判据——对角线化形式（§3.2，SOS 正方向 + 反方向见证 + Sylvester 闭合）与非对角元形式（§2.2，G14 闭合：det D = 8−3δ²、正定 ⟺ \|δ\| < √(8/3)、N2 行列式匹配）；N2 微扰质量（δ=1 附近谱体积展开）；Regge 边长正性 |
-| `Superconductivity.MolecularGeometry` | §2.5 晶胞路线 | **分子→晶胞嘉当矩阵（链B约束）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场**：原子嘉当矩阵 → C_mol 块对角 + 跨原子耦合 → 晶胞嘉当矩阵（仅约束可实现谱，不直接生成 Regge 晶胞，见 §3.2）→ 亏角 δ_v = 2π − Σθ_tet（链A晶胞几何分布）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限，见 G17 已删除） |
+| `Superconductivity.MolecularGeometry` | §2.5 晶胞路线 | **分子→晶胞嘉当矩阵（链B约束）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场**：原子嘉当矩阵 → C_mol 块对角 + 跨原子耦合 → 晶胞嘉当矩阵（仅约束可实现谱，不直接生成 Regge 晶胞，见 §3.2）→ 亏角 δ_v = 2π − Σθ_tet（链A晶胞几何分布）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限） |
 | `Superconductivity.CouplingSpace` | §12 耦合空间曲率机制 | **超导 = 耦合空间曲率驱动的精细结构常数量子跃迁**：Regge 角亏 δ_v → 固有时流速 v_τ = dτ/dt = √(1-βδ_v) → 耦合动量 p_u = v_τ/C → 不确定性 Δu·Δδ_v ≥ C√(1-βδ_v)/β → 跃迁 u→u+ln4（α→4α）→ 超导判据 Δδ_v ≥ C√(1-βδ_v)/(βln4)；ζ(s) 母积分与费米统计投影；纯氢不超导（阈值正性） |
 
 ## 核心定理
@@ -107,10 +107,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 
 ## 严格性缺口（详见理论文档 §11）
 
-- G9：**已删除**：因果截断共振窗口 σ——旧因果截断频率框架（ω_causal = 2πM）已被 §12 耦合空间曲率机制取代（角亏场 δ_v → 固有时流速 → ln4 跃迁）
-- G10：**已删除**：Θ_loop 闭环条件函数——旧三方因果闭环机制已随 Mechanism 模块删除，唯一性/确定性由耦合空间曲率机制统一处理
 - G11：D_lattice 从正四单纯型组合构型到声子谱的具体推导
-- G12：**已删除**：引力拓扑因子 T_grav——旧强引力推广框架已随 StrongGravity 模块删除；涌现方程由张量结构上升为泛函约束结构的严格化——精细引力退相干场作为指定约束，其泛函形式的构造方式仍为开放问题
 - G13：**已闭合**（见 `BCSIntegralAsymptotic.bcsTcFromIntegral_solved`）：T_c 积分方程的"tanh 积分 → 对数方程"渐近已严格化，`bcsTcFromIntegral_solved` 证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程唯一正解；能隙积分方程的 ∫ → arsinh 台阶由 `gapIntegral_pr` 严格化
 - G14：中子缺陷谱判据的完整闭合——**可用内容已由初等 SOS 严格化**：正方向
   ε < spectralGap ⟹ C_n 正定（`neutronCartan_posDef_of_lt_spectralGap`，强度放宽到
@@ -121,7 +118,6 @@ CQM 超导理论的完整形式化框架。理论文档见
   作为严格阈值 min{2, λ₂, ...} 的进一步认证）——**部分闭合**
 - G15：**已闭合**（见 `Reduction.criticalTemperature_isotope_shift` 与 `DeepResearch.g15_isotope_effect_alpha_half`）：同位素效应 α=1/2 从 ω_D=√(k/M) 直接推导，Tc ∝ M^(−1/2)
 - G16：因果分辨率的形式化（Regge 亏角密度→Ricci 标量）
-- G17：**已删除**：牛顿引力退化定理（Regge 有效度规→Poisson 方程）——FG 不表现为几何吸引/测地线约束，不走 Regge→GR 连续极限→Poisson 方程路径（见文档 §18 缺口表）
 
 ## 参考文献
 

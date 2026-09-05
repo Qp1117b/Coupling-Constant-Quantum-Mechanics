@@ -1,5 +1,7 @@
 # CQM 核心：三种引力存在论前提与中子缺陷矩阵
 
+**作者**：ruster
+
 > 本文档阐述 CQM 的核心论断：**引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果约束**，并按因果结构的不同深度与广度分化为三种形态。三者同源，都是退相干机制在不同存在论层级的表现。
 > 相关 Lean 形式化见 `06 Lean形式化/Superconductivity`：`Gravity`（QG/GR 谱参数与 $G_N$）、`SPAF`（中子缺陷矩阵 `neutronDefect`）、`MolecularGeometry`（Regge 角亏 `deficitAngleDensity`、自由/束缚中子缺陷）、`BridgeTheorems`（角亏—Ricci 关系）。超导机制见 `08 超导/CQM_超导核心理论.md`。缺口编号 N1–N4 与超导文档 G18 同体系。
 
