@@ -301,7 +301,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 **底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
 
-**GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经重组实现 $\to U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
+**GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经重组实现 $\xRightarrow{} U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 推导链：
 
@@ -699,7 +699,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 
 **层次关系**：
 
-$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xrightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
 - **FG纤维丛层**：SU(5)经重组实现，$A_4$ 根系 $\to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
