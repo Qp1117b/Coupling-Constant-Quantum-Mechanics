@@ -1,0 +1,58 @@
+{
+  "symbol": "Cr",
+  "name": "铬",
+  "name_en": "Chromium",
+  "atomic_number": 24,
+  "atomic_mass": 51.9961,
+  "category": "transition_metal",
+  "group": 6,
+  "period": 4,
+  "block": "d",
+  "valence_electrons": 6,
+  "electronegativity": 1.66,
+  "atomic_radius_pm": 166,
+  "covalent_radius_pm": 139,
+  "color": "#8A99C7",
+  "isotopes": [
+    {
+      "mass_number": 50,
+      "neutrons": 26,
+      "mass_da": 49.946046,
+      "abundance": 0.04345,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 52,
+      "neutrons": 28,
+      "mass_da": 51.940508,
+      "abundance": 0.83789,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 53,
+      "neutrons": 29,
+      "mass_da": 52.940651,
+      "abundance": 0.09501,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    },
+    {
+      "mass_number": 54,
+      "neutrons": 30,
+      "mass_da": 53.938884,
+      "abundance": 0.02365,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "symbol": "C",
+  "name": "碳",
+  "name_en": "Carbon",
+  "atomic_number": 6,
+  "atomic_mass": 12.0107,
+  "category": "nonmetal",
+  "group": 14,
+  "period": 2,
+  "block": "p",
+  "valence_electrons": 4,
+  "electronegativity": 2.55,
+  "atomic_radius_pm": 67,
+  "covalent_radius_pm": 76,
+  "color": "#909090",
+  "isotopes": [
+    {
+      "mass_number": 12,
+      "neutrons": 6,
+      "mass_da": 12.0,
+      "abundance": 0.9893,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 13,
+      "neutrons": 7,
+      "mass_da": 13.003355,
+      "abundance": 0.0107,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.5
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "symbol": "Th",
+  "name": "钍",
+  "name_en": "Thorium",
+  "atomic_number": 90,
+  "atomic_mass": 232.0377,
+  "category": "actinide",
+  "group": 3,
+  "period": 7,
+  "block": "f",
+  "valence_electrons": 4,
+  "electronegativity": 1.3,
+  "atomic_radius_pm": 180,
+  "covalent_radius_pm": 206,
+  "color": "#50A0A0",
+  "isotopes": [
+    {
+      "mass_number": 232,
+      "neutrons": 142,
+      "mass_da": 232.038056,
+      "abundance": 1.0,
+      "is_stable": false,
+      "half_life_s": 443400000000000000,
+      "decay_mode": "α",
+      "spin": 0.0
+    },
+    {
+      "mass_number": 230,
+      "neutrons": 140,
+      "mass_da": 230.033132,
+      "abundance": 0.0,
+      "is_stable": false,
+      "half_life_s": 2379000000000,
+      "decay_mode": "α",
+      "spin": 0.0
+    }
+  ]
+}

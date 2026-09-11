@@ -1,0 +1,38 @@
+{
+  "symbol": "Li",
+  "name": "锂",
+  "name_en": "Lithium",
+  "atomic_number": 3,
+  "atomic_mass": 6.941,
+  "category": "alkali_metal",
+  "group": 1,
+  "period": 2,
+  "block": "s",
+  "valence_electrons": 1,
+  "electronegativity": 0.98,
+  "atomic_radius_pm": 167,
+  "covalent_radius_pm": 128,
+  "color": "#CC80CC",
+  "isotopes": [
+    {
+      "mass_number": 6,
+      "neutrons": 3,
+      "mass_da": 6.015122,
+      "abundance": 0.0759,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.0
+    },
+    {
+      "mass_number": 7,
+      "neutrons": 4,
+      "mass_da": 7.016004,
+      "abundance": 0.9241,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.5
+    }
+  ]
+}

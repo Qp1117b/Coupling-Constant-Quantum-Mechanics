@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ottqapxqcgj2"]
+
+[ext_resource type="Script" uid="uid://cvl5unl4vgxj0" path="res://scripts/ui/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bs6yhmlu3i6f0" path="res://scripts/nodes/molecule_workspace.gd" id="2_workspace"]
+
+[node name="Main" type="Node3D" unique_id=529435996]
+script = ExtResource("1_main")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1131069281]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=751792375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 15)
+fov = 60.0
+
+[node name="MoleculeWorkspace" type="Node3D" parent="." unique_id=1153614918]
+script = ExtResource("2_workspace")
+
+[node name="Atoms" type="Node3D" parent="MoleculeWorkspace" unique_id=1244617725]
+
+[node name="Bonds" type="Node3D" parent="MoleculeWorkspace" unique_id=1663436227]
+
+[node name="Lighting" type="Node3D" parent="." unique_id=749454966]
+
+[node name="KeyLight" type="DirectionalLight3D" parent="Lighting" unique_id=708346722]
+transform = Transform3D(0.866, 0.25, -0.433, 0, 0.866, 0.5, 0.5, -0.433, 0.75, 5, 15, 5)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="FillLight" type="OmniLight3D" parent="Lighting" unique_id=977907090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, -8)
+light_color = Color(0.5, 0.6, 0.8, 1)
+light_energy = 0.8
+omni_range = 40.0
+
+[node name="WorldEnv" type="WorldEnvironment" parent="Lighting" unique_id=73586279]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1024656906]

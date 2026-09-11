@@ -1,0 +1,38 @@
+{
+  "symbol": "V",
+  "name": "钒",
+  "name_en": "Vanadium",
+  "atomic_number": 23,
+  "atomic_mass": 50.9415,
+  "category": "transition_metal",
+  "group": 5,
+  "period": 4,
+  "block": "d",
+  "valence_electrons": 5,
+  "electronegativity": 1.63,
+  "atomic_radius_pm": 171,
+  "covalent_radius_pm": 153,
+  "color": "#A6A6AB",
+  "isotopes": [
+    {
+      "mass_number": 50,
+      "neutrons": 27,
+      "mass_da": 49.947161,
+      "abundance": 0.0025,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 6.0
+    },
+    {
+      "mass_number": 51,
+      "neutrons": 28,
+      "mass_da": 50.943964,
+      "abundance": 0.9975,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 3.5
+    }
+  ]
+}

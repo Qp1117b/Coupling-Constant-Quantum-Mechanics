@@ -1,0 +1,68 @@
+{
+  "symbol": "W",
+  "name": "钨",
+  "name_en": "Tungsten",
+  "atomic_number": 74,
+  "atomic_mass": 183.84,
+  "category": "transition_metal",
+  "group": 6,
+  "period": 6,
+  "block": "d",
+  "valence_electrons": 6,
+  "electronegativity": 2.36,
+  "atomic_radius_pm": 193,
+  "covalent_radius_pm": 162,
+  "color": "#2232D0",
+  "isotopes": [
+    {
+      "mass_number": 180,
+      "neutrons": 106,
+      "mass_da": 179.946704,
+      "abundance": 0.0012,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 182,
+      "neutrons": 108,
+      "mass_da": 181.948204,
+      "abundance": 0.265,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 183,
+      "neutrons": 109,
+      "mass_da": 182.950223,
+      "abundance": 0.1431,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.5
+    },
+    {
+      "mass_number": 184,
+      "neutrons": 110,
+      "mass_da": 183.950932,
+      "abundance": 0.3064,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    },
+    {
+      "mass_number": 186,
+      "neutrons": 112,
+      "mass_da": 185.954364,
+      "abundance": 0.2843,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.0
+    }
+  ]
+}

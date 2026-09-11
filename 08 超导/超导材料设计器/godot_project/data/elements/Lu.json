@@ -1,0 +1,38 @@
+{
+  "symbol": "Lu",
+  "name": "镥",
+  "name_en": "Lutetium",
+  "atomic_number": 71,
+  "atomic_mass": 174.967,
+  "category": "lanthanide",
+  "group": 3,
+  "period": 6,
+  "block": "f",
+  "valence_electrons": 15,
+  "electronegativity": 1.27,
+  "atomic_radius_pm": 187,
+  "covalent_radius_pm": 187,
+  "color": "#00C0C0",
+  "isotopes": [
+    {
+      "mass_number": 175,
+      "neutrons": 104,
+      "mass_da": 174.940771,
+      "abundance": 0.97401,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 3.5
+    },
+    {
+      "mass_number": 176,
+      "neutrons": 105,
+      "mass_da": 175.942682,
+      "abundance": 0.02599,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 7.0
+    }
+  ]
+}

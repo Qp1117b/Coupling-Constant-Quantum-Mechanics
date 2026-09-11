@@ -1,0 +1,38 @@
+{
+  "symbol": "N",
+  "name": "氮",
+  "name_en": "Nitrogen",
+  "atomic_number": 7,
+  "atomic_mass": 14.0067,
+  "category": "nonmetal",
+  "group": 15,
+  "period": 2,
+  "block": "p",
+  "valence_electrons": 5,
+  "electronegativity": 3.04,
+  "atomic_radius_pm": 56,
+  "covalent_radius_pm": 71,
+  "color": "#3050F8",
+  "isotopes": [
+    {
+      "mass_number": 14,
+      "neutrons": 7,
+      "mass_da": 14.003074,
+      "abundance": 0.99636,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 1.0
+    },
+    {
+      "mass_number": 15,
+      "neutrons": 8,
+      "mass_da": 15.000109,
+      "abundance": 0.00364,
+      "is_stable": true,
+      "half_life_s": null,
+      "decay_mode": null,
+      "spin": 0.5
+    }
+  ]
+}
