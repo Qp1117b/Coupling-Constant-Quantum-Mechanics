@@ -2,12 +2,12 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Module.LinearMap.Basic
 
 /-!
-# 再生产算子 (Reproduction Operator)
+# 再生产算符 (Reproduction Operator)
 
 CQM 的第二公理：有限本体通过再生产维持自身存在。
 
 ## 公理
-- 再生产算子 `μ̂` 是线性算子，满足 `μ̂² = μ̂`（幂等性）
+- 再生产算符 `μ̂` 是线性算子，满足 `μ̂² = μ̂`（幂等性）
 - 再生产是投影：将状态投影到"存在"子空间
 
 ## 物理意义
@@ -19,11 +19,11 @@ CQM 的第二公理：有限本体通过再生产维持自身存在。
 - ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380.
 -/
 
-/-- 再生产算子：作用于 Hilbert 空间 H 上的幂等线性算子。
+/-- 再生产算符：作用于 Hilbert 空间 H 上的幂等线性算子。
     `muHat² = muHat` 表示"再生产一次 = 再生产多次"。
     使用 `ℝ` 作为标量域（CQM 中耦合强度为实数值）。 -/
 class ReproductionOperator (H : Type*) [AddCommGroup H] [Module ℝ H] where
-  /-- 再生产算子 μ̂ : H → H -/
+  /-- 再生产算符 μ̂ : H → H -/
   muHat : H →ₗ[ℝ] H
   /-- 幂等性：μ̂² = μ̂ -/
   idempotent : ∀ x, muHat (muHat x) = muHat x
@@ -57,7 +57,7 @@ theorem smul_isReproduced {ψ : H} (h : isReproduced ψ) (c : ℝ) : isReproduce
   dsimp [isReproduced] at h ⊢
   rw [map_smul, h]
 
-/-- 再生产算子的像 = 存在子空间 -/
+/-- 再生产算符的像 = 存在子空间 -/
 theorem image_eq_existenceSubspace : Set.range (muHat (H := H)) = existenceSubspace := by
   ext x
   constructor

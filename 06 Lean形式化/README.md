@@ -30,7 +30,7 @@
 
 ```
 Axioms
-├── A0.1-3: 因果集 + 再生产算子
+├── A0.1-3: 因果集 + 再生产算符
 │ ├── 因果偏序非对称性 (asymm)
 │ ├── Alexandrov 区间有限性 (interval_finite)
 │ ├── 再生产幂等性 (muHat_idempotent)

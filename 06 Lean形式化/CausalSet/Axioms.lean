@@ -15,7 +15,7 @@ import CausalSet.Reproduction
 ### 层级 0：本体论公理（CausalSet.Basic, CausalSet.Reproduction）
 - **A0.1** `CausalSet` — 因果前导 `≺` 是严格偏序 + 局部有限性
 - **A0.2** `CountableCausalSet` — 因果集可数性（Sprinkling 嵌入的必然结果）
-- **A0.3** `ReproductionOperator` — 再生产算子 `μ̂` 是幂等线性算子
+- **A0.3** `ReproductionOperator` — 再生产算符 `μ̂` 是幂等线性算子
 
 ### 层级 1：耦合空间公理（CouplingSpace 库）
 - **A1.1** `CanonicalCommutationRelation` — 耦合空间对易关系 [û, p̂_u] = i
@@ -40,7 +40,7 @@ import CausalSet.Reproduction
 | Alexandrov 区间有限性 `interval_finite` | CausalSet | ✅ |
 | 再生产幂等性 `muHat_idempotent` | CausalSet | ✅ |
 | 存在子空间是线性子空间 | CausalSet | ✅ |
-| 再生产算子的像 = 存在子空间 | CausalSet | ✅ |
+| 再生产算符的像 = 存在子空间 | CausalSet | ✅ |
 | Sprinkling 密度严格为正 | CausalSet | ✅ |
 | A₄ 对角元全为 2 | CartanAlgebra | ✅ |
 | 4-单纯形 Euler 示性数为 0 | CartanAlgebra | ✅ |

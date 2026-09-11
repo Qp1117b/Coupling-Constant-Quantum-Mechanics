@@ -94,7 +94,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 | 文件 | 功能 |
 |:---|:---|
-| `superconductors_deduplicated.csv` | 超导数据库（224条记录，含Tc/结构/Debye温度等） |
+| `superconductors_deduplicated.csv` | 超导数据库（226条记录，含Tc/结构/Debye温度等） |
 
 
 ### 09 精细引力（FG）
@@ -102,7 +102,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 | 文档 | 内容 |
 |:---|:---|
 | [FG 核心理论](09 精细引力（FG）/FG_核心理论.md) | FG核心理论：SU(5)重组实现⇒$A_4$嘉当矩阵→4紧致本征群$\{SU(2)_k\}_{k=1}^{4}$（全紧致）→4耦合常数，$\alpha^{-1}$电磁群耦合常数，是GL(5)整体的反映 |
-| [FG 纤维丛理论](09 精细引力（FG）/FG_纤维丛理论.md) | FG纤维丛数学结构：SU(5)重组实现链条、双空间同步算符、GL(5)单层表示。§1.5纤维丛双框架（运动学容器vs动力学约束）。§2.0主丛结构关系$F=G\Rightarrow R=G\Rightarrow\hat{H}$（$\Rightarrow$表示重组实现，描述规范相变物理，类薛定谔方程，四层结构）。§9纤维丛与CFT严格对应（截面=primary、联络=Virasoro、曲率=对易子、和乐=monodromy、同步算符=mode算符、Dirac约束=共形自举）；§9.10局域分析足够性原理 |
+| [FG 纤维丛理论](09 精细引力（FG）/FG_纤维丛理论.md) | FG纤维丛数学结构：SU(5)重组实现链条、双空间同步算符、GL(5)单层表示。§1.5纤维丛双框架（运动学容器与动力学重组相互关联）。§2.0主丛结构关系$F=G\Rightarrow R=G\Rightarrow\hat{H}$（$\Rightarrow$表示重组实现，描述规范相变物理，类薛定谔方程，四层结构）。§9纤维丛与CFT严格对应（截面=primary、联络=Virasoro、曲率=对易子、和乐=monodromy、同步算符=mode算符、Dirac约束=共形自举）；§9.9局域分析足够性原理 |
 
 
 ### 10 发现
@@ -221,7 +221,6 @@ CQMFormal/
 │ ├── CQM_推导_完整方程组.md
 │ ├── CQM_推导_推导链.md
 │ ├── CQM_推导_经典路径.md
-
 │ ├── CQM_数学_Adele纲领.md
 │ ├── CQM_数学_SU5群论.md
 │ └── CQM_数学_嘉当结构.md
@@ -230,17 +229,20 @@ CQMFormal/
 │ ├── CQM_超导_专题与扩展.md ← 精简移出的材料/应用、推导/数值细节与进展/状态内容
 │ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理
 │ ├── CQM_超导_统一方法论.md ← 四层FG剖分方法论与统一计算链
-│ ├── cqm_analysis/ ← 计算验证脚本与数据
-│ │ └── superconductors_deduplicated.csv ← 超导数据库（224条记录）
-│ ├── cqm_framework/ ← 纯CQM实现
-│ │ └── atom_db.py ← 共享原子数据库（118个元素）
-│ └── 超导材料设计器/ ← Godot 3D材料设计软件（8个设计文档）
+│ ├── cqm_analysis/ ← 计算数据与结果
+│ │ ├── superconductors_deduplicated.csv ← 超导数据库（226条记录）
+│ │ ├── element_fg_table.json ← 元素FG表
+│ │ └── unified_tc_results.json ← 统一Tc计算结果
+│ └── cqm_framework/ ← 纯CQM实现
+│   ├── atom_db.py ← 共享原子数据库（118个元素）
+│   └── crystal_db.py ← 晶体结构数据库
 ├── 09 精细引力（FG）/ ← 精细引力纤维丛理论
 │ ├── FG_核心理论.md
 │ └── FG_纤维丛理论.md
 ├── 10 发现/ ← 群论不变量发现
 │ ├── Wyler常数_A4群论分解.md
-│ └── Wyler常数与CQM框架关系.md
+│ ├── Wyler常数与CQM框架关系.md
+│ └── Wyler常数_数值验证.py
 ├── 11 前沿研究/ ← 前沿交叉文献调研与研究论文
 │ ├── FG_贝里曲率与Regge曲率的关联_研究论文.md
 │ └── CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md

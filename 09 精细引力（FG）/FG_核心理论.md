@@ -309,7 +309,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 
 | 文献 | 年份 | arXiv | 贡献 |
 |:---|:---|:---|:---|
-| Hilbert-Pólya | 1914+ | — | 自伴算符H，本征值=黎曼零点 |
+| Hilbert–Pólya | 1914+ | — | 自伴算符H，本征值=黎曼零点 |
 | Montgomery | 1973 | — | 对关联猜想=GUE |
 | Bost-Connes | 1995 | arXiv:1012.4665 | Z(β)=ζ(β)量子统计系统 |
 | Berry-Keating | 1999 | arXiv:0712.0705 | H=xp算符，semiclassical |

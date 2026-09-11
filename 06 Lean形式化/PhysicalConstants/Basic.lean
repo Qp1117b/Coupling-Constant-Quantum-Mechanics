@@ -381,7 +381,7 @@ theorem hierarchyFactor_pos : hierarchyFactor > 0 := by
 /-! CQM 物理常数的完整推导链（声明）：
 
     Axioms
-    ├── A0.1-3: 因果集 + 再生产算子
+    ├── A0.1-3: 因果集 + 再生产算符
     │   └── Sprinkling → 耦合空间 (u, τ)
     ├── A1.1: 正则对易关系 [û, p̂_u] = i
     │   └── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ C/2

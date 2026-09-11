@@ -415,7 +415,7 @@ $$P(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 
 | 文献 | 贡献 |
 |---|---|
-| Hilbert-Pólya (1914+) | 自伴算符H，本征值=黎曼零点虚部 |
+| Hilbert–Pólya (1914+) | 自伴算符H，本征值=黎曼零点虚部 |
 | Berry-Keating (1999) [arXiv:0712.0705] | H=xp算符，semiclassical实现 |
 | Connes (2019) [arXiv:1910.14368] | 缩放哈密顿量，谱实现，紧化算符 |
 | Montgomery (1973) + Odlyzko | GUE统计验证 |

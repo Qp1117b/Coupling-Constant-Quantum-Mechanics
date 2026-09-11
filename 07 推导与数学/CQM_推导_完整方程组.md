@@ -218,7 +218,7 @@ $$A_{ij} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 
 
 Robin/Neumann 条件 $\partial_u\phi(0)=0$ 筛选 $s = 1/2 + i\gamma_n$ 满足 $\xi(s) = \xi(1-s)$。
 
-**状态**：S1 定理（自伴已证）；S2 猜想（Hilbert-Pólya）；谱间隙 双路径（Sturm-Liouville + 嘉当矩阵 Friedrichs）
+**状态**：S1 定理（自伴已证）；S2 猜想（Hilbert–Pólya）；谱间隙 双路径（Sturm-Liouville + 嘉当矩阵 Friedrichs）
 
 ---
 
@@ -321,7 +321,7 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 | 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$ | 严格代数 | — |
 | 5 | 全局幺正 | $\hat{H}_{\text{tot}}$ 自伴 | Stone 定理 | — |
 | 6 | 传输方程 | T1–T2 | 测度补偿 | — |
-| 7 | 二阶谱与间隙 | S1–S2, $E_0=c^2/4$ | 猜想 | Hilbert-Pólya |
+| 7 | 二阶谱与间隙 | S1–S2, $E_0=c^2/4$ | 猜想 | Hilbert–Pólya |
 | 8 | 边界匹配 | $\epsilon_p\to0$ | 渐近严格 | — |
 | 9 | $p$ 进扇区 | P1–P2, A2 | 严格+假设 | "仅 2,3,5" |
 | 10 | 物理常数 | Q1–Q5 | 数值自洽 | 缺口 1,6,7,N-2 |
