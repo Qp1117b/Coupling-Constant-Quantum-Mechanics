@@ -113,7 +113,7 @@ $$\boxed{(M_\ell,\; P(M_\ell, G_\ell),\; \mathcal{A}_\ell,\; \hat{\mathcal{S}}_\
 一个联络 $\mathcal{A}_\ell$ 生成两种曲率（与 §5.1 主丛要素表一致，现在层级化）：
 
 1. **底空间曲率**：层级 Regge 角亏 $\delta_v^{(\ell)} = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$，进入该层级的不确定性关系与谱调制；
-2. **伴丛曲率**：$F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell$，进入该层级的运动方程与对称性约束。
+2. **伴丛曲率**：$F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell$，进入该层级的运动方程与对称性条件。
 
 **层级角亏传递**：上层内禀角亏是下层角亏的组成部分：
 
@@ -205,7 +205,7 @@ $$\hat{\mathcal{S}}_{\text{el}} = V_0 + L_{\text{orbital}}, \qquad L_{\text{orbi
 | 要素 | 构造 |
 |:---|:---|
 | 底空间 $M_{\text{mol}}$ | 分子键网络：以每个原子为中心，其成键方向（+孤对电子方向）在单位球面上的剖分 |
-| 主丛 $P(M_{\text{mol}}, G_{\text{mol}})$ | $G_{\text{mol}}$：分子嘉当矩阵 $\mathcal{C}_{\text{molecule}} = \bigoplus_k \mathcal{C}_{\text{el}}(k) + \sum_{i<j} T_{ij}$ 的内禀 Weyl 矩阵嵌入给出的结构群，约束于分子点群 $G_{\text{point}}$ |
+| 主丛 $P(M_{\text{mol}}, G_{\text{mol}})$ | $G_{\text{mol}}$：分子嘉当矩阵 $\mathcal{C}_{\text{molecule}} = \bigoplus_k \mathcal{C}_{\text{el}}(k) + \sum_{i<j} T_{ij}$ 的内禀 Weyl 矩阵嵌入给出的结构群，限定于分子点群 $G_{\text{point}}$ |
 | 联络 $\mathcal{A}_{\text{mol}}$ | 由键方向球面剖分的 Regge 几何分步生成：层级角亏 $\delta_v^{\text{mol}}$ + 伴丛曲率 $F_{\text{mol}}$ |
 | 同步算符 $\hat{\mathcal{S}}_{\text{mol}}$ | $\hat{\mathcal{S}}_{\text{mol}} = V_0 + L_{\text{mol}}$（下文构造） |
 
@@ -221,7 +221,7 @@ $$\boxed{L_{\text{mol}} = \sum_{\Gamma \in \widehat{G}_{\text{point}}} \lambda_\
 
 $$\lambda_\Gamma^{\text{mol}} = \mu_\Gamma - \mu_{\min}, \qquad \mu_\Gamma = \frac{1}{|\text{扇区}_\Gamma|}\sum_{\lambda \in \text{扇区}_\Gamma} \lambda \quad (\lambda \in \mathrm{Spec}(\mathcal{C}_{\text{molecule}}))$$
 
-**构造的谱传递本质**：$\lambda_\Gamma^{\text{mol}}$ 的输入是 $\mathcal{C}_{\text{molecule}}$，而 $\mathcal{C}_{\text{molecule}}$ 的块 $\mathcal{C}_{\text{el}}(k)$ 的谱已由**元素 FG 同步算符的本征值结构**（Madelung 排布决定价壳层、价壳层决定成键轨道对称性）约束。元素谱 → 分子嘉当矩阵 → 分子结构项——层级谱传递在构造内部实现。
+**构造的谱传递本质**：$\lambda_\Gamma^{\text{mol}}$ 的输入是 $\mathcal{C}_{\text{molecule}}$，而 $\mathcal{C}_{\text{molecule}}$ 的块 $\mathcal{C}_{\text{el}}(k)$ 的谱已由**元素 FG 同步算符的本征值结构**（Madelung 排布决定价壳层、价壳层决定成键轨道对称性）限定。元素谱 → 分子嘉当矩阵 → 分子结构项——层级谱传递在构造内部实现。
 
 ### 6.3 分子轨道谱（序号语境）
 
@@ -293,7 +293,7 @@ $$\boxed{\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩�
 
 具体传递边：
 
-1. **电子 FG → 元素 FG**：氢原子谱结构（$n = N(\gamma_n)$，$l$ 分裂）→ 电子轨道量子数 → 元素嘉当矩阵的壳层约束 → $\hat{\mathcal{S}}_{\text{el}}$ 谱（Madelung 排布）。
+1. **电子 FG → 元素 FG**：氢原子谱结构（$n = N(\gamma_n)$，$l$ 分裂）→ 电子轨道量子数 → 元素嘉当矩阵的壳层条件 → $\hat{\mathcal{S}}_{\text{el}}$ 谱（Madelung 排布）。
 2. **元素 FG → 分子 FG**：Madelung 排布 → 价壳层结构 → $\mathcal{C}_{\text{el}}(k)$ 块的成键对称性 + 跨原子耦合 $T_{ij}$ → $\mathcal{C}_{\text{molecule}}$ → $\hat{\mathcal{S}}_{\text{mol}}$ 谱（分子轨道 + 内禀角亏）。
 3. **分子 FG → 晶胞 FG**：分子轨道谱（键型/键强）+ 内禀角亏 → 晶胞几何（链 A 键长键角来源）+ $\mathcal{C}_{\text{unit\_cell}}$（链 B）→ $\hat{\mathcal{S}}_{\text{super}}$ → $\lambda_n(T)$ → $T_c$。
 
@@ -325,7 +325,7 @@ $$\boxed{
 
 | 环节 | 输入来源 | 第一性状态 |
 |:---|:---|:---|
-| ①–② | 质子、中子 $D(\delta)$、$\delta(Z,N)$ 谱约束 | （周期表） |
+| ①–② | 质子、中子 $D(\delta)$、$\delta(Z,N)$ 谱条件 | （周期表） |
 | ③ | 价壳层（②谱输出）+ 键长截断 $d_{\text{cut}}$、耦合强度 $t_0$、衰减 $\lambda$ | $t_0, \lambda$ 当前为拟合参数，需从元素谱导出（开放） |
 | ④–⑤ | $\mathcal{C}_{\text{mol}}$（③输出） | 本文构造方案，待严格化（§6.5） |
 | ⑥–⑦ | 分子谱输出（⑤）+ 缺陷统计 | 缺陷部分已有；内禀部分被⑤替代外部 DFT |
