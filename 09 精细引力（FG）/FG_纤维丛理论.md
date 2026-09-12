@@ -165,17 +165,17 @@ $$\boxed{(M_\ell,\; P(M_\ell, G_\ell),\; \mathcal{A}_\ell,\; \hat{\mathcal{S}}_\
 | 联络 $\mathcal{A}_\ell$ | 由层级Regge晶胞分步生成 | 平行移动规则 |
 | 同步算符 $\hat{\mathcal{S}}_\ell$ | 紧化算符在层级截面空间的实现 | 谱算符，给出群谱 |
 
-### 2.0 主丛结构关系：$F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}$
+### 2.0 主丛结构关系：$F = G \Rightarrow R = G \Rightarrow \hat{H}$
 
-**FG当前用于描述规范相变物理**。核心结构：CQM FG的主丛是从结构群到实现群（等价地到群算符）的重组实现，群算符是实现群在表示空间上的算符表示。箭头 $\xRightarrow{}$ 表示**重组实现**（$G$ 经重组实现为 $R$，等价地重组为 $\hat{H}$）。
+**FG当前用于描述规范相变物理**。核心结构：CQM FG的主丛是从结构群到实现群（等价地到群算符）的重组实现，群算符是实现群在表示空间上的算符表示。箭头 $\Rightarrow$ 表示**重组实现**（$G$ 经重组实现为 $R$，等价地重组为 $\hat{H}$）。
 
-$$\boxed{F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}}$$
+$$\boxed{F = G \Rightarrow R = G \Rightarrow \hat{H}}$$
 
 其中：
 - $G$：**主丛结构群**（母群，如 $SU(5)$）
 - $R$：**实现群**（本征群，重组产物，公理1+2保证紧致性）
 - $\hat{H}$：**群算符**（$R$ 在表示空间上的算符表示，故 $R$ 与 $\hat{H}$ 在谱的意义下等价）
-- $F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}$：**主丛**（结构群 $G$ 经重组实现为实现群 $R$，等价地重组为群算符 $\hat{H}$）
+- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：**主丛**（结构群 $G$ 经重组实现为实现群 $R$，等价地重组为群算符 $\hat{H}$）
 
 **子群重组**：在规范相变中，$G$ 本身不变，内部以子群重组——$R$ 和 $\hat{H}$ 的谱是 $G$ 内部子群的谱（$\text{Spec}(R), \text{Spec}(\hat{H}) \subseteq \text{Spec}(G)$），但 $G$ 本身不变为子群。规范相变是 $G$ 的内部结构通过子群重新组织，不是 $G$ 重组为别的群。
 
@@ -190,19 +190,19 @@ $$\boxed{F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}}$$
 
 **四层结构**：
 
-$$\underbrace{G,\; R}_{\text{1. 代数层}} \;\longrightarrow\; \underbrace{\hat{H}|\Psi\rangle = s|\Psi\rangle}_{\text{2. 算符层（类薛定谔）}} \;\longrightarrow\; \underbrace{F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}}_{\text{3. 丛层（主丛）}} \;\hookrightarrow\; \underbrace{\text{运动学纤维丛}}_{\text{4. 运动学层}}$$
+$$\underbrace{G,\; R}_{\text{1. 代数层}} \;\longrightarrow\; \underbrace{\hat{H}|\Psi\rangle = s|\Psi\rangle}_{\text{2. 算符层（类薛定谔）}} \;\longrightarrow\; \underbrace{F = G \Rightarrow R = G \Rightarrow \hat{H}}_{\text{3. 丛层（主丛）}} \;\hookrightarrow\; \underbrace{\text{运动学纤维丛}}_{\text{4. 运动学层}}$$
 
 1. **代数层**：$G$（母群），$R$（实现群/本征群）
 2. **算符层**：$\hat{H}$（群算符，$R$ 的算符表示）→ 类薛定谔方程 $\hat{H}|\Psi\rangle = s|\Psi\rangle$
-3. **丛层**：$F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}$（主丛，结构群 $G$ 经重组实现为实现群 $R$ 或群算符 $\hat{H}$）
+3. **丛层**：$F = G \Rightarrow R = G \Rightarrow \hat{H}$（主丛，结构群 $G$ 经重组实现为实现群 $R$ 或群算符 $\hat{H}$）
 4. **运动学层**：$F$ 作为主丛嵌入运动学纤维丛（§1.5.2容器框架），参与动力学
 
 **物理意义**：
 - $R = \hat{H}$：实现群 = 群算符（谱等价）——群论结构确定算符谱，算符谱反推群论结构
-- $F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}$：主丛是结构群到实现群（等价地到群算符）的重组实现，物理态空间 $= \text{Im}(G \xRightarrow{} R)$
+- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：主丛是结构群到实现群（等价地到群算符）的重组实现，物理态空间 $= \text{Im}(G \Rightarrow R)$
 - $F \hookrightarrow$ 运动学纤维丛：重组框架（动力学）的产物嵌入容器框架（运动学），实现§1.5.5的转化关系
 
-**CQM纤维丛理论描述的是规范相变物理**：$F = G \xRightarrow{} R = G \xRightarrow{} \hat{H}$ 的本质是规范相变。大统一群 $GL(5)$（约化李群，非紧致）本身是重组实现的，不是破缺的。**就物理相变而言：破缺的必须是非规范对称群（或更一般地，非规范对称性），但非规范对称群不一定破缺；重组实现的既可以是规范对称群，也可以是非规范对称群；而规范对称群相变必然是重组，而非破缺**。$GL(5,\mathbb{R})$ 的时空对称性若纳入规范群则必须破缺；紧致部分（如 $SU(5) \subset GL(5,\mathbb{C})$）的规范相变是重组实现，没有发生破缺。母群 $G$（高对称相/自由相）经重组实现为 $R$（低对称相/有序相），群算符 $\hat{H}$ 是重组后在表示空间中的算符残余。纤维丛刻画的是规范相变物理：主丛结构群 $G$ 是相变前的对称性，纤维 $R$ 是相变后的有序态空间，联络编码相变的局域触发机制，曲率表征相变的拓扑障碍（示性类、单极子）。§1.5.3的等价关系 $(p\cdot h, f) \sim (p, h\cdot f)$ 是规范相变的数学化——等价关系折叠高对称态空间为低对称相的轨道空间。
+**CQM纤维丛理论描述的是规范相变物理**：$F = G \Rightarrow R = G \Rightarrow \hat{H}$ 的本质是规范相变。大统一群 $GL(5)$（约化李群，非紧致）本身是重组实现的，不是破缺的。**就物理相变而言：破缺的必须是非规范对称群（或更一般地，非规范对称性），但非规范对称群不一定破缺；重组实现的既可以是规范对称群，也可以是非规范对称群；而规范对称群相变必然是重组，而非破缺**。$GL(5,\mathbb{R})$ 的时空对称性若纳入规范群则必须破缺；紧致部分（如 $SU(5) \subset GL(5,\mathbb{C})$）的规范相变是重组实现，没有发生破缺。母群 $G$（高对称相/自由相）经重组实现为 $R$（低对称相/有序相），群算符 $\hat{H}$ 是重组后在表示空间中的算符残余。纤维丛刻画的是规范相变物理：主丛结构群 $G$ 是相变前的对称性，纤维 $R$ 是相变后的有序态空间，联络编码相变的局域触发机制，曲率表征相变的拓扑障碍（示性类、单极子）。§1.5.3的等价关系 $(p\cdot h, f) \sim (p, h\cdot f)$ 是规范相变的数学化——等价关系折叠高对称态空间为低对称相的轨道空间。
 
 > **文献标注（规范对称性不破缺的外部依据）**：局域规范对称性不能自发破缺——Elitzur 定理（Elitzur 1975, *Phys. Rev. D* 12, 3978）；Higgs 相与禁闭区之间无热力学奇异线，规范对称性不作为相变序参量（Fradkin–Shenker 1979, *Phys. Rev. D* 19, 3682）。CQM 的重组实现立场与此定理相容：规范对称群相变是重组，而非破缺。
 
@@ -301,7 +301,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 **底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
 
-**GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经重组实现 $\xRightarrow{} U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
+**GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
 推导链：
 
@@ -702,7 +702,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 $$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。自伴性 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
-- **FG纤维丛层**：SU(5)经重组实现，$A_4$ 根系 $\to U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
+- **FG纤维丛层**：SU(5)经重组实现，$A_4$ 根系 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi C}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
 - **FG核心层**：取GL(5)固定层级，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
 **与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
