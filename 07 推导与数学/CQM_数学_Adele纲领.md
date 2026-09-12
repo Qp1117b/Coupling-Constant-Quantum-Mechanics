@@ -79,7 +79,6 @@ $$\hat{\mathcal{D}} = -i\,c\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\
 **启发性条件 χ（再生产幂等性）**：
 $$\boxed{\chi(u, p_u) = p_u - \frac{Ce^u - 1}{2} = 0}$$
 
-
 **原理 IV（能标-固有时对易子）**：
 $$[\hat{\tau}, \hat{u}] = iC$$
 

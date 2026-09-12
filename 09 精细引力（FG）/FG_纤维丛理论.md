@@ -214,7 +214,6 @@ $$\underbrace{G,\; R}_{\text{1. 代数层}} \;\longrightarrow\; \underbrace{\hat
 | 分子FG | 原子分布 | 分子点群 | 原子间联络（化学键） |
 | 晶胞FG | 原子/分子分布 | 空间群 | 晶胞中联络 |
 
-
 ### 2.2 层级嵌套
 
 $$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
@@ -453,7 +452,6 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | C. 动力学矩阵 | 联络离散化 | $D_{ij} = K_{ij}/\sqrt{m_i m_j}$ |
 | D. 声子谱 | 纤维上量子谐振子 | $\omega_q = \sqrt{\text{eig}(D)}$ |
 | E. 角亏涨落 | 曲率零温量子涨落 | $\Delta\delta_0^2 = \sum_q \|\partial\delta_v/\partial u_q\|^2 \cdot \hbar/(2\omega_q)$ |
-
 
 每步都是CQM方程严格导出，无经验拟合参数。
 
