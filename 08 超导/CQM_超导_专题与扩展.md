@@ -477,7 +477,7 @@ $$\boxed{\text{壳层结构 } \{2, 6, 10, 14\} \text{ 对所有 } |\delta| < \sq
 
 #### $\delta(Z,N)$ 从 $SU(5)$ 重组实现动力学导出
 
-$SU(5) \to U(1) \times SU(2) \times SU(3)$ 重组实现产生前中子缺陷 $D(\delta)$。设 $\varepsilon = 1 - \delta$（$|\varepsilon| \ll 1$），自由中子 $\varepsilon_0 = 0.0012$。
+$SU(5) \Rightarrow U(1) \times SU(2) \times SU(3)$ 重组实现产生前中子缺陷 $D(\delta)$。设 $\varepsilon = 1 - \delta$（$|\varepsilon| \ll 1$），自由中子 $\varepsilon_0 = 0.0012$。
 
 **中子比例模型**（满足所有物理约束的最简形式）：
 
@@ -1095,7 +1095,7 @@ $$\cosh\left(\frac{1}{2}\ln\frac{m_i}{m_j}\right) = \frac{m_i + m_j}{2\sqrt{m_i 
 
 **推导链**（从p进大小耦合层级到s=1/2的严格第一性推导）：
 
-**步骤1**：p进大小赋值重组实现规范群 $G \to H$，费米子通过p进耦合层级获得质量：
+**步骤1**：p进大小赋值重组实现规范群 $G \Rightarrow H$，费米子通过p进耦合层级获得质量：
 $$m_i \propto p_i^{-v_{p_i}(x)}, \quad v_{p_i}(x) = \text{p进赋值}$$
 
 **步骤2**：Yukawa耦合进入Weyl群根向量：$\alpha_i \to \alpha_i \cdot y_i$，嘉当矩阵变形：
