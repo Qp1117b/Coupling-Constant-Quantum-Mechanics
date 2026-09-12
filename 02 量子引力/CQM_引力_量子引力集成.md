@@ -286,7 +286,7 @@ $$\left(I + \frac{i c A_4^{(q)}}{2a}\right)\psi^{n+1} = \left(I - \frac{i c A_4^
 
 ### 10.2 经典引力的涌现链
 
-$$\text{叠加态因果结构} \xrightarrow{\text{退相干}} \text{因果序结晶} \xrightarrow{} \text{交换几何涌现} \xrightarrow{} \text{度规 } g_{\mu\nu} \text{ 定义} \xrightarrow{} \text{广义相对论}$$
+$$\text{叠加态因果结构} \xrightarrow{\text{退相干}} \text{因果序结晶} \rightarrow \text{交换几何涌现} \rightarrow \text{度规 } g_{\mu\nu} \text{ 定义} \rightarrow \text{广义相对论}$$
 
 ### 10.3 传输方程的退化
 

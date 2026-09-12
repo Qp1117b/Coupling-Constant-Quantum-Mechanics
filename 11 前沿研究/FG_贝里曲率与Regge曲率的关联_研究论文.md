@@ -273,7 +273,7 @@ $\delta_v$ 提供角度（底空间几何数据），$\hat{T}_\ell$ 提供生成
 
 由此得到三层本体结构：
 
-$$\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体）}} \;\xrightarrow{\text{几何度量}}\; \underbrace{\delta_v}_{\text{度量形式}} \;\xrightarrow{\text{生成}}\; \underbrace{\mathcal{A}_{\text{FG}} \to F_\ell}_{\text{响应形式（贝里型）}} \;\xrightarrow{}\; \underbrace{v_\tau,\ \Delta u\cdot\Delta\delta_v,\ \text{声子谱},\ T_c}_{\text{表现}}$$
+$$\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体）}} \;\xrightarrow{\text{几何度量}}\; \underbrace{\delta_v}_{\text{度量形式}} \;\xrightarrow{\text{生成}}\; \underbrace{\mathcal{A}_{\text{FG}} \to F_\ell}_{\text{响应形式（贝里型）}} \;\rightarrow\; \underbrace{v_\tau,\ \Delta u\cdot\Delta\delta_v,\ \text{声子谱},\ T_c}_{\text{表现}}$$
 
 - **承担者（本体）**：物质自组织的因果结构——"源即底空间自身的结构"。固有时流速的承担者正是它：`CouplingSpace.lean` 的原话是"因果限制越强（$\delta$ 越大）固有时被压扁越甚，$v_\tau\to 0$（**与黑洞冻结一致**）"——压缩固有时的承担者是因果约束结构本身，$\delta_v$ 只是其几何度量，$v_\tau=\sqrt{1-\beta\delta_v}$ 是从度量到表现的定律。黑洞冻结一致性恰好佐证承担者是因果结构而非其几何描述。
 - **度量形式**：Regge 角亏 $\delta_v$——本体的几何映射（"物质晶胞是本体，Regge 晶胞是其几何映射"），同时是**发生学入口**：联络 $\mathcal{A}_{\text{FG}}$ 由 Regge 曲率生成（§3.3 双曲率结构）。Regge 曲率是"表现"（本体的几何表现）与"入口"（响应的生成源）的双重角色，而不是存在论终点。

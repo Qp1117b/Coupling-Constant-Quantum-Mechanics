@@ -506,7 +506,7 @@ $$\boxed{\langle\phi(r)\phi(0)\rangle \sim r^{-2h}}$$
 
 **元素FG——壳层模式的扩大**：
 
-$$1s\text{触发}(n=1,l=0) \xrightarrow{\text{s模式扩大}} 2s,3s,4s,\ldots \xrightarrow{2p\text{触发}} p\text{模式扩大} \xrightarrow{} d,f$$
+$$1s\text{触发}(n=1,l=0) \xrightarrow{\text{s模式扩大}} 2s,3s,4s,\ldots \xrightarrow{2p\text{触发}} p\text{模式扩大} \rightarrow d,f$$
 
 周期表 = 态扩大的谱：s,p,d,f是四种基本态模式，各自随 $n$ 扩大。118封顶 = $A_4$锁定4种模式，无更多可扩大。
 
