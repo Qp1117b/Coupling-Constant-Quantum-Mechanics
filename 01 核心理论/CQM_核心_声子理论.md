@@ -126,7 +126,7 @@ $$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$$
 
 $$\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(N_k + \frac{1}{2}\right)$$
 
-声子占据数 $N_k$ 由同步方程的约束方程锁定（§4.2），不再是自由参数。
+声子占据数 $N_k$ 由同步方程的等价关系锁定（§4.2），不再是自由参数。
 
 ## 4. 声子是同步的前提
 
@@ -146,11 +146,11 @@ $$\hat{\mathcal{S}}_k\Psi_k = n_k\Psi_k$$
 
 ### 4.2 声子占据数锁定
 
-约束方程（同步方程 + 曲率涨落代入）：
+等价关系（同步方程 + 曲率涨落代入）：
 
 $$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi C \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}$$
 
-此式是Bohr-Sommerfeld量子化条件的体现：紧化U(1)的周期性边界条件与FG因果约束联立，选出离散的声子占据数。**声子占据数由同步方程锁定**，不再是自由参数。
+此式是Bohr-Sommerfeld量子化条件的体现：紧化U(1)的周期性边界条件与FG因果条件联立，选出离散的声子占据数。**声子占据数由同步方程锁定**，不再是自由参数。
 
 ### 4.3 同步的声子链条
 
@@ -429,7 +429,7 @@ $$\boxed{\text{声子} = \begin{cases} \text{振荡的量子} & \text{（位置-
 
 声子是CQM全推导链的起点：
 
-$$\underbrace{[\hat{X},\hat{P}]=i\hbar \to \text{声子}}_{\text{振荡的量子}} \to \underbrace{\hat{\delta}_v^{(1)}}_{\text{曲率涨落}} \to \underbrace{\hat{\mathcal{S}}\Psi = n\Psi}_{\text{同步方程}} \to \underbrace{\{G_k\}}_{\text{本征群}} \to \underbrace{\text{CFT/OPE}}_{\text{代数约束}} \to \underbrace{\text{周期表}}_{\text{物理结果}}$$
+$$\underbrace{[\hat{X},\hat{P}]=i\hbar \to \text{声子}}_{\text{振荡的量子}} \to \underbrace{\hat{\delta}_v^{(1)}}_{\text{曲率涨落}} \to \underbrace{\hat{\mathcal{S}}\Psi = n\Psi}_{\text{同步方程}} \to \underbrace{\{G_k\}}_{\text{本征群}} \to \underbrace{\text{CFT/OPE}}_{\text{代数条件}} \to \underbrace{\text{周期表}}_{\text{物理结果}}$$
 
 没有声子就没有这条推导链。声子是振荡的量子，振荡产生曲率涨落，曲率涨落进入同步方程，同步方程给出本征群，本征群通过CFT给出周期表。
 

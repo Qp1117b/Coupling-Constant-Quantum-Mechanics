@@ -248,7 +248,7 @@ $$D^{\alpha_p}f(x) = \frac{1}{\Gamma_p(-\alpha_p)}\int_{\mathbb{Q}_p}\frac{f(x)-
 
 $$D^{\alpha_p}\psi_{k;j,a} = p^{\alpha_p j}\psi_{k;j,a} \tag{P2}$$
 
-### 9.2 Adele 约束
+### 9.2 Adele 条件
 
 $$\prod_{p\in\{2,3,5\}}\mathbb{Z}_p = \frac{1}{30} \tag{A2}$$
 

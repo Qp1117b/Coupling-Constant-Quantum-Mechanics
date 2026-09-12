@@ -111,7 +111,7 @@ $$\boxed{\mathcal{O}_3(\theta) = \cos(4\theta)}$$
 
 sin(4θ) 在 z=0 处为零（Dirichlet）且在 z=π/2 处为零——这会将一个 DN 态映射到 DD 态（奇→奇），但 sin 函数的奇宇称意味着它反转 z → −z 的符号，而 24 的 DD 条件是对称的。cos(4θ) 在两端都不必须为零（对于 ND→ND 是可以的），但这里 24 是 DD...
 
-**宇称论证**：算符 $\mathcal{O}_3(\theta)$ 出现在重叠积分 $\rho_3 = |\int \psi_3^*(\theta) \mathcal{O}_3(\theta) \psi_1(\theta) d\theta|^2$ 中。波函数 $\psi_1$ 和 $\psi_3$ 本身已满足各自边界条件，被积函数 $\psi_3^* \mathcal{O}_3 \psi_1$ 在边界自动正则（$z=0$ 处 $\psi_1=0$，$z=\pi/2$ 处 $\psi_3=0$），因此 $\mathcal{O}_3$ 在边界的行为不约束其形式选择。
+**宇称论证**：算符 $\mathcal{O}_3(\theta)$ 出现在重叠积分 $\rho_3 = |\int \psi_3^*(\theta) \mathcal{O}_3(\theta) \psi_1(\theta) d\theta|^2$ 中。波函数 $\psi_1$ 和 $\psi_3$ 本身已满足各自边界条件，被积函数 $\psi_3^* \mathcal{O}_3 \psi_1$ 在边界自动正则（$z=0$ 处 $\psi_1=0$，$z=\pi/2$ 处 $\psi_3=0$），因此 $\mathcal{O}_3$ 在边界的行为不限定其形式选择。
 
 在 2D Cartan 平面上，$\theta \to -\theta$ 的宇称变换下，$\bar{5}$ 与 $24$ 表示均变换为自身（乘以因子 $\pm 1$）。两个相同宇称表示之间的跃迁算符必须是偶宇称：
 - cos(4θ)：偶宇称
@@ -253,7 +253,7 @@ $$\delta_{\text{CQM}} \approx -\frac{C}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
 
 $$\delta_{\text{CQM}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}, \quad C_{\text{eff}} = C\left(1 + \frac{1}{N_{\text{cycle}}}\right)$$
 
-其中 N_cycle = 30 来自 adelic 约束 ∏_p Z_p = 1/(2·3·5)。
+其中 N_cycle = 30 来自 adelic 条件 ∏_p Z_p = 1/(2·3·5)。
 
 数值：−C_eff·ln(M_GUT/M_Z)/(2π) = −0.1130，与 δ_CQM = −0.1133 的残差仅 **0.25%**。
 

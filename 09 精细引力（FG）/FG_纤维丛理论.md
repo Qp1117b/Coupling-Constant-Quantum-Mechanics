@@ -181,12 +181,12 @@ $$\boxed{F = G \Rightarrow R = G \Rightarrow \hat{H}}$$
 
 **类薛定谔方程**：同步方程 $\hat{\mathcal{S}}|\Psi\rangle = s|\Psi\rangle$ 类比薛定谔方程 $\hat{H}|\psi\rangle = E|\psi\rangle$：
 
-| 薛定谔方程 | CQM同步方程 |
-|:---|:---|
-| $\hat{H}$（哈密顿算符） | $\hat{\mathcal{S}}$（同步算符） |
-| $E$（能量本征值） | $s$（同步本征值） |
-| $|\psi\rangle$（本征态） | $|\Psi\rangle$（同步本征态） |
-| Hilbert空间 | 纤维丛截面空间 |
+| 薛定谔方程                | CQM同步方程                   |
+| :------------------- | :------------------------ |
+| $\hat{H}$（哈密顿算符）     | $\hat{\mathcal{S}}$（同步算符） |
+| $E$（能量本征值）           | $s$（同步本征值）                |
+| $\|\psi\rangle$（本征态） | \|$\Psi\rangle$（同步本征态）    |
+| Hilbert空间            | 纤维丛截面空间                   |
 
 **四层结构**：
 
