@@ -255,8 +255,8 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 **与 Penrose-Diósi 的对应**：
 - **形式一致**：$\Gamma \approx \Delta E_G/\hbar$
 - **本体论根本不同**：
- - Penrose：引力导致**客观态缩减**（本体性坍缩，全局幺正破坏）
- - CQM：引力差异导致**关系性因果截断**（全局幺正保住，被截断分支继续演化）
+  - Penrose：引力导致**客观态缩减**（本体性坍缩，全局幺正破坏）
+  - CQM：引力差异导致**关系性因果截断**（全局幺正保住，被截断分支继续演化）
 
 **与电子-电子散射的区分**：电子-电子散射无质子参与，无截断，全局幺正。环境退相干有质子环境分子参与，有截断。
 
@@ -451,8 +451,8 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
 
  **比较**：$\Delta\tau \sim 10^{-12}$ s $\gg \tau_{\text{res}} \sim 10^{-48}$ s，截断条件**必然满足**。
 
- - **无偏振器**（$\Delta L_{\text{eff}} = 0$）：$\Delta\tau = 0 < \tau_{\text{res}}$ → 不截断 → **波动性**
- - **有偏振器**（$\Delta L_{\text{eff}} \neq 0$）：$\Delta\tau \gg \tau_{\text{res}}$ → 截断 → **粒子性**
+  - **无偏振器**（$\Delta L_{\text{eff}} = 0$）：$\Delta\tau = 0 < \tau_{\text{res}}$ → 不截断 → **波动性**
+  - **有偏振器**（$\Delta L_{\text{eff}} \neq 0$）：$\Delta\tau \gg \tau_{\text{res}}$ → 截断 → **粒子性**
 
 7. **擦除机制**（Erasure Mechanism）：
  擦除器（如与标记器正交的偏振片）在臂 1 中引入**反向**等效光程差：
@@ -471,19 +471,19 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
 
 8. **因果倒置的澄清**（Resolution of Causal Paradox）：
  **坐标时描述**（Coordinate Time Description）：
- - 光通过分束器 BS1（$t=0$）
- - 光通过偏振器（$t \sim L/c$）
- - 研究者"决定"插入偏振器（$t \sim L/c + \epsilon$）
- - 光到达探测器（$t \sim 2L/c$）
+  - 光通过分束器 BS1（$t=0$）
+  - 光通过偏振器（$t \sim L/c$）
+  - 研究者"决定"插入偏振器（$t \sim L/c + \epsilon$）
+  - 光到达探测器（$t \sim 2L/c$）
 
  看起来"决定"发生在光通过偏振器"之后"。
 
  **因果时描述**（Causal Time Description）：
- 1. 偏振器一旦插入，其质量分布立即改变局部电磁结构（折射率 $n$）
- 2. 这个结构是**全局因果限制网络的一部分**
- 3. 光传播时已经"携带"了这个调制（在偏振器处多停留）
- 4. 探测器在**自身固有时**上完成截断（$t \sim 2L/c$）
- 5. 人读取在**人的固有时**上完成（$t > 2L/c$）
+  1. 偏振器一旦插入，其质量分布立即改变局部电磁结构（折射率 $n$）
+  2. 这个结构是**全局因果限制网络的一部分**
+  3. 光传播时已经"携带"了这个调制（在偏振器处多停留）
+  4. 探测器在**自身固有时**上完成截断（$t \sim 2L/c$）
+  5. 人读取在**人的固有时**上完成（$t > 2L/c$）
 
  **在因果时上，偏振器调制（$t \sim L/c$）先于探测器截断（$t \sim 2L/c$），从未倒置。**
 
