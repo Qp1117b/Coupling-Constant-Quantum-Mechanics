@@ -42,7 +42,7 @@ $$\boxed{\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot \left(\frac
 |:---|:---|:---|
 | $h$ | 5 | $A_4$ 的 Coxeter 数 |
 | $r$ | 4 | $A_4$ 的秩 |
-| $\|W(A_4)\|$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
+| $\Vert W(A_4)\Vert$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
 | $2h-1$ | 9 | Coxeter 数的线性组合 |
 
 ### 证明
@@ -194,7 +194,7 @@ $$\lambda_k = 2 - 2\cos\frac{k\pi}{5}, \quad k = 1, 2, 3, 4$$
 | 行列式 $\det(C)$ | 5 | $= h$ |
 | 迹 $\text{tr}(C)$ | 8 | $= 2r$ |
 | 迹平方 $\text{tr}(C^2)$ | 22 | — |
-| Weyl 群阶 $\|W\|$ | 120 | $= (r+1)! = 5!$ |
+| Weyl 群阶 $\Vert W\Vert$ | 120 | $= (r+1)! = 5!$ |
 | 正根数 $N_+$ | 10 | $= rh/2$ |
 | 对偶 Coxeter 数 $h^\vee$ | 5 | $= h$（$A_n$ 型自对偶） |
 
