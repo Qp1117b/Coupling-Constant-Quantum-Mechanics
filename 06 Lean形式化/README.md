@@ -246,12 +246,15 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 
 ## 本次更新亮点 (v0.5.0)
 
-- **消除所有 CQM 警告**：零 CQM 代码警告，构建完全清洁 - **修复 Mathieu.lean 矛盾公理**：`b1` 从占位符 `def ... := 0` 改为不透明 `axiom`，消除与 `mathieu_stable_region` 的逻辑矛盾
+- **消除所有 CQM 警告**：零 CQM 代码警告，构建完全清洁
+- **修复 Mathieu.lean 矛盾公理**：`b1` 从占位符 `def ... := 0` 改为不透明 `axiom`，消除与 `mathieu_stable_region` 的逻辑矛盾
 - **移除 4 个未使用的裸 `Prop` 公理**：`sierra_cqm_coupling_spectrum`、`prime_freezing_theorem`、`adele_constraint`、`coupling_formula_pi_factor` 替换为文档注释
 - **修复文档错误**：`firstCoupling_sierraCQM_matches` → `firstCoupling_sierraCQM_deviation`、`spectralProduct_lt_one` → `spectralProduct_lt_ten`
 - **定理总数**：从 96 → 160（+64 个严格证明的定理，得益于完整计数）
 - **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）
-- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138 - **G_N 谱公式**：严格正性 + CODATA 偏差 < 10 ppm
+- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）
+- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138
+- **G_N 谱公式**：严格正性 + CODATA 偏差 < 10 ppm
 
 ## 本次更新亮点 (v0.5.1)
 
