@@ -2,7 +2,7 @@
 
 **作者**：ruster
 
-> 本文档阐述 CQM 的核心论断：**引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果条件**，并按因果结构的不同深度与广度分化为三种形态。三者同源，都是退相干机制在不同存在论层级的表现。
+> CQM 的核心论断：**引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果条件**，并按因果结构的不同深度与广度分化为三种形态。三者同源，都是退相干机制在不同存在论层级的表现。
 > 相关 Lean 形式化见 `06 Lean形式化/Superconductivity`：`Gravity`（QG/GR 谱参数与 $G_N$）、`SPAF`（中子缺陷矩阵 `neutronDefect`）、`MolecularGeometry`（Regge 角亏 `deficitAngleDensity`、自由/束缚中子缺陷）、`BridgeTheorems`（角亏—Ricci 关系）。超导机制见 `08 超导/CQM_超导核心理论.md`。缺口编号 N1–N4 与超导文档 G18 同体系。
 
 ---
@@ -373,7 +373,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 
 ## 七、Lean 形式化对应与交叉引用
 
-本文档与 `06 Lean形式化/Superconductivity` 的对应关系：
+与 `06 Lean形式化/Superconductivity` 的对应关系：
 
 | 文档对象 | Lean 文件 / 定义 | 状态 |
 |----------|------------------|------|
