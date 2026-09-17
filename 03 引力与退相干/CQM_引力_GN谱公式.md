@@ -40,7 +40,7 @@ Adele Jacobian 因子 $\exp(-2/C)$ 中的因子 $2$ 严格来自非交换 $\to$ 
 
 ### 1.1 $G_N$ 是物理系统的普适因果背景场
 
-在 CQM 的系统—尺度—层级递进框架中，引力是**物理系统的普遍因果背景场**。物理系统内部的所有尺度——从费米尺度的禁闭内部到宇宙尺度的大尺度结构——都在引力因果场中展开。但引力因果场的**表现形式**随尺度根本不同：
+在 CQM 的系统—尺度—层级递进框架中，引力是**物理系统的普适因果背景场**。物理系统内部的所有尺度——从费米尺度的禁闭内部到宇宙尺度的大尺度结构——都在引力因果场中展开。但引力因果场的**表现形式**随尺度根本不同：
 
 - **费米尺度**（禁闭内部）：引力退相干尚未完成，因果集序关系 $x \prec y$ 主导
 - **强子尺度**（禁闭边界）：引力退相干的关键实现，条件性幺正确立，$G_N$ 涌现
@@ -80,9 +80,9 @@ $$d\mu = e^{-u} du$$
 
 Hilbert 空间 $\mathcal{H} = L^2(\mathbb{R}, e^{-u}du)$。谱方程：
 
-$$(i\partial_\tau)^2 \Phi = c^2(-\partial_u^2 + \partial_u)\Phi$$
+$$(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$$
 
-令 $\hat{D} = -i(\partial_u - 1/2)$，则 $\hat{H} = c^2(\hat{D}^2 + 1/4)$。
+令 $\hat{D} = -i(\partial_u - 1/2)$，则 $\hat{H} = \hat{D}^2 + 1/4$。
 
 ### 2.2 量纲声明
 
@@ -96,7 +96,7 @@ $$(i\partial_\tau)^2 \Phi = c^2(-\partial_u^2 + \partial_u)\Phi$$
 
 ### 3.1 定理
 
-**定理**（Sierra-CQM）。设 sprinkling 区间长度 $L_n = 2\pi n / \gamma_n$，边界相位 $\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}$。则无量纲谱算符 $\hat{H} = c^2(\hat{D}^2 + 1/4)$ 的本征值为：
+**定理**（Sierra-CQM）。设 sprinkling 区间长度 $L_n = 2\pi n / \gamma_n$，边界相位 $\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}$。则无量纲谱算符 $\hat{H} = \hat{D}^2 + 1/4$ 的本征值为：
 
 $$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2$$
 

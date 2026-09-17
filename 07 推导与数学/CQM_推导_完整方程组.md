@@ -65,9 +65,9 @@ $$ds^2 = \frac{du^2 + d\theta^2}{e^{2u}} \tag{CS11}$$
 
 $\mathbb{H}^2$ 的 Laplace-Beltrami 算符 $\Delta_{\mathbb{H}^2} = -e^{2u}(\partial_u^2 + \partial_\theta^2)$ 在测度 $d\mu$ 下经 $\hat{\mu}$ 筛选后退化为：
 
-$$\hat{H}_\infty = c^2\left(-\partial_u^2 + \partial_u\right) = c^2\left[\hat{D}^2 + \frac{1}{4}\right] \tag{CS12}$$
+$$\hat{H}_\infty = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4} \tag{CS12}$$
 
-谱结构 $E_n = c^2(1/4 + \gamma_n^2)$ 直接从 $\mathbb{H}^2$ 的几何涌出（详见 §七）。
+谱结构 $E_n = 1/4 + \gamma_n^2 = \mathfrak{c}_n$ 直接从 $\mathbb{H}^2$ 的几何涌出（详见 §七）。
 
 **状态**：CS0–CS4 公理；CS5–CS6 定理（`归档 CNT/06 论文/01-闭合核理论（CNT）` 定理 3.1）；CS7–CS8 公理；CS9–CS10 构造；CS11–CS12 严格极限
 
@@ -105,7 +105,7 @@ $$\mathcal{H}_p = L^2(\mathbb{Q}_p, dx), \qquad \hat{H}_p = f_{\text{rep}}(D^{\a
 
 $$S_\infty^{(1)} = \int_{\mathbb{R}} d\tau \int_{\mathcal{M}} d\mu\; \Psi^\dagger\left(i\partial_\tau - \hat{\mathcal{D}}\right)\Psi$$
 
-$$\hat{\mathcal{D}} = -i\,c\,e^u\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right)$$
 
 在 $\mathcal{H}_\infty$ 上严格自伴（Sturm-Liouville + Neumann）。
 
@@ -113,7 +113,7 @@ $$\hat{\mathcal{D}} = -i\,c\,e^u\left(\partial_u - \frac{1}{2}\right)$$
 
 $$S_\infty^{(2)} = \int_{\mathbb{R}} d\tau \int_{\mathcal{M}} d\mu\; \left[\frac{1}{2}|i\partial_\tau\Phi|^2 - \frac{1}{2}\Phi^\dagger \hat{H}_\infty \Phi\right]$$
 
-$$\hat{H}_\infty = c^2\left(-\partial_u^2 + \partial_u\right) = c^2\left[\hat{D}^2 + \frac{1}{4}\right], \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{H}_\infty = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4}, \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 $\hat{H}_\infty$ 是 Sturm-Liouville 问题的唯一自伴正算符（Friedrichs 扩张 + Neumann）。
 
@@ -127,7 +127,7 @@ $$S_{\eta,p} = \int_{\mathbb{R}} d\tau\left[\eta_p^\dagger(i\partial_\tau - \ome
 
 $$\mathcal{C}_p = \int_{\mathbb{Z}_p}\Psi_p\,dx - \Psi_\infty(u_p,\theta_p)$$
 
-一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方给出变系数 $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$，不同于 $\hat{H}_\infty$。详见 `CQM_推导_经典路径.md` §3–§5。
+一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方给出变系数 $\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2+1/4)$，不同于 $\hat{H}_\infty$。详见 `CQM_推导_经典路径.md` §3–§5。
 
 ---
 
@@ -155,11 +155,11 @@ $$\boxed{(i\partial_\tau - \omega_p)\eta_p = -\lambda\mathcal{C}_p} \tag{M3}$$
 
 ## 四、$\hat{\mathcal{D}}^2$ 修正
 
-$$\hat{\mathcal{D}}^2 = c^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right) \neq \hat{H}_\infty$$
+$$\hat{\mathcal{D}}^2 = v^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right) \neq \hat{H}_\infty$$
 
 | | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立） |
 |:---|:---|:---|
-| 形式 | $c^2 e^{2u}(-\partial_u^2+1/4)$ | $c^2(-\partial_u^2+\partial_u)$ |
+| 形式 | $v^2 e^{2u}(-\partial_u^2+1/4)$ | $-\partial_u^2+\partial_u$ |
 | 系数 | 变系数 | 常系数 |
 | 漂移项 | 无 | $+\partial_u$ |
 
@@ -192,9 +192,9 @@ $$U(\tau) = \exp(-i\hat{H}_{\text{tot}}\tau), \qquad U^\dagger U = I$$
 
 体区域 $(u,\theta) \neq (u_p,\theta_p)$：
 
-$$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi}\; \boxed{\partial_\tau\phi + c\,e^u\partial_u\phi = 0} \tag{T1}$$
+$$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi}\; \boxed{\partial_\tau\phi + v\,e^u\partial_u\phi = 0} \tag{T1}$$
 
-特征线：$\displaystyle\frac{du}{d\tau} = c\,e^u \;\Rightarrow\; r(\tau) = \frac{1}{-c\tau + \text{const}} \tag{T2}$
+特征线：$\displaystyle\frac{du}{d\tau} = v\,e^u \;\Rightarrow\; r(\tau) = \frac{1}{-v\tau + \text{const}} \tag{T2}$
 
 **状态**：严格导出（测度补偿代数恒等，无近似）
 
@@ -204,9 +204,9 @@ $$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi
 
 ### 7.1 Sturm-Liouville 构造
 
-$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = c^2\left(\frac{1}{4} + \gamma_n^2\right) \tag{S1}$$
+$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = \frac{1}{4} + \gamma_n^2 = \mathfrak{c}_n \tag{S1}$$
 
-$$\hat{H}_\infty = c^2\left(\hat{D}^2 + \frac{1}{4}\right) \geq \frac{c^2}{4}, \qquad \boxed{E_0 = \frac{c^2}{4}} \tag{S2}$$
+$$\hat{H}_\infty = \hat{D}^2 + \frac{1}{4} \geq \frac{1}{4}, \qquad \boxed{E_0 = \frac{1}{4}} \tag{S2}$$
 
 ### 7.2 SU(5) 嘉当矩阵涌入
 
@@ -214,7 +214,7 @@ $$A_{ij} = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 
 
 连续化 $\displaystyle\frac{1}{(\Delta u)^2}(A\psi)_i \to \left(-\partial_u^2 + \partial_u\right)\phi(u)$，谱待重新推导。
 
-有效边界势：$\displaystyle V_{\text{eff}}(0) = \frac{c^2}{(\Delta u)^2}\cdot\frac{1}{\text{Tr}(A^{-1})} = \frac{c^2}{4}$，一致给出 $\boxed{E_0 = c^2/4}$。
+有效边界势：$\displaystyle V_{\text{eff}}(0) = \frac{1}{(\Delta u)^2}\cdot\frac{1}{\text{Tr}(A^{-1})} = \frac{1}{4}$，一致给出 $\boxed{E_0 = 1/4}$。
 
 Robin/Neumann 条件 $\partial_u\phi(0)=0$ 筛选 $s = 1/2 + i\gamma_n$ 满足 $\xi(s) = \xi(1-s)$。
 
@@ -318,10 +318,10 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 | 1 | 几何与 Hilbert 空间 | $R,\hat{\mu},\mathcal{H}_\infty,\mathcal{H}_p$ | 构造性 | — |
 | 2 | 作用量 | $S_\infty^{(1)}, S_\infty^{(2)}, S_p, S_{\eta,p}$ | 形式写定 | — |
 | 3 | 母方程 | M0–M3 | 变分严格 | — |
-| 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2+1/4)$ | 严格代数 | — |
+| 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2+1/4)$ | 严格代数 | — |
 | 5 | 全局幺正 | $\hat{H}_{\text{tot}}$ 自伴 | Stone 定理 | — |
 | 6 | 传输方程 | T1–T2 | 测度补偿 | — |
-| 7 | 二阶谱与间隙 | S1–S2, $E_0=c^2/4$ | 猜想 | Hilbert–Pólya |
+| 7 | 二阶谱与间隙 | S1–S2, $E_0=1/4$ | 猜想 | Hilbert–Pólya |
 | 8 | 边界匹配 | $\epsilon_p\to0$ | 渐近严格 | — |
 | 9 | $p$ 进扇区 | P1–P2, A2 | 严格+假设 | "仅 2,3,5" |
 | 10 | 物理常数 | Q1–Q5 | 数值自洽 | 缺口 1,6,7,N-2 |
@@ -337,6 +337,6 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 
 $$\boxed{\hat{\mu}^2=\hat{\mu}, \quad \hat{\mu}=\frac{I+R}{2}}$$
 
-$$\boxed{E_0 = \frac{c^2}{4}, \qquad G_N=\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_p^2}e^{-2/C}\bigl(1+\kappa C\bigr)}$$
+$$\boxed{E_0 = \frac{1}{4}, \qquad G_N=\frac{I\lambda_c C^2 \mathfrak{c}_1}{m_p^2}e^{-2/C}\bigl(1+\kappa C\bigr)}$$
 
 **完整严格推导链**：`CQM_推导_经典路径.md`

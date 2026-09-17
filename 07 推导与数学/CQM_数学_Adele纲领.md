@@ -6,13 +6,13 @@
 
 ## 摘要
 
-> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i c e^u(\partial_u-1/2)$）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = c^2(\hat{D}^2+1/4)$）描述谱结构。两者独立构造，非平方关系。详见 `CQM_推导_经典路径.md` §3–§5。
+> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i v e^u(\partial_u-1/2)$）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = \hat{D}^2+1/4$）描述谱结构。两者独立构造，非平方关系。详见 `CQM_推导_经典路径.md` §3–§5。
 
 耦合常数量子力学（CQM）是一种从本体论到实验预言的物理学框架。其核心在于：引力不是四种相互作用之一，而是限定所有再生产循环之因果序的**必要前提**（限制场）。从这一本体论出发，CQM 从**一个本体论公设**（物质先在 L0）、**三个涌出结构原理**和**一个启发性条件**严格导出了：
 
 **数学结构**：
 1. 壳层双曲 Laplacian $\hat{H} = \hat{D}^2 + 1/4$（$\hat{D} = -i(\partial_u - 1/2)$）从 Poincaré 上半平面度量严格导出
-2. 元 RG 传输方程 $\partial_\tau \Psi + C e^u \partial_u \Psi = 0$（经典 RG 流特征线，运动学辅助），其中 $C = \xi'(1)/\xi(1) \approx 0.0230957$
+2. 元 RG 传输方程 $\partial_\tau \Psi + v e^u \partial_u \Psi = 0$（经典 RG 流特征线，运动学辅助），其中 $v = \xi'(1)/\xi(1) \approx 0.0230957$
 3. 角向马蒂厄方程在 CQM 线 $a=2q$ 上的谱 $\lambda_c \approx 1.3160229$
 4. SU(5) Weyl 群对称性 $W_m = 5 \cdot 2^{m-1}$
 5. **β₁ = −C/q_c ≈ −0.07020**：U(1) 扇区的 CQM β 函数，由 Mathieu 锁定相变解析延拓推导
@@ -70,14 +70,14 @@ CQM 的**谱哈密顿量**（二阶谱结构，标准微分几何，严格）：
 $$\boxed{\hat{H}_\infty = \hat{D}^2 + \frac{1}{4} = -\partial_u^2 + \partial_u}, \qquad (i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$$
 
 一阶动力学（再生产子单向演化，见 `CQM_推导_经典路径.md` §3.1）：
-$$\hat{\mathcal{D}} = -i\,c\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
+$$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
 **原理 II（辛拓扑量子化）**：再生产循环作为辛流形上的闭合轨道，其最小非平凡周期包围的辛面积为 $2\pi$（Berry-Keating 单位胞条件 [Berry & Keating, SIAM Rev. **41**, 236 (1999)]）。此拓扑要求与耦合常数空间的硬壁边界条件自洽地确定截断尺度。
 
 **原理 III（全局-数论谱）**：物理世界的全局因果结构由 Adele 类空间 $\mathbb{A}^\times/\mathbb{Q}^\times$ 描述。其谱条件由 Tate 积分给出，非平凡谱点由黎曼 $\xi$ 函数的非平凡零点 $\{s_n = 1/2 + i\gamma_n\}$ 枚举。
 
 **启发性条件 χ（再生产幂等性）**：
-$$\boxed{\chi(u, p_u) = p_u - \frac{Ce^u - 1}{2} = 0}$$
+$$\boxed{\chi(u, p_u) = p_u - \frac{ve^u - 1}{2} = 0}$$
 
 **原理 IV（能标-固有时对易子）**：
 $$[\hat{\tau}, \hat{u}] = iC$$
@@ -88,11 +88,11 @@ $$[\hat{\tau}, \hat{u}] = iC$$
 
 **定理**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 在体区域（源点外）经测度补偿 $\Psi = e^{u/2}\phi$ 严格退化为传输方程：
 
-$$\boxed{\partial_\tau\phi + C e^u \partial_u \phi = 0}$$
+$$\boxed{\partial_\tau\phi + v e^u \partial_u \phi = 0}$$
 
-**推导**（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
+**推导**（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i v e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
 
-**身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无条件假设。特征线 $du/d\tau = C e^u$ 即经典 RG 流 $dr/d\tau = C r^2$。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖），非低能标 4D 时空动力学。
+**身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无条件假设。特征线 $du/d\tau = v e^u$ 即经典 RG 流 $dr/d\tau = v r^2$。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖），非低能标 4D 时空动力学。
 
 ### 2.4 定理 2.2（Berry-Keating 截断）
 
@@ -104,7 +104,7 @@ $$\boxed{\partial_\tau\phi + C e^u \partial_u \phi = 0}$$
 
 **定理**：耦合常数空间 $u \in [-\pi/2, \pi/2]$。
 
-**证明**：从定理 2.X，传输方程的特征线 $du/d\tau = C e^u$ 在 $u \to +\infty$ 处于有限 $\tau$ 发散（UV 奇点），在 $u \to -\infty$ 处冻结（IR 渐近行为）。因此物理上耦合常数空间必须有有限范围。公理 II 的辛量子化要求硬壁边界以正则化 UV 奇点，IR 端则由 $e^u \to 0$ 的自然冻结提供软截断。结合定理 2.2 的 $L=\pi/2$，得 $u \in [-\pi/2, \pi/2]$。∎
+**证明**：从定理 2.X，传输方程的特征线 $du/d\tau = v e^u$ 在 $u \to +\infty$ 处于有限 $\tau$ 发散（UV 奇点），在 $u \to -\infty$ 处冻结（IR 渐近行为）。因此物理上耦合常数空间必须有有限范围。公理 II 的辛量子化要求硬壁边界以正则化 UV 奇点，IR 端则由 $e^u \to 0$ 的自然冻结提供软截断。结合定理 2.2 的 $L=\pi/2$，得 $u \in [-\pi/2, \pi/2]$。∎
 
 ### 2.6 不确定性关系
 
@@ -114,7 +114,7 @@ $$\boxed{\Delta\tau \cdot \Delta u \geq \frac{C}{2}}$$
 等价于耦合常数空间的标量形式：
 $$\boxed{\frac{\Delta r}{\langle r\rangle} \cdot \Delta \tau \geq \frac{C}{2}}$$
 
-其中 $du/d\tau = C e^u$ 为耦合常数沿固有时 $\tau$ 的 RG 流速（§2.3 特征线）。
+其中 $du/d\tau = v e^u$ 为耦合常数沿固有时 $\tau$ 的 RG 流速（§2.3 特征线）。
 
 ---
 
@@ -126,9 +126,9 @@ CQM 的动力学结构分为三个层次：
 
 $$\boxed{\text{层次 I: } \hat{H}_\infty = \hat{D}^2 + \frac{1}{4} \quad\text{（谱哈密顿量，严格）}}$$
 
-$$\boxed{\text{层次 II: } \hat{\mathcal{G}} = -iCe^u\partial_u \quad\text{（演化生成元，动力学）}}$$
+$$\boxed{\text{层次 II: } \hat{\mathcal{G}} = -ive^u\partial_u \quad\text{（演化生成元，动力学）}}$$
 
-$$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{Ce^u-1}{2} = 0 \quad\text{（历史条件，一阶方程的特例）}}$$
+$$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{ve^u-1}{2} = 0 \quad\text{（历史条件，一阶方程的特例）}}$$
 
 **关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（$\hat{\mathcal{G}} = \hat{\mathcal{D}}/c$）是一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的体区域退化形式，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
 
@@ -136,16 +136,16 @@ $$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{Ce^u-1}{2} = 0 \
 
 **定理 3.1**：一阶方程 $(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$ 在体区域（源点外）经测度补偿 $\Psi = e^{u/2}\phi$ 严格导出：
 
-$$\partial_\tau\phi + C e^u \partial_u \phi = 0$$
+$$\partial_\tau\phi + v e^u \partial_u \phi = 0$$
 
-*推导*（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$，得 $i e^{u/2}\partial_\tau\phi = -i C e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。无 WKB 近似，无条件壳假设。
+*推导*（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$，得 $i e^{u/2}\partial_\tau\phi = -i v e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。无 WKB 近似，无条件壳假设。
 
-特征线 $du/d\tau = C e^u$ 的解 $r(\tau) = 1/(-C\tau+\text{const})$ 即经典 RG 流 $dr/d\tau = C r^2$。
+特征线 $du/d\tau = v e^u$ 的解 $r(\tau) = 1/(-v\tau+\text{const})$ 即经典 RG 流 $dr/d\tau = v r^2$。
 
 ### 3.2 特征线 = RG 流
 
-**定理 3.2**：特征线方程 $du/d\tau = C e^u$ 的解：
-$$u(\tau) = -\ln(-C\tau + \text{const}), \quad r(\tau) = \frac{1}{-C\tau + \text{const}}$$
+**定理 3.2**：特征线方程 $du/d\tau = v e^u$ 的解：
+$$u(\tau) = -\ln(-v\tau + \text{const}), \quad r(\tau) = \frac{1}{-v\tau + \text{const}}$$
 
 ### 3.3 CQM–标准 RG 精确字典
 
@@ -186,8 +186,8 @@ $$\Delta\tau_p = \frac{\ln p}{C}$$
 |:---|:---|:---|:---|:---|
 | I | $\hat{H}_\infty = \hat{D}^2 + 1/4$ | 谱哈密顿量（二阶） | 严格（Sturm-Liouville + Friedrichs） | 全部定量预言 |
 | I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
-| II | $\hat{\mathcal{D}} = -iCe^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
-| III | $\partial_\tau\phi + Ce^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限（禁闭边界及之外） |
+| II | $\hat{\mathcal{D}} = -ive^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
+| III | $\partial_\tau\phi + ve^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限（禁闭边界及之外） |
 | — | $[\hat{\tau}, \hat{u}] = iC$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
 | — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | 定理 | 结构分离 |
 
@@ -482,8 +482,8 @@ $$\hat{T}_{\mu\nu}^{\text{代数}} = \frac{1}{2}\left(\{\hat{p}_u, \partial_\mu 
 **定理 9.1（守恒律）**：
 $$\nabla^\mu \langle T_{\mu\nu} \rangle = 0$$
 
-**证明**：从传输方程的概率守恒 $\partial_\tau |\Psi|^2 + C e^u \partial_u |\Psi|^2 = 0$ 出发，定义概率流 $J_u = C e^u |\Psi|^2$。海森堡方程给出：
-$$i\partial_\tau \hat{T}_{\mu\nu} = [\hat{H}, \hat{T}_{\mu\nu}] = C e^{\hat{u}} [\hat{p}_u, \hat{T}_{\mu\nu}]$$
+**证明**：从传输方程的概率守恒 $\partial_\tau |\Psi|^2 + v e^u \partial_u |\Psi|^2 = 0$ 出发，定义概率流 $J_u = v e^u |\Psi|^2$。海森堡方程给出：
+$$i\partial_\tau \hat{T}_{\mu\nu} = [\hat{H}, \hat{T}_{\mu\nu}] = v e^{\hat{u}} [\hat{p}_u, \hat{T}_{\mu\nu}]$$
 
 对 $\hat{T}_{\mu\nu}$ 的显式表达式计算对易子：
 $$[\hat{p}_u, \partial_\mu \hat{u}] = -i \partial_\mu \partial_u \hat{u} = -i \partial_\mu (1) = 0$$
@@ -553,7 +553,7 @@ $$\boxed{\Lambda_{\text{QCD}} = \frac{m_p}{C \cdot \mathfrak{c}_1} = \frac{m_p}{
 
 **定理 10.X（Adele 全局归一化）**：
 
-**步骤 1（传输方程特征线）**：从定理 2.X，特征线 $du/d\tau = C e^u$ 给出 $u(\tau) = -\ln(-C\tau)$。UV 端 $u \to +\infty$ 对应 $\tau \to 0^-$，IR 端 $u \to -\infty$ 对应 $\tau \to -\infty$。
+**步骤 1（传输方程特征线）**：从定理 2.X，特征线 $du/d\tau = v e^u$ 给出 $u(\tau) = -\ln(-v\tau)$。UV 端 $u \to +\infty$ 对应 $\tau \to 0^-$，IR 端 $u \to -\infty$ 对应 $\tau \to -\infty$。
 
 **步骤 2（双向因果限制）**：引力作为必要前提（原则 II）要求所有再生产循环的因果序闭合。这意味着 UV→IR 和 IR→UV 的因果轨道必须构成闭合回路。
 
@@ -629,13 +629,13 @@ $$\partial_t \rho + \frac{1}{r^2}\partial_r(r^2 v_r \rho) + \frac{1}{r\sin\theta
 $$\text{循环论相空间} = (g_1, g_2, g_3, \tau)$$
 
 通过坐标变换 $u = \ln\sqrt{g_1^2+g_2^2+g_3^2}$，$\theta = \arctan\frac{\sqrt{g_2^2+g_3^2}}{g_1}$，$\phi = \arctan\frac{g_3}{g_2}$，循环方程在球坐标下写为：
-$$\partial_\tau \Psi + C e^u \partial_u \Psi = 0, \quad v_\theta = v_\phi = 0$$
+$$\partial_\tau \Psi + v e^u \partial_u \Psi = 0, \quad v_\theta = v_\phi = 0$$
 
 **在直角坐标 $(g_1, g_2, g_3)$ 下**：
-$$\partial_\tau \Psi + C \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i} \Psi = 0$$
+$$\partial_\tau \Psi + v \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i} \Psi = 0$$
 
 **特征**：
-- 径向分量 $v_r = C e^u$（元 RG 驱动）
+- 径向分量 $v_r = v e^u$（元 RG 驱动）
 - 角向分量 $v_\theta = v_\phi = 0$（**无自由跑动**）
 - 描述耦合常数**沿固定方向等比例缩放**
 - 方向 $(g_1:g_2:g_3)$ 锁定，径向跑动通过角向量子化修正实现离散跳跃

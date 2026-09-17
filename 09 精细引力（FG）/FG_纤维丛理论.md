@@ -116,9 +116,9 @@ CQM以动力学（重组）框架为主视角的原因：
 **伴丛截面 = 序参量**：重组框架中，伴丛定义为 $E_{R} = P \times_G R \cong P/H$，其截面是映射 $\phi: M \to P/H$。在时空每一点 $x \in M$，$\phi(x)$ 是 $G/H$ 中的一个**陪集**，即一个**真空方向**——这正是序参量。
 
 实例（重组生成群 $R$，VEV 在 $V$ 中选方向）：
-- **电弱**：重组 $(SU(2)\times U(1)) \xRightarrow{Z_2} U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，破缺至 $U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
+- **电弱**：重组 $(SU(2)\times U(1)) \xRightarrow{Z_2} U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，重组实现至 $U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
 - **超导**：重组 $U(1) \xRightarrow{Z_2} U(1)$，库珀对凝聚相位 $\phi(x) \in U(1)$
-- **铁磁体**：重组 $SO(3) \xRightarrow{\{e\}} SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，破缺 $SO(3)\to SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
+- **铁磁体**：重组 $SO(3) \xRightarrow{\{e\}} SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，重组实现 $SO(3)\to SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
 
 在重组框架中，"物质场"就是背景自身通过重组折叠后涌现的截面。
 

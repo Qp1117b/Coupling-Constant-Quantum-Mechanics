@@ -14,27 +14,27 @@
 
 因果集涌出的 ℍ² 谱几何给出二阶谱哈密顿量：
 
-$$\hat{H}_\infty = c^2\left(-\partial_u^2 + \partial_u\right) = c^2\left[\hat{D}^2 + \frac{1}{4}\right], \quad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{H}_\infty = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4}, \quad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 Hilbert 空间：$\mathcal{H}_\infty = L^2(\mathbb{R}, e^{-u}du)$，内积 $\langle f,g\rangle = \int f^*(u)g(u)e^{-u}du$。
 
 $\hat{H}_\infty$ 在 Neumann 边界条件 $\partial_u\phi(0)=0$ 下自伴（Friedrichs 扩张），谱：
 
-$$E_n = c^2\left(\frac{1}{4} + \gamma_n^2\right), \quad E_0 = \frac{c^2}{4}$$
+$$E_n = \frac{1}{4} + \gamma_n^2 = \mathfrak{c}_n, \quad E_0 = \frac{1}{4}$$
 
 其中 $\gamma_n$ 为黎曼 $\zeta$ 函数第 $n$ 个非平凡零点的虚部。
 
 ### 1.2 一阶生成元
 
-一阶算符 $\hat{\mathcal{D}} = -i\,c\,e^u(\partial_u - 1/2)$ 描述再生产子的单向演化：
+一阶算符 $\hat{\mathcal{D}} = -i\,v\,e^u(\partial_u - 1/2)$ 描述再生产子的单向演化：
 
 $$i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
 在体区域（源外）经测度补偿 $\Psi = e^{u/2}\phi$ 退化为传输方程：
 
-$$\partial_\tau\phi + C\,e^u\partial_u\phi = 0$$
+$$\partial_\tau\phi + v\,e^u\partial_u\phi = 0$$
 
-**关键**：$\hat{H}_\infty$ 与 $\hat{\mathcal{D}}$ 独立构造，非平方关系——$\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2 + 1/4) \neq \hat{H}_\infty$。两者通过 $\hat{\mu}$ 在事件点衔接。
+**关键**：$\hat{H}_\infty$ 与 $\hat{\mathcal{D}}$ 独立构造，非平方关系——$\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2 + 1/4) \neq \hat{H}_\infty$。两者通过 $\hat{\mu}$ 在事件点衔接。
 
 ---
 
@@ -53,13 +53,13 @@ $$(I + \frac{icA_4}{2a})\psi^{n+1} = (I - \frac{icA_4}{2a})\psi^n$$
 
 连续极限：
 
-$$\frac{A_4}{a^2} \longrightarrow -\partial_u^2 + \partial_u = \hat{H}_\infty/c^2$$
+$$\frac{A_4}{a^2} \longrightarrow -\partial_u^2 + \partial_u = \hat{H}_\infty$$
 
 ### 2.2 谱结构
 
 离散谱本征值的解析公式待重新推导。
 
-谱间隙 $E_0 = c^2/4$ 由有效边界势 $V_{\text{eff}}(0) = c^2/(\Delta u)^2 \cdot 1/\text{Tr}(A_4^{-1})$ 严格给出。
+谱间隙 $E_0 = 1/4$ 由有效边界势 $V_{\text{eff}}(0) = 1/(\Delta u)^2 \cdot 1/\text{Tr}(A_4^{-1})$ 严格给出。
 
 ---
 
@@ -108,7 +108,7 @@ $A_4$ 的逆矩阵 $A_4^{-1}$ 的迹：
 
 $$\text{Tr}(A_4^{-1}) = 4$$
 
-该值直接出现在谱间隙 $E_0 = c^2/4$ 的 Friedrichs 扩张推导中（$1/\text{Tr}(A_4^{-1}) = 1/4$）。
+该值直接出现在谱间隙 $E_0 = 1/4$ 的 Friedrichs 扩张推导中（$1/\text{Tr}(A_4^{-1}) = 1/4$）。
 （由 $A_4^{-1} = \frac{1}{5}\begin{pmatrix}4&3&2&1\\3&6&4&2\\2&4&6&3\\1&2&3&4\end{pmatrix}$ 直接计算
 $\text{Tr}(A_4^{-1}) = (4+6+6+4)/5 = 4$。Lean 中 `cartanA4_inv_sum_eq_10` 给出逆矩阵全部元素之和 $= 10$。）
 
@@ -117,7 +117,7 @@ $\text{Tr}(A_4^{-1}) = (4+6+6+4)/5 = 4$。Lean 中 `cartanA4_inv_sum_eq_10` 给�
 | 离散量 | 连续极限 |
 |:---|:---|
 | $\frac{1}{(\Delta u)^2}A_4$ | $-\partial_u^2 + \partial_u$ |
-| 谱间隙 $\lambda_0$ | $E_0/c^2 = 1/4$ |
+| 谱间隙 $\lambda_0$ | $E_0 = 1/4$ |
 | 边界条件 $\psi_3 = e^{2a}\psi_0$ | $\partial_u\phi(0)=0$（Neumann） |
 
 ---

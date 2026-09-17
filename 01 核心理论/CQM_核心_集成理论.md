@@ -177,7 +177,7 @@ CQM 的根本转向：**不量子化时空，而量子化耦合常数本身。**
 - 对易子变为 $[\hat{u}, \hat{p}_u] = i$（标准海森堡代数，无量纲）；
 - 可以直接调用标准量子力学的全部谱理论（自伴扩张、不确定性、谱分解）。
 
-这是物理要求的自然结果：耦合常数的"跑动"（RG 流）在标准场论中本就是指数型的，$r(\tau) = r_0 e^{-c\tau}$。对数坐标使这种指数行为线性化。
+这是物理要求的自然结果：耦合常数的"跑动"（RG 流）在标准场论中本就是指数型的，$r(\tau) = r_0 e^{-v\tau}$。对数坐标使这种指数行为线性化。
 
 ### 3.3 标准海森堡代数
 
@@ -256,15 +256,15 @@ $$\mathcal{H} = L^2(\mathbb{R}, e^{-u}du), \qquad \langle f, g \rangle = \int f^
 
 $$\psi(u_j, \tau_{n+1}) = \psi(u_{j-1}, \tau_n)$$
 
-当 $\delta u \to 0$、$\Delta\tau = \delta u/c \to 0$ 时，严格得到：
+当 $\delta u \to 0$、$\Delta\tau = \delta u/v \to 0$ 时，严格得到：
 
-$$\partial_\tau \psi + c\,\partial_u \psi = 0$$
+$$\partial_\tau \psi + v\,\partial_u \psi = 0$$
 
-特征线：$du/d\tau = -c \Rightarrow r(\tau) = r_0 e^{-c\tau}$。
+特征线：$du/d\tau = -v \Rightarrow r(\tau) = r_0 e^{-v\tau}$。
 
 **物理**：这是单质子内禀时钟驱动的指数演化。$\tau$ 的流逝直接等价于能标的改变——这不是"宇宙能标从低能跑到高能"，而是**单个有限本体（质子）的内禀 RG 流**。
 
-算符形式：$\hat{\mathcal{G}} = -i c\,e^u \partial_u$，$U(\tau) = e^{-i\hat{\mathcal{G}}\tau}$。
+算符形式：$\hat{\mathcal{G}} = -i v\,e^u \partial_u$，$U(\tau) = e^{-i\hat{\mathcal{G}}\tau}$。
 
 **因果时的统一结构**：时间是因果序的度量——在禁闭内部是因果序的计数（$\tau_{\text{causal}}(x,y) = |I(x,y)|+1$，不依赖任何连续结构），退相干后是几何固有时（$\int\sqrt{-g_{\mu\nu}dx^\mu dx^\nu}$），在量子动力学中是幺正演化参数（$U(\tau) = e^{-i\hat{H}\tau}$）。三者同出一源，不存在独立于因果序的外在时间坐标。
 
@@ -272,19 +272,19 @@ $$\partial_\tau \psi + c\,\partial_u \psi = 0$$
 
 谱算符：
 
-$$\hat{H} = c^2(-\partial_u^2 + \partial_u) = c^2\left(\hat{D}^2 + \frac{1}{4}\right), \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{H} = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4}, \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 作用量：
 
-$$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[\frac{1}{c^2}\,|\partial_\tau \Phi|^2 - (-\partial_u^2 + \partial_u)\,|\Phi|^2\right]$$
+$$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[|\partial_\tau \Phi|^2 - (-\partial_u^2 + \partial_u)\,|\Phi|^2\right]$$
 
 **物理**：虚拟过程的双向干涉（玻色子型）。与一阶层形成互补：一阶层描述真实再生产传播（费米子型），二阶层描述虚拟量子涨落。
 
 | | 一阶层（耦合运动学） | 二阶层（耦合动力学） |
 |:---|:---|:---|
-| 方程 | $\partial_\tau \psi + c\,\partial_u \psi = 0$ | $(i\partial_\tau)^2 \Phi = c^2(-\partial_u^2 + \partial_u)\Phi$ |
-| 算符 | $\hat{\mathcal{G}} = -i c\,e^u \partial_u$ | $\hat{H} = c^2(-\partial_u^2 + \partial_u)$ |
-| 主象征 | $\sigma = c\,e^u k$（变系数，单向） | $\sigma = c^2 k^2$（常系数，双向） |
+| 方程 | $\partial_\tau \psi + v\,\partial_u \psi = 0$ | $(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$ |
+| 算符 | $\hat{\mathcal{G}} = -i v\,e^u \partial_u$ | $\hat{H} = -\partial_u^2 + \partial_u$ |
+| 主象征 | $\sigma = v\,e^u k$（变系数，单向） | $\sigma = k^2$（常系数，双向） |
 | 物理 | 真实再生产传播（费米子型） | 虚拟量子涨落（玻色子型） |
 
 **关系**：互补关系，共享边界条件 $\vartheta$。
@@ -293,7 +293,7 @@ $$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[\frac{1}{c^2}\,|\partial_\tau \Ph
 
 ### 5.3 酉等价化简与 Berry-Keating 对应
 
-**定理 5.1（酉等价化简）**。通过酉映射 $U: f \mapsto e^{-u/2}f$，$\hat{H} = c^2(-\partial_u^2 + \partial_u)$ 在 $L^2(e^{-u}du)$ 中酉等价于 $\tilde{A} = c^2(-\partial_u^2 + 1/4)$ 在 $L^2(du)$ 中。
+**定理 5.1（酉等价化简）**。通过酉映射 $U: f \mapsto e^{-u/2}f$，$\hat{H} = -\partial_u^2 + \partial_u$ 在 $L^2(e^{-u}du)$ 中酉等价于 $\tilde{A} = -\partial_u^2 + 1/4$ 在 $L^2(du)$ 中。
 
 **Berry-Keating 对应**：Berry-Keating 原始算符为对称化形式 $\hat{H}_{BK} = \frac{1}{2}(x\hat{p} + \hat{p}x)$，其中 $\hat{p} = -i\partial_x$。在对数坐标 $x = e^u$ 下，$\hat{H}_{BK} = -i\partial_u$。CQM 算符 $\hat{D} = -i(\partial_u - 1/2)$ 通过酉变换 $U: f \mapsto e^{-u/2}f$ 与 $-i\partial_u$ 等价，因此 CQM 的耦谱结构与 Berry-Keating 猜想共享相同的本征值渐近行为。
 
@@ -343,7 +343,7 @@ $$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[\frac{1}{c^2}\,|\partial_\tau \Ph
 |:---|:---|:---|
 | **本体论** | 波函数是实在的，坍缩是实在的改变 | **因果集是实在的，系统是组织形式** |
 | **时间性** | 瞬时、非连续 | **连续、因果时 $\tau$ 的流动** |
-| **方向性** | 外在于系统（观察者） | **内在于因果结构（引力因果场）** |
+| **方向性** | 外在于系统（观测者） | **内在于因果结构（引力因果场）** |
 | **可逆性** | 不可逆（信息丢失） | **系统灭亡时可逆（回归全局幺正）** |
 | **数学** | 投影公设（非幺正跳变） | **全局幺正演化 $U(\tau)$（子系统边界消解）** |
 
@@ -406,7 +406,7 @@ $M = E^T E \in \mathbb{R}^{10 \times 10}$，本征值 $\{9, 4, 1\}$，重数 $\{
 
 ### 7.3 嘉当矩阵的三重身份
 
-1. **离散哈密顿量**：$H_{\text{disc}} = c^2 A_4 / a^2$；
+1. **离散哈密顿量**：$H_{\text{disc}} = A_4 / a^2$；
 2. **离散能动张量**：$T^{00} = H_{\text{disc}}$；
 3. **根系几何**：$A_4$ 的根系 = 4-单纯形骨架（在权空间意义下）。
 
@@ -479,7 +479,7 @@ $$= 6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}
 
 sprinkling 区间长度 $L_n = 2\pi n/\gamma_n \sim \ln(n)$（$u$-依赖的紫外截断：高耦级过程需要更小的截断），边界相位 $\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}$。
 
-**定理 8.1（Sierra-CQM）**。设 sprinkling 区间长度为 $L_n = 2\pi n/\gamma_n$，边界相位为 $\vartheta_n$。则 $\hat{H} = c^2(\hat{D}^2 + 1/4)$ 在 $[0, L_n]$ 上的**耦级**满足：
+**定理 8.1（Sierra-CQM）**。设 sprinkling 区间长度为 $L_n = 2\pi n/\gamma_n$，边界相位为 $\vartheta_n$。则 $\hat{H} = \hat{D}^2 + 1/4$ 在 $[0, L_n]$ 上的**耦级**满足：
 
 $$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2 + O\left(\frac{\gamma_n^2}{n}\right)$$
 
@@ -487,7 +487,7 @@ $$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2 + O\left(\frac{\gamma_n^2}{n}\
 
 **证明概要**：
 
-**步骤 1：酉等价化简**。通过酉映射 $U: f \mapsto e^{-u/2}f$，算符 $\hat{H} = c^2(-\partial_u^2 + \partial_u)$ 在 $L^2(e^{-u}du)$ 中酉等价于 $\tilde{A} = c^2(-\partial_u^2 + 1/4)$ 在 $L^2(du)$ 中。在 $L^2(du)$ 中，算符 $-\partial_u^2$ 的标准本征函数为平面波 $g_k(u) = e^{iku}$，对应本征值 $k^2$。
+**步骤 1：酉等价化简**。通过酉映射 $U: f \mapsto e^{-u/2}f$，算符 $\hat{H} = -\partial_u^2 + \partial_u$ 在 $L^2(e^{-u}du)$ 中酉等价于 $\tilde{A} = -\partial_u^2 + 1/4$ 在 $L^2(du)$ 中。在 $L^2(du)$ 中，算符 $-\partial_u^2$ 的标准本征函数为平面波 $g_k(u) = e^{iku}$，对应本征值 $k^2$。
 
 **步骤 2：Floquet 边界条件**。对 $g_k(u) = e^{iku}$ 施加 Floquet（拟周期）边界条件：
 
@@ -501,7 +501,7 @@ $$k_n = \frac{2\pi n + \vartheta_n}{L_n} = \gamma_n\left(1 + \frac{\vartheta_n}{
 
 由于 $\vartheta_n \in [0, \pi)$ 有界，$k_n = \gamma_n + O(1/n)$。
 
-**步骤 4：耦级计算**。$\tilde{A}$ 的本征值为 $c^2(k_n^2 + 1/4)$。在 $L^2(e^{-u}du)$ 中，对应 $\hat{H}$ 的耦级为：
+**步骤 4：耦级计算**。$\tilde{A}$ 的本征值为 $k_n^2 + 1/4$。在 $L^2(e^{-u}du)$ 中，对应 $\hat{H}$ 的耦级为：
 
 $$\mathfrak{c}_n^{(R)} = k_n^2 + \frac{1}{4} = \gamma_n^2 + \frac{1}{4} + O\left(\frac{\gamma_n^2}{n}\right)$$
 
@@ -921,7 +921,7 @@ CQM 超导框架在特定极限下退化为 BCS 理论：
 
 ### 12.2 与重整化群（RG）的关系
 
-CQM 传输方程 $\partial_\tau\psi + c\,\partial_u\psi = 0$ 的特征线 $r(\tau) = r_0 e^{-c\tau}$ 在结构上与标准 RG 流等价。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖）。本体论不同：
+CQM 传输方程 $\partial_\tau\psi + v\,\partial_u\psi = 0$ 的特征线 $r(\tau) = r_0 e^{-v\tau}$ 在结构上与标准 RG 流等价。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖）。本体论不同：
 
 - **标准 QFT**：RG 流是路径积分标度变换的数学结果，能标 $\mu$ 是外部参数；
 - **CQM**：RG 流是单质子内禀时钟驱动的演化，能标被因果时 $\tau$ 直接取代。

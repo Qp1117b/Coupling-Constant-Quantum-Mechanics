@@ -42,7 +42,7 @@ $$\boxed{\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot \left(\frac
 |:---|:---|:---|
 | $h$ | 5 | $A_4$ 的 Coxeter 数 |
 | $r$ | 4 | $A_4$ 的秩 |
-| $\Vert W(A_4)\Vert$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
+| $|W(A_4)|$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
 | $2h-1$ | 9 | Coxeter 数的线性组合 |
 
 ### 证明
@@ -120,7 +120,7 @@ $$\text{SU}(5) \;\xRightarrow{\text{重组实现}}\; A_4 \;\xrightarrow{\text{�
 
 | | CQM 粗略表达式 | Wyler 常数 |
 |:---|:---|:---|
-| 表达式 | $\frac{2^{14}\pi}{3 \cdot 5^3}$ | $\frac{2h-1}{\text{tr}(A_4)} \pi^{-r} \left(\frac{\pi^h}{2^r \|W\|}\right)^{1/r}$ |
+| 表达式 | $\frac{2^{14}\pi}{3 \cdot 5^3}$ | $\frac{2h-1}{\text{tr}(A_4)} \pi^{-r} \left(\frac{\pi^h}{2^r |W|}\right)^{1/r}$ |
 | 使用的群论信息 | 本征值**近似**比例 $9:4:1$ | Coxeter 数、秩、Weyl 群阶、迹（**全部精确**不变量） |
 | 精度 | 1622 ppm | 0.61 ppm |
 | 性质 | GL(5) 整体的**粗略**反映 | GL(5) 整体的**精确**反映 |

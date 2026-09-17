@@ -292,11 +292,11 @@ $$\text{叠加态因果结构} \xrightarrow{\text{退相干}} \text{因果序结
 
 | 退化方向 | 条件 | 结果 | 物理含义 |
 |:---|:---|:---|:---|
-| **幺正随机 → 确定性** | 系综平均 $\langle \psi \rangle$ | $\partial_\tau \langle\psi\rangle + c \partial_u \langle\psi\rangle = 0$ | 随机性被平均抵消，留下确定性流 |
+| **幺正随机 → 确定性** | 系综平均 $\langle \psi \rangle$ | $\partial_\tau \langle\psi\rangle + v \partial_u \langle\psi\rangle = 0$ | 随机性被平均抵消，留下确定性流 |
 | **噪声为零** | $\zeta \to 0$ | 保留幺正性，消除随机性 | 边界处 Sprinkling 密度发散，随机偏移被锁定 |
-| **低噪声极限** | $\Gamma/c^2 \to 0$ | 扩散项可忽略 | 边界处有效扩散矩阵 $\Sigma$ 的本征值锁定 |
+| **低噪声极限** | $\Gamma/v^2 \to 0$ | 扩散项可忽略 | 边界处有效扩散矩阵 $\Sigma$ 的本征值锁定 |
 
-确定性传输方程 $\partial_\tau \psi + c\partial_u \psi = 0$ 描述的是**退相干后耦级的确定性流动**——不是"概率幅的量子流动"，而是**经典参数随因果时的指数演化** $r(\tau) = r_0 e^{-c\tau}$。
+确定性传输方程 $\partial_\tau \psi + v\partial_u \psi = 0$ 描述的是**退相干后耦级的确定性流动**——不是"概率幅的量子流动"，而是**经典参数随因果时的指数演化** $r(\tau) = r_0 e^{-v\tau}$。
 
 ---
 
