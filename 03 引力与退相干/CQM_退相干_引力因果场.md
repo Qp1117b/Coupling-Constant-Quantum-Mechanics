@@ -544,7 +544,7 @@ $$\text{光子} \rightarrow \text{视网膜感光细胞质子集体（观测退�
 - **元 RG 动力方程**（Meta-RG Dynamical Equation）：再生产机制的确定性演化（$\beta$ 函数的 p 进版本）
 - **谱系构造**（Spectral Construction）：p 进扇区结构拓扑描述的数学框架（详见 `归档 CNT/09 前期探索/01-元RG与博弈框架/`）
 
-**状态**：当前框架采用双曲Laplacian谱理论。
+**状态**：框架采用双曲Laplacian谱理论。
 
 ---
 
@@ -685,7 +685,7 @@ CQM 预言：不存在任何基元层面的真实坍缩——无自发加热、�
 
 $$\rho_G(t) = U(t)\,\rho_G(0)\,U^\dagger(t), \qquad U^\dagger U = \mathbb 1.$$
 
-观测设备的必要引力结构划定因果域 $\mathcal C$（由固有时截断 $\tau_{\text{close}}$ 与空间范围共同界定），对应局域算子代数 $\mathcal A_{\mathcal C} \subset \mathcal B(\mathcal H_G)$。
+观测设备的必要引力结构划定因果域 $\mathcal C$（由固有时截断 $\tau_{\text{close}}$ 与空间范围共同界定），对应局域算符代数 $\mathcal A_{\mathcal C} \subset \mathcal B(\mathcal H_G)$。
 
 **局域动力学 = 全局幺正在 $\mathcal A_{\mathcal C}$ 上的压缩**：
 

@@ -243,7 +243,7 @@ $$\gamma_{\text{deph}}(u) \propto \frac{1}{u_{\text{max}} - u}$$
 | 区域 | $\gamma_{\text{deph}}$ | $\rho_{ij}(\tau)$ | 物理状态 |
 |---|---|---|---|
 | **内部** $u \ll u_{\text{max}}$ | 有限 | 缓慢衰减 | 量子相干活跃 |
-| **临界** $u \sim u_{\text{max}}$ | 增大 | 快速衰减 | 退相干进行中 |
+| **临界** $u \sim u_{\text{max}}$ | 增大 | 快速衰减 | 退相干加速 |
 | **边界** $u \to u_{\text{max}}$ | $\to \infty$ | $\to 0$（瞬死）| **禁闭完成** |
 
 ### 6.3 对角元与非对角元的对比

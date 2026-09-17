@@ -29,7 +29,7 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 这些布洛赫波就是离散底空间上的"自守形式"：
 
 - 在平移群作用下按特征标变换（自守等变性）
-- 是Hecke算子（平移求和）的共同本征函数
+- 是Hecke算符（平移求和）的共同本征函数
 - 由晶胞对称性（嘉当矩阵）和周期性边界条件完全确定
 
 ### 1.3 推出布洛赫波需要的6个物理条件
@@ -61,7 +61,7 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 | 水平 $K_f$ ↔ 周期边界条件 | Maciejko-Rayan (PNAS 2022) | 有直接文献支撑：周期边界条件对应法氏群正规子群/水平结构 |
 | Adele环 ↔ 物理空间 | Volovich (1987)；Dragovich 等 (2017) | 有文献支撑：adelic 量子力学、adelic 宇宙学以 Adele 环统一实与 p 进扇区 |
 | 素数 ↔ 力（$\mathbb{Q}_2$→强、$\mathbb{Q}_3$→弱、$\mathbb{Q}_5$→电磁） | 未见于同行评审文献 | CQM 构造性假设（p 进物理文献不将具体素数指派给具体力） |
-| Hecke 代数 ↔ 对称操作 | Abe (2018)；Harvey-Wu (2018) | 部分支撑：CFT/陈-西蒙斯中 Hecke 算子作为函数空间算子；"平移算符"类比为启发式 |
+| Hecke 代数 ↔ 对称操作 | Abe (2018)；Harvey-Wu (2018) | 部分支撑：CFT/陈-西蒙斯中 Hecke 算符作为函数空间算符；"平移算符"类比为启发式 |
 | 中心特征 ↔ 守恒量子数 | Wigner 分类（Poincaré Casimir 标记质量/自旋） | 结构性类比：自守中心特征与 Casimir 不变量同为表示标记 |
 | $K_\infty$-type ↔ 轨道角动量 | 无直接文献 | 启发式类比：紧子群表示与 SO(3) 角动量表示的结构平行 |
 | Bruhat-Tits building ↔ p 进晶格 | building = p 进对称空间（数学确立）；p 进 AdS/CFT（Gubser 等 2017） | building 作为 p 进对称空间/AdS 体空间有支撑；"p 进晶格""顶点→核子位置""→Regge 剖分"为 CQM 构造性假设 |
@@ -182,7 +182,7 @@ $$\hat{\mathcal{S}} = \hat{\mathcal{S}}_{\text{nucleon}} \otimes \hat{\mathbb{I}
 
 其中：
 
-- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi C}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
+- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi \mathscr{C}}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
 - 耦合常数部分：$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u} - \ln p)$（质数投影算符的叠加）
 
 **同步方程**（= Hecke本征方程）：
@@ -196,7 +196,7 @@ $$\hat{\mathcal{S}} |\Psi\rangle = s |\Psi\rangle$$
 - Hecke代数是自守表示论的标准结构（Jacquet-Langlands《Automorphic Forms on GL(2)》(1970)；Borel《Introduction to automorphic forms》(1966)）
 - 同步算符由物理约束严格确定（FG因果+紧化U(1)）
 - 强多重性一（Jacquet-Shalika 1981；Piatetski-Shapiro 1979）保证 Hecke 特征值几乎处处一致 ⇒ 自守表示同构；newform 理论（Roberts-Schmidt 2007；Feng-Schmidt-Spallone 2018）保证表示内 newform 至多差标量唯一
-- 注意：同步算符与 Hecke 算子数学对象不同（前者是谱/动力学算符，后者是算术算子），二者仅功能角色对应（本征筛选）
+- 注意：同步算符与 Hecke 算符数学对象不同（前者是谱/动力学算符，后者是算术算符），二者仅功能角色对应（本征筛选）
 
 **文献**：见 `FG_纤维丛理论.md` §4.2（双空间同步算符）及 `FG_核心理论.md` §5.2（同步算符的完整谱结构）。
 
@@ -226,13 +226,13 @@ $$SU(5) \;\xrightarrow{\text{复化}}\; SL(5, \mathbb{C}) \;\xrightarrow{\text{p
 
 **building的几何编码壳层结构**：
 
-$\mathcal{B}(SL(5), \mathbb{Q}_p)$ 的维度为4，其4维腔体有5个顶点（类比4-单纯形的5个顶点）。注意：building 是无限单纯复形，其 Laplacian 谱并非有限的4个本征值；"4"对应的是 building 的维度 = 球 Hecke 代数的秩（GL(5) 的4个交换 Hecke 算子）。壳层结构的对应通过 Hecke 算子秩与 $A_4$ 的4个简单根建立：
+$\mathcal{B}(SL(5), \mathbb{Q}_p)$ 的维度为4，其4维腔体有5个顶点（类比4-单纯形的5个顶点）。注意：building 是无限单纯复形，其 Laplacian 谱并非有限的4个本征值；"4"对应的是 building 的维度 = 球 Hecke 代数的秩（GL(5) 的4个交换 Hecke 算符）。壳层结构的对应通过 Hecke 算符秩与 $A_4$ 的4个简单根建立：
 
 | building结构 | 壳层对应 |
 |:---|:---|
 | 5个顶点 | 5维基本表示 $\mathbb{C}^5$（5个核子位置） |
 | 4维腔体 | 4-单纯形（4个非零声子模式） |
-| 球 Hecke 代数秩 4（4个交换 Hecke 算子） | 4个壳层 $s/p/d/f$ |
+| 球 Hecke 代数秩 4（4个交换 Hecke 算符） | 4个壳层 $s/p/d/f$ |
 | 顶点-腔体关联 | Dynkin图 $A_4$（链结构） |
 
 ### 4.3 从Bruhat-Tits building到Regge几何的嵌入
@@ -321,7 +321,7 @@ $$\begin{array}{ccc}
 
 1. **顶点对应**：building顶点（p进格链类）→ Regge顶点（核子位置）。5个顶点一一对应 ✓
 2. **腔体对应**：building 4维腔体 → Regge 4-单纯形。几何结构一致 ✓
-3. **Hecke 秩对应**：building 球 Hecke 代数秩 4（4个交换 Hecke 算子）→ 嘉当矩阵 $A_4$ 的4个简单根（4个非零声子模式） ✓
+3. **Hecke 秩对应**：building 球 Hecke 代数秩 4（4个交换 Hecke 算符）→ 嘉当矩阵 $A_4$ 的4个简单根（4个非零声子模式） ✓
 4. **对称群对应**：building的 $S_5$ 对称（Weyl群 $W(A_4)$）→ Regge剖分的 $S_5$ 对称 ✓
 5. **Dynkin图对应**：building的顶点-腔体关联图 → $A_4$ Dynkin图（链） ✓
 
@@ -383,7 +383,7 @@ $$\begin{array}{ccc}
 | Roberts-Schmidt《Local Newforms for GL(n)》(2007)；Feng-Schmidt-Spallone (2018) | newform 理论（表示内形式唯一性） | 唯一性 |
 | Bump《Automorphic Representations and L-Functions for the General Linear Group》(1997) | GL(n) 自守表示与 L 函数 | 2,6 |
 | Satake (1963) | Satake 同构（球 Hecke 代数） | 6 |
-| Cartwright-Miatello-Steger (2005) | building 平均算子谱 | 3 |
+| Cartwright-Miatello-Steger (2005) | building 平均算符谱 | 3 |
 | Jacobson-Morozov 定理（Jacobson 1951；Morozov 1942） | 幂零元嵌入 $\mathfrak{sl}(2)$-三元组 | 1 |
 | Kostant (1959) 主三维子群 | principal $\mathfrak{sl}_2$ 嵌入 | 4 |
 | Belokolos (2017) arXiv:1706.02535 | O(4)→Madelung规则 | 4 |

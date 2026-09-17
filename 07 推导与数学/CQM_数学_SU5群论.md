@@ -273,7 +273,7 @@ $$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\l
 
 2. 角向扇区的有效再生产速率包含离散周期修正 1/N_cycle = 1/30 ≈ 3.33%。
 
-3. δθ_W^(1) 已从"自由唯象参数"降格为"第一性原理推导量"——其整个推导链为：
+3. δθ_W^(1) 从"自由唯象参数"降格为"第一性原理推导量"——其整个推导链为：
 
 **数论(𝒞) → 再生产动力学(dq/dτ=−𝒞) → 周期修正(N_cycle) → δ_CQM → δθ_W^(1)**
 
@@ -324,9 +324,9 @@ $$O^{(2)}_A = \mathcal{N} \sum_{b,c} d_{Abc} T_b T_c$$
 - **电弱扇区内**：E_{45}, E_{54}（2 个，连接 4↔5）
 - **颜色-电弱跨扇区**：E_{i3}, E_{i4}, E_{3i}, E_{4i}（i=1,2,3，共 6 个）
 
-合计 **2(N−1) = 8** 个活跃 ladder 算符构成 T₃-Y 扇区的有效算子代数。
+合计 **2(N−1) = 8** 个活跃 ladder 算符构成 T₃-Y 扇区的有效算符代数。
 
-ℓ=2 对称无迹投影的归一化涉及 (2ℓ+1)² = 25 维算子空间，经 SU(5) 表示维度修正后压缩为 2N−1 = 9 个独立分量。归一化因子因此为：
+ℓ=2 对称无迹投影的归一化涉及 (2ℓ+1)² = 25 维算符空间，经 SU(5) 表示维度修正后压缩为 2N−1 = 9 个独立分量。归一化因子因此为：
 
 $$\boxed{N_3^2 = \frac{2(N-1)}{2N-1} = \frac{8}{9} \;\;(\text{SU(5)})}$$
 
@@ -389,4 +389,4 @@ $$\boxed{N_3^2 = \frac{2(N-1)}{2N-1} = \frac{8}{9} \;\;(\text{SU(5)})}$$
 2. H. Georgi and S.L. Glashow, "Unity of All Elementary-Particle Forces", PRL 32, 438 (1974)
 3. P. Cvitanović, "Group Theory: Birdtracks, Lie's, and Exceptional Groups" (Princeton, 2008) — §9.12 SU(N) 约化矩阵元
 4. A.J. Macfarlane, A. Sudbery, P.H. Weisz, "On Gell-Mann's λ-matrices, d- and f-tensors, octets, and parametrizations of SU(3)", Commun. Math. Phys. 11, 77 (1968)
-5. J. Fuchs and C. Schweigert, "Symmetries, Lie Algebras and Representations" (CUP, 1997) — §13.4 d-符号与 Casimir 算子
+5. J. Fuchs and C. Schweigert, "Symmetries, Lie Algebras and Representations" (CUP, 1997) — §13.4 d-符号与 Casimir 算符

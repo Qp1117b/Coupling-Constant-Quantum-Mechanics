@@ -273,22 +273,22 @@ $$\boxed{D = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -
 
 ### 4. δ 的开放问题
 
-$\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 A4 的偏离。其函数形式已从 $SU(5)$ 重组实现动力学**构造性导出**（见 `08 超导/CQM_超导_专题与扩展.md` §11.8）：
+$\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 A4 的偏离。其函数形式从 $SU(5)$ 重组实现动力学**构造性导出**（见 `08 超导/CQM_超导_专题与扩展.md` §11.8）：
 
 $$\delta(Z,N) = 1 - \varepsilon_0 \cdot \frac{N}{Z+N}, \qquad \varepsilon_0 = 0.0012$$
 
-其中 $\varepsilon_0$ 由自由中子锚点 $\delta(0,1)=0.9988$ 确定；该形式满足纯质子极限、自由中子锚点、同位素效应与正定性条件。质量-谱映射的严格第一性推导仍开放（缺口 N1）。`SPAF.neutronDefect` 已形式化 $D(\delta)$ 矩阵。
+其中 $\varepsilon_0$ 由自由中子锚点 $\delta(0,1)=0.9988$ 确定；该形式满足纯质子极限、自由中子锚点、同位素效应与正定性条件。质量-谱映射的严格第一性推导仍开放（缺口 N1）。`SPAF.neutronDefect` 形式化 $D(\delta)$ 矩阵。
 
 ### 5. 推导缺口
 
 | 编号 | 缺口 | 内容 | 对应 Lean 形式化 |
 |------|------|------|------------------|
-| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式已构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`08 超导/CQM_超导_专题与扩展.md` §11.8）；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `Gravity.lean`（谱参数 $\mathscr{C},\mathfrak{c}_1$ 已定义）；`SPAF.neutronDefect` 已形式化 $D(\delta)$ |
-| **N2** | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\epsilon(\delta)$ 的具体公式 | `SPAF.neutronDefect` 已定义 $D(\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 已建立角亏-曲率关系，但 $\epsilon(\delta)$ 显式几何公式未写 |
+| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`08 超导/CQM_超导_专题与扩展.md` §11.8）；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `Gravity.lean`（谱参数 $\mathscr{C},\mathfrak{c}_1$ 定义）；`SPAF.neutronDefect` 形式化 $D(\delta)$ |
+| **N2** | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\epsilon(\delta)$ 的具体公式 | `SPAF.neutronDefect` 定义 $D(\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 建立角亏-曲率关系，但 $\epsilon(\delta)$ 显式几何公式未写 |
 | **N3** | β 衰变动力学条件未引入 | 孤立中子不稳定，束缚中子稳定的机制未定量 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` 已区分自由/束缚缺陷，但 β 衰变稳定性动力学未定量 |
 | **N4** | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |
 
-**当前状态**：$\delta(Z,N)$ 函数形式已构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$，见 N1 引用文档）；质量-谱映射与 $\varepsilon_0$ 的第一性来源待严格推导（缺口 N1）。
+**当前状态**：$\delta(Z,N)$ 函数形式构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$，见 N1 引用文档）；质量-谱映射与 $\varepsilon_0$ 的第一性来源待严格推导（缺口 N1）。
 
 ---
 
@@ -364,7 +364,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 - **本体与几何映射**：物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同；底空间是物质自组织的空间形态本身；
 - **双曲率结构**：Regge 曲率（角亏 $\delta_v$，进入不确定性关系）与伴丛曲率（$F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$，进入伴丛运动方程 $D*F=*J_\Phi$）共用联络 $\mathcal{A}_{\text{FG}}$，但遵循不同的数学规则；
 - **自我展开**：物质同时是网络构成者（晶胞构造底空间）与曲率源（角亏生成联络），新层级（电子、库珀对）在此网络中持续涌现；三维空间来自先在的 U(1)×SU(2)×SU(3) 三丛在底空间上的展开；
-- $\delta(Z,N)$ 函数形式已构造性导出（$\delta = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$），$\varepsilon_0$ 第一性来源与质量-谱映射待严格推导（缺口 N1/N2）；
+- $\delta(Z,N)$ 函数形式构造性导出（$\delta = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$），$\varepsilon_0$ 第一性来源与质量-谱映射待严格推导（缺口 N1/N2）；
 - 核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；联络 $\mathcal{A}_{\text{FG}}$、伴丛曲率 $F$ 与伴丛运动方程的显式构造与形式化尚未完成。
 
 下一步若能用第一性原理推导出 δ，并同时预言质量差、氘核结合能、超导临界温度，CQM 将从逻辑闭环走向定量理论。

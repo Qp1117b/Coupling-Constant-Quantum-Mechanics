@@ -149,7 +149,7 @@ $$\hat{\rho}_k(0) = |k\rangle_S \langle k| \otimes \hat{\rho}_{\beta E}$$
 - $D_E = 2^{N_E}$：环境 E 的希尔伯特空间维数
 - $D = D_S D_E$：总系统维数
 
-**式(2) — 投影测量算子：**
+**式(2) — 投影测量算符：**
 
 $$\hat{\Pi}_\alpha = |\alpha\rangle_S \langle \alpha| \otimes \mathbf{1}_E$$
 
@@ -218,7 +218,7 @@ $$Z_\beta(\tau) = \tilde{N}_\beta(-i\tau), \quad \tau \in [\tau_1, \tau_2], \qua
 
 $$\hat{\rho}_k(t) = e^{-i\hat{H}t} \hat{\rho}_k(0) e^{i\hat{H}t} = \frac{1}{D_E} \hat{K}_1(t) \hat{\Pi}_k \hat{K}_1^\dagger(t)$$
 
-**式(12) — 有效非幺正演化算子：**
+**式(12) — 有效非幺正演化算符：**
 
 $$\hat{K}_1(t) \equiv e^{-i\hat{H}t} \hat{\rho}_{\beta E}^{1/2} \sqrt{D_E}$$
 
@@ -229,8 +229,8 @@ $$\hat{K}_1(t) \equiv e^{-i\hat{H}t} \hat{\rho}_{\beta E}^{1/2} \sqrt{D_E}$$
 
 **推导要点**：
 1. $\hat{\rho}_k(0) = |k\rangle\langle k| \otimes \hat{\rho}_{\beta E}$
-2. $\hat{\rho}_{\beta E} = \hat{\rho}_{\beta E}^{1/2} \cdot \hat{\rho}_{\beta E}^{1/2}$（正定算子的平方根分解）
-3. 将一个平方根因子吸收到演化算子中，另一个构成"初始态"的一部分
+2. $\hat{\rho}_{\beta E} = \hat{\rho}_{\beta E}^{1/2} \cdot \hat{\rho}_{\beta E}^{1/2}$（正定算符的平方根分解）
+3. 将一个平方根因子吸收到演化算符中，另一个构成"初始态"的一部分
 
 **CQM 对照要点【CQM 构造假设】**：这一映射对应 CQM 中**引力退相干的"表观非幺正性"本质上是有限温效应**——从禁闭内部（QG 层）的视角看，演化似乎是非幺正的（因为与引力环境纠缠），但总系统（系统+引力）的演化仍是幺正的。这正是"条件性幺正"的数学表述。
 
@@ -405,7 +405,7 @@ $$\tau_{\text{deco}} \gtrsim \frac{\mathscr{C}}{\pi v_\tau} \ln\left(\frac{\Delt
 ```
 
 **核心数学工具**：
-1. **谱定理**（自伴算子的实谱分解）
+1. **谱定理**（自伴算符的实谱分解）
 2. **帕利-维纳定理**（傅里叶变换的解析性与衰减的关系）
 3. **解析函数论中的衰减下界定理**（如 Bernstein 型不等式、Levin-Pfluger 型定理）
 4. **量子信息论**（保真度、Rényi 熵、纠缠度量）

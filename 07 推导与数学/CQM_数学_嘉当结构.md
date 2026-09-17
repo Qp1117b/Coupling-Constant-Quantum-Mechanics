@@ -44,12 +44,12 @@ $$\partial_\tau\phi + v\,e^u\partial_u\phi = 0$$
 
 将连续哈密顿量离散化。SU(5) 嘉当矩阵 $A_4$ 作为离散 Laplacian：
 
-$$(I + \frac{icA_4}{2a})\psi^{n+1} = (I - \frac{icA_4}{2a})\psi^n$$
+$$(I + \frac{iA_4}{2})\psi^{n+1} = (I - \frac{iA_4}{2})\psi^n$$
 
 - $A_4 = \text{Cartan}(\text{SU}(5))$：4×4 三对角矩阵
 - $a = \hbar/(m_p c)$：格点间距（质子康普顿波长）
 - $\psi^n \in \mathbb{C}^4$：第 $n$ 步态矢量
-- $\Delta\tau = a/c$：因果步进
+- $\Delta\tau = a/c$：因果步进，代入 $H\Delta\tau = A_4$ 消去 $c$ 与 $a$，形式无量纲
 
 连续极限：
 

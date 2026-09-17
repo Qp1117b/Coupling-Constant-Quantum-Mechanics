@@ -45,7 +45,7 @@ $$\boxed{\beta(g) = \frac{dg}{d\ln\mu} = 0 \;\;\Longleftrightarrow\;\; \text{没
 
 关联长度无穷大 $\Rightarrow$ 系统失去所有特征尺寸 $\Rightarrow$ 普通微扰展开（按 $1/\xi$ 展开）**严格发散**。
 
-**唯一替代工具**：共形场论的OPE——不依赖特征尺寸，直接描述算子乘积的代数结构。
+**唯一替代工具**：共形场论的OPE——不依赖特征尺寸，直接描述算符乘积的代数结构。
 
 ### 1.4 $\phi^4$理论：维度依赖性的具体例子
 
@@ -116,7 +116,7 @@ $$\boxed{|\{n_k\}\rangle_{\text{sync}} \otimes |u_k\rangle_{\text{coup}} \xright
 
 ### 3.3 OPE的CFT标准形式
 
-在共形场论中，两个初级算子的OPE：
+在共形场论中，两个初级算符的OPE：
 
 $$\mathcal{O}_i(z) \cdot \mathcal{O}_j(0) \sim \sum_{k} C_{ij}^{k} z^{h_k - h_i - h_j} \mathcal{O}_k(0)$$
 
@@ -145,7 +145,7 @@ OPE结构常数 $C_{ij}^{k}$ 由以下严格确定：
 
 自举的是**结合律（Associativity）**，也就是OPE的相容性条件。
 
-**具体来说**：四个算子的四点点函数，可以通过两种不同的OPE通道来分解：
+**具体来说**：四个算符的四点点函数，可以通过两种不同的OPE通道来分解：
 
 $$\langle \mathcal{O}_1 \mathcal{O}_2 \mathcal{O}_3 \mathcal{O}_4 \rangle = \sum_k C_{12}^{k} C_{k34} \,\mathcal{F}_k^{(s)}(z) = \sum_m C_{14}^{m} C_{m23} \,\mathcal{F}_m^{(t)}(z)$$
 
@@ -535,7 +535,7 @@ $$\text{局域库珀对触发} \xrightarrow{\text{配对相位模式传播}} \te
 
 $$\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{phys}}(SU(5))$$
 
-CFT视角：紧化算符是**共形映射**，同步本征态是**初级算子**，同步成本 $n_k$ 是**共形维度**。
+CFT视角：紧化算符是**共形映射**，同步本征态是**初级算符**，同步成本 $n_k$ 是**共形维度**。
 
 **态扩大视角**：同步是事件，同步有过程——过程是**临界自组织态的扩大**（§8）。同步方程描述的是整个同步事件（过程被压缩，体现为定态结构），CFT描述的是同步过程（扩大的动力学——幂律传播 $r^{-2h}$ 给出扩大的速率和范围）。
 
@@ -565,7 +565,7 @@ CFT是此链条中**同步方程→本征群**步骤的数学基础。OPE给出�
 CQM核心理论
  │
  ├── 因果网络同步理论（同步算符=紧化算符=共形映射）
- │ └── 同步本征态 = CFT初级算子
+  │ └── 同步本征态 = CFT初级算符
  │ └── 同步有过程，过程 = 临界自组织态的扩大（§8），同步方程描述整个同步事件（压缩为定态）
  │
  ├── 朗兰兹分层共振（GL(n)分层=Kac-Moody水平分层）
@@ -631,7 +631,7 @@ CQM核心理论
 | 共形场论基础 | Belavin-Polyakov-Zamolodchikov (1984) | BPZ共形自举 |
 | Kac-Moody代数 | Kac (1985) | 仿射Lie代数 |
 | Sugawara构造 | Sugawara (1968) | Virasoro从Kac-Moody构造 |
-| OPE | Wilson (1969) + Zimmermann | 算子乘积展开 |
+| OPE | Wilson (1969) + Zimmermann | 算符乘积展开 |
 | 共形块 | Di Francesco et al. (1997) | CFT教科书 |
 | Kac-Moody / Virasoro | Goddard-Kent-Olive (1986) | GKO构造 |
 | WZW模型 | Wess-Zumino (1971) + Witten (1984) | 作用量归一化 $g^2=4\pi/(k+h^\vee)$ |
