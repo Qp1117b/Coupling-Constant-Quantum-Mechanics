@@ -32,7 +32,7 @@ $$i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
 在体区域（源外）经测度补偿 $\Psi = e^{u/2}\phi$ 退化为传输方程：
 
-$$\partial_\tau\phi + c\,e^u\partial_u\phi = 0$$
+$$\partial_\tau\phi + C\,e^u\partial_u\phi = 0$$
 
 **关键**：$\hat{H}_\infty$ 与 $\hat{\mathcal{D}}$ 独立构造，非平方关系——$\hat{\mathcal{D}}^2 = c^2 e^{2u}(-\partial_u^2 + 1/4) \neq \hat{H}_\infty$。两者通过 $\hat{\mu}$ 在事件点衔接。
 
@@ -57,9 +57,9 @@ $$\frac{A_4}{a^2} \longrightarrow -\partial_u^2 + \partial_u = \hat{H}_\infty/c^
 
 ### 2.2 谱结构
 
-本征值待重新推导。
+离散谱本征值的解析公式待重新推导。
 
-谱间隙 $E_0 = c^2/4$ 由有效边界势 $V_{\text{eff}}(0) = c^2/(\Delta u)^2 \cdot 1/\text{Tr}(A^{-1})$ 严格给出。
+谱间隙 $E_0 = c^2/4$ 由有效边界势 $V_{\text{eff}}(0) = c^2/(\Delta u)^2 \cdot 1/\text{Tr}(A_4^{-1})$ 严格给出。
 
 ---
 
@@ -83,7 +83,7 @@ $G_N$ 的谱公式：
 
 $$G_N = \frac{I\cdot\lambda_c\cdot C^2\cdot \mathfrak{c}_1}{m_p^2}\cdot\exp\left(-\frac{2}{C}\right)\cdot(1+\kappa C),\quad \kappa = \frac{31+C}{30}$$
 
-全部因子来自谱几何与群论，无一自由参数。
+除质子质量 $m_p$ 一个实验输入外，全部因子来自谱几何与群论，无一可调参数。
 
 ---
 
@@ -193,7 +193,7 @@ SU(5) 嘉当矩阵 $A_4$ 的 Weyl 群 $S_5$ 同时是 4-单纯形的置换对称
 群结构确定场的代数性质：
 
 - **SU(3) / $p=2$**：非 Abel，$f^{abc} \neq 0$ → 胶子自相互作用 → 色禁闭（壳层完全退相干）
-- **SU(2) / $p=3$**：非 Abel，对称性破缺 → $W/Z$ 质量生成（壳层部分退相干）
+- **SU(2) / $p=3$**：非 Abel，对称性重组实现 → $W/Z$ 质量生成（壳层部分退相干）
 - **U(1) / $p=5$**：Abel，$f^{abc} = 0$ → 光子长程传播（壳层最小退相干）
 
 场的动力学内容（拉格朗日量、传播子、顶点）由 p 进结构在实数扇区的投影确定，非外加假设。

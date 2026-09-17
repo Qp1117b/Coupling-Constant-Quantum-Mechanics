@@ -34,7 +34,7 @@ FG是一种**通用的引力理论**，不局限于任何特定物理现象。�
 $$\text{QG（基态 } GL(5)/SU(5) \text{ 谱结构活跃）} \xrightarrow{\text{退相干}} \text{GR（谱结构冻结为经典时空）} \xrightarrow{\text{FG 激活}} \text{FG（子结构重新活跃）}$$
 
 - **QG**：基态谱空间 = 紧化算符 $\hat{\mathcal{S}}_0$ 作用下的GL(5)自守谱与SU(5)物理谱
-- **GR**：基底性同步完成，退相干冻结所有前几何自由度为经典时空
+- **GR**：基底性同步前提，退相干冻结所有前几何自由度为经典时空
 - **FG**：GR基态的非平庸激发，角亏 $\delta_v > 0$ **激活**被封存的前几何结构
 
 ### 2.2 FG的层级发生学
@@ -75,7 +75,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，原则上由Regge剖分的牛顿极限定值，从拟合参数降格为可推导量（定值计算待完成）。**耦合动量 $p_u = v_\tau/C$（相变量子 $C$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$，$C$ 为单一普适相变量子。注意：此处相变量子 $C$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，不是拟合参数，原则上由Regge剖分的牛顿极限定值（定值计算待完成）。**耦合动量 $p_u = v_\tau/C$（相变量子 $C$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq C/2$，$C$ 为单一普适相变量子。注意：此处相变量子 $C$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
 
 ### 3.2 同步方程
 
@@ -265,9 +265,9 @@ $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \te
 
 ### 5.5 GUE统计（各层通用）
 
-Montgomery-Odlyzko：各GL(n)层L函数零点间距 = GUE sine-kernel
+Montgomery-Odlyzko：各GL(n)层L函数零点对关联 = GUE sine-kernel
 
-$$P(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
+$$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 
 各层零点 = 量子混沌能级（Berry图景：周期轨道 = 素数）。
 
@@ -286,7 +286,7 @@ FG在不同物质组织层级有不同实现，每层由纤维丛四元组 $(M_\
 
 ### 6.2 层级嵌套
 
-$$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
+$$P_{\text{el}} \hookrightarrow P_{\text{element}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
 
 每层底空间是上层的纤维。
 
@@ -311,7 +311,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 | Hilbert–Pólya | 1914+ | — | 自伴算符H，本征值=黎曼零点 |
 | Montgomery | 1973 | — | 对关联猜想=GUE |
 | Bost-Connes | 1995 | arXiv:1012.4665 | Z(β)=ζ(β)量子统计系统 |
-| Berry-Keating | 1999 | arXiv:0712.0705 | H=xp算符，semiclassical |
+| Berry-Keating | 1999 | — | H=xp算符，semiclassical |
 | Connes | 2019 | arXiv:1910.14368 | 缩放哈密顿量，谱实现 |
 | Ng | 2006 | arXiv:math/0603275 | Virasoro c=1/2谱实现 |
 | Srednicki | 2011 | arXiv:1104.1850 | 局部RH谱证明 |
