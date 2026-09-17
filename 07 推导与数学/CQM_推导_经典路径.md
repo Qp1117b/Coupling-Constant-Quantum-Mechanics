@@ -237,7 +237,7 @@ $$\boxed{E_0 = \frac{1}{4}}$$
 
 ### 8.3 本征值问题
 
-$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = \frac{1}{4} + \gamma_n^2 = \mathfrak{c}_n$$
+$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = \frac{1}{4} + \gamma_n^2$$
 
 Robin/Neumann 边界条件 $\partial_u\phi(0) = 0$ 筛选模式 $s = 1/2 + i\gamma_n$ 满足 $\xi(s) = \xi(1-s)$。
 
@@ -283,7 +283,7 @@ $A_{ij}$ 对偶于正四单纯形（4-simplex）的边长关联矩阵。非对�
 
 ### 10.3 连续化映射
 
-差分 $\to$ 微分严格极限（$\Delta u \to 0$，保持 $c = \Delta u/\Delta\tau$）：
+差分 $\to$ 微分严格极限（$\Delta u \to 0$，保持 $v = \Delta u/\Delta\tau$）：
 
 $$\frac{1}{(\Delta u)^2}(A\psi)_i \;\xrightarrow{\mathcal{C}}\; \left(-\partial_u^2 + \partial_u\right)\phi(u)$$
 

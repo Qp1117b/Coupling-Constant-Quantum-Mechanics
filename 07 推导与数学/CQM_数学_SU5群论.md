@@ -245,7 +245,7 @@ $$\delta_{\text{CQM}} = \delta\theta_W^{(1)} - \Delta_{\text{RGE}} = -0.15662 - 
 
 $$\delta_{\text{CQM}} \approx -\frac{C}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
 
-其中 C = ξ'(1)/ξ(1) ≈ 0.0230957 是 CQM 再生产速率。
+其中 C = ξ'(1)/ξ(1) ≈ 0.0230957 是 CQM 相变量子。
 
 数值：−C·ln(M_GUT/M_Z)/(2π) = −0.1094，与 δ_CQM = −0.1133 的残差仅 3.5%。
 

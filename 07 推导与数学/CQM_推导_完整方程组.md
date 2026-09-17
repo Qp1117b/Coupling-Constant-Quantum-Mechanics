@@ -67,7 +67,7 @@ $\mathbb{H}^2$ 的 Laplace-Beltrami 算符 $\Delta_{\mathbb{H}^2} = -e^{2u}(\par
 
 $$\hat{H}_\infty = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4} \tag{CS12}$$
 
-谱结构 $E_n = 1/4 + \gamma_n^2 = \mathfrak{c}_n$ 直接从 $\mathbb{H}^2$ 的几何涌出（详见 §七）。
+谱结构 $E_n = 1/4 + \gamma_n^2$（能级），耦级 $\mathfrak{c}_n = 1/4 + \gamma_n^2$ 直接从 $\mathbb{H}^2$ 的几何涌出（详见 §七）。
 
 **状态**：CS0–CS4 公理；CS5–CS6 定理（`归档 CNT/06 论文/01-闭合核理论（CNT）` 定理 3.1）；CS7–CS8 公理；CS9–CS10 构造；CS11–CS12 严格极限
 
@@ -204,7 +204,7 @@ $$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi
 
 ### 7.1 Sturm-Liouville 构造
 
-$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = \frac{1}{4} + \gamma_n^2 = \mathfrak{c}_n \tag{S1}$$
+$$\hat{H}_\infty\Phi_n = E_n\Phi_n, \qquad E_n = \frac{1}{4} + \gamma_n^2 \tag{S1}$$
 
 $$\hat{H}_\infty = \hat{D}^2 + \frac{1}{4} \geq \frac{1}{4}, \qquad \boxed{E_0 = \frac{1}{4}} \tag{S2}$$
 

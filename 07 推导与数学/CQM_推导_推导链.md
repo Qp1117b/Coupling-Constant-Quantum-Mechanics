@@ -155,7 +155,7 @@
 
 ### 第二阶段：时空兼容（SR / GR）
 
-**核心产出**：固有时 $\tau_k = k\cdot T_{\text{rep}}$、SR/GR 兼容机制、时空同步特征速度涌现 $c = \dfrac{D}{T_{\text{rep}}}$、RG 等价性
+**核心产出**：固有时 $\tau_k = k\cdot T_{\text{rep}}$、SR/GR 兼容机制、时空同步特征速度涌现 $v = \dfrac{D}{T_{\text{rep}}}$、RG 等价性
 
 **文档**：`CQM_数学_Adele纲领 §4-6`、`归档 CNT/04 核心方程`、`归档 CNT/05 前沿研究`、`归档 CNT/05 前沿研究/04-最小因果时与时间结构`
 

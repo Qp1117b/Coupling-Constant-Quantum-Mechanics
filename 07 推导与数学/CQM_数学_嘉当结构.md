@@ -20,7 +20,7 @@ Hilbert 空间：$\mathcal{H}_\infty = L^2(\mathbb{R}, e^{-u}du)$，内积 $\lan
 
 $\hat{H}_\infty$ 在 Neumann 边界条件 $\partial_u\phi(0)=0$ 下自伴（Friedrichs 扩张），谱：
 
-$$E_n = \frac{1}{4} + \gamma_n^2 = \mathfrak{c}_n, \quad E_0 = \frac{1}{4}$$
+$$E_n = \frac{1}{4} + \gamma_n^2, \quad E_0 = \frac{1}{4}$$
 
 其中 $\gamma_n$ 为黎曼 $\zeta$ 函数第 $n$ 个非平凡零点的虚部。
 
