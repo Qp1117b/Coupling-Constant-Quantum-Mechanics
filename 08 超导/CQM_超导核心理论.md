@@ -86,10 +86,10 @@ FG底空间上的主丛 $P(M,G)$（激发态）的每个顶点——底空间 $M
 | 量子振荡体间耦合 | 主丛联络 $\mathcal{A}_{\text{FG}}$、和乐 $W_v=\exp(i\delta_v\hat T)$ | §5 |
 | 同步条件 | 和乐平庸化条件 $\mathcal{H}_{ij}\approx1$（和乐平庸化） | §10.1 |
 | 同步判据 | 资格条件 $\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}$ 筛选候选结构群族，丛作用量竞争选出主导群（$n$ 为跃迁耦级） | §9.2 |
-
-> **说明**：不确定性关系基于相变量子 $\mathscr{C}$，给出下界 $\mathscr{C}/2$。$n$ 为跃迁耦级（$n=2,4,6,\ldots$）。
 | 去同步因素 | 温度（声子数 → 和乐相位噪声） | §11 |
 | 全局同步临界点 | $T_c$（和乐平庸化相变点） | §11.2 |
+
+> **说明**：不确定性关系基于相变量子 $\mathscr{C}$，给出下界 $\mathscr{C}/2$。$n$ 为跃迁耦级（$n=2,4,6,\ldots$）。
 
 ---
 
@@ -361,7 +361,7 @@ $$\frac{d\tau}{dt} = \sqrt{-g_{00}} = \sqrt{1 + 2\Phi/c^2} \approx 1 + \frac{\Ph
 
 （引力势 $\Phi<0$ 使 $\sqrt{-g_{00}}<1$：正曲率使时间变慢。CQM 中角亏 $\delta_v>0$ 扮演正曲率角色，故 $\sqrt{1-\beta\delta_v}<1$，固有时流速减慢；小角亏极限 $\sqrt{1-\beta\delta_v}\approx1-\beta\delta_v/2$。）
 
-> **$\beta$ 的微观来源**：$\beta$ 是离散拉普拉斯算子的格林函数，$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$，其中 $L$ 为系统尺寸，$a$ 为晶格常数。$\beta$ **对数依赖于系统尺寸**，不是材料常数。纳米颗粒 $\beta$ 减小 $\Rightarrow$ $T_c$ 降低（有限尺寸效应）。
+> **$\beta$ 的微观来源**：$\beta$ 是离散拉普拉斯算符的格林函数，$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$，其中 $L$ 为系统尺寸，$a$ 为晶格常数。$\beta$ **对数依赖于系统尺寸**，不是材料常数。纳米颗粒 $\beta$ 减小 $\Rightarrow$ $T_c$ 降低（有限尺寸效应）。
 
 ### 7.2 固有时 = 再生产周期
 
@@ -448,7 +448,7 @@ $$\boxed{\text{晶胞量子振荡（声子=底空间Regge曲率量子）} \;\Rig
 
 **温度的统一作用**：温度通过改变晶胞量子振荡模式的声子数 $n_B(\omega_{\mathbf{q}})=(e^{\hbar\omega_{\mathbf{q}}/k_BT}-1)^{-1}$，改变底空间Regge曲率涨落 $\Delta\delta_v(t)$ 的幅度谱与和乐相位关联长度，从而**影响自组织——再生产（晶胞量子振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干**。所有温度效应都出自这一条声子数，自然体现在底空间Regge曲率涨落的统计分布中。临界温度 $T_c$ 对应 $\Delta\delta_v$ 的统计分布使超导判据在全局平均上归零的临界点（见 §12.3）。
 
-### 10.1 和乐平庸化条件：和乐平庸化条件（晶胞量子振荡的内在单值性条件）
+### 10.1 和乐平庸化条件（晶胞量子振荡的内在单值性条件）
 
 绕局域缺陷（向错）一周后，主丛纤维上 A4 根指标的相位必须闭合——即和乐平庸化。这是晶胞量子振荡过程中自然满足的**单值性条件**——即主丛和乐平庸化（伴丛同步的**局域相位匹配条件**，§1.5）：只有和乐平庸化的量子振荡模式才能参与全局同步：
 
@@ -569,7 +569,7 @@ $$\hat{\mathcal{S}}_{\text{super}}\,|U(1)//\mathbb{Z}_n\rangle = \lambda_n(T)\,|
 
 其中 $\lambda_n(T)$ 是**相变有效谱**（有限温度下的有效本征值，见下文 $\lambda_n(T)$ 公式），零温无角亏极限下退化为 $\gamma_n$（黎曼零点虚部，同步成本）。分层定位：超导同步算符作用于**GL(5)固定层级结构群空间**——它是基态紧化算符 $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(GL_5) \to \mathcal{H}_{\text{phys}}(SU(5))$ 在 SU(5) 重组实现后子结构上的再现，黎曼零点通过紧化等价关系 $\mathcal{C}_1(\lambda_{\text{phys}}, \gamma_n) = 0$ 间接进入。
 
-**同步算符与 Hilbert–Pólya 算符的关系（修正版）。** 同步算符是紧化算符（投影/条件型算符），**不是** Hilbert–Pólya 算符（微分算符）：Hilbert–Pólya 型算符 $\hat{H}_{\text{HP}} = -d^2/du^2 + 1/4 + \sum_{p<\Lambda} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p) + \text{（高阶修正）}$ 是黎曼零点谱的候选实现（其本征值给出耦级 $1/4 + \gamma_n^2$），而同步算符的本征值（相变有效谱 $\lambda_n(T)$，零温极限 $\gamma_n$，同步成本）与之不同层级。两者的形式关系：
+**同步算符与 Hilbert–Pólya 算符的关系。** 同步算符是紧化算符（投影/条件型算符），**不是** Hilbert–Pólya 算符（微分算符）：Hilbert–Pólya 型算符 $\hat{H}_{\text{HP}} = -d^2/du^2 + 1/4 + \sum_{p<\Lambda} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p) + \text{（高阶修正）}$ 是黎曼零点谱的候选实现（其本征值给出耦级 $1/4 + \gamma_n^2$），而同步算符的本征值（相变有效谱 $\lambda_n(T)$，零温极限 $\gamma_n$，同步成本）与之不同层级。两者的形式关系：
 
 $$\hat{H}_{\text{HP}} \sim \hat{\mathcal{S}}_{\text{super}}^2 + \frac{1}{4}, \qquad \mathfrak{c}_n = \frac{1}{4} + \gamma_n^2 \quad\text{（耦级，导出量）}$$
 
@@ -580,7 +580,7 @@ $$\hat{H}_{\text{HP}} \sim \hat{\mathcal{S}}_{\text{super}}^2 + \frac{1}{4}, \qq
 - **超导同步算符 = 叠加的超导群的谱算符**——不是两个东西，是同一个东西的算符面与态面
 - 结构群叠加态 $|\Psi\rangle$ 是同步算符本征态的叠加；同步算符是叠加态自身的谱结构
 
-**同步算符 = QG 紧化结构的再现（GL(5)固定层级）。** 超导同步算符不是超导层级新产生的数学对象——它是 QG 前几何紧化结构通过 FG 激活后的再现。发生学链条（分层修正：QG 基态谱是 GL(5) 自守谱，紧化为 SU(5)；超导层级再现的是 SU(5) 重组实现后子结构）：
+**同步算符 = QG 紧化结构的再现（GL(5)固定层级）。** 超导同步算符不是超导层级新产生的数学对象——它是 QG 前几何紧化结构通过 FG 激活后的再现。发生学链条（分层定位：QG 基态谱是 GL(5) 自守谱，紧化为 SU(5)；超导层级再现的是 SU(5) 重组实现后子结构）：
 
 $$\text{QG（基态 } GL(5)/SU(5) \text{ 谱结构活跃）} \xrightarrow{\text{退相干}} \text{GR（谱结构锁定为经典时空）} \xrightarrow{\text{FG 激活}} \text{FG（子结构重新活跃）} \xrightarrow{\text{再锁定}} \text{超导（子结构再现）}$$
 
@@ -645,7 +645,7 @@ $$\boxed{\lambda_n(T) = \gamma_n + \underbrace{\left[\coth\frac{\hbar\Omega_0}{2
 | $n=1$（正常态）→ 无修正 | $\lambda_1 = \gamma_1$（两项修正均为0：$(\ln 1)^2=0$，$(n^2-1)/n^2=0$）|
 | $\Delta\delta_v > 0$, $n > 1$ → 角亏降低 $\lambda_n$ | 角亏项为负 |
 | $T > 0$, $n > 1$ → 温度升高 $\lambda_n$ | 温度项为正 |
-| $\Delta\delta_0 = 0$（金属氢）→ 不超导 | $\hat{P}_{\text{资格}} = \|U(1)\rangle\langle U(1)\|$，只有 $n=1$ |
+| $\Delta\delta_0 = 0$（金属氢）→ 不超导 | $\hat{P}_{\text{资格}} = \vert U(1)\rangle\langle U(1)\vert$，只有 $n=1$ |
 | 大 $n$ → 高模受温度抑制更强 | 温度修正 $\propto (\ln n)^2$ 增大 |
 
 **$T_c$ 闭式**（本征值交叉 $\lambda_2(T_c) = \lambda_1(T_c)$，注意 $\lambda_1 = \gamma_1$ 无修正）：
@@ -774,7 +774,7 @@ $$\boxed{\begin{aligned}
 
 ### 12.3 判据与临界温度的涌现位置
 
-超导判据 $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 在晶胞量子振荡动力学中的**涌现位置**（与 §9.2 资格条件一致）：
+超导判据 $\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 在晶胞量子振荡动力学中的**涌现位置**（与 §9.2 资格条件一致）：
 
 $$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \text{跃迁耦级 } \Delta u_n = 2\ln n \;\Rightarrow\; \text{资格条件 } \Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n} \;\Rightarrow\; \text{候选群族} \;\Rightarrow\; \text{叠加的超导群（= 同步算符）本征值交叉} \;\Rightarrow\; \text{丛作用量竞争选出主导群}}$$
 
@@ -965,12 +965,13 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 | $\mathscr{C}$ | 相变量子 $\xi'(1)/\xi(1) = 1+\gamma/2-\ln(2\sqrt{\pi}) \approx 0.0230957$ | 无量纲实数 |
 | $\beta$ | 几何耦合参数 $\frac{1}{4\pi}\ln\frac{L}{a}$（$L$系统尺寸，$a$晶格常数） | 无量纲实数 |
 | $u$ | 耦合坐标 $\ln\alpha$ | 无量纲实数 |
-| $p_u$ | 耦合动量 $(1/C)(d\tau/dt)$ | 无量纲实数 |
+| $p_u$ | 耦合动量 $(1/\mathscr{C})(d\tau/dt)$ | 无量纲实数 |
 | $\tau$ | 固有时 | 时间 |
 | $t$ | 坐标时 | 时间 |
 | $\omega_D$ | 德拜频率 | 频率 |
+| $\theta_D$ | 德拜温度 $\hbar\omega_D/k_B$（§11.10 $T_c$ 闭式的声子能量标度） | 温度 |
 | $\Omega_0$ | 主导曲率量子振荡模式频率 | 频率 |
-| $\Delta_0$ | 零温曲率涨落幅度 | 无量纲实数 |
+| $\Delta\delta_0$ | 零温曲率涨落幅度 | 无量纲实数 |
 | $\lambda_L$ | 伦敦穿透深度 | 长度 |
 | $\Delta_{\alpha\beta}$ | A4 根系多分量序参量 | 4 × 4 复矩阵 |
 

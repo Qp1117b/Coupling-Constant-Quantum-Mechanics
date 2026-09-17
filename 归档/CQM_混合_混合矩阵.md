@@ -63,12 +63,12 @@ $$\boxed{\left(I - \frac{\zeta_j^n}{2}\right)\psi_j^{n+1} = \left(I + \frac{\zet
 
 ### 3.2 连续极限：Stratonovich 随机微分方程
 
-取连续极限 $\delta u, \delta \tau \to 0$，保持 $c = \delta u/\delta \tau$ 固定。采用 Stratonovich 积分：
+取连续极限 $\delta u, \delta \tau \to 0$，保持 $v = \delta u/\delta \tau$ 固定。采用 Stratonovich 积分：
 
-$$\boxed{d\psi = -c\,\partial_u\psi\,d\tau + \zeta(u)\psi \circ dW_\tau}$$
+$$\boxed{d\psi = -v\,\partial_u\psi\,d\tau + \zeta(u)\psi \circ dW_\tau}$$
 
 **命题 3.2**（Stratonovich-Itô 转换）。上述 Stratonovich SDE 等价于如下 Itô SDE：
-$$d\psi = \left(-c\,\partial_u + \frac{1}{2}\zeta^2\right)\psi\,d\tau + \zeta(u)\psi\,dW_\tau$$
+$$d\psi = \left(-v\,\partial_u + \frac{1}{2}\zeta^2\right)\psi\,d\tau + \zeta(u)\psi\,dW_\tau$$
 
 *证明*。同原文命题 3.2。$\square$
 
@@ -83,7 +83,7 @@ $$d\psi = \left(-c\,\partial_u + \frac{1}{2}\zeta^2\right)\psi\,d\tau + \zeta(u)
 $$\boxed{\frac{d\rho}{d\tau} = -i[H_{\text{eff}},\rho] + \sum_{k} \left(L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k,\rho\}\right)}$$
 
 其中：
-- $H_{\text{eff}} = -ic\,\partial_u + \frac{i}{2}\langle\zeta^2\rangle$
+- $H_{\text{eff}} = -iv\,\partial_u + \frac{i}{2}\langle\zeta^2\rangle$
 - $L_k = \zeta_k$（跳跃算符，满足 $L_k^\dagger = -L_k$）
 
 **命题 4.1**（完全正性与迹守恒）。GKSL 形式自动保持 $\text{tr}(\rho)=1$ 与 $\rho\geq 0$。
@@ -111,7 +111,7 @@ $$\zeta^2_{12} = -h_{12}(h_{11}+h_{22}) - h_{13} h_{23}^*$$
 $$U(\tau) = \mathcal{T}\exp\left(\int_{\tau_0}^{\tau} \zeta(u(\tau'))\,dW_{\tau'}\right)$$
 
 对 Itô 形式取系综平均：
-$$\langle U(\tau) \rangle = \exp\left(\int_{\tau_0}^{\tau} \left(-c\,\partial_u + \frac{1}{2}\langle\zeta^2\rangle\right)d\tau'\right)$$
+$$\langle U(\tau) \rangle = \exp\left(\int_{\tau_0}^{\tau} \left(-v\,\partial_u + \frac{1}{2}\langle\zeta^2\rangle\right)d\tau'\right)$$
 
 ### 5.2 混合矩阵的严格定义
 
