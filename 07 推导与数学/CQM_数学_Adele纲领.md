@@ -130,7 +130,7 @@ $$\boxed{\text{层次 II: } \hat{\mathcal{G}} = -ive^u\partial_u \quad\text{（�
 
 $$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{ve^u-1}{2} = 0 \quad\text{（历史条件，一阶方程的特例）}}$$
 
-**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（$\hat{\mathcal{G}} = \hat{\mathcal{D}}/v$）是一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的体区域退化形式，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
+**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（$\hat{\mathcal{G}} = e^{-u/2}\hat{\mathcal{D}}e^{u/2} = -ive^u\partial_u$）是一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 经测度补偿 $\Psi = e^{u/2}\phi$ 的体区域退化形式，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
 
 ### 3.1 传输方程：一阶退化
 
