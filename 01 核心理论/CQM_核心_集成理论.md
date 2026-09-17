@@ -264,7 +264,6 @@ $$\partial_\tau \psi + v\,\partial_u \psi = 0$$
 
 **物理**：这是单质子内禀时钟驱动的指数演化。$\tau$ 的流逝直接等价于能标的改变——这不是"宇宙能标从低能跑到高能"，而是**单个有限本体（质子）的内禀 RG 流**。
 
-算符形式：$\hat{\mathcal{G}} = -i v\,e^u \partial_u$，$U(\tau) = e^{-i\hat{\mathcal{G}}\tau}$。
 
 **因果时的统一结构**：时间是因果序的度量——在禁闭内部是因果序的计数（$\tau_{\text{causal}}(x,y) = |I(x,y)|+1$，不依赖任何连续结构），退相干后是几何固有时（$\int\sqrt{-g_{\mu\nu}dx^\mu dx^\nu}$），在量子动力学中是幺正演化参数（$U(\tau) = e^{-i\hat{H}\tau}$）。三者同出一源，不存在独立于因果序的外在时间坐标。
 
@@ -283,7 +282,7 @@ $$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[|\partial_\tau \Phi|^2 - (-\parti
 | | 一阶层（耦合运动学） | 二阶层（耦合动力学） |
 |:---|:---|:---|
 | 方程 | $\partial_\tau \psi + v\,\partial_u \psi = 0$ | $(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$ |
-| 算符 | $\hat{\mathcal{G}} = -i v\,e^u \partial_u$ | $\hat{H} = -\partial_u^2 + \partial_u$ |
+| 算符 | $\hat{\mathcal{D}} = -iv\,e^u(\partial_u - \tfrac{1}{2})$ | $\hat{H} = -\partial_u^2 + \partial_u$ |
 | 主象征 | $\sigma = v\,e^u k$（变系数，单向） | $\sigma = k^2$（常系数，双向） |
 | 物理 | 真实再生产传播（费米子型） | 虚拟量子涨落（玻色子型） |
 
