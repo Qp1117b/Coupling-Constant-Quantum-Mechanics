@@ -39,7 +39,7 @@ $$\boxed{\text{FG} \neq \text{GR}}$$
 
 ### 1.2 相变量子
 
-$$\boxed{C = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.0230957}$$
+$$\boxed{\mathscr{C} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.0230957}$$
 
 （$\gamma$ 为欧拉-马歇罗尼常数；由 $\xi(s)=\frac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)$ 的函数方程 $\xi(s)=\xi(1-s)$ 与 $\psi(1/2)=-\gamma-2\ln2$ 推出。解析值与数值微分互验，精确到 $10^{-7}$。）严格无量纲，作为全部后续层级的普适比例基准。
 
@@ -85,9 +85,9 @@ FG底空间上的主丛 $P(M,G)$（激发态）的每个顶点——底空间 $M
 | 局域节律 | 联络诱导固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ | §7 |
 | 量子振荡体间耦合 | 主丛联络 $\mathcal{A}_{\text{FG}}$、和乐 $W_v=\exp(i\delta_v\hat T)$ | §5 |
 | 同步条件 | 和乐平庸化条件 $\mathcal{H}_{ij}\approx1$（和乐平庸化） | §10.1 |
-| 同步判据 | 资格条件 $\Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n}$ 筛选候选结构群族，丛作用量竞争选出主导群（$n$ 为跃迁耦级） | §9.2 |
+| 同步判据 | 资格条件 $\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}$ 筛选候选结构群族，丛作用量竞争选出主导群（$n$ 为跃迁耦级） | §9.2 |
 
-> **说明**：不确定性关系基于相变量子 $C$，给出下界 $C/2$。$n$ 为跃迁耦级（$n=2,4,6,\ldots$）。
+> **说明**：不确定性关系基于相变量子 $\mathscr{C}$，给出下界 $\mathscr{C}/2$。$n$ 为跃迁耦级（$n=2,4,6,\ldots$）。
 | 去同步因素 | 温度（声子数 → 和乐相位噪声） | §11 |
 | 全局同步临界点 | $T_c$（和乐平庸化相变点） | §11.2 |
 
@@ -270,7 +270,7 @@ FG 是 GR 基态的非平庸激发态，是 GR 在深度层级上的非吸引力
 
 #### 耦合常数指定结构群
 
-CQM 的耦合常数涨落需明确指定所属结构群：$u_G = \ln g_G$，$[u_G, p_{u_G}] = i$。超导扇区为 $U(1)_{\text{em}}$，涨落 $u_{U(1)}$，跃迁耦级谱 $2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$。每个结构群只有一个耦合常数，荷是表示矩阵 $T^a$ 的本征值（多样化）。有效荷 $= g_G \times q_R$，耦合常数跃迁时该扇区所有荷同步改变。
+CQM 的耦合常数涨落需明确指定所属结构群：$u_G = \ln g_G$，$[u_G, p_{u_G}] = i$。超导扇区为 $U(1)_{\text{em}}$，涨落 $u_{U(1)}$，跃迁耦级谱 $2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)$。每个结构群只有一个耦合常数，荷是表示矩阵 $T^a$ 的本征值（多样化）。有效荷 $= g_G \times q_R$，耦合常数跃迁时该扇区所有荷同步改变。
 
 > **定位注（为什么是 U(1) 扇区）**：海森堡代数 $[u_G, p_{u_G}]=i$ 是一维的——$u_G=\ln g_G$ 作为全局单坐标定义，当且仅当结构群是一维阿贝尔群（$S^1$ 及其商 $U(1)//\mathbb{Z}_n$）。非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对。因此耦合常数算符的合法定义域是 GL(5)固定层级 $U(1)$（内部性+阿贝尔性双重强制）；超导扇区是 $U(1)_{\text{em}}$ 由此是必然选择而非设定，候选群族 $\{U(1)//\mathbb{Z}_n \mid n\text{ 偶}\}$ 的全部成员都是一维阿贝尔群（$U(1)//\mathbb{Z}_n\cong S^1$，成员间差别是表示内容：权 $q$ 表示当且仅当 $n\mid q$ 时下降——电荷量子化扇区），海森堡代数在每一个上都良定义。详见 `09 精细引力（FG）/FG_核心理论.md` §4.1 定位注。
 
@@ -378,9 +378,9 @@ $$\frac{d\tau}{dt} = \sqrt{-g_{00}} = \sqrt{1 + 2\Phi/c^2} \approx 1 + \frac{\Ph
 
 耦合坐标 $u = \ln\alpha$（$\alpha$ 为精细结构常数，主丛结构群 $U(1)_{\text{em}}$ 扇区的耦合常数），耦合动量：
 
-$$\boxed{p_u = \frac{1}{C}\frac{d\tau}{dt}}$$
+$$\boxed{p_u = \frac{1}{\mathscr{C}}\frac{d\tau}{dt}}$$
 
-其中 $C = \xi'(1)/\xi(1)$ 是相变量子。
+其中 $\mathscr{C} = \xi'(1)/\xi(1)$ 是相变量子。
 
 ### 8.2 海森堡代数
 
@@ -390,13 +390,13 @@ $$[\hat{u}, \hat{p}_u] = i$$
 
 ### 8.3 底空间曲率-结构群耦合常数不确定性关系
 
-由海森堡代数 $[\hat u,\hat p_u]=i$ 得 $\Delta u\cdot\Delta p_u \ge 1/2$（本框架采用的量子化约定，与 §9.2 资格条件及 §11.2 $T_c$ 公式一致）。代入 $p_u = \sqrt{1-\beta\delta_v}/C$（§7.1），$\Delta p_u = \frac{\beta}{2C\sqrt{1-\beta\delta_v}}\Delta\delta_v$，因此：
+由海森堡代数 $[\hat u,\hat p_u]=i$ 得 $\Delta u\cdot\Delta p_u \ge 1/2$（本框架采用的量子化约定，与 §9.2 资格条件及 §11.2 $T_c$ 公式一致）。代入 $p_u = \sqrt{1-\beta\delta_v}/\mathscr{C}$（§7.1），$\Delta p_u = \frac{\beta}{2\mathscr{C}\sqrt{1-\beta\delta_v}}\Delta\delta_v$，因此：
 
-$$\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta}}$$
+$$\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{\beta}}$$
 
 （若取标准海森堡约定 $\Delta u\,\Delta p_u \ge 1/2$ 则右端减半。）
 
-**物理意义**：底空间Regge曲率涨落通过联络诱导的固有时流速涨落，强制主丛结构群上的耦合常数产生量子涨落。阈值由相变量子 $C$、几何耦合参数 $\beta$ 与背景底空间曲率 $\delta_v$ 共同决定。
+**物理意义**：底空间Regge曲率涨落通过联络诱导的固有时流速涨落，强制主丛结构群上的耦合常数产生量子涨落。阈值由相变量子 $\mathscr{C}$、几何耦合参数 $\beta$ 与背景底空间曲率 $\delta_v$ 共同决定。
 
 ---
 
@@ -420,9 +420,9 @@ $$\boxed{\alpha \to n^2\alpha \iff \Delta u_n = 2\ln n,\qquad n = 2,4,6,\cdots}$
 
 ### 9.2 资格条件
 
-由不确定性关系 $\Delta u \cdot \Delta\delta_v \ge C\sqrt{1-\beta\delta_v}/\beta$（见 §8），要触及第 $n$ 级跃迁 $\Delta u_n = 2\ln n$ 所需最小曲率涨落：
+由不确定性关系 $\Delta u \cdot \Delta\delta_v \ge \mathscr{C}\sqrt{1-\beta\delta_v}/\beta$（见 §8），要触及第 $n$ 级跃迁 $\Delta u_n = 2\ln n$ 所需最小曲率涨落：
 
-$$\boxed{\Delta\delta_0 \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n}\quad(n\text{ 为跃迁耦级})}$$
+$$\boxed{\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n}\quad(n\text{ 为跃迁耦级})}$$
 
 这是**资格条件**：底空间Regge曲率涨落必须足够大，才能让第 $n$ 级跃迁进入候选集。底空间Regge曲率涨落不直接决定跃迁是否发生——它决定哪些跃迁进入候选集，最终由丛作用量竞争（§11.2）选出主导群。
 
@@ -434,7 +434,7 @@ $$\text{晶格量子振荡} \to \Delta\delta_v \to \text{资格条件筛选} \to
 
 **反向链**（实验测得主导群 → 晶格量子振荡）：
 
-$$\text{实验测得 } h/ne \to \text{荷为 } ne \to \alpha\to n^2\alpha \to \Delta u_n = 2\ln n \to \Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n} \to \text{晶格量子振荡振幅}$$
+$$\text{实验测得 } h/ne \to \text{荷为 } ne \to \alpha\to n^2\alpha \to \Delta u_n = 2\ln n \to \Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n} \to \text{晶格量子振荡振幅}$$
 
 耦合涨落给出资格条件，但具体主导群由丛作用量竞争决定，实验上通过磁通量子化确定。
 
@@ -444,7 +444,7 @@ $$\text{实验测得 } h/ne \to \text{荷为 } ne \to \alpha\to n^2\alpha \to \D
 
 配对/相干这一整套过程**就是晶胞量子振荡本身**——晶胞量子振荡（声子 = 底空间Regge曲率量子）携带底空间曲率涨落、主丛结构群上的耦合常数响应与和乐相位关联的全部信息。本节陈述这一**单一主丛几何-动力学过程**，其终态即伴丛同步（§1.5）：晶胞量子振荡是各顶点的局域因果过程，超导态作为晶胞量子振荡全局相干模式涌现（§12.2），即 主丛的伴丛全局同步截面（再锁定）的建立。
 
-$$\boxed{\text{晶胞量子振荡（声子=底空间Regge曲率量子）} \;\Rightarrow\; \delta_v(t)=\delta_v^{(0)}+\Delta\delta_v(t) \;\Rightarrow\; \text{不确定性 } \Delta u\cdot\Delta\delta_v\ge \frac{C\sqrt{1-\beta\delta_v}}{\beta} \;\Rightarrow\; \text{资格条件筛出候选结构群族} \;\Rightarrow\; \text{叠加的超导群（= 同步算符）本征值交叉（§11.6）} \;\Rightarrow\; \text{丛作用量竞争选出主导群 } (\alpha\to n^2\alpha) \;\Rightarrow\; \text{超导态}}$$
+$$\boxed{\text{晶胞量子振荡（声子=底空间Regge曲率量子）} \;\Rightarrow\; \delta_v(t)=\delta_v^{(0)}+\Delta\delta_v(t) \;\Rightarrow\; \text{不确定性 } \Delta u\cdot\Delta\delta_v\ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{\beta} \;\Rightarrow\; \text{资格条件筛出候选结构群族} \;\Rightarrow\; \text{叠加的超导群（= 同步算符）本征值交叉（§11.6）} \;\Rightarrow\; \text{丛作用量竞争选出主导群 } (\alpha\to n^2\alpha) \;\Rightarrow\; \text{超导态}}$$
 
 **温度的统一作用**：温度通过改变晶胞量子振荡模式的声子数 $n_B(\omega_{\mathbf{q}})=(e^{\hbar\omega_{\mathbf{q}}/k_BT}-1)^{-1}$，改变底空间Regge曲率涨落 $\Delta\delta_v(t)$ 的幅度谱与和乐相位关联长度，从而**影响自组织——再生产（晶胞量子振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干**。所有温度效应都出自这一条声子数，自然体现在底空间Regge曲率涨落的统计分布中。临界温度 $T_c$ 对应 $\Delta\delta_v$ 的统计分布使超导判据在全局平均上归零的临界点（见 §12.3）。
 
@@ -498,7 +498,7 @@ $$\boxed{\Delta\delta_v(T) = \Delta\delta_0 \sqrt{\tanh\frac{\hbar\Omega_0}{2k_B
 
 **第二步：候选群族与路径积分。** 资格条件（§9.2）筛选出候选群族：
 
-$$\mathcal{G} = \left\{U(1)//\mathbb{Z}_n \;\middle|\; n \text{ 偶},\;\Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n}\right\}$$
+$$\mathcal{G} = \left\{U(1)//\mathbb{Z}_n \;\middle|\; n \text{ 偶},\;\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}\right\}$$
 
 路径积分在候选群族上选择主导群：
 
@@ -629,9 +629,9 @@ $$\boxed{\hat{\mathcal{S}}_{\text{SC}}(T) = \hat{P}_{\text{资格}} \left[\hat{\
 
 其中：
 - **QG 再现（GL(5)固定层级谱实现）**：$\hat{\mathcal{S}}_0 = \sqrt{\hat{H}_{\text{HP}} - 1/4}$，其中 $\hat{H}_{\text{HP}} = -d^2/du^2 + 1/4 + \sum_{p<\Lambda(T)} \frac{\ln p}{\sqrt{p}}\delta(u-\ln p)$ 为 Hilbert–Pólya 型算符（黎曼零点谱的候选实现，非同步算符本身），截断 $\Lambda$ 温度依赖（温度越高，有效截断越低）。$\hat{\mathcal{S}}_0$ 本征值 $= \gamma_n$（同步成本），耦级 $\mathfrak{c}_n = 1/4 + \gamma_n^2$ 为导出量
-- **资格投影**：$\hat{P}_{\text{资格}} = \sum_{n \text{ 偶},\, \Delta\delta_0 \geq \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n}} |U(1)//\mathbb{Z}_n\rangle\langle U(1)//\mathbb{Z}_n|$，将算符限制在候选群族上
+- **资格投影**：$\hat{P}_{\text{资格}} = \sum_{n \text{ 偶},\, \Delta\delta_0 \geq \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}} |U(1)//\mathbb{Z}_n\rangle\langle U(1)//\mathbb{Z}_n|$，将算符限制在候选群族上
 - **温度修正**：$V_{\text{热}}(u, T) = \left[\coth\frac{\hbar\Omega_0}{2k_BT} - 1\right] \cdot \frac{u^2}{4}$，零温时为零，高温时增大，$u^2/4$ 标度使高耦级（大 $n$）模受温度抑制更强
-- **角亏激活**：$V_{\delta}(u, \delta_v, \Delta\delta_v) = -\frac{\beta^2 \Delta\delta_v^2}{4(1-\beta\delta_v)} \cdot \frac{e^u - 1}{e^u}$，负号（角亏降低同步成本），$\Delta\delta_v = 0$ 时为零，$(e^u-1)/e^u$ 因子确保 $n=1$（$u=0$）时角亏修正为零。角亏系数用 $\beta^2$（非 $C^2/\beta^2$），因 $C^2 \approx 5.34 \times 10^{-4}$ 太小，无法产生足够的角亏修正克服黎曼零点差
+- **角亏激活**：$V_{\delta}(u, \delta_v, \Delta\delta_v) = -\frac{\beta^2 \Delta\delta_v^2}{4(1-\beta\delta_v)} \cdot \frac{e^u - 1}{e^u}$，负号（角亏降低同步成本），$\Delta\delta_v = 0$ 时为零，$(e^u-1)/e^u$ 因子确保 $n=1$（$u=0$）时角亏修正为零。角亏系数用 $\beta^2$（非 $\mathscr{C}^2/\beta^2$），因 $\mathscr{C}^2 \approx 5.34 \times 10^{-4}$ 太小，无法产生足够的角亏修正克服黎曼零点差
 
 本征态在 $u_n = 2\ln n$ 处离散化（跃迁耦级量子化），有效本征值：
 
@@ -735,7 +735,7 @@ $$\boxed{T_c = \frac{\theta_D}{2 \cdot \text{arccoth}(x)}, \quad x = \frac{3\bet
 ### 12.1 基础本体链
 
 $$\boxed{\begin{aligned}
-&\text{三种引力（QG/GR/FG，FG}\neq\text{GR）} + \text{相变量子 } C \\
+&\text{三种引力（QG/GR/FG，FG}\neq\text{GR）} + \text{相变量子 } \mathscr{C} \\
 &\Downarrow \\
 &\text{质子 } A_4 + \text{中子 } D(\delta) \\
 &\Downarrow \\
@@ -751,9 +751,9 @@ $$\boxed{\begin{aligned}
 &\Downarrow \\
 &\frac{d\tau}{dt} = \sqrt{\,1 - \beta\delta_v\,} \quad (\text{固有时流速=两时间之比，基准 1；见 §7}) \\
 &\Downarrow \\
-&p_u = \frac{1}{C}\frac{d\tau}{dt} = \frac{\sqrt{\,1-\beta\delta_v\,}}{C}, \quad C = \frac{\xi'(1)}{\xi(1)} \\
+&p_u = \frac{1}{\mathscr{C}}\frac{d\tau}{dt} = \frac{\sqrt{\,1-\beta\delta_v\,}}{\mathscr{C}}, \quad \mathscr{C} = \frac{\xi'(1)}{\xi(1)} \\
 &\Downarrow \\
-&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta}
+&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{\beta}
 \end{aligned}}$$
 
 基础本体链止于耦合空间不确定性关系，为主丛结构群上的耦合常数动力学提供**动力学舞台**——耦合坐标 $u$ 与曲率涨落 $\Delta\delta_v$ 的量子对偶。配对/相干过程即晶胞量子振荡本身（见 §10），其展开即 §12.2 的单一因果链。
@@ -763,10 +763,10 @@ $$\boxed{\begin{aligned}
 $$\boxed{\begin{aligned}
 &\text{晶胞量子振荡（声子 = 底空间Regge曲率量子）} \Rightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
 &\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
-&\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta} \\
+&\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{\beta} \\
 &\Downarrow \\
 &\Delta u_n = 2\ln n \text{ 跃迁 } u \to u+2\ln n \;\Rightarrow\; \alpha\to n^2\alpha \text{（耦级谱，} n=2,4,6,\ldots\text{）} \\
-&\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{C\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐平庸化条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j})\approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
+&\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐平庸化条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j})\approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
 &\text{叠加的超导群（= 同步算符）本征值交叉 } \lambda_2(T_c)=\lambda_1(T_c) \text{（§11.6）} \;\Rightarrow\; \text{丛作用量竞争（热力学投影）选出主导群 } G_{\text{主导}} = \arg\min_n F_n \\
 &\Downarrow \\
 &\text{超导态 } = \text{ 主丛的伴丛全局同步截面（晶胞量子振荡全局相干模式，同步再锁定）}
@@ -776,7 +776,7 @@ $$\boxed{\begin{aligned}
 
 超导判据 $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 在晶胞量子振荡动力学中的**涌现位置**（与 §9.2 资格条件一致）：
 
-$$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \text{跃迁耦级 } \Delta u_n = 2\ln n \;\Rightarrow\; \text{资格条件 } \Delta\delta_0 \ge \frac{C\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n} \;\Rightarrow\; \text{候选群族} \;\Rightarrow\; \text{叠加的超导群（= 同步算符）本征值交叉} \;\Rightarrow\; \text{丛作用量竞争选出主导群}}$$
+$$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \text{跃迁耦级 } \Delta u_n = 2\ln n \;\Rightarrow\; \text{资格条件 } \Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n} \;\Rightarrow\; \text{候选群族} \;\Rightarrow\; \text{叠加的超导群（= 同步算符）本征值交叉} \;\Rightarrow\; \text{丛作用量竞争选出主导群}}$$
 
 临界温度 $T_c$ 对应**叠加的超导群自身谱结构的本征值交叉**的临界点（§11.6，唯象表现为丛作用量交叉，见 §11.2）：
 
@@ -898,7 +898,7 @@ CQM 超导框架的核心结构：
 $$\boxed{\text{FG} \;\to\; \text{达到跃迁阈值} \;\to\; \text{叠加群} \;\to\; \text{同步跃迁}}$$
 
 - **主丛（提供驱动力）**：底空间 Regge 角亏 $\delta_v$ 由晶格几何与缺陷决定，角亏涨落 $\Delta\delta_v$ 通过固有时流速 $v_\tau = \sqrt{1-\beta\delta_v}$ 耦合到对数耦合常数 $u$，几何涨落转化为耦合常数的量子涨落。
-- **达到跃迁阈值（局域条件满足）**：跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 筛选候选群族。**局域只能满足条件（达到阈值），局域不可能跃迁。**
+- **达到跃迁阈值（局域条件满足）**：跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 筛选候选群族。**局域只能满足条件（达到阈值），局域不可能跃迁。**
 - **叠加群（全局结构群处于量子叠加态）**：$|\Psi_{\text{全局}}\rangle = \sum_{n=2,4,6,\ldots} \sqrt{w_n}\,|U(1)//\mathbb{Z}_n\rangle$，权重 $w_n \propto e^{-F_n/k_BT}$。叠加群是全局的，不是局域的。
 - **同步跃迁（全局集体事件）**：叠加的超导群自身谱结构（= 同步算符）本征值交叉（§11.6）→ 丛作用量竞争（热力学投影），全局叠加态退相干。**跃迁 = 全局同步，两者是同一个事件，不是先后两个阶段。**
 
@@ -962,7 +962,7 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 | $\mathcal{C}_{\text{mol}}$ | 分子有效超级嘉当矩阵 | 大方矩阵 |
 | $\delta_v$ | Regge 顶点角亏 | 实数 |
 | $\Delta\delta_v$ | 曲率涨落（声子） | 实数 |
-| $C$ | 相变量子 $\xi'(1)/\xi(1) = 1+\gamma/2-\ln(2\sqrt{\pi}) \approx 0.0230957$ | 无量纲实数 |
+| $\mathscr{C}$ | 相变量子 $\xi'(1)/\xi(1) = 1+\gamma/2-\ln(2\sqrt{\pi}) \approx 0.0230957$ | 无量纲实数 |
 | $\beta$ | 几何耦合参数 $\frac{1}{4\pi}\ln\frac{L}{a}$（$L$系统尺寸，$a$晶格常数） | 无量纲实数 |
 | $u$ | 耦合坐标 $\ln\alpha$ | 无量纲实数 |
 | $p_u$ | 耦合动量 $(1/C)(d\tau/dt)$ | 无量纲实数 |

@@ -53,11 +53,11 @@ structure CouplingHeisenbergPair where
   pOp : Type
   commutator_is_i : Prop  -- 对易关系 $[\hat{u},\hat{p}_u]=i$，具体实现见缺口 G18
 
-/- 相变量子 $C = \xi'(1)/\xi(1)$，此处以实参数表示（谱函数 $\xi$ 待第一性提取）。 -/
+/- 相变量子 $\mathscr{C} = \xi'(1)/\xi(1)$，此处以实参数表示（谱函数 $\xi$ 待第一性提取）。 -/
 noncomputable def spectralQuantum (C : ℝ) : ℝ := C
 
 /- 耦合动量 $p_u = v_\tau / C$，其中 $v_\tau = d\tau/dt = \sqrt{1-\beta\delta}$（两时间之比），
-    $C$ 是相变量子。注意核心理论中 $v_\tau$ 即固有时流速（基准 1），此处不再引入 $c_0$。 -/
+    $\mathscr{C}$ 是相变量子。注意核心理论中 $v_\tau$ 即固有时流速（基准 1），此处不再引入 $c_0$。 -/
 noncomputable def couplingMomentum (beta delta C : ℝ) : ℝ :=
   properTimeFlow beta delta / C
 

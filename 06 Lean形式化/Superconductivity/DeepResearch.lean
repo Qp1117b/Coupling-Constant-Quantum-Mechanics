@@ -347,7 +347,7 @@ theorem fineStructureConstantTheory_pos : fineStructureConstantTheory > 0 :=
     ln(1/α) = 2π²·λ₁ + 3C + ln(2) - 3 - λ₁
     误差: 0.007%
     此公式为数值拟合结果，非严格定理，此处仅记录公式形式。
-    严格化需要相变量子C与A4谱间隙的精确关系证明（开放问题）。 -/
+    严格化需要相变量子𝒞与A4谱间隙的精确关系证明（开放问题）。 -/
 
 
 end CQM

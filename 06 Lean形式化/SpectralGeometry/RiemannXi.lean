@@ -8,9 +8,9 @@ import Mathlib.NumberTheory.Harmonic.ZetaAsymp
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import SpectralGeometry.Basic
 
-/-! # 黎曼 ξ 函数与相变量子 C
+/-! # 黎曼 ξ 函数与相变量子 𝒞
 
-CQM 的相变量子 C = ξ'(1)/ξ(1) 是理论中最基本的无量纲常数。
+CQM 的相变量子 𝒞 = ξ'(1)/ξ(1) 是理论中最基本的无量纲常数。
 本文件从黎曼 ξ 函数的定义出发，推导 C 的闭式表达式。
 
 > **发生学分层定位**：本文件形式化的 ζ/ξ 谱结构属
@@ -89,7 +89,7 @@ theorem riemannXi_zero : riemannXi 0 = 1 / 2 := by
 theorem riemannXi_one : riemannXi 1 = 1 / 2 := by
   simp [riemannXi]
 
-/-! ## 相变量子 C：ξ'(1)/ξ(1) 的闭式表达式
+/-! ## 相变量子 𝒞：ξ'(1)/ξ(1) 的闭式表达式
 
 ### 推导概要
 
@@ -109,12 +109,12 @@ Mathlib 已证明（`completedRiemannZeta₀_one`）：
              = (γ - ln(4π))/2 + 1
              = 1 + γ/2 - (1/2) ln(4π)
 
-此即相变量子 C 的闭式表达式。
+此即相变量子 𝒞 的闭式表达式。
 -/
 
 /-- [THEOREM] ξ 在 s=1 处的对数导数等于 1 + γ/2 - (1/2)ln(4π)。
 
-    这是相变量子 C 的严格复分析表达式。
+    这是相变量子 𝒞 的严格复分析表达式。
     推导仅依赖：
     - ξ 的整函数表示 ξ(s) = ½ + ½ s(s-1) Λ₀(s)
     - Λ₀ 的整函数可微性（`differentiable_completedZeta₀`）
@@ -182,7 +182,7 @@ C = 1 + γ/2 - (1/2)ln(4π)。
 `xi_log_derivative_at_one` 已经从黎曼 ξ 函数严格推导出
 ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)。
 
-因此，相变量子 C 的解析表达式与 ξ 函数对数导数之间的等式
+因此，相变量子 𝒞 的解析表达式与 ξ 函数对数导数之间的等式
 现在由定义直接成立，不再需要使用公理断言。
 
 此前存在的 `spectralQuantum_xi_formula` 公理将一个小数近似
@@ -191,7 +191,7 @@ C = 1 + γ/2 - (1/2)ln(4π)。
 而数值近似由 `spectralQuantum_numerical_bounds` 作为明确的数值桥梁给出。
 -/
 
-/-- [THEOREM] 相变量子 C 的闭式表达式：
+/-- [THEOREM] 相变量子 𝒞 的闭式表达式：
 
     C = 1 + γ/2 - (1/2)ln(4π)
 
@@ -215,15 +215,15 @@ theorem spectralQuantum_xi_formula_consistent :
     spectralQuantum = 1 + Real.eulerMascheroniConstant / 2 - Real.log (4 * Real.pi) / 2 :=
   spectralQuantum_xi_formula
 
-/-- 相变量子 C 严格为正。 -/
+/-- 相变量子 𝒞 严格为正。 -/
 theorem spectralQuantum_xi_pos : spectralQuantum > 0 :=
   spectralQuantum_pos
 
-/-- 相变量子 C < 1。 -/
+/-- 相变量子 𝒞 < 1。 -/
 theorem spectralQuantum_xi_lt_one : spectralQuantum < 1 :=
   spectralQuantum_lt_one
 
-/-- 相变量子 C 的数值范围在 (0.02, 0.03) 内。 -/
+/-- 相变量子 𝒞 的数值范围在 (0.02, 0.03) 内。 -/
 theorem spectralQuantum_xi_range_consistent : spectralQuantum > 0.02 ∧ spectralQuantum < 0.03 := by
   constructor
   · linarith [spectralQuantum_numerical_bounds.left]

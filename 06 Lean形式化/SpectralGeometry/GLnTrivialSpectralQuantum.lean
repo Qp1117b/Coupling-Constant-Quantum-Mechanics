@@ -11,14 +11,14 @@ import SpectralGeometry.RiemannXi
 
 1. **完成 L 函数**：Λ_n(s) = Λ_1(s)^n，其中 Λ_1(s) = Γ_ℝ(s)·ζ(s) 是 GL(1) 完成 L 函数
 2. **零点完全相同**：Λ_n(s) 的零点与 Λ_1(s) 完全相同，仅重数乘以 n
-3. **相变量子缩放律**：C_n = Λ_n'(1)/Λ_n(1) = n·C_1
-4. **归一化普适性**：C_n / n = C_1 对所有 n ≥ 1 成立
+3. **相变量子缩放律**：𝒞_n = Λ_n'(1)/Λ_n(1) = n·𝒞_1
+4. **归一化普适性**：𝒞_n / n = 𝒞_1 对所有 n ≥ 1 成立
 
 ## 物理意义
 
-- C = C_1 ≈ 0.023096 是跨所有 GL(n) 的**普适相变量子单位**
+- 𝒞 = 𝒞_1 ≈ 0.023096 是跨所有 GL(n) 的**普适相变量子单位**
 - GL(n) 各层的层级因子按 exp(-2/C)^{1/n} 缩放
-- GL(5) 平凡分支给出 C_5 = 5C，与 SU(5) 秩 4+1 结构吻合
+- GL(5) 平凡分支给出 𝒞_5 = 5𝒞，与 SU(5) 秩 4+1 结构吻合
 - 低层 GL(n) 主导物理（层级抑制最强）
 
 ## 限制
@@ -55,20 +55,20 @@ theorem completedLn_eq_power (n : ℕ) (s : ℝ) :
     completedLn n s = completedL1 s ^ n := by
   unfold completedLn; rfl
 
-/-! ## 2. 相变量子缩放律 C_n = n·C_1
+/-! ## 2. 相变量子缩放律 𝒞_n = n·𝒞_1
 
 由 Λ_n(s) = Λ_1(s)^n，对数导数：
   Λ_n'(s)/Λ_n(s) = n · Λ_1'(s)/Λ_1(s)
 
 在 s=1 处：
-  C_n = Λ_n'(1)/Λ_n(1) = n · Λ_1'(1)/Λ_1(1) = n · C_1
+  𝒞_n = Λ_n'(1)/Λ_n(1) = n · Λ_1'(1)/Λ_1(1) = n · 𝒞_1
 -/
 
-/-- GL(n) 平凡表示的相变量子 C_n := Λ_n'(1)/Λ_n(1) -/
+/-- GL(n) 平凡表示的相变量子 𝒞_n := Λ_n'(1)/Λ_n(1) -/
 noncomputable def spectralQuantumGLn (n : ℕ) (Λ1_val Λ1_deriv : ℝ) : ℝ :=
   n * (Λ1_deriv / Λ1_val)
 
-/-- GL(1) 相变量子 C_1 = Λ_1'(1)/Λ_1(1) = C（与 spectralQuantum 一致） -/
+/-- GL(1) 相变量子 𝒞_1 = Λ_1'(1)/Λ_1(1) = 𝒞（与 spectralQuantum 一致） -/
 theorem spectralQuantumGL1_eq_spectralQuantum (Λ1_val Λ1_deriv : ℝ)
     (h : Λ1_deriv / Λ1_val = spectralQuantum) :
     spectralQuantumGLn 1 Λ1_val Λ1_deriv = spectralQuantum := by
@@ -76,7 +76,7 @@ theorem spectralQuantumGL1_eq_spectralQuantum (Λ1_val Λ1_deriv : ℝ)
   rw [Nat.cast_one, one_mul]
   exact h
 
-/-- **主定理：相变量子缩放律 C_n = n·C_1**
+/-- **主定理：相变量子缩放律 𝒞_n = n·𝒞_1**
 
 GL(n) 平凡自守表示的相变量子是 GL(1) 相变量子的 n 倍。 -/
 theorem spectralQuantumGLn_eq_n_times_C1 (n : ℕ) (Λ1_val Λ1_deriv : ℝ)
@@ -86,9 +86,9 @@ theorem spectralQuantumGLn_eq_n_times_C1 (n : ℕ) (Λ1_val Λ1_deriv : ℝ)
   unfold spectralQuantumGLn
   rw [h_C1]
 
-/-- **推论：归一化相变量子 C_n/n = C_1 普适**
+/-- **推论：归一化相变量子 𝒞_n/n = 𝒞_1 普适**
 
-对所有 n ≥ 1，C_n / n = C_1 = C，即 C 是跨 GL(n) 的普适相变量子单位。 -/
+对所有 n ≥ 1，𝒞_n / n = 𝒞_1 = 𝒞，即 𝒞 是跨 GL(n) 的普适相变量子单位。 -/
 theorem normalized_spectralQuantum_universal (n : ℕ) (hn : n > 0)
     (Λ1_val Λ1_deriv : ℝ)
     (h_Λ1_nezero : Λ1_val ≠ 0)
@@ -99,18 +99,18 @@ theorem normalized_spectralQuantum_universal (n : ℕ) (hn : n > 0)
 
 /-! ## 3. 层级因子缩放律
 
-G_N 公式中层级因子 exp(-2/C) 在 GL(n) 平凡分支下变为 exp(-2/(nC))：
+G_N 公式中层级因子 exp(-2/𝒞) 在 GL(n) 平凡分支下变为 exp(-2/(n𝒞))：
 
-  exp(-2/C_n) = exp(-2/(nC)) = exp(-2/C)^{1/n}
+  exp(-2/𝒞_n) = exp(-2/(n𝒞)) = exp(-2/𝒞)^{1/n}
 
 低层 GL(n) 给出更强层级抑制（exp 指数绝对值更大）。
 -/
 
-/-- GL(n) 平凡分支的层级因子 exp(-2/C_n) = exp(-2/(n·C)) -/
+/-- GL(n) 平凡分支的层级因子 exp(-2/𝒞_n) = exp(-2/(n·𝒞)) -/
 noncomputable def hierarchyFactorGLn (n : ℕ) : ℝ :=
   Real.exp (-2 / ((n : ℝ) * spectralQuantum))
 
-/-- 层级因子缩放律：exp(-2/C_n) = exp(-2/C)^{1/n} -/
+/-- 层级因子缩放律：exp(-2/𝒞_n) = exp(-2/𝒞)^{1/n} -/
 theorem hierarchyFactorGLn_scaling (n : ℕ) (hn : n > 0) :
     hierarchyFactorGLn n = Real.exp (-2 / spectralQuantum) ^ (1 / (n : ℝ)) := by
   unfold hierarchyFactorGLn
@@ -126,7 +126,7 @@ theorem hierarchyFactorGLn_pos (n : ℕ) (hn : n > 0) :
   unfold hierarchyFactorGLn
   exact Real.exp_pos _
 
-/-- **低层主导定理**：n₁ < n₂ ⟹ exp(-2/C_{n₁}) < exp(-2/C_{n₂})
+/-- **低层主导定理**：n₁ < n₂ ⟹ exp(-2/𝒞_{n₁}) < exp(-2/𝒞_{n₂})
 
 低层 GL(n) 的层级因子更小（抑制更强），故低层主导物理。 -/
 theorem lower_GLn_dominates (n₁ n₂ : ℕ) (h : n₁ < n₂) (hn₁ : n₁ > 0) :
@@ -148,23 +148,23 @@ theorem lower_GLn_dominates (n₁ n₂ : ℕ) (h : n₁ < n₂) (hn₁ : n₁ > 
     linarith
   exact Real.strictMonoOn_exp _ _ h_inv
 
-/-! ## 4. GL(5) 特例：C_5 = 5C 与 SU(5) 结构关联
+/-! ## 4. GL(5) 特例：𝒞_5 = 5𝒞 与 SU(5) 结构关联
 
-GL(5) 平凡表示给出 C_5 = 5·C ≈ 0.11548。
+GL(5) 平凡表示给出 𝒞_5 = 5·𝒞 ≈ 0.11548。
 5 倍因子与 SU(5) 的秩 4 + 1 = 5 结构吻合：
   - rank(SU(5)) = 4
   - 4-单纯形顶点数 = rank + 1 = 5
-  - C_5 = 5·C₁ 恰好对应 5 个顶点/5 个基本表示
+  - 𝒞_5 = 5·𝒞₁ 恰好对应 5 个顶点/5 个基本表示
 -/
 
-/-- GL(5) 平凡表示相变量子 C_5 = 5·C -/
+/-- GL(5) 平凡表示相变量子 𝒞_5 = 5·𝒞 -/
 theorem spectralQuantumGL5_eq_5C (Λ1_val Λ1_deriv : ℝ)
     (h_Λ1_nezero : Λ1_val ≠ 0)
     (h_C1 : Λ1_deriv / Λ1_val = spectralQuantum) :
     spectralQuantumGLn 5 Λ1_val Λ1_deriv = 5 * spectralQuantum := by
   exact spectralQuantumGLn_eq_n_times_C1 5 Λ1_val Λ1_deriv h_Λ1_nezero h_C1
 
-/-- C_5 = 5·C 与 SU(5) 秩+1 = 5 的结构吻合 -/
+/-- 𝒞_5 = 5·𝒞 与 SU(5) 秩+1 = 5 的结构吻合 -/
 theorem GL5_spectralQuantum_matches_SU5_structure
     (Λ1_val Λ1_deriv : ℝ)
     (h_Λ1_nezero : Λ1_val ≠ 0)

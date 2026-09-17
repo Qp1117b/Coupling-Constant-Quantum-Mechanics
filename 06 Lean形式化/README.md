@@ -18,13 +18,13 @@
 | **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |
 | **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |
 | **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |
-| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 C_n=n·C₁ 缩放律与归一化普适性** |
+| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 𝒞_n=n·𝒞₁ 缩放律与归一化普适性** |
 | **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |
 | **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
-| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=iC$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**待编译验证** |
+| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i\mathscr{C}$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**待编译验证** |
 
 ## 形式化推导链
 
@@ -42,7 +42,7 @@ Axioms
 ├── A1.1: 正则对易关系 [û, p̂_u] = i
 │ ├── 耦合强度 r = exp(u) > 0
 │ ├── 耦合坐标 u = ln r
-│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ C/2 (Robertson 不等式)
+│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ 𝒞/2 (Robertson 不等式)
 │ └── 14 个辅助定理（中心化算子、方差、Hermitian 性等）
 │
 ├── H3.3 + A2.1: 退相干稳态 = 正四单纯形 → A₄ 嘉当矩阵
@@ -59,7 +59,7 @@ Axioms
 │ ├── SU(5) Weyl 群 = S₅ = 4-单纯形对称群
 │ └── Dynkin 指数 I = 5/3
 │
-├── A2.2: 相变量子 C = ξ'(1)/ξ(1)
+├── A2.2: 相变量子 𝒞 = ξ'(1)/ξ(1)
 │ ├── Mathieu 参数 q = φ/2（黄金比例一半，从 A₄ 本征值严格导出）
 │ │ ├── φ = (1+√5)/2, φ² = φ + 1
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
@@ -68,10 +68,10 @@ Axioms
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30
 │ ├── 4-单纯形 f-向量和 = 30 = N_cycle
-│ ├── 谱修正因子 κ = (31+C)/30
-│ ├── G_N 因子 F(C) = C²·𝔠₁·exp(-2/C)·(1+κC)
-│ ├── F(C) 严格为正
-│ └── 谱常数网络: C·λ_c·𝔠₁ ∈ (6, 10)
+│ ├── 谱修正因子 κ = (31+𝒞)/30
+│ ├── G_N 因子 F(𝒞) = 𝒞²·𝔠₁·exp(-2/𝒞)·(1+κ𝒞)
+│ ├── F(𝒞) 严格为正
+│ └── 谱常数网络: 𝒞·λ_c·𝔠₁ ∈ (6, 10)
 │
 ├── 素数结构
 │ ├── 活跃素数 {2, 3, 5}：Φ(k) > 0 的唯一素数
@@ -85,10 +85,10 @@ Axioms
 │ └── 退相干速率 Γ(u) = ρ(u)
 │
 └── m_p（实验输入）
- └── G_N = I·λ_c·C²·𝔠₁·exp(-2/C)·(1+κC) / m_p²
+ └── G_N = I·λ_c·𝒞²·𝔠₁·exp(-2/𝒞)·(1+κ𝒞) / m_p²
  ├── G_N > 0（严格正性）
  ├── G_N 因子分解
- ├── 层级因子 exp(-2/C) ≈ 10⁻³⁸
+ ├── 层级因子 exp(-2/𝒞) ≈ 10⁻³⁸
  ├── CODATA 偏差 < 10 ppm
  └── α⁻¹_SU(5) = 16384π/375 ≈ 137.2583
  ├── 137 < α⁻¹_SU(5) < 138
@@ -123,7 +123,7 @@ Axioms
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
 | — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
-| — | 相变量子 C = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
+| — | 相变量子 𝒞 = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
 

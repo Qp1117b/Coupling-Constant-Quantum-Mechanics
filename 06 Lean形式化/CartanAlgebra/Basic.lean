@@ -147,7 +147,7 @@ noncomputable def sqrt5 : ℝ := Real.sqrt 5
     λ₂ = (5 - √5)/2  ≈ 1.382
     λ₃ = (3 + √5)/2  ≈ 2.618
     λ₄ = (5 + √5)/2  ≈ 3.618  — 最大本征值
-    
+
     这些本征值来自 A₄ 的谱分解。
     公式：λ_k = 2 - 2cos(πk/5)，k=1,2,3,4。 -/
 noncomputable def eigenvalue1 : ℝ := (3 - sqrt5) / 2
@@ -274,7 +274,7 @@ def charPoly (x : ℤ) : ℤ := x^4 - 8*x^3 + 21*x^2 - 20*x + 5
     [3 6 4 2]
     [2 4 6 3]
     [1 2 3 4]
-    
+
     条目公式：(A₄⁻¹)_{ij} = min(i,j)·(5-max(i,j))/5（1-indexed）。 -/
 noncomputable def cartanA4_inv_entry (i j : ℕ) : ℚ :=
   let i' := i + 1
@@ -294,7 +294,7 @@ theorem cartanA4_inv_sum_eq_10 : cartanA4_inv_sum = 10 := by
 /-! ## 正定性 — 所有主子式 > 0 -/
 
 /-- [THEOREM] A₄ 嘉当矩阵是正定的。
-    
+
     由 Sylvester 判据：对称矩阵正定当且仅当所有主子式 > 0。
     通过显式行列式公式 + `norm_num` 直接计算各阶主子式行列式：
     - 第一主子式（1×1 A₁）：det = 2 > 0
@@ -330,7 +330,7 @@ theorem cartanA4_all_eigenvalues_pos : eigenvalue1 > 0 ∧ eigenvalue2 > 0 ∧
 /-- SU(5) 基本表示的 Dynkin 指数 I = 5/3。
     在 CQM 中，I 出现在 G_N 谱公式中：
     G_N = I · λ_c · C² · 𝔠₁ · exp(-2/C) · (1 + κC) / m_p²
-    
+
     注意：传统 Dynkin 指数 I(fund) = 1/2（对所有 SU(N)）。
     CQM 使用的 I = 5/3 是 CQM 谱公式的特定结果，
     与逆嘉当矩阵和 ∑_{i,j} (A₄⁻¹)_{ij} = 10 的关系待澄清。 -/
@@ -434,6 +434,6 @@ theorem Weyl_group_order_SU5 : orderS5 = 120 := by
 /-! 谱常数 C 与嘉当矩阵的关系（声明，待严格推导）：
 
     C = 0.02309570897 远小于 A₄ 的最小本征值 λ₁ = 0.382。
-    相变量子 C 是由 ζ 函数导出的独立常数，
+    相变量子 𝒞 是由 ζ 函数导出的独立常数，
     与 A₄ 本征值的关系通过 Mathieu 方程建立。
     此关系是 CQM 中待填补的核心推导链之一。 -/
