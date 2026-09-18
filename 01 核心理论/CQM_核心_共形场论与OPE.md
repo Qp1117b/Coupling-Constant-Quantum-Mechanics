@@ -190,13 +190,13 @@ Dirac条件是**共形自举方程**（OPE结合律）在CQM中的具体化。�
 
 OPE要求同步本征态与耦合本征态的配对**必须**展开为群本征态。共形自举（结合律）要求此展开的自洽性：
 
-$$\hat{p}_u = \frac{1}{\mathscr{C}}\sqrt{1-\beta\hat{\delta}_v}$$
+$$\hat{p}_u = \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v}$$
 
 即耦合常数空间的动量 $\hat{p}_u$ 由核子曲率 $\hat{\delta}_v$ 完全决定。这就是**Dirac条件**：
 
-$$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{\mathscr{C}}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
+$$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
 
-**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq \mathscr{C}/2$，$\mathscr{C}$ 为单一普适相变量子。**
+**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子。**
 
 **关键**：Dirac条件是**共形自举方程**（结合律）的**数学必然**。共形自洽要求耦合常数被锁死为离散值。
 
@@ -204,7 +204,7 @@ $$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{\mathscr{C}}\sqrt{1-\beta\hat{\delta}
 
 将Dirac条件具体化（代入耦级定义 $n_k \equiv C_k$）：
 
-$$\frac{L_u}{2\pi \mathscr{C}}\sqrt{1-\beta\delta_v^{(k)}} = C_k = l_k(l_k+1) + \frac{3}{4}$$
+$$\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k = l_k(l_k+1) + \frac{3}{4}$$
 
 此等价关系锁定声子占据数 $N_k$（Bohr-Sommerfeld量子化条件），消除动力学自由度。
 
@@ -213,8 +213,8 @@ $$\frac{L_u}{2\pi \mathscr{C}}\sqrt{1-\beta\delta_v^{(k)}} = C_k = l_k(l_k+1) + 
 | 层次 | 公式 | 角色 |
 |:---|:---|:---|
 | **OPE** | $\|\{n_k\}\rangle \otimes \|u_k\rangle \sim \sum C_k \|G_k\rangle$ | 基本代数结构 |
-| **Dirac条件** | $\hat{p}_u = \frac{1}{\mathscr{C}}\sqrt{1-\beta\hat{\delta}_v}$ | 共形自举方程的CQM具体化 |
-| **等价关系** | $\frac{L_u}{2\pi \mathscr{C}}\sqrt{1-\beta\delta_v^{(k)}} = C_k$ | 锁定 $N_k$ |
+| **Dirac条件** | $\hat{p}_u = \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v}$ | 共形自举方程的CQM具体化 |
+| **等价关系** | $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$ | 锁定 $N_k$ |
 
 ## 5. Kac-Moody代数与Virasoro代数
 
@@ -254,14 +254,14 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 | $SU(2)_{\text{spin}}$（s壳层，$l=0$） | 3 | 2 | 由 $g_1 = \alpha$ 确定 |
 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$（p,d,f壳层，$l \geq 1$） | 6 | 4 | 由 $g_k$ 确定 |
 
-### 5.4 中央荷 $c$ 与相变量子 $\mathscr{C}$ 的关系
+### 5.4 中央荷 $c$ 与相变量子 $☯$ 的关系
 
 #### 5.4.1 两个量的定义与所处层级
 
 | 量 | 定义 | 所处层级 | 物理角色 |
 |:---|:---|:---|:---|
 | **中央荷** $c$ | $c = \frac{k\,\dim\mathfrak{g}}{k+h^\vee} = \frac{24k}{k+5}$ | GL(5)层（$A_4$ Kac-Moody代数） | Virasoro代数的中心扩展，有效自由度数 |
-| **相变量子** $\mathscr{C}$ | $\mathscr{C} = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957$ | GL(5)固定层级（黎曼zeta函数） | 耦合动量条件的相变量子 |
+| **相变量子** $☯$ | $☯ = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957$ | GL(5)固定层级（黎曼zeta函数） | 耦合动量条件的相变量子 |
 
 二者同处 GL(5) 固定层级：
 
@@ -277,17 +277,17 @@ $$c_{\text{GL}(5)} = \frac{k\,\dim\mathfrak{su}(5)}{k+h^\vee_{\mathfrak{su}(5)}}
 
 **自由场极限**（$k \to \infty$）：$c_{\text{GL}(5)} = 24 = \dim\mathfrak{su}(5)$。
 
-#### 5.4.3 相变量子 $\mathscr{C}$ 作为GL(5)固定层级的正则化自由度
+#### 5.4.3 相变量子 $☯$ 作为GL(5)固定层级的正则化自由度
 
-相变量子 $\mathscr{C}$ 可以表示为：
+相变量子 $☯$ 可以表示为：
 
-$$\mathscr{C} = \frac{\xi'(1)}{\xi(1)} = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1}$$
+$$☯ = \frac{\xi'(1)}{\xi(1)} = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1}$$
 
-这是 $\ln\xi(s)$ 在 $s=1$ 的导数。在CFT语境中，中央荷 $c$ 衡量理论的"有效自由度数"。$\mathscr{C}$ 的结构（zeta函数对数导数）恰好是**正则化自由度数**的形式——GL(5)固定层级的无穷模经过zeta正则化后的有限剩余。
+这是 $\ln\xi(s)$ 在 $s=1$ 的导数。在CFT语境中，中央荷 $c$ 衡量理论的"有效自由度数"。$☯$ 的结构（zeta函数对数导数）恰好是**正则化自由度数**的形式——GL(5)固定层级的无穷模经过zeta正则化后的有限剩余。
 
-#### 5.4.4 $\mathscr{C}$ 与 $c_{\text{GL}(5)}$ 的关系：Sugawara严格推导
+#### 5.4.4 $☯$ 与 $c_{\text{GL}(5)}$ 的关系：Sugawara严格推导
 
-**定理（GL(5)固定层级中央荷严格不变性）**：GL(5)固定层级的Kac-Moody中央荷 $c_{\text{GL}(5)} = 24k/(k+5)$ 严格成立，不依赖相变量子 $\mathscr{C}$。即 $c_{\text{GL}(5)}^{\text{eff}} = 24k/(k+5) - 12\mathscr{C}\eta + O(\mathscr{C}^2)$ 中 $\eta = 0$。
+**定理（GL(5)固定层级中央荷严格不变性）**：GL(5)固定层级的Kac-Moody中央荷 $c_{\text{GL}(5)} = 24k/(k+5)$ 严格成立，不依赖相变量子 $☯$。即 $c_{\text{GL}(5)}^{\text{eff}} = 24k/(k+5) - 12☯\eta + O(☯^2)$ 中 $\eta = 0$。
 
 **证明**（3步）：
 
@@ -299,13 +299,13 @@ $$c = \frac{k \cdot \dim(\mathfrak{su}(5))}{k + h^\vee_{\mathfrak{su}(5)}} = \fr
 
 对水平 $k > 0$，$c$ 由 $k$ 严格确定。
 
-**步骤2：相变量子 $\mathscr{C}$ 通过水平修正进入，中央荷公式结构不变**
+**步骤2：相变量子 $☯$ 通过水平修正进入，中央荷公式结构不变**
 
-相变量子 $\mathscr{C}$ 通过 Hilbert–Pólya 算符（$\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$，本征值 $\gamma_n^2 + 1/4$，GL(5) 固定层级的谱算符，区别于谱 $\subseteq\{0,1\}$ 的紧化投影）修正GL(5)固定层级的Kac-Moody水平：
+相变量子 $☯$ 通过 Hilbert–Pólya 算符（$\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$，本征值 $\gamma_n^2 + 1/4$，GL(5) 固定层级的谱算符，区别于谱 $\subseteq\{0,1\}$ 的紧化投影）修正GL(5)固定层级的Kac-Moody水平：
 
-$$k^{\text{eff}} = k(1 + \delta(\mathscr{C}) + O(\mathscr{C}^2))$$
+$$k^{\text{eff}} = k(1 + \delta(☯) + O(☯^2))$$
 
-其中 $\delta(\mathscr{C})$ 是 $\mathscr{C}$ 的某个函数。中央荷为：
+其中 $\delta(☯)$ 是 $☯$ 的某个函数。中央荷为：
 
 $$c_{\text{GL}(5)}^{\text{eff}} = \frac{24k^{\text{eff}}}{k^{\text{eff}}+5}$$
 
@@ -315,20 +315,20 @@ $$c_{\text{GL}(5)}^{\text{eff}} = \frac{24k^{\text{eff}}}{k^{\text{eff}}+5}$$
 
 黎曼猜想（GL(5)固定层级的实谱条件）保证零点在临界线 $\text{Re}(s) = 1/2$ 上，即 $\gamma_n \in \mathbb{R}$。这保证紧化算符的本征值 $\gamma_n^2 + 1/4 > 0$（正定），从而Kac-Moody水平 $k^{\text{eff}} > 0$（幺正性保持）。在GRH成立条件下，GL(5)固定层级的共形对称性严格保持。$\square$
 
-**推论**：相变量子 $\mathscr{C}$ 通过Kac-Moody水平修正进入中央荷公式，但不改变公式结构。$\mathscr{C}$ 的物理角色通过以下渠道实现：
+**推论**：相变量子 $☯$ 通过Kac-Moody水平修正进入中央荷公式，但不改变公式结构。$☯$ 的物理角色通过以下渠道实现：
 
 | 渠道 | 机制 | 文档位置 |
 |:---|:---|:---|
-| **同步成本** | $\mathscr{C}$ 控制耦合动量条件 $p_u = 2\pi n/L_u$ 的谱 | CNST §4 |
-| **OPE系数** | $\mathscr{C}$ 通过Kac-Moody水平 $k = 1/\alpha - 5$ 影响OPE系数大 $k$ 展开 | 本文档§3.4 |
-| **关联能** | $\mathscr{C}$ 通过OPE系数进入关联能 $E_c = \sum |C_{ij}^p|^2/B_{pp} \cdot \Delta h_p \cdot \langle\mathcal{F}_p\rangle$ | 本文档§6.2 |
-| **耦合常数** | $g = \sqrt{4\pi\alpha}$，$\alpha$ 来自 SU(5)重组实现⇒$U(1)$电磁群耦合常数，$\mathscr{C}$ 通过 $k$ 条件 $\alpha$ | 本文档§2.2 |
+| **同步成本** | $☯$ 控制耦合动量条件 $p_u = 2\pi n/L_u$ 的谱 | CNST §4 |
+| **OPE系数** | $☯$ 通过Kac-Moody水平 $k = 1/\alpha - 5$ 影响OPE系数大 $k$ 展开 | 本文档§3.4 |
+| **关联能** | $☯$ 通过OPE系数进入关联能 $E_c = \sum |C_{ij}^p|^2/B_{pp} \cdot \Delta h_p \cdot \langle\mathcal{F}_p\rangle$ | 本文档§6.2 |
+| **耦合常数** | $g = \sqrt{4\pi\alpha}$，$\alpha$ 来自 SU(5)重组实现⇒$U(1)$电磁群耦合常数，$☯$ 通过 $k$ 条件 $\alpha$ | 本文档§2.2 |
 
 **物理意义**：
 
-- $\mathscr{C} = 0$：自由场，$c_{\text{GL}(5)} = 24k/(k+5)$（无相互作用）
-- $\mathscr{C} > 0$：有相互作用，$c_{\text{GL}(5)}^{\text{eff}} = 24k^{\text{eff}}/(k^{\text{eff}}+5)$（水平修正）
-- $\mathscr{C}$ 的作用是通过水平修正改变中央荷数值和OPE系数——物理角色通过Kac-Moody水平实现
+- $☯ = 0$：自由场，$c_{\text{GL}(5)} = 24k/(k+5)$（无相互作用）
+- $☯ > 0$：有相互作用，$c_{\text{GL}(5)}^{\text{eff}} = 24k^{\text{eff}}/(k^{\text{eff}}+5)$（水平修正）
+- $☯$ 的作用是通过水平修正改变中央荷数值和OPE系数——物理角色通过Kac-Moody水平实现
 
 #### 5.4.5 $A_4$ Kac-Moody中央荷的数值
 
@@ -347,23 +347,23 @@ $$c_{\text{GL}(5)}^{\text{eff}} = \frac{24k^{\text{eff}}}{k^{\text{eff}}+5}$$
 
 #### 5.4.6 分层共振统一
 
-中央荷 $c$ 与相变量子 $\mathscr{C}$ 的关系是**GL(5)固定层级共振**的一个实例：
+中央荷 $c$ 与相变量子 $☯$ 的关系是**GL(5)固定层级共振**的一个实例：
 
-$$\underbrace{\mathscr{C}}_{\text{GL(5)固定层级}} \;\longleftrightarrow\; \underbrace{c_{\text{GL}(5)}^{\text{eff}}}_{\text{GL(5)层CFT}}$$
+$$\underbrace{☯}_{\text{GL(5)固定层级}} \;\longleftrightarrow\; \underbrace{c_{\text{GL}(5)}^{\text{eff}}}_{\text{GL(5)层CFT}}$$
 
-- $\mathscr{C}$（数论侧）：zeta函数的相变量子，GL(5)固定层级的共振频率
+- $☯$（数论侧）：zeta函数的相变量子，GL(5)固定层级的共振频率
 - $c$（物理侧）：Kac-Moody代数的中央荷，CFT的有效自由度数
-- **朗兰兹对应**：$\mathscr{C}$ 和 $c$ 是同一物理量在数论侧和物理侧的表现
+- **朗兰兹对应**：$☯$ 和 $c$ 是同一物理量在数论侧和物理侧的表现
 
 #### 5.4.7 状态说明
 
 | 环节 | 状态 |
 |:---|:---|
-| $c$ 和 $\mathscr{C}$ 同处 GL(5) 固定层级 | **严格**（GL(5)固定层级结构） |
+| $c$ 和 $☯$ 同处 GL(5) 固定层级 | **严格**（GL(5)固定层级结构） |
 | SU(5)重组实现时 $c$ 由 $A_4$ Kac-Moody代数确定 | **严格**，$c = 24k/(k+5)$ |
-| $\mathscr{C}$ 是GL(5)固定层级的正则化自由度 | **结构严格**，zeta正则化的CFT诠释待严格化 |
+| $☯$ 是GL(5)固定层级的正则化自由度 | **结构严格**，zeta正则化的CFT诠释待严格化 |
 | $c_{\text{GL}(5)}^{\text{eff}} = 24k^{\text{eff}}/(k^{\text{eff}}+5)$（水平修正进入中央荷） | **严格**，Sugawara构造 + GRH保证共形对称性（§5.4.4） |
-| $\mathscr{C}$ 通过Kac-Moody水平/OPE系数/同步成本进入物理 | **严格**，物理角色通过水平实现（§5.4.4推论） |
+| $☯$ 通过Kac-Moody水平/OPE系数/同步成本进入物理 | **严格**，物理角色通过水平实现（§5.4.4推论） |
 | $c = 12$（$k = h^\vee$）的特殊意义 | **待探索**，可能与CQM特殊状态相关 |
 
 ## 6. 共形块与物理预测
@@ -621,7 +621,7 @@ CQM核心理论
 | 合流极限的严格证明 | 已闭合 | 5步严格证明（本文档§6.4）：超几何方程→指数映射→Kummer变换→合流极限→径向Schrödinger方程 |
 | Fusion rules / OPE通道选择定则 | 已闭合 | Verlinde公式 + SU(2) Clebsch-Gordan + 径向descendant加法规则，大 $k$ 极限退化为经典CG规则 |
 | 关联能 $E_c$ 定量计算 | 已闭合 | He原子：$\epsilon_s$ 约去，关联能不依赖耦合常数具体值；Cr/Cu：g波禁戒→S矩阵权重转移→增强 $25/16\approx56\%$→能级翻转 |
-| 中央荷 $c$ 与相变量子 $\mathscr{C}$ 的关系 | 已闭合 | U(1) Sugawara中央荷 $c=1$ 严格不依赖水平（$\dim=1$, $h^\vee=0$使$k$约去），$\eta=0$；$\mathscr{C}$通过OPE系数/同步成本进入物理，非通过中央荷（§5.4.4） |
+| 中央荷 $c$ 与相变量子 $☯$ 的关系 | 已闭合 | U(1) Sugawara中央荷 $c=1$ 严格不依赖水平（$\dim=1$, $h^\vee=0$使$k$约去），$\eta=0$；$☯$通过OPE系数/同步成本进入物理，非通过中央荷（§5.4.4） |
 | 临界自组织态扩大的动力学方程 | 已闭合 | BPZ方程→径向Schrödinger方程已严格证明（5步证明，本文档§6.4）。合流极限下定量系数已严格确定：descendant系数由Shapovalov内积给出，超几何函数参数由共形维度$h=n+l$确定，退化为拉盖尔多项式$L_{n-l-1}^{2l+1}$（本文档§6.3-§6.4）。幂律传播$r^{-2h}$的CQM具体化已完成。有限$n$修正是高阶效应，不影响周期表结构 |
 
 ## 11. 文献锚定
@@ -670,8 +670,8 @@ CFT = 描述临界自组织态扩大的机制，同时也是同步的过程机�
  │ └── A4结合律 → 锁定s,p,d,f，禁戒g
  │
  └── Dirac条件 = 共形自举方程的CQM具体化
-  └── p̂_u = (1/𝒞)√(1-βδ̂_v)
-  └── (L_u/2π𝒞)√(1-βδ_v^(k)) = C_k
+  └── p̂_u = (1/☯)√(1-βδ̂_v)
+  └── (L_u/2π☯)√(1-βδ_v^(k)) = C_k
  └── 锁定声子占据数 N_k
 
  同步四阶段：预备（赝状态）→发生（共振量子化）→过程（CFT扩大）→完成（状态跃迁）

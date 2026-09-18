@@ -13,7 +13,7 @@ import SpectralGeometry.MathieuContinuedFraction
 /-!
 # 谱几何 (Spectral Geometry)
 
-CQM 的谱几何：相变量子 𝒞、Mathieu 临界值 λ_c、Sierra-CQM 耦谱定理。
+CQM 的谱几何：相变量子 ☯、Mathieu 临界值 λ_c、Sierra-CQM 耦谱定理。
 
 > **发生学分层定位**：本文件形式化的 ζ 零点谱
 > （γ₁、耦级 𝔠₁ = 1/4 + γ₁²、Sierra-CQM 耦谱定理）属
@@ -23,10 +23,10 @@ CQM 的谱几何：相变量子 𝒞、Mathieu 临界值 λ_c、Sierra-CQM 耦�
 > 物质自组织在相应层级上的数学体现。基态层形式化待构造。
 
 ## 推导链
-A₄ 嘉当矩阵 → 本征值 → Mathieu 参数 → λ_c → 相变量子 𝒞 → 耦级 𝔠₁ → κ → G_N
+A₄ 嘉当矩阵 → 本征值 → Mathieu 参数 → λ_c → 相变量子 ☯ → 耦级 𝔠₁ → κ → G_N
 
 ## 公理
-- **A2.2** 相变量子 𝒞 = ξ'(1)/ξ(1) 是基本常数
+- **A2.2** 相变量子 ☯ = ξ'(1)/ξ(1) 是基本常数
 
 ## 定理
 - 所有谱常数严格为正
@@ -49,9 +49,9 @@ open Matrix
 open scoped BigOperators
 open CQM
 
-/-! ## 相变量子 𝒞 — 最基本的无量纲常数 -/
+/-! ## 相变量子 ☯ — 最基本的无量纲常数 -/
 
-/-- [DEFINITION] 相变量子 𝒞：CQM 中最基本的无量纲常数。
+/-- [DEFINITION] 相变量子 ☯：CQM 中最基本的无量纲常数。
 
     严格定义：C = ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)，
     其中 γ 是 Euler-Mascheroni 常数。
@@ -68,7 +68,7 @@ open CQM
 noncomputable def spectralQuantum : ℝ :=
   1 + Real.eulerMascheroniConstant / 2 - Real.log (4 * Real.pi) / 2
 
-/-- [BRIDGE] 相变量子 𝒞 的高精度数值界限。
+/-- [BRIDGE] 相变量子 ☯ 的高精度数值界限。
 
     断言 0.02309570896 < C < 0.02309570898。
     这与 C 的常用数值近似 0.02309570897 一致。
@@ -111,7 +111,7 @@ theorem spectralQuantum_inv_gt_40 : 1 / spectralQuantum > 40 := by
   have h2 : 1 / (0.025 : ℝ) = 40 := by norm_num
   linarith
 
-/-- 相变量子 𝒞 远小于 A₄ 的最小本征值 λ₁ = (3-√5)/2 ≈ 0.382 -/
+/-- 相变量子 ☯ 远小于 A₄ 的最小本征值 λ₁ = (3-√5)/2 ≈ 0.382 -/
 theorem spectralQuantum_lt_eigenvalue1 : spectralQuantum < eigenvalue1 := by
   have hC : spectralQuantum < (0.024 : ℝ) := by
     have h := spectralQuantum_numerical_bounds.right
@@ -350,7 +350,7 @@ theorem GNFactor_at_C_pos : GNFactor_at_C > 0 := by
 
 /-! ## 谱常数与嘉当代数的连接 -/
 
-/-- 相变量子 𝒞 与 A₄ 本征值的关系（声明）：
+/-- 相变量子 ☯ 与 A₄ 本征值的关系（声明）：
     C 远小于 A₄ 的最小本征值 λ₁ ≈ 0.382。
     C 和 λ₁ 之间的桥梁是 Mathieu 方程。
     此关系是 CQM 中最核心的待证定理之一。 -/
@@ -372,11 +372,11 @@ theorem spectralCorrection_full_formula : spectralCorrection = ((dimSU5 : ℝ) +
 
 /-! ## 物理常数与谱常数的关系 -/
 
-/-- 耦合空间中的相变量子 𝒞 与耦合速度 c 的关系（声明）：
+/-- 耦合空间中的相变量子 ☯ 与耦合速度 c 的关系（声明）：
     在非禁闭区域，c ≈ C（耦合速度趋于相变量子）。
     这是耦合空间离散性的直接体现。
 
-    当前严格证明：相变量子 𝒞 > 0（见 `spectralQuantum_pos`）。
+    当前严格证明：相变量子 ☯ > 0（见 `spectralQuantum_pos`）。
     耦合速度与相变量子之间的精确关系待进一步推导。 -/
 theorem spectralQuantum_pos_ref : spectralQuantum > 0 :=
   spectralQuantum_pos
@@ -625,7 +625,7 @@ theorem spectralProduct_gt_six : spectralProduct > 6 := by
 
 /-! ### 谱常数与嘉当代数的连接 -/
 
-/-- 相变量子 𝒞 与 A₄ 最小本征值 λ₁ 的比值：
+/-- 相变量子 ☯ 与 A₄ 最小本征值 λ₁ 的比值：
     C/λ₁ ≈ 0.0231/0.382 ≈ 0.0605
 
     这个比值衡量了相变量子相对于 A₄ 能标的大小。
@@ -913,7 +913,7 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
     │   ├── Dynkin 指数 I = 5/3
     │   └── dim(SU(5)) = 24, rank(SU(5)) = 4
     │
-    ├── 相变量子 𝒞 = ξ'(1)/ξ(1)
+    ├── 相变量子 ☯ = ξ'(1)/ξ(1)
     │   ├── C · λ_c ≈ 0.0304 (非精确乘积)
     │   ├── C/λ₁ ≈ 0.0605 (量子修正参数)
     │   └── exp(-2/C) ≈ 10⁻³⁸ (层级因子)
@@ -964,7 +964,7 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
 - Adele 约束 ∏_p ℤ_p = 1/30（待从第一性原理证明）
 - `b1`：Mathieu 第一特征值函数（公理引入，待 Mathieu 函数理论）
 - Mathieu 临界值 λ_c 的严格推导（待 Mathieu 函数理论）
-- 相变量子 𝒞 从 ξ'(1)/ξ(1) 的严格推导（待解析数论）
+- 相变量子 ☯ 从 ξ'(1)/ξ(1) 的严格推导（待解析数论）
 
 ### 形式化状态（本文件）
 - 本文件当前包含 55 个已证明定理，以及 `spectralQuantum_numerical_bounds` 一个显式数值桥梁公理。

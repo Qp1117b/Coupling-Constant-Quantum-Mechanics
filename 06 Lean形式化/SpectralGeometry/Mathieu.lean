@@ -369,9 +369,9 @@ theorem b1_gt_2q_at_mathieuParameter : b1 mathieuParameter > 2 * mathieuParamete
   -- 步骤 3：组合结果
   linarith
 
-/-! ## 相变量子 𝒞 与 Mathieu 临界值的关系 -/
+/-! ## 相变量子 ☯ 与 Mathieu 临界值的关系 -/
 
-/-- 相变量子 𝒞 与 Mathieu 临界值 λ_c 的关系（声明）：
+/-- 相变量子 ☯ 与 Mathieu 临界值 λ_c 的关系（声明）：
 
     在 CQM 中，C = 1/λ_c 到一阶近似。
     更精确的关系涉及 Mathieu 方程的渐近展开。

@@ -49,7 +49,7 @@ open scoped Real
     - **核子部分** (L_u/(2πC))√(1-βδ̂_v^(k))：由 FG 因果严格确定
     - **Casimir 部分** Ĉ₂(G_k)：群内部对称的同步成本（角向）
     - L_u = ln Λ：耦合常数空间紧化 U(1) 周长
-    - 𝒞 = ξ'(1)/ξ(1)：相变量子（复用 `SpectralGeometry.spectralQuantum`）
+    - ☯ = ξ'(1)/ξ(1)：相变量子（复用 `SpectralGeometry.spectralQuantum`）
     - β：角亏到牛顿引力势的比例常数
     - δ̂_v^(k)：曲率算符（复用 `CurvatureDerivation.TotalCurvatureOperator`） -/
 structure SyncOperatorFull where
@@ -57,7 +57,7 @@ structure SyncOperatorFull where
   Lu : ℝ
   /-- L_u > 0 -/
   Lu_pos : 0 < Lu
-  /-- 相变量子 𝒞 = ξ'(1)/ξ(1) > 0 -/
+  /-- 相变量子 ☯ = ξ'(1)/ξ(1) > 0 -/
   C : ℝ
   /-- C > 0 -/
   C_pos : 0 < C
@@ -113,7 +113,7 @@ theorem SyncOperatorFull.fullEigenvalue_pos (s : SyncOperatorFull) (k : ℕ) (hk
 /-! ## 2. 约束方程锁定声子占据数（环节15b） -/
 
 /-- **约束方程**：(L_u/(2πC))√(1-βδ_v^(k)) = C_k
-    锁定声子占据数 N_k——给定底空间曲率 δ_v 与相变量子 𝒞，
+    锁定声子占据数 N_k——给定底空间曲率 δ_v 与相变量子 ☯，
     耦级 n_k = C_k 由群论确定，约束方程反向锁定 N_k。
     这是同步方程的**输出**，不是输入参数。 -/
 structure ConstraintEquation (s : SyncOperatorFull) where

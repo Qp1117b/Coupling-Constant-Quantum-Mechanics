@@ -136,7 +136,7 @@ $$\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(N_k + \f
 
 同步算符（因果网络同步理论定义，= 紧化算符在截面空间的实现）：
 
-$$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi \mathscr{C}}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
+$$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 同步方程：
 
@@ -148,7 +148,7 @@ $$\hat{\mathcal{S}}_k\Psi_k = n_k\Psi_k$$
 
 等价关系（同步方程 + 曲率涨落代入）：
 
-$$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi \mathscr{C} \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}$$
+$$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi ☯ \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}$$
 
 此式是Bohr-Sommerfeld量子化条件的体现：紧化U(1)的周期性边界条件与FG因果条件联立，选出离散的声子占据数。**声子占据数由同步方程锁定**，不再是自由参数。
 
@@ -347,7 +347,7 @@ $$\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\
 
 ### 8.3 声子与 $m_e/m_p$ 涌现
 
-声子频率 $\omega_0$ 进入无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$，$\eta$ 从 $A_4$ 代数严格确定。通过Bohr半径关系 $a_0 = \hbar/(m_e c\alpha)$ 和 $a_0 = \lambda_p L_u/(2\pi \mathscr{C}\alpha)$，导出 $m_e/m_p = 2\pi \mathscr{C}/L_u$。声子是 $m_e/m_p$ 代数涌现的关键环节。
+声子频率 $\omega_0$ 进入无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$，$\eta$ 从 $A_4$ 代数严格确定。通过Bohr半径关系 $a_0 = \hbar/(m_e c\alpha)$ 和 $a_0 = \lambda_p L_u/(2\pi ☯\alpha)$，导出 $m_e/m_p = 2\pi ☯/L_u$。声子是 $m_e/m_p$ 代数涌现的关键环节。
 
 ## 9. 声子与超导
 

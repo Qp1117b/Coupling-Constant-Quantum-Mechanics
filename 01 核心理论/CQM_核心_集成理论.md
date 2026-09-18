@@ -2,6 +2,8 @@
 
 **作者**：ruster
 
+> **符号约定**：相变量子主符号为 **☯**（太极，表辩证与相变）；英文符号为 $\mathscr{C}$（花体 C，script C），用于国际交流语境。二者指称同一物理量：$☯ = \xi'(1)/\xi(1) \approx 0.0230957$。
+
 > **配套文档**（各部分的完整展开）：
 > - `CQM_核心_三种引力存在论前提.md`——第九部分的完整展开（QG/FG/GR 对比总表、中子缺陷矩阵、缺口编号 N1–N4、Lean 形式化对应）；
 > - `08 超导/CQM_超导核心理论.md`——第十一部分的完整展开（两条链、FG 纤维丛、$T_c$ 校准、缺口表 G 类）；
@@ -17,13 +19,13 @@
 
 **CQM 是物理系统的理论，主要研究物理系统的费米—强子尺度**——单个质子/中子内部（费米尺度，禁闭内部）及其退相干边界（强子尺度，禁闭边界）的耦合常数量子力学；作为物理系统的理论，其框架与结论亦适用于更广的物理系统语境。各系统拥有独立的因果算法，物理系统内部不同尺度的因果算法亦根本不同。
 
-CQM 的核心创新始终只有一点：**把量子力学的共轭对从 $(\hat{x}, \hat{p})$ 换成 $(\hat{u}, \hat{p}_u)$**，其中 $\hat{u} = \ln \hat{r}$ 是对数耦合常数、$\hat{p}_u = \hat{v}_\tau/\mathscr{C}$ 是固有时流速，满足标准海森堡代数 $[\hat{u}, \hat{p}_u] = i$。然后让全部涌现——SU(5) 禁闭边界、三种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱与自由能竞争——从这个替换中自然生长出来。
+CQM 的核心创新始终只有一点：**把量子力学的共轭对从 $(\hat{x}, \hat{p})$ 换成 $(\hat{u}, \hat{p}_u)$**，其中 $\hat{u} = \ln \hat{r}$ 是对数耦合常数、$\hat{p}_u = \hat{v}_\tau/☯$ 是固有时流速，满足标准海森堡代数 $[\hat{u}, \hat{p}_u] = i$。然后让全部涌现——SU(5) 禁闭边界、三种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱与自由能竞争——从这个替换中自然生长出来。
 
 理论主线：（1）**物质先在，存在先于过程**——质子/中子作为有限本体先于再生产闭环，再生产 $\mu^2=\mu$ 是维持而非生成；（2）**退相干导致禁闭边界**——禁闭不是 QCD 动力学的结果，而是引力退相干在强子尺度上的最显著实现；（3）**条件性幺正**——系统边界局部非幺正性是系统存在的本体论条件：系统诞生于边界局部非幺正确立，维持于内部条件性幺正运行，瓦解于条件性幺正消亡；（4）**SU(5) 涌现与谱结构**——4-单纯形边-面关联矩阵本征值 $\{9,4,1\}$ 锁定三种规范耦合相对强度，$\alpha^{-1} = 16384\pi/375$，$G_N$ 由无量纲数学纯数组合给出（与 CODATA 偏差约 $-3$ ppm，属构造后验数字校验）；（5）**Sierra-CQM 定理**——黎曼零点对应再生产过程的共振模式；（6）**三种引力**——QG（基础前提）/GR（广度前提，平庸因果网络 = 时空）/FG（深度前提，GR 基态的非平庸激发态）；（7）**超导涌现**——曲率涨落→固有时流速→海森堡不确定性→跃迁耦级谱 $2\ln n$（$n=2,4,6,\ldots$）→资格条件筛选候选群族→自由能竞争选出主导群，$T_c$ 由自由能交叉给出。
 
 每一部分标注严格性状态；关键缺口（如中子缺陷 $\delta$、几何耦合 $\beta$ 的第一性来源）在结论中审计。
 
-> **发生学分层**：质数分布的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化）——**物理系统固定在 GL(5) 层级**（SU(5) 是含标准模型的最小单群，rank 4）。同步算符体系分两类谱论对象（见该文档 §4）：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符，承担黎曼零点谱的谱算符 $\hat{H}_{\text{HP}}$ 在类型上即波利亚算符——CQM 的标志在算符来源（物理铸造而非拟合零点）；黎曼猜想是 GL(5) 固定层级的实谱条件；ζ(s) 的欧拉乘积给出固定层级下直接使用的谱（基态 L 函数是 $L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$）。直接用于计算的 ζ 零点谱（$\mathscr{C}=\xi'(1)/\xi(1)$、$\mathfrak{c}_n=1/4+\gamma_n^2$）均属 GL(5) 固定层级下使用的谱。完整分层流程图见 `CQM_核心_因果网络同步理论.md` §9。
+> **发生学分层**：质数分布的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化）——**物理系统固定在 GL(5) 层级**（SU(5) 是含标准模型的最小单群，rank 4）。同步算符体系分两类谱论对象（见该文档 §4）：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符，承担黎曼零点谱的谱算符 $\hat{H}_{\text{HP}}$ 在类型上即波利亚算符——CQM 的标志在算符来源（物理铸造而非拟合零点）；黎曼猜想是 GL(5) 固定层级的实谱条件；ζ(s) 的欧拉乘积给出固定层级下直接使用的谱（基态 L 函数是 $L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$）。直接用于计算的 ζ 零点谱（$☯=\xi'(1)/\xi(1)$、$\mathfrak{c}_n=1/4+\gamma_n^2$）均属 GL(5) 固定层级下使用的谱。完整分层流程图见 `CQM_核心_因果网络同步理论.md` §9。
 
 **关键词**：耦合常数量子力学；因果集；关系量子力学；圈量子引力；引力退相干；禁闭；存在论；条件性幺正；SU(5) 嘉当矩阵；Mathieu 方程；黎曼零点；传输方程；三种引力；超导涌现；贝尔不等式；系统—尺度—层级递进
 
@@ -186,8 +188,8 @@ $$\boxed{[\hat{u}, \hat{p}_u] = i}$$
 其中：
 
 - $\hat{u} = \ln \hat{r}$：**对数耦合常数**（$r$ 为总耦合强度，Casimir 不变量）；
-- $\hat{p}_u = \hat{v}_\tau / \mathscr{C}$：**固有时流速**（固有时与坐标时之比，$v_\tau = d\tau/dt$）；
-- $\mathscr{C} = \xi'(1)/\xi(1) \approx 0.0230957$：**相变量子**，来自黎曼 $\xi$ 函数在 $s=1$ 处的对数导数，是耦合空间的"作用量量子"。
+- $\hat{p}_u = \hat{v}_\tau / ☯$：**固有时流速**（固有时与坐标时之比，$v_\tau = d\tau/dt$）；
+- $☯ = \xi'(1)/\xi(1) \approx 0.0230957$：**相变量子**，来自黎曼 $\xi$ 函数在 $s=1$ 处的对数导数，是耦合空间的"作用量量子"。
 
 **不确定性关系**：
 
@@ -195,25 +197,25 @@ $$\Delta u \cdot \Delta p_u \geq \frac{1}{2}$$
 
 或等价地（用相对耦合不确定度）：
 
-$$\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{\mathscr{C}}{2}$$
+$$\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$$
 
 **物理诠释**：在单个质子内部，耦合常数的相对不确定度与固有时流速的不确定度互斥。你越精确地测定这个系统的耦合常数，就越无法精确测定它的固有时此刻流得多快；反之亦然。
 
-### 3.4 相变量子 $\mathscr{C}$ 的来源
+### 3.4 相变量子 $☯$ 的来源
 
-$\mathscr{C}$ 是黎曼 $\xi$ 函数的自然输出：
+$☯$ 是黎曼 $\xi$ 函数的自然输出：
 
-$$\mathscr{C} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.023095708966$$
+$$☯ = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.023095708966$$
 
 由 $\xi(s) = \frac{1}{2}s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)$ 的函数方程 $\xi(s) = \xi(1-s)$ 与 $\psi(1/2) = -\gamma - 2\ln 2$（$\psi$ 为双伽玛函数，$\gamma$ 为欧拉-马歇罗尼常数），严格推出。解析值与数值微分互验，精确到 $10^{-7}$。它是无量纲数学纯数，作为全部后续层级的普适比例基准。
 
-#### 3.4.1 $\mathscr{C}$ 的集体泛函表达式
+#### 3.4.1 $☯$ 的集体泛函表达式
 
-利用 Hadamard 乘积公式，$\mathscr{C}$ 可表示为**所有黎曼零点的集体谱权重**：
+利用 Hadamard 乘积公式，$☯$ 可表示为**所有黎曼零点的集体谱权重**：
 
-$$\boxed{\mathscr{C} = \frac{\xi'(1)}{\xi(1)} = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + \frac{1}{4}} \approx 0.0230957}$$
+$$\boxed{☯ = \frac{\xi'(1)}{\xi(1)} = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + \frac{1}{4}} \approx 0.0230957}$$
 
-其中 $\gamma_n$ 是黎曼零点虚部。$\mathscr{C}$ 不是某一个零点的性质，而是全部零点按 $1/(\gamma_n^2+1/4)$ 加权的集体贡献——低层零点贡献了大部分谱权重。$\mathscr{C}$ 在 CQM 中充当"相变量子"，设定了耦合常数与固有时流速之间不确定性的基本下限。**不确定性关系基于相变量子 $\mathscr{C}$**：不确定性关系为 $\Delta u \cdot \Delta v_\tau \geq \mathscr{C}/2$。$\mathscr{C}$ 取代传统量子力学中 $\hbar$ 的角色，但其数值完全由黎曼零点谱的集体结构决定——是数论谱对物理量子尺度的直接规定。
+其中 $\gamma_n$ 是黎曼零点虚部。$☯$ 不是某一个零点的性质，而是全部零点按 $1/(\gamma_n^2+1/4)$ 加权的集体贡献——低层零点贡献了大部分谱权重。$☯$ 在 CQM 中充当"相变量子"，设定了耦合常数与固有时流速之间不确定性的基本下限。**不确定性关系基于相变量子 $☯$**：不确定性关系为 $\Delta u \cdot \Delta v_\tau \geq ☯/2$。$☯$ 取代传统量子力学中 $\hbar$ 的角色，但其数值完全由黎曼零点谱的集体结构决定——是数论谱对物理量子尺度的直接规定。
 
 ---
 
@@ -242,7 +244,7 @@ $$\mathcal{H} = L^2(\mathbb{R}, e^{-u}du), \qquad \langle f, g \rangle = \int f^
 | 对易子 | $[\hat{x}, \hat{p}] = i\hbar$ | $[\hat{u}, \hat{p}_u] = i$ |
 | Hilbert 空间 | $L^2(\mathbb{R}, dx)$ | $L^2(\mathbb{R}, e^{-u}du)$ |
 | 测度 | 均匀 $dx$ | 指数加权 $e^{-u}du$（来自 Sprinkling） |
-| 作用量量子 | $\hbar$ | $\mathscr{C} = \xi'(1)/\xi(1)$ |
+| 作用量量子 | $\hbar$ | $☯ = \xi'(1)/\xi(1)$ |
 
 **关键**：这不是类比，而是严格的数学同构。CQM 的耦合空间量子力学与传统量子力学共享同一个代数结构，只是舞台不同。
 
@@ -380,7 +382,7 @@ $$\text{禁闭内部离散自由度（因果集事件）} \xrightarrow{\text{退
 
 总面元数：$31 = 2^5 - 1$。
 
-> **一证七联框架**：4-单纯形/SU(5) 结构是"一证七联"框架的核心对象——核心定理（未证明）：引力禁闭边界退相干的稳态是正四单纯形，代数签名 $A_4 = \text{Cartan}(\text{SU}(5))$。此定理一旦证明，七大关联全部自动涌出（$\mathscr{C}$ 三重锁定、正四单纯形三重对应、SU(5) = 大统一群、双曲度规与黎曼零点谱、维度匹配、真空涨落隔离、精细结构常数 $\alpha^{-1}$）——它们是同一对象 $A_4$ 在七个物理维度上的延伸，而非七个独立巧合。缺口 C（未闭合）：退相干稳态为何恰好是 $A_4$。
+> **一证七联框架**：4-单纯形/SU(5) 结构是"一证七联"框架的核心对象——核心定理（未证明）：引力禁闭边界退相干的稳态是正四单纯形，代数签名 $A_4 = \text{Cartan}(\text{SU}(5))$。此定理一旦证明，七大关联全部自动涌出（$☯$ 三重锁定、正四单纯形三重对应、SU(5) = 大统一群、双曲度规与黎曼零点谱、维度匹配、真空涨落隔离、精细结构常数 $\alpha^{-1}$）——它们是同一对象 $A_4$ 在七个物理维度上的延伸，而非七个独立巧合。缺口 C（未闭合）：退相干稳态为何恰好是 $A_4$。
 
 ### 7.2 边-面关联矩阵与谱
 
@@ -441,16 +443,16 @@ $$\alpha^{-1} = \frac{16384\pi}{375} \approx 137.2583$$
 |:---:|:---:|:---|
 | $I$ | $5/3$ | SU(5) Dynkin 指数 |
 | $\lambda_c$ | $1.3160229113077...$ | Mathieu 方程临界参数（$\lambda_c = 2b_1(\lambda_c/4)$ 的唯一解） |
-| $\mathscr{C}$ | $0.023095708966...$ | 相变量子 $\xi'(1)/\xi(1)$ |
+| $☯$ | $0.023095708966...$ | 相变量子 $\xi'(1)/\xi(1)$ |
 | $\mathfrak{c}_1$ | $200.040454832...$ | 第一耦级 $1/4 + \gamma_1^2$ |
-| $\kappa$ | $1.034103190...$ | 4-单纯形/Adele 周期修正 $\kappa = (31+\mathscr{C})/30$ |
+| $\kappa$ | $1.034103190...$ | 4-单纯形/Adele 周期修正 $\kappa = (31+☯)/30$ |
 | $m_p$ | $938.272$ MeV | 唯一量纲输入（量纲锚点，PDG 2022） |
 
-其中 $\kappa = (N_{\text{faces}} + \mathscr{C})/N_{\text{cycle}}$：$N_{\text{faces}} = 31 = 2^5 - 1$ 是 4-单纯形非空面元数（整数组合不变量），$N_{\text{cycle}} = 30 = 2 \cdot 3 \cdot 5$ 是素数周期条件；$+\mathscr{C}$ 项反映从离散因果集到连续几何过渡中组合不变量与谱不变量的统一。该公式的其余输入为选定的组合-谱不变量，未拟合 $G_N$（推导与校验见 `03 引力与退相干/CQM_引力_GN谱公式.md`；其为框架内构造公式，该纯数学"推导" $G_N$ 属待第三方复现的构造性主张，不是被主流学界接受的第一性推导）。
+其中 $\kappa = (N_{\text{faces}} + ☯)/N_{\text{cycle}}$：$N_{\text{faces}} = 31 = 2^5 - 1$ 是 4-单纯形非空面元数（整数组合不变量），$N_{\text{cycle}} = 30 = 2 \cdot 3 \cdot 5$ 是素数周期条件；$+☯$ 项反映从离散因果集到连续几何过渡中组合不变量与谱不变量的统一。该公式的其余输入为选定的组合-谱不变量，未拟合 $G_N$（推导与校验见 `03 引力与退相干/CQM_引力_GN谱公式.md`；其为框架内构造公式，该纯数学"推导" $G_N$ 属待第三方复现的构造性主张，不是被主流学界接受的第一性推导）。
 
 **数值结果**：
 
-$$G_N = \frac{I \cdot \lambda_c \cdot \mathscr{C}^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{\mathscr{C}}\right) \cdot (1 + \kappa \mathscr{C}) = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2}\ \text{（自然单位）}$$
+$$G_N = \frac{I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯) = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2}\ \text{（自然单位）}$$
 
 $$= 6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}\ \text{（SI）}$$
 
@@ -458,7 +460,7 @@ $$= 6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}
 
 **在该框架内 $G_N$ 由 SU(5) 几何给定**：有效曲率必须同时满足交换几何（经典可对易）、长程（不被质量或禁闭屏蔽）、稳定（不随时间衰减）三个条件。禁闭内部为非交换几何，不提供经典曲率；U(1) 是 Abel 群，没有非平凡的嘉当矩阵；弱力的几何贡献被 $S_5$ 对称性严格压制。SU(5) 位于禁闭边界——"非交换 ↔ 交换"过渡的临界点，三种规范群的面元通过同一个边-面关联矩阵 $E$ 耦合，产生同一个 Cartan 曲率算符 $M = E^T E$。电磁和弱力的能动张量不需要独立的修正项——其几何信息已被 31 个面元严格编码。
 
-**该公式的结构稳定性**：$G_N$ 的输入全部是**无量纲数学纯数**（$I, \lambda_c, \mathscr{C}, \mathfrak{c}_1, \kappa$），唯一有量纲的输入 $m_p$ 是常数，故在该框架内 $G_N$ 不依赖能标、时间、位置。说明：这些"不变性"是标准引力学（GR/渐近安全/等效原理）本就共享的 $G_N$ 常数性，并非 CQM 独有的可区分预言——真正的可检验点是 $G_N$ 的数值本身能否第三方复现，而非其常/不变性。
+**该公式的结构稳定性**：$G_N$ 的输入全部是**无量纲数学纯数**（$I, \lambda_c, ☯, \mathfrak{c}_1, \kappa$），唯一有量纲的输入 $m_p$ 是常数，故在该框架内 $G_N$ 不依赖能标、时间、位置。说明：这些"不变性"是标准引力学（GR/渐近安全/等效原理）本就共享的 $G_N$ 常数性，并非 CQM 独有的可区分预言——真正的可检验点是 $G_N$ 的数值本身能否第三方复现，而非其常/不变性。
 
 - $G_N$ **不随能标跑动**（区别于渐近安全量子引力）；
 - $G_N$ **不随时间演化**（区别于 Brans-Dicke 理论）；
@@ -466,7 +468,7 @@ $$= 6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}
 
 实验条件（月球激光测距、脉冲双星、BBN、CMB）将 $G_N$ 的变率限制在 $< 10^{-12}$/年，与 CQM 的 $G_N$ 常数性一致。中子-质子质量差不改变 $G_N$：$m_p$ 是量纲锚点而非"引力源质量"，质子和中子共享相同的禁闭边界（4-单纯形），故 $G_N^{(p)} = G_N^{(n)} = G_N$——与等效原理实验（精度 $10^{-15}$）一致。
 
-**量纲归一化与恢复的完整机制**：CQM的所有方程（同步方程、CFT/OPE、Kac-Moody descendant）无量纲性的根本来源是FG纤维丛截断处的量纲归一化——从有量纲的 $[\hat{X},\hat{P}]=i\hbar$ 到无量纲曲率算符 $\hat{\delta}_v$ 的转换中，$\hbar$ 被声子算符构造吸收，$E_{\text{bind}}$ 作为量纲归一化因子把声子能量 $\hbar\omega_k$ 转换为无量纲曲率。能量标度信息编码在无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中（由 $A_4$ 代数严格确定），量纲恢复通过 $m_p$ 标度重建有量纲物理量。$m_e/m_p = 2\pi \mathscr{C}/L_u$ 从归一化结构代数涌现。$m_e/m_p$ 推导链见 `01 核心理论/CQM_核心_声子理论.md` §8.3，曲率算符归一化核心见 `09 精细引力（FG）/FG_纤维丛理论.md` §4。
+**量纲归一化与恢复的完整机制**：CQM的所有方程（同步方程、CFT/OPE、Kac-Moody descendant）无量纲性的根本来源是FG纤维丛截断处的量纲归一化——从有量纲的 $[\hat{X},\hat{P}]=i\hbar$ 到无量纲曲率算符 $\hat{\delta}_v$ 的转换中，$\hbar$ 被声子算符构造吸收，$E_{\text{bind}}$ 作为量纲归一化因子把声子能量 $\hbar\omega_k$ 转换为无量纲曲率。能量标度信息编码在无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$ 中（由 $A_4$ 代数严格确定），量纲恢复通过 $m_p$ 标度重建有量纲物理量。$m_e/m_p = 2\pi ☯/L_u$ 从归一化结构代数涌现。$m_e/m_p$ 推导链见 `01 核心理论/CQM_核心_声子理论.md` §8.3，曲率算符归一化核心见 `09 精细引力（FG）/FG_纤维丛理论.md` §4。
 
 ---
 
@@ -534,9 +536,9 @@ $$\boxed{\text{QG（物质，质数前网络描述）} \xrightarrow{\text{退相
 
 $$\boxed{\text{QG前网络谱结构} \;\xrightarrow{\text{经GL(5)紧化投影}}\; \text{与黎曼零点 } \gamma_n \text{ 有关}}$$
 
-核心参数：$\mathscr{C} = \xi'(1)/\xi(1) \approx 0.0230957$，$\mathfrak{c}_n = 1/4 + \gamma_n^2$（第一耦级 $\mathfrak{c}_1 \approx 200.04$）——全部是无量纲数学纯数，直接来自解析数论。
+核心参数：$☯ = \xi'(1)/\xi(1) \approx 0.0230957$，$\mathfrak{c}_n = 1/4 + \gamma_n^2$（第一耦级 $\mathfrak{c}_1 \approx 200.04$）——全部是无量纲数学纯数，直接来自解析数论。
 
-> **分层定位**：QG 的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化，基态 L 函数 $L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$ 的零点谱）；上述 ζ 零点谱（$\mathscr{C}$、$\mathfrak{c}_n$）直接作为 GL(5) 固定层级下使用的谱——黎曼猜想是 GL(5) 固定层级的实谱条件。**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。
+> **分层定位**：QG 的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化，基态 L 函数 $L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$ 的零点谱）；上述 ζ 零点谱（$☯$、$\mathfrak{c}_n$）直接作为 GL(5) 固定层级下使用的谱——黎曼猜想是 GL(5) 固定层级的实谱条件。**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。
 
 **功能**：使物质能以有限本体的形式展开。最原始的自组织：将无限的"质"（质数是其生成元）组织成有限的可再生物理系统。
 
@@ -605,7 +607,7 @@ $$\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta\,\delta_v}}$$
 
 **Dirac条件**（缝合核子空间与耦合常数空间）：
 
-$$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{\mathscr{C}}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
+$$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
 
 此条件将FG因果（核子空间的曲率算符）与耦合常数空间（$U(1)$紧化动量）严格锁定。
 
@@ -743,7 +745,7 @@ CQM 超导不是"筛选 + 吸引"的二分机制，而是**单一的几何-动�
 **基础本体链**：
 
 $$\boxed{\begin{aligned}
-&\text{三种引力（QG/GR/FG，FG}\neq\text{GR）} + \text{相变量子 } \mathscr{C} \\
+&\text{三种引力（QG/GR/FG，FG}\neq\text{GR）} + \text{相变量子 } ☯ \\
 &\Downarrow \\
 &\text{质子 } A_4 + \text{中子 } D(\delta) \\
 &\Downarrow \\
@@ -759,9 +761,9 @@ $$\boxed{\begin{aligned}
 &\Downarrow \\
 &\frac{d\tau}{dt} = \sqrt{1 - \beta\delta_v} \quad (\text{固有时流速} = \text{两时间之比，基准 } 1) \\
 &\Downarrow \\
-&p_u = \frac{1}{\mathscr{C}}\frac{d\tau}{dt} = \frac{\sqrt{1 - \beta\delta_v}}{\mathscr{C}}, \quad \mathscr{C} = \frac{\xi'(1)}{\xi(1)} \\
+&p_u = \frac{1}{☯}\frac{d\tau}{dt} = \frac{\sqrt{1 - \beta\delta_v}}{☯}, \quad ☯ = \frac{\xi'(1)}{\xi(1)} \\
 &\Downarrow \\
-&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{1 - \beta\delta_v}}{\beta}
+&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta}
 \end{aligned}}$$
 
 **晶胞量子振荡中的耦合空间动力学**：
@@ -769,10 +771,10 @@ $$\boxed{\begin{aligned}
 $$\boxed{\begin{aligned}
 &\text{晶胞量子振荡（声子 = 曲率量子）} \Rightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
 &\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
-&\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{1 - \beta\delta_v}}{\beta} \\
+&\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta} \\
 &\Downarrow \\
 &\Delta u_n = 2\ln n \text{ 跃迁 } u \to u + 2\ln n \;\Rightarrow\; \alpha \to n^2\alpha \text{（耦级谱，} n=2,4,6,\ldots\text{）} \\
-&\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐相位闭合条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
+&\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐相位闭合条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
 &\text{路径积分在候选群族上选出自由能最小的主导群 } G_{\text{主导}} = \arg\min_n F_n \\
 &\Downarrow \\
 &\text{超导态作为晶胞量子振荡全局相干模式涌现}
@@ -802,9 +804,9 @@ $$\frac{d\tau}{dt} = \sqrt{1 - \beta\delta_v}$$
 
 **步骤 3：耦合空间不确定性**
 
-由海森堡代数 $[\hat{u}, \hat{p}_u] = i$ 与 $p_u = \sqrt{1-\beta\delta_v}/\mathscr{C}$：
+由海森堡代数 $[\hat{u}, \hat{p}_u] = i$ 与 $p_u = \sqrt{1-\beta\delta_v}/☯$：
 
-$$\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{1 - \beta\delta_v}}{\beta}}$$
+$$\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta}}$$
 
 **物理**：曲率涨落通过固有时流速涨落，强制精细结构常数产生量子涨落。耦合常数的相对不确定度与角亏涨落的不确定度被此不等式绑定。
 
@@ -818,9 +820,9 @@ $$\alpha \to n^2\alpha \iff u \to u + 2\ln n,\qquad n=2,4,6,\ldots$$
 
 **资格条件**（角亏涨落决定哪些跃迁进入候选集，不直接决定跃迁）：
 
-$$\boxed{\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1 - \beta\delta_v}}{2\beta\ln n}}$$
+$$\boxed{\Delta\delta_0 \ge \frac{☯\sqrt{1 - \beta\delta_v}}{2\beta\ln n}}$$
 
-满足资格条件的跃迁 $n$ 构成候选群族 $\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}$。**角亏涨落不直接决定跃迁——它只决定哪些跃迁有资格进入候选集。** 最终跃迁由路径积分在候选群族上选出自由能最小的主导群（见步骤 5 与 §11.4）。
+满足资格条件的跃迁 $n$ 构成候选群族 $\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}$。**角亏涨落不直接决定跃迁——它只决定哪些跃迁有资格进入候选集。** 最终跃迁由路径积分在候选群族上选出自由能最小的主导群（见步骤 5 与 §11.4）。
 
 **步骤 5：电子的本体论定位与配对**
 
@@ -868,7 +870,7 @@ $$\Delta\delta_v(T) = \Delta\delta_0\sqrt{\tanh\frac{\hbar\Omega_0}{2k_BT}}$$
 
 零温 $T \to 0$：$\Delta\delta_v \to \Delta\delta_0$；高温 $T \to \infty$：$\Delta\delta_v \to 0$（涨落被声子热噪声完全抑制）。
 
-**第二步：候选群族与自由能竞争。** 资格条件筛选出候选群族 $\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}$。路径积分 $Z = \sum_{U(1)//\mathbb{Z}_n \in \mathcal{G}} \int D[A,\psi]\,e^{-S}$ 在候选群族上选出自由能最小的主导群。
+**第二步：候选群族与自由能竞争。** 资格条件筛选出候选群族 $\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}$。路径积分 $Z = \sum_{U(1)//\mathbb{Z}_n \in \mathcal{G}} \int D[A,\psi]\,e^{-S}$ 在候选群族上选出自由能最小的主导群。
 
 **第三步：临界温度 = 自由能交叉。**
 
@@ -898,7 +900,7 @@ $$\boxed{F_1(T_c) = F_2(T_c),\qquad T_c = \frac{E_2 - E_1}{S_2 - S_1}}$$
 | 赝能隙 | 局域条件满足，全局相位同步未完成 | 高曲率区局域条件满足，全局跃迁尚未发生，系统处于结构群叠加态 |
 | 超导态 | 全局相位同步（再锁定） | 相位关联跨越晶粒，全局相位相干（结构群可不统一，允许多群超导） |
 
-11.1–11.5 的几何-动力学机制即同步的物理实现通道：晶胞量子振荡（声子 = 曲率量子）是量子振荡体，固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络与和乐相位 $W_v=\exp(i\delta_v\hat T)$ 是量子振荡体间耦合，和乐相位闭合条件 $\mathcal{H}_{ij}\approx1$ 是相位同步条件；同步判据即资格条件 $\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}$ 筛选候选群族，全局相位同步临界点即自由能交叉 $F_1(T_c)=F_2(T_c)$（唯象层；深层根基为同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符 = 叠加的超导群 = QG 基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现，自由能交叉是其热力学投影，详见 `08 超导/CQM_超导核心理论.md` §11.6）。**同步=相位相干，不要求结构群统一（允许多群超导）。** 完整展开见 `08 超导/CQM_超导核心理论.md` §1.5、§10、§17.1。
+11.1–11.5 的几何-动力学机制即同步的物理实现通道：晶胞量子振荡（声子 = 曲率量子）是量子振荡体，固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络与和乐相位 $W_v=\exp(i\delta_v\hat T)$ 是量子振荡体间耦合，和乐相位闭合条件 $\mathcal{H}_{ij}\approx1$ 是相位同步条件；同步判据即资格条件 $\Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n}$ 筛选候选群族，全局相位同步临界点即自由能交叉 $F_1(T_c)=F_2(T_c)$（唯象层；深层根基为同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符 = 叠加的超导群 = QG 基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现，自由能交叉是其热力学投影，详见 `08 超导/CQM_超导核心理论.md` §11.6）。**同步=相位相干，不要求结构群统一（允许多群超导）。** 完整展开见 `08 超导/CQM_超导核心理论.md` §1.5、§10、§17.1。
 
 ---
 
@@ -978,7 +980,7 @@ $$u_G = \ln g_G,\quad [u_G, p_{u_G}] = i$$
 
 其中 $G$ 明确指定结构群。**海森堡代数一维性限定定义域**：$u_G=\ln g_G$ 作为全局单坐标定义，当且仅当 $G$ 是一维阿贝尔群（$S^1$ 及其商 $U(1)//\mathbb{Z}_n$）；非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对（见 `09 精细引力（FG）/FG_核心理论.md` §4.1 定位注）。因此耦合常数的海森堡量子化只在电磁扇区直接可行：
 
-- 超导：$U(1)_{\text{em}}$，涨落 $u_{U(1)}$，跃迁耦级 $2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge \mathscr{C}\sqrt{1-\beta\delta_v}/(2\beta\ln n)$
+- 超导：$U(1)_{\text{em}}$，涨落 $u_{U(1)}$，跃迁耦级 $2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$
 - 核子同位旋 $SU(2)_{\text{isospin}}$ 与色动力学 $SU(3)_{\text{color}}$：耦合常数不经海森堡代数直接量子化，而是经 Casimir 阶梯 $g_k=\alpha\exp(-(n_k-n_1)/n_1)$ 从 $U(1)$ 锚导出（重整化群跑动形式，见 `09 精细引力（FG）/FG_核心理论.md` §5.4 定位注）
 
 ### 13.2 耦合常数唯一，荷多样化
@@ -1028,8 +1030,8 @@ $$G_0 = U(1) \times SU(2) \times SU(3)$$
 $$\begin{aligned}
 \text{晶格量子振荡} & \longrightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
 & \longrightarrow \frac{d\tau}{dt} = \sqrt{1-\beta\delta_v} \\
- & \longrightarrow p_u = \frac{v_\tau}{\mathscr{C}} = \frac{\sqrt{1-\beta\delta_v}}{\mathscr{C}} \\
- & \longrightarrow \Delta u_G \cdot \Delta\delta_v \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{\beta} \\
+ & \longrightarrow p_u = \frac{v_\tau}{☯} = \frac{\sqrt{1-\beta\delta_v}}{☯} \\
+ & \longrightarrow \Delta u_G \cdot \Delta\delta_v \ge \frac{☯\sqrt{1-\beta\delta_v}}{\beta} \\
 & \xrightarrow{\text{资格条件}} g_G \to g_G' \\
 & \xrightarrow{\text{条件}} \text{涨落伴丛族}
 \end{aligned}$$

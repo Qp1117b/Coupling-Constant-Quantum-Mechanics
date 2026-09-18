@@ -12,16 +12,16 @@
 
 **数学结构**：
 1. 壳层双曲 Laplacian $\hat{H} = \hat{D}^2 + 1/4$（$\hat{D} = -i(\partial_u - 1/2)$）从 Poincaré 上半平面度量严格导出
-2. 元 RG 传输方程 $\partial_\tau \phi + v e^u \partial_u \phi = 0$（经典 RG 流特征线，运动学辅助），其中相变量子 $\mathscr{C} = \xi'(1)/\xi(1) \approx 0.0230957$
+2. 元 RG 传输方程 $\partial_\tau \phi + v e^u \partial_u \phi = 0$（经典 RG 流特征线，运动学辅助），其中相变量子 $☯ = \xi'(1)/\xi(1) \approx 0.0230957$
 3. 角向马蒂厄方程在 CQM 线 $a=2q$ 上的谱 $\lambda_c \approx 1.3160229$
 4. SU(5) Weyl 群对称性 $W_m = 5 \cdot 2^{m-1}$
-5. **β₁ = −\mathscr{C}/q_c ≈ −0.07020**：U(1) 扇区的 CQM β 函数，由 Mathieu 锁定相变解析延拓推导
+5. **β₁ = −☯/q_c ≈ −0.07020**：U(1) 扇区的 CQM β 函数，由 Mathieu 锁定相变解析延拓推导
 
 **唯象预言**：
 - $\sin^2\theta_W(M_Z) = 0.23120$（实验值 0.23120；CQM 公式计算值 0.231163，角向修正计算值 0.2311892176，$\delta\theta_W^{(1)}$ 为框架内构造后验校验）
 - $\alpha^{-1}_{\text{SU(5)}} = 137.2583$（adele 周期 $2^{14}3^{-1}5^{-3}\pi$，禁闭精细结构常数）
 - $\alpha_s(M_Z) = 0.11842$，偏差 <0.5σ（谱几何自洽预言，实验 0.1183±0.0019）
-- $G_N = 6.71 \times 10^{-39}$ GeV$^{-2}$，偏差 **约 −3 ppm**（$\kappa = (31+\mathscr{C})/30 = 1.034103$，4-单纯形面元数 + Adele 周期结构）
+- $G_N = 6.71 \times 10^{-39}$ GeV$^{-2}$，偏差 **约 −3 ppm**（$\kappa = (31+☯)/30 = 1.034103$，4-单纯形面元数 + Adele 周期结构）
 - $\Lambda_{\text{QCD}} = 203$ MeV，偏差 −3.3%（实验值 $\approx 210$ MeV）
 
 **理论接口**：
@@ -29,7 +29,7 @@
 - 电荷离散化（$1/3$ 整数倍）
 - 三代结构截断 $m \leq 3$
 
-所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$\mathscr{C}, \mathfrak{c}_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/\mathscr{C}), \kappa$）确定。$E_n$ 谱公式（定理 4.4）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CQM}} = -\mathscr{C}(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10196$, 残差 0.32%）。$G_N$ $\kappa = (31+\mathscr{C})/30 = 1.034103$，偏差 **约 −3 ppm**（`CQM_推导_完整方程组.md` §10.2）。
+所有结果均从数学结构先验推出，无任意可调参数。仅质子质量标度 $m_p$ 为唯一量纲实验输入（$\alpha_s(M_Z)$ 后验自洽验证，非自由参数）。全部由纯数学结构（$☯, \mathfrak{c}_1, \lambda_c, I, W_m, N_{\text{cycle}}, q_c, \exp(-2/☯), \kappa$）确定。$E_n$ 谱公式（定理 4.4）在框架内构造后验校验。$\delta\theta_W^{(1)}$ 由 $\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 给出（$\Delta_{\text{RGE}} = -0.0433$ 标准SU(5) 1-loop, $\delta_{\text{CQM}} = -☯(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi) = -0.1130$），属框架内构造后验校验，待第三方独立复现。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化给出（$\rho_2 = 0.19907$, 残差 <0.03%; $\rho_3 = 0.10196$, 残差 0.32%）。$G_N$ $\kappa = (31+☯)/30 = 1.034103$，偏差 **约 −3 ppm**（`CQM_推导_完整方程组.md` §10.2）。
 
 ---
 
@@ -43,7 +43,7 @@ CQM 的出发点是：物理学是关于**再生产**的科学——物质如何
 1. **最小大统一群 SU(5)**：作为秩为 4 的最简单大统一群，其 Weyl 群和 Cartan 子代数结构提供了角向量子数与粒子表示的对应。
 2. **三代结构**：角向求和截断于 $m \leq 3$，对应 SU(5) 的基本不可约表示（$\bar{5}, 10, 24$）的独立 Weyl 轨道。$m=4$ 对应可约表示 $40 = 24 \oplus 10 \oplus \bar{5} \oplus 1$，不被独立枚举。
 3. **自然单位制** $\hbar = c = 1$：标准约定，所有量纲以能量（GeV）为基准。
-4. **黎曼假设**：作为工作假设（working hypothesis），与弦论采用卡拉比-丘紧致化、圈量子引力采用自旋网络作为工作假设处于同等方法论地位。在数学上，$\mathscr{C} = \xi'(1)/\xi(1)$ 的值不依赖黎曼假设（可通过 $\xi$ 的 Hadamard 乘积直接计算），但级数表示 $\sum (1/4+\gamma_n^2)^{-1}$ 需要零点在临界线上。若未来黎曼假设被证伪，CQM 的谱结构需要相应修正，但元 RG 框架本身不依赖此假设。
+4. **黎曼假设**：作为工作假设（working hypothesis），与弦论采用卡拉比-丘紧致化、圈量子引力采用自旋网络作为工作假设处于同等方法论地位。在数学上，$☯ = \xi'(1)/\xi(1)$ 的值不依赖黎曼假设（可通过 $\xi$ 的 Hadamard 乘积直接计算），但级数表示 $\sum (1/4+\gamma_n^2)^{-1}$ 需要零点在临界线上。若未来黎曼假设被证伪，CQM 的谱结构需要相应修正，但元 RG 框架本身不依赖此假设。
 
 ---
 
@@ -80,9 +80,9 @@ $$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\
 $$\boxed{\chi(u, p_u) = p_u - \frac{ve^u - 1}{2} = 0}$$
 
 **原理 IV（能标-固有时对易子）**：
-$$[\hat{\tau}, \hat{u}] = i\mathscr{C}$$
+$$[\hat{\tau}, \hat{u}] = i☯$$
 
-> **相变量子说明**：不确定性关系 $\Delta\tau \cdot \Delta u \geq \mathscr{C}/2$，$\mathscr{C}$ 为单一普适相变量子。
+> **相变量子说明**：不确定性关系 $\Delta\tau \cdot \Delta u \geq ☯/2$，$☯$ 为单一普适相变量子。
 
 ### 2.3 传输方程——体区域严格导出
 
@@ -108,11 +108,11 @@ $$\boxed{\partial_\tau\phi + v e^u \partial_u \phi = 0}$$
 
 ### 2.6 不确定性关系
 
-**定理 2.1（标量不确定性关系）**：从一阶方程与能标-固有时对易子 $[\hat{\tau}, \hat{u}] = i\mathscr{C}$ 导出：
-$$\boxed{\Delta\tau \cdot \Delta u \geq \frac{\mathscr{C}}{2}}$$
+**定理 2.1（标量不确定性关系）**：从一阶方程与能标-固有时对易子 $[\hat{\tau}, \hat{u}] = i☯$ 导出：
+$$\boxed{\Delta\tau \cdot \Delta u \geq \frac{☯}{2}}$$
 
 等价于耦合常数空间的标量形式：
-$$\boxed{\frac{\Delta r}{\langle r\rangle} \cdot \Delta \tau \geq \frac{\mathscr{C}}{2}}$$
+$$\boxed{\frac{\Delta r}{\langle r\rangle} \cdot \Delta \tau \geq \frac{☯}{2}}$$
 
 其中 $du/d\tau = v e^u$ 为耦合常数沿固有时 $\tau$ 的 RG 流速（§2.3 特征线）。
 
@@ -150,17 +150,17 @@ $$u(\tau) = -\ln(-v\tau + \text{const}), \quad r(\tau) = \frac{1}{-v\tau + \text
 ### 3.3 CQM–标准 RG 精确字典
 
 **定理 3.3**：标准 QFT 的单耦合 RG 方程 $dg/dt = -\beta_0 g^3$（$t = \ln(\mu/\Lambda)$）的解为 $g^2(t) = 1/(\beta_0 t)$。CQM 的 $r = g^2$ 对应给出：
-$$\tau = \frac{\mathscr{C}}{2\beta_0} \cdot \ln\frac{\mu}{\Lambda}$$
+$$\tau = \frac{☯}{2\beta_0} \cdot \ln\frac{\mu}{\Lambda}$$
 
-**物理意义**：因果时 $\tau$ 作为必要前提不依赖特定相互作用，但 RG 流在特定规范群中的速率由 $\beta_0$ 决定。比例因子 $\mathscr{C}/(2\beta_0) \approx 0.056$（SU(5)）将普适的因果时转换为具体的 RG 标度。
+**物理意义**：因果时 $\tau$ 作为必要前提不依赖特定相互作用，但 RG 流在特定规范群中的速率由 $\beta_0$ 决定。比例因子 $☯/(2\beta_0) \approx 0.056$（SU(5)）将普适的因果时转换为具体的 RG 标度。
 
 ### 3.4 p进 RG 方程
 
 **定理 3.4**：在 $p$ 进位点 $\mathbb{Q}_p$，耦合赋值 $|g_p|_p = p^{-k}$（$k \in \mathbb{Z}$）是离散的，RG 流成为离散跳跃：
-$$k \to k - 1 \quad \text{当} \quad \Delta\tau = \frac{\ln p}{\mathscr{C}}$$
+$$k \to k - 1 \quad \text{当} \quad \Delta\tau = \frac{\ln p}{☯}$$
 
 定义 **p进再生产周期**：
-$$\Delta\tau_p = \frac{\ln p}{\mathscr{C}}$$
+$$\Delta\tau_p = \frac{\ln p}{☯}$$
 
 ### 3.5 球坐标分解
 
@@ -188,7 +188,7 @@ $$\Delta\tau_p = \frac{\ln p}{\mathscr{C}}$$
 | I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
 | II | $\hat{\mathcal{D}} = -ive^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
 | III | $\partial_\tau\phi + ve^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限（禁闭边界及之外） |
-| — | $[\hat{\tau}, \hat{u}] = i\mathscr{C}$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
+| — | $[\hat{\tau}, \hat{u}] = i☯$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
 | — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | 定理 | 结构分离 |
 
 ---
@@ -220,9 +220,9 @@ $$\boxed{E_n = \rho_n(1-\rho_n) = \frac14 + \gamma_n^2}$$
 ### 4.4 核心解析恒等式
 
 **定理 4.3**：
-$$\boxed{\mathscr{C} = \sum_{n=1}^\infty \frac{1}{\frac{1}{4} + \gamma_n^2} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac{1}{2}\ln(4\pi) \approx 0.023095708966}$$
+$$\boxed{☯ = \sum_{n=1}^\infty \frac{1}{\frac{1}{4} + \gamma_n^2} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac{1}{2}\ln(4\pi) \approx 0.023095708966}$$
 
-**注**：$\mathscr{C} = \xi'(1)/\xi(1)$ 的值不依赖黎曼假设（可通过 Hadamard 乘积直接计算），但级数表示 $\sum (1/4+\gamma_n^2)^{-1}$ 需要零点在临界线上。
+**注**：$☯ = \xi'(1)/\xi(1)$ 的值不依赖黎曼假设（可通过 Hadamard 乘积直接计算），但级数表示 $\sum (1/4+\gamma_n^2)^{-1}$ 需要零点在临界线上。
 
 ---
 
@@ -230,7 +230,7 @@ $$\boxed{\mathscr{C} = \sum_{n=1}^\infty \frac{1}{\frac{1}{4} + \gamma_n^2} = \f
 
 ### 5.1 全局波函数
 
-**公理 5.1**（从公理 III 导出）：$\Psi_n(x_{\mathbb{A}}, \tau) = |x_{\mathbb{A}}|_{\mathbb{A}}^{-s_n} e^{\mathscr{C}s_n\tau}$
+**公理 5.1**（从公理 III 导出）：$\Psi_n(x_{\mathbb{A}}, \tau) = |x_{\mathbb{A}}|_{\mathbb{A}}^{-s_n} e^{☯s_n\tau}$
 
 ### 5.2 自守条件
 
@@ -251,7 +251,7 @@ $$\xi(s_n) = \int_{\mathbb{A}^\times/\mathbb{Q}^\times} \Psi_n \, d^\times x_{\m
 
 **定理 6.1**：黎曼零点 $\{s_n\}$ 是 GL(1, $\mathbb{A}$) 自守 L-函数的谱。（Tate 经典结果）
 
-> **发生学分层定位**：定理 6.1 位于 **GL(5) 固定层级**——黎曼猜想是 GL(5) 固定层级的实谱条件。质数分布的基态伽罗瓦表示是 $\rho_5: G_{\mathbb{Q}} \to GL_5(\mathbb{Q}_\ell)$，基态 L 函数为 $L(s,\rho_5) = \prod_p \det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$（五维局部因子乘积），经朗兰兹对应指定 GL(5) 自守形式（记为 $\Pi$，Regge 底空间几何条件（非唯一）），满足 $L(s,\Pi) = L(s,\rho_5)$；其自守谱经紧化算符（同步算符，投影型，非 Hilbert–Pólya 微分型算符）投影为物理紧群 SU(5) 表示空间——**基态同步是 SU(5)**。**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。以下用于显式计算的 ζ 零点谱（$\mathscr{C} = \xi'(1)/\xi(1)$、$\mathfrak{c}_n = 1/4 + \gamma_n^2$）直接作为 GL(5) 固定层级下使用的谱。完整分层流程图见 `01 核心理论/CQM_核心_因果网络同步理论.md` §9。
+> **发生学分层定位**：定理 6.1 位于 **GL(5) 固定层级**——黎曼猜想是 GL(5) 固定层级的实谱条件。质数分布的基态伽罗瓦表示是 $\rho_5: G_{\mathbb{Q}} \to GL_5(\mathbb{Q}_\ell)$，基态 L 函数为 $L(s,\rho_5) = \prod_p \det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$（五维局部因子乘积），经朗兰兹对应指定 GL(5) 自守形式（记为 $\Pi$，Regge 底空间几何条件（非唯一）），满足 $L(s,\Pi) = L(s,\rho_5)$；其自守谱经紧化算符（同步算符，投影型，非 Hilbert–Pólya 微分型算符）投影为物理紧群 SU(5) 表示空间——**基态同步是 SU(5)**。**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。以下用于显式计算的 ζ 零点谱（$☯ = \xi'(1)/\xi(1)$、$\mathfrak{c}_n = 1/4 + \gamma_n^2$）直接作为 GL(5) 固定层级下使用的谱。完整分层流程图见 `01 核心理论/CQM_核心_因果网络同步理论.md` §9。
 
 ### 6.2 局部域与耦合常数
 
@@ -292,13 +292,13 @@ $$\boxed{\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CQM}}}$$
 
 其中：
 - $\Delta_{\text{RGE}} = \sin^2\theta_W(\text{RGE}) - 3/8 \approx -0.0433$（标准 1-loop RGE 从 GUT 到 M_Z 的跑动，使用 SM β 函数 $b_1=2.46, b_2=5/6$）
-- $\delta_{\text{CQM}} = -\dfrac{\mathscr{C}}{2\pi}\left(1+\dfrac{1}{N_{\text{cycle}}}\right)\ln\dfrac{M_{\text{GUT}}}{M_Z} \approx -0.1130$（CQM 再生产动力学导致的额外角向跑动）
+- $\delta_{\text{CQM}} = -\dfrac{☯}{2\pi}\left(1+\dfrac{1}{N_{\text{cycle}}}\right)\ln\dfrac{M_{\text{GUT}}}{M_Z} \approx -0.1130$（CQM 再生产动力学导致的额外角向跑动）
 
 $$\boxed{\delta\theta_W^{(1)} \approx -0.15634}$$
 
-**第一性程度**：99.8%（仅 $\mathscr{C}$ 和 N_cycle=30 为纯数学输入）。与实验反推值 −0.15662 残差 0.18%。δ_CQM 占总贡献的 **72.3%**，验证了 CQM 再生产动力学而非标准 RGE 是 sin²θ_W 偏离 GUT 值的主要驱动力。
+**第一性程度**：99.8%（仅 $☯$ 和 N_cycle=30 为纯数学输入）。与实验反推值 −0.15662 残差 0.18%。δ_CQM 占总贡献的 **72.3%**，验证了 CQM 再生产动力学而非标准 RGE 是 sin²θ_W 偏离 GUT 值的主要驱动力。
 
-> **定位**："第一性程度 99.8%" 描述的是公式**内部**的无拟合闭合度（𝒞、N_cycle 被选定后其余不再调参），属框架内构造后验数字校验，而非被主流学界接受的 sin²θ_W 独立第一性推导（标准物理中 sin²θ_W 是由弱相互作用实验精密测定的规范参数之一，参见 `05 方法论与批判/`）；残余 0.18% 亦表明数值未收敛为唯一精确值。
+> **定位**："第一性程度 99.8%" 描述的是公式**内部**的无拟合闭合度（☯、N_cycle 被选定后其余不再调参），属框架内构造后验数字校验，而非被主流学界接受的 sin²θ_W 独立第一性推导（标准物理中 sin²θ_W 是由弱相互作用实验精密测定的规范参数之一，参见 `05 方法论与批判/`）；残余 0.18% 亦表明数值未收敛为唯一精确值。
 
 温伯格角：
 $$\sin^2\theta_W(M_Z) = \frac{3}{8} + \delta\theta_W^{(1)} + \sum_{m=2}^\infty f_m \rho_m$$
@@ -344,12 +344,12 @@ $$\boxed{\alpha^{-1} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = \frac{16384\
 ### 7.6 GUT 统一耦合
 
 **定理 7.6**：
-$$\boxed{\alpha_{\text{GUT}} = \mathscr{C} \cdot \lambda_c = 0.030394...}$$
+$$\boxed{\alpha_{\text{GUT}} = ☯ \cdot \lambda_c = 0.030394...}$$
 
-**证明**：在 GUT 标度，$\sin^2\theta_W = 3/8$，标准关系 $\alpha_{\text{em}}(\text{GUT}) = \alpha_{\text{GUT}} \cdot (3/8)$。CQM 电磁裸耦合公式给出 $\alpha_{\text{em}}(\text{GUT}) = \mathscr{C} \cdot \lambda_c \cdot (3/8)$。两式比较即得。∎
+**证明**：在 GUT 标度，$\sin^2\theta_W = 3/8$，标准关系 $\alpha_{\text{em}}(\text{GUT}) = \alpha_{\text{GUT}} \cdot (3/8)$。CQM 电磁裸耦合公式给出 $\alpha_{\text{em}}(\text{GUT}) = ☯ \cdot \lambda_c \cdot (3/8)$。两式比较即得。∎
 
 统一规范耦合：
-$$g_{\text{GUT}} = \sqrt{4\pi \mathscr{C} \lambda_c} \approx 0.618$$
+$$g_{\text{GUT}} = \sqrt{4\pi ☯ \lambda_c} \approx 0.618$$
 
 ### 7.7 弱耦合 $g_w$
 
@@ -384,13 +384,13 @@ $$g_s = 1.23 \quad (\alpha_s = 0.120)$$
 ### 7.9 U(1) 扇区 β₁ 的第一性原理推导（定理 7.9）
 
 **定理 7.9**：
-$$\boxed{\beta_1 = -\frac{\mathscr{C}}{q_c} \approx -0.07020}$$
+$$\boxed{\beta_1 = -\frac{☯}{q_c} \approx -0.07020}$$
 
-其中 $q_c$ 是 Mathieu 锁定参数（连分数方程 $\lambda_c = 4q_c$ 中的 $q_c$），$\mathscr{C} = \xi'(1)/\xi(1)$。
+其中 $q_c$ 是 Mathieu 锁定参数（连分数方程 $\lambda_c = 4q_c$ 中的 $q_c$），$☯ = \xi'(1)/\xi(1)$。
 
 **第一性原理推导**：
 1. **锁定相变**：禁闭相变在 $q = q_c$ 处将禁闭扇区（$q > q_c$，SU(3)）与非禁闭扇区（$q < q_c$，U(1)）分离。
-2. **解析延拓**：U(1) 作为阿贝尔、非禁闭规范群，其 $\beta$ 函数通过锁定点 $q_c$ 的解析延拓确定。非禁闭扇区的耦合跑动由 $\mathscr{C}$ 驱动，但方向与禁闭扇区相反（非渐近自由），且跑动速率被相变点放大（因子 $1/q_c$）。
+2. **解析延拓**：U(1) 作为阿贝尔、非禁闭规范群，其 $\beta$ 函数通过锁定点 $q_c$ 的解析延拓确定。非禁闭扇区的耦合跑动由 $☯$ 驱动，但方向与禁闭扇区相反（非渐近自由），且跑动速率被相变点放大（因子 $1/q_c$）。
 3. **负号**：U(1) 耦合随能标升高而增大（非渐近自由），故 $g_1^{-2}(M_Z) > g_{\text{GUT}}^{-2}$，要求 $\beta_1 < 0$。
 
 **与经验自洽**：从角向谱 + $\alpha(M_Z)$ 反推的 $\beta_1^{\text{emp}} = -0.07037$，与第一性预言偏差仅 **0.25%**。
@@ -398,11 +398,11 @@ $$\boxed{\beta_1 = -\frac{\mathscr{C}}{q_c} \approx -0.07020}$$
 **三个扇区 β 函数统一形式**：
 | 扇区 | CQM $\beta_i$ | 值 | 物理来源 |
 |:---|:---|:---|:---|
-| U(1) 电磁 (p=5) | $\beta_1 = -\mathscr{C}/q_c$ | −0.07020 | 锁定相变解析延拓 |
+| U(1) 电磁 (p=5) | $\beta_1 = -☯/q_c$ | −0.07020 | 锁定相变解析延拓 |
 | SU(3) 强 (p=2) | $\beta_3 = \lambda_c/(N_X I_{\text{SU(3)}})$ | +0.06580 | Mathieu 锁定点 |
-| SU(2) 弱 (p=3) | $\beta_2 = \mathscr{C}/I_{\text{SU(2)}}$ | +0.009238 | 元 RG 速率 𝒞 |
+| SU(2) 弱 (p=3) | $\beta_2 = ☯/I_{\text{SU(2)}}$ | +0.009238 | 元 RG 速率 ☯ |
 
-**第一性程度**：100%（$\mathscr{C}$ 和 $q_c$ 均为纯数学常数，无任何实验输入）。
+**第一性程度**：100%（$☯$ 和 $q_c$ 均为纯数学常数，无任何实验输入）。
 
 ### 7.10 三力统一图景
 
@@ -495,7 +495,7 @@ $$[\hat{p}_u, \partial_\mu \hat{u}] = -i \partial_\mu \partial_u \hat{u} = -i \p
 $$G_{\mu\nu} = 8\pi G_N \langle T_{\mu\nu} \rangle$$
 
 其中 $\kappa_{\text{GR}} = 8\pi G$ 的标度结构为：
-$$\kappa_{\text{GR}} = \frac{C_\theta}{\mathscr{C}} \cdot \frac{1}{m_p^2} \cdot \mathcal{N}_{\text{层级}}$$
+$$\kappa_{\text{GR}} = \frac{C_\theta}{☯} \cdot \frac{1}{m_p^2} \cdot \mathcal{N}_{\text{层级}}$$
 
 **修正**：在自然单位制（$\hbar = c = 1$）下，$\mathcal{N}_{\text{层级}} = 1$ 是 Adele 体积标准归一化的直接结果。真正需要解释的是 $g_s^{\text{IR}}$ 的锁定值，而非 $\mathcal{N}_{\text{层级}}$。
 
@@ -543,7 +543,7 @@ $$\boxed{g_s^{\text{IR}} = \sqrt{I \cdot \lambda_c} \approx \sqrt{\frac{5}{3} \t
 ### 10.5 $\Lambda_{\text{QCD}}$ 的先验公式
 
 **定理 10.2**：
-$$\boxed{\Lambda_{\text{QCD}} = \frac{m_p}{\mathscr{C} \cdot \mathfrak{c}_1} = \frac{m_p}{\mathscr{C}\left(\frac14 + \gamma_1^2\right)}}$$
+$$\boxed{\Lambda_{\text{QCD}} = \frac{m_p}{☯ \cdot \mathfrak{c}_1} = \frac{m_p}{☯\left(\frac14 + \gamma_1^2\right)}}$$
 
 **数值**：$\Lambda_{\text{QCD}} \approx 0.203$ GeV $= 203$ MeV（其中 $m_p = 0.938$ GeV 代入，结果乘以 $10^3$ 转换为 MeV），与标准 $\overline{\text{MS}}$ 值 210 MeV 偏差 −3.3%。
 
@@ -557,39 +557,39 @@ $$\boxed{\Lambda_{\text{QCD}} = \frac{m_p}{\mathscr{C} \cdot \mathfrak{c}_1} = \
 
 **步骤 2（双向因果限制）**：引力作为必要前提（原则 II）要求所有再生产循环的因果序闭合。这意味着 UV→IR 和 IR→UV 的因果轨道必须构成闭合回路。
 
-**步骤 3（函数方程与对数梯度）**：公理 III 给出 $\xi(s) = \xi(1-s)$。定义对数梯度 $L(s) = \xi'(s)/\xi(s)$，满足 $L(s) = -L(1-s)$。在 $s=1$ 和 $s=0$ 处，$L(1) = \mathscr{C}$, $L(0) = -\mathscr{C}$。
+**步骤 3（函数方程与对数梯度）**：公理 III 给出 $\xi(s) = \xi(1-s)$。定义对数梯度 $L(s) = \xi'(s)/\xi(s)$，满足 $L(s) = -L(1-s)$。在 $s=1$ 和 $s=0$ 处，$L(1) = ☯$, $L(0) = -☯$。
 
-**步骤 4（正则化行列式）**：全局波函数的归一化由 zeta 正则化谱行列式 $\det'(\hat{D}^2+1/4)$ 确定。主导贡献来自 $L(s) \approx \mathscr{C}$（远离 $s=1/2$ 的有限区域），给出：
-$$\log \det'(\hat{D}^2+1/4) \sim -\frac{2}{|L_{\text{eff}}|} \approx -\frac{2}{\mathscr{C}}$$
+**步骤 4（正则化行列式）**：全局波函数的归一化由 zeta 正则化谱行列式 $\det'(\hat{D}^2+1/4)$ 确定。主导贡献来自 $L(s) \approx ☯$（远离 $s=1/2$ 的有限区域），给出：
+$$\log \det'(\hat{D}^2+1/4) \sim -\frac{2}{|L_{\text{eff}}|} \approx -\frac{2}{☯}$$
 
-积分 $\int_0^1 ds/|L(s)|$ 在 $s=1/2$ 处对数发散（$L(1/2)=0$），其主值提取的有限部分 $-32.93$ 与 $1/\mathscr{C} \approx 43.30$ 不同。物理正确的正则化方案是 zeta 正则化谱行列式，其主导项即为 $\exp(-2/\mathscr{C})$。
+积分 $\int_0^1 ds/|L(s)|$ 在 $s=1/2$ 处对数发散（$L(1/2)=0$），其主值提取的有限部分 $-32.93$ 与 $1/☯ \approx 43.30$ 不同。物理正确的正则化方案是 zeta 正则化谱行列式，其主导项即为 $\exp(-2/☯)$。
 
 **步骤 5（归一化 Jacobian）**：
-$$\boxed{\mathcal{J} = \exp\left(-\frac{2}{\mathscr{C}}\right)}$$
+$$\boxed{\mathcal{J} = \exp\left(-\frac{2}{☯}\right)}$$
 
-**灵敏度**：$\partial\ln(G_N)/\partial \mathscr{C} = 2(\mathscr{C}+1)/\mathscr{C}^2 \approx 3836$。𝒞 变 1 ppm → G_N 变 0.38%。−2.33% 偏差由 𝒞 的 ~6 ppm 量级有限修正完全解释。
+**灵敏度**：$\partial\ln(G_N)/\partial ☯ = 2(☯+1)/☯^2 \approx 3836$。☯ 变 1 ppm → G_N 变 0.38%。−2.33% 偏差由 ☯ 的 ~6 ppm 量级有限修正完全解释。
 
 ### 10.7 $G_N$ 的完整公式
 
 **定理 10.4**：
-$$\boxed{G_N = \frac{I \cdot \lambda_c \cdot \mathscr{C}^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{\mathscr{C}}\right) \cdot \left(1 + \frac{31 + \mathscr{C}}{30} \cdot \mathscr{C}\right)}$$
+$$\boxed{G_N = \frac{I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{☯}\right) \cdot \left(1 + \frac{31 + ☯}{30} \cdot ☯\right)}$$
 
-其中 $\kappa = (31+\mathscr{C})/30 = 1.034103$（详见 `CQM_推导_完整方程组.md` §10.2）。
+其中 $\kappa = (31+☯)/30 = 1.034103$（详见 `CQM_推导_完整方程组.md` §10.2）。
 
 **数值**：$G_N \approx 6.71 \times 10^{-39}$ GeV$^{-2}$，与实验值 $6.71\times10^{-39}$ 偏差约 $\mathbf{-3\,ppm}$。
 
 **等价形式**：
-$$G_N = \frac{(g_s^{\text{IR}})^2 \cdot \mathscr{C}^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{\mathscr{C}}\right) \cdot \left(1 + \frac{31 + \mathscr{C}}{30} \cdot \mathscr{C}\right) = \frac{20\, q_c\, \mathscr{C}^2\, \mathfrak{c}_1}{3\, m_p^2} \exp\left(-\frac{2}{\mathscr{C}}\right) \left(1 + \frac{31 + \mathscr{C}}{30} \cdot \mathscr{C}\right)$$
+$$G_N = \frac{(g_s^{\text{IR}})^2 \cdot ☯^2 \cdot \mathfrak{c}_1}{m_p^2} \cdot \exp\left(-\frac{2}{☯}\right) \cdot \left(1 + \frac{31 + ☯}{30} \cdot ☯\right) = \frac{20\, q_c\, ☯^2\, \mathfrak{c}_1}{3\, m_p^2} \exp\left(-\frac{2}{☯}\right) \left(1 + \frac{31 + ☯}{30} \cdot ☯\right)$$
 
 **各因子来源**：
 | 因子 | 来源 | 类型 |
 |------|------|------|
 | $20/3 = I \cdot 4$ | $I=5/3$（Dynkin 嵌入，定理 10.1）$\times$ 4（来自 $\lambda_c=4q_c$） | 群论定理 |
 | $q_c$ | 连分数方程最小正根（定理 10.3） | 解析方程 |
-| $\mathscr{C} = \xi'(1)/\xi(1)$ | 解析恒等式（定理 4.3） | 数论定理 |
+| $☯ = \xi'(1)/\xi(1)$ | 解析恒等式（定理 4.3） | 数论定理 |
 | $\mathfrak{c}_1 = \rho_1(1-\rho_1) = \tfrac14 + \gamma_1^2$ | 壳层双曲Laplacian H=D²+1/4 本征值（定理 4.4, 严格第一性） | 双曲几何导出 |
-| $\exp(-2/\mathscr{C})$ | Adele 全局归一化（定理 10.3） | 几何-数论条件 |
-| $(1+\kappa \mathscr{C})$ | 4-单纯形面元数 + Adele 周期（`CQM_推导_完整方程组.md` §10.2） | 组合涌出 |
+| $\exp(-2/☯)$ | Adele 全局归一化（定理 10.3） | 几何-数论条件 |
+| $(1+\kappa ☯)$ | 4-单纯形面元数 + Adele 周期（`CQM_推导_完整方程组.md` §10.2） | 组合涌出 |
 
 **数值**：
 $$G_N \approx 6.71 \times 10^{-39}\ \text{GeV}^{-2}$$
@@ -598,13 +598,13 @@ $$G_N \approx 6.71 \times 10^{-39}\ \text{GeV}^{-2}$$
 
 **偏差**：约 $\mathbf{-3\,ppm}$。
 
-**偏差来源**：κ 因子来自 4-单纯形面元数与 Adele 周期的组合，κ = (31+𝒞)/30。详见 `CQM_推导_完整方程组.md` Q3 及 §10.2。
+**偏差来源**：κ 因子来自 4-单纯形面元数与 Adele 周期的组合，κ = (31+☯)/30。详见 `CQM_推导_完整方程组.md` Q3 及 §10.2。
 
 ---
 
 ## 11. 方法论教训
 
-（CQM 框架内生的修正优先于外部构造；$\lambda_m$ 由连分数严格确定；$v_g^{(1)}=2\mathscr{C}$ 是 $L=\pi/2$ 推论；$m\leq3$ 截断基于表示论可约性而非数学无根。）
+（CQM 框架内生的修正优先于外部构造；$\lambda_m$ 由连分数严格确定；$v_g^{(1)}=2☯$ 是 $L=\pi/2$ 推论；$m\leq3$ 截断基于表示论可约性而非数学无根。）
 
 ---
 
@@ -680,11 +680,11 @@ $$\partial_\tau \phi + v \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i
 
 | 符号 | 数值 | 来源 | 偏差 |
 |------|------|------|------|
-| $\mathscr{C}$ | 0.023095708966 | $\xi'(1)/\xi(1)$ | — |
+| $☯$ | 0.023095708966 | $\xi'(1)/\xi(1)$ | — |
 | $L$ | $\pi/2$ | Berry-Keating 单位胞 | — |
 | $\mathfrak{c}_1$ | 200.0405... | 定理 4.4（第一性，$1/4+\gamma_1^2$） | — |
 | $\gamma_1$ | 14.134725... | 第一个黎曼零点 | — |
-| $C_\theta$ | $1.1546 \times 10^{-4}$ | $\mathscr{C}/\mathfrak{c}_1$ | — |
+| $C_\theta$ | $1.1546 \times 10^{-4}$ | $☯/\mathfrak{c}_1$ | — |
 | $\sin^2\theta_W(\text{GUT})$ | 0.375 | 纯群论 | — |
 | $\sin^2\theta_W(M_Z)$ | 0.2311892176 | 角向精确修正 | 绝对偏差 $1.08 \times 10^{-5}$ |
 | $M_{\text{GUT}}$ | $7.6 \times 10^{14}$ GeV | 反向预言 | — |
@@ -692,12 +692,12 @@ $$\partial_\tau \phi + v \sqrt{g_1^2+g_2^2+g_3^2} \sum_{i=1}^3 g_i \partial_{g_i
 | $g_s^{\text{IR}}$ | 1.481 | $\sqrt{I \cdot \lambda_c}$ | — |
 | $\lambda_c$ | 1.3160229113 | 连分数方程 | — |
 | $q_c$ | 0.3290057278 | 连分数最小正根 | — |
-| $G_N$（$\kappa=(31+\mathscr{C})/30$） | $6.71 \times 10^{-39}$ | $\kappa = (31+\mathscr{C})/30$ | $\mathbf{\text{约 }-3\,ppm}$ |
+| $G_N$（$\kappa=(31+☯)/30$） | $6.71 \times 10^{-39}$ | $\kappa = (31+☯)/30$ | $\mathbf{\text{约 }-3\,ppm}$ |
 | $G_N$（实验） | $6.71 \times 10^{-39}$ | PDG 2024 | — |
-| $\kappa$ | 1.034103 | $(31+\mathscr{C})/30$ | 4-单纯形面元数 + Adele 周期 |
+| $\kappa$ | 1.034103 | $(31+☯)/30$ | 4-单纯形面元数 + Adele 周期 |
 | $\alpha^{-1}_{\text{SU(5)}}$（禁闭） | 137.2583 | $2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi$ | SU(5)精细结构常数 |
-| $\alpha_{\text{GUT}}$ | 0.030394 | $\mathscr{C} \cdot \lambda_c$ | — |
-| $g_{\text{GUT}}$ | 0.618 | $\sqrt{4\pi \mathscr{C}\lambda_c}$ | — |
+| $\alpha_{\text{GUT}}$ | 0.030394 | $☯ \cdot \lambda_c$ | — |
+| $g_{\text{GUT}}$ | 0.618 | $\sqrt{4\pi ☯\lambda_c}$ | — |
 | $g_w(M_Z)$ | 0.630 | $\sqrt{4\pi\alpha/\sin^2\theta_W}$ | $-3.1\%$（p进大小→耦合层级已定，$W/Z$ 质量来源待建） |
 | $g_s(M_Z)$ | 1.23 | CQM-RG | $+0.9\%$（1-loop 可接受） |
 
@@ -725,7 +725,7 @@ Zenodo DOI: 10.5281/zenodo.20804380
 ## 附录 D：三力统一公式
 
 **GUT 统一**（定理 7.6）：
-$$\boxed{\alpha_{\text{GUT}} = \mathscr{C} \cdot \lambda_c = 0.03039448\ldots}, \quad \boxed{g_{\text{GUT}} = \sqrt{4\pi \mathscr{C} \lambda_c} = 0.618020\ldots}$$
+$$\boxed{\alpha_{\text{GUT}} = ☯ \cdot \lambda_c = 0.03039448\ldots}, \quad \boxed{g_{\text{GUT}} = \sqrt{4\pi ☯ \lambda_c} = 0.618020\ldots}$$
 $$\alpha_{\text{GUT}}^{-1} = 32.9007,\quad g_{\text{GUT}}^{-2} = 2.6182$$
 
 **RG 流到低能**（传输方程特征线导出）：
@@ -738,15 +738,15 @@ $$\boxed{\frac{1}{g_i^2(M_Z)} = \frac{1}{g_{\text{GUT}}^2} - \beta_i \ln\frac{M_
 | 扇区 | 公式 | 数值 | 物理来源 |
 |------|------|------|----------|
 | SU(3) 强力 (p=2) | $\beta_3 = \frac{\lambda_c}{N_X \cdot I_{\text{SU(3)}}} = \frac{\lambda_c}{12 \cdot 5/3}$ | **0.065801** | Mathieu 锁定点本征值 $\lambda_c$ |
-| SU(2) 弱力 (p=3) | $\beta_2 = \frac{\mathscr{C}}{I_{\text{SU(2)}}} = \frac{\mathscr{C}}{5/2}$ | **0.009238** | 元 RG 速率 $\mathscr{C}$ |
-| U(1) 电磁 (p=5) | $\beta_1 = -\frac{\mathscr{C}}{q_c}$（定理 7.9） | **−0.07020** | 锁定相变解析延拓 |
+| SU(2) 弱力 (p=3) | $\beta_2 = \frac{☯}{I_{\text{SU(2)}}} = \frac{☯}{5/2}$ | **0.009238** | 元 RG 速率 $☯$ |
+| U(1) 电磁 (p=5) | $\beta_1 = -\frac{☯}{q_c}$（定理 7.9） | **−0.07020** | 锁定相变解析延拓 |
 
-**β₁ 数值统一说明**：β₁ 有三个数值来源：(1) 第一性预言 $\beta_1 = -\mathscr{C}/q_c \approx -0.07020$（定理 7.9）；(2) 经验反推 $\beta_1^{\text{emp}} = -0.07037$（从角向谱 + $\alpha(M_Z)$ 反推，偏差 0.25%）；(3) RG 流自洽反推 $\beta_1^{\text{RG}} = -0.069865$（从全耦合自洽方程反推，与第一性预言偏差 0.48%，源自 1-loop 截断与 GUT 归一化因子 3/5 的未完全吸收）。三者一致性在 1-loop 精度内，2-loop CQM 修正预期将偏差压至 <0.1%。
+**β₁ 数值统一说明**：β₁ 有三个数值来源：(1) 第一性预言 $\beta_1 = -☯/q_c \approx -0.07020$（定理 7.9）；(2) 经验反推 $\beta_1^{\text{emp}} = -0.07037$（从角向谱 + $\alpha(M_Z)$ 反推，偏差 0.25%）；(3) RG 流自洽反推 $\beta_1^{\text{RG}} = -0.069865$（从全耦合自洽方程反推，与第一性预言偏差 0.48%，源自 1-loop 截断与 GUT 归一化因子 3/5 的未完全吸收）。三者一致性在 1-loop 精度内，2-loop CQM 修正预期将偏差压至 <0.1%。
 
 **β₁ 符号说明**：β₁ < 0 表示 $g_1^{-2}(M_Z) > g_{\text{GUT}}^{-2}$，即 $g_1$ 从 GUT 到低能**减小**。这与标准模型中 U(1) 耦合的行为定性一致——g' 从 GUT 值 ~0.62（GUT 归一化）跑动到 M_Z 的 ~0.36（SM 归一化），g₁_GUT(M_Z) ≈ 0.46。CQM 预测的 g₁(M_Z) = 0.4614 与此吻合。
 
 **β₁ 的第一性候选**（待验证）：
-$$\beta_1^{\text{candidate}} = \frac{\mathscr{C}}{W_1^2} = \frac{\mathscr{C}}{25} = 0.000924$$
+$$\beta_1^{\text{candidate}} = \frac{☯}{W_1^2} = \frac{☯}{25} = 0.000924$$
 
 自洽反推值与候选公式差 75 倍，暗示 U(1) 的 β 函数涉及更复杂的群论因子（可能包括 GUT 归一化因子 3/5、壳层级联因子等）。此为开放问题 C₁。
 
@@ -760,7 +760,7 @@ $$\beta_1^{\text{candidate}} = \frac{\mathscr{C}}{W_1^2} = \frac{\mathscr{C}}{25
 | 强规范耦合 | $g_3(M_Z)$ | **1.2305** | 1.218 | +1.0% | $g_3 = \sqrt{4\pi\alpha_s}$ |
 | 弱规范耦合 | $g_2(M_Z)$ | **0.6246** (RG) | 0.652 | −4.2% | β₂ RG 流 |
 | 弱规范耦合 | $g_2(M_Z)$ | **0.6518** (谱) | 0.65 | +0.3% | 角向谱 + $\alpha(M_Z)$ |
-| GUT 统一耦合 | $\alpha_{\text{GUT}}^{-1}$ | **32.90** | — | 纯预言 | $\mathscr{C} \cdot \lambda_c$ |
+| GUT 统一耦合 | $\alpha_{\text{GUT}}^{-1}$ | **32.90** | — | 纯预言 | $☯ \cdot \lambda_c$ |
 | 红外强耦合 | $g_s^{\text{IR}}$ | **1.481** | ~2.5 (非微扰) | — | $\sqrt{I \cdot \lambda_c}$ |
 
 ### D.3 g₂ 的 RG-角向谱不一致（−4.2%）
@@ -771,7 +771,7 @@ $$\beta_1^{\text{candidate}} = \frac{\mathscr{C}}{W_1^2} = \frac{\mathscr{C}}{25
 
 此偏差的可能来源（按优先级）：
 1. **GUT 重组实现阈值修正**：SU(5) ⇒ SM 的重组实现并非瞬时发生，$X,Y$ 规范玻色子和彩色三重态希格斯在 $M_{\text{GUT}}$ 附近的阈值效应修正 $\beta_i$
-2. **β₂ 公式**：$\beta_2 = \mathscr{C}/I_{\text{SU(2)}}$，g₂自洽性从−4.18%提升至+0.18%
+2. **β₂ 公式**：$\beta_2 = ☯/I_{\text{SU(2)}}$，g₂自洽性从−4.18%提升至+0.18%
 3. **$\delta\theta_W^{(1)}$ 精化**：当前唯象值 −0.156 若调整为 −0.163 可消除此偏差，但需解析推导支持
 4. **2-loop 修正**：当前仅用 1-loop RG 方程
 
@@ -807,8 +807,8 @@ $$\beta_1^{\text{candidate}} = \frac{\mathscr{C}}{W_1^2} = \frac{\mathscr{C}}{25
 CQM 建立从物质先在公设（L0）到以下物理量的完整第一性链条：
 $$\Lambda_{\text{QCD}}, \quad G_N, \quad \sin^2\theta_W, \quad \alpha^{-1}, \quad \alpha_{\text{GUT}}, \quad g_s, \quad g_w$$
 
-$g_w$ 的 $-3.1\%$ 偏差被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量来源的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 分解，$\delta_{\text{CQM}} = -\mathscr{C}(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 条件 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
+$g_w$ 的 $-3.1\%$ 偏差被部分转化：p进大小 $|x|_p = p^{-v_p(x)}$ 确定了耦合层级结构（夸克→$\mathbb{Q}_2$，电子→$\mathbb{Q}_5$，中微子→$\mathbb{Q}_3$；类内由赋值 $v_p$ 定细粒度），但 $W/Z$ 质量来源的完整动力学——p进能动张量谱的实数截面——仍需独立推导。$\delta\theta_W^{(1)} = -0.156$ 实现 99.8% 第一性确定（$\Delta_{\text{RGE}} + \delta_{\text{CQM}}$ 分解，$\delta_{\text{CQM}} = -☯(1+1/N_{\text{cycle}})\ln(M_{\text{GUT}}/M_Z)/(2\pi)$，残差 0.18%）。$\rho_2, \rho_3$ 从 Mathieu 波函数重叠积分 + SU(5) 群论归一化（$N_3^2=8/9$）推导，残差分别为 ~1% 和 0.32%。所有核心公式从纯数学结构（黎曼 $\xi$ 函数、马蒂厄方程、SU(5) Dynkin 指数、Weyl 群对称性、adele 条件 $N_{\text{cycle}}=30$）先验推出。除质子质量标度 $m_p$ 作为实验输入外，无任意可调参数。
 
-> **定位**：上面"完整第一性链条""无任意可调参数"是框架**内部**的构造性表述——不变量（如 $\mathscr{C}$、$N_{\text{cycle}}=30$、SU(5) 组合指数）是人为选定后不再拟合、余量靠构造后验校验。它**不等于**这些物理常数已被主流学界接受的独立第一性推导：$G_N$、$\alpha^{-1}$、$\sin^2\theta_W$ 等在标准物理中仍是实验参数/基本输入（见 `01 核心理论/CQM_核心_集成理论.md` §7 与 `README`）。"99.8%""残差 0.18%"等数字应视作框架内数字校验，而非公认精度。
+> **定位**：上面"完整第一性链条""无任意可调参数"是框架**内部**的构造性表述——不变量（如 $☯$、$N_{\text{cycle}}=30$、SU(5) 组合指数）是人为选定后不再拟合、余量靠构造后验校验。它**不等于**这些物理常数已被主流学界接受的独立第一性推导：$G_N$、$\alpha^{-1}$、$\sin^2\theta_W$ 等在标准物理中仍是实验参数/基本输入（见 `01 核心理论/CQM_核心_集成理论.md` §7 与 `README`）。"99.8%""残差 0.18%"等数字应视作框架内数字校验，而非公认精度。
 
 > **核心几何-数论对偶**：禁闭精细结构常数 $\alpha^{-1}_{\text{SU(5)}} = 2^{14}3^{-1}5^{-3}\pi = 137.2583$。该值与早期4-单纯形路径的 $\alpha_0^{-1} = 4\pi/\sin^2(5\arccos(1/4)) = 16384\pi/375$ 在代数上完全恒等（经 Chebyshev $T_5(1/4)=61/64$ 化简）。这揭示了外部几何收敛的双重机制——**4-单纯形统计平均（$S_5$对称性）与 adele 数论乘积（p进指数）是同一收敛结构的两面对偶**。**此表达式是GL(5)整体的反映**——$\alpha$来自SU(5)重组实现⇒$U(1)$电磁群的耦合常数，adele周期中素数2、3、5正是三个空间群自守对偶残留的p进赋值。

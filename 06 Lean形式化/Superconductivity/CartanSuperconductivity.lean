@@ -19,7 +19,7 @@ theorem phaseLockingFactor_pos (GammaPhase dotTau : ℝ) : phaseLockingFactor Ga
 # CQM 超导：嘉当张量超导方程 (Cartan Superconductivity)
 
 本模块形式化**张量超导方程**：将 CQM 张量涌现结构
-（因果结构 𝒞 理想化为 SU(5) 嘉当矩阵 A₄ 的本征子空间）应用到超导序参量。
+（因果结构 ☯ 理想化为 SU(5) 嘉当矩阵 A₄ 的本征子空间）应用到超导序参量。
 对应理论文档《CQM_超导核心理论》§9 库珀对跃迁。依据《CQM_数学_嘉当结构》（07 推导与数学）：
 - **A₄ 同时是离散哈密顿量**（§2.1 嘉当方程，A₄ 作为离散 Laplacian）与
   **能动张量的谱结构**（§3.1，⟨T_μν⟩ 由谱结构 E_n 确定）；
@@ -29,13 +29,13 @@ theorem phaseLockingFactor_pos (GammaPhase dotTau : ℝ) : phaseLockingFactor Ga
   每个通道 = 谱权重 × 因果潜能系数 × 再生产锁定因子 e^{−Γτ}。
 
 **理想化与退化约定**（本模块全部定理均在此约定下成立）：
-1. 因果投影 𝒫̂_𝒞 理想化为"投影到 A₄ 全部 4 个本征通道"（因果结构
-   𝒞 = A₄ 本征子空间，无遗漏通道；A₄ 本征向量的显式构造
+1. 因果投影 𝒫̂_☯ 理想化为"投影到 A₄ 全部 4 个本征通道"（因果结构
+   ☯ = A₄ 本征子空间，无遗漏通道；A₄ 本征向量的显式构造
    属 CartanAlgebra 待办，本模块以本征值谱 [cartanEigenvalue] 为输入）；
 2. 基础自由度 𝒟 在 A₄ 本征基的系数取谱系数 [spectralCoeff]
    （正数 = 原料层可实际化），因果潜能 𝒫 的权重取谱权重
    [cartanEigenvalue]（A₄ 本征值，均正）；
-3. 可观测序参量 = 张量迹（对全部 4 通道求和，类比 §6.8 的 Tr_𝒞）；
+3. 可观测序参量 = 张量迹（对全部 4 通道求和，类比 §6.8 的 Tr_☯）；
 4. **谱间隙退化**：BCS 晶格扇区对应 A₄ 的谱间隙通道（k = 1），
    谱间隙同时缩放能隙 Δ 与临界温度 T_c（[bcsGapInGapChannel]、
    [bcsTcInGapChannel]），普适能隙比不变（[gapChannel_gapRatio_invariant]）。
@@ -189,7 +189,7 @@ noncomputable def superconductingOrderComponent
     (weights : Fin 4 → ℝ) (spectralCoeff GammaPhase dotTau : ℝ) (k : Fin 4) : ℝ :=
   weights k * spectralCoeff * phaseLockingFactor GammaPhase dotTau
 
-/-- 张量超导序参量（§6.8 的 Tr_𝒞：对因果相容子空间 𝒞 求张量迹，
+/-- 张量超导序参量（§6.8 的 Tr_☯：对因果相容子空间 ☯ 求张量迹，
     本模块理想化为对全部 4 个 A₄ 本征通道求和）。 -/
 noncomputable def superconductingOrderTensor
     (weights : Fin 4 → ℝ) (spectralCoeff GammaPhase dotTau : ℝ) : ℝ :=

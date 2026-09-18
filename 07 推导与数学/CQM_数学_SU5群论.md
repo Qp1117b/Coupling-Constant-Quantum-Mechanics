@@ -200,7 +200,7 @@ N₃² = 8/9 = 2(N−1)/(2N−1) 由 SU(5) T₃-Y 扇区活跃 ladder 算符数 
 - sin vs cos 的宇称选择 — sin(4θ) 被数值排除
 - Mathieu 哈密顿量符号修正 — 经验证与已知微扰级数一致
 - **N₃² = 8/9 群论推导** — 活跃 ladder 算符计数 + d-符号归一化
-- δθ_W^(1) 第一性原理确定 — 𝒞 + N_cycle + 标准 RGE
+- δθ_W^(1) 第一性原理确定 — ☯ + N_cycle + 标准 RGE
 - 拟合：ρ₃ 残余 0.32% → δθ_W^(1) 残差 + Cartan 高阶曲率 + 多路径干涉
 
 ---
@@ -222,7 +222,7 @@ $$\delta\theta_W^{(1)} = \Delta_{\text{RGE}} + \delta_{\text{CQM}}$$
 
 **注意**：sin²θ_W 使用正确公式 $\sin^2\theta_W = \alpha_2^{-1}/(\alpha_1^{-1} + \alpha_2^{-1})$，确保与标准定义一致。
 
-使用 CQM GUT 参数（α_GUT = 𝒞·λ_c ≈ 0.0304, M_GUT ≈ 7.6×10¹⁴ GeV）：
+使用 CQM GUT 参数（α_GUT = ☯·λ_c ≈ 0.0304, M_GUT ≈ 7.6×10¹⁴ GeV）：
 
 - α_2⁻¹(M_Z) = 36.85
 - α_1⁻¹(M_Z) = 74.25（SM 超荷归一化）
@@ -243,15 +243,15 @@ $$\delta_{\text{CQM}} = \delta\theta_W^{(1)} - \Delta_{\text{RGE}} = -0.15662 - 
 
 **假说 A**（κ ≈ 1.036）：
 
-$$\delta_{\text{CQM}} \approx -\frac{\mathscr{C}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
+$$\delta_{\text{CQM}} \approx -\frac{☯}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}$$
 
-其中 𝒞 = ξ'(1)/ξ(1) ≈ 0.0230957 是 CQM 相变量子。
+其中 ☯ = ξ'(1)/ξ(1) ≈ 0.0230957 是 CQM 相变量子。
 
-数值：−𝒞·ln(M_GUT/M_Z)/(2π) = −0.1094，与 δ_CQM = −0.1133 的残差仅 3.5%。
+数值：−☯·ln(M_GUT/M_Z)/(2π) = −0.1094，与 δ_CQM = −0.1133 的残差仅 3.5%。
 
 **假说 A+**（κ ≈ 1.0003, N_cycle 修正）：
 
-$$\delta_{\text{CQM}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}, \quad C_{\text{eff}} = \mathscr{C}\left(1 + \frac{1}{N_{\text{cycle}}}\right)$$
+$$\delta_{\text{CQM}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT}}}{M_Z}, \quad C_{\text{eff}} = ☯\left(1 + \frac{1}{N_{\text{cycle}}}\right)$$
 
 其中 N_cycle = 30 来自 adelic 条件 ∏_p Z_p = 1/(2·3·5)。
 
@@ -259,7 +259,7 @@ $$\delta_{\text{CQM}} \approx -\frac{C_{\text{eff}}}{2\pi} \ln\frac{M_{\text{GUT
 
 ### 6.5 完整 δθ_W^(1) 预测
 
-$$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\ln\frac{M_{\text{GUT}}}{M_Z}}_{\Delta_{\text{RGE}} = -0.0433} + \underbrace{\left[-\frac{\mathscr{C}}{2\pi}\left(1+\frac{1}{N_{\text{cycle}}}\right)\ln\frac{M_{\text{GUT}}}{M_Z}\right]}_{\delta_{\text{CQM}} \approx -0.1130}$$
+$$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\ln\frac{M_{\text{GUT}}}{M_Z}}_{\Delta_{\text{RGE}} = -0.0433} + \underbrace{\left[-\frac{☯}{2\pi}\left(1+\frac{1}{N_{\text{cycle}}}\right)\ln\frac{M_{\text{GUT}}}{M_Z}\right]}_{\delta_{\text{CQM}} \approx -0.1130}$$
 
 | 量 | 预测值 | 实验值 | 偏差 |
 |:---|:---|:---|:---|
@@ -269,13 +269,13 @@ $$\delta\theta_W^{(1)} = \underbrace{-\frac{b_{\text{eff}}^{\text{RGE}}}{2\pi}\l
 
 ### 6.6 物理意义
 
-1. CQM 再生产速率 𝒞 = ξ'(1)/ξ(1) **直接决定了 Weinberg 角的 CQM 特定跑动**。𝒞 在 CQM 中扮演的角色类似于标准场论中的 β 函数系数。
+1. CQM 再生产速率 ☯ = ξ'(1)/ξ(1) **直接决定了 Weinberg 角的 CQM 特定跑动**。☯ 在 CQM 中扮演的角色类似于标准场论中的 β 函数系数。
 
 2. 角向扇区的有效再生产速率包含离散周期修正 1/N_cycle = 1/30 ≈ 3.33%。
 
 3. δθ_W^(1) 从"自由唯象参数"降格为"第一性原理推导量"——其整个推导链为：
 
-**数论(𝒞) → 再生产动力学(dq/dτ=−𝒞) → 周期修正(N_cycle) → δ_CQM → δθ_W^(1)**
+**数论(☯) → 再生产动力学(dq/dτ=−☯) → 周期修正(N_cycle) → δ_CQM → δθ_W^(1)**
 
 4. ρ₂, ρ₃ 与 δθ_W^(1) 的参数简并已被打破。**重新自洽计算**：
 
@@ -357,11 +357,11 @@ $$\boxed{N_3^2 = \frac{2(N-1)}{2N-1} = \frac{8}{9} \;\;(\text{SU(5)})}$$
 
 | 参数 | 来源 | 值 | 不确定度 |
 |:---|:---|:---|:---|
-| 𝒞 | ξ'(1)/ξ(1) | 0.0230957 | 精确 |
+| ☯ | ξ'(1)/ξ(1) | 0.0230957 | 精确 |
 | λ_c | Mathieu CQM 线 | 1.3160229 | ~10⁻⁷ |
-| C_θ | 𝒞/𝔠₁ | 1.1546×10⁻⁴ | 精确 |
+| C_θ | ☯/𝔠₁ | 1.1546×10⁻⁴ | 精确 |
 | W₁ | SU(5) Weyl 轨道 | 5 | 精确 |
-| δθ_W^(1) | 𝒞+N_cycle+RGE (1L) | −0.156338 | 0.03% |
+| δθ_W^(1) | ☯+N_cycle+RGE (1L) | −0.156338 | 0.03% |
 | ρ₂ | Mathieu sin(2θ) | 0.19907 | 0.5% |
 | **N₃²** | **SU(5) 群论** | **8/9 = 0.88889** | **0.32%** |
 | ρ₃ | N₃² × Mathieu cos(4θ) | 0.10196 | 0.32% |
@@ -374,9 +374,9 @@ $$\boxed{N_3^2 = \frac{2(N-1)}{2N-1} = \frac{8}{9} \;\;(\text{SU(5)})}$$
 
 **物理解释**：
 
-1. **CQM 离散结构编码了超越一圈 RGE 的效应**：标准二圈 RGE 修正为 δsin²θ_W ≈ 1.08×10⁻³（相对 δ_CQM 的 0.95%），但一圈 CQM 预测的残余仅 0.03%。这表明 CQM 的离散再生产步长 𝒞 和周期 N_cycle=30 已经自然包含了连续场论需要二圈微扰展开才能描述的部分效应。CQM 不是"一圈 RGE + 修正"，而是一个具有内在 RG 改进的独立框架。
+1. **CQM 离散结构编码了超越一圈 RGE 的效应**：标准二圈 RGE 修正为 δsin²θ_W ≈ 1.08×10⁻³（相对 δ_CQM 的 0.95%），但一圈 CQM 预测的残余仅 0.03%。这表明 CQM 的离散再生产步长 ☯ 和周期 N_cycle=30 已经自然包含了连续场论需要二圈微扰展开才能描述的部分效应。CQM 不是"一圈 RGE + 修正"，而是一个具有内在 RG 改进的独立框架。
 
-2. **Vladimirov 指数 α_p 已被 𝒞 吸收**：𝒞 = ξ'(1)/ξ(1) 是 adelic ζ 函数的对数导数，其 Euler 乘积定义已包含所有 p-adic 扇区的贡献。简单的线性修正 δ_C = Σ w_p(α_p−1) 会给出 ~22% 的过大修正，与一圈残余 0.03% 矛盾。α_p 的实际角色是决定 Mathieu 特征值 q_m = λ_m/2，而非修正全局量 𝒞。
+2. **Vladimirov 指数 α_p 已被 ☯ 吸收**：☯ = ξ'(1)/ξ(1) 是 adelic ζ 函数的对数导数，其 Euler 乘积定义已包含所有 p-adic 扇区的贡献。简单的线性修正 δ_C = Σ w_p(α_p−1) 会给出 ~22% 的过大修正，与一圈残余 0.03% 矛盾。α_p 的实际角色是决定 Mathieu 特征值 q_m = λ_m/2，而非修正全局量 ☯。
 
 3. **残余 0.03% 的来源**（按重要性）：ρ₂ 的 Mathieu 精度 (±0.5%)、M_GUT 的不确定度、三圈及以上 RGE 残余。这些效应均在 CQM 框架的理论不确定度范围内。
 

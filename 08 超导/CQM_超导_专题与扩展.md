@@ -538,7 +538,7 @@ $$\Delta\delta_v^{\text{total}} = \Delta\delta_v^{\text{组合几何}} + \kappa 
 
 重同位素 $N$ 大，缺陷来源多，角亏涨落强，超导潜力高。资格条件（§11.2）：
 
-$$\Delta\delta_0 \ge \frac{\mathscr{C}\sqrt{1-\beta\delta_v}}{2\beta\ln n}\quad(n\text{ 为跃迁耦级})$$
+$$\Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n}\quad(n\text{ 为跃迁耦级})$$
 
 缺陷来源越多，$\Delta\delta_0$ 越大，越容易满足资格条件，越高阶跃迁可及。因此**重同位素通常具有更高的 $T_c$ 潜力**。但这不是单调的：缺陷来源过多可能破坏全局相干，导致 $T_c$ 下降——与实验上某些同位素效应的非单调行为一致。
 
@@ -673,9 +673,9 @@ $$\Delta\delta_{\text{intra}}^2 = \frac{C^2}{l^2}\cdot\frac{3\hbar}{4\omega_D}\c
 - **铜氧化物**：CuO$_2$ 晶胞，$\Delta\delta_{\text{intra}}$ 来自 Cu-O 相对运动
 - **铁基**：FeAs 晶胞，$\Delta\delta_{\text{intra}}$ 来自 Fe-As 相对运动
 
-其中 $C^2 = 2/3$（**正四面体 Regge 几何因子，严格导出**）。注意：此处 $C^2$ 为 Regge 几何因子（边长涨落→角亏涨落的转换系数），与相变量子 $\mathscr{C} \approx 0.0230957$（$\mathscr{C}^2 \approx 5.34\times10^{-4}$）是不同物理量，不可混淆。
+其中 $C^2 = 2/3$（**正四面体 Regge 几何因子，严格导出**）。注意：此处 $C^2$ 为 Regge 几何因子（边长涨落→角亏涨落的转换系数），与相变量子 $☯ \approx 0.0230957$（$☯^2 \approx 5.34\times10^{-4}$）是不同物理量，不可混淆。
 
-**$C^2 = 2/3$ 严格推导**（Regge 几何因子，非相变量子 $\mathscr{C}$）：
+**$C^2 = 2/3$ 严格推导**（Regge 几何因子，非相变量子 $☯$）：
 
 $C^2$ 将边长相对涨落转换为角亏涨落：$\Delta\delta = C \times (\Delta l / L)$，来自两个因子的乘积：
 
@@ -1383,13 +1383,13 @@ d_partial=1(铁基): 无额外抑制 d_partial=0(重费米子): 强额外抑制
 
 > 完整理论见 `01 核心理论/CQM_核心_朗兰兹分层共振与谱量子.md` §6。本节给出超导核心理论中的定位与数值证据。
 
-**超导使用相变量子 $\mathscr{C}$（GL(5)固定层级）**。$\mathscr{C} \neq 0$ 进入不确定性关系 $\Delta u \cdot \Delta v_\tau \geq \mathscr{C}/2$：
+**超导使用相变量子 $☯$（GL(5)固定层级）**。$☯ \neq 0$ 进入不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$：
 
 | 物理扇区 | 朗兰兹层级 | 相变量子 | 作用 | CQM 状态 |
 |:---|:---|:---|:---|:---|
-| **电磁 $U(1)$** | GL(5)固定层级 | $\mathscr{C} = \sum_n 1/(\gamma_n^2+1/4) \approx 0.0230957$ | 耦合常数涨落 → $T_c$ 公式 | 框架内含 |
+| **电磁 $U(1)$** | GL(5)固定层级 | $☯ = \sum_n 1/(\gamma_n^2+1/4) \approx 0.0230957$ | 耦合常数涨落 → $T_c$ 公式 | 框架内含 |
 
-**常规 s 波超导**：自旋配对是平庸单态，仅需 $\mathscr{C}$。现有 CQM 公式 $T_c \sim \theta_D/(2\,\text{arccoth}(x))$ 作为框架内前向公式仍在使用。
+**常规 s 波超导**：自旋配对是平庸单态，仅需 $☯$。现有 CQM 公式 $T_c \sim \theta_D/(2\,\text{arccoth}(x))$ 作为框架内前向公式仍在使用。
 
 **非常规 d/p 波超导**：自旋结构非平凡，从嘉当矩阵谱间隙第一性推导进入 $T_c$ 计算。$\gamma_n$ 映射从嘉当矩阵谱间隙第一性推导。当前 CQM 从嘉当矩阵谱间隙第一性推导给出非常规超导中位 33.3% 精度。
 
@@ -1397,7 +1397,7 @@ d_partial=1(铁基): 无额外抑制 d_partial=0(重费米子): 强额外抑制
 
 $$T_c = F\left(\gamma_2-\gamma_1;\ \text{嘉当矩阵谱间隙};\ \delta_v,\ \theta_D\right)$$
 
-**与零点猜想的关系**：$\mathscr{C}$ 需黎曼猜想（GL(5)固定层级的实谱条件）。**超导完整理论需要 RH 成立。**
+**与零点猜想的关系**：$☯$ 需黎曼猜想（GL(5)固定层级的实谱条件）。**超导完整理论需要 RH 成立。**
 
 ## 11.14 高阶跃迁与自由能 $T_c$ 推导链
 
@@ -1477,7 +1477,7 @@ $$K_{\text{eff}} = K_0 \cdot G^{-0.77} \cdot \theta_D^{1.13}$$
 |:---|:---|:---|
 | `Ontology` | §1 本体论 | 有限本体公理、RQM 唯物化、电子作为基态耦合对应 |
 | `TransitionTemperature` | §11.2 $T_c$ | `criticalTemperature`、BCS 精确常数 |
-| `TransitionTemperatureCQM` | §11.2 $T_c$（G22 闭合） | CQM 临界温度严格推导：相变量子 $\mathscr{C}$、玻色恒等式、丛作用量交叉 $F_1=F_2$ |
+| `TransitionTemperatureCQM` | §11.2 $T_c$（G22 闭合） | CQM 临界温度严格推导：相变量子 $☯$、玻色恒等式、丛作用量交叉 $F_1=F_2$ |
 | `Reduction` | §11 温度依赖（BCS 退化与还原） | 能隙方程、$T_c$ 方程、普适能隙比、同位素 $\alpha=1/2$ |
 | `CartanSuperconductivity` | §9 库珀对跃迁（A4 谱分解与序参量） | A4 谱分解、序参量正性（`superconductingOrderTensor_pos`） |
 | `FirstPrinciples` | §11.3 统计极限 | A4→晶格声子→耦合→能隙→$T_c$；`gapIntegral_pr`；再生产维持（锁定因子衰减） |

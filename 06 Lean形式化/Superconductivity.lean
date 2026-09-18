@@ -79,7 +79,7 @@ CQM 超导理论的完整形式化框架。理论文档见
 
 ### 张量 GL 与嘉当双重角色（对应文档 §19 模块：CartanSuperconductivity，对应章节已精简，作为方向锚定保留）
 
-- `superconductingOrderTensor_pos`：张量超导序参量（§10 公式在 A₄ 本征谱上的 Tr_𝒞）严格为正
+- `superconductingOrderTensor_pos`：张量超导序参量（§10 公式在 A₄ 本征谱上的 Tr_☯）严格为正
 - `cartanHamiltonian_trace_eq_stressEnergyTrace`：A₄ 双重角色——离散哈密顿量迹 = 能动张量迹 = 8
 - `gapChannel_gapRatio_invariant`：谱间隙通道退化到 BCS，普适能隙比不受谱间隙缩放影响
 - `cartanInvTrace_eq_four`：Tr(A₄⁻¹) = 4（勘误：07 嘉当结构文档 §4.2 的 2 应为 4）

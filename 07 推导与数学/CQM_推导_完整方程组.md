@@ -266,23 +266,23 @@ $$\boxed{\alpha^{-1} = 2^{14} \cdot 3^{-1} \cdot 5^{-3} \cdot \pi = \frac{16384\
 
 ### 10.2 引力常数
 
-$$\boxed{G_N^{(0)} = \frac{I\cdot\lambda_c\cdot \mathscr{C}^2\cdot \mathfrak{c}_1}{m_p^2}\cdot\exp\left(-\frac{2}{\mathscr{C}}\right)} \tag{Q2}$$
+$$\boxed{G_N^{(0)} = \frac{I\cdot\lambda_c\cdot ☯^2\cdot \mathfrak{c}_1}{m_p^2}\cdot\exp\left(-\frac{2}{☯}\right)} \tag{Q2}$$
 
-$$\boxed{G_N = G_N^{(0)}\cdot(1+\kappa \mathscr{C})}, \quad \kappa = \frac{31 + \mathscr{C}}{30} \tag{Q3}$$
+$$\boxed{G_N = G_N^{(0)}\cdot(1+\kappa ☯)}, \quad \kappa = \frac{31 + ☯}{30} \tag{Q3}$$
 
 ### 10.3 中子质量差
 
-$$\boxed{\Delta m = 2\theta_4\cdot \mathscr{C}^2\cdot m_p\cdot\left[1-\alpha_5(\mathscr{C})\mathscr{C}\right]} \tag{Q4}$$
+$$\boxed{\Delta m = 2\theta_4\cdot ☯^2\cdot m_p\cdot\left[1-\alpha_5(☯)☯\right]} \tag{Q4}$$
 
 ### 10.4 中子寿命
 
-$$\boxed{\tau = \frac{e^{-u_0}(1-1/e)\hbar}{\mathscr{C}\varepsilon m_p}, \quad u_0 = -\sqrt{\frac{\mathfrak{c}_1^{\text{eff}}}{\pi \mathscr{C}}}} \tag{Q5}$$
+$$\boxed{\tau = \frac{e^{-u_0}(1-1/e)\hbar}{☯\varepsilon m_p}, \quad u_0 = -\sqrt{\frac{\mathfrak{c}_1^{\text{eff}}}{\pi ☯}}} \tag{Q5}$$
 
 | 方程 | 状态 | 备注 |
 |:---|:---:|:---|
 | Q1 ($\alpha^{-1}$) | 定理 | 禁闭精细结构常数（SU(5)） |
 | Q2 ($G_N^{(0)}$) | 数值自洽 | 主项公式 |
-| Q3 ($\kappa$) | 定理 | $\kappa=(31+\mathscr{C})/30$，约 −3 ppm |
+| Q3 ($\kappa$) | 定理 | $\kappa=(31+☯)/30$，约 −3 ppm |
 | Q4 ($\Delta m$) | 数值自洽 | −0.09 ppm |
 | Q5 ($\tau$) | 数值自洽 | +4 ppm |
 
@@ -337,6 +337,6 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 
 $$\boxed{\hat{\mu}^2=\hat{\mu}, \quad \hat{\mu}=\frac{I+R}{2}}$$
 
-$$\boxed{E_0 = \frac{1}{4}, \qquad G_N=\frac{I\lambda_c \mathscr{C}^2 \mathfrak{c}_1}{m_p^2}e^{-2/\mathscr{C}}\bigl(1+\kappa \mathscr{C}\bigr)}$$
+$$\boxed{E_0 = \frac{1}{4}, \qquad G_N=\frac{I\lambda_c ☯^2 \mathfrak{c}_1}{m_p^2}e^{-2/☯}\bigl(1+\kappa ☯\bigr)}$$
 
 **完整严格推导链**：`CQM_推导_经典路径.md`

@@ -59,7 +59,7 @@ theorem coupling_exp_log (r : ℝ) (hr : r > 0) : couplingStrength (Real.log r) 
     从因果集 Sprinkling 密度正性导出。 -/
 def isCouplingSpeed (c : ℝ) : Prop := c > 0
 
-/-- 耦合空间中的无量纲化：所有量以相变量子 𝒞 为单位。
+/-- 耦合空间中的无量纲化：所有量以相变量子 ☯ 为单位。
     ũ = u/C, τ̃ = τ·ν₀ 等。 -/
 noncomputable def dimensionless (x C : ℝ) : ℝ := x / C
 

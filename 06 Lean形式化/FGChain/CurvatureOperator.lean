@@ -17,13 +17,13 @@ import Superconductivity.CouplingSpace
    ↓
 [环节7] 耦合常数-固有时流速不确定性关系（δ_v → v_τ → Δu·Δv_τ ≥ C/2）
    ↓
-[环节8] 耦合常数算符 û = ln r̂（CQM 海森堡对 [û, p̂_u] = i𝒞，𝒞 为相变量子）
+[环节8] 耦合常数算符 û = ln r̂（CQM 海森堡对 [û, p̂_u] = i☯，☯ 为相变量子）
 ```
 
 ## 数学内容
 
 - **曲率算符**：自伴、实本征值（角亏实值）、与振荡模的正性衔接。
-- **CQM 海森堡对**：[û, p̂_u] = i𝒞——以相变量子 𝒞 = ξ'(1)/ξ(1) 取代 ħ 的角色
+- **CQM 海森堡对**：[û, p̂_u] = i☯——以相变量子 ☯ = ξ'(1)/ξ(1) 取代 ħ 的角色
   （CQM 核心创新：共轭对 (û, p̂_u)，û = ln r 为对数耦合常数）。
 - **CQM-Robertson 衔接**：复用 `CouplingSpace.Uncertainty.cqm_uncertainty_conditional`
   给出 Δu·Δv_τ ≥ C/2；曲率-耦合通道复用
@@ -61,10 +61,10 @@ theorem curvature_eigen_nonneg (C : CurvatureOperator) (n : ℕ) : (0 : ℝ) ≤
 /-! ## 2. 耦合常数算符与 CQM 海森堡对（环节8） -/
 
 /-- **耦合常数算符数据**：û = ln r̂（r 为总耦合强度），
-    共轭动量 p̂_u = v̂_τ / 𝒞（固有时流速 / 相变量子），
-    CQM 海森堡代数 [û, p̂_u] = i𝒞（𝒞 = 相变量子 ξ'(1)/ξ(1) 取代 ħ 的角色）。 -/
+    共轭动量 p̂_u = v̂_τ / ☯（固有时流速 / 相变量子），
+    CQM 海森堡代数 [û, p̂_u] = i☯（☯ = 相变量子 ξ'(1)/ξ(1) 取代 ħ 的角色）。 -/
 structure CouplingOperator where
-  /-- 相变量子 𝒞 = ξ'(1)/ξ(1) ≈ 0.0230957（无量纲，GL(5) 固定层级） -/
+  /-- 相变量子 ☯ = ξ'(1)/ξ(1) ≈ 0.0230957（无量纲，GL(5) 固定层级） -/
   C : ℝ
   /-- 相变量子为正 -/
   C_pos : 0 < C
@@ -86,7 +86,7 @@ theorem couplingCoordinate_mono {r₁ r₂ : ℝ} (hr₁ : 0 < r₁) (hr₂ : 0 
     物理量对应（Δr/⟨r⟩ = Δu，Δv_τ = C·Δp̂_u）下，
     耦合常数-固有时流速不确定性关系为
     (Δr/⟨r⟩)·Δv_τ ≥ C/2，
-    其中 𝒞 为相变量子（《CQM_核心_集成理论》§3.4 的链路表述）。
+    其中 ☯ 为相变量子（《CQM_核心_集成理论》§3.4 的链路表述）。
     严格复用 `CouplingSpace.Uncertainty.cqm_uncertainty_conditional`。 -/
 theorem fg_uncertainty_link (Δu Δp Δr_div_r Δvτ C : ℝ) (hCpos : C > 0)
     (h_robertson : Δu * Δp ≥ 1 / 2)

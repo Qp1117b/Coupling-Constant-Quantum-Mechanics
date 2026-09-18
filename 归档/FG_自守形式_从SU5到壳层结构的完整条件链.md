@@ -182,7 +182,7 @@ $$\hat{\mathcal{S}} = \hat{\mathcal{S}}_{\text{nucleon}} \otimes \hat{\mathbb{I}
 
 其中：
 
-- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi \mathscr{C}}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
+- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi ☯}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
 - 耦合常数部分：$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u} - \ln p)$（质数投影算符的叠加）
 
 **同步方程**（= Hecke本征方程）：
