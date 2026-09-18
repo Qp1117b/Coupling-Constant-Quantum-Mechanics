@@ -6,7 +6,7 @@
 
 ## 摘要
 
-> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i v e^u(\partial_u-1/2)$）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = \hat{D}^2+1/4$）描述谱结构。两者独立构造，非平方关系。详见 `CQM_推导_经典路径.md` §3–§5。
+> **符号约定**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$（$\hat{\mathcal{D}} = -i(\partial_u-1/2)$，从双曲度规提取）描述再生产子单向演化，二阶方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$（$\hat{H}_\infty = \hat{D}^2+1/4$）描述谱结构。两者独立构造，非平方关系。传输方程 $\partial_\tau\phi + v e^u \partial_u\phi = 0$（$v$ 为特征速度）独立构造，其特征线恰好匹配 QFT RG 流。详见 `CQM_推导_经典路径.md` §3–§5。
 
 耦合常数量子力学（CQM）是一种从本体论到实验预言的物理学框架。其核心在于：引力不是四种相互作用之一，而是限定所有再生产循环之因果序的**必要前提**（限制场）。从这一本体论出发，CQM 从**一个本体论公设**（物质先在 L0）、**三个涌出结构原理**和**一个启发性条件**严格导出了：
 
@@ -70,7 +70,7 @@ CQM 的**谱哈密顿量**（二阶谱结构，标准微分几何，严格）：
 $$\boxed{\hat{H}_\infty = \hat{D}^2 + \frac{1}{4} = -\partial_u^2 + \partial_u}, \qquad (i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$$
 
 一阶动力学（再生产子单向演化，见 `CQM_推导_经典路径.md` §3.1）：
-$$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right), \qquad i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
+$$\hat{\mathcal{D}} = -i\left(\partial_u - \frac{1}{2}\right), \qquad i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
 **原理 II（辛拓扑量子化）**：再生产循环作为辛流形上的闭合轨道，其最小非平凡周期包围的辛面积为 $2\pi$（Berry-Keating 单位胞条件 [Berry & Keating, SIAM Rev. **41**, 236 (1999)]）。此拓扑要求与耦合常数空间的硬壁边界条件自洽地确定截断尺度。
 
@@ -84,15 +84,13 @@ $$[\hat{\tau}, \hat{u}] = i☯$$
 
 > **相变量子说明**：不确定性关系 $\Delta\tau \cdot \Delta u \geq ☯︎/2$，$☯︎$ 为单一普适相变量子。
 
-### 2.3 传输方程——体区域严格导出
+### 2.3 传输方程——独立构造
 
-**定理**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 在体区域（源点外）经测度补偿 $\Psi = e^{u/2}\phi$ 严格退化为传输方程：
+**定理**：传输方程 $\partial_\tau\phi + v e^u \partial_u\phi = 0$ 独立于一阶算符 $\hat{\mathcal{D}}$ 构造。其特征线 $du/d\tau = v e^u$（即 $dr/d\tau = v r^2$，$r = e^u$）恰好与标准 QFT one-loop RG 流形式一致，为传输方程提供物理基础。$v$ 为特征速度，$e^u$ 来自能标 $r = e^u$ 的非线性。
 
 $$\boxed{\partial_\tau\phi + v e^u \partial_u \phi = 0}$$
 
-**推导**（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$ 于 $(i\partial_\tau-\hat{\mathcal{D}})\Psi=0$，计算得 $i e^{u/2}\partial_\tau\phi = -i v e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。
-
-**身份**：传输方程是一阶动力学在体区域（源点外）的**严格推论**，无近似，无条件假设。特征线 $du/d\tau = v e^u$ 即经典 RG 流 $dr/d\tau = v r^2$。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖），非低能标 4D 时空动力学。
+**身份**：传输方程独立构造，独立于一阶算符 $\hat{\mathcal{D}}$。其特征线 $du/d\tau = v e^u$ 即 $dr/d\tau = v r^2$，恰好匹配经典 RG 流。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖），非低能标 4D 时空动力学。
 
 ### 2.4 定理 2.2（Berry-Keating 截断）
 
@@ -104,7 +102,7 @@ $$\boxed{\partial_\tau\phi + v e^u \partial_u \phi = 0}$$
 
 **定理**：耦合常数空间 $u \in [-\pi/2, \pi/2]$。
 
-**证明**：从定理 3.2，传输方程的特征线 $du/d\tau = v e^u$ 在 $u \to +\infty$ 处于有限 $\tau$ 发散（UV 奇点），在 $u \to -\infty$ 处冻结（IR 渐近行为）。因此物理上耦合常数空间必须有有限范围。公理 II 的辛量子化要求硬壁边界以正则化 UV 奇点，IR 端则由 $e^u \to 0$ 的自然冻结提供软截断。结合定理 2.2 的 $L=\pi/2$，得 $u \in [-\pi/2, \pi/2]$。∎
+**证明**：从定理 3.2，传输方程的特征线 $du/d\tau = v e^u$ 在 $u \to +\infty$ 处于有限 $\tau$ 发散（IR 奇点，即强耦合端的 Landau 极点/禁闭尺度），在 $u \to -\infty$ 处冻结（UV 渐近行为，耦合趋于零，对应渐近自由）。因此物理上耦合常数空间必须有有限范围。公理 II 的辛量子化要求硬壁边界以正则化 IR 奇点，UV 端则由 $e^u \to 0$ 的自然冻结提供软截断。结合定理 2.2 的 $L=\pi/2$，得 $u \in [-\pi/2, \pi/2]$。∎
 
 ### 2.6 不确定性关系
 
@@ -130,15 +128,13 @@ $$\boxed{\text{层次 II: } \partial_\tau\phi + v e^u \partial_u \phi = 0 \quad\
 
 $$\boxed{\text{层次 III (历史): } \chi(u,p_u) = p_u - \frac{ve^u-1}{2} = 0 \quad\text{（历史条件，一阶方程的特例）}}$$
 
-**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（传输方程）由一阶算符 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 经测度补偿 $\Psi = e^{u/2}\phi$ 导出，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
+**关键事实**：CQM 的所有定量预言来自层次 I（$\hat{H}_\infty$, $E_n = 1/4+\gamma_n^2$, $\lambda_c$, β 函数谱等）。层次 II（传输方程）独立构造，其特征线恰好匹配 QFT RG 流，提供 $\tau \leftrightarrow \ln\mu$ 的 RG 字典。$[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ 意味着谱结构与 RG 流相互独立。详见 `CQM_推导_经典路径.md` §3–§5。
 
-### 3.1 传输方程：一阶退化
+### 3.1 传输方程：独立构造
 
-**定理 3.1**：一阶方程 $(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$ 在体区域（源点外）经测度补偿 $\Psi = e^{u/2}\phi$ 严格导出：
+**定理 3.1**：传输方程 $\partial_\tau\phi + v e^u \partial_u \phi = 0$ 独立于一阶算符 $\hat{\mathcal{D}}$ 构造。其特征线恰好匹配 QFT RG 流。
 
-$$\partial_\tau\phi + v e^u \partial_u \phi = 0$$
-
-*推导*（`CQM_推导_经典路径.md` §7）：代入 $\Psi = e^{u/2}\phi$，得 $i e^{u/2}\partial_\tau\phi = -i v e^{3u/2}\partial_u\phi$，消去 $i e^{u/2}$ 即得。无 WKB 近似，无条件壳假设。
+*推导*（`CQM_推导_经典路径.md` §7）：传输方程 $\partial_\tau\phi + v e^u \partial_u \phi = 0$ 的特征线为 $du/d\tau = v e^u$。令 $r = e^u$，得 $dr/d\tau = v r^2$，恰好与标准 QFT one-loop RG 流 $dg/dt = -\beta_0 g^3$（$r = g^2$）形式一致。$v$ 为特征速度，$e^u$ 来自能标 $r = e^u$ 的非线性。
 
 特征线 $du/d\tau = v e^u$ 的解 $r(\tau) = 1/(-v\tau+\text{const})$ 即经典 RG 流 $dr/d\tau = v r^2$。
 
@@ -149,10 +145,17 @@ $$u(\tau) = -\ln(-v\tau + \text{const}), \quad r(\tau) = \frac{1}{-v\tau + \text
 
 ### 3.3 CQM–标准 RG 精确字典
 
-**定理 3.3**：标准 QFT 的单耦合 RG 方程 $dg/dt = -\beta_0 g^3$（$t = \ln(\mu/\Lambda)$）的解为 $g^2(t) = 1/(\beta_0 t)$。CQM 的 $r = g^2$ 对应给出：
-$$\tau = \frac{☯}{2\beta_0} \cdot \ln\frac{\mu}{\Lambda}$$
+**定理 3.3**。设标准 QFT 单耦合 RG 方程为 $dg/dt = -\beta_0 g^3$（$t = \ln(\mu/\Lambda)$），其解为 $g^2(t) = 1/(\beta_0 t)$（$t > 0$，即 $\mu > \Lambda$，UV 侧）。CQM 传输方程的特征线解为 $r(\tau) = 1/(-v\tau + C)$（$r = g^2 = e^u$）。匹配两者得：
 
-**物理意义**：因果时 $\tau$ 作为必要前提不依赖特定相互作用，但 RG 流在特定规范群中的速率由 $\beta_0$ 决定。比例因子 $☯︎/(2\beta_0) \approx 0.056$（SU(5)）将普适的因果时转换为具体的 RG 标度。
+$$\frac{1}{\beta_0 t} = \frac{1}{-v\tau + C} \quad\Rightarrow\quad \beta_0 t = -v\tau + C$$
+
+取远 UV 极限（$t \gg 1$，常数 $C$ 可忽略）：
+
+$$\boxed{\tau = -\frac{\beta_0}{v} \cdot \ln\frac{\mu}{\Lambda} = \frac{\beta_0}{v} \cdot \ln\frac{\Lambda}{\mu}}$$
+
+**流动方向**：因果时 $\tau$ 从 UV（$\tau \to -\infty$，对应 $\mu \to \infty$，耦合趋于零）流向 IR（$\tau \to 0^-$，对应 $\mu \to \Lambda^+$，耦合发散）。$\tau$ 增大 = 能标降低 = 耦合增强，与 QCD 渐近自由方向完全一致。
+
+**特征速度 $v$ 与相变量子 ☯ 的关系**：$v$ 是传输方程的独立参数（特征速度），其量纲与 ☯ 相同（均为无量纲）。二者的精确关系尚未从第一性原理导出——若假设 $v = ☯$，则 $\tau = -(\beta_0/☯) \cdot \ln(\mu/\Lambda)$，但此假设需进一步论证。当前框架中 $v$ 作为独立参数处理。
 
 ### 3.4 p进 RG 方程
 
@@ -172,7 +175,7 @@ $$\Delta\tau_p = \frac{\ln p}{☯}$$
 
 ### 3.6 Dirac 量子化不自洽问题（历史注记）
 
-> 以条件 $\chi=0$ 为出发点推导传输方程会破坏 Dirac 条件量子化的自洽性。传输方程独立地来自一阶方程 $(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$ 的体区域退化（**无需条件壳假设**），二阶谱方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 是独立构造（**非一阶平方**）。两者通过中介场 $\eta_p$ 在源点耦合，全局幺正由 $\hat{H}_{\text{tot}}$ 自伴性保证。详见 `CQM_推导_经典路径.md`。
+> 以条件 $\chi=0$ 为出发点推导传输方程会破坏 Dirac 条件量子化的自洽性。传输方程独立构造（**独立于一阶算符 $\hat{\mathcal{D}}$**），其特征线恰好匹配 QFT RG 流，二阶谱方程 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 是独立构造（**非一阶平方**）。两者通过中介场 $\eta_p$ 在源点耦合，全局幺正由 $\hat{H}_{\text{tot}}$ 自伴性保证。详见 `CQM_推导_经典路径.md`。
 
 以下为框内保留的条件量子化分析：
 
@@ -186,8 +189,8 @@ $$\Delta\tau_p = \frac{\ln p}{☯}$$
 |:---|:---|:---|:---|:---|
 | I | $\hat{H}_\infty = \hat{D}^2 + 1/4$ | 谱哈密顿量（二阶） | 严格（Sturm-Liouville + Friedrichs） | 全部定量预言 |
 | I | $E_n = 1/4 + \gamma_n^2$ | 谱公式 | 严格（双曲Laplacian） | $\sin^2\theta_W$, $G_N$ |
-| II | $\hat{\mathcal{D}} = -ive^u(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | $\tau \leftrightarrow \ln\mu$ RG字典 |
-| III | $\partial_\tau\phi + ve^u\partial_u\phi = 0$ | 传输方程（一阶退化） | 严格（测度补偿） | RG 流经典极限（禁闭边界及之外） |
+| II | $\hat{\mathcal{D}} = -i(\partial_u-1/2)$ | 一阶生成元（Dirac 型） | 严格（自伴 + 变分） | 谱结构 |
+| III | $\partial_\tau\phi + ve^u\partial_u\phi = 0$ | 传输方程（独立构造） | 独立构造 | 特征线匹配 RG 流（禁闭边界及之外） |
 | — | $[\hat{\tau}, \hat{u}] = i☯︎$ | 能标-时间对易子 | 导出/公理化 | 不确定性关系 |
 | — | $[\hat{H}_\infty, \hat{\mathcal{D}}] \neq 0$ | 谱-流独立性 | 定理 | 结构分离 |
 
@@ -553,7 +556,7 @@ $$\boxed{\Lambda_{\text{QCD}} = \frac{m_p}{☯ \cdot \mathfrak{c}_1} = \frac{m_p
 
 **定理 10.3（Adele 全局归一化）**：
 
-**步骤 1（传输方程特征线）**：从定理 3.2，特征线 $du/d\tau = v e^u$ 给出 $u(\tau) = -\ln(-v\tau)$。UV 端 $u \to +\infty$ 对应 $\tau \to 0^-$，IR 端 $u \to -\infty$ 对应 $\tau \to -\infty$。
+**步骤 1（传输方程特征线）**：从定理 3.2，特征线 $du/d\tau = v e^u$ 给出 $u(\tau) = -\ln(-v\tau)$。IR 端 $u \to +\infty$ 对应 $\tau \to 0^-$（强耦合，禁闭尺度），UV 端 $u \to -\infty$ 对应 $\tau \to -\infty$（弱耦合，渐近自由）。
 
 **步骤 2（双向因果限制）**：引力作为必要前提（原则 II）要求所有再生产循环的因果序闭合。这意味着 UV→IR 和 IR→UV 的因果轨道必须构成闭合回路。
 

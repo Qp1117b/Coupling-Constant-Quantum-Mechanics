@@ -81,8 +81,8 @@
 | ③ | 严格 | 因果集 Sprinkling→测度 $e^{-u}du$→ℍ² 度规，严格数学（见 归档 CNT/06 论文/01-闭合核理论（CNT） §3, §6） |
 | ④–⑤ | 严格 | Adele条件→2D→面积元→K=−1→ℍ²（见 CQM_推导_完整方程组.md §B），无需 GL(2,ℝ) 中介 |
 | ⑥–⑧ | 严格 | ℍ² 上 Laplacian→谱→☯︎，显式数学证明 |
-| ⑨ | 严格 | $\hat{\mathcal{D}} = -i v e^u(\partial_u-1/2)$ 自伴性已证（Sturm-Liouville + Neumann） |
-| ⑩ | 严格代数 | 测度补偿 $\Psi=e^{u/2}\phi$ 代入一阶方程严格导出 |
+| ⑨ | 严格 | $\hat{\mathcal{D}} = -i(\partial_u-1/2)$ 自伴性已证（Sturm-Liouville + Neumann） |
+| ⑩ | 独立构造 | 传输方程 $\partial_\tau\phi + ve^u\partial_u\phi = 0$ 独立构造，特征线 $dr/d\tau = vr^2$ 恰好匹配 QFT RG 流 |
 | ⑪–⑫ | 验证 | RG 等价与 β-函数经数值验证；四维相空间为语法层工具，非本体论 |
 | ⑬ | 定理 | SU(5) Weyl 对称性 W_m = 5·2^{m-1} 严格 |
 | ⑭ | 统计论证 | 物质-辐射分离的统计极限有说服力但非严格证明 |
@@ -155,7 +155,7 @@
 
 ### 第二阶段：时空兼容（SR / GR）
 
-**核心产出**：固有时 $\tau_k = k\cdot T_{\text{rep}}$、SR/GR 兼容机制、时空同步特征速度涌现 $v = \dfrac{D}{T_{\text{rep}}}$、RG 等价性
+**核心产出**：固有时 $\tau_k = k\cdot T_{\text{rep}}$、SR/GR 兼容机制、时空同步前沿速度涌现 $c = \dfrac{D}{T_{\text{rep}}}$、RG 等价性
 
 **文档**：`CQM_数学_Adele纲领 §4-6`、`归档 CNT/04 核心方程`、`归档 CNT/05 前沿研究`、`归档 CNT/05 前沿研究/04-最小因果时与时间结构`
 

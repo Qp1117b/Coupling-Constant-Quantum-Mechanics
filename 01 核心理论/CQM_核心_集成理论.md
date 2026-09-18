@@ -179,7 +179,7 @@ CQM 的根本转向：**不量子化时空，而量子化耦合常数本身。**
 - 对易子变为 $[\hat{u}, \hat{p}_u] = i$（标准海森堡代数，无量纲）；
 - 可以直接调用标准量子力学的全部谱理论（自伴扩张、不确定性、谱分解）。
 
-这是物理要求的自然结果：耦合常数的"跑动"（RG 流）在标准场论中本就是指数型的，$r(\tau) = r_0 e^{-v\tau}$。对数坐标使这种指数行为线性化。
+这是物理要求的自然结果：耦合常数的"跑动"（RG 流）在标准场论中为对数跑动（$g^2 \sim 1/\ln\mu$），对应 CQM 中传输方程特征线的有理函数解 $r(\tau) = 1/(-v\tau + C)$（见 §12.2）。对数坐标 $u = \ln r$ 将 RG 流的二次非线性跑动转化为耦合空间中的几何描述。
 
 ### 3.3 标准海森堡代数
 
@@ -262,9 +262,9 @@ $$\psi(u_j, \tau_{n+1}) = \psi(u_{j-1}, \tau_n)$$
 
 $$\partial_\tau \psi + v\,\partial_u \psi = 0$$
 
-特征线：$du/d\tau = -v \Rightarrow r(\tau) = r_0 e^{-v\tau}$。
+特征线：$du/d\tau = v \Rightarrow u(\tau) = u_0 + v\tau \Rightarrow r(\tau) = r_0 e^{v\tau}$。
 
-**物理**：这是单质子内禀时钟驱动的指数演化。$\tau$ 的流逝直接等价于能标的改变——这不是"宇宙能标从低能跑到高能"，而是**单个有限本体（质子）的内禀 RG 流**。
+**物理**：这是单质子内禀时钟驱动的因果传播——描述耦合空间中波包的平移流动，是因果集离散序的连续极限。**此线性传输方程不等于 RG 流**；RG 流的二次非线性跑动由带 $e^u$ 因子的传输方程描述（见 §12.2）。
 
 
 **因果时的统一结构**：时间是因果序的度量——在禁闭内部是因果序的计数（$\tau_{\text{causal}}(x,y) = |I(x,y)|+1$，不依赖任何连续结构），退相干后是几何固有时（$\int\sqrt{-g_{\mu\nu}dx^\mu dx^\nu}$），在量子动力学中是幺正演化参数（$U(\tau) = e^{-i\hat{H}\tau}$）。三者同出一源，不存在独立于因果序的外在时间坐标。
@@ -283,9 +283,9 @@ $$S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[|\partial_\tau \Phi|^2 - (-\parti
 
 | | 一阶层（耦合运动学） | 二阶层（耦合动力学） |
 |:---|:---|:---|
-| 方程 | $\partial_\tau \psi + v\,\partial_u \psi = 0$ | $(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$ |
-| 算符 | $\hat{\mathcal{D}} = -iv\,e^u(\partial_u - \tfrac{1}{2})$ | $\hat{H} = -\partial_u^2 + \partial_u$ |
-| 主象征 | $\sigma = v\,e^u k$（变系数，单向） | $\sigma = k^2$（常系数，双向） |
+| 方程 | $i\partial_\tau \Psi = \hat{\mathcal{D}}\Psi$ | $(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$ |
+| 算符 | $\hat{\mathcal{D}} = -i(\partial_u - \tfrac{1}{2})$ | $\hat{H} = -\partial_u^2 + \partial_u$ |
+| 主象征 | $\sigma = k$（常系数，单向） | $\sigma = k^2$（常系数，双向） |
 | 物理 | 真实再生产传播（费米子型） | 虚拟量子涨落（玻色子型） |
 
 **关系**：互补关系，共享边界条件 $\vartheta$。
@@ -924,10 +924,20 @@ CQM 超导框架在特定极限下退化为 BCS 理论：
 
 ### 12.2 与重整化群（RG）的关系
 
-CQM 传输方程 $\partial_\tau\psi + v\,\partial_u\psi = 0$ 的特征线 $r(\tau) = r_0 e^{-v\tau}$ 在结构上与标准 RG 流等价。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖）。本体论不同：
+CQM 的 RG 流由带 $e^u$ 因子的非线性传输方程描述：
+
+$$\partial_\tau \phi + v\,e^u \partial_u \phi = 0$$
+
+其特征线 $du/d\tau = v e^u$（即 $dr/d\tau = v r^2$，$r = e^u = g^2$）的解为有理函数：
+
+$$r(\tau) = \frac{1}{-v\tau + C}$$
+
+此形式与标准 QFT 单圈 RG 流 $dg/dt = -\beta_0 g^3$ 完全一致——若令 $\tau \leftrightarrow \ln(\mu/\Lambda)$，则 $g^2 \sim 1/\ln(\mu/\Lambda)$，即标准的对数跑动。**RG 流属于禁闭边界及之外的物理**（高能标/UV 区域，耦合常数跑动描述能标依赖）。本体论不同：
 
 - **标准 QFT**：RG 流是路径积分标度变换的数学结果，能标 $\mu$ 是外部参数；
-- **CQM**：RG 流是单质子内禀时钟驱动的演化，能标被因果时 $\tau$ 直接取代。
+- **CQM**：RG 流是单质子内禀时钟驱动的非线性传输，能标被因果时 $\tau$ 取代。
+
+**流动方向**：因果时 $\tau$ 从 UV 流向 IR（因果演化方向），耦合随 $\tau$ 增大而增大（IR 端耦合变强），与 QCD 渐近自由方向一致——UV 端耦合弱，IR 端耦合强。
 
 CQM 尚未完成从第一性原理计算具体耦合常数跑动曲线的定量推导（"惊险一跃"）。
 

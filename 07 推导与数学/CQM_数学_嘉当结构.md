@@ -26,15 +26,15 @@ $$E_n = \frac{1}{4} + \gamma_n^2, \quad E_0 = \frac{1}{4}$$
 
 ### 1.2 一阶生成元
 
-一阶算符 $\hat{\mathcal{D}} = -i\,v\,e^u(\partial_u - 1/2)$ 描述再生产子的单向演化：
+一阶算符 $\hat{\mathcal{D}} = -i(\partial_u - 1/2)$ 描述再生产子的单向演化：
 
 $$i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$$
 
-在体区域（源外）经测度补偿 $\Psi = e^{u/2}\phi$ 退化为传输方程：
+传输方程（独立构造，RG 流特征线，$v$ 为特征速度）：
 
 $$\partial_\tau\phi + v\,e^u\partial_u\phi = 0$$
 
-**关键**：$\hat{H}_\infty$ 与 $\hat{\mathcal{D}}$ 独立构造，非平方关系——$\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2 + 1/4) \neq \hat{H}_\infty$。两者通过 $\hat{\mu}$ 在事件点衔接。
+**关键**：$\hat{H}_\infty$ 与 $\hat{\mathcal{D}}$ 独立构造，非平方关系——$\hat{\mathcal{D}}^2 = -\partial_u^2 + \partial_u - 1/4 \neq \hat{H}_\infty$（差 $1/4$ 谱间隙）。两者通过 $\hat{\mu}$ 在事件点衔接。
 
 ---
 

@@ -105,7 +105,7 @@ $$\mathcal{H}_p = L^2(\mathbb{Q}_p, dx), \qquad \hat{H}_p = f_{\text{rep}}(D^{\a
 
 $$S_\infty^{(1)} = \int_{\mathbb{R}} d\tau \int_{\mathcal{M}} d\mu\; \Psi^\dagger\left(i\partial_\tau - \hat{\mathcal{D}}\right)\Psi$$
 
-$$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{\mathcal{D}} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 在 $\mathcal{H}_\infty$ 上严格自伴（Sturm-Liouville + Neumann）。
 
@@ -127,7 +127,7 @@ $$S_{\eta,p} = \int_{\mathbb{R}} d\tau\left[\eta_p^\dagger(i\partial_\tau - \ome
 
 $$\mathcal{C}_p = \int_{\mathbb{Z}_p}\Psi_p\,dx - \Psi_\infty(u_p,\theta_p)$$
 
-一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方给出变系数 $\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2+1/4)$，不同于 $\hat{H}_\infty$。详见 `CQM_推导_经典路径.md` §3–§5。
+一阶与二阶是**两个独立构造**，非数学平方关系。一阶平方 $\hat{\mathcal{D}}^2 = -\partial_u^2+\partial_u-1/4$，不同于 $\hat{H}_\infty = -\partial_u^2+\partial_u$（差 $1/4$ 谱间隙）。详见 `CQM_推导_经典路径.md` §3–§5。
 
 ---
 
@@ -155,11 +155,11 @@ $$\boxed{(i\partial_\tau - \omega_p)\eta_p = -\lambda\mathcal{C}_p} \tag{M3}$$
 
 ## 四、$\hat{\mathcal{D}}^2$ 修正
 
-$$\hat{\mathcal{D}}^2 = v^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right) \neq \hat{H}_\infty$$
+$$\hat{\mathcal{D}}^2 = -\partial_u^2 + \partial_u - \frac{1}{4} \neq \hat{H}_\infty$$
 
 | | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立） |
 |:---|:---|:---|
-| 形式 | $v^2 e^{2u}(-\partial_u^2+1/4)$ | $-\partial_u^2+\partial_u$ |
+| 形式 | $-\partial_u^2+\partial_u-1/4$ | $-\partial_u^2+\partial_u$ |
 | 系数 | 变系数 | 常系数 |
 | 漂移项 | 无 | $+\partial_u$ |
 
@@ -188,15 +188,15 @@ $$U(\tau) = \exp(-i\hat{H}_{\text{tot}}\tau), \qquad U^\dagger U = I$$
 
 ---
 
-## 六、传输方程（一阶体区域退化）
+## 六、传输方程（RG 流特征线，独立构造）
 
-体区域 $(u,\theta) \neq (u_p,\theta_p)$：
+传输方程独立于一阶算符 $\hat{\mathcal{D}}$，来自经典 RG 流的特征线：
 
-$$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0 \;\xrightarrow{\Psi = e^{u/2}\phi}\; \boxed{\partial_\tau\phi + v\,e^u\partial_u\phi = 0} \tag{T1}$$
+$$\boxed{\partial_\tau\phi + v\,e^u\partial_u\phi = 0} \tag{T1}$$
 
 特征线：$\displaystyle\frac{du}{d\tau} = v\,e^u \;\Rightarrow\; r(\tau) = \frac{1}{-v\tau + \text{const}} \tag{T2}$
 
-**状态**：严格导出（测度补偿代数恒等，无近似）
+**状态**：独立构造（RG 流经典特征线，$v$ 为特征速度，$e^u$ 来自能标 $r = e^u$ 的非线性）
 
 ---
 
@@ -318,9 +318,9 @@ $$\boxed{S_{\text{eff}}[g, \psi, A] = \frac{1}{16\pi G_N} \int d^4x \sqrt{-g} \,
 | 1 | 几何与 Hilbert 空间 | $R,\hat{\mu},\mathcal{H}_\infty,\mathcal{H}_p$ | 构造性 | — |
 | 2 | 作用量 | $S_\infty^{(1)}, S_\infty^{(2)}, S_p, S_{\eta,p}$ | 形式写定 | — |
 | 3 | 母方程 | M0–M3 | 变分严格 | — |
-| 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2+1/4)$ | 严格代数 | — |
+| 4 | $\hat{\mathcal{D}}^2$ 修正 | $\hat{\mathcal{D}}^2 = -\partial_u^2+\partial_u-1/4$ | 严格代数 | — |
 | 5 | 全局幺正 | $\hat{H}_{\text{tot}}$ 自伴 | Stone 定理 | — |
-| 6 | 传输方程 | T1–T2 | 测度补偿 | — |
+| 6 | 传输方程 | T1–T2 | 独立构造 | — |
 | 7 | 二阶谱与间隙 | S1–S2, $E_0=1/4$ | 猜想 | Hilbert–Pólya |
 | 8 | 边界匹配 | $\epsilon_p\to0$ | 渐近严格 | — |
 | 9 | $p$ 进扇区 | P1–P2, A2 | 严格+假设 | "仅 2,3,5" |

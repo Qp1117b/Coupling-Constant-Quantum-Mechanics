@@ -64,7 +64,7 @@ $$e^u\Psi(-u) = \Psi(u) \implies e^{u/2}\phi(-u) = e^{u/2}\phi(u) \implies \phi(
 
 $$S_\infty^{(1)} = \int_{\mathbb{R}} d\tau \int_{\mathcal{M}} d\mu\; \Psi^\dagger\left(i\partial_\tau - \hat{\mathcal{D}}\right)\Psi$$
 
-$$\hat{\mathcal{D}} = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{\mathcal{D}} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 在 $\mathcal{H}_\infty$ 上严格自伴（Sturm-Liouville 理论，Neumann 条件消除边界项）。
 
@@ -122,41 +122,26 @@ $$\boxed{(i\partial_\tau - \omega_p)\eta_p = -\lambda\mathcal{C}_p}$$
 
 ## 五、$\hat{\mathcal{D}}^2$ 的正确计算
 
-$$\hat{\mathcal{D}} = v\,e^u\hat{D}, \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
+$$\hat{\mathcal{D}} = \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)$$
 
 **引理 5.1**：
 
-$$\hat{\mathcal{D}}^2 = v^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right)$$
+$$\hat{\mathcal{D}}^2 = -\partial_u^2 + \partial_u - \frac{1}{4}$$
 
 *证明*：
-$$\hat{\mathcal{D}}^2 = v^2 e^u\hat{D}e^u\hat{D}$$
 
-计算 $\hat{D}e^u$：
-$$\hat{D}e^u = -i(\partial_u - \tfrac{1}{2})e^u = -i\left(e^u + e^u\partial_u - \tfrac{1}{2}e^u\right) = -i\left(e^u\partial_u + \tfrac{1}{2}e^u\right) = e^u\left[-i(\partial_u + \tfrac{1}{2})\right]$$
-$$= e^u\left[-i(\partial_u - \tfrac{1}{2}) - i\right] = e^u(\hat{D} - i)$$
-
-因此：
-$$\hat{\mathcal{D}}^2 = v^2 e^u\left[e^u(\hat{D}-i)\right]\hat{D} = v^2 e^{2u}(\hat{D}^2 - i\hat{D})$$
-
-计算 $\hat{D}^2 - i\hat{D}$：
-$$\hat{D}^2 = -(\partial_u - \tfrac{1}{2})^2 = -\partial_u^2 + \partial_u - \tfrac{1}{4}$$
-$$-i\hat{D} = -i\left[-i(\partial_u - \tfrac{1}{2})\right] = -(\partial_u - \tfrac{1}{2}) = -\partial_u + \tfrac{1}{2}$$
-
-$$\hat{D}^2 - i\hat{D} = -\partial_u^2 + \partial_u - \tfrac{1}{4} - \partial_u + \tfrac{1}{2} = -\partial_u^2 + \tfrac{1}{4}$$
-
-故：
-$$\boxed{\hat{\mathcal{D}}^2 = v^2 e^{2u}\left(-\partial_u^2 + \frac{1}{4}\right)} \quad \blacksquare$$
+$$\hat{\mathcal{D}}^2 = \hat{D}^2 = -\left(\partial_u - \tfrac{1}{2}\right)^2 = -\partial_u^2 + \partial_u - \tfrac{1}{4} \quad \blacksquare$$
 
 **与 $\hat{H}_\infty$ 的比较**：
 
 | | $\hat{\mathcal{D}}^2$（一阶平方） | $\hat{H}_\infty$（二阶独立构造） |
 |:---|:---|:---|
-| 形式 | $v^2 e^{2u}(-\partial_u^2 + 1/4)$ | $-\partial_u^2 + \partial_u$ |
-| 系数 | 变系数（含 $e^{2u}$） | 常系数 |
+| 形式 | $-\partial_u^2 + \partial_u - 1/4$ | $-\partial_u^2 + \partial_u$ |
+| 系数 | 常系数 | 常系数 |
 | 漂移项 | 无 | 有（$+\partial_u$） |
 | 来源 | 一阶算符的严格代数平方 | Sturm-Liouville 独立构造 |
 
-**结论**：$(i\partial_\tau)^2\Psi = \hat{\mathcal{D}}^2\Psi$ 与 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 不等价。二阶作用量 $S_\infty^{(2)}$ 是独立假设，不是一阶方程的数学推论。两者通过共享的 Robin/Neumann 边界条件关联。
+**结论**：$(i\partial_\tau)^2\Psi = \hat{\mathcal{D}}^2\Psi$ 与 $(i\partial_\tau)^2\Phi = \hat{H}_\infty\Phi$ 不等价（差 $1/4$ 谱间隙）。二阶作用量 $S_\infty^{(2)}$ 是独立假设，不是一阶方程的数学推论。两者通过共享的 Robin/Neumann 边界条件关联。
 
 ---
 
@@ -188,26 +173,19 @@ $$\hat{H}_{\text{tot}} = \begin{pmatrix}
 
 $$(i\partial_\tau - \hat{\mathcal{D}})\Psi = 0$$
 
-### 7.2 测度补偿
+### 7.2 传输方程独立构造
 
-令 $\Psi(\tau,u,\theta) = e^{u/2}\phi(\tau,u,\theta)$，代入：
-
-$$i\partial_\tau(e^{u/2}\phi) = -i\,v\,e^u\left(\partial_u - \frac{1}{2}\right)(e^{u/2}\phi)$$
-
-左边：$i\,e^{u/2}\partial_\tau\phi$
-
-右边：
-$$\left(\partial_u - \frac{1}{2}\right)(e^{u/2}\phi) = \frac{1}{2}e^{u/2}\phi + e^{u/2}\partial_u\phi - \frac{1}{2}e^{u/2}\phi = e^{u/2}\partial_u\phi$$
-$$-i\,v\,e^u \cdot e^{u/2}\partial_u\phi = -i\,v\,e^{3u/2}\partial_u\phi$$
-
-等式：
-$$i\,e^{u/2}\partial_\tau\phi = -i\,v\,e^{3u/2}\partial_u\phi$$
-
-除以 $i\,e^{u/2}$：
+传输方程独立于一阶算符 $\hat{\mathcal{D}}$ 构造：
 
 $$\boxed{\partial_\tau\phi + v\,e^u\partial_u\phi = 0}$$
 
-传输方程在体区域严格成立。
+**特征线**：一阶 PDE $\partial_\tau\phi + v e^u \partial_u\phi = 0$ 的特征线方程为 $du/d\tau = v e^u$。令 $r = e^u$，则 $du/d\tau = (1/r)\,dr/d\tau$，代入得：
+
+$$\frac{dr}{d\tau} = v\,r^2$$
+
+此特征线恰好与标准 QFT one-loop RG 流 $dg/dt = -\beta_0 g^3$（$r = g^2$）形式一致（见 `CQM_数学_Adele纲领.md` §3.3 CQM–标准 RG 精确字典），为传输方程提供物理基础。
+
+传输方程在体区域独立成立，$v$ 和 $e^u$ 仅在此出现。
 
 ---
 
@@ -313,14 +291,14 @@ $$\boxed{E_0 = \frac{1}{4}}$$
 | $\hat{H}_\infty$ 自伴性 | Sturm-Liouville 唯一 | Friedrichs 扩张 |
 | 一阶母方程 | 变分严格 | Dirac 源支集局限 |
 | 二阶母方程 | 独立变分严格 | 非一阶平方 |
-| $\hat{\mathcal{D}}^2$ 计算 | 严格 | $v^2 e^{2u}(-\partial_u^2+1/4)$ |
+| $\hat{\mathcal{D}}^2$ 计算 | 严格 | $-\partial_u^2+\partial_u-1/4$ |
 | $\hat{H}_\infty$ 配方 | 严格 | $-\partial_u^2+\partial_u = \hat{D}^2+1/4$ |
 | 谱间隙 $1/4$ | Sturm-Liouville | 嘉当矩阵 Friedrichs 扩张涌入 |
 | 全局幺正 | Stone 定理 | $\hat{H}_{\text{tot}}$ 自伴 |
-| 体传输方程 | 严格 | 无近似 |
+| 体传输方程 | 独立构造 | 形式匹配 RG 流（非变分导出） |
 | 边界匹配 | $\epsilon_p \to 0$ | 渐近严格 |
 | 黎曼零点 | 后验匹配 | 仍开放 |
 
 ---
 
-**关键关系**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的严格平方给出 $\hat{\mathcal{D}}^2 = v^2 e^{2u}(-\partial_u^2+1/4)$（变系数），而二阶作用量中的 $\hat{H}_\infty = -\partial_u^2+\partial_u$（常系数）是独立构造。两者不等价，但共享谱间隙 $1/4$ 与 Robin/Neumann 边界条件。
+**关键关系**：一阶方程 $i\partial_\tau\Psi = \hat{\mathcal{D}}\Psi$ 的严格平方给出 $\hat{\mathcal{D}}^2 = -\partial_u^2+\partial_u-1/4$，而二阶作用量中的 $\hat{H}_\infty = -\partial_u^2+\partial_u$ 是独立构造。两者差 $1/4$ 谱间隙，共享 Robin/Neumann 边界条件。传输方程 $\partial_\tau\phi + v e^u\partial_u\phi = 0$ 独立构造（RG 流特征线），$v$ 与 $e^u$ 仅出现在传输方程中。
