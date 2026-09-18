@@ -18,7 +18,7 @@
 | **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |
 | **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |
 | **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |
-| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 ☯_n=n·☯₁ 缩放律与归一化普适性** |
+| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 ☯︎_n=n·☯︎₁ 缩放律与归一化普适性** |
 | **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |
 | **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
@@ -42,7 +42,7 @@ Axioms
 ├── A1.1: 正则对易关系 [û, p̂_u] = i
 │ ├── 耦合强度 r = exp(u) > 0
 │ ├── 耦合坐标 u = ln r
-│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ ☯/2 (Robertson 不等式)
+│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ ☯︎/2 (Robertson 不等式)
 │ └── 14 个辅助定理（中心化算符、方差、Hermitian 性等）
 │
 ├── H3.3 + A2.1: 退相干稳态 = 正四单纯形 → A₄ 嘉当矩阵
@@ -59,7 +59,7 @@ Axioms
 │ ├── SU(5) Weyl 群 = S₅ = 4-单纯形对称群
 │ └── Dynkin 指数 I = 5/3
 │
-├── A2.2: 相变量子 ☯ = ξ'(1)/ξ(1)
+├── A2.2: 相变量子 ☯︎ = ξ'(1)/ξ(1)
 │ ├── Mathieu 参数 q = φ/2（黄金比例一半，从 A₄ 本征值严格导出）
 │ │ ├── φ = (1+√5)/2, φ² = φ + 1
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
@@ -68,10 +68,10 @@ Axioms
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30
 │ ├── 4-单纯形 f-向量和 = 30 = N_cycle
-│ ├── 谱修正因子 κ = (31+☯)/30
-│ ├── G_N 因子 F(☯) = ☯²·𝔠₁·exp(-2/☯)·(1+κ☯)
-│ ├── F(☯) 严格为正
-│ └── 谱常数网络: ☯·λ_c·𝔠₁ ∈ (6, 10)
+│ ├── 谱修正因子 κ = (31+☯︎)/30
+│ ├── G_N 因子 F(☯︎) = ☯︎²·𝔠₁·exp(-2/☯︎)·(1+κ☯︎)
+│ ├── F(☯︎) 严格为正
+│ └── 谱常数网络: ☯︎·λ_c·𝔠₁ ∈ (6, 10)
 │
 ├── 素数结构
 │ ├── 活跃素数 {2, 3, 5}：Φ(k) > 0 的唯一素数
@@ -85,10 +85,10 @@ Axioms
 │ └── 退相干速率 Γ(u) = ρ(u)
 │
 └── m_p（实验输入）
- └── G_N = I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) / m_p²
+ └── G_N = I·λ_c·☯︎²·𝔠₁·exp(-2/☯︎)·(1+κ☯︎) / m_p²
  ├── G_N > 0（严格正性）
  ├── G_N 因子分解
- ├── 层级因子 exp(-2/☯) ≈ 10⁻³⁸
+ ├── 层级因子 exp(-2/☯︎) ≈ 10⁻³⁸
  ├── CODATA 偏差 < 10 ppm
  └── α⁻¹_SU(5) = 16384π/375 ≈ 137.2583
  ├── 137 < α⁻¹_SU(5) < 138
@@ -123,7 +123,7 @@ Axioms
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
 | — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
-| — | 相变量子 ☯ = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
+| — | 相变量子 ☯︎ = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
 
@@ -217,7 +217,7 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 
 ## 本次更新亮点 (v0.5.4)
 
-- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（Tr_☯ 理想化）
+- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（Tr_☯︎ 理想化）
 - **A₄ 双重角色（哈密顿量 = 能动张量）**：`cartanHamiltonian`（A₄ 作为离散 Laplacian，07 嘉当结构 §2.1）与 `stressEnergyTrace`（A₄ 谱和 = 8）一致性定理 `cartanHamiltonian_trace_eq_stressEnergyTrace`——同一谱 {λ₁..λ₄} 同时充当哈密顿量迹与能动张量迹
 - **张量序参量正性**：`superconductingOrderComponent_pos` / `superconductingOrderTensor_pos` / `superconductingOrderTensor_cartanWeights_pos`——A₄ 正定谱下超导序参量逐通道与全体严格为正
 - **谱间隙退化到 BCS**：谱间隙 λ₁ = (3−√5)/2 的强大 >0/<1/最小定理；`bcsGapInGapChannel`/`bcsTcInGapChannel` 表现谱间隙同时缩放 Δ 与 T_c；`gapChannel_gapRatio_invariant` 说明普适能隙比不受谱间隙缩放影响
