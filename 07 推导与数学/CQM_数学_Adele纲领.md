@@ -12,10 +12,11 @@
 
 **数学结构**：
 1. 壳层双曲 Laplacian $\hat{H} = \hat{D}^2 + 1/4$（$\hat{D} = -i(\partial_u - 1/2)$）从 Poincaré 上半平面度量严格导出
-2. 元 RG 传输方程 $\partial_\tau \phi + v e^u \partial_u \phi = 0$（经典 RG 流特征线，运动学辅助），其中相变量子 $☯ = \xi'(1)/\xi(1) \approx 0.0230957$
-3. 角向马蒂厄方程在 CQM 线 $a=2q$ 上的谱 $\lambda_c \approx 1.3160229$
-4. SU(5) Weyl 群对称性 $W_m = 5 \cdot 2^{m-1}$
-5. **β₁ = −☯︎/q_c ≈ −0.07020**：U(1) 扇区的 CQM β 函数，由 Mathieu 锁定相变解析延拓推导
+2. 元 RG 传输方程 $\partial_\tau \phi + v e^u \partial_u \phi = 0$（经典 RG 流特征线，运动学辅助，$v$ 为特征速度）
+3. 相变量子 $☯ = \xi'(1)/\xi(1) \approx 0.0230957$（耦合空间作用量量子，黎曼 ξ 函数集体泛函）
+4. 角向马蒂厄方程在 CQM 线 $a=2q$ 上的谱 $\lambda_c \approx 1.3160229$
+5. SU(5) Weyl 群对称性 $W_m = 5 \cdot 2^{m-1}$
+6. **β₁ = −☯︎/q_c ≈ −0.07020**：U(1) 扇区的 CQM β 函数，由 Mathieu 锁定相变解析延拓推导
 
 **唯象预言**：
 - $\sin^2\theta_W(M_Z) = 0.23120$（实验值 0.23120；CQM 公式计算值 0.231163，角向修正计算值 0.2311892176，$\delta\theta_W^{(1)}$ 为框架内构造后验校验）
@@ -154,8 +155,6 @@ $$\frac{1}{\beta_0 t} = \frac{1}{-v\tau + C} \quad\Rightarrow\quad \beta_0 t = -
 $$\boxed{\tau = -\frac{\beta_0}{v} \cdot \ln\frac{\mu}{\Lambda} = \frac{\beta_0}{v} \cdot \ln\frac{\Lambda}{\mu}}$$
 
 **流动方向**：因果时 $\tau$ 从 UV（$\tau \to -\infty$，对应 $\mu \to \infty$，耦合趋于零）流向 IR（$\tau \to 0^-$，对应 $\mu \to \Lambda^+$，耦合发散）。$\tau$ 增大 = 能标降低 = 耦合增强，与 QCD 渐近自由方向完全一致。
-
-**特征速度 $v$ 与相变量子 ☯ 的关系**：$v$ 是传输方程的独立参数（特征速度），其量纲与 ☯ 相同（均为无量纲）。二者的精确关系尚未从第一性原理导出——若假设 $v = ☯$，则 $\tau = -(\beta_0/☯) \cdot \ln(\mu/\Lambda)$，但此假设需进一步论证。当前框架中 $v$ 作为独立参数处理。
 
 ### 3.4 p进 RG 方程
 
