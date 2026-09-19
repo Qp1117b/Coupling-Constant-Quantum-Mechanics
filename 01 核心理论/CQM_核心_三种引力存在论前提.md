@@ -85,9 +85,9 @@ $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \
 其中：
 - $I = 5/3$ 是 SU(5) Dynkin 指数；
 - $\lambda_c \approx 1.316$ 是 Mathieu 方程临界参数；
-- $☯︎ = \xi'(1)/\xi(1)$；
+- $☯ = \xi'(1)/\xi(1)$；
 - $\mathfrak{c}_1 = 1/4 + \gamma_1^2$；
-- $\kappa = (31+☯︎)/30$。
+- $\kappa = (31+☯)/30$。
 
 该公式与实验值偏差约 -3 ppm（构造后验数字校验，待第三方独立复现；该推导为框架内构造公式，未被主流学界接受为公认的独立第一性推导）。
 
@@ -149,7 +149,7 @@ $$\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta \,\delta_v}} \quad \textbf{(FG因果
 
 $$\frac{d\tau}{dt} = \sqrt{-g_{00}} \approx 1 + \frac{\Phi}{c^2}$$
 
-Regge 曲率由此进入不确定性关系：$\delta_v \to \Delta v_\tau \to \Delta r/\langle r\rangle$——角亏涨落经固有时流速涨落 $\Delta v_\tau$，强制总耦合强度 $r$ 产生相对涨落 $\Delta r/\langle r\rangle \simeq \Delta u$（$u = \ln r$）。曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\Delta u \cdot \Delta\delta_v \ge ☯︎\sqrt{1-\beta\delta_v}/\beta$ 见超导文档 §8。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯︎/2$，$☯︎$ 为单一普适相变量子**。这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\Phi$——与第一通道共用联络 $\mathcal{A}_{\text{FG}}$，但遵循规范场规则（§3.3）。
+Regge 曲率由此进入不确定性关系：$\delta_v \to \Delta v_\tau \to \Delta r/\langle r\rangle$——角亏涨落经固有时流速涨落 $\Delta v_\tau$，强制总耦合强度 $r$ 产生相对涨落 $\Delta r/\langle r\rangle \simeq \Delta u$（$u = \ln r$）。曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\Delta u \cdot \Delta\delta_v \ge ☯\sqrt{1-\beta\delta_v}/\beta$ 见超导文档 §8。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子**。这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\Phi$——与第一通道共用联络 $\mathcal{A}_{\text{FG}}$，但遵循规范场规则（§3.3）。
 
 > 注意：CQM 的精细引力**不表现为几何吸引**，也**不表现为时空测地线限制**——它是 FG 纤维丛上的因果限制/退相干场强度，由 Regge 角亏直接给出。经典牛顿引力极限（$G_N$ 项）仍按 GR 保留，二者不同层、同源。
 
@@ -177,7 +177,7 @@ $$\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2$$
 
 #### 3.7 同步方程的定态性与Dirac条件
 
-**定态性**：同步方程是**条件本征值问题**，不是动力学方程。同步是**退相干事件**（紧化条件 $p_u = 2\pi n/L_u$ 与FG条件 $p_u = v_\tau/☯︎$ 的联立解），不是时间演化过程。固有时方程是**层级结构的静态RG参数化**，非动力学。
+**定态性**：同步方程是**条件本征值问题**，不是动力学方程。同步是**退相干事件**（紧化条件 $p_u = 2\pi n/L_u$ 与FG条件 $p_u = v_\tau/☯$ 的联立解），不是时间演化过程。固有时方程是**层级结构的静态RG参数化**，非动力学。
 
 **Dirac条件**（缝合核子空间与耦合常数空间）：
 
@@ -283,7 +283,7 @@ $$\delta(Z,N) = 1 - \varepsilon_0 \cdot \frac{N}{Z+N}, \qquad \varepsilon_0 = 0.
 
 | 编号 | 缺口 | 内容 | 对应 Lean 形式化 |
 |------|------|------|------------------|
-| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`08 超导/CQM_超导_专题与扩展.md` §11.8）；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `Gravity.lean`（谱参数 $☯︎,\mathfrak{c}_1$ 定义）；`SPAF.neutronDefect` 形式化 $D(\delta)$ |
+| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式构造性导出（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`08 超导/CQM_超导_专题与扩展.md` §11.8）；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `Gravity.lean`（谱参数 $☯,\mathfrak{c}_1$ 定义）；`SPAF.neutronDefect` 形式化 $D(\delta)$ |
 | **N2** | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\epsilon(\delta)$ 的具体公式 | `SPAF.neutronDefect` 定义 $D(\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 建立角亏-曲率关系，但 $\epsilon(\delta)$ 显式几何公式未写 |
 | **N3** | β 衰变动力学条件未引入 | 孤立中子不稳定，束缚中子稳定的机制未定量 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` 已区分自由/束缚缺陷，但 β 衰变稳定性动力学未定量 |
 | **N4** | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |
@@ -342,14 +342,14 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | 中子缺陷矩阵 | $D(\delta)$ | 形式锁定（`SPAF.neutronDefect`） |
 | δ 函数形式 | $\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$ | 构造性导出；$\varepsilon_0$ 第一性来源待严格推导（N1） |
 | 质量差 | 1.293 MeV | 实验输入 |
-| 量子引力谱参数 | $☯︎, \mathfrak{c}_1$ | 解析数论（`Gravity.lean`） |
+| 量子引力谱参数 | $☯, \mathfrak{c}_1$ | 解析数论（`Gravity.lean`） |
 | $G_N$ | 谱公式 | 框架内构造后验数值校验，偏差约 −3 ppm，待第三方独立复现 |
 | FG Regge 曲率 | $\delta_v$ | 定义明确（`MolecularGeometry.deficitAngleDensity`） |
 | FG 联络 | $\mathcal{A}_{\text{FG}}$（由 $\delta_v$ 分步生成） | 框架定义（未形式化） |
 | FG 伴丛曲率 | $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$，$W_v=\exp(i\delta_v\hat T)$ | 框架定义（未形式化） |
 | FG 伴丛运动方程 | $D*F=*J_\Phi$ | 框架性（机制待展开） |
 | FG 固有时流速 | $d\tau/dt = \sqrt{1-\beta\delta_v}$ | **假设**（FG核心机制，形式化见`CouplingSpace.properTimeFlow`） |
-| 超导条件 | $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge ☯︎\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ | 见超导文档 §9（`CouplingSpace.transitionCouplingSpectrum`） |
+| 超导条件 | $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ | 见超导文档 §9（`CouplingSpace.transitionCouplingSpectrum`） |
 
 ---
 
@@ -377,7 +377,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 
 | 文档对象 | Lean 文件 / 定义 | 状态 |
 |----------|------------------|------|
-| QG 谱参数 $☯︎, \mathfrak{c}_1$ | `Gravity.lean`（ξ 相关谱参数） | |
+| QG 谱参数 $☯, \mathfrak{c}_1$ | `Gravity.lean`（ξ 相关谱参数） | |
 | $G_N$ 谱公式 | `Gravity.lean`（`G_N` 相关定义） | 数值吻合 |
 | 中子缺陷矩阵 $D(\delta)$ | `SPAF.neutronDefect` | 形式锁定 |
 | 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |

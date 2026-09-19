@@ -64,7 +64,7 @@ open Filter
 - [firstPrinciples_chain_pos]：张量序参量（A₄ 谱）与推导链能隙闭式同为正
 
 ## 参考文献
-- ruster (2026). CQM_数学_嘉当结构（07 推导与数学）§2.1–§2.2.
+- ruster (2026). CQM_核心_集成理论（01 核心理论）§7.3 嘉当矩阵三重身份.
 - ruster (2026). CQM_超导核心理论（08 超导）.
 - Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity.
 -/

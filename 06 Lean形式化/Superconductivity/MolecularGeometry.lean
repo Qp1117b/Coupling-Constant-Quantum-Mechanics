@@ -62,7 +62,7 @@ import Superconductivity.CartanSuperconductivity
 
 ## 参考文献
 - Regge (1961). General relativity without coordinates. Nuovo Cim. 19, 558.
-- ruster (2026). CQM_数学_嘉当结构. CQMFormal/07 推导与数学/.
+- ruster (2026). CQM_核心_集成理论. CQMFormal/01 核心理论/.
 -/
 
 namespace CQM

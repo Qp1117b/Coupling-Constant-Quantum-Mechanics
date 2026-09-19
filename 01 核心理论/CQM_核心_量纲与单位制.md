@@ -1006,7 +1006,7 @@ h \text{ 是唯一基本锚点，其本身来自最原始的自守形式。}
 
 $G_N$ 的谱公式（`CQM_引力_GN谱公式`）在本单位制下显式包含 $\hbar c$：
 
-$$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯︎^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯︎}\right) \cdot (1 + \kappa ☯︎)$$
+$$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)$$
 
 量纲：$[\hbar c / m_p^2] = (ML^2T^{-1} \cdot LT^{-1}) / M^2 = M^{-1}L^3T^{-2}$，与 $[G_N]$ 一致。
 

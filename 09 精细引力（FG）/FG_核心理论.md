@@ -75,7 +75,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，不是拟合参数，原则上由Regge剖分的牛顿极限定值（定值计算尚需完善）。**耦合动量 $p_u = v_\tau/☯︎$（相变量子 $☯︎$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯︎/2$，$☯︎$ 为单一普适相变量子。注意：此处相变量子 $☯︎$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，不是拟合参数，原则上由Regge剖分的牛顿极限定值（定值计算尚需完善）。**耦合动量 $p_u = v_\tau/☯$（相变量子 $☯$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子。注意：此处相变量子 $☯$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
 
 ### 3.2 同步方程
 
@@ -85,10 +85,10 @@ $$\hat{\mathcal{S}}_k \Psi_k(u) = n_k \Psi_k(u)$$
 
 $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
-- $☯︎ = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
+- $☯ = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
 - $L_u = \ln\Lambda$（耦合常数空间紧化U(1)周长）
 - 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=对称性强度）
-- 等价关系 $\frac{L_u}{2\pi ☯︎}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
+- 等价关系 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$
 
 ### 3.3 本征群→耦合常数
@@ -301,7 +301,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯︎$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
+| $☯$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 8. 文献锚定

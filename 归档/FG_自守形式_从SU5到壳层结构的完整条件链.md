@@ -95,7 +95,7 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 
 **严格性**：Adele环是数论中研究全局域的基本对象（Tate-Iwasawa理论）。限制直积保证紧致性和积分理论。
 
-**文献**：见 `07 推导与数学/CQM_数学_Adele纲领.md`。
+**文献**：Adele 环与限制直积的标准理论见 Tate-Iwasawa 理论相关文献。
 
 ### 3.3 条件3：开紧子群 $K_f$（周期边界 → 紧化约束）
 
@@ -182,7 +182,7 @@ $$\hat{\mathcal{S}} = \hat{\mathcal{S}}_{\text{nucleon}} \otimes \hat{\mathbb{I}
 
 其中：
 
-- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi ☯︎}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
+- 核子部分：$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi ☯}\sqrt{1 - \beta\hat{\delta}_v}$（曲率→同步成本）
 - 耦合常数部分：$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u} - \ln p)$（质数投影算符的叠加）
 
 **同步方程**（= Hecke本征方程）：
@@ -395,4 +395,3 @@ $$\begin{array}{ccc}
 
 - `FG_核心理论.md`：FG物理机制层（§5.1.1壳层结构推导、§4.3含Casimir同步算符、§5.2同步算符谱结构）
 - `FG_纤维丛理论.md`：FG纤维丛完整理论（§4.2双空间同步算符、§5群谱与朗兰兹纲领、§9.7同步算符=紧化算符）
-- `07 推导与数学/CQM_数学_Adele纲领.md`：Adele环基础理论
