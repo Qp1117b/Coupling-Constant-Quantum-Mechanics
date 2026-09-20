@@ -31,7 +31,7 @@ $$\boxed{\text{黎曼零点 } \gamma_n \quad \Longleftrightarrow \quad \text{物
 
 核心参数：
 
-$$☯ = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957$$
+$$☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} \approx 0.0230957$$
 
 $$\mathfrak{c}_n = \frac{1}{4} + \gamma_n^2$$
 
@@ -85,7 +85,7 @@ $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \
 其中：
 - $I = 5/3$ 是 SU(5) Dynkin 指数；
 - $\lambda_c \approx 1.316$ 是 Mathieu 方程临界参数；
-- $☯ = \xi'(1)/\xi(1)$；
+- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$；
 - $\mathfrak{c}_1 = 1/4 + \gamma_1^2$；
 - $\kappa = (31+☯)/30$。
 

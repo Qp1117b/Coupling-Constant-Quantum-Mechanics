@@ -364,7 +364,7 @@ $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u
 
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$（紧化U(1)基矢）
 - 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），等价关系 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$ 锁定 $N_k$
-- $☯ = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
+- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$（Riemann xi函数）
 - 紧化 = $\hat{u}$ 的**谱边界条件** $\psi(u+L_u) = \psi(u)$，与核子声子态联立
 
 ### 4.3 同步算符的完整形式（含 Casimir）
@@ -460,7 +460,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形

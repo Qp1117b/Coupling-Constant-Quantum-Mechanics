@@ -85,7 +85,7 @@ $$\hat{\mathcal{S}}_k \Psi_k(u) = n_k \Psi_k(u)$$
 
 $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
-- $☯ = \xi'(1)/\xi(1) \approx 0.0230957$（Riemann xi函数）
+- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$（Riemann xi函数）
 - $L_u = \ln\Lambda$（耦合常数空间紧化U(1)周长）
 - 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=对称性强度）
 - 等价关系 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
@@ -301,7 +301,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\xi'(1)/\xi(1) \approx 0.0230957$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 8. 文献锚定
