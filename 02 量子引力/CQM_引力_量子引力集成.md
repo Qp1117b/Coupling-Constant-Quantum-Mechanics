@@ -115,7 +115,7 @@ $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$ 是耦合空间的相
 |:---|:---|
 | **作用量量子** | 耦合空间中最小可分辨的"相位单元" |
 | **统计周期** | 再生产幂等性 $\mu^2=\mu$ 在连续流中的完成尺度 |
-| **不确定性关系的极限** | $\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$——$☯$ 标记了压缩的极限。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子** |
+| **不确定性关系的极限** | $\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$——$☯$ 标记了压缩的极限。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子** |
 
 $\tau_0 = a/c$ 是粗粒化采样的技术参数（嘉当方程的时间步进），而 $☯$ 是本体论层面的相变量子——前者是后者的涌现尺度。
 

@@ -16,7 +16,7 @@ import SpectralGeometry.RiemannXi
 
 ## 物理意义
 
-- ☯ = ☯_1 ≈ 0.023096 是跨所有 GL(n) 的**普适相变量子单位**
+- ☯ = ☯_1 ≈ 0.023096 是跨所有 GL(n) 的**相变量子单位**
 - GL(n) 各层的层级因子按 exp(-2/C)^{1/n} 缩放
 - GL(5) 平凡分支给出 ☯_5 = 5☯，与 SU(5) 秩 4+1 结构吻合
 - 低层 GL(n) 主导物理（层级抑制最强）
@@ -88,7 +88,7 @@ theorem spectralQuantumGLn_eq_n_times_C1 (n : ℕ) (Λ1_val Λ1_deriv : ℝ)
 
 /-- **推论：归一化相变量子 ☯_n/n = ☯_1 普适**
 
-对所有 n ≥ 1，☯_n / n = ☯_1 = ☯，即 ☯ 是跨 GL(n) 的普适相变量子单位。 -/
+对所有 n ≥ 1，☯_n / n = ☯_1 = ☯，即 ☯ 是跨 GL(n) 的相变量子单位。 -/
 theorem normalized_spectralQuantum_universal (n : ℕ) (hn : n > 0)
     (Λ1_val Λ1_deriv : ℝ)
     (h_Λ1_nezero : Λ1_val ≠ 0)

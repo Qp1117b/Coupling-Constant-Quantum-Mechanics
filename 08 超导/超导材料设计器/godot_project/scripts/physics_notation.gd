@@ -27,7 +27,7 @@ const UNIV_GAP_RATIO = 3.5278     # 2πe^{-γ}
 const A4_GAP = 0.38196601125      # (3-√5)/2
 
 # CQM 特有常数
-const SPECTRAL_C = 0.02309570897  # 谱量子 ξ'(1)/ξ(1)
+const SPECTRAL_C = 0.02309570897  # 相变量子 ☯ = d/ds ln ξ(s)|_{s=1}
 
 # === LaTeX 风格符号 ===
 

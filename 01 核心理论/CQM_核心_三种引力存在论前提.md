@@ -149,7 +149,7 @@ $$\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta \,\delta_v}} \quad \textbf{(FG因果
 
 $$\frac{d\tau}{dt} = \sqrt{-g_{00}} \approx 1 + \frac{\Phi}{c^2}$$
 
-Regge 曲率由此进入不确定性关系：$\delta_v \to \Delta v_\tau \to \Delta r/\langle r\rangle$——角亏涨落经固有时流速涨落 $\Delta v_\tau$，强制总耦合强度 $r$ 产生相对涨落 $\Delta r/\langle r\rangle \simeq \Delta u$（$u = \ln r$）。曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\Delta u \cdot \Delta\delta_v \ge ☯\sqrt{1-\beta\delta_v}/\beta$ 见超导文档 §8。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子**。这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\Phi$——与第一通道共用联络 $\mathcal{A}_{\text{FG}}$，但遵循规范场规则（§3.3）。
+Regge 曲率由此进入不确定性关系：$\delta_v \to \Delta v_\tau \to \Delta r/\langle r\rangle$——角亏涨落经固有时流速涨落 $\Delta v_\tau$，强制总耦合强度 $r$ 产生相对涨落 $\Delta r/\langle r\rangle \simeq \Delta u$（$u = \ln r$）。曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\Delta u \cdot \Delta\delta_v \ge ☯\sqrt{1-\beta\delta_v}/\beta$ 见超导文档 §8。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**。这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\Phi$——与第一通道共用联络 $\mathcal{A}_{\text{FG}}$，但遵循规范场规则（§3.3）。
 
 > 注意：CQM 的精细引力**不表现为几何吸引**，也**不表现为时空测地线限制**——它是 FG 纤维丛上的因果限制/退相干场强度，由 Regge 角亏直接给出。经典牛顿引力极限（$G_N$ 项）仍按 GR 保留，二者不同层、同源。
 

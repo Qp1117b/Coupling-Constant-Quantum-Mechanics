@@ -196,7 +196,7 @@ $$\hat{p}_u = \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v}$$
 
 $$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v} \approx 0}$$
 
-**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为单一普适相变量子。**
+**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子。**
 
 **关键**：Dirac条件是**共形自举方程**（结合律）的**数学必然**。共形自洽要求耦合常数被锁死为离散值。
 
@@ -541,7 +541,7 @@ CFT视角：紧化算符是**共形映射**，同步本征态是**初级算符**
 
 ### 9.2 与朗兰兹分层共振的关系
 
-`CQM_核心_朗兰兹分层共振与谱量子.md`中的GL(n)分层：
+`CQM_核心_朗兰兹分层共振与相变量子.md`中的GL(n)分层：
 
 $$GL(5) \xrightarrow{\text{紧化}} SU(5) \xRightarrow{\text{重组实现}} \text{规范群}$$
 
