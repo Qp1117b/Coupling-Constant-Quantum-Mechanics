@@ -130,7 +130,7 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 
 $$[\hat{u}, \hat{p}_u] = i, \quad \frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$$
 
-### 牛顿引力常数谱公式
+### 牛顿引力常数可能公式
 
 $$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)$$
 

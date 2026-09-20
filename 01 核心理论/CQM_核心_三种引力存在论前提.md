@@ -78,7 +78,7 @@ $$\frac{d^2x^\mu}{d\tau^2} + \Gamma^\mu_{\alpha\beta}\frac{dx^\alpha}{d\tau}\fra
 
 #### 2.4 核心公式
 
-CQM 给出牛顿引力常数的谱公式：
+CQM 给出牛顿引力常数的可能公式：
 
 $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)}$$
 
@@ -343,7 +343,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | δ 函数形式 | $\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$ | 构造性导出；$\varepsilon_0$ 第一性来源待严格推导（N1） |
 | 质量差 | 1.293 MeV | 实验输入 |
 | 量子引力谱参数 | $☯, \mathfrak{c}_1$ | 解析数论（`Gravity.lean`） |
-| $G_N$ | 谱公式 | 框架内构造后验数值校验，偏差约 −3 ppm，待第三方独立复现 |
+| $G_N$ | 可能公式 | 框架内构造后验数值校验，偏差约 −3 ppm，待第三方独立复现 |
 | FG Regge 曲率 | $\delta_v$ | 定义明确（`MolecularGeometry.deficitAngleDensity`） |
 | FG 联络 | $\mathcal{A}_{\text{FG}}$（由 $\delta_v$ 分步生成） | 框架定义（未形式化） |
 | FG 伴丛曲率 | $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$，$W_v=\exp(i\delta_v\hat T)$ | 框架定义（未形式化） |
@@ -378,7 +378,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | 文档对象 | Lean 文件 / 定义 | 状态 |
 |----------|------------------|------|
 | QG 谱参数 $☯, \mathfrak{c}_1$ | `Gravity.lean`（ξ 相关谱参数） | |
-| $G_N$ 谱公式 | `Gravity.lean`（`G_N` 相关定义） | 数值吻合 |
+| $G_N$ 可能公式 | `Gravity.lean`（`G_N` 相关定义） | 数值吻合 |
 | 中子缺陷矩阵 $D(\delta)$ | `SPAF.neutronDefect` | 形式锁定 |
 | 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |
 | FG 顶点角亏 $\delta_v$ | `MolecularGeometry.deficitAngleDensity` | |

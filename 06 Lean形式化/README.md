@@ -160,7 +160,7 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 | 谱几何与 Mathieu 方程 | `SpectralGeometry` | 114 |
 | 因果时几何 | `PrimeGeometry` | 79 |
 | 禁闭-退相干等价 | `Decoherence` | 15 |
-| G_N 谱公式与 α⁻¹ | `PhysicalConstants` | 20 |
+| G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |
 | 方法论基础 | `Methodology` | 6 |
 | 强引力超导涌现 | `Superconductivity` | 340 |
 
@@ -254,7 +254,7 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 - **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）
 - **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）
 - **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138
-- **G_N 谱公式**：严格正性 + CODATA 偏差 < 10 ppm
+- **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm
 
 ## 本次更新亮点 (v0.5.1)
 
