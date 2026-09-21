@@ -300,7 +300,7 @@ $$\hat{L}_q = -\frac{d^2}{dz^2} + 2q\cos 2z$$
 
 在 $\sin((2k+1)z)$（$k = 0,1,2,\ldots$）张成的 $\pi$-周期奇函数空间上的最小本征值为 $\lambda_{\min}(q)$，其小 $q$ 展开为
 
-$$\lambda_{\min}(q) = 1 - \frac{q^2}{8} - \frac{q^3}{64} + \cdots \qquad (\lambda_{\min}(0) = 1)$$
+$$\lambda_{\min}(q) = 1 - q - \frac{q^2}{8} + \frac{q^3}{64} - \cdots \qquad (\lambda_{\min}(0) = 1)$$
 
 临界条件是**双向干涉临界**：
 
@@ -312,7 +312,7 @@ $$1 - 3q = \frac{q^2}{9-2q - \frac{q^2}{25-2q - \frac{q^2}{49-2q - \cdots}}}$$
 
 的最小正根，$\lambda_c = 4q_c$。数值：$q_c = 0.3290057278\ldots$，$\lambda_c = 1.3160229113\ldots$。该方程在 $q \in (0,1)$ 内唯一根（$f(q) = 1-3q-T_1(2q,q)$ 严格单调，介值定理 + 单调性）。
 
-**命名说明（避免与标准 Mathieu 文献混淆）**：标准 Mathieu 方程 $y'' + (a - 2q\cos 2z)y = 0$ 的第一奇特征值 $b_1$ 采用**零势能零点在 $a = 1$** 的归一化，满足 $b_1(q) = 1 + q - q^2/8 - q^3/64 + \cdots$。本文档的临界条件用算符谱表述（$\lambda_{\min}$，零点在 $1$，随 $q$ 下降），二者相差一个 $q$：$b_1(q) = \lambda_{\min}(q) + q$。物理内容（双向干涉临界）由 $\lambda_{\min}(q_c) = 2q_c$ 表达，不依赖 $b_1$ 的归一化；引用时不应写成"$b_1(q) = 2q$"——在标准归一化下其根为 $q \approx 0.8997$，是另一个条件。
+**命名说明**：算子 $\hat{L}_q = -d^2/dz^2 + 2q\cos 2z$ 对应 DLMF（NIST §28.2）标准 Mathieu 方程 $y'' + (a - 2q\cos 2z)y = 0$，其第一奇特征值 $b_1(q) = \lambda_{\min}(q) = 1 - q - q^2/8 + q^3/64 - \cdots$（DLMF §28.6.3）。临界条件 $\lambda_{\min}(q_c) = 2q_c$ 即 $b_1(q_c) = 2q_c$，等价于连分数方程 $1 - 3q = T_1(2q, q)$，根 $q_c \approx 0.3290$。注意：部分教材采用 $y'' + (a + 2q\cos 2z)y = 0$ 约定，此时 $b_1(q) = 1 + q - q^2/8 - \cdots$（相当于 DLMF 的 $b_1(-q)$），$b_1(q) = 2q$ 的根为 $q \approx 0.890$，是不同方程的根，不可混用。
 
 ### 8.3 公式结构解析
 
