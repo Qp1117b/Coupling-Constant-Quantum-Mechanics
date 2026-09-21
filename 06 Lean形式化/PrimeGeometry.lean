@@ -39,7 +39,7 @@ import PrimeGeometry.Particle
 | 名称 | 类型 | 文件 | 说明 |
 |:-----|:-----|:-----|:-----|
 | `windingDensityConvergence` | AXIOM | WindingDensity.lean | 素数缠绕密度收敛为分段常数 |
-| `totalProbabilityConservation` | AXIOM | WindingDensity.lean | 总概率守恒 Σ a_i·ρ_i = 1 |
+| `totalProbabilityConservation` | THEOREM | WindingDensity.lean | 总概率守恒 Σ a_i·ρ_i = 1（由密度赋值假设证明） |
 | `causalChainSelfClosure` | POSTULATE | Compton.lean | 因果链从母体断裂后自我闭合为因果环 |
 | `leptonMassOrdering` | AXIOM | Compton.lean | 三代轻子质量层级 m_e < m_μ < m_τ |
 

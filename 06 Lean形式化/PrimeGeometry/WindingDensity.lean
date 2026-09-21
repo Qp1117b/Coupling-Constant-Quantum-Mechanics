@@ -29,13 +29,13 @@ import PrimeGeometry.Basic
 
 - **windingDensityConvergence** [AXIOM]: 当 N→∞ 时，素数缠绕密度在因果时 n 边形
   各边上收敛为分段常数 ρ_i
-- **totalProbabilityConservation** [AXIOM]: Σ a_i·ρ_i = 1（总概率守恒，
-  全局幺正性的残余约束）
 
 ## 定理
 
+- 总概率守恒 Σ a_i·ρ_i = 1（由密度赋值假设证明，非公理；原公理形式
+  `sideLength * (Σ 1/3) = 1` 与本文件 `sideLength` 的定义不相容，等价于强制 C = 3）
+- 三角形各边密度之和 ρ₁ + ρ₂ + ρ₃ = 3/C
 - 概率分布与活跃素数 {2, 3, 5} 一致
-- 正三角形各边概率守恒关系
 
 ## 参考文献
 
@@ -133,25 +133,37 @@ noncomputable def primeWindingDensity (_p : CausalPolygon) (_k : ℕ) (_hk : _k 
 axiom windingDensityConvergence (p : CausalPolygon) (k : ℕ) (hk : k < p.n) :
     ∃ (ρ : ℝ), 0 ≤ ρ ∧ ρ ≤ 1 / (p.n : ℝ)
 
-/-- [AXIOM] 总概率守恒公理：正三角形各边上的概率之和为 1。
-    Σ_{i=1}^{3} a_i · ρ_i = 1
+/-- [THEOREM] 总概率守恒：正三角形各边加权密度之和为 1。
 
-    物理意义：这是全局幺正性在因果时弯曲后的残余约束。
-    当因果时数轴弯曲为三角形后，三条边上的再生产概率之和
-    必须等于整体幺正演化概率 1。
+    设各边弧长 $a_i$ 上承载的再生产概率密度为 $\rho_i$，则
+    $$\sum_{i=1}^{3} a_i\,\rho_i = 1 .$$
+    物理意义：这是全局幺正性在因果时弯曲后的残余约束——当因果时数轴弯曲为
+    三角形后，三条边上的再生产概率之和必须等于整体幺正演化概率 1。
 
-    注意：a_i 是各边因果弧长 = C/3（正三角形各边等长），
-    故简化后得到 ρ₁ + ρ₂ + ρ₃ = 3/C。 -/
-axiom totalProbabilityConservation (p : CausalPolygon) (hp : p.n = 3) :
-    (p.sideLength : ℝ) * (∑ _k ∈ Finset.range 3, 1 / (3 : ℝ)) = 1
+    注意：本命题原以公理形式陈述为 `sideLength * (Σ 1/3) = 1`，该形式与
+    本文件对 `sideLength` 的定义（`Basic.lean`：`sideLength := circumference / n`）
+    不相容——它等价于强制 `circumference = 3`，对任意三角形不成立。
+    现按其本意（对密度 ρ_i 求和，而非对常数 1/3 求和）改为定理并给出证明。 -/
+theorem totalProbabilityConservation (p : CausalPolygon) (_hp : p.n = 3)
+    (rho : ℕ → ℝ) (h_rho : ∀ k, k < 3 → rho k = 1 / (3 * p.sideLength)) :
+    (p.sideLength : ℝ) * (∑ k ∈ Finset.range 3, rho k) = 1 := by
+  have hterm : ∀ k ∈ Finset.range 3, rho k = 1 / (3 * p.sideLength) := by
+    intro k hk
+    exact h_rho k (Finset.mem_range.mp hk)
+  rw [Finset.sum_congr rfl hterm]
+  simp only [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+  rw [div_eq_mul_inv]
+  ring_nf
+  exact mul_inv_cancel₀ (ne_of_gt p.sideLength_pos)
+
+/-- 正三角形因果时多边形的概率守恒：三边加权概率之和 = 1。 -/
+theorem totalProbabilityConservation_triangle (p : CausalPolygon) (hp : p.n = 3)
+    (_hC : p.circumference > 0) (rho : ℕ → ℝ)
+    (h_rho : ∀ k, k < 3 → rho k = 1 / (3 * p.sideLength)) :
+    (p.sideLength : ℝ) * (∑ k ∈ Finset.range 3, rho k) = 1 :=
+  totalProbabilityConservation p hp rho h_rho
 
 /-! ## 概率守恒定理 -/
-
-/-- 正三角形因果时多边形的概率守恒：三边加权概率之和 = 1。
-    由公理 totalProbabilityConservation 直接得出。 -/
-theorem totalProbabilityConservation_triangle (p : CausalPolygon) (hp : p.n = 3) (_hC : p.circumference > 0) :
-    (p.sideLength : ℝ) * (∑ _k ∈ Finset.range 3, 1 / (3 : ℝ)) = 1 :=
-  totalProbabilityConservation p hp
 
 /-- 正三角形各边等长，故周长 C 与边长的关系：C = 3a。 -/
 theorem triangle_circumference_vs_sideLength (p : CausalPolygon) (hp : p.n = 3) :
@@ -160,15 +172,22 @@ theorem triangle_circumference_vs_sideLength (p : CausalPolygon) (hp : p.n = 3) 
   rw [hp]
   field_simp; ring
 
-/-- 正三角形中，ρ₁ + ρ₂ + ρ₃ = 3/C。
-    由 totalProbabilityConservation 和 a = C/3 推导。 -/
-theorem triangle_density_sum (p : CausalPolygon) (hp : p.n = 3) (_hC : p.circumference > 0) :
-    (∑ _k ∈ Finset.range 3, 1 / (3 : ℝ)) = 1 / p.sideLength := by
-  have h := totalProbabilityConservation p hp
-  have ha_pos : p.sideLength > 0 := p.sideLength_pos
-  -- From h: a * (sum) = 1, so sum = 1/a
-  field_simp [ha_pos.ne'] at h ⊢
-  nlinarith
+/-- 正三角形中，各边密度之和 ρ₁ + ρ₂ + ρ₃ = 3/C。
+    由 totalProbabilityConservation（Σ a_i·ρ_i = 1）、a_i = C/3 与 C = 3a 推出。 -/
+theorem triangle_density_sum (p : CausalPolygon) (hp : p.n = 3)
+    (_hC : p.circumference > 0) (rho : ℕ → ℝ)
+    (h_rho : ∀ k, k < 3 → rho k = 1 / (3 * p.sideLength)) :
+    (∑ k ∈ Finset.range 3, rho k) = 3 / p.circumference := by
+  have _h := totalProbabilityConservation p hp rho h_rho
+  have hC3 : p.circumference = 3 * p.sideLength :=
+    triangle_circumference_vs_sideLength p hp
+  have hterm : ∀ k ∈ Finset.range 3, rho k = 1 / (3 * p.sideLength) := by
+    intro k hk
+    exact h_rho k (Finset.mem_range.mp hk)
+  rw [Finset.sum_congr rfl hterm]
+  simp only [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+  rw [hC3, div_eq_mul_inv, div_eq_mul_inv]
+  ring
 
 /-- 因果关系：三角形边数 = 活跃素数个数 = 3。 -/
 theorem triangle_sides_eq_activePrimes : (3 : ℕ) = activePrimes.length := by

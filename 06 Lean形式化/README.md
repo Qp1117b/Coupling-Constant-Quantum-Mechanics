@@ -4,12 +4,28 @@
 
 本目录包含**耦合常数量子力学（CQM）**的 Lean 4 形式化验证项目。
 
-## 编译状态
+## 编译状态（本次实测，Lean 4.29.1 = `lean-toolchain` 固定版本）
 
-**全部 9 个库编译通过**（3313 jobs） | Lean 4.29.1 | **零 CQM 警告**
+**7 个库编译通过，3 个库部分模块不通过**（`lake build` 整体不成功）。逐模块实测结果：
 
-> 注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，
-> 非 CQM 代码问题，无法从本项目消除。`lake build` 完全成功。
+| 库 | 状态 | 不通过的模块 |
+|:---|:---:|:---|
+| CausalSet | ✅ 通过 | — |
+| CouplingSpace | ✅ 通过 | — |
+| CartanAlgebra | ✅ 通过 | — |
+| Decoherence | ✅ 通过 | — |
+| PhysicalConstants | ✅ 通过 | — |
+| PrimeGeometry | ✅ 通过 | — |
+| Methodology | ✅ 通过 | — |
+| SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（:151/:160 `HasDerivAt.mul` 单子不匹配、:209 类型不匹配）、`Mathieu.lean`、`GLnTrivialSpectralQuantum.lean`（坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`，该路径在 4.29.1 已不存在） |
+| Superconductivity | ❌ 部分 | `ElementCartan.lean`、`BridgeTheorems.lean`、`FormalizationRigor.lean`（坏导入 `Mathlib.Topology.Definitions.Filter`）、`DeepConstruction.lean`、`DeepResearch.lean`（后两者因 FormalizationRigor 连带失败） |
+| FGChain | ❌ 多数 | `QuantumOscillation.lean`（:107 正性证明失败）、`FiberBundle.lean`、`CurvatureOperator.lean`、`CurvatureDerivation.lean`、`ReggeBase.lean`、`SyncOperator.lean`、`Synchronization.lean`、`Observable.lean`、`BundleEOM.lean`、`Hierarchy.lean`（根模块 `FGChain.lean` 导入 12 个，其中 10 个不通过） |
+
+> **失败原因分类**：(1) **Mathlib 版本漂移**——`GLnTrivialSpectralQuantum.lean` 与 `FormalizationRigor.lean` 的导入路径在 4.29.1 中已改名/移除，属维护性失效；(2) **Mathlib API 变更**——`RiemannXi.lean` 的 `HasDerivAt.mul` 用法与当前 Mathlib 不匹配；(3) **证明本身未通过**——`QuantumOscillation.lean:107` 的正性目标未证出。三类均**先于本次审计存在**（已在 `HEAD` 的独立 worktree 中复现同一错误集）。
+>
+> 另注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题。
+
+**本次修复后新增通过**：`PrimeGeometry`（原含一条可反证公理，已改为定理）、`Methodology`（原含一条与定义互斥的公理，已改为定理）——两者现均 `Build completed successfully` 且无 CQM 警告。
 
 ## 库结构
 
@@ -24,7 +40,7 @@
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
-| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i☯$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**待编译验证** |
+| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i☯$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
 
 ## 形式化推导链
 
@@ -64,7 +80,7 @@ Axioms
 │ │ ├── φ = (1+√5)/2, φ² = φ + 1
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
 │ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472
-│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）；该方程与标准 Mathieu 特征值 b₁(q)=2q 的对应关系待复核，见 `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2
+│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q²/8 - …）。注意与标准 Mathieu 特征值 b₁ 的归一化相差一个 q（b₁ = λ_min + q），故本临界条件不写作 b₁(q) = 2q
 │ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块无导入者，不进入 λ_c/G_N 的取值链）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30

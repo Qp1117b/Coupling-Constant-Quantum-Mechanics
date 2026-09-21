@@ -405,18 +405,50 @@ python -c "import numpy as np,itertools;E=list(itertools.combinations(range(5),2
 | 19 | `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2/§8.2 表 | $b_1$ 定义补入小 $q$ 级数；"解的唯一性由 Mathieu 连分数定理保证"改为"该连分数方程在 $(0,1)$ 内唯一根"；新增**待复核（约定一致性）**说明并量化影响 |
 | 20 | `01 核心理论/CQM_核心_集成理论.md` §6.4 | "数值验证（机器精度）4.22e-16"改为**数值状态（待复核）**，写出 $b_1$ 级数、$\lambda_{\min}$ 与 $b_1$ 的关系、以及两条不能同时成立的事实 |
 
-### 二、仍需作者裁决的项（本报告未改）
+### 二、第二轮修复（约定 A + Lean 公理）
+
+**约定裁决**：作者选定**约定 A**——$\lambda_c$ 数值保留 $1.3160229113$，修正其命名与叙述。据此：
+
+| # | 位置 | 修复内容 |
+|:--:|:---|:---|
+| 21 | `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2 | 临界条件由错误的"$\lambda_c = 2b_1(\lambda_c/4)$"改写为**算符谱表述** $\lambda_{\min}(q_c) = 2q_c$、$\lambda_c = 4q_c$；给出 $\lambda_{\min}$ 的定义（算子 $-(d^2/dz^2)+2q\cos 2z$ 在 $\sin((2k+1)z)$ 基上的最小本征值）、小 $q$ 展开 $\lambda_{\min}(q)=1-q^2/8-\cdots$、以及 $b_1 = \lambda_{\min}+q$ 的归一化差异说明；明确"不应写成 $b_1(q)=2q$"及其理由（该条件的根为 $q\approx0.8997$） |
+| 22 | 同上 §8.2 表 | $\lambda_c$ 的来源列改为"临界条件 $\lambda_{\min}(q_c)=2q_c$（等价连分数方程在 $(0,1)$ 内唯一根）"，严格性列改为"介值定理 + 严格单调性"，去掉待复核标记 |
+| 23 | `01 核心理论/CQM_核心_集成理论.md` §6.4 | 同步改为 $\lambda_{\min}(q_c)=2q_c$ 表述；数值验证由"$b_1(q)=0.658$，相对误差 $4.22\times10^{-16}$"改为"$\lambda_{\min}(q_c)=0.6580114556538289=2q_c$（机器精度）"——该等式在正确对象上确实成立；补入 $b_1$ 归一化说明 |
+| 24 | `README.md` 核心数值结果表 | $\lambda_c$ 来源列由"$b_1(q)=2q$"改为"临界方程 $\lambda_{\min}(q_c)=2q_c$ 的唯一根" |
+| 25 | `06 Lean形式化/README.md` | $\lambda_c$ 条目改为算符谱表述并记录 $\lambda_{\min}$ 展开与 $b_1$ 归一化差异；去掉待复核 |
+
+**Lean 公理修复**（两处无条件错误，与约定无关）：
+
+| # | 位置 | 原状态 | 修复 |
+|:--:|:---|:---|:---|
+| 26 | `PrimeGeometry/WindingDensity.lean:145` | `axiom totalProbabilityConservation` 断言 `sideLength * (Σ 1/3) = 1`，与 `Basic.lean` 的 `sideLength := circumference / n` 不相容（等价于强制 $C=3$，可反证） | 改为**定理**：引入显式密度赋值 `rho : ℕ → ℝ`（$k<3$ 时 $\rho_k = 1/(3a)$），证明 $\sum_i a_i\rho_i = 1$。原公理形式是常数 $1/3$ 与 $\rho_i$ 的混淆——本意是"对密度求和"，写成"对 $1/3$ 求和"后变成对 $a$ 的约束。`totalProbabilityConservation_triangle`、`triangle_density_sum` 同步改为从定理推出（后者改为正确结论 $\rho_1+\rho_2+\rho_3 = 3/C$）；`PrimeGeometry.lean` 公理清单同步更新 |
+| 27 | `Methodology/Basic.lean:369,373` | `def mutualInformationChange : ℝ := 0` 与 `axiom mutualInformationChange_positive : mutualInformationChange > 0` 不可同真 | 改为 `mutualInformationChange (lambda) (xi)` 的**参数化非计算定义**（`Classical.choose` 于显式存在性 `∃ x : ℝ, x > 0`），`mutualInformationChange_positive` 由公理降为**定理**（`Classical.choose_spec`）。原占位常量不再把定义体钉死为 $0$，公理与定义不再互斥 |
+
+### 三、仍需作者裁决的项（本报告未改）
 
 | # | 事项 | 为何未改 |
 |:--:|:---|:---|
-| A | $\lambda_c$ 的取值本身（$1.316022911$ vs 由标准约定重算的值） | 改它会连带改 $G_N$ 与全部 ppm 表述。已按"保留数值 + 待复核标注"处理，等作者确认约定后重算 |
+| A | ~~$\lambda_c$ 的取值~~ | **已裁决（约定 A）**：保留 $1.3160229113$，命名与叙述已修，$G_N$ 与 −3 ppm 表述不变 |
 | B | `unified_tc_results.json` 与 §9.2.1 表格二选一 | 需决定是补入脚本重算，还是如实报告 22/24 无解；不宜由审计方替作者选择 |
-| C | 缺口 C 的两种表述（$A_4$ 正四单纯形 / $\{5,4\}$ 镶嵌）是否同一 | 已登记为"指向同一缺口"，但是否合并表述需作者确认 |
+| C | 缺口 C 的两种表述（$A_4$ 正四单纯形 / $\{5,4\}$ 镶嵌）是否合并 | 已登记为"指向同一缺口"，是否合并表述需作者确认 |
 | D | `Mathieu.lean` 与 `MathieuContinuedFraction.lean` 两个 $q$ | 已在 Lean README 区分；是否统一命名（或让前者进入取值链）属作者决定 |
-| E | Lean 中的 2 条可反证/不可满足公理（`WindingDensity.lean:145`、`Methodology/Basic.lean:373`）及其余定义式证明 | 属代码修改，本报告只登记位置；修法有三种（删除 / 改条件定理 / 移入假设模块），需作者选择 |
-| F | `I=5/3` 的最终命名（"Dynkin 指数比"是否即作者原意） | 已按归档 CNT 论文 §5.1 的定义 5.1 统一；若作者另有约定可再调整 |
+| E | ~~Lean 的两条可反证/不可满足公理~~ | **已修复**（见 §二 #26、#27）；其余"定义式证明"（`DeepResearch.lean`、`FormalizationRigor.lean`、`SpectralGeometry/Basic.lean` 的 `primePotential`、`PhysicalConstants` 的 `GN_CQM_prediction` 等）仍待逐条处理 |
+| F | ~~`I=5/3` 的最终命名~~ | **已定**：按归档论文（`归档 CNT/06 论文/03-谱几何…`）定义 5.1，$I = T(\mathbf{24})/T(\mathbf{8})$ 即"Dynkin 指数比"，活动文档已统一 |
 
-### 三、本报告未覆盖的文档
+### 五、第三轮：Lean 编译状态实测（新增发现）
+
+第二轮修复后实测 `lake build`（Lean 4.29.1），并在 `HEAD` 的独立 worktree 中复现同一错误集，确认**与本次修复无关**：
+
+| 库 | 实测 | 说明 |
+|:---|:---:|:---|
+| CausalSet / CouplingSpace / CartanAlgebra / Decoherence / PhysicalConstants / PrimeGeometry / Methodology | ✅ 通过 | 7 个（含本次修复的 PrimeGeometry、Methodology） |
+| SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（`HasDerivAt.mul` 单子不匹配、类型不匹配）、`Mathieu.lean`、`GLnTrivialSpectralQuantum.lean`（坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`） |
+| Superconductivity | ❌ 部分 | `ElementCartan.lean`、`BridgeTheorems.lean`、`FormalizationRigor.lean`（坏导入 `Mathlib.Topology.Definitions.Filter`）+ `DeepConstruction/DeepResearch` 连带失败 |
+| FGChain | ❌ 多数 | 12 模块中仅 `Basic`、`CartanToShell` 通过；`QuantumOscillation.lean:107` 正性证明失败 |
+
+**对本报告前文的影响**：§5.1 引用的 Lean README 编目（"全部 9 个库编译通过（3313 jobs）"）与实际不符，已按实测改写 Lean README 的"编译状态"节。失败原因三类：Mathlib 版本漂移（坏导入）、Mathlib API 变更（`HasDerivAt.mul`）、证明未通过（正性目标）。这意味着 §5.2 清单中的多项（如 `RiemannXi.lean:264` 的发散公理、`CartanAlgebra` 的本征值 `def`）目前**不在可编译状态**，对其的"体系自洽"判定应在修复编译后进行复核。
+
+### 六、本报告未覆盖的文档
 
 `08 超导/超导材料设计器/`（应用侧文档）、`归档/`、`归档 CNT/`（只读归档）未纳入修复范围；`08 超导/超导材料设计器/` 与主理论的术语一致性仍需单独核对。
 

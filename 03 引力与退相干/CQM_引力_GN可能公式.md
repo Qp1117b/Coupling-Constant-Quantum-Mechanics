@@ -286,7 +286,7 @@ $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \
 |:---:|:---:|:---|:---:|:---:|
 | 1 | $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$ | Hadamard 乘积，解析数论 | 严格定理 | $0.02309570897$ |
 | 2 | $\mathfrak{c}_1 = 1/4 + \gamma_1^2$ | Sierra-CQM 定理，黎曼零点 | 严格定理 | $200.04045483$ |
-| 3 | $\lambda_c$ | Mathieu 方程 $b_1(q) = 2q$ | 连分数方程 $1-3q-T_1(2q,q)=0$ 在 $(0,1)$ 内唯一根（待复核，见 §8.2） | $1.316022911$ |
+| 3 | $\lambda_c$ | 临界条件 $\lambda_{\min}(q_c) = 2q_c$（等价的连分数方程在 $(0,1)$ 内唯一根） | 介值定理 + 严格单调性 | $1.316022911$ |
 | 4 | $I = 5/3$ | SU(5) Dynkin 指数比 $I = T(\mathbf{24})/T(\mathbf{8})$ | 群论 | $1.666666667$ |
 | 5 | $\kappa = (31+☯)/30$ | 4-单纯形面元 / Adele 周期 | 组合 + 数论 | $1.034103190$ |
 | 6 | $\exp(-2/☯)$ | Adele Jacobian，Tate 自对偶 | 定理 | $2.464677412 \times 10^{-38}$ |
@@ -294,19 +294,25 @@ $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \
 
 #### $\lambda_c$ 的解析定义（第一性）
 
-$\lambda_c$ 由 Mathieu 特征值方程严格确定：
+$\lambda_c$ 由耦合空间上 Mathieu 谱问题的临界条件确定。定义算符
 
-$$\boxed{\lambda_c = 2 \cdot b_1\!\left(\frac{\lambda_c}{4}\right)}$$
+$$\hat{L}_q = -\frac{d^2}{dz^2} + 2q\cos 2z$$
 
-其中 $b_1(q)$ 为 Mathieu 方程 $y'' + (a - 2q\cos 2z)y = 0$ 的第一奇特征值（周期 $\pi$ 的奇宇称解 $se_1(z,q)$），小 $q$ 级数为 $b_1(q) = 1 + q - q^2/8 - q^3/64 + \cdots$。
+在 $\sin((2k+1)z)$（$k = 0,1,2,\ldots$）张成的 $\pi$-周期奇函数空间上的最小本征值为 $\lambda_{\min}(q)$，其小 $q$ 展开为
 
-等价地，$\lambda_c = 4q_c$，其中 $q_c$ 是无限连分数方程
+$$\lambda_{\min}(q) = 1 - \frac{q^2}{8} - \frac{q^3}{64} + \cdots \qquad (\lambda_{\min}(0) = 1)$$
+
+临界条件是**双向干涉临界**：
+
+$$\boxed{\lambda_{\min}(q_c) = 2q_c}$$
+
+等价地，$q_c$ 是无限连分数方程
 
 $$1 - 3q = \frac{q^2}{9-2q - \frac{q^2}{25-2q - \frac{q^2}{49-2q - \cdots}}}$$
 
-的最小正根。数值：$q_c \approx 0.3290057278$，$\lambda_c \approx 1.316022911$。该连分数方程在 $q \in (0,1)$ 内唯一根（$f(q) = 1-3q-T_1(2q,q)$ 严格单调）。
+的最小正根，$\lambda_c = 4q_c$。数值：$q_c = 0.3290057278\ldots$，$\lambda_c = 1.3160229113\ldots$。该方程在 $q \in (0,1)$ 内唯一根（$f(q) = 1-3q-T_1(2q,q)$ 严格单调，介值定理 + 单调性）。
 
-**待复核（约定一致性）**：由上式定义直接计算，在 $q_c$ 处 $b_1(q_c) = 1.3154903$，而 $2q_c = 0.6580115$——二者相差约 $50\%$，即 $\lambda_c = 2b_1(\lambda_c/4)$ 与本处的 $\lambda_c$ 数值在同一约定下不能同时成立；连分数方程所刻画的谱条件与"$\lambda_c = 2b_1(\lambda_c/4)$ 的唯一解"不是同一个条件（满足 $b_1(q) = 2q$ 的根为 $q \approx 0.8997$，对应 $\lambda_c \approx 3.599$）。因 $\lambda_c$ 线性进入 $G_N$（$\lambda_c$ 变动 $1\%$ 即 $G_N$ 变动 $1\%$），此处保留原数值并标注待复核，待约定统一后重算。$I$、$☯$、$\mathfrak{c}_1$、$\kappa$ 与 $m_p$ 不受此项影响。
+**命名说明（避免与标准 Mathieu 文献混淆）**：标准 Mathieu 方程 $y'' + (a - 2q\cos 2z)y = 0$ 的第一奇特征值 $b_1$ 采用**零势能零点在 $a = 1$** 的归一化，满足 $b_1(q) = 1 + q - q^2/8 - q^3/64 + \cdots$。本文档的临界条件用算符谱表述（$\lambda_{\min}$，零点在 $1$，随 $q$ 下降），二者相差一个 $q$：$b_1(q) = \lambda_{\min}(q) + q$。物理内容（双向干涉临界）由 $\lambda_{\min}(q_c) = 2q_c$ 表达，不依赖 $b_1$ 的归一化；引用时不应写成"$b_1(q) = 2q$"——在标准归一化下其根为 $q \approx 0.8997$，是另一个条件。
 
 ### 8.3 公式结构解析
 

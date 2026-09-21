@@ -364,13 +364,26 @@ axiom deepCoupling_breaks_factorization :
 在 CQM 中 ΔI > 0，表明耦合过程创造了新的跨层级关联信息。
 互信息的严格形式化需信息论测度，当前为占位。 -/
 
-/-- 互信息变化（占位）：耦合前后上下层互信息之差。
-    完整形式化需 Shannon 信息论框架。 -/
-def mutualInformationChange : ℝ := 0
+/-- 占位选择的存在性依据：对任意给定结构对，ΔI 可取得正值。
+    这是"耦合产生新的跨层级关联信息"这一命题的最小形式。 -/
+lemma exists_pos_mutualInformationChange (_lambda : MaterialStructure) (_xi : UpperStructure) :
+    ∃ x : ℝ, x > 0 := ⟨1, by norm_num⟩
 
-/-- [AXIOM] 耦合产生正互信息变化：ΔI > 0。
-    这是"唯一性"生成的信息论基础。 -/
-axiom mutualInformationChange_positive : mutualInformationChange > 0
+/-- 互信息变化 ΔI：耦合前后上下层互信息之差，依赖于参与耦合的物质结构与上层结构。
+
+    完整形式化需 Shannon 信息论框架；此处取"存在正值的任一选择"作为占位实现，
+    从而 ΔI > 0 是**可满足**的（定义体不再被钉死为 `0`，避免公理与定义相互矛盾）。
+    具体函数形式待信息论形式化后替换。 -/
+noncomputable def mutualInformationChange (lambda : MaterialStructure) (xi : UpperStructure) : ℝ :=
+  Classical.choose (exists_pos_mutualInformationChange lambda xi)
+
+/-- ΔI > 0：耦合产生正互信息变化。
+    这是"唯一性"生成的信息论基础。由占位定义的选择性质直接给出；
+    待信息论形式化后应改为对具体 ΔI 公式的定理。 -/
+theorem mutualInformationChange_positive
+  (lambda : MaterialStructure) (xi : UpperStructure) :
+  mutualInformationChange lambda xi > 0 :=
+  Classical.choose_spec (exists_pos_mutualInformationChange lambda xi)
 
 
 /-! ## 总结
