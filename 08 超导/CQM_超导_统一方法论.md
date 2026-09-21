@@ -283,30 +283,26 @@ CQM超导预测是相对第一性：
 
 ## 10. 实现路线
 
-> **实现状态**：本节列出的四个计算脚本（`cqm_element_fg.py`、`cqm_regge_to_tc.py`、`cqm_cell_fg_hybrid.py`、`cqm_cell_fg_to_tc.py`）**均不在仓库中**。因此 Phase 1–4 目前是**待实现的路线**，不是已有的计算链；文档他处引用这些脚本的数值结论同样无可复核产物。仓库中现存的数据产物只有 `cqm_analysis/element_fg_table.json`（元素 FG 表，可由 `cqm_framework/` 的原子/晶体数据库再生）与 `cqm_analysis/superconductors_deduplicated.csv`（226 条材料实验数据）。
+> **实现状态**：Phase 1–4 目前是**待实现的路线**，不是已有的计算链；文档他处涉及这些计算的数值结论均无可复核产物。仓库中现存的数据产物只有 `cqm_analysis/element_fg_table.json`（元素 FG 表，可由 `cqm_framework/` 的原子/晶体数据库再生）与 `cqm_analysis/superconductors_deduplicated.csv`（226 条材料实验数据）。
 
 Phase 1: 元素FG穷尽列举（完全第一性）
-- cqm_element_fg.py
 - 118个元素→核子分布→纤维丛→嘉当矩阵→Dynkin图→Regge剖分
 - 预计算元素FG纤维丛表（顶点位置+边+面+角亏）
 
 Phase 2: 统一从纤维丛到Tc的步骤（完全第一性）
-- cqm_regge_to_tc.py
 - 输入：Regge剖分（顶点位置+边+面）+原子质量
 - 步骤A-F：剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式
 
 Phase 3: 分子FG构造（需化学数据）
-- cqm_cell_fg_hybrid.py（分子FG无独立脚本，取"元素FG拓扑+晶胞FG晶格参数修正"杂交流水线）
 - 输入：化学式+分子结构（键长/键角）
 - 从元素FG表组合+跨原子联络→分子纤维丛→Regge剖分
-- 调用Phase 2计算Tc
+- 调用 Phase 2 计算 Tc
 
 Phase 4: 晶胞FG构造（需晶体数据）
-- cqm_cell_fg_to_tc.py
 - 输入：晶胞结构（空间群/Wyckoff位置/晶格常数）
 - 从分子FG+空间群周期化→晶胞纤维丛→Regge剖分
 - 选取单位分布
-- 调用Phase 2计算Tc
+- 调用 Phase 2 计算 Tc
 
 ## 11. 与BCS方法的对比
 
