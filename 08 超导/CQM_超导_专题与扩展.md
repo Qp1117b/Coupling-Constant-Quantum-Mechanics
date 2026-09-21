@@ -627,7 +627,7 @@ $$\text{材料结构} \xrightarrow{\text{Regge几何}} \delta_v \xrightarrow{\te
 
 **关键发现：最小分布单元 + 环节补全消除增强缺口**
 
-裸涨落 $\Delta\delta_0^{\text{bare}} \sim 0.001$ 与 $T_c$ 闭式要求 $\Delta\delta_0^{\text{eff}} > 0.23$ 的差距约 230 倍来自计算链中环节缺失和公式错误。**增强因子的引入是不必要的**——补全环节并修正公式后，缺口自然消除。
+裸涨落 $\Delta\delta_0^{\text{bare}} \sim 0.001$ 与 $T_c$ 闭式要求 $\Delta\delta_0^{\text{eff}} > 0.23$ 的差距约 230 倍来自计算链中环节缺失和公式错误。**增强因子的引入是不必要的**——补全环节并理顺公式后，该差距由计算链自身吸收（见 §11.14）。
 
 **修正1：最小分布单元（N消去）**
 
@@ -650,7 +650,7 @@ $$\langle \Delta l_{ij}^2\rangle = \frac{3\hbar}{4\omega_D}\left(\frac{1}{m_i}+\
 - $\delta_{\text{pressure}} = P/(3B)$：压力诱导（氢化物主导）
 - $\delta_{\text{intrinsic}}$：电子结构内禀角亏，来自 Fermi 面几何 frustration（元素超导体主导）
 
-**修正后的完整公式（双尺度涨落）**：
+**完整公式（双尺度涨落）**：
 
 Regge 剖分顶点是**晶胞**（原子/分子/复合物），不是单个原子。晶胞不是刚体——晶胞内原子相对运动贡献角亏涨落。总涨落为晶胞间（声学模）与晶胞内（光学模）的平方和：
 
@@ -723,7 +723,7 @@ $$T_c \approx c_{\text{cat}} \cdot (\theta_D \cdot \Delta\delta_0)^{a_{\text{cat
 （验证脚本：`cqm_analysis/cqm_regge_to_tc.py`）
 
 #### 方程组逻辑顺序与 $\delta_v$ 的非独立性
-**关键澄清**：自由能公式（方程11+14）与 arccoth 闭式（方程8+9+10）的等价关系需要明确逻辑顺序：
+**逻辑顺序说明**：自由能公式（方程11+14）与 arccoth 闭式（方程8+9+10）的等价关系需要明确逻辑顺序：
 
 1. **$T_c$ 从自由能公式计算**（方程11+14，基本定义）：
 $$T_c = \sqrt{\frac{8 \Delta\delta_0^2 K_{\text{eff}} \theta_D}{9\ln 2}}$$
@@ -870,7 +870,7 @@ $$n_c \mathrel{-}= \frac{3/4}{\kappa_A} = \frac{3}{4} \cdot \frac{\lambda_{\min}
 #### ★★★★ f电子抑制修正：从局域化电子分数导出正确抑制强度
 **物理前提**：f电子局域化不参与Cooper配对，抑制超导。抑制强度应正比于**局域化电子分数**（f电子数/总电子数），而非原子分数（有f电子的原子数/总原子数）。
 
-**原公式（有问题）**：
+**原子分数形式的抑制公式**（不适用，列出以说明为何改用电子分数）：
 
 $$T_c \mathrel{\times}= \exp\left(-C_{F\_SUPP} \cdot f_{\text{atom}}\right), \quad f_{\text{atom}} = \frac{\text{有f电子的原子数}}{\text{总原子数}}$$
 
@@ -945,15 +945,15 @@ $$T_c \mathrel{\times}= \exp\left(-C_{F\_SUPP} \cdot f_{\text{electron}} \cdot s
 
 4. **耦合强度**：Nb和W的谱结构几乎相同，但Tc差600倍。需要能带结构信息，超出当前代数构造的范围。
 
-**已整合修正**：
+**计入当前精度口径的修正**：
 - 条件数各向异性修正：$-(3/4)/\kappa_A$（50.3%→50.8%）
 - f电子电子分数修正：$f_{\text{electron}} \times s_{\text{root}}$（50.8%→52.8%）
 
-**已推导但未整合**（因对称误差标准下无效）：
+**已推导但未计入精度口径**（因对称误差标准下无效）：
 - 重费米子修正：$f_{\text{atom}} \times \exp(-d_{\text{count}}) \times 3$（运动三重分化，$\beta_{\text{HF}}=3$）
 - π电子配对修正：$\exp(-\alpha \cdot n_{\text{no\_d}} \cdot \exp(-k \cdot d_{\text{count}}))$
 
-（验证脚本：`cqm_analysis/cqm_unified_tc.py`、`cqm_analysis/cqm_regge_to_tc.py`、`cqm_analysis/cqm_regge_to_tc.py`）
+（验证脚本：`cqm_analysis/cqm_unified_tc.py`、`cqm_analysis/cqm_regge_to_tc.py`——两脚本当前不在仓库中，本节数值结论待补入后方可复核。）
 
 ## 11.13 第一性推导细节
 
@@ -1413,7 +1413,7 @@ $n=4$ 跃迁：$T_c(4) = \frac{\theta_D}{2 \cdot \text{arccoth}(x_4)}$，$x_4 = 
 
 **推导链**：
 
-1. **熵差**（§11.3 定理4）：$S_2 - S_1 = \ln 2 \cdot (1 + \frac{1}{8}) \cdot \tanh\frac{T_c}{\theta_D}$
+1. **熵差**（§11.3 统计极限下的 $\zeta(s)$ 计算）：$S_2 - S_1 = \ln 2 \cdot (1 + \frac{1}{8}) \cdot \tanh\frac{T_c}{\theta_D}$
 
 2. **低温近似**（$T_c \ll \theta_D$）：$\tanh\frac{T_c}{\theta_D} \approx \frac{T_c}{\theta_D}$，故 $S_2 - S_1 \approx \frac{9\ln 2}{8} \cdot \frac{T_c}{\theta_D}$
 

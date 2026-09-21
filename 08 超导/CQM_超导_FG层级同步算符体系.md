@@ -374,6 +374,13 @@ $$\delta_{\text{intrinsic}} = \delta_{v,\text{intrinsic}}^{\text{mol}} = 2\pi - 
 
 **判据结论**：$\delta_{v,\text{intrinsic}}^{\text{mol}} \sim 10^{-2}$ 量级确实将前向 $T_c$ 从 0K 修正回实验量级——**缺口基本闭合**。Pb（14%）与 Hg（7%）精度优良，Nb（66%）在正确量级。
 
+> **待复核（与仓库数值产物不符，本表暂不可复现）**：上表由 `cqm_cell_fg_to_tc.py` 生成，该脚本不在仓库中（仅存 `09 精细引力（FG）/__pycache__/cqm_element_fg_strict.cpython-314.pyc`），故上表当前不可复核。仓库中唯一的统一 $T_c$ 产物 `08 超导/cqm_analysis/unified_tc_results.json`（24 条元素）给出的却是另一组结果：`x_cqm < 1` 者 22/24（其中 `Tc_cqm = 0`），其余两条 Al（$x=1.3438 \to 222.97$K）与 Be（$x=1.0009 \to 187.21$K）；该文件中的 `Tc_uni` 字段在 22/24 条上恰等于 `Tc_exp`。二者不能在"缺口基本闭合/前向预测成立"的表述下并存：
+>
+> - 若以 `unified_tc_results.json` 为准，则前向链在 22/24 条元素上无解，与"缺口基本闭合"相反；
+> - 若以上表为准，则需补入 `cqm_cell_fg_to_tc.py` 及 `Tc_uni` 的计算定义（`Tc_uni` 不得以实验值回填）。
+>
+> 在二者对齐之前，本节结论应读作**待复核**；§10 的可检验预言 3 同样待复核。
+
 **残余偏差分析**：Al（3108%）、V（334%）、Ta（157%）偏高，根源是 $f_{\text{corr}}$ 对 fcc/bcc 配位数敏感度过高（Al fcc 配位 12 → $f_{\text{corr}}=0.975$ → 涨落抑制不足）。这不是分子 FG 同步算符的问题，而是 $f_{\text{corr}}$ 公式对单元素晶体的参数化精度问题——与 $L_{\text{mol}}$ 构造的正确性无关。后续需从晶胞嘉当矩阵键几何精细化（不等权近邻）修正。
 
 ### 9.3 与 Berry 曲率的关系（方法论定位）

@@ -454,7 +454,7 @@ $$\mathfrak{c}_1 \xrightarrow{G_N \text{ 公式}} G_N = \frac{\hbar c}{m_p^2} \c
 
 | 区域 | 耦合常数状态 | 原因 |
 |:---|:---|:---|
-| **L1 内部** | **量子叠加**——$[\hat{u}, \hat{p}_u] = i$ 严格成立，$\Delta r \cdot \Delta v_\tau \geq ☯/2$ | Sprinkling 泊松随机性持续活跃 |
+| **L1 内部** | **量子叠加**——$[\hat{u}, \hat{p}_u] = i$ 严格成立，$\dfrac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq ☯/2$ | Sprinkling 泊松随机性持续活跃 |
 | **L2 边界** | **经典锁定**——密度矩阵对角化，单个系统有确定值 | 退相干完成，Sprinkling 密度发散 |
 | **L3+ 外部** | **经典确定**——标准模型输入参数 | 变量不匹配；层级因果断裂 |
 

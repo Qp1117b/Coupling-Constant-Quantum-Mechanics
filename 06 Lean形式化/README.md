@@ -57,14 +57,15 @@ Axioms
 │ ├── 正定性: 所有主子式 > 0
 │ ├── 4-单纯形 f-向量回文性 (5,10,10,5)
 │ ├── SU(5) Weyl 群 = S₅ = 4-单纯形对称群
-│ └── Dynkin 指数 I = 5/3
+│ └── Dynkin 指数比 I = T(24)/T(8) = 5/3
 │
 ├── A2.2: 相变量子 ☯ = ξ'(1)/ξ(1)
-│ ├── Mathieu 参数 q = φ/2（黄金比例一半，从 A₄ 本征值严格导出）
+│ ├── Mathieu 参数 q = φ/2（黄金比例一半；由代码中定义的 A₄ 本征值字面量按 (λ₄-λ₁)/(λ₄+λ₁) 算出，属定义展开，不是从 A₄ 矩阵推出的定理）
 │ │ ├── φ = (1+√5)/2, φ² = φ + 1
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
 │ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472
-│ ├── Mathieu 临界值 λ_c（系统在稳定区: q < λ_c）
+│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）；该方程与标准 Mathieu 特征值 b₁(q)=2q 的对应关系待复核，见 `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2
+│ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块无导入者，不进入 λ_c/G_N 的取值链）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30
 │ ├── 4-单纯形 f-向量和 = 30 = N_cycle
@@ -166,7 +167,7 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 
 ## 本次更新亮点 (v0.6.0)
 
-- **去除落后形式化**：删除 `MultiComponent.lean`（与最新研究文档不一致）；同步更新主入口 `Superconductivity.lean` 的章节映射（§13→§20、§7/§10 标注"对应文档章节已精简"）、§3.6 公式由 `v_τ=c₀(1+βδ)` 改为与代码一致的 `v_τ=√(1-βδ_v)`、G13 标注闭合、G17 不作为缺口；清理 `Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用（改为"方向锚定保留"中性表述）。模块数从 17 → 16
+- **落后形式化的清理**：`MultiComponent.lean` 与最新研究文档不一致，已不在库中；主入口 `Superconductivity.lean` 的章节映射同步更新（§13→§20、§7/§10 对应文档章节精简）；§3.6 公式取与代码一致的 $v_\tau=\sqrt{1-\beta\delta_v}$；G13 状态为闭合；FG→GR 连续极限（编号 G17）不作为缺口；`Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用改为"方向锚定保留"。模块数 16
 - **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除）
 
 ## 本次更新亮点 (v0.5.9)

@@ -83,7 +83,7 @@ CQM 给出牛顿引力常数的可能公式：
 $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)}$$
 
 其中：
-- $I = 5/3$ 是 SU(5) Dynkin 指数；
+- $I = 5/3$ 是 SU(5) Dynkin 指数比 $T(\mathbf{24})/T(\mathbf{8})$；
 - $\lambda_c \approx 1.316$ 是 Mathieu 方程临界参数；
 - $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$；
 - $\mathfrak{c}_1 = 1/4 + \gamma_1^2$；
