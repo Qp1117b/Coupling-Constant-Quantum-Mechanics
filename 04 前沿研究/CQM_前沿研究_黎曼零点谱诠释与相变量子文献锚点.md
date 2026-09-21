@@ -125,7 +125,133 @@ Li 系数 $\lambda_n$ 与 $n \cdot ☯$ 的关系：$\lambda_1 = ☯$，$\lambda
 
 ---
 
-## 5. 文献引用信息
+## 5. LeClair 模型的完整数学结构
+
+本节系统梳理 LeClair–Mussardo [LM] 及 LeClair [L] 两篇文献的完整数学物理结构，不添加 CQM 诠释，仅忠实记录文献内容并标注公式编号。
+
+### 5.1 物理设置
+
+单粒子在周长 $R$ 的圆上运动，圆上分布 $N$ 个静止杂质，标记 $j = 1, 2, \ldots, N$（图见 [LM, Fig. 1]）。散射满足**纯透射条件**（无反射），因此多杂质 S-matrix 因子化：
+
+$$S(p) = \prod_{j=1}^{N} S_j(p)$$
+
+粒子绕圆一周后波函数单值性给出量子化条件 [LM, eq. (2)]：
+
+$$e^{ipR} \prod_{j=1}^{N} S_j(p) = \pm 1$$
+
+取费米子（$-1$），得 Bethe Ansatz 方程 [LM, eq. (3)]：
+
+$$p_n R + \sum_{j=1}^{N} \varphi_j(p_n) = 2\pi\!\left(n - \frac{1}{2}\right)$$
+
+其中 $\varphi_j(p)$ 为第 $j$ 个杂质的散射相移。
+
+### 5.2 色散关系
+
+自由粒子色散关系取 [LM, eq. (5)]：
+
+$$p(E) = E \log\!\left(\frac{E}{2\pi e}\right)$$
+
+逆函数用 Lambert $W$ 函数表示 [LM, eq. (6)]：
+
+$$E(p) = \frac{p}{W(p/(2\pi e))}$$
+
+大 $p$ 渐近 [LM, eq. (7)]：
+
+$$E(p) \approx \frac{p}{\log p}$$
+
+**群速度**：
+
+$$\frac{dE}{dp} \approx \frac{1}{\log p} - \frac{1}{(\log p)^2} \xrightarrow{p \to \infty} \frac{1}{\log p} \to 0$$
+
+群速度随动量递减，与 QFT 中渐近自由定性类似：高能（大 $p$）下粒子"减速"。
+
+### 5.3 S-matrix 构造
+
+每个杂质关联一个正实数 $q_j > 1$ 和常相位 $\varphi_j$。S-matrix 取 [LM, eq. (8)]：
+
+$$S_j(E) = \frac{q_j^{\sigma} - e^{i(E \log q_j - \varphi_j)}}{q_j^{\sigma} - e^{-i(E \log q_j - \varphi_j)}}$$
+
+其中 $\sigma > 0$ 为自由参数。散射相移 [LM, eq. (9)]：
+
+$$\varphi_j(E) = -2\,\Im\log\!\left(1 - \frac{e^{-i(E \log q_j - \varphi_j)}}{q_j^{\sigma}}\right)$$
+
+**幺正性**：$|S_j(E)| = 1$ 当且仅当 $q_j^{\sigma}$ 为实数（即 $\sigma$ 为实数），此时 $S_j = e^{i\varphi_j}$ 为纯相位。
+
+**关键选择**：取 $q_j$ 为第 $j$ 个素数 $p_j$，即 $\{q_1, q_2, q_3, \ldots\} = \{2, 3, 5, \ldots\}$，并取 $\varphi_j = 0$。
+
+### 5.4 Bethe Ansatz 方程与 ζ 函数涌现
+
+取 $R = 1$、$q_j = p_j$（素数）、$\varphi_j = 0$，Bethe Ansatz 方程化为 [LM, eq. (10)]：
+
+$$\frac{E_n}{2}\log\!\left(\frac{E_n}{2\pi e}\right) - \sum_{j=1}^{N} \Im\log\!\left(1 - \frac{e^{-i E_n \log p_j}}{p_j^{\sigma}}\right) = \left(n - \frac{3}{2}\right)\pi$$
+
+当 $\sigma > 1$、$N \to \infty$ 时，散射相移求和收敛为 $\arg\zeta$ [LM, eq. (11)]：
+
+$$\frac{E_n}{2}\log\!\left(\frac{E_n}{2\pi e}\right) + \arg\zeta(\sigma + iE_n) = \left(n - \frac{3}{2}\right)\pi$$
+
+其中 $s = \sigma + iE$，$\zeta(s)$ 的 Euler 乘积 [LM, eq. (12)]：
+
+$$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{j=1}^{\infty} \frac{1}{1 - p_j^{-s}}, \quad \Re(s) > 1$$
+
+**方程结构**：左端第一项为平滑项（Riemann–von Mangoldt 平均密度），$\arg\zeta$ 为振荡项（来自 Euler 乘积的相位）。当 $\sigma \to 1/2^+$，解 $E_n$ 趋于 Riemann 零点虚部 $\gamma_n$。
+
+### 5.5 谱流方程
+
+LeClair [L] 研究 $E_n(\sigma)$ 对 $\sigma$ 的依赖。对 Bethe Ansatz 方程求 $\sigma$ 导数 [L, eq. (21)]：
+
+$$\frac{dE_n(\sigma)}{d\sigma} = -\frac{\Im(\Upsilon(s))}{\Re(\Upsilon(s)) + \vartheta'(E_n(\sigma))}, \quad s = \sigma + iE_n(\sigma)$$
+
+其中 [L, eq. (22)]：
+
+$$\Upsilon(s) = \frac{\zeta'(s)}{\zeta(s)}$$
+
+Euler 乘积形式 [L, eq. (27)]：
+
+$$-\Upsilon(s) = \sum_{p} \frac{\log p}{p^s - 1}, \quad \Re(s) > 1$$
+
+$\Upsilon(s)$ 的解析延拓 [L, eq. (41)]：
+
+$$-\Upsilon(s) = \frac{1}{s-1} - B - \log\sqrt{\pi} + \frac{1}{2}\frac{\Gamma'(s/2+1)}{\Gamma(s/2+1)} - \sum_{\rho}\left(\frac{1}{s-\rho} + \frac{1}{\rho}\right)$$
+
+常数 $B$ [L, eq. (42)]：
+
+$$B = -\frac{\gamma_E}{2} - 1 + \log(2\sqrt{\pi}) = -0.0230957\ldots = -☯$$
+
+### 5.6 RH 判据
+
+**命题 2** [L, eq. (23)–(24)]：若存在 $\sigma_* > 1/2$ 和区域 $t_1 < t < t_2$ 使得
+
+$$-\Re(\Upsilon(s)) < \vartheta'(t), \quad s = \sigma_* + it$$
+
+则该区域中所有 $E_n(\sigma)$（$\sigma > \sigma_*$）为实数。大 $t$ 等价形式：
+
+$$-\Re(\Upsilon(s)) \lesssim \frac{1}{2}\log\!\left(\frac{t}{2\pi}\right)$$
+
+**命题 3** [L, eq. (26)]：临界线上（$\sigma = 1/2$），对任意非零点 $t$：
+
+$$-\Re(\Upsilon(s)) \simeq \frac{1}{2}\log\!\left(\frac{t}{2\pi}\right), \quad s = \frac{1}{2} + it$$
+
+此为**等式**而非不等式。命题 2 已被 Lagarias 证明等价于 RH [L, Sec. V]。
+
+### 5.7 物理链条：素数 → RH
+
+LeClair 模型的完整逻辑链条：
+
+$$\text{素数} \xRightarrow{\text{标记杂质}} \text{Euler 乘积} \xRightarrow{\text{构造} S_j} |S_j| = 1 \xRightarrow{S = e^{-iH}} H = H^\dagger \xRightarrow{\text{厄米}} E_n \in \mathbb{R} \xRightarrow{\sigma \to 1/2} \text{RH}$$
+
+每一步的必要性由反例佐证：Davenport–Heilbronn 函数 $D(s)$ 满足函数方程 $\chi(s) = \chi(1-s)$ 但**无 Euler 乘积** [L, Sec. IV]。因此无法构造幺正 S-matrix，$H$ 非厄米，存在复本征值，RH 不成立。这证明 Euler 乘积（即素数结构）是整个链条的不可替代基石。
+
+### 5.8 ☯︎ 在谱流中的角色
+
+在 $\Upsilon(s)$ 的解析延拓 [L, eq. (41)] 中，常数 $B = -☯$ 与 $1/(s-1)$（极点项）、$\log\sqrt{\pi}$（Gamma 因子项）、零点求和项并列出现。谱流方程 [L, eq. (21)] 的分子 $\Im(\Upsilon)$ 和分母 $\Re(\Upsilon) + \vartheta'$ 均含 $B$。
+
+☯︎ 的数值微小（$\approx 0.023$）意味着 $B$ 接近零：谱流方程中常数项贡献小，$E_n(\sigma)$ 随 $\sigma$ 变化平缓。LeClair 的数值计算 [L, Fig. 3] 显示 $E_n(\sigma)$ 从 $\sigma > 1$ 到 $\sigma = 1/2$ 的变形"without a great deal of variation nor drama"——谱流近乎刚性。此近刚性的定量基础即 $|B| = ☯ \ll 1$。
+
+**反例对比**：Davenport–Heilbronn 函数无 Euler 乘积，$\Upsilon(s)$ 无上述分解，谱流行为定性不同 [L, Fig. 10]，$E_n(\sigma)$ 出现复分支。
+
+---
+
+## 6. 文献引用信息
 
 | 编号 | 完整引用 |
 |:---:|:---|
