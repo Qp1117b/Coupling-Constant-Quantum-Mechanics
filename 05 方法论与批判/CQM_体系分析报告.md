@@ -424,18 +424,7 @@ python -c "import numpy as np,itertools;E=list(itertools.combinations(range(5),2
 | 26 | `PrimeGeometry/WindingDensity.lean:145` | `axiom totalProbabilityConservation` 断言 `sideLength * (Σ 1/3) = 1`，与 `Basic.lean` 的 `sideLength := circumference / n` 不相容（等价于强制 $C=3$，可反证） | 改为**定理**：引入显式密度赋值 `rho : ℕ → ℝ`（$k<3$ 时 $\rho_k = 1/(3a)$），证明 $\sum_i a_i\rho_i = 1$。原公理形式是常数 $1/3$ 与 $\rho_i$ 的混淆——本意是"对密度求和"，写成"对 $1/3$ 求和"后变成对 $a$ 的约束。`totalProbabilityConservation_triangle`、`triangle_density_sum` 同步改为从定理推出（后者改为正确结论 $\rho_1+\rho_2+\rho_3 = 3/C$）；`PrimeGeometry.lean` 公理清单同步更新 |
 | 27 | `Methodology/Basic.lean:369,373` | `def mutualInformationChange : ℝ := 0` 与 `axiom mutualInformationChange_positive : mutualInformationChange > 0` 不可同真 | 改为 `mutualInformationChange (lambda) (xi)` 的**参数化非计算定义**（`Classical.choose` 于显式存在性 `∃ x : ℝ, x > 0`），`mutualInformationChange_positive` 由公理降为**定理**（`Classical.choose_spec`）。原占位常量不再把定义体钉死为 $0$，公理与定义不再互斥 |
 
-### 三、仍需作者裁决的项（本报告未改）
-
-| # | 事项 | 为何未改 |
-|:--:|:---|:---|
-| A | ~~$\lambda_c$ 的取值~~ | **已裁决（约定 A）**：保留 $1.3160229113$，命名与叙述已修，$G_N$ 与 −3 ppm 表述不变 |
-| B | `unified_tc_results.json` 与 §9.2.1 表格二选一 | 需决定是补入脚本重算，还是如实报告 22/24 无解；不宜由审计方替作者选择 |
-| C | 缺口 C 的两种表述（$A_4$ 正四单纯形 / $\{5,4\}$ 镶嵌）是否合并 | 已登记为"指向同一缺口"，是否合并表述需作者确认 |
-| D | `Mathieu.lean` 与 `MathieuContinuedFraction.lean` 两个 $q$ | 已在 Lean README 区分；是否统一命名（或让前者进入取值链）属作者决定 |
-| E | ~~Lean 的两条可反证/不可满足公理~~ | **已修复**（见 §二 #26、#27）；其余"定义式证明"（`DeepResearch.lean`、`FormalizationRigor.lean`、`SpectralGeometry/Basic.lean` 的 `primePotential`、`PhysicalConstants` 的 `GN_CQM_prediction` 等）仍待逐条处理 |
-| F | ~~`I=5/3` 的最终命名~~ | **已定**：按归档论文（`归档 CNT/06 论文/03-谱几何…`）定义 5.1，$I = T(\mathbf{24})/T(\mathbf{8})$ 即"Dynkin 指数比"，活动文档已统一 |
-
-### 五、第三轮：Lean 编译状态实测（新增发现）
+### 三、第三轮：Lean 编译状态实测（新增发现）
 
 第二轮修复后实测 `lake build`（Lean 4.29.1），并在 `HEAD` 的独立 worktree 中复现同一错误集，确认**与本次修复无关**：
 
@@ -447,6 +436,37 @@ python -c "import numpy as np,itertools;E=list(itertools.combinations(range(5),2
 | FGChain | ❌ 多数 | 12 模块中仅 `Basic`、`CartanToShell` 通过；`QuantumOscillation.lean:107` 正性证明失败 |
 
 **对本报告前文的影响**：§5.1 引用的 Lean README 编目（"全部 9 个库编译通过（3313 jobs）"）与实际不符，已按实测改写 Lean README 的"编译状态"节。失败原因三类：Mathlib 版本漂移（坏导入）、Mathlib API 变更（`HasDerivAt.mul`）、证明未通过（正性目标）。这意味着 §5.2 清单中的多项（如 `RiemannXi.lean:264` 的发散公理、`CartanAlgebra` 的本征值 `def`）目前**不在可编译状态**，对其的"体系自洽"判定应在修复编译后进行复核。
+
+### 四、仍需作者裁决的项（本报告未改）
+
+| # | 事项 | 为何未改 |
+|:--:|:---|:---|
+| A | ~~$\lambda_c$ 的取值~~ | **已裁决（约定 A）**：保留 $1.3160229113$，命名与叙述已修，$G_N$ 与 −3 ppm 表述不变 |
+| B | ~~`unified_tc_results.json` 与 §9.2.1 表格二选一~~ | **已裁决（作者指令：删除不可靠数据）**：该文件已 `git rm`；§9.2.1 的 7 行前向 $T_c$ 表与全部脚本来源精度数值已清除，改为"判据内容 + 数值状态：无可用数值"。见 §五 |
+| C | 缺口 C 的两种表述（$A_4$ 正四单纯形 / $\{5,4\}$ 镶嵌）是否合并 | 已登记为"指向同一缺口"，是否合并表述需作者确认 |
+| D | `Mathieu.lean` 与 `MathieuContinuedFraction.lean` 两个 $q$ | 已在 Lean README 区分；是否统一命名（或让前者进入取值链）属作者决定 |
+| E | ~~Lean 的两条可反证/不可满足公理~~ | **已修复**（见 §二 #26、#27）；其余"定义式证明"（`DeepResearch.lean`、`FormalizationRigor.lean`、`SpectralGeometry/Basic.lean` 的 `primePotential`、`PhysicalConstants` 的 `GN_CQM_prediction` 等）仍待逐条处理 |
+| F | ~~`I=5/3` 的最终命名~~ | **已定**：按归档论文（`归档 CNT/06 论文/03-谱几何…`）定义 5.1，$I = T(\mathbf{24})/T(\mathbf{8})$ 即"Dynkin 指数比"，活动文档已统一 |
+
+### 五、第四轮：删除不可靠超导数据（作者指令）
+
+**删除的产物**：`08 超导/cqm_analysis/unified_tc_results.json`（`git rm`）。理由：24 条元素中 22 条 `Tc_cqm = 0`，其余两条为数百 K（实验 1.19 K / 0.026 K），且 `Tc_uni` 字段在 22/24 条上直接回填 `Tc_exp`——该文件不构成计算产物。
+
+**保留的产物**：`superconductors_deduplicated.csv`（226 条**实验**材料数据）、`element_fg_table.json`（118 个元素的 FG 表，可由 `cqm_framework/` 的 `atom_db.py` + `crystal_db.py` 再生）。二者不含虚构数值。
+
+**同步清除的不可复核数值主张**（60 余处，全部来自不在仓库的脚本）：
+
+| 位置 | 清除内容 |
+|:---|:---|
+| `08 超导/CQM_超导_专题与扩展.md` | LOOCV 精度类（76.6%、53.7%、52.8%、50.3%、97.2%、49.2%、46.6%、33.3%）、回归优度类（$R^2=0.96/0.960/0.848/0.735/0.593/0.280/0.226/0.168$）、拟合常数类（$C_{\text{GAMMA}}\approx7.78\times10^{11}$、$2.85\times10^{20}$、$0.369/-0.840/-0.090/49.807$ 等）——涉及 §11.11、§11.12 的三张精度表、§11.13 的 $K_0$ 回归、§11.14 的分类表、§13 缺口表的 G18 行。**公式、链条结构、机制论述全部保留**；被改动的表格已重建为列数一致的表 |
+| `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md` §6.2 | 删除"常规 78 材料中位 55%、非常规 70 材料中位 33%"表，改为陈述可复算的 $\lambda_c$、$\mathfrak{c}_1$ 数值 |
+| `01 核心理论/CQM_核心_因果网络同步理论.md` | 状态表"前向预测已部分闭合（76.6%/53.7%）"改为"前向预测未闭合（数值验证暂无可复核产物）" |
+| `08 超导/超导材料设计器/03_超导判定算法.md`、`07_目标超导搜索策略.md` | 删去 LOOCV 精度数值 |
+| `08 超导/CQM_超导_FG层级同步算符体系.md` §9.2.1 | 7 行材料前向 $T_c$ 表（Nb 15.3K、Pb 8.2K、Al 38.5K 等）改为"判据内容 + 数值状态：无可用数值" |
+| `08 超导/CQM_超导_统一方法论.md` §10 | 新增实现状态：四个脚本（`cqm_element_fg.py` 等）均不在仓库，Phase 1–4 为待实现路线 |
+| `README.md` | `cqm_analysis` 条目改为"数据（无 $T_c$ 预测结果文件）"，目录树删去该文件 |
+
+**保留的标注**：各文档保留"数值验证无可复核产物（脚本不在仓库）"——这是缺口标注而非禁用表述，用来说明此处为何没有数字。
 
 ### 六、本报告未覆盖的文档
 

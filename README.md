@@ -86,11 +86,12 @@ CQM 是建立在**因果集**、**关系量子力学**与**圈量子引力**三�
 | [CQM 超导 FG层级同步算符体系](08 超导/CQM_超导_FG层级同步算符体系.md) | FG 层级同步算符公理（每种 FG——电子/元素/分子/晶胞——都有自己的同步算符，均为紧化算符在该层级主丛上的实现，纤维丛四元组 $(M_\ell,P_\ell,\mathcal{A}_\ell,\hat{\mathcal{S}}_\ell)$）。核心新构造：分子 FG 同步算符 $\hat{\mathcal{S}}_{\text{mol}}=V_0+L_{\text{mol}}$（点群投影构造），使内禀角亏 $\delta_{v,\text{intrinsic}}^{\text{mol}}$ 成为分子 FG 谱的几何显现，闭合 $\delta_{\text{intrinsic}}$ 缺口（消除外部 DFT 依赖）；给出 12 环节第一性 $T_c$ 预测链 |
 | [CQM 超导 统一方法论](08 超导/CQM_超导_统一方法论.md) | 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\theta_D/(2\,\text{arccoth}(x))$ |
 
-**08 超导/cqm_analysis/** — 超导材料数据库：
+**08 超导/cqm_analysis/** — 超导数据（**不含任何 $T_c$ 预测结果**：史上唯一的统一 $T_c$ 结果文件因数值不成立已移除，其生成脚本亦不在仓库）：
 
 | 文件 | 功能 |
 |:---|:---|
-| `superconductors_deduplicated.csv` | 超导数据库（226条记录，含Tc/结构/Debye温度等） |
+| `superconductors_deduplicated.csv` | 超导材料**实验**数据库（226 条记录，含 Tc/结构/条件/年份） |
+| `element_fg_table.json` | 元素 FG 表（118 个元素的嘉当矩阵/顶点/边/面/角亏，可由 `cqm_framework/` 再生） |
 
 ### 09 精细引力（FG）
 
@@ -229,10 +230,9 @@ CQMFormal/
 │ ├── CQM_超导_专题与扩展.md ← 精简移出的材料/应用、推导/数值细节与进展/状态内容
 │ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理
 │ ├── CQM_超导_统一方法论.md ← 四层FG剖分方法论与统一计算链
-│ ├── cqm_analysis/ ← 计算数据与结果
-│ │ ├── superconductors_deduplicated.csv ← 超导数据库（226条记录）
-│ │ ├── element_fg_table.json ← 元素FG表
-│ │ └── unified_tc_results.json ← 统一Tc计算结果
+│ ├── cqm_analysis/ ← 数据（无 Tc 预测结果文件）
+│ │ ├── superconductors_deduplicated.csv ← 超导材料实验数据库（226 条记录）
+│ │ └── element_fg_table.json ← 元素FG表（118 个元素）
 │ └── cqm_framework/ ← 纯CQM实现
 │   ├── atom_db.py ← 共享原子数据库（118个元素）
 │   └── crystal_db.py ← 晶体结构数据库

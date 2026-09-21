@@ -283,6 +283,8 @@ CQM超导预测是相对第一性：
 
 ## 10. 实现路线
 
+> **实现状态**：本节列出的四个计算脚本（`cqm_element_fg.py`、`cqm_regge_to_tc.py`、`cqm_cell_fg_hybrid.py`、`cqm_cell_fg_to_tc.py`）**均不在仓库中**。因此 Phase 1–4 目前是**待实现的路线**，不是已有的计算链；文档他处引用这些脚本的数值结论同样无可复核产物。仓库中现存的数据产物只有 `cqm_analysis/element_fg_table.json`（元素 FG 表，可由 `cqm_framework/` 的原子/晶体数据库再生）与 `cqm_analysis/superconductors_deduplicated.csv`（226 条材料实验数据）。
+
 Phase 1: 元素FG穷尽列举（完全第一性）
 - cqm_element_fg.py
 - 118个元素→核子分布→纤维丛→嘉当矩阵→Dynkin图→Regge剖分
