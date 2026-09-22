@@ -6,7 +6,7 @@
 
 ## 编译状态（本次实测，Lean 4.29.1 = `lean-toolchain` 固定版本）
 
-**7 个库编译通过，3 个库部分模块不通过**（`lake build` 整体不成功）。逐模块实测结果：
+**8 个库编译通过，3 个库部分模块不通过**（`lake build` 整体不成功）。逐模块实测结果：
 
 | 库 | 状态 | 不通过的模块 |
 |:---|:---:|:---|
@@ -17,6 +17,7 @@
 | PhysicalConstants | ✅ 通过 | — |
 | PrimeGeometry | ✅ 通过 | — |
 | Methodology | ✅ 通过 | — |
+| GN | ✅ 通过 | —（v0.7.0 新增 `SimplexSpectrum`/`AdeleJacobian`/`Constructions`；101 定理，零 `sorry`、零新增 `axiom`） |
 | SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（:151/:160 `HasDerivAt.mul` 单子不匹配、:209 类型不匹配）、`Mathieu.lean`、`GLnTrivialSpectralQuantum.lean`（坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`，该路径在 4.29.1 已不存在） |
 | Superconductivity | ❌ 部分 | `ElementCartan.lean`、`BridgeTheorems.lean`、`FormalizationRigor.lean`（坏导入 `Mathlib.Topology.Definitions.Filter`）、`DeepConstruction.lean`、`DeepResearch.lean`（后两者因 FormalizationRigor 连带失败） |
 | FGChain | ❌ 多数 | `QuantumOscillation.lean`（:107 正性证明失败）、`FiberBundle.lean`、`CurvatureOperator.lean`、`CurvatureDerivation.lean`、`ReggeBase.lean`、`SyncOperator.lean`、`Synchronization.lean`、`Observable.lean`、`BundleEOM.lean`、`Hierarchy.lean`（根模块 `FGChain.lean` 导入 12 个，其中 10 个不通过） |
@@ -41,6 +42,7 @@
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
 | **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i☯$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
+| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）——共 19 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
 
 ## 形式化推导链
 
@@ -127,7 +129,8 @@ Axioms
 | PhysicalConstants | 20 | 0 |
 | Methodology | 6 | 11 |
 | Superconductivity | 340 | 5 |
-| **总计** | **647** | **30** |
+| GN | 101 | 0 |
+| **总计** | **748** | **30** |
 
 ## 已知缺口
 
@@ -143,6 +146,8 @@ Axioms
 | — | 相变量子 ☯ = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
+| — | ☯ 的零点求和表示 $\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
+| — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |
 
 ### 闭合缺口 (v0.5.8)
 
@@ -165,6 +170,12 @@ lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
 lake build Superconductivity # 编译强引力超导库（16 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
 lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证）
+lake build GN # 编译 G_N 第一性推导库（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造）
+lake build GN.TripleIdentity # 编译单模块
+lake build GN.SierraCQM # 编译单模块
+lake build GN.SimplexSpectrum # §2 4-单纯形组合谱
+lake build GN.AdeleJacobian # §6 Adele Jacobian 因子 2
+lake build GN.Constructions # §8–§11 可代数化构造
 ```
 
 ## 理论对应
@@ -180,6 +191,24 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 | G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |
 | 方法论基础 | `Methodology` | 6 |
 | 强引力超导涌现 | `Superconductivity` | 340 |
+| $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 101 |
+
+## 本次更新亮点 (v0.7.0)
+
+- **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。10×10 `native_decide` 对 det 语句仍不可用，故采用显式基路线
+- **§6 Adele Jacobian 因子 2**：新增 `GN/AdeleJacobian.lean`（11 引理/定理），条件定理：自对偶 `det D∞ · ∏ det Dp = 1` ⇒ `ln 𝒥 = −2 ln(∏ det Dp)` ⇒ `𝒥 = exp(−2/☯)`；Tate 自对偶本身以 `placeholder` 如实标注
+- **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），κ = (N_faces + ☯)/N_cycle 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 κ = 31/30 + ☯/30、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）
+- **GN 库统计**：3→6 模块，19→101 定理；全库定理总数 666→748
+
+## 本次更新亮点 (v0.6.2)
+
+- **§5 Sierra-CQM 形式化闭合（代数核心）**：新增 `GN/SierraCQM.lean`（6 定理，零 `sorry`、零新增 `axiom`），把证明稿定理 5.1 的 Floquet 量子化代数链严格化——零点匹配 `floquetMomentum_eq`（$k_n=\gamma_n(1+\theta_n/(2\pi n))$）、偏差界 `floquetMomentum_deviation_lt`（$|k_n-\gamma_n|<\gamma_n/(2n)$）、耦级绝对误差 `floquet_level_deviation_le`（$|k_n^2-\gamma_n^2|\le\gamma_n^2(1/n+1/(4n^2))$）、相对误差两形式（含见证常数 $5/4$，$n\ge1$）。`L_n=2\pi n/\gamma_n$ 与 $m=n$ 以显式假设出现（条件定理）；步骤 1–2（酉等价、广义本征函数）如实列入缺口
+- **GN 库统计**：2→3 模块（`Basic`/`TripleIdentity`/`SierraCQM`），13→19 定理；全库定理总数 660→666
+
+## 本次更新亮点 (v0.6.1)
+
+- **GN 库新增**：`GN`（2 模块，13 定理，零 `sorry`、零新增 `axiom`），形式化 $G_N$ 第一性推导公理化证明稿 §1——三重恒等 $☯ = \xi'(1)/\xi(1) = \lambda_1 = -B$ 的代数层：闭式等价变形（定理 1.2）、$\lambda_1 = ☯$（定理 1.3）、$B = -☯$（定理 1.4）、三重恒等合成（定理 1.5）、Li 判据 n=1（$\lambda_1 > 0$）、$B < 0$、数值桥梁推论。依赖 `SpectralGeometry.Basic`，避开编译失败的 `RiemannXi`/`Mathieu`；缺口（零点求和表示、§5 渐近定理）如实列入缺口表，详见 `GN/README.md`
+- **证明稿严格性清理**：公理化证明稿 §1（定理 1.1 因子 2 错误）、§2 定理 2.1（补全二阶矩求解 + 有理根定理排除，消除不完整推导）、§3 定理 3.1（重组为四步结构，消除自我对话）、§5 步骤 5（消除自我对话，统一绝对/相对误差表述）；参考文献修正 LM 论文 arXiv 号（2307.01254）与真实标题，编号去重
 
 ## 本次更新亮点 (v0.6.0)
 
@@ -283,6 +312,6 @@ lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证�
 
 ## 版本
 
-- **项目版本**: 0.6.0
+- **项目版本**: 0.7.0
 - **Lean 版本**: 4.29.1
 - **依赖**: mathlib, physlib
