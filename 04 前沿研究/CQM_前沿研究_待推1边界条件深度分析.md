@@ -32,7 +32,7 @@ $$\boxed{\gamma_n=\frac{\pi n}{L_{\rm box}(\gamma_n)}},\qquad L_{\rm box}(T)=\un
 | 4 | **Li 表示** | 绕数 $n$ 在单位圆 $\|z\|=1$ 上的 Fourier 模式 |
 | 5 | **相空间–尺度关联** | 能标 $\tau=W(n)$，归档 $\nu_p\leftrightarrow\mu$ 的定量恢复 |
 
-**度量侧（本轮回捞）**：距离映射 $r_{\rm phys}=K_L\cdot r_{\rm coupling}$ 把上表全部落在 fm 刻度上；$K_L$ 被归档 D1 定义为 $\mathcal H_{\rm Riemann}\leftrightarrow\mathcal H_{\rm angular}$ 交织算子的范数——**径向 $\gamma_n$ 与角向 $\lambda_{\rm Mathieu}$ 唯一的算符级接口**（§6.5）。$K_L$ 有 3.7% 内部不自洽，未定死前依赖它的「0.3% 精确」不作数。
+**度量侧（本轮回捞）**：距离映射 $r_{\rm coupling}\cdot K_L=r_{\rm phys}$ 把上表全部落在 fm 刻度上；$K_L$ 被归档 D1 定义为 $\mathcal H_{\rm Riemann}\leftrightarrow\mathcal H_{\rm angular}$ 交织算子的范数——**径向 $\gamma_n$ 与角向 $\lambda_{\rm Mathieu}$ 唯一的算符级接口**（§6.5）。$K_L$ 有 3.7% 内部不自洽，未定死前依赖它的「0.3% 精确」不作数。
 
 ### 四个核心结论
 
@@ -446,7 +446,7 @@ $$\underbrace{n}_{\text{绕数}}\ \xrightarrow{\ \tau=W(n)\ }\ \underbrace{\tau=
 
 #### 6.5.1 定义与交织算子定性
 
-$$\boxed{r_{\rm phys}=K_L\cdot r_{\rm coupling}},\qquad K_L=\frac{\lambda_{\rm QCD}}{r_{\rm conf}}=\frac{\hbar c\cdot\text{☯}\cdot\mathfrak c_1}{m_p\cdot g_s^{IR}}$$
+$$\boxed{r_{\rm coupling}\cdot K_L=r_{\rm phys}},\qquad K_L=\frac{\lambda_{\rm QCD}}{r_{\rm conf}}=\frac{\hbar c\cdot\text{☯}\cdot\mathfrak c_1}{m_p\cdot g_s^{IR}}$$
 
 - $r_{\rm conf}=\sqrt{I\lambda_c}=1.481$（无量纲耦合空间禁闭壳）
 - $r_{\rm GUT}=\sqrt{4\pi\,\text{☯}\,\lambda_c}=0.61802$（复算 ✓）
