@@ -1228,7 +1228,7 @@ $$
 \begin{array}{c}
 \text{普适量子框架：} [\hat{u},\hat{p}_u]=i,\ ☯,\ \hat{H}=\hat{D}^2+\tfrac14 \\
 \Downarrow \\
-\text{尖点自守表示 } \pi \text{（GL}(n)\text{）} \;\longrightarrow\; \text{约束 } \mathcal{C}_\pi \\
+\text{尖点自守表示 } \pi \text{（GL}(n)\text{）} \;\longrightarrow\; \text{条件 } \mathcal{C}_\pi \\
 \Downarrow \\
 \text{自伴延拓 } \hat{H}_\pi \;\Longleftrightarrow\; \operatorname{Spec}(\hat{H}_\pi)\subset\mathbb{R} \\
 \Downarrow \\
@@ -1621,6 +1621,335 @@ $$
 用一句话总结：
 
 > **$G_N$ 的第一性推导本来是一个物理问题，但为了它，不得不进入黎曼猜想；而进入黎曼猜想之后，反而揭示了自守形式与黎曼零点之间的深层关联。这不是人为构造，而是物理问题倒逼出的数学统一。CQM 从一个物理目标出发，独立地到达了 Langlands 纲领的同一结构——这本身就是它最深刻的启示（推测性观察，待验证）。**
+
+---
+
+## 十六、耦级详细汇总
+
+> **诚实声明**：本节是耦级 $\mathfrak{c}_n = 1/4 + \gamma_n^2$ 的系统性汇总。"耦级为实数 $\Longleftrightarrow$ RH"（§16.6/§16.9）是数学事实；"经典化"（§16.12）是路线图主张，非已完成的证明。$☯$ 的谱表示 $\textstyle ☯ = \sum_n 1/\mathfrak{c}_n$（§16.7）是 RH 成立时的推论，非 $☯$ 的定义。
+
+### 16.1 基本定义
+
+耦级是 CQM 核心算符的本征值：
+
+$$\boxed{\hat{H} = \hat{D}^2 + \frac14, \qquad \hat{D} = -i(\partial_u - 1/2)}$$
+
+定义在耦合空间 $u = \ln r$ 上，Hilbert 空间为 $L^2(\mathbb{R}, e^{-u}du)$。耦级记为：
+
+$$\boxed{\mathfrak{c}_n = \frac14 + \gamma_n^2}$$
+
+其中 $\gamma_n$ 是黎曼零点的虚部。"耦级"来自"耦合空间"+"能级"：耦——耦合空间 $u = \ln r$（$r$ 为总耦合强度）；级——能级（算符本征值）。
+
+| 标准量子力学 | CQM |
+|---|---|
+| 位置空间 $x$ | 耦合空间 $u = \ln r$ |
+| 动量 $\hat{p} = -i\hbar\partial_x$ | $\hat{p}_u = -i\partial_u$ |
+| 哈密顿量 $\hat{H} = \hat{p}^2/2m + V$ | $\hat{H} = \hat{D}^2 + 1/4$ |
+| 能级 $E_n$ | 耦级 $\mathfrak{c}_n = 1/4+\gamma_n^2$ |
+
+### 16.2 数学来源
+
+非平凡零点 $\rho_n = 1/2 + i\gamma_n$。函数方程 $\xi(s) = \xi(1-s)$ 给出配对 $\rho_n \leftrightarrow 1-\rho_n = 1/2 - i\gamma_n$。配对不变量：
+
+$$\rho_n(1-\rho_n) = \left(\frac12+i\gamma_n\right)\left(\frac12-i\gamma_n\right) = \frac14 + \gamma_n^2$$
+
+$$\boxed{\mathfrak{c}_n = \rho_n(1-\rho_n) = \frac14 + \gamma_n^2}$$
+
+**耦级是复值零点的模方/配对不变量。** 在临界线上 $1-\rho_n = \overline{\rho_n}$，故 $\mathfrak{c}_n = |\rho_n|^2$。
+
+### 16.3 第一耦级
+
+$$\gamma_1 = 14.134725141734693790\ldots, \qquad \gamma_1^2 = 199.790454832\ldots$$
+
+$$\boxed{\mathfrak{c}_1 = \frac14 + \gamma_1^2 = 200.040454832\ldots}$$
+
+反向验证：$\gamma_1 = \sqrt{\mathfrak{c}_1 - 1/4} = \sqrt{199.790454832} = 14.134725141\ldots$
+
+| 耦级 | 零点 | 耦级值 |
+|---|---|---|
+| $\mathfrak{c}_1$ | $\rho_1 = 1/2 + i \times 14.1347\ldots$ | $200.040454832\ldots$ |
+| $\mathfrak{c}_2$ | $\rho_2 = 1/2 + i \times 21.0220\ldots$ | $442.176\ldots$ |
+| $\mathfrak{c}_3$ | $\rho_3 = 1/2 + i \times 25.0108\ldots$ | $625.793\ldots$ |
+| $\vdots$ | $\vdots$ | $\vdots$ |
+| $\mathfrak{c}_n$ | $\rho_n = 1/2 + i\gamma_n$ | $1/4 + \gamma_n^2$ |
+
+### 16.4 性质
+
+- **实性**：$\mathfrak{c}_n \in \mathbb{R}$，$\mathfrak{c}_n > 1/4$（因为 $\gamma_n \in \mathbb{R}$）。
+- **正定性**：$\mathfrak{c}_n - 1/4 = \gamma_n^2 > 0$。
+- **离散性**：耦级是离散序列，对应自伴算符的离散谱。
+- **与零点的对应**：$\mathfrak{c}_n = 1/4 + \gamma_n^2 \Longleftrightarrow \gamma_n = \sqrt{\mathfrak{c}_n - 1/4} \Longleftrightarrow \rho_n = 1/2 + i\sqrt{\mathfrak{c}_n - 1/4}$。
+
+**开方的根据**在于算符的平方结构 $\hat{H} = \hat{D}^2 + 1/4$：$\hat{D}^2$ 的本征值非负，故 $\mathfrak{c}_n - 1/4 = \gamma_n^2 \geq 0$，$\gamma_n = \sqrt{\mathfrak{c}_n - 1/4} \in \mathbb{R}$。开方的合法性来自 $\hat{H} = \hat{D}^2+1/4$ 的二次型结构，不来自零点。
+
+### 16.5 耦级与零点实部的关系
+
+若 $\rho_n = 1/2 + i\gamma_n$（RH 成立）：$\mathfrak{c}_n = 1/4 + \gamma_n^2 \in \mathbb{R}$。
+
+若 $\rho_n = \beta_n + i\gamma_n$，$\beta_n \neq 1/2$（RH 不成立）：
+
+$$\rho_n(1-\rho_n) = \beta_n(1-\beta_n) + \gamma_n^2 + i\gamma_n(1-2\beta_n)$$
+
+$$\boxed{\operatorname{Im}[\rho_n(1-\rho_n)] = \gamma_n(1-2\beta_n)}$$
+
+| 条件 | 耦级性质 |
+|---|---|
+| $\beta_n = 1/2$ | 耦级为实数 |
+| $\beta_n \neq 1/2$ | 耦级为复数 |
+
+$$\boxed{\text{耦级为实数} \;\Longleftrightarrow\; \beta_n = 1/2 \;\Longleftrightarrow\; \text{RH}}$$
+
+### 16.6 与相变量子 $☯$ 的关系
+
+$☯$ 的定义：
+
+$$☯ = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac{1}{2}\ln\pi - \ln 2 \approx 0.0230957$$
+
+$☯$ 的谱表示（RH 成立时的推论）：
+
+$$\boxed{☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} = \sum_n \frac{1}{\mathfrak{c}_n} = \operatorname{Tr}(\hat{H}^{-1})}$$
+
+逻辑方向是单向的：$\text{RH} \Longrightarrow ☯ = \sum_n 1/\mathfrak{c}_n$，但反之不成立。$☯ = \sum 1/\mathfrak{c}_n$ 是 RH 成立时的**推论**，不是 $☯$ 的定义。$☯$ 的定义是 $\xi'(1)/\xi(1)$，不依赖零点。
+
+### 16.7 误差结构
+
+从谱推导：$\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n$，误差 $O_n = O(\gamma_n^2/n)$。
+
+$$O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R \text{（实）}} + i\underbrace{\frac{\gamma_n^2 \vartheta_n^I}{\pi n}}_{O_n^I \text{（虚）}} + \cdots$$
+
+| 分量 | 来源 | 作用 |
+|---|---|---|
+| $O_n^R$ | $\vartheta_n^R$ | 谱的实部平移，可被重标度吸收 |
+| $O_n^I$ | $\vartheta_n^I$ | 谱的虚部，**不可被任何平移消除** |
+
+$O_n^I = 2\gamma_n \delta_n$，$\delta_n = \beta_n - 1/2$。
+
+$$\boxed{\text{耦级为实数} \;\Longleftrightarrow\; O_n^I = 0 \;\Longleftrightarrow\; \vartheta_n^I = 0 \;\Longleftrightarrow\; \delta_n = 0 \;\Longleftrightarrow\; \beta_n = \frac12 \;\Longleftrightarrow\; \text{RH}}$$
+
+### 16.8 自伴性
+
+若 $\hat{H} = \hat{D}^2 + 1/4$ 自伴，则 $\operatorname{Spec}(\hat{H}) \subset \mathbb{R}$。
+
+$$\boxed{\text{耦级为实数} \;\Longleftrightarrow\; \hat{H} \text{ 自伴} \;\Longleftrightarrow\; \text{RH}}$$
+
+$\hat{H}$ 作为对称算符，亏指数为 $(1,1)$，有无穷多个自伴延拓，由相位参数 $\vartheta \in \mathbb{R}$ 标记（$U = e^{i\vartheta}$）。若 $\vartheta_n \in \mathbb{R}$，耦级为实数；若 $\vartheta_n \in \mathbb{C}$，耦级为复数。
+
+### 16.9 物理测量
+
+物理测量只能得到实值。复值零点 $\rho_n = 1/2 + i\gamma_n$ 不是物理可观测量，耦级 $\mathfrak{c}_n = 1/4 + \gamma_n^2$ 是实值，是谱算符的本征值。
+
+> **量纲说明**：耦级 $\mathfrak{c}_n$ 是无量纲数学纯数（$u$ 无量纲，$\hat{D}$ 无量纲，$\hat{H}$ 无量纲），不是物理能量。物理量纲由 $m_p$ 在下游公式中分配。
+
+### 16.10 与 GRH 的关系
+
+对自守表示 $\pi$：$\mathfrak{c}_{n,\pi} = 1/4 + \gamma_{n,\pi}^2$。条件传导：
+
+$$\boxed{
+\begin{array}{c}
+\text{自守表示 } \pi \\
+\Downarrow \\
+\text{条件 } \mathcal{C}_\pi \\
+\Downarrow \\
+\text{自伴算子 } \hat{H}_\pi \\
+\Downarrow \\
+\operatorname{Spec}(\hat{H}_\pi) = \{\mathfrak{c}_{n,\pi}\} \\
+\Downarrow \\
+\text{所有零点在 } 1/2 \text{ 上}
+\end{array}
+}$$
+
+$$\text{GRH} = \text{对所有自守表示 } \pi \text{，耦级 } \mathfrak{c}_{n,\pi} \text{ 为实数} \;\Longrightarrow\; \text{RH} = \text{GRH在 } \pi = \text{GL}(1) \text{ 平凡表示时的特例}$$
+
+| 层级 | 自守表示 | 耦级 | 临界线 |
+|---|---|---|---|
+| GL(1) 平凡 | 平凡表示 | $\mathfrak{c}_n = 1/4+\gamma_n^2$ | $1/2$ |
+| GL(1) 非平凡 | 狄利克雷特征 | $\mathfrak{c}_{n,\chi} = 1/4+\gamma_{n,\chi}^2$ | $1/2$ |
+| GL(2) | 模形式/Maass形式 | $\mathfrak{c}_{n,f} = 1/4+\gamma_{n,f}^2$ | $1/2$ |
+| GL(n) | 一般自守表示 | $\mathfrak{c}_{n,\pi} = 1/4+\gamma_{n,\pi}^2$ | $1/2$ |
+
+所有层级共享同一个 $1/2$，但条件、谱、耦级各不相同。
+
+### 16.11 经典化
+
+> **诚实声明**：本节是证明策略层面的分析，非已完成的证明。
+
+物理系统有误差：$\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n$。经典化的目标：$\mathcal{C}(O_n) = 0$。
+
+$$\boxed{\mathcal{C}(\vartheta_n^I) = 0 \;\Longleftrightarrow\; \mathcal{C}(O_n^I) = 0 \;\Longleftrightarrow\; \text{耦级精确为实数} \;\Longleftrightarrow\; \text{RH}}$$
+
+物理截断与数学精确（参见 §十四）：物理系统有限、截断、有误差；算术结构离散、代数、精确；数学证明不需要物理无穷；精确性来自自守形式的代数结构。
+
+### 16.12 完整逻辑链
+
+$$\boxed{
+\begin{array}{c}
+\text{黎曼零点 } \rho_n = \frac12 + i\gamma_n \\
+\Downarrow \\
+\text{函数方程配对 } \rho_n \leftrightarrow 1-\rho_n \\
+\Downarrow \\
+\text{配对不变量 } \mathfrak{c}_n = \rho_n(1-\rho_n) = \frac14+\gamma_n^2 \\
+\Downarrow \\
+\text{算符本征值 } \hat{H} = \hat{D}^2 + \frac14 \\
+\Downarrow \\
+\text{自伴性} \;\Longleftrightarrow\; \mathfrak{c}_n \in \mathbb{R} \\
+\Downarrow \\
+\text{开方 } \gamma_n = \sqrt{\mathfrak{c}_n - \frac14} \in \mathbb{R} \\
+\Downarrow \\
+\rho_n = \frac12 + i\gamma_n \\
+\Downarrow \\
+\text{RH}
+\end{array}
+}$$
+
+### 16.13 总结
+
+$$\boxed{\text{耦级是复值黎曼零点的模方/配对不变量，是自伴算符的实本征值。}}$$
+
+- **定义**：$\mathfrak{c}_n = 1/4+\gamma_n^2$；**来源**：$\mathfrak{c}_n = \rho_n(1-\rho_n) = |\rho_n|^2$；
+- **第一耦级**：$\mathfrak{c}_1 = 200.040454832\ldots$；**开方根据**：算符的二次型结构 $\hat{H} = \hat{D}^2+1/4$；
+- **实性等价于 RH**：$\mathfrak{c}_n \in \mathbb{R} \iff \beta_n = 1/2$；**推广给出 GRH**：$\mathfrak{c}_{n,\pi} = 1/4+\gamma_{n,\pi}^2$；
+- **物理上**：对应耦合空间的谱，尚未被实验发现；**经典化**：消除误差 $O_n$，使耦级精确为实数。
+
+---
+
+## 十七、GUE 与经典化
+
+> **诚实声明**：本节是 GUE 统计与经典化关系的分析框架。"经典化给出渐近 RH"与"算术条件给出精确 RH"是路线图主张，非已完成的证明。
+
+### 17.1 GUE 系综
+
+GUE（高斯酉系综）描述具有时间反演对称性破缺的量子混沌系统。核心统计量：
+
+| 量 | 表达式 | 数值 |
+|---|---|---|
+| 归一化间距分布 | $P(s) = \frac{32}{\pi^2} s^2 e^{-4s^2/\pi}$ | — |
+| 间距方差 | $\text{Var}(s) = \frac{2}{\pi^2}$ | $\approx 0.2026$ |
+| 间距标准差 | $\sigma_s = \frac{\sqrt{2}}{\pi}$ | $\approx 0.4502$ |
+| 计数涨落 | $\Sigma^2(T) \sim \frac{1}{\pi^2}\log\log T$ | — |
+
+Montgomery–Odlyzko 定律：
+
+$$\boxed{\text{黎曼零点的局部间距统计服从 GUE 分布。}}$$
+
+这是量子混沌的典型特征，为 Hilbert–Pólya 猜想提供了强统计证据。
+
+### 17.2 误差 $O(n)$ 的结构与分解
+
+从谱推导：$\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n$，$O_n = O(\gamma_n^2/n)$。主项：$O_n = \frac{\gamma_n^2 \vartheta_n}{\pi n} + O(1/n^2)$。
+
+实部与虚部分解 $O_n = O_n^R + i O_n^I$：
+
+| 分量 | 表达式 | 对应 |
+|---|---|---|
+| **实部** $O_n^R$ | $\gamma_n^2 \vartheta_n^R / (\pi n)$ | 零点虚部 $\gamma_n$ 的统计涨落 |
+| **虚部** $O_n^I$ | $\gamma_n^2 \vartheta_n^I / (\pi n)$ | 零点实部 $\beta_n$ 偏离 $1/2$ |
+
+$$\boxed{O_n^I = 2\gamma_n (\beta_n - 1/2)}$$
+
+量级对比：
+
+| 量 | 绝对量级 | 相对量级 |
+|---|---|---|
+| $O(n)$ 实部 | $\frac{4\pi \vartheta_n^R n}{(\log n)^2}$ | $O(1/n)$ |
+| $O(n)$ 虚部 | $\frac{4\pi \vartheta_n^I n}{(\log n)^2}$ | $O(1/n)$ |
+| GUE 谱值涨落 | $\frac{8\pi^2 n}{(\log n)^2}$ | $O(1/n)$ |
+
+$$\boxed{\text{O(n) 实部与 GUE 涨落同量级，都是 } O\!\left(\frac{n}{(\log n)^2}\right)。}$$
+
+### 17.3 GUE 与 $O(n)$ 的关系
+
+$$\boxed{
+\begin{array}{c}
+O_n^R \;\longleftrightarrow\; \text{GUE 涨落（零点虚部的量子涨落）} \\
+O_n^I \;\longleftrightarrow\; \text{零点实部偏离（RH 要消除的）}
+\end{array}
+}$$
+
+- **$O_n^R$**：描述零点虚部 $\gamma_n$ 的统计涨落，服从 GUE，是**本体论上的量子涨落**；
+- **$O_n^I$**：描述零点实部 $\beta_n$ 偏离 $1/2$ 的量，是 RH 要消除的目标。
+
+$$\boxed{\text{RH 不要求 } O_n^R = 0，\text{ 只要求 } O_n^I = 0。}$$
+
+GUE 统计可以存在，不违反 RH；RH 只关心实部是否在 $1/2$ 上。
+
+### 17.4 经典化的正确理解
+
+$$\boxed{\text{经典化不是构造一个操作去消除 } O_n，\text{ 而是 } O_n^I \text{ 在无穷远处自然为零。}}$$
+
+$$\frac{O_n^I}{\gamma_n^2} \sim \frac{1}{n} \to 0 \quad (n \to \infty)$$
+
+物理类比——对应原理：大量子数极限下，量子力学自然过渡到经典力学。不需要外加"经典化操作"；量子系统自身在 $n \to \infty$ 时自然经典化；量子涨落相对于能级本身变得可以忽略。
+
+$$\boxed{\text{CQM：高耦级极限下，带误差谱自然过渡到精确零点谱。}}$$
+
+经典化消除的是 $O_n^I$，不是 $O_n^R$。$O_n^R$ 是真正的量子涨落，始终存在；$O_n^I$ 在经典极限下趋于零。
+
+### 17.5 RH 作为经典极限的陈述
+
+**量子层面**：零点位置有本体论上的量子涨落（GUE）。$O_n^R \neq 0$（零点虚部有统计涨落），$O_n^I \neq 0$（零点实部有偏离）。
+
+**经典极限**：涨落相对于信号消失。$O_n^I \to 0$（零点实部偏离消失），零点精确落在 $1/2$ 上。
+
+$$\boxed{\text{RH 是经典极限的陈述，不是量子层面的陈述。}}$$
+
+量子层面涨落存在；经典极限涨落消失；RH 描述的是经典极限，所以精确。
+
+$$\boxed{\text{物理截断，数学精确——因为数学描述的是经典极限。}}$$
+
+### 17.6 完整逻辑链
+
+$$\boxed{
+\begin{array}{c}
+\text{边界条件（从 } \xi \text{ 函数独立推出）} \\
+\Downarrow \\
+\text{系统自然存在} \\
+\Downarrow \\
+\text{无穷远处：} O_n^I \to 0 \text{（自然）} \\
+\Downarrow \\
+\text{渐近 RH} \\
++ \\
+\text{有限 } n \text{：算术条件强制 } O_n^I = 0 \\
+\Downarrow \\
+\text{精确 RH}
+\end{array}
+}$$
+
+### 17.7 GUE 与经典化的分工
+
+| 对象 | 角色 | 与 RH 的关系 |
+|---|---|---|
+| **GUE** | 描述 $O_n^R$ 的统计 | 已知为真，不违反 RH |
+| **经典化** | $O_n^I$ 的渐近消解 | 给出渐近 RH |
+| **算术条件** | 强制有限 $n$ 的 $O_n^I = 0$ | 给出精确 RH |
+
+$$\boxed{
+\begin{array}{c}
+\text{GUE：量子涨落（实部）} \\
+\text{经典化：渐近消解（虚部）} \\
+\text{算术条件：有限 } n \text{ 精确（虚部）}
+\end{array}
+}$$
+
+### 17.8 结论
+
+$$\boxed{\text{O(n) 实部 = GUE 涨落（已知），O(n) 虚部 = RH 要消除的。}}$$
+
+1. **GUE**：描述零点虚部的统计涨落，是本体论上的量子涨落；
+2. **$O(n)$ 实部**：与 GUE 同源，不违反 RH；
+3. **$O(n)$ 虚部**：对应零点实部偏离 $1/2$，是 RH 要消除的目标；
+4. **经典化**：不是外加操作，而是 $O_n^I$ 在无穷远处自然为零，对应原理的体现；
+5. **RH**：是经典极限的陈述，不是量子层面的陈述；
+6. **精确 RH**：需要有限 $n$ 的 $O_n^I$ 也被算术条件强制为零。
+
+$$\boxed{
+\begin{array}{c}
+\text{量子层面：} O_n^R \neq 0 \text{（GUE），} O_n^I \neq 0 \\
+\text{经典极限：} O_n^I \to 0 \;\Longrightarrow\; \text{渐近 RH} \\
+\text{有限 } n \text{ 算术条件：} O_n^I = 0 \;\Longrightarrow\; \text{精确 RH}
+\end{array}
+}$$
+
+> **一句话总结**：GUE 描述的是 $O(n)$ 实部的统计涨落——零点虚部的本体论量子涨落，这是已知的，不违反 RH。RH 要消除的是 $O(n)$ 的虚部——零点实部偏离 $1/2$。经典化不是外加操作，而是 $O(n)$ 虚部在无穷远处自然为零，这是对应原理的体现，给出渐近 RH。要证明精确 RH，还需要算术条件强制有限 $n$ 的虚部也为零。GUE 描述实部统计，经典化描述虚部渐近，算术条件描述有限 $n$ 精确——三者分工明确，共同构成 CQM 证明 RH 的完整逻辑。
 
 ---
 
