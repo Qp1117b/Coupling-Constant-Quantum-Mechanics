@@ -1300,7 +1300,11 @@ $$O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R} + i\underbra
 
 ### 14.4 GUE 与误差实部
 
-Montgomery–Odlyzko 定律指出黎曼零点的局部间距统计服从 GUE 分布。$O_n^R$ 与 GUE 谱值涨落**同量级** $O(n/(\log n)^2)$——数值核验：实际零点与平滑计数的偏差 $\delta\mathfrak{c}_n=2\gamma_n\delta\gamma_n$ 对 $\gamma_n^2/n$ 的比值在 n=10–500 区间稳定于 1.5–2.9。
+Montgomery–Odlyzko 定律指出黎曼零点的局部间距统计服从 GUE 分布。$O_n^R$ 与 GUE 谱值涨落**同量级** $O(n/(\log n)^2)$——数值核验（n=10–500，491 个零点，逐个计算比值 $2n\,\delta\gamma_n/\gamma_n$，其中 $\delta\gamma_n$ 为实际零点与平滑计数的偏差、$\delta\mathfrak{c}_n=2\gamma_n\delta\gamma_n$）：比值 RMS 从 0.74（n=10–60）升至 0.89（n=300–500），中位数 0.77，上界 1.84。
+
+**计数约定**：阶梯计数在零点处取中点 $n-\tfrac12$，故 $\delta\gamma_n$ 含系统常数 $-\tfrac{1}{2\rho_n}$。扣除该系统项后均值 $\approx 1\times10^{-6} \approx 0$；真涨落口径的 RMS 降至 0.28（n=10–60）→ 0.44（n=300–500）。未写明此约定时，复算结果会系统性偏差 2–3 倍。
+
+**CUE 对照（蒙特卡洛）**：真涨落 std 0.268，CUE 0.544（相差 2 倍），Poisson 7.11（相差 26 倍）——零点涨落最接近 CUE，为"同量级"判词提供实测支撑。
 
 **"同量级"不等于"同源"**：$O_n^R$ 是**单能级**相对偏差（$\sim1/n$，随 n 衰减），GUE 是**相邻间距**的统计分布（归一化涨落 ~45%，不随 n 衰减）。二者尺度与性质均不同，故此处仅标注**"同量级"**，来源关系**待证**。
 
