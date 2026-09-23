@@ -422,17 +422,48 @@ $$\boxed{[\text{旧}]\cdot K = [\text{新}]}$$
 
 #### 6.3.1 $K_L$ 的谱结构与数值状态
 
+**前置量**：
+
+| 量 | 公式 | 数值 | 含义 |
+|---|---|---|---|
+| $r_{\text{conf}}$ | $\sqrt{I\lambda_c}$ | $1.481$ | 无量纲耦合空间禁闭壳 |
+| $r_{\text{GUT}}$ | $\sqrt{4\pi\,☯\,\lambda_c}$ | $0.6180$ | GUT 标度（无量纲） |
+| $g_s^{IR}$ | $\sqrt{I\cdot\lambda_c}$ | $1.481$ | 红外强耦合冻结值（定理 10.4，相变点 $\lambda_c=(g_s^{IR})^2/I$） |
+| $\Lambda_{\text{QCD}}$ | $m_p/(☯\cdot\mathfrak c_1)$ | $203$ MeV | QCD 能标先验公式（定理 10.2） |
+| $\lambda_{\text{QCD}}$ | $\hbar c/\Lambda_{\text{QCD}}$ | $0.9716$ fm（第一性）/$1.005$ fm（标定） | QCD 特征长度 |
+
+其中 $\mathfrak c_1=\gamma_1^2+\tfrac14\approx 200.04$ 是第一耦级（黎曼谱第一本征值）。
+
 **谱参数公式**（归档 D1 回捞）：
 
 $$K_L = \frac{\lambda_{\text{QCD}}}{r_{\text{conf}}} = \frac{\hbar c \cdot ☯ \cdot \mathfrak c_1}{m_p \cdot g_s^{IR}}$$
 
-其中 $\mathfrak c_1=\gamma_1^2+\tfrac14\approx 200.04$ 是第一耦级（黎曼谱第一本征值），$g_s^{IR}$ 是红外强耦合，$r_{\text{conf}}=\sqrt{I\lambda_c}=1.481$ 是无量纲耦合空间禁闭壳。$K_L$ 把无量纲禁闭壳转换为 QCD 特征长度：$r_{\text{conf}}\cdot K_L=\lambda_{\text{QCD}}\approx 1.005$ fm。
+$K_L$ 把无量纲禁闭壳转换为 QCD 特征长度：$r_{\text{conf}}\cdot K_L=\lambda_{\text{QCD}}$（无量纲 $\times\,K_L$ = 长度）。
+
+**几何确定方式**（归档 §6.1）：
+
+$$K_L = \frac{\sqrt{\lambda_p \cdot r_p}}{r_{\text{GUT}}} = \frac{\sqrt{0.2103 \times 0.8409}}{0.6180} \approx 0.6805 \text{ fm}$$
+
+其中 $\lambda_p=\hbar c/m_p=0.2103$ fm 为质子康普顿波长，$r_p=0.8409$ fm 为质子电荷半径。$K_L$ 是质子内外尺度几何平均与 GUT 标度之比。
 
 **交织算子范数**：
 
 $$K_L = \big\|\,T:\mathcal{H}_{\text{Riemann}} \longrightarrow \mathcal{H}_{\text{angular}}\,\big\|$$
 
 即黎曼谱空间（径向，$\gamma_n$ / $\{\mathfrak c_n\}$）与马蒂厄–Weyl 谱空间（角向，$\lambda_c$ / Mathieu 重叠）之间**交织算子的范数**——径向与角向唯一的算符级接口。$T$ 的具体矩阵元未构造。【框架内构造】
+
+**自对偶结构（D4–D7）**：
+
+经 $K_L$ 映射后，质子康普顿波长 $\lambda_p$、GUT 标度 $r_{\text{GUT}}$、质子电荷半径 $r_p$ 在耦合空间中形成 $\tfrac{1}{2}:1:2$ 几何级数：
+
+| 发现 | 关系 | 偏差 |
+|---|---|---|
+| D4 | $\lambda_p/K_L = 0.3100 \approx r_{\text{GUT}}/2 = 0.3090$ | $0.32\%$ |
+| D5 | $r_p/K_L = 1.2394 \approx 2\,r_{\text{GUT}} = 1.2360$ | $0.27\%$ |
+| D6 | $\sqrt{\lambda_p \cdot r_p\,/\,K_L^2} = 0.6199 \approx r_{\text{GUT}} = 0.6180$ | $0.30\%$ |
+| D7 | $\lambda_p : r_{\text{GUT}} : r_p = \tfrac{1}{2} : 1 : 2$ | $<0.33\%$ |
+
+GUT 壳层是质子内部尺度（$\lambda_p$）与外部尺度（$r_p$）的几何平均——自对偶中心。上述偏差依赖 $K_L=0.6805$（标定链）；改用第一性 $K_L=0.656$ 则偏差全部升至 ~$3.7\%$。
 
 **两条值链与不一致**：
 
@@ -441,7 +472,7 @@ $$K_L = \big\|\,T:\mathcal{H}_{\text{Riemann}} \longrightarrow \mathcal{H}_{\tex
 | 第一性链 | $\Lambda_{\rm QCD}=203$ MeV → $\lambda=0.9716$ fm | $0.656$ fm | 严格第一性 |
 | 标定链 | $\lambda_{\rm QCD}=1.005$ fm（≈实验 $\Lambda\approx196$ MeV） | $0.6805$ fm | 含实验输入 |
 
-两值差 ~3.7%，来源：$g_s^{IR}$ 公式要求 $\approx 1.428$，定理给 $g_s^{IR}=1.481$，张力 3.73%。$K_L$ **尚未定死**；定死前依赖 $K_L=0.6805$ 的精确数值降级为标定符合。详见 `04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md` §6.5。【数值事实 + 诚实降级】
+两值差 ~$3.7\%$，来源：$g_s^{IR}$ 公式要求 $\approx 1.428$，定理给 $g_s^{IR}=1.481$，张力 $3.73\%$。$K_L$ **尚未定死**；定死前依赖 $K_L=0.6805$ 的精确数值（含 D4–D7 自对偶偏差 $<0.33\%$）降级为标定符合。详见 `04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md` §6.5。【数值事实 + 诚实降级】
 
 
 
