@@ -273,7 +273,7 @@ $$
 \tilde{A} = -\partial_u^2 + \frac14
 $$
 
-定义在 $L^2(\mathbb{R}, du)$ 上。其自然谱为：
+定义在 $L^2(\mathbb{R}, du)$ 上。$-\partial_u^2$ 在全直线 $L^2(\mathbb{R})$ 上**本质自伴**（亏指数 $(0,0)$），自伴延拓唯一，谱为：
 
 $$
 \operatorname{Spec}(\tilde{A}) = \left[\frac14, \infty\right)
@@ -281,11 +281,17 @@ $$
 
 **纯绝对连续谱，无离散特征值。**
 
+> **严格性边界**：$\tilde{A}=-\partial_u^2+\frac14$ 的自然谱是 $[\frac14,\infty)$ 的**纯绝对连续谱**，无离散本征值，故与 $\{\gamma_n^2+\frac14\}$ 的对应**不是严格点谱对应**。文献中承载零点的对象是**共振**（Sierra 2008）或**吸收谱**（Connes 1999），二者均非本征值：共振位于 resolvent 解析延拓的第二叶，**自伴性对其无约束力**。因此 §13.3 的"自伴性 $\Longrightarrow$ 谱实 $\Longrightarrow$ RH"须重新表述——见 §13.3。
+>
+> **空间修正**：$-\partial_u^2$ 在 $L^2(\mathbb{R})$ 上本质自伴（亏指数 $(0,0)$）；$(1,1)$ 仅在半直线 $L^2(\mathbb{R}_+)$ 出现。
+>
+> **负面结果**：Endres–Steiner (2010) 已证 $H_{\mathrm{BK}}$ 与 $H_{\mathrm{BK}}^2$ 均不能给出零点作为本征值（半直线上纯连续；紧致图上 Weyl 渐近不符）。
+
 **自伴延拓**：
 
-$\hat{H}$ 作为对称算符，亏指数为 $(1,1)$，有无穷多个自伴延拓，由相位参数 $\vartheta \in [0, 2\pi)$ 标记。
+$\hat{H}$ 在全直线 $L^2(\mathbb{R})$ 上本质自伴（亏指数 $(0,0)$），自伴延拓唯一。亏指数 $(1,1)$（无穷多个自伴延拓，由相位参数 $\vartheta \in [0, 2\pi)$ 标记）只在**半直线** $L^2([0,\infty))$ 上成立。
 
-**关键点**：算符形式已有，但自然自伴延拓未唯一确定。
+**关键点**：算符形式已有，但谱对应 $\{\gamma_n^2 + 1/4\}$ 不是严格点谱对应（见上述严格性边界），这是本框架最根本的未解决问题。
 
 ---
 
@@ -1130,7 +1136,7 @@ $$
 
 ## 十三、GRH 层级与临界线的来源
 
-> **状态说明**：本节把黎曼猜想（RH）放到广义黎曼猜想（GRH）的层级结构中定位，并澄清一个关键区分——**泛函方程给出的是"对称轴在 1/2"，而"零点落在 1/2"是 RH/GRH 的额外断言**。该区分在 CQM 中正好由"自伴性 ⟺ 谱实"这一步承担。本节是**结构性澄清**，不构成证明的任何新环节；GRH 本身未证明。
+> **状态说明**：本节把黎曼猜想（RH）放到广义黎曼猜想（GRH）的层级结构中定位，并澄清一个关键区分——**泛函方程给出的是"对称轴在 1/2"，而"零点落在 1/2"是 RH/GRH 的额外断言**。该区分在 CQM 中正好由"配对不变量 $\mathfrak{c}_n=\rho_n(1-\rho_n)$ 为实数"这一步承担。本节是**结构性澄清**，不构成证明的任何新环节；GRH 本身未证明。
 
 ### 13.1 RH 是 GRH 的特例
 
@@ -1187,39 +1193,31 @@ $$
 \boxed{\text{函数方程只锁住"关于 1/2 对称"，不锁住"落在 1/2 上"。}}
 $$
 
-把零点压到线上，才是 RH/GRH 的内容。**在 CQM 里，这一步的"额外输入"正是自伴性 ⟺ 谱为实**：
+把零点压到线上，才是 RH/GRH 的内容。**在 CQM 里，这一步的陈述应在配对不变量层面**：
 
 $$
-\hat{H}_\pi \text{ 自伴} \;\Longleftrightarrow\; \operatorname{Spec}(\hat{H}_\pi)\subset\mathbb{R} \;\Longleftrightarrow\; \gamma_{n,\pi}\in\mathbb{R} \;\Longleftrightarrow\; \text{零点在 } \tfrac12 \text{ 上}
+\boxed{\ \mathfrak{c}_n=\rho_n(1-\rho_n)\ \text{为实数}\ \Longleftrightarrow\ \rho_n \text{ 在 } \tfrac12 \text{ 上}\ }
 $$
 
-### 13.4 平凡（非尖点）表示：对称却不定的控制样本
+这是配对不变量层面的陈述，**不预设算符谱型**。把它落实为算符性质（本征值/共振/吸收谱）属待推 1，且各载体类型的已知困难见 §2 严格性边界：自伴性对点谱有约束（必为实数）、对连续谱无信息（恒为实数）、对共振无约束（位于 resolvent 解析延拓的第二叶，可为复数）。
 
-平凡表示 = 非尖点表示（主截 Eisenstein 级数），其 L 函数**因子化**为平移 $\zeta$ 的乘积：
+### 13.4 平凡表示：L 函数与零点
 
-$$
-L(s,\mathbf{1}_{GL(n)}) \sim \prod_{j=0}^{n-1}\zeta\!\big(s - \tfrac{n-1}{2} + j\big)
-$$
-
-每个因子 $\zeta(s-a)$ 的临界线（即其临界带的中心，无条件）在 $\mathrm{Re}(s)=\tfrac12+a$。于是 $n\ge2$ 时零点分布在 **n 条临界线的并集**上，而**不是单一 1/2 线**：
-
-| n | 因子（平衡规范） | 各因子临界线（无条件，关于 1/2 对称） |
-|---|---|---|
-| 1 | $\zeta(s)$ | **$\tfrac12$** |
-| 2 | $\zeta(s+\tfrac12)\,\zeta(s-\tfrac12)$ | $0$ 与 $1$ |
-| 3 | $\zeta(s+1)\,\zeta(s)\,\zeta(s-1)$ | $-\tfrac12,\ \tfrac12,\ \tfrac32$ |
+GL(n) 平凡表示取 isobaric 和（与朗兰兹 §5.4 一致），其 L 函数为：
 
 $$
-\boxed{\text{这些线关于 } \tfrac12 \text{ 两两对称，但（除中间一条外）都不落在 } \tfrac12 \text{ 上。}}
+L(s,\mathbf{1}_{GL(n)}) = \zeta(s)^n
 $$
 
-这正是一个"泛函方程成立、零点却离线"的干净演示，清楚表明 **CQM 的自伴性条件不是重复泛函方程，而是在其上增加实质内容**——把"关于 1/2 对称"收缩为"落在 1/2 上"。
+所有 Satake 参数为 1，故每个局部因子为 $(1-p^{-s})^{-n}$，整体即 $\zeta(s)^n$。**零点全在 $\mathrm{Re}(s)=1/2$**（每个 $\zeta$ 因子零点在 $1/2$）。
+
+平凡表示在 $n\ge2$ 时非尖点（非 cuspidal），L 函数确实因子化（$\zeta(s)^n = \zeta(s)\times\cdots\times\zeta(s)$），但所有因子相同，零点仍全在 $1/2$。$n\cdot☯$ 依赖此定义（GL(n) 平凡表示给出 $n\times☯$，除以 $n$ 得普适常数 $☯$）。
 
 ### 13.5 GRH 的标准对象：尖点（本原）表示
 
 1. **GRH 的零点断言应限定在尖点（本原）自守表示**（本原 Dirichlet 特征 / 尖点 $\pi$）：它们不可再分解，泛函方程才把对称轴升级为"零点在线上"。
 2. **非尖点（含"平凡"）情形的 L 函数因子化是定理，不是猜想**：其零点完全由低阶尖点谱平移决定，无需假设。
-3. **RH 之所以特殊**：GL(1) 上"平凡" = 平凡 Hecke 特征 = $\zeta(s)$，同时又是**本原**的（不可再分解）。唯一的"平凡表示"在 GL(1) 层兼有"尖点"身份，临界线才是真正的 1/2；到 $n\ge2$，"平凡表示"不再本原，"零点全在 1/2"这句话随之失效。
+3. **RH 之所以特殊**：GL(1) 上"平凡" = 平凡 Hecke 特征 = $\zeta(s)$，同时又是**本原**的（不可再分解）。唯一的"平凡表示"在 GL(1) 层兼有"尖点"身份，临界线才是真正的 1/2。到 $n\ge2$，平凡表示不再尖点（非 cuspidal），但其 L 函数 $\zeta(s)^n$ 零点仍全在 $1/2$——"零点全在 1/2"对平凡表示不失效。GRH 限定在尖点表示的原因是：非尖点表示的 L 函数因子化为低阶尖点表示的乘积，其零点分布由因子决定，GRH 对尖点表示的断言自动覆盖非尖点情形。
 
 ### 13.6 CQM 层级图的精化
 
@@ -1230,9 +1228,7 @@ $$
 \Downarrow \\
 \text{尖点自守表示 } \pi \text{（GL}(n)\text{）} \;\longrightarrow\; \text{条件 } \mathcal{C}_\pi \\
 \Downarrow \\
-\text{自伴延拓 } \hat{H}_\pi \;\Longleftrightarrow\; \operatorname{Spec}(\hat{H}_\pi)\subset\mathbb{R} \\
-\Downarrow \\
-\operatorname{Spec}(\hat{H}_\pi)=\{\tfrac14+\gamma_{n,\pi}^2\} \;\Longleftrightarrow\; \text{所有零点在 } \tfrac12 \text{ 上}
+\mathfrak{c}_{n,\pi}=\rho_{n,\pi}(1-\rho_{n,\pi}) \text{ 为实数} \;\Longleftrightarrow\; \text{所有零点在 } \tfrac12 \text{ 上}
 \end{array}
 }
 $$
@@ -1240,7 +1236,7 @@ $$
 $$
 \boxed{
 \begin{array}{c}
-\text{GRH} = \text{对所有尖点自守表示 } \pi \text{，} \hat{H}_\pi \text{ 自伴} \\
+\text{GRH} = \text{对所有尖点自守表示 } \pi \text{，} \mathfrak{c}_{n,\pi} \text{ 为实数} \\
 \Downarrow \\
 \text{RH} = \text{GRH 在 } \pi = \text{GL}(1)\text{ 平凡特征（=本原）时的特例}
 \end{array}
@@ -1249,13 +1245,13 @@ $$
 
 ### 13.7 一句话总结
 
-> **泛函方程给出对称轴 1/2，自伴性给定线；二者合起来才是 GRH。RH 是 GL(1) 平凡特征（兼本原）的特例。"平凡表示"在 $n\ge2$ 时是非尖点的、因子化的，其零点离线乃是定理，不在"零点全在 1/2"的范围内。**
+> **泛函方程给出对称轴 1/2，配对不变量 $\mathfrak{c}_n$ 为实数给定线；二者合起来才是 GRH。RH 是 GL(1) 平凡特征（兼本原）的特例。平凡表示在 $n\ge2$ 时非尖点，L 函数 $\zeta(s)^n$ 因子化但零点仍全在 $1/2$；GRH 限定在尖点表示是因为非尖点表示的零点分布由其尖点因子决定。**
 
 ---
 
 ## 十四、耦级、误差结构与 RH 的等价
 
-§十三已阐明 GRH 给出临界线 $1/2$ 的来源（泛函方程对称轴 + 自伴性）。本节回到 GL(1) 平凡表示的特例——RH 本身——从耦级 $\mathfrak{c}_n$ 的角度给出等价刻画，并引入误差的实部/虚部分解，为 §十五的经典化讨论做准备。
+§十三已阐明 GRH 给出临界线 $1/2$ 的来源（泛函方程对称轴 + 配对不变量为实数）。本节回到 GL(1) 平凡表示的特例——RH 本身——从耦级 $\mathfrak{c}_n$ 的角度给出等价刻画，并引入误差的实部/虚部分解，为 §十五的经典化讨论做准备。
 
 > **诚实声明**：本节中"耦级为实数 $\Longleftrightarrow$ RH"是数学事实；"经典化"是路线图主张，非已完成的证明。
 
@@ -1275,7 +1271,7 @@ $$\mathfrak{c}_n = \rho_n(1-\rho_n) = \frac14 + \gamma_n^2$$
 
 $$\operatorname{Im}[\rho_n(1-\rho_n)] = \gamma_n(1-2\beta_n) \neq 0$$
 
-耦级为复数。因此耦级为实数 $\Longleftrightarrow$ $\beta_n = 1/2$ $\Longleftrightarrow$ RH。等价地，$\hat{H}$ 自伴则谱为实，故耦级为实数 $\Longleftrightarrow$ $\hat{H}$ 自伴 $\Longleftrightarrow$ RH。$\hat{H}$ 作为对称算符亏指数为 $(1,1)$，自伴延拓由相位参数 $\vartheta \in \mathbb{R}$ 标记。
+耦级为复数。因此耦级为实数 $\Longleftrightarrow$ $\beta_n = 1/2$ $\Longleftrightarrow$ RH。等价地，耦级即配对不变量 $\mathfrak{c}_n=\rho_n(1-\rho_n)$，故耦级为实数 $\Longleftrightarrow$ RH（配对不变量层面，不预设算符谱型）。$\hat{H}$ 在全直线 $L^2(\mathbb{R})$ 上本质自伴（亏指数 $(0,0)$）；亏指数 $(1,1)$ 只在半直线 $L^2([0,\infty))$ 上成立，自伴延拓由相位参数 $\vartheta \in \mathbb{R}$ 标记。**注意**：谱对应 $\{\gamma_n^2+1/4\}$ 不是严格点谱对应——$\tilde{A}$ 的自然谱是纯绝对连续谱，承载零点的对象是共振而非本征值，自伴性对共振无约束力（见 §2 严格性边界）。
 
 ### 14.3 误差的实部与虚部
 
@@ -1290,7 +1286,7 @@ $$O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R} + i\underbra
 
 ### 14.4 GUE 与误差实部
 
-Montgomery–Odlyzko 定律指出黎曼零点的局部间距统计服从 GUE 分布——这是量子混沌的典型特征，为 Hilbert–Pólya 猜想提供了强统计证据。$O_n^R$ 与 GUE 谱值涨落同量级 $O(n/(\log n)^2)$，二者同源：$O_n^R$ 是零点虚部的本体论量子涨落，服从 GUE 统计。
+Montgomery–Odlyzko 定律指出黎曼零点的局部间距统计服从 GUE 分布。$O_n^R$ 与 GUE 谱值涨落同量级 $O(n/(\log n)^2)$，二者同源：$O_n^R$ 是零点虚部的本体论量子涨落，服从 GUE 统计。但 GUE 的判决力依赖"零点 = 严格点谱"这一前提；当前谱对应在半经典/共振层面（见 §2 严格性边界），故 GUE **不构成约束**，仅标注**可能有关**——若将来升级为严格谱，算符应属 GUE 类（混沌、破坏时间反演）。Sierra–Rodríguez-Laguna (2011) 指出 $H_{cl}=xp$ 满足破坏时间反演与准一维但不满足混沌（可积）。
 
 关键区分：**GUE 统计可以存在，不违反 RH**。RH 只关心实部是否在 $1/2$ 上（$O_n^I = 0$），不要求虚部涨落消失（$O_n^R \neq 0$ 是允许的）。
 
@@ -1316,7 +1312,7 @@ $$☯ = \sum_n \frac{1}{\mathfrak{c}_n} = \operatorname{Tr}(\hat{H}^{-1})$$
 
 物理系统提供舞台（算符、不确定性关系、带误差谱），算术结构提供精确性（条件、自伴性、误差为零）。RH 的精确性来自自守形式的代数结构，而非物理极限。
 
-### 15.2 经典化：对应原理的体现
+### 15.2 经典化：对应原理的体现及其局限
 
 经典化不是构造一个操作去消除 $O_n$，而是 $O_n^I$ 在无穷远处自然为零：
 
@@ -1324,7 +1320,9 @@ $$\frac{O_n^I}{\gamma_n^2} \sim \frac{1}{n} \to 0 \quad (n \to \infty)$$
 
 这与对应原理类比：大量子数极限下量子力学自然过渡到经典力学，不需要外加"经典化操作"。CQM 中，高耦级极限下带误差谱自然过渡到精确零点谱。经典化消除的是 $O_n^I$（虚部），不是 $O_n^R$（实部）——$O_n^R$ 是真正的量子涨落，始终存在。
 
-因此 RH 是经典极限的陈述，而非量子层面的陈述：量子层面涨落存在（$O_n^R \neq 0$，GUE），经典极限涨落消失（$O_n^I \to 0$），RH 描述的是经典极限，所以精确。
+> **经典化的根本局限**：$n \to \infty$ 渐近在最需要的地方最弱。Sierra 误差在 $n=1$ 时约为 125%（超过信号本身），而 RH 最难、$☯$ 最敏感的恰是低零点（第一个零点独占 $☯$ 求和的 21.6%）。经典化给出的渐近 RH 在低零点处无控制力——**在最需要它的地方最弱**。因此证明精确 RH 的重心应从 $n \to \infty$ 极限移到**有限 $n$ 的算术条件**（§15.3），后者在有限 $n$ 下精确成立，不依赖无穷极限。
+
+因此 RH 不是单纯经典极限的陈述。量子层面涨落存在（$O_n^R \neq 0$，GUE），经典极限给出渐近（$O_n^I \to 0$，但低零点无控制），**精确 RH 需要算术条件在有限 $n$ 下强制 $O_n^I = 0$**——这是 §15.3 的内容。
 
 ### 15.3 GUE、经典化与算术条件的分工
 
@@ -1334,9 +1332,9 @@ $$\frac{O_n^I}{\gamma_n^2} \sim \frac{1}{n} \to 0 \quad (n \to \infty)$$
 | 经典化 | $O_n^I$ 的渐近消解 | 给出渐近 RH |
 | 算术条件 | 强制有限 $n$ 的 $O_n^I = 0$ | 给出精确 RH |
 
-经典化给出的是渐近 RH（$n \to \infty$ 时 $O_n^I \to 0$）。要证明精确 RH，还需算术条件在有限 $n$ 下强制 $O_n^I = 0$——这正是 §十四中自守形式条件传导的精确性所在：条件传导是离散有限的，不需要 $n \to \infty$ 极限。三者分工明确：GUE 描述实部统计（已知），经典化描述虚部渐近消解，算术条件描述有限 $n$ 精确——共同构成 CQM 证明 RH 的完整逻辑。
+经典化给出的是渐近 RH（$n \to \infty$ 时 $O_n^I \to 0$），但此渐近在低零点处无控制力（§15.2 局限）。**证明精确 RH 的重心在算术条件**：在有限 $n$ 下强制 $O_n^I = 0$——这正是 §十四中自守形式条件传导的精确性所在：条件传导是离散有限的，不需要 $n \to \infty$ 极限。三者分工明确：GUE 描述实部统计（已知），经典化描述虚部渐近消解（辅助性，低零点弱），算术条件描述有限 $n$ 精确（核心）——共同构成 CQM 证明 RH 的完整逻辑。
 
-与历史路线对比：直接 Hilbert–Pólya 未完成；de Bruijn–Newman 需要 $t \to \infty$ 未完成；物理经典化只需 $n \to \infty$ 给出渐近而非精确。CQM 的路线不依赖物理无穷，只依赖算术精确——条件传导在有限 $n$ 下精确成立。
+与历史路线对比：直接 Hilbert–Pólya 未完成；de Bruijn–Newman 需要 $t \to \infty$ 未完成；物理经典化只需 $n \to \infty$ 给出渐近而非精确，且低零点处最弱。CQM 的路线不依赖物理无穷，只依赖算术精确——条件传导在有限 $n$ 下精确成立。
 
 ---
 
@@ -1391,7 +1389,7 @@ Langlands 纲领断言自守表示 $\longleftrightarrow$ Galois 表示（任意 
 | Sierra 模型 | G. Sierra, "A quantum mechanical model of the Riemann zeros", New J. Phys. 10, 033016 (2008), arXiv:0712.0705；G. Sierra & P. K. Townsend, "Landau levels and Riemann zeros", Phys. Rev. Lett. 101, 110201 (2008)；G. Sierra & J. Rodríguez-Laguna, "The H=xp model revisited and the Riemann zeros", Phys. Rev. Lett. 106, 200201 (2011)；G. Sierra, "The Riemann zeros as spectrum and the Riemann hypothesis", Symmetry 11(4), 494 (2019) | 属实（2008–2011）；**注意**：Sierra 2008/2011 给出的是"连续谱嵌入离散共振/与平均零点谱一致"，并非明确"$1/4+\gamma_n^2$"公式 |
 | Endres–Steiner | S. Endres & F. Steiner, "The Berry-Keating operator on $L^2(\mathbb{R}_+)$", J. Math. Phys. 50, 083504 (2009) | 项目既有引用 |
 
-**重要诚实标注（循环性）**：本文"Sierra-CQM 定理 $\mathfrak{c}_n=1/4+\gamma_n^2$"是 CQM 框架自身的谱对应构造（零点虚部 $\gamma_n \leftrightarrow \mathfrak{c}_n=1/4+\gamma_n^2$ 为 $\mathbb{R}_{>0}$ 上的双射），借用的算符形式来自 Berry–Keating / Sierra，**并非 Sierra 原论文的直接结果**；且该对应的 $\gamma_n$ 即为待证明对象，故"待推1（从素数独立推出边界条件）"闭合之前，这一对应停留在构造层面，存在循环性。
+**重要诚实标注（循环性）**：本文"Sierra-CQM 定理 $\mathfrak{c}_n=1/4+\gamma_n^2$"是 CQM 框架自身的谱对应构造（零点虚部 $\gamma_n \leftrightarrow \mathfrak{c}_n=1/4+\gamma_n^2$ 为 $\mathbb{R}_{>0}$ 上的双射），借用的算符形式来自 Berry–Keating / Sierra，**并非 Sierra 原论文的直接结果**；且该对应的 $\gamma_n$ 即为待证明对象，故"待推1（从素数独立推出边界条件）"闭合之前，这一对应停留在构造层面，存在循环性。**更根本的困难**：$\tilde{A}=-\partial_u^2+1/4$ 的自然谱是纯绝对连续谱，无离散本征值，与 $\{\gamma_n^2+1/4\}$ 的对应不是严格点谱对应。文献中承载零点的对象是共振（Sierra 2008）或吸收谱（Connes 1999），均非本征值——自伴性对共振无约束力（见 §2 严格性边界）。
 
 ---
 
