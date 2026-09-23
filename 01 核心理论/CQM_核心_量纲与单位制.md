@@ -500,7 +500,7 @@ $$\boxed{
 $$\boxed{
 \begin{aligned}
 &\text{底层：自守形式；}\\
-&\text{中层：转换常数 }c,K_\Theta,\alpha,\dots\text{ 是自守形式的导出值；}\\
+&\text{中层：转换常数 }K_L,K_M,K_Q,K_\Theta,K_N,K_J\text{ 是自守形式的导出值；}\\
 &\text{翻译层：SI 单位。}
 \end{aligned}}$$
 
