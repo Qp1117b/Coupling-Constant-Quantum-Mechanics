@@ -1219,6 +1219,8 @@ $$
 
 平凡表示在 $n\ge2$ 时非尖点（非 cuspidal），L 函数确实因子化（$\zeta(s)^n = \zeta(s)\times\cdots\times\zeta(s)$），但所有因子相同，零点仍全在 $1/2$。$n\cdot☯$ 依赖此定义（GL(n) 平凡表示给出 $n\times☯$，除以 $n$ 得普适常数 $☯$）。
 
+> **术语注释（§13.4 vs 朗兰兹 §5.4）**：本文"GL(n) 平凡表示"特指 isobaric 和 $\mathbf{1}^{\boxplus n}$（所有 Satake 参数为 1，无单元移位），给出 $L(s)=\zeta(s)^n$。朗兰兹 §5.4 在更一般的 Eisenstein 诱导表示框架 $\mathrm{Ind}(\chi_1,\ldots,\chi_n)$ 中推导，当所有 $\chi_k$ 取平凡特征时退化为本文情形。若 $\chi_k$ 含单元移位 $|\cdot|^{it_k}$（$t_k\neq 0$），则 $L(s)=\prod_k\zeta(s-it_k)$，$☯_n=\sum_k\xi'(1-it_k)/\xi(1-it_k)\neq n\cdot☯_1$。因此"$☯$ 固定于 GL(5)"及 $☯_n=n\cdot☯_1$ 须建立在平凡特征版本（$\zeta(s)^n$）上，非一般 Eisenstein 诱导。
+
 ### 13.5 GRH 的标准对象：尖点（本原）表示
 
 1. **GRH 的零点断言应限定在尖点（本原）自守表示**（本原 Dirichlet 特征 / 尖点 $\pi$）：它们不可再分解，泛函方程才把对称轴升级为"零点在线上"。
