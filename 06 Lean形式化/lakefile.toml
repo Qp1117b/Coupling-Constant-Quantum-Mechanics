@@ -1,5 +1,5 @@
 name = "CQMFormal"
-version = "0.5.3"
+version = "0.7.0"
 defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "Superconductivity", "FGChain", "GN"]
 
 [[lean_lib]]

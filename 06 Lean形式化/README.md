@@ -35,13 +35,13 @@
 | **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |
 | **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |
 | **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |
-| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 ☯_n=n·☯₁ 缩放律与归一化普适性** |
+| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 $☯_n=n\cdot☯_1$ 缩放律与归一化普适性** |
 | **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |
 | **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
-| **FGChain** | `Basic.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `Synchronization.lean`, `Observable.lean` | FG纤维丛理论链路形式化（7 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i☯$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
+| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
 | **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）——共 19 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
 
 ## 形式化推导链
@@ -143,10 +143,10 @@ Axioms
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
 | — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
-| — | 相变量子 ☯ = ξ'(1)/ξ(1) 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
+| — | 相变量子 $☯ = \xi'(1)/\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
-| — | ☯ 的零点求和表示 $\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
+| — | $☯$ 的零点求和表示 $\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
 | — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |
 
 ### 闭合缺口 (v0.5.8)
@@ -169,7 +169,7 @@ lake build CartanAlgebra # 编译嘉当代数库
 lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
 lake build Superconductivity # 编译强引力超导库（16 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
-lake build FGChain # 编译 FG 纤维丛理论链路库（7 模块，待验证）
+lake build FGChain # 编译 FG 纤维丛理论链路库（12 模块，2 个通过、10 个不通过）
 lake build GN # 编译 G_N 第一性推导库（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造）
 lake build GN.TripleIdentity # 编译单模块
 lake build GN.SierraCQM # 编译单模块
@@ -197,7 +197,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 - **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。10×10 `native_decide` 对 det 语句仍不可用，故采用显式基路线
 - **§6 Adele Jacobian 因子 2**：新增 `GN/AdeleJacobian.lean`（11 引理/定理），条件定理：自对偶 `det D∞ · ∏ det Dp = 1` ⇒ `ln 𝒥 = −2 ln(∏ det Dp)` ⇒ `𝒥 = exp(−2/☯)`；Tate 自对偶本身以 `placeholder` 如实标注
-- **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），κ = (N_faces + ☯)/N_cycle 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 κ = 31/30 + ☯/30、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）
+- **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），$\kappa = (N_{\text{faces}} + ☯)/N_{\text{cycle}}$ 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 $\kappa = 31/30 + ☯/30$、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）
 - **GN 库统计**：3→6 模块，19→101 定理；全库定理总数 666→748
 
 ## 本次更新亮点 (v0.6.2)
@@ -263,7 +263,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 ## 本次更新亮点 (v0.5.4)
 
-- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（Tr_☯ 理想化）
+- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（$\text{Tr}_☯$ 理想化）
 - **A₄ 双重角色（哈密顿量 = 能动张量）**：`cartanHamiltonian`（A₄ 作为离散 Laplacian，07 嘉当结构 §2.1）与 `stressEnergyTrace`（A₄ 谱和 = 8）一致性定理 `cartanHamiltonian_trace_eq_stressEnergyTrace`——同一谱 {λ₁..λ₄} 同时充当哈密顿量迹与能动张量迹
 - **张量序参量正性**：`superconductingOrderComponent_pos` / `superconductingOrderTensor_pos` / `superconductingOrderTensor_cartanWeights_pos`——A₄ 正定谱下超导序参量逐通道与全体严格为正
 - **谱间隙退化到 BCS**：谱间隙 λ₁ = (3−√5)/2 的强大 >0/<1/最小定理；`bcsGapInGapChannel`/`bcsTcInGapChannel` 表现谱间隙同时缩放 Δ 与 T_c；`gapChannel_gapRatio_invariant` 说明普适能隙比不受谱间隙缩放影响

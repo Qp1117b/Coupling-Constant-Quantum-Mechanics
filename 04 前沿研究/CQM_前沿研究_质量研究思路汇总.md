@@ -154,7 +154,7 @@ $$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfra
 | ---------------- | -------------------------- | ------ |
 | $I = 5/3$        | $\mathrm{SU}(5)$ Dynkin 指数比 $T(\mathbf{24})/T(\mathbf{8})$ | 质子特有   |
 | $\lambda_c$      | Mathieu 临界参数               | 质子特有   |
-| $\mathfrak{c}_1$ | 谱系数（$\gamma_1$ 为 Riemann 第一零点，与 ☯ 同源） | **普适**（未证构造） |
+| $\mathfrak{c}_1$ | 谱系数（$\gamma_1$ 为 Riemann 第一零点，与 $☯$ 同源） | **普适**（未证构造） |
 | $\kappa$         | 修正系数                       | 质子特有   |
 | $☯$              | 全局谱权重                      | **普适** |
 | $\exp(-2/☯)$     | 全局谱行为                      | **普适** |
@@ -453,7 +453,7 @@ $$
 | **电子的自守诱导** | $\mathrm{Ind}_H^G(\sigma)^\vee$ 中 $H, \sigma$ 的具体选择 |
 | **中子的基变换** | $\mathrm{BC}_{E/F}(\pi_p)$ 中 $E/F$ 的具体选择（与 n–p 分裂 0.14% 的量级不匹配见 §8.4） |
 | **多重度与表示维数的对应** | $(1,4,5)$ 与 $\mathbf{1} \oplus \mathbf{4} \oplus \mathbf{5}$ 的对应需单独论证 |
-| **$☯$ 的来源** | 从 $\mathrm{GL}(n)$ 平凡自守形式 $L$ 函数提取（$n\cdot☯$ 除以 $n$），普适常数，不依赖 $n$；闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2$ 已验证。**注意**：☯ 走**平凡特征侧**（GL(1) ζ/ξ），$\pi_p=\mathrm{Sym}^4(\pi_2)$ 走**尖点侧**（GL(5)）——尖点表示的 $\Lambda$ 本身即整、无极点，无 ξ 化，故 ☯ **不能**由 $L(s,\pi_p)$ 得到；二者在 $G_N$ 公式中**相乘而非同源** |
+| **$☯$ 的来源** | 从 $\mathrm{GL}(n)$ 平凡自守形式 $L$ 函数提取（$n\cdot☯$ 除以 $n$），普适常数，不依赖 $n$；闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2$ 已验证。**注意**：$☯$ 走**平凡特征侧**（GL(1) ζ/ξ），$\pi_p=\mathrm{Sym}^4(\pi_2)$ 走**尖点侧**（GL(5)）——尖点表示的 $\Lambda$ 本身即整、无极点，无 ξ 化，故 $☯$ **不能**由 $L(s,\pi_p)$ 得到；二者在 $G_N$ 公式中**相乘而非同源** |
 
 ---
 
@@ -509,7 +509,7 @@ $$
 | §3.2/§3.3（自守关联、$f_L,f_T\in\pi_p$） | 本汇总新增（对应发生学分层：自守形式 → L 函数 → 朗兰兹；见 `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`） |
 | §4（GL(5) 构造与 Sym⁴ 提升） | 本汇总新增（候选构造 $\pi_p=\mathrm{Sym}^4(\pi_2)$；文献支撑见附 B） |
 | §5（$G_N$ 可能公式） | `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2–8.3（参数来源表：$☯=0.02309570897$、$\mathfrak{c}_1=1/4+\gamma_1^2=200.04045483$、$\lambda_c=1.316022911$、$I=5/3$、$\kappa=(31+☯)/30$、$\exp(-2/☯)$、$m_p$ 实验输入） |
-| §6（☯ 唯一定义） | `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`（$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=\sum 1/(\gamma_n^2+1/4)\approx 0.0230957$）；$\zeta$ 与 $\xi$ 是 GL(1) 平凡特征同一 $L$ 函数的算术面孔与谱面孔，☯ 取自 $\xi$（只有 $\xi$ 零点集恰好是 $\{\gamma_n\}$）；$\mathrm{GL}(n)$ 给出 $n\cdot☯$，☯ 为普适常数 |
+| §6（$☯$ 唯一定义） | `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`（$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=\sum 1/(\gamma_n^2+1/4)\approx 0.0230957$）；$\zeta$ 与 $\xi$ 是 GL(1) 平凡特征同一 $L$ 函数的算术面孔与谱面孔，$☯$ 取自 $\xi$（只有 $\xi$ 零点集恰好是 $\{\gamma_n\}$）；$\mathrm{GL}(n)$ 给出 $n\cdot☯$，$☯$ 为普适常数 |
 | §7（质量从自守关联出现） | 本汇总整理（§7.2/§7.3 两处移项合并为一个方程） |
 | §8（自守分化） | 本汇总新增（朗兰兹函子性分化；不含 $\mathrm{Res}_H$、$\otimes D(\delta)$、$\otimes\tilde{\pi}_p$ 三个不适用操作） |
 | §10.6（CODATA 对比） | `03 引力与退相干/CQM_引力_GN可能公式.md` §9 高精度数值验证（$G_N$ 与 CODATA 偏差约 $-3$ ppm） |
@@ -536,7 +536,7 @@ $$
 | §3.1 $A_4$ 谱 $\{9^{(1)},4^{(4)},1^{(5)}\}$ | 本项目直接计算验证（迹 30、谱和 30）；框架文献：Horak & Jost 2013, *Adv. Math.* 244, 303–336；Duval & Reiner 2002, *Trans. AMS* 354, 4313–4344 | 单纯形组合/高阶 Hodge 拉普拉斯谱的一般框架；整数谱性质 | 谱事实=本项目验证；文献提供框架 |
 | §3.1 S₅ 分解 $1\oplus4\oplus5$ | Fulton & Harris 1991, GTM 129；James & Kerber 1981, LNM 682 | S₅ 作用在 3-子集上的 10 维置换表示分解为 $1\oplus4\oplus5$ | 标准（严格） |
 | §5 λ_c（Mathieu） | McLachlan 1947, *Theory and Application of Mathieu Functions*, Oxford；NIST DLMF 第 28 章（§28.2） | Mathieu 方程标准形式、特征值 $b_1(q)$、$se_1$、连分数理论 | 标准理论；$\lambda_c$ 数值为本项目计算（$q_c=0.3290057278$） |
-| §6 ☯ | Titchmarsh 1986（2 版，Heath-Brown 修订） | ξ 函数、Hadamard 乘积、$\xi'/\xi$ 理论；恒等式 $\sum_{\gamma>0}1/(\gamma^2+1/4)=\frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 可由此推出；本项目验证闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2=0.02309570897$ | 标准理论；数值已验证 |
+| §6 $☯$ | Titchmarsh 1986（2 版，Heath-Brown 修订） | ξ 函数、Hadamard 乘积、$\xi'/\xi$ 理论；恒等式 $\sum_{\gamma>0}1/(\gamma^2+1/4)=\frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 可由此推出；本项目验证闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2=0.02309570897$ | 标准理论；数值已验证 |
 | §10.6 CODATA | Mohr, Newell, Taylor, Tiesinga 2025, *Rev. Mod. Phys.* 97, 025002（CODATA 2022） | $G=6.67430(15)\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$（2022 与 2018 相同）；本项目值偏差 $-2.85$ ppm ≈ $-3$ ppm | 实验参考值 |
 | §4.1 Lie 理论 | Bourbaki, *Groupes et Algèbres de Lie*, Ch. 4–6；Humphreys 1972, GTM 9 | $A_4$ Dynkin 图 4 节点、Cartan 矩阵 $4\times4$、SL(5) 秩 4、GL(5) 约化秩 5 | 标准（严格） |
 
@@ -546,7 +546,7 @@ $$
 2. **§8.3 恒等式对齐**：标准 Rankin–Selberg 恒等式为 $L(s,\pi\times\tilde{\pi})=\zeta(s)L(s,\mathrm{Sym}^2\pi)$，不含 $\zeta(s+1)$ 分母。文档写法为框架内表述，严格化时需给出该分母的机制说明或改按标准恒等式。
 3. **§8.4 术语提示**：文献中"内窥转移"（endoscopy）通常指 Langlands–Shelstad 内窥理论，而 $\mathrm{BC}_{E/F}$（基变换）对应 Langlands 1980 / Arthur–Clozel 1989；术语可考虑统一为"基变换"以避免歧义。
 4. **§3.1 谱事实已直接验证**：4-单纯形边-面关联矩阵 $E\in\{0,1\}^{10\times10}$（$E_{fe}=1$ 当边 $e\subset$ 面 $f$），$E^TE$ 本征值恰为 $\{9,4,4,4,4,1,1,1,1,1\}$，即 $\{9^{(1)},4^{(4)},1^{(5)}\}$，迹 30、谱和 30。
-5. **§6 ☯ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 ξ 的 Hadamard 乘积推出，非拟合值。
+5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 ξ 的 Hadamard 乘积推出，非拟合值。
 
 ---
 

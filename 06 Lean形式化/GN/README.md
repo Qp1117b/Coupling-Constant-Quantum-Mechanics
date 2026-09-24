@@ -3,7 +3,7 @@
 对应研究文档：`04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md`
 
 本库形式化证明稿中**第一部分（数学事实层）**的可形式化子集，从
-`SpectralGeometry.Basic` 复用相变量子 `spectralQuantum`（☯）的解析定义
+`SpectralGeometry.Basic` 复用相变量子 `spectralQuantum`（$☯$）的解析定义
 与数值桥梁公理，不依赖当前编译失败的 `SpectralGeometry.RiemannXi` /
 `SpectralGeometry.Mathieu`。
 
@@ -28,12 +28,12 @@
 
 | 定理 | Lean 名 | 对应文档 | 证明方式 |
 |:---|:---|:---|:---|
-| ☯ 闭式等价变形 | `spectralQuantum_closedForm` | 定理 1.2 | log 乘法公式 + log 4 = 2 log 2 |
-| λ₁ = ☯ | `liCoeffOne_eq_spectralQuantum` | 定理 1.3 | 定义展开 + `ring` |
-| B = -☯ | `leclairConstant_eq_neg_spectralQuantum` | 定理 1.4 | 定理 1.2 + `ring` |
+| $☯$ 闭式等价变形 | `spectralQuantum_closedForm` | 定理 1.2 | log 乘法公式 + log 4 = 2 log 2 |
+| $\lambda_1 = ☯$ | `liCoeffOne_eq_spectralQuantum` | 定理 1.3 | 定义展开 + `ring` |
+| $B = -☯$ | `leclairConstant_eq_neg_spectralQuantum` | 定理 1.4 | 定理 1.2 + `ring` |
 | 三重恒等（代数层） | `spectralQuantum_triple_identity` | 定理 1.5 | 上三者复合 |
-| λ₁ > 0（Li 判据 n=1） | `liCoeffOne_pos` | 推论 | λ₁ = ☯ > 0 |
-| B < 0 | `leclairConstant_neg` | 推论 | B = -☯ < 0 |
+| $\lambda_1 > 0$（Li 判据 n=1） | `liCoeffOne_pos` | 推论 | $\lambda_1 = ☯ > 0$ |
+| $B < 0$ | `leclairConstant_neg` | 推论 | $B = -☯ < 0$ |
 | λ₁ = -B | `liCoeffOne_eq_neg_leclairConstant` | 定理 1.5 推论 | 复合 |
 | λ₁ 数值桥梁 | `liCoeffOne_numerical_bounds` | — | 继承 ☯ 区间公理 |
 | B 紧凑形式 = 展开形式 | `leclairConstantCompact_eq` | 定义 1.5 | log(2√π) 展开 |
@@ -41,7 +41,7 @@
 定义（按文献闭式，定义展开即证明）：
 
 - `liCoeffOne`：第一 Li 系数 λ₁ = 1 − log(4π)/2 + γ_E/2（Voros 2016）
-- `leclairConstant` / `leclairConstantCompact`：LeClair 常数 B = −γ_E/2 − 1 + log 2 + log π/2 = −γ_E/2 − 1 + log(2√π)（arXiv:2406.01828）
+- `leclairConstant` / `leclairConstantCompact`：LeClair 常数 B = −γ_E/2 − 1 + log 2 + (log π)/2 = −γ_E/2 − 1 + log(2√π)（arXiv:2406.01828）
 
 ## 核心定理（§5 Sierra-CQM 条件性渐近）
 
@@ -62,13 +62,13 @@
 
 | 缺口 | 描述 | 状态 |
 |:---|:---|:---|
-| 定理 1.1 | ☯ 的零点求和表示 ☯ = Σ 1/(γ_n²+1/4)，需 ξ 的 Hadamard 乘积 | 依赖 `SpectralGeometry.RiemannXi`（当前编译失败），待该模块修复 |
+| 定理 1.1 | $☯$ 的零点求和表示 $☯ = \sum 1/(\gamma_n^2+1/4)$，需 ξ 的 Hadamard 乘积 | 依赖 `SpectralGeometry.RiemannXi`（当前编译失败），待该模块修复 |
 | 定理 1.3 解析侧 | 生成函数 λ_n 链路到 ξ'(1)/ξ(1) 的解析推导 | 同上；本库形式化其闭式代数层 |
 | §5 步骤 1–2 | 酉等价 U Ĥ U⁻¹ = −∂² + 1/4 与平面波广义本征函数 | 分析学基础设施（酉变换、分布谱论），待后续 |
 | §5 物理来源 | `L_n = 2πn/γ_n` 与 `m = n` 的第一性推导 | 构造性假设（文档已标注）；代数核心已在 `SierraCQM.lean` |
-| ☯ = ξ'(1)/ξ(1) 本体 | A2.2 的解析推导 | 由 `SpectralGeometry.RiemannXi` 承接（修复前，定义与文档在 `SpectralGeometry.Basic`） |
+| $☯ = \xi'(1)/\xi(1)$ 本体 | A2.2 的解析推导 | 由 `SpectralGeometry.RiemannXi` 承接（修复前，定义与文档在 `SpectralGeometry.Basic`） |
 | §6 Tate 自对偶 | `det(D_∞) · ∏_p det(D_p) = 1` 的严格证明 | 数学事实（Tate 1950）+ CQM 构造叠加；库内以 `tateSelfDual_placeholder` 标注，条件定理已证 |
-| §6 构造 10.1 | `ln(∏ det D_p) = 1/☯` 的启发式对应 | 启发式；库内仅给出其条件推论 `𝒥 = exp(−2/☯)` |
+| §6 构造 10.1 | `ln(∏ det D_p) = 1/$☯$` 的启发式对应 | 启发式；库内仅给出其条件推论 `𝒥 = exp(−2/☯)` |
 | §9 构造 9.1 | `𝔠₁ = 1/4 + γ₁²` 的 n=1 精确等同 | 超出 Sierra-CQM 渐近定理范围；以 `firstCouplingExact : Prop` 记录，数值旁证 < 10⁻⁸ |
 | §10 构造 10.1 | p-进谱行列式 `det(D_p)` 的存在性 | CQM 构造，非标准数学对象 |
 | §11 开放问题 11.1 | `G_N` 乘积结构的变分原理 | 未解决；库内仅证各因子正性与对数形式 |
