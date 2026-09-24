@@ -456,11 +456,11 @@ $$K_L = \frac{\sqrt{\lambda_p \cdot r_p}}{r_{\text{GUT}}} = \frac{\sqrt{0.2103 \
 
 其中 $\lambda_p=\hbar c/m_p=0.2103$ fm 为质子康普顿波长，$r_p=0.8409$ fm 为质子电荷半径。$K_L$ 是质子内外尺度几何平均与 GUT 标度之比。
 
-**交织算子范数**：
+**量纲地位（禁闭映射常数）**：
 
-$$K_L = \big\|\,T:\mathcal{H}_{\text{Riemann}} \longrightarrow \mathcal{H}_{\text{angular}}\,\big\|$$
+$K_L$ 是**禁闭映射常数**：量纲为长度（fm）的转换因子，把无量纲耦合壳 $r_{\text{coupling}}$ 映为物理长度 $r_{\text{phys}}=r_{\text{coupling}}\cdot K_L$。它与 $K_M=G_N^{-1}$、$K_Q$ 同属层间转换常数，是「旧量纲 × 转换常数 = 新量纲」模式（§6.3）在长度层的实例。
 
-即黎曼谱空间（径向，$\gamma_n$ / $\{\mathfrak c_n\}$）与马蒂厄–Weyl 谱空间（角向，$\lambda_c$ / Mathieu 重叠）之间**交织算子的范数**——径向与角向唯一的算符级接口。$T$ 的具体矩阵元未构造。【框架内构造】
+> **修正注记（2026-09-25，术语根除）**：本节此前把 $K_L$ 写作「径向–角向交织算子（intertwiner）的范数」$K_L=\big\|T:\mathcal H_{\text{Riemann}}\to\mathcal H_{\text{angular}}\big\|$。该定性已**全项目根除**，三条理由：(1) intertwiner 的严格定义要求先指定群 $G$ 与两侧表示，归档未给任何群作用；(2) 算子范数在两侧同归一化时是纯数，与 $K_L$ 的长度量纲（fm）冲突；(3) $\{\gamma_n\}$ 不是任何一维自伴算符的严格点谱（Weyl 律否证），故 $\mathcal H_{\text{Riemann}}$ 不存在。详见 `04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md` §6.5.1。【框架内构造（比值定义）】
 
 **自对偶结构（D4–D7）**：
 

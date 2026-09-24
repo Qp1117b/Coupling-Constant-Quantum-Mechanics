@@ -509,7 +509,7 @@ $$G_N = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2} = 6.6742810045 \times 10^{-
 7. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Rev.*, 41, 236.
 8. Tate, J. (1950). Fourier analysis in number fields and Hecke's zeta-functions. *Thesis*, Princeton.
 9. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
-10. Endres, S., & Steiner, F. (2009). The Berry-Keating operator on $L^2(\mathbb{R}_+)$. *J. Math. Phys.*, 50, 083504.
+10. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。**勘误（2026-09-25）**：旧稿所引 "J. Math. Phys. 50, 083504 (2009)" 经 arXiv（0912.3183）与期刊检索核实为**误引**，已更正。
 11. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
 12. Sorkin, R. D. (2009). Does locality fail at intermediate length-scales? *arXiv:0907.5398*.
 13. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of scalar fields in causal set theory. *Phys. Rev. D*, 82, 104048.
