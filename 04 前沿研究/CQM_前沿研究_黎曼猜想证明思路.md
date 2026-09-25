@@ -866,7 +866,7 @@ $$
 **新思路的独特性**：
 
 $$
-☯ = \frac{\xi'(1)}{\xi(1)} = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+☯ = \frac{\xi'(1)}{\xi(1)}, \qquad \text{谱表示 } ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} \;\text{（条件于 RH，见文首诊断）}
 $$
 
 $☯$ 的独特之处：
@@ -999,7 +999,7 @@ $$
 CQM的独特之处：
 
 $$
-☯ = \frac{\xi'(1)}{\xi(1)} = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+☯ = \frac{\xi'(1)}{\xi(1)}, \qquad \text{谱表示 } ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} \;\text{（条件于 RH，见文首诊断）}
 $$
 
 它同时是：
