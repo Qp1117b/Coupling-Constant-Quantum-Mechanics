@@ -1228,7 +1228,7 @@ CQM 的核心创新始终只有一点：**把量子力学的共轭对从 $(\hat{
 6. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Rev.*, 41, 236.
 7. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
 8. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
-9. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。**勘误（2026-09-25）**：旧稿所引 "J. Math. Phys. 50, 083504 (2009)" 经 arXiv（0912.3183）与期刊检索核实为**误引**（该卷页非 Endres–Steiner 论文），已更正。
+9. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
 10. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of scalar fields in causal set theory. *Phys. Rev. D*, 82, 104048.
 11. Lindblad, G. (1976). On the generators of quantum dynamical semigroups. *Commun. Math. Phys.*, 48, 119.
 12. Bardeen, J., Cooper, L. N., & Schrieffer, J. R. (1957). Theory of superconductivity. *Phys. Rev.*, 108, 1175.

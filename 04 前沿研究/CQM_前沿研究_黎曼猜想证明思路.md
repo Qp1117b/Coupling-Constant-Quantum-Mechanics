@@ -166,7 +166,7 @@ $$
 
 循环性诊断对"3 + 2 + 2"分层的直接后果：
 
-- $☯$ = 独立定义的作用量量子：**不循环**，地位等同 $\hbar$（基本输入，不需"独立确定"），**从"更深层待推 2"降级为"已知"**；
+- $☯$ = 独立定义的作用量量子：**不循环**，地位等同 $\hbar$（基本输入，不需"独立确定"），列为**已知**；
 - 算符 $\hat{H}$：**不循环**（形式定义）；
 - 对易关系 $[\hat{u},\hat{p}_u]=i$：**不循环**（公设 = 未推导 ≠ 循环），仍为"更深层待推 1"——要证明系统**必然存在**，仍需从更深层原理推出它，但这是"未推导"而非"循环"；
 - 边界条件 $L_n$ 从 $\gamma_n$ 反推：**唯一循环**。
@@ -201,7 +201,7 @@ $$
 
 - **3 个已知**：算符 $\hat{H}=\hat{D}^2+1/4$（$\hat{D}=-i(\partial_u-1/2)$）、不确定性关系（相变量子 $☯$）、带误差的谱带 $\mathfrak{c}_n=\gamma_n^2+1/4+O_n$。
 - **2 个待推**：边界条件（必须与素数有关）、经典化（消除误差虚部 $O_n^I$）。
-- **2 个更深层待推**：不确定性关系 $[\hat{u},\hat{p}_u]=i$ 本身、相变量子 $☯$ 的独立确定（$☯$ 不循环、为基本输入，降级为"已知"）。
+- **2 个更深层待推**：不确定性关系 $[\hat{u},\hat{p}_u]=i$ 本身、相变量子 $☯$ 的独立确定（$☯$ 不循环、为基本输入，属**已知**）。
 
 现有步骤最多达到**条件性 RH**：存在一个满足不确定性关系的量子系统，其谱精确对应黎曼零点。本文的贡献在于把黎曼猜想从"孤立的分析数论问题"转化为"可操作的物理投影问题"，并给出完整的证明路线图。
 
@@ -394,7 +394,7 @@ $$
 
 故 $O_n=\big[\beta_n(1-\beta_n)-\tfrac14\big]+i\gamma_n(1-2\beta_n)=-\delta_n^2-2i\gamma_n\delta_n$，即 $O_n^R=-\delta_n^2$、$O_n^I=-2\gamma_n\delta_n$。
 
-> **符号勘误（2026-09-25）**：本节及 §14.3 旧稿写作 $O_n^I=+2\gamma_n\delta_n$，与 §14.2 的 $\operatorname{Im}[\rho_n(1-\rho_n)]=\gamma_n(1-2\beta_n)$ 相差一个符号。按 $\delta_n=\beta_n-\tfrac12$ 的定义，正确关系为 $O_n^I=\gamma_n(1-2\beta_n)=-2\gamma_n\delta_n$。**等价链不受影响**（$O_n^I=0\iff\delta_n=0$ 与符号无关），但恒等式的符号已按上式更正。
+> **符号约定**：由 $\delta_n=\beta_n-\tfrac12$ 的定义得 $O_n^I=\gamma_n(1-2\beta_n)=-2\gamma_n\delta_n$；等价链只依赖 $O_n^I=0\iff\delta_n=0$，与符号约定无关。
 
 **等价链**：
 
@@ -427,7 +427,7 @@ $$
 
 **要求**：
 
-1. **非循环性**：走整体层 $N(T)=\theta(T)/\pi+1$（输入 $\Gamma,\pi$），不引用已知零点 $\gamma_n$；逐点 $L_n=2\pi n/\gamma_n$ 为恒等变形，降级为字典不作来源；
+1. **非循环性**：走整体层 $N(T)=\theta(T)/\pi+1$（输入 $\Gamma,\pi$），不引用已知零点 $\gamma_n$；逐点 $L_n=2\pi n/\gamma_n$ 为恒等变形，只作字典，不作来源；
 2. **离散化**：把连续谱 $[1/4, \infty)$ 离散化为 $\{\gamma_n^2 + 1/4\}$；
 3. **配对不变量**：由边界条件确立 $\mathfrak{c}_n=\rho_n(1-\rho_n)$ 为实数（共振宽度为零），而非经由自伴性——自伴对点谱有效、对连续谱无信息、对共振无约束（§二 已知1），不作为证明环节。
 
@@ -585,7 +585,7 @@ RH 推出该等式，但该等式不推出 RH。$☯ = \sum 1/\mathfrak{c}_n$ �
 | 是否依赖已知数据 | 否（实验独立） | 否（定义独立于零点） |
 | 是否需要推出 | 否（基本常数） | 否（基本输入，地位等同 $\hbar$） |
 
-**结论**：$☯$ 从"更深层待推 2"降级为"已知"。完整证明 RH 的剩余待推项为：①边界条件（唯一循环来源）、②经典化、③更深层待推 1（对易关系的推导）。
+**结论**：$☯$ 属"已知"（不循环）。完整证明 RH 的剩余待推项为：①边界条件（唯一循环来源）、②经典化、③更深层待推 1（对易关系的推导）。
 
 ### 5.3 完整证明清单
 
@@ -639,7 +639,7 @@ $$
 
 **逐环依据**（均为一行代数，见 §二 已知3、§14.2–§14.3）：$\mathfrak{c}_n=\gamma_n^2+\tfrac14+O_n$ 故 $\mathfrak{c}_n\in\mathbb R\iff O_n^I=0$；$O_n^I=\dfrac{\gamma_n^2\vartheta_n^I}{\pi n}$ 且 $\gamma_n\neq0$，故 $O_n^I=0\iff\vartheta_n^I=0$；$O_n^I=-2\gamma_n\delta_n$ 故 $O_n^I=0\iff\delta_n=0$；$\delta_n:=\beta_n-\tfrac12$。**待推 2（经典化）的任务**是把该链左端实现为定理——构造自然操作 $\mathcal{C}$ 使 $\mathcal{C}(\vartheta_n^I)=0$（§三 待推2）。
 
-> **符号区分注（2026-09-25，审查新增）**：花体 $\mathcal{C}$ 在本文件承担**两个不同角色**，勿混：
+> **符号区分**：花体 $\mathcal{C}$ 在本文件承担**两个不同角色**，勿混：
 > ① **经典化操作** $\mathcal{C}$（§三 待推2、§6.2、§11.4）——作用在相位虚部 $\vartheta_n^I$ 上、目标是把它映为 $0$；
 > ② **算术条件** $\mathcal{C}_\pi$（§13.6、§16.1–§16.2）——附属于自守表示 $\pi$ 的条件（**占位符号，尚未构造**）。
 > 二者均**不是**相变量子 $☯$ 的英文符号 $\mathscr{C}$（script C，见 `README.md` 符号约定），三者在排版上须区分。
@@ -687,7 +687,7 @@ $$
 $$
 
 $$
-\boxed{\text{逐点 } L_n=2\pi n/\gamma_n \text{ 从 } \gamma_n \text{ 反推是循环（作废为来源）；整体 } N(T)=\theta(T)/\pi+1 \text{ 只吃 }\Gamma,\pi\text{，非循环；☯ 的定义不循环。}}
+\boxed{\text{逐点 } L_n=2\pi n/\gamma_n \text{ 从 } \gamma_n \text{ 反推是循环（不作来源）；整体 } N(T)=\theta(T)/\pi+1 \text{ 只吃 }\Gamma,\pi\text{，非循环；☯ 的定义不循环。}}
 $$
 
 ---
@@ -1315,7 +1315,7 @@ $$\operatorname{Im}[\rho_n(1-\rho_n)] = \gamma_n(1-2\beta_n) \neq 0$$
 $$O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R} + i\underbrace{\frac{\gamma_n^2 \vartheta_n^I}{\pi n}}_{O_n^I} + \cdots$$
 
 - $O_n^R$：共振位置的实部平移，可被重标度吸收，描述零点虚部 $\gamma_n$ 的统计涨落；
-- $O_n^I$：共振宽度（共振偏离实轴的度量，非本征值虚部——见 §二 已知1 严格性边界），不可被任何平移消除，描述零点实部 $\beta_n$ 偏离 $1/2$，且 $O_n^I = \gamma_n(1-2\beta_n) = -2\gamma_n(\beta_n - 1/2)$（符号推导见 §二 已知3 勘误）。
+- $O_n^I$：共振宽度（共振偏离实轴的度量，非本征值虚部——见 §二 已知1 严格性边界），不可被任何平移消除，描述零点实部 $\beta_n$ 偏离 $1/2$，且 $O_n^I = \gamma_n(1-2\beta_n) = -2\gamma_n(\beta_n - 1/2)$（符号推导见 §二 已知3）。
 
 由此得到等价链：共振宽度为零 $\Longleftrightarrow$ $O_n^I = 0$ $\Longleftrightarrow$ $\vartheta_n^I = 0$ $\Longleftrightarrow$ $\beta_n = 1/2$ $\Longleftrightarrow$ RH。**RH 要消除的是 $O_n^I$（共振宽度），不是 $O_n^R$（实部）。**
 
@@ -1423,11 +1423,11 @@ Langlands 纲领断言自守表示 $\longleftrightarrow$ Galois 表示（任意 
 | Weil (1952) | A. Weil, "Sur les 'formules explicites' de la théorie des nombres premiers", Comm. Sém. Math. Univ. Lund (suppl. vol. dedicated to M. Riesz), pp. 252–265, 1952 | 属实（1952，非 1959） |
 | de Bruijn (1950) | N. G. de Bruijn, "The roots of trigonometric integrals", Duke Math. J. 17(3), 197–226, 1950 | 属实 |
 | Newman (1976) | C. M. Newman, "Fourier transforms with only real zeros", Proc. Amer. Math. Soc. 61(2), 245–251, 1976 | 属实 |
-| de Bruijn–Newman 常数 Λ | RH ⇔ Λ ≤ 0；由 Rodgers–Tao (2018, arXiv:1801.05914) 证明 Λ ≥ 0，故当前可表述为 **RH ⇔ Λ = 0**；Polymath15 (arXiv:1901.06596) 得 Λ ≤ 0.22 | 本文"Λ=0 等价于RH"表述正确；"de Bruijn–Newman (1950s)"归属改为 de Bruijn(1950)–Newman(1976) 更准确 |
+| de Bruijn–Newman 常数 Λ | RH ⇔ Λ ≤ 0；由 Rodgers–Tao (2018, arXiv:1801.05914) 证明 Λ ≥ 0，故当前可表述为 **RH ⇔ Λ = 0**；Polymath15 (arXiv:1901.06596) 得 Λ ≤ 0.22 | Λ=0 等价于 RH 成立；归属为 de Bruijn(1950)–Newman(1976) |
 | Connes (1999) | A. Connes, "Trace formula in noncommutative geometry and the zeros of the Riemann zeta function", arXiv:math/9811068 (1998/1999)；另见 A. Connes, Noncommutative Geometry, Academic Press, 1994 | 属实 |
 | Berry–Keating (1999) | M. V. Berry & J. P. Keating, "The Riemann zeros and eigenvalue asymptotics", SIAM Review 41(2), 236–266, 1999, DOI: 10.1137/S0036144598347497 | 出处属实；"$H=xp$ 在 $L^2(\mathbb{R}_+)$ 无自伴延拓"应精确为"半经典模型未给出严格自伴 Hamiltonian；离散谱须经边界条件/自伴延拓或共振谱实现" |
 | Sierra 模型 | G. Sierra, "A quantum mechanical model of the Riemann zeros", New J. Phys. 10, 033016 (2008), arXiv:0712.0705；G. Sierra & P. K. Townsend, "Landau levels and Riemann zeros", Phys. Rev. Lett. 101, 110201 (2008)；G. Sierra & J. Rodríguez-Laguna, "The H=xp model revisited and the Riemann zeros", Phys. Rev. Lett. 106, 200201 (2011)；G. Sierra, "The Riemann zeros as spectrum and the Riemann hypothesis", Symmetry 11(4), 494 (2019) | 属实（2008–2011）；**注意**：Sierra 2008/2011 给出的是"连续谱嵌入离散共振/与平均零点谱一致"，并非明确"$1/4+\gamma_n^2$"公式 |
-| Endres–Steiner (2010) | S. Endres & F. Steiner, "The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations", J. Phys. A: Math. Theor. 43, 095204 (2010), arXiv:0912.3183 | **$H_{\rm BK}$ 在 $L^2(\mathbb{R}_>,dx)$ 上谱纯连续**这一否证结论的精确出处（§二 已知1 与本文"必须规避的已否证项"所引即此篇）；另证明 $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上亏指数为 $(0,0)$（本质自伴）、并给出紧量子图上全体自伴延拓的分类、久期方程、精确迹公式与 Weyl 渐近。**勘误（2026-09-25）**：本项目旧稿曾另引「Endres & Steiner, *J. Math. Phys.* **50**, 083504 (2009)」一篇——经 arXiv（0912.3183）与期刊检索核实，Endres–Steiner 关于 Berry–Keating 算符**仅此一篇**（2010 JPA），2009 JMP 50 083504 系**误引**（该卷页对应其他作者论文），已全项目删除 |
+| Endres–Steiner (2010) | S. Endres & F. Steiner, "The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations", J. Phys. A: Math. Theor. 43, 095204 (2010), arXiv:0912.3183 | **$H_{\rm BK}$ 在 $L^2(\mathbb{R}_>,dx)$ 上谱纯连续**这一否证结论的精确出处（§二 已知1 与本文"必须规避的否证项"所引即此篇）；另证明 $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上亏指数为 $(0,0)$（本质自伴）、并给出紧量子图上全体自伴延拓的分类、久期方程、精确迹公式与 Weyl 渐近。Endres–Steiner 关于 Berry–Keating 算符仅此一篇（2010 JPA） |
 
 **重要诚实标注（循环性）**：本文"Sierra-CQM 定理 $\mathfrak{c}_n=1/4+\gamma_n^2$"是 CQM 框架自身的谱对应构造（零点虚部 $\gamma_n \leftrightarrow \mathfrak{c}_n=1/4+\gamma_n^2$ 为 $\mathbb{R}_{>0}$ 上的双射），借用的算符形式来自 Berry–Keating / Sierra，**并非 Sierra 原论文的直接结果**；且该对应的 $\gamma_n$ 即为待证明对象，故"待推1（从素数独立推出边界条件）"闭合之前，这一对应停留在构造层面，存在循环性。**更根本的困难**：$\tilde{A}=-\partial_u^2+1/4$ 的自然谱是纯绝对连续谱，无离散本征值，与 $\{\gamma_n^2+1/4\}$ 的对应不是严格点谱对应。文献中承载零点的对象是共振（Sierra 2008）或吸收谱（Connes 1999），均非本征值——自伴性对共振无约束力（见 §二 已知1 严格性边界）。
 
@@ -1449,5 +1449,5 @@ Langlands 纲领断言自守表示 $\longleftrightarrow$ Galois 表示（任意 
 12. Sierra, G., & Townsend, P. K. (2008). Landau levels and Riemann zeros. *Physical Review Letters*, 101, 110201.
 13. Sierra, G., & Rodríguez-Laguna, J. (2011). The $H=xp$ model revisited and the Riemann zeros. *Physical Review Letters*, 106, 200201.
 14. Sierra, G. (2019). The Riemann zeros as spectrum and the Riemann hypothesis. *Symmetry*, 11(4), 494.
-15. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *Journal of Physics A: Mathematical and Theoretical*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb{R}_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。**勘误**：旧稿所引 "J. Math. Phys. 50, 083504 (2009)" 经核实为误引，已删除。
+15. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *Journal of Physics A: Mathematical and Theoretical*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb{R}_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
 16. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
