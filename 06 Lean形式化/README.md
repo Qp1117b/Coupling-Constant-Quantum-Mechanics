@@ -146,7 +146,7 @@ Axioms
 | — | 相变量子 $☯ = \xi'(1)/\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
-| — | $☯$ 的零点求和表示 $\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
+| — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
 | — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |
 
 ### 闭合缺口 (v0.5.8)
