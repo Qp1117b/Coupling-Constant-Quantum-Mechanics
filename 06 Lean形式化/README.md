@@ -26,7 +26,7 @@
 >
 > 另注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题。
 
-**本次修复后新增通过**：`PrimeGeometry`（原含一条可反证公理，已改为定理）、`Methodology`（原含一条与定义互斥的公理，已改为定理）——两者现均 `Build completed successfully` 且无 CQM 警告。
+**`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：两库相应结论均以定理而非公理给出。
 
 ## 库结构
 
