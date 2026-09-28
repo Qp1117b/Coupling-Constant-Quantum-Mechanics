@@ -23,12 +23,12 @@ import CausalSet.Reproduction
 
 ### 层级 2：代数结构公理（CartanAlgebra 库）
 - **A2.1** 禁闭边界的代数结构是 A₄ 嘉当矩阵
-- **A2.2** 相变量子 `C = ξ'(1)/ξ(1)` 是基本常数
+- **A2.2** 相变量子 `☯ = ξ'(1)/ξ(1)` 是基本常数
 
 ### 层级 3：物理假设（待证明）
 - **H3.1** 禁闭 = 退相干（缺口 G5）
 - **H3.2** 非交换 → 交换几何相变（缺口 G5）
-- **H3.3** 退相干稳态 = 正四单纯形（缺口 A）
+- **H3.3** 退相干稳态 = 正四单纯形（缺口 C）
 
 ## 已证明的定理
 
@@ -85,5 +85,5 @@ axiom noncommutative_to_commutative_phase_transition : physical_hypothesis
     5 个顶点、10 条边、10 个面、5 个胞腔。这直接导致 SU(5) 规范群作为
     4-单纯形的对称群 S₅ 涌现——这是 CQM 中规范群起源的几何机制。
     
-    对应严格性缺口 A（核心缺口）。 -/
+    对应严格性缺口 C（核心缺口）。 -/
 axiom decoherence_steady_state_is_4simplex : physical_hypothesis

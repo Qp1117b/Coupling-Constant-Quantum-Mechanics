@@ -104,7 +104,7 @@ theorem balmerSeries (R : ℝ) (n m : ℕ) (hmn : n < m) :
 
 ### 严格推导链（复用 `FGChain.CartanToShell`）
 
-壳层容量不再直接定义，而是从 A₄ 嘉当矩阵经 Casimir 本征值严格推导：
+壳层容量不直接定义，而是从 A₄ 嘉当矩阵经 Casimir 本征值严格推导：
 A₄ 嘉当矩阵 → Dynkin 图深度 → 壳层标签 l_k = k-1 →
 Casimir C_k = l_k(l_k+1) + 3/4 → 壳层容量 N_k = 2(2l_k+1)。
 详见 `FGChain.CartanToShell.shellCapacityFromCasimir`。 -/
@@ -190,7 +190,7 @@ theorem transitionCoupling_n2 : transitionCoupling 2 = Real.log 4 := by
   ring
 
 /-- **跃迁资格条件（一般形式）**：跃迁耦级 Δu_n = 2 ln n 所需的最小
-    角亏涨落为 C√(1−βδ_v)/(2β ln n) > 0（n ≥ 2）——衔接
+    角亏涨落为 ☯√(1−βδ_v)/(2β ln n) > 0（n ≥ 2）——衔接
     `FGChain.CurvatureOperator.transition_qualification_threshold_pos`
     （超导资格条件的链路级形式）。 -/
 theorem transitionCriterion_general (β δv C n : ℝ) (hβ : 0 < β) (hδ : 0 ≤ δv)

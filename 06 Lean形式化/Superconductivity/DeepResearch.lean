@@ -309,18 +309,18 @@ theorem a4_minimal_order_among_valid :
 
 /-! ## 深入研究缺口闭合总结 -/
 
-/- **新闭合缺口总结**:
+/- **缺口闭合总结**:
 
     | 缺口     | 状态   | 闭合依据                          |
     |----------|--------|-----------------------------------|
     | N2       | 闭合   | n2AngleDeficitMapping             |
-    | C        | 闭合   | a4_unique_under_3_constraints      |
+    | CQM 缺口编号体系中的 C | 条件性证明（三条约束下 A4 唯一） | a4_unique_under_3_constraints |
     | G15      | 闭合   | criticalTemperature_isotope_shift  |
     | θ_D推导  | 闭合   | debyeTemperatureA4                |
     | λ推导    | 闭合   | electronPhononCouplingA4           |
 
     **关键发现**: √λ₁(A4) = 1/φ (黄金比恒等式)
-    各缺口已在上文分别以独立theorem严格证明，此处不再重复声明。 -/
+    各缺口已在上文分别以独立 theorem 严格证明，此处不重复声明。 -/
 
 /-- **精细结构常数的A4群论公式**:
     ln(1/α) = π²·λ₁(A4) + 2·ln(2) + 2·λ₁(A4) - 1
@@ -344,7 +344,7 @@ theorem fineStructureConstantTheory_pos : fineStructureConstantTheory > 0 :=
   Real.exp_pos _
 
 /- **更精确的精细结构常数公式**:
-    ln(1/α) = 2π²·λ₁ + 3C + ln(2) - 3 - λ₁
+    ln(1/α) = 2π²·λ₁ + 3☯ + ln(2) - 3 - λ₁
     误差: 0.007%
     此公式为数值拟合结果，非严格定理，此处仅记录公式形式。
     严格化需要相变量子☯与A4谱间隙的精确关系证明（开放问题）。 -/

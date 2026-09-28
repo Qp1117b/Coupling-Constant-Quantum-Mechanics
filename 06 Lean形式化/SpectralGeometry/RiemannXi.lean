@@ -11,7 +11,7 @@ import SpectralGeometry.Basic
 /-! # 黎曼 ξ 函数与相变量子 ☯
 
 CQM 的相变量子 ☯ = ξ'(1)/ξ(1) 是理论中最基本的无量纲常数。
-本文件从黎曼 ξ 函数的定义出发，推导 C 的闭式表达式。
+本文件从黎曼 ξ 函数的定义出发，推导 ☯ 的闭式表达式。
 
 > **发生学分层定位**：本文件形式化的 ζ/ξ 谱结构属
 > **GL(5) 固定层级下的 ζ 零点谱**——黎曼猜想是 GL(5) 实谱条件。
@@ -20,9 +20,9 @@ CQM 的相变量子 ☯ = ξ'(1)/ξ(1) 是理论中最基本的无量纲常数�
 > 本文件不涉及基态层的 GL(5) 自守 L 函数（其形式化待构造）。
 
 ## 核心结果
-- **C = ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π) ≈ 0.02309570897**
-- C 完全由 Euler-Mascheroni 常数 γ 和 π 确定
-- C 与 CQM 的 spectralQuantum 定义一致
+- **☯ = ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π) ≈ 0.02309570897**
+- ☯ 完全由 Euler-Mascheroni 常数 γ 和 π 确定
+- ☯ 与 CQM 的 spectralQuantum 定义一致
 
 ## 推导链
 ξ(s) = ½ + ½ s(s-1) Λ₀(s)，其中 Λ₀(s) = π^{-s/2}Γ(s/2)ζ(s) + 1/s + 1/(1-s)
@@ -177,32 +177,31 @@ theorem xi_log_derivative_at_one :
 /-! ### 与 CQM 相变量子常量的联系
 
 `spectralQuantum` 在 `SpectralGeometry.Basic` 中已严格定义为
-C = 1 + γ/2 - (1/2)ln(4π)。
+☯ = 1 + γ/2 - (1/2)ln(4π)。
 
 `xi_log_derivative_at_one` 已经从黎曼 ξ 函数严格推导出
 ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)。
 
 因此，相变量子 ☯ 的解析表达式与 ξ 函数对数导数之间的等式
-现在由定义直接成立，不再需要使用公理断言。
+由定义直接成立，无需公理断言。
 
-此前存在的 `spectralQuantum_xi_formula` 公理将一个小数近似
-（0.02309570897）与解析表达式断言为精确相等，这是数学上不成立的
-虚假精确等式。该做法已被移除：现在 C 的严格定义就是解析表达式，
-而数值近似由 `spectralQuantum_numerical_bounds` 作为明确的数值桥梁给出。
+小数近似（0.02309570897）与解析表达式不被断言为精确相等；
+☯ 的严格定义即解析表达式，而数值近似由
+`spectralQuantum_numerical_bounds` 作为明确的数值桥梁给出。
 -/
 
 /-- [THEOREM] 相变量子 ☯ 的闭式表达式：
 
-    C = 1 + γ/2 - (1/2)ln(4π)
+    ☯ = 1 + γ/2 - (1/2)ln(4π)
 
     此等式现在由 `spectralQuantum` 的定义直接成立（`rfl`）。
     结合 `xi_log_derivative_at_one`，我们有
-    C = ξ'(1)/ξ(1)。 -/
+    ☯ = ξ'(1)/ξ(1)。 -/
 theorem spectralQuantum_xi_formula :
     spectralQuantum = 1 + Real.eulerMascheroniConstant / 2 - Real.log (4 * Real.pi) / 2 :=
   rfl
 
-/-- C 同时等于 ξ 函数在 s=1 处的对数导数。 -/
+/-- ☯ 同时等于 ξ 函数在 s=1 处的对数导数。 -/
 theorem spectralQuantum_eq_xi_log_derivative :
     spectralQuantum = deriv riemannXi 1 / riemannXi 1 := by
   rw [xi_log_derivative_at_one]
@@ -229,7 +228,7 @@ theorem spectralQuantum_xi_range_consistent : spectralQuantum > 0.02 ∧ spectra
   · linarith [spectralQuantum_numerical_bounds.left]
   · linarith [spectralQuantum_numerical_bounds.right]
 
-/-! ## C 与黎曼零点的关系
+/-! ## ☯ 与黎曼零点的关系
 
 从 ξ 函数的 Hadamard 积表示：
 ξ(s) = ξ(0) ∏_ρ (1 - s/ρ)
@@ -240,21 +239,21 @@ theorem spectralQuantum_xi_range_consistent : spectralQuantum > 0.02 ∧ spectra
 ξ'(s)/ξ(s) = ∑_ρ 1/(s-ρ)
 
 在 s=1 处：
-C = ξ'(1)/ξ(1) = ∑_ρ 1/(1-ρ)
+☯ = ξ'(1)/ξ(1) = ∑_ρ 1/(1-ρ)
 
 假设 Riemann 假设（ρ = 1/2 + iγ_n）：
-C = ∑_{n=1}^∞ [1/(1/2 - iγ_n) + 1/(1/2 + iγ_n)]
+☯ = ∑_{n=1}^∞ [1/(1/2 - iγ_n) + 1/(1/2 + iγ_n)]
   = ∑_{n=1}^∞ 1/(1/4 + γ_n²)
 
-这给出了 C 与黎曼零点之间的直接联系：
-C = ∑_{n=1}^∞ 1/(1/4 + γ_n²) ≈ 0.02309570897
+这给出了 ☯ 与黎曼零点之间的直接联系：
+☯ = ∑_{n=1}^∞ 1/(1/4 + γ_n²) ≈ 0.02309570897
 
-此公式将 C 表达为所有黎曼零点的函数，是 CQM 与
+此公式将 ☯ 表达为所有黎曼零点的函数，是 CQM 与
 黎曼假设之间的重要桥梁。
 -/
 
-/-- [HYPOTHESIS] C 与黎曼零点的关系（Hadamard 积形式）：
-    C = ∑_{n=1}^∞ 1/(1/4 + γ_n²)
+/-- [HYPOTHESIS] ☯ 与黎曼零点的关系（Hadamard 积形式）：
+    ☯ = ∑_{n=1}^∞ 1/(1/4 + γ_n²)
 
     其中 γ_n 是第 n 个黎曼零点（假设 RH）。
 
@@ -271,8 +270,8 @@ axiom spectralQuantum_zeta_zeros_relation :
 - **ξ(s) = ξ(1-s)** ← 泛函方程（已严格证明）
 - **ξ(0) = ξ(1) = ½** ← 边界值（已严格证明）
 - **ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)** ← 对数导数（已严格证明）
-- **C = 1 + γ/2 - (1/2)ln(4π)** ← 相变量子闭式（解析推导完成，数值等式为公理）
-- C = ∑' 1/(1/4 + γ_n²) ← 假设 RH（公理）
+- **☯ = 1 + γ/2 - (1/2)ln(4π)** ← 相变量子闭式（解析推导完成，数值等式为公理）
+- ☯ = ∑' 1/(1/4 + γ_n²) ← 假设 RH（公理）
 
 ### 已证明定理
 - `riemannXi_functional_equation`：ξ(s) = ξ(1-s) ✅
@@ -280,11 +279,11 @@ axiom spectralQuantum_zeta_zeros_relation :
 - `riemannXi_one`：ξ(1) = ½ ✅
 - `xi_log_derivative_at_one`：ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π) ✅
 - `spectralQuantum_xi_formula_consistent`：闭式表达式与数值定义一致 ✅
-- `spectralQuantum_xi_pos`：C > 0 ✅
-- `spectralQuantum_xi_lt_one`：C < 1 ✅
-- `spectralQuantum_xi_range_consistent`：C ∈ (0.02, 0.03) ✅
+- `spectralQuantum_xi_pos`：☯ > 0 ✅
+- `spectralQuantum_xi_lt_one`：☯ < 1 ✅
+- `spectralQuantum_xi_range_consistent`：☯ ∈ (0.02, 0.03) ✅
 
 ### 公理/假设
-- `spectralQuantum_xi_formula`：C 的数值常量与解析表达式相等（定义性桥梁）
-- `spectralQuantum_zeta_zeros_relation`：C 与黎曼零点的关系（Hadamard 积，待形式化）
+- `spectralQuantum_xi_formula`：☯ 的数值常量与解析表达式相等（定义性桥梁）
+- `spectralQuantum_zeta_zeros_relation`：☯ 与黎曼零点的关系（Hadamard 积，待形式化）
 -/

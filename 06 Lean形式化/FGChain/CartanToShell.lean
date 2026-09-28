@@ -228,8 +228,8 @@ theorem cartanA4_det_eq_coxeterNumber :
     det4 cartanA4 = (5 : ℤ) := by
   exact cartanA4_det_eq_5
 
-/-- **Dynkin 指数 I = 5/3**（复用 `CartanAlgebra.Basic.dynkinIndex`）：
-    CQM Dynkin 指数 I = 5/3，是 G_N 谱公式中的群论因子。 -/
+/-- **Dynkin 指数比 I = T(24)/T(8) = 5/3**（复用 `CartanAlgebra.Basic.dynkinIndex`）：
+    CQM 的 Dynkin 指数比 I = 5/3，是 G_N 谱公式中的群论因子。 -/
 theorem dynkinIndex_link : dynkinIndex = 5 / 3 := by
   unfold dynkinIndex
   rfl

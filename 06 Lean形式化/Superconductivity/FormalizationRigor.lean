@@ -60,14 +60,14 @@ structure PhysicalParams where
 /-! ## 定理1：固有时流速在自由能中的体现
 
 CQM §7.1: dτ/dt = √(1−βδ_v)（固有时流速）
-CQM §9.2: Δδ_0 ≥ C√(1−βδ_v)/(2β·ln n)（资格条件）
+CQM §9.2: Δδ_0 ≥ ☯√(1−βδ_v)/(2β·ln n)（资格条件）
 
 路径A: 资格条件 → Δδ_0 ∝ √(1−βδ_v) → E_cond ∝ Δδ_0² ∝ (1−βδ_v)
 路径B: 固有时 → V_n^eff ∝ √(1−βδ_v) → E_cond ∝ 1/√(1−βδ_v)
 合并:  E_cond ∝ (1−βδ_v)/√(1−βδ_v) = √(1−βδ_v)                                          -/
 
 /-- 路径A：序参量幅度通过资格条件继承 √(1−βδ_v) 因子。
-    资格条件阈值² = C²·(1−βδ_v) / (2β·ln n)²，即阈值² ∝ (1−βδ_v)。 -/
+    资格条件阈值² = ☯²·(1−βδ_v) / (2β·ln n)²，即阈值² ∝ (1−βδ_v)。 -/
 theorem pathA_thresholdSquared_proportional_oneMinusBetaDelta
     (p : PhysicalParams) (C : ℝ) (hC : C > 0) (n : ℝ) (hn : n > 1) :
     (C * Real.sqrt (1 - p.beta * p.deltaV) / (2 * p.beta * Real.log n))^2 =
@@ -102,7 +102,7 @@ theorem condensationEnergy_proportional_properTimeFlow (p : PhysicalParams) :
 
 /-! ## 定理2：资格条件与临界调制的等价性
 
-CQM §9.2 资格条件: Δδ_0 ≥ C√(1−βδ_v)/(2β·ln n)
+CQM §9.2 资格条件: Δδ_0 ≥ ☯√(1−βδ_v)/(2β·ln n)
 模型调制:           Δδ_0 = δ_crit·(1−β·δ_v·mod), mod = 1+α·(λ−1)
 
 弱耦合极限 (λ=1): mod=1, (1−βδ_v) ≈ √(1−βδ_v) 的一阶展开。                        -/
@@ -521,11 +521,11 @@ theorem tc_geometric_upperBound :
     div_pos (mul_pos (by linarith) (Real.log_pos (by linarith)))
           (mul_pos (by linarith) (Real.pi_pos.trans_le (by norm_num)))))
 
-/-! ## G18缺口闭合状态
+/-! ## G18 行内子项闭合状态
 
-CQM §11.2 G18缺口："CQM尚未给出可计算的作用量 S_{U(1)//Z_n}"
+CQM §11.2 G18 行："CQM尚未给出可计算的作用量 S_{U(1)//Z_n}"
 
-本模型闭合的G18子项：
+本模型闭合的 G18 行内子项：
   - β 微观来源          → 定理3: β=8π+1=(1/4π)ln(L/a)
   - 跃迁耦级 Δu_n=2ln(n) → 定理5: A4表示论 4⊗4=10_s⊕6_a
   - E_角亏 可计算形式    → 定理6: E_regge = θ_D·λ·δ_v²·n²/(2π)²
@@ -539,6 +539,6 @@ CQM §11.2 G18缺口："CQM尚未给出可计算的作用量 S_{U(1)//Z_n}"
   - 配对Tc从CQM推导      → 定理8: McMillan是CQM鞍点方程解
   - Tc几何上限           → 定理9: Tc ≤ θ_D/4
 
-G18缺口完全闭合。                                                          -/
+G18 行内所列环节已闭合；G18 行整体仍含未闭合项。                          -/
 
 end CQM

@@ -60,7 +60,7 @@ theorem coupling_exp_log (r : ℝ) (hr : r > 0) : couplingStrength (Real.log r) 
 def isCouplingSpeed (c : ℝ) : Prop := c > 0
 
 /-- 耦合空间中的无量纲化：所有量以相变量子 ☯ 为单位。
-    ũ = u/C, τ̃ = τ·ν₀ 等。 -/
+    ũ = u/☯, τ̃ = τ·ν₀ 等。 -/
 noncomputable def dimensionless (x C : ℝ) : ℝ := x / C
 
 /-! ## 正则对易关系与不确定性 -/
@@ -75,16 +75,16 @@ class CanonicalCommutation (H : Type*) [AddCommGroup H] [Module ℝ H] where
   commutation : ∀ ψ, uHat (pHat ψ) - pHat (uHat ψ) = ψ
 
 /-- 耦合空间的不确定性关系：
-    (Δr / ⟨r⟩) · Δv_τ ≥ C / 2
+    (Δr / ⟨r⟩) · Δv_τ ≥ ☯ / 2
     其中 Δr 是耦合强度的不确定性，Δv_τ 是耦合速度的不确定性。
     此关系从正则对易关系 [û, p̂_u] = i 通过标准 QM 推导得出。 -/
 def uncertaintyRelation (Δr_div_r Δvτ C : ℝ) : Prop :=
   Δr_div_r * Δvτ ≥ C / 2
 
-/-- 不确定性关系在 C > 0 时有非平凡下界：
-    当 C > 0 时，C/2 > 0，因此存在值使得不确定性关系不成立
-    （例如 Δr = 0 时，乘积为 0 < C/2）。
-    这验证了不确定性关系的非平凡性：下界 C/2 > 0 是严格的。 -/
+/-- 不确定性关系在 ☯ > 0 时有非平凡下界：
+    当 ☯ > 0 时，☯/2 > 0，因此存在值使得不确定性关系不成立
+    （例如 Δr = 0 时，乘积为 0 < ☯/2）。
+    这验证了不确定性关系的非平凡性：下界 ☯/2 > 0 是严格的。 -/
 theorem uncertaintyRelation_nontrivial_bound (C : ℝ) (hC : C > 0) :
     ∃ Δr Δv, ¬ uncertaintyRelation (Δr/1) Δv C := by
   use 0, 0

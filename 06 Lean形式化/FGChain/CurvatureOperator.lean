@@ -15,18 +15,18 @@ import Superconductivity.CouplingSpace
 [环节6] 曲率算符 δ̂_v（底空间 Regge 角亏的量子化，本征值 = 角亏涨落振幅，
         即声子——衔接环节3–4：曲率量子 = 振荡的量子）
    ↓
-[环节7] 耦合常数-固有时流速不确定性关系（δ_v → v_τ → Δu·Δv_τ ≥ C/2）
+[环节7] 耦合常数-固有时流速不确定性关系（δ_v → v_τ → Δu·Δv_τ ≥ ☯/2）
    ↓
-[环节8] 耦合常数算符 û = ln r̂（CQM 海森堡对 [û, p̂_u] = i☯，☯ 为相变量子）
+[环节8] 耦合常数算符 û = ln r̂（CQM 海森堡对 [û, p̂_u] = i，☯ 为相变量子）
 ```
 
 ## 数学内容
 
 - **曲率算符**：自伴、实本征值（角亏实值）、与振荡模的正性衔接。
-- **CQM 海森堡对**：[û, p̂_u] = i☯——以相变量子 ☯ = ξ'(1)/ξ(1) 取代 ħ 的角色
-  （CQM 核心创新：共轭对 (û, p̂_u)，û = ln r 为对数耦合常数）。
+- **CQM 海森堡对**：[û, p̂_u] = i；相变量子 ☯ = ξ'(1)/ξ(1) 的角色体现在
+  p̂_u = v̂_τ/☯ 与 Δu·Δv_τ ≥ ☯/2（CQM 核心创新：共轭对 (û, p̂_u)，û = ln r 为对数耦合常数）。
 - **CQM-Robertson 衔接**：复用 `CouplingSpace.Uncertainty.cqm_uncertainty_conditional`
-  给出 Δu·Δv_τ ≥ C/2；曲率-耦合通道复用
+  给出 Δu·Δv_τ ≥ ☯/2；曲率-耦合通道复用
   `Superconductivity.CouplingSpace.uncertaintyThreshold`。
 -/
 
@@ -62,9 +62,9 @@ theorem curvature_eigen_nonneg (C : CurvatureOperator) (n : ℕ) : (0 : ℝ) ≤
 
 /-- **耦合常数算符数据**：û = ln r̂（r 为总耦合强度），
     共轭动量 p̂_u = v̂_τ / ☯（固有时流速 / 相变量子），
-    CQM 海森堡代数 [û, p̂_u] = i☯（☯ = 相变量子 ξ'(1)/ξ(1) 取代 ħ 的角色）。 -/
+    CQM 海森堡代数 [û, p̂_u] = i（☯ = 相变量子 ξ'(1)/ξ(1) 的角色体现在 p̂_u = v̂_τ/☯）。 -/
 structure CouplingOperator where
-  /-- 相变量子 ☯ = ξ'(1)/ξ(1) ≈ 0.0230957（无量纲，GL(5) 固定层级） -/
+  /-- 相变量子 ☯ = ξ'(1)/ξ(1) ≈ 0.02309570897（无量纲，GL(5) 固定层级） -/
   C : ℝ
   /-- 相变量子为正 -/
   C_pos : 0 < C
@@ -83,9 +83,9 @@ theorem couplingCoordinate_mono {r₁ r₂ : ℝ} (hr₁ : 0 < r₁) (hr₂ : 0 
 
 /-- **环节7 ⟷ 环节8 衔接定理（CQM 不确定性关系的链路实例化）**：
     在 CQM 海森堡代数 [û, p̂_u] = i（Robertson，ℏ=1 归一）与
-    物理量对应（Δr/⟨r⟩ = Δu，Δv_τ = C·Δp̂_u）下，
+    物理量对应（Δr/⟨r⟩ = Δu，Δv_τ = ☯·Δp̂_u）下，
     耦合常数-固有时流速不确定性关系为
-    (Δr/⟨r⟩)·Δv_τ ≥ C/2，
+    (Δr/⟨r⟩)·Δv_τ ≥ ☯/2，
     其中 ☯ 为相变量子（《CQM_核心_集成理论》§3.4 的链路表述）。
     严格复用 `CouplingSpace.Uncertainty.cqm_uncertainty_conditional`。 -/
 theorem fg_uncertainty_link (Δu Δp Δr_div_r Δvτ C : ℝ) (hCpos : C > 0)
@@ -104,7 +104,7 @@ theorem curvature_to_properTimeFlow (β δv : ℝ) (hβ : 0 < β) (hδ : 0 ≤ �
   Superconductivity.CQM.properTimeFlow_pos hβ hδ hbound
 
 /-- **曲率-耦合阈值衔接定理**：由不确定性关系，满足跃迁耦级 Δu 所需的
-    最小角亏涨落阈值为 C√(1−βδ_v)/(β·Δu) > 0（复用
+    最小角亏涨落阈值为 ☯√(1−βδ_v)/(β·Δu) > 0（复用
     `Superconductivity.CouplingSpace.uncertaintyThreshold` 的结构，
     一般化跃迁幅度为 Δu > 0）。 -/
 theorem curvature_coupling_threshold_pos (β δv C Δu : ℝ)
@@ -117,7 +117,7 @@ theorem curvature_coupling_threshold_pos (β δv C Δu : ℝ)
   exact div_pos h1 h2
 
 /-- **跃迁资格条件（一般形式）**：跃迁耦级 Δu_n = 2 ln n（n = 2,4,6,…）所需的
-    最小角亏涨落为 Δδ_0 ≥ C√(1−βδ_v)/(2β ln n)。当 Δu = 2 ln n 且 n ≥ 2 时
+    最小角亏涨落为 Δδ_0 ≥ ☯√(1−βδ_v)/(2β ln n)。当 Δu = 2 ln n 且 n ≥ 2 时
     阈值为正（衔接 `FGChain.Observable.transitionCoupling` 的一般谱）。 -/
 theorem transition_qualification_threshold_pos (β δv C n : ℝ)
     (hβ : 0 < β) (hδ : 0 ≤ δv) (hbound : δv < 1 / β) (hC : 0 < C)

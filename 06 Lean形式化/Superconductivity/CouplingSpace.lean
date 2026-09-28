@@ -56,12 +56,12 @@ structure CouplingHeisenbergPair where
 /- 相变量子 $☯ = \xi'(1)/\xi(1)$，此处以实参数表示（谱函数 $\xi$ 待第一性提取）。 -/
 noncomputable def spectralQuantum (C : ℝ) : ℝ := C
 
-/- 耦合动量 $p_u = v_\tau / C$，其中 $v_\tau = d\tau/dt = \sqrt{1-\beta\delta}$（两时间之比），
-    $☯$ 是相变量子。注意核心理论中 $v_\tau$ 即固有时流速（基准 1），此处不再引入 $c_0$。 -/
+/- 耦合动量 $p_u = v_\tau / ☯$，其中 $v_\tau = d\tau/dt = \sqrt{1-\beta\delta}$（两时间之比），
+    $☯$ 是相变量子。注意核心理论中 $v_\tau$ 即固有时流速（基准 1），此处不引入 $c_0$。 -/
 noncomputable def couplingMomentum (beta delta C : ℝ) : ℝ :=
   properTimeFlow beta delta / C
 
-/- 耦合动量正性（在 $\beta>0, 0\le\delta<1/\beta, C>0$ 下）。 -/
+/- 耦合动量正性（在 $\beta>0, 0\le\delta<1/\beta, ☯>0$ 下）。 -/
 noncomputable def couplingMomentum_pos {beta delta C : ℝ}
     (hbeta : beta > 0) (hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) (hC : C > 0) :
     couplingMomentum beta delta C > 0 :=
@@ -70,13 +70,13 @@ noncomputable def couplingMomentum_pos {beta delta C : ℝ}
 /-! ## 3. 曲率-耦合不确定性关系 -/
 
 /- 由海森堡代数 $[\hat{u},\hat{p}_u]=i$ 得 $\Delta u\cdot\Delta p_u \ge 1/2$。
-    代入 $p_u(\delta) = \sqrt{1-\beta\delta}/C$，利用 $|dp_u/d\delta| = \beta/(2C\sqrt{1-\beta\delta})$，
+    代入 $p_u(\delta) = \sqrt{1-\beta\delta}/☯$，利用 $|dp_u/d\delta| = \beta/(2☯\sqrt{1-\beta\delta})$，
     得曲率-耦合不确定性关系阈值
-    $\Delta u\cdot\Delta\delta \ge C\sqrt{1-\beta\delta}/\beta$（参数化，非依概率严格化）。 -/
+    $\Delta u\cdot\Delta\delta \ge ☯\sqrt{1-\beta\delta}/\beta$（参数化，非依概率严格化）。 -/
 noncomputable def uncertaintyThreshold (beta delta C : ℝ) : ℝ :=
   C * properTimeFlow beta delta / beta
 
-/- 阈值为正（在 $\beta>0, 0\le\delta<1/\beta, C>0$ 下）：分子为正。 -/
+/- 阈值为正（在 $\beta>0, 0\le\delta<1/\beta, ☯>0$ 下）：分子为正。 -/
 noncomputable def uncertaintyThreshold_pos {beta delta C : ℝ}
     (hbeta : beta > 0) (hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) (hC : C > 0) :
     uncertaintyThreshold beta delta C > 0 :=
@@ -87,7 +87,7 @@ noncomputable def uncertaintyThreshold_pos {beta delta C : ℝ}
 /- 库珀对携带电荷 $2e$，有效精细结构常数配对后 $\alpha_{\text{pair}} = 4\alpha_{\text{eff}}$。
     耦合坐标中 $u = \ln\alpha_{\text{eff}} \to u' = u + \ln4$，定义跃迁幅度 $\ln4$。
     一般情形：$\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$），$\alpha \to n^2\alpha$，资格条件
-    $\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，主导群由自由能竞争选出。 -/
+    $\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，主导群由自由能竞争选出。 -/
 noncomputable def ln4 : ℝ := Real.log 4
 
 /- $\ln4 > 0$（因为 $4 > 1$）。 -/
@@ -105,18 +105,18 @@ noncomputable def superconductingDuThreshold : ℝ := ln4
 noncomputable def superconductingDuThreshold_pos : superconductingDuThreshold > 0 := ln4_pos
 
 /- 由不确定性关系，满足 $\Delta u \ge \ln4$ 所需最小曲率涨落（n=2 资格条件特例）：
-    $\Delta\delta_v \ge C\sqrt{1-\beta\delta}/(\beta\ln4)$。
-    一般情形：$\Delta\delta_0 \ge C\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，$n=2,4,6,\ldots$。 -/
+    $\Delta\delta_v \ge ☯\sqrt{1-\beta\delta}/(\beta\ln4)$。
+    一般情形：$\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$，$n=2,4,6,\ldots$。 -/
 noncomputable def curvatureFluctuationThreshold (beta delta C : ℝ) : ℝ :=
   uncertaintyThreshold beta delta C / ln4
 
-/- 曲率涨落阈值为正（在 $\beta>0, 0\le\delta<1/\beta, C>0$ 下）。n=2 特例。 -/
+/- 曲率涨落阈值为正（在 $\beta>0, 0\le\delta<1/\beta, ☯>0$ 下）。n=2 特例。 -/
 noncomputable def curvatureFluctuationThreshold_pos {beta delta C : ℝ}
     (hbeta : beta > 0) (hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) (hC : C > 0) :
     curvatureFluctuationThreshold beta delta C > 0 :=
   div_pos (uncertaintyThreshold_pos hbeta hdelta hbound hC) ln4_pos
 
-/- 超导判据（曲率版）：当 $\Delta\delta_v \ge C\sqrt{1-\beta\delta}/(\beta\ln4)$ 时库珀对涌现
+/- 超导判据（曲率版）：当 $\Delta\delta_v \ge ☯\sqrt{1-\beta\delta}/(\beta\ln4)$ 时库珀对涌现
     （参数化判据，具体数值计算见缺口 G18）。 -/
 noncomputable def superconductivityCriterion
     (beta delta C dDelta : ℝ) : Prop :=
@@ -142,7 +142,7 @@ noncomputable def fermiIntegral2 : ℝ := fermiIntegralFactor 2
     引力因果场.md 的“两时间之比”，基准 1）。
     角亏场 $\delta$ 即 $\mathcal{G}_{\text{A4}}^{\text{fine}}$ 的精细结构。
     §5.4.4 的 $\omega_{\text{causal}}$ 筛选在此有微观来源：因果截断对应
-    曲率涨落阈值 $\Delta\delta_v \ge C\sqrt{1-\beta\delta}/(\beta\ln4)$。 -/
+    曲率涨落阈值 $\Delta\delta_v \ge ☯\sqrt{1-\beta\delta}/(\beta\ln4)$。 -/
 
 /- 预言 1：纯氢不超导。无中子缺陷 ⇒ 晶格无 Regge 角亏涨落 ⇒ $\Delta\delta_v = 0$。
     超导判据要求 $\Delta\delta_v \ge \Delta\delta_v^{\text{th}} > 0$，而 $\Delta\delta_v=0$ 无法满足

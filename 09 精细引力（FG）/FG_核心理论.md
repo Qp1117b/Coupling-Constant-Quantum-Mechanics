@@ -8,7 +8,7 @@
 
 $$\boxed{\text{FG} = \text{GR基态的非平庸激发} = \text{主丛 } P(M,G) \text{ 上的联络 } \mathcal{A}_{\text{FG}}}$$
 
-FG是一种**通用的引力理论**，不局限于任何特定物理现象。原子结构、分子键合、晶格量子振荡等都是FG在不同物质组织层级的具体表现。
+FG是一种**通用的引力理论**，不局限于任何特定物理现象。原子结构、分子键合、晶胞量子振荡等都是FG在不同物质组织层级的具体表现。
 
 ### 1.1 三种引力的本体论定位
 
@@ -48,11 +48,11 @@ $$\text{前中子缺陷 } D(\delta) \;\to\; \text{底空间角亏} \;\to\; \text
 
 ### 3.0 核心逻辑
 
-FG的核心问题之一是：**给定底空间（Regge剖分）+条件（算符+对称性），求解同步方程的自守形式，本征群 $R$（重组产物）对应的耦合常数就是由涨落耦合常数指定的。**
+FG的核心问题之一是：**给定底空间（Regge剖分）+条件（算符+对称性），求解同步方程的自守形式，本征群 $R_k$（重组产物）对应的耦合常数就是由涨落耦合常数指定的。**
 
-$$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符）}} + \underbrace{G_k}_{\text{对称性}} \;\Rightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
+$$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符，紧化算符的层级实现）}} + \underbrace{G_k}_{\text{对称性}} \;\longrightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
 
-**底空间不可省略**：作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 必须作用在底空间上的函数空间（自守形式是底空间上的函数/截面），对称性条件 $f(\gamma x)=\chi(\gamma)f(x)$ 依赖群在底空间上的作用，底空间几何/拓扑**条件**作用量算符的谱和自守形式空间（非唯一决定）。正确顺序：$\text{底空间} + \text{作用量算符} + \text{对称性} \Rightarrow \text{自守形式}$。
+**底空间不可省略**：同步算符 $\hat{\mathcal{S}}_k$ 必须作用在底空间上的函数空间（自守形式是底空间上的函数/截面），对称性条件 $f(\gamma x)=\chi(\gamma)f(x)$ 依赖群在底空间上的作用，底空间几何/拓扑**条件**作用量算符的谱和自守形式空间（非唯一决定）。正确顺序：$\text{底空间} + \text{作用量算符} + \text{对称性} \longrightarrow \text{自守形式}$。
 
 **GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$GL(n)$ 的 $n$ 不由底空间几何读出，而由重组产物 $R$（紧致李群，公理 1+2 保证）的基本表示严格确定。给定重组产物 $R$，取其在重组框架中的基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$，则 $n = \dim V_{\text{fund}}$，$GL(V_{\text{fund}}) \cong GL(n,\mathbb{C})$。$SU(5)$ 经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，各因子（连同基态 $SU(5)$）通过基本表示给出各自的自守框架：基态 $SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5) \cong GL(5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3) \cong GL(3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2) \cong GL(2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}) \cong GL(1)$——$n$ 由表示空间 $V_{\text{fund}}$ 的维度唯一指定，与基底选取无关。$SU(5)$ 本身由"含标准模型的最小单群"锚定：$\operatorname{rank}\,SU(5)=4=\operatorname{rank}\big(U(1)\times SU(2)\times SU(3)\big)$（现象学输入/公理），$S_5=\mathrm{Weyl}(A_4)$ 只作为与四维 Regge 几何自洽的交叉印证，不作为推导。标准数学构造中 $GL(n)$ 与 $\Gamma$ 是输入、底空间是商空间 $\Gamma\backslash GL(n,\mathbb{R})/K$；CQM 从动力学反推：先定群（重组产物 $R$），再通过基本表示定 $n$，再定底空间条件。底空间（Regge 晶胞）不在这一层决定 $n$，只在各 $GL(n)$ 框架内给定具体谱（角亏 $\delta_v$、壳层、耦合常数，非唯一决定）。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。在几何朗兰兹视角下，自守理论的底空间本就是丛模空间 $\mathrm{Bun}_G$——骨架与丛数据在算术层是同一对象的两个侧面。每个壳层的本征群 $R_k$ 是重组产物。若 $R_k$ 含 $SU(2)$ 因子，则 $SU(2)$ 的基本表示 $V=\mathbb{C}^2$ 给出 $GL(2)$，$s/p/d/f$ 四壳层的区分不在 $GL(n)$ 的 $n$ 上，而在同步算符的不同本征值 $n_k = C_k$（Casimir）或 $GL(5)$ 整体表示中的不同 $K$-type（角动量 $l$ 作为 $SO(5)$ 的表示标签）。壳层结构 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。反证（为何不能由底空间指定 $n$）：(a) **Katz–Sarnak 普遍性**——一族 $GL(n)$ 的 L 函数在高密度极限下，零点统计服从紧经典群（酉/辛/正交）的随机矩阵系综，主情形为 GUE（如 $GL(1)$ 的 $\zeta$），特定对称型退化为 GOE/GSE；零点统计由对称类型与 $GL(n)$ 决定，不由 L 函数的具体算术实现（CQM 中即底空间具体结构）决定——若由底空间指定，统计应随底空间漂移，而非稳定落在同一系综。(b) **底空间锁 $n$ 使其在 $n$ 层无用且丧失丰富度**——若底空间唯一锁定某个 $n$，则"底空间指定 $n$"退化（$n$ 恒为常数、无区分度），而 $n$ 本有的丰富度来自群重组实现层级 $SU(5)\Rightarrow U(1)\times SU(2)\times SU(3)$，与底空间无关。
 
@@ -64,7 +64,7 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k$$
 
-本征群与耦级的**方向性分工**：本征群 $R_k$ 是重组产物，耦级 $n_k$ 由群的 Casimir 格给出。壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。链条方向是 $R_k \Rightarrow n_k$。
+本征群与耦级的**方向性分工**：本征群 $R_k$ 是重组产物，耦级 $n_k$ 由群的 Casimir 格给出。壳层结构（$s/p/d/f$）$l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。链条方向是 $R_k \to n_k$。
 
 ### 3.1 条件的来源
 
@@ -75,7 +75,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，不是拟合参数，原则上由Regge剖分的牛顿极限定值（定值计算尚需完善）。**耦合动量 $p_u = v_\tau/☯$（相变量子 $☯$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子。注意：此处相变量子 $☯$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 命名不同，需上下文区分。**
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$，角亏≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中角亏是离散曲率（细剖分极限下 $\delta_h/V_h \to R$），对应 $\beta\delta_v \leftrightarrow -2\phi/c^2$。由此 $\beta$ 的物理身份是角亏到牛顿引力势的比例常数，不是拟合参数，原则上由Regge剖分的牛顿极限定值（定值计算尚需完善）。**耦合动量 $p_u = v_\tau/☯$（相变量子 $☯$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子。注意：勿将相变量子 $☯$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 混同。**
 
 ### 3.2 同步方程
 
@@ -85,10 +85,10 @@ $$\hat{\mathcal{S}}_k \Psi_k(u) = n_k \Psi_k(u)$$
 
 $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
-- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$（Riemann xi函数）
+- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$（Riemann xi函数）
 - $L_u = \ln\Lambda$（耦合常数空间紧化U(1)周长）
 - 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义：同步成本=对称性强度）
-- 等价关系 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
+- 等价关系 $\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$）
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$
 
 ### 3.3 本征群→耦合常数
@@ -97,7 +97,7 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 $$R_k \text{（重组产物）}$$
 
-其中 $R_k$ 的具体群结构为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$（重组产物的实现），$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
+其中 $R_k$ 的具体群结构为 $SU(2)_k$（重组产物的实现），其自旋-轨道分解为 $SU(2)_{\text{orb}}^{(l_k)} \times SU(2)_{\text{spin}}$：$SU(2)_{\text{orb}}^{(l_k)}$ 为轨道角动量 $l_k$ 的 $SU(2)$ 表示，$SU(2)_{\text{spin}}$ 为自旋 $1/2$ 表示。$l=0$ 时 $R_1 = SU(2)_{\text{spin}} \cong SU(2)$。
 
 - 壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导，不是输入参数
 - 耦级 $n_k = C_k$ 由群论定义（Casimir本征值），等价关系锁定 $N_k$——是同步方程的**输出**，不是输入参数
@@ -114,7 +114,7 @@ $$\boxed{\hat{u} = \ln \hat{g}, \quad [\hat{u}, \hat{p}_u] = i}$$
 - $\hat{g} = e^{\hat{u}}$：耦合常数算符，本征值 $g = e^u$
 - $\Delta u \cdot \Delta p_u \geq \frac{1}{2}$
 
-> **定位注（定义域条件）**：海森堡代数 $[\hat{u},\hat{p}_u]=i$ 是一维的——$u=\ln g$ 作为全局单坐标定义，当且仅当结构群是一维阿贝尔群（$S^1$ 及其商 $U(1)//\mathbb{Z}_n$，注意 $U(1)//\mathbb{Z}_n\cong S^1$ 经覆盖映射 $z\mapsto z^n$，成员间差别是表示内容：权 $q$ 表示当且仅当 $n\mid q$ 时下降）。非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对。因此耦合常数算符的合法定义域是 $U(1)$ 电磁群（内部性+阿贝尔性双重强制：耦合常数乘在内部规范生成元上，且 $u$ 须为全局单坐标）；$SU(2)$、$SU(3)$ 因子的耦合不能直接量子化，只能经 Casimir 阶梯 $g_k=\alpha\exp(-(n_k-n_1)/n_1)$ 从 $U(1)$ 锚导出。此不对称是海森堡代数一维性的必然结果，不是模型选择。
+> **定位注（定义域条件）**：海森堡代数 $[\hat{u},\hat{p}_u]=i$ 是一维的——$u=\ln g$ 作为全局单坐标定义，当且仅当结构群是一维阿贝尔群（$S^1$ 及其商 $U(1)//\mathbb{Z}_n$，注意 $U(1)//\mathbb{Z}_n\cong S^1$ 经覆盖映射 $z\mapsto z^n$，成员间差别是表示内容：权 $q$ 表示当且仅当 $n\mid q$ 时下降）。非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对。因此耦合常数算符的合法定义域是 $U(1)$ 电磁群（内部性+阿贝尔性双重强制：耦合常数乘在内部规范生成元上，且 $u$ 须为全局单坐标）；$SU(2)$、$SU(3)$ 因子的耦合不能直接量子化，只能经 Casimir 阶梯 $g_k=\alpha^{-1}\exp(-(n_k-n_1)/n_1)$ 从 $U(1)$ 锚导出。此不对称是海森堡代数一维性的必然结果，不是模型选择。
 
 ### 4.2 双空间同步算符
 
@@ -154,7 +154,7 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi ☯}\sqrt{1-\beta
 
 ### 5.1 FG的完整数学对象：朗兰兹纲领的GL(n)各层
 
-FG的完整数学对象是**朗兰兹纲领的GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想是GL(5)固定层级的实谱条件。
+FG的完整数学对象是**朗兰兹纲领的GL(n)各层+广义黎曼猜想（GRH）**。广义黎曼猜想（GRH）是GL(5)固定层级的实谱条件。
 
 **正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 重组因子。
 
@@ -162,17 +162,17 @@ FG的完整数学对象是**朗兰兹纲领的GL(n)各层+广义黎曼猜想（G
 
 $$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转移）}} \text{SU}(5)\ \text{表示空间} \xRightarrow{\text{重组实现}} U(1) \times SU(2) \times SU(3)$$
 
-> **定位注（算符作用层级）**：紧化投影是**表示层面**的转移——希尔伯特空间之间的谱投影 $\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(GL_5)\to\mathcal{H}_{\text{phys}}(SU(5))$，与朗兰兹函子性同型（函子性转移表示，不转移群本身）——不是群层面的态射。GL(5)（阿代尔约化群，非紧，含分裂中心）与SU(5)（紧实李群）处于不同范畴，不存在典范群同态；紧群SU(5)是投影的**靶表示空间**，物理表示由SU(5)不可约表示分类。同步算符在群层面不执行任何转换，这正是谱论三分法的深层原因：紧化投影谱 $\subseteq\{0,1\}$ 不可能携带零点谱，零点谱由GL(5)固定层级谱算符 $\hat{H}_{\text{HP}}$ 承担。
+> **定位注（算符作用层级）**：紧化投影是**表示层面**的转移——希尔伯特空间之间的谱投影 $\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(\mathrm{GL}(5))\to\mathcal{H}_{\text{phys}}(SU(5))$，与朗兰兹函子性同型（函子性转移表示，不转移群本身）——不是群层面的态射。GL(5)（阿代尔约化群，非紧，含分裂中心）与SU(5)（紧实李群）处于不同范畴，不存在典范群同态；紧群SU(5)是投影的**靶表示空间**，物理表示由SU(5)不可约表示分类。同步算符在群层面不执行任何转换，这正是谱论三分法的深层原因：紧化投影谱 $\subseteq\{0,1\}$ 不可能携带零点谱，零点谱由GL(5)固定层级谱算符 $\hat{H}_{\text{HP}}$ 承担。
 
 各GL(n)层对应不同的L函数和猜想：
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 | 物理对应 |
 |:---|:---|:---|:---|:---|
-| GL(1) | $\zeta(s)$（黎曼zeta） | RH |  | 主量子数 $n$ |
+| GL(1) | $\zeta(s)$（黎曼zeta） | RH | — | 主量子数 $n$ |
 | GL(2) | $L(s, \pi)$（模形式） |  |  | p波/d波对称性 |
 | GL(3) | $L(s, \pi)$ |  |  | 色相互作用表示结构 |
-| GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） | 轨道角动量 $l$、壳层饱和数 |
-| GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） | 物质自组织、$SU(5)$、Coxeter数 |
+| GL(4) | $L(s, \pi)$ | GRH(GL(4)) | $SO(5)$ 旋量表示（GL(5)的$K$-type） | 轨道角动量 $l$、壳层饱和数 |
+| GL(5) | $L(s, \pi)$ | GRH(GL(5)) | 基态同步（单层自守表示） | 物质自组织、$SU(5)$、Coxeter数 |
 
 ### 5.1.1 SU(5)重组实现⇒规范群+壳层本征群→α
 
@@ -180,7 +180,7 @@ $$\text{GL}(5)\ \text{自守谱} \xrightarrow{\text{紧化投影（表示层转�
 
 > **Elitzur定理文献**：规范对称性不破缺（重组实现）的立场有严格的格点规范理论支持：Elitzur定理（Elitzur 1975, Phys. Rev. D 12, 3978）证明局部规范对称性在规范固定前不可自发破缺；Fradkin–Shenker 1979（Phys. Rev. D 19, 3682）进一步表明在库仑规范下序参量的期望值恒为零。CQM中规范对称群相变必然是重组实现而非破缺，与此一致。
 
-SU(5)是物质自组织的基态同步群，其李代数$\mathfrak{su}_5$的根系为$A_4$型。SU(5)重组实现产生两个独立效应：
+SU(5)是物质自组织的基态同步群，其李代数$\mathfrak{su}(5)$的根系为$A_4$型。SU(5)重组实现产生两个独立效应：
 
 #### 效应一：规范重组（不属于本征群效应）
 
@@ -190,7 +190,7 @@ $$\boxed{\text{SU}(5) \;\xRightarrow{\text{规范重组}}\; U(1) \times SU(2) \t
 
 | 规范群 | 紧致性证明 | 耦合常数 | 物理对应 |
 |:---:|:---|:---:|:---|
-| $U(1)$ | $\cong S^1$，紧致Abel李群 | $g_{U(1)}$ | **精细结构常数 $\alpha$**（电磁） |
+| $U(1)$ | $\cong S^1$，紧致Abel李群 | $g_{U(1)}=\alpha^{-1}$ | **精细结构常数 $\alpha$**（电磁） |
 | $SU(2)$ | $\cong S^3$，紧致非Abel李群 | $g_{SU(2)}$ | 弱相互作用 |
 | $SU(3)$ | $\{A \in M_3(\mathbb{C}) \mid A^\dagger A = I, \det A = 1\}$，紧致非Abel李群 | $g_{SU(3)}$ | 强相互作用 |
 
@@ -221,18 +221,18 @@ $$\boxed{\text{SU}(5) \;\xRightarrow{\text{规范重组}}\; U(1) \times SU(2) \t
 | **紧致性** | 全紧致 | 全紧致（公理1+2） |
 | **时间群** | **无**（时间内禀没有群） | **无** |
 | **物理意义** | 规范相互作用（电磁/弱/强） | 角动量壳层（s/p/d/f） |
-| **耦合常数** | $g_{U(1)}, g_{SU(2)}, g_{SU(3)}$ | $g_k = \alpha\exp(-(n_k-n_1)/n_1)$ |
-| **给出$\alpha$** | $g_{U(1)} = \alpha$ | $g_1 = \alpha$（s壳层） |
+| **耦合常数** | $g_{U(1)}, g_{SU(2)}, g_{SU(3)}$ | $g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$ |
+| **给出$\alpha$** | $g_{U(1)} = \alpha^{-1}$ | $g_1 = \alpha^{-1}$（s壳层） |
 
-**关键**：精细结构常数 $\alpha$ 来自 SU(5)规范重组后 $U(1)$ 电磁群的耦合常数：
+**关键**：精细结构常数 $\alpha$ 来自 SU(5)规范重组后 $U(1)$ 电磁群的耦合常数 $g_{U(1)}=\alpha^{-1}$：
 
 $$\boxed{\alpha = f(g_{U(1)})}$$
 
-精细结构常数是**SU(5)规范重组的输出**——$U(1)$电磁群耦合常数。精细结构常数是GL(5)整体的反映。
+精细结构常数是**SU(5)规范重组的输出**——$U(1)$电磁群耦合常数 $\alpha^{-1}$。精细结构常数是GL(5)整体的反映。
 
 ### 5.2 同步算符的完整谱结构
 
-作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理条件严格确定，本征群 $R_k$ 是重组产物：
+同步算符 $\hat{\mathcal{S}}_k$ 作用在底空间 $M_\ell$（Regge剖分）的伴丛截面空间 $\Gamma(\text{ad}(P))$ 上，由物理条件严格确定，本征群 $R_k$ 是重组产物：
 
 $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}_k^{\text{(full)}}}$$
 
@@ -247,7 +247,7 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$
 
-- **黎曼猜想（GL(5)固定层级的实谱条件）**：同步稳定性 → 主量子数唯一（GL(5)中心特征）
+- **黎曼猜想（$\zeta$/GL(1) 侧的实谱条件）**：同步稳定性 → 主量子数唯一（GL(5)中心特征）
 - **GRH(GL(4))**：$SO(5)$ 旋量表示层同步稳定性 → 壳层结构唯一（GL(5)的$K$-type）
 - **GRH(GL(5))**：基态同步稳定性 → 物质自组织唯一（单层自守表示）
 - **FG完整理论需要所有层GRH同时成立**（数学前提，未证明）
@@ -261,11 +261,11 @@ $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \te
 - **同步成本**：$s_k = n_k + l_k$ → Aufbau填充顺序
 - 对称性决定物质分布（电子组态、分子构型、晶格结构）
 
-> **定位注（耦合层级的形式）**：$g_k=\alpha\exp(-(n_k-n_1)/n_1)$ 是单圈重整化群跑动方程 $\frac{dg}{d\ln\mu}=-\gamma g$ 的解 $g(\mu)=g(\mu_0)\exp(-\gamma\ln(\mu/\mu_0))$ 在同步层级 $k$ 作标度时的形式，$1/n_1=4/3$ 扮演反常量纲角色。这与框架的重整化群等价（Berry-Keating对应，见 `01 核心理论/CQM_核心_集成理论.md` §5.3）一致；$4/3$ 由此成为可检验的框架输出，不是拟合值。
+> **定位注（耦合层级的形式）**：$g_k=\alpha^{-1}\exp(-(n_k-n_1)/n_1)$ 是单圈重整化群跑动方程 $\frac{dg}{d\ln\mu}=-\gamma g$ 的解 $g(\mu)=g(\mu_0)\exp(-\gamma\ln(\mu/\mu_0))$ 在同步层级 $k$ 作标度时的形式，$1/n_1=4/3$ 扮演反常量纲角色。这与框架的重整化群等价（Berry–Keating对应，见 `01 核心理论/CQM_核心_集成理论.md` §5.3）一致；$4/3$ 由此成为可检验的框架输出，不是拟合值。
 
 ### 5.5 GUE统计（各层通用）
 
-Montgomery-Odlyzko：各GL(n)层L函数零点对关联 = GUE sine-kernel
+Montgomery–Odlyzko：各GL(n)层L函数零点对关联 = GUE sine-kernel
 
 $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 
@@ -279,10 +279,10 @@ FG在不同物质组织层级有不同实现，每层由纤维丛四元组 $(M_\
 
 | 层级 | 底空间 $M_\ell$ | 结构群 $G_\ell$ | 同步算符 | 谱的可观测 |
 |:---|:---|:---|:---|:---|
-| 电子FG | 前核子底空间 | 电子底空间规范结构 | $V_0$ | 原子能级 $E_n = -R/n^2$ |
+| 电子FG | 前核子底空间 | 电子底空间规范结构（待定） | $V_0$ | 原子能级 $E_n = -R/n^2$ |
 | 元素FG | 质子+中子分布 | $U(1) \times SO(2) \times SU(4)$ | $V_0 + L_{\text{orbital}}$ | 壳层结构、Madelung规则 |
 | 分子FG | 原子分布（键网络） | 分子点群 | $V_0 + L_{\text{mol}}$ | 分子轨道谱、键角、内禀角亏 |
-| 晶胞FG | 原子/分子在晶胞分布 | 空间群 | $V_0 + V_{\text{cell}}$ | 晶格量子振荡谱 |
+| 晶胞FG | 原子/分子在晶胞分布 | 空间群 | $V_0 + V_{\text{cell}}$ | 晶胞量子振荡谱 |
 
 ### 6.2 层级嵌套
 
@@ -292,7 +292,7 @@ $$P_{\text{el}} \hookrightarrow P_{\text{element}} \hookrightarrow P_{\text{mol}
 
 ### 6.3 谱传递规则
 
-$$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几何的输入} \;\Longrightarrow\; \text{下层同步算符}$$
+$$\text{上层同步算符谱} \;\longrightarrow\; \text{下层嘉当矩阵/几何的输入} \;\longrightarrow\; \text{下层同步算符}$$
 
 上层FG的谱结构决定下层FG的输入，形成完整的第一性预测链。
 
@@ -301,7 +301,7 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 8. 文献锚定
@@ -310,13 +310,13 @@ $$\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几�
 |:---|:---|:---|:---|
 | Hilbert–Pólya | 1914+ | — | 自伴算符H，本征值=黎曼零点 |
 | Montgomery | 1973 | — | 对关联猜想=GUE |
-| Bost-Connes | 1995 | arXiv:1012.4665 | Z(β)=ζ(β)量子统计系统 |
-| Berry-Keating | 1999 | — | H=xp算符，semiclassical |
+| Bost–Connes | 1995 | arXiv:1012.4665 | Z(β)=ζ(β)量子统计系统 |
+| Berry–Keating | 1999 | — | H=xp算符，semiclassical |
 | Connes | 2019 | arXiv:1910.14368 | 缩放哈密顿量，谱实现 |
 | Ng | 2006 | arXiv:math/0603275 | Virasoro c=1/2谱实现 |
 | Srednicki | 2011 | arXiv:1104.1850 | 局部RH谱证明 |
-| Sierra | 2007 | arXiv:0712.0705 | xp量子化+边界波函数 |
-| Benjamin-Chang | 2022 | arXiv:2208.02259 | CFT模共形自举 |
+| Sierra | 2008 | arXiv:0712.0705 | xp量子化+边界波函数 |
+| Benjamin–Chang | 2022 | arXiv:2208.02259 | CFT模共形自举 |
 
 ## 9. 相关文档
 

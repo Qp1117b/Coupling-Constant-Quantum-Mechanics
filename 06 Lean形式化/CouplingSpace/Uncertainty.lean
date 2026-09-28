@@ -236,7 +236,7 @@ theorem cqm_uncertainty_from_robertson (ψ : H) (hψ : ‖ψ‖ = 1)
   robertson_ccr_inequality ψ hψ uHat pHat hu hp hCCR
 
 /-- 无量纲化不确定性关系：
-    定义 ũ = û/C（C > 0 为相变量子），则 Δũ · Δp̂ᵤ ≥ 1/(2C)。
+    定义 ũ = û/☯（☯ > 0 为相变量子），则 Δũ · Δp̂ᵤ ≥ 1/(2☯)。
 
     证明：Δũ = Δû/C（因为 stdDev 是 1-齐次的），
     所以 Δũ · Δp̂ᵤ = (Δû/C) · Δp̂ᵤ ≥ (1/2)/C = 1/(2C)。 -/
@@ -274,7 +274,7 @@ theorem dimensionless_uncertainty (ψ : H) (hψ : ‖ψ‖ = 1)
     (ID1) Δu = Δr/⟨r⟩：耦合坐标不确定性 = 耦合强度相对不确定性
            （对小涨落在 u = ln r 附近成立，du = dr/r）
 
-    (ID2) Δv_τ = C · Δp̂ᵤ：耦合速度不确定性 = C × 耦合动量不确定性
+    (ID2) Δv_τ = ☯ · Δp̂ᵤ：耦合速度不确定性 = ☯ × 耦合动量不确定性
            （来自无量纲化 v_τ = du/dτ ↔ p̂ᵤ 的正则关系）
 
     这些对应关系目前在 CQM 中以公理形式引入，待从耦合空间
@@ -282,11 +282,11 @@ theorem dimensionless_uncertainty (ψ : H) (hψ : ‖ψ‖ = 1)
 structure CouplingIdentification where
   /-- Δu = Δr/⟨r⟩：耦合坐标涨落 = 耦合强度相对涨落 -/
   deltaU_eq_deltaR_div_r : Prop
-  /-- Δv_τ = C · Δp̂ᵤ：耦合速度涨落 = C × 耦合动量涨落 -/
+  /-- Δv_τ = ☯ · Δp̂ᵤ：耦合速度涨落 = ☯ × 耦合动量涨落 -/
   deltaV_eq_C_times_deltaP : Prop
 
 /-- [THEOREM — 条件性] 若接受耦合空间物理量对应关系，
-    则 CQM 不确定性关系 (Δr/⟨r⟩)·Δv_τ ≥ C/2 成立。
+    则 CQM 不确定性关系 (Δr/⟨r⟩)·Δv_τ ≥ ☯/2 成立。
 
     此定理将物理对应关系作为显式假设，使推导链透明化。
     当这些对应关系从耦合空间基本定义严格证明后，

@@ -37,7 +37,7 @@ CFT 同步过程 → 全局同步（和乐平庸化）。
 |:---|:---|:---|
 | `FGChain.Basic` | 总纲 | 两链结构、发生学分离定理 |
 | `FGChain.QuantumOscillation` | 环节 3–5 | 晶胞量子振荡、晶胞波函数、动量-位置-能量关系（谐振子谱） |
-| `FGChain.CurvatureOperator` | 环节 6–8 | 曲率算符 δ̂_v、CQM 海森堡对 [û,p̂_u]=iC、CQM-Robertson 不确定性 |
+| `FGChain.CurvatureOperator` | 环节 6–8 | 曲率算符 δ̂_v、CQM 海森堡对 [û,p̂_u]=i、CQM-Robertson 不确定性 |
 | `FGChain.ReggeBase` | 环节 9（前置） | 晶胞分布 → Regge 底空间，两链交汇 |
 | `FGChain.FiberBundle` | 环节 10–14 | 离散主丛、和乐、结构群涨落、重组实现四层结构、表示、物质场 |
 | `FGChain.Synchronization` | 环节 15–19 | 同步算符、零点谱进入、本征值交叉（IVT）、CFT 幂律、全局同步 |
@@ -45,7 +45,7 @@ CFT 同步过程 → 全局同步（和乐平庸化）。
 
 ## 严格性声明
 
-- 全部定理严格证明，零 `sorry`。
+- 已通过编译的模块（`Basic`、`CartanToShell`）内定理零 `sorry`。
 - 谐振子谱、本征值交叉（介值定理）、壳层计数为纯数学严格推导。
 - 参数化对象（曲率算符的具体算子实现、结构群的完整李群结构）按项目惯例
   以实参数 + 正性/代数关系形式化，具体算子实现与《CQM_超导核心理论》缺口表

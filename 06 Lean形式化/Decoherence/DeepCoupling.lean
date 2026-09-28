@@ -280,8 +280,8 @@ axiom layerNonReductionism :
 
 -- 上层因果结构的相对独立性：上层的具体因果规律不需要
 -- 从基础层逐层推导，只需要满足基础约束。
--- 此声明由 `layerNonReductionism` 公理化 encapsulate，
--- 不再以 `True := by trivial` 的欺骗性定理形式表述。
+-- 此声明由 `layerNonReductionism` 公理形式给出，
+-- 不用 `True := by trivial` 表述。
 
 /-! ## 物质内禀不确定性的层级表现 -/
 

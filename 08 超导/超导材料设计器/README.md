@@ -54,13 +54,15 @@ $$\psi(\mathbf{r}, T) = \int_{\text{BZ}} d^3k \; \mathcal{D}_{\text{lattice}} \c
 | 参数 | 符号 | 数值 | 来源 |
 |:---|:---:|:---:|:---|
 | 相变量子 | $☯$ | 0.02309570897 | ξ'(1)/ξ(1) |
-| 第一耦级 | 𝔠₁ | 200.04045483 | 1/4 + γ₁² |
+| 第一耦级 | $\mathfrak{c}_1$ | 200.04045483 | 1/4 + γ₁² |
 | A₄ 谱间隙 | λ₁ | (3−√5)/2 ≈ 0.382 | A₄ 最小本征值 |
 | BCS 前因子 | 2e^γ/π | ≈ 1.1339 | 弱耦合极限 |
 
 $$A_4 = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}, \quad \lambda_k = 2 - 2\cos\frac{k\pi}{5}$$
 
-$$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} C_p\right) \oplus \left(\bigoplus_{j=1}^{N} C_n(\delta_j)\right), \quad k_B T_c = \frac{2e^\gamma}{\pi} \cdot \hbar\omega_{\text{causal}} \cdot \exp\left(-\frac{1}{N(0)\cdot V_0}\right)$$
+$$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \left(\bigoplus_{j=1}^{N} C_n(\delta_j)\right), \quad k_B T_c = \frac{2e^\gamma}{\pi} \cdot \hbar\Omega_0 \cdot \exp\left(-\frac{1}{N(0)\cdot V_{\text{pair}}}\right)$$
+
+> 注：式中 $V_{\text{pair}}$ 为配对势，区别于理论中的质数势 $V_0$。
 
 ---
 

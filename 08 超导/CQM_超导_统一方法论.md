@@ -3,19 +3,21 @@
 **作者**：ruster
 
 > 该文档用统一纤维丛语言严格描述CQM超导预测的方法论：四层FG（元素/分子/晶胞/超导）各自是不同的纤维丛，剖分对象不同，但从Regge剖分到Tc的计算步骤完全统一且第一性。
+>
+> **层级命名对照**：本文的“四层FG”指参与 Regge 剖分的四个物质组织层级（元素/分子/晶胞/超导）；框架的 FG 同步算符层级为电子/元素/分子/晶胞四个（见 `CQM_超导_FG层级同步算符体系.md` §2）。电子 FG 的同步算符为 $V_0$（自由库仑场，无独立剖分，故不列入剖分层）；本文的“超导”层即晶胞 FG 的同步实现（结构群 $U(1)//\mathbb{Z}_n$）。
 
 ## 1. 四层FG的纤维丛定义
 
-### 1.1 纤维丛四元组
+### 1.1 主丛四元组
 
-每层FG是一个主丛 $(M_\ell, P_\ell, \pi_\ell, G_\ell)$：
+每层FG是一个主丛，其主丛四元组为 $(M_\ell, P_\ell, \pi_\ell, G_\ell)$：
 
 - $M_\ell$：底空间（剖分对象的空间分布）
 - $P_\ell$：全空间（主丛）
 - $\pi_\ell: P_\ell \to M_\ell$：投影映射
 - $G_\ell$：结构群（对称群作用在纤维上）
 
-配以联络 $\mathcal{A}_\ell$ 和曲率 $\mathcal{F}_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell$。
+配以联络 $\mathcal{A}_\ell$ 和曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell$。
 
 | 层级 | 底空间 $M_\ell$ | 结构群 $G_\ell$ | 联络 $\mathcal{A}_\ell$ | 剖分对象 |
 |:---|:---|:---|:---|:---|
@@ -86,13 +88,13 @@ $$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}} \
 
 - **顶点** = $M_\ell$ 中的离散点（剖分对象的位置）
 - **边** = 联络 $\mathcal{A}_\ell$ 的离散化（连接顶点的路径，给出平移规则）
-- **面** = 曲率 $\mathcal{F}_\ell$ 的离散化（绕回路的和乐）
+- **面** = 曲率 $F_\ell$ 的离散化（绕回路的和乐）
 
 ### 2.2 角亏作为底空间曲率集中
 
 顶点 $v$ 处的角亏 $\delta_v$ 是底空间曲率在该点的集中：
 
-$$\delta_v = 2\pi - \sum_i \theta_i \quad \text{(2D, Gauss-Bonnet)}$$
+$$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta \quad \text{(2D, Gauss-Bonnet)}$$
 
 等价于绕顶点 $v$ 的和乐：
 
@@ -124,9 +126,9 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 每层FG的同步算符 $\hat{\mathcal{S}}_\ell$ 是该层主丛 $P_\ell$ 上的谱算符：
 
-$$\hat{\mathcal{S}}_\ell = V_0 + V_{\text{角亏激活}}(T)$$
+$$\hat{\mathcal{S}}_\ell = V_0 + V_\ell$$
 
-其中 $V_0$ 是质数势（从QG基态紧化结构继承），$V_{\text{角亏激活}}(T)$ 是角亏激活势（从底空间曲率涨落给出）。
+其中 $V_0$ 是质数势（从QG基态紧化结构继承，各层级共享），$V_\ell$ 是层级结构项（元素层级 $L_{\text{orbital}}$、分子层级 $L_{\text{mol}}$、晶胞层级 $V_{\text{角亏激活}}(T)$），从该层主丛对称性与底空间曲率涨落给出。
 
 ### 3.2 本征值与温度依赖
 
@@ -160,7 +162,7 @@ $$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 **步骤A：Regge剖分** — 对底空间 $M_\ell$ 进行三角剖分 $T_\ell$（顶点+边+面）
 
-**步骤B：角亏** — 逐顶点计算底空间曲率集中：$\delta_v = 2\pi - \sum_i \theta_i$（Gauss-Bonnet定理）
+**步骤B：角亏** — 逐顶点计算底空间曲率集中：$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$（Gauss-Bonnet定理）
 
 **步骤C：动力学矩阵** — 联络 $\mathcal{A}_\ell$ 离散化为力常数矩阵 $K_{ij}$，动力学矩阵 $D_{ij} = K_{ij}/\sqrt{m_i m_j}$（Regge作用量变分）
 
@@ -170,14 +172,14 @@ $$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 **步骤F：Tc闭式** — 主丛结构群上同步算符本征值交叉：$T_c = \theta_D / (2\,\text{arccoth}(x))$
 
-每步都是CQM方程严格导出，无经验拟合参数。
+除耦合参数化缺口（$t_0,\lambda$，见 `CQM_超导_FG层级同步算符体系.md` §8.3）外，每步都是CQM方程严格导出，无经验拟合参数。
 
 ## 5. 相对第一性的界定
 
 ### 5.1 完全第一性部分
 
 - 元素FG纤维丛构造：从Z→核子分布→结构群→主丛，无外部输入
-- 从剖分到Tc的步骤：步骤A-F全部从CQM方程严格导出
+- 从剖分到Tc的步骤：步骤A-F全部从CQM方程严格导出（耦合参数化缺口除外，见 `CQM_超导_FG层级同步算符体系.md` §8.3）
 - 物理常数：$\beta=\frac{1}{4\pi}\ln\frac{L}{a}$, $C^2=2/3$, $\gamma_1$, $\gamma_2$ 等从CQM方程给出
 
 ### 5.2 需要外部数据的部分
@@ -194,7 +196,7 @@ CQM超导预测是相对第一性：
 - 元素FG底空间完全第一性（可穷尽列举）
 - 分子FG/晶胞FG/超导底空间需要外部数据，但计算步骤统一
 
-对比BCS：BCS需要电声耦合 $\lambda$ 和库仑赝势 $\mu^*$（经验参数），CQM不需要这些——CQM只需要晶体结构（实验输入确定底空间），从纤维丛到Tc的步骤完全第一性。
+对比BCS：BCS需要电声耦合 $\lambda$ 和库仑赝势 $\mu^*$（经验参数），CQM不需要这些——CQM只需要晶体结构（实验输入确定底空间），从纤维丛到Tc的步骤完全第一性（耦合参数化缺口除外，见 `CQM_超导_FG层级同步算符体系.md` §8.3）。
 
 ## 6. 元素FG穷尽列举方案
 
@@ -325,7 +327,7 @@ $$T_c = \frac{\theta_D}{2\,\text{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\d
 
 **角亏**（底空间曲率集中，Gauss-Bonnet）：
 
-$$\delta_v = 2\pi - \sum_{i} \theta_i$$
+$$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$$
 
 **和乐**（绕顶点 $v$ 的结构群元素）：
 
@@ -345,7 +347,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 **同步算符**（主丛谱算符）：
 
-$$\hat{\mathcal{S}}_\ell = V_0 + V_{\text{角亏激活}}(T), \quad \lambda_n(T) = \gamma_n - \frac{\beta^2 \Delta\delta_v(T)^2 (n^2-1)}{4n^2 (1-\beta\delta_v)}$$
+$$\hat{\mathcal{S}}_\ell = V_0 + V_\ell, \quad \lambda_n(T) = \gamma_n - \frac{\beta^2 \Delta\delta_v(T)^2 (n^2-1)}{4n^2 (1-\beta\delta_v)}$$
 
 **超导条件**：
 

@@ -26,7 +26,7 @@
 >
 > 另注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题。
 
-**`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：两库相应结论均以定理而非公理给出。
+**`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：PrimeGeometry 的相应结论以定理给出；Methodology 以公理/假设层为主（见「定理统计」表）。
 
 ## 库结构
 
@@ -41,8 +41,8 @@
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
-| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G\RightarrowR=G\Rightarrow\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
-| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）——共 19 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
+| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
+| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean`, `SimplexSpectrum.lean`, `AdeleJacobian.lean`, `Constructions.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿，6 模块）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）；§2 4-单纯形组合谱——`SimplexSpectrum.lean`（57 定理）、§6 Adele Jacobian 因子 2——`AdeleJacobian.lean`（11 引理/定理）、§8–§11 可代数化构造——`Constructions.lean`（14 定理）——共 101 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
 
 ## 形式化推导链
 
@@ -98,7 +98,7 @@ Axioms
 │ ├── N_cycle = 2·3·5 = 30 = 活跃素数积
 │ └── 活跃素数个数 3 = rank(SU(5)) - 1
 │
-├── 退相干三层结构 L1/L2/L3
+├── 退相干三层结构 L1/L2/L3+
 │ ├── 禁闭标度 L = 1
 │ ├── 退相干条件 ρ(u) ≥ L
 │ └── 退相干速率 Γ(u) = ρ(u)
@@ -132,20 +132,22 @@ Axioms
 | GN | 101 | 0 |
 | **总计** | **748** | **30** |
 
-## 已知缺口
+> 注：本表未计入 FGChain 库（12 模块）；其源码含 115 条 `theorem`/`lemma` 条目，与上表计数口径不一致，故未并入总计，口径待统一。
+
+## 缺口与证明状态
 
 | 缺口 | 描述 | 涉及库 | 状态 |
 |:---|:---|:---|:---:|
-| G5 | 退相干 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |
-| G5 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |
-| A | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | `axiom` (H3.3) |
+| H3.1 | 退相干 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |
+| H3.2 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |
+| C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | `axiom` (H3.3) |
 | — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
 | — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
 | — | 相变量子 $☯ = \xi'(1)/\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
-| — | 因果分辨率 → 引力场有效描述的尺度依赖 | `ElementCartan` | `def` 占位（哲学立场） |
-| — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `ElementCartan` | `def` 占位（需核物理/量子引力） |
+| — | 因果分辨率 → 引力场有效描述的尺度依赖 | `Superconductivity/ElementCartan` | `def` 占位（哲学立场） |
+| — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `Superconductivity/ElementCartan` | `def` 占位（需核物理/量子引力） |
 | — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
 | — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |
 
@@ -157,7 +159,9 @@ Axioms
 | G20-ext | 两质子耦合精确阈值 | `MolecularGeometry.lean`：`twoProtonCoupling_exactThreshold` 用 SOS 分解 + 黄金比例恒等式证明 t < λ₁ 时正定 |
 | — | `bcsConstant_gt_one`（2e^γ/π > 1） | 从 `axiom` 升级为 `theorem`：利用 Mathlib 的 γ>1/2、exp(1)>2.718、π<3.1416 严格证明 |
 | — | 分子超嘉当矩阵谱间隙界 | `BridgeTheorems.lean`：`twoAtomSuperCartan_quadratic_lowerBound` 用 Cauchy-Schwarz + AM-GM 严格证明 |
-| — | 元素嘉当矩阵 5 个 `True` 占位公理 | 转为诚实 `def ... : Prop := True` 声明，明确标注"不构成证明" |
+| — | 元素嘉当矩阵 5 个 `True` 占位公理 | 转为诚实 `def ... : Prop := True` 声明，明确标注“不构成证明” |
+
+> 注：G17（FG→GR 连续极限退化定理）与 G20-ext 均已闭合，且**不属缺口表编号**（见 v0.6.0 亮点）。
 
 ## 编译命令
 
@@ -193,6 +197,8 @@ lake build GN.Constructions # §8–§11 可代数化构造
 | 强引力超导涌现 | `Superconductivity` | 340 |
 | $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 101 |
 
+> 注：FG 纤维丛理论链路形式化（`FGChain`，12 模块）未计入本表；其源码含 115 条 `theorem`/`lemma` 条目，与上表计数口径不一致。
+
 ## 本次更新亮点 (v0.7.0)
 
 - **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。10×10 `native_decide` 对 det 语句仍不可用，故采用显式基路线
@@ -202,7 +208,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 ## 本次更新亮点 (v0.6.2)
 
-- **§5 Sierra-CQM 形式化闭合（代数核心）**：新增 `GN/SierraCQM.lean`（6 定理，零 `sorry`、零新增 `axiom`），把证明稿定理 5.1 的 Floquet 量子化代数链严格化——零点匹配 `floquetMomentum_eq`（$k_n=\gamma_n(1+\theta_n/(2\pi n))$）、偏差界 `floquetMomentum_deviation_lt`（$|k_n-\gamma_n|<\gamma_n/(2n)$）、耦级绝对误差 `floquet_level_deviation_le`（$|k_n^2-\gamma_n^2|\le\gamma_n^2(1/n+1/(4n^2))$）、相对误差两形式（含见证常数 $5/4$，$n\ge1$）。`L_n=2\pi n/\gamma_n$ 与 $m=n$ 以显式假设出现（条件定理）；步骤 1–2（酉等价、广义本征函数）如实列入缺口
+- **§5 Sierra-CQM 形式化闭合（代数核心）**：新增 `GN/SierraCQM.lean`（6 定理，零 `sorry`、零新增 `axiom`），把证明稿定理 5.1 的 Floquet 量子化代数链严格化——零点匹配 `floquetMomentum_eq`（$k_n=\gamma_n(1+\theta_n/(2\pi n))$）、偏差界 `floquetMomentum_deviation_lt`（$|k_n-\gamma_n|<\gamma_n/(2n)$）、耦级绝对误差 `floquet_level_deviation_le`（$|k_n^2-\gamma_n^2|\le\gamma_n^2(1/n+1/(4n^2))$）、相对误差两形式（含见证常数 $5/4$，$n\ge1$）。`L_n=2\pi n/\gamma_n` 与 `m=n` 以显式假设出现（条件定理）；步骤 1–2（酉等价、广义本征函数）如实列入缺口
 - **GN 库统计**：2→3 模块（`Basic`/`TripleIdentity`/`SierraCQM`），13→19 定理；全库定理总数 660→666
 
 ## 本次更新亮点 (v0.6.1)
@@ -212,7 +218,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 ## 本次更新亮点 (v0.6.0)
 
-- **落后形式化的清理**：`MultiComponent.lean` 与最新研究文档不一致，已不在库中；主入口 `Superconductivity.lean` 的章节映射同步更新（§13→§20、§7/§10 对应文档章节精简）；§3.6 公式取与代码一致的 $v_\tau=\sqrt{1-\beta\delta_v}$；G13 状态为闭合；FG→GR 连续极限（编号 G17）不作为缺口；`Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用改为"方向锚定保留"。模块数 16
+- **落后形式化的清理**：`MultiComponent.lean` 与最新研究文档不一致，已不在库中；主入口 `Superconductivity.lean` 的章节映射同步更新（§13→§20、§7/§10 对应文档章节精简）；§3.6 公式取与代码一致的 $v_\tau=\sqrt{1-\beta\delta_v}$；G13 状态为闭合；FG→GR 连续极限退化定理（编号 G17）不作为缺口；`Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用改为“方向锚定保留”。模块数 16
 - **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除）
 
 ## 本次更新亮点 (v0.5.9)
@@ -221,7 +227,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 - **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 角亏→FG 退相干场强度）→ 层级 VI（因果分辨率）
 - **元素主次结构**：BCS 同位素效应揭示元素内部存在主次结构——质子扇区（纯 A4 块对角）为主、中子扇区（缺陷 A4 块对角）为次。主次结构直接指向 BCS 退化方向（往单元素材料退化），并揭示拼接规则（同种元素同位素之间 $\epsilon(N)$ 连续变化，跨元素种类需要 $t_{ij}$ 参数）
 - **阶段 0：元素层级**：新增计算管线步骤 0a–0d（质子/中子分配→元素嘉当矩阵组装→主次结构识别→BCS 退化验证），使元素层级计算先于分子层级
-- **新增缺口 11–15**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、牛顿引力退化定理（G17：FG不走Regge→GR连续极限，不作为缺口）、单元素拼接规则特殊性
+- **SPAF 框架新增五项待办（含 G17 说明，不作为缺口）**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、FG→GR 连续极限退化定理（G17，不作为缺口）、单元素拼接规则特殊性
 - **文档总数**：SPAF 框架文档从 355 行扩展至约 500 行，新增 §0、§2.5、§5 阶段 0、§10.5 共四个章节
 - **定理总数**：保持不变（624），本次更新为文档架构与概念框架的深化，非 Lean 代码层变更
 
@@ -290,6 +296,14 @@ lake build GN.Constructions # §8–§11 可代数化构造
 - **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`
 - **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部量子引力/电子封装），沿用 CausalSet.Axioms 不透明公理模式
 
+## 本次更新亮点 (v0.5.1)
+
+- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由 `native_decide` 直接证明的定理，消除一个不必要的公理
+- **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意条件，且无任何定理引用）
+- **清理测试残留**：删除未加入 `lakefile.toml` 且含 `sorry` 的 `TestNum.lean`
+- **更新定理/公理统计**：按实际代码重新计数，当前 180 个定理 / 8 个公理（含物理假设与数值桥梁）
+- **消除虚假精确等式**：相变量子 `☯` 严格定义为 `1 + γ/2 - (1/2)ln(4π)`，数值近似以区间公理显式标注
+
 ## 本次更新亮点 (v0.5.0)
 
 - **消除所有 CQM 警告**：零 CQM 代码警告，构建完全清洁
@@ -301,14 +315,6 @@ lake build GN.Constructions # §8–§11 可代数化构造
 - **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）
 - **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138
 - **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm
-
-## 本次更新亮点 (v0.5.1)
-
-- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由 `native_decide` 直接证明的定理，消除一个不必要的公理
-- **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意条件，且无任何定理引用）
-- **清理测试残留**：删除未加入 `lakefile.toml` 且含 `sorry` 的 `TestNum.lean`
-- **更新定理/公理统计**：按实际代码重新计数，当前 180 个定理 / 8 个公理（含物理假设与数值桥梁）
-- **消除虚假精确等式**：相变量子 `C` 严格定义为 `1 + γ/2 - (1/2)ln(4π)`，数值近似以区间公理显式标注
 
 ## 版本
 

@@ -19,7 +19,7 @@ dN/dτ → 0  ⇔  N(τ) → L  ⇔  u(τ) → ln L  ⇔  ρ(u) → ∞  ⇔  De
 ## 公理与假设
 - **[HYPOTHESIS H3.1]** 禁闭 = 退相干等价（缺口 G5）
 - **[HYPOTHESIS H3.2]** 非交换 → 交换几何相变（缺口 G5）
-- **[HYPOTHESIS H3.3]** 退相干稳态 = 正四单纯形（缺口 A）
+- **[HYPOTHESIS H3.3]** 退相干稳态 = 正四单纯形（缺口 C）
 
 ## 物理意义
 在 CQM 中，禁闭和退相干是同一物理过程的两个侧面：
@@ -78,7 +78,7 @@ def decoherenceCondition (rho L : ℝ) : Prop := rho ≥ L
 
 /-! [HYPOTHESIS H3.3] 引用：退相干稳态是正四单纯形。
     定义在 CausalSet.Axioms 中，类型为 `physical_hypothesis`（不透明命题）。
-    这是 CQM 的 SU(5) 规范群涌现的几何根源（缺口 A）。 -/
+    这是 CQM 的 SU(5) 规范群涌现的几何根源（缺口 C）。 -/
 
 /-! ## 退相干速率 -/
 

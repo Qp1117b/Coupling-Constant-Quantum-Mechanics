@@ -58,7 +58,7 @@ axiom confinement_interior_is_quantum_gravity : physical_hypothesis
     当大量质子聚集时，其内部的量子引力通过互耦退相干涌现出经典引力场与
     经典时空度规；度规 g_μν 是这张因果网络的粗粒化描述。
     对应假设 H3.1（禁闭 = 退相干）与 H3.2（非交换 → 交换几何相变），
-    已由 CausalSet.Axioms 声明，此处不再重复。 -/
+    已由 CausalSet.Axioms 声明，此处不重复。 -/
 
 /-- 命题 1.6 的组合学支撑：正四单纯型的 f-向量 (5, 10, 10, 5)。
     4-单纯型的 Euler 示性数：V − E + F − C = 5 − 10 + 10 − 5 = 0。 -/

@@ -105,7 +105,7 @@ theorem StructureGroupFluctuation.uG_welldefined (S : StructureGroupFluctuation)
 
 /-- **曲率驱动涨落衔接**：角亏涨落（环节6–8 通道）与结构群耦合坐标涨落
     通过曲率-耦合阈值关联：给定 β, δ_v, C，可实现的最小涨落幅度为
-    C√(1−βδ_v)/(β·Δu)（复用 `CurvatureOperator` 的阈值正性定理）。 -/
+    ☯√(1−βδ_v)/(β·Δu)（复用 `CurvatureOperator` 的阈值正性定理）。 -/
 theorem fluctuation_driven_by_curvature (β δv C Δu : ℝ)
     (hβ : 0 < β) (hδ : 0 ≤ δv) (hbound : δv < 1 / β) (hC : 0 < C) (hΔu : 0 < Δu) :
     0 < C * Superconductivity.CQM.properTimeFlow β δv / (β * Δu) :=

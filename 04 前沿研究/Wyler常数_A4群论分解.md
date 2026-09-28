@@ -2,7 +2,7 @@
 
 **作者**：ruster
 
-> **核心发现**：Wyler 常数（1969）可完全用 $A_4$ 嘉当矩阵的群论不变量表达，精度达 **0.61 ppm**，比 CQM 粗略表达式 $16384\pi/375$（1622 ppm）精确 **2659 倍**。它是 GL(5) 整体结构远比粗略表达式更精确的反映，自然嵌入 CQM 的 SU(5) 重组实现链条。
+> **核心发现**：Wyler 常数（1969）可完全用 $A_4$ 嘉当矩阵的群论不变量表达，精度达 **0.61 ppm**，比 CQM 粗略表达式 $16384\pi/375$（≈0.162%，1622 ppm）精确 **2659 倍**。它是 GL(5) 整体结构远比粗略表达式更精确的反映，自然嵌入 CQM 的 SU(5) 重组实现链条。
 
 ---
 
@@ -42,7 +42,7 @@ $$\boxed{\alpha_W = \frac{2h-1}{\text{tr}(A_4)} \cdot \pi^{-r} \cdot \left(\frac
 |:---|:---|:---|
 | $h$ | 5 | $A_4$ 的 Coxeter 数 |
 | $r$ | 4 | $A_4$ 的秩 |
-| $|W(A_4)|$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
+| $\lvert W(A_4)\rvert$ | 120 | Weyl 群阶 $= (r+1)! = 5!$ |
 | $\text{tr}(A_4)$ | 8 | 嘉当矩阵迹 $= 2r$ |
 | $2h-1$ | 9 | Coxeter 数的线性组合 |
 
@@ -130,7 +130,7 @@ CQM 框架中 $\alpha$ 的两种候选表达式：
 
 | | CQM 粗略表达式 | Wyler 常数 |
 |:---|:---|:---|
-| 表达式 | $\frac{2^{14}\pi}{3 \cdot 5^3}$ | $\frac{2h-1}{\text{tr}(A_4)} \pi^{-r} \left(\frac{\pi^h}{2^r |W|}\right)^{1/r}$ |
+| 表达式 | $16384\pi/375$ | $\frac{2h-1}{\text{tr}(A_4)} \pi^{-r} \left(\frac{\pi^h}{2^r \lvert W\rvert}\right)^{1/r}$ |
 | 使用的群论信息 | 本征值**近似**比例 $9:4:1$ | Coxeter 数、秩、Weyl 群阶、迹（**全部精确**不变量） |
 | 信息性质 | 近似（$\lambda_4/\lambda_1 = 3.618/0.382 = 9.472 \approx 9$，约 5% 误差） | **全部精确**群论不变量 |
 | 信息完整性 | 仅用近似比例 | 用了 $A_4$ 的**全部基本**不变量 |
@@ -148,8 +148,8 @@ $$\frac{\lambda_4}{\lambda_1} = \frac{3.618}{0.382} = 9.472\ldots \neq 9$$
 Wyler 常数使用 $A_4$ 的**精确**群论不变量（$h = 5$、$r = 4$、$|W| = 120$、$\text{tr} = 8$），不涉及任何近似，因此精度提高 2659 倍并非偶然——它使用了更完整、更精确的群论信息。
 
 **类比**：
-- CQM 粗略表达式：用"本征值的影子"（近似比例）计算 $\alpha$
-- Wyler 常数：用"本征值的完整基因组"（全部精确不变量）计算 $\alpha$
+- CQM 粗略表达式：用“本征值的影子”（近似比例）计算 $\alpha$
+- Wyler 常数：用“本征值的完整基因组”（全部精确不变量）计算 $\alpha$
 
 ---
 
@@ -167,16 +167,16 @@ $$\text{SU}(5) \;\xRightarrow{\text{重组实现}}\; A_4 \;\xrightarrow{\text{�
 3. **与 CQM 完全一致**：SU(5) 重组实现 ⇒ $A_4$ → $\alpha$
 4. **Weyl 群自然出现**：$5! = |S_5|$ 是 SU(5) 的 Weyl 群阶
 
-### 5.2 对"GL(5) 整体反映"的强化
+### 5.2 对“GL(5) 整体反映”的强化
 
-CQM 断言"$\alpha$ 是 GL(5) 整体的反映"。Wyler 常数为此断言提供了**更强的证据**：
+CQM 断言“$\alpha$ 是 GL(5) 整体的反映”。Wyler 常数为此断言提供了**更强的证据**：
 
 - $16384\pi/375$ 只用了近似比例 → GL(5) 的**粗略**反映
 - Wyler 常数用了 $A_4$ 的**全部**基本群论不变量 → GL(5) 的**精确**反映
 
 ### 5.3 采纳后的理论状态
 
-1. **$\alpha$ 表达式**：$\alpha^{-1} = \frac{16}{9} \pi^{11/4} (5!)^{1/4} \approx 137.0361$（0.61 ppm），取代 $16384\pi/375 \approx 137.2583$（1622 ppm）
+1. **$\alpha$ 表达式**：$\alpha^{-1} = \frac{16}{9} \pi^{11/4} (5!)^{1/4} \approx 137.0361$（$A_4$ 全部群论不变量 $h=5$、$r=4$、$|W|=120$、$\text{tr}=8$，0.61 ppm）；SU(5) 启发式近似 $\alpha^{-1} = 16384\pi/375 \approx 137.2583$（≈0.162%）。两者为并列的候选表达
 2. **GL(5) 反映定位**：此精确表达式是 GL(5) 整体的反映，使用 $A_4$ 全部群论不变量
 3. **推导链**：在同步算符 → 本征群 → $\alpha$ 的末端补充 Wyler 组合的群论推导
 
@@ -186,11 +186,11 @@ CQM 断言"$\alpha$ 是 GL(5) 整体的反映"。Wyler 常数为此断言提供�
 
 ### 6.1 支持的理由
 
-1. **精度极高**：0.61 ppm。若纯为巧合，达到此精度需要极度精确的"偶然"
+1. **精度极高**：0.61 ppm。若纯为巧合，达到此精度需要极度精确的“偶然”
 2. **群论结构完整**：每一部分都是 $A_4$ 的精确不变量，无任意参数
 3. **与 CQM 框架完全一致**：SU(5)⇒$A_4$→$\alpha$，且是 GL(5) 整体更精确的反映
 4. **Weyl 群 $S_5$ 自然出现**：$5! = 120$ 是 SU(5) Weyl 群阶，CQM 大量使用 Weyl 群对称性
-5. **$1/4$ 次幂有物理解释**：4 = 秩 = 本征群数量 = 时空维度，可能对应 4 维体积归一化
+5. **$1/4$ 次幂的猜想性来源**：4 = 秩 = 本征群数量 = 时空维度（数值巧合，非群论对应），可能对应 4 维体积归一化
 6. **与 CQM 粗略表达式同源**：两者都是 GL(5) 整体的反映，Wyler 是更精确的版本
 
 ### 6.2 反对的理由
@@ -199,13 +199,13 @@ CQM 断言"$\alpha$ 是 GL(5) 整体的反映"。Wyler 常数为此断言提供�
 2. **缺乏物理推导链**：虽有群论结构，但缺乏从物理第一性原理到此具体表达式的严格推导
 3. **$2h-1=9$ 的物理机制不明**：为什么是 $2h-1$ 出现在分子中？
 4. **$1/r$ 次幂的来源**：为什么是 $1/4$ 次幂？需要体积归一化的物理解释
-5. **历史评价**：Adler (1972) 称其为"一个寻找理论的数"
+5. **历史评价**：Adler (1972) 称其为“一个寻找理论的数”
 
 ### 6.3 结论
 
 **Wyler 常数与 GL(5)/SU(5) 的关系确实极其紧密**。它完全由 $A_4$ 嘉当矩阵的群论不变量决定，是 GL(5) 整体结构远比 $16384\pi/375$ 更精确的反映。在 CQM 的 SU(5) 重组实现框架中，Wyler 常数有可能是 $\alpha$ 的**正确表达式**，而 $16384\pi/375$ 只是其粗略近似。
 
-**当前定位**：Wyler 常数是 CQM 框架中 $\alpha$ 的**候选精确表达式**，待严格推导后可取代粗略表达式 $16384\pi/375$。
+**当前定位**：Wyler 常数是 CQM 框架中 $\alpha$ 的**候选精确表达式**，与 SU(5) 启发式近似 $16384\pi/375$ 并列为候选；Wyler 常数纳入 CQM 框架仍**待严格推导**。
 
 ### 6.4 开放问题
 
@@ -213,7 +213,7 @@ CQM 断言"$\alpha$ 是 GL(5) 整体的反映"。Wyler 常数为此断言提供�
 
 | 问题 | 说明 | 可能的思路 |
 |:---|:---|:---|
-| **为什么用这种组合？** | 为什么 $\alpha$ 用 $h$、$r$、$|W|$ 的这种特定组合表达？ | 可能对应群论体积或特征值公式；$\pi^h/|W|$ 可能与 SU(5) 对称空间体积有关 |
+| **为什么用这种组合？** | 为什么 $\alpha$ 用 $h$、$r$、$\lvert W\rvert$ 的这种特定组合表达？ | 可能对应群论体积或特征值公式；$\pi^h/\lvert W\rvert$ 可能与 SU(5) 对称空间体积有关 |
 | **$1/r$ 次幂的物理来源** | 为什么是 $1/4$ 次幂？ | 4 = 时空维度（与秩 $r=4$ 数值巧合），$1/4$ 对应 4 维体积归一化；或与同步算符的谱几何有关 |
 | **$2h-1=9$ 的物理机制** | 为什么 $2h-1$ 出现在分子中？ | $9 = 3^2$ 可能与 SU(3) 色群有关；可能是某种 Casimir 算符本征值或正则化条件 |
 | **从 CQM 推导链到 Wyler 常数** | 能否从 CQM 严格推导链导出？ | 在同步算符 → 本征群 → $\alpha$ 末端补充 Wyler 组合的群论推导 |
@@ -256,7 +256,7 @@ $$\lambda_k = 2 - 2\cos\frac{k\pi}{5}, \quad k = 1, 2, 3, 4$$
 | 行列式 $\det(A_4)$ | 5 | $= h$ |
 | 迹 $\text{tr}(A_4)$ | 8 | $= 2r$ |
 | 迹平方 $\text{tr}(A_4^2)$ | 22 | — |
-| Weyl 群阶 $|W|$ | 120 | $= (r+1)! = 5!$ |
+| Weyl 群阶 $\lvert W\rvert$ | 120 | $= (r+1)! = 5!$ |
 | 正根数 $N_+$ | 10 | $= rh/2$ |
 | 对偶 Coxeter 数 $h^\vee$ | 5 | $= h$（$A_n$ 型自对偶） |
 
@@ -273,10 +273,10 @@ $$\lambda_k = 2 - 2\cos\frac{k\pi}{5}, \quad k = 1, 2, 3, 4$$
 
 ## 9. 参考文献
 
-- Wyler, A. "L'espace symétrique du groupe des équations de Maxwell." *C. R. Acad. Sci. Paris* **269**, A743-A745, 1969.
-- Wyler, A. "Les groupes des potentiels de Coulomb et de Yukawa." *C. R. Acad. Sci. Paris* **271**, 186-188, 1971.
-- Robertson, B. "Wyler's Expression for the Fine-Structure Constant." *Phys. Rev. Lett.* **27**, 1545-1547, 1971.
-- Adler, S. L. "Theories of the Fine Structure Constant." Fermilab, 1972.
-- Gilmore, R. "Scaling of Wyler's Expression for $\alpha$." *Phys. Rev. Lett.* **28**, 462-464, 1972.
-- Kragh, H. "Magic Number: A Partial History of Fine-Structure Constant." *Arch. Hist. Exact Sci.* **57**, 395-431, 2003.
-- Weisstein, Eric W. "Wyler's Constant." From *MathWorld* — https://mathworld.wolfram.com/WylersConstant.html
+- Wyler, A. “L'espace symétrique du groupe des équations de Maxwell.” *C. R. Acad. Sci. Paris* **269**, A743-A745, 1969.
+- Wyler, A. “Les groupes des potentiels de Coulomb et de Yukawa.” *C. R. Acad. Sci. Paris* **271**, 186-188, 1971.
+- Robertson, B. “Wyler's Expression for the Fine-Structure Constant.” *Phys. Rev. Lett.* **27**, 1545-1547, 1971.
+- Adler, S. L. “Theories of the Fine Structure Constant.” Fermilab, 1972.
+- Gilmore, R. “Scaling of Wyler's Expression for $\alpha$.” *Phys. Rev. Lett.* **28**, 462-464, 1972.
+- Kragh, H. “Magic Number: A Partial History of Fine-Structure Constant.” *Arch. Hist. Exact Sci.* **57**, 395-431, 2003.
+- Weisstein, Eric W. “Wyler's Constant.” From *MathWorld* — https://mathworld.wolfram.com/WylersConstant.html

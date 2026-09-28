@@ -7,13 +7,13 @@ import Mathlib.Tactic
 /-!
 # CQM 超导：临界温度严格推导（G22 闭合）
 
-本模块形式化《CQM_超导核心理论》§11.2 的临界温度严格推导（闭合缺口 G22），
-对应推导修正：早期公式写作 `(ln4/(β·Δδ₀))²`，把配对阈值误取为
-`ln4/β`，遗漏谱常数 `C = ξ'(1)/ξ(1)` 与阈值中的 `1/ln4` 因子；严格推导
+本模块形式化《CQM_超导核心理论》§11.2 的临界温度严格推导（闭合缺口 G22）。
+配对阈值取 `Δδ_v^(th) = ☯√(1−βδ_v)/(β·ln4)`（含谱常数 `☯ = ξ'(1)/ξ(1)` 与
+阈值中的 `1/ln4` 因子），不取 `(ln4/(β·Δδ₀))²` 形式；严格推导
 （§8 海森堡代数 → §9.2 阈值 → §11.2）给出：
 
 ```
-T_c = ℏΩ₀ / (2k_B · artanh[ratio²]),   ratio = C·√(1−βδ_v) / (β·ln4·Δδ₀)
+T_c = ℏΩ₀ / (2k_B · artanh[ratio²]),   ratio = ☯·√(1−βδ_v) / (β·ln4·Δδ₀)
 ```
 
 自然单位 `k_B = ℏ = 1`；`ratio` 为组合参数（arctanh 参数）。
@@ -23,13 +23,13 @@ T_c = ℏΩ₀ / (2k_B · artanh[ratio²]),   ratio = C·√(1−βδ_v) / (β·
 1. **恒等式**：玻色占据 `n_B = 1/(e^{ω/T}−1)` 满足 `1/(1+2n_B) = tanh(ω/2T)`
    （定理 `boseSuppression_eq_tanh`），故相干曲率涨落温度依赖
    `Δδ_v(T) = Δδ₀·√tanh(ℏΩ₀/2k_BT)`（`curvatureFluctuation`）。
-2. **阈值交叉**：配对阈值 `Δδ_v^(th) = C√(1−βδ_v)/(β·ln4)`（`pairingThreshold`, §9.2）。
+2. **阈值交叉**：配对阈值 `Δδ_v^(th) = ☯√(1−βδ_v)/(β·ln4)`（`pairingThreshold`, §9.2）。
 3. **闭式**：`Δδ_v(T_c) = Δδ_v^(th)` ⇒ `tanh(Ω₀/2T_c) = ratio²`
    ⇒ `T_c = Ω₀/(2·artanh[ratio²])`（`criticalTemperatureCQM`）。
 
 ## 定理
 - `criticalTemperatureCQM_pos`：`Ω₀ > 0` 且 `0 < ratio² < 1` 时 `T_c > 0`
-  （`ratio² < 1` 即 `β·ln4·Δδ₀ > C√(1−βδ_v)` 是 `T_c > 0` 的参数窗口）。
+  （`ratio² < 1` 即 `β·ln4·Δδ₀ > ☯√(1−βδ_v)` 是 `T_c > 0` 的参数窗口）。
 - `criticalTemperatureCQM_antitone_in_ratio`：`T_c` 随 `ratio` 单调递减，
   等价于涨落幅度 `Δδ₀` 越大（`ratio ∝ 1/Δδ₀`）`T_c` 越高。
 - `boseSuppression_eq_tanh`：推导链第一步的恒等式。
@@ -40,9 +40,9 @@ T_c = ℏΩ₀ / (2k_B · artanh[ratio²]),   ratio = C·√(1−βδ_v) / (β·
 
 namespace CQM
 
-/-! ## 谱常数 C = ξ'(1)/ξ(1) (§1.2) -/
+/-! ## 谱常数 ☯ = ξ'(1)/ξ(1) (§1.2) -/
 
-/-- 谱常数 `C = ξ'(1)/ξ(1) = 1 + γ/2 − ln(2√π) ≈ 0.0231`（§1.2）。
+/-- 谱常数 `☯ = ξ'(1)/ξ(1) = 1 + γ/2 − ln(2√π) ≈ 0.0231`（§1.2）。
     从 `ξ(s) = ½·s(s−1)·π^{−s/2}·Γ(s/2)·ζ(s)` 的函数方程 `ξ(s)=ξ(1−s)`
     与 `ψ(1/2) = −γ − 2·ln2` 推出；严格无量纲，作为全部后续层级的普适比例基准。 -/
 noncomputable def spectralConstantC : ℝ :=
@@ -96,8 +96,8 @@ noncomputable def curvatureFluctuation (delta0 omega temperature : ℝ) : ℝ :=
 
 /-! ## 推导链第二步：配对阈值 (§9.2) -/
 
-/-- 配对阈值（§9.2）：`Δδ_v^(th) = C√(1−βδ_v)/(β·ln4)`。
-    来自 §8.3 不确定性关系 `Δu·Δδ_v ≥ C√(1−βδ_v)/β` 与跃迁条件 `Δu ≥ ln4`。 -/
+/-- 配对阈值（§9.2）：`Δδ_v^(th) = ☯√(1−βδ_v)/(β·ln4)`。
+    来自 §8.3 不确定性关系 `Δu·Δδ_v ≥ ☯√(1−βδ_v)/β` 与跃迁条件 `Δu ≥ ln4`。 -/
 noncomputable def pairingThreshold (C beta deltaV : ℝ) : ℝ :=
   C * Real.sqrt (1 - beta * deltaV) / (beta * Real.log 4)
 
@@ -105,12 +105,12 @@ noncomputable def pairingThreshold (C beta deltaV : ℝ) : ℝ :=
 
 /-- CQM 临界温度（§11.2 严格推导，闭合 G22）：
     `T_c = Ω₀/(2·artanh[ratio²])`（自然单位 k_B = ℏ = 1），
-    其中 `ratio = C√(1−βδ_v)/(β·ln4·Δδ₀)` 为组合参数。
-    参数窗口：`ratio² < 1`（即 `β·ln4·Δδ₀ > C√(1−βδ_v)`）才有 `T_c > 0`。 -/
+    其中 `ratio = ☯√(1−βδ_v)/(β·ln4·Δδ₀)` 为组合参数。
+    参数窗口：`ratio² < 1`（即 `β·ln4·Δδ₀ > ☯√(1−βδ_v)`）才有 `T_c > 0`。 -/
 noncomputable def criticalTemperatureCQM (Omega0 ratio : ℝ) : ℝ :=
   Omega0 / (2 * Real.artanh (ratio ^ 2))
 
-/-- 由物理参数直接给出临界温度：`ratio = C√(1−βδ_v)/(β·ln4·Δδ₀)`。 -/
+/-- 由物理参数直接给出临界温度：`ratio = ☯√(1−βδ_v)/(β·ln4·Δδ₀)`。 -/
 noncomputable def criticalTemperatureFromParameters
     (Omega0 delta0 beta C deltaV : ℝ) : ℝ :=
   criticalTemperatureCQM Omega0 (C * Real.sqrt (1 - beta * deltaV) / (beta * Real.log 4 * delta0))

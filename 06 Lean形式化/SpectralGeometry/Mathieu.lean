@@ -17,7 +17,7 @@ CQM 中 Mathieu 方程 y'' + (a - 2q cos(2z))y = 0 的参数 q
 
 ## 推导链
 A₄ 嘉当矩阵 → 本征值 λ₁, λ₄ → q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2
-                                              → Mathieu 临界值 λ_c = b₁(q) = 2q
+                                              → Mathieu 临界值 λ_c = 4q_c（λ_min(q_c) = 2q_c 的唯一根）
 
 ## 物理意义
 Mathieu 方程描述了耦合空间中的周期结构。
@@ -181,8 +181,7 @@ theorem mathieuParameter_from_ratio : mathieuParameter = (eigenvalueRatio4to1 - 
 /-! ## Mathieu 临界值 λ_c — 退相干相变边界
 
     Mathieu 临界值 λ_c 定义在 `SpectralGeometry.Basic` 中。
-    它是 Mathieu 第一特征值曲线 b₁(q) 与直线 a = 2q 的交点。
-    满足 b₁(λ_c) = 2λ_c（在 Mathieu 参数空间中的条件）。
+    它是临界条件 λ_min(q_c) = 2q_c 的唯一根 q_c 所确定的交点（λ_c = 4q_c）。
 
     物理意义：λ_c 标记了耦合空间中退相干相变的临界点。
     当 Mathieu 参数 q < λ_c 时，系统处于稳定区（禁闭相）；
@@ -191,8 +190,8 @@ theorem mathieuParameter_from_ratio : mathieuParameter = (eigenvalueRatio4to1 - 
     数值：λ_c ≈ 1.316022911
 
     待从 Mathieu 方程严格推导：
-    - b₁(q) 的显式形式（需要 Mathieu 函数理论）
-    - b₁(q) = 2q 的解的唯一性 -/
+    - λ_min(q) 的显式形式（需要 Mathieu 函数理论）
+    - λ_min(q_c) = 2q_c 的解的唯一性 -/
 
 /-! ## Mathieu 参数与临界值的关系 -/
 
@@ -283,10 +282,9 @@ theorem b1_trunc_error_bound_safe : (11 : ℝ) / 36864 < 1 / 3000 := by
 axiom b1_perturbation_lower_bound (q : ℝ) (hq0 : 0 ≤ q) (hq1 : q ≤ 1) :
     b1 q ≥ b1_truncated q - q^5/3000
 
-/- 注：λ_c ≈ 1.316 作为 `mathieuCritical` 的数值定义保留，
-    但 `b1(mathieuCritical) = 2·mathieuCritical` 这一条件此前被作为公理引入。
-    由于该公理在项目中从未被任何定理使用，且 `b1` 本身是 Mathieu 函数理论
-    尚未形式化时的占位函数，为避免引入不必要的任意约束，现已将其删除。
+/- 注：λ_c ≈ 1.316 作为 `mathieuCritical` 的数值定义保留。
+    对占位函数 `b1` 的任意约束不引入：`b1` 本身是 Mathieu 函数理论
+    尚未形式化时的占位函数。
     Mathieu 临界值 λ_c 的严格推导仍需完整的 Mathieu 函数理论。 -/
 
 /-! ### 稳定区定理：b₁(q) > 2q 当 q = φ/2
@@ -295,7 +293,7 @@ axiom b1_perturbation_lower_bound (q : ℝ) (hq0 : 0 ≤ q) (hq1 : q ≤ 1) :
 从 Mathieu 微扰展开下界，严格证明在 A₄ 确定的参数
 q = φ/2 ≈ 0.809 处，系统处于稳定区（b₁(q) > 2q）。
 
-此定理替换了先前的 axiom `mathieu_stable_region`。
+稳定区条件由微扰展开下界与 `b1_gt_2q_at_mathieuParameter` 给出。
 -/
 
 /-- [THEOREM] 稳定区定理：b₁(φ/2) > 2(φ/2) = φ。
@@ -373,20 +371,20 @@ theorem b1_gt_2q_at_mathieuParameter : b1 mathieuParameter > 2 * mathieuParamete
 
 /-- 相变量子 ☯ 与 Mathieu 临界值 λ_c 的关系（声明）：
 
-    在 CQM 中，C = 1/λ_c 到一阶近似。
+    在 CQM 中，☯ = 1/λ_c 到一阶近似。
     更精确的关系涉及 Mathieu 方程的渐近展开。
 
     数值验证：
-    C ≈ 0.02309571, λ_c ≈ 1.316022911
-    C · λ_c ≈ 0.03039，不是精确的 1。
+    ☯ ≈ 0.02309571, λ_c ≈ 1.316022911
+    ☯ · λ_c ≈ 0.03039，不是精确的 1。
 
     更精确的关系来自谱方程 ∏_p F_p(s) = 1 的解，
-    涉及 λ_c 和 C 之间的非线性耦合。
+    涉及 λ_c 和 ☯ 之间的非线性耦合。
 
     当前以数值常量的形式引入，待从谱方程严格推导。 -/
 noncomputable def spectralQuantum_Mathieu_relation : ℝ := spectralQuantum * mathieuCritical
 
-/-- C · λ_c ≈ 0.03039（数值验证） -/
+/-- ☯ · λ_c ≈ 0.03039（数值验证） -/
 theorem spectralQuantum_Mathieu_product_approx : spectralQuantum * mathieuCritical > 0.03 ∧
     spectralQuantum * mathieuCritical < 0.031 := by
   constructor
@@ -421,8 +419,8 @@ theorem spectralQuantum_Mathieu_product_approx : spectralQuantum * mathieuCritic
 - `b1_perturbation_lower_bound`：微扰展开下界（假设，来自 Mathieu 函数理论的标准误差估计）
 
 ### 进展
-- ✅ **消除了 `mathieu_stable_region` 公理**：稳定区条件现在从微扰展开严格证明
-- ✅ **删除了未使用的 `mathieu_critical_condition` 公理**：避免对占位函数 `b1` 引入不必要的任意约束
+- ✅ 稳定区条件由微扰展开严格证明（`b1_gt_2q_at_mathieuParameter`）
+- ✅ 未对占位函数 `b1` 引入任意约束
 - ⏳ b₁(q) 的完整函数形式（待 Mathieu 函数理论的 Lean 形式化）
 - ⏳ λ_c 的严格推导（需要大 q 渐近展开）
 -/

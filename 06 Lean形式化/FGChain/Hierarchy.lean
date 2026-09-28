@@ -15,7 +15,7 @@ import FGChain.BundleEOM
 2. **层级嵌套** P_el ↪ P_mol ↪ P_cell：每层底空间是上层的纤维。
 3. **谱传递规则**：上层同步算符谱 → 下层嘉当矩阵/几何输入 → 下层同步算符。
 4. **每层谱的可观测**：电子 FG → 原子能级；元素 FG → 壳层结构；分子 FG → 分子轨道；
-   晶胞 FG → 晶格量子振荡谱。
+   晶胞 FG → 晶胞量子振荡谱。
 -/
 
 namespace CQM.FGChain
@@ -29,7 +29,7 @@ inductive FGLevel
   | electron   -- 电子 FG：前核子底空间，原子能级 E_n = -R/n²
   | element    -- 元素 FG：质子+中子分布，壳层结构、Madelung 规则
   | molecule   -- 分子 FG：原子分布（键网络），分子轨道谱、键角
-  | cell       -- 晶胞 FG：原子/分子在晶胞分布，晶格量子振荡谱
+  | cell       -- 晶胞 FG：原子/分子在晶胞分布，晶胞量子振荡谱
 
 /-- 层级偏序：电子 < 元素 < 分子 < 晶胞。 -/
 def FGLevel.le : FGLevel → FGLevel → Prop
@@ -135,7 +135,7 @@ theorem SpectralTransfer.positivity_preserved {n₁ n₂ : ℕ}
     | 电子 FG | 原子能级 E_n = -R/n² |
     | 元素 FG | 壳层结构、Madelung 规则 |
     | 分子 FG | 分子轨道谱、键角、内禀角亏 |
-    | 晶胞 FG | 晶格量子振荡谱 | -/
+    | 晶胞 FG | 晶胞量子振荡谱 | -/
 def FGLevel.observable (ℓ : FGLevel) : String :=
   match ℓ with
   | electron => "原子能级 E_n = -R/n²"

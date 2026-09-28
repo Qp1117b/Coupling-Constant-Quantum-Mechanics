@@ -22,7 +22,7 @@ CQM 从第一性原理推导物理常数。
 - **[HYPOTHESIS H3.3]** 退相干稳态 = 正四单纯形
 
 ## 核心公式
-- G_N = I · λ_c · C² · 𝔠₁ · exp(-2/C) · (1 + κC) / m_p²
+- G_N = I · λ_c · ☯² · 𝔠₁ · exp(-2/☯) · (1 + κ☯) / m_p²
 - α⁻¹_SU(5) = 16384π/375 ≈ 137.26
 
 ## 数值结果
@@ -52,14 +52,14 @@ theorem protonMass_unit : protonMass = 0.93827208816 := by
 /-! ## 牛顿引力常数 G_N 的 CQM 谱公式 -/
 
 /-- 牛顿引力常数 G_N 的 CQM 谱公式：
-    G_N = I · λ_c · C² · 𝔠₁ · exp(-2/C) · (1 + κC) / m_p²
+    G_N = I · λ_c · ☯² · 𝔠₁ · exp(-2/☯) · (1 + κ☯) / m_p²
 
     参数来源：
-    - I = 5/3              ← CartanAlgebra（Dynkin 指数，从 A₄ 导出）
+    - I = 5/3              ← CartanAlgebra（Dynkin 指数比，从 A₄ 导出）
     - λ_c = 4q_c           ← SpectralGeometry（Mathieu 临界值，q_c 是连分数方程在 (0,1/2) 内唯一解）
-    - C = 0.02309570897    ← SpectralGeometry（相变量子，从 ξ'(1)/ξ(1) 导出）
+    - ☯ = 0.02309570897    ← SpectralGeometry（相变量子，从 ξ'(1)/ξ(1) 导出）
     - 𝔠₁ = 200.04045483    ← SpectralGeometry（第一耦级，从黎曼零点导出）
-    - κ = (31+C)/30        ← SpectralGeometry（谱修正，从 4-单纯形 + Adele 周期导出）
+    - κ = (31+☯)/30        ← SpectralGeometry（谱修正，从 4-单纯形 + Adele 周期导出）
     - m_p = 0.93827208816  ← （实验输入，唯一自由参数） -/
 noncomputable def GN_spectral_formula : ℝ :=
   dynkinIndex * mathieuCritical * spectralQuantum ^ 2 * firstCoupling *
@@ -127,7 +127,7 @@ theorem GN_spectral_formula_decomposed : GN_spectral_formula =
 
     3. 分母因子 375 的群论来源：
        375 = 3 × 5^3
-       - 3 = denom(I) = Dynkin 指数 I = 5/3 的分母
+       - 3 = denom(I) = Dynkin 指数比 I = 5/3 的分母
        - 5^3 = det(A₄)^(rank(SU(5)) - 1) = 5^3
 
     4. 因此：
@@ -161,7 +161,7 @@ theorem GN_spectral_formula_decomposed : GN_spectral_formula =
     此因子完全由 A₄ 嘉当矩阵的群论不变量确定：
     - dim(SU(5)) = 24（SU(5) 李代数维度）
     - |Φ⁺| = 10（正根数）
-    - denom(I) = 3（Dynkin 指数 I = 5/3 的分母）
+    - denom(I) = 3（Dynkin 指数比 I = 5/3 的分母）
     - det(A₄) = 5（嘉当矩阵行列式）
     - rank(SU(5)) = 4（李代数秩）
 
@@ -219,7 +219,7 @@ theorem alpha_inverse_SU5_explicit : alpha_inverse_SU5 = 16384 * Real.pi / 375 :
 
     其中指数来自：
     - 14 = dim(SU(5)) - |Φ⁺| = 24 - 10
-    - 3 = denom(Dynkin 指数 I = 5/3)
+    - 3 = denom(Dynkin 指数比 I = 5/3)
     - 5^3 = det(A₄)^(rank(SU(5)) - 1) = 5^3 -/
 theorem alpha_inverse_SU5_group_decomposition : alpha_inverse_SU5 =
     ((2 : ℝ) ^ (14 : ℕ)) / ((3 : ℝ) * ((5 : ℝ) ^ (3 : ℕ))) * Real.pi := by
@@ -317,7 +317,7 @@ theorem alpha_SU5_gt_0007 : alpha_SU5 > 0.007 := by
     | 因子 | 符号 | 值 | 群论来源 |
     |:---|:---|:---|:---|
     | 分子 | 2^14 | 16384 | 2^(dim(SU(5)) - |Φ⁺|) = 2^(24-10) |
-    | 分母因子 1 | 3 | 3 | denom(Dynkin 指数 I = 5/3) |
+    | 分母因子 1 | 3 | 3 | denom(Dynkin 指数比 I = 5/3) |
     | 分母因子 2 | 5^3 | 125 | det(A₄)^(rank(SU(5))-1) = 5^3 |
     | 群论因子 | 16384/375 | ≈ 43.69 | 上述因子之商 |
     | π 因子 | π | ≈ 3.1416 | 数学常数（来自 CQM 谱方程） |
@@ -360,10 +360,10 @@ noncomputable def planckMass : ℝ := 1.2209e19
 
 /-- 质子质量与 Planck 质量的比值：m_p / m_P ≈ 7.69×10⁻²⁰。
     这个巨大的层级差异（层级问题）在 CQM 中由
-    exp(-2/C) ≈ exp(-86.596) ≈ 2.46×10⁻³⁸ 因子解释。 -/
+    exp(-2/☯) ≈ exp(-86.596) ≈ 2.46×10⁻³⁸ 因子解释。 -/
 noncomputable def protonPlanckRatio : ℝ := protonMass / planckMass
 
-/-- 层级因子 exp(-2/C) ≈ 2.464677412×10⁻³⁸ -/
+/-- 层级因子 exp(-2/☯) ≈ 2.464677412×10⁻³⁸ -/
 noncomputable def hierarchyFactor : ℝ := Real.exp (-2 / spectralQuantum)
 
 /-- 层级因子严格为正 -/
@@ -372,7 +372,7 @@ theorem hierarchyFactor_pos : hierarchyFactor > 0 := by
 
 /-! 层级因子的数量级（声明）：
 
-    exp(-2/C) = exp(-2/0.02309570897) ≈ exp(-86.59617303) ≈ 2.464677412 × 10⁻³⁸。
+    exp(-2/☯) = exp(-2/0.02309570897) ≈ exp(-86.59617303) ≈ 2.464677412 × 10⁻³⁸。
     此因子解释了质子质量与 Planck 质量之间的巨大层级差异（层级问题）。
     精确数值验证见 `hierarchyFactor_pos`（严格正性已证）。 -/
 
@@ -384,23 +384,23 @@ theorem hierarchyFactor_pos : hierarchyFactor > 0 := by
     ├── A0.1-3: 因果集 + 再生产算符
     │   └── Sprinkling → 耦合空间 (u, τ)
     ├── A1.1: 正则对易关系 [û, p̂_u] = i
-    │   └── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ C/2
+    │   └── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ ☯/2
     ├── H3.3 + A2.1: 退相干稳态 = 正四单纯形 → A₄ 嘉当矩阵
-    │   ├── I = 5/3（Dynkin 指数）
+    │   ├── I = 5/3（Dynkin 指数比）
     │   ├── 本征值 λ₁:λ₂:λ₃:λ₄ ≠ 9:4:1（精确比待确定）
     │   ├── α⁻¹_SU(5) = 16384π/375（待从 A₄ 严格推导）
     │   └── Mathieu 参数 → λ_c
     ├── A2.2: 相变量子 ☯ = ξ'(1)/ξ(1)
     │   ├── Sierra-CQM: 𝔠₁ = 1/4 + γ₁²（待从公理证明）
-    │   └── κ = (31 + C)/30
+    │   └── κ = (31 + ☯)/30
     └── m_p（实验输入）
-        └── G_N = I·λ_c·C²·𝔠₁·exp(-2/C)·(1+κC) / m_p²
+        └── G_N = I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) / m_p²
 
-    当前状态：框架完整，核心缺口 G5（退相干动力学）和 A（稳态证明）待填充。
+    当前状态：框架完整，核心缺口 G5（退相干动力学）和 C（稳态证明）待填充。
 
     已严格证明的定理：
     - G_N > 0（严格正性）
     - α_SU(5) > 0（严格正性）
     - 偏差 < 10 ppm（与 CODATA 对比）
-    - 层级因子 exp(-2/C) > 0（严格正性）
+    - 层级因子 exp(-2/☯) > 0（严格正性）
     - 所有中间常数（I, λ_c, C, 𝔠₁, κ）严格为正 -/

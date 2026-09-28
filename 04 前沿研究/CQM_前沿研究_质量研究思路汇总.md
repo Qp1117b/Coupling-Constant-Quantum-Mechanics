@@ -77,7 +77,7 @@ f_L\left(-\frac{1}{z}\right) = \chi(z) \, f_T(z)
 }
 $$
 
-> **标注**：此式为模形式的 slash 关系（标准写法 $f(-1/z)=\chi\,z^k f(z)$）。若 $f_L=f_T$，它只是**模性条件本身**。把模变换解释为"L 属性 ↔ T 属性"的对应，是 CQM 的**诠释**，不是模形式理论的推论。
+> **标注**：此式为模形式的 slash 关系（标准写法 $f(-1/z)=\chi\,z^k f(z)$）。若 $f_L=f_T$，它只是**模性条件本身**。把模变换解释为“L 属性 ↔ T 属性”的对应，是 CQM 的**诠释**，不是模形式理论的推论。
 
 ### 3.3 统一自守表示
 
@@ -99,7 +99,7 @@ $$
 }
 $$
 
-**注意**：不是"$A_4$ 有 5 个 Dynkin 节点"。$A_4$ 的 Dynkin 图有 **4 个节点**（对应 $\mathfrak{sl}_5$），$\mathrm{GL}(5)$ 的约化秩是 **5**（$= \mathrm{rank}\ \mathfrak{sl}_5 + 1$）。5 的来源是**基本表示维数**。
+**注意**：不是“$A_4$ 有 5 个 Dynkin 节点”。$A_4$ 的 Dynkin 图有 **4 个节点**（对应 $\mathfrak{sl}_5$），$\mathrm{GL}(5)$ 的约化秩是 **5**（$= \mathrm{rank}\ \mathfrak{sl}_5 + 1$）。5 的来源是**基本表示维数**。
 
 | 对象 | 数量 |
 |---|---|
@@ -116,9 +116,9 @@ $$\pi_p = \mathrm{Sym}^4(\pi_2)$$
 
 | 提升 | 证明者 | 状态 |
 |---|---|---|
-| $\mathrm{Sym}^2\ (\mathrm{GL}_2 \to \mathrm{GL}_3)$ | Gelbart–Jacquet 1978 | 已证 |
-| $\mathrm{Sym}^3\ (\mathrm{GL}_2 \to \mathrm{GL}_4)$ | Kim–Shahidi 2002 | 已证 |
-| $\mathrm{Sym}^4\ (\mathrm{GL}_2 \to \mathrm{GL}_5)$ | Kim 2003 | 已证 |
+| $\mathrm{Sym}^2\ (\mathrm{GL}(2) \to \mathrm{GL}(3))$ | Gelbart–Jacquet 1978 | 已证 |
+| $\mathrm{Sym}^3\ (\mathrm{GL}(2) \to \mathrm{GL}(4))$ | Kim–Shahidi 2002 | 已证 |
+| $\mathrm{Sym}^4\ (\mathrm{GL}(2) \to \mathrm{GL}(5))$ | Kim 2003 | 已证 |
 | $\mathrm{Sym}^5$ 以上 | — | 一般情形未知 |
 
 $$
@@ -171,7 +171,7 @@ $$
 
 $$
 \boxed{
-☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \frac{\xi'(1)}{\xi(1)} \approx 0.0230957
+☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \frac{\xi'(1)}{\xi(1)} \approx 0.02309570897
 }
 $$
 
@@ -209,9 +209,9 @@ $☯$ 来自 $\mathrm{GL}(n)$ 对应的平凡自守形式（Eisenstein 级数）
 
 ### 6.4 定性
 
-$☯$ 属于**谱面孔**。"质数是源"（$\zeta$ / 算术侧）和"$☯$ 是全局谱权重"（$\xi$ / 谱侧）不是同一侧的陈述——它们分别对应这个最简单对象的两张脸。
+$☯$ 属于**谱面孔**。“质数是源”（$\zeta$ / 算术侧）和“$☯$ 是全局谱权重”（$\xi$ / 谱侧）不是同一侧的陈述——它们分别对应这个最简单对象的两张脸。
 
-**"相变量子"命名有据**：$☯$ 从 $\xi$ 提取，$\xi$ 提纯非平凡零点 $\{\gamma_n\}$（消去平凡零点），而 $\gamma_n$ 是 CQM 共振频率，与相变直接关联。$☯$ 取自与相变关联的非平凡零点谱——命名不是隐喻，而是数学来源的直接体现。
+**“相变量子”命名有据**：$☯$ 从 $\xi$ 提取，$\xi$ 提纯非平凡零点 $\{\gamma_n\}$（消去平凡零点），而 $\gamma_n$ 是 CQM 共振频率，与相变直接关联。$☯$ 取自与相变关联的非平凡零点谱——命名不是隐喻，而是数学来源的直接体现。
 
 **正确的分层**：
 
@@ -239,16 +239,16 @@ $$M_{\text{质子}} = \frac{L_{\text{质子}}^3}{G_N \cdot T_{\text{质子}}^2}$
 
 $$G_N = \frac{L_{\text{质子}}^3}{M_{\text{质子}} \cdot T_{\text{质子}}^2}$$
 
-（两者是同一方程的移项，不再重复列为两个结果。）
+（两者是同一方程的移项，不重复列为两个结果。）
 
 **依赖方向（避免核对循环）**：$M_{\text{质子}} = L_{\text{质子}}^3/(G_N T_{\text{质子}}^2)$ 给出的是 $M$、$L$、$T$ 与 $G_N$ 之间的量纲关系。而 §5 的 $G_N$ 数值公式以 $m_p$ 为**唯一量纲锚点输入**，故两条路径的依赖方向不同：
 
-- 若走 $G_N$ 公式：$G_N$ 是**输入**，本节的方程只是把它与 $L,T$ 联系起来的量纲关系，不能反过来"由 $L,T$ 推出 $G_N$"；
+- 若走 $G_N$ 公式：$G_N$ 是**输入**，本节的方程只是把它与 $L,T$ 联系起来的量纲关系，不能反过来“由 $L,T$ 推出 $G_N$”；
 - 若走自守路径：质量谱应由 $L(s,\pi_i)$ 的特殊值给出（§8.6），此路径**不得**再调用 §5 的 $G_N$ 公式，否则构成循环。
 
-当前文档同时呈现两条路径而未声明二者互斥，这是需要保持的边界：**$G_N$ 公式与"质量从自守关联涌现"不能互为前提。**
+当前文档同时呈现两条路径而未声明二者互斥，这是需要保持的边界：**$G_N$ 公式与“质量从自守关联涌现”不能互为前提。**
 
-> **待补**：$L$ 与 $T$ 的**独立**来源（不得由 $m_p$ 或 $G_N$ 反解）。若补 $T=L/c$，则 $L=G_N m_p/c^2=1.242\times10^{-54}$ m（质子引力半径量级），与康普顿波长 $2.103\times10^{-16}$ m 差 $1.69\times10^{38}$ 倍——该式目前是量纲关系的**恒等变形**，不是质量推导。在给出独立来源之前，本节是量纲关系的陈述，**不构成质量涌现的推导**。
+> **待补**：$L$ 与 $T$ 的**独立**来源（不得由 $m_p$ 或 $G_N$ 反解）。若补 $T=L/c$，则 $L=G_N m_p/c^2=1.242\times10^{-54}$ m（质子引力长度量级），与康普顿波长 $2.103\times10^{-16}$ m 差 $1.69\times10^{38}$ 倍——该式目前是量纲关系的**恒等变形**，不是质量推导。在给出独立来源之前，本节是量纲关系的陈述，**不构成质量涌现的推导**。
 
 ---
 
@@ -272,7 +272,7 @@ $$
 
 | 粒子 | 操作 | 数学形式 | 状态 |
 |---|---|---|---|
-| **介子** | 对称平方 | $\mathrm{Sym}^2(\pi_p)$ | 已证（Kim–Shahidi） |
+| **介子** | 对称平方 | $\mathrm{Sym}^2(\pi_p)$ | 已证（Gelbart–Jacquet 1978） |
 | **中子** | 基变换（base change） | $\mathrm{BC}_{E/F}(\pi_p)$ | 已证（Langlands） |
 | **电子** | 自守诱导的对偶 | $\mathrm{Ind}_H^G(\sigma)^\vee$ | 需构造 |
 | **激发态** | 对称幂 | $\mathrm{Sym}^n(\pi_p)$ | $n \leq 4$ 已证 |
@@ -287,6 +287,8 @@ $$
 
 $$L(s, \pi_p \times \pi_p^\vee) = \frac{\zeta(s)}{\zeta(s+1)} \cdot L(s, \mathrm{Sym}^2 \pi_p)$$
 
+（含 $\zeta(s+1)$ 分母为框架内表述，见附 B 注 2。）
+
 极点来自 $\zeta(s)$，但 $\mathrm{Sym}^2 \pi_p$ 部分是有限的。所以：
 
 $$
@@ -297,7 +299,7 @@ $$
 
 ### 8.4 中子的正确公式
 
-内窥转移：
+基变换（base change）：
 
 $$\pi_n = \mathrm{BC}_{E/F}(\pi_p)$$
 
@@ -359,16 +361,14 @@ $$
 \text{第二步：计算 } L(s, \pi_p) \\
 \downarrow \\
 \text{第三步：验证函数方程（} L \leftrightarrow T \text{ 对偶）} \\
-
-
 \downarrow \\
 \text{第四步：推导 } G_N \\
 \downarrow \\
 \text{第五步：与 CODATA 对比} \\
 \downarrow \\
-\text{第六步：计算朗兰兹函子性分化} \\
+\text{第六步：计算朗兰兹函子性分化（\S8）} \\
 \downarrow \\
-\text{第七步：得到其他粒子质量谱}
+\text{第七步：得到其他粒子质量谱（\S8.6）}
 \end{array}
 }
 $$
@@ -409,7 +409,7 @@ $$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfra
 
 $$G_N^{\text{CQM}} \stackrel{?}{=} 6.6742810045 \times 10^{-11}\ \text{SI}$$
 
-当前偏差约 $-3\ \text{ppm}$。
+当前偏差约 $-3\ \text{ppm}$（构造后验数字校验，待独立复现）。
 
 ---
 
@@ -420,7 +420,7 @@ $$G_N^{\text{CQM}} \stackrel{?}{=} 6.6742810045 \times 10^{-11}\ \text{SI}$$
 | **函数方程** | $L(s,\pi_p) = \varepsilon(s,\pi_p) L(1-s,\tilde{\pi}_p)$ |
 | **尖点性** | $\mathrm{Sym}^4(\pi)$ 尖性 $\iff$ $\pi$ 非二面体/四面体/八面体型 |
 | **谱几何** | $A_4$ 本征值 $\{9^{(1)}, 4^{(4)}, 1^{(5)}\}$ 决定 Archimedean 参数 |
-| **数值检验** | $G_N$ 与 CODATA 偏差约 $-3\ \text{ppm}$ |
+| **数值检验** | $G_N$ 与 CODATA 偏差约 $-3\ \text{ppm}$（构造后验数字校验，待独立复现） |
 | **统一性** | 所有粒子来自同一个 $\pi_p$ 的函子性分化 |
 
 ---
@@ -438,7 +438,7 @@ $$G_N^{\text{CQM}} \stackrel{?}{=} 6.6742810045 \times 10^{-11}\ \text{SI}$$
 
 $$
 \boxed{
-\text{传统回答"是什么"，CQM 回答"为什么"。}
+\text{传统回答“是什么”，CQM 回答“为什么”。}
 }
 $$
 
@@ -449,7 +449,7 @@ $$
 | 问题 | 内容 |
 |---|---|
 | **$\pi_2$ 的具体选择** | 从 $A_4$ 谱几何到 $\pi_2$ 的严格映射 |
-| **$\lambda_c, \mathfrak{c}_1, \kappa$ 的来源** | 这些系数如何从 $\pi_p$ 的算术数据推出（$\mathfrak{c}_1$ 精确等同的 n=1 误差问题见 GN 公理化证明稿 §13.3，中等偏难） |
+| **$\lambda_c, \mathfrak{c}_1, \kappa$ 的来源** | 质子侧的 $\lambda_c, \kappa$ 如何从 $\pi_p$ 的算术数据推出；$\mathfrak{c}_1$ 属普适侧（与 $☯$ 同源，非 $\pi_p$ 导出；其精确等同的 n=1 误差问题见 GN 公理化证明稿 §13.3，中等偏难） |
 | **电子的自守诱导** | $\mathrm{Ind}_H^G(\sigma)^\vee$ 中 $H, \sigma$ 的具体选择 |
 | **中子的基变换** | $\mathrm{BC}_{E/F}(\pi_p)$ 中 $E/F$ 的具体选择（与 n–p 分裂 0.14% 的量级不匹配见 §8.4） |
 | **多重度与表示维数的对应** | $(1,4,5)$ 与 $\mathbf{1} \oplus \mathbf{4} \oplus \mathbf{5}$ 的对应需单独论证 |
@@ -491,7 +491,7 @@ $$
 
 $$
 \boxed{
-\text{一旦 } G_N \text{ 被第一性推导，CQM 就从"理论框架"升级为"第一性理论"。}
+\text{一旦 } G_N \text{ 被第一性推导，CQM 就从“理论框架”升级为“第一性理论”。}
 }
 $$
 
@@ -500,19 +500,19 @@ $$
 
 ## 附 A：来源定位（提取自项目文档）
 
-本汇总的正文各条目与项目文档的对应关系如下（"本汇总新增"指本汇总引入的框架性表述，项目文档无同文先行）：
+本汇总的正文各条目与项目文档的对应关系如下（“本汇总新增”指本汇总引入的框架性表述，项目文档无同文先行）：
 
 | 本汇总条目 | 项目出处 |
 |---|---|
-| §0–§2（量纲地位、$K_M$ 为 $M$ 的转换常数、$L/T$ 先建立） | `01 核心理论/CQM_核心_量纲与单位制.md` §7（$[M]=[L]^3[T]^{-2}\cdot[K_M]$；质量层转换常数为 $K_M$（$K_M=G_N^{-1}$）；每压掉一个量纲冒出一个更基础的转换常数） |
-| §3.1（$A_4$ 谱几何 $\{9,4,1\}$） | `03 引力与退相干/CQM_引力_GN可能公式.md` §8；`01 核心理论/CQM_核心_集成理论.md`（$M=E^TE$ 本征值 $\{9,4,1\}$、重数 $\{1,4,5\}$，标为"S₅ 表示论 + 迹条件"） |
+| §0–§2（量纲地位、$K_M$ 为 $M$ 的转换常数、$L/T$ 先建立） | `01 核心理论/CQM_核心_量纲与单位制.md` §6.3（$[M]=[L]^3[T]^{-2}\cdot[K_M]$；质量层转换常数为 $K_M$（$K_M=G_N^{-1}$）；每压掉一个量纲冒出一个更基础的转换常数） |
+| §3.1（$A_4$ 谱几何 $\{9,4,1\}$） | `03 引力与退相干/CQM_引力_GN可能公式.md` §8；`01 核心理论/CQM_核心_集成理论.md`（$M=E^TE$ 本征值 $\{9,4,1\}$、重数 $\{1,4,5\}$，标为“S₅ 表示论 + 迹条件”） |
 | §3.2/§3.3（自守关联、$f_L,f_T\in\pi_p$） | 本汇总新增（对应发生学分层：自守形式 → L 函数 → 朗兰兹；见 `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`） |
 | §4（GL(5) 构造与 Sym⁴ 提升） | 本汇总新增（候选构造 $\pi_p=\mathrm{Sym}^4(\pi_2)$；文献支撑见附 B） |
 | §5（$G_N$ 可能公式） | `03 引力与退相干/CQM_引力_GN可能公式.md` §8.2–8.3（参数来源表：$☯=0.02309570897$、$\mathfrak{c}_1=1/4+\gamma_1^2=200.04045483$、$\lambda_c=1.316022911$、$I=5/3$、$\kappa=(31+☯)/30$、$\exp(-2/☯)$、$m_p$ 实验输入） |
 | §6（$☯$ 唯一定义） | `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`（$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}\approx 0.0230957$，谱表示 $☯=\sum 1/(\gamma_n^2+1/4)$ 条件于 RH）；$\zeta$ 与 $\xi$ 是 GL(1) 平凡特征同一 $L$ 函数的算术面孔与谱面孔，$☯$ 取自 $\xi$（只有 $\xi$ 零点集恰好是 $\{\gamma_n\}$）；$\mathrm{GL}(n)$ 给出 $n\cdot☯$，$☯$ 为普适常数 |
-| §7（质量从自守关联出现） | 本汇总整理（§7.2/§7.3 两处移项合并为一个方程） |
+| §7（质量从自守关联出现） | 本汇总整理（§7 两式移项合并为一个方程） |
 | §8（自守分化） | 本汇总新增（朗兰兹函子性分化；不含 $\mathrm{Res}_H$、$\otimes D(\delta)$、$\otimes\tilde{\pi}_p$ 三个不适用操作） |
-| §10.6（CODATA 对比） | `03 引力与退相干/CQM_引力_GN可能公式.md` §9 高精度数值验证（$G_N$ 与 CODATA 偏差约 $-3$ ppm） |
+| §10.5（CODATA 对比） | `03 引力与退相干/CQM_引力_GN可能公式.md` §9 高精度数值验证（$G_N$ 与 CODATA 偏差约 $-3$ ppm；构造后验数字校验，待独立复现） |
 | 历史前身（仅作参考，非当前权威表述） | `归档 CNT/07 计算框架/03-完整粒子谱`、`05-汤川耦合与费米子混合`（谱几何第一性推导的历史探索） |
 
 ---
@@ -530,21 +530,21 @@ $$
 | §4.2/§11 尖点性判据 | Kim 2003（附录含 Ramakrishnan、Sarnak） | Sym⁴ 尖点性判据（非二面体/四面体/八面体型） | 已证；表述以原文为准 |
 | §8.3/§8.6 Rankin–Selberg | Jacquet & Shalika 1981, *Amer. J. Math.* 103, 777–815；Jacquet–Piatetski-Shapiro–Shalika 1983, *Amer. J. Math.* 105, 367–464 | 尖点 π 的 $L(s,\pi\times\tilde{\pi})$ 在 $s=1$ 有简单极点；GL(n)×GL(m) Rankin–Selberg 卷积的标准参考 | 已证（严格） |
 | §8.3 恒等式（对齐注） | 标准恒等式：$L(s,\pi\times\tilde{\pi})=\zeta(s)\,L(s,\mathrm{Sym}^2\pi)$ | 标准恒等式不含 $\zeta(s+1)$ 分母因子；文档写法的 $\zeta(s+1)$ 分母为框架内表述，需对齐说明 | 需对齐 |
-| §8.4 内窥转移 | Langlands 1980, *Base Change for GL(2)*, AMS 96；Arthur & Clozel 1989, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula*, AMS 120 | GL(2) 循环基变换；GL(n) 循环基变换与自守诱导 | 已证（严格） |
+| §8.4 基变换 | Langlands 1980, *Base Change for GL(2)*, AMS 96；Arthur & Clozel 1989, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula*, AMS 120 | GL(2) 循环基变换；GL(n) 循环基变换与自守诱导 | 已证（严格） |
 | §8.5 自守诱导 | Arthur & Clozel 1989（循环扩张情形）；Henniart 2000, *Invent. Math.* 139, 439–455（局部） | 循环扩张的自守诱导 $\pi\mapsto AI(\pi)$，L 函数保持；可解扩张亦成立 | 已证（循环/可解情形） |
-| §8.2 删除 Res_H | Cogdell 2003, "Dual groups and Langlands functoriality", in *An Introduction to the Langlands Program*（Bernstein–Gelbart 编），251–268；Borel 1979, *Proc. Sympos. Pure Math.* 33, 27–61 | 函子性 = 经 L 群同态 $^{L}H \to {}^{L}G$ 的表示转移；不存在一般的"限制"函子 | 支持删除判断 |
+| §8.2 删除 Res_H | Cogdell 2003, “Dual groups and Langlands functoriality”, in *An Introduction to the Langlands Program*（Bernstein–Gelbart 编），251–268；Borel 1979, *Proc. Sympos. Pure Math.* 33, 27–61 | 函子性 = 经 L 群同态 $^{L}H \to {}^{L}G$ 的表示转移；不存在一般的“限制”函子 | 支持删除判断 |
 | §3.1 $A_4$ 谱 $\{9^{(1)},4^{(4)},1^{(5)}\}$ | 本项目直接计算验证（迹 30、谱和 30）；框架文献：Horak & Jost 2013, *Adv. Math.* 244, 303–336；Duval & Reiner 2002, *Trans. AMS* 354, 4313–4344 | 单纯形组合/高阶 Hodge 拉普拉斯谱的一般框架；整数谱性质 | 谱事实=本项目验证；文献提供框架 |
 | §3.1 S₅ 分解 $1\oplus4\oplus5$ | Fulton & Harris 1991, GTM 129；James & Kerber 1981, LNM 682 | S₅ 作用在 3-子集上的 10 维置换表示分解为 $1\oplus4\oplus5$ | 标准（严格） |
 | §5 λ_c（Mathieu） | McLachlan 1947, *Theory and Application of Mathieu Functions*, Oxford；NIST DLMF 第 28 章（§28.2） | Mathieu 方程标准形式、特征值 $b_1(q)$、$se_1$、连分数理论 | 标准理论；$\lambda_c$ 数值为本项目计算（$q_c=0.3290057278$） |
 | §6 $☯$ | Titchmarsh 1986（2 版，Heath-Brown 修订） | ξ 函数、Hadamard 乘积、$\xi'/\xi$ 理论；恒等式 $\sum_{\gamma>0}1/(\gamma^2+1/4)=\frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 可由此推出；本项目验证闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2=0.02309570897$ | 标准理论；数值已验证 |
-| §10.6 CODATA | Mohr, Newell, Taylor, Tiesinga 2025, *Rev. Mod. Phys.* 97, 025002（CODATA 2022） | $G=6.67430(15)\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$（2022 与 2018 相同）；本项目值偏差 $-2.85$ ppm ≈ $-3$ ppm | 实验参考值 |
+| §10.5 CODATA | Mohr, Newell, Taylor, Tiesinga 2025, *Rev. Mod. Phys.* 97, 025002（CODATA 2022） | $G=6.67430(15)\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$（2022 与 2018 相同）；本项目值偏差 $-2.85$ ppm ≈ $-3$ ppm（构造后验数字校验，待独立复现） | 实验参考值 |
 | §4.1 Lie 理论 | Bourbaki, *Groupes et Algèbres de Lie*, Ch. 4–6；Humphreys 1972, GTM 9 | $A_4$ Dynkin 图 4 节点、Cartan 矩阵 $4\times4$、SL(5) 秩 4、GL(5) 约化秩 5 | 标准（严格） |
 
 **补充说明**：
 
-1. **Sym⁵ 以上的现状**：§4.2 表中"一般情形未知"应精确理解为"一般 GL(2) 自守表示情形未解决"——Newton–Thorne（2021）已证明全纯 Hecke 尖点形式（无复乘）情形的对称幂函子性，不能直接外推到一般情形。
+1. **Sym⁵ 以上的现状**：§4.2 表中“一般情形未知”应精确理解为“一般 GL(2) 自守表示情形未解决”——Newton–Thorne（2021）已证明全纯 Hecke 尖点形式（无复乘）情形的对称幂函子性，不能直接外推到一般情形。
 2. **§8.3 恒等式对齐**：标准 Rankin–Selberg 恒等式为 $L(s,\pi\times\tilde{\pi})=\zeta(s)L(s,\mathrm{Sym}^2\pi)$，不含 $\zeta(s+1)$ 分母。文档写法为框架内表述，严格化时需给出该分母的机制说明或改按标准恒等式。
-3. **§8.4 术语提示**：文献中"内窥转移"（endoscopy）通常指 Langlands–Shelstad 内窥理论，而 $\mathrm{BC}_{E/F}$（基变换）对应 Langlands 1980 / Arthur–Clozel 1989；术语可考虑统一为"基变换"以避免歧义。
+3. **§8.4 术语提示**：文献中“内窥转移”（endoscopy）通常指 Langlands–Shelstad 内窥理论，而 $\mathrm{BC}_{E/F}$（基变换）对应 Langlands 1980 / Arthur–Clozel 1989；术语可考虑统一为“基变换”以避免歧义。
 4. **§3.1 谱事实已直接验证**：4-单纯形边-面关联矩阵 $E\in\{0,1\}^{10\times10}$（$E_{fe}=1$ 当边 $e\subset$ 面 $f$），$E^TE$ 本征值恰为 $\{9,4,4,4,4,1,1,1,1,1\}$，即 $\{9^{(1)},4^{(4)},1^{(5)}\}$，迹 30、谱和 30。
 5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 ξ 的 Hadamard 乘积推出，非拟合值。
 

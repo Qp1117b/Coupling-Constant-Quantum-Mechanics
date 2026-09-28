@@ -372,7 +372,7 @@ lemma exists_pos_mutualInformationChange (_lambda : MaterialStructure) (_xi : Up
 /-- 互信息变化 ΔI：耦合前后上下层互信息之差，依赖于参与耦合的物质结构与上层结构。
 
     完整形式化需 Shannon 信息论框架；此处取"存在正值的任一选择"作为占位实现，
-    从而 ΔI > 0 是**可满足**的（定义体不再被钉死为 `0`，避免公理与定义相互矛盾）。
+    从而 ΔI > 0 是**可满足**的（定义体不固定为 `0`，以避免公理与定义相互矛盾）。
     具体函数形式待信息论形式化后替换。 -/
 noncomputable def mutualInformationChange (lambda : MaterialStructure) (xi : UpperStructure) : ℝ :=
   Classical.choose (exists_pos_mutualInformationChange lambda xi)

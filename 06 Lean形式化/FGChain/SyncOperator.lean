@@ -16,10 +16,10 @@ import SpectralGeometry.Basic
 
 ```
 [环节15a] 同步算符完整形式：
-   Ŝ_k^(full) = (L_u/(2πC))√(1-βδ̂_v^(k)) · Î_{G_k} + Ĉ₂(G_k)
+   Ŝ_k^(full) = (L_u/(2π☯))√(1-βδ̂_v^(k)) · Î_{G_k} + Ĉ₂(G_k)
    ↓  本征值方程 Ŝ_k |Ψ_k⟩ = s_k |Ψ_k⟩
 [环节15b] 耦级 n_k = C_k = l_k(l_k+1) + 3/4（Casimir 本征值）
-   ↓  约束方程 (L_u/(2πC))√(1-βδ_v^(k)) = C_k 锁定声子占据数 N_k
+   ↓  约束方程 (L_u/(2π☯))√(1-βδ_v^(k)) = C_k 锁定声子占据数 N_k
 [环节15c] 本征态 Ψ_k(u) = (1/√L_u) e^{i(2πn_k/L_u)u}
    ↓  同步成本 s_k = n_k + l_k（径向 + 角向）
 [环节15d] 耦合常数层级公式：g_k = α·exp(-(n_k-n_1)/n_1)
@@ -44,9 +44,9 @@ open scoped Real
 /-! ## 1. 同步算符完整形式（环节15a） -/
 
 /-- **同步算符完整形式数据**：
-    Ŝ_k^(full) = (L_u/(2πC))√(1-βδ̂_v^(k)) · Î_{G_k} + Ĉ₂(G_k)
+    Ŝ_k^(full) = (L_u/(2π☯))√(1-βδ̂_v^(k)) · Î_{G_k} + Ĉ₂(G_k)
 
-    - **核子部分** (L_u/(2πC))√(1-βδ̂_v^(k))：由 FG 因果严格确定
+    - **核子部分** (L_u/(2π☯))√(1-βδ̂_v^(k))：由 FG 因果严格确定
     - **Casimir 部分** Ĉ₂(G_k)：群内部对称的同步成本（角向）
     - L_u = ln Λ：耦合常数空间紧化 U(1) 周长
     - ☯ = ξ'(1)/ξ(1)：相变量子（复用 `SpectralGeometry.spectralQuantum`）
@@ -59,7 +59,7 @@ structure SyncOperatorFull where
   Lu_pos : 0 < Lu
   /-- 相变量子 ☯ = ξ'(1)/ξ(1) > 0 -/
   C : ℝ
-  /-- C > 0 -/
+  /-- C > 0（相变量子 ☯ 为正） -/
   C_pos : 0 < C
   /-- 角亏-引力势比例常数 β > 0 -/
   beta : ℝ
@@ -72,12 +72,12 @@ structure SyncOperatorFull where
   /-- 曲率本征值上界（保证 √(1-βδ) 良定义）：β·δ < 1 -/
   curvature_bound : beta * curvatureEigen < 1
 
-/-- **核子部分本征值**：(L_u/(2πC))√(1-βδ_v)。
+/-- **核子部分本征值**：(L_u/(2π☯))√(1-βδ_v)。
     由 FG 因果严格确定，不是唯象假设。 -/
 noncomputable def SyncOperatorFull.nucleonPart (s : SyncOperatorFull) : ℝ :=
   s.Lu / (2 * Real.pi * s.C) * Real.sqrt (1 - s.beta * s.curvatureEigen)
 
-/-- 核子部分为正（L_u > 0, C > 0, √(1-βδ) > 0）。 -/
+/-- 核子部分为正（L_u > 0, ☯ > 0, √(1-βδ) > 0）。 -/
 theorem SyncOperatorFull.nucleonPart_pos (s : SyncOperatorFull) :
     0 < s.nucleonPart := by
   unfold nucleonPart
@@ -93,7 +93,7 @@ noncomputable def SyncOperatorFull.casimirPart (s : SyncOperatorFull) (k : ℕ) 
   casimirEigenvalue k
 
 /-- **同步算符完整本征值**：
-    s_k = (L_u/(2πC))√(1-βδ_v^(k)) + C_k
+    s_k = (L_u/(2π☯))√(1-βδ_v^(k)) + C_k
     = 核子部分 + Casimir 部分
     = 径向同步成本 + 角向同步成本。 -/
 noncomputable def SyncOperatorFull.fullEigenvalue (s : SyncOperatorFull) (k : ℕ) : ℝ :=
@@ -112,7 +112,7 @@ theorem SyncOperatorFull.fullEigenvalue_pos (s : SyncOperatorFull) (k : ℕ) (hk
 
 /-! ## 2. 约束方程锁定声子占据数（环节15b） -/
 
-/-- **约束方程**：(L_u/(2πC))√(1-βδ_v^(k)) = C_k
+/-- **约束方程**：(L_u/(2π☯))√(1-βδ_v^(k)) = C_k
     锁定声子占据数 N_k——给定底空间曲率 δ_v 与相变量子 ☯，
     耦级 n_k = C_k 由群论确定，约束方程反向锁定 N_k。
     这是同步方程的**输出**，不是输入参数。 -/

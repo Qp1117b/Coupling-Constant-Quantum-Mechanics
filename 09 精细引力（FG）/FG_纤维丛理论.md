@@ -28,7 +28,7 @@ $$\boxed{\text{FG} \neq \text{GR}}$$
 |---|---|---|
 | **哲学** | 丛是**先验舞台**，物理在其上展开 | 丛是**涌现产物**，物理即重组过程 |
 | **底空间** | 先验容器（给定背景） | 物质自组织的空间形态本身（§1） |
-| **核心方程** | $D_\mu \psi = (\partial_\mu + A_\mu)\psi$ | $(p\cdot g,\, f) \sim (p,\, g\cdot f)$ |
+| **核心方程** | $D_\mu \psi = (\partial_\mu + A_\mu)\psi$ | $(p\cdot h,\, f) \sim (p,\, h\cdot f)$ |
 | **主丛角色** | 固定背景（规范场 $A_\mu$ 的载体） | 自由相（重组实现前的高对称态） |
 | **伴丛角色** | 物质取值空间（向量空间 $V$） | 重组产物（紧致李群 $R$） |
 | **定义位置** | **外部**：微分方程强加于截面 | **内部**：等价关系定义空间本身 |
@@ -61,7 +61,7 @@ $$\begin{aligned}
 &\text{主丛 } P(M,G) &&\text{—— 自由相（母群）} \\
 &\text{子群 } H \triangleleft G &&\text{—— 紧致李群，闭正规子群（重组触发）} \\
 &\text{本征群 } R &&\text{—— 紧致李群（重组产物）} \\
-&\text{重组伴丛 } E_{R} = P \times_G R &&\text{—— 涌现产物} \\
+&\text{重组伴丛 } E_{R} = P \times_H R &&\text{—— 涌现产物} \\
 &\text{截面 } \langle\phi\rangle \in \Gamma(E_{R}) &&\text{—— 序参量/真空选择}
 \end{aligned}$$
 
@@ -69,7 +69,7 @@ $$\begin{aligned}
 
 $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 
-**$R$ 是重组产物**：给定母群 $G$ 和子群 $H$（$H \triangleleft G$，$G$、$H$ 均为紧致李群），重组产物 $R$ 是紧致李群。物理实例：磁通量子化（$U(1) \xRightarrow{Z_n} U(1)$）、整数自旋表示（$SU(2) \xRightarrow{Z_2} SO(3)$）、电荷量子化（$U(1)\times SU(N) \xRightarrow{Z_N} U(N)$）。
+**$R$ 是重组产物**：给定母群 $G$ 和子群 $H$（$H \triangleleft G$，$G$、$H$ 均为紧致李群），重组产物 $R$ 是紧致李群。物理实例：磁通量子化（$U(1) \xRightarrow{\mathbb{Z}_n} U(1)$）、整数自旋表示（$SU(2) \xRightarrow{\mathbb{Z}_2} SO(3)$）、电荷量子化（$U(1)\times SU(N) \xRightarrow{\mathbb{Z}_N} U(N)$）。
 
 ### 1.5.4 核心对比
 
@@ -78,7 +78,7 @@ $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 | **主丛群 $G$** | 规范对称性（背景） | 母群（自由相，重组实现前） |
 | **子群 $H$** | 不出现或外部参数 | 内部子群，定义等价关系 |
 | **纤维 $F$** | 向量空间 $V$（$\mathbb{C}, \mathbb{C}^n, \mathfrak{g}$） | 紧致李群 $R$（重组产物） |
-| **伴丛** | $E = P \times_\rho V$ | $E_{R} = P \times_G R$ |
+| **伴丛** | $E = P \times_\rho V$ | $E_{R} = P \times_H R$ |
 | **截面** | 物质场 $\psi$（向量值） | 序参量 $\langle\phi\rangle$（陪集值） |
 | **联络作用** | 协变导数 $D_\mu$ 转动纤维 | 重组映射折叠纤维 |
 | **曲率/场强** | 物理可观测量（能量、力） | 拓扑障碍（示性类、单极子） |
@@ -90,9 +90,9 @@ $$(p\cdot h,\, f) \sim (p,\, h\cdot f),\quad \forall h \in H$$
 
 两种框架是**同一纤维丛对象在不同能标/相下的两种视角**：
 
-**容器 → 重组（追问起源）**：从线丛 $L_2$（容器）追溯到 $U(1) \xRightarrow{Z_2} U(1)$（重组）——库珀对是 $Z_2$ 重组的产物。
+**容器 → 重组（追问起源）**：从线丛 $L_2$（容器）追溯到 $U(1) \xRightarrow{\mathbb{Z}_2} U(1)$（重组）——库珀对是 $\mathbb{Z}_2$ 重组的产物。
 
-**重组 → 容器（低能有效理论）**：重组实现完成后，$R$ 的伴丛成为新能标下的固定背景——$SO(3)$ 规范场论把 $SO(3)$-向量丛当作容器，忘记它来自 $SU(2) \xRightarrow{Z_2} SO(3)$。
+**重组 → 容器（低能有效理论）**：重组实现完成后，$R$ 的伴丛成为新能标下的固定背景——$SO(3)$ 规范场论把 $SO(3)$-向量丛当作容器，忘记它来自 $SU(2) \xRightarrow{\mathbb{Z}_2} SO(3)$。
 
 $$\text{运动学} \xrightarrow{\text{追问 } H \text{ 的起源}} \text{动力学}$$
 
@@ -113,11 +113,11 @@ CQM以动力学（重组）框架为主视角的原因：
 
 重组框架消除了"背景"与"物质"的形而上学分割——伴丛截面同时就是物质场。
 
-**伴丛截面 = 序参量**：重组框架中，伴丛定义为 $E_{R} = P \times_G R \cong P/H$，其截面是映射 $\phi: M \to P/H$。在时空每一点 $x \in M$，$\phi(x)$ 是 $G/H$ 中的一个**陪集**，即一个**真空方向**——这正是序参量。
+**伴丛截面 = 序参量**：重组框架中，伴丛定义为 $E_{R} = P \times_H R \cong P/H$，其截面是映射 $\phi: M \to P/H$。在时空每一点 $x \in M$，$\phi(x)$ 是 $G/H$ 中的一个**陪集**，即一个**真空方向**——这正是序参量。
 
 实例（重组生成群 $R$，VEV 在 $V$ 中选方向）：
-- **电弱**：重组 $(SU(2)\times U(1)) \xRightarrow{Z_2} U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，重组实现至 $U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
-- **超导**：重组 $U(1) \xRightarrow{Z_2} U(1)$，库珀对凝聚相位 $\phi(x) \in U(1)$
+- **电弱**：重组 $(SU(2)\times U(1)) \xRightarrow{\mathbb{Z}_2} U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，重组实现 $\Rightarrow U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
+- **超导**：重组 $U(1) \xRightarrow{\mathbb{Z}_2} U(1)$，库珀对凝聚相位 $\phi(x) \in U(1)$
 - **铁磁体**：重组 $SO(3) \xRightarrow{\{e\}} SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，重组实现 $SO(3)\Rightarrow SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
 
 在重组框架中，"物质场"就是背景自身通过重组折叠后涌现的截面。
@@ -126,7 +126,7 @@ CQM以动力学（重组）框架为主视角的原因：
 
 | | 容器框架 | 重组框架 |
 |---|---|---|
-| **伴丛** | $E = P \times_\rho V$ | $E_{R} = P \times_G R$ |
+| **伴丛** | $E = P \times_\rho V$ | $E_{R} = P \times_H R$ |
 | **纤维** | 向量空间 $V$（线性） | 齐性空间 $G/H$（非线性） |
 | **截面** | 物质场 $\psi: M \to V$ | 序参量 $\phi: M \to G/H$ |
 | **变换法则** | $\psi \to \rho(g)\psi$（线性） | $\phi \to g\cdot\phi$（非线性） |
@@ -163,19 +163,19 @@ $$\boxed{(M_\ell,\; P(M_\ell, G_\ell),\; \mathcal{A}_\ell,\; \hat{\mathcal{S}}_\
 | 底空间 $M_\ell$ | 层级 $\ell$ 的物质分布几何经Regge剖分 | 三角剖分的离散几何 |
 | 主丛 $P(M_\ell, G_\ell)$ | 结构群 $G_\ell$ 上的主丛 | 规范结构 |
 | 联络 $\mathcal{A}_\ell$ | 由层级Regge晶胞分步生成 | 平行移动规则 |
-| 同步算符 $\hat{\mathcal{S}}_\ell$ | 紧化算符在层级截面空间的实现 | 谱算符，给出群谱 |
+| 同步算符（= 作用量算符）$\hat{\mathcal{S}}_\ell$ | 紧化算符在层级截面空间的实现 | 谱算符，给出群谱 |
 
 ### 2.0 主丛结构关系：$F = G \Rightarrow R = G \Rightarrow \hat{H}$
 
-**FG当前用于描述规范相变物理**。核心结构：CQM FG的主丛是从结构群到实现群（等价地到群算符）的重组实现，群算符是实现群在表示空间上的算符表示。箭头 $\Rightarrow$ 表示**重组实现**（$G$ 经重组实现为 $R$，等价地重组为 $\hat{H}$）。
+**FG当前用于描述规范相变物理**。核心结构：CQM FG的主丛是从结构群到本征群（等价地到群算符）的重组实现，群算符是本征群在表示空间上的算符表示。箭头 $\Rightarrow$ 表示**重组实现**（$G$ 经重组实现为 $R$，等价地重组为 $\hat{H}$）。
 
 $$\boxed{F = G \Rightarrow R = G \Rightarrow \hat{H}}$$
 
 其中：
 - $G$：**主丛结构群**（母群，如 $SU(5)$）
-- $R$：**实现群**（本征群，重组产物，公理1+2保证紧致性）
+- $R$：**本征群 $R_k$**（重组产物，公理1+2保证紧致性）
 - $\hat{H}$：**群算符**（$R$ 在表示空间上的算符表示，故 $R$ 与 $\hat{H}$ 在谱的意义下等价）
-- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：**主丛**（结构群 $G$ 经重组实现为实现群 $R$，等价地重组为群算符 $\hat{H}$）
+- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：**主丛**（结构群 $G$ 经重组实现为本征群 $R$，等价地重组为群算符 $\hat{H}$）
 
 **子群重组**：在规范相变中，$G$ 本身不变，内部以子群重组——$R$ 和 $\hat{H}$ 的谱是 $G$ 内部子群的谱（$\text{Spec}(R), \text{Spec}(\hat{H}) \subseteq \text{Spec}(G)$），但 $G$ 本身不变为子群。规范相变是 $G$ 的内部结构通过子群重新组织，不是 $G$ 重组为别的群。
 
@@ -192,14 +192,14 @@ $$\boxed{F = G \Rightarrow R = G \Rightarrow \hat{H}}$$
 
 $$\underbrace{G,\; R}_{\text{1. 代数层}} \;\longrightarrow\; \underbrace{\hat{\mathcal{S}}|\Psi\rangle = n|\Psi\rangle}_{\text{2. 算符层（类薛定谔）}} \;\longrightarrow\; \underbrace{F = G \Rightarrow R = G \Rightarrow \hat{H}}_{\text{3. 丛层（主丛）}} \;\hookrightarrow\; \underbrace{\text{运动学纤维丛}}_{\text{4. 运动学层}}$$
 
-1. **代数层**：$G$（母群），$R$（实现群/本征群）
+1. **代数层**：$G$（母群），$R$（本征群 $R_k$）
 2. **算符层**：$\hat{\mathcal{S}}$（同步算符，$R$ 的算符表示）→ 类薛定谔方程 $\hat{\mathcal{S}}|\Psi\rangle = n|\Psi\rangle$
-3. **丛层**：$F = G \Rightarrow R = G \Rightarrow \hat{H}$（主丛，结构群 $G$ 经重组实现为实现群 $R$ 或群算符 $\hat{H}$）
+3. **丛层**：$F = G \Rightarrow R = G \Rightarrow \hat{H}$（主丛，结构群 $G$ 经重组实现为本征群 $R$ 或群算符 $\hat{H}$）
 4. **运动学层**：$F$ 作为主丛嵌入运动学纤维丛（§1.5.2容器框架），参与动力学
 
 **物理意义**：
-- $R = \hat{H}$：实现群 = 群算符（谱等价）——群论结构确定算符谱，算符谱反推群论结构
-- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：主丛是结构群到实现群（等价地到群算符）的重组实现，物理态空间 $= \text{Im}(G \Rightarrow R)$
+- $R = \hat{H}$：本征群 = 群算符（谱等价）——群论结构确定算符谱，算符谱反推群论结构
+- $F = G \Rightarrow R = G \Rightarrow \hat{H}$：主丛是结构群到本征群（等价地到群算符）的重组实现，物理态空间 $= \text{Im}(G \Rightarrow R)$
 - $F \hookrightarrow$ 运动学纤维丛：重组框架（动力学）的产物嵌入容器框架（运动学），实现§1.5.5的转化关系
 
 **CQM纤维丛理论描述的是规范相变物理**：$F = G \Rightarrow R = G \Rightarrow \hat{H}$ 的本质是规范相变。大统一群 $GL(5)$（约化李群，非紧致）本身是重组实现的，不是破缺的。**就物理相变而言：破缺的必须是非规范对称群（或更一般地，非规范对称性），但非规范对称群不一定破缺；重组实现的既可以是规范对称群，也可以是非规范对称群；而规范对称群相变必然是重组，而非破缺**。$GL(5,\mathbb{R})$ 的时空对称性若纳入规范群则必须破缺；紧致部分（如 $SU(5) \subset GL(5,\mathbb{C})$）的规范相变是重组实现，没有发生破缺。母群 $G$（高对称相/自由相）经重组实现为 $R$（低对称相/有序相），群算符 $\hat{H}$ 是重组后在表示空间中的算符残余。纤维丛刻画的是规范相变物理：主丛结构群 $G$ 是相变前的对称性，纤维 $R$ 是相变后的有序态空间，联络编码相变的局域触发机制，曲率表征相变的拓扑障碍（示性类、单极子）。§1.5.3的等价关系 $(p\cdot h, f) \sim (p, h\cdot f)$ 是规范相变的数学化——等价关系折叠高对称态空间为低对称相的轨道空间。
@@ -210,13 +210,14 @@ $$\underbrace{G,\; R}_{\text{1. 代数层}} \;\longrightarrow\; \underbrace{\hat
 
 | 层级 | 底空间 $M_\ell$ | 结构群 $G_\ell$ | 联络 $\mathcal{A}_\ell$ |
 |:---|:---|:---|:---|
+| 电子FG | （待补） | （待补） | （待补） |
 | 元素FG | 质子+中子分布 | $U(1) \times SO(2) \times SU(4)$ | 核子间联络 |
 | 分子FG | 原子分布 | 分子点群 | 原子间联络（化学键） |
 | 晶胞FG | 原子/分子分布 | 空间群 | 晶胞中联络 |
 
 ### 2.2 层级嵌套
 
-$$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
+$$P_{\text{el}} \hookrightarrow P_{\text{element}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}}$$
 
 每层底空间是上层的纤维。
 
@@ -251,7 +252,7 @@ $$\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\te
 
 $$\boxed{\text{ad}(P) = P \times_{G_\ell} \mathfrak{g}_\ell \;\xrightarrow{\pi}\; M_\ell}$$
 
-其中 $\mathfrak{g}_\ell = \text{Lie}(G_\ell)$，$G_\ell$ 通过伴随表示 $\text{Ad}: G_\ell \to \text{Aut}(\mathfrak{g}_\ell)$ 作用。**结构群 $G_\ell$ 必须是紧致李群**（§4.0.1），否则伴随表示非幺正、Killing形式非负定，伴丛上的几何失去正定性。
+其中 $\mathfrak{g}_\ell = \text{Lie}(G_\ell)$，$G_\ell$ 通过伴随表示 $\text{Ad}: G_\ell \to \text{Aut}(\mathfrak{g}_\ell)$ 作用。**结构群 $G_\ell$ 必须是紧致李群**（§2.0，公理1+2），否则伴随表示非幺正、Killing形式非负定，伴丛上的几何失去正定性。
 
 **伴丛上的几何量**：
 
@@ -296,9 +297,9 @@ $$D F = 0 \quad \iff \quad [\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} =
 
 FG的核心问题之一是：**给定底空间（Regge剖分）+条件（核子量子振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群（自守形式），本征群对应的耦合常数就是涨落耦合常数指定的。**
 
-$$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符）}} + \underbrace{G_k}_{\text{对称性}} \;\Rightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
+$$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符，紧化算符的层级实现）}} + \underbrace{G_k}_{\text{对称性}} \;\longrightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
 
-**底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），作用量算符（同步算符）$\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
+**底空间不可省略**：$\Psi_k \in \Gamma(\text{ad}(P))$ 是底空间 $M_\ell$ 上的伴丛截面（自守形式），同步算符 $\hat{\mathcal{S}}_k$ 作用在 $\Gamma(\text{ad}(P))$ 上，对称性 $G_k$ 在 $M_\ell$ 上作用。缺少底空间，作用量算符和对称性均无法定义。
 
 **GL(n) 由重组产物的基本表示严格确定（发生学顺序强制）**：$SU(5)$ 经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，各因子通过基本表示 $\rho_{\text{fund}}: R \to GL(V_{\text{fund}})$ 给出各自自守框架（$SU(5) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^5)$、$SU(3) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^3)$、$SU(2) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C}^2)$、$U(1) \xrightarrow{\rho_{\text{fund}}} GL(\mathbb{C})$），$n = \dim V_{\text{fund}}$ 由表示严格确定。$SU(5)$ 由"含标准模型的最小单群"锚定（rank 4），$S_5=\mathrm{Weyl}(A_4)$ 只作交叉印证。物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证。详见 `FG_核心理论.md` §3.0。
 
@@ -316,23 +317,23 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由条件严格确定
 - **本征群**：$R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
-- **等价关系**：$\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$（锁定声子占据数 $N_k$）
+- **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$）
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac方程=共形自举方程的CQM具体化）
-- **耦合常数**：$g_k = \alpha\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
+- **耦合常数**：$g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
-### 4.0.1 SU(5)重组实现⇒A_4→4紧致本征群→4耦合常数
+### 4.0.1 SU(5)重组实现⇒$A_4$→4紧致本征群→4耦合常数
 
-SU(5)李代数$\mathfrak{su}_5$的根系为$A_4$型，重组实现产生两个独立效应：
+SU(5)李代数$\mathfrak{su}(5)$的根系为$A_4$型，重组实现产生两个独立效应：
 
 **规范重组**（不属于本征群效应，三个空间群直积，全紧致，**时间内禀没有群**）：
 
-$$\text{SU}(5) \;\xRightarrow{\text{规范重组}}\; U(1) \times SU(2) \times SU(3) \;\xrightarrow{g_{U(1)}}\; \alpha$$
+$$\text{SU}(5) \;\xRightarrow{\text{规范重组}}\; U(1) \times SU(2) \times SU(3) \;\xrightarrow{g_{U(1)}}\; \alpha^{-1}$$
 
 **本征群效应**（同步方程本征群，全紧致）：
 
-$$\boxed{\{R_k\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
+$$\boxed{\{\mathrm{SU}(2)_k\}_{k=1}^{4} \;\xrightarrow{\text{4耦合常数}}\; \{g_k\}_{k=1}^{4}}$$
 
-本征群 $R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。四个本征群 $R_k \cong SU(2) \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
+本征群 $R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导。四个本征群 $R_k \cong SU(2)_k \cong S^3$（三维球面，**紧致连通李群**），对应s/p/d/f四个亚壳层。Kac-Moody代数 $\widehat{\mathfrak{su}(2)}_k$ 由紧致李代数 $\mathfrak{su}(2)$ 中心扩展构造，CFT框架（Verlinde公式、OPE系数）的数学前提满足。
 
 **精细结构常数 $\alpha$ 来自SU(5)规范重组后$U(1)$电磁群的耦合常数**。精细结构常数是GL(5)整体的反映。
 
@@ -363,8 +364,8 @@ $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u
 质数势是**投影算符的叠加**，在耦合常数空间选择 $u = \ln p$ 的离散点。
 
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$（紧化U(1)基矢）
-- 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），等价关系 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\delta_v^{(k)}} = C_k$ 锁定 $N_k$
-- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$（Riemann xi函数）
+- 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），等价关系 $\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$ 锁定 $N_k$
+- $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$（Riemann xi函数）
 - 紧化 = $\hat{u}$ 的**谱边界条件** $\psi(u+L_u) = \psi(u)$，与核子声子态联立
 
 ### 4.3 同步算符的完整形式（含 Casimir）
@@ -379,7 +380,7 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi ☯}\sqrt{1-\beta
 
 ### 5.1 FG的完整数学对象
 
-FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。黎曼猜想是GL(5)固定层级的实谱条件。
+FG的完整数学对象是**朗兰兹纲领GL(n)各层+广义黎曼猜想（GRH）**。广义黎曼猜想（GRH）是GL(5)固定层级的实谱条件。
 
 **正确结构**：不是GL(1)+GL(4)+GL(5)直和，而是**单个GL(5)自守表示**。GL(1)和GL(4)是其**子结构**（中心特征和$K$-type），分别贡献主量子数 $n$ 和轨道角动量 $l$。GL(4)来自 $SO(5)\subset SU(5)$ 的旋量表示 $\mathbb{C}^4$（$\dim V = 4$），非 $SU(4)$ 重组因子。
 
@@ -391,8 +392,8 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
-| GL(4) | $L(s, \pi)$ | GRH(GL4) | $SO(5)$ 旋量表示（GL(5)的$K$-type） |
-| GL(5) | $L(s, \pi)$ | GRH(GL5) | 基态同步（单层自守表示） |
+| GL(4) | $L(s, \pi)$ | GRH(GL(4)) | $SO(5)$ 旋量表示（GL(5)的$K$-type） |
+| GL(5) | $L(s, \pi)$ | GRH(GL(5)) | 基态同步（单层自守表示） |
 
 ### 5.2 群谱的前提
 
@@ -404,7 +405,7 @@ $$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \te
 
 ### 5.3 GUE统计
 
-各GL(n)层L函数零点间距 = GUE sine-kernel（Montgomery-Odlyzko推广）
+各GL(n)层L函数零点间距 = GUE sine-kernel（Montgomery–Odlyzko推广）
 
 $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 
@@ -415,13 +416,13 @@ $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 | 文献 | 贡献 |
 |---|---|
 | Hilbert–Pólya (1914+) | 自伴算符H，本征值=黎曼零点虚部 |
-| Berry-Keating (1999) | H=xp算符，semiclassical实现 |
+| Berry–Keating (1999) | H=xp算符，semiclassical实现 |
 | Connes (2019) [arXiv:1910.14368] | 缩放哈密顿量，谱实现，紧化算符 |
 | Montgomery (1973) + Odlyzko | GUE统计验证 |
-| Bost-Connes (1995) [arXiv:1012.4665] | Z(β)=ζ(β)量子统计系统 |
-| Srednicki (2011) [arXiv:1104.1850] | Berry-Keating+局部RH谱证明 |
+| Bost–Connes (1995) [arXiv:1012.4665] | Z(β)=ζ(β)量子统计系统 |
+| Srednicki (2011) [arXiv:1104.1850] | Berry–Keating+局部RH谱证明 |
 | Ng (2006) [arXiv:math/0603275] | Virasoro c=1/2谱实现 |
-| Benjamin-Chang (2022) [arXiv:2208.02259] | CFT模共形自举包含黎曼零点 |
+| Benjamin–Chang (2022) [arXiv:2208.02259] | CFT模共形自举包含黎曼零点 |
 
 ## 6. Regge剖分与纤维丛的对应
 
@@ -433,7 +434,7 @@ $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 
 ### 6.1 角亏作为底空间曲率集中
 
-$$\delta_v = 2\pi - \sum_i \theta_i \quad \text{(Gauss-Bonnet)}$$
+$$\delta_v = 2\pi - \sum_i \theta_i \quad \text{（角亏定义，Gauss–Bonnet 局部量）}$$
 
 ### 6.2 曲率量子涨落
 
@@ -460,7 +461,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
@@ -487,7 +488,7 @@ $$\boxed{\psi(x) \in \Gamma(P(M,G)) \;\longleftrightarrow\; \phi_l(z) \in \mathc
 | 协变作用 $D\psi = 0$ | 最高权条件 $\hat{L}_{n>0}\phi = 0$ | §9.5严格证明 |
 | 联络作用 $\nabla_\mu\psi$ | descendant $\hat{L}_{-1}^k\phi$ | §9.2严格对应 |
 
-**截面的显式构造**：在A₄框架下，截面（=电子轨道态）对应于descendant态：
+**截面的显式构造**：在 $A_4$ 框架下，截面（=电子轨道态）对应于descendant态：
 
 $$\psi_{n,l,m}(x) \;\longleftrightarrow\; \sum_{k=0}^{n-l-1} c_k^{(n,l)}\,\hat{L}_{-1}^k\,\phi_{l,m}(z)$$
 
@@ -495,7 +496,7 @@ $$\psi_{n,l,m}(x) \;\longleftrightarrow\; \sum_{k=0}^{n-l-1} c_k^{(n,l)}\,\hat{L
 
 ### 9.2 联络 = Virasoro生成元
 
-**纤维丛联络**：$\mathcal{A}_\ell$ 作用于截面给出协变导数 $\nabla_\mu\psi = \partial_\mu\psi + \mathcal{A}_\mu\psi$。在A₄ Regge剖分下，联络离散化形式由 SU(5) 简单根的 SU(2) 子代数结构确定。
+**纤维丛联络**：$\mathcal{A}_\ell$ 作用于截面给出协变导数 $\nabla_\mu\psi = \partial_\mu\psi + \mathcal{A}_\mu\psi$。在 $A_4$ Regge剖分下，联络离散化形式由 SU(5) 简单根的 SU(2) 子代数结构确定。
 
 **Virasoro生成元**：$\hat{L}_n$ 作用于primary operator给出descendant。$\hat{L}_{-1}$ 生成descendant tower，$\hat{L}_0$ 给出共形维度。
 
@@ -563,11 +564,11 @@ $$\boxed{W(\gamma) = e^{i\delta_v\,\hat{T}} \;\longleftrightarrow\; \text{monodr
 
 **定量映射**：和乐本征值 = monodromy本征值给出：
 
-$$i\,\delta_v\,\hat{T} = 2\pi i\,h \quad \Longrightarrow \quad \boxed{h = \frac{\delta_v\,\hat{T}}{2\pi}}$$
+$$i\,\delta_v\,\lambda_k = 2\pi i\,h \quad \longrightarrow \quad \boxed{h = \frac{\delta_v\,\lambda_k}{2\pi}}$$
 
-**A₄系统的显式计算**：
+**$A_4$ 系统的显式计算**：
 
-对A₄嘉当矩阵的第 $k$ 个本征模式：
+对 $A_4$ 嘉当矩阵的第 $k$ 个本征模式：
 - 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(N_k + \frac{1}{2})$（来自§4.0推导链，$N_k$ 为声子占据数）
 
 - 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值）
@@ -683,7 +684,7 @@ $$\boxed{D\psi = 0 \;\longleftrightarrow\; \text{OPE结合律（共形自举方�
 
 $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrightarrow{\text{OPE}}\; \text{结合律} \;\xrightarrow{\text{自洽}}\; \text{共形自举方程}}$$
 
-**A₄具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g。这是Dirac方程=共形自举方程在CQM中的具体实例——壳层标签 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导，第5个（g）的等价关系无解。
+**$A_4$ 具体化**：$A_4$结合律方程的解恰好锁定s,p,d,f四种模式，禁戒g。这是Dirac方程=共形自举方程在CQM中的具体实例——壳层标签 $l_k = k-1$ 由 SU(5) Dynkin图深度严格推导，第5个（g）的等价关系无解。
 
 ### 9.7 同步算符 = 紧化算符：三层关系统一
 
@@ -691,7 +692,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 
 | 层次 | 文档 | 定义 | 物理意义 |
 |:---|:---|:---|:---|
-| **QG层**（基态定义） | CNST §4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\text{GL}_5) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
+| **QG层**（基态定义） | 因果网络同步理论（CNST，`01 核心理论/CQM_核心_因果网络同步理论.md`）§4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\mathrm{GL}(5)) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
 | **FG纤维丛层**（截面实现） | §4 | $\hat{\mathcal{S}}_\ell$ = 紧化算符在层级截面空间 $\Gamma(P_\ell)$ 的实现 | 谱算符：给出群谱 $G_k$ |
 | **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ = QG紧化结构在GL(5)固定层级的再现 | 物理可观测的耦合常数 $g_k$ |
 
@@ -700,7 +701,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 $$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
 - **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。配对不变量 $\mathfrak{c}_n$ 为实 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
-- **FG纤维丛层**：SU(5)经重组实现，$A_4$ 根系 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
+- **FG纤维丛层**：SU(5)（$A_4$ 根系）经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
 - **FG核心层**：取GL(5)固定层级，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
 **与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
@@ -757,11 +758,11 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 #### 9.9.3 严格论证
 
-**命题**：取一个能体现底空间分布性质的代表性局域 $v^*$（如质子A₄的平坦顶点 $\bar{\delta}_{v^*}=0$，或中子的背景曲率顶点 $\bar{\delta}_{v^*}\neq 0$），分析其同步谱 $\hat{\mathcal{S}}\Psi_{v^*} = n\Psi_{v^*}$，结果普适于整个纤维丛。
+**命题**：取一个能体现底空间分布性质的代表性局域 $v^*$（如质子 $A_4$ 的平坦顶点 $\bar{\delta}_{v^*}=0$，或中子的背景曲率顶点 $\bar{\delta}_{v^*}\neq 0$），分析其同步谱 $\hat{\mathcal{S}}\Psi_{v^*} = n\Psi_{v^*}$，结果普适于整个纤维丛。
 
 **证明**：
 
-1. **所有顶点共享同一代数结构**：Regge剖分的每个4-单纯形共享同一个 $A_4$ 嘉当矩阵（§6, §18.1）。嘉当矩阵是联络的离散化，由4-单纯形的组合几何确定，与顶点位置无关。
+1. **所有顶点共享同一代数结构**：Regge剖分的每个4-单纯形共享同一个 $A_4$ 嘉当矩阵（§6, §4.0）。嘉当矩阵是联络的离散化，由4-单纯形的组合几何确定，与顶点位置无关。
 
 2. **同步算符的本征值由代数结构决定**：$\hat{\mathcal{S}}_k$ 的本征值 $n_k = C_k = l_k(l_k+1) + 3/4$，其中 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（§9.5.1）。本征值不依赖于具体的顶点 $v$。
 
@@ -785,6 +786,6 @@ $$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结�
 
 ### 9.10 相关文档
 
-- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)重组实现⇒A₄→4耦合常数→α）
+- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)重组实现⇒$A_4$→4耦合常数→$\alpha^{-1}$）
 - `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
 - `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（QG层紧化算符定义、黎曼结构→CNST七条提取、三种引力同步诠释）

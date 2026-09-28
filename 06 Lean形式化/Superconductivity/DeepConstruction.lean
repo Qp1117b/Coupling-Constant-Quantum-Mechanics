@@ -219,7 +219,7 @@ theorem a5_transitionCoupling_lt_a4 :
   unfold a5TransitionCoupling a4TransitionCoupling
   exact Real.log_lt_log (by norm_num) (by norm_num)
 
-/-- **A5资格条件阈值**: Δδ_0 ≥ C·√(1-βδ_v)/(β·ln(3))。
+/-- **A5资格条件阈值**: Δδ_0 ≥ ☯·√(1-βδ_v)/(β·ln(3))。
     A4: Δδ_0 ≥ C·√(1-βδ_v)/(2β·ln(2)) = C·√(1-βδ_v)/(β·ln(4))
     A5: Δδ_0 ≥ C·√(1-βδ_v)/(β·ln(3))
     因 ln(3) < ln(4)，A5阈值更高（分母更小）... 但更容易满足？ -/
@@ -265,9 +265,9 @@ theorem a5toA4_ratio_gt_one : a5toA4_ratio > 1 := by
     exact Real.sqrt_pos.mpr (by positivity)
   exact (div_lt_iff_of_pos h_a4_pos).mpr a5_structEnhancement_gt_a4
 
-/-! ## 4. G18缺口闭合状态更新 -/
+/-! ## 4. G18 行内子项闭合状态 -/
 
-/-- G18缺口闭合状态（更新）:
+/-- G18 行内子项闭合状态：
 
     | G18子项                    | 之前状态   | 当前状态     | 闭合依据              |
     |---------------------------|-----------|------------|----------------------|
@@ -281,6 +281,7 @@ theorem a5toA4_ratio_gt_one : a5toA4_ratio > 1 := by
     | **K_eff 微观推导**          | **开放**  | **闭合**   | **本模块: 二阶导数**   |
     | **S_{U(1)//Z_n} 完整作用量** | **部分闭合** | **闭合** | **本模块: 四项构造**   |
 
-    G18缺口现已**完全闭合**（所有子项均已闭合）。          -/
+    G18 行内所列环节已闭合（β、Δu_n、E_*、S_n、K_eff、S_{U(1)//Z_n}）；
+    G18 行整体仍含未闭合项，不得整行宣告闭合。          -/
 
 end CQM

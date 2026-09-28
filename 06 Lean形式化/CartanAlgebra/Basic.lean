@@ -10,7 +10,7 @@ import CausalSet.Axioms
 CQM 中 SU(5) 的嘉当矩阵 A₄ 及其代数结构。
 
 ## 推导链
-[AXIOM A2.1] + [HYPOTHESIS H3.3] → A₄ 嘉当矩阵 → 行列式 → 本征值 → Dynkin 指数
+[AXIOM A2.1] + [HYPOTHESIS H3.3] → A₄ 嘉当矩阵 → 行列式 → 本征值 → Dynkin 指数比
 
 ## 公理
 - **A2.1** 禁闭边界退相干稳态的代数结构是 A₄ 嘉当矩阵
@@ -24,7 +24,7 @@ CQM 中 SU(5) 的嘉当矩阵 A₄ 及其代数结构。
 - 逆嘉当矩阵 A₄⁻¹ 显式条目
 - 4-单纯形 Euler 示性数 = 0 与 f-向量回文对称性
 - SU(5) Weyl 群 = S₅ = 4-单纯形对称群
-- Dynkin 指数 I = 5/3
+- Dynkin 指数比 I = T(24)/T(8) = 5/3
 
 ## 参考文献
 - ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380.
@@ -287,7 +287,7 @@ noncomputable def cartanA4_inv_sum : ℚ := 10
 
 /-- 逆嘉当矩阵所有条目之和 = 10（ℚ 值）。
     Σ_{i,j} (A₄⁻¹)_{ij} = 10。
-    此和与 CQM 的 Dynkin 指数 I = 5/3 的关系待进一步澄清。 -/
+    此和与 CQM 的 Dynkin 指数比 I = 5/3 的关系待进一步澄清。 -/
 theorem cartanA4_inv_sum_eq_10 : cartanA4_inv_sum = 10 := by
   unfold cartanA4_inv_sum; norm_num
 
@@ -325,18 +325,18 @@ theorem cartanA4_all_eigenvalues_pos : eigenvalue1 > 0 ∧ eigenvalue2 > 0 ∧
     eigenvalue3 > 0 ∧ eigenvalue4 > 0 := by
   exact ⟨eigenvalue1_pos, eigenvalue2_pos, eigenvalue3_pos, eigenvalue4_pos⟩
 
-/-! ## Dynkin 指数 -/
+/-! ## Dynkin 指数比 -/
 
-/-- SU(5) 基本表示的 Dynkin 指数 I = 5/3。
+/-- SU(5) 的 Dynkin 指数比 I = T(24)/T(8) = 5/3。
     在 CQM 中，I 出现在 G_N 谱公式中：
-    G_N = I · λ_c · C² · 𝔠₁ · exp(-2/C) · (1 + κC) / m_p²
+    G_N = I · λ_c · ☯² · 𝔠₁ · exp(-2/☯) · (1 + κ☯) / m_p²
 
     注意：传统 Dynkin 指数 I(fund) = 1/2（对所有 SU(N)）。
-    CQM 使用的 I = 5/3 是 CQM 谱公式的特定结果，
+    CQM 使用的 Dynkin 指数比 I = 5/3 是 CQM 谱公式的特定结果，
     与逆嘉当矩阵和 ∑_{i,j} (A₄⁻¹)_{ij} = 10 的关系待澄清。 -/
 noncomputable def dynkinIndex : ℝ := 5/3
 
-/-- Dynkin 指数严格为正 -/
+/-- Dynkin 指数比严格为正 -/
 theorem dynkinIndex_pos : dynkinIndex > 0 := by
   unfold dynkinIndex; norm_num
 
@@ -431,9 +431,9 @@ theorem Weyl_group_order_SU5 : orderS5 = 120 := by
     可能与 A₄ 本征值的某种有理逼近或逆嘉当矩阵条目比例有关。
     此关系待进一步严格推导。 -/
 
-/-! 谱常数 C 与嘉当矩阵的关系（声明，待严格推导）：
+/-! 谱常数 ☯ 与嘉当矩阵的关系（声明，待严格推导）：
 
-    C = 0.02309570897 远小于 A₄ 的最小本征值 λ₁ = 0.382。
+    ☯ = 0.02309570897 远小于 A₄ 的最小本征值 λ₁ = 0.382。
     相变量子 ☯ 是由 ζ 函数导出的独立常数，
     与 A₄ 本征值的关系通过 Mathieu 方程建立。
     此关系是 CQM 中待填补的核心推导链之一。 -/

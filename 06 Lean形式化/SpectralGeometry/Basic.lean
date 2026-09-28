@@ -34,7 +34,7 @@ A₄ 嘉当矩阵 → 本征值 → Mathieu 参数 → λ_c → 相变量子 ☯
 - G_N 因子 F(C) 严格为正（当 C > 0）
 - Adele 周期 N_cycle = 30
 - 4-单纯形 f-向量和 = 30 = N_cycle
-- κ 的分解：κ = (dim(SU(5)) + dim(4-simplex) + C) / N_cycle
+- κ 的分解：κ = (dim(SU(5)) + dim(4-simplex) + ☯) / N_cycle
 
 ## 物理意义
 这些常数通过 CQM 的谱方程 ∏_p F_p(s) = 1 互相关联，
@@ -53,13 +53,13 @@ open CQM
 
 /-- [DEFINITION] 相变量子 ☯：CQM 中最基本的无量纲常数。
 
-    严格定义：C = ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)，
+    严格定义：☯ = ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)，
     其中 γ 是 Euler-Mascheroni 常数。
 
     该表达式已由 `SpectralGeometry.RiemannXi` 中的 `xi_log_derivative_at_one`
-    从黎曼 ξ 函数严格推导。此定义将 C 的数值近似（≈ 0.02309570897）
-    替换为精确的解析表达式，消除了此前将小数常量与解析公式用公理
-    断言精确相等的欺骗性做法。
+    从黎曼 ξ 函数严格推导。定义以精确的解析表达式给出 ☯，
+    其数值近似为 ≈ 0.02309570897；小数常量与解析公式不以公理
+    断言为精确相等。
 
     由于 γ 与 ln(4π) 的区间算术证明在当前 Mathlib 4.29.1 中仍较繁琐，
     具体的数值界限由下面的 `spectralQuantum_numerical_bounds` 公理给出。
@@ -70,10 +70,10 @@ noncomputable def spectralQuantum : ℝ :=
 
 /-- [BRIDGE] 相变量子 ☯ 的高精度数值界限。
 
-    断言 0.02309570896 < C < 0.02309570898。
-    这与 C 的常用数值近似 0.02309570897 一致。
+    断言 0.02309570896 < ☯ < 0.02309570898。
+    这与 ☯ 的常用数值近似 0.02309570897 一致。
 
-    此公理是可由外部高精度计算验证的数值桥梁：C 的解析表达式
+    此公理是可由外部高精度计算验证的数值桥梁：☯ 的解析表达式
     只涉及 γ 与 ln(4π)，二者均有成熟的数值算法。
     它不是一个“欺骗性证明”，而是明确标注的数值近似声明。
 
@@ -92,13 +92,13 @@ theorem spectralQuantum_lt_one : spectralQuantum < 1 := by
   have h := spectralQuantum_numerical_bounds.right
   linarith
 
-/-- 相变量子的倒数 1/C ≈ 43.3（耦合空间的"大数"） -/
+/-- 相变量子的倒数 1/☯ ≈ 43.3（耦合空间的"大数"） -/
 theorem spectralQuantum_inv_pos : 1 / spectralQuantum > 0 := by
   have h := spectralQuantum_pos
   exact div_pos (by norm_num) h
 
-/-- 相变量子的倒数 1/C 的数值范围：1/C > 40 ↔ C < 1/40 = 0.025。
-    由 `spectralQuantum_numerical_bounds` 得 C < 0.02309570898 < 0.025。 -/
+/-- 相变量子的倒数 1/☯ 的数值范围：1/☯ > 40 ↔ ☯ < 1/40 = 0.025。
+    由 `spectralQuantum_numerical_bounds` 得 ☯ < 0.02309570898 < 0.025。 -/
 theorem spectralQuantum_inv_gt_40 : 1 / spectralQuantum > 40 := by
   have hC : spectralQuantum < (0.025 : ℝ) := by
     have h := spectralQuantum_numerical_bounds.right
@@ -128,7 +128,7 @@ theorem spectralQuantum_lt_eigenvalue1 : spectralQuantum < eigenvalue1 := by
 /-! ## Mathieu 临界值 λ_c — 从 A₄ 本征值导出 -/
 
 /-- Mathieu 临界值 λ_c：Mathieu 方程 y'' + (a - 2q cos(2z))y = 0
-    中第一个特征值曲线 b₁(q) 与直线 a = 2q 的交点。
+    的临界条件 λ_min(q_c) = 2q_c 的唯一根 q_c。
 
     严格定义：λ_c = 4 q_c，其中 q_c 是连分数方程
       1 - 3q = q² / (9 - 2q - q² / (25 - 2q - ...))
@@ -244,28 +244,28 @@ theorem simplexFVectorSum_eq_adeleCycle : simplexFVectorSum = adeleCycle := by
 
 /-! ## 谱修正因子 κ — 从 4-单纯形 + Adele 周期导出 -/
 
-/-- 谱修正因子 κ = (31 + C)/30。
-    分解：κ = (dim(SU(5)) + dim(4-simplex) + C) / N_cycle
-         = (24 + 7 + C) / 30 = (31 + C) / 30
+/-- 谱修正因子 κ = (31 + ☯)/30。
+    分解：κ = (dim(SU(5)) + dim(4-simplex) + ☯) / N_cycle
+         = (24 + 7 + ☯) / 30 = (31 + ☯) / 30
 
     其中 dim(4-simplex) = 7 是 4-单纯形的某种有效维度
     （可能与 f-向量和减去某些约束有关）。
 
-    此因子修正 G_N 公式中的 exp(-2/C) 指数衰减。 -/
+    此因子修正 G_N 公式中的 exp(-2/☯) 指数衰减。 -/
 noncomputable def spectralCorrection : ℝ := (31 + spectralQuantum) / 30
 
-/-- 谱修正因子大于 1（C > 0 时） -/
+/-- 谱修正因子大于 1（☯ > 0 时） -/
 theorem spectralCorrection_gt_one : spectralCorrection > 1 := by
   unfold spectralCorrection
   have hC : spectralQuantum > 0 := spectralQuantum_pos
   linarith
 
-/-- 谱修正因子 κ 的展开形式：κ = 1 + 1/30 + C/30 -/
+/-- 谱修正因子 κ 的展开形式：κ = 1 + 1/30 + ☯/30 -/
 theorem spectralCorrection_expanded : spectralCorrection = 1 + 1/30 + spectralQuantum/30 := by
   unfold spectralCorrection
   ring
 
-/-- 谱修正因子与 C 的关系：κ = 1 + (1 + C) / 30 -/
+/-- 谱修正因子与 ☯ 的关系：κ = 1 + (1 + ☯) / 30 -/
 theorem spectralCorrection_formula : spectralCorrection = 1 + (1 + spectralQuantum) / 30 := by
   unfold spectralCorrection
   ring
@@ -277,8 +277,8 @@ theorem spectralCorrection_gt_one_strong : spectralCorrection > 1 := by
   nlinarith
 
 /-- κ 的范围：1 < κ < 1.1。
-    由 C ∈ (0.02309570896, 0.02309570898) 得
-    κ = (31+C)/30 ∈ (31.02309570896/30, 31.02309570898/30) ⊂ (1, 1.1)。 -/
+    由 ☯ ∈ (0.02309570896, 0.02309570898) 得
+    κ = (31+☯)/30 ∈ (31.02309570896/30, 31.02309570898/30) ⊂ (1, 1.1)。 -/
 theorem spectralCorrection_range : spectralCorrection > 1 ∧ spectralCorrection < 1.1 := by
   rw [spectralCorrection_formula]
   constructor
@@ -291,15 +291,15 @@ theorem spectralCorrection_range : spectralCorrection > 1 ∧ spectralCorrection
 
 /-! ## G_N 谱公式的核心因子 -/
 
-/-- G_N 谱公式的核心因子（不含 Dynkin 指数和质子质量）：
-    F(C) = C² · 𝔠₁ · exp(-2/C) · (1 + κC)
+/-- G_N 谱公式的核心因子（不含 Dynkin 指数比和质子质量）：
+    F(☯) = ☯² · 𝔠₁ · exp(-2/☯) · (1 + κ☯)
     这些因子的乘积给出了 G_N 的数值（除 I·λ_c/m_p² 外）。
 
-    注意：F(C) 乘上 I·λ_c/m_p² 即得 G_N。 -/
+    注意：F(☯) 乘上 I·λ_c/m_p² 即得 G_N。 -/
 noncomputable def GNFactor (C : ℝ) (_hC : C ≠ 0) : ℝ :=
   C^2 * firstCoupling * Real.exp (-2 / C) * (1 + spectralCorrection * C)
 
-/-- G_N 公式中的因子均严格为正（当 C > 0 时） -/
+/-- G_N 公式中的因子均严格为正（当 ☯ > 0 时） -/
 theorem GNFactor_pos (C : ℝ) (hCpos : C > 0) : GNFactor C (ne_of_gt hCpos) > 0 := by
   unfold GNFactor
   have hC2 : C^2 > 0 := pow_pos hCpos 2
@@ -313,26 +313,26 @@ theorem GNFactor_pos (C : ℝ) (hCpos : C > 0) : GNFactor C (ne_of_gt hCpos) > 0
   exact mul_pos h2 hCorr
 
 /-- G_N 因子的分解（便于分析各因子贡献）：
-    F(C) = [C²] · [𝔠₁] · [exp(-2/C)] · [1 + κC]
+    F(☯) = [☯²] · [𝔠₁] · [exp(-2/☯)] · [1 + κ☯]
 
-    - C²：几何因子（耦合空间面积元）
+    - ☯²：几何因子（耦合空间面积元）
     - 𝔠₁：谱因子（第一耦级，来自黎曼零点）
-    - exp(-2/C)：禁闭指数衰减（退相干边界效应）
-    - 1 + κC：谱修正（来自 Adele 周期和 4-单纯形） -/
+    - exp(-2/☯)：禁闭指数衰减（退相干边界效应）
+    - 1 + κ☯：谱修正（来自 Adele 周期和 4-单纯形） -/
 noncomputable def GNFactor_decomposed (C : ℝ) (_hC : C ≠ 0) : ℝ × ℝ × ℝ × ℝ :=
   (C^2, firstCoupling, Real.exp (-2 / C), 1 + spectralCorrection * C)
 
 /-- G_N 因子的取对数形式（便于分析指数衰减）：
-    ln F(C) = 2 ln C + ln 𝔠₁ - 2/C + ln(1 + κC) -/
+    ln F(☯) = 2 ln ☯ + ln 𝔠₁ - 2/☯ + ln(1 + κ☯) -/
 noncomputable def GNFactor_log (C : ℝ) (_hCpos : C > 0) : ℝ :=
   2 * Real.log C + Real.log firstCoupling - 2/C + Real.log (1 + spectralCorrection * C)
 
-/-- G_N 因子在 C = spectralQuantum 处的值 -/
+/-- G_N 因子在 ☯ = spectralQuantum 处的值 -/
 noncomputable def GNFactor_at_C : ℝ :=
   spectralQuantum^2 * firstCoupling * Real.exp (-2 / spectralQuantum) *
     (1 + spectralCorrection * spectralQuantum)
 
-/-- G_N 因子在 C = spectralQuantum 处严格为正 -/
+/-- G_N 因子在 ☯ = spectralQuantum 处严格为正 -/
 theorem GNFactor_at_C_pos : GNFactor_at_C > 0 := by
   unfold GNFactor_at_C
   have hC : spectralQuantum > 0 := spectralQuantum_pos
@@ -351,8 +351,8 @@ theorem GNFactor_at_C_pos : GNFactor_at_C > 0 := by
 /-! ## 谱常数与嘉当代数的连接 -/
 
 /-- 相变量子 ☯ 与 A₄ 本征值的关系（声明）：
-    C 远小于 A₄ 的最小本征值 λ₁ ≈ 0.382。
-    C 和 λ₁ 之间的桥梁是 Mathieu 方程。
+    ☯ 远小于 A₄ 的最小本征值 λ₁ ≈ 0.382。
+    ☯ 和 λ₁ 之间的桥梁是 Mathieu 方程。
     此关系是 CQM 中最核心的待证定理之一。 -/
 theorem spectralQuantum_vs_cartan_eigenvalues : spectralQuantum < eigenvalue1 :=
   spectralQuantum_lt_eigenvalue1
@@ -364,8 +364,8 @@ theorem spectralCorrection_numerator_decomposition : (31 : ℝ) = (dimSU5 : ℝ)
   unfold dimSU5; norm_num
 
 /-- κ 的完整展开：
-    κ = (dim(SU(5)) + dim(4-simplex) + C) / N_cycle
-      = (24 + 7 + C) / 30 -/
+    κ = (dim(SU(5)) + dim(4-simplex) + ☯) / N_cycle
+      = (24 + 7 + ☯) / 30 -/
 theorem spectralCorrection_full_formula : spectralCorrection = ((dimSU5 : ℝ) + 7 + spectralQuantum) / (adeleCycle : ℝ) := by
   unfold spectralCorrection dimSU5 adeleCycle
   norm_num
@@ -373,7 +373,7 @@ theorem spectralCorrection_full_formula : spectralCorrection = ((dimSU5 : ℝ) +
 /-! ## 物理常数与谱常数的关系 -/
 
 /-- 耦合空间中的相变量子 ☯ 与耦合速度 c 的关系（声明）：
-    在非禁闭区域，c ≈ C（耦合速度趋于相变量子）。
+    在非禁闭区域，c ≈ ☯（耦合速度趋于相变量子）。
     这是耦合空间离散性的直接体现。
 
     当前严格证明：相变量子 ☯ > 0（见 `spectralQuantum_pos`）。
@@ -383,9 +383,9 @@ theorem spectralQuantum_pos_ref : spectralQuantum > 0 :=
 
 /-! G_N 谱公式的完整因子分解（与 PhysicalConstants 库协调）：
 
-    G_N = I · λ_c · F(C) / m_p²
-    其中 I = 5/3 是 Dynkin 指数，λ_c 是 Mathieu 临界值，
-    F(C) 是上述 G_N 因子，m_p 是质子质量。
+    G_N = I · λ_c · F(☯) / m_p²
+    其中 I = 5/3 是 Dynkin 指数比，λ_c 是 Mathieu 临界值，
+    F(☯) 是上述 G_N 因子，m_p 是质子质量。
 
     此分解在 PhysicalConstants.Basic 中通过
     `GN_spectral_formula_decomposed` 定理严格证明。 -/
@@ -394,11 +394,11 @@ theorem spectralQuantum_pos_ref : spectralQuantum > 0 :=
 
     | 常数 | 符号 | 数值 | 来源 |
     |:---|:---|:---|:---|
-    | 相变量子 | C | 0.02309570897 | ξ'(1)/ξ(1) |
+    | 相变量子 | ☯ | 0.02309570897 | ξ'(1)/ξ(1) |
     | Mathieu 临界值 | λ_c | 1.316022911 | A₄ 本征值 → Mathieu 方程 |
     | 第一耦级 | 𝔠₁ | 200.04045483 | 1/4 + γ₁² |
-    | 谱修正 | κ | 1.034100375 | (31+C)/30 |
-    | Dynkin 指数 | I | 5/3 | A₄⁻¹ 条目和 |
+    | 谱修正 | κ | 1.034100375 | (31+☯)/30 |
+    | Dynkin 指数比 | I | 5/3 | A₄⁻¹ 条目和 |
     | Adele 周期 | N_cycle | 30 | ∏_p ℤ_p = 1/30 |
 
     注意：上表中除 I 和 N_cycle 外，其余常数当前定义为数值字面量，
@@ -528,18 +528,18 @@ theorem couplingLevel_difference_pos (γ_n γ_np1 : ℝ) (h : γ_np1 > γ_n) (h�
 
     CQM 的谱常数通过以下代数关系构成一个封闭网络：
 
-    1. C → λ_c：通过 Mathieu 方程（见 Mathieu.lean）
-    2. λ_c → C：相变量子与 Mathieu 临界值互逆关系
+    1. ☯ → λ_c：通过 Mathieu 方程（见 Mathieu.lean）
+    2. λ_c → ☯：相变量子与 Mathieu 临界值互逆关系
     3. 𝔠₁ → γ₁：通过 Sierra-CQM 定理
-    4. κ → C, N_cycle：κ = (31+C)/30
+    4. κ → ☯, N_cycle：κ = (31+☯)/30
     5. N_cycle → 素数 2,3,5：通过 adelic 约束
-    6. I → A₄：通过 Dynkin 指数定义 -/
+    6. I → A₄：通过 Dynkin 指数比定义 -/
 
-/-- 谱常数乘积 C · λ_c · 𝔠₁ 的数值范围。
+/-- 谱常数乘积 ☯ · λ_c · 𝔠₁ 的数值范围。
     此乘积出现在 G_N 公式中：
-    G_N = I · (C² · 𝔠₁ · exp(-2/C) · (1+κC)) · λ_c / m_p²
+    G_N = I · (☯² · 𝔠₁ · exp(-2/☯) · (1+κ☯)) · λ_c / m_p²
 
-    注意：C² · 𝔠₁ · λ_c ≈ 0.0231² · 200.04 · 1.316 ≈ 0.1405 -/
+    注意：☯² · 𝔠₁ · λ_c ≈ 0.0231² · 200.04 · 1.316 ≈ 0.1405 -/
 noncomputable def spectralProduct : ℝ := spectralQuantum * mathieuCritical * firstCoupling
 
 /-- 谱常数乘积 > 0 -/
@@ -562,7 +562,7 @@ theorem spectralProduct_lt_ten : spectralProduct < 10 := by
   have hCpos : spectralQuantum > 0 := spectralQuantum_pos
   have hmcpos : mathieuCritical > 0 := mathieuCritical_pos
   have hfcpos : firstCoupling > 0 := firstCoupling_pos
-  -- Step 1: C * λ_c < 0.024 * 1.32
+  -- Step 1: 𝓒 * λ_c < 0.024 * 1.32
   have h_step1 : spectralQuantum * mathieuCritical < 0.024 * 1.32 := by
     have hCpos : spectralQuantum > 0 := spectralQuantum_pos
     have hmcpos : mathieuCritical > 0 := mathieuCritical_pos
@@ -572,7 +572,7 @@ theorem spectralProduct_lt_ten : spectralProduct < 10 := by
     have h_b : 0.024 * mathieuCritical < 0.024 * 1.32 :=
       mul_lt_mul_of_pos_left hmc h_024pos
     linarith
-  -- Step 2: (C * λ_c) * 𝔠₁ < (0.024 * 1.32) * 201
+  -- Step 2: (𝓒 * λ_c) * 𝔠₁ < (0.024 * 1.32) * 201
   have h_step2 : (spectralQuantum * mathieuCritical) * firstCoupling < (0.024 * 1.32) * 201 := by
     have hpos1 : (0 : ℝ) < 0.024 * 1.32 := by norm_num
     have hpos2 : firstCoupling > 0 := firstCoupling_pos
@@ -597,7 +597,7 @@ theorem spectralProduct_gt_six : spectralProduct > 6 := by
   have hmc := mathieuCritical_gt_131
   have hfc : firstCoupling > 200 := by
     unfold firstCoupling; norm_num
-  -- Step 1: C * λ_c > 0.023 * 1.31
+  -- Step 1: 𝓒 * λ_c > 0.023 * 1.31
   have h_step1 : spectralQuantum * mathieuCritical > 0.023 * 1.31 := by
     have hCpos : spectralQuantum > 0 := spectralQuantum_pos
     have hmcpos : mathieuCritical > 0 := mathieuCritical_pos
@@ -607,7 +607,7 @@ theorem spectralProduct_gt_six : spectralProduct > 6 := by
     have h_b : 0.023 * mathieuCritical > 0.023 * 1.31 :=
       mul_lt_mul_of_pos_left hmc h_023pos
     linarith
-  -- Step 2: (C * λ_c) * 𝔠₁ > (0.023 * 1.31) * 200
+  -- Step 2: (𝓒 * λ_c) * 𝔠₁ > (0.023 * 1.31) * 200
   have h_step2 : (spectralQuantum * mathieuCritical) * firstCoupling > (0.023 * 1.31) * 200 := by
     have hpos1 : (0 : ℝ) < 0.023 * 1.31 := by norm_num
     have hpos2 : firstCoupling > 0 := firstCoupling_pos
@@ -626,13 +626,13 @@ theorem spectralProduct_gt_six : spectralProduct > 6 := by
 /-! ### 谱常数与嘉当代数的连接 -/
 
 /-- 相变量子 ☯ 与 A₄ 最小本征值 λ₁ 的比值：
-    C/λ₁ ≈ 0.0231/0.382 ≈ 0.0605
+    ☯/λ₁ ≈ 0.0231/0.382 ≈ 0.0605
 
     这个比值衡量了相变量子相对于 A₄ 能标的大小。
-    在 CQM 中，C ≪ λ₁ 意味着量子修正远小于经典结构。 -/
+    在 CQM 中，☯ ≪ λ₁ 意味着量子修正远小于经典结构。 -/
 noncomputable def spectralQuantum_to_eigenvalue1_ratio : ℝ := spectralQuantum / eigenvalue1
 
-/-- C/λ₁ 的数值范围：0.06 < C/λ₁ < 0.061 -/
+/-- ☯/λ₁ 的数值范围：0.06 < ☯/λ₁ < 0.061 -/
 theorem spectralQuantum_to_eigenvalue1_ratio_range :
     spectralQuantum_to_eigenvalue1_ratio > 0.06 ∧ spectralQuantum_to_eigenvalue1_ratio < 0.061 := by
   unfold spectralQuantum_to_eigenvalue1_ratio
@@ -647,7 +647,7 @@ theorem spectralQuantum_to_eigenvalue1_ratio_range :
       _ = 2.236068 := Real.sqrt_sq (by norm_num : 0 ≤ (2.236068 : ℝ))
   have h_denom_pos : eigenvalue1 > 0 := eigenvalue1_pos
   have h_denom_ne_zero : eigenvalue1 ≠ 0 := by linarith
-  -- 下界：C/λ₁ > 0.06 ↔ C > 0.06 * λ₁
+  -- 下界：☯/λ₁ > 0.06 ↔ ☯ > 0.06 * λ₁
   have h_num_low : spectralQuantum > 0.06 * eigenvalue1 := by
     have hC := spectralQuantum_numerical_bounds.left
     have hlam1 : eigenvalue1 < (3 - 2.236067) / 2 := by
@@ -662,7 +662,7 @@ theorem spectralQuantum_to_eigenvalue1_ratio_range :
       div_pos hnum_pos h_denom_pos
     rw [← hpos] at hdiv_pos
     linarith
-  -- 上界：C/λ₁ < 0.061 ↔ C < 0.061 * λ₁
+  -- 上界：☯/λ₁ < 0.061 ↔ ☯ < 0.061 * λ₁
   have h_num_high : spectralQuantum < 0.061 * eigenvalue1 := by
     have hC := spectralQuantum_numerical_bounds.right
     have hlam1 : eigenvalue1 > (3 - 2.236068) / 2 := by
@@ -817,8 +817,8 @@ theorem primePotential_7 : primePotential 7 = 0 := primePotential_frozen 7 (by
     N_cycle = 2¹·3¹·5¹ = 30
 
     此约束是 CQM 耦合空间全局一致性的核心条件。
-    这里的表述是有限计算可验证的等式，因此不再作为公理引入，
-    而由 `native_decide` 直接严格证明。 -/
+    这里的表述是有限计算可验证的等式，由 `native_decide` 直接严格证明，
+    不作为公理引入。 -/
 theorem adeleConstraint : (Finset.filter Nat.Prime (Finset.range 100)).prod (λ p => p ^ (primePotential p : ℕ)) = adeleCycle := by
   native_decide
 
@@ -909,14 +909,14 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
     A₄ 嘉当矩阵
     ├── 本征值 λ₁,λ₂,λ₃,λ₄
     │   ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 (Mathieu.lean)
-    │   │   └── Mathieu 临界值 λ_c = b₁⁻¹(2q)
-    │   ├── Dynkin 指数 I = 5/3
+    │   │   └── Mathieu 临界值 λ_c = 4q_c（λ_min(q_c) = 2q_c 的唯一根）
+    │   ├── Dynkin 指数比 I = 5/3
     │   └── dim(SU(5)) = 24, rank(SU(5)) = 4
     │
     ├── 相变量子 ☯ = ξ'(1)/ξ(1)
-    │   ├── C · λ_c ≈ 0.0304 (非精确乘积)
-    │   ├── C/λ₁ ≈ 0.0605 (量子修正参数)
-    │   └── exp(-2/C) ≈ 10⁻³⁸ (层级因子)
+    │   ├── ☯ · λ_c ≈ 0.0304 (非精确乘积)
+    │   ├── ☯/λ₁ ≈ 0.0605 (量子修正参数)
+    │   └── exp(-2/☯) ≈ 10⁻³⁸ (层级因子)
     │
     ├── 黎曼零点 γ_n
     │   └── 𝔠_n = 1/4 + γ_n² (Sierra-CQM)
@@ -924,9 +924,9 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
     │
     ├── 素数结构 {2, 3, 5}
     │   └── N_cycle = 2·3·5 = 30
-    │       └── κ = (24+7+C)/30 = (31+C)/30
+    │       └── κ = (24+7+☯)/30 = (31+☯)/30
     │
-    └── G_N = I · λ_c · C² · 𝔠₁ · exp(-2/C) · (1+κC) / m_p²
+    └── G_N = I · λ_c · ☯² · 𝔠₁ · exp(-2/☯) · (1+κ☯) / m_p²
         └── α⁻¹_SU(5) = 16384π/375 ≈ 137.26
     ```
 
@@ -946,9 +946,9 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
 - `firstCouplingSierraCQM_gt_200`：𝔠₁ > 200 ✅
 
 ### 谱常数网络
-- `spectralProduct_pos`：C·λ_c·𝔠₁ > 0 ✅
-- `spectralProduct_lt_ten`：C·λ_c·𝔠₁ < 10 ✅
-- `spectralQuantum_to_eigenvalue1_ratio_range`：C/λ₁ 范围 ✅
+- `spectralProduct_pos`：☯·λ_c·𝔠₁ > 0 ✅
+- `spectralProduct_lt_ten`：☯·λ_c·𝔠₁ < 10 ✅
+- `spectralQuantum_to_eigenvalue1_ratio_range`：☯/λ₁ 范围 ✅
 
 ### 素数结构
 - `thirty_prime_factorization`：30 = 2×3×5 ✅
