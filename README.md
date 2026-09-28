@@ -147,6 +147,8 @@ $$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfra
 
 $$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2$$
 
+> **注（渐近 + 构造）**：此处 $\mathfrak{c}_n^{(R)}=1/4+\gamma_n^2$ 为**渐近定理**的精确形写（渐近式为 $\mathfrak{c}_n^{(R)}=1/4+\gamma_n^2+O(\gamma_n^2/n)$，相对误差 $O(1/n)$）；有限 $n$ 的**精确等同属 CQM 框架自建构造**，超出渐近定理范围。算符形式借自 Berry–Keating/Sierra，**非 Sierra 2008/2011 原文的直接结果**（原文给出的是连续谱嵌入离散共振/与平均零点谱一致）。
+
 ### 等价链：禁闭 = 退相干
 
 $$\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(\tau) \to \ln L \;\Leftrightarrow\; \rho(u) \to \infty \;\Leftrightarrow\; \text{Decoherence}$$

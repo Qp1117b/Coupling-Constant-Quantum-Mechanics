@@ -530,7 +530,7 @@ $$
 | §4.2/§11 尖点性判据 | Kim 2003（附录含 Ramakrishnan、Sarnak） | Sym⁴ 尖点性判据（非二面体/四面体/八面体型） | 已证；表述以原文为准 |
 | §8.3/§8.6 Rankin–Selberg | Jacquet & Shalika 1981, *Amer. J. Math.* 103, 777–815；Jacquet–Piatetski-Shapiro–Shalika 1983, *Amer. J. Math.* 105, 367–464 | 尖点 π 的 $L(s,\pi\times\tilde{\pi})$ 在 $s=1$ 有简单极点；GL(n)×GL(m) Rankin–Selberg 卷积的标准参考 | 已证（严格） |
 | §8.3 恒等式（对齐注） | 标准恒等式：$L(s,\pi\times\tilde{\pi})=\zeta(s)\,L(s,\mathrm{Sym}^2\pi)$ | 标准恒等式不含 $\zeta(s+1)$ 分母因子；文档写法的 $\zeta(s+1)$ 分母为框架内表述，需对齐说明 | 需对齐 |
-| §8.4 基变换 | Langlands 1980, *Base Change for GL(2)*, AMS 96；Arthur & Clozel 1989, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula*, AMS 120 | GL(2) 循环基变换；GL(n) 循环基变换与自守诱导 | 已证（严格） |
+| §8.4 基变换 | Langlands 1980, *Base Change for GL(2)*, Annals of Mathematics Studies 96；Arthur & Clozel 1989, *Simple Algebras, Base Change, and the Advanced Theory of the Trace Formula*, Annals of Mathematics Studies 120 | GL(2) 循环基变换；GL(n) 循环基变换与自守诱导 | 已证（严格） |
 | §8.5 自守诱导 | Arthur & Clozel 1989（循环扩张情形）；Henniart 2000, *Invent. Math.* 139, 439–455（局部） | 循环扩张的自守诱导 $\pi\mapsto AI(\pi)$，L 函数保持；可解扩张亦成立 | 已证（循环/可解情形） |
 | §8.2 删除 Res_H | Cogdell 2003, “Dual groups and Langlands functoriality”, in *An Introduction to the Langlands Program*（Bernstein–Gelbart 编），251–268；Borel 1979, *Proc. Sympos. Pure Math.* 33, 27–61 | 函子性 = 经 L 群同态 $^{L}H \to {}^{L}G$ 的表示转移；不存在一般的“限制”函子 | 支持删除判断 |
 | §3.1 $A_4$ 谱 $\{9^{(1)},4^{(4)},1^{(5)}\}$ | 本项目直接计算验证（迹 30、谱和 30）；框架文献：Horak & Jost 2013, *Adv. Math.* 244, 303–336；Duval & Reiner 2002, *Trans. AMS* 354, 4313–4344 | 单纯形组合/高阶 Hodge 拉普拉斯谱的一般框架；整数谱性质 | 谱事实=本项目验证；文献提供框架 |

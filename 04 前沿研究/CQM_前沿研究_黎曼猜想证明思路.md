@@ -1301,7 +1301,7 @@ $$\operatorname{Im}[\rho_n(1-\rho_n)] = \gamma_n(1-2\beta_n) \neq 0$$
 
 ### 14.3 误差的实部与虚部
 
-从 Sierra-CQM 耦谱定理（§二 已知3），耦级带误差 $\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n$，$O_n = O(\gamma_n^2/n)$。误差分解为实部与虚部：
+从 Sierra-CQM 耦谱定理（§二 已知3；**构造性对应**——谱对应 $\{\gamma_n^2+1/4\}$ 非严格点谱对应，Endres–Steiner (2010) 已否证 $H_{\mathrm{BK}}$、$H_{\mathrm{BK}}^2$ 给出离散零点谱，见 §二 已知1 严格性边界），耦级带误差 $\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n$，$O_n = O(\gamma_n^2/n)$。误差分解为实部与虚部：
 
 $$O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R} + i\underbrace{\frac{\gamma_n^2 \vartheta_n^I}{\pi n}}_{O_n^I} + \cdots$$
 

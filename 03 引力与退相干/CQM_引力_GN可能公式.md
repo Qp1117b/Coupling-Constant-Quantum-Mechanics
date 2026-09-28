@@ -96,13 +96,15 @@ $$(i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi$$
 
 ### 3.1 定理
 
-**定理**（Sierra-CQM）。设 Sprinkling 区间长度 $L_n = 2\pi n / \gamma_n$，边界相位 $\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}$。则无量纲谱算符 $\hat{H} = \hat{D}^2 + 1/4$ 的本征值为：
+**定理**（Sierra-CQM，渐近）。设 Sprinkling 区间长度 $L_n = 2\pi n / \gamma_n$，边界相位 $\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}$。则无量纲谱算符 $\hat{H} = \hat{D}^2 + 1/4$ 的本征值为：
 
-$$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2$$
+$$\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2 + O\left(\frac{\gamma_n^2}{n}\right)$$
 
-其中 $\gamma_n$ 为第 $n$ 个黎曼零点虚部。特别地：
+其中 $\gamma_n$ 为第 $n$ 个黎曼零点虚部，相对误差 $O(1/n)$。特别地：
 
-$$\mathfrak{c}_1 = \frac{1}{4} + \gamma_1^2$$
+$$\mathfrak{c}_1 = \frac{1}{4} + \gamma_1^2 \quad(\text{渐近式；}n=1\text{ 时相对误差 }O(1))$$
+
+**注（渐近 + 构造）**：定理为**渐近**陈述；有限 $n$（尤其 $n=1$）的**精确等同属 CQM 框架自建构造**，超出渐近定理范围。算符形式借自 Berry–Keating/Sierra，**非 Sierra 2008/2011 原文的直接结果**（原文给出的是连续谱嵌入离散共振/与平均零点谱一致）。
 
 **注**：$\mathfrak{c}_1$ 为无量纲数学纯数。它是壳层几何上双曲 Laplacian 的本征值，不是物理能量。物理量纲由 $m_p$ 在下游公式中分配。
 
@@ -285,7 +287,7 @@ $$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \
 | 步骤 | 参数 | 来源 | 严格性 | 数值（10 位） |
 |:---:|:---:|:---|:---:|:---:|
 | 1 | $☯ = \frac{d}{ds}\ln\xi(s)\big\|_{s=1}$ | Hadamard 乘积，解析数论 | 严格定理 | $0.02309570897$ |
-| 2 | $\mathfrak{c}_1 = 1/4 + \gamma_1^2$ | Sierra-CQM 定理，黎曼零点 | 严格定理 | $200.04045483$ |
+| 2 | $\mathfrak{c}_1 = 1/4 + \gamma_1^2$ | Sierra-CQM 渐近定理，黎曼零点（$n=1$ 精确等同属 CQM 构造） | 渐近定理 | $200.04045483$ |
 | 3 | $\lambda_c$ | 临界条件 $\lambda_{\min}(q_c) = 2q_c$（等价的连分数方程在 $(0,1)$ 内唯一根） | 介值定理 + 严格单调性 | $1.316022911$ |
 | 4 | $I = 5/3$ | SU(5) Dynkin 指数比 $I = T(\mathbf{24})/T(\mathbf{8})$ | 群论 | $1.666666667$ |
 | 5 | $\kappa = (31+☯)/30$ | 4-单纯形面元 / Adele 周期 | 组合 + 数论 | $1.034103190$ |
@@ -462,7 +464,7 @@ $$= \boxed{6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \
 | 组件                                      | 状态  | 依据                                                                           |
 | :-------------------------------------- | :-: | :--------------------------------------------------------------------------- |
 | $☯ = \frac{d}{ds}\ln\xi(s)\big\|_{s=1}$                    | 严格  | Hadamard 乘积，解析数论                                                             |
-| $\mathfrak{c}_1 = 1/4 + \gamma_1^2$     | 严格  | Sierra-CQM 定理                                                                |
+| $\mathfrak{c}_1 = 1/4 + \gamma_1^2$     | 渐近  | Sierra-CQM 渐近定理（$n=1$ 精确等同属 CQM 构造）                                        |
 | $\lambda_c$ 方程存在唯一性                     | 严格  | Mathieu 连分数定理                                                                |
 | $I = 5/3$                               | 严格  | SU(5) Dynkin 指数比 $I = T(\mathbf{24})/T(\mathbf{8})$                                                              |
 | $M = E^T E$ 本征值 $\{9,4,1\}$             | 严格  | $S_5$ 表示论 + 迹条件                                                              |
