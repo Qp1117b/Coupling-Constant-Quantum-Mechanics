@@ -50,10 +50,10 @@
 | 定理 | Lean 名 | 结论 | 证明方式 |
 |:---|:---|:---|:---|
 | 零点匹配 | `floquetMomentum_eq` | `k_n = γ_n(1 + θ_n/(2πn))` | 代入 `L_n` + `field_simp` |
-| 偏差界 | `floquetMomentum_deviation_lt` | `|k_n − γ_n| < γ_n/(2n)` | `abs_div` + `div_lt_div_of_pos_right` |
-| 耦级绝对误差 | `floquet_level_deviation_le` | `|k_n² − γ_n²| ≤ γ_n²(1/n + 1/(4n²))` | 平方差 + 三角不等式 + 乘性合并 |
-| 耦级形式误差 | `couplingLevel_deviation_le` | `|c(k_n) − (γ_n²+1/4)| ≤ γ_n²(1/n + 1/(4n²))` | 复合上条 |
-| 相对误差 | `floquet_relative_error_le` | `|k_n² − γ_n²|/γ_n² ≤ 1/n + 1/(4n²)` | `div_le_div_of_nonneg_right` |
+| 偏差界 | `floquetMomentum_deviation_lt` | `\|k_n − γ_n\| < γ_n/(2n)` | `abs_div` + `div_lt_div_of_pos_right` |
+| 耦级绝对误差 | `floquet_level_deviation_le` | `\|k_n² − γ_n²\| ≤ γ_n²(1/n + 1/(4n²))` | 平方差 + 三角不等式 + 乘性合并 |
+| 耦级形式误差 | `couplingLevel_deviation_le` | `\|c(k_n) − (γ_n²+1/4)\| ≤ γ_n²(1/n + 1/(4n²))` | 复合上条 |
+| 相对误差 | `floquet_relative_error_le` | `\|k_n² − γ_n²\|/γ_n² ≤ 1/n + 1/(4n²)` | `div_le_div_of_nonneg_right` |
 | 相对误差（n≥1） | `floquet_relative_error_le_five_quarters` | `… ≤ 5/(4n)`（见证常数 5/4） | `1/n² ≤ 1/n` + `field_simp` |
 
 未形式化（如实标注）：步骤 1 酉等价（函数空间算子计算）、步骤 2 平面波广义本征函数（分布谱论）、`L_n` 与 `m = n` 的物理来源（构造性假设）。

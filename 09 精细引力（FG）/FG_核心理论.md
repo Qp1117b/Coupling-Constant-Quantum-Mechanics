@@ -301,7 +301,7 @@ $$\text{上层同步算符谱} \;\longrightarrow\; \text{下层嘉当矩阵/几�
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big\|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 8. 文献锚定

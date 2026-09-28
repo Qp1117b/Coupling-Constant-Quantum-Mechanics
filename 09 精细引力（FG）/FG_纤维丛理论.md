@@ -185,7 +185,7 @@ $$\boxed{F = G \Rightarrow R = G \Rightarrow \hat{H}}$$
 | :------------------- | :------------------------ |
 | $\hat{H}$（哈密顿算符）     | $\hat{\mathcal{S}}$（同步算符） |
 | $E$（能量本征值）           | $n$（同步本征值/耦级）            |
-| $|\psi\rangle$（本征态） | $|\Psi\rangle$（同步本征态）    |
+| $\lvert\psi\rangle$（本征态） | $\lvert\Psi\rangle$（同步本征态）    |
 | Hilbert空间            | 纤维丛截面空间                   |
 
 **四层结构**：
@@ -461,7 +461,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big\|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
@@ -751,10 +751,10 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 | 层面 | 局域 | 整体 |
 |:---|:---|:---|
-| **态** | 每个顶点 $v$ 有不同的曲率涨落态 $|\delta_v\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
+| **态** | 每个顶点 $v$ 有不同的曲率涨落态 $\lvert\delta_v\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
 | **算符** | 曲率算符 $\hat{\delta}_v$ 是局域的（定义在单个顶点） | 同步算符 $\hat{\mathcal{S}}$ 是整体的（定义在整个截面空间 $\Gamma(P_\ell)$） |
 | **谱** | 局域态携带顶点的曲率信息 | 同步本征值 $\{n_k\}$ 由 SU(5) Dynkin图深度严格推导（$l_k = k-1$），与顶点无关 |
-| **CFT对应** | 算符插入 $\mathcal{O}(z)|0\rangle$ 生成局域态 | OPE系数 $C_{ij}^k$ 由共形对称性固定，不依赖插入点 $z$ |
+| **CFT对应** | 算符插入 $\mathcal{O}(z)\lvert0\rangle$ 生成局域态 | OPE系数 $C_{ij}^k$ 由共形对称性固定，不依赖插入点 $z$ |
 
 #### 9.9.3 严格论证
 

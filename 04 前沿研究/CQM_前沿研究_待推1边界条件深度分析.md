@@ -408,7 +408,7 @@ $$L_n=\frac{2\pi n}{\gamma_n},\qquad \vartheta_n=-\theta(\mathcal E_n)\pmod\pi\ 
 |---|---|---|---|
 | $S(T)$ | $\dfrac1\pi\arg\zeta(\tfrac12+iT)=N(T)-\theta(T)/\pi-1$ | 本文待推 1 相位半（§5.1–§5.4） | 实值**阶梯函数**：每过一零点跳 $+1$，两跳之间连续下降 |
 | $\vartheta_n$ | $-\theta(\mathcal E_n)\pmod\pi$ | Sierra-CNT 定理（§5.6，归档定理 10.2） | **平滑**相位：Riemann–Siegel $\theta$ 在**能量** $\mathcal E_n$ 处取值，$\bmod\pi$ 后有界 |
-| $z_n$ | $1-\dfrac1{\rho_n}$，$\phi_n:=\arg z_n$ | Li 判据（§4.1） | **几何**相位：$|z_n|=1\iff$RH；$\phi_n$ 有界且 $\to0$ |
+| $z_n$ | $1-\dfrac1{\rho_n}$，$\phi_n:=\arg z_n$ | Li 判据（§4.1） | **几何**相位：$\lvert z_n\rvert=1\iff$RH；$\phi_n$ 有界且 $\to0$ |
 
 **三条独立的非同一性理由**
 
