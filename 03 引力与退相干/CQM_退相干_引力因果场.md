@@ -754,6 +754,6 @@ $$\mathcal C[x] = \lim_{\tau \to \tau_{\text{close}}} \oint_{\gamma(\tau)} \Psi_
 2. 量子递归博弈与元重整化群：基于质子再生产维持机制的统一计算框架
 3. 因果截断的闭环极限数学分析工具：可能性空间、p 进积分与GR嵌入
 4. Zurek, W. H. "Decoherence, einselection, and the quantum origins of the classical." Rev. Mod. Phys. 75, 715 (2003).
-5. Bassi, A. et al. "Collapse theories: from phenomenological models to experimental tests." Rev. Mod. Phys. 85, 471 (2013).
+5. Bassi, A. et al. "Models of wave-function collapse, underlying theories, and experimental tests." Rev. Mod. Phys. 85, 471–527 (2013).
 6. Stinespring, W. F. "Positive functions on C*-algebras." Proc. Amer. Math. Soc. 6, 211 (1955).
 

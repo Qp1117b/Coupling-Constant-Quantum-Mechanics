@@ -1422,7 +1422,7 @@ Langlands 纲领断言自守表示 $\longleftrightarrow$ Galois 表示（任意 
 | Weil (1952) | A. Weil, “Sur les 'formules explicites' de la théorie des nombres premiers”, Comm. Sém. Math. Univ. Lund (suppl. vol. dedicated to M. Riesz), pp. 252–265, 1952 | 属实（1952，非 1959） |
 | de Bruijn (1950) | N. G. de Bruijn, “The roots of trigonometric integrals”, Duke Math. J. 17(3), 197–226, 1950 | 属实 |
 | Newman (1976) | C. M. Newman, “Fourier transforms with only real zeros”, Proc. Amer. Math. Soc. 61(2), 245–251, 1976 | 属实 |
-| de Bruijn–Newman 常数 Λ | RH ⇔ Λ ≤ 0；由 Rodgers–Tao (2018, arXiv:1801.05914) 证明 Λ ≥ 0，故当前可表述为 **RH ⇔ Λ = 0**；Polymath15 (arXiv:1901.06596) 得 Λ ≤ 0.22 | Λ=0 等价于 RH 成立；归属为 de Bruijn(1950)–Newman(1976) |
+| de Bruijn–Newman 常数 Λ | RH ⇔ Λ ≤ 0；由 Rodgers–Tao (2018, arXiv:1801.05914) 证明 Λ ≥ 0，故当前可表述为 **RH ⇔ Λ = 0**；Polymath15 (arXiv:1904.12438) 得 Λ ≤ 0.22 | Λ=0 等价于 RH 成立；归属为 de Bruijn(1950)–Newman(1976) |
 | Connes (1999) | A. Connes, “Trace formula in noncommutative geometry and the zeros of the Riemann zeta function”, arXiv:math/9811068 (1998/1999)；另见 A. Connes, Noncommutative Geometry, Academic Press, 1994 | 属实 |
 | Berry–Keating (1999) | M. V. Berry & J. P. Keating, “The Riemann zeros and eigenvalue asymptotics”, SIAM Review 41(2), 236–266, 1999, DOI: 10.1137/S0036144598347497 | 出处属实；“$H=xp$ 在 $L^2(\mathbb{R}_+)$ 无自伴延拓”应精确为“半经典模型未给出严格自伴 Hamiltonian；离散谱须经边界条件/自伴延拓或共振谱实现” |
 | Sierra 模型 | G. Sierra, “A quantum mechanical model of the Riemann zeros”, New J. Phys. 10, 033016 (2008), arXiv:0712.0705；G. Sierra & P. K. Townsend, “Landau levels and Riemann zeros”, Phys. Rev. Lett. 101, 110201 (2008)；G. Sierra & J. Rodríguez-Laguna, “The H=xp model revisited and the Riemann zeros”, Phys. Rev. Lett. 106, 200201 (2011)；G. Sierra, “The Riemann zeros as spectrum and the Riemann hypothesis”, Symmetry 11(4), 494 (2019) | 属实（2008–2011）；**注意**：Sierra 2008/2011 给出的是“连续谱嵌入离散共振/与平均零点谱一致”，并非明确“$1/4+\gamma_n^2$”公式 |
@@ -1440,7 +1440,7 @@ Langlands 纲领断言自守表示 $\longleftrightarrow$ Galois 表示（任意 
 4. de Bruijn, N. G. (1950). The roots of trigonometric integrals. *Duke Mathematical Journal*, 17(3), 197–226.
 5. Newman, C. M. (1976). Fourier transforms with only real zeros. *Proceedings of the American Mathematical Society*, 61(2), 245–251.
 6. Rodgers, B., & Tao, T. (2018). The de Bruijn–Newman constant is non-negative. *arXiv:1801.05914*.
-7. Polymath15 (2019). Effective approximation of heat flow evolution of the Riemann ξ function, and a new upper bound for the de Bruijn–Newman constant. *arXiv:1901.06596*.
+7. Polymath15 (2019). Effective approximation of heat flow evolution of the Riemann ξ function, and a new upper bound for the de Bruijn–Newman constant. *arXiv:1904.12438*.
 8. Connes, A. (1994). *Noncommutative Geometry*. Academic Press.
 9. Connes, A. (1999). Trace formula in noncommutative geometry and the zeros of the Riemann zeta function. *arXiv:math/9811068*.
 10. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Review*, 41(2), 236–266.

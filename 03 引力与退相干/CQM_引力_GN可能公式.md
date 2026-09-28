@@ -503,7 +503,7 @@ $$G_N = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2} = 6.6742810045 \times 10^{-
 1. Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987). Space-time as a causal set. *Phys. Rev. Lett.*, 59, 521.
 2. Rovelli, C. (1996). Relational quantum mechanics. *Int. J. Theor. Phys.*, 35, 1637.
 3. Ashtekar, A., Rovelli, C., & Smolin, L. (1992). Weaving a classical metric with quantum threads. *Phys. Rev. Lett.*, 69, 237.
-4. Feingold, A. J., & Nicolai, H. (2003). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 250, 831.
+4. Feingold, A. J., Kleinschmidt, A., & Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 322, 1295–1339.
 5. Connes, A. (1994). *Noncommutative Geometry*. Academic Press.
 6. Vladimirov, V. S., Volovich, I. V., & Zelenov, E. I. (1994). *p-adic Analysis and Mathematical Physics*. World Scientific.
 7. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Rev.*, 41, 236.
@@ -512,9 +512,9 @@ $$G_N = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2} = 6.6742810045 \times 10^{-
 10. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
 11. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
 12. Sorkin, R. D. (2009). Does locality fail at intermediate length-scales? *arXiv:0907.5398*.
-13. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of scalar fields in causal set theory. *Phys. Rev. D*, 82, 104048.
-14. Dragovich, B. (2017). Adelic quantum mechanics. *arXiv:1711.03797*.
-15. Branko, D., & Dragovich, B. (2020). Adeles in mathematical physics. *arXiv:2006.01154*.
+13. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. *Phys. Rev. D*, 82, 104048.
+14. Dragovich, B. (2003). p-Adic and adelic quantum mechanics. *arXiv:hep-th/0312046*.
+15. Dragovich, B. (2007). Adeles in mathematical physics. *arXiv:0707.3876*.
 16. Particle Data Group (2022). Review of Particle Physics. *Prog. Theor. Exp. Phys.*, 083C01.
 17. Tiesinga, E., et al. (2021). CODATA Recommended Values of the Fundamental Physical Constants: 2018. *Rev. Mod. Phys.*, 93, 025010.
 18. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.

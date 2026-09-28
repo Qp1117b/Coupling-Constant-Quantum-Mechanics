@@ -104,5 +104,5 @@ lake build GN.Constructions # §8–§11 构造
 8. Sierra, G. (2019). The Riemann Zeros as Spectrum and the Riemann Hypothesis. *Symmetry* 11(4), 494. arXiv:1601.01797.
 9. Tate, J. T. (1950). Fourier analysis in number fields and Hecke's zeta-functions. In *Algebraic Number Theory* (Proc. Sympos.), 305–347; reprinted 1967.
 10. Milne, J. S. The Work of John Tate. https://www.jmilne.org/math/xnotes/Tate.pdf
-11. Brinkmann, P. & Ziegler, G. M. Small f-vectors of 3-spheres and of 4-polytopes. *Math. Comp.* (2017). arXiv:math/0208073（4-单纯形 f-向量 (5,10,10,5) 标准参考）。
+11. Brinkmann, P. & Ziegler, G. M. Small f-vectors of 3-spheres and of 4-polytopes. *Math. Comp.* 87 (2018), 2955–2975. arXiv:1610.01028（4-单纯形 f-向量 (5,10,10,5) 标准参考）。
 12. OEIS A135278（n-单纯形 m-面数 = C(n+1,m+1)）。

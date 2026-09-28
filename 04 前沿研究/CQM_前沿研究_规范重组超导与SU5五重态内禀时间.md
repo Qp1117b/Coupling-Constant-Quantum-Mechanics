@@ -361,7 +361,7 @@
 **相变动力学与零点统计**
 
 [6] T. W. B. Kibble, “Topology of cosmic domains and strings”, *Journal of Physics A: Mathematical and General* **9**, 1387 (1976).
-[7] W. H. Zurek, “Cosmic strings in the laboratory: Scaling of condensation”, *Nature* **317**, 505 (1985).
+[7] W. H. Zurek, “Cosmological experiments in superfluid helium?”, *Nature* **317**, 505–508 (1985).
 [8] C. N. Yang, T. D. Lee, “Statistical theory of equations of state and phase transitions. I/II”, *Physical Review* **87**, 404 / 410 (1952).
 [9] M. E. Fisher, “The nature of critical points”, in *Lectures in Theoretical Physics* Vol. 7C (University of Colorado Press, 1965).
 [10] “Yang-Lee Zeros in Quantum Phase Transition: An Entanglement Perspective”, arXiv:2407.00311 (2024). [arXiv](https://arxiv.org/html/2407.00311v2/)

@@ -576,7 +576,7 @@ $$
 
 [12] J. W. Cogdell, *Dual groups and Langlands functoriality*, in: An Introduction to the Langlands Program (J. Bernstein, S. Gelbart, eds.), Birkhäuser, 2003, 251–268.
 
-[13] J. Arthur, *The principle of functoriality*, Bull. Amer. Math. Soc. 40 (2003), 1–34.
+[13] J. Arthur, *The principle of functoriality*, Bull. Amer. Math. Soc. 40 (2003), 39–53.
 
 [14] D. Horak, J. Jost, *Spectra of combinatorial Laplace operators on simplicial complexes*, Adv. Math. 244 (2013), 303–336.
 

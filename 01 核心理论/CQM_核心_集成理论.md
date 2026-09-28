@@ -1238,13 +1238,13 @@ CQM 的核心创新始终只有一点：**把量子力学的共轭对从 $(\hat{
 1. Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987). Space-time as a causal set. *Phys. Rev. Lett.*, 59, 521.
 2. Rovelli, C. (1996). Relational quantum mechanics. *Int. J. Theor. Phys.*, 35, 1637.
 3. Ashtekar, A., Rovelli, C., & Smolin, L. (1992). Weaving a classical metric with quantum threads. *Phys. Rev. Lett.*, 69, 237.
-4. Feingold, A. J., & Nicolai, H. (2003). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 250, 831.
+4. Feingold, A. J., Kleinschmidt, A., & Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 322, 1295–1339.
 5. Connes, A. (1994). *Noncommutative Geometry*. Academic Press.
 6. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Rev.*, 41, 236.
 7. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
 8. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
 9. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
-10. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of scalar fields in causal set theory. *Phys. Rev. D*, 82, 104048.
+10. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. *Phys. Rev. D*, 82, 104048.
 11. Lindblad, G. (1976). On the generators of quantum dynamical semigroups. *Commun. Math. Phys.*, 48, 119.
 12. Bardeen, J., Cooper, L. N., & Schrieffer, J. R. (1957). Theory of superconductivity. *Phys. Rev.*, 108, 1175.
 13. Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique Fizika*, 1, 195.

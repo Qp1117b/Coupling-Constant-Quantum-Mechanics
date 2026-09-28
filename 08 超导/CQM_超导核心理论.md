@@ -1003,7 +1003,7 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 3. Allen, Dynes (1975). *Phys. Rev. B* 12, 905.
 4. Drozdov et al. (2015). Conventional superconductivity at 203 K at high pressures in the sulfur hydride system. *Nature* 525, 73.
 5. Drozdov et al. (2019). Superconductivity at 250 K in lanthanum hydride under high pressures. *Nature* 569, 528.
-6. Errea et al. (2020). Quantum crystal structure in the 250-kelvin superconducting phase of LaH10. *Nature* 578, 66.
+6. Errea et al. (2020). Quantum crystal structure in the 250-kelvin superconducting lanthanum hydride. *Nature* 578, 66–69.
 7. Szczęśniak, Durajski (2016). Migdal-Eliashberg equations — the effective model for superconducting state in H3S. arXiv:1609.06079.
 8. Liu et al. (2019). Microscopic mechanism of room-temperature superconductivity in compressed LaH10. *Phys. Rev. B* 99, 140501(R).
 9. Ashcroft (1968). Metallic Hydrogen: A High-Temperature Superconductor? *PRL* 21, 1748.

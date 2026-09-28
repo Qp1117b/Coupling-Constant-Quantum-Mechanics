@@ -553,7 +553,7 @@ CQM 量子引力集成的核心结论：
 1. Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987). Space-time as a causal set. *Phys. Rev. Lett.*, 59, 521.
 2. Rovelli, C. (1996). Relational quantum mechanics. *Int. J. Theor. Phys.*, 35, 1637.
 3. Ashtekar, A., Rovelli, C., & Smolin, L. (1992). Weaving a classical metric with quantum threads. *Phys. Rev. Lett.*, 69, 237.
-4. Feingold, A. J., & Nicolai, H. (2003). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 250, 831.
+4. Feingold, A. J., Kleinschmidt, A., & Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 322, 1295–1339.
 5. Connes, A. (1994). *Noncommutative Geometry*. Academic Press.
 6. Berry, M. V., & Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. *SIAM Rev.*, 41, 236.
 7. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
@@ -561,5 +561,5 @@ CQM 量子引力集成的核心结论：
 9. Susskind, L. (1995). The world as a hologram. *J. Math. Phys.*, 36, 6377.
 10. 't Hooft, G. (1993). Dimensional reduction in quantum gravity. *arXiv:gr-qc/9310026*.
 11. Sorkin, R. D. (2009). Does locality fail at intermediate length-scales? *arXiv:0907.5398*.
-12. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of scalar fields in causal set theory. *Phys. Rev. D*, 82, 104048.
+12. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. *Phys. Rev. D*, 82, 104048.
 13. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.

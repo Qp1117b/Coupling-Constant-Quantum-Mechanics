@@ -601,7 +601,7 @@ $$\ln \mathcal{J} = -2 \ln\left(\prod_p \det(D_p)\right)$$
 | $A_2$ | $A_2^{++}$ | 否 | SU(3) |
 | $A_4$ | $A_4^{++}$ | **是** | SU(5) |
 
-**证明概要**。双曲 Kac–Moody 代数的分类表明，只有少数过扩张根系具有有限指数的子群（即其 Weyl 群在双曲空间上的作用具有有限体积的基本域）。Feingold–Nicolai (2003) 建立了双曲 Weyl 群与范数代数的对应关系，其中 $A_4^{++}$ 对应四元数，其 Weyl 群同构于 $\text{PSL}_2^{(0)}(\mathcal{I})$（整四元数的投影群），具有有限商。
+**证明概要**。双曲 Kac–Moody 代数的分类表明，只有少数过扩张根系具有有限指数的子群（即其 Weyl 群在双曲空间上的作用具有有限体积的基本域）。Feingold–Nicolai (2009) 建立了双曲 Weyl 群与范数代数的对应关系，其中 $A_4^{++}$ 对应四元数，其 Weyl 群同构于 $\text{PSL}_2^{(0)}(\mathcal{I})$（整四元数的投影群），具有有限商。
 
 $A_1^{++}$ 和 $A_2^{++}$ 对应的双曲空间维数太低或其 Weyl 群的基本域体积无限，故无有限商。
 
@@ -777,7 +777,7 @@ CQM 公理层（接受 A1-A6）
 7. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
 8. NIST Digital Library of Mathematical Functions, Chapter 28.
 9. Fulton, W. & Harris, J. (1991). *Representation Theory: A First Course*. GTM 129. Springer.
-10. Feingold, A. J. & Nicolai, H. (2003). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 250, 831.
+10. Feingold, A. J., Kleinschmidt, A., & Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 322, 1295–1339.
 11. Tate, J. (1950). Fourier analysis in number fields and Hecke's zeta-functions. *Thesis*, Princeton.
 12. Horak, D. & Jost, J. (2013). Spectra of combinatorial Laplace operators on simplicial complexes. *Adv. Math.*, 244, 303–336.
 13. Duval, A. & Reiner, V. (2002). Shifted simplicial complexes are Laplacian integral. *Trans. AMS*, 354, 4313–4344.

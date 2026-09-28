@@ -363,8 +363,8 @@ $$\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体�
 [21] T. Regge, “General relativity without coordinates”, *Nuovo Cim.* **19**, 558 (1961). https://www.osti.gov/biblio/4028412
 [22] J. Cheeger, W. Müller, R. Schrader, “On the curvature of piecewise flat spaces”, *Commun. Math. Phys.* **92**, 405–454 (1984).
 [23] T. Regge, R. M. Williams, “Discrete structures in gravity”, *J. Math. Phys.* **41**, 3964 (2000). https://arxiv.org/abs/gr-qc/0012035
-[24] J. W. Barrett, D. Oriti, R. M. Williams, “Tullio Regge's legacy: Regge calculus and discrete (quantum) gravity”, arXiv:1812.06193 (2019). https://arxiv.org/abs/1812.06193
-[25] H. W. Hamber, *Quantum Gravitation — The Feynman Path Integral Approach* (Springer, 2009)；“Quantum gravity on the lattice”, *Gen. Relativ. Gravit.* **41**, 1959 (2009). https://arxiv.org/abs/0901.0964
+[24] J. W. Barrett, D. Oriti, R. M. Williams, “Tullio Regge's legacy: Regge calculus and discrete gravity”, arXiv:1812.06193 (2019). https://arxiv.org/abs/1812.06193
+[25] H. W. Hamber, *Quantum Gravitation — The Feynman Path Integral Approach* (Springer, 2009)；“Quantum Gravity on the Lattice”, *Gen. Relativ. Gravit.* **41**, 817–876 (2009). https://arxiv.org/abs/0901.0964
 [26] B. Bahr, B. Dittrich, “Regge calculus from a new angle”, arXiv:0907.4325 (2009). https://arxiv.org/abs/0907.4325
 
 **引力场中的贝里相位、锥形时空与涌现时空**

@@ -176,7 +176,7 @@ CQM 提出对这一猜想的扬弃：保留其“厄米算符—实谱”的合�
 3. Connes, A. (1999). Trace formula in noncommutative geometry and the zeros of the Riemann zeta function. *arXiv:math/9811068*.
 4. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
 5. Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987). Space-time as a causal set. *Phys. Rev. Lett.*, 59, 521.
-6. Feingold, A. J., & Nicolai, H. (2003). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 250, 831.
+6. Feingold, A. J., Kleinschmidt, A., & Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. *J. Algebra*, 322, 1295–1339.
 7. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
 8. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
 9. Marx, K. (1867). *Das Kapital: Kritik der politischen Ökonomik*. Hamburg: Otto Meissner.
