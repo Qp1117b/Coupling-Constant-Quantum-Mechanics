@@ -215,13 +215,13 @@ $☯$ 由 $\xi'(1)/\xi(1)$ 独立定义（不循环，不依赖 RH）。利用 H
 
 **Hadamard 恒等式**（不依赖 RH）：
 
-$$\boxed{☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \sum_{\rho} \frac{1}{1-\rho} \approx 0.0230957}$$
+$$\boxed{☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \sum_{\rho} \frac{1}{1-\rho} \approx 0.02309570897}$$
 
 其中 $\rho$ 遍历全部黎曼零点。此式由 $\xi$ 的 Hadamard 乘积直接给出，不要求零点在临界线上。
 
 **谱表示**（条件于 RH）：若假设 RH 成立（零点 $\rho = 1/2 + i\gamma_n$ 在临界线上），代入并配对共轭零点后得到：
 
-$$\boxed{☯ = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + \frac{1}{4}} \approx 0.0230957 \quad (\text{条件于 RH})}$$
+$$\boxed{☯ = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + \frac{1}{4}} \approx 0.02309570897 \quad (\text{条件于 RH})}$$
 
 其中 $\gamma_n$ 是黎曼零点虚部。$☯$ 不是某一个零点的性质，而是全部零点按 $1/(\gamma_n^2+1/4)$ 加权的集体贡献——低层零点贡献了大部分谱权重。$☯$ 在 CQM 中充当“相变量子”，设定了耦合常数与固有时流速之间不确定性的基本下限。**不确定性关系基于相变量子 $☯$**：不确定性关系为 $\Delta u \cdot \Delta v_\tau \geq ☯/2$。$☯$ 取代传统量子力学中 $\hbar$ 的角色，由 $\xi$ 独立定义（不循环）；谱表示是其推论（条件于 RH），是数论谱对物理量子尺度的直接规定。
 
@@ -555,7 +555,7 @@ $$\boxed{\text{QG（物质，质数前网络描述）} \xrightarrow{\text{退相
 
 $$\boxed{\text{QG前网络谱结构} \;\xrightarrow{\text{经GL(5)紧化投影}}\; \text{与黎曼零点 } \gamma_n \text{ 有关}}$$
 
-核心参数：$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.0230957$，$\mathfrak{c}_n = 1/4 + \gamma_n^2$（第一耦级 $\mathfrak{c}_1 \approx 200.04$）——全部是无量纲数学纯数，直接来自解析数论。
+核心参数：$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$，$\mathfrak{c}_n = 1/4 + \gamma_n^2$（第一耦级 $\mathfrak{c}_1 \approx 200.04$）——全部是无量纲数学纯数，直接来自解析数论。
 
 > **分层定位**：QG 的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化，基态 L 函数 $L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}$ 的零点谱）；上述 ζ 零点谱（$☯$、$\mathfrak{c}_n$）直接作为 GL(5) 固定层级下使用的谱——黎曼猜想是 GL(5) 固定层级的实谱条件。**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。
 

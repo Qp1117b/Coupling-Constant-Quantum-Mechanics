@@ -39,7 +39,7 @@ $$\boxed{\text{FG} \neq \text{GR}}$$
 
 ### 1.2 相变量子
 
-$$\boxed{☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.0230957}$$
+$$\boxed{☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.02309570897}$$
 
 （$\gamma$ 为欧拉-马歇罗尼常数；由 $\xi(s)=\frac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)$ 的函数方程 $\xi(s)=\xi(1-s)$ 与 $\psi(1/2)=-\gamma-2\ln2$ 推出。解析值与数值微分互验，精确到 $10^{-7}$。）严格无量纲，作为全部后续层级的普适比例基准。
 
@@ -972,7 +972,7 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 | $\mathcal{C}_{\text{mol}}$ | 分子有效超级嘉当矩阵 | 大方矩阵 |
 | $\delta_v$ | Regge 顶点角亏 | 实数 |
 | $\Delta\delta_v$ | 曲率涨落（声子） | 实数 |
-| $☯$ | 相变量子 $\frac{d}{ds}\ln\xi(s)\big\vert_{s=1} = 1+\gamma/2-\ln(2\sqrt{\pi}) \approx 0.0230957$ | 无量纲实数 |
+| $☯$ | 相变量子 $\frac{d}{ds}\ln\xi(s)\big\vert_{s=1} = 1+\gamma/2-\ln(2\sqrt{\pi}) \approx 0.02309570897$ | 无量纲实数 |
 | $\beta$ | 几何耦合参数 $\frac{1}{4\pi}\ln\frac{L}{a}$（$L$系统尺寸，$a$晶格常数） | 无量纲实数 |
 | $u$ | 耦合坐标 $\ln\alpha$ | 无量纲实数 |
 | $p_u$ | 耦合动量 $(1/☯)(d\tau/dt)$ | 无量纲实数 |
