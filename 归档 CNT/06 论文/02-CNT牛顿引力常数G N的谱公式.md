@@ -27,15 +27,15 @@ $$
 令 $\hat{D} = -i(\partial_u - 1/2)$，则 $\hat{H} = c^2 (\hat{D}^2 + 1/4)$。
 
 > **量纲声明**：
-> 
+>
 > **能标锚定**：CNT 的基本能标由质子康普顿频率设定：
 > $$\Lambda_{\text{CNT}} = \frac{m_p c^2}{\hbar}$$
 > 格点间距 $a = \hbar/(m_p c)$，因此 $c^2/a^2 = \Lambda_{\text{CNT}}^2$。
-> 
+>
 > **双符号系统**：
 > - **数学纯数**（无量纲）：$\tilde{E}_n = \frac{1}{4} + \gamma_n^2$
 > - **物理谱能**（自带量纲 $[M]^2$）：$\mathcal{E}_n = \Lambda_{\text{CNT}}^2 \cdot \tilde{E}_n = \dfrac{m_p^2 c^4}{\hbar^2}\left(\frac{1}{4}+\gamma_n^2\right)$
-> 
+>
 > 在自然单位制 $\hbar=c=1$ 下，$\mathcal{E}_n = m_p^2 \tilde{E}_n$。
 
 ---

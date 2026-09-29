@@ -156,17 +156,17 @@ $$(i\partial_\tau)^2\Phi = c^2(-\partial_u^2+\partial_u)\Phi \tag{3.4}$$
 ## 4. 嘉当方程——离散哈密顿动力学
 
 > **单位制与量纲声明**：
-> 
+>
 > **能标锚定**：CNT 的离散格点间距 $a$ 由质子康普顿波长设定：
-> $$a = \frac{\hbar}{m_p c} \quad \Rightarrow \quad a^{-1} = \frac{m_p c}{\hbar} = \Lambda_{\text{CNT}}.$$ 
+> $$a = \frac{\hbar}{m_p c} \quad \Rightarrow \quad a^{-1} = \frac{m_p c}{\hbar} = \Lambda_{\text{CNT}}.$$
 > 因此 CNT 的基本能标为质子康普顿频率 $\Lambda_{\text{CNT}} = m_p c^2/\hbar$（自然单位制 $\hbar=c=1$ 下 $\Lambda_{\text{CNT}} = m_p$）。所有谱值均以 $\Lambda_{\text{CNT}}^2$ 为基准能标。
-> 
+>
 > **双符号系统**：
 > - **数学纯数**（无量纲）：$\tilde{E}_n = \frac{1}{4} + \gamma_n^2$，$\tilde{E}_0 = \frac{1}{4}$
 > - **物理谱能**（自带量纲）：$\mathcal{E}_n = \Lambda_{\text{CNT}}^2 \cdot \tilde{E}_n = \dfrac{m_p^2 c^4}{\hbar^2}\left(\frac{1}{4}+\gamma_n^2\right)$
-> 
+>
 > 在自然单位制下简化为 $\mathcal{E}_n = m_p^2 \tilde{E}_n$。
-> 
+>
 > **本章及以下各章**，若公式中显式出现光速 $c$ 与 $\hbar$，则采用保留量纲的显式写法；若采用自然单位制 $\hbar=c=1$，则物理谱能以 $m_p^k$ 显式写出量纲。两种表示在物理上等价，数值上通过 $\Lambda_{\text{CNT}}$ 转换。
 
 ### 4.1 核心方程
