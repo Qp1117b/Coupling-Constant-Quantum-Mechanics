@@ -393,7 +393,7 @@ $$\boxed{\ \text{每种约束性}\ =\ \text{在某种变换下，某个量（结
 
 ---
 
-### 6.3 与 FG"重组实现"的关系：同一链条的两段，不是一回事
+### 6.3 与 FG"重组实现"的关系：同一对象的两种描述角度
 
 **FG 的原文口径**【CQM 框架基础：`09 精细引力（FG）/FG_纤维丛理论.md`、`FG_核心理论.md`】：FG 主丛是**从结构群到本征群的重组实现**——
 
@@ -402,20 +402,22 @@ $$F=G\ \Rightarrow\ R=G\ \Rightarrow\ \hat{H}$$
 - 结构群 $G$（如 $GL(5)$／$SU(5)$）经**重组实现**为本征群 $R$（如 $U(1)\times SU(2)\times SU(3)$、壳层本征群 $SU(2)_{k}$），等价地重组为群算符 $\hat{H}$；$GL(n)$ 的 $n$ **不由底空间几何读出**，而由重组产物 $R$ 的基本表示严格确定（发生学顺序强制）。
 - **Elitzur 定理**给出外部依据：局域规范对称性不能自发破缺 ⇒ **规范对称群的相变是重组，不是破缺**（框架原文立场）。
 
-**是不是一回事：不是，但属同一链条的两段。**
+**是不是一回事：本质同一，只是描述角度不同。**
 
-| | 本文档的**群约束性** | FG 的**重组实现** |
+同一个群（同一组约束）有两个面向的写法——**FG 的"重组实现"是它的动力学／发生学描述**（它如何被物质条件确立），**本文档的"群约束性"是它的数学／结构性描述**（它是什么）。二者**不是两个对象，也不是两道工序**，而是**同一对象的两面**。
+
+| | 动力学描述（FG：重组实现） | 数学描述（本文档：群约束性） |
 |:---|:---|:---|
-| 问的问题 | 给定约束，**群的内部结构如何被切出**（$G=\{A\mid A^{\sigma}JA=J\}$） | 在物质条件下，**哪一个群被实现出来**（$G\Rightarrow R$） |
-| 层面 | 数学／分类（结构性的、同步的） | 发生学／动力学（选择性的、历时的） |
-| 机制 | 取稳定子；约束 ↔ 保持的不变量 ↔ 守恒律（§6.1、§5.5（f）） | 先在规范群 → 角亏涨落 → 扇区耦合涨落 → 条件伴丛结构群 → 物质在条件下自组织实现对称性（框架原文） |
-| 依据 | 命题 2.2；张量稳定子（§6.1 标准结果） | Elitzur 定理；"规范对称性不破缺（重组实现）" |
+| 面向 | **如何被确立**（发生学顺序） | **是什么**（代数结构） |
+| 表述 | $F=G\ \Rightarrow\ R=G\ \Rightarrow\ \hat{H}$ | $G=\{A\mid A^{\sigma}JA=J\}$ |
+| 机制 | 先在规范群 → 角亏涨落 → 扇区耦合涨落 → 条件伴丛结构群 → 物质在条件下自组织实现对称性（框架原文） | 取稳定子；约束 ↔ 保持的不变量 ↔ 守恒律（§6.1、§5.5（f）） |
+| 依据 | Elitzur 定理；"规范对称性不破缺（重组实现）" | 命题 2.2；张量稳定子（§6.1 标准结果） |
 
-**接点**：两者由同一条链串起来——
+**两侧会合于同一组约束**：动力学侧回答"物质条件如何收敛到某一组约束"（其中每个环节——角亏涨落、扇区耦合涨落、温度——都在**限定**这组约束），数学侧回答"这组约束切出哪个群、保持什么不变量"。故这不是"FG 把一个中间物交给本文档"，而是**同一组约束在两个层面上的展开**：
 
-$$\underbrace{\text{物质条件}}_{\text{FG 侧}}\ \xrightarrow{\ \text{限定}+\text{筛选}\ }\ \underbrace{\text{约束集}\ \mathcal{C}}_{\text{接口}}\ \xrightarrow{\ \text{取稳定子}\ }\ \underbrace{G(\mathcal{C})}_{\text{本文档侧}}$$
+$$\underbrace{\text{物质条件}\ \xrightarrow{\ \text{限定}+\text{筛选}\ }\ \text{约束}\ \mathcal{C}}_{\text{动力学描述（FG）}}\qquad\Big\|\qquad \underbrace{\mathcal{C}\ \xrightarrow{\ \text{取稳定子}\ }\ G(\mathcal{C})}_{\text{数学描述（本文档）}}$$
 
-即：**FG 的"实现"给出的正是那个"约束集"；约束集一旦确定，群就由本文档的模板 $\mathcal{G}(J,\sigma,\lambda,D)$ 切出**。所以不是一回事，而是**"选约束"（FG）与"约束切群"（本文档）** 这两段。
+> **诚实标注**：两侧的"同一"是**本体论层面**的同一——同一个群、同一组约束；至于"**哪一组物质条件对应哪一条约束**"的逐条映射，框架原文未给出，仍属待建立项。
 
 **关于"为什么专门讨论那几条约束性"——判断基本对，但要补一条限定**：
 
@@ -657,6 +659,7 @@ $$\boxed{\ \begin{aligned}&\text{自守形式＝群协变性＋分析条件（�
 
 - `CQM_前沿研究_量子快置乱普适速率极限.md` — §7 置换对称性讨论的出处；该专论承担置乱动力学与外部文献精读
 - `../01 核心理论/CQM_核心_集成理论.md` — §7.1 外尔群行 $\{9,4,1\}$ 本征值的框架出处
+- `../09 精细引力（FG）/FG_纤维丛理论.md`、`FG_核心理论.md` — §6.3 的框架出处：主丛结构关系 $F=G\Rightarrow R=G\Rightarrow\hat{H}$（重组实现）、Elitzur 定理依据、$GL(5)$ 大统一框架与 $SU(5)$ 重组实现
 - `../01 核心理论/CQM_核心_量纲与单位制.md` — §5.5 量纲讨论的框架出处：§6「特征常数与量纲压缩（量纲发生学层级）」七层表与"每压掉一个量纲就冒出一个转换常数"、§7 自守形式猜想（§7.2"转换"表述与本文档"实现"表述的张力见 §5.5 张力标注）、$K_M=G_N^{-1}$
 
 **参考文献**：Hall, *Lie Groups, Lie Algebras, and Representations*, GTM 222（经典群矩阵定义、Pfaffian 论证）；Knapp, *Lie Groups Beyond an Introduction*（实形式分类）；Fulton–Harris, *Representation Theory*, GTM 129（表示论与低维同构）；Helgason, *Differential Geometry, Lie Groups, and Symmetric Spaces*（号差分类）；Borel, *Automorphic Forms on SL₂(ℝ)*, Cambridge Tract 244（离散系列／主系列／补系列与自守形式）；Gelbart, *Automorphic Forms on Adèle Groups*, Ann. of Math. Studies 83（自守表示）；Borel–Jacquet, "'Correspondances' de Langlands", Proc. Sympos. Pure Math. **33** (1977)（标准 L 函数与函子性）；Godement–Jacquet, *Zeta Functions of Simple Algebras*, LNM 260（GL(n) 标准 L 函数与函数方程）；Kim–Sarnak, *J. Amer. Math. Soc.* **16** (2003)（赫克特征值最优界 $\lambda\ge\tfrac{975}{4096}$）；Leinaas–Myrheim, *Il Nuovo Cimento B* **37**, 1 (1977)（位形空间与任意子）；Green, *Phys. Rev.* **90**, 270 (1953)（仲统计）；Doplicher–Haag–Roberts, *Comm. Math. Phys.* **23**, 199 (1971)／**35**, 49 (1974) 及 Doplicher–Roberts, *Comm. Math. Phys.* **131**, 51 (1990)（DHR 归约）；Streater–Wightman, *PCT, Spin and Statistics, and All That*（自旋-统计定理前提）；Banyaga, *The Structure of Classical Diffeomorphism Groups*；Michor, *Manifolds of Differentiable Mappings*（$\mathrm{Diff}(M)$ 的群结构）。
