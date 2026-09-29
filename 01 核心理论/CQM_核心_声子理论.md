@@ -40,7 +40,7 @@ $$\delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t)$$
 
 $$\Delta\delta_v(\mathbf{r},t) = \sum_q \sqrt{\frac{\hbar}{2\rho_m\omega_q}}(\hat{b}_q + \hat{b}_{-q}^\dagger)e^{i\mathbf{q}\cdot\mathbf{r}}$$
 
-声子频率由底空间曲率刚度决定（式中 $K_{\text{eff}}$ 为曲率刚度系数，非量纲转换常数）：
+声子频率由底空间曲率刚度决定（式中 $K_{\text{eff}}$ 为曲率刚度系数，非量纲特征常数）：
 
 $$\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2$$
 

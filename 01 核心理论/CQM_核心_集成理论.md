@@ -432,7 +432,7 @@ $M = E^T E \in \mathbb{R}^{10 \times 10}$，本征值 $\{9, 4, 1\}$，重数 $\{
 
 $$\left(I + \frac{i v A_4}{2a}\right)\psi^{n+1} = \left(I - \frac{i v A_4}{2a}\right)\psi^n$$
 
-其中 $a$ 为格点间距（无量纲）、$v$ 为特征速度（因果时与坐标时的转换因子）、$\psi^n \in \mathbb{C}^4$ 为第 $n$ 个再生产步骤的态矢量、时间步进 $\Delta\tau = a/v$。幺正性 $U^\dagger U = I$ 严格成立（Cayley 型）。连续极限 $A_4/a^2 \to -\partial_u^2 + \partial_u$（Taylor 展开 + 加权内积分部积分）。嘉当特征值 $\lambda_k = 2 - 2\cos(k\pi/5)$ 是大统一能标下的耦谱。
+其中 $a$ 为格点间距（无量纲）、$v$ 为特征速度（因果时与坐标时的实现标度）、$\psi^n \in \mathbb{C}^4$ 为第 $n$ 个再生产步骤的态矢量、时间步进 $\Delta\tau = a/v$。幺正性 $U^\dagger U = I$ 严格成立（Cayley 型）。连续极限 $A_4/a^2 \to -\partial_u^2 + \partial_u$（Taylor 展开 + 加权内积分部积分）。嘉当特征值 $\lambda_k = 2 - 2\cos(k\pi/5)$ 是大统一能标下的耦谱。
 
 > **定位声明**：SU(5) 嘉当矩阵 $A_4$ 是禁闭边界退相干后的**涌现结构**。禁闭内部为非交换几何，其动力学由非交换代数（而非交换的 $A_4$）描述。嘉当方程仅在禁闭边界/退相干后的语境下成立。
 

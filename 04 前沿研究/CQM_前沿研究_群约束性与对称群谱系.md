@@ -238,9 +238,9 @@ $$\boxed{\ \text{属性 }P\ \xrightarrow{\ \text{特征常数}\ K_{P\to\mathcal{
 
 $$\text{本体论独立}\Longleftrightarrow\text{独立量纲},\qquad \text{本体论不独立}\Longleftrightarrow\text{复合量纲}$$
 
-> **修正（关键）**："$[M]\neq[L]^{a}[T]^{b}$"**只在"不引入有量纲转换常数"的单位制下成立**。独立量纲的**个数本身是约定**：SI 七个基量纲；$M/L/T$ 三个；引入 $c,G,\hbar$ 后压缩为 Planck 单位制的一个；自然单位制为零个。这与框架量纲文档 §6 的"**每压掉一个量纲，就会冒出一个转换常数**"**互补而非冲突**：
+> **修正（关键）**："$[M]\neq[L]^{a}[T]^{b}$"**只在"不引入有量纲特征常数"的单位制下成立**。独立量纲的**个数本身是约定**：SI 七个基量纲；$M/L/T$ 三个；引入 $c,G,\hbar$ 后压缩为 Planck 单位制的一个；自然单位制为零个。这与框架量纲文档 §6 的"**每压掉一个量纲，就会冒出一个转换常数**"**互补而非冲突**：
 >
-> $$\boxed{\ \text{本体论独立}\ \ne\ \text{单位制独立；}\quad \text{单位制可压缩量纲，代价是生成转换常数}\ K\ }$$
+> $$\boxed{\ \text{本体论独立}\ \ne\ \text{单位制独立；}\quad \text{单位制可压缩量纲，代价是生成特征常数}\ K\ }$$
 
 #### （b）独立量纲与其关系群
 
@@ -304,8 +304,8 @@ $$\boxed{\ \underbrace{[T],\ [L],\ [M]\text{（惯性实现）}}_{\text{档 I：
 
 | 支 | 框架对应（核心理论《量纲与单位制》§6.2） | 常数的量纲 | 例子 |
 |:---|:---|:---|:---|
-| **跨量纲**（大差异） | §6.2.1 **大差异**：由自守形式的大差异锁定，**产生**量纲转换常数，是量纲发生学的"生成节点" | $[K]=[Q']/[Q]$（跨量纲） | $c:[L]/[T]$；$\hbar:[M][L]^{2}[T]^{-1}$；$K_M=G_N^{-1}:[M][L]^{-3}[T]^{2}$；$K_Q:[Q][M]^{-1/2}[L]^{-3/2}[T]$；$K_\Theta$ |
-| **同量纲内**（小差异） | §6.2.2 **同量纲内差异**：由自守形式的**小差异**锁定，**不产生新量纲转换常数** | 同一量纲内的标度（量纲上为 $1$） | 时间内：坐标时／固有时／寿命；长度内：固有长度／康普顿波长／德布罗意波长／普朗克长度（并见 §5.3"长度的各种实现"） |
+| **跨量纲**（大差异） | §6.2.1 **大差异**：由自守形式的大差异锁定，**产生**量纲特征常数，是量纲发生学的"生成节点" | $[K]=[Q']/[Q]$（跨量纲） | $c:[L]/[T]$；$\hbar:[M][L]^{2}[T]^{-1}$；$K_M=G_N^{-1}:[M][L]^{-3}[T]^{2}$；$K_Q:[Q][M]^{-1/2}[L]^{-3/2}[T]$；$K_\Theta$ |
+| **同量纲内**（小差异） | §6.2.2 **同量纲内差异**：由自守形式的**小差异**锁定，**不产生新的跨量纲特征常数** | 同一量纲内的标度（量纲上为 $1$） | 时间内：坐标时／固有时／寿命；长度内：固有长度／康普顿波长／德布罗意波长／普朗克长度（并见 §5.3"长度的各种实现"） |
 
 **"同量纲内"这一支必须再分三类**（否则会把人为约定误当物理常数）：
 
@@ -624,6 +624,6 @@ $$\boxed{\ \begin{aligned}&\text{自守形式＝群协变性＋分析条件（�
 
 - `CQM_前沿研究_量子快置乱普适速率极限.md` — §7 置换对称性讨论的出处；该专论承担置乱动力学与外部文献精读
 - `../01 核心理论/CQM_核心_集成理论.md` — §7.1 外尔群行 $\{9,4,1\}$ 本征值的框架出处
-- `../01 核心理论/CQM_核心_量纲与单位制.md` — §5.5 量纲讨论的框架出处：§6「转换常数与量纲压缩（量纲发生学层级）」七层表与"每压掉一个量纲就冒出一个转换常数"、§7 自守形式猜想（§7.2"转换"表述与本文档"实现"表述的张力见 §5.5 张力标注）、$K_M=G_N^{-1}$
+- `../01 核心理论/CQM_核心_量纲与单位制.md` — §5.5 量纲讨论的框架出处：§6「特征常数与量纲压缩（量纲发生学层级）」七层表与"每压掉一个量纲就冒出一个转换常数"、§7 自守形式猜想（§7.2"转换"表述与本文档"实现"表述的张力见 §5.5 张力标注）、$K_M=G_N^{-1}$
 
 **参考文献**：Hall, *Lie Groups, Lie Algebras, and Representations*, GTM 222（经典群矩阵定义、Pfaffian 论证）；Knapp, *Lie Groups Beyond an Introduction*（实形式分类）；Fulton–Harris, *Representation Theory*, GTM 129（表示论与低维同构）；Helgason, *Differential Geometry, Lie Groups, and Symmetric Spaces*（号差分类）；Borel, *Automorphic Forms on SL₂(ℝ)*, Cambridge Tract 244（离散系列／主系列／补系列与自守形式）；Gelbart, *Automorphic Forms on Adèle Groups*, Ann. of Math. Studies 83（自守表示）；Borel–Jacquet, "'Correspondances' de Langlands", Proc. Sympos. Pure Math. **33** (1977)（标准 L 函数与函子性）；Godement–Jacquet, *Zeta Functions of Simple Algebras*, LNM 260（GL(n) 标准 L 函数与函数方程）；Kim–Sarnak, *J. Amer. Math. Soc.* **16** (2003)（赫克特征值最优界 $\lambda\ge\tfrac{975}{4096}$）；Leinaas–Myrheim, *Il Nuovo Cimento B* **37**, 1 (1977)（位形空间与任意子）；Green, *Phys. Rev.* **90**, 270 (1953)（仲统计）；Doplicher–Haag–Roberts, *Comm. Math. Phys.* **23**, 199 (1971)／**35**, 49 (1974) 及 Doplicher–Roberts, *Comm. Math. Phys.* **131**, 51 (1990)（DHR 归约）；Streater–Wightman, *PCT, Spin and Statistics, and All That*（自旋-统计定理前提）；Banyaga, *The Structure of Classical Diffeomorphism Groups*；Michor, *Manifolds of Differentiable Mappings*（$\mathrm{Diff}(M)$ 的群结构）。
