@@ -518,9 +518,9 @@ $$\boxed{\ \text{度量不变的属性关系群定结构，离散子群调数值
 | 视角 | 称呼 | 公式 |
 |:---|:---|:---|
 | 生成 | **新形式因子** | $f(\gamma x)=j(\gamma,x)f(x)$ |
-| 比较 | **转换因子** | $j(\gamma,x)=f(\gamma x)/f(x)$——仅在 $f(x)\neq0$ 处有效；且 $j$ 先于 $f$ 给定（线丛数据），不依赖 $f$ |
+| 比较 | **实现因子** | $j(\gamma,x)=f(\gamma x)/f(x)$——仅在 $f(x)\neq0$ 处有效；且 $j$ 先于 $f$ 给定（线丛数据），不依赖 $f$ |
 
-**逐项对照**：$f$（原形式）；$\gamma$（群元素）；$f\circ\gamma$（新形式，拉回）；$f(x)$（原形式在 $x$ 处的值）；$f(\gamma x)$（新形式在 $x$ 处的值）；$j(\gamma,x)$（实现规则／转换因子）。
+**逐项对照**：$f$（原形式）；$\gamma$（群元素）；$f\circ\gamma$（新形式，拉回）；$f(x)$（原形式在 $x$ 处的值）；$f(\gamma x)$（新形式在 $x$ 处的值）；$j(\gamma,x)$（实现规则／实现因子）。
 
 **自守因子满足的条件**（由协变律对复合两次展开的相容性导出）：
 
@@ -616,6 +616,6 @@ $$\boxed{\ \begin{aligned}&\text{自守形式＝群协变性＋分析条件（�
 - `../04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md` — §7 置换对称性讨论的出处；该专论承担置乱动力学与外部文献精读
 - `CQM_核心_集成理论.md` — §7.1 外尔群行 $\{9,4,1\}$ 本征值的框架出处
 - `../09 精细引力（FG）/FG_纤维丛理论.md`、`FG_核心理论.md` — §6.3 的框架出处：主丛结构关系 $F=G\Rightarrow R=G\Rightarrow\hat{H}$（重组实现）、Elitzur 定理依据、$GL(5)$ 大统一框架与 $SU(5)$ 重组实现
-- `CQM_核心_量纲与单位制.md` — §5.5 量纲讨论的框架出处：§6「特征常数与量纲压缩（量纲发生学层级）」七层表与"每压掉一个量纲就冒出一个转换常数"、§7 自守形式猜想（§7.2"转换"表述与本文档"实现"表述的张力见 §5.5 张力标注）、$K_M=G_N^{-1}$
+- `CQM_核心_量纲与单位制.md` — §5.5 量纲讨论的框架出处：§6「特征常数与量纲压缩（量纲发生学层级）」七层表与"每压掉一个量纲就冒出一个特征常数"、§6.4（量纲作为属性实现）、§7 自守形式猜想、$K_M=G_N^{-1}$
 
 **参考文献**：Hall, *Lie Groups, Lie Algebras, and Representations*, GTM 222（经典群矩阵定义、Pfaffian 论证）；Knapp, *Lie Groups Beyond an Introduction*（实形式分类）；Fulton–Harris, *Representation Theory*, GTM 129（表示论与低维同构）；Helgason, *Differential Geometry, Lie Groups, and Symmetric Spaces*（号差分类）；Borel, *Automorphic Forms on SL₂(ℝ)*, Cambridge Tract 244（离散系列／主系列／补系列与自守形式）；Gelbart, *Automorphic Forms on Adèle Groups*, Ann. of Math. Studies 83（自守表示）；Borel–Jacquet, "'Correspondances' de Langlands", Proc. Sympos. Pure Math. **33** (1977)（标准 L 函数与函子性）；Godement–Jacquet, *Zeta Functions of Simple Algebras*, LNM 260（GL(n) 标准 L 函数与函数方程）；Kim–Sarnak, *J. Amer. Math. Soc.* **16** (2003)（赫克特征值最优界 $\lambda\ge\tfrac{975}{4096}$）；Leinaas–Myrheim, *Il Nuovo Cimento B* **37**, 1 (1977)（位形空间与任意子）；Green, *Phys. Rev.* **90**, 270 (1953)（仲统计）；Doplicher–Haag–Roberts, *Comm. Math. Phys.* **23**, 199 (1971)／**35**, 49 (1974) 及 Doplicher–Roberts, *Comm. Math. Phys.* **131**, 51 (1990)（DHR 归约）；Streater–Wightman, *PCT, Spin and Statistics, and All That*（自旋-统计定理前提）；Banyaga, *The Structure of Classical Diffeomorphism Groups*；Michor, *Manifolds of Differentiable Mappings*（$\mathrm{Diff}(M)$ 的群结构）。
