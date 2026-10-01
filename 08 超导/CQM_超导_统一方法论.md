@@ -128,7 +128,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 $$\hat{\mathcal{S}}_\ell = V_0 + V_\ell$$
 
-其中 $V_0$ 是质数势（从QG基态紧化结构继承，各层级共享），$V_\ell$ 是层级结构项（元素层级 $L_{\text{orbital}}$、分子层级 $L_{\text{mol}}$、晶胞层级 $V_{\text{角亏激活}}(T)$），从该层主丛对称性与底空间曲率涨落给出。
+其中 $V_0$ 是质数势（从前时空基态紧化结构继承，各层级共享），$V_\ell$ 是层级结构项（元素层级 $L_{\text{orbital}}$、分子层级 $L_{\text{mol}}$、晶胞层级 $V_{\text{角亏激活}}(T)$），从该层主丛对称性与底空间曲率涨落给出。
 
 ### 3.2 本征值与温度依赖
 
@@ -150,7 +150,7 @@ $$\lambda_2(T_c) = \lambda_1(T_c)$$
 
 解出Tc闭式：
 
-$$T_c = \frac{\theta_D}{2\,\text{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
+$$T_c = \frac{\theta_D}{2\,\mathrm{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
 
 超导条件 $x > 1$ 等价于：
 
@@ -170,7 +170,7 @@ $$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 **步骤E：角亏涨落** — 底空间曲率零温量子涨落：$\Delta\delta_0^2 = \sum_q |\partial\delta_v/\partial u_q|^2 \cdot \hbar/(2\omega_q)$
 
-**步骤F：Tc闭式** — 主丛结构群上同步算符本征值交叉：$T_c = \theta_D / (2\,\text{arccoth}(x))$
+**步骤F：Tc闭式** — 主丛结构群上同步算符本征值交叉：$T_c = \theta_D / (2\,\mathrm{arccoth}(x))$
 
 除耦合参数化缺口（$t_0,\lambda$，见 `CQM_超导_FG层级同步算符体系.md` §8.3）外，每步都是CQM方程严格导出，无经验拟合参数。
 
@@ -323,7 +323,7 @@ Phase 4: 晶胞FG构造（需晶体数据）
 
 **Tc闭式**（同步算符本征值交叉 $\lambda_2(T_c) = \lambda_1(T_c)$）：
 
-$$T_c = \frac{\theta_D}{2\,\text{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
+$$T_c = \frac{\theta_D}{2\,\mathrm{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
 
 **角亏**（底空间曲率集中，Gauss-Bonnet）：
 

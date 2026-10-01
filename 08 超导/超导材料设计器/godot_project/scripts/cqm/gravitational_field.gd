@@ -86,7 +86,7 @@ static func compute_dual_gravity(chain_result: Dictionary, grain_distribution: S
 	for d in deficit_angles:
 		total_deficit += d
 	var stage_I = {
-		"description": "退相干I: QG→禁闭边界, 产生A4(质子)+D(中子缺陷)",
+		"description": "退相干I:前时空→禁闭边界, 产生A4(质子)+D(中子缺陷)",
 		"Z": Z,
 		"N": N,
 		"cartan_dimension": int(elem_data.get("dimension", 0)),

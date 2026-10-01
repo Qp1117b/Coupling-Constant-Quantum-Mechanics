@@ -138,7 +138,7 @@ Axioms
 
 | 缺口 | 描述 | 涉及库 | 状态 |
 |:---|:---|:---|:---:|
-| H3.1 | 退相干 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |
+| H3.1 | 前核子自组织 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |
 | H3.2 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |
 | C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | `axiom` (H3.3) |
 | — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |
@@ -191,7 +191,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 | SU(5) 嘉当矩阵 | `CartanAlgebra` | 30 |
 | 谱几何与 Mathieu 方程 | `SpectralGeometry` | 114 |
 | 因果时几何 | `PrimeGeometry` | 79 |
-| 禁闭-退相干等价 | `Decoherence` | 15 |
+| 禁闭-前核子自组织等价 | `Decoherence` | 15 |
 | G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |
 | 方法论基础 | `Methodology` | 6 |
 | 强引力超导涌现 | `Superconductivity` | 340 |
@@ -294,7 +294,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 - **超导形式化库**：`Superconductivity`（12 模块），对应 [08 超导](../08%20超导/) 两卷文档
 - **分层映射**：Ontology（第 1–2 层有限本体论）→ TransitionTemperature（T_c）→ TransitionTemperatureCQM（G22 闭合）→ Reduction（BCS 退化与还原）→ CartanSuperconductivity（嘉当张量超导方程）→ FirstPrinciples（第一性推导链）→ SPAF（半唯像框架）→ MolecularGeometry（分子→晶胞→Regge→FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱与自由能竞争）
 - **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`
-- **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部量子引力/电子封装），沿用 CausalSet.Axioms 不透明公理模式
+- **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部前时空/电子封装），沿用 CausalSet.Axioms 不透明公理模式
 
 ## 本次更新亮点 (v0.5.1)
 

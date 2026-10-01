@@ -1008,7 +1008,7 @@ theorem quadraticForm_lowerBound_to_spectralGap_bound {t : ℝ} (ht_nonneg : 0 �
     17. 磁场不显式考虑 → [已声明]
     全部 17 步中，15 步已完全形式化，步骤 6 受限于类型级 blockDiagonal，
     步骤 7 的对角化在数值计算中完成（Python），但谱属性已形式化。
-    新增定理（本轮）：reggeEdgeLength_antitone_in_spectralGap（2个）、
+    已形式化定理：reggeEdgeLength_antitone_in_spectralGap（2个）、
     regularTetrahedronDihedralAngle（3个）、regularTetrahedronVolume（2个）、
     deficitAngleDensity（2个）、grMetric_from_deficitDensity、
     quadraticForm_lowerBound_to_spectralGap_bound、

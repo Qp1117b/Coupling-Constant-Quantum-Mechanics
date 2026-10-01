@@ -4,11 +4,11 @@
 
 ## 1. FG的本体论定位
 
-精细引力FG是量子引力QG与经典引力GR之间的关键中介：
+精细引力 FG 是**前时空**与经典引力 GR 之间的关键中介：
 
 | 引力 | 存在论地位 | 数学结构 |
 |------|-----------|---------|
-| **QG** | 最基础、最不可还原 | 质数前网络/因果集（前几何结构），谱经GL(5)紧化投影与黎曼零点 $\gamma_n$ 有关 |
+| **前时空** | 物质处于前时空的状态 | 谱经GL(5)紧化投影与黎曼零点 $\gamma_n$ 有关 |
 | **GR** | 广度前提（平滑展开） | 伪黎曼流形 |
 | **FG** | 深度前提（层级激发） | FG底空间上的主丛 $P(M,G)$ |
 
@@ -310,7 +310,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **Regge剖分重组**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
 - **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，是Regge剖分的必然结果
-- **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（QG前几何/GR中子-质子振荡/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
+- **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（前时空/GR中子-质子振荡/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果重组（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
@@ -461,7 +461,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big\|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
@@ -516,11 +516,11 @@ $$\boxed{\mathcal{A}_\ell \;\longleftrightarrow\; \{\hat{L}_n\}_{n \in \mathbb{Z
 
 $$\mathcal{A}(z) = \sum_{n=-\infty}^{\infty} \mathcal{A}_n\,z^{-n-1}$$
 
-其中 $\mathcal{A}_n$ 对应Virasoro生成元 $\hat{L}_n$。联络的Kac-Moody扩展（中心项）对应Virasoro中央荷：
+其中 $\mathcal{A}_n$ 对应 Virasoro 生成元 $\hat{L}_n$；联络的**仿射型对易关系**（中心项）对应 Virasoro 中央荷：
 
 $$[\mathcal{A}_m, \mathcal{A}_n] = (m-n)\mathcal{A}_{m+n} + k\,m\,\delta_{m+n,0} \;\longleftrightarrow\; [\hat{L}_m, \hat{L}_n] = (m-n)\hat{L}_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}$$
 
-左式是Kac-Moody代数（联络的仿射扩展），右式是Virasoro代数（Sugawara构造）。中央荷 $c = k\dim\mathfrak{g}/(k+h^\vee)$ 从Kac-Moody水平 $k$ 严格确定（Sugawara构造）。
+左式是**仿射型对易关系**（联络本身的仿射扩展），右式是 Virasoro 代数；二者的中央项由 Sugawara 构造联系，中央荷 $c = k\dim\mathfrak{g}/(k+h^\vee)$ 由水平 $k$ 严格确定。
 
 ### 9.3 曲率 = 对易子：Bianchi → Jacobi
 
@@ -692,19 +692,19 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 
 | 层次 | 文档 | 定义 | 物理意义 |
 |:---|:---|:---|:---|
-| **QG层**（基态定义） | 因果网络同步理论（CNST，`01 核心理论/CQM_核心_因果网络同步理论.md`）§4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\mathrm{GL}(5)) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
+| **前时空层**（基态定义） | 因果网络同步理论（CNST，`01 核心理论/CQM_核心_因果网络同步理论.md`）§4 | $\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\mathrm{GL}(5)) \to \mathcal{H}_{\text{phys}}(\text{SU}(5))$ | 紧化投影：GL(5)自守形式 → SU(5)物理表示 |
 | **FG纤维丛层**（截面实现） | §4 | $\hat{\mathcal{S}}_\ell$ = 紧化算符在层级截面空间 $\Gamma(P_\ell)$ 的实现 | 谱算符：给出群谱 $G_k$ |
-| **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ = QG紧化结构在GL(5)固定层级的再现 | 物理可观测的耦合常数 $g_k$ |
+| **FG核心层**（因子再现） | FG核心 §4.4 | $\hat{\mathcal{S}}_{\text{FG}}$ =前时空紧化结构在GL(5)固定层级的再现 | 物理可观测的耦合常数 $g_k$ |
 
 **层次关系**：
 
-$$\underbrace{\hat{\mathcal{S}}_0}_{\text{QG层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
+$$\underbrace{\hat{\mathcal{S}}_0}_{\text{前时空层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
-- **QG层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。配对不变量 $\mathfrak{c}_n$ 为实 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
+- **前时空层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。配对不变量 $\mathfrak{c}_n$ 为实 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
 - **FG纤维丛层**：SU(5)（$A_4$ 根系）经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
 - **FG核心层**：取GL(5)固定层级，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
-**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——QG层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
+**与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——前时空层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
 
 ### 9.8 完整对应表
 
@@ -788,4 +788,4 @@ $$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结�
 
 - `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)重组实现⇒$A_4$→4耦合常数→$\alpha^{-1}$）
 - `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
-- `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（QG层紧化算符定义、黎曼结构→CNST七条提取、三种引力同步诠释）
+- `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（前时空层紧化算符定义、黎曼结构→CNST七条提取、两种引力同步诠释）
