@@ -508,7 +508,7 @@ $$\mathfrak{c}_1 \xrightarrow{G_N \text{ 公式}} G_N = \frac{\hbar c}{m_p^2} \c
 | 耦合空间海森堡代数 $[\hat{u}, \hat{p}_u] = i$ | | Robertson 原理 |
 | Sprinkling 测度 $d\mu = e^{-u}du$ | | 泊松过程 |
 | 因果时本质连续 | | Sprinkling 泊松过程定义 |
-| $☯ = \frac{d}{ds}\ln\xi(s)\big\|_{s=1}$ 为相变量子 | | Hadamard 乘积 |
+| $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 为相变量子 | | Hadamard 乘积 |
 | 非交换几何 $[x^\mu, x^\nu] \neq 0$（内部） | | Connes 框架 |
 | 退相干导致交换几何涌现 | | §10.1-10.2 |
 | 传输方程从随机 SDE 退化为确定性方程 | | §10.3 |

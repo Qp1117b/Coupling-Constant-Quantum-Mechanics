@@ -281,7 +281,7 @@ $$c_{\text{GL}(5)} = \frac{k\,\dim\mathfrak{su}(5)}{k+h^\vee_{\mathfrak{su}(5)}}
 
 相变量子 $☯$ 可以表示为：
 
-$$☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \frac{\xi'(1)}{\xi(1)}$$
+$$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \frac{\xi'(1)}{\xi(1)}$$
 
 这是 $\ln\xi(s)$ 在 $s=1$ 的导数。在CFT语境中，中央荷 $c$ 衡量理论的“有效自由度数”。$☯$ 的结构（$\xi$ 函数对数导数）恰好是**正则化自由度数**的形式——GL(5)固定层级的无穷模经过zeta正则化后的有限剩余。
 

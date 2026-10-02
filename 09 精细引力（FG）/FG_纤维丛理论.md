@@ -14,8 +14,8 @@
 
 $$\boxed{\text{FG} \neq \text{GR}}$$
 
-- GR是时空曲率，受 $G_N$ 重组，量级 $\sim 10^{-43}$
-- FG是一个联络生成两种曲率——底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 重组**，量级 $O(1)$
+- GR是时空曲率，受 $G_N$ 限制，量级 $\sim 10^{-43}$
+- FG是一个联络生成两种曲率——底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 限制**，量级 $O(1)$
 - FG是GR基态的非平庸激发态，直接由底空间Regge角亏给出
 
 ## 1.5 纤维丛双框架：运动学（容器）与动力学（重组）的相互关联
@@ -289,7 +289,7 @@ $$D F = 0 \quad \iff \quad [\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} =
 | **角色** | 曲率-物质自洽关系 | 谱分解（本征群分类） |
 | **关系** | 运动方程的解给出允许的曲率配置 | 本征值方程对解空间做谱分解 |
 
-同步方程是伴丛运动方程的**谱分解**：运动方程确定允许的曲率配置，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1 - \beta \hat{\delta}_v^{(k)}}$ 对这些配置做本征值分解，本征值 $s_k$ 分类本征群 $G_k$。
+同步方程是伴丛运动方程的**谱分解**：运动方程确定允许的曲率配置，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1 - \beta \hat{\delta}_v^{(k)}}$ 对这些配置做本征值分解，本征值 $n_k$ 分类本征群 $R_k$。
 
 ## 4. 同步算符：纤维丛的谱算符
 

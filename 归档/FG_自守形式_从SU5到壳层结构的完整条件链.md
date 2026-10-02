@@ -372,7 +372,7 @@ $$\begin{array}{ccc}
 ## 9. 文献支撑
 
 | 文献 | 贡献 | 对应条件 |
-|---|:---|:---:|
+|:---|:---|:---:|
 | Fulton-Harris《Representation Theory》(1991) | SU(5)秩=4，$A_4$ 根系 | 1 |
 | Tate-Iwasawa理论 | Adele环基础 | 2 |
 | Bruhat-Tits (1972) | Building构造 | 2,3 |

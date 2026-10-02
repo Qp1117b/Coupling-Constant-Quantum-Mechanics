@@ -268,7 +268,7 @@ A_4\text{嘉当矩阵}
 
 在 CQM 中，$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ 的物理本质可通过 Hadamard 乘积公式揭示。$\xi$ 的对数导数在 $s=1$ 处给出对所有零点的求和恒等式（**不依赖 RH**）：
 
-$$☯ = \frac{d}{ds}\ln\xi(s)\bigg|_{s=1} = \sum_{\rho} \frac{1}{1-\rho}$$
+$$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \sum_{\rho} \frac{1}{1-\rho}$$
 
 将 $\rho = 1/2 + i\gamma_n$ 代入（此代入即假设零点在临界线上，**依赖 RH**），共轭对 $\pm\gamma_n$ 抵消虚部，得到：
 
@@ -731,7 +731,7 @@ $$\xi(s)=\frac12 s(s-1)\pi^{-s/2}\Gamma\!\left(\frac{s}{2}\right)\zeta(s),$$
 
 定义**相变量子**
 
-$$☯_1:=\frac{d}{ds}\ln\xi(s)\bigg|_{s=1} \approx 0.02309570897.$$
+$$☯_1:=\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897.$$
 
 #### B.1.2 L 函数与正则化
 

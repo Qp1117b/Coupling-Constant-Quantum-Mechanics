@@ -190,7 +190,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 **连续谱表**：
 
 | 阶段 | 截断 | 相容性 | 可能性空间 | 唯一性 |
-|------|------|--------|-----------|--------|
+|:---|:---|:---|:---|:---|
 | **零耦合（完全不确定）** | 无 | — | 全局幺正（无限维） | 无 |
 | **弱耦合** | 浅截断 | 弱相容 | 多分支可达 | 无 |
 | **部分耦合** | 部分截断 | 部分相容 | 混合态 | 部分 |
@@ -321,7 +321,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 **三类退相干的核心区分**：
 
 | | 互耦退相干 | 自耦退相干 | 观测退相干 |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | **因果域** | $\mathcal{C}_{\text{collective}}$（多体质子网络） | $\mathcal{C}_{\text{self}}$（系统自身） | $\mathcal{C}_{\text{joint}}$（系统+设备） |
 | **截断来源** | 其他质子的引力因果结构 | 自身引力因果结构的有限分辨率 | 设备引力因果结构的介入 |
 | **典型现象** | 环境退相干、宏观确定性 | 质子稳定性、W/Z 衰变 | 量子测量、延迟选择 |
@@ -363,7 +363,7 @@ $$\hat{\mu} = \bigoplus_{p \in \{2,3,5\}} \hat{\mu}_p \otimes \hat{\mu}_{\text{r
 各 p 进扇区的截断特性：
 
 | p | 规范力 | $\hat{\mu}_p$ 行为 | 物理现象 |
-|---|--------|-------------------|----------|
+|:---|:---|:---|:---|
 | 2 | SU(3) 强力 | $\hat{\mu}_2 = 1$ 在禁闭尺度 $\lambda_{\text{QCD}} \approx 1$ fm 强制完全截断 | 夸克禁闭 = 壳层截断 |
 | 3 | SU(2) 弱力 | $\hat{\mu}_3$ 部分截断，有限寿命 | W/Z 衰变 |
 | 5 | U(1) 电磁力 | $\hat{\mu}_5 \approx 1$ 在长程尺度（最弱截断） | 光子长程传播 |
@@ -424,11 +424,11 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
 
 3. **测量设备引力场转化**（核心物理）：
  测量设备（探测器 D，质量 $M$）的引力场在偏振片位置 $\mathbf{r}_{\text{pol}}$ 决定局部固有时流速：
- $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} = \sqrt{-g_{00}(\mathbf{r}_{\text{pol}})} \approx 1 + \frac{\Phi_{\text{det}}(\mathbf{r}_{\text{pol}})}{c^2}$$
+ $$\frac{d\tau}{dt}\big|_{\mathbf{r}_{\text{pol}}} = \sqrt{-g_{00}(\mathbf{r}_{\text{pol}})} \approx 1 + \frac{\Phi_{\text{det}}(\mathbf{r}_{\text{pol}})}{c^2}$$
  其中 $\Phi_{\text{det}}(\mathbf{r}_{\text{pol}}) = -G\int_{V_{\text{det}}}\frac{\rho_{\text{det}}(\mathbf{r}')}{|\mathbf{r}_{\text{pol}}-\mathbf{r}'|}d^3r'$ 为设备在偏振片位置的引力势。
 
  固有时差异：
- $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot \frac{\Delta L_{\text{eff}}}{c}$$
+ $$\Delta\tau = \frac{d\tau}{dt}\big|_{\mathbf{r}_{\text{pol}}} \cdot \frac{\Delta L_{\text{eff}}}{c}$$
 
 4. **弱场极限**（实验室中设备引力修正可忽略）：
  测量设备质量 $M \sim 10^{-3}$ kg 到 1 kg，偏振器距离设备 $r \sim 0.1$ m 到 1 m，设备引力势在偏振片位置：
@@ -437,7 +437,7 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
   $$\frac{\Phi_{\text{det}}}{c^2} \sim 10^{-31} \text{ 到 } 10^{-27} \ll 1$$
 
  因此固有时流速**退化为 1**：
- $$\frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \approx 1$$
+ $$\frac{d\tau}{dt}\big|_{\mathbf{r}_{\text{pol}}} \approx 1$$
  固有时差异简化为：
  $$\Delta\tau \approx \frac{\Delta L_{\text{eff}}}{c}$$
 
@@ -464,7 +464,7 @@ $\mathcal{C}_{\text{self}} \subset \mathcal{C}_{\text{collective}} \subset \math
  坐标时差异归零：
  $$\Delta t = 0$$
  固有时差异归零：
- $$\Delta\tau = \frac{d\tau}{dt}\bigg|_{\mathbf{r}_{\text{pol}}} \cdot 0 = 0$$
+ $$\Delta\tau = \frac{d\tau}{dt}\big|_{\mathbf{r}_{\text{pol}}} \cdot 0 = 0$$
  截断条件不再满足：
  $$0 < \tau_{\text{res}}$$
  设备重新同时与两臂建立稳定耦合 → **波动性恢复**。
@@ -605,7 +605,7 @@ CQM 测量理论的术语定义："表观截断"是全局幺正演化在有限�
 CQM 对测量问题的处理：
 
 | 阶段 | 表述 | 保留的残余 |
-|------|------|-----------|
+|:---|:---|:---|
 | 朴素立场（断裂前） | 表观截断 = 波包的真实收缩/投影（自发坍缩 + 相干坍缩） | 表观截断作为真实事件 |
 | **本基准** | **全局幺正严格成立；退相干/表观非幺正 = 必要引力因果有限性对因果可能性空间的截断/筛选（关系性因果截断）；元RG层面同样无表观截断** | 无——表观截断仅作现象学速写 |
 
@@ -618,7 +618,7 @@ CQM 对测量问题的处理：
 ### 2. 核心命题体系
 
 | # | 命题 | 核心内容 |
-|---|------|---------|
+|:---|:---|:---|
 | U1 | **全局幺正性** | 一切类波函数过程严格幺正。全局可能性空间由幺正算符 $U(t)$（微观层面为 Vladimirov 幺正演化 $\hat{\mathcal U}(\tau)$）驱动，总量守恒，不增不减 |
 | U2 | **观测 = 必要引力因果结构耦合** | 观测不是特殊物理过程，而是有限本体（测量设备、观测者身体）以其必要引力结构与被测系统发生的再生产耦合，即因果结构耦合 |
 | U3 | **局域表观非幺正** | 耦合使系统的局域描述呈现非幺正。该非幺正是表观的：其实质是必要引力因果有限性对因果可能性空间的截断/筛选，类似于"截断"或"筛选"，不是可能性分支的本体消灭 |
@@ -729,7 +729,7 @@ $$\mathcal C[x] = \lim_{\tau \to \tau_{\text{close}}} \oint_{\gamma(\tau)} \Psi_
 ### 6. 可检验分界
 
 | 检验 | CQM 立场 | CSL/GRW | 现状 |
-|------|----------------|---------|------|
+|:---|:---|:---|:---|
 | 基元坍缩率 | $\lambda_{\text{fundamental}} \equiv 0$ | $\lambda > 0$（$\sim 10^{-16}$ s$^{-1}$ 起） | 锗 X 射线、LISA Pathfinder 等持续压缩 CSL 参数空间；CQM 位于"永远压不到"的一侧 |
 | 自发加热 | 严格为零 | 非零（$\propto \lambda$） | 与上同 |
 | 宏观干涉的基元坍缩标度 | 不存在；表观截断仅由具体有限本体的必要引力结构决定 | 存在普适质量标度 | 大分子/悬臂干涉实验继续推进；CQM 无普适标度预言 |
