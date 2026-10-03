@@ -61,7 +61,7 @@ $\phi^4$理论在不同时空维度下的共形性：
 
 **$d=2$ 是CFT的原因**：$\phi$ 的标度维度为零，$\phi^4$ 项无量纲，且 $\beta(\lambda)=0$ 经典精确成立——没有量子修正破坏标度不变性。
 
-**CQM的定位**：CQM在共形固定点要求 $\beta(g_k)=0$ 严格成立，对应 $g_k = \alpha\exp(-(n_k-n_1)/n_1)$ 是与能标无关的固定纯数字。
+**CQM的定位**：CQM在共形固定点要求 $\beta(g_k)=0$ 严格成立，对应 $g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$ 是与能标无关的固定纯数字。
 
 ## 2. 三角结构：CQM的CFT实现
 
@@ -77,7 +77,7 @@ $\phi^4$理论在不同时空维度下的共形性：
 
 在共形固定点，$g_k$ 不是随能标流动的变量。CQM中：
 
-$$g_k = \alpha\exp\left(-\frac{n_k - n_1}{n_1}\right), \quad n_k \equiv C_k = l_k(l_k+1) + \frac{3}{4}$$
+$$g_k = \alpha^{-1}\exp\left(-\frac{n_k - n_1}{n_1}\right), \quad n_k \equiv C_k = l_k(l_k+1) + \frac{3}{4}$$
 
 $g_k$ 由群论（Casimir本征值）唯一确定，是**与能标无关的固定纯数字**。
 
@@ -251,7 +251,7 @@ $$c = \frac{k\,\dim\mathfrak{g}}{k + h^\vee}$$
 
 | 本征群 | $\dim\mathfrak{g}$ | $h^\vee$ | Kac–Moody水平 $k$ |
 |:---|:---:|:---:|:---|
-| $SU(2)_{\text{spin}}$（s壳层，$l=0$） | 3 | 2 | 由 $g_1 = \alpha$ 确定 |
+| $SU(2)_{\text{spin}}$（s壳层，$l=0$） | 3 | 2 | 由 $g_1 = \alpha^{-1}$ 确定 |
 | $SU(2)_{\text{orb}} \times SU(2)_{\text{spin}}$（p,d,f壳层，$l \geq 1$） | 6 | 4 | 由 $g_k$ 确定 |
 
 ### 5.4 中央荷 $c$ 与相变量子 $☯$ 的关系
@@ -430,7 +430,7 @@ $${}_2F_1(a, b; c; z) \;\xrightarrow{\text{合流}}\; {}_1F_1(-n_{\rm pr}+l+1;\,
 - Kac–Moody水平 $k > 0$
 - 共形块给出非平庸的物理预测
 
-**CQM的定位**：$g_k = \alpha\exp(-(n_k-n_1)/n_1) > 0$ 对所有壳层成立，因此CQM是非平庸的强耦合临界CFT。
+**CQM的定位**：$g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1) > 0$ 对所有壳层成立，因此CQM是非平庸的强耦合临界CFT。
 
 ## 8. 临界自组织态的扩大：CFT的本质
 
