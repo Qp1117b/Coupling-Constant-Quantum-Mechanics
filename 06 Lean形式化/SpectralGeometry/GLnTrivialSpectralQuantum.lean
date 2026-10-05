@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Exp.Deriv
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import SpectralGeometry.Basic
 import SpectralGeometry.RiemannXi
 

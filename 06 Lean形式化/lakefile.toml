@@ -53,3 +53,7 @@ path = ".lake/packages/mathlib"
 [[require]]
 name = "physlib"
 path = ".lake/packages/physlib"
+[[require]]
+name = "leanCopilot"
+git = "https://github.com/lean-dojo/LeanCopilot"
+rev = "main"

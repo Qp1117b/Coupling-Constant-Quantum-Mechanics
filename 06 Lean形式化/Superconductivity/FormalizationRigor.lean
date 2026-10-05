@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Order.Filter.Basic
-import Mathlib.Topology.Definitions.Filter
+import Mathlib.Topology.Defs.Filter
 import Mathlib.Tactic
 import Superconductivity.CouplingSpace
 import Superconductivity.TransitionTemperatureCQM
