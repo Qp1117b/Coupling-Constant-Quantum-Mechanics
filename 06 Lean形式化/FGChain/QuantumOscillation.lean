@@ -103,8 +103,7 @@ theorem oscillator_spectrum_strictMono {o : CellOscillation} (s : OscillatorSpec
 theorem oscillator_zero_point_pos {o : CellOscillation} (s : OscillatorSpectrum o) :
     0 < s.E 0 := by
   rw [s.ground]
-  unfold CellOscillation.energyQuantum
-  positivity
+  exact div_pos o.energyQuantum_pos (by norm_num)
 
 /-! ## 3. 动量-位置-能量关系（环节5） -/
 

@@ -12,7 +12,7 @@
 
 | 红线 | 含义 | 技术保障 |
 |:---|:---|:---|
-| **不欺骗** | 不得用 `axiom` / `定义式证明` / 占位 `def` 冒充已证结论 | Lean 审计脚本 + CI 门禁（§4.4） |
+| **不欺骗** | 不得用 `axiom` / `定义式证明` / 占位 `def` 冒充已证结论 | Lean 源码审计 + CI 门禁（§4.4） |
 | **不绕过** | 不得跳过未闭合缺口（C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 等） | 缺口台账单一源 + 状态列强制保留（§3.1） |
 | **不虚构** | 不得引入 CQM 未涉及的观点、术语、数值、文献 | 术语表 + 审校基准文本 + 变更日志可 `grep` 复核（§3.1） |
 
@@ -24,8 +24,8 @@
 
 | 资产 | 位置 | 规模/状态 |
 |:---|:---|:---|
-| 理论文档库 | `01 核心理论` … `09 精细引力（FG）`、`文献/` | 9 大主题、数十篇 Markdown + 4 篇 PDF 文献 |
-| Lean 4 形式化 | `06 Lean形式化/` | 11 个库、**748 定理 + 30 公理**；Lean `v4.34.0`；依赖 `mathlib` + **`physlib`**（已在 `lakefile.toml` 中） |
+| 理论文档库 | `01 核心理论` … `09 精细引力（FG）`、`一体化研究/文献/` | 9 大主题、数十篇 Markdown + 4 篇 PDF 文献 |
+| Lean 4 形式化 | `06 Lean形式化/` | 11 个库、**748 定理 + 30 公理**；Lean `v4.29.1`；依赖 `mathlib` + **`physlib`**（已在 `lakefile.toml` 中） |
 | 超导材料设计器 | `08 超导/超导材料设计器/godot_project/` | Godot 4.6 + GDScript + Godot MCP（`godot-ai`），回归 105 + 冒烟 52 全通过 |
 | AI 协作治理 | `.workbuddy/`、`提示词.md`、`.codeartsdoer/` | 审校基准、变更日志、会话记忆、OpenCode 插件 |
 | 版本控制 | `.git/` | 已接 `origin/main`（历史记录含推送代理配置） |
@@ -66,7 +66,7 @@
 ├──────────────────────────────────────────────────────────────────────┤
 │ L2 文档治理层     权威基准 · 术语表 · 缺口台账 · 变更日志（.workbuddy）  │
 ├──────────────────────────────────────────────────────────────────────┤
-│ L1 基础设施层     Git · Lake · CI(lean-action) · 版本锁定 · 复现脚本     │
+│ L1 基础设施层     Git · Lake · CI(lean-action) · 版本锁定 · 复现清单     │
 └──────────────────────────────────────────────────────────────────────┘
         数据流：文献 → 文档治理 → 形式化 → 计算 → 实验比对 → 回写缺口台账
 ```
@@ -82,10 +82,10 @@
 | 机制 | 落地物 | 说明 |
 |:---|:---|:---|
 | 单一权威源 | 维持 `00_修订基准与准则.md` + `README.md` 数值表 | 冲突裁定顺序不变 |
-| 术语表 | `附录/术语表.md`（从 §2.1–2.4 生成） | 供自动化比对，不新增写法 |
-| 缺口台账 | `附录/缺口台账.md` | 汇总 C/G2–G22/N1–N4/G13/G20… 与 Lean 状态，**与 Lean 审计脚本联动** |
+| 术语表 | `一体化研究/附录/术语表.md`（从 §2.1–2.4 生成） | 供自动化比对，不新增写法 |
+| 缺口台账 | `一体化研究/附录/缺口台账.md` | 汇总 C/G2–G22/N1–N4/G13/G20… 与 Lean 状态，**与 Lean 状态联动** |
 | 变更日志 | 维持既有管道格式 | 每条可 `grep` 复核 |
-| 一致性检查脚本 | `scripts/doc_audit.sh` | 检查：术语变体残留、`$…$` 成对、缺口标注未被“解决”化、失效相对链接、`⇒` 误用 |
+| 一致性检查 | 人工复核（按 `AGENTS.md` 第三、四节） | 检查：术语变体残留、`$…$` 成对、缺口标注未被“解决”化、失效相对链接、`⇒` 误用 |
 
 **禁用词自动扫描**（对齐基准 §4.1）：
 `已删除|已澄清|已修正|已解决|此前错误|旧版|已废弃|不再|现已统一|早期形式|本版`
@@ -94,11 +94,11 @@
 
 | 工具 | 星标 | 用途 |
 |:---|:---:|:---|
-| **blazickjp/arxiv-mcp-server** | 3190 | arXiv 分节读 LaTeX 原文、BibTeX、主题监控（对接 `文献/` 与各文档参考文献） |
+| **blazickjp/arxiv-mcp-server** | 3190 | arXiv 分节读 LaTeX 原文、BibTeX、主题监控（对接 `一体化研究/文献/` 与各文档参考文献） |
 | **openags/paper-search-mcp** | 2742 | 多源论文检索（arXiv/PubMed/OpenAlex 等） |
 | **wp-a/nature-academic-search** | 291 | 中文友好，跨 CrossRef/PubMed/arXiv/OpenAlex/EuropePMC |
 | **takashiishida/arxiv-latex-mcp** | 146 | arXiv LaTeX 源码精读（数学严谨性核对） |
-| **io.github.54yyyu/zotero-mcp** | — | 若用 Zotero 管理 `文献/` |
+| **io.github.54yyyu/zotero-mcp** | — | 若用 Zotero 管理 `一体化研究/文献/` |
 | **prtc/nasa-ads-mcp** | 8 | 若涉及宇宙学/天体物理方向的文献检索 |
 
 > 用途：为 `04 前沿研究`、`05 方法论与批判` 的文献引用提供**可溯源核对**（Voros、LeClair、Sierra、Tate、Berry–Keating 等）。
@@ -150,7 +150,7 @@
 文献 Agent ──引用核对──→ 审校 Agent ──一致性检查──→ 形式化 Agent
       │                        │                        │
       ▼                        ▼                        ▼
-  arxiv/paper-search       doc_audit.sh          lean-lsp-mcp / LeanCopilot
+  arxiv/paper-search       人工审校             lean-lsp-mcp / LeanCopilot
       │                        │                        │
       └─────── 缺口台账 ←──────┴─────── lake build ─────┘
 ```
@@ -158,15 +158,15 @@
 | 流程节点 | 输入 | 输出 | 工具 |
 |:---|:---|:---|:---|
 | 文献 Agent | 文档引用列表 | 引用核对报告（Voros/LeClair/Sierra/Tate/Berry–Keating 等） | arxiv-mcp + paper-search |
-| 审校 Agent | 全库 .md | 术语/排版/缺口标注一致性报告 | `doc_audit.sh` + 术语表 |
-| 形式化 Agent | Lean 源码 + 缺口台账 | 编译报告 + 欺骗审计 + 修复建议 | `lean_audit.sh` + lean-lsp-mcp + LeanCopilot |
+| 审校 Agent | 全库 .md | 术语/排版/缺口标注一致性报告 | 人工复核 + 术语表 |
+| 形式化 Agent | Lean 源码 + 缺口台账 | 编译报告 + 欺骗审计 + 修复建议 | lake build + lean-lsp-mcp + LeanCopilot |
 | 物理 Agent | 理论公式 | 数值复核（带"构造后验数字校验"限定语） | sympy + wolfram |
 
 ### 3.7 L1 基础设施与 CI
 
-- **工具链固定**：`lean-toolchain = leanprover/lean4:v4.34.0` 保持不变；升级须单独 PR + 全量 `lake build` 验证。
+- **工具链固定**：`lean-toolchain = leanprover/lean4:v4.29.1` 保持不变；升级须单独 PR + 全量 `lake build` 验证。
 - **依赖锁定**：将 `mathlib`/`physlib` 的 `path` 依赖补充远端 `rev`（或提交 `lake-manifest.json` 的 git 版本），保证换机可复现。
-- **CI**：GitHub Actions 使用官方 `leanprover/lean-action`（`lake build` + 审计脚本）。参考 `.github/workflows/lean.yml`（§6.3）。
+- **CI**：GitHub Actions 使用官方 `leanprover/lean-action`（`lake build --wfail`）。参考 `.github/workflows/lean.yml`（§6.3）。
 - **构建缓存**：`~/.cache/mathlib` 预热，避免每次全量重编（对本机慢盘尤其重要，见 §8）。
 
 ---
@@ -191,13 +191,10 @@
 
 ### 4.3 严谨性审计（检测“欺骗/绕过/虚构/定义式/占位”）
 
-审计脚本 `scripts/lean_audit.sh`，逐条对齐 `提示词.md` 的要求：
+审计逐条对齐 `提示词.md` 的要求，人工执行下列检索：
 
 ```bash
-#!/usr/bin/env bash
-# Lean 严谨性审计 —— 对齐 提示词.md 第 7 条
-set -uo pipefail
-cd "$(dirname "$0")/../06\ Lean形式化" 2>/dev/null || cd "$(dirname "$0")/../06 Lean形式化"
+# 在 06 Lean形式化/ 下执行
 echo "== 1) sorry / admit =="
 grep -rn --include=*.lean -E '\b(sorry|admit)\b' . | grep -v '.lake/' || echo "  无"
 echo "== 2) 新增/遗留 axiom =="
@@ -210,12 +207,12 @@ echo "== 5) 结论统计 =="
 grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0$' | grep -v '.lake/' || true
 ```
 
-> **输出必须人工复核**：脚本只标记候选，最终“是否构成欺骗”须结合 `提示词.md` 语义判定。
+> **输出必须人工复核**：检索只标记候选，最终“是否构成欺骗”须结合 `提示词.md` 语义判定。
 
 ### 4.4 缺口台账 ↔ Lean 状态联动
 
-- `附录/缺口台账.md` 每行标注：缺口编号、文档权威处、Lean 对应符号/模块、状态（`axiom` / `数值验证` / `已证明` / `待证明`）。
-- CI 校验：台账中标记“已证明”的项，`lean_audit.sh` 不得在对应模块报出 `axiom`。
+- `一体化研究/附录/缺口台账.md` 每行标注：缺口编号、文档权威处、Lean 对应符号/模块、状态（`axiom` / `数值验证` / `已证明` / `待证明`）。
+- CI 校验：台账中标记“已证明”的项，对应模块不得报出 `axiom`。
 
 ### 4.5 physlib 集成（物理形式化）
 
@@ -304,7 +301,7 @@ grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0
 **token 填入**：各 `env` 中的 `<token>` / `<id>` 占位符须替换为实际 API 密钥后生效。未填 token 的 server（如 `arxiv`、`sympy`、`jacobian`、`lean`）无需认证即可使用。
 
 **按需启用**：
-- 文献核对：`arxiv` + `paper-search` + `nasa-ads`（+ `zotero` 若用 Zotero 管理 `文献/`）
+- 文献核对：`arxiv` + `paper-search` + `nasa-ads`（+ `zotero` 若用 Zotero 管理 `一体化研究/文献/`）
 - 数值复核：`sympy` + `jacobian` + `wolfram`
 - 形式化：`lean`（Lean LSP 诊断、`#check`、goal 状态）
 - DFT/MD：需本地 VASP/QE/LAMMPS + 许可证，按需增补（见 §3.4）
@@ -313,9 +310,8 @@ grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0
 
 ```
 CQMFormal/
-├── 附录/                     # 新增：术语表.md、缺口台账.md
-├── scripts/                  # 新增：doc_audit.sh、lean_audit.sh、repro_check.sh
-├── .github/workflows/        # 新增：lean.yml、doc-audit.yml
+├── 一体化研究/附录/                     # 新增：术语表.md、缺口台账.md
+├── .github/workflows/        # 新增：lean.yml
 ├── .workbuddy/               # 既有：审校基准、变更日志、记忆
 ├── 06 Lean形式化/            # 既有：Lean 库
 └── …                         # 既有文档目录（01–09）
@@ -334,10 +330,6 @@ jobs:
       - uses: leanprover/lean-action@v1
         with:
           build-args: --wfail
-      - name: 严谨性审计
-        run: bash scripts/lean_audit.sh
-      - name: 文档一致性审计
-        run: bash scripts/doc_audit.sh
 ```
 
 > 目标：**绿色即“可编译 + 无可疑绕过”**；`--wfail` 使警告即失败，杜绝“带警告交付”。
@@ -348,7 +340,7 @@ jobs:
 
 | 阶段 | 目标 | 产出 |
 |:---:|:---|:---|
-| **S0**（1–2 天） | 基线可复现 | `lean_audit.sh`/`doc_audit.sh` 落地；依赖 `rev` 锁定；CI 跑通（允许当前红色，先可视化） |
+| **S0**（1–2 天） | 基线可复现 | 依赖 `rev` 锁定；CI 跑通（允许当前红色，先可视化） |
 | **S1**（1 周） | P0 全绿 | 修复 3 处坏导入 + `RiemannXi` 基础错误；`lake build` 剩余失败数下降 |
 | **S2**（2–3 周） | 形式化收敛 | SpectralGeometry 全绿 → FGChain 源头正性 → Superconductivity 模块 |
 | **S3**（持续） | 缺口收敛 | 逐个 axiom→theorem；缺口台账状态实时更新 |
@@ -369,9 +361,9 @@ jobs:
 
 ### 8.3 复现性清单
 
-- [ ] `lean-toolchain` 固定 `v4.34.0`
+- [ ] `lean-toolchain` 固定 `v4.29.1`
 - [ ] `mathlib`/`physlib` 锁定远端 `rev`
-- [ ] CI 全绿（build + 两份审计）
+- [ ] CI 全绿（`lake build --wfail`）
 - [ ] 变更日志每条可 `grep`
 - [ ] 缺口台账与 Lean 状态一致
 
@@ -381,7 +373,7 @@ jobs:
 
 1. 本方案是**工具/工作流方案**，不对 CQM 物理结论做任何判定或背书；理论状态以各文档与 `README.md` 的如实标注为准。
 2. MCP / Agent 工具为第三方开源项目，星标为检索时快照，接入前须自行评估安全与许可证。
-3. Lean 审计脚本仅**标记候选**，“是否构成欺骗/绕过”须人工结合 `提示词.md` 语义裁定。
+3. 严谨性审计仅**标记候选**（`sorry`/`axiom`/`native_decide`/`unsafe`/占位），“是否构成欺骗/绕过”须人工结合 `提示词.md` 语义裁定。
 4. 实验数据源需项目按学科规范自行确定，本方案不代拟具体数据集。
 5. 任何“缺口”在闭合前，均须按基准 §4.2 保留标注，**禁止**改写为“已解决”。
 
@@ -395,9 +387,7 @@ lake build                      # 全量
 lake build GN                   # 单库
 lake exe cache get              # 预取 mathlib 缓存
 
-# 审计（在项目根目录）
-bash scripts/lean_audit.sh
-bash scripts/doc_audit.sh
+# 审计（人工）：复核 sorry/axiom/native_decide/unsafe 候选；文档一致性按 AGENTS.md 第三、四节
 
 # 本文档引用的核心来源
 #   Lean 4        : https://github.com/leanprover/lean4

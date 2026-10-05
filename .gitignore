@@ -7,3 +7,6 @@ __pycache__/
 
 # 本地工作目录（审校留痕、修订前快照、工作日志，不入库）
 .workbuddy/
+
+# MCP 文件系统临时日志
+mcp_filesystem.log

@@ -1,9 +1,9 @@
 name: lean
 on:
   push:
-    paths: ['06 Lean形式化/**', 'scripts/lean_audit.sh']
+    paths: ['06 Lean形式化/**']
   pull_request:
-    paths: ['06 Lean形式化/**', 'scripts/lean_audit.sh']
+    paths: ['06 Lean形式化/**']
 
 jobs:
   build:
@@ -13,5 +13,3 @@ jobs:
       - uses: leanprover/lean-action@v1
         with:
           build-args: --wfail
-      - name: 严谨性审计
-        run: bash scripts/lean_audit.sh

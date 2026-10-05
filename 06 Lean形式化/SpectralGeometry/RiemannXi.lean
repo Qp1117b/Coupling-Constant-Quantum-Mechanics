@@ -166,13 +166,9 @@ theorem xi_log_derivative_at_one :
           exact h6
         exact HasDerivAt.const_mul (1/2 : ℂ) h3
     exact h_total.deriv
-  rw [hderiv, hXi1]
-  rw [completedRiemannZeta₀_one]
+  rw [hderiv, hXi1, completedRiemannZeta₀_one]
   field_simp
-  ring_nf
-  <;> simp [Complex.ext_iff, Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im,
-    Complex.ofReal_re, Complex.ofReal_im]
-  <;> ring
+  ring
 
 /-! ### 与 CQM 相变量子常量的联系
 
