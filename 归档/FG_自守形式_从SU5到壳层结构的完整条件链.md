@@ -57,7 +57,7 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 
 | 映射 | 文献支撑 | 状态 |
 |:---|:---|:---|
-| 自守形式 ↔ 布洛赫波 | Maciejko-Rayan《Hyperbolic band theory》(Sci. Adv. 2021；PNAS 2022) | 有直接文献支撑：双曲晶格中本征态即自守函数，自守布洛赫条件 $\psi(\gamma^{-1}z) = \chi(\gamma)\psi(z)$，Riemann 面 Jacobian 即布里渊区 |
+| 自守形式 ↔ 布洛赫波 | Maciejko-Rayan《Hyperbolic band theory》(Sci. Adv. 2021；PNAS 2022) | 有直接文献支撑：双曲晶格中本征态即自守函数，自守布洛赫条件 $\psi(\gamma^{-1}z) = \chi(\gamma)\psi(z)$，黎曼面 Jacobian 即布里渊区 |
 | 水平 $K_f$ ↔ 周期边界条件 | Maciejko-Rayan (PNAS 2022) | 有直接文献支撑：周期边界条件对应法氏群正规子群/水平结构 |
 | Adele环 ↔ 物理空间 | Volovich (1987)；Dragovich 等 (2017) | 有文献支撑：adelic 量子力学、adelic 宇宙学以 Adele 环统一实与 p 进扇区 |
 | 素数 ↔ 力（$\mathbb{Q}_2$→强、$\mathbb{Q}_3$→弱、$\mathbb{Q}_5$→电磁） | 未见于同行评审文献 | CQM 构造性假设（p 进物理文献不将具体素数指派给具体力） |
@@ -82,14 +82,14 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 
 **数学**：Adele环 $\mathbb{A}_\mathbb{Q} = \mathbb{R} \times \prod'_p \mathbb{Q}_p$，其中 $\prod'$ 表示限制直积。
 
-**物理**：数域指定"物理空间"的算术结构。实数扇区 $\mathbb{R}$ 对应Archimedean几何（Regge剖分），p进扇区 $\mathbb{Q}_p$ 对应非Archimedean几何（离散量子数层级）。
+**物理**：数域指定"物理空间"的算术结构。实数扇区 $\mathbb{R}$ 对应Archimedean几何（Regge剖分），p 进扇区 $\mathbb{Q}_p$ 对应非 Archimedean 几何（离散量子数层级）。
 
 **CQM中的角色**：
 
 - $\mathbb{R}$ 扇区：连续几何，Regge剖分，经典背景曲率
-- $\mathbb{Q}_2$ 扇区：强力（夸克），p进赋值 $v_2$ 确定色荷离散层级
+- $\mathbb{Q}_2$ 扇区：强力（夸克），p 进赋值 $v_2$ 确定色荷离散层级
 - $\mathbb{Q}_3$ 扇区：弱力（中微子）
-- $\mathbb{Q}_5$ 扇区：电磁力（电子），p进赋值 $v_5$ 确定电荷离散层级
+- $\mathbb{Q}_5$ 扇区：电磁力（电子），p 进赋值 $v_5$ 确定电荷离散层级
 
 **严格性状态**：$\mathbb{Q}_p$ 扇区 ↔ 力的指派（$\mathbb{Q}_2$→强力、$\mathbb{Q}_3$→弱力、$\mathbb{Q}_5$→电磁力）是 CQM 构造性假设，未见于 p 进物理文献（p 进/adelic 物理将素数视为 Adele 环中不同的非阿基米德扇区，不将具体素数指派给具体力）。
 
@@ -99,7 +99,7 @@ $$\psi_{\mathbf{k}}(x,y) = e^{i(k_x x + k_y y)}, \quad k_x = \frac{2\pi m}{Na}, 
 
 ### 3.3 条件3：开紧子群 $K_f$（周期边界 → 紧化约束）
 
-**数学**：开紧子群 $K_f = \prod_p K_p \subset GL(5, \mathbb{A}_f)$，其中 $K_p = GL(5, \mathbb{Z}_p)$ 是p进开紧子群。
+**数学**：开紧子群 $K_f = \prod_p K_p \subset GL(5, \mathbb{A}_f)$，其中 $K_p = GL(5, \mathbb{Z}_p)$ 是p 进开紧子群。
 
 **物理**：类比于"有限样品+周期边界条件"——把无限晶体卷成有限环面。在CQM中，紧化U(1)玻尔-索末菲量子化实现这一约束：
 
@@ -113,7 +113,7 @@ $$\boxed{\psi_{\{n_k\}}(u + L_u) = \psi_{\{n_k\}}(u)}$$
 - 联立核子动力学和紧化约束 → 锁定声子占据数 $N_k$
 - 离散商 $\Gamma \backslash GL(5,\mathbb{A}) / K$ 给出离散谱（类比倒空间离散网格）
 
-**严格性**：$GL(5, \mathbb{Z}_p)$ 是 $\mathbb{Q}_p$ 上的开紧子群（标准p进群论事实）。紧化U(1)量子化是玻尔-索末菲条件（经典量子化）。
+**严格性**：$GL(5, \mathbb{Z}_p)$ 是 $\mathbb{Q}_p$ 上的开紧子群（标准 p 进群论事实）。紧化U(1)量子化是玻尔-索末菲条件（经典量子化）。
 
 **文献**：见 `FG_纤维丛理论.md` §9.7（同步算符 = 紧化算符：三层关系统一）。
 
@@ -195,33 +195,33 @@ $$\hat{\mathcal{S}} |\Psi\rangle = s |\Psi\rangle$$
 
 - Hecke代数是自守表示论的标准结构（Jacquet-Langlands《Automorphic Forms on GL(2)》(1970)；Borel《Introduction to automorphic forms》(1966)）
 - 同步算符由物理约束严格确定（FG因果+紧化U(1)）
-- 强多重性一（Jacquet-Shalika 1981；Piatetski-Shapiro 1979）保证 Hecke 特征值几乎处处一致 ⇒ 自守表示同构；newform 理论（Roberts-Schmidt 2007；Feng-Schmidt-Spallone 2018）保证表示内 newform 至多差标量唯一
+- 强多重性一（Jacquet-Shalika 1981；Piatetski-Shapiro 1979）保证 Hecke 特征值几乎处处一致 → 自守表示同构；newform 理论（Roberts-Schmidt 2007；Feng-Schmidt-Spallone 2018）保证表示内 newform 至多差标量唯一
 - 注意：同步算符与 Hecke 算符数学对象不同（前者是谱/动力学算符，后者是算术算符），二者仅功能角色对应（本征筛选）
 
 **文献**：见 `FG_纤维丛理论.md` §4.2（双空间同步算符）及 `FG_核心理论.md` §5.2（同步算符的完整谱结构）。
 
-## 4. Bruhat-Tits building作为p进离散底空间
+## 4. Bruhat–Tits building 作为 p 进离散底空间
 
 ### 4.1 Bruhat-Tits building的定义
 
-**定义**：对于p进群 $G = GL(5, \mathbb{Q}_p)$，Bruhat-Tits building $\mathcal{B}(G, \mathbb{Q}_p)$ 是一个单纯复形：
+**定义**：对于 p 进群 $G = GL(5, \mathbb{Q}_p)$，Bruhat-Tits building $\mathcal{B}(G, \mathbb{Q}_p)$ 是一个单纯复形：
 
 - 顶点 = $\mathbb{Q}_p$ 上的格链类 $[\Lambda]$（$\Lambda$ 是 $\mathbb{Z}_p^5$ 的格）
 - 腔体 = 嵌套格链 $\Lambda_0 \supset \Lambda_1 \supset \cdots \supset \Lambda_d$，$p\Lambda_0 \subset \Lambda_d$
 - 维度 = $\text{rank}(GL(5)) - 1 = 4$
 
-**物理类比**：Bruhat-Tits building是p进版本的"晶格"——顶点对应p进格链（类比晶胞），腔体对应格链的嵌套结构（类比晶胞的邻接关系）。
+**物理类比**：Bruhat–Tits building 是 p 进版本的「晶格」——顶点对应 p 进格链（类比晶胞），腔体对应格链的嵌套结构（类比晶胞的邻接关系）。
 
 **严格性状态**：building 作为"p 进晶格"、顶点→核子位置、腔体→4-单纯形、→Regge 剖分的映射是 CQM 构造性假设，未见于文献。数学上确立的是：affine Bruhat-Tits building 是 p 进对称空间的离散类比；物理上确立的是：Bruhat-Tits 树作为 p 进 AdS/CFT 的体空间（Gubser 等 2017；Heydeman-Marcolli 等 2018）。
 
-### 4.2 p进标记的严格路径
+### 4.2 p 进标记的严格路径
 
 **从SU(5)到Bruhat-Tits building**：
 
-$$SU(5) \;\xrightarrow{\text{复化}}\; SL(5, \mathbb{C}) \;\xrightarrow{\text{p进化}}\; SL(5, \mathbb{Q}_p) \;\xrightarrow{\text{building}}\; \mathcal{B}(SL(5), \mathbb{Q}_p)$$
+$$SU(5) \;\xrightarrow{\text{复化}}\; SL(5, \mathbb{C}) \;\xrightarrow{\text{p 进化}}\; SL(5, \mathbb{Q}_p) \;\xrightarrow{\text{building}}\; \mathcal{B}(SL(5), \mathbb{Q}_p)$$
 
 1. **SU(5)复化**：$SU(5) \otimes \mathbb{C} = SL(5, \mathbb{C})$（标准李代数复化）
-2. **p进化**：将系数从 $\mathbb{C}$ 替换为 $\mathbb{Q}_p$，得到 $SL(5, \mathbb{Q}_p)$（CQM 构造性假设：从实数紧群到 p 进群的系数替换并非标准数学操作，而是 CQM 将算术层与几何层对应的机制）
+2. **p 进化**：将系数从 $\mathbb{C}$ 替换为 $\mathbb{Q}_p$，得到 $SL(5, \mathbb{Q}_p)$（CQM 构造性假设：从实数紧群到 p 进群的系数替换并非标准数学操作，而是 CQM 将算术层与几何层对应的机制）
 3. **building构造**：$SL(5, \mathbb{Q}_p)$ 作用于 $\mathcal{B}(SL(5), \mathbb{Q}_p)$
 
 **building的几何编码壳层结构**：
@@ -297,7 +297,7 @@ $$\Psi_{\text{自守}}^{(k)} \;\longleftrightarrow\; \text{壳层 } k \;\longlef
 5. 中心特征确定 nebentypus（条件5）
 6. Hecke本征条件确定 Hecke 特征值（条件6）
 
-条件3–6 即标准理论中确定尖点自守表示的"权、水平、nebentypus、Hecke 特征值"四元组。强多重性一保证 Hecke 特征值几乎处处一致 ⇒ 表示同构；newform 理论保证表示内 newform 至多差标量唯一。$\square$
+条件3–6 即标准理论中确定尖点自守表示的"权、水平、nebentypus、Hecke 特征值"四元组。强多重性一保证 Hecke 特征值几乎处处一致 → 表示同构；newform 理论保证表示内 newform 至多差标量唯一。$\square$
 
 **物理类比**：给定晶格类型+边界条件+轨道类型+守恒量+对称操作，布洛赫波唯一确定（至多差归一化常数）。
 
@@ -319,13 +319,13 @@ $$\begin{array}{ccc}
 
 ### 6.2 验证
 
-1. **顶点对应**：building顶点（p进格链类）→ Regge顶点（核子位置）。5个顶点一一对应 ✓
+1. **顶点对应**：building 顶点（p 进格链类）→ Regge 顶点（核子位置）。5个顶点一一对应 ✓
 2. **腔体对应**：building 4维腔体 → Regge 4-单纯形。几何结构一致 ✓
 3. **Hecke 秩对应**：building 球 Hecke 代数秩 4（4个交换 Hecke 算符）→ 嘉当矩阵 $A_4$ 的4个简单根（4个非零声子模式） ✓
 4. **对称群对应**：building的 $S_5$ 对称（Weyl群 $W(A_4)$）→ Regge剖分的 $S_5$ 对称 ✓
 5. **Dynkin图对应**：building的顶点-腔体关联图 → $A_4$ Dynkin图（链） ✓
 
-**结论**：嵌入映射 $\iota$ 自然——保持所有几何和代数结构。p进几何（Bruhat-Tits building）与实数几何（Regge剖分）通过 $\iota$ 统一。
+**结论**：嵌入映射 $\iota$ 自然——保持所有几何和代数结构。p 进几何（Bruhat–Tits building）与实数几何（Regge 剖分）通过 $\iota$ 统一。
 
 ## 7. 与实验的一致性
 

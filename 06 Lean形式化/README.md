@@ -82,7 +82,7 @@ Axioms
 │ │ ├── φ = (1+√5)/2, φ² = φ + 1
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
 │ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472
-│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q²/8 - …）。注意与标准 Mathieu 特征值 b₁ 的归一化相差一个 q（b₁ = λ_min + q），故本临界条件不写作 b₁(q) = 2q
+│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q - q²/8 + …）。λ_min 即标准 Mathieu 第一奇特征值 b₁（DLMF 记号），故本临界条件即 b₁(q_c) = 2q_c
 │ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块无导入者，不进入 λ_c/G_N 的取值链）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30
@@ -108,7 +108,7 @@ Axioms
  ├── G_N > 0（严格正性）
  ├── G_N 因子分解
  ├── 层级因子 exp(-2/☯) ≈ 10⁻³⁸
- ├── CODATA 偏差 < 10 ppm
+ ├── CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）
  └── α⁻¹_SU(5) = 16384π/375 ≈ 137.2583
  ├── 137 < α⁻¹_SU(5) < 138
  ├── 群论因子 = 2^14/(3×5^3) = 16384/375
@@ -140,7 +140,7 @@ Axioms
 |:---|:---|:---|:---:|
 | H3.1 | 前核子自组织 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |
 | H3.2 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |
-| C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | `axiom` (H3.3) |
+| C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | 以 Lean 公理 H3.3 承载（缺口编号 C，与 H3.3 为两套编号） |
 | — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
@@ -314,7 +314,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 - **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）
 - **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）
 - **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138
-- **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm
+- **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）
 
 ## 版本
 

@@ -163,7 +163,7 @@ $$\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$$
 
 **在 CQM 中，这不是“背景量子涨落”，而是因果结构本身未稳定的数学签名。**
 
-- $\hat{u}$ 无确定本征值 $\Rightarrow$ 耦合常数无确定值 $\Rightarrow$ Sprinkling 事件在耦合空间中无确定位置
+- $\hat{u}$ 无确定本征值 $\to$ 耦合常数无确定值 $\Rightarrow$ Sprinkling 事件在耦合空间中无确定位置
 - $\hat{p}_u$ 无确定本征值 $\Rightarrow$ 固有时流速无确定值 $\Rightarrow$ 因果链的“步速”未固定
 - 两者不可同时对易 $\Rightarrow$ **因果序本身处于叠加态**
 
@@ -430,7 +430,7 @@ $$\mathcal{E}_k^{\text{phys}} = \frac{c^2}{a^2} m_p^2 \mathfrak{c}_k \xrightarro
 **路径 B：精细结构常数**
 $$\alpha^{-1} \approx 137.2583 \text{（待重新推导）}$$
 
-> **此表达式是 GL(5) 固定层级整体的反映**。$\alpha$来自 SU(5) 重组实现 ⇒ $A_4$ → 3个本征空间（$V_5,V_4,V_1$ 分别对应 $U(1)/SU(2)/SU(3)$）中 $U(1)$ 电磁扇区的耦合常数。
+> **此表达式是 GL(5) 固定层级整体的反映**。$\alpha$ 来自 SU(5) 重组实现 ⇒ $A_4$ → 3 个本征空间（$V_5,V_4,V_1$ 分别对应 $U(1)/SU(2)/SU(3)$）中 $U(1)$ 电磁扇区的耦合常数。
 
 **路径 C：混合矩阵**
 $$\Sigma_{\text{mix}} = V \Lambda V^\dagger \xrightarrow{\text{退相干后本征矢量锁定}} \text{CKM/PMNS 矩阵}$$
@@ -513,7 +513,7 @@ $$\mathfrak{c}_1 \xrightarrow{G_N \text{ 公式}} G_N = \frac{\hbar c}{m_p^2} \c
 | 退相干导致交换几何涌现 | | §10.1-10.2 |
 | 传输方程从随机 SDE 退化为确定性方程 | | §10.3 |
 | 耦级向外衍生为标准模型参数 | | §13.2 |
-| $G_N$ 的常数性 | 构造后验校验 | §15.4 |
+| $G_N$ 的常数性 | 构造后验数字校验，待独立复现 | §15.4 |
 | 层级因果断裂 | | §14 |
 | 外部不存在耦合常数涨落 | | 有限本体存在条件 |
 | 夸克/胶子不是 L1 内部实在 | | 非交换几何中无经典粒子概念 |

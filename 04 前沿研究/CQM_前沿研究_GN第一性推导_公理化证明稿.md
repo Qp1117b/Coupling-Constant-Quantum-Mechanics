@@ -375,7 +375,7 @@ $\blacksquare$
 
 $$\hat{L}_q = -\frac{d^2}{dz^2} + 2q\cos 2z$$
 
-考虑满足 $2\pi$-周期奇函数（等价于 $\pi$-反周期）边界条件的函数空间，即由 $\{\sin((2k+1)z)\}_{k=0}^\infty$ 张成的空间。在此空间上，$\hat{L}_q$ 是自伴算符，其本征值为离散的，记为 $\lambda_k(q)$，$k = 0, 1, 2, \ldots$，按从小到大排列。
+考虑满足奇函数且 $\pi$-反周期边界条件的函数空间，即由 $\{\sin((2k+1)z)\}_{k=0}^\infty$ 张成的空间。在此空间上，$\hat{L}_q$ 是自伴算符，其本征值为离散的，记为 $\lambda_k(q)$，$k = 0, 1, 2, \ldots$，按从小到大排列。
 
 最小本征值 $\lambda_0(q) = b_1(q)$（DLMF 记号中的第一奇 Mathieu 特征值）。
 
@@ -391,17 +391,17 @@ $$b_1(q) = 1 - q - \frac{q^2}{8} + \frac{q^3}{64} - \frac{q^4}{1536} + \cdots$$
 
 **引理 3.2（连分数方程）**。$b_1(q)$ 满足以下连分数方程：
 
-$$b_1(q) = 1 - 2q - \frac{q^2}{b_3(q) - 2 - \frac{q^2}{b_5(q) - 2 - \cdots}}$$
+$$b_1(q) - 1 + q = \cfrac{q^2}{b_1(q) - 9 - \cfrac{q^2}{b_1(q) - 25 - \cfrac{q^2}{b_1(q) - 49 - \cdots}}}$$
 
-其中 $b_{2k+1}(q)$ 为第 $k+1$ 个奇 Mathieu 特征值。
+分母各层含 $b_1(q)$ 本身（由递推关系自洽给出）。
 
-**证明**。这是 Mathieu 方程的标准连分数表示。将 Mathieu 方程的解展开为 Fourier 级数 $y = \sum_{k=-\infty}^\infty c_k e^{i(2k+1)z}$，代入方程得到递推关系，其连分数形式给出特征值条件。见 McLachlan (1947) 或 DLMF §28.6。$\blacksquare$
+**证明**。将方程的解展开为 Fourier 级数 $y = \sum_{k=0}^\infty c_k \sin((2k+1)z)$，代入得递推关系 $(b_1 - 1 + q)c_0 = q c_1$ 与 $(b_1 - (2j+1)^2)c_j = q(c_{j-1} + c_{j+1})$（$j \ge 1$）。逐层消去比值 $c_{j+1}/c_j$ 即得连分数方程。在临界根 $b_1(q_c) = 2q_c$ 处等价于 $1 - 3q_c = q_c^2/(9 - 2q_c - q_c^2/(25 - 2q_c - \cdots))$。见 McLachlan (1947) 或 DLMF §28.6；Lean 形式化见 `06 Lean形式化/SpectralGeometry/MathieuContinuedFraction.lean`。$\blacksquare$
 
 **推论 3.1**。令 $\lambda = b_1(q)$，则 $\lambda$ 满足：
 
-$$\lambda - 1 + 2q = -\frac{q^2}{b_3(q) - 2 - \frac{q^2}{b_5(q) - 2 - \cdots}}$$
+$$\lambda - 1 + q = \cfrac{q^2}{\lambda - 9 - \cfrac{q^2}{\lambda - 25 - \cfrac{q^2}{\lambda - 49 - \cdots}}}$$
 
-对于小 $q$，高阶特征值 $b_{2k+1}(q) \approx (2k+1)^2$，故分母 $b_{2k+1}(q) - 2 \approx (2k+1)^2 - 2$。
+对于小 $q$，$\lambda \approx 1 - q$，故一阶给出 $\lambda - 1 + q \approx q^2/(\lambda - 9) \approx -q^2/8$，与引理 3.1 一致。
 
 ### 3.3 临界条件与存在唯一性
 
@@ -427,7 +427,7 @@ $$b_1'(q) = \langle \psi_1 | 2\cos 2z | \psi_1 \rangle$$
 
 **步骤 3（唯一性）**。$f$ 在 $(0, \infty)$ 上严格递减，至多有一个根。结合步骤 2，方程在 $(0, \infty)$ 内有唯一根 $q_c$。
 
-**步骤 4（根的定位）**。根可缩小至 $(0, 1/2)$：由微扰展开估计 $b_1(0.5) \approx 1 - 0.5 - 0.5^2/8 = 0.46875 < 1 = 2 \times 0.5$，即 $f(0.5) < 0$；结合 $f(0) = 1 > 0$ 与严格单调性得 $q_c \in (0, 0.5) \subset (0, 1)$。（此处微扰级数取首项为启发式定位；$q_c \in (0, 1/2)$ 内存在唯一性的严格证明由连分数方程（引理 3.2）的不动点构造给出，见 `06 Lean形式化/SpectralGeometry/MathieuContinuedFraction.lean`。）$\blacksquare$
+**步骤 4（根的定位）**。根可缩小至 $(0, 1/2)$：由微扰展开估计 $b_1(0.5) \approx 1 - 0.5 - 0.5^2/8 = 0.46875 < 1 = 2 \times 0.5$，即 $f(0.5) < 0$；结合 $f(0) = 1 > 0$ 与严格单调性得 $q_c \in (0, 0.5) \subset (0, 1)$。（此处微扰级数取首项为启发式定位；$q_c \in (0, 1/2)$ 内存在唯一性的严格证明由连分数方程（引理 3.2）在根处的等价形式 $1 - 3q = q^2/(9 - 2q - q^2/(25 - 2q - \cdots))$ 的不动点构造给出，见 `06 Lean形式化/SpectralGeometry/MathieuContinuedFraction.lean`。）$\blacksquare$
 
 **定义 3.3**。临界参数记为 $q_c$，且 $\lambda_c = 4q_c$。
 
@@ -465,7 +465,7 @@ $$\hat{H} = \hat{D}^2 + \frac{1}{4}$$
 
 ---
 
-## §5 Sierra-CQM 定理
+## §5 Sierra-CQM 耦谱定理
 
 **定理 5.1（Sierra-CQM）**。设 Sprinkling 区间长度为 $L_n = 2\pi n / \gamma_n$，边界相位为 $\vartheta_n$（有界，$|\vartheta_n| < \pi$）。则谱算符 $\hat{H} = \hat{D}^2 + 1/4$ 在区间 $[0, L_n]$ 上的第 $n$ 个共振位置（耦级）满足：
 
@@ -652,7 +652,7 @@ $$\kappa = \frac{31}{30} + \frac{☯}{30}$$
 
 $$\mathfrak{c}_1 = \frac{1}{4} + \gamma_1^2$$
 
-**与定理 5.1 的关系**。Sierra-CQM 定理（定理 5.1）给出 $\mathfrak{c}_n = 1/4 + \gamma_n^2 + O(\gamma_n^2/n)$（相对误差 $O(1/n)$）。对于 $n=1$，相对误差为 $O(1)$，即误差项与主项同量级。因此，精确等同是**超出定理范围**的构造性假设。
+**与定理 5.1 的关系**。Sierra-CQM 耦谱定理（定理 5.1）给出 $\mathfrak{c}_n = 1/4 + \gamma_n^2 + O(\gamma_n^2/n)$（相对误差 $O(1/n)$）。对于 $n=1$，相对误差为 $O(1)$，即误差项与主项同量级。因此，精确等同是**超出定理范围**的构造性假设。
 
 **开放问题 9.1**。n=1 时误差项为何恰好为零？是否存在某种机制（如基态共振的特殊性、自洽条件等）使得第一耦级精确等于 $1/4 + \gamma_1^2$？
 
@@ -750,7 +750,7 @@ CQM 公理层（接受 A1-A6）
 
 | 命题 | 定理编号 | 额外构造性输入 |
 |:---|:---:|:---|
-| Sierra-CQM 定理（渐近） | 5.1 | Lₙ 选择、m=n 选择（代数核心已 Lean 形式化：`06 Lean形式化/GN/SierraCQM.lean`） |
+| Sierra-CQM 耦谱定理（渐近） | 5.1 | Lₙ 选择、m=n 选择（代数核心已 Lean 形式化：`06 Lean形式化/GN/SierraCQM.lean`） |
 | Adele Jacobian 因子 2 | 6.1 | p 进谱行列式存在性 |
 | SU(5) 唯一曲率源 | 推论 7.1 | 曲率 = Regge 曲率假设 |
 

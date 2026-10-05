@@ -129,9 +129,9 @@ $$
 }
 $$
 
-**尖点性判据**（Kim–Shahidi）：
+**尖点性判据**（Kim 2003，见附录 B）：
 
-$$\mathrm{Sym}^4(\pi) \text{ 尖性} \iff \pi \text{ 非二面体/四面体/八面体型}$$
+$$\mathrm{Sym}^4(\pi) \text{ 尖点性} \iff \pi \text{ 非二面体/四面体/八面体型}$$
 
 ### 4.3 自守表示的结构
 
@@ -213,7 +213,7 @@ $☯$ 来自 $\mathrm{GL}(n)$ 对应的平凡自守形式（Eisenstein 级数）
 
 $☯$ 属于**谱面孔**。“质数是源”（$\zeta$ / 算术侧）和“$☯$ 是全局谱权重”（$\xi$ / 谱侧）不是同一侧的陈述——它们分别对应这个最简单对象的两张脸。
 
-**“相变量子”命名有据**：$☯$ 从 $\xi$ 提取，$\xi$ 提纯非平凡零点 $\{\gamma_n\}$（消去平凡零点），而 $\gamma_n$ 是 CQM 共振频率，与相变直接关联。$☯$ 取自与相变关联的非平凡零点谱——命名不是隐喻，而是数学来源的直接体现。
+**“相变量子”命名有据**：$☯$ 从 $\xi$ 提取，$\xi$ 提纯非平凡零点 $\{\gamma_n\}$（消去平凡零点），而 $\mathfrak{c}_n=\gamma_n^2+1/4$ 是 CQM 共振位置（耦级），与相变直接关联。$☯$ 取自与相变关联的非平凡零点谱——命名不是隐喻，而是数学来源的直接体现。
 
 **正确的分层**：
 
@@ -250,7 +250,7 @@ $$G_N = \frac{L_{\text{质子}}^3}{M_{\text{质子}} \cdot T_{\text{质子}}^2}$
 
 当前文档同时呈现两条路径而未声明二者互斥，这是需要保持的边界：**$G_N$ 公式与“质量从自守关联涌现”不能互为前提。**
 
-> **待补**：$L$ 与 $T$ 的**独立**来源（不得由 $m_p$ 或 $G_N$ 反解）。若补 $T=L/c$，则 $L=G_N m_p/c^2=1.242\times10^{-54}$ m（质子引力长度量级），与康普顿波长 $2.103\times10^{-16}$ m 差 $1.69\times10^{38}$ 倍——该式目前是量纲关系的**恒等变形**，不是质量推导。在给出独立来源之前，本节是量纲关系的陈述，**不构成质量涌现的推导**。
+> **待补**：$L$ 与 $T$ 的**独立**来源（不得由 $m_p$ 或 $G_N$ 反解）。若补 $T=L/c$，则 $L=G_N m_p/c^2=1.242\times10^{-54}$ m（质子引力长度量级），与质子约化康普顿波长 $2.103\times10^{-16}$ m 差 $1.69\times10^{38}$ 倍——该式目前是量纲关系的**恒等变形**，不是质量推导。在给出独立来源之前，本节是量纲关系的陈述，**不构成质量涌现的推导**。
 
 ---
 
@@ -394,7 +394,7 @@ Archimedean 因子：
 $$L_\infty(s, \pi_{p,\infty}) = \prod_{j=1}^{5} \Gamma_\mathbb{R}(s + \mu_j)$$
 
 非 Archimedean 因子：
-$$L_p(s, \pi_{p,v}) = \prod_{j=1}^{5} \frac{1}{1 - \alpha_{j,p} p^{-s}}$$
+$$L_p(s, \pi_v) = \prod_{j=1}^{5} \frac{1}{1 - \alpha_{j,p} p^{-s}}$$
 
 ### 10.3 第三步：验证函数方程
 
@@ -420,7 +420,7 @@ $$G_N^{\text{CQM}} \stackrel{?}{=} 6.6742810045 \times 10^{-11}\ \text{SI}$$
 | 约束 | 内容 |
 |:---|:---|
 | **函数方程** | $L(s,\pi_p) = \varepsilon(s,\pi_p) L(1-s,\tilde{\pi}_p)$ |
-| **尖点性** | $\mathrm{Sym}^4(\pi)$ 尖性 $\iff$ $\pi$ 非二面体/四面体/八面体型 |
+| **尖点性** | $\mathrm{Sym}^4(\pi)$ 尖点性 $\iff$ $\pi$ 非二面体/四面体/八面体型 |
 | **谱几何** | $A_4$ 本征值 $\{9^{(1)}, 4^{(4)}, 1^{(5)}\}$ 决定 Archimedean 参数 |
 | **数值检验** | $G_N$ 与 CODATA 偏差约 $-3\ \text{ppm}$（构造后验数字校验，待独立复现） |
 | **统一性** | 所有粒子来自同一个 $\pi_p$ 的函子性分化 |
@@ -536,7 +536,7 @@ $$
 | §8.5 自守诱导 | Arthur & Clozel 1989（循环扩张情形）；Henniart 2000, *Invent. Math.* 139, 439–455（局部） | 循环扩张的自守诱导 $\pi\mapsto AI(\pi)$，L 函数保持；可解扩张亦成立 | 已证（循环/可解情形） |
 | §8.2 删除 Res_H | Cogdell 2003, “Dual groups and Langlands functoriality”, in *An Introduction to the Langlands Program*（Bernstein–Gelbart 编），251–268；Borel 1979, *Proc. Sympos. Pure Math.* 33, 27–61 | 函子性 = 经 L 群同态 $^{L}H \to {}^{L}G$ 的表示转移；不存在一般的“限制”函子 | 支持删除判断 |
 | §3.1 $A_4$ 谱 $\{9^{(1)},4^{(4)},1^{(5)}\}$ | 本项目直接计算验证（迹 30、谱和 30）；框架文献：Horak & Jost 2013, *Adv. Math.* 244, 303–336；Duval & Reiner 2002, *Trans. AMS* 354, 4313–4344 | 单纯形组合/高阶 Hodge 拉普拉斯谱的一般框架；整数谱性质 | 谱事实=本项目验证；文献提供框架 |
-| §3.1 S₅ 分解 $1\oplus4\oplus5$ | Fulton & Harris 1991, GTM 129；James & Kerber 1981, LNM 682 | S₅ 作用在 3-子集上的 10 维置换表示分解为 $1\oplus4\oplus5$ | 标准（严格） |
+| §3.1 S₅ 分解 $1\oplus4\oplus5$ | Fulton & Harris 1991, GTM 129；James & Kerber 1981, LNM 682 | S₅ 作用在 2-子集上的 10 维置换表示分解为 $1\oplus4\oplus5$ | 标准（严格） |
 | §5 $\lambda_c$（Mathieu） | McLachlan 1947, *Theory and Application of Mathieu Functions*, Oxford；NIST DLMF 第 28 章（§28.2） | Mathieu 方程标准形式、特征值 $b_1(q)$、$se_1$、连分数理论 | 标准理论；$\lambda_c$ 数值为本项目计算（$q_c=0.3290057278$） |
 | §6 $☯$ | Titchmarsh 1986（2 版，Heath-Brown 修订） | $\xi$ 函数、Hadamard 乘积、$\xi'/\xi$ 理论；恒等式 $\sum_{\gamma>0}1/(\gamma^2+1/4)=\frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 可由此推出；本项目验证闭式 $1+\gamma_E/2-\tfrac12\ln\pi-\ln2=0.02309570897$ | 标准理论；数值已验证 |
 | §10.5 CODATA | Mohr, Newell, Taylor, Tiesinga 2025, *Rev. Mod. Phys.* 97, 025002（CODATA 2022） | $G=6.67430(15)\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$（2022 与 2018 相同）；本项目值偏差 $-2.85$ ppm ≈ $-3$ ppm（构造后验数字校验，待独立复现） | 实验参考值 |
@@ -548,7 +548,7 @@ $$
 2. **§8.3 恒等式对齐**：标准 Rankin–Selberg 恒等式为 $L(s,\pi\times\tilde{\pi})=\zeta(s)L(s,\mathrm{Sym}^2\pi)$，不含 $\zeta(s+1)$ 分母。文档写法为框架内表述，严格化时需给出该分母的机制说明或改按标准恒等式。
 3. **§8.4 术语提示**：文献中“内窥转移”（endoscopy）通常指 Langlands–Shelstad 内窥理论，而 $\mathrm{BC}_{E/F}$（基变换）对应 Langlands 1980 / Arthur–Clozel 1989；术语可考虑统一为“基变换”以避免歧义。
 4. **§3.1 谱事实已直接验证**：4-单纯形边-面关联矩阵 $E\in\{0,1\}^{10\times10}$（$E_{fe}=1$ 当边 $e\subset$ 面 $f$），$E^TE$ 本征值恰为 $\{9,4,4,4,4,1,1,1,1,1\}$，即 $\{9^{(1)},4^{(4)},1^{(5)}\}$，迹 30、谱和 30。
-5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 $\xi$ 的 Hadamard 乘积推出，非拟合值。
+5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 $\xi$ 定义与特殊函数值（$\Gamma(1/2)$、$\zeta(0)$、$\zeta'(0)$）推出，非拟合值。
 
 ---
 

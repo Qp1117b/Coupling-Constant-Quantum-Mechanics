@@ -35,7 +35,7 @@
 | 库 | 编译 | 主要问题 |
 |:---|:---:|:---|
 | CausalSet / CouplingSpace / CartanAlgebra / Decoherence / PhysicalConstants / PrimeGeometry / Methodology / GN | ✅ 通过 | GN 零 `sorry`、零新增 `axiom` |
-| SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（`HasDerivAt.mul` 单子不匹配、类型不匹配）；`GLnTrivialSpectralQuantum.lean` 坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`（4.34.0 已移除） |
+| SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（`HasDerivAt.mul` 单子不匹配、类型不匹配）；`GLnTrivialSpectralQuantum.lean` 坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`（该路径在现行工具链 v4.29.1 下已不存在） |
 | Superconductivity | ❌ 部分 | `FormalizationRigor.lean` 坏导入 `Mathlib.Topology.Definitions.Filter`；`ElementCartan`、`BridgeTheorems`、`DeepConstruction`、`DeepResearch` |
 | FGChain | ❌ 多数 | `QuantumOscillation.lean:107` 正性未证出；`FiberBundle`/`CurvatureOperator`/`SyncOperator`/`Hierarchy` 等 10/12 不通过 |
 
@@ -56,7 +56,7 @@
 ┌──────────────────────────────────────────────────────────────────────┐
 │ L7 Agent 编排层   物理/数学科研 Agent + 审校 Agent + 形式化 Agent        │
 ├──────────────────────────────────────────────────────────────────────┤
-│ L6 形式化验证层   Lean 4.34.0 · mathlib · physlib · aesop · LeanCopilot │
+│ L6 形式化验证层   Lean v4.29.1 · mathlib · physlib · aesop · LeanCopilot │
 ├──────────────────────────────────────────────────────────────────────┤
 │ L5 数学/符号层    SymPy · Jacobian · Mathematica/Wolfram · 数值核查      │
 ├──────────────────────────────────────────────────────────────────────┤
@@ -83,7 +83,7 @@
 |:---|:---|:---|
 | 单一权威源 | 维持 `00_修订基准与准则.md` + `README.md` 数值表 | 冲突裁定顺序不变 |
 | 术语表 | `一体化研究/附录/术语表.md`（从 §2.1–2.4 生成） | 供自动化比对，不新增写法 |
-| 缺口台账 | `一体化研究/附录/缺口台账.md` | 汇总 C/G2–G22/N1–N4/G13/G20… 与 Lean 状态，**与 Lean 状态联动** |
+| 缺口台账 | `一体化研究/附录/缺口台账.md` | 汇总 C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 与 Lean 状态，**与 Lean 状态联动** |
 | 变更日志 | 维持既有管道格式 | 每条可 `grep` 复核 |
 | 一致性检查 | 人工复核（按 `AGENTS.md` 第三、四节） | 检查：术语变体残留、`$…$` 成对、缺口标注未被“解决”化、失效相对链接、`⇒` 误用 |
 
@@ -177,7 +177,7 @@
 
 | 优先级 | 目标 | 具体动作 |
 |:---:|:---|:---|
-| **P0** | 恢复可编译基线 | 修复坏导入：`GLnTrivialSpectralQuantum.lean`、`FormalizationRigor.lean`（重定位到 4.34.0 现行路径）；修 `RiemannXi.lean` 的 `HasDerivAt.mul` 与类型不匹配 |
+| **P0** | 恢复可编译基线 | 修复坏导入：`GLnTrivialSpectralQuantum.lean`、`FormalizationRigor.lean`（该导入路径在 v4.29.1 下已不存在，需重定位到现行 mathlib 路径）；修 `RiemannXi.lean` 的 `HasDerivAt.mul` 与类型不匹配 |
 | **P1** | SpectralGeometry 全绿 | `RiemannXi.lean` 修复（承 `A2.2` 与 GN 定理 1.1 的 Hadamard 侧）；`Mathieu.lean` 对齐现行 API |
 | **P2** | FGChain 收敛 | 先解 `QuantumOscillation.lean:107` 正性证明（这是 FK 链源头）；再逐模块修复 FiberBundle→CurvatureOperator→SyncOperator→Hierarchy |
 | **P3** | Superconductivity 收敛 | `ElementCartan`、`BridgeTheorems`、`DeepConstruction`、`DeepResearch` |
@@ -298,11 +298,11 @@ grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0
 | **workbuddy** | `.workbuddy/mcp.json` | workbuddy 目录 | 审校流程引用；可软链或复制 `mcp.json` |
 | **zcode / 其他** | `mcp.json` | 项目根目录 | 通用 `mcpServers` 形态，支持 MCP 协议的工具均可引用 |
 
-**token 填入**：各 `env` 中的 `<token>` / `<id>` 占位符须替换为实际 API 密钥后生效。未填 token 的 server（如 `arxiv`、`sympy`、`jacobian`、`lean`）无需认证即可使用。
+**token 填入**：各 `env` 中的 `<token>` / `<id>` 占位符须替换为实际 API 密钥后生效。未填 token 的 server（如 `arxiv`、`sympy`、`lean`）无需认证即可使用。
 
 **按需启用**：
 - 文献核对：`arxiv` + `paper-search` + `nasa-ads`（+ `zotero` 若用 Zotero 管理 `一体化研究/文献/`）
-- 数值复核：`sympy` + `jacobian` + `wolfram`
+- 数值复核：`sympy` + `wolfram`
 - 形式化：`lean`（Lean LSP 诊断、`#check`、goal 状态）
 - DFT/MD：需本地 VASP/QE/LAMMPS + 许可证，按需增补（见 §3.4）
 
@@ -341,7 +341,7 @@ jobs:
 | 阶段 | 目标 | 产出 |
 |:---:|:---|:---|
 | **S0**（1–2 天） | 基线可复现 | 依赖 `rev` 锁定；CI 跑通（允许当前红色，先可视化） |
-| **S1**（1 周） | P0 全绿 | 修复 3 处坏导入 + `RiemannXi` 基础错误；`lake build` 剩余失败数下降 |
+| **S1**（1 周） | P0 全绿 | 修复 2 处坏导入 + `RiemannXi` 基础错误；`lake build` 剩余失败数下降 |
 | **S2**（2–3 周） | 形式化收敛 | SpectralGeometry 全绿 → FGChain 源头正性 → Superconductivity 模块 |
 | **S3**（持续） | 缺口收敛 | 逐个 axiom→theorem；缺口台账状态实时更新 |
 | **S4**（并行） | 计算–实验闭环 | DFT/MD 接入，元素 FG 数据比对，超导 T_c 校验 |
@@ -406,4 +406,4 @@ lake exe cache get              # 预取 mathlib 缓存
 
 ---
 
-*生成时间：2026-10-05 · 适用版本：`CQMFormal v0.7.0`（Lean 4.34.0）*
+*生成时间：2026-10-05 · 适用版本：`CQMFormal v0.7.0`（Lean v4.29.1）*

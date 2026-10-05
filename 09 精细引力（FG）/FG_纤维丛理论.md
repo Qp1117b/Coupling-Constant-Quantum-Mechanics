@@ -6,15 +6,15 @@
 
 精细引力 FG 是**前时空**与经典引力 GR 之间的关键中介：
 
-| 引力 | 存在论地位 | 数学结构 |
+| 层级 | 存在论地位 | 数学结构 |
 |------|-----------|---------|
 | **前时空** | 物质处于前时空的状态 | 谱经GL(5)紧化投影与黎曼零点 $\gamma_n$ 有关 |
 | **GR** | 广度前提（平滑展开） | 伪黎曼流形 |
-| **FG** | 深度前提（层级激发） | FG底空间上的主丛 $P(M,G)$ |
+| **FG** | 深度前提（层级激发） | FG 底空间上的主丛 $P(M,G)$ |
 
 $$\boxed{\text{FG} \neq \text{GR}}$$
 
-- GR是时空曲率，受 $G_N$ 限制，量级 $\sim 10^{-43}$
+- GR是时空曲率，受 $G_N$ 限制，量级 $\sim 10^{-43}$（$G_N$ 理论值与偏差属构造后验数字校验，待独立复现，见 `03 引力与退相干/CQM_引力_GN可能公式.md`）
 - FG是一个联络生成两种曲率——底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 限制**，量级 $O(1)$
 - FG是GR基态的非平庸激发态，直接由底空间Regge角亏给出
 
@@ -118,7 +118,7 @@ CQM以动力学（重组）框架为主视角的原因：
 实例（重组生成群 $R$，VEV 在 $V$ 中选方向）：
 - **电弱**：重组 $(SU(2)\times U(1)) \xRightarrow{\mathbb{Z}_2} U(1)\times SO(3)$，VEV $\langle\phi\rangle\in V=\mathbb{C}^2$ 选方向，重组实现 $\Rightarrow U(1)_{\text{em}}$，序参量 $\phi(x)\in (SU(2)\times U(1))/U(1)_{em} \sim S^3$
 - **超导**：重组 $U(1) \xRightarrow{\mathbb{Z}_2} U(1)$，库珀对凝聚相位 $\phi(x) \in U(1)$
-- **铁磁体**：重组 $SO(3) \xRightarrow{\{e\}} SO(3)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，重组实现 $SO(3)\Rightarrow SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
+- **铁磁体**：重组 $SO(3) \xRightarrow{SO(2)} SO(2)$，VEV $\langle\psi\rangle\in V=\mathbb{R}^3$ 选方向，重组实现 $SO(3)\Rightarrow SO(2)$，磁化方向 $\phi(x)\in SO(3)/SO(2) \sim S^2$
 
 在重组框架中，“物质场”就是背景自身通过重组折叠后涌现的截面。
 
@@ -318,10 +318,10 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **本征群**：$R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
 - **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$）
-- **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac方程=共形自举方程的CQM具体化）
+- **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac 条件=共形自举方程的 CQM 具体化）
 - **耦合常数**：$g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
-### 4.0.1 SU(5)重组实现⇒$A_4$→4紧致本征群→4耦合常数
+### 4.0.1 SU(5) 重组实现 ⇒ $A_4$ → 4 紧致本征群 → 4 耦合常数
 
 SU(5)李代数$\mathfrak{su}(5)$的根系为$A_4$型，重组实现产生两个独立效应：
 
@@ -466,13 +466,13 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
 
-**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的严格定量映射，消除“Dirac方程=共形自举方程”仅一行陈述的缺口。
+**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的严格定量映射，消除“Dirac 条件=共形自举方程”仅一行陈述的缺口。
 
 CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`。
 
 ### 9.1 截面 = primary operator
 
-**纤维丛截面**：截面 $\psi \in \Gamma(P(M,G))$ 是底空间 $M$ 上的物理场，满足联络的协变作用 $D\psi = 0$。
+**纤维丛截面**：物理场是伴丛的截面 $\psi \in \Gamma(E)$（$E = P\times_\rho V$；主丛 $P(M,G)$ 本身一般无整体截面），满足联络的协变作用 $D\psi = 0$。
 
 **CFT primary operator**：primary operator $\phi(z)$ 是复平面上的共形场，满足Virasoro最高权条件 $\hat{L}_{n>0}\phi = 0$。
 
@@ -650,7 +650,7 @@ $$\boxed{\hat{\mathcal{S}}_k\,\Psi_k = n_k\,\Psi_k \;\longleftrightarrow\; \hat{
 - 紧化U(1)边界条件 $\psi(u + L_u) = \psi(u)$ → Kac-Moody代数的可积表示条件（水平 $k$ 为正整数）
 - 等价关系锁定声子占据数 $N_k$ → fusion rules锁定允许的descendant level $n \geq l + 1$
 
-### 9.6 Dirac方程 = 共形自举方程：严格证明
+### 9.6 Dirac条件 = 共形自举方程：严格证明
 
 **纤维丛Dirac方程**：
 
@@ -717,7 +717,7 @@ $$\underbrace{\hat{\mathcal{S}}_0}_{\text{前时空层：GL(5)\to SU(5)}} \;\xRi
 | 和乐 $W(\gamma)$ | monodromy $e^{2\pi ih}$ | $h = \delta_v\hat{T}/(2\pi)$ | §9.4 |
 | 同步算符 $\hat{\mathcal{S}}$ | mode算符 $\hat{L}_0 + \hat{C}_2$ | 本征值=共形维度 | §9.5 |
 | 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | 重组→离散谱 | §9.5 |
-| Dirac方程 $D\psi = 0$ | 共形自举方程（OPE结合律） | 零模→primary→结合律 | §9.6 |
+| Dirac条件 $D\psi = 0$ | 共形自举方程（OPE 结合律） | 零模→primary→结合律 | §9.6 |
 | 紧化算符 | CFT mode算符 | 三层统一 | §9.7 |
 | 和乐平庸化 | 闭壳层稳定 | $\delta_v = 0 \Leftrightarrow$ 稀有气体 | §9.4 |
 
@@ -786,6 +786,6 @@ $$\boxed{\text{局域算符插入} + \text{整体同步规则（同一代数结�
 
 ### 9.10 相关文档
 
-- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5)重组实现⇒$A_4$→4耦合常数→$\alpha^{-1}$）
+- `FG_核心理论.md`：FG物理机制层（同步算符比丛作用量更根本的论证、SU(5) 重组实现 ⇒ $A_4$ → 4 耦合常数 → $\alpha^{-1}$）
 - `01 核心理论/CQM_核心_共形场论与OPE.md`：CFT一般理论（OPE、共形自举、Kac-Moody代数、共形块、指数映射与合流极限）
 - `01 核心理论/CQM_核心_因果网络同步理论.md`：因果网络同步理论（前时空层紧化算符定义、黎曼结构→CNST七条提取、两种引力同步诠释）
