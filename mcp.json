@@ -1,5 +1,10 @@
 {
   "mcpServers": {
+    "cqm-knowledge": {
+      "command": "uv",
+      "args": ["run", "--no-project", "--with", "mcp>=2,<3", "python", "d:/WorkSpace/物理/CQMFormal/mcp/cqm_knowledge_server.py"],
+      "env": {}
+    },
     "arxiv": {
       "command": "uvx",
       "args": ["arxiv-mcp-server"],

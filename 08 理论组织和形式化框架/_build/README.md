@@ -21,6 +21,7 @@ python build_dynamics.py   # 动态机制：重写规则 / 状态模型 / 仿真
 python build_causal.py     # 经验检验：因果模型 / 贝叶斯网络 / 实验设计
 python build_bridge.py     # 桥接与翻译：符号表 / 等价映射 / 概念映射
 python build_site.py       # 输出可视化展示：网站 / 交互超图 / 蓝图拷贝
+python build_reader.py     # 输出可视化展示：离线阅读站（读 README + 01–07 + 附录 文本，不进入源 CSV 闭环）
 python build_meta.py       # 元数据：manifest / 版本 / 变更日志 / 验证状态
 ```
 
