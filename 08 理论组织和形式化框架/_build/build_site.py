@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-出口层 · 输出可视化展示
+维度7（核心） · 展示可视化
 生成自包含（离线可用、无 CDN 依赖）的 HTML 网站与交互式超图，并汇总数据快照。
 产出：
-  10_输出可视化展示/网站/index.html
-  10_输出可视化展示/网站/data.json
-  10_输出可视化展示/交互式可视化/超图交互.html
+  10_展示可视化/网站/index.html
+  10_展示可视化/网站/data.json
+  10_展示可视化/交互式可视化/超图交互.html
   03_超图与理论图/超图可视化.html
-  10_输出可视化展示/蓝图/index.html
+  10_展示可视化/蓝图/index.html
 运行：python build_site.py
 """
 import csv
@@ -21,7 +21,7 @@ S03 = os.path.join(ROOT, "03_超图与理论图")
 S04 = os.path.join(ROOT, "04_Lean对接")
 S06 = os.path.join(ROOT, "06_动态机制")
 S07 = os.path.join(ROOT, "07_经验检验")
-S10 = os.path.join(ROOT, "10_输出可视化展示")
+S10 = os.path.join(ROOT, "10_展示可视化")
 
 
 def rd(p, enc="utf-8-sig"):
@@ -83,7 +83,7 @@ def write_blueprint_copy():
 若改用 leanblueprint 官方工具链，目录应含：
 
 ```text
-10_输出可视化展示/蓝图/
+10_展示可视化/蓝图/
 ├── content.tex      # 蓝图正文，节点用 \\lean{{...}} / \\uses{{...}} 标注
 ├── web.tex          # \\documentclass{{report}} + \\usepackage{{blueprint}} ...
 ├── plastex.cfg
@@ -143,7 +143,7 @@ a{color:var(--acc)}
 <body>
 <header>
   <h1>CQM 理论组织与形式化框架</h1>
-  <div class="sub">将 CQM 自然语言理论重构为可计算、可推理、可验证的结构化形式系统 · 外部理论文本不动 · 六维度</div>
+  <div class="sub">将 CQM 自然语言理论重构为可计算、可推理、可验证的结构化形式系统 · 外部理论文本不动 · 七维度</div>
 </header>
 <nav>
   <button class="on" data-t="ov">总览</button>
@@ -158,7 +158,7 @@ a{color:var(--acc)}
   <section id="ov" class="on">
     <h2>系统规模</h2>
     <div class="cards" id="ovcards"></div>
-    <h2>六维度</h2>
+    <h2>七维度</h2>
     <table><thead><tr><th>#</th><th>维度</th><th>核心问题</th><th>目录</th><th>产物</th></tr></thead><tbody id="ovdim"></tbody></table>
     <h2>数据关系</h2>
     <p class="hint">概念以 <code>⇒</code>（重组实现，多因一果）构成有向超边；以 <code>→</code>（演化/映射/等价/依赖/层级含于）构成普通有向边。交互式超图见 <a href="../交互式可视化/超图交互.html">交互式可视化/超图交互.html</a>。</p>
@@ -221,7 +221,7 @@ const DIMS=[['1','结构化','理论由什么组成？','00–03','概念/命题
 ['4','动态机制','理论如何演化？','06','重写系统、状态模型、派生仿真'],
 ['5','经验检验','理论如何被检验？','07','因果模型、贝叶斯网络、实验设计'],
 ['6','元理论反思','本体论/认识论根基？','08','范畴论模型、类型论基础、哲学假设'],
-['—','输出可视化展示','人如何看懂？','10','HTML 网站、交互超图、讲解']];
+['—','展示可视化','人如何看懂？','10','HTML 网站、交互超图、讲解']];
 el('ovdim').innerHTML=DIMS.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td>${r[2]}</td><td><code>${r[3]}</code></td><td>${r[4]}</td></tr>`).join('');
 // 概念
 const depthById={}; (D.dynamics.seed_concepts||[]).forEach(c=>depthById[c]=0);

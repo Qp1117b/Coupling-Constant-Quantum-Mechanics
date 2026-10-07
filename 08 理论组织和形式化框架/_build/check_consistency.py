@@ -133,7 +133,7 @@ def main():
     check("命题表概念依赖完整", not bad_dep, str(bad_dep[:8]))
 
     # ---------- 前端数据一致 ----------
-    site = jload(os.path.join(ROOT, "10_输出可视化展示", "网站", "data.json"))
+    site = jload(os.path.join(ROOT, "10_展示可视化", "网站", "data.json"))
     check("网站 data.json 与源一致",
           (len(site["concepts"]), len(site["props"]), len(site["args"])) == (82, 63, 70)
           and site["meta"]["hyperedges"] == 19 and site["meta"]["edges"] == 51,
@@ -142,7 +142,7 @@ def main():
     # ---------- 维度覆盖 ----------
     dims = {"结构化": ["00_外部引用", "01_结构化数据", "03_超图与理论图"],
             "本体": ["02_概念本体"], "ML": ["05_机器学习数据准备"],
-            "形式化": ["04_Lean对接"], "输出": ["10_输出可视化展示"],
+            "形式化": ["04_Lean对接"], "输出": ["10_展示可视化"],
             "动态": ["06_动态机制"], "经验": ["07_经验检验"],
             "元理论": ["08_元理论反思"], "桥接": ["09_桥接与翻译"], "元数据": ["11_元数据"]}
     missing = []
@@ -151,7 +151,7 @@ def main():
             p = os.path.join(ROOT, dd)
             if not os.path.isdir(p) or not any(os.scandir(p)):
                 missing.append(dd)
-    check("六维度目录均有产物", not missing, str(missing))
+    check("七维度目录均有产物", not missing, str(missing))
 
     # ---------- 失效链接（md） ----------
     broken = []
