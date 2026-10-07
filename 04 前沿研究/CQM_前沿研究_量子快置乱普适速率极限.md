@@ -550,7 +550,7 @@ $$\tau_{\text{deco}} \cdot \tau_{\text{scramble}} \gtrsim \frac{☯\,\tau_{\min}
 - `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md`
 - `01 核心理论/CQM_核心_因果网络同步理论.md`
 - `01 核心理论/CQM_核心_引力存在论前提.md`
-- `09 精细引力（FG）/FG_纤维丛理论.md`
+- `07 精细引力（FG）/FG_纤维丛理论.md`
 
 [6] Montgomery, H. L. (1973). The pair correlation of zeros of the zeta function. *Proc. Sympos. Pure Math.*, 24, 181-193.
 

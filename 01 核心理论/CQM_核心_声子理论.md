@@ -23,8 +23,8 @@ $$\boxed{\text{中子-质子运动振荡产生的声子（GR 层）} = \text{同
 - `CQM_核心_因果网络同步理论.md`：同步算符 = 紧化算符，时空同步前沿速度 $c = \gamma_1\ell_{\text{pre}}$
 - `CQM_核心_共形场论与OPE.md`：CFT幂律传播 $r^{-2h}$，同步四阶段
 - `CQM_核心_集成理论.md`：量纲归一化与恢复，声子能量 $\hbar\omega_k$ 在归一化中的角色
-- `09 精细引力（FG）/FG_纤维丛理论.md` §4：曲率涨落算符、量纲归一化因子、声子代数
-- `08 超导/CQM_超导核心理论.md`：声子 = 底空间Regge曲率量子（§6），晶胞量子振荡与同步
+- `07 精细引力（FG）/FG_纤维丛理论.md` §4：曲率涨落算符、量纲归一化因子、声子代数
+- `06 超导/CQM_超导核心理论.md`：声子 = 底空间Regge曲率量子（§6），晶胞量子振荡与同步
 
 ## 1. 声子的定义与构造
 
@@ -70,7 +70,7 @@ $$\boxed{\hat{a}_k = \sqrt{\frac{m\omega_k}{2\hbar}}\hat{Q}_k + i\sqrt{\frac{1}{
 
 $$\boxed{E_k = \hbar\omega_k\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}$$
 
-声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8与 `09 精细引力（FG）/FG_纤维丛理论.md` §4）。
+声子能量 $\hbar\omega_k$ 是量纲归一化的输入——在FG纤维丛截断处，$\hbar\omega_k$ 除以 $E_{\text{bind}}$ 得到无量纲曲率（详见§8与 `07 精细引力（FG）/FG_纤维丛理论.md` §4）。
 
 ## 2. 声子是振荡的量子
 

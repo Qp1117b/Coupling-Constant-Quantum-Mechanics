@@ -1,0 +1,1077 @@
+{
+  "format": "CQM rewrite system / forward-chaining",
+  "derive_types": [
+    "依赖",
+    "层级含于",
+    "映射",
+    "演化",
+    "重组实现"
+  ],
+  "note": "规则 lhs ⊆ 已有概念 ⇒ 派生出 rhs；对应论证表行，不改写理论内容。",
+  "seed_concepts": [
+    "C001",
+    "C002",
+    "C003",
+    "C004",
+    "C006",
+    "C008",
+    "C010",
+    "C011",
+    "C016",
+    "C019",
+    "C021",
+    "C024",
+    "C025",
+    "C029",
+    "C031",
+    "C033",
+    "C034",
+    "C035",
+    "C036",
+    "C037",
+    "C038",
+    "C041",
+    "C042",
+    "C044",
+    "C045",
+    "C047",
+    "C050",
+    "C052",
+    "C053",
+    "C054",
+    "C056",
+    "C057",
+    "C062",
+    "C063",
+    "C065",
+    "C068",
+    "C069",
+    "C071",
+    "C072",
+    "C073",
+    "C077",
+    "C078",
+    "C079",
+    "C080"
+  ],
+  "rules": [
+    {
+      "rule_id": "H001",
+      "relation": "重组实现",
+      "lhs": [
+        "C002",
+        "C003"
+      ],
+      "rhs": "C007",
+      "premises_text": [
+        "物质先在",
+        "再生产幂等μ²=μ"
+      ],
+      "conclusion_text": "物质自组织",
+      "source_doc": [
+        "D005",
+        "D007"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H002",
+      "relation": "重组实现",
+      "lhs": [
+        "C007",
+        "C012"
+      ],
+      "rhs": "C014",
+      "premises_text": [
+        "物质自组织",
+        "同步算符"
+      ],
+      "conclusion_text": "SU(5)基态",
+      "source_doc": [
+        "D007",
+        "D008"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H003",
+      "relation": "重组实现",
+      "lhs": [
+        "C055",
+        "C059"
+      ],
+      "rhs": "C014",
+      "premises_text": [
+        "本征值{9,4,1}",
+        "S_5表示论"
+      ],
+      "conclusion_text": "SU(5)规范群结构",
+      "source_doc": [
+        "D005",
+        "D019"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H004",
+      "relation": "重组实现",
+      "lhs": [
+        "C007"
+      ],
+      "rhs": "C005",
+      "premises_text": [
+        "前核子自组织",
+        "粗粒化"
+      ],
+      "conclusion_text": "禁闭边界A_4",
+      "source_doc": [
+        "D005"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H005",
+      "relation": "重组实现",
+      "lhs": [
+        "C029"
+      ],
+      "rhs": "C028",
+      "premises_text": [
+        "质子",
+        "中子缺陷α_4"
+      ],
+      "conclusion_text": "Regge铰链/非零角亏",
+      "source_doc": [
+        "D006"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H006",
+      "relation": "映射",
+      "lhs": [
+        "C007"
+      ],
+      "rhs": "C026",
+      "premises_text": [
+        "物质晶胞分布内禀不均匀性"
+      ],
+      "conclusion_text": "Regge角亏δ_v",
+      "source_doc": [
+        "D006"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "H007",
+      "relation": "重组实现",
+      "lhs": [
+        "C054",
+        "C029"
+      ],
+      "rhs": "C030",
+      "premises_text": [
+        "粒子A_4",
+        "中子D(δ)"
+      ],
+      "conclusion_text": "元素嘉当矩阵C_element",
+      "source_doc": [
+        "D006",
+        "D030"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H008",
+      "relation": "重组实现",
+      "lhs": [
+        "C071"
+      ],
+      "rhs": "C026",
+      "premises_text": [
+        "晶胞量子振荡"
+      ],
+      "conclusion_text": "声子/角亏涨落",
+      "source_doc": [
+        "D011",
+        "D030"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H009",
+      "relation": "重组实现",
+      "lhs": [
+        "C063"
+      ],
+      "rhs": "C064",
+      "premises_text": [
+        "不确定性",
+        "跃迁耦级2ln_n"
+      ],
+      "conclusion_text": "资格条件",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H010",
+      "relation": "重组实现",
+      "lhs": [
+        "C070"
+      ],
+      "rhs": "C067",
+      "premises_text": [
+        "λ_2(T_c)=λ_1(T_c)"
+      ],
+      "conclusion_text": "丛作用量交叉F_1=F_2",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H011",
+      "relation": "重组实现",
+      "lhs": [
+        "C073"
+      ],
+      "rhs": "C012",
+      "premises_text": [
+        "电子FG",
+        "元素FG",
+        "分子FG",
+        "晶胞FG"
+      ],
+      "conclusion_text": "紧化算符层级化实现",
+      "source_doc": [
+        "D032"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H012",
+      "relation": "重组实现",
+      "lhs": [
+        "C014"
+      ],
+      "rhs": "C013",
+      "premises_text": [
+        "物质自组织基态同步SU(5)"
+      ],
+      "conclusion_text": "各因子层GL(n)谱/残留",
+      "source_doc": [
+        "D029"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H013",
+      "relation": "重组实现",
+      "lhs": [
+        "C074",
+        "C075"
+      ],
+      "rhs": "C040",
+      "premises_text": [
+        "局部共形对称性",
+        "全局模对称性"
+      ],
+      "conclusion_text": "自守形式",
+      "source_doc": [
+        "D024"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H014",
+      "relation": "重组实现",
+      "lhs": [
+        "C040"
+      ],
+      "rhs": "C048",
+      "premises_text": [
+        "时间侧自守形式",
+        "空间侧自守形式"
+      ],
+      "conclusion_text": "c",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H015",
+      "relation": "重组实现",
+      "lhs": [
+        "C049"
+      ],
+      "rhs": "C051",
+      "premises_text": [
+        "算符",
+        "不确定性关系",
+        "带误差谱带",
+        "边界条件",
+        "经典化",
+        "物理存在性"
+      ],
+      "conclusion_text": "交叉RH成立",
+      "source_doc": [
+        "D017"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H016",
+      "relation": "重组实现",
+      "lhs": [
+        "C056",
+        "C057",
+        "C048",
+        "C047",
+        "C058"
+      ],
+      "rhs": "C081",
+      "premises_text": [
+        "I",
+        "λ_c",
+        "☯²",
+        "𝔠_1",
+        "exp(-2/☯)",
+        "(1+κ☯)"
+      ],
+      "conclusion_text": "G_N",
+      "source_doc": [
+        "D019",
+        "D014"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "H017",
+      "relation": "重组实现",
+      "lhs": [
+        "C054"
+      ],
+      "rhs": "C082",
+      "premises_text": [
+        "四个基约束性h",
+        "r",
+        "|W(A_4)|",
+        "tr(A_4)"
+      ],
+      "conclusion_text": "Wyler常数α_W",
+      "source_doc": [
+        "D021"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "A001",
+      "relation": "演化",
+      "lhs": [
+        "C001"
+      ],
+      "rhs": "C017",
+      "premises_text": [
+        "前时空"
+      ],
+      "conclusion_text": "GR",
+      "source_doc": [
+        "D006"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A002",
+      "relation": "演化",
+      "lhs": [
+        "C017"
+      ],
+      "rhs": "C018",
+      "premises_text": [
+        "GR基态"
+      ],
+      "conclusion_text": "FG",
+      "source_doc": [
+        "D006"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A003",
+      "relation": "演化",
+      "lhs": [
+        "C018"
+      ],
+      "rhs": "C026",
+      "premises_text": [
+        "FG"
+      ],
+      "conclusion_text": "超导",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A004",
+      "relation": "映射",
+      "lhs": [
+        "C053"
+      ],
+      "rhs": "C055",
+      "premises_text": [
+        "4-单纯形边-面结构"
+      ],
+      "conclusion_text": "M=EᵀE本征值{9,4,1}",
+      "source_doc": [
+        "D005"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A005",
+      "relation": "映射",
+      "lhs": [
+        "C014"
+      ],
+      "rhs": "C066",
+      "premises_text": [
+        "SU(5)紧致部分"
+      ],
+      "conclusion_text": "U(1)//Z_n商结构→α",
+      "source_doc": [
+        "D023"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A006",
+      "relation": "映射",
+      "lhs": [
+        "C026"
+      ],
+      "rhs": "C022",
+      "premises_text": [
+        "δ_v"
+      ],
+      "conclusion_text": "联络A_FG→伴丛曲率F",
+      "source_doc": [
+        "D028"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A007",
+      "relation": "映射",
+      "lhs": [
+        "C026"
+      ],
+      "rhs": "C027",
+      "premises_text": [
+        "δ_v"
+      ],
+      "conclusion_text": "固有时流速v_τ=√(1−βδ_v)",
+      "source_doc": [
+        "D015"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A008",
+      "relation": "映射",
+      "lhs": [
+        "C043"
+      ],
+      "rhs": "C058",
+      "premises_text": [
+        "ζ欧拉乘积"
+      ],
+      "conclusion_text": "局部耦合核κ_p",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A009",
+      "relation": "映射",
+      "lhs": [
+        "C044"
+      ],
+      "rhs": "C060",
+      "premises_text": [
+        "显式公式"
+      ],
+      "conclusion_text": "同步格林函数ψ(e^u)",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A013",
+      "relation": "映射",
+      "lhs": [
+        "C045"
+      ],
+      "rhs": "C046",
+      "premises_text": [
+        "黎曼零点γ_n"
+      ],
+      "conclusion_text": "耦级𝔠_n=1/4+γ_n²",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A015",
+      "relation": "依赖",
+      "lhs": [
+        "C048"
+      ],
+      "rhs": "C051",
+      "premises_text": [
+        "☯谱表示Σ1/(γ_n²+1/4)"
+      ],
+      "conclusion_text": "RH（单向推论）",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A016",
+      "relation": "重组实现",
+      "lhs": [
+        "C074"
+      ],
+      "rhs": "C074",
+      "premises_text": [
+        "没有质量尺子",
+        "耦合锁死为纯数字"
+      ],
+      "conclusion_text": "共形固定点β(g)=0",
+      "source_doc": [
+        "D012"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "A017",
+      "relation": "重组实现",
+      "lhs": [
+        "C012"
+      ],
+      "rhs": "C014",
+      "premises_text": [
+        "同步本征态",
+        "耦合本征态"
+      ],
+      "conclusion_text": "群本征态",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "A023",
+      "relation": "重组实现",
+      "lhs": [
+        "C042"
+      ],
+      "rhs": "C049",
+      "premises_text": [
+        "母群G"
+      ],
+      "conclusion_text": "本征群R→群算符Ĥ",
+      "source_doc": [
+        "D010"
+      ],
+      "is_recomposition": true
+    },
+    {
+      "rule_id": "A024",
+      "relation": "层级含于",
+      "lhs": [
+        "C013"
+      ],
+      "rhs": "C059",
+      "premises_text": [
+        "GL(n)"
+      ],
+      "conclusion_text": "Weyl群S_n",
+      "source_doc": [
+        "D010"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A025",
+      "relation": "映射",
+      "lhs": [
+        "C009"
+      ],
+      "rhs": "C007",
+      "premises_text": [
+        "因果网络同步理论"
+      ],
+      "conclusion_text": "物质自组织",
+      "source_doc": [
+        "D007"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A026",
+      "relation": "依赖",
+      "lhs": [
+        "C004"
+      ],
+      "rhs": "C009",
+      "premises_text": [
+        "因果集"
+      ],
+      "conclusion_text": "CNST",
+      "source_doc": [
+        "D005"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A027",
+      "relation": "映射",
+      "lhs": [
+        "C008"
+      ],
+      "rhs": "C015",
+      "premises_text": [
+        "退相干"
+      ],
+      "conclusion_text": "重组实现",
+      "source_doc": [
+        "D015"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A028",
+      "relation": "映射",
+      "lhs": [
+        "C032"
+      ],
+      "rhs": "C039",
+      "premises_text": [
+        "7个基本量纲"
+      ],
+      "conclusion_text": "量纲转换常数族",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A029",
+      "relation": "依赖",
+      "lhs": [
+        "C050"
+      ],
+      "rhs": "C046",
+      "premises_text": [
+        "耦谱定理"
+      ],
+      "conclusion_text": "耦级",
+      "source_doc": [
+        "D019"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A030",
+      "relation": "依赖",
+      "lhs": [
+        "C052"
+      ],
+      "rhs": "C051",
+      "premises_text": [
+        "GRH"
+      ],
+      "conclusion_text": "RH",
+      "source_doc": [
+        "D028"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A031",
+      "relation": "依赖",
+      "lhs": [
+        "C080"
+      ],
+      "rhs": "C040",
+      "premises_text": [
+        "朗兰兹函子性"
+      ],
+      "conclusion_text": "自守形式",
+      "source_doc": [
+        "D020"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A032",
+      "relation": "层级含于",
+      "lhs": [
+        "C069"
+      ],
+      "rhs": "C012",
+      "premises_text": [
+        "超导同步算符"
+      ],
+      "conclusion_text": "同步算符",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A033",
+      "relation": "依赖",
+      "lhs": [
+        "C072"
+      ],
+      "rhs": "C070",
+      "premises_text": [
+        "赝能隙"
+      ],
+      "conclusion_text": "临界温度",
+      "source_doc": [
+        "D031"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A034",
+      "relation": "依赖",
+      "lhs": [
+        "C062"
+      ],
+      "rhs": "C061",
+      "premises_text": [
+        "海森堡代数"
+      ],
+      "conclusion_text": "耦合动量",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A035",
+      "relation": "依赖",
+      "lhs": [
+        "C065"
+      ],
+      "rhs": "C066",
+      "premises_text": [
+        "结构群叠加态"
+      ],
+      "conclusion_text": "候选群族",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A036",
+      "relation": "依赖",
+      "lhs": [
+        "C068"
+      ],
+      "rhs": "C066",
+      "premises_text": [
+        "主导群"
+      ],
+      "conclusion_text": "候选群族",
+      "source_doc": [
+        "D030"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A037",
+      "relation": "依赖",
+      "lhs": [
+        "C021"
+      ],
+      "rhs": "C020",
+      "premises_text": [
+        "伴丛"
+      ],
+      "conclusion_text": "主丛",
+      "source_doc": [
+        "D028"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A038",
+      "relation": "映射",
+      "lhs": [
+        "C025"
+      ],
+      "rhs": "C026",
+      "premises_text": [
+        "Regge剖分"
+      ],
+      "conclusion_text": "角亏",
+      "source_doc": [
+        "D006"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A039",
+      "relation": "映射",
+      "lhs": [
+        "C031"
+      ],
+      "rhs": "C027",
+      "premises_text": [
+        "对数比参数"
+      ],
+      "conclusion_text": "固有时流速",
+      "source_doc": [
+        "D015"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A040",
+      "relation": "层级含于",
+      "lhs": [
+        "C019"
+      ],
+      "rhs": "C018",
+      "premises_text": [
+        "引力因果限制场"
+      ],
+      "conclusion_text": "FG",
+      "source_doc": [
+        "D015"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A041",
+      "relation": "映射",
+      "lhs": [
+        "C016"
+      ],
+      "rhs": "C023",
+      "premises_text": [
+        "内禀时间"
+      ],
+      "conclusion_text": "规范重组超导",
+      "source_doc": [
+        "D023"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A042",
+      "relation": "映射",
+      "lhs": [
+        "C006"
+      ],
+      "rhs": "C005",
+      "premises_text": [
+        "禁闭内部"
+      ],
+      "conclusion_text": "禁闭边界",
+      "source_doc": [
+        "D013"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A043",
+      "relation": "映射",
+      "lhs": [
+        "C010"
+      ],
+      "rhs": "C043",
+      "premises_text": [
+        "质数前网络"
+      ],
+      "conclusion_text": "黎曼zeta函数",
+      "source_doc": [
+        "D008"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A044",
+      "relation": "依赖",
+      "lhs": [
+        "C011"
+      ],
+      "rhs": "C012",
+      "premises_text": [
+        "自我限制算符"
+      ],
+      "conclusion_text": "同步算符",
+      "source_doc": [
+        "D007"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A045",
+      "relation": "层级含于",
+      "lhs": [
+        "C041"
+      ],
+      "rhs": "C040",
+      "premises_text": [
+        "自守因子"
+      ],
+      "conclusion_text": "自守形式",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A046",
+      "relation": "依赖",
+      "lhs": [
+        "C077"
+      ],
+      "rhs": "C076",
+      "premises_text": [
+        "中央荷"
+      ],
+      "conclusion_text": "Virasoro代数",
+      "source_doc": [
+        "D012"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A047",
+      "relation": "依赖",
+      "lhs": [
+        "C078"
+      ],
+      "rhs": "C075",
+      "premises_text": [
+        "共形维度"
+      ],
+      "conclusion_text": "共形自举",
+      "source_doc": [
+        "D012"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A048",
+      "relation": "映射",
+      "lhs": [
+        "C033"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "长度量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A049",
+      "relation": "映射",
+      "lhs": [
+        "C034"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "质量量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A050",
+      "relation": "映射",
+      "lhs": [
+        "C035"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "电荷量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A051",
+      "relation": "映射",
+      "lhs": [
+        "C036"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "温度量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A052",
+      "relation": "映射",
+      "lhs": [
+        "C037"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "物质的量量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    },
+    {
+      "rule_id": "A053",
+      "relation": "映射",
+      "lhs": [
+        "C038"
+      ],
+      "rhs": "C032",
+      "premises_text": [
+        "发光强度量纲"
+      ],
+      "conclusion_text": "时间量纲",
+      "source_doc": [
+        "D009"
+      ],
+      "is_recomposition": false
+    }
+  ]
+}

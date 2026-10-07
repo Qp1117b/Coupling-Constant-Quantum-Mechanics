@@ -1,0 +1,122 @@
+{
+  "model": "G_N 结构因果模型（SCM）",
+  "formula": "G_N = (ℏc/m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯)",
+  "source": "P010（D014 §5）；锚点映射 C081",
+  "caveat": "构造后验数字校验，待独立复现",
+  "variables": [
+    {
+      "id": "I",
+      "label": "Dynkin 指数比 I=5/3",
+      "role": "群论因子",
+      "source": "D014 §5"
+    },
+    {
+      "id": "lambda_c",
+      "label": "Mathieu 临界 λ_c",
+      "role": "谱因子",
+      "source": "D019 §5"
+    },
+    {
+      "id": "taiji",
+      "label": "相变量子 ☯",
+      "role": "谱因子",
+      "source": "D008 §3"
+    },
+    {
+      "id": "c_1",
+      "label": "第一耦级 𝔠₁=1/4+γ₁²",
+      "role": "谱因子",
+      "source": "D008 §3"
+    },
+    {
+      "id": "kappa",
+      "label": "谱修正 κ=(31+☯)/30",
+      "role": "谱修正",
+      "source": "D031 §11"
+    },
+    {
+      "id": "m_p",
+      "label": "质子质量 m_p",
+      "role": "实验输入",
+      "source": "D019"
+    },
+    {
+      "id": "h",
+      "label": "ℏc",
+      "role": "常数",
+      "source": "D019"
+    },
+    {
+      "id": "GN",
+      "label": "牛顿引力常数 G_N",
+      "role": "结果",
+      "source": "D014 §5"
+    }
+  ],
+  "edges": [
+    {
+      "from": "taiji",
+      "to": "kappa",
+      "relation": "映射",
+      "note": "κ=(31+☯)/30"
+    },
+    {
+      "from": "taiji",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "☯²·exp(-2/☯)"
+    },
+    {
+      "from": "kappa",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "(1+κ☯)"
+    },
+    {
+      "from": "I",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "线性因子"
+    },
+    {
+      "from": "lambda_c",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "线性因子"
+    },
+    {
+      "from": "c_1",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "线性因子"
+    },
+    {
+      "from": "m_p",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "1/m_p²"
+    },
+    {
+      "from": "h",
+      "to": "GN",
+      "relation": "重组实现",
+      "note": "ℏc"
+    }
+  ],
+  "note": "本图为确定性结构方程（SCM），非观测因果图；用于敏感性/反事实分解。",
+  "elasticity": {
+    "dlnGN/dlnI": 1.0,
+    "dlnGN/dlnlambda_c": 1.0,
+    "dlnGN/dlnc_1": 1.0,
+    "dlnGN/dlnm_p": -2.0,
+    "dlnGN/dlnkappa": 0.023326,
+    "dlnGN/dlntaiji": 88.6195,
+    "values_used": {
+      "taiji": 0.02309570897,
+      "lambda_c": 1.316022911308,
+      "I": 1.666667,
+      "kappa": 1.034103
+    },
+    "note": "☯ 弹性最大（≈88.6），放大 ☯ 的数值不确定性；𝔠₁ 与 γ₁ 取值以权威定义处为准。"
+  }
+}

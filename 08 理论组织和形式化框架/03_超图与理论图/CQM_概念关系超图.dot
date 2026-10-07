@@ -1,0 +1,145 @@
+// CQM 概念关系有向超图（主干）
+// 由 10 概览/CQM_概念关系超图.md 生成
+// 约定：实线 = → 演化/映射/破缺；虚线加粗 = ⇒ 重组实现（超边，用哑节点展开）
+// 渲染：dot -Tsvg "CQM_概念关系超图.dot" -o "CQM_概念关系超图.svg"
+digraph CQM {
+  graph [rankdir=TB, fontname="Microsoft YaHei", fontsize=12, labelloc=t,
+         label="CQM 概念关系有向超图（主干）\n实线=→ 演化/映射/破缺　虚线=⇒ 重组实现（超边）",
+         bgcolor="white", compound=true, nodesep=0.28, ranksep=0.55];
+  node  [shape=box, style="rounded,filled", fillcolor="#eef3fb",
+         color="#7a9cc6", fontname="Microsoft YaHei", fontsize=10, margin="0.08,0.04"];
+  edge  [fontname="Microsoft YaHei", fontsize=9, color="#555555", arrowsize=0.7];
+
+  // ---------- 超边哑节点样式 ----------
+  node [shape=point, width=0.05, color="#b0552b", fillcolor="#b0552b"];
+  edge [color="#b0552b", style=dashed, penwidth=1.6, arrowhead=none];
+  // （H 系列超边在下方用 hy1..hy17 哑节点连接）
+
+  // ================= 本体论与发生学 =================
+  subgraph cluster_onto {
+    label="本体论与发生学"; color="#8fae d0"; fontname="Microsoft YaHei";
+    "物质先在"; "物质自组织"; "质数自组织"; "GL5" [label="GL(5) 潜能先在"];
+    "SU5" [label="SU(5) 基态"]; "同步算符"; "SM" [label="U(1)×SU(2)×SU(3)"];
+    "mu" [label="再生产幂等 μ²=μ", shape=ellipse, fillcolor="#f7f7f7"];
+  }
+
+  // ================= 引力层级 =================
+  subgraph cluster_grav {
+    label="引力层级"; color="#c8bcd8";
+    "前时空"; "GR"; "FG"; "禁闭边界"; "A4" [label="4-单纯形 A₄"];
+    "角亏" [label="Regge 角亏 δ_v"]; "vtau" [label="固有时流速 v_τ"];
+    "前核子自组织" [shape=ellipse, fillcolor="#f7f7f7"];
+  }
+
+  // ================= 量纲发生学 =================
+  subgraph cluster_dim {
+    label="量纲发生学"; color="#bcd0c0";
+    "T"; "L"; "M"; "Q"; "KL" [label="K_L"]; "KM" [label="K_M"]; "KQ" [label="K_Q"];
+    "c时空" [label="c（同步前沿速度）"]; "自守形式"; "自守因子" [label="自守因子 j＝量纲因子"];
+  }
+
+  // ================= 谱与数论 =================
+  subgraph cluster_spec {
+    label="谱与数论"; color="#d8ccb0";
+    "zeta" [label="ζ(s)"]; "xi" [label="ξ(s)"]; "gamma" [label="黎曼零点 γ_n"];
+    "cn" [label="耦级 𝔠_n=1/4+γ_n²"]; "taiji" [label="相变量子 ☯"];
+    "RH" [label="RH / GRH"]; "HP" [label="谱算符 Ĥ=D̂²+1/4"];
+  }
+
+  // ================= 谱几何与群 =================
+  subgraph cluster_geo {
+    label="谱几何与群"; color="#c0c8d8";
+    "spec941" [label="本征值 {9,4,1}"]; "S5" [label="Weyl 群 S₅"];
+    "I" [label="Dynkin 比 I=5/3"]; "lambdac" [label="Mathieu 临界 λ_c"];
+    "kappa" [label="谱修正 κ=(31+☯)/30"]; "GN" [label="G_N"];
+    "Wyler" [label="Wyler 常数 α_W"];
+  }
+
+  // ================= 耦合与超导 =================
+  subgraph cluster_sc {
+    label="耦合与超导"; color="#d8c0c0";
+    "晶胞振荡" [label="晶胞量子振荡"]; "声子"; "角亏涨落" [label="角亏涨落 Δδ_v"];
+    "资格" [label="资格条件"]; "叠加态" [label="结构群叠加态"]; "Tc" [label="T_c"]; "超导";
+    "u" [label="耦合坐标 u=ln r"]; "pu" [label="耦合动量 p_u=v_τ/☯"];
+    "heis" [label="[û,p̂_u]=i"]; "deltaUn" [label="跃迁耦级 2ln n"];
+  }
+
+  // ================= 共形与群论 =================
+  subgraph cluster_cft {
+    label="共形与群论"; color="#c0d8c8";
+    "CFT" [label="共形固定点 β(g)=0"]; "OPE"; "群约束" [label="群约束性＝不变性"];
+    "母群" [label="母群 G"]; "本征群" [label="本征群 R"];
+  }
+
+  // ================= 普通有向边 → =================
+  "物质自组织" -> "质数自组织" [label="→演化"];
+  "质数自组织" -> "GL5" [label="→演化"];
+  "GL5" -> "SU5" [label="→演化"];
+  "SU5" -> "SM" [label="→演化"];
+  "SU5" -> "A4" [label="→映射"];
+  "A4" -> "spec941" [label="→映射"];
+  "spec941" -> "SU5" [label="→映射"];
+  "前时空" -> "GR" [label="→演化"];
+  "GR" -> "FG" [label="→演化"];
+  "FG" -> "超导" [label="→演化"];
+  "角亏" -> "vtau" [label="→映射"];
+  "vtau" -> "pu" [label="→映射"];
+  "pu" -> "heis" [label="→映射"];
+  "heis" -> "资格" [label="→映射"];
+  "deltaUn" -> "资格" [label="→映射"];
+  "资格" -> "叠加态" [label="→映射"];
+  "叠加态" -> "Tc" [label="→映射"];
+  "Tc" -> "超导" [label="→映射"];
+  "晶胞振荡" -> "角亏涨落" [label="→演化"];
+  "角亏涨落" -> "声子" [label="→等价"];
+  "zeta" -> "xi" [label="→演化"];
+  "xi" -> "taiji" [label="→映射"];
+  "gamma" -> "cn" [label="→映射"];
+  "cn" -> "taiji" [label="→映射"];
+  "cn" -> "Tc" [label="→映射 (γ₂−γ₁)"];
+  "taiji" -> "pu" [label="→映射"];
+  "T" -> "L" [label="→映射 (K_L)"];
+  "L" -> "M" [label="→映射 (K_M)"];
+  "M" -> "Q" [label="→映射 (K_Q)"];
+  "母群" -> "本征群" [label="→演化"];
+  "OPE" -> "CFT" [label="→等价"];
+
+  // 等价 / 同源 / 矛盾（无向感，用双向或红色虚线）
+  edge [dir=both, color="#2f7d4f", style=solid, penwidth=1.0];
+  "taiji" -> "HP" [label="等价(谱)"];
+  "cn" -> "RH" [label="等价(实谱)"];
+  edge [dir=both, color="#c0392b", style=dashed, penwidth=1.0, constraint=false];
+  "FG" -> "GR" [label="矛盾 FG≠GR"];
+
+  // ================= 有向超边 ⇒ （哑节点展开） =================
+  node [shape=point, width=0.05, color="#b0552b", fillcolor="#b0552b"];
+  edge [color="#b0552b", style=dashed, penwidth=1.6, arrowhead=normal, label=""];
+
+  // H1 (物质先在, μ²=μ) ⇒ 物质自组织
+  "物质先在" -> "hy1"; "mu" -> "hy1"; "hy1" -> "物质自组织" [label="H1 ⇒"];
+  // H2 (物质自组织, 同步算符) ⇒ SU(5)
+  "物质自组织" -> "hy2"; "同步算符" -> "hy2"; "hy2" -> "SU5" [label="H2 ⇒"];
+  // H3 ({9,4,1}, S5) ⇒ SU(5) 规范群
+  "spec941" -> "hy3"; "S5" -> "hy3"; "hy3" -> "SU5" [label="H3 ⇒"];
+  // H4 (前核子自组织, 粗粒化) ⇒ 禁闭边界 A₄
+  "前核子自组织" -> "hy4"; "hy4" -> "禁闭边界" [label="H4 ⇒"];
+  // H5 (质子, 中子缺陷 α₄) ⇒ 非零角亏
+  "禁闭边界" -> "hy5"; "hy5" -> "角亏" [label="H5 ⇒"];
+  // H7 (质子 A₄, 中子 D(δ)) ⇒ 元素嘉当矩阵
+  "A4" -> "hy7"; "hy7" -> "角亏" [label="H7 ⇒ (元素嘉当矩阵)"];
+  // H8 (晶胞量子振荡) ⇒ 角亏涨落/声子
+  "晶胞振荡" -> "hy8"; "hy8" -> "声子" [label="H8 ⇒"];
+  // H9 (不确定性, 跃迁耦级) ⇒ 资格条件
+  "heis" -> "hy9"; "deltaUn" -> "hy9"; "hy9" -> "资格" [label="H9 ⇒"];
+  // H10 (λ₂=λ₁) ⇒ 丛作用量交叉
+  "Tc" -> "hy10"; "hy10" -> "Tc" [label="H10 ⇒ (丛作用量交叉)"];
+  // H13 (局部共形, 全局模) ⇒ 自守形式
+  "CFT" -> "hy13"; "OPE" -> "hy13"; "hy13" -> "自守形式" [label="H13 ⇒"];
+  // H14 (时间侧自守, 空间侧自守) ⇒ c
+  "自守形式" -> "hy14"; "hy14" -> "c时空" [label="H14 ⇒"];
+  // H16 (I, λ_c, ☯², 𝔠₁, exp(-2/☯), 1+κ☯) ⇒ G_N
+  "I" -> "hy16"; "lambdac" -> "hy16"; "taiji" -> "hy16";
+  "cn" -> "hy16"; "kappa" -> "hy16"; "hy16" -> "GN" [label="H16 ⇒"];
+  // H17 (h,r,|W(A4)|,tr(A4)) ⇒ Wyler 常数
+  "S5" -> "hy17"; "A4" -> "hy17"; "hy17" -> "Wyler" [label="H17 ⇒"];
+}

@@ -1,0 +1,69 @@
+# CQM 理论文档引用清单
+# 外部理论文本不动，本文件只存引用路径与元数据
+# layer: 0=权威基准 1=理论主干 2=专题深化 3=涌现应用 4=形式化验证
+# type: 权威基准/理论主干/专题/前沿/方法论/FG/超导/工程/形式化/方案/日志
+
+documents:
+  # ---- 第 0 层：权威基准 ----
+  - {id: D001, path: README.md, title: 项目说明与符号约定, layer: 0, type: 权威基准}
+  - {id: D002, path: AGENTS.md, title: AI 协作规范, layer: 0, type: 权威基准}
+  - {id: D003, path: 一体化研究/附录/术语表.md, title: 术语表, layer: 0, type: 权威基准}
+  - {id: D004, path: 一体化研究/附录/缺口台账.md, title: 缺口台账, layer: 0, type: 权威基准}
+
+  # ---- 第 1 层：理论主干（01 核心理论）----
+  - {id: D005, path: 01 核心理论/CQM_核心_集成理论.md, title: 集成理论（总纲）, layer: 1, type: 理论主干}
+  - {id: D006, path: 01 核心理论/CQM_核心_引力存在论前提.md, title: 引力存在论前提, layer: 1, type: 理论主干}
+  - {id: D007, path: 01 核心理论/CQM_核心_因果网络同步理论.md, title: 因果网络同步理论, layer: 1, type: 理论主干}
+  - {id: D008, path: 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md, title: 朗兰兹分层共振与相变量子, layer: 1, type: 理论主干}
+  - {id: D009, path: 01 核心理论/CQM_核心_量纲与群论.md, title: 量纲与群论, layer: 1, type: 理论主干}
+  - {id: D010, path: 01 核心理论/CQM_核心_唯物主义群论.md, title: 唯物主义群论, layer: 1, type: 理论主干}
+  - {id: D011, path: 01 核心理论/CQM_核心_声子理论.md, title: 声子理论, layer: 1, type: 理论主干}
+  - {id: D012, path: 01 核心理论/CQM_核心_共形场论与OPE.md, title: 共形场论与OPE, layer: 1, type: 理论主干}
+
+  # ---- 第 2 层：专题深化 ----
+  - {id: D013, path: 02 量子引力/CQM_引力_量子引力讨论.md, title: 量子引力讨论, layer: 2, type: 专题}
+  - {id: D014, path: 03 引力与退相干/CQM_引力_GN可能公式.md, title: GN可能公式, layer: 2, type: 专题}
+  - {id: D015, path: 03 引力与退相干/CQM_退相干_引力因果场.md, title: 引力因果场（退相干）, layer: 2, type: 专题}
+  - {id: D016, path: 03 引力与退相干/CQM_退相干_跨层级深耦合与唯一性难题.md, title: 跨层级深耦合与唯一性难题, layer: 2, type: 专题}
+  - {id: D017, path: 04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md, title: 黎曼猜想证明思路, layer: 2, type: 前沿}
+  - {id: D018, path: 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md, title: 待推1边界条件, layer: 2, type: 前沿}
+  - {id: D019, path: 04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md, title: GN第一性推导公理化, layer: 2, type: 前沿}
+  - {id: D020, path: 04 前沿研究/CQM_前沿研究_质量研究思路汇总.md, title: 质量研究思路汇总, layer: 2, type: 前沿}
+  - {id: D021, path: 04 前沿研究/Wyler常数_A4群论分解.md, title: Wyler常数, layer: 2, type: 前沿}
+  - {id: D022, path: 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md, title: 贝里曲率与Regge曲率, layer: 2, type: 前沿}
+  - {id: D023, path: 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md, title: 规范重组超导与SU5五重态, layer: 2, type: 前沿}
+  - {id: D024, path: 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md, title: 相变弧线与自守形式同步, layer: 2, type: 前沿}
+  - {id: D025, path: 04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md, title: 量子快置乱普适速率极限, layer: 2, type: 前沿}
+  - {id: D026, path: 05 方法论与批判/CQM_方法论_HilbertPolya批判.md, title: HilbertPolya批判, layer: 2, type: 方法论}
+  - {id: D027, path: 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md, title: 资本主义-旧物理-层级还原论批判, layer: 2, type: 方法论}
+  - {id: D028, path: 07 精细引力（FG）/FG_核心理论.md, title: FG核心理论, layer: 2, type: FG}
+  - {id: D029, path: 07 精细引力（FG）/FG_纤维丛理论.md, title: FG纤维丛理论, layer: 2, type: FG}
+
+  # ---- 第 3 层：涌现与应用 ----
+  - {id: D030, path: 06 超导/CQM_超导核心理论.md, title: 超导核心理论, layer: 3, type: 超导}
+  - {id: D031, path: 06 超导/CQM_超导_专题与扩展.md, title: 专题与扩展, layer: 3, type: 超导}
+  - {id: D032, path: 06 超导/CQM_超导_FG层级同步算符体系.md, title: FG层级同步算符体系, layer: 3, type: 超导}
+  - {id: D033, path: 06 超导/CQM_超导_统一方法论.md, title: 统一方法论, layer: 3, type: 超导}
+  - {id: D034, path: 06 超导/超导材料设计器/README.md, title: 材料设计器总览, layer: 3, type: 工程}
+  - {id: D035, path: 06 超导/超导材料设计器/01_系统架构设计.md, title: 系统架构设计, layer: 3, type: 工程}
+  - {id: D036, path: 06 超导/超导材料设计器/02_元素同位素数据库.md, title: 元素同位素数据库, layer: 3, type: 工程}
+  - {id: D037, path: 06 超导/超导材料设计器/03_超导判定算法.md, title: 超导判定算法, layer: 3, type: 工程}
+  - {id: D038, path: 06 超导/超导材料设计器/04_应用场景与对比分析.md, title: 应用场景与对比分析, layer: 3, type: 工程}
+  - {id: D039, path: 06 超导/超导材料设计器/05_元素嘉当矩阵参数化设计.md, title: 元素嘉当矩阵参数化设计, layer: 3, type: 工程}
+  - {id: D040, path: 06 超导/超导材料设计器/06_文献调研与专业化路线.md, title: 文献调研与专业化路线, layer: 3, type: 工程}
+  - {id: D041, path: 06 超导/超导材料设计器/07_目标超导搜索策略.md, title: 目标超导搜索策略, layer: 3, type: 工程}
+
+  # ---- 第 4 层：形式化验证 ----
+  - {id: D042, path: 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md, title: Lean形式化总览, layer: 4, type: 形式化}
+  - {id: D043, path: 08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/README.md, title: GN库说明, layer: 4, type: 形式化}
+  - {id: D044, path: 一体化研究/科研AI全栈方案.md, title: 科研AI全栈方案, layer: 4, type: 方案}
+  - {id: D045, path: 一体化研究/研究日志/自主科研循环指导.md, title: 自主科研循环指导, layer: 4, type: 日志}
+  - {id: D046, path: 一体化研究/研究日志/2026-10-05_1115_P0坏导入修复与数值验证.md, title: P0坏导入修复与数值验证, layer: 4, type: 日志}
+  - {id: D047, path: 一体化研究/研究日志/2026-10-05_1205_快速检查.md, title: 快速检查, layer: 4, type: 日志}
+  - {id: D048, path: 一体化研究/研究日志/2026-10-05_1238_LeClair公式42验证.md, title: LeClair公式42验证, layer: 4, type: 日志}
+  - {id: D049, path: 一体化研究/研究日志/2026-10-05_1250_GN参数A4谱几何推导.md, title: GN参数A4谱几何推导, layer: 4, type: 日志}
+  - {id: D050, path: 一体化研究/研究日志/2026-10-05_1619_量纲群论.md, title: 量纲群论, layer: 4, type: 日志}
+  - {id: D051, path: 一体化研究/研究日志/2026-10-05_1640_无量纲到电荷量纲.md, title: 无量纲到电荷量纲, layer: 4, type: 日志}
+  - {id: D052, path: 一体化研究/研究日志/2026-10-05_1825_NA与无量纲计数的深层关联.md, title: NA与无量纲计数的深层关联, layer: 4, type: 日志}
+
+# 统计：共 52 篇（权威 4 + 主干 8 + 专题深化 17 + 涌现应用 12 + 形式化 11）

@@ -1,9 +1,9 @@
 name: lean
 on:
   push:
-    paths: ['06 Lean形式化/**']
+    paths: ['08 理论组织和形式化框架/04_Lean对接/Lean源码/**']
   pull_request:
-    paths: ['06 Lean形式化/**']
+    paths: ['08 理论组织和形式化框架/04_Lean对接/Lean源码/**']
 
 jobs:
   build:

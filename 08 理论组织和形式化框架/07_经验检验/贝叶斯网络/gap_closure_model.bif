@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CQM 缺口闭合贝叶斯网络（结构取自 01_结构化数据/缺口依赖闭包.md）
+     状态：闭合 / 部分 / 未闭合；CPT 为占位均匀分布（待标定），不构成理论结论 -->
+<BIF VERSION="0.3">
+<NETWORK>
+<NAME>CQM_gap_closure</NAME>
+<STATES>closed_partial_open</STATES>
+<PROBABILITY>
+<FOR>G2</FOR>
+<GIVEN>__dummy__</GIVEN>
+<TABLE>0.33 0.34 0.33</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>G3</FOR>
+<GIVEN>G2 dummy</GIVEN>
+<TABLE>0.5 0.5 0.0 0.5 0.5 0.0 0.0 0.5 0.5</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>G4</FOR>
+<GIVEN>G3 dummy</GIVEN>
+<TABLE>0.5 0.5 0.0 0.5 0.5 0.0 0.0 0.5 0.5</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>G5</FOR>
+<GIVEN>G4 dummy</GIVEN>
+<TABLE>0.5 0.5 0.0 0.5 0.5 0.0 0.0 0.5 0.5</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>C_core</FOR>
+<GIVEN>C_gap dummy</GIVEN>
+<TABLE>0.5 0.5 0.0 0.5 0.5 0.0 0.0 0.5 0.5</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>SC_chain</FOR>
+<GIVEN>G13 G14 dummy</GIVEN>
+<TABLE>0.8 0.2 0.0 0.6 0.4 0.0 0.4 0.5 0.1 0.6 0.4 0.0 0.4 0.5 0.1 0.2 0.5 0.3</TABLE>
+</PROBABILITY>
+<PROBABILITY>
+<FOR>Formal_status</FOR>
+<GIVEN>C_core SC_chain dummy</GIVEN>
+<TABLE>0.7 0.3 0.0 0.5 0.5 0.0 0.3 0.5 0.2 0.5 0.5 0.0 0.3 0.6 0.1 0.1 0.5 0.4</TABLE>
+</PROBABILITY>
+</NETWORK>
+</BIF>

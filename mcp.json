@@ -32,7 +32,7 @@
     },
     "lean": {
       "command": "uvx",
-      "args": ["lean-lsp-mcp", "--lean-project-path", "D:/WorkSpace/物理/CQMFormal/06 Lean形式化"],
+      "args": ["lean-lsp-mcp", "--lean-project-path", "D:/WorkSpace/物理/CQMFormal/08 理论组织和形式化框架/04_Lean对接/Lean源码"],
       "env": {}
     },
     "gpd-verification": {

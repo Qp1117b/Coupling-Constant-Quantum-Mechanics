@@ -1,0 +1,26 @@
+﻿lean_library,lean_symbol,concept_ids,prop_ids,gap_ids,remark
+CausalSet,CausalSet/Axioms,C004;C002;C003,P002,H3.1;H3.2;C,因果集公理；缺口 C 以 Lean 公理 H3.3 承载
+CouplingSpace,Basis,C060;C061;C062,P005,,耦合空间 u=ln r 与正则对易关系
+CartanAlgebra,cartanA4,C053;C054;C055;C056,P001;P017,,A₄ 嘉当矩阵、本征值精确表达式、Dynkin 指数比
+SpectralGeometry,spectralQuantum,C048;C047;C043;C044;C045;C046;C049,P004;P015,G002;G003;G004,相变量子 ☯、Sierra-CQM 耦谱、黎曼 ξ、谱算符
+SpectralGeometry,MathieuContinuedFraction,C057,P010,G005,Mathieu 临界 λ_c（连分数唯一根）
+PrimeGeometry,Basic,C010,P004,,质数前网络与因果时几何（多边形/弧段/位置）
+Decoherence,Basic;DeepCoupling,C008;C005;C006;C019,P009;P011;P012,,退相干三层结构、跨层级深耦合与唯一性
+PhysicalConstants,gn_spectral_formula,C081,P010;P032,,G_N 谱公式与 α⁻¹_SU(5)（构造后验数字校验，待独立复现）
+Methodology,Basic,C007,P009;P022;P023,,涌现逻辑结构、庸俗隐变量分解对比（公理为主）
+Superconductivity,TransitionTemperatureCQM,C070;C069;C067,P026;P027,G22,CQM 临界温度严格推导
+Superconductivity,BCSIntegralAsymptotic,C070,P027,G13,BCS 积分 tanh→对数渐近（G13 闭合）
+Superconductivity,MolecularGeometry,C028;C026;C029,P028,G20-ext;N2;N3,分子几何→晶胞嘉当矩阵→Regge 角亏
+Superconductivity,ElementCartan,C030;C026,P028;P029,G16,元素嘉当矩阵；因果分辨率形式化为 def 占位
+Superconductivity,TestDet,C029,P027,G14,中子缺陷谱判据 det D=8-3δ²（G14 闭合）
+Superconductivity,SPAF,C029;C026,P011,N1;N2,SPAF 半唯像框架（neutronDefect）
+FGChain,FiberBundle,C020;C021;C022;C023;C024,P024,,离散主丛（重组实现 F=G⇒R=G⇒Ĥ、和乐平庸化）
+FGChain,SyncOperator,C012;C046,P024,G002;G003;G004,同步算符→零点谱→耦级 𝔠_n
+FGChain,CurvatureOperator,C060;C061;C062,P007,,"曲率算符（海森堡对 [û,p̂_u]=i）"
+FGChain,Observable,C063;C070,P007;P026,,实验可观测：壳层容量、跃迁耦级谱 Δu_n=2ln n、BCS T_c
+FGChain,Hierarchy,C073;C012,P028,H3.1;H3.2;H3.3,FG 层级化与紧化算符
+GN,TripleIdentity,C048;C047,P015,,三重恒等 ☯=λ_1=-B、闭式表达式
+GN,SierraCQM,C057;C046,P010,,Sierra-CQM 条件性渐近、零点匹配、偏差界
+GN,SimplexSpectrum,C055;C053,P001,,4-单纯形边-面矩阵谱 {9¹4⁴1⁵} 严格化（57 定理）
+GN,AdeleJacobian,C058,P010,,Adele Jacobian 因子 2、exp(-2/☯)
+GN,Constructions,C058;C081,P010,,κ=(31+☯)/30 组合-谱连接、全因子正性

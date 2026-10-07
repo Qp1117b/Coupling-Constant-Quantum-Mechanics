@@ -2,7 +2,7 @@
 
 > 面向「耦合常数量子力学（CQM）」项目的 Agent / MCP / 工具 / 计算 / Lean 形式化一体化科研方案。
 >
-> **文档定位**：本方案是**工具与工作流的技术底座**，不修改、不引申、不评价任何 CQM 物理结论；所有涉及理论的表述均以 `README.md` 与 `01–09` 各文档的权威定义处为准（见 `.workbuddy/审校/00_修订基准与准则.md`）。
+> **文档定位**：本方案是**工具与工作流的技术底座**，不修改、不引申、不评价任何 CQM 物理结论；所有涉及理论的表述均以 `README.md` 与 `01–07` 各文档的权威定义处为准（见 `.workbuddy/审校/00_修订基准与准则.md`）。
 >
 > **验收对齐**：直接服务 `提示词.md` 的最终验收标准 —— *“第一性使用构建的形式化理论和已有理论严格推出元素 FG（电子分布以及结合能等等的实验确定的数据、性质或公式方程）”*。
 
@@ -24,13 +24,13 @@
 
 | 资产 | 位置 | 规模/状态 |
 |:---|:---|:---|
-| 理论文档库 | `01 核心理论` … `09 精细引力（FG）`、`一体化研究/文献/` | 9 大主题、数十篇 Markdown + 4 篇 PDF 文献 |
-| Lean 4 形式化 | `06 Lean形式化/` | 11 个库、**748 定理 + 30 公理**；Lean `v4.29.1`；依赖 `mathlib` + **`physlib`**（已在 `lakefile.toml` 中） |
-| 超导材料设计器 | `08 超导/超导材料设计器/godot_project/` | Godot 4.6 + GDScript + Godot MCP（`godot-ai`），回归 105 + 冒烟 52 全通过 |
+| 理论文档库 | `01 核心理论` … `07 精细引力（FG）`、`一体化研究/文献/` | 9 大主题、数十篇 Markdown + 4 篇 PDF 文献 |
+| Lean 4 形式化 | `08 理论组织和形式化框架/04_Lean对接/Lean源码/` | 11 个库、**748 定理 + 30 公理**；Lean `v4.29.1`；依赖 `mathlib` + **`physlib`**（已在 `lakefile.toml` 中） |
+| 超导材料设计器 | `06 超导/超导材料设计器/godot_project/` | Godot 4.6 + GDScript + Godot MCP（`godot-ai`），回归 105 + 冒烟 52 全通过 |
 | AI 协作治理 | `.workbuddy/`、`提示词.md`、`.codeartsdoer/` | 审校基准、变更日志、会话记忆、OpenCode 插件 |
 | 版本控制 | `.git/` | 已接 `origin/main`（历史记录含推送代理配置） |
 
-### 1.2 Lean 编译与缺口现状（据 `06 Lean形式化/README.md`）
+### 1.2 Lean 编译与缺口现状（据 `08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md`）
 
 | 库 | 编译 | 主要问题 |
 |:---|:---:|:---|
@@ -185,7 +185,7 @@
 
 ### 4.2 版本漂移治理
 
-- 建立 `06 Lean形式化/维护记录.md`：记录每次 Mathlib/physlib 升级导致的 API 变更与修复。
+- 建立 `08 理论组织和形式化框架/04_Lean对接/Lean源码/维护记录.md`：记录每次 Mathlib/physlib 升级导致的 API 变更与修复。
 - 用 `lake exe cache get` 拉取 mathlib 预编译缓存，降低全量编译成本。
 - **禁止**在未全量 `lake build` 验证的情况下升级依赖。
 
@@ -194,7 +194,7 @@
 审计逐条对齐 `提示词.md` 的要求，人工执行下列检索：
 
 ```bash
-# 在 06 Lean形式化/ 下执行
+# 在 08 理论组织和形式化框架/04_Lean对接/Lean源码/ 下执行
 echo "== 1) sorry / admit =="
 grep -rn --include=*.lean -E '\b(sorry|admit)\b' . | grep -v '.lake/' || echo "  无"
 echo "== 2) 新增/遗留 axiom =="
@@ -270,7 +270,7 @@ grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0
     "arxiv":        { "command": "uvx", "args": ["arxiv-mcp-server"] },
     "paper-search": { "command": "uvx", "args": ["paper-search-mcp"] },
     "sympy":        { "command": "uvx", "args": ["mcp-sympy"] },
-    "lean":         { "command": "uvx", "args": ["lean-lsp-mcp", "--lean-project-path", "D:/WorkSpace/物理/CQMFormal/06 Lean形式化"] },
+    "lean":         { "command": "uvx", "args": ["lean-lsp-mcp", "--lean-project-path", "D:/WorkSpace/物理/CQMFormal/08 理论组织和形式化框架/04_Lean对接/Lean源码"] },
     "nasa-ads":     { "command": "uvx", "args": ["nasa-ads-mcp"],
                       "env": { "ADS_API_TOKEN": "<token>" } },
     "zotero":       { "command": "uvx", "args": ["zotero-mcp"],
@@ -313,8 +313,8 @@ CQMFormal/
 ├── 一体化研究/附录/                     # 新增：术语表.md、缺口台账.md
 ├── .github/workflows/        # 新增：lean.yml
 ├── .workbuddy/               # 既有：审校基准、变更日志、记忆
-├── 06 Lean形式化/            # 既有：Lean 库
-└── …                         # 既有文档目录（01–09）
+├── 08 理论组织和形式化框架/04_Lean对接/Lean源码/            # 既有：Lean 库
+└── …                         # 既有文档目录（01–07）
 ```
 
 ### 6.3 CI 门禁（`.github/workflows/lean.yml` 参考）
@@ -382,7 +382,7 @@ jobs:
 ## 附录 A：命令速查
 
 ```bash
-# 编译（在 06 Lean形式化/ 下）
+# 编译（在 08 理论组织和形式化框架/04_Lean对接/Lean源码/ 下）
 lake build                      # 全量
 lake build GN                   # 单库
 lake exe cache get              # 预取 mathlib 缓存

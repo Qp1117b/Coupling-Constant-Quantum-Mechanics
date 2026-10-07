@@ -29,11 +29,11 @@
 
 ### 1.1 研究动机
 
-本框架（因果网络同步理论，CNST / 耦合常数量子力学，CQM）的精细引力（FG）采用“一个联络生成两种曲率”的结构：底空间曲率是 Regge 角亏 $\delta_v^{(\ell)} = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$，伴丛曲率是 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$，其和乐为 $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell) \in G_\ell$（`09 精细引力（FG）/FG_纤维丛理论.md` §3、§3.1）。
+本框架（因果网络同步理论，CNST / 耦合常数量子力学，CQM）的精细引力（FG）采用“一个联络生成两种曲率”的结构：底空间曲率是 Regge 角亏 $\delta_v^{(\ell)} = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$，伴丛曲率是 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$，其和乐为 $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell) \in G_\ell$（`07 精细引力（FG）/FG_纤维丛理论.md` §3、§3.1）。
 
 贝里曲率在数学上同为“联络的曲率”。项目内已有三处涉及贝里概念，但均未展开：
 
-- **超导第一性链断链**：`08 超导/CQM_超导_FG层级同步算符体系.md` §1.2——“内禀角亏 $\delta_{\text{intrinsic}}$ 无内部来源——当前只能引入外部 DFT 贝里曲率”；
+- **超导第一性链断链**：`06 超导/CQM_超导_FG层级同步算符体系.md` §1.2——“内禀角亏 $\delta_{\text{intrinsic}}$ 无内部来源——当前只能引入外部 DFT 贝里曲率”；
 - **方法论定位**：同文档 §9.3——“DFT 贝里曲率是电子波函数在动量空间的几何相位——在 CQM 语言中它是伴丛和乐的某种唯象近似”；
 - **谱理论线索**：`01 核心理论/CQM_核心_因果网络同步理论.md` §3.7——黎曼–西格尔相角 $\theta(t)$ 被读作“同步基态的贝里相位”。
 
@@ -110,7 +110,7 @@ $$S_R = \frac{1}{8\pi G}\sum_h A_h\,\delta_h$$
 
 对边长变分给出 Einstein–Regge 方程【文献确立】[21][23][24]。
 
-在二维情形（本框架底空间三角剖分的情形），铰链退化为顶点 $v$，亏角 $\delta_v = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$ 正是顶点处的**离散高斯曲率测度**：$\delta_v = \iint_{A_v^*} K\,dA$（$A_v^*$ 为对偶胞面积），因此 $K_v = \delta_v/A_v^*$、有效里奇标量 $R_v = 2\delta_v/A_v^*$【标准数学】。这与本框架 Lean 形式化中的桥接公式 $R_{\text{eff}} = 2\delta_v/A_{\text{dual}}$（`06 Lean形式化/Superconductivity/BridgeTheorems.lean`）一致——该公式是标准二维 Regge 曲率密度关系的实现。
+在二维情形（本框架底空间三角剖分的情形），铰链退化为顶点 $v$，亏角 $\delta_v = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$ 正是顶点处的**离散高斯曲率测度**：$\delta_v = \iint_{A_v^*} K\,dA$（$A_v^*$ 为对偶胞面积），因此 $K_v = \delta_v/A_v^*$、有效里奇标量 $R_v = 2\delta_v/A_v^*$【标准数学】。这与本框架 Lean 形式化中的桥接公式 $R_{\text{eff}} = 2\delta_v/A_{\text{dual}}$（`08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean`）一致——该公式是标准二维 Regge 曲率密度关系的实现。
 
 **单纯形夹角符号约定**（本节据此统一）：
 
@@ -149,7 +149,7 @@ Cheeger–Müller–Schrader（1984）证明：给定光滑黎曼度量，存在
 
 两者都是“曲率积分给出拓扑不变量”的一般原理（Chern–Weil 理论）的实例。
 
-**(4) 非阿贝尔推广**：Wilczek–Zee 非阿贝尔贝里曲率 $F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}$【文献确立】[3] 与本框架伴丛曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$（`09 精细引力（FG）/FG_纤维丛理论.md` §3）公式同型；Wilson 环 $W = \mathcal{P}\exp(i\oint\mathcal{A})$ 与本框架和乐 $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)$（§3.1）同型。
+**(4) 非阿贝尔推广**：Wilczek–Zee 非阿贝尔贝里曲率 $F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}$【文献确立】[3] 与本框架伴丛曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$（`07 精细引力（FG）/FG_纤维丛理论.md` §3）公式同型；Wilson 环 $W = \mathcal{P}\exp(i\oint\mathcal{A})$ 与本框架和乐 $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)$（§3.1）同型。
 
 ### 4.2 逐维结构对照表
 
@@ -207,12 +207,12 @@ Binder（2002，预印本）讨论锥形度规的 Aharonov–Bohm 亏角与贝�
 
 | 表述 | 位置 | 性质 |
 |:---|:---|:---|
-| $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)$，和乐平庸化 = 稳定构型 | `09 精细引力（FG）/FG_纤维丛理论.md` §3.1 | 框架结构（数学上为 Wilson 环） |
-| 一个联络生成两种曲率：Regge 角亏 + 伴丛曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$ | `09 精细引力（FG）/FG_纤维丛理论.md` §3 | 框架结构 |
-| “内禀角亏 $\delta_{\text{intrinsic}}$ 无内部来源——当前只能引入外部 DFT 贝里曲率” | `08 超导/CQM_超导_FG层级同步算符体系.md` §1.2 | 【CQM 构造假设】（外部输入依赖） |
+| $W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)$，和乐平庸化 = 稳定构型 | `07 精细引力（FG）/FG_纤维丛理论.md` §3.1 | 框架结构（数学上为 Wilson 环） |
+| 一个联络生成两种曲率：Regge 角亏 + 伴丛曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$ | `07 精细引力（FG）/FG_纤维丛理论.md` §3 | 框架结构 |
+| “内禀角亏 $\delta_{\text{intrinsic}}$ 无内部来源——当前只能引入外部 DFT 贝里曲率” | `06 超导/CQM_超导_FG层级同步算符体系.md` §1.2 | 【CQM 构造假设】（外部输入依赖） |
 | “DFT 贝里曲率是电子波函数在动量空间的几何相位——在 CQM 语言中它是伴丛和乐的某种唯象近似” | 同上 §9.3 | 【CQM 构造假设】 |
 | 黎曼–西格尔相角 $\theta(t)$ = “同步基态的贝里相位” | `01 核心理论/CQM_核心_因果网络同步理论.md` §3.7 | 【CQM 构造假设】 |
-| 和乐 = 共形场论单值性（monodromy），$h_{\text{conf}} = \delta_v\lambda_k/2\pi$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值，非 Coxeter 数） | `09 精细引力（FG）/FG_纤维丛理论.md` §9.4 | 【CQM 构造假设】（映射构造） |
+| 和乐 = 共形场论单值性（monodromy），$h_{\text{conf}} = \delta_v\lambda_k/2\pi$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值，非 Coxeter 数） | `07 精细引力（FG）/FG_纤维丛理论.md` §9.4 | 【CQM 构造假设】（映射构造） |
 | $R_{\text{eff}} = 2\delta_v/A_{\text{dual}}$（亏角 → 有效里奇标量） | `BridgeTheorems.lean` | 二维 Regge 曲率密度的标准关系【标准数学】 |
 | Regge 底空间几何指定自守形式 | 项目全局共识 | 【CQM 构造假设】 |
 
@@ -228,7 +228,7 @@ Binder（2002，预印本）讨论锥形度规的 Aharonov–Bohm 亏角与贝�
 
 文献调研表明以下对接**无文献对应**，属框架构造，须标注：
 
-1. **“密度泛函理论贝里曲率 = 伴丛和乐的唯象近似”（§9.3）**：文献分析显示两者测的是**不同空间的几何数据**——密度泛函理论贝里曲率是动量空间（布里渊区）能带几何[7][18]；$\delta_{\text{intrinsic}}$ 是实空间分子几何偏离理想杂化几何的球面角亏（`08 超导/CQM_超导_FG层级同步算符体系.md` §1.2 诊断）。“动量空间带几何 ↔ 实空间组织几何”的等同性是构造假设，文献既未建立也未否定。该假设在数学范畴上自洽（同为曲率—和乐结构），但跨空间映射本身无先例。
+1. **“密度泛函理论贝里曲率 = 伴丛和乐的唯象近似”（§9.3）**：文献分析显示两者测的是**不同空间的几何数据**——密度泛函理论贝里曲率是动量空间（布里渊区）能带几何[7][18]；$\delta_{\text{intrinsic}}$ 是实空间分子几何偏离理想杂化几何的球面角亏（`06 超导/CQM_超导_FG层级同步算符体系.md` §1.2 诊断）。“动量空间带几何 ↔ 实空间组织几何”的等同性是构造假设，文献既未建立也未否定。该假设在数学范畴上自洽（同为曲率—和乐结构），但跨空间映射本身无先例。
 2. **“黎曼–西格尔相角 = 同步基态贝里相位”（§3.7）**：$\theta(t)$ 是 $\zeta(1/2+it)$ 的辐角（$\zeta$ 的相位），将其读作贝里相位是框架构造。相容的历史谱系见 §5.5，但无文献直接支持该读法。
 3. **“和乐 = 共形单值性”（§9.4）**：纤维丛和乐本征值与共形块 monodromy 本征值的映射是框架构造（该文档自身的定位即是“建立严格定量映射，消除缺口”的目标陈述）。
 
@@ -254,7 +254,7 @@ $$\text{材料结构} \xrightarrow{\text{Regge几何}} \delta_v \xrightarrow{\te
 
 #### 5.6.1 分工结构：度量形式与响应形式
 
-FG“一个联络生成两种曲率”（`09 精细引力（FG）/FG_纤维丛理论.md` §3）不是冗余设计，而是度量—响应分工（存在论层级分析见 §5.6.3）：
+FG“一个联络生成两种曲率”（`07 精细引力（FG）/FG_纤维丛理论.md` §3）不是冗余设计，而是度量—响应分工（存在论层级分析见 §5.6.3）：
 
 | | Regge 角亏 $\delta_v$ | 伴丛曲率 $F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell$ |
 |:---|:---|:---|
@@ -321,7 +321,7 @@ $$\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体�
 ## 7. 开放问题（记录备查）
 
 1. $\delta_{\text{intrinsic}}$ 的内部来源是否可由**分子构型空间**的贝里/和乐结构给出：绕锥形交叉类简并点的 Mead–Truhlar 型和乐[39][40]能否在分子 FG 层级谱中表现为内禀角亏的谱贡献？具体候选机制是**响应形式向度量形式的回流**（§5.6.5）：分子层级伴丛和乐经联络 $\mathcal{A}_{\text{FG}}$ 反馈进底空间角亏——文献先例确立的是反作用方向[40]，回流机制的构造与检验属框架内研究。
-2. 若问题 1 成立，动量空间外部输入（密度泛函理论贝里曲率[18]）是应被构型空间内部来源**替代**，还是与后者**互补**？——即 §9.3“伴丛和乐唯象近似”定位（`08 超导/CQM_超导_FG层级同步算符体系.md`）的两种可能结局，何者成立？
+2. 若问题 1 成立，动量空间外部输入（密度泛函理论贝里曲率[18]）是应被构型空间内部来源**替代**，还是与后者**互补**？——即 §9.3“伴丛和乐唯象近似”定位（`06 超导/CQM_超导_FG层级同步算符体系.md`）的两种可能结局，何者成立？
 3. 锥形时空和乐 ↔ Regge 铰链 ↔ 贝里相位的三角对应能否在本框架层级结构（元素 / 分子 / 晶胞 FG）中严格化？
 4. 黎曼–西格尔相角 $\theta(t)$ 作为贝里相位的构造读法，能否通过与 Berry 量子混沌谱系[37]的显式对接（零点数方差、周期轨道展开）获得更严格的表述？
 5. 二维 Gauss–Bonnet（角亏总和 = 欧拉示性数）与陈数（贝里曲率积分）的平行，是否可在“Regge 底空间几何指定自守形式”的构造链中用作拓扑条件的一致性检验？
@@ -393,12 +393,12 @@ $$\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体�
 
 **框架内部文档（对接分析引用源）**
 
-- `09 精细引力（FG）/FG_纤维丛理论.md` §3（一个联络生成两种曲率）、§3.1（和乐）、§9.4（和乐 = 共形单值性）
-- `08 超导/CQM_超导_FG层级同步算符体系.md` §1.2（$\delta_{\text{intrinsic}}$ 断链诊断）、§9.3（与贝里曲率的方法论定位）
+- `07 精细引力（FG）/FG_纤维丛理论.md` §3（一个联络生成两种曲率）、§3.1（和乐）、§9.4（和乐 = 共形单值性）
+- `06 超导/CQM_超导_FG层级同步算符体系.md` §1.2（$\delta_{\text{intrinsic}}$ 断链诊断）、§9.3（与贝里曲率的方法论定位）
 - `01 核心理论/CQM_核心_因果网络同步理论.md` §3.7（黎曼–西格尔公式 → 几何相位）
 - `01 核心理论/CQM_核心_引力存在论前提.md` §3.3–§3.4（Regge 角亏进入不确定性关系）
-- `06 Lean形式化/Superconductivity/BridgeTheorems.lean`（$R_{\text{eff}} = 2\delta_v/A_{\text{dual}}$ 桥接定理）
-- `06 Lean形式化/Superconductivity/MolecularGeometry.lean`（reggeDeficitAngle 定义）
+- `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean`（$R_{\text{eff}} = 2\delta_v/A_{\text{dual}}$ 桥接定理）
+- `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/MolecularGeometry.lean`（reggeDeficitAngle 定义）
 - `05 方法论与批判/CQM_方法论_HilbertPolya批判.md` §2.1（Berry–Keating 对应）
 
 > **调研记录说明**：文献检索与核实于 2026-09-08 完成，采用多来源交叉验证（出版商官方页面 / arXiv / NASA 天体物理数据系统 / 引用数据库）。反常霍尔效应综述 [8] 的作者列表经直接核实为五作者（Nagaosa–Sinova–Onoda–MacDonald–Ong）。个别经典文献（[4][6][9][22][27][33][39][40]）未附直接网络链接，其书目信息经多个二级来源交叉确认。§5.6 与开放问题 1–2 的增补（含 [39][40] 的核实：Herzberg–Longuet-Higgins $\pi$ 相位发现与 Mead–Truhlar 矢量势机制的归属，经分子动力学几何相位综述与明尼苏达大学出版物页面确认）。§5.6.3 三层本体结构（承担者/度量形式/响应形式，依据 `01 核心理论/CQM_核心_引力存在论前提.md` §3.3、§7、§8 原文定位与 `CouplingSpace.lean` 黑洞冻结一致性注释）与 §5.6.5 回流候选机制。

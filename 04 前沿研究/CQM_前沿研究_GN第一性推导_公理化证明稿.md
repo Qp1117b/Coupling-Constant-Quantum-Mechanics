@@ -395,7 +395,7 @@ $$b_1(q) - 1 + q = \cfrac{q^2}{b_1(q) - 9 - \cfrac{q^2}{b_1(q) - 25 - \cfrac{q^2
 
 分母各层含 $b_1(q)$ 本身（由递推关系自洽给出）。
 
-**证明**。将方程的解展开为 Fourier 级数 $y = \sum_{k=0}^\infty c_k \sin((2k+1)z)$，代入得递推关系 $(b_1 - 1 + q)c_0 = q c_1$ 与 $(b_1 - (2j+1)^2)c_j = q(c_{j-1} + c_{j+1})$（$j \ge 1$）。逐层消去比值 $c_{j+1}/c_j$ 即得连分数方程。在临界根 $b_1(q_c) = 2q_c$ 处等价于 $1 - 3q_c = q_c^2/(9 - 2q_c - q_c^2/(25 - 2q_c - \cdots))$。见 McLachlan (1947) 或 DLMF §28.6；Lean 形式化见 `06 Lean形式化/SpectralGeometry/MathieuContinuedFraction.lean`。$\blacksquare$
+**证明**。将方程的解展开为 Fourier 级数 $y = \sum_{k=0}^\infty c_k \sin((2k+1)z)$，代入得递推关系 $(b_1 - 1 + q)c_0 = q c_1$ 与 $(b_1 - (2j+1)^2)c_j = q(c_{j-1} + c_{j+1})$（$j \ge 1$）。逐层消去比值 $c_{j+1}/c_j$ 即得连分数方程。在临界根 $b_1(q_c) = 2q_c$ 处等价于 $1 - 3q_c = q_c^2/(9 - 2q_c - q_c^2/(25 - 2q_c - \cdots))$。见 McLachlan (1947) 或 DLMF §28.6；Lean 形式化见 `08 理论组织和形式化框架/04_Lean对接/Lean源码/SpectralGeometry/MathieuContinuedFraction.lean`。$\blacksquare$
 
 **推论 3.1**。令 $\lambda = b_1(q)$，则 $\lambda$ 满足：
 
@@ -427,7 +427,7 @@ $$b_1'(q) = \langle \psi_1 | 2\cos 2z | \psi_1 \rangle$$
 
 **步骤 3（唯一性）**。$f$ 在 $(0, \infty)$ 上严格递减，至多有一个根。结合步骤 2，方程在 $(0, \infty)$ 内有唯一根 $q_c$。
 
-**步骤 4（根的定位）**。根可缩小至 $(0, 1/2)$：由微扰展开估计 $b_1(0.5) \approx 1 - 0.5 - 0.5^2/8 = 0.46875 < 1 = 2 \times 0.5$，即 $f(0.5) < 0$；结合 $f(0) = 1 > 0$ 与严格单调性得 $q_c \in (0, 0.5) \subset (0, 1)$。（此处微扰级数取首项为启发式定位；$q_c \in (0, 1/2)$ 内存在唯一性的严格证明由连分数方程（引理 3.2）在根处的等价形式 $1 - 3q = q^2/(9 - 2q - q^2/(25 - 2q - \cdots))$ 的不动点构造给出，见 `06 Lean形式化/SpectralGeometry/MathieuContinuedFraction.lean`。）$\blacksquare$
+**步骤 4（根的定位）**。根可缩小至 $(0, 1/2)$：由微扰展开估计 $b_1(0.5) \approx 1 - 0.5 - 0.5^2/8 = 0.46875 < 1 = 2 \times 0.5$，即 $f(0.5) < 0$；结合 $f(0) = 1 > 0$ 与严格单调性得 $q_c \in (0, 0.5) \subset (0, 1)$。（此处微扰级数取首项为启发式定位；$q_c \in (0, 1/2)$ 内存在唯一性的严格证明由连分数方程（引理 3.2）在根处的等价形式 $1 - 3q = q^2/(9 - 2q - q^2/(25 - 2q - \cdots))$ 的不动点构造给出，见 `08 理论组织和形式化框架/04_Lean对接/Lean源码/SpectralGeometry/MathieuContinuedFraction.lean`。）$\blacksquare$
 
 **定义 3.3**。临界参数记为 $q_c$，且 $\lambda_c = 4q_c$。
 
@@ -549,7 +549,7 @@ $$\frac{\mathfrak{c}_n - (1/4 + \gamma_n^2)}{\gamma_n^2} = O\left(\frac{1}{n}\ri
 
 因此，此定理是“**条件性定理**”——如果接受 $L_n$ 和 $m=n$ 的选择，则结论严格成立。
 
-**Lean 形式化状态**：步骤 4–5 的代数核心已在 `06 Lean形式化/GN/SierraCQM.lean` 形式化（6 定理，零 `sorry`）——零点匹配、偏差界 $|k_n-\gamma_n|<\gamma_n/(2n)$、耦级绝对/相对误差（含 $n\ge1$ 时见证常数 $5/4$）；`L_n` 与 $m=n$ 以显式假设出现。步骤 1–2（酉等价、平面波广义本征函数）需函数空间算子与分布谱论基础设施，未形式化。
+**Lean 形式化状态**：步骤 4–5 的代数核心已在 `08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/SierraCQM.lean` 形式化（6 定理，零 `sorry`）——零点匹配、偏差界 $|k_n-\gamma_n|<\gamma_n/(2n)$、耦级绝对/相对误差（含 $n\ge1$ 时见证常数 $5/4$）；`L_n` 与 $m=n$ 以显式假设出现。步骤 1–2（酉等价、平面波广义本征函数）需函数空间算子与分布谱论基础设施，未形式化。
 
 ---
 
@@ -704,7 +704,7 @@ $$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfra
 CQM 公理层（接受 A1-A6）
 ├── 定理 5.1：Sierra-CQM（★★☆）
 │   ├── 严格部分：酉等价 + Floquet 边界条件
-│   │   └── 代数核心已 Lean 形式化（06 Lean形式化/GN/SierraCQM.lean）
+│   │   └── 代数核心已 Lean 形式化（08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/SierraCQM.lean）
 │   ├── 构造性输入：Lₙ = 2πn/γₙ, m=n
 │   └── 输出：𝔠ₙ = 1/4 + γₙ² + O(γₙ²/n)
 ├── 定理 6.1：双向平方因子 2（★★☆）
@@ -750,7 +750,7 @@ CQM 公理层（接受 A1-A6）
 
 | 命题 | 定理编号 | 额外构造性输入 |
 |:---|:---:|:---|
-| Sierra-CQM 耦谱定理（渐近） | 5.1 | Lₙ 选择、m=n 选择（代数核心已 Lean 形式化：`06 Lean形式化/GN/SierraCQM.lean`） |
+| Sierra-CQM 耦谱定理（渐近） | 5.1 | Lₙ 选择、m=n 选择（代数核心已 Lean 形式化：`08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/SierraCQM.lean`） |
 | Adele Jacobian 因子 2 | 6.1 | p 进谱行列式存在性 |
 | SU(5) 唯一曲率源 | 推论 7.1 | 曲率 = Regge 曲率假设 |
 

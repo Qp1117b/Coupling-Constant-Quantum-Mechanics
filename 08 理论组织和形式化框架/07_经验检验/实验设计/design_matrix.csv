@@ -1,0 +1,7 @@
+﻿exp_id,target_gap,phenomenon,independent_variable,dependent_variable,cm_prediction_source,control,data_source,status
+E1,G15,同位素效应,同位素质量 M,主/次结构谱间隙差 ΔE,D031 §11（未闭合）,同族非同位素样品,ARPES/比热/穿透深度,未闭合
+E2,G21,赝能隙相图,"掺杂/温度 (p,T)",赝能隙 Δ_pg,D031 §11（未闭合）,正常态拟合外推,ARPES/STM,未闭合
+E3,G19,和乐相位闭合,晶胞构型,和乐相位 φ_H≈1,D031 §11（未闭合）,平凡晶胞,第一性/数值,未闭合
+E4,G13,BCS 渐近,耦合 λ、德拜频率 ω_D,T_c,D031 §13（闭合）,弱/强耦合极限,LeClair 型积分,闭合（Lean 见证）
+E5,G22,T_c 丛作用量交叉,群指数 n,T_c(n),D030 §2（公式完成）,单一群限制,比热/磁穿透,推导完成待严格化
+E6,G16,因果分辨率,角亏密度 ρ_δ,有效 Ricci 标量,D031 §11（未闭合）,均匀剖分,数值相对论类比,未闭合
