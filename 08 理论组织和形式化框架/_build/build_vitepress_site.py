@@ -836,7 +836,9 @@ export default defineConfig({
   description: '耦合常数量子力学（CQM）组织层研究站：结构化数据 · 知识图谱 · 证据层 · 形式化验证',
   srcDir: 'docs',
   outDir: '.vitepress/dist',
-  ignoreDeadLinks: true,
+  // 死链不再放行：站内 404 已清零（见 fix_src_links），让构建自己当验证器——
+  // 一旦再引入失效链接，构建会直接失败并点名文件与目标。
+  ignoreDeadLinks: false,
   // 数学保护：VitePress 默认没有数学插件，markdown-it 会先按普通文本解析，
   // 于是公式里的 _ / * 被当成强调语法，例如 $$\\mathbb{R}_{>0}$$ 被解析成
   // "\\mathbb{R}<em>{>0}</em>"——标签一旦插入，MathJax 就无法再匹配这对
