@@ -564,9 +564,11 @@ VP_ENHANCE_JS = r'''(function () {
   }
   function mountNav() {
     var hdr = navHost(); if (!hdr) return;
-    if (hdr.querySelector(".cqm-sbtn")) return;
+    // 注意：判定「是否已挂载」必须用本按钮专属的 class。服务徽标也带 .cqm-sbtn，
+    // 而它由 fetch 异步插入，先到时会顶掉这个判定，导致高级检索按钮永远不出现。
+    if (hdr.querySelector(".cqm-advbtn")) return;
     var b = document.createElement("button");
-    b.className = "cqm-sbtn"; b.type = "button";
+    b.className = "cqm-sbtn cqm-advbtn"; b.type = "button";
     b.innerHTML = '高级检索 <span class="cqm-kbd">Ctrl</span><span class="cqm-kbd">Shift</span><span class="cqm-kbd">K</span>';
     b.addEventListener("click", openBox);
     hdr.appendChild(b);
@@ -667,12 +669,22 @@ VP_ENHANCE_JS = r'''(function () {
     document.body.appendChild(BOX); document.body.appendChild(MASK);
     BOX.style.display = "none"; MASK.style.display = "none";
     bindKeys();
-    mountNav();
-    probeService();
   }
   function initPage() {
     runTerms();
     initDepth();
+    // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
+    // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
+    // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。
+    mountNav();
+    probeService();
+    if (!document.querySelector(".cqm-advbtn")) {
+      var n = 0;
+      var t = setInterval(function () {
+        mountNav();
+        if (document.querySelector(".cqm-advbtn") || ++n > 20) clearInterval(t);
+      }, 200);
+    }
   }
   window.CQM = { init: function () { initOnce(); initPage(); } };
   function boot() { window.CQM.init(); }
