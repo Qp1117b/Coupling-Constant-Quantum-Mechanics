@@ -92,6 +92,75 @@ def restore_math(text, js=False):
     return re.sub(r'CQMMATHPLCHOLDER\d+END', repl, text)
 
 
+# ---------------------------------------------------------------- 站内 404 修复
+# mkdocs_src 里的行内链接形如 [理论组织和形式化框架总览](./_src/08 .../README.html)——
+# 那是 Material 站把所有源文档编译进 _src/ 后的地址。VitePress 不处理 '_' 前缀目录，
+# 站内没有 _src/，于是这些链接全部 404。
+# 站内本就有这些源文档的渲染版（F01/F02/…），故指过来；没有对应页面的（归档、
+# LICENSE、元数据等）降级为纯文本，不留死链。
+SRC_LINK_MAP = {
+    "_src/08 理论组织和形式化框架/README": "/F02_README",
+    "_src/08 理论组织和形式化框架/AGENTS": "/F01_AGENTS",
+}
+SRC_LINK_RE = re.compile(r'\[([^\]\n]+)\]\((\.?/?_src/[^)\s]+?)(\.html)?(#[^)]*)?\)')
+
+
+def fix_src_links(txt):
+    def repl(m):
+        text, base, _ext, _anchor = m.group(1), m.group(2), m.group(3), m.group(4)
+        key = base.lstrip("./")
+        for prefix, target in SRC_LINK_MAP.items():
+            if key.startswith(prefix):
+                return "[%s](%s)" % (text, target)
+        return text          # 无对应站内页面 → 去掉链接，保留文字
+
+    return SRC_LINK_RE.sub(repl, txt)
+
+
+# ---------------------------------------------------------------- 中文强调修复
+# CommonMark 的强调 flanking 判定在中文标点处会误判：**“存在论相变”** 里，
+# 左 ** 的右侧是“（标点）、左侧是汉字，被判为「不是左 flanking」而不能开强调；
+# **可观察子群（observable subgroup）**问题 里，右 ** 的左侧是）（标点）、
+# 右侧是汉字，同样不能闭。于是这些成对的 ** 被原样保留（实测 18 处）。
+# Material 时代的 Python-Markdown 规则宽松，故此前不显。
+# 处理：逐行把成对的 **…** 提前落成 <strong>…</strong>；跳过代码围栏，行内代码
+# 先取走再放回，避免误伤。
+FENCE_RE = re.compile(r'^\s*(?:```|~~~)')
+INLINE_CODE_RE = re.compile(r'`[^`\n]*`')
+BOLD_RE = re.compile(r'\*\*(?=\S)([^*\n]{1,300}?)(?<=\S)\*\*')
+# 裸文本下标：U(1)_B、U(1)_{B-L}、G_N、K_L、A_4 这类没有写进 $…$ 的下标记号，
+# 只要同段出现两个就会被 markdown-it 当斜体开闭配对，实测把
+# 「U(1)_B、U(1)_B-L、U(1)_Y」渲染成「U(1)<em>B、U(1)</em>B-L、U(1)_Y」。
+# 给这类下划线加反斜杠转义，输出仍是字面下划线，视觉不变。
+BARE_SUB_RE = re.compile(r'(?<=[A-Za-z0-9)\]}])_(?=[A-Za-z0-9({])')
+
+
+def fix_cjk_bold(txt):
+    lines = txt.split("\n")
+    out, in_fence = [], False
+    for ln in lines:
+        if FENCE_RE.match(ln):
+            in_fence = not in_fence
+            out.append(ln)
+            continue
+        if in_fence:
+            out.append(ln)
+            continue
+        codes = []
+
+        def stash(m):
+            codes.append(m.group(0))
+            return "\x01C%d\x01" % (len(codes) - 1)
+
+        ln2 = INLINE_CODE_RE.sub(stash, ln)
+        ln2 = BOLD_RE.sub(lambda m: "<strong>%s</strong>" % m.group(1), ln2)
+        ln2 = BARE_SUB_RE.sub(lambda m: "\\_", ln2)     # 裸下标：转义 _ 而非配成斜体
+        for i, c in enumerate(codes):
+            ln2 = ln2.replace("\x01C%d\x01" % i, c)
+        out.append(ln2)
+    return "\n".join(out)
+
+
 def wrap_vpre(txt):
     """把正文整体放进 <div v-pre>，避免正文里的 {{ }} 被 Vue 当成插值编译。
 
@@ -124,8 +193,10 @@ for f in md_files:
         txt = fh.read()
     # VitePress 的静态资源根是 public/，viz 从 assets/viz/ 迁到 /viz/
     txt = txt.replace("assets/viz/", "/viz/")
+    txt = fix_src_links(txt)         # 消除指向 _src/ 的失效链接
     if f != "index.md":
         txt = protect_math(txt)      # 公式先换成占位符，躲开 markdown-it
+        txt = fix_cjk_bold(txt)      # 中文标点旁的 **…** 落成 <strong>…</strong>
         txt = wrap_vpre(txt)
         wrapped += 1
     with open(os.path.join(VP_DOCS, f), "w", encoding="utf-8") as fh:
@@ -739,6 +810,26 @@ nav.append({"text": "检索台", "link": "/V003_检索台"})
 
 CONFIG_MTS = """import { defineConfig } from 'vitepress'
 
+// 中文检索分词：minisearch 默认把连续的 CJK 当一个词，中文查询几乎命中不了。
+// 这里按「单字 + 二元」切分中文、按词切分拉丁；索引与查询共用同一 tokenize。
+const cqmTokenize = (text) => {
+  const out = []
+  const re = /[\\u4e00-\\u9fff]+|[A-Za-z0-9_\\-]+/g
+  let m
+  while ((m = re.exec(text))) {
+    const s = m[0]
+    if (/^[\\u4e00-\\u9fff]+$/.test(s)) {
+      for (let i = 0; i < s.length; i++) {
+        out.push(s[i])
+        if (i + 1 < s.length) out.push(s.slice(i, i + 2))
+      }
+    } else {
+      out.push(s.toLowerCase())
+    }
+  }
+  return out
+}
+
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CQM 研究站',
@@ -759,22 +850,11 @@ export default defineConfig({
       const isEscaped = (src, i) => i > 0 && src.charCodeAt(i - 1) === BACKSLASH
       const escHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-      // markdown-it 的 text 规则会把非终止字符成片吞下，而 '$' 不在它的终止表里，
-      // 于是 '$' 常常根本没机会成为某个规则的起点（被 text 一并吃掉）。
-      // 这里替换 text 规则，把 '$' 补进终止字符，数学规则才轮得到。
-      md.inline.ruler.at('text', function (state, silent) {
-        const src = state.src, max = state.posMax
-        const isTerm = (c) => c === 0x0A || c === 0x5B || c === 0x5D || c === 0x21
-          || c === 0x5C || c === 0x60 || c === 0x26 || c === 0x3C || c === 0x7B
-          || c === 0x7D || c === DOLLAR
-        let pos = state.pos
-        while (pos < max && !isTerm(src.charCodeAt(pos))) pos++
-        if (pos === state.pos) return false
-        if (!silent) state.pending += src.slice(state.pos, pos)
-        state.pos = pos
-        return true
-      })
-
+      // 注意：不要替换 markdown-it 的 text 规则。它的终止字符表本来就有 '$'
+      // （连同星号、下划线、波浪号等 22 个），曾误以为缺 '$' 而自行重写，
+      // 结果漏抄星号等下划线等，导致加粗与斜体语法全被 text 规则整段吞掉
+      // （实测 6 113 处加粗字面未解析）。此处只用下面的 cqm_math 规则，
+      // 它的注册位置在 emphasis 之前，足以整段接管 $…$。
       md.inline.ruler.before('emphasis', 'cqm_math', function (state, silent) {
         const src = state.src, start = state.pos, max = state.posMax
         if (!isDollar(src.charCodeAt(start)) || isEscaped(src, start)) return false
@@ -815,6 +895,36 @@ export default defineConfig({
   themeConfig: {
     nav: %s,
     sidebar: %s,
+    // 内置全文搜索（VitePress 官方 local provider）：构建期生成索引，离线可用；
+    // Ctrl/⌘+K 唤起，导航栏出现搜索按钮。索引走 fetch，需经 HTTP 访问。
+    search: {
+      provider: 'local',
+      options: {
+        detailedView: true,
+        translations: {
+          button: { buttonText: '搜索', buttonAriaLabel: '搜索文档' },
+          modal: {
+            displayDetails: '显示详细列表',
+            resetButtonTitle: '清除查询条件',
+            backButtonTitle: '返回',
+            noResultsText: '未找到相关结果',
+            footer: {
+              selectText: '选择',
+              selectKeyAriaLabel: '回车',
+              navigateText: '切换',
+              navigateUpKeyAriaLabel: '上箭头',
+              navigateDownKeyAriaLabel: '下箭头',
+              closeText: '关闭',
+              closeKeyAriaLabel: 'Esc'
+            }
+          }
+        },
+        miniSearch: {
+          options: { tokenize: cqmTokenize },
+          searchOptions: { fuzzy: 0.2, prefix: true, boost: { title: 4, text: 2 } }
+        }
+      }
+    },
     outline: [2, 3],
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: false

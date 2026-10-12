@@ -1,5 +1,25 @@
 import { defineConfig } from 'vitepress'
 
+// 中文检索分词：minisearch 默认把连续的 CJK 当一个词，中文查询几乎命中不了。
+// 这里按「单字 + 二元」切分中文、按词切分拉丁；索引与查询共用同一 tokenize。
+const cqmTokenize = (text) => {
+  const out = []
+  const re = /[\u4e00-\u9fff]+|[A-Za-z0-9_\-]+/g
+  let m
+  while ((m = re.exec(text))) {
+    const s = m[0]
+    if (/^[\u4e00-\u9fff]+$/.test(s)) {
+      for (let i = 0; i < s.length; i++) {
+        out.push(s[i])
+        if (i + 1 < s.length) out.push(s.slice(i, i + 2))
+      }
+    } else {
+      out.push(s.toLowerCase())
+    }
+  }
+  return out
+}
+
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CQM 研究站',
@@ -20,22 +40,11 @@ export default defineConfig({
       const isEscaped = (src, i) => i > 0 && src.charCodeAt(i - 1) === BACKSLASH
       const escHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-      // markdown-it 的 text 规则会把非终止字符成片吞下，而 '$' 不在它的终止表里，
-      // 于是 '$' 常常根本没机会成为某个规则的起点（被 text 一并吃掉）。
-      // 这里替换 text 规则，把 '$' 补进终止字符，数学规则才轮得到。
-      md.inline.ruler.at('text', function (state, silent) {
-        const src = state.src, max = state.posMax
-        const isTerm = (c) => c === 0x0A || c === 0x5B || c === 0x5D || c === 0x21
-          || c === 0x5C || c === 0x60 || c === 0x26 || c === 0x3C || c === 0x7B
-          || c === 0x7D || c === DOLLAR
-        let pos = state.pos
-        while (pos < max && !isTerm(src.charCodeAt(pos))) pos++
-        if (pos === state.pos) return false
-        if (!silent) state.pending += src.slice(state.pos, pos)
-        state.pos = pos
-        return true
-      })
-
+      // 注意：不要替换 markdown-it 的 text 规则。它的终止字符表本来就有 '$'
+      // （连同星号、下划线、波浪号等 22 个），曾误以为缺 '$' 而自行重写，
+      // 结果漏抄星号等下划线等，导致加粗与斜体语法全被 text 规则整段吞掉
+      // （实测 6 113 处加粗字面未解析）。此处只用下面的 cqm_math 规则，
+      // 它的注册位置在 emphasis 之前，足以整段接管 $…$。
       md.inline.ruler.before('emphasis', 'cqm_math', function (state, silent) {
         const src = state.src, start = state.pos, max = state.posMax
         if (!isDollar(src.charCodeAt(start)) || isEscaped(src, start)) return false
@@ -196,7 +205,7 @@ export default defineConfig({
         "link": "/D013_量子引力讨论"
       },
       {
-        "text": "CQM 牛顿引力常数 $G_N$ 的可能公式",
+        "text": "CQM 牛顿引力常数 $G\\_N$ 的可能公式",
         "link": "/D014_GN可能公式"
       },
       {
@@ -216,7 +225,7 @@ export default defineConfig({
         "link": "/D018_待推1边界条件"
       },
       {
-        "text": "$G_N$ 第一性推导：公理化证明稿",
+        "text": "$G\\_N$ 第一性推导：公理化证明稿",
         "link": "/D019_GN第一性推导公理化"
       },
       {
@@ -224,7 +233,7 @@ export default defineConfig({
         "link": "/D020_质量研究思路汇总"
       },
       {
-        "text": "Wyler 常数的 $A_4$ 群论分解与 CQM 框架嵌入",
+        "text": "Wyler 常数的 $A\\_4$ 群论分解与 CQM 框架嵌入",
         "link": "/D021_Wyler常数"
       },
       {
@@ -318,6 +327,36 @@ export default defineConfig({
     ]
   }
 ],
+    // 内置全文搜索（VitePress 官方 local provider）：构建期生成索引，离线可用；
+    // Ctrl/⌘+K 唤起，导航栏出现搜索按钮。索引走 fetch，需经 HTTP 访问。
+    search: {
+      provider: 'local',
+      options: {
+        detailedView: true,
+        translations: {
+          button: { buttonText: '搜索', buttonAriaLabel: '搜索文档' },
+          modal: {
+            displayDetails: '显示详细列表',
+            resetButtonTitle: '清除查询条件',
+            backButtonTitle: '返回',
+            noResultsText: '未找到相关结果',
+            footer: {
+              selectText: '选择',
+              selectKeyAriaLabel: '回车',
+              navigateText: '切换',
+              navigateUpKeyAriaLabel: '上箭头',
+              navigateDownKeyAriaLabel: '下箭头',
+              closeText: '关闭',
+              closeKeyAriaLabel: 'Esc'
+            }
+          }
+        },
+        miniSearch: {
+          options: { tokenize: cqmTokenize },
+          searchOptions: { fuzzy: 0.2, prefix: true, boost: { title: 4, text: 2 } }
+        }
+      }
+    },
     outline: [2, 3],
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: false
