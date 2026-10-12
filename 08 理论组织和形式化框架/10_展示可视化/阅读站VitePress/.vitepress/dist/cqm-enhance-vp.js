@@ -122,7 +122,7 @@
     if (!art) return;
     unwrap(art);
     var re = new RegExp(keys.map(function (k) { return k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|"), "g");
-    var used = {}, total = 0, MAX = 240, PER = 2;
+    var used = {}, total = 0, MAX = 320, PER = 2;
     function wrap(node) {
       if (inSkip(node) || !node.nodeValue || node.nodeValue.trim().length < 2) return;
       var txt = node.nodeValue, frag = null, last = 0, m; re.lastIndex = 0;
@@ -382,6 +382,64 @@
   }
 
   /* ---------- 初始化：一次性 + 每页 ---------- */
+  /* ---------- 搜索跳转后的关键词高亮 ----------
+     点击搜索结果前把查询词存 sessionStorage，目标页加载后对正文文本节点
+     打 <mark class="cqm-hl">（跳过代码/公式/已有标注），一次性使用。 */
+  function applySearchHighlight() {
+    var q = "";
+    try { q = sessionStorage.getItem("cqm-hl") || ""; } catch (e) {}
+    if (!q) return;
+    try { sessionStorage.removeItem("cqm-hl"); } catch (e) {}
+    var doc = contentRoot(); if (!doc) return;
+    var words = q.split(/\s+/).filter(function (w) { return w.length >= 2; });
+    if (!words.length) return;
+    var re = new RegExp("(" + words.map(function (w) {
+      return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }).join("|") + ")", "gi");
+    var walker = document.createTreeWalker(doc, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) {
+      if (!n.nodeValue || !n.nodeValue.trim()) continue;
+      var p = n.parentNode, tag = p.nodeName.toLowerCase();
+      if (/^(code|pre|script|style|textarea|mark)$/.test(tag)) continue;
+      if (p.closest && p.closest("mjx-container,.cqm-pop")) continue;
+      nodes.push(n);
+    }
+    var count = 0;
+    nodes.forEach(function (node) {
+      if (count >= 200) return;
+      var txt = node.nodeValue;
+      re.lastIndex = 0;
+      if (!re.test(txt)) { re.lastIndex = 0; return; }
+      re.lastIndex = 0;
+      var frag = document.createDocumentFragment(), last = 0, m;
+      while ((m = re.exec(txt)) && count < 200) {
+        if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+        var mk = document.createElement("mark");
+        mk.className = "cqm-hl"; mk.textContent = m[0];
+        frag.appendChild(mk);
+        last = m.index + m[0].length; count++;
+        re.lastIndex = 0;
+      }
+      if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+      if (node.parentNode) node.parentNode.replaceChild(frag, node);
+    });
+    if (count) {
+      var first = doc.querySelector("mark.cqm-hl");
+      if (first) { try { first.scrollIntoView({ block: "center" }); } catch (e) {} }
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var hit = e.target.closest && e.target.closest(".VPLocalSearchBox a");
+    if (!hit) return;
+    var inp = document.querySelector(".VPLocalSearchBox input");
+    if (inp && inp.value.trim()) {
+      try { sessionStorage.setItem("cqm-hl", inp.value.trim()); } catch (err) {}
+    }
+    // 点到当前页自身时 SPA 不会触发路由回调，这里主动补一次高亮
+    setTimeout(function () { if (window.CQM && window.CQM.highlight) window.CQM.highlight(); }, 900);
+  }, true);
+
   /* ---------- 长文档仪表：页顶阅读进度 + 回到顶部 ---------- */
   function mountReadAids() {
     if (document.querySelector(".cqm-progress")) return;
@@ -457,6 +515,7 @@
   function initPage() {
     runTerms();
     initDepth();
+    applySearchHighlight();
     fixExternalLinks();
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
@@ -478,7 +537,8 @@
       }, 45000);
     }
   }
-  window.CQM = { init: function () { initOnce(); initPage(); } };
+  window.CQM = { init: function () { initOnce(); initPage(); },
+                 highlight: function () { applySearchHighlight(); } };
   function boot() { window.CQM.init(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();

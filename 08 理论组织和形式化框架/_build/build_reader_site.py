@@ -540,8 +540,8 @@ def build_glossary(staged_map, steps):
             h.append('<div class="cqm-pop__rows">Lean：%s</div>' % _esc(_mathify(r["lean"])))
         if r.get("section"):
             h.append('<div class="cqm-pop__src">%s</div>' % _esc(r["section"]))
-        h.append('<div class="cqm-pop__act"><span class="cqm-pop__hint">'
-                 '缺口状态原样呈现，不因呈现而升格</span></div>')
+        h.append('<div class="cqm-pop__act"><a href="./D004_缺口台账.html">在缺口台账中打开</a>'
+                 '<span class="cqm-pop__hint">缺口状态原样呈现，不因呈现而升格</span></div>')
         terms[code] = "".join(h)
         if code not in term_keys:
             term_keys.append(code)
@@ -561,11 +561,61 @@ def build_glossary(staged_map, steps):
         s = (r.get("symbol") or "").strip()
         if not s:
             continue
+        # 符号卡：21 个符号此前只进检索索引，现在补成悬浮卡（含 LaTeX 与出处链接）
+        src_raw = (r.get("source") or "").strip()
+        h = ['<div class="cqm-pop__head"><span class="cqm-pop__name">%s</span>' % _esc(s),
+             '<span class="cqm-pop__tag">符号</span>',
+             '<span class="cqm-pop__id">%s</span></div>' % _esc(r.get("name") or "")]
+        if r.get("latex"):
+            h.append('<div class="cqm-pop__def">%s</div>' % _esc(_mathify(r["latex"])))
+        if r.get("kind"):
+            h.append('<div class="cqm-pop__rows">类别：%s</div>' % _esc(r["kind"]))
+        if r.get("value_or_note"):
+            h.append('<div class="cqm-pop__rows">%s</div>' % _esc(_mathify(r["value_or_note"])))
+        if src_raw:
+            h.append('<div class="cqm-pop__src">出处：%s</div>' % _esc(src_raw))
+            first_doc = src_raw.split("§")[0].split("；")[0].strip()
+            f = sid2file.get(first_doc, "")
+            if f:
+                h.append('<div class="cqm-pop__act"><a href="./%s">在权威文档中打开</a></div>' % f)
+        terms[s] = "".join(h)
+        # 双字符以上的符号才做正文标注（c/α 这类单字符会满页命中）
+        if len(s) >= 2 and s not in term_keys:
+            term_keys.append(s)
         index.append({"ty": "符号", "tt": s + "　" + (r.get("name") or ""),
                       "sb": "；".join(x for x in [r.get("value_or_note"), r.get("kind")] if x),
-                      "u": "", "dc": (r.get("source") or ""),
+                      "u": "", "dc": src_raw,
                       "hs": " ".join([s, r.get("name") or "", r.get("latex") or "",
                                       r.get("value_or_note") or ""]).lower()})
+
+    # 论证卡：70 条重组实现/推导论证，含前件⇒后件与依据文档链接
+    args = _csv(os.path.join(D01, "论证表.csv"))
+    for r in args:
+        aid = (r.get("arg_id") or "").strip()
+        if not aid:
+            continue
+        docs = [x.strip() for x in (r.get("source_doc") or "").split(";") if x.strip()]
+        h = ['<div class="cqm-pop__head"><span class="cqm-pop__name">论证 %s</span>' % _esc(aid),
+             '<span class="cqm-pop__tag">论证</span>',
+             '<span class="cqm-pop__id">%s</span></div>' % _esc(r.get("type") or "")]
+        prem = (r.get("premises") or "").strip()
+        conc = (r.get("conclusion") or "").strip()
+        h.append('<div class="cqm-pop__def">%s ⇒ %s</div>'
+                 % (_esc(_mathify(prem)), _esc(_mathify(conc))))
+        links = []
+        for d in docs:
+            f = sid2file.get(d, "")
+            links.append('<a href="./%s">%s</a>' % (f, _esc(d)) if f else _esc(d))
+        if links:
+            h.append('<div class="cqm-pop__src">依据文档：%s</div>' % "、".join(links))
+        if r.get("source_concept"):
+            h.append('<div class="cqm-pop__rows">概念链：%s</div>' % _esc(r["source_concept"]))
+        terms[aid] = "".join(h)
+        term_keys.append(aid)
+        index.append({"ty": "论证", "tt": "论证 %s" % aid,
+                      "sb": "%s ⇒ %s" % (prem, conc), "u": "",
+                      "dc": ";".join(docs),
+                      "hs": " ".join([aid, prem, conc, r.get("type") or ""]).lower()})
 
     for i, h in enumerate(steps, 1):
         index.append({"ty": "链条步", "tt": "S%03d" % i, "sb": h["text"], "u": "./" + CHAIN_PAGE[:-3] + ".html",

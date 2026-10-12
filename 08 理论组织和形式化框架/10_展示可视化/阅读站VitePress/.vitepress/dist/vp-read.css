@@ -38,7 +38,10 @@ mjx-container > svg { display: inline-block; }
 /* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
 .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 { scroll-margin-top: 84px; }
 .vp-doc :target { background: var(--vp-c-brand-soft); border-radius: 4px; }
-/* 6) 长文档仪表：页顶阅读进度 + 回到顶部 */
+/* 6) 搜索跳转后的关键词高亮 */
+mark.cqm-hl { background: #ffe58f; color: inherit; padding: 0 1px; border-radius: 2px; }
+.dark mark.cqm-hl { background: #6b5a12; color: #fff; }
+/* 7) 长文档仪表：页顶阅读进度 + 回到顶部 */
 .cqm-progress {
   position: fixed; left: 0; top: 0; height: 3px; width: 0;
   background: var(--vp-c-brand-1); z-index: 100;
