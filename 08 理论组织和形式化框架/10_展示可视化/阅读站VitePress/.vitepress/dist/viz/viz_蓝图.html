@@ -45,7 +45,32 @@ white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .toolbar input{padding:7px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;min-width:250px}
 svg text.num{font-variant-numeric:tabular-nums}
 @media print{.toolbar{display:none}body{background:#fff}}
-</style></head><body>
+</style><script src="/vp-math.js"></script>
+<script src="/tex-svg.js" async></script>
+<script>
+(function () {
+  function typeset() {
+    if (!window.MathJax || !window.MathJax.typesetPromise) return null;
+    try { return window.MathJax.typesetPromise(); } catch (e) { return null; }
+  }
+  function boot() { setTimeout(typeset, 300); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  var timer = null, busy = false;
+  new MutationObserver(function () {
+    if (busy || timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      if (busy) return;
+      busy = true;
+      var p = typeset();
+      if (p && p.then) p.then(function () { busy = false; }, function () { busy = false; });
+      else busy = false;
+    }, 400);
+  }).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+</head><body>
 <header><h1>CQM 形式化蓝图</h1>
 <div class="sub">Lean 4 形式化项目 ↔ 概念表 ↔ 缺口台账 · 状态以 <code>08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md</code> 为权威</div></header>
 <div class="wrap">

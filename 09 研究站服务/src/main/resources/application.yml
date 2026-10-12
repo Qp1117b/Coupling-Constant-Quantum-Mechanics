@@ -12,6 +12,16 @@ server:
       enabled: true
       force: true
 
+spring:
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          # 静态资源一律协商缓存（no-cache = 每次都带 ETag/Last-Modified 回源校验）。
+          # 研究站的增强脚本（cqm-enhance-vp.js 等）与 vp-math.js 文件名不带哈希，
+          # 若让浏览器启发式缓存，重建后用户仍会跑旧脚本——现象是「明明修好了却还是坏的」。
+          no-cache: true
+
 cqm:
   # 项目根目录（相对本模块的工作目录；默认上一级，即 CQMFormal 仓库根）
   root: ${CQM_ROOT:..}

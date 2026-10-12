@@ -14,6 +14,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 
 ROOT08 = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 MK_SRC = os.path.join(ROOT08, "_build", "mkdocs_src", "docs")
@@ -227,8 +228,41 @@ VIZ_FIX = (
     ('src="data.json"', 'src="驾驶舱数据.json"'),
     ('"data.json"', '"驾驶舱数据.json"'),
 )
+# viz 页面（检索台 / 驾驶舱 / 超图 / 蓝图）是自包含 HTML，本身不带 MathJax，
+# 而它们的正文（尤其检索台的实体/证据卡）里有大量 $…$ 公式——是 JS 运行时生成的，
+# 构建期静态扫描看不到，打开页面就是一片 LaTeX 原文。
+# 这里给它们注入本地 MathJax 与一个「DOM 变化后自动重排」的钩子
+# （检索台的结果是点击/输入后动态渲染的，只在 DOMContentLoaded 排一次不够）。
+VIZ_MATH = """<script src="/vp-math.js"></script>
+<script src="/tex-svg.js" async></script>
+<script>
+(function () {
+  function typeset() {
+    if (!window.MathJax || !window.MathJax.typesetPromise) return null;
+    try { return window.MathJax.typesetPromise(); } catch (e) { return null; }
+  }
+  function boot() { setTimeout(typeset, 300); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  var timer = null, busy = false;
+  new MutationObserver(function () {
+    if (busy || timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      if (busy) return;
+      busy = true;
+      var p = typeset();
+      if (p && p.then) p.then(function () { busy = false; }, function () { busy = false; });
+      else busy = false;
+    }, 400);
+  }).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+"""
+
 viz_dir = os.path.join(VP_PUBLIC, "viz")
 viz_fixed = 0
+viz_math = 0
 if os.path.isdir(viz_dir):
     for name in os.listdir(viz_dir):
         if not name.lower().endswith(".html"):
@@ -239,11 +273,17 @@ if os.path.isdir(viz_dir):
         before = txt
         for a, b in VIZ_FIX:
             txt = txt.replace(a, b)
+        if "tex-svg.js" not in txt:
+            if "</head>" in txt:
+                txt = txt.replace("</head>", VIZ_MATH + "</head>", 1)
+            else:
+                txt = VIZ_MATH + txt
+            viz_math += 1
         if txt != before:
             with open(p, "w", encoding="utf-8") as fh:
                 fh.write(txt)
             viz_fixed += 1
-print("[vp] viz 资源引用改写：%d 个 HTML 被修正" % viz_fixed)
+print("[vp] viz 资源引用改写：%d 个 HTML 被修正；注入 MathJax：%d 个页面" % (viz_fixed, viz_math))
 
 # ---------------------------------------------------------------- 3. 品牌色覆盖
 BRAND_CSS = """/* CQM 研究站：对齐参考站 VitePress 观感，品牌色靛蓝 #3451b2 */
@@ -799,12 +839,19 @@ VP_ENHANCE_JS = r'''(function () {
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。
     mountNav();
     probeService();
-    if (!document.querySelector(".cqm-advbtn")) {
-      var n = 0;
-      var t = setInterval(function () {
+    // 导航栏由 Vue 异步渲染，重页面（公式上千个）会明显更晚。
+    // 固定次数重试会在这类页面上耗光而漏挂，故改为观察 DOM 直到挂上。
+    if (!document.querySelector(".cqm-advbtn") && !initPage._obs) {
+      initPage._obs = new MutationObserver(function () {
         mountNav();
-        if (document.querySelector(".cqm-advbtn") || ++n > 20) clearInterval(t);
-      }, 200);
+        if (document.querySelector(".cqm-advbtn")) {
+          initPage._obs.disconnect(); initPage._obs = null;
+        }
+      });
+      initPage._obs.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        if (initPage._obs) { initPage._obs.disconnect(); initPage._obs = null; }
+      }, 45000);
     }
   }
   window.CQM = { init: function () { initOnce(); initPage(); } };
@@ -1019,14 +1066,16 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css' }],
-    ['script', { src: '/cqm-glossary.js' }],
-    ['script', { src: '/cqm-depth.js' }],
-    ['script', { src: '/cqm-enhance-vp.js' }],
-    ['script', { src: '/vp-math.js' }],
-    ['script', { src: '/tex-svg.js', async: true }]
+    // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
+    // 现象是「明明修好了、页面上却还是老样子」。
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=__VTAG__' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=__VTAG__' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=__VTAG__' }],
+    ['script', { src: '/cqm-glossary.js?v=__VTAG__' }],
+    ['script', { src: '/cqm-depth.js?v=__VTAG__' }],
+    ['script', { src: '/cqm-enhance-vp.js?v=__VTAG__' }],
+    ['script', { src: '/vp-math.js?v=__VTAG__' }],
+    ['script', { src: '/tex-svg.js?v=__VTAG__', async: true }]
   ],
   themeConfig: {
     nav: %s,
@@ -1069,6 +1118,8 @@ export default defineConfig({
 """ % (json.dumps(nav, ensure_ascii=False, indent=2),
        json.dumps(sidebar, ensure_ascii=False, indent=2))
 
+VTAG = time.strftime("%Y%m%d%H%M%S")
+CONFIG_MTS = CONFIG_MTS.replace("__VTAG__", VTAG)
 with open(os.path.join(VP_CFG_DIR, "config.mts"), "w", encoding="utf-8") as fh:
     fh.write(CONFIG_MTS)
 print("[vp] 已生成 .vitepress/config.mts（nav=%d 项，sidebar=%d 组）" % (len(nav), len(sidebar)))

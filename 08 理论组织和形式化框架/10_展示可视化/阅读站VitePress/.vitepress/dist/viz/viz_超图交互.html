@@ -48,7 +48,32 @@ button.cls:disabled{opacity:.4;cursor:default}
 .badge.gap{background:rgba(248,113,113,.16);color:#fca5a5}
 #prog{position:relative;height:5px;flex:0 0 190px;background:rgba(255,255,255,.09);border-radius:3px;overflow:hidden}
 #prog i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#38bdf8,#a78bfa);transition:width .3s}
-</style></head>
+</style><script src="/vp-math.js"></script>
+<script src="/tex-svg.js" async></script>
+<script>
+(function () {
+  function typeset() {
+    if (!window.MathJax || !window.MathJax.typesetPromise) return null;
+    try { return window.MathJax.typesetPromise(); } catch (e) { return null; }
+  }
+  function boot() { setTimeout(typeset, 300); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  var timer = null, busy = false;
+  new MutationObserver(function () {
+    if (busy || timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      if (busy) return;
+      busy = true;
+      var p = typeset();
+      if (p && p.then) p.then(function () { busy = false; }, function () { busy = false; });
+      else busy = false;
+    }, 400);
+  }).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+</head>
 <body>
 <header>
   <h1>CQM 概念关系超图</h1><span class="sub" id="stat"></span>

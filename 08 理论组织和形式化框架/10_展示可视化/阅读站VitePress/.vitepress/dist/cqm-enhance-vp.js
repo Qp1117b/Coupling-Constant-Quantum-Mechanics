@@ -437,12 +437,19 @@
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。
     mountNav();
     probeService();
-    if (!document.querySelector(".cqm-advbtn")) {
-      var n = 0;
-      var t = setInterval(function () {
+    // 导航栏由 Vue 异步渲染，重页面（公式上千个）会明显更晚。
+    // 固定次数重试会在这类页面上耗光而漏挂，故改为观察 DOM 直到挂上。
+    if (!document.querySelector(".cqm-advbtn") && !initPage._obs) {
+      initPage._obs = new MutationObserver(function () {
         mountNav();
-        if (document.querySelector(".cqm-advbtn") || ++n > 20) clearInterval(t);
-      }, 200);
+        if (document.querySelector(".cqm-advbtn")) {
+          initPage._obs.disconnect(); initPage._obs = null;
+        }
+      });
+      initPage._obs.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        if (initPage._obs) { initPage._obs.disconnect(); initPage._obs = null; }
+      }, 45000);
     }
   }
   window.CQM = { init: function () { initOnce(); initPage(); } };
