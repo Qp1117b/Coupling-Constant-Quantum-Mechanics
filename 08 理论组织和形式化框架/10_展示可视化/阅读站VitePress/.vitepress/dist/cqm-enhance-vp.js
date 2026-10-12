@@ -182,6 +182,25 @@
     }
     return t;
   }
+  /* 结果摘要的内联渲染：加粗、行内代码、公式。
+     公式必须先摘成占位符再做关键词高亮——否则 mark 会把 $…$ 内部切开，
+     MathJax 就匹配不到定界符（实测「量纲」查询下 20 处 **、6 处 $ 字面残留）。 */
+  function sbRender(text, toks) {
+    var t = esc(text || "");
+    var math = [];
+    t = t.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]{1,160}\$|\\\([\s\S]*?\\\)/g, function (m) {
+      math.push(m); return "\x01M" + (math.length - 1) + "\x01";
+    });
+    for (var i = 0; i < toks.length; i++) {
+      var k = toks[i]; if (k.length < 2) continue;
+      var safe = k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      t = t.replace(new RegExp(safe, "gi"), function (x) { return "<mark>" + x + "</mark>"; });
+    }
+    t = t.replace(/\*\*([^*\n]{1,160})\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/`([^`\n]{1,160})`/g, "<code>$1</code>");
+    t = t.replace(/\x01M(\d+)\x01/g, function (m, i2) { return math[+i2]; });
+    return t;
+  }
   function run() {
     var q = INP.value, toks = tokens(q), hits = [];
     for (var i = 0; i < IDX.length; i++) {
@@ -200,7 +219,8 @@
       var d = document.createElement("div");
       d.className = "cqm-res__it"; d.setAttribute("data-i", i);
       d.innerHTML = '<div class="cqm-res__tt"><span class="cqm-res__ty">' + h.it.ty + "</span>" +
-        hl(h.it.tt, toks) + '</div><div class="cqm-res__sb">' + hl(h.it.sb, toks).slice(0, 300) + "</div>";
+        hl(h.it.tt, toks) + '</div><div class="cqm-res__sb">' +
+        sbRender(String(h.it.sb || "").slice(0, 300), toks) + "</div>";
       d.addEventListener("click", function () { open(i); });
       RES.appendChild(d);
     });
@@ -513,10 +533,31 @@
     }
   }
 
+  /* ---------- 阅读调节：正文字号三档循环（localStorage 记忆） ---------- */
+  function mountFontCtl() {
+    var hdr = navHost(); if (!hdr) return;
+    if (hdr.querySelector(".cqm-fontbtn")) return;
+    var scales = [1, 1.12, 1.25], idx = 0;
+    try { idx = parseInt(localStorage.getItem("cqm-font-idx") || "0", 10) || 0; } catch (e) {}
+    if (idx < 0 || idx >= scales.length) idx = 0;
+    var b = document.createElement("button");
+    b.className = "cqm-sbtn cqm-fontbtn"; b.type = "button";
+    b.title = "正文字号（点击循环：标准 / 大 / 特大）";
+    function apply() {
+      document.documentElement.style.setProperty("--cqm-font-scale", scales[idx]);
+      b.textContent = "A" + (idx === 0 ? "" : idx === 1 ? "+ " : "++");
+      try { localStorage.setItem("cqm-font-idx", String(idx)); } catch (e) {}
+    }
+    b.addEventListener("click", function () { idx = (idx + 1) % scales.length; apply(); });
+    apply();
+    hdr.appendChild(b);
+  }
+
   function initPage() {
     runTerms();
     initDepth();
     applySearchHighlight();
+    mountFontCtl();
     fixExternalLinks();
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。

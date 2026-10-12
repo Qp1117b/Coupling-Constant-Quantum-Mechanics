@@ -46,6 +46,9 @@ mjx-container > svg { display: inline-block; }
 /* 6) 搜索跳转后的关键词高亮 */
 mark.cqm-hl { background: #ffe58f; color: inherit; padding: 0 1px; border-radius: 2px; }
 .dark mark.cqm-hl { background: #6b5a12; color: #fff; }
+/* 6b) 正文字号三档（导航栏 A 按钮循环切换，localStorage 记忆） */
+:root { --cqm-font-scale: 1; }
+.vp-doc { font-size: calc(16px * var(--cqm-font-scale)); }
 /* 7) 长文档仪表：页顶阅读进度 + 回到顶部 */
 .cqm-progress {
   position: fixed; left: 0; top: 0; height: 3px; width: 0;

@@ -360,6 +360,9 @@ mjx-container > svg { display: inline-block; }
 /* 6) 搜索跳转后的关键词高亮 */
 mark.cqm-hl { background: #ffe58f; color: inherit; padding: 0 1px; border-radius: 2px; }
 .dark mark.cqm-hl { background: #6b5a12; color: #fff; }
+/* 6b) 正文字号三档（导航栏 A 按钮循环切换，localStorage 记忆） */
+:root { --cqm-font-scale: 1; }
+.vp-doc { font-size: calc(16px * var(--cqm-font-scale)); }
 /* 7) 长文档仪表：页顶阅读进度 + 回到顶部 */
 .cqm-progress {
   position: fixed; left: 0; top: 0; height: 3px; width: 0;
@@ -592,6 +595,25 @@ VP_ENHANCE_JS = r'''(function () {
     }
     return t;
   }
+  /* 结果摘要的内联渲染：加粗、行内代码、公式。
+     公式必须先摘成占位符再做关键词高亮——否则 mark 会把 $…$ 内部切开，
+     MathJax 就匹配不到定界符（实测「量纲」查询下 20 处 **、6 处 $ 字面残留）。 */
+  function sbRender(text, toks) {
+    var t = esc(text || "");
+    var math = [];
+    t = t.replace(/\$\$[\s\S]*?\$\$|\$[^$\n]{1,160}\$|\\\([\s\S]*?\\\)/g, function (m) {
+      math.push(m); return "\x01M" + (math.length - 1) + "\x01";
+    });
+    for (var i = 0; i < toks.length; i++) {
+      var k = toks[i]; if (k.length < 2) continue;
+      var safe = k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      t = t.replace(new RegExp(safe, "gi"), function (x) { return "<mark>" + x + "</mark>"; });
+    }
+    t = t.replace(/\*\*([^*\n]{1,160})\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/`([^`\n]{1,160})`/g, "<code>$1</code>");
+    t = t.replace(/\x01M(\d+)\x01/g, function (m, i2) { return math[+i2]; });
+    return t;
+  }
   function run() {
     var q = INP.value, toks = tokens(q), hits = [];
     for (var i = 0; i < IDX.length; i++) {
@@ -610,7 +632,8 @@ VP_ENHANCE_JS = r'''(function () {
       var d = document.createElement("div");
       d.className = "cqm-res__it"; d.setAttribute("data-i", i);
       d.innerHTML = '<div class="cqm-res__tt"><span class="cqm-res__ty">' + h.it.ty + "</span>" +
-        hl(h.it.tt, toks) + '</div><div class="cqm-res__sb">' + hl(h.it.sb, toks).slice(0, 300) + "</div>";
+        hl(h.it.tt, toks) + '</div><div class="cqm-res__sb">' +
+        sbRender(String(h.it.sb || "").slice(0, 300), toks) + "</div>";
       d.addEventListener("click", function () { open(i); });
       RES.appendChild(d);
     });
@@ -923,10 +946,31 @@ VP_ENHANCE_JS = r'''(function () {
     }
   }
 
+  /* ---------- 阅读调节：正文字号三档循环（localStorage 记忆） ---------- */
+  function mountFontCtl() {
+    var hdr = navHost(); if (!hdr) return;
+    if (hdr.querySelector(".cqm-fontbtn")) return;
+    var scales = [1, 1.12, 1.25], idx = 0;
+    try { idx = parseInt(localStorage.getItem("cqm-font-idx") || "0", 10) || 0; } catch (e) {}
+    if (idx < 0 || idx >= scales.length) idx = 0;
+    var b = document.createElement("button");
+    b.className = "cqm-sbtn cqm-fontbtn"; b.type = "button";
+    b.title = "正文字号（点击循环：标准 / 大 / 特大）";
+    function apply() {
+      document.documentElement.style.setProperty("--cqm-font-scale", scales[idx]);
+      b.textContent = "A" + (idx === 0 ? "" : idx === 1 ? "+ " : "++");
+      try { localStorage.setItem("cqm-font-idx", String(idx)); } catch (e) {}
+    }
+    b.addEventListener("click", function () { idx = (idx + 1) % scales.length; apply(); });
+    apply();
+    hdr.appendChild(b);
+  }
+
   function initPage() {
     runTerms();
     initDepth();
     applySearchHighlight();
+    mountFontCtl();
     fixExternalLinks();
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
@@ -1176,6 +1220,142 @@ with open(os.path.join(VP_PUBLIC, "lean-page.js"), "w", encoding="utf-8") as fh:
     fh.write(LEAN_PAGE_JS)
 print("[vp] 已写 Lean 对接页脚本 public/lean-page.js")
 
+# ------------------------------------------------- 3c4. 术语总览页（227 张卡集中浏览）
+# 数据直接用页面里已加载的 window.CQM_GLOSSARY（terms + index），无需再请求。
+# 点击卡片时创建临时 data-cqm 元素并派发 mouseover，复用全局悬浮卡。
+TERMS_APP_JS = r'''(function () {
+  var CATS = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步"];
+  function boot() {
+    var app = document.getElementById("terms-app");
+    if (!app || app.__done) return;
+    var G = window.CQM_GLOSSARY;
+    if (!G) return;
+    app.__done = 1;
+    var terms = G.terms || {}, index = G.index || [];
+    var style = document.createElement("style");
+    style.textContent = ''
+      + '.terms-app{font-size:14px}'
+      + '.terms-chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}'
+      + '.terms-chips button{padding:5px 13px;border:1px solid var(--vp-c-divider);border-radius:16px;'
+      +   'background:var(--vp-c-bg);color:var(--vp-c-text-1);cursor:pointer;font:inherit}'
+      + '.terms-chips button[data-on="1"]{background:var(--vp-c-brand-soft);border-color:var(--vp-c-brand-1);color:var(--vp-c-brand-1)}'
+      + '.terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}'
+      + '.terms-card{border:1px solid var(--vp-c-divider);border-radius:8px;padding:10px 12px;cursor:pointer;'
+      +   'background:var(--vp-c-bg);transition:border-color .15s}'
+      + '.terms-card:hover{border-color:var(--vp-c-brand-1)}'
+      + '.terms-card__n{font-weight:600;margin-bottom:3px;display:flex;gap:6px;align-items:baseline}'
+      + '.terms-card__ty{font-size:11px;color:var(--vp-c-text-3);font-weight:400}'
+      + '.terms-card__s{font-size:12.5px;color:var(--vp-c-text-2);line-height:1.5;}'
+      + '.terms-toolbar{display:flex;gap:8px;align-items:center;margin:10px 0}'
+      + '.terms-toolbar input{flex:0 0 260px;padding:6px 11px;border:1px solid var(--vp-c-divider);'
+      +   'border-radius:6px;background:var(--vp-c-bg);color:var(--vp-c-text-1);font:inherit}';
+    document.head.appendChild(style);
+
+    var keyOf = function (ty, tt) {
+      if (ty === "缺口") return tt.replace(/^缺口\s*/, "");
+      if (ty === "论证") return tt.replace(/^论证\s*/, "");
+      if (ty === "符号") return tt.split("\u3000")[0];
+      return tt;
+    };
+
+    function cardHtml(item) {
+      var key = keyOf(item.ty, item.tt);
+      var hasCard = !!terms[key];
+      return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + key.replace(/"/g, "&quot;") + '"' : "") + '>' +
+        '<div class="terms-card__n"><span>' + item.tt + '</span><span class="terms-card__ty">' + item.ty + '</span></div>' +
+        '<div class="terms-card__s">' + (item.sb || "").slice(0, 110) + '</div></div>';
+    }
+
+    function paint(filterCat, filterQ) {
+      var grid = app.querySelector(".terms-grid");
+      var items = index.filter(function (it) {
+        if (filterCat && it.ty !== filterCat) return false;
+        if (filterQ) {
+          var q = filterQ.toLowerCase();
+          if ((it.tt + " " + (it.sb || "") + " " + (it.dc || "")).toLowerCase().indexOf(q) < 0) return false;
+        }
+        return true;
+      });
+      grid.innerHTML = items.map(cardHtml).join("") ||
+        '<div style="opacity:.7">无匹配条目</div>';
+      app.querySelector("#terms-count").textContent = items.length + " 条";
+    }
+
+    app.innerHTML =
+      '<p style="margin-top:.2em">全部 <strong>' + index.length + '</strong> 条术语与实体的集中浏览：' +
+      '悬停或点击卡片查看完整解释（公式与出处同悬浮卡）；用上方分类与搜索框缩小范围。</p>' +
+      '<div class="terms-toolbar"><input id="terms-q" placeholder="按名称或内容筛选…"></div>' +
+      '<div class="terms-chips" id="terms-chips"></div>' +
+      '<div id="terms-count" style="opacity:.7;margin-bottom:8px"></div>' +
+      '<div class="terms-grid"></div>';
+
+    var chips = app.querySelector("#terms-chips");
+    var all = document.createElement("button");
+    all.textContent = "全部"; all.setAttribute("data-on", "1");
+    all.addEventListener("click", function () {
+      Array.prototype.forEach.call(chips.children, function (b) { b.setAttribute("data-on", "0"); });
+      all.setAttribute("data-on", "1");
+      paint("", app.querySelector("#terms-q").value);
+    });
+    chips.appendChild(all);
+    CATS.forEach(function (cat) {
+      var n = index.filter(function (it) { return it.ty === cat; }).length;
+      if (!n) return;
+      var b = document.createElement("button");
+      b.textContent = cat + " " + n;
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call(chips.children, function (x) { x.setAttribute("data-on", "0"); });
+        b.setAttribute("data-on", "1");
+        paint(cat, app.querySelector("#terms-q").value);
+      });
+      chips.appendChild(b);
+    });
+    var inp = app.querySelector("#terms-q");
+    inp.addEventListener("input", function () {
+      var cat = "";
+      Array.prototype.forEach.call(chips.children, function (b) {
+        if (b.getAttribute("data-on") === "1" && b.textContent !== "全部") {
+          cat = b.textContent.split(" ")[0];
+        }
+      });
+      paint(cat, inp.value);
+    });
+    paint("", "");
+  }
+  new MutationObserver(function () { boot(); })
+    .observe(document.documentElement, { childList: true, subtree: true });
+  boot();
+})();
+'''
+
+with open(os.path.join(VP_PUBLIC, "terms-app.js"), "w", encoding="utf-8") as fh:
+    fh.write(TERMS_APP_JS)
+print("[vp] 已写术语总览页脚本 public/terms-app.js")
+
+# 术语总览页本体
+TERMS_MD = """---
+title: 术语表
+---
+
+<div v-pre>
+
+# 术语总览
+
+全部 **227 张**悬浮卡在此集中浏览：概念、缺口、论证、符号、命题、文档。
+悬停或点击任意卡片，即可弹出与正文一致的完整解释（含公式、原文引文与出处链接）；
+正文中遇到术语时也会有同样的悬浮解释。
+
+<div id="terms-app" class="terms-app">正在加载术语数据…</div>
+
+数据边界：卡片文字逐字取自 `01_结构化数据` 与 `09_桥接与翻译` 的结构化表，
+机器不改写、不推断；语义近邻仅为 TF-IDF 定位线索，非理论关系。
+
+</div>
+"""
+with open(os.path.join(VP_DOCS, "TERMS_术语表.md"), "w", encoding="utf-8") as fh:
+    fh.write(TERMS_MD)
+print("[vp] 已写术语总览页 docs/TERMS_术语表.md")
+
 # ------------------------------------------------- 3d. 自定义主题（接路由 hook）
 # VitePress 是 SPA：路由切换后必须重跑 initPage（术语标注 + 深度滑杆）并重排公式。
 THEME_JS = r'''import DefaultTheme from 'vitepress/theme'
@@ -1315,6 +1495,9 @@ if viz:
 if os.path.isfile(os.path.join(VP_DOCS, "LEAN_Lean对接.md")):
     sidebar.append({"text": "Lean 对接", "items": [
         {"text": "Lean 对接 · 统一视图", "link": "/LEAN_Lean对接"}]})
+if os.path.isfile(os.path.join(VP_DOCS, "TERMS_术语表.md")):
+    sidebar.append({"text": "术语表", "items": [
+        {"text": "术语总览（227 条）", "link": "/TERMS_术语表"}]})
 if other:
     sidebar.append({"text": "结构化与参考", "items": other})
 
@@ -1327,6 +1510,8 @@ if viz:
     nav.append({"text": "可视化", "link": viz[0]["link"]})
 if os.path.isfile(os.path.join(VP_DOCS, "LEAN_Lean对接.md")):
     nav.append({"text": "Lean 对接", "link": "/LEAN_Lean对接"})
+if os.path.isfile(os.path.join(VP_DOCS, "TERMS_术语表.md")):
+    nav.append({"text": "术语表", "link": "/TERMS_术语表"})
 nav.append({"text": "检索台", "link": "/V003_检索台"})
 
 CONFIG_MTS = """import { defineConfig } from 'vitepress'
@@ -1416,6 +1601,7 @@ export default defineConfig({
     ['script', { src: '/cqm-depth.js?v=__VTAG__' }],
     ['script', { src: '/cqm-enhance-vp.js?v=__VTAG__' }],
     ['script', { src: '/lean-page.js?v=__VTAG__', defer: true }],
+    ['script', { src: '/terms-app.js?v=__VTAG__', defer: true }],
     ['script', { src: '/vp-math.js?v=__VTAG__' }],
     ['script', { src: '/tex-svg.js?v=__VTAG__', async: true }]
   ],

@@ -78,15 +78,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261013071035' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261013071035' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261013071035' }],
-    ['script', { src: '/cqm-glossary.js?v=20261013071035' }],
-    ['script', { src: '/cqm-depth.js?v=20261013071035' }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261013071035' }],
-    ['script', { src: '/lean-page.js?v=20261013071035', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261013071035' }],
-    ['script', { src: '/tex-svg.js?v=20261013071035', async: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261013072250' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261013072250' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261013072250' }],
+    ['script', { src: '/cqm-glossary.js?v=20261013072250' }],
+    ['script', { src: '/cqm-depth.js?v=20261013072250' }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261013072250' }],
+    ['script', { src: '/lean-page.js?v=20261013072250', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261013072250', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261013072250' }],
+    ['script', { src: '/tex-svg.js?v=20261013072250', async: true }]
   ],
   themeConfig: {
     nav: [
@@ -109,6 +110,10 @@ export default defineConfig({
   {
     "text": "Lean 对接",
     "link": "/LEAN_Lean对接"
+  },
+  {
+    "text": "术语表",
+    "link": "/TERMS_术语表"
   },
   {
     "text": "检索台",
@@ -169,6 +174,15 @@ export default defineConfig({
       {
         "text": "Lean 对接 · 统一视图",
         "link": "/LEAN_Lean对接"
+      }
+    ]
+  },
+  {
+    "text": "术语表",
+    "items": [
+      {
+        "text": "术语总览（227 条）",
+        "link": "/TERMS_术语表"
       }
     ]
   },
