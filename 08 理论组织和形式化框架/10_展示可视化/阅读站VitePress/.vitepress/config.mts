@@ -77,6 +77,7 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'stylesheet', href: '/vp-brand.css' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css' }],
     ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css' }],
     ['script', { src: '/cqm-glossary.js' }],
     ['script', { src: '/cqm-depth.js' }],

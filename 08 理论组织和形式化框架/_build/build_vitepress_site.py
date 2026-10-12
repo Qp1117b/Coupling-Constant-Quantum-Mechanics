@@ -268,11 +268,84 @@ BRAND_CSS = """/* CQM 研究站：对齐参考站 VitePress 观感，品牌色�
 with open(os.path.join(VP_PUBLIC, "vp-brand.css"), "w", encoding="utf-8") as fh:
     fh.write(BRAND_CSS)
 
-# ------------------------------------------------- 3b. 本地 MathJax（$ / $$，离线）
-# 正文公式是 $...$；这里不依赖 markdown-it-mathjax3（它会拉 CDN），
-# 改用随站复制到 public/ 的本地 tex-svg.js，配置以 $ 为分隔符。
+# ------------------------------------------------- 3c2. 阅读体验增强（纯 CSS，随站自带）
+# 依据：本项目公式密集、正文含大量表格与中文长段落。VitePress 内置表格横向滚动、
+# 目录高亮、代码复制，但**长公式会撑破版心**（MathJax 生成的 SVG 默认不换行、
+# 不加滚动条），中文长段落的行高与段距也偏紧。这里只补这几处，不覆盖主题默认样式。
+READ_CSS = """/* CQM 研究站 · 阅读体验增强 */
+/* 1) 公式：长公式横向滚动，不撑破版心（含块级与行内） */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  margin: auto 2px -2px;
+}
+mjx-container[display="true"] {
+  display: block;
+  padding: 2px 0;
+}
+mjx-container > svg { display: inline-block; }
+/* 2) 卡片与检索结果里的公式同样限宽 */
+.cqm-pop mjx-container, .cqm-res mjx-container { max-width: 100%; }
+/* 3) 中文长段落：行高与段距放宽，标题前留白，便于长文档阅读 */
+.vp-doc { line-height: 1.9; }
+.vp-doc p { margin: 1em 0; }
+.vp-doc li { margin: 0.35em 0; line-height: 1.85; }
+.vp-doc h2 {
+  margin-top: 2.4em;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.vp-doc h3 { margin-top: 1.8em; }
+.vp-doc h4 { margin-top: 1.4em; }
+.vp-doc blockquote {
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  padding: 2px 16px;
+  border-radius: 0 6px 6px 0;
+}
+/* 4) 表格：按内容撑开（max-content），宁可整表横向滚动，也不把中文列压成竖排。
+     VitePress 默认 table 宽 100%，列一窄中文就逐字换行，读起来很难受。 */
+.vp-doc table { width: max-content; min-width: 100%; }
+.vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
+.vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
+/* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 { scroll-margin-top: 84px; }
+.vp-doc :target { background: var(--vp-c-brand-soft); border-radius: 4px; }
+/* 6) 长文档仪表：页顶阅读进度 + 回到顶部 */
+.cqm-progress {
+  position: fixed; left: 0; top: 0; height: 3px; width: 0;
+  background: var(--vp-c-brand-1); z-index: 100;
+  transition: width .08s linear;
+}
+.cqm-top {
+  position: fixed; right: 22px; bottom: 26px; width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt); color: var(--vp-c-text-1);
+  cursor: pointer; font-size: 16px; z-index: 60;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.cqm-top[data-on="1"] { opacity: .92; pointer-events: auto; }
+.cqm-top:hover { background: var(--vp-c-brand-soft); }
+@media print { .cqm-progress, .cqm-top { display: none; } }
+"""
+with open(os.path.join(VP_PUBLIC, "vp-read.css"), "w", encoding="utf-8") as fh:
+    fh.write(READ_CSS)
+
+# ------------------------------------------------- 3b. 本地 MathJax（四套分隔符，离线）
+# 不依赖 markdown-it-mathjax3（它会拉 CDN），改用随站复制到 public/ 的本地 tex-svg.js。
+# 必须同时支持两套分隔符：
+#   $…$ / $$…$$       —— 正文（源 md 写法）
+#   \(…\) / \[…\]     —— 术语悬浮卡与证据引文（这些文字来自结构化数据，
+#                        是 Material 时代 arithmatex 转出的写法，实测 140 + 7 处）
+# 只配 $ 会让卡片里的公式全部以 LaTeX 原文露出。
 MATH_JS = """window.MathJax = {
-  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']], processEscapes: true },
+  tex: {
+    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+    processEscapes: true
+  },
   svg: { fontCache: 'global' },
   options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
 };
@@ -322,11 +395,19 @@ VP_ENHANCE_JS = r'''(function () {
     } catch (e) {}
     cb();
   }
+  /* 卡片文字来自结构化数据（CSV 原文），里面会带行内代码标记（如 Lean 的模块名）
+     与 \(…\) 公式。公式交给 MathJax，反引号在这里落成 <code>。 */
+  var ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
+  function cardHtml(html) {
+    return String(html).replace(/`([^`\n]+)`/g, function (m, s) {
+      return "<code>" + s.replace(/[&<>]/g, function (c) { return ESC[c]; }) + "</code>";
+    });
+  }
   function showPop(el) {
     var html = G.terms[el.getAttribute("data-cqm")];
     if (!html) return;
     var p = ensurePop();
-    p.innerHTML = html; p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
+    p.innerHTML = cardHtml(html); p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
     cur = el;
     typeset(p, function () { place(p, el); });
   }
@@ -663,16 +744,56 @@ VP_ENHANCE_JS = r'''(function () {
   }
 
   /* ---------- 初始化：一次性 + 每页 ---------- */
+  /* ---------- 长文档仪表：页顶阅读进度 + 回到顶部 ---------- */
+  function mountReadAids() {
+    if (document.querySelector(".cqm-progress")) return;
+    var bar = document.createElement("div");
+    bar.className = "cqm-progress";
+    var top = document.createElement("button");
+    top.className = "cqm-top"; top.type = "button";
+    top.setAttribute("aria-label", "回到顶部"); top.title = "回到顶部";
+    top.textContent = "↑";
+    top.addEventListener("click", function () {
+      try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (e) { window.scrollTo(0, 0); }
+    });
+    document.body.appendChild(bar); document.body.appendChild(top);
+    var onScroll = function () {
+      var doc = document.documentElement;
+      var h = doc.scrollHeight - window.innerHeight;
+      var y = window.scrollY || doc.scrollTop || 0;
+      bar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%";
+      top.setAttribute("data-on", y > 320 ? "1" : "0");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+  }
+
   function initOnce() {
     if (bound) return; bound = true;
     build();
     document.body.appendChild(BOX); document.body.appendChild(MASK);
     BOX.style.display = "none"; MASK.style.display = "none";
     bindKeys();
+    mountReadAids();
   }
+  /* 外部链接新窗口打开，避免研究中途离开本站 */
+  function fixExternalLinks() {
+    var root = contentRoot(); if (!root) return;
+    var as = root.querySelectorAll('a[href^="http"]');
+    for (var i = 0; i < as.length; i++) {
+      var a = as[i];
+      if (a.host && a.host !== location.host && !a.getAttribute("target")) {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      }
+    }
+  }
+
   function initPage() {
     runTerms();
     initDepth();
+    fixExternalLinks();
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。
@@ -899,6 +1020,7 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'stylesheet', href: '/vp-brand.css' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css' }],
     ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css' }],
     ['script', { src: '/cqm-glossary.js' }],
     ['script', { src: '/cqm-depth.js' }],

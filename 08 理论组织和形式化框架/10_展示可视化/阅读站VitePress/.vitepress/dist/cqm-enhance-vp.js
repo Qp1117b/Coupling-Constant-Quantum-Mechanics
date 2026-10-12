@@ -33,11 +33,19 @@
     } catch (e) {}
     cb();
   }
+  /* 卡片文字来自结构化数据（CSV 原文），里面会带行内代码标记（如 Lean 的模块名）
+     与 \(…\) 公式。公式交给 MathJax，反引号在这里落成 <code>。 */
+  var ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
+  function cardHtml(html) {
+    return String(html).replace(/`([^`\n]+)`/g, function (m, s) {
+      return "<code>" + s.replace(/[&<>]/g, function (c) { return ESC[c]; }) + "</code>";
+    });
+  }
   function showPop(el) {
     var html = G.terms[el.getAttribute("data-cqm")];
     if (!html) return;
     var p = ensurePop();
-    p.innerHTML = html; p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
+    p.innerHTML = cardHtml(html); p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
     cur = el;
     typeset(p, function () { place(p, el); });
   }
@@ -374,16 +382,56 @@
   }
 
   /* ---------- 初始化：一次性 + 每页 ---------- */
+  /* ---------- 长文档仪表：页顶阅读进度 + 回到顶部 ---------- */
+  function mountReadAids() {
+    if (document.querySelector(".cqm-progress")) return;
+    var bar = document.createElement("div");
+    bar.className = "cqm-progress";
+    var top = document.createElement("button");
+    top.className = "cqm-top"; top.type = "button";
+    top.setAttribute("aria-label", "回到顶部"); top.title = "回到顶部";
+    top.textContent = "↑";
+    top.addEventListener("click", function () {
+      try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (e) { window.scrollTo(0, 0); }
+    });
+    document.body.appendChild(bar); document.body.appendChild(top);
+    var onScroll = function () {
+      var doc = document.documentElement;
+      var h = doc.scrollHeight - window.innerHeight;
+      var y = window.scrollY || doc.scrollTop || 0;
+      bar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%";
+      top.setAttribute("data-on", y > 320 ? "1" : "0");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+  }
+
   function initOnce() {
     if (bound) return; bound = true;
     build();
     document.body.appendChild(BOX); document.body.appendChild(MASK);
     BOX.style.display = "none"; MASK.style.display = "none";
     bindKeys();
+    mountReadAids();
   }
+  /* 外部链接新窗口打开，避免研究中途离开本站 */
+  function fixExternalLinks() {
+    var root = contentRoot(); if (!root) return;
+    var as = root.querySelectorAll('a[href^="http"]');
+    for (var i = 0; i < as.length; i++) {
+      var a = as[i];
+      if (a.host && a.host !== location.host && !a.getAttribute("target")) {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      }
+    }
+  }
+
   function initPage() {
     runTerms();
     initDepth();
+    fixExternalLinks();
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。

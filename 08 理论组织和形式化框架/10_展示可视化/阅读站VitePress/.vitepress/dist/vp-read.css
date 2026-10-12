@@ -1,0 +1,57 @@
+/* CQM 研究站 · 阅读体验增强 */
+/* 1) 公式：长公式横向滚动，不撑破版心（含块级与行内） */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  margin: auto 2px -2px;
+}
+mjx-container[display="true"] {
+  display: block;
+  padding: 2px 0;
+}
+mjx-container > svg { display: inline-block; }
+/* 2) 卡片与检索结果里的公式同样限宽 */
+.cqm-pop mjx-container, .cqm-res mjx-container { max-width: 100%; }
+/* 3) 中文长段落：行高与段距放宽，标题前留白，便于长文档阅读 */
+.vp-doc { line-height: 1.9; }
+.vp-doc p { margin: 1em 0; }
+.vp-doc li { margin: 0.35em 0; line-height: 1.85; }
+.vp-doc h2 {
+  margin-top: 2.4em;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.vp-doc h3 { margin-top: 1.8em; }
+.vp-doc h4 { margin-top: 1.4em; }
+.vp-doc blockquote {
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  padding: 2px 16px;
+  border-radius: 0 6px 6px 0;
+}
+/* 4) 表格：按内容撑开（max-content），宁可整表横向滚动，也不把中文列压成竖排。
+     VitePress 默认 table 宽 100%，列一窄中文就逐字换行，读起来很难受。 */
+.vp-doc table { width: max-content; min-width: 100%; }
+.vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
+.vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
+/* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 { scroll-margin-top: 84px; }
+.vp-doc :target { background: var(--vp-c-brand-soft); border-radius: 4px; }
+/* 6) 长文档仪表：页顶阅读进度 + 回到顶部 */
+.cqm-progress {
+  position: fixed; left: 0; top: 0; height: 3px; width: 0;
+  background: var(--vp-c-brand-1); z-index: 100;
+  transition: width .08s linear;
+}
+.cqm-top {
+  position: fixed; right: 22px; bottom: 26px; width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt); color: var(--vp-c-text-1);
+  cursor: pointer; font-size: 16px; z-index: 60;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.cqm-top[data-on="1"] { opacity: .92; pointer-events: auto; }
+.cqm-top:hover { background: var(--vp-c-brand-soft); }
+@media print { .cqm-progress, .cqm-top { display: none; } }
