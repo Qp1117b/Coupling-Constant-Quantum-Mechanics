@@ -28,7 +28,7 @@ python build_causal.py     # 07：因果模型 / 贝叶斯网络 / 实验设计
 python build_bridge.py     # 09：符号表 / 等价映射 / 概念映射
 python build_site.py       # 10：研究驾驶舱 / 可推演多层超图 / 蓝图拷贝（含级联复算断言）
 python build_search.py     # 10：检索台（图谱 + BM25 全文 + 证据 + 质量 + SPARQL）
-python build_reader_site.py # 10：离线阅读站（Material for MkDocs：jieba 分词搜索 + offline/privacy，只读 01–07 文本）
+python build_reader_site.py # 10：离线阅读站（Material：jieba 搜索 + offline/privacy）＋ 术语卡/缺口卡/高级检索/展开链页（数据逐字取自既有表）
 python build_meta.py       # 11：manifest / 版本 / 变更日志 / 验证状态
 ```
 

@@ -63,7 +63,7 @@
     "重组实现": 19
   },
   "owl_classes": 25,
-  "owl_individuals": 429,
+  "owl_individuals": 430,
   "owl_object_properties": 16,
   "owl_annotation_properties": 15,
   "owl_disjoint_type_classes": 12,
@@ -71,8 +71,8 @@
   "cross_type_edges": 70,
   "axiom_layer": {
     "gap_precedes_edges": 3,
-    "mentioned_in_edges": 71,
-    "evidence_individuals": 214
+    "mentioned_in_edges": 70,
+    "evidence_individuals": 215
   },
   "reasoner": {
     "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",

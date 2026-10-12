@@ -1,13 +1,13 @@
 {
   "gold_edges": 78,
   "gold_pairs": 78,
-  "candidates": 920,
-  "pattern_candidates": 259,
-  "cooccur_only_candidates": 661,
+  "candidates": 927,
+  "pattern_candidates": 258,
+  "cooccur_only_candidates": 669,
   "pair_hits": 32,
   "pattern_pair_hits": 18,
   "precision_pair": 0.035,
-  "precision_pattern": 0.069,
+  "precision_pattern": 0.07,
   "recall_pair": 0.41,
   "recall_pair_unordered": 0.474,
   "recall_pattern": 0.231,
@@ -19,7 +19,7 @@
   "note": "金标准 = 人工论证表（70 条，含多前件超边展开）。**分层候选**：pattern 层（两端间有关系线索词，类型可推断）与 cooccur 层（仅同句共现，类型标『未定』，交人工/LLM 定型）。配对召回的物理上界 = 金标准两端在原文同句共现的比例；cooccur 层按无向配对计的召回 / 上界 = 95%。『未定』类型的候选不得直接入库——类型定型须经人工或 LLM（span 校验后）。",
   "by_rel": {
     "重组实现": {
-      "candidates": 20,
+      "candidates": 19,
       "pair_hits": 0
     },
     "映射": {

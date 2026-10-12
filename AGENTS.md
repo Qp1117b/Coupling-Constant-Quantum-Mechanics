@@ -1,6 +1,6 @@
 # CQMFormal 项目规范
 
-> 本文件是 AI 协作代理的项目级规范，对齐 `一体化研究/科研AI全栈方案.md`。所有 Agent 须遵守。
+> 本文件是 AI 协作代理的项目级规范，对齐 `归档/一体化研究/科研AI全栈方案.md`。所有 Agent 须遵守。
 > 详细规则已分片为**按需加载技能**（见 §三）；本文件只保留三条红线、权威源、目录约定、Git 规则与验证入口。
 
 ## 一、三条红线
@@ -22,7 +22,7 @@
 
 | 技能 | 何时加载 | 文件 |
 |:---|:---|:---|
-| `cqm-doc-review` | 修改 `01–07` 活动文档、`归档/` 文档、`README.md` 或 `一体化研究/附录/` | `.trae/skills/cqm-doc-review/SKILL.md` |
+| `cqm-doc-review` | 修改 `01–07` 活动文档、`归档/` 文档、`README.md` 或 `08 理论组织和形式化框架/附录/` | `.trae/skills/cqm-doc-review/SKILL.md` |
 | `cqm-symbol-typesetting` | 写入或修改含公式、表格、符号的文本 | `.trae/skills/cqm-symbol-typesetting/SKILL.md` |
 | `cqm-lean-audit` | 改动 `08 理论组织和形式化框架/04_Lean对接/Lean源码/` 下文件，或提交前复核禁止项 | `.trae/skills/cqm-lean-audit/SKILL.md` |
 | `cqm-consistency-check` | 概念/命题/论证有增改，或改动 `08 理论组织和形式化框架/` 任一产物 | `.trae/skills/cqm-consistency-check/SKILL.md` |
@@ -45,7 +45,7 @@
 | `归档/归档 CNT/`     | 归档不修改        | **禁止修改**              |
 | `08 理论组织和形式化框架/` | 结构化/形式化组织层 | 遵循其目录级 `AGENTS.md`（七维度闭环）；外部文本不动、缺口状态不改 |
 | `08 理论组织和形式化框架/04_Lean对接/Lean源码/` | Lean 4 源码      | 修复须全量 `lake build` 验证 |
-| `一体化研究/附录/`      | 术语表、缺口台账     | 与文档/Lean 同步更新         |
+| `08 理论组织和形式化框架/附录/` | 术语表、缺口台账（原 `一体化研究/附录/`，该目录已撤销） | 与文档/Lean 同步更新         |
 | `.trae/skills/`  | 按需加载技能（TRAE 项目技能目录） | 与根规范同步；只分片既有规则 |
 | `mcp/`           | 只读知识 MCP server（读 `08 .../01_结构化数据/`） | 只读；不得回写源数据 |
 | `.workbuddy/`    | 审校基准、变更日志、记忆 | 不入库                   |
@@ -71,4 +71,4 @@ python "08 理论组织和形式化框架/_build/check_consistency.py"
 
 - **文档一致性**：按 `.trae/skills/cqm-doc-review` 与 `.trae/skills/cqm-symbol-typesetting` 复核（禁用词、术语变体、`$` 成对、失效链接、`⇒` 误用、缺口标注完整性）。
 - **Lean 严谨性**：按 `.trae/skills/cqm-lean-audit` 复核禁止项候选。
-- **复现性**：按 `一体化研究/科研AI全栈方案.md` §8.3 清单逐项核对。
+- **复现性**：按 `归档/一体化研究/科研AI全栈方案.md` §8.3 清单逐项核对。

@@ -21,3 +21,14 @@ mcp_filesystem.log
 # 编辑器与工具的本地状态
 .obsidian/
 .trae-html-share-packages/
+
+# CQM 研究站服务（Spring Boot）：构建产物与运行日志不入库
+09 研究站服务/target/
+09 研究站服务/*.log
+09 研究站服务/station-run.log
+.trae/
+
+# VitePress 阅读站（10_展示可视化/阅读站VitePress）：依赖、构建缓存与 stage 中间物不入库；dist 为产品，入库
+08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/node_modules/
+08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/.vitepress/cache/
+08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/docs/

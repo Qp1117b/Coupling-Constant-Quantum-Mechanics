@@ -18,6 +18,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                 # 08 理论组织和形式化框架
 PARENT = os.path.dirname(ROOT)               # 项目根
 
+# 全量 md 扫描的排除段：构建中间物与第三方源码。
+#   _build             —— 脚本目录，含 mkdocs_src（stage 中间物）
+#   Lean源码           —— 外部形式化源码，非组织层文档
+#   阅读站VitePress/docs —— build_vitepress_site.py 从 _build/mkdocs_src 复制的
+#                          stage 中间物，内容是 01–07 源语料副本（外部文本不动原则），
+#                          不由组织层文字规范约束；其产品形态是 dist/ 下的 HTML。
+SCAN_SKIP = ("_build", "Lean源码", "阅读站VitePress/docs", "node_modules")
+
 results = []          # (level, name, detail)  level: PASS/FAIL/WARN
 
 
@@ -133,7 +141,7 @@ def main():
     check("命题表概念依赖完整", not bad_dep, str(bad_dep[:8]))
 
     # ---------- 前端数据一致 ----------
-    site = jload(os.path.join(ROOT, "10_展示可视化", "网站", "data.json"))
+    site = jload(os.path.join(ROOT, "10_展示可视化", "源_可视化", "研究驾驶舱", "data.json"))
     check("网站 data.json 与源一致",
           (len(site["concepts"]), len(site["props"]), len(site["args"])) == (82, 63, 70)
           and site["meta"]["hyperedges"] == 19 and site["meta"]["edges"] == 51,
@@ -179,8 +187,8 @@ def main():
     check("claim 级边 > 250（原为 0）", len(clm) > 250, str(len(clm)))
 
     kgj = jload(os.path.join(ROOT, "03_超图与理论图", "知识图谱.json"))
-    check("知识图谱 145 实体 / 360 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (145, 360),
+    check("知识图谱 145 实体 / 359 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (145, 359),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
@@ -191,8 +199,8 @@ def main():
     check("HermiT 推理一致且无不可满足类",
           ost["reasoner"]["consistent"] is True and not ost["reasoner"]["unsatisfiable_classes"],
           str(ost["reasoner"]["unsatisfiable_classes"]))
-    check("本体公理层：25 类 / 429 个体 / 16 对象属性",
-          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 429, 16),
+    check("本体公理层：25 类 / 430 个体 / 16 对象属性",
+          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 430, 16),
           f"{ost['owl_classes']}/{ost['owl_individuals']}/{ost['owl_object_properties']}")
     ext = jload(os.path.join(ROOT, "05_机器学习数据准备", "关系抽取", "抽取评测.json"))
     check("抽取评测含召回上界（诚实边界）",
@@ -201,8 +209,8 @@ def main():
     tpool = jload(os.path.join(ROOT, "05_机器学习数据准备", "术语候选", "术语候选统计.json"))
     check("术语候选池存在且未写入概念表", tpool["new_candidates_kept"] > 0 and len(concepts) == 82,
           f"候选 {tpool['new_candidates_kept']}")
-    for rel in ("10_展示可视化/检索台/index.html", "10_展示可视化/网站/index.html",
-                "10_展示可视化/交互式可视化/超图交互.html", "03_超图与理论图/知识图谱.ttl",
+    for rel in ("10_展示可视化/源_可视化/检索台/index.html", "10_展示可视化/源_可视化/研究驾驶舱/index.html",
+                "10_展示可视化/源_可视化/超图交互.html", "03_超图与理论图/知识图谱.ttl",
                 "02_概念本体/shapes.shacl.ttl", "00_外部引用/句索引/句索引.jsonl"):
         p = os.path.join(ROOT, rel.replace("/", os.sep))
         check(f"产物存在：{rel}", os.path.exists(p) and os.path.getsize(p) > 1000,
@@ -225,7 +233,7 @@ def main():
     # ---------- 失效链接（md） ----------
     broken = []
     for md in glob.glob(os.path.join(ROOT, "**", "*.md"), recursive=True):
-        if any(s in md.replace("\\", "/") for s in ("_build", "Lean源码")):
+        if any(s in md.replace("\\", "/") for s in SCAN_SKIP):
             continue
         base = os.path.dirname(md)
         for m in re.finditer(r"\]\(([^)]+)\)", open(md, encoding="utf-8").read()):
@@ -241,7 +249,7 @@ def main():
     NEG = ("不得", "禁止", "非", "避免", "反模式", "×", "违规", "违反")
     hits = []
     for md in glob.glob(os.path.join(ROOT, "**", "*.md"), recursive=True):
-        if any(s in md.replace("\\", "/") for s in ("_build", "Lean源码")):
+        if any(s in md.replace("\\", "/") for s in SCAN_SKIP):
             continue
         for i, line in enumerate(open(md, encoding="utf-8"), 1):
             for w in BANNED:

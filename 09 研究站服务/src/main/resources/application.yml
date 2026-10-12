@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+cqm:
+  # 项目根目录（相对本模块的工作目录；默认上一级，即 CQMFormal 仓库根）
+  root: ${CQM_ROOT:..}
+  # 默认站点 = VitePress 版阅读站（生成器 VitePress v1.6.4；Material 站仅作 file:// 离线副本保留）
+  site-dir: 08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/.vitepress/dist
+  kg-file: 08 理论组织和形式化框架/03_超图与理论图/知识图谱.ttl
+  data-dir: 08 理论组织和形式化框架/01_结构化数据
+  bridge-dir: 08 理论组织和形式化框架/09_桥接与翻译
+  evidence-file: 08 理论组织和形式化框架/00_外部引用/证据映射.csv
+  review-file: 08 理论组织和形式化框架/00_外部引用/复核结果.csv
+  chain-file: 08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/.vitepress/dist/cqm-glossary.js
+  sparql:
+    # 默认只读：拒绝 INSERT/DELETE/UPDATE/LOAD/CLEAR/DROP
+    allow-update: false
+  rebuild:
+    # 是否允许 POST /api/rebuild 触发阅读站重建（默认关闭，需显式开启）
+    enabled: false
+
+logging:
+  level:
+    cqm.station: INFO

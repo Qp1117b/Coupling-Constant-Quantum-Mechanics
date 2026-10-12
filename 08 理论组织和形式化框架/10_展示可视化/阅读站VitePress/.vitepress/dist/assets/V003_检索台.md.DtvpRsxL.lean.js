@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as r,a0 as _}from"./chunks/framework.DqMqoJl9.js";const p=JSON.parse('{"title":"检索台","description":"","frontmatter":{},"headers":[],"relativePath":"V003_检索台.md","filePath":"V003_检索台.md"}'),i={name:"V003_检索台.md"};function o(s,e,n,c,l,m){return t(),r("div",null,[...e[0]||(e[0]=[_("",1)])])}const f=a(i,[["render",o]]);export{p as __pageData,f as default};

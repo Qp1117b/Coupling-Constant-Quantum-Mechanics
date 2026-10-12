@@ -19,7 +19,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # 08 理论
 PARENT = os.path.dirname(ROOT)
 S11 = os.path.join(ROOT, "11_元数据")
 
-SKIP_DIRS = {"_build", "Lean源码"}   # Lean源码 为外部 Lean 4 项目，不计入组织层产物清单
+SKIP_DIRS = {"_build", "Lean源码", "node_modules"}   # Lean源码 为外部 Lean 4 项目；node_modules 为第三方依赖
+# 路径段级排除（相对 ROOT）：VitePress 工程内的构建中间物
+SKIP_SEGS = ("阅读站VitePress/docs", "阅读站VitePress/.vitepress/cache")
 SKIP_EXT = {".png"}   # 二进制大文件仍登记大小，但不计哈希
 
 
@@ -35,6 +37,10 @@ def scan():
     files = []
     for dp, dns, fns in os.walk(ROOT):
         dns[:] = [d for d in dns if d not in SKIP_DIRS]
+        rel_dir = os.path.relpath(dp, ROOT).replace("\\", "/")
+        if any(rel_dir.startswith(s) for s in SKIP_SEGS):
+            dns[:] = []
+            continue
         for fn in fns:
             p = os.path.join(dp, fn)
             rel = os.path.relpath(p, ROOT).replace("\\", "/")
@@ -95,7 +101,7 @@ def write_version(manifest, by_dir):
 | 数据快照时间 | {manifest['generated_at']} |
 | 文件总数 | {manifest['totals']['files']} |
 | 总体积 | {manifest['totals']['bytes']:,} 字节 |
-| 权威源 | `README.md` > `一体化研究/附录/术语表.md` > `一体化研究/附录/缺口台账.md` |
+| 权威源 | `README.md` > `附录/术语表.md` > `附录/缺口台账.md`（`一体化研究/` 已于 v1.9.1 撤销，两份附录移入本目录） |
 | Lean 版本 | `leanprover/lean4:v4.29.1`（固定，见 `08 理论组织和形式化框架/04_Lean对接/Lean源码/lean-toolchain`） |
 
 ## 一、各目录文件分布
@@ -117,6 +123,49 @@ def write_changelog():
         f.write("""# 元数据 · 变更日志
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
+
+## v1.9.2 — 研究站换用 VitePress（生成器切换 · 增强移植 · 单一入口收敛）
+
+- **生成器切换**：研究站由 Material for MkDocs 换为 **VitePress v1.6.4**（用户指出该形态为众多官方资料站所采用）。新工程 `10_展示可视化/阅读站VitePress/`（`package.json` + `.vitepress/theme/index.js` + `docs/` + `.vitepress/dist/`）；新脚本 `_build/build_vitepress_site.py` 从 `_build/mkdocs_src/docs`（`build_reader_site.py` 的 stage 产物）生成 `docs/` 与 `config.mts`，随后调 `vitepress build`；`build_reader_site.py` 现仅承担 stage 环节。成品页头 `generator = VitePress v1.6.4`。
+- **构建期的四处硬约束**（均为实测得出，勿回退）：
+  1. **整页 `<div v-pre>`**：源文本含 `{{ }}` 会被 Vue 当插值解析并报错；实体转义方案因源里另有 `\\{\\{` 写法覆盖不全而回退，改用 `v-pre` 整页屏蔽（50 页）。
+  2. **数学不引 CDN**：不启用 `markdown.math`（会拉 `markdown-it-mathjax3` 及其外链），改由 `head` 注入随包 `vp-math.js` + `tex-svg.js`，分隔符 `$…$` / `$$…$$`。
+  3. **依赖安装**：npmmirror 缺 `@algolia/client-personalization@5.60.0`，须用官方源；平台 optional 包 `@esbuild/win32-x64`、`@rollup/rollup-win32-x64-msvc` 必须**同一条命令**装（分次安装会互相当作外来包移除）。
+  4. **`ignoreDeadLinks: true`**：7 条链接指向 `_src/` 语料源，属既有登记现象。
+- **交互增强移植**（`cqm-enhance-vp.js`，由自定义主题 `enhanceApp({router})` + `onAfterRouteChanged` 逐页重跑）：术语/缺口悬浮卡（数据 138 卡 / 检索索引 341 / termKeys 106）、四层深度滑杆（导读/概念/链条/技术）、结构化检索改为 **`Ctrl/⌘+Shift+K`**（避开 VitePress 自带的 `Ctrl+K`）、服务探测徽标改挂 `.VPNavBar`。
+  - **关键坑**：`v-pre` 使 `h2/h3/p` 成为孙节点，而深度滑杆遍历直接子块 → 四层恒显示 1 块、形同失效。修法为新增 `contentRoot()` 在被 `v-pre` 包住的单一 div 中逐层下潜取真实顶层块；模拟器 `.workbuddy/tools/depth_sim_vp.py` 按同规则复算：**L001 = 32 → 64 → 102 → 107 块、L002 = 27 → 38 → 84 → 86 块**（单调），断点与限定语块在任何深度均未被隐藏，与历史基准一致。
+- **离线取舍（诚实边界）**：VitePress 的本地检索依赖 `fetch` 取 JSON 分片，且默认 `base: '/'` 用绝对路径 → **`file://` 双击直开会丢资源**。研究站因此确立为「须经 HTTP 提供」：服务在场时访问 `http://127.0.0.1:8080/`；需要完全离线的场合仍用 `源_可视化/` 下的自包含 HTML。
+- **服务侧**：`09 研究站服务` 的 `site-dir`、`chain-file` 改指 VitePress 的 `dist`；README 登记已知边界——`mvn spring-boot:run` 在中文含空格路径下 fork JVM 会报 `ClassNotFoundException`，一律用 `mvn -s settings.xml package -DskipTests` + `java -jar`。
+- **端口冲突**：`D:\\WorkSpace\\AI\\llm` 的 `start-llm.bat`、`start-chat.bat` 原先写死 `--port 8080`（llama.cpp 自带 Web UI 会抢占研究站端口），分别改为 **8082 / 8083**，`start-cqm.bat` 保持 8081，README 增补端口分配说明（8080 = CQM 研究站）。
+- **单一入口收敛**：Material 版阅读站 `10_展示可视化/阅读站/` 于 2026-10-13 经用户裁定**移除**（115 个文件随本次提交从版本记录中去掉），VitePress 站为唯一入口；`10_展示可视化/README.md`（表格行、单一入口、应用层、打开方式四处）、`03_超图与理论图/README.md`、`08/AGENTS.md`、`08/README.md`、`_build/build_site.py`（驾驶舱链接改指研究站首页）同步改指。viz 由构建脚本复制到 `docs/public/viz/`，站内路径为 `/viz/`。
+- **检查脚本范围修正**：`check_consistency.py` 与 `build_meta.py` 的 md 全量扫描新增排除段 `阅读站VitePress/docs`（stage 中间物，内容为 `01`–`07` 源语料副本，受「外部文本不动」约束，不由组织层文字规范评判）与 `node_modules`（第三方依赖）；两处此前各报 1 项失败，属扫描范围问题而非产物缺陷。
+- **验收**：`generator = VitePress v1.6.4`；三个增强 JS `node --check` 通过；端到端 `verify_station.py` **27/27**（静态站 4 / status 9 / 检索 2 / SPARQL 3 / 条目 4 / 复核写回 5）；`check_consistency` **41/41**；`check_provenance` **10/10**；服务侧读到 KG **5,153** 三元组、站点 56 个 HTML。
+- 同步：`10_展示可视化/README.md`、`08/AGENTS.md`、`08/README.md`、`03_超图与理论图/README.md`、`09 研究站服务/README.md` 与 `application.yml`、`.gitignore`（`node_modules/` 与 `.vitepress/cache/` 不入库，`dist` 作为产品入库）、本日志、`验证状态.md`。
+
+## v1.9.1 — 目录收敛：撤销「一体化研究」、可视化源合并、09 服务目录加空格
+
+- **撤销 `一体化研究/`**（2026-10-13，用户裁定"这个目录没有用了"）：站点仍依赖的内容迁入正式位置——`附录/术语表.md`、`附录/缺口台账.md` → `08 理论组织和形式化框架/附录/`（引用清单 D003/D004 路径同步改指，doc_id 不变）；`展开链讲稿/` → `10_展示可视化/讲稿/`；其余（科研AI全栈方案、组织层对标与完善方案、CQM研究站架构方案、文献、研究日志、展开链骨架样例）→ `归档/一体化研究/`。核对依据：**证据层 0 条断言引用该目录的文档**（那 11 条仅语料登记），故不影响 `check_provenance` 的逐字核对；该目录已不存在。
+- **可视化源合并**：`10_展示可视化/{网站,检索台,交互式可视化,蓝图}/` 四个目录收敛为 `源_可视化/`（研究驾驶舱／检索台／超图交互；蓝图唯一一份留 `04_Lean对接/蓝图/`，`build_site.py` 不再同步副本）；删除 `03_超图与理论图/超图可视化.html` 与 `03_.../assets/`（同构件副本）。`build_site.py`／`build_search.py`／`check_consistency.py`／`build_reader_site.py` 的输出与检查路径同步改指。
+- **`09_研究站服务` → `09 研究站服务`**（与其他编号目录一致加空格）；`.gitignore` 同步。
+- **权威计数变更（有依据，勿回退）**：句索引的 sid 为全局编号，两份文档从 `一体化研究/附录/` 移入 `08.../附录/` 后扫描次序变化，导致机器推断边 `P010—证据句提及概念→C048` 的匹配句位移而消失（知识图谱 145 实体 / **359** 边，原 360），同时证据个体由 214 补齐为 215（本体 25 类 / **430** 个体 / 16 对象属性，原 429）。**源数据未变**（概念 82 / 命题 63 / 论证 70 / 证据 215），逐字引文核对不受影响（`check_provenance` 10/10）。
+- **验收**：`check_consistency` **41/41**、`check_provenance` **10/10**；阅读站重建警告 0（讲稿两分册 + 展开链 + 可视化总览均在）；`01`–`07` 理论文本未动。
+- 同步：`10_展示可视化/README.md`、`02_概念本体/README.md`、`03_超图与理论图/README.md`、`报告/建设报告.md`、`00_外部引用/引用清单.yaml`、`_build/*.py`、本日志、`验证状态.md`。
+
+## v1.9.0 — 阅读站增强：术语悬浮卡 · 缺口徽章 · 高级检索 · 展开链页
+
+- **对标（联网调研结论）**：搜索侧主流是构建期静态索引（Pagefind：Astro Starlight 默认，中文分段好、索引小，但依赖 `fetch`/Worker，**`file://` 不可用**）、托管服务（Algolia DocSearch / Meilisearch，需服务与联网）与客户端库（lunr / MiniSearch / FlexSearch：倒排索引 + 前缀 + 模糊 + `storeFields` 生成摘要）。术语悬浮侧，Material 官方只有 `abbr` + `content.tooltips`（缩写级短提示）；"悬停链接出现整段预览卡"的主流实现是 Quartz 的 popover previews（`@floating-ui` 定位 + `flip/shift` 防溢出 + 遮罩类选择正文 + 移动端隐藏）。
+- **决策**：全文检索继续用 Material 内置（lunr + 官方 zh + 构建期 jieba + CQM 用户词典，`file://` 下即可用）；**新增一层自研结构化实体检索**，不引入任何外部 JS。
+- **新产物**（均由 `_build/build_reader_site.py` 构建期生成，随 `extra_javascript`/`extra_css` 挂载，全站 45 页均注入）：
+  - `assets/cqm-glossary.js`（271 KB）：**138 张卡**（概念 82 + 别名、缺口 24）＋ **检索索引 339 条**（概念 82 / 命题 39 / 缺口 24 / 符号 21 / 文档 42 / 展开链步 131）；卡片文字**逐字**取自 `概念表.csv`、`缺口编号对照.csv`、`符号对照表.csv`、`证据映射.csv`；
+  - `assets/cqm-enhance.js` ＋ `assets/stylesheets/cqm-enhance.css`：术语/缺口标注（每术语每页 ≤ 3 次、全页 ≤ 240 次）＋ 悬浮卡（`flip` 防溢出、`Esc` 关闭、滚动隐藏、`focus` 可及）＋ **高级检索**（`Ctrl/⌘+K`、`/` 或顶栏按钮；分类 facet、CJK 一元＋二元打分、结果 `<mark>` 高亮、`↑↓`/`Enter` 键盘导航、可一键转全文检索）；
+  - `L000_展开链.md` → `L000_展开链.html`（201 KB）：**131 条**原文箭头链条句逐字汇总，按「文档层级 → 文档 → 行号」机械排序，每条附字符区间、涉及缺口、状态词；末尾为**缺口断点清单**（24 缺口，逐字取自缺口编号对照）；判据与局限在页内如实登记；
+  - `阅读站/README.md`：构建期写入站点根（此前变更日志记其"重建"而实际被站点清理步骤删除，此处纠正——README 改由构建脚本写入，随站点一同重建）；
+  - **展开链讲稿页**（`L001_…`）：staged `一体化研究/展开链讲稿/*.md`（**撰述**稿，非摘录、非理论语料，不进引用清单），导航紧随展开链页；讲稿含锚点表（文档＋章节＋核对状态）与「引文保真六关」自检；
+  - **深度滑杆**：讲稿页顶部粘性条，四档＝导读(1)／概念(2)／链条(3)／技术(4)，按二级章节映射（`assets/cqm-depth.js`）在运行期给块打深度；**断点与限定语块不随深度隐藏**（只认缺口编号与限定语，不用泛词——早期版本用"缺口/不得"等宽词表，实测导致第 2 层往后几乎不隐藏，滑杆形同失效，已收紧）；被隐藏标题若其下仍有可见块则做救援显示；选择记入浏览器本地；
+  - **可视化整合为单一入口**（2026-10-13）：原分散的四件自包含 HTML（`交互式可视化/超图交互.html`、`网站/index.html`、`检索台/index.html`、`蓝图/index.html`）收进阅读站「可视化」栏目（`V000` 总览 + `V001–V004` iframe 包装页），HTML 落 `assets/viz/`（含随包 `cytoscape.min.js` 425 KB 与 `驾驶舱数据.json` 329 KB），构建期复制并改写其相对引用与跨链，**不改源文件**；站点文件数 117 → 128，构建警告 0。
+- **口径**：增强层是**呈现层**，权威源仍是各文档原文与 `README.md`；构建脚本只做拼装与定位，**不改写任何表述**，不改数值、不改缺口状态，缺口与限定语原样呈现。
+- **验收**：构建 `exit=0`、警告 **0** 条；45/45 页注入增强脚本；`node --check` 三个 JS 均通过；成品零外链**资源**（脚本 `src` 外链计数 0）；术语卡含出处文档/字符区间/置信度。**深度滑杆**（`assets/cqm-depth.js` + `cqm-enhance.js` 的 `initDepth`）经离线按块模拟校验：第 1→4 层显示 **32 → 64 → 102 → 107** 块（单调递增），断点/限定语块在任何深度均未被隐藏，11/11 章节被映射覆盖（模拟器 `.workbuddy/tools/depth_sim.py`，临时工具不入库）。
+- 同步：`10_展示可视化/README.md`、`_build/README.md`、`验证状态.md`（阅读站增强行）、本日志。
 
 ## v1.8.0 — 阅读站重建：Material for MkDocs + jieba 中文搜索（file:// 离线可用）
 
@@ -278,12 +327,12 @@ def write_validation():
 | **证据层完整性（10 项 / 有复核结果 13 项）** | `_build/check_provenance.py`（覆盖 215、引文逐字一致、区间边界、枚举、跨文档标记 + 复核闭环三条） | ✅ 全部通过（退出码 0） |
 | **证据复核闭环自测** | 临时 3 条合法记录 → 13/13；伪造 id（ZZ99）→ 被拒收；移除自测文件复跑 → 10/10 | ✅ 通过（仓库内无 `复核结果.csv`，verified 现为 0） |
 | SHACL 数据契约 | `_build/build_kg.py` + pyshacl（6 类形状） | ✅ conforms，0 违约 |
-| OWL 一致性 | owlready2 + HermiT（内存推理） | ✅ 一致，无不可满足类（25 类 / 429 个体 / 16 对象属性） |
+| OWL 一致性 | owlready2 + HermiT（内存推理） | ✅ 一致，无不可满足类（25 类 / 430 个体 / 16 对象属性） |
 | SPARQL 能力问句 | rdflib（CQ1–CQ9 实跑） | ✅ 9/9 返回；CQ2 如实报出 1 条无证据断言 |
 | 关系抽取评测（分层） | 人工论证表为金标准 | ⚠️ pattern 层 P=0.069 / 类型命中 0.111；cooccur 层无向 R=0.474 / 物理上界 0.50 = **达上界 95%**——「未定」类型不入库，交人工/LLM 定型 |
 | 概念表/命题表/论证表 | 字段数断言（7/6/6）+ 概念引用完整性断言 | ✅ 82/63/70，无错位 |
 | 超图数据.json | 由标准 CSV 解析重建；计数断言 | ✅ 82 节点 / 19 超边 / 51 有向边 |
-| 本体.owl | owlready2 生成并回读 + HermiT 推理 | ✅ 25 类 / 429 个体 / 16 对象属性（公理层含 domain·range·逆属性·互斥·限制） |
+| 本体.owl | owlready2 生成并回读 + HermiT 推理 | ✅ 25 类 / 430 个体 / 16 对象属性（公理层含 domain·range·逆属性·互斥·限制） |
 | Lean 结构提取 | 源码扫描（68 模块） | ✅ 1388 声明；状态以 `08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md` 为权威 |
 | ML 张量 | `x` 形状 (82,15)；索引与 CSV 一致 | ✅ |
 | 动态仿真 | `simulate.py` 复算轨迹与 `derivation_trace.csv` 比对 | ✅ 一致 |
@@ -292,7 +341,13 @@ def write_validation():
 | HTML 内联脚本 | 语法检查（`new Function`）+ jsdom DOM 冒烟（9 面板 / 图表 / 行数 / 检索 / 分面 / 级联 / 质量看板） | ✅ 通过 |
 | 检索台 | gzip 语料 Node 侧解压校验 + jsdom 六模式冒烟（图谱/全文降级/证据/复核/质量/CQ） | ✅ 通过 |
 | 超图交互逻辑 | Cytoscape 桩驱动：级联回放 4 轮 → 81/82 + C074 标注；有向路径；**多层图谱端点过滤**（claim 边不得指向不存在的节点） | ✅ 通过 |
-| **阅读站（Material v1.8.0）** | `check_site_reader.py` 10/10：jieba 整词入索引（相变量子 174 / 退相干 619 / 同步算符 418）、54 页零外链资源、平铺 file:// 结构、**浏览器端搜索注入实测命中** | ✅ 通过（构建警告 1 条：wgxpath 下载失败，引用已移除，仅影响极旧浏览器） |
+| **研究站（VitePress v1.6.4，v1.9.2）** | 页头 `generator = VitePress v1.6.4`；构建期 50 页整页 `v-pre`、无 Vue 插值报错；增强三件套 `node --check` 通过（`cqm-glossary.js` / `cqm-enhance-vp.js` / `cqm-depth.js`）；术语卡 138 张（含出处/字符区间/置信度）、检索索引 341 条、termKeys 106、展开链步 131 条、缺口断点清单 24 项 | ✅ 通过 |
+| **研究站端到端（服务在场）** | `.workbuddy/tools/verify_station.py` **27/27**：静态站 4（首页/内页/资产/内嵌 viz）+ `/api/status` 9 + 检索 2 + SPARQL 3（含写操作 403）+ 条目 4 + 复核写回 5（测试后清理、仓库恢复干净） | ✅ 通过 |
+| **研究站离线边界** | VitePress 本地检索依赖 `fetch` 取 JSON 分片、`base:'/'` 用绝对路径 → **`file://` 直开丢资源**；须经 HTTP 提供（服务在场 `http://127.0.0.1:8080/`）。完全离线场合改用 `源_可视化/` 自包含 HTML | ⚠️ 已知取舍，非缺陷 |
+| **阅读站增强口径** | 卡片与展开链文字**逐字**取自 `概念表.csv` / `缺口编号对照.csv` / `符号对照表.csv` / `证据映射.csv`；构建脚本只拼装、不改写；缺口状态与限定语原样；术语标注限流（每术语每页 ≤3、全页 ≤240） | ✅ 一致 |
+| **展开链讲稿（撰述稿）** | `10_展示可视化/讲稿/第一分册_从问题到链条.md`（308 行）：问题 → 最小内核 → 六步链条 → 量纲链 → 断点 → 数值地位；每节论断带锚点（20 条，其中 18 条逐字核对、2 条标「待逐字核对」）；断点就地标注（C／G2–G8／G9–G22／N1–N4／H3.1–H3.3 引自缺口台账）；数值分列「推导／构造后验／实验参数」并保留限定语；附录含「引文保真六关」自检。**讲稿为撰写文字，不入引用清单、不计入理论语料统计** | ✅ 已接入阅读站（`L001` 页，导航紧随展开链） |
+| **深度滑杆** | 讲稿页四档分层（导读/概念/链条/技术）；离线按块模拟（`.workbuddy/tools/depth_sim_vp.py`，与增强脚本 `contentRoot()` 同规则下潜）：L001 显示 32 → 64 → 102 → 107 块、L002 显示 27 → 38 → 84 → 86 块（均单调），断点块 0 个被隐藏，章节映射覆盖 11/11；`node --check` 通过 | ✅ 通过 |
+| **可视化单一入口** | 四件自包含 HTML 收进研究站「可视化」栏目（`V000–V004`，VitePress 站内路径 `/viz/`）；内嵌资源 6 个（含 `cytoscape.min.js`、`驾驶舱数据.json`）；相对引用与跨链已改写，驾驶舱跨页链接指向研究站首页，无 `../` 越界引用、无死链指向已移除目录；源文件未改动 | ✅ 通过 |
 | OWL/CSV/JSON/HTML | 编码 UTF-8、路径存在 | ✅ |
 
 ## 二、未安装依赖（脚本就绪，未执行）
@@ -304,7 +359,7 @@ def write_validation():
 | pgmpy | 贝叶斯网络推断 | `07_经验检验/贝叶斯网络/infer.py` |
 | leanblueprint + plasTeX | 官方蓝图网页 | `10_展示可视化/蓝图/leanblueprint_source.md` |
 | Catlab (Julia) | 范畴论计算 | `08_元理论反思/范畴论模型/catlab_sketch.jl` |
-| LLM API（OpenAI 兼容） | 关系定型（schema 固定 + span 校验，产出候选） | `_build/llm_extract.py`（`CQM_LLM_API_BASE/KEY/MODEL`；无密钥时打印就绪说明退出 0） |
+| LLM API（OpenAI 兼容） | 关系定型（schema 固定 + span 校验，产出候选） | `_build/llm_extract.py`（`CQM_LLM_API_BASE/KEY/MODEL`；无密钥时打印就绪说明退出 0）。**2026-10-12 裁定：本地生成模型不采用为任何环节的生成源**（0.6B/1.7B 级模型自述"CQM 文档风格的生成/检索器，不是数学推理引擎"），该脚本保持就绪但**不接线**；相应环节改为「规则/统计提案 + 机械 span 校验 + 人工确认」三关制 |
 
 > 以上以"就绪脚本 + 说明"给出，未执行部分**不谎报**为已完成。
 

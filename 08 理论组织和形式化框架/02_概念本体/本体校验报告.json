@@ -1,8 +1,8 @@
 {
   "generated_by": "_build/build_kg.py",
   "rdf": {
-    "triples_in_owl": 3984,
-    "triples_exported": 5573,
+    "triples_in_owl": 3994,
+    "triples_exported": 5583,
     "added": {
       "alt_labels": 35,
       "pref_labels": 82,
@@ -177,7 +177,7 @@
           ],
           [
             "http://cqm.local/ontology#H002",
-            "同步算符,物质自组织"
+            "物质自组织,同步算符"
           ],
           [
             "http://cqm.local/ontology#H003",
@@ -193,7 +193,7 @@
           ],
           [
             "http://cqm.local/ontology#H007",
-            "A4嘉当矩阵,中子缺陷矩阵"
+            "中子缺陷矩阵,A4嘉当矩阵"
           ],
           [
             "http://cqm.local/ontology#H008",
@@ -229,7 +229,7 @@
           ],
           [
             "http://cqm.local/ontology#H016",
-            "第一耦级,相变量子,Dynkin指数比,Mathieu临界,谱修正"
+            "Dynkin指数比,谱修正,Mathieu临界,第一耦级,相变量子"
           ],
           [
             "http://cqm.local/ontology#H017",
@@ -471,7 +471,7 @@
         "rows": [
           [
             "D008",
-            "53"
+            "54"
           ],
           [
             "D009",

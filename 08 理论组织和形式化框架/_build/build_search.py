@@ -10,7 +10,7 @@
 
 另附「能力问答」页：把 build_kg.py 跑出的 SPARQL 结果（CQ1–CQ9）直接呈现，证明图谱可被标准查询语言消费。
 
-产出：10_展示可视化/检索台/index.html（自包含，无 CDN）
+产出：10_展示可视化/源_可视化/检索台/index.html（自包含，无 CDN）
 运行：python build_search.py
 """
 import base64
@@ -517,7 +517,7 @@ def main():
     gz = base64.b64encode(gzip.compress(raw, 9)).decode("ascii")
     html = (HTML.replace("__PAYLOAD__", json.dumps(payload, ensure_ascii=False))
                 .replace("__CORPUS__", gz))
-    out_dir = os.path.join(S10, "检索台")
+    out_dir = os.path.join(S10, "源_可视化", "检索台")
     os.makedirs(out_dir, exist_ok=True)
     with io.open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8", newline="\n") as f:
         f.write(html)

@@ -7,8 +7,8 @@ documents:
   # ---- 第 0 层：权威基准 ----
   - {id: D001, path: README.md, title: 项目说明与符号约定, layer: 0, type: 权威基准}
   - {id: D002, path: AGENTS.md, title: AI 协作规范, layer: 0, type: 权威基准}
-  - {id: D003, path: 一体化研究/附录/术语表.md, title: 术语表, layer: 0, type: 权威基准}
-  - {id: D004, path: 一体化研究/附录/缺口台账.md, title: 缺口台账, layer: 0, type: 权威基准}
+  - {id: D003, path: 08 理论组织和形式化框架/附录/术语表.md, title: 术语表, layer: 0, type: 权威基准}
+  - {id: D004, path: 08 理论组织和形式化框架/附录/缺口台账.md, title: 缺口台账, layer: 0, type: 权威基准}
 
   # ---- 第 1 层：理论主干（01 核心理论）----
   - {id: D005, path: 01 核心理论/CQM_核心_集成理论.md, title: 集成理论（总纲）, layer: 1, type: 理论主干}
@@ -56,14 +56,14 @@ documents:
   # ---- 第 4 层：形式化验证 ----
   - {id: D042, path: 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md, title: Lean形式化总览, layer: 4, type: 形式化}
   - {id: D043, path: 08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/README.md, title: GN库说明, layer: 4, type: 形式化}
-  - {id: D044, path: 一体化研究/科研AI全栈方案.md, title: 科研AI全栈方案, layer: 4, type: 方案}
-  - {id: D045, path: 一体化研究/研究日志/自主科研循环指导.md, title: 自主科研循环指导, layer: 4, type: 日志}
-  - {id: D046, path: 一体化研究/研究日志/2026-10-05_1115_P0坏导入修复与数值验证.md, title: P0坏导入修复与数值验证, layer: 4, type: 日志}
-  - {id: D047, path: 一体化研究/研究日志/2026-10-05_1205_快速检查.md, title: 快速检查, layer: 4, type: 日志}
-  - {id: D048, path: 一体化研究/研究日志/2026-10-05_1238_LeClair公式42验证.md, title: LeClair公式42验证, layer: 4, type: 日志}
-  - {id: D049, path: 一体化研究/研究日志/2026-10-05_1250_GN参数A4谱几何推导.md, title: GN参数A4谱几何推导, layer: 4, type: 日志}
-  - {id: D050, path: 一体化研究/研究日志/2026-10-05_1619_量纲群论.md, title: 量纲群论, layer: 4, type: 日志}
-  - {id: D051, path: 一体化研究/研究日志/2026-10-05_1640_无量纲到电荷量纲.md, title: 无量纲到电荷量纲, layer: 4, type: 日志}
-  - {id: D052, path: 一体化研究/研究日志/2026-10-05_1825_NA与无量纲计数的深层关联.md, title: NA与无量纲计数的深层关联, layer: 4, type: 日志}
+  - {id: D044, path: 归档/一体化研究/科研AI全栈方案.md, title: 科研AI全栈方案, layer: 4, type: 方案}
+  - {id: D045, path: 归档/一体化研究/研究日志/自主科研循环指导.md, title: 自主科研循环指导, layer: 4, type: 日志}
+  - {id: D046, path: 归档/一体化研究/研究日志/2026-10-05_1115_P0坏导入修复与数值验证.md, title: P0坏导入修复与数值验证, layer: 4, type: 日志}
+  - {id: D047, path: 归档/一体化研究/研究日志/2026-10-05_1205_快速检查.md, title: 快速检查, layer: 4, type: 日志}
+  - {id: D048, path: 归档/一体化研究/研究日志/2026-10-05_1238_LeClair公式42验证.md, title: LeClair公式42验证, layer: 4, type: 日志}
+  - {id: D049, path: 归档/一体化研究/研究日志/2026-10-05_1250_GN参数A4谱几何推导.md, title: GN参数A4谱几何推导, layer: 4, type: 日志}
+  - {id: D050, path: 归档/一体化研究/研究日志/2026-10-05_1619_量纲群论.md, title: 量纲群论, layer: 4, type: 日志}
+  - {id: D051, path: 归档/一体化研究/研究日志/2026-10-05_1640_无量纲到电荷量纲.md, title: 无量纲到电荷量纲, layer: 4, type: 日志}
+  - {id: D052, path: 归档/一体化研究/研究日志/2026-10-05_1825_NA与无量纲计数的深层关联.md, title: NA与无量纲计数的深层关联, layer: 4, type: 日志}
 
 # 统计：共 52 篇（权威 4 + 主干 8 + 专题深化 17 + 涌现应用 12 + 形式化 11）

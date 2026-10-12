@@ -4,12 +4,12 @@
 生成自包含（离线可用、无 CDN 依赖）的 HTML 网站与交互式超图，并汇总数据快照。
 
 产物：
-  10_展示可视化/网站/index.html          —— 研究驾驶舱（暗色；KPI + 8 类内联 SVG 图表 + 明细表）
-  10_展示可视化/网站/data.json           —— 同一份数据快照（供下载/二次开发）
+  10_展示可视化/源_可视化/研究驾驶舱/index.html —— 研究驾驶舱（暗色；KPI + 8 类内联 SVG 图表 + 明细表）
+  10_展示可视化/源_可视化/研究驾驶舱/data.json  —— 同一份数据快照（供下载/二次开发）
   10_展示可视化/交互式可视化/超图交互.html —— 交互式有向超图（Cytoscape.js：类型分簇等 6 布局、
                                            邻域聚焦、路径检索、派生级联回放、小地图、导出 PNG）
   03_超图与理论图/超图可视化.html          —— 同上（同步副本）
-  10_展示可视化/蓝图/index.html            —— 由 build_lean.py 生成的蓝图，此处同步副本
+  04_Lean对接/蓝图/index.html               —— 由 build_lean.py 生成的蓝图（唯一一份）
 
 交互式超图由 Cytoscape.js 渲染；库文件随包离线放置于 `_build/vendor/cytoscape.min.js`（MIT），
 构建时复制到两个产物的 `assets/` 下，页面不引用任何 CDN。
@@ -164,7 +164,7 @@ def build_data():
 
 
 def write_site(data):
-    d = os.path.join(S10, "网站")
+    d = os.path.join(S10, "源_可视化", "研究驾驶舱")
     os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, "data.json"), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
@@ -180,8 +180,7 @@ def write_hypergraph(data):
                "scm": {"elasticity": data["elasticity"], "caveat": data["scm"]["caveat"]}}
     html = HYPER_HTML.replace("__DATA__", json.dumps(payload, ensure_ascii=False))
     lib = os.path.join(VENDOR, "cytoscape.min.js")
-    for path in [os.path.join(S10, "交互式可视化", "超图交互.html"),
-                 os.path.join(S03, "超图可视化.html")]:
+    for path in [os.path.join(S10, "源_可视化", "超图交互.html")]:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(html)
@@ -191,11 +190,10 @@ def write_hypergraph(data):
 
 
 def write_blueprint_copy():
-    src = os.path.join(S04, "蓝图", "index.html")
-    d = os.path.join(S10, "蓝图")
+    """蓝图唯一一份在 `04_Lean对接/蓝图/`（由 build_lean.py 生成），此处不再同步副本，
+    仅保留官方工具链说明文件。"""
+    d = os.path.join(S04, "蓝图")
     os.makedirs(d, exist_ok=True)
-    if os.path.exists(src):
-        shutil.copyfile(src, os.path.join(d, "index.html"))
     with open(os.path.join(d, "leanblueprint_source.md"), "w", encoding="utf-8") as f:
         f.write("""# leanblueprint 源文件说明
 
@@ -222,7 +220,7 @@ def main():
     write_site(data)
     write_hypergraph(data)
     write_blueprint_copy()
-    print("[OK] 网站/index.html, 交互式可视化/超图交互.html(+assets), 03/超图可视化.html(+assets), 蓝图/index.html")
+    print("[OK] 源_可视化/研究驾驶舱/index.html(+data.json), 源_可视化/超图交互.html(+cytoscape)")
     print("     meta:", data["meta"])
     print("     cascade:", [(c["step"], len(c["rules"]), len(c["new"]), c["cum"]) for c in data["cascade"]])
 
@@ -698,7 +696,7 @@ const V=id=>el('v_'+id);
  +'<div class="card"><h3>数据下载与入口</h3><div class="links">'
  +'<a href="data.json">data.json（本页数据快照）</a>'
  +'<a href="../交互式可视化/超图交互.html">交互式超图</a>'
- +'<a href="../阅读站/index.html">离线阅读站</a>'
+ +'<a href="../index.html">研究站首页</a>'
  +'<a href="../蓝图/index.html">形式化蓝图</a>'
  +'<a href="../检索台/index.html">检索台（BM25 / SPARQL）</a></div>'
  +'<div class="hint">源 CSV / JSON / OWL 见各维度目录；本页为派生呈现，源为唯一事实。</div></div></div>'

@@ -1,0 +1,15 @@
+{
+  "name": "cqm-vitepress-station",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CQM 研究站（VitePress 版）——由 09 研究站服务（Spring Boot）以 http 方式提供",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

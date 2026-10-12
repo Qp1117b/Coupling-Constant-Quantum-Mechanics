@@ -1,0 +1,18 @@
+/* CQM 研究站：对齐参考站 VitePress 观感，品牌色靛蓝 #3451b2 */
+:root {
+  --vp-c-brand: #3451b2;
+  --vp-c-brand-light: #4662c4;
+  --vp-c-brand-lighter: #5573d6;
+  --vp-c-brand-dark: #2c4395;
+  --vp-c-brand-darker: #22347a;
+  --vp-c-brand-1: #3451b2;
+  --vp-c-brand-2: #4662c4;
+  --vp-c-brand-3: #5573d6;
+  --vp-c-brand-soft: rgba(52, 81, 178, 0.14);
+}
+.dark {
+  --vp-c-brand-1: #5c74d8;
+  --vp-c-brand-2: #6d84e2;
+  --vp-c-brand-3: #7e94ec;
+  --vp-c-brand-soft: rgba(92, 116, 216, 0.16);
+}
