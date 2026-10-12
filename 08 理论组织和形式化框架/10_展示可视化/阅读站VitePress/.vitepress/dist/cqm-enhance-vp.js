@@ -298,7 +298,8 @@
         var hdr = navHost(); if (!hdr || !s || !s.counts) return;
         if (hdr.querySelector(".cqm-badge")) return;
         var a = document.createElement("a");
-        a.className = "cqm-sbtn cqm-badge"; a.href = "api";
+        // 指向真实存在的接口（/api 本身无映射，会是 404）
+        a.className = "cqm-sbtn cqm-badge"; a.href = "api/status";
         a.title = "本地研究站服务已连接：实时 SPARQL / 结构化检索 / 证据复核写回";
         a.innerHTML = "服务已连接 · 概念 " + s.counts.concepts + " · 缺口 " + s.counts.gaps
           + " · 待复核 " + (s.review ? s.review.pending : "-");
