@@ -1,0 +1,4 @@
+﻿src,dst,relation,method,verified,note
+G2,G3,前置（dst 依赖 src）,命题表.depends_on,True,G003
+G3,G4,前置（dst 依赖 src）,命题表.depends_on,True,G004
+G4,G5,前置（dst 依赖 src）,命题表.depends_on,True,G005

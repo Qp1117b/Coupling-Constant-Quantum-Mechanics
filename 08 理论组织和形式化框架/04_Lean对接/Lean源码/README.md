@@ -291,7 +291,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 ## 本次更新亮点 (v0.5.2)
 
-- **超导形式化库**：`Superconductivity`（12 模块），对应 [06 超导](../08%20超导/) 两卷文档
+- **超导形式化库**：`Superconductivity`（12 模块），对应 [06 超导](../../../06%20超导/) 两卷文档
 - **分层映射**：Ontology（第 1–2 层有限本体论）→ TransitionTemperature（T_c）→ TransitionTemperatureCQM（G22 闭合）→ Reduction（BCS 退化与还原）→ CartanSuperconductivity（嘉当张量超导方程）→ FirstPrinciples（第一性推导链）→ SPAF（半唯像框架）→ MolecularGeometry（分子→晶胞→Regge→FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱与自由能竞争）
 - **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`
 - **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部前时空/电子封装），沿用 CausalSet.Axioms 不透明公理模式

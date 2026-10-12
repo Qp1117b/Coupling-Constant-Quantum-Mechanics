@@ -225,8 +225,17 @@ def main():
 
 
 def build_blueprint_html(MAPPING, modules, decls, out):
-    html = BP_HTML_TMPL.replace("__DATA__", json.dumps(
-        {"mapping": MAPPING, "modules": modules, "n_decl": len(decls)}, ensure_ascii=False))
+    kind_hist = {}
+    for d in decls:
+        kind_hist[d["kind"]] = kind_hist.get(d["kind"], 0) + 1
+    axiom_decls = [{"module": d["module"], "file": d["file"], "line": d["line"], "name": d["name"]}
+                   for d in decls if d["kind"] == "axiom"]
+    mapped_concepts = sorted({c.strip() for m in MAPPING
+                              for c in (m[2] or "").split(";") if re.match(r"^C\d{3}$", c.strip())})
+    payload = {"mapping": MAPPING, "modules": modules, "n_decl": len(decls),
+               "kind_hist": kind_hist, "axiom_decls": axiom_decls,
+               "mapped_concepts": mapped_concepts}
+    html = BP_HTML_TMPL.replace("__DATA__", json.dumps(payload, ensure_ascii=False))
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
 
@@ -236,45 +245,158 @@ BP_HTML_TMPL = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CQM 形式化蓝图 · Lean ↔ 概念 ↔ 缺口</title>
 <style>
-:root{--bg:#f7f9fc;--card:#fff;--ink:#1c2530;--mut:#5d6b7a;--line:#d8e0ea;--acc:#2f6fb5;--hy:#b0552b;--ok:#2f7d4f;--warn:#b8860b;}
+:root{--bg:#f6f8fc;--card:#fff;--ink:#1c2530;--mut:#5d6b7a;--line:#d8e0ea;--acc:#2f6fb5;--hy:#b0552b;
+--ok:#2f7d4f;--warn:#b8860b;--gap:#b03434;
+--k-theorem:#2f6fb5;--k-lemma:#6aa9f0;--k-def:#7c6cf0;--k-structure:#ec4899;--k-axiom:#d97706;
+--k-inductive:#10b981;--k-class:#eab308;--k-abbrev:#94a3b8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 "Microsoft YaHei",system-ui,sans-serif}
-header{background:#fff;border-bottom:1px solid var(--line);padding:18px 24px}
-h1{margin:0 0 4px;font-size:19px}.sub{color:var(--mut);font-size:12.5px}
-.wrap{max-width:1180px;margin:0 auto;padding:20px 24px 60px}
+header{background:linear-gradient(120deg,#22456b,#2f6fb5);color:#fff;padding:20px 26px}
+h1{margin:0 0 4px;font-size:19px}.sub{opacity:.9;font-size:12.5px}
+.wrap{max-width:1220px;margin:0 auto;padding:20px 24px 70px}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:13px}
 th,td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
 th{background:#eef3fb;color:#274766;font-weight:600;position:sticky;top:0}
 tr:hover td{background:#fbfdff}
 code{background:#eef1f5;padding:1px 5px;border-radius:4px;font-family:Consolas,monospace;font-size:12.5px}
 .tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11.5px;margin:1px}
-.t-ok{background:#e3f3ea;color:var(--ok)}.t-gap{background:#fdeaea;color:#b03434}.t-ax{background:#fdf3e0;color:var(--warn)}
-.stats{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 22px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 18px;min-width:120px}
-.stat b{display:block;font-size:22px;color:var(--acc)}
+.t-ok{background:#e3f3ea;color:var(--ok)}.t-gap{background:#fdeaea;color:var(--gap)}.t-ax{background:#fdf3e0;color:var(--warn)}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:126px;
+box-shadow:0 4px 14px rgba(34,69,107,.06)}
+.stat b{display:block;font-size:23px;color:var(--acc);font-variant-numeric:tabular-nums}
+.stat span{color:var(--mut);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:0 4px 14px rgba(34,69,107,.06)}
+.card h3{margin:0 0 10px;font-size:13.5px;color:#274766}
 h2{font-size:16px;margin:26px 0 10px;color:#274766}
+.hint{color:var(--mut);font-size:12px;margin-top:8px}
+.kbar{display:flex;height:26px;border-radius:7px;overflow:hidden;border:1px solid var(--line)}
+.kbar i{display:block;height:100%}
+.kleg{display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:9px;font-size:12px;color:var(--mut)}
+.kleg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.band{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:12px}
+.band .bn{width:230px;flex:0 0 230px;text-align:right;color:#3b4a5c;font-family:Consolas,monospace;font-size:11.5px;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.band .bt{flex:1;display:flex;height:14px;border-radius:4px;overflow:hidden;background:#eef2f7}
+.band .bt i{display:block;height:100%}
+.band .bv{width:38px;text-align:right;color:var(--mut);font-variant-numeric:tabular-nums}
+.axlist{max-height:184px;overflow:auto;font-size:12.5px;border:1px solid var(--line);border-radius:8px}
+.axlist div{padding:4px 9px;border-bottom:1px solid #eef2f7}
+.axlist code{background:#fdf3e0}
+.toolbar{display:flex;gap:8px;margin-bottom:9px}
+.toolbar input{padding:7px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;min-width:250px}
+svg text.num{font-variant-numeric:tabular-nums}
+@media print{.toolbar{display:none}body{background:#fff}}
 </style></head><body>
 <header><h1>CQM 形式化蓝图</h1>
 <div class="sub">Lean 4 形式化项目 ↔ 概念表 ↔ 缺口台账 · 状态以 <code>08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md</code> 为权威</div></header>
 <div class="wrap">
 <div class="stats" id="stats"></div>
-<h2>一、库—概念—缺口对照</h2>
+<div class="grid">
+  <div class="card"><h3>形式化映射覆盖（Lean↔概念映射）</h3><div id="ring"></div></div>
+  <div class="card"><h3>声明构成（自动抽取 8 类）</h3><div id="kbar" class="kbar"></div><div class="kleg" id="kleg"></div>
+    <div class="hint" id="knote"></div></div>
+  <div class="card"><h3 id="axt">公理（axiom）声明 · 待证焦点</h3><div class="axlist" id="axl"></div>
+    <div class="hint" id="axnote"></div></div>
+</div>
+<h2>一、模块声明色带（按声明总数排序）</h2>
+<div id="bands"></div>
+<h2>二、库—概念—缺口对照</h2>
+<div class="toolbar"><input id="q1" placeholder="搜索库 / 符号 / 概念 / 缺口…"></div>
 <table id="t1"><thead><tr><th>Lean 库</th><th>关键符号</th><th>概念</th><th>命题</th><th>缺口</th><th>说明</th></tr></thead><tbody></tbody></table>
-<h2>二、模块声明统计（自动抽取）</h2>
+<h2>三、模块声明统计（自动抽取）</h2>
+<div class="toolbar"><input id="q2" placeholder="搜索模块 / 文件…"></div>
 <table id="t2"><thead><tr><th>模块</th><th>文件</th><th>theorem/lemma</th><th>def</th><th>axiom</th><th>structure</th><th>合计</th></tr></thead><tbody></tbody></table>
 </div>
 <script>
 const D=__DATA__;
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const gapSplit=s=>s?s.split(';').filter(Boolean):[];
+const KC={theorem:'var(--k-theorem)',lemma:'var(--k-lemma)',def:'var(--k-def)',structure:'var(--k-structure)',
+ axiom:'var(--k-axiom)',inductive:'var(--k-inductive)',class:'var(--k-class)',abbrev:'var(--k-abbrev)',
+ theorem_like:'var(--k-theorem)',def_like:'var(--k-def)',instance:'var(--k-abbrev)'};
+const totalOf=D.n_decl;
+const thLike=(D.kind_hist.theorem||0)+(D.kind_hist.lemma||0);
+const mappedN=D.mapped_concepts.length,gapsN=new Set(D.mapping.flatMap(m=>gapSplit(m[4]))).size;
 document.getElementById('stats').innerHTML=[
- ['模块数',D.modules.length],['声明总数',D.n_decl],
- ['映射条目',D.mapping.length],
- ['缺口映射',new Set(D.mapping.flatMap(m=>gapSplit(m[4]))).size]
-].map(([k,v])=>`<div class="stat"><b>${v}</b>${k}</div>`).join('');
-document.querySelector('#t1 tbody').innerHTML=D.mapping.map(m=>{
- const gs=gapSplit(m[4]).map(g=>`<span class="tag t-gap">${g}</span>`).join('')||'—';
- return `<tr><td><code>${m[0]}</code></td><td><code>${m[1]}</code></td><td>${m[2]}</td><td>${m[3]}</td><td>${gs}</td><td>${m[5]}</td></tr>`;}).join('');
-document.querySelector('#t2 tbody').innerHTML=D.modules.map(m=>
- `<tr><td><code>${m.module}</code></td><td>${m.file}</td><td>${m.theorem_like}</td><td>${m.def_like}</td><td>${m.axiom}</td><td>${m.structure}</td><td>${m.total_decl}</td></tr>`).join('');
+ ['模块数',D.modules.length],['声明总数',totalOf],
+ ['theorem/lemma',thLike],['axiom（抽取）',D.kind_hist.axiom||0],
+ ['映射概念',mappedN+'/82'],['缺口映射',gapsN+'/24']
+].map(([k,v])=>'<div class="stat"><b>'+v+'</b><span>'+k+'</span></div>').join('');
+/* 覆盖率环 */
+(function(){
+ const pct=mappedN/82,r=54,cx=74,cy=74,C=2*Math.PI*r,off=C*(1-mappedN/82);
+ document.getElementById('ring').innerHTML=
+ '<svg width="148" height="148" viewBox="0 0 148 148">'+
+ '<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6fb5"/>'+
+ '<stop offset="1" stop-color="#7c6cf0"/></linearGradient></defs>'+
+ '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="#e8eef6" stroke-width="16"/>'+
+ '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="url(#g1)" stroke-width="16" stroke-linecap="round"'+
+ ' stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 '+cx+' '+cy+')">'+
+ '<title>映射概念 '+mappedN+'/82</title></circle>'+
+ '<text x="'+cx+'" y="'+(cy+2)+'" text-anchor="middle" font-size="24" font-weight="600" fill="#2f6fb5" class="num">'+mappedN+'/82</text>'+
+ '<text x="'+cx+'" y="'+(cy+22)+'" text-anchor="middle" font-size="11.5" fill="#5d6b7a">概念已映射 · '+(pct*100).toFixed(1)+'%</text></svg>'+
+ '<div class="hint">映射源：<code>04_Lean对接/Lean↔概念映射.csv</code>（25 条）；<b>'+(mappedN===41?'计算值 41/82 与组织层 README 权威口径 41/82（50.0%）一致':'计算值 '+mappedN+'/82 与权威口径 41/82 不一致——以权威源为准')+'</b>。</div>';
+})();
+/* 声明构成条 */
+(function(){
+ const ks=Object.entries(D.kind_hist).sort((a,b)=>b[1]-a[1]);
+ document.getElementById('kbar').innerHTML=ks.map(([k,n])=>
+  '<i style="width:'+(n/totalOf*100)+'%;background:'+(KC[k]||'#94a3b8')+'"><title>'+esc(k)+'：'+n+'</title></i>').join('');
+ document.getElementById('kleg').innerHTML=ks.map(([k,n])=>
+  '<span><i style="background:'+(KC[k]||'#94a3b8')+'"></i>'+esc(k)+' '+n+'</span>').join('');
+ document.getElementById('knote').textContent='合计 '+totalOf+' 条声明（'+D.modules.length+' 模块，源码自动扫描）。';
+})();
+/* axiom 焦点 */
+(function(){
+ const ax=D.axiom_decls||[];
+ document.getElementById('axt').textContent='公理（axiom）声明 · 待证焦点（'+ax.length+' 条）';
+ document.getElementById('axl').innerHTML=ax.length?ax.map(a=>
+  '<div><code>'+esc(a.name)+'</code> <span style="color:#5d6b7a">'+esc(a.file)+':'+a.line+'</span></div>').join('')
+  :'<div>无</div>';
+ document.getElementById('axnote').innerHTML='抽取自源码的 <code>axiom</code> 声明共 '+ax.length+
+  ' 条；权威 <code>Lean源码/README.md</code> 记「30 公理待证」（转引自建设报告）——两口径并列登记，不擅自统一。';
+})();
+/* 模块色带 top18 */
+(function(){
+ const rows=D.modules.filter(m=>+m.total_decl>0).slice().sort((a,b)=>(+b.total_decl)-(+a.total_decl)).slice(0,18);
+ const max=Math.max(...rows.map(r=>+r.total_decl),1);
+ document.getElementById('bands').innerHTML=rows.map(m=>{
+  const parts=[['theorem_like',m.theorem_like],['def_like',m.def_like],['structure',m.structure],
+   ['inductive',m.inductive],['axiom',m.axiom],['instance',m.instance]];
+  const seg=parts.filter(p=>+p[1]>0).map(p=>
+   '<i style="width:'+(+p[1]/max*100)+'%;background:'+(KC[p[0]]||'#94a3b8')+'" title="'+esc(p[0])+'：'+p[1]+'"></i>').join('');
+  return '<div class="band"><span class="bn" title="'+esc(m.module)+'">'+esc(m.module)+'</span>'+
+   '<span class="bt">'+seg+'</span><span class="bv">'+m.total_decl+'</span></div>';}).join('')
+   ||'<div class="hint">无</div>';
+})();
+/* 对照表（可筛） */
+function renderT1(){
+ const q=(document.getElementById('q1').value||'').toLowerCase();
+ const rows=D.mapping.filter(m=>!q||m.join(' ').toLowerCase().includes(q));
+ document.querySelector('#t1 tbody').innerHTML=rows.map(m=>{
+  const gs=gapSplit(m[4]).map(g=>'<span class="tag t-gap">'+esc(g)+'</span>').join('')||'—';
+  const cs=(m[2]||'').split(';').filter(Boolean).map(c=>'<span class="tag">'+esc(c)+'</span>').join('');
+  return '<tr><td><code>'+esc(m[0])+'</code></td><td><code>'+esc(m[1])+'</code></td><td>'+cs+'</td>'+
+   '<td>'+esc(m[3]||'—')+'</td><td>'+gs+'</td><td>'+esc(m[5])+'</td></tr>';}).join('')
+  ||'<tr><td colspan="6">无匹配</td></tr>';
+}
+document.getElementById('q1').oninput=renderT1;renderT1();
+/* 模块统计（按合计降序 + 可筛） */
+function renderT2(){
+ const q=(document.getElementById('q2').value||'').toLowerCase();
+ const rows=D.modules.filter(m=>+m.total_decl>0&&(!q||(m.module+' '+m.file).toLowerCase().includes(q)))
+  .slice().sort((a,b)=>(+b.total_decl)-(+a.total_decl));
+ document.querySelector('#t2 tbody').innerHTML=rows.map(m=>{
+  const w=Math.round((+m.total_decl)/Math.max(...D.modules.map(x=>+x.total_decl),1)*100);
+  return '<tr><td><code>'+esc(m.module)+'</code></td><td>'+esc(m.file)+'</td><td>'+m.theorem_like+'</td>'+
+   '<td>'+m.def_like+'</td><td>'+(+m.axiom?'<span class="tag t-ax">'+m.axiom+'</span>':m.axiom)+'</td>'+
+   '<td>'+m.structure+'</td><td>'+m.total_decl+
+   ' <span style="display:inline-block;width:70px;height:7px;background:#eef2f7;border-radius:4px;vertical-align:middle">'+
+   '<span style="display:block;height:7px;width:'+w+'%;background:#2f6fb5;border-radius:4px"></span></span></td></tr>';}).join('')
+  ||'<tr><td colspan="7">无匹配</td></tr>';
+}
+document.getElementById('q2').oninput=renderT2;renderT2();
 </script></body></html>"""
 
 

@@ -427,7 +427,9 @@ $$K = \frac{\hbar c^5}{(1\ \text{GeV})^2} = 9.948712\ldots \times 10^{27}\ \text
 
 **Step 1：普朗克质量**
 
-$$M_P^{(\text{CQM})} = \frac{1}{\sqrt{6.708811657 \times 10^{-39}}} = 1.220892 \times 10^{19}\ \text{GeV}/c^2$（由理论 $G_N$ 导出，与实验 Planck 质量 $M_P^{(\text{exp})} = 1.220890 \times 10^{19}$ 相区别）$
+$$M_P^{(\text{CQM})} = \frac{1}{\sqrt{6.708811657 \times 10^{-39}}} = 1.220892 \times 10^{19}\ \text{GeV}/c^2$$
+
+（由理论 $G_N$ 导出，与实验 Planck 质量 $M_P^{(\text{exp})} = 1.220890 \times 10^{19}$ 相区别）
 
 $$M_P^{(\text{kg})} = 1.220892 \times 10^{19} \times \frac{1.602176634 \times 10^{-10}}{(299792458)^2}$$
 

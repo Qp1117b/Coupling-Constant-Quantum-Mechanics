@@ -5,7 +5,7 @@
 若改用 leanblueprint 官方工具链，目录应含：
 
 ```text
-10_输出可视化展示/蓝图/
+10_展示可视化/蓝图/
 ├── content.tex      # 蓝图正文，节点用 \lean{{...}} / \uses{{...}} 标注
 ├── web.tex          # \documentclass{{report}} + \usepackage{{blueprint}} ...
 ├── plastex.cfg

@@ -246,7 +246,7 @@ $$\chi_i(\tau) = q^{-c/24+h_i}\sum_{n=0}^{\infty}d_n q^{n},$$
 
 ### 5.1 一般维度下的类比
 
-一般维度 $d$ 的共形场论与双曲 $(d+1)$ 维流形上自守形式的谱理论之间存在深刻对应【文献确立：Kravchuk–Mazáč–Pal 2021；Mazáč】：CFT 的算符谱与自守形式谱理论的拉普拉斯特征值对应：
+一般维度 $d$ 的共形场论与双曲 $(d+1)$ 维流形上自守形式的谱理论之间存在深刻对应【文献确立：Kravchuk–Mazáč–Pal 2024；Mazáč】：CFT 的算符谱与自守形式谱理论的拉普拉斯特征值对应：
 
 $$\Delta_i \;\longleftrightarrow\; \lambda_i = \Delta_i(d-\Delta_i),$$
 
@@ -337,7 +337,7 @@ $$|c_{ijk}|^2 \;\sim\; L\!\left(\tfrac{1}{2},\,\pi_i\otimes\pi_j\otimes\pi_k\rig
 | 自守因子 = CQM 量纲因子 | 【CQM 构造假设】 | `01 核心理论/CQM_核心_唯物主义群论.md` §8.2 身份④ |
 | 自守因子 = 局部-全局同步桥 | 【CQM 构造假设】 | 本文档身份⑤（§3.3） |
 | 五种主动效果（Verlinde / 极小模型 / Ising 指数等） | 【标准数学／文献确立】 | Verlinde 1988；BPZ 1984；Cardy 1986；Zhu 1996 |
-| 共形 Bootstrap ↔ 自守形式谱理论 | 【文献确立】 | Kravchuk–Mazáč–Pal 2021；Mazáč |
+| 共形 Bootstrap ↔ 自守形式谱理论 | 【文献确立】 | Kravchuk–Mazáč–Pal 2024；Mazáč |
 | 同步结构跨维度推广 | 开放（【CQM 构造假设】研究纲领） | §5.3 |
 
 **开放问题。** 局部共形变换生成元与自守因子无穷小形式的严格对应（§1.3、§3.2）目前为同步诠释，其严格化有待在 FG 纤维丛框架内把「环面积分」写成同步算符的显式作用；同步结构的跨维度推广（§5.3）为研究纲领。
@@ -362,7 +362,7 @@ $$|c_{ijk}|^2 \;\sim\; L\!\left(\tfrac{1}{2},\,\pi_i\otimes\pi_j\otimes\pi_k\rig
 
 [8] N. Benjamin, A. Fitzpatrick, W. Li, J. Thaler, “Descending into the Modular Bootstrap,” *JHEP*, vol. 2026, article 29, 2026.
 
-[9] P. Kravchuk, D. Mazáč, S. Pal, “Unitarity and the Conformal Bootstrap in General Dimension,” arXiv:2111.12716.
+[9] P. Kravchuk, D. Mazáč, S. Pal, “Automorphic Spectra and the Conformal Bootstrap,” *Comm. Amer. Math. Soc.*, vol. 4, pp. 1–63, 2024. arXiv:2111.12716.
 
 [10] E. Witten, “Quantum Field Theory and the Jones Polynomial,” *Comm. Math. Phys.*, vol. 121, pp. 351–399, 1989.
 

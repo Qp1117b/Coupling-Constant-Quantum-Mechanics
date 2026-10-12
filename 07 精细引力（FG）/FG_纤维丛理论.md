@@ -9,12 +9,12 @@
 | 层级 | 存在论地位 | 数学结构 |
 |------|-----------|---------|
 | **前时空** | 物质处于前时空的状态 | 谱经GL(5)紧化投影与黎曼零点 $\gamma_n$ 有关 |
-| **GR** | 广度前提（平滑展开） | 伪黎曼流形 |
-| **FG** | 深度前提（层级激发） | FG 底空间上的主丛 $P(M,G)$ |
+| **GR** | 基底性同步前提（退相干锁定为经典时空） | 伪黎曼流形 |
+| **FG** | 展开性同步前提（层级激发） | FG 底空间上的主丛 $P(M,G)$ |
 
 $$\boxed{\text{FG} \neq \text{GR}}$$
 
-- GR是时空曲率，受 $G_N$ 限制，量级 $\sim 10^{-43}$（$G_N$ 理论值与偏差属构造后验数字校验，待独立复现，见 `03 引力与退相干/CQM_引力_GN可能公式.md`）
+- GR是时空曲率，受 $G_N$ 限制，基本时标 $\sim 10^{-43}$ s（闭环固有时标度；$G_N$ 理论值与偏差属构造后验数字校验，待独立复现，见 `03 引力与退相干/CQM_引力_GN可能公式.md`）
 - FG是一个联络生成两种曲率——底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 限制**，量级 $O(1)$
 - FG是GR基态的非平庸激发态，直接由底空间Regge角亏给出
 
@@ -313,11 +313,11 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（前时空/GR中子-质子振荡/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果重组（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由条件严格确定
 - **本征群**：$R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
-- **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$）
+- **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$；基态 $n=0$ 下完整本征值 $n+C_k$ 退化为 $C_k=n_k$，与 §9.5.1 一致）
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac 条件=共形自举方程的 CQM 具体化）
 - **耦合常数**：$g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
@@ -392,6 +392,9 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
+| GL(1) | $\zeta(s)$ | RH（GRH 的 GL(1) 特例） | $U(1)_{\text{em}}$ 电磁因子（相变量子 $☯$、零点差 $\gamma_2-\gamma_1$） |
+| GL(2) | $L(s, f)$ | GRH(GL(2)) | $SU(2)$ 弱因子（模形式谱） |
+| GL(3) | $L(s, \pi)$ | GRH(GL(3)) | $SU(3)$ 色因子（高阶自守谱） |
 | GL(4) | $L(s, \pi)$ | GRH(GL(4)) | $SO(5)$ 旋量表示（GL(5)的$K$-type） |
 | GL(5) | $L(s, \pi)$ | GRH(GL(5)) | 基态同步（单层自守表示） |
 
@@ -419,7 +422,7 @@ $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 | Berry–Keating (1999) | H=xp算符，semiclassical实现 |
 | Connes (2019) [arXiv:1910.14368] | 缩放哈密顿量，谱实现，紧化算符 |
 | Montgomery (1973) + Odlyzko | GUE统计验证 |
-| Bost–Connes (1995) [arXiv:1012.4665] | Z(β)=ζ(β)量子统计系统 |
+| Bost–Connes (1995) | Z(β)=ζ(β)量子统计系统 |
 | Srednicki (2011) [arXiv:1104.1850] | Berry–Keating+局部RH谱证明 |
 | Ng (2006) [arXiv:math/0603275] | Virasoro c=1/2谱实现 |
 | Benjamin–Chang (2022) [arXiv:2208.02259] | CFT模共形自举包含黎曼零点 |
@@ -460,7 +463,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
-| $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
+| $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸给出公式，牛顿极限定值尚待完善 |
 | $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
@@ -478,11 +481,11 @@ CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`。
 
 **严格对应**：
 
-$$\boxed{\psi(x) \in \Gamma(P(M,G)) \;\longleftrightarrow\; \phi_l(z) \in \mathcal{H}_{\text{CFT}}}$$
+$$\boxed{\psi(x) \in \Gamma(E) \;\longleftrightarrow\; \phi_l(z) \in \mathcal{H}_{\text{CFT}}}$$
 
 | 纤维丛 | CFT | 对应机制 |
 |:---|:---|:---|
-| 底空间 $M$（Regge剖分） | 复平面 $\mathbb{C}$ | 指数映射 $z = e^{-\kappa r}$（§6.4 of CFT文档） |
+| 底空间 $M$（Regge剖分） | 复平面 $\mathbb{C}$ | 指数映射 $z = e^{-\kappa r}$（CFT 文档 §6.4） |
 | 截面 $\psi$（物理场） | primary operator $\phi_l$（壳层） | 态-算符对应 |
 | 截面空间 $\Gamma$ | Hilbert空间 $\mathcal{H}$ | 所有物理态的集合 |
 | 协变作用 $D\psi = 0$ | 最高权条件 $\hat{L}_{n>0}\phi = 0$ | §9.5严格证明 |
@@ -605,14 +608,16 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} \;\longleftrightarrow\; \hat{L}_0 +
 |:---|:---|:---|
 | 核子部分 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ | $\hat{L}_0$（descendant level） | 径向量子数 $n$ |
 | Casimir部分 $\hat{C}_2(G_k)$ | $\hat{C}_2(G_k)$（角动量Casimir） | 壳层角动量 $l$ |
-| 本征值 = 耦级 $n_k = C_k$ | 本征值 = 共形维度 $h = n + l$ | §9.5.1严格推导 |
+| 本征值 = 耦级 $n_k = C_k$（角向+自旋） | 本征值 = $l_k(l_k+1)+\tfrac34$（径向 $n$ 对应 descendant level） | §9.5.1严格推导 |
 | 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | §9.5.2严格对应 |
 
 #### 9.5.1 耦级 → 共形维度的严格推导
 
-同步算符本征值（耦级）：
+同步算符本征值（耦级，由 Casimir 部分给出）：
 
 $$n_k = C_k = l_k(l_k+1) + \frac{3}{4}$$
+
+核子部分给出径向量子数 $n$（descendant level）；完整本征值为 $n + C_k$。
 
 CFT mode算符本征值（共形维度）：
 
@@ -624,9 +629,9 @@ $$h = h_{\text{primary}} + n_{\text{desc}} = l_k + n$$
 
 同步算符的Casimir部分给出轨道角动量平方 $l_k(l_k+1)$（壳层结构），核子部分给出descendant level $n$（径向量子数）。完整同步算符的本征值：
 
-$$\hat{\mathcal{S}}_k^{\text{(full)}}\,\Psi_{n,l} = \underbrace{(n + l_k(l_k+1))}_{\text{轨道部分}}\,\Psi_{n,l} + \underbrace{\frac{3}{4}}_{\text{自旋部分}}\,\Psi_{n,l}$$
+$$\hat{\mathcal{S}}_k^{\text{(full)}}\,\Psi_{n,l} = \underbrace{n}_{\text{径向部分（descendant level）}}\,\Psi_{n,l} + \underbrace{\left(l_k(l_k+1) + \frac{3}{4}\right)}_{\text{轨道部分 + 自旋部分（Casimir } C_k\text{）}}\,\Psi_{n,l}$$
 
-自旋部分 $s(s+1) = 3/4$（$s = 1/2$）分离后，轨道部分 $n + l_k(l_k+1)$ 中 $l_k(l_k+1)$ 为 Casimir 本征值（与 primary 共形维度 $h_l = l_k$ 通过 $l_k \leftrightarrow l_k(l_k+1)$ 对应），$n$ 为 descendant level。
+自旋部分 $s(s+1) = 3/4$（$s = 1/2$）分离后，轨道部分 $l_k(l_k+1)$ 为 Casimir 本征值（与 primary 共形维度 $h_l = l_k$ 通过 $l_k \leftrightarrow l_k(l_k+1)$ 对应），$n$ 为 descendant level（径向）。
 
 #### 9.5.2 同步方程 = 最高权条件
 

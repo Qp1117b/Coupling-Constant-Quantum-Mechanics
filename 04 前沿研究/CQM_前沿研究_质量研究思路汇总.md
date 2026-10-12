@@ -274,10 +274,10 @@ $$
 
 | 粒子 | 操作 | 数学形式 | 状态 |
 |:---|:---|:---|:---|
-| **介子** | 对称平方 | $\mathrm{Sym}^2(\pi_p)$ | 已证（Gelbart–Jacquet 1978） |
+| **介子** | 对称平方 | $\mathrm{Sym}^2(\pi_p)$ | 已证仅限 GL(2) 输入（Gelbart–Jacquet 1978）；对 GL(5) 输入 $\pi_p$ 未证 |
 | **中子** | 基变换（base change） | $\mathrm{BC}_{E/F}(\pi_p)$ | 已证（Langlands） |
 | **电子** | 自守诱导的对偶 | $\mathrm{Ind}_H^G(\sigma)^\vee$ | 需构造 |
-| **激发态** | 对称幂 | $\mathrm{Sym}^n(\pi_p)$ | $n \leq 4$ 已证 |
+| **激发态** | 对称幂 | $\mathrm{Sym}^n(\pi_p)$ | $n \leq 4$ 已证仅限 GL(2) 输入；对 GL(5) 输入 $\pi_p$ 未证 |
 
 **不适用的操作**（三条，各附理由）：
 
@@ -289,7 +289,7 @@ $$
 
 $$L(s, \pi_p \times \pi_p^\vee) = \frac{\zeta(s)}{\zeta(s+1)} \cdot L(s, \mathrm{Sym}^2 \pi_p)$$
 
-（含 $\zeta(s+1)$ 分母为框架内表述，见附 B 注 2。）
+（该恒等式为 GL(2) 输入的 $\pi \otimes \tilde{\pi} \cong 1 \boxplus \mathrm{Sym}^2 \pi$ 的 L 函数形式，已证仅限 GL(2) 输入；对 GL(5) 输入 $\pi_p$ 该分解不适用，见附 B 注 2。含 $\zeta(s+1)$ 分母为框架内表述。）
 
 极点来自 $\zeta(s)$，但 $\mathrm{Sym}^2 \pi_p$ 部分是有限的。所以：
 
@@ -394,7 +394,7 @@ Archimedean 因子：
 $$L_\infty(s, \pi_{p,\infty}) = \prod_{j=1}^{5} \Gamma_\mathbb{R}(s + \mu_j)$$
 
 非 Archimedean 因子：
-$$L_p(s, \pi_v) = \prod_{j=1}^{5} \frac{1}{1 - \alpha_{j,p} p^{-s}}$$
+$$L_p(s, \pi_{p,v}) = \prod_{j=1}^{5} \frac{1}{1 - \alpha_{j,p} p^{-s}}$$
 
 ### 10.3 第三步：验证函数方程
 
@@ -548,7 +548,7 @@ $$
 2. **§8.3 恒等式对齐**：标准 Rankin–Selberg 恒等式为 $L(s,\pi\times\tilde{\pi})=\zeta(s)L(s,\mathrm{Sym}^2\pi)$，不含 $\zeta(s+1)$ 分母。文档写法为框架内表述，严格化时需给出该分母的机制说明或改按标准恒等式。
 3. **§8.4 术语提示**：文献中“内窥转移”（endoscopy）通常指 Langlands–Shelstad 内窥理论，而 $\mathrm{BC}_{E/F}$（基变换）对应 Langlands 1980 / Arthur–Clozel 1989；术语可考虑统一为“基变换”以避免歧义。
 4. **§3.1 谱事实已直接验证**：4-单纯形边-面关联矩阵 $E\in\{0,1\}^{10\times10}$（$E_{fe}=1$ 当边 $e\subset$ 面 $f$），$E^TE$ 本征值恰为 $\{9,4,4,4,4,1,1,1,1,1\}$，即 $\{9^{(1)},4^{(4)},1^{(5)}\}$，迹 30、谱和 30。
-5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 $\xi$ 定义与特殊函数值（$\Gamma(1/2)$、$\zeta(0)$、$\zeta'(0)$）推出，非拟合值。
+5. **§6 $☯$ 的闭式**：$☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}=1+\gamma_E/2-\tfrac12\ln\pi-\ln2\approx 0.02309570897$（$\gamma_E$ 为欧拉–马歇罗尼常数），由 $\xi$ 定义、$\psi(1/2)=-\gamma_E-2\ln2$ 与 $\zeta$ 在 $s=1$ 的 Laurent 展开（$\gamma_E$ 系数）推出，非拟合值。
 
 ---
 

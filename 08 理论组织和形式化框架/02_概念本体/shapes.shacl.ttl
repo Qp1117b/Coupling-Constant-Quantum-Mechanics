@@ -1,0 +1,58 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix cqm:  <http://cqm.local/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+cqm:ConceptShape a sh:NodeShape ;
+  sh:targetClass cqm:Concept ;
+  sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:nodeKind sh:Literal ;
+                sh:message "概念缺少规范名（skos:prefLabel）" ] ;
+  sh:property [ sh:path skos:definition ; sh:minCount 1 ; sh:nodeKind sh:Literal ;
+                sh:message "概念缺少定义（skos:definition）" ] ;
+  sh:property [ sh:path cqm:sourceDoc ; sh:minCount 1 ; sh:pattern "^D[0-9]{3}$" ;
+                sh:message "概念缺少可解析的出处文档（sourceDoc 需形如 D008）" ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:class prov:Entity ;
+                sh:message "概念没有任何证据单元（证据层未覆盖）" ] .
+
+cqm:PropositionShape a sh:NodeShape ;
+  sh:targetClass cqm:Proposition ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ;
+                sh:message "命题缺少陈述（rdfs:label）" ] ;
+  sh:property [ sh:path cqm:status ; sh:minCount 1 ; sh:datatype xsd:string ;
+                sh:message "命题缺少状态" ] .
+
+cqm:GapShape a sh:NodeShape ;
+  sh:targetClass cqm:Gap ;
+  sh:property [ sh:path cqm:gapCode ; sh:minCount 1 ; sh:pattern "^(C|G[0-9]+|N[0-9]+)$" ;
+                sh:message "缺口编号必须为 C / G n / N n 之一" ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ;
+                sh:message "缺口没有证据单元" ] .
+
+cqm:HyperedgeShape a sh:NodeShape ;
+  sh:targetClass cqm:Hyperedge ;
+  sh:property [ sh:path cqm:hasPremise ; sh:minCount 1 ; sh:class cqm:Concept ;
+                sh:message "超边缺少前件概念" ] ;
+  sh:property [ sh:path cqm:hasConclusion ; sh:minCount 1 ; sh:class cqm:Concept ;
+                sh:message "超边缺少结论概念" ] ;
+  sh:property [ sh:path cqm:sourceDoc ; sh:minCount 1 ;
+                sh:message "超边缺少出处" ] .
+
+cqm:ArgumentShape a sh:NodeShape ;
+  sh:targetClass cqm:Argument ;
+  sh:property [ sh:path cqm:relationType ; sh:minCount 1 ;
+                sh:in ( "演化"^^xsd:string "映射"^^xsd:string "等价"^^xsd:string
+                        "依赖"^^xsd:string "层级含于"^^xsd:string ) ;
+                sh:message "有向论证的关系类型必须在既有 5 类之内" ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ;
+                sh:message "论证没有证据单元" ] .
+
+cqm:EvidenceShape a sh:NodeShape ;
+  sh:targetClass prov:Entity ;
+  sh:property [ sh:path prov:value ; sh:minCount 1 ;
+                sh:message "证据单元缺少引文" ] ;
+  sh:property [ sh:path prov:atLocation ; sh:pattern "^[0-9]+-[0-9]+$" ;
+                sh:message "证据单元缺少字符区间" ] ;
+  sh:property [ sh:path cqm:evidenceMethod ; sh:minCount 1 ;
+                sh:message "证据单元缺少定位方法" ] .

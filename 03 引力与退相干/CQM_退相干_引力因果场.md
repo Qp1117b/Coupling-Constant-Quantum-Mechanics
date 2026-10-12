@@ -274,7 +274,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 **本节标题中的“微观”仅指环境分子质量相对于宏观探测器较小这一操作事实，而非指涉任何本体论意义上的“量子性”。**“微观”不是不确定性的来源。一个原子相对于另一个原子处于强确定端（$U \gg U_{\text{critical}}$），相对于一个 CCD 靶面亦处于强确定端（$U \gg U_{\text{critical}}$），但截断速率不同（$\tau_{\text{res}}$ 分别为 $10^{-26}$ s 和 $10^{-48}$ s）。同样的对象，不同的探测者，不同的截断速率。因此，本节的“强确定”不是微观对象的固有属性，而是该环境分子与系统之间耦合深度的关系性描述。
 
-**主体**：单个环境分子（$N_2, O_2$，质量 $\sim 10^{-26}$ kg）。
+**主体**：单个环境分子（$\mathrm{N_2}$、$\mathrm{O_2}$，质量 $\sim 10^{-26}$ kg）。
 
 **机制**：单个分子质量小，$\tau_{\text{res}} \sim 10^{-26}$ s（因果分辨率细），耦合深度 $U > U_{\text{critical}}$。
 
@@ -308,7 +308,7 @@ $$U = f(M_{\text{eff}}, \Delta L, \delta E, \delta t) \geq U_{\text{critical}}$$
 
 **特点**：可能呈现**保护性相干**（coherence protection）或**反常截断**（anomalous truncation），需具体物理条件分析。
 
-**例**：超导中的库珀对——质子集体在低温下形成特殊耦合模式，可能抑制或改变常规截断行为。
+**例**：超导中的库珀对——晶格（质子集体）在低温下媒介电子配对形成特殊耦合模式，可能抑制或改变常规截断行为。
 
 ---
 
@@ -569,7 +569,7 @@ $$\text{光子} \rightarrow \text{视网膜感光细胞质子集体（观测退�
 2. Diósi, L. (1987). A Universal Master Equation for the Gravitational Violation of Quantum Mechanics. *Physics Letters A*, 120(8), 377-380.
 3. Zurek, W. H. (2003). Decoherence, Einselection, and the Quantum Origins of the Classical. *Reviews of Modern Physics*, 75(3), 715-775.
 4. Rovelli, C. (1996). Relational Quantum Mechanics. *International Journal of Theoretical Physics*, 35(8), 1637-1678.
-5. ruster. (2026). 闭合核理论/CNT：历史唯物主义物理学纲领. Zenodo. DOI: 10.5281/zenodo.20804380.
+5. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
 
 ---
 

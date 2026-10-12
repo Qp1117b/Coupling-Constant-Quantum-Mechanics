@@ -4,12 +4,15 @@
 
 | 目录 | 内容 |
 |:---|:---|
-| `网站/index.html` | 单页站点：总览 / 概念 / 命题与缺口 / 关系与超边 / Lean 对接 / 动态机制 / 元数据（内嵌 `data.json`） |
-| `阅读站/index.html` | 离线理论阅读层：目录树 + 全文搜索 + 站内跳转 + 反链 + 公式渲染（语料内嵌，`_build/build_reader.py` 派生） |
-| `交互式可视化/超图交互.html` | 交互式有向超图（拖拽/缩放/筛选/点选，离线自包含） |
+| `网站/index.html` | **研究驾驶舱**（暗色单页）：**9 面板** + 内联 SVG 图表（概念类型环图、关系类型条图、命题类型×状态堆叠条、Lean 声明构成、模块 Top16、派生级联、对数弹性、深度分布、claim 边构成）+ 全局检索（`Ctrl+K`）+ 明细表 + **证据面板**（215 条断言 → 原文定位）+ **质量看板**（SHACL / HermiT / 抽取评测 / 术语候选） |
+| `检索台/index.html` | **检索台**：图谱检索（分面 + 别名 + 证据 + 上下游）/ **全文 BM25**（CJK 一元+二元、短语、`+/-`、`doc:` 限定；语料 gzip 内嵌本地解压）/ 证据检索 / **证据复核**（逐条判定 + 复核人 + localStorage 草稿 + 导出 `复核结果.csv` → 闭环置真 `verified`）/ 质量看板 / **SPARQL 能力问答**（CQ1–CQ9 实跑结果） |
+| `阅读站/index.html` | 离线理论阅读层（**Material for MkDocs**，v1.8.0）：导航树 + **jieba 中文全文搜索**（CQM 用户词典 166 词条）+ lunr 相关性排序 + 高亮/建议 + 公式渲染 + 完整中文 UI；`offline` 插件保证 **file:// 搜索可用**，`privacy` 插件零外链资源（`_build/build_reader_site.py` 派生） |
+| `交互式可视化/超图交互.html` | **可推演多层超图**（Cytoscape.js）：暗色辉光、类型分簇等 6 布局、邻域聚焦、有向路径、**派生级联回放**、**命题/缺口层开关**（+39 命题 +24 缺口 +claim 边）、图例过滤、小地图、导出 PNG、全屏 |
 | `蓝图/index.html` | 交互式形式化蓝图（Lean↔概念↔缺口）；`leanblueprint_source.md` 为官方工具链说明 |
 | `讲解文档/` | 4 篇导读：相变量子、缺口 C、超图总览、$G_N$ 与量纲发生学 |
 | `报告/建设报告.md` | 各维度建设成果与实测数据 |
 | `论文草稿/形式化组织框架.md` | 方法论论文草稿（**未定稿**） |
 
-**打开方式**：直接用浏览器打开 `网站/index.html`（结构化知识）与 `阅读站/index.html`（理论原文阅读）；交互式超图另同步至 `03_超图与理论图/超图可视化.html`。构建：`_build/build_site.py`、`_build/build_reader.py`。
+**呈现边界**：全部图表、证据、检索与回放数据均取自既有产物（源 CSV、`超图数据.json`、`知识图谱.json`、`证据映射.json`、`06_动态机制/仿真/derivation_order.csv`、`Lean结构提取/declarations.json` 等），构建期断言与源一致；不新增理论内容、不改数值、不改缺口状态。
+
+**打开方式**：直接用浏览器打开 `网站/index.html`（结构化知识 + 证据 + 质量）、`检索台/index.html`（图谱/全文/证据检索 + 证据复核）与 `阅读站/index.html`（理论原文阅读，Material 站，file:// 搜索可用）；交互式超图另同步至 `03_超图与理论图/超图可视化.html`（两处均带 `assets/cytoscape.min.js`）。构建：`_build/build_site.py`、`_build/build_search.py`、`_build/build_reader_site.py`。

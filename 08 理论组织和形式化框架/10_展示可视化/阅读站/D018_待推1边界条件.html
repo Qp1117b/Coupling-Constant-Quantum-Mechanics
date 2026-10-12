@@ -1,0 +1,4602 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html">
+      
+      
+        <link rel="next" href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>待推1边界条件 [D018] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cqm-1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              待推1边界条件 [D018]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        统一支点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四个核心结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一部分：五重联系总览
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：五重联系总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 统一结构图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 五项的角色与定量支点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二部分：第三重 —— 轨道量子化（枢纽）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：第三重 —— 轨道量子化（枢纽）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 为什么它是枢纽
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 在耦合空间中做往返轨道量子化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 定量检验（两种）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-pmgamma_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 附带收获：\(\pm\gamma_n\) 配对的半经典来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-dirichlet-vs-sierra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 约定协调：Dirichlet 盒 vs Sierra 周期（融会贯通关键）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三部分：第二重 —— Bohr 半径（固定极限）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：第二重 —— Bohr 半径（固定极限）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Bohr 是呼吸关闭的极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么 Bohr 不呼吸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 精确形式的注意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-d11-a_0-1text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 归档回捞：D11 把 \(a_0\) 接到 \(1/\text{☯}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#li" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四部分：第四重 —— Li 表示（判据侧）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：第四重 —— Li 表示（判据侧）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-li" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Li 变换把临界线严格映成单位圆
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 \(n^2\) 与跑动残留
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 耦级矩表述（可立即推进，不依赖待推 1）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 与五重结构的接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五部分：第一重 —— 待推 1 边界条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：第一重 —— 待推 1 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-l_rm-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 \(L_{\rm box}\) 的形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 用实际零点计数验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 去循环入口：逐点 vs 整体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 待推 1 的重新定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 精度要求（硬约束）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-sierra-cnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 归档回捞：Sierra-CNT 的「长度 + 相位 → 谱」机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-st-vs-sierra-vartheta_n-vs-li-z_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 三圆关系辨析：\(S(T)\) vs Sierra \(\vartheta_n\) vs Li \(z_n\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六部分：第五重 —— 相空间–尺度关联（归档恢复）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六部分：第五重 —— 相空间–尺度关联（归档恢复）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 归档来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 可恢复 vs 不恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 恢复的定量桥梁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 完整链条（含长度半）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-k_l-d1d7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 距离映射 \(K_L\) —— 耦合空间到物理空间的度量（归档 D1–D7 回捞）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1text-d11k11gn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七部分：精确张力 —— \(1/\text{☯}\)（与归档 D11/K11/GN 汇合）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第七部分：精确张力 —— \(1/\text{☯}\)（与归档 D11/K11/GN 汇合）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 量子化单位 vs 涨落下限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 与层级问题的同量级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 归档三线汇合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 分工的结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八部分：低 \(n\) 失效 —— 三个信号的同一源头
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第八部分：低 \(n\) 失效 —— 三个信号的同一源头">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 自洽方程的适用边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 三个独立信号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九部分：严格性边界总表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第九部分：严格性边界总表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        必须规避的否证项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十部分：建议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十部分：建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 待推 1 的推荐表述（写入仓库文档）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 一句话底线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        统一支点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四个核心结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一部分：五重联系总览
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：五重联系总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 统一结构图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 五项的角色与定量支点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二部分：第三重 —— 轨道量子化（枢纽）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：第三重 —— 轨道量子化（枢纽）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 为什么它是枢纽
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 在耦合空间中做往返轨道量子化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 定量检验（两种）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-pmgamma_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 附带收获：\(\pm\gamma_n\) 配对的半经典来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-dirichlet-vs-sierra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 约定协调：Dirichlet 盒 vs Sierra 周期（融会贯通关键）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三部分：第二重 —— Bohr 半径（固定极限）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：第二重 —— Bohr 半径（固定极限）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Bohr 是呼吸关闭的极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bohr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么 Bohr 不呼吸
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 精确形式的注意
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-d11-a_0-1text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 归档回捞：D11 把 \(a_0\) 接到 \(1/\text{☯}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#li" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四部分：第四重 —— Li 表示（判据侧）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：第四重 —— Li 表示（判据侧）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-li" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Li 变换把临界线严格映成单位圆
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 \(n^2\) 与跑动残留
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 耦级矩表述（可立即推进，不依赖待推 1）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 与五重结构的接口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五部分：第一重 —— 待推 1 边界条件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：第一重 —— 待推 1 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-l_rm-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 \(L_{\rm box}\) 的形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 用实际零点计数验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 去循环入口：逐点 vs 整体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 待推 1 的重新定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 精度要求（硬约束）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-sierra-cnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 归档回捞：Sierra-CNT 的「长度 + 相位 → 谱」机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-st-vs-sierra-vartheta_n-vs-li-z_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 三圆关系辨析：\(S(T)\) vs Sierra \(\vartheta_n\) vs Li \(z_n\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六部分：第五重 —— 相空间–尺度关联（归档恢复）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六部分：第五重 —— 相空间–尺度关联（归档恢复）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 归档来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 可恢复 vs 不恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 恢复的定量桥梁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 完整链条（含长度半）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-k_l-d1d7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 距离映射 \(K_L\) —— 耦合空间到物理空间的度量（归档 D1–D7 回捞）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1text-d11k11gn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七部分：精确张力 —— \(1/\text{☯}\)（与归档 D11/K11/GN 汇合）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第七部分：精确张力 —— \(1/\text{☯}\)（与归档 D11/K11/GN 汇合）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 量子化单位 vs 涨落下限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 与层级问题的同量级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 归档三线汇合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 分工的结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八部分：低 \(n\) 失效 —— 三个信号的同一源头
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第八部分：低 \(n\) 失效 —— 三个信号的同一源头">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 自洽方程的适用边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 三个独立信号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九部分：严格性边界总表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第九部分：严格性边界总表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        必须规避的否证项
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十部分：建议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十部分：建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 待推 1 的推荐表述（写入仓库文档）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 一句话底线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cqm-1">CQM 待推 1（边界条件）深度分析 —— 五重联系整合版<a class="headerlink" href="#cqm-1" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<blockquote>
+<p><strong>对象</strong>：<code>04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md</code> 结构分解中的「待推 1：从素数/<span class="arithmatex">\(\xi\)</span> 函数独立推出边界条件」
+<strong>整合内容</strong>：待推 1 × Bohr 半径 × 轨道量子化 × Li 表示 × 耦合常数相空间–尺度关联 × 距离映射 <span class="arithmatex">\(K_L\)</span>（无量纲耦合壳 → 物理长度）
+<strong>归档来源</strong>：
+- <code>归档/归档 CNT/09 前期探索/05-暂弃研究/05-相空间等价性 已废弃.md</code>
+- <code>归档/归档 CNT/06 论文/01-闭合核理论（CNT）：因果集、谱几何与物理常数的第一性原理.md</code> §9–§10（边界三元组、Sierra-CNT 定理）
+- <code>归档/归档 CNT/09 前期探索/02-全发现汇总.md</code> D1–D9（距离映射、自对偶、氢谱）、D11（玻尔半径）、K11（层级问题）
+- <code>归档/归档 CNT/01 入门与脉络/CNT 读者入门.md</code> §6（<span class="arithmatex">\(K_L=0.6805\)</span> 与 <span class="arithmatex">\(g_s\)</span> 张力自注）
+- <code>归档/归档 CNT/09 前期探索/01-元RG与博弈框架/01-CNT 元RG与数学化纲领.md</code> 公理 II（辛面积 <span class="arithmatex">\(2\pi\)</span>）、§4（硬壁截断）
+<strong>性质</strong>：缺口分析文档（非证明、非新定理声明）
+<strong>日期</strong>：2026-09-23
+<strong>证据分级</strong>：【已证定理】/【文献确立】/【数值事实】/【框架内构造】/【诠释】/【未证】</p>
+</blockquote>
+<hr />
+<h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>「待推 1：边界条件」经解剖与归档回捞，结论是：<strong>长度半已由 RvM 非循环解出，相位半 <span class="arithmatex">\(S(T)\)</span> 仍是唯一实质缺口</strong>，且五重联系可统一到一个自洽方程上。</p>
+<h3 id="_2">统一支点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\boxed{\gamma_n=\frac{\pi n}{L_{\rm box}(\gamma_n)}},\qquad L_{\rm box}(T)=\underbrace{\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}}_{L_{\rm len}\ (\Gamma,\pi)}+\underbrace{\tfrac{\pi}{T}S(T)}_{L_{\rm ph}}\]</div>
+<p>（约定：上式为 <strong>Dirichlet 盒</strong>量子化 <span class="arithmatex">\(\gamma=\pi n/L\)</span>；Sierra 周期边界用 <span class="arithmatex">\(L_n^{\rm Si}=2\pi n/\gamma_n\)</span>，两者差因子 2，见 §2.5。）</p>
+<blockquote>
+<p><strong>限定</strong>：上式与计数函数的<strong>定义</strong> <span class="arithmatex">\(n=N(\gamma_n)\)</span> <strong>恒等</strong>（因 <span class="arithmatex">\(L_{\rm box}\cdot T/\pi=\theta/\pi+1+S=N\)</span>），故它是五重联系的<strong>记账轴</strong>，<strong>不是独立方程、不构成独立验证</strong>（§5.1）。本文的非平凡内容只有两项：<strong>(a)</strong> 长度半 <span class="arithmatex">\(L_{\rm len}\)</span> 只含 <span class="arithmatex">\(\Gamma,\pi\)</span>（非循环）；<strong>(b)</strong> 相位半 <span class="arithmatex">\(S(T)\)</span> 未解。§2.3 表中只取长度半时出现的「误差」，正是 (b) 的直接表现（<span class="arithmatex">\(=\big[-S(\gamma_n)+(\theta_{\rm asy}-\theta)/\pi\big]/n\)</span>）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">对象</th>
+<th style="text-align: left;">在统一支点中的角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>待推 1 边界条件</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(L=L(E)\)</span> 自洽方程的来源；<strong>长度已解、相位未解</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>Bohr 半径</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(L\)</span> <strong>固定</strong>（不跑动）的极限 → <span class="arithmatex">\(r_n=n^2a_0\)</span>；归档 D11 给 <span class="arithmatex">\(a_0\propto(1/\text{☯})^3\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>轨道量子化</strong></td>
+<td style="text-align: left;"><strong>1 与 2 的共同来源</strong>：Bohr–Sommerfeld / 辛单位胞</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Li 表示</strong></td>
+<td style="text-align: left;">绕数 <span class="arithmatex">\(n\)</span> 在单位圆 $</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>相空间–尺度关联</strong></td>
+<td style="text-align: left;">能标 <span class="arithmatex">\(\tau=1+W((n-\tfrac78)/e)\)</span>（RvM 反解，§6.4），归档 <span class="arithmatex">\(\nu_p\leftrightarrow\mu\)</span> 的定量恢复</td>
+</tr>
+</tbody>
+</table>
+<p><strong>度量侧</strong>：距离映射 <span class="arithmatex">\(r_{\rm coupling}\cdot K_L=r_{\rm phys}\)</span> 把上表全部落在 fm 刻度上；<span class="arithmatex">\(K_L\)</span> 是<strong>禁闭映射常数</strong>（无量纲耦合壳 → 物理长度的特征常数，§6.5.1）——径向 <span class="arithmatex">\(\gamma_n\)</span> 与角向 <span class="arithmatex">\(\lambda_{\rm Mathieu}\)</span> 两个谱扇区<strong>唯一的换算接口</strong>。<span class="arithmatex">\(K_L\)</span> 有 3.3% 内部不自洽，未定死前依赖它的「0.3% 精确」不作数。</p>
+<h3 id="_3">四个核心结论<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>轨道量子化是枢纽</strong>。Bohr 圆轨道与 CQM 往返轨道是同一量子化思想的两种实现，差别仅在「空间（<span class="arithmatex">\(r\)</span> vs <span class="arithmatex">\(u=\ln r\)</span>）」与「长度（固定 vs 呼吸）」。</li>
+<li><strong>待推 1 的长度半已解、相位半未解</strong>。长度由 <span class="arithmatex">\(\Gamma,\pi\)</span> 经 <span class="arithmatex">\(\theta(T)\)</span> 独立给出（非循环）；未解的相位恰是 <span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span>——与 RH 纠缠的那一块。相位在 Sierra-CNT 中以 <span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span> 出现（§5.6）。<strong>三圆互不同一（§5.7）</strong>：<span class="arithmatex">\(S(T)\)</span>（RvM 涨落半，阶梯/无界）、<span class="arithmatex">\(\vartheta_n\)</span>（平滑有界 <span class="arithmatex">\(\theta\)</span> 型）、Li 的 <span class="arithmatex">\(z_n\)</span>（<span class="arithmatex">\(\phi_n:=\arg z_n\)</span>，<span class="arithmatex">\(\to0\)</span>）<strong>互不同一</strong>，唯一联系是 RvM 分解的涨落半/平滑半。</li>
+<li><strong>归档四块可用硬料回捞</strong>：① Sierra-CNT 定理给出「长度 + 相位 → 谱」的完整机制骨架；② D1 距离映射 <span class="arithmatex">\(K_L\)</span> = 禁闭映射常数（无量纲耦合壳→物理长度；<span class="arithmatex">\(K_L\)</span> 有 3.3% 内部不一致，见 §6.5）；③ D11 玻尔半径 <span class="arithmatex">\(a_0\propto(1/\text{☯})^3\)</span> 把 Bohr 重接到 <span class="arithmatex">\(1/\text{☯}\)</span>；④ K11 层级 <span class="arithmatex">\(\propto\exp(-1/\text{☯})\)</span> 与 <span class="arithmatex">\(G_N\)</span> 的 <span class="arithmatex">\(\exp(-2/\text{☯})\)</span> 是<strong>平方关系</strong>（<span class="arithmatex">\(\alpha_G=(m_p/m_{\rm Pl})^2\)</span>，§7.3）。</li>
+<li><strong>精确因子 <span class="arithmatex">\(1/\text{☯}=43.298086\)</span></strong> 与层级问题 <span class="arithmatex">\(\ln(m_{\rm Pl}/m_p)=44.012\)</span> 同量级（差 1.65%）——非恒等式，但是归档 D11/K11 与 GN 构造 10.1 的共同枢纽。</li>
+</ol>
+<p><strong>诚实底线</strong>：本文档不推进 RH 的证明，也不声称新数学发现。所有定量结果的归属均已标注。</p>
+<hr />
+<h2 id="_4">第一部分：五重联系总览<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 统一结构图<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>              辛单位胞 / BS 量子化  ∮ p dq = 2πn
+              （归档公理 II；枢纽）
+                        │
+      ┌─────────────────┼─────────────────┐
+      │                 │                 │
+ 空间 r，L 固定      空间 u=ln r，L 呼吸     绕数 n 的
+ ↓                   ↓                 Fourier 模式
+Bohr 半径            CQM 耦级谱            ↓
+r_n = n²a₀          γ_n = πn/L_box      Li 系数
+(跑动关闭)           (跑动打开)           λ_n ≈ n²λ₁
+a₀ ∝ (1/☯)³         L = L_len + L_ph      |z|=1⟺RH
+(D11 归档)           相位: S(T) 未解
+      │                 │                 │
+      └────────→ 待推 1 边界条件 ←───────┘
+              长度: Γ、π → θ(T)（非循环，已解）
+              相位: S(T) ≡ Sierra 的 ϑ_n 缺口
+                        │
+              能标 τ = ln(γ_n/2π)（RvM 反解 1+W((n-7/8)/e)）
+                        │
+              归档第五项：ν_p ↔ μ；ν_p = ☯/ln p
+                        │
+              1/☯ = 43.298 ↔ K11 层级 exp(-1/☯)
+</code></pre></div>
+<h3 id="12">1.2 五项的角色与定量支点<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">对象</th>
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">定量支点</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">待推 1 边界</td>
+<td style="text-align: left;">自洽方程来源</td>
+<td style="text-align: left;"><span class="arithmatex">\(\gamma_n=\pi n/L_{\rm box}(\gamma_n)\)</span></td>
+<td style="text-align: left;">长度 ✅ / 相位 ❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Bohr 半径</td>
+<td style="text-align: left;">固定极限</td>
+<td style="text-align: left;"><span class="arithmatex">\(r_n=n^2a_0\)</span>；<span class="arithmatex">\(a_0\sim D_1(1/\text{☯})^3\lambda_c/\sqrt I\)</span>（D11，3.7%）</td>
+<td style="text-align: left;">✅ 标准 / ⚠️ D11 假设性</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">轨道量子化</td>
+<td style="text-align: left;"><strong>共同来源</strong></td>
+<td style="text-align: left;">BS：<span class="arithmatex">\(\oint p\,dq=2\pi n\)</span>；辛面积 <span class="arithmatex">\(2\pi\)</span>（公理 II）</td>
+<td style="text-align: left;">✅ 标准</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Li 表示</td>
+<td style="text-align: left;">判据侧</td>
+<td style="text-align: left;"><span class="arithmatex">\(\lvert z\rvert=1\iff\)</span> RH；<span class="arithmatex">\(\lambda_n\approx n^2\lambda_1\)</span></td>
+<td style="text-align: left;">⚠️ 重述</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">相空间–尺度</td>
+<td style="text-align: left;">能标侧</td>
+<td style="text-align: left;"><span class="arithmatex">\(\tau=\ln(\gamma_n/2\pi)\approx 1+W((n-\tfrac78)/e)\)</span>（RvM 反解，误差 <span class="arithmatex">\(O(S/n)\)</span>）；<span class="arithmatex">\(\nu_p=\text{☯}/\ln p\)</span>（归档分层表）</td>
+<td style="text-align: left;">⚠️ 部分恢复</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">第二部分：第三重 —— 轨道量子化（枢纽）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 为什么它是枢纽<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>Bohr 半径与 CQM 耦级谱<strong>不是两个类比的对象</strong>，而是同一个量子化条件在不同空间的实现：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Bohr（氢原子）</strong></th>
+<th style="text-align: left;"><strong>CQM（耦级谱）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">量子化条件</td>
+<td style="text-align: left;"><span class="arithmatex">\(\oint p_\varphi\,d\varphi=2\pi n\hbar\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\oint p_u\,du=2\pi n\)</span>（无 <span class="arithmatex">\(☯\)</span>，见 §7）</td>
+</tr>
+<tr>
+<td style="text-align: left;">轨道类型</td>
+<td style="text-align: left;"><strong>圆轨道</strong>（角动量量子化）</td>
+<td style="text-align: left;"><strong>往返轨道</strong>（作用量量子化）</td>
+</tr>
+<tr>
+<td style="text-align: left;">所在空间</td>
+<td style="text-align: left;"><span class="arithmatex">\(r\)</span>（物理空间）</td>
+<td style="text-align: left;"><span class="arithmatex">\(u=\ln r\)</span>（<strong>耦合空间</strong>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">盒子长度</td>
+<td style="text-align: left;"><strong>固定</strong>（Coulomb 尺度不变性）</td>
+<td style="text-align: left;"><strong>呼吸</strong>（<span class="arithmatex">\(L_{\rm box}\)</span> 随能量增长）</td>
+</tr>
+<tr>
+<td style="text-align: left;">结果</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_\varphi=n\hbar\to r_n=n^2a_0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(p_u=\pi n/L_{\rm box}\to\gamma_n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>归档公理 II 的同款结构</strong>（Berry–Keating 单位胞）：再生产循环作为辛流形闭合轨道，最小非平凡周期包围的辛面积为 <span class="arithmatex">\(2\pi\)</span>——与 <span class="arithmatex">\(\oint p\,dq=2\pi n\)</span> 的 <span class="arithmatex">\(n=1\)</span> 模式同一拓扑要求。【框架内构造 / 文献确立 (Berry–Keating 1999)】</p>
+<p><strong>关键</strong>：两者都是「绕数 <span class="arithmatex">\(n\)</span> 一次量子化 → 几何量平方」。<span class="arithmatex">\(n^2\)</span> 的来源在此，不在别处。</p>
+<h3 id="22">2.2 在耦合空间中做往返轨道量子化<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>耦合空间 <span class="arithmatex">\(u=\ln r\)</span>，Dirichlet 盒长度 <span class="arithmatex">\(L_{\rm box}\)</span>，往返一周：</p>
+<div class="arithmatex">\[2\,|p_u|\,L_{\rm box}=2\pi n\quad\Longrightarrow\quad |p_u|=\frac{\pi n}{L_{\rm box}}\]</div>
+<p>而 <span class="arithmatex">\(\hat H=\hat D^2+\frac14\)</span> 中，<span class="arithmatex">\(\hat D=-i(\partial_u-\frac12)\)</span> 酉等价于 <span class="arithmatex">\(-i\partial_u\)</span>，故 <span class="arithmatex">\(\hat D\)</span> 的本征值为 <span class="arithmatex">\(\pm\gamma_n\)</span>，<span class="arithmatex">\(\hat H\)</span> 的本征值 <span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+\frac14\)</span>。</p>
+<p><strong>量子化的是 <span class="arithmatex">\(\hat D\)</span> 的动量 <span class="arithmatex">\(p_u\)</span></strong>，故：</p>
+<div class="arithmatex">\[\boxed{\gamma_n=\frac{\pi n}{L_{\rm box}(\gamma_n)}}\]</div>
+<h3 id="23">2.3 定量检验（两种）<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\gamma_n\)</span> 实际</th>
+<th style="text-align: left;">直接代入 <span class="arithmatex">\(\pi n/L_{\rm box}(\gamma_n)\)</span></th>
+<th style="text-align: left;">误差</th>
+<th style="text-align: left;">自洽迭代解</th>
+<th style="text-align: left;">误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">143.111846</td>
+<td style="text-align: left;">145.164165</td>
+<td style="text-align: left;">1.434%</td>
+<td style="text-align: left;">144.530561</td>
+<td style="text-align: left;"><strong>0.991%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">236.52423</td>
+<td style="text-align: left;">236.974559</td>
+<td style="text-align: left;">0.190%</td>
+<td style="text-align: left;">236.853261</td>
+<td style="text-align: left;"><strong>0.139%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">811.184359</td>
+<td style="text-align: left;">812.327686</td>
+<td style="text-align: left;">0.141%</td>
+<td style="text-align: left;">812.093953</td>
+<td style="text-align: left;"><strong>0.112%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">1419.42248</td>
+<td style="text-align: left;">1420.24934</td>
+<td style="text-align: left;">0.058%</td>
+<td style="text-align: left;">1420.09735</td>
+<td style="text-align: left;"><strong>0.048%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3000</td>
+<td style="text-align: left;">3533.32824</td>
+<td style="text-align: left;">3534.06569</td>
+<td style="text-align: left;">0.021%</td>
+<td style="text-align: left;">3533.9494</td>
+<td style="text-align: left;"><strong>0.018%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>误差随 <span class="arithmatex">\(n\)</span> 单调下降</strong>——RvM 渐近（<span class="arithmatex">\(S(T)=O(\ln T)\)</span>）的体现。【数值事实】</p>
+<blockquote>
+<p><strong>说明</strong>：本表只取长度半时，<span class="arithmatex">\(\pi n/L_{\rm len}(\gamma_n)=\gamma_n\)</span> 等价于 <span class="arithmatex">\(n=\theta_{\rm asy}(\gamma_n)/\pi+1\)</span>（<span class="arithmatex">\(\theta_{\rm asy}\)</span> 为 <span class="arithmatex">\(\theta\)</span> 的渐近主部），故表中「误差」<span class="arithmatex">\(=\big[-S(\gamma_n)+(\theta_{\rm asy}-\theta)/\pi\big]/n\)</span>——<strong>恰是相位缺口本身</strong>，不是独立方程的正面证据；若含相位半，方程与 <span class="arithmatex">\(n=N(\gamma_n)\)</span> 完全恒等（见摘要限定）。</p>
+</blockquote>
+<p>（此处 <span class="arithmatex">\(L_{\rm box}\)</span> 取长度半 <span class="arithmatex">\(L_{\rm len}\)</span> 为主；相位半 <span class="arithmatex">\(\tfrac{\pi}{T}S(T)\)</span> 对 <span class="arithmatex">\(T\gtrsim100\)</span> 为 <span class="arithmatex">\(O(0.01)\)</span> 修正，已含于残差。）</p>
+<h3 id="24-pmgamma_n">2.4 附带收获：<span class="arithmatex">\(\pm\gamma_n\)</span> 配对的半经典来源<a class="headerlink" href="#24-pmgamma_n" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\hat D\)</span> 本征值成对 <span class="arithmatex">\(\pm\gamma_n\)</span>，<span class="arithmatex">\(\hat H=\hat D^2+\frac14\)</span> 把两个方向<strong>合并</strong>为 <span class="arithmatex">\(\mathfrak{c}_n\)</span>。</p>
+<p><strong>往返轨道的两个方向（往 / 返）恰好给出 <span class="arithmatex">\(\pm\)</span>。</strong> 解释了：</p>
+<ul>
+<li>为什么 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 只含 <span class="arithmatex">\(\gamma_n^2\)</span> 而不含符号</li>
+<li>二次谱的 <span class="arithmatex">\(\pm\gamma_n\)</span> 配对在 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 中<strong>合并</strong>（不是丢失）</li>
+</ul>
+<p>【诠释】——半经典图像，非严格推导。</p>
+<h3 id="25-dirichlet-vs-sierra">2.5 约定协调：Dirichlet 盒 vs Sierra 周期（融会贯通关键）<a class="headerlink" href="#25-dirichlet-vs-sierra" title="Permanent link">&para;</a></h3>
+<p>仓库主线（集成理论定理 8.1 / 归档 Sierra-CNT 定理 10.2）用的是<strong>周期（Floquet）边界</strong>：</p>
+<div class="arithmatex">\[k L_n^{\rm Si}=\vartheta_n+2\pi n,\qquad L_n^{\rm Si}=\frac{2\pi n}{\gamma_n}\ \ (\vartheta_n\text{ 有界时 }k\approx\gamma_n)\]</div>
+<p>本文自洽方程用的是 <strong>Dirichlet 盒 + Weyl 计数</strong> <span class="arithmatex">\(N=(L/\pi)T\)</span>：</p>
+<div class="arithmatex">\[\gamma_n=\frac{\pi n}{L_{\rm box}}\qquad\Longrightarrow\qquad L_{\rm box}\approx\frac{\pi n}{\gamma_n}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Dirichlet 盒（本文）</th>
+<th style="text-align: left;">Sierra 周期（主线定理）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">量子化</td>
+<td style="text-align: left;"><span class="arithmatex">\(k=\pi n/L\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(k=(2\pi n+\vartheta_n)/L\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">长度</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\rm box}=\pi n/\gamma_n\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(L^{\rm Si}_n=2\pi n/\gamma_n\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">关系</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="arithmatex">\(L^{\rm Si}_n\approx 2\,L_{\rm box}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">相位</td>
+<td style="text-align: left;">未显式进入主项</td>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span> 显式匹配</td>
+</tr>
+<tr>
+<td style="text-align: left;">计数</td>
+<td style="text-align: left;"><span class="arithmatex">\(N=(L/\pi)T\)</span>（盒）</td>
+<td style="text-align: left;">周期化缠绕数 <span class="arithmatex">\(w\in\mathbb Z\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>差因子 2 = 盒宽 vs 圆周长的量子化惯例</strong>（半驻波 vs 全周相位），不是物理矛盾。长度半的 RvM 反解 <span class="arithmatex">\(L_{\rm len}=\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\cdots\)</span> 跟的是 <strong>Dirichlet/Weyl 约定</strong>；若改用 Sierra 约定，等价长度应取 <span class="arithmatex">\(2L_{\rm len}\)</span>（或把量子化读作 <span class="arithmatex">\(k=2\pi n/L\)</span>）。【框架内构造——约定对齐，非新定理】</p>
+<p><strong>统一读法</strong>：自洽方程与 Sierra 定理在<strong>同一物理内容</strong>上相容——「第 <span class="arithmatex">\(n\)</span> 个模式的波长由随能标呼吸的区间长度决定」；差别只在区间长度的归一化。引用本文数值时须注明用的是 Dirichlet 约定。</p>
+<hr />
+<h2 id="bohr">第三部分：第二重 —— Bohr 半径（固定极限）<a class="headerlink" href="#bohr" title="Permanent link">&para;</a></h2>
+<h3 id="31-bohr">3.1 Bohr 是呼吸关闭的极限<a class="headerlink" href="#31-bohr" title="Permanent link">&para;</a></h3>
+<p>固定 <span class="arithmatex">\(L_0=L_{\rm box}(\gamma_{100})\approx1.326\)</span>，代入 <span class="arithmatex">\(\pi n/L_0\)</span>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\gamma_n\)</span> 实际</th>
+<th style="text-align: left;">固定盒子预测</th>
+<th style="text-align: left;">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">49.774</td>
+<td style="text-align: left;">23.697</td>
+<td style="text-align: left;">−52%</td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">236.524</td>
+<td style="text-align: left;">236.975</td>
+<td style="text-align: left;">+0.19%</td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">1419.422</td>
+<td style="text-align: left;"><strong>2369.746</strong></td>
+<td style="text-align: left;"><strong>+67%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>固定盒子在高 <span class="arithmatex">\(n\)</span> 处彻底失效</strong>——必须呼吸。【数值事实】</p>
+<p><span class="arithmatex">\(L_{\rm box}\)</span> 实测增长：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;">10</th>
+<th style="text-align: left;">100</th>
+<th style="text-align: left;">1000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\rm box}(\gamma_n)\)</span></td>
+<td style="text-align: left;">0.590</td>
+<td style="text-align: left;">1.326</td>
+<td style="text-align: left;"><strong>2.212</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-bohr">3.2 为什么 Bohr 不呼吸<a class="headerlink" href="#32-bohr" title="Permanent link">&para;</a></h3>
+<p>Coulomb 势 <span class="arithmatex">\(V\propto-1/r\)</span> 具有<strong>尺度不变性</strong>，有效盒子长度与能量无关，故 <span class="arithmatex">\(r_n=n^2a_0\)</span> 干净成立。</p>
+<p>CQM 耦合空间 <span class="arithmatex">\(u=\ln r\)</span> <strong>自带尺度跑动</strong>（集成理论 §12.2：<span class="arithmatex">\(\tau\leftrightarrow\ln(\mu/\Lambda)\)</span>），故 <span class="arithmatex">\(L_{\rm box}\)</span> 必随能量增长。</p>
+<blockquote>
+<p><strong>Bohr 与 Riemann 的差别，就是那个跑动因子。</strong></p>
+</blockquote>
+<h3 id="33">3.3 精确形式的注意<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>现代 QM 给 <span class="arithmatex">\(\langle r\rangle=\frac{a_0}{2}[3n^2-l(l+1)]\)</span>；取圆轨道 <span class="arithmatex">\(l=n-1\)</span> 得 <span class="arithmatex">\(a_0(n^2+\frac n2)\)</span>，<strong>仅在大 <span class="arithmatex">\(n\)</span> 极限</strong>趋于 <span class="arithmatex">\(a_0n^2\)</span>。</p>
+<p>严格 <span class="arithmatex">\(n^2\)</span> 是 <strong>Bohr / 圆轨道极限</strong>的性质，不是完整 QM 的期望值。【已证定理（标准 QM）】</p>
+<h3 id="34-d11-a_0-1text">3.4 归档回捞：D11 把 <span class="arithmatex">\(a_0\)</span> 接到 <span class="arithmatex">\(1/\text{☯}\)</span><a class="headerlink" href="#34-d11-a_0-1text" title="Permanent link">&para;</a></h3>
+<p>归档 <code>02-全发现汇总.md</code> D11（<strong>假设性</strong>，3.7% 偏差）：</p>
+<div class="arithmatex">\[a_0\approx D_1\cdot\left(\frac{1}{\text{☯}}\right)^3\cdot\frac{\lambda_c}{\sqrt I}=5.48\times10^4\ \text{fm}\]</div>
+<p>物理值 <span class="arithmatex">\(5.29\times10^4\)</span> fm。归档自注：「<span class="arithmatex">\(1/\text{☯}\approx43.3\)</span> 是元 RG 时间单位」。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">连接</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">本文 §3（Bohr 固定极限）</td>
+<td style="text-align: left;">几何上 <span class="arithmatex">\(r_n=n^2a_0\)</span> 的<strong>尺度</strong>来源</td>
+</tr>
+<tr>
+<td style="text-align: left;">本文 §7（<span class="arithmatex">\(1/\text{☯}\)</span> 张力）</td>
+<td style="text-align: left;">同一个 <span class="arithmatex">\(1/\text{☯}\approx43.3\)</span> 以<strong>三次方</strong>进入原子尺度</td>
+</tr>
+<tr>
+<td style="text-align: left;">归档 D11 状态</td>
+<td style="text-align: left;"><strong>假设性发现</strong>，非严格推导；<span class="arithmatex">\(D_1\)</span> 等输入未在 CQM 现行框架重推</td>
+</tr>
+</tbody>
+</table>
+<p>【框架内构造（归档）/ 数值 3.7%】——用途：说明 Bohr 侧与 <span class="arithmatex">\(1/\text{☯}\)</span> 张力<strong>共享同一数字枢纽</strong>，不是两条无关巧合线。</p>
+<hr />
+<h2 id="li">第四部分：第四重 —— Li 表示（判据侧）<a class="headerlink" href="#li" title="Permanent link">&para;</a></h2>
+<h3 id="41-li">4.1 Li 变换把临界线严格映成单位圆<a class="headerlink" href="#41-li" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[z=1-\frac1s,\qquad s=\tfrac12+i\gamma\]</div>
+<div class="arithmatex">\[|z|^2=\frac{(\gamma^2-\frac14)^2+\gamma^2}{(\gamma^2+\frac14)^2}=\frac{\gamma^4+\frac{\gamma^2}2+\frac1{16}}{\gamma^4+\frac{\gamma^2}2+\frac1{16}}=1\]</div>
+<p>数值：<span class="arithmatex">\(\gamma=14.134725\)</span> 时 <span class="arithmatex">\(|z|=1.000000000000\)</span>；<span class="arithmatex">\(\beta=0.6\)</span> 时 <span class="arithmatex">\(|z|=0.999500251\)</span>（塌陷）。【已证定理（一行代数）】</p>
+<div class="arithmatex">\[\boxed{\text{RH}\iff |z_n|=1\ \forall n}\]</div>
+<p><span class="arithmatex">\(\lambda_n\)</span> 是 <span class="arithmatex">\(\ln\xi\)</span> 在 <span class="arithmatex">\(z\)</span> 展开中 <span class="arithmatex">\(z^n\)</span> 的系数——<strong><span class="arithmatex">\(n\)</span> 就是绕单位圆的绕数</strong>。</p>
+<h3 id="42-n2">4.2 <span class="arithmatex">\(n^2\)</span> 与跑动残留<a class="headerlink" href="#42-n2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\lambda_n\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(n^2\lambda_1\)</span></th>
+<th style="text-align: left;">偏差 <span class="arithmatex">\((\lambda_n-n^2\lambda_1)/n^2\lambda_1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0.0923457</td>
+<td style="text-align: left;">0.0923828</td>
+<td style="text-align: left;"><strong>−0.040%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0.2076389</td>
+<td style="text-align: left;">0.2078614</td>
+<td style="text-align: left;">−0.107%</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.3687904</td>
+<td style="text-align: left;">0.3695313</td>
+<td style="text-align: left;">−0.200%</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.5755427</td>
+<td style="text-align: left;">0.5773927</td>
+<td style="text-align: left;">−0.320%</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0.8275660</td>
+<td style="text-align: left;">0.8314455</td>
+<td style="text-align: left;"><strong>−0.467%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>偏差随 <span class="arithmatex">\(n\)</span> 单调增长（且恒为负：<span class="arithmatex">\(\lambda_n&lt;n^2\lambda_1\)</span>）——跑动残留</strong>（高阶耦级矩 <span class="arithmatex">\(M_j\)</span>），与 Bohr 的干净 <span class="arithmatex">\(n^2\)</span> 形成对照。</p>
+<h3 id="43-1">4.3 耦级矩表述（可立即推进，不依赖待推 1）<a class="headerlink" href="#43-1" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\lambda_n=\sum_{k=1}^n\binom nk(-1)^{k+1}T_k,\qquad T_k=\sum_\rho\frac1{\rho^k}\]</div>
+<div class="arithmatex">\[T_1=\text{☯},\qquad \lambda_2=4\text{☯}-M_2\]</div>
+<div class="arithmatex">\[M_2=\sum_n\frac1{\mathfrak{c}_n^2}=T_2+2\text{☯}=3.7100636\times10^{-5}\]</div>
+<div class="arithmatex">\[T_2=1+2\gamma_1^{\rm St}+\gamma_E^2-\frac{\pi^2}8=-0.0461543172958\]</div>
+<p>（此处 <span class="arithmatex">\(\gamma_1^{\rm St}\)</span> 为第一 Stieltjes 常数、<span class="arithmatex">\(\gamma_E\)</span> 为 Euler–Mascheroni 常数，均非 Riemann 零点。）</p>
+<p>数值 <span class="arithmatex">\(\lambda_2=0.0923457\)</span>，与 OEIS A104539 一致。【重述，非新定理——Li 1997 展开的直接推论】</p>
+<p><span class="arithmatex">\(n=2\)</span> 的<strong>相对</strong>偏差为 <span class="arithmatex">\(-M_2/(4\lambda_1)=-4.016\times10^{-4}\)</span>（<strong>负号</strong>，与 §4.2「恒为负」一致）。该式是<strong>代数恒等</strong>（<span class="arithmatex">\(\lambda_2=4\text{☯}-M_2\)</span> 且 <span class="arithmatex">\(4\lambda_1=4\text{☯}\)</span>），故它校验的是记账自洽，不是独立数值巧合。【数值事实 + 代数恒等】</p>
+<blockquote>
+<p><strong>条件性</strong>：<span class="arithmatex">\(M_2=\sum_n 1/\mathfrak{c}_n^2=T_2+2\text{☯}\)</span> 是<strong>条件于 RH</strong> 的恒等式。逐项验证：RH 下 <span class="arithmatex">\(\rho,\bar\rho\)</span> 配对给 <span class="arithmatex">\(T_2=\sum_n\frac{1/2-2\gamma_n^2}{\mathfrak{c}_n^2}\)</span>，<span class="arithmatex">\(2\text{☯}=\sum_n\frac2{\mathfrak{c}_n}\)</span>，二者相加 <span class="arithmatex">\(\frac{1/2-2\gamma^2+2\mathfrak{c}}{\mathfrak{c}^2}=\frac1{\mathfrak{c}^2}\)</span>（用 <span class="arithmatex">\(\mathfrak{c}=\frac14+\gamma^2\)</span>）。不使用 RH 时 <span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+\frac14\)</span> 本身无定义（零点不在临界线时 <span class="arithmatex">\(\mathfrak{c}_n\neq\rho_n(1-\rho_n)\)</span>）。§9 已有「<span class="arithmatex">\(\mathfrak{c}_n=\|\rho_n\|^2\)</span> 模方解释 ⚠️ 依赖 RH」一行，此处复述以明条件性。</p>
+</blockquote>
+<h3 id="44">4.4 与五重结构的接口<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Li 侧</th>
+<th style="text-align: left;">接到哪一重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">绕数 <span class="arithmatex">\(n\)</span></td>
+<td style="text-align: left;">与 BS 量子化的 <span class="arithmatex">\(n\)</span>、RvM 计数的 <span class="arithmatex">\(n\)</span> <strong>同一下标</strong>（<span class="arithmatex">\(n\equiv N(\gamma_n)\)</span>，实测差 <span class="arithmatex">\(10^{-19}\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\lvert z\rvert=1\)</span></td>
+<td style="text-align: left;">相位半的<strong>单位圆判据</strong>（§5.4：<span class="arithmatex">\(e^{2i\vartheta}\)</span> 是否与 <span class="arithmatex">\(z\)</span> 同一圆——未证）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_n\approx n^2\lambda_1\)</span></td>
+<td style="text-align: left;">Bohr <span class="arithmatex">\(n^2\)</span> 的「跑动打开」畸变版（第三、四部分对照）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1">第五部分：第一重 —— 待推 1 边界条件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="51-l_rm-box">5.1 <span class="arithmatex">\(L_{\rm box}\)</span> 的形式<a class="headerlink" href="#51-l_rm-box" title="Permanent link">&para;</a></h3>
+<p>从 <span class="arithmatex">\(N=(L/\pi)T\)</span> 解出 <span class="arithmatex">\(L\)</span> 再代回是恒等变形，不构成独立验证；<span class="arithmatex">\(L_{\rm box}\)</span> 须由完整 Riemann–von Mangoldt 反解给出：</p>
+<div class="arithmatex">\[N(T)=\frac{T}{2\pi}\ln\frac{T}{2\pi}-\frac{T}{2\pi}+\frac78+S(T)\]</div>
+<p>由 <span class="arithmatex">\(N=(L/\pi)T\)</span>（<span class="arithmatex">\(E=T^2\)</span>，<span class="arithmatex">\(\sqrt E=T\)</span>；Dirichlet 约定）：</p>
+<div class="arithmatex">\[\boxed{L_{\rm box}(T)=\underbrace{\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}}_{L_{\rm len}:\ \text{只含 }\Gamma,\pi}+\underbrace{\tfrac{\pi}{T}S(T)}_{L_{\rm ph}:\ \text{相位}}}\]</div>
+<p><strong><span class="arithmatex">\(-\frac12\)</span> 不可省略</strong>：T=100 时 <span class="arithmatex">\(L\)</span> 从 1.383 降到 0.883，<span class="arithmatex">\(-\tfrac12\)</span> 项贡献<strong>差 36%</strong>（完整 <span class="arithmatex">\(L_{\rm len}\)</span> 另含 <span class="arithmatex">\(7\pi/8T\)</span> 小修正）。</p>
+<h3 id="52">5.2 用实际零点计数验证<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>（表中 <span class="arithmatex">\(L\cdot T/\pi\)</span> 仅用长度半 <span class="arithmatex">\(L_{\rm len}\)</span>，故意不含 <span class="arithmatex">\(S(T)\)</span>，以便残差显形。）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">T</th>
+<th style="text-align: left;"><span class="arithmatex">\(N\)</span> 实际</th>
+<th style="text-align: left;"><span class="arithmatex">\(L_{\rm len}\cdot T/\pi\)</span></th>
+<th style="text-align: left;">残差 <span class="arithmatex">\(=(\theta/\pi+1)-N\)</span></th>
+<th style="text-align: left;">独立算得的 <span class="arithmatex">\(-S(T)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">29.0024</td>
+<td style="text-align: left;">+0.0024</td>
+<td style="text-align: left;">+0.002410 ✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">269</td>
+<td style="text-align: left;">269.5867</td>
+<td style="text-align: left;">+0.5867</td>
+<td style="text-align: left;">+0.586731 ✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">649</td>
+<td style="text-align: left;">648.6162</td>
+<td style="text-align: left;">−0.3838</td>
+<td style="text-align: left;">−0.383758 ✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>残差恰是相位项贡献</strong>：<span class="arithmatex">\((\theta(T)/\pi+1)-N(T)=-S(T)\)</span>，<span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span>；右列由 <span class="arithmatex">\(\arg\zeta\)</span> 独立算出，与残差逐位吻合。【数值事实】</p>
+<blockquote>
+<p><strong>独立复核</strong>：<span class="arithmatex">\(N\)</span> 由 <span class="arithmatex">\(\gamma_n\)</span> 逐个计数（<span class="arithmatex">\(T\le1000\)</span> 得 <span class="arithmatex">\(N=29,269,649\)</span>），<span class="arithmatex">\(\theta\)</span> 取精确值 <span class="arithmatex">\(\mathrm{Im}\ln\Gamma(\tfrac14+\tfrac{iT}2)-\tfrac T2\ln\pi\)</span>。逐位吻合已到 9 位（<span class="arithmatex">\(T=100\)</span>：<span class="arithmatex">\(+2.40990227\times10^{-3}\)</span>；<span class="arithmatex">\(T=500\)</span>：<span class="arithmatex">\(+0.586730881\)</span>；<span class="arithmatex">\(T=1000\)</span>：<span class="arithmatex">\(-0.383758056\)</span>）。
+另做<strong>不依赖 <span class="arithmatex">\(N\)</span> 的独立交叉核验</strong>：直接用 <span class="arithmatex">\(\zeta\)</span> 的幅角验证恒等式 <span class="arithmatex">\(\arg\zeta(\tfrac12+iT)=\pi N(T)-\theta(T)-\pi\pmod{2\pi}\)</span>，三例（<span class="arithmatex">\(T=100,500,1000\)</span>）差值 <span class="arithmatex">\(\le3.1\times10^{-24}\)</span>——这确认了 RvM 公式的「<span class="arithmatex">\(+1\)</span>」常数约定与 <span class="arithmatex">\(\theta\)</span> 的精确形式在本约定下自洽（若 <span class="arithmatex">\(+1\)</span> 写错，差值将是 <span class="arithmatex">\(\pi\)</span> 的整数倍而非机器零）。</p>
+<p><strong>列名辨析</strong>：表中列名 <span class="arithmatex">\(L_{\rm len}\cdot T/\pi\)</span> 与 <span class="arithmatex">\(\theta(T)/\pi+1\)</span> 是<strong>渐近等价</strong>而非恒等——<span class="arithmatex">\(L_{\rm len}\cdot T/\pi=\theta_{\rm asy}(T)/\pi+1\)</span>（<span class="arithmatex">\(\theta_{\rm asy}\)</span> 为渐近主部）。二者之差有<strong>精确恒等式</strong>（由 <span class="arithmatex">\(\theta\)</span> 的 <span class="arithmatex">\(+1/(48T)\)</span> 项给出）：
+$<span class="arithmatex">\(L_{\rm len}\cdot\frac{T}{\pi}-\Big(\frac{\theta(T)}{\pi}+1\Big)=-\frac{1}{48\pi T}+O(T^{-3})\)</span>$
+数值核验（<span class="arithmatex">\(\theta\)</span> 取精确值 <span class="arithmatex">\(\mathrm{Im}\ln\Gamma(\tfrac14+\tfrac{iT}2)-\tfrac T2\ln\pi\)</span>）：<span class="arithmatex">\(T=50\)</span> 差 <span class="arithmatex">\(-1.326\times10^{-4}\)</span>、<span class="arithmatex">\(T=100\)</span> 差 <span class="arithmatex">\(-6.631\times10^{-5}\)</span>、<span class="arithmatex">\(T=1000\)</span> 差 <span class="arithmatex">\(-6.631\times10^{-6}\)</span>，与 <span class="arithmatex">\(-1/(48\pi T)\)</span> 之比 <span class="arithmatex">\(1.0000\ldots\)</span>（<span class="arithmatex">\(T\ge100\)</span> 已到 6 位）。
+表中两列数值并置属渐近意义下的近似；残差检验本身精确（残差 <span class="arithmatex">\(=-S(T)\)</span> 是 <span class="arithmatex">\(S(T)\)</span> 的定义）。</p>
+</blockquote>
+<h3 id="53-vs">5.3 去循环入口：逐点 vs 整体<a class="headerlink" href="#53-vs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><span class="arithmatex">\(L_n=2\pi n/\gamma_n\)</span> 或 <span class="arithmatex">\(\pi n/\gamma_n\)</span>（<strong>逐点</strong>）</th>
+<th style="text-align: left;"><span class="arithmatex">\(N(T)=\theta(T)/\pi+1\)</span>（<strong>整体</strong>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">输入</td>
+<td style="text-align: left;"><span class="arithmatex">\(\gamma_n\)</span>（零点）</td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(\Gamma\)</span> 与 <span class="arithmatex">\(\pi\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">循环性</td>
+<td style="text-align: left;"><strong>是</strong>（实测反推精确回原值）</td>
+<td style="text-align: left;"><strong>否</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">能定边界</td>
+<td style="text-align: left;">不能（只作字典）</td>
+<td style="text-align: left;"><strong>能</strong>（长度半来源）</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[\theta(T)=\mathrm{Im}\ln\Gamma\!\left(\frac14+\frac{iT}2\right)-\frac T2\ln\pi\]</div>
+<p><strong>只含 <span class="arithmatex">\(\Gamma\)</span> 与 <span class="arithmatex">\(\pi\)</span>，不含任何零点信息。</strong>【文献确立（Riemann–Siegel / RvM）】</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">T</th>
+<th style="text-align: left;"><span class="arithmatex">\(\theta(T)/\pi+1\)</span></th>
+<th style="text-align: left;">实际零点数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">29.0024</td>
+<td style="text-align: left;"><strong>29</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">269.587</td>
+<td style="text-align: left;"><strong>269</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">648.616</td>
+<td style="text-align: left;"><strong>649</strong></td>
+</tr>
+</tbody>
+</table>
+<p>循环性实测（逐点反推）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\gamma_n\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(2\pi n/L_n\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">14.1347251</td>
+<td style="text-align: left;"><strong>14.1347251</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">49.7738325</td>
+<td style="text-align: left;"><strong>49.7738325</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">236.52423</td>
+<td style="text-align: left;"><strong>236.52423</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>恒等变形，零信息增益。</strong></p>
+<h3 id="54-1">5.4 待推 1 的重新定位<a class="headerlink" href="#54-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">部分</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">边界<strong>长度</strong>（Dirichlet 约定主项）</td>
+<td style="text-align: left;">✅ <strong>已解，非循环</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\Gamma,\pi\to\theta(T)\to N(T)\to L_{\rm len}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">边界<strong>相位</strong>（连续角 <span class="arithmatex">\(\vartheta\)</span> / <span class="arithmatex">\(S(T)\)</span>）</td>
+<td style="text-align: left;">❌ <strong>未解</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">相位与 Li 单位圆是否同一</td>
+<td style="text-align: left;">✅ <strong>结论：不同一</strong></td>
+<td style="text-align: left;">见 §5.7（<span class="arithmatex">\(S\)</span> 阶梯/无界、<span class="arithmatex">\(\vartheta_n\)</span> 平滑有界、<span class="arithmatex">\(\phi_n\)</span> 几何趋零；三者互不同一，唯一联系是 RvM 平滑半/涨落半）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>待推 1（精确定位）</strong>：在耦合空间 <span class="arithmatex">\(u=\ln r\)</span> 中，盒子<strong>长度</strong>已由 RvM 非循环确定为
+$<span class="arithmatex">\(L_{\rm len}(T)=\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}\)</span>$
+待推的是<strong>相位</strong>——即 <span class="arithmatex">\(S(T)\)</span> 的行为，以及自伴延拓 <span class="arithmatex">\(\vartheta\)</span> 使 <span class="arithmatex">\(e^{2i\vartheta}\)</span> 落在 Li 变量 <span class="arithmatex">\(z\)</span> 所在的单位圆上。
+<strong>限定（2026-09-25，§5.7）</strong>：<span class="arithmatex">\(S(T)\)</span>、Sierra 的 <span class="arithmatex">\(\vartheta_n\)</span>、Li 的 <span class="arithmatex">\(z_n\)</span> 三者<strong>互不同一</strong>；「<span class="arithmatex">\(e^{2i\vartheta}\)</span> 与 <span class="arithmatex">\(z\)</span> 同一圆」应读作「自伴延拓把共振推回实轴（<span class="arithmatex">\(O_n^I=0\)</span>）」，与 Li 判据是同一 RH 的谱面/几何面两面，非同一相位对象。</p>
+</blockquote>
+<h3 id="55">5.5 精度要求（硬约束）<a class="headerlink" href="#55" title="Permanent link">&para;</a></h3>
+<p>边界<strong>相对</strong>偏移 <span class="arithmatex">\(\varepsilon\)</span>（即 <span class="arithmatex">\(\delta L_{\rm box}/L_{\rm box}\)</span>）→ <span class="arithmatex">\(\text{☯}\)</span> 的相对偏移同量级 <span class="arithmatex">\(\varepsilon\)</span>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><span class="arithmatex">\(\varepsilon\)</span>（相对）</th>
+<th style="text-align: left;"><span class="arithmatex">\(☯\)</span> 相对偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(10^{-3}\)</span></td>
+<td style="text-align: left;">0.1%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(10^{-6}\)</span></td>
+<td style="text-align: left;">0.0001%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>要保住 <span class="arithmatex">\(☯\)</span> 的 15 位与 <span class="arithmatex">\(G_N\)</span> 的 −3 ppm（构造后验数字校验，待独立复现），边界须定到 <span class="arithmatex">\(\sim10^{-15}\)</span>。</strong></p>
+<blockquote>
+<p><strong>说明</strong>：本表假定「边界相对偏移 → <span class="arithmatex">\(☯\)</span> 相对偏移」的传播系数为 1（即 <span class="arithmatex">\(\delta\ln☯/\delta\ln L_{\rm box}=O(1)\)</span>）。该系数在本框架中<strong>未推导</strong>（<span class="arithmatex">\(☯=\xi'(1)/\xi(1)\)</span> 与 <span class="arithmatex">\(L_{\rm box}\)</span> 之间没有已建立的解析链），故本表为<strong>量级估计</strong>而非【数值事实】；表中 <span class="arithmatex">\(\varepsilon\)</span> 为相对量。</p>
+</blockquote>
+<h3 id="56-sierra-cnt">5.6 归档回捞：Sierra-CNT 的「长度 + 相位 → 谱」机制<a class="headerlink" href="#56-sierra-cnt" title="Permanent link">&para;</a></h3>
+<p>归档 <code>06 论文/01-闭合核理论（CNT）：因果集、谱几何与物理常数的第一性原理.md</code> §9–§10 与现行集成理论定理 8.1 / GN 稿定理 5.1 是同一机制：</p>
+<p><strong>边界三元组与自伴扩张</strong>（归档 §9.1–9.2）：</p>
+<ul>
+<li>区间 <span class="arithmatex">\([a,b]\)</span> 上 <span class="arithmatex">\(\hat H\)</span> 的边界三元组 <span class="arithmatex">\(\Gamma_0,\Gamma_1\)</span>；自伴扩张由 <span class="arithmatex">\(U(2)\)</span> 参数化</li>
+<li>Robin：<span class="arithmatex">\(f'(a)=\alpha f(a)\)</span>，<span class="arithmatex">\(f'(b)=\beta f(b)\)</span></li>
+<li><strong>周期 / Floquet</strong>：<span class="arithmatex">\(f(b)=e^{i\vartheta}f(a)\)</span>，<span class="arithmatex">\(f'(b)=e^{i\vartheta}f'(a)\)</span>；边界条件的起源是缠绕数 <span class="arithmatex">\(w\in\mathbb Z\)</span></li>
+</ul>
+<p><strong>Sierra-CNT 定理骨架</strong>（归档定理 10.2 = 现行定理 8.1/5.1）：</p>
+<div class="arithmatex">\[L_n=\frac{2\pi n}{\gamma_n},\qquad \vartheta_n=-\theta(\mathcal E_n)\pmod\pi\ \Longrightarrow\ \text{共振位置（耦级）}=\Lambda^2\!\left(\tfrac14+\gamma_n^2\right)\]</div>
+<p>证明要点：周期本征函数 <span class="arithmatex">\(\varphi_k(u)=e^{(1/2+ik)u}\)</span>，条件 <span class="arithmatex">\(e^{ikL_n}=e^{i\vartheta_n}\)</span> 给 <span class="arithmatex">\(kL_n=\vartheta_n+2\pi m\)</span>；<span class="arithmatex">\(|\vartheta_n|&lt;\pi\)</span> 有界时 <span class="arithmatex">\(k=\gamma_n(1+O(1/n))\)</span>。</p>
+<p><strong>与本文的三层对接</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sierra-CNT</th>
+<th style="text-align: left;">本文</th>
+<th style="text-align: left;">循环性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(L_n=2\pi n/\gamma_n\)</span>（输入）</td>
+<td style="text-align: left;">逐点字典（§5.3 左列）</td>
+<td style="text-align: left;"><strong>循环</strong>——<span class="arithmatex">\(L_n\)</span> 由 <span class="arithmatex">\(\gamma_n\)</span> 定义</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span></td>
+<td style="text-align: left;"><strong>相位半</strong>（对象不同：<span class="arithmatex">\(\theta\)</span> 是 Riemann–Siegel theta，非 <span class="arithmatex">\(S(T)\)</span>）</td>
+<td style="text-align: left;">用 <span class="arithmatex">\(\mathcal E_n\)</span>（含 <span class="arithmatex">\(\gamma_n\)</span>）→ <strong>循环</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">需要 <span class="arithmatex">\(L_n\)</span> 的物理来源</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\rm len}\)</span> 由 <span class="arithmatex">\(\theta_{\Gamma}(T)=\mathrm{Im}\ln\Gamma(\cdots)\)</span> 给出</td>
+<td style="text-align: left;"><strong>非循环</strong>（整体层）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键辨析</strong>（避免记号混淆）：</p>
+<ul>
+<li><span class="arithmatex">\(\theta(T)=\mathrm{Im}\ln\Gamma(\tfrac14+\tfrac{iT}2)-\tfrac T2\ln\pi\)</span> —— Riemann–Siegel theta，<strong>只含 <span class="arithmatex">\(\Gamma,\pi\)</span></strong>，本文长度半用的就是它的积分/计数形式 → <strong>非循环</strong></li>
+<li><span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span> —— <span class="arithmatex">\(\zeta\)</span> 的幅角 → <strong>与零点/RH 纠缠</strong>，待推 1 真正对象</li>
+<li>Sierra 的 <span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span> —— 把 <strong>Riemann–Siegel <span class="arithmatex">\(\theta\)</span></strong> 装进边界相位；数值上依赖 <span class="arithmatex">\(\mathcal E_n\)</span>（含 <span class="arithmatex">\(\gamma_n\)</span>）→ 在「从素数独立推出」的标准下<strong>仍循环</strong>，但它说明<strong>框架已需要一个显式相位角</strong>，与本文「相位半未解」<strong>缺口同位</strong></li>
+</ul>
+<p>归档另有 <strong>Tate 泊松求和 = 边界条件</strong>（§8.3）与「零点是全局自洽性输出而非输入」（§8.4）——方向与路径 B（素数/<span class="arithmatex">\(\xi\)</span> → 边界）一致，但<strong>未给出 <span class="arithmatex">\(S(T)\)</span> 或 <span class="arithmatex">\(\vartheta\)</span> 的独立表达式</strong>。【框架内构造】</p>
+<blockquote>
+<p><strong>机制骨架已有（归档 Sierra + Tate），缺的是把相位从「引用 <span class="arithmatex">\(\gamma_n\)</span>/<span class="arithmatex">\(\mathcal E_n\)</span>」换成「只引用素数/<span class="arithmatex">\(\xi\)</span>」。</strong> 这就是待推 1 相位半的精确任务。</p>
+</blockquote>
+<h3 id="57-st-vs-sierra-vartheta_n-vs-li-z_n">5.7 三圆关系辨析：<span class="arithmatex">\(S(T)\)</span> vs Sierra <span class="arithmatex">\(\vartheta_n\)</span> vs Li <span class="arithmatex">\(z_n\)</span><a class="headerlink" href="#57-st-vs-sierra-vartheta_n-vs-li-z_n" title="Permanent link">&para;</a></h3>
+<p>§5.6 与 §4.1 各出现一个「相位」，§9 总表把「<span class="arithmatex">\(\vartheta\)</span>（Sierra）与 <span class="arithmatex">\(S(T)\)</span> 是否同一对象」列为待辨析项。本节摆开三个对象，给出<strong>可判定的非同一性</strong>与<strong>唯一的真实结构联系</strong>。结论：<strong>三者互不同一（就函数类型与量级而言），「同一性」问题为否；「结构性关联」问题仍开。</strong></p>
+<p><strong>三个对象</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">记号</th>
+<th style="text-align: left;">定义</th>
+<th style="text-align: left;">出处</th>
+<th style="text-align: left;">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S(T)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac1\pi\arg\zeta(\tfrac12+iT)=N(T)-\theta(T)/\pi-1\)</span></td>
+<td style="text-align: left;">本文待推 1 相位半（§5.1–§5.4）</td>
+<td style="text-align: left;">实值<strong>阶梯函数</strong>：每过一零点跳 <span class="arithmatex">\(+1\)</span>，两跳之间连续下降</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta_n\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(-\theta(\mathcal E_n)\pmod\pi\)</span></td>
+<td style="text-align: left;">Sierra-CNT 定理（§5.6，归档定理 10.2）</td>
+<td style="text-align: left;"><strong>平滑</strong>相位：Riemann–Siegel <span class="arithmatex">\(\theta\)</span> 在<strong>能量</strong> <span class="arithmatex">\(\mathcal E_n\)</span> 处取值，<span class="arithmatex">\(\bmod\pi\)</span> 后有界</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(z_n\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1-\dfrac1{\rho_n}\)</span>，<span class="arithmatex">\(\phi_n:=\arg z_n\)</span></td>
+<td style="text-align: left;">Li 判据（§4.1）</td>
+<td style="text-align: left;"><strong>几何</strong>相位：<span class="arithmatex">\(\lvert z_n\rvert=1\iff\)</span>RH；<span class="arithmatex">\(\phi_n\)</span> 有界且 <span class="arithmatex">\(\to0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>三条独立的非同一性理由</strong></p>
+<ol>
+<li><strong><span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(\vartheta_n\)</span> 不同型（阶梯 vs 平滑）</strong>：<span class="arithmatex">\(N(T)\)</span> 每过零点跳 <span class="arithmatex">\(1\)</span>，而 <span class="arithmatex">\(\theta(T)/\pi+1\)</span> 连续，故 <span class="arithmatex">\(S(T)=N-\theta/\pi-1\)</span> 是<strong>每零点跳 <span class="arithmatex">\(+1\)</span> 的阶梯函数</strong>；<span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span> 作为其自变量的函数连续。<strong>阶梯 ≠ 连续 → 二者不是同一函数。</strong>（这就是本文与 Sierra「缺口同位但对象不同」的确切理由。）</li>
+<li><strong><span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(\phi_n\)</span> 不同型（无界涨落 vs 趋零）</strong>：<span class="arithmatex">\(\phi_n=\arctan\!\big(\gamma_n/(\gamma_n^2-\tfrac14)\big)\)</span>（数值核验到 32 位，见下），且 <span class="arithmatex">\(\phi_n\gamma_n\to1\)</span>，故 <span class="arithmatex">\(\phi_n\sim1/\gamma_n\to0\)</span>。<span class="arithmatex">\(S(T)\)</span> 则是<strong>无界涨落</strong>：<span class="arithmatex">\(O(\ln T)\)</span> 为无条件上界，且 <span class="arithmatex">\(S(T)\)</span> <strong>无界</strong>（经典结果；若 <span class="arithmatex">\(S\)</span> 有界，零点计数将精确遵循平滑律到 <span class="arithmatex">\(O(1)\)</span>，与显式公式给出的 <span class="arithmatex">\(\psi(x)-x\)</span> 振荡矛盾）。<strong>有界趋零量 ≠ 无界涨落 → 不同对象。</strong></li>
+<li><strong><span class="arithmatex">\(\vartheta_n\)</span> 与 <span class="arithmatex">\(\phi_n\)</span> 不同型（<span class="arithmatex">\(\theta\)</span> 型振荡 vs 单调趋零）</strong>：<span class="arithmatex">\(\vartheta_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 型<strong>平滑有界振荡</strong>相位（<span class="arithmatex">\(\mathcal E_n\to\infty\)</span>，<span class="arithmatex">\(\theta(\mathcal E_n)\bmod\pi\)</span> 不收敛）；<span class="arithmatex">\(\phi_n\)</span> 是<strong>确定性单调趋零</strong>（<span class="arithmatex">\(\sim1/\gamma_n\)</span>）。结构不同。</li>
+</ol>
+<p><strong>唯一的真实结构联系</strong>：<span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(\vartheta_n\)</span> 是 <strong>RvM 同一分解的两半</strong></p>
+<div class="arithmatex">\[N(T)=\underbrace{\theta(T)/\pi+1}_{\text{平滑半}}+\underbrace{S(T)}_{\text{涨落半}}\]</div>
+<p>Sierra 的边界相位 <span class="arithmatex">\(\vartheta_n\)</span> 取的是 <strong><span class="arithmatex">\(\theta\)</span> 型平滑量</strong>（但在能量 <span class="arithmatex">\(\mathcal E_n\)</span>、非高度 <span class="arithmatex">\(\gamma_n\)</span> 处取值），本文缺口 <span class="arithmatex">\(S\)</span> 是<strong>涨落半</strong>。故二者<strong>同源（同一个 <span class="arithmatex">\(\theta/\arg\zeta\)</span> 对偶分解）而分工相反</strong>：Sierra 用平滑半作边界相位、把 <span class="arithmatex">\(L_n=2\pi n/\gamma_n\)</span> 作量子化输入（循环）；本文缺口恰是它留下的涨落半。<strong>「缺口同位」由此获得机制解释——两套相位是从同一个 RvM 分解的两端切进去的。</strong></p>
+<p><strong>Li 圆与相位半的关系（判据侧，非对象等同）</strong>：<span class="arithmatex">\(z_n\)</span> 落在单位圆上<strong>当且仅当 RH</strong>（<span class="arithmatex">\(\rho_n\)</span> 在临界线上）——这是<strong>判据</strong>（Li 判据的几何形式），不是「某个相位等于 <span class="arithmatex">\(S(T)\)</span>」。§5.4 的「<span class="arithmatex">\(e^{2i\vartheta}\)</span> 是否与 <span class="arithmatex">\(z\)</span> 同一圆」应读作：<strong>自伴延拓参数 <span class="arithmatex">\(\vartheta\)</span> 是否把共振推到实轴（<span class="arithmatex">\(O_n^I=0\)</span>）</strong>——它与 Li 的「<span class="arithmatex">\(z\)</span> 在单位圆上」是<strong>同一个 RH 的两个面</strong>（谱面 vs 几何面），<strong>不是同一个相位对象</strong>。</p>
+<blockquote>
+<p><strong>数值核验（独立脚本复算，<span class="arithmatex">\(n\le700\)</span>、30 位精度）</strong>：
+- <span class="arithmatex">\(|z_n|-1=0\)</span>（<span class="arithmatex">\(n=50\)</span> 处 <span class="arithmatex">\(-9.9\times10^{-32}\)</span>，即机器零）——临界线上 <span class="arithmatex">\(z_n\)</span> <strong>严格</strong>在单位圆上（与 §9（<span class="arithmatex">\(\mathfrak{c}_n=\|\rho_n\|^2\)</span>）互为印证）。
+- <span class="arithmatex">\(\phi_n\gamma_n-1\)</span>：<span class="arithmatex">\(n=1\)</span> 时 <span class="arithmatex">\(-4.2\times10^{-4}\)</span>、<span class="arithmatex">\(n=100\)</span> 时 <span class="arithmatex">\(-1.5\times10^{-6}\)</span>、<span class="arithmatex">\(n=500\)</span> 时 <span class="arithmatex">\(-1.3\times10^{-7}\)</span> ⇒ <span class="arithmatex">\(\phi_n\sim1/\gamma_n\)</span>，单调趋零。
+- 闭式 <span class="arithmatex">\(\phi_n=\arctan\!\big(\gamma_n/(\gamma_n^2-\tfrac14)\big)\)</span> 与 <span class="arithmatex">\(\arg(1-1/\rho_n)\)</span> 直接值之差 <span class="arithmatex">\(\le1.3\times10^{-32}\)</span>（三例核验）。
+- RvM 阶梯：<span class="arithmatex">\(N\)</span> 在 <span class="arithmatex">\(\gamma_n\)</span> 处跳 <span class="arithmatex">\(+1\)</span>、<span class="arithmatex">\(\theta/\pi+1\)</span> 连续 → <span class="arithmatex">\(S\)</span> 在 <span class="arithmatex">\(\gamma_n\)</span> 处跳 <span class="arithmatex">\(+1\)</span>（右连续约定）。</p>
+<p><strong>范围界定</strong>：本节「互不同一」只针对<strong>三圆（相位/圆）对象</strong> <span class="arithmatex">\(S,\vartheta_n,z_n\)</span>。它<strong>不触及</strong>父文档 §15.3 的另一配对「<strong>有限 <span class="arithmatex">\(n\)</span> 算术条件 <span class="arithmatex">\(\longleftrightarrow\)</span> <span class="arithmatex">\(S(T)\)</span> 的有限处行为</strong>」——那一配对（本文 §8.2、§9 表末行继承）是<strong>另一个待证命题</strong>，其「对象同一」目前仍是<strong>路线图主张</strong>，本节既不证实也不否证。</p>
+</blockquote>
+<p><strong>净结论</strong>：三圆<strong>互不同一</strong>（<span class="arithmatex">\(S\)</span> 阶梯/无界、<span class="arithmatex">\(\vartheta_n\)</span> 平滑有界振荡、<span class="arithmatex">\(\phi_n\)</span> 几何单调趋零）；<strong>唯一联系</strong>是 <span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(\vartheta_n\)</span> 构成 RvM 分解的<strong>涨落半/平滑半</strong>。同一性不成立，结构关联待证。<strong>待推 1 的相位缺口因此定为：对象已确定为 <span class="arithmatex">\(S\)</span>，只欠一个只引用素数/<span class="arithmatex">\(\xi\)</span> 的表达式。</strong></p>
+<hr />
+<h2 id="_6">第六部分：第五重 —— 相空间–尺度关联（归档恢复）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 归档来源<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p><code>归档/归档 CNT/09 前期探索/05-暂弃研究/05-相空间等价性 已废弃.md</code>（该归档构造为 CNT 阶段产物）。</p>
+<p><strong>现行框架</strong>：<span class="arithmatex">\(u=\ln r\)</span> 的 Hilbert 空间直接是舞台，不需要「循环论相空间」作中间构造，等价性由集成理论 §12.2 涵盖。</p>
+<h3 id="62-vs">6.2 可恢复 vs 不恢复<a class="headerlink" href="#62-vs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">归档内容</th>
+<th style="text-align: left;">判定</th>
+<th style="text-align: left;">理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><span class="arithmatex">\(\nu_p\)</span>（p 进赋值，序数）↔ 能标 <span class="arithmatex">\(\mu\)</span></strong></td>
+<td style="text-align: left;">✅ <strong>可恢复</strong></td>
+<td style="text-align: left;">现已有定量形式 <span class="arithmatex">\(\tau=1+W((n-\tfrac78)/e)\)</span>（§6.4）</td>
+</tr>
+<tr>
+<td style="text-align: left;">p 进距离 <span class="arithmatex">\(\|x\|_p=p^{-\nu}\)</span> 的尺度意涵</td>
+<td style="text-align: left;">✅ 可恢复</td>
+<td style="text-align: left;">与 <span class="arithmatex">\(e^{-\tau}\)</span> 同向</td>
+</tr>
+<tr>
+<td style="text-align: left;">再生产频率分层 <span class="arithmatex">\(\nu_p=\text{☯}/\ln p\)</span>（全发现汇总 §五）</td>
+<td style="text-align: left;">✅ 可恢复</td>
+<td style="text-align: left;">直接把 <span class="arithmatex">\(☯\)</span> 接到 p 进能标</td>
+</tr>
+<tr>
+<td style="text-align: left;">3+1 维循环论相空间</td>
+<td style="text-align: left;">❌ 不恢复</td>
+<td style="text-align: left;">已被 <span class="arithmatex">\(u=\ln r\)</span> 取代</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(T_{\rm cycle}=2+3+5=10\)</span></td>
+<td style="text-align: left;">❌ 不恢复</td>
+<td style="text-align: left;">无定量支撑</td>
+</tr>
+<tr>
+<td style="text-align: left;">母轨迹三投影 = 三种规范力</td>
+<td style="text-align: left;">❌ 不恢复</td>
+<td style="text-align: left;">属 CNT 阶段构造</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3 恢复的定量桥梁<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>归档 §4.2 称「<span class="arithmatex">\(\nu_p\)</span> 是内禀时间计数」，§6.1 称「p 进层级序贯 = RG 能标 <span class="arithmatex">\(\mu\)</span>」。定量形式为（RvM 反解，见 §6.4）：</p>
+<div class="arithmatex">\[\tau=\ln\frac{\gamma_n}{2\pi}=1+W\!\Big(\frac{n-\tfrac78}{e}\Big)+O(S/n),\qquad e^{-\tau}=\frac{2\pi}{\gamma_n}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\tau=1+W((n-\tfrac78)/e)\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(e^{-\tau}=2\pi/\gamma_n\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">2.108242</td>
+<td style="text-align: left;">0.126235</td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">3.629564</td>
+<td style="text-align: left;">0.026565</td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">5.420604</td>
+<td style="text-align: left;">0.004427</td>
+</tr>
+<tr>
+<td style="text-align: left;">10⁴</td>
+<td style="text-align: left;">7.360194</td>
+<td style="text-align: left;">0.000636</td>
+</tr>
+</tbody>
+</table>
+<p><strong>同向性检验</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">增大方向</th>
+<th style="text-align: left;">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">p 进</td>
+<td style="text-align: left;"><span class="arithmatex">\(\nu\)</span> 增大 → <span class="arithmatex">\(p^{-\nu}\)</span> 减小 → 距离缩短 → <strong>能标升高</strong></td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">CQM</td>
+<td style="text-align: left;"><span class="arithmatex">\(n\)</span> 增大 → <span class="arithmatex">\(e^{-\tau}\)</span> 减小 → 尺度缩短 → <strong>能标升高</strong></td>
+<td style="text-align: left;">✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>结构等价，方向一致。</strong>【诠释——结构同构，非机制证明】</p>
+<p><strong>补：归档频率表的 <span class="arithmatex">\(☯\)</span> 显式化</strong>（<code>02-全发现汇总.md</code> §五）：</p>
+<div class="arithmatex">\[\nu_p=\frac{\text{☯}}{\ln p}\quad(p=2,3,5,\ldots)\]</div>
+<p>这使第五重与统一支点<strong>数上相接</strong>：p 进能标跳跃的速率由 <span class="arithmatex">\(☯\)</span> 定标，而 <span class="arithmatex">\(☯\)</span> 本身又是长度半计数的对数导数对象——<strong>尺度字典与相变量子共用同一常数</strong>。【框架内构造（归档）】</p>
+<h3 id="64">6.4 完整链条（含长度半）<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\underbrace{n}_{\text{绕数}}\ \xrightarrow{\ n=e^{\tau}(\tau-1)+\tfrac78\ (\text{RvM})}\ \underbrace{\tau=\ln\frac{T}{2\pi}}_{\text{因果时能标}\ \S12.2}\ \xrightarrow{\ }\ \underbrace{L_{\rm len}=\frac\tau2-\frac12+\frac{7\pi}{8T}}_{\text{长度半}}\ +\ \underbrace{\frac{\pi}{T}S(T)}_{\text{相位半}}\ =\ \underbrace{L_{\rm box}}_{\text{边界}}\]</div>
+<p><strong>RvM 反解</strong>：记 <span class="arithmatex">\(\tau:=\ln(T/2\pi)\)</span>，则 <span class="arithmatex">\(T=\gamma_n\)</span> 时</p>
+<div class="arithmatex">\[n=N(\gamma_n)=\frac{T}{2\pi}\Big(\ln\frac{T}{2\pi}-1\Big)+\frac78+S(T)=e^{\tau}(\tau-1)+\frac78+S\ \Longrightarrow\ \tau=1+W\!\Big(\frac{n-\tfrac78-S}{e}\Big)\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: left;"><span class="arithmatex">\(\tau=\ln(\gamma_n/2\pi)\)</span>（真值）</th>
+<th style="text-align: left;"><span class="arithmatex">\(1+W((n-\tfrac78)/e)\)</span></th>
+<th style="text-align: left;">偏差</th>
+<th style="text-align: left;"><span class="arithmatex">\(W(n)\)</span>（粗糙形式）</th>
+<th style="text-align: left;">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">2.06961233</td>
+<td style="text-align: left;">2.10824249</td>
+<td style="text-align: left;">1.87%</td>
+<td style="text-align: left;">1.74552800</td>
+<td style="text-align: left;"><strong>−15.66%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">3.62817359</td>
+<td style="text-align: left;">3.62956373</td>
+<td style="text-align: left;">0.038%</td>
+<td style="text-align: left;">3.38563014</td>
+<td style="text-align: left;"><strong>−6.69%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">5.42012830</td>
+<td style="text-align: left;">5.42060364</td>
+<td style="text-align: left;">0.0088%</td>
+<td style="text-align: left;">5.24960285</td>
+<td style="text-align: left;"><strong>−3.15%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">10⁴</td>
+<td style="text-align: left;">7.36016627</td>
+<td style="text-align: left;">7.36019399</td>
+<td style="text-align: left;">0.00038%</td>
+<td style="text-align: left;">7.23184604</td>
+<td style="text-align: left;"><strong>−1.74%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注</strong>：RvM 主项是 <span class="arithmatex">\(e^{\tau}(\tau-1)\)</span> 而非 <span class="arithmatex">\(e^{\tau}\tau\)</span>，二者相差 <span class="arithmatex">\(e^{\tau}\approx n/\tau\)</span>（<span class="arithmatex">\(n=100\)</span> 时约为 <span class="arithmatex">\(n\)</span> 的 30%），<strong>不是小量</strong>；正确反解为 <span class="arithmatex">\(\tau=1+W((n-\tfrac78-S)/e)\)</span>（忽略 <span class="arithmatex">\(S\)</span> 时误差 <span class="arithmatex">\(\lesssim0.04\%\)</span>）。粗糙形式 <span class="arithmatex">\(\tau=W(n)\)</span> 与真值偏差 −15.7%（<span class="arithmatex">\(n=10\)</span>）→ −1.7%（<span class="arithmatex">\(n=10^4\)</span>），单调趋零但始终非零。<strong><span class="arithmatex">\(n\equiv N(\gamma_n)\)</span> 本身精确</strong>（<span class="arithmatex">\(10^{-19}\)</span> 级）——上式误差只在 <span class="arithmatex">\(n\)</span> 与 <span class="arithmatex">\(\tau\)</span> 的换算，不在计数。</p>
+</blockquote>
+<p>注意：<span class="arithmatex">\(L=\tau/2\)</span> 只是主项，须补 <span class="arithmatex">\(-\tfrac12\)</span> 与 <span class="arithmatex">\(7\pi/8T\)</span>（与 M1 同类截断）。</p>
+<h3 id="65-k_l-d1d7">6.5 距离映射 <span class="arithmatex">\(K_L\)</span> —— 耦合空间到物理空间的度量（归档 D1–D7 回捞）<a class="headerlink" href="#65-k_l-d1d7" title="Permanent link">&para;</a></h3>
+<h4 id="651">6.5.1 定义与量纲地位<a class="headerlink" href="#651" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[\boxed{r_{\rm coupling}\cdot K_L=r_{\rm phys}},\qquad K_L=\frac{\lambda_{\rm QCD}}{r_{\rm conf}}=\frac{\hbar c\cdot\text{☯}\cdot\mathfrak{c}_1}{m_p\cdot g_s^{\rm IR}}\]</div>
+<ul>
+<li><span class="arithmatex">\(r_{\rm conf}=\sqrt{I\lambda_c}=1.481\)</span>（无量纲耦合空间禁闭壳）</li>
+<li><span class="arithmatex">\(r_{\rm GUT}=\sqrt{4\pi\,\text{☯}\,\lambda_c}=0.61802\)</span>（复算 ✓）</li>
+<li>全部 CNT 耦合壳层（0.4–3.3 无量纲）经 <span class="arithmatex">\(K_L\)</span> 映到核子尺度 fm</li>
+</ul>
+<p><strong>量纲地位</strong>：<span class="arithmatex">\(K_L\)</span> 是<strong>禁闭映射常数</strong>——量纲为长度（fm）的特征常数，把无量纲耦合壳 <span class="arithmatex">\(r_{\rm coupling}\)</span> 映为物理长度 <span class="arithmatex">\(r_{\rm phys}\)</span>。它与 <span class="arithmatex">\(K_M=G_N^{-1}\)</span>、<span class="arithmatex">\(K_Q\)</span> 同属量纲发生学中的层间特征常数（<code>01 核心理论/CQM_核心_量纲与群论.md</code> §6.3），是「旧量纲 × 特征常数 = 新量纲」模式在长度层的一个实例。</p>
+<p><strong><span class="arithmatex">\(K_L\)</span> 的数学身份</strong>：<span class="arithmatex">\(K_L\)</span> 是<strong>换算比值</strong>，不是两套 Hilbert 空间之间的算符。三条理由排除算符读法：</p>
+<ol>
+<li><strong>无群作用</strong>：交织算子的严格定义是「与群作用交换的线性映射」<span class="arithmatex">\(\varphi(g\cdot v)=g\cdot\varphi(v)\)</span>，须先指定群 <span class="arithmatex">\(G\)</span> 与两侧表示 <span class="arithmatex">\((\pi_1,\mathcal H_1)\)</span>、<span class="arithmatex">\((\pi_2,\mathcal H_2)\)</span>；本框架中不存在这样的群作用，故 <span class="arithmatex">\(K_L\)</span> 不具备交织算子的数学身份。</li>
+<li><strong>量纲不合</strong>：算子范数在两侧同归一化时是纯数，而 <span class="arithmatex">\(K_L\)</span> 带长度量纲（fm）；除非两侧 Hilbert 空间各自携带不同的量纲标度（未指定），算子范数不可能等于一个长度。</li>
+<li><strong>左侧空间不存在</strong>：<span class="arithmatex">\(\{\gamma_n\}\)</span> 不是任何一维自伴算符的严格点谱（本文 §9：Weyl 律否证），故不存在以 <span class="arithmatex">\(\gamma_n\)</span> 为谱的 <span class="arithmatex">\(\mathcal H_{\rm Riemann}\)</span>；角向侧是 Mathieu 方程的参数空间，亦无与之相连的群作用。</li>
+</ol>
+<p><strong>可核内容</strong>：<span class="arithmatex">\(K_L\)</span> 作为无量纲耦合壳 → 物理长度的<strong>换算比值</strong>（<span class="arithmatex">\(K_L=\lambda_{\rm QCD}/r_{\rm conf}\)</span>）成立，且是「谱给无量纲 <span class="arithmatex">\(r_{\rm coupling}\)</span>、<span class="arithmatex">\(K_L\)</span> 才把它变成物理距离 fm」的唯一候选转换——这是<strong>度量/量纲</strong>陈述，不含任何「两套 Hilbert 空间之间的算符」内容。归档 D1 的两个谱扇区作<strong>并列识别</strong>（下表），两侧之间没有已构造的算符。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">扇区</th>
+<th style="text-align: left;">谱对象</th>
+<th style="text-align: left;">本文对应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">径向（Riemann 侧）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\gamma_n\)</span>、<span class="arithmatex">\(\mathfrak{c}_n\)</span>、<span class="arithmatex">\(L_{\rm box}(E)\)</span></td>
+<td style="text-align: left;">待推 1、轨道量子化</td>
+</tr>
+<tr>
+<td style="text-align: left;">角向（Mathieu 侧）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_c=4q_c\)</span>（Mathieu <span class="arithmatex">\(a=2q\)</span> 线）</td>
+<td style="text-align: left;">归档角向扇区、<span class="arithmatex">\(\lambda_c\)</span> 表</td>
+</tr>
+<tr>
+<td style="text-align: left;">换算</td>
+<td style="text-align: left;"><span class="arithmatex">\(r_{\rm phys}=r_{\rm coupling}\cdot K_L\)</span></td>
+<td style="text-align: left;">把径向量子化结果装进 fm</td>
+</tr>
+</tbody>
+</table>
+<p>这是归档里「RH 背后机制」少有的<strong>量纲级接口</strong>：不是又一个能级表，而是<strong>度量</strong>——回答「耦合空间的无量纲壳层如何变成物理距离」。与第五部分「不是能级而是轨道距离」的强调<strong>同一立场</strong>。【框架内构造（归档 D1 的比值定义）；数值见 §6.5.2】</p>
+<h4 id="652-k_l">6.5.2 复算表与 <span class="arithmatex">\(K_L\)</span> 的内部不一致（必须先定死）<a class="headerlink" href="#652-k_l" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">量</th>
+<th style="text-align: left;">复算</th>
+<th style="text-align: left;">归档</th>
+<th style="text-align: left;">判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(r_{\rm conf}=\sqrt{I\lambda_c}\)</span></td>
+<td style="text-align: left;">1.481</td>
+<td style="text-align: left;">1.481</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(r_{\rm GUT}=\sqrt{4\pi\text{☯}\lambda_c}\)</span></td>
+<td style="text-align: left;">0.61802</td>
+<td style="text-align: left;">0.618</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\Lambda_{\rm QCD}=m_p/(\text{☯}\cdot\mathfrak{c}_1)\)</span></td>
+<td style="text-align: left;"><strong>203.090 MeV</strong></td>
+<td style="text-align: left;">203 MeV</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_{\rm QCD}=\hbar c/\Lambda_{\rm QCD}\)</span></td>
+<td style="text-align: left;"><strong>0.97162 fm</strong></td>
+<td style="text-align: left;">（由 203 算）</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K_L=\lambda_{\rm QCD}/r_{\rm conf}\)</span>（第一性链）</td>
+<td style="text-align: left;"><strong>0.65606 fm</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">⚠️</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K_L\)</span>（用归档 <span class="arithmatex">\(\lambda_{\rm QCD}=1.005\)</span>）</td>
+<td style="text-align: left;">0.67860 fm</td>
+<td style="text-align: left;"><strong>0.6805 fm</strong></td>
+<td style="text-align: left;">⚠️ 归档主用值</td>
+</tr>
+<tr>
+<td style="text-align: left;">比值 <span class="arithmatex">\(K_{L,\rm prin}/K_{L,\rm arch}\)</span></td>
+<td style="text-align: left;">0.9668</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>差 3.3%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\sqrt{\mathfrak{c}_1}\)</span> vs <span class="arithmatex">\(\gamma_1\)</span></td>
+<td style="text-align: left;">14.143566 vs 14.134725</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">0.0625%（归档在用 <span class="arithmatex">\(\sqrt{\mathfrak{c}_1}\approx\gamma_1\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(C_\theta=\text{☯}/\mathfrak{c}_1\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.154552\times10^{-4}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.155\times10^{-4}\)</span></td>
+<td style="text-align: left;">✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>两条链的分叉</strong>：</p>
+<ol>
+<li><strong>第一性链</strong>（归档衍生参数表自洽）：<span class="arithmatex">\(\Lambda_{\rm QCD}=203\)</span> → <span class="arithmatex">\(\lambda=0.9716\)</span> → <span class="arithmatex">\(K_L=0.656\)</span></li>
+<li><strong>标定链</strong>（D4–D7 全部「&lt;0.33%」所依赖）：<span class="arithmatex">\(\lambda_{\rm QCD}=1.005\)</span>（≈实验 <span class="arithmatex">\(\Lambda\approx196\)</span> MeV）→ <span class="arithmatex">\(K_L\approx0.679\)</span>–<span class="arithmatex">\(0.6805\)</span></li>
+</ol>
+<p><strong>后果</strong>（质子康普顿 = GUT/2，D4）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">所用 <span class="arithmatex">\(K_L\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(\lambda_p/K_L\)</span> vs <span class="arithmatex">\(r_{\rm GUT}/2\)</span></th>
+<th style="text-align: left;">偏差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0.6805（几何值）</td>
+<td style="text-align: left;">0.3090 vs 0.3090</td>
+<td style="text-align: left;"><strong>0.013%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">0.67860（<span class="arithmatex">\(\lambda=1.005\)</span> 精算）</td>
+<td style="text-align: left;">0.3099 vs 0.3090</td>
+<td style="text-align: left;"><strong>0.29%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0.656（第一性 <span class="arithmatex">\(\Lambda=203\)</span>）</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>3.74%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>归档 <code>归档 CNT/01 入门与脉络/CNT 读者入门.md</code> §6 自注：公式要求 <span class="arithmatex">\(g_s^{\rm IR}\approx1.428\)</span>，而定理 10.4 给 <span class="arithmatex">\(g_s^{\rm IR}=1.481\)</span>，<strong>张力 3.73%</strong>（复算：<span class="arithmatex">\(g_s^{\rm need}=1.42781\)</span>，<span class="arithmatex">\(1.481/1.42781-1=3.73\%\)</span> ✓）。<strong>这是归档内建的不一致。</strong></p>
+<blockquote>
+<p><strong>判定</strong>：<span class="arithmatex">\(K_L\)</span> <strong>尚未定死</strong>。
+- 若宣称「严格第一性 + 0.3% 精确」，必须同时采用 <span class="arithmatex">\(\Lambda=203\)</span> 与 <span class="arithmatex">\(g_s^{\rm IR}=1.481\)</span>，则 <span class="arithmatex">\(K_L=0.656\)</span>，D4–D7 偏差<strong>全部退到 ~3.74%</strong>，「&lt;0.33%」不成立。
+- 若保留「&lt;0.33%」，则 <span class="arithmatex">\(K_L\)</span> 是<strong>半标定常数</strong>（输入含实验 <span class="arithmatex">\(\lambda_{\rm QCD}\)</span> 或等价地 <span class="arithmatex">\(g_s^{\rm IR}\approx1.43\)</span>），不能写「严格第一性」。
+- 本文<strong>两列并置</strong>，不选边；依赖 <span class="arithmatex">\(K_L=0.67860\)</span>（谱参数）/0.6805（几何）的精确数在 <span class="arithmatex">\(K_L\)</span> 定死前属<strong>标定符合</strong>，不计入严格第一性结果。【数值事实】</p>
+</blockquote>
+<h4 id="653">6.5.3 符号与结构的四点约定<a class="headerlink" href="#653" title="Permanent link">&para;</a></h4>
+<p><strong>① <span class="arithmatex">\(E_1\)</span> 的符号重载</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">归档写法</th>
+<th style="text-align: left;">实际所指</th>
+<th style="text-align: left;">本框架命名</th>
+<th style="text-align: left;">复算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K_L\)</span>、<span class="arithmatex">\(C_\theta\)</span>、K11、<span class="arithmatex">\(\Lambda_{\rm QCD}\)</span> 中的 <span class="arithmatex">\(E_1\)</span></td>
+<td style="text-align: left;">第一耦级 <span class="arithmatex">\(\mathfrak{c}_1=\gamma_1^2+\tfrac14\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(\mathfrak{c}_1\)</span></strong></td>
+<td style="text-align: left;">由 <span class="arithmatex">\(C_\theta\)</span> 反推 199.96 ≈ <span class="arithmatex">\(\mathfrak{c}_1=200.040\)</span> ✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">D8 氢基态公式中的 <span class="arithmatex">\(E_1\)</span></td>
+<td style="text-align: left;">氢原子基态 <span class="arithmatex">\(E_{\rm H}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(E_{\rm H}\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(-13.610\)</span> eV ✓</td>
+</tr>
+</tbody>
+</table>
+<p>同一符号指两个相差 <span class="arithmatex">\(10^{13}\)</span> 倍的对象，须拆开为 <span class="arithmatex">\(\mathfrak{c}_1\)</span> 与 <span class="arithmatex">\(E_{\rm H}\)</span>。</p>
+<p><strong>② D9 的 <span class="arithmatex">\(r_n=n\cdot r_H\)</span> 与跃迁耦级冲突（对你最相关）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><span class="arithmatex">\(u=\ln r\)</span> 下的 <span class="arithmatex">\(\ln r_n\)</span></th>
+<th style="text-align: left;">势</th>
+<th style="text-align: left;">与 <span class="arithmatex">\(2\ln n\)</span> 耦级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Bohr：<span class="arithmatex">\(\ln r_n=\ln a_0+2\ln n\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(V\propto1/r\)</span> ✓</td>
+<td style="text-align: left;"><strong>✓ 精确</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">归档 D9：<span class="arithmatex">\(\ln r_n=\ln r_H+\ln n\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(V\propto1/r^2\)</span> ✗</td>
+<td style="text-align: left;"><strong>✗ 差因子 2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>只有 <span class="arithmatex">\(r\propto n^2\)</span>（Coulomb）给出 <span class="arithmatex">\(2\ln n\)</span>——即现行跃迁耦级谱 <span class="arithmatex">\(\Delta u_n=2\ln n\)</span>（超导稿等处已用）。归档 D9 的线性 <span class="arithmatex">\(r_n=n\,r_H\)</span> 在耦合空间<strong>落不了地</strong>，且对应 <span class="arithmatex">\(1/r^2\)</span> 而非 Coulomb。</p>
+<blockquote>
+<p>D9 的几何前提须取 <span class="arithmatex">\(r_n=n^2\,a_0\)</span>（或只保留 <span class="arithmatex">\(E_n\propto1/n^2\)</span> 结构、不设几何假设）。<span class="arithmatex">\(1/n^2\)</span> 能级本身不受影响。【已证标准 Bohr】</p>
+</blockquote>
+<p><strong>③ 自对偶比例 <span class="arithmatex">\(\tfrac12:1:2\)</span> 与 <span class="arithmatex">\(n^2\)</span> 壳层不同构（别硬并）</strong></p>
+<ul>
+<li>D4–D7 的 <span class="arithmatex">\(\lambda_p:r_{\rm GUT}:r_p=\tfrac12:1:2\)</span> 是<strong>等比 ×2</strong>（在经 <span class="arithmatex">\(K_L\)</span> 映射的物理距离上）</li>
+<li>Bohr/<span class="arithmatex">\(n^2\)</span> 给 <span class="arithmatex">\(n=1,2,3\to1:4:9\)</span>（在 <span class="arithmatex">\(r\)</span> 上），<span class="arithmatex">\(\ln r\)</span> 上是 <span class="arithmatex">\(0,2\ln2,2\ln3\)</span>（等差步长不等）</li>
+<li><strong>二者不是同一族壳层</strong>：前者是质子电磁尺度的三点几何平均结构，后者是角量子数壳层。可并列为两种几何，<strong>禁止用 <span class="arithmatex">\(n^2\)</span> 解释 <span class="arithmatex">\(\tfrac12:1:2\)</span> 或反向</strong>。</li>
+</ul>
+<p><strong>④ K11 与 <span class="arithmatex">\(G_N\)</span> 的 <span class="arithmatex">\(\exp(-2/\text{☯})\)</span> 是平方关系</strong></p>
+<div class="arithmatex">\[\frac{m_p}{m_{\rm Pl}}=g_s^{\rm IR}\cdot\text{☯}\cdot\sqrt{\mathfrak{c}_1}\cdot\exp(-1/\text{☯})\qquad\text{（K11）}\]</div>
+<p>复算：K11 给 <span class="arithmatex">\(m_p/m_{\rm Pl}=7.594957\times10^{-20}\)</span>（实验 <span class="arithmatex">\(7.685023\times10^{-20}\)</span>），<strong>质量比偏差 −1.17%</strong>；对应 <span class="arithmatex">\(\ln(m_{\rm Pl}/m_p)=44.0242\)</span>（实验 <span class="arithmatex">\(44.0124\)</span>），<strong><span class="arithmatex">\(\ln\)</span> 偏差 +0.027%</strong>。两者不是同一百分比——−1.17% 属质量比、+0.027% 属对数。归档方向正确。</p>
+<div class="arithmatex">\[\alpha_G=\left(\frac{m_p}{m_{\rm Pl}}\right)^2\ \Longrightarrow\ \exp(-2/\text{☯})=\big(\exp(-1/\text{☯})\big)^2\]</div>
+<p><strong><span class="arithmatex">\(G_N\)</span> 公式里的 <span class="arithmatex">\(-2/\text{☯}\)</span> 不是巧合</strong>——因为 <span class="arithmatex">\(\alpha_G\)</span> 含 <span class="arithmatex">\(m_p^2\)</span>，K11 就是 <span class="arithmatex">\(G_N\)</span> 公式的 <span class="arithmatex">\(m_p/m_{\rm Pl}\)</span> 版本。与 §7.3 三线汇合<strong>完全一致</strong>，且解释了「为何是 2 不是 1」。【数值复算 ✓ / 关系为代数恒等】</p>
+<h4 id="654">6.5.4 与统一支点的接口<a class="headerlink" href="#654" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">距离映射侧</th>
+<th style="text-align: left;">接到哪一重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K_L\)</span>：无量纲耦合壳 ↔ 物理长度</td>
+<td style="text-align: left;">第二部分轨道量子化（径向 <span class="arithmatex">\(\gamma_n\)</span>）与归档角向 <span class="arithmatex">\(\lambda_c\)</span> 的<strong>度量桥</strong>（比值换算，非算符）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(r_{\rm conf}=1.481\)</span> 无量纲</td>
+<td style="text-align: left;">经 <span class="arithmatex">\(K_L\)</span> 变成 <span class="arithmatex">\(\lambda_{\rm QCD}\sim1\)</span> fm —— <strong>待推 1 的边界长度若读作物理距离，唯一候选转换就是 <span class="arithmatex">\(K_L\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">D9 校正 <span class="arithmatex">\(r\propto n^2\)</span></td>
+<td style="text-align: left;">与第三部分 Bohr 固定极限、<span class="arithmatex">\(2\ln n\)</span> 跃迁耦级<strong>强制对齐</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K_L\)</span> 未定死</td>
+<td style="text-align: left;">所有「fm 级 0.3%」在严格性总表中标 <strong>⚠ 标定依赖</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>对「不是能级而是轨道距离」</strong>：<span class="arithmatex">\(K_L\)</span> 恰好是这句话的<strong>定量形式</strong>——谱给的是无量纲 <span class="arithmatex">\(r_{\rm coupling}\)</span>，<span class="arithmatex">\(K_L\)</span> 才把它变成轨道的物理距离 fm。这正是归档 D1 的可核内容：<strong>距离</strong>（量纲层：无量纲 → 长度）比能级表高一个范畴。</p>
+<hr />
+<h2 id="1text-d11k11gn">第七部分：精确张力 —— <span class="arithmatex">\(1/\text{☯}\)</span>（与归档 D11/K11/GN 汇合）<a class="headerlink" href="#1text-d11k11gn" title="Permanent link">&para;</a></h2>
+<h3 id="71-vs">7.1 量子化单位 vs 涨落下限<a class="headerlink" href="#71-vs" title="Permanent link">&para;</a></h3>
+<p>若 <span class="arithmatex">\([\hat u,\hat p_u]=i\text{☯}\)</span>，BS 应为 <span class="arithmatex">\(\oint p_u\,du=2\pi n\text{☯}\)</span>，得 <span class="arithmatex">\(p_u=\pi n\text{☯}/L\)</span>。</p>
+<p>轨道量子化（有效 <span class="arithmatex">\(\hbar=1\)</span>）给 <span class="arithmatex">\(p_u=\pi n/L=\gamma_n\)</span>。两者之比：</p>
+<div class="arithmatex">\[\frac{\pi n/L}{\pi n\text{☯}/L}=\frac1{\text{☯}}=43.2980863011\]</div>
+<p><strong>精确，与 <span class="arithmatex">\(n\)</span> 无关</strong>（n=100、1000 均给 43.298086）。【数值事实】</p>
+<blockquote>
+<p><strong>前提注（反事实前提）</strong>：本节的 <span class="arithmatex">\([\hat u,\hat p_u]=i\text{☯}\)</span> 是<strong>反事实（对比用）前提</strong>，<strong>不是</strong>本框架的公设；项目公设为 <span class="arithmatex">\([\hat u,\hat p_u]=i\)</span>（见 <code>04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md</code> §二/§5.1「对易关系是公设」、<code>01 核心理论/CQM_核心_量纲与群论.md</code> §6.3）。本节的比值 <span class="arithmatex">\(1/\text{☯}\)</span> 在上述反事实下是<strong>代数恒等</strong>；其内容只在于说明「轨道量子化用的是有效 <span class="arithmatex">\(\hbar=1\)</span>，<span class="arithmatex">\(☯\)</span> 不进入量子化单位」这一分工结论。</p>
+</blockquote>
+<h3 id="72">7.2 与层级问题的同量级<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\ln\frac{m_{\rm Pl}}{m_p}=44.012\quad\text{vs}\quad\frac1{\text{☯}}=43.298\]</div>
+<p>比值 <strong>1.0165</strong>，差 <strong>1.65%</strong>。<strong>15 位精度下不是恒等式</strong>，不得当结论用。【诠释】</p>
+<h3 id="73">7.3 归档三线汇合<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<p>同一个 <span class="arithmatex">\(1/\text{☯}\)</span> 在归档与现行稿中出现三次，<strong>共享枢纽</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">出处</th>
+<th style="text-align: left;">表达式</th>
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>本文 §7.1</strong></td>
+<td style="text-align: left;">BS 两种 <span class="arithmatex">\(\hbar\)</span> 之比 <span class="arithmatex">\(=1/\text{☯}\)</span></td>
+<td style="text-align: left;">量子化单位 vs 涨落下限的分工</td>
+<td style="text-align: left;">数值恒等（代数）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>归档 D11</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(a_0\propto(1/\text{☯})^3\lambda_c/\sqrt I\)</span></td>
+<td style="text-align: left;">原子尺度从核尺度放大</td>
+<td style="text-align: left;">假设性，3.7%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>归档 K11</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(m_p/m_{\rm Pl}=g_s^{\rm IR}\cdot\text{☯}\cdot\sqrt{\mathfrak{c}_1}\cdot\exp(-1/\text{☯})\)</span></td>
+<td style="text-align: left;">层级问题 = 纯 CNT 数</td>
+<td style="text-align: left;">假设性/框架内</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GN 稿构造 10.1</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\ln\prod_p\det(D_p)=1/\text{☯}\)</span> → <span class="arithmatex">\(\exp(-2/\text{☯})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(G_N\)</span> 独占 <span class="arithmatex">\(\ln\)</span> 贡献 98.38%</td>
+<td style="text-align: left;">启发式对应（开放问题 10.1）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读法</strong>：</p>
+<ol>
+<li>K11 的 <span class="arithmatex">\(\exp(-1/\text{☯})\)</span> 与本文「<span class="arithmatex">\(1/\text{☯}\)</span> 与 <span class="arithmatex">\(\ln(m_{\rm Pl}/m_p)\)</span> 差 1.65%」是<strong>同一张力的两种写法</strong>——K11 把差值直接写成乘性因子积，本文写成加性 <span class="arithmatex">\(\ln\)</span> 比较。</li>
+<li><strong><span class="arithmatex">\(-2/\text{☯}\)</span> 与 <span class="arithmatex">\(-1/\text{☯}\)</span> 是平方关系</strong>（§6.5.3④）：<span class="arithmatex">\(\alpha_G=(m_p/m_{\rm Pl})^2\)</span>，故 <span class="arithmatex">\(G_N\)</span> 中的因子 2 <strong>严格来自平方</strong>，K11 即 <span class="arithmatex">\(m_p/m_{\rm Pl}\)</span> 版；不是两条独立巧合线。</li>
+<li>D11 的 <span class="arithmatex">\((1/\text{☯})^3\)</span> 提示：<strong>Bohr 尺度（第三重）与层级/引力尺度（本部分）通过 <span class="arithmatex">\(1/\text{☯}\)</span> 的幂次相连</strong>——不是两条无关线。</li>
+<li>GN 构造 10.1 说明：<span class="arithmatex">\(1/\text{☯}\)</span> 已在现行 <span class="arithmatex">\(G_N\)</span> 链中作为 <strong>p 进谱行列式对数</strong>出现——与第六重 <span class="arithmatex">\(\nu_p=\text{☯}/\ln p\)</span> 互为倒数结构（<span class="arithmatex">\(\ln\det\leftrightarrow1/\text{☯}\)</span>，<span class="arithmatex">\(\nu_p\leftrightarrow\text{☯}/\ln p\)</span>）。</li>
+</ol>
+<p>【诠释】——三线汇合是<strong>结构观察</strong>，不是已证恒等；1.65% 差与各假设性偏差（3.7% 等）<strong>未对齐到同一修正项</strong>，不排除巧合。</p>
+<h3 id="74">7.4 分工的结论<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong><span class="arithmatex">\(☯\)</span> 是涨落下限，不是量子化单位。</strong> 轨道量子化中的有效「ℏ」是 1 而非 <span class="arithmatex">\(☯\)</span>。</p>
+<p>但 <span class="arithmatex">\(1/\text{☯}\)</span> <strong>同时</strong>控制：BS 两套单位的换算、原子尺度放大（D11³）、层级指数（K11）、p 进行列式（GN 10.1）——它更像<strong>跨层级的换底常数</strong>，而非孤立巧合数。</p>
+</blockquote>
+<hr />
+<h2 id="n">第八部分：低 <span class="arithmatex">\(n\)</span> 失效 —— 三个信号的同一源头<a class="headerlink" href="#n" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 自洽方程的适用边界<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(L_{\rm box}(T)&lt;0\)</span> 当 <span class="arithmatex">\(T&lt;9.6769\)</span>（数值解）；<span class="arithmatex">\(T=5\)</span> 时 <span class="arithmatex">\(L_{\rm len}=-0.0644\)</span>。</p>
+<p><span class="arithmatex">\(n=1\)</span> 处迭代<strong>振荡</strong>（14→31→8→…），不收敛。</p>
+<p>（注：加相位半 <span class="arithmatex">\(\tfrac{\pi}{T}S(T)\)</span> 后 <span class="arithmatex">\(T\to0^+\)</span> 有 <span class="arithmatex">\(1/T\)</span> 发散风险——相位项在低 <span class="arithmatex">\(T\)</span> 不能单独使用，须与长度半的 <span class="arithmatex">\(7\pi/8T\)</span> 合并理解为 RvM 展开在低 <span class="arithmatex">\(T\)</span> 整体失效。）【数值事实】</p>
+<h3 id="82">8.2 三个独立信号<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">信号</th>
+<th style="text-align: left;">表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">① 自洽方程</td>
+<td style="text-align: left;"><span class="arithmatex">\(T&lt;9.68\)</span> 时长度半 <span class="arithmatex">\(&lt;0\)</span>，低 <span class="arithmatex">\(n\)</span> 不收敛</td>
+</tr>
+<tr>
+<td style="text-align: left;">② Li 系数</td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_n\)</span> 相对 <span class="arithmatex">\(n^2\lambda_1\)</span> 的绝对偏差低 <span class="arithmatex">\(n\)</span> 最小、<strong>相对残留随 <span class="arithmatex">\(n\)</span> 增长</strong>（见 §4.2）</td>
+</tr>
+<tr>
+<td style="text-align: left;">③ <span class="arithmatex">\(☯\)</span> 的分布</td>
+<td style="text-align: left;"><strong>21.6% 来自第一零点</strong>，前 400 个才 94.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>三者指向同一件事</strong>：呼吸盒子只在渐近区自洽，<strong>低 <span class="arithmatex">\(n\)</span> 需要别的机制</strong>——这正是<strong>待推 2（经典化）中的「有限 <span class="arithmatex">\(n\)</span> 算术条件」</strong>（父文档 §15.3）的定量表现；与待推 1 相位半在低 <span class="arithmatex">\(T\)</span> 的失效落在<strong>同一区域</strong>。</p>
+<blockquote>
+<p><strong>口径辨析（与 §5.7 对齐）</strong>：父文档 §15.3 主张「有限 <span class="arithmatex">\(n\)</span> 算术条件 <span class="arithmatex">\(\longleftrightarrow\)</span> <span class="arithmatex">\(S(T)\)</span> 的有限处行为」二者<strong>对象同一</strong>。此主张在本框架内<strong>仍是路线图命题、尚未证明</strong>；§5.7 的「三圆互不同一」结论<strong>只针对</strong> <span class="arithmatex">\(S(T),\vartheta_n,z_n\)</span> 三个<strong>相位/圆对象</strong>，<strong>既不证实也不否证</strong>本条配对。故上句「同一缺口」应读作<strong>同区域的经验观察</strong>，不是已证的同一性。</p>
+</blockquote>
+<hr />
+<h2 id="_7">第九部分：严格性边界总表<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(☯\)</span> 闭式 <span class="arithmatex">\(1+\gamma_E/2-\frac12\ln\pi-\ln2\)</span></td>
+<td style="text-align: left;">✅ <strong>无条件</strong></td>
+<td style="text-align: left;">不依赖 RH</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(G_N\)</span> 公式</td>
+<td style="text-align: left;">✅ <strong>不依赖 RH</strong></td>
+<td style="text-align: left;">输入含 <span class="arithmatex">\(☯\)</span>、<span class="arithmatex">\(I\)</span>、<span class="arithmatex">\(\lambda_c\)</span>、<span class="arithmatex">\(\mathfrak{c}_1\)</span>、<span class="arithmatex">\(\kappa\)</span>、<span class="arithmatex">\(m_p\)</span>（<span class="arithmatex">\(\mathfrak{c}_1\)</span> 依赖 <span class="arithmatex">\(\gamma_1\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bohr <span class="arithmatex">\(r_n=n^2a_0\)</span></td>
+<td style="text-align: left;">✅ 标准</td>
+<td style="text-align: left;">圆轨道极限</td>
+</tr>
+<tr>
+<td style="text-align: left;">Li 变换 $</td>
+<td style="text-align: left;">z</td>
+<td style="text-align: left;">=1\iff\mathrm{Re}(s)=\frac12$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\tau=1+W((n-\tfrac78)/e)\)</span></td>
+<td style="text-align: left;">⚠️ <strong>近似</strong></td>
+<td style="text-align: left;">RvM 反解（<span class="arithmatex">\(S\)</span> 忽略时 <span class="arithmatex">\(\lesssim0.04\%\)</span>）；粗糙形式 <span class="arithmatex">\(\tau=W(n)\)</span> 偏差 −15.7%（<span class="arithmatex">\(n=10\)</span>）→ −1.7%（<span class="arithmatex">\(n=10^4\)</span>），见 §6.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>轨道量子化 <span class="arithmatex">\(\gamma_n=\pi n/L_{\rm box}\)</span></strong></td>
+<td style="text-align: left;">✅ <strong>数值</strong></td>
+<td style="text-align: left;">Dirichlet 约定；误差 0.19%→0.021%（直接代入列）、0.139%→0.018%（迭代解列），单调下降；注意该式与 <span class="arithmatex">\(n=N(\gamma_n)\)</span> <strong>恒等</strong>（记账轴，见摘要限定注），非独立方程</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="arithmatex">\(L_{\rm len}\)</span> 长度项</strong></td>
+<td style="text-align: left;">✅ <strong>非循环</strong></td>
+<td style="text-align: left;">只含 <span class="arithmatex">\(\Gamma\)</span>、<span class="arithmatex">\(\pi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dirichlet vs Sierra 因子 2</td>
+<td style="text-align: left;">✅ <strong>约定对齐</strong></td>
+<td style="text-align: left;">盒宽 vs 周期圆；同一物理内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sierra-CNT 机制骨架</td>
+<td style="text-align: left;">✅ 归档定理</td>
+<td style="text-align: left;">但 <span class="arithmatex">\(L_n,\vartheta_n\)</span> 输入仍含 <span class="arithmatex">\(\gamma_n\)</span> → 循环</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(1/\text{☯}=43.298086\)</span></td>
+<td style="text-align: left;">✅ 数值</td>
+<td style="text-align: left;">与 <span class="arithmatex">\(\ln(m_{\rm Pl}/m_p)\)</span> 差 1.65%，<strong>非恒等式</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">D11 <span class="arithmatex">\(a_0\propto(1/\text{☯})^3\)</span></td>
+<td style="text-align: left;">⚠️ 假设性</td>
+<td style="text-align: left;">归档 3.7%；未在现行框架重推</td>
+</tr>
+<tr>
+<td style="text-align: left;">K11 <span class="arithmatex">\(\exp(-1/\text{☯})\)</span> 层级</td>
+<td style="text-align: left;">⚠️ 框架内</td>
+<td style="text-align: left;">与 §7.2 同一张力；复算质量比 −1.17%（对数偏差 +0.027%，§6.5.3④）；<span class="arithmatex">\(\alpha_G\)</span> 平方 ↔ <span class="arithmatex">\(\exp(-2/\text{☯})\)</span> ✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">GN 构造 10.1 <span class="arithmatex">\(\ln\det=1/\text{☯}\)</span></td>
+<td style="text-align: left;">⚠️ 启发式</td>
+<td style="text-align: left;">开放问题 10.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">归档 <span class="arithmatex">\(\nu_p\leftrightarrow\mu\)</span>；<span class="arithmatex">\(\nu_p=\text{☯}/\ln p\)</span></td>
+<td style="text-align: left;">⚠️ 结构同构</td>
+<td style="text-align: left;">非机制证明</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>距离映射 <span class="arithmatex">\(K_L\)</span></strong>（D1）</td>
+<td style="text-align: left;">⚠️ <strong>框架内定性</strong></td>
+<td style="text-align: left;">比值换算（无量纲耦合壳→fm）成立（§6.5.1）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="arithmatex">\(K_L\)</span> 数值</strong></td>
+<td style="text-align: left;">⚠️ <strong>内部不一致 3.3%</strong></td>
+<td style="text-align: left;">第一性 0.656 vs 标定谱参数 0.67860（几何 0.6805）；未定死前 D4–D7「0.3%」属标定符合</td>
+</tr>
+<tr>
+<td style="text-align: left;">D9 <span class="arithmatex">\(r_n=n\,r_H\)</span></td>
+<td style="text-align: left;">❌ <strong>不成立</strong></td>
+<td style="text-align: left;">须改 <span class="arithmatex">\(r\propto n^2\)</span>（否则 <span class="arithmatex">\(V\propto1/r^2\)</span>、<span class="arithmatex">\(\Delta u=\ln n\neq2\ln n\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">自对偶 <span class="arithmatex">\(\tfrac12:1:2\)</span> ≡ <span class="arithmatex">\(n^2\)</span> 壳层</td>
+<td style="text-align: left;">❌ <strong>不同构</strong></td>
+<td style="text-align: left;">等比 ×2 vs Bohr <span class="arithmatex">\(1:4:9\)</span>；禁止硬并</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weyl 律障碍的「对数解」</td>
+<td style="text-align: left;">⚠️ <strong>匹配非构造</strong></td>
+<td style="text-align: left;">呼吸边界<strong>不是标准自伴算符</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">「<span class="arithmatex">\(☯\)</span> = 耦级倒数和」</td>
+<td style="text-align: left;">⚠️ <strong>RH 的单向推论</strong>（RH 推出等式；等式不推出 RH）</td>
+<td style="text-align: left;">N=10000 部分和 0.0229610（闭式 0.02309570897，相对误差 −0.58%）；前 400 项 94.24%；15 位需 ~10¹⁶ 项，<strong>数值不可确认</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\mathfrak{c}_n=\|\rho_n\|^2\)</span> 模方解释</td>
+<td style="text-align: left;">⚠️ 依赖 RH</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Li–Bohr <span class="arithmatex">\(n^2\)</span> 对应</td>
+<td style="text-align: left;">⚠️ 零跑动极限</td>
+<td style="text-align: left;">偏差是跑动残留</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\pm\gamma_n\)</span> 的往返轨道来源</td>
+<td style="text-align: left;">⚠️ 半经典图像</td>
+<td style="text-align: left;">非严格推导</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta\)</span>（Sierra）与 <span class="arithmatex">\(S(T)\)</span>（本文）是否同一对象</td>
+<td style="text-align: left;">✅ <strong>结论：不同一</strong></td>
+<td style="text-align: left;">见 §5.7：<span class="arithmatex">\(S\)</span> 为阶梯/无界涨落半，<span class="arithmatex">\(\vartheta_n\)</span> 为平滑有界 <span class="arithmatex">\(\theta\)</span> 型；<strong>同源于 RvM 分解、分工相反</strong>，非同一函数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>边界相位 <span class="arithmatex">\(S(T)\)</span></strong></td>
+<td style="text-align: left;">❌ <strong>空白</strong></td>
+<td style="text-align: left;">待推 1 的实质</td>
+</tr>
+<tr>
+<td style="text-align: left;">低 <span class="arithmatex">\(n\)</span> 机制</td>
+<td style="text-align: left;">❌ 空白</td>
+<td style="text-align: left;">= 待推 2（经典化）的有限 <span class="arithmatex">\(n\)</span> 算术条件（父文档 §15.3；与待推 1 相位半的同一性为路线图命题，尚未证明）</td>
+</tr>
+<tr>
+<td style="text-align: left;">RH 推进</td>
+<td style="text-align: left;">❌ <strong>零</strong></td>
+<td style="text-align: left;">全部为等价重述</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">必须规避的否证项<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项</th>
+<th style="text-align: left;">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(H_{BK}=xp\)</span>（半直线）</td>
+<td style="text-align: left;">谱纯连续，Weyl 渐近不对（Endres &amp; Steiner, <em>J. Phys. A</em> <strong>43</strong> (2010) 095204，arXiv:0912.3183）</td>
+</tr>
+<tr>
+<td style="text-align: left;">一维 Schrödinger 严格点谱 <span class="arithmatex">\(=\{\gamma_n\}\)</span></td>
+<td style="text-align: left;">Weyl 律否证（比值 <span class="arithmatex">\(\sim\sqrt E\ln E\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">亏指数 <span class="arithmatex">\((1,1)\)</span> 在 <span class="arithmatex">\(L^2(\mathbb R)\)</span></td>
+<td style="text-align: left;"><strong>错误</strong>——全直线上 <span class="arithmatex">\(-\partial^2\)</span> 本质自伴，为 <span class="arithmatex">\((0,0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">第十部分：建议<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="101-1">10.1 待推 1 的推荐表述（写入仓库文档）<a class="headerlink" href="#101-1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>待推 1（精确定位）</strong>：在耦合空间 <span class="arithmatex">\(u=\ln r\)</span> 中，盒子长度已由 Riemann–von Mangoldt 计数非循环确定为
+$<span class="arithmatex">\(L_{\rm len}(T)=\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}\)</span>$
+（只用 <span class="arithmatex">\(\Gamma\)</span> 与 <span class="arithmatex">\(\pi\)</span>，不碰任何零点；Dirichlet/Weyl 约定，与 Sierra 周期约定差因子 2，见深度分析 §2.5）。轨道量子化 <span class="arithmatex">\(\oint p_u du=2\pi n\)</span> 给出自洽方程 <span class="arithmatex">\(\gamma_n=\pi n/L_{\rm box}(\gamma_n)\)</span>，数值误差从 0.19%（直接代入列，n=100）降至 0.021%（直接代入列，n=3000）、从 0.139%（迭代解列，n=100）降至 0.018%（迭代解列，n=3000）。
+<strong>待推的是相位</strong>：<span class="arithmatex">\(S(T)=\frac1\pi\arg\zeta(\frac12+iT)\)</span> 的行为——它与 Sierra 边界相位 <span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span>、Li 单位圆 <span class="arithmatex">\(z_n\)</span> <strong>互不同一</strong>（§5.7；前者为 RvM 涨落半，后二者分别为平滑 <span class="arithmatex">\(\theta\)</span> 型与几何相位）；<strong>剩余任务</strong>是给 <span class="arithmatex">\(S(T)\)</span> 一个只引用素数/<span class="arithmatex">\(\xi\)</span> 的独立表达式。</p>
+</blockquote>
+<h3 id="102">10.2 优先级<a class="headerlink" href="#102" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>相位 <span class="arithmatex">\(S(T)\)</span></strong>——待推 1 的实质空白。三圆关系（§5.7）：<span class="arithmatex">\(S\)</span>（阶梯/无界）、<span class="arithmatex">\(\vartheta_n\)</span>（平滑有界 <span class="arithmatex">\(\theta\)</span> 型）、<span class="arithmatex">\(\phi_n\)</span>（几何单调趋零）<strong>互不同一</strong>，唯一联系是 RvM 分解的涨落半/平滑半。<strong>剩余任务</strong>：给 <span class="arithmatex">\(S(T)\)</span> 一个只引用素数/<span class="arithmatex">\(\xi\)</span> 的表达式（= 把涨落半从 <span class="arithmatex">\(\arg\zeta\)</span> 换成 <span class="arithmatex">\(\xi\)</span>/素数输入）</li>
+<li><strong>定死 <span class="arithmatex">\(K_L\)</span></strong>——用 <span class="arithmatex">\(\Lambda_{\rm QCD}=203\)</span>（→0.656，自对偶退到 3.74%）还是 <span class="arithmatex">\(\lambda_{\rm QCD}=1.005\)</span>（→0.67860，几何 0.6805，保住 0.3% 但非严格第一性）；定死前 D4–D7 不作严格声明（§6.5.2）</li>
+<li><strong>低 <span class="arithmatex">\(n\)</span> 算术条件</strong>——= 待推 2（经典化）的有限 <span class="arithmatex">\(n\)</span> 算术条件（父文档 §15.3），三个信号 + 相位低 <span class="arithmatex">\(T\)</span> 失效指向同一处</li>
+<li><strong>归档 D11/K11/D9 在 CQM 现行框架重推</strong>——D9 须取 <span class="arithmatex">\(r\propto n^2\)</span>；检验 <span class="arithmatex">\(1/\text{☯}\)</span> 枢纽是结构还是巧合（依赖 GN 开放问题 10.1）</li>
+<li><strong>Li 耦级矩表述</strong>——可并行推进，不依赖待推 1，但终点仍是 RH</li>
+</ol>
+<h3 id="103">10.3 一句话底线<a class="headerlink" href="#103" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>五重联系统一到 <span class="arithmatex">\(\gamma_n=\pi n/L_{\rm box}(\gamma_n)\)</span>：轨道量子化是枢纽，Bohr 是呼吸关闭的极限（D11 把 <span class="arithmatex">\(a_0\)</span> 接到 <span class="arithmatex">\((1/\text{☯})^3\)</span>），Li 是绕数的 Fourier 模式，归档第五项给出 <span class="arithmatex">\(\tau=1+W((n-\tfrac78)/e)\)</span>（RvM 反解，§6.4）与 <span class="arithmatex">\(\nu_p=\text{☯}/\ln p\)</span>，Sierra 归档给出「长度+相位→谱」的机制骨架但相位输入仍循环；距离映射 <span class="arithmatex">\(K_L\)</span> 把一切装进 fm（禁闭映射常数：无量纲耦合壳→物理长度，§6.5.1）——但 <span class="arithmatex">\(K_L\)</span> 自身 3.3% 不自洽，D9 的线性 <span class="arithmatex">\(r_n\)</span> 不成立、须改 <span class="arithmatex">\(n^2\)</span>，<span class="arithmatex">\(\tfrac12:1:2\)</span> 与 Bohr 壳层不同构，K11 的 <span class="arithmatex">\(-1/\text{☯}\)</span> 与 <span class="arithmatex">\(G_N\)</span> 的 <span class="arithmatex">\(-2/\text{☯}\)</span> 是 <span class="arithmatex">\(\alpha_G\)</span> 平方关系。</strong></p>
+<p><strong>净结果：待推 1 = 长度已非循环解出 + 相位 <span class="arithmatex">\(S(T)\)</span> 未解；归档回捞使缺口从「未知边界」收缩到「一个已命名幅角 + 一个三圆辨析 + 一个尚未定值的度量 <span class="arithmatex">\(K_L\)</span>」。这不使 RH 更近，但使缺口可陈述、可攻击、可分工。</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 黎曼猜想证明思路 [D017]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                黎曼猜想证明思路 [D017]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-footer__link md-footer__link--next" aria-label="下一页: GN第一性推导公理化 [D019]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                GN第一性推导公理化 [D019]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

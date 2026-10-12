@@ -149,7 +149,7 @@ $$\hat{\mathcal{S}}_k\Psi_k = n_k\Psi_k$$
 
 $$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi ☯ \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}$$
 
-此式是 Bohr–Sommerfeld 量子化条件的体现：紧化U(1)的周期性边界条件与FG因果条件联立，选出离散的声子占据数。**声子占据数由同步方程锁定**，不是自由参数。
+此式是 Bohr–Sommerfeld 量子化条件的体现：紧致 U(1) 的周期性边界条件与 FG 因果条件联立，选出离散的声子占据数。**声子占据数由同步方程锁定**，不是自由参数。
 
 ### 4.3 同步的声子链条
 

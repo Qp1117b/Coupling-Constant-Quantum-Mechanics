@@ -15,7 +15,7 @@
 ## 二、三条不可违反的边界（承袭根 AGENTS 三条红线）
 
 1. **外部文本不动**：`01`–`07` 理论文档不修改；本目录只存引用、锚点、结构化数据与形式化产物。
-2. **缺口原样**：缺口语义、编号（C / G2–G8 / G9–G22 / N1–N4 / H3.1–H3.3 / A–E）与状态**不得**升级为"已证""已闭合"。
+2. **缺口原样**：缺口语义、编号（C / G2–G8 / G9–G22 / N1–N4 / H3.1–H3.3 / A–E；G6 未定义）与状态**不得**升级为"已证""已闭合"。
 3. **不引入理论外**：不得新增 CQM 未涉及的观点、术语、数值、文献、编号。
 
 ## 三、七维度责任矩阵
@@ -43,17 +43,18 @@
 
 | 变更类型 | 必做同步（按序） |
 |:---|:---|
-| 新增/改概念 | 概念表 → `build_base` → `build_ontology` → `build_ml` → `build_bridge` → `build_site` → `build_meta` |
-| 新增/改命题或缺口 | 命题表 → `build_ml`（命题-证明对）→ `build_causal`（贝叶斯网络）→ `build_site` → `build_meta` |
-| 新增/改论证或关系 | 论证表 → `build_base` → `build_ml` → `build_dynamics` → `build_bridge` → `build_site` → `build_meta` |
-| 新增/改 Lean 声明 | `build_lean` → `build_ml`（lean声明.jsonl）→ `build_site` → `build_meta` |
-| 术语/符号/口径变化 | `build_bridge` → `02/术语符号一致清单.md`（登记）→ `build_meta` |
+| 新增/改概念 | 概念表 → `build_base` → `build_evidence` → `build_claims` → `build_ontology` → `build_kg` → `build_ml` → `build_extract` → `build_bridge` → `build_site` → `build_search` → `build_meta` |
+| 新增/改命题或缺口 | 命题表 → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml`（命题-证明对）→ `build_causal`（贝叶斯网络）→ `build_site` → `build_search` → `build_meta` |
+| 新增/改论证或关系 | 论证表 → `build_base` → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml` → `build_dynamics` → `build_bridge` → `build_site` → `build_search` → `build_meta` |
+| 新增/改 Lean 声明 | `build_lean` → `build_kg`（Lean 映射入图）→ `build_ml`（lean声明.jsonl）→ `build_site` → `build_meta` |
+| 术语/符号/口径变化 | `build_bridge` → `02/术语符号一致清单.md`（登记）→ `build_claims`（别名词表）→ `build_kg` → `build_meta` |
 | 任意产物变化 | `build_meta` 重生成 manifest，并**更新 `11_元数据/变更日志.md`** |
 
 **收尾必跑**：
 
 ```bash
-python "08 理论组织和形式化框架/_build/check_consistency.py"
+python "08 理论组织和形式化框架/_build/check_provenance.py"   # 证据层：引文必须逐字等于原文区间
+python "08 理论组织和形式化框架/_build/check_consistency.py"  # 组织层：41 项跨产物硬检查
 ```
 
 未通过即视为**研究未完成**——不得以"仅更新了文档"结项。
@@ -71,8 +72,11 @@ python "08 理论组织和形式化框架/_build/check_consistency.py"
 ## 六、构建与复现
 
 - 全部产物由 `_build/` 脚本从源 CSV 与外部 Lean 源码生成；脚本含断言预检。
-- 执行顺序：`fix_csv → build_base → build_ontology → build_lean → build_ml → build_dynamics → build_causal → build_bridge → build_site → build_meta`。
+- 执行顺序：`fix_csv → build_base → build_evidence → build_claims → build_ontology → build_kg → build_lean → build_ml → build_extract → build_dynamics → build_causal → build_bridge → build_site → build_search → build_reader_site → build_meta`。
+- 证据层规则：任何断言都必须能回溯到 `00_外部引用/证据映射.csv` 的一条记录（含字符区间与引文）；`verified` 仅人工复核后可置 `True`。
+- 抽取层规则：术语候选 / 关系候选 / 语义近邻**只能进候选池**，不得直接写入概念表；抽取只做定位与归一，不推断、不补全。
 - `fix_csv.py` 为一次性修复脚本（幂等）。
+- 依赖：`numpy`、`networkx`、`matplotlib`、`owlready2` + **Java**（HermiT）、`rdflib`、`pyshacl`、`jieba`、`mkdocs-material`（阅读站）。
 - **临时工具脚本不得提交**；`_build/` 不计入产品文件统计。
 
 ## 七、反模式（明确禁止"忽视维度"）
@@ -90,7 +94,9 @@ python "08 理论组织和形式化框架/_build/check_consistency.py"
 
 - [ ] 变更已落到**源 CSV**（或 Lean 源码），而非派生文件。
 - [ ] §四 对应行的**全部**同步脚本已重跑。
+- [ ] `check_provenance.py` **通过**（证据引文与字符区间逐字一致）。
 - [ ] `check_consistency.py` **通过**（退出码 0）。
+- [ ] SHACL 合规且 HermiT 一致；抽取候选只进候选池，未写入概念表。
 - [ ] 缺口编号与状态未被升级；`$G_N$` 限定语在位。
 - [ ] `11_元数据/manifest.json` 与 `变更日志.md` 已更新。
 - [ ] 未修改 `01`–`07` 理论文档。
@@ -99,15 +105,22 @@ python "08 理论组织和形式化框架/_build/check_consistency.py"
 
 ```bash
 cd "08 理论组织和形式化框架/_build"
-python check_consistency.py          # 一致性硬检查（必过）
+python check_provenance.py           # 证据层硬检查（必过；含复核闭环校验）
+python check_consistency.py          # 一致性硬检查（41 项，必过）
 python build_base.py                 # 结构化层重建
-python build_ontology.py             # 02 本体
+python build_evidence.py             # 00 证据层：语料/章节/句索引/证据映射（只读理论文本）
+python build_claims.py               # 01 主张图：缺口依赖/命题依赖/别名/论证对齐 + 03 知识图谱.json
+python build_ontology.py             # 02 本体（公理层 + HermiT 一致性）
+python build_kg.py                   # 02/03 RDF 导出 + SHACL 校验 + SPARQL 能力问句
 python build_lean.py                 # 04 Lean 对接
 python build_ml.py                   # 05 ML 数据
+python build_extract.py              # 05 抽取流水线（术语候选/分层关系评测/语义特征/零覆盖候选）
+python llm_extract.py                # 05 LLM 关系定型（就绪；无 CQM_LLM_* 环境变量时跳过并登记，不谎报执行）
 python build_dynamics.py             # 06 动态机制
 python build_causal.py               # 07 经验检验
 python build_bridge.py               # 09 桥接翻译
-python build_site.py                 # 10 展示可视化
-python build_reader.py               # 10 离线阅读站（读 01–07 文本，不进入源 CSV 闭环）
+python build_site.py                 # 10 驾驶舱 / 多层超图
+python build_search.py               # 10 检索台（图谱 + BM25 全文 + 证据 + SPARQL）
+python build_reader_site.py        # 10 离线阅读站（Material for MkDocs + jieba 搜索；只读根 README + 01–07 文本与 一体化研究/附录；build_reader.py 已存档）
 python build_meta.py                 # 11 元数据
 ```

@@ -139,6 +139,75 @@ def main():
           and site["meta"]["hyperedges"] == 19 and site["meta"]["edges"] == 51,
           str(site["meta"]))
 
+    # ---------- 证据层 / 主张层 / 图谱 / 校验 ----------
+    ev = rd(os.path.join(ROOT, "00_外部引用", "证据映射.csv"))
+    ev_by_id = {r["struct_id"]: r for r in ev}
+    want_ev = cids | pids | {a["arg_id"] for a in args}
+    check("证据层覆盖 82+63+70 条断言", set(ev_by_id) == want_ev and len(ev) == len(want_ev),
+          f"{len(ev)} 条 / 期望 {len(want_ev)}")
+    corpus_txt = {}
+    bad_quote = 0
+    for r in ev:
+        did = r.get("evidence_doc") or r.get("doc_id")
+        if did not in corpus_txt:
+            p = None
+            for d in rd(os.path.join(ROOT, "00_外部引用", "语料清单.csv")):
+                if d["doc_id"] == did:
+                    p = os.path.join(PARENT, d["path"])
+            corpus_txt[did] = (open(p, encoding="utf-8", errors="replace").read()
+                               if p and os.path.exists(p) else None)
+        raw = corpus_txt.get(did)
+        if raw is None:
+            continue
+        try:
+            st, en = int(r["char_start"]), int(r["char_end"])
+        except Exception:
+            continue
+        if not (0 <= st < en <= len(raw)) or (r["quote"] and raw[st:en] != r["quote"]):
+            bad_quote += 1
+    check("证据引文与字符区间逐字一致", bad_quote == 0, f"{bad_quote} 条不一致")
+
+    gapx = rd(os.path.join(ROOT, "01_结构化数据", "缺口编号对照.csv"))
+    gapd = rd(os.path.join(ROOT, "01_结构化数据", "缺口依赖.csv"))
+    clm = rd(os.path.join(ROOT, "01_结构化数据", "命题依赖.csv"))
+    gaps_only = [g for g in gapx if g.get("gap_code")]
+    check("缺口编号对照 = 24 个缺口 + 8 条 id 前缀冲突登记",
+          len(gaps_only) == 24 and len(gapx) - len(gaps_only) == 8,
+          f"{len(gaps_only)} + {len(gapx)-len(gaps_only)}")
+    check("缺口依赖链 G2→G3→G4→G5", {(e["src"], e["dst"]) for e in gapd} ==
+          {("G2", "G3"), ("G3", "G4"), ("G4", "G5")}, str(len(gapd)))
+    check("claim 级边 > 250（原为 0）", len(clm) > 250, str(len(clm)))
+
+    kgj = jload(os.path.join(ROOT, "03_超图与理论图", "知识图谱.json"))
+    check("知识图谱 145 实体 / 360 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (145, 360),
+          f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
+    ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
+    check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
+    qrep = jload(os.path.join(ROOT, "02_概念本体", "本体校验报告.json"))
+    check("SHACL 数据契约全部通过", qrep["shacl"]["conforms"] is True,
+          f"违约 {qrep['shacl']['violations']}")
+    ost = jload(os.path.join(ROOT, "02_概念本体", "本体统计.json"))
+    check("HermiT 推理一致且无不可满足类",
+          ost["reasoner"]["consistent"] is True and not ost["reasoner"]["unsatisfiable_classes"],
+          str(ost["reasoner"]["unsatisfiable_classes"]))
+    check("本体公理层：25 类 / 429 个体 / 16 对象属性",
+          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 429, 16),
+          f"{ost['owl_classes']}/{ost['owl_individuals']}/{ost['owl_object_properties']}")
+    ext = jload(os.path.join(ROOT, "05_机器学习数据准备", "关系抽取", "抽取评测.json"))
+    check("抽取评测含召回上界（诚实边界）",
+          "recall_ceiling_sentence_cooccurrence" in ext and ext["gold_pairs"] > 0,
+          f"上界 {ext.get('recall_ceiling_sentence_cooccurrence')}")
+    tpool = jload(os.path.join(ROOT, "05_机器学习数据准备", "术语候选", "术语候选统计.json"))
+    check("术语候选池存在且未写入概念表", tpool["new_candidates_kept"] > 0 and len(concepts) == 82,
+          f"候选 {tpool['new_candidates_kept']}")
+    for rel in ("10_展示可视化/检索台/index.html", "10_展示可视化/网站/index.html",
+                "10_展示可视化/交互式可视化/超图交互.html", "03_超图与理论图/知识图谱.ttl",
+                "02_概念本体/shapes.shacl.ttl", "00_外部引用/句索引/句索引.jsonl"):
+        p = os.path.join(ROOT, rel.replace("/", os.sep))
+        check(f"产物存在：{rel}", os.path.exists(p) and os.path.getsize(p) > 1000,
+              f"{os.path.getsize(p) if os.path.exists(p) else 0} B")
+
     # ---------- 维度覆盖 ----------
     dims = {"结构化": ["00_外部引用", "01_结构化数据", "03_超图与理论图"],
             "本体": ["02_概念本体"], "ML": ["05_机器学习数据准备"],

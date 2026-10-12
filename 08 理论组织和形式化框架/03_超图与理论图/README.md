@@ -8,7 +8,7 @@
 | `CQM_概念关系超图.md` | 概念集合、发生学主干、超边清单、关系摘要、Graphviz 建模建议 |
 | `CQM_概念关系超图.dot` | Graphviz 源（6 cluster，哑节点展开超边） |
 | `CQM_概念关系超图.svg` / `.png` | 静态渲染 |
-| `超图可视化.html` | 交互式超图（离线自包含；与 `10_输出可视化展示/交互式可视化/` 同步） |
+| `超图可视化.html` | 交互式超图（Cytoscape.js：类型分簇等 6 布局、邻域聚焦、有向路径、派生级联回放、小地图、导出 PNG；离线自包含；与 `10_展示可视化/交互式可视化/` 同步） |
 | `理论依赖图.md` | 文档级依赖 DAG（分层总览、逐篇卡片、关键依赖矩阵） |
 
-构建：`_build/build_base.py`（数据）、`_build/build_site.py`（交互可视化）。
+构建：`_build/build_base.py`（数据）、`_build/build_site.py`（交互可视化，并复制 `assets/cytoscape.min.js`）。

@@ -1,0 +1,3591 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html">
+      
+      
+        <link rel="next" href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>声子理论 [D011] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cqm" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              声子理论 [D011]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 声子的定义与构造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 声子的定义与构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 声子 = 曲率量子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 从位置-动量到声子（FG层的严格构造）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 声子能量
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 声子是振荡的量子
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 声子是振荡的量子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 核子量子振荡 = 位置-动量对易关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 位置涨落与声子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 振荡模式数限定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 声子是曲率涨落的源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 声子是曲率涨落的源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 从声子到曲率涨落算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 总曲率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 曲率涨落的声子谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 声子是同步的前提
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 声子是同步的前提">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 同步方程作用于声子占据态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 声子占据数锁定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 同步的声子链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 声子的三层结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 声子的三层结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 前时空层声子：前时空量子涨落
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-gr-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 GR层声子：中子-质子运动振荡产生的声子是时空的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 FG 层声子：核子曲率量子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 三层声子的统一性与区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 声子是时空的前提
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 声子是时空的前提">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-gl5-su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 时空 = 核子间关系网络 = 平庸因果网络 = GL(5) ⇒ SU(5)重组实现结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 时空的声子：中子-质子运动振荡产生的声子是时空的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 声子是时空结构的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 时空声子的同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 时空同步前沿速度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 时空同步前沿速度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-c-gamma_1ell_textpre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 \(c = \gamma_1\ell_{\text{pre}}\)：时空同步前沿速度的结构公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 声子以时空同步前沿速度传播
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-cft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 CFT幂律传播与同步蔓延
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 时空同步前沿速度的层次
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 声子与量纲归一化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 声子与量纲归一化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 声子能量在量纲归一化中的角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 声子频率的代数确定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-m_em_p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 声子与 \(m_e/m_p\) 涌现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 声子与超导
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 声子与超导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 晶胞量子振荡与同步再锁定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 温度通过声子数进入自组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 声子与配对/相干
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 声子的层级传递
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 声子的层级传递">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 FG层级同步算符体系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 层级角亏传递
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 声子的统一角色
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 声子的统一角色">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 全景图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 声子的五重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 声子与CQM推导链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 声子的定义与构造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 声子的定义与构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 声子 = 曲率量子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 从位置-动量到声子（FG层的严格构造）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 声子能量
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 声子是振荡的量子
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 声子是振荡的量子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 核子量子振荡 = 位置-动量对易关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 位置涨落与声子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 振荡模式数限定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 声子是曲率涨落的源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 声子是曲率涨落的源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 从声子到曲率涨落算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 总曲率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 曲率涨落的声子谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 声子是同步的前提
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 声子是同步的前提">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 同步方程作用于声子占据态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 声子占据数锁定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 同步的声子链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 声子的三层结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 声子的三层结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 前时空层声子：前时空量子涨落
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-gr-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 GR层声子：中子-质子运动振荡产生的声子是时空的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 FG 层声子：核子曲率量子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 三层声子的统一性与区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 声子是时空的前提
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 声子是时空的前提">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-gl5-su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 时空 = 核子间关系网络 = 平庸因果网络 = GL(5) ⇒ SU(5)重组实现结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 时空的声子：中子-质子运动振荡产生的声子是时空的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 声子是时空结构的前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 时空声子的同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 时空同步前沿速度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 时空同步前沿速度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-c-gamma_1ell_textpre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 \(c = \gamma_1\ell_{\text{pre}}\)：时空同步前沿速度的结构公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 声子以时空同步前沿速度传播
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-cft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 CFT幂律传播与同步蔓延
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 时空同步前沿速度的层次
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 声子与量纲归一化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 声子与量纲归一化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 声子能量在量纲归一化中的角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 声子频率的代数确定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-m_em_p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 声子与 \(m_e/m_p\) 涌现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 声子与超导
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 声子与超导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 晶胞量子振荡与同步再锁定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 温度通过声子数进入自组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 声子与配对/相干
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 声子的层级传递
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. 声子的层级传递">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 FG层级同步算符体系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 层级角亏传递
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 声子的统一角色
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 声子的统一角色">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 全景图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 声子的五重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 声子与CQM推导链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cqm">CQM核心：声子理论——振荡、曲率与同步的量子媒介<a class="headerlink" href="#cqm" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>声子是CQM的核心量子媒介，贯穿前时空、GR、FG 三个层级。中子-质子运动振荡产生的声子（GR层）是同步的前提，是时空的前提；FG层的Regge角亏量子是曲率涨落的源。没有声子就没有曲率涨落，没有曲率涨落就没有同步，没有同步就没有时空和物质结构。声子是CQM从量子力学到几何到代数的全推导链的起点。</p>
+<p><strong>核心命题</strong>：</p>
+<div class="arithmatex">\[\boxed{\text{中子-质子运动振荡产生的声子（GR 层）} = \text{同步的前提} = \text{时空的前提}\,;\quad \text{FG 层 Regge 角亏量子} = \text{曲率涨落的源}}\]</div>
+<p><strong>声子的三层结构</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">层次</th>
+<th style="text-align: left;">声子身份</th>
+<th style="text-align: left;">物理表现</th>
+<th style="text-align: left;">同步角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">前时空</td>
+<td style="text-align: left;">前时空量子涨落</td>
+<td style="text-align: left;">物质处于前时空的状态</td>
+<td style="text-align: left;">物质能否以有限本体自组织</td>
+</tr>
+<tr>
+<td style="text-align: center;">GR</td>
+<td style="text-align: left;">中子-质子运动振荡产生的声子，是时空的前提</td>
+<td style="text-align: left;">引力波</td>
+<td style="text-align: left;">时空同步（速度 <span class="arithmatex">\(= c\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: center;">FG</td>
+<td style="text-align: left;">核子曲率量子</td>
+<td style="text-align: left;">Regge角亏涨落 <span class="arithmatex">\(\Delta\delta_v\)</span></td>
+<td style="text-align: left;">核子层同步（给出周期表）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>相关文档</strong>：
+- <code>CQM_核心_引力存在论前提.md</code>：两种引力的层级关系，声子作为曲率量子（§3.5）
+- <code>CQM_核心_因果网络同步理论.md</code>：同步算符 = 紧化算符，时空同步前沿速度 <span class="arithmatex">\(c = \gamma_1\ell_{\text{pre}}\)</span>
+- <code>CQM_核心_共形场论与OPE.md</code>：CFT幂律传播 <span class="arithmatex">\(r^{-2h}\)</span>，同步四阶段
+- <code>CQM_核心_集成理论.md</code>：量纲归一化与恢复，声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span> 在归一化中的角色
+- <code>07 精细引力（FG）/FG_纤维丛理论.md</code> §4：曲率涨落算符、量纲归一化因子、声子代数
+- <code>06 超导/CQM_超导核心理论.md</code>：声子 = 底空间Regge曲率量子（§6），晶胞量子振荡与同步</p>
+<h2 id="1">1. 声子的定义与构造<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 声子 = 曲率量子<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p><strong>定义</strong>：声子是底空间Regge曲率（角亏）的量子涨落。</p>
+<p>晶胞量子振荡导致底空间曲率（角亏）涨落：</p>
+<div class="arithmatex">\[\delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t)\]</div>
+<p>量子化后，<span class="arithmatex">\(\Delta\delta_v\)</span> 就是声子：</p>
+<div class="arithmatex">\[\Delta\delta_v(\mathbf{r},t) = \sum_q \sqrt{\frac{\hbar}{2\rho_m\omega_q}}(\hat{b}_q + \hat{b}_{-q}^\dagger)e^{i\mathbf{q}\cdot\mathbf{r}}\]</div>
+<p>声子频率由底空间曲率刚度决定（式中 <span class="arithmatex">\(K_{\text{eff}}\)</span> 为曲率刚度系数，非量纲与群论意义上的特征常数 <span class="arithmatex">\(K\)</span>）：</p>
+<div class="arithmatex">\[\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2\]</div>
+<p><strong>关键</strong>：声子不是独立的晶格振动自由度（对照传统固体物理的晶格声子），而是底空间曲率（角亏）的量子涨落。声子是FG曲率的量子激发。</p>
+<h3 id="12-fg">1.2 从位置-动量到声子（FG层的严格构造）<a class="headerlink" href="#12-fg" title="Permanent link">&para;</a></h3>
+<p><strong>起点</strong>：位置-动量对易关系（预量子化线丛的联络曲率）：</p>
+<div class="arithmatex">\[[\hat{X}_v, \hat{P}_{v'}] = i\hbar\,\delta_{vv'}\]</div>
+<p><strong>步骤1：简正模式对角化</strong></p>
+<div class="arithmatex">\[\hat{Q}_k = \sum_v v_k(v)\hat{X}_v, \quad \hat{\Pi}_k = \sum_v v_k(v)\hat{P}_v, \quad [\hat{Q}_k, \hat{\Pi}_{k'}] = i\hbar\,\delta_{kk'}\]</div>
+<p>简正模式由嘉当矩阵本征向量 <span class="arithmatex">\(v_k(v)\)</span> 确定。</p>
+<p><strong>步骤2：声子算符构造</strong></p>
+<div class="arithmatex">\[\boxed{\hat{a}_k = \sqrt{\frac{m\omega_k}{2\hbar}}\hat{Q}_k + i\sqrt{\frac{1}{2m\hbar\omega_k}}\hat{\Pi}_k, \quad [\hat{a}_k, \hat{a}_{k'}^\dagger] = \delta_{kk'}}\]</div>
+<p>声子频率待推。</p>
+<p><strong>严格性</strong>：声子来自 <span class="arithmatex">\([\hat{X},\hat{P}]=i\hbar\)</span>，不是额外假设。简正模式对角化保持对易子，嘉当矩阵是离散协变导数的必然结果。</p>
+<h3 id="13">1.3 声子能量<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\boxed{E_k = \hbar\omega_k\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}\]</div>
+<p>声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span> 是量纲归一化的输入——在FG纤维丛截断处，<span class="arithmatex">\(\hbar\omega_k\)</span> 除以 <span class="arithmatex">\(E_{\text{bind}}\)</span> 得到无量纲曲率（详见§8与 <code>07 精细引力（FG）/FG_纤维丛理论.md</code> §4）。</p>
+<h2 id="2">2. 声子是振荡的量子<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21-">2.1 核子量子振荡 = 位置-动量对易关系<a class="headerlink" href="#21-" title="Permanent link">&para;</a></h3>
+<p>核子量子振荡就是位置-动量对易关系的动力学表现。曲率涨落就是这些量子振荡在Regge几何上的量子投影。</p>
+<p><strong>物理图像</strong>：</p>
+<div class="highlight"><pre><span></span><code>核子（顶点v）量子振荡
+ ↓ 位置-动量对易 [X̂, P̂] = iℏ
+ ↓ 简正模式对角化 → 4个独立振荡模式（A₄秩=4）
+ ↓ 量子化 → 声子 â_k（振荡的量子）
+ ↓ Regge几何非线性 → 曲率涨落 δ̂_v⁽¹⁾
+</code></pre></div>
+<h3 id="22">2.2 位置涨落与声子<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>顶点 <span class="arithmatex">\(v\)</span> 的位置涨落：</p>
+<div class="arithmatex">\[\Delta\hat{X}_v = \sum_k v_k(v)\sqrt{\frac{\hbar}{2m\omega_k}}(\hat{a}_k + \hat{a}_k^\dagger)\]</div>
+<p>位置涨落是声子的线性叠加。<span class="arithmatex">\(\sqrt{\hbar/(2m\omega_k)}\)</span> 是零点振幅，由声子频率确定。</p>
+<h3 id="23">2.3 振荡模式数限定<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>核子层有 4 个独立集体量子振荡模式。这 4 个模式对应 s,p,d,f 四种自组织模式，第5种（g，<span class="arithmatex">\(l=4\)</span>）被禁戒。壳层标签由 SU(5) Dynkin图深度严格推导。</p>
+<h2 id="3">3. 声子是曲率涨落的源<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 从声子到曲率涨落算符<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>Regge几何非线性：角亏涨落正比于位置涨落平方。位置涨落平方 <span class="arithmatex">\((\Delta\hat{X}_v)^2\)</span> 通过Regge几何的二阶导数映射转换为声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span>，再经量纲归一化得到无量纲曲率：</p>
+<div class="arithmatex">\[\boxed{\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)}\]</div>
+<p><strong>声子是曲率涨落的源（FG 层 Regge 角亏量子）</strong>：曲率涨落算符 <span class="arithmatex">\(\hat{\delta}_v^{(1)}\)</span> 完全由声子算符 <span class="arithmatex">\(\hat{a}_k, \hat{a}_k^\dagger\)</span> 构造。没有声子就没有曲率涨落。</p>
+<h3 id="32">3.2 总曲率<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">成分</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">性质</th>
+<th style="text-align: left;">角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\bar{\delta}_v\)</span></td>
+<td style="text-align: left;">Regge剖分 + 经典边长</td>
+<td style="text-align: left;">c-数</td>
+<td style="text-align: left;">经典背景曲率</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{\delta}_v^{(1)}\)</span></td>
+<td style="text-align: left;">声子（来自 <span class="arithmatex">\([\hat{X},\hat{P}]=i\hbar\)</span>）</td>
+<td style="text-align: left;">算符</td>
+<td style="text-align: left;">量子涨落曲率</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 曲率涨落的声子谱<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>曲率涨落的第 <span class="arithmatex">\(k\)</span> 个模式：</p>
+<div class="arithmatex">\[\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(N_k + \frac{1}{2}\right)\]</div>
+<p>声子占据数 <span class="arithmatex">\(N_k\)</span> 由同步方程的等价关系锁定（§4.2），不是自由参数。</p>
+<h2 id="4">4. 声子是同步的前提<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>同步方程属于因果网络同步理论</strong>：同步算符 = 紧化算符，同步方程 <span class="arithmatex">\(\hat{\mathcal{S}}\Psi = n\Psi\)</span> 的完整理论详见 <code>CQM_核心_因果网络同步理论.md</code>。本节论述声子作为同步前提的角色。</p>
+</blockquote>
+<h3 id="41">4.1 同步方程作用于声子占据态<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>同步算符（因果网络同步理论定义，= 紧化算符在截面空间的实现）：</p>
+<div class="arithmatex">\[\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}\]</div>
+<p>同步方程：</p>
+<div class="arithmatex">\[\hat{\mathcal{S}}_k\Psi_k = n_k\Psi_k\]</div>
+<p>同步算符通过曲率算符 <span class="arithmatex">\(\hat{\delta}_v\)</span> 作用于声子占据态 <span class="arithmatex">\(|N_1, N_2, N_3, N_4\rangle\)</span>。<strong>没有声子就没有曲率涨落，没有曲率涨落同步算符就无输入——不知道“同步什么”</strong>。</p>
+<h3 id="42">4.2 声子占据数锁定<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>等价关系（同步方程 + 曲率涨落代入）：</p>
+<div class="arithmatex">\[N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi ☯ \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}\]</div>
+<p>此式是 Bohr–Sommerfeld 量子化条件的体现：紧致 U(1) 的周期性边界条件与 FG 因果条件联立，选出离散的声子占据数。<strong>声子占据数由同步方程锁定</strong>，不是自由参数。</p>
+<h3 id="43">4.3 同步的声子链条<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>声子（振荡的量子）
+ ↓ 构造
+曲率涨落 δ̂_v⁽¹⁾
+ ↓ 进入
+同步算符 Ŝ_k
+ ↓ 本征值问题
+同步方程 Ŝ_k Ψ_k = n_k Ψ_k
+ ↓ 锁定
+声子占据数 N_k（整数）
+ ↓ 对应
+本征群 G_k → 角动量 l_k → 壳层容量 N_k^max
+ ↓ CFT
+周期表（Z_max=118）
+</code></pre></div>
+<p><strong>声子是同步的前提</strong>：声子提供曲率涨落，曲率涨落进入同步算符，同步算符给出本征群，本征群给出周期表。整条推导链从声子开始。</p>
+<h2 id="5">5. 声子的三层结构<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 前时空层声子：前时空量子涨落<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p><strong>定义</strong>：前时空层是最基础的层，声子以前时空量子涨落的形式存在于其中，其谱结构经GL(5)紧化投影与黎曼零点 <span class="arithmatex">\(\gamma_n\)</span> 有关。</p>
+<p><strong>物理意义</strong>：前时空层声子决定物质能否以有限本体形式自组织出来。该层的谱结构经GL(5)紧化投影后，与黎曼零点 <span class="arithmatex">\(\gamma_n\)</span> 有关——黎曼零点是“资格审查”的原始形态，决定物质有限化是否可能。</p>
+<p><strong>同步角色</strong>：前时空层同步 = 紧化投影 <span class="arithmatex">\(\hat{\mathcal{S}}_0: \mathcal{H}_{\text{auto}}(\mathrm{GL}(5)) \to \mathcal{H}_{\text{phys}}(\mathrm{SU}(5))\)</span>，将非紧GL(5)自守形式投影到紧SU(5)表示。</p>
+<p><strong>数学结构</strong>：GL(5) 自守 L 函数零点谱，紧化算符 <span class="arithmatex">\(\hat{\mathcal{S}}_0\)</span>。</p>
+<h3 id="52-gr-">5.2 GR层声子：中子-质子运动振荡产生的声子是时空的前提<a class="headerlink" href="#52-gr-" title="Permanent link">&para;</a></h3>
+<p><strong>定义</strong>：GR层是时空层（平庸因果网络），中子-质子运动振荡产生的声子是时空的前提。</p>
+<p><strong>时空的本质</strong>：时空 = 中子-质子、质子-质子、中子-中子的关系网络，这个关系网络<strong>就是</strong>平庸因果网络（不是“被平庸化”的结果，本身就是平庸的）。时空<strong>不是</strong>Regge底空间上的构造（Regge底空间是FG层的，描述核子分布的离散几何），而是<strong>GL(5) ⇒ SU(5)重组实现的直接结果</strong>，且<strong>具有相对独立性</strong>——一旦从重组实现涌现，就作为独立的时空背景存在，FG的Regge底空间嵌入其中：</p>
+<div class="arithmatex">\[\boxed{\text{时空} = \text{核子间关系网络（n-p, p-p, n-n）} = \text{平庸因果网络} = \text{GL(5) ⇒ SU(5)重组实现结果}}\]</div>
+<p>SU(5) 重组实现 ⇒ <span class="arithmatex">\(U(1)\)</span> 电磁群 → <span class="arithmatex">\(\alpha\)</span>，规范重组实现给出 <span class="arithmatex">\(U(1) \times SU(2) \times SU(3)\)</span>（三个规范群直积，全紧致，时间无内禀规范群）。核子间关系网络就是平庸因果网络（时空 = 伪黎曼流形）。时空的度规结构来自重组实现后的规范结构，不是从 Regge 剖分构造的。时空具有相对独立性——作为平庸因果网络，它是FG层非平庸激发的背景。</p>
+<p><strong>物理意义</strong>：时空是平庸因果网络（基态）。中子-质子运动振荡产生的声子是时空的前提。引力波是时空的扰动。在经典极限下，时空呈现为平滑的伪黎曼流形。</p>
+<p><strong>退相干机制</strong>：GR = 前时空退相干后涌现的平庸因果网络。退相干把量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。微观的关系网络结构（晶胞、角亏、内部层级）被抹去，只留下能动张量。中子-质子运动振荡产生的声子是时空的前提，以引力波形式可观测。</p>
+<p><strong>同步角色</strong>：GR层同步 = 基底性同步（所有自由度退相干锁定为经典分支）。时空同步前沿速度 <span class="arithmatex">\(c\)</span>（§7）。</p>
+<p><strong>数学结构</strong>：伪黎曼流形（GL(5) ⇒ SU(5)重组实现后的平庸时空），Levi-Civita联络，黎曼曲率 <span class="arithmatex">\(R^\rho_{\sigma\mu\nu}\)</span>。</p>
+<h3 id="53-fg">5.3 FG 层声子：核子曲率量子<a class="headerlink" href="#53-fg" title="Permanent link">&para;</a></h3>
+<p><strong>定义</strong>：FG层是核子层（非平庸因果网络），声子是Regge角亏的量子涨落。</p>
+<p><strong>物理意义</strong>：FG层声子是组织本身（动态曲率量子）。声子通过晶胞量子振荡→角亏涨落→联络→耦合常数跃迁的链条，驱动自组织与层级创生。FG层声子不受 <span class="arithmatex">\(G_N\)</span> 限制，直接由Regge角亏决定，量级 <span class="arithmatex">\(O(1)\)</span>，在凝聚态可测。</p>
+<p><strong>同步角色</strong>：FG层同步 = 展开性同步（基频锁定 + 高模涨落）。同步给出本征群 <span class="arithmatex">\(\{G_k\}\)</span>，导出周期表。</p>
+<p><strong>数学结构</strong>：Regge剖分，嘉当矩阵，Regge角亏 <span class="arithmatex">\(\delta_v\)</span> + 伴丛曲率 <span class="arithmatex">\(F = dA + A\wedge A\)</span>。</p>
+<h3 id="54">5.4 三层声子的统一性与区别<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{pre} \xrightarrow{\text{退相干}} \text{GR（基态：平庸因果网络 = 时空）} \xrightarrow{\text{非平庸再自组织}} \text{FG（激发态：非平庸因果网络 = 纤维丛）}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">层次</th>
+<th style="text-align: left;">声子身份</th>
+<th style="text-align: left;">因果网络</th>
+<th style="text-align: left;">底空间</th>
+<th style="text-align: left;">曲率</th>
+<th style="text-align: left;">同步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">前时空</td>
+<td style="text-align: left;">前时空量子涨落</td>
+<td style="text-align: left;">物质处于前时空的状态</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">谱经GL(5)紧化投影与 <span class="arithmatex">\(\gamma_n\)</span> 有关</td>
+<td style="text-align: left;">紧化投影</td>
+</tr>
+<tr>
+<td style="text-align: center;">GR</td>
+<td style="text-align: left;">中子-质子运动振荡产生的声子，是时空的前提</td>
+<td style="text-align: left;">平庸因果网络（核子间关系网络，就是平庸的）</td>
+<td style="text-align: left;">伪黎曼流形（GL(5) ⇒ SU(5)重组实现结果，非Regge底空间）</td>
+<td style="text-align: left;">黎曼曲率 <span class="arithmatex">\(R^\rho_{\sigma\mu\nu}\)</span></td>
+<td style="text-align: left;">基底性同步（速度 <span class="arithmatex">\(=c\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: center;">FG</td>
+<td style="text-align: left;">核子曲率量子（<span class="arithmatex">\(\Delta\delta_v\)</span>）</td>
+<td style="text-align: left;">非平庸因果网络（纤维丛）</td>
+<td style="text-align: left;">Regge剖分（核子分布离散几何）</td>
+<td style="text-align: left;">Regge角亏 <span class="arithmatex">\(\delta_v\)</span> + 伴丛曲率</td>
+<td style="text-align: left;">展开性同步（给出周期表）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>统一性</strong>：三层次同源，GR 与 FG 是退相干在不同层级的存在论效果，前时空是其先行层级。声子在前时空层以前时空量子涨落形式存在于该层中，在GR层中子-质子运动振荡产生的声子是时空的前提，在FG层以曲率量子形式完整显现并驱动自组织。</p>
+<p><strong>区别</strong>：
+- 前时空层声子：前时空，决定物质能否有限化
+- GR层声子：中子-质子运动振荡产生的声子是时空的前提，以引力波形式可观测
+- FG层声子：曲率量子，完整显现，驱动自组织与层级创生</p>
+<h2 id="6">6. 声子是时空的前提<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61-gl5-su5">6.1 时空 = 核子间关系网络 = 平庸因果网络 = GL(5) ⇒ SU(5)重组实现结果<a class="headerlink" href="#61-gl5-su5" title="Permanent link">&para;</a></h3>
+<p>时空 = 中子-质子、质子-质子、中子-中子的关系网络，这个关系网络<strong>就是</strong>平庸因果网络（不是“被平庸化”的结果，本身就是平庸的）。这是 GL(5) ⇒ SU(5) 重组实现的直接结果。时空<strong>不是</strong> Regge 底空间上的构造（Regge 底空间属于 FG 层，描述核子分布的离散几何），而是从GL(5) ⇒ SU(5)重组实现直接涌现的，且<strong>具有相对独立性</strong>——作为平庸因果网络，时空是独立的物理实体，FG的Regge底空间嵌入其中作为非平庸激发。</p>
+<p>在因果网络状态的分类中，GR是基态（平庸态）：双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。</p>
+<div class="arithmatex">\[\boxed{\text{时空} = \text{核子间关系网络（n-p, p-p, n-n）} = \text{平庸因果网络} = \text{GL(5) ⇒ SU(5)重组实现结果} = \text{GR基态}}\]</div>
+<p><strong>相对独立性</strong>：时空作为平庸因果网络，具有相对独立的物理地位——它从GL(5) ⇒ SU(5)重组实现涌现后，作为独立的时空背景存在，FG的Regge底空间在其上作为非平庸激发展开。时空不依附于Regge底空间，而是与之并列的、从重组实现独立涌现的结构。</p>
+<p><strong>与FG层Regge底空间的区别</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层次</th>
+<th style="text-align: left;">底空间</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GR（时空）</td>
+<td style="text-align: left;">伪黎曼流形</td>
+<td style="text-align: left;">GL(5) ⇒ SU(5)重组实现直接涌现</td>
+<td style="text-align: left;">平庸因果网络（核子间关系网络，就是平庸的）</td>
+</tr>
+<tr>
+<td style="text-align: left;">FG（核子层）</td>
+<td style="text-align: left;">Regge剖分</td>
+<td style="text-align: left;">核子分布的离散几何</td>
+<td style="text-align: left;">非平庸因果网络（纤维丛，GR基态的激发态）</td>
+</tr>
+</tbody>
+</table>
+<p>时空不是在Regge底空间上构造的，而是与Regge底空间并列的、从GL(5) ⇒ SU(5)重组实现独立涌现的平庸结构。FG的Regge底空间是时空（GR基态）的非平庸激发。</p>
+<h3 id="62-">6.2 时空的声子：中子-质子运动振荡产生的声子是时空的前提<a class="headerlink" href="#62-" title="Permanent link">&para;</a></h3>
+<p>时空是平庸因果网络。中子-质子运动振荡产生的声子是时空的前提。</p>
+<p><strong>时空声子的两个面向</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">面向</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">量子面向</td>
+<td style="text-align: left;">中子-质子运动振荡的量子</td>
+<td style="text-align: left;">引力波（时空扰动）</td>
+</tr>
+<tr>
+<td style="text-align: left;">经典面向</td>
+<td style="text-align: left;">退相干后的平滑时空</td>
+<td style="text-align: left;">伪黎曼流形（GR的经典时空）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>退相干</strong>：时空声子的量子面向被退相干冻结为经典面向。微观结构被抹去，只留下能动张量。中子-质子运动振荡产生的声子是时空的前提——引力波是时空声子的可观测表现。</p>
+<h3 id="63">6.3 声子是时空结构的前提<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p><strong>命题</strong>：没有声子就没有时空的量子性，没有时空的量子性就没有时空结构。中子-质子运动振荡产生的声子是时空的前提——时空是平庸因果网络。</p>
+<p><strong>论证</strong>：</p>
+<ol>
+<li>时空 = 平庸因果网络 = 前时空退相干后的基态</li>
+<li>退相干前的前时空层有声子（前时空量子涨落）</li>
+<li>退相干把前时空声子平滑化为GR声子（中子-质子运动振荡产生的声子是时空的前提）</li>
+<li>GR声子的经典面向 = 平滑时空 = 伪黎曼流形</li>
+<li>因此，时空结构（伪黎曼流形）以声子为前提</li>
+</ol>
+<p><strong>时空声子与FG声子的关系</strong>：</p>
+<div class="arithmatex">\[\text{前时空声子（前时空）} \xrightarrow{\text{退相干}} \text{GR声子（中子-质子运动振荡，是时空的前提）} \xrightarrow{\text{非平庸再自组织}} \text{FG声子（核子曲率量子）}\]</div>
+<p>时空声子是 FG 声子的平庸前身（即 GR 基态形态）。FG 声子是时空声子在核子层的非平庸激发。</p>
+<h3 id="64">6.4 时空声子的同步<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<p>时空作为平庸因果网络，其同步是基底性同步——所有自由度退相干锁定为经典分支。时空声子的同步传播速度 = 时空同步前沿速度 <span class="arithmatex">\(c\)</span>（§7）。</p>
+<p>时空声子的同步表现为：引力波以时空同步前沿速度 <span class="arithmatex">\(c\)</span> 传播。这是时空声子同步的可观测表现。</p>
+<h2 id="7">7. 时空同步前沿速度<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71-c-gamma_1ell_textpre">7.1 <span class="arithmatex">\(c = \gamma_1\ell_{\text{pre}}\)</span>：时空同步前沿速度的结构公式<a class="headerlink" href="#71-c-gamma_1ell_textpre" title="Permanent link">&para;</a></h3>
+<p><strong>定理（四轴涌现）</strong>：同步过程沿四个独立方向展开——引力轴（时间）+ 三维空间（与 U(1)×SU(2)×SU(3) 相关）。<span class="arithmatex">\(c\)</span> 是时空同步前沿速度——同步前沿的涌现速率：</p>
+<div class="arithmatex">\[\boxed{c = \gamma_1 \cdot \ell_{\text{pre}}}\]</div>
+<p>其中 <span class="arithmatex">\(\gamma_1\)</span> 为黎曼第一零点（<span class="arithmatex">\(\approx 14.1347\)</span>），作固定层级同步标度；<span class="arithmatex">\(\ell_{\text{pre}}\)</span> 是前时空层特征长度。</p>
+<p><strong>物理意义</strong>：<span class="arithmatex">\(c\)</span> 是同步过程的前沿速率。同步以时空同步前沿速度 <span class="arithmatex">\(c\)</span> 传播——这是时空声子的传播速度，也是引力波的传播速度。<span class="arithmatex">\(c\)</span> 就是光速——时空同步前沿速度。</p>
+<h3 id="72">7.2 声子以时空同步前沿速度传播<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<p><strong>GR层</strong>：时空声子（引力波）以时空同步前沿速度 <span class="arithmatex">\(c\)</span> 传播。这是GR的基本预言，由引力波探测（LIGO/Virgo）验证。</p>
+<p><strong>FG层</strong>：核子声子（曲率量子）的同步传播也以时空同步前沿速度 <span class="arithmatex">\(c\)</span> 为上限。FG声子通过联络诱导的固有时流速 <span class="arithmatex">\(v_\tau \equiv d\tau/dt = \sqrt{1-\beta\delta_v}\)</span> 进入同步，同步前沿的传播速度由时空结构决定，即时空同步前沿速度 <span class="arithmatex">\(c\)</span>。</p>
+<p><strong>统一性</strong>：无论是时空声子（GR层）还是核子声子（FG层），同步传播速度都是时空同步前沿速度 <span class="arithmatex">\(c\)</span>。这是因为FG是GR基态的激发态——FG声子的同步在GR时空上进行，传播速度由GR时空结构（时空同步前沿速度 <span class="arithmatex">\(c\)</span>）决定。</p>
+<h3 id="73-cft">7.3 CFT幂律传播与同步蔓延<a class="headerlink" href="#73-cft" title="Permanent link">&para;</a></h3>
+<p>同步过程阶段（CFT描述）：幂律传播 <span class="arithmatex">\(r^{-2h}\)</span> 描述同步从触发点向全局蔓延。</p>
+<div class="arithmatex">\[\langle\phi(r)\phi(0)\rangle \sim r^{-2h}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特征</th>
+<th style="text-align: left;">物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">无指数衰减 <span class="arithmatex">\(e^{-r/\xi}\)</span></td>
+<td style="text-align: left;">关联长度 <span class="arithmatex">\(\xi \to \infty\)</span>，同步蔓延无尺度限制</td>
+</tr>
+<tr>
+<td style="text-align: left;">幂律 <span class="arithmatex">\(r^{-2h}\)</span></td>
+<td style="text-align: left;">共形维度 <span class="arithmatex">\(h\)</span> 控制蔓延速率——<span class="arithmatex">\(h\)</span> 小则蔓延快，<span class="arithmatex">\(h\)</span> 大则蔓延慢</td>
+</tr>
+<tr>
+<td style="text-align: left;">全空间感知</td>
+<td style="text-align: left;">任何两点都共享同一种同步态模式</td>
+</tr>
+</tbody>
+</table>
+<p><strong>与时空同步前沿速度的关系</strong>：CFT幂律传播描述的是<strong>同步的空间形态</strong>（幂律衰减），<span class="arithmatex">\(c\)</span> 描述的是<strong>时空同步前沿速度</strong>（前沿速率）。两者互补：<span class="arithmatex">\(c\)</span> 给出同步前沿的传播速度，<span class="arithmatex">\(r^{-2h}\)</span> 给出同步态在空间中的分布形态。</p>
+<h3 id="74">7.4 时空同步前沿速度的层次<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">层次</th>
+<th style="text-align: left;">时空同步前沿速度</th>
+<th style="text-align: left;">物理表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">前时空</td>
+<td style="text-align: left;">紧化投影（非时空传播）</td>
+<td style="text-align: left;">前时空，无时空速度概念</td>
+</tr>
+<tr>
+<td style="text-align: center;">GR</td>
+<td style="text-align: left;"><span class="arithmatex">\(c = \gamma_1\ell_{\text{pre}}\)</span></td>
+<td style="text-align: left;">引力波传播速度</td>
+</tr>
+<tr>
+<td style="text-align: center;">FG</td>
+<td style="text-align: left;"><span class="arithmatex">\(c\)</span>（在GR时空上传播）</td>
+<td style="text-align: left;">核子层同步传播速度</td>
+</tr>
+</tbody>
+</table>
+<p>FG层时空同步前沿速度 = GR层时空同步前沿速度 = <span class="arithmatex">\(c\)</span>，因为FG是GR基态的激发态，FG同步在GR时空上进行。</p>
+<h2 id="8">8. 声子与量纲归一化<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 声子能量在量纲归一化中的角色<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>FG纤维丛截断处的量纲归一化：</p>
+<div class="arithmatex">\[\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2\left(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2}\right)\]</div>
+<p>声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span> 是量纲归一化的输入——<span class="arithmatex">\(\hbar\omega_k\)</span>（有量纲能量）除以 <span class="arithmatex">\(E_{\text{bind}}\)</span>（有量纲能量）得到无量纲曲率。声子能量携带的量纲信息被编码在无量纲比值 <span class="arithmatex">\(\eta = \hbar\omega_0/E_{\text{bind}}\)</span> 中。</p>
+<h3 id="82">8.2 声子频率的代数确定性<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<p>声子频率待推。声子频率的<strong>绝对值</strong>（<span class="arithmatex">\(\omega_0\)</span>）通过量纲恢复从 <span class="arithmatex">\(m_p\)</span> 标度导出。</p>
+<h3 id="83-m_em_p">8.3 声子与 <span class="arithmatex">\(m_e/m_p\)</span> 涌现<a class="headerlink" href="#83-m_em_p" title="Permanent link">&para;</a></h3>
+<p>声子频率 <span class="arithmatex">\(\omega_0\)</span> 进入无量纲比值 <span class="arithmatex">\(\eta = \hbar\omega_0/E_{\text{bind}}\)</span>，<span class="arithmatex">\(\eta\)</span> 从 <span class="arithmatex">\(A_4\)</span> 代数严格确定。通过 Bohr 半径关系 <span class="arithmatex">\(a_0 = \hbar/(m_e c\alpha)\)</span> 和 <span class="arithmatex">\(a_0 = \lambda_p L_u/(2\pi ☯\alpha)\)</span>（<span class="arithmatex">\(\lambda_p = \hbar/(m_p c)\)</span> 为质子约化康普顿波长），导出 <span class="arithmatex">\(m_e/m_p = 2\pi ☯/L_u\)</span>。声子是 <span class="arithmatex">\(m_e/m_p\)</span> 代数涌现的关键环节。</p>
+<h2 id="9">9. 声子与超导<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 晶胞量子振荡与同步再锁定<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>晶胞量子振荡（声子 = 曲率量子）驱动同步的层级跃迁过程：</p>
+<div class="highlight"><pre><span></span><code>晶胞量子振荡（声子 = 曲率量子）
+ ↓
+δ_v(t) = δ_v⁽⁰⁾ + Δδ_v(t) [角亏涨落]
+ ↓
+Δδ_v 满足资格条件 → 候选群族筛出
+ ↓
+路径积分选出主导群 → 耦合常数跃迁 α → n²α [再锁定]
+ ↓
+n 体束缚态同步锁定 → 超导态涌现
+</code></pre></div>
+<p>每一次量子振荡都是层级跃迁的微观循环。声子是这一循环的量子媒介。</p>
+<h3 id="92">9.2 温度通过声子数进入自组织<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<p>温度通过改变Bose分布给出的声子数 <span class="arithmatex">\(n_B(\omega_q) = (e^{\hbar\omega_q/k_BT}-1)^{-1}\)</span>，改变底空间Regge曲率涨落 <span class="arithmatex">\(\Delta\delta_v(t)\)</span> 的幅度谱与和乐相位关联长度，从而影响自组织。</p>
+<p><strong>声子数变化是温度影响自组织的唯一通道</strong>：温度不直接破坏超导态，而是通过改变声子数影响晶胞量子振荡的再生产（自组织的一个环节），进而影响配对与相干。</p>
+<h3 id="93">9.3 声子与配对/相干<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<p>配对/相干这一整套过程就是晶胞量子振荡本身——晶胞量子振荡（声子 = 底空间Regge曲率量子）携带底空间曲率涨落、主丛结构群上的耦合常数响应与和乐相位关联的全部信息。</p>
+<h2 id="10">10. 声子的层级传递<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="101-fg">10.1 FG层级同步算符体系<a class="headerlink" href="#101-fg" title="Permanent link">&para;</a></h3>
+<p>FG本身是层级化的，声子在不同FG层级有不同的构造方式与可观测谱：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FG层级</th>
+<th style="text-align: left;">声子所在</th>
+<th style="text-align: left;">声子的可观测谱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">电子FG</td>
+<td style="text-align: left;">前中子-前质子底空间</td>
+<td style="text-align: left;">原子能级 <span class="arithmatex">\(E_n = -R/n^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">元素FG</td>
+<td style="text-align: left;">核子分布（原子）</td>
+<td style="text-align: left;">壳层结构、Madelung规则</td>
+</tr>
+<tr>
+<td style="text-align: left;">分子FG</td>
+<td style="text-align: left;">键网络（分子几何）</td>
+<td style="text-align: left;">分子轨道谱、键角、内禀角亏</td>
+</tr>
+<tr>
+<td style="text-align: left;">晶胞FG</td>
+<td style="text-align: left;">晶胞空间分布</td>
+<td style="text-align: left;"><span class="arithmatex">\(T_c\)</span>、超导资格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102">10.2 层级角亏传递<a class="headerlink" href="#102" title="Permanent link">&para;</a></h3>
+<p>上层内禀角亏是下层角亏的组成部分：</p>
+<div class="arithmatex">\[\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\text{defect}}^{(\ell+1)}\]</div>
+<p>即晶胞角亏 = 分子内禀角亏 + 晶胞缺陷涨落。声子在不同层级间传递曲率信息，驱动层级创生。</p>
+<h2 id="11_1">11. 声子的统一角色<a class="headerlink" href="#11_1" title="Permanent link">&para;</a></h2>
+<h3 id="111">11.1 全景图<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>前时空层（前时空）
+ 声子谱经 GL(5) 紧化投影与黎曼零点 γ_n 有关（前时空层）
+ 同步 = 紧化投影 GL(5) → SU(5)
+ 作用：决定物质能否以有限本体自组织
+ ↓ 退相干
+GR层（时空 = 平庸因果网络）
+ 声子 = 中子-质子运动振荡产生的声子，是时空的前提（引力波）
+ 同步 = 基底性同步，速度 = c = γ₁·ℓ_pre
+ 作用：提供时空结构，声子以时空同步前沿速度 c 传播
+  ↓ 非平庸再自组织
+FG层（核子 = 非平庸因果网络）
+ 声子 = 核子曲率量子（Regge角亏涨落）
+ 同步 = 展开性同步，速度 = c（在GR时空上）
+ 作用：驱动自组织，给出周期表、超导、层级创生
+</code></pre></div>
+<h3 id="112">11.2 声子的五重身份<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\boxed{\text{声子} = \begin{cases} \text{振荡的量子} &amp; \text{（位置-动量对易关系的量子化）} \\ \text{曲率涨落的源（FG 层）} &amp; \text{（}\hat{\delta}_v^{(1)}\text{由声子构造）} \\ \text{同步的前提} &amp; \text{（同步方程作用于声子占据态）} \\ \text{时空的前提} &amp; \text{（中子-质子运动振荡产生，时空为平庸因果网络）} \\ \text{自组织的媒介} &amp; \text{（晶胞量子振荡驱动层级创生）} \end{cases}}\]</div>
+<h3 id="113-cqm">11.3 声子与CQM推导链<a class="headerlink" href="#113-cqm" title="Permanent link">&para;</a></h3>
+<p>声子是CQM全推导链的起点：</p>
+<div class="arithmatex">\[\underbrace{[\hat{X},\hat{P}]=i\hbar \to \text{声子}}_{\text{振荡的量子}} \to \underbrace{\hat{\delta}_v^{(1)}}_{\text{曲率涨落}} \to \underbrace{\hat{\mathcal{S}}\Psi = n\Psi}_{\text{同步方程}} \to \underbrace{\{G_k\}}_{\text{本征群}} \to \underbrace{\text{CFT/OPE}}_{\text{代数条件}} \to \underbrace{\text{周期表}}_{\text{物理结果}}\]</div>
+<p>没有声子就没有这条推导链。声子是振荡的量子，振荡产生曲率涨落，曲率涨落进入同步方程，同步方程给出本征群，本征群通过CFT给出周期表。</p>
+<h3 id="114">11.4 总结<a class="headerlink" href="#114" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">命题</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">文档引用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">声子 = 振荡的量子</td>
+<td style="text-align: left;">位置-动量对易关系的量子化，<span class="arithmatex">\(A_4\)</span>限定4个模式</td>
+<td style="text-align: left;">§1, §2</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子 = 曲率涨落的源（FG 层）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{\delta}_v^{(1)}\)</span> 完全由声子构造</td>
+<td style="text-align: left;">§3</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子 = 同步的前提</td>
+<td style="text-align: left;">同步方程作用于声子占据态，占据数被锁定</td>
+<td style="text-align: left;">§4</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子的三层结构</td>
+<td style="text-align: left;">前时空 / GR 中子-质子运动振荡（是时空的前提） / FG 核子曲率</td>
+<td style="text-align: left;">§5</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子 = 时空的前提</td>
+<td style="text-align: left;">中子-质子运动振荡产生的声子，时空为平庸因果网络，退相干后为平滑时空</td>
+<td style="text-align: left;">§6</td>
+</tr>
+<tr>
+<td style="text-align: left;">时空同步前沿速度</td>
+<td style="text-align: left;"><span class="arithmatex">\(c = \gamma_1\ell_{\text{pre}}\)</span>，声子以时空同步前沿速度传播</td>
+<td style="text-align: left;">§7</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子与量纲归一化</td>
+<td style="text-align: left;">声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span> 是归一化输入</td>
+<td style="text-align: left;">§8</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子与超导</td>
+<td style="text-align: left;">晶胞量子振荡驱动同步再锁定，温度通过声子数进入</td>
+<td style="text-align: left;">§9</td>
+</tr>
+<tr>
+<td style="text-align: left;">声子的层级传递</td>
+<td style="text-align: left;">FG层级化，角亏递推传递</td>
+<td style="text-align: left;">§10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>声子是CQM的核心量子媒介</strong>：从振荡到曲率到同步到时空到自组织，声子贯穿CQM的整个理论架构。没有声子就没有CQM。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 唯物主义群论 [D010]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                唯物主义群论 [D010]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 共形场论与OPE [D012]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                共形场论与OPE [D012]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

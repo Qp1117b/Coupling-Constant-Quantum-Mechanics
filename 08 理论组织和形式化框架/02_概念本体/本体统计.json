@@ -62,8 +62,22 @@
     "等价": 9,
     "重组实现": 19
   },
-  "owl_classes": 24,
-  "owl_individuals": 215,
-  "owl_object_properties": 7,
-  "cross_type_edges": 70
+  "owl_classes": 25,
+  "owl_individuals": 429,
+  "owl_object_properties": 16,
+  "owl_annotation_properties": 15,
+  "owl_disjoint_type_classes": 12,
+  "owl_restrictions": 0,
+  "cross_type_edges": 70,
+  "axiom_layer": {
+    "gap_precedes_edges": 3,
+    "mentioned_in_edges": 71,
+    "evidence_individuals": 214
+  },
+  "reasoner": {
+    "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",
+    "consistent": true,
+    "unsatisfiable_classes": [],
+    "error": ""
+  }
 }

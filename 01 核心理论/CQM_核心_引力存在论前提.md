@@ -177,7 +177,7 @@ $$\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2$$
 
 #### 3.7 同步方程的定态性与 Dirac 条件
 
-**定态性**：同步方程是**条件本征值问题**，不是动力学方程。同步是**退相干事件**（紧化条件 $p_u = 2\pi n/L_u$ 与FG条件 $p_u = v_\tau/☯$ 的联立解），不是时间演化过程。固有时方程是**层级结构的静态RG参数化**，非动力学。
+**定态性**：同步方程是**条件本征值问题**，不是动力学方程。同步是**退相干事件**（紧化条件 $p_u = 2\pi n/L_u$ 与 FG 条件 $p_u = v_\tau/☯$ 的联立解），不是时间演化过程。固有时方程是**层级结构的静态RG参数化**，非动力学。
 
 **Dirac 条件**（缝合核子空间与耦合常数空间）：
 
@@ -343,7 +343,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | δ 函数形式 | $\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，$\varepsilon_0 = 0.0012$ | 构造性导出；$\varepsilon_0$ 第一性来源待严格推导（N1） |
 | 质量差 | 1.293 MeV | 实验输入 |
 | 前时空谱参数 | $☯, \mathfrak{c}_1$ | 解析数论（`08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/TripleIdentity.lean`） |
-| $G_N$ | 可能公式 | 框架内构造后验数值校验，偏差约 −3 ppm，待第三方独立复现 |
+| $G_N$ | 可能公式 | 框架内构造后验数字校验，偏差约 −3 ppm，待第三方独立复现 |
 | FG Regge 曲率 | $\delta_v$ | 定义明确（`MolecularGeometry.deficitAngleDensity`） |
 | FG 联络 | $\mathcal{A}_{\text{FG}}$（由 $\delta_v$ 分步生成） | 框架定义（未形式化） |
 | FG 伴丛曲率 | $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$，$W_v=\exp(i\delta_v\hat T)$ | 框架定义（未形式化） |
@@ -378,7 +378,7 @@ $$\boxed{\text{FG 不受 } G_N \text{ 限制，与 GR 同源但不同层}}$$
 | 文档对象 | Lean 文件 / 定义 | 状态 |
 |----------|------------------|------|
 | 前时空谱参数 $☯, \mathfrak{c}_1$ | `GN/TripleIdentity.lean`（ξ 相关谱参数） | |
-| $G_N$ 可能公式 | `GN/Constructions.lean`（`G_N` 相关定义） | 数值吻合 |
+| $G_N$ 可能公式 | `GN/Constructions.lean`（`G_N` 相关定义） | 数值吻合（构造后验数字校验，待独立复现） |
 | 中子缺陷矩阵 $D(\delta)$ | `SPAF.neutronDefect` | 形式锁定 |
 | 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |
 | FG 顶点角亏 $\delta_v$ | `MolecularGeometry.deficitAngleDensity` | |

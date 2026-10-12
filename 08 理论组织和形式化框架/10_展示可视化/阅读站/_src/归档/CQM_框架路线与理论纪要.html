@@ -1,0 +1,2270 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CQM 框架路线与理论纪要 - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cqm" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CQM 框架路线与理论纪要
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rqm-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. RQM 唯物化与 CQM 超导的立足点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. CQM 层级涌现链
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 涌现结构重思：泛函 + 张量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 半唯像框架探索路线
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 形式化三步路线
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 引力因果限制场退相干：自举 RQM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-a_4-su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 正四单纯形 ↔ \(A_4\) ↔ SU(5) ↔ 微观引力源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 黎曼猜想与质数前网络
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 强（精细）引力场下的超导态
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 有限本体与电子涌现的本体论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 坍缩难题与再生产机制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. 批判性继承谱系
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. 与核心超导文档的关系
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cqm">CQM 框架路线与理论纪要<a class="headerlink" href="#cqm" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>该文档为 CQM（耦合常数量子力学）的<strong>理论思想纪要</strong>——记录框架路线、本体论重思与批判性继承谱系。非形式化文档，亦非对 <code>06 超导/CQM_超导核心理论.md</code> 的替代；核心超导推导与缺口表以该文档及 <code>08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity</code> 为准。</p>
+</blockquote>
+<p><strong>作者</strong>：ruster
+<strong>性质</strong>：思想纪要</p>
+<hr />
+<h2 id="1-rqm-cqm">1. RQM 唯物化与 CQM 超导的立足点<a class="headerlink" href="#1-rqm-cqm" title="Permanent link">&para;</a></h2>
+<p>关系量子力学（RQM）的<strong>唯物化操作</strong>是 CQM 本体论的基石：</p>
+<ul>
+<li><strong>属性（物理上即自由度）随附本体</strong>：属性不是独立实体，而是有限本体的随附物。</li>
+<li><strong>属性在因果关系中实现自身</strong>：属性的现实化发生于具体的因果关系中，因而属性自然<strong>相对物理系统而言</strong>——并非相对“观测者”，而是相对构成该系统的有限本体关系网络。</li>
+<li><strong>由此 CQM 超导原理才有立足之地</strong>：大量有限本体构成的关系网络，才能通过引力退相干机制对电子进行操作、使之进入超导态。</li>
+<li><strong>取消电子的本体特权</strong>：电子不是独立本体，而是质子-中子关系网络的历史性涌现物（见 §10）。若不取消这一特权，大量电磁相互作用将使问题复杂化——CQM 把操作对象从“电子本体”下移为“有限本体关系网络对电子基础自由度的操作”。</li>
+</ul>
+<blockquote>
+<p>理解“RQM——引力场精细结构（关系性实现前提，且是关系性实现结果的体现）——自组织（因果锚定，关系性实现过程）——属性（自由度）实现”这一链条，就理解了 CQM 的三分之一。</p>
+</blockquote>
+<hr />
+<h2 id="2-cqm">2. CQM 层级涌现链<a class="headerlink" href="#2-cqm" title="Permanent link">&para;</a></h2>
+<p>关系性实现的全过程：</p>
+<div class="highlight"><pre><span></span><code>RQM（关系性实现前提）
+ │ 属性相对物理系统而言；前关系网络是可能性空间
+ ▼
+引力场精细结构（关系性实现前提，且是关系性实现结果的体现）
+ │ 因果限制退相干场给出离散因果序；其精细结构既是前提也是产物
+ ▼
+自组织（因果锚定，关系性实现过程）
+ │ 因果结构自我锁定，确定性的随机传输极限 = 经典 RG 流
+ ▼
+属性（自由度）实现
+ 关系网络在因果限制下锚定出可被反复维持的具体自由度
+</code></pre></div>
+<p>要点：引力因果限制场（FG，即引力场精细结构）具有<strong>双重性</strong>——它既是关系性实现的前提（提供因果序），又是关系性实现的结果（由退相干产物反写回几何）。</p>
+<hr />
+<h2 id="3">3. 涌现结构重思：泛函 + 张量<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>CQM 涌现结构需重新思考。原料是<strong>有限本体基础自由度 + 关系赋予的新自由度</strong>，引力退相干场作为<strong>条件</strong>。因此涌现结构：</p>
+<ul>
+<li>不仅得是<strong>张量结构</strong>（关系网络几何内禀配对通道——见 <code>06 超导/CQM_超导核心理论.md</code> §5.4 精细引力纤维丛）；</li>
+<li>还应该是<strong>泛函结构</strong>（条件是数学上不可达的自组织事实）。</li>
+</ul>
+<blockquote>
+<p>精细引力退相干场是<strong>指定的条件</strong>（数学不可达的自组织事实），一套模式；但具体涌现应具体分析——“泛函 + 张量”的框架给定，具体材料的具体涌现需逐案构造。</p>
+</blockquote>
+<p>涌现结构张量化意味着可直接对接 CQM 第一性原理（见 §7）。</p>
+<hr />
+<h2 id="4">4. 半唯像框架探索路线<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>当前建模对象与推进路径：</p>
+<ol>
+<li><strong>先构造质子嘉当矩阵，再构造中子嘉当矩阵</strong>，最后构造<strong>元素嘉当矩阵</strong>。</li>
+<li><strong>元素是理想积木</strong>：BCS 同位素效应对超导影响极大，同位素效应揭示元素内部存在主次结构（质子扇区为主、中子扇区为次），反映拼接规则（见 <code>06 超导/CQM_超导核心理论.md</code> §2.4）；单元素极限（金属氢 Z=1, N=0）角亏涨落为零而不超导（见 <code>06 超导/CQM_超导核心理论.md</code> G18）。</li>
+<li>每个元素与其原子核需要特殊拼接规则（极端情况如中子星除外）。</li>
+<li><strong>分子需要相对位置计算</strong>：计算整个分子的<strong>有效超级嘉当矩阵</strong>（跨原子因果耦合，见 <code>06 超导/CQM_超导核心理论.md</code> §2.5），再经周期性凝聚得到<strong>晶胞嘉当矩阵</strong>（链B，见 <code>06 超导/CQM_超导核心理论.md</code> §3.3）。</li>
+<li><strong>链A（晶胞几何分布）生成 Regge 晶胞与角亏</strong>；晶胞嘉当矩阵（链B）仅通过结构群<strong>条件</strong>可实现的曲率谱，<strong>不直接生成</strong> Regge 晶胞（见 <code>06 超导/CQM_超导核心理论.md</code> §3.2、§4）→ 引力因果限制场（FG）。</li>
+</ol>
+<blockquote>
+<p>当前唯象建模对象是<strong>晶胞</strong>——晶胞嘉当矩阵与 Regge 晶胞在精细引力纤维丛处汇合。多种分子类型联合超导属于实验前沿但非主流；CQM 超导原理至少与最前沿实验在方向上保持一致——这些前沿既不是 BCS 的领域，也不是任何已有超导理论的专属领域。</p>
+</blockquote>
+<hr />
+<h2 id="5">5. 形式化三步路线<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>第零步：半唯像框架
+ 第一性需要中子和电子涌现机制；然而质量矩阵属于半量子引力退相干产物
+ （故半唯像是必要的阶段性建模，而非终点）
+
+第一步：Lean4 形式化推导
+ CQM 必须退化和还原已有超导理论（BCS / Eliashberg / McMillan–Dynes）
+ （对应关系见 `06 超导/CQM_超导_专题与扩展.md` §14（与 Lean 形式化的对应）、`06 超导/CQM_超导核心理论.md` §11.2 第一步）
+
+第二步：给出 CQM 完整超导机制及计算框架
+ 大量金属氢材料是理想推导对象（单个氢 = 单个质子有限本体，能直接用 $A_4$ 矩阵拼接）
+ ——但纯氢角亏涨落为零而不超导，金属氢实例是退化近似，
+ 需含晶格畸变/缺陷提供角亏来源，方与 `06 超导/CQM_超导核心理论.md` §2.4 协调（见 G18）
+
+第三步：指出室温超导的方向
+ （并非宣称可达，而是指出 CQM 机制下强精细引力结构不破坏超导的方向性）
+</code></pre></div>
+<hr />
+<h2 id="6-rqm">6. 引力因果限制场退相干：自举 RQM<a class="headerlink" href="#6-rqm" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>压强</strong> → 转换成<strong>有效几何效应</strong>（压缩晶格间距与由之自举的精细引力结构）。</li>
+<li><strong>温度</strong> → 转换成<strong>有效再生产效应</strong>（再生产间隔的热展宽）。</li>
+<li><strong>磁场</strong> → <strong>不显式考虑</strong>（外部输入，见 <code>06 超导/CQM_超导核心理论.md</code> §1.3）。</li>
+<li>理论内核：自举 RQM——关系性实现与因果限制退相干相互确立，无需外部观测者。</li>
+</ul>
+<hr />
+<h2 id="7-a_4-su5">7. 正四单纯形 ↔ <span class="arithmatex">\(A_4\)</span> ↔ SU(5) ↔ 微观引力源<a class="headerlink" href="#7-a_4-su5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CQM 中<strong>质子禁闭几何就是正四单纯形</strong>，用 <strong><span class="arithmatex">\(A_4\)</span> 嘉当矩阵</strong>描述。</li>
+<li>同时是 <strong>SU(5) 大统一群</strong>的嘉当矩阵。</li>
+<li>同时是 CQM 中<strong>耦合相空间的哈密顿量</strong>。</li>
+<li>正四单纯形的 Regge 角亏直接给出引力因果限制场（FG）强度——即该几何就是<strong>微观引力源</strong>（FG 不走 Regge→GR 连续极限路径，而是直接由角亏给出因果条件/退相干场强度，见 <code>01 核心理论/CQM_核心_引力存在论前提.md</code> §3.3-3.4）。</li>
+<li>描述该几何的嘉当矩阵自然同时就是<strong>微观引力能动张量</strong>（Lean 中 <code>cartanHamiltonian_trace_eq_stressEnergyTrace</code>：<span class="arithmatex">\(A_4\)</span> 双重角色，迹 = 8）。</li>
+</ul>
+<hr />
+<h2 id="8">8. 黎曼猜想与质数前网络<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>进一步理解 CQM 与量子引力退相干的关联：</p>
+<ul>
+<li>黎曼猜想中，每一个非平凡零点的虚部 <span class="arithmatex">\(\gamma_n\)</span> 都编码了每一个质数的关系、乃至精细关系。</li>
+<li>黎曼猜想本身反映了一种<strong>质数前网络</strong>——无限物质本体的质数前网络。</li>
+<li>每个质数都是一个<strong>不可还原的生成元</strong>。</li>
+<li>由此 CQM 的“因果集/质数前网络 → 退相干 → 经典时空”链条获得数论层面的支撑；黎曼猜想 = 量子引力退相干机制可证明性的标志（<code>06 超导/CQM_超导_专题与扩展.md</code> §13 G 类缺口关联）。</li>
+</ul>
+<blockquote>
+<p><strong>发生学分层</strong>：上节表述位于 <strong>GL(5) 固定层级</strong>——黎曼猜想是 GL(5) 固定层级的实谱条件，ζ(s) 的欧拉乘积结构直接作为 GL(5) 固定层级下使用的谱。质数分布的基态同步是 SU(5)：基态伽罗瓦表示 <span class="arithmatex">\(\rho_5: G_{\mathbb{Q}} \to \mathrm{GL}(5)(\mathbb{Q}_\ell)\)</span> 经朗兰兹对应指定 GL(5) 自守形式（Regge 底空间几何），其确定的自守谱经紧化算符（同步算符）投影为 SU(5) 表示空间。<strong>物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现</strong>；<span class="arithmatex">\(n &gt; 5\)</span> 层级不排除，但 GL(5) 主导物理谱。完整分层流程图见 <code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §9。</p>
+</blockquote>
+<hr />
+<h2 id="9">9. 强（精细）引力场下的超导态<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<p>从 CQM 层级涌现论自然推出：</p>
+<ul>
+<li>强（精细）引力场<strong>不仅不必然破坏超导</strong>，相反 CQM 中引力场具有退相干效果，因而能<strong>探索强（精细）引力场下的超导态</strong>。</li>
+<li>平庸引力场无法判断（常规 BCS 区二者数值接近，见 <code>06 超导/CQM_超导核心理论.md</code> §11.2 第三步）。</li>
+<li>超导自由度来自<strong>大量有限本体构成的关系网络</strong>；单个有限本体下无超导。正是大量有限本体（质子/中子）下的引力结构对电子基础自由度进行了关系性和组合性操作，才涌现超导态及其自由度。</li>
+</ul>
+<hr />
+<h2 id="10">10. 有限本体与电子涌现的本体论<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>物理层级的有限本体是质子</strong>；<strong>中子是有缺陷的有限本体</strong>（<span class="arithmatex">\(A_4\)</span> + 缺陷项，见 <code>06 超导/CQM_超导核心理论.md</code> §2.2、Lean <code>neutronCartan_*</code> 系列）。</li>
+<li>质子的禁闭几何是正四单纯形，禁闭内部是量子引力；经典引力连同整个经典时空都是量子引力退相干后的结果。</li>
+<li>正四单纯形的组合构型足够产生丰富的引力拓扑，支撑起丰富的引力退相干类型。</li>
+<li><strong>电子不是有限本体</strong>，而是质子-中子有限本体对的关系性历史产物；但电子有自己的随附自由度——它是质子-中子有限本体对在总体自由度基础上，经由关系性和组合性操作涌现出的封装物。</li>
+<li>因此 CQM 涌现机制同样适用于电子：归根结底是在做质子-中子有限本体对上的涌现。</li>
+<li>电子的新自由度来自中子-质子构成的有限本体对；<strong>单个质子无法涌现电子</strong>（无关系性来源）；两个质子虽能提供关系性来源，但电子显然是中子-质子有限本体对的关系性历史产物。</li>
+</ul>
+<hr />
+<h2 id="11">11. 坍缩难题与再生产机制<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>丢掉“坍缩”后，完全接受退相干带来两个难题：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">难题</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">各方案的解答</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">① <strong>唯一性</strong></td>
+<td style="text-align: left;">退相干后哪一个分支成为现实？</td>
+<td style="text-align: left;">坍缩一次性解决；多世界+退相干在他者框架内形式上能解决；CQM 完整引力退相干（相容性筛选→唯一性因果链实现）能解决</td>
+</tr>
+<tr>
+<td style="text-align: left;">② <strong>确定性</strong></td>
+<td style="text-align: left;">状态如何被持续维持？</td>
+<td style="text-align: left;">坍缩一次性解决；CQM 需要<strong>再生产机制</strong>来解决——状态需被反复维持</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>再生产可以说是历史唯物主义的核心机制</strong>：涌现态不是一次性生成，而是被因果网络反复再生产所维持。这正是涌现逻辑结构中<strong>再生产锁定</strong>（见 <code>06 超导/CQM_超导核心理论.md</code> §10 晶胞量子振荡与自组织-再生产）的必要所在——唯一性与确定性两个难题由同一个本体论（有限本体 + 引力退相干 + 再生产）承担。</p>
+</blockquote>
+<hr />
+<h2 id="12">12. 批判性继承谱系<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<p>CQM 对各理论的批判性继承关系（继承方向 / 批判点 / CQM 原创）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">领域</th>
+<th style="text-align: left;">前驱/来源</th>
+<th style="text-align: left;">批判性继承</th>
+<th style="text-align: left;">CQM 原创</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">引力退相干</td>
+<td style="text-align: left;">Penrose (1996), Diósi–Penrose</td>
+<td style="text-align: left;">继承“引力是量子-经典边界组织者”洞见；否定“外力导致坍缩”本体论，改为因果结构自我锁定</td>
+<td style="text-align: left;">相容性筛选 → 唯一性因果链实现</td>
+</tr>
+<tr>
+<td style="text-align: left;">因果集理论</td>
+<td style="text-align: left;">Bombelli, Lee, Sorkin (1987–)</td>
+<td style="text-align: left;">继承离散时空与随机序基本数学</td>
+<td style="text-align: left;">随机传输方程作为动力学基础；确定性传输极限 = 经典 RG 流（禁闭边界及之外）</td>
+</tr>
+<tr>
+<td style="text-align: left;">非交换几何</td>
+<td style="text-align: left;">Connes (1994–)</td>
+<td style="text-align: left;">继承谱三元组与代数-几何对偶</td>
+<td style="text-align: left;">耦合常数空间海森堡代数 <span class="arithmatex">\([\hat u,\hat p_u]=i\)</span>，<span class="arithmatex">\(u=\ln r\)</span> 量子化</td>
+</tr>
+<tr>
+<td style="text-align: left;">关系量子力学 (RQM)</td>
+<td style="text-align: left;">Rovelli (1996–)</td>
+<td style="text-align: left;">承认“属性相对性”观测现象；彻底否定“取消物自体”结构性唯心主义</td>
+<td style="text-align: left;">重建唯物主义关系性：属性随附物质本体，关系性是显现方式而非存在基础</td>
+</tr>
+<tr>
+<td style="text-align: left;">黎曼-谱对应</td>
+<td style="text-align: left;">Hilbert–Pólya, Berry–Keating, Connes</td>
+<td style="text-align: left;">继承“黎曼零点↔哈密顿量谱”数学直觉；否定“能谱”框架，改为耦谱；分层修正：黎曼猜想是 GL(5) 固定层级的实谱条件，同步算符是紧化算符（非 Hilbert–Pólya 算符）</td>
+<td style="text-align: left;">正四单纯形壳层度规推导黎曼哈密顿量；证明 GL(5) 固定层级的零点猜想 = 证明量子引力退相干机制（紧化条件可解）</td>
+</tr>
+<tr>
+<td style="text-align: left;">随机 RG 流</td>
+<td style="text-align: left;">Cardy, Zamolodchikov, 随机量子化</td>
+<td style="text-align: left;">继承随机性在耦合空间中的角色</td>
+<td style="text-align: left;">传输方程 <span class="arithmatex">\(\partial_\tau\Psi + v e^u\partial_u\Psi=0\)</span> 作为第一性动力学（<span class="arithmatex">\(v\)</span> 为特征速度，独立参数），非微扰展开</td>
+</tr>
+<tr>
+<td style="text-align: left;">全局幺正性</td>
+<td style="text-align: left;">AdS/CFT, 量子信息理论</td>
+<td style="text-align: left;">继承“信息守恒”数学要求</td>
+<td style="text-align: left;">全局幺正 = 物质自我运动不可消灭性；局部条件性幺正 = 退相干后观测表现</td>
+</tr>
+<tr>
+<td style="text-align: left;">离散引力/Regge</td>
+<td style="text-align: left;">Regge (1961) 等</td>
+<td style="text-align: left;">继承单纯形离散化技术</td>
+<td style="text-align: left;">正四单纯形 (<span class="arithmatex">\(A_4\)</span>) 作为禁闭内部退相干后必然输出；30 → <span class="arithmatex">\(A_4\)</span> 图论推导目标</td>
+</tr>
+<tr>
+<td style="text-align: left;">SU(5) GUT</td>
+<td style="text-align: left;">Georgi–Glashow (1974)</td>
+<td style="text-align: left;">承认大统一方向；彻底否定“人为假设规范群”</td>
+<td style="text-align: left;">从图论/因果集/嘉当矩阵推导 SU(5)；正四单纯形 ↔ SU(5) 嘉当矩阵几何-代数对偶</td>
+</tr>
+<tr>
+<td style="text-align: left;">标准模型层级</td>
+<td style="text-align: left;">规范场论、CKM/PMNS、希格斯</td>
+<td style="text-align: left;">继承现象学结构</td>
+<td style="text-align: left;">质量矩阵第一性推导；混合矩阵目前未定；希格斯汤川耦合作为涌现</td>
+</tr>
+<tr>
+<td style="text-align: left;">全息/AdS-CFT</td>
+<td style="text-align: left;">Maldacena, Susskind, Witten</td>
+<td style="text-align: left;">继承对偶性数学现象；否定“边界是底层”本体论</td>
+<td style="text-align: left;">边界是退相干后投影；全息原理/宇宙全息是否成立均未知，框架不采用</td>
+</tr>
+<tr>
+<td style="text-align: left;">多世界诠释</td>
+<td style="text-align: left;">Everett, DeWitt</td>
+<td style="text-align: left;">批判对象。承认形式幺正数学成立</td>
+<td style="text-align: left;">唯一性锁定机制；分支是退相干前叠加态，非平行实在</td>
+</tr>
+<tr>
+<td style="text-align: left;">波姆力学</td>
+<td style="text-align: left;">Bohm (1952)</td>
+<td style="text-align: left;">继承“客观实在”立场；否定“粒子位置绝对”庸俗实在论，改为因果结构构建位置</td>
+<td style="text-align: left;">反庸俗隐变量理论：贝尔否定的是光滑连续因果假设，非客观实在本身</td>
+</tr>
+<tr>
+<td style="text-align: left;">涌现理论</td>
+<td style="text-align: left;">复杂系统、层展论 (Anderson)</td>
+<td style="text-align: left;">批判“旧涌现”唯心主义残余；继承“新涌现”方向</td>
+<td style="text-align: left;">涌现逻辑结构：历史累积沉淀锁定 + 相对性 (RQM) + 非无中生有；涌现是结果非预设原因</td>
+</tr>
+<tr>
+<td style="text-align: left;">证伪主义</td>
+<td style="text-align: left;">Popper</td>
+<td style="text-align: left;">继承“科学通过批判发展”动态观；否定“判决性实验”静态逻辑</td>
+<td style="text-align: left;">证伪被否定为历史实践环节；理论自我批判必然性取代外部证伪</td>
+</tr>
+<tr>
+<td style="text-align: left;">再生产理论</td>
+<td style="text-align: left;">Althusser (意识形态国家机器)</td>
+<td style="text-align: left;">继承“系统自我维持”结构分析；物理化改造</td>
+<td style="text-align: left;">再生产概率轨迹；再生产相对偏移（取消“失败”概念）；味空间概率连续再分配</td>
+</tr>
+<tr>
+<td style="text-align: left;">历史唯物主义</td>
+<td style="text-align: left;">Marx</td>
+<td style="text-align: left;">继承“物质自我运动”“历史必然性”“实践第一性”</td>
+<td style="text-align: left;">唯物主义发生学：从物理本身历史维度长出历史唯物主义；循环论相空间</td>
+</tr>
+<tr>
+<td style="text-align: left;">过程哲学</td>
+<td style="text-align: left;">Whitehead, Deleuze</td>
+<td style="text-align: left;">继承“过程性”；拒绝“过程先于存在”</td>
+<td style="text-align: left;">维持过程性：过程非事件堆积，而是因果结构自我再生产</td>
+</tr>
+<tr>
+<td style="text-align: left;">层级理论</td>
+<td style="text-align: left;">还原论/反还原论</td>
+<td style="text-align: left;">彻底否定“分子-细胞-社会”跨层级混淆</td>
+<td style="text-align: left;">物理系统层级唯一：仅物理层级存在幺正/退相干/因果结构；拒绝“人的幺正性”等谬误</td>
+</tr>
+<tr>
+<td style="text-align: left;">政治经济学</td>
+<td style="text-align: left;">Marx《资本论》</td>
+<td style="text-align: left;">继承“脚手架方法论”：批判性结构作为临时分析工具</td>
+<td style="text-align: left;">资本主义-旧物理-层级还原论同构批判；科学革命与社会革命同构性</td>
+</tr>
+<tr>
+<td style="text-align: left;">p 进数</td>
+<td style="text-align: left;">Tate, Iwasawa</td>
+<td style="text-align: left;">继承数学工具</td>
+<td style="text-align: left;">Adele 环统一框架；p 进结构作为禁闭内部因果序数论对应（合成 p 进数暂弃，见 <code>归档/归档 CNT/09 前期探索/05-暂弃研究/03-合成p 进数.md</code>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weyl 群/表示论</td>
+<td style="text-align: left;">经典李理论</td>
+<td style="text-align: left;">继承根系几何与嘉当矩阵</td>
+<td style="text-align: left;">根系几何 ↔ 曲率；嘉当矩阵 ↔ SU(5) 整体能动张量（电磁/弱/色扇区由 <span class="arithmatex">\(A_4\)</span> 谱统一编码）；禁闭内部生成式计算</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mathieu 方程/AdS₂</td>
+<td style="text-align: left;">量子混沌, BTZ</td>
+<td style="text-align: left;">继承 Mathieu 共振现象</td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_c\)</span> 在 AdS₂ 的 Mathieu 共振；质子壳层类比与耦谱对应</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13">13. 与核心超导文档的关系<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>本体论前提、机制链、BCS 还原与缺口表：见 <code>06 超导/CQM_超导核心理论.md</code>；涌现积分见 <code>06 超导/CQM_超导_专题与扩展.md</code> §14 模块映射（<code>gapIntegral_pr</code>）。</li>
+<li>形式化对象与模块映射：见 <code>08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity.lean</code> 及 <code>06 超导/CQM_超导核心理论.md</code> §12。</li>
+<li>该文档不引入新公式或新数值，仅记录框架路线、本体论重思与批判性继承谱系，供长期参考与后续写作取用。</li>
+</ul>
+<hr />
+<p><em>该文档为 CQM 框架路线与理论纪要。</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/backlinks.js"></script>
+      
+        <script src="../../assets/backlink-inject.js"></script>
+      
+        <script src="../../assets/math-config.js"></script>
+      
+        <script src="../../assets/tex-svg.js"></script>
+      
+        <script src="../../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

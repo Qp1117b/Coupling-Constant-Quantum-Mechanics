@@ -3538,7 +3538,7 @@
   },
   {
    "lean_library": "PhysicalConstants",
-   "lean_symbol": "gn_spectral_formula",
+   "lean_symbol": "GN_spectral_formula",
    "concept_ids": "C081",
    "prop_ids": "P010;P032",
    "gap_ids": "",
@@ -4501,6 +4501,128 @@
   },
   "note": "☯ 弹性最大（≈88.6），放大 ☯ 的数值不确定性；𝔠₁ 与 γ₁ 取值以权威定义处为准。"
  },
+ "scm": {
+  "model": "G_N 结构因果模型（SCM）",
+  "formula": "G_N = (ℏc/m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯)",
+  "source": "P010（D014 §5）；锚点映射 C081",
+  "caveat": "构造后验数字校验，待独立复现",
+  "variables": [
+   {
+    "id": "I",
+    "label": "Dynkin 指数比 I=5/3",
+    "role": "群论因子",
+    "source": "D014 §5"
+   },
+   {
+    "id": "lambda_c",
+    "label": "Mathieu 临界 λ_c",
+    "role": "谱因子",
+    "source": "D019 §5"
+   },
+   {
+    "id": "taiji",
+    "label": "相变量子 ☯",
+    "role": "谱因子",
+    "source": "D008 §3"
+   },
+   {
+    "id": "c_1",
+    "label": "第一耦级 𝔠₁=1/4+γ₁²",
+    "role": "谱因子",
+    "source": "D008 §3"
+   },
+   {
+    "id": "kappa",
+    "label": "谱修正 κ=(31+☯)/30",
+    "role": "谱修正",
+    "source": "D031 §11"
+   },
+   {
+    "id": "m_p",
+    "label": "质子质量 m_p",
+    "role": "实验输入",
+    "source": "D019"
+   },
+   {
+    "id": "h",
+    "label": "ℏc",
+    "role": "常数",
+    "source": "D019"
+   },
+   {
+    "id": "GN",
+    "label": "牛顿引力常数 G_N",
+    "role": "结果",
+    "source": "D014 §5"
+   }
+  ],
+  "edges": [
+   {
+    "from": "taiji",
+    "to": "kappa",
+    "relation": "映射",
+    "note": "κ=(31+☯)/30"
+   },
+   {
+    "from": "taiji",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "☯²·exp(-2/☯)"
+   },
+   {
+    "from": "kappa",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "(1+κ☯)"
+   },
+   {
+    "from": "I",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "线性因子"
+   },
+   {
+    "from": "lambda_c",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "线性因子"
+   },
+   {
+    "from": "c_1",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "线性因子"
+   },
+   {
+    "from": "m_p",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "1/m_p²"
+   },
+   {
+    "from": "h",
+    "to": "GN",
+    "relation": "重组实现",
+    "note": "ℏc"
+   }
+  ],
+  "note": "本图为确定性结构方程（SCM），非观测因果图；用于敏感性/反事实分解。",
+  "elasticity": {
+   "dlnGN/dlnI": 1.0,
+   "dlnGN/dlnlambda_c": 1.0,
+   "dlnGN/dlnc_1": 1.0,
+   "dlnGN/dlnm_p": -2.0,
+   "dlnGN/dlnkappa": 0.023326,
+   "dlnGN/dlntaiji": 88.6195,
+   "values_used": {
+    "taiji": 0.02309570897,
+    "lambda_c": 1.316022911308,
+    "I": 1.666667,
+    "kappa": 1.034103
+   },
+   "note": "☯ 弹性最大（≈88.6），放大 ☯ 的数值不确定性；𝔠₁ 与 γ₁ 取值以权威定义处为准。"
+  }
+ },
  "ontology": {
   "concept_count": 82,
   "proposition_count": 63,
@@ -4565,10 +4687,8890 @@
    "等价": 9,
    "重组实现": 19
   },
-  "owl_classes": 24,
-  "owl_individuals": 215,
-  "owl_object_properties": 7,
-  "cross_type_edges": 70
+  "owl_classes": 25,
+  "owl_individuals": 429,
+  "owl_object_properties": 16,
+  "owl_annotation_properties": 15,
+  "owl_disjoint_type_classes": 12,
+  "owl_restrictions": 0,
+  "cross_type_edges": 70,
+  "axiom_layer": {
+   "gap_precedes_edges": 3,
+   "mentioned_in_edges": 71,
+   "evidence_individuals": 214
+  },
+  "reasoner": {
+   "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",
+   "consistent": true,
+   "unsatisfiable_classes": [],
+   "error": ""
+  }
+ },
+ "cascade": [
+  {
+   "step": 1,
+   "rules": [
+    {
+     "order": 1,
+     "step": 1,
+     "rule": "H001",
+     "rel": "重组实现",
+     "rhs": "C007",
+     "rhs_name": "物质自组织",
+     "lhs": [
+      "C002",
+      "C003"
+     ]
+    },
+    {
+     "order": 2,
+     "step": 1,
+     "rule": "H005",
+     "rel": "重组实现",
+     "rhs": "C028",
+     "rhs_name": "Regge铰链",
+     "lhs": [
+      "C029"
+     ]
+    },
+    {
+     "order": 3,
+     "step": 1,
+     "rule": "H007",
+     "rel": "重组实现",
+     "rhs": "C030",
+     "rhs_name": "元素嘉当矩阵",
+     "lhs": [
+      "C054",
+      "C029"
+     ]
+    },
+    {
+     "order": 4,
+     "step": 1,
+     "rule": "H008",
+     "rel": "重组实现",
+     "rhs": "C026",
+     "rhs_name": "角亏",
+     "lhs": [
+      "C071"
+     ]
+    },
+    {
+     "order": 5,
+     "step": 1,
+     "rule": "H009",
+     "rel": "重组实现",
+     "rhs": "C064",
+     "rhs_name": "资格条件",
+     "lhs": [
+      "C063"
+     ]
+    },
+    {
+     "order": 6,
+     "step": 1,
+     "rule": "H011",
+     "rel": "重组实现",
+     "rhs": "C012",
+     "rhs_name": "同步算符",
+     "lhs": [
+      "C073"
+     ]
+    },
+    {
+     "order": 7,
+     "step": 1,
+     "rule": "H017",
+     "rel": "重组实现",
+     "rhs": "C082",
+     "rhs_name": "Wyler常数",
+     "lhs": [
+      "C054"
+     ]
+    },
+    {
+     "order": 8,
+     "step": 1,
+     "rule": "A001",
+     "rel": "演化",
+     "rhs": "C017",
+     "rhs_name": "GR",
+     "lhs": [
+      "C001"
+     ]
+    },
+    {
+     "order": 9,
+     "step": 1,
+     "rule": "A004",
+     "rel": "映射",
+     "rhs": "C055",
+     "rhs_name": "边面关联矩阵",
+     "lhs": [
+      "C053"
+     ]
+    },
+    {
+     "order": 10,
+     "step": 1,
+     "rule": "A009",
+     "rel": "映射",
+     "rhs": "C060",
+     "rhs_name": "耦合坐标",
+     "lhs": [
+      "C044"
+     ]
+    },
+    {
+     "order": 11,
+     "step": 1,
+     "rule": "A013",
+     "rel": "映射",
+     "rhs": "C046",
+     "rhs_name": "耦级",
+     "lhs": [
+      "C045"
+     ]
+    },
+    {
+     "order": 12,
+     "step": 1,
+     "rule": "A023",
+     "rel": "重组实现",
+     "rhs": "C049",
+     "rhs_name": "谱算符",
+     "lhs": [
+      "C042"
+     ]
+    },
+    {
+     "order": 13,
+     "step": 1,
+     "rule": "A026",
+     "rel": "依赖",
+     "rhs": "C009",
+     "rhs_name": "因果网络同步理论",
+     "lhs": [
+      "C004"
+     ]
+    },
+    {
+     "order": 14,
+     "step": 1,
+     "rule": "A027",
+     "rel": "映射",
+     "rhs": "C015",
+     "rhs_name": "重组实现",
+     "lhs": [
+      "C008"
+     ]
+    },
+    {
+     "order": 15,
+     "step": 1,
+     "rule": "A029",
+     "rel": "依赖",
+     "rhs": "C046",
+     "rhs_name": "耦级",
+     "lhs": [
+      "C050"
+     ]
+    },
+    {
+     "order": 16,
+     "step": 1,
+     "rule": "A030",
+     "rel": "依赖",
+     "rhs": "C051",
+     "rhs_name": "RH",
+     "lhs": [
+      "C052"
+     ]
+    },
+    {
+     "order": 17,
+     "step": 1,
+     "rule": "A031",
+     "rel": "依赖",
+     "rhs": "C040",
+     "rhs_name": "自守形式",
+     "lhs": [
+      "C080"
+     ]
+    },
+    {
+     "order": 18,
+     "step": 1,
+     "rule": "A032",
+     "rel": "层级含于",
+     "rhs": "C012",
+     "rhs_name": "同步算符",
+     "lhs": [
+      "C069"
+     ]
+    },
+    {
+     "order": 19,
+     "step": 1,
+     "rule": "A033",
+     "rel": "依赖",
+     "rhs": "C070",
+     "rhs_name": "临界温度",
+     "lhs": [
+      "C072"
+     ]
+    },
+    {
+     "order": 20,
+     "step": 1,
+     "rule": "A034",
+     "rel": "依赖",
+     "rhs": "C061",
+     "rhs_name": "耦合动量",
+     "lhs": [
+      "C062"
+     ]
+    },
+    {
+     "order": 21,
+     "step": 1,
+     "rule": "A035",
+     "rel": "依赖",
+     "rhs": "C066",
+     "rhs_name": "候选群族",
+     "lhs": [
+      "C065"
+     ]
+    },
+    {
+     "order": 22,
+     "step": 1,
+     "rule": "A036",
+     "rel": "依赖",
+     "rhs": "C066",
+     "rhs_name": "候选群族",
+     "lhs": [
+      "C068"
+     ]
+    },
+    {
+     "order": 23,
+     "step": 1,
+     "rule": "A037",
+     "rel": "依赖",
+     "rhs": "C020",
+     "rhs_name": "主丛",
+     "lhs": [
+      "C021"
+     ]
+    },
+    {
+     "order": 24,
+     "step": 1,
+     "rule": "A038",
+     "rel": "映射",
+     "rhs": "C026",
+     "rhs_name": "角亏",
+     "lhs": [
+      "C025"
+     ]
+    },
+    {
+     "order": 25,
+     "step": 1,
+     "rule": "A039",
+     "rel": "映射",
+     "rhs": "C027",
+     "rhs_name": "固有时流速",
+     "lhs": [
+      "C031"
+     ]
+    },
+    {
+     "order": 26,
+     "step": 1,
+     "rule": "A040",
+     "rel": "层级含于",
+     "rhs": "C018",
+     "rhs_name": "FG",
+     "lhs": [
+      "C019"
+     ]
+    },
+    {
+     "order": 27,
+     "step": 1,
+     "rule": "A041",
+     "rel": "映射",
+     "rhs": "C023",
+     "rhs_name": "曲率",
+     "lhs": [
+      "C016"
+     ]
+    },
+    {
+     "order": 28,
+     "step": 1,
+     "rule": "A042",
+     "rel": "映射",
+     "rhs": "C005",
+     "rhs_name": "禁闭边界",
+     "lhs": [
+      "C006"
+     ]
+    },
+    {
+     "order": 29,
+     "step": 1,
+     "rule": "A043",
+     "rel": "映射",
+     "rhs": "C043",
+     "rhs_name": "黎曼zeta函数",
+     "lhs": [
+      "C010"
+     ]
+    },
+    {
+     "order": 30,
+     "step": 1,
+     "rule": "A044",
+     "rel": "依赖",
+     "rhs": "C012",
+     "rhs_name": "同步算符",
+     "lhs": [
+      "C011"
+     ]
+    },
+    {
+     "order": 31,
+     "step": 1,
+     "rule": "A045",
+     "rel": "层级含于",
+     "rhs": "C040",
+     "rhs_name": "自守形式",
+     "lhs": [
+      "C041"
+     ]
+    },
+    {
+     "order": 32,
+     "step": 1,
+     "rule": "A046",
+     "rel": "依赖",
+     "rhs": "C076",
+     "rhs_name": "Virasoro代数",
+     "lhs": [
+      "C077"
+     ]
+    },
+    {
+     "order": 33,
+     "step": 1,
+     "rule": "A047",
+     "rel": "依赖",
+     "rhs": "C075",
+     "rhs_name": "共形自举",
+     "lhs": [
+      "C078"
+     ]
+    },
+    {
+     "order": 34,
+     "step": 1,
+     "rule": "A048",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C033"
+     ]
+    },
+    {
+     "order": 35,
+     "step": 1,
+     "rule": "A049",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C034"
+     ]
+    },
+    {
+     "order": 36,
+     "step": 1,
+     "rule": "A050",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C035"
+     ]
+    },
+    {
+     "order": 37,
+     "step": 1,
+     "rule": "A051",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C036"
+     ]
+    },
+    {
+     "order": 38,
+     "step": 1,
+     "rule": "A052",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C037"
+     ]
+    },
+    {
+     "order": 39,
+     "step": 1,
+     "rule": "A053",
+     "rel": "映射",
+     "rhs": "C032",
+     "rhs_name": "时间量纲",
+     "lhs": [
+      "C038"
+     ]
+    }
+   ],
+   "new": [
+    "C007",
+    "C028",
+    "C030",
+    "C026",
+    "C064",
+    "C012",
+    "C082",
+    "C017",
+    "C055",
+    "C060",
+    "C046",
+    "C049",
+    "C009",
+    "C015",
+    "C051",
+    "C040",
+    "C070",
+    "C061",
+    "C066",
+    "C020",
+    "C027",
+    "C018",
+    "C023",
+    "C005",
+    "C043",
+    "C076",
+    "C075",
+    "C032"
+   ],
+   "cum": 72
+  },
+  {
+   "step": 2,
+   "rules": [
+    {
+     "order": 40,
+     "step": 2,
+     "rule": "H002",
+     "rel": "重组实现",
+     "rhs": "C014",
+     "rhs_name": "SU5基态",
+     "lhs": [
+      "C007",
+      "C012"
+     ]
+    },
+    {
+     "order": 41,
+     "step": 2,
+     "rule": "H010",
+     "rel": "重组实现",
+     "rhs": "C067",
+     "rhs_name": "丛作用量",
+     "lhs": [
+      "C070"
+     ]
+    },
+    {
+     "order": 42,
+     "step": 2,
+     "rule": "H014",
+     "rel": "重组实现",
+     "rhs": "C048",
+     "rhs_name": "相变量子",
+     "lhs": [
+      "C040"
+     ]
+    },
+    {
+     "order": 43,
+     "step": 2,
+     "rule": "A006",
+     "rel": "映射",
+     "rhs": "C022",
+     "rhs_name": "联络",
+     "lhs": [
+      "C026"
+     ]
+    },
+    {
+     "order": 44,
+     "step": 2,
+     "rule": "A008",
+     "rel": "映射",
+     "rhs": "C058",
+     "rhs_name": "谱修正",
+     "lhs": [
+      "C043"
+     ]
+    },
+    {
+     "order": 45,
+     "step": 2,
+     "rule": "A017",
+     "rel": "重组实现",
+     "rhs": "C014",
+     "rhs_name": "SU5基态",
+     "lhs": [
+      "C012"
+     ]
+    },
+    {
+     "order": 46,
+     "step": 2,
+     "rule": "A028",
+     "rel": "映射",
+     "rhs": "C039",
+     "rhs_name": "量纲转换常数族",
+     "lhs": [
+      "C032"
+     ]
+    }
+   ],
+   "new": [
+    "C014",
+    "C067",
+    "C048",
+    "C022",
+    "C058",
+    "C039"
+   ],
+   "cum": 78
+  },
+  {
+   "step": 3,
+   "rules": [
+    {
+     "order": 47,
+     "step": 3,
+     "rule": "H012",
+     "rel": "重组实现",
+     "rhs": "C013",
+     "rhs_name": "GL5固定层级",
+     "lhs": [
+      "C014"
+     ]
+    },
+    {
+     "order": 48,
+     "step": 3,
+     "rule": "H016",
+     "rel": "重组实现",
+     "rhs": "C081",
+     "rhs_name": "G_N",
+     "lhs": [
+      "C056",
+      "C057",
+      "C048",
+      "C047",
+      "C058"
+     ]
+    }
+   ],
+   "new": [
+    "C013",
+    "C081"
+   ],
+   "cum": 80
+  },
+  {
+   "step": 4,
+   "rules": [
+    {
+     "order": 49,
+     "step": 4,
+     "rule": "A024",
+     "rel": "层级含于",
+     "rhs": "C059",
+     "rhs_name": "Weyl群",
+     "lhs": [
+      "C013"
+     ]
+    }
+   ],
+   "new": [
+    "C059"
+   ],
+   "cum": 81
+  }
+ ],
+ "trace": [
+  {
+   "order": "1",
+   "step": "1",
+   "rule_id": "H001",
+   "relation": "重组实现",
+   "rhs": "C007",
+   "rhs_name": "物质自组织",
+   "depth": "1",
+   "lhs": "C002;C003"
+  },
+  {
+   "order": "2",
+   "step": "1",
+   "rule_id": "H005",
+   "relation": "重组实现",
+   "rhs": "C028",
+   "rhs_name": "Regge铰链",
+   "depth": "1",
+   "lhs": "C029"
+  },
+  {
+   "order": "3",
+   "step": "1",
+   "rule_id": "H007",
+   "relation": "重组实现",
+   "rhs": "C030",
+   "rhs_name": "元素嘉当矩阵",
+   "depth": "1",
+   "lhs": "C054;C029"
+  },
+  {
+   "order": "4",
+   "step": "1",
+   "rule_id": "H008",
+   "relation": "重组实现",
+   "rhs": "C026",
+   "rhs_name": "角亏",
+   "depth": "1",
+   "lhs": "C071"
+  },
+  {
+   "order": "5",
+   "step": "1",
+   "rule_id": "H009",
+   "relation": "重组实现",
+   "rhs": "C064",
+   "rhs_name": "资格条件",
+   "depth": "1",
+   "lhs": "C063"
+  },
+  {
+   "order": "6",
+   "step": "1",
+   "rule_id": "H011",
+   "relation": "重组实现",
+   "rhs": "C012",
+   "rhs_name": "同步算符",
+   "depth": "1",
+   "lhs": "C073"
+  },
+  {
+   "order": "7",
+   "step": "1",
+   "rule_id": "H017",
+   "relation": "重组实现",
+   "rhs": "C082",
+   "rhs_name": "Wyler常数",
+   "depth": "1",
+   "lhs": "C054"
+  },
+  {
+   "order": "8",
+   "step": "1",
+   "rule_id": "A001",
+   "relation": "演化",
+   "rhs": "C017",
+   "rhs_name": "GR",
+   "depth": "1",
+   "lhs": "C001"
+  },
+  {
+   "order": "9",
+   "step": "1",
+   "rule_id": "A004",
+   "relation": "映射",
+   "rhs": "C055",
+   "rhs_name": "边面关联矩阵",
+   "depth": "1",
+   "lhs": "C053"
+  },
+  {
+   "order": "10",
+   "step": "1",
+   "rule_id": "A009",
+   "relation": "映射",
+   "rhs": "C060",
+   "rhs_name": "耦合坐标",
+   "depth": "1",
+   "lhs": "C044"
+  },
+  {
+   "order": "11",
+   "step": "1",
+   "rule_id": "A013",
+   "relation": "映射",
+   "rhs": "C046",
+   "rhs_name": "耦级",
+   "depth": "1",
+   "lhs": "C045"
+  },
+  {
+   "order": "12",
+   "step": "1",
+   "rule_id": "A023",
+   "relation": "重组实现",
+   "rhs": "C049",
+   "rhs_name": "谱算符",
+   "depth": "1",
+   "lhs": "C042"
+  },
+  {
+   "order": "13",
+   "step": "1",
+   "rule_id": "A026",
+   "relation": "依赖",
+   "rhs": "C009",
+   "rhs_name": "因果网络同步理论",
+   "depth": "1",
+   "lhs": "C004"
+  },
+  {
+   "order": "14",
+   "step": "1",
+   "rule_id": "A027",
+   "relation": "映射",
+   "rhs": "C015",
+   "rhs_name": "重组实现",
+   "depth": "1",
+   "lhs": "C008"
+  },
+  {
+   "order": "15",
+   "step": "1",
+   "rule_id": "A029",
+   "relation": "依赖",
+   "rhs": "C046",
+   "rhs_name": "耦级",
+   "depth": "1",
+   "lhs": "C050"
+  },
+  {
+   "order": "16",
+   "step": "1",
+   "rule_id": "A030",
+   "relation": "依赖",
+   "rhs": "C051",
+   "rhs_name": "RH",
+   "depth": "1",
+   "lhs": "C052"
+  },
+  {
+   "order": "17",
+   "step": "1",
+   "rule_id": "A031",
+   "relation": "依赖",
+   "rhs": "C040",
+   "rhs_name": "自守形式",
+   "depth": "1",
+   "lhs": "C080"
+  },
+  {
+   "order": "18",
+   "step": "1",
+   "rule_id": "A032",
+   "relation": "层级含于",
+   "rhs": "C012",
+   "rhs_name": "同步算符",
+   "depth": "1",
+   "lhs": "C069"
+  },
+  {
+   "order": "19",
+   "step": "1",
+   "rule_id": "A033",
+   "relation": "依赖",
+   "rhs": "C070",
+   "rhs_name": "临界温度",
+   "depth": "1",
+   "lhs": "C072"
+  },
+  {
+   "order": "20",
+   "step": "1",
+   "rule_id": "A034",
+   "relation": "依赖",
+   "rhs": "C061",
+   "rhs_name": "耦合动量",
+   "depth": "1",
+   "lhs": "C062"
+  },
+  {
+   "order": "21",
+   "step": "1",
+   "rule_id": "A035",
+   "relation": "依赖",
+   "rhs": "C066",
+   "rhs_name": "候选群族",
+   "depth": "1",
+   "lhs": "C065"
+  },
+  {
+   "order": "22",
+   "step": "1",
+   "rule_id": "A036",
+   "relation": "依赖",
+   "rhs": "C066",
+   "rhs_name": "候选群族",
+   "depth": "1",
+   "lhs": "C068"
+  },
+  {
+   "order": "23",
+   "step": "1",
+   "rule_id": "A037",
+   "relation": "依赖",
+   "rhs": "C020",
+   "rhs_name": "主丛",
+   "depth": "1",
+   "lhs": "C021"
+  },
+  {
+   "order": "24",
+   "step": "1",
+   "rule_id": "A038",
+   "relation": "映射",
+   "rhs": "C026",
+   "rhs_name": "角亏",
+   "depth": "1",
+   "lhs": "C025"
+  },
+  {
+   "order": "25",
+   "step": "1",
+   "rule_id": "A039",
+   "relation": "映射",
+   "rhs": "C027",
+   "rhs_name": "固有时流速",
+   "depth": "1",
+   "lhs": "C031"
+  },
+  {
+   "order": "26",
+   "step": "1",
+   "rule_id": "A040",
+   "relation": "层级含于",
+   "rhs": "C018",
+   "rhs_name": "FG",
+   "depth": "1",
+   "lhs": "C019"
+  },
+  {
+   "order": "27",
+   "step": "1",
+   "rule_id": "A041",
+   "relation": "映射",
+   "rhs": "C023",
+   "rhs_name": "曲率",
+   "depth": "1",
+   "lhs": "C016"
+  },
+  {
+   "order": "28",
+   "step": "1",
+   "rule_id": "A042",
+   "relation": "映射",
+   "rhs": "C005",
+   "rhs_name": "禁闭边界",
+   "depth": "1",
+   "lhs": "C006"
+  },
+  {
+   "order": "29",
+   "step": "1",
+   "rule_id": "A043",
+   "relation": "映射",
+   "rhs": "C043",
+   "rhs_name": "黎曼zeta函数",
+   "depth": "1",
+   "lhs": "C010"
+  },
+  {
+   "order": "30",
+   "step": "1",
+   "rule_id": "A044",
+   "relation": "依赖",
+   "rhs": "C012",
+   "rhs_name": "同步算符",
+   "depth": "1",
+   "lhs": "C011"
+  },
+  {
+   "order": "31",
+   "step": "1",
+   "rule_id": "A045",
+   "relation": "层级含于",
+   "rhs": "C040",
+   "rhs_name": "自守形式",
+   "depth": "1",
+   "lhs": "C041"
+  },
+  {
+   "order": "32",
+   "step": "1",
+   "rule_id": "A046",
+   "relation": "依赖",
+   "rhs": "C076",
+   "rhs_name": "Virasoro代数",
+   "depth": "1",
+   "lhs": "C077"
+  },
+  {
+   "order": "33",
+   "step": "1",
+   "rule_id": "A047",
+   "relation": "依赖",
+   "rhs": "C075",
+   "rhs_name": "共形自举",
+   "depth": "1",
+   "lhs": "C078"
+  },
+  {
+   "order": "34",
+   "step": "1",
+   "rule_id": "A048",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C033"
+  },
+  {
+   "order": "35",
+   "step": "1",
+   "rule_id": "A049",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C034"
+  },
+  {
+   "order": "36",
+   "step": "1",
+   "rule_id": "A050",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C035"
+  },
+  {
+   "order": "37",
+   "step": "1",
+   "rule_id": "A051",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C036"
+  },
+  {
+   "order": "38",
+   "step": "1",
+   "rule_id": "A052",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C037"
+  },
+  {
+   "order": "39",
+   "step": "1",
+   "rule_id": "A053",
+   "relation": "映射",
+   "rhs": "C032",
+   "rhs_name": "时间量纲",
+   "depth": "1",
+   "lhs": "C038"
+  },
+  {
+   "order": "40",
+   "step": "2",
+   "rule_id": "H002",
+   "relation": "重组实现",
+   "rhs": "C014",
+   "rhs_name": "SU5基态",
+   "depth": "2",
+   "lhs": "C007;C012"
+  },
+  {
+   "order": "41",
+   "step": "2",
+   "rule_id": "H010",
+   "relation": "重组实现",
+   "rhs": "C067",
+   "rhs_name": "丛作用量",
+   "depth": "2",
+   "lhs": "C070"
+  },
+  {
+   "order": "42",
+   "step": "2",
+   "rule_id": "H014",
+   "relation": "重组实现",
+   "rhs": "C048",
+   "rhs_name": "相变量子",
+   "depth": "2",
+   "lhs": "C040"
+  },
+  {
+   "order": "43",
+   "step": "2",
+   "rule_id": "A006",
+   "relation": "映射",
+   "rhs": "C022",
+   "rhs_name": "联络",
+   "depth": "2",
+   "lhs": "C026"
+  },
+  {
+   "order": "44",
+   "step": "2",
+   "rule_id": "A008",
+   "relation": "映射",
+   "rhs": "C058",
+   "rhs_name": "谱修正",
+   "depth": "2",
+   "lhs": "C043"
+  },
+  {
+   "order": "45",
+   "step": "2",
+   "rule_id": "A017",
+   "relation": "重组实现",
+   "rhs": "C014",
+   "rhs_name": "SU5基态",
+   "depth": "2",
+   "lhs": "C012"
+  },
+  {
+   "order": "46",
+   "step": "2",
+   "rule_id": "A028",
+   "relation": "映射",
+   "rhs": "C039",
+   "rhs_name": "量纲转换常数族",
+   "depth": "2",
+   "lhs": "C032"
+  },
+  {
+   "order": "47",
+   "step": "3",
+   "rule_id": "H012",
+   "relation": "重组实现",
+   "rhs": "C013",
+   "rhs_name": "GL5固定层级",
+   "depth": "3",
+   "lhs": "C014"
+  },
+  {
+   "order": "48",
+   "step": "3",
+   "rule_id": "H016",
+   "relation": "重组实现",
+   "rhs": "C081",
+   "rhs_name": "G_N",
+   "depth": "3",
+   "lhs": "C056;C057;C048;C047;C058"
+  },
+  {
+   "order": "49",
+   "step": "4",
+   "rule_id": "A024",
+   "relation": "层级含于",
+   "rhs": "C059",
+   "rhs_name": "Weyl群",
+   "depth": "4",
+   "lhs": "C013"
+  }
+ ],
+ "evidence": [
+  {
+   "struct_id": "C001",
+   "kind": "概念",
+   "name": "前时空",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "一、前时空与两种引力：同一种因果场在三个存在论层级的分化",
+   "char_start": 735,
+   "char_end": 796,
+   "quote_clean": "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.408,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C002",
+   "kind": "概念",
+   "name": "物质先在",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "1.3 再生产：维持而非生成",
+   "char_start": 1162,
+   "char_end": 1230,
+   "quote_clean": "理论主线：（1）物质先在，存在先于过程——质子/中子作为有限本体先于再生产闭环，再生产 $\\mu^2=\\mu$ 是维持而非生成；",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.44,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C003",
+   "kind": "概念",
+   "name": "再生产",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "1.3 再生产：维持而非生成",
+   "char_start": 3840,
+   "char_end": 3879,
+   "quote_clean": "再生产是有限本体（质子/中子）维持自身存在的操作，而非创造自身的操作。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.508,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C004",
+   "kind": "概念",
+   "name": "因果集",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "1.3 再生产：维持而非生成",
+   "char_start": 643,
+   "char_end": 731,
+   "quote_clean": "CQM 直接建立在因果集（Causal Set）、关系量子力学（RQM）与圈量子引力（LQG）三大理论基础之上，但进行了根本性的本体论重构：量子化的对象是耦合常数本身。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.679,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C005",
+   "kind": "概念",
+   "name": "禁闭边界",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "7.1 4-单纯形的组合结构",
+   "char_start": 15879,
+   "char_end": 16085,
+   "quote_clean": "$$\\text{禁闭内部离散自由度（因果集事件）} \\xrightarrow{\\text{前核子自组织 + 粗粒化}} \\text{禁闭边界组合结构（4-单纯形）} \\xrightarrow{\\text{边-面关联}} M = E^T E \\xrightarrow{\\text{本征值分析}} \\{9,4,1\\} \\xrightarrow{S5 \\text{表示论}} \\text{SU(5) 规范群结构}$$",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.958,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C006",
+   "kind": "概念",
+   "name": "禁闭内部",
+   "doc_id": "D013",
+   "evidence_doc": "D013",
+   "sec_title": "",
+   "char_start": 907,
+   "char_end": 938,
+   "quote_clean": "内容：量子引力的物理实在位于单个质子／中子的禁闭内部。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.76,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C007",
+   "kind": "概念",
+   "name": "物质自组织",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "1. 引言：从“使用”到“理解”",
+   "char_start": 1979,
+   "char_end": 2024,
+   "quote_clean": "CQM（耦合常数量子力学）提出了一个更激进的立场：数学结构本身是物质自组织的化石。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.0,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C008",
+   "kind": "概念",
+   "name": "退相干",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "一、引言 Introduction",
+   "char_start": 224,
+   "char_end": 234,
+   "quote_clean": "质子集体引力因果限制",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.667,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C009",
+   "kind": "概念",
+   "name": "因果网络同步理论",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 993,
+   "char_end": 1066,
+   "quote_clean": "因果网络同步理论（CNST）是耦合常数量子力学（CQM）的存在论基底，是一个因果动力学理论——描述引力如何使具体的因果结构/关系成为可能。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 13.519,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C010",
+   "kind": "概念",
+   "name": "质数前网络",
+   "doc_id": "D008",
+   "evidence_doc": "D001",
+   "sec_title": "0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群",
+   "char_start": 4044,
+   "char_end": 4863,
+   "quote_clean": "| CQM 核心 因果网络同步理论 | 因果网络同步理论（CNST）：因果动力学理论——描述引力如何使具体的因果结构/关系成为可能。物质先在，物理实在通过物质自组织（表现为退相干）同步化而涌现，质数前网络是描述该物质关系的数学结构。从黎曼结构提取七条同步要素；前时空与两种引力的同步诠释（与主体系术语统一）；引力是因果同步的必要前提（非充分）；超导 = 同步再锁定；§6.2 置乱-同步-超导-光速统一视图（§6.2.2 同步三环节：①前提同步=置乱 / ②实现一致性同步=多群叠加 / ③状态一致性同步=相位锁定）；§6.3 因果范畴与因果动力学（§6.3.6 引力具体表现与同步性质：普遍性质如c不依赖于引力场强度，具体依赖性质如固有时流速依赖于场强度）；黎曼猜想为关键缺口。发生学分层：基态同步是 SU(5)（GL(5) 自守形式经紧化），黎曼猜想为广义黎曼猜想在 GL(1)（U(1) 电磁因子）的特例，GL(5) 固定层级的实谱条件由 GRH 承担，同步算符是紧化算符；物理系统固定在 GL(5) 层级（SU(5) 是含标准模型的最小单群）；完整发生学流程图见该文档 §9；§9.3 共振统一图景（共振总表、α 统一、相变量子 $☯$、超导谱结构） |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.315,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C011",
+   "kind": "概念",
+   "name": "自我限制算符",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "9. 附录：发生学分层流程图",
+   "char_start": 21879,
+   "char_end": 21899,
+   "quote_clean": "| 同步算符紧化投影 | 构造性假设 |",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 1.585,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C012",
+   "kind": "概念",
+   "name": "同步算符",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "9. 状态标注与开放问题",
+   "char_start": 27,
+   "char_end": 76,
+   "quote_clean": "——质数是源，GL(5) 是谐振腔，GRH 是实谱条件，同步算符是换能器，物理规范群是输出",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.831,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C013",
+   "kind": "概念",
+   "name": "GL5固定层级",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群",
+   "char_start": 1491,
+   "char_end": 1508,
+   "quote_clean": "\\text{GL(5) 潜能先在}",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 5.046,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C014",
+   "kind": "概念",
+   "name": "SU5基态",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群",
+   "char_start": 1893,
+   "char_end": 1959,
+   "quote_clean": "| U(1)×SU(2)×SU(3) | 标准模型规范群（重组实现的直接输出，不与 GL(n) 层级挂钩） | 物理现实 |",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 5.721,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C015",
+   "kind": "概念",
+   "name": "重组实现",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "1.3 再生产：维持而非生成",
+   "char_start": 18237,
+   "char_end": 18279,
+   "quote_clean": "来源：SU(5) 重组实现 ⇒ $U(1)$ 电磁群 → $\\alpha$。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.03,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C016",
+   "kind": "概念",
+   "name": "内禀时间",
+   "doc_id": "D023",
+   "evidence_doc": "D023",
+   "sec_title": "",
+   "char_start": 10031,
+   "char_end": 10097,
+   "quote_clean": "前沿论点：SU(5) 的五重态是四维时空坐标 + 内禀时间动力学坐标；内禀时间是自维持（再生产）——固有时，每一步都是扬弃；",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.605,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C017",
+   "kind": "概念",
+   "name": "GR",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 735,
+   "char_end": 796,
+   "quote_clean": "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.812,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C018",
+   "kind": "概念",
+   "name": "FG",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 3847,
+   "char_end": 3855,
+   "quote_clean": "基态的非平庸激发",
+   "match_method": "exact",
+   "confidence": "medium",
+   "score": 0.571,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C019",
+   "kind": "概念",
+   "name": "引力因果限制场",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "一、引言 Introduction",
+   "char_start": 2653,
+   "char_end": 2708,
+   "quote_clean": "在此基础上，提出引力因果限制场退相干理论，将退相干重新定义为关系性因果截断，而非本体性态缩减。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.077,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C020",
+   "kind": "概念",
+   "name": "主丛",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数",
+   "char_start": 3075,
+   "char_end": 3126,
+   "quote_clean": "物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.352,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C021",
+   "kind": "概念",
+   "name": "伴丛",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数",
+   "char_start": 3126,
+   "char_end": 3159,
+   "quote_clean": "主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.395,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C022",
+   "kind": "概念",
+   "name": "联络",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数",
+   "char_start": 5158,
+   "char_end": 5226,
+   "quote_clean": "位置-动量代数：每个顶点 $v$ 上 $[\\hat{X}v,\\hat{P}v]=i\\hbar$（预量子化线丛的联络曲率）",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.397,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C023",
+   "kind": "概念",
+   "name": "曲率",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数",
+   "char_start": 5077,
+   "char_end": 5157,
+   "quote_clean": "质子（4-单纯形）：$\\bar{\\delta}v=0$（理想平坦）；中子 $D(\\delta)$：$\\bar{\\delta}v\\neq 0$（经典背景曲率）",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.081,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C024",
+   "kind": "概念",
+   "name": "和乐",
+   "doc_id": "D028",
+   "evidence_doc": "D001",
+   "sec_title": "3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数",
+   "char_start": 10827,
+   "char_end": 11402,
+   "quote_clean": "| FG 贝里曲率与Regge曲率的关联 | 文献调研研究论文：贝里曲率（Berry curvature）文献谱系（奠基理论→能带物理→超导量子几何→第一性原理计算）；与Regge曲率的共同数学骨架（联络—曲率—和乐，Wilson环同构$Wv=\\exp(i\\deltav\\hat{T}\\ell)$，陈数/离散Gauss–Bonnet平行）；确定物理交点（锥形时空亏角和乐）；直接连接文献缺失的说明（关联是结构性的，非文献性的）；δintrinsic断链的量子几何启示（超流刚度由量子度规决定） |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.0,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C025",
+   "kind": "概念",
+   "name": "Regge剖分",
+   "doc_id": "D006",
+   "evidence_doc": "D001",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 17281,
+   "char_end": 17477,
+   "quote_clean": "| CQM 超导 统一方法论 | 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$Tc=\\thetaD/(2\\,\\mathrm{arccoth}(x))$ |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.526,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C026",
+   "kind": "概念",
+   "name": "角亏",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 14696,
+   "char_end": 14924,
+   "quote_clean": "| N2 | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\\epsilon(\\delta)$ 的具体公式 | SPAF.neutronDefect 定义 $D(\\delta)$；MolecularGeometry.deficitAngleDensity 与 BridgeTheorems.reggeDeficitricciScalar 建立角亏-曲率关系，但 $\\epsilon(\\delta)$ 显式几何公式未写 |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.594,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C027",
+   "kind": "概念",
+   "name": "固有时流速",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "三、核心机制：退相干的四层结构 Core Mechanism: Four-Layer Structure of Decoherence",
+   "char_start": 3498,
+   "char_end": 3595,
+   "quote_clean": "退相干理论所讨论的“因果截断”，正是这一限制场在具体质子集体（原子、分子、探测器）上的关系性实现：一个质子集体的引力因果限制结构，通过其固有时流速差异，对非本体粒子的可能性空间施加筛选。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.769,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C028",
+   "kind": "概念",
+   "name": "Regge铰链",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 13359,
+   "char_end": 13391,
+   "quote_clean": "Regge 铰链需求：缺陷必须在末端，以提供开放面。",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 4.973,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C029",
+   "kind": "概念",
+   "name": "中子缺陷矩阵",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 0,
+   "char_end": 25,
+   "quote_clean": "CQM 核心：两种引力存在论前提与中子缺陷矩阵",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.264,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C030",
+   "kind": "概念",
+   "name": "元素嘉当矩阵",
+   "doc_id": "D006",
+   "evidence_doc": "D001",
+   "sec_title": "二、中子缺陷矩阵：精细引力角亏的结构性来源",
+   "char_start": 17729,
+   "char_end": 17819,
+   "quote_clean": "06 超导/超导材料设计器/ — 元素超导材料设计工具文档（系统架构、元素同位素数据库、超导判定算法、应用场景、元素嘉当矩阵参数化、文献调研、目标超导搜索策略，共 8 篇；",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.758,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C031",
+   "kind": "概念",
+   "name": "对数比参数",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "三、核心机制：退相干的四层结构 Core Mechanism: Four-Layer Structure of Decoherence",
+   "char_start": 5239,
+   "char_end": 5639,
+   "quote_clean": "退相干不是单一事件，而是连续谱（continuous spectrum）： 截断（Truncation） ↓ 筛选 相容性（Compatibility） ↓ 匹配 可能性空间（Possibility Space） ↓ 压缩 唯一性（Uniqueness） 3.1 第一层：截断 Truncation 定义：观测者的必要引力因果限制结构（质量分布、固有时、能量分辨率）对量子态可能性空间进行筛选动作。 关键：截断不等于收敛。截断可以发生而收敛未完成。 物理表现： - 有质量即筛选（$M{\\text{eff}} 0$） - 但筛选可能只是“粗截断”——可能性空间从 $N$ 维降到 $N'$ 维（$N' 1$） - 多分支仍对设备因果可达 例：弱测量。设备“动了手”（截断发生），但手不够细，",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 0.5,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C032",
+   "kind": "概念",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 14790,
+   "char_end": 14856,
+   "quote_clean": "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $KL$ 从无量纲耦合坐标直接生成（大差异），不经过时间。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.1,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C033",
+   "kind": "概念",
+   "name": "长度量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 52733,
+   "char_end": 52769,
+   "quote_clean": "故自守侧若输出一个“带长度量纲的数”，应读作 $KL$ 而非 $c$。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.156,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C034",
+   "kind": "概念",
+   "name": "质量量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 65203,
+   "char_end": 65265,
+   "quote_clean": "$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.707,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C035",
+   "kind": "概念",
+   "name": "电荷量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 4215,
+   "char_end": 4255,
+   "quote_clean": "电荷量纲 $Q$ 不是预先存在的，而是由真正的特征常数从力学量纲中生成。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.613,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C036",
+   "kind": "概念",
+   "name": "温度量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 5719,
+   "char_end": 5740,
+   "quote_clean": "量纲（$\\Theta$ 为温度量纲符号）：",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.153,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C037",
+   "kind": "概念",
+   "name": "物质的量量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 11612,
+   "char_end": 11671,
+   "quote_clean": "| 无量纲→物质的量 | 摩尔 $N$ | $KN$ | 无量纲计数→物质的量的实现关系 |",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 3.227,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C038",
+   "kind": "概念",
+   "name": "发光强度量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.1 特征常数的生成作用",
+   "char_start": 11672,
+   "char_end": 11731,
+   "quote_clean": "| 功率→发光强度 | 坎德拉 $J$ | $KJ$ | 功率→发光强度的实现关系 |",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 4.804,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C039",
+   "kind": "概念",
+   "name": "量纲转换常数族",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.3 各特征常数的角色",
+   "char_start": 17762,
+   "char_end": 17809,
+   "quote_clean": "$c$：时空同步前沿速度（信息传播前沿速率），$[c]=L/T$，不承担量纲转换。",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 4.355,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C040",
+   "kind": "概念",
+   "name": "自守形式",
+   "doc_id": "D024",
+   "evidence_doc": "D024",
+   "sec_title": "1. 相变弧线：从旧尺度失效到新尺度形成",
+   "char_start": 2283,
+   "char_end": 2328,
+   "quote_clean": "传统表述把相变读作时序序列：先有局部共形对称性，再「传播」到全局，最后「显现」为自守形式。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 8.372,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C041",
+   "kind": "概念",
+   "name": "自守因子",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.4 量纲作为属性实现：独立属性、特征常数与差异分类",
+   "char_start": 22387,
+   "char_end": 22522,
+   "quote_clean": "| ② | 各形式（实现）各带具体值（数值 $\\times$ 量纲） | 表面层——表面值不一定一样；“原形式 → 新形式”由自守因子联系 $f(\\gamma x)=j(\\gamma,x)f(x)$（$j\\not\\equiv1$ 时二者不等） |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.724,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C042",
+   "kind": "概念",
+   "name": "极大关系群",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "6.4 量纲作为属性实现：独立属性、特征常数与差异分类",
+   "char_start": 25684,
+   "char_end": 25861,
+   "quote_clean": "极大关系群优先（定义顺序）：量纲的定义顺序是先给不变量、后定群——给定标量函数 $f$（与作用 $\\rho$、母群 $G0$），先取保持 $f$ 不变的最大群（极大关系群）$G{\\max}(f)=\\mathrm{Stab}{G0,\\rho}(f)$，再取同构类 $[G{\\max}(f)]$ 为基本自守量纲。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.794,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C043",
+   "kind": "概念",
+   "name": "黎曼zeta函数",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 7147,
+   "char_end": 7234,
+   "quote_clean": "谱论二分：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符；承担黎曼零点谱的谱算符 $\\hat{H}{\\text{HP}}$ 在类型上即波利亚算符。",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 1.619,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C044",
+   "kind": "概念",
+   "name": "黎曼xi函数",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 7147,
+   "char_end": 7234,
+   "quote_clean": "谱论二分：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符；承担黎曼零点谱的谱算符 $\\hat{H}{\\text{HP}}$ 在类型上即波利亚算符。",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 1.619,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C045",
+   "kind": "概念",
+   "name": "黎曼零点",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 7147,
+   "char_end": 7234,
+   "quote_clean": "谱论二分：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符；承担黎曼零点谱的谱算符 $\\hat{H}{\\text{HP}}$ 在类型上即波利亚算符。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.932,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C046",
+   "kind": "概念",
+   "name": "耦级",
+   "doc_id": "D008",
+   "evidence_doc": "D001",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 16272,
+   "char_end": 16643,
+   "quote_clean": "| CQM 超导核心理论 | 超导涌现的完整框架（因果网络同步理论）：引力存在论前提（前时空〔先于引力〕+ GR/FG 两种引力，FG≠GR）、核子层（质子 $A4$ + 中子 $D(\\delta)$ 缺陷矩阵、元素嘉当矩阵）、两条独立链（几何/嘉当）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、界面超导与边界定理（§17）。纯理论主线，材料/应用与进展/状态内容见 [CQM 超导 专题与扩展] |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.565,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C047",
+   "kind": "概念",
+   "name": "第一耦级",
+   "doc_id": "D008",
+   "evidence_doc": "D001",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 20736,
+   "char_end": 20801,
+   "quote_clean": "| 第一耦级 | $\\mathfrak{c}1$ | $200.04045483$ | $1/4 + \\gamma1^2$ |",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 8.265,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C048",
+   "kind": "概念",
+   "name": "相变量子",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "3. 同步算符：从共振到物理的转换器",
+   "char_start": 6535,
+   "char_end": 6683,
+   "quote_clean": "ζ 零点谱（相变量子 $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|{s=1}$、零点虚部 $\\gamman$、零点差 $\\gamma2-\\gamma1$）属 GL(1) 电磁因子层，直接作为该因子层下使用的谱（GL(1) 是 SU(5) 破缺后电磁因子的自守对偶残留）。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.613,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C049",
+   "kind": "概念",
+   "name": "谱算符",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "4. 精细结构常数的统一：数论精细结构 = 物理精细结构",
+   "char_start": 7147,
+   "char_end": 7234,
+   "quote_clean": "谱论二分：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符；承担黎曼零点谱的谱算符 $\\hat{H}{\\text{HP}}$ 在类型上即波利亚算符。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.59,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C050",
+   "kind": "概念",
+   "name": "耦谱定理",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "§5 Sierra-CQM 耦谱定理",
+   "char_start": 16631,
+   "char_end": 16641,
+   "quote_clean": "Sierra-CQM",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.714,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C051",
+   "kind": "概念",
+   "name": "RH",
+   "doc_id": "D017",
+   "evidence_doc": "D017",
+   "sec_title": "",
+   "char_start": 1434,
+   "char_end": 1495,
+   "quote_clean": "$\\sumn \\frac{1}{\\gamman^2 + 1/4}$ 在 RH 成立时才严格成立，方向是单向的：",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.521,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C052",
+   "kind": "概念",
+   "name": "GRH",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "",
+   "char_start": 9281,
+   "char_end": 9321,
+   "quote_clean": "FG的完整数学对象是朗兰兹纲领的GL(n)各层+广义黎曼猜想（GRH）。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 8.603,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C053",
+   "kind": "概念",
+   "name": "4-单纯形",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "7.1 4-单纯形的组合结构",
+   "char_start": 15879,
+   "char_end": 16085,
+   "quote_clean": "$$\\text{禁闭内部离散自由度（因果集事件）} \\xrightarrow{\\text{前核子自组织 + 粗粒化}} \\text{禁闭边界组合结构（4-单纯形）} \\xrightarrow{\\text{边-面关联}} M = E^T E \\xrightarrow{\\text{本征值分析}} \\{9,4,1\\} \\xrightarrow{S5 \\text{表示论}} \\text{SU(5) 规范群结构}$$",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.116,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C054",
+   "kind": "概念",
+   "name": "A4嘉当矩阵",
+   "doc_id": "D005",
+   "evidence_doc": "D030",
+   "sec_title": "7.1 4-单纯形的组合结构",
+   "char_start": 10176,
+   "char_end": 10199,
+   "quote_clean": "从质子A4嘉当矩阵出发，一路给出晶胞嘉当矩阵：",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 8.239,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C055",
+   "kind": "概念",
+   "name": "边面关联矩阵",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "7.1 4-单纯形的组合结构",
+   "char_start": 15879,
+   "char_end": 16085,
+   "quote_clean": "$$\\text{禁闭内部离散自由度（因果集事件）} \\xrightarrow{\\text{前核子自组织 + 粗粒化}} \\text{禁闭边界组合结构（4-单纯形）} \\xrightarrow{\\text{边-面关联}} M = E^T E \\xrightarrow{\\text{本征值分析}} \\{9,4,1\\} \\xrightarrow{S5 \\text{表示论}} \\text{SU(5) 规范群结构}$$",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 1.573,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C056",
+   "kind": "概念",
+   "name": "Dynkin指数比",
+   "doc_id": "D014",
+   "evidence_doc": "D014",
+   "sec_title": "5. SU(5) 作为唯一曲率源",
+   "char_start": 5412,
+   "char_end": 5812,
+   "quote_clean": "5.1 几何分层原则 几何不是单一的，而是分层的。有效曲率必须同时满足三个条件： 1. 交换几何（$[x^\\mu, x^\\nu] = 0$，经典可对易） 2. 长程（不被质量或禁闭屏蔽） 3. 稳定（不随时间衰减） 5.2 禁闭内部 vs 禁闭边界 | 区域 | 几何类型 | $[x^\\mu, x^\\nu]$ | 长程? | 稳定? | 曲率贡献 | |:---:|:---|:---:|:---:|:---:|:---:| | 禁闭内部（夸克/胶子） | 非交换 | $\\neq 0$ | | | 零（无经典曲率） | | 禁闭边界（质子表面） | 交换 | $= 0$ | 是 | 是 | 主导（唯一来源） | 关键：禁闭内部为非交换几何，色荷不能被经典定位，坐标算符不对易。非",
+   "match_method": "section",
+   "confidence": "medium",
+   "score": 0.5,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C057",
+   "kind": "概念",
+   "name": "Mathieu临界",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "§5 Sierra-CQM 耦谱定理",
+   "char_start": 15866,
+   "char_end": 15878,
+   "quote_clean": "1.3160229113",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.667,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C058",
+   "kind": "概念",
+   "name": "谱修正",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "11.5 外参量影响汇总：温度、压强、磁场",
+   "char_start": 26120,
+   "char_end": 26129,
+   "quote_clean": "(31+☯)/30",
+   "match_method": "exact",
+   "confidence": "medium",
+   "score": 0.818,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C059",
+   "kind": "概念",
+   "name": "Weyl群",
+   "doc_id": "D005",
+   "evidence_doc": "D031",
+   "sec_title": "7.2 边-面关联矩阵与谱",
+   "char_start": 34668,
+   "char_end": 34752,
+   "quote_clean": "物理推导：$1 - \\beta\\deltav \\propto \\exp(-c/\\Delta\\delta0)$ 的微观机制从Weyl群分类和谱间隙第一性推导。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.617,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C060",
+   "kind": "概念",
+   "name": "耦合坐标",
+   "doc_id": "D008",
+   "evidence_doc": "D005",
+   "sec_title": "5. 相变量子 $☯$",
+   "char_start": 10159,
+   "char_end": 10197,
+   "quote_clean": "关键：这是因果集 Sprinkling 在耦合坐标下的严格几何效应。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.882,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C061",
+   "kind": "概念",
+   "name": "耦合动量",
+   "doc_id": "D008",
+   "evidence_doc": "D012",
+   "sec_title": "5. 相变量子 $☯$",
+   "char_start": 9628,
+   "char_end": 9746,
+   "quote_clean": "| 相变量子 $☯$ | $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|{s=1} \\approx 0.02309570897$ | GL(5)固定层级（黎曼 $\\xi$ 函数） | 耦合动量条件的相变量子 |",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.253,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C062",
+   "kind": "概念",
+   "name": "海森堡代数",
+   "doc_id": "D008",
+   "evidence_doc": "D001",
+   "sec_title": "5. 相变量子 $☯$",
+   "char_start": 2446,
+   "char_end": 3243,
+   "quote_clean": "| CQM 核心 集成理论 | CQM 完整理论框架（十三部分）：哲学与本体论（物质先在、存在先于过程、再生产）、理论定位与关系、海森堡代数与相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\\alpha$ 与 $GN$ 推导；§7.1 含“一证七联”框架：核心定理退相干稳态是正四单纯形 $A4$，七大关联为其推论，缺口 C 未闭合）、谱方程与黎曼零点（Sierra-CQM 耦谱定理）、前时空与两种引力（GR/FG 同源分化）、核子结构与元素层级（中子缺陷矩阵）、超导涌现完整机制、与标准理论的关系（贝尔不等式取消、测量问题消解） |",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.19,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C063",
+   "kind": "概念",
+   "name": "跃迁耦级谱",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 979,
+   "char_end": 1246,
+   "quote_clean": "核心结论：CQM 超导不是“筛选 + 吸引”的二分机制，而是单一的主丛几何-动力学过程——FG 底空间联络 $\\mathcal{A}{\\text{FG}}$ 生成底空间 Regge 曲率（Regge 角亏 $\\deltav$），驱动固有时流速涨落，固有时流速涨落通过海森堡代数锁定主丛结构群上的耦合常数量子涨落，涨落给出和乐表示的跃迁耦级谱 $\\Delta un = 2\\ln n$（$n=2,4,6,\\ldots$）的资格条件，候选结构群族在路径积分中通过丛作用量竞争选出主导群，电子在主丛的因果条件下自组织为库珀对。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.258,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C064",
+   "kind": "概念",
+   "name": "资格条件",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 979,
+   "char_end": 1246,
+   "quote_clean": "核心结论：CQM 超导不是“筛选 + 吸引”的二分机制，而是单一的主丛几何-动力学过程——FG 底空间联络 $\\mathcal{A}{\\text{FG}}$ 生成底空间 Regge 曲率（Regge 角亏 $\\deltav$），驱动固有时流速涨落，固有时流速涨落通过海森堡代数锁定主丛结构群上的耦合常数量子涨落，涨落给出和乐表示的跃迁耦级谱 $\\Delta un = 2\\ln n$（$n=2,4,6,\\ldots$）的资格条件，候选结构群族在路径积分中通过丛作用量竞争选出主导群，电子在主丛的因果条件下自组织为库珀对。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.647,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C065",
+   "kind": "概念",
+   "name": "结构群叠加态",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 18529,
+   "char_end": 18578,
+   "quote_clean": "因此涨落后的耦合常数本身对应多个群——结构群叠加态是耦合常数涨落的自然结果，不是额外假设：",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 4.935,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C066",
+   "kind": "概念",
+   "name": "候选群族",
+   "doc_id": "D023",
+   "evidence_doc": "D023",
+   "sec_title": "1. 埃利泽定理与超导的规范对称性重组诠释",
+   "char_start": 2521,
+   "char_end": 2712,
+   "quote_clean": "超导侧的框架基础同样完整：超导核心理论 §5.6 给出 $U(1) \\xRightarrow{\\mathbb{Z}n \\text{商}} U(1)//\\mathbb{Z}n \\Rightarrow En$ 与候选群族 $\\mathcal{G}=\\{U(1)//\\mathbb{Z}n \\mid n \\text{偶}\\}$（n 为偶数由泡利统计选择定则决定，§9.1；",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.4,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C067",
+   "kind": "概念",
+   "name": "丛作用量",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 979,
+   "char_end": 1246,
+   "quote_clean": "核心结论：CQM 超导不是“筛选 + 吸引”的二分机制，而是单一的主丛几何-动力学过程——FG 底空间联络 $\\mathcal{A}{\\text{FG}}$ 生成底空间 Regge 曲率（Regge 角亏 $\\deltav$），驱动固有时流速涨落，固有时流速涨落通过海森堡代数锁定主丛结构群上的耦合常数量子涨落，涨落给出和乐表示的跃迁耦级谱 $\\Delta un = 2\\ln n$（$n=2,4,6,\\ldots$）的资格条件，候选结构群族在路径积分中通过丛作用量竞争选出主导群，电子在主丛的因果条件下自组织为库珀对。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.527,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C068",
+   "kind": "概念",
+   "name": "主导群",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 979,
+   "char_end": 1246,
+   "quote_clean": "核心结论：CQM 超导不是“筛选 + 吸引”的二分机制，而是单一的主丛几何-动力学过程——FG 底空间联络 $\\mathcal{A}{\\text{FG}}$ 生成底空间 Regge 曲率（Regge 角亏 $\\deltav$），驱动固有时流速涨落，固有时流速涨落通过海森堡代数锁定主丛结构群上的耦合常数量子涨落，涨落给出和乐表示的跃迁耦级谱 $\\Delta un = 2\\ln n$（$n=2,4,6,\\ldots$）的资格条件，候选结构群族在路径积分中通过丛作用量竞争选出主导群，电子在主丛的因果条件下自组织为库珀对。",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.683,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C069",
+   "kind": "概念",
+   "name": "超导同步算符",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 29428,
+   "char_end": 29475,
+   "quote_clean": "超导同步算符不是外在于结构群叠加态的选择机制——它就是结构群叠加态自身的谱算符。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.969,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C070",
+   "kind": "概念",
+   "name": "临界温度",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "2. 核子层",
+   "char_start": 24605,
+   "char_end": 24668,
+   "quote_clean": "临界温度 $Tc$ 对应 $\\Delta\\deltav$ 的统计分布使资格条件在全局平均上归零的临界点（见 §12.3）。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.029,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C071",
+   "kind": "概念",
+   "name": "声子",
+   "doc_id": "D011",
+   "evidence_doc": "D011",
+   "sec_title": "",
+   "char_start": 51,
+   "char_end": 82,
+   "quote_clean": "声子是CQM的核心量子媒介，贯穿前时空、GR、FG 三个层级。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 9.868,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "C072",
+   "kind": "概念",
+   "name": "赝能隙",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "11.5 外参量影响汇总：温度、压强、磁场",
+   "char_start": 68533,
+   "char_end": 68671,
+   "quote_clean": "| G21 | §10.2 赝能隙相图：和乐平庸化条件空间不均匀满足率到可观测量（ARPES 谱 $A(\\mathbf{k},\\omega)$、STM 局域态密度）的映射关系。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.843,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C073",
+   "kind": "概念",
+   "name": "FG层级四元组",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "2. 层级公理：每种 FG 都有自己的同步算符",
+   "char_start": 3717,
+   "char_end": 3752,
+   "quote_clean": "同步算符是 FG 的谱算符——FG 有几个层级，同步算符就有几个实现：",
+   "match_method": "section",
+   "confidence": "low",
+   "score": 3.277,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C074",
+   "kind": "概念",
+   "name": "共形固定点",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "1. 从“与能量无关”到共形固定点",
+   "char_start": 1554,
+   "char_end": 1700,
+   "quote_clean": "$$\\boxed{\\beta(g) = \\frac{dg}{d\\ln\\mu} = 0 \\;\\;\\Longleftrightarrow\\;\\; \\text{没有质量尺子} + \\text{耦合锁死为纯数字} \\;\\;\\Longleftrightarrow\\;\\; \\text{共形固定点}}$$",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.768,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C075",
+   "kind": "概念",
+   "name": "共形自举",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "1. 从“与能量无关”到共形固定点",
+   "char_start": 309,
+   "char_end": 344,
+   "quote_clean": "共形自举（Conformal Bootstrap）本质是共形自洽。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.173,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C076",
+   "kind": "概念",
+   "name": "Virasoro代数",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "2. 三角结构：CQM的CFT实现",
+   "char_start": 8720,
+   "char_end": 8731,
+   "quote_clean": "Virasoro生成元",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.688,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C077",
+   "kind": "概念",
+   "name": "中央荷",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "2. 三角结构：CQM的CFT实现",
+   "char_start": 3277,
+   "char_end": 3285,
+   "quote_clean": "Virasoro",
+   "match_method": "exact",
+   "confidence": "medium",
+   "score": 0.667,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C078",
+   "kind": "概念",
+   "name": "共形维度",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "2. 三角结构：CQM的CFT实现",
+   "char_start": 1063,
+   "char_end": 1170,
+   "quote_clean": "元素FG的周期表第一性推导（Casimir→壳层容量、共形维度 $h{\\rm shell}=n{\\rm pr}+l$→Madelung规则、$A4$→$Z{\\max}=118$）是CFT框架的三大应用成果。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 5.107,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C079",
+   "kind": "概念",
+   "name": "Dirac条件",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "3. OPE：同步本征态 ⊗ 耦合本征态 → 群本征态",
+   "char_start": 538,
+   "char_end": 571,
+   "quote_clean": "在CQM中，这就是OPE的相容性条件，也就是Dirac条件的来源。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 6.572,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C080",
+   "kind": "概念",
+   "name": "朗兰兹函子性",
+   "doc_id": "D020",
+   "evidence_doc": "D020",
+   "sec_title": "1. 质量的量纲地位",
+   "char_start": 185,
+   "char_end": 222,
+   "quote_clean": "\\text{其他粒子是 } \\pip \\text{ 的朗兰兹函子性分化。",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.358,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C081",
+   "kind": "概念",
+   "name": "G_N",
+   "doc_id": "D014",
+   "evidence_doc": "D014",
+   "sec_title": "5. SU(5) 作为唯一曲率源",
+   "char_start": 6032,
+   "char_end": 6067,
+   "quote_clean": "因此 $GN$ 由禁闭边界的 SU(5) 交换几何给定（框架内）",
+   "match_method": "name",
+   "confidence": "medium",
+   "score": 3.0,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "section"
+  },
+  {
+   "struct_id": "C082",
+   "kind": "概念",
+   "name": "Wyler常数",
+   "doc_id": "D021",
+   "evidence_doc": "D001",
+   "sec_title": "",
+   "char_start": 12593,
+   "char_end": 13168,
+   "quote_clean": "| Wyler常数 A4群论分解与CQM框架嵌入 | 核心发现：Wyler常数（1969）可完全用$A4$群论不变量表达 |",
+   "match_method": "name",
+   "confidence": "high",
+   "score": 7.531,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": true,
+   "loc_status": "fail"
+  },
+  {
+   "struct_id": "P001",
+   "kind": "命题",
+   "name": "量子化耦合常数本身 时空与标准模型在禁闭边界涌现",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 6929,
+   "char_end": 6958,
+   "quote_clean": "时空与标准模型都是耦合常数量子力学在禁闭边界上涌现。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.578,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P002",
+   "kind": "命题",
+   "name": "引力=物质自组织的因果条件 分化为GR（广度）与",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 735,
+   "char_end": 796,
+   "quote_clean": "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.817,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P003",
+   "kind": "命题",
+   "name": "物质先在 物理实在经自组织同步展开 引力是因果同",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 1066,
+   "char_end": 1126,
+   "quote_clean": "CNST 的核心命题是：物质先在，物理实在不是先验地存在于时空之中，而是通过物质的自组织（表现为退相干）同步展开为时空。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.852,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P004",
+   "kind": "命题",
+   "name": "质数是源 GL(5)是谐振腔 GRH是实谱条件 ",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 27,
+   "char_end": 76,
+   "quote_clean": "——质数是源，GL(5) 是谐振腔，GRH 是实谱条件，同步算符是换能器，物理规范群是输出",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 15.58,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P005",
+   "kind": "命题",
+   "name": "量纲发生学 每压掉一个量纲冒出特征常数 K下标转",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 47922,
+   "char_end": 48005,
+   "quote_clean": "| 量纲发生学 | 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” | 定性（哪些常数有量纲、$K$ 是什么） | §6.1、§6.4.1 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 10.414,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P006",
+   "kind": "命题",
+   "name": "群是物质自组织的组织约束体现 约束性=不变性",
+   "doc_id": "D010",
+   "evidence_doc": "D010",
+   "sec_title": "",
+   "char_start": 6998,
+   "char_end": 7054,
+   "quote_clean": "四条基约束性（§3.1）是这种读法最自然的实例——属性保持不变性是约束的再描述，不是约束的定义（§6）；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.042,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P007",
+   "kind": "命题",
+   "name": "声子是贯穿前时空/GR/FG三层的核心量子媒介（",
+   "doc_id": "D011",
+   "evidence_doc": "D011",
+   "sec_title": "",
+   "char_start": 51,
+   "char_end": 82,
+   "quote_clean": "声子是CQM的核心量子媒介，贯穿前时空、GR、FG 三个层级。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 13.526,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P008",
+   "kind": "命题",
+   "name": "CFT描述临界自组织态扩大的机制 同时是同步的过",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "",
+   "char_start": 15631,
+   "char_end": 15663,
+   "quote_clean": "CFT描述了临界自组织态扩大的机制，同时也是同步的过程机制。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 15.691,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P009",
+   "kind": "命题",
+   "name": "不另立量子引力层 FG就是FG 体系采用假设二（",
+   "doc_id": "D013",
+   "evidence_doc": "D013",
+   "sec_title": "",
+   "char_start": 160,
+   "char_end": 210,
+   "quote_clean": "体系采用候选二（禁闭内部只是 QCD），故这些内容落在 FG，而不在禁闭内部（§三、§四）。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.651,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P010",
+   "kind": "命题",
+   "name": "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠",
+   "doc_id": "D014",
+   "evidence_doc": "D014",
+   "sec_title": "",
+   "char_start": 14438,
+   "char_end": 14517,
+   "quote_clean": "（由理论 $GN$ 导出，与实验 Planck 质量 $MP^{(\\text{exp})} = 1.220890 \\times 10^{19}$ 相区别）",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 3.701,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P011",
+   "kind": "命题",
+   "name": "退相干=质子集体引力因果限制结构的因果截断（关系",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "",
+   "char_start": 21681,
+   "char_end": 21733,
+   "quote_clean": "引力因果限制场退相干理论将退相干重新定义为质子集体引力因果限制结构对非本体粒子经典波函数的截断。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 10.146,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P012",
+   "kind": "命题",
+   "name": "跨层级退相干深耦合机制统一退相干过程 回应唯一性",
+   "doc_id": "D016",
+   "evidence_doc": "D016",
+   "sec_title": "",
+   "char_start": 705,
+   "char_end": 765,
+   "quote_clean": "CQM 提出一种“跨层级退相干深耦合”机制，在概念层面给出唯一性难题的机制，并将整个退相干过程统一起来；",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 13.471,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P013",
+   "kind": "命题",
+   "name": "3已知+2待推+物理存在性⇒交叉RH成立",
+   "doc_id": "D017",
+   "evidence_doc": "D017",
+   "sec_title": "",
+   "char_start": 18946,
+   "char_end": 18959,
+   "quote_clean": "3已知+2待推+物理存在性",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.65,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P014",
+   "kind": "命题",
+   "name": "边界长度半已解 相位半S(T)是唯一实质缺口 五",
+   "doc_id": "D018",
+   "evidence_doc": "D018",
+   "sec_title": "",
+   "char_start": 690,
+   "char_end": 771,
+   "quote_clean": "「待推 1：边界条件」经解剖与归档回捞，结论是：长度半已由 RvM 非循环解出，相位半 $S(T)$ 仍是唯一实质缺口，且五重联系可统一到一个自洽方程上。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.375,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P015",
+   "kind": "命题",
+   "name": "定义-公理-定理-证明 ☯三重恒等+G_N构造1",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "",
+   "char_start": 7752,
+   "char_end": 7775,
+   "quote_clean": "定理 1.5（相变量子三重恒等定理）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.856,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P016",
+   "kind": "命题",
+   "name": "质量是自守关联的涌现结果 其它粒子是π_p的朗兰",
+   "doc_id": "D020",
+   "evidence_doc": "D020",
+   "sec_title": "",
+   "char_start": 7748,
+   "char_end": 7770,
+   "quote_clean": "\\text{质量谱 = 朗兰兹函子性分化谱。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.782,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P017",
+   "kind": "命题",
+   "name": "Wyler常数可用A₄群论不变量表达 嵌入SU(",
+   "doc_id": "D021",
+   "evidence_doc": "D021",
+   "sec_title": "",
+   "char_start": 3351,
+   "char_end": 3389,
+   "quote_clean": "Wyler 常数完全由 $A4$ 的群论不变量决定，因此自然嵌入这个链条：",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.258,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P018",
+   "kind": "命题",
+   "name": "贝里曲率与Regge曲率共享联络-曲率-和乐骨架",
+   "doc_id": "D022",
+   "evidence_doc": "D022",
+   "sec_title": "",
+   "char_start": 10544,
+   "char_end": 10619,
+   "quote_clean": "贝里曲率与 Regge 曲率的关联是结构性的——共享 §4.1 的数学骨架（联络—曲率—和乐、曲率测度→拓扑不变量），这是范畴级严格事实；",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.458,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P019",
+   "kind": "命题",
+   "name": "规范对称性从不破缺 超导=U(1)//Z_n重组",
+   "doc_id": "D023",
+   "evidence_doc": "D023",
+   "sec_title": "",
+   "char_start": 22160,
+   "char_end": 22181,
+   "quote_clean": "规范对称性重组（埃利泽定理与后续）",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.504,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P020",
+   "kind": "命题",
+   "name": "自守形式是局部共形对称性与全局模对称性同步的数学",
+   "doc_id": "D024",
+   "evidence_doc": "D024",
+   "sec_title": "",
+   "char_start": 620,
+   "char_end": 636,
+   "quote_clean": "局部共形对称性与全局模对称性同步",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.615,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P021",
+   "kind": "命题",
+   "name": "置乱时间普适下界 GRH=实谱条件 置乱与退相干",
+   "doc_id": "D025",
+   "evidence_doc": "D025",
+   "sec_title": "",
+   "char_start": 9556,
+   "char_end": 9595,
+   "quote_clean": "物理意义：这是论文的核心结果——持续置乱时间 $ts$ 的普适下界。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.768,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P022",
+   "kind": "命题",
+   "name": "扬弃Hilbert-Pólya 保留内核超越为物",
+   "doc_id": "D026",
+   "evidence_doc": "D026",
+   "sec_title": "",
+   "char_start": 276,
+   "char_end": 388,
+   "quote_clean": "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“厄米算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.011,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P023",
+   "kind": "命题",
+   "name": "三重危机同一辩证病根 CQM为合题（新层级涌现论",
+   "doc_id": "D027",
+   "evidence_doc": "D027",
+   "sec_title": "",
+   "char_start": 14831,
+   "char_end": 14867,
+   "quote_clean": "CQM 作为新层级涌现论，是这个否定之否定的合题。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.364,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P024",
+   "kind": "命题",
+   "name": "FG=GR基态非平庸激发 底空间主丛上的联络 完",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "",
+   "char_start": 141,
+   "char_end": 240,
+   "quote_clean": "$$\\boxed{\\text{FG} = \\text{GR基态的非平庸激发} = \\text{主丛 } P(M,G) \\text{ 上的联络 } \\mathcal{A}{\\text{FG}}}$$",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.024,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P025",
+   "kind": "命题",
+   "name": "纤维丛数学↔CFT结构严格定量映射 同一数学两种",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 618,
+   "char_end": 638,
+   "quote_clean": "同一套纤维丛数学，两种物理诠释相互关联。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.635,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P026",
+   "kind": "命题",
+   "name": "超导=FG底空间主丛伴丛的全局同步截面（同步再锁",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 3818,
+   "char_end": 3897,
+   "quote_clean": "超导态 = FG 底空间上的主丛 $P(M,G)$ 的伴丛 $E=P\\timesG\\mathbb{C}$ 的全局同步截面（序参量全局截面，同步再锁定）。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.298,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P027",
+   "kind": "命题",
+   "name": "元素周期表可导出 T_c自由能框架 缺口G9-G",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64529,
+   "char_end": 64550,
+   "quote_clean": "框架中 G9–G22 环节的闭合状态一览：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.869,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P028",
+   "kind": "命题",
+   "name": "每个FG层级都有自己的同步算符 补入分子FG闭合",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "",
+   "char_start": 4472,
+   "char_end": 4503,
+   "quote_clean": "每种 FG 都有自己的同步算符 ⟺ 超导第一性预测链闭合。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.588,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P029",
+   "kind": "命题",
+   "name": "四层FG剖分方法论与统一计算链",
+   "doc_id": "D033",
+   "evidence_doc": "D033",
+   "sec_title": "",
+   "char_start": 46,
+   "char_end": 135,
+   "quote_clean": "该文档用统一纤维丛语言严格描述CQM超导预测的方法论：四层FG（元素/分子/晶胞/超导）各自是不同的纤维丛，剖分对象不同，但从Regge剖分到Tc的计算步骤完全统一且第一性。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.506,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P030",
+   "kind": "命题",
+   "name": "11库形式化验证状态 748定理/30公理待证 ",
+   "doc_id": "D042",
+   "evidence_doc": "D042",
+   "sec_title": "",
+   "char_start": 7416,
+   "char_end": 7437,
+   "quote_clean": "| 库 | 已证明定理 | 公理/待证 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.644,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "P031",
+   "kind": "命题",
+   "name": "GN库101定理 零sorry 零新增axiom",
+   "doc_id": "D043",
+   "evidence_doc": "D043",
+   "sec_title": "",
+   "char_start": 751,
+   "char_end": 788,
+   "quote_clean": "合计：101 定理/引理，零 sorry、零新增 axiom。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.801,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G001",
+   "kind": "缺口",
+   "name": "缺口C：退相干稳态为何恰好是A₄（正四单纯形）",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 16700,
+   "char_end": 16727,
+   "quote_clean": "缺口 C（未闭合）：退相干稳态为何恰好是 $A4$。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.258,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G002",
+   "kind": "缺口",
+   "name": "缺口G2：耦合空间→双曲Laplacian的必要",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 9357,
+   "char_end": 9390,
+   "quote_clean": "\\;\\xrightarrow{\\text{U(1)耦合常数}}\\;",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.289,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G003",
+   "kind": "缺口",
+   "name": "缺口G3：D̂=-i(∂_u-1/2)的唯一性",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 11965,
+   "char_end": 12039,
+   "quote_clean": "缺口标注：$☯$ 与 $\\gamman$ 谱在 GL(1) 电磁因子层的严格谱实现（波利亚类型谱算符的物理铸造）待严格推导，见 §9。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 1.191,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G004",
+   "kind": "缺口",
+   "name": "缺口G4：D̂→Ĥ=D̂²+1/4的涌现",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 6783,
+   "char_end": 6812,
+   "quote_clean": "若零点猜想不成立，配对不变量离开实轴，物理规范群无法涌现。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 1.868,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G005",
+   "kind": "缺口",
+   "name": "缺口G5：退相干→边界条件ϑ_n锁定（归属待裁定",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 16700,
+   "char_end": 16727,
+   "quote_clean": "缺口 C（未闭合）：退相干稳态为何恰好是 $A4$。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 3.282,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G006",
+   "kind": "缺口",
+   "name": "缺口G6：未定义（占位）",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 32492,
+   "char_end": 32504,
+   "quote_clean": "其显式推导为未决缺口）。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.828,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G007",
+   "kind": "缺口",
+   "name": "缺口G7：Σ_ij的第一性数值来源",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 1904,
+   "char_end": 1963,
+   "quote_clean": "每一部分标注严格性状态；关键缺口（如中子缺陷 $\\delta$、几何耦合 $\\beta$ 的第一性来源）在结论中审计。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 3.853,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G008",
+   "kind": "缺口",
+   "name": "缺口G8：CP破坏相位δ的严格来源",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 51756,
+   "char_end": 51791,
+   "quote_clean": "未严格建立（关键缺口，本章局部编号 A–E，不与 G2–G8 混用）：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.344,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G009",
+   "kind": "缺口",
+   "name": "缺口G9：曲率截断共振窗口σ来源与标定",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64587,
+   "char_end": 64630,
+   "quote_clean": "| G9 | 曲率截断共振窗口 $\\sigma$ 的来源与标定 | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 12.561,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G010",
+   "kind": "缺口",
+   "name": "缺口G10：闭环条件函数的动力学形式",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64643,
+   "char_end": 64655,
+   "quote_clean": "闭环条件函数的动力学形式",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.667,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G011",
+   "kind": "缺口",
+   "name": "缺口G11：D_lattice正四单纯形组合构型",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64664,
+   "char_end": 64734,
+   "quote_clean": "| G11 | $\\mathcal{D}{\\text{lattice}}$ 从正四单纯形组合构型到声子谱的具体推导 | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.36,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G012",
+   "kind": "缺口",
+   "name": "缺口G12：引力拓扑因子T_grav度规依赖",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64735,
+   "char_end": 64799,
+   "quote_clean": "| G12 | 引力拓扑因子 $\\mathcal{T}{\\text{grav}}$ 的完整度规依赖形式 | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 12.401,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G013",
+   "kind": "缺口",
+   "name": "缺口G13：BCS积分tanh→对数渐近",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 64800,
+   "char_end": 64883,
+   "quote_clean": "| G13 | BCS 积分方程 $\\tanh\\to$ 对数渐近（“积分→$Tc$”） | 闭合（bcsTcFromIntegralsolved） |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.216,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G014",
+   "kind": "缺口",
+   "name": "缺口G14：中子缺陷谱判据detD=8-3δ²",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 25496,
+   "char_end": 25512,
+   "quote_clean": "缺陷来源数正比于中子数 $N$：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.971,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G015",
+   "kind": "缺口",
+   "name": "缺口G15：主次结构谱间隙差→同位素效应映射",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 65287,
+   "char_end": 65303,
+   "quote_clean": "主次结构谱间隙差→同位素效应映射",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.727,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G016",
+   "kind": "缺口",
+   "name": "缺口G16：因果分辨率形式化（角亏密度→Ricc",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 65312,
+   "char_end": 65362,
+   "quote_clean": "| G16 | 因果分辨率的形式化（Regge 角亏密度→Ricci 标量） | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 15.494,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G017",
+   "kind": "缺口",
+   "name": "缺口G18：主丛曲率机制关键参数第一性提取",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 69375,
+   "char_end": 69400,
+   "quote_clean": "耦合参数第一性化缺口仍开放（该文档 §11.2）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.307,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G018",
+   "kind": "缺口",
+   "name": "缺口G19：和乐相位闭合≈1容差标定",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 68292,
+   "char_end": 68532,
+   "quote_clean": "| G19 | §10.1 和乐相位闭合条件 $\\mathcal{H}{ij} = \\exp(i\\ointC \\omega{\\alphai\\alphaj}) \\approx 1$ 中“$\\approx 1$”的容差标定：容差与温度、向错芯曲率 $\\deltav$、相干长度 $\\xi{coher}$ 的定量关系；有效窗口宽度 $\\deltav \\xi{coher} - \\Delta\\phi{thermal}(T)$ 的严格推导 | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.281,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G019",
+   "kind": "缺口",
+   "name": "缺口G21：赝能隙相图→ARPES/STM映射",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 68533,
+   "char_end": 68671,
+   "quote_clean": "| G21 | §10.2 赝能隙相图：和乐平庸化条件空间不均匀满足率到可观测量（ARPES 谱 $A(\\mathbf{k},\\omega)$、STM 局域态密度）的映射关系。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.754,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G020",
+   "kind": "缺口",
+   "name": "缺口G22：T_c丛作用量交叉构造推导",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 69662,
+   "char_end": 69779,
+   "quote_clean": "| TransitionTemperatureCQM | §11.2 $Tc$（G22 行内已闭合项：公式已给出，前向验证未闭合） | CQM 临界温度严格推导：相变量子 $☯$、玻色恒等式、丛作用量交叉 $F1=F2$ |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.654,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G021",
+   "kind": "缺口",
+   "name": "缺口N1：质量-谱映射m∝λ_min待严格化",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 14232,
+   "char_end": 14257,
+   "quote_clean": "质量-谱映射的严格第一性推导仍开放（缺口 N1）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.924,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G022",
+   "kind": "缺口",
+   "name": "缺口N2：角亏-δ显式几何公式ϵ(δ)缺失",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 16055,
+   "char_end": 16141,
+   "quote_clean": "$$\\boxed{\\delta \\to \\text{Regge 角亏 } \\epsilon(\\delta) \\quad (\\text{缺口 N2：显式几何公式未写})}$$",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.348,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G023",
+   "kind": "缺口",
+   "name": "缺口N3：β衰变动力学条件缺失",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 18336,
+   "char_end": 18393,
+   "quote_clean": "核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.672,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G024",
+   "kind": "缺口",
+   "name": "缺口N4：氘核结合能精确推导",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 15064,
+   "char_end": 15107,
+   "quote_clean": "| N4 | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.348,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G025",
+   "kind": "命题",
+   "name": "层级假设H3.1",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "",
+   "char_start": 18170,
+   "char_end": 18217,
+   "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.562,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G026",
+   "kind": "命题",
+   "name": "层级假设H3.2",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "",
+   "char_start": 18170,
+   "char_end": 18217,
+   "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.562,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G027",
+   "kind": "命题",
+   "name": "层级假设H3.3",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "",
+   "char_start": 18170,
+   "char_end": 18217,
+   "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.562,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G028",
+   "kind": "命题",
+   "name": "黎曼猜想",
+   "doc_id": "D017",
+   "evidence_doc": "D017",
+   "sec_title": "",
+   "char_start": 20118,
+   "char_end": 20140,
+   "quote_clean": "历史上对黎曼猜想的分解通常是二分的：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.049,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G029",
+   "kind": "命题",
+   "name": "Mathieu临界",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "",
+   "char_start": 12510,
+   "char_end": 12533,
+   "quote_clean": "定义 3.1（Mathieu 算符）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.357,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G030",
+   "kind": "命题",
+   "name": "素数冻结假设",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 21879,
+   "char_end": 21899,
+   "quote_clean": "| 同步算符紧化投影 | 构造性假设 |",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 1.933,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G031",
+   "kind": "命题",
+   "name": "Tate自对偶",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 6535,
+   "char_end": 6683,
+   "quote_clean": "ζ 零点谱（相变量子 $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|{s=1}$、零点虚部 $\\gamman$、零点差 $\\gamma2-\\gamma1$）属 GL(1) 电磁因子层，直接作为该因子层下使用的谱（GL(1) 是 SU(5) 破缺后电磁因子的自守对偶残留）。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 1.785,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "G032",
+   "kind": "命题",
+   "name": "G_N变分原理",
+   "doc_id": "D014",
+   "evidence_doc": "D014",
+   "sec_title": "",
+   "char_start": 17644,
+   "char_end": 17701,
+   "quote_clean": "$GN$ 作为物理系统普适因果背景场的组织参数，其严格稳定性是等效原理的基石，也是 CQM 最核心的可检验预言。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 3.431,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H001",
+   "kind": "论证",
+   "name": "物质自组织",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 45843,
+   "char_end": 45862,
+   "quote_clean": "是物质自组织的基态规范骨架，不可还原。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.429,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H002",
+   "kind": "论证",
+   "name": "SU(5)基态",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 4814,
+   "char_end": 4831,
+   "quote_clean": "基态同步算符（紧化算符）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.011,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H003",
+   "kind": "论证",
+   "name": "SU(5)规范群结构",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 18279,
+   "char_end": 18336,
+   "quote_clean": "具体地，$M$ 本征值 $\\{9,4,1\\}$ 通过 $S5$ 表示论与 SU(5) 规范群结构锁定组合不变量：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.391,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H004",
+   "kind": "论证",
+   "name": "禁闭边界A_4",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 51817,
+   "char_end": 51857,
+   "quote_clean": "| A | 二阶层方程在禁闭边界（前核子自组织关键实现区）严格退相干为一阶层 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.441,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H005",
+   "kind": "论证",
+   "name": "Regge铰链/非零角亏",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 15824,
+   "char_end": 15884,
+   "quote_clean": "| FG | 中子-质子对提供 $A4$ 末端缺陷，形成 Regge 铰链（质子-质子对也能形成铰链，但一般较难） |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.518,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H006",
+   "kind": "论证",
+   "name": "Regge角亏δ_v",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 4331,
+   "char_end": 4363,
+   "quote_clean": "二者均由物质晶胞分布的内禀不均匀性（Regge 角亏）直接产生。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 10.917,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H007",
+   "kind": "论证",
+   "name": "元素嘉当矩阵C_element",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 20344,
+   "char_end": 20383,
+   "quote_clean": "$D(\\delta)$ 仍然是有限型广义嘉当矩阵，不是仿射型或双曲型。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 3.457,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H008",
+   "kind": "论证",
+   "name": "声子/角亏涨落",
+   "doc_id": "D011",
+   "evidence_doc": "D011",
+   "sec_title": "",
+   "char_start": 971,
+   "char_end": 991,
+   "quote_clean": "晶胞量子振荡导致底空间曲率（角亏）涨落：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.861,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H009",
+   "kind": "论证",
+   "name": "资格条件",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 16548,
+   "char_end": 16684,
+   "quote_clean": "超导扇区为 $U(1){\\text{em}}$，涨落 $u{U(1)}$，跃迁耦级谱 $2\\ln n$（$n=2,4,6,\\ldots$），资格条件 $\\Delta\\delta0 \\ge ☯\\sqrt{1-\\beta\\deltav}/(2\\beta\\ln n)$。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.293,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H010",
+   "kind": "论证",
+   "name": "丛作用量交叉F_1=F_2",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 27834,
+   "char_end": 27854,
+   "quote_clean": "第三步：临界温度 = 丛作用量交叉。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.908,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H011",
+   "kind": "论证",
+   "name": "紧化算符层级化实现",
+   "doc_id": "D032",
+   "evidence_doc": "D032",
+   "sec_title": "",
+   "char_start": 3234,
+   "char_end": 3368,
+   "quote_clean": "精细引力 FG 的每个物质组织层级 $\\ell \\in \\{\\text{电子}, \\text{元素}, \\text{分子}, \\text{晶胞}\\}$ 都拥有自己的同步算符 $\\hat{\\mathcal{S}}\\ell$——它是紧化算符在该层级主丛截面空间上的实现：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.565,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H012",
+   "kind": "论证",
+   "name": "各因子层GL(n)谱/残留",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 17815,
+   "char_end": 17860,
+   "quote_clean": "物质自组织基态同步是SU(5)（GL(5)自守谱），重组实现后各因子层GL(n)谱是残留：",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 16.501,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H013",
+   "kind": "论证",
+   "name": "自守形式",
+   "doc_id": "D024",
+   "evidence_doc": "D024",
+   "sec_title": "",
+   "char_start": 585,
+   "char_end": 644,
+   "quote_clean": "$$\\boxed{\\text{自守形式在共形场论中的显现，是相变弧线上局部共形对称性与全局模对称性同步实现的数学结晶。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.036,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H014",
+   "kind": "论证",
+   "name": "c",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 17809,
+   "char_end": 17844,
+   "quote_clean": "$L=c\\,T$ 是物理速度关系（速度=距离/时间），非量纲实现关系。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.992,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H015",
+   "kind": "论证",
+   "name": "交叉RH成立",
+   "doc_id": "D017",
+   "evidence_doc": "D017",
+   "sec_title": "",
+   "char_start": 5523,
+   "char_end": 5597,
+   "quote_clean": "\\text{3个已知} + \\text{2个待推} + \\text{物理存在性} \\;\\Longrightarrow\\; \\text{交叉RH成立}",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 12.112,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H016",
+   "kind": "论证",
+   "name": "G_N",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "",
+   "char_start": 23556,
+   "char_end": 23699,
+   "quote_clean": "$$GN = \\frac{\\hbar c}{mp^2} \\cdot I \\cdot \\lambdac \\cdot ☯^2 \\cdot \\mathfrak{c}1 \\cdot \\exp\\left(-\\frac{2}{☯}\\right) \\cdot (1 + \\kappa ☯)$$",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.201,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "H017",
+   "kind": "论证",
+   "name": "Wyler常数α_W",
+   "doc_id": "D021",
+   "evidence_doc": "D021",
+   "sec_title": "",
+   "char_start": 3505,
+   "char_end": 3616,
+   "quote_clean": "具体地，Wyler 常数使用了 $A4$ 的四个基本群论不变量：Coxeter 数 $h$、秩 $r$、Weyl 群阶 $|W|$、嘉当矩阵迹 $\\text{tr}(A4)$，这些都是精确的，不是近似。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.02,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A001",
+   "kind": "论证",
+   "name": "GR",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 9192,
+   "char_end": 9233,
+   "quote_clean": "| | 前时空 | 精细引力 FG | 经典引力 GR |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.589,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A002",
+   "kind": "论证",
+   "name": "FG",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 8588,
+   "char_end": 8600,
+   "quote_clean": "GR 比 FG 更基础。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.559,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A003",
+   "kind": "论证",
+   "name": "超导",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 12741,
+   "char_end": 12756,
+   "quote_clean": "在超导机制中，FG 的角色是：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 8.019,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A004",
+   "kind": "论证",
+   "name": "M=EᵀE本征值{9,4,1}",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 15879,
+   "char_end": 16085,
+   "quote_clean": "$$\\text{禁闭内部离散自由度（因果集事件）} \\xrightarrow{\\text{前核子自组织 + 粗粒化}} \\text{禁闭边界组合结构（4-单纯形）} \\xrightarrow{\\text{边-面关联}} M = E^T E \\xrightarrow{\\text{本征值分析}} \\{9,4,1\\} \\xrightarrow{S5 \\text{表示论}} \\text{SU(5) 规范群结构}$$",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 3.29,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A005",
+   "kind": "论证",
+   "name": "U(1)//Z_n商结构→α",
+   "doc_id": "D023",
+   "evidence_doc": "D023",
+   "sec_title": "",
+   "char_start": 3131,
+   "char_end": 3219,
+   "quote_clean": "把超导理解为“破缺”丢掉的正是：U(1) 完整保留这一事实，以及 $U(1)\\Rightarrow U(1)//\\mathbb{Z}n$ 商结构所记录的重组过程本身。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.267,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A006",
+   "kind": "论证",
+   "name": "联络A_FG→伴丛曲率F",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "",
+   "char_start": 641,
+   "char_end": 732,
+   "quote_clean": "一个联络生成两种曲率：底空间Regge角亏 $\\deltav$ + 伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 3.767,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A007",
+   "kind": "论证",
+   "name": "固有时流速v_τ=√(1−βδ_v)",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "",
+   "char_start": 18218,
+   "char_end": 18236,
+   "quote_clean": "因此固有时流速退化为 1：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.945,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A008",
+   "kind": "论证",
+   "name": "局部耦合核κ_p",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 14015,
+   "char_end": 14050,
+   "quote_clean": "| 质数共振 → ζ 零点谱 | 严格 | 欧拉乘积 + 显式公式 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.471,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A009",
+   "kind": "论证",
+   "name": "同步格林函数ψ(e^u)",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 14015,
+   "char_end": 14050,
+   "quote_clean": "| 质数共振 → ζ 零点谱 | 严格 | 欧拉乘积 + 显式公式 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 3.622,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A010",
+   "kind": "论证",
+   "name": "同步算符厄米性S=S†",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 6484,
+   "char_end": 6529,
+   "quote_clean": "\\;\\xrightarrow{\\text{实共振谱}}\\; \\text{同步算符执行紧化}",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.497,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A011",
+   "kind": "论证",
+   "name": "L函数零点位于临界线",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 6293,
+   "char_end": 6334,
+   "quote_clean": "广义黎曼猜想：GL(5) 固定层级的自守 L 函数非平凡零点都在临界线上。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.104,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A012",
+   "kind": "论证",
+   "name": "GL(5)固定层级实谱条件",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 8680,
+   "char_end": 8689,
+   "quote_clean": "GL(5)固定层级",
+   "match_method": "exact",
+   "confidence": "medium",
+   "score": 0.562,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A013",
+   "kind": "论证",
+   "name": "耦级𝔠_n=1/4+γ_n²",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 12961,
+   "char_end": 12991,
+   "quote_clean": "$\\gamma2 - \\gamma1$：黎曼零点差；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 3.741,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A014",
+   "kind": "论证",
+   "name": "λ_1=-B（三重恒等）",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 14466,
+   "char_end": 14578,
+   "quote_clean": "| 黎曼猜想（$\\zeta$ 的非平凡零点；GL(1) 电磁因子层的实谱条件，广义黎曼猜想的 GL(1) 特例） | 未证明 | 等价于配对不变量 $\\mathfrak{c}n=\\rhon(1-\\rhon)$ 为实 |",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 1.361,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A015",
+   "kind": "论证",
+   "name": "RH（单向推论）",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 10441,
+   "char_end": 10460,
+   "quote_clean": "其谱表示是 RH 的单向推论。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.574,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A016",
+   "kind": "论证",
+   "name": "共形固定点β(g)=0",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "",
+   "char_start": 1554,
+   "char_end": 1700,
+   "quote_clean": "$$\\boxed{\\beta(g) = \\frac{dg}{d\\ln\\mu} = 0 \\;\\;\\Longleftrightarrow\\;\\; \\text{没有质量尺子} + \\text{耦合锁死为纯数字} \\;\\;\\Longleftrightarrow\\;\\; \\text{共形固定点}}$$",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 13.042,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A017",
+   "kind": "论证",
+   "name": "群本征态",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 9426,
+   "char_end": 9479,
+   "quote_clean": "精细结构常数 $\\alpha$ 是SU(5)重组实现的输出——$U(1)$电磁群本征群的耦合常数。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.908,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A018",
+   "kind": "论证",
+   "name": "CFT primary operator φ",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 20586,
+   "char_end": 20688,
+   "quote_clean": "CFT primary operator：primary operator $\\phi(z)$ 是复平面上的共形场，满足Virasoro最高权条件 $\\hat{L}{n0}\\phi = 0$。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 10.112,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A019",
+   "kind": "论证",
+   "name": "Virasoro生成元{L_n}",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 22325,
+   "char_end": 22372,
+   "quote_clean": "其中 $\\mathcal{A}n$ 对应 Virasoro 生成元 $\\hat{L}n$；",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.529,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A020",
+   "kind": "论证",
+   "name": "对易子[L_m,L_n]",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 29937,
+   "char_end": 30033,
+   "quote_clean": "| 曲率 $F$ | 对易子 $[\\hat{L}m, \\hat{L}n]$ | $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$ | §9.3 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.434,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A021",
+   "kind": "论证",
+   "name": "OPE monodromy e^{2πih}",
+   "doc_id": "D029",
+   "evidence_doc": "D029",
+   "sec_title": "",
+   "char_start": 30076,
+   "char_end": 30158,
+   "quote_clean": "| 和乐 $W(\\gamma)$ | monodromy $e^{2\\pi ih}$ | $h = \\deltav\\hat{T}/(2\\pi)$ | §9.4 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.765,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A022",
+   "kind": "论证",
+   "name": "共形自举方程/OPE结合律",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "",
+   "char_start": 7395,
+   "char_end": 7431,
+   "quote_clean": "Dirac条件是共形自举方程（OPE结合律）在CQM中的具体化。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 16.221,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A023",
+   "kind": "论证",
+   "name": "本征群R→群算符Ĥ",
+   "doc_id": "D010",
+   "evidence_doc": "D010",
+   "sec_title": "",
+   "char_start": 24840,
+   "char_end": 24958,
+   "quote_clean": "结构群 $G$（如 $GL(5)$／$SU(5)$）经重组实现为本征群 $R$（如 $U(1)\\times SU(2)\\times SU(3)$、壳层本征群 $SU(2){k}$），等价地重组为群算符 $\\hat{H}$；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.149,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A024",
+   "kind": "论证",
+   "name": "Weyl群S_n",
+   "doc_id": "D010",
+   "evidence_doc": "D010",
+   "sec_title": "",
+   "char_start": 13754,
+   "char_end": 13807,
+   "quote_clean": "单纯的时间平移 $\\mathbb{R}$（$t\\mapsto t+a$）属仿射层（§3.3），含于庞加莱。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 3.486,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A025",
+   "kind": "论证",
+   "name": "物质自组织",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 2,
+   "char_end": 10,
+   "quote_clean": "因果网络同步理论",
+   "match_method": "exact",
+   "confidence": "medium",
+   "score": 0.571,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A026",
+   "kind": "论证",
+   "name": "CNST",
+   "doc_id": "D005",
+   "evidence_doc": "D005",
+   "sec_title": "",
+   "char_start": 34330,
+   "char_end": 34382,
+   "quote_clean": "超导的组织学定位（因果网络同步）见 11.6 与 CQM核心因果网络同步理论.md（CNST）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.882,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A027",
+   "kind": "论证",
+   "name": "重组实现",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "",
+   "char_start": 12662,
+   "char_end": 12677,
+   "quote_clean": "三类退相干的核心区分：",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.391,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A028",
+   "kind": "论证",
+   "name": "量纲转换常数族",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 16153,
+   "char_end": 16230,
+   "quote_clean": "特征常数的性质——跨量纲特征常数：每个量纲转换有一个跨量纲特征常数（如长度层的 $KL$、质量层的 $KM$、电荷层的 $KQ$）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.997,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A029",
+   "kind": "论证",
+   "name": "耦级",
+   "doc_id": "D019",
+   "evidence_doc": "D019",
+   "sec_title": "",
+   "char_start": 22774,
+   "char_end": 22796,
+   "quote_clean": "构造 9.1（第一耦级的精确等同）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.818,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A030",
+   "kind": "论证",
+   "name": "RH",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "",
+   "char_start": 14021,
+   "char_end": 14108,
+   "quote_clean": "$$\\boxed{\\text{完整同步谱} \\iff \\text{RH} \\land \\text{GRH(GL(4))} \\land \\text{GRH(GL(5))}}$$",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.927,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A031",
+   "kind": "论证",
+   "name": "自守形式",
+   "doc_id": "D020",
+   "evidence_doc": "D020",
+   "sec_title": "",
+   "char_start": 12097,
+   "char_end": 12204,
+   "quote_clean": "| §3.2/§3.3（自守关联、$fL,fT\\in\\pip$） | 本汇总新增（对应发生学分层：自守形式 → L 函数 → 朗兰兹；见 01 核心理论/CQM核心朗兰兹分层共振与相变量子.md） |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 6.194,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A032",
+   "kind": "论证",
+   "name": "同步算符",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 34841,
+   "char_end": 34850,
+   "quote_clean": "超导同步算符形式：",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.524,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A033",
+   "kind": "论证",
+   "name": "临界温度",
+   "doc_id": "D031",
+   "evidence_doc": "D031",
+   "sec_title": "",
+   "char_start": 68672,
+   "char_end": 69015,
+   "quote_clean": "| G22 | §12.3 临界温度 $Tc$ 作为“正常态与超导态丛作用量交叉”的构造推导 | 公式推导完成、严格性待提升（行内含已闭合项与未闭合项）：§11.2 四步推导（涨落温度依赖 $\\Delta\\deltav(T)=\\Delta\\delta0\\sqrt{\\tanh(\\hbar\\Omega0/2kBT)}$ → 资格条件筛选候选群族 → 路径积分丛作用量竞争 → 丛作用量交叉 $F1(Tc)=F2(Tc)$），以丛作用量交叉表述 $Tc$（不含独立“跃迁能级”假设），$Tc=(E2-E1)/(S2-S1)$。未闭合项：自由能 $Fn$ 停留在形式定义（需构造可计算作用量，见 G18 行）、$Tc$ 公式的严格性待提升 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.858,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A034",
+   "kind": "论证",
+   "name": "耦合动量",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 30587,
+   "char_end": 30597,
+   "quote_clean": "框架不依赖概率密度。",
+   "match_method": "doc",
+   "confidence": "low",
+   "score": 2.917,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A035",
+   "kind": "论证",
+   "name": "候选群族",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 34355,
+   "char_end": 34407,
+   "quote_clean": "资格条件筛出候选群族后，候选群族张成 Hilbert 空间，同步算符 = 此空间上结构群叠加态的谱算符。",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.938,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A036",
+   "kind": "论证",
+   "name": "候选群族",
+   "doc_id": "D030",
+   "evidence_doc": "D030",
+   "sec_title": "",
+   "char_start": 26698,
+   "char_end": 26714,
+   "quote_clean": "路径积分在候选群族上选择主导群：",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 11.214,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A037",
+   "kind": "论证",
+   "name": "主丛",
+   "doc_id": "D028",
+   "evidence_doc": "D028",
+   "sec_title": "",
+   "char_start": 3126,
+   "char_end": 3159,
+   "quote_clean": "主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.455,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A038",
+   "kind": "论证",
+   "name": "角亏",
+   "doc_id": "D006",
+   "evidence_doc": "D006",
+   "sec_title": "",
+   "char_start": 7229,
+   "char_end": 7257,
+   "quote_clean": "声子是 FG Regge 曲率（底空间角亏）的量子涨落。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.362,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A039",
+   "kind": "论证",
+   "name": "固有时流速",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "",
+   "char_start": 18218,
+   "char_end": 18236,
+   "quote_clean": "因此固有时流速退化为 1：",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.445,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A040",
+   "kind": "论证",
+   "name": "FG",
+   "doc_id": "D015",
+   "evidence_doc": "D015",
+   "sec_title": "",
+   "char_start": 3060,
+   "char_end": 3089,
+   "quote_clean": "在 CQM 中，引力因果限制场 = 引力固有时场。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 5.466,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A041",
+   "kind": "论证",
+   "name": "规范重组超导",
+   "doc_id": "D023",
+   "evidence_doc": "D023",
+   "sec_title": "",
+   "char_start": 22160,
+   "char_end": 22181,
+   "quote_clean": "规范对称性重组（埃利泽定理与后续）",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.115,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A042",
+   "kind": "论证",
+   "name": "禁闭边界",
+   "doc_id": "D013",
+   "evidence_doc": "D013",
+   "sec_title": "",
+   "char_start": 3196,
+   "char_end": 3243,
+   "quote_clean": "| $A4$ 嘉当矩阵 | 量子嘉当矩阵 $A4^{(q)}$ | 禁闭边界的代数结构 |",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.707,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A043",
+   "kind": "论证",
+   "name": "黎曼zeta函数",
+   "doc_id": "D008",
+   "evidence_doc": "D008",
+   "sec_title": "",
+   "char_start": 10297,
+   "char_end": 10398,
+   "quote_clean": "$\\zeta$ 与 $\\xi$ 是同一 $\\mathrm{GL}(1)$ $L$ 函数的算术面孔与谱面孔——“质数是源”（$\\zeta$ 侧）与“$☯$ 是全局谱权重”（$\\xi$ 侧）分别对应两张脸。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 4.326,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A044",
+   "kind": "论证",
+   "name": "同步算符",
+   "doc_id": "D007",
+   "evidence_doc": "D007",
+   "sec_title": "",
+   "char_start": 4814,
+   "char_end": 4831,
+   "quote_clean": "基态同步算符（紧化算符）。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.771,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A045",
+   "kind": "论证",
+   "name": "自守形式",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 15215,
+   "char_end": 15235,
+   "quote_clean": "自守形式的差异层级决定了量纲转换的性质：",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.108,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A046",
+   "kind": "论证",
+   "name": "Virasoro代数",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "",
+   "char_start": 3277,
+   "char_end": 3287,
+   "quote_clean": "Virasoro代数",
+   "match_method": "exact",
+   "confidence": "high",
+   "score": 0.714,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A047",
+   "kind": "论证",
+   "name": "共形自举",
+   "doc_id": "D012",
+   "evidence_doc": "D012",
+   "sec_title": "",
+   "char_start": 6603,
+   "char_end": 6632,
+   "quote_clean": "$$\\text{共形自举} = \\text{共形自洽}$$",
+   "match_method": "doc",
+   "confidence": "high",
+   "score": 9.711,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A048",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 14790,
+   "char_end": 14856,
+   "quote_clean": "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $KL$ 从无量纲耦合坐标直接生成（大差异），不经过时间。",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.863,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A049",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 46728,
+   "char_end": 46751,
+   "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.515,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A050",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 46728,
+   "char_end": 46751,
+   "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.515,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A051",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 46728,
+   "char_end": 46751,
+   "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.515,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A052",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 46728,
+   "char_end": 46751,
+   "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.515,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  },
+  {
+   "struct_id": "A053",
+   "kind": "论证",
+   "name": "时间量纲",
+   "doc_id": "D009",
+   "evidence_doc": "D009",
+   "sec_title": "",
+   "char_start": 46728,
+   "char_end": 46751,
+   "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
+   "match_method": "doc",
+   "confidence": "medium",
+   "score": 7.515,
+   "verified": false,
+   "review_verdict": "",
+   "reviewer": "",
+   "doc_switch": false,
+   "loc_status": "empty"
+  }
+ ],
+ "quality": {
+  "shacl": {
+   "conforms": true,
+   "shapes_file": "02_概念本体/shapes.shacl.ttl",
+   "violations": 0,
+   "by_message": {},
+   "focus_nodes": [],
+   "details": []
+  },
+  "rdf": {
+   "triples_in_owl": 3984,
+   "triples_exported": 5573,
+   "added": {
+    "alt_labels": 35,
+    "pref_labels": 82,
+    "prov_links": 215,
+    "lean_links": 60
+   },
+   "turtle": "03_超图与理论图/知识图谱.ttl"
+  },
+  "extract": {
+   "gold_edges": 78,
+   "gold_pairs": 78,
+   "candidates": 920,
+   "pattern_candidates": 259,
+   "cooccur_only_candidates": 661,
+   "pair_hits": 32,
+   "pattern_pair_hits": 18,
+   "precision_pair": 0.035,
+   "precision_pattern": 0.069,
+   "recall_pair": 0.41,
+   "recall_pair_unordered": 0.474,
+   "recall_pattern": 0.231,
+   "f1_pair": 0.064,
+   "relation_type_accuracy": 0.111,
+   "typed_candidates_on_gold_pairs": 18,
+   "recall_ceiling_sentence_cooccurrence": 0.5,
+   "recall_vs_ceiling": 0.949,
+   "note": "金标准 = 人工论证表（70 条，含多前件超边展开）。**分层候选**：pattern 层（两端间有关系线索词，类型可推断）与 cooccur 层（仅同句共现，类型标『未定』，交人工/LLM 定型）。配对召回的物理上界 = 金标准两端在原文同句共现的比例；cooccur 层按无向配对计的召回 / 上界 = 95%。『未定』类型的候选不得直接入库——类型定型须经人工或 LLM（span 校验后）。",
+   "by_rel": {
+    "重组实现": {
+     "candidates": 20,
+     "pair_hits": 0
+    },
+    "映射": {
+     "candidates": 58,
+     "pair_hits": 5
+    },
+    "等价": {
+     "candidates": 26,
+     "pair_hits": 3
+    },
+    "依赖": {
+     "candidates": 2,
+     "pair_hits": 0
+    },
+    "层级含于": {
+     "candidates": 2,
+     "pair_hits": 1
+    },
+    "演化": {
+     "candidates": 5,
+     "pair_hits": 0
+    }
+   }
+  },
+  "terms": {
+   "candidates_after_threshold": 1151,
+   "kept_top_n": 800,
+   "already_in_concept_table": 0,
+   "new_candidates_kept": 800,
+   "concept_coverage": "0/82",
+   "thresholds": {
+    "min_freq": 8,
+    "min_pmi": 8.0,
+    "min_boundary_entropy": 1.0,
+    "n_gram": "2-5"
+   },
+   "top_new": [
+    "条件",
+    "算符",
+    "超导",
+    "核心",
+    "框架",
+    "严格",
+    "几何",
+    "自组织",
+    "耦合常数",
+    "底空间",
+    "表示",
+    "黎曼",
+    "嘉当矩阵",
+    "涨落",
+    "证明",
+    "矩阵",
+    "无量纲",
+    "结构群",
+    "动力学",
+    "标准",
+    "机制",
+    "独立",
+    "特征常数",
+    "晶胞",
+    "假设",
+    "网络",
+    "状态",
+    "边界",
+    "纤维丛",
+    "直接",
+    "展开",
+    "确定性",
+    "来源",
+    "元素",
+    "形式化",
+    "规范",
+    "通过",
+    "性关系",
+    "约束",
+    "关系群"
+   ],
+   "zero_cover_docs": 21,
+   "zero_cover_candidates": 305
+  },
+  "reasoner": {
+   "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",
+   "consistent": true,
+   "unsatisfiable_classes": [],
+   "error": ""
+  },
+  "ontology": {
+   "owl_classes": 25,
+   "owl_individuals": 429,
+   "owl_object_properties": 16,
+   "owl_annotation_properties": 15,
+   "owl_restrictions": 0,
+   "owl_disjoint_type_classes": 12
+  },
+  "gap_dep_edges": 3,
+  "claim_hist": {
+   "同证据句": 4,
+   "提及概念": 60,
+   "证据句提及概念": 51,
+   "证据文档": 52,
+   "语义近邻（候选）": 22,
+   "话语线索": 4,
+   "依据文档": 96,
+   "提及缺口": 2
+  },
+  "alias_count": 35,
+  "align": {
+   "args": 70,
+   "count_ok": 60
+  }
+ },
+ "kg_stats": {
+  "concepts": 82,
+  "props": 39,
+  "gaps": 24,
+  "relations": 70,
+  "claim_edges": 290,
+  "verified_edges": 229
+ },
+ "kg_nodes": [
+  {
+   "id": "P001",
+   "kind": "prop",
+   "label": "量子化耦合常数本身 时空与标准模型在禁闭边界涌现（十三部分总纲）",
+   "type": "定理",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "时空与标准模型都是耦合常数量子力学在禁闭边界上涌现。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D005",
+    "char_start": 6929,
+    "char_end": 6958,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P002",
+   "kind": "prop",
+   "label": "引力=物质自组织的因果条件 分化为GR（广度）与FG（深度） 前时空前置",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D006",
+   "ev": {
+    "quote_clean": "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D006",
+    "char_start": 735,
+    "char_end": 796,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P003",
+   "kind": "prop",
+   "label": "物质先在 物理实在经自组织同步展开 引力是因果同步的必要前提",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D007",
+   "ev": {
+    "quote_clean": "CNST 的核心命题是：物质先在，物理实在不是先验地存在于时空之中，而是通过物质的自组织（表现为退相干）同步展开为时空。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D007",
+    "char_start": 1066,
+    "char_end": 1126,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P004",
+   "kind": "prop",
+   "label": "质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D008",
+   "ev": {
+    "quote_clean": "——质数是源，GL(5) 是谐振腔，GRH 是实谱条件，同步算符是换能器，物理规范群是输出",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D008",
+    "char_start": 27,
+    "char_end": 76,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P005",
+   "kind": "prop",
+   "label": "量纲发生学 每压掉一个量纲冒出特征常数 K下标转换常数族",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D009",
+   "ev": {
+    "quote_clean": "| 量纲发生学 | 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” | 定性（哪些常数有量纲、$K$ 是什么） | §6.1、§6.4.1 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D009",
+    "char_start": 47922,
+    "char_end": 48005,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P006",
+   "kind": "prop",
+   "label": "群是物质自组织的组织约束体现 约束性=不变性",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D010",
+   "ev": {
+    "quote_clean": "四条基约束性（§3.1）是这种读法最自然的实例——属性保持不变性是约束的再描述，不是约束的定义（§6）；",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D010",
+    "char_start": 6998,
+    "char_end": 7054,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P007",
+   "kind": "prop",
+   "label": "声子是贯穿前时空/GR/FG三层的核心量子媒介（曲率量子）",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D011",
+   "ev": {
+    "quote_clean": "声子是CQM的核心量子媒介，贯穿前时空、GR、FG 三个层级。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D011",
+    "char_start": 51,
+    "char_end": 82,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P008",
+   "kind": "prop",
+   "label": "CFT描述临界自组织态扩大的机制 同时是同步的过程机制",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D012",
+   "ev": {
+    "quote_clean": "CFT描述了临界自组织态扩大的机制，同时也是同步的过程机制。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D012",
+    "char_start": 15631,
+    "char_end": 15663,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P009",
+   "kind": "prop",
+   "label": "不另立量子引力层 FG就是FG 体系采用假设二（禁闭内部=QCD）",
+   "type": "假设",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D013",
+   "ev": {
+    "quote_clean": "体系采用候选二（禁闭内部只是 QCD），故这些内容落在 FG，而不在禁闭内部（§三、§四）。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D013",
+    "char_start": 160,
+    "char_end": 210,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P010",
+   "kind": "prop",
+   "label": "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm",
+   "type": "构造",
+   "status": "构造后验数字校验待独立复现",
+   "code": "",
+   "doc": "D014",
+   "ev": {
+    "quote_clean": "（由理论 $GN$ 导出，与实验 Planck 质量 $MP^{(\\text{exp})} = 1.220890 \\times 10^{19}$ 相区别）",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D014",
+    "char_start": 14438,
+    "char_end": 14517,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P011",
+   "kind": "prop",
+   "label": "退相干=质子集体引力因果限制结构的因果截断（关系性）四层结构",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D015",
+   "ev": {
+    "quote_clean": "引力因果限制场退相干理论将退相干重新定义为质子集体引力因果限制结构对非本体粒子经典波函数的截断。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D015",
+    "char_start": 21681,
+    "char_end": 21733,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P012",
+   "kind": "prop",
+   "label": "跨层级退相干深耦合机制统一退相干过程 回应唯一性难题",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D016",
+   "ev": {
+    "quote_clean": "CQM 提出一种“跨层级退相干深耦合”机制，在概念层面给出唯一性难题的机制，并将整个退相干过程统一起来；",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D016",
+    "char_start": 705,
+    "char_end": 765,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P013",
+   "kind": "prop",
+   "label": "3已知+2待推+物理存在性⇒交叉RH成立",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D017",
+   "ev": {
+    "quote_clean": "3已知+2待推+物理存在性",
+    "match_method": "exact",
+    "confidence": "high",
+    "evidence_doc": "D017",
+    "char_start": 18946,
+    "char_end": 18959,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P014",
+   "kind": "prop",
+   "label": "边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D018",
+   "ev": {
+    "quote_clean": "「待推 1：边界条件」经解剖与归档回捞，结论是：长度半已由 RvM 非循环解出，相位半 $S(T)$ 仍是唯一实质缺口，且五重联系可统一到一个自洽方程上。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D018",
+    "char_start": 690,
+    "char_end": 771,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P015",
+   "kind": "prop",
+   "label": "定义-公理-定理-证明 ☯三重恒等+G_N构造11.1",
+   "type": "定理",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D019",
+   "ev": {
+    "quote_clean": "定理 1.5（相变量子三重恒等定理）。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D019",
+    "char_start": 7752,
+    "char_end": 7775,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P016",
+   "kind": "prop",
+   "label": "质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D020",
+   "ev": {
+    "quote_clean": "\\text{质量谱 = 朗兰兹函子性分化谱。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D020",
+    "char_start": 7748,
+    "char_end": 7770,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P017",
+   "kind": "prop",
+   "label": "Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链",
+   "type": "定理",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D021",
+   "ev": {
+    "quote_clean": "Wyler 常数完全由 $A4$ 的群论不变量决定，因此自然嵌入这个链条：",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D021",
+    "char_start": 3351,
+    "char_end": 3389,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P018",
+   "kind": "prop",
+   "label": "贝里曲率与Regge曲率共享联络-曲率-和乐骨架 关联是结构性的",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D022",
+   "ev": {
+    "quote_clean": "贝里曲率与 Regge 曲率的关联是结构性的——共享 §4.1 的数学骨架（联络—曲率—和乐、曲率测度→拓扑不变量），这是范畴级严格事实；",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D022",
+    "char_start": 10544,
+    "char_end": 10619,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P019",
+   "kind": "prop",
+   "label": "规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D023",
+   "ev": {
+    "quote_clean": "规范对称性重组（埃利泽定理与后续）",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D023",
+    "char_start": 22160,
+    "char_end": 22181,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P020",
+   "kind": "prop",
+   "label": "自守形式是局部共形对称性与全局模对称性同步的数学结晶",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D024",
+   "ev": {
+    "quote_clean": "局部共形对称性与全局模对称性同步",
+    "match_method": "exact",
+    "confidence": "high",
+    "evidence_doc": "D024",
+    "char_start": 620,
+    "char_end": 636,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P021",
+   "kind": "prop",
+   "label": "置乱时间普适下界 GRH=实谱条件 置乱与退相干同一原理两面向",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D025",
+   "ev": {
+    "quote_clean": "物理意义：这是论文的核心结果——持续置乱时间 $ts$ 的普适下界。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D025",
+    "char_start": 9556,
+    "char_end": 9595,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P022",
+   "kind": "prop",
+   "label": "扬弃Hilbert-Pólya 保留内核超越为物理过程铸造算符",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D026",
+   "ev": {
+    "quote_clean": "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“厄米算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D026",
+    "char_start": 276,
+    "char_end": 388,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P023",
+   "kind": "prop",
+   "label": "三重危机同一辩证病根 CQM为合题（新层级涌现论）",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D027",
+   "ev": {
+    "quote_clean": "CQM 作为新层级涌现论，是这个否定之否定的合题。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D027",
+    "char_start": 14831,
+    "char_end": 14867,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P024",
+   "kind": "prop",
+   "label": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH",
+   "type": "定理",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D028",
+   "ev": {
+    "quote_clean": "$$\\boxed{\\text{FG} = \\text{GR基态的非平庸激发} = \\text{主丛 } P(M,G) \\text{ 上的联络 } \\mathcal{A}{\\text{FG}}}$$",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D028",
+    "char_start": 141,
+    "char_end": 240,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P025",
+   "kind": "prop",
+   "label": "纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释",
+   "type": "定理",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D029",
+   "ev": {
+    "quote_clean": "同一套纤维丛数学，两种物理诠释相互关联。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D029",
+    "char_start": 618,
+    "char_end": 638,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P026",
+   "kind": "prop",
+   "label": "超导=FG底空间主丛伴丛的全局同步截面（同步再锁定）",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D030",
+   "ev": {
+    "quote_clean": "超导态 = FG 底空间上的主丛 $P(M,G)$ 的伴丛 $E=P\\timesG\\mathbb{C}$ 的全局同步截面（序参量全局截面，同步再锁定）。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D030",
+    "char_start": 3818,
+    "char_end": 3897,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P027",
+   "kind": "prop",
+   "label": "元素周期表可导出 T_c自由能框架 缺口G9-G22权威表",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "框架中 G9–G22 环节的闭合状态一览：",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 64529,
+    "char_end": 64550,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P028",
+   "kind": "prop",
+   "label": "每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D032",
+   "ev": {
+    "quote_clean": "每种 FG 都有自己的同步算符 ⟺ 超导第一性预测链闭合。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D032",
+    "char_start": 4472,
+    "char_end": 4503,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P029",
+   "kind": "prop",
+   "label": "四层FG剖分方法论与统一计算链",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D033",
+   "ev": {
+    "quote_clean": "该文档用统一纤维丛语言严格描述CQM超导预测的方法论：四层FG（元素/分子/晶胞/超导）各自是不同的纤维丛，剖分对象不同，但从Regge剖分到Tc的计算步骤完全统一且第一性。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D033",
+    "char_start": 46,
+    "char_end": 135,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P030",
+   "kind": "prop",
+   "label": "11库形式化验证状态 748定理/30公理待证 缺口闭合表",
+   "type": "命题",
+   "status": "已陈述",
+   "code": "",
+   "doc": "D042",
+   "ev": {
+    "quote_clean": "| 库 | 已证明定理 | 公理/待证 |",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D042",
+    "char_start": 7416,
+    "char_end": 7437,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "P031",
+   "kind": "prop",
+   "label": "GN库101定理 零sorry 零新增axiom",
+   "type": "定理",
+   "status": "已证明",
+   "code": "",
+   "doc": "D043",
+   "ev": {
+    "quote_clean": "合计：101 定理/引理，零 sorry、零新增 axiom。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D043",
+    "char_start": 751,
+    "char_end": 788,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G001",
+   "kind": "gap",
+   "label": "缺口C：退相干稳态为何恰好是A₄（正四单纯形）",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "C",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "缺口 C（未闭合）：退相干稳态为何恰好是 $A4$。",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D005",
+    "char_start": 16700,
+    "char_end": 16727,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G002",
+   "kind": "gap",
+   "label": "缺口G2：耦合空间→双曲Laplacian的必要性",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G2",
+   "doc": "D008",
+   "ev": {
+    "quote_clean": "\\;\\xrightarrow{\\text{U(1)耦合常数}}\\;",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D008",
+    "char_start": 9357,
+    "char_end": 9390,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G003",
+   "kind": "gap",
+   "label": "缺口G3：D̂=-i(∂_u-1/2)的唯一性",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G3",
+   "doc": "D008",
+   "ev": {
+    "quote_clean": "缺口标注：$☯$ 与 $\\gamman$ 谱在 GL(1) 电磁因子层的严格谱实现（波利亚类型谱算符的物理铸造）待严格推导，见 §9。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D008",
+    "char_start": 11965,
+    "char_end": 12039,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G004",
+   "kind": "gap",
+   "label": "缺口G4：D̂→Ĥ=D̂²+1/4的涌现",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G4",
+   "doc": "D008",
+   "ev": {
+    "quote_clean": "若零点猜想不成立，配对不变量离开实轴，物理规范群无法涌现。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D008",
+    "char_start": 6783,
+    "char_end": 6812,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G005",
+   "kind": "gap",
+   "label": "缺口G5：退相干→边界条件ϑ_n锁定（归属待裁定）",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G5",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "缺口 C（未闭合）：退相干稳态为何恰好是 $A4$。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D005",
+    "char_start": 16700,
+    "char_end": 16727,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G006",
+   "kind": "gap",
+   "label": "缺口G6：未定义（占位）",
+   "type": "缺口",
+   "status": "占位",
+   "code": "G6",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "其显式推导为未决缺口）。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D005",
+    "char_start": 32492,
+    "char_end": 32504,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G007",
+   "kind": "gap",
+   "label": "缺口G7：Σ_ij的第一性数值来源",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G7",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "每一部分标注严格性状态；关键缺口（如中子缺陷 $\\delta$、几何耦合 $\\beta$ 的第一性来源）在结论中审计。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D005",
+    "char_start": 1904,
+    "char_end": 1963,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G008",
+   "kind": "gap",
+   "label": "缺口G8：CP破坏相位δ的严格来源",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "G8",
+   "doc": "D005",
+   "ev": {
+    "quote_clean": "未严格建立（关键缺口，本章局部编号 A–E，不与 G2–G8 混用）：",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D005",
+    "char_start": 51756,
+    "char_end": 51791,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G009",
+   "kind": "gap",
+   "label": "缺口G9：曲率截断共振窗口σ来源与标定",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G9",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G9 | 曲率截断共振窗口 $\\sigma$ 的来源与标定 | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 64587,
+    "char_end": 64630,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G010",
+   "kind": "gap",
+   "label": "缺口G10：闭环条件函数的动力学形式",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G10",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "闭环条件函数的动力学形式",
+    "match_method": "exact",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 64643,
+    "char_end": 64655,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G011",
+   "kind": "gap",
+   "label": "缺口G11：D_lattice正四单纯形组合构型→声子谱",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G11",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G11 | $\\mathcal{D}{\\text{lattice}}$ 从正四单纯形组合构型到声子谱的具体推导 | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 64664,
+    "char_end": 64734,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G012",
+   "kind": "gap",
+   "label": "缺口G12：引力拓扑因子T_grav度规依赖",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G12",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G12 | 引力拓扑因子 $\\mathcal{T}{\\text{grav}}$ 的完整度规依赖形式 | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 64735,
+    "char_end": 64799,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G013",
+   "kind": "gap",
+   "label": "缺口G13：BCS积分tanh→对数渐近",
+   "type": "缺口",
+   "status": "闭合",
+   "code": "G13",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G13 | BCS 积分方程 $\\tanh\\to$ 对数渐近（“积分→$Tc$”） | 闭合（bcsTcFromIntegralsolved） |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 64800,
+    "char_end": 64883,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G014",
+   "kind": "gap",
+   "label": "缺口G14：中子缺陷谱判据detD=8-3δ²",
+   "type": "缺口",
+   "status": "闭合",
+   "code": "G14",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "缺陷来源数正比于中子数 $N$：",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 25496,
+    "char_end": 25512,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G015",
+   "kind": "gap",
+   "label": "缺口G15：主次结构谱间隙差→同位素效应映射",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G15",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "主次结构谱间隙差→同位素效应映射",
+    "match_method": "exact",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 65287,
+    "char_end": 65303,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G016",
+   "kind": "gap",
+   "label": "缺口G16：因果分辨率形式化（角亏密度→Ricci标量）",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G16",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G16 | 因果分辨率的形式化（Regge 角亏密度→Ricci 标量） | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D031",
+    "char_start": 65312,
+    "char_end": 65362,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G017",
+   "kind": "gap",
+   "label": "缺口G18：主丛曲率机制关键参数第一性提取",
+   "type": "缺口",
+   "status": "部分闭合",
+   "code": "G18",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "耦合参数第一性化缺口仍开放（该文档 §11.2）。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 69375,
+    "char_end": 69400,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G018",
+   "kind": "gap",
+   "label": "缺口G19：和乐相位闭合≈1容差标定",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G19",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G19 | §10.1 和乐相位闭合条件 $\\mathcal{H}{ij} = \\exp(i\\ointC \\omega{\\alphai\\alphaj}) \\approx 1$ 中“$\\approx 1$”的容差标定：容差与温度、向错芯曲率 $\\deltav$、相干长度 $\\xi{coher}$ 的定量关系；有效窗口宽度 $\\deltav \\xi{coher} - \\Delta\\phi{thermal}(T)$ 的严格推导 | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 68292,
+    "char_end": 68532,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G019",
+   "kind": "gap",
+   "label": "缺口G21：赝能隙相图→ARPES/STM映射",
+   "type": "缺口",
+   "status": "未闭合",
+   "code": "G21",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| G21 | §10.2 赝能隙相图：和乐平庸化条件空间不均匀满足率到可观测量（ARPES 谱 $A(\\mathbf{k},\\omega)$、STM 局域态密度）的映射关系。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 68533,
+    "char_end": 68671,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G020",
+   "kind": "gap",
+   "label": "缺口G22：T_c丛作用量交叉构造推导",
+   "type": "缺口",
+   "status": "公式推导完成严格性待提升",
+   "code": "G22",
+   "doc": "D031",
+   "ev": {
+    "quote_clean": "| TransitionTemperatureCQM | §11.2 $Tc$（G22 行内已闭合项：公式已给出，前向验证未闭合） | CQM 临界温度严格推导：相变量子 $☯$、玻色恒等式、丛作用量交叉 $F1=F2$ |",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D031",
+    "char_start": 69662,
+    "char_end": 69779,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G021",
+   "kind": "gap",
+   "label": "缺口N1：质量-谱映射m∝λ_min待严格化",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "N1",
+   "doc": "D006",
+   "ev": {
+    "quote_clean": "质量-谱映射的严格第一性推导仍开放（缺口 N1）。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D006",
+    "char_start": 14232,
+    "char_end": 14257,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G022",
+   "kind": "gap",
+   "label": "缺口N2：角亏-δ显式几何公式ϵ(δ)缺失",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "N2",
+   "doc": "D006",
+   "ev": {
+    "quote_clean": "$$\\boxed{\\delta \\to \\text{Regge 角亏 } \\epsilon(\\delta) \\quad (\\text{缺口 N2：显式几何公式未写})}$$",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D006",
+    "char_start": 16055,
+    "char_end": 16141,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G023",
+   "kind": "gap",
+   "label": "缺口N3：β衰变动力学条件缺失",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "N3",
+   "doc": "D006",
+   "ev": {
+    "quote_clean": "核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D006",
+    "char_start": 18336,
+    "char_end": 18393,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G024",
+   "kind": "gap",
+   "label": "缺口N4：氘核结合能精确推导",
+   "type": "缺口",
+   "status": "待证明",
+   "code": "N4",
+   "doc": "D006",
+   "ev": {
+    "quote_clean": "| N4 | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |",
+    "match_method": "doc",
+    "confidence": "high",
+    "evidence_doc": "D006",
+    "char_start": 15064,
+    "char_end": 15107,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G025",
+   "kind": "prop",
+   "label": "层级假设H3.1",
+   "type": "假设",
+   "status": "axiom",
+   "code": "",
+   "doc": "D032",
+   "ev": {
+    "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D032",
+    "char_start": 18170,
+    "char_end": 18217,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G026",
+   "kind": "prop",
+   "label": "层级假设H3.2",
+   "type": "假设",
+   "status": "axiom",
+   "code": "",
+   "doc": "D032",
+   "ev": {
+    "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D032",
+    "char_start": 18170,
+    "char_end": 18217,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G027",
+   "kind": "prop",
+   "label": "层级假设H3.3",
+   "type": "假设",
+   "status": "axiom",
+   "code": "",
+   "doc": "D032",
+   "ev": {
+    "quote_clean": "| 层级谱传递 | 上层谱 → 下层输入 | 第一性链 | 框架性假设（②→③ 部分构造） |",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D032",
+    "char_start": 18170,
+    "char_end": 18217,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G028",
+   "kind": "prop",
+   "label": "黎曼猜想",
+   "type": "猜想",
+   "status": "猜想",
+   "code": "",
+   "doc": "D017",
+   "ev": {
+    "quote_clean": "历史上对黎曼猜想的分解通常是二分的：",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D017",
+    "char_start": 20118,
+    "char_end": 20140,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G029",
+   "kind": "prop",
+   "label": "Mathieu临界",
+   "type": "构造",
+   "status": "数值验证",
+   "code": "",
+   "doc": "D019",
+   "ev": {
+    "quote_clean": "定义 3.1（Mathieu 算符）。",
+    "match_method": "doc",
+    "confidence": "medium",
+    "evidence_doc": "D019",
+    "char_start": 12510,
+    "char_end": 12533,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G030",
+   "kind": "prop",
+   "label": "素数冻结假设",
+   "type": "假设",
+   "status": "axiom",
+   "code": "",
+   "doc": "D007",
+   "ev": {
+    "quote_clean": "| 同步算符紧化投影 | 构造性假设 |",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D007",
+    "char_start": 21879,
+    "char_end": 21899,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G031",
+   "kind": "prop",
+   "label": "Tate自对偶",
+   "type": "假设",
+   "status": "axiom",
+   "code": "",
+   "doc": "D008",
+   "ev": {
+    "quote_clean": "ζ 零点谱（相变量子 $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|{s=1}$、零点虚部 $\\gamman$、零点差 $\\gamma2-\\gamma1$）属 GL(1) 电磁因子层，直接作为该因子层下使用的谱（GL(1) 是 SU(5) 破缺后电磁因子的自守对偶残留）。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D008",
+    "char_start": 6535,
+    "char_end": 6683,
+    "sec_title": ""
+   }
+  },
+  {
+   "id": "G032",
+   "kind": "prop",
+   "label": "G_N变分原理",
+   "type": "构造",
+   "status": "数值验证待独立复现",
+   "code": "",
+   "doc": "D014",
+   "ev": {
+    "quote_clean": "$GN$ 作为物理系统普适因果背景场的组织参数，其严格稳定性是等效原理的基石，也是 CQM 最核心的可检验预言。",
+    "match_method": "doc",
+    "confidence": "low",
+    "evidence_doc": "D014",
+    "char_start": 17644,
+    "char_end": 17701,
+    "sec_title": ""
+   }
+  }
+ ],
+ "claim_edges": [
+  {
+   "id": "P001~C005~提及概念",
+   "kind": "claim",
+   "src": [
+    "P001"
+   ],
+   "dst": [
+    "C005"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P001~C005~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P001"
+   ],
+   "dst": [
+    "C005"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D005#149",
+   "confidence": "medium"
+  },
+  {
+   "id": "P002~C001~提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C001"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P002~C007~提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C007"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P002~C017~提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P002~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P002~C001~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C001"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D006#11",
+   "confidence": "medium"
+  },
+  {
+   "id": "P002~C017~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D006#11",
+   "confidence": "medium"
+  },
+  {
+   "id": "P002~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P002"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D006#11",
+   "confidence": "medium"
+  },
+  {
+   "id": "P003~C002~提及概念",
+   "kind": "claim",
+   "src": [
+    "P003"
+   ],
+   "dst": [
+    "C002"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P003~C002~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P003"
+   ],
+   "dst": [
+    "C002"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D007#22",
+   "confidence": "medium"
+  },
+  {
+   "id": "P003~C008~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P003"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D007#22",
+   "confidence": "medium"
+  },
+  {
+   "id": "P004~C012~提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C012"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P004~C017~提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P004~C051~提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C051"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P004~C052~提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C052"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P004~C012~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C012"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D008#1",
+   "confidence": "medium"
+  },
+  {
+   "id": "P004~C017~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D008#1",
+   "confidence": "medium"
+  },
+  {
+   "id": "P004~C051~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C051"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D008#1",
+   "confidence": "medium"
+  },
+  {
+   "id": "P004~C052~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P004"
+   ],
+   "dst": [
+    "C052"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D008#1",
+   "confidence": "medium"
+  },
+  {
+   "id": "P006~C007~提及概念",
+   "kind": "claim",
+   "src": [
+    "P006"
+   ],
+   "dst": [
+    "C007"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C001~提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C001"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C017~提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C023~提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C071~提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C071"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P007~C001~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C001"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D011#3",
+   "confidence": "medium"
+  },
+  {
+   "id": "P007~C017~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D011#3",
+   "confidence": "medium"
+  },
+  {
+   "id": "P007~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D011#3",
+   "confidence": "medium"
+  },
+  {
+   "id": "P007~C071~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P007"
+   ],
+   "dst": [
+    "C071"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D011#3",
+   "confidence": "medium"
+  },
+  {
+   "id": "P009~C006~提及概念",
+   "kind": "claim",
+   "src": [
+    "P009"
+   ],
+   "dst": [
+    "C006"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P009~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P009"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P009~C006~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P009"
+   ],
+   "dst": [
+    "C006"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D013#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P009~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P009"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D013#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P010~C081~提及概念",
+   "kind": "claim",
+   "src": [
+    "P010"
+   ],
+   "dst": [
+    "C081"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P010~C048~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P010"
+   ],
+   "dst": [
+    "C048"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D014#230",
+   "confidence": "medium"
+  },
+  {
+   "id": "P010~C081~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P010"
+   ],
+   "dst": [
+    "C081"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D014#230",
+   "confidence": "medium"
+  },
+  {
+   "id": "P011~C008~提及概念",
+   "kind": "claim",
+   "src": [
+    "P011"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P011~C008~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P011"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D015#452",
+   "confidence": "medium"
+  },
+  {
+   "id": "P011~C019~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P011"
+   ],
+   "dst": [
+    "C019"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D015#452",
+   "confidence": "medium"
+  },
+  {
+   "id": "P012~C008~提及概念",
+   "kind": "claim",
+   "src": [
+    "P012"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P012~C008~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P012"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D016#19",
+   "confidence": "medium"
+  },
+  {
+   "id": "P013~C051~提及概念",
+   "kind": "claim",
+   "src": [
+    "P013"
+   ],
+   "dst": [
+    "C051"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P015~C081~提及概念",
+   "kind": "claim",
+   "src": [
+    "P015"
+   ],
+   "dst": [
+    "C081"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P015~C048~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P015"
+   ],
+   "dst": [
+    "C048"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D019#182",
+   "confidence": "medium"
+  },
+  {
+   "id": "P016~C080~提及概念",
+   "kind": "claim",
+   "src": [
+    "P016"
+   ],
+   "dst": [
+    "C080"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P016~C080~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P016"
+   ],
+   "dst": [
+    "C080"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D020#253",
+   "confidence": "medium"
+  },
+  {
+   "id": "P017~C015~提及概念",
+   "kind": "claim",
+   "src": [
+    "P017"
+   ],
+   "dst": [
+    "C015"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P017~C082~提及概念",
+   "kind": "claim",
+   "src": [
+    "P017"
+   ],
+   "dst": [
+    "C082"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P018~C022~提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C022"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P018~C023~提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P018~C024~提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C024"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P018~C022~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C022"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D022#167",
+   "confidence": "medium"
+  },
+  {
+   "id": "P018~C023~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D022#167",
+   "confidence": "medium"
+  },
+  {
+   "id": "P018~C024~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P018"
+   ],
+   "dst": [
+    "C024"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D022#167",
+   "confidence": "medium"
+  },
+  {
+   "id": "P019~C016~提及概念",
+   "kind": "claim",
+   "src": [
+    "P019"
+   ],
+   "dst": [
+    "C016"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P020~C040~提及概念",
+   "kind": "claim",
+   "src": [
+    "P020"
+   ],
+   "dst": [
+    "C040"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P021~C008~提及概念",
+   "kind": "claim",
+   "src": [
+    "P021"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P021~C017~提及概念",
+   "kind": "claim",
+   "src": [
+    "P021"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P021~C051~提及概念",
+   "kind": "claim",
+   "src": [
+    "P021"
+   ],
+   "dst": [
+    "C051"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P021~C052~提及概念",
+   "kind": "claim",
+   "src": [
+    "P021"
+   ],
+   "dst": [
+    "C052"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C017~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C020~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C020"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C022~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C022"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C051~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C051"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C052~提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C052"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P024~C017~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C017"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D028#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P024~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D028#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P024~C020~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C020"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D028#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P024~C022~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P024"
+   ],
+   "dst": [
+    "C022"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D028#4",
+   "confidence": "medium"
+  },
+  {
+   "id": "P026~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P026~C020~提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C020"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P026~C021~提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C021"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P026~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D030#60",
+   "confidence": "medium"
+  },
+  {
+   "id": "P026~C020~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C020"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D030#60",
+   "confidence": "medium"
+  },
+  {
+   "id": "P026~C021~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P026"
+   ],
+   "dst": [
+    "C021"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D030#60",
+   "confidence": "medium"
+  },
+  {
+   "id": "P027~G009~提及缺口",
+   "kind": "claim",
+   "src": [
+    "P027"
+   ],
+   "dst": [
+    "G009"
+   ],
+   "rel": "提及缺口",
+   "doc": "",
+   "verified": false,
+   "method": "命题表.statement 含缺口编号",
+   "confidence": "medium"
+  },
+  {
+   "id": "P027~G020~提及缺口",
+   "kind": "claim",
+   "src": [
+    "P027"
+   ],
+   "dst": [
+    "G020"
+   ],
+   "rel": "提及缺口",
+   "doc": "",
+   "verified": false,
+   "method": "命题表.statement 含缺口编号",
+   "confidence": "medium"
+  },
+  {
+   "id": "P028~C012~提及概念",
+   "kind": "claim",
+   "src": [
+    "P028"
+   ],
+   "dst": [
+    "C012"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P028~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P028"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P028~C012~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P028"
+   ],
+   "dst": [
+    "C012"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D032#77",
+   "confidence": "medium"
+  },
+  {
+   "id": "P028~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P028"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D032#77",
+   "confidence": "medium"
+  },
+  {
+   "id": "P029~C018~提及概念",
+   "kind": "claim",
+   "src": [
+    "P029"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "P029~C018~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P029"
+   ],
+   "dst": [
+    "C018"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D033#2",
+   "confidence": "medium"
+  },
+  {
+   "id": "P029~C025~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "P029"
+   ],
+   "dst": [
+    "C025"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D033#2",
+   "confidence": "medium"
+  },
+  {
+   "id": "G001~C008~提及概念",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G001~C008~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D005#336",
+   "confidence": "medium"
+  },
+  {
+   "id": "G005~C008~提及概念",
+   "kind": "claim",
+   "src": [
+    "G005"
+   ],
+   "dst": [
+    "C008"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G009~C023~提及概念",
+   "kind": "claim",
+   "src": [
+    "G009"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G009~C023~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G009"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1139",
+   "confidence": "medium"
+  },
+  {
+   "id": "G011~C071~提及概念",
+   "kind": "claim",
+   "src": [
+    "G011"
+   ],
+   "dst": [
+    "C071"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G011~C071~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G011"
+   ],
+   "dst": [
+    "C071"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1141",
+   "confidence": "medium"
+  },
+  {
+   "id": "G016~C026~提及概念",
+   "kind": "claim",
+   "src": [
+    "G016"
+   ],
+   "dst": [
+    "C026"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G016~C026~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G016"
+   ],
+   "dst": [
+    "C026"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1146",
+   "confidence": "medium"
+  },
+  {
+   "id": "G017~C020~提及概念",
+   "kind": "claim",
+   "src": [
+    "G017"
+   ],
+   "dst": [
+    "C020"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G017~C023~提及概念",
+   "kind": "claim",
+   "src": [
+    "G017"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G018~C024~提及概念",
+   "kind": "claim",
+   "src": [
+    "G018"
+   ],
+   "dst": [
+    "C024"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G018~C023~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G018"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1148",
+   "confidence": "medium"
+  },
+  {
+   "id": "G018~C024~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G018"
+   ],
+   "dst": [
+    "C024"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1148",
+   "confidence": "medium"
+  },
+  {
+   "id": "G019~C072~提及概念",
+   "kind": "claim",
+   "src": [
+    "G019"
+   ],
+   "dst": [
+    "C072"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G019~C023~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G019"
+   ],
+   "dst": [
+    "C023"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1149",
+   "confidence": "medium"
+  },
+  {
+   "id": "G019~C024~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G019"
+   ],
+   "dst": [
+    "C024"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1149",
+   "confidence": "medium"
+  },
+  {
+   "id": "G019~C072~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G019"
+   ],
+   "dst": [
+    "C072"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1149",
+   "confidence": "medium"
+  },
+  {
+   "id": "G020~C067~提及概念",
+   "kind": "claim",
+   "src": [
+    "G020"
+   ],
+   "dst": [
+    "C067"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G020~C048~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G020"
+   ],
+   "dst": [
+    "C048"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1161",
+   "confidence": "medium"
+  },
+  {
+   "id": "G020~C067~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G020"
+   ],
+   "dst": [
+    "C067"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1161",
+   "confidence": "medium"
+  },
+  {
+   "id": "G020~C070~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G020"
+   ],
+   "dst": [
+    "C070"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D031#1161",
+   "confidence": "medium"
+  },
+  {
+   "id": "G022~C026~提及概念",
+   "kind": "claim",
+   "src": [
+    "G022"
+   ],
+   "dst": [
+    "C026"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G022~C026~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G022"
+   ],
+   "dst": [
+    "C026"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D006#269",
+   "confidence": "medium"
+  },
+  {
+   "id": "G023~C026~证据句提及概念",
+   "kind": "claim",
+   "src": [
+    "G023"
+   ],
+   "dst": [
+    "C026"
+   ],
+   "rel": "证据句提及概念",
+   "doc": "",
+   "verified": false,
+   "method": "证据句 D006#303",
+   "confidence": "medium"
+  },
+  {
+   "id": "G029~C057~提及概念",
+   "kind": "claim",
+   "src": [
+    "G029"
+   ],
+   "dst": [
+    "C057"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G032~C081~提及概念",
+   "kind": "claim",
+   "src": [
+    "G032"
+   ],
+   "dst": [
+    "C081"
+   ],
+   "rel": "提及概念",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.statement 含概念名",
+   "confidence": "high"
+  },
+  {
+   "id": "G001~G005~同证据句",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "G005"
+   ],
+   "rel": "同证据句",
+   "doc": "",
+   "verified": false,
+   "method": "D005#336",
+   "confidence": "medium"
+  },
+  {
+   "id": "G025~G026~同证据句",
+   "kind": "claim",
+   "src": [
+    "G025"
+   ],
+   "dst": [
+    "G026"
+   ],
+   "rel": "同证据句",
+   "doc": "",
+   "verified": false,
+   "method": "D032#296",
+   "confidence": "medium"
+  },
+  {
+   "id": "G025~G027~同证据句",
+   "kind": "claim",
+   "src": [
+    "G025"
+   ],
+   "dst": [
+    "G027"
+   ],
+   "rel": "同证据句",
+   "doc": "",
+   "verified": false,
+   "method": "D032#296",
+   "confidence": "medium"
+  },
+  {
+   "id": "G026~G027~同证据句",
+   "kind": "claim",
+   "src": [
+    "G026"
+   ],
+   "dst": [
+    "G027"
+   ],
+   "rel": "同证据句",
+   "doc": "",
+   "verified": false,
+   "method": "D032#296",
+   "confidence": "medium"
+  },
+  {
+   "id": "P015~P030~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "P015"
+   ],
+   "dst": [
+    "P030"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.29",
+   "confidence": "low"
+  },
+  {
+   "id": "P027~G009~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "P027"
+   ],
+   "dst": [
+    "G009"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "P027~G020~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "P027"
+   ],
+   "dst": [
+    "G020"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "P030~P015~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "P030"
+   ],
+   "dst": [
+    "P015"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.29",
+   "confidence": "low"
+  },
+  {
+   "id": "G001~G005~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "G005"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.64",
+   "confidence": "low"
+  },
+  {
+   "id": "G001~G011~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "G011"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.23",
+   "confidence": "low"
+  },
+  {
+   "id": "G001~G009~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G001"
+   ],
+   "dst": [
+    "G009"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.22",
+   "confidence": "low"
+  },
+  {
+   "id": "G005~G001~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G005"
+   ],
+   "dst": [
+    "G001"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.64",
+   "confidence": "low"
+  },
+  {
+   "id": "G009~P027~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G009"
+   ],
+   "dst": [
+    "P027"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "G009~G001~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G009"
+   ],
+   "dst": [
+    "G001"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.22",
+   "confidence": "low"
+  },
+  {
+   "id": "G011~G001~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G011"
+   ],
+   "dst": [
+    "G001"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.23",
+   "confidence": "low"
+  },
+  {
+   "id": "G020~P027~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G020"
+   ],
+   "dst": [
+    "P027"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "G021~G023~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G021"
+   ],
+   "dst": [
+    "G023"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.38",
+   "confidence": "low"
+  },
+  {
+   "id": "G022~G023~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G022"
+   ],
+   "dst": [
+    "G023"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "G023~G021~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G023"
+   ],
+   "dst": [
+    "G021"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.38",
+   "confidence": "low"
+  },
+  {
+   "id": "G023~G022~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G023"
+   ],
+   "dst": [
+    "G022"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 0.28",
+   "confidence": "low"
+  },
+  {
+   "id": "G025~G027~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G025"
+   ],
+   "dst": [
+    "G027"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "G025~G026~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G025"
+   ],
+   "dst": [
+    "G026"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "G026~G027~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G026"
+   ],
+   "dst": [
+    "G027"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "G026~G025~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G026"
+   ],
+   "dst": [
+    "G025"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "G027~G026~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G027"
+   ],
+   "dst": [
+    "G026"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "G027~G025~语义近邻（候选）",
+   "kind": "claim",
+   "src": [
+    "G027"
+   ],
+   "dst": [
+    "G025"
+   ],
+   "rel": "语义近邻（候选）",
+   "doc": "",
+   "verified": false,
+   "method": "TF-IDF 余弦 1.00",
+   "confidence": "low"
+  },
+  {
+   "id": "GAP~G2~G3",
+   "kind": "claim",
+   "src": [
+    "G002"
+   ],
+   "dst": [
+    "G003"
+   ],
+   "rel": "缺口前置",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.depends_on",
+   "confidence": "high"
+  },
+  {
+   "id": "GAP~G3~G4",
+   "kind": "claim",
+   "src": [
+    "G003"
+   ],
+   "dst": [
+    "G004"
+   ],
+   "rel": "缺口前置",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.depends_on",
+   "confidence": "high"
+  },
+  {
+   "id": "GAP~G4~G5",
+   "kind": "claim",
+   "src": [
+    "G004"
+   ],
+   "dst": [
+    "G005"
+   ],
+   "rel": "缺口前置",
+   "doc": "",
+   "verified": true,
+   "method": "命题表.depends_on",
+   "confidence": "high"
+  }
+ ],
+ "lean_kinds": {
+  "def": 419,
+  "theorem": 822,
+  "lemma": 45,
+  "axiom": 28,
+  "class": 4,
+  "structure": 53,
+  "inductive": 7,
+  "abbrev": 10
+ },
+ "lean_top_modules": [
+  {
+   "module": "SpectralGeometry.Basic",
+   "total": 79,
+   "kinds": {
+    "def": 20,
+    "axiom": 1,
+    "theorem": 58
+   }
+  },
+  {
+   "module": "Superconductivity.MolecularGeometry",
+   "total": 77,
+   "kinds": {
+    "structure": 4,
+    "def": 23,
+    "theorem": 31,
+    "lemma": 19
+   }
+  },
+  {
+   "module": "Superconductivity.SPAF",
+   "total": 76,
+   "kinds": {
+    "def": 15,
+    "theorem": 53,
+    "lemma": 7,
+    "inductive": 1
+   }
+  },
+  {
+   "module": "GN.SimplexSpectrum",
+   "total": 75,
+   "kinds": {
+    "def": 18,
+    "theorem": 57
+   }
+  },
+  {
+   "module": "Superconductivity.ElementCartan",
+   "total": 63,
+   "kinds": {
+    "def": 24,
+    "theorem": 37,
+    "lemma": 2
+   }
+  },
+  {
+   "module": "CartanAlgebra.Basic",
+   "total": 62,
+   "kinds": {
+    "def": 29,
+    "theorem": 30,
+    "lemma": 3
+   }
+  },
+  {
+   "module": "Superconductivity.FormalizationRigor",
+   "total": 40,
+   "kinds": {
+    "structure": 1,
+    "theorem": 22,
+    "def": 17
+   }
+  },
+  {
+   "module": "SpectralGeometry.MathieuContinuedFraction",
+   "total": 39,
+   "kinds": {
+    "def": 8,
+    "theorem": 31
+   }
+  },
+  {
+   "module": "Methodology.Basic",
+   "total": 37,
+   "kinds": {
+    "abbrev": 8,
+    "structure": 1,
+    "axiom": 10,
+    "def": 10,
+    "theorem": 7,
+    "lemma": 1
+   }
+  },
+  {
+   "module": "Superconductivity.CartanSuperconductivity",
+   "total": 37,
+   "kinds": {
+    "def": 12,
+    "theorem": 24,
+    "lemma": 1
+   }
+  },
+  {
+   "module": "PhysicalConstants.Basic",
+   "total": 35,
+   "kinds": {
+    "def": 15,
+    "theorem": 20
+   }
+  },
+  {
+   "module": "FGChain.CartanToShell",
+   "total": 33,
+   "kinds": {
+    "def": 9,
+    "theorem": 24
+   }
+  },
+  {
+   "module": "Superconductivity.DeepResearch",
+   "total": 33,
+   "kinds": {
+    "def": 16,
+    "theorem": 16,
+    "structure": 1
+   }
+  },
+  {
+   "module": "PrimeGeometry.Compton",
+   "total": 32,
+   "kinds": {
+    "structure": 1,
+    "def": 9,
+    "theorem": 20,
+    "axiom": 2
+   }
+  },
+  {
+   "module": "Superconductivity.DeepConstruction",
+   "total": 31,
+   "kinds": {
+    "def": 19,
+    "theorem": 12
+   }
+  },
+  {
+   "module": "Superconductivity.Reduction",
+   "total": 31,
+   "kinds": {
+    "def": 8,
+    "theorem": 21,
+    "lemma": 2
+   }
+  }
+ ],
+ "depth": {
+  "C001": 0,
+  "C002": 0,
+  "C003": 0,
+  "C004": 0,
+  "C006": 0,
+  "C008": 0,
+  "C010": 0,
+  "C011": 0,
+  "C016": 0,
+  "C019": 0,
+  "C021": 0,
+  "C024": 0,
+  "C025": 0,
+  "C029": 0,
+  "C031": 0,
+  "C033": 0,
+  "C034": 0,
+  "C035": 0,
+  "C036": 0,
+  "C037": 0,
+  "C038": 0,
+  "C041": 0,
+  "C042": 0,
+  "C044": 0,
+  "C045": 0,
+  "C047": 0,
+  "C050": 0,
+  "C052": 0,
+  "C053": 0,
+  "C054": 0,
+  "C056": 0,
+  "C057": 0,
+  "C062": 0,
+  "C063": 0,
+  "C065": 0,
+  "C068": 0,
+  "C069": 0,
+  "C071": 0,
+  "C072": 0,
+  "C073": 0,
+  "C077": 0,
+  "C078": 0,
+  "C079": 0,
+  "C080": 0,
+  "C007": 1,
+  "C028": 1,
+  "C030": 1,
+  "C026": 1,
+  "C064": 1,
+  "C012": 1,
+  "C082": 1,
+  "C017": 1,
+  "C055": 1,
+  "C060": 1,
+  "C046": 1,
+  "C049": 1,
+  "C009": 1,
+  "C015": 1,
+  "C051": 1,
+  "C040": 1,
+  "C070": 1,
+  "C061": 1,
+  "C066": 1,
+  "C020": 1,
+  "C027": 1,
+  "C018": 1,
+  "C023": 1,
+  "C005": 1,
+  "C043": 1,
+  "C076": 1,
+  "C075": 1,
+  "C032": 1,
+  "C014": 2,
+  "C067": 2,
+  "C048": 2,
+  "C022": 2,
+  "C058": 2,
+  "C039": 2,
+  "C013": 3,
+  "C081": 3,
+  "C059": 4
  },
  "meta": {
   "nodes": 82,
@@ -4576,6 +13578,21 @@
   "args": 70,
   "hyperedges": 19,
   "edges": 51,
-  "modules": 68
+  "modules": 68,
+  "decls": 1388,
+  "reached": 81,
+  "unreachable": [
+   "C074"
+  ],
+  "rules_fired": 49,
+  "steps": 4,
+  "rel_hist": {
+   "重组实现": 19,
+   "映射": 22,
+   "演化": 3,
+   "等价": 9,
+   "依赖": 13,
+   "层级含于": 4
+  }
  }
 }

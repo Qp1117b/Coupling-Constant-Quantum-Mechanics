@@ -11,3 +11,13 @@ __pycache__/
 # MCP 文件系统临时日志
 mcp_filesystem.log
 .github/
+
+# MkDocs 阅读站构建中间物与缓存（由 _build/build_reader_site.py 重建，不入库）
+**/.cache/
+**/_build/mkdocs_src/
+**/_build/mkdocs.yml
+**/_build/cqm_user_dict.txt
+
+# 编辑器与工具的本地状态
+.obsidian/
+.trae-html-share-packages/
