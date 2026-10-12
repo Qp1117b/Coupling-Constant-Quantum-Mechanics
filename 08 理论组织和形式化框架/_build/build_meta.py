@@ -124,6 +124,29 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.7 — Lean 集成进研究站：统一视图 + 站内编译 · 搜索结果公式排版
+
+**1. 搜索结果里的公式排版**
+- VitePress 内置搜索的摘要是从 md 提取的**纯文本**，结果项里公式一律以 `$…$` / `$$…$$` 原文出现（实测 47 个结果项、数百个 `$`）。结果项是真实 DOM，交给 MathJax 重排即可——增强脚本对 `.VPLocalSearchBox` 挂 MutationObserver + 350ms 节流 typeset，点击搜索按钮后挂载。
+- 实测：输入「量纲发生学」→ 47 个结果项生成 **312 个 `mjx-container`**，裸 `$` 残留 **1**。
+
+**2. Lean 集成进研究站（服务端 + 前端）**
+- **服务端** `LeanController`（`/api/lean/*`，全部只读除编译外）：
+  - `GET modules`：68 模块清单（各类型声明计数）；`GET decls?module=&kind=`：1 388 条声明（def 419 / theorem 822 / lemma 45 / **axiom 28** / structure 53 / class 4 / inductive 7 / abbrev 10）；
+  - `GET mapping`：概念/命题/缺口 ↔ Lean 符号的人工映射（25 条，来自 `Lean↔概念映射.csv`）；
+  - `GET source?file=`：Lean 源码文本（路径规范化防 `..` 越界）；
+  - `POST build` + `GET build`：**站内编译**——`lake build` 在 `Lean源码/` 目录运行（lake 路径与目录可配 `cqm.lean.*`），单实例串行、15 分钟超时、输出截断保存、`build-enabled` 可关。
+- **前端** `LEAN_Lean对接.md` + `public/lean-page.js`（导航新增「Lean 对接」组）：
+  - **模块与声明**：左侧模块列表、右侧声明表（kind 徽章、名称搜索、种类筛选），点位置即拉取源码并滚动到行；
+  - **概念 ↔ Lean**：25 条人工映射 + **axiom 待证清单**（28 条物理假设的 Lean 承载，原样登记不升格）；
+  - **编译**：一键触发 + 实时状态与输出日志。
+- **统一口径**（呈现边界写死在页面上）：形式化覆盖 **41/82 概念**——未覆盖概念不得视为已形式化；缺口状态与「待证」限定语保持权威源口径；映射由人工整理，机器不推断新对应。
+- **编译实测**：`POST /api/lean/build` 真实触发，lake 进程运行中输出 `✔ [787/2200] Built Mathlib.…`——本次是 **Mathlib 依赖的首次完整构建（2 200 步）**，需较长时间；完成后产物缓存，后续增量构建会显著加快。前端轮询、进度与日志均实测可用。
+- 机制验证：`/api/lean/modules`、`decls?kind=axiom`（28 条）、`mapping`（25 条）、`source` 冒烟全通过；`LEAN_Lean对接.html` 渲染出 1 388 条声明表（600 行视口）与三个页签，零渲染残留。
+
+**3. 验收**：端到端 `verify_station` **29/29**；`check_consistency` **41/41**；`check_provenance` **10/10**；深度滑杆 **32 → 64 → 102 → 107**；站内链接失效 **0**。
+- 同步：`09 研究站服务`（`LeanController.java`、`StationProperties.java`、`application.yml`）、`_build/build_vitepress_site.py`（LEAN 页/lean-page.js/搜索 typeset 钩子/分组与导航）、本日志、`验证状态.md`。
+
 ## v1.9.6 — 可视化页公式渲染 · 缓存治理 · 真实交互探测工具
 
 > 用户继续报「渲染/排版异常、公式要修、蓝色弹层还有异常、** 也有异常、搜索不能点击」。本轮用 **CDP 真实交互探测**（Edge 无头 + remote-debugging-port + websockets：真的点按钮、真的输入查询、真的悬停触发卡片、真的收集控制台异常与失败请求）逐页核对，把问题定位到三处，全部修掉。

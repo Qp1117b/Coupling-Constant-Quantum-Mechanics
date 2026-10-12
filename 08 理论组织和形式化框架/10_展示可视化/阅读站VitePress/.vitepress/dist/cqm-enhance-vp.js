@@ -407,6 +407,26 @@
     onScroll();
   }
 
+  /* ---------- 搜索结果里的公式排版 ----------
+     VitePress 内置搜索的摘要是从 md 提取的纯文本，公式以 $…$ / $$…$$ 原文出现；
+     结果项是真实 DOM，交给 MathJax 重排即可。结果每次输入都会重渲染，
+     故对结果容器挂 MutationObserver + 节流。 */
+  var searchObs = null;
+  function hookSearchTypeset() {
+    var box = document.querySelector(".VPLocalSearchBox");
+    if (!box || searchObs) return;
+    searchObs = new MutationObserver(function () {
+      if (hookSearchTypeset._t) return;
+      hookSearchTypeset._t = setTimeout(function () {
+        hookSearchTypeset._t = null;
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          try { window.MathJax.typesetPromise([box]); } catch (e) {}
+        }
+      }, 350);
+    });
+    searchObs.observe(box, { childList: true, subtree: true });
+  }
+
   function initOnce() {
     if (bound) return; bound = true;
     build();
@@ -414,6 +434,12 @@
     BOX.style.display = "none"; MASK.style.display = "none";
     bindKeys();
     mountReadAids();
+    document.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest(".DocSearch-Button")) {
+        setTimeout(hookSearchTypeset, 500);
+        setTimeout(hookSearchTypeset, 1300);
+      }
+    });
   }
   /* 外部链接新窗口打开，避免研究中途离开本站 */
   function fixExternalLinks() {

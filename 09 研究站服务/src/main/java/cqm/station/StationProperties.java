@@ -30,6 +30,7 @@ public class StationProperties {
 
     private final Sparql sparql = new Sparql();
     private final Rebuild rebuild = new Rebuild();
+    private final Lean lean = new Lean();
 
     public Path resolve(String rel) {
         return Paths.get(root, rel);
@@ -53,6 +54,7 @@ public class StationProperties {
     public void setChainFile(String chainFile) { this.chainFile = chainFile; }
     public Sparql getSparql() { return sparql; }
     public Rebuild getRebuild() { return rebuild; }
+    public Lean getLean() { return lean; }
 
     public static class Sparql {
         /** 是否允许写操作（INSERT/DELETE/UPDATE/LOAD/CLEAR/DROP）。 */
@@ -68,5 +70,21 @@ public class StationProperties {
 
         public boolean isEnabled() { return enabled; }
         public void setEnabled(boolean enabled) { this.enabled = enabled; }
+    }
+
+    public static class Lean {
+        /** lake 可执行文件绝对路径（编译用；留空或不存在则编译接口返回不可用）。 */
+        private String lakeExe = "";
+        /** Lean 源码目录（相对 root）。 */
+        private String dir = "08 理论组织和形式化框架/04_Lean对接/Lean源码";
+        /** 是否允许 POST /api/lean/build 触发 lake build。 */
+        private boolean buildEnabled = true;
+
+        public String getLakeExe() { return lakeExe; }
+        public void setLakeExe(String lakeExe) { this.lakeExe = lakeExe; }
+        public String getDir() { return dir; }
+        public void setDir(String dir) { this.dir = dir; }
+        public boolean isBuildEnabled() { return buildEnabled; }
+        public void setBuildEnabled(boolean buildEnabled) { this.buildEnabled = buildEnabled; }
     }
 }
