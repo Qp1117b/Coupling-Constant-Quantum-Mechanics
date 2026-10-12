@@ -578,10 +578,27 @@ def build_glossary(staged_map, steps):
             f = sid2file.get(first_doc, "")
             if f:
                 h.append('<div class="cqm-pop__act"><a href="./%s">在权威文档中打开</a></div>' % f)
-        terms[s] = "".join(h)
-        # 双字符以上的符号才做正文标注（c/α 这类单字符会满页命中）
-        if len(s) >= 2 and s not in term_keys:
-            term_keys.append(s)
+        if s in terms:
+            # 同键已有卡（如 G_N 既是概念「牛顿引力常数」又是符号）：把符号的
+            # LaTeX/取值并入既有卡，不覆盖——否则概念 definition 的原文形态丢失
+            extra = ""
+            if r.get("latex"):
+                extra += '<div class="cqm-pop__rows">LaTeX：%s</div>' % _esc(_mathify(r["latex"]))
+            if r.get("value_or_note"):
+                extra += '<div class="cqm-pop__rows">%s</div>' % _esc(_mathify(r["value_or_note"]))
+            if extra:
+                anchor = '<div class="cqm-pop__act">'
+                if anchor in terms[s]:
+                    terms[s] = terms[s].replace(anchor, extra + anchor, 1)
+                else:
+                    terms[s] += extra
+            if len(s) >= 2 and s not in term_keys:
+                term_keys.append(s)
+        else:
+            terms[s] = "".join(h)
+            # 双字符以上的符号才做正文标注（c/α 这类单字符会满页命中）
+            if len(s) >= 2:
+                term_keys.append(s)
         index.append({"ty": "符号", "tt": s + "　" + (r.get("name") or ""),
                       "sb": "；".join(x for x in [r.get("value_or_note"), r.get("kind")] if x),
                       "u": "", "dc": src_raw,
