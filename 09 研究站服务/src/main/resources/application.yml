@@ -2,11 +2,20 @@ server:
   port: 8080
   error:
     include-message: always
+  # 统一按 UTF-8 收发，并强制写进响应头（Content-Type: text/html;charset=UTF-8）。
+  # 静态资源（.html/.js/.json）默认只回 text/html，不带 charset；页面虽有自己的
+  # <meta charset>，但响应头 charset 优先级更高，显式声明可避免个别浏览器/嵌入
+  # 场景回落 GBK 造成中文乱码。
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 
 cqm:
   # 项目根目录（相对本模块的工作目录；默认上一级，即 CQMFormal 仓库根）
   root: ${CQM_ROOT:..}
-  # 默认站点 = VitePress 版阅读站（生成器 VitePress v1.6.4；Material 站仅作 file:// 离线副本保留）
+  # 默认站点 = VitePress 版阅读站（生成器 VitePress v1.6.4）
   site-dir: 08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/.vitepress/dist
   kg-file: 08 理论组织和形式化框架/03_超图与理论图/知识图谱.ttl
   data-dir: 08 理论组织和形式化框架/01_结构化数据

@@ -7,6 +7,63 @@ export default defineConfig({
   srcDir: 'docs',
   outDir: '.vitepress/dist',
   ignoreDeadLinks: true,
+  // 数学保护：VitePress 默认没有数学插件，markdown-it 会先按普通文本解析，
+  // 于是公式里的 _ / * 被当成强调语法，例如 $$\mathbb{R}_{>0}$$ 被解析成
+  // "\mathbb{R}<em>{>0}</em>"——标签一旦插入，MathJax 就无法再匹配这对
+  // 定界符，该公式只能以 LaTeX 原文裸露在页面上。
+  // 这里在 emphasis 规则之前插入一条规则，把 $...$ / $$...$$ 整段取出、
+  // 原样输出（只做 HTML 转义，不改内容），再由页面上的 MathJax 排版。
+  markdown: {
+    config(md) {
+      const DOLLAR = 0x24, BACKSLASH = 0x5c
+      const isDollar = (c) => c === DOLLAR
+      const isEscaped = (src, i) => i > 0 && src.charCodeAt(i - 1) === BACKSLASH
+      const escHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+      // markdown-it 的 text 规则会把非终止字符成片吞下，而 '$' 不在它的终止表里，
+      // 于是 '$' 常常根本没机会成为某个规则的起点（被 text 一并吃掉）。
+      // 这里替换 text 规则，把 '$' 补进终止字符，数学规则才轮得到。
+      md.inline.ruler.at('text', function (state, silent) {
+        const src = state.src, max = state.posMax
+        const isTerm = (c) => c === 0x0A || c === 0x5B || c === 0x5D || c === 0x21
+          || c === 0x5C || c === 0x60 || c === 0x26 || c === 0x3C || c === 0x7B
+          || c === 0x7D || c === DOLLAR
+        let pos = state.pos
+        while (pos < max && !isTerm(src.charCodeAt(pos))) pos++
+        if (pos === state.pos) return false
+        if (!silent) state.pending += src.slice(state.pos, pos)
+        state.pos = pos
+        return true
+      })
+
+      md.inline.ruler.before('emphasis', 'cqm_math', function (state, silent) {
+        const src = state.src, start = state.pos, max = state.posMax
+        if (!isDollar(src.charCodeAt(start)) || isEscaped(src, start)) return false
+        const block = (start + 1 < max) && isDollar(src.charCodeAt(start + 1))
+        const openLen = block ? 2 : 1
+        let pos = start + openLen, close = -1
+        while (pos < max) {
+          const c = src.charCodeAt(pos)
+          if (c === BACKSLASH) { pos += 2; continue }
+          if (isDollar(c)) {
+            if (block) {
+              if (pos + 1 < max && isDollar(src.charCodeAt(pos + 1))) { close = pos; break }
+            } else if (!isEscaped(src, pos)) { close = pos; break }
+          }
+          pos++
+        }
+        if (close < 0 || close === start + openLen) return false
+        if (!silent) {
+          const token = state.push('cqm_math', 'math', 0)
+          token.content = src.slice(start, close + openLen)
+        }
+        state.pos = close + openLen
+        return true
+      })
+
+      md.renderer.rules.cqm_math = (tokens, idx) => escHtml(tokens[idx].content)
+    }
+  },
   head: [
     ['link', { rel: 'stylesheet', href: '/vp-brand.css' }],
     ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css' }],

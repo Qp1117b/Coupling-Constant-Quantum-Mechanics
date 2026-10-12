@@ -124,6 +124,21 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.3 — 研究站渲染修复：公式排版 · 超图资源 · 蓝图配色 · UTF-8 响应头
+
+> 本轮全部结论都由**实测**得出（Edge 无头截图人眼复核 + 渲染后 DOM 比对），不靠推断。
+
+- **公式排版（三类根因，逐层剥开）**：
+  1. **主题缺实现**：`build_vitepress_site.py` 生成的 `.vitepress/theme/index.js` 注释写着"重排公式"，代码里却没有 `typesetPromise()`——VitePress 只在文档加载时自动排版一次，之后客户端路由切换、Vue 异步渲染的侧栏/大纲都不再排。现由主题在**每次路由切换后**主动排版，并对尚未就绪的 MathJax 做轮询重试（另在 150 ms / 500 ms 各补一次，覆盖侧栏与大纲）。
+  2. **markdown 抢先破坏公式**：VitePress 默认不带数学插件，markdown-it 先把公式当普通文本解析，`$$\\mathbb{R}_{>0}$$` 被强调规则解析成 `\\mathbb{R}<em>{>0}</em>`、`\\\\`（LaTeX 换行）被转义规则解析成 `<span>\\</span>`——**标签一插进公式，MathJax 就再也匹配不到这对定界符**，公式只能以 LaTeX 原文裸露。VitePress 把 markdown-it 打包进自身 bundle（顶层无该包），改其内部规则不可靠，故改为**构建期把公式整段换成纯 ASCII 占位符**（本轮 12,208 处），构建完成后在产物里还原：`.html` 做 HTML 转义、`.js` / `.json` 做 JSON 转义。
+  3. **术语标注二次破坏**：`cqm-enhance-vp.js` 的术语标注把公式 `\\text{…中文…}` 里的中文（"时间""长度""质量"等）当术语包成 `<span class="cqm-term">`，把公式切碎。现让标注**跳过 `$…$` / `$$…$$` 区间**，并把 MathJax 产物（`mjx-container`、`mtext`、`mi`、`mo` 等）加入跳过清单。
+  - 验收：`$` 内标签注入 **9 → 0**；DOM 里该公式为 `<menclose notation="box"><mtable>…<mtext>`（`\boxed`/`aligned`/中文全部正常）；文本节点残留 `$…$` 仅剩标题锚点 `aria-label` 与内嵌 JSON 数据（均不可见）。
+- **可推演超图（V001）图谱空白**：页面引用 `assets/cytoscape.min.js`，而 `public/viz/` 下依赖是平铺的 `cytoscape.min.js`，请求 404 致整图不绘制（该缺陷在 Material 版时代即存在，未被端到端检查覆盖）。构建期在 `public/viz/*.html` 副本上改指同目录（源文件不动），并在日志中报出改写文件数。
+- **形式化蓝图（V004）白块遮字**：`header{…color:#fff}` 之下，`<code>` 自身背景是近白色 `#fdf3e0`、文字色继承白色 → `…状态以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威` 整条不可见。`build_lean.py` 的样式模板为 `code` 补 `color:var(--ink)`。
+- **编码（响应头 charset）**：静态资源原先只回 `text/html`、`text/javascript`，不带 charset；页面虽有自己的 `<meta charset>`，但响应头 charset 优先级更高，显式声明可避免个别浏览器与嵌入场景回落 GBK。`application.yml` 增 `server.servlet.encoding`（UTF-8 / enabled / **force**），实测 `Content-Type: text/html;charset=UTF-8`。产物侧同步扫描 178 个 HTML/JS/JSON/CSS：**U+FFFD 与不可解码文件均为 0**。
+- **验收**：端到端 `verify_station` **29/29**（新增 2 项 charset 断言）；`check_consistency` **41/41**；`check_provenance` **10/10**；深度滑杆 `depth_sim_vp.py` 仍为 **32 → 64 → 102 → 107**（单调、断点块不被隐藏）；术语标注 30 处/页、公式 2,629 个 MathJax 容器并存不冲突；`generator = VitePress v1.6.4`。
+- 同步：`_build/build_vitepress_site.py`（数学占位符、viz 改写、主题重排、术语标注避让）、`_build/build_lean.py`（蓝图配色）、`09 研究站服务/src/main/resources/application.yml`（编码）、`.workbuddy/tools/verify_station.py`（charset 断言）、本日志、`验证状态.md`。
+
 ## v1.9.2 — 研究站换用 VitePress（生成器切换 · 增强移植 · 单一入口收敛）
 
 - **生成器切换**：研究站由 Material for MkDocs 换为 **VitePress v1.6.4**（用户指出该形态为众多官方资料站所采用）。新工程 `10_展示可视化/阅读站VitePress/`（`package.json` + `.vitepress/theme/index.js` + `docs/` + `.vitepress/dist/`）；新脚本 `_build/build_vitepress_site.py` 从 `_build/mkdocs_src/docs`（`build_reader_site.py` 的 stage 产物）生成 `docs/` 与 `config.mts`，随后调 `vitepress build`；`build_reader_site.py` 现仅承担 stage 环节。成品页头 `generator = VitePress v1.6.4`。
@@ -342,7 +357,10 @@ def write_validation():
 | 检索台 | gzip 语料 Node 侧解压校验 + jsdom 六模式冒烟（图谱/全文降级/证据/复核/质量/CQ） | ✅ 通过 |
 | 超图交互逻辑 | Cytoscape 桩驱动：级联回放 4 轮 → 81/82 + C074 标注；有向路径；**多层图谱端点过滤**（claim 边不得指向不存在的节点） | ✅ 通过 |
 | **研究站（VitePress v1.6.4，v1.9.2）** | 页头 `generator = VitePress v1.6.4`；构建期 50 页整页 `v-pre`、无 Vue 插值报错；增强三件套 `node --check` 通过（`cqm-glossary.js` / `cqm-enhance-vp.js` / `cqm-depth.js`）；术语卡 138 张（含出处/字符区间/置信度）、检索索引 341 条、termKeys 106、展开链步 131 条、缺口断点清单 24 项 | ✅ 通过 |
-| **研究站端到端（服务在场）** | `.workbuddy/tools/verify_station.py` **27/27**：静态站 4（首页/内页/资产/内嵌 viz）+ `/api/status` 9 + 检索 2 + SPARQL 3（含写操作 403）+ 条目 4 + 复核写回 5（测试后清理、仓库恢复干净） | ✅ 通过 |
+| **研究站端到端（服务在场）** | `.workbuddy/tools/verify_station.py` **29/29**：静态站 4（首页/内页/资产/内嵌 viz）+ 响应头 charset 2 + `/api/status` 9 + 检索 2 + SPARQL 3（含写操作 403）+ 条目 4 + 复核写回 5（测试后清理、仓库恢复干净） | ✅ 通过 |
+| **公式排版（v1.9.3）** | Edge 无头实测：`$` 内标签注入 **0**；大块公式渲染为 `<menclose notation="box"><mtable>…<mtext>`（`\boxed` / `aligned` / `\text{中文}` 全部正确）；占位符产物残留 **0**；文本节点残留 `$…$` 仅 4 处，全在标题锚点 `aria-label` 与内嵌 JSON（不可见） | ✅ 通过 |
+| **可视化页渲染（v1.9.3）** | Edge 无头逐页截图复核：V001 超图（Cytoscape 节点/边/图例/小地图）、V002 驾驶舱（9 面板）、V003 检索台（实体/证据卡）、V004 蓝图（KPI/色带/axiom 清单，`<code>` 文字可读）四页均正常；`assets/cytoscape.min.js` 404 已改指同级文件 | ✅ 通过 |
+| **编码（v1.9.3）** | 响应头 `Content-Type: text/html;charset=UTF-8` / `text/javascript;charset=UTF-8`（`server.servlet.encoding.force`）；产物侧 178 个 HTML/JS/JSON/CSS 扫描：U+FFFD 0、不可解码 0 | ✅ 通过 |
 | **研究站离线边界** | VitePress 本地检索依赖 `fetch` 取 JSON 分片、`base:'/'` 用绝对路径 → **`file://` 直开丢资源**；须经 HTTP 提供（服务在场 `http://127.0.0.1:8080/`）。完全离线场合改用 `源_可视化/` 自包含 HTML | ⚠️ 已知取舍，非缺陷 |
 | **阅读站增强口径** | 卡片与展开链文字**逐字**取自 `概念表.csv` / `缺口编号对照.csv` / `符号对照表.csv` / `证据映射.csv`；构建脚本只拼装、不改写；缺口状态与限定语原样；术语标注限流（每术语每页 ≤3、全页 ≤240） | ✅ 一致 |
 | **展开链讲稿（撰述稿）** | `10_展示可视化/讲稿/第一分册_从问题到链条.md`（308 行）：问题 → 最小内核 → 六步链条 → 量纲链 → 断点 → 数值地位；每节论断带锚点（20 条，其中 18 条逐字核对、2 条标「待逐字核对」）；断点就地标注（C／G2–G8／G9–G22／N1–N4／H3.1–H3.3 引自缺口台账）；数值分列「推导／构造后验／实验参数」并保留限定语；附录含「引文保真六关」自检。**讲稿为撰写文字，不入引用清单、不计入理论语料统计** | ✅ 已接入阅读站（`L001` 页，导航紧随展开链） |

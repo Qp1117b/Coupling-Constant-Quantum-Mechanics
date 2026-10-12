@@ -82,8 +82,22 @@
   function inSkip(n) {
     var p = n.parentNode; if (!p || !p.nodeName) return true;
     var tag = p.nodeName.toLowerCase();
-    if (/^(a|code|pre|script|style|textarea|button|summary|th|caption|dt|h1|h2|h3|h4|h5|h6)$/.test(tag)) return true;
-    if (p.closest && p.closest(".cqm-pop,.cqm-search,.VPNavBar,.VPSidebar,.VPDocAsideOutline,.VPNav,.VPLocalSearchBox")) return true;
+    // 标题、代码、以及 MathJax 排版产物（mtext/mi/mo… 里带着公式原文，
+    // 一旦被术语标注替换成 span，公式就被切碎，MathJax 再也匹配不到）
+    if (/^(a|code|pre|script|style|textarea|button|summary|th|caption|dt|h1|h2|h3|h4|h5|h6|mjx-container|mjx-assistive-mml|math|svg|mrow|mtext|mi|mo|mn|ms|mtd|mtr|mtable)$/.test(tag)) return true;
+    if (p.closest && p.closest(".cqm-pop,.cqm-search,.VPNavBar,.VPSidebar,.VPDocAsideOutline,.VPNav,.VPLocalSearchBox,mjx-container")) return true;
+    return false;
+  }
+  // 公式区间：术语标注必须避开 $...$ / $$...$$ 内部，否则 \text{中文} 里的
+  // 中文术语会被包成 span，把公式文本切碎，MathJax 就无法再匹配定界符。
+  var MATH_RE = /\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g;
+  function mathRanges(txt) {
+    var rs = [], m; MATH_RE.lastIndex = 0;
+    while ((m = MATH_RE.exec(txt))) rs.push([m.index, m.index + m[0].length]);
+    return rs;
+  }
+  function inMath(pos, rs) {
+    for (var i = 0; i < rs.length; i++) if (pos >= rs[i][0] && pos < rs[i][1]) return true;
     return false;
   }
   function unwrap(root) {
@@ -104,8 +118,10 @@
     function wrap(node) {
       if (inSkip(node) || !node.nodeValue || node.nodeValue.trim().length < 2) return;
       var txt = node.nodeValue, frag = null, last = 0, m; re.lastIndex = 0;
+      var rs = mathRanges(txt);
       while ((m = re.exec(txt))) {
         var k = m[0]; if (!G.terms[k]) continue;
+        if (rs.length && inMath(m.index, rs)) continue;   // 不进入公式内部
         if ((used[k] || 0) >= PER || total >= MAX) continue;
         used[k] = (used[k] || 0) + 1; total++;
         if (!frag) frag = document.createDocumentFragment();

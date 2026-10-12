@@ -7,6 +7,7 @@
 生成的静态站（验收点：<meta name="generator" content="VitePress v1.6.4">，
 观感为顶部导航 + 左侧分组侧栏 + 右侧大纲 + 品牌靛蓝 #3451b2 + 首页 hero/特性卡）。
 """
+import html
 import json
 import os
 import re
@@ -32,6 +33,64 @@ for d in (VP_DOCS, VP_PUBLIC, VP_CFG_DIR):
 assert os.path.isdir(MK_SRC), "staged 源不存在：%s（请先运行 build_reader_site.py）" % MK_SRC
 md_files = sorted(f for f in os.listdir(MK_SRC) if f.endswith(".md"))
 assert md_files, "staged 源里没有 md 文件"
+
+# ---------------------------------------------------------------- 数学保护（构建期占位符）
+# 为什么不能只靠 markdown-it 规则：VitePress 把 markdown-it 打包进自身 bundle，
+# 拿到的插件实例行为不可控，实测公式里的 \\（LaTeX 换行）会被转义规则吃成
+# <span>\</span>、_ 会被强调规则吃成 <em>，标签一旦插进公式，MathJax 就再也
+# 匹配不到这对 $ 定界符，公式只能以 LaTeX 原文裸露。
+# 因此改在 markdown 解析「之前」把公式整段换成纯 ASCII 占位符，构建完成后
+# 再在产物（HTML / JS）里还原：HTML 里做 HTML 转义，JS 字符串里做 JSON 转义。
+MATH_RE = re.compile(
+    r'(?<!\\)\$\$[\s\S]+?(?<!\\)\$\$'          # 块级 $$...$$（可跨行）
+    r'|(?<!\\)\$(?!\$)(?:[^$\n]|\\\$)+?(?<!\\)\$(?!\$)'   # 行内 $...$（不跨行）
+)
+MATH_STORE = {}
+HEADING_RE = re.compile(r'^\s{0,3}#{1,6}[ \t]')     # 标题行原样保留（锚点 id 不被占位符污染）
+
+
+def protect_math(text):
+    """逐段保护公式；标题行跳过（标题里的公式量少，交给 markdown-it 侧规则兜底）。"""
+    lines = text.split("\n")
+    out, buf = [], []
+
+    def flush():
+        if not buf:
+            return
+        seg = "\n".join(buf)
+        buf.clear()
+
+        def repl(m):
+            key = "CQMMATHPLCHOLDER%dEND" % len(MATH_STORE)
+            MATH_STORE[key] = m.group(0)
+            return key
+
+        out.append(MATH_RE.sub(repl, seg))
+
+    for ln in lines:
+        if HEADING_RE.match(ln):
+            flush()
+            out.append(ln)
+        else:
+            buf.append(ln)
+    flush()
+    return "\n".join(out)
+
+
+MATH_MISSED = set()
+
+
+def restore_math(text, js=False):
+    """把产物里的占位符还原成公式原文。"""
+    def repl(m):
+        f = MATH_STORE.get(m.group(0))
+        if f is None:
+            MATH_MISSED.add(m.group(0))
+            return m.group(0)
+        return json.dumps(f, ensure_ascii=False)[1:-1] if js else html.escape(f, quote=False)
+
+    return re.sub(r'CQMMATHPLCHOLDER\d+END', repl, text)
+
 
 def wrap_vpre(txt):
     """把正文整体放进 <div v-pre>，避免正文里的 {{ }} 被 Vue 当成插值编译。
@@ -66,6 +125,7 @@ for f in md_files:
     # VitePress 的静态资源根是 public/，viz 从 assets/viz/ 迁到 /viz/
     txt = txt.replace("assets/viz/", "/viz/")
     if f != "index.md":
+        txt = protect_math(txt)      # 公式先换成占位符，躲开 markdown-it
         txt = wrap_vpre(txt)
         wrapped += 1
     with open(os.path.join(VP_DOCS, f), "w", encoding="utf-8") as fh:
@@ -85,6 +145,34 @@ if os.path.isdir(mk_assets):
     print("[vp] 已复制静态资源（含 viz/）到 public/")
 else:
     print("[vp] 警告：未找到 %s，viz iframe 可能失效" % mk_assets)
+
+# viz 内 HTML 的相对资源引用改写（只改 public/ 下的副本，源文件不动）：
+#   源 HTML 写 assets/cytoscape.min.js，但 public/viz/ 下依赖是平铺的
+#   （cytoscape.min.js / 驾驶舱数据.json），不改写会 404 → 超图页空白。
+VIZ_FIX = (
+    ('src="assets/cytoscape.min.js"', 'src="cytoscape.min.js"'),
+    ("src='assets/cytoscape.min.js'", "src='cytoscape.min.js'"),
+    ('href="assets/cytoscape.min.js"', 'href="cytoscape.min.js"'),
+    ('src="data.json"', 'src="驾驶舱数据.json"'),
+    ('"data.json"', '"驾驶舱数据.json"'),
+)
+viz_dir = os.path.join(VP_PUBLIC, "viz")
+viz_fixed = 0
+if os.path.isdir(viz_dir):
+    for name in os.listdir(viz_dir):
+        if not name.lower().endswith(".html"):
+            continue
+        p = os.path.join(viz_dir, name)
+        with open(p, "r", encoding="utf-8") as fh:
+            txt = fh.read()
+        before = txt
+        for a, b in VIZ_FIX:
+            txt = txt.replace(a, b)
+        if txt != before:
+            with open(p, "w", encoding="utf-8") as fh:
+                fh.write(txt)
+            viz_fixed += 1
+print("[vp] viz 资源引用改写：%d 个 HTML 被修正" % viz_fixed)
 
 # ---------------------------------------------------------------- 3. 品牌色覆盖
 BRAND_CSS = """/* CQM 研究站：对齐参考站 VitePress 观感，品牌色靛蓝 #3451b2 */
@@ -212,8 +300,22 @@ VP_ENHANCE_JS = r'''(function () {
   function inSkip(n) {
     var p = n.parentNode; if (!p || !p.nodeName) return true;
     var tag = p.nodeName.toLowerCase();
-    if (/^(a|code|pre|script|style|textarea|button|summary|th|caption|dt|h1|h2|h3|h4|h5|h6)$/.test(tag)) return true;
-    if (p.closest && p.closest(".cqm-pop,.cqm-search,.VPNavBar,.VPSidebar,.VPDocAsideOutline,.VPNav,.VPLocalSearchBox")) return true;
+    // 标题、代码、以及 MathJax 排版产物（mtext/mi/mo… 里带着公式原文，
+    // 一旦被术语标注替换成 span，公式就被切碎，MathJax 再也匹配不到）
+    if (/^(a|code|pre|script|style|textarea|button|summary|th|caption|dt|h1|h2|h3|h4|h5|h6|mjx-container|mjx-assistive-mml|math|svg|mrow|mtext|mi|mo|mn|ms|mtd|mtr|mtable)$/.test(tag)) return true;
+    if (p.closest && p.closest(".cqm-pop,.cqm-search,.VPNavBar,.VPSidebar,.VPDocAsideOutline,.VPNav,.VPLocalSearchBox,mjx-container")) return true;
+    return false;
+  }
+  // 公式区间：术语标注必须避开 $...$ / $$...$$ 内部，否则 \text{中文} 里的
+  // 中文术语会被包成 span，把公式文本切碎，MathJax 就无法再匹配定界符。
+  var MATH_RE = /\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g;
+  function mathRanges(txt) {
+    var rs = [], m; MATH_RE.lastIndex = 0;
+    while ((m = MATH_RE.exec(txt))) rs.push([m.index, m.index + m[0].length]);
+    return rs;
+  }
+  function inMath(pos, rs) {
+    for (var i = 0; i < rs.length; i++) if (pos >= rs[i][0] && pos < rs[i][1]) return true;
     return false;
   }
   function unwrap(root) {
@@ -234,8 +336,10 @@ VP_ENHANCE_JS = r'''(function () {
     function wrap(node) {
       if (inSkip(node) || !node.nodeValue || node.nodeValue.trim().length < 2) return;
       var txt = node.nodeValue, frag = null, last = 0, m; re.lastIndex = 0;
+      var rs = mathRanges(txt);
       while ((m = re.exec(txt))) {
         var k = m[0]; if (!G.terms[k]) continue;
+        if (rs.length && inMath(m.index, rs)) continue;   // 不进入公式内部
         if ((used[k] || 0) >= PER || total >= MAX) continue;
         used[k] = (used[k] || 0) + 1; total++;
         if (!frag) frag = document.createDocumentFragment();
@@ -514,6 +618,21 @@ print("[vp] 已写 VitePress 版增强脚本 public/cqm-enhance-vp.js")
 # VitePress 是 SPA：路由切换后必须重跑 initPage（术语标注 + 深度滑杆）并重排公式。
 THEME_JS = r'''import DefaultTheme from 'vitepress/theme'
 
+/* 公式排版：VitePress 是 SPA，MathJax 只在文档加载时自动排版一次，
+   之后「客户端路由切换」与「Vue 异步渲染的侧栏/大纲」都不会再排。
+   这里在每次路由切换后主动 typeset，并对尚未就绪的 MathJax 做轮询重试。*/
+function cqmTypeset(tries) {
+  if (tries == null) tries = 10
+  const MJ = window.MathJax
+  if (!MJ || typeof MJ.typesetPromise !== 'function') {
+    if (tries > 0) setTimeout(() => cqmTypeset(tries - 1), 200)
+    return
+  }
+  const go = () => { try { MJ.typesetPromise() } catch (e) {} }
+  if (MJ.startup && MJ.startup.promise) MJ.startup.promise.then(go, go)
+  else go()
+}
+
 export default {
   extends: DefaultTheme,
   enhanceApp({ router }) {
@@ -522,6 +641,10 @@ export default {
       // 等两帧，确保新页面的 .vp-doc 已挂载
       requestAnimationFrame(() => requestAnimationFrame(() => {
         try { window.CQM && window.CQM.init && window.CQM.init() } catch (e) {}
+        cqmTypeset()
+        // 侧栏与右侧大纲由 Vue 稍后渲染，再补排两次
+        setTimeout(() => cqmTypeset(0), 150)
+        setTimeout(() => cqmTypeset(0), 500)
       }))
     }
     run()
@@ -623,6 +746,63 @@ export default defineConfig({
   srcDir: 'docs',
   outDir: '.vitepress/dist',
   ignoreDeadLinks: true,
+  // 数学保护：VitePress 默认没有数学插件，markdown-it 会先按普通文本解析，
+  // 于是公式里的 _ / * 被当成强调语法，例如 $$\\mathbb{R}_{>0}$$ 被解析成
+  // "\\mathbb{R}<em>{>0}</em>"——标签一旦插入，MathJax 就无法再匹配这对
+  // 定界符，该公式只能以 LaTeX 原文裸露在页面上。
+  // 这里在 emphasis 规则之前插入一条规则，把 $...$ / $$...$$ 整段取出、
+  // 原样输出（只做 HTML 转义，不改内容），再由页面上的 MathJax 排版。
+  markdown: {
+    config(md) {
+      const DOLLAR = 0x24, BACKSLASH = 0x5c
+      const isDollar = (c) => c === DOLLAR
+      const isEscaped = (src, i) => i > 0 && src.charCodeAt(i - 1) === BACKSLASH
+      const escHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+      // markdown-it 的 text 规则会把非终止字符成片吞下，而 '$' 不在它的终止表里，
+      // 于是 '$' 常常根本没机会成为某个规则的起点（被 text 一并吃掉）。
+      // 这里替换 text 规则，把 '$' 补进终止字符，数学规则才轮得到。
+      md.inline.ruler.at('text', function (state, silent) {
+        const src = state.src, max = state.posMax
+        const isTerm = (c) => c === 0x0A || c === 0x5B || c === 0x5D || c === 0x21
+          || c === 0x5C || c === 0x60 || c === 0x26 || c === 0x3C || c === 0x7B
+          || c === 0x7D || c === DOLLAR
+        let pos = state.pos
+        while (pos < max && !isTerm(src.charCodeAt(pos))) pos++
+        if (pos === state.pos) return false
+        if (!silent) state.pending += src.slice(state.pos, pos)
+        state.pos = pos
+        return true
+      })
+
+      md.inline.ruler.before('emphasis', 'cqm_math', function (state, silent) {
+        const src = state.src, start = state.pos, max = state.posMax
+        if (!isDollar(src.charCodeAt(start)) || isEscaped(src, start)) return false
+        const block = (start + 1 < max) && isDollar(src.charCodeAt(start + 1))
+        const openLen = block ? 2 : 1
+        let pos = start + openLen, close = -1
+        while (pos < max) {
+          const c = src.charCodeAt(pos)
+          if (c === BACKSLASH) { pos += 2; continue }
+          if (isDollar(c)) {
+            if (block) {
+              if (pos + 1 < max && isDollar(src.charCodeAt(pos + 1))) { close = pos; break }
+            } else if (!isEscaped(src, pos)) { close = pos; break }
+          }
+          pos++
+        }
+        if (close < 0 || close === start + openLen) return false
+        if (!silent) {
+          const token = state.push('cqm_math', 'math', 0)
+          token.content = src.slice(start, close + openLen)
+        }
+        state.pos = close + openLen
+        return true
+      })
+
+      md.renderer.rules.cqm_math = (tokens, idx) => escHtml(tokens[idx].content)
+    }
+  },
   head: [
     ['link', { rel: 'stylesheet', href: '/vp-brand.css' }],
     ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css' }],
@@ -656,6 +836,33 @@ subprocess.run([NODE, VITEPRESS_BIN, "build"], cwd=VP_ROOT, check=True)
 
 dist = os.path.join(VP_CFG_DIR, "dist")
 print("[vp] 构建完成，产物：%s" % dist)
+
+# ---------------------------------------------------------------- 7. 还原数学占位符
+# 产物里两类上下文要分别转义：
+#   .html —— 文本节点，做 HTML 转义（& < >）
+#   .js   —— Vue 渲染函数里的字符串字面量，做 JSON 转义（\ " 换行）
+restored = 0
+if MATH_STORE:
+    for dp, dns, fns in os.walk(dist):
+        for fn in fns:
+            ext = os.path.splitext(fn)[1].lower()
+            if ext not in (".html", ".js", ".json"):
+                continue   # .json 里是结构化数据（本地检索索引），按 JSON 转义还原
+            p = os.path.join(dp, fn)
+            try:
+                with open(p, "r", encoding="utf-8") as fh:
+                    txt = fh.read()
+            except (UnicodeDecodeError, OSError):
+                continue
+            if "CQMMATHPLCHOLDER" not in txt:
+                continue
+            new = restore_math(txt, js=(ext in (".js", ".json")))
+            if new != txt:
+                with open(p, "w", encoding="utf-8") as fh:
+                    fh.write(new)
+                restored += 1
+print("[vp] 数学保护：%d 处公式入占位 → %d 个产物文件已还原" % (len(MATH_STORE), restored))
+
 index_html = os.path.join(dist, "index.html")
 if os.path.isfile(index_html):
     with open(index_html, "r", encoding="utf-8") as fh:
