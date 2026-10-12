@@ -124,6 +124,22 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.10 — 按裁定移除站内编译 · 表格横向滚动修复
+
+**1. 移除站内编译（用户裁定「编译功能不要」）**
+- 前端：LEAN_Lean对接 页删去「编译」页签与描述，只保留**模块与声明**、**概念 ↔ Lean** 两个页签。
+- 服务端：`LeanController` 删去 `POST/GET build` 端点与编译状态字段；`StationProperties.Lean` 删去 `lake-exe` 与 `build-enabled`（保留源码目录供源码查看）。
+- 编译能力不受影响：本机 elan 工具链（Lean 4.29.1）可手工执行 `lake build`；此前触发的构建已在 `.lake/` 留有增量缓存。
+- 实测：`POST /api/lean/build` → 404；LEAN 页仅剩两个页签。
+
+**2. 表格把整页撑出横向滚动（回归修复）**
+- 根因：上轮为解决竖排引入的 `width: max-content` **缺了 `max-width` 与 `overflow` 约束**——宽表（实测 D001 一张 8 750 px、D009 一张 1 914 px，视口 1 461 px）直接把 `document.scrollWidth` 撑到 9 145 px，整页左右晃。
+- 修法：采用 **GitHub 的成熟模式**——`display: block; width: max-content; max-width: 100%; overflow-x: auto`：窄表按内容自然展开，宽表**在表格内部横向滚动**，页面不再横向滚动。
+- 实测（CDP）：D009 / D001 / LEAN 三页 `pageHScroll = false`（D001 的 `scrollWidth` 从 9 145 回到 1 461）；截图复核表格内容横排、链接可点、无竖排回归。
+
+**3. 验收**：端到端 `verify_station` **29/29**；`check_consistency` **41/41**；`check_provenance` **10/10**；深度滑杆 **32 → 64 → 102 → 107**；站内链接失效 **0**。
+- 同步：`_build/build_vitepress_site.py`（表格 CSS、LEAN 页/脚本）、`09 研究站服务`（`LeanController.java`、`StationProperties.java`、`application.yml`）、本日志、`验证状态.md`。
+
 ## v1.9.9 — 服务徽标链接修复 · 高级检索面板实测
 
 - **服务徽标 404**：徽标 `href="api"`（相对路径 → `/api`），而 `/api` 本身没有映射，点击即落 404。改指真实存在的 `/api/status`（状态 JSON）。另经 CDP 复测，`/api` 现由错误页控制器接管。

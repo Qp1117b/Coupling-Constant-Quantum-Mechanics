@@ -30,9 +30,14 @@ mjx-container > svg { display: inline-block; }
   padding: 2px 16px;
   border-radius: 0 6px 6px 0;
 }
-/* 4) 表格：按内容撑开（max-content），宁可整表横向滚动，也不把中文列压成竖排。
-     VitePress 默认 table 宽 100%，列一窄中文就逐字换行，读起来很难受。 */
-.vp-doc table { width: max-content; min-width: 100%; }
+/* 4) 表格：GitHub 模式——按内容撑开、超出容器则在表格内横向滚动。
+     此前缺 max-width 与 overflow，宽表（实测 8750px）把整页撑出横向滚动。 */
+.vp-doc table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
 .vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
 .vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
 /* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */

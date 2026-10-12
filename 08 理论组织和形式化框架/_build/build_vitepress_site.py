@@ -344,9 +344,14 @@ mjx-container > svg { display: inline-block; }
   padding: 2px 16px;
   border-radius: 0 6px 6px 0;
 }
-/* 4) 表格：按内容撑开（max-content），宁可整表横向滚动，也不把中文列压成竖排。
-     VitePress 默认 table 宽 100%，列一窄中文就逐字换行，读起来很难受。 */
-.vp-doc table { width: max-content; min-width: 100%; }
+/* 4) 表格：GitHub 模式——按内容撑开、超出容器则在表格内横向滚动。
+     此前缺 max-width 与 overflow，宽表（实测 8750px）把整页撑出横向滚动。 */
+.vp-doc table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
 .vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
 .vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
 /* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
@@ -1013,8 +1018,7 @@ LEAN_PAGE_JS = r'''(function () {
     app.innerHTML =
       '<div class="lean-tabs">' +
       '<button data-tab="mods" data-on="1">模块与声明</button>' +
-      '<button data-tab="map">概念 ↔ Lean</button>' +
-      '<button data-tab="build">编译</button></div>' +
+      '<button data-tab="map">概念 ↔ Lean</button></div>' +
       '<div class="lean-body"></div>';
     var body = app.querySelector('.lean-body');
     function show(tab) {
@@ -1023,7 +1027,6 @@ LEAN_PAGE_JS = r'''(function () {
       });
       if (tab === 'mods') renderMods(body);
       if (tab === 'map') renderMap(body);
-      if (tab === 'build') renderBuild(body);
     }
     Array.prototype.forEach.call(app.querySelectorAll('.lean-tabs button'), function (b) {
       b.addEventListener('click', function () { show(b.getAttribute('data-tab')); });
@@ -1145,41 +1148,6 @@ LEAN_PAGE_JS = r'''(function () {
       '映射由人工整理，机器不推断新的对应关系。</p>';
   }
 
-  /* ---------- Tab 3：编译 ---------- */
-  function renderBuild(body) {
-    body.innerHTML =
-      '<div class="lean-toolbar"><button class="lean-run">运行 lake build</button>' +
-      '<span class="lean-status">idle</span>' +
-      '<span style="opacity:.7">在 Lean源码/ 目录运行 lake build（串行，15 分钟超时；只产出 .olean，不改动源文件）</span></div>' +
-      '<pre class="lean-log">（尚未运行）</pre>';
-    var btn = body.querySelector('.lean-run');
-    var st = body.querySelector('.lean-status');
-    var log = body.querySelector('.lean-log');
-    var timer = null;
-    function poll() {
-      fetch('/api/lean/build').then(function (r) { return r.json(); }).then(function (d) {
-        st.textContent = d.status + (d.elapsedSec ? ' · ' + d.elapsedSec + 's' : '');
-        log.textContent = d.log || '（无输出）';
-        log.scrollTop = log.scrollHeight;
-        btn.disabled = !!d.running;
-        if (d.running) timer = setTimeout(poll, 2000);
-      }).catch(function () { btn.disabled = false; });
-    }
-    btn.addEventListener('click', function () {
-      btn.disabled = true;
-      st.textContent = '提交中…';
-      fetch('/api/lean/build', { method: 'POST' })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          st.textContent = d.status + (d.message ? ' · ' + d.message : '');
-          if (d.status === 'started' || d.status === 'already_running') poll();
-          else btn.disabled = false;
-        })
-        .catch(function () { btn.disabled = false; });
-    });
-    poll();
-  }
-
   function boot() {
     var app = document.getElementById('lean-app');
     if (!app || app.__done) return;
@@ -1296,9 +1264,7 @@ title: Lean 对接
 
 Lean 4 形式化项目（**68 个模块 / 1 388 个声明**，`leanprover/lean4:v4.29.1`）与 CQM
 结构化层在这里打通：**模块与声明** 浏览源码与证明位置；**概念 ↔ Lean** 查看
-人工整理的映射（25 条）与 **axiom 待证清单**（28 条，物理假设的 Lean 承载，原样登记不升格）；
-**编译** 直接在站内运行 `lake build`（串行、15 分钟超时、只产出 .olean 不改动源文件）。
-
+人工整理的映射（25 条）与 **axiom 待证清单**（28 条，物理假设的 Lean 承载，原样登记不升格）。
 <div id="lean-app" class="lean-app">正在加载 Lean 对接数据…（需要研究站服务在运行）</div>
 
 呈现边界：形式化覆盖 **41/82 概念**——未覆盖概念不得视为已形式化；缺口状态、

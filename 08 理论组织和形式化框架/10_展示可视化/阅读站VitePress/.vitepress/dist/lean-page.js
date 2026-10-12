@@ -53,8 +53,7 @@
     app.innerHTML =
       '<div class="lean-tabs">' +
       '<button data-tab="mods" data-on="1">模块与声明</button>' +
-      '<button data-tab="map">概念 ↔ Lean</button>' +
-      '<button data-tab="build">编译</button></div>' +
+      '<button data-tab="map">概念 ↔ Lean</button></div>' +
       '<div class="lean-body"></div>';
     var body = app.querySelector('.lean-body');
     function show(tab) {
@@ -63,7 +62,6 @@
       });
       if (tab === 'mods') renderMods(body);
       if (tab === 'map') renderMap(body);
-      if (tab === 'build') renderBuild(body);
     }
     Array.prototype.forEach.call(app.querySelectorAll('.lean-tabs button'), function (b) {
       b.addEventListener('click', function () { show(b.getAttribute('data-tab')); });
@@ -183,41 +181,6 @@
       }).join('') + '</tbody></table></div>' +
       '<p style="opacity:.75;font-size:13px">呈现边界：缺口状态与「axiom 待证」原样登记，不因呈现而升格；' +
       '映射由人工整理，机器不推断新的对应关系。</p>';
-  }
-
-  /* ---------- Tab 3：编译 ---------- */
-  function renderBuild(body) {
-    body.innerHTML =
-      '<div class="lean-toolbar"><button class="lean-run">运行 lake build</button>' +
-      '<span class="lean-status">idle</span>' +
-      '<span style="opacity:.7">在 Lean源码/ 目录运行 lake build（串行，15 分钟超时；只产出 .olean，不改动源文件）</span></div>' +
-      '<pre class="lean-log">（尚未运行）</pre>';
-    var btn = body.querySelector('.lean-run');
-    var st = body.querySelector('.lean-status');
-    var log = body.querySelector('.lean-log');
-    var timer = null;
-    function poll() {
-      fetch('/api/lean/build').then(function (r) { return r.json(); }).then(function (d) {
-        st.textContent = d.status + (d.elapsedSec ? ' · ' + d.elapsedSec + 's' : '');
-        log.textContent = d.log || '（无输出）';
-        log.scrollTop = log.scrollHeight;
-        btn.disabled = !!d.running;
-        if (d.running) timer = setTimeout(poll, 2000);
-      }).catch(function () { btn.disabled = false; });
-    }
-    btn.addEventListener('click', function () {
-      btn.disabled = true;
-      st.textContent = '提交中…';
-      fetch('/api/lean/build', { method: 'POST' })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          st.textContent = d.status + (d.message ? ' · ' + d.message : '');
-          if (d.status === 'started' || d.status === 'already_running') poll();
-          else btn.disabled = false;
-        })
-        .catch(function () { btn.disabled = false; });
-    });
-    poll();
   }
 
   function boot() {

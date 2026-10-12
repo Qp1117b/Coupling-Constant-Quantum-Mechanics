@@ -40,12 +40,9 @@ cqm:
     # 是否允许 POST /api/rebuild 触发阅读站重建（默认关闭，需显式开启）
     enabled: false
   lean:
-    # lake 可执行文件（elan 工具链内）；留空或不存在时编译接口返回不可用
-    lake-exe: D:/DevTools/.elan/toolchains/leanprover--lean4---v4.29.1/bin/lake.exe
-    # Lean 源码目录（相对 cqm.root）
+    # Lean 源码目录（相对 cqm.root）；编译（lake build）已按裁定移除，
+    # 本地可用 elan 工具链手工执行
     dir: 08 理论组织和形式化框架/04_Lean对接/Lean源码
-    # 是否允许 POST /api/lean/build 触发 lake build（单实例串行，15 分钟超时）
-    build-enabled: true
 
 logging:
   level:
