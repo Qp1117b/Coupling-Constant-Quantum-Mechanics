@@ -37,7 +37,9 @@ if not exist "target\cqm-station-1.0.0.jar" (
   echo       （改过代码或配置后，请先手工执行 mvn -s settings.xml package -DskipTests）
 )
 
-echo [2/2] 启动服务...
+echo [2/2] 启动服务...（就绪后自动在浏览器打开研究站）
+rem 延迟打开浏览器：等 Tomcat 就绪（独立进程，不阻塞服务）
+start "" /min cmd /c "timeout /t 12 /nobreak >nul & start "" http://127.0.0.1:8080/"
 java -jar "target\cqm-station-1.0.0.jar" --server.port=8080
 
 echo.
