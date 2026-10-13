@@ -287,7 +287,7 @@ def main():
     concepts = read_csv("概念表.csv")
     props = read_csv("命题表.csv")
     args = read_csv("论证表.csv")
-    assert len(concepts) == 82 and len(props) == 63 and len(args) == 70
+    assert len(concepts) == 81 and len(props) == 63 and len(args) == 69
 
     gap_edges = read_csv("缺口依赖.csv") if os.path.exists(os.path.join(S01, "缺口依赖.csv")) else []
     claim_rows = read_csv("命题依赖.csv") if os.path.exists(os.path.join(S01, "命题依赖.csv")) else []

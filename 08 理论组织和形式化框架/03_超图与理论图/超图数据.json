@@ -3,12 +3,12 @@
     "project": "CQMFormal",
     "format": "XGI-compatible",
     "note": "由 _build/build_base.py 从 01_结构化数据/*.csv 标准 CSV 解析重建；⇒ 仅表重组实现（有向超边），其余为普通有向边。",
-    "node_count": 82,
+    "node_count": 81,
     "hyperedge_count": 19,
-    "directed_edge_count": 51,
+    "directed_edge_count": 50,
     "relation_type_histogram": {
       "重组实现": 19,
-      "映射": 22,
+      "映射": 21,
       "演化": 3,
       "等价": 9,
       "依赖": 13,
@@ -100,15 +100,6 @@
       "synonyms": [
         "因果动力学理论"
       ]
-    },
-    {
-      "id": "C010",
-      "label": "质数前网络",
-      "type": "数学结构",
-      "definition": "P∞ 质数构成的因果前网络",
-      "source_doc": "D008",
-      "source_loc": "§0",
-      "synonyms": []
     },
     {
       "id": "C011",
@@ -1557,16 +1548,6 @@
       "type": "映射",
       "source_doc": "D013",
       "source_concept": "C006→C005"
-    },
-    {
-      "id": "A043",
-      "source": "C010",
-      "target": "C043",
-      "source_label": "质数前网络",
-      "target_label": "黎曼zeta函数",
-      "type": "映射",
-      "source_doc": "D008",
-      "source_concept": "C010→C043"
     },
     {
       "id": "A044",

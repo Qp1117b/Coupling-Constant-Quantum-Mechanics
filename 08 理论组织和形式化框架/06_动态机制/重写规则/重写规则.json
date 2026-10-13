@@ -15,7 +15,6 @@
     "C004",
     "C006",
     "C008",
-    "C010",
     "C011",
     "C016",
     "C019",
@@ -32,6 +31,7 @@
     "C038",
     "C041",
     "C042",
+    "C043",
     "C044",
     "C045",
     "C047",
@@ -894,22 +894,6 @@
       "conclusion_text": "禁闭边界",
       "source_doc": [
         "D013"
-      ],
-      "is_recomposition": false
-    },
-    {
-      "rule_id": "A043",
-      "relation": "映射",
-      "lhs": [
-        "C010"
-      ],
-      "rhs": "C043",
-      "premises_text": [
-        "质数前网络"
-      ],
-      "conclusion_text": "黎曼zeta函数",
-      "source_doc": [
-        "D008"
       ],
       "is_recomposition": false
     },

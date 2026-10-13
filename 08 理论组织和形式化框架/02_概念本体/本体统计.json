@@ -1,7 +1,7 @@
 {
-  "concept_count": 82,
+  "concept_count": 81,
   "proposition_count": 63,
-  "argument_count": 70,
+  "argument_count": 69,
   "concept_types": [
     "共形场论",
     "关系类型",
@@ -37,7 +37,7 @@
     "关系类型": 1,
     "几何": 8,
     "引力层级": 3,
-    "数学结构": 4,
+    "数学结构": 3,
     "数论": 16,
     "本体论": 8,
     "物理": 12,
@@ -57,22 +57,22 @@
   "rel_type_hist": {
     "依赖": 13,
     "层级含于": 4,
-    "映射": 22,
+    "映射": 21,
     "演化": 3,
     "等价": 9,
     "重组实现": 19
   },
   "owl_classes": 25,
-  "owl_individuals": 430,
+  "owl_individuals": 426,
   "owl_object_properties": 16,
   "owl_annotation_properties": 15,
   "owl_disjoint_type_classes": 12,
   "owl_restrictions": 0,
-  "cross_type_edges": 70,
+  "cross_type_edges": 69,
   "axiom_layer": {
     "gap_precedes_edges": 3,
     "mentioned_in_edges": 70,
-    "evidence_individuals": 215
+    "evidence_individuals": 213
   },
   "reasoner": {
     "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",

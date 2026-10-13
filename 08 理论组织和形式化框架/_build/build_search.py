@@ -3,7 +3,7 @@
 维度 7 · 检索台（Retrieval Console）
 
 一份离线自包含的检索前端，背后是三套真实索引：
-  1. 知识图谱检索：82 概念 + 39 命题 + 24 缺口，字段过滤（kind/type/status/doc/code）+ 别名命中
+  1. 知识图谱检索：81 概念 + 39 命题 + 24 缺口，字段过滤（kind/type/status/doc/code）+ 别名命中
   2. 全文检索：17,519 句原文，**BM25 排序** + CJK 二元切分（Lucene CJKAnalyzer 同款思路）+
      引号短语 + +/- 必含排除 + doc: 字段限定；语料以 gzip+base64 内嵌，浏览器用 DecompressionStream 解压
   3. 证据检索：215 条证据映射 → 引文、章节、字符区间、定位方法与置信度，一键定位回原文

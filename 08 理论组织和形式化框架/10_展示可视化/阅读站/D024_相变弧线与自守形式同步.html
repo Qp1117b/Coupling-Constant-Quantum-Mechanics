@@ -1,0 +1,3486 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html">
+      
+      
+        <link rel="next" href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>相变弧线与自守形式同步 [D024] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/cqm-enhance.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              相变弧线与自守形式同步 [D024]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L000_%E5%B1%95%E5%BC%80%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一分册：从问题到链条（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L002_%E7%AC%AC%E4%BA%8C%E5%88%86%E5%86%8C_%E7%BB%9F%E4%B8%80%E4%BD%93%E8%87%AA%E7%BB%84%E8%A3%85%E4%B8%8E%CE%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二分册：统一体自组装与α（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L003_%E7%AC%AC%E4%B8%89%E5%88%86%E5%86%8C_%E8%B0%B1%E6%96%B9%E7%A8%8B%E4%B8%8E%E9%BB%8E%E6%9B%BC%E9%9B%B6%E7%82%B9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三分册：谱方程与黎曼零点（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L004_%E7%AC%AC%E5%9B%9B%E5%88%86%E5%86%8C_%E8%B6%85%E5%AF%BC%E6%B6%8C%E7%8E%B0%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四分册：超导涌现链（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L005_%E7%AC%AC%E4%BA%94%E5%88%86%E5%86%8C_%E4%B8%8E%E6%A0%87%E5%87%86%E7%90%86%E8%AE%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%B6%A8%E8%90%BD%E4%BC%B4%E4%B8%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五分册：与标准理论的关系与涨落伴丛（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L006_%E7%AC%AC%E5%85%AD%E5%88%86%E5%86%8C_%E9%87%8F%E7%BA%B2%E5%8F%91%E7%94%9F%E5%AD%A6%E4%B8%93%E7%AB%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六分册：量纲发生学专章（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V000_%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V001_%E5%8F%AF%E6%8E%A8%E6%BC%94%E8%B6%85%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可推演超图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V002_%E7%A0%94%E7%A9%B6%E9%A9%BE%E9%A9%B6%E8%88%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究驾驶舱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V003_%E6%A3%80%E7%B4%A2%E5%8F%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    检索台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V004_%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%93%9D%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    形式化蓝图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心命题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 相变弧线：从旧尺度失效到新尺度形成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 相变弧线：从旧尺度失效到新尺度形成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 临界点与尺度结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 相变弧线的五个阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 局部与全局的同步实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 四层同步框架：从局部种子到自守形式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 四层同步框架：从局部种子到自守形式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 第一层：局部种子——自守因子的起源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 第二层：传播同步——共形块与 KZ 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 第三层：全局——特征标与模不变性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 第四层：自守形式——同步结构的数学结晶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 自守因子：局部-全局同步的核心机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自守因子：局部-全局同步的核心机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 双重角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 同步实现的代数基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 自守因子的五重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 共形块：同步性的具体载体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 自守形式的主动结构性效果
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 自守形式的主动结构性效果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 一致性约束：筛掉不合法理论
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verlinde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 谱生成：Verlinde 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 对偶性编码：T 对偶与镜像对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 临界指数的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 单值化：物理态的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 前沿：共形 Bootstrap 与自守形式谱理论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 前沿：共形 Bootstrap 与自守形式谱理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 一般维度下的类比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-bootstrap-rcft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 模 Bootstrap 与 RCFT 分类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 同步结构的跨维度推广
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 与 CQM 核心理论的统一
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 与 CQM 核心理论的统一">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 结构分解与过程分解的对接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 统一图景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 唯物主义读法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 相关文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 状态说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心命题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 相变弧线：从旧尺度失效到新尺度形成
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 相变弧线：从旧尺度失效到新尺度形成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 临界点与尺度结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 相变弧线的五个阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 局部与全局的同步实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 四层同步框架：从局部种子到自守形式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 四层同步框架：从局部种子到自守形式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 第一层：局部种子——自守因子的起源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 第二层：传播同步——共形块与 KZ 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 第三层：全局——特征标与模不变性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 第四层：自守形式——同步结构的数学结晶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 自守因子：局部-全局同步的核心机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自守因子：局部-全局同步的核心机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 双重角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 同步实现的代数基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 自守因子的五重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 共形块：同步性的具体载体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 自守形式的主动结构性效果
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 自守形式的主动结构性效果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 一致性约束：筛掉不合法理论
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verlinde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 谱生成：Verlinde 公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 对偶性编码：T 对偶与镜像对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 临界指数的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 单值化：物理态的选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 前沿：共形 Bootstrap 与自守形式谱理论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 前沿：共形 Bootstrap 与自守形式谱理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 一般维度下的类比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-bootstrap-rcft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 模 Bootstrap 与 RCFT 分类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 同步结构的跨维度推广
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 与 CQM 核心理论的统一
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 与 CQM 核心理论的统一">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 结构分解与过程分解的对接
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 统一图景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 唯物主义读法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 相关文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 状态说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">相变弧线上的自守形式同步：局部共形对称性与全局模对称性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<blockquote>
+<p><strong>定位</strong>：本文档属 <code>04 前沿研究</code>。主线：<strong>相变弧线</strong>（旧尺度失效—新尺度形成）→ <strong>四层同步框架</strong>（局部种子 → 传播同步 → 全局 → 自守形式）→ <strong>自守因子</strong>作为局部-全局同步桥 → 自守形式的五种主动效果 → 前沿。</p>
+<p><strong>与 CQM 既有框架的对接</strong>：CFT = 同步的过程机制（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8）；自守形式经同步算符（紧化算符）从 <span class="arithmatex">\(\mathrm{GL}(5)\)</span> 投影到 <span class="arithmatex">\(\mathrm{SU}(5)\)</span>（<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> §3、<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.7）；自守因子的四重身份由 <code>01 核心理论/CQM_核心_唯物主义群论.md</code> §8.2 给出，本文档补其第五重身份（同步桥，§3.3）。</p>
+<p>状态标注：【标准数学】（教科书级数学事实）、【文献确立】（外部文献确立）、【CQM 框架基础】（框架既有表述）、【CQM 构造假设】（本文档自造／重述的命名与诠释——<strong>仅术语与诠释层面</strong>，机制内容以框架原文为准）、【哲学诠释】（定位性陈述，<strong>非数学命题</strong>）。</p>
+</blockquote>
+<hr />
+<h2 id="_2">核心命题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[\boxed{\text{自守形式在共形场论中的显现，是相变弧线上局部共形对称性与全局模对称性同步实现的数学结晶。}}\]</div>
+<p>框架既已给出「CFT 描述临界自组织态扩大的机制，同时也是同步的过程机制」（【CQM 框架基础】，<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8）。本文档在该口径上再进一步：在该过程的核心阶段（重整化群不动点），局部共形对称性与全局模对称性不是先后发生，而是由<strong>同一套自守因子</strong>同步关联，自守形式即这一同步结构的数学结晶。</p>
+<p><strong>关键在于把"同步"从一句断言展开为可核查的结构</strong>：局部与全局共享同一自守因子 <span class="arithmatex">\(j(\gamma,\tau)=c\tau+d\)</span>——它的无穷小形式是局部共形变换的生成元，有限形式则是全局模变换。于是「先局部、后全局」的时序叙事被替换为「同一自守因子在不同拓扑上的两个面向」（§1.3）。</p>
+<hr />
+<h2 id="1">1. 相变弧线：从旧尺度失效到新尺度形成<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 临界点与尺度结构<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>连续相变在临界点 <span class="arithmatex">\(T=T_c\)</span> 处关联长度发散：<span class="arithmatex">\(\xi\to\infty\)</span>。系统失去全部内禀长度尺度，物理表现为幂律关联：</p>
+<div class="arithmatex">\[\langle\phi(r)\phi(0)\rangle \sim r^{-2\Delta}.\]</div>
+<p>在重整化群（RG）语言中，临界点对应一个<strong>不动点</strong>：粗粒化变换不改变理论，尺度变换 <span class="arithmatex">\(x\to\lambda x\)</span> 不改变物理。这一「无标度」状态是旧尺度失效的极限表现——微观截断（晶格间距、相互作用程）被 RG 流洗掉，系统进入由不动点主导的普适区域【文献确立：Wilson–Kogut 1974】。</p>
+<p>对局域、平移不变、旋转不变的物理系统，标度不变性通常提升为共形不变性，理论由共形场论精确描述【文献确立】。这一提升恰与 CQM 的共形固定点判据相合：<strong>「与能量无关」＝势能中无带量纲参数（<span class="arithmatex">\(m=0\)</span>）且耦合锁死为纯数字，等价于 <span class="arithmatex">\(\beta(g)=0\)</span></strong>（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §1.1）：</p>
+<div class="arithmatex">\[\beta(g) = \frac{dg}{d\ln\mu} = 0 \;\;\Longleftrightarrow\;\; \text{无质量尺子} + \text{耦合锁死为纯数字} \;\;\Longleftrightarrow\;\; \text{共形固定点}.\]</div>
+<h3 id="12">1.2 相变弧线的五个阶段<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>相变不应被理解为一个「点」，而是一条完整的弧线【CQM 构造假设（阶段划分）】：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">阶段</th>
+<th style="text-align: left;">物理内容</th>
+<th style="text-align: left;">尺度关系</th>
+<th style="text-align: left;">CFT 地位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>一·旧尺度主导</strong></td>
+<td style="text-align: left;">远离临界点，关联长度有限且与微观尺度可比</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi \sim a\)</span></td>
+<td style="text-align: left;">CFT 无关</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>二·旧尺度开始失效</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(T\to T_c\)</span>，<span class="arithmatex">\(\xi\)</span> 增大，微观细节被 RG 洗掉</td>
+<td style="text-align: left;"><span class="arithmatex">\(a \ll \xi \ll L\)</span>（临界区域）</td>
+<td style="text-align: left;">临界区域</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>三·旧尺度完全失效</strong></td>
+<td style="text-align: left;">严格临界点，无标度</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi=\infty\)</span></td>
+<td style="text-align: left;"><strong>纯 CFT 精确成立</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>四·新尺度形成</strong></td>
+<td style="text-align: left;">稍偏离临界点，旧尺度已洗掉，新尺度 <span class="arithmatex">\(\xi\)</span> 接管</td>
+<td style="text-align: left;"><span class="arithmatex">\(a \ll \xi \ll L\)</span></td>
+<td style="text-align: left;">有效理论 = CFT + 相关扰动</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>五·新尺度主导</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi\)</span> 完全建立，进入有序相或无序相</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi \sim a\)</span>（新基准）</td>
+<td style="text-align: left;">CFT 退出描述</td>
+</tr>
+</tbody>
+</table>
+<p>第四阶段的有效理论写作：</p>
+<div class="arithmatex">\[S_{\text{eff}} = S_{\text{CFT}} + \lambda \int d^dx\, O(x).\]</div>
+<p><strong>核心阶段是第三阶段</strong>：旧尺度完全失效打开了共形不变性的窗口，在此窗口内共形对称性精确成立，重整化群不动点即共形固定点。相变弧线的两端（阶段一与阶段五）分别由旧尺度与新尺度主导，CFT 只描述弧线的中段。</p>
+<h3 id="13">1.3 局部与全局的同步实现<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>传统表述把相变读作时序序列：先有局部共形对称性，再「传播」到全局，最后「显现」为自守形式。这一读法在二维 CFT 中不成立。</p>
+<p>在二维 CFT 中，Virasoro 代数的局部共形变换在环面上「积分」后，自动产生模群 <span class="arithmatex">\(SL(2,\mathbb{Z})\)</span> 的作用；局部共形变换的无穷小生成元经指数化，直接产生全局模变换：</p>
+<div class="arithmatex">\[\text{局部无穷小共形变换} \;\xrightarrow{\ \text{环面}\ }\; \text{全局模变换}.\]</div>
+<p>这不是两个阶段，而是同一对称性在不同拓扑上的表现。自守因子 <span class="arithmatex">\(j(\gamma,\tau)=c\tau+d\)</span> 的<strong>无穷小版本正是局部共形变换的生成元</strong>，其<strong>有限形式则是全局模变换的因子</strong>——局部与全局经同一套自守因子同步关联，而非先后推导【CQM 构造假设（同步诠释）】。</p>
+<p>在临界点，旧尺度失效打开了共形不变性的窗口；在此窗口内，局部共形对称性与全局模不变性同步涌现。自守形式是这一同步结构的数学结晶。</p>
+<hr />
+<h2 id="2">2. 四层同步框架：从局部种子到自守形式<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>同步框架的<strong>结构分解</strong>为：</p>
+<div class="arithmatex">\[\text{局部种子} \;\to\; \text{传播同步} \;\to\; \text{全局} \;\to\; \text{自守形式}.\]</div>
+<p>四个层级不是时间上的先后序列，而是同一同步结构在不同数学层面上的同时显现。与其配套的<strong>过程分解</strong>（预备 → 发生 → 过程 → 完成）见 <code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8；二者的对接见 §6。</p>
+<h3 id="21">2.1 第一层：局部种子——自守因子的起源<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p><strong>物理对象。</strong> 在临界点，原初场 <span class="arithmatex">\(\phi(z)\)</span> 在局部共形变换 <span class="arithmatex">\(z\to f(z)\)</span> 下变换为：</p>
+<div class="arithmatex">\[\phi(z) \;\to\; \left(\frac{\partial f}{\partial z}\right)^{h}\phi(f(z)),\]</div>
+<p>其中 <span class="arithmatex">\(h\)</span> 是原初场的共形权重，<span class="arithmatex">\((\partial f/\partial z)^{h}\)</span> 是<strong>局部自守因子</strong>【标准数学】。</p>
+<p><strong>数学结构。</strong> 局部自守因子是无穷小共形变换的指数化结果。无穷小层面由 Virasoro 代数生成：</p>
+<div class="arithmatex">\[[L_m, L_n] = (m-n)L_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0},\]</div>
+<p>中心荷 <span class="arithmatex">\(c\)</span> 编码共形反常，权重 <span class="arithmatex">\(h\)</span> 决定场的标度行为【标准数学】。</p>
+<p><strong>同步要点。</strong> 局部自守因子是同步结构在无穷小层面的表现，不是「先于」全局存在的独立阶段。当 <span class="arithmatex">\(f\)</span> 退化为莫比乌斯变换时，局部自守因子退化为全局自守因子 <span class="arithmatex">\((c\tau+d)^{-2h}\)</span>——局部与全局共享同一代数结构，区别仅在变换的有限性。</p>
+<h3 id="22-kz">2.2 第二层：传播同步——共形块与 KZ 方程<a class="headerlink" href="#22-kz" title="Permanent link">&para;</a></h3>
+<p><strong>物理对象。</strong> 共形块 <span class="arithmatex">\(\mathcal{F}(\tau)\)</span> 是模空间上的全纯函数，描述算符在黎曼面上的传播与融合。在 WZW 模型中，共形块满足 Knizhnik–Zamolodchikov（KZ）方程【标准数学：Knizhnik–Zamolodchikov 1984】：</p>
+<div class="arithmatex">\[\left(\frac{\partial}{\partial z_i} - \frac{1}{k+h^\vee}\sum_{j\neq i}\frac{\Omega_{ij}}{z_i-z_j}\right)\mathcal{F} = 0,\]</div>
+<p>其中 <span class="arithmatex">\(k\)</span> 是水平，<span class="arithmatex">\(h^\vee\)</span> 是对偶 Coxeter 数，<span class="arithmatex">\(\Omega_{ij}\)</span> 是 Casimir 算符。中心荷由 Sugawara 构造给出 <span class="arithmatex">\(c=k\dim\mathfrak{g}/(k+h^\vee)\)</span>（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §5.2）。</p>
+<p><strong>数学结构。</strong> KZ 方程的解空间构成模空间上的一个向量丛，带平坦联络。共形块作为该丛的截面，在模变换下按自守因子变换：</p>
+<div class="arithmatex">\[\mathcal{F}(\gamma\tau) = j(\gamma,\tau)^{k}\,\rho(\gamma)\,\mathcal{F}(\tau),\]</div>
+<p>自守因子 <span class="arithmatex">\(j(\gamma,\tau)^{k}=(c\tau+d)^{k}\)</span> 显式出现。</p>
+<p><strong>同步要点。</strong> 传播同步是局部与全局之间的<strong>桥</strong>：共形块的定义是局部的（算符插入点的局部 OPE），但它在模空间上的变换是全局的（按自守因子变换）。局部 OPE 系数决定共形块的解析结构，环面的全局拓扑决定共形块的模变换性质——两者不是先后推导，而是同步约束。KZ 方程的解在模空间上具有平坦联络，其单值化表示正是自守因子在共形块空间上的作用：<strong>局部 KZ 方程与全局模变换不是两个独立条件，而是同一平坦联络的两个面向</strong>。</p>
+<p><strong>与 CQM 的对接。</strong> 共形块的 L 函数化给出 <span class="arithmatex">\(D\psi=0 \leftrightarrow\)</span> OPE 结合律的对应（<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.6）；「同一平坦联络的两个面向」正是该节「Dirac 方程 = 共形自举方程」的几何表述。</p>
+<h3 id="23">2.3 第三层：全局——特征标与模不变性<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p><strong>物理对象。</strong> 环面上 CFT 的配分函数可分解为不可约模的特征标：</p>
+<div class="arithmatex">\[Z(\tau,\bar{\tau}) = \sum_{i,j} M_{ij}\,\chi_i(\tau)\,\overline{\chi_j(\tau)},\qquad \chi_i(\tau) = \mathrm{tr}_{V_i}\!\left(q^{L_0-c/24}\right),\quad q=e^{2\pi i\tau}.\]</div>
+<p><strong>数学结构。</strong> 在模群 <span class="arithmatex">\(SL(2,\mathbb{Z})\)</span> 作用下，特征标按有限维表示线性组合：</p>
+<div class="arithmatex">\[\chi_i(\gamma\tau) = \sum_j \rho_{ij}(\gamma)\,\chi_j(\tau).\]</div>
+<p>因此特征标向量 <span class="arithmatex">\((\chi_1,\ldots,\chi_n)\)</span> 构成一个<strong>权为 0 的向量值模形式</strong>——这是自守形式在 CFT 中最标准、最直接的出现。模不变性要求组合矩阵满足</p>
+<div class="arithmatex">\[\rho(\gamma)\,M\,\rho(\gamma)^{\dagger} = M.\]</div>
+<p>【标准数学（有理 CFT / 模张量范畴）】</p>
+<p><strong>例（<span class="arithmatex">\(SU(2)_k\)</span> WZW 模型）。</strong> 其模矩阵 <span class="arithmatex">\(S\)</span> 由 Kac–Peterson 公式给出【标准数学】：</p>
+<div class="arithmatex">\[S_{\Lambda\Lambda'} = \text{const}\cdot\prod_{\alpha&gt;0}\sin\!\left(\frac{\pi(\Lambda+\rho,\alpha)}{k+h^\vee}\right)\sum_{w\in W}\sigma(w)\exp\!\left[-\frac{2\pi i}{k+h^\vee}(\Lambda+\rho,\,w(\Lambda'+\rho))\right].\]</div>
+<p><strong>同步要点。</strong> 全局层面不是「最终产物」，而是局部-全局同步结构在环面上的自然显现。特征标的模性不是外加约束，而是局部共形对称性在全局拓扑上的结果。以 CQM 口径：特征标是环面上无插入点的（真空）共形块，是共形块的特例。</p>
+<h3 id="24">2.4 第四层：自守形式——同步结构的数学结晶<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p><strong>四类体现</strong>（取自同步结构的四个数学面貌）：</p>
+<ul>
+<li><strong>特征标</strong>：权为 0 的向量值模形式；</li>
+<li><strong>配分函数</strong>：自守形式的模不变组合；</li>
+<li><strong>共形块</strong>：权为 <span class="arithmatex">\(k\)</span> 的向量值自守形式；</li>
+<li><strong>VOA 特征标</strong>：Zhu 定理保证的模函数【文献确立：Zhu 1996】。</li>
+</ul>
+<p><strong>上闭链条件。</strong> 自守形式的核心是自守因子满足<strong>上闭链条件</strong>：</p>
+<div class="arithmatex">\[j(\gamma\gamma',\tau) = j(\gamma,\gamma'\tau)\cdot j(\gamma',\tau),\]</div>
+<p>它保证局部变换的相容性（结合性）与全局变换的表示论性质（群同态）同步成立。该条件与 <code>01 核心理论/CQM_核心_唯物主义群论.md</code> §8.2 的上循环条件 <span class="arithmatex">\(j(\gamma_1\gamma_2,x)=j(\gamma_1,\gamma_2 x)\,j(\gamma_2,x)\)</span> 是同一条件——<strong>同一自守因子，在两处分析给出相容性，在 CFT 处给出同步性</strong>。</p>
+<p><strong>四层同步框架的逻辑链</strong>：</p>
+<div class="arithmatex">\[\underbrace{\text{局部种子}}_{\text{自守因子的无穷小生成元}}\;\to\;\underbrace{\text{传播同步}}_{\text{共形块与 KZ 方程}}\;\to\;\underbrace{\text{全局}}_{\text{特征标与模不变性}}\;\to\;\underbrace{\text{自守形式}}_{\text{数学结晶}}.\]</div>
+<p>四个层级不是时间上的先后序列，而是同一同步结构在不同数学层面上的同时显现。<strong>自守形式是这一同步结构的最终数学表达，但它同时反向约束局部种子</strong>——局部 OPE 必须与全局模不变性自洽，否则理论不存在。这一「反向约束」不是自守形式的先在性，而是<strong>同步自洽性</strong>：自守形式是物质自组织的同步进入自洽态后的数学影像，其自洽条件（模不变性、上闭链）反过来筛除不自洽的局部行为（唯物主义读法，见 §6.3）。</p>
+<hr />
+<h2 id="3-">3. 自守因子：局部-全局同步的核心机制<a class="headerlink" href="#3-" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 双重角色<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>自守因子 <span class="arithmatex">\(j(\gamma,\tau)=c\tau+d\)</span> 在 CFT 中扮演双重角色：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">变换</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>局部</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\phi(z)\to(\partial f/\partial z)^{h}\phi(f(z))\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\((\partial f/\partial z)^{h}\)</span> 决定场的标度行为</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全局</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(f(\gamma\tau)=j(\gamma,\tau)^{k}f(\tau)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(j(\gamma,\tau)^{k}\)</span> 决定模形式的权</td>
+</tr>
+</tbody>
+</table>
+<p>当 <span class="arithmatex">\(f\)</span> 是莫比乌斯变换时，局部角色退化为全局角色 <span class="arithmatex">\((c\tau+d)^{-2h}\)</span>——这一退化是局部-全局同步的直接证据【CQM 构造假设（同步诠释）】。</p>
+<h3 id="32">3.2 同步实现的代数基础<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>局部与全局的同步性根植于 Virasoro 代数的表示理论。在环面上，局部共形变换的无穷小生成元 <span class="arithmatex">\(T(z)\)</span> 的模展开给出 Virasoro 代数；中心荷 <span class="arithmatex">\(c\)</span> 同时编码局部共形反常与全局模变换的权；局部共形变换的指数化直接产生全局模变换——两者的代数结构是同一的（§1.3）。自守因子满足上闭链条件（§2.4），保证局部变换的相容性与全局变换的表示论性质同步成立【CQM 构造假设（同步诠释）＋标准数学（上循环）】。</p>
+<h3 id="33">3.3 自守因子的五重身份<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p><code>01 核心理论/CQM_核心_唯物主义群论.md</code> §8.2 已给出自守因子的四重身份；本文档补其第五重：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">身份</th>
+<th style="text-align: left;">视角</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">①</td>
+<td style="text-align: left;">分析</td>
+<td style="text-align: left;">新旧形式之比 <span class="arithmatex">\(j(\gamma,x)=f(\gamma x)/f(x)\)</span>（限非零点）</td>
+<td style="text-align: left;">【标准数学】</td>
+</tr>
+<tr>
+<td style="text-align: center;">②</td>
+<td style="text-align: left;">几何</td>
+<td style="text-align: left;">自守线丛的转移函数，自守形式 = 线丛截面</td>
+<td style="text-align: left;">【标准数学】</td>
+</tr>
+<tr>
+<td style="text-align: center;">③</td>
+<td style="text-align: left;">上同调</td>
+<td style="text-align: left;"><span class="arithmatex">\(1\)</span>-上循环 <span class="arithmatex">\(j\in Z^{1}(\Gamma,\mathcal{F}^{\times})\)</span></td>
+<td style="text-align: left;">【标准数学】</td>
+</tr>
+<tr>
+<td style="text-align: center;">④</td>
+<td style="text-align: left;">物理</td>
+<td style="text-align: left;"><strong>量纲因子</strong>——承载属性形式→量纲形式的表面层换算</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+</tr>
+<tr>
+<td style="text-align: center;">⑤</td>
+<td style="text-align: left;">同步</td>
+<td style="text-align: left;"><strong>局部共形变换 → 全局模变换的同步桥</strong>——无穷小形式给局部生成元，有限形式给全局模变换</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+</tr>
+</tbody>
+</table>
+<p>身份④与⑤并非两物：量纲换算（<code>01 核心理论/CQM_核心_量纲与群论.md</code> §6.4.2、§7.6）正是局部属性被实现为全局形式时的换算，与同步桥是同一机制在量纲侧与对称性侧的两种刻画。</p>
+<h3 id="34">3.4 共形块：同步性的具体载体<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>共形块是局部-全局同步性的最具体载体（§2.2）。其定义是局部的（算符插入点的局部 OPE），其变换是全局的（按自守因子变换）。在 WZW 模型中，KZ 方程的解空间在模群作用下按自守因子变换，其单值化表示就是自守因子在共形块空间上的表示。<strong>局部 KZ 方程与全局模变换不是两个独立条件，而是同一平坦联络的两个面向</strong>——这一表述与 <code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.4「和乐 = OPE monodromy」严格对应：和乐本征值与共形维度的定量映射 <span class="arithmatex">\(h=\delta_v\lambda_k/(2\pi)\)</span> 给出局部曲率（底空间）→ 全局 monodromy 的桥梁。</p>
+<hr />
+<h2 id="4">4. 自守形式的主动结构性效果<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>自守形式在 CFT 中不是被动的「结果」，而是发挥主动的、结构性的组织作用。以下五种效果，前四种【标准数学／文献确立】，其 CQM 落点【CQM 框架基础】。</p>
+<h3 id="41">4.1 一致性约束：筛掉不合法理论<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>模不变性是 CFT 的强自洽条件。特征标必须构成模形式，且组合矩阵满足 <span class="arithmatex">\(\rho(\gamma)M\rho(\gamma)^{\dagger}=M\)</span>（§2.3）。这一条件极为严格，直接筛掉绝大多数看似合理的 CFT。有理 CFT 的分类（如 Virasoro 极小模型、WZW 模型）本质上就是模不变性的分类。幺正极小模型由中心荷</p>
+<div class="arithmatex">\[c = 1 - \frac{6}{m(m+1)},\qquad m = 3,4,5,\ldots\]</div>
+<p>分类，对应一系列临界统计模型：Ising 模型（<span class="arithmatex">\(c=1/2\)</span>）、三临界 Ising 模型（<span class="arithmatex">\(c=7/10\)</span>）、<span class="arithmatex">\(q\)</span> 态 Potts 模型等【文献确立：BPZ 1984；Cardy 1986】。</p>
+<p><strong>CQM 落点</strong>：壳层选择定则由共形块 + <span class="arithmatex">\(A_4\)</span> 代数锁定，<span class="arithmatex">\(A_4\)</span> 结合律恰好锁定 <span class="arithmatex">\(s,p,d,f\)</span> 四模式并禁戒 <span class="arithmatex">\(g\)</span>（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §3.5.5）；一致性约束在 CQM 中是「共形自举 = 共形自洽」的具体化。</p>
+<h3 id="42-verlinde">4.2 谱生成：Verlinde 公式<a class="headerlink" href="#42-verlinde" title="Permanent link">&para;</a></h3>
+<p>自守形式的模变换矩阵 <span class="arithmatex">\(S_{ij}\)</span> 通过 Verlinde 公式决定理论的融合规则【标准数学：Verlinde 1988】：</p>
+<div class="arithmatex">\[N_{ij}^{k} = \sum_m \frac{S_{im}\,S_{jm}\,S_{km}^{*}}{S_{0m}},\]</div>
+<p>给出</p>
+<div class="arithmatex">\[\text{自守形式（}S\text{ 矩阵）}\;\to\;\text{融合代数}\;\to\;\text{算符谱}.\]</div>
+<p>模变换的代数结构主动生成理论的算符内容与 OPE 系数——自守形式不是「描述」谱，而是「生成」谱。</p>
+<p><strong>CQM 落点</strong>：OPE 通道选择定则由 Verlinde 公式 + SU(2) Clebsch–Gordan + 径向 descendant 加法规则给出，大 <span class="arithmatex">\(k\)</span> 极限退化为经典 CG 规则（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §10.1）。</p>
+<h3 id="43-t">4.3 对偶性编码：T 对偶与镜像对称<a class="headerlink" href="#43-t" title="Permanent link">&para;</a></h3>
+<p>模不变性要求理论在 <span class="arithmatex">\(\tau\to-1/\tau\)</span> 下不变，物理上对应 T 对偶：大半径与小半径给出同一物理。这一对偶性在数学上正是模形式自守性质的体现。更一般地，模空间上的自守形式编码了镜像对称与几何朗兰兹对偶的物理内容【文献确立】。</p>
+<p><strong>CQM 落点</strong>：<span class="arithmatex">\(GL(5)\)</span> 固定层级的谱对偶——紧化投影 <span class="arithmatex">\(\hat{\mathcal{S}}_0:\mathcal{H}_{\text{auto}}(\mathrm{GL}(5))\to\mathcal{H}_{\text{phys}}(SU(5))\)</span> 把非紧约化群的自守形式投影到紧物理群的表示（<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> §3；<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.7）。</p>
+<h3 id="44">4.4 临界指数的来源<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>特征标的 <span class="arithmatex">\(q\)</span>-展开系数直接给出态的数密度：</p>
+<div class="arithmatex">\[\chi_i(\tau) = q^{-c/24+h_i}\sum_{n=0}^{\infty}d_n q^{n},\]</div>
+<p>其中 <span class="arithmatex">\(h_i\)</span> 是共形维数，直接决定临界指数【标准数学】。<strong>例</strong>：Ising 模型序参量 <span class="arithmatex">\(\sigma\)</span> 的共形权重 <span class="arithmatex">\((1/16,1/16)\)</span>，能量算符 <span class="arithmatex">\(\epsilon\)</span> 的权重 <span class="arithmatex">\((1/2,1/2)\)</span>，由此给出临界指数 <span class="arithmatex">\(\beta=1/8\)</span>，<span class="arithmatex">\(\nu=1\)</span>，<span class="arithmatex">\(\eta=1/4\)</span>。自守形式的解析结构主动决定了临界相变的普适类。</p>
+<p><strong>CQM 落点</strong>：共形维度 <span class="arithmatex">\(h=n+l\)</span> 决定壳层填充顺序（Madelung 规则），<span class="arithmatex">\(A_4\)</span> 给出 <span class="arithmatex">\(Z_{\max}=118\)</span>（<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §9.2）——临界指数来源在 CQM 中的对应物是壳层谱。</p>
+<h3 id="45">4.5 单值化：物理态的选择<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
+<p>共形块在模变换下按自守因子变换，但物理配分函数必须是单值的。共形块的多值性由自守因子编码，物理态的选择（模不变组合 <span class="arithmatex">\(M_{ij}\)</span>）正是<strong>单值化条件</strong>。自守形式在这里充当单值化函数，决定哪些共形块组合能成为物理配分函数【标准数学】。</p>
+<p><strong>CQM 落点</strong>：和乐平庸化条件 <span class="arithmatex">\(W(\gamma)=1\Leftrightarrow\delta_v=0\)</span> 给出该层级的稳定构型（稀有气体闭壳层）（<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.4）；单值化在 CQM 中即和乐平庸化。</p>
+<hr />
+<h2 id="5-bootstrap">5. 前沿：共形 Bootstrap 与自守形式谱理论<a class="headerlink" href="#5-bootstrap" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 一般维度下的类比<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>一般维度 <span class="arithmatex">\(d\)</span> 的共形场论与双曲 <span class="arithmatex">\((d+1)\)</span> 维流形上自守形式的谱理论之间存在深刻对应【文献确立：Kravchuk–Mazáč–Pal 2024；Mazáč】：CFT 的算符谱与自守形式谱理论的拉普拉斯特征值对应：</p>
+<div class="arithmatex">\[\Delta_i \;\longleftrightarrow\; \lambda_i = \Delta_i(d-\Delta_i),\]</div>
+<p>OPE 系数与自守形式的三重积积分对应：</p>
+<div class="arithmatex">\[c_{ijk} \;\longleftrightarrow\; \int f_i f_j f_k,\]</div>
+<p>结构常数与 L 函数的关系为：</p>
+<div class="arithmatex">\[|c_{ijk}|^2 \;\sim\; L\!\left(\tfrac{1}{2},\,\pi_i\otimes\pi_j\otimes\pi_k\right).\]</div>
+<p>这一对应使得 CFT 的共形 Bootstrap 方法可直接应用于数论问题（三重积 L 函数的新上界由此得到）。</p>
+<h3 id="52-bootstrap-rcft">5.2 模 Bootstrap 与 RCFT 分类<a class="headerlink" href="#52-bootstrap-rcft" title="Permanent link">&para;</a></h3>
+<p>模 Bootstrap 方法将 RCFT 的特征标视为模线性微分方程（MLDE）的独立解。通过分析这些微分方程的模性质，可系统地分类允许的 CFT【文献确立】。该方法把自守形式的模性从「约束条件」提升为「分类工具」，进一步印证自守形式作为 CFT 组织原则的地位。</p>
+<h3 id="53">5.3 同步结构的跨维度推广<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p>局部-全局同步结构能否推广到更高维度是开放问题【CQM 构造假设（研究纲领）】。在二维 CFT 中，Virasoro 代数的无穷维性使局部共形变换的指数化直接产生全局模变换（§1.3）。在高维 CFT 中，共形代数有限维，模空间几何更复杂，但共形 Bootstrap 的谱理论框架（§5.1）提示类似同步结构可能以更隐蔽的方式存在。</p>
+<hr />
+<h2 id="6-cqm">6. 与 CQM 核心理论的统一<a class="headerlink" href="#6-cqm" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 结构分解与过程分解的对接<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>本文档的四层框架（<strong>结构分解</strong>）与 <code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8 的同步四阶段（<strong>过程分解</strong>）是同一同步事件的两个正交分解：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">结构分解（本文档）</th>
+<th style="text-align: left;">数学对象</th>
+<th style="text-align: left;">过程分解（CFT 文档）</th>
+<th style="text-align: left;">CQM 载体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>局部种子</strong></td>
+<td style="text-align: left;">自守因子的无穷小生成元（Virasoro）</td>
+<td style="text-align: left;">预备</td>
+<td style="text-align: left;">FG 纤维丛的赝状态（曲率算符 <span class="arithmatex">\(\hat{\delta}_v\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>传播同步</strong></td>
+<td style="text-align: left;">共形块与 KZ 方程</td>
+<td style="text-align: left;">发生</td>
+<td style="text-align: left;">同步方程 <span class="arithmatex">\(\hat{\mathcal{S}}\Psi=n\Psi\)</span>（共振量子化）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全局</strong></td>
+<td style="text-align: left;">特征标与模不变性</td>
+<td style="text-align: left;">过程</td>
+<td style="text-align: left;">CFT 幂律传播 <span class="arithmatex">\(r^{-2h}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>自守形式</strong></td>
+<td style="text-align: left;">数学结晶（上闭链）</td>
+<td style="text-align: left;">完成</td>
+<td style="text-align: left;">状态跃迁（同步态锁定）</td>
+</tr>
+</tbody>
+</table>
+<p>结构分解给出「同步在哪些数学层面同时显现」，过程分解给出「同步事件如何展开」。二者不冲突：结构分解的各层并非时序，过程分解的各阶段被压缩进定态。</p>
+<h3 id="62">6.2 统一图景<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>相变弧线（旧尺度失效 → 严格临界点 → 新尺度形成）
+ │
+ └─ 严格临界点 = 共形固定点 β(g)=0（CQM 判据：与能量无关）
+     │
+     └─ 局部共形对称性 ⊗ 全局模对称性（同一自守因子 j(γ,τ)=cτ+d）
+         │
+         ├─ 局部种子：φ(z) → (∂f/∂z)^h φ(f(z))
+         ├─ 传播同步：共形块 F，KZ 方程，平坦联络
+         ├─ 全局：特征标 χ_i，模不变性 ρ(γ)Mρ(γ)†=M
+         └─ 自守形式：上闭链 j(γγ&#39;)=j(γ,γ&#39;τ)j(γ&#39;,τ)
+             │
+             ├─ 一致性约束 → 筛除不合法 CFT（A4 锁定 s,p,d,f）
+             ├─ 谱生成（Verlinde）→ 融合代数 → 算符谱
+             ├─ 对偶编码（T 对偶 / 镜像）→ 紧化投影 GL(5)→SU(5)
+             ├─ 临界指数（共形维数 h）→ 壳层谱
+             └─ 单值化（M_ij）→ 和乐平庸化
+             │
+             └─ CQM：自守形式 = 同步算符（紧化算符）的输出谱（群谱）
+</code></pre></div>
+<h3 id="63">6.3 唯物主义读法<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>自守形式在本文档中被称为「主动的组织原则」，其含义须与框架的唯物主义定位一致（<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 引言）：<strong>自守形式是物质自组织的同步进入自洽态后的数学影像</strong>（「数学结构是物质自组织的化石」），不是先于物质的独立形式【CQM 框架基础】。所谓「主动」，指其主要效果中的<strong>自洽性约束</strong>（模不变性、上闭链）反向筛除不自洽的局部行为（§2.4）；这是同步自洽性的表现，不构成自守形式的先在性【哲学诠释】。</p>
+<h3 id="64">6.4 相关文档<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>01 核心理论/CQM_核心_共形场论与OPE.md</code> — CFT = 同步过程机制；OPE、共形自举、Kac–Moody/Virasoro、同步四阶段</li>
+<li><code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> — GL(5) 固定层级；同步算符=紧化算符；自守形式的朗兰兹分层</li>
+<li><code>01 核心理论/CQM_核心_唯物主义群论.md</code> §8 — 自守形式（分析类型—自守表示—L 函数）、自守因子四重身份</li>
+<li><code>01 核心理论/CQM_核心_量纲与群论.md</code> §6.4、§7 — 自守因子=量纲因子、自守-量纲链</li>
+<li><code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9 — 纤维丛与 CFT 严格对应（截面=primary、和乐=monodromy、同步算符=mode 算符、Dirac 方程=共形自举）</li>
+</ul>
+<hr />
+<h2 id="7">7. 状态说明<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">环节</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">相变是「旧尺度失效—新尺度形成」的弧线</td>
+<td style="text-align: left;">【文献确立】</td>
+<td style="text-align: left;">Wilson–Kogut 1974（RG 与临界不动点）</td>
+</tr>
+<tr>
+<td style="text-align: left;">CFT 精确描述弧线的核心阶段（RG 不动点）</td>
+<td style="text-align: left;">【文献确立】＋【CQM 框架基础】</td>
+<td style="text-align: left;"><code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §1.1（<span class="arithmatex">\(\beta(g)=0\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">局域/平移/旋转不变 → 标度不变提升为共形不变</td>
+<td style="text-align: left;">【文献确立】</td>
+<td style="text-align: left;">标准 CFT</td>
+</tr>
+<tr>
+<td style="text-align: left;">局部共形变换生成元 = 自守因子无穷小形式</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+<td style="text-align: left;">同步诠释（§1.3、§3.2）</td>
+</tr>
+<tr>
+<td style="text-align: left;">四层同步框架（结构分解）</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+<td style="text-align: left;">本文档组织（与 CFT 文档 §8 过程分解正交，§6.1）</td>
+</tr>
+<tr>
+<td style="text-align: left;">特征标 = 权 0 向量值模形式（有理 CFT）</td>
+<td style="text-align: left;">【标准数学】</td>
+<td style="text-align: left;">模张量范畴 / RCFT</td>
+</tr>
+<tr>
+<td style="text-align: left;">共形块满足 KZ 方程，模变换按自守因子</td>
+<td style="text-align: left;">【标准数学】</td>
+<td style="text-align: left;">Knizhnik–Zamolodchikov 1984；Moore–Seiberg 1989</td>
+</tr>
+<tr>
+<td style="text-align: left;">自守因子上闭链 = 群积相容性</td>
+<td style="text-align: left;">【标准数学】</td>
+<td style="text-align: left;">自守形式标准理论（与唯物主义群论 §8.2 同条件）</td>
+</tr>
+<tr>
+<td style="text-align: left;">自守因子 = CQM 量纲因子</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+<td style="text-align: left;"><code>01 核心理论/CQM_核心_唯物主义群论.md</code> §8.2 身份④</td>
+</tr>
+<tr>
+<td style="text-align: left;">自守因子 = 局部-全局同步桥</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+<td style="text-align: left;">本文档身份⑤（§3.3）</td>
+</tr>
+<tr>
+<td style="text-align: left;">五种主动效果（Verlinde / 极小模型 / Ising 指数等）</td>
+<td style="text-align: left;">【标准数学／文献确立】</td>
+<td style="text-align: left;">Verlinde 1988；BPZ 1984；Cardy 1986；Zhu 1996</td>
+</tr>
+<tr>
+<td style="text-align: left;">共形 Bootstrap ↔ 自守形式谱理论</td>
+<td style="text-align: left;">【文献确立】</td>
+<td style="text-align: left;">Kravchuk–Mazáč–Pal 2024；Mazáč</td>
+</tr>
+<tr>
+<td style="text-align: left;">同步结构跨维度推广</td>
+<td style="text-align: left;">开放（【CQM 构造假设】研究纲领）</td>
+<td style="text-align: left;">§5.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>开放问题。</strong> 局部共形变换生成元与自守因子无穷小形式的严格对应（§1.3、§3.2）目前为同步诠释，其严格化有待在 FG 纤维丛框架内把「环面积分」写成同步算符的显式作用；同步结构的跨维度推广（§5.3）为研究纲领。</p>
+<hr />
+<h2 id="8">8. 参考文献<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>[1] E. D'Hoker, J. Kaidi, <em>Modular Forms and String Theory</em>, Cambridge University Press, 2024.</p>
+<p>[2] N. M. Nikolov, I. T. Todorov, “Lectures on Elliptic Functions and Modular Forms in Conformal Field Theory,” arXiv:math-ph/0412039.</p>
+<p>[3] E. Frenkel, “Lectures on the Langlands Program and Conformal Field Theory,” in <em>Frontiers in Number Theory, Physics, and Geometry II</em>, Springer, 2007.</p>
+<p>[4] D. E. Evans, M. Pugh, “Braided Subfactors, Spectral Measures, Planar Algebras and Calabi–Yau Algebras Associated to Modular Invariants,” arXiv:1110.4547.</p>
+<p>[5] J. Fuchs, “From Tensor Products to the Modular Matrix S and Back,” CERN-TH.6127/91, 1991.</p>
+<p>[6] Y. Zhu, “Modular Invariance of Characters of Vertex Operator Algebras,” <em>J. Amer. Math. Soc.</em>, vol. 9, no. 1, pp. 237–302, 1996.</p>
+<p>[7] D. Mazáč, “L-functions and the Conformal Bootstrap,” YITP, Kyoto, Nov. 2025.</p>
+<p>[8] N. Benjamin, A. Fitzpatrick, W. Li, J. Thaler, “Descending into the Modular Bootstrap,” <em>JHEP</em>, vol. 2026, article 29, 2026.</p>
+<p>[9] P. Kravchuk, D. Mazáč, S. Pal, “Automorphic Spectra and the Conformal Bootstrap,” <em>Comm. Amer. Math. Soc.</em>, vol. 4, pp. 1–63, 2024. arXiv:2111.12716.</p>
+<p>[10] E. Witten, “Quantum Field Theory and the Jones Polynomial,” <em>Comm. Math. Phys.</em>, vol. 121, pp. 351–399, 1989.</p>
+<p>[11] G. Moore, N. Seiberg, “Classical and Quantum Conformal Field Theory,” <em>Comm. Math. Phys.</em>, vol. 123, pp. 177–254, 1989.</p>
+<p>[12] A. Beilinson, V. Drinfeld, “Quantization of Hitchin's Integrable System and Hecke Eigensheaves,” preprint, 1991.</p>
+<p>[13] E. Verlinde, “Fusion Rules and Modular Transformations in 2D Conformal Field Theory,” <em>Nucl. Phys. B</em>, vol. 300, pp. 360–376, 1988.</p>
+<p>[14] A. A. Belavin, A. M. Polyakov, A. B. Zamolodchikov, “Infinite Conformal Symmetry in Two-Dimensional Quantum Field Theory,” <em>Nucl. Phys. B</em>, vol. 241, pp. 333–380, 1984.</p>
+<p>[15] J. L. Cardy, “Operator Content of Two-Dimensional Conformally Invariant Theories,” <em>Nucl. Phys. B</em>, vol. 270, pp. 186–204, 1986.</p>
+<p>[16] V. G. Knizhnik, A. B. Zamolodchikov, “Current Algebra and Wess–Zumino Model in Two Dimensions,” <em>Nucl. Phys. B</em>, vol. 247, pp. 83–103, 1984.</p>
+<p>[17] K. G. Wilson, J. Kogut, “The Renormalization Group and the <span class="arithmatex">\(\epsilon\)</span> Expansion,” <em>Phys. Rep.</em>, vol. 12, pp. 75–199, 1974.</p>
+<hr />
+<blockquote>
+<p><strong>一句话</strong>：临界相变是「旧尺度失效—新尺度形成」的完整弧线，CFT 是该弧线核心阶段（共形固定点）的精确理论；在此阶段，局部共形对称性与全局模对称性由同一套自守因子 <span class="arithmatex">\(j(\gamma,\tau)=c\tau+d\)</span> 同步关联——自守形式即这一同步结构的数学结晶，并通过一致性约束、谱生成（Verlinde）、对偶编码、临界指数与单值化五种效果主动组织 CFT 结构。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 规范重组超导与SU5五重态 [D023]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                规范重组超导与SU5五重态 [D023]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 量子快置乱普适速率极限 [D025]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                量子快置乱普适速率极限 [D025]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/cqm-glossary.js"></script>
+      
+        <script src="assets/cqm-depth.js"></script>
+      
+        <script src="assets/cqm-enhance.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -16,7 +16,7 @@ python simulate.py            # 复算派生轨迹并校验与已生成 CSV 一�
 
 ## 三、结果
 
-- 派生轮数 4；触发规则 49 条；可达概念 81/82。
+- 派生轮数 4；触发规则 48 条；可达概念 80/82。
 - 不可达概念（需理论外输入或为终端/接口概念）：见 `dynamic_hypergraph.json` → `dynamics.unreachable_concepts`。
 
 ## 四、产物

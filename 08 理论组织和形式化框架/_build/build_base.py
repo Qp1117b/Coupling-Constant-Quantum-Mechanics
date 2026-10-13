@@ -27,9 +27,9 @@ def main():
     args = read_csv("论证表.csv")
 
     # ---- 断言预检 ----
-    assert len(concepts) == 82, f"概念表应为 82 行，实为 {len(concepts)}"
+    assert len(concepts) == 81, f"概念表应为 81 行，实为 {len(concepts)}"
     assert len(props) == 63, f"命题表应为 63 行，实为 {len(props)}"
-    assert len(args) == 70, f"论证表应为 70 行，实为 {len(args)}"
+    assert len(args) == 69, f"论证表应为 69 行，实为 {len(args)}"
     # 概念 id 连续无重
     cids = [c["concept_id"] for c in concepts]
     assert len(set(cids)) == len(cids), "概念 id 有重复"

@@ -1,0 +1,1 @@
+import{_ as e,o as l,c as d,a2 as a}from"./chunks/framework.D66Xq0Kv.js";const M=JSON.parse('{"title":"CQM 术语表","description":"","frontmatter":{},"headers":[],"relativePath":"D003_术语表.md","filePath":"D003_术语表.md"}'),i={name:"D003_术语表.md"};function n(s,t,r,f,x,y){return l(),d("div",null,[...t[0]||(t[0]=[a("",1)])])}const C=e(i,[["render",n]]);export{M as __pageData,C as default};

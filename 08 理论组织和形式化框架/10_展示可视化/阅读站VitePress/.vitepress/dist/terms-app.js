@@ -33,12 +33,39 @@
       return tt;
     };
 
+    /* sb 摘要：先按可见字符截断（绝不切在 $…$ 内部——切断会让 MathJax 失配、
+       把 $\bar{\delta}_v$ 之类的反斜杠字面露出），再做 HTML 转义；
+       $…$ 公式转义后原样保留，由下面的 typesetGrid 排版。 */
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function clip(s, n) {
+      s = String(s == null ? "" : s);
+      if (s.length <= n) return s;
+      var re = /\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g, m, cut = n;
+      while ((m = re.exec(s))) {
+        if (m.index < cut && cut < m.index + m[0].length) { cut = m.index; break; }
+      }
+      return s.slice(0, cut).replace(/\s+$/, "") + "…";
+    }
+    var _tsTimer = null;
+    function typesetGrid(grid) {
+      if (_tsTimer) clearTimeout(_tsTimer);
+      _tsTimer = setTimeout(function () {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          try { window.MathJax.typesetPromise([grid]); } catch (e) {}
+        }
+      }, 120);
+    }
+
     function cardHtml(item) {
       var key = keyOf(item.ty, item.tt);
       var hasCard = !!terms[key];
-      return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + key.replace(/"/g, "&quot;") + '"' : "") + '>' +
-        '<div class="terms-card__n"><span>' + item.tt + '</span><span class="terms-card__ty">' + item.ty + '</span></div>' +
-        '<div class="terms-card__s">' + (item.sb || "").slice(0, 110) + '</div></div>';
+      return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + esc(key) + '"' : "") + '>' +
+        '<div class="terms-card__n"><span>' + esc(item.tt) + '</span><span class="terms-card__ty">' + esc(item.ty) + '</span></div>' +
+        '<div class="terms-card__s">' + esc(clip(item.sb, 110)) + '</div></div>';
     }
 
     function paint(filterCat, filterQ) {
@@ -54,6 +81,7 @@
       grid.innerHTML = items.map(cardHtml).join("") ||
         '<div style="opacity:.7">无匹配条目</div>';
       app.querySelector("#terms-count").textContent = items.length + " 条";
+      typesetGrid(grid);
     }
 
     app.innerHTML =

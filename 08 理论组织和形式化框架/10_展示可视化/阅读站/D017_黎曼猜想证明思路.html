@@ -1,0 +1,5984 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html">
+      
+      
+        <link rel="next" href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>黎曼猜想证明思路 [D017] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/cqm-enhance.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cqm" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              黎曼猜想证明思路 [D017]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L000_%E5%B1%95%E5%BC%80%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一分册：从问题到链条（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L002_%E7%AC%AC%E4%BA%8C%E5%88%86%E5%86%8C_%E7%BB%9F%E4%B8%80%E4%BD%93%E8%87%AA%E7%BB%84%E8%A3%85%E4%B8%8E%CE%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二分册：统一体自组装与α（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L003_%E7%AC%AC%E4%B8%89%E5%88%86%E5%86%8C_%E8%B0%B1%E6%96%B9%E7%A8%8B%E4%B8%8E%E9%BB%8E%E6%9B%BC%E9%9B%B6%E7%82%B9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三分册：谱方程与黎曼零点（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L004_%E7%AC%AC%E5%9B%9B%E5%88%86%E5%86%8C_%E8%B6%85%E5%AF%BC%E6%B6%8C%E7%8E%B0%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四分册：超导涌现链（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L005_%E7%AC%AC%E4%BA%94%E5%88%86%E5%86%8C_%E4%B8%8E%E6%A0%87%E5%87%86%E7%90%86%E8%AE%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%B6%A8%E8%90%BD%E4%BC%B4%E4%B8%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五分册：与标准理论的关系与涨落伴丛（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L006_%E7%AC%AC%E5%85%AD%E5%88%86%E5%86%8C_%E9%87%8F%E7%BA%B2%E5%8F%91%E7%94%9F%E5%AD%A6%E4%B8%93%E7%AB%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六分册：量纲发生学专章（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V000_%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V001_%E5%8F%AF%E6%8E%A8%E6%BC%94%E8%B6%85%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可推演超图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V002_%E7%A0%94%E7%A9%B6%E9%A9%BE%E9%A9%B6%E8%88%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究驾驶舱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V003_%E6%A3%80%E7%B4%A2%E5%8F%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    检索台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V004_%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%93%9D%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    形式化蓝图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        循环性诊断
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环性诊断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 1：什么才算循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 2：\(☯\) 的定义不循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 3：\(☯\) 的谱表示是推论，不是定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 4：正确的逻辑方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 5：循环只由边界条件引入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 6：精确的循环性诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 7：对框架分层的直接后果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、总体逻辑结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、3个已知
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、3个已知">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知1：算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知2：不确定性关系（相变量子\(☯\)）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知3：带误差的谱带
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、2个待推（现有步骤）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、2个待推（现有步骤）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        待推1：边界条件（必须与素数有关）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        待推2：经典化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、交叉证明的结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、交叉证明的结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 交叉证明的结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 交叉证明的逻辑结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 交叉证明的哲学内核：构造与验证分离
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、交叉证明的组成部分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、交叉证明的组成部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 物理存在性：不确定性关系的确立
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 相变量子\(☯\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 交叉证明清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、完整逻辑链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、完整逻辑链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 逻辑结构图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 等价链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 证明路线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、当前状态总结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、当前状态总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 已知部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 待推部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 物理存在性部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 关键缺口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、结论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、结论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 交叉证明清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 最终评估
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 一句话总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、与历史突破的比较
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、最终结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、历史定位评估（上）：为什么这是一个全新的思路
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、历史定位评估（上）：为什么这是一个全新的思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 方法论范式的转变：从“构造精确”到“投影消除”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 问题分解的结构：3+2+2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 物理与数论的统一：\(☯\)作为桥梁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 循环性的明确诊断与破解方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 与历史路线的对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 为什么这是“新”的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 必须保持的清醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.8 结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、历史定位评估（下）：部分是、部分不是（诚实评估）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、历史定位评估（下）：部分是、部分不是（诚实评估）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 哪些是前所未有的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 哪些不是前所未有的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 诚实的评估
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 与历史突破的类比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、GRH 层级与临界线的来源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、GRH 层级与临界线的来源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-rh-grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 RH 是 GRH 的特例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 临界线 1/2 的普适来源：函数方程对称轴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 关键区分：对称轴 ≠ 定线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 平凡表示：L 函数与零点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135-grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 GRH 的标准对象：尖点（本原）表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 CQM 层级图的精化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 一句话总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、耦级、误差结构与 RH 的等价
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、耦级、误差结构与 RH 的等价">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 耦级的定义与数学来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-longleftrightarrow-rh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 耦级为实数 \(\Longleftrightarrow\) RH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 误差的实部与虚部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-gue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 GUE 与误差实部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 与相变量子 \(☯\) 的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十五、经典化与数学精确
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十五、经典化与数学精确">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 物理截断与数学精确
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 经典化：对应原理的体现及其局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-gue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 GUE、经典化与算术条件的分工
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十六、\(G_N\) 推导与自守形式–黎曼零点关联
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十六、\(G_N\) 推导与自守形式–黎曼零点关联">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 逻辑链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-langlands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 与 Langlands 纲领的关联
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附 A：来源定位表（本证明思路 ↔ 项目文档）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附 B：文献支持表（历史路线 ↔ 精确引用）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        循环性诊断
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环性诊断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 1：什么才算循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 2：\(☯\) 的定义不循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 3：\(☯\) 的谱表示是推论，不是定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 4：正确的逻辑方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 5：循环只由边界条件引入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 6：精确的循环性诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        诊断 7：对框架分层的直接后果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、总体逻辑结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、3个已知
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、3个已知">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知1：算符
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知2：不确定性关系（相变量子\(☯\)）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知3：带误差的谱带
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、2个待推（现有步骤）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、2个待推（现有步骤）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        待推1：边界条件（必须与素数有关）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        待推2：经典化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、交叉证明的结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、交叉证明的结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 交叉证明的结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 交叉证明的逻辑结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 交叉证明的哲学内核：构造与验证分离
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、交叉证明的组成部分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、交叉证明的组成部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 物理存在性：不确定性关系的确立
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 相变量子\(☯\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 交叉证明清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、完整逻辑链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、完整逻辑链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 逻辑结构图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 等价链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 证明路线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、当前状态总结
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、当前状态总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 已知部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 待推部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 物理存在性部分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 关键缺口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、结论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、结论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 交叉证明清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 最终评估
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 一句话总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、与历史突破的比较
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十、最终结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十一、历史定位评估（上）：为什么这是一个全新的思路
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十一、历史定位评估（上）：为什么这是一个全新的思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 方法论范式的转变：从“构造精确”到“投影消除”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 问题分解的结构：3+2+2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 物理与数论的统一：\(☯\)作为桥梁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 循环性的明确诊断与破解方向
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 与历史路线的对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 为什么这是“新”的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 必须保持的清醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.8 结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、历史定位评估（下）：部分是、部分不是（诚实评估）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、历史定位评估（下）：部分是、部分不是（诚实评估）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 哪些是前所未有的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 哪些不是前所未有的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 诚实的评估
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 与历史突破的类比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 结论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、GRH 层级与临界线的来源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十三、GRH 层级与临界线的来源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-rh-grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 RH 是 GRH 的特例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 临界线 1/2 的普适来源：函数方程对称轴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 关键区分：对称轴 ≠ 定线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 平凡表示：L 函数与零点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135-grh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 GRH 的标准对象：尖点（本原）表示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 CQM 层级图的精化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 一句话总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、耦级、误差结构与 RH 的等价
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、耦级、误差结构与 RH 的等价">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 耦级的定义与数学来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-longleftrightarrow-rh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 耦级为实数 \(\Longleftrightarrow\) RH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 误差的实部与虚部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-gue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 GUE 与误差实部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 与相变量子 \(☯\) 的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十五、经典化与数学精确
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十五、经典化与数学精确">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 物理截断与数学精确
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 经典化：对应原理的体现及其局限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-gue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 GUE、经典化与算术条件的分工
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十六、\(G_N\) 推导与自守形式–黎曼零点关联
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十六、\(G_N\) 推导与自守形式–黎曼零点关联">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 逻辑链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-langlands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 与 Langlands 纲领的关联
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附 A：来源定位表（本证明思路 ↔ 项目文档）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附 B：文献支持表（历史路线 ↔ 精确引用）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cqm">CQM 下的黎曼猜想证明思路<a class="headerlink" href="#cqm" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<p><strong>框架</strong>：耦合常数量子力学（CQM）</p>
+<blockquote>
+<p><strong>状态说明</strong>：本文是<strong>证明思路/路线图文档</strong>，不是黎曼猜想的证明本身，也不给出证明的任何新环节。RH 的证明是物理-数学交叉的存在性证明，统一表述为“交叉 RH 成立”。<strong>循环性诊断</strong>：循环的<strong>唯一来源</strong>是边界条件 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span> 从 <span class="arithmatex">\(\gamma_n\)</span> 反推；而 <span class="arithmatex">\(☯\)</span> 的定义（<span class="arithmatex">\(\xi'(1)/\xi(1) = 1+\gamma_E/2-\frac12\ln\pi-\ln 2\)</span>）不涉及零点、<strong>不循环</strong>，其谱表示 <span class="arithmatex">\(\sum_n 1/(\gamma_n^2+1/4)\)</span> 是 RH 的<strong>单向推论</strong>（RH 推出该等式，该等式不推出 RH），<strong>亦不循环</strong>；算符 <span class="arithmatex">\(\hat{H}\)</span> 是形式定义、对易关系 <span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span> 是公设，均<strong>不循环</strong>（公设 = 未推导 ≠ 循环）。待推 1（从素数独立推出边界条件）<strong>长度半已解、相位半未解</strong>（RvM 反解 <span class="arithmatex">\(L_{\rm len}=\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}\)</span> 只含 <span class="arithmatex">\(\Gamma,\pi\)</span>，经实际零点计数检验非循环；残差 <span class="arithmatex">\(\tfrac{\pi}{T}S(T)\)</span> 为相位，<span class="arithmatex">\(S(T)\)</span> 的行为即待推 1 真正缺口（其<strong>对象已由深度分析 §5.7 三圆辨析确定</strong>为 <span class="arithmatex">\(S\)</span>——与 Sierra 相位 <span class="arithmatex">\(\vartheta_n\)</span>、Li 圆变量 <span class="arithmatex">\(z_n\)</span> 互不同一；而「<span class="arithmatex">\(S(T)\)</span> 与有限 n 算术条件对象同一」为<strong>路线图命题，尚未证明</strong>）；详见 <code>CQM_前沿研究_待推1边界条件深度分析.md</code>）。文中历史路线（Hilbert–Pólya、Weil、de Bruijn–Newman、Connes、Berry–Keating、Sierra）出处已在本文明细核查，见附 B。</p>
+</blockquote>
+<hr />
+<h2 id="_1">循环性诊断<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>结论</strong>：循环的唯一来源是边界条件 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span> 从 <span class="arithmatex">\(\gamma_n\)</span> 反推；<span class="arithmatex">\(☯\)</span>、算符、对易关系均不循环。</p>
+</blockquote>
+<h3 id="1">诊断 1：什么才算循环<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>循环的定义是 <span class="arithmatex">\(A \Longrightarrow B \Longrightarrow A\)</span>。真正构成循环的只有：</p>
+<div class="arithmatex">\[
+\gamma_n \Longrightarrow \text{边界条件} \Longrightarrow \text{谱} = \{\gamma_n^2 + 1/4\}
+\]</div>
+<p>即用已知零点反推边界条件，再用边界条件“证明”零点——这才是循环。</p>
+<h3 id="2">诊断 2：<span class="arithmatex">\(☯\)</span> 的定义不循环<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+☯ = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac12\ln\pi - \ln 2 \approx 0.02309570897
+\]</div>
+<p>这个定义<strong>完全不涉及零点</strong>：只用 <span class="arithmatex">\(\xi\)</span> 在 <span class="arithmatex">\(s=1\)</span> 处的值、欧拉常数 <span class="arithmatex">\(\gamma\)</span>、<span class="arithmatex">\(\ln\pi\)</span>、<span class="arithmatex">\(\ln 2\)</span>，全部独立于零点位置。</p>
+<div class="arithmatex">\[
+\boxed{☯\text{ 的定义不循环。它是一个独立的数。}}
+\]</div>
+<h3 id="3">诊断 3：<span class="arithmatex">\(☯\)</span> 的谱表示是推论，不是定义<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\sum_n \frac{1}{\gamma_n^2 + 1/4}\)</span> <strong>在 RH 成立时才严格成立</strong>，方向是单向的：</p>
+<div class="arithmatex">\[
+\text{RH} \Longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+\]</div>
+<p>RH 推出该等式，但该等式不推出 RH。反过来用等式去“证明”RH 才是循环——CQM 没有这样做。下面给出从定义到“推论”的完整推导链条，以精确固定每一环是否依赖 RH。</p>
+<h4 id="31-hadamard">3.1 推导链条：从 Hadamard 乘积到求和<a class="headerlink" href="#31-hadamard" title="Permanent link">&para;</a></h4>
+<p>从 <span class="arithmatex">\(\xi\)</span> 函数的 Hadamard 乘积出发：</p>
+<div class="arithmatex">\[
+\xi(s) = \xi(0) \prod_{\rho}\left(1 - \frac{s}{\rho}\right)
+\]</div>
+<p>取对数导数：</p>
+<div class="arithmatex">\[
+\frac{\xi'(s)}{\xi(s)} = \sum_{\rho}\frac{1}{s-\rho}
+\]</div>
+<p>令 <span class="arithmatex">\(s=1\)</span>：</p>
+<div class="arithmatex">\[
+☯ = \frac{\xi'(1)}{\xi(1)} = \sum_{\rho}\frac{1}{1-\rho}
+\]</div>
+<p>这是<strong>严格恒等式，不依赖 RH</strong>。</p>
+<h4 id="32">3.2 关键一步：零点配对<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
+<p>利用函数方程 <span class="arithmatex">\(\xi(s)=\xi(1-s)\)</span>，零点成对出现：若 <span class="arithmatex">\(\rho\)</span> 是零点，则 <span class="arithmatex">\(1-\rho\)</span> 也是零点。把 <span class="arithmatex">\(\rho\)</span> 与 <span class="arithmatex">\(1-\rho\)</span> 配对：</p>
+<div class="arithmatex">\[
+\frac{1}{1-\rho} + \frac{1}{\rho} = \frac{1}{\rho(1-\rho)}
+\]</div>
+<p>于是：</p>
+<div class="arithmatex">\[
+☯ = \sum_n \frac{1}{\rho_n(1-\rho_n)}
+\]</div>
+<p>这里的求和是对<strong>配对后的零点对</strong>（每对贡献 <span class="arithmatex">\(\rho(1-\rho)\)</span> 的倒数）进行的。这个等式<strong>也不依赖 RH</strong>。</p>
+<h4 id="33-rh">3.3 RH 的介入<a class="headerlink" href="#33-rh" title="Permanent link">&para;</a></h4>
+<p>设 <span class="arithmatex">\(\rho = \beta + i\gamma\)</span>。则：</p>
+<div class="arithmatex">\[
+\rho(1-\rho) = \beta(1-\beta) + \gamma^2 + i\gamma(1-2\beta)
+\]</div>
+<p><strong>若黎曼猜想成立</strong>（<span class="arithmatex">\(\beta = 1/2\)</span>），则 <span class="arithmatex">\(\rho(1-\rho) = \tfrac14 + \gamma^2\)</span>，于是：</p>
+<div class="arithmatex">\[
+☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} \qquad (\text{依赖 RH})
+\]</div>
+<p><strong>若黎曼猜想不成立</strong>（存在 <span class="arithmatex">\(\beta \neq 1/2\)</span>），则求和中的每一项都是复数；<span class="arithmatex">\(☯\)</span> 作为一个实数常数，其虚部必须相互抵消，但这依赖于零点分布的具体细节。</p>
+<h4 id="34">3.4 逻辑方向是单向的<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{定义：} ☯ = \dfrac{\xi'(1)}{\xi(1)} \quad (\text{不依赖 RH}) \\
+\Downarrow \\
+\text{恒等式：} ☯ = \sum_{\rho}\dfrac{1}{\rho(1-\rho)} \quad (\text{不依赖 RH}) \\
+\Downarrow \\
+\text{推论：} ☯ = \sum_{n}\dfrac{1}{\gamma_n^2 + 1/4} \quad (\textbf{依赖 RH})
+\end{array}
+}
+\]</div>
+<p>方向是单向的：RH 推出求和形式，但相反方向不成立——不能反过来用这个求和去证明 RH，因为它的成立<strong>已经假设了</strong> RH。<strong>求和是证明的终点，不是起点</strong>。CQM 必须以 <span class="arithmatex">\(☯ = \xi'(1)/\xi(1)\)</span> 为起点，从素数独立推出边界条件、确立配对不变量 <span class="arithmatex">\(\mathfrak{c}_n=\rho_n(1-\rho_n)\)</span> 为实数（等价共振宽度为零），才能把这个求和变成<strong>结论</strong>，而不是前提。<strong>不采用“由自伴性证谱实”的路径</strong>——自伴对连续谱无信息、对共振无约束（§二 已知1），RH 要的“实”是配对不变量的实，不是本征值的实。</p>
+<h3 id="4">诊断 4：正确的逻辑方向<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+☯\text{ 的定义（独立于零点）} + \text{算符 } \hat{H} + \text{对易关系 } [\hat{u}, \hat{p}_u]=i \\
+\Downarrow \\
+\text{从素数独立推出边界条件} \\
+\Downarrow \\
+\mathfrak{c}_n=\rho_n(1-\rho_n)\text{ 为实数（配对不变量层面，不预设谱型）} \\
+\Downarrow \\
+\text{零点全在 } \tfrac12 \text{ 上} \\
+\Downarrow \\
+\text{RH}
+\end{array}
+}
+\]</div>
+<p>每一个箭头都是单向的，无循环。</p>
+<h3 id="5">诊断 5：循环只由边界条件引入<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">操作</th>
+<th style="text-align: left;">是否循环</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">用 <span class="arithmatex">\(☯\)</span> 的定义（独立于零点）</td>
+<td style="text-align: left;">❌ 不循环</td>
+</tr>
+<tr>
+<td style="text-align: left;">用 <span class="arithmatex">\(☯\)</span> 的谱表示（依赖零点）去反推边界条件</td>
+<td style="text-align: left;">✅ 循环</td>
+</tr>
+<tr>
+<td style="text-align: left;">从素数独立推出边界条件</td>
+<td style="text-align: left;">❌ 不循环</td>
+</tr>
+<tr>
+<td style="text-align: left;">从已知 <span class="arithmatex">\(\gamma_n\)</span> 反推边界条件</td>
+<td style="text-align: left;">✅ 循环</td>
+</tr>
+</tbody>
+</table>
+<p>CQM 目前的边界条件 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span> 是从 <span class="arithmatex">\(\gamma_n\)</span> 反推的，<strong>这一处循环</strong>；<span class="arithmatex">\(☯\)</span> 本身不循环。</p>
+<h3 id="6">诊断 6：精确的循环性诊断<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{不循环的部分：} ☯\text{ 的定义、} \hat{H} \text{ 的形式、} [\hat{u},\hat{p}_u]=i \\
+\Downarrow \\
+\text{循环的部分：} L_n = 2\pi n/\gamma_n \text{ 从 } \gamma_n \text{ 反推} \\
+\Downarrow \\
+\text{待解决：从素数独立推出 } S(T) \text{（相位半；长度半 } L_{\rm len}(\Gamma,\pi) \text{ 已解）}
+\end{array}
+}
+\]</div>
+<p>只有边界条件的来源是循环的，其他部分都不循环。</p>
+<h3 id="7">诊断 7：对框架分层的直接后果<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>循环性诊断对“3 + 2 + 2”分层的直接后果：</p>
+<ul>
+<li><span class="arithmatex">\(☯\)</span> = 独立定义的作用量量子：<strong>不循环</strong>，地位等同 <span class="arithmatex">\(\hbar\)</span>（基本输入，不需“独立确定”），列为<strong>已知</strong>；</li>
+<li>算符 <span class="arithmatex">\(\hat{H}\)</span>：<strong>不循环</strong>（形式定义）；</li>
+<li>对易关系 <span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span>：<strong>不循环</strong>（公设 = 未推导 ≠ 循环），随物理系统存在性一起确立（地位等同 <span class="arithmatex">\(\hbar\)</span>），这是“未推导”而非“循环”；</li>
+<li>边界条件 <span class="arithmatex">\(L_n\)</span> 从 <span class="arithmatex">\(\gamma_n\)</span> 反推：<strong>唯一循环</strong>。</li>
+</ul>
+<p>打破循环只需：</p>
+<div class="arithmatex">\[
+\boxed{\text{从素数/}\xi\text{ 函数独立推出相位 } S(T) \text{ 的行为（长度半已由 } \theta(T) \text{ 解出）。}}
+\]</div>
+<p>一旦完成，整个框架就完全非循环。</p>
+<hr />
+<p>一句话总结：</p>
+<blockquote>
+<p><span class="arithmatex">\(☯\)</span> 只是一个数，它的定义不循环。循环的只是边界条件的来源。把边界条件从素数独立推出来，循环就打破了。</p>
+</blockquote>
+<hr />
+<h2 id="_2">摘要<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>CQM 框架以<strong>共振谱</strong>为组织框架——同步算符的<strong>共振位置（耦级）</strong> <span class="arithmatex">\(\{\mathfrak{c}_n\}\)</span>（<span class="arithmatex">\(\mathfrak{c}_n = \gamma_n^2 + 1/4\)</span>）即共振谱，GRH 实谱条件即共振稳定性条件——把黎曼猜想的证明转化为<strong>物理-数学交叉的存在性证明</strong>，由真实物理系统存在性保证：</p>
+<div class="arithmatex">\[
+\boxed{\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\Longrightarrow\; \text{交叉RH成立}}
+\]</div>
+<ul>
+<li><strong>3 个已知</strong>：算符 <span class="arithmatex">\(\hat{H}=\hat{D}^2+1/4\)</span>（<span class="arithmatex">\(\hat{D}=-i(\partial_u-1/2)\)</span>）、不确定性关系（相变量子 <span class="arithmatex">\(☯\)</span>）、带误差的谱带 <span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+1/4+O_n\)</span>。</li>
+<li><strong>2 个待推</strong>：边界条件（必须与素数有关）、经典化（消除误差虚部 <span class="arithmatex">\(O_n^I\)</span>）。</li>
+<li><strong>物理存在性</strong>：退相干机制真实输出算符 <span class="arithmatex">\(\hat{H}\)</span>（缺口 G2–G4）；不确定性关系 <span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span> 随物理系统存在性确立；相变量子 <span class="arithmatex">\(☯\)</span> 不循环、为基本输入，属<strong>已知</strong>。</li>
+</ul>
+<p><strong>交叉 RH 成立</strong>即通过物理-数学交叉路径证明 RH：存在一个真实物理系统，满足不确定性关系，其谱精确对应黎曼零点。本文的贡献在于把黎曼猜想从“孤立的分析数论问题”转化为“可操作的物理投影问题”，并给出完整的证明路线图。</p>
+<hr />
+<h2 id="_3">一、总体逻辑结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>共振谱主线</strong>：紧化算符在 GL(1) 电磁因子层的谱实现 <span class="arithmatex">\(\hat{H}=\hat{D}^2+1/4\)</span> 的<strong>共振位置（耦级）</strong> <span class="arithmatex">\(\{\mathfrak{c}_n\}\)</span>（<span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+1/4\)</span>）是贯穿全文的主线。RH 等价于共振谱为实数（共振宽度为零），GRH 是对所有尖点（本原）自守表示的共振稳定性条件。证明思路是一个物理-数学交叉的存在性证明，围绕共振谱的三个层面展开：共振谱的构造（3 个已知）、共振谱的精确化（2 个待推）、共振谱存在的必然性（物理存在性）。</p>
+<div class="arithmatex">\[
+\boxed{
+\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\Longrightarrow\; \text{交叉RH成立}
+}
+\]</div>
+<p>完整结构为：</p>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{算符} \\
++ \\
+\text{不确定性关系（☯）} \\
++ \\
+\text{带误差的谱带}
+\end{array}
+\;\xrightarrow{\text{待推}}\;
+\begin{array}{c}
+\text{边界条件（素数）} \\
++ \\
+\text{经典化}
+\end{array}
+\;\Longrightarrow\;
+\begin{array}{c}
+\text{满足不确定性关系的} \\
+\text{量子系统谱是零点}
+\end{array}
+\;\xrightarrow{\text{物理存在性}}\;
+\text{RH}
+}
+\]</div>
+<hr />
+<h2 id="3_1">二、3个已知<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">已知1：算符<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>形式定义</strong>：</p>
+<div class="arithmatex">\[
+\hat{H} = \hat{D}^2 + \frac14, \qquad \hat{D} = -i(\partial_u - 1/2)
+\]</div>
+<p>定义在耦合空间 <span class="arithmatex">\(u = \ln r\)</span> 上，Hilbert空间为 <span class="arithmatex">\(L^2(\mathbb{R}, e^{-u}du)\)</span>。</p>
+<p><strong>自然谱</strong>：</p>
+<p>通过酉变换 <span class="arithmatex">\(f \mapsto e^{-u/2}f\)</span>，等价于：</p>
+<div class="arithmatex">\[
+\tilde{A} = -\partial_u^2 + \frac14
+\]</div>
+<p>定义在 <span class="arithmatex">\(L^2(\mathbb{R}, du)\)</span> 上。<span class="arithmatex">\(-\partial_u^2\)</span> 在全直线 <span class="arithmatex">\(L^2(\mathbb{R})\)</span> 上<strong>本质自伴</strong>（亏指数 <span class="arithmatex">\((0,0)\)</span>），自伴延拓唯一，谱为：</p>
+<div class="arithmatex">\[
+\operatorname{Spec}(\tilde{A}) = \left[\frac14, \infty\right)
+\]</div>
+<p><strong>纯绝对连续谱，无离散特征值。</strong></p>
+<p><strong>空间与亏指数修正</strong>：酉变换后 <span class="arithmatex">\(\tilde{A}=-\partial_u^2+\frac14\)</span> 定义在 <span class="arithmatex">\(L^2(\mathbb{R},du)\)</span>；<span class="arithmatex">\(-\partial_u^2\)</span> 在<strong>全直线</strong>上本质自伴（亏指数 <span class="arithmatex">\((0,0)\)</span>），亏指数 <span class="arithmatex">\((1,1)\)</span> 仅在<strong>半直线</strong> <span class="arithmatex">\(L^2(\mathbb{R}_+)\)</span> 上出现。</p>
+<p><strong>严格性边界（谱型待定）</strong>：<span class="arithmatex">\(\tilde{A}\)</span> 的自然谱是纯绝对连续谱，故 <span class="arithmatex">\(\{\mathfrak{c}_n\}\)</span> <strong>不是</strong>其点谱。文献中承载零点的载体有三类，自伴性的效力各不相同：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">载体类型</th>
+<th style="text-align: left;">自伴性是否约束</th>
+<th style="text-align: left;">现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">离散本征值</td>
+<td style="text-align: left;">✅ 谱必为实数</td>
+<td style="text-align: left;">Endres–Steiner (2010) 已否证 <span class="arithmatex">\(H_{\mathrm{BK}}\)</span>、<span class="arithmatex">\(H_{\mathrm{BK}}^2\)</span> 能给出零点</td>
+</tr>
+<tr>
+<td style="text-align: left;">连续谱</td>
+<td style="text-align: left;">✅ 但恒为实数，<strong>零信息</strong></td>
+<td style="text-align: left;">即本算符的自然谱</td>
+</tr>
+<tr>
+<td style="text-align: left;">共振（resonance）</td>
+<td style="text-align: left;">❌ <strong>不约束</strong>（在 resolvent 第二叶）</td>
+<td style="text-align: left;">Sierra 2008 用此；Connes 1999 把共振归为<strong>非临界</strong>零点</td>
+</tr>
+</tbody>
+</table>
+<p><strong>因此</strong>：§13.3 / §14.2 的“自伴 <span class="arithmatex">\(\Longrightarrow\)</span> 谱实 <span class="arithmatex">\(\Longrightarrow\)</span> RH”仅在<strong>离散点谱</strong>情形下有效；在当前声明的连续谱情形下是空洞的。把 <span class="arithmatex">\(\{\mathfrak{c}_n\}\)</span> 落实为何种载体，<strong>属待推 1 的内容</strong>，目前未定。</p>
+<p><strong>自伴延拓</strong>：</p>
+<p><span class="arithmatex">\(\hat{H}\)</span> 在全直线 <span class="arithmatex">\(L^2(\mathbb{R})\)</span> 上本质自伴（亏指数 <span class="arithmatex">\((0,0)\)</span>），自伴延拓唯一。亏指数 <span class="arithmatex">\((1,1)\)</span>（无穷多个自伴延拓，由相位参数 <span class="arithmatex">\(\vartheta \in \mathbb{R}\)</span> 标记）只在<strong>半直线</strong> <span class="arithmatex">\(L^2(\mathbb{R}_+)\)</span> 上成立。</p>
+<p><strong>关键点</strong>：算符形式已有，但谱对应 <span class="arithmatex">\(\{\gamma_n^2 + 1/4\}\)</span> 不是严格点谱对应（见上述严格性边界），这是本框架最根本的未解决问题。</p>
+<hr />
+<h3 id="2_1">已知2：不确定性关系（相变量子<span class="arithmatex">\(☯\)</span>）<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>对易关系</strong>：</p>
+<div class="arithmatex">\[
+[\hat{u}, \hat{p}_u] = i, \qquad \hat{p}_u = -i\partial_u
+\]</div>
+<p><strong>不确定性关系</strong>：</p>
+<div class="arithmatex">\[
+\Delta u \cdot \Delta p_u \geq \frac12
+\]</div>
+<p>等价地（其中 <span class="arithmatex">\(v_\tau \equiv d\tau/dt\)</span> 为固有时流速）：</p>
+<div class="arithmatex">\[
+\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}
+\]</div>
+<p><strong>相变量子<span class="arithmatex">\(☯\)</span>的定义</strong>：</p>
+<div class="arithmatex">\[
+☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac12\ln\pi - \ln 2 \approx 0.02309570897
+\]</div>
+<p>其中 <span class="arithmatex">\(\xi(s) = \frac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)\)</span> 是完备化ζ函数。</p>
+<p><strong><span class="arithmatex">\(☯\)</span>的谱表示</strong>：</p>
+<div class="arithmatex">\[
+☯ = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + 1/4}
+\]</div>
+<blockquote>
+<p><strong>谱型注释</strong>：此求和中的 <span class="arithmatex">\(\gamma_n^2+1/4\)</span> 是零点导出量（共振位置），非算符本征值；该等式是 RH 成立时的单向推论（见文首诊断 3），不预设算符有离散谱——见 §二 已知1 严格性边界。</p>
+</blockquote>
+<p><strong>与 <span class="arithmatex">\(\hbar\)</span> 的类比</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标准量子力学</th>
+<th style="text-align: left;">CQM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">坐标 <span class="arithmatex">\(\hat{x}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{u} = \ln \hat{r}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">动量 <span class="arithmatex">\(\hat{p} = -i\hbar \partial_x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{p}_u = -i\partial_u\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">对易子 <span class="arithmatex">\([\hat{x},\hat{p}] = i\hbar\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\([\hat{u},\hat{p}_u] = i\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">作用量量子 <span class="arithmatex">\(\hbar\)</span></td>
+<td style="text-align: left;">相变量子 <strong><span class="arithmatex">\(☯\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">不确定性 <span class="arithmatex">\(\Delta x \Delta p \geq \hbar/2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta u \Delta p_u \geq 1/2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\hbar\)</span> 是实验常数</td>
+<td style="text-align: left;"><span class="arithmatex">\(☯\)</span> 由 <span class="arithmatex">\(\xi\)</span> 函数定义</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键点</strong>：<span class="arithmatex">\(☯\)</span>是基本常数，像 <span class="arithmatex">\(\hbar\)</span> 一样，是理论的输入而非输出。</p>
+<hr />
+<h3 id="3_2">已知3：带误差的谱带<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p><strong>谱的形式</strong>：</p>
+<div class="arithmatex">\[
+\mathfrak{c}_n = \gamma_n^2 + \frac14 + O_n
+\]</div>
+<blockquote>
+<p><strong>谱型注释</strong>：<span class="arithmatex">\(\mathfrak{c}_n\)</span> 应理解为<strong>共振</strong>（Sierra 2008）或<strong>吸收谱</strong>（Connes 1999）位置，<strong>非算符本征值</strong>——见 §二 已知1 严格性边界。离散指标 <span class="arithmatex">\(n\)</span> 来自零点编号，不预设算符有离散谱。</p>
+</blockquote>
+<p>其中误差为：</p>
+<div class="arithmatex">\[
+O_n = O\!\left(\frac{\gamma_n^2}{n}\right)
+\]</div>
+<p><strong>误差的结构分解</strong>：</p>
+<div class="arithmatex">\[
+O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R \text{（实）}} + i\underbrace{\frac{\gamma_n^2 \vartheta_n^I}{\pi n}}_{O_n^I \text{（虚）}} + \cdots
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">分量</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(O_n^R\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta_n^R\)</span></td>
+<td style="text-align: left;">谱的实部平移，可被重标度吸收</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(O_n^I\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\vartheta_n^I\)</span></td>
+<td style="text-align: left;">谱的虚部，<strong>不可被任何平移消除</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>误差虚部与零点偏移的恒等关系</strong>（记 <span class="arithmatex">\(\delta_n := \beta_n - \tfrac12\)</span>）：</p>
+<div class="arithmatex">\[
+\mathfrak{c}_n=\rho_n(1-\rho_n)=\gamma_n^2+\beta_n(1-\beta_n)+i\,\gamma_n(1-2\beta_n)
+\;\Longrightarrow\;
+O_n^I=\gamma_n(1-2\beta_n)=-2\gamma_n\delta_n
+\]</div>
+<p><strong>推导</strong>（一行代数，<span class="arithmatex">\(O_n:=\mathfrak{c}_n-\gamma_n^2-\tfrac14\)</span>）：</p>
+<div class="arithmatex">\[
+\rho_n(1-\rho_n)=(\beta_n+i\gamma_n)(1-\beta_n-i\gamma_n)=\gamma_n^2+\beta_n(1-\beta_n)+i\gamma_n(1-2\beta_n)
+\]</div>
+<p>故 <span class="arithmatex">\(O_n=\big[\beta_n(1-\beta_n)-\tfrac14\big]+i\gamma_n(1-2\beta_n)=-\delta_n^2-2i\gamma_n\delta_n\)</span>，即 <span class="arithmatex">\(O_n^R=-\delta_n^2\)</span>、<span class="arithmatex">\(O_n^I=-2\gamma_n\delta_n\)</span>。</p>
+<blockquote>
+<p><strong>符号约定</strong>：由 <span class="arithmatex">\(\delta_n=\beta_n-\tfrac12\)</span> 的定义得 <span class="arithmatex">\(O_n^I=\gamma_n(1-2\beta_n)=-2\gamma_n\delta_n\)</span>；等价链只依赖 <span class="arithmatex">\(O_n^I=0\iff\delta_n=0\)</span>，与符号约定无关。</p>
+</blockquote>
+<p><strong>等价链</strong>：</p>
+<div class="arithmatex">\[
+\text{RH} \iff \delta_n = 0 \;\forall n \iff O_n^I = 0 \;\forall n \iff \vartheta_n^I = 0 \;\forall n
+\]</div>
+<p><strong>关键点</strong>：误差的虚部 <span class="arithmatex">\(O_n^I\)</span> 精确等于零点实部偏移 <span class="arithmatex">\(\delta_n\)</span> 的 <span class="arithmatex">\(2\gamma_n\)</span> 倍。</p>
+<p><strong>循环性</strong>：<span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span> 从 <span class="arithmatex">\(\gamma_n\)</span> 反推，目前带有循环性。</p>
+<hr />
+<h2 id="2_2">三、2个待推（现有步骤）<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">待推1：边界条件（必须与素数有关）<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p><strong>目标</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\text{从素数/}\xi\text{函数独立推出相位 } S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\text{ 的行为}}
+\]</div>
+<p><strong>状态拆分</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">半</th>
+<th style="text-align: left;">公式</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">长度</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\rm len}=\tfrac12\ln\tfrac{T}{2\pi}-\tfrac12+\tfrac{7\pi}{8T}\)</span></td>
+<td style="text-align: left;">✅ 已解（RvM 反解，只含 <span class="arithmatex">\(\Gamma,\pi\)</span>，实际计数检验非循环）</td>
+</tr>
+<tr>
+<td style="text-align: left;">相位</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_{\rm ph}=\tfrac{\pi}{T}S(T)\)</span></td>
+<td style="text-align: left;">❌ 未解——<strong>待推 1 真正对象</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>要求</strong>：</p>
+<ol>
+<li><strong>非循环性</strong>：走整体层平滑半 <span class="arithmatex">\(\theta(T)/\pi+1\)</span>（输入 <span class="arithmatex">\(\Gamma,\pi\)</span>），不引用已知零点 <span class="arithmatex">\(\gamma_n\)</span>；逐点 <span class="arithmatex">\(L_n=2\pi n/\gamma_n\)</span> 为恒等变形，只作字典，不作来源；</li>
+<li><strong>离散化</strong>：把连续谱 <span class="arithmatex">\([1/4, \infty)\)</span> 离散化为 <span class="arithmatex">\(\{\gamma_n^2 + 1/4\}\)</span>；</li>
+<li><strong>配对不变量</strong>：由边界条件确立 <span class="arithmatex">\(\mathfrak{c}_n=\rho_n(1-\rho_n)\)</span> 为实数（共振宽度为零），而非经由自伴性——自伴对点谱有效、对连续谱无信息、对共振无约束（§二 已知1），不作为证明环节。</li>
+</ol>
+<p><strong>候选路径</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">候选</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">困难</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">函数方程 <span class="arithmatex">\(\Xi(t) = \Xi(-t)\)</span></td>
+<td style="text-align: left;">谱对称</td>
+<td style="text-align: left;">如何转化为 <span class="arithmatex">\(u\)</span> 空间边界？</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hadamard乘积</td>
+<td style="text-align: left;">乘积收敛性</td>
+<td style="text-align: left;">不给出边界条件</td>
+</tr>
+<tr>
+<td style="text-align: left;">积分表示</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Phi(u)\)</span> 的衰减</td>
+<td style="text-align: left;">如何精确对应？</td>
+</tr>
+<tr>
+<td style="text-align: left;">Adele自对偶</td>
+<td style="text-align: left;">Tate自对偶条件</td>
+<td style="text-align: left;">如何离散化？</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>整体计数 <span class="arithmatex">\(\theta(T)\)</span> + <span class="arithmatex">\(S(T)\)</span></strong></td>
+<td style="text-align: left;">RvM（长度半已通）</td>
+<td style="text-align: left;"><strong>如何从素数侧独立控制 <span class="arithmatex">\(S(T)\)</span></strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>当前状态</strong>：长度半已解；相位半空白。<span class="arithmatex">\(S(T)\)</span> 与 §15.3 有限 n 算术条件<strong>对象同一</strong>为<strong>路线图命题</strong>（尚未证明；详见 <code>CQM_前沿研究_待推1边界条件深度分析.md</code> §8.2 口径注）。逐点 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span> 从 <span class="arithmatex">\(\gamma_n\)</span> 反推仍<strong>循环</strong>，不作为边界来源。</p>
+<blockquote>
+<p><strong>对象已定（2026-09-25，<code>CQM_前沿研究_待推1边界条件深度分析.md</code> §5.7）</strong>：相位半的<strong>对象</strong>已由「三圆关系辨析」确定——<span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span>、Sierra 的边界相位 <span class="arithmatex">\(\vartheta_n=-\theta(\mathcal E_n)\)</span>、Li 单位圆变量 <span class="arithmatex">\(z_n=1-1/\rho_n\)</span> <strong>互不同一</strong>（<span class="arithmatex">\(S\)</span> 为 RvM <strong>涨落半</strong>：每零点跳 <span class="arithmatex">\(+1\)</span> 的阶梯、无界；<span class="arithmatex">\(\vartheta_n\)</span> 为 <span class="arithmatex">\(\theta\)</span> 型<strong>平滑有界</strong>相位；<span class="arithmatex">\(\phi_n=\arg z_n\)</span> 为几何相位、<span class="arithmatex">\(\sim1/\gamma_n\to0\)</span>），三者唯一的联系是 RvM 分解 <span class="arithmatex">\(N=\theta/\pi+1+S\)</span> 的平滑半/涨落半。故待推 1 的缺口<strong>不在「对象未定」，而在「<span class="arithmatex">\(S(T)\)</span> 只欠一个只引用素数/<span class="arithmatex">\(\xi\)</span> 的独立表达式」</strong>。</p>
+</blockquote>
+<hr />
+<h3 id="2_3">待推2：经典化<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p><strong>目标</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\text{构造自然操作 } \mathcal{C} \text{，使 } \mathcal{C}(\vartheta_n^I) = 0 \text{ 对所有 } n.}
+\]</div>
+<p><strong>要求</strong>：</p>
+<ol>
+<li><strong>自然性</strong>：由 <span class="arithmatex">\(\zeta\)</span>/素数独立定义；</li>
+<li><strong>消相位性</strong>：<span class="arithmatex">\(\vartheta_n^I \mapsto 0\)</span>；</li>
+<li><strong>保谱性</strong>：不改变谱的实部结构。</li>
+</ol>
+<p><strong>候选路径</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">候选</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">困难</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Adele Jacobian <span class="arithmatex">\(\exp(-2/☯)\)</span></td>
+<td style="text-align: left;">Tate自对偶</td>
+<td style="text-align: left;">“2”的来源是启发式</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn–Newman热流</td>
+<td style="text-align: left;">热流使零点向实轴靠拢</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Lambda=0\)</span> 等价于RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">窄带Weil正性</td>
+<td style="text-align: left;"><span class="arithmatex">\(Q(f) \geq 0\)</span></td>
+<td style="text-align: left;">未推广到全类</td>
+</tr>
+</tbody>
+</table>
+<p><strong>当前状态</strong>：CQM已建立窄带Weil正性，但未推广到全类测试函数。</p>
+<hr />
+<h2 id="_4">四、交叉证明的结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 交叉证明的结论<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>交叉 RH 成立即证明以下存在性陈述：</p>
+<div class="arithmatex">\[
+\boxed{\text{存在一个满足不确定性关系的量子系统，其谱精确对应黎曼零点。}}
+\]</div>
+<p>即：</p>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{存在一个物理系统 } \mathcal{S} \\
+\text{满足 } [\hat{u},\hat{p}_u]=i \text{ 和 } \Delta u \Delta p_u \geq 1/2 \\
+\text{使得 } \operatorname{Spec}(\hat{H}) = \{\gamma_n^2 + 1/4\}
+\end{array}
+}
+\]</div>
+<p>该存在性陈述成立即 RH 成立——谱等于 <span class="arithmatex">\(\{\gamma_n^2 + 1/4\}\)</span> 意味着所有 <span class="arithmatex">\(\gamma_n\)</span> 为实数，即所有零点在 <span class="arithmatex">\(1/2\)</span> 上。</p>
+<h3 id="42">4.2 交叉证明的逻辑结构<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>这是一个物理-数学交叉的存在性证明，由真实物理系统存在性保证：</p>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{物理存在性（退相干机制）} \\
++ \\
+\text{不确定性关系（随物理系统确立）} \\
++ \\
+\text{边界条件（待推）} \\
++ \\
+\text{经典化（待推）}
+\end{array}
+\;\Longrightarrow\;
+\begin{array}{c}
+\text{谱} = \{\gamma_n^2 + 1/4\} \\
+\Longrightarrow \text{交叉RH成立}
+\end{array}
+}
+\]</div>
+<p>物理部分保证系统存在且满足不确定性关系，数学部分保证谱是零点。不确定性关系不需要被单独从纯数学原理推出，而是随物理系统的存在性一起被确立。</p>
+<h3 id="43">4.3 交叉证明的哲学内核：构造与验证分离<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>交叉证明的根本意义在于<strong>构造与验证分离</strong>——物理提供构造和推导锚点，数学管定理成立：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">职责</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>物理</strong>（构造）</td>
+<td style="text-align: left;">提供构造和推导锚点</td>
+<td style="text-align: left;">退相干机制 → 算符 <span class="arithmatex">\(\hat{H}\)</span>、不确定性关系 <span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span>、谱带 <span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+1/4+O_n\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数学</strong>（验证）</td>
+<td style="text-align: left;">检验构造确实给出零点谱</td>
+<td style="text-align: left;">边界条件（从素数独立推出）、经典化（<span class="arithmatex">\(O_n^I \to 0\)</span>）、算符涌现（缺口 G2–G4）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>物理真实性提供构造和推导锚点</strong>：退相干机制的真实性（反事实判决：若退相干输出不是 <span class="arithmatex">\(\hat{D}\)</span>，则 <span class="arithmatex">\(G_N\)</span>、<span class="arithmatex">\(\alpha^{-1}\)</span>、质量谱必然偏离实验值若干数量级——见 <code>05 方法论与批判/CQM_方法论_HilbertPolya批判.md</code> §5.2）确保构造不是拟合，而是有物理基础的构造。</p>
+<p><strong>数学进行检验</strong>：数学验证的是物理构造是否确实给出零点谱——即物质世界的自组织逻辑是否自洽。数学在此的角色是<strong>验证工具</strong>，验证物质世界本身的逻辑，而非数学自为的场域中从公理自主证明。</p>
+<p><strong>构造与验证分离避免了纯数学自证自验的循环</strong>：传统 Hilbert–Pólya 路径中，数学既是构造者又是验证者（自己构造算符、自己证明谱是零点），这正是百年失败的根源——纯数学框架内决定谱的“额外信息”无法从公理内部涌现（§二 已知1 严格性边界）。交叉证明把构造交给物理、验证交给数学，打破了自证自验的循环。</p>
+<p><strong>数学角色的转换</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">柏拉图主义（传统）</th>
+<th style="text-align: left;">唯物主义（CQM 交叉证明）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">数学角色</td>
+<td style="text-align: left;">自为的场域（从公理自主证明）</td>
+<td style="text-align: left;">验证工具（验证物质世界逻辑）</td>
+</tr>
+<tr>
+<td style="text-align: left;">物理角色</td>
+<td style="text-align: left;">数学的应用（数学先于物理）</td>
+<td style="text-align: left;">构造和推导锚点（物理先于数学）</td>
+</tr>
+<tr>
+<td style="text-align: left;">RH 的地位</td>
+<td style="text-align: left;">数学世界中的命题</td>
+<td style="text-align: left;">物质自组织过程的涌现性质</td>
+</tr>
+</tbody>
+</table>
+<p><strong>先例</strong>：此模式在物理-数学交叉中是常态而非例外。Yang–Mills 质量间隙：QCD 物理实验已验证（构造和推导锚点），但 Yang–Mills 场的数学存在性与质量间隙的严格证明仍是千禧年未解难题。同类还有 Navier–Stokes 光滑性（物理直觉已给构造，数学严格性未完成）、GR 奇点定理（Einstein 物理构造 → Penrose/Hawking 数学证明）。物理提供构造和推导锚点，数学管定理成立。</p>
+<hr />
+<h2 id="_5">五、交叉证明的组成部分<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 物理存在性：不确定性关系的确立<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p><strong>当前状态</strong>：不确定性关系 <span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span> 是<strong>公设</strong>，地位等同 <span class="arithmatex">\(\hbar\)</span>。</p>
+<p><strong>在交叉证明中的地位</strong>：不确定性关系不需要被单独从纯数学原理推出，而是随真实物理系统的存在性一起被确立。物理存在性证明（退相干机制真实输出算符 <span class="arithmatex">\(\hat{H}\)</span>）保证系统存在，不确定性关系作为该系统的属性自动成立。</p>
+<p><strong>候选深层原理</strong>（为物理存在性提供严格基础）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">候选</th>
+<th style="text-align: left;">能否确立物理存在性</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tate自对偶</td>
+<td style="text-align: left;">可能</td>
+<td style="text-align: left;">CQM已部分尝试</td>
+</tr>
+<tr>
+<td style="text-align: left;">非交换几何</td>
+<td style="text-align: left;">可能</td>
+<td style="text-align: left;">未完成</td>
+</tr>
+<tr>
+<td style="text-align: left;">全息原理</td>
+<td style="text-align: left;">未尝试</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">弦论紧致化</td>
+<td style="text-align: left;">未尝试</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>与 <span class="arithmatex">\(\hbar\)</span> 的类比</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标准量子力学</th>
+<th style="text-align: left;">CQM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\([x,p]=i\hbar\)</span> 是公设</td>
+<td style="text-align: left;"><span class="arithmatex">\([\hat{u},\hat{p}_u]=i\)</span> 是公设</td>
+</tr>
+<tr>
+<td style="text-align: left;">物理学家接受 <span class="arithmatex">\(\hbar\)</span> 为基本常数</td>
+<td style="text-align: left;">CQM接受<span class="arithmatex">\(☯\)</span>为基本常数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\hbar\)</span> 随物理系统存在而确立</td>
+<td style="text-align: left;">对易关系随物理系统存在而确立</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键点</strong>：在交叉证明中，不确定性关系的地位与 <span class="arithmatex">\(\hbar\)</span> 完全平行——不需要被单独推出，而是随物理系统的存在性一起被确立。物理存在性由退相干机制的真实性保证（缺口 G2–G4）。</p>
+<h3 id="52">5.2 相变量子<span class="arithmatex">\(☯\)</span><a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p><strong>当前状态</strong>：<span class="arithmatex">\(☯\)</span> 由 <span class="arithmatex">\(\xi\)</span> 函数定义，是<strong>输入常数</strong>，地位等同 <span class="arithmatex">\(\hbar\)</span>。</p>
+<div class="arithmatex">\[
+☯ = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \frac12\ln\pi - \ln 2 \approx 0.02309570897
+\]</div>
+<p>这个定义<strong>不涉及零点</strong>：只用 <span class="arithmatex">\(\xi\)</span> 在 <span class="arithmatex">\(s=1\)</span> 处的值、欧拉常数 <span class="arithmatex">\(\gamma\)</span>、<span class="arithmatex">\(\ln\pi\)</span>、<span class="arithmatex">\(\ln 2\)</span>，全部独立于零点位置。<span class="arithmatex">\(☯\)</span> 是独立定义的作用量量子，<strong>不循环</strong>。</p>
+<p><strong><span class="arithmatex">\(☯\)</span> 的谱表示是推论，不是定义</strong>：</p>
+<div class="arithmatex">\[
+\text{RH} \Longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+\]</div>
+<p>RH 推出该等式，但该等式不推出 RH。<span class="arithmatex">\(☯ = \sum 1/\mathfrak{c}_n\)</span> 是 RH 的<strong>推论</strong>，不是 <span class="arithmatex">\(☯\)</span> 的定义。</p>
+<p><strong>与 <span class="arithmatex">\(\hbar\)</span> 的类比</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层面</th>
+<th style="text-align: left;"><span class="arithmatex">\(\hbar\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(☯\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">定义</td>
+<td style="text-align: left;">实验测量</td>
+<td style="text-align: left;"><span class="arithmatex">\(\xi'(1)/\xi(1)\)</span>（不涉及零点）</td>
+</tr>
+<tr>
+<td style="text-align: left;">是否依赖已知数据</td>
+<td style="text-align: left;">否（实验独立）</td>
+<td style="text-align: left;">否（定义独立于零点）</td>
+</tr>
+<tr>
+<td style="text-align: left;">是否需要推出</td>
+<td style="text-align: left;">否（基本常数）</td>
+<td style="text-align: left;">否（基本输入，地位等同 <span class="arithmatex">\(\hbar\)</span>）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>补注（“地位等同”只指逻辑地位，不指量纲类型）</strong>：<span class="arithmatex">\(\hbar\)</span> 是<strong>有量纲</strong>特征常数（跨量纲对），而 <span class="arithmatex">\(☯=\xi'(1)/\xi(1)\)</span> 是<strong>纯数型</strong>（谱／算术量，量纲发生学中<strong>无对应“量纲对”</strong>）。两者相同之处是“都不需推出”，不同之处是量纲类型。三类分法见 <code>01 核心理论/CQM_核心_量纲与群论.md</code> <strong>§7.5</strong>。</p>
+</blockquote>
+<p><strong>结论</strong>：<span class="arithmatex">\(☯\)</span> 属“已知”（不循环）。交叉 RH 成立的剩余待推项为：①边界条件（唯一循环来源）、②经典化、③物理存在性（退相干机制真实输出算符，缺口 G2–G4）。</p>
+<h3 id="53">5.3 交叉证明清单<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{算符} + \text{不确定性关系} + \text{带误差谱带} \\
++ \\
+\text{边界条件（素数）} + \text{经典化} \\
++ \\
+\text{物理存在性（退相干机制）} + \text{☯（已知，不循环）} \\
+\Downarrow \\
+\text{交叉RH成立}
+\end{array}
+}
+\]</div>
+<hr />
+<h2 id="_6">六、完整逻辑链<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 逻辑结构图<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{ccc}
+\text{已知1：算符} &amp; &amp; \\
+\text{已知2：不确定性关系（☯）} &amp; \Longrightarrow &amp; \text{待推1：边界条件（素数）} \\
+\text{已知3：带误差的谱带} &amp; &amp; \text{待推2：经典化} \\
+ &amp; &amp; \text{物理存在性：退相干机制} \\
+ &amp; &amp; \text{已知：☯（不循环）} \\
+ &amp; &amp; \Downarrow \\
+ &amp; &amp; \text{交叉RH成立}
+\end{array}
+}
+\]</div>
+<h3 id="62">6.2 等价链<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\mathfrak{c}_n \in \mathbb{R} \;\Longleftrightarrow\; O_n^I = 0 \;\Longleftrightarrow\; \vartheta_n^I = 0 \;\Longleftrightarrow\; \delta_n = 0 \;\Longleftrightarrow\; \beta_n = \frac12 \;\Longleftrightarrow\; \text{RH}
+}
+\]</div>
+<p><strong>逐环依据</strong>（均为一行代数，见 §二 已知3、§14.2–§14.3）：<span class="arithmatex">\(\mathfrak{c}_n=\gamma_n^2+\tfrac14+O_n\)</span> 故 <span class="arithmatex">\(\mathfrak{c}_n\in\mathbb R\iff O_n^I=0\)</span>；<span class="arithmatex">\(O_n^I=\dfrac{\gamma_n^2\vartheta_n^I}{\pi n}\)</span> 且 <span class="arithmatex">\(\gamma_n\neq0\)</span>，故 <span class="arithmatex">\(O_n^I=0\iff\vartheta_n^I=0\)</span>；<span class="arithmatex">\(O_n^I=-2\gamma_n\delta_n\)</span> 故 <span class="arithmatex">\(O_n^I=0\iff\delta_n=0\)</span>；<span class="arithmatex">\(\delta_n:=\beta_n-\tfrac12\)</span>。<strong>待推 2（经典化）的任务</strong>是把该链左端实现为定理——构造自然操作 <span class="arithmatex">\(\mathcal{C}\)</span> 使 <span class="arithmatex">\(\mathcal{C}(\vartheta_n^I)=0\)</span>（§三 待推2）。</p>
+<blockquote>
+<p><strong>符号区分</strong>：花体 <span class="arithmatex">\(\mathcal{C}\)</span> 在本文件承担<strong>两个不同角色</strong>，勿混：
+① <strong>经典化操作</strong> <span class="arithmatex">\(\mathcal{C}\)</span>（§三 待推2、§6.2、§11.1）——作用在相位虚部 <span class="arithmatex">\(\vartheta_n^I\)</span> 上、目标是把它映为 <span class="arithmatex">\(0\)</span>；
+② <strong>算术条件</strong> <span class="arithmatex">\(\mathcal{C}_\pi\)</span>（§13.6、§16.1–§16.2）——附属于自守表示 <span class="arithmatex">\(\pi\)</span> 的条件（<strong>占位符号，尚未构造</strong>）。
+二者均<strong>不是</strong>相变量子 <span class="arithmatex">\(☯\)</span> 的英文符号 <span class="arithmatex">\(\mathscr{C}\)</span>（script C，见 <code>README.md</code> 符号约定），三者在排版上须区分。</p>
+</blockquote>
+<h3 id="63">6.3 证明路线<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{素数/}\xi \;\longrightarrow\; \text{边界条件} \;\longrightarrow\; \text{离散谱} \;\xrightarrow{\text{经典化}}\; \left\{\gamma_n^2 + \frac14\right\}
+\]</div>
+<div class="arithmatex">\[
+\text{退相干机制} \;\longrightarrow\; \text{物理存在性} \;\longrightarrow\; [\hat{u},\hat{p}_u]=i \;\longrightarrow\; ☯ \;\Longrightarrow\; \text{交叉RH成立}
+\]</div>
+<hr />
+<h2 id="_7">七、当前状态总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 已知部分<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">已知1</td>
+<td style="text-align: left;">算符 <span class="arithmatex">\(\hat{H} = \hat{D}^2 + 1/4\)</span></td>
+<td style="text-align: left;">✅ 形式已有</td>
+<td style="text-align: left;">自然谱连续</td>
+</tr>
+<tr>
+<td style="text-align: left;">已知2</td>
+<td style="text-align: left;">不确定性关系（<span class="arithmatex">\(☯\)</span>）</td>
+<td style="text-align: left;">✅ 严格同构</td>
+<td style="text-align: left;"><span class="arithmatex">\(☯\)</span> 与 <span class="arithmatex">\(\hbar\)</span> 平行</td>
+</tr>
+<tr>
+<td style="text-align: left;">已知3</td>
+<td style="text-align: left;">带误差的谱带</td>
+<td style="text-align: left;">✅ 构造得到</td>
+<td style="text-align: left;">误差结构由已知2刻画</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72">7.2 待推部分<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">困难类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">待推1</td>
+<td style="text-align: left;">边界条件（素数）：长度半已解、相位 <span class="arithmatex">\(S(T)\)</span> 未解</td>
+<td style="text-align: left;">⚠️ 部分已解</td>
+<td style="text-align: left;">构造性</td>
+</tr>
+<tr>
+<td style="text-align: left;">待推2</td>
+<td style="text-align: left;">经典化</td>
+<td style="text-align: left;">❌ 有候选，未证明</td>
+<td style="text-align: left;">分析性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73">7.3 物理存在性部分<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">困难类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">物理存在性</td>
+<td style="text-align: left;">退相干机制真实输出算符（缺口 G2–G4）</td>
+<td style="text-align: left;">❌ 脚手架，未涌现</td>
+<td style="text-align: left;">原理性</td>
+</tr>
+<tr>
+<td style="text-align: left;">相变量子<span class="arithmatex">\(☯\)</span></td>
+<td style="text-align: left;">✅ 定义不循环</td>
+<td style="text-align: left;">✅ 已知</td>
+<td style="text-align: left;">无循环性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74">7.4 关键缺口<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{最关键的缺口是待推1的相位半：从素数独立推出 } S(T) \text{ 的行为。}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{逐点 } L_n=2\pi n/\gamma_n \text{ 从 } \gamma_n \text{ 反推是循环（不作来源）；整体平滑半 } \theta(T)/\pi+1 \text{ 只吃 }\Gamma,\pi\text{，非循环；☯ 的定义不循环。}}
+\]</div>
+<hr />
+<h2 id="_8">八、结论<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1 交叉证明清单<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{算符} + \text{不确定性关系（☯）} + \text{带误差谱带} \\
++ \\
+\text{边界条件（素数）} + \text{经典化} \\
++ \\
+\text{物理存在性（退相干机制）} + \text{☯（已知，不循环）} \\
+\Downarrow \\
+\text{交叉RH成立}
+\end{array}
+}
+\]</div>
+<h3 id="82">8.2 最终评估<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{CQM 把 RH 的证明转化为物理-数学交叉的存在性证明，由真实物理系统存在性保证。}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{交叉 RH 成立即：存在真实物理系统，满足不确定性关系，其谱是黎曼零点。☯ 已独立定义、不循环。}}
+\]</div>
+<p><strong>交叉证明的贡献</strong>：</p>
+<ul>
+<li>把黎曼猜想从“孤立的分析数论问题”转化为“可操作的物理投影问题”；</li>
+<li>提供了清晰的证明路线图；</li>
+<li>非循环部分（算符 + 不确定性关系 + 带误差谱带）自洽。</li>
+</ul>
+<p><strong>交叉证明的待完成部分</strong>：</p>
+<ul>
+<li>边界条件仍未从素数独立推出；</li>
+<li>经典化仍未严格证明；</li>
+<li>物理存在性（退相干机制真实输出算符）仍未严格涌现（缺口 G2–G4）。</li>
+</ul>
+<h3 id="83">8.3 一句话总结<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{CQM 通过物理-数学交叉的存在性证明证明 RH：} \\
+\text{存在真实物理系统，满足不确定性关系，其谱是黎曼零点。} \\
+\text{不确定性关系随物理系统存在性确立，不需要从纯数学推出。（☯ 已独立定义、不循环）}
+\end{array}
+}
+\]</div>
+<hr />
+<h2 id="_9">九、与历史突破的比较<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">突破</th>
+<th style="text-align: left;">贡献</th>
+<th style="text-align: left;">是否证明RH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Riemann (1859)</td>
+<td style="text-align: left;">提出猜想，发现函数方程</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hilbert–Pólya (约1914)</td>
+<td style="text-align: left;">提出谱解释</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weil (1952)</td>
+<td style="text-align: left;">正性准则</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connes (1999)</td>
+<td style="text-align: left;">非交换几何实现</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Berry–Keating (1999)</td>
+<td style="text-align: left;">半经典模型</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn (1950)–Newman (1976)</td>
+<td style="text-align: left;">热流等价</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CQM</strong></td>
+<td style="text-align: left;"><strong>3已知+2待推+物理存在性框架</strong></td>
+<td style="text-align: left;"><strong>❌（但指出了完整方向）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>CQM的突破</strong>：</p>
+<ul>
+<li>把前人碎片整合成统一框架；</li>
+<li>给出了具体的待推步骤；</li>
+<li>指出了完整证明的路线图；</li>
+<li>把 RH 证明转化为物理-数学交叉的存在性证明。</li>
+</ul>
+<p><strong>CQM的局限</strong>：</p>
+<ul>
+<li>边界条件仍未从素数独立推出；</li>
+<li>经典化仍未严格证明；</li>
+<li>不确定性关系仍是公设。</li>
+</ul>
+<hr />
+<h2 id="_10">十、最终结论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{CQM框架把黎曼猜想的证明转化为} \\
+\text{物理-数学交叉的存在性证明：} \\
+\text{3个已知} + \text{2个待推} + \text{物理存在性} + \text{☯（已知）} \\
+\Longrightarrow \text{交叉RH成立}
+\end{array}
+}
+\]</div>
+<p><strong>这就是CQM下的黎曼猜想证明思路。</strong></p>
+<hr />
+<h2 id="_11">十一、历史定位评估（上）：为什么这是一个全新的思路<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>把它放到整个黎曼猜想的研究史中看，它的“新”不是新在某个局部技巧，而是<strong>新在整体架构和方法论范式</strong>上。以下从四个维度说明它为什么是全新的。</p>
+<h3 id="111">11.1 方法论范式的转变：从“构造精确”到“投影消除”<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<p><strong>传统范式</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路线</th>
+<th style="text-align: left;">核心任务</th>
+<th style="text-align: left;">困难</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hilbert–Pólya</td>
+<td style="text-align: left;">构造一个自伴算子，谱<strong>精确</strong>等于 <span class="arithmatex">\(\gamma_n\)</span></td>
+<td style="text-align: left;">构造性难题</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn–Newman</td>
+<td style="text-align: left;">证明临界时间 <span class="arithmatex">\(\Lambda=0\)</span></td>
+<td style="text-align: left;">分析性难题</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weil 正性</td>
+<td style="text-align: left;">证明二次型对所有测试函数非负</td>
+<td style="text-align: left;">泛函分析难题</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connes</td>
+<td style="text-align: left;">构造非交换几何实现</td>
+<td style="text-align: left;">几何难题</td>
+</tr>
+</tbody>
+</table>
+<p>传统范式都要求<strong>一开始就精确</strong>，或者<strong>一步到位证明全局性质</strong>。</p>
+<p><strong>新范式</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\text{承认量子谱有误差} \;\longrightarrow\; \text{构造经典化操作消除误差} \;\longrightarrow\; \text{精确零点}}
+\]</div>
+<p>这个转变的核心是：</p>
+<ul>
+<li><strong>不要求量子谱精确</strong>，只要求它的<strong>误差结构由不确定性关系精确刻画</strong>；</li>
+<li><strong>把困难从构造转移到投影</strong>：找到一个自然操作 <span class="arithmatex">\(\mathcal{C}\)</span>，使误差虚部 <span class="arithmatex">\(O_n^I \mapsto 0\)</span>（共振宽度归零，配对不变量为实）；</li>
+<li><strong>误差不是缺陷，而是量子性的本质</strong>，经典化是它的自然消除机制。</li>
+</ul>
+<p>这在方法论上是全新的。它把黎曼猜想从“构造性难题”转化为“投影性/分析性难题”。</p>
+<h3 id="112-322">11.2 问题分解的结构：3+2+2<a class="headerlink" href="#112-322" title="Permanent link">&para;</a></h3>
+<p><strong>传统分解</strong>：</p>
+<p>历史上对黎曼猜想的分解通常是<strong>二分</strong>的：</p>
+<ul>
+<li>零点在 <span class="arithmatex">\(1/2\)</span> 上 vs. 不在；</li>
+<li>自伴 vs. 非自伴；</li>
+<li>正性 vs. 非正性。</li>
+</ul>
+<p><strong>新分解</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\text{3个已知} + \text{2个待推} + \text{物理存在性}}
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层级</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3个已知</td>
+<td style="text-align: left;">算符 + 不确定性关系 + 带误差谱带</td>
+<td style="text-align: left;">框架</td>
+</tr>
+<tr>
+<td style="text-align: left;">2个待推</td>
+<td style="text-align: left;">边界条件（素数） + 经典化</td>
+<td style="text-align: left;">现有步骤</td>
+</tr>
+<tr>
+<td style="text-align: left;">物理存在性</td>
+<td style="text-align: left;">退相干机制 + <span class="arithmatex">\(☯\)</span>（归<strong>已知2</strong>，不另计）</td>
+<td style="text-align: left;">交叉证明</td>
+</tr>
+</tbody>
+</table>
+<p>这个分解的<strong>独特之处</strong>在于：</p>
+<ul>
+<li>它把 RH 证明转化为<strong>物理-数学交叉的存在性证明</strong>；</li>
+<li>它指出物理存在性（退相干机制）是交叉证明的关键组成部分；</li>
+<li>它指出了交叉证明的组成部分（边界条件 + 经典化 + 物理存在性）。</li>
+</ul>
+<p>历史上没有哪条路线把黎曼猜想的证明分解得如此<strong>层次分明</strong>。</p>
+<h3 id="113">11.3 物理与数论的统一：<span class="arithmatex">\(☯\)</span>作为桥梁<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
+<p><strong>传统统一尝试</strong>：</p>
+<ul>
+<li>Hilbert–Pólya：谱与零点的对应；</li>
+<li>Berry–Keating：半经典轨道与素数的对应；</li>
+<li>Connes：非交换几何与素数分布的对应。</li>
+</ul>
+<p>这些统一都是<strong>结构性的</strong>，但没有一个<strong>具体的物理常数</strong>作为桥梁。</p>
+<p><strong>新思路的独特性</strong>：</p>
+<div class="arithmatex">\[
+☯ = \frac{\xi'(1)}{\xi(1)}, \qquad \text{谱表示 } ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} \;\text{（条件于 RH，见文首诊断）}
+\]</div>
+<p><span class="arithmatex">\(☯\)</span> 的独特之处：</p>
+<ol>
+<li><strong>它由 <span class="arithmatex">\(\xi\)</span> 函数定义</strong>，是纯数论对象；</li>
+<li><strong>它是耦合空间的作用量量子</strong>，与 <span class="arithmatex">\(\hbar\)</span> 平行；</li>
+<li><strong>它进入 <span class="arithmatex">\(G_N\)</span> 公式</strong>，与引力常数联系起来；</li>
+<li><strong>它是不确定性关系的下界参数</strong>。</li>
+</ol>
+<div class="arithmatex">\[
+\boxed{\text{数论常数} \;☯\; \longleftrightarrow \; \text{量子作用量} \;\longleftrightarrow\; \text{引力常数}}
+\]</div>
+<p>这种<strong>用一个具体常数把数论、量子力学、引力统一起来</strong>的思路，在历史上是全新的。它不是类比，而是声称存在<strong>严格的数学同构</strong>。</p>
+<h3 id="114">11.4 循环性的明确诊断与破解方向<a class="headerlink" href="#114" title="Permanent link">&para;</a></h3>
+<p><strong>传统路线的隐含循环</strong>：</p>
+<p>许多传统路线都面临隐含的循环：</p>
+<ul>
+<li>用已知零点构造算子，再用算子“证明”零点位置；</li>
+<li>用已知零点定义参数，再用参数“推导”零点。</li>
+</ul>
+<p>但这些循环通常被<strong>掩盖</strong>在复杂的数学结构中，没有被明确诊断。</p>
+<p><strong>新思路的贡献</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\text{明确诊断循环根源：} L_n = \frac{2\pi n}{\gamma_n} \text{ 从 } \gamma_n \text{ 反推。}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{明确破解方向：从素数/}\xi\text{ 函数独立推出边界条件。}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{☯ 的定义不依赖 } \gamma_n \text{，不循环；唯一循环来源是边界条件。}}
+\]</div>
+<p>这种<strong>把循环性摆在台面上，并把 RH 证明转化为物理-数学交叉的存在性证明</strong>的做法，在黎曼猜想的研究史上是罕见的。</p>
+<h3 id="115">11.5 与历史路线的对比<a class="headerlink" href="#115" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路线</th>
+<th style="text-align: left;">核心思想</th>
+<th style="text-align: left;">是否承认误差</th>
+<th style="text-align: left;">是否有经典化</th>
+<th style="text-align: left;">是否交叉存在性证明</th>
+<th style="text-align: left;">是否有具体常数桥梁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hilbert–Pólya</td>
+<td style="text-align: left;">自伴算子谱</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn–Newman</td>
+<td style="text-align: left;">热流</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">⚠️ 隐含</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weil 正性</td>
+<td style="text-align: left;">二次型</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connes</td>
+<td style="text-align: left;">非交换几何</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;">Berry–Keating</td>
+<td style="text-align: left;">半经典</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">⚠️ 隐含</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">❌</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CQM新思路</strong></td>
+<td style="text-align: left;"><strong>量子+经典化</strong></td>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;">✅（<span class="arithmatex">\(☯\)</span>）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CQM新思路在五个维度上都是独特的。</strong></p>
+<h3 id="116">11.6 为什么这是“新”的<a class="headerlink" href="#116" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{因为它把黎曼猜想从“一个孤立猜想”变成了“一个可分解、可操作、可验证的物理投影问题”。}}
+\]</div>
+<p>具体来说：</p>
+<ol>
+<li><strong>新在方法论</strong>：从构造精确到投影消除；</li>
+<li><strong>新在结构</strong>：3+2+2的层次分解；</li>
+<li><strong>新在统一</strong>：<span class="arithmatex">\(☯\)</span>作为数论-量子-引力的桥梁；</li>
+<li><strong>新在诚实</strong>：把 RH 证明转化为物理-数学交叉的存在性证明，明确诊断循环性。</li>
+</ol>
+<h3 id="117">11.7 必须保持的清醒<a class="headerlink" href="#117" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{新思路} \;\neq\; \text{新证明。}}
+\]</div>
+<ul>
+<li>新思路的价值在于<strong>把问题说清楚</strong>，并<strong>指出完整证明的路线</strong>；</li>
+<li>但边界条件仍未从素数独立推出；</li>
+<li>经典化仍未严格证明；</li>
+<li>不确定性关系仍是公设。</li>
+</ul>
+<p><strong>新思路是一个框架突破，不是定理突破。</strong> 但框架突破本身，已经是巨大的进步。</p>
+<h3 id="118">11.8 结论<a class="headerlink" href="#118" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{是的，这是一个全新的思路。}}
+\]</div>
+<p>它的“新”体现在：</p>
+<ul>
+<li><strong>方法论</strong>：从“构造精确谱”到“经典化消除误差”；</li>
+<li><strong>结构</strong>：3已知 + 2待推 + 物理存在性；</li>
+<li><strong>统一</strong>：用<span class="arithmatex">\(☯\)</span>把数论、量子力学、引力统一起来；</li>
+<li><strong>诚实</strong>：明确诊断循环性，把 RH 证明转化为物理-数学交叉的存在性证明。</li>
+</ul>
+<p><strong>如果把黎曼猜想的研究史比作一张地图，CQM新思路不是在某条老路上走得更远，而是画出了一条全新的路线——即便这条路线还没有走到终点，它本身已经改变了地图的形状。</strong></p>
+<hr />
+<h2 id="_12">十二、历史定位评估（下）：部分是、部分不是（诚实评估）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>准确地说，CQM这个思路是<strong>“前所未有地组合了已有元素，并提出了一个前所未有的核心机制”</strong>，而不是“所有组件都是前所未有的”。</p>
+<h3 id="121">12.1 哪些是前所未有的<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
+<p><strong>1. “量子有误差 + 经典化消除”这个核心机制</strong></p>
+<p>历史上：</p>
+<ul>
+<li><strong>Hilbert–Pólya</strong>：要求谱<strong>精确</strong>等于零点，没有经典化；</li>
+<li><strong>de Bruijn–Newman</strong>：有热流，但热流是<strong>分析工具</strong>，不是“经典化”；</li>
+<li><strong>Weil正性</strong>：是<strong>静态的</strong>二次型条件，没有“量子→经典”的动力学；</li>
+<li><strong>Berry–Keating</strong>：有半经典，但方向相反（从经典到量子）。</li>
+</ul>
+<p>CQM的独特之处：</p>
+<div class="arithmatex">\[
+\boxed{\text{承认量子谱有误差} \;\longrightarrow\; \text{经典化消除误差} \;\longrightarrow\; \text{精确零点}}
+\]</div>
+<p><strong>这个方向——从量子到经典，而不是从经典到量子——在黎曼猜想的研究史上是前所未有的。</strong></p>
+<p><strong>2. <span class="arithmatex">\(☯\)</span>作为数论-量子-引力的统一常数</strong></p>
+<p>历史上：</p>
+<ul>
+<li>数论常数（如 <span class="arithmatex">\(\gamma\)</span>、<span class="arithmatex">\(\pi\)</span>）出现在数论公式中；</li>
+<li>物理常数（如 <span class="arithmatex">\(\hbar\)</span>、<span class="arithmatex">\(G_N\)</span>）出现在物理公式中；</li>
+<li>但<strong>没有一个具体的数论常数同时作为量子作用量量子出现</strong>。</li>
+</ul>
+<p>CQM的独特之处：</p>
+<div class="arithmatex">\[
+☯ = \frac{\xi'(1)}{\xi(1)}, \qquad \text{谱表示 } ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4} \;\text{（条件于 RH，见文首诊断）}
+\]</div>
+<p>它同时是：</p>
+<ul>
+<li><span class="arithmatex">\(\xi\)</span> 函数的对数导数（数论）；</li>
+<li>耦合空间的作用量量子（量子力学）；</li>
+<li>不确定性关系的下界参数（量子力学）；</li>
+<li><span class="arithmatex">\(G_N\)</span> 公式的核心因子（引力）。</li>
+</ul>
+<p><strong>这种三位一体的角色，在历史上是前所未有的。</strong></p>
+<p><strong>3. 3+2+2的层次分解</strong></p>
+<p>历史上对黎曼猜想的分解通常是<strong>二分</strong>的（自伴/非自伴、正/非正、实/复）。</p>
+<p>CQM的分解：</p>
+<div class="arithmatex">\[
+\boxed{\text{3个已知} + \text{2个待推} + \text{物理存在性}}
+\]</div>
+<p>并把 RH 证明转化为物理-数学交叉的存在性证明。</p>
+<p><strong>这种层次分明、把 RH 证明转化为交叉存在性证明的分解，在历史上是前所未有的。</strong></p>
+<p><strong>4. 明确诊断循环性并指出破解方向</strong></p>
+<p>历史上许多路线都有隐含循环，但很少被明确诊断。CQM明确指出：</p>
+<div class="arithmatex">\[
+\boxed{\text{循环根源：} L_n = \frac{2\pi n}{\gamma_n} \text{ 从 } \gamma_n \text{ 反推。}}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{破解方向：从素数/}\xi\text{ 函数独立推出边界条件。}}
+\]</div>
+<p><strong>这种把循环性摆在台面上并给出明确破解方向的做法，在历史上是罕见的。</strong></p>
+<h3 id="122">12.2 哪些不是前所未有的<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
+<p><strong>1. 谱与零点的对应</strong></p>
+<div class="arithmatex">\[
+\operatorname{Spec}(\hat{H}) = \{\gamma_n^2 + 1/4\}
+\]</div>
+<p>这个思想来自 <strong>Hilbert–Pólya猜想</strong>（约1914）和 <strong>Sierra模型</strong>（2008–2011）。CQM用的是Sierra模型的双曲Laplacian，不是新东西。</p>
+<p><strong>2. 自伴延拓的相位参数</strong></p>
+<div class="arithmatex">\[
+U = e^{i\vartheta}, \qquad \vartheta \in \mathbb{R}
+\]</div>
+<p>这是 <strong>von Neumann自伴延拓理论</strong>（1930年代）的标准结果。CQM的 <span class="arithmatex">\(\vartheta_n\)</span> 只是这个理论的应用。</p>
+<p><strong>3. 不确定性关系与<span class="arithmatex">\(☯\)</span>的平行</strong></p>
+<div class="arithmatex">\[
+[\hat{u}, \hat{p}_u] = i, \qquad \Delta u \cdot \Delta p_u \geq \frac12
+\]</div>
+<p>这个结构与标准量子力学的 <span class="arithmatex">\([x,p]=i\hbar\)</span> 平行，是 <strong>Tate自对偶</strong>和 <strong>Connes非交换几何</strong>的延伸。CQM把它具体化了，但结构不是全新的。</p>
+<p><strong>4. de Bruijn–Newman热流</strong></p>
+<div class="arithmatex">\[
+\partial_t \Xi = \partial_z^2 \Xi
+\]</div>
+<p>热流使零点向实轴靠拢，这是 <strong>de Bruijn–Newman</strong>（1950–1976）的经典结果。CQM的“经典化”与它有相似之处。</p>
+<p><strong>5. 窄带Weil正性</strong></p>
+<p>CQM已建立的窄带Weil正性，是 <strong>Weil正性准则</strong>（1952）的特例。全类Weil正性等价于RH，这是已知的。</p>
+<h3 id="123">12.3 诚实的评估<a class="headerlink" href="#123" title="Permanent link">&para;</a></h3>
+<h4 id="1231">12.3.1 前所未有的部分<a class="headerlink" href="#1231" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层面</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">为什么前所未有</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">核心机制</td>
+<td style="text-align: left;">量子误差 + 经典化消除</td>
+<td style="text-align: left;">方向从量子到经典，不同于所有历史路线</td>
+</tr>
+<tr>
+<td style="text-align: left;">统一常数</td>
+<td style="text-align: left;"><span class="arithmatex">\(☯\)</span> 同时为数论、量子、引力常数</td>
+<td style="text-align: left;">三位一体的角色在历史上没有先例</td>
+</tr>
+<tr>
+<td style="text-align: left;">问题分解</td>
+<td style="text-align: left;">3+2+2层次结构</td>
+<td style="text-align: left;">把 RH 证明转化为交叉存在性证明，前所未有</td>
+</tr>
+<tr>
+<td style="text-align: left;">循环诊断</td>
+<td style="text-align: left;">明确指出 <span class="arithmatex">\(L_n\)</span> 的循环性</td>
+<td style="text-align: left;">把循环摆在台面上，罕见</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1232">12.3.2 非前所未有的部分<a class="headerlink" href="#1232" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层面</th>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">历史</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">谱与零点对应</td>
+<td style="text-align: left;">Hilbert–Pólya</td>
+<td style="text-align: left;">约1914</td>
+</tr>
+<tr>
+<td style="text-align: left;">双曲Laplacian</td>
+<td style="text-align: left;">Sierra模型</td>
+<td style="text-align: left;">2008–2011</td>
+</tr>
+<tr>
+<td style="text-align: left;">自伴延拓</td>
+<td style="text-align: left;">von Neumann</td>
+<td style="text-align: left;">1930s</td>
+</tr>
+<tr>
+<td style="text-align: left;">不确定性关系</td>
+<td style="text-align: left;">标准量子力学</td>
+<td style="text-align: left;">1927</td>
+</tr>
+<tr>
+<td style="text-align: left;">热流</td>
+<td style="text-align: left;">de Bruijn–Newman</td>
+<td style="text-align: left;">1950–1976</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weil正性</td>
+<td style="text-align: left;">Weil</td>
+<td style="text-align: left;">1952</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tate自对偶</td>
+<td style="text-align: left;">Tate</td>
+<td style="text-align: left;">1950</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1233">12.3.3 核心判断<a class="headerlink" href="#1233" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\boxed{\text{CQM是“前所未有的组合”，不是“前所未有的所有元素”。}}
+\]</div>
+<p>它的“新”体现在：</p>
+<ul>
+<li><strong>把已有元素组合成一个自洽的框架</strong>；</li>
+<li><strong>提出了一个前所未有的核心机制</strong>（量子误差 + 经典化）；</li>
+<li><strong>把 RH 证明转化为物理-数学交叉的存在性证明</strong>；</li>
+<li><strong>把循环性摆在台面上并给出了破解方向</strong>。</li>
+</ul>
+<p>它的“不新”体现在：</p>
+<ul>
+<li>大部分数学工具是已有的；</li>
+<li>谱与零点的对应来自Hilbert–Pólya和Sierra；</li>
+<li>不确定性关系来自标准量子力学；</li>
+<li>热流来自de Bruijn–Newman。</li>
+</ul>
+<h3 id="124">12.4 与历史突破的类比<a class="headerlink" href="#124" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">突破</th>
+<th style="text-align: left;">新在哪里</th>
+<th style="text-align: left;">旧在哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Newton力学</td>
+<td style="text-align: left;">统一天上地下</td>
+<td style="text-align: left;">用开普勒、伽利略的观测</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maxwell方程</td>
+<td style="text-align: left;">统一电、磁、光</td>
+<td style="text-align: left;">用法拉第、安培的实验</td>
+</tr>
+<tr>
+<td style="text-align: left;">狭义相对论</td>
+<td style="text-align: left;">时空统一</td>
+<td style="text-align: left;">用洛伦兹变换</td>
+</tr>
+<tr>
+<td style="text-align: left;">量子力学</td>
+<td style="text-align: left;">作用量量子化</td>
+<td style="text-align: left;">用经典力学框架</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CQM</strong></td>
+<td style="text-align: left;"><strong>量子误差+经典化+<span class="arithmatex">\(☯\)</span>统一</strong></td>
+<td style="text-align: left;"><strong>用Hilbert–Pólya、Sierra、von Neumann、Weil、de Bruijn–Newman</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>伟大的突破通常是“新组合”，而不是“全新元素”。</strong> CQM的独特性在于它的<strong>组合方式和核心机制</strong>，而不是每个组件都是新的。</p>
+<h3 id="125">12.5 结论<a class="headerlink" href="#125" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{是前所未有的——但它是“前所未有的组合”，不是“前所未有的所有元素”。}}
+\]</div>
+<p>具体来说：</p>
+<ul>
+<li><strong>前所未有的</strong>：量子误差+经典化的核心机制；<span class="arithmatex">\(☯\)</span>的三位一体角色；3+2+2的层次分解；循环性的明确诊断。</li>
+<li><strong>非前所未有的</strong>：谱与零点的对应；双曲Laplacian；自伴延拓理论；不确定性关系；热流；Weil正性；Tate自对偶。</li>
+</ul>
+<p>用一句话概括：</p>
+<blockquote>
+<p><strong>CQM不是从零开始发明了全新的数学，而是把已有的碎片以前所未有的方式拼成了一个完整的框架，并提出了一个前所未有的核心机制。即便这个框架还没有被严格证明，它本身已经改变了黎曼猜想研究的地图形状。</strong></p>
+</blockquote>
+<p>这种“新组合”在科学史上并不罕见——<strong>Newton、Maxwell、Einstein的突破，本质上也都是“新组合”</strong>。CQM的独特性在于它试图把<strong>数论、量子力学、引力</strong>用<strong>一个常数<span class="arithmatex">\(☯\)</span></strong>统一起来，这种野心在历史上确实是前所未有的。</p>
+<hr />
+<h2 id="grh">十三、GRH 层级与临界线的来源<a class="headerlink" href="#grh" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>状态说明</strong>：本节把黎曼猜想（RH）放到广义黎曼猜想（GRH）的层级结构中定位，并澄清一个关键区分——<strong>泛函方程给出的是“对称轴在 1/2”，而“零点落在 1/2”是 RH/GRH 的额外断言</strong>。该区分在 CQM 中正好由“配对不变量 <span class="arithmatex">\(\mathfrak{c}_n=\rho_n(1-\rho_n)\)</span> 为实数”这一步承担。本节是<strong>结构性澄清</strong>，不构成证明的任何新环节；GRH 本身未证明。</p>
+</blockquote>
+<h3 id="131-rh-grh">13.1 RH 是 GRH 的特例<a class="headerlink" href="#131-rh-grh" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{\text{RH} = \text{GRH 在 } \pi = \text{GL}(1)\text{ 平凡特征 处的特例}}
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层级</th>
+<th style="text-align: left;">自守表示</th>
+<th style="text-align: left;">L 函数</th>
+<th style="text-align: left;">与 RH 的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GL(1) 平凡特征</td>
+<td style="text-align: left;">平凡 Hecke 特征</td>
+<td style="text-align: left;"><span class="arithmatex">\(\zeta(s)\)</span></td>
+<td style="text-align: left;"><strong>RH 本身</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">GL(1) 非平凡本原特征</td>
+<td style="text-align: left;">本原 Dirichlet 特征 <span class="arithmatex">\(\chi\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(L(s,\chi)\)</span></td>
+<td style="text-align: left;">GRH 覆盖，蕴含 RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL(2) 尖点表示</td>
+<td style="text-align: left;">模形式 / Maass 形式 <span class="arithmatex">\(f\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(L(s,f)\)</span></td>
+<td style="text-align: left;">GRH 覆盖，蕴含 RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL(n) 尖点表示</td>
+<td style="text-align: left;">一般尖点自守表示 <span class="arithmatex">\(\pi\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(L(s,\pi)\)</span></td>
+<td style="text-align: left;">GRH 覆盖，蕴含 RH</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+\boxed{\text{RH 只是最底层、最平凡的特例；更深层结构给出的是 GRH。}}
+\]</div>
+<h3 id="132-12">13.2 临界线 1/2 的普适来源：函数方程对称轴<a class="headerlink" href="#132-12" title="Permanent link">&para;</a></h3>
+<p>每个自守 L 函数满足函数方程：</p>
+<div class="arithmatex">\[
+\Lambda(s,\pi) = \varepsilon\,\Lambda(1-s,\tilde\pi)
+\]</div>
+<p>其对称轴为 <span class="arithmatex">\(s \mapsto 1-s\)</span>，不动点是：</p>
+<div class="arithmatex">\[
+s = 1-s \;\Longrightarrow\; \mathrm{Re}(s) = \tfrac12
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{对称轴 } \mathrm{Re}(s)=\tfrac12 \text{ 与 } \pi \text{ 的具体形式无关。}}
+\]</div>
+<p>CQM 中算符 <span class="arithmatex">\(\hat{H}=\hat{D}^2+\tfrac14\)</span> 的 <span class="arithmatex">\(\tfrac14=(\tfrac12)^2\)</span> 编码的正是这一对称轴。</p>
+<h3 id="133">13.3 关键区分：对称轴 ≠ 定线<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{函数方程 } \Lambda(s,\pi)=\varepsilon\,\Lambda(1-s,\tilde\pi) \\
+\Downarrow \\
+\text{零点关于 } \mathrm{Re}(s)=\tfrac12 \ \textbf{对称} \quad (\text{无条件定理}) \\
+\Downarrow ? \\
+\text{零点全部落在 } \mathrm{Re}(s)=\tfrac12 \ \textbf{？} \quad (\text{RH/GRH 的断言，需额外输入})
+\end{array}
+}
+\]</div>
+<div class="arithmatex">\[
+\boxed{\text{函数方程只锁住“关于 1/2 对称”，不锁住“落在 1/2 上”。}}
+\]</div>
+<p>把零点压到线上，才是 RH/GRH 的内容。<strong>在 CQM 里，这一步的陈述应在配对不变量层面</strong>：</p>
+<div class="arithmatex">\[
+\boxed{\ \mathfrak{c}_n=\rho_n(1-\rho_n)\ \text{为实数}\ \Longleftrightarrow\ \rho_n \text{ 在 } \tfrac12 \text{ 上}\ }
+\]</div>
+<p>这是配对不变量层面的陈述，<strong>不预设算符谱型</strong>。把它落实为算符性质（本征值/共振/吸收谱）属待推 1，且各载体类型的已知困难见 §二 已知1 严格性边界：自伴性对点谱有约束（必为实数）、对连续谱无信息（恒为实数）、对共振无约束（位于 resolvent 解析延拓的第二叶，可为复数）。</p>
+<h3 id="134-l">13.4 平凡表示：L 函数与零点<a class="headerlink" href="#134-l" title="Permanent link">&para;</a></h3>
+<p>GL(n) 平凡表示取 isobaric 和 <span class="arithmatex">\(1\boxplus\cdots\boxplus1\)</span>（与朗兰兹 §5.4 一致），其 L 函数为：</p>
+<div class="arithmatex">\[
+L(s,\mathbf{1}_{GL(n)}) = \zeta(s)^n
+\]</div>
+<p>所有 Satake 参数为 1，故每个局部因子为 <span class="arithmatex">\((1-p^{-s})^{-n}\)</span>，整体即 <span class="arithmatex">\(\zeta(s)^n\)</span>。其零点集与 <span class="arithmatex">\(\zeta(s)\)</span> 相同（重数 ×n）：<strong>平凡表示的零点是否全在 <span class="arithmatex">\(\mathrm{Re}(s)=1/2\)</span>，与 RH 是同一问题</strong>，不因取 <span class="arithmatex">\(n\)</span> 次幂而新增内容。</p>
+<p>平凡表示在 <span class="arithmatex">\(n\ge2\)</span> 时非尖点（非 cuspidal），L 函数因子化为 <span class="arithmatex">\(\zeta(s)^n = \zeta(s)\times\cdots\times\zeta(s)\)</span>——<strong>无移位的同因子幂</strong>。<span class="arithmatex">\(n\cdot☯\)</span> 依赖此定义（GL(n) 平凡表示给出 <span class="arithmatex">\(n\times☯\)</span>，除以 <span class="arithmatex">\(n\)</span> 得普适常数 <span class="arithmatex">\(☯\)</span>；见 <code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> §5.4）。</p>
+<h3 id="135-grh">13.5 GRH 的标准对象：尖点（本原）表示<a class="headerlink" href="#135-grh" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>GRH 的零点断言应限定在尖点（本原）自守表示</strong>（本原 Dirichlet 特征 / 尖点 <span class="arithmatex">\(\pi\)</span>）：这是断言的定义域。泛函方程对一切 L 函数只给对称（§13.3）；把对称升级为“零点在线上”是 GRH 的内容，不是 FE 的自动推论——无论表示是否本原。</li>
+<li><strong>为何必须限本原（模 4 主特征反例）</strong>：<span class="arithmatex">\(\chi_0 \bmod 4\)</span> 非本原，
+   $$
+   L(s,\chi_0) = (1-2^{-s})\,\zeta(s).
+   $$
+   该 L 函数有泛函方程（关于 <span class="arithmatex">\(\mathrm{Re}(s)=1/2\)</span> 对称是无条件定理），但缺陷 Euler 因子 <span class="arithmatex">\(1-2^{-s}\)</span> 注入零点 <span class="arithmatex">\(s = 2\pi i k/\ln 2\)</span>（<span class="arithmatex">\(k\in\mathbb{Z}\)</span>），全部落在 <span class="arithmatex">\(\mathrm{Re}(s)=0\)</span> 上，不在临界线上。<strong>故若 GRH 不限定本原特征，该反例直接使其为假。</strong></li>
+<li><strong>因子从哪来</strong>：非尖点 / 非本原的 L 函数因子化是定理，不是猜想。关键区分在因子是否<strong>无移位同因子幂</strong>：</li>
+<li><strong>无移位同因子幂</strong>（isobaric <span class="arithmatex">\(1^{\boxplus n}\)</span> 给出 <span class="arithmatex">\(\zeta(s)^n\)</span>，§13.4）：零点继承 <span class="arithmatex">\(\zeta\)</span> 的零点，不额外制造离线零点；</li>
+<li><strong>缺陷 / 移位 Euler 因子</strong>（如模 4 主特征的 <span class="arithmatex">\(1-2^{-s}\)</span>）：直接把零点推出 <span class="arithmatex">\(1/2\)</span>。</li>
+</ol>
+<p>GRH 对尖点（本原）表示的断言排除的正是后者；前者在 RH 成立时自动安全。
+4. <strong>RH 之所以特殊</strong>：GL(1) 上“平凡” = 平凡 Hecke 特征 = <span class="arithmatex">\(\zeta(s)\)</span>，同时又是<strong>本原</strong>的（不可再分解）。唯一的“平凡表示”在 GL(1) 层兼有“尖点”身份。到 <span class="arithmatex">\(n\ge2\)</span>，平凡表示非尖点，但其 <span class="arithmatex">\(\zeta(s)^n\)</span> 与 <span class="arithmatex">\(\zeta\)</span> 零点相同，不新增离线风险。GRH 限定在尖点表示的真正原因是第 2 条的反例：非本原 Euler 因子会制造离线零点。</p>
+<h3 id="136-cqm">13.6 CQM 层级图的精化<a class="headerlink" href="#136-cqm" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{普适量子框架：} [\hat{u},\hat{p}_u]=i,\ ☯,\ \hat{H}=\hat{D}^2+\tfrac14 \\
+\Downarrow \\
+\text{尖点自守表示 } \pi \text{（GL}(n)\text{）} \;\longrightarrow\; \text{条件 } \mathcal{C}_\pi \\
+\Downarrow \\
+\mathfrak{c}_{n,\pi}=\rho_{n,\pi}(1-\rho_{n,\pi}) \text{ 为实数} \;\Longleftrightarrow\; \text{所有零点在 } \tfrac12 \text{ 上}
+\end{array}
+}
+\]</div>
+<div class="arithmatex">\[
+\boxed{
+\begin{array}{c}
+\text{GRH} = \text{对所有尖点自守表示 } \pi \text{，} \mathfrak{c}_{n,\pi} \text{ 为实数} \\
+\Downarrow \\
+\text{RH} = \text{GRH 在 } \pi = \text{GL}(1)\text{ 平凡特征（=本原）时的特例}
+\end{array}
+}
+\]</div>
+<h3 id="137">13.7 一句话总结<a class="headerlink" href="#137" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>泛函方程给出对称轴 1/2，配对不变量 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 为实数给定线；二者合起来才是 GRH。RH 是 GL(1) 平凡特征（兼本原）的特例。平凡表示取 isobaric 和 <span class="arithmatex">\(\zeta(s)^n\)</span>，零点集与 <span class="arithmatex">\(\zeta\)</span> 相同，是否在 1/2 即 RH 本身；GRH 限定在本原表示的根据是模 4 主特征反例——非本原 Euler 因子会把零点推出临界线。</strong></p>
+</blockquote>
+<hr />
+<h2 id="rh">十四、耦级、误差结构与 RH 的等价<a class="headerlink" href="#rh" title="Permanent link">&para;</a></h2>
+<p>§十三已阐明 GRH 给出临界线 <span class="arithmatex">\(1/2\)</span> 的来源（泛函方程对称轴 + 配对不变量为实数）。本节回到 GL(1) 平凡表示的特例——RH 本身——从耦级 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 的角度给出等价刻画，并引入误差的实部/虚部分解，为 §十五的经典化讨论做准备。</p>
+<blockquote>
+<p><strong>诚实声明</strong>：本节中“耦级为实数 <span class="arithmatex">\(\Longleftrightarrow\)</span> RH”是数学事实；“经典化”是路线图主张，非已完成的证明。</p>
+</blockquote>
+<h3 id="141">14.1 耦级的定义与数学来源<a class="headerlink" href="#141" title="Permanent link">&para;</a></h3>
+<p>耦级是紧化算符在 GL(1) 电磁因子层的谱实现 <span class="arithmatex">\(\hat{H} = \hat{D}^2 + 1/4\)</span>（<span class="arithmatex">\(\hat{D} = -i(\partial_u - 1/2)\)</span>，定义在耦合空间 <span class="arithmatex">\(u = \ln r\)</span> 上）的共振位置（非本征值——见 §二 已知1 严格性边界）。非平凡零点 <span class="arithmatex">\(\rho_n = \beta_n + i\gamma_n\)</span>（条件于 RH 时 <span class="arithmatex">\(\rho_n = \tfrac12 + i\gamma_n\)</span>）经函数方程配对 <span class="arithmatex">\(\rho_n \leftrightarrow 1-\rho_n\)</span> 给出配对不变量：</p>
+<div class="arithmatex">\[\mathfrak{c}_n = \rho_n(1-\rho_n) = \frac14 + \gamma_n^2\]</div>
+<p>在临界线上 <span class="arithmatex">\(1-\rho_n = \overline{\rho_n}\)</span>，故 <span class="arithmatex">\(\mathfrak{c}_n = |\rho_n|^2\)</span>——耦级是复值零点的模方。第一耦级 <span class="arithmatex">\(\mathfrak{c}_1 = 200.040454832\ldots\)</span>（<span class="arithmatex">\(\gamma_1 = 14.1347\ldots\)</span>）。耦级是无量纲数学纯数（<span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(\hat{D}\)</span>、<span class="arithmatex">\(\hat{H}\)</span> 均无量纲），不是物理能量；物理量纲由 <span class="arithmatex">\(m_p\)</span> 在下游公式中分配。</p>
+<p>开方 <span class="arithmatex">\(\gamma_n = \sqrt{\mathfrak{c}_n - 1/4}\)</span> 的合法性来自 <span class="arithmatex">\(\hat{H} = \hat{D}^2 + 1/4\)</span> 的二次型结构（<span class="arithmatex">\(\hat{D}^2\)</span> 谱非负），不来自零点。</p>
+<h3 id="142-longleftrightarrow-rh">14.2 耦级为实数 <span class="arithmatex">\(\Longleftrightarrow\)</span> RH<a class="headerlink" href="#142-longleftrightarrow-rh" title="Permanent link">&para;</a></h3>
+<p>若 RH 成立（<span class="arithmatex">\(\beta_n = 1/2\)</span>），则 <span class="arithmatex">\(\mathfrak{c}_n = 1/4 + \gamma_n^2 \in \mathbb{R}\)</span>。若 RH 不成立（<span class="arithmatex">\(\beta_n \neq 1/2\)</span>），则：</p>
+<div class="arithmatex">\[\operatorname{Im}[\rho_n(1-\rho_n)] = \gamma_n(1-2\beta_n) \neq 0\]</div>
+<p>耦级为复数。因此耦级为实数 <span class="arithmatex">\(\Longleftrightarrow\)</span> <span class="arithmatex">\(\beta_n = 1/2\)</span> <span class="arithmatex">\(\Longleftrightarrow\)</span> RH。等价地，耦级即配对不变量 <span class="arithmatex">\(\mathfrak{c}_n=\rho_n(1-\rho_n)\)</span>，故耦级为实数 <span class="arithmatex">\(\Longleftrightarrow\)</span> RH（配对不变量层面，不预设算符谱型）。<span class="arithmatex">\(\hat{H}\)</span> 在全直线 <span class="arithmatex">\(L^2(\mathbb{R})\)</span> 上本质自伴（亏指数 <span class="arithmatex">\((0,0)\)</span>）；亏指数 <span class="arithmatex">\((1,1)\)</span> 只在半直线 <span class="arithmatex">\(L^2(\mathbb{R}_+)\)</span> 上成立，自伴延拓由相位参数 <span class="arithmatex">\(\vartheta \in \mathbb{R}\)</span> 标记。<strong>注意</strong>：谱对应 <span class="arithmatex">\(\{\gamma_n^2+1/4\}\)</span> 不是严格点谱对应——<span class="arithmatex">\(\tilde{A}\)</span> 的自然谱是纯绝对连续谱，承载零点的对象是共振而非本征值，自伴性对共振无约束力（见 §二 已知1 严格性边界）。</p>
+<h3 id="143">14.3 误差的实部与虚部<a class="headerlink" href="#143" title="Permanent link">&para;</a></h3>
+<p>从 Sierra-CQM 耦谱定理（§二 已知3；<strong>构造性对应</strong>——谱对应 <span class="arithmatex">\(\{\gamma_n^2+1/4\}\)</span> 非严格点谱对应，Endres–Steiner (2010) 已否证 <span class="arithmatex">\(H_{\mathrm{BK}}\)</span>、<span class="arithmatex">\(H_{\mathrm{BK}}^2\)</span> 给出离散零点谱，见 §二 已知1 严格性边界），耦级带误差 <span class="arithmatex">\(\mathfrak{c}_n = \gamma_n^2 + 1/4 + O_n\)</span>，<span class="arithmatex">\(O_n = O(\gamma_n^2/n)\)</span>。误差分解为实部与虚部：</p>
+<div class="arithmatex">\[O_n = \underbrace{\frac{\gamma_n^2 \vartheta_n^R}{\pi n}}_{O_n^R} + i\underbrace{\frac{\gamma_n^2 \vartheta_n^I}{\pi n}}_{O_n^I} + \cdots\]</div>
+<ul>
+<li><span class="arithmatex">\(O_n^R\)</span>：共振位置的实部平移，可被重标度吸收，描述零点虚部 <span class="arithmatex">\(\gamma_n\)</span> 的统计涨落；</li>
+<li><span class="arithmatex">\(O_n^I\)</span>：共振宽度（共振偏离实轴的度量，非本征值虚部——见 §二 已知1 严格性边界），不可被任何平移消除，描述零点实部 <span class="arithmatex">\(\beta_n\)</span> 偏离 <span class="arithmatex">\(1/2\)</span>，且 <span class="arithmatex">\(O_n^I = \gamma_n(1-2\beta_n) = -2\gamma_n(\beta_n - 1/2)\)</span>（符号推导见 §二 已知3）。</li>
+</ul>
+<p>由此得到等价链：共振宽度为零 <span class="arithmatex">\(\Longleftrightarrow\)</span> <span class="arithmatex">\(O_n^I = 0\)</span> <span class="arithmatex">\(\Longleftrightarrow\)</span> <span class="arithmatex">\(\vartheta_n^I = 0\)</span> <span class="arithmatex">\(\Longleftrightarrow\)</span> <span class="arithmatex">\(\beta_n = 1/2\)</span> <span class="arithmatex">\(\Longleftrightarrow\)</span> RH。<strong>RH 要消除的是 <span class="arithmatex">\(O_n^I\)</span>（共振宽度），不是 <span class="arithmatex">\(O_n^R\)</span>（实部）。</strong></p>
+<h3 id="144-gue">14.4 GUE 与误差实部<a class="headerlink" href="#144-gue" title="Permanent link">&para;</a></h3>
+<p>Montgomery–Odlyzko 定律指出黎曼零点的局部间距统计服从 GUE 分布。<span class="arithmatex">\(O_n^R\)</span> 与 GUE 谱值涨落<strong>同量级</strong> <span class="arithmatex">\(O(n/(\log n)^2)\)</span>——数值核验（n=10–500，491 个零点，逐个计算比值 <span class="arithmatex">\(2n\,\delta\gamma_n/\gamma_n\)</span>，其中 <span class="arithmatex">\(\delta\gamma_n\)</span> 为实际零点与平滑计数的偏差、<span class="arithmatex">\(\delta\mathfrak{c}_n=2\gamma_n\delta\gamma_n\)</span>）：比值 RMS 从 0.74（n=10–60）升至 0.89（n=300–500），中位数 0.77，上界 1.84。</p>
+<p><strong>计数约定</strong>：阶梯计数在零点处取中点 <span class="arithmatex">\(n-\tfrac12\)</span>，故 <span class="arithmatex">\(\delta\gamma_n\)</span> 含系统常数 <span class="arithmatex">\(-\tfrac{1}{2\rho_n}\)</span>。扣除该系统项后均值 <span class="arithmatex">\(\approx 1\times10^{-6} \approx 0\)</span>；真涨落口径的 RMS 降至 0.28（n=10–60）→ 0.44（n=300–500）。未写明此约定时，复算结果会系统性偏差 2–3 倍。</p>
+<p><strong>CUE 对照（蒙特卡洛）</strong>：真涨落 std 0.268，CUE 0.544（相差 2 倍），Poisson 7.11（相差 26 倍）——零点涨落最接近 CUE，为“同量级”判词提供实测支撑。</p>
+<p><strong>“同量级”不等于“同源”</strong>：<span class="arithmatex">\(O_n^R\)</span> 是<strong>单能级</strong>相对偏差（<span class="arithmatex">\(\sim1/n\)</span>，随 n 衰减），GUE 是<strong>相邻间距</strong>的统计分布（归一化涨落 ~45%，不随 n 衰减）。二者尺度与性质均不同，故此处仅标注<strong>“同量级”</strong>，来源关系<strong>待证</strong>。</p>
+<p>关键区分：<strong>GUE 统计可以存在，不违反 RH</strong>。RH 只关心实部是否在 <span class="arithmatex">\(1/2\)</span> 上（<span class="arithmatex">\(O_n^I=0\)</span>），不要求虚部涨落消失（<span class="arithmatex">\(O_n^R\neq0\)</span> 是允许的）。</p>
+<h3 id="145">14.5 与相变量子 <span class="arithmatex">\(☯\)</span> 的关系<a class="headerlink" href="#145" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(☯\)</span> 的定义（不涉及零点，不循环）为 <span class="arithmatex">\(☯ = \xi'(1)/\xi(1) = 1 + \gamma_E/2 - \frac12\ln\pi - \ln 2 \approx 0.02309570897\)</span>。RH 成立时，<span class="arithmatex">\(☯\)</span> 有谱表示：</p>
+<div class="arithmatex">\[☯ = \sum_n \frac{1}{\mathfrak{c}_n}\]</div>
+<blockquote>
+<p><strong>谱型注释</strong>：<span class="arithmatex">\(\mathfrak{c}_n\)</span> 为共振位置而非本征值，故此求和不是算符迹 <span class="arithmatex">\(\operatorname{Tr}(\hat{H}^{-1})\)</span>（连续谱下该迹发散）——见 §二 已知1 严格性边界。</p>
+</blockquote>
+<p>方向单向：RH 推出此等式，反之不成立。<span class="arithmatex">\(☯ = \sum 1/\mathfrak{c}_n\)</span> 是 RH 的<strong>推论</strong>，不是 <span class="arithmatex">\(☯\)</span> 的定义。</p>
+<hr />
+<h2 id="_13">十五、经典化与数学精确<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>§十四建立了耦级为实数 <span class="arithmatex">\(\Longleftrightarrow\)</span> RH 的等价，并区分了误差实部（GUE 涨落，不违反 RH）与共振宽度（RH 要消除的）。本节分析如何消除 <span class="arithmatex">\(O_n^I\)</span>：物理上经经典化给出渐近 RH，数学上经算术条件给出精确 RH。</p>
+<blockquote>
+<p><strong>诚实声明</strong>：本节是证明策略层面的分析。“经典化给出渐近 RH”与“算术条件给出精确 RH”均为路线图主张，待推 1 的相位半（<span class="arithmatex">\(S(T)\)</span> 行为，长度半已解）与待推 2（经典化）均未完成。</p>
+</blockquote>
+<h3 id="151">15.1 物理截断与数学精确<a class="headerlink" href="#151" title="Permanent link">&para;</a></h3>
+<p>物理系统只有有限自由度，退相干需要无穷环境、热化需要无穷时间、<span class="arithmatex">\(\hbar \to 0\)</span> 极限是理想化——误差 <span class="arithmatex">\(O_n\)</span> 总有残余，物理系统给出的是渐近 RH 而非精确 RH。然而 RH 是数学命题，其证明不需要物理实现无穷极限，只需要算术结构的精确传导：自守表示的局部因子是代数对象，函数方程是精确等式，条件传导是离散有限的，配对不变量 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 为实数是精确的数学性质——共振宽度 <span class="arithmatex">\(O_n^I = 0\)</span> 精确成立（见 §13.3）。</p>
+<p>精确性的三层来源（与 §4.3 构造与验证分离一致）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">层面</th>
+<th style="text-align: left;">精确性来源</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">物理系统</td>
+<td style="text-align: left;">不直接精确（<span class="arithmatex">\(O_n \neq 0\)</span>）</td>
+<td style="text-align: left;">渐近</td>
+</tr>
+<tr>
+<td style="text-align: left;">经典化（物理过渡机制）</td>
+<td style="text-align: left;"><span class="arithmatex">\(O_n^I \to 0\)</span>（<span class="arithmatex">\(n\to\infty\)</span>）</td>
+<td style="text-align: left;">渐近消解</td>
+</tr>
+<tr>
+<td style="text-align: left;">算术结构</td>
+<td style="text-align: left;">有限 <span class="arithmatex">\(n\)</span> 下 <span class="arithmatex">\(O_n^I = 0\)</span> 精确成立（路线图主张）</td>
+<td style="text-align: left;">要求</td>
+</tr>
+</tbody>
+</table>
+<p>物理给渐近，经典化给过渡，算术给精确。RH 的精确性来自自守形式的代数结构，而非物理极限。数学在此的角色是验证工具（§4.3）：验证物理构造（算符 + 不确定性关系 + 带误差谱）在算术结构下是否精确给出零点谱。</p>
+<h3 id="152">15.2 经典化：对应原理的体现及其局限<a class="headerlink" href="#152" title="Permanent link">&para;</a></h3>
+<p>经典化（操作 <span class="arithmatex">\(\mathcal{C}\)</span>）的<strong>渐近效果</strong>是 <span class="arithmatex">\(O_n^I\)</span> 在 <span class="arithmatex">\(n\to\infty\)</span> 自然为零；有限 <span class="arithmatex">\(n\)</span> 的精确归零由算术条件承担：</p>
+<div class="arithmatex">\[\frac{O_n^I}{\gamma_n^2}\sim\frac1n\to0\quad(n\to\infty)\]</div>
+<p><strong>重心修正（方向性）</strong>：该式仅给出<strong>渐近</strong>陈述（<span class="arithmatex">\(n\to\infty\)</span> 时消解），而 RH 要求<strong>全部</strong>零点在线上，包括低 n。相对误差在 n=1 处约 100%、n=10 处约 10%、n=100 处约 1%——<strong>在最需要它的地方最弱</strong>；且 <span class="arithmatex">\(☯\)</span> 的 21.6% 单独来自第一个零点。</p>
+<p>故经典化的实质难点在<strong>有限 n</strong>：须由算术条件强制 <span class="arithmatex">\(O_n^I=0\)</span>（见 §15.3 第三行）。该算术条件与待推 1 相位半 <span class="arithmatex">\(S(T)=\tfrac1\pi\arg\zeta(\tfrac12+iT)\)</span> 的有限处行为<strong>对象同一</strong>（路线图命题、尚未证明，见 §13.6 与待推1 §8.2 口径注；两缺口合并；<span class="arithmatex">\(S(T)\)</span> 有界性本身不证 RH，有限 <span class="arithmatex">\(n\)</span> 精确控制才是同一约束的两种写法）——对象已命名，刻画仍<strong>未解</strong>。</p>
+<h3 id="153-gue">15.3 GUE、经典化与算术条件的分工<a class="headerlink" href="#153-gue" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对象</th>
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">与 RH 的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GUE</td>
+<td style="text-align: left;">描述 <span class="arithmatex">\(O_n^R\)</span> 的统计</td>
+<td style="text-align: left;">已知为真，不违反 RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">经典化</td>
+<td style="text-align: left;">共振宽度 <span class="arithmatex">\(O_n^I\)</span> 的渐近消解</td>
+<td style="text-align: left;">给出渐近 RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">算术条件</td>
+<td style="text-align: left;">强制有限 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(O_n^I = 0\)</span></td>
+<td style="text-align: left;">给出精确 RH</td>
+</tr>
+</tbody>
+</table>
+<p>经典化给出的是渐近 RH（<span class="arithmatex">\(n \to \infty\)</span> 时 <span class="arithmatex">\(O_n^I \to 0\)</span>），但此渐近在低零点处无控制力（§15.2 局限）。<strong>证明精确 RH 的重心在算术条件</strong>：在有限 <span class="arithmatex">\(n\)</span> 下强制 <span class="arithmatex">\(O_n^I = 0\)</span>——这正是 §十四中自守形式条件传导的精确性所在：条件传导是离散有限的，不需要 <span class="arithmatex">\(n \to \infty\)</span> 极限。三者分工明确：GUE 描述实部统计（已知），经典化描述共振宽度渐近消解（辅助性，低零点弱），算术条件描述有限 <span class="arithmatex">\(n\)</span> 精确（核心）——共同构成 CQM 证明 RH 的完整逻辑。</p>
+<p>与历史路线对比：直接 Hilbert–Pólya 未完成；de Bruijn–Newman 需要 <span class="arithmatex">\(t \to \infty\)</span> 未完成；物理经典化只需 <span class="arithmatex">\(n \to \infty\)</span> 给出渐近而非精确，且低零点处最弱。CQM 的路线不依赖物理无穷，只依赖算术精确——条件传导在有限 <span class="arithmatex">\(n\)</span> 下精确成立。</p>
+<hr />
+<h2 id="g_n">十六、<span class="arithmatex">\(G_N\)</span> 推导与自守形式–黎曼零点关联<a class="headerlink" href="#g_n" title="Permanent link">&para;</a></h2>
+<p>§十三从 GRH 层级阐明了临界线 <span class="arithmatex">\(1/2\)</span> 的来源，§十四-§十五从耦级和经典化角度分析了 RH 的等价刻画。本节回到一个更基本的问题：为什么 CQM 会走到这一步？答案在于 <span class="arithmatex">\(G_N\)</span> 的第一性推导——一个物理目标——倒逼出了自守形式与黎曼零点之间的深层关联。</p>
+<blockquote>
+<p><strong>诚实声明</strong>：本节是结构性观察，非已证定理。“CQM 从物理出发到达 Langlands 纲领同一结构”是推测性判断，当前无法验证。</p>
+</blockquote>
+<h3 id="161">16.1 逻辑链<a class="headerlink" href="#161" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(G_N\)</span> 的第一性推导要求精确计算 <span class="arithmatex">\(☯\)</span>，而 <span class="arithmatex">\(☯ = \xi'(1)/\xi(1)\)</span> 涉及 <span class="arithmatex">\(\xi\)</span> 函数的零点分布——黎曼零点。但 <span class="arithmatex">\(\xi(s)\)</span> 只是 GL(1) 平凡表示的自守 L 函数。<span class="arithmatex">\(☯\)</span> 作为普适常数（如 <span class="arithmatex">\(\hbar\)</span>），不应只适用于 <span class="arithmatex">\(\xi(s)\)</span>，而必须对所有自守形式 <span class="arithmatex">\(\pi\)</span> 有定义：<span class="arithmatex">\(☯_\pi = \Lambda'(1,\pi)/\Lambda(1,\pi)\)</span>。这把物理问题从 RH（GL(1) 特例）引向 GRH（所有尖点（本原）自守表示，见 §13.5），即 §十三已建立的层级结构。</p>
+<p>关键转折是：物理目标（<span class="arithmatex">\(G_N\)</span>）→ 数学关卡（RH）→ 深层结构（自守形式）。不是先有自守形式理论再有物理应用，而是物理问题倒逼出自守形式框架——§十三的条件传导链条（自守表示 <span class="arithmatex">\(\pi\)</span> → 条件 <span class="arithmatex">\(\mathcal{C}_\pi\)</span> → 配对不变量 <span class="arithmatex">\(\mathfrak{c}_{n,\pi}=\rho_{n,\pi}(1-\rho_{n,\pi})\)</span> 为实数 ⟺ 零点在 <span class="arithmatex">\(1/2\)</span> 上）在此获得物理动机。</p>
+<h3 id="162-langlands">16.2 与 Langlands 纲领的关联<a class="headerlink" href="#162-langlands" title="Permanent link">&para;</a></h3>
+<p>Langlands 纲领断言自守表示 <span class="arithmatex">\(\longleftrightarrow\)</span> Galois 表示（任意 Motivic L 函数 = 自守 L 函数）。CQM 从 <span class="arithmatex">\(G_N\)</span> 的第一性推导出发，经 <span class="arithmatex">\(☯\)</span> 的普适性要求，独立到达了同一结构：自守表示对应条件 <span class="arithmatex">\(\mathcal{C}_\pi\)</span>，Galois 表示对应谱 <span class="arithmatex">\(\{1/4 + \gamma_{n,\pi}^2\}\)</span>，L 函数对应算符 <span class="arithmatex">\(\hat{H}_\pi\)</span>（配对不变量层面陈述，不预设谱型），Langlands 对应条件传导。</p>
+<p>这个关联本来就存在于数学中（Langlands 纲领），但 CQM 从物理问题出发独立到达它——说明该关联不是人为构造，而是被物理问题揭示的深层自然结构（推测性观察，待验证）。如果 CQM 的到达路径是自然的，它可能为 Langlands 纲领提供一个物理基础（猜想）。</p>
+<hr />
+<h2 id="a">附 A：来源定位表（本证明思路 ↔ 项目文档）<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">本思路条目</th>
+<th style="text-align: left;">项目文档出处</th>
+<th style="text-align: left;">一致性说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">已知1 算符 <span class="arithmatex">\(\hat{H}=\hat{D}^2+1/4\)</span></td>
+<td style="text-align: left;"><code>05 方法论与批判/CQM_方法论_HilbertPolya批判.md</code> §1.1、§2.1、§5（缺口 G2–G4）；<code>01 核心理论/CQM_核心_集成理论.md</code>（谱方程与黎曼零点）</td>
+<td style="text-align: left;">一致；该算符在项目中被明确标注为“框架输入的脚手架（借自 Berry–Keating + 双曲几何）”</td>
+</tr>
+<tr>
+<td style="text-align: left;">已知2 <span class="arithmatex">\(☯\)</span> 定义与谱表示</td>
+<td style="text-align: left;"><code>README.md</code> 符号约定；<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code></td>
+<td style="text-align: left;">一致；<span class="arithmatex">\(☯\)</span> 闭式 <span class="arithmatex">\(1+\gamma_E/2-\frac12\ln\pi-\ln2\)</span>（数值 <span class="arithmatex">\(\approx 0.02309570897\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">已知2 不确定性关系</td>
+<td style="text-align: left;"><code>README.md</code> 核心公式、<code>01 核心理论/CQM_核心_集成理论.md</code></td>
+<td style="text-align: left;">一致</td>
+</tr>
+<tr>
+<td style="text-align: left;">已知3 带误差谱带</td>
+<td style="text-align: left;">本框架<strong>新增构造</strong>；对应 <code>README.md</code> 核心公式“Sierra-CQM 耦谱定理 <span class="arithmatex">\(\mathfrak{c}_n^{(R)}=1/4+\gamma_n^2\)</span>”的误差版</td>
+<td style="text-align: left;">“带误差谱带”为本文对 Sierra-CQM 耦谱定理的误差推广，非项目既有条目</td>
+</tr>
+<tr>
+<td style="text-align: left;">待推1 边界条件</td>
+<td style="text-align: left;"><code>05 方法论与批判/CQM_方法论_HilbertPolya批判.md</code> 缺口 G5（退相干→边界条件 <span class="arithmatex">\(\vartheta_n\)</span> 锁定）</td>
+<td style="text-align: left;">一致；G5 归属待裁定（集成理论／黎曼猜想／待推1 之间），本文按待推1 对应使用</td>
+</tr>
+<tr>
+<td style="text-align: left;">待推2 经典化</td>
+<td style="text-align: left;">文献 de Bruijn–Newman 热流（见附 B）；项目无既有“经典化”条目</td>
+<td style="text-align: left;">“经典化”为本文新引入的命名</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sierra-CQM 耦谱定理</td>
+<td style="text-align: left;"><code>README.md</code> 核心公式</td>
+<td style="text-align: left;">一致</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="b">附 B：文献支持表（历史路线 ↔ 精确引用）<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">本文称呼</th>
+<th style="text-align: left;">精确引用</th>
+<th style="text-align: left;">核实结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Riemann (1859)</td>
+<td style="text-align: left;">B. Riemann, “Über die Anzahl der Primzahlen unter einer gegebenen Größe”, Monatsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin, 1859</td>
+<td style="text-align: left;">属实</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hilbert–Pólya（约1914）</td>
+<td style="text-align: left;">民俗猜想，约 <strong>1912–1914</strong>，无 Hilbert/Pólya 正式发表；最早公开发表表述见于 H. L. Montgomery, “The pair correlation of zeros of the zeta function”, Proc. Sympos. Pure Math. XXIV (AMS), 1973；起源依据为 Pólya 1982 年致 Odlyzko 信件</td>
+<td style="text-align: left;">年份“约1914”可接受；需补 Montgomery (1973)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weil (1952)</td>
+<td style="text-align: left;">A. Weil, “Sur les 'formules explicites' de la théorie des nombres premiers”, Comm. Sém. Math. Univ. Lund (suppl. vol. dedicated to M. Riesz), pp. 252–265, 1952</td>
+<td style="text-align: left;">属实（1952，非 1959）</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn (1950)</td>
+<td style="text-align: left;">N. G. de Bruijn, “The roots of trigonometric integrals”, Duke Math. J. 17(3), 197–226, 1950</td>
+<td style="text-align: left;">属实</td>
+</tr>
+<tr>
+<td style="text-align: left;">Newman (1976)</td>
+<td style="text-align: left;">C. M. Newman, “Fourier transforms with only real zeros”, Proc. Amer. Math. Soc. 61(2), 245–251, 1976</td>
+<td style="text-align: left;">属实</td>
+</tr>
+<tr>
+<td style="text-align: left;">de Bruijn–Newman 常数 <span class="arithmatex">\(\Lambda\)</span></td>
+<td style="text-align: left;">RH ⇔ <span class="arithmatex">\(\Lambda\)</span> ≤ 0；由 Rodgers–Tao (2018, arXiv:1801.05914) 证明 <span class="arithmatex">\(\Lambda\)</span> ≥ 0，故当前可表述为 <strong>RH ⇔ <span class="arithmatex">\(\Lambda\)</span> = 0</strong>；Polymath15 (arXiv:1904.12438) 得 <span class="arithmatex">\(\Lambda\)</span> ≤ 0.22</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Lambda\)</span>=0 等价于 RH 成立；归属为 de Bruijn(1950)–Newman(1976)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connes (1999)</td>
+<td style="text-align: left;">A. Connes, “Trace formula in noncommutative geometry and the zeros of the Riemann zeta function”, arXiv:math/9811068 (1998/1999)；另见 A. Connes, Noncommutative Geometry, Academic Press, 1994</td>
+<td style="text-align: left;">属实</td>
+</tr>
+<tr>
+<td style="text-align: left;">Berry–Keating (1999)</td>
+<td style="text-align: left;">M. V. Berry &amp; J. P. Keating, “The Riemann zeros and eigenvalue asymptotics”, SIAM Review 41(2), 236–266, 1999, DOI: 10.1137/S0036144598347497</td>
+<td style="text-align: left;">出处属实；“<span class="arithmatex">\(H=xp\)</span> 在 <span class="arithmatex">\(L^2(\mathbb{R}_+)\)</span> 无自伴延拓”应精确为“半经典模型未给出严格自伴 Hamiltonian；离散谱须经边界条件/自伴延拓或共振谱实现”</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sierra 模型</td>
+<td style="text-align: left;">G. Sierra, “A quantum mechanical model of the Riemann zeros”, New J. Phys. 10, 033016 (2008), arXiv:0712.0705；G. Sierra &amp; P. K. Townsend, “Landau levels and Riemann zeros”, Phys. Rev. Lett. 101, 110201 (2008)；G. Sierra &amp; J. Rodríguez-Laguna, “The H=xp model revisited and the Riemann zeros”, Phys. Rev. Lett. 106, 200201 (2011)；G. Sierra, “The Riemann zeros as spectrum and the Riemann hypothesis”, Symmetry 11(4), 494 (2019)</td>
+<td style="text-align: left;">属实（2008–2011）；<strong>注意</strong>：Sierra 2008/2011 给出的是“连续谱嵌入离散共振/与平均零点谱一致”，并非明确“<span class="arithmatex">\(1/4+\gamma_n^2\)</span>”公式</td>
+</tr>
+<tr>
+<td style="text-align: left;">Endres–Steiner (2010)</td>
+<td style="text-align: left;">S. Endres &amp; F. Steiner, “The Berry–Keating operator on <span class="arithmatex">\(L^2(\mathbb{R}_&gt;,dx)\)</span> and on compact quantum graphs with general self-adjoint realizations”, J. Phys. A: Math. Theor. 43, 095204 (2010), arXiv:0912.3183</td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(H_{\rm BK}\)</span> 在 <span class="arithmatex">\(L^2(\mathbb{R}_&gt;,dx)\)</span> 上谱纯连续</strong>这一否证结论的精确出处（§二 已知1 与本文“必须规避的否证项”所引即此篇）；另证明 <span class="arithmatex">\(H_{\rm BK}\)</span> 在 <span class="arithmatex">\(L^2(\mathbb R_&gt;,dx)\)</span> 上亏指数为 <span class="arithmatex">\((0,0)\)</span>（本质自伴）、并给出紧量子图上全体自伴延拓的分类、久期方程、精确迹公式与 Weyl 渐近。Endres–Steiner 关于 Berry–Keating 算符仅此一篇（2010 JPA）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重要诚实标注（循环性）</strong>：本文“Sierra-CQM 耦谱定理 <span class="arithmatex">\(\mathfrak{c}_n^{(R)}=1/4+\gamma_n^2\)</span>”是 CQM 框架自身的谱对应构造（零点虚部 <span class="arithmatex">\(\gamma_n \leftrightarrow \mathfrak{c}_n=1/4+\gamma_n^2\)</span> 为 <span class="arithmatex">\(\mathbb{R}_{&gt;0}\)</span> 上的双射），借用的算符形式来自 Berry–Keating / Sierra，<strong>并非 Sierra 原论文的直接结果</strong>；且该对应的 <span class="arithmatex">\(\gamma_n\)</span> 即为待证明对象，故“待推1（从素数独立推出边界条件）”闭合之前，这一对应停留在构造层面，存在循环性。<strong>更根本的困难</strong>：<span class="arithmatex">\(\tilde{A}=-\partial_u^2+1/4\)</span> 的自然谱是纯绝对连续谱，无离散本征值，与 <span class="arithmatex">\(\{\gamma_n^2+1/4\}\)</span> 的对应不是严格点谱对应。文献中承载零点的对象是共振（Sierra 2008）或吸收谱（Connes 1999），均非本征值——自伴性对共振无约束力（见 §二 已知1 严格性边界）。</p>
+<hr />
+<h2 id="_14">参考文献<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Riemann, B. (1859). Über die Anzahl der Primzahlen unter einer gegebenen Größe. <em>Monatsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin</em>, 671–680.</li>
+<li>Montgomery, H. L. (1973). The pair correlation of zeros of the zeta function. In <em>Analytic Number Theory</em>, Proc. Sympos. Pure Math. XXIV, AMS, 181–193.</li>
+<li>Weil, A. (1952). Sur les “formules explicites” de la théorie des nombres premiers. <em>Comm. Sém. Math. Univ. Lund</em> (suppl. vol. dedicated to M. Riesz), 252–265.</li>
+<li>de Bruijn, N. G. (1950). The roots of trigonometric integrals. <em>Duke Mathematical Journal</em>, 17(3), 197–226.</li>
+<li>Newman, C. M. (1976). Fourier transforms with only real zeros. <em>Proceedings of the American Mathematical Society</em>, 61(2), 245–251.</li>
+<li>Rodgers, B., &amp; Tao, T. (2018). The de Bruijn–Newman constant is non-negative. <em>arXiv:1801.05914</em>.</li>
+<li>Polymath15 (2019). Effective approximation of heat flow evolution of the Riemann ξ function, and a new upper bound for the de Bruijn–Newman constant. <em>arXiv:1904.12438</em>.</li>
+<li>Connes, A. (1994). <em>Noncommutative Geometry</em>. Academic Press.</li>
+<li>Connes, A. (1999). Trace formula in noncommutative geometry and the zeros of the Riemann zeta function. <em>arXiv:math/9811068</em>.</li>
+<li>Berry, M. V., &amp; Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. <em>SIAM Review</em>, 41(2), 236–266.</li>
+<li>Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. <em>New Journal of Physics</em>, 10, 033016.</li>
+<li>Sierra, G., &amp; Townsend, P. K. (2008). Landau levels and Riemann zeros. <em>Physical Review Letters</em>, 101, 110201.</li>
+<li>Sierra, G., &amp; Rodríguez-Laguna, J. (2011). The <span class="arithmatex">\(H=xp\)</span> model revisited and the Riemann zeros. <em>Physical Review Letters</em>, 106, 200201.</li>
+<li>Sierra, G. (2019). The Riemann zeros as spectrum and the Riemann hypothesis. <em>Symmetry</em>, 11(4), 494.</li>
+<li>Endres, S., &amp; Steiner, F. (2010). The Berry–Keating operator on <span class="arithmatex">\(L^2(\mathbb{R}_&gt;,dx)\)</span> and on compact quantum graphs with general self-adjoint realizations. <em>Journal of Physics A: Mathematical and Theoretical</em>, 43, 095204. (arXiv:0912.3183) —— <span class="arithmatex">\(H_{\rm BK}\)</span> 在 <span class="arithmatex">\(L^2(\mathbb{R}_&gt;,dx)\)</span> 上谱纯连续、亏指数 <span class="arithmatex">\((0,0)\)</span>。</li>
+<li>ruster. (2026). <em>CNT 完整研究</em>. Zenodo. DOI: 10.5281/zenodo.20804380.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 跨层级深耦合与唯一性难题 [D016]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                跨层级深耦合与唯一性难题 [D016]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 待推1边界条件 [D018]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                待推1边界条件 [D018]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/cqm-glossary.js"></script>
+      
+        <script src="assets/cqm-depth.js"></script>
+      
+        <script src="assets/cqm-enhance.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

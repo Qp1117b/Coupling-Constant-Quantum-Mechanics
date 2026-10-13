@@ -1,0 +1,3439 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D021_Wyler%E5%B8%B8%E6%95%B0.html">
+      
+      
+        <link rel="next" href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>贝里曲率与Regge曲率 [D022] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/cqm-enhance.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regge" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              贝里曲率与Regge曲率 [D022]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L000_%E5%B1%95%E5%BC%80%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一分册：从问题到链条（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L002_%E7%AC%AC%E4%BA%8C%E5%88%86%E5%86%8C_%E7%BB%9F%E4%B8%80%E4%BD%93%E8%87%AA%E7%BB%84%E8%A3%85%E4%B8%8E%CE%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二分册：统一体自组装与α（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L003_%E7%AC%AC%E4%B8%89%E5%88%86%E5%86%8C_%E8%B0%B1%E6%96%B9%E7%A8%8B%E4%B8%8E%E9%BB%8E%E6%9B%BC%E9%9B%B6%E7%82%B9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三分册：谱方程与黎曼零点（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L004_%E7%AC%AC%E5%9B%9B%E5%88%86%E5%86%8C_%E8%B6%85%E5%AF%BC%E6%B6%8C%E7%8E%B0%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四分册：超导涌现链（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L005_%E7%AC%AC%E4%BA%94%E5%88%86%E5%86%8C_%E4%B8%8E%E6%A0%87%E5%87%86%E7%90%86%E8%AE%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%B6%A8%E8%90%BD%E4%BC%B4%E4%B8%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五分册：与标准理论的关系与涨落伴丛（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L006_%E7%AC%AC%E5%85%AD%E5%88%86%E5%86%8C_%E9%87%8F%E7%BA%B2%E5%8F%91%E7%94%9F%E5%AD%A6%E4%B8%93%E7%AB%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六分册：量纲发生学专章（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V000_%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V001_%E5%8F%AF%E6%8E%A8%E6%BC%94%E8%B6%85%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可推演超图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V002_%E7%A0%94%E7%A9%B6%E9%A9%BE%E9%A9%B6%E8%88%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究驾驶舱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V003_%E6%A3%80%E7%B4%A2%E5%8F%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    检索台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V004_%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%93%9D%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    形式化蓝图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 引言
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 研究动机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 范围与限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 贝里曲率文献综述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 贝里曲率文献综述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 奠基文献：几何相位的发现与纤维丛表述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 数学结构：贝里联络、贝里曲率与量子几何张量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 能带物理：陈数、反常霍尔效应与拓扑物态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 超导电性与量子几何
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 第一性原理计算中的贝里曲率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Regge 曲率文献综述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Regge 曲率文献综述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Regge 微积分：曲率集中于铰链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 数学基础与收敛性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 和乐表述与离散量子引力
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 贝里曲率与 Regge 曲率的关联分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 贝里曲率与 Regge 曲率的关联分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 共同数学骨架：联络—曲率—和乐【标准数学】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 逐维结构对照表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 已确立的物理交叉
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 直接连接文献的缺失与关联的性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 与 CQM 框架的对接
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 与 CQM 框架的对接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 项目既有表述清单（原文定位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 严格数学同构层面【标准数学】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cqm-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 CQM 构造假设层面【CQM 构造假设】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-delta_textintrinsic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 文献对 \(\delta_{\text{intrinsic}}\) 断链的启示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-m-v-berry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 历史注记：M. V. Berry 的双重线索
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 曲率角色的分工与本源判定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 开放问题（记录备查）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 引言
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 研究动机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 范围与限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 贝里曲率文献综述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 贝里曲率文献综述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 奠基文献：几何相位的发现与纤维丛表述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 数学结构：贝里联络、贝里曲率与量子几何张量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 能带物理：陈数、反常霍尔效应与拓扑物态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 超导电性与量子几何
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 第一性原理计算中的贝里曲率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Regge 曲率文献综述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Regge 曲率文献综述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Regge 微积分：曲率集中于铰链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 数学基础与收敛性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 和乐表述与离散量子引力
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-regge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 贝里曲率与 Regge 曲率的关联分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 贝里曲率与 Regge 曲率的关联分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 共同数学骨架：联络—曲率—和乐【标准数学】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 逐维结构对照表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 已确立的物理交叉
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 直接连接文献的缺失与关联的性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 与 CQM 框架的对接
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 与 CQM 框架的对接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 项目既有表述清单（原文定位）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 严格数学同构层面【标准数学】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cqm-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 CQM 构造假设层面【CQM 构造假设】
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-delta_textintrinsic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 文献对 \(\delta_{\text{intrinsic}}\) 断链的启示
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-m-v-berry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 历史注记：M. V. Berry 的双重线索
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 曲率角色的分工与本源判定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 开放问题（记录备查）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="regge">贝里曲率与 Regge 曲率的关联：文献调研与研究论文<a class="headerlink" href="#regge" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<blockquote>
+<p><strong>文档定位</strong>：文献调研记录 + 研究论文。调研贝里曲率（Berry curvature）的文献谱系，分析其与本框架 Regge 曲率（底空间角亏离散曲率）的关联，作为研究记录归档。
+<strong>日期</strong>：2026-09-08
+<strong>调研方法</strong>：网络文献检索（出版商官方页面、arXiv、NASA 天体物理数据系统），多来源交叉验证；所有列入参考文献的条目均经过作者、年份、期刊信息核实；未能核实的信息在正文中明确标注。
+<strong>状态标注约定</strong>：
+- 【文献确立】= 文献中已确立的结果（附参考文献编号）；
+- 【标准数学】= 教科书级数学定理（以定理名指认，不附网络来源）；
+- 【CQM 构造假设】= 本框架的构造性假设，无文献对应；
+- 【CQM 框架立场】= 框架内既有立场表态（介于构造假设与哲学诠释之间）。</p>
+</blockquote>
+<hr />
+<h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>调研贝里曲率的文献谱系（奠基理论 → 能带物理 → 超导电性中的量子几何 → 第一性原理计算方法），并系统分析贝里曲率与本框架 Regge 曲率（三角剖分底空间中集中于共维 2 铰链的角亏曲率）的关联。核心结论：</p>
+<ol>
+<li><strong>共同数学骨架【标准数学】</strong>：贝里曲率与 Regge 曲率都是“联络—曲率—和乐”三位一体的具体实现——贝里曲率是厄米线丛（或向量丛）上贝里联络的曲率 2-形式，其和乐是贝里相位（Wilson 环）；Regge 曲率是分段平直几何中集中于铰链的曲率测度，其和乐是绕铰链回路的亏角旋转。两者都由 Ambrose–Singer 定理刻画的同一数学范畴（主丛联络的曲率与和乐）支配。</li>
+<li><strong>拓扑层面平行【标准数学】</strong>：贝里曲率在闭合二维流形（布里渊区环面）上的积分给出陈数（第一陈类）；二维三角剖分的角亏总和给出欧拉示性数（离散 Gauss–Bonnet 定理）。两者都是“曲率测度积分 = 拓扑不变量”的实例。</li>
+<li><strong>物理交点【文献确立】</strong>：锥形时空（宇宙弦亏角 <span class="arithmatex">\(\delta = 8\pi G\mu\)</span>）是两类曲率在文献中确定交汇的物理对象——锥形时空和乐（绕弦一周 = 亏角旋转）与单铰链 Regge 几何同构，其形式与贝里相位同为闭合回路上指数化的角度。</li>
+<li><strong>直接连接文献的缺失</strong>：文献检索未找到直接建立“贝里曲率 ↔ Regge 微积分”对应的工作；最接近的是锥形亏角与贝里相位相互作用的个别预印本（Binder 2002）。两者的关联是<strong>结构性的</strong>（共同的数学骨架），不是<strong>文献性的</strong>（无人建立过等式或映射）。</li>
+<li><strong>与本框架的对接</strong>：精细引力（FG）的伴丛和乐 <span class="arithmatex">\(W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)\)</span> 在数学范畴上与贝里和乐同型（均为 Wilson 环）；超导文档中“密度泛函理论贝里曲率是伴丛和乐的唯象近似”及“<span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 需外部贝里曲率输入”的定位属【CQM 构造假设】。量子几何 × 平带超导文献（超流刚度由量子度规的布里渊区积分决定）为 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 断链提供文献对照：几何信息控制超导转变温度有确立先例，但文献中使用的是动量空间量子度规，而非实空间角亏——映射本身仍需框架内构造。</li>
+</ol>
+<hr />
+<h2 id="1">1. 引言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 研究动机<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>本框架（因果网络同步理论，CNST / 耦合常数量子力学，CQM）的精细引力（FG）采用“一个联络生成两种曲率”的结构：底空间曲率是 Regge 角亏 <span class="arithmatex">\(\delta_v^{(\ell)} = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}\)</span>，伴丛曲率是 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span>，其和乐为 <span class="arithmatex">\(W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell) \in G_\ell\)</span>（<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3、§3.1）。</p>
+<p>贝里曲率在数学上同为“联络的曲率”。项目内已有三处涉及贝里概念，但均未展开：</p>
+<ul>
+<li><strong>超导第一性链断链</strong>：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> §1.2——“内禀角亏 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 无内部来源——当前只能引入外部 DFT 贝里曲率”；</li>
+<li><strong>方法论定位</strong>：同文档 §9.3——“DFT 贝里曲率是电子波函数在动量空间的几何相位——在 CQM 语言中它是伴丛和乐的某种唯象近似”；</li>
+<li><strong>谱理论线索</strong>：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §3.7——黎曼–西格尔相角 <span class="arithmatex">\(\theta(t)\)</span> 被读作“同步基态的贝里相位”。</li>
+</ul>
+<p>回答三个问题：(1) 贝里曲率的文献谱系是什么；(2) 贝里曲率与 Regge 曲率有哪些严格成立的关联、哪些是文献空缺；(3) 这些文献对本框架（尤其是超导第一性链的 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 断链）给出什么启示。</p>
+<h3 id="12">1.2 范围与限制<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>文献调研与概念分析记录，不包含新证明。所有外部文献结论的可靠性以标注为准；框架内部的对接分析明确区分“数学范畴级同构”（严格）与“CQM 构造假设”（无文献对应）。</p>
+<hr />
+<h2 id="2">2. 贝里曲率文献综述<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 奠基文献：几何相位的发现与纤维丛表述<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>M. V. Berry（1984）证明：参数空间 <span class="arithmatex">\(R\)</span> 中的哈密顿量 <span class="arithmatex">\(H(R)\)</span> 沿闭合回路 <span class="arithmatex">\(C\)</span> 绝热演化一周后，系统本征态除动力学相位外获得一个几何相位【文献确立】[1]：</p>
+<div class="arithmatex">\[\gamma_n(C) = \oint_C i\langle n(R)|\nabla_R|n(R)\rangle\cdot dR\]</div>
+<p>B. Simon（1983）指出该几何相位因子恰是厄米线丛上的和乐（holonomy）——绝热定理在量子态线丛上自然定义一个联络，几何相位是其和乐[2]。这一纤维丛表述是贝里曲率的数学基础【文献确立】。</p>
+<p>Wilczek 与 Zee（1984）将构造推广到简并系统：简并能级的绝热输运生成<strong>非阿贝尔</strong>规范结构，曲率为 <span class="arithmatex">\(F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}\)</span>，和乐为路径编序的 Wilson 环[3]【文献确立】。这一非阿贝尔形式与本框架伴丛曲率 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span> 在公式层面完全同型（见 §4.1）。</p>
+<h3 id="22">2.2 数学结构：贝里联络、贝里曲率与量子几何张量<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>对动量空间 <span class="arithmatex">\(\mathbf{k}\)</span> 中的布洛赫态 <span class="arithmatex">\(|u_{n\mathbf{k}}\rangle\)</span>，贝里联络与贝里曲率定义为【文献确立】[7]：</p>
+<div class="arithmatex">\[\mathcal{A}_n(\mathbf{k}) = i\langle u_{n\mathbf{k}}|\nabla_{\mathbf{k}}|u_{n\mathbf{k}}\rangle, \qquad \Omega_n(\mathbf{k}) = \nabla_{\mathbf{k}}\times\mathcal{A}_n(\mathbf{k})\]</div>
+<p>贝里相位等于曲率通量（Stokes 定理）：<span class="arithmatex">\(\gamma_n(C) = \oint_C\mathcal{A}_n\cdot d\mathbf{k} = \iint_S\Omega_n\cdot dS\)</span>。</p>
+<p>Provost 与 Vallee（1980，早于 Berry 1984）已在量子态流形上引入黎曼结构[4]：完整对象是<strong>量子几何张量</strong>（quantum geometric tensor）【文献确立】[4][7]：</p>
+<div class="arithmatex">\[Q_{\mu\nu} = \langle\partial_\mu n|\big(1-|n\rangle\langle n|\big)|\partial_\nu n\rangle = g_{\mu\nu} - \frac{i}{2}\Omega_{\mu\nu}\]</div>
+<p>其实部 <span class="arithmatex">\(g_{\mu\nu}\)</span> 是<strong>量子度规</strong>（quantum metric），虚部是贝里曲率。量子度规与贝里曲率是同一张量的对称与反对称部分——这一点对 §5.4 的超导分析至关重要。</p>
+<h3 id="23">2.3 能带物理：陈数、反常霍尔效应与拓扑物态<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>整数量子霍尔效应</strong>：Thouless–Kohmoto–Nightingale–den Nijs（1982）证明二维周期系统霍尔电导量子化为 <span class="arithmatex">\(\sigma_{xy} = (e^2/h)\sum_n C_n\)</span>，其中陈数 <span class="arithmatex">\(C_n = \frac{1}{2\pi}\int_{\text{BZ}}\Omega_n(\mathbf{k})\,d^2k \in \mathbb{Z}\)</span> 是贝里曲率在布里渊区环面上的积分[5]【文献确立】。这是“贝里曲率积分 = 拓扑不变量”的范式确立。</li>
+<li><strong>反常霍尔效应</strong>：Karplus 与 Luttinger（1954）的早期理论已包含内禀反常速度机制[6]；现代半经典动力学方程 <span class="arithmatex">\(\dot{r} = \frac{1}{\hbar}\nabla_{\mathbf{k}}\varepsilon_n - \dot{k}\times\Omega_n\)</span> 中的反常速度项由贝里曲率给出，Xiao–Chang–Niu（2010）的《现代物理评论》综述系统总结了贝里相位对电子性质的影响（半经典动力学、轨道磁化、输运）[7]；Nagaosa–Sinova–Onoda–MacDonald–Ong（2010）综述确立“金属铁磁体反常霍尔效应由内禀贝里曲率机制主导”[8]【文献确立】。</li>
+<li><strong>外尔半金属</strong>：外尔点是动量空间中贝里曲率的单极子源（单极子荷 = 手性 = 绕外尔点小球面的陈数）[7][9]【文献确立】。这给出“贝里曲率 = 动量空间中的场强，其源是带隙简并点”的完整图像。</li>
+</ul>
+<h3 id="24">2.4 超导电性与量子几何<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>这是与本框架超导主线最相关的文献簇：</p>
+<ul>
+<li>Peotta 与 Törmä（2015）证明：<strong>平带极限下超流刚度（superfluid weight）不来自能带色散，而来自量子度规在布里渊区的积分</strong>；拓扑非平庸（陈数非零）的平带即使完全无色散也携带有限超流刚度，且受拓扑条件[10]【文献确立】。</li>
+<li>Julku 等（2016）在 Lieb 晶格平带证实超流权重的几何起源[11]；Liang 等（2017）在多带一般情形分离超流权重的能带几何与贝里曲率贡献[12]；Hu 等（2019）计算了魔角扭曲双层石墨烯中超流权重的几何贡献与常规贡献[13]【文献确立】。</li>
+<li>Törmä–Peotta–Bernevig（2022）《自然评论·物理》综述确立“超导电性、超流性与量子几何”作为研究领域的地位[14]；Tian 等（2023）在《自然》报道了量子几何使能的狄拉克平带超导实验证据[15]【文献确立】。</li>
+</ul>
+<p><strong>要点</strong>：该文献簇确立的结论是——控制超导转变温度 <span class="arithmatex">\(T_c\)</span>（经由超流刚度 / Berezinskii–Kosterlitz–Thouless 转变温度）的几何量是<strong>完整量子几何张量</strong>（尤其量子度规 <span class="arithmatex">\(g_{\mu\nu}\)</span>），不只是贝里曲率 <span class="arithmatex">\(\Omega_{\mu\nu}\)</span>。</p>
+<h3 id="25">2.5 第一性原理计算中的贝里曲率<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>King-Smith 与 Vanderbilt（1993）的现代极化理论将晶体极化确立为贝里相位（几何相位）对象[16]；Marzari 与 Vanderbilt（1997）建立最大局域化万尼尔（Wannier）函数方法[17]；Marzari 等（2012）的《现代物理评论》综述确立了“密度泛函理论波函数 → 最大局域化万尼尔（Wannier）函数 → 万尼尔（Wannier）插值 → 任意密集网格上的贝里曲率”的标准计算流程[18]【文献确立】。</li>
+<li>反常霍尔电导的第一性原理计算先例：Yao 等（2004）对铁磁体 bcc Fe 的计算将反常霍尔效应与占据布洛赫态的动量空间贝里相位直接联系[19]；Wang 等（2006）实现万尼尔（Wannier）插值计算反常霍尔电导[20]【文献确立】。</li>
+</ul>
+<p><strong>要点</strong>：本框架超导文档中“引入外部 DFT 贝里曲率”在计算上是成熟、良定义的操作（万尼尔（Wannier）插值是标准流程），但文献中密度泛函理论贝里曲率测量的是<strong>动量空间能带几何</strong>（见 §5.3 的对接分析）。</p>
+<hr />
+<h2 id="3-regge">3. Regge 曲率文献综述<a class="headerlink" href="#3-regge" title="Permanent link">&para;</a></h2>
+<h3 id="31-regge">3.1 Regge 微积分：曲率集中于铰链<a class="headerlink" href="#31-regge" title="Permanent link">&para;</a></h3>
+<p>Tullio Regge（1961）建立“无坐标广义相对论”：弯曲时空用分段平直单纯复形近似，曲率不在四维体积内分布，而是<strong>集中于共维 2 的铰链（hinge）上</strong>，以亏角（deficit angle）度量[21]【文献确立】：</p>
+<div class="arithmatex">\[\delta_h = 2\pi - \sum_{\sigma\supset h}\theta_{\sigma,h}\]</div>
+<p>其中 <span class="arithmatex">\(\theta_{\sigma,h}\)</span> 是包含铰链 <span class="arithmatex">\(h\)</span> 的各单纯形在 <span class="arithmatex">\(h\)</span> 处的二面角。Einstein–Hilbert 作用离散化为：</p>
+<div class="arithmatex">\[S_R = \frac{1}{8\pi G}\sum_h A_h\,\delta_h\]</div>
+<p>对边长变分给出 Einstein–Regge 方程【文献确立】[21][23][24]。</p>
+<p>在二维情形（本框架底空间三角剖分的情形），铰链退化为顶点 <span class="arithmatex">\(v\)</span>，亏角 <span class="arithmatex">\(\delta_v = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}\)</span> 正是顶点处的<strong>离散高斯曲率测度</strong>：<span class="arithmatex">\(\delta_v = \iint_{A_v^*} K\,dA\)</span>（<span class="arithmatex">\(A_v^*\)</span> 为对偶胞面积），因此 <span class="arithmatex">\(K_v = \delta_v/A_v^*\)</span>、有效里奇标量 <span class="arithmatex">\(R_v = 2\delta_v/A_v^*\)</span>【标准数学】。这与本框架 Lean 形式化中的桥接公式 <span class="arithmatex">\(R_{\text{eff}} = 2\delta_v/A_{\text{dual}}\)</span>（<code>08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean</code>）一致——该公式是标准二维 Regge 曲率密度关系的实现。</p>
+<p><strong>单纯形夹角符号约定</strong>（本节据此统一）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">符号</th>
+<th style="text-align: left;">适用维度</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\theta_{\sigma,h}\)</span></td>
+<td style="text-align: left;">3D</td>
+<td style="text-align: left;">包含铰链 <span class="arithmatex">\(h\)</span> 的单纯形 <span class="arithmatex">\(\sigma\)</span> 在 <span class="arithmatex">\(h\)</span> 处的二面角</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\theta_v^{(\Delta)}\)</span></td>
+<td style="text-align: left;">2D</td>
+<td style="text-align: left;">三角剖分中单纯形 <span class="arithmatex">\(\Delta\)</span> 在顶点 <span class="arithmatex">\(v\)</span> 处的平面角</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 数学基础与收敛性<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>Cheeger–Müller–Schrader（1984）证明：给定光滑黎曼度量，存在一列加细的分段平直网格，其 Regge 曲率测度在测度意义下收敛到光滑曲率测度；Lipschitz–Killing 曲率有同样的收敛结果[22]【文献确立】。这确立了“集中于铰链的曲率测度”作为光滑曲率的合法离散化——Regge 曲率不是近似权宜，而是数学上严格的曲率测度观点。</p>
+<h3 id="33">3.3 和乐表述与离散量子引力<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>亏角 = 和乐旋转角</strong>：分段平直几何中每个单纯形内部平直（联络平凡），绕包围铰链的闭合回路平行移动一周，结果是与该回路所围亏角相等的旋转（洛伦兹号差情形含 boost 分量）【文献确立】[23][24]。曲率完全由和乐探测——这正是 Ambrose–Singer 定理的离散实现（见 §4.1）。</li>
+<li><strong>离散量子引力谱系</strong>：Regge 与 Williams（2000）综述分段线性结构在量子引力中的地位[23]；Barrett–Oriti–Williams（2019）综述 Regge 微积分到自旋泡沫与群场论的发展——其中以 2 胞为中心的和乐型变量是现代离散引力的基本变量[24]；Hamber（2009）综述格点引力的路径积分方法[25]；Bahr 与 Dittrich（2009）发展常曲率单纯形的改进方案[26]【文献确立】。</li>
+</ul>
+<hr />
+<h2 id="4-regge">4. 贝里曲率与 Regge 曲率的关联分析<a class="headerlink" href="#4-regge" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 共同数学骨架：联络—曲率—和乐【标准数学】<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>两类曲率由同一数学范畴支配，可逐条对应：</p>
+<p><strong>(1) Ambrose–Singer 定理</strong>：主丛的和乐群李代数由曲率生成——绕无穷小回路的和乐正比于“曲率 × 所围面积元”。贝里曲率：<span class="arithmatex">\(\gamma \approx \Omega\cdot\Delta S\)</span>（小回路）；Regge 曲率：绕铰链小回路的和乐旋转角 = <span class="arithmatex">\(\delta_h\)</span>。两者都以“闭合回路上平移的不可积性”定义曲率。</p>
+<p><strong>(2) Stokes 定理 / 曲率通量</strong>：贝里相位 = 回路所围曲面上贝里曲率通量；绕回路平移的净旋转 = 回路所围的总亏角。和乐均为“曲率 2-形式的环路积分对应曲面通量”的实例。</p>
+<p><strong>(3) 曲率测度 → 拓扑不变量</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">贝里曲率【文献确立】[5][7]</th>
+<th style="text-align: left;">Regge 曲率【标准数学】</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">积分定理</td>
+<td style="text-align: left;"><span class="arithmatex">\(C = \frac{1}{2\pi}\int_{\text{BZ}}\Omega\,d^2k \in \mathbb{Z}\)</span>（陈数，TKNN）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\sum_v \delta_v = 2\pi\chi(S)\)</span>（离散 Gauss–Bonnet，欧拉示性数）</td>
+</tr>
+<tr>
+<td style="text-align: left;">上同调根源</td>
+<td style="text-align: left;">第一陈类（Chern–Weil 理论：示性类 = 曲率形式的德拉姆上同调类）</td>
+<td style="text-align: left;">同为 Gauss–Bonnet–Chern 定理的离散实现</td>
+</tr>
+</tbody>
+</table>
+<p>两者都是“曲率积分给出拓扑不变量”的一般原理（Chern–Weil 理论）的实例。</p>
+<p><strong>(4) 非阿贝尔推广</strong>：Wilczek–Zee 非阿贝尔贝里曲率 <span class="arithmatex">\(F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}\)</span>【文献确立】[3] 与本框架伴丛曲率 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span>（<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3）公式同型；Wilson 环 <span class="arithmatex">\(W = \mathcal{P}\exp(i\oint\mathcal{A})\)</span> 与本框架和乐 <span class="arithmatex">\(W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)\)</span>（§3.1）同型。</p>
+<h3 id="42">4.2 逐维结构对照表<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对照维度</th>
+<th style="text-align: left;">贝里曲率</th>
+<th style="text-align: left;">Regge 曲率（含本框架实现）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">基底流形</td>
+<td style="text-align: left;">参数流形（动量空间布里渊区环面，或哈密顿量参数空间）——<strong>非物理时空</strong></td>
+<td style="text-align: left;">物理时空 / 底空间本身（本框架：物质晶胞分布的三角剖分 <span class="arithmatex">\(M_\ell\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">丛结构</td>
+<td style="text-align: left;">厄米线丛（非简并能带）；简并时厄米向量丛（非阿贝尔）[2][3]</td>
+<td style="text-align: left;">标架丛 / 切丛的离散联络；本框架：层级结构群主丛 <span class="arithmatex">\(P(M_\ell, G_\ell)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">联络</td>
+<td style="text-align: left;">贝里联络 <span class="arithmatex">\(\mathcal{A}_n = i\langle u_n\vert\nabla u_n\rangle\)</span>[1][7]</td>
+<td style="text-align: left;">分段平直联络（每单纯形内平凡）；本框架：层级联络 <span class="arithmatex">\(\mathcal{A}_\ell\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">曲率对象</td>
+<td style="text-align: left;">光滑 2-形式 <span class="arithmatex">\(\Omega = \nabla\times\mathcal{A}\)</span>（外尔点处为单极子奇异源）[7][9]</td>
+<td style="text-align: left;">集中于共维 2 铰链的曲率<strong>测度</strong>（亏角 <span class="arithmatex">\(\delta_h\)</span>）[21]</td>
+</tr>
+<tr>
+<td style="text-align: left;">和乐</td>
+<td style="text-align: left;">贝里相位 <span class="arithmatex">\(\gamma = \oint\mathcal{A} = \iint\Omega\)</span>（Wilson 环）[1][2]</td>
+<td style="text-align: left;">绕铰链回路平移 = 亏角旋转[23][24]；本框架：<span class="arithmatex">\(W_v = \exp(i\delta_v\hat{T}_\ell)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">曲率积分 → 拓扑</td>
+<td style="text-align: left;">陈数（TKNN 电导量子化）[5]</td>
+<td style="text-align: left;">二维 Gauss–Bonnet（欧拉示性数）【标准数学】</td>
+</tr>
+<tr>
+<td style="text-align: left;">极限 / 稳定性</td>
+<td style="text-align: left;">陈数在能带形变下不变（拓扑稳定）[5]</td>
+<td style="text-align: left;">Cheeger–Müller–Schrader：加细极限下曲率测度收敛到光滑曲率[22]</td>
+</tr>
+<tr>
+<td style="text-align: left;">作用量</td>
+<td style="text-align: left;">无标准作用量；进入输运响应（反常霍尔电导、极化、轨道磁化）[7][8][16]</td>
+<td style="text-align: left;">Regge 作用量 <span class="arithmatex">\(S_R = \frac{1}{8\pi G}\sum_h A_h\delta_h\)</span> → Einstein–Regge 方程[21]</td>
+</tr>
+<tr>
+<td style="text-align: left;">可观测（本框架语境）</td>
+<td style="text-align: left;">（外部输入）密度泛函理论贝里曲率[18][20]</td>
+<td style="text-align: left;">固有时流速、不确定性关系、声子谱、转变温度 <span class="arithmatex">\(T_c\)</span> 链</td>
+</tr>
+<tr>
+<td style="text-align: left;">曲率来源</td>
+<td style="text-align: left;">量子态空间（投影希尔伯特空间）几何对参数空间的投影[1][2][4]</td>
+<td style="text-align: left;">物理空间自身几何 / 本框架：物质组织形态的内禀不均匀性（角亏 = 组织缺陷度量）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 已确立的物理交叉<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<h4 id="431">4.3.1 锥形时空与亏角和乐：确定的交点<a class="headerlink" href="#431" title="Permanent link">&para;</a></h4>
+<p>无限长直宇宙弦的外部时空局部平直但整体锥形，亏角 <span class="arithmatex">\(\delta = 8\pi G\mu\)</span>（<span class="arithmatex">\(\mu\)</span> 为弦线能量密度）【文献确立】[27][28]。绕弦一周的平行移动 = 亏角 <span class="arithmatex">\(\delta\)</span> 的旋转——<strong>锥形时空和乐与单铰链 Regge 几何在数学上同构</strong>：一个宇宙弦就是连续时空中的“一根铰链”。van de Meent（2013）证明无质量宇宙弦的几何由绕锥形奇点的回路和乐完全确定[28]【文献确立】。't Hooft（2008）的“局部有限引力模型”以直线弦源构造分段平直时空，结构上即 Regge 型几何[29]【文献确立】。</p>
+<p><strong>关联要点</strong>：锥形时空的和乐 <span class="arithmatex">\(\exp(i\delta\times\text{旋转生成元})\)</span> 与贝里相位 <span class="arithmatex">\(\exp(i\gamma)\)</span> 同为“闭合回路上的角度指数化”。这是贝里相位与亏角在物理对象上的确定交汇，无需任何构造假设。</p>
+<h4 id="432-aharonovbohm">4.3.2 引力场中的贝里相位与引力 Aharonov–Bohm 效应<a class="headerlink" href="#432-aharonovbohm" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Overstreet–Asenbaum–Curti–Kim–Kasevich（2022）在《科学》报道引力 Aharonov–Bohm 效应的观测：原子干涉仪两臂通过引力势不同但时空曲率为零的区域，测得非零且不可归约为偏折效应的相位差[30]【文献确立】。这确立了“引力几何信息以相位（而非力）形式进入量子力学”的实验事实。</li>
+<li>中子自旋–转动耦合的贝里相位提案：地球自转频率涨落可经中子自旋的贝里拓扑相位探测[36]【文献确立，理论提案】。</li>
+</ul>
+<h4 id="433">4.3.3 涌现时空纲领：贝里几何作为时空的候选来源<a class="headerlink" href="#433" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Volovik（《氦滴中的宇宙》2003）系统论证：相对论不变性与规范结构可在量子液体中作为<strong>涌现</strong>现象出现，准粒子的贝里相位结构是涌现规范场的微观来源[31]；第二类外尔半金属中倾斜外尔锥可实现事件视界与霍金辐射的类比（Volovik 2016）[32]【文献确立】。</li>
+<li>Gao–Yang–Niu（2014）：贝里曲率修正后的布洛赫电子相空间具有非对易几何结构，半经典动力学可等效地用修改的相空间度规描述[33]【文献确立】。</li>
+<li>Copinger–Morales（2022）：从动量空间贝里相位出发构造与电磁场耦合的动力学规范场，得到“贝里启发的涌现时空”[34]【文献确立，属探索性文献】。</li>
+</ul>
+<p><strong>性质判断</strong>：涌现时空纲领是“把时空几何还原为量子态几何（贝里型结构）”的系统性研究纲领，方向上与本框架“物质自组织同步展开为时空”的存在论立场同向，但该纲领自身仍属探索阶段，未确立为物理。</p>
+<h4 id="434">4.3.4 最接近的直接文献<a class="headerlink" href="#434" title="Permanent link">&para;</a></h4>
+<p>Binder（2002，预印本）讨论锥形度规的 Aharonov–Bohm 亏角与贝里相位的相互作用（粒子在锥面上的量子力学中两者互相修正以恢复单值性）[35]【文献确立，预印本级】。这是检索到的唯一同时显式处理“亏角 ↔ 贝里相位”的工作，但未涉及 Regge 微积分或离散引力。</p>
+<h3 id="44">4.4 直接连接文献的缺失与关联的性质<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>以“Berry phase Regge calculus”、“Berry curvature discrete gravity”、“geometric phase lattice gravity”等检索式系统检索后，<strong>未找到直接建立贝里曲率与 Regge 微积分对应关系的文献</strong>。因此：</p>
+<ul>
+<li>贝里曲率与 Regge 曲率的关联是<strong>结构性的</strong>——共享 §4.1 的数学骨架（联络—曲率—和乐、曲率测度→拓扑不变量），这是范畴级严格事实；</li>
+<li>不是<strong>文献性的</strong>——不存在任何文献建立过两者的等式、映射或换算；§4.3 的交点（锥形时空）是间接交汇，非直接对应；</li>
+<li>任何把两者等同或换算的陈述（包括本框架内部的对接）都属构造性假设，必须如此标注。</li>
+</ul>
+<hr />
+<h2 id="5-cqm">5. 与 CQM 框架的对接<a class="headerlink" href="#5-cqm" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 项目既有表述清单（原文定位）<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">表述</th>
+<th style="text-align: left;">位置</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)\)</span>，和乐平庸化 = 稳定构型</td>
+<td style="text-align: left;"><code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3.1</td>
+<td style="text-align: left;">框架结构（数学上为 Wilson 环）</td>
+</tr>
+<tr>
+<td style="text-align: left;">一个联络生成两种曲率：Regge 角亏 + 伴丛曲率 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span></td>
+<td style="text-align: left;"><code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3</td>
+<td style="text-align: left;">框架结构</td>
+</tr>
+<tr>
+<td style="text-align: left;">“内禀角亏 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 无内部来源——当前只能引入外部 DFT 贝里曲率”</td>
+<td style="text-align: left;"><code>06 超导/CQM_超导_FG层级同步算符体系.md</code> §1.2</td>
+<td style="text-align: left;">【CQM 构造假设】（外部输入依赖）</td>
+</tr>
+<tr>
+<td style="text-align: left;">“DFT 贝里曲率是电子波函数在动量空间的几何相位——在 CQM 语言中它是伴丛和乐的某种唯象近似”</td>
+<td style="text-align: left;">同上 §9.3</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+</tr>
+<tr>
+<td style="text-align: left;">黎曼–西格尔相角 <span class="arithmatex">\(\theta(t)\)</span> = “同步基态的贝里相位”</td>
+<td style="text-align: left;"><code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §3.7</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+</tr>
+<tr>
+<td style="text-align: left;">和乐 = 共形场论单值性（monodromy），<span class="arithmatex">\(h_{\text{conf}} = \delta_v\lambda_k/2\pi\)</span>（<span class="arithmatex">\(\lambda_k\)</span> 为结构群生成元 <span class="arithmatex">\(\hat{T}\)</span> 的本征值，非 Coxeter 数）</td>
+<td style="text-align: left;"><code>07 精细引力（FG）/FG_纤维丛理论.md</code> §9.4</td>
+<td style="text-align: left;">【CQM 构造假设】（映射构造）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(R_{\text{eff}} = 2\delta_v/A_{\text{dual}}\)</span>（亏角 → 有效里奇标量）</td>
+<td style="text-align: left;"><code>BridgeTheorems.lean</code></td>
+<td style="text-align: left;">二维 Regge 曲率密度的标准关系【标准数学】</td>
+</tr>
+<tr>
+<td style="text-align: left;">Regge 底空间几何指定自守形式</td>
+<td style="text-align: left;">项目全局共识</td>
+<td style="text-align: left;">【CQM 构造假设】</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 严格数学同构层面【标准数学】<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>无需任何物理假设即可陈述的同构：</p>
+<ol>
+<li><strong>Wilson 环同构</strong>：<span class="arithmatex">\(W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)\)</span> 是主丛 <span class="arithmatex">\(P(M_\ell, G_\ell)\)</span> 上离散联络的和乐；贝里相位 / 非阿贝尔贝里和乐是厄米（向量）丛上贝里联络的和乐。两者是同一数学对象（Wilson 环）在不同底空间与结构群上的实例。若把层级联络 <span class="arithmatex">\(\mathcal{A}_\ell\)</span> 形式地视为某参数流形上的贝里联络，则 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span> 恰是 Wilczek–Zee 非阿贝尔贝里曲率[3]。</li>
+<li><strong>曲率测度—拓扑同构</strong>：二维底空间角亏满足 <span class="arithmatex">\(\sum_v\delta_v = 2\pi\chi\)</span>（离散 Gauss–Bonnet）【标准数学】，与布里渊区陈数 <span class="arithmatex">\(C = \frac{1}{2\pi}\int\Omega\)</span>[5] 同为 Chern–Weil 型“曲率积分 = 拓扑不变量”。</li>
+<li><strong>锥形和乐同构</strong>：单铰链 Regge 几何 ≅ 锥形时空（宇宙弦）[27][28]；锥形和乐与贝里相位同为闭合回路上的角度指数化（§4.3.1）。</li>
+</ol>
+<h3 id="53-cqm-cqm">5.3 CQM 构造假设层面【CQM 构造假设】<a class="headerlink" href="#53-cqm-cqm" title="Permanent link">&para;</a></h3>
+<p>文献调研表明以下对接<strong>无文献对应</strong>，属框架构造，须标注：</p>
+<ol>
+<li><strong>“密度泛函理论贝里曲率 = 伴丛和乐的唯象近似”（§9.3）</strong>：文献分析显示两者测的是<strong>不同空间的几何数据</strong>——密度泛函理论贝里曲率是动量空间（布里渊区）能带几何[7][18]；<span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 是实空间分子几何偏离理想杂化几何的球面角亏（<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> §1.2 诊断）。“动量空间带几何 ↔ 实空间组织几何”的等同性是构造假设，文献既未建立也未否定。该假设在数学范畴上自洽（同为曲率—和乐结构），但跨空间映射本身无先例。</li>
+<li><strong>“黎曼–西格尔相角 = 同步基态贝里相位”（§3.7）</strong>：<span class="arithmatex">\(\theta(t)\)</span> 是 <span class="arithmatex">\(\zeta(1/2+it)\)</span> 的辐角（<span class="arithmatex">\(\zeta\)</span> 的相位），将其读作贝里相位是框架构造。相容的历史谱系见 §5.5，但无文献直接支持该读法。</li>
+<li><strong>“和乐 = 共形单值性”（§9.4）</strong>：纤维丛和乐本征值与共形块 monodromy 本征值的映射是框架构造（该文档自身的定位即是“建立严格定量映射，消除缺口”的目标陈述）。</li>
+</ol>
+<h3 id="54-delta_textintrinsic">5.4 文献对 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 断链的启示<a class="headerlink" href="#54-delta_textintrinsic" title="Permanent link">&para;</a></h3>
+<p>超导第一性链的断点（§1.2）：</p>
+<div class="arithmatex">\[\text{材料结构} \xrightarrow{\text{Regge几何}} \delta_v \xrightarrow{\text{?}} \Delta\delta_0^{\text{eff}} \xrightarrow{\theta_D} T_c\]</div>
+<p>文献给出三条对照：</p>
+<ol>
+<li><strong>几何信息控制超导转变温度有确立先例</strong>：平带超导文献簇（§2.4）证明超流刚度与转变温度由量子几何（量子度规的布里渊区积分）决定[10][11][12][14][15]——“能带色散之外的几何信息进入超导”这一纲领性立场与本框架“Regge 几何 → 角亏 → <span class="arithmatex">\(T_c\)</span>”链条<strong>方向一致</strong>。</li>
+<li><strong>但几何量的类型不同</strong>：文献中控制超导的是量子几何张量的<strong>对称部分（量子度规）</strong>，而非贝里曲率（反对称部分）[10][14]。这提示：若 CQM 框架内“贝里曲率 ↔ 内禀角亏”的构造对应成立，则需检验所缺的内部信息是否更接近“度规型”而非“曲率型”——即分子层级同步算符应编码的可能是完整量子几何张量型的信息。这与 §1.2 自身的诊断（“中间的分子层级只有嘉当矩阵而没有同步算符”）相容：断链缺的是层级化的几何信息载体，不单是曲率数据。</li>
+<li><strong>外部输入的可操作性与临时性</strong>：万尼尔（Wannier）插值计算密度泛函理论贝里曲率是标准成熟流程[18][20]，“外部输入”在计算上无障碍；但按 §9.3 的框架定位，该输入最终应被分子 FG 同步算符谱的内部来源替代——文献现状（无动量空间 ↔ 实空间组织几何的映射先例）意味着替代机制必须在框架内构造，无法从文献移植。</li>
+</ol>
+<h3 id="55-m-v-berry">5.5 历史注记：M. V. Berry 的双重线索<a class="headerlink" href="#55-m-v-berry" title="Permanent link">&para;</a></h3>
+<p>本框架中已有的贝里线索（Berry–Keating 对应 <span class="arithmatex">\(\hat{H}_{BK} = \frac{1}{2}(x\hat{p}+\hat{p}x)\)</span>，GL(1) 层谱结构，<code>05 方法论与批判/CQM_方法论_HilbertPolya批判.md</code> §2.1 等）与调研的贝里曲率<strong>同出于一人</strong>（同出 Berry 之手）：M. V. Berry 既是 1984 年几何相位论文的作者[1]，也是“黎曼 zeta 函数：量子混沌模型”（1986）[37]、黎曼零点数方差半经典公式（1988）[37]与 Berry–Keating 算符（1999）[38]的作者。两条线索在文献史中本就交汇于量子混沌与谱理论（黎曼零点的 GUE 统计 ↔ 量子混沌能级）[37]【文献确立】。因此框架同时使用贝里的两条工作线索不是巧合拼接，而是同一作者研究纲领的两翼；<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §3.7 把黎曼–西格尔相角读作贝里相位，与这一谱系相容（该读法本身仍属构造假设）。</p>
+<h3 id="56">5.6 曲率角色的分工与本源判定<a class="headerlink" href="#56" title="Permanent link">&para;</a></h3>
+<p>针对“体系应使用哪种曲率”的问题，本节给出分析：<strong>框架不需要在两类曲率之间选择——两者本就是同一联络上的分工结构，且关系是严格的</strong>。</p>
+<h4 id="561">5.6.1 分工结构：度量形式与响应形式<a class="headerlink" href="#561" title="Permanent link">&para;</a></h4>
+<p>FG“一个联络生成两种曲率”（<code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3）不是冗余设计，而是度量—响应分工（存在论层级分析见 §5.6.3）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Regge 角亏 <span class="arithmatex">\(\delta_v\)</span></th>
+<th style="text-align: left;">伴丛曲率 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">角色</td>
+<td style="text-align: left;"><strong>底空间曲率（度量形式，发生学入口）</strong>：物质组织内禀不均匀性的几何度量，联络由它生成</td>
+<td style="text-align: left;"><strong>响应曲率（动力学）</strong>：进入运动方程 <span class="arithmatex">\(D\star F = \star J_\Phi\)</span>，按规范场规则独立演化</td>
+</tr>
+<tr>
+<td style="text-align: left;">挂载的可观测</td>
+<td style="text-align: left;">不确定性关系、固有时流速、声子谱、<span class="arithmatex">\(T_c\)</span> 链</td>
+<td style="text-align: left;">同步场强、物质流耦合</td>
+</tr>
+</tbody>
+</table>
+<h4 id="562">5.6.2 关联的严格性：和乐作为焊点<a class="headerlink" href="#562" title="Permanent link">&para;</a></h4>
+<p>两类曲率由和乐焊接【标准数学】：</p>
+<div class="arithmatex">\[W_v^{(\ell)} = \exp(i\delta_v^{(\ell)}\hat{T}_\ell)\]</div>
+<p><span class="arithmatex">\(\delta_v\)</span> 提供角度（底空间几何数据），<span class="arithmatex">\(\hat{T}_\ell\)</span> 提供生成元（纤维上的表示数据），指数化即 Wilson 环。伴丛曲率 <span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span> 与 Wilczek–Zee 非阿贝尔贝里曲率[3]公式完全同型（§4.1、§5.2）。严格陈述：<strong>框架的伴丛曲率本身就是非阿贝尔贝里型曲率的实例，Regge 角亏是同一联络在底空间上的和乐角度</strong>。因此体系的正确使用方式是同时使用两者：Regge 角亏做发生学入口（联络由它生成），贝里型做响应（按规范场规则独立演化）——两者的存在论层级区分见 §5.6.3。</p>
+<h4 id="563-cqm">5.6.3 三层本体结构：承担者、度量形式与响应形式【CQM 框架立场】<a class="headerlink" href="#563-cqm" title="Permanent link">&para;</a></h4>
+<p>以三层本体结构替代“本源 vs 派生”的粗糙二分：<strong>Regge 曲率不是时空曲率</strong>——时空曲率是 GR 的 <span class="arithmatex">\(R^\rho_{\sigma\mu\nu}\)</span>，由 <span class="arithmatex">\(G_N\)</span> 标定、基本时标 <span class="arithmatex">\(\sim 10^{-43}\)</span> s；Regge 角亏度量的是<strong>物质自组织空间形态</strong>的内禀不均匀性，量级 <span class="arithmatex">\(O(1)\)</span>、不受 <span class="arithmatex">\(G_N\)</span> 重组（<code>01 核心理论/CQM_核心_引力存在论前提.md</code> §3.2–§3.3）。</p>
+<p>框架原文的定位支持进一步的层级区分（<code>01 核心理论/CQM_核心_引力存在论前提.md</code> §3.3、§7、§8）：</p>
+<ul>
+<li>“<strong>底空间是物质自组织的空间形态本身</strong>”（§3.3）；</li>
+<li>“<strong>角亏是物质组织形态的缺陷度量</strong>。源的位置是内禀的：<strong>源即底空间自身的结构</strong>”（§3.3）；</li>
+<li>“<strong>物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同</strong>”（§8）。</li>
+</ul>
+<p>由此得到三层本体结构：</p>
+<div class="arithmatex">\[\underbrace{\text{物质自组织的因果结构}}_{\text{承担者（本体）}} \;\xrightarrow{\text{几何度量}}\; \underbrace{\delta_v}_{\text{度量形式}} \;\xrightarrow{\text{生成}}\; \underbrace{\mathcal{A}_{\text{FG}} \to F_\ell}_{\text{响应形式（贝里型）}} \;\rightarrow\; \underbrace{v_\tau,\ \Delta u\cdot\Delta\delta_v,\ \text{声子谱},\ T_c}_{\text{表现}}\]</div>
+<ul>
+<li><strong>承担者（本体）</strong>：物质自组织的因果结构——“源即底空间自身的结构”。固有时流速的承担者正是它：<code>CouplingSpace.lean</code> 的原话是“因果限制越强（<span class="arithmatex">\(\delta\)</span> 越大）固有时被压扁越甚，<span class="arithmatex">\(v_\tau\to 0\)</span>（<strong>与黑洞冻结一致</strong>）”——压缩固有时的承担者是因果条件结构本身，<span class="arithmatex">\(\delta_v\)</span> 只是其几何度量，<span class="arithmatex">\(v_\tau=\sqrt{1-\beta\delta_v}\)</span> 是从度量到表现的定律。黑洞冻结一致性恰好佐证承担者是因果结构而非其几何描述。</li>
+<li><strong>度量形式</strong>：Regge 角亏 <span class="arithmatex">\(\delta_v\)</span>——本体的几何映射（“物质晶胞是本体，Regge 晶胞是其几何映射”），同时是<strong>发生学入口</strong>：联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span> 由 Regge 曲率生成（§3.3 双曲率结构）。Regge 曲率是“表现”（本体的几何表现）与“入口”（响应的生成源）的双重角色，而不是存在论终点。</li>
+<li><strong>响应形式（贝里型）</strong>：<span class="arithmatex">\(F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell\wedge\mathcal{A}_\ell\)</span>——由度量形式生成、按规范场规则独立演化的动力学结构。</li>
+</ul>
+<p><strong>本源判定</strong>：本源既非 Regge 曲率也非贝里型曲率，而是物质自组织的因果结构；两类曲率都是“形式”——对比不是“本源 vs 派生”，而是“度量形式 vs 响应形式”。这一判定使“一个联络生成两种曲率”的结构获得清晰解释：<strong>联络正是度量形式与响应形式相遇的枢纽</strong>。涌现时空纲领（Volovik 等[31][34]）取相反方向（把时空几何还原为量子态几何）——两条路线方向对冲；CQM 的取向是存在论选择，不是文献裁决，此处如实标注。</p>
+<h4 id="564-meadtruhlar">5.6.4 Mead–Truhlar 构型空间机制：贝里相位反作用实空间几何的文献先例<a class="headerlink" href="#564-meadtruhlar" title="Permanent link">&para;</a></h4>
+<p>分子物理中存在“贝里相位反作用于实空间几何”的确立机制【文献确立】：</p>
+<ul>
+<li>Herzberg 与 Longuet-Higgins（1963）发现：绕核构型空间中的锥形交叉（conical intersection）一周，绝热电子波函数累积 <span class="arithmatex">\(\pi\)</span> 相位[39]。</li>
+<li>Mead 与 Truhlar（1979）证明：为保持总波函数单值性，核运动薛定谔方程必须引入一个矢量势——几何相位以确定的矢量势形式反作用于实空间分子几何（分子 Aharonov–Bohm 效应）[40]。</li>
+</ul>
+<p><strong>对框架的意义</strong>：核构型空间正是 Regge 剖分三角化的对象（分子层级底空间 <span class="arithmatex">\(M_{\text{mol}}\)</span>）——Mead–Truhlar 机制是“构型空间贝里相位 → 修正实空间几何”的文献先例，方向与 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 的内部来源需求一致。但先例方向一致不等于映射已建立，此处对应关系属【CQM 构造假设】。</p>
+<p><strong>关键区分</strong>：Mead–Truhlar 机制处理的是<strong>构型空间</strong>贝里结构，不是当前外部输入的<strong>动量空间</strong>密度泛函理论贝里曲率[18]。后者与实空间组织几何的映射无文献先例（§5.3）；前者到实空间几何的反作用有确立机制。这提示 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 的对口候选更可能是<strong>分子构型空间上的贝里/和乐结构</strong>，而非动量空间能带几何。</p>
+<h4 id="565">5.6.5 三层结构下的解读：响应形式向度量形式的回流<a class="headerlink" href="#565" title="Permanent link">&para;</a></h4>
+<p>§5.6.3 的三层结构（承担者 → 度量形式 → 响应形式 → 表现）使 Mead–Truhlar 先例的定位更精确：它是<strong>响应形式反作用于度量形式</strong>的文献实例——电子波函数的贝里相位（响应形式，量子态几何）经矢量势修正核运动方程，从而反作用到实空间分子几何（度量形式所在的构型空间）。文献中该回路的完成依赖量子态与核几何的 Born–Oppenheimer 耦合[40]；对 CQM 而言，对应的耦合枢纽正是“一个联络生成两种曲率”的联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span>。</p>
+<p><strong>候选机制（构造性研究假设，非文献结论）</strong>：<span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 的内部来源可能不是度量形式内部的额外结构，而是<strong>响应形式向度量形式的回流</strong>——分子层级伴丛曲率 <span class="arithmatex">\(F_{\text{mol}}\)</span> 的和乐经联络反馈进底空间角亏，使 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 成为框架内可从谱结构读出的量。该机制与 §1.2 的断链诊断相容（缺的是分子 FG 同步算符，即承载该回流的层级化谱载体）；其成立与否是开放问题 1 的检验对象，此处仅作为假设记录。</p>
+<hr />
+<h2 id="6">6. 结论<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ol>
+<li>贝里曲率与 Regge 曲率共享严格的数学骨架：联络—曲率—和乐三位一体（Ambrose–Singer 定理）、曲率通量 = 环路和乐（Stokes 定理）、曲率测度积分 = 拓扑不变量（陈数 / 离散 Gauss–Bonnet）【标准数学】。</li>
+<li>两者的确定物理交点是锥形时空（宇宙弦亏角和乐 ≅ 单铰链 Regge 几何）；引力 Aharonov–Bohm 效应（2022 实验观测）确立引力几何以相位形式进入量子力学【文献确立】。</li>
+<li><strong>不存在直接连接两类曲率的文献</strong>；涌现时空纲领（Volovik 等）是最接近的系统性纲领，但属探索阶段。两者的关联是结构性的，不是文献性的。</li>
+<li>本框架的伴丛和乐 <span class="arithmatex">\(W_v = \exp(i\delta_v\hat{T}_\ell)\)</span> 与贝里和乐同属 Wilson 环范畴【标准数学】；“密度泛函理论贝里曲率 = 伴丛和乐唯象近似”与“<span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 外部输入”是【CQM 构造假设】，其跨空间（动量空间 ↔ 实空间）映射无文献先例。存在论层级上（§5.6.3）：本源是物质自组织的因果结构，Regge 角亏是其度量形式（兼发生学入口），伴丛曲率是响应形式——“一个联络生成两种曲率”的联络正是两种形式相遇的枢纽。</li>
+<li>量子几何 × 平带超导文献（转变温度由量子度规决定）为 <span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 断链给出方向一致的文献对照，并提示缺失的内部信息可能是量子几何张量完整结构（度规 + 曲率）而非单独贝里曲率——这是框架内可研究的问题。</li>
+</ol>
+<hr />
+<h2 id="7">7. 开放问题（记录备查）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 的内部来源是否可由<strong>分子构型空间</strong>的贝里/和乐结构给出：绕锥形交叉类简并点的 Mead–Truhlar 型和乐[39][40]能否在分子 FG 层级谱中表现为内禀角亏的谱贡献？具体候选机制是<strong>响应形式向度量形式的回流</strong>（§5.6.5）：分子层级伴丛和乐经联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span> 反馈进底空间角亏——文献先例确立的是反作用方向[40]，回流机制的构造与检验属框架内研究。</li>
+<li>若问题 1 成立，动量空间外部输入（密度泛函理论贝里曲率[18]）是应被构型空间内部来源<strong>替代</strong>，还是与后者<strong>互补</strong>？——即 §9.3“伴丛和乐唯象近似”定位（<code>06 超导/CQM_超导_FG层级同步算符体系.md</code>）的两种可能结局，何者成立？</li>
+<li>锥形时空和乐 ↔ Regge 铰链 ↔ 贝里相位的三角对应能否在本框架层级结构（元素 / 分子 / 晶胞 FG）中严格化？</li>
+<li>黎曼–西格尔相角 <span class="arithmatex">\(\theta(t)\)</span> 作为贝里相位的构造读法，能否通过与 Berry 量子混沌谱系[37]的显式对接（零点数方差、周期轨道展开）获得更严格的表述？</li>
+<li>二维 Gauss–Bonnet（角亏总和 = 欧拉示性数）与陈数（贝里曲率积分）的平行，是否可在“Regge 底空间几何指定自守形式”的构造链中用作拓扑条件的一致性检验？</li>
+</ol>
+<hr />
+<h2 id="_2">参考文献<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>贝里曲率基础与能带物理</strong></p>
+<p>[1] M. V. Berry, “Quantal phase factors accompanying adiabatic changes”, <em>Proc. R. Soc. Lond. A</em> <strong>392</strong>, 45–57 (1984). https://royalsocietypublishing.org/doi/10.1098/rspa.1984.0023
+[2] B. Simon, “Holonomy, the quantum adiabatic theorem, and Berry's phase”, <em>Phys. Rev. Lett.</em> <strong>51</strong>, 2167–2170 (1983). https://doi.org/10.1103/PhysRevLett.51.2167
+[3] F. Wilczek, A. Zee, “Appearance of Gauge Structure in Simple Dynamical Systems”, <em>Phys. Rev. Lett.</em> <strong>52</strong>, 2111–2114 (1984). https://doi.org/10.1103/PhysRevLett.52.2111
+[4] J.-P. Provost, G. Vallee, “Riemannian structure on manifolds of quantum states”, <em>Commun. Math. Phys.</em> <strong>76</strong>, 289 (1980).
+[5] D. J. Thouless, M. Kohmoto, M. P. Nightingale, M. den Nijs, “Quantized Hall conductance in a two-dimensional periodic potential”, <em>Phys. Rev. Lett.</em> <strong>49</strong>, 405–408 (1982). https://ui.adsabs.harvard.edu/abs/1982PhRvL..49..405T/abstract
+[6] R. Karplus, J. M. Luttinger, “Hall Effect in Ferromagnetics”, <em>Phys. Rev.</em> <strong>95</strong>, 1154 (1954).
+[7] D. Xiao, M.-C. Chang, Q. Niu, “Berry phase effects on electronic properties”, <em>Rev. Mod. Phys.</em> <strong>82</strong>, 1959 (2010). https://ui.adsabs.harvard.edu/abs/2010RvMP...82.1959X/abstract
+[8] N. Nagaosa, J. Sinova, S. Onoda, A. H. MacDonald, N. P. Ong, “Anomalous Hall effect”, <em>Rev. Mod. Phys.</em> <strong>82</strong>, 1539 (2010). https://ui.adsabs.harvard.edu/abs/2010RvMP...82.1539N/abstract （arXiv:0904.4154）
+[9] X. Wan, A. M. Turner, A. Vishwanath, S. Y. Savrasov, “Topological semimetal and Fermi-arc surface states in the electronic structure of pyrochlore iridates”, <em>Phys. Rev. B</em> <strong>83</strong>, 205101 (2011).</p>
+<p><strong>量子几何与超导电性</strong></p>
+<p>[10] S. Peotta, P. Törmä, “Superfluidity in topologically nontrivial flat bands”, <em>Nat. Commun.</em> <strong>6</strong>, 8944 (2015). https://arxiv.org/abs/1506.02815
+[11] A. Julku, S. Peotta, T. I. Vanhala, D.-H. Kim, P. Törmä, “Geometric origin of superfluidity in the Lieb lattice flat band”, <em>Phys. Rev. Lett.</em> <strong>117</strong>, 045303 (2016). https://arxiv.org/abs/1603.03237
+[12] L. Liang et al., “Band geometry, Berry curvature and superfluid weight”, <em>Phys. Rev. B</em> <strong>95</strong>, 024515 (2017). https://doi.org/10.1103/PhysRevB.95.024515
+[13] X. Hu, T. Hyart, D. I. Pikulin, E. Rossi, “Geometric and conventional contribution to the superfluid weight in twisted bilayer graphene”, <em>Phys. Rev. Lett.</em> <strong>123</strong>, 237002 (2019). https://doi.org/10.1103/PhysRevLett.123.237002
+[14] P. Törmä, S. Peotta, B. A. Bernevig, “Superconductivity, superfluidity and quantum geometry in twisted multilayer systems”, <em>Nat. Rev. Phys.</em> <strong>4</strong>, 528–542 (2022). https://doi.org/10.1038/s42254-022-00466-y
+[15] H. Tian et al., “Evidence for Dirac flat band superconductivity enabled by quantum geometry”, <em>Nature</em> <strong>614</strong>, 440–444 (2023). https://doi.org/10.1038/s41586-022-05576-2</p>
+<p><strong>第一性原理计算方法</strong></p>
+<p>[16] R. D. King-Smith, D. Vanderbilt, “Theory of polarization of crystalline solids”, <em>Phys. Rev. B</em> <strong>47</strong>, 1651 (1993). https://doi.org/10.1103/PhysRevB.47.1651
+[17] N. Marzari, D. Vanderbilt, “Maximally localized generalized Wannier functions for composite energy bands”, <em>Phys. Rev. B</em> <strong>56</strong>, 12847 (1997). https://doi.org/10.1103/PhysRevB.56.12847
+[18] N. Marzari, A. A. Mostofi, J. R. Yates, I. Souza, D. Vanderbilt, “Maximally localized Wannier functions: Theory and applications”, <em>Rev. Mod. Phys.</em> <strong>84</strong>, 1419 (2012). https://doi.org/10.1103/RevModPhys.84.1419
+[19] Y. Yao et al., “First principles calculation of anomalous Hall conductivity in ferromagnetic bcc Fe”, <em>Phys. Rev. Lett.</em> <strong>92</strong>, 037204 (2004). https://doi.org/10.1103/PhysRevLett.92.037204
+[20] X. Wang, J. R. Yates, I. Souza, D. Vanderbilt, “Ab initio calculation of the anomalous Hall conductivity by Wannier interpolation”, <em>Phys. Rev. B</em> <strong>74</strong>, 195118 (2006). https://arxiv.org/abs/cond-mat/0608257</p>
+<p><strong>Regge 微积分与离散引力</strong></p>
+<p>[21] T. Regge, “General relativity without coordinates”, <em>Nuovo Cim.</em> <strong>19</strong>, 558 (1961). https://www.osti.gov/biblio/4028412
+[22] J. Cheeger, W. Müller, R. Schrader, “On the curvature of piecewise flat spaces”, <em>Commun. Math. Phys.</em> <strong>92</strong>, 405–454 (1984).
+[23] T. Regge, R. M. Williams, “Discrete structures in gravity”, <em>J. Math. Phys.</em> <strong>41</strong>, 3964 (2000). https://arxiv.org/abs/gr-qc/0012035
+[24] J. W. Barrett, D. Oriti, R. M. Williams, “Tullio Regge's legacy: Regge calculus and discrete gravity”, arXiv:1812.06193 (2019). https://arxiv.org/abs/1812.06193
+[25] H. W. Hamber, <em>Quantum Gravitation — The Feynman Path Integral Approach</em> (Springer, 2009)；“Quantum Gravity on the Lattice”, <em>Gen. Relativ. Gravit.</em> <strong>41</strong>, 817–876 (2009). https://arxiv.org/abs/0901.0964
+[26] B. Bahr, B. Dittrich, “Regge calculus from a new angle”, arXiv:0907.4325 (2009). https://arxiv.org/abs/0907.4325</p>
+<p><strong>引力场中的贝里相位、锥形时空与涌现时空</strong></p>
+<p>[27] A. Vilenkin, “Gravitational field of vacuum domain walls and strings”, <em>Phys. Rev. D</em> <strong>23</strong>, 852 (1981).
+[28] M. van de Meent, “The Geometry of massless cosmic strings”, arXiv:1211.4365 (2013). https://arxiv.org/abs/1211.4365
+[29] G. 't Hooft, “A locally finite model for gravity”, <em>Found. Phys.</em> <strong>38</strong>, 733 (2008). https://arxiv.org/abs/0804.0328
+[30] C. Overstreet, P. Asenbaum, J. Curti, M. Kim, M. A. Kasevich, “Observation of a gravitational Aharonov-Bohm effect”, <em>Science</em> <strong>375</strong>, 226–229 (2022). https://www.science.org/doi/10.1126/science.abl7152
+[31] G. E. Volovik, <em>The Universe in a Helium Droplet</em> (Oxford University Press, 2003). https://global.oup.com/academic/product/the-universe-in-a-helium-droplet-9780198507826
+[32] G. E. Volovik, “Black hole and Hawking radiation by type-II Weyl fermions”, <em>JETP Lett.</em> <strong>104</strong>, 645 (2016). arXiv:1610.00521
+[33] Y. Gao, S. A. Yang, Q. Niu, “Field induced positional shift of Bloch electrons and its dynamical implications”, <em>Phys. Rev. Lett.</em> <strong>112</strong>, 166601 (2014).
+[34] P. Copinger, P. Morales, “Emergent spacetime from a Berry-inspired dynamical gauge field coupled to electromagnetism”, arXiv:2211.14165 (2022). https://arxiv.org/abs/2211.14165
+[35] B. Binder, “Iterative Interplay between Aharonov-Bohm Deficit Angle and Berry Phase”, preprint (philsci-archive, 2002). https://philsci-archive.pitt.edu/810/
+[36] “Neutron-gravity interferometry experiment: testing Earth's rotating frequency fluctuations via neutron Berry's phases due to spin-rotation couplings”, arXiv:physics/0305108 (2003). https://arxiv.org/abs/physics/0305108</p>
+<p><strong>量子混沌与黎曼零点（历史谱系）</strong></p>
+<p>[37] M. V. Berry, “Riemann's Zeta function: A model for quantum chaos?”, in <em>Quantum Chaos and Statistical Nuclear Physics</em>, Lecture Notes in Physics vol. 263 (Springer, 1986)；M. V. Berry, “Semiclassical formula for the number variance of the Riemann zeros”, <em>Nonlinearity</em> <strong>1</strong>, 399 (1988). 综述来源：http://var.scholarpedia.org/article/Riemann_zeros_and_quantum_chaos
+[38] M. V. Berry, J. P. Keating, “The Riemann zeros and eigenvalue asymptotics”, <em>SIAM Rev.</em> <strong>41</strong>, 236 (1999).</p>
+<p><strong>分子几何相位（构型空间桥梁）</strong></p>
+<p>[39] G. Herzberg, H. C. Longuet-Higgins, “Intersection of potential energy surfaces in polyatomic molecules”, <em>Discuss. Faraday Soc.</em> <strong>35</strong>, 77 (1963).
+[40] C. A. Mead, D. G. Truhlar, “On the determination of Born-Oppenheimer nuclear motion wave functions including complications due to conical intersections and identical nuclei”, <em>J. Chem. Phys.</em> <strong>70</strong>, 2284 (1979).</p>
+<p><strong>框架内部文档（对接分析引用源）</strong></p>
+<ul>
+<li><code>07 精细引力（FG）/FG_纤维丛理论.md</code> §3（一个联络生成两种曲率）、§3.1（和乐）、§9.4（和乐 = 共形单值性）</li>
+<li><code>06 超导/CQM_超导_FG层级同步算符体系.md</code> §1.2（<span class="arithmatex">\(\delta_{\text{intrinsic}}\)</span> 断链诊断）、§9.3（与贝里曲率的方法论定位）</li>
+<li><code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §3.7（黎曼–西格尔公式 → 几何相位）</li>
+<li><code>01 核心理论/CQM_核心_引力存在论前提.md</code> §3.3–§3.4（Regge 角亏进入不确定性关系）</li>
+<li><code>08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean</code>（<span class="arithmatex">\(R_{\text{eff}} = 2\delta_v/A_{\text{dual}}\)</span> 桥接定理）</li>
+<li><code>08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/MolecularGeometry.lean</code>（reggeDeficitAngle 定义）</li>
+<li><code>05 方法论与批判/CQM_方法论_HilbertPolya批判.md</code> §2.1（Berry–Keating 对应）</li>
+</ul>
+<blockquote>
+<p><strong>调研记录说明</strong>：文献检索与核实于 2026-09-08 完成，采用多来源交叉验证（出版商官方页面 / arXiv / NASA 天体物理数据系统 / 引用数据库）。反常霍尔效应综述 [8] 的作者列表经直接核实为五作者（Nagaosa–Sinova–Onoda–MacDonald–Ong）。个别经典文献（[4][6][9][22][27][33][39][40]）未附直接网络链接，其书目信息经多个二级来源交叉确认。§5.6 与开放问题 1–2 的增补（含 [39][40] 的核实：Herzberg–Longuet-Higgins <span class="arithmatex">\(\pi\)</span> 相位发现与 Mead–Truhlar 矢量势机制的归属，经分子动力学几何相位综述与明尼苏达大学出版物页面确认）。§5.6.3 三层本体结构（承担者/度量形式/响应形式，依据 <code>01 核心理论/CQM_核心_引力存在论前提.md</code> §3.3、§7、§8 原文定位与 <code>CouplingSpace.lean</code> 黑洞冻结一致性注释）与 §5.6.5 回流候选机制。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Wyler常数 [D021]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Wyler常数 [D021]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 规范重组超导与SU5五重态 [D023]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                规范重组超导与SU5五重态 [D023]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/cqm-glossary.js"></script>
+      
+        <script src="assets/cqm-depth.js"></script>
+      
+        <script src="assets/cqm-enhance.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

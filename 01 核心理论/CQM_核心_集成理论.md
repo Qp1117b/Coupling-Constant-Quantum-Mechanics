@@ -394,7 +394,7 @@ $$\lambda_{\min}(q_c) = 2q_c, \qquad \lambda_c = 4q_c$$
 
 组装过程：
 
-$$\text{禁闭内部离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$
+$$\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$
 
 > CQM 的 4-单纯形**不是** $A_4$ 根系的 Weyl 室（$A_4$ 的 Weyl 室不是正单纯形，因为 Dynkin 图是链状，单根夹角有 120° 和 90°）。正四单纯形出现在 **SU(5) 基础表示 $\mathbf{5}$ 的权空间**中——5 个权向量 $\nu_1, ..., \nu_5$ 满足 $\sum_i \nu_i = 0$ 且两两内积相等，恰好构成正四单纯形的 5 个顶点。其对称群正是 $A_4$ 的 Weyl 群 $S_5$。
 
@@ -1170,7 +1170,7 @@ $$\text{先在规范群} \to \text{角亏涨落} \to \text{扇区耦合涨落} \
 
 ### 13.15 质数—群—黎曼猜想的统一链条
 
-$$\text{物质（质数前网络描述）} \xrightarrow{\text{基态伽罗瓦表示}} GL(5)\text{ 自守谱} \xrightarrow{\text{紧化（GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏涨落}} \text{结构群叠加态} \xrightarrow{\text{路径积分}} \text{主导超导群}$$
+$$\text{物质} \xrightarrow{\text{基态伽罗瓦表示}} GL(5)\text{ 自守谱} \xrightarrow{\text{紧化（GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏涨落}} \text{结构群叠加态} \xrightarrow{\text{路径积分}} \text{主导超导群}$$
 
 **分层要点**：基态同步是 SU(5)（GL(5) 自守形式经紧化算符投影）；黎曼猜想是 GL(5) 固定层级的实谱条件；**物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现**；$n > 5$ 层级不排除，但 GL(5) 主导物理谱。
 
@@ -1194,12 +1194,12 @@ $$\text{GL(5) 固定层级的零点猜想（GRH）} \iff \text{配对不变量 }
 
 ### 13.17 完整统一链条
 
-$$\text{物质（质数前网络描述）} \to \text{SU(5) 基态同步（GL(5) 紧化，GRH）} \to \text{ζ 零点谱（GL(1) 电磁因子层，黎曼猜想）} \to A_4 \text{ 有限化} \to \text{先在规范群} \to \text{结构群叠加态} \to \text{路径积分选择} \to \text{具体超导群}$$
+$$\text{物质} \to \text{SU(5) 基态同步（GL(5) 紧化，GRH）} \to \text{ζ 零点谱（GL(1) 电磁因子层，黎曼猜想）} \to A_4 \text{ 有限化} \to \text{先在规范群} \to \text{结构群叠加态} \to \text{路径积分选择} \to \text{具体超导群}$$
 
 CQM 由此统一了数论、群论、规范场论、凝聚态物理：
 - **对称性不是先验的**，是物质自组织的历史产物
 - **群不是上帝的设计图**，是物质运动的轨迹
-- **质数不是纯数学对象**，是前网络的不可约生成元
+- **质数不是纯数学对象**，是不可约生成元
 - **黎曼猜想不是孤立谜题**，是广义黎曼猜想在 GL(1)（电磁因子）的特例，是物质自组织在电磁因子层的稳定性条件
 - **超导群不是理论家选的**，是物质自己在条件下实现的
 

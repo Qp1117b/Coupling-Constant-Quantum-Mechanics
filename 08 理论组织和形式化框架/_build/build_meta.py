@@ -124,6 +124,26 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.18 — 修正 SU(5) 涌现组装链起点表述
+
+- **变更动机**：`01 核心理论/CQM_核心_集成理论.md` §7.1 组装链起点写作「禁闭内部离散自由度（因果集事件）」——因果集是描述物质自组织因果结构的理论，不应限定为「禁闭内部」的自由度；且禁闭内部非起点（先有前质子-前中子，后才有禁闭）。去掉「禁闭内部」限定，因果集描述物质自组织环节，不加限制。
+- **修正**：「禁闭内部离散自由度（因果集事件）」→「离散自由度（因果集事件）」。
+- **同步**：讲稿 `第二分册_统一体自组装与α.md` 同步修正；重跑 build_evidence → build_claims → build_ontology → build_kg → build_site → build_search → build_reader_site → build_vitepress_site → build_meta，证据映射 / 句索引 / 知识图谱.ttl 中旧引文全部更新。
+- 验收：`check_consistency` **41/41**；`check_provenance` **10/10**；`consistency_probe` 问题项 **0**。
+
+## v1.9.17 — 删除「质数前网络」概念（C010）与全链同步
+
+- **变更动机**：根 `AGENTS.md` §四「以原（第一）文档为准」——原始文档中「质数前网络」系描述物质自组织关系的数学结构，非独立本体概念；组织层概念表 C010 将其登记为独立概念与理论口径不符，予以剔除。
+- **源数据变更**：概念表删 C010 行；论证表删 A043 行（A043 的 source_concept 引用 C010）；术语表删「质数前网络」条目。
+- **第一文档同步**：`README.md`、`01 核心理论/` 三篇、`06 超导/` 两篇、`归档/CQM_框架路线与理论纪要.md` 中所有「质数前网络」「前网络」$\\mathbb{P}_{\\infty}$ 表述删除或改写（仅删术语词，保留句义，最小改动）。
+- **Lean 对接**：`build_lean.py` MAPPING 删 PrimeGeometry 行；`Superconductivity.lean` 注释删「质数前网络→」；映射口径 41/82 → 40/81（49.4%）。
+- **计数变更**：概念 82→81 · 论证 70→69 · 有向边 51→50 · 本体个体 430→426 · 知识图谱 145/359→144/358 · 证据 215→213 · ML 张量 (82,15)→(81,15) · 桥接映射 82→81 · 可达 81/82→80/81（不可达仍为 C074）。
+- **全链重跑**：fix_csv → build_base → build_evidence → build_claims → build_ontology → build_kg → build_lean → build_ml → build_extract → build_dynamics → build_causal → build_bridge → build_site → build_search → build_reader_site → build_vitepress_site → build_meta，16 个脚本全部成功。
+- **脚本断言更新**：`build_base.py`、`build_ontology.py`、`build_lean.py`、`build_site.py`、`build_reader_site.py`、`build_vitepress_site.py`、`build_search.py`、`build_extract.py`、`check_consistency.py`、`check_provenance.py` 中所有硬编码计数同步更新。
+- **手工文档回填**：讲解文档 `03_超图总览与关系类型.md`、`CQM_概念关系超图.md` 统计数字同步回填。
+- 验收：`check_consistency` **41/41**；`check_provenance` **10/10**；`consistency_probe` 问题项 **0**。
+- 同步：`_build/` 全部构建脚本与核查脚本、`01_结构化数据/` 源 CSV、`附录/术语表.md`、讲解文档、超图说明、本日志。
+
 ## v1.9.16 — 侧栏文档主题分类（按源目录七组）· 服务彻底重启
 
 - **侧栏文档分类**：「结构化与参考」此前把 41 篇文档平铺、无主题分类。现按 **staged 源的顶层目录**分为七组（核心理论 / 量子引力讨论 / 引力与退相干 / 前沿研究 / 方法论与批判 / 超导 / 精细引力（FG）），与仓库目录结构一一对应；sid→源目录映射**复用 `build_reader_site.registry()`**（sid 分配逻辑的唯一权威，避免两处实现漂移）。映射失败时整体回退「其它」组并在构建日志告警。
@@ -616,7 +636,7 @@ def write_validation():
 
 ## 三、诚实边界
 
-1. **形式化覆盖 50%**（41/82 概念）——未覆盖概念不得视为已形式化。
+1. **形式化覆盖 49.4%**（40/81 概念）——未覆盖概念不得视为已形式化。
 2. **缺口状态未改动**：C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 保持权威源状态。
 3. **贝叶斯 CPT 为占位**（待标定），其输出不构成理论结论。
 4. **$G_N$、$\\alpha$ 类数值**一律带"构造后验数字校验，待独立复现"。

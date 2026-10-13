@@ -8,6 +8,7 @@
 观感为顶部导航 + 左侧分组侧栏 + 右侧大纲 + 品牌靛蓝 #3451b2 + 首页 hero/特性卡）。
 """
 import html
+import glob
 import json
 import os
 import re
@@ -49,6 +50,39 @@ MATH_RE = re.compile(
 MATH_STORE = {}
 HEADING_RE = re.compile(r'^\s{0,3}#{1,6}[ \t]')     # 标题行原样保留（锚点 id 不被占位符污染）
 
+# ---- MathJax 文本模式的转义兼容（只在数学区间内做） ----
+# MathJax 的 \text{} 是**逐字文本模式**，不展开宏、也不认 \_ 与 \S：
+# 实测 \text{unit\_cell} 渲染成 unit\_cell（反斜杠露出）、\text{（\S8）} 渲染成
+# （\S8）、\text{GL(5)\to SU(5)} 渲染成 GL(5)\to SU(5)。这三种都是合法 LaTeX 写法
+# （真 LaTeX 的文本模式里 \_ 是下划线、\S 是 §；\to 严格说属数学模式，但语料里
+# 混写进了 \text{}），只是 MathJax 不支持。修法放在**显示层**：仅在数学区间的
+# \text{} 类组体内把转义还原成其本义字符，语料/原稿一字不动。范围限定在组体内，
+# 绝不碰数学模式（数学模式里 _ 是下标算子、\to 正常展开，改不得）。
+TEXTMODE_GROUP_RE = re.compile(
+    r'(\\(?:text|mbox|textrm|textit|textbf|textsf|texttt|operatorname)\{)'
+    r'((?:[^{}]|\{[^{}]*\})*)(\})')
+# 组体内需要还原的写法 → 本义字符（用正则加边界，避免 \top → →p、\Sigma → §igma）
+TEXTMODE_MAP = [(r"\\_", "_"), (r"\\S(?![A-Za-z])", "§"),
+                (r"\\rightarrow(?![A-Za-z])", "→"), (r"\\to(?![A-Za-z])", "→")]
+
+
+def repair_text_mode(tex):
+    """还原 \\text{} 类组体内的文本模式转义（\\_ → _、\\S → §、\\to → →）。"""
+    fixed = [0]
+
+    def repl(m):
+        body = m.group(2)
+        new = body
+        for pat, v in TEXTMODE_MAP:
+            new = re.sub(pat, v, new)
+        if new != body:
+            fixed[0] += 1
+            return m.group(1) + new + m.group(3)
+        return m.group(0)
+
+    out = TEXTMODE_GROUP_RE.sub(repl, tex)
+    return out, fixed[0]
+
 
 def protect_math(text):
     """逐段保护公式；标题行跳过（标题里的公式量少，交给 markdown-it 侧规则兜底）。"""
@@ -63,7 +97,10 @@ def protect_math(text):
 
         def repl(m):
             key = "CQMMATHPLCHOLDER%dEND" % len(MATH_STORE)
-            MATH_STORE[key] = m.group(0)
+            body, nfix = repair_text_mode(m.group(0))
+            if nfix:
+                TEXT_MODE_FIXED[0] += nfix
+            MATH_STORE[key] = body
             return key
 
         out.append(MATH_RE.sub(repl, seg))
@@ -79,10 +116,11 @@ def protect_math(text):
 
 
 MATH_MISSED = set()
+TEXT_MODE_FIXED = [0]      # 文本模式转义还原计数（构建日志用）
 
 
 def restore_math(text, js=False):
-    """把产物里的占位符还原成公式原文。"""
+    """把产物里的占位符还原成公式原文（.html 与真实 .json 文件用）。"""
     def repl(m):
         f = MATH_STORE.get(m.group(0))
         if f is None:
@@ -91,6 +129,58 @@ def restore_math(text, js=False):
         return json.dumps(f, ensure_ascii=False)[1:-1] if js else html.escape(f, quote=False)
 
     return re.sub(r'CQMMATHPLCHOLDER\d+END', repl, text)
+
+
+def _js_escape_plain(f):
+    """单/双引号普通 JS 字符串的转义：反斜杠、引号、回车换行。"""
+    return (f.replace("\\", "\\\\").replace("'", "\\'")
+             .replace('"', '\\"').replace("\r", "\\r").replace("\n", "\\n"))
+
+
+def restore_math_js(text):
+    """页面 chunk 的占位符还原（上下文感知）。
+
+    VitePress 页面 chunk 把内容放在**单引号** JS 字符串里（Vue 编译产物），
+    pageData 则是 JSON.parse('…')。json.dumps 只转义双引号不转义单引号——
+    LaTeX 素数记号 ζ'(s)、c'_n、|G'⟩ 里的撇号会提前终止单引号字符串，
+    chunk 整体 SyntaxError → 路由动态 import 失败 → 页面 200 但内容 404。
+    （2026-10-13：D003/D005/D010/D014/D017/D020/D028/D029/D030/D032/L001 共 11 页。）
+    故逐字符扫描字符串上下文：
+      - 普通字符串：转义 \\ ' " 与换行；
+      - JSON.parse('…') 上下文：先 JSON 转义再对结果做 JS 层转义（双层）。
+    """
+    out = []
+    i, n = 0, len(text)
+    in_str = None
+    json_ctx = False
+    while i < n:
+        c = text[i]
+        if in_str:
+            if c == "\\":
+                out.append(text[i:i + 2]); i += 2; continue
+            if c == in_str:
+                in_str = None; out.append(c); i += 1; continue
+            if text.startswith("CQMMATHPLCHOLDER", i):
+                m = re.match(r"CQMMATHPLCHOLDER\d+END", text[i:])
+                if m:
+                    key = m.group(0)
+                    f = MATH_STORE.get(key)
+                    if f is None:
+                        MATH_MISSED.add(key); out.append(key)
+                    elif json_ctx:
+                        t = json.dumps(f, ensure_ascii=False)[1:-1]
+                        t = t.replace("\\", "\\\\").replace("'", "\\'")
+                        out.append(t)
+                    else:
+                        out.append(_js_escape_plain(f))
+                    i += len(key); continue
+            out.append(c); i += 1; continue
+        if c in ("'", '"'):
+            in_str = c
+            json_ctx = text[max(0, i - 11):i] == "JSON.parse("
+            out.append(c); i += 1; continue
+        out.append(c); i += 1; continue
+    return "".join(out)
 
 
 # ---------------------------------------------------------------- 站内 404 修复
@@ -134,6 +224,29 @@ BOLD_RE = re.compile(r'\*\*(?=\S)([^*\n]{1,300}?)(?<=\S)\*\*')
 # 「U(1)_B、U(1)_B-L、U(1)_Y」渲染成「U(1)<em>B、U(1)</em>B-L、U(1)_Y」。
 # 给这类下划线加反斜杠转义，输出仍是字面下划线，视觉不变。
 BARE_SUB_RE = re.compile(r'(?<=[A-Za-z0-9)\]}])_(?=[A-Za-z0-9({])')
+# URL 保护跨度：转义裸下标前先把 URL 整段取走。关键动因——markdown-it 的
+# linkify 规则先于 emphasis 运行，裸 URL 会被整段吞成链接令牌，其中的 _ 若被
+# 转义成 \_，反斜杠会泄漏进 href（实测 percent-encode 成 %5C，点击即 404）
+# 与链接显示文本（字面 \_）。实证：D022 文献链接
+# http://var.scholarpedia.org/article/Riemann_zeros_and_quantum_chaos 两处俱伤。
+# 行内链接目标（[label](url)）里的 _ 不转义也安全：destination 解析器原样
+# 收取，链接文本是 label 不受影响（D023 两例实证无恙）。故意不含 ) 排除：
+# 维基式 URL 带平衡括号，宁多保护几个字符（还原是恒等，零风险）不可漏保护。
+URL_SPAN_RE = re.compile(r'https?://[^\s<>\[\]"\'`]+')
+# 行内代码包公式解包（展示层适配，源文档不动）：上游符号表惯用 `$☯$` 写法
+# 防 markdown/MathJax 干扰，但 MathJax 的 skipHtmlTags 含 code，公式以原文露出
+# （☯ 再被 emoji 字体彩色化）。反引号内只要出现完整的 $…$ / $$…$$ 段
+# （含一段反引号包多个公式的形态，如 `$\mathrm{GL}(5)$ ⇒ $\mathrm{SU}(5)$`），
+# 就去掉反引号，公式交还 MathJax。
+CODE_SPAN_RE = re.compile(r"`([^`\n]+)`")
+CODE_MATH_HAS_RE = re.compile(r"\$\$[^$\n]+\$\$|\$[^$\n]+?\$")
+
+
+def _unpack_code_math(m):
+    inner = m.group(1)
+    if CODE_MATH_HAS_RE.search(inner):
+        return inner
+    return m.group(0)
 
 
 def fix_cjk_bold(txt):
@@ -148,18 +261,113 @@ def fix_cjk_bold(txt):
             out.append(ln)
             continue
         codes = []
+        urls = []
 
         def stash(m):
             codes.append(m.group(0))
             return "\x01C%d\x01" % (len(codes) - 1)
 
+        def stash_url(m):
+            urls.append(m.group(0))
+            return "\x01U%d\x01" % (len(urls) - 1)
+
         ln2 = INLINE_CODE_RE.sub(stash, ln)
+        ln2 = URL_SPAN_RE.sub(stash_url, ln2)   # URL 先于 BARE_SUB_RE 取走（见 URL_SPAN_RE 注释）
         ln2 = BOLD_RE.sub(lambda m: "<strong>%s</strong>" % m.group(1), ln2)
-        ln2 = BARE_SUB_RE.sub(lambda m: "\\_", ln2)     # 裸下标：转义 _ 而非配成斜体
+        # 标题行不转义裸下标：protect_math 原样保留标题（锚点 id 不被占位符污染），
+        # 若此处把标题公式的 _ 转义成 \_（$G_N$ → $G\_N$），MathJax 渲染虽同形，
+        # 但搜索索引（从 md 提取标题文本）与 aria-label 会带上反斜杠原文，
+        # 用户即在搜索结果里看到「G\_N」——故标题行整体跳过 BARE_SUB_RE。
+        if not HEADING_RE.match(ln):
+            ln2 = BARE_SUB_RE.sub(lambda m: "\\_", ln2)     # 裸下标：转义 _ 而非配成斜体
         for i, c in enumerate(codes):
             ln2 = ln2.replace("\x01C%d\x01" % i, c)
+        for i, u in enumerate(urls):
+            ln2 = ln2.replace("\x01U%d\x01" % i, u)
         out.append(ln2)
     return "\n".join(out)
+
+
+_MATHBB_MAP = {"R": "ℝ", "C": "ℂ", "Z": "ℤ", "Q": "ℚ", "N": "ℕ", "F": "𝔽",
+               "P": "ℙ", "E": "𝔼", "H": "ℍ"}
+_LATEX_SYM_MAP = {
+    "supset": "⊃", "supseteq": "⊇", "subset": "⊂", "subseteq": "⊆",
+    "in": "∈", "notin": "∉", "times": "×", "cdot": "·", "cdots": "⋯",
+    "ldots": "…", "dots": "…", "to": "→", "rightarrow": "→", "Rightarrow": "⇒",
+    "leftarrow": "←", "leftrightarrow": "↔", "Leftrightarrow": "⇔", "iff": "⇔",
+    "cup": "∪", "cap": "∩", "le": "≤", "leq": "≤", "ge": "≥", "geq": "≥",
+    "ne": "≠", "neq": "≠", "infty": "∞", "approx": "≈", "equiv": "≡",
+    "sim": "∼", "propto": "∝", "pm": "±", "mp": "∓", "circ": "∘", "prime": "′",
+    "alpha": "α", "beta": "β", "gamma": "γ", "delta": "δ", "Delta": "Δ",
+    "epsilon": "ε", "varepsilon": "ε", "zeta": "ζ", "eta": "η", "theta": "θ",
+    "Theta": "Θ", "iota": "ι", "kappa": "κ", "lambda": "λ", "Lambda": "Λ",
+    "mu": "μ", "nu": "ν", "xi": "ξ", "Xi": "Ξ", "pi": "π", "Pi": "Π",
+    "rho": "ρ", "sigma": "σ", "Sigma": "Σ", "tau": "τ", "upsilon": "υ",
+    "phi": "φ", "Phi": "Φ", "varphi": "φ", "chi": "χ", "psi": "ψ", "Psi": "Ψ",
+    "omega": "ω", "Omega": "Ω", "Gamma": "Γ", "nabla": "∇", "partial": "∂",
+    "forall": "∀", "exists": "∃", "neg": "¬", "land": "∧", "lor": "∨",
+    "langle": "⟨", "rangle": "⟩", "perp": "⊥", "oplus": "⊕", "otimes": "⊗",
+}
+
+
+def _latex_to_text(t):
+    """把标题里的 LaTeX 摘成可读纯文本（仅对含 $ 的标题启用）。
+
+    顺序敏感：先屏蔽 \\mathrm 等包装宏再做符号映射，否则解包后
+    \\supset 与相邻字母粘连成 \\supsetDiff 被当成一个宏名（实测踩过）。"""
+    t = re.sub(r"\\mathbb\{(\w)\}",
+               lambda m: _MATHBB_MAP.get(m.group(1), m.group(1)), t)
+    for w in ("mathrm", "mathcal", "mathfrak", "mathbf", "text", "operatorname"):
+        t = t.replace("\\" + w, "\x01" + w)
+    t = re.sub(r"\\([A-Za-z]+)",
+               lambda m: _LATEX_SYM_MAP.get(m.group(1), m.group(1)), t)
+    t = re.sub(r"\x01(?:[A-Za-z]+)\{([^{}]*)\}", r"\1", t)
+    t = t.replace("{", "").replace("}", "").replace("\x01", "")
+    # 二元符号两侧补空格，读起来不粘连
+    t = re.sub(r"\s*([⊃⊇⊂⊆∈→⇒↔⇔×∪∩≤≥≠≈≡∼⊕⊗])\s*", r" \1 ", t)
+    return t
+
+
+def plain_title(t):
+    """侧边栏/导航/浏览器标题是纯文本：不走 markdown-it（反斜杠转义不会被消化回 _）、
+    不排 MathJax（$…$ 原样露出）。剥掉定界符并消化 BARE_SUB_RE 留下的转义；
+    含 $ 的标题再做 LaTeX→Unicode 摘译，否则侧边栏出现
+    「$G\\_N$ 第一性推导」「\\mathrm{Sym}\\supset…」这类字面残骸。"""
+    had_math = "$" in t
+    t = t.replace("\\_", "_")
+    t = t.replace("$", "")
+    if had_math:
+        t = _latex_to_text(t)
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+
+def unify_h1(txt):
+    """展示层适配：每页仅保留首个 h1，后续 h1 降为 h2（仅 staging，源文档不动）。
+
+    动因：D019 源稿用 h1 标四大部分（数学事实层/框架内定理/启发式构造/推导链
+    总览），连同页标题共 5 个 h1——一页双标题违 HTML 文档大纲语义（根节点唯一），
+    侧边大纲也把「第一部分」与页标题并列成两级根。站点层统一为单 h1：页标题留
+    任 h1，四个部分标题降为 h2。源稿的四部分并列关系在大纲里完整保留，只是不再
+    与页标题争位；标题文字与锚点 id 不变（id 由文字生成，与层级无关），页内锚点
+    链接不受影响。降级只动 # 前缀，围栏内的 # 注释（如 F01 的 shell 片段）不误伤。
+    """
+    out, seen, n, in_fence = [], False, 0, False
+    for ln in txt.split("\n"):
+        s = ln.lstrip()
+        if s.startswith("```") or s.startswith("~~~"):
+            in_fence = not in_fence
+            out.append(ln)
+            continue
+        if not in_fence:
+            m = re.match(r"^(#{1,6})(\s.*)$", ln)
+            if m and len(m.group(1)) == 1:
+                if seen:
+                    ln = "##" + m.group(2)
+                    n += 1
+                else:
+                    seen = True
+        out.append(ln)
+    return "\n".join(out), n
 
 
 def wrap_vpre(txt):
@@ -189,20 +397,38 @@ def wrap_vpre(txt):
 
 
 wrapped = 0
+demoted_total = 0
 for f in md_files:
     with open(os.path.join(MK_SRC, f), "r", encoding="utf-8") as fh:
         txt = fh.read()
     # VitePress 的静态资源根是 public/，viz 从 assets/viz/ 迁到 /viz/
     txt = txt.replace("assets/viz/", "/viz/")
     txt = fix_src_links(txt)         # 消除指向 _src/ 的失效链接
+    # 展示层适配（仅 staging，源文档不动）：code 包公式解包 + emoji 字符单色化
+    txt = CODE_SPAN_RE.sub(_unpack_code_math, txt)
+    txt = txt.replace("✅", "✓").replace("❌", "✗")
     if f != "index.md":
+        txt, demoted = unify_h1(txt)   # 多 h1 页统一为单 h1（D019 四部分降 h2）
+        demoted_total += demoted
         txt = protect_math(txt)      # 公式先换成占位符，躲开 markdown-it
         txt = fix_cjk_bold(txt)      # 中文标点旁的 **…** 落成 <strong>…</strong>
+        # <title> 修复：h1 里带公式时，VitePress 从渲染后的 DOM 提取标题，
+        # 数学部分（MathJax SVG/辅助 MML）不产生正常文本节点 → 浏览器标题栏
+        # 要么丢掉 G_N 要么变成「G N」（NBSP）。凡 h1 含 $ 且无 frontmatter 的，
+        # 注入纯文本 title。必须在 fix_cjk_bold 之后：否则注入的 G_N 会被
+        # BARE_SUB_RE 再转义成 G\_N，而 YAML 双引号里 \_ 是 NBSP 转义。
+        if not txt.startswith("---"):
+            m_h1 = re.search(r"^#\s+(.+?)\s*$", txt, re.M)
+            if m_h1 and "$" in m_h1.group(1):
+                clean = plain_title(m_h1.group(1))
+                if clean:
+                    txt = "---\ntitle: %s\n---\n\n" % json.dumps(clean, ensure_ascii=False) + txt
         txt = wrap_vpre(txt)
         wrapped += 1
     with open(os.path.join(VP_DOCS, f), "w", encoding="utf-8") as fh:
         fh.write(txt)
-print("[vp] 已复制 %d 个 markdown 页面（其中 %d 页套 v-pre）" % (len(md_files), wrapped))
+print("[vp] 已复制 %d 个 markdown 页面（其中 %d 页套 v-pre，%d 个后续 h1 降为 h2）"
+      % (len(md_files), wrapped, demoted_total))
 
 # ---------------------------------------------------------------- 2. 静态资源 -> public/
 mk_assets = os.path.join(MK_SRC, "assets")
@@ -227,18 +453,65 @@ VIZ_FIX = (
     ('href="assets/cytoscape.min.js"', 'href="cytoscape.min.js"'),
     ('src="data.json"', 'src="驾驶舱数据.json"'),
     ('"data.json"', '"驾驶舱数据.json"'),
+    # ✅/❌ 彩色 emoji 字形与全站单色口径不符，统一替换单色 ✓/✗
+    ("✅", "✓"),
+    ("❌", "✗"),
 )
 # viz 页面（检索台 / 驾驶舱 / 超图 / 蓝图）是自包含 HTML，本身不带 MathJax，
 # 而它们的正文（尤其检索台的实体/证据卡）里有大量 $…$ 公式——是 JS 运行时生成的，
 # 构建期静态扫描看不到，打开页面就是一片 LaTeX 原文。
 # 这里给它们注入本地 MathJax 与一个「DOM 变化后自动重排」的钩子
 # （检索台的结果是点击/输入后动态渲染的，只在 DOMContentLoaded 排一次不够）。
-VIZ_MATH = """<script src="/vp-math.js"></script>
+VIZ_MATH = r"""<style>
+/* 与 vp-read.css 第 8/9 条同源（viz 页面不加载 vp-read.css 故单独内联）：
+   ① 剔除 emoji 字体并补 Segoe UI Symbol——公式内 MathJax SVG 未知字符
+     （☯、中文、中文标点）与正文裸符号一律单色、与站点字体栈一致；
+   ② @font-face 把 ☯/卦符定向到本机单色符号字体。 */
+@font-face {
+  font-family: "CQM Symbols Mono";
+  src: local("Segoe UI Symbol");
+  unicode-range: U+262F, U+2630-2636;
+}
+body {
+  font-family: "CQM Symbols Mono", "Punctuation SC", "Inter", ui-sans-serif,
+    system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif !important;
+}
+mjx-container svg text {
+  font-family: "CQM Symbols Mono", "Punctuation SC", "Inter", ui-sans-serif,
+    system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+}
+</style>
+<script src="/vp-math.js"></script>
 <script src="/tex-svg.js" async></script>
 <script>
 (function () {
+  // 少数数据引文是从多行 $$…$$ 公式块里截出的单行，丢了 $ 定界符（证据映射里 7 条，
+  // 如「\text{GL(5) 潜能先在}」），MathJax 不会碰 → LaTeX 原文裸露。排版前给这类
+  // 纯文本节点补上行内定界符。判据保守：节点无 $、含确定属公式的宏、花括号配平。
+  var BARE = /\\(?:text|boxed|xrightarrow|xRightarrow|frac|underbrace)\b/;
+  function wrapBare() {
+    if (!document.body) return;
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var n, todo = [];
+    while ((n = w.nextNode())) {
+      var s = n.nodeValue || "";
+      if (s.indexOf("\\") < 0 || s.indexOf("$") >= 0) continue;
+      if (!BARE.test(s)) continue;
+      var p = n.parentNode;
+      if (!p || (p.closest && p.closest("mjx-container,code,pre,script,style,textarea"))) continue;
+      todo.push(n);
+    }
+    for (var i = 0; i < todo.length; i++) {
+      var t = todo[i], v = t.nodeValue, core = v.trim();
+      if (!core) continue;
+      if (core.split("{").length !== core.split("}").length) continue;  // 截断片段不动
+      var at = v.indexOf(core);
+      t.nodeValue = v.slice(0, at) + "$" + core + "$" + v.slice(at + core.length);
+    }
+  }
   function typeset() {
     if (!window.MathJax || !window.MathJax.typesetPromise) return null;
+    wrapBare();
     try { return window.MathJax.typesetPromise(); } catch (e) { return null; }
   }
   function boot() { setTimeout(typeset, 300); }
@@ -354,6 +627,15 @@ mjx-container > svg { display: inline-block; }
 }
 .vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
 .vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
+/* 4b) 展开链「一步一读」：源自源文档表格行的逐字片段还原成的原表行。
+     内容应换行（不是横向滚动）、首列不做 nowrap（可能是整句），
+     用细分隔线而非默认粗边框，避免与正文数据表混淆。 */
+.vp-doc table.cqm-fragtbl { display: table; width: auto; max-width: 100%; margin: 0.4em 0 0.9em; }
+.vp-doc table.cqm-fragtbl td {
+  min-width: 0; padding: 3px 10px; vertical-align: top;
+  border: 1px solid var(--vp-c-divider); line-height: 1.7;
+}
+.vp-doc table.cqm-fragtbl td:first-child { white-space: normal; color: var(--vp-c-text-2); }
 /* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
 .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 { scroll-margin-top: 84px; }
 .vp-doc :target { background: var(--vp-c-brand-soft); border-radius: 4px; }
@@ -380,6 +662,32 @@ mark.cqm-hl { background: #ffe58f; color: inherit; padding: 0 1px; border-radius
 .cqm-top[data-on="1"] { opacity: .92; pointer-events: auto; }
 .cqm-top:hover { background: var(--vp-c-brand-soft); }
 @media print { .cqm-progress, .cqm-top { display: none; } }
+/* 8+9) 全站符号与公式未知字符字体修正：
+      VitePress 默认栈把 emoji 字体排在 sans-serif 之前，后果：
+      ① ☯ / ✅ / ❌ 等「默认 emoji 表现」字符被渲染成彩色 emoji；
+      ② → / ⇒ 等箭头被 emoji 字体的粗黑字形接管（"箭头变普通版"）；
+      ③ MathJax SVG 对认识不了的字符（☯、\text{} 内中文、中文标点）
+        以 <text font-family="serif"> 通用衬线回退，观感突兀。
+      处置：基础栈**剔除全部 emoji 字体**、显式补入 Segoe UI Symbol
+      （本机自带，含 ☯ / 卦符 / ⚠ 等单色字形）；公式内 <text> 同样覆盖。
+      @font-face + unicode-range 再加一道保险：即便前面某字体含 ☯，
+      也强制这几个码点走 Segoe UI Symbol 的单色形。
+      SVG presentation attribute 优先级低于任何 CSS 规则；
+      已知数学字形（path 绘制）不受影响。 */
+@font-face {
+  font-family: "CQM Symbols Mono";
+  src: local("Segoe UI Symbol");
+  unicode-range: U+262F, U+2630-2636;
+}
+:root {
+  --vp-font-family-base: "CQM Symbols Mono", "Punctuation SC", "Inter",
+    ui-sans-serif, system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2",
+    sans-serif !important;
+}
+mjx-container svg text {
+  font-family: "CQM Symbols Mono", "Punctuation SC", "Inter", ui-sans-serif,
+    system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+}
 """
 with open(os.path.join(VP_PUBLIC, "vp-read.css"), "w", encoding="utf-8") as fh:
     fh.write(READ_CSS)
@@ -395,7 +703,14 @@ MATH_JS = """window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
     displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
-    processEscapes: true
+    processEscapes: true,
+    // 语料里 21 处 \\xRightarrow 是「重组实现」用的双线箭头；它不是 MathJax 内置宏
+    // （bundle 里只有 \\xrightarrow）。本包 tex-svg.js 带 noundefined 扩展，未定义宏
+    // 不报错而是把宏名以红字**字面**排出来（实测页面显示红色的 \\xRightarrow），
+    // 故在此补定义：等价于带标签的双线箭头，与 \\xrightarrow 的观感一致。
+    macros: {
+      xRightarrow: ["\\\\overset{#1}{\\\\Longrightarrow}", 1]
+    }
   },
   svg: { fontCache: 'global' },
   options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
@@ -429,6 +744,8 @@ VP_ENHANCE_JS = r'''(function () {
     window.addEventListener("scroll", function () { if (!pinned) hidePop(); }, true);
     return POP;
   }
+  var hideTimer = null;   // mouseout 的延迟隐藏定时器（必须可撤销，否则旧定时器会把新弹出的卡打掉）
+  var rendered = {};      // 已排版卡内容缓存：key -> 卡 DOM 副本，二次悬停零空窗
   function hidePop() { if (POP) { POP.style.display = "none"; cur = null; } }
   function place(p, el) {
     var r = el.getBoundingClientRect(), sx = window.pageXOffset, sy = window.pageYOffset;
@@ -450,25 +767,53 @@ VP_ENHANCE_JS = r'''(function () {
      与 \(…\) 公式。公式交给 MathJax，反引号在这里落成 <code>。 */
   var ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
   function cardHtml(html) {
-    return String(html).replace(/`([^`\n]+)`/g, function (m, s) {
+    // 卡文逐字取自 CSV：✅/❌ 是彩色 emoji 字形，统一替换单色 ✓/✗（与全站口径一致）
+    return String(html).replace(/✅/g, "\u2713").replace(/❌/g, "\u2717").replace(/`([^`\n]+)`/g, function (m, s) {
       return "<code>" + s.replace(/[&<>]/g, function (c) { return ESC[c]; }) + "</code>";
     });
   }
   function showPop(el) {
-    var html = G.terms[el.getAttribute("data-cqm")];
+    var key = el.getAttribute("data-cqm");
+    var html = G.terms[key];
     if (!html) return;
     var p = ensurePop();
-    p.innerHTML = cardHtml(html); p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
     cur = el;
-    typeset(p, function () { place(p, el); });
+    p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
+    if (rendered[key]) {
+      // 命中排版缓存：直接装填已排版的 HTML 并定位，跳过 MathJax 重排
+      // （否则二次悬停会有几十~几百 ms 的不可见空窗，观感即"弹出时闪一下"）。
+      // 注意缓存的是 innerHTML 字符串而非克隆 DOM——克隆整个 .cqm-pop 容器
+      // 会把 fixed 定位与 -9999px 一起嵌进卡内，内容整体飞出屏幕（弹卡"消失"）。
+      p.innerHTML = rendered[key];
+      place(p, el);
+      return;
+    }
+    p.innerHTML = cardHtml(html);
+    typeset(p, function () {
+      if (cur !== el) return;   // 排版期间目标已换词，丢弃本次结果
+      if (Object.keys(rendered).length > 80) rendered = {};  // 缓存上限防膨胀
+      rendered[key] = p.innerHTML;
+      place(p, el);
+    });
   }
   document.addEventListener("mouseover", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && el !== cur) showPop(el);
+    if (el && el !== cur) {
+      // 滑到新词：先撤销前一个词 mouseout 排下的延迟隐藏，
+      // 否则它会在此刻到期，把刚弹出的卡打掉（弹出的"闪一下"）
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      showPop(el);
+    }
   });
   document.addEventListener("mouseout", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && !pinned) setTimeout(function () { if (!pinned) hidePop(); }, 180);
+    if (el && !pinned) {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        hideTimer = null;
+        if (!pinned) hidePop();
+      }, 180);
+    }
   });
   document.addEventListener("focusin", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]"); if (el) showPop(el);
@@ -727,7 +1072,7 @@ VP_ENHANCE_JS = r'''(function () {
   }
   function probeService() {
     try {
-      fetch("api/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (s) {
+      fetch("/api/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (s) {
         var hdr = navHost(); if (!hdr || !s || !s.counts) return;
         if (hdr.querySelector(".cqm-badge")) return;
         var a = document.createElement("a");
@@ -735,7 +1080,7 @@ VP_ENHANCE_JS = r'''(function () {
         // 必须 target="_blank"：VitePress router 会拦截站内相对链接做 SPA 导航
         // （实测解析成 /api/status.html 甚至 /api/api/status → 404）；
         // 新窗口打开 JSON，绕过 router。
-        a.className = "cqm-sbtn cqm-badge"; a.href = "api/status";
+        a.className = "cqm-sbtn cqm-badge"; a.href = "/api/status";
         a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
         a.title = "本地研究站服务已连接：实时 SPARQL / 结构化检索 / 证据复核写回";
         a.innerHTML = "服务已连接 · 概念 " + s.counts.concepts + " · 缺口 " + s.counts.gaps
@@ -971,12 +1316,62 @@ VP_ENHANCE_JS = r'''(function () {
     hdr.appendChild(b);
   }
 
+  /* ---------- 侧边栏文本下标修正 ---------- */
+  /* 侧栏项文本取自标题的行内渲染，$G_N$ 的 $ 被剥掉后剩字面下划线；
+     侧栏不在 MathJax 作用域（正文公式它管不了侧栏），只能在 DOM 层把
+     X_Y 包装为 X<sub>Y</sub>。包装后下划线字符消失，天然幂等，
+     路由切换重跑安全；返回是否有修改，供观察器判断何时断开。 */
+  function fixSubScripts() {
+    var root = document.querySelector('.VPSidebar');
+    if (!root) return false;
+    var scan = new RegExp('([A-Za-z][A-Za-z0-9]{0,10})_([A-Za-z0-9]{1,3})(?![A-Za-z0-9])');
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) {
+      var p = n.parentElement;
+      if (!p || p.closest('code,pre,sub,sup,script,style')) continue;
+      if (scan.test(n.nodeValue)) nodes.push(n);
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].nodeValue;
+      var re = new RegExp('([A-Za-z][A-Za-z0-9]{0,10})_([A-Za-z0-9]{1,3})(?![A-Za-z0-9])', 'g');
+      var frag = document.createDocumentFragment(), last = 0, m;
+      while ((m = re.exec(t))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(t.slice(last, m.index)));
+        frag.appendChild(document.createTextNode(m[1]));
+        var sub = document.createElement('sub');
+        sub.textContent = m[2];
+        frag.appendChild(sub);
+        last = m.index + m[0].length;
+      }
+      if (last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
+      if (nodes[i].parentNode) nodes[i].parentNode.replaceChild(frag, nodes[i]);
+    }
+    if (nodes.length > 0) fixSubScripts._done = true;
+    return nodes.length > 0;
+  }
+
   function initPage() {
     runTerms();
     initDepth();
     applySearchHighlight();
     mountFontCtl();
     fixExternalLinks();
+    // 侧栏文本下标：X_Y → X<sub>Y</sub>（幂等）。侧栏由 Vue 异步渲染，
+    // 首屏 initPage 可能早于侧栏挂载，故直接修一次 + 观察兜底；
+    // 修过一次即置 _done，后续路由切换不再空转观察器。
+    fixSubScripts();
+    if (!fixSubScripts._done && !fixSubScripts._obs) {
+      fixSubScripts._obs = new MutationObserver(function () {
+        if (fixSubScripts()) {
+          fixSubScripts._obs.disconnect(); fixSubScripts._obs = null;
+        }
+      });
+      fixSubScripts._obs.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        if (fixSubScripts._obs) { fixSubScripts._obs.disconnect(); fixSubScripts._obs = null; }
+      }, 45000);
+    }
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。
@@ -1187,7 +1582,7 @@ LEAN_PAGE_JS = r'''(function () {
           '<td>' + e(m.concept_ids) + '</td><td>' + e(m.prop_ids) + '</td><td>' + e(m.gap_ids) + '</td>' +
           '<td>' + e(m.remark) + '</td></tr>';
       }).join('') + '</tbody></table></div>' +
-      '<h4 style="margin:1.2em 0 .4em">axiom 待证清单（' + axioms.length + ' 条 · 物理假设的 Lean 承载，形式化覆盖 41/82 概念之外的诚实边界）</h4>' +
+      '<h4 style="margin:1.2em 0 .4em">axiom 待证清单（' + axioms.length + ' 条 · 物理假设的 Lean 承载，形式化覆盖 40/81 概念之外的诚实边界）</h4>' +
       '<div style="max-height:32vh;overflow:auto"><table><thead><tr><th>种类</th><th>名称</th><th>模块</th><th>行</th></tr></thead><tbody>' +
       axioms.map(function (d) {
         return '<tr><td>' + kindBadge(d.kind) + '</td><td><code>' + e(d.name) + '</code></td>' +
@@ -1263,12 +1658,39 @@ TERMS_APP_JS = r'''(function () {
       return tt;
     };
 
+    /* sb 摘要：先按可见字符截断（绝不切在 $…$ 内部——切断会让 MathJax 失配、
+       把 $\bar{\delta}_v$ 之类的反斜杠字面露出），再做 HTML 转义；
+       $…$ 公式转义后原样保留，由下面的 typesetGrid 排版。 */
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function clip(s, n) {
+      s = String(s == null ? "" : s);
+      if (s.length <= n) return s;
+      var re = /\$\$[\s\S]*?\$\$|\$[^$\n]*?\$/g, m, cut = n;
+      while ((m = re.exec(s))) {
+        if (m.index < cut && cut < m.index + m[0].length) { cut = m.index; break; }
+      }
+      return s.slice(0, cut).replace(/\s+$/, "") + "…";
+    }
+    var _tsTimer = null;
+    function typesetGrid(grid) {
+      if (_tsTimer) clearTimeout(_tsTimer);
+      _tsTimer = setTimeout(function () {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          try { window.MathJax.typesetPromise([grid]); } catch (e) {}
+        }
+      }, 120);
+    }
+
     function cardHtml(item) {
       var key = keyOf(item.ty, item.tt);
       var hasCard = !!terms[key];
-      return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + key.replace(/"/g, "&quot;") + '"' : "") + '>' +
-        '<div class="terms-card__n"><span>' + item.tt + '</span><span class="terms-card__ty">' + item.ty + '</span></div>' +
-        '<div class="terms-card__s">' + (item.sb || "").slice(0, 110) + '</div></div>';
+      return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + esc(key) + '"' : "") + '>' +
+        '<div class="terms-card__n"><span>' + esc(item.tt) + '</span><span class="terms-card__ty">' + esc(item.ty) + '</span></div>' +
+        '<div class="terms-card__s">' + esc(clip(item.sb, 110)) + '</div></div>';
     }
 
     function paint(filterCat, filterQ) {
@@ -1284,6 +1706,7 @@ TERMS_APP_JS = r'''(function () {
       grid.innerHTML = items.map(cardHtml).join("") ||
         '<div style="opacity:.7">无匹配条目</div>';
       app.querySelector("#terms-count").textContent = items.length + " 条";
+      typesetGrid(grid);
     }
 
     app.innerHTML =
@@ -1419,18 +1842,18 @@ hero:
       text: 理论展开链
       link: /L000_展开链
     - theme: alt
-      text: 讲稿（第一分册）
+      text: 讲稿 · 全六册
       link: /L001_第一分册_从问题到链条
 
 features:
   - title: 结构化数据（唯一源）
-    details: 概念 82 · 命题 63 · 论证 70 · 缺口 24
+    details: 概念 81 · 命题 63 · 论证 69 · 缺口 24
   - title: 知识图谱与 SPARQL
     details: 145 实体 / 359 边；在线只读 SPARQL（Jena 内存模型）
   - title: 证据层
     details: 215 条断言，逐字引文 + 字符区间可回溯
   - title: 形式化验证
-    details: Lean 覆盖 41/82 概念；SHACL / HermiT 一致性通过
+    details: Lean 覆盖 40/81 概念；SHACL / HermiT 一致性通过
 ---
 """
 with open(os.path.join(VP_DOCS, "index.md"), "w", encoding="utf-8") as fh:
@@ -1452,7 +1875,7 @@ Lean 4 形式化项目（**68 个模块 / 1 388 个声明**，`leanprover/lean4:
 人工整理的映射（25 条）与 **axiom 待证清单**（28 条，物理假设的 Lean 承载，原样登记不升格）。
 <div id="lean-app" class="lean-app">正在加载 Lean 对接数据…（需要研究站服务在运行）</div>
 
-呈现边界：形式化覆盖 **41/82 概念**——未覆盖概念不得视为已形式化；缺口状态、
+呈现边界：形式化覆盖 **40/81 概念**——未覆盖概念不得视为已形式化；缺口状态、
 「待证」限定语保持权威源口径。
 
 </div>
@@ -1502,7 +1925,7 @@ for f in md_files:
     if f == "index.md":
         continue
     base = os.path.splitext(f)[0]
-    item = {"text": md_title(os.path.join(VP_DOCS, f), base), "link": "/" + base}
+    item = {"text": plain_title(md_title(os.path.join(VP_DOCS, f), base)), "link": "/" + base}
     if f.startswith("L000"):
         overview.append(item)
     elif f.startswith("LEAN") or f.startswith("TERMS"):
@@ -1591,7 +2014,12 @@ export default defineConfig({
   // 定界符，该公式只能以 LaTeX 原文裸露在页面上。
   // 这里在 emphasis 规则之前插入一条规则，把 $...$ / $$...$$ 整段取出、
   // 原样输出（只做 HTML 转义，不改内容），再由页面上的 MathJax 排版。
+  // attrs.disable：VitePress 默认启用 markdown-it-attrs，会把块/单元格末尾的
+  // {...} 当属性块吞掉（实测 D019 表格「重数 {1,4,5}」整段消失、<td> 里
+  // 多出畸形属性 1,4,5=""）。CQM 语料零有意属性用法（{.class}/{: ...} 扫描
+  // 为 0），直接关闭，保文本原样。
   markdown: {
+    attrs: { disable: true },
     config(md) {
       const DOLLAR = 0x24, BACKSLASH = 0x5c
       const isDollar = (c) => c === DOLLAR
@@ -1703,16 +2131,18 @@ dist = os.path.join(VP_CFG_DIR, "dist")
 print("[vp] 构建完成，产物：%s" % dist)
 
 # ---------------------------------------------------------------- 7. 还原数学占位符
-# 产物里两类上下文要分别转义：
+# 产物里三类上下文要分别转义：
 #   .html —— 文本节点，做 HTML 转义（& < >）
-#   .js   —— Vue 渲染函数里的字符串字面量，做 JSON 转义（\ " 换行）
+#   .js   —— 页面 chunk 是单引号 JS 字符串，按字符串上下文转义（\\ ' " 换行；
+#            JSON.parse('…') 上下文要双层转义）——见 restore_math_js
+#   .json —— 真实 JSON 文件（本地检索索引等），按 JSON 转义还原
 restored = 0
 if MATH_STORE:
     for dp, dns, fns in os.walk(dist):
         for fn in fns:
             ext = os.path.splitext(fn)[1].lower()
             if ext not in (".html", ".js", ".json"):
-                continue   # .json 里是结构化数据（本地检索索引），按 JSON 转义还原
+                continue
             p = os.path.join(dp, fn)
             try:
                 with open(p, "r", encoding="utf-8") as fh:
@@ -1721,12 +2151,92 @@ if MATH_STORE:
                 continue
             if "CQMMATHPLCHOLDER" not in txt:
                 continue
-            new = restore_math(txt, js=(ext in (".js", ".json")))
+            if ext == ".js":
+                new = restore_math_js(txt)
+            else:
+                new = restore_math(txt, js=(ext == ".json"))
             if new != txt:
                 with open(p, "w", encoding="utf-8") as fh:
                     fh.write(new)
                 restored += 1
-print("[vp] 数学保护：%d 处公式入占位 → %d 个产物文件已还原" % (len(MATH_STORE), restored))
+print("[vp] 数学保护：%d 处公式入占位 → %d 个产物文件已还原（其中 %d 处 \\text{} 文本模式转义已还原）"
+      % (len(MATH_STORE), restored, TEXT_MODE_FIXED[0]))
+
+# ---------------------------------------------------------------- 7b. 锚点失配修复
+# 手写目录链接的 href 不带连字符（#第一部分哲学与本体论），而 VitePress slugify
+# 生成的 heading id 在空格/箭头处插连字符（#第一部分-哲学与本体论）→ 点击无目标，
+# 页面不跳转。构建后按「规范化唯一匹配」改写失配 href：规范化只保留字母数字与
+# CJK（去连字符/下划线/箭头/标点、小写），唯一命中才改，歧义或无匹配则报告不动。
+# 同页 chunk JS（SPA 动态渲染的内容源）做同样字面替换。
+ANCHOR_NORM_RE = re.compile(r"[^0-9A-Za-z\u4e00-\u9fff]+")
+ANCHOR_LOOSE_RE = re.compile(r"[^0-9\u4e00-\u9fff]+")  # 宽松：去 ASCII 字母（公式被 slugify 清除的情形）
+
+
+def _anchor_key(s):
+    return ANCHOR_NORM_RE.sub("", s).lower()
+
+
+def _anchor_loose(s):
+    return ANCHOR_LOOSE_RE.sub("", s)
+
+
+anchor_fixed_pages = 0
+anchor_fixed_links = 0
+anchor_unresolved = []
+for f in sorted(os.listdir(dist)):
+    if not f.endswith(".html") or f == "index.html":
+        continue
+    p = os.path.join(dist, f)
+    with open(p, "r", encoding="utf-8") as fh:
+        t = fh.read()
+    ids = set(re.findall(r'id="([^"]+)"', t))
+    if not ids:
+        continue
+    norm_map = {}
+    loose_map = {}
+    for i in ids:
+        norm_map.setdefault(_anchor_key(i), []).append(i)
+        loose_map.setdefault(_anchor_loose(i), []).append(i)
+    fixes = {}
+    for h in set(re.findall(r'href="#([^"]+)"', t)):
+        if h in ids:
+            continue
+        cand = norm_map.get(_anchor_key(h), [])
+        how = "norm"
+        if len(cand) != 1:
+            # 宽松匹配兜底：手写目录把公式记作 g_n/kappa 等 ASCII，
+            # 而 heading 内公式经 slugify 整体消失（id 只剩编号+中文）
+            cand2 = loose_map.get(_anchor_loose(h), [])
+            if len(cand2) == 1 and cand2[0] != h:
+                cand, how = cand2, "loose"
+            else:
+                anchor_unresolved.append((f, h, len(cand), len(cand2)))
+                continue
+        if cand[0] != h:
+            fixes[h] = cand[0]
+    if not fixes:
+        continue
+    for old, new in fixes.items():
+        t = t.replace('href="#%s"' % old, 'href="#%s"' % new)
+    with open(p, "w", encoding="utf-8", newline="") as fh:
+        fh.write(t)
+    # 同步页面对应的 chunk JS（含 .lean 变体）
+    stem = f[:-5]
+    for js in glob.glob(os.path.join(dist, "assets", stem + ".md.*.js")):
+        with open(js, "r", encoding="utf-8") as fh:
+            jt = fh.read()
+        jn = jt
+        for old, new in fixes.items():
+            jn = jn.replace('href="#%s"' % old, 'href="#%s"' % new)
+        if jn != jt:
+            with open(js, "w", encoding="utf-8", newline="") as fh:
+                fh.write(jn)
+    anchor_fixed_pages += 1
+    anchor_fixed_links += len(fixes)
+print("[vp] 锚点修复：%d 个页面 %d 处失配 href 已改写；未解决 %d 处"
+      % (anchor_fixed_pages, anchor_fixed_links, len(anchor_unresolved)))
+for f, h, n1, n2 in anchor_unresolved[:8]:
+    print("    未解决: %s #%s（严格命中 %d / 宽松命中 %d）" % (f, h, n1, n2))
 
 index_html = os.path.join(dist, "index.html")
 if os.path.isfile(index_html):

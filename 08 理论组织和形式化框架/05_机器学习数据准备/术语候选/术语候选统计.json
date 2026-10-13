@@ -1,9 +1,9 @@
 {
-  "candidates_after_threshold": 1159,
+  "candidates_after_threshold": 1157,
   "kept_top_n": 800,
   "already_in_concept_table": 0,
   "new_candidates_kept": 800,
-  "concept_coverage": "0/82",
+  "concept_coverage": "0/81",
   "thresholds": {
     "min_freq": 8,
     "min_pmi": 8.0,
@@ -35,9 +35,9 @@
     "机制",
     "特征常数",
     "晶胞",
-    "网络",
     "状态",
     "边界",
+    "网络",
     "假设",
     "纤维丛",
     "展开",
@@ -47,11 +47,11 @@
     "来源",
     "元素",
     "形式化",
-    "规范",
     "通过",
+    "规范",
     "性关系",
     "约束"
   ],
   "zero_cover_docs": 21,
-  "zero_cover_candidates": 305
+  "zero_cover_candidates": 312
 }

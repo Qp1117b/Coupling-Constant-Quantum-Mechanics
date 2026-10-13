@@ -1,0 +1,5881 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html">
+      
+      
+        <link rel="next" href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>集成理论（总纲） [D005] - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/cqm-enhance.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cqm" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              集成理论（总纲） [D005]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L000_%E5%B1%95%E5%BC%80%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一分册：从问题到链条（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L002_%E7%AC%AC%E4%BA%8C%E5%88%86%E5%86%8C_%E7%BB%9F%E4%B8%80%E4%BD%93%E8%87%AA%E7%BB%84%E8%A3%85%E4%B8%8E%CE%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二分册：统一体自组装与α（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L003_%E7%AC%AC%E4%B8%89%E5%88%86%E5%86%8C_%E8%B0%B1%E6%96%B9%E7%A8%8B%E4%B8%8E%E9%BB%8E%E6%9B%BC%E9%9B%B6%E7%82%B9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三分册：谱方程与黎曼零点（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L004_%E7%AC%AC%E5%9B%9B%E5%88%86%E5%86%8C_%E8%B6%85%E5%AF%BC%E6%B6%8C%E7%8E%B0%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四分册：超导涌现链（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L005_%E7%AC%AC%E4%BA%94%E5%88%86%E5%86%8C_%E4%B8%8E%E6%A0%87%E5%87%86%E7%90%86%E8%AE%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%B6%A8%E8%90%BD%E4%BC%B4%E4%B8%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五分册：与标准理论的关系与涨落伴丛（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L006_%E7%AC%AC%E5%85%AD%E5%88%86%E5%86%8C_%E9%87%8F%E7%BA%B2%E5%8F%91%E7%94%9F%E5%AD%A6%E4%B8%93%E7%AB%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六分册：量纲发生学专章（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V000_%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V001_%E5%8F%AF%E6%8E%A8%E6%BC%94%E8%B6%85%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可推演超图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V002_%E7%A0%94%E7%A9%B6%E9%A9%BE%E9%A9%B6%E8%88%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究驾驶舱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V003_%E6%A3%80%E7%B4%A2%E5%8F%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    检索台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V004_%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%93%9D%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    形式化蓝图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一部分：哲学与本体论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：哲学与本体论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-l0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 物质先在（L0）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 存在与过程的严格顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 再生产：维持而非生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 因果集是属性，不是本体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 层级递进：不是还原论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二部分：理论定位与关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：理论定位与关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 与三大理论谱系的严格关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 与标准量子场论的根本分歧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三部分：核心公理与数学构造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：核心公理与数学构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 为什么量子化耦合常数？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么对数坐标？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 标准海森堡代数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 相变量子 \(☯\) 的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四部分：耦合空间与希尔伯特空间
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：耦合空间与希尔伯特空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-sprinkling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Sprinkling 测度的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 与标准海森堡代数的严格同构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五部分：动力学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：动力学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 一阶层：单向因果传播（真实再生产）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 二阶层：双向干涉（虚拟涨落）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-berrykeating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 酉等价化简与 Berry–Keating 对应
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六部分：前核子自组织 = 禁闭边界
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六部分：前核子自组织 = 禁闭边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 核心命题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 退相干的物理机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 条件性幺正：系统存在的本体论条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-lambda_c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 退相干临界条件：\(\lambda_c\) 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七部分：SU(5) 涌现与谱结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第七部分：SU(5) 涌现与谱结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 4-单纯形的组合结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 边-面关联矩阵与谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 嘉当矩阵的三重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 精细结构常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 牛顿引力常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sierra-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 边界条件与零点匹配
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九部分：两种引力——同源分化的详细机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第九部分：两种引力——同源分化的详细机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 核心论断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 前时空：物质处于前时空的状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-gr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 经典引力 GR：广度存在论前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 精细引力 FG：深度存在论前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 两种引力的对比总表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十部分：核子结构与元素层级
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十部分：核子结构与元素层级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 质子：完美 \(A_4\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ddelta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 中子：末端缺陷形变 \(D(\delta)\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 中子扇区作为精细引力的结构性来源（非触发器）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 元素：理想因果积木
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 两条独立链
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一部分：超导涌现的完整机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十一部分：超导涌现的完整机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 核心论断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 完整因果链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 步骤详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 临界温度（严格推导）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 温度的统一作用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 因果网络同步：超导的组织学定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十二部分：与标准理论的关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十二部分：与标准理论的关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-bcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 与 BCS 理论的退化与还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-rg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 与重整化群（RG）的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 贝尔不等式的取消
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 测量问题的消解
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十三部分：纤维丛结构与涨落伴丛
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十三部分：纤维丛结构与涨落伴丛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 耦合常数必须指定结构群
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 耦合常数唯一，荷多样化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 条件而非唯一确定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 涨落伴丛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 先在规范直积群与物质自组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 完整发生学链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 扇区化表现形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 理论意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#139" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 对称性叠加：结构群作为量子变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.10 伴丛族路径积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.11 相变 = 对称性退相干
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.12 与量子群/量子丛的区分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.13 理论的最新形态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.14 超导群的多样性统一解释
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.15 质数—群—黎曼猜想的统一链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.16 黎曼猜想的本体论地位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1317" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.17 完整统一链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一部分：哲学与本体论
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：哲学与本体论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-l0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 物质先在（L0）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 存在与过程的严格顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 再生产：维持而非生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 因果集是属性，不是本体
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 层级递进：不是还原论
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二部分：理论定位与关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：理论定位与关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 与三大理论谱系的严格关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 与标准量子场论的根本分歧
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三部分：核心公理与数学构造
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：核心公理与数学构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 为什么量子化耦合常数？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么对数坐标？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 标准海森堡代数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 相变量子 \(☯\) 的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四部分：耦合空间与希尔伯特空间
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：耦合空间与希尔伯特空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-sprinkling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Sprinkling 测度的来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 与标准海森堡代数的严格同构
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五部分：动力学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：动力学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 一阶层：单向因果传播（真实再生产）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 二阶层：双向干涉（虚拟涨落）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-berrykeating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 酉等价化简与 Berry–Keating 对应
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六部分：前核子自组织 = 禁闭边界
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六部分：前核子自组织 = 禁闭边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 核心命题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 退相干的物理机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 条件性幺正：系统存在的本体论条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-lambda_c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 退相干临界条件：\(\lambda_c\) 方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七部分：SU(5) 涌现与谱结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第七部分：SU(5) 涌现与谱结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 4-单纯形的组合结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 边-面关联矩阵与谱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 嘉当矩阵的三重身份
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 精细结构常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 牛顿引力常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sierra-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 边界条件与零点匹配
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第九部分：两种引力——同源分化的详细机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第九部分：两种引力——同源分化的详细机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 核心论断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 前时空：物质处于前时空的状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-gr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 经典引力 GR：广度存在论前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 精细引力 FG：深度存在论前提
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 两种引力的对比总表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十部分：核子结构与元素层级
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十部分：核子结构与元素层级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 质子：完美 \(A_4\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ddelta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 中子：末端缺陷形变 \(D(\delta)\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 中子扇区作为精细引力的结构性来源（非触发器）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 元素：理想因果积木
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 两条独立链
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一部分：超导涌现的完整机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十一部分：超导涌现的完整机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 核心论断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 完整因果链
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 步骤详解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 临界温度（严格推导）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 温度的统一作用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 因果网络同步：超导的组织学定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十二部分：与标准理论的关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十二部分：与标准理论的关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-bcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 与 BCS 理论的退化与还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-rg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 与重整化群（RG）的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 贝尔不等式的取消
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 测量问题的消解
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十三部分：纤维丛结构与涨落伴丛
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十三部分：纤维丛结构与涨落伴丛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 耦合常数必须指定结构群
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 耦合常数唯一，荷多样化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 条件而非唯一确定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 涨落伴丛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 先在规范直积群与物质自组织
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 完整发生学链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 扇区化表现形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 理论意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#139" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 对称性叠加：结构群作为量子变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.10 伴丛族路径积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.11 相变 = 对称性退相干
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.12 与量子群/量子丛的区分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.13 理论的最新形态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.14 超导群的多样性统一解释
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.15 质数—群—黎曼猜想的统一链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.16 黎曼猜想的本体论地位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1317" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.17 完整统一链条
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cqm">耦合常数量子力学（CQM）——集成理论<a class="headerlink" href="#cqm" title="Permanent link">&para;</a></h1>
+<p><strong>作者</strong>：ruster</p>
+<blockquote>
+<p><strong>符号约定</strong>：相变量子主符号为 <strong><span class="arithmatex">\(☯\)</span></strong>（太极，表辩证与相变）；英文符号为 <span class="arithmatex">\(\mathscr{C}\)</span>（花体 C，script C），用于国际交流语境。二者指称同一物理量：<span class="arithmatex">\(☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897\)</span>。</p>
+<p><strong>配套文档</strong>（各部分的完整展开）：
+- <code>CQM_核心_引力存在论前提.md</code>——第九部分的完整展开（前时空/FG/GR 对比总表、中子缺陷矩阵、缺口编号 N1–N4、Lean 形式化对应）；
+- <code>06 超导/CQM_超导核心理论.md</code>——第十一部分的完整展开（两条链、FG 纤维丛、<span class="arithmatex">\(T_c\)</span> 校准）（缺口表 G 类见 <code>06 超导/CQM_超导_专题与扩展.md</code> §13）；
+- <code>03 引力与退相干/CQM_引力_GN可能公式.md</code>——第七部分 7.5 的公式展示（10 位有效数字，框架内构造后验数字校验）；
+- <code>归档/CQM_混合_混合矩阵.md</code>（项目根目录下的 <code>归档/</code>）——混合矩阵机制目前未定；
+- <code>08 理论组织和形式化框架/04_Lean对接/Lean源码/</code>——对应的形式化库。</p>
+</blockquote>
+<hr />
+<h2 id="_1">摘要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>按十三部分重构耦合常数量子力学（Coupling Constant Quantum Mechanics, CQM）的集成框架。CQM 直接建立在因果集（Causal Set）、关系量子力学（RQM）与圈量子引力（LQG）三大理论基础之上，但进行了根本性的本体论重构：<strong>量子化的对象是耦合常数本身</strong>。时空与标准模型都是耦合常数量子力学在禁闭边界上涌现。</p>
+<p><strong>CQM 是物理系统的理论，主要研究物理系统的费米—强子尺度</strong>——单个质子/中子内部（费米尺度，禁闭内部）及其边界（强子尺度，禁闭边界）的耦合常数量子力学；作为物理系统的理论，其框架与结论亦适用于更广的物理系统语境。各系统拥有独立的因果算法，物理系统内部不同尺度的因果算法亦根本不同。</p>
+<p>CQM 的核心创新始终只有一点：<strong>把量子力学的共轭对从 <span class="arithmatex">\((\hat{x}, \hat{p})\)</span> 换成 <span class="arithmatex">\((\hat{u}, \hat{p}_u)\)</span></strong>，其中 <span class="arithmatex">\(\hat{u} = \ln \hat{r}\)</span> 是对数耦合常数、<span class="arithmatex">\(\hat{p}_u = \hat{v}_\tau/☯\)</span> 是固有时流速共轭动量，满足标准海森堡代数 <span class="arithmatex">\([\hat{u}, \hat{p}_u] = i\)</span>。然后让全部涌现——SU(5) 禁闭边界、两种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱与自由能竞争——从这个替换中自然生长出来。</p>
+<p>理论主线：（1）<strong>物质先在，存在先于过程</strong>——质子/中子作为有限本体先于再生产闭环，再生产 <span class="arithmatex">\(\mu^2=\mu\)</span> 是维持而非生成；（2）<strong>前核子自组织导致禁闭边界</strong>——禁闭不是 QCD 动力学的结果，而是<strong>前质子／前中子自组织</strong>的结果；（3）<strong>条件性幺正</strong>——系统边界局部非幺正性是系统存在的本体论条件：系统诞生于边界局部非幺正确立，维持于内部条件性幺正运行，瓦解于条件性幺正消亡；（4）<strong>SU(5) 涌现与谱结构</strong>——4-单纯形边-面关联矩阵本征值 <span class="arithmatex">\(\{9,4,1\}\)</span> 锁定三种规范耦合相对强度，<span class="arithmatex">\(\alpha^{-1} = 16384\pi/375\)</span>，<span class="arithmatex">\(G_N\)</span> 由无量纲数学纯数组合给出（与 CODATA 偏差约 <span class="arithmatex">\(-3\)</span> ppm，属构造后验数字校验，待独立复现）；（5）<strong>Sierra-CQM 耦谱定理</strong>——黎曼零点对应再生产过程的共振模式；（6）<strong>两种引力</strong>——GR（广度前提，平庸因果网络 = 时空）/FG（深度前提，GR 基态的非平庸激发态），二者同源于<strong>前时空</strong>（先于引力）；（7）<strong>超导涌现</strong>——曲率涨落→固有时流速→海森堡不确定性→跃迁耦级谱 <span class="arithmatex">\(2\ln n\)</span>（<span class="arithmatex">\(n=2,4,6,\ldots\)</span>）→资格条件筛选候选群族→自由能竞争选出主导群，<span class="arithmatex">\(T_c\)</span> 由自由能交叉给出。</p>
+<blockquote>
+<p><strong>退相干是子类自组织的表现</strong>：
+- <strong>自组织</strong>是最一般的范畴——物质自发地组织出结构，<strong>并非所有自组织都以退相干表现</strong>；
+- <strong>退相干是其中一类自组织的表现</strong>——即表现为退相干的那类自组织；
+- <strong>退相干与引力有关</strong>——引力（因果限制场）提供退相干赖以发生的因果结构；但<strong>退相干不等于只由引力来承担</strong>。</p>
+</blockquote>
+<p>每一部分标注严格性状态；关键缺口（如中子缺陷 <span class="arithmatex">\(\delta\)</span>、几何耦合 <span class="arithmatex">\(\beta\)</span> 的第一性来源）在结论中审计。</p>
+<blockquote>
+<p><strong>发生学分层</strong>：质数分布的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化）——<strong>物理系统固定在 GL(5) 层级</strong>（SU(5) 是含标准模型的最小单群，rank 4）。同步算符（= 紧化算符的层级实现）体系分两类谱论对象（见该文档 §4）：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符，承担黎曼零点谱的谱算符 <span class="arithmatex">\(\hat{H}_{\text{HP}}\)</span> 在类型上即波利亚算符——CQM 的标志在算符来源（物理铸造而非拟合零点）；GL(5) 固定层级的实谱条件是广义黎曼猜想（GRH），黎曼猜想是其在 GL(1)（U(1) 电磁因子）的特例；ζ(s) 的欧拉乘积给出 GL(1) 因子层下直接使用的谱（基态 L 函数是 <span class="arithmatex">\(L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}\)</span>）。直接用于计算的 ζ 零点谱（<span class="arithmatex">\(☯=\frac{d}{ds}\ln\xi(s)\big|_{s=1}\)</span>、<span class="arithmatex">\(\mathfrak{c}_n=1/4+\gamma_n^2\)</span>）属 GL(1) 因子层（SU(5) 破缺后电磁因子的自守对偶残留）的谱。完整分层流程图见 <code>CQM_核心_因果网络同步理论.md</code> §9。</p>
+</blockquote>
+<p><strong>关键词</strong>：耦合常数量子力学；因果集；关系量子力学；圈量子引力；引力参与的退相干；禁闭；存在论；条件性幺正；SU(5) 嘉当矩阵；Mathieu 方程；黎曼零点；传输方程；两种引力；超导涌现；贝尔不等式；系统—尺度—层级递进</p>
+<hr />
+<h2 id="_2">目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#第一部分哲学与本体论">第一部分：哲学与本体论</a></li>
+<li><a href="#第二部分理论定位与关系">第二部分：理论定位与关系</a></li>
+<li><a href="#第三部分核心公理与数学构造">第三部分：核心公理与数学构造</a></li>
+<li><a href="#第四部分耦合空间与希尔伯特空间">第四部分：耦合空间与希尔伯特空间</a></li>
+<li><a href="#第五部分动力学">第五部分：动力学</a></li>
+<li><a href="#第六部分前核子自组织--禁闭边界">第六部分：前核子自组织 = 禁闭边界</a></li>
+<li><a href="#第七部分su5-涌现与谱结构">第七部分：SU(5) 涌现与谱结构</a></li>
+<li><a href="#第八部分谱方程与黎曼零点sierra-cqm-耦谱定理">第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）</a></li>
+<li><a href="#第九部分两种引力同源分化的详细机制">第九部分：两种引力——同源分化的详细机制</a></li>
+<li><a href="#第十部分核子结构与元素层级">第十部分：核子结构与元素层级</a></li>
+<li><a href="#第十一部分超导涌现的完整机制">第十一部分：超导涌现的完整机制</a></li>
+<li><a href="#第十二部分与标准理论的关系">第十二部分：与标准理论的关系</a></li>
+<li><a href="#第十三部分纤维丛结构与涨落伴丛">第十三部分：纤维丛结构与涨落伴丛</a></li>
+<li><a href="#结论">结论</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ol>
+<hr />
+<h2 id="_3">第一部分：哲学与本体论<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="11-l0">1.1 物质先在（L0）<a class="headerlink" href="#11-l0" title="Permanent link">&para;</a></h3>
+<p>CQM 的第一公理不是数学公式，而是一个存在论判断：<strong>物质是先在的</strong>。</p>
+<p>这意味着：</p>
+<ul>
+<li>不需要“大爆炸奇点”作为存在的起点——物质一直存在，以自维持循环的形式展开；</li>
+<li>不需要“时空背景”作为存在的舞台——时空结构是物质再生产循环的涌现关系；</li>
+<li>物理学的全部内容 = 有限本体如何维持自身存在。</li>
+</ul>
+<p>这一立场与标准宇宙学的根本分歧在于：CQM 不承认“从虚无中创生”的叙事。质子/中子作为有限本体不是被创造的，而是通过再生产操作 <span class="arithmatex">\(\mu\)</span> 维持自身存在。<strong>存在先于过程，过程维持存在。</strong></p>
+<h3 id="12">1.2 存在与过程的严格顺序<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">尺度</th>
+<th style="text-align: left;">存在（实体）</th>
+<th style="text-align: left;">过程（维持）</th>
+<th style="text-align: left;">关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>L0</strong></td>
+<td style="text-align: left;">物质（先在）</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">无条件先在</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>L1（费米尺度）</strong></td>
+<td style="text-align: left;">质子/中子</td>
+<td style="text-align: left;">再生产 <span class="arithmatex">\(\mu^2=\mu\)</span></td>
+<td style="text-align: left;">存在先于过程</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>L2（强子尺度）</strong></td>
+<td style="text-align: left;">禁闭边界</td>
+<td style="text-align: left;">前核子自组织</td>
+<td style="text-align: left;"><strong>禁闭的形成即质子／中子的形成</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>L3+（核/原子及以上）</strong></td>
+<td style="text-align: left;">原子核、原子等</td>
+<td style="text-align: left;">复杂耦合</td>
+<td style="text-align: left;">高级存在由低级存在的复杂耦合维持</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键</strong>：每一层的“存在”对上一层是“过程”。质子对夸克是存在，对原子核是过程的一部分。但在本层内，存在先于过程。</p>
+<h3 id="13">1.3 再生产：维持而非生成<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>再生产是有限本体（质子/中子）<strong>维持</strong>自身存在的操作，而非创造自身的操作。记为态射 <span class="arithmatex">\(\mu : S \to S\)</span>，满足幂等性：</p>
+<div class="arithmatex">\[\mu \circ \mu = \mu, \qquad \mu^2 = \mu\]</div>
+<ul>
+<li><strong>定义域 = 值域 = <span class="arithmatex">\(S\)</span></strong>：不是 <span class="arithmatex">\(S \to S'\)</span>（生成新实体），而是 <span class="arithmatex">\(S \to S\)</span>（维持同一实体）；</li>
+<li><strong>幂等性</strong>：执行两次 = 执行一次。这不是“累积创造”，而是“稳态维持”。</li>
+</ul>
+<p><span class="arithmatex">\(\mu\)</span> <strong>不驱动动力学</strong>，而是<strong>存在论条件</strong>——质子必须满足 <span class="arithmatex">\(\mu^2=\mu\)</span> 才能维持自身存在。动力学（传输方程、嘉当方程）是质子在维持自身存在的过程中表现出的运动学规律。</p>
+<h3 id="14">1.4 因果集是属性，不是本体<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>从因果集理论（Bombelli, Lee, Meyer &amp; Sorkin, 1987）继承的公理：</p>
+<blockquote>
+<p><strong>公理 I（本体论）</strong>：物理实在由因果集 <span class="arithmatex">\(C = (X, \prec)\)</span> 构成，其中 <span class="arithmatex">\(X\)</span> 为事件集合，<span class="arithmatex">\(\prec\)</span> 为因果序关系，满足局部有限性（<span class="arithmatex">\(|\text{Past}(x)| &lt; \infty\)</span>）、反自反性（<span class="arithmatex">\(x \nprec x\)</span>）、传递性（<span class="arithmatex">\(x \prec y \prec z \Rightarrow x \prec z\)</span>）。</p>
+<p><strong>公理 II（Sprinkling，撒点测度）</strong>：因果集通过泊松 Sprinkling 嵌入连续几何，密度 <span class="arithmatex">\(\rho = l^{-d}\)</span>，<span class="arithmatex">\(l\)</span> 为基本长度，<span class="arithmatex">\(d\)</span> 为壳层维度。</p>
+<p><strong>公理 III（基本动力学）</strong>：若 <span class="arithmatex">\(x \prec y\)</span>，激发从 <span class="arithmatex">\(x\)</span> 传播到 <span class="arithmatex">\(y\)</span>；若 <span class="arithmatex">\(x \nprec y\)</span>，传播被禁止。</p>
+</blockquote>
+<p>但 CQM 对因果集的本体论地位进行了根本修正：<strong>因果集是物质的属性，不是物质的本体</strong>——它描述的是<strong>因果结构的建立、组织、同步等过程</strong>。没有质子，就没有质子的因果集；但有质子，必然有其再生产的因果序。</p>
+<h3 id="15">1.5 层级递进：不是还原论<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>CQM 采用<strong>系统—尺度—层级递进</strong>的三重划分框架：系统按经典学科划分（物理、化学、生物、社会、宇宙学），尺度为同一系统内的特征长度/能量尺度，结构为同一尺度内的具体组织形式与因果算法。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">递进方向</th>
+<th style="text-align: left;">关系性质</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>物理系统 → 化学系统</strong></td>
+<td style="text-align: left;">物质条件</td>
+<td style="text-align: left;">没有质子/电子，就没有原子/化学键。但化学键的因果算法不能从质子内部推导</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>化学系统 → 生物系统</strong></td>
+<td style="text-align: left;">物质条件</td>
+<td style="text-align: left;">没有化学键/分子，就没有细胞/代谢。但自复制不能从化学键推导</td>
+</tr>
+</tbody>
+</table>
+<p><strong>物理系统内部的尺度/结构分化</strong>（全篇使用的 L1/L2/L3+ 记号即源于此）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">尺度</th>
+<th style="text-align: left;">结构</th>
+<th style="text-align: left;">因果算法</th>
+<th style="text-align: left;">引力如何支配</th>
+<th style="text-align: center;">CQM 研究？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>L1 费米尺度</strong>（~fm）</td>
+<td style="text-align: left;">禁闭内部（夸克/胶子）</td>
+<td style="text-align: left;">因果集序 <span class="arithmatex">\(x \prec y\)</span>；非交换几何；双向干涉</td>
+<td style="text-align: left;">前核子自组织尚未完成</td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>L2 强子尺度</strong>（~fm）</td>
+<td style="text-align: left;">禁闭边界（质子/中子表面）</td>
+<td style="text-align: left;">退相干：双向→单向；非交换→交换；条件性幺正</td>
+<td style="text-align: left;"><strong>前核子自组织的关键实现</strong></td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>L3+ 核/原子尺度</strong>（~Å 及以上）</td>
+<td style="text-align: left;">原子核、原子、凝聚态</td>
+<td style="text-align: left;">多体哈密顿量、有效场论、序参量</td>
+<td style="text-align: left;">引力作为背景，多体条件</td>
+<td style="text-align: center;">未定</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>分子尺度</strong>（~nm）</td>
+<td style="text-align: left;">化学键、分子轨道</td>
+<td style="text-align: left;">电子交换对称性、轨道重叠、共振</td>
+<td style="text-align: left;">引力作为背景，电子轨道条件</td>
+<td style="text-align: center;">未定</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>宇宙尺度</strong>（~Mpc）</td>
+<td style="text-align: left;">大尺度结构、时空几何</td>
+<td style="text-align: left;">广义相对论、宇宙学方程</td>
+<td style="text-align: left;">引力集体效应，时空几何演化</td>
+<td style="text-align: center;">未定</td>
+</tr>
+</tbody>
+</table>
+<p><strong>与还原论的根本区别</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">还原论</th>
+<th style="text-align: left;">CQM 立场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>关系</strong></td>
+<td style="text-align: left;">高层 = 低层的组合/放大</td>
+<td style="text-align: left;">高层受低层<strong>条件限定</strong>，但<strong>不能推导</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>因果</strong></td>
+<td style="text-align: left;">低层因果决定高层因果</td>
+<td style="text-align: left;">各系统有<strong>独立的因果算法</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>物质</strong></td>
+<td style="text-align: left;">高层无新物质</td>
+<td style="text-align: left;">高层需要低层作为<strong>物质载体</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>信息</strong></td>
+<td style="text-align: left;">高层信息 = 低层信息的总和</td>
+<td style="text-align: left;">高层信息是<strong>组织产物</strong>，低层信息不能预测</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CQM 的严格研究范围</strong>：主要研究物理系统之费米—强子尺度——单个质子/中子内部（L1，禁闭内部）及其退相干边界（L2，禁闭边界）。核/原子尺度的多体物理、分子尺度的化学键、宇宙尺度的大尺度结构均未定，但受 CQM 层级（质子再生产闭环）的物质条件限定。</p>
+<hr />
+<h2 id="_4">第二部分：理论定位与关系<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 与三大理论谱系的严格关系<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">理论基础</th>
+<th style="text-align: left;">提供的具体工具/概念</th>
+<th style="text-align: left;">CQM 中的实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>因果集</strong></td>
+<td style="text-align: left;">非交换几何、离散动力学</td>
+<td style="text-align: left;">禁闭内部 <span class="arithmatex">\([x^\mu, x^\nu] \neq 0\)</span>、Sprinkling 测度 <span class="arithmatex">\(e^{-u}du\)</span>、嘉当方程离散演化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>关系量子力学</strong></td>
+<td style="text-align: left;">引力因果退相干理论</td>
+<td style="text-align: left;">双向干涉 → 单向因果、Lindblad 方程、<span class="arithmatex">\(\lambda_c\)</span> 方程作为退相干临界条件</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>圈量子引力</strong></td>
+<td style="text-align: left;">Regge-GR 联系、网络理论、自旋泡沫（循环论）</td>
+<td style="text-align: left;">4-单纯形 Regge 骨架、边-面关联矩阵 <span class="arithmatex">\(E\)</span>、<span class="arithmatex">\(A_4^{++}\)</span> Weyl 群循环（镶嵌 <span class="arithmatex">\(\{5,4\}\)</span>）</td>
+</tr>
+</tbody>
+</table>
+<p>CQM 既是对三大理论的“综合”，也是对“什么应该被量子化”的根本重新定位：<strong>量子化的对象是耦合常数本身</strong>。</p>
+<h3 id="22">2.2 与标准量子场论的根本分歧<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">标准 QFT</th>
+<th style="text-align: left;">CQM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>基本舞台</strong></td>
+<td style="text-align: left;">位置空间 <span class="arithmatex">\((\hat{x}, \hat{p})\)</span></td>
+<td style="text-align: left;">耦合常数空间 <span class="arithmatex">\((\hat{u}, \hat{p}_u)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>时间参数</strong></td>
+<td style="text-align: left;">外部坐标 <span class="arithmatex">\(t \in \mathbb{R}\)</span></td>
+<td style="text-align: left;">内禀因果时 <span class="arithmatex">\(\tau\)</span>（再生产步骤计数）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>能标概念</strong></td>
+<td style="text-align: left;">外部参数 <span class="arithmatex">\(\mu\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\tau\)</span> 的流逝直接等价于能标改变</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>耦合常数</strong></td>
+<td style="text-align: left;">拉格朗日量的输入参数</td>
+<td style="text-align: left;">量子算符，满足海森堡不确定性</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>禁闭</strong></td>
+<td style="text-align: left;">QCD 拉格朗日量的动力学结果</td>
+<td style="text-align: left;"><strong>前质子／前中子自组织</strong>的结果</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>标准模型群</strong></td>
+<td style="text-align: left;">经验输入的规范对称性</td>
+<td style="text-align: left;">退相干后涌现的代数结构（SU(5)）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>引力</strong></td>
+<td style="text-align: left;">独立的相互作用（广义相对论）</td>
+<td style="text-align: left;">退相干机制在不同层级的分化表现</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">第三部分：核心公理与数学构造<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 为什么量子化耦合常数？<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>标准量子力学的基本困境是：<strong>应该量子化什么？</strong></p>
+<ul>
+<li><strong>因果集</strong>量子化时空的因果结构，但缺乏动力学方程；</li>
+<li><strong>关系量子力学</strong>量子化观察关系，但取消物自体而陷入结构性唯心主义；</li>
+<li><strong>圈量子引力</strong>量子化位置空间的度规，但无法恢复低能物理与标准模型参数。</li>
+</ul>
+<p>CQM 的根本转向：<strong>量子化的对象是耦合常数本身。</strong> 时空与标准模型都是耦合常数量子力学在禁闭边界上涌现。</p>
+<h3 id="32">3.2 为什么对数坐标？<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>若直接用 <span class="arithmatex">\(r\)</span> 作坐标，代数非标准，算符理论困难：<span class="arithmatex">\(r\)</span> 的值域是 <span class="arithmatex">\((0, \infty)\)</span> 而非全实轴 <span class="arithmatex">\(\mathbb{R}\)</span>，且对易子含 <span class="arithmatex">\(r\)</span> 本身。</p>
+<p>取 <span class="arithmatex">\(u = \ln r\)</span> 后：</p>
+<ul>
+<li>值域变为 <span class="arithmatex">\(\mathbb{R}\)</span>（全实轴），与标准量子力学一致；</li>
+<li>对易子变为 <span class="arithmatex">\([\hat{u}, \hat{p}_u] = i\)</span>（标准海森堡代数，无量纲）；</li>
+<li>可以直接调用标准量子力学的全部谱理论（自伴扩张、不确定性、谱分解）。</li>
+</ul>
+<p>这是物理要求的自然结果：耦合常数的“跑动”（RG 流）在标准场论中为对数跑动（<span class="arithmatex">\(g^2 \sim 1/\ln\mu\)</span>），对应 CQM 中传输方程特征线的有理函数解 <span class="arithmatex">\(r(\tau) = 1/(-v\tau + C)\)</span>（见 §12.2）。对数坐标 <span class="arithmatex">\(u = \ln r\)</span> 将 RG 流的二次非线性跑动转化为耦合空间中的几何描述。</p>
+<h3 id="33">3.3 标准海森堡代数<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\boxed{[\hat{u}, \hat{p}_u] = i}\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(\hat{u} = \ln \hat{r}\)</span>：<strong>对数耦合常数</strong>（<span class="arithmatex">\(r\)</span> 为总耦合强度，Casimir 不变量）；</li>
+<li><span class="arithmatex">\(\hat{p}_u = \hat{v}_\tau / ☯\)</span>：<strong>固有时流速共轭动量</strong>（<span class="arithmatex">\(v_\tau = d\tau/dt\)</span> 为固有时流速）；</li>
+<li><span class="arithmatex">\(☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897\)</span>：<strong>相变量子</strong>，来自黎曼 <span class="arithmatex">\(\xi\)</span> 函数在 <span class="arithmatex">\(s=1\)</span> 处的对数导数，是耦合空间的“作用量量子”。</li>
+</ul>
+<p><strong>不确定性关系</strong>：</p>
+<div class="arithmatex">\[\Delta u \cdot \Delta p_u \geq \frac{1}{2}\]</div>
+<p>或等价地（用相对耦合不确定度）：</p>
+<div class="arithmatex">\[\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}\]</div>
+<p><strong>物理诠释</strong>：在单个质子内部，耦合常数的相对不确定度与固有时流速的不确定度互斥。你越精确地测定这个系统的耦合常数，就越无法精确测定它的固有时此刻流得多快；反之亦然。</p>
+<h3 id="34">3.4 相变量子 <span class="arithmatex">\(☯\)</span> 的来源<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(☯\)</span> 是黎曼 <span class="arithmatex">\(\xi\)</span> 函数的自然输出：</p>
+<div class="arithmatex">\[☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \frac{\xi'(1)}{\xi(1)} = 1 + \frac{\gamma}{2} - \ln(2\sqrt{\pi}) \approx 0.023095708966\]</div>
+<p>由 <span class="arithmatex">\(\xi(s) = \frac{1}{2}s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)\)</span> 的函数方程 <span class="arithmatex">\(\xi(s) = \xi(1-s)\)</span> 与 <span class="arithmatex">\(\psi(1/2) = -\gamma - 2\ln 2\)</span>（<span class="arithmatex">\(\psi\)</span> 为双伽玛函数，<span class="arithmatex">\(\gamma\)</span> 为欧拉-马歇罗尼常数），严格推出。解析值与数值微分互验，精确到 <span class="arithmatex">\(10^{-7}\)</span>。它是无量纲数学纯数，作为全部后续层级的普适比例基准。</p>
+<h4 id="341">3.4.1 <span class="arithmatex">\(☯\)</span> 的集体泛函表达式<a class="headerlink" href="#341" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(☯\)</span> 由 <span class="arithmatex">\(\xi'(1)/\xi(1)\)</span> 独立定义（不循环，不依赖 RH）。利用 Hadamard 乘积公式，<span class="arithmatex">\(☯\)</span> 可表示为<strong>所有黎曼零点的集体谱权重</strong>。此处需区分两层：</p>
+<p><strong>Hadamard 恒等式</strong>（不依赖 RH）：</p>
+<div class="arithmatex">\[\boxed{☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \sum_{\rho} \frac{1}{1-\rho} \approx 0.02309570897}\]</div>
+<p>其中 <span class="arithmatex">\(\rho\)</span> 遍历全部黎曼零点。此式由 <span class="arithmatex">\(\xi\)</span> 的 Hadamard 乘积直接给出，不要求零点在临界线上。</p>
+<p><strong>谱表示</strong>（条件于 RH）：若假设 RH 成立（零点 <span class="arithmatex">\(\rho = 1/2 + i\gamma_n\)</span> 在临界线上），代入并配对共轭零点后得到：</p>
+<div class="arithmatex">\[\boxed{☯ = \sum_{n=1}^{\infty} \frac{1}{\gamma_n^2 + \frac{1}{4}} \approx 0.02309570897 \quad (\text{条件于 RH})}\]</div>
+<p>其中 <span class="arithmatex">\(\gamma_n\)</span> 是黎曼零点虚部。<span class="arithmatex">\(☯\)</span> 不是某一个零点的性质，而是全部零点按 <span class="arithmatex">\(1/(\gamma_n^2+1/4)\)</span> 加权的集体贡献——低层零点贡献了大部分谱权重。<span class="arithmatex">\(☯\)</span> 在 CQM 中充当“相变量子”，设定了耦合常数与固有时流速之间不确定性的基本下限。<strong>不确定性关系基于相变量子 <span class="arithmatex">\(☯\)</span></strong>：不确定性关系为 <span class="arithmatex">\(\Delta u \cdot \Delta v_\tau \geq ☯/2\)</span>。<span class="arithmatex">\(☯\)</span> 取代传统量子力学中 <span class="arithmatex">\(\hbar\)</span> 的角色，由 <span class="arithmatex">\(\xi\)</span> 独立定义（不循环）；谱表示是其推论（条件于 RH），是数论谱对物理量子尺度的直接规定。</p>
+<h4 id="342-xi-zeta">3.4.2 为什么取 <span class="arithmatex">\(\xi\)</span> 而非 <span class="arithmatex">\(\zeta\)</span><a class="headerlink" href="#342-xi-zeta" title="Permanent link">&para;</a></h4>
+<p>求和式只过非平凡零点 <span class="arithmatex">\(\gamma_n\)</span>，不过平凡零点——这正是取 <span class="arithmatex">\(\xi\)</span> 而非 <span class="arithmatex">\(\zeta\)</span> 的原因。<span class="arithmatex">\(\xi(s) = \tfrac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)\)</span> 中 <span class="arithmatex">\(\Gamma(s/2)\)</span> 的极点恰好抵消 <span class="arithmatex">\(\zeta\)</span> 的平凡零点 <span class="arithmatex">\((-2,-4,\ldots)\)</span>，使 <span class="arithmatex">\(\xi\)</span> 的零点集恰好为 <span class="arithmatex">\(\{\gamma_n\}\)</span>；而 <span class="arithmatex">\(\zeta\)</span> 在 <span class="arithmatex">\(s=1\)</span> 有极点，<span class="arithmatex">\(\frac{d}{ds}\ln\zeta(s)\big|_{s=1}\)</span> 发散。<span class="arithmatex">\(\zeta\)</span> 是同一 <span class="arithmatex">\(\mathrm{GL}(1)\)</span> <span class="arithmatex">\(L\)</span> 函数的算术面孔（Euler 积、有极点），<span class="arithmatex">\(\xi\)</span> 是谱面孔（整、只含非平凡零点）。<span class="arithmatex">\(☯\)</span> 取自谱面孔，因为只有 <span class="arithmatex">\(\xi\)</span> 的 Hadamard 积给出干净的谱求和。</p>
+<p><span class="arithmatex">\(\xi\)</span> 的零点集恰好是 <span class="arithmatex">\(\{\gamma_n\}\)</span>——非平凡零点。在 CQM 中，<span class="arithmatex">\(\gamma_n\)</span> 是共振频率，与相变直接关联（见 <code>CQM_核心_朗兰兹分层共振与相变量子.md</code> §5.3）。<span class="arithmatex">\(☯\)</span> 从 <span class="arithmatex">\(\xi\)</span> 提取，即从相变关联的非平凡零点谱中提取——“相变量子”命名有据。</p>
+<hr />
+<h2 id="_6">第四部分：耦合空间与希尔伯特空间<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="41-sprinkling">4.1 Sprinkling 测度的来源<a class="headerlink" href="#41-sprinkling" title="Permanent link">&para;</a></h3>
+<p>因果集 <span class="arithmatex">\((X, \prec)\)</span> 通过泊松 Sprinkling 嵌入连续几何时，泊松过程的固有随机性赋予场演化以内禀随机偏移。</p>
+<p><strong>定理 4.1（Sprinkling 测度）</strong>。<span class="arithmatex">\(v\)</span> 坐标中的均匀 Sprinkling 严格导出 <span class="arithmatex">\(u\)</span> 坐标中的测度 <span class="arithmatex">\(d\mu = e^{-u}du\)</span>。</p>
+<p><em>证明</em>。Sprinkling 在 <span class="arithmatex">\(v\)</span> 坐标中均匀，密度 <span class="arithmatex">\(\rho\)</span>，则 <span class="arithmatex">\(d\mu_{\text{spr}} = \rho\,dv\)</span>。由 <span class="arithmatex">\(v = e^{-u}\)</span>，<span class="arithmatex">\(dv = -e^{-u}du\)</span>，得 <span class="arithmatex">\(d\mu_{\text{spr}} = \rho e^{-u}du\)</span>。吸收常数 <span class="arithmatex">\(\rho\)</span> 入定义，得 <span class="arithmatex">\(d\mu = e^{-u}du\)</span>。<span class="arithmatex">\(\square\)</span></p>
+<p>希尔伯特空间：</p>
+<div class="arithmatex">\[\mathcal{H} = L^2(\mathbb{R}, e^{-u}du), \qquad \langle f, g \rangle = \int f^*(u)\,g(u)\,e^{-u}du\]</div>
+<p><strong>关键</strong>：这是因果集 Sprinkling 在耦合坐标下的严格几何效应。</p>
+<h3 id="42">4.2 与标准海森堡代数的严格同构<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">传统量子力学</th>
+<th style="text-align: left;">CQM 耦合常数量子力学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">坐标</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{x}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{u} = \ln \hat{r}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">动量</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{p} = -i\hbar\,\partial_x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{p}_u = -i\,\partial_u\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">对易子</td>
+<td style="text-align: left;"><span class="arithmatex">\([\hat{x}, \hat{p}] = i\hbar\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\([\hat{u}, \hat{p}_u] = i\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hilbert 空间</td>
+<td style="text-align: left;"><span class="arithmatex">\(L^2(\mathbb{R}, dx)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(L^2(\mathbb{R}, e^{-u}du)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">测度</td>
+<td style="text-align: left;">均匀 <span class="arithmatex">\(dx\)</span></td>
+<td style="text-align: left;">指数加权 <span class="arithmatex">\(e^{-u}du\)</span>（来自 Sprinkling）</td>
+</tr>
+<tr>
+<td style="text-align: left;">作用量量子</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hbar\)</span></td>
+<td style="text-align: left;">$☯ = \frac{d}{ds}\ln\xi(s)\big</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键</strong>：这不是类比，而是严格的数学同构。CQM 的耦合空间量子力学与传统量子力学共享同一个代数结构，只是舞台不同。</p>
+<hr />
+<h2 id="_7">第五部分：动力学<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 一阶层：单向因果传播（真实再生产）<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p><strong>来源</strong>：因果集公理 III 直接给出离散演化：</p>
+<div class="arithmatex">\[\psi(u_j, \tau_{n+1}) = \psi(u_{j-1}, \tau_n)\]</div>
+<p>当 <span class="arithmatex">\(\delta u \to 0\)</span>、<span class="arithmatex">\(\Delta\tau = \delta u/v \to 0\)</span> 时，严格得到：</p>
+<div class="arithmatex">\[\partial_\tau \psi + v\,\partial_u \psi = 0\]</div>
+<p>特征线：<span class="arithmatex">\(du/d\tau = v \to u(\tau) = u_0 + v\tau \to r(\tau) = r_0 e^{v\tau}\)</span>。</p>
+<p><strong>物理</strong>：这是单质子内禀时钟驱动的因果传播——描述耦合空间中波包的平移流动，是因果集离散序的连续极限。<strong>此线性传输方程不等于 RG 流</strong>；RG 流的二次非线性跑动由带 <span class="arithmatex">\(e^u\)</span> 因子的传输方程描述（见 §12.2）。</p>
+<p><strong>因果时的统一结构</strong>：时间是因果序的度量——在禁闭内部是因果序的计数（<span class="arithmatex">\(\tau_{\text{causal}}(x,y) = |I(x,y)|+1\)</span>，不依赖任何连续结构），退相干后是几何固有时（<span class="arithmatex">\(\int\sqrt{-g_{\mu\nu}dx^\mu dx^\nu}\)</span>），在量子动力学中是幺正演化参数（<span class="arithmatex">\(U(\tau) = e^{-i\hat{H}\tau}\)</span>）。三者同出一源，不存在独立于因果序的外在时间坐标。</p>
+<h3 id="52">5.2 二阶层：双向干涉（虚拟涨落）<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>谱算符：</p>
+<div class="arithmatex">\[\hat{H} = -\partial_u^2 + \partial_u = \hat{D}^2 + \frac{1}{4}, \qquad \hat{D} = -i\left(\partial_u - \frac{1}{2}\right)\]</div>
+<p>作用量：</p>
+<div class="arithmatex">\[S_2[\Phi] = \int d\tau \int du\, e^{-u}\left[|\partial_\tau \Phi|^2 - (-\partial_u^2 + \partial_u)\,|\Phi|^2\right]\]</div>
+<p><strong>物理</strong>：虚拟过程的双向干涉（玻色子型）。与一阶层形成互补：一阶层描述真实再生产传播（费米子型），二阶层描述虚拟量子涨落。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">一阶层（耦合运动学）</th>
+<th style="text-align: left;">二阶层（耦合动力学）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">方程</td>
+<td style="text-align: left;"><span class="arithmatex">\(i\partial_\tau \Psi = \hat{\mathcal{D}}\Psi\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\((i\partial_\tau)^2 \Phi = (-\partial_u^2 + \partial_u)\Phi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">算符</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{\mathcal{D}} = -i(\partial_u - \tfrac{1}{2})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat{H} = -\partial_u^2 + \partial_u\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">主象征</td>
+<td style="text-align: left;"><span class="arithmatex">\(\sigma = k\)</span>（常系数，单向）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\sigma = k^2\)</span>（常系数，双向）</td>
+</tr>
+<tr>
+<td style="text-align: left;">物理</td>
+<td style="text-align: left;">真实再生产传播（费米子型）</td>
+<td style="text-align: left;">虚拟量子涨落（玻色子型）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关系</strong>：互补关系，共享边界条件 <span class="arithmatex">\(\vartheta\)</span>。</p>
+<blockquote>
+<p><strong>注</strong>：混合矩阵的动力学来源目前未定。基于随机传输方程的推导路线暂不认定为 CQM 严格第一性结论（见项目根目录 <code>归档/CQM_混合_混合矩阵.md</code>）。</p>
+</blockquote>
+<h3 id="53-berrykeating">5.3 酉等价化简与 Berry–Keating 对应<a class="headerlink" href="#53-berrykeating" title="Permanent link">&para;</a></h3>
+<p><strong>定理 5.1（酉等价化简）</strong>。通过酉映射 <span class="arithmatex">\(U: f \mapsto e^{-u/2}f\)</span>，<span class="arithmatex">\(\hat{H} = -\partial_u^2 + \partial_u\)</span> 在 <span class="arithmatex">\(L^2(e^{-u}du)\)</span> 中酉等价于 <span class="arithmatex">\(\tilde{A} = -\partial_u^2 + 1/4\)</span> 在 <span class="arithmatex">\(L^2(du)\)</span> 中。</p>
+<p><strong>Berry–Keating 对应</strong>：Berry–Keating 原始算符为对称化形式 <span class="arithmatex">\(\hat{H}_{BK} = \frac{1}{2}(x\hat{p} + \hat{p}x)\)</span>，其中 <span class="arithmatex">\(\hat{p} = -i\partial_x\)</span>。在对数坐标 <span class="arithmatex">\(x = e^u\)</span> 下，<span class="arithmatex">\(\hat{H}_{BK} = -i\partial_u\)</span>。CQM 算符 <span class="arithmatex">\(\hat{D} = -i(\partial_u - 1/2)\)</span> 通过酉变换 <span class="arithmatex">\(U: f \mapsto e^{-u/2}f\)</span> 与 <span class="arithmatex">\(-i\partial_u\)</span> 等价，因此 CQM 的耦谱结构与 Berry–Keating 猜想共享相同的本征值渐近行为。</p>
+<hr />
+<h2 id="_8">第六部分：前核子自组织 = 禁闭边界<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 核心命题<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>核心命题</strong>：CQM 不是“在禁闭边界上研究退相干”，而是“前质子／前中子的自组织产生了禁闭边界”。</p>
+<p><strong>时序</strong>：<strong>时间-空间已经显现</strong>——但前质子／前中子<strong>各自有自己的时空</strong>，这些时空之间<strong>尚未连通</strong>（类似于大爆炸／暴胀的状态：各区域各有局部几何，彼此因果断开）。禁闭边界是前核子自组织在<strong>其自身时空</strong>上凝结出的界面；时空<strong>连通并同步</strong>为一个连续结构，发生在更后（CNST 的同步链条）。</p>
+<p><strong>标志</strong>：<strong>禁闭的形成标志着质子／中子的形成</strong>——有限本体的诞生与其边界的形成是同一事件的两面：系统诞生于边界的局部非幺正确立，维持于内部的条件性幺正运行。</p>
+<p><strong>前核子处于 <span class="arithmatex">\(SU(5)\)</span></strong>：前质子／前中子<strong>已经处于统一群 <span class="arithmatex">\(SU(5)\)</span></strong>，但<strong>尚未组织出</strong> <span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span>；<span class="arithmatex">\(SU(5)\)</span> 的重组实现（见 <code>06 超导/CQM_超导_专题与扩展.md</code> 的 <span class="arithmatex">\(SU(5)\)</span> 发生学链条：<span class="arithmatex">\(SU(5)\)</span> 形成 → 前核子分化 → 重组实现 ⇒ <span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span>）与禁闭的形成相对应——这正是“<strong>禁闭的形成标志着质子／中子的形成</strong>”的根据。</p>
+</blockquote>
+<p>在标准 QFT 中，禁闭是 QCD 拉格朗日量的动力学结果——夸克被色力“粘住”无法分离。在 CQM 中，禁闭是<strong>前质子／前中子自组织</strong>的结果：有限本体（质子/中子）的存在论边界，正是前核子自组织在强子尺度上凝结出的界面。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">区域</th>
+<th style="text-align: left;">坐标对易子</th>
+<th style="text-align: left;">几何类型</th>
+<th style="text-align: left;">动力学状态</th>
+<th style="text-align: left;">退相干状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>禁闭内部（L1）</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\([x^\mu, x^\nu] \neq 0\)</span></td>
+<td style="text-align: left;">非交换</td>
+<td style="text-align: left;">量子相干持续</td>
+<td style="text-align: left;">前核子自组织尚未完成</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>禁闭边界（L2）</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\([x^\mu, x^\nu] = 0\)</span></td>
+<td style="text-align: left;">交换</td>
+<td style="text-align: left;">退相干发生</td>
+<td style="text-align: left;"><strong>前核子自组织的关键实现</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>外部时空（L3+）</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\([x^\mu, x^\nu] = 0\)</span></td>
+<td style="text-align: left;">交换</td>
+<td style="text-align: left;">经典极限</td>
+<td style="text-align: left;">退相干完成</td>
+</tr>
+</tbody>
+</table>
+<p><strong>普遍性与特殊性</strong>：前核子的自组织是物质有限化过程中最剧烈的一环（物质在此从离散自由度凝结为有限本体）；禁闭边界是它在强子尺度上的实现，因为这里质量／能量密度最高、因果截断最尖锐，且标准模型参数的涌现正发生在禁闭边界。</p>
+<h3 id="62">6.2 退相干的物理机制<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<p>在禁闭边界（<span class="arithmatex">\(u \to -\infty\)</span>）：</p>
+<ul>
+<li>二阶层双向干涉被几何“冻结”——虚拟粒子对无法从边界“反射”回来；</li>
+<li>干涉项消失，只剩一阶层单向因果存活；</li>
+<li>量子叠加态 → 经典混合态（密度矩阵对角化）；</li>
+<li>非交换代数 → 交换代数（Gel'fand–Naimark 对偶：交换 C*-代数对偶于局部紧 Hausdorff 空间，谱三元组退化为经典黎曼流形）；</li>
+<li>离散图 Laplacian → 连续 Laplacian（粗粒化极限）。</li>
+</ul>
+<p>这不是温度驱动的热力学相变，而是因果结构驱动的<strong>“存在论相变”</strong>。</p>
+<h3 id="63">6.3 条件性幺正：系统存在的本体论条件<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>核心命题</strong>：物理系统边界的局部非幺正性不是缺陷，而是系统存在的本体论条件。</p>
+</blockquote>
+<p><strong>全局视角</strong>：物理系统因果集整体结构满足概率守恒，幺正性保持。全局幺正性不是局部条件性幺正性的“总和”，局部条件性幺正性也不是全局幺正性的“碎片”——两者是同一物理系统因果网络在不同组织方式上的存在形式，通过系统边界局部非幺正性相互转化。</p>
+<ul>
+<li><strong>系统诞生</strong>：前核子自组织确立禁闭边界，物理系统边界局部非幺正确立；</li>
+<li><strong>系统维持</strong>：系统内部，传输方程、规范场演化是幺正的——但这是<strong>条件性幺正</strong>，依赖于系统边界的持续存在；</li>
+<li><strong>系统瓦解</strong>：系统维持条件被破坏，系统边界消解，条件性幺正性消亡——<strong>条件性幺正消亡 = 回归全局</strong>。</li>
+</ul>
+<p><strong>与“坍缩”的本质区分</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>量子测量坍缩</strong></th>
+<th style="text-align: left;"><strong>CQM 条件性幺正消亡</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>本体论</strong></td>
+<td style="text-align: left;">波函数是实在的，坍缩是实在的改变</td>
+<td style="text-align: left;"><strong>因果集是实在的，系统是组织形式</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>时间性</strong></td>
+<td style="text-align: left;">瞬时、非连续</td>
+<td style="text-align: left;"><strong>连续、因果时 <span class="arithmatex">\(\tau\)</span> 的流动</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>方向性</strong></td>
+<td style="text-align: left;">外在于系统（观测者）</td>
+<td style="text-align: left;"><strong>内在于因果结构（引力因果限制场）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可逆性</strong></td>
+<td style="text-align: left;">不可逆（信息丢失）</td>
+<td style="text-align: left;"><strong>系统灭亡时可逆（回归全局幺正）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数学</strong></td>
+<td style="text-align: left;">投影公设（非幺正跳变）</td>
+<td style="text-align: left;"><strong>全局幺正演化 <span class="arithmatex">\(U(\tau)\)</span>（子系统边界消解）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键</strong>：传统坍缩是<strong>态的缩减</strong>（state reduction）；条件性幺正消亡是<strong>因果结构的截断</strong>（causal truncation）。前者发生在希尔伯特空间中，后者发生在因果集的序关系中。</p>
+<h3 id="64-lambda_c">6.4 退相干临界条件：<span class="arithmatex">\(\lambda_c\)</span> 方程<a class="headerlink" href="#64-lambda_c" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\lambda_{\min}(q_c) = 2q_c, \qquad \lambda_c = 4q_c\]</div>
+<p>其中 <span class="arithmatex">\(\lambda_{\min}(q)\)</span> 是算符 <span class="arithmatex">\(-(d^2/dz^2) + 2q\cos 2z\)</span> 在 <span class="arithmatex">\(\sin((2k+1)z)\)</span> 张成的奇函数且 <span class="arithmatex">\(\pi\)</span>-反周期空间上的最小本征值，<span class="arithmatex">\(\lambda_{\min}(0) = 1\)</span>，小 <span class="arithmatex">\(q\)</span> 展开为 <span class="arithmatex">\(\lambda_{\min}(q) = 1 - q - q^2/8 + q^3/64 + \cdots\)</span>。<span class="arithmatex">\(\lambda_{\min}\)</span> 即标准 Mathieu 第一奇特征值 <span class="arithmatex">\(b_1\)</span>（DLMF 记号）。</p>
+<p><strong>数值</strong>：<span class="arithmatex">\(q_c = \lambda_c/4 = 0.32900572782691445\)</span>，<span class="arithmatex">\(\lambda_{\min}(q_c) = 0.6580114556538289 = 2q_c\)</span>（机器精度）。解的存在唯一性由连分数方程 <span class="arithmatex">\(1 - 3q - T_1(2q,q) = 0\)</span> 在 <span class="arithmatex">\(q \in (0,1)\)</span> 内严格单调 + 介值定理保证，<span class="arithmatex">\(\lambda_c = 4q_c = 1.3160229113077\)</span>。</p>
+<p><strong>命名说明</strong>：<span class="arithmatex">\(\lambda_{\min}\)</span> 与标准 Mathieu 第一奇特征值 <span class="arithmatex">\(b_1\)</span> 为同一特征值（<span class="arithmatex">\(b_1(q) = 1 - q - q^2/8 + \cdots\)</span>；偶支 <span class="arithmatex">\(a_1(q) = 1 + q - q^2/8 + \cdots\)</span> 是另一支，勿混）。本临界条件的物理内容是“双向干涉能量 = <span class="arithmatex">\(2\times\)</span> 单向耦合”，由 <span class="arithmatex">\(\lambda_{\min}(q_c) = 2q_c\)</span> 表达，即 <span class="arithmatex">\(b_1(q_c) = 2q_c\)</span>；写成“<span class="arithmatex">\(a_1(q) = 2q\)</span>”才会指向另一个条件（其根为 <span class="arithmatex">\(q \approx 0.8895\)</span>），故不采用该写法。</p>
+<p><strong>物理诠释</strong>：等式即“双向干涉能量 = <span class="arithmatex">\(2 \times\)</span> 单向耦合”——刚好能被边界经典几何捕获的临界阈值。系数 2 由三重独立结构汇聚：<span class="arithmatex">\(A_4^{++}\)</span> 过扩张（秩 <span class="arithmatex">\(4 \to 6\)</span>，增加 2 个节点）、<span class="arithmatex">\(\{4,5\}\)</span> 对偶镶嵌（4-重对称经 <span class="arithmatex">\(\mathbb{Z}_2\)</span> 商约化为 2-重）、SU(2) 弱力（Coxeter 数 <span class="arithmatex">\(h = 2\)</span>）。</p>
+<hr />
+<h2 id="su5">第七部分：SU(5) 涌现与谱结构<a class="headerlink" href="#su5" title="Permanent link">&para;</a></h2>
+<h3 id="71-4-">7.1 4-单纯形的组合结构<a class="headerlink" href="#71-4-" title="Permanent link">&para;</a></h3>
+<p>组装过程：</p>
+<div class="arithmatex">\[\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}\]</div>
+<blockquote>
+<p>CQM 的 4-单纯形<strong>不是</strong> <span class="arithmatex">\(A_4\)</span> 根系的 Weyl 室（<span class="arithmatex">\(A_4\)</span> 的 Weyl 室不是正单纯形，因为 Dynkin 图是链状，单根夹角有 120° 和 90°）。正四单纯形出现在 <strong>SU(5) 基础表示 <span class="arithmatex">\(\mathbf{5}\)</span> 的权空间</strong>中——5 个权向量 <span class="arithmatex">\(\nu_1, ..., \nu_5\)</span> 满足 <span class="arithmatex">\(\sum_i \nu_i = 0\)</span> 且两两内积相等，恰好构成正四单纯形的 5 个顶点。其对称群正是 <span class="arithmatex">\(A_4\)</span> 的 Weyl 群 <span class="arithmatex">\(S_5\)</span>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">面元</th>
+<th style="text-align: center;">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0-面（顶点）</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">1-面（边）</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">2-面（三角形）</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">3-面（四面体）</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">4-面</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>总面元数：<span class="arithmatex">\(31 = 2^5 - 1\)</span>。</p>
+<blockquote>
+<p><strong>一证七联框架</strong>：4-单纯形/SU(5) 结构是“一证七联”框架的核心对象——核心定理（未证明）：前核子自组织在禁闭边界的稳态是正四单纯形，代数签名 <span class="arithmatex">\(A_4 = \text{Cartan}(\text{SU}(5))\)</span>。此定理一旦证明，七大关联全部自动涌出（<span class="arithmatex">\(☯\)</span> 三重锁定、正四单纯形三重对应、SU(5) = 大统一群、双曲度规与黎曼零点谱、维度匹配、真空涨落隔离、精细结构常数 <span class="arithmatex">\(\alpha^{-1}\)</span>）——它们是同一对象 <span class="arithmatex">\(A_4\)</span> 在七个物理维度上的延伸，而非七个独立巧合。缺口 C（未闭合）：退相干稳态为何恰好是 <span class="arithmatex">\(A_4\)</span>。</p>
+</blockquote>
+<h3 id="72-">7.2 边-面关联矩阵与谱<a class="headerlink" href="#72-" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(M = E^T E \in \mathbb{R}^{10 \times 10}\)</span>，本征值 <span class="arithmatex">\(\{9, 4, 1\}\)</span>，重数 <span class="arithmatex">\(\{1, 4, 5\}\)</span>。</p>
+<p><strong>证明</strong>：
+1. <span class="arithmatex">\(M\)</span> 与 <span class="arithmatex">\(S_5\)</span> 对易（组合结构在顶点置换下不变）；
+2. 由 Schur 引理，本征空间必须是 <span class="arithmatex">\(S_5\)</span> 的不可约表示；
+3. 10 维边空间分解：<span class="arithmatex">\(\mathbf{10} = \mathbf{1} \oplus \mathbf{4} \oplus \mathbf{5}\)</span>；
+4. 均匀向量 <span class="arithmatex">\(\mathbf{u} = (1,...,1)^T/\sqrt{10}\)</span> 给出 <span class="arithmatex">\(\lambda_1 = 9\)</span>；
+5. 迹条件 <span class="arithmatex">\(\text{Tr}(M) = 30\)</span> 和 <span class="arithmatex">\(\text{Tr}(M^2) = 150\)</span> 解出 <span class="arithmatex">\(\lambda_4 = 4\)</span>, <span class="arithmatex">\(\lambda_5 = 1\)</span>。</p>
+<p><strong>数值验证</strong>：<span class="arithmatex">\(\lambda(M)_{\text{numerical}} = \{9.000000, 4.000000 \times 4, 1.000000 \times 5\}\)</span>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">本征空间</th>
+<th style="text-align: center;">本征值</th>
+<th style="text-align: center;">维数</th>
+<th style="text-align: left;"><span class="arithmatex">\(S_5\)</span> 表示</th>
+<th style="text-align: left;">物理扇区</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(V_1\)</span></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathbf{1}\)</span></td>
+<td style="text-align: left;">SU(3) 色</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(V_4\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathbf{4}\)</span></td>
+<td style="text-align: left;">SU(2) 弱</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(V_5\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathbf{5}\)</span></td>
+<td style="text-align: left;">U(1) 电磁</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键</strong>：<span class="arithmatex">\(S_5\)</span> 是 SU(5) 的 Weyl 群。本征值比例 <span class="arithmatex">\(9:4:1\)</span> 直接决定三种规范耦合的相对强度。</p>
+<h3 id="73">7.3 嘉当矩阵的三重身份<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>离散哈密顿量</strong>：<span class="arithmatex">\(H_{\text{disc}} = A_4 / a^2\)</span>；</li>
+<li><strong>离散能动张量</strong>：<span class="arithmatex">\(T^{00} = H_{\text{disc}}\)</span>；</li>
+<li><strong>根系几何</strong>：<span class="arithmatex">\(A_4\)</span> 的根系 = 4-单纯形骨架（在权空间意义下）。</li>
+</ol>
+<p><strong>三重身份严格同一</strong>（<strong>条件于 §7.1 核心定理——未证明</strong>）——此同一性仅在退相干完成后成立，是禁闭边界上非交换代数粗粒化为交换几何的结果。</p>
+<p><strong>嘉当方程</strong>（禁闭边界离散动力学，Cayley 型离散化）：</p>
+<div class="arithmatex">\[\left(I + \frac{i v A_4}{2a}\right)\psi^{n+1} = \left(I - \frac{i v A_4}{2a}\right)\psi^n\]</div>
+<p>其中 <span class="arithmatex">\(a\)</span> 为格点间距（无量纲）、<span class="arithmatex">\(v\)</span> 为特征速度（因果时与坐标时的实现标度）、<span class="arithmatex">\(\psi^n \in \mathbb{C}^4\)</span> 为第 <span class="arithmatex">\(n\)</span> 个再生产步骤的态矢量、时间步进 <span class="arithmatex">\(\Delta\tau = a/v\)</span>。幺正性 <span class="arithmatex">\(U^\dagger U = I\)</span> 严格成立（Cayley 型）。连续极限 <span class="arithmatex">\(A_4/a^2 \to -\partial_u^2 + \partial_u\)</span>（Taylor 展开 + 加权内积分部积分）。嘉当特征值 <span class="arithmatex">\(\lambda_k = 2 - 2\cos(k\pi/5)\)</span> 是大统一能标下的耦谱。</p>
+<blockquote>
+<p><strong>定位声明</strong>：SU(5) 嘉当矩阵 <span class="arithmatex">\(A_4\)</span> 是禁闭边界退相干后的<strong>涌现结构</strong>。禁闭内部为非交换几何，其动力学由非交换代数（而非交换的 <span class="arithmatex">\(A_4\)</span>）描述。嘉当方程仅在禁闭边界/退相干后的语境下成立。</p>
+</blockquote>
+<h3 id="74">7.4 精细结构常数<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<p><strong>来源</strong>：SU(5) 重组实现 ⇒ <span class="arithmatex">\(U(1)\)</span> 电磁群 → <span class="arithmatex">\(\alpha\)</span>。具体地，<span class="arithmatex">\(M\)</span> 本征值 <span class="arithmatex">\(\{9,4,1\}\)</span> 通过 <span class="arithmatex">\(S_5\)</span> 表示论与 SU(5) 规范群结构锁定组合不变量：</p>
+<div class="arithmatex">\[\text{SU}(5) \;\xRightarrow{\text{重组实现}}\; U(1)\text{电磁群} \;\xrightarrow{\text{耦合常数}}\; \alpha\]</div>
+<div class="arithmatex">\[\alpha^{-1} = \frac{16384\pi}{375} \approx 137.2583\]</div>
+<p><strong>此表达式是 GL(5) 固定层级整体的反映</strong>。精细结构常数来自 SU(5) 重组实现后 <span class="arithmatex">\(U(1)\)</span> 电磁群的耦合常数。</p>
+<p>与实验值 <span class="arithmatex">\(137.035999\)</span>（CODATA 2022）偏差约 <span class="arithmatex">\(0.162\%\)</span>（≈1622 ppm），为一阶近似、待高阶修正。定位：这不是到 ppm 的精确符合，故<strong>不能称“严格/精确”</strong>，数值尚未收敛为唯一精确值；标准模型中 <span class="arithmatex">\(\alpha\)</span> 是需精密测量的输入参数，并无被主流接受的纯数论推导（<a href="https://arxiv.org/abs/1411.4673">Jentschura–Nándori, arXiv:1411.4673</a>）；此处为 CQM 框架内的启发式构造匹配。</p>
+<p>另一口径为 Wyler 常数 <span class="arithmatex">\(\alpha^{-1}_{\text{Wyler}} = \frac{16}{9}\pi^{11/4}(5!)^{1/4} \approx 137.0361\)</span>（偏差 <span class="arithmatex">\(0.61\)</span> ppm），由 <span class="arithmatex">\(A_4\)</span> 全部群论不变量（<span class="arithmatex">\(h=5\)</span>、<span class="arithmatex">\(r=4\)</span>、<span class="arithmatex">\(|W|=120\)</span>、<span class="arithmatex">\(\text{tr}=8\)</span>）给出。两条口径的关系：<span class="arithmatex">\(16384\pi/375\)</span> 为启发式近似，Wyler 式为 <span class="arithmatex">\(A_4\)</span> 群论不变量的组合，两者偏差（ppm）之比约 <span class="arithmatex">\(2659\)</span>（此为相对精度之比，不构成独立精度证据）。</p>
+<p><strong>双路径交叉验证</strong>：4-单纯形路径（<span class="arithmatex">\(M = E^T E \to \{9,4,1\} \to P = 16384\pi/375 \to \alpha^{-1}\)</span>）给出 <span class="arithmatex">\(\alpha^{-1} = 16384\pi/375\)</span>（启发式参考）。<span class="arithmatex">\(\alpha\)</span> 的严格来源是 SU(5) 重组实现 ⇒ <span class="arithmatex">\(U(1)\)</span> 电磁群耦合常数，是 GL(5) 固定层级整体的反映。</p>
+<blockquote>
+<p><strong>常数分类定位</strong>：<span class="arithmatex">\(\alpha\)</span> 无量纲，属“<strong>比值型无量纲常数</strong>”——其“无量纲”来自<strong>量纲相消</strong>（<span class="arithmatex">\([\text{能量}\cdot\text{长度}]\)</span> 相消），故它与量纲<strong>紧密相关</strong>（是量纲内差异的定量体现），<strong>不是</strong>“与量纲无关”。基本常数的三类分法（有量纲特征常数／比值型无量纲常数／纯数型）见 <code>01 核心理论/CQM_核心_量纲与群论.md</code> <strong>§7.5</strong>。</p>
+</blockquote>
+<h3 id="75">7.5 牛顿引力常数<a class="headerlink" href="#75" title="Permanent link">&para;</a></h3>
+<p><strong>参数</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">符号</th>
+<th style="text-align: center;">数值</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(I\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5/3\)</span></td>
+<td style="text-align: left;">SU(5) Dynkin 指数比 <span class="arithmatex">\(T(\mathbf{24})/T(\mathbf{8})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\lambda_c\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3160229113077...\)</span></td>
+<td style="text-align: left;">Mathieu 方程临界参数（<span class="arithmatex">\(\lambda_c = 4q_c\)</span>，<span class="arithmatex">\(q_c\)</span> 为 <span class="arithmatex">\(\lambda_{\min}(q) = 2q\)</span> 在 <span class="arithmatex">\((0,1)\)</span> 的唯一解；等价地 <span class="arithmatex">\(\lambda_c = 2b_1(\lambda_c/4)\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(☯\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.023095708966...\)</span></td>
+<td style="text-align: left;">相变量子 $\frac{d}{ds}\ln\xi(s)\big</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\mathfrak{c}_1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(200.040454832...\)</span></td>
+<td style="text-align: left;">第一耦级 <span class="arithmatex">\(1/4 + \gamma_1^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\kappa\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.034103190...\)</span></td>
+<td style="text-align: left;">4-单纯形/Adele 周期修正 <span class="arithmatex">\(\kappa = (31+☯)/30\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(m_p\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9382720882\)</span> GeV</td>
+<td style="text-align: left;">唯一量纲输入（量纲锚点，PDG 2022）</td>
+</tr>
+</tbody>
+</table>
+<p>其中 <span class="arithmatex">\(\kappa = (N_{\text{faces}} + ☯)/N_{\text{cycle}}\)</span>：<span class="arithmatex">\(N_{\text{faces}} = 31 = 2^5 - 1\)</span> 是 4-单纯形非空面元数（整数组合不变量），<span class="arithmatex">\(N_{\text{cycle}} = 30 = 2 \cdot 3 \cdot 5\)</span> 是素数周期条件；<span class="arithmatex">\(+☯\)</span> 项反映从离散因果集到连续几何过渡中组合不变量与谱不变量的统一。该公式的其余输入为选定的组合-谱不变量，未拟合 <span class="arithmatex">\(G_N\)</span>（推导与校验见 <code>03 引力与退相干/CQM_引力_GN可能公式.md</code>；其为框架内构造公式，该纯数学“推导” <span class="arithmatex">\(G_N\)</span> 属待第三方复现的构造性主张，不是被主流学界接受的第一性推导）。</p>
+<p><strong>数值结果</strong>：</p>
+<div class="arithmatex">\[G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)\]</div>
+<p>其中参数组合 <span class="arithmatex">\(I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp(-2/☯) \cdot (1 + \kappa ☯) / m_p^2 = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2}\)</span>（以 <span class="arithmatex">\(\text{GeV}\)</span> 为 <span class="arithmatex">\(m_p\)</span> 的单位），乘以 <span class="arithmatex">\(\hbar c\)</span> 恢复完整量纲 <span class="arithmatex">\(M^{-1}L^3T^{-2}\)</span>。</p>
+<div class="arithmatex">\[G_N = 6.6742810045 \times 10^{-11}\ \text{m}^3 \cdot \text{kg}^{-1} \cdot \text{s}^{-2}\ \text{（SI）}\]</div>
+<p>与 CODATA 2022 偏差约 <span class="arithmatex">\(-3\)</span> ppm（数值校验，说明：该量由所选不变量固定计算、无对 <span class="arithmatex">\(G_N\)</span> 的拟合自由度；但因公式结构源于启发式选择，且历史上此类“无参数闭合公式”多次被证伪，故应视作待独立复现的构造性数字符合，而非被学界公认的独立预言。α、<span class="arithmatex">\(G_N\)</span> 在标准物理中仍是实验参数/基本输入）。</p>
+<p><strong>在该框架内 <span class="arithmatex">\(G_N\)</span> 由 SU(5) 几何给定</strong>：有效曲率必须同时满足交换几何（经典可对易）、长程（不被质量或禁闭屏蔽）、稳定（不随时间衰减）三个条件。禁闭内部为非交换几何，不提供经典曲率；U(1) 是 Abel 群，没有非平凡的嘉当矩阵；弱力的几何贡献被 <span class="arithmatex">\(S_5\)</span> 对称性严格压制。SU(5) 位于禁闭边界——“非交换 ↔ 交换”过渡的临界点，三种规范群的面元通过同一个边-面关联矩阵 <span class="arithmatex">\(E\)</span> 耦合，产生同一个 Cartan 曲率算符 <span class="arithmatex">\(M = E^T E\)</span>。电磁和弱力的能动张量不需要独立的修正项——其几何信息已被 31 个面元严格编码。</p>
+<p><strong>该公式的结构稳定性</strong>：<span class="arithmatex">\(G_N\)</span> 的输入全部是<strong>无量纲数学纯数</strong>（<span class="arithmatex">\(I, \lambda_c, ☯, \mathfrak{c}_1, \kappa\)</span>），唯一有量纲的输入 <span class="arithmatex">\(m_p\)</span> 是常数，故在该框架内 <span class="arithmatex">\(G_N\)</span> 不依赖能标、时间、位置。说明：这些“不变性”是标准引力学（GR/渐近安全/等效原理）本就共享的 <span class="arithmatex">\(G_N\)</span> 常数性，并非 CQM 独有的可区分预言——真正的可检验点是 <span class="arithmatex">\(G_N\)</span> 的数值本身能否第三方复现，而非其常/不变性。</p>
+<ul>
+<li><span class="arithmatex">\(G_N\)</span> <strong>不随能标跑动</strong>（区别于渐近安全量子引力）；</li>
+<li><span class="arithmatex">\(G_N\)</span> <strong>不随时间演化</strong>（区别于 Brans–Dicke 理论）；</li>
+<li><span class="arithmatex">\(G_N\)</span> <strong>不随位置变化</strong>。</li>
+</ul>
+<p>实验条件（月球激光测距、脉冲双星、BBN、CMB）将 <span class="arithmatex">\(G_N\)</span> 的变率限制在 <span class="arithmatex">\(&lt; 10^{-12}\)</span>/年，与 CQM 的 <span class="arithmatex">\(G_N\)</span> 常数性一致。中子-质子质量差不改变 <span class="arithmatex">\(G_N\)</span>：<span class="arithmatex">\(m_p\)</span> 是量纲锚点而非“引力源质量”，质子和中子共享相同的禁闭边界（4-单纯形），故 <span class="arithmatex">\(G_N^{(p)} = G_N^{(n)} = G_N\)</span>——与等效原理实验（精度 <span class="arithmatex">\(10^{-15}\)</span>）一致。</p>
+<p><strong>量纲归一化与恢复的完整机制</strong>：CQM 的所有方程（同步方程、CFT/OPE、Kac–Moody descendant）无量纲性的根本来源是 FG 纤维丛截断处的量纲归一化——从有量纲的 <span class="arithmatex">\([\hat{X},\hat{P}]=i\hbar\)</span> 到无量纲曲率算符 <span class="arithmatex">\(\hat{\delta}_v\)</span> 的转换中，<span class="arithmatex">\(\hbar\)</span> 被声子算符构造吸收，<span class="arithmatex">\(E_{\text{bind}}\)</span> 作为量纲归一化因子把声子能量 <span class="arithmatex">\(\hbar\omega_k\)</span> 转换为无量纲曲率。能量标度信息编码在无量纲比值 <span class="arithmatex">\(\eta = \hbar\omega_0/E_{\text{bind}}\)</span> 中（由 <span class="arithmatex">\(A_4\)</span> 代数严格确定），量纲恢复通过 <span class="arithmatex">\(m_p\)</span> 标度重建有量纲物理量。<span class="arithmatex">\(m_e/m_p = 2\pi ☯/L_u\)</span> 从归一化结构代数涌现。<span class="arithmatex">\(m_e/m_p\)</span> 推导链见 <code>01 核心理论/CQM_核心_声子理论.md</code> §8.3，曲率算符归一化核心见 <code>07 精细引力（FG）/FG_纤维丛理论.md</code> §4。</p>
+<blockquote>
+<p><strong>常数分类定位</strong>：<span class="arithmatex">\(G_N\)</span> 是<strong>有量纲特征常数</strong>（<span class="arithmatex">\(K_M = G_N^{-1}\)</span>），属“<strong>跨量纲对</strong>”一类；本节公式的其余输入（<span class="arithmatex">\(I\)</span>、<span class="arithmatex">\(\lambda_c\)</span>、<span class="arithmatex">\(☯\)</span>、<span class="arithmatex">\(\mathfrak{c}_1\)</span>、<span class="arithmatex">\(\kappa\)</span>）均为<strong>纯数型</strong>（组合／谱量，量纲发生学中无对应“量纲对”）；<span class="arithmatex">\(m_e/m_p\)</span> 则为<strong>比值型</strong>（同量纲对）。三类分法见 <code>01 核心理论/CQM_核心_量纲与群论.md</code> <strong>§7.5</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="sierra-cqm">第八部分：谱方程与黎曼零点（Sierra-CQM 耦谱定理）<a class="headerlink" href="#sierra-cqm" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>层级定位</strong>：本部分的 ζ 零点谱（<span class="arithmatex">\(L_n\)</span>、<span class="arithmatex">\(\vartheta_n\)</span>、<span class="arithmatex">\(\mathfrak{c}_n\)</span>）直接作为 GL(1) 因子层（电磁）下使用的谱；基态层的对应结构由 GL(5) 自守 L 函数的零点谱给出，经紧化等价关系与各因子层谱匹配。</p>
+</blockquote>
+<h3 id="81">8.1 边界条件与零点匹配<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<p>Sprinkling 区间长度 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n \sim \ln(n)\)</span>（<span class="arithmatex">\(u\)</span>-依赖的紫外截断：高耦级过程需要更小的截断），边界相位 <span class="arithmatex">\(\vartheta_n = -\theta(\mathfrak{c}_n^{(R)}) \pmod{\pi}\)</span>。</p>
+<p><strong>定理 8.1（Sierra-CQM）</strong>。设 Sprinkling 区间长度为 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span>，边界相位为 <span class="arithmatex">\(\vartheta_n\)</span>。则 <span class="arithmatex">\(\hat{H} = \hat{D}^2 + 1/4\)</span> 在 <span class="arithmatex">\([0, L_n]\)</span> 上的<strong>耦级</strong>满足：</p>
+<div class="arithmatex">\[\mathfrak{c}_n^{(R)} = \frac{1}{4} + \gamma_n^2 + O\left(\frac{\gamma_n^2}{n}\right)\]</div>
+<p>相对误差 <span class="arithmatex">\(O(1/n)\)</span>，当 <span class="arithmatex">\(n \to \infty\)</span> 时趋于零。其中 <span class="arithmatex">\(\gamma_n\)</span> 是第 <span class="arithmatex">\(n\)</span> 个黎曼零点虚部。</p>
+<p><strong>证明概要</strong>：</p>
+<p><strong>步骤 1：酉等价化简</strong>。通过酉映射 <span class="arithmatex">\(U: f \mapsto e^{-u/2}f\)</span>，算符 <span class="arithmatex">\(\hat{H} = -\partial_u^2 + \partial_u\)</span> 在 <span class="arithmatex">\(L^2(e^{-u}du)\)</span> 中酉等价于 <span class="arithmatex">\(\tilde{A} = -\partial_u^2 + 1/4\)</span> 在 <span class="arithmatex">\(L^2(du)\)</span> 中。在 <span class="arithmatex">\(L^2(du)\)</span> 中，算符 <span class="arithmatex">\(-\partial_u^2\)</span> 的标准本征函数为平面波 <span class="arithmatex">\(g_k(u) = e^{iku}\)</span>，对应本征值 <span class="arithmatex">\(k^2\)</span>。</p>
+<p><strong>步骤 2：Floquet 边界条件</strong>。对 <span class="arithmatex">\(g_k(u) = e^{iku}\)</span> 施加 Floquet（拟周期）边界条件：</p>
+<div class="arithmatex">\[g_k(L_n) = e^{i\vartheta_n} g_k(0), \qquad g_k'(L_n) = e^{i\vartheta_n} g_k'(0)\]</div>
+<p>该边界条件对 <span class="arithmatex">\(-\partial_u^2\)</span> 是自伴的（边界项 <span class="arithmatex">\([-f^* g' + f'^* g]_0^{L_n} = 0\)</span> 直接验证）。量子化条件：<span class="arithmatex">\(e^{ikL_n} = e^{i\vartheta_n}\)</span>，即 <span class="arithmatex">\(kL_n = \vartheta_n + 2\pi m\)</span>（<span class="arithmatex">\(m \in \mathbb{Z}\)</span>）。</p>
+<p><strong>步骤 3：<span class="arithmatex">\(L_n\)</span> 的选择与零点匹配</strong>。设 <span class="arithmatex">\(L_n = 2\pi n/\gamma_n\)</span>，对 <span class="arithmatex">\(m = n\)</span>：</p>
+<div class="arithmatex">\[k_n = \frac{2\pi n + \vartheta_n}{L_n} = \gamma_n\left(1 + \frac{\vartheta_n}{2\pi n}\right)\]</div>
+<p>由于 <span class="arithmatex">\(\vartheta_n \in [0, \pi)\)</span> 有界，<span class="arithmatex">\(k_n = \gamma_n + O(1/n)\)</span>。</p>
+<p><strong>步骤 4：耦级计算</strong>。<span class="arithmatex">\(\tilde{A}\)</span> 的本征值为 <span class="arithmatex">\(k_n^2 + 1/4\)</span>。在 <span class="arithmatex">\(L^2(e^{-u}du)\)</span> 中，对应 <span class="arithmatex">\(\hat{H}\)</span> 的耦级为：</p>
+<div class="arithmatex">\[\mathfrak{c}_n^{(R)} = k_n^2 + \frac{1}{4} = \gamma_n^2 + \frac{1}{4} + O\left(\frac{\gamma_n^2}{n}\right)\]</div>
+<p><strong>步骤 5：映射回 <span class="arithmatex">\(L^2(e^{-u}du)\)</span> 的边界条件</strong>。本征函数为 <span class="arithmatex">\(f_k(u) = e^{u/2}g_k(u) = e^{(1/2+ik)u}\)</span>，边界条件映射为<strong>加权 Floquet 条件</strong>：<span class="arithmatex">\(f_k(L_n) = e^{L_n/2}e^{i\vartheta_n}f_k(0)\)</span>。该条件对 <span class="arithmatex">\(\hat{H}\)</span> 在 <span class="arithmatex">\(L^2(e^{-u}du)\)</span> 中自伴（振幅因子 <span class="arithmatex">\(e^{L_n/2}\)</span> 来自测度变换的 Jacobian）。</p>
+<p><span class="arithmatex">\(\square\)</span></p>
+<p><strong>物理诠释</strong>：黎曼零点对应于“再生产过程的共振模式”。每个零点 <span class="arithmatex">\(\gamma_n\)</span> 对应特定的 Sprinkling 区间长度 <span class="arithmatex">\(L_n\)</span>，由相位匹配条件确保共振。加权边界条件中的振幅因子 <span class="arithmatex">\(e^{L_n/2}\)</span> 反映了耦合空间测度 <span class="arithmatex">\(e^{-u}du\)</span> 对边界模式的指数调制——这是因果集 Sprinkling 在耦合空间中的几何效应。</p>
+<blockquote>
+<p><strong>注</strong>：<span class="arithmatex">\(m = n\)</span> 的选择是一种构造性对应；<span class="arithmatex">\(L_n\)</span> 的物理来源与 <span class="arithmatex">\(\vartheta_n\)</span> 的严格推导是当前严格性缺口（见结论）。</p>
+</blockquote>
+<hr />
+<h2 id="_9">第九部分：两种引力——同源分化的详细机制<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>本部分为 <code>CQM_核心_引力存在论前提.md</code> 的集成纲要；完整对比总表、中子缺陷矩阵与 Lean 形式化对应见该文档。</p>
+</blockquote>
+<h3 id="91">9.1 核心论断<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p><strong>引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果条件。</strong> 它根据因果结构的不同深度和广度，分化：<strong>前时空</strong>是尚未分化的层级，其上是<strong>两种引力</strong>——GR（广度）与 FG（深度）。三者不是三种不同的力，而是同一种自组织在不同存在论层级上的表现。</p>
+<div class="arithmatex">\[\boxed{\text{前时空（物质自组织）} \xrightarrow{\text{退相干}} \text{GR（基态：平庸因果网络 = 时空）} \xrightarrow{\text{物质在内部层级的非平庸再自组织}} \text{FG（激发态：非平庸因果网络 = 纤维丛）}}\]</div>
+<h3 id="92">9.2 前时空：物质处于前时空的状态<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<p><strong>定位</strong>：最基础、最不可还原的层级。物质从无限的“质”中自组织为有限本体（质子／中子）。</p>
+<p><strong>物理实在</strong>：不在普朗克尺度的“时空泡沫”中，也不在禁闭内部——禁闭内部只是 QCD。CQM 不另立“量子引力”层：其全部动力学内容（无量纲不确定性关系、固有时流速、角亏量子涨落、同步算符的紧化）由 <strong>FG</strong> 给出（<code>02 量子引力/CQM_引力_量子引力讨论.md</code>）。</p>
+<p><strong>数学结构</strong>：谱结构经 GL(5) 紧化投影与黎曼非平凡零点有关：</p>
+<div class="arithmatex">\[\boxed{\text{谱结构} \;\xrightarrow{\text{经GL(5)紧化投影}}\; \text{与黎曼零点 } \gamma_n \text{ 有关}}\]</div>
+<p>核心参数：<span class="arithmatex">\(☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897\)</span>，<span class="arithmatex">\(\mathfrak{c}_n = 1/4 + \gamma_n^2\)</span>（第一耦级 <span class="arithmatex">\(\mathfrak{c}_1 \approx 200.04\)</span>）——全部是无量纲数学纯数，直接来自解析数论。</p>
+<blockquote>
+<p><strong>分层定位</strong>：前时空的基态同步是 SU(5)（来自 GL(5) 自守形式（Regge 底空间几何条件（非唯一））的紧化，基态 L 函数 <span class="arithmatex">\(L(s,\rho_5)=\prod_p\det(1-\rho_5(\mathrm{Fr}_p)p^{-s})^{-1}\)</span> 的零点谱）；上述 ζ 零点谱（<span class="arithmatex">\(☯\)</span>、<span class="arithmatex">\(\mathfrak{c}_n\)</span>）直接作为 GL(1) 因子层下使用的谱——GL(5) 固定层级的实谱条件是广义黎曼猜想，黎曼猜想是其在 GL(1) 因子层的特例。<strong>物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现</strong>；<span class="arithmatex">\(n &gt; 5\)</span> 层级不排除，但 GL(5) 主导物理谱。</p>
+</blockquote>
+<p><strong>功能</strong>：使物质能以有限本体的形式展开。最原始的自组织：将无限的“质”（质数是其生成元）组织成有限的可再生物理系统。</p>
+<p><strong>关键性质</strong>：
+- <strong>基底幺正</strong>：禁闭内部演化是幺正的；
+- <strong>因果序尚未展开</strong>：尚未分化；
+- <strong>基础性</strong>：全部层级中最底层（先于引力）。</p>
+<h3 id="93-gr">9.3 经典引力 GR：广度存在论前提<a class="headerlink" href="#93-gr" title="Permanent link">&para;</a></h3>
+<p><strong>定位</strong>：前时空退相干后涌现的<strong>平庸因果网络</strong>——时空本身。在因果网络状态的分类中，GR 是<strong>基态（平庸态）</strong>：双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何（存在论分类，非量子力学真空态意义）。</p>
+<p><strong>物理本质</strong>：不是独立的力，而是退相干后的平庸因果网络。这个平庸因果网络就是时空本身。物质复杂关系网络被平滑化：微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量。</p>
+<p><strong>数学结构</strong>：伪黎曼流形 <span class="arithmatex">\((M, g_{\mu\nu})\)</span>。测地线限制、Levi-Civita 联络、黎曼曲率 <span class="arithmatex">\(R^\rho_{\sigma\mu\nu}\)</span>。</p>
+<p><strong>核心公式</strong>：<span class="arithmatex">\(G_N\)</span> 可能公式（见 §7.5）。</p>
+<p><strong>功能</strong>：覆盖整个可观测宇宙，使物质能够聚集成星体、星系。是所有更高层级的底空间。</p>
+<p><strong>关键性质</strong>：
+- <strong>受 <span class="arithmatex">\(G_N\)</span> 限制</strong>：在凝聚态尺度完全可忽略；
+- <strong>平庸性</strong>：退相干后的“背景”（基态），是精细引力（激发态）存在的前提；
+- <strong>广度性</strong>：从核子到宇宙，在最大尺度上有效。</p>
+<h3 id="94-fg">9.4 精细引力 FG：深度存在论前提<a class="headerlink" href="#94-fg" title="Permanent link">&para;</a></h3>
+<p><strong>定位</strong>：经典引力平庸因果网络上的<strong>非平庸因果网络</strong>——GR 基态的非平庸激发态。两种引力中最深入、最接近物质结构内部的形态，是连接前时空与 GR（平滑时空）的关键中介。</p>
+<p><strong>物理本质</strong>：不是测地线限制，也不是吸引力。它是<strong>耦合空间中的固有时流速效应</strong>，由物质结构（晶胞网络）的 Regge 曲率直接产生。</p>
+<p><strong>数学结构</strong>：Regge 离散曲率 + FG 纤维丛。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">要素</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">底空间 <span class="arithmatex">\(M\)</span></td>
+<td style="text-align: left;">链 A（晶胞几何分布）</td>
+</tr>
+<tr>
+<td style="text-align: left;">纤维 <span class="arithmatex">\(F\)</span></td>
+<td style="text-align: left;">链 B（<span class="arithmatex">\(A_4\)</span> 根空间 <span class="arithmatex">\(\simeq \mathbb{C}^4\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">结构群 <span class="arithmatex">\(G_{\text{FG}}\)</span></td>
+<td style="text-align: left;">链 B（<span class="arithmatex">\(U(1)_{\text{em}} \times SO(2)_{\text{space}} \times SU(4)_{\text{internal}}\)</span>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span></td>
+<td style="text-align: left;">由角亏 <span class="arithmatex">\(\delta_v\)</span> 生成</td>
+</tr>
+<tr>
+<td style="text-align: left;">和乐 <span class="arithmatex">\(W_v\)</span></td>
+<td style="text-align: left;">绕向错闭合回路：<span class="arithmatex">\(W_v = \exp(i\delta_v \hat{T})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>双曲率结构：<strong>Regge 曲率</strong>（离散角亏 <span class="arithmatex">\(\delta_v\)</span>，底空间几何缺陷，进入不确定性关系）与<strong>伴丛曲率</strong> <span class="arithmatex">\(F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}\)</span>（进入伴丛运动方程 <span class="arithmatex">\(D*F = *J_\Phi\)</span>）。二者共用联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span>，但遵循不同的数学规则。</p>
+<p><strong>核心机制：固有时流速效应（FG因果假设）</strong></p>
+<div class="arithmatex">\[\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta\,\delta_v}}\]</div>
+<p>其中：
+- <span class="arithmatex">\(\beta = \frac{1}{4\pi}\ln\frac{L}{a}\)</span>：离散拉普拉斯算符的格林函数，对数依赖于系统尺寸（<span class="arithmatex">\(L\)</span> 为系统尺寸，<span class="arithmatex">\(a\)</span> 为晶格常数），不是材料常数；
+- <span class="arithmatex">\(\delta_v = 2\pi - \sum_{\Delta \ni v}\theta_v^{(\Delta)}\)</span>：顶点角亏，由晶格几何直接给出。</p>
+<p><strong>物理图像</strong>：
+- 角亏 <span class="arithmatex">\(\delta_v &gt; 0\)</span>（正曲率）→ 固有时流速减慢（<span class="arithmatex">\(d\tau/dt &lt; 1\)</span>）→ 再生产周期在坐标时间中“膨胀”；
+- 平直极限 <span class="arithmatex">\(\delta_v = 0\)</span> → <span class="arithmatex">\(d\tau/dt = 1\)</span> → 固有时与坐标时同步；
+- 这与 GR 中引力势导致的时间膨胀结构完全对应（弱场极限 <span class="arithmatex">\(d\tau/dt = \sqrt{-g_{00}} \approx 1 + \Phi/c^2\)</span>），但不走 Regge→GR 连续极限→Poisson 方程路径——FG 直接由 Regge 角亏给出。</p>
+<p><strong>声子 = 曲率量子</strong>：晶胞量子振荡导致角亏涨落 <span class="arithmatex">\(\delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t)\)</span>，量子化后 <span class="arithmatex">\(\Delta\delta_v\)</span> 就是声子。声子是 FG 曲率的量子涨落，频率由曲率刚度决定：<span class="arithmatex">\(\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2\)</span>。</p>
+<p><strong>关键性质</strong>：
+- <strong>无 <span class="arithmatex">\(G_N\)</span> 限制</strong>：直接由 Regge 角亏决定，量级 <span class="arithmatex">\(O(1)\)</span>，在凝聚态可测；
+- <strong>不提供能量</strong>：FG 是条件，不是组织本身。组织本身是声子（动态曲率量子）；
+- <strong>非平庸性</strong>：相对于 GR 的平庸因果网络（时空），FG 是物质结构内部的层级因果条件；
+- <strong>深度性</strong>：向内穿透核子/晶格层级，是连接前时空与 GR 的关键中介。</p>
+<p><strong>同步方程的定态性</strong>：同步方程是<strong>条件本征值问题</strong>，不是动力学方程。同步是<strong>退相干事件</strong>（紧化条件与 FG 条件的联立解），不是时间演化过程。固有时方程是<strong>层级结构的静态 RG 参数化</strong>，非动力学。</p>
+<p><strong>Dirac条件</strong>（缝合核子空间与耦合常数空间）：</p>
+<div class="arithmatex">\[\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{☯}\sqrt{1-\beta\hat{\delta}_v} \approx 0}\]</div>
+<p>此条件将 FG 因果（核子空间的曲率算符）与耦合常数空间（<span class="arithmatex">\(U(1)\)</span> 紧化动量）严格锁定。</p>
+<h3 id="95">9.5 两种引力的对比总表<a class="headerlink" href="#95" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>前时空</strong></th>
+<th style="text-align: left;"><strong>精细引力 FG</strong></th>
+<th style="text-align: left;"><strong>经典引力 GR</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>存在论地位</strong></td>
+<td style="text-align: left;">物质处于前时空的状态。物质从无限的“质”中自组织为有限本体（质子／中子），是全部后续层级展开的逻辑地基</td>
+<td style="text-align: left;">深度前提（层级激发）。<strong>不是独立的“第三种力”，而是 GR 基态的非平庸激发态。</strong> 物质在凝聚态内部层级上通过自组织构造出的非平庸因果网络</td>
+<td style="text-align: left;">广度前提（平滑展开）。退相干后的平庸因果网络——即“时空”本身。覆盖从核子到可观测宇宙的最大尺度</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>本体根基</strong></td>
+<td style="text-align: left;">终极物质关系网络。物理实在不在禁闭内部（禁闭内部只是 QCD），而是 <strong>FG</strong>；基态谱结构由 GL(5) 自守 L 函数零点给出（SU(5) 基态同步；ζ 零点谱经紧化投影 <span class="arithmatex">\(\hat{\mathcal{S}}_0\)</span> 从 GL(5) 固定层级给出）</td>
+<td style="text-align: left;"><strong>物质晶胞</strong>（原子/分子构成的实际物质实体）→ 抽象为 <strong>Regge 晶胞</strong>（离散几何：顶点、边、二面角、角亏）→ 构成 FG 非平庸底空间。<strong>物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同</strong></td>
+<td style="text-align: left;">质子/中子的平庸关系网络。GR 是物质复杂关系网络被平滑化后的形态——微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>因果网络状态</strong></td>
+<td style="text-align: left;">前组织 / 基底幺正。禁闭内部演化幺正；因果序尚未展开（尚未分化）</td>
+<td style="text-align: left;"><strong>激发态 / 层级态 / 非平庸态。</strong> 物质在自身内部构造出的非平庸因果网络，具有内禀的离散几何结构和层级深度</td>
+<td style="text-align: left;"><strong>基态 / 平庸态。</strong> 双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>底空间</strong></td>
+<td style="text-align: left;">前时空（尚未分化）。不存在连续底空间、维度或流形</td>
+<td style="text-align: left;"><strong>物质晶胞分布</strong>（实际物质布局）→ <strong>Regge 晶胞分布</strong>（离散几何抽象）→ FG 底空间。<strong>底空间是物质自组织的空间形态本身</strong></td>
+<td style="text-align: left;">时空流形（平滑化的物质分布抽象）——伪黎曼流形</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>规范/纤维结构</strong></td>
+<td style="text-align: left;">前结构（尚未层级化）。U(1)×SU(2)×SU(3) 处于潜在/未分化状态，等待退相干后的涌现</td>
+<td style="text-align: left;"><strong>先在的 U(1)×SU(2)×SU(3) × 物质自组织展开（无限/未定）。</strong> 三个规范丛是物质自组织内禀的基态结构；在此之上可进一步自组织出更复杂的内部层级（如 <span class="arithmatex">\(A_4\)</span> 根空间、SU(4) 内部对称性），展开方向无限、未定</td>
+<td style="text-align: left;">U(1)×SU(2)×SU(3) 在平庸底空间上的平滑展开。<strong>U(1)×SU(2)×SU(3) 与三维空间相关</strong>，切空间是三维空间的线性化、同质化表现</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>源</strong></td>
+<td style="text-align: left;">前源（尚未显现）。能动张量、角亏、电荷等概念尚未分化</td>
+<td style="text-align: left;"><strong>物质晶胞分布的内禀不均匀性</strong>，由 Regge 角亏 <span class="arithmatex">\(\delta_v\)</span> 几何度量。角亏是物质组织形态的缺陷度量</td>
+<td style="text-align: left;">能动张量 <span class="arithmatex">\(T_{\mu\nu}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>源的位置</strong></td>
+<td style="text-align: left;">—（尚未分化，无内外之分）</td>
+<td style="text-align: left;"><strong>内禀：源即底空间自身的结构。</strong> 物质晶胞分布的不均匀性直接构成 Regge 角亏 <span class="arithmatex">\(\delta_v\)</span>；Regge 晶胞分布生成联络 <span class="arithmatex">\(\mathcal{A}_{\text{FG}}\)</span>；联络按规范场规则生成伴丛曲率</td>
+<td style="text-align: left;"><strong>外部：源作为内容作用于先验背景（表现）。</strong> GR 实际上并无独立于物质的先验背景</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>曲率结构</strong></td>
+<td style="text-align: left;">GL(5) 自守零点谱（基态，SU(5) 同步）；ζ 零点谱 <span class="arithmatex">\(\gamma_n\)</span> 经紧化投影 <span class="arithmatex">\(\hat{\mathcal{S}}_0\)</span> 从 GL(5) 固定层级投影后与之有关（前时空层）。决定物质能否以有限本体形式自组织出来</td>
+<td style="text-align: left;"><strong>Regge 曲率</strong>：离散角亏 <span class="arithmatex">\(\delta_v\)</span>（底空间几何缺陷）；<strong>伴丛曲率</strong>：<span class="arithmatex">\(F = d\mathcal{A} + \mathcal{A}\wedge\mathcal{A}\)</span>，和乐 <span class="arithmatex">\(W_v = \exp(i\delta_v \hat{T})\)</span>。联络 <span class="arithmatex">\(\mathcal{A}\)</span> 由 Regge 曲率生成，但伴丛曲率按规范场规则独立定义</td>
+<td style="text-align: left;">黎曼曲率 <span class="arithmatex">\(R^\rho_{\sigma\mu\nu}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>曲率作用</strong></td>
+<td style="text-align: left;">前组织条件（自组织的最原始形式）。GL(5) 自守零点谱作为“资格审查”的原始形态，决定物质有限化是否可能</td>
+<td style="text-align: left;"><strong>自组织。</strong> 物质通过角亏-联络-曲率机制<strong>自我展开</strong>：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织过程的内禀因果条件</td>
+<td style="text-align: left;">测地线限制。决定已有经典实体在平庸背景中的运动轨迹，不参与新层级的创生</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>层级创生</strong></td>
+<td style="text-align: left;">尚未分化。只存在最基础的有限本体（质子/中子）</td>
+<td style="text-align: left;"><strong>有：</strong> 从核子到晶胞到电子到配对，新层级持续涌现。每一次耦合常数跃迁（如 <span class="arithmatex">\(\alpha \to n^2\alpha\)</span>）都是网络内部结构的重组</td>
+<td style="text-align: left;"><strong>无：</strong> 物质始终停留在经典质点/场层级，无法解释电子、库珀对等如何从更基本组分中涌现</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：表中“基态/激发态”按<strong>因果网络状态</strong>定义：基态 = 退相干冻结的平庸因果网络（GR），激发态 = 物质自组织构造的非平庸因果网络（FG）——这是存在论分类，不是量子力学真空激发的类比。三者同源，都是退相干机制在不同层级的存在论效果；<strong>FG 不是与 GR 平等的“另一面”，而是 GR 基态的非平庸激发态，GR 比 FG 更基础。</strong></p>
+</blockquote>
+<hr />
+<h2 id="_10">第十部分：核子结构与元素层级<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="101-a_4">10.1 质子：完美 <span class="arithmatex">\(A_4\)</span><a class="headerlink" href="#101-a_4" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[A_4 = \begin{pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; -1 &amp; 2 \end{pmatrix}\]</div>
+<p><strong>严格生成正四单纯形</strong>：<span class="arithmatex">\(A_4\)</span> 的 10 个正根 = 正四单纯形的 10 条边向量。5 个顶点由 <span class="arithmatex">\(\mathbb{R}^5\)</span> 标准基投影到超平面 <span class="arithmatex">\(x_1 + \cdots + x_5 = 0\)</span> 得到。</p>
+<p><strong>特征值</strong>：<span class="arithmatex">\(\lambda_k = 2 - 2\cos(k\pi/5) = \{0.381966,\ 1.381966,\ 2.618034,\ 3.618034\}\)</span>（黄金比例组合）。</p>
+<h3 id="102-ddelta">10.2 中子：末端缺陷形变 <span class="arithmatex">\(D(\delta)\)</span><a class="headerlink" href="#102-ddelta" title="Permanent link">&para;</a></h3>
+<p><strong>物理条件</strong>：中子必须同时满足三个条件：</p>
+<ul>
+<li><strong>强相互作用保留</strong>：SU(3) 色对称性完整 → <span class="arithmatex">\(\alpha_1, \alpha_2\)</span> 不能改动；</li>
+<li><strong>U(1) 电荷缺失</strong>：缺陷必须影响电荷方向 → <span class="arithmatex">\(\alpha_4\)</span> 所在扇区；</li>
+<li><strong>Regge 铰链需求</strong>：缺陷必须在末端，以提供开放面。</li>
+</ul>
+<p>逐一排除（<span class="arithmatex">\(A_4\)</span> Dynkin 图：<span class="arithmatex">\(\alpha_1 - \alpha_2 - \alpha_3 - \alpha_4\)</span>）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">缺陷位置</th>
+<th style="text-align: left;">后果</th>
+<th style="text-align: center;">是否符合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha_1\)</span> 或 <span class="arithmatex">\(\alpha_2\)</span></td>
+<td style="text-align: left;">SU(3) 色破坏</td>
+<td style="text-align: center;">否</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha_3\)</span>（中心）</td>
+<td style="text-align: left;">过度破坏且非末端</td>
+<td style="text-align: center;">否</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha_4\)</span>（末端）</td>
+<td style="text-align: left;">SU(3) 完整，U(1) 退耦，提供开放面</td>
+<td style="text-align: center;">是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>结论</strong>：缺陷唯一锁定在 <span class="arithmatex">\(\alpha_4\)</span> 末端。</p>
+<p>矩阵形式（修改非对角元，保持根长度不变、改变 <span class="arithmatex">\(\alpha_3\)</span>-<span class="arithmatex">\(\alpha_4\)</span> 夹角）：</p>
+<div class="arithmatex">\[D(\delta) = \begin{pmatrix} 2 &amp; -1 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -\delta \\ 0 &amp; 0 &amp; -\delta &amp; 2 \end{pmatrix}\]</div>
+<p>当 <span class="arithmatex">\(\delta = 1\)</span> 时 <span class="arithmatex">\(D = A_4\)</span>，恢复质子。</p>
+<p><strong>代数类型</strong>（<span class="arithmatex">\(\det D(\delta) = 8 - 3\delta^2\)</span>）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">条件</th>
+<th style="text-align: center;"><span class="arithmatex">\(\det D(\delta)\)</span></th>
+<th style="text-align: left;">代数类型</th>
+<th style="text-align: left;">物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\|\delta\| &lt; \sqrt{8/3} \approx 1.633\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(&gt; 0\)</span></td>
+<td style="text-align: left;">有限型（正定）</td>
+<td style="text-align: left;">有限维表示，中子内部自由度有限</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\|\delta\| = \sqrt{8/3}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(= 0\)</span></td>
+<td style="text-align: left;">仿射型 <span class="arithmatex">\(\hat{A}_4\)</span></td>
+<td style="text-align: left;">无穷维，环面代数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\|\delta\| &gt; \sqrt{8/3}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(&lt; 0\)</span></td>
+<td style="text-align: left;">不定型（双曲/Kac–Moody）</td>
+<td style="text-align: left;">无穷维，非物理</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数值</strong>：<span class="arithmatex">\(\delta_j(Z,N)\)</span> 是<strong>依赖元素（<span class="arithmatex">\(Z\)</span>）和同位素（<span class="arithmatex">\(N\)</span>）的变量</strong>（<span class="arithmatex">\(D(\delta)\)</span>、<span class="arithmatex">\(\delta(N)\)</span> 中的 <span class="arithmatex">\(\delta\)</span> 即其简写），其函数形式从 <span class="arithmatex">\(SU(5)\)</span> 重组实现动力学构造性导出（<span class="arithmatex">\(\delta_j(Z,N) = 1 - \varepsilon_0 N/(Z+N)\)</span>，<span class="arithmatex">\(\varepsilon_0 = 0.0012\)</span>，见 <code>06 超导/CQM_超导_专题与扩展.md</code> §11.8）；质量-谱映射的严格第一性推导仍开放（缺口 N1）。中子缺陷对纯 <span class="arithmatex">\(A_4\)</span> 的偏离是<strong>微扰级形变</strong>（<span class="arithmatex">\(|\delta - 1|\ll 1\)</span>），故 <span class="arithmatex">\(\det D = 8 - 3\delta^2 &gt; 0\)</span>，所有主子式为正，所有特征值为正——<span class="arithmatex">\(D(\delta)\)</span> 仍然是有限型广义嘉当矩阵。</p>
+<p><strong>特征值的行为（定性）</strong>（<span class="arithmatex">\(\delta\)</span> 紧邻 1 的微扰情形，偏移量级 <span class="arithmatex">\(10^{-3}\)</span>，迹守恒使偏移对称；其显式推导为未决缺口）。形变极微小，中子内部仍是有限维代数结构。</p>
+<h3 id="103">10.3 中子扇区作为精细引力的结构性来源（非触发器）<a class="headerlink" href="#103" title="Permanent link">&para;</a></h3>
+<p><strong>核心澄清</strong>：中子不是精细引力的“触发器”。FG 由 Regge 角亏 <span class="arithmatex">\(\delta_v\)</span> 直接给出，不存在“中子按下开关才触发 FG”的动态过程。中子扇区的角色是<strong>结构性来源</strong>：</p>
+<ul>
+<li>中子缺陷 <span class="arithmatex">\(\alpha_4\)</span> 提供 Regge 铰链；</li>
+<li>从而决定角亏的数值与谱（即 FG 场的强度分布）；</li>
+<li>但 FG 本身是角亏的直接后果，不依赖任何额外“触发”事件。</li>
+</ul>
+<div class="arithmatex">\[\boxed{\text{有限本体粘合（中子缺陷 } \alpha_4 \text{ 或质子-质子非平直二面角）} \to \text{Regge 铰链} \to \text{角亏 } \delta_v \to \text{FG（直接给出，非触发）}}\]</div>
+<p><strong>质子-质子对也能形成 Regge 铰链</strong>：两个完整 <span class="arithmatex">\(A_4\)</span> 通过单纯复形粘合时，若共享三角面且二面角非平直，同样产生非零角亏、同样激活 FG。只是一般情形下质子-质子对难以形成铰链：纯质子系统中质子间库仑排斥强，难以达到形成内部铰链所需的紧密几何构型。</p>
+<p><strong>中子-质子对之所以成为元素的 FG 存在论前提</strong>，是因为：</p>
+<ol>
+<li>中子的电中性允许质子-中子紧密粘合，避开库仑排斥壁垒；</li>
+<li><span class="arithmatex">\(\delta \neq 1\)</span> 的缺陷使铰链更容易形成。</li>
+</ol>
+<p><strong>金属氢（Z=1, N=0）是纯主结构的极限</strong>——氢核 = 单个质子，无中子扇区，晶格无 Regge 角亏涨落（<span class="arithmatex">\(\Delta\delta_v = 0\)</span>），故不超导。</p>
+<h3 id="104">10.4 元素：理想因果积木<a class="headerlink" href="#104" title="Permanent link">&para;</a></h3>
+<p><strong>元素——而非质子或中子——才是 CQM 超导理论的理想因果积木。</strong></p>
+<p>同位素效应的启示：同一元素的不同同位素（不同中子数 <span class="arithmatex">\(N\)</span>）<span class="arithmatex">\(T_c\)</span> 差异极大。这证明元素内部存在<strong>主次结构</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">扇区</th>
+<th style="text-align: left;">结构</th>
+<th style="text-align: left;">角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>质子扇区（主结构）</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\bigoplus^{Z} A_4\)</span>，纯 <span class="arithmatex">\(A_4\)</span> 块对角，谱间隙 <span class="arithmatex">\(\lambda_1 = (3-\sqrt{5})/2\)</span></td>
+<td style="text-align: left;">主结构</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>中子扇区（次结构）</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\bigoplus^{N} D(\delta)\)</span>，缺陷 <span class="arithmatex">\(A_4\)</span> 非对角元（<span class="arithmatex">\(\alpha_4\)</span> 末端）</td>
+<td style="text-align: left;">次结构</td>
+</tr>
+</tbody>
+</table>
+<p>元素嘉当矩阵：</p>
+<div class="arithmatex">\[\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \left(\bigoplus_{j=1}^{N} D(\delta_j)\right)\]</div>
+<p>其中中子缺陷参数 <span class="arithmatex">\(\delta_j(Z,N)\)</span> 描述中子扇区对纯 <span class="arithmatex">\(A_4\)</span> 的偏离。</p>
+<h3 id="105">10.5 两条独立链<a class="headerlink" href="#105" title="Permanent link">&para;</a></h3>
+<p>从元素到晶胞的组装不是单一粗粒化，而是<strong>两条独立链</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">链</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">输出</th>
+<th style="text-align: left;">物理输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>链 A</strong></td>
+<td style="text-align: left;">核子 → 原子核 → 原子 → 分子 → 晶胞几何分布</td>
+<td style="text-align: left;">实际几何：键长、键角、缺陷、晶界、向错</td>
+<td style="text-align: left;">角亏各向异性 → 底空间曲率谱</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>链 B</strong></td>
+<td style="text-align: left;">核子 <span class="arithmatex">\(A_4\)</span> → 原子核交织 → 原子商空间 → 分子杂化 → 晶胞嘉当矩阵</td>
+<td style="text-align: left;">纤维 + 结构群（构造性计算，非粗粒化）</td>
+<td style="text-align: left;">结构群 <span class="arithmatex">\(G_\ell\)</span> 谱条件</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关系要点</strong>：</p>
+<ul>
+<li><strong>链 B 不是粗粒化</strong>，而是一套从质子/中子 <span class="arithmatex">\(A_4\)</span> 到晶胞嘉当矩阵的构造性计算（逐级发生学：核子交织 → 原子商空间 → 分子杂化 → 周期性凝聚）；</li>
+<li><strong>电子不需要显式输入</strong>：电子是基态耦合常数 <span class="arithmatex">\(\alpha\)</span> 的对应，已在系统中存在；</li>
+<li><strong>链 A 决定角亏数值；链 B 决定角亏可实现谱</strong>；两者在 FG 纤维丛处汇合；</li>
+<li>晶胞嘉当矩阵不直接生成 Regge 晶胞，但通过结构群限定可实现的曲率。</li>
+</ul>
+<hr />
+<h2 id="_11">第十一部分：超导涌现的完整机制<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>本部分为 <code>06 超导/CQM_超导核心理论.md</code> 的集成纲要；两条链的完整展开、FG 纤维丛、<span class="arithmatex">\(T_c\)</span> 校准见该文档，缺口表 G 类见 <code>06 超导/CQM_超导_专题与扩展.md</code> §13。超导的组织学定位（因果网络同步）见 11.6 与 <code>CQM_核心_因果网络同步理论.md</code>（CNST）。</p>
+</blockquote>
+<h3 id="111">11.1 核心论断<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<p>CQM 超导不是“筛选 + 吸引”的二分机制，而是<strong>单一的几何-动力学过程</strong>——耦合空间曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 <span class="arithmatex">\(\Delta u_n = 2\ln n\)</span>（<span class="arithmatex">\(n=2,4,6,\ldots\)</span>）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群，电子在精细引力的因果条件下自组织为库珀对。</p>
+<p>配对/相干过程即晶胞量子振荡本身——晶胞量子振荡（声子 = 曲率量子）携带角亏涨落、耦合空间响应与相位关联的全部信息。</p>
+<h3 id="112">11.2 完整因果链<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<p><strong>基础本体链</strong>：</p>
+<div class="arithmatex">\[\boxed{\begin{aligned}
+&amp;\text{前时空与两种引力（GR/FG，FG}\neq\text{GR）} + \text{相变量子 } ☯ \\
+&amp;\Downarrow \\
+&amp;\text{质子 } A_4 + \text{中子 } D(\delta) \\
+&amp;\Downarrow \\
+&amp;\text{链 A（晶胞几何分布）} + \text{链 B（晶胞嘉当矩阵，构造性）} \\
+&amp;\Downarrow \\
+&amp;\text{Regge 角亏 } \delta_v \\
+&amp;\Downarrow \\
+&amp;\text{FG 纤维丛（联络 } \mathcal{A}_{\text{FG}}\text{，其在 } A_4 \text{ 根空间指标上的分量 } \omega_{\alpha_i\alpha_j}\text{）} \\
+&amp;\Downarrow \\
+&amp;\text{电子作为基态耦合常数 } \alpha \text{ 的对应（已在系统中存在）} \\
+&amp;\Downarrow \\
+&amp;\text{声子 } = \text{曲率量子 } \Delta\delta_v \\
+&amp;\Downarrow \\
+&amp;\frac{d\tau}{dt} = \sqrt{1 - \beta\delta_v} \quad (\text{固有时流速} = \text{两时间之比，基准 } 1) \\
+&amp;\Downarrow \\
+&amp;p_u = \frac{1}{☯}\frac{d\tau}{dt} = \frac{\sqrt{1 - \beta\delta_v}}{☯}, \quad ☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \\
+&amp;\Downarrow \\
+&amp;[\hat{u}, \hat{p}_u] = i \;\to\; \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta}
+\end{aligned}}\]</div>
+<p><strong>晶胞量子振荡中的耦合空间动力学</strong>：</p>
+<div class="arithmatex">\[\boxed{\begin{aligned}
+&amp;\text{晶胞量子振荡（声子 = 曲率量子）} \to \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
+&amp;\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
+&amp;\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta} \\
+&amp;\Downarrow \\
+&amp;\Delta u_n = 2\ln n \text{ 跃迁 } u \to u + 2\ln n \;\to\; \alpha \to n^2\alpha \text{（耦级谱，} n=2,4,6,\ldots\text{）} \\
+&amp;\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐相位闭合条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
+&amp;\text{路径积分在候选群族上选出自由能最小的主导群 } G_{\text{主导}} = \arg\min_n F_n \\
+&amp;\Downarrow \\
+&amp;\text{超导态作为晶胞量子振荡全局相干模式涌现}
+\end{aligned}}\]</div>
+<h3 id="113">11.3 步骤详解<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
+<p><strong>步骤 1：晶胞量子振荡 = 曲率量子</strong></p>
+<p>晶胞量子振荡导致角亏涨落：</p>
+<div class="arithmatex">\[\delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t)\]</div>
+<p>量子化：</p>
+<div class="arithmatex">\[\Delta\delta_v(\mathbf{r}, t) = \sum_{\mathbf{q}} \sqrt{\frac{\hbar}{2\rho_m \omega_{\mathbf{q}}}}\left(b_{\mathbf{q}} + b_{-\mathbf{q}}^\dagger\right)e^{i\mathbf{q}\cdot\mathbf{r}}\]</div>
+<p>声子不是独立晶胞量子振荡，而是耦合空间曲率的量子涨落。<span class="arithmatex">\(\hbar\omega_{\text{ph}}\)</span> 频率由曲率刚度决定：<span class="arithmatex">\(\hbar\omega_{\text{ph}} \sim K_{\text{eff}}(\Delta\delta_v)^2\)</span>。</p>
+<p><strong>步骤 2：固有时流速</strong></p>
+<p>FG 的固有时流速由角亏直接调制：</p>
+<div class="arithmatex">\[\frac{d\tau}{dt} = \sqrt{1 - \beta\delta_v}\]</div>
+<p>角亏涨落 <span class="arithmatex">\(\Delta\delta_v\)</span> 导致固有时流速涨落 <span class="arithmatex">\(\Delta v_\tau = \frac{\beta}{2\sqrt{1-\beta\delta_v}}\Delta\delta_v\)</span>。</p>
+<p><strong>步骤 3：耦合空间不确定性</strong></p>
+<p>由海森堡代数 <span class="arithmatex">\([\hat{u}, \hat{p}_u] = i\)</span> 与 <span class="arithmatex">\(p_u = \sqrt{1-\beta\delta_v}/☯\)</span>：</p>
+<div class="arithmatex">\[\boxed{\Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta}}\]</div>
+<p><strong>物理</strong>：曲率涨落通过固有时流速涨落，强制精细结构常数产生量子涨落。耦合常数的相对不确定度与角亏涨落的不确定度被此不等式绑定。</p>
+<p><strong>步骤 4：跃迁耦级谱与资格条件</strong></p>
+<p>库珀对携带电荷 <span class="arithmatex">\(2e\)</span>，对应 <span class="arithmatex">\(n=2\)</span>；更一般的 <span class="arithmatex">\(n\)</span> 体束缚态携带电荷 <span class="arithmatex">\(ne\)</span>，有效精细结构常数跃迁：</p>
+<div class="arithmatex">\[\alpha \to n^2\alpha \iff u \to u + 2\ln n,\qquad n=2,4,6,\ldots\]</div>
+<p><strong><span class="arithmatex">\(2\ln n\)</span> 的来源</strong>：<span class="arithmatex">\(\mathbf{4}^{\otimes n}\)</span> 分解后，配对有效内部空间维度从 <span class="arithmatex">\(4^n\)</span> 压缩到 <span class="arithmatex">\(4\)</span>，表示维度压缩 <span class="arithmatex">\(\ln(4^n/4) = (n-1)\ln 4\)</span>；跃迁参数 <span class="arithmatex">\(2\ln n\)</span> 来自电荷量子化 <span class="arithmatex">\(\alpha \to n^2\alpha\)</span>（即 <span class="arithmatex">\(u \to u + \ln n^2 = u + 2\ln n\)</span>），仅在 <span class="arithmatex">\(n=2\)</span> 时 <span class="arithmatex">\((n-1)\ln 4 = \ln 4 = 2\ln 2\)</span> 与 <span class="arithmatex">\(2\ln n\)</span> 一致。<span class="arithmatex">\(n\)</span> 必须为偶数（泡利统计选择定则：费米子 <span class="arithmatex">\(n\)</span> 体束缚态要求 <span class="arithmatex">\(n\)</span> 偶）。这是 <span class="arithmatex">\(A_4\)</span> 表示论的严格推论，非唯象参数。</p>
+<p><strong>资格条件</strong>（角亏涨落决定哪些跃迁进入候选集，不直接决定跃迁）：</p>
+<div class="arithmatex">\[\boxed{\Delta\delta_0 \ge \frac{☯\sqrt{1 - \beta\delta_v}}{2\beta\ln n}}\]</div>
+<p>满足资格条件的跃迁 <span class="arithmatex">\(n\)</span> 构成候选群族 <span class="arithmatex">\(\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}\)</span>。<strong>角亏涨落不直接决定跃迁——它只决定哪些跃迁有资格进入候选集。</strong> 最终跃迁由路径积分在候选群族上选出自由能最小的主导群（见 §11.4 第二步）。</p>
+<p><strong>步骤 5：电子的本体论定位与配对</strong></p>
+<ul>
+<li><strong>电子</strong> = 基态耦合常数 <span class="arithmatex">\(\alpha\)</span> 的对应（已在系统中存在，非独立本体）；</li>
+<li><strong>库珀对</strong> = 跃迁耦合常数 <span class="arithmatex">\(4\alpha\)</span>（<span class="arithmatex">\(n=2\)</span>）的对应；</li>
+<li>一般 <span class="arithmatex">\(n\)</span> 体束缚态 = 跃迁耦合常数 <span class="arithmatex">\(n^2\alpha\)</span> 的对应；</li>
+<li>超导与否的区别仅在于耦合常数是否完成 <span class="arithmatex">\(\alpha \to n^2\alpha\)</span> 跃迁（由自由能竞争选出主导 <span class="arithmatex">\(n\)</span>）。</li>
+</ul>
+<p><strong>本体论分层</strong>：电子是基态耦合常数 <span class="arithmatex">\(\alpha\)</span> 的对应——它是关系性历史产物（来自质子-中子关系网络的历史拓扑路径），但在超导问题中已经“在场”：系统中已有电子，只是耦合常数停在 <span class="arithmatex">\(\alpha\)</span> 而未跃迁。库珀对是跃迁耦合常数 <span class="arithmatex">\(4\alpha\)</span> 的对应。因此“配对”的本质不是“制造出电子”，而是<strong>耦合常数从 <span class="arithmatex">\(\alpha\)</span> 跃迁到 <span class="arithmatex">\(n^2\alpha\)</span></strong>——电子（基态对应）因角亏涨落不足、资格条件未满足而无候选跃迁；一旦 <span class="arithmatex">\(\Delta\delta_v\)</span> 满足资格条件、路径积分选出主导 <span class="arithmatex">\(n\)</span>、<span class="arithmatex">\(\alpha \to n^2\alpha\)</span> 跃迁触发，同一批电子便在精细引力的因果条件下自组织为 <span class="arithmatex">\(n\)</span> 体束缚态。电子是前提，束缚态是前提的跃迁结果。</p>
+<p><strong>步骤 6：和乐相位瓶颈</strong></p>
+<p>绕局域缺陷（向错）一周后，<span class="arithmatex">\(A_4\)</span> 根指标的相位必须闭合：</p>
+<div class="arithmatex">\[\mathcal{H}_{ij} = \exp\left(i\oint_C \omega_{\alpha_i\alpha_j}\right) \approx 1 \pmod{2\pi}\]</div>
+<p>这是晶胞量子振荡过程中自然满足的<strong>单值性条件</strong>。</p>
+<p><strong>空间不均匀性的作用</strong>：</p>
+<ul>
+<li><strong>向错芯</strong>（<span class="arithmatex">\(\delta_v\)</span> 大）：单值性窗口宽 → <span class="arithmatex">\(\mathcal{H}_{ij}\)</span> 容易 <span class="arithmatex">\(\approx 1\)</span> → 通过；</li>
+<li><strong>晶粒内部</strong>（<span class="arithmatex">\(\delta_v\)</span> 小）：窗口窄 → 热漂移易使 <span class="arithmatex">\(\mathcal{H}_{ij}\)</span> 偏离 <span class="arithmatex">\(1\)</span> → 失败。</li>
+</ul>
+<p>热漂移 <span class="arithmatex">\(\Delta\phi_{\text{thermal}}\)</span> 由晶胞量子振荡声子数给出：有效窗口宽度 <span class="arithmatex">\(= \delta_v \cdot \xi_{\text{coher}} - \Delta\phi_{\text{thermal}}(T)\)</span>，温度升高 → 窗口收窄。</p>
+<p><strong>赝能隙的本质</strong>：和乐相位闭合条件在空间上的不均匀满足。在同一温度 <span class="arithmatex">\(T\)</span> 下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">空间区域</th>
+<th style="text-align: left;">局域曲率 <span class="arithmatex">\(\delta_v\)</span></th>
+<th style="text-align: left;">有效窗口</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">可观测表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">向错芯</td>
+<td style="text-align: left;">大</td>
+<td style="text-align: left;">宽</td>
+<td style="text-align: left;">通过</td>
+<td style="text-align: left;">局域条件满足</td>
+</tr>
+<tr>
+<td style="text-align: left;">晶粒内部</td>
+<td style="text-align: left;">小</td>
+<td style="text-align: left;">窄</td>
+<td style="text-align: left;">失败</td>
+<td style="text-align: left;">正常态</td>
+</tr>
+<tr>
+<td style="text-align: left;">全局平均</td>
+<td style="text-align: left;">中等</td>
+<td style="text-align: left;">中等</td>
+<td style="text-align: left;">临界</td>
+<td style="text-align: left;">取决于 <span class="arithmatex">\(T\)</span> 与平均窗口的关系</td>
+</tr>
+</tbody>
+</table>
+<p><strong>赝能隙 = 高曲率区局域条件已满足、但全局相位同步跃迁尚未发生的中间态。</strong> 局域不可能跃迁，局域只能满足条件，跃迁是全局相位同步事件。同步=相位相干，不要求结构群统一。这是晶胞量子振荡空间不均匀性的直接产物。</p>
+<h3 id="114">11.4 临界温度（严格推导）<a class="headerlink" href="#114" title="Permanent link">&para;</a></h3>
+<p><strong>第一步：涨落幅度的温度依赖闭式。</strong> Bose–Einstein 分布给出的平均声子数 <span class="arithmatex">\(n_B(\Omega_0) = 1/(e^{\hbar\Omega_0/k_BT} - 1)\)</span> 满足恒等式：</p>
+<div class="arithmatex">\[\frac{1}{1 + 2n_B(\Omega_0)} = \frac{e^{\hbar\Omega_0/k_BT} - 1}{e^{\hbar\Omega_0/k_BT} + 1} = \tanh\frac{\hbar\Omega_0}{2k_BT}\]</div>
+<p>因此相干曲率涨落随温度单调衰减：</p>
+<div class="arithmatex">\[\Delta\delta_v(T) = \Delta\delta_0\sqrt{\tanh\frac{\hbar\Omega_0}{2k_BT}}\]</div>
+<p>零温 <span class="arithmatex">\(T \to 0\)</span>：<span class="arithmatex">\(\Delta\delta_v \to \Delta\delta_0\)</span>；高温 <span class="arithmatex">\(T \to \infty\)</span>：<span class="arithmatex">\(\Delta\delta_v \to 0\)</span>（涨落被声子热噪声完全抑制）。</p>
+<p><strong>第二步：候选群族与自由能竞争。</strong> 资格条件筛选出候选群族 <span class="arithmatex">\(\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}\)</span>。路径积分 <span class="arithmatex">\(Z = \sum_{U(1)//\mathbb{Z}_n \in \mathcal{G}} \int D[A,\psi]\,e^{-S}\)</span> 在候选群族上选出自由能最小的主导群。</p>
+<p><strong>第三步：临界温度 = 自由能交叉。</strong></p>
+<div class="arithmatex">\[\boxed{F_1(T_c) = F_2(T_c),\qquad T_c = \frac{E_2 - E_1}{S_2 - S_1}}\]</div>
+<p>正常态（<span class="arithmatex">\(n=1\)</span>，无凝聚）与超导态（<span class="arithmatex">\(n=2\)</span>，库珀对）自由能交叉给出 <span class="arithmatex">\(T_c\)</span>。<strong>没有独立的“跃迁能级”——只有自由能竞争。</strong></p>
+<h3 id="115">11.5 温度的统一作用<a class="headerlink" href="#115" title="Permanent link">&para;</a></h3>
+<p>温度不是“能量注入破坏超导”，而是<strong>通过改变晶胞量子振荡模式的声子数，影响自组织</strong>——再生产（晶胞量子振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干。</p>
+<p>所有温度效应都出自这一条声子数 <span class="arithmatex">\(n_B(\omega_{\mathbf{q}}) = (e^{\hbar\omega_{\mathbf{q}}/k_BT} - 1)^{-1}\)</span>，自然体现在角亏涨落的统计分布中。临界温度 <span class="arithmatex">\(T_c\)</span> 对应<strong>正常态与超导态自由能交叉</strong>的临界点。</p>
+<p><strong>外参量分工</strong>：温度是同步的主要控制参量（直接抑制相干涨落影响跃迁资格 + 熵项调节自由能竞争），压强是量子振荡几何的控制参量（直接改变 <span class="arithmatex">\(\delta_v\)</span>、<span class="arithmatex">\(\Delta\delta_0\)</span>、<span class="arithmatex">\(\Omega_0\)</span> 影响跃迁资格，高压氢化物超导由此途径），磁场是规范场/拓扑的控制参量（改变自由能差影响同步 + 磁通量子化 <span class="arithmatex">\(\Phi_n = h/(ne)\)</span> 给出多组临界场 <span class="arithmatex">\(H_{c1}^{(n)}\)</span>、<span class="arithmatex">\(H_{c2}^{(n)}\)</span>）。完整展开见 <code>06 超导/CQM_超导_专题与扩展.md</code> §11.5。</p>
+<h3 id="116">11.6 因果网络同步：超导的组织学定位<a class="headerlink" href="#116" title="Permanent link">&para;</a></h3>
+<p><strong>超导态 = 精细引力（FG）因果网络的全局同步态（同步再锁定）。</strong></p>
+<p>存在论基底见 <code>CQM_核心_因果网络同步理论.md</code>（CNST）：超导相变是 FG 展开性同步向高阶同步锁定态的跃迁——不是在原层级上恢复同步，而是在新层级（配对态）上建立新的同步秩序。</p>
+<table>
+<thead>
+<tr>
+<th>态</th>
+<th>因果网络同步状态</th>
+<th>物理表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正常态</td>
+<td>未同步（FG 激发态，晶胞量子振荡不相干）</td>
+<td>耦合常数停在 <span class="arithmatex">\(\alpha\)</span></td>
+</tr>
+<tr>
+<td>赝能隙</td>
+<td>局域条件满足，全局相位同步未完成</td>
+<td>高曲率区局域条件满足，全局跃迁尚未发生，系统处于结构群叠加态（见 §11.6）</td>
+</tr>
+<tr>
+<td>超导态</td>
+<td>全局相位同步（再锁定）</td>
+<td>相位关联跨越晶粒，全局相位相干（结构群可不统一，允许多群超导）</td>
+</tr>
+</tbody>
+</table>
+<p>11.1–11.5 的几何-动力学机制即同步的物理实现通道：晶胞量子振荡（声子 = 曲率量子）是量子振荡体，固有时流速 <span class="arithmatex">\(\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}\)</span> 是局域节律，FG 纤维丛联络与和乐相位 <span class="arithmatex">\(W_v=\exp(i\delta_v\hat T)\)</span> 是量子振荡体间耦合，和乐相位闭合条件 <span class="arithmatex">\(\mathcal{H}_{ij}\approx1\)</span> 是相位同步条件；同步判据即资格条件 <span class="arithmatex">\(\Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n}\)</span> 筛选候选群族，全局相位同步临界点即自由能交叉 <span class="arithmatex">\(F_1(T_c)=F_2(T_c)\)</span>（唯象层；深层根基为同步算符本征值交叉 <span class="arithmatex">\(\lambda_1(T_c)=\lambda_2(T_c)\)</span>，超导同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现，自由能交叉是其热力学投影，详见 <code>06 超导/CQM_超导核心理论.md</code> §11.6）。<strong>同步=相位相干，不要求结构群统一（允许多群超导）。</strong> 完整展开见 <code>06 超导/CQM_超导核心理论.md</code> §1.5、§10、§18.1。</p>
+<hr />
+<h2 id="_12">第十二部分：与标准理论的关系<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="121-bcs">12.1 与 BCS 理论的退化与还原<a class="headerlink" href="#121-bcs" title="Permanent link">&para;</a></h3>
+<p>CQM 超导框架在特定极限下退化为 BCS 理论：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CQM 对象</th>
+<th style="text-align: left;">BCS 对应</th>
+<th style="text-align: left;">退化条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">角亏涨落 <span class="arithmatex">\(\Delta\delta_v\)</span></td>
+<td style="text-align: left;">声子振幅</td>
+<td style="text-align: left;">弱引力极限 <span class="arithmatex">\(\beta\delta_v \to 0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">固有时流速 <span class="arithmatex">\(d\tau/dt\)</span></td>
+<td style="text-align: left;">晶胞量子振荡周期</td>
+<td style="text-align: left;">平直极限 <span class="arithmatex">\(\delta_v \to 0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">耦合常数跃迁 <span class="arithmatex">\(\alpha \to n^2\alpha\)</span></td>
+<td style="text-align: left;">能隙打开</td>
+<td style="text-align: left;">自由能交叉附近线性化</td>
+</tr>
+<tr>
+<td style="text-align: left;">和乐相位闭合条件</td>
+<td style="text-align: left;">相位相干性</td>
+<td style="text-align: left;">长波极限</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>普适能隙比</strong>：BCS 的 <span class="arithmatex">\(2\Delta(0)/k_BT_c = 3.53\)</span> 在 CQM 中对应于跃迁耦级 <span class="arithmatex">\(2\ln n\)</span> 的固定尺度比（<span class="arithmatex">\(n=2\)</span> 退化为 <span class="arithmatex">\(\ln 4\)</span>）；</li>
+<li><strong>同位素效应</strong>：BCS 的 <span class="arithmatex">\(T_c \propto M^{-1/2}\)</span> 在 CQM 中由主次结构谱间隙差驱动（中子扇区质量效应）。</li>
+</ul>
+<h3 id="122-rg">12.2 与重整化群（RG）的关系<a class="headerlink" href="#122-rg" title="Permanent link">&para;</a></h3>
+<p>CQM 的 RG 流由带 <span class="arithmatex">\(e^u\)</span> 因子的非线性传输方程描述：</p>
+<div class="arithmatex">\[\partial_\tau \phi + v\,e^u \partial_u \phi = 0\]</div>
+<p>其特征线 <span class="arithmatex">\(du/d\tau = v e^u\)</span>（即 <span class="arithmatex">\(dr/d\tau = v r^2\)</span>，<span class="arithmatex">\(r = e^u = g^2\)</span>）的解为有理函数：</p>
+<div class="arithmatex">\[r(\tau) = \frac{1}{-v\tau + C}\]</div>
+<p>此形式与标准 QFT 单圈 RG 流 <span class="arithmatex">\(dg/dt = -\beta_0 g^3\)</span> 完全一致——若令 <span class="arithmatex">\(\tau \leftrightarrow \ln(\mu/\Lambda)\)</span>，则 <span class="arithmatex">\(g^2 \sim 1/\ln(\mu/\Lambda)\)</span>，即标准的对数跑动。<strong>RG 流属于禁闭边界及之外的物理</strong>（高能标/UV 区域，耦合常数跑动描述能标依赖）。本体论不同：</p>
+<ul>
+<li><strong>标准 QFT</strong>：RG 流是路径积分标度变换的数学结果，能标 <span class="arithmatex">\(\mu\)</span> 是外部参数；</li>
+<li><strong>CQM</strong>：RG 流是单质子内禀时钟驱动的非线性传输，能标被因果时 <span class="arithmatex">\(\tau\)</span> 取代。</li>
+</ul>
+<p><strong>流动方向</strong>：因果时 <span class="arithmatex">\(\tau\)</span> 从 UV 流向 IR（因果演化方向），耦合随 <span class="arithmatex">\(\tau\)</span> 增大而增大（IR 端耦合变强），与 QCD 渐近自由方向一致——UV 端耦合弱，IR 端耦合强。</p>
+<p>CQM 尚未完成从第一性原理计算具体耦合常数跑动曲线的定量推导（“惊险一跃”）。</p>
+<h3 id="123">12.3 贝尔不等式的取消<a class="headerlink" href="#123" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>贝尔不等式不是被 CQM 违反的——它是被 CQM 取消的。</strong></p>
+</blockquote>
+<p>贝尔原始推导的隐藏预设：</p>
+<ol>
+<li><strong>共同概率空间</strong>：<span class="arithmatex">\(\lambda\)</span> 对所有测量设置是同一变量；</li>
+<li><strong>联合分布存在</strong>：<span class="arithmatex">\(\rho(\lambda)\)</span> 是良定义的概率测度；</li>
+<li><strong>因子化</strong>：<span class="arithmatex">\(P(a,b|\lambda) = P(a|\lambda)P(b|\lambda)\)</span>；</li>
+<li><strong>因果可达</strong>：<span class="arithmatex">\(\lambda\)</span> 必须能被测量设置“访问”。</li>
+</ol>
+<p><strong>CQM 的回应</strong>：</p>
+<ul>
+<li>不存在对全部物理系统共同的变量——不同物理系统的“隐变量”是不同组织形式；</li>
+<li>因果不可达的事件之间不存在联合概率分布；</li>
+<li>因子化预设了子系统的独立存在性——CQM 中“两个粒子”不是独立子系统，而是全局因果网络的不同节点；</li>
+<li>因果结构本身因果不可达，因此不存在“访问”关系。<strong>因果结构不是隐变量</strong>——“变量”预设了可赋值、可分离的存在形式，而因果结构是使“隐藏/显现”之分成为可能的本体论基底，不是被隐藏的存在者。</li>
+</ul>
+<p><strong>Fine 定理</strong>：贝尔不等式成立 <span class="arithmatex">\(\iff\)</span> 存在一个联合概率分布覆盖所有不可同时测量的可观测量。</p>
+<p>在 CQM 中，Alice 和 Bob 的测量设备是物理系统核/原子尺度的宏观物体，纠缠粒子是物理系统费米尺度的系统。<strong>不存在一个跨尺度的联合概率分布</strong>——因为费米尺度的 <span class="arithmatex">\(\lambda_{L1}\)</span> 和宏观尺度的 <span class="arithmatex">\(\lambda_{L3}\)</span> 不是同一数学空间中的变量。</p>
+<p><strong>因此，贝尔不等式在 CQM 中不仅被“违反”——它根本不被定义。</strong></p>
+<h3 id="124">12.4 测量问题的消解<a class="headerlink" href="#124" title="Permanent link">&para;</a></h3>
+<p>传统量子力学的“测量问题”：波函数何时坍缩？由什么触发？</p>
+<p>CQM 的消解：<strong>不存在测量问题，只存在系统命运。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">过程</th>
+<th style="text-align: left;">CQM 描述</th>
+<th style="text-align: left;">传统术语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">系统诞生</td>
+<td style="text-align: left;">前核子自组织确立禁闭边界，物理系统边界局部非幺正确立</td>
+<td style="text-align: left;">“量子→经典过渡”</td>
+</tr>
+<tr>
+<td style="text-align: left;">系统维持</td>
+<td style="text-align: left;">系统内部条件性幺正运行，再生产闭环</td>
+<td style="text-align: left;">“幺正演化”</td>
+</tr>
+<tr>
+<td style="text-align: left;">系统跃迁</td>
+<td style="text-align: left;">弱相互作用导致味空间再分配</td>
+<td style="text-align: left;">“衰变”</td>
+</tr>
+<tr>
+<td style="text-align: left;">系统消亡</td>
+<td style="text-align: left;">电磁吸收，条件性幺正消亡，边界消解</td>
+<td style="text-align: left;">“测量/坍缩”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键</strong>：传统理论将不同物理系统的因果过程混为一谈，导致“测量问题”。CQM 通过系统—尺度—层级递进本体论将它们严格区分。</p>
+<hr />
+<h2 id="_13">第十三部分：纤维丛结构与涨落伴丛<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="131">13.1 耦合常数必须指定结构群<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<p>CQM 的耦合常数涨落需明确指定所属主丛与结构群：</p>
+<div class="arithmatex">\[u_G = \ln g_G,\quad [u_G, p_{u_G}] = i\]</div>
+<p>其中 <span class="arithmatex">\(G\)</span> 明确指定结构群。<strong>海森堡代数一维性限定定义域</strong>：<span class="arithmatex">\(u_G=\ln g_G\)</span> 作为全局单坐标定义，当且仅当 <span class="arithmatex">\(G\)</span> 是一维阿贝尔群（<span class="arithmatex">\(S^1\)</span> 及其商 <span class="arithmatex">\(U(1)//\mathbb{Z}_n\)</span>）；非阿贝尔群的对数是局部且多值的（Baker–Campbell–Hausdorff 级数），无法定义单一海森堡对（见 <code>07 精细引力（FG）/FG_核心理论.md</code> §4.1 定位注）。因此耦合常数的海森堡量子化只在电磁扇区直接可行：</p>
+<ul>
+<li>超导：<span class="arithmatex">\(U(1)_{\text{em}}\)</span>，涨落 <span class="arithmatex">\(u_{U(1)}\)</span>，跃迁耦级 <span class="arithmatex">\(2\ln n\)</span>（<span class="arithmatex">\(n=2,4,6,\ldots\)</span>），资格条件 <span class="arithmatex">\(\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\)</span></li>
+<li>核子同位旋 <span class="arithmatex">\(SU(2)_{\text{isospin}}\)</span> 与色动力学 <span class="arithmatex">\(SU(3)_{\text{color}}\)</span>：耦合常数不经海森堡代数直接量子化，而是经 Casimir 阶梯 <span class="arithmatex">\(g_k=\alpha^{-1}\exp(-(n_k-n_1)/n_1)\)</span> 从 <span class="arithmatex">\(U(1)\)</span> 锚导出（重整化群跑动形式，见 <code>07 精细引力（FG）/FG_核心理论.md</code> §5.4 定位注）</li>
+</ul>
+<h3 id="132">13.2 耦合常数唯一，荷多样化<a class="headerlink" href="#132" title="Permanent link">&para;</a></h3>
+<p>每个结构群只有一个耦合常数：</p>
+<div class="arithmatex">\[D_\mu = \partial_\mu - i g_G A_\mu^a T^a\]</div>
+<p>荷是表示矩阵 <span class="arithmatex">\(T^a\)</span> 的本征值，多种多样。有效荷 <span class="arithmatex">\(= g_G \times q_R\)</span>。CQM 中涨落的是唯一耦合常数 <span class="arithmatex">\(g_G\)</span>，不是多样的荷。耦合常数跃迁时，该扇区所有荷同步改变。</p>
+<h3 id="133">13.3 条件而非唯一确定<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<p>耦合常数涨落不能唯一确定伴丛/条件伴丛的结构群，只能限定它。条件是分层的：</p>
+<div class="arithmatex">\[\underbrace{[\hat{u},\hat{p}_u]=i}_{\substack{\text{条件}_1\\\text{海森堡一维性}}}\;\to\;\underbrace{U(1)}_{\substack{\text{条件}_1\text{产物}\\\text{=条件}_2\text{对象}}}\;\xrightarrow{\;\mathbb{Z}_n\text{ 商}\;}\;\underbrace{U(1)//\mathbb{Z}_n}_{\substack{\text{条件}_2\text{产物}\\\text{=丛构造输入}}}\;\to\;\underbrace{E_n}_{\text{产物}}\]</div>
+<ul>
+<li><strong>条件<span class="arithmatex">\(_1\)</span></strong>：海森堡代数一维性 → 结构群必须一维阿贝尔 → 产物 <span class="arithmatex">\(U(1)\)</span></li>
+<li><strong>条件<span class="arithmatex">\(_2\)</span></strong>：<span class="arithmatex">\(\mathbb{Z}_n\)</span>（电荷量子化：权 <span class="arithmatex">\(q\)</span> 表示当且仅当 <span class="arithmatex">\(n\mid q\)</span> 时下降）商限定 <span class="arithmatex">\(U(1)\)</span> → 产物 <span class="arithmatex">\(U(1)//\mathbb{Z}_n\)</span></li>
+<li><strong>丛构造</strong>：每个 <span class="arithmatex">\(U(1)//\mathbb{Z}_n\)</span> 给出伴丛 <span class="arithmatex">\(E_n = P\times_{G_n}\mathbb{C}\)</span></li>
+</ul>
+<h3 id="134">13.4 涨落伴丛<a class="headerlink" href="#134" title="Permanent link">&para;</a></h3>
+<p>涨落伴丛是<strong>伴丛族</strong>（不是群族——承载序参量的是伴丛，不是群集合）：</p>
+<div class="arithmatex">\[\mathcal{E}_{\text{涨落}} = \{E_n = P\times_{G_n}\mathbb{C} \mid G_n \in \mathcal{G}\}, \quad \mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶}\}\]</div>
+<p>三重条件：</p>
+<ol>
+<li><strong>和乐李代数条件</strong>：由 <span class="arithmatex">\(\Delta u_G\)</span> 给出，限定 <span class="arithmatex">\(\mathfrak{hol} \subseteq \mathfrak{g}\)</span></li>
+<li><strong>底空间拓扑条件</strong>：陈类、离散对称性、边界条件</li>
+<li><strong>物质场表示条件</strong>：序参量属于哪个表示，凝聚后保持哪个子群不变</li>
+</ol>
+<p>三重条件圈定候选群族 <span class="arithmatex">\(\mathcal{G}\)</span>，不唯一决定。路径积分在<strong>伴丛族</strong> <span class="arithmatex">\(\mathcal{E}_{\text{涨落}}\)</span> 上选出主导伴丛 <span class="arithmatex">\(E_{n^*}\)</span>（选群的目的是选丛）。</p>
+<h3 id="135">13.5 先在规范直积群与物质自组织<a class="headerlink" href="#135" title="Permanent link">&para;</a></h3>
+<p>先在的规范直积群：</p>
+<div class="arithmatex">\[G_0 = U(1) \times SU(2) \times SU(3)\]</div>
+<p>是物质自组织的基态规范骨架，不可还原。物质在先在规范群的基础上，通过晶胞角亏、固有时流速、耦合空间涨落，展开出具体层级的伴丛结构。</p>
+<p>物质在某个层级看到的伴丛结构群 <span class="arithmatex">\(= G_0\)</span> 经过所有扇区耦合涨落改造后的剩余结构。这是物质自组织在特定层级上对耦合常数动力学的宏观标记。</p>
+<h3 id="136">13.6 完整发生学链条<a class="headerlink" href="#136" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\begin{aligned}
+\text{晶胞量子振荡} &amp; \longrightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
+&amp; \longrightarrow \frac{d\tau}{dt} = \sqrt{1-\beta\delta_v} \\
+ &amp; \longrightarrow p_u = \frac{v_\tau}{☯} = \frac{\sqrt{1-\beta\delta_v}}{☯} \\
+ &amp; \longrightarrow \Delta u_G \cdot \Delta\delta_v \ge \frac{☯\sqrt{1-\beta\delta_v}}{\beta} \\
+&amp; \xrightarrow{\text{资格条件}} g_G \to g_G' \\
+&amp; \xrightarrow{\text{条件}} \text{涨落伴丛族}
+\end{aligned}\]</div>
+<h3 id="137">13.7 扇区化表现形式<a class="headerlink" href="#137" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">扇区</th>
+<th style="text-align: left;">底空间角亏</th>
+<th style="text-align: left;">耦合常数</th>
+<th style="text-align: left;">跃迁耦级/资格条件</th>
+<th style="text-align: left;">限定出的结构群族</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(U(1)_{\text{em}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\delta_v^{\text{cell}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2\ln n\)</span>（<span class="arithmatex">\(n=2,4,6,\ldots\)</span>）</td>
+<td style="text-align: left;"><span class="arithmatex">\(\{e\}, \mathbb{Z}_2, U(1)//\mathbb{Z}_2, \ldots\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(SU(2)_{\text{isospin}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\delta_v^{\text{nuc}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(g_2\)</span></td>
+<td style="text-align: left;">待定</td>
+<td style="text-align: left;"><span class="arithmatex">\(SU(2) \to H_{\text{核}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(SU(3)_{\text{color}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\delta_v^{\text{nuc}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha_s\)</span></td>
+<td style="text-align: left;">禁闭阈值</td>
+<td style="text-align: left;">禁闭态结构</td>
+</tr>
+</tbody>
+</table>
+<h3 id="138">13.8 理论意义<a class="headerlink" href="#138" title="Permanent link">&para;</a></h3>
+<p>CQM 从“抽象代数游戏”变为“具体发生学”：</p>
+<div class="arithmatex">\[\text{先在规范群} \;\to\; \text{角亏涨落} \;\to\; \text{扇区耦合涨落} \;\to\; \text{条件伴丛结构群} \;\to\; \text{物质在条件下自组织实现对称性}\]</div>
+<ul>
+<li><strong>扇区化</strong>：每个结构群独立处理，互不混淆</li>
+<li><strong>条件化</strong>：避免决定论和任意论两个极端</li>
+<li><strong>历史化</strong>：结构群是物质历史展开的产物</li>
+<li><strong>唯物化</strong>：数学结构从物质自组织中生长</li>
+</ul>
+<h3 id="139">13.9 对称性叠加：结构群作为量子变量<a class="headerlink" href="#139" title="Permanent link">&para;</a></h3>
+<p>CQM 的核心突破：<strong>结构群本身叠加了。</strong> 传统量子力学叠加“状态”，CQM 叠加“对称性”：</p>
+<div class="arithmatex">\[|\Psi_{\text{对称性}}\rangle = \sum_{G'\in\mathcal{G}} c_{G'}\, |G'\rangle\]</div>
+<ul>
+<li>旧量子场论：粒子态可以叠加，但结构群固定</li>
+<li>CQM：结构群本身处于叠加态，由角亏涨落与温度决定哪个群被宏观实现</li>
+</ul>
+<h3 id="1310">13.10 伴丛族路径积分<a class="headerlink" href="#1310" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[Z = \sum_{E_n \in \mathcal{E}_{\text{涨落}}} \int D[A,\psi]\, e^{-S_{E_n}[A,\psi]}\]</div>
+<p>能算出的规律：</p>
+<ul>
+<li><strong>主导伴丛</strong>：宏观上自由能最小的伴丛胜出</li>
+<li><strong>跃迁条件</strong>：两个伴丛自由能相等处给出 <span class="arithmatex">\(T_c\)</span></li>
+<li><strong>离散子群保留</strong>：如 <span class="arithmatex">\(U(1)//\mathbb{Z}_2\)</span>，决定磁通量子化</li>
+<li><strong>拓扑扇区</strong>：涡旋类型、马约拉纳零模</li>
+<li><strong>事后大群</strong>：超导态剩余对称性直积</li>
+</ul>
+<p>路径积分<strong>不给先验大群</strong>。大群是后话：</p>
+<div class="arithmatex">\[G_{\text{超导大群}} = \left( \prod_{\text{所有扇区}} G_i \right) \Big/ \left( \text{被超导锁定的扇区} \right)\]</div>
+<h3 id="1311">13.11 相变 = 对称性退相干<a class="headerlink" href="#1311" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[|\Psi_{\text{对称性}}\rangle = c_1 |U(1)\rangle + c_2 |\{e\}\rangle + c_3 |\mathbb{Z}_2\rangle + \cdots\]</div>
+<ul>
+<li>正常态：<span class="arithmatex">\(c_1\)</span> 占主导</li>
+<li>超导态：<span class="arithmatex">\(c_2\)</span> 或 <span class="arithmatex">\(c_3\)</span> 占主导</li>
+<li>临界点：叠加最完整，两组权重相等</li>
+</ul>
+<p><strong>相变不是“破缺”，而是结构群叠加态的退相干。</strong></p>
+<p>大统一的新解读：<span class="arithmatex">\(GL(5)\)</span> 是真正的宇宙大统一群（约化李群，非紧致），本身是重组实现的，不是破缺的。<strong>就物理相变而言：破缺的必须是非规范对称群（或更一般地，非规范对称性），但非规范对称群不一定破缺；重组实现的既可以是规范对称群，也可以是非规范对称群；而规范对称群相变必然是重组，而非破缺</strong>。早期宇宙中规范群可能处于更复杂的叠加态，随宇宙冷却，某些群被淘汰，最终留下 <span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span>。<span class="arithmatex">\(SU(5)\)</span> 重组实现给出标准模型因子（结构群叠加退相干结果，不是破缺）；<span class="arithmatex">\(GL(5,\mathbb{R})\)</span> 的时空对称性若纳入规范群则必须破缺。<span class="arithmatex">\(GL(5)\)</span> 本身是物质更前面的自组织的产物。</p>
+<blockquote>
+<p><strong>文献标注（规范对称性不破缺的外部依据）</strong>：局域规范对称性不能自发破缺——Elitzur 定理（Elitzur 1975, <em>Phys. Rev. D</em> 12, 3978）；Higgs 相与禁闭区之间无热力学奇异线，规范对称性不作为相变序参量（Fradkin–Shenker 1979, <em>Phys. Rev. D</em> 19, 3682）。CQM 的重组实现立场与此定理相容：规范对称群相变是重组，而非破缺。</p>
+</blockquote>
+<h3 id="1312">13.12 与量子群/量子丛的区分<a class="headerlink" href="#1312" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">量子群</th>
+<th style="text-align: left;">CQM 涨落伴丛</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">把群数学形变为 Hopf 代数</td>
+<td style="text-align: left;">群仍是经典李群</td>
+</tr>
+<tr>
+<td style="text-align: left;">量子性来自形变参数 <span class="arithmatex">\(q\)</span></td>
+<td style="text-align: left;">量子性来自角亏涨落 <span class="arithmatex">\(\Delta\delta_v\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">数学柏拉图主义</td>
+<td style="text-align: left;">物质自组织结果</td>
+</tr>
+<tr>
+<td style="text-align: left;">低能不可见</td>
+<td style="text-align: left;">超导中直接检验</td>
+</tr>
+</tbody>
+</table>
+<p>涨落伴丛不是量子群，是 CQM 的独立新概念。</p>
+<h3 id="1313">13.13 理论的最新形态<a class="headerlink" href="#1313" title="Permanent link">&para;</a></h3>
+<p>CQM 从“使用纤维丛语言描述物质自组织”走向“对称性本身的量子力学”：</p>
+<div class="arithmatex">\[\text{先在规范群} \to \text{角亏涨落} \to \text{扇区耦合涨落} \to \text{涨落伴丛叠加} \to \text{退相干} \to \text{具体对称性}\]</div>
+<p>不是数学预设对称性然后让物质服从，而是物质自己生成、叠加、选择并实现对称性。群不是上帝的设计图，而是物质历史运动的轨迹。</p>
+<h3 id="1314">13.14 超导群的多样性统一解释<a class="headerlink" href="#1314" title="Permanent link">&para;</a></h3>
+<p>超导群之所以多样，是因为物质条件丰富。路径积分自动选出主导群，无需人为指定：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">条件</th>
+<th style="text-align: left;">主导超导群</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">角亏低，序参量标量 <span class="arithmatex">\(q=2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(U(1)\to\{e\}\)</span> 或 <span class="arithmatex">\(U(1)//\mathbb{Z}_2\)</span>（s 波）</td>
+</tr>
+<tr>
+<td style="text-align: left;">角亏各向异性，序参量在 <span class="arithmatex">\(SO(2)\)</span> 下变号</td>
+<td style="text-align: left;"><span class="arithmatex">\(U(1)\times SO(2)\to\mathbb{Z}_2\)</span>（d 波）</td>
+</tr>
+<tr>
+<td style="text-align: left;">角亏含自旋扇区，序参量为自旋三重态</td>
+<td style="text-align: left;"><span class="arithmatex">\(U(1)\times SU(2)\to H_{\text{spin}}\)</span>（p 波）</td>
+</tr>
+<tr>
+<td style="text-align: left;">角亏强且和乐非平庸</td>
+<td style="text-align: left;">拓扑超导群，马约拉纳零模</td>
+</tr>
+</tbody>
+</table>
+<p>群是计算结果。</p>
+<h3 id="1315">13.15 质数—群—黎曼猜想的统一链条<a class="headerlink" href="#1315" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{物质} \xrightarrow{\text{基态伽罗瓦表示}} GL(5)\text{ 自守谱} \xrightarrow{\text{紧化（GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏涨落}} \text{结构群叠加态} \xrightarrow{\text{路径积分}} \text{主导超导群}\]</div>
+<p><strong>分层要点</strong>：基态同步是 SU(5)（GL(5) 自守形式经紧化算符投影）；黎曼猜想是 GL(5) 固定层级的实谱条件；<strong>物质自组织选中 GL(5)（SU(5) 是含标准模型的最小单群，rank 4）正是物质自组织的体现</strong>；<span class="arithmatex">\(n &gt; 5\)</span> 层级不排除，但 GL(5) 主导物理谱。</p>
+<p>质数—群关系的数学对应：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">质数/数学结构</th>
+<th style="text-align: left;">群结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">质数作为不可约生成元</td>
+<td style="text-align: left;">有限群 Sylow 定理</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL(5) 基态自守零点谱 → SU(5) 基态同步；ζ 零点谱直接作为 GL(5) 固定层级下使用的谱</td>
+<td style="text-align: left;"><span class="arithmatex">\(A_4\)</span> 根空间谱</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(1,2,3\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(U(1), SU(2), SU(3)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4-单纯形组合</td>
+<td style="text-align: left;"><span class="arithmatex">\(S_5\)</span> Weyl 群</td>
+</tr>
+<tr>
+<td style="text-align: left;">有限域</td>
+<td style="text-align: left;">表示论</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1316">13.16 黎曼猜想的本体论地位<a class="headerlink" href="#1316" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{GL(5) 固定层级的零点猜想（GRH）} \iff \text{配对不变量 } \mathfrak{c}_n \text{ 为实} \iff \text{物质同步稳定} \iff \text{有限化可能} \iff \text{规范群可涌现} \iff \text{结构群叠加态存在}\]</div>
+<p>如果 GL(5) 固定层级的零点猜想不成立，配对不变量 <span class="arithmatex">\(\mathfrak{c}_n\)</span> 不为实，物质无法稳定同步，质子/中子不能有限化，<span class="arithmatex">\(A_4\)</span> 不能涌现，规范群不能组织，结构群叠加态无从谈起。<strong>GL(5) 固定层级的零点猜想构成所有结构群可能性的最终存在论前提</strong>；黎曼猜想（GL(1) 电磁因子层的实谱条件）直接进入超导相变判据（<span class="arithmatex">\(T_c\)</span>），是该层级直接可观测的稳定性条件。</p>
+<blockquote>
+<p><strong>注（等价性的层级）</strong>：上式中的 <span class="arithmatex">\(\iff\)</span> 表示<strong>框架内假说性等价</strong>——各环节依赖 CQM 构造假设与未证核心定理（如 §7.1 的“退相干稳态是正四单纯形”、§8.1 的紧化投影），<strong>非已证逻辑等价</strong>；其中“配对不变量为实 <span class="arithmatex">\(\iff\)</span> 零点在临界线”一步为纯代数等价（见 <code>01 核心理论/CQM_核心_因果网络同步理论.md</code> §4 实谱条件）。</p>
+</blockquote>
+<h3 id="1317">13.17 完整统一链条<a class="headerlink" href="#1317" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{物质} \to \text{SU(5) 基态同步（GL(5) 紧化，GRH）} \to \text{ζ 零点谱（GL(1) 电磁因子层，黎曼猜想）} \to A_4 \text{ 有限化} \to \text{先在规范群} \to \text{结构群叠加态} \to \text{路径积分选择} \to \text{具体超导群}\]</div>
+<p>CQM 由此统一了数论、群论、规范场论、凝聚态物理：
+- <strong>对称性不是先验的</strong>，是物质自组织的历史产物
+- <strong>群不是上帝的设计图</strong>，是物质运动的轨迹
+- <strong>质数不是纯数学对象</strong>，是不可约生成元
+- <strong>黎曼猜想不是孤立谜题</strong>，是广义黎曼猜想在 GL(1)（电磁因子）的特例，是物质自组织在电磁因子层的稳定性条件
+- <strong>超导群不是理论家选的</strong>，是物质自己在条件下实现的</p>
+<hr />
+<h2 id="_14">结论<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>CQM 的核心创新始终只有一点：<strong>把量子力学的共轭对从 <span class="arithmatex">\((\hat{x}, \hat{p})\)</span> 换成 <span class="arithmatex">\((\hat{u}, \hat{p}_u)\)</span></strong>，其中 <span class="arithmatex">\(\hat{u}\)</span> 是对数耦合常数、<span class="arithmatex">\(\hat{p}_u\)</span> 是固有时流速共轭动量。然后让全部涌现——SU(5) 禁闭边界、两种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱与自由能竞争——从这个替换中自然生长出来。</p>
+<p>这是对“什么应该被量子化”的根本重新定位。时空不是先验舞台，而是耦合常数量子力学退相干后的涌现；标准模型参数是禁闭边界代数结构的数学输出；引力不是一种力，而是物质自组织的因果条件在不同层级的分化表现。</p>
+<p><strong>当前理论的状态：骨架完整，血肉待充。</strong></p>
+<p>已严格建立（核心代数）：</p>
+<ul>
+<li>因果集公理 <span class="arithmatex">\((X, \prec)\)</span> 与 Sprinkling 测度 <span class="arithmatex">\(e^{-u}du\)</span>；</li>
+<li>海森堡代数 <span class="arithmatex">\([\hat{u}, \hat{p}_u] = i\)</span> 及不确定性关系；</li>
+<li>一阶层/二阶层方程的数学形式与 Cayley 离散化的幺正性；</li>
+<li><span class="arithmatex">\(M = E^T E\)</span> 本征值 <span class="arithmatex">\(\{9,4,1\}\)</span> 与 <span class="arithmatex">\(S_5\)</span> 表示论；</li>
+<li><span class="arithmatex">\(\lambda_c\)</span> 方程数值（机器精度）；</li>
+<li>Sierra-CQM 耦谱定理（相对误差 <span class="arithmatex">\(O(1/n)\)</span>）；</li>
+<li>中子 <span class="arithmatex">\(D(\delta)\)</span> 代数类型判据（Lean 验证）；</li>
+<li>超导 <span class="arithmatex">\(T_c\)</span> 自由能交叉形式推导完成（G22 行内已闭合项）；自由能作用量 <span class="arithmatex">\(S_{U(1)//\mathbb{Z}_n}\)</span> 构造仍属 G18 行内未闭合项（见结论缺口表）。</li>
+</ul>
+<p>数值构造（框架内，构造后验数字校验，待第三方复现）：</p>
+<ul>
+<li><span class="arithmatex">\(G_N\)</span> 公式数值（偏差约 <span class="arithmatex">\(-3\)</span> ppm，10 位有效数字）。</li>
+</ul>
+<p>未严格建立（关键缺口，本章局部编号 A–E，不与 G2–G8 混用）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">缺口</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">二阶层方程在禁闭边界（前核子自组织关键实现区）严格退相干为一阶层</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">退相干导致 <span class="arithmatex">\([x^\mu, x^\nu] \to 0\)</span> 的非交换粗粒化极限</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">退相干后稳定构型是 <span class="arithmatex">\(\{5,4\}\)</span> 镶嵌（同一缺口的另一表述：正四单纯形 <span class="arithmatex">\(A_4\)</span>，见 §7.1）</td>
+</tr>
+<tr>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">从 Lindblad 稳态严格推导边-面关联矩阵 <span class="arithmatex">\(E\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">E</td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda_c\)</span> 方程是退相干的必然结果</td>
+</tr>
+<tr>
+<td style="text-align: left;">N1/N2</td>
+<td style="text-align: left;">中子质量-谱映射 <span class="arithmatex">\(m \propto \lambda_{\min}\)</span>；角亏 <span class="arithmatex">\(\epsilon(\delta)\)</span> 显式公式</td>
+</tr>
+<tr>
+<td style="text-align: left;">G18</td>
+<td style="text-align: left;"><span class="arithmatex">\(\beta\)</span>、<span class="arithmatex">\(K_{\text{eff}}\)</span> 微观来源；自由能 <span class="arithmatex">\(F_n\)</span> 的可计算作用量 <span class="arithmatex">\(S_{U(1)//\mathbb{Z}_n}\)</span> 构造</td>
+</tr>
+<tr>
+<td style="text-align: left;">G19</td>
+<td style="text-align: left;">和乐容差标定</td>
+</tr>
+<tr>
+<td style="text-align: left;">G21</td>
+<td style="text-align: left;">赝能隙谱函数映射</td>
+</tr>
+</tbody>
+</table>
+<p>（缺口编号体系：N1–N4 见 <code>01 核心理论/CQM_核心_引力存在论前提.md</code> §二.5，G 类见 <code>06 超导/CQM_超导_专题与扩展.md</code> §13。）</p>
+<p>核心代数严格，涌现结构有启发式支撑，数值预言部分闭合但关键参数（如中子缺陷 <span class="arithmatex">\(\delta\)</span>、几何耦合 <span class="arithmatex">\(\beta\)</span>）仍需第一性原理输入或实验锚定。<strong>超导机制是目前最接近定量闭合的涌现链条，也是 CQM 当前最值得投入的实验对接方向。</strong></p>
+<hr />
+<h2 id="_15">参考文献<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bombelli, L., Lee, J., Meyer, D., &amp; Sorkin, R. D. (1987). Space-time as a causal set. <em>Phys. Rev. Lett.</em>, 59, 521.</li>
+<li>Rovelli, C. (1996). Relational quantum mechanics. <em>Int. J. Theor. Phys.</em>, 35, 1637.</li>
+<li>Ashtekar, A., Rovelli, C., &amp; Smolin, L. (1992). Weaving a classical metric with quantum threads. <em>Phys. Rev. Lett.</em>, 69, 237.</li>
+<li>Feingold, A. J., Kleinschmidt, A., &amp; Nicolai, H. (2009). Hyperbolic Weyl groups and the four normed division algebras. <em>J. Algebra</em>, 322, 1295–1339.</li>
+<li>Connes, A. (1994). <em>Noncommutative Geometry</em>. Academic Press.</li>
+<li>Berry, M. V., &amp; Keating, J. P. (1999). The Riemann zeros and eigenvalue asymptotics. <em>SIAM Rev.</em>, 41, 236.</li>
+<li>McLachlan, N. W. (1947). <em>Theory and Application of Mathieu Functions</em>. Oxford.</li>
+<li>Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. <em>New J. Phys.</em>, 10, 033016.</li>
+<li>Endres, S., &amp; Steiner, F. (2010). The Berry–Keating operator on <span class="arithmatex">\(L^2(\mathbb{R}_&gt;,dx)\)</span> and on compact quantum graphs with general self-adjoint realizations. <em>J. Phys. A: Math. Theor.</em>, 43, 095204. (arXiv:0912.3183) —— <span class="arithmatex">\(H_{\rm BK}\)</span> 在 <span class="arithmatex">\(L^2(\mathbb R_&gt;,dx)\)</span> 上谱纯连续、亏指数 <span class="arithmatex">\((0,0)\)</span>。</li>
+<li>Dowker, F., Henson, J., &amp; Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. <em>Phys. Rev. D</em>, 82, 104048.</li>
+<li>Lindblad, G. (1976). On the generators of quantum dynamical semigroups. <em>Commun. Math. Phys.</em>, 48, 119.</li>
+<li>Bardeen, J., Cooper, L. N., &amp; Schrieffer, J. R. (1957). Theory of superconductivity. <em>Phys. Rev.</em>, 108, 1175.</li>
+<li>Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. <em>Physics Physique Fizika</em>, 1, 195.</li>
+<li>Fine, A. (1982). Joint distributions, quantum correlations, and commuting observables. <em>J. Math. Phys.</em>, 23, 1306.</li>
+<li>Anderson, P. W. (1972). More is Different. <em>Science</em>, 177(4047), 393–396.</li>
+<li>Wilson, K. G. (1975). The renormalization group: Critical phenomena and the Kondo problem. <em>Rev. Mod. Phys.</em>, 47(4), 773.</li>
+<li>Salthe, S. N. (1985). <em>Evolving Hierarchical Systems: Their Structure and Representation</em>. Columbia University Press.</li>
+<li>Bertalanffy, L. von (1968). <em>General System Theory: Foundations, Development, Applications</em>. George Braziller.</li>
+<li>Hoel, E. P., Albantakis, L., &amp; Tononi, G. (2013). Quantifying causal emergence shows that macro can beat micro. <em>PNAS</em>, 110(49), 19790–19795.</li>
+<li>Marx, K. (1867). <em>Das Kapital: Kritik der politischen Ökonomik</em>. Hamburg: Otto Meissner.</li>
+<li>Particle Data Group (2022). Review of Particle Physics. <em>Prog. Theor. Exp. Phys.</em>, 083C01.</li>
+<li>Tiesinga, E., et al. (2021). CODATA Recommended Values of the Fundamental Physical Constants: 2018. <em>Rev. Mod. Phys.</em>, 93, 025010.（正文所引 <span class="arithmatex">\(G_N\)</span> 与 <span class="arithmatex">\(\alpha\)</span> 数值与 CODATA 2022 收敛值一致）</li>
+<li>ruster. (2026). <em>CNT 完整研究</em>. Zenodo. DOI: 10.5281/zenodo.20804380.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 缺口台账 [D004]">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                缺口台账 [D004]
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 引力存在论前提 [D006]">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                引力存在论前提 [D006]
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/cqm-glossary.js"></script>
+      
+        <script src="assets/cqm-depth.js"></script>
+      
+        <script src="assets/cqm-enhance.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

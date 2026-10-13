@@ -16,6 +16,8 @@
     window.addEventListener("scroll", function () { if (!pinned) hidePop(); }, true);
     return POP;
   }
+  var hideTimer = null;   // mouseout 的延迟隐藏定时器（必须可撤销，否则旧定时器会把新弹出的卡打掉）
+  var rendered = {};      // 已排版卡内容缓存：key -> 卡 DOM 副本，二次悬停零空窗
   function hidePop() { if (POP) { POP.style.display = "none"; cur = null; } }
   function place(p, el) {
     var r = el.getBoundingClientRect(), sx = window.pageXOffset, sy = window.pageYOffset;
@@ -37,25 +39,53 @@
      与 \(…\) 公式。公式交给 MathJax，反引号在这里落成 <code>。 */
   var ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
   function cardHtml(html) {
-    return String(html).replace(/`([^`\n]+)`/g, function (m, s) {
+    // 卡文逐字取自 CSV：✅/❌ 是彩色 emoji 字形，统一替换单色 ✓/✗（与全站口径一致）
+    return String(html).replace(/✅/g, "\u2713").replace(/❌/g, "\u2717").replace(/`([^`\n]+)`/g, function (m, s) {
       return "<code>" + s.replace(/[&<>]/g, function (c) { return ESC[c]; }) + "</code>";
     });
   }
   function showPop(el) {
-    var html = G.terms[el.getAttribute("data-cqm")];
+    var key = el.getAttribute("data-cqm");
+    var html = G.terms[key];
     if (!html) return;
     var p = ensurePop();
-    p.innerHTML = cardHtml(html); p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
     cur = el;
-    typeset(p, function () { place(p, el); });
+    p.style.display = "block"; p.style.left = "-9999px"; p.style.top = "0";
+    if (rendered[key]) {
+      // 命中排版缓存：直接装填已排版的 HTML 并定位，跳过 MathJax 重排
+      // （否则二次悬停会有几十~几百 ms 的不可见空窗，观感即"弹出时闪一下"）。
+      // 注意缓存的是 innerHTML 字符串而非克隆 DOM——克隆整个 .cqm-pop 容器
+      // 会把 fixed 定位与 -9999px 一起嵌进卡内，内容整体飞出屏幕（弹卡"消失"）。
+      p.innerHTML = rendered[key];
+      place(p, el);
+      return;
+    }
+    p.innerHTML = cardHtml(html);
+    typeset(p, function () {
+      if (cur !== el) return;   // 排版期间目标已换词，丢弃本次结果
+      if (Object.keys(rendered).length > 80) rendered = {};  // 缓存上限防膨胀
+      rendered[key] = p.innerHTML;
+      place(p, el);
+    });
   }
   document.addEventListener("mouseover", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && el !== cur) showPop(el);
+    if (el && el !== cur) {
+      // 滑到新词：先撤销前一个词 mouseout 排下的延迟隐藏，
+      // 否则它会在此刻到期，把刚弹出的卡打掉（弹出的"闪一下"）
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      showPop(el);
+    }
   });
   document.addEventListener("mouseout", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && !pinned) setTimeout(function () { if (!pinned) hidePop(); }, 180);
+    if (el && !pinned) {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        hideTimer = null;
+        if (!pinned) hidePop();
+      }, 180);
+    }
   });
   document.addEventListener("focusin", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]"); if (el) showPop(el);
@@ -314,7 +344,7 @@
   }
   function probeService() {
     try {
-      fetch("api/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (s) {
+      fetch("/api/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (s) {
         var hdr = navHost(); if (!hdr || !s || !s.counts) return;
         if (hdr.querySelector(".cqm-badge")) return;
         var a = document.createElement("a");
@@ -322,7 +352,7 @@
         // 必须 target="_blank"：VitePress router 会拦截站内相对链接做 SPA 导航
         // （实测解析成 /api/status.html 甚至 /api/api/status → 404）；
         // 新窗口打开 JSON，绕过 router。
-        a.className = "cqm-sbtn cqm-badge"; a.href = "api/status";
+        a.className = "cqm-sbtn cqm-badge"; a.href = "/api/status";
         a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
         a.title = "本地研究站服务已连接：实时 SPARQL / 结构化检索 / 证据复核写回";
         a.innerHTML = "服务已连接 · 概念 " + s.counts.concepts + " · 缺口 " + s.counts.gaps
@@ -558,12 +588,62 @@
     hdr.appendChild(b);
   }
 
+  /* ---------- 侧边栏文本下标修正 ---------- */
+  /* 侧栏项文本取自标题的行内渲染，$G_N$ 的 $ 被剥掉后剩字面下划线；
+     侧栏不在 MathJax 作用域（正文公式它管不了侧栏），只能在 DOM 层把
+     X_Y 包装为 X<sub>Y</sub>。包装后下划线字符消失，天然幂等，
+     路由切换重跑安全；返回是否有修改，供观察器判断何时断开。 */
+  function fixSubScripts() {
+    var root = document.querySelector('.VPSidebar');
+    if (!root) return false;
+    var scan = new RegExp('([A-Za-z][A-Za-z0-9]{0,10})_([A-Za-z0-9]{1,3})(?![A-Za-z0-9])');
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) {
+      var p = n.parentElement;
+      if (!p || p.closest('code,pre,sub,sup,script,style')) continue;
+      if (scan.test(n.nodeValue)) nodes.push(n);
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].nodeValue;
+      var re = new RegExp('([A-Za-z][A-Za-z0-9]{0,10})_([A-Za-z0-9]{1,3})(?![A-Za-z0-9])', 'g');
+      var frag = document.createDocumentFragment(), last = 0, m;
+      while ((m = re.exec(t))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(t.slice(last, m.index)));
+        frag.appendChild(document.createTextNode(m[1]));
+        var sub = document.createElement('sub');
+        sub.textContent = m[2];
+        frag.appendChild(sub);
+        last = m.index + m[0].length;
+      }
+      if (last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
+      if (nodes[i].parentNode) nodes[i].parentNode.replaceChild(frag, nodes[i]);
+    }
+    if (nodes.length > 0) fixSubScripts._done = true;
+    return nodes.length > 0;
+  }
+
   function initPage() {
     runTerms();
     initDepth();
     applySearchHighlight();
     mountFontCtl();
     fixExternalLinks();
+    // 侧栏文本下标：X_Y → X<sub>Y</sub>（幂等）。侧栏由 Vue 异步渲染，
+    // 首屏 initPage 可能早于侧栏挂载，故直接修一次 + 观察兜底；
+    // 修过一次即置 _done，后续路由切换不再空转观察器。
+    fixSubScripts();
+    if (!fixSubScripts._done && !fixSubScripts._obs) {
+      fixSubScripts._obs = new MutationObserver(function () {
+        if (fixSubScripts()) {
+          fixSubScripts._obs.disconnect(); fixSubScripts._obs = null;
+        }
+      });
+      fixSubScripts._obs.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        if (fixSubScripts._obs) { fixSubScripts._obs.disconnect(); fixSubScripts._obs = null; }
+      }, 45000);
+    }
     // 导航栏由 Vue 异步渲染：首次初始化时 .VPNavBarMenu 往往还不存在，
     // 若只挂一次就会整轮丢失（服务徽标因 fetch 延迟刚好躲过，曾掩盖此问题）。
     // 这里每次页面初始化都确保挂上，内部有幂等检查；再补一轮定时重试兜底。

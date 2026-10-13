@@ -160,13 +160,88 @@ def split_sentences(text):
 PUNCT = re.compile(r"^[\s\W_]+$")
 
 
-def clean_quote(s):
-    """去掉 markdown 标记，得到可读引文（原始区间仍保留在 char_start/char_end）。"""
+def _clean_md(s):
+    """去 markdown 标记（链接、强调符、行内标记符、表格行的分列竖线）。
+    只在**数学区间之外**调用。"""
+    # 行内代码 `…`：内容原样保留——其中的 `_` 是标识符的一部分
+    # （实测 ``bcsTcFromIntegral_solved``、``CQM_核心_因果网络同步理论.md`` 曾被削成
+    #  ``bcsTcFromIntegralsolved``、``CQM核心…``）
+    code = []
+
+    def _keep(m):
+        code.append(m.group(1))
+        return "\x00C%d\x00" % (len(code) - 1)
+
+    s = re.sub(r"`([^`]*)`", _keep, s)
     s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
-    s = re.sub(r"[*`_>#]+", "", s)
-    s = re.sub(r"^\s*([-+*]|\d+[.)])\s+", "", s)
-    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[*#]+", "", s)
+    s = s.replace(">", "")
+    # 下划线：`\pi_p` / `x_5` / `K_{…}` 这类 LaTeX 下标、标识符 a_b 原样保留；
+    # 只有 markdown 斜体 `_…_` 的 _ 才去掉（判据：前后都成记号字形时视为下标）。
+    s = re.sub(r"(?<![A-Za-z0-9_}\\])_|_(?![A-Za-z0-9_{\\])", "", s)
+    s = re.sub(r"\x00C(\d+)\x00", lambda m: code[int(m.group(1))], s)
     return s
+
+
+_QUOTE_MATH_RE = re.compile(r"\$\$[\s\S]*?\$\$|\$[^$\n]+?\$")
+
+
+def clean_quote(s):
+    """去掉 markdown 标记，得到可读引文（原始区间仍保留在 char_start/char_end）。
+
+    数学区间内的 `_` `*` ` 是 LaTeX 记号（下标、上标、模板），不是 markdown 强调。
+    旧实现对整个串做 `re.sub(r"[*`_>#]+", "")`，把 `$\\bar{\\delta}_v$` 清成
+    `$\\bar{\\delta}v$`、`$[\\hat{X}_v,\\hat{P}_v]$` 清成 `$[\\hat{X}v,\\hat{P}v]$`
+    —— 实测 213 条引文中 69 条下标整段丢失，卡片与检索台显示错误公式。
+    故先把数学区间整段取出（占位符保护），只清洗区间之外的文本——区间外另见
+    _clean_md 的下标感知与行内代码保护；表格行的分列竖线也只在区间外改全角，
+    否则会把 `\\big|_{s=1}` 这类区间内竖线一并切开。
+    """
+    segs, math, last = [], [], 0
+    for m in _QUOTE_MATH_RE.finditer(s):
+        segs.append(_clean_md(s[last:m.start()]))
+        math.append(m.group(0))
+        segs.append("\x01M%d\x01" % (len(math) - 1))
+        last = m.end()
+    segs.append(_clean_md(s[last:]))
+    t = "".join(segs)
+    t = re.sub(r"^\s*([-+*]|\d+[.)])\s+", "", t)     # 行首项目符号（整串一次）
+    t = re.sub(r"\s+", " ", t).strip()
+    # 整条引文就是一行表格（首尾为竖线）→ 把分列竖线改全角，避免引文里露出
+    # ASCII 断行竖线（检索台按「…」原样显示，会看着像表格没解析）。
+    if t.count("|") >= 2 and t.startswith("|") and t.endswith("|"):
+        cells = [c.strip() for c in t.strip("|").split("|")]
+        while cells and not cells[0]:
+            cells.pop(0)
+        while cells and not cells[-1]:
+            cells.pop()
+        if len(cells) >= 2:
+            t = " ｜ ".join(cells)
+    return re.sub(r"\x01M(\d+)\x01", lambda m: math[int(m.group(1))], t)
+
+
+def _balance_end(text, st, en, limit=48):
+    """把引文右界推进到 LaTeX 组体闭合处（不改逐字事实，quote 仍是 text[st:en]）。
+
+    句切分在 `\\text{…}` 组体内的「。」上断开时，区间终点会停在收尾「}」之前
+    （实测 3 条：C080/P016 的 `\\text{…分化。`、H013 的 `$$\\boxed{\\text{…`）。
+    这样的引文在前端补 `$…$` 后 MathJax 无法配对，LaTeX 原文裸露在检索台上。
+    只在**同一行、邻近**范围内补齐；跨行或过远则不动（宁缺勿错）。
+    """
+    d = text[st:en].count("{") - text[st:en].count("}")
+    if d <= 0:
+        return en
+    k = en
+    while k < len(text) and (k - en) < limit and d > 0:
+        ch = text[k]
+        if ch == "\n":
+            break
+        if ch == "{":
+            d += 1
+        elif ch == "}":
+            d -= 1
+        k += 1
+    return k
 
 
 def is_weak(seg):
@@ -339,8 +414,9 @@ def main():
             rec["verbatim_run"] = L
             anchored = name_anchored(it["name"], did, sec, sent_of_doc, doc_text, doc_layer) if it["kind"] == "概念" else []
             if L >= max(8, int(len(plain) * 0.6)):
-                rec.update(match_method="exact", char_start=bj, char_end=bj + L,
-                           quote=raw[bj:bj + L], quote_clean=clean_quote(raw[bj:bj + L]), loc_status=loc_status,
+                ce = _balance_end(raw, bj, bj + L)
+                rec.update(match_method="exact", char_start=bj, char_end=ce,
+                           quote=raw[bj:ce], quote_clean=clean_quote(raw[bj:ce]), loc_status=loc_status,
                            sec_title=sec["title"] if sec else "", sec_start=sec["body_start"] if sec else "",
                            sec_end=sec["body_end"] if sec else "", score=round(L / max(1, len(plain)), 3),
                            name_hit=bool(it["name"][:6] and it["name"][:6] in raw[bj:bj + L]),
@@ -348,6 +424,7 @@ def main():
             elif anchored:
                 ed, st, en, kind, sid = anchored[0]
                 eraw = doc_text[ed]
+                en = _balance_end(eraw, st, en)
                 toks = set(tokenize(eraw[st:en]))
                 qt = set(tokenize(it["query"])) | set(tokenize(it["name"]))
                 sc = round(sum(idf.get(t, 1.0) for t in qt & toks) / math.sqrt(max(4, len(toks))) + 3.0, 3)
@@ -389,10 +466,12 @@ def main():
                     scored.append((hit / math.sqrt(max(4, len(toks))) + bonus, st, en, kind, sid))
                 scored.sort(reverse=True)
                 for sc, st, en, kind, sid in scored[:3]:
-                    cands.append({"score": round(sc, 3), "sid": sid, "char_start": st, "char_end": en,
-                                  "quote": clean_quote(raw[st:en]), "kind": kind})
+                    ce = _balance_end(raw, st, en)
+                    cands.append({"score": round(sc, 3), "sid": sid, "char_start": st, "char_end": ce,
+                                  "quote": clean_quote(raw[st:ce]), "kind": kind})
                 if scored:
                     sc, st, en, kind, sid = scored[0]
+                    en = _balance_end(raw, st, en)
                     conf = ("high" if ((sec and sc >= 6.0) or ((not sec) and sc >= 9.0))
                             else ("medium" if sc >= 3.5 else "low"))
                     rec.update(match_method=("section" if sec else "doc"),
@@ -402,11 +481,12 @@ def main():
                                sec_title=sec["title"] if sec else "",
                                sec_start=sec["body_start"] if sec else "", sec_end=sec["body_end"] if sec else "")
                 elif sec:
+                    be = _balance_end(raw, sec["body_start"], min(sec["body_end"], sec["body_start"] + 400))
                     rec.update(match_method="section", loc_status=loc_status, sec_title=sec["title"],
                                sec_start=sec["body_start"], sec_end=sec["body_end"], confidence="medium",
-                               char_start=sec["body_start"], char_end=min(sec["body_end"], sec["body_start"] + 400),
-                               quote=raw[sec["body_start"]:sec["body_start"] + 400],
-                               quote_clean=clean_quote(raw[sec["body_start"]:sec["body_start"] + 400]), score=0.5)
+                               char_start=sec["body_start"], char_end=be,
+                               quote=raw[sec["body_start"]:be],
+                               quote_clean=clean_quote(raw[sec["body_start"]:be]), score=0.5)
                 else:
                     rec.update(loc_status=loc_status, confidence="unresolved")
         ev_rows.append(rec)

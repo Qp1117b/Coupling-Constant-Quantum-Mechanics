@@ -1,0 +1,6563 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CQM 自然语言理论文本的离线阅读层（Material for MkDocs）">
+      
+      
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>展开链（拉通阅读） - CQM 理论阅读站</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/cqm-enhance.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CQM 理论阅读站" class="md-header__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CQM 理论阅读站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              展开链（拉通阅读）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CQM 理论阅读站" class="md-nav__button md-logo" aria-label="CQM 理论阅读站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CQM 理论阅读站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="L000_%E5%B1%95%E5%BC%80%E9%93%BE.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    展开链（拉通阅读）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一步一读（131 条）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一步一读（131 条）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s001-readmemd-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S001 · README.md 第 35 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s002-readmemd-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S002 · README.md 第 36 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s003-readmemd-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S003 · README.md 第 38 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s004-readmemd-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S004 · README.md 第 61 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s005-readmemd-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S005 · README.md 第 69 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s006-readmemd-86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S006 · README.md 第 86 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s007-readmemd-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S007 · README.md 第 101 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s008-readmemd-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S008 · README.md 第 110 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s009-01-cqm__opemd-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S009 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 15 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s010-01-cqm__opemd-456" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S010 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 456 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s011-01-cqm__opemd-528" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S011 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 528 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s012-01-cqm__opemd-583" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S012 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 583 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s013-01-cqm__opemd-585" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S013 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 585 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s014-01-cqm__opemd-601" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S014 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 601 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s015-01-cqm__opemd-609" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S015 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 609 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s016-01-cqm__opemd-623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S016 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 623 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s017-01-cqm__opemd-677" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S017 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 677 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s018-01-cqm__md-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S018 · 01 核心理论/CQM_核心_唯物主义群论.md 第 5 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s019-01-cqm__md-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S019 · 01 核心理论/CQM_核心_唯物主义群论.md 第 52 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s020-01-cqm__md-195" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S020 · 01 核心理论/CQM_核心_唯物主义群论.md 第 195 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s021-01-cqm__md-242" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S021 · 01 核心理论/CQM_核心_唯物主义群论.md 第 242 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s022-01-cqm__md-347" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S022 · 01 核心理论/CQM_核心_唯物主义群论.md 第 347 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s023-01-cqm__md-389" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S023 · 01 核心理论/CQM_核心_唯物主义群论.md 第 389 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s024-01-cqm__md-391" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S024 · 01 核心理论/CQM_核心_唯物主义群论.md 第 391 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s025-01-cqm__md-436" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S025 · 01 核心理论/CQM_核心_唯物主义群论.md 第 436 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s026-01-cqm__md-476" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S026 · 01 核心理论/CQM_核心_唯物主义群论.md 第 476 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s027-01-cqm__md-477" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S027 · 01 核心理论/CQM_核心_唯物主义群论.md 第 477 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s028-01-cqm__md-125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S028 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 125 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s029-01-cqm__md-152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S029 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 152 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s030-01-cqm__md-206" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S030 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 206 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s031-01-cqm__md-243" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S031 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 243 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s032-01-cqm__md-299" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S032 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 299 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s033-01-cqm__md-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S033 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 610 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s034-01-cqm__md-208" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S034 · 01 核心理论/CQM_核心_声子理论.md 第 208 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s035-01-cqm__md-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S035 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 9 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s036-01-cqm__md-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S036 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 17 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s037-01-cqm__md-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S037 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 33 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-gl5-su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s038-01-cqm__md-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S038 · 01 核心理论/CQM_核心_量纲与群论.md 第 17 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s039-01-cqm__md-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S039 · 01 核心理论/CQM_核心_量纲与群论.md 第 236 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s040-01-cqm__md-559" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S040 · 01 核心理论/CQM_核心_量纲与群论.md 第 559 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s041-01-cqm__md-585" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S041 · 01 核心理论/CQM_核心_量纲与群论.md 第 585 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s042-01-cqm__md-604" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S042 · 01 核心理论/CQM_核心_量纲与群论.md 第 604 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s043-01-cqm__md-887" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S043 · 01 核心理论/CQM_核心_量纲与群论.md 第 887 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s044-01-cqm__md-1099" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S044 · 01 核心理论/CQM_核心_量纲与群论.md 第 1099 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s045-01-cqm__md-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S045 · 01 核心理论/CQM_核心_集成理论.md 第 24 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s046-01-cqm__md-331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S046 · 01 核心理论/CQM_核心_集成理论.md 第 331 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s047-01-cqm__md-755" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S047 · 01 核心理论/CQM_核心_集成理论.md 第 755 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s048-01-cqm__md-756" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S048 · 01 核心理论/CQM_核心_集成理论.md 第 756 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s049-01-cqm__md-760" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S049 · 01 核心理论/CQM_核心_集成理论.md 第 760 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s050-03-cqm__md-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S050 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 15 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s051-03-cqm__md-97" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S051 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 97 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s052-03-cqm__md-104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S052 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 104 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s053-03-cqm__md-560" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S053 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 560 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s054-04-cqm__1md-477" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S054 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 477 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s055-04-cqm__1md-478" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S055 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 478 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s056-04-cqm__1md-674" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S056 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 674 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s057-04-cqm__md-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S057 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 5 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s058-04-cqm__md-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S058 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 75 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s059-04-cqm__su5md-203" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S059 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 203 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s060-04-cqm__su5md-304" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S060 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 304 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s061-04-cqm__su5md-319" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S061 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 319 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s062-04-cqm__md-435" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S062 · 04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md 第 435 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s063-04-cqm__md-1393" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S063 · 04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md 第 1393 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s064-04-fg_regge_md-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S064 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 18 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s065-04-fg_regge_md-92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S065 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 92 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s066-04-fg_regge_md-305" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S066 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 305 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s067-05-cqm__-md-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S067 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 100 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s068-05-cqm__-md-102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S068 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 102 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s069-07-fgfg_md-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S069 · 07 精细引力（FG）/FG_核心理论.md 第 47 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s070-07-fgfg_md-260" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S070 · 07 精细引力（FG）/FG_核心理论.md 第 260 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s071-07-fgfg_md-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S071 · 07 精细引力（FG）/FG_纤维丛理论.md 第 56 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s072-07-fgfg_md-108" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S072 · 07 精细引力（FG）/FG_纤维丛理论.md 第 108 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s073-07-fgfg_md-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S073 · 07 精细引力（FG）/FG_纤维丛理论.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 核心问题：底空间+条件→同步方程→本征群→耦合常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s074-07-fgfg_md-324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S074 · 07 精细引力（FG）/FG_纤维丛理论.md 第 324 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#401-su5-a_4-4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0.1 SU(5) 重组实现 ⇒ \(A_4\) → 4 紧致本征群 → 4 耦合常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s075-07-fgfg_md-470" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S075 · 07 精细引力（FG）/FG_纤维丛理论.md 第 470 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s076-07-fgfg_md-794" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S076 · 07 精细引力（FG）/FG_纤维丛理论.md 第 794 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s077-06-cqm__fgmd-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S077 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 9 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s078-06-cqm__fgmd-134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S078 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 134 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s079-06-cqm__fgmd-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S079 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s080-06-cqm__fgmd-297" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S080 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 297 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s081-06-cqm__fgmd-298" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S081 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 298 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s082-06-cqm__fgmd-345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S082 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 345 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s083-06-cqm__fgmd-367" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S083 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 367 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s084-06-cqm__fgmd-369" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S084 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 369 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s085-06-cqm__md-84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S085 · 06 超导/CQM_超导_专题与扩展.md 第 84 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s086-06-cqm__md-122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S086 · 06 超导/CQM_超导_专题与扩展.md 第 122 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s087-06-cqm__md-380" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S087 · 06 超导/CQM_超导_专题与扩展.md 第 380 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s088-06-cqm__md-385" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S088 · 06 超导/CQM_超导_专题与扩展.md 第 385 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s089-06-cqm__md-440" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S089 · 06 超导/CQM_超导_专题与扩展.md 第 440 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s090-06-cqm__md-703" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S090 · 06 超导/CQM_超导_专题与扩展.md 第 703 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s091-06-cqm__md-704" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S091 · 06 超导/CQM_超导_专题与扩展.md 第 704 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s092-06-cqm__md-842" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S092 · 06 超导/CQM_超导_专题与扩展.md 第 842 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s093-06-cqm__md-1010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S093 · 06 超导/CQM_超导_专题与扩展.md 第 1010 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s094-06-cqm__md-1074" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S094 · 06 超导/CQM_超导_专题与扩展.md 第 1074 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s095-06-cqm__md-1162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S095 · 06 超导/CQM_超导_专题与扩展.md 第 1162 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s096-06-cqm__md-1239" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S096 · 06 超导/CQM_超导_专题与扩展.md 第 1239 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s097-06-cqm__md-1321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S097 · 06 超导/CQM_超导_专题与扩展.md 第 1321 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s098-06-cqm__md-1446" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S098 · 06 超导/CQM_超导_专题与扩展.md 第 1446 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s099-06-cqm__md-1449" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S099 · 06 超导/CQM_超导_专题与扩展.md 第 1449 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s100-06-cqm__md-1465" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S100 · 06 超导/CQM_超导_专题与扩展.md 第 1465 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s101-06-cqm__md-1468" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S101 · 06 超导/CQM_超导_专题与扩展.md 第 1468 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s102-06-cqm__md-1470" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S102 · 06 超导/CQM_超导_专题与扩展.md 第 1470 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s103-06-cqm__md-1483" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S103 · 06 超导/CQM_超导_专题与扩展.md 第 1483 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s104-06-cqm__md-1486" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S104 · 06 超导/CQM_超导_专题与扩展.md 第 1486 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s105-06-cqm__md-1493" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S105 · 06 超导/CQM_超导_专题与扩展.md 第 1493 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s106-06-cqm__md-1516" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S106 · 06 超导/CQM_超导_专题与扩展.md 第 1516 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s107-06-cqm__md-1517" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S107 · 06 超导/CQM_超导_专题与扩展.md 第 1517 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s108-06-cqm__md-1522" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S108 · 06 超导/CQM_超导_专题与扩展.md 第 1522 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s109-06-cqm__md-1523" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S109 · 06 超导/CQM_超导_专题与扩展.md 第 1523 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s110-06-cqm__md-1536" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S110 · 06 超导/CQM_超导_专题与扩展.md 第 1536 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s111-06-cqm__md-181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S111 · 06 超导/CQM_超导_统一方法论.md 第 181 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s112-06-cqm__md-291" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S112 · 06 超导/CQM_超导_统一方法论.md 第 291 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s113-06-cqm__md-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S113 · 06 超导/CQM_超导_统一方法论.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s114-06-cqm_md-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S114 · 06 超导/CQM_超导核心理论.md 第 10 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s115-06-cqm_md-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S115 · 06 超导/CQM_超导核心理论.md 第 64 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s116-06-cqm_md-174" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S116 · 06 超导/CQM_超导核心理论.md 第 174 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s117-06-cqm_md-431" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S117 · 06 超导/CQM_超导核心理论.md 第 431 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s118-06-cqm_md-630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S118 · 06 超导/CQM_超导核心理论.md 第 630 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s119-06-cqm_md-660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S119 · 06 超导/CQM_超导核心理论.md 第 660 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s120-06-cqm_md-661" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S120 · 06 超导/CQM_超导核心理论.md 第 661 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s121-06-cqm_md-795" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S121 · 06 超导/CQM_超导核心理论.md 第 795 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s122-06-cqm_md-799" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S122 · 06 超导/CQM_超导核心理论.md 第 799 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s123-06-cqm_md-899" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S123 · 06 超导/CQM_超导核心理论.md 第 899 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s124-06-cqm_md-904" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S124 · 06 超导/CQM_超导核心理论.md 第 904 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s125-06-01_md-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S125 · 06 超导/超导材料设计器/01_系统架构设计.md 第 41 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s126-06-03_md-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S126 · 06 超导/超导材料设计器/03_超导判定算法.md 第 10 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s127-06-03_md-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S127 · 06 超导/超导材料设计器/03_超导判定算法.md 第 11 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s128-06-05_md-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S128 · 06 超导/超导材料设计器/05_元素嘉当矩阵参数化设计.md 第 25 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s129-06-readmemd-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S129 · 06 超导/超导材料设计器/README.md 第 35 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s130-06-readmemd-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S130 · 06 超导/超导材料设计器/README.md 第 42 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s131-06-readmemd-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S131 · 06 超导/超导材料设计器/README.md 第 43 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        断点清单（缺口，逐字取自 缺口编号对照.csv）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        口径说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一分册：从问题到链条（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L002_%E7%AC%AC%E4%BA%8C%E5%88%86%E5%86%8C_%E7%BB%9F%E4%B8%80%E4%BD%93%E8%87%AA%E7%BB%84%E8%A3%85%E4%B8%8E%CE%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二分册：统一体自组装与α（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L003_%E7%AC%AC%E4%B8%89%E5%88%86%E5%86%8C_%E8%B0%B1%E6%96%B9%E7%A8%8B%E4%B8%8E%E9%BB%8E%E6%9B%BC%E9%9B%B6%E7%82%B9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三分册：谱方程与黎曼零点（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L004_%E7%AC%AC%E5%9B%9B%E5%88%86%E5%86%8C_%E8%B6%85%E5%AF%BC%E6%B6%8C%E7%8E%B0%E9%93%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四分册：超导涌现链（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L005_%E7%AC%AC%E4%BA%94%E5%88%86%E5%86%8C_%E4%B8%8E%E6%A0%87%E5%87%86%E7%90%86%E8%AE%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%B6%A8%E8%90%BD%E4%BC%B4%E4%B8%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五分册：与标准理论的关系与涨落伴丛（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="L006_%E7%AC%AC%E5%85%AD%E5%88%86%E5%86%8C_%E9%87%8F%E7%BA%B2%E5%8F%91%E7%94%9F%E5%AD%A6%E4%B8%93%E7%AB%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六分册：量纲发生学专章（四层深度）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V000_%E5%8F%AF%E8%A7%86%E5%8C%96%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可视化总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V001_%E5%8F%AF%E6%8E%A8%E6%BC%94%E8%B6%85%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可推演超图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V002_%E7%A0%94%E7%A9%B6%E9%A9%BE%E9%A9%B6%E8%88%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究驾驶舱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V003_%E6%A3%80%E7%B4%A2%E5%8F%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    检索台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="V004_%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%93%9D%E5%9B%BE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    形式化蓝图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    权威基准
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    权威基准
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D003_%E6%9C%AF%E8%AF%AD%E8%A1%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表 [D003]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D004_%E7%BC%BA%E5%8F%A3%E5%8F%B0%E8%B4%A6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    缺口台账 [D004]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理论主干
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    理论主干
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D005_%E9%9B%86%E6%88%90%E7%90%86%E8%AE%BA_%E6%80%BB%E7%BA%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    集成理论（总纲） [D005]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D006_%E5%BC%95%E5%8A%9B%E5%AD%98%E5%9C%A8%E8%AE%BA%E5%89%8D%E6%8F%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力存在论前提 [D006]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D007_%E5%9B%A0%E6%9E%9C%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果网络同步理论 [D007]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D008_%E6%9C%97%E5%85%B0%E5%85%B9%E5%88%86%E5%B1%82%E5%85%B1%E6%8C%AF%E4%B8%8E%E7%9B%B8%E5%8F%98%E9%87%8F%E5%AD%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朗兰兹分层共振与相变量子 [D008]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D009_%E9%87%8F%E7%BA%B2%E4%B8%8E%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量纲与群论 [D009]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D010_%E5%94%AF%E7%89%A9%E4%B8%BB%E4%B9%89%E7%BE%A4%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    唯物主义群论 [D010]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D011_%E5%A3%B0%E5%AD%90%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    声子理论 [D011]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D012_%E5%85%B1%E5%BD%A2%E5%9C%BA%E8%AE%BA%E4%B8%8EOPE.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    共形场论与OPE [D012]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    专题深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D013_%E9%87%8F%E5%AD%90%E5%BC%95%E5%8A%9B%E8%AE%A8%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子引力讨论 [D013]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D014_GN%E5%8F%AF%E8%83%BD%E5%85%AC%E5%BC%8F.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN可能公式 [D014]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D015_%E5%BC%95%E5%8A%9B%E5%9B%A0%E6%9E%9C%E5%9C%BA_%E9%80%80%E7%9B%B8%E5%B9%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引力因果场（退相干） [D015]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D016_%E8%B7%A8%E5%B1%82%E7%BA%A7%E6%B7%B1%E8%80%A6%E5%90%88%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E9%9A%BE%E9%A2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨层级深耦合与唯一性难题 [D016]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D017_%E9%BB%8E%E6%9B%BC%E7%8C%9C%E6%83%B3%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    黎曼猜想证明思路 [D017]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D018_%E5%BE%85%E6%8E%A81%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待推1边界条件 [D018]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D019_GN%E7%AC%AC%E4%B8%80%E6%80%A7%E6%8E%A8%E5%AF%BC%E5%85%AC%E7%90%86%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GN第一性推导公理化 [D019]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D020_%E8%B4%A8%E9%87%8F%E7%A0%94%E7%A9%B6%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    质量研究思路汇总 [D020]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D021_Wyler%E5%B8%B8%E6%95%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wyler常数 [D021]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D022_%E8%B4%9D%E9%87%8C%E6%9B%B2%E7%8E%87%E4%B8%8ERegge%E6%9B%B2%E7%8E%87.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贝里曲率与Regge曲率 [D022]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D023_%E8%A7%84%E8%8C%83%E9%87%8D%E7%BB%84%E8%B6%85%E5%AF%BC%E4%B8%8ESU5%E4%BA%94%E9%87%8D%E6%80%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范重组超导与SU5五重态 [D023]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D024_%E7%9B%B8%E5%8F%98%E5%BC%A7%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%AE%88%E5%BD%A2%E5%BC%8F%E5%90%8C%E6%AD%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相变弧线与自守形式同步 [D024]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D025_%E9%87%8F%E5%AD%90%E5%BF%AB%E7%BD%AE%E4%B9%B1%E6%99%AE%E9%80%82%E9%80%9F%E7%8E%87%E6%9E%81%E9%99%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子快置乱普适速率极限 [D025]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D026_HilbertPolya%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HilbertPolya批判 [D026]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D027_%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89-%E6%97%A7%E7%89%A9%E7%90%86-%E5%B1%82%E7%BA%A7%E8%BF%98%E5%8E%9F%E8%AE%BA%E6%89%B9%E5%88%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    资本主义-旧物理-层级还原论批判 [D027]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D028_FG%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG核心理论 [D028]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D029_FG%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG纤维丛理论 [D029]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    涌现与应用
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    涌现与应用
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D030_%E8%B6%85%E5%AF%BC%E6%A0%B8%E5%BF%83%E7%90%86%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导核心理论 [D030]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D031_%E4%B8%93%E9%A2%98%E4%B8%8E%E6%89%A9%E5%B1%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    专题与扩展 [D031]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D032_FG%E5%B1%82%E7%BA%A7%E5%90%8C%E6%AD%A5%E7%AE%97%E7%AC%A6%E4%BD%93%E7%B3%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FG层级同步算符体系 [D032]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D033_%E7%BB%9F%E4%B8%80%E6%96%B9%E6%B3%95%E8%AE%BA.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一方法论 [D033]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D034_%E6%9D%90%E6%96%99%E8%AE%BE%E8%AE%A1%E5%99%A8%E6%80%BB%E8%A7%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    材料设计器总览 [D034]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D035_%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构设计 [D035]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D036_%E5%85%83%E7%B4%A0%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素同位素数据库 [D036]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D037_%E8%B6%85%E5%AF%BC%E5%88%A4%E5%AE%9A%E7%AE%97%E6%B3%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    超导判定算法 [D037]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D038_%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用场景与对比分析 [D038]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D039_%E5%85%83%E7%B4%A0%E5%98%89%E5%BD%93%E7%9F%A9%E9%98%B5%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元素嘉当矩阵参数化设计 [D039]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D040_%E6%96%87%E7%8C%AE%E8%B0%83%E7%A0%94%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%8C%96%E8%B7%AF%E7%BA%BF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文献调研与专业化路线 [D040]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="D041_%E7%9B%AE%E6%A0%87%E8%B6%85%E5%AF%BC%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目标超导搜索策略 [D041]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F01_AGENTS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS [F01]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F02_README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README [F02]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一步一读（131 条）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一步一读（131 条）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s001-readmemd-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S001 · README.md 第 35 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s002-readmemd-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S002 · README.md 第 36 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s003-readmemd-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S003 · README.md 第 38 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s004-readmemd-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S004 · README.md 第 61 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s005-readmemd-69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S005 · README.md 第 69 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s006-readmemd-86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S006 · README.md 第 86 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s007-readmemd-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S007 · README.md 第 101 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s008-readmemd-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S008 · README.md 第 110 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s009-01-cqm__opemd-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S009 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 15 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s010-01-cqm__opemd-456" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S010 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 456 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s011-01-cqm__opemd-528" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S011 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 528 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s012-01-cqm__opemd-583" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S012 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 583 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s013-01-cqm__opemd-585" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S013 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 585 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s014-01-cqm__opemd-601" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S014 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 601 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s015-01-cqm__opemd-609" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S015 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 609 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s016-01-cqm__opemd-623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S016 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 623 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s017-01-cqm__opemd-677" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S017 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 677 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s018-01-cqm__md-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S018 · 01 核心理论/CQM_核心_唯物主义群论.md 第 5 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s019-01-cqm__md-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S019 · 01 核心理论/CQM_核心_唯物主义群论.md 第 52 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s020-01-cqm__md-195" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S020 · 01 核心理论/CQM_核心_唯物主义群论.md 第 195 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s021-01-cqm__md-242" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S021 · 01 核心理论/CQM_核心_唯物主义群论.md 第 242 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s022-01-cqm__md-347" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S022 · 01 核心理论/CQM_核心_唯物主义群论.md 第 347 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s023-01-cqm__md-389" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S023 · 01 核心理论/CQM_核心_唯物主义群论.md 第 389 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s024-01-cqm__md-391" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S024 · 01 核心理论/CQM_核心_唯物主义群论.md 第 391 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s025-01-cqm__md-436" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S025 · 01 核心理论/CQM_核心_唯物主义群论.md 第 436 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s026-01-cqm__md-476" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S026 · 01 核心理论/CQM_核心_唯物主义群论.md 第 476 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s027-01-cqm__md-477" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S027 · 01 核心理论/CQM_核心_唯物主义群论.md 第 477 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s028-01-cqm__md-125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S028 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 125 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s029-01-cqm__md-152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S029 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 152 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s030-01-cqm__md-206" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S030 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 206 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s031-01-cqm__md-243" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S031 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 243 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s032-01-cqm__md-299" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S032 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 299 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s033-01-cqm__md-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S033 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 610 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s034-01-cqm__md-208" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S034 · 01 核心理论/CQM_核心_声子理论.md 第 208 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s035-01-cqm__md-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S035 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 9 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s036-01-cqm__md-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S036 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 17 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s037-01-cqm__md-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S037 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 33 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-gl5-su5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s038-01-cqm__md-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S038 · 01 核心理论/CQM_核心_量纲与群论.md 第 17 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s039-01-cqm__md-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S039 · 01 核心理论/CQM_核心_量纲与群论.md 第 236 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s040-01-cqm__md-559" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S040 · 01 核心理论/CQM_核心_量纲与群论.md 第 559 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s041-01-cqm__md-585" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S041 · 01 核心理论/CQM_核心_量纲与群论.md 第 585 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s042-01-cqm__md-604" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S042 · 01 核心理论/CQM_核心_量纲与群论.md 第 604 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s043-01-cqm__md-887" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S043 · 01 核心理论/CQM_核心_量纲与群论.md 第 887 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s044-01-cqm__md-1099" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S044 · 01 核心理论/CQM_核心_量纲与群论.md 第 1099 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s045-01-cqm__md-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S045 · 01 核心理论/CQM_核心_集成理论.md 第 24 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s046-01-cqm__md-331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S046 · 01 核心理论/CQM_核心_集成理论.md 第 331 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s047-01-cqm__md-755" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S047 · 01 核心理论/CQM_核心_集成理论.md 第 755 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s048-01-cqm__md-756" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S048 · 01 核心理论/CQM_核心_集成理论.md 第 756 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s049-01-cqm__md-760" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S049 · 01 核心理论/CQM_核心_集成理论.md 第 760 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s050-03-cqm__md-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S050 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 15 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s051-03-cqm__md-97" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S051 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 97 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s052-03-cqm__md-104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S052 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 104 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s053-03-cqm__md-560" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S053 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 560 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s054-04-cqm__1md-477" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S054 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 477 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s055-04-cqm__1md-478" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S055 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 478 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s056-04-cqm__1md-674" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S056 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 674 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s057-04-cqm__md-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S057 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 5 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s058-04-cqm__md-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S058 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 75 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s059-04-cqm__su5md-203" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S059 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 203 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s060-04-cqm__su5md-304" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S060 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 304 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s061-04-cqm__su5md-319" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S061 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 319 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s062-04-cqm__md-435" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S062 · 04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md 第 435 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s063-04-cqm__md-1393" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S063 · 04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md 第 1393 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s064-04-fg_regge_md-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S064 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 18 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s065-04-fg_regge_md-92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S065 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 92 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s066-04-fg_regge_md-305" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S066 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 305 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s067-05-cqm__-md-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S067 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 100 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s068-05-cqm__-md-102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S068 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 102 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s069-07-fgfg_md-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S069 · 07 精细引力（FG）/FG_核心理论.md 第 47 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s070-07-fgfg_md-260" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S070 · 07 精细引力（FG）/FG_核心理论.md 第 260 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s071-07-fgfg_md-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S071 · 07 精细引力（FG）/FG_纤维丛理论.md 第 56 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s072-07-fgfg_md-108" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S072 · 07 精细引力（FG）/FG_纤维丛理论.md 第 108 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s073-07-fgfg_md-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S073 · 07 精细引力（FG）/FG_纤维丛理论.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 核心问题：底空间+条件→同步方程→本征群→耦合常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s074-07-fgfg_md-324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S074 · 07 精细引力（FG）/FG_纤维丛理论.md 第 324 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#401-su5-a_4-4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0.1 SU(5) 重组实现 ⇒ \(A_4\) → 4 紧致本征群 → 4 耦合常数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s075-07-fgfg_md-470" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S075 · 07 精细引力（FG）/FG_纤维丛理论.md 第 470 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s076-07-fgfg_md-794" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S076 · 07 精细引力（FG）/FG_纤维丛理论.md 第 794 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s077-06-cqm__fgmd-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S077 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 9 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s078-06-cqm__fgmd-134" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S078 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 134 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s079-06-cqm__fgmd-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S079 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s080-06-cqm__fgmd-297" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S080 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 297 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s081-06-cqm__fgmd-298" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S081 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 298 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s082-06-cqm__fgmd-345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S082 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 345 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s083-06-cqm__fgmd-367" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S083 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 367 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s084-06-cqm__fgmd-369" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S084 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 369 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s085-06-cqm__md-84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S085 · 06 超导/CQM_超导_专题与扩展.md 第 84 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s086-06-cqm__md-122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S086 · 06 超导/CQM_超导_专题与扩展.md 第 122 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s087-06-cqm__md-380" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S087 · 06 超导/CQM_超导_专题与扩展.md 第 380 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s088-06-cqm__md-385" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S088 · 06 超导/CQM_超导_专题与扩展.md 第 385 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s089-06-cqm__md-440" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S089 · 06 超导/CQM_超导_专题与扩展.md 第 440 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s090-06-cqm__md-703" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S090 · 06 超导/CQM_超导_专题与扩展.md 第 703 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s091-06-cqm__md-704" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S091 · 06 超导/CQM_超导_专题与扩展.md 第 704 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s092-06-cqm__md-842" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S092 · 06 超导/CQM_超导_专题与扩展.md 第 842 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s093-06-cqm__md-1010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S093 · 06 超导/CQM_超导_专题与扩展.md 第 1010 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s094-06-cqm__md-1074" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S094 · 06 超导/CQM_超导_专题与扩展.md 第 1074 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s095-06-cqm__md-1162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S095 · 06 超导/CQM_超导_专题与扩展.md 第 1162 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s096-06-cqm__md-1239" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S096 · 06 超导/CQM_超导_专题与扩展.md 第 1239 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s097-06-cqm__md-1321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S097 · 06 超导/CQM_超导_专题与扩展.md 第 1321 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s098-06-cqm__md-1446" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S098 · 06 超导/CQM_超导_专题与扩展.md 第 1446 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s099-06-cqm__md-1449" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S099 · 06 超导/CQM_超导_专题与扩展.md 第 1449 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s100-06-cqm__md-1465" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S100 · 06 超导/CQM_超导_专题与扩展.md 第 1465 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s101-06-cqm__md-1468" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S101 · 06 超导/CQM_超导_专题与扩展.md 第 1468 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s102-06-cqm__md-1470" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S102 · 06 超导/CQM_超导_专题与扩展.md 第 1470 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s103-06-cqm__md-1483" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S103 · 06 超导/CQM_超导_专题与扩展.md 第 1483 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s104-06-cqm__md-1486" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S104 · 06 超导/CQM_超导_专题与扩展.md 第 1486 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s105-06-cqm__md-1493" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S105 · 06 超导/CQM_超导_专题与扩展.md 第 1493 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s106-06-cqm__md-1516" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S106 · 06 超导/CQM_超导_专题与扩展.md 第 1516 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s107-06-cqm__md-1517" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S107 · 06 超导/CQM_超导_专题与扩展.md 第 1517 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s108-06-cqm__md-1522" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S108 · 06 超导/CQM_超导_专题与扩展.md 第 1522 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s109-06-cqm__md-1523" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S109 · 06 超导/CQM_超导_专题与扩展.md 第 1523 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s110-06-cqm__md-1536" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S110 · 06 超导/CQM_超导_专题与扩展.md 第 1536 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s111-06-cqm__md-181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S111 · 06 超导/CQM_超导_统一方法论.md 第 181 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s112-06-cqm__md-291" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S112 · 06 超导/CQM_超导_统一方法论.md 第 291 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s113-06-cqm__md-296" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S113 · 06 超导/CQM_超导_统一方法论.md 第 296 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s114-06-cqm_md-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S114 · 06 超导/CQM_超导核心理论.md 第 10 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s115-06-cqm_md-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S115 · 06 超导/CQM_超导核心理论.md 第 64 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s116-06-cqm_md-174" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S116 · 06 超导/CQM_超导核心理论.md 第 174 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s117-06-cqm_md-431" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S117 · 06 超导/CQM_超导核心理论.md 第 431 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s118-06-cqm_md-630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S118 · 06 超导/CQM_超导核心理论.md 第 630 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s119-06-cqm_md-660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S119 · 06 超导/CQM_超导核心理论.md 第 660 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s120-06-cqm_md-661" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S120 · 06 超导/CQM_超导核心理论.md 第 661 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s121-06-cqm_md-795" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S121 · 06 超导/CQM_超导核心理论.md 第 795 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s122-06-cqm_md-799" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S122 · 06 超导/CQM_超导核心理论.md 第 799 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s123-06-cqm_md-899" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S123 · 06 超导/CQM_超导核心理论.md 第 899 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s124-06-cqm_md-904" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S124 · 06 超导/CQM_超导核心理论.md 第 904 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s125-06-01_md-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S125 · 06 超导/超导材料设计器/01_系统架构设计.md 第 41 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s126-06-03_md-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S126 · 06 超导/超导材料设计器/03_超导判定算法.md 第 10 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s127-06-03_md-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S127 · 06 超导/超导材料设计器/03_超导判定算法.md 第 11 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s128-06-05_md-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S128 · 06 超导/超导材料设计器/05_元素嘉当矩阵参数化设计.md 第 25 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s129-06-readmemd-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S129 · 06 超导/超导材料设计器/README.md 第 35 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s130-06-readmemd-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S130 · 06 超导/超导材料设计器/README.md 第 42 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s131-06-readmemd-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S131 · 06 超导/超导材料设计器/README.md 第 43 行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        断点清单（缺口，逐字取自 缺口编号对照.csv）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        口径说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">展开链（拉通阅读）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>本页由 <code>_build/build_reader_site.py</code> 从原文<strong>只读</strong>生成：每一条都是原文<strong>逐字片段</strong>，
+顺序按「文档层级 → 文档 → 行号」机械排列，<strong>不推断因果、不改写、不补边</strong>。
+本页是<strong>呈现层索引</strong>，不是权威源；权威源仍是各文档原文与 <code>README.md</code>。</p>
+</blockquote>
+<h2 id="131">一步一读（131 条）<a class="headerlink" href="#131" title="Permanent link">&para;</a></h2>
+<h3 id="s001-readmemd-35">S001 · README.md 第 35 行<a class="headerlink" href="#s001-readmemd-35" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>§0 发生学总纲</strong>给出 CQM 本体论骨架最简洁链条（物质先在 → 质数自组织 → GL(5) 潜能先在 → SU(5) 基态 ⇒ 重组实现 ⇒ U(1)×SU(2)×SU(3)），并确立“前时空、FG 与朗兰兹纲领相关，GR 不确定”的哲学命题（本体论与朗兰兹纲领相关、认识论固定于 GL(5) 层级、观测受禁闭与能标锁死限制）。两个关键统一：(1) 精细结构常数 α 的数论-物理双重命名统一（SU(5)重组实现 ⇒ <span class="arithmatex">\(A_4\)</span>嘉当矩阵 ⇒ 紧致壳层群…</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 4964–5196 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s002-readmemd-36">S002 · README.md 第 36 行<a class="headerlink" href="#s002-readmemd-36" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>共形自举（Conformal Bootstrap）=OPE结合律=共形自洽</strong>：配对顺序不影响结果→锁死耦合常数为离散解。三角结构（耦合常数↔同步成本↔紧致群）的CFT实现。Dirac条件=共形自举方程的CQM具体化。<strong><span class="arithmatex">\(A_4\)</span>结合律锁定s,p,d,f，禁戒g</strong>。<strong>§5.4 中央荷<span class="arithmatex">\(c\)</span>与相变量子<span class="arithmatex">\(☯\)</span>的关系</strong>：<span class="arithmatex">\(c\)</span>与<span class="arithmatex">\(☯\)</span>同在GL(5)固定层级，<span class="arithmatex">\(☯\)</span>控制有效中央荷。**§6.3–§6.4 径向波函数<span class="arithmatex">\(R_{nl}(r)\leftrightarrow\)</span>共形块…</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 5791–6032 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s003-readmemd-38">S003 · README.md 第 38 行<a class="headerlink" href="#s003-readmemd-38" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>量纲发生学层级——时间 <span class="arithmatex">\(T\)</span>（第一量纲）→长度 <span class="arithmatex">\(L\)</span>（<span class="arithmatex">\(K_L\)</span>，禁闭映射常数，无量纲→长度）→质量 <span class="arithmatex">\(M\)</span>（<span class="arithmatex">\(K_M\)</span>，<span class="arithmatex">\(K_M=G_N^{-1}\)</span>）→电荷 <span class="arithmatex">\(Q\)</span>（<span class="arithmatex">\(K_Q\)</span>）→…；统一公式模式：旧量纲×特征常数=新量纲（新旧指发生学先后）；符号统一为 <span class="arithmatex">\(K\)</span> 下标（<span class="arithmatex">\(K_L,K_M,K_Q,K_\Theta,K_N,K_J\)</span>），另列与已有物理常数（<span class="arithmatex">\(G_N,k_B,N_A,K_{cd}\)</span>）的对比；不采用自然单位制；电磁高斯单位制；<span class="arithmatex">\(c\)</span> 为时空同步前沿速度，不承担量…</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 7297–7538 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s004-readmemd-61">S004 · README.md 第 61 行<a class="headerlink" href="#s004-readmemd-61" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>贝里曲率（Berry curvature）文献谱系（奠基理论→能带物理→超导量子几何→第一性原理计算）；</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 10890–10942 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s005-readmemd-69">S005 · README.md 第 69 行<a class="headerlink" href="#s005-readmemd-69" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>四层同步框架（局部种子＝自守因子的无穷小生成元 → 传播同步＝共形块与 KZ 方程 → 全局＝特征标与模不变性 <span class="arithmatex">\(\rho(\gamma)M\rho(\gamma)^{\dagger}=M\)</span> → 自守形式＝上闭链）；</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 15588–15696 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s006-readmemd-86">S006 · README.md 第 86 行<a class="headerlink" href="#s006-readmemd-86" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 17355–17404 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s007-readmemd-101">S007 · README.md 第 101 行<a class="headerlink" href="#s007-readmemd-101" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>[FG 核心理论](07 精细引力（FG）/FG&#95;核心理论.md)</td><td>FG核心理论：SU(5)重组实现⇒$A_4$嘉当矩阵⇒4紧致本征群$\{SU(2)_k\}_{k=1}^{4}$（全紧致）⇒4耦合常数，$\alpha^{-1}$电磁群耦合常数，是GL(5)整体的反映…</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>README.md</code> 字符 18429–18568 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s008-readmemd-110">S008 · README.md 第 110 行<a class="headerlink" href="#s008-readmemd-110" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>本体论、BCS 退化与还原、嘉当张量超导方程、推导链、元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（<span class="arithmatex">\(G_N\)</span> 谱公式与三重恒等形式化：6 模块、101 定理） |</p>
+</blockquote>
+<ul>
+<li>出处：<code>README.md</code> 字符 19469–19687 ｜ 涉及缺口：G13 ｜ 状态词：闭合</li>
+</ul>
+<h3 id="s009-01-cqm__opemd-15">S009 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 15 行<a class="headerlink" href="#s009-01-cqm__opemd-15" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>元素FG的周期表第一性推导（Casimir→壳层容量、共形维度 <span class="arithmatex">\(h_{\rm shell}=n_{\rm pr}+l\)</span>→Madelung规则、<span class="arithmatex">\(A_4\)</span>→<span class="arithmatex">\(Z_{\max}=118\)</span>）是CFT框架的三大应用成果。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 1063–1170 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s010-01-cqm__opemd-456">S010 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 456 行<a class="headerlink" href="#s010-01-cqm__opemd-456" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>曲率算符 <span class="arithmatex">\(\hat{\delta}_v\)</span> 给出各种赝状态）→ <strong>发生</strong>（同步方程 <span class="arithmatex">\(\hat{\mathcal{S}}|\psi\rangle = n|\psi\rangle\)</span>：共振量子化，什么样的态可以发生同步、同步成本 <span class="arithmatex">\(n\)</span> 是多少）→ <strong>过程</strong>（CFT：幂律传播 <span class="arithmatex">\(r^{-2h}\)</span>，同步从触发点向全局扩大）→ <strong>完成</strong>（状态跃迁：从未同步态跃迁到同步态）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 16593–16783 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s011-01-cqm__opemd-528">S011 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 528 行<a class="headerlink" href="#s011-01-cqm__opemd-528" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>&gt; **同步四阶段：预备（FG 纤维丛——各种赝状态）→ 发生（同步方程——共振量子化）→ 过程（CFT——临界自组织态扩大）→ 完成（状态跃迁）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 19101–19175 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s012-01-cqm__opemd-583">S012 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 583 行<a class="headerlink" href="#s012-01-cqm__opemd-583" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>│ └── 同步四阶段：预备（FG 纤维丛）→发生（同步方程）→过程（CFT）→完成（状态跃迁）</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 20816–20864 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s013-01-cqm__opemd-585">S013 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 585 行<a class="headerlink" href="#s013-01-cqm__opemd-585" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>├── FG元素第一性（Regge→嘉当→声子→曲率→同步→OPE→条件→周期表）</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 20869–20910 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s014-01-cqm__opemd-601">S014 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 601 行<a class="headerlink" href="#s014-01-cqm__opemd-601" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>Dirac条件 = 共形自举方程的CQM具体化</td><td>**严格**，$D\psi=0$→零模→primary→OPE结合律→共形自举（FG纤维丛文档§9.6）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 21322–21402 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s015-01-cqm__opemd-609">S015 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 609 行<a class="headerlink" href="#s015-01-cqm__opemd-609" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>径向Schrödinger方程 = BPZ方程的合流极限</td><td>**严格**（5步证明：BPZ→指数映射→Kummer变换→合流极限→径向Schrödinger，见本文档§6.4）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 21991–22082 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s016-01-cqm__opemd-623">S016 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 623 行<a class="headerlink" href="#s016-01-cqm__opemd-623" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>关联能不依赖耦合常数具体值；Cr/Cu：g波禁戒→S矩阵权重转移→增强 <span class="arithmatex">\(25/16\approx56\%\)</span>→能级翻转 |</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 23179–23240 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s017-01-cqm__opemd-677">S017 · 01 核心理论/CQM_核心_共形场论与OPE.md 第 677 行<a class="headerlink" href="#s017-01-cqm__opemd-677" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>同步四阶段：预备（赝状态）→发生（共振量子化）→过程（CFT扩大）→完成（状态跃迁）</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_共形场论与OPE.md</code> 字符 24871–24913 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s018-01-cqm__md-5">S018 · 01 核心理论/CQM_核心_唯物主义群论.md 第 5 行<a class="headerlink" href="#s018-01-cqm__md-5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>并给出与框架既有表述的对接（引用框架表述时以原文为准）。主线：<strong>引言</strong>（唯物主义群论定位）→ 变换群三层结构 <span class="arithmatex">\(\mathrm{Sym}\supset\mathrm{Diff}\supset GL\)</span> → <strong>群约束性</strong>分类（线性层 <span class="arithmatex">\(GL(n,\mathbb{F})\)</span> 四条基约束性、非线性层与覆盖的群）→ 统一约束形式 → <strong>不变性</strong>（每种约束性＝“某物的某种属性／结构在某种变换下保持不变”）→ 置换对称性 <span class="arithmatex">\(S_n\)</span> 讨论与对称群谱系（置乱动力学的配套专论见 `.…</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 146–387 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s019-01-cqm__md-52">S019 · 01 核心理论/CQM_核心_唯物主义群论.md 第 52 行<a class="headerlink" href="#s019-01-cqm__md-52" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>&gt; - <strong>通读</strong>：§1（变换群三层结构）→ §2–§4（群约束性的定义、分类、统一形式）→ §5（保各量的群）→ §6（不变性）→ §7（<span class="arithmatex">\(S_n\)</span> 与对称群谱系）→ §8（自守形式到 <span class="arithmatex">\(L\)</span> 函数）；</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 4374–4477 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s020-01-cqm__md-195">S020 · 01 核心理论/CQM_核心_唯物主义群论.md 第 195 行<a class="headerlink" href="#s020-01-cqm__md-195" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>换 <span class="arithmatex">\(J\)</span> 号差</strong> <span class="arithmatex">\(J=\eta_{p,q}\)</span>／<span class="arithmatex">\(I_{p,q}\)</span> → <span class="arithmatex">\(O(p,q)\)</span>（洛伦兹性）／<span class="arithmatex">\(U(p,q)\)</span>，加 <span class="arithmatex">\(\det=1\)</span> 得 <span class="arithmatex">\(SO(p,q)\)</span>／<span class="arithmatex">\(SU(p,q)\)</span>；<strong>换基域</strong>（四元数）→ <span class="arithmatex">\(Sp(n)\)</span>／<span class="arithmatex">\(SO^{*}(2n)\)</span>；<strong>特殊化 <span class="arithmatex">\(\mathbf{S}\)</span></strong> → <span class="arithmatex">\(SO(n)\)</span>／<span class="arithmatex">\(SU(n)\)</span>（辛族自动，<span class="arithmatex">\(\det=1\)</span> 是推论）；<strong>共形化 <span class="arithmatex">\(\mathbf{C}\)</span></strong> → <span class="arithmatex">\(CO(n)\)</span>；*<em>射影化 <span class="arithmatex">\(\mathbf{P}\)</span></em>…</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 13022–13263 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s021-01-cqm__md-242">S021 · 01 核心理论/CQM_核心_唯物主义群论.md 第 242 行<a class="headerlink" href="#s021-01-cqm__md-242" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>属性的**别的实现**（不一定针对量纲实现）</td><td>置换与统计属性 → $S_N$（§7）；规范属性 → $U(1)\times SU(2)\times SU(3)\subset SU(5)$（§7.3）；光滑结构属性 → $\mathrm{Diff}(M)$（§1.1）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 14819–14956 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s022-01-cqm__md-347">S022 · 01 核心理论/CQM_核心_唯物主义群论.md 第 347 行<a class="headerlink" href="#s022-01-cqm__md-347" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>大内差异＝连续属性关系群的选取</strong>（同一属性量在不同实现空间给出不同连续关系群；例：“保长度”在欧氏空间 → <span class="arithmatex">\(E(3)\)</span>（空间长度）、波矢空间 → <span class="arithmatex">\(O(3)\)</span>（波长）、定向实现 → <span class="arithmatex">\(SO(3)\)</span>、闵氏时空 → <span class="arithmatex">\(O(1,3)\)</span>（固有长度）、双曲平面 → <span class="arithmatex">\(PSL(2,\mathbb{R})\)</span>、弯曲流形 → <span class="arithmatex">\(\mathrm{Isom}(M,g)\)</span>）——<strong>改结构</strong>（改的是“哪个群保这个量”，即 <span class="arithmatex">\(G_{Q}\)</span> 本身，见 §1.2、§6.1 定义）；</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 19907–20141 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s023-01-cqm__md-389">S023 · 01 核心理论/CQM_核心_唯物主义群论.md 第 389 行<a class="headerlink" href="#s023-01-cqm__md-389" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>而 <span class="arithmatex">\(G_{Q}\)</span> 保持属性量 <span class="arithmatex">\(Q\)</span> 不变<strong>。三者构成一个三角——正向 </strong>属性量 → 属性关系群 → 不变群约束性<strong>，反向 </strong>不变群约束性 → 属性关系群 → 被保持的属性量**。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 22784–22879 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s024-01-cqm__md-391">S024 · 01 核心理论/CQM_核心_唯物主义群论.md 第 391 行<a class="headerlink" href="#s024-01-cqm__md-391" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>&gt; 例：<span class="arithmatex">\(Q=\)</span> 实内积 → <span class="arithmatex">\(G_{Q}=O(n)\)</span>，<span class="arithmatex">\(\mathcal{C}_{Q}:\ A^{T}IA=I\)</span>；<span class="arithmatex">\(Q=\)</span> 辛形式 → <span class="arithmatex">\(G_{Q}=Sp(2n,\mathbb{F})\)</span>，<span class="arithmatex">\(\mathcal{C}_{Q}:\ S^{T}\Omega S=\Omega\)</span>；<span class="arithmatex">\(Q=\)</span> 时空间隔 → <span class="arithmatex">\(G_{Q}=O(1,3)\)</span>，<span class="arithmatex">\(\mathcal{C}_{Q}:\ \Lambda^{T}\eta\Lambda=\eta\)</span>。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 22882–23093 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s025-01-cqm__md-436">S025 · 01 核心理论/CQM_核心_唯物主义群论.md 第 436 行<a class="headerlink" href="#s025-01-cqm__md-436" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>机制</td><td>先在规范群 → 角亏涨落 → 扇区耦合涨落 → 条件伴丛结构群 → 物质在条件下自组织实现对称性（框架原文）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 25809–25872 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s026-01-cqm__md-476">S026 · 01 核心理论/CQM_核心_唯物主义群论.md 第 476 行<a class="headerlink" href="#s026-01-cqm__md-476" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**真正的诺特荷**</td><td>$U(1)$ 相位 → 电荷；$SO(n)$ 旋转 → 角动量；内部规范对称 → 规范荷；时空平移 → 能量、动量</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 28378–28450 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s027-01-cqm__md-477">S027 · 01 核心理论/CQM_核心_唯物主义群论.md 第 477 行<a class="headerlink" href="#s027-01-cqm__md-477" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**几何／运动学不变性**</td><td>保内积 → 长度与角度；保辛形式 → 相空间体积（**刘维尔**）；$\det=1$ → 体积（不可压）；幺正性 → 概率模方</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_唯物主义群论.md</code> 字符 28461–28542 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s028-01-cqm__md-125">S028 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 125 行<a class="headerlink" href="#s028-01-cqm__md-125" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>同步四阶段：预备→发生→过程→完成</strong>（CFT 视角，详见 <code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8）：预备（FG 纤维丛——各种赝状态）→发生（同步方程——共振量子化）→过程（CFT——幂律传播 <span class="arithmatex">\(r^{-2h}\)</span> 描述扩大的动力学）→完成（状态跃迁）。</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 6018–6161 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s029-01-cqm__md-152">S029 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 152 行<a class="headerlink" href="#s029-01-cqm__md-152" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>同步层级与发生学顺序</strong>。全局发生学顺序为前时空→（自组织，表现为退相干）→ GR →（物质自组织）→ FG →（跃迁）→ 超导；</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 7675–7744 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s030-01-cqm__md-206">S030 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 206 行<a class="headerlink" href="#s030-01-cqm__md-206" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>与 §6.3.4 同步层级纵向递进（前时空→GR→FG→超导）正交。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 10124–10158 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s031-01-cqm__md-243">S031 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 243 行<a class="headerlink" href="#s031-01-cqm__md-243" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(☯\)</span> 与黎曼零点（Hadamard 乘积）、OPE 同步⊗耦合→群本征态、共形自举 = OPE 结合律、紧致群→Kac-Moody→Sugawara→Virasoro、<span class="arithmatex">\(A_4\)</span> 结合律锁定 s/p/d/f 禁戒 g、中子 <span class="arithmatex">\(D(\delta)\)</span> 代数类型（Lean 验证）、超导 <span class="arithmatex">\(T_c\)</span> 自由能交叉形式推导完成（G22 行内已闭合项；</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 11779–11950 ｜ 涉及缺口：G22、G18 ｜ 状态词：闭合</li>
+</ul>
+<h3 id="s032-01-cqm__md-299">S032 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 299 行<a class="headerlink" href="#s032-01-cqm__md-299" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>因果动力学的层级递进</strong>：从前时空 → GR（退相干）→ FG（层级激发）→ 超导（再锁定）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 14177–14226 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s033-01-cqm__md-610">S033 · 01 核心理论/CQM_核心_因果网络同步理论.md 第 610 行<a class="headerlink" href="#s033-01-cqm__md-610" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>GRH 是 GL(5) 固定层级的实谱条件</strong>：质数分布 → 共振 → GRH 保证零点在临界线上 → 实共振谱 → 同步算符执行紧化。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_因果网络同步理论.md</code> 字符 22698–22771 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s034-01-cqm__md-208">S034 · 01 核心理论/CQM_核心_声子理论.md 第 208 行<a class="headerlink" href="#s034-01-cqm__md-208" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>FG层声子是组织本身（动态曲率量子）。声子通过晶胞量子振荡→角亏涨落→联络→耦合常数跃迁的链条，驱动自组织与层级创生。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_声子理论.md</code> 字符 5980–6039 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s035-01-cqm__md-9">S035 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 9 行<a class="headerlink" href="#s035-01-cqm__md-9" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>§0 另给出 CQM 本体论骨架的最简洁发生学总纲（物质 → 质数自组织 → GL(5) 潜能先在 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群），并确立“前时空、FG 与朗兰兹纲领相关，GR 不确定”的哲学命题。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> 字符 405–513 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s036-01-cqm__md-17">S036 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 17 行<a class="headerlink" href="#s036-01-cqm__md-17" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li>[发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群](#0-发生学总纲物质--质数自组织--gl5-潜能--su5-基态--重组实现--规范群)</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> 字符 672–774 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s037-01-cqm__md-33">S037 · 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md 第 33 行<a class="headerlink" href="#s037-01-cqm__md-33" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h2 id="0-gl5-su5">0. 发生学总纲：物质 → 质数自组织 → GL(5) 潜能 → SU(5) 基态 ⇒ 重组实现 ⇒ 规范群<a class="headerlink" href="#0-gl5-su5" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md</code> 字符 1199–1256 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s038-01-cqm__md-17">S038 · 01 核心理论/CQM_核心_量纲与群论.md 第 17 行<a class="headerlink" href="#s038-01-cqm__md-17" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>通读</strong>：§一（总原则与哲学基础）→ §六（量纲发生学的核心：特征常数与层级）→ §七（自守形式猜想：链条本身 §7.6、锚定与检验 §7.7）→ §八（自然单位制批判）→ §十三（最终总结）；</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 731–832 ｜ 涉及缺口：— ｜ 状态词：猜想</li>
+</ul>
+<h3 id="s039-01-cqm__md-236">S039 · 01 核心理论/CQM_核心_量纲与群论.md 第 236 行<a class="headerlink" href="#s039-01-cqm__md-236" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>「潜在-显现化」沿三环节展开——<strong>属性先在</strong>（§6.4.3 独立属性、§6.5.2 完备属性矩阵）→ <strong>关系分化</strong>（§6.4.7、§6.5：极大关系群作为稳定化子把处在潜在态的属性切割为实例属性类别）→ <strong>实例化</strong>（§6.2、§七：自守形式＝稳定性的体现）→ <strong>具体化</strong>（§6.0–§6.3：特征常数 <span class="arithmatex">\(K\)</span> 族锁定各层的物理实现刻度，SI 对照见 §13）。行文主线：<strong>层级生成</strong>（§6.0–§6.1：每压掉一个量纲就冒出一个特征常数）→ <strong>双重差异</strong>（…</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 7359–7600 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s040-01-cqm__md-559">S040 · 01 核心理论/CQM_核心_量纲与群论.md 第 559 行<a class="headerlink" href="#s040-01-cqm__md-559" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>改的是“哪个群保这个量”（同一属性量在不同实现空间给出不同属性关系群；例：“保距离”在欧氏平面 → <span class="arithmatex">\(O(2)\)</span>、三维欧氏 → <span class="arithmatex">\(O(3)\)</span>、双曲平面 → <span class="arithmatex">\(PSL(2,\mathbb{R})\)</span>、闵氏时空 → <span class="arithmatex">\(O(1,3)\)</span>、弯曲流形 → <span class="arithmatex">\(\mathrm{Isom}(M,g)\)</span>）；</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 24113–24256 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s041-01-cqm__md-585">S041 · 01 核心理论/CQM_核心_量纲与群论.md 第 585 行<a class="headerlink" href="#s041-01-cqm__md-585" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>③§6.4.5 <strong>大内差异</strong>的原义是“<strong>同一属性量在不同实现空间</strong>给出不同属性关系群”（“保距离”：欧氏 →<span class="arithmatex">\(O(2)\)</span>、三维 →<span class="arithmatex">\(O(3)\)</span>、双曲 →<span class="arithmatex">\(PSL(2,\mathbb{R})\)</span>、闵氏 →<span class="arithmatex">\(O(1,3)\)</span>）——那是<strong>不同实现各有各的 <span class="arithmatex">\(G_{\max}\)</span></strong>（族），<span class="arithmatex">\(PSL(2,\mathbb{R})\)</span> 非紧、不是紧群 <span class="arithmatex">\(O(3)\)</span> 的（李）子群，<strong>不落在同一子群格内</strong>；故“内差异＝<span class="arithmatex">\(G_{\max}\)</span> 子群同构类”只对<strong>固定实现内部</strong>成立，不覆…</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 26948–27189 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s042-01-cqm__md-604">S042 · 01 核心理论/CQM_核心_量纲与群论.md 第 604 行<a class="headerlink" href="#s042-01-cqm__md-604" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**方向**</td><td>自上而下：量纲 → 规律</td><td>自下而上：物质自组织 → 约束 → 群 → 量纲</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 28210–28262 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s043-01-cqm__md-887">S043 · 01 核心理论/CQM_核心_量纲与群论.md 第 887 行<a class="headerlink" href="#s043-01-cqm__md-887" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>②本例是本文档 §6.4.5“大内差异”（“保距离”在欧氏平面 →<span class="arithmatex">\(O(2)\)</span>、三维欧氏 →<span class="arithmatex">\(O(3)\)</span>、闵氏时空 →<span class="arithmatex">\(O(1,3)\)</span>、弯曲流形 →<span class="arithmatex">\(\mathrm{Isom}(M,g)\)</span>）的细粒化重述，与 §6.5.12 一致。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 40502–40617 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s044-01-cqm__md-1099">S044 · 01 核心理论/CQM_核心_量纲与群论.md 第 1099 行<a class="headerlink" href="#s044-01-cqm__md-1099" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>跨实现时另有各自的 $G_{\max}$</td><td>一般长度量纲之下：空间长度→$E(3)$、波长→$O(3)$、粒子尺度→$SO(3)$……（群论文档 §5.3）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_量纲与群论.md</code> 字符 50445–50526 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s045-01-cqm__md-24">S045 · 01 核心理论/CQM_核心_集成理论.md 第 24 行<a class="headerlink" href="#s045-01-cqm__md-24" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>二者同源于<strong>前时空</strong>（先于引力）；（7）<strong>超导涌现</strong>——曲率涨落→固有时流速→海森堡不确定性→跃迁耦级谱 <span class="arithmatex">\(2\ln n\)</span>（<span class="arithmatex">\(n=2,4,6,\ldots\)</span>）→资格条件筛选候选群族→自由能竞争选出主导群，<span class="arithmatex">\(T_c\)</span> 由自由能交叉给出。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_集成理论.md</code> 字符 1608–1729 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s046-01-cqm__md-331">S046 · 01 核心理论/CQM_核心_集成理论.md 第 331 行<a class="headerlink" href="#s046-01-cqm__md-331" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(SU(5)\)</span> 的重组实现（见 <code>06 超导/CQM_超导_专题与扩展.md</code> 的 <span class="arithmatex">\(SU(5)\)</span> 发生学链条：<span class="arithmatex">\(SU(5)\)</span> 形成 → 前核子分化 → 重组实现 ⇒ <span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span>）与禁闭的形成相对应——这正是“<strong>禁闭的形成标志着质子／中子的形成</strong>”的根据。</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_集成理论.md</code> 字符 13095–13250 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s047-01-cqm__md-755">S047 · 01 核心理论/CQM_核心_集成理论.md 第 755 行<a class="headerlink" href="#s047-01-cqm__md-755" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**链 A**</td><td>核子 → 原子核 → 原子 → 分子 → 晶胞几何分布</td><td>实际几何：键长、键角、缺陷、晶界、向错</td><td>角亏各向异性 → 底空间曲率谱</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_集成理论.md</code> 字符 33793–33874 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s048-01-cqm__md-756">S048 · 01 核心理论/CQM_核心_集成理论.md 第 756 行<a class="headerlink" href="#s048-01-cqm__md-756" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**链 B**</td><td>核子 $A_4$ → 原子核交织 → 原子商空间 → 分子杂化 → 晶胞嘉当矩阵</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_集成理论.md</code> 字符 33876–33928 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s049-01-cqm__md-760">S049 · 01 核心理论/CQM_核心_集成理论.md 第 760 行<a class="headerlink" href="#s049-01-cqm__md-760" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>而是一套从质子/中子 <span class="arithmatex">\(A_4\)</span> 到晶胞嘉当矩阵的构造性计算（逐级发生学：核子交织 → 原子商空间 → 分子杂化 → 周期性凝聚）；</p>
+</blockquote>
+<ul>
+<li>出处：<code>01 核心理论/CQM_核心_集成理论.md</code> 字符 34000–34066 ｜ 涉及缺口：— ｜ 状态词：构造</li>
+</ul>
+<h3 id="s050-03-cqm__md-15">S050 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 15 行<a class="headerlink" href="#s050-03-cqm__md-15" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>理论核心为<strong>因果截断不等式</strong> <span class="arithmatex">\(\Delta\tau \geq \tau_{\text{res}} = \hbar/(Mc^2)\)</span>，并建立退相干的四层结构：截断→相容性→可能性空间→唯一性。</p>
+</blockquote>
+<ul>
+<li>出处：<code>03 引力与退相干/CQM_退相干_引力因果场.md</code> 字符 808–905 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s051-03-cqm__md-97">S051 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 97 行<a class="headerlink" href="#s051-03-cqm__md-97" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>再生产网络拓扑</strong>：核力→化学键→氢键→范德华力，连接方式影响有效因果分辨率</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>03 引力与退相干/CQM_退相干_引力因果场.md</code> 字符 4672–4714 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s052-03-cqm__md-104">S052 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 104 行<a class="headerlink" href="#s052-03-cqm__md-104" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>活体观测者（包括人）不属于此类。人的因果限制结构是由多个层级（分子级→细胞器级→细胞级→组织级→器官级→系统级）嵌套耦合的互耦网络，每一层的有效质量 <span class="arithmatex">\(M_{\text{eff}}^{(i)}\)</span>、质量分布 <span class="arithmatex">\(\rho_i(\mathbf{r})\)</span> 和因果分辨率 <span class="arithmatex">\(\tau_{\text{res}}^{(i)}\)</span> 各不相同且动态时变。</p>
+</blockquote>
+<ul>
+<li>出处：<code>03 引力与退相干/CQM_退相干_引力因果场.md</code> 字符 4930–5097 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s053-03-cqm__md-560">S053 · 03 引力与退相干/CQM_退相干_引力因果场.md 第 560 行<a class="headerlink" href="#s053-03-cqm__md-560" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>四层结构</strong>（Four-Layer Structure）：退相干不是单一事件，而是截断→相容性→可能性空间→唯一性的连续谱。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>03 引力与退相干/CQM_退相干_引力因果场.md</code> 字符 22181–22248 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s054-04-cqm__1md-477">S054 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 477 行<a class="headerlink" href="#s054-04-cqm__1md-477" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>p 进</td><td>$\nu$ 增大 → $p^{-\nu}$ 减小 → 距离缩短 → **能标升高**</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md</code> 字符 21746–21798 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s055-04-cqm__1md-478">S055 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 478 行<a class="headerlink" href="#s055-04-cqm__1md-478" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>CQM</td><td>$n$ 增大 → $e^{-\tau}$ 减小 → 尺度缩短 → **能标升高**</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md</code> 字符 21803–21854 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s056-04-cqm__1md-674">S056 · 04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md 第 674 行<a class="headerlink" href="#s056-04-cqm__1md-674" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(n=1\)</span> 处迭代<strong>振荡</strong>（14→31→8→…），不收敛。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_待推1边界条件深度分析.md</code> 字符 31461–31492 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s057-04-cqm__md-5">S057 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 5 行<a class="headerlink" href="#s057-04-cqm__md-5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>相变弧线</strong>（旧尺度失效—新尺度形成）→ <strong>四层同步框架</strong>（局部种子 → 传播同步 → 全局 → 自守形式）→ <strong>自守因子</strong>作为局部-全局同步桥 → 自守形式的五种主动效果 → 前沿。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md</code> 字符 73–171 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s058-04-cqm__md-75">S058 · 04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md 第 75 行<a class="headerlink" href="#s058-04-cqm__md-75" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>而是同一同步结构在不同数学层面上的同时显现。与其配套的<strong>过程分解</strong>（预备 → 发生 → 过程 → 完成）见 <code>01 核心理论/CQM_核心_共形场论与OPE.md</code> §8；</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md</code> 字符 2859–2947 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s059-04-cqm__su5md-203">S059 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 203 行<a class="headerlink" href="#s059-04-cqm__su5md-203" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>数学链路层</strong>【框架基础，服从框架链路定位】：零点谱 → 紧化等价关系 <span class="arithmatex">\(\mathcal{C}_k(\lambda_{\text{phys}},\gamma^{(k)}_n)=0\)</span> → 同步算符谱 → 本征值交叉 <span class="arithmatex">\(\lambda_1(T_c)=\lambda_2(T_c)\)</span> → 转变温度 <span class="arithmatex">\(T_c\)</span>（超导核心理论 §11.10，<span class="arithmatex">\(T_c\)</span> 闭式中显含零点差 <span class="arithmatex">\(\gamma_2-\gamma_1\approx 6.887315\)</span>）——零点<strong>位置</strong>经紧化条件编码…</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md</code> 字符 13166–13407 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s060-04-cqm__su5md-304">S060 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 304 行<a class="headerlink" href="#s060-04-cqm__su5md-304" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>推理链</strong>【CQM 构造假设】：维持机制先实现 → 物质展开的动力学机制实现 → 广义惯性（物质坚持维持自身结构在时空中的实现）= 质量 → <strong>每一代作为展开机制的环节必有质量</strong>；</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md</code> 字符 18923–19019 ｜ 涉及缺口：— ｜ 状态词：假设、构造</li>
+</ul>
+<h3 id="s061-04-cqm__su5md-319">S061 · 04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md 第 319 行<a class="headerlink" href="#s061-04-cqm__su5md-319" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>2</td><td>机制链（声子→量子曲率→不确定关系→L 函数→自守形式→GL(5)→共形同步→多实现）</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md</code> 字符 19765–19816 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s062-04-cqm__md-435">S062 · 04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md 第 435 行<a class="headerlink" href="#s062-04-cqm__md-435" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>本质上是量子叠加态的“去相位”——双向干涉 → 单向因果、非交换几何 → 交换几何、条件性幺正 → 经典混合态【CQM 框架基础】。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md</code> 字符 15487–15553 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s063-04-cqm__md-1393">S063 · 04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md 第 1393 行<a class="headerlink" href="#s063-04-cqm__md-1393" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>关键转折是：物理目标（<span class="arithmatex">\(G_N\)</span>）→ 数学关卡（RH）→ 深层结构（自守形式）。不是先有自守形式理论再有物理应用，而是物理问题倒逼出自守形式框架——§十三的条件传导链条（自守表示 <span class="arithmatex">\(\pi\)</span> → 条件 <span class="arithmatex">\(\mathcal{C}_\pi\)</span> → 配对不变量 <span class="arithmatex">\(\mathfrak{c}_{n,\pi}=\rho_{n,\pi}(1-\rho_{n,\pi})\)</span> 为实数 ⟺ 零点在 <span class="arithmatex">\(1/2\)</span> 上）在此获得物理动机。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/CQM_前沿研究_黎曼猜想证明思路.md</code> 字符 36337–36543 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s064-04-fg_regge_md-18">S064 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 18 行<a class="headerlink" href="#s064-04-fg_regge_md-18" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>调研贝里曲率的文献谱系（奠基理论 → 能带物理 → 超导电性中的量子几何 → 第一性原理计算方法），并系统分析贝里曲率与本框架 Regge 曲率（三角剖分底空间中集中于共维 2 铰链的角亏曲率）的关联。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md</code> 字符 431–532 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s065-04-fg_regge_md-92">S065 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 92 行<a class="headerlink" href="#s065-04-fg_regge_md-92" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Marzari 等（2012）的《现代物理评论》综述确立了“密度泛函理论波函数 → 最大局域化万尼尔（Wannier）函数 → 万尼尔（Wannier）插值 → 任意密集网格上的贝里曲率”的标准计算流程[18]【文献确立】。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md</code> 字符 5028–5140 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s066-04-fg_regge_md-305">S066 · 04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md 第 305 行<a class="headerlink" href="#s066-04-fg_regge_md-305" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>§5.6.3 的三层结构（承担者 → 度量形式 → 响应形式 → 表现）使 Mead–Truhlar 先例的定位更精确：它是<strong>响应形式反作用于度量形式</strong>的文献实例——电子波函数的贝里相位（响应形式，量子态几何）经矢量势修正核运动方程，从而反作用到实空间分子几何（度量形式所在的构型空间）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>04 前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md</code> 字符 17204–17350 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s067-05-cqm__-md-100">S067 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 100 行<a class="headerlink" href="#s067-05-cqm__-md-100" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>物理学领域</strong>：经典力学的成功→热力学第二定律的不可还原→量子叠加与纠缠的不可还原→贝尔实验对庸俗隐变量的证伪。</p>
+</blockquote>
+<ul>
+<li>出处：<code>05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md</code> 字符 4157–4215 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s068-05-cqm__-md-102">S068 · 05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md 第 102 行<a class="headerlink" href="#s068-05-cqm__-md-102" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>经济学领域</strong>：古典经济学的劳动价值论→边际革命的效用还原→一般均衡理论的完全竞争假设→大萧条与经济危机对均衡模型的证伪。</p>
+</blockquote>
+<ul>
+<li>出处：<code>05 方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md</code> 字符 4240–4303 ｜ 涉及缺口：— ｜ 状态词：假设</li>
+</ul>
+<h3 id="s069-07-fgfg_md-47">S069 · 07 精细引力（FG）/FG_核心理论.md 第 47 行<a class="headerlink" href="#s069-07-fgfg_md-47" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h2 id="3-fg">3. FG的核心问题：底空间+条件→同步方程→本征群→耦合常数<a class="headerlink" href="#3-fg" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_核心理论.md</code> 字符 1433–1467 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s070-07-fgfg_md-260">S070 · 07 精细引力（FG）/FG_核心理论.md 第 260 行<a class="headerlink" href="#s070-07-fgfg_md-260" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>耦合常数 <span class="arithmatex">\(g_k\)</span></strong>：同步方程输出 → Casimir本征值 <span class="arithmatex">\(C_k = n_k\)</span> → 角动量 <span class="arithmatex">\(l_k\)</span> → 电子容量 <span class="arithmatex">\(N_k^{\max} = 2(2l_k+1) = 2, 6, 10, 14\)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_核心理论.md</code> 字符 14448–14555 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s071-07-fgfg_md-56">S071 · 07 精细引力（FG）/FG_纤维丛理论.md 第 56 行<a class="headerlink" href="#s071-07-fgfg_md-56" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>物理在其上展开。CQM的发生学顺序（物质先在→自组织→底空间涌现→丛涌现）排除了先验容器。</p>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 1839–1884 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s072-07-fgfg_md-108">S072 · 07 精细引力（FG）/FG_纤维丛理论.md 第 108 行<a class="headerlink" href="#s072-07-fgfg_md-108" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>发生学顺序</strong>：物质先在→自组织→底空间涌现→丛涌现→重组→有效几何</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 3760–3799 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s073-07-fgfg_md-296">S073 · 07 精细引力（FG）/FG_纤维丛理论.md 第 296 行<a class="headerlink" href="#s073-07-fgfg_md-296" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h3 id="40">4.0 核心问题：底空间+条件→同步方程→本征群→耦合常数<a class="headerlink" href="#40" title="Permanent link">&para;</a></h3>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 11963–11996 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s074-07-fgfg_md-324">S074 · 07 精细引力（FG）/FG_纤维丛理论.md 第 324 行<a class="headerlink" href="#s074-07-fgfg_md-324" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h3 id="401-su5-a_4-4-4">4.0.1 SU(5) 重组实现 ⇒ <span class="arithmatex">\(A_4\)</span> → 4 紧致本征群 → 4 耦合常数<a class="headerlink" href="#401-su5-a_4-4-4" title="Permanent link">&para;</a></h3>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 15202–15249 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s075-07-fgfg_md-470">S075 · 07 精细引力（FG）/FG_纤维丛理论.md 第 470 行<a class="headerlink" href="#s075-07-fgfg_md-470" title="Permanent link">&para;</a></h3>
+<blockquote>
+<h2 id="9-cft">9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形<a class="headerlink" href="#9-cft" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 20264–20294 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s076-07-fgfg_md-794">S076 · 07 精细引力（FG）/FG_纤维丛理论.md 第 794 行<a class="headerlink" href="#s076-07-fgfg_md-794" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>FG物理机制层（同步算符比丛作用量更根本的论证、SU(5) 重组实现 ⇒ <span class="arithmatex">\(A_4\)</span> → 4 耦合常数 → <span class="arithmatex">\(\alpha^{-1}\)</span>）</p>
+</blockquote>
+<ul>
+<li>出处：<code>07 精细引力（FG）/FG_纤维丛理论.md</code> 字符 32983–33051 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s077-06-cqm__fgmd-9">S077 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 9 行<a class="headerlink" href="#s077-06-cqm__fgmd-9" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>第一性 <span class="arithmatex">\(T_c\)</span> 计算链（<code>CQM_超导核心理论.md</code> §11.10）通过本征值交叉 <span class="arithmatex">\(T_c=\frac{\theta_D}{2\,\mathrm{arccoth}(x)}\)</span> 建立前向预测框架，从Regge剖分→角亏→声子→涨落→Tc闭式，无数值拟合。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 303–432 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s078-06-cqm__fgmd-134">S078 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 134 行<a class="headerlink" href="#s078-06-cqm__fgmd-134" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>和乐平庸化的偏差即层级角亏</strong>：理想构型（和乐平庸）→ 实际构型（和乐非平庸）→ 非零角亏 → 激活下一层级的 FG。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 5911–5972 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s079-06-cqm__fgmd-296">S079 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 296 行<a class="headerlink" href="#s079-06-cqm__fgmd-296" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>电子 FG → 元素 FG</strong>：氢原子谱结构（<span class="arithmatex">\(n = N(\gamma_n)\)</span>，<span class="arithmatex">\(l\)</span> 分裂）→ 电子轨道量子数 → 元素嘉当矩阵的壳层条件 → <span class="arithmatex">\(\hat{\mathcal{S}}_{\text{el}}\)</span> 谱（Madelung 排布）。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 12488–12614 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s080-06-cqm__fgmd-297">S080 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 297 行<a class="headerlink" href="#s080-06-cqm__fgmd-297" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>元素 FG → 分子 FG</strong>：Madelung 排布 → 价壳层结构 → <span class="arithmatex">\(\mathcal{C}_{\text{el}}(k)\)</span> 块的成键对称性 + 跨原子耦合 <span class="arithmatex">\(T_{ij}\)</span> → <span class="arithmatex">\(\mathcal{C}_{\text{molecule}}\)</span> → <span class="arithmatex">\(\hat{\mathcal{S}}_{\text{mol}}\)</span> 谱（分子轨道 + 内禀角亏）。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 12615–12796 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s081-06-cqm__fgmd-298">S081 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 298 行<a class="headerlink" href="#s081-06-cqm__fgmd-298" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>分子 FG → 晶胞 FG</strong>：分子轨道谱（键型/键强）+ 内禀角亏 → 晶胞几何（链 A 键长键角来源）+ <span class="arithmatex">\(\mathcal{C}_{\text{unit\_cell}}\)</span>（链 B）→ <span class="arithmatex">\(\hat{\mathcal{S}}_{\text{super}}\)</span> → <span class="arithmatex">\(\lambda_n(T)\)</span> → <span class="arithmatex">\(T_c\)</span>。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 12797–12957 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s082-06-cqm__fgmd-345">S082 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 345 行<a class="headerlink" href="#s082-06-cqm__fgmd-345" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>本征值交叉路径 <span class="arithmatex">\(T_c=\frac{\theta_D}{2\,\mathrm{arccoth}(x)}\)</span> 构成纯第一性前向预测框架，从Regge剖分→角亏→声子→涨落→Tc闭式，不依赖<span class="arithmatex">\(\delta_v\)</span>反推。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 15283–15389 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s083-06-cqm__fgmd-367">S083 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 367 行<a class="headerlink" href="#s083-06-cqm__fgmd-367" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>其计算路径为：分子嘉当矩阵构造 → 点群判定 → 内禀角亏 → 完整 <span class="arithmatex">\(T_c\)</span> 前向预测（单元素材料以晶体配位数作有效原子数 <span class="arithmatex">\(n_{\text{eff}}\)</span>）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 16279–16361 ｜ 涉及缺口：— ｜ 状态词：构造</li>
+</ul>
+<h3 id="s084-06-cqm__fgmd-369">S084 · 06 超导/CQM_超导_FG层级同步算符体系.md 第 369 行<a class="headerlink" href="#s084-06-cqm__fgmd-369" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>无可用数值**。该判据的计算链（分子嘉当矩阵 → 点群判定 → 内禀角亏 → <span class="arithmatex">\(T_c\)</span> 前向预测）尚未实现于仓库，也不存在该判据的数值产物。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_FG层级同步算符体系.md</code> 字符 16370–16441 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s085-06-cqm__md-84">S085 · 06 超导/CQM_超导_专题与扩展.md 第 84 行<a class="headerlink" href="#s085-06-cqm__md-84" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>共振诱导退相干</strong>：拍频消失 → 叠加态自组织退相干到最低本征值分量 <span class="arithmatex">\(|U(1)//\mathbb{Z}_2\rangle\)</span>（最低同步成本）。这不是外部测量坍缩，是谱结构的内禀选择——频率匹配 → 相位可以锁定 → 退相干到最低频率。</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 3756–3878 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s086-06-cqm__md-122">S086 · 06 超导/CQM_超导_专题与扩展.md 第 122 行<a class="headerlink" href="#s086-06-cqm__md-122" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>这不是假设，是逻辑必然**——取消电子本体特权 → 能级不能是电子内禀性质 → 必须来自关系结构 → 关系结构的谱 = GL(5) 固定层级同步算符谱 = 黎曼零点。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 5761–5844 ｜ 涉及缺口：— ｜ 状态词：假设</li>
+</ul>
+<h3 id="s087-06-cqm__md-380">S087 · 06 超导/CQM_超导_专题与扩展.md 第 380 行<a class="headerlink" href="#s087-06-cqm__md-380" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(SU(5)\)</span> 发生学链条：前时空物质自组织→<span class="arithmatex">\(SU(5)\)</span>形成→前核子分化→<span class="arithmatex">\(SU(5)\)</span> 重组实现 ⇒ <span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span> → 电子/核子同时形成；</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 17759–17859 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s088-06-cqm__md-385">S088 · 06 超导/CQM_超导_专题与扩展.md 第 385 行<a class="headerlink" href="#s088-06-cqm__md-385" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(A_4 \to SO(3)\)</span> 涌现：<span class="arithmatex">\(A_4\)</span> 型→<span class="arithmatex">\(SU(5)\)</span>→<span class="arithmatex">\(SU(4) \cong SO(6)\)</span>→<span class="arithmatex">\(SO(3)_{\text{orbit}} \oplus SO(3)_{\text{spin}}\)</span>；</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 18184–18292 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s089-06-cqm__md-440">S089 · 06 超导/CQM_超导_专题与扩展.md 第 440 行<a class="headerlink" href="#s089-06-cqm__md-440" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>**核心思路：壳层条件 → 代数类型保持 → <span class="arithmatex">\(\delta\)</span> 的有效范围；SU(5) 重组实现动力学 → <span class="arithmatex">\(\delta(Z,N)\)</span> 的函数形式。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 22182–22256 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s090-06-cqm__md-703">S090 · 06 超导/CQM_超导_专题与扩展.md 第 703 行<a class="headerlink" href="#s090-06-cqm__md-703" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>氢化物高温超导根源 = 氢原子轻 → 零点涨落大 → 角亏涨落大 → <span class="arithmatex">\(T_c\)</span> 高</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 33314–33358 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s091-06-cqm__md-704">S091 · 06 超导/CQM_超导_专题与扩展.md 第 704 行<a class="headerlink" href="#s091-06-cqm__md-704" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>与 BCS 图像一致（氢轻 → 声子频率高 → <span class="arithmatex">\(T_c\)</span> 高），但 CQM 图像更直接：氢轻 → <span class="arithmatex">\(\Delta\delta_0\)</span> 大 → 同步算符本征值交叉 → <span class="arithmatex">\(T_c\)</span> 高</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 33359–33451 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s092-06-cqm__md-842">S092 · 06 超导/CQM_超导_专题与扩展.md 第 842 行<a class="headerlink" href="#s092-06-cqm__md-842" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>高各向同性（<span class="arithmatex">\(1/\kappa_A \approx 1\)</span>）→ 大修正 → 抑制 <span class="arithmatex">\(n_\gamma\)</span> → 降低 <span class="arithmatex">\(\gamma_n\)</span> → 降低 <span class="arithmatex">\(K_0\)</span> → 降低 <span class="arithmatex">\(T_c\)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 39274–39364 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s093-06-cqm__md-1010">S093 · 06 超导/CQM_超导_专题与扩展.md 第 1010 行<a class="headerlink" href="#s093-06-cqm__md-1010" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>轻材料（LaH₁₀: ≈5.0）显著提升n→γn→K₀→<span class="arithmatex">\(T_c\)</span>，物理正确。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 45572–45611 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s094-06-cqm__md-1074">S094 · 06 超导/CQM_超导_专题与扩展.md 第 1074 行<a class="headerlink" href="#s094-06-cqm__md-1074" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>基本粒子质量来自p 进大小耦合层级（<span class="arithmatex">\(m_e \propto |x|_5 = 5^{-v_5(x)}\)</span>，p 进赋值确定耦合层级，夸克→<span class="arithmatex">\(\mathbb{Q}_2\)</span>、电子→<span class="arithmatex">\(\mathbb{Q}_5\)</span>、中微子→<span class="arithmatex">\(\mathbb{Q}_3\)</span>），原子核质量主要来自QCD束缚能（<span class="arithmatex">\(M_n \approx \Lambda_{\text{QCD}} \cdot f(Q^2)\)</span>），有效质量来自能带结构（<span class="arithmatex">\(m^* = \hbar^2/(d^2E/dk^2)\)</span>）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 47796–48021 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s095-06-cqm__md-1162">S095 · 06 超导/CQM_超导_专题与扩展.md 第 1162 行<a class="headerlink" href="#s095-06-cqm__md-1162" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>本体论核心</strong>：物质先在 → 对称条件（嘉当矩阵）→ 空间+时间 → 存在+演化 → 坚持+分布+规律。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 52284–52338 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s096-06-cqm__md-1239">S096 · 06 超导/CQM_超导_专题与扩展.md 第 1239 行<a class="headerlink" href="#s096-06-cqm__md-1239" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><strong>惯性</strong>（QCD→核子质量 + p 进大小→<span class="arithmatex">\(m_e\)</span> + 能带→<span class="arithmatex">\(m^*\)</span>）：<span class="arithmatex">\(1/M_{\text{eff}}\)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 55933–55995 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s097-06-cqm__md-1321">S097 · 06 超导/CQM_超导_专题与扩展.md 第 1321 行<a class="headerlink" href="#s097-06-cqm__md-1321" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>分化树中运动分化为三重：惯性（QCD→原子核质量+p 进大小→电子质量+能带→有效质量）、能动张量（嘉当矩阵）、作用量（二阶层动力学）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 59614–59682 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s098-06-cqm__md-1446">S098 · 06 超导/CQM_超导_专题与扩展.md 第 1446 行<a class="headerlink" href="#s098-06-cqm__md-1446" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>其回归与预测精度数值无可复核产物。链条状态：环节1-2（材料→<span class="arithmatex">\(\Delta\delta_0\)</span>→<span class="arithmatex">\(G\)</span>）第一性，环节3（<span class="arithmatex">\(G, \theta_D, \gamma_{\text{cat}}\)</span>→<span class="arithmatex">\(K_{\text{eff}}\)</span>）第一性（<span class="arithmatex">\(\gamma_{\text{cat}}\)</span> 从 CQM 自然量确定；黎曼零点指数公式的拟合优度无可复核产物），环节4（<span class="arithmatex">\(K_{\text{eff}}\)</span>→<span class="arithmatex">\(T_c\)</span>）第一性。跃迁耦级 <span class="arithmatex">\(\Delta u_n = 2\ln n\)</span> 来自电荷量子化。自由能…</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 66670–66911 ｜ 涉及缺口：G18 ｜ 状态词：—</li>
+</ul>
+<h3 id="s099-06-cqm__md-1449">S099 · 06 超导/CQM_超导_专题与扩展.md 第 1449 行<a class="headerlink" href="#s099-06-cqm__md-1449" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>§11.2 四步推导（涨落温度依赖 <span class="arithmatex">\(\Delta\delta_v(T)=\Delta\delta_0\sqrt{\tanh(\hbar\Omega_0/2k_BT)}\)</span> → 资格条件筛选候选群族 → 路径积分丛作用量竞争 → 丛作用量交叉 <span class="arithmatex">\(F_1(T_c)=F_2(T_c)\)</span>），以丛作用量交叉表述 <span class="arithmatex">\(T_c\)</span>（不含独立“跃迁能级”假设），<span class="arithmatex">\(T_c=(E_2-E_1)/(S_2-S_1)\)</span>。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 68752–68950 ｜ 涉及缺口：G22、G18 ｜ 状态词：假设</li>
+</ul>
+<h3 id="s100-06-cqm__md-1465">S100 · 06 超导/CQM_超导_专题与扩展.md 第 1465 行<a class="headerlink" href="#s100-06-cqm__md-1465" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td><code>FirstPrinciples</code></td><td>§11.3 统计极限</td><td>A4→晶格声子→耦合→能隙→$T_c$；</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 69954–70007 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s101-06-cqm__md-1468">S101 · 06 超导/CQM_超导_专题与扩展.md 第 1468 行<a class="headerlink" href="#s101-06-cqm__md-1468" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td><code>MolecularGeometry</code></td><td>§2.5 晶胞路线</td><td>分子→晶胞嘉当矩阵（链B条件）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场强度</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 70164–70245 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s102-06-cqm__md-1470">S102 · 06 超导/CQM_超导_专题与扩展.md 第 1470 行<a class="headerlink" href="#s102-06-cqm__md-1470" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td><code>CouplingSpace</code></td><td>§12 主丛曲率机制</td><td>角亏→固有时流速→耦合动量 $p_u$→不确定性 $\Delta u\cdot\Delta\delta_v$→跃迁耦级谱 $2\ln n$ 与资格条件→丛作用量竞争；</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 70320–70434 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s103-06-cqm__md-1483">S103 · 06 超导/CQM_超导_专题与扩展.md 第 1483 行<a class="headerlink" href="#s103-06-cqm__md-1483" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>完全第一性 <span class="arithmatex">\(T_c\)</span> 计算链</strong>（§11.14）：10 环节计算链公式完整（元素→嘉当矩阵→...→<span class="arithmatex">\(T_c\)</span>）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 71087–71147 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s104-06-cqm__md-1486">S104 · 06 超导/CQM_超导_专题与扩展.md 第 1486 行<a class="headerlink" href="#s104-06-cqm__md-1486" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>最高</td><td>**共振机制：黎曼共振 → 同步共振 → 全局同步**（§11.6）。机制链：黎曼零点（质数分布共振频率）→ 同步算符本征值（共振体现）→ 叠加态拍频（退相干速率）→ 本征值交叉（拍频消失=同步共振）→ 共振诱导退相干（自组织到最低同步成本）→ Kuramoto 型共振传播（底空间联络传播相位相干）→ 全局同步超导相变。</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 72116–72284 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s105-06-cqm__md-1493">S105 · 06 超导/CQM_超导_专题与扩展.md 第 1493 行<a class="headerlink" href="#s105-06-cqm__md-1493" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>框架内构造性推导</strong>：<span class="arithmatex">\(SU(5)\)</span>发生学→电子/核子形成；<span class="arithmatex">\(A_4\)</span>型(<span class="arithmatex">\(SU(5)\)</span>)→壳层<span class="arithmatex">\(l=0,1,2,3\)</span>（由SU(5) Dynkin图深度严格推导）；<span class="arithmatex">\(SU(5)\supset SU(4)\)</span>→<span class="arithmatex">\(4\otimes4=10\oplus6\)</span>→p=6,d=10；<span class="arithmatex">\(SU(2)\)</span>自旋=<span class="arithmatex">\(SU(5)\)</span>重组实现产物→<span class="arithmatex">\(\times2\)</span>；</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 74106–74276 ｜ 涉及缺口：— ｜ 状态词：构造</li>
+</ul>
+<h3 id="s106-06-cqm__md-1516">S106 · 06 超导/CQM_超导_专题与扩展.md 第 1516 行<a class="headerlink" href="#s106-06-cqm__md-1516" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>RQM同时干掉电子实在论与庸俗反电子实在论 → 耦合常数涨落生效 → 能级非电子内禀性质而是关系网络同步结构 → GL(5) 固定层级同步算符谱 <span class="arithmatex">\(\{\gamma_n\}\)</span>。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 76368–76456 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s107-06-cqm__md-1517">S107 · 06 超导/CQM_超导_专题与扩展.md 第 1517 行<a class="headerlink" href="#s107-06-cqm__md-1517" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>从<span class="arithmatex">\(SU(5)\)</span>给出完整的构造性推导链。<span class="arithmatex">\(SU(5)\)</span>发生学（前时空物质自组织→<span class="arithmatex">\(SU(5)\)</span>⇒重组实现⇒<span class="arithmatex">\(U(1)\times SU(2)\times SU(3)\)</span>→电子/核子）；<span class="arithmatex">\(A_4\)</span>型(<span class="arithmatex">\(SU(5)\)</span>)→壳层<span class="arithmatex">\(l=0,1,2,3\)</span>（由SU(5) Dynkin图深度严格推导）；<span class="arithmatex">\(SU(5)\supset SU(4)\)</span>→<span class="arithmatex">\(4\otimes4=10\oplus6\)</span>→p=6,d=10；<span class="arithmatex">\(SU(2)\)</span>自旋=<span class="arithmatex">\(SU(5)\)</span>重组实现产物→<span class="arithmatex">\(\times2\)</span>；</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 76681–76910 ｜ 涉及缺口：— ｜ 状态词：构造</li>
+</ul>
+<h3 id="s108-06-cqm__md-1522">S108 · 06 超导/CQM_超导_专题与扩展.md 第 1522 行<a class="headerlink" href="#s108-06-cqm__md-1522" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(\Phi(L_{\text{orbital}})=V_{\text{角亏激活}}\)</span>（轨道→角亏），<span class="arithmatex">\(\Phi(N(\gamma_n))=\gamma_n\)</span>（计数→零点）。超导同步算符<span class="arithmatex">\(\hat{\mathcal{S}}_{\text{super}}=V_0+V_{\text{角亏激活}}(T)\)</span>，本征值<span class="arithmatex">\(\lambda_n(T)=\gamma_n-\frac{\beta^2\Delta\delta_v(T)^2(n^2-1)}{4n^2(1-\beta\delta_v)}\)</span>…</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 78384–78625 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s109-06-cqm__md-1523">S109 · 06 超导/CQM_超导_专题与扩展.md 第 1523 行<a class="headerlink" href="#s109-06-cqm__md-1523" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong><span class="arithmatex">\(T_c\)</span>计算链</strong>（§11.14）：10环节计算链（元素→嘉当矩阵→分子嘉当矩阵→原子分布→Regge剖分→角亏→曲率谱→声子谱→<span class="arithmatex">\(\theta_D\)</span>→角亏涨落→<span class="arithmatex">\(T_c\)</span>）。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 79224–79319 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s110-06-cqm__md-1536">S110 · 06 超导/CQM_超导_专题与扩展.md 第 1536 行<a class="headerlink" href="#s110-06-cqm__md-1536" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>CQM 超导理论的核心已经足够强：FG → 达到跃迁阈值 → 结构群叠加态 → 同步跃迁，这四个机制统一解释了从常规超导到高温超导再到多电子凝聚的现象。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_专题与扩展.md</code> 字符 81316–81392 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s111-06-cqm__md-181">S111 · 06 超导/CQM_超导_统一方法论.md 第 181 行<a class="headerlink" href="#s111-06-cqm__md-181" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>元素FG纤维丛构造：从Z→核子分布→结构群→主丛，无外部输入</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_统一方法论.md</code> 字符 4857–4889 ｜ 涉及缺口：— ｜ 状态词：构造</li>
+</ul>
+<h3 id="s112-06-cqm__md-291">S112 · 06 超导/CQM_超导_统一方法论.md 第 291 行<a class="headerlink" href="#s112-06-cqm__md-291" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>118个元素→核子分布→纤维丛→嘉当矩阵→Dynkin图→Regge剖分</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_统一方法论.md</code> 字符 7185–7223 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s113-06-cqm__md-296">S113 · 06 超导/CQM_超导_统一方法论.md 第 296 行<a class="headerlink" href="#s113-06-cqm__md-296" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>步骤A-F：剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导_统一方法论.md</code> 字符 7309–7343 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s114-06-cqm_md-10">S114 · 06 超导/CQM_超导核心理论.md 第 10 行<a class="headerlink" href="#s114-06-cqm_md-10" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>超导主丛联络-曲率-和乐机制的完整理论（本体论→底空间与结构群→主丛联络→曲率量子→固有时流速→不确定性→和乐量子化→资格条件→丛作用量竞争→伴丛同步→<span class="arithmatex">\(T_c\)</span>）。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 514–597 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s115-06-cqm_md-64">S115 · 06 超导/CQM_超导核心理论.md 第 64 行<a class="headerlink" href="#s115-06-cqm_md-64" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>RQM 唯物化的涌现链为：<strong>RQM（关系性实现前提）→ 主丛 <span class="arithmatex">\(P(M,G)\)</span>（既是关系性实现前提又是其结果）→ 自组织（因果锚定，关系性实现过程）→ 属性（自由度）实现</strong>。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 3705–3794 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s116-06-cqm_md-174">S116 · 06 超导/CQM_超导核心理论.md 第 174 行<a class="headerlink" href="#s116-06-cqm_md-174" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>**链 A**</td><td>核子 → 原子核 → 原子 → 分子 → 晶胞空间分布</td><td>实际几何：键长、键角、缺陷、晶界、向错</td><td>角亏各向异性 → 底空间 Regge 曲率谱</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 9619–9707 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s117-06-cqm_md-431">S117 · 06 超导/CQM_超导核心理论.md 第 431 行<a class="headerlink" href="#s117-06-cqm_md-431" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>正向链</strong>（晶胞量子振荡 → 候选群族 → 丛作用量竞争 → 主导群）：</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 23327–23365 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s118-06-cqm_md-630">S118 · 06 超导/CQM_超导核心理论.md 第 630 行<a class="headerlink" href="#s118-06-cqm_md-630" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>离散 GR）。六条物理条件：(1) 零温无角亏 → <span class="arithmatex">\(\lambda_n \to \gamma_n\)</span>；(2) 角亏涨落 → 降低同步成本；(3) 温度 → 升高同步成本；(4) <span class="arithmatex">\(n=1\)</span> → 无角亏修正；(5) <span class="arithmatex">\(\Delta\delta_0 = 0\)</span> → 不超导；(6) 大 <span class="arithmatex">\(n\)</span> → 高模受温度抑制更强。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 34682–34838 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s119-06-cqm_md-660">S119 · 06 超导/CQM_超导核心理论.md 第 660 行<a class="headerlink" href="#s119-06-cqm_md-660" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><span class="arithmatex">\(\Delta\delta_v\)</span> 增大 → 角亏项增大 → 分子增大 → <span class="arithmatex">\(\mathrm{arccoth}\)</span> 减小 → <span class="arithmatex">\(T_c\)</span> 升高（角亏涨落越大，<span class="arithmatex">\(T_c\)</span> 越高）</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 37074–37162 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s120-06-cqm_md-661">S120 · 06 超导/CQM_超导核心理论.md 第 661 行<a class="headerlink" href="#s120-06-cqm_md-661" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li><span class="arithmatex">\(\delta_v\)</span> 增大 → <span class="arithmatex">\(1-\beta\delta_v\)</span> 减小 → 角亏项增大 → <span class="arithmatex">\(T_c\)</span> 升高</li>
+</ul>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 37163–37220 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s121-06-cqm_md-795">S121 · 06 超导/CQM_超导核心理论.md 第 795 行<a class="headerlink" href="#s121-06-cqm_md-795" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>赝能隙</strong> = 和乐平庸化条件在空间上的不均匀通过：高曲率区（向错芯）闭合条件满足 → 局域条件满足，但全局跃迁尚未发生 → 系统处于“准备好了但还没有统一行动”的结构群叠加态 → 全局超导未形成。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 45892–45993 ｜ 涉及缺口：— ｜ 状态词：闭合</li>
+</ul>
+<h3 id="s122-06-cqm_md-799">S122 · 06 超导/CQM_超导核心理论.md 第 799 行<a class="headerlink" href="#s122-06-cqm_md-799" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>“晶胞量子振荡 → <span class="arithmatex">\(d\tau/dt\)</span> → 不确定性 → 跃迁耦级谱 → 资格条件 → 结构群叠加态（= 同步算符）本征值交叉 → 丛作用量竞争 → 超导”是不可再拆解的单一几何-动力学过程，其结构要点：</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 46066–46169 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s123-06-cqm_md-899">S123 · 06 超导/CQM_超导核心理论.md 第 899 行<a class="headerlink" href="#s123-06-cqm_md-899" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>主丛曲率机制</strong>：曲率涨落→固有时流速（两时间之比）→耦合动量→海森堡不确定性→跃迁耦级谱 <span class="arithmatex">\(\Delta u_n = 2\ln n\)</span>→资格条件筛选候选群族→结构群叠加态（= 同步算符）本征值交叉→丛作用量竞争选出主导群 <span class="arithmatex">\(\alpha\to n^2\alpha\)</span>→<span class="arithmatex">\(n\)</span> 体束缚态</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 48666–48812 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s124-06-cqm_md-904">S124 · 06 超导/CQM_超导核心理论.md 第 904 行<a class="headerlink" href="#s124-06-cqm_md-904" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li><strong>共振机制（退相干是子类自组织的表现）</strong>：黎曼零点 = 质数分布共振频率 → 同步算符本征值 = 共振频率 → 叠加态拍频决定退相干速率 → 本征值交叉 = 拍频消失 = 同步共振 → 共振诱导退相干（自组织到最低同步成本）→ Kuramoto 型共振传播（底空间联络传播相位相干）→ 全局同步超导相变。</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/CQM_超导核心理论.md</code> 字符 49345–49502 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s125-06-01_md-41">S125 · 06 超导/超导材料设计器/01_系统架构设计.md 第 41 行<a class="headerlink" href="#s125-06-01_md-41" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>元素周期表取原子 → 3D空间放置 → 右键结合连接 → 自动推导化学式 → 自动匹配超导家族模式 → 选择同位素 → 点击计算 → CQM超导判定</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/01_系统架构设计.md</code> 字符 886–960 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s126-06-03_md-10">S126 · 06 超导/超导材料设计器/03_超导判定算法.md 第 10 行<a class="headerlink" href="#s126-06-03_md-10" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>分子结构 → Step 1 嘉当矩阵组装 → Step 2 谱分析 → Step 3 固有时流速与角亏涨落</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/03_超导判定算法.md</code> 字符 64–117 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s127-06-03_md-11">S127 · 06 超导/超导材料设计器/03_超导判定算法.md 第 11 行<a class="headerlink" href="#s127-06-03_md-11" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>→ Step 4 主丛曲率判定 → Step 5 T_c 估算 → Step 6 序参量张量正性 → Step 7 超导判定</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/03_超导判定算法.md</code> 字符 118–180 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s128-06-05_md-25">S128 · 06 超导/超导材料设计器/05_元素嘉当矩阵参数化设计.md 第 25 行<a class="headerlink" href="#s128-06-05_md-25" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>示例</strong>：氢 (Z=1,N=0) → 4×4 纯 A₄；氦 (Z=2,N=2) → 16×16；镧 (Z=57,N=82) → 556×556。</p>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/05_元素嘉当矩阵参数化设计.md</code> 字符 614–688 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s129-06-readmemd-35">S129 · 06 超导/超导材料设计器/README.md 第 35 行<a class="headerlink" href="#s129-06-readmemd-35" title="Permanent link">&para;</a></h3>
+<table class="cqm-fragtbl"><tbody><tr><td>L3</td><td>晶胞</td><td>周期性堆积→Regge→嘉当→FG退相干场→CQM</td></tr></tbody></table>
+
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/README.md</code> 字符 793–832 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s130-06-readmemd-42">S130 · 06 超导/超导材料设计器/README.md 第 42 行<a class="headerlink" href="#s130-06-readmemd-42" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li>嘉当矩阵计算链：质子A₄ → 元素 → 分子 → 晶胞 → Regge</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/README.md</code> 字符 921–959 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h3 id="s131-06-readmemd-43">S131 · 06 超导/超导材料设计器/README.md 第 43 行<a class="headerlink" href="#s131-06-readmemd-43" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li>晶胞=Regge单元 → 离散角亏 → FG退相干场 → CQM超导</li>
+</ol>
+</blockquote>
+<ul>
+<li>出处：<code>06 超导/超导材料设计器/README.md</code> 字符 960–997 ｜ 涉及缺口：— ｜ 状态词：—</li>
+</ul>
+<h2 id="csv">断点清单（缺口，逐字取自 <code>缺口编号对照.csv</code>）<a class="headerlink" href="#csv" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">闭合状态</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">Lean</th>
+<th style="text-align: left;">所属分组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">退相干稳态为何恰好是 <span class="arithmatex">\(A_4\)</span>（正四单纯形）</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">耦合空间 → 双曲 Laplacian 的必要性</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G3</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat D=-i(\partial_u-1/2)\)</span> 的唯一性</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G4</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;"><span class="arithmatex">\(\hat D\to\hat H=\hat D^2+1/4\)</span> 的涌现</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G5</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">退相干 → 边界条件 <span class="arithmatex">\(\vartheta_n\)</span> 锁定（归属待裁定）</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G6</td>
+<td style="text-align: left;">占位</td>
+<td style="text-align: left;">未定义（占位）</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G7</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Sigma_{ij}\)</span> 的第一性数值来源</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G8</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">CP 破坏相位 <span class="arithmatex">\(\delta\)</span> 的严格来源</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">二、核心理论缺口（C / G2–G8）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G9</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">曲率截断共振窗口 <span class="arithmatex">\(\sigma\)</span> 来源与标定</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G10</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">闭环条件函数的动力学形式</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G11</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal D_{\text{lattice}}\)</span> 正四单纯形组合构型 → 声子谱</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G12</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">引力拓扑因子 <span class="arithmatex">\(\mathcal T_{\text{grav}}\)</span> 度规依赖</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G13</td>
+<td style="text-align: left;">闭合（Lean <code>bcsTcFromIntegral_solved</code>）</td>
+<td style="text-align: left;">BCS 积分 <span class="arithmatex">\(\tanh\to\)</span> 对数渐近</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G14</td>
+<td style="text-align: left;">闭合</td>
+<td style="text-align: left;">中子缺陷谱判据（<span class="arithmatex">\(\det D=8-3\delta^2\)</span>）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G15</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">主次结构谱间隙差 → 同位素效应映射</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G16</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">因果分辨率形式化（角亏密度 → Ricci 标量）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G18</td>
+<td style="text-align: left;">部分闭合</td>
+<td style="text-align: left;">主丛曲率机制关键参数第一性提取</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G19</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">和乐相位闭合 <span class="arithmatex">\(\approx1\)</span> 容差标定</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G21</td>
+<td style="text-align: left;">未闭合</td>
+<td style="text-align: left;">赝能隙相图 → ARPES/STM 映射</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">G22</td>
+<td style="text-align: left;">公式推导完成、严格性待提升</td>
+<td style="text-align: left;"><span class="arithmatex">\(T_c\)</span> 丛作用量交叉构造推导</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">三、超导涌现链缺口（G9–G22）</td>
+</tr>
+<tr>
+<td style="text-align: left;">N1</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">质量-谱映射 <span class="arithmatex">\(m\propto\lambda_{\min}\)</span> 待严格化</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">四、中子缺陷矩阵与 FG 角亏缺口（N1–N4）</td>
+</tr>
+<tr>
+<td style="text-align: left;">N2</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">角亏-<span class="arithmatex">\(\delta\)</span> 显式几何公式 <span class="arithmatex">\(\epsilon(\delta)\)</span> 缺失</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">四、中子缺陷矩阵与 FG 角亏缺口（N1–N4）</td>
+</tr>
+<tr>
+<td style="text-align: left;">N3</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;"><span class="arithmatex">\(\beta\)</span> 衰变动力学条件缺失</td>
+<td style="text-align: left;">——</td>
+<td style="text-align: left;">四、中子缺陷矩阵与 FG 角亏缺口（N1–N4）</td>
+</tr>
+<tr>
+<td style="text-align: left;">N4</td>
+<td style="text-align: left;">待证明</td>
+<td style="text-align: left;">氘核结合能精确推导</td>
+<td style="text-align: left;"><code>FGChain/</code>（多数模块不通过）</td>
+<td style="text-align: left;">四、中子缺陷矩阵与 FG 角亏缺口（N1–N4）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">口径说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>箭头（<code>→</code> / <code>⇒</code>）是<strong>原文写法</strong>，其含义（推导／分化／对应）由各文档自行界定，本页不统一。</li>
+<li>判据只认箭头：用文字推进的叙述会漏，并列对比可能被收入。</li>
+<li>「涉及缺口」由同句匹配得到，只提示该句谈到某缺口，<strong>不代表逻辑位置</strong>。</li>
+<li>跨缺口的阅读必须以缺口自身状态为前提，缺口状态见上表，未闭合项不得读作已成立。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 首页">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                首页
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="L001_%E7%AC%AC%E4%B8%80%E5%88%86%E5%86%8C_%E4%BB%8E%E9%97%AE%E9%A2%98%E5%88%B0%E9%93%BE%E6%9D%A1.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 第一分册：从问题到链条（四层深度）">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第一分册：从问题到链条（四层深度）
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="assets/backlinks.js"></script>
+      
+        <script src="assets/backlink-inject.js"></script>
+      
+        <script src="assets/cqm-glossary.js"></script>
+      
+        <script src="assets/cqm-depth.js"></script>
+      
+        <script src="assets/cqm-enhance.js"></script>
+      
+        <script src="assets/math-config.js"></script>
+      
+        <script src="assets/tex-svg.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

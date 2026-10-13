@@ -40,6 +40,15 @@ mjx-container > svg { display: inline-block; }
 }
 .vp-doc table th, .vp-doc table td { min-width: 5.5em; word-break: keep-all; overflow-wrap: anywhere; }
 .vp-doc table th:first-child, .vp-doc table td:first-child { white-space: nowrap; }
+/* 4b) 展开链「一步一读」：源自源文档表格行的逐字片段还原成的原表行。
+     内容应换行（不是横向滚动）、首列不做 nowrap（可能是整句），
+     用细分隔线而非默认粗边框，避免与正文数据表混淆。 */
+.vp-doc table.cqm-fragtbl { display: table; width: auto; max-width: 100%; margin: 0.4em 0 0.9em; }
+.vp-doc table.cqm-fragtbl td {
+  min-width: 0; padding: 3px 10px; vertical-align: top;
+  border: 1px solid var(--vp-c-divider); line-height: 1.7;
+}
+.vp-doc table.cqm-fragtbl td:first-child { white-space: normal; color: var(--vp-c-text-2); }
 /* 5) 锚点跳转：标题不被顶部导航遮挡，落点给一次高亮，便于定位 */
 .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 { scroll-margin-top: 84px; }
 .vp-doc :target { background: var(--vp-c-brand-soft); border-radius: 4px; }
@@ -66,3 +75,29 @@ mark.cqm-hl { background: #ffe58f; color: inherit; padding: 0 1px; border-radius
 .cqm-top[data-on="1"] { opacity: .92; pointer-events: auto; }
 .cqm-top:hover { background: var(--vp-c-brand-soft); }
 @media print { .cqm-progress, .cqm-top { display: none; } }
+/* 8+9) 全站符号与公式未知字符字体修正：
+      VitePress 默认栈把 emoji 字体排在 sans-serif 之前，后果：
+      ① ☯ / ✅ / ❌ 等「默认 emoji 表现」字符被渲染成彩色 emoji；
+      ② → / ⇒ 等箭头被 emoji 字体的粗黑字形接管（"箭头变普通版"）；
+      ③ MathJax SVG 对认识不了的字符（☯、	ext{} 内中文、中文标点）
+        以 <text font-family="serif"> 通用衬线回退，观感突兀。
+      处置：基础栈**剔除全部 emoji 字体**、显式补入 Segoe UI Symbol
+      （本机自带，含 ☯ / 卦符 / ⚠ 等单色字形）；公式内 <text> 同样覆盖。
+      @font-face + unicode-range 再加一道保险：即便前面某字体含 ☯，
+      也强制这几个码点走 Segoe UI Symbol 的单色形。
+      SVG presentation attribute 优先级低于任何 CSS 规则；
+      已知数学字形（path 绘制）不受影响。 */
+@font-face {
+  font-family: "CQM Symbols Mono";
+  src: local("Segoe UI Symbol");
+  unicode-range: U+262F, U+2630-2636;
+}
+:root {
+  --vp-font-family-base: "CQM Symbols Mono", "Punctuation SC", "Inter",
+    ui-sans-serif, system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2",
+    sans-serif !important;
+}
+mjx-container svg text {
+  font-family: "CQM Symbols Mono", "Punctuation SC", "Inter", ui-sans-serif,
+    system-ui, "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+}

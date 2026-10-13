@@ -425,9 +425,9 @@ const relHist=D.meta.rel_hist;
 const typeCount=Object.entries(D.concepts.reduce((a,c)=>(a[c.type]=(a[c.type]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]);
 const VIEWS=[
  ['ov','总览','系统规模与七维度'],
- ['con','概念','82 个概念 · 类型 / 派生深度'],
+ ['con','概念','81 个概念 · 类型 / 派生深度'],
  ['prop','命题与缺口','63 条命题 · 24 个缺口'],
- ['rel','关系与超边','19 超边 ⇒ · 51 有向边 →'],
+ ['rel','关系与超边','19 超边 ⇒ · 50 有向边 →'],
  ['lean','Lean 对接','68 模块 · 1388 声明'],
  ['dyn','动态机制','49 条规则 · 4 轮派生'],
  ['ev','证据','215 条断言 → 原文定位'],
@@ -487,11 +487,11 @@ const V=id=>el('v_'+id);
  +'<div class="grid g2"><div class="scroll"><table><thead><tr><th>ID</th><th>名称</th><th>类型</th><th>派生深度</th><th>定义</th><th>出处</th></tr></thead><tbody id="ctb"></tbody></table></div>'
  +'<div><div class="card"><h3>类型分布</h3><div id="cdonut"></div></div>'
  +'<div class="card" style="margin-top:14px"><h3>派生深度分布<em>种子 + 4 轮</em></h3><div id="cdepth"></div>'
- +'<div class="hint">深度由 <code>06_动态机制/仿真/derivation_order.csv</code> 复算：种子 44，第 1–4 轮依次新增 28 / 6 / 2 / 1，累计 81/82。</div></div></div></div>';
+ +'<div class="hint">深度由 <code>06_动态机制/仿真/derivation_order.csv</code> 复算：种子 44，第 1–4 轮依次新增 28 / 6 / 2 / 1，累计 80/81。</div></div></div></div>';
  const depthHist=[0,1,2,3,4].map(d=>({label:'深度 '+d,value:D.concepts.filter(c=>depth[c.concept_id]===d).length,color:['#38bdf8','#a78bfa','#f472b6','#34d399','#fbbf24'][d]}));
  depthHist.push({label:'未参与派生',value:D.concepts.filter(c=>depth[c.concept_id]===undefined).length,color:'#64748b'});
  el('cdonut').innerHTML=donut(typeCount.map(([t,n])=>({label:t,value:n,color:TYPE_COLOR[t]||'#888'})),{size:180,label:'概念',cls:'w-sm'});
- el('cdepth').innerHTML=hbars(depthHist,{w:300,lw:82,lh:20,cls:'w-md'});
+ el('cdepth').innerHTML=hbars(depthHist,{w:300,lw:81,lh:20,cls:'w-md'});
  function render(){
    const q=(el('cq').value||'').trim().toLowerCase(),t=el('ct').value,d=el('cd').value;
    const rows=D.concepts.filter(c=>{
@@ -573,7 +573,7 @@ const V=id=>el('v_'+id);
 /* ---------- 关系与超边 ---------- */
 {const rt=['全部'].concat([...new Set(D.args.map(a=>a.type))].sort());
  V('rel').innerHTML='<h2>论证 / 关系</h2><div class="grid g2">'
- +'<div class="card"><h3>关系类型<em>70 条</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})+'</div>'
+ +'<div class="card"><h3>关系类型<em>69 条</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})+'</div>'
  +'<div class="card"><h3>超边 ⇒ 明细<em>多因一果</em></h3><div class="scroll" style="max-height:260px"><table><thead><tr><th>ID</th><th>前件</th><th>后件</th></tr></thead><tbody>'
  +D.hypergraph.hyperedges.map(h=>'<tr><td><code>'+esc(h.id)+'</code></td><td>'+h.premises.map(p=>esc((CN[p]||{}).name||p)).join('、')+'</td><td>'+h.conclusion.map(c=>esc((CN[c]||{}).name||c)).join('、')+'</td></tr>').join('')
  +'</tbody></table></div></div></div>'
@@ -702,7 +702,7 @@ const V=id=>el('v_'+id);
  +'<div class="hint">源 CSV / JSON / OWL 见各维度目录；本页为派生呈现，源为唯一事实。</div></div></div>'
  +'<h2>快照</h2><div class="kpis">'+[['概念',m.nodes],['命题',m.props],['论证',m.args],['Lean 模块',m.modules],['Lean 声明',m.decls],['可达概念',m.reached+'/'+m.nodes]]
    .map(([k,v])=>'<div class="kpi"><b>'+v+'</b><span>'+k+'</span></div>').join('')+'</div>'
- +'<div class="note">形式化覆盖 F 仅 41/82（50.0%）；未覆盖概念不得视为已形式化。缺口状态未改动；贝叶斯 CPT 为占位。</div>';}
+ +'<div class="note">形式化覆盖 F 仅 40/81（49.4%）；未覆盖概念不得视为已形式化。缺口状态未改动；贝叶斯 CPT 为占位。</div>';}
 /* ---------- 全局检索 ---------- */
 {const box=el('gres'),inp=el('gq');
  function search(){

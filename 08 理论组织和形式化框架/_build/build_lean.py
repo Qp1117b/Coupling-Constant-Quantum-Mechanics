@@ -165,7 +165,7 @@ def main():
         ("CartanAlgebra", "cartanA4", "C053;C054;C055;C056", "P001;P017", "", "A₄ 嘉当矩阵、本征值精确表达式、Dynkin 指数比"),
         ("SpectralGeometry", "spectralQuantum", "C048;C047;C043;C044;C045;C046;C049", "P004;P015", "G002;G003;G004", "相变量子 ☯、Sierra-CQM 耦谱、黎曼 ξ、谱算符"),
         ("SpectralGeometry", "MathieuContinuedFraction", "C057", "P010", "G005", "Mathieu 临界 λ_c（连分数唯一根）"),
-        ("PrimeGeometry", "Basic", "C010", "P004", "", "质数前网络与因果时几何（多边形/弧段/位置）"),
+
         ("Decoherence", "Basic;DeepCoupling", "C008;C005;C006;C019", "P009;P011;P012", "", "退相干三层结构、跨层级深耦合与唯一性"),
         ("PhysicalConstants", "gn_spectral_formula", "C081", "P010;P032", "", "G_N 谱公式与 α⁻¹_SU(5)（构造后验数字校验，待独立复现）"),
         ("Methodology", "Basic", "C007", "P009;P022;P023", "", "涌现逻辑结构、庸俗隐变量分解对比（公理为主）"),
@@ -321,11 +321,11 @@ const mappedN=D.mapped_concepts.length,gapsN=new Set(D.mapping.flatMap(m=>gapSpl
 document.getElementById('stats').innerHTML=[
  ['模块数',D.modules.length],['声明总数',totalOf],
  ['theorem/lemma',thLike],['axiom（抽取）',D.kind_hist.axiom||0],
- ['映射概念',mappedN+'/82'],['缺口映射',gapsN+'/24']
+ ['映射概念',mappedN+'/81'],['缺口映射',gapsN+'/24']
 ].map(([k,v])=>'<div class="stat"><b>'+v+'</b><span>'+k+'</span></div>').join('');
 /* 覆盖率环 */
 (function(){
- const pct=mappedN/82,r=54,cx=74,cy=74,C=2*Math.PI*r,off=C*(1-mappedN/82);
+ const pct=mappedN/81,r=54,cx=74,cy=74,C=2*Math.PI*r,off=C*(1-mappedN/81);
  document.getElementById('ring').innerHTML=
  '<svg width="148" height="148" viewBox="0 0 148 148">'+
  '<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6fb5"/>'+
@@ -333,10 +333,10 @@ document.getElementById('stats').innerHTML=[
  '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="#e8eef6" stroke-width="16"/>'+
  '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="url(#g1)" stroke-width="16" stroke-linecap="round"'+
  ' stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 '+cx+' '+cy+')">'+
- '<title>映射概念 '+mappedN+'/82</title></circle>'+
- '<text x="'+cx+'" y="'+(cy+2)+'" text-anchor="middle" font-size="24" font-weight="600" fill="#2f6fb5" class="num">'+mappedN+'/82</text>'+
+ '<title>映射概念 '+mappedN+'/81</title></circle>'+
+ '<text x="'+cx+'" y="'+(cy+2)+'" text-anchor="middle" font-size="24" font-weight="600" fill="#2f6fb5" class="num">'+mappedN+'/81</text>'+
  '<text x="'+cx+'" y="'+(cy+22)+'" text-anchor="middle" font-size="11.5" fill="#5d6b7a">概念已映射 · '+(pct*100).toFixed(1)+'%</text></svg>'+
- '<div class="hint">映射源：<code>04_Lean对接/Lean↔概念映射.csv</code>（25 条）；<b>'+(mappedN===41?'计算值 41/82 与组织层 README 权威口径 41/82（50.0%）一致':'计算值 '+mappedN+'/82 与权威口径 41/82 不一致——以权威源为准')+'</b>。</div>';
+ '<div class="hint">映射源：<code>04_Lean对接/Lean↔概念映射.csv</code>（25 条）；<b>'+(mappedN===40?'计算值 40/81 与组织层 README 权威口径 40/81（49.4%）一致':'计算值 '+mappedN+'/81 与权威口径 40/81 不一致——以权威源为准')+'</b>。</div>';
 })();
 /* 声明构成条 */
 (function(){

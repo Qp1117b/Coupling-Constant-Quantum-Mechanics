@@ -23,6 +23,7 @@
 运行：python build_reader_site.py
 """
 import glob
+import html
 import io
 import json
 import os
@@ -384,6 +385,11 @@ LECT_DEPTH_FORCE = ["未闭合", "待证明", "axiom", "构造后验", "待独�
 LECT_DEPTH_FORCE_RE = r"缺口\s*[CGN]|[CG]\d{1,2}\b|N[1-4]\b|H3\.\d"
 ARROW_RE = re.compile(r"[→⇒]")
 CHAIN_MIN_ARROWS, CHAIN_MAX_SPAN = 3, 240
+# 行内公式区间（$$…$$ / $…$，不跨行）。片段切分时必须避开这些区间——
+# 否则回扫到的分隔符若落在公式里（例如 $m_e \propto |x|_5$ 中的那个 |，
+# 被当成表格竖线），切出来的片段就会以公式中段开头，$ 配不成对，
+# 于是后半段 $ 与下一段 $ 错配，导致 \mathbb{Q}_2 之类原样裸露、中文被当公式排。
+MATH_SPAN_RE = re.compile(r"\$\$[^$\n]+\$\$|\$[^$\n]+?\$")
 CHAIN_SOURCES = ["README.md", "01 核心理论", "02 量子引力", "03 引力与退相干",
                  "04 前沿研究", "05 方法论与批判", "06 超导", "07 精细引力（FG）"]
 STATE_WORDS = ["已证", "未闭合", "待证明", "假设", "构造", "axiom", "猜想", "占位", "闭合"]
@@ -405,10 +411,27 @@ def _esc(s):
 
 def _mathify(s):
     """卡片里的 $...$ / $$...$$ 转成 MathJax 认识的分隔符（页面正文由 arithmatex 处理，
-    但卡片是运行期动态插入的，MathJax 不再扫描，故在构建期转换）。"""
-    s = re.sub(r"\$\$(.+?)\$\$", r"\\[\1\\]", str(s or ""))
+    但卡片是运行期动态插入的，MathJax 不再扫描，故在构建期转换）。
+
+    另修一类**丢了定界符的公式片段**：证据引文由字符区间从 `$$…$$` 多行块里截出单行，
+    `$` 留在别的行（实测 `证据映射.csv` 7 条：如 `\\text{GL(5) 潜能先在}`）。这类文本
+    既无 `$` 可转，就直接裸露。判据保守——**无 `$`、花括号配平、且含确定属于公式的宏**
+    （\\text{}、\\xrightarrow、\\boxed 等）时，整段按行内公式排。定界符缺失+截断的
+    （花括号不配平）不动，交人工判定。
+    """
+    s = str(s or "")
+    s = re.sub(r"\$\$(.+?)\$\$", r"\\[\1\\]", s, flags=re.S)
     s = re.sub(r"\$(.+?)\$", r"\\(\1\\)", s)
+    if ("$" not in s and s.count("{") == s.count("}")
+            and _BARE_FORMULA_RE.search(s)):
+        s = "\\(" + s.strip() + "\\)"
     return s
+
+
+# 「确定属于公式」的宏白名单：只认整段确为公式片段的情形，避免把散文误当公式。
+_BARE_FORMULA_RE = re.compile(
+    r"\\text\{|\\xrightarrow|\\xRightarrow|\\boxed|\\frac|\\underbrace|"
+    r"\\mathrm\{|\\mathbb\{|\\Longrightarrow|\\longrightarrow")
 
 
 def collect_chain_steps(layer_of):
@@ -426,17 +449,45 @@ def collect_chain_steps(layer_of):
                 pos = [m.start() for m in ARROW_RE.finditer(line)]
                 if len(pos) >= CHAIN_MIN_ARROWS:
                     lo, hi = pos[0], pos[-1]
+                    spans = [(m.start(), m.end()) for m in MATH_SPAN_RE.finditer(line)]
+
+                    def _outside(i):
+                        return not any(a <= i < b for a, b in spans)
+
                     st = 0
+                    # 回扫最近的分隔符，但**跳过公式区间内**的命中（见 MATH_SPAN_RE 注释）。
+                    lim = max(lo - 20, 0)
                     for ch in ("，", "。", "|", "：", "；"):
-                        st = max(st, line.rfind(ch, 0, max(lo - 20, 0)) + 1)
+                        k = lim
+                        while k > 0:
+                            j = line.rfind(ch, 0, k)
+                            if j < 0:
+                                break
+                            if _outside(j):
+                                st = max(st, j + 1)
+                                break
+                            k = j
                     en = len(line)
                     for ch in ("。", "；", "|"):
-                        k = line.find(ch, hi + 1)
-                        if k > 0:
-                            en = min(en, k + 1)
-                    span = line[st:en].strip()
+                        k = hi + 1
+                        while k < len(line):
+                            j = line.find(ch, k)
+                            if j < 0:
+                                break
+                            if _outside(j):
+                                en = min(en, j + 1)
+                                break
+                            k = j + 1
+                    raw = line[st:en]
+                    lead = len(raw) - len(raw.lstrip())
+                    span = raw.strip()
                     if len(span) > CHAIN_MAX_SPAN:
-                        span = span[:CHAIN_MAX_SPAN].rstrip() + "…"
+                        cut = CHAIN_MAX_SPAN
+                        for a, b in spans:          # 切点若落在公式内 → 退到该公式之前
+                            if a - (st + lead) <= cut < b - (st + lead):
+                                cut = max(0, a - (st + lead))
+                                break
+                        span = span[:cut].rstrip() + "…"
                     out.append({
                         "doc": rel, "line": ln, "start": base + st, "end": base + st + len(span),
                         "text": span, "layer": layer_of.get(rel, 9),
@@ -605,7 +656,7 @@ def build_glossary(staged_map, steps):
                       "hs": " ".join([s, r.get("name") or "", r.get("latex") or "",
                                       r.get("value_or_note") or ""]).lower()})
 
-    # 论证卡：70 条重组实现/推导论证，含前件⇒后件与依据文档链接
+    # 论证卡：69 条重组实现/推导论证，含前件⇒后件与依据文档链接
     args = _csv(os.path.join(D01, "论证表.csv"))
     for r in args:
         aid = (r.get("arg_id") or "").strip()
@@ -643,6 +694,8 @@ def build_glossary(staged_map, steps):
         index.append({"ty": "文档", "tt": "%s %s" % (sid, title), "sb": "", "u": "./" + name[:-3] + ".html",
                       "dc": sid, "hs": (sid + " " + title).lower()})
 
+    # 索引副标题（sb）的呈现层规整统一在写 cqm-glossary.js 前做一次（见
+    # write_enhance_assets），此处不再处理；搜索命中仍用未清洗的 hs（逐字原文）。
     return {
         "terms": terms,
         "termKeys": sorted(set(term_keys)),
@@ -651,6 +704,123 @@ def build_glossary(staged_map, steps):
                    "text": h["text"], "states": h["states"], "gaps": h["gaps"]}
                   for i, h in enumerate(steps, 1)],
     }
+
+
+_SB_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+_SB_BULLET_RE = re.compile(r"^(?:[-+*]|\d+[.)])\s+")
+
+
+def _index_sb(text):
+    """索引副标题的呈现层规整：把逐字片段变成**一行纯文本摘要**。
+
+    · 表格行（数学区间之外有竖线）→ 还原为「列 ｜ 列」；
+    · 行内链接 → 取文字；去强调符 **、反引号；去列表序号；
+    · 去片段被字符窗口切断后残留的首尾竖线（表格行断头的痕迹）；
+    · **不做 HTML 转义**：消费方（术语总览卡、高级检索）各自 esc 后再交 MathJax，
+      故 $…$ 公式原样保留、可排版；长度由前端按可见字符在 $…$ 之外截断。
+    """
+    t = str(text or "")
+    cells = _frag_cells(t)
+    t = " ｜ ".join(cells) if cells else t
+    t = _SB_LINK_RE.sub(r"\1", t)
+    t = re.sub(r"\*\*|`", "", t)
+    t = _SB_BULLET_RE.sub("", t)
+    # 首尾竖线：只剩「空格 + 竖线」这种断头残留；行的首格是 |Ψ⟩ 这类 ket 时不误伤
+    t = re.sub(r"\s+\|+\s*$", "", t)
+    t = re.sub(r"^\s*\|+\s+(?=\S)", "", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+# ---------------------------------------------------------------- 逐字片段呈现
+# 展开链页把源文档的**逐字片段**直接呈现。片段里可能带源文档自带的 markdown
+# 语法：表格行（| a | b |）、行内链接（[x](y)）、以及 $…$ 公式。若原样落进
+# markdown，链接会被当成站内相对路径解析、表格行只剩裸露的竖线（读者看到像是
+# 「表格断行」）。故在**呈现层**做两件事，原文一字不动：
+#   · 表格行（数学区间之外有 ≥2 条竖线）→ 还原成一行原表，与源文档里该行的
+#     渲染形态一致（竖线本就是分列符，不是正文）；
+#   · 其余片段 → 逐个转义 markdown 元字符，但**只在数学区间之外**动：数学区间内
+#     的 |\psi\rangle、归一化竖线等一律不碰（旧实现全局把 | 换成 \|，把
+#     $|U(1)//\mathbb{Z}_2\rangle$ 改成了范数 $\|U(1)//…$，属渲染层引入的语意污染）。
+_FRAG_MATH_RE = re.compile(r'\$\$[\s\S]*?\$\$|\$[^$\n]+?\$')
+
+
+def _frag_segments(text):
+    """把片段切成 (子串, 是否数学区间) 序列，保持原序。"""
+    segs, last = [], 0
+    for m in _FRAG_MATH_RE.finditer(text):
+        if m.start() > last:
+            segs.append((text[last:m.start()], False))
+        segs.append((m.group(0), True))
+        last = m.end()
+    if last < len(text):
+        segs.append((text[last:], False))
+    if not segs:
+        segs.append((text, False))
+    return segs
+
+
+def _frag_plain(text):
+    """逐字片段 → 普通段落（转义方括号/竖线/>，数学区间原样保留）。"""
+    out = []
+    for seg, is_math in _frag_segments(text):
+        if is_math:
+            out.append(seg)
+        else:
+            out.append(seg.replace("[", "\\[").replace("]", "\\]")
+                          .replace("|", "\\|").replace(">", "\\>"))
+    return "".join(out)
+
+
+def _frag_cells(text):
+    """若片段是源文档的表格行则返回单元格列表，否则 None。
+
+    仅以「数学区间之外」的竖线分列；区间内竖线是 LaTeX 记号，不参与切分。
+    """
+    segs = _frag_segments(text)
+    store = []
+
+    def flat(seg, is_math):
+        if is_math:
+            store.append(seg)
+            return "\x00M%d\x00" % (len(store) - 1)
+        return seg
+
+    joined = "".join(flat(s, m) for s, m in segs)
+    # 阈值取 1：首尾单元格被字符窗口截掉的表格行只剩 1 条竖线；纯行尾/行首的
+    # 单条竖线会在下面「去空单元格」后被削成 1 格而归入普通片段。
+    if joined.count("|") < 1:
+        return None
+    cells = joined.split("|")
+    if cells and cells[0].strip() == "":
+        cells = cells[1:]
+    if cells and cells[-1].strip() == "":
+        cells = cells[:-1]
+    if len(cells) < 2:
+        return None
+
+    def back(c):
+        return re.sub(r"\x00M(\d+)\x00", lambda m: store[int(m.group(1))], c).strip()
+
+    return [back(c) for c in cells]
+
+
+def _frag_cell_html(cell):
+    """单元格 → 安全行内 HTML（数学区间交后续 protect_math → MathJax）。
+
+    只在数学区间之外做 HTML 转义、行内代码落 <code>；并把裸下划线写成 &#95;
+    ——下游 fix_cjk_bold 的 BARE_SUB_RE 会把裸 _ 转义成 \\_（在 markdown 里显示
+    _，但在 HTML 块里会露出反斜杠），故此处先按 HTML 实体固定住。
+    """
+    out = []
+    for seg, is_math in _frag_segments(cell):
+        if is_math:
+            out.append(seg)
+            continue
+        s = html.escape(seg, quote=False)                    # & < >
+        s = re.sub(r"`([^`]+)`", lambda m: "<code>%s</code>" % m.group(1), s)
+        s = s.replace("_", "&#95;")
+        out.append(s)
+    return "".join(out)
 
 
 def write_chain_page(steps, staged_map, gap_rows):
@@ -668,10 +838,14 @@ def write_chain_page(steps, staged_map, gap_rows):
             gn = "、".join(h["gaps"]) or "—"
             stt = "、".join(h["states"]) or "—"
             w("### S%03d · %s 第 %d 行\n\n" % (i, h["doc"], h["line"]))
-            # 逐字片段里可能自带 markdown 链接语法（源文档的表行），
-            # 转义方括号使其按字面显示，避免站点把源目录相对路径当链接解析。
-            lit = h["text"].replace("|", "\\|").replace("[", "\\[").replace("]", "\\]")
-            w("> %s\n\n" % lit.replace(">", "\\>"))
+            # 片段若源自表格行 → 还原成一行原表；否则按普通引用段呈现。
+            # （详见 _frag_* 帮助函数的说明：只做呈现层转义，原文不改。）
+            cells = _frag_cells(h["text"])
+            if cells:
+                w('<table class="cqm-fragtbl"><tbody><tr>%s</tr></tbody></table>\n\n'
+                  % "".join("<td>%s</td>" % _frag_cell_html(c) for c in cells))
+            else:
+                w("> %s\n\n" % _frag_plain(h["text"]))
             w("- 出处：`%s` 字符 %d–%d ｜ 涉及缺口：%s ｜ 状态词：%s\n\n" % (
                 h["doc"], h["cs"], h["ce"], gn, stt))
         w("## 断点清单（缺口，逐字取自 `缺口编号对照.csv`）\n\n")
@@ -691,6 +865,10 @@ def write_chain_page(steps, staged_map, gap_rows):
     return f
 
 
+# 讲稿分册排序键：单一事实源在 lecture_order.py（与审计工具共用，防码点序错位）
+from lecture_order import lecture_sort_key  # noqa: E402
+
+
 def stage_lectures():
     """把 一体化研究/展开链讲稿/ 的撰述稿 staged 进站（L001 起编号，L000 留给展开链页）。
 
@@ -700,7 +878,8 @@ def stage_lectures():
     out = []
     if not os.path.isdir(LECT_DIR):
         return out
-    for i, src in enumerate(sorted(glob.glob(os.path.join(LECT_DIR, "*.md"))), 1):
+    for i, src in enumerate(sorted(glob.glob(os.path.join(LECT_DIR, "*.md")),
+                                   key=lecture_sort_key), 1):
         stem = safe_name(os.path.basename(src)[:-3])   # safe_name 已带回 .md 后缀
         name = f"L{i:03d}_{stem}"
         with io.open(os.path.join(DOCS, name), "w", encoding="utf-8", newline="\n") as f:
@@ -782,6 +961,12 @@ def write_enhance_assets(staged_map, lectures=(), viz=()):
         gg["index"].append({"ty": "讲稿", "tt": head or lec["title"], "sb": quote,
                             "u": "./" + lec["file"][:-3] + ".html", "dc": lec["id"],
                             "hs": (head + " " + quote + " " + lec["title"] + " 展开链 讲稿 撰述").lower()})
+    # 索引副标题（sb）是给列表/术语总览卡/高级检索显示的一行摘要，逐字取自既有表、
+    # 展开链片段与讲稿导语，会带上源文档的 markdown 记号（表格行竖线、行内链接、
+    # 强调符 **、反引号、列表序号）。两个消费方都把它当**纯文本**插进 DOM，这些记号
+    # 会字面露出，故在写出前统一规整（见 _index_sb）；搜索命中仍用未清洗的 hs。
+    for it in gg["index"]:
+        it["sb"] = _index_sb(it.get("sb"))
     adir = os.path.join(DOCS, "assets")
     os.makedirs(os.path.join(adir, "stylesheets"), exist_ok=True)
     with io.open(os.path.join(adir, "cqm-glossary.js"), "w", encoding="utf-8", newline="\n") as f:
@@ -1377,7 +1562,7 @@ SITE_README = """# 阅读站（构建产物）
 | 功能 | 入口 | 说明 |
 |:--|:--|:--|
 | 全文检索 | 顶栏搜索框 | Material 内置（lunr + 官方 zh + 构建期 jieba 分词 + CQM 用户词典） |
-| **高级检索** | 顶栏「高级检索」按钮，或 `Ctrl/⌘ + K`、`/` | 结构化实体检索：概念 82 / 命题 / 缺口 24 / 符号 / 文档 / 展开链步；按分类筛选（facet）、结果高亮、`↑↓` 选择、`Enter` 打开；可一键「转到全文检索」 |
+| **高级检索** | 顶栏「高级检索」按钮，或 `Ctrl/⌘ + K`、`/` | 结构化实体检索：概念 81 / 命题 / 缺口 24 / 符号 / 文档 / 展开链步；按分类筛选（facet）、结果高亮、`↑↓` 选择、`Enter` 打开；可一键「转到全文检索」 |
 | **术语悬浮卡** | 正文中带蓝色虚线的术语 | 悬停/聚焦/点击弹出卡片：定义与**原文引文**（含出处文档、字符区间、置信度）逐字取自 `01_结构化数据/概念表.csv` 与 `00_外部引用/证据映射.csv` |
 | **缺口徽章** | 正文中的 `C` / `G*` / `N*` 编号 | 悬停显示该缺口的**闭合状态、描述、Lean 登记与所属分组**，状态原样呈现 |
 | **展开链（拉通阅读）** | 左侧导航第二项 | 由原文箭头链条句**逐字**汇总，按「文档层级 → 文档 → 行号」机械排序，附缺口断点清单 |

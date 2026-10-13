@@ -35,7 +35,12 @@ export default defineConfig({
   // 定界符，该公式只能以 LaTeX 原文裸露在页面上。
   // 这里在 emphasis 规则之前插入一条规则，把 $...$ / $$...$$ 整段取出、
   // 原样输出（只做 HTML 转义，不改内容），再由页面上的 MathJax 排版。
+  // attrs.disable：VitePress 默认启用 markdown-it-attrs，会把块/单元格末尾的
+  // {...} 当属性块吞掉（实测 D019 表格「重数 {1,4,5}」整段消失、<td> 里
+  // 多出畸形属性 1,4,5=""）。CQM 语料零有意属性用法（{.class}/{: ...} 扫描
+  // 为 0），直接关闭，保文本原样。
   markdown: {
+    attrs: { disable: true },
     config(md) {
       const DOLLAR = 0x24, BACKSLASH = 0x5c
       const isDollar = (c) => c === DOLLAR
@@ -78,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261013084456' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261013084456' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261013084456' }],
-    ['script', { src: '/cqm-glossary.js?v=20261013084456' }],
-    ['script', { src: '/cqm-depth.js?v=20261013084456' }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261013084456' }],
-    ['script', { src: '/lean-page.js?v=20261013084456', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261013084456', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261013084456' }],
-    ['script', { src: '/tex-svg.js?v=20261013084456', async: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261014063815' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261014063815' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261014063815' }],
+    ['script', { src: '/cqm-glossary.js?v=20261014063815' }],
+    ['script', { src: '/cqm-depth.js?v=20261014063815' }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261014063815' }],
+    ['script', { src: '/lean-page.js?v=20261014063815', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261014063815', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261014063815' }],
+    ['script', { src: '/tex-svg.js?v=20261014063815', async: true }]
   ],
   themeConfig: {
     nav: [
@@ -140,6 +145,22 @@ export default defineConfig({
       {
         "text": "展开链讲稿 · 第二分册：统一体怎么自组装，α 从哪里来",
         "link": "/L002_第二分册_统一体自组装与α"
+      },
+      {
+        "text": "展开链讲稿 · 第三分册：谱方程与黎曼零点（Sierra-CQM 耦谱定理）",
+        "link": "/L003_第三分册_谱方程与黎曼零点"
+      },
+      {
+        "text": "展开链讲稿 · 第四分册：超导涌现链（跃迁耦级谱与自由能竞争）",
+        "link": "/L004_第四分册_超导涌现链"
+      },
+      {
+        "text": "展开链讲稿 · 第五分册：与标准理论的关系与涨落伴丛",
+        "link": "/L005_第五分册_与标准理论的关系与涨落伴丛"
+      },
+      {
+        "text": "展开链讲稿 · 第六分册：量纲发生学专章（K 家族与自守形式猜想）",
+        "link": "/L006_第六分册_量纲发生学专章"
       }
     ]
   },
@@ -167,7 +188,7 @@ export default defineConfig({
         "link": "/D009_量纲与群论"
       },
       {
-        "text": "唯物主义群论：$\\mathrm{Sym}\\supset\\mathrm{Diff}\\supset GL(n,\\mathbb{F})$ 三层结构、群约束性分类与不变性",
+        "text": "唯物主义群论：Sym ⊃ Diff ⊃ GL(n,𝔽) 三层结构、群约束性分类与不变性",
         "link": "/D010_唯物主义群论"
       },
       {
@@ -175,7 +196,7 @@ export default defineConfig({
         "link": "/D011_声子理论"
       },
       {
-        "text": "CQM核心：共形场论与OPE——同步$⊗$耦合→群的数学基础",
+        "text": "CQM核心：共形场论与OPE——同步 ⊗ 耦合 → 群的数学基础",
         "link": "/D012_共形场论与OPE"
       }
     ]
@@ -193,7 +214,7 @@ export default defineConfig({
     "text": "引力与退相干",
     "items": [
       {
-        "text": "CQM 牛顿引力常数 $G\\_N$ 的可能公式",
+        "text": "CQM 牛顿引力常数 G_N 的可能公式",
         "link": "/D014_GN可能公式"
       },
       {
@@ -218,7 +239,7 @@ export default defineConfig({
         "link": "/D018_待推1边界条件"
       },
       {
-        "text": "$G\\_N$ 第一性推导：公理化证明稿",
+        "text": "G_N 第一性推导：公理化证明稿",
         "link": "/D019_GN第一性推导公理化"
       },
       {
@@ -226,7 +247,7 @@ export default defineConfig({
         "link": "/D020_质量研究思路汇总"
       },
       {
-        "text": "Wyler 常数的 $A\\_4$ 群论分解与 CQM 框架嵌入",
+        "text": "Wyler 常数的 A_4 群论分解与 CQM 框架嵌入",
         "link": "/D021_Wyler常数"
       },
       {

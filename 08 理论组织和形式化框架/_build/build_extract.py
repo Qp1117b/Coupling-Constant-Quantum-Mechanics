@@ -4,7 +4,7 @@
 
 目标：把"人工策展"升级为**可复现、可评测**的抽取层，且不越红线——
   · 抽出的新术语只进「候选池」，**不得**写入概念表；
-  · 关系抽取只在原文既有表述内定位，输出候选并**以 70 条人工论证表为金标准算 P/R/F1**；
+  · 关系抽取只在原文既有表述内定位，输出候选并**以 69 条人工论证表为金标准算 P/R/F1**；
   · 语义特征完全由本语料自训练（TF-IDF），不引入任何外部模型或理论外知识。
 
 方法与主流一致：
@@ -286,7 +286,7 @@ def main():
         "typed_candidates_on_gold_pairs": len(typed),
         "recall_ceiling_sentence_cooccurrence": round(ceiling, 3),
         "recall_vs_ceiling": round(recall_unord / max(1e-9, ceiling), 3),
-        "note": "金标准 = 人工论证表（70 条，含多前件超边展开）。**分层候选**：pattern 层（两端间有关系线索词，"
+        "note": "金标准 = 人工论证表（69 条，含多前件超边展开）。**分层候选**：pattern 层（两端间有关系线索词，"
                 "类型可推断）与 cooccur 层（仅同句共现，类型标『未定』，交人工/LLM 定型）。"
                 "配对召回的物理上界 = 金标准两端在原文同句共现的比例；"
                 f"cooccur 层按无向配对计的召回 / 上界 = {recall_unord/max(1e-9,ceiling):.0%}。"
