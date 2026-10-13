@@ -238,65 +238,65 @@
 {"doc_id": "D001", "sid": 237, "start": 26758, "end": 26777, "kind": "prose", "text": "核心文献参见各专题文档的参考文献章节。"}
 {"doc_id": "D001", "sid": 238, "start": 26777, "end": 26827, "kind": "prose", "text": "CNT 完整研究已发布于 Zenodo: DOI: 10.5281/zenodo.20804380。"}
 {"doc_id": "D002", "sid": 0, "start": 0, "end": 16, "kind": "heading", "text": "# CQMFormal 项目规范"}
-{"doc_id": "D002", "sid": 1, "start": 18, "end": 62, "kind": "quote", "text": "> 本文件是 AI 协作代理的项目级规范，对齐 `一体化研究/科研AI全栈方案.md`。"}
-{"doc_id": "D002", "sid": 2, "start": 62, "end": 75, "kind": "quote", "text": "所有 Agent 须遵守。"}
-{"doc_id": "D002", "sid": 3, "start": 76, "end": 135, "kind": "quote", "text": "> 详细规则已分片为**按需加载技能**（见 §三）；本文件只保留三条红线、权威源、目录约定、Git 规则与验证入口。"}
-{"doc_id": "D002", "sid": 4, "start": 137, "end": 146, "kind": "heading", "text": "## 一、三条红线"}
-{"doc_id": "D002", "sid": 5, "start": 148, "end": 159, "kind": "table", "text": "| 红线 | 含义 |"}
-{"doc_id": "D002", "sid": 6, "start": 160, "end": 171, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D002", "sid": 7, "start": 172, "end": 223, "kind": "table", "text": "| **不欺骗** | 不得用 `axiom` / 定义式证明 / 占位 `def` 冒充已证结论 |"}
-{"doc_id": "D002", "sid": 8, "start": 224, "end": 281, "kind": "table", "text": "| **不绕过** | 不得跳过未闭合缺口（C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 等） |"}
-{"doc_id": "D002", "sid": 9, "start": 282, "end": 320, "kind": "table", "text": "| **不虚构** | 不得引入 CQM 未涉及的观点、术语、数值、文献 |"}
-{"doc_id": "D002", "sid": 10, "start": 322, "end": 332, "kind": "heading", "text": "## 二、语言与回复"}
-{"doc_id": "D002", "sid": 11, "start": 334, "end": 347, "kind": "list", "text": "- 始终使用简体中文回复。"}
-{"doc_id": "D002", "sid": 12, "start": 348, "end": 375, "kind": "list", "text": "- 不加入理论自身未涉及的观点，严格遵守现有理论框架。"}
-{"doc_id": "D002", "sid": 13, "start": 377, "end": 392, "kind": "heading", "text": "## 三、技能索引（按需加载）"}
-{"doc_id": "D002", "sid": 14, "start": 394, "end": 441, "kind": "prose", "text": "细则见 `.trae/skills/`，由客户端按 `description` 自动匹配加载；"}
-{"doc_id": "D002", "sid": 15, "start": 441, "end": 460, "kind": "prose", "text": "不支持自动发现的客户端按本表手动读取。"}
-{"doc_id": "D002", "sid": 16, "start": 462, "end": 480, "kind": "table", "text": "| 技能 | 何时加载 | 文件 |"}
-{"doc_id": "D002", "sid": 17, "start": 481, "end": 497, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D002", "sid": 18, "start": 498, "end": 612, "kind": "table", "text": "| `cqm-doc-review` | 修改 `01–07` 活动文档、`归档/` 文档、`README.md` 或 `一体化研究/附录/` | `.trae/skills/cqm-doc-review/SKILL.md` |"}
-{"doc_id": "D002", "sid": 19, "start": 613, "end": 710, "kind": "table", "text": "| `cqm-symbol-typesetting` | 写入或修改含公式、表格、符号的文本 | `.trae/skills/cqm-symbol-typesetting/SKILL.md` |"}
-{"doc_id": "D002", "sid": 20, "start": 711, "end": 825, "kind": "table", "text": "| `cqm-lean-audit` | 改动 `08 理论组织和形式化框架/04_Lean对接/Lean源码/` 下文件，或提交前复核禁止项 | `.trae/skills/cqm-lean-audit/SKILL.md` |"}
-{"doc_id": "D002", "sid": 21, "start": 826, "end": 941, "kind": "table", "text": "| `cqm-consistency-check` | 概念/命题/论证有增改，或改动 `08 理论组织和形式化框架/` 任一产物 | `.trae/skills/cqm-consistency-check/SKILL.md` |"}
-{"doc_id": "D002", "sid": 22, "start": 943, "end": 977, "kind": "prose", "text": "技能内容只是既有规则的**按需分片**，不含新规则、新观点、新数值。"}
-{"doc_id": "D002", "sid": 23, "start": 979, "end": 992, "kind": "heading", "text": "## 四、权威源与必须保留"}
-{"doc_id": "D002", "sid": 24, "start": 994, "end": 1057, "kind": "list", "text": "1. **权威源**：`README.md` 符号约定与数值表 > 各概念权威定义处 > 文件首现定义 > 全库词频多数写法。"}
-{"doc_id": "D002", "sid": 25, "start": 1058, "end": 1135, "kind": "list", "text": "2. **必须保留**：`缺口`、`未解决`、`待推`、`构造后验数字校验`、`待第三方复现` 及全部缺口编号（C/G2–G8、G9–G22、N1–N4；"}
-{"doc_id": "D002", "sid": 26, "start": 1135, "end": 1143, "kind": "list", "text": "G6 未定义）。"}
-{"doc_id": "D002", "sid": 27, "start": 1144, "end": 1199, "kind": "list", "text": "3. **$G_N$ 限定语**：凡出现 $G_N$ 数值或偏差之处，必须带\"构造后验数字校验，待独立复现\"。"}
-{"doc_id": "D002", "sid": 28, "start": 1200, "end": 1237, "kind": "list", "text": "4. **数值不改**：除非与权威定义处矛盾（此时改为权威值并注明依据）。"}
-{"doc_id": "D002", "sid": 29, "start": 1239, "end": 1248, "kind": "heading", "text": "## 五、目录约定"}
-{"doc_id": "D002", "sid": 30, "start": 1250, "end": 1309, "kind": "table", "text": "| 目录               | 说明           | 修改规则                  |"}
-{"doc_id": "D002", "sid": 31, "start": 1310, "end": 1369, "kind": "table", "text": "| :--------------- | :----------- | :-------------------- |"}
-{"doc_id": "D002", "sid": 32, "start": 1370, "end": 1429, "kind": "table", "text": "| `01–07` 各主题      | 活动文档         | 审校范围内                 |"}
-{"doc_id": "D002", "sid": 33, "start": 1430, "end": 1489, "kind": "table", "text": "| `归档/`            | 归档文档（非 CNT）  | 审校范围内                 |"}
-{"doc_id": "D002", "sid": 34, "start": 1490, "end": 1549, "kind": "table", "text": "| `归档/归档 CNT/`     | 归档不修改        | **禁止修改**              |"}
-{"doc_id": "D002", "sid": 35, "start": 1550, "end": 1625, "kind": "table", "text": "| `08 理论组织和形式化框架/` | 结构化/形式化组织层 | 遵循其目录级 `AGENTS.md`（七维度闭环）；外部文本不动、缺口状态不改 |"}
-{"doc_id": "D002", "sid": 36, "start": 1626, "end": 1704, "kind": "table", "text": "| `08 理论组织和形式化框架/04_Lean对接/Lean源码/` | Lean 4 源码      | 修复须全量 `lake build` 验证 |"}
-{"doc_id": "D002", "sid": 37, "start": 1705, "end": 1764, "kind": "table", "text": "| `一体化研究/附录/`      | 术语表、缺口台账     | 与文档/Lean 同步更新         |"}
-{"doc_id": "D002", "sid": 38, "start": 1765, "end": 1824, "kind": "table", "text": "| `.trae/skills/`  | 按需加载技能（TRAE 项目技能目录） | 与根规范同步；只分片既有规则 |"}
-{"doc_id": "D002", "sid": 39, "start": 1825, "end": 1898, "kind": "table", "text": "| `mcp/`           | 只读知识 MCP server（读 `08 .../01_结构化数据/`） | 只读；不得回写源数据 |"}
-{"doc_id": "D002", "sid": 40, "start": 1899, "end": 1958, "kind": "table", "text": "| `.workbuddy/`    | 审校基准、变更日志、记忆 | 不入库                   |"}
-{"doc_id": "D002", "sid": 41, "start": 1960, "end": 1971, "kind": "heading", "text": "## 六、Git 规则"}
-{"doc_id": "D002", "sid": 42, "start": 1973, "end": 1993, "kind": "list", "text": "- **禁止** `git pull`。"}
-{"doc_id": "D002", "sid": 43, "start": 1994, "end": 2015, "kind": "list", "text": "- 提交前须先检查引用/论述/排版/格式。"}
-{"doc_id": "D002", "sid": 44, "start": 2016, "end": 2071, "kind": "list", "text": "- `git push` 失败时：`export no_proxy=\"\" && git push` 绕过代理；"}
-{"doc_id": "D002", "sid": 45, "start": 2071, "end": 2095, "kind": "list", "text": "非快进用 `git push --force`。"}
-{"doc_id": "D002", "sid": 46, "start": 2096, "end": 2109, "kind": "list", "text": "- 临时工具脚本不得提交。"}
-{"doc_id": "D002", "sid": 47, "start": 2110, "end": 2130, "kind": "list", "text": "- 仅 CRLF 变化的文件不纳入提交。"}
-{"doc_id": "D002", "sid": 48, "start": 2131, "end": 2193, "kind": "list", "text": "- `.workbuddy/`、`.codeartsdoer/`、`.arts/` 已在 `.gitignore`，不入库。"}
-{"doc_id": "D002", "sid": 49, "start": 2195, "end": 2204, "kind": "heading", "text": "## 七、验证命令"}
-{"doc_id": "D002", "sid": 50, "start": 2206, "end": 2213, "kind": "code", "text": "```bash"}
-{"doc_id": "D002", "sid": 51, "start": 2214, "end": 2262, "kind": "code", "text": "# Lean 编译验证（在 08 理论组织和形式化框架/04_Lean对接/Lean源码/ 下）"}
-{"doc_id": "D002", "sid": 52, "start": 2263, "end": 2273, "kind": "code", "text": "lake build"}
-{"doc_id": "D002", "sid": 53, "start": 2274, "end": 2274, "kind": "code", "text": ""}
-{"doc_id": "D002", "sid": 54, "start": 2275, "end": 2311, "kind": "code", "text": "# 组织层一致性（概念/命题/论证有增改，或改动 08 任一产物时必跑）"}
-{"doc_id": "D002", "sid": 55, "start": 2312, "end": 2362, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_consistency.py\""}
-{"doc_id": "D002", "sid": 56, "start": 2363, "end": 2366, "kind": "code", "text": "```"}
-{"doc_id": "D002", "sid": 57, "start": 2368, "end": 2492, "kind": "list", "text": "- **文档一致性**：按 `.trae/skills/cqm-doc-review` 与 `.trae/skills/cqm-symbol-typesetting` 复核（禁用词、术语变体、`$` 成对、失效链接、`⇒` 误用、缺口标注完整性）。"}
-{"doc_id": "D002", "sid": 58, "start": 2493, "end": 2548, "kind": "list", "text": "- **Lean 严谨性**：按 `.trae/skills/cqm-lean-audit` 复核禁止项候选。"}
-{"doc_id": "D002", "sid": 59, "start": 2549, "end": 2593, "kind": "list", "text": "- **复现性**：按 `一体化研究/科研AI全栈方案.md` §8.3 清单逐项核对。"}
+{"doc_id": "D002", "sid": 1, "start": 18, "end": 65, "kind": "quote", "text": "> 本文件是 AI 协作代理的项目级规范，对齐 `归档/一体化研究/科研AI全栈方案.md`。"}
+{"doc_id": "D002", "sid": 2, "start": 65, "end": 78, "kind": "quote", "text": "所有 Agent 须遵守。"}
+{"doc_id": "D002", "sid": 3, "start": 79, "end": 138, "kind": "quote", "text": "> 详细规则已分片为**按需加载技能**（见 §三）；本文件只保留三条红线、权威源、目录约定、Git 规则与验证入口。"}
+{"doc_id": "D002", "sid": 4, "start": 140, "end": 149, "kind": "heading", "text": "## 一、三条红线"}
+{"doc_id": "D002", "sid": 5, "start": 151, "end": 162, "kind": "table", "text": "| 红线 | 含义 |"}
+{"doc_id": "D002", "sid": 6, "start": 163, "end": 174, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D002", "sid": 7, "start": 175, "end": 226, "kind": "table", "text": "| **不欺骗** | 不得用 `axiom` / 定义式证明 / 占位 `def` 冒充已证结论 |"}
+{"doc_id": "D002", "sid": 8, "start": 227, "end": 284, "kind": "table", "text": "| **不绕过** | 不得跳过未闭合缺口（C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 等） |"}
+{"doc_id": "D002", "sid": 9, "start": 285, "end": 323, "kind": "table", "text": "| **不虚构** | 不得引入 CQM 未涉及的观点、术语、数值、文献 |"}
+{"doc_id": "D002", "sid": 10, "start": 325, "end": 335, "kind": "heading", "text": "## 二、语言与回复"}
+{"doc_id": "D002", "sid": 11, "start": 337, "end": 350, "kind": "list", "text": "- 始终使用简体中文回复。"}
+{"doc_id": "D002", "sid": 12, "start": 351, "end": 378, "kind": "list", "text": "- 不加入理论自身未涉及的观点，严格遵守现有理论框架。"}
+{"doc_id": "D002", "sid": 13, "start": 380, "end": 395, "kind": "heading", "text": "## 三、技能索引（按需加载）"}
+{"doc_id": "D002", "sid": 14, "start": 397, "end": 444, "kind": "prose", "text": "细则见 `.trae/skills/`，由客户端按 `description` 自动匹配加载；"}
+{"doc_id": "D002", "sid": 15, "start": 444, "end": 463, "kind": "prose", "text": "不支持自动发现的客户端按本表手动读取。"}
+{"doc_id": "D002", "sid": 16, "start": 465, "end": 483, "kind": "table", "text": "| 技能 | 何时加载 | 文件 |"}
+{"doc_id": "D002", "sid": 17, "start": 484, "end": 500, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D002", "sid": 18, "start": 501, "end": 623, "kind": "table", "text": "| `cqm-doc-review` | 修改 `01–07` 活动文档、`归档/` 文档、`README.md` 或 `08 理论组织和形式化框架/附录/` | `.trae/skills/cqm-doc-review/SKILL.md` |"}
+{"doc_id": "D002", "sid": 19, "start": 624, "end": 721, "kind": "table", "text": "| `cqm-symbol-typesetting` | 写入或修改含公式、表格、符号的文本 | `.trae/skills/cqm-symbol-typesetting/SKILL.md` |"}
+{"doc_id": "D002", "sid": 20, "start": 722, "end": 836, "kind": "table", "text": "| `cqm-lean-audit` | 改动 `08 理论组织和形式化框架/04_Lean对接/Lean源码/` 下文件，或提交前复核禁止项 | `.trae/skills/cqm-lean-audit/SKILL.md` |"}
+{"doc_id": "D002", "sid": 21, "start": 837, "end": 952, "kind": "table", "text": "| `cqm-consistency-check` | 概念/命题/论证有增改，或改动 `08 理论组织和形式化框架/` 任一产物 | `.trae/skills/cqm-consistency-check/SKILL.md` |"}
+{"doc_id": "D002", "sid": 22, "start": 954, "end": 988, "kind": "prose", "text": "技能内容只是既有规则的**按需分片**，不含新规则、新观点、新数值。"}
+{"doc_id": "D002", "sid": 23, "start": 990, "end": 1003, "kind": "heading", "text": "## 四、权威源与必须保留"}
+{"doc_id": "D002", "sid": 24, "start": 1005, "end": 1068, "kind": "list", "text": "1. **权威源**：`README.md` 符号约定与数值表 > 各概念权威定义处 > 文件首现定义 > 全库词频多数写法。"}
+{"doc_id": "D002", "sid": 25, "start": 1069, "end": 1146, "kind": "list", "text": "2. **必须保留**：`缺口`、`未解决`、`待推`、`构造后验数字校验`、`待第三方复现` 及全部缺口编号（C/G2–G8、G9–G22、N1–N4；"}
+{"doc_id": "D002", "sid": 26, "start": 1146, "end": 1154, "kind": "list", "text": "G6 未定义）。"}
+{"doc_id": "D002", "sid": 27, "start": 1155, "end": 1210, "kind": "list", "text": "3. **$G_N$ 限定语**：凡出现 $G_N$ 数值或偏差之处，必须带\"构造后验数字校验，待独立复现\"。"}
+{"doc_id": "D002", "sid": 28, "start": 1211, "end": 1248, "kind": "list", "text": "4. **数值不改**：除非与权威定义处矛盾（此时改为权威值并注明依据）。"}
+{"doc_id": "D002", "sid": 29, "start": 1250, "end": 1259, "kind": "heading", "text": "## 五、目录约定"}
+{"doc_id": "D002", "sid": 30, "start": 1261, "end": 1320, "kind": "table", "text": "| 目录               | 说明           | 修改规则                  |"}
+{"doc_id": "D002", "sid": 31, "start": 1321, "end": 1380, "kind": "table", "text": "| :--------------- | :----------- | :-------------------- |"}
+{"doc_id": "D002", "sid": 32, "start": 1381, "end": 1440, "kind": "table", "text": "| `01–07` 各主题      | 活动文档         | 审校范围内                 |"}
+{"doc_id": "D002", "sid": 33, "start": 1441, "end": 1500, "kind": "table", "text": "| `归档/`            | 归档文档（非 CNT）  | 审校范围内                 |"}
+{"doc_id": "D002", "sid": 34, "start": 1501, "end": 1560, "kind": "table", "text": "| `归档/归档 CNT/`     | 归档不修改        | **禁止修改**              |"}
+{"doc_id": "D002", "sid": 35, "start": 1561, "end": 1636, "kind": "table", "text": "| `08 理论组织和形式化框架/` | 结构化/形式化组织层 | 遵循其目录级 `AGENTS.md`（七维度闭环）；外部文本不动、缺口状态不改 |"}
+{"doc_id": "D002", "sid": 36, "start": 1637, "end": 1715, "kind": "table", "text": "| `08 理论组织和形式化框架/04_Lean对接/Lean源码/` | Lean 4 源码      | 修复须全量 `lake build` 验证 |"}
+{"doc_id": "D002", "sid": 37, "start": 1716, "end": 1796, "kind": "table", "text": "| `08 理论组织和形式化框架/附录/` | 术语表、缺口台账（原 `一体化研究/附录/`，该目录已撤销） | 与文档/Lean 同步更新         |"}
+{"doc_id": "D002", "sid": 38, "start": 1797, "end": 1856, "kind": "table", "text": "| `.trae/skills/`  | 按需加载技能（TRAE 项目技能目录） | 与根规范同步；只分片既有规则 |"}
+{"doc_id": "D002", "sid": 39, "start": 1857, "end": 1905, "kind": "table", "text": "| ~~`mcp/`~~       | （已移除：只读知识 MCP server） | — |"}
+{"doc_id": "D002", "sid": 40, "start": 1906, "end": 1965, "kind": "table", "text": "| `.workbuddy/`    | 审校基准、变更日志、记忆 | 不入库                   |"}
+{"doc_id": "D002", "sid": 41, "start": 1967, "end": 1978, "kind": "heading", "text": "## 六、Git 规则"}
+{"doc_id": "D002", "sid": 42, "start": 1980, "end": 2000, "kind": "list", "text": "- **禁止** `git pull`。"}
+{"doc_id": "D002", "sid": 43, "start": 2001, "end": 2022, "kind": "list", "text": "- 提交前须先检查引用/论述/排版/格式。"}
+{"doc_id": "D002", "sid": 44, "start": 2023, "end": 2078, "kind": "list", "text": "- `git push` 失败时：`export no_proxy=\"\" && git push` 绕过代理；"}
+{"doc_id": "D002", "sid": 45, "start": 2078, "end": 2102, "kind": "list", "text": "非快进用 `git push --force`。"}
+{"doc_id": "D002", "sid": 46, "start": 2103, "end": 2116, "kind": "list", "text": "- 临时工具脚本不得提交。"}
+{"doc_id": "D002", "sid": 47, "start": 2117, "end": 2137, "kind": "list", "text": "- 仅 CRLF 变化的文件不纳入提交。"}
+{"doc_id": "D002", "sid": 48, "start": 2138, "end": 2200, "kind": "list", "text": "- `.workbuddy/`、`.codeartsdoer/`、`.arts/` 已在 `.gitignore`，不入库。"}
+{"doc_id": "D002", "sid": 49, "start": 2202, "end": 2211, "kind": "heading", "text": "## 七、验证命令"}
+{"doc_id": "D002", "sid": 50, "start": 2213, "end": 2220, "kind": "code", "text": "```bash"}
+{"doc_id": "D002", "sid": 51, "start": 2221, "end": 2269, "kind": "code", "text": "# Lean 编译验证（在 08 理论组织和形式化框架/04_Lean对接/Lean源码/ 下）"}
+{"doc_id": "D002", "sid": 52, "start": 2270, "end": 2280, "kind": "code", "text": "lake build"}
+{"doc_id": "D002", "sid": 53, "start": 2281, "end": 2281, "kind": "code", "text": ""}
+{"doc_id": "D002", "sid": 54, "start": 2282, "end": 2318, "kind": "code", "text": "# 组织层一致性（概念/命题/论证有增改，或改动 08 任一产物时必跑）"}
+{"doc_id": "D002", "sid": 55, "start": 2319, "end": 2369, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_consistency.py\""}
+{"doc_id": "D002", "sid": 56, "start": 2370, "end": 2373, "kind": "code", "text": "```"}
+{"doc_id": "D002", "sid": 57, "start": 2375, "end": 2499, "kind": "list", "text": "- **文档一致性**：按 `.trae/skills/cqm-doc-review` 与 `.trae/skills/cqm-symbol-typesetting` 复核（禁用词、术语变体、`$` 成对、失效链接、`⇒` 误用、缺口标注完整性）。"}
+{"doc_id": "D002", "sid": 58, "start": 2500, "end": 2555, "kind": "list", "text": "- **Lean 严谨性**：按 `.trae/skills/cqm-lean-audit` 复核禁止项候选。"}
+{"doc_id": "D002", "sid": 59, "start": 2556, "end": 2603, "kind": "list", "text": "- **复现性**：按 `归档/一体化研究/科研AI全栈方案.md` §8.3 清单逐项核对。"}
 {"doc_id": "D003", "sid": 0, "start": 0, "end": 9, "kind": "heading", "text": "# CQM 术语表"}
 {"doc_id": "D003", "sid": 1, "start": 11, "end": 49, "kind": "quote", "text": "> 本表汇总 CQM 理论的全局术语与符号标准，供自动化比对与人工审校使用。"}
 {"doc_id": "D003", "sid": 2, "start": 50, "end": 123, "kind": "quote", "text": "> 权威源：`README.md` 符号约定与数值表 > 各概念权威定义处 > `.workbuddy/审校/00_修订基准与准则.md` §2。"}

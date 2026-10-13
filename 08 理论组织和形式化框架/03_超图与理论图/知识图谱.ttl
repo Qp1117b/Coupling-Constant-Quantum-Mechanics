@@ -1640,7 +1640,7 @@ cqm:synonyms a owl:AnnotationProperty .
 
 <http://cqm.local/lean#PhysicalConstants> a cqm:LeanLibrary ;
     rdfs:label "PhysicalConstants" ;
-    cqm:leanSymbol "GN_spectral_formula" .
+    cqm:leanSymbol "gn_spectral_formula" .
 
 <http://cqm.local/lean#PrimeGeometry> a cqm:LeanLibrary ;
     rdfs:label "PrimeGeometry" ;
@@ -3113,7 +3113,7 @@ cqm:EV_C005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C005"^^xsd:string ;
-    cqm:evidenceConfidence "6.958"^^xsd:string ;
+    cqm:evidenceConfidence "6.957"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3145,10 +3145,10 @@ cqm:EV_C007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C007"^^xsd:string ;
-    cqm:evidenceConfidence "5.0"^^xsd:string ;
+    cqm:evidenceConfidence "4.999"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
-    cqm:evidenceMethod "name/high"^^xsd:string,
-        "name/high" ;
+    cqm:evidenceMethod "name/medium"^^xsd:string,
+        "name/medium" ;
     cqm:evidenceQuote "CQM（耦合常数量子力学）提出了一个更激进的立场：数学结构本身是物质自组织的化石。"^^xsd:string ;
     cqm:evidenceSpan "1979-2024"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
@@ -3161,23 +3161,23 @@ cqm:EV_C008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C008"^^xsd:string ;
-    cqm:evidenceConfidence "0.667"^^xsd:string ;
+    cqm:evidenceConfidence "3.844"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
-    cqm:evidenceMethod "exact/high"^^xsd:string,
-        "exact/high" ;
-    cqm:evidenceQuote "质子集体引力因果限制"^^xsd:string ;
-    cqm:evidenceSpan "224-234"^^xsd:string ;
+    cqm:evidenceMethod "name/medium"^^xsd:string,
+        "name/medium" ;
+    cqm:evidenceQuote "Zurek 等人提出的环境诱导退相干理论（Environment-Induced Decoherence, EID）试图通过系统与环境的纠缠来解释经典世界的涌现。"^^xsd:string ;
+    cqm:evidenceSpan "1456-1541"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D015"^^xsd:string,
         "D015" ;
-    prov:atLocation "224-234" ;
-    prov:value "质子集体引力因果限制"@zh .
+    prov:atLocation "1456-1541" ;
+    prov:value "Zurek 等人提出的环境诱导退相干理论（Environment-Induced Decoherence, EID）试图通过系统与环境的纠缠来解释经典世界的涌现。"@zh .
 
 cqm:EV_C009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C009"^^xsd:string ;
-    cqm:evidenceConfidence "13.519"^^xsd:string ;
+    cqm:evidenceConfidence "13.518"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4601,7 +4601,7 @@ cqm:EV_G016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G016"^^xsd:string ;
-    cqm:evidenceConfidence "15.494"^^xsd:string ;
+    cqm:evidenceConfidence "15.489"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4873,7 +4873,7 @@ cqm:EV_H001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H001"^^xsd:string ;
-    cqm:evidenceConfidence "7.429"^^xsd:string ;
+    cqm:evidenceConfidence "7.427"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4921,7 +4921,7 @@ cqm:EV_H004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H004"^^xsd:string ;
-    cqm:evidenceConfidence "8.441"^^xsd:string ;
+    cqm:evidenceConfidence "8.44"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5049,7 +5049,7 @@ cqm:EV_H012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H012"^^xsd:string ;
-    cqm:evidenceConfidence "16.501"^^xsd:string ;
+    cqm:evidenceConfidence "16.499"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5177,7 +5177,7 @@ cqm:EV_P003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P003"^^xsd:string ;
-    cqm:evidenceConfidence "7.852"^^xsd:string ;
+    cqm:evidenceConfidence "7.851"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5257,7 +5257,7 @@ cqm:EV_P008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P008"^^xsd:string ;
-    cqm:evidenceConfidence "15.691"^^xsd:string ;
+    cqm:evidenceConfidence "15.689"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5561,7 +5561,7 @@ cqm:EV_P027 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P027"^^xsd:string ;
-    cqm:evidenceConfidence "6.869"^^xsd:string ;
+    cqm:evidenceConfidence "6.867"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5864,13 +5864,13 @@ cqm:C007 a cqm:OntologyConcept,
 cqm:C008 a cqm:OntologyConcept,
         owl:NamedIndividual ;
     rdfs:label "退相干"^^xsd:string ;
-    cqm:definition "质子集体引力因果限制的因果截断"^^xsd:string ;
+    cqm:definition "退相干是物质自组织的表现，其中因果截断（质子集体引力因果限制）只是其中一种表现"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C008 ;
     cqm:formalizedIn <http://cqm.local/lean#Decoherence> ;
     cqm:mapsTo cqm:C015 ;
     cqm:sourceDoc "D015"^^xsd:string ;
     cqm:sourceLoc "§一"^^xsd:string ;
-    skos:definition "质子集体引力因果限制的因果截断"@zh ;
+    skos:definition "退相干是物质自组织的表现，其中因果截断（质子集体引力因果限制）只是其中一种表现"@zh ;
     skos:prefLabel "退相干"@zh ;
     prov:wasDerivedFrom cqm:EV_C008 .
 

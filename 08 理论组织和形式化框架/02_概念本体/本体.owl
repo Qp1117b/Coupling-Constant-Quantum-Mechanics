@@ -304,7 +304,7 @@
   <mapsTo rdf:resource="#C015"/>
   <derivedFrom rdf:resource="#EV_C008"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">退相干</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子集体引力因果限制的因果截断</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">退相干是物质自组织的表现，其中因果截断（质子集体引力因果限制）只是其中一种表现</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D015</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§一</sourceLoc>
 </owl:NamedIndividual>
@@ -2412,7 +2412,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15879-16085</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{禁闭内部离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S5 \text{表示论}} \text{SU(5) 规范群结构}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.958</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.957</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2435,8 +2435,8 @@
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007</sourceDoc>
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1979-2024</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM（耦合常数量子力学）提出了一个更激进的立场：数学结构本身是物质自组织的化石。</evidenceQuote>
-  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0</evidenceConfidence>
+  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.999</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2445,10 +2445,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C008</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D015</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">224-234</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子集体引力因果限制</evidenceQuote>
-  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exact/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.667</evidenceConfidence>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1456-1541</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zurek 等人提出的环境诱导退相干理论（Environment-Induced Decoherence, EID）试图通过系统与环境的纠缠来解释经典世界的涌现。</evidenceQuote>
+  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.844</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2460,7 +2460,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">993-1066</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">因果网络同步理论（CNST）是耦合常数量子力学（CQM）的存在论基底，是一个因果动力学理论——描述引力如何使具体的因果结构/关系成为可能。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.519</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.518</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3372,7 +3372,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1066-1126</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNST 的核心命题是：物质先在，物理实在不是先验地存在于时空之中，而是通过物质的自组织（表现为退相干）同步展开为时空。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.852</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.851</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3432,7 +3432,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15631-15663</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CFT描述了临界自组织态扩大的机制，同时也是同步的过程机制。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.691</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.689</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3660,7 +3660,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">64529-64550</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">框架中 G9–G22 环节的闭合状态一览：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.869</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.867</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3900,7 +3900,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">65312-65362</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">| G16 | 因果分辨率的形式化（Regge 角亏密度→Ricci 标量） | 未闭合 |</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.494</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.489</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4104,7 +4104,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45843-45862</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">是物质自组织的基态规范骨架，不可还原。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.429</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.427</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4140,7 +4140,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51817-51857</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">| A | 二阶层方程在禁闭边界（前核子自组织关键实现区）严格退相干为一阶层 |</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.441</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.44</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4236,7 +4236,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17815-17860</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步是SU(5)（GL(5)自守谱），重组实现后各因子层GL(n)谱是残留：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16.501</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16.499</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
