@@ -43,9 +43,9 @@
 
 | 变更类型 | 必做同步（按序） |
 |:---|:---|
-| 新增/改概念 | 概念表 → `build_base` → `build_evidence` → `build_claims` → `build_ontology` → `build_kg` → `build_ml` → `build_extract` → `build_bridge` → `build_site` → `build_search` → `build_meta` |
-| 新增/改命题或缺口 | 命题表 → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml`（命题-证明对）→ `build_causal`（贝叶斯网络）→ `build_site` → `build_search` → `build_meta` |
-| 新增/改论证或关系 | 论证表 → `build_base` → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml` → `build_dynamics` → `build_bridge` → `build_site` → `build_search` → `build_meta` |
+| 新增/改概念 | 概念表 → `build_base` → `build_evidence` → `build_claims` → `build_ontology` → `build_kg` → `build_ml` → `build_extract` → `build_bridge` → `build_site` → `build_search` → `build_reader_site` → `build_vitepress` → `build_meta` |
+| 新增/改命题或缺口 | 命题表 → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml`（命题-证明对）→ `build_causal`（贝叶斯网络）→ `build_site` → `build_search` → `build_reader_site` → `build_vitepress` → `build_meta` |
+| 新增/改论证或关系 | 论证表 → `build_base` → `build_claims` → `build_evidence` → `build_ontology` → `build_kg` → `build_ml` → `build_dynamics` → `build_bridge` → `build_site` → `build_search` → `build_reader_site` → `build_vitepress` → `build_meta` |
 | 新增/改 Lean 声明 | `build_lean` → `build_kg`（Lean 映射入图）→ `build_ml`（lean声明.jsonl）→ `build_site` → `build_meta` |
 | 术语/符号/口径变化 | `build_bridge` → `02/术语符号一致清单.md`（登记）→ `build_claims`（别名词表）→ `build_kg` → `build_meta` |
 | 任意产物变化 | `build_meta` 重生成 manifest，并**更新 `11_元数据/变更日志.md`** |
@@ -55,6 +55,7 @@
 ```bash
 python "08 理论组织和形式化框架/_build/check_provenance.py"   # 证据层：引文必须逐字等于原文区间
 python "08 理论组织和形式化框架/_build/check_consistency.py"  # 组织层：41 项跨产物硬检查
+python ".workbuddy/tools/consistency_probe.py"                # 派生一致性：悬浮卡 vs 源 CSV 逐字 / 数字口径 / 术语统一
 ```
 
 未通过即视为**研究未完成**——不得以"仅更新了文档"结项。
@@ -68,6 +69,12 @@ python "08 理论组织和形式化框架/_build/check_consistency.py"  # 组织
 5. **物质的量 $N$**：人为定义的计量量，与自守量纲无关。
 6. **禁用词**（根 AGENTS §三）：`已删除`、`已澄清`、`已修正`、`已解决`、`旧版`、`已废弃`、`现已统一`、`早期形式`、`本版` 等过程性表述，不得用于理论文档；本组织层同样避免（负向引用除外）。
 7. **形式化覆盖**：`F` 仅覆盖部分概念（当前 41/82），未覆盖者**不得**谎报为已形式化。
+8. **以原（第一）文档为准 · 修改必须同步全项目**（承袭根 AGENTS §四第 5 条，2026-10-13 起）：
+   任何概念定义、机制口径的修正，权威依据只能是原始文档（第一文档）；派生层（结构化表、
+   悬浮卡、检索、术语总览、Lean 对接、搜索索引）不得自行发明或改写口径。修正落地后必须
+   重跑研究闭环全链（含 `build_reader_site` → `build_vitepress` 研究站环节），并通过
+   `consistency_probe` 派生一致性核查——任何一处派生未同步，即视为修改未完成。
+   （范例：v1.9.13 概念 C008「退相干」定义修正，全链 16 个构建脚本重跑。）
 
 ## 六、构建与复现
 
@@ -121,6 +128,8 @@ python build_causal.py               # 07 经验检验
 python build_bridge.py               # 09 桥接翻译
 python build_site.py                 # 10 驾驶舱 / 多层超图
 python build_search.py               # 10 检索台（图谱 + BM25 全文 + 证据 + SPARQL）
-python build_reader_site.py        # 10 离线阅读站（Material for MkDocs + jieba 搜索；只读根 README + 01–07 文本与 一体化研究/附录；build_reader.py 已存档）
+python build_reader_site.py        # 10 阅读站 stage 环节：为 VitePress 阅读站供料（含悬浮卡/检索/术语/讲稿数据生成）
+python build_vitepress_site.py     # 10 研究站（VitePress v1.6.4：阅读页/悬浮卡/高级检索/术语总览/Lean 对接/搜索索引；末段自动还原公式占位）
 python build_meta.py                 # 11 元数据
+python ../../../.workbuddy/tools/consistency_probe.py  # 派生一致性核查（悬浮卡 vs 源 CSV 逐字 / 数字口径 / 术语统一；不入库）
 ```
