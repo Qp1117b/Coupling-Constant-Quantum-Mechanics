@@ -434,13 +434,14 @@
       if (!re.test(txt)) { re.lastIndex = 0; return; }
       re.lastIndex = 0;
       var frag = document.createDocumentFragment(), last = 0, m;
-      while ((m = re.exec(txt)) && count < 200) {
+      // 注意：不能在循环内重置 lastIndex——否则 exec 永远停在第一个匹配，
+      // 同一位置被反复替换，整段文本变成查询词的几百次重复（已实测复现）。
+      while ((m = re.exec(txt)) !== null && count < 200) {
         if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
         var mk = document.createElement("mark");
         mk.className = "cqm-hl"; mk.textContent = m[0];
         frag.appendChild(mk);
         last = m.index + m[0].length; count++;
-        re.lastIndex = 0;
       }
       if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
       if (node.parentNode) node.parentNode.replaceChild(frag, node);
