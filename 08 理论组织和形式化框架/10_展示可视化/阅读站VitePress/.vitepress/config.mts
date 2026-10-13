@@ -78,16 +78,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261013083003' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261013083003' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261013083003' }],
-    ['script', { src: '/cqm-glossary.js?v=20261013083003' }],
-    ['script', { src: '/cqm-depth.js?v=20261013083003' }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261013083003' }],
-    ['script', { src: '/lean-page.js?v=20261013083003', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261013083003', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261013083003' }],
-    ['script', { src: '/tex-svg.js?v=20261013083003', async: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261013084456' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261013084456' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261013084456' }],
+    ['script', { src: '/cqm-glossary.js?v=20261013084456' }],
+    ['script', { src: '/cqm-depth.js?v=20261013084456' }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261013084456' }],
+    ['script', { src: '/lean-page.js?v=20261013084456', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261013084456', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261013084456' }],
+    ['script', { src: '/tex-svg.js?v=20261013084456', async: true }]
   ],
   themeConfig: {
     nav: [
@@ -144,63 +144,8 @@ export default defineConfig({
     ]
   },
   {
-    "text": "可视化",
+    "text": "核心理论",
     "items": [
-      {
-        "text": "可视化总览",
-        "link": "/V000_可视化总览"
-      },
-      {
-        "text": "可推演超图",
-        "link": "/V001_可推演超图"
-      },
-      {
-        "text": "研究驾驶舱",
-        "link": "/V002_研究驾驶舱"
-      },
-      {
-        "text": "检索台",
-        "link": "/V003_检索台"
-      },
-      {
-        "text": "形式化蓝图",
-        "link": "/V004_形式化蓝图"
-      }
-    ]
-  },
-  {
-    "text": "Lean 对接",
-    "items": [
-      {
-        "text": "Lean 对接 · 统一视图",
-        "link": "/LEAN_Lean对接"
-      }
-    ]
-  },
-  {
-    "text": "术语表",
-    "items": [
-      {
-        "text": "术语总览（227 条）",
-        "link": "/TERMS_术语表"
-      }
-    ]
-  },
-  {
-    "text": "结构化与参考",
-    "items": [
-      {
-        "text": "耦合常数量子力学（CQM）形式化框架",
-        "link": "/D001_项目说明与符号约定"
-      },
-      {
-        "text": "CQM 术语表",
-        "link": "/D003_术语表"
-      },
-      {
-        "text": "CQM 缺口台账",
-        "link": "/D004_缺口台账"
-      },
       {
         "text": "耦合常数量子力学（CQM）——集成理论",
         "link": "/D005_集成理论_总纲"
@@ -232,11 +177,21 @@ export default defineConfig({
       {
         "text": "CQM核心：共形场论与OPE——同步$⊗$耦合→群的数学基础",
         "link": "/D012_共形场论与OPE"
-      },
+      }
+    ]
+  },
+  {
+    "text": "量子引力讨论",
+    "items": [
       {
         "text": "CQM 量子引力讨论：两个候选与 FG",
         "link": "/D013_量子引力讨论"
-      },
+      }
+    ]
+  },
+  {
+    "text": "引力与退相干",
+    "items": [
       {
         "text": "CQM 牛顿引力常数 $G\\_N$ 的可能公式",
         "link": "/D014_GN可能公式"
@@ -248,7 +203,12 @@ export default defineConfig({
       {
         "text": "CQM 退相干：跨层级深耦合与唯一性难题",
         "link": "/D016_跨层级深耦合与唯一性难题"
-      },
+      }
+    ]
+  },
+  {
+    "text": "前沿研究",
+    "items": [
       {
         "text": "CQM 下的黎曼猜想证明思路",
         "link": "/D017_黎曼猜想证明思路"
@@ -284,7 +244,12 @@ export default defineConfig({
       {
         "text": "量子快置乱普适速率极限与 CQM 对称群谱系的交叉研究",
         "link": "/D025_量子快置乱普适速率极限"
-      },
+      }
+    ]
+  },
+  {
+    "text": "方法论与批判",
+    "items": [
       {
         "text": "对 Hilbert–Pólya 猜想的批判",
         "link": "/D026_HilbertPolya批判"
@@ -292,15 +257,12 @@ export default defineConfig({
       {
         "text": "资本主义、旧物理学与层级还原论：一个意识形态-科学同构系统的批判与超越",
         "link": "/D027_资本主义-旧物理-层级还原论批判"
-      },
-      {
-        "text": "FG核心理论",
-        "link": "/D028_FG核心理论"
-      },
-      {
-        "text": "FG纤维丛理论",
-        "link": "/D029_FG纤维丛理论"
-      },
+      }
+    ]
+  },
+  {
+    "text": "超导",
+    "items": [
       {
         "text": "CQM 超导核心理论",
         "link": "/D030_超导核心理论"
@@ -348,7 +310,68 @@ export default defineConfig({
       {
         "text": "07 目标超导搜索策略",
         "link": "/D041_目标超导搜索策略"
+      }
+    ]
+  },
+  {
+    "text": "精细引力（FG）",
+    "items": [
+      {
+        "text": "FG核心理论",
+        "link": "/D028_FG核心理论"
       },
+      {
+        "text": "FG纤维丛理论",
+        "link": "/D029_FG纤维丛理论"
+      }
+    ]
+  },
+  {
+    "text": "可视化",
+    "items": [
+      {
+        "text": "可视化总览",
+        "link": "/V000_可视化总览"
+      },
+      {
+        "text": "可推演超图",
+        "link": "/V001_可推演超图"
+      },
+      {
+        "text": "研究驾驶舱",
+        "link": "/V002_研究驾驶舱"
+      },
+      {
+        "text": "检索台",
+        "link": "/V003_检索台"
+      },
+      {
+        "text": "形式化蓝图",
+        "link": "/V004_形式化蓝图"
+      }
+    ]
+  },
+  {
+    "text": "Lean 对接",
+    "items": [
+      {
+        "text": "Lean 对接 · 统一视图",
+        "link": "/LEAN_Lean对接"
+      }
+    ]
+  },
+  {
+    "text": "术语表",
+    "items": [
+      {
+        "text": "术语总览（227 条）",
+        "link": "/TERMS_术语表"
+      }
+    ]
+  },
+  {
+    "text": "其它",
+    "items": [
       {
         "text": "CQM 超导材料设计器 - AI代理规则",
         "link": "/F01_AGENTS"

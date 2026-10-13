@@ -1476,6 +1476,28 @@ def md_title(path, fallback):
 
 
 overview, lect, viz, other = [], [], [], []
+# 文档主题分类：按源顶层目录（01–07）分组，与仓库目录结构一一对应——
+# 不再把全部文档平铺进「结构化与参考」。sid→源目录的映射复用 build_reader_site
+# 的 registry（sid 分配逻辑的唯一权威，避免两处实现漂移）。
+name2top = {}
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import build_reader_site as _brs
+    for rel, meta in _brs.registry().items():
+        _name = _brs.safe_name("%s_%s" % (meta["id"], meta["title"]))
+        name2top[_name] = rel.split("/")[0]
+except Exception as _e:
+    print("[vp][warn] 文档主题分类不可用（全部回退「其它」组）：%s" % _e)
+TOP_ORDER = [
+    ("01 核心理论", "核心理论"),
+    ("02 量子引力", "量子引力讨论"),
+    ("03 引力与退相干", "引力与退相干"),
+    ("04 前沿研究", "前沿研究"),
+    ("05 方法论与批判", "方法论与批判"),
+    ("06 超导", "超导"),
+    ("07 精细引力（FG）", "精细引力（FG）"),
+]
+by_top = {}
 for f in md_files:
     if f == "index.md":
         continue
@@ -1483,18 +1505,31 @@ for f in md_files:
     item = {"text": md_title(os.path.join(VP_DOCS, f), base), "link": "/" + base}
     if f.startswith("L000"):
         overview.append(item)
+    elif f.startswith("LEAN") or f.startswith("TERMS"):
+        # 专属功能页：进导航与侧栏专属组（见下方 sidebar 组装）
+        by_top.setdefault("__app__", []).append(item)
     elif f.startswith("L"):
         lect.append(item)
     elif f.startswith("V"):
         viz.append(item)
     else:
-        other.append(item)
+        top = name2top.get(f)
+        if top:
+            by_top.setdefault(top, []).append(item)
+        else:
+            other.append(item)
 
 sidebar = []
 if overview:
     sidebar.append({"text": "展开链", "items": overview})
 if lect:
     sidebar.append({"text": "讲稿", "items": lect})
+for top, label in TOP_ORDER:
+    items = by_top.get(top)
+    if items:
+        sidebar.append({"text": label, "items": items})
+if by_top.get("__app__"):
+    sidebar.append({"text": "功能页", "items": by_top["__app__"]})
 if viz:
     sidebar.append({"text": "可视化", "items": viz})
 if os.path.isfile(os.path.join(VP_DOCS, "LEAN_Lean对接.md")):
@@ -1504,7 +1539,7 @@ if os.path.isfile(os.path.join(VP_DOCS, "TERMS_术语表.md")):
     sidebar.append({"text": "术语表", "items": [
         {"text": "术语总览（227 条）", "link": "/TERMS_术语表"}]})
 if other:
-    sidebar.append({"text": "结构化与参考", "items": other})
+    sidebar.append({"text": "其它", "items": other})
 
 nav = [{"text": "首页", "link": "/"}]
 if overview:
