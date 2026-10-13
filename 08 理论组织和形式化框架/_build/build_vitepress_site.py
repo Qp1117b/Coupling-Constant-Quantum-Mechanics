@@ -731,8 +731,12 @@ VP_ENHANCE_JS = r'''(function () {
         var hdr = navHost(); if (!hdr || !s || !s.counts) return;
         if (hdr.querySelector(".cqm-badge")) return;
         var a = document.createElement("a");
-        // 指向真实存在的接口（/api 本身无映射，会是 404）
+        // 指向真实存在的接口（/api 本身无映射，会是 404）。
+        // 必须 target="_blank"：VitePress router 会拦截站内相对链接做 SPA 导航
+        // （实测解析成 /api/status.html 甚至 /api/api/status → 404）；
+        // 新窗口打开 JSON，绕过 router。
         a.className = "cqm-sbtn cqm-badge"; a.href = "api/status";
+        a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
         a.title = "本地研究站服务已连接：实时 SPARQL / 结构化检索 / 证据复核写回";
         a.innerHTML = "服务已连接 · 概念 " + s.counts.concepts + " · 缺口 " + s.counts.gaps
           + " · 待复核 " + (s.review ? s.review.pending : "-");
