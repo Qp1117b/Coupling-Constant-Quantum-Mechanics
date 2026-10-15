@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261015084509' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261015084509' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261015084509' }],
-    ['script', { src: '/cqm-glossary.js?v=20261015084509', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261015084509', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261015084509', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261015084509', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261015084509', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261015084509', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261015084509', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261015093725' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261015093725' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261015093725' }],
+    ['script', { src: '/cqm-glossary.js?v=20261015093725', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261015093725', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261015093725', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261015093725', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261015093725', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261015093725', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261015093725', defer: true }]
   ],
   themeConfig: {
     nav: [

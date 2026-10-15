@@ -776,12 +776,10 @@ _SB_UNICODE_MATH = [
     ("\u2202", r"$\partial$"), ("\u2207", r"$\nabla$"), ("\u2205", r"$\emptyset$"),
     ("\u2200", r"$\forall$"), ("\u2203", r"$\exists$"),
     ("\u2227", r"$\wedge$"), ("\u2228", r"$\vee$"),
-    ("\u262F", r"$\mathcal{C}$"),           # ☯ 相变量子
 ]
 
 # 数学区间内的 Unicode → LaTeX 命令（不带 $...$，因已在公式内）
 _SB_UNICODE_INMATH = {
-    "\u262F": r"\mathcal{C}",               # ☯ → \mathcal{C}
 }
 
 

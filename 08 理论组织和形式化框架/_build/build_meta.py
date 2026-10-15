@@ -124,6 +124,15 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.36 — 相变量子符号统一：研究站悬浮卡 ☯ 替代 \\mathcal{C}
+
+- **变更动机**：用户发现研究站悬浮卡中相变量子显示为 `\\mathcal{C}`（花体 C）而非主符号 `☯`（太极）。README.md:7 明确规定主符号为 ☯，英文语境才用 `\\mathscr{C}`。
+- **根因一：概念表 CSV 符号字段错误**：C048 `definition` 用 `\\mathcal{C}` 而非 ☯；C058/C061/C064 定义中同样用 `\\mathcal{C}`；命题表 P010/P015、论证表 H014（`$c$` 小写）、H016/A014/A015 均用 `\\mathcal C`。概念别名表 C048 alias 为 `$\\mathcal C$`。论证对齐表 H016/A014/A015 `premises_raw` 同。
+- **根因二：build_reader_site.py 硬编码转换**：`_SB_UNICODE_MATH` 和 `_SB_UNICODE_INMATH` 将 ☯ (U+262F) 强制转为 `\\mathcal{C}`，即使 CSV 已改为 ☯ 也会被转回。
+- **根因三：build_bridge.py 符号对照表**：SYMBOLS 列表中相变量子 LaTeX 列用 `\\mathcal{C}` 而非 ☯；谱修正 κ 定义中同样。
+- **修复**：① 概念表/命题表/论证表/论证对齐表/概念别名表 CSV 中 15 处 `\\mathcal{C}`/`\\mathcal C`/`c` → ☯；② 删除 build_reader_site.py 中 ☯→`\\mathcal{C}` 两条映射；③ build_bridge.py 符号对照表 LaTeX 列改为 ☯。重跑全链 `build_claims → build_bridge → build_site → build_search → build_reader_site → build_vitepress → build_meta`。
+- **验证**：悬浮卡 C048 definition 显示 `\\(☯=\\xi'(1)/\\xi(1)\\approx 0.02309570897\\)`，别名键含 `$☯$`，无 `\\mathcal{C}` 残留；三道核查通过（10/10、41/41、问题项 0）。
+
 ## v1.9.35 — 研究站控制台错误清零（续）：probeService 端口检查 · head 脚本 defer · typesetGrid 空闲调度 · 悬浮卡点击 toggle
 
 - **变更动机**：v1.9.33 修复后用户反馈控制台仍有 `/api/status` 404（×3）、`Hydration completed but contains mismatches`、`'setTimeout' handler took 1007ms` 违规；悬浮卡点击交互要求"已弹出→隐藏，未弹出→弹出"。
