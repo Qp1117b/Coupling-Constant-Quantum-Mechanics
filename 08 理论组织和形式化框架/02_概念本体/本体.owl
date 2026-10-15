@@ -254,7 +254,7 @@
   <rdf:type rdf:resource="#OntologyConcept"/>
   <derivedFrom rdf:resource="#EV_C003"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">再生产</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">幂等算符 μ²=μ 描述自组织</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">幂等算符 $\mu^2=\mu$ 描述自组织</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1.3</sourceLoc>
   <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">幂等自组织</synonyms>
@@ -265,7 +265,7 @@
   <conceptDependsOn rdf:resource="#C009"/>
   <derivedFrom rdf:resource="#EV_C004"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">因果集</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(X,≺) 偏序集描述因果</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$(X,\prec)$ 偏序集描述因果</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1.3</sourceLoc>
 </owl:NamedIndividual>
@@ -274,7 +274,7 @@
   <rdf:type rdf:resource="#OntologyConcept"/>
   <derivedFrom rdf:resource="#EV_C005"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">禁闭边界</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织的边界 4-单纯形 A₄</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织的边界 4-单纯形 $A_4$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§7.1</sourceLoc>
 </owl:NamedIndividual>
@@ -325,7 +325,7 @@
   <conceptDependsOn rdf:resource="#C012"/>
   <derivedFrom rdf:resource="#EV_C011"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">自我限制算符</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R̂ 自我限制算符</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\hat{R}$ 自我限制算符</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§9</sourceLoc>
 </owl:NamedIndividual>
@@ -334,7 +334,7 @@
   <rdf:type rdf:resource="#MathStructureConcept"/>
   <derivedFrom rdf:resource="#EV_C012"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步算符</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ŝ₀ 紧化算符 描述同步</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\hat{S}_0$ 紧化算符 描述同步</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§9</sourceLoc>
   <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">紧化算符</synonyms>
@@ -345,7 +345,7 @@
   <subsumedIn rdf:resource="#C059"/>
   <derivedFrom rdf:resource="#EV_C013"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL5固定层级</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL(5) 潜能先在的固定层级</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$GL(5)$ 潜能先在的固定层级</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§0</sourceLoc>
 </owl:NamedIndividual>
@@ -355,7 +355,7 @@
   <mapsTo rdf:resource="#C066"/>
   <derivedFrom rdf:resource="#EV_C014"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU5基态</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU(5) 基态经重组实现破缺为标准模型</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$SU(5)$ 基态经重组实现破缺为标准模型</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§0</sourceLoc>
 </owl:NamedIndividual>
@@ -364,7 +364,7 @@
   <rdf:type rdf:resource="#RelationTypeConcept"/>
   <derivedFrom rdf:resource="#EV_C015"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">重组实现</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">多因一果的有向超边 ⇒</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">多因一果的有向超边 $\Rightarrow$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1.3</sourceLoc>
 </owl:NamedIndividual>
@@ -415,7 +415,7 @@
   <equivalentTo rdf:resource="#C075"/>
   <derivedFrom rdf:resource="#EV_C020"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">主丛</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P(M,G) 主丛</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$P(M,G)$ 主丛</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -425,7 +425,7 @@
   <conceptDependsOn rdf:resource="#C020"/>
   <derivedFrom rdf:resource="#EV_C021"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">伴丛</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E_R 伴丛</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$E_R$ 伴丛</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -435,7 +435,7 @@
   <equivalentTo rdf:resource="#C076"/>
   <derivedFrom rdf:resource="#EV_C022"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 主丛联络</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$A$ 主丛联络</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -445,7 +445,7 @@
   <equivalentTo rdf:resource="#C076"/>
   <derivedFrom rdf:resource="#EV_C023"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F=dA+A∧A 曲率2形式</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$F=dA+A\wedge A$ 曲率2形式</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -455,7 +455,7 @@
   <equivalentTo rdf:resource="#C075"/>
   <derivedFrom rdf:resource="#EV_C024"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W_v 和乐算符</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$W_v$ 和乐算符</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -475,7 +475,7 @@
   <mapsTo rdf:resource="#C027"/>
   <derivedFrom rdf:resource="#EV_C026"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">角亏</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">δ_v Regge剖分顶点角亏</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_v$ Regge剖分顶点角亏</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§二.5</sourceLoc>
 </owl:NamedIndividual>
@@ -484,7 +484,7 @@
   <rdf:type rdf:resource="#GeometryConcept"/>
   <derivedFrom rdf:resource="#EV_C027"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">固有时流速</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v_τ=√(1−βδ_v) 固有时流速</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$v_\tau=\sqrt{1-\beta\delta_v}$ 固有时流速</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D015</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§三</sourceLoc>
 </owl:NamedIndividual>
@@ -502,7 +502,7 @@
   <rdf:type rdf:resource="#GeometryConcept"/>
   <derivedFrom rdf:resource="#EV_C029"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">中子缺陷矩阵</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D(δ) 中子缺陷矩阵</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$D(\delta)$ 中子缺陷矩阵</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§二.5</sourceLoc>
 </owl:NamedIndividual>
@@ -511,7 +511,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C030"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素嘉当矩阵</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C_element 元素嘉当矩阵</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$C_{\text{element}}$ 元素嘉当矩阵</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§二.5</sourceLoc>
 </owl:NamedIndividual>
@@ -521,7 +521,7 @@
   <mapsTo rdf:resource="#C027"/>
   <derivedFrom rdf:resource="#EV_C031"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">对数比参数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">β=(1/4π)ln(L/a)</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\beta=(1/4\pi)\ln(L/a)$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D015</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§三</sourceLoc>
 </owl:NamedIndividual>
@@ -531,7 +531,7 @@
   <mapsTo rdf:resource="#C039"/>
   <derivedFrom rdf:resource="#EV_C032"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">时间量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T 第一量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$T$ 第一量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -541,7 +541,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C033"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">长度量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L 长度量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$L$ 长度量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -551,7 +551,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C034"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质量量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M 质量量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$M$ 质量量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -561,7 +561,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C035"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">电荷量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q 电荷量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$Q$ 电荷量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -571,7 +571,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C036"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">温度量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Θ 温度量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\Theta$ 温度量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -581,7 +581,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C037"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质的量量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N 物质的量量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$N$ 物质的量量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -591,7 +591,7 @@
   <mapsTo rdf:resource="#C032"/>
   <derivedFrom rdf:resource="#EV_C038"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">发光强度量纲</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J 发光强度量纲</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$J$ 发光强度量纲</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.1</sourceLoc>
 </owl:NamedIndividual>
@@ -600,7 +600,7 @@
   <rdf:type rdf:resource="#DimensionConcept"/>
   <derivedFrom rdf:resource="#EV_C039"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">量纲转换常数族</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K_L K_M K_Q K_Θ K_N K_J</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$K_L\, K_M\, K_Q\, K_\Theta\, K_N\, K_J$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.3</sourceLoc>
 </owl:NamedIndividual>
@@ -619,7 +619,7 @@
   <subsumedIn rdf:resource="#C040"/>
   <derivedFrom rdf:resource="#EV_C041"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">自守因子</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">j 量纲因子</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$j$ 量纲因子</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.4</sourceLoc>
 </owl:NamedIndividual>
@@ -628,7 +628,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C042"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">极大关系群</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_max(f) 极大关系群</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_{\max}(f)$ 极大关系群</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§6.4</sourceLoc>
 </owl:NamedIndividual>
@@ -638,7 +638,7 @@
   <mapsTo rdf:resource="#C058"/>
   <derivedFrom rdf:resource="#EV_C043"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼zeta函数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ζ(s) 黎曼zeta函数</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\zeta(s)$ 黎曼zeta函数</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -649,7 +649,7 @@
   <equivalentTo rdf:resource="#C012"/>
   <derivedFrom rdf:resource="#EV_C044"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼xi函数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ξ(s)=ξ(1−s) 完成后的xi函数</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\xi(s)=\xi(1-s)$ 完成后的xi函数</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -659,7 +659,7 @@
   <mapsTo rdf:resource="#C046"/>
   <derivedFrom rdf:resource="#EV_C045"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼零点</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">γ_n 黎曼零点虚部</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\gamma_n$ 黎曼零点虚部</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
   <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Riemann zeros</synonyms>
@@ -670,7 +670,7 @@
   <equivalentTo rdf:resource="#C051"/>
   <derivedFrom rdf:resource="#EV_C046"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">𝔠_n=1/4+γ_n² 配对不变量</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\mathfrak{c}_n=1/4+\gamma_n^2$ 配对不变量</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
   <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">能级</synonyms>
@@ -680,7 +680,7 @@
   <rdf:type rdf:resource="#NumberTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C047"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">第一耦级</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">𝔠₁=1/4+γ₁²≈0.5211</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\mathfrak{c}_1=1/4+\gamma_1^2\approx 0.5211$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
 </owl:NamedIndividual>
@@ -691,17 +691,17 @@
   <conceptDependsOn rdf:resource="#C051"/>
   <derivedFrom rdf:resource="#EV_C048"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">相变量子</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯=ξ'(1)/ξ(1)≈0.02309570897</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯=\xi'(1)/\xi(1)\approx 0.02309570897$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3</sourceLoc>
-  <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯</synonyms>
+  <synonyms rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯$;$\mathscr{C}$</synonyms>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#C049">
   <rdf:type rdf:resource="#NumberTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C049"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">谱算符</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ĥ_HP=D̂²+1/4 Hilbert-Pólya算符</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\hat{H}_{HP}=\hat{D}^2+1/4$ Hilbert-Pólya算符</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§4</sourceLoc>
 </owl:NamedIndividual>
@@ -742,7 +742,7 @@
   <mapsTo rdf:resource="#C055"/>
   <derivedFrom rdf:resource="#EV_C053"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-单纯形</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">正四单纯形 A₄</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">正四单纯形 $A_4$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§7.1</sourceLoc>
 </owl:NamedIndividual>
@@ -751,7 +751,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C054"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A4嘉当矩阵</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A_4=Cartan(SU(5))</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$A_4=\text{Cartan}(SU(5))$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§7.1</sourceLoc>
 </owl:NamedIndividual>
@@ -760,7 +760,7 @@
   <rdf:type rdf:resource="#GeometryConcept"/>
   <derivedFrom rdf:resource="#EV_C055"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">边面关联矩阵</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M=EᵀE 本征值{9¹4⁴1⁵}</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$M=E^TE$ 本征值 $\{9^1,4^4,1^5\}$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§7.1</sourceLoc>
 </owl:NamedIndividual>
@@ -769,7 +769,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C056"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dynkin指数比</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I=5/3</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$I=5/3$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D014</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
 </owl:NamedIndividual>
@@ -778,7 +778,7 @@
   <rdf:type rdf:resource="#NumberTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C057"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mathieu临界</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">λ_c≈1.316022911308</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\lambda_c\approx 1.316022911308$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D019</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
 </owl:NamedIndividual>
@@ -787,7 +787,7 @@
   <rdf:type rdf:resource="#NumberTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C058"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">谱修正</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">κ=(31+☯)/30</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\kappa=(31+☯)/30$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D031</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§11</sourceLoc>
 </owl:NamedIndividual>
@@ -796,7 +796,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C059"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weyl群</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S_5 Weyl群</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$S_5$ Weyl群</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§7.2</sourceLoc>
 </owl:NamedIndividual>
@@ -805,7 +805,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C060"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦合坐标</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u=ln r 耦合坐标</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$u=\ln r$ 耦合坐标</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
 </owl:NamedIndividual>
@@ -814,7 +814,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C061"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦合动量</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p_u=v_τ/☯ 耦合动量</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$p_u=v_\tau/☯$ 耦合动量</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
 </owl:NamedIndividual>
@@ -824,7 +824,7 @@
   <conceptDependsOn rdf:resource="#C061"/>
   <derivedFrom rdf:resource="#EV_C062"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">海森堡代数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[û,p̂_u]=i 海森堡对易</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$[\hat{u},\hat{p}_u]=i$ 海森堡对易</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
 </owl:NamedIndividual>
@@ -833,7 +833,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C063"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">跃迁耦级谱</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Δu_n=2ln n 跃迁耦级</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\Delta u_n=2\ln n$ 跃迁耦级</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -842,7 +842,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C064"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">资格条件</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Δδ_0≥☯√(1−βδ_v)/(2β ln n)</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\Delta\delta_0\geq☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -852,7 +852,7 @@
   <conceptDependsOn rdf:resource="#C066"/>
   <derivedFrom rdf:resource="#EV_C065"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">结构群叠加态</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">|Ψ⟩ 结构群叠加态</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$|\Psi\rangle$ 结构群叠加态</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -861,7 +861,7 @@
   <rdf:type rdf:resource="#GroupTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C066"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">候选群族</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U(1)//Z_n 候选群族</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$U(1)//Z_n$ 候选群族</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1</sourceLoc>
 </owl:NamedIndividual>
@@ -870,7 +870,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C067"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">丛作用量</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F_n 丛作用量</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$F_n$ 丛作用量</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -880,7 +880,7 @@
   <conceptDependsOn rdf:resource="#C066"/>
   <derivedFrom rdf:resource="#EV_C068"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">主导群</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_主导=argmin F_n</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_{\text{主导}}=\arg\min F_n$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -890,7 +890,7 @@
   <subsumedIn rdf:resource="#C012"/>
   <derivedFrom rdf:resource="#EV_C069"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导同步算符</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ŝ_super 超导同步算符</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\hat{S}_{\text{super}}$ 超导同步算符</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -899,7 +899,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C070"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">临界温度</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T_c 超导临界温度</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$T_c$ 超导临界温度</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -908,7 +908,7 @@
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C071"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">声子</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率量子 Δδ_v 贯穿三层的媒介</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率量子 $\Delta\delta_v$ 贯穿三层的媒介</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D011</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">标题</sourceLoc>
 </owl:NamedIndividual>
@@ -927,7 +927,7 @@
   <rdf:type rdf:resource="#FiberBundleConcept"/>
   <derivedFrom rdf:resource="#EV_C073"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FG层级四元组</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(M_ℓ P(M_ℓ G_ℓ) A_ℓ Ŝ_ℓ)</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$(M_\ell\, P(M_\ell,G_\ell)\, A_\ell\, \hat{S}_\ell)$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -936,7 +936,7 @@
   <rdf:type rdf:resource="#CFTConcept"/>
   <derivedFrom rdf:resource="#EV_C074"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">共形固定点</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">β(g)=0 共形固定点</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\beta(g)=0$ 共形固定点</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D012</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1</sourceLoc>
 </owl:NamedIndividual>
@@ -954,7 +954,7 @@
   <rdf:type rdf:resource="#CFTConcept"/>
   <derivedFrom rdf:resource="#EV_C076"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virasoro代数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virasoro生成元 {L_n}</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virasoro生成元 $\{L_n\}$</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D012</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -964,7 +964,7 @@
   <conceptDependsOn rdf:resource="#C076"/>
   <derivedFrom rdf:resource="#EV_C077"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">中央荷</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c Virasoro中央荷</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$c$ Virasoro中央荷</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D012</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -974,7 +974,7 @@
   <conceptDependsOn rdf:resource="#C075"/>
   <derivedFrom rdf:resource="#EV_C078"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">共形维度</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">h 共形维度</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$h$ 共形维度</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D012</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§2</sourceLoc>
 </owl:NamedIndividual>
@@ -1002,7 +1002,7 @@
 <owl:NamedIndividual rdf:about="#C081">
   <rdf:type rdf:resource="#PhysicsConcept"/>
   <derivedFrom rdf:resource="#EV_C081"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_N</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_N$</rdfs:label>
   <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">牛顿引力常数 构造后验数字校验待独立复现</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D014</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§5</sourceLoc>
@@ -1012,7 +1012,7 @@
   <rdf:type rdf:resource="#NumberTheoryConcept"/>
   <derivedFrom rdf:resource="#EV_C082"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数</rdfs:label>
-  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">α_W Wyler常数 A₄群论不变量</definition>
+  <definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\alpha_W$ Wyler常数 $A_4$ 群论不变量</definition>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D021</sourceDoc>
   <sourceLoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">标题</sourceLoc>
 </owl:NamedIndividual>
@@ -1055,7 +1055,7 @@
   <mentionedIn rdf:resource="#C051"/>
   <mentionedIn rdf:resource="#C052"/>
   <derivedFrom rdf:resource="#EV_P004"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质数是源 $GL(5)$ 是谐振腔 GRH是实谱条件 同步算符是换能器</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1112,7 +1112,7 @@
   <rdf:type rdf:resource="#Construction"/>
   <mentionedIn rdf:resource="#C081"/>
   <derivedFrom rdf:resource="#EV_P010"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_N=\hbar c/(m_p^2)\cdot I\cdot\lambda_c\cdot☯^2\cdot\mathfrak c_1\cdot\exp(-2/☯)\cdot(1+\kappa☯)$ 偏差约-3ppm</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">构造后验数字校验待独立复现</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D014</sourceDoc>
 </owl:NamedIndividual>
@@ -1140,7 +1140,7 @@
   <rdf:type rdf:resource="#Statement"/>
   <mentionedIn rdf:resource="#C051"/>
   <derivedFrom rdf:resource="#EV_P013"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3已知+2待推+物理存在性⇒交叉RH成立</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3已知+2待推+物理存在性 $\Rightarrow$ 交叉RH成立</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D017</sourceDoc>
 </owl:NamedIndividual>
@@ -1148,7 +1148,7 @@
 <owl:NamedIndividual rdf:about="#P014">
   <rdf:type rdf:resource="#Statement"/>
   <derivedFrom rdf:resource="#EV_P014"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">边界长度半已解 相位半 $S(T)$ 是唯一实质缺口 五重联系整合</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D018</sourceDoc>
 </owl:NamedIndividual>
@@ -1158,7 +1158,7 @@
   <mentionedIn rdf:resource="#C081"/>
   <mentionedIn rdf:resource="#C048"/>
   <derivedFrom rdf:resource="#EV_P015"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">定义-公理-定理-证明 ☯三重恒等+G_N构造11.1</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">定义-公理-定理-证明 $☯$ 三重恒等+$G_N$ 构造11.1</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D019</sourceDoc>
 </owl:NamedIndividual>
@@ -1167,7 +1167,7 @@
   <rdf:type rdf:resource="#Statement"/>
   <mentionedIn rdf:resource="#C080"/>
   <derivedFrom rdf:resource="#EV_P016"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质量是自守关联的涌现结果 其它粒子是 $\pi_p$ 的朗兰兹函子性分化</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D020</sourceDoc>
 </owl:NamedIndividual>
@@ -1177,7 +1177,7 @@
   <mentionedIn rdf:resource="#C015"/>
   <mentionedIn rdf:resource="#C082"/>
   <derivedFrom rdf:resource="#EV_P017"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数可用 $A_4$ 群论不变量表达 嵌入 $SU(5)$ 重组实现链</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D021</sourceDoc>
 </owl:NamedIndividual>
@@ -1197,7 +1197,7 @@
   <rdf:type rdf:resource="#Statement"/>
   <mentionedIn rdf:resource="#C016"/>
   <derivedFrom rdf:resource="#EV_P019"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">规范对称性从不破缺 超导=$U(1)//Z_n$ 重组 $SU(5)$ 五重态含内禀时间坐标</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
 </owl:NamedIndividual>
@@ -1248,7 +1248,7 @@
   <mentionedIn rdf:resource="#C051"/>
   <mentionedIn rdf:resource="#C052"/>
   <derivedFrom rdf:resource="#EV_P024"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\iff$ RH $\wedge$ GRH</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
 </owl:NamedIndividual>
@@ -1256,7 +1256,7 @@
 <owl:NamedIndividual rdf:about="#P025">
   <rdf:type rdf:resource="#Theorem"/>
   <derivedFrom rdf:resource="#EV_P025"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛数学 $\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
@@ -1275,7 +1275,7 @@
 <owl:NamedIndividual rdf:about="#P027">
   <rdf:type rdf:resource="#Statement"/>
   <derivedFrom rdf:resource="#EV_P027"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素周期表可导出 T_c自由能框架 缺口G9-G22权威表</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D031</sourceDoc>
 </owl:NamedIndividual>
@@ -1285,7 +1285,7 @@
   <mentionedIn rdf:resource="#C012"/>
   <mentionedIn rdf:resource="#C018"/>
   <derivedFrom rdf:resource="#EV_P028"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">每个FG层级都有自己的同步算符 补入分子FG闭合 $\delta_{\text{intrinsic}}$ 缺口</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
 </owl:NamedIndividual>
@@ -1613,7 +1613,7 @@
   <rdf:type rdf:resource="#Construction"/>
   <mentionedIn rdf:resource="#C081"/>
   <derivedFrom rdf:resource="#EV_G032"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_N变分原理</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_N$变分原理</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">数值验证待独立复现</status>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D014</sourceDoc>
 </owl:NamedIndividual>
@@ -1624,8 +1624,8 @@
   <hasPremise rdf:resource="#C003"/>
   <hasConclusion rdf:resource="#C007"/>
   <derivedFrom rdf:resource="#EV_H001"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质先在;再生产幂等μ²=μ ⇒ 物质自组织</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质先在;再生产幂等μ²=μ</premisesText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质先在;再生产幂等$\mu^2=\mu$ ⇒ 物质自组织</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质先在;再生产幂等$\mu^2=\mu$</premisesText>
   <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005;D007</sourceDoc>
 </owl:NamedIndividual>
@@ -1636,9 +1636,9 @@
   <hasPremise rdf:resource="#C012"/>
   <hasConclusion rdf:resource="#C014"/>
   <derivedFrom rdf:resource="#EV_H002"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织;同步算符 ⇒ SU(5)基态</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织;同步算符 ⇒ $SU(5)$ 基态</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织;同步算符</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU(5)基态</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$SU(5)$ 基态</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007;D008</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1648,9 +1648,9 @@
   <hasPremise rdf:resource="#C055"/>
   <hasConclusion rdf:resource="#C014"/>
   <derivedFrom rdf:resource="#EV_H003"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征值{9,4,1};S_5表示论 ⇒ SU(5)规范群结构</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征值{9,4,1};S_5表示论</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU(5)规范群结构</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征值$\{9,4,1\}$;$S_5$ 表示论 ⇒ $SU(5)$ 规范群结构</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征值$\{9,4,1\}$;$S_5$ 表示论</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$SU(5)$ 规范群结构</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005;D019</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1659,9 +1659,9 @@
   <hasPremise rdf:resource="#C007"/>
   <hasConclusion rdf:resource="#C005"/>
   <derivedFrom rdf:resource="#EV_H004"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">前核子自组织;粗粒化 ⇒ 禁闭边界A_4</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">前核子自组织;粗粒化 ⇒ 禁闭边界 $A_4$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">前核子自组织;粗粒化</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">禁闭边界A_4</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">禁闭边界 $A_4$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1670,8 +1670,8 @@
   <hasPremise rdf:resource="#C029"/>
   <hasConclusion rdf:resource="#C028"/>
   <derivedFrom rdf:resource="#EV_H005"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子;中子缺陷α_4 ⇒ Regge铰链/非零角亏</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子;中子缺陷α_4</premisesText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子;中子缺陷 $\alpha_4$ ⇒ Regge铰链/非零角亏</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子;中子缺陷 $\alpha_4$</premisesText>
   <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regge铰链/非零角亏</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006</sourceDoc>
 </owl:NamedIndividual>
@@ -1679,9 +1679,9 @@
 <owl:NamedIndividual rdf:about="#H006">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_H006"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质晶胞分布内禀不均匀性 → Regge角亏δ_v</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质晶胞分布内禀不均匀性 → Regge角亏 $\delta_v$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质晶胞分布内禀不均匀性</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regge角亏δ_v</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regge角亏 $\delta_v$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006</sourceDoc>
 </owl:NamedIndividual>
@@ -1692,9 +1692,9 @@
   <hasPremise rdf:resource="#C054"/>
   <hasConclusion rdf:resource="#C030"/>
   <derivedFrom rdf:resource="#EV_H007"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">粒子A_4;中子D(δ) ⇒ 元素嘉当矩阵C_element</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">粒子A_4;中子D(δ)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素嘉当矩阵C_element</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">粒子 $A_4$;中子 $D(\delta)$ ⇒ 元素嘉当矩阵 $C_{\text{element}}$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">粒子 $A_4$;中子 $D(\delta)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素嘉当矩阵 $C_{\text{element}}$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D006;D030</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1714,8 +1714,8 @@
   <hasPremise rdf:resource="#C063"/>
   <hasConclusion rdf:resource="#C064"/>
   <derivedFrom rdf:resource="#EV_H009"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不确定性;跃迁耦级2ln_n ⇒ 资格条件</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不确定性;跃迁耦级2ln_n</premisesText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不确定性;跃迁耦级 $2\ln n$ ⇒ 资格条件</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不确定性;跃迁耦级 $2\ln n$</premisesText>
   <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">资格条件</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
 </owl:NamedIndividual>
@@ -1725,9 +1725,9 @@
   <hasPremise rdf:resource="#C070"/>
   <hasConclusion rdf:resource="#C067"/>
   <derivedFrom rdf:resource="#EV_H010"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">λ_2(T_c)=λ_1(T_c) ⇒ 丛作用量交叉F_1=F_2</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">λ_2(T_c)=λ_1(T_c)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">丛作用量交叉F_1=F_2</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\lambda_2(T_c)=\lambda_1(T_c)$ ⇒ 丛作用量交叉 $F_1=F_2$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\lambda_2(T_c)=\lambda_1(T_c)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">丛作用量交叉 $F_1=F_2$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D030</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1747,16 +1747,16 @@
   <hasPremise rdf:resource="#C014"/>
   <hasConclusion rdf:resource="#C013"/>
   <derivedFrom rdf:resource="#EV_H012"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步SU(5) ⇒ 各因子层GL(n)谱/残留</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步SU(5)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">各因子层GL(n)谱/残留</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步 $SU(5)$ ⇒ 各因子层 $GL(n)$ 谱/残留</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步 $SU(5)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">各因子层 $GL(n)$ 谱/残留</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#H013">
   <rdf:type rdf:resource="#Hyperedge"/>
-  <hasPremise rdf:resource="#C075"/>
   <hasPremise rdf:resource="#C074"/>
+  <hasPremise rdf:resource="#C075"/>
   <hasConclusion rdf:resource="#C040"/>
   <derivedFrom rdf:resource="#EV_H013"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">局部共形对称性;全局模对称性 ⇒ 自守形式</rdfs:label>
@@ -1770,9 +1770,9 @@
   <hasPremise rdf:resource="#C040"/>
   <hasConclusion rdf:resource="#C048"/>
   <derivedFrom rdf:resource="#EV_H014"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">时间侧自守形式;空间侧自守形式 ⇒ c</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">时间侧自守形式;空间侧自守形式 ⇒ $☯$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">时间侧自守形式;空间侧自守形式</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D009</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1792,13 +1792,13 @@
   <hasPremise rdf:resource="#C057"/>
   <hasPremise rdf:resource="#C058"/>
   <hasPremise rdf:resource="#C047"/>
-  <hasPremise rdf:resource="#C048"/>
   <hasPremise rdf:resource="#C056"/>
+  <hasPremise rdf:resource="#C048"/>
   <hasConclusion rdf:resource="#C081"/>
   <derivedFrom rdf:resource="#EV_H016"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I;λ_c;☯²;𝔠_1;exp(-2/☯);(1+κ☯) ⇒ G_N</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I;λ_c;☯²;𝔠_1;exp(-2/☯);(1+κ☯)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G_N</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$I$;$\lambda_c$;$☯^2$;$\mathfrak c_1$;$\exp(-2/☯)$;$(1+\kappa☯)$ ⇒ $G_N$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$I$;$\lambda_c$;$☯^2$;$\mathfrak c_1$;$\exp(-2/☯)$;$(1+\kappa☯)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_N$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D019;D014</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1807,9 +1807,9 @@
   <hasPremise rdf:resource="#C054"/>
   <hasConclusion rdf:resource="#C082"/>
   <derivedFrom rdf:resource="#EV_H017"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四个基约束性h;r;|W(A_4)|;tr(A_4) ⇒ Wyler常数α_W</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四个基约束性h;r;|W(A_4)|;tr(A_4)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数α_W</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四个基约束性 $h$;$r$;$|W(A_4)|$;$\operatorname{tr}(A_4)$ ⇒ Wyler常数 $\alpha_W$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四个基约束性 $h$;$r$;$|W(A_4)|$;$\operatorname{tr}(A_4)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数 $\alpha_W$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D021</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1846,9 +1846,9 @@
 <owl:NamedIndividual rdf:about="#A004">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A004"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-单纯形边-面结构 → M=EᵀE本征值{9,4,1}</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-单纯形边-面结构 → $M=E^{\mathsf T}E$ 本征值 $\{9,4,1\}$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-单纯形边-面结构</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M=EᵀE本征值{9,4,1}</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$M=E^{\mathsf T}E$ 本征值 $\{9,4,1\}$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
 </owl:NamedIndividual>
@@ -1856,9 +1856,9 @@
 <owl:NamedIndividual rdf:about="#A005">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A005"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU(5)紧致部分 → U(1)//Z_n商结构→α</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SU(5)紧致部分</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U(1)//Z_n商结构→α</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$SU(5)$ 紧致部分 → $U(1)//Z_n$ 商结构 $\to\alpha$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$SU(5)$ 紧致部分</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$U(1)//Z_n$ 商结构 $\to\alpha$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
 </owl:NamedIndividual>
@@ -1866,9 +1866,9 @@
 <owl:NamedIndividual rdf:about="#A006">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A006"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">δ_v → 联络A_FG→伴丛曲率F</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">δ_v</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络A_FG→伴丛曲率F</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_v$ → 联络 $A_{FG}\to$ 伴丛曲率 $F$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_v$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络 $A_{FG}\to$ 伴丛曲率 $F$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D028</sourceDoc>
 </owl:NamedIndividual>
@@ -1876,9 +1876,9 @@
 <owl:NamedIndividual rdf:about="#A007">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A007"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">δ_v → 固有时流速v_τ=√(1−βδ_v)</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">δ_v</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">固有时流速v_τ=√(1−βδ_v)</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_v$ → 固有时流速 $v_\tau=\sqrt{1-\beta\delta_v}$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_v$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">固有时流速 $v_\tau=\sqrt{1-\beta\delta_v}$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D015</sourceDoc>
 </owl:NamedIndividual>
@@ -1886,9 +1886,9 @@
 <owl:NamedIndividual rdf:about="#A008">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A008"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ζ欧拉乘积 → 局部耦合核κ_p</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ζ欧拉乘积</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">局部耦合核κ_p</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\zeta$ 欧拉乘积 → 局部耦合核 $\kappa_p$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\zeta$ 欧拉乘积</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">局部耦合核 $\kappa_p$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1896,9 +1896,9 @@
 <owl:NamedIndividual rdf:about="#A009">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A009"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">显式公式 → 同步格林函数ψ(e^u)</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">显式公式 → 同步格林函数 $\psi(e^u)$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">显式公式</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步格林函数ψ(e^u)</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步格林函数 $\psi(e^u)$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1906,9 +1906,9 @@
 <owl:NamedIndividual rdf:about="#A010">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A010"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">函数方程ξ(s)=ξ(1−s) → 同步算符厄米性S=S†</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">函数方程ξ(s)=ξ(1−s)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步算符厄米性S=S†</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">函数方程 $\xi(s)=\xi(1-s)$ → 同步算符厄米性 $S=S^\dagger$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">函数方程 $\xi(s)=\xi(1-s)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步算符厄米性 $S=S^\dagger$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1916,9 +1916,9 @@
 <owl:NamedIndividual rdf:about="#A011">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A011"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级𝔠_n为实 → L函数零点位于临界线</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级𝔠_n为实</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L函数零点位于临界线</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级 $\mathfrak c_n$ 为实 → $L$ 函数零点位于临界线</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级 $\mathfrak c_n$ 为实</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$L$ 函数零点位于临界线</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1926,9 +1926,9 @@
 <owl:NamedIndividual rdf:about="#A012">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A012"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RH → GL(5)固定层级实谱条件</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RH → $GL(5)$ 固定层级实谱条件</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RH</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL(5)固定层级实谱条件</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$GL(5)$ 固定层级实谱条件</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1936,9 +1936,9 @@
 <owl:NamedIndividual rdf:about="#A013">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A013"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼零点γ_n → 耦级𝔠_n=1/4+γ_n²</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼零点γ_n</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级𝔠_n=1/4+γ_n²</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼零点 $\gamma_n$ → 耦级 $\mathfrak c_n=1/4+\gamma_n^2$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎曼零点 $\gamma_n$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦级 $\mathfrak c_n=1/4+\gamma_n^2$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">映射</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1946,9 +1946,9 @@
 <owl:NamedIndividual rdf:about="#A014">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A014"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯=ξ'(1)/ξ(1) → λ_1=-B（三重恒等）</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯=ξ'(1)/ξ(1)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">λ_1=-B（三重恒等）</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯=\xi'(1)/\xi(1)$ → $\lambda_1=-B$（三重恒等）</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯=\xi'(1)/\xi(1)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\lambda_1=-B$（三重恒等）</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
 </owl:NamedIndividual>
@@ -1956,8 +1956,8 @@
 <owl:NamedIndividual rdf:about="#A015">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A015"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯谱表示Σ1/(γ_n²+1/4) → RH（单向推论）</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☯谱表示Σ1/(γ_n²+1/4)</premisesText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯$ 谱表示 $\Sigma 1/(\gamma_n^2+1/4)$ → RH（单向推论）</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯$ 谱表示 $\Sigma 1/(\gamma_n^2+1/4)$</premisesText>
   <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RH（单向推论）</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">依赖</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
@@ -1968,9 +1968,9 @@
   <hasPremise rdf:resource="#C074"/>
   <hasConclusion rdf:resource="#C074"/>
   <derivedFrom rdf:resource="#EV_A016"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">没有质量尺子;耦合锁死为纯数字 ⇒ 共形固定点β(g)=0</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">没有质量尺子;耦合锁死为纯数字 ⇒ 共形固定点 $\beta(g)=0$</rdfs:label>
   <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">没有质量尺子;耦合锁死为纯数字</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">共形固定点β(g)=0</conclusionText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">共形固定点 $\beta(g)=0$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D012</sourceDoc>
 </owl:NamedIndividual>
 
@@ -1988,9 +1988,9 @@
 <owl:NamedIndividual rdf:about="#A018">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A018"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛截面ψ → CFT primary operator φ</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛截面ψ</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CFT primary operator φ</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛截面 $\psi$ → CFT primary operator $\phi$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纤维丛截面 $\psi$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CFT primary operator $\phi$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
@@ -1998,9 +1998,9 @@
 <owl:NamedIndividual rdf:about="#A019">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A019"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络A_ℓ → Virasoro生成元{L_n}</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络A_ℓ</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virasoro生成元{L_n}</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络 $A_\ell$ → Virasoro生成元 $\{L_n\}$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">联络 $A_\ell$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virasoro生成元 $\{L_n\}$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
@@ -2008,9 +2008,9 @@
 <owl:NamedIndividual rdf:about="#A020">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A020"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率F → 对易子[L_m,L_n]</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率F</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">对易子[L_m,L_n]</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率 $F$ → 对易子 $[L_m,L_n]$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率 $F$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">对易子 $[L_m,L_n]$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
@@ -2018,9 +2018,9 @@
 <owl:NamedIndividual rdf:about="#A021">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A021"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐W(γ) → OPE monodromy e^{2πih}</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐W(γ)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OPE monodromy e^{2πih}</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐 $W(\gamma)$ → OPE monodromy $e^{2\pi ih}$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐 $W(\gamma)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OPE monodromy $e^{2\pi ih}$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">等价</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D029</sourceDoc>
 </owl:NamedIndividual>
@@ -2040,18 +2040,18 @@
   <hasPremise rdf:resource="#C042"/>
   <hasConclusion rdf:resource="#C049"/>
   <derivedFrom rdf:resource="#EV_A023"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">母群G ⇒ 本征群R→群算符Ĥ</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">母群G</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征群R→群算符Ĥ</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">母群 $G$ ⇒ 本征群 $R\to$ 群算符 $\hat H$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">母群 $G$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本征群 $R\to$ 群算符 $\hat H$</conclusionText>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D010</sourceDoc>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#A024">
   <rdf:type rdf:resource="#Argument"/>
   <derivedFrom rdf:resource="#EV_A024"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL(n) → Weyl群S_n</rdfs:label>
-  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL(n)</premisesText>
-  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weyl群S_n</conclusionText>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$GL(n)$ → Weyl群 $S_n$</rdfs:label>
+  <premisesText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$GL(n)$</premisesText>
+  <conclusionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weyl群 $S_n$</conclusionText>
   <relationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">层级含于</relationType>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D010</sourceDoc>
 </owl:NamedIndividual>

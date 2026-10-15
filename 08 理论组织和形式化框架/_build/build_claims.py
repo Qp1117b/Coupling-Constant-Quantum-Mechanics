@@ -299,7 +299,9 @@ def main():
         pid = p["prop_id"]
         st = p["statement"]
         for nm, cid in name2id.items():
-            if nm and nm in st:
+            if not nm:
+                continue
+            if nm in st or ("$" in nm and nm.replace("$", "") in st):
                 add_claim(pid, cid, "提及概念", "命题表.statement 含概念名", True, "high")
         for code in set(re.findall(r"(?<![A-Za-z])([CGN]\d{1,2})(?![A-Za-z0-9])", st)):
             tgt = [g["prop_id"] for g in gap_rows if g["gap_code"] == code]
@@ -316,7 +318,7 @@ def main():
             if srec:
                 txt = srec["text"]
                 for nm, cid in name2id.items():
-                    if nm and len(nm) >= 2 and nm in txt:
+                    if nm and len(nm) >= 2 and (nm in txt or ("$" in nm and nm.replace("$", "") in txt)):
                         add_claim(pid, cid, "证据句提及概念", f"证据句 {r['evidence_doc']}#{r['sid']}", False, "medium")
                 if CUE.search(txt):
                     add_claim(pid, "DISC:" + f"{r['evidence_doc']}#{r['sid']}", "话语线索", "证据句含推理连接词", False, "low",

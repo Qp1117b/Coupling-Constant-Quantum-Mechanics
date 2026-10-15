@@ -713,7 +713,7 @@
   },
   {
    "concept_id": "C081",
-   "name": "G_N",
+   "name": "$G_N$",
    "type": "物理",
    "definition": "牛顿引力常数 构造后验数字校验待独立复现",
    "source_doc": "D014",
@@ -1229,7 +1229,7 @@
   },
   {
    "prop_id": "G032",
-   "statement": "G_N变分原理",
+   "statement": "$G_N$变分原理",
    "type": "构造",
    "source_doc": "D014",
    "status": "数值验证待独立复现",
@@ -2537,7 +2537,7 @@
    },
    {
     "id": "C081",
-    "label": "G_N",
+    "label": "$G_N$",
     "type": "物理",
     "definition": "牛顿引力常数 构造后验数字校验待独立复现",
     "source_doc": "D014",
@@ -9809,9 +9809,9 @@
   },
   "rdf": {
    "triples_in_owl": 3958,
-   "triples_exported": 5529,
+   "triples_exported": 5530,
    "added": {
-    "alt_labels": 35,
+    "alt_labels": 36,
     "pref_labels": 81,
     "prov_links": 213,
     "lean_links": 59
@@ -11080,7 +11080,7 @@
   {
    "id": "G032",
    "kind": "prop",
-   "label": "G_N变分原理",
+   "label": "$G_N$变分原理",
    "type": "构造",
    "status": "数值验证待独立复现",
    "code": "",

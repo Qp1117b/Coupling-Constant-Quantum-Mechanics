@@ -40,8 +40,8 @@ cqm:A003 a cqm:Argument,
 
 cqm:A004 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "4-单纯形边-面结构 → M=EᵀE本征值{9,4,1}"^^xsd:string ;
-    cqm:conclusionText "M=EᵀE本征值{9,4,1}"^^xsd:string ;
+    rdfs:label "4-单纯形边-面结构 → $M=E^{\\mathsf T}E$ 本征值 $\\{9,4,1\\}$"^^xsd:string ;
+    cqm:conclusionText "$M=E^{\\mathsf T}E$ 本征值 $\\{9,4,1\\}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A004 ;
     cqm:premisesText "4-单纯形边-面结构"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
@@ -50,48 +50,48 @@ cqm:A004 a cqm:Argument,
 
 cqm:A005 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "SU(5)紧致部分 → U(1)//Z_n商结构→α"^^xsd:string ;
-    cqm:conclusionText "U(1)//Z_n商结构→α"^^xsd:string ;
+    rdfs:label "$SU(5)$ 紧致部分 → $U(1)//Z_n$ 商结构 $\\to\\alpha$"^^xsd:string ;
+    cqm:conclusionText "$U(1)//Z_n$ 商结构 $\\to\\alpha$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A005 ;
-    cqm:premisesText "SU(5)紧致部分"^^xsd:string ;
+    cqm:premisesText "$SU(5)$ 紧致部分"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
     cqm:sourceDoc "D023"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A005 .
 
 cqm:A006 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "δ_v → 联络A_FG→伴丛曲率F"^^xsd:string ;
-    cqm:conclusionText "联络A_FG→伴丛曲率F"^^xsd:string ;
+    rdfs:label "$\\delta_v$ → 联络 $A_{FG}\\to$ 伴丛曲率 $F$"^^xsd:string ;
+    cqm:conclusionText "联络 $A_{FG}\\to$ 伴丛曲率 $F$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A006 ;
-    cqm:premisesText "δ_v"^^xsd:string ;
+    cqm:premisesText "$\\delta_v$"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
     cqm:sourceDoc "D028"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A006 .
 
 cqm:A007 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "δ_v → 固有时流速v_τ=√(1−βδ_v)"^^xsd:string ;
-    cqm:conclusionText "固有时流速v_τ=√(1−βδ_v)"^^xsd:string ;
+    rdfs:label "$\\delta_v$ → 固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$"^^xsd:string ;
+    cqm:conclusionText "固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A007 ;
-    cqm:premisesText "δ_v"^^xsd:string ;
+    cqm:premisesText "$\\delta_v$"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
     cqm:sourceDoc "D015"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A007 .
 
 cqm:A008 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "ζ欧拉乘积 → 局部耦合核κ_p"^^xsd:string ;
-    cqm:conclusionText "局部耦合核κ_p"^^xsd:string ;
+    rdfs:label "$\\zeta$ 欧拉乘积 → 局部耦合核 $\\kappa_p$"^^xsd:string ;
+    cqm:conclusionText "局部耦合核 $\\kappa_p$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A008 ;
-    cqm:premisesText "ζ欧拉乘积"^^xsd:string ;
+    cqm:premisesText "$\\zeta$ 欧拉乘积"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A008 .
 
 cqm:A009 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "显式公式 → 同步格林函数ψ(e^u)"^^xsd:string ;
-    cqm:conclusionText "同步格林函数ψ(e^u)"^^xsd:string ;
+    rdfs:label "显式公式 → 同步格林函数 $\\psi(e^u)$"^^xsd:string ;
+    cqm:conclusionText "同步格林函数 $\\psi(e^u)$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A009 ;
     cqm:premisesText "显式公式"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
@@ -100,28 +100,28 @@ cqm:A009 a cqm:Argument,
 
 cqm:A010 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "函数方程ξ(s)=ξ(1−s) → 同步算符厄米性S=S†"^^xsd:string ;
-    cqm:conclusionText "同步算符厄米性S=S†"^^xsd:string ;
+    rdfs:label "函数方程 $\\xi(s)=\\xi(1-s)$ → 同步算符厄米性 $S=S^\\dagger$"^^xsd:string ;
+    cqm:conclusionText "同步算符厄米性 $S=S^\\dagger$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A010 ;
-    cqm:premisesText "函数方程ξ(s)=ξ(1−s)"^^xsd:string ;
+    cqm:premisesText "函数方程 $\\xi(s)=\\xi(1-s)$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A010 .
 
 cqm:A011 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "耦级𝔠_n为实 → L函数零点位于临界线"^^xsd:string ;
-    cqm:conclusionText "L函数零点位于临界线"^^xsd:string ;
+    rdfs:label "耦级 $\\mathfrak c_n$ 为实 → $L$ 函数零点位于临界线"^^xsd:string ;
+    cqm:conclusionText "$L$ 函数零点位于临界线"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A011 ;
-    cqm:premisesText "耦级𝔠_n为实"^^xsd:string ;
+    cqm:premisesText "耦级 $\\mathfrak c_n$ 为实"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A011 .
 
 cqm:A012 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "RH → GL(5)固定层级实谱条件"^^xsd:string ;
-    cqm:conclusionText "GL(5)固定层级实谱条件"^^xsd:string ;
+    rdfs:label "RH → $GL(5)$ 固定层级实谱条件"^^xsd:string ;
+    cqm:conclusionText "$GL(5)$ 固定层级实谱条件"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A012 ;
     cqm:premisesText "RH"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
@@ -130,38 +130,38 @@ cqm:A012 a cqm:Argument,
 
 cqm:A013 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "黎曼零点γ_n → 耦级𝔠_n=1/4+γ_n²"^^xsd:string ;
-    cqm:conclusionText "耦级𝔠_n=1/4+γ_n²"^^xsd:string ;
+    rdfs:label "黎曼零点 $\\gamma_n$ → 耦级 $\\mathfrak c_n=1/4+\\gamma_n^2$"^^xsd:string ;
+    cqm:conclusionText "耦级 $\\mathfrak c_n=1/4+\\gamma_n^2$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A013 ;
-    cqm:premisesText "黎曼零点γ_n"^^xsd:string ;
+    cqm:premisesText "黎曼零点 $\\gamma_n$"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A013 .
 
 cqm:A014 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "☯=ξ'(1)/ξ(1) → λ_1=-B（三重恒等）"^^xsd:string ;
-    cqm:conclusionText "λ_1=-B（三重恒等）"^^xsd:string ;
+    rdfs:label "$☯=\\xi'(1)/\\xi(1)$ → $\\lambda_1=-B$（三重恒等）"^^xsd:string ;
+    cqm:conclusionText "$\\lambda_1=-B$（三重恒等）"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A014 ;
-    cqm:premisesText "☯=ξ'(1)/ξ(1)"^^xsd:string ;
+    cqm:premisesText "$☯=\\xi'(1)/\\xi(1)$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A014 .
 
 cqm:A015 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "☯谱表示Σ1/(γ_n²+1/4) → RH（单向推论）"^^xsd:string ;
+    rdfs:label "$☯$ 谱表示 $\\Sigma 1/(\\gamma_n^2+1/4)$ → RH（单向推论）"^^xsd:string ;
     cqm:conclusionText "RH（单向推论）"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A015 ;
-    cqm:premisesText "☯谱表示Σ1/(γ_n²+1/4)"^^xsd:string ;
+    cqm:premisesText "$☯$ 谱表示 $\\Sigma 1/(\\gamma_n^2+1/4)$"^^xsd:string ;
     cqm:relationType "依赖"^^xsd:string ;
     cqm:sourceDoc "D008"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A015 .
 
 cqm:A016 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "没有质量尺子;耦合锁死为纯数字 ⇒ 共形固定点β(g)=0"^^xsd:string ;
-    cqm:conclusionText "共形固定点β(g)=0"^^xsd:string ;
+    rdfs:label "没有质量尺子;耦合锁死为纯数字 ⇒ 共形固定点 $\\beta(g)=0$"^^xsd:string ;
+    cqm:conclusionText "共形固定点 $\\beta(g)=0$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A016 ;
     cqm:hasConclusion cqm:C074 ;
     cqm:hasPremise cqm:C074 ;
@@ -182,40 +182,40 @@ cqm:A017 a cqm:Hyperedge,
 
 cqm:A018 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "纤维丛截面ψ → CFT primary operator φ"^^xsd:string ;
-    cqm:conclusionText "CFT primary operator φ"^^xsd:string ;
+    rdfs:label "纤维丛截面 $\\psi$ → CFT primary operator $\\phi$"^^xsd:string ;
+    cqm:conclusionText "CFT primary operator $\\phi$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A018 ;
-    cqm:premisesText "纤维丛截面ψ"^^xsd:string ;
+    cqm:premisesText "纤维丛截面 $\\psi$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D029"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A018 .
 
 cqm:A019 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "联络A_ℓ → Virasoro生成元{L_n}"^^xsd:string ;
-    cqm:conclusionText "Virasoro生成元{L_n}"^^xsd:string ;
+    rdfs:label "联络 $A_\\ell$ → Virasoro生成元 $\\{L_n\\}$"^^xsd:string ;
+    cqm:conclusionText "Virasoro生成元 $\\{L_n\\}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A019 ;
-    cqm:premisesText "联络A_ℓ"^^xsd:string ;
+    cqm:premisesText "联络 $A_\\ell$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D029"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A019 .
 
 cqm:A020 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "曲率F → 对易子[L_m,L_n]"^^xsd:string ;
-    cqm:conclusionText "对易子[L_m,L_n]"^^xsd:string ;
+    rdfs:label "曲率 $F$ → 对易子 $[L_m,L_n]$"^^xsd:string ;
+    cqm:conclusionText "对易子 $[L_m,L_n]$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A020 ;
-    cqm:premisesText "曲率F"^^xsd:string ;
+    cqm:premisesText "曲率 $F$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D029"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A020 .
 
 cqm:A021 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "和乐W(γ) → OPE monodromy e^{2πih}"^^xsd:string ;
-    cqm:conclusionText "OPE monodromy e^{2πih}"^^xsd:string ;
+    rdfs:label "和乐 $W(\\gamma)$ → OPE monodromy $e^{2\\pi ih}$"^^xsd:string ;
+    cqm:conclusionText "OPE monodromy $e^{2\\pi ih}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A021 ;
-    cqm:premisesText "和乐W(γ)"^^xsd:string ;
+    cqm:premisesText "和乐 $W(\\gamma)$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
     cqm:sourceDoc "D029"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A021 .
@@ -232,21 +232,21 @@ cqm:A022 a cqm:Argument,
 
 cqm:A023 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "母群G ⇒ 本征群R→群算符Ĥ"^^xsd:string ;
-    cqm:conclusionText "本征群R→群算符Ĥ"^^xsd:string ;
+    rdfs:label "母群 $G$ ⇒ 本征群 $R\\to$ 群算符 $\\hat H$"^^xsd:string ;
+    cqm:conclusionText "本征群 $R\\to$ 群算符 $\\hat H$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A023 ;
     cqm:hasConclusion cqm:C049 ;
     cqm:hasPremise cqm:C042 ;
-    cqm:premisesText "母群G"^^xsd:string ;
+    cqm:premisesText "母群 $G$"^^xsd:string ;
     cqm:sourceDoc "D010"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A023 .
 
 cqm:A024 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "GL(n) → Weyl群S_n"^^xsd:string ;
-    cqm:conclusionText "Weyl群S_n"^^xsd:string ;
+    rdfs:label "$GL(n)$ → Weyl群 $S_n$"^^xsd:string ;
+    cqm:conclusionText "Weyl群 $S_n$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A024 ;
-    cqm:premisesText "GL(n)"^^xsd:string ;
+    cqm:premisesText "$GL(n)$"^^xsd:string ;
     cqm:relationType "层级含于"^^xsd:string ;
     cqm:sourceDoc "D010"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_A024 .
@@ -535,12 +535,12 @@ cqm:C004 a cqm:MathStructureConcept,
         owl:NamedIndividual ;
     rdfs:label "因果集"^^xsd:string ;
     cqm:conceptDependsOn cqm:C009 ;
-    cqm:definition "(X,≺) 偏序集描述因果"^^xsd:string ;
+    cqm:definition "$(X,\\prec)$ 偏序集描述因果"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C004 ;
     cqm:formalizedIn <http://cqm.local/lean#CausalSet> ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§1.3"^^xsd:string ;
-    skos:definition "(X,≺) 偏序集描述因果"@zh ;
+    skos:definition "$(X,\\prec)$ 偏序集描述因果"@zh ;
     skos:prefLabel "因果集"@zh ;
     prov:wasDerivedFrom cqm:EV_C004 .
 
@@ -548,142 +548,142 @@ cqm:C011 a cqm:MathStructureConcept,
         owl:NamedIndividual ;
     rdfs:label "自我限制算符"^^xsd:string ;
     cqm:conceptDependsOn cqm:C012 ;
-    cqm:definition "R̂ 自我限制算符"^^xsd:string ;
+    cqm:definition "$\\hat{R}$ 自我限制算符"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C011 ;
     cqm:sourceDoc "D007"^^xsd:string ;
     cqm:sourceLoc "§9"^^xsd:string ;
-    skos:altLabel "R̂"@zh ;
-    skos:definition "R̂ 自我限制算符"@zh ;
+    skos:altLabel "$\\hat{\\mathcal R}$"@zh ;
+    skos:definition "$\\hat{R}$ 自我限制算符"@zh ;
     skos:prefLabel "自我限制算符"@zh ;
     prov:wasDerivedFrom cqm:EV_C011 .
 
 cqm:C031 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "对数比参数"^^xsd:string ;
-    cqm:definition "β=(1/4π)ln(L/a)"^^xsd:string ;
+    cqm:definition "$\\beta=(1/4\\pi)\\ln(L/a)$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C031 ;
     cqm:mapsTo cqm:C027 ;
     cqm:sourceDoc "D015"^^xsd:string ;
     cqm:sourceLoc "§三"^^xsd:string ;
-    skos:definition "β=(1/4π)ln(L/a)"@zh ;
+    skos:definition "$\\beta=(1/4\\pi)\\ln(L/a)$"@zh ;
     skos:prefLabel "对数比参数"@zh ;
     prov:wasDerivedFrom cqm:EV_C031 .
 
 cqm:C033 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "长度量纲"^^xsd:string ;
-    cqm:definition "L 长度量纲"^^xsd:string ;
+    cqm:definition "$L$ 长度量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C033 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "L 长度量纲"@zh ;
+    skos:definition "$L$ 长度量纲"@zh ;
     skos:prefLabel "长度量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C033 .
 
 cqm:C034 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "质量量纲"^^xsd:string ;
-    cqm:definition "M 质量量纲"^^xsd:string ;
+    cqm:definition "$M$ 质量量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C034 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "M 质量量纲"@zh ;
+    skos:definition "$M$ 质量量纲"@zh ;
     skos:prefLabel "质量量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C034 .
 
 cqm:C035 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "电荷量纲"^^xsd:string ;
-    cqm:definition "Q 电荷量纲"^^xsd:string ;
+    cqm:definition "$Q$ 电荷量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C035 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "Q 电荷量纲"@zh ;
+    skos:definition "$Q$ 电荷量纲"@zh ;
     skos:prefLabel "电荷量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C035 .
 
 cqm:C036 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "温度量纲"^^xsd:string ;
-    cqm:definition "Θ 温度量纲"^^xsd:string ;
+    cqm:definition "$\\Theta$ 温度量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C036 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "Θ 温度量纲"@zh ;
+    skos:definition "$\\Theta$ 温度量纲"@zh ;
     skos:prefLabel "温度量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C036 .
 
 cqm:C037 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "物质的量量纲"^^xsd:string ;
-    cqm:definition "N 物质的量量纲"^^xsd:string ;
+    cqm:definition "$N$ 物质的量量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C037 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "N 物质的量量纲"@zh ;
+    skos:definition "$N$ 物质的量量纲"@zh ;
     skos:prefLabel "物质的量量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C037 .
 
 cqm:C038 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "发光强度量纲"^^xsd:string ;
-    cqm:definition "J 发光强度量纲"^^xsd:string ;
+    cqm:definition "$J$ 发光强度量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C038 ;
     cqm:mapsTo cqm:C032 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "J 发光强度量纲"@zh ;
+    skos:definition "$J$ 发光强度量纲"@zh ;
     skos:prefLabel "发光强度量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C038 .
 
 cqm:C041 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "自守因子"^^xsd:string ;
-    cqm:definition "j 量纲因子"^^xsd:string ;
+    cqm:definition "$j$ 量纲因子"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C041 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.4"^^xsd:string ;
     cqm:subsumedIn cqm:C040 ;
-    skos:definition "j 量纲因子"@zh ;
+    skos:definition "$j$ 量纲因子"@zh ;
     skos:prefLabel "自守因子"@zh ;
     prov:wasDerivedFrom cqm:EV_C041 .
 
 cqm:C043 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "黎曼zeta函数"^^xsd:string ;
-    cqm:definition "ζ(s) 黎曼zeta函数"^^xsd:string ;
+    cqm:definition "$\\zeta(s)$ 黎曼zeta函数"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C043 ;
     cqm:formalizedIn <http://cqm.local/lean#SpectralGeometry> ;
     cqm:mapsTo cqm:C058 ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:definition "ζ(s) 黎曼zeta函数"@zh ;
+    skos:definition "$\\zeta(s)$ 黎曼zeta函数"@zh ;
     skos:prefLabel "黎曼zeta函数"@zh ;
     prov:wasDerivedFrom cqm:EV_C043 .
 
 cqm:C044 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "黎曼xi函数"^^xsd:string ;
-    cqm:definition "ξ(s)=ξ(1−s) 完成后的xi函数"^^xsd:string ;
+    cqm:definition "$\\xi(s)=\\xi(1-s)$ 完成后的xi函数"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C044 ;
     cqm:equivalentTo cqm:C012 ;
     cqm:formalizedIn <http://cqm.local/lean#SpectralGeometry> ;
     cqm:mapsTo cqm:C060 ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:definition "ξ(s)=ξ(1−s) 完成后的xi函数"@zh ;
+    skos:definition "$\\xi(s)=\\xi(1-s)$ 完成后的xi函数"@zh ;
     skos:prefLabel "黎曼xi函数"@zh ;
     prov:wasDerivedFrom cqm:EV_C044 .
 
 cqm:C045 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "黎曼零点"^^xsd:string ;
-    cqm:definition "γ_n 黎曼零点虚部"^^xsd:string ;
+    cqm:definition "$\\gamma_n$ 黎曼零点虚部"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C045 ;
     cqm:formalizedIn <http://cqm.local/lean#SpectralGeometry> ;
     cqm:mapsTo cqm:C046 ;
@@ -691,8 +691,8 @@ cqm:C045 a cqm:NumberTheoryConcept,
     cqm:sourceLoc "§3"^^xsd:string ;
     cqm:synonyms "Riemann zeros"^^xsd:string ;
     skos:altLabel "Riemann zeros"@zh,
-        "黎曼零点γ_n"@zh ;
-    skos:definition "γ_n 黎曼零点虚部"@zh ;
+        "黎曼零点 $\\gamma_n$"@zh ;
+    skos:definition "$\\gamma_n$ 黎曼零点虚部"@zh ;
     skos:prefLabel "黎曼零点"@zh ;
     prov:wasDerivedFrom cqm:EV_C045 .
 
@@ -711,7 +711,7 @@ cqm:C050 a cqm:NumberTheoryConcept,
 cqm:C053 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "4-单纯形"^^xsd:string ;
-    cqm:definition "正四单纯形 A₄"^^xsd:string ;
+    cqm:definition "正四单纯形 $A_4$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C053 ;
     cqm:formalizedIn <http://cqm.local/lean#CartanAlgebra>,
         <http://cqm.local/lean#GN> ;
@@ -719,7 +719,7 @@ cqm:C053 a cqm:GeometryConcept,
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§7.1"^^xsd:string ;
     skos:altLabel "4-单纯形边-面结构"@zh ;
-    skos:definition "正四单纯形 A₄"@zh ;
+    skos:definition "正四单纯形 $A_4$"@zh ;
     skos:prefLabel "4-单纯形"@zh ;
     prov:wasDerivedFrom cqm:EV_C053 .
 
@@ -727,13 +727,13 @@ cqm:C062 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "海森堡代数"^^xsd:string ;
     cqm:conceptDependsOn cqm:C061 ;
-    cqm:definition "[û,p̂_u]=i 海森堡对易"^^xsd:string ;
+    cqm:definition "$[\\hat{u},\\hat{p}_u]=i$ 海森堡对易"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C062 ;
     cqm:formalizedIn <http://cqm.local/lean#CouplingSpace>,
         <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
-    skos:definition "[û,p̂_u]=i 海森堡对易"@zh ;
+    skos:definition "$[\\hat{u},\\hat{p}_u]=i$ 海森堡对易"@zh ;
     skos:prefLabel "海森堡代数"@zh ;
     prov:wasDerivedFrom cqm:EV_C062 .
 
@@ -741,11 +741,11 @@ cqm:C065 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "结构群叠加态"^^xsd:string ;
     cqm:conceptDependsOn cqm:C066 ;
-    cqm:definition "|Ψ⟩ 结构群叠加态"^^xsd:string ;
+    cqm:definition "$|\\Psi\\rangle$ 结构群叠加态"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C065 ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "|Ψ⟩ 结构群叠加态"@zh ;
+    skos:definition "$|\\Psi\\rangle$ 结构群叠加态"@zh ;
     skos:prefLabel "结构群叠加态"@zh ;
     prov:wasDerivedFrom cqm:EV_C065 .
 
@@ -753,24 +753,24 @@ cqm:C068 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "主导群"^^xsd:string ;
     cqm:conceptDependsOn cqm:C066 ;
-    cqm:definition "G_主导=argmin F_n"^^xsd:string ;
+    cqm:definition "$G_{\\text{主导}}=\\arg\\min F_n$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C068 ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "G_主导=argmin F_n"@zh ;
+    skos:definition "$G_{\\text{主导}}=\\arg\\min F_n$"@zh ;
     skos:prefLabel "主导群"@zh ;
     prov:wasDerivedFrom cqm:EV_C068 .
 
 cqm:C069 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "超导同步算符"^^xsd:string ;
-    cqm:definition "Ŝ_super 超导同步算符"^^xsd:string ;
+    cqm:definition "$\\hat{S}_{\\text{super}}$ 超导同步算符"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C069 ;
     cqm:formalizedIn <http://cqm.local/lean#Superconductivity> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
     cqm:subsumedIn cqm:C012 ;
-    skos:definition "Ŝ_super 超导同步算符"@zh ;
+    skos:definition "$\\hat{S}_{\\text{super}}$ 超导同步算符"@zh ;
     skos:prefLabel "超导同步算符"@zh ;
     prov:wasDerivedFrom cqm:EV_C069 .
 
@@ -778,11 +778,11 @@ cqm:C077 a cqm:CFTConcept,
         owl:NamedIndividual ;
     rdfs:label "中央荷"^^xsd:string ;
     cqm:conceptDependsOn cqm:C076 ;
-    cqm:definition "c Virasoro中央荷"^^xsd:string ;
+    cqm:definition "$c$ Virasoro中央荷"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C077 ;
     cqm:sourceDoc "D012"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "c Virasoro中央荷"@zh ;
+    skos:definition "$c$ Virasoro中央荷"@zh ;
     skos:prefLabel "中央荷"@zh ;
     prov:wasDerivedFrom cqm:EV_C077 .
 
@@ -790,11 +790,11 @@ cqm:C078 a cqm:CFTConcept,
         owl:NamedIndividual ;
     rdfs:label "共形维度"^^xsd:string ;
     cqm:conceptDependsOn cqm:C075 ;
-    cqm:definition "h 共形维度"^^xsd:string ;
+    cqm:definition "$h$ 共形维度"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C078 ;
     cqm:sourceDoc "D012"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "h 共形维度"@zh ;
+    skos:definition "$h$ 共形维度"@zh ;
     skos:prefLabel "共形维度"@zh ;
     prov:wasDerivedFrom cqm:EV_C078 .
 
@@ -1075,7 +1075,7 @@ cqm:G031 a cqm:Hypothesis,
 
 cqm:G032 a cqm:Construction,
         owl:NamedIndividual ;
-    rdfs:label "G_N变分原理"^^xsd:string ;
+    rdfs:label "$G_N$变分原理"^^xsd:string ;
     cqm:derivedFrom cqm:EV_G032 ;
     cqm:mentionedIn cqm:C081 ;
     cqm:sourceDoc "D014"^^xsd:string ;
@@ -1084,20 +1084,20 @@ cqm:G032 a cqm:Construction,
 
 cqm:H001 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "物质先在;再生产幂等μ²=μ ⇒ 物质自组织"^^xsd:string ;
+    rdfs:label "物质先在;再生产幂等$\\mu^2=\\mu$ ⇒ 物质自组织"^^xsd:string ;
     cqm:conclusionText "物质自组织"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H001 ;
     cqm:hasConclusion cqm:C007 ;
     cqm:hasPremise cqm:C002,
         cqm:C003 ;
-    cqm:premisesText "物质先在;再生产幂等μ²=μ"^^xsd:string ;
+    cqm:premisesText "物质先在;再生产幂等$\\mu^2=\\mu$"^^xsd:string ;
     cqm:sourceDoc "D005;D007"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H001 .
 
 cqm:H002 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "物质自组织;同步算符 ⇒ SU(5)基态"^^xsd:string ;
-    cqm:conclusionText "SU(5)基态"^^xsd:string ;
+    rdfs:label "物质自组织;同步算符 ⇒ $SU(5)$ 基态"^^xsd:string ;
+    cqm:conclusionText "$SU(5)$ 基态"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H002 ;
     cqm:hasConclusion cqm:C014 ;
     cqm:hasPremise cqm:C007,
@@ -1108,20 +1108,20 @@ cqm:H002 a cqm:Hyperedge,
 
 cqm:H003 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "本征值{9,4,1};S_5表示论 ⇒ SU(5)规范群结构"^^xsd:string ;
-    cqm:conclusionText "SU(5)规范群结构"^^xsd:string ;
+    rdfs:label "本征值$\\{9,4,1\\}$;$S_5$ 表示论 ⇒ $SU(5)$ 规范群结构"^^xsd:string ;
+    cqm:conclusionText "$SU(5)$ 规范群结构"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H003 ;
     cqm:hasConclusion cqm:C014 ;
     cqm:hasPremise cqm:C055,
         cqm:C059 ;
-    cqm:premisesText "本征值{9,4,1};S_5表示论"^^xsd:string ;
+    cqm:premisesText "本征值$\\{9,4,1\\}$;$S_5$ 表示论"^^xsd:string ;
     cqm:sourceDoc "D005;D019"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H003 .
 
 cqm:H004 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "前核子自组织;粗粒化 ⇒ 禁闭边界A_4"^^xsd:string ;
-    cqm:conclusionText "禁闭边界A_4"^^xsd:string ;
+    rdfs:label "前核子自组织;粗粒化 ⇒ 禁闭边界 $A_4$"^^xsd:string ;
+    cqm:conclusionText "禁闭边界 $A_4$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H004 ;
     cqm:hasConclusion cqm:C005 ;
     cqm:hasPremise cqm:C007 ;
@@ -1131,19 +1131,19 @@ cqm:H004 a cqm:Hyperedge,
 
 cqm:H005 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "质子;中子缺陷α_4 ⇒ Regge铰链/非零角亏"^^xsd:string ;
+    rdfs:label "质子;中子缺陷 $\\alpha_4$ ⇒ Regge铰链/非零角亏"^^xsd:string ;
     cqm:conclusionText "Regge铰链/非零角亏"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H005 ;
     cqm:hasConclusion cqm:C028 ;
     cqm:hasPremise cqm:C029 ;
-    cqm:premisesText "质子;中子缺陷α_4"^^xsd:string ;
+    cqm:premisesText "质子;中子缺陷 $\\alpha_4$"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H005 .
 
 cqm:H006 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "物质晶胞分布内禀不均匀性 → Regge角亏δ_v"^^xsd:string ;
-    cqm:conclusionText "Regge角亏δ_v"^^xsd:string ;
+    rdfs:label "物质晶胞分布内禀不均匀性 → Regge角亏 $\\delta_v$"^^xsd:string ;
+    cqm:conclusionText "Regge角亏 $\\delta_v$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H006 ;
     cqm:premisesText "物质晶胞分布内禀不均匀性"^^xsd:string ;
     cqm:relationType "映射"^^xsd:string ;
@@ -1152,13 +1152,13 @@ cqm:H006 a cqm:Argument,
 
 cqm:H007 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "粒子A_4;中子D(δ) ⇒ 元素嘉当矩阵C_element"^^xsd:string ;
-    cqm:conclusionText "元素嘉当矩阵C_element"^^xsd:string ;
+    rdfs:label "粒子 $A_4$;中子 $D(\\delta)$ ⇒ 元素嘉当矩阵 $C_{\\text{element}}$"^^xsd:string ;
+    cqm:conclusionText "元素嘉当矩阵 $C_{\\text{element}}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H007 ;
     cqm:hasConclusion cqm:C030 ;
     cqm:hasPremise cqm:C029,
         cqm:C054 ;
-    cqm:premisesText "粒子A_4;中子D(δ)"^^xsd:string ;
+    cqm:premisesText "粒子 $A_4$;中子 $D(\\delta)$"^^xsd:string ;
     cqm:sourceDoc "D006;D030"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H007 .
 
@@ -1175,23 +1175,23 @@ cqm:H008 a cqm:Hyperedge,
 
 cqm:H009 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "不确定性;跃迁耦级2ln_n ⇒ 资格条件"^^xsd:string ;
+    rdfs:label "不确定性;跃迁耦级 $2\\ln n$ ⇒ 资格条件"^^xsd:string ;
     cqm:conclusionText "资格条件"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H009 ;
     cqm:hasConclusion cqm:C064 ;
     cqm:hasPremise cqm:C063 ;
-    cqm:premisesText "不确定性;跃迁耦级2ln_n"^^xsd:string ;
+    cqm:premisesText "不确定性;跃迁耦级 $2\\ln n$"^^xsd:string ;
     cqm:sourceDoc "D030"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H009 .
 
 cqm:H010 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "λ_2(T_c)=λ_1(T_c) ⇒ 丛作用量交叉F_1=F_2"^^xsd:string ;
-    cqm:conclusionText "丛作用量交叉F_1=F_2"^^xsd:string ;
+    rdfs:label "$\\lambda_2(T_c)=\\lambda_1(T_c)$ ⇒ 丛作用量交叉 $F_1=F_2$"^^xsd:string ;
+    cqm:conclusionText "丛作用量交叉 $F_1=F_2$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H010 ;
     cqm:hasConclusion cqm:C067 ;
     cqm:hasPremise cqm:C070 ;
-    cqm:premisesText "λ_2(T_c)=λ_1(T_c)"^^xsd:string ;
+    cqm:premisesText "$\\lambda_2(T_c)=\\lambda_1(T_c)$"^^xsd:string ;
     cqm:sourceDoc "D030"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H010 .
 
@@ -1208,12 +1208,12 @@ cqm:H011 a cqm:Hyperedge,
 
 cqm:H012 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "物质自组织基态同步SU(5) ⇒ 各因子层GL(n)谱/残留"^^xsd:string ;
-    cqm:conclusionText "各因子层GL(n)谱/残留"^^xsd:string ;
+    rdfs:label "物质自组织基态同步 $SU(5)$ ⇒ 各因子层 $GL(n)$ 谱/残留"^^xsd:string ;
+    cqm:conclusionText "各因子层 $GL(n)$ 谱/残留"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H012 ;
     cqm:hasConclusion cqm:C013 ;
     cqm:hasPremise cqm:C014 ;
-    cqm:premisesText "物质自组织基态同步SU(5)"^^xsd:string ;
+    cqm:premisesText "物质自组织基态同步 $SU(5)$"^^xsd:string ;
     cqm:sourceDoc "D029"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H012 .
 
@@ -1231,8 +1231,8 @@ cqm:H013 a cqm:Hyperedge,
 
 cqm:H014 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "时间侧自守形式;空间侧自守形式 ⇒ c"^^xsd:string ;
-    cqm:conclusionText "c"^^xsd:string ;
+    rdfs:label "时间侧自守形式;空间侧自守形式 ⇒ $☯$"^^xsd:string ;
+    cqm:conclusionText "$☯$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H014 ;
     cqm:hasConclusion cqm:C048 ;
     cqm:hasPremise cqm:C040 ;
@@ -1253,8 +1253,8 @@ cqm:H015 a cqm:Hyperedge,
 
 cqm:H016 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "I;λ_c;☯²;𝔠_1;exp(-2/☯);(1+κ☯) ⇒ G_N"^^xsd:string ;
-    cqm:conclusionText "G_N"^^xsd:string ;
+    rdfs:label "$I$;$\\lambda_c$;$☯^2$;$\\mathfrak c_1$;$\\exp(-2/☯)$;$(1+\\kappa☯)$ ⇒ $G_N$"^^xsd:string ;
+    cqm:conclusionText "$G_N$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H016 ;
     cqm:hasConclusion cqm:C081 ;
     cqm:hasPremise cqm:C047,
@@ -1262,18 +1262,18 @@ cqm:H016 a cqm:Hyperedge,
         cqm:C056,
         cqm:C057,
         cqm:C058 ;
-    cqm:premisesText "I;λ_c;☯²;𝔠_1;exp(-2/☯);(1+κ☯)"^^xsd:string ;
+    cqm:premisesText "$I$;$\\lambda_c$;$☯^2$;$\\mathfrak c_1$;$\\exp(-2/☯)$;$(1+\\kappa☯)$"^^xsd:string ;
     cqm:sourceDoc "D019;D014"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H016 .
 
 cqm:H017 a cqm:Hyperedge,
         owl:NamedIndividual ;
-    rdfs:label "四个基约束性h;r;|W(A_4)|;tr(A_4) ⇒ Wyler常数α_W"^^xsd:string ;
-    cqm:conclusionText "Wyler常数α_W"^^xsd:string ;
+    rdfs:label "四个基约束性 $h$;$r$;$|W(A_4)|$;$\\operatorname{tr}(A_4)$ ⇒ Wyler常数 $\\alpha_W$"^^xsd:string ;
+    cqm:conclusionText "Wyler常数 $\\alpha_W$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_H017 ;
     cqm:hasConclusion cqm:C082 ;
     cqm:hasPremise cqm:C054 ;
-    cqm:premisesText "四个基约束性h;r;|W(A_4)|;tr(A_4)"^^xsd:string ;
+    cqm:premisesText "四个基约束性 $h$;$r$;$|W(A_4)|$;$\\operatorname{tr}(A_4)$"^^xsd:string ;
     cqm:sourceDoc "D021"^^xsd:string ;
     prov:wasDerivedFrom cqm:EV_H017 .
 
@@ -1310,7 +1310,7 @@ cqm:P003 a cqm:Statement,
 
 cqm:P004 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器"^^xsd:string ;
+    rdfs:label "质数是源 $GL(5)$ 是谐振腔 GRH是实谱条件 同步算符是换能器"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P004 ;
     cqm:mentionedIn cqm:C012,
         cqm:C017,
@@ -1370,7 +1370,7 @@ cqm:P009 a cqm:Hypothesis,
 
 cqm:P010 a cqm:Construction,
         owl:NamedIndividual ;
-    rdfs:label "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm"^^xsd:string ;
+    rdfs:label "$G_N=\\hbar c/(m_p^2)\\cdot I\\cdot\\lambda_c\\cdot☯^2\\cdot\\mathfrak c_1\\cdot\\exp(-2/☯)\\cdot(1+\\kappa☯)$ 偏差约-3ppm"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P010 ;
     cqm:mentionedIn cqm:C081 ;
     cqm:sourceDoc "D014"^^xsd:string ;
@@ -1398,7 +1398,7 @@ cqm:P012 a cqm:Statement,
 
 cqm:P013 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "3已知+2待推+物理存在性⇒交叉RH成立"^^xsd:string ;
+    rdfs:label "3已知+2待推+物理存在性 $\\Rightarrow$ 交叉RH成立"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P013 ;
     cqm:mentionedIn cqm:C051 ;
     cqm:sourceDoc "D017"^^xsd:string ;
@@ -1407,7 +1407,7 @@ cqm:P013 a cqm:Statement,
 
 cqm:P014 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合"^^xsd:string ;
+    rdfs:label "边界长度半已解 相位半 $S(T)$ 是唯一实质缺口 五重联系整合"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P014 ;
     cqm:sourceDoc "D018"^^xsd:string ;
     cqm:status "已陈述"^^xsd:string ;
@@ -1415,7 +1415,7 @@ cqm:P014 a cqm:Statement,
 
 cqm:P015 a cqm:Theorem,
         owl:NamedIndividual ;
-    rdfs:label "定义-公理-定理-证明 ☯三重恒等+G_N构造11.1"^^xsd:string ;
+    rdfs:label "定义-公理-定理-证明 $☯$ 三重恒等+$G_N$ 构造11.1"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P015 ;
     cqm:mentionedIn cqm:C048,
         cqm:C081 ;
@@ -1425,7 +1425,7 @@ cqm:P015 a cqm:Theorem,
 
 cqm:P016 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化"^^xsd:string ;
+    rdfs:label "质量是自守关联的涌现结果 其它粒子是 $\\pi_p$ 的朗兰兹函子性分化"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P016 ;
     cqm:mentionedIn cqm:C080 ;
     cqm:sourceDoc "D020"^^xsd:string ;
@@ -1434,7 +1434,7 @@ cqm:P016 a cqm:Statement,
 
 cqm:P017 a cqm:Theorem,
         owl:NamedIndividual ;
-    rdfs:label "Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链"^^xsd:string ;
+    rdfs:label "Wyler常数可用 $A_4$ 群论不变量表达 嵌入 $SU(5)$ 重组实现链"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P017 ;
     cqm:mentionedIn cqm:C015,
         cqm:C082 ;
@@ -1455,7 +1455,7 @@ cqm:P018 a cqm:Statement,
 
 cqm:P019 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标"^^xsd:string ;
+    rdfs:label "规范对称性从不破缺 超导=$U(1)//Z_n$ 重组 $SU(5)$ 五重态含内禀时间坐标"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P019 ;
     cqm:mentionedIn cqm:C016 ;
     cqm:sourceDoc "D023"^^xsd:string ;
@@ -1501,7 +1501,7 @@ cqm:P023 a cqm:Statement,
 
 cqm:P024 a cqm:Theorem,
         owl:NamedIndividual ;
-    rdfs:label "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH"^^xsd:string ;
+    rdfs:label "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\\iff$ RH $\\wedge$ GRH"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P024 ;
     cqm:mentionedIn cqm:C017,
         cqm:C018,
@@ -1515,7 +1515,7 @@ cqm:P024 a cqm:Theorem,
 
 cqm:P025 a cqm:Theorem,
         owl:NamedIndividual ;
-    rdfs:label "纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释"^^xsd:string ;
+    rdfs:label "纤维丛数学 $\\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P025 ;
     cqm:sourceDoc "D029"^^xsd:string ;
     cqm:status "已陈述"^^xsd:string ;
@@ -1534,7 +1534,7 @@ cqm:P026 a cqm:Statement,
 
 cqm:P027 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "元素周期表可导出 T_c自由能框架 缺口G9-G22权威表"^^xsd:string ;
+    rdfs:label "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P027 ;
     cqm:sourceDoc "D031"^^xsd:string ;
     cqm:status "已陈述"^^xsd:string ;
@@ -1542,7 +1542,7 @@ cqm:P027 a cqm:Statement,
 
 cqm:P028 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口"^^xsd:string ;
+    rdfs:label "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P028 ;
     cqm:mentionedIn cqm:C012,
         cqm:C018 ;
@@ -1635,15 +1635,15 @@ cqm:synonyms a owl:AnnotationProperty .
 cqm:C003 a cqm:OntologyConcept,
         owl:NamedIndividual ;
     rdfs:label "再生产"^^xsd:string ;
-    cqm:definition "幂等算符 μ²=μ 描述自组织"^^xsd:string ;
+    cqm:definition "幂等算符 $\\mu^2=\\mu$ 描述自组织"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C003 ;
     cqm:formalizedIn <http://cqm.local/lean#CausalSet> ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§1.3"^^xsd:string ;
     cqm:synonyms "幂等自组织"^^xsd:string ;
-    skos:altLabel "再生产幂等μ²=μ"@zh,
+    skos:altLabel "再生产幂等$\\mu^2=\\mu$"@zh,
         "幂等自组织"@zh ;
-    skos:definition "幂等算符 μ²=μ 描述自组织"@zh ;
+    skos:definition "幂等算符 $\\mu^2=\\mu$ 描述自组织"@zh ;
     skos:prefLabel "再生产"@zh ;
     prov:wasDerivedFrom cqm:EV_C003 .
 
@@ -1703,12 +1703,12 @@ cqm:C021 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "伴丛"^^xsd:string ;
     cqm:conceptDependsOn cqm:C020 ;
-    cqm:definition "E_R 伴丛"^^xsd:string ;
+    cqm:definition "$E_R$ 伴丛"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C021 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D028"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:definition "E_R 伴丛"@zh ;
+    skos:definition "$E_R$ 伴丛"@zh ;
     skos:prefLabel "伴丛"@zh ;
     prov:wasDerivedFrom cqm:EV_C021 .
 
@@ -1740,109 +1740,109 @@ cqm:C028 a cqm:GeometryConcept,
 cqm:C030 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "元素嘉当矩阵"^^xsd:string ;
-    cqm:definition "C_element 元素嘉当矩阵"^^xsd:string ;
+    cqm:definition "$C_{\\text{element}}$ 元素嘉当矩阵"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C030 ;
     cqm:formalizedIn <http://cqm.local/lean#Superconductivity> ;
     cqm:sourceDoc "D006"^^xsd:string ;
     cqm:sourceLoc "§二.5"^^xsd:string ;
-    skos:altLabel "元素嘉当矩阵C_element"@zh ;
-    skos:definition "C_element 元素嘉当矩阵"@zh ;
+    skos:altLabel "元素嘉当矩阵 $C_{\\text{element}}$"@zh ;
+    skos:definition "$C_{\\text{element}}$ 元素嘉当矩阵"@zh ;
     skos:prefLabel "元素嘉当矩阵"@zh ;
     prov:wasDerivedFrom cqm:EV_C030 .
 
 cqm:C039 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "量纲转换常数族"^^xsd:string ;
-    cqm:definition "K_L K_M K_Q K_Θ K_N K_J"^^xsd:string ;
+    cqm:definition "$K_L\\, K_M\\, K_Q\\, K_\\Theta\\, K_N\\, K_J$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C039 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.3"^^xsd:string ;
-    skos:definition "K_L K_M K_Q K_Θ K_N K_J"@zh ;
+    skos:definition "$K_L\\, K_M\\, K_Q\\, K_\\Theta\\, K_N\\, K_J$"@zh ;
     skos:prefLabel "量纲转换常数族"@zh ;
     prov:wasDerivedFrom cqm:EV_C039 .
 
 cqm:C042 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "极大关系群"^^xsd:string ;
-    cqm:definition "G_max(f) 极大关系群"^^xsd:string ;
+    cqm:definition "$G_{\\max}(f)$ 极大关系群"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C042 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.4"^^xsd:string ;
-    skos:definition "G_max(f) 极大关系群"@zh ;
+    skos:definition "$G_{\\max}(f)$ 极大关系群"@zh ;
     skos:prefLabel "极大关系群"@zh ;
     prov:wasDerivedFrom cqm:EV_C042 .
 
 cqm:C047 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "第一耦级"^^xsd:string ;
-    cqm:definition "𝔠₁=1/4+γ₁²≈0.5211"^^xsd:string ;
+    cqm:definition "$\\mathfrak{c}_1=1/4+\\gamma_1^2\\approx 0.5211$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C047 ;
     cqm:formalizedIn <http://cqm.local/lean#GN>,
         <http://cqm.local/lean#SpectralGeometry> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:definition "𝔠₁=1/4+γ₁²≈0.5211"@zh ;
+    skos:definition "$\\mathfrak{c}_1=1/4+\\gamma_1^2\\approx 0.5211$"@zh ;
     skos:prefLabel "第一耦级"@zh ;
     prov:wasDerivedFrom cqm:EV_C047 .
 
 cqm:C056 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "Dynkin指数比"^^xsd:string ;
-    cqm:definition "I=5/3"^^xsd:string ;
+    cqm:definition "$I=5/3$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C056 ;
     cqm:formalizedIn <http://cqm.local/lean#CartanAlgebra> ;
     cqm:sourceDoc "D014"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
-    skos:definition "I=5/3"@zh ;
+    skos:definition "$I=5/3$"@zh ;
     skos:prefLabel "Dynkin指数比"@zh ;
     prov:wasDerivedFrom cqm:EV_C056 .
 
 cqm:C060 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "耦合坐标"^^xsd:string ;
-    cqm:definition "u=ln r 耦合坐标"^^xsd:string ;
+    cqm:definition "$u=\\ln r$ 耦合坐标"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C060 ;
     cqm:formalizedIn <http://cqm.local/lean#CouplingSpace>,
         <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
-    skos:definition "u=ln r 耦合坐标"@zh ;
+    skos:definition "$u=\\ln r$ 耦合坐标"@zh ;
     skos:prefLabel "耦合坐标"@zh ;
     prov:wasDerivedFrom cqm:EV_C060 .
 
 cqm:C061 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "耦合动量"^^xsd:string ;
-    cqm:definition "p_u=v_τ/☯ 耦合动量"^^xsd:string ;
+    cqm:definition "$p_u=v_\\tau/☯$ 耦合动量"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C061 ;
     cqm:formalizedIn <http://cqm.local/lean#CouplingSpace>,
         <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
-    skos:definition "p_u=v_τ/☯ 耦合动量"@zh ;
+    skos:definition "$p_u=v_\\tau/☯$ 耦合动量"@zh ;
     skos:prefLabel "耦合动量"@zh ;
     prov:wasDerivedFrom cqm:EV_C061 .
 
 cqm:C063 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "跃迁耦级谱"^^xsd:string ;
-    cqm:definition "Δu_n=2ln n 跃迁耦级"^^xsd:string ;
+    cqm:definition "$\\Delta u_n=2\\ln n$ 跃迁耦级"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C063 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "Δu_n=2ln n 跃迁耦级"@zh ;
+    skos:definition "$\\Delta u_n=2\\ln n$ 跃迁耦级"@zh ;
     skos:prefLabel "跃迁耦级谱"@zh ;
     prov:wasDerivedFrom cqm:EV_C063 .
 
 cqm:C064 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "资格条件"^^xsd:string ;
-    cqm:definition "Δδ_0≥☯√(1−βδ_v)/(2β ln n)"^^xsd:string ;
+    cqm:definition "$\\Delta\\delta_0\\geq☯\\sqrt{1-\\beta\\delta_v}/(2\\beta\\ln n)$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C064 ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "Δδ_0≥☯√(1−βδ_v)/(2β ln n)"@zh ;
+    skos:definition "$\\Delta\\delta_0\\geq☯\\sqrt{1-\\beta\\delta_v}/(2\\beta\\ln n)$"@zh ;
     skos:prefLabel "资格条件"@zh ;
     prov:wasDerivedFrom cqm:EV_C064 .
 
@@ -1861,12 +1861,12 @@ cqm:C072 a cqm:PhysicsConcept,
 cqm:C073 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "FG层级四元组"^^xsd:string ;
-    cqm:definition "(M_ℓ P(M_ℓ G_ℓ) A_ℓ Ŝ_ℓ)"^^xsd:string ;
+    cqm:definition "$(M_\\ell\\, P(M_\\ell,G_\\ell)\\, A_\\ell\\, \\hat{S}_\\ell)$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C073 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D032"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "(M_ℓ P(M_ℓ G_ℓ) A_ℓ Ŝ_ℓ)"@zh ;
+    skos:definition "$(M_\\ell\\, P(M_\\ell,G_\\ell)\\, A_\\ell\\, \\hat{S}_\\ell)$"@zh ;
     skos:prefLabel "FG层级四元组"@zh ;
     prov:wasDerivedFrom cqm:EV_C073 .
 
@@ -1990,71 +1990,71 @@ cqm:C002 a cqm:OntologyConcept,
 cqm:C013 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "GL5固定层级"^^xsd:string ;
-    cqm:definition "GL(5) 潜能先在的固定层级"^^xsd:string ;
+    cqm:definition "$GL(5)$ 潜能先在的固定层级"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C013 ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§0"^^xsd:string ;
     cqm:subsumedIn cqm:C059 ;
-    skos:altLabel "GL(5)固定层级实谱条件"@zh ;
-    skos:definition "GL(5) 潜能先在的固定层级"@zh ;
+    skos:altLabel "$GL(5)$ 固定层级实谱条件"@zh ;
+    skos:definition "$GL(5)$ 潜能先在的固定层级"@zh ;
     skos:prefLabel "GL5固定层级"@zh ;
     prov:wasDerivedFrom cqm:EV_C013 .
 
 cqm:C015 a cqm:RelationTypeConcept,
         owl:NamedIndividual ;
     rdfs:label "重组实现"^^xsd:string ;
-    cqm:definition "多因一果的有向超边 ⇒"^^xsd:string ;
+    cqm:definition "多因一果的有向超边 $\\Rightarrow$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C015 ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§1.3"^^xsd:string ;
-    skos:altLabel "⇒"@zh ;
-    skos:definition "多因一果的有向超边 ⇒"@zh ;
+    skos:altLabel "$\\Rightarrow$"@zh ;
+    skos:definition "多因一果的有向超边 $\\Rightarrow$"@zh ;
     skos:prefLabel "重组实现"@zh ;
     prov:wasDerivedFrom cqm:EV_C015 .
 
 cqm:C022 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "联络"^^xsd:string ;
-    cqm:definition "A 主丛联络"^^xsd:string ;
+    cqm:definition "$A$ 主丛联络"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C022 ;
     cqm:equivalentTo cqm:C076 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D028"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:altLabel "联络A_FG→伴丛曲率F"@zh,
-        "联络A_ℓ"@zh ;
-    skos:definition "A 主丛联络"@zh ;
+    skos:altLabel "联络 $A_\\ell$"@zh,
+        "联络 $A_{FG}\\to$ 伴丛曲率 $F$"@zh ;
+    skos:definition "$A$ 主丛联络"@zh ;
     skos:prefLabel "联络"@zh ;
     prov:wasDerivedFrom cqm:EV_C022 .
 
 cqm:C027 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "固有时流速"^^xsd:string ;
-    cqm:definition "v_τ=√(1−βδ_v) 固有时流速"^^xsd:string ;
+    cqm:definition "$v_\\tau=\\sqrt{1-\\beta\\delta_v}$ 固有时流速"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C027 ;
     cqm:sourceDoc "D015"^^xsd:string ;
     cqm:sourceLoc "§三"^^xsd:string ;
-    skos:altLabel "固有时流速v_τ=√(1−βδ_v)"@zh ;
-    skos:definition "v_τ=√(1−βδ_v) 固有时流速"@zh ;
+    skos:altLabel "固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$"@zh ;
+    skos:definition "$v_\\tau=\\sqrt{1-\\beta\\delta_v}$ 固有时流速"@zh ;
     skos:prefLabel "固有时流速"@zh ;
     prov:wasDerivedFrom cqm:EV_C027 .
 
 cqm:C029 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "中子缺陷矩阵"^^xsd:string ;
-    cqm:definition "D(δ) 中子缺陷矩阵"^^xsd:string ;
+    cqm:definition "$D(\\delta)$ 中子缺陷矩阵"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C029 ;
     cqm:formalizedIn <http://cqm.local/lean#Superconductivity> ;
     cqm:sourceDoc "D006"^^xsd:string ;
     cqm:sourceLoc "§二.5"^^xsd:string ;
-    skos:definition "D(δ) 中子缺陷矩阵"@zh ;
+    skos:definition "$D(\\delta)$ 中子缺陷矩阵"@zh ;
     skos:prefLabel "中子缺陷矩阵"@zh ;
     prov:wasDerivedFrom cqm:EV_C029 .
 
 cqm:C046 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "耦级"^^xsd:string ;
-    cqm:definition "𝔠_n=1/4+γ_n² 配对不变量"^^xsd:string ;
+    cqm:definition "$\\mathfrak{c}_n=1/4+\\gamma_n^2$ 配对不变量"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C046 ;
     cqm:equivalentTo cqm:C051 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain>,
@@ -2063,110 +2063,110 @@ cqm:C046 a cqm:NumberTheoryConcept,
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
     cqm:synonyms "能级"^^xsd:string ;
-    skos:altLabel "耦级𝔠_n=1/4+γ_n²"@zh,
-        "耦级𝔠_n为实"@zh,
+    skos:altLabel "耦级 $\\mathfrak c_n$ 为实"@zh,
+        "耦级 $\\mathfrak c_n=1/4+\\gamma_n^2$"@zh,
         "能级"@zh ;
-    skos:definition "𝔠_n=1/4+γ_n² 配对不变量"@zh ;
+    skos:definition "$\\mathfrak{c}_n=1/4+\\gamma_n^2$ 配对不变量"@zh ;
     skos:prefLabel "耦级"@zh ;
     prov:wasDerivedFrom cqm:EV_C046 .
 
 cqm:C049 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "谱算符"^^xsd:string ;
-    cqm:definition "Ĥ_HP=D̂²+1/4 Hilbert-Pólya算符"^^xsd:string ;
+    cqm:definition "$\\hat{H}_{HP}=\\hat{D}^2+1/4$ Hilbert-Pólya算符"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C049 ;
     cqm:formalizedIn <http://cqm.local/lean#SpectralGeometry> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§4"^^xsd:string ;
-    skos:definition "Ĥ_HP=D̂²+1/4 Hilbert-Pólya算符"@zh ;
+    skos:definition "$\\hat{H}_{HP}=\\hat{D}^2+1/4$ Hilbert-Pólya算符"@zh ;
     skos:prefLabel "谱算符"@zh ;
     prov:wasDerivedFrom cqm:EV_C049 .
 
 cqm:C054 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "A4嘉当矩阵"^^xsd:string ;
-    cqm:definition "A_4=Cartan(SU(5))"^^xsd:string ;
+    cqm:definition "$A_4=\\text{Cartan}(SU(5))$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C054 ;
     cqm:formalizedIn <http://cqm.local/lean#CartanAlgebra> ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§7.1"^^xsd:string ;
-    skos:definition "A_4=Cartan(SU(5))"@zh ;
+    skos:definition "$A_4=\\text{Cartan}(SU(5))$"@zh ;
     skos:prefLabel "A4嘉当矩阵"@zh ;
     prov:wasDerivedFrom cqm:EV_C054 .
 
 cqm:C055 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "边面关联矩阵"^^xsd:string ;
-    cqm:definition "M=EᵀE 本征值{9¹4⁴1⁵}"^^xsd:string ;
+    cqm:definition "$M=E^TE$ 本征值 $\\{9^1,4^4,1^5\\}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C055 ;
     cqm:formalizedIn <http://cqm.local/lean#CartanAlgebra>,
         <http://cqm.local/lean#GN> ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§7.1"^^xsd:string ;
-    skos:definition "M=EᵀE 本征值{9¹4⁴1⁵}"@zh ;
+    skos:definition "$M=E^TE$ 本征值 $\\{9^1,4^4,1^5\\}$"@zh ;
     skos:prefLabel "边面关联矩阵"@zh ;
     prov:wasDerivedFrom cqm:EV_C055 .
 
 cqm:C057 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "Mathieu临界"^^xsd:string ;
-    cqm:definition "λ_c≈1.316022911308"^^xsd:string ;
+    cqm:definition "$\\lambda_c\\approx 1.316022911308$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C057 ;
     cqm:formalizedIn <http://cqm.local/lean#GN>,
         <http://cqm.local/lean#SpectralGeometry> ;
     cqm:sourceDoc "D019"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
-    skos:definition "λ_c≈1.316022911308"@zh ;
+    skos:definition "$\\lambda_c\\approx 1.316022911308$"@zh ;
     skos:prefLabel "Mathieu临界"@zh ;
     prov:wasDerivedFrom cqm:EV_C057 .
 
 cqm:C058 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "谱修正"^^xsd:string ;
-    cqm:definition "κ=(31+☯)/30"^^xsd:string ;
+    cqm:definition "$\\kappa=(31+☯)/30$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C058 ;
     cqm:formalizedIn <http://cqm.local/lean#GN> ;
     cqm:sourceDoc "D031"^^xsd:string ;
     cqm:sourceLoc "§11"^^xsd:string ;
-    skos:altLabel "κ"@zh ;
-    skos:definition "κ=(31+☯)/30"@zh ;
+    skos:altLabel "$\\kappa$"@zh ;
+    skos:definition "$\\kappa=(31+☯)/30$"@zh ;
     skos:prefLabel "谱修正"@zh ;
     prov:wasDerivedFrom cqm:EV_C058 .
 
 cqm:C059 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "Weyl群"^^xsd:string ;
-    cqm:definition "S_5 Weyl群"^^xsd:string ;
+    cqm:definition "$S_5$ Weyl群"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C059 ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§7.2"^^xsd:string ;
-    skos:altLabel "Weyl群S_n"@zh ;
-    skos:definition "S_5 Weyl群"@zh ;
+    skos:altLabel "Weyl群 $S_n$"@zh ;
+    skos:definition "$S_5$ Weyl群"@zh ;
     skos:prefLabel "Weyl群"@zh ;
     prov:wasDerivedFrom cqm:EV_C059 .
 
 cqm:C067 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "丛作用量"^^xsd:string ;
-    cqm:definition "F_n 丛作用量"^^xsd:string ;
+    cqm:definition "$F_n$ 丛作用量"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C067 ;
     cqm:formalizedIn <http://cqm.local/lean#Superconductivity> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:altLabel "丛作用量交叉F_1=F_2"@zh ;
-    skos:definition "F_n 丛作用量"@zh ;
+    skos:altLabel "丛作用量交叉 $F_1=F_2$"@zh ;
+    skos:definition "$F_n$ 丛作用量"@zh ;
     skos:prefLabel "丛作用量"@zh ;
     prov:wasDerivedFrom cqm:EV_C067 .
 
 cqm:C082 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "Wyler常数"^^xsd:string ;
-    cqm:definition "α_W Wyler常数 A₄群论不变量"^^xsd:string ;
+    cqm:definition "$\\alpha_W$ Wyler常数 $A_4$ 群论不变量"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C082 ;
     cqm:sourceDoc "D021"^^xsd:string ;
     cqm:sourceLoc "标题"^^xsd:string ;
-    skos:altLabel "Wyler常数α_W"@zh ;
-    skos:definition "α_W Wyler常数 A₄群论不变量"@zh ;
+    skos:altLabel "Wyler常数 $\\alpha_W$"@zh ;
+    skos:definition "$\\alpha_W$ Wyler常数 $A_4$ 群论不变量"@zh ;
     skos:prefLabel "Wyler常数"@zh ;
     prov:wasDerivedFrom cqm:EV_C082 .
 
@@ -5595,27 +5595,27 @@ cqm:RelationTypeConcept a owl:Class ;
 cqm:C005 a cqm:OntologyConcept,
         owl:NamedIndividual ;
     rdfs:label "禁闭边界"^^xsd:string ;
-    cqm:definition "物质自组织的边界 4-单纯形 A₄"^^xsd:string ;
+    cqm:definition "物质自组织的边界 4-单纯形 $A_4$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C005 ;
     cqm:formalizedIn <http://cqm.local/lean#Decoherence> ;
     cqm:sourceDoc "D005"^^xsd:string ;
     cqm:sourceLoc "§7.1"^^xsd:string ;
-    skos:altLabel "禁闭边界A_4"@zh ;
-    skos:definition "物质自组织的边界 4-单纯形 A₄"@zh ;
+    skos:altLabel "禁闭边界 $A_4$"@zh ;
+    skos:definition "物质自组织的边界 4-单纯形 $A_4$"@zh ;
     skos:prefLabel "禁闭边界"@zh ;
     prov:wasDerivedFrom cqm:EV_C005 .
 
 cqm:C024 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "和乐"^^xsd:string ;
-    cqm:definition "W_v 和乐算符"^^xsd:string ;
+    cqm:definition "$W_v$ 和乐算符"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C024 ;
     cqm:equivalentTo cqm:C075 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D028"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:altLabel "和乐W(γ)"@zh ;
-    skos:definition "W_v 和乐算符"@zh ;
+    skos:altLabel "和乐 $W(\\gamma)$"@zh ;
+    skos:definition "$W_v$ 和乐算符"@zh ;
     skos:prefLabel "和乐"@zh ;
     prov:wasDerivedFrom cqm:EV_C024 .
 
@@ -5634,59 +5634,59 @@ cqm:C052 a cqm:NumberTheoryConcept,
 cqm:C066 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "候选群族"^^xsd:string ;
-    cqm:definition "U(1)//Z_n 候选群族"^^xsd:string ;
+    cqm:definition "$U(1)//Z_n$ 候选群族"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C066 ;
     cqm:sourceDoc "D023"^^xsd:string ;
     cqm:sourceLoc "§1"^^xsd:string ;
-    skos:definition "U(1)//Z_n 候选群族"@zh ;
+    skos:definition "$U(1)//Z_n$ 候选群族"@zh ;
     skos:prefLabel "候选群族"@zh ;
     prov:wasDerivedFrom cqm:EV_C066 .
 
 cqm:C070 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "临界温度"^^xsd:string ;
-    cqm:definition "T_c 超导临界温度"^^xsd:string ;
+    cqm:definition "$T_c$ 超导临界温度"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C070 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain>,
         <http://cqm.local/lean#Superconductivity> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "T_c 超导临界温度"@zh ;
+    skos:definition "$T_c$ 超导临界温度"@zh ;
     skos:prefLabel "临界温度"@zh ;
     prov:wasDerivedFrom cqm:EV_C070 .
 
 cqm:C071 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
     rdfs:label "声子"^^xsd:string ;
-    cqm:definition "曲率量子 Δδ_v 贯穿三层的媒介"^^xsd:string ;
+    cqm:definition "曲率量子 $\\Delta\\delta_v$ 贯穿三层的媒介"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C071 ;
     cqm:sourceDoc "D011"^^xsd:string ;
     cqm:sourceLoc "标题"^^xsd:string ;
     skos:altLabel "声子/角亏涨落"@zh ;
-    skos:definition "曲率量子 Δδ_v 贯穿三层的媒介"@zh ;
+    skos:definition "曲率量子 $\\Delta\\delta_v$ 贯穿三层的媒介"@zh ;
     skos:prefLabel "声子"@zh ;
     prov:wasDerivedFrom cqm:EV_C071 .
 
 cqm:C074 a cqm:CFTConcept,
         owl:NamedIndividual ;
     rdfs:label "共形固定点"^^xsd:string ;
-    cqm:definition "β(g)=0 共形固定点"^^xsd:string ;
+    cqm:definition "$\\beta(g)=0$ 共形固定点"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C074 ;
     cqm:sourceDoc "D012"^^xsd:string ;
     cqm:sourceLoc "§1"^^xsd:string ;
-    skos:altLabel "共形固定点β(g)=0"@zh ;
-    skos:definition "β(g)=0 共形固定点"@zh ;
+    skos:altLabel "共形固定点 $\\beta(g)=0$"@zh ;
+    skos:definition "$\\beta(g)=0$ 共形固定点"@zh ;
     skos:prefLabel "共形固定点"@zh ;
     prov:wasDerivedFrom cqm:EV_C074 .
 
 cqm:C076 a cqm:CFTConcept,
         owl:NamedIndividual ;
     rdfs:label "Virasoro代数"^^xsd:string ;
-    cqm:definition "Virasoro生成元 {L_n}"^^xsd:string ;
+    cqm:definition "Virasoro生成元 $\\{L_n\\}$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C076 ;
     cqm:sourceDoc "D012"^^xsd:string ;
     cqm:sourceLoc "§2"^^xsd:string ;
-    skos:definition "Virasoro生成元 {L_n}"@zh ;
+    skos:definition "Virasoro生成元 $\\{L_n\\}$"@zh ;
     skos:prefLabel "Virasoro代数"@zh ;
     prov:wasDerivedFrom cqm:EV_C076 .
 
@@ -5707,31 +5707,31 @@ cqm:Gap a owl:Class ;
 cqm:C014 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "SU5基态"^^xsd:string ;
-    cqm:definition "SU(5) 基态经重组实现破缺为标准模型"^^xsd:string ;
+    cqm:definition "$SU(5)$ 基态经重组实现破缺为标准模型"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C014 ;
     cqm:mapsTo cqm:C066 ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§0"^^xsd:string ;
-    skos:definition "SU(5) 基态经重组实现破缺为标准模型"@zh ;
+    skos:definition "$SU(5)$ 基态经重组实现破缺为标准模型"@zh ;
     skos:prefLabel "SU5基态"@zh ;
     prov:wasDerivedFrom cqm:EV_C014 .
 
 cqm:C020 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "主丛"^^xsd:string ;
-    cqm:definition "P(M,G) 主丛"^^xsd:string ;
+    cqm:definition "$P(M,G)$ 主丛"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C020 ;
     cqm:equivalentTo cqm:C075 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D028"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:definition "P(M,G) 主丛"@zh ;
+    skos:definition "$P(M,G)$ 主丛"@zh ;
     skos:prefLabel "主丛"@zh ;
     prov:wasDerivedFrom cqm:EV_C020 .
 
 cqm:C081 a cqm:PhysicsConcept,
         owl:NamedIndividual ;
-    rdfs:label "G_N"^^xsd:string ;
+    rdfs:label "$G_N$"^^xsd:string ;
     cqm:definition "牛顿引力常数 构造后验数字校验待独立复现"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C081 ;
     cqm:formalizedIn <http://cqm.local/lean#GN>,
@@ -5739,7 +5739,7 @@ cqm:C081 a cqm:PhysicsConcept,
     cqm:sourceDoc "D014"^^xsd:string ;
     cqm:sourceLoc "§5"^^xsd:string ;
     skos:definition "牛顿引力常数 构造后验数字校验待独立复现"@zh ;
-    skos:prefLabel "G_N"@zh ;
+    skos:prefLabel "$G_N$"@zh ;
     prov:wasDerivedFrom cqm:EV_C081 .
 
 cqm:GravityLevelConcept a owl:Class ;
@@ -5763,16 +5763,17 @@ cqm:C048 a cqm:NumberTheoryConcept,
         owl:NamedIndividual ;
     rdfs:label "相变量子"^^xsd:string ;
     cqm:conceptDependsOn cqm:C051 ;
-    cqm:definition "☯=ξ'(1)/ξ(1)≈0.02309570897"^^xsd:string ;
+    cqm:definition "$☯=\\xi'(1)/\\xi(1)\\approx 0.02309570897$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C048 ;
     cqm:equivalentTo cqm:C048 ;
     cqm:formalizedIn <http://cqm.local/lean#GN>,
         <http://cqm.local/lean#SpectralGeometry> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    cqm:synonyms "☯"^^xsd:string ;
-    skos:altLabel "☯"@zh ;
-    skos:definition "☯=ξ'(1)/ξ(1)≈0.02309570897"@zh ;
+    cqm:synonyms "$☯$;$\\mathscr{C}$"^^xsd:string ;
+    skos:altLabel "$☯$"@zh,
+        "$☯$;$\\mathscr{C}$"@zh ;
+    skos:definition "$☯=\\xi'(1)/\\xi(1)\\approx 0.02309570897$"@zh ;
     skos:prefLabel "相变量子"@zh ;
     prov:wasDerivedFrom cqm:EV_C048 .
 
@@ -5797,7 +5798,7 @@ cqm:C007 a cqm:OntologyConcept,
     cqm:mapsTo cqm:C026 ;
     cqm:sourceDoc "D007"^^xsd:string ;
     cqm:sourceLoc "§1"^^xsd:string ;
-    skos:altLabel "物质自组织基态同步SU(5)"@zh ;
+    skos:altLabel "物质自组织基态同步 $SU(5)$"@zh ;
     skos:definition "物质经自组织同步展开为物理实在"@zh ;
     skos:prefLabel "物质自组织"@zh ;
     prov:wasDerivedFrom cqm:EV_C007 .
@@ -5831,12 +5832,12 @@ cqm:C017 a cqm:GravityLevelConcept,
 cqm:C032 a cqm:DimensionConcept,
         owl:NamedIndividual ;
     rdfs:label "时间量纲"^^xsd:string ;
-    cqm:definition "T 第一量纲"^^xsd:string ;
+    cqm:definition "$T$ 第一量纲"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C032 ;
     cqm:mapsTo cqm:C039 ;
     cqm:sourceDoc "D009"^^xsd:string ;
     cqm:sourceLoc "§6.1"^^xsd:string ;
-    skos:definition "T 第一量纲"@zh ;
+    skos:definition "$T$ 第一量纲"@zh ;
     skos:prefLabel "时间量纲"@zh ;
     prov:wasDerivedFrom cqm:EV_C032 .
 
@@ -5858,27 +5859,27 @@ cqm:Theorem a owl:Class ;
 cqm:C023 a cqm:FiberBundleConcept,
         owl:NamedIndividual ;
     rdfs:label "曲率"^^xsd:string ;
-    cqm:definition "F=dA+A∧A 曲率2形式"^^xsd:string ;
+    cqm:definition "$F=dA+A\\wedge A$ 曲率2形式"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C023 ;
     cqm:equivalentTo cqm:C076 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D028"^^xsd:string ;
     cqm:sourceLoc "§3"^^xsd:string ;
-    skos:altLabel "曲率F"@zh ;
-    skos:definition "F=dA+A∧A 曲率2形式"@zh ;
+    skos:altLabel "曲率 $F$"@zh ;
+    skos:definition "$F=dA+A\\wedge A$ 曲率2形式"@zh ;
     skos:prefLabel "曲率"@zh ;
     prov:wasDerivedFrom cqm:EV_C023 .
 
 cqm:C026 a cqm:GeometryConcept,
         owl:NamedIndividual ;
     rdfs:label "角亏"^^xsd:string ;
-    cqm:definition "δ_v Regge剖分顶点角亏"^^xsd:string ;
+    cqm:definition "$\\delta_v$ Regge剖分顶点角亏"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C026 ;
     cqm:formalizedIn <http://cqm.local/lean#Superconductivity> ;
     cqm:mapsTo cqm:C027 ;
     cqm:sourceDoc "D006"^^xsd:string ;
     cqm:sourceLoc "§二.5"^^xsd:string ;
-    skos:definition "δ_v Regge剖分顶点角亏"@zh ;
+    skos:definition "$\\delta_v$ Regge剖分顶点角亏"@zh ;
     skos:prefLabel "角亏"@zh ;
     prov:wasDerivedFrom cqm:EV_C026 .
 
@@ -5904,15 +5905,15 @@ cqm:FiberBundleConcept a owl:Class ;
 cqm:C012 a cqm:MathStructureConcept,
         owl:NamedIndividual ;
     rdfs:label "同步算符"^^xsd:string ;
-    cqm:definition "Ŝ₀ 紧化算符 描述同步"^^xsd:string ;
+    cqm:definition "$\\hat{S}_0$ 紧化算符 描述同步"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C012 ;
     cqm:formalizedIn <http://cqm.local/lean#FGChain> ;
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§9"^^xsd:string ;
     cqm:synonyms "紧化算符"^^xsd:string ;
-    skos:altLabel "同步算符厄米性S=S†"@zh,
+    skos:altLabel "同步算符厄米性 $S=S^\\dagger$"@zh,
         "紧化算符"@zh ;
-    skos:definition "Ŝ₀ 紧化算符 描述同步"@zh ;
+    skos:definition "$\\hat{S}_0$ 紧化算符 描述同步"@zh ;
     skos:prefLabel "同步算符"@zh ;
     prov:wasDerivedFrom cqm:EV_C012 .
 
@@ -5978,11 +5979,11 @@ cqm:Hyperedge a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass cqm:Concept ;
-            owl:onProperty cqm:hasPremise ],
+            owl:onProperty cqm:hasConclusion ],
         [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass cqm:Concept ;
-            owl:onProperty cqm:hasConclusion ],
+            owl:onProperty cqm:hasPremise ],
         owl:Thing .
 
 cqm:Statement a owl:Class ;
