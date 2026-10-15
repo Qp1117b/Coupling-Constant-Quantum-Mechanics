@@ -52,16 +52,27 @@
     }
     var _tsTimer = null;
     function typesetGrid(grid) {
-      if (_tsTimer) clearTimeout(_tsTimer);
-      _tsTimer = setTimeout(function () {
-        if (window.MathJax && window.MathJax.typesetPromise) {
+      if (_tsTimer) { clearTimeout(_tsTimer); _tsTimer = null; }
+      var run = function () {
+        if (!window.MathJax) return;
+        if (window.MathJax.typesetPromise) {
           try { window.MathJax.typesetPromise([grid]); } catch (e) {}
+        } else if (window.MathJax.startup && window.MathJax.startup.promise) {
+          window.MathJax.startup.promise.then(function () {
+            if (window.MathJax.typesetPromise) {
+              try { window.MathJax.typesetPromise([grid]); } catch (e) {}
+            }
+          });
+        } else {
+          _tsTimer = setTimeout(function () { typesetGrid(grid); }, 300);
         }
-      }, 120);
+      };
+      if (window.requestIdleCallback) { window.requestIdleCallback(run, { timeout: 200 }); }
+      else { _tsTimer = setTimeout(run, 120); }
     }
 
     function cardHtml(item) {
-      var key = keyOf(item.ty, item.tt);
+      var key = item.sk || keyOf(item.ty, item.tt);
       var hasCard = !!terms[key];
       return '<div class="terms-card"' + (hasCard ? ' data-cqm="' + esc(key) + '"' : "") + '>' +
         '<div class="terms-card__n"><span>' + esc(item.tt) + '</span><span class="terms-card__ty">' + esc(item.ty) + '</span></div>' +
@@ -74,7 +85,7 @@
         if (filterCat && it.ty !== filterCat) return false;
         if (filterQ) {
           var q = filterQ.toLowerCase();
-          if ((it.tt + " " + (it.sb || "") + " " + (it.dc || "")).toLowerCase().indexOf(q) < 0) return false;
+          if ((it.tt + " " + (it.sb || "") + " " + (it.dc || "") + " " + (it.sk || "")).toLowerCase().indexOf(q) < 0) return false;
         }
         return true;
       });

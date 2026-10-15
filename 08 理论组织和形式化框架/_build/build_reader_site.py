@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-维度7（核心） · 展示可视化 · 离线阅读站（Material for MkDocs 版，v1.8.0）
+维度7（核心） · 展示可视化 · staging 环节（为 VitePress 研究站供料，v1.9.20）
 
-替代旧的自研单页阅读站（`build_reader.py`，其全文搜索仅为字符串 indexOf）。
-采用专业文档栈 **Material for MkDocs**：
+  MkDocs 阅读站已废弃（v1.9.20 起唯一站点为 VitePress 研究站）。
+  本脚本仅保留 staging 功能：把理论文档复制到 _build/mkdocs_src/docs/，
+  生成悬浮卡/检索/术语/讲稿数据，供 build_vitepress_site.py 使用。
 
   · 搜索 = lunr.js + 官方 `zh` 支持 + **jieba 中文分词**（构建期）
     —— 另生成 **CQM 用户词典**（概念名/同义词/符号名/缺口编号）实现术语级检索
-  · **offline 插件**：官方保证「分发 site 目录即用、搜索在离线环境工作」→ file:// 双击可用
-  · **privacy 插件**：构建期把外部字体等资源下载本地，成品无 CDN（离线红线）
-  · `use_directory_urls: false`：file:// 下直出平铺 .html（目录式 URL 在 file:// 只会显示列表）
-  · 数学 = pymdownx.arithmatex + 随包 `tex-svg.js`（复用旧阅读站资产，MathJax 本地化）
+  · 数学 = pymdownx.arithmatex + `tex-svg.js`（复用 VitePress 研究站 MathJax bundle）
 
 语料口径与 `build_reader.py` 完全一致（根 README + 01–07 + 一体化研究/附录，全部**只读**）：
   · staging 复制到 `_build/mkdocs_src/docs/`（在 _build 内 → 不计产品文件、不进 md 扫描）
@@ -18,8 +16,7 @@
   · 01–07 理论文本永不修改
 
 产出：
-  _build/mkdocs.yml、_build/mkdocs_src/…（中间物）
-  10_展示可视化/阅读站/            （mkdocs build 输出，整站）
+  _build/mkdocs.yml、_build/mkdocs_src/…（中间物，供 build_vitepress_site.py 使用）
 运行：python build_reader_site.py
 """
 import glob
@@ -42,7 +39,7 @@ STAGE = os.path.join(HERE, "mkdocs_src")
 DOCS = os.path.join(STAGE, "docs")
 CONF = os.path.join(HERE, "mkdocs.yml")
 REF_YAML = os.path.join(ROOT08, "00_外部引用", "引用清单.yaml")
-TEX_SVG = os.path.join(ROOT08, "10_展示可视化", "阅读站", "assets", "tex-svg.js")
+TEX_SVG = os.path.join(ROOT08, "10_展示可视化", "阅读站VitePress", ".vitepress", "dist", "tex-svg.js")
 
 INCLUDE_DIRS = [
     "01 核心理论", "02 量子引力", "03 引力与退相干", "04 前沿研究",
@@ -53,6 +50,17 @@ DOC_RE = re.compile(
     r"-\s*\{id:\s*(D\d+),\s*path:\s*([^,]+),\s*title:\s*([^,]+),\s*layer:\s*(\d+),\s*type:\s*([^}]+)\}")
 LAYER_NAME = {0: "权威基准", 1: "理论主干", 2: "专题深化", 3: "涌现与应用", 4: "形式化与方案"}
 LINK_RE = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
+MATH_PIPE_RE = re.compile(
+    r'(?<!\\)\$\$[\s\S]+?(?<!\\)\$\$'
+    r'|(?<!\\)\$(?!\$)(?:[^$\n]|\\\$)+?(?<!\\)\$(?!\$)'
+)
+
+
+def escape_pipe_in_math(text):
+    """把 $...$ / $$...$$ 公式中未转义的 | 替换为 \\vert，避免 Markdown 表格列分隔符冲突。"""
+    def repl(m):
+        return re.sub(r'(?<!\\)\|', r'\\vert', m.group(0))
+    return MATH_PIPE_RE.sub(repl, text)
 
 
 def read(p):
@@ -204,10 +212,17 @@ def stage_docs(reg):
     os.makedirs(os.path.join(adir, "stylesheets"), exist_ok=True)
     if os.path.isfile(TEX_SVG):
         shutil.copyfile(TEX_SVG, os.path.join(adir, "tex-svg.js"))
+    else:
+        print(f"[WARN] tex-svg.js 源缺失：{TEX_SVG}")
     with io.open(os.path.join(adir, "math-config.js"), "w", encoding="utf-8", newline="\n") as f:
         f.write(
             "window.MathJax = {\n"
-            "  tex: { inlineMath: [['\\\\(','\\\\)']], displayMath: [['\\\\[','\\\\]']], processEscapes: true },\n"
+            "  tex: {\n"
+            "    inlineMath: [['$','$'],['\\\\(','\\\\)']],\n"
+            "    displayMath: [['$$','$$'],['\\\\[','\\\\]']],\n"
+            "    processEscapes: true,\n"
+            "    macros: { xRightarrow: ['\\\\overset{#1}{\\\\Longrightarrow}', 1] }\n"
+            "  },\n"
             "  svg: { fontCache: 'global' },\n"
             "  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }\n"
             "};\n")
@@ -410,19 +425,23 @@ def _esc(s):
 
 
 def _mathify(s):
-    """卡片里的 $...$ / $$...$$ 转成 MathJax 认识的分隔符（页面正文由 arithmatex 处理，
+    """卡片里的 $...$ / $$...$$ 转成 MathJax 认识的分界符（页面正文由 arithmatex 处理，
     但卡片是运行期动态插入的，MathJax 不再扫描，故在构建期转换）。
 
     另修一类**丢了定界符的公式片段**：证据引文由字符区间从 `$$…$$` 多行块里截出单行，
     `$` 留在别的行（实测 `证据映射.csv` 7 条：如 `\\text{GL(5) 潜能先在}`）。这类文本
-    既无 `$` 可转，就直接裸露。判据保守——**无 `$`、花括号配平、且含确定属于公式的宏**
-    （\\text{}、\\xrightarrow、\\boxed 等）时，整段按行内公式排。定界符缺失+截断的
-    （花括号不配平）不动，交人工判定。
+    既无 `$` 可转，就直接裸露。判据保守——**无 `$`、无 `\\(`、花括号配平、且含确定属于
+    公式的宏**（\\text{}、\\xrightarrow、\\boxed 等）时，整段按行内公式排。定界符缺失+
+    截断的（花括号不配平）不动，交人工判定。若字符串已含 `\\(...\\)` 定界符（来自步骤 2
+    的 `$...$` 转换）或 `\\[...\\]` 定界符（来自步骤 1 的 `$$...$$` 转换），不再整体包裹，
+    避免嵌套定界符导致 MathJax 解析错乱。
     """
     s = str(s or "")
     s = re.sub(r"\$\$(.+?)\$\$", r"\\[\1\\]", s, flags=re.S)
     s = re.sub(r"\$(.+?)\$", r"\\(\1\\)", s)
-    if ("$" not in s and s.count("{") == s.count("}")
+    if ("$" not in s and "\\(" not in s and "\\)" not in s
+            and "\\[" not in s and "\\]" not in s
+            and s.count("{") == s.count("}")
             and _BARE_FORMULA_RE.search(s)):
         s = "\\(" + s.strip() + "\\)"
     return s
@@ -431,7 +450,9 @@ def _mathify(s):
 # 「确定属于公式」的宏白名单：只认整段确为公式片段的情形，避免把散文误当公式。
 _BARE_FORMULA_RE = re.compile(
     r"\\text\{|\\xrightarrow|\\xRightarrow|\\boxed|\\frac|\\underbrace|"
-    r"\\mathrm\{|\\mathbb\{|\\Longrightarrow|\\longrightarrow")
+    r"\\mathrm\{|\\mathbb\{|\\Longrightarrow|\\longrightarrow|"
+    r"\\mathfrak|\\hat\b|\\partial|\\det\b|\\epsilon|\\gamma|\\delta|"
+    r"\\beta|\\rho|\\mu\b|\\xi|\\ln\b|\\nabla|\\alpha|\\bar\b|\\sqrt")
 
 
 def collect_chain_steps(layer_of):
@@ -541,16 +562,16 @@ def build_glossary(staged_map, steps):
             h.append('<span class="cqm-pop__tag">%s</span>' % _esc(r["type"]))
         h.append('<span class="cqm-pop__id">%s</span></div>' % _esc(cid))
         if r.get("definition"):
-            h.append('<div class="cqm-pop__def">%s</div>' % _esc(_mathify(r["definition"])))
+            h.append('<div class="cqm-pop__def">%s</div>' % _esc(_mathify(_sb_unicode_to_latex(r["definition"]))))
         e = ev.get(cid)
         if e:
             h.append('<blockquote class="cqm-pop__quote">%s</blockquote>'
-                     % _esc(_mathify(e.get("quote_clean") or e.get("quote"))))
+                     % _esc(_mathify(_sb_unicode_to_latex(e.get("quote_clean") or e.get("quote")))))
             h.append('<div class="cqm-pop__src">原文引文 · %s %s · 字符 %s–%s · 置信 %s</div>' % (
                 _esc(e.get("evidence_doc")), _esc(e.get("loc_raw")),
                 _esc(e.get("char_start")), _esc(e.get("char_end")), _esc(e.get("confidence"))))
         if al:
-            h.append('<div class="cqm-pop__alias">别名：%s</div>' % _esc("、".join(al)))
+            h.append('<div class="cqm-pop__alias">别名：%s</div>' % _esc("、".join(_mathify(_sb_unicode_to_latex(a)) for a in al)))
         nb = []
         for tok in near.get(cid, "").split(";"):
             if ":" not in tok:
@@ -618,7 +639,10 @@ def build_glossary(staged_map, steps):
              '<span class="cqm-pop__tag">符号</span>',
              '<span class="cqm-pop__id">%s</span></div>' % _esc(r.get("name") or "")]
         if r.get("latex"):
-            h.append('<div class="cqm-pop__def">%s</div>' % _esc(_mathify(r["latex"])))
+            _lx = r["latex"]
+            if "$" not in _lx and "\\(" not in _lx:
+                _lx = "$" + _lx + "$"
+            h.append('<div class="cqm-pop__def">%s</div>' % _esc(_mathify(_lx)))
         if r.get("kind"):
             h.append('<div class="cqm-pop__rows">类别：%s</div>' % _esc(r["kind"]))
         if r.get("value_or_note"):
@@ -634,7 +658,10 @@ def build_glossary(staged_map, steps):
             # LaTeX/取值并入既有卡，不覆盖——否则概念 definition 的原文形态丢失
             extra = ""
             if r.get("latex"):
-                extra += '<div class="cqm-pop__rows">LaTeX：%s</div>' % _esc(_mathify(r["latex"]))
+                _lx = r["latex"]
+                if "$" not in _lx and "\\(" not in _lx:
+                    _lx = "$" + _lx + "$"
+                extra += '<div class="cqm-pop__rows">LaTeX：%s</div>' % _esc(_mathify(_lx))
             if r.get("value_or_note"):
                 extra += '<div class="cqm-pop__rows">%s</div>' % _esc(_mathify(r["value_or_note"]))
             if extra:
@@ -650,7 +677,14 @@ def build_glossary(staged_map, steps):
             # 双字符以上的符号才做正文标注（c/α 这类单字符会满页命中）
             if len(s) >= 2:
                 term_keys.append(s)
-        index.append({"ty": "符号", "tt": s + "　" + (r.get("name") or ""),
+        _display_tt = s + "　" + (r.get("name") or "")
+        if r.get("latex"):
+            _lx = r["latex"]
+            if "$" not in _lx and "\\(" not in _lx:
+                _lx = "$" + _lx + "$"
+            _display_tt = _lx + "　" + (r.get("name") or "")
+        index.append({"ty": "符号", "tt": _display_tt,
+                      "sk": s,
                       "sb": "；".join(x for x in [r.get("value_or_note"), r.get("kind")] if x),
                       "u": "", "dc": src_raw,
                       "hs": " ".join([s, r.get("name") or "", r.get("latex") or "",
@@ -668,7 +702,7 @@ def build_glossary(staged_map, steps):
              '<span class="cqm-pop__id">%s</span></div>' % _esc(r.get("type") or "")]
         prem = (r.get("premises") or "").strip()
         conc = (r.get("conclusion") or "").strip()
-        h.append('<div class="cqm-pop__def">%s ⇒ %s</div>'
+        h.append('<div class="cqm-pop__def">%s $\\Rightarrow$ %s</div>'
                  % (_esc(_mathify(prem)), _esc(_mathify(conc))))
         links = []
         for d in docs:
@@ -677,11 +711,11 @@ def build_glossary(staged_map, steps):
         if links:
             h.append('<div class="cqm-pop__src">依据文档：%s</div>' % "、".join(links))
         if r.get("source_concept"):
-            h.append('<div class="cqm-pop__rows">概念链：%s</div>' % _esc(r["source_concept"]))
+            h.append('<div class="cqm-pop__rows">概念链：%s</div>' % _esc(_mathify(_sb_unicode_to_latex(r["source_concept"]))))
         terms[aid] = "".join(h)
         term_keys.append(aid)
         index.append({"ty": "论证", "tt": "论证 %s" % aid,
-                      "sb": "%s ⇒ %s" % (prem, conc), "u": "",
+                      "sb": "%s $\\Rightarrow$ %s" % (prem, conc), "u": "",
                       "dc": ";".join(docs),
                       "hs": " ".join([aid, prem, conc, r.get("type") or ""]).lower()})
 
@@ -708,13 +742,79 @@ def build_glossary(staged_map, steps):
 
 _SB_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 _SB_BULLET_RE = re.compile(r"^(?:[-+*]|\d+[.)])\s+")
+_SB_HEADER_RE = re.compile(r"^#{1,6}\s+")
+_SB_UNICODE_MATH = [
+    # 箭头
+    ("\u2192", r"$\to$"),               # →
+    ("\u21D2", r"$\Rightarrow$"),       # ⇒
+    ("\u2194", r"$\leftrightarrow$"),   # ↔
+    ("\u2190", r"$\leftarrow$"),        # ←
+    ("\u21D0", r"$\Leftarrow$"),        # ⇐
+    ("\u21D4", r"$\Leftrightarrow$"),   # ⇔
+    ("\u2193", r"$\downarrow$"),        # ↓
+    ("\u2191", r"$\uparrow$"),          # ↑
+    # 希腊字母（小写）
+    ("\u03B1", r"$\alpha$"), ("\u03B2", r"$\beta$"), ("\u03B3", r"$\gamma$"),
+    ("\u03B4", r"$\delta$"), ("\u03B5", r"$\epsilon$"), ("\u03B6", r"$\zeta$"),
+    ("\u03B7", r"$\eta$"), ("\u03B8", r"$\theta$"), ("\u03B9", r"$\iota$"),
+    ("\u03BA", r"$\kappa$"), ("\u03BB", r"$\lambda$"), ("\u03BC", r"$\mu$"),
+    ("\u03BD", r"$\nu$"), ("\u03BE", r"$\xi$"), ("\u03C0", r"$\pi$"),
+    ("\u03C1", r"$\rho$"), ("\u03C3", r"$\sigma$"), ("\u03C4", r"$\tau$"),
+    ("\u03C5", r"$\upsilon$"), ("\u03C6", r"$\phi$"), ("\u03C7", r"$\chi$"),
+    ("\u03C8", r"$\psi$"), ("\u03C9", r"$\omega$"),
+    # 希腊字母（大写）
+    ("\u0393", r"$\Gamma$"), ("\u0394", r"$\Delta$"), ("\u0398", r"$\Theta$"),
+    ("\u039B", r"$\Lambda$"), ("\u039E", r"$\Xi$"), ("\u03A0", r"$\Pi$"),
+    ("\u03A3", r"$\Sigma$"), ("\u03A6", r"$\Phi$"), ("\u03A8", r"$\Psi$"),
+    ("\u03A9", r"$\Omega$"),
+    # 关系 / 集合 / 运算
+    ("\u2286", r"$\subseteq$"), ("\u2282", r"$\subset$"), ("\u2287", r"$\supseteq$"),
+    ("\u2208", r"$\in$"), ("\u2209", r"$\notin$"), ("\u2260", r"$\neq$"),
+    ("\u2264", r"$\leq$"), ("\u2265", r"$\geq$"), ("\u2248", r"$\approx$"),
+    ("\u223C", r"$\sim$"), ("\u2261", r"$\equiv$"), ("\u00D7", r"$\times$"),
+    ("\u2297", r"$\otimes$"), ("\u2295", r"$\oplus$"), ("\u221E", r"$\infty$"),
+    ("\u2202", r"$\partial$"), ("\u2207", r"$\nabla$"), ("\u2205", r"$\emptyset$"),
+    ("\u2200", r"$\forall$"), ("\u2203", r"$\exists$"),
+    ("\u2227", r"$\wedge$"), ("\u2228", r"$\vee$"),
+    ("\u262F", r"$\mathcal{C}$"),           # ☯ 相变量子
+]
+
+# 数学区间内的 Unicode → LaTeX 命令（不带 $...$，因已在公式内）
+_SB_UNICODE_INMATH = {
+    "\u262F": r"\mathcal{C}",               # ☯ → \mathcal{C}
+}
+
+
+_SUB_DIGIT = {"\u2080": "0", "\u2081": "1", "\u2082": "2", "\u2083": "3", "\u2084": "4",
+              "\u2085": "5", "\u2086": "6", "\u2087": "7", "\u2088": "8", "\u2089": "9"}
+_SUB_RE = re.compile(r"([A-Za-z])([\u2080-\u2089]+)")
+
+
+def _sb_unicode_to_latex(text):
+    """把数学区间之外的裸 Unicode 箭头/希腊字母/关系符/下标替换为 $…$ LaTeX，区间内不碰。"""
+    segs = _frag_segments(text)
+    out = []
+    for seg, is_math in segs:
+        if is_math:
+            for u, latex in _SB_UNICODE_INMATH.items():
+                seg = seg.replace(u, latex)
+            out.append(seg)
+        else:
+            for u, latex in _SB_UNICODE_MATH:
+                seg = seg.replace(u, latex)
+            # 字母 + Unicode 下标（A₄/K₀/H₁₀）合并为 $X_{n}$
+            seg = _SUB_RE.sub(
+                lambda m: "$%s_{%s}$" % (m.group(1), "".join(_SUB_DIGIT[c] for c in m.group(2))), seg)
+            out.append(seg)
+    return "".join(out)
 
 
 def _index_sb(text):
     """索引副标题的呈现层规整：把逐字片段变成**一行纯文本摘要**。
 
     · 表格行（数学区间之外有竖线）→ 还原为「列 ｜ 列」；
-    · 行内链接 → 取文字；去强调符 **、反引号；去列表序号；
+    · 行内链接 → 取文字；去强调符 **、反引号；去列表序号；去 markdown 标题标记 ## ；
+    · 数学区间之外的裸 Unicode 箭头（→ ⇒ ↔）→ $…$ LaTeX，交 MathJax 排版；
     · 去片段被字符窗口切断后残留的首尾竖线（表格行断头的痕迹）；
     · **不做 HTML 转义**：消费方（术语总览卡、高级检索）各自 esc 后再交 MathJax，
       故 $…$ 公式原样保留、可排版；长度由前端按可见字符在 $…$ 之外截断。
@@ -725,6 +825,8 @@ def _index_sb(text):
     t = _SB_LINK_RE.sub(r"\1", t)
     t = re.sub(r"\*\*|`", "", t)
     t = _SB_BULLET_RE.sub("", t)
+    t = _SB_HEADER_RE.sub("", t)
+    t = _sb_unicode_to_latex(t)
     # 首尾竖线：只剩「空格 + 竖线」这种断头残留；行的首格是 |Ψ⟩ 这类 ket 时不误伤
     t = re.sub(r"\s+\|+\s*$", "", t)
     t = re.sub(r"^\s*\|+\s+(?=\S)", "", t)
@@ -760,14 +862,31 @@ def _frag_segments(text):
 
 
 def _frag_plain(text):
-    """逐字片段 → 普通段落（转义方括号/竖线/>，数学区间原样保留）。"""
+    """逐字片段 → 普通段落（HTML 实体转义，数学区间原样保留）。
+
+    旧实现用反斜杠转义 \\> \\| \\[ \\]；VitePress markdown-it 在引用块内
+    对反斜杠转义的处理不稳定，实测页面上露出字面反斜杠。
+    改用 HTML 实体（&#91; &#93; &#95; &#35; &gt;）彻底规避。
+    | 不转义：引用块内不解析表格。<> 不转义：保留 HTML 标签。"""
     out = []
     for seg, is_math in _frag_segments(text):
         if is_math:
             out.append(seg)
         else:
-            out.append(seg.replace("[", "\\[").replace("]", "\\]")
-                          .replace("|", "\\|").replace(">", "\\>"))
+            s = seg
+            # 还原源文档自带的反斜杠转义（\_ → _）
+            s = s.replace("\\_", "_")
+            # 未闭合的 ** 加粗标记：奇数个 ** 会导致字面露出，去掉全部 **
+            if s.count("**") % 2 != 0:
+                s = s.replace("**", "")
+            # 行首 > 转义（防嵌套引用块；行中 > 保留，HTML 标签不受影响）
+            s = re.sub(r'^>', '&gt;', s)
+            # [ ] 转义为 HTML 实体（防链接解析）
+            s = s.replace("[", "&#91;").replace("]", "&#93;")
+
+            # 行首 # 转义（防引用块内标题解析）
+            s = re.sub(r'^(#{1,6})\s', lambda m: "&#35;" * len(m.group(1)) + " ", s)
+            out.append(s)
     return "".join(out)
 
 
@@ -807,9 +926,9 @@ def _frag_cells(text):
 def _frag_cell_html(cell):
     """单元格 → 安全行内 HTML（数学区间交后续 protect_math → MathJax）。
 
-    只在数学区间之外做 HTML 转义、行内代码落 <code>；并把裸下划线写成 &#95;
-    ——下游 fix_cjk_bold 的 BARE_SUB_RE 会把裸 _ 转义成 \\_（在 markdown 里显示
-    _，但在 HTML 块里会露出反斜杠），故此处先按 HTML 实体固定住。
+    只在数学区间之外做 HTML 转义、行内代码落 <code>。
+    下划线不转义：HTML 块内 _ 不会被 markdown 解析为斜体，
+    且 BARE_SUB_RE 要求 _ 前后均为 [A-Za-z0-9({]，表格中 _ 后面通常是中文不匹配。
     """
     out = []
     for seg, is_math in _frag_segments(cell):
@@ -818,7 +937,6 @@ def _frag_cell_html(cell):
             continue
         s = html.escape(seg, quote=False)                    # & < >
         s = re.sub(r"`([^`]+)`", lambda m: "<code>%s</code>" % m.group(1), s)
-        s = s.replace("_", "&#95;")
         out.append(s)
     return "".join(out)
 
@@ -967,6 +1085,9 @@ def write_enhance_assets(staged_map, lectures=(), viz=()):
     # 会字面露出，故在写出前统一规整（见 _index_sb）；搜索命中仍用未清洗的 hs。
     for it in gg["index"]:
         it["sb"] = _index_sb(it.get("sb"))
+        # 讲稿标题的裸数学符号（如 α）同样规整为 $…$，供检索结果渲染
+        if it.get("ty") == "讲稿":
+            it["tt"] = _sb_unicode_to_latex(it.get("tt") or "")
     adir = os.path.join(DOCS, "assets")
     os.makedirs(os.path.join(adir, "stylesheets"), exist_ok=True)
     with io.open(os.path.join(adir, "cqm-glossary.js"), "w", encoding="utf-8", newline="\n") as f:
@@ -991,11 +1112,11 @@ ENHANCE_CSS = """/* CQM 阅读站增强（构建期生成）：术语悬浮卡 �
 .cqm-term:hover, .cqm-term:focus { background: rgba(47, 111, 181, .10); outline: none; }
 .cqm-term--gap { border-bottom-color: #b4732f; }
 .cqm-term--gap:hover, .cqm-term--gap:focus { background: rgba(180, 115, 47, .12); }
-[data-md-color-scheme="slate"] .cqm-term:hover,
-[data-md-color-scheme="slate"] .cqm-term:focus { background: rgba(120, 170, 230, .18); }
+.dark .cqm-term:hover,
+.dark .cqm-term:focus { background: rgba(120, 170, 230, .18); }
 .cqm-pop {
   position: absolute; z-index: 60; width: min(460px, 92vw);
-  background: var(--md-default-bg-color, #fff);
+  background: var(--vp-c-bg, #fff);
   border: 1px solid rgba(47, 111, 181, .35); border-radius: 10px;
   box-shadow: 0 10px 30px rgba(20, 40, 70, .18);
   padding: .8em .95em; font-size: .82rem; line-height: 1.8; text-align: left;
@@ -1035,7 +1156,7 @@ ENHANCE_CSS = """/* CQM 阅读站增强（构建期生成）：术语悬浮卡 �
 .cqm-search {
   position: fixed; z-index: 81; left: 50%; top: 8vh; transform: translateX(-50%);
   width: min(760px, 94vw); max-height: 80vh; display: flex; flex-direction: column;
-  background: var(--md-default-bg-color, #fff); border-radius: 12px;
+  background: var(--vp-c-bg, #fff); border-radius: 12px;
   border: 1px solid rgba(47, 111, 181, .3); box-shadow: 0 18px 50px rgba(10, 25, 45, .35);
   overflow: hidden; text-align: left;
 }
@@ -1059,7 +1180,7 @@ ENHANCE_CSS = """/* CQM 阅读站增强（构建期生成）：术语悬浮卡 �
 .cqm-depthbar {
   position: sticky; top: 2.4rem; z-index: 5; display: flex; flex-wrap: wrap;
   align-items: center; gap: .4em; margin: .2em 0 1em; padding: .5em .7em;
-  background: var(--md-default-bg-color, #fff); border: 1px solid rgba(47, 111, 181, .25);
+  background: var(--vp-c-bg, #fff); border: 1px solid rgba(47, 111, 181, .25);
   border-radius: 10px; font-size: .72rem;
 }
 .cqm-depthbar__lab { opacity: .7; }
@@ -1074,9 +1195,9 @@ ENHANCE_CSS = """/* CQM 阅读站增强（构建期生成）：术语悬浮卡 �
 /* 可视化内嵌框 */
 .cqm-frame { width: 100%; height: calc(100vh - 230px); border: 0; border-radius: 10px; background: transparent; }
 .cqm-frame__fb { font-size: .74rem; opacity: .7; }
-[data-md-color-scheme="slate"] .cqm-pop,
-[data-md-color-scheme="slate"] .cqm-search,
-[data-md-color-scheme="slate"] .cqm-depthbar { background: #1d2430; }
+.dark .cqm-pop,
+.dark .cqm-search,
+.dark .cqm-depthbar { background: var(--vp-c-bg, #1d2430); }
 """
 
 ENHANCE_JS = r"""(function () {
@@ -1135,7 +1256,7 @@ ENHANCE_JS = r"""(function () {
     var a = e.target.closest && e.target.closest(".cqm-pop a");
     if (a) return;
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el) { e.preventDefault(); showPop(el); }
+    if (el) { e.preventDefault(); if (cur === el) hidePop(); else showPop(el); }
   });
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -1521,71 +1642,13 @@ def main():
     gg = write_enhance_assets(staged_map, lectures, viz_pages)
     write_chain_page(gg["chain"], staged_map, _csv(os.path.join(D01, "缺口编号对照.csv")))
     n_docs = len(staged_map)
-    # 旧站资产在 stage 前需先备份 tex-svg（TEX_SVG 指向旧站目录，stage 不清站点目录）
+    # tex-svg.js 源自 VitePress 研究站 dist（避免自引用旧站目录被 rmtree 删除）
     site_dir = SITE.replace(os.sep, "/")
     write_config(build_nav(staged_map, lectures, viz_pages), site_dir)
     print(f"[staging] 文档 {n_docs} 篇（未登记 {unreg}）→ {DOCS}")
     print(f"[user_dict] 词条 {n_terms} → {user_dict}")
-    # 清空旧站（旧单页站由 git 历史保留），保留 assets/tex-svg.js 源已被复制进 staging
-    if os.path.isdir(SITE):
-        shutil.rmtree(SITE)
-    os.makedirs(SITE, exist_ok=True)
-    env = dict(os.environ, PYTHONIOENCODING="utf-8")
-    r = subprocess.run([sys.executable, "-m", "mkdocs", "build", "-f", CONF, "--clean"],
-                       capture_output=True, encoding="utf-8", errors="replace", env=env)
-    out = (r.stdout or "") + (r.stderr or "")
-    warn = [l for l in out.splitlines() if "WARNING" in l or "ERROR" in l]
-    print(f"[mkdocs] exit={r.returncode}  警告/错误 {len(warn)} 条")
-    for l in warn[:12]:
-        print("   ", l[:200])
-    files = [p for p in glob.glob(os.path.join(SITE, "**", "*"), recursive=True) if os.path.isfile(p)]
-    idx = os.path.join(SITE, "index.html")
-    with io.open(os.path.join(SITE, "README.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(SITE_README)
-    print(f"[OK] 阅读站：{len(files)} 个文件 / index.html {os.path.getsize(idx) if os.path.exists(idx) else 0:,} B")
-    if r.returncode != 0:
-        print(out[-2500:])
-        sys.exit(1)
+    print(f"[OK] staging 完成（供 build_vitepress_site.py 使用）；MkDocs 阅读站已废弃，唯一站点为 VitePress 研究站")
 
-
-SITE_README = """# 阅读站（构建产物）
-
-> 本目录是 `_build/build_reader_site.py` 的输出，**每次重建会整体重写**，请勿在此手工编辑。
-
-## 打开方式
-
-双击 `index.html` 即可（`file://` 直开）：站点为**离线自足**——`offline` 插件保证搜索可用、
-`privacy` 插件把外部资源本地化，`font: false` 不引外部字体，成品零外链。
-
-## 阅读功能
-
-| 功能 | 入口 | 说明 |
-|:--|:--|:--|
-| 全文检索 | 顶栏搜索框 | Material 内置（lunr + 官方 zh + 构建期 jieba 分词 + CQM 用户词典） |
-| **高级检索** | 顶栏「高级检索」按钮，或 `Ctrl/⌘ + K`、`/` | 结构化实体检索：概念 81 / 命题 / 缺口 24 / 符号 / 文档 / 展开链步；按分类筛选（facet）、结果高亮、`↑↓` 选择、`Enter` 打开；可一键「转到全文检索」 |
-| **术语悬浮卡** | 正文中带蓝色虚线的术语 | 悬停/聚焦/点击弹出卡片：定义与**原文引文**（含出处文档、字符区间、置信度）逐字取自 `01_结构化数据/概念表.csv` 与 `00_外部引用/证据映射.csv` |
-| **缺口徽章** | 正文中的 `C` / `G*` / `N*` 编号 | 悬停显示该缺口的**闭合状态、描述、Lean 登记与所属分组**，状态原样呈现 |
-| **展开链（拉通阅读）** | 左侧导航第二项 | 由原文箭头链条句**逐字**汇总，按「文档层级 → 文档 → 行号」机械排序，附缺口断点清单 |
-| **展开链讲稿（撰述）** | 左侧导航第三项起 | `一体化研究/展开链讲稿/` 的作者叙述稿：问题 → 最小内核 → 六步链条 → 量纲链 → 断点 → 数值地位；每条论断带锚点（文档＋章节＋核对状态），附录含「引文保真六关」自检。**讲稿是撰写，不是摘录**；它不进引用清单、不计入理论语料统计，正文逐字原样复制 |
-| **深度滑杆** | 讲稿页顶部（粘性条） | 同一批论断的**四种高度**：导读（1）／概念（2）／链条（3）／技术（4）；按二级章节分层（映射在 `assets/cqm-depth.js`），切换即隐藏更深块并给出「本页 N 块 · 显示 M 块」计数；**断点块在任何深度都显示**（测到「断点／缺口／未闭合／待证明／构造后验」等词即固定可见，并加左侧标记）；选择记入浏览器本地 |
-| 被引用（反链） | 每页页尾 | 由站内链接倒排得到 |
-| **可视化（总入口）** | 左侧「可视化」栏目 | 原分散的四件自包含可视化已收进本站：**可推演超图**（Cytoscape，含随包 `cytoscape.min.js`）、**研究驾驶舱**（9 面板 + 内联 SVG）、**检索台**（图谱 + 全文 BM25 + 证据复核 + SPARQL）、**形式化蓝图**；均以 iframe 内嵌于 `assets/viz/`，源文件仍留在 `10_展示可视化/` 各目录，构建期复制并改写其相对引用，**不改源文件** |
-
-## 口径
-
-- 本目录是**呈现层**，不是权威源；权威源仍是各理论文档原文与 `README.md`。
-- 卡片、展开链页中的文字一律**逐字**取自既有产物（概念表、缺口编号对照、命题表、符号对照表、证据映射），
-  构建脚本不改写任何表述；缺口状态、限定语原样保留。
-- 展开链的箭头含义由各原文自行界定，站点不做统一解释。
-- 讲稿页是**撰述文字**（作者叙述），其每一条论断由讲稿附录 A 的锚点表指向出处；锚点表中标注「待逐字核对」的，
-  表示定位来自索引行、尚未回到原文逐字校对，读时应按此状态对待。
-
-## 重建
-
-```bash
-python "08 理论组织和形式化框架/_build/build_reader_site.py"
-```
-"""
 
 
 if __name__ == "__main__":

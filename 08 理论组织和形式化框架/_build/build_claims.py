@@ -209,7 +209,22 @@ def main():
     for s in symbols:
         cid = name2id.get(s["name"].strip())
         if cid:
-            add_alias(cid, s["symbol"].strip(), "符号", "09_桥接与翻译/符号对照表.csv", True)
+            sym_raw = s["symbol"].strip()
+            latex_field = (s.get("latex") or "").strip()
+            sym_latex = ""
+            if latex_field:
+                depth = 0
+                for i, ch in enumerate(latex_field):
+                    if ch == "{": depth += 1
+                    elif ch == "}": depth -= 1
+                    elif ch == "=" and depth == 0:
+                        sym_latex = latex_field[:i].strip(); break
+                else:
+                    sym_latex = latex_field
+            if sym_latex:
+                add_alias(cid, "$" + sym_latex + "$", "符号", "09_桥接与翻译/符号对照表.csv", True)
+            else:
+                add_alias(cid, sym_raw, "符号", "09_桥接与翻译/符号对照表.csv", True)
     for a in args:
         for raw in [x.strip() for x in a["premises"].split(";") if x.strip()] + [a["conclusion"].strip()]:
             if raw in name2id:

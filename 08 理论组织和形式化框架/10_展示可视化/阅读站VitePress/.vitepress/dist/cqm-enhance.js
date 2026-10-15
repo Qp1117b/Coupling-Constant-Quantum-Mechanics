@@ -54,7 +54,7 @@
     var a = e.target.closest && e.target.closest(".cqm-pop a");
     if (a) return;
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el) { e.preventDefault(); showPop(el); }
+    if (el) { e.preventDefault(); if (cur === el) hidePop(); else showPop(el); }
   });
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }

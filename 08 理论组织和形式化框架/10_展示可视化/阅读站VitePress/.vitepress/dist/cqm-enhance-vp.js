@@ -1,19 +1,24 @@
 (function () {
   var G = window.CQM_GLOSSARY; if (!G) return;
-  var POP, cur = null, pinned = false;
+  var POP, cur = null, pinned = false, overPop = false;
   var BOX, MASK, INP, RES, SEL = 0, F = { ty: "", q: "" };
   var bound = false;
 
-  /* ---------- 悬浮卡（全局单例） ---------- */
+  /* ---------- 悬浮卡（全局单例） ----------
+     交互语义（pinned = 点击固定，overPop = 鼠标在卡上）：
+       · 悬停词 → 弹出；移出词（且未固定）→ 消失
+       · 点击词 → 弹出并固定（移出词不消失）；再点击同一词 → 取消固定并消失
+       · 已固定 → 鼠标移到别的词上不切换（"已经弹出就不变"）
+       · 词内部子元素间移动不触发隐藏/重弹（relatedTarget 仍在同一元素内） */
   function ensurePop() {
     if (POP) return POP;
     POP = document.createElement("div");
     POP.className = "cqm-pop"; POP.style.display = "none";
     document.body.appendChild(POP);
-    POP.addEventListener("mouseenter", function () { pinned = true; });
-    POP.addEventListener("mouseleave", function () { pinned = false; hidePop(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hidePop(); });
-    window.addEventListener("scroll", function () { if (!pinned) hidePop(); }, true);
+    POP.addEventListener("mouseenter", function () { overPop = true; });
+    POP.addEventListener("mouseleave", function () { overPop = false; if (!pinned) hidePop(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { pinned = false; hidePop(); } });
+    window.addEventListener("scroll", function () { if (!pinned) hidePop(); }, { capture: true, passive: true });
     return POP;
   }
   var hideTimer = null;   // mouseout 的延迟隐藏定时器（必须可撤销，否则旧定时器会把新弹出的卡打掉）
@@ -70,31 +75,48 @@
   }
   document.addEventListener("mouseover", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && el !== cur) {
-      // 滑到新词：先撤销前一个词 mouseout 排下的延迟隐藏，
-      // 否则它会在此刻到期，把刚弹出的卡打掉（弹出的"闪一下"）
-      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
-      showPop(el);
-    }
+    if (!el) return;
+    var from = e.relatedTarget;
+    if (from && el.contains(from)) return;   // 同一元素内部移动，不当作重新进入
+    // 滑到新词：先撤销前一个词 mouseout 排下的延迟隐藏，
+    // 否则它会在此刻到期，把刚弹出的卡打掉（弹出的"闪一下"）
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+    if (pinned) return;   // 已点击固定：鼠标移动不改变已弹出的卡（"已经弹出就不变"）
+    if (el === cur) return;   // 已是当前词：不重复弹出
+    showPop(el);
   });
   document.addEventListener("mouseout", function (e) {
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el && !pinned) {
-      if (hideTimer) clearTimeout(hideTimer);
-      hideTimer = setTimeout(function () {
-        hideTimer = null;
-        if (!pinned) hidePop();
-      }, 180);
-    }
+    if (!el) return;
+    var to = e.relatedTarget;
+    if (to && el.contains(to)) return;   // 仍在同一元素内部移动，不算移出词
+    if (pinned) return;   // 已点击固定：移出词不隐藏
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () {
+      hideTimer = null;
+      if (!pinned && !overPop) hidePop();
+    }, 180);
   });
   document.addEventListener("focusin", function (e) {
-    var el = e.target.closest && e.target.closest("[data-cqm]"); if (el) showPop(el);
+    var el = e.target.closest && e.target.closest("[data-cqm]");
+    if (el && !pinned && el !== cur) showPop(el);   // 键盘聚焦词：弹出（固定态下不切换）
   });
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest(".cqm-pop a");
     if (a) return;
+    if (e.target.closest && e.target.closest(".cqm-pop")) return;   // 点击卡片内部：不处理（可正常选中文字/点链接）
     var el = e.target.closest && e.target.closest("[data-cqm]");
-    if (el) { e.preventDefault(); showPop(el); }
+    if (el) {
+      e.preventDefault();
+      if (cur === el && POP && POP.style.display !== "none") {
+        pinned = false; hidePop();
+      } else {
+        pinned = true; showPop(el);
+      }
+      return;
+    }
+    // 点击词与卡片以外的区域：取消固定并隐藏
+    if (pinned) { pinned = false; hidePop(); }
   });
 
   /* ---------- 正文容器定位 ---------- */
@@ -343,8 +365,11 @@
     hdr.appendChild(b);
   }
   function probeService() {
+    // 只在本地研究站后端服务（端口 8080）探测 /api/status；
+    // VitePress preview（localhost:4173）和静态部署无后端，fetch 会 404 污染控制台。
+    if (location.port !== "8080") return;
     try {
-      fetch("/api/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (s) {
+      fetch("/api/status", { cache: "no-store" }).then(function (r) { if (!r.ok) return null; return r.json(); }).then(function (s) {
         var hdr = navHost(); if (!hdr || !s || !s.counts) return;
         if (hdr.querySelector(".cqm-badge")) return;
         var a = document.createElement("a");
@@ -666,7 +691,7 @@
   }
   window.CQM = { init: function () { initOnce(); initPage(); },
                  highlight: function () { applySearchHighlight(); } };
-  function boot() { window.CQM.init(); }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
+  // 不在此处自动 boot：DOMContentLoaded 早于 Vue hydration，此时改 DOM 会触发
+  // "Hydration completed but contains mismatches" 警告。
+  // 初始化由 theme/index.js 的 enhanceApp 经双 rAF 在 hydration 之后调用。
 })();

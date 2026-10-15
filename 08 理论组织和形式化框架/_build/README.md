@@ -40,6 +40,6 @@ python build_meta.py       # 11：manifest / 版本 / 变更日志 / 验证状�
 - `check_consistency.py` 是 `10/AGENTS.md` §八 完成判据的执行器，跨产物核对计数一致性、引用完整性、`⇒`/`→` 约定、维度覆盖、失效链接与禁用词，并覆盖 v1.7.0 新增的证据层/主张层/RDF/SHACL/HermiT/抽取；**未通过即视为研究未完成**。
 - `check_provenance.py` 是**证据层执行器**：断言覆盖、引文逐字一致、字符区间边界、方法枚举、跨文档标记，
   以及**人工复核闭环**（存在 `00_外部引用/复核结果.csv` 时：`verified ⟺ approved 且有复核人`；不存在时：`verified` 全为 `False`）；**未通过即视为证据层未完成**。
-- 依赖：`rdflib`、`pyshacl`（RDF 导出与 SHACL 校验）、`jieba`（中文分词）、`owlready2` + **Java**（HermiT 推理）、`mkdocs-material`（阅读站，pip 安装）。缺失时对应脚本会如实报错，不静默降级。
+- 依赖：`rdflib`、`pyshacl`（RDF 导出与 SHACL 校验）、`jieba`（中文分词）、`owlready2` + **Java**（HermiT 推理）。缺失时对应脚本会如实报错，不静默降级。
 - `llm_extract.py` 依赖可选的 OpenAI 兼容 API（`CQM_LLM_API_BASE/KEY/MODEL`）；其输出（`LLM定型候选.csv`）经 **span 校验**后仍只是候选，须人工确认。
 - `fix_csv.py` 为一次性修复脚本，**幂等**：已修复行重写为同一正确值，重复运行不产生新的改动。

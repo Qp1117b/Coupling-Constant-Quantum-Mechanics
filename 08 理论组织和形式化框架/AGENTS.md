@@ -83,7 +83,7 @@ python ".workbuddy/tools/consistency_probe.py"                # 派生一致性�
 - 证据层规则：任何断言都必须能回溯到 `00_外部引用/证据映射.csv` 的一条记录（含字符区间与引文）；`verified` 仅人工复核后可置 `True`。
 - 抽取层规则：术语候选 / 关系候选 / 语义近邻**只能进候选池**，不得直接写入概念表；抽取只做定位与归一，不推断、不补全。
 - `fix_csv.py` 为一次性修复脚本（幂等）。
-- 依赖：`numpy`、`networkx`、`matplotlib`、`owlready2` + **Java**（HermiT）、`rdflib`、`pyshacl`、`jieba`、`mkdocs-material`（阅读站）。
+- 依赖：`numpy`、`networkx`、`matplotlib`、`owlready2` + **Java**（HermiT）、`rdflib`、`pyshacl`、`jieba`。
 - **临时工具脚本不得提交**；`_build/` 不计入产品文件统计。
 
 ## 七、反模式（明确禁止"忽视维度"）

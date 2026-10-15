@@ -7,11 +7,11 @@
 .cqm-term:hover, .cqm-term:focus { background: rgba(47, 111, 181, .10); outline: none; }
 .cqm-term--gap { border-bottom-color: #b4732f; }
 .cqm-term--gap:hover, .cqm-term--gap:focus { background: rgba(180, 115, 47, .12); }
-[data-md-color-scheme="slate"] .cqm-term:hover,
-[data-md-color-scheme="slate"] .cqm-term:focus { background: rgba(120, 170, 230, .18); }
+.dark .cqm-term:hover,
+.dark .cqm-term:focus { background: rgba(120, 170, 230, .18); }
 .cqm-pop {
   position: absolute; z-index: 60; width: min(460px, 92vw);
-  background: var(--md-default-bg-color, #fff);
+  background: var(--vp-c-bg, #fff);
   border: 1px solid rgba(47, 111, 181, .35); border-radius: 10px;
   box-shadow: 0 10px 30px rgba(20, 40, 70, .18);
   padding: .8em .95em; font-size: .82rem; line-height: 1.8; text-align: left;
@@ -51,7 +51,7 @@
 .cqm-search {
   position: fixed; z-index: 81; left: 50%; top: 8vh; transform: translateX(-50%);
   width: min(760px, 94vw); max-height: 80vh; display: flex; flex-direction: column;
-  background: var(--md-default-bg-color, #fff); border-radius: 12px;
+  background: var(--vp-c-bg, #fff); border-radius: 12px;
   border: 1px solid rgba(47, 111, 181, .3); box-shadow: 0 18px 50px rgba(10, 25, 45, .35);
   overflow: hidden; text-align: left;
 }
@@ -75,7 +75,7 @@
 .cqm-depthbar {
   position: sticky; top: 2.4rem; z-index: 5; display: flex; flex-wrap: wrap;
   align-items: center; gap: .4em; margin: .2em 0 1em; padding: .5em .7em;
-  background: var(--md-default-bg-color, #fff); border: 1px solid rgba(47, 111, 181, .25);
+  background: var(--vp-c-bg, #fff); border: 1px solid rgba(47, 111, 181, .25);
   border-radius: 10px; font-size: .72rem;
 }
 .cqm-depthbar__lab { opacity: .7; }
@@ -90,6 +90,6 @@
 /* 可视化内嵌框 */
 .cqm-frame { width: 100%; height: calc(100vh - 230px); border: 0; border-radius: 10px; background: transparent; }
 .cqm-frame__fb { font-size: .74rem; opacity: .7; }
-[data-md-color-scheme="slate"] .cqm-pop,
-[data-md-color-scheme="slate"] .cqm-search,
-[data-md-color-scheme="slate"] .cqm-depthbar { background: #1d2430; }
+.dark .cqm-pop,
+.dark .cqm-search,
+.dark .cqm-depthbar { background: var(--vp-c-bg, #1d2430); }

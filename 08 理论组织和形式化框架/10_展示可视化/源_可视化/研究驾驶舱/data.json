@@ -22,7 +22,7 @@
    "concept_id": "C003",
    "name": "再生产",
    "type": "本体论",
-   "definition": "幂等算符 μ²=μ 描述自组织",
+   "definition": "幂等算符 $\\mu^2=\\mu$ 描述自组织",
    "source_doc": "D005",
    "source_loc": "§1.3",
    "synonyms": "幂等自组织"
@@ -31,7 +31,7 @@
    "concept_id": "C004",
    "name": "因果集",
    "type": "数学结构",
-   "definition": "(X,≺) 偏序集描述因果",
+   "definition": "$(X,\\prec)$ 偏序集描述因果",
    "source_doc": "D005",
    "source_loc": "§1.3",
    "synonyms": ""
@@ -40,7 +40,7 @@
    "concept_id": "C005",
    "name": "禁闭边界",
    "type": "本体论",
-   "definition": "物质自组织的边界 4-单纯形 A₄",
+   "definition": "物质自组织的边界 4-单纯形 $A_4$",
    "source_doc": "D005",
    "source_loc": "§7.1",
    "synonyms": ""
@@ -85,7 +85,7 @@
    "concept_id": "C011",
    "name": "自我限制算符",
    "type": "数学结构",
-   "definition": "R̂ 自我限制算符",
+   "definition": "$\\hat{R}$ 自我限制算符",
    "source_doc": "D007",
    "source_loc": "§9",
    "synonyms": ""
@@ -94,7 +94,7 @@
    "concept_id": "C012",
    "name": "同步算符",
    "type": "数学结构",
-   "definition": "Ŝ₀ 紧化算符 描述同步",
+   "definition": "$\\hat{S}_0$ 紧化算符 描述同步",
    "source_doc": "D008",
    "source_loc": "§9",
    "synonyms": "紧化算符"
@@ -103,7 +103,7 @@
    "concept_id": "C013",
    "name": "GL5固定层级",
    "type": "群论",
-   "definition": "GL(5) 潜能先在的固定层级",
+   "definition": "$GL(5)$ 潜能先在的固定层级",
    "source_doc": "D008",
    "source_loc": "§0",
    "synonyms": ""
@@ -112,7 +112,7 @@
    "concept_id": "C014",
    "name": "SU5基态",
    "type": "群论",
-   "definition": "SU(5) 基态经重组实现破缺为标准模型",
+   "definition": "$SU(5)$ 基态经重组实现破缺为标准模型",
    "source_doc": "D008",
    "source_loc": "§0",
    "synonyms": ""
@@ -121,7 +121,7 @@
    "concept_id": "C015",
    "name": "重组实现",
    "type": "关系类型",
-   "definition": "多因一果的有向超边 ⇒",
+   "definition": "多因一果的有向超边 $\\Rightarrow$",
    "source_doc": "D005",
    "source_loc": "§1.3",
    "synonyms": ""
@@ -166,7 +166,7 @@
    "concept_id": "C020",
    "name": "主丛",
    "type": "纤维丛",
-   "definition": "P(M,G) 主丛",
+   "definition": "$P(M,G)$ 主丛",
    "source_doc": "D028",
    "source_loc": "§3",
    "synonyms": ""
@@ -175,7 +175,7 @@
    "concept_id": "C021",
    "name": "伴丛",
    "type": "纤维丛",
-   "definition": "E_R 伴丛",
+   "definition": "$E_R$ 伴丛",
    "source_doc": "D028",
    "source_loc": "§3",
    "synonyms": ""
@@ -184,7 +184,7 @@
    "concept_id": "C022",
    "name": "联络",
    "type": "纤维丛",
-   "definition": "A 主丛联络",
+   "definition": "$A$ 主丛联络",
    "source_doc": "D028",
    "source_loc": "§3",
    "synonyms": ""
@@ -193,7 +193,7 @@
    "concept_id": "C023",
    "name": "曲率",
    "type": "纤维丛",
-   "definition": "F=dA+A∧A 曲率2形式",
+   "definition": "$F=dA+A\\wedge A$ 曲率2形式",
    "source_doc": "D028",
    "source_loc": "§3",
    "synonyms": ""
@@ -202,7 +202,7 @@
    "concept_id": "C024",
    "name": "和乐",
    "type": "纤维丛",
-   "definition": "W_v 和乐算符",
+   "definition": "$W_v$ 和乐算符",
    "source_doc": "D028",
    "source_loc": "§3",
    "synonyms": ""
@@ -220,7 +220,7 @@
    "concept_id": "C026",
    "name": "角亏",
    "type": "几何",
-   "definition": "δ_v Regge剖分顶点角亏",
+   "definition": "$\\delta_v$ Regge剖分顶点角亏",
    "source_doc": "D006",
    "source_loc": "§二.5",
    "synonyms": ""
@@ -229,7 +229,7 @@
    "concept_id": "C027",
    "name": "固有时流速",
    "type": "几何",
-   "definition": "v_τ=√(1−βδ_v) 固有时流速",
+   "definition": "$v_\\tau=\\sqrt{1-\\beta\\delta_v}$ 固有时流速",
    "source_doc": "D015",
    "source_loc": "§三",
    "synonyms": ""
@@ -247,7 +247,7 @@
    "concept_id": "C029",
    "name": "中子缺陷矩阵",
    "type": "几何",
-   "definition": "D(δ) 中子缺陷矩阵",
+   "definition": "$D(\\delta)$ 中子缺陷矩阵",
    "source_doc": "D006",
    "source_loc": "§二.5",
    "synonyms": ""
@@ -256,7 +256,7 @@
    "concept_id": "C030",
    "name": "元素嘉当矩阵",
    "type": "群论",
-   "definition": "C_element 元素嘉当矩阵",
+   "definition": "$C_{\\text{element}}$ 元素嘉当矩阵",
    "source_doc": "D006",
    "source_loc": "§二.5",
    "synonyms": ""
@@ -265,7 +265,7 @@
    "concept_id": "C031",
    "name": "对数比参数",
    "type": "几何",
-   "definition": "β=(1/4π)ln(L/a)",
+   "definition": "$\\beta=(1/4\\pi)\\ln(L/a)$",
    "source_doc": "D015",
    "source_loc": "§三",
    "synonyms": ""
@@ -274,7 +274,7 @@
    "concept_id": "C032",
    "name": "时间量纲",
    "type": "量纲",
-   "definition": "T 第一量纲",
+   "definition": "$T$ 第一量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -283,7 +283,7 @@
    "concept_id": "C033",
    "name": "长度量纲",
    "type": "量纲",
-   "definition": "L 长度量纲",
+   "definition": "$L$ 长度量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -292,7 +292,7 @@
    "concept_id": "C034",
    "name": "质量量纲",
    "type": "量纲",
-   "definition": "M 质量量纲",
+   "definition": "$M$ 质量量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -301,7 +301,7 @@
    "concept_id": "C035",
    "name": "电荷量纲",
    "type": "量纲",
-   "definition": "Q 电荷量纲",
+   "definition": "$Q$ 电荷量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -310,7 +310,7 @@
    "concept_id": "C036",
    "name": "温度量纲",
    "type": "量纲",
-   "definition": "Θ 温度量纲",
+   "definition": "$\\Theta$ 温度量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -319,7 +319,7 @@
    "concept_id": "C037",
    "name": "物质的量量纲",
    "type": "量纲",
-   "definition": "N 物质的量量纲",
+   "definition": "$N$ 物质的量量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -328,7 +328,7 @@
    "concept_id": "C038",
    "name": "发光强度量纲",
    "type": "量纲",
-   "definition": "J 发光强度量纲",
+   "definition": "$J$ 发光强度量纲",
    "source_doc": "D009",
    "source_loc": "§6.1",
    "synonyms": ""
@@ -337,7 +337,7 @@
    "concept_id": "C039",
    "name": "量纲转换常数族",
    "type": "量纲",
-   "definition": "K_L K_M K_Q K_Θ K_N K_J",
+   "definition": "$K_L\\, K_M\\, K_Q\\, K_\\Theta\\, K_N\\, K_J$",
    "source_doc": "D009",
    "source_loc": "§6.3",
    "synonyms": ""
@@ -355,7 +355,7 @@
    "concept_id": "C041",
    "name": "自守因子",
    "type": "数论",
-   "definition": "j 量纲因子",
+   "definition": "$j$ 量纲因子",
    "source_doc": "D009",
    "source_loc": "§6.4",
    "synonyms": ""
@@ -364,7 +364,7 @@
    "concept_id": "C042",
    "name": "极大关系群",
    "type": "群论",
-   "definition": "G_max(f) 极大关系群",
+   "definition": "$G_{\\max}(f)$ 极大关系群",
    "source_doc": "D009",
    "source_loc": "§6.4",
    "synonyms": ""
@@ -373,7 +373,7 @@
    "concept_id": "C043",
    "name": "黎曼zeta函数",
    "type": "数论",
-   "definition": "ζ(s) 黎曼zeta函数",
+   "definition": "$\\zeta(s)$ 黎曼zeta函数",
    "source_doc": "D008",
    "source_loc": "§3",
    "synonyms": ""
@@ -382,7 +382,7 @@
    "concept_id": "C044",
    "name": "黎曼xi函数",
    "type": "数论",
-   "definition": "ξ(s)=ξ(1−s) 完成后的xi函数",
+   "definition": "$\\xi(s)=\\xi(1-s)$ 完成后的xi函数",
    "source_doc": "D008",
    "source_loc": "§3",
    "synonyms": ""
@@ -391,7 +391,7 @@
    "concept_id": "C045",
    "name": "黎曼零点",
    "type": "数论",
-   "definition": "γ_n 黎曼零点虚部",
+   "definition": "$\\gamma_n$ 黎曼零点虚部",
    "source_doc": "D008",
    "source_loc": "§3",
    "synonyms": "Riemann zeros"
@@ -400,7 +400,7 @@
    "concept_id": "C046",
    "name": "耦级",
    "type": "数论",
-   "definition": "𝔠_n=1/4+γ_n² 配对不变量",
+   "definition": "$\\mathfrak{c}_n=1/4+\\gamma_n^2$ 配对不变量",
    "source_doc": "D008",
    "source_loc": "§3",
    "synonyms": "能级"
@@ -409,7 +409,7 @@
    "concept_id": "C047",
    "name": "第一耦级",
    "type": "数论",
-   "definition": "𝔠₁=1/4+γ₁²≈0.5211",
+   "definition": "$\\mathfrak{c}_1=1/4+\\gamma_1^2\\approx 0.5211$",
    "source_doc": "D008",
    "source_loc": "§3",
    "synonyms": ""
@@ -418,16 +418,16 @@
    "concept_id": "C048",
    "name": "相变量子",
    "type": "数论",
-   "definition": "☯=ξ'(1)/ξ(1)≈0.02309570897",
+   "definition": "$\\mathcal{C}=\\xi'(1)/\\xi(1)\\approx 0.02309570897$",
    "source_doc": "D008",
    "source_loc": "§3",
-   "synonyms": "☯"
+   "synonyms": "$\\mathcal C$"
   },
   {
    "concept_id": "C049",
    "name": "谱算符",
    "type": "数论",
-   "definition": "Ĥ_HP=D̂²+1/4 Hilbert-Pólya算符",
+   "definition": "$\\hat{H}_{HP}=\\hat{D}^2+1/4$ Hilbert-Pólya算符",
    "source_doc": "D008",
    "source_loc": "§4",
    "synonyms": ""
@@ -463,7 +463,7 @@
    "concept_id": "C053",
    "name": "4-单纯形",
    "type": "几何",
-   "definition": "正四单纯形 A₄",
+   "definition": "正四单纯形 $A_4$",
    "source_doc": "D005",
    "source_loc": "§7.1",
    "synonyms": ""
@@ -472,7 +472,7 @@
    "concept_id": "C054",
    "name": "A4嘉当矩阵",
    "type": "群论",
-   "definition": "A_4=Cartan(SU(5))",
+   "definition": "$A_4=\\text{Cartan}(SU(5))$",
    "source_doc": "D005",
    "source_loc": "§7.1",
    "synonyms": ""
@@ -481,7 +481,7 @@
    "concept_id": "C055",
    "name": "边面关联矩阵",
    "type": "几何",
-   "definition": "M=EᵀE 本征值{9¹4⁴1⁵}",
+   "definition": "$M=E^TE$ 本征值 $\\{9^1,4^4,1^5\\}$",
    "source_doc": "D005",
    "source_loc": "§7.1",
    "synonyms": ""
@@ -490,7 +490,7 @@
    "concept_id": "C056",
    "name": "Dynkin指数比",
    "type": "群论",
-   "definition": "I=5/3",
+   "definition": "$I=5/3$",
    "source_doc": "D014",
    "source_loc": "§5",
    "synonyms": ""
@@ -499,7 +499,7 @@
    "concept_id": "C057",
    "name": "Mathieu临界",
    "type": "数论",
-   "definition": "λ_c≈1.316022911308",
+   "definition": "$\\lambda_c\\approx 1.316022911308$",
    "source_doc": "D019",
    "source_loc": "§5",
    "synonyms": ""
@@ -508,7 +508,7 @@
    "concept_id": "C058",
    "name": "谱修正",
    "type": "数论",
-   "definition": "κ=(31+☯)/30",
+   "definition": "$\\kappa=(31+\\mathcal{C})/30$",
    "source_doc": "D031",
    "source_loc": "§11",
    "synonyms": ""
@@ -517,7 +517,7 @@
    "concept_id": "C059",
    "name": "Weyl群",
    "type": "群论",
-   "definition": "S_5 Weyl群",
+   "definition": "$S_5$ Weyl群",
    "source_doc": "D005",
    "source_loc": "§7.2",
    "synonyms": ""
@@ -526,7 +526,7 @@
    "concept_id": "C060",
    "name": "耦合坐标",
    "type": "物理",
-   "definition": "u=ln r 耦合坐标",
+   "definition": "$u=\\ln r$ 耦合坐标",
    "source_doc": "D008",
    "source_loc": "§5",
    "synonyms": ""
@@ -535,7 +535,7 @@
    "concept_id": "C061",
    "name": "耦合动量",
    "type": "物理",
-   "definition": "p_u=v_τ/☯ 耦合动量",
+   "definition": "$p_u=v_\\tau/\\mathcal{C}$ 耦合动量",
    "source_doc": "D008",
    "source_loc": "§5",
    "synonyms": ""
@@ -544,7 +544,7 @@
    "concept_id": "C062",
    "name": "海森堡代数",
    "type": "物理",
-   "definition": "[û,p̂_u]=i 海森堡对易",
+   "definition": "$[\\hat{u},\\hat{p}_u]=i$ 海森堡对易",
    "source_doc": "D008",
    "source_loc": "§5",
    "synonyms": ""
@@ -553,7 +553,7 @@
    "concept_id": "C063",
    "name": "跃迁耦级谱",
    "type": "物理",
-   "definition": "Δu_n=2ln n 跃迁耦级",
+   "definition": "$\\Delta u_n=2\\ln n$ 跃迁耦级",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -562,7 +562,7 @@
    "concept_id": "C064",
    "name": "资格条件",
    "type": "物理",
-   "definition": "Δδ_0≥☯√(1−βδ_v)/(2β ln n)",
+   "definition": "$\\Delta\\delta_0\\geq\\mathcal{C}\\sqrt{1-\\beta\\delta_v}/(2\\beta\\ln n)$",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -571,7 +571,7 @@
    "concept_id": "C065",
    "name": "结构群叠加态",
    "type": "物理",
-   "definition": "|Ψ⟩ 结构群叠加态",
+   "definition": "$|\\Psi\\rangle$ 结构群叠加态",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -580,7 +580,7 @@
    "concept_id": "C066",
    "name": "候选群族",
    "type": "群论",
-   "definition": "U(1)//Z_n 候选群族",
+   "definition": "$U(1)//Z_n$ 候选群族",
    "source_doc": "D023",
    "source_loc": "§1",
    "synonyms": ""
@@ -589,7 +589,7 @@
    "concept_id": "C067",
    "name": "丛作用量",
    "type": "物理",
-   "definition": "F_n 丛作用量",
+   "definition": "$F_n$ 丛作用量",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -598,7 +598,7 @@
    "concept_id": "C068",
    "name": "主导群",
    "type": "群论",
-   "definition": "G_主导=argmin F_n",
+   "definition": "$G_{\\text{主导}}=\\arg\\min F_n$",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -607,7 +607,7 @@
    "concept_id": "C069",
    "name": "超导同步算符",
    "type": "物理",
-   "definition": "Ŝ_super 超导同步算符",
+   "definition": "$\\hat{S}_{\\text{super}}$ 超导同步算符",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -616,7 +616,7 @@
    "concept_id": "C070",
    "name": "临界温度",
    "type": "物理",
-   "definition": "T_c 超导临界温度",
+   "definition": "$T_c$ 超导临界温度",
    "source_doc": "D030",
    "source_loc": "§2",
    "synonyms": ""
@@ -625,7 +625,7 @@
    "concept_id": "C071",
    "name": "声子",
    "type": "物理",
-   "definition": "曲率量子 Δδ_v 贯穿三层的媒介",
+   "definition": "曲率量子 $\\Delta\\delta_v$ 贯穿三层的媒介",
    "source_doc": "D011",
    "source_loc": "标题",
    "synonyms": ""
@@ -643,7 +643,7 @@
    "concept_id": "C073",
    "name": "FG层级四元组",
    "type": "纤维丛",
-   "definition": "(M_ℓ P(M_ℓ G_ℓ) A_ℓ Ŝ_ℓ)",
+   "definition": "$(M_\\ell\\, P(M_\\ell,G_\\ell)\\, A_\\ell\\, \\hat{S}_\\ell)$",
    "source_doc": "D032",
    "source_loc": "§2",
    "synonyms": ""
@@ -652,7 +652,7 @@
    "concept_id": "C074",
    "name": "共形固定点",
    "type": "共形场论",
-   "definition": "β(g)=0 共形固定点",
+   "definition": "$\\beta(g)=0$ 共形固定点",
    "source_doc": "D012",
    "source_loc": "§1",
    "synonyms": ""
@@ -670,7 +670,7 @@
    "concept_id": "C076",
    "name": "Virasoro代数",
    "type": "共形场论",
-   "definition": "Virasoro生成元 {L_n}",
+   "definition": "Virasoro生成元 $\\{L_n\\}$",
    "source_doc": "D012",
    "source_loc": "§2",
    "synonyms": ""
@@ -679,7 +679,7 @@
    "concept_id": "C077",
    "name": "中央荷",
    "type": "共形场论",
-   "definition": "c Virasoro中央荷",
+   "definition": "$c$ Virasoro中央荷",
    "source_doc": "D012",
    "source_loc": "§2",
    "synonyms": ""
@@ -688,7 +688,7 @@
    "concept_id": "C078",
    "name": "共形维度",
    "type": "共形场论",
-   "definition": "h 共形维度",
+   "definition": "$h$ 共形维度",
    "source_doc": "D012",
    "source_loc": "§2",
    "synonyms": ""
@@ -724,7 +724,7 @@
    "concept_id": "C082",
    "name": "Wyler常数",
    "type": "数论",
-   "definition": "α_W Wyler常数 A₄群论不变量",
+   "definition": "$\\alpha_W$ Wyler常数 $A_4$ 群论不变量",
    "source_doc": "D021",
    "source_loc": "标题",
    "synonyms": ""
@@ -757,7 +757,7 @@
   },
   {
    "prop_id": "P004",
-   "statement": "质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器",
+   "statement": "质数是源 $GL(5)$ 是谐振腔 GRH是实谱条件 同步算符是换能器",
    "type": "命题",
    "source_doc": "D008",
    "status": "已陈述",
@@ -805,7 +805,7 @@
   },
   {
    "prop_id": "P010",
-   "statement": "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm",
+   "statement": "$G_N=\\hbar c/(m_p^2)\\cdot I\\cdot\\lambda_c\\cdot\\mathcal C^2\\cdot\\mathfrak c_1\\cdot\\exp(-2/\\mathcal C)\\cdot(1+\\kappa\\mathcal C)$ 偏差约-3ppm",
    "type": "构造",
    "source_doc": "D014",
    "status": "构造后验数字校验待独立复现",
@@ -829,7 +829,7 @@
   },
   {
    "prop_id": "P013",
-   "statement": "3已知+2待推+物理存在性⇒交叉RH成立",
+   "statement": "3已知+2待推+物理存在性 $\\Rightarrow$ 交叉RH成立",
    "type": "命题",
    "source_doc": "D017",
    "status": "已陈述",
@@ -837,7 +837,7 @@
   },
   {
    "prop_id": "P014",
-   "statement": "边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合",
+   "statement": "边界长度半已解 相位半 $S(T)$ 是唯一实质缺口 五重联系整合",
    "type": "命题",
    "source_doc": "D018",
    "status": "已陈述",
@@ -845,7 +845,7 @@
   },
   {
    "prop_id": "P015",
-   "statement": "定义-公理-定理-证明 ☯三重恒等+G_N构造11.1",
+   "statement": "定义-公理-定理-证明 $\\mathcal C$ 三重恒等+$G_N$ 构造11.1",
    "type": "定理",
    "source_doc": "D019",
    "status": "已陈述",
@@ -853,7 +853,7 @@
   },
   {
    "prop_id": "P016",
-   "statement": "质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化",
+   "statement": "质量是自守关联的涌现结果 其它粒子是 $\\pi_p$ 的朗兰兹函子性分化",
    "type": "命题",
    "source_doc": "D020",
    "status": "已陈述",
@@ -861,7 +861,7 @@
   },
   {
    "prop_id": "P017",
-   "statement": "Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链",
+   "statement": "Wyler常数可用 $A_4$ 群论不变量表达 嵌入 $SU(5)$ 重组实现链",
    "type": "定理",
    "source_doc": "D021",
    "status": "已陈述",
@@ -877,7 +877,7 @@
   },
   {
    "prop_id": "P019",
-   "statement": "规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标",
+   "statement": "规范对称性从不破缺 超导=$U(1)//Z_n$ 重组 $SU(5)$ 五重态含内禀时间坐标",
    "type": "命题",
    "source_doc": "D023",
    "status": "已陈述",
@@ -917,7 +917,7 @@
   },
   {
    "prop_id": "P024",
-   "statement": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH",
+   "statement": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\\iff$ RH $\\wedge$ GRH",
    "type": "定理",
    "source_doc": "D028",
    "status": "已陈述",
@@ -925,7 +925,7 @@
   },
   {
    "prop_id": "P025",
-   "statement": "纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释",
+   "statement": "纤维丛数学 $\\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释",
    "type": "定理",
    "source_doc": "D029",
    "status": "已陈述",
@@ -941,7 +941,7 @@
   },
   {
    "prop_id": "P027",
-   "statement": "元素周期表可导出 T_c自由能框架 缺口G9-G22权威表",
+   "statement": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表",
    "type": "命题",
    "source_doc": "D031",
    "status": "已陈述",
@@ -949,7 +949,7 @@
   },
   {
    "prop_id": "P028",
-   "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口",
+   "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口",
    "type": "命题",
    "source_doc": "D032",
    "status": "已陈述",
@@ -1239,7 +1239,7 @@
  "args": [
   {
    "arg_id": "H001",
-   "premises": "物质先在;再生产幂等μ²=μ",
+   "premises": "物质先在;再生产幂等$\\mu^2=\\mu$",
    "conclusion": "物质自组织",
    "type": "重组实现",
    "source_doc": "D005;D007",
@@ -1248,15 +1248,15 @@
   {
    "arg_id": "H002",
    "premises": "物质自组织;同步算符",
-   "conclusion": "SU(5)基态",
+   "conclusion": "$SU(5)$ 基态",
    "type": "重组实现",
    "source_doc": "D007;D008",
    "source_concept": "C007;C012→C014"
   },
   {
    "arg_id": "H003",
-   "premises": "本征值{9,4,1};S_5表示论",
-   "conclusion": "SU(5)规范群结构",
+   "premises": "本征值$\\{9,4,1\\}$;$S_5$ 表示论",
+   "conclusion": "$SU(5)$ 规范群结构",
    "type": "重组实现",
    "source_doc": "D005;D019",
    "source_concept": "C055;C059→C014"
@@ -1264,14 +1264,14 @@
   {
    "arg_id": "H004",
    "premises": "前核子自组织;粗粒化",
-   "conclusion": "禁闭边界A_4",
+   "conclusion": "禁闭边界 $A_4$",
    "type": "重组实现",
    "source_doc": "D005",
    "source_concept": "C007→C005"
   },
   {
    "arg_id": "H005",
-   "premises": "质子;中子缺陷α_4",
+   "premises": "质子;中子缺陷 $\\alpha_4$",
    "conclusion": "Regge铰链/非零角亏",
    "type": "重组实现",
    "source_doc": "D006",
@@ -1280,15 +1280,15 @@
   {
    "arg_id": "H006",
    "premises": "物质晶胞分布内禀不均匀性",
-   "conclusion": "Regge角亏δ_v",
+   "conclusion": "Regge角亏 $\\delta_v$",
    "type": "映射",
    "source_doc": "D006",
    "source_concept": "C007→C026"
   },
   {
    "arg_id": "H007",
-   "premises": "粒子A_4;中子D(δ)",
-   "conclusion": "元素嘉当矩阵C_element",
+   "premises": "粒子 $A_4$;中子 $D(\\delta)$",
+   "conclusion": "元素嘉当矩阵 $C_{\\text{element}}$",
    "type": "重组实现",
    "source_doc": "D006;D030",
    "source_concept": "C054;C029→C030"
@@ -1303,7 +1303,7 @@
   },
   {
    "arg_id": "H009",
-   "premises": "不确定性;跃迁耦级2ln_n",
+   "premises": "不确定性;跃迁耦级 $2\\ln n$",
    "conclusion": "资格条件",
    "type": "重组实现",
    "source_doc": "D030",
@@ -1311,8 +1311,8 @@
   },
   {
    "arg_id": "H010",
-   "premises": "λ_2(T_c)=λ_1(T_c)",
-   "conclusion": "丛作用量交叉F_1=F_2",
+   "premises": "$\\lambda_2(T_c)=\\lambda_1(T_c)$",
+   "conclusion": "丛作用量交叉 $F_1=F_2$",
    "type": "重组实现",
    "source_doc": "D030",
    "source_concept": "C070→C067"
@@ -1327,8 +1327,8 @@
   },
   {
    "arg_id": "H012",
-   "premises": "物质自组织基态同步SU(5)",
-   "conclusion": "各因子层GL(n)谱/残留",
+   "premises": "物质自组织基态同步 $SU(5)$",
+   "conclusion": "各因子层 $GL(n)$ 谱/残留",
    "type": "重组实现",
    "source_doc": "D029",
    "source_concept": "C014→C013"
@@ -1344,7 +1344,7 @@
   {
    "arg_id": "H014",
    "premises": "时间侧自守形式;空间侧自守形式",
-   "conclusion": "c",
+   "conclusion": "$c$",
    "type": "重组实现",
    "source_doc": "D009",
    "source_concept": "C040→C048"
@@ -1359,16 +1359,16 @@
   },
   {
    "arg_id": "H016",
-   "premises": "I;λ_c;☯²;𝔠_1;exp(-2/☯);(1+κ☯)",
-   "conclusion": "G_N",
+   "premises": "$I$;$\\lambda_c$;$\\mathcal C^2$;$\\mathfrak c_1$;$\\exp(-2/\\mathcal C)$;$(1+\\kappa\\mathcal C)$",
+   "conclusion": "$G_N$",
    "type": "重组实现",
    "source_doc": "D019;D014",
    "source_concept": "C056;C057;C048;C047;C058→C081"
   },
   {
    "arg_id": "H017",
-   "premises": "四个基约束性h;r;|W(A_4)|;tr(A_4)",
-   "conclusion": "Wyler常数α_W",
+   "premises": "四个基约束性 $h$;$r$;$|W(A_4)|$;$\\operatorname{tr}(A_4)$",
+   "conclusion": "Wyler常数 $\\alpha_W$",
    "type": "重组实现",
    "source_doc": "D021",
    "source_concept": "C054→C082"
@@ -1400,39 +1400,39 @@
   {
    "arg_id": "A004",
    "premises": "4-单纯形边-面结构",
-   "conclusion": "M=EᵀE本征值{9,4,1}",
+   "conclusion": "$M=E^{\\mathsf T}E$ 本征值 $\\{9,4,1\\}$",
    "type": "映射",
    "source_doc": "D005",
    "source_concept": "C053→C055"
   },
   {
    "arg_id": "A005",
-   "premises": "SU(5)紧致部分",
-   "conclusion": "U(1)//Z_n商结构→α",
+   "premises": "$SU(5)$ 紧致部分",
+   "conclusion": "$U(1)//Z_n$ 商结构 $\\to\\alpha$",
    "type": "映射",
    "source_doc": "D023",
    "source_concept": "C014→C066"
   },
   {
    "arg_id": "A006",
-   "premises": "δ_v",
-   "conclusion": "联络A_FG→伴丛曲率F",
+   "premises": "$\\delta_v$",
+   "conclusion": "联络 $A_{FG}\\to$ 伴丛曲率 $F$",
    "type": "映射",
    "source_doc": "D028",
    "source_concept": "C026→C022"
   },
   {
    "arg_id": "A007",
-   "premises": "δ_v",
-   "conclusion": "固有时流速v_τ=√(1−βδ_v)",
+   "premises": "$\\delta_v$",
+   "conclusion": "固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$",
    "type": "映射",
    "source_doc": "D015",
    "source_concept": "C026→C027"
   },
   {
    "arg_id": "A008",
-   "premises": "ζ欧拉乘积",
-   "conclusion": "局部耦合核κ_p",
+   "premises": "$\\zeta$ 欧拉乘积",
+   "conclusion": "局部耦合核 $\\kappa_p$",
    "type": "映射",
    "source_doc": "D008",
    "source_concept": "C043→C058"
@@ -1440,23 +1440,23 @@
   {
    "arg_id": "A009",
    "premises": "显式公式",
-   "conclusion": "同步格林函数ψ(e^u)",
+   "conclusion": "同步格林函数 $\\psi(e^u)$",
    "type": "映射",
    "source_doc": "D008",
    "source_concept": "C044→C060"
   },
   {
    "arg_id": "A010",
-   "premises": "函数方程ξ(s)=ξ(1−s)",
-   "conclusion": "同步算符厄米性S=S†",
+   "premises": "函数方程 $\\xi(s)=\\xi(1-s)$",
+   "conclusion": "同步算符厄米性 $S=S^\\dagger$",
    "type": "等价",
    "source_doc": "D008",
    "source_concept": "C044→C012"
   },
   {
    "arg_id": "A011",
-   "premises": "耦级𝔠_n为实",
-   "conclusion": "L函数零点位于临界线",
+   "premises": "耦级 $\\mathfrak c_n$ 为实",
+   "conclusion": "$L$ 函数零点位于临界线",
    "type": "等价",
    "source_doc": "D008",
    "source_concept": "C046→C051"
@@ -1464,30 +1464,30 @@
   {
    "arg_id": "A012",
    "premises": "RH",
-   "conclusion": "GL(5)固定层级实谱条件",
+   "conclusion": "$GL(5)$ 固定层级实谱条件",
    "type": "等价",
    "source_doc": "D008",
    "source_concept": "C051→C013"
   },
   {
    "arg_id": "A013",
-   "premises": "黎曼零点γ_n",
-   "conclusion": "耦级𝔠_n=1/4+γ_n²",
+   "premises": "黎曼零点 $\\gamma_n$",
+   "conclusion": "耦级 $\\mathfrak c_n=1/4+\\gamma_n^2$",
    "type": "映射",
    "source_doc": "D008",
    "source_concept": "C045→C046"
   },
   {
    "arg_id": "A014",
-   "premises": "☯=ξ'(1)/ξ(1)",
-   "conclusion": "λ_1=-B（三重恒等）",
+   "premises": "$\\mathcal C=\\xi'(1)/\\xi(1)$",
+   "conclusion": "$\\lambda_1=-B$（三重恒等）",
    "type": "等价",
    "source_doc": "D008",
    "source_concept": "C048→C048"
   },
   {
    "arg_id": "A015",
-   "premises": "☯谱表示Σ1/(γ_n²+1/4)",
+   "premises": "$\\mathcal C$ 谱表示 $\\Sigma 1/(\\gamma_n^2+1/4)$",
    "conclusion": "RH（单向推论）",
    "type": "依赖",
    "source_doc": "D008",
@@ -1496,7 +1496,7 @@
   {
    "arg_id": "A016",
    "premises": "没有质量尺子;耦合锁死为纯数字",
-   "conclusion": "共形固定点β(g)=0",
+   "conclusion": "共形固定点 $\\beta(g)=0$",
    "type": "重组实现",
    "source_doc": "D012",
    "source_concept": "C074→C074"
@@ -1511,32 +1511,32 @@
   },
   {
    "arg_id": "A018",
-   "premises": "纤维丛截面ψ",
-   "conclusion": "CFT primary operator φ",
+   "premises": "纤维丛截面 $\\psi$",
+   "conclusion": "CFT primary operator $\\phi$",
    "type": "等价",
    "source_doc": "D029",
    "source_concept": "C020→C075"
   },
   {
    "arg_id": "A019",
-   "premises": "联络A_ℓ",
-   "conclusion": "Virasoro生成元{L_n}",
+   "premises": "联络 $A_\\ell$",
+   "conclusion": "Virasoro生成元 $\\{L_n\\}$",
    "type": "等价",
    "source_doc": "D029",
    "source_concept": "C022→C076"
   },
   {
    "arg_id": "A020",
-   "premises": "曲率F",
-   "conclusion": "对易子[L_m,L_n]",
+   "premises": "曲率 $F$",
+   "conclusion": "对易子 $[L_m,L_n]$",
    "type": "等价",
    "source_doc": "D029",
    "source_concept": "C023→C076"
   },
   {
    "arg_id": "A021",
-   "premises": "和乐W(γ)",
-   "conclusion": "OPE monodromy e^{2πih}",
+   "premises": "和乐 $W(\\gamma)$",
+   "conclusion": "OPE monodromy $e^{2\\pi ih}$",
    "type": "等价",
    "source_doc": "D029",
    "source_concept": "C024→C075"
@@ -1551,16 +1551,16 @@
   },
   {
    "arg_id": "A023",
-   "premises": "母群G",
-   "conclusion": "本征群R→群算符Ĥ",
+   "premises": "母群 $G$",
+   "conclusion": "本征群 $R\\to$ 群算符 $\\hat H$",
    "type": "重组实现",
    "source_doc": "D010",
    "source_concept": "C042→C049"
   },
   {
    "arg_id": "A024",
-   "premises": "GL(n)",
-   "conclusion": "Weyl群S_n",
+   "premises": "$GL(n)$",
+   "conclusion": "Weyl群 $S_n$",
    "type": "层级含于",
    "source_doc": "D010",
    "source_concept": "C013→C059"
@@ -9946,7 +9946,7 @@
    "依据文档": 96,
    "提及缺口": 2
   },
-  "alias_count": 35,
+  "alias_count": 36,
   "align": {
    "args": 69,
    "count_ok": 59
@@ -10018,7 +10018,7 @@
   {
    "id": "P004",
    "kind": "prop",
-   "label": "质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器",
+   "label": "质数是源 $GL(5)$ 是谐振腔 GRH是实谱条件 同步算符是换能器",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10126,7 +10126,7 @@
   {
    "id": "P010",
    "kind": "prop",
-   "label": "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm",
+   "label": "$G_N=\\hbar c/(m_p^2)\\cdot I\\cdot\\lambda_c\\cdot\\mathcal C^2\\cdot\\mathfrak c_1\\cdot\\exp(-2/\\mathcal C)\\cdot(1+\\kappa\\mathcal C)$ 偏差约-3ppm",
    "type": "构造",
    "status": "构造后验数字校验待独立复现",
    "code": "",
@@ -10180,7 +10180,7 @@
   {
    "id": "P013",
    "kind": "prop",
-   "label": "3已知+2待推+物理存在性⇒交叉RH成立",
+   "label": "3已知+2待推+物理存在性 $\\Rightarrow$ 交叉RH成立",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10198,7 +10198,7 @@
   {
    "id": "P014",
    "kind": "prop",
-   "label": "边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合",
+   "label": "边界长度半已解 相位半 $S(T)$ 是唯一实质缺口 五重联系整合",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10216,7 +10216,7 @@
   {
    "id": "P015",
    "kind": "prop",
-   "label": "定义-公理-定理-证明 ☯三重恒等+G_N构造11.1",
+   "label": "定义-公理-定理-证明 $\\mathcal C$ 三重恒等+$G_N$ 构造11.1",
    "type": "定理",
    "status": "已陈述",
    "code": "",
@@ -10234,7 +10234,7 @@
   {
    "id": "P016",
    "kind": "prop",
-   "label": "质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化",
+   "label": "质量是自守关联的涌现结果 其它粒子是 $\\pi_p$ 的朗兰兹函子性分化",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10252,7 +10252,7 @@
   {
    "id": "P017",
    "kind": "prop",
-   "label": "Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链",
+   "label": "Wyler常数可用 $A_4$ 群论不变量表达 嵌入 $SU(5)$ 重组实现链",
    "type": "定理",
    "status": "已陈述",
    "code": "",
@@ -10288,7 +10288,7 @@
   {
    "id": "P019",
    "kind": "prop",
-   "label": "规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标",
+   "label": "规范对称性从不破缺 超导=$U(1)//Z_n$ 重组 $SU(5)$ 五重态含内禀时间坐标",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10378,7 +10378,7 @@
   {
    "id": "P024",
    "kind": "prop",
-   "label": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH",
+   "label": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\\iff$ RH $\\wedge$ GRH",
    "type": "定理",
    "status": "已陈述",
    "code": "",
@@ -10396,7 +10396,7 @@
   {
    "id": "P025",
    "kind": "prop",
-   "label": "纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释",
+   "label": "纤维丛数学 $\\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释",
    "type": "定理",
    "status": "已陈述",
    "code": "",
@@ -10432,7 +10432,7 @@
   {
    "id": "P027",
    "kind": "prop",
-   "label": "元素周期表可导出 T_c自由能框架 缺口G9-G22权威表",
+   "label": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -10450,7 +10450,7 @@
   {
    "id": "P028",
    "kind": "prop",
-   "label": "每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口",
+   "label": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口",
    "type": "命题",
    "status": "已陈述",
    "code": "",
@@ -12849,7 +12849,7 @@
    "rel": "语义近邻（候选）",
    "doc": "",
    "verified": false,
-   "method": "TF-IDF 余弦 0.29",
+   "method": "TF-IDF 余弦 0.28",
    "confidence": "low"
   },
   {
@@ -12894,7 +12894,7 @@
    "rel": "语义近邻（候选）",
    "doc": "",
    "verified": false,
-   "method": "TF-IDF 余弦 0.29",
+   "method": "TF-IDF 余弦 0.28",
    "confidence": "low"
   },
   {
