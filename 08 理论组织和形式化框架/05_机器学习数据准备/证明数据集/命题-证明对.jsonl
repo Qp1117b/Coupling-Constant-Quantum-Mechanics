@@ -1,31 +1,31 @@
 {"prop_id": "P001", "statement": "量子化耦合常数本身 时空与标准模型在禁闭边界涌现（十三部分总纲）", "type": "定理", "status": "已陈述", "source_doc": "D005", "depends_on": ["D001", "D007"], "lean_witness": null}
 {"prop_id": "P002", "statement": "引力=物质自组织的因果条件 分化为GR（广度）与FG（深度） 前时空前置", "type": "命题", "status": "已陈述", "source_doc": "D006", "depends_on": ["D005", "D030", "D042", "D028"], "lean_witness": null}
 {"prop_id": "P003", "statement": "物质先在 物理实在经自组织同步展开 引力是因果同步的必要前提", "type": "命题", "status": "已陈述", "source_doc": "D007", "depends_on": ["D005", "D006", "D030", "D012"], "lean_witness": null}
-{"prop_id": "P004", "statement": "质数是源 GL(5)是谐振腔 GRH是实谱条件 同步算符是换能器", "type": "命题", "status": "已陈述", "source_doc": "D008", "depends_on": ["D007", "D005"], "lean_witness": null}
+{"prop_id": "P004", "statement": "质数是源 $GL(5)$ 是谐振腔 GRH是实谱条件 同步算符是换能器", "type": "命题", "status": "已陈述", "source_doc": "D008", "depends_on": ["D007", "D005"], "lean_witness": null}
 {"prop_id": "P005", "statement": "量纲发生学 每压掉一个量纲冒出特征常数 K下标转换常数族", "type": "命题", "status": "已陈述", "source_doc": "D009", "depends_on": ["D010", "D007", "D014"], "lean_witness": null}
 {"prop_id": "P006", "statement": "群是物质自组织的组织约束体现 约束性=不变性", "type": "命题", "status": "已陈述", "source_doc": "D010", "depends_on": ["D009", "D028", "D005"], "lean_witness": null}
 {"prop_id": "P007", "statement": "声子是贯穿前时空/GR/FG三层的核心量子媒介（曲率量子）", "type": "命题", "status": "已陈述", "source_doc": "D011", "depends_on": ["D007", "D012", "D028", "D006"], "lean_witness": null}
 {"prop_id": "P008", "statement": "CFT描述临界自组织态扩大的机制 同时是同步的过程机制", "type": "命题", "status": "已陈述", "source_doc": "D012", "depends_on": ["D007", "D008", "D028"], "lean_witness": null}
 {"prop_id": "P009", "statement": "不另立量子引力层 FG就是FG 体系采用假设二（禁闭内部=QCD）", "type": "假设", "status": "已陈述", "source_doc": "D013", "depends_on": ["D028", "D007", "D008"], "lean_witness": null}
-{"prop_id": "P010", "statement": "G_N=ℏc/(m_p²)·I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) 偏差约-3ppm", "type": "构造", "status": "构造后验数字校验待独立复现", "source_doc": "D014", "depends_on": ["D008", "D050", "D019"], "lean_witness": null}
+{"prop_id": "P010", "statement": "$G_N=\\hbar c/(m_p^2)\\cdot I\\cdot\\lambda_c\\cdot☯^2\\cdot\\mathfrak c_1\\cdot\\exp(-2/☯)\\cdot(1+\\kappa☯)$ 偏差约-3ppm", "type": "构造", "status": "构造后验数字校验待独立复现", "source_doc": "D014", "depends_on": ["D008", "D050", "D019"], "lean_witness": null}
 {"prop_id": "P011", "statement": "退相干=质子集体引力因果限制结构的因果截断（关系性）四层结构", "type": "命题", "status": "已陈述", "source_doc": "D015", "depends_on": ["D005", "D042"], "lean_witness": null}
 {"prop_id": "P012", "statement": "跨层级退相干深耦合机制统一退相干过程 回应唯一性难题", "type": "命题", "status": "已陈述", "source_doc": "D016", "depends_on": ["D015"], "lean_witness": null}
-{"prop_id": "P013", "statement": "3已知+2待推+物理存在性⇒交叉RH成立", "type": "命题", "status": "已陈述", "source_doc": "D017", "depends_on": ["D001", "D005", "D008", "D026"], "lean_witness": null}
-{"prop_id": "P014", "statement": "边界长度半已解 相位半S(T)是唯一实质缺口 五重联系整合", "type": "命题", "status": "已陈述", "source_doc": "D018", "depends_on": ["D017", "D009"], "lean_witness": null}
-{"prop_id": "P015", "statement": "定义-公理-定理-证明 ☯三重恒等+G_N构造11.1", "type": "定理", "status": "已陈述", "source_doc": "D019", "depends_on": ["D005", "D042"], "lean_witness": null}
-{"prop_id": "P016", "statement": "质量是自守关联的涌现结果 其它粒子是π_p的朗兰兹函子性分化", "type": "命题", "status": "已陈述", "source_doc": "D020", "depends_on": ["D009", "D005", "D008", "D014"], "lean_witness": null}
-{"prop_id": "P017", "statement": "Wyler常数可用A₄群论不变量表达 嵌入SU(5)重组实现链", "type": "定理", "status": "已陈述", "source_doc": "D021", "depends_on": ["D005", "D028"], "lean_witness": null}
+{"prop_id": "P013", "statement": "3已知+2待推+物理存在性 $\\Rightarrow$ 交叉RH成立", "type": "命题", "status": "已陈述", "source_doc": "D017", "depends_on": ["D001", "D005", "D008", "D026"], "lean_witness": null}
+{"prop_id": "P014", "statement": "边界长度半已解 相位半 $S(T)$ 是唯一实质缺口 五重联系整合", "type": "命题", "status": "已陈述", "source_doc": "D018", "depends_on": ["D017", "D009"], "lean_witness": null}
+{"prop_id": "P015", "statement": "定义-公理-定理-证明 $☯$ 三重恒等+$G_N$ 构造11.1", "type": "定理", "status": "已陈述", "source_doc": "D019", "depends_on": ["D005", "D042"], "lean_witness": null}
+{"prop_id": "P016", "statement": "质量是自守关联的涌现结果 其它粒子是 $\\pi_p$ 的朗兰兹函子性分化", "type": "命题", "status": "已陈述", "source_doc": "D020", "depends_on": ["D009", "D005", "D008", "D014"], "lean_witness": null}
+{"prop_id": "P017", "statement": "Wyler常数可用 $A_4$ 群论不变量表达 嵌入 $SU(5)$ 重组实现链", "type": "定理", "status": "已陈述", "source_doc": "D021", "depends_on": ["D005", "D028"], "lean_witness": null}
 {"prop_id": "P018", "statement": "贝里曲率与Regge曲率共享联络-曲率-和乐骨架 关联是结构性的", "type": "命题", "status": "已陈述", "source_doc": "D022", "depends_on": ["D028", "D032", "D007", "D006"], "lean_witness": null}
-{"prop_id": "P019", "statement": "规范对称性从不破缺 超导=U(1)//Z_n重组 SU(5)五重态含内禀时间坐标", "type": "命题", "status": "已陈述", "source_doc": "D023", "depends_on": ["D007", "D008", "D005", "D011", "D012"], "lean_witness": null}
+{"prop_id": "P019", "statement": "规范对称性从不破缺 超导=$U(1)//Z_n$ 重组 $SU(5)$ 五重态含内禀时间坐标", "type": "命题", "status": "已陈述", "source_doc": "D023", "depends_on": ["D007", "D008", "D005", "D011", "D012"], "lean_witness": null}
 {"prop_id": "P020", "statement": "自守形式是局部共形对称性与全局模对称性同步的数学结晶", "type": "命题", "status": "已陈述", "source_doc": "D024", "depends_on": ["D012", "D008", "D010", "D028"], "lean_witness": null}
 {"prop_id": "P021", "statement": "置乱时间普适下界 GRH=实谱条件 置乱与退相干同一原理两面向", "type": "命题", "status": "已陈述", "source_doc": "D025", "depends_on": ["D010", "D005", "D008", "D007"], "lean_witness": null}
 {"prop_id": "P022", "statement": "扬弃Hilbert-Pólya 保留内核超越为物理过程铸造算符", "type": "命题", "status": "已陈述", "source_doc": "D026", "depends_on": ["D007", "D017", "D005"], "lean_witness": null}
 {"prop_id": "P023", "statement": "三重危机同一辩证病根 CQM为合题（新层级涌现论）", "type": "命题", "status": "已陈述", "source_doc": "D027", "depends_on": ["D015"], "lean_witness": null}
-{"prop_id": "P024", "statement": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱⟺RH∧GRH", "type": "定理", "status": "已陈述", "source_doc": "D028", "depends_on": ["D008", "D005", "D030", "D007"], "lean_witness": null}
-{"prop_id": "P025", "statement": "纤维丛数学↔CFT结构严格定量映射 同一数学两种诠释", "type": "定理", "status": "已陈述", "source_doc": "D029", "depends_on": ["D028", "D011", "D012", "D007"], "lean_witness": null}
+{"prop_id": "P024", "statement": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\\iff$ RH $\\wedge$ GRH", "type": "定理", "status": "已陈述", "source_doc": "D028", "depends_on": ["D008", "D005", "D030", "D007"], "lean_witness": null}
+{"prop_id": "P025", "statement": "纤维丛数学 $\\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释", "type": "定理", "status": "已陈述", "source_doc": "D029", "depends_on": ["D028", "D011", "D012", "D007"], "lean_witness": null}
 {"prop_id": "P026", "statement": "超导=FG底空间主丛伴丛的全局同步截面（同步再锁定）", "type": "命题", "status": "已陈述", "source_doc": "D030", "depends_on": ["D006", "D007", "D011", "D005", "D028"], "lean_witness": null}
-{"prop_id": "P027", "statement": "元素周期表可导出 T_c自由能框架 缺口G9-G22权威表", "type": "命题", "status": "已陈述", "source_doc": "D031", "depends_on": ["D030", "D032", "D008", "D007"], "lean_witness": null}
-{"prop_id": "P028", "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合δ_intrinsic缺口", "type": "命题", "status": "已陈述", "source_doc": "D032", "depends_on": ["D030", "D031"], "lean_witness": null}
+{"prop_id": "P027", "statement": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表", "type": "命题", "status": "已陈述", "source_doc": "D031", "depends_on": ["D030", "D032", "D008", "D007"], "lean_witness": null}
+{"prop_id": "P028", "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口", "type": "命题", "status": "已陈述", "source_doc": "D032", "depends_on": ["D030", "D031"], "lean_witness": null}
 {"prop_id": "P029", "statement": "四层FG剖分方法论与统一计算链", "type": "命题", "status": "已陈述", "source_doc": "D033", "depends_on": ["D030", "D032"], "lean_witness": null}
 {"prop_id": "P030", "statement": "11库形式化验证状态 748定理/30公理待证 缺口闭合表", "type": "命题", "status": "已陈述", "source_doc": "D042", "depends_on": ["D019", "D030", "D004"], "lean_witness": null}
 {"prop_id": "P031", "statement": "GN库101定理 零sorry 零新增axiom", "type": "定理", "status": "已证明", "source_doc": "D043", "depends_on": ["D019"], "lean_witness": null}
@@ -60,4 +60,4 @@
 {"prop_id": "G029", "statement": "Mathieu临界", "type": "构造", "status": "数值验证", "source_doc": "D019", "depends_on": [], "lean_witness": null}
 {"prop_id": "G030", "statement": "素数冻结假设", "type": "假设", "status": "axiom", "source_doc": "D007", "depends_on": [], "lean_witness": null}
 {"prop_id": "G031", "statement": "Tate自对偶", "type": "假设", "status": "axiom", "source_doc": "D008", "depends_on": [], "lean_witness": null}
-{"prop_id": "G032", "statement": "G_N变分原理", "type": "构造", "status": "数值验证待独立复现", "source_doc": "D014", "depends_on": [], "lean_witness": null}
+{"prop_id": "G032", "statement": "$G_N$变分原理", "type": "构造", "status": "数值验证待独立复现", "source_doc": "D014", "depends_on": [], "lean_witness": null}

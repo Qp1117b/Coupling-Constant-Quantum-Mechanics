@@ -337,7 +337,7 @@ $$\exp\!\left(-\frac{2}{☯_n}\right) = \exp\!\left(-\frac{2}{n \cdot ☯}\right
 | GL(3) | $3☯$ | $[\exp(-2/☯)]^{1/3} \approx 2.91 \times 10^{-13}$ | $1/3$ 次幂 |
 | GL(5) | $5☯$ | $[\exp(-2/☯)]^{1/5} \approx 3.01 \times 10^{-8}$ | $1/5$ 次幂 |
 
-**低层主导定理**：$n_1 < n_2 \Rightarrow \exp(-2/☯_{n_1}) < \exp(-2/☯_{n_2})$——低层 GL(n) 给出更强层级抑制。当前 $G_N$ 公式使用 $☯ = ☯_1$，对应**最强层级抑制**。物理系统固定在 GL(5) 层级，$n > 5$ 不排除但 GL(5) 主导物理谱。
+**低层主导定理**：$n_1 < n_2 \rightarrow \exp(-2/☯_{n_1}) < \exp(-2/☯_{n_2})$——低层 GL(n) 给出更强层级抑制。当前 $G_N$ 公式使用 $☯ = ☯_1$，对应**最强层级抑制**。物理系统固定在 GL(5) 层级，$n > 5$ 不排除但 GL(5) 主导物理谱。
 
 **归一化普适性**：$\tilde{☯}_n = ☯_n / n = ☯_1$ 对所有 $n$ 成立——$☯$ 是跨 GL(n) 的相变量子单位，不同 GL(n) 仅取整数倍。完整推导见 `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md` §5.4。
 
@@ -519,7 +519,7 @@ $$G_N = 6.708811657 \times 10^{-39}\ \text{GeV}^{-2} = 6.6742810045 \times 10^{-
 9. Sierra, G. (2008). A quantum mechanical model of the Riemann zeros. *New J. Phys.*, 10, 033016.
 10. Endres, S., & Steiner, F. (2010). The Berry–Keating operator on $L^2(\mathbb{R}_>,dx)$ and on compact quantum graphs with general self-adjoint realizations. *J. Phys. A: Math. Theor.*, 43, 095204. (arXiv:0912.3183) —— $H_{\rm BK}$ 在 $L^2(\mathbb R_>,dx)$ 上谱纯连续、亏指数 $(0,0)$。
 11. McLachlan, N. W. (1947). *Theory and Application of Mathieu Functions*. Oxford.
-12. Sorkin, R. D. (2009). Does locality fail at intermediate length-scales? *arXiv:0907.5398*.
+12. Sorkin, R. D. (2007). Does locality fail at intermediate length-scales? *arXiv:gr-qc/0703099*.
 13. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. *Phys. Rev. D*, 82, 104048.
 14. Dragovich, B. (2003). p-Adic and adelic quantum mechanics. *arXiv:hep-th/0312046*.
 15. Dragovich, B. (2007). Adeles in mathematical physics. *arXiv:0707.3876*.

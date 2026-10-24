@@ -16,7 +16,8 @@
 
 呈现边界：本脚本只**呈现**既有数据（源 CSV / 超图 JSON / 派生仿真 / Lean 结构提取），
 不新增理论内容、不改数值、不改缺口状态。派生级联回放的数据取自
-`06_动态机制/仿真/derivation_order.csv`（49 条规则 / 4 轮），逐轮新增与累计可达在构建期复算并断言。
+`06_动态机制/仿真/derivation_order.csv`（规则条数与轮数在构建期从该 CSV 读出，一律不写死），
+逐轮新增与累计可达在构建期复算并断言。
 
 运行：python build_site.py
 """
@@ -82,7 +83,7 @@ def build_data():
     caus = jload(os.path.join(S07, "因果模型", "GN_causal_dag.json"))
     onto = jload(os.path.join(ROOT, "02_概念本体", "本体统计.json"))
 
-    # 派生级联（49 条规则 / 4 轮，逐轮复算）
+    # 派生级联（规则条数 / 轮数在构建期从 derivation_order.csv 读出，逐轮复算）
     trace = rd(os.path.join(S06, "仿真", "derivation_order.csv"))
     cascade, reached = build_cascade(dyn["seed_concepts"], trace)
     assert cascade[-1]["cum"] == dyn["reachable_concepts"], "级联累计可达与 06 仿真不一致"
@@ -127,7 +128,7 @@ def build_data():
                   "count_ok": sum(1 for r in rd(os.path.join(S01, "论证对齐.csv")) if r["count_ok"] == "True")},
     }
 
-    # Lean 声明构成（按 kind 聚合，避免内嵌 1388 条明细）
+    # Lean 声明构成（按 kind 聚合，避免内嵌全部声明明细）
     decls = jload(os.path.join(S04, "Lean结构提取", "declarations.json"))
     kind_hist = collections.Counter(d["kind"] for d in decls)
     mod_kind = collections.Counter((d["module"], d["kind"]) for d in decls)
@@ -425,12 +426,12 @@ const relHist=D.meta.rel_hist;
 const typeCount=Object.entries(D.concepts.reduce((a,c)=>(a[c.type]=(a[c.type]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]);
 const VIEWS=[
  ['ov','总览','系统规模与七维度'],
- ['con','概念','81 个概念 · 类型 / 派生深度'],
- ['prop','命题与缺口','63 条命题 · 24 个缺口'],
- ['rel','关系与超边','19 超边 ⇒ · 50 有向边 →'],
- ['lean','Lean 对接','68 模块 · 1388 声明'],
- ['dyn','动态机制','49 条规则 · 4 轮派生'],
- ['ev','证据','215 条断言 → 原文定位'],
+ ['con','概念',D.meta.nodes+' 个概念 · 类型 / 派生深度'],
+ ['prop','命题与缺口',D.meta.props+' 条命题 · '+D.props.filter(p=>p.type==='缺口').length+' 个缺口'],
+ ['rel','关系与超边',D.meta.hyperedges+' 超边 ⇒ · '+D.meta.edges+' 有向边 →'],
+ ['lean','Lean 对接',D.meta.modules+' 模块 · '+D.meta.decls+' 声明'],
+ ['dyn','动态机制',D.meta.rules_fired+' 条规则 · '+D.meta.steps+' 轮派生'],
+ ['ev','证据',D.evidence.length+' 条断言 → 原文定位'],
  ['qual','质量看板','SHACL · 本体推理 · 抽取评测'],
  ['meta','元数据','本体 / 快照 / 下载']];
 /* ---------- 骨架 ---------- */
@@ -457,7 +458,7 @@ const V=id=>el('v_'+id);
  +'<h2>分布与派生</h2><div class="grid g2">'
  +'<div class="card"><h3>概念类型分布<em>12 类 / '+m.nodes+'</em></h3>'+donut(typeCount.map(([t,n])=>({label:t,value:n,color:TYPE_COLOR[t]||'#888'})),{label:'概念'})
  +'<div class="legend">'+typeCount.map(([t,n])=>'<span><i style="background:'+(TYPE_COLOR[t]||'#888')+'"></i>'+esc(t)+' '+n+'</span>').join('')+'</div></div>'
- +'<div class="card"><h3>关系类型分布<em>19 + 51 = 70</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})
+ +'<div class="card"><h3>关系类型分布<em>'+m.hyperedges+' + '+m.edges+' = '+(m.hyperedges+m.edges)+'</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})
  +'<div class="hint">⇒ 仅表重组实现（超边，多因一果）；其余为普通有向边 →。</div></div>'
  +'<div class="card"><h3>重写系统前向派生<em>'+m.rules_fired+' 规则 / '+m.steps+' 轮 · 可达 '+m.reached+'/'+m.nodes+'</em></h3>'+cascade(D.dynamics.seed_concepts.length,cs)
  +'<div class="hint">种子 '+D.dynamics.seed_concepts.length+' → 累计可达 <b>'+m.reached+'/'+m.nodes+'</b>；不可达 <code>'+m.unreachable.join('、')+'</code>（依赖自环或须理论外输入）。</div></div>'
@@ -487,7 +488,7 @@ const V=id=>el('v_'+id);
  +'<div class="grid g2"><div class="scroll"><table><thead><tr><th>ID</th><th>名称</th><th>类型</th><th>派生深度</th><th>定义</th><th>出处</th></tr></thead><tbody id="ctb"></tbody></table></div>'
  +'<div><div class="card"><h3>类型分布</h3><div id="cdonut"></div></div>'
  +'<div class="card" style="margin-top:14px"><h3>派生深度分布<em>种子 + 4 轮</em></h3><div id="cdepth"></div>'
- +'<div class="hint">深度由 <code>06_动态机制/仿真/derivation_order.csv</code> 复算：种子 44，第 1–4 轮依次新增 28 / 6 / 2 / 1，累计 80/81。</div></div></div></div>';
+ +'<div class="hint">深度由 <code>06_动态机制/仿真/derivation_order.csv</code> 复算：种子 '+D.dynamics.seed_concepts.length+'，第 1–'+D.cascade.length+' 轮依次新增 '+D.cascade.map(c=>c.new.length).join(' / ')+'，累计 '+D.cascade.map(c=>c.cum).join(' / ')+'（可达 '+D.meta.reached+'/'+D.meta.nodes+'）。</div></div></div></div>';
  const depthHist=[0,1,2,3,4].map(d=>({label:'深度 '+d,value:D.concepts.filter(c=>depth[c.concept_id]===d).length,color:['#38bdf8','#a78bfa','#f472b6','#34d399','#fbbf24'][d]}));
  depthHist.push({label:'未参与派生',value:D.concepts.filter(c=>depth[c.concept_id]===undefined).length,color:'#64748b'});
  el('cdonut').innerHTML=donut(typeCount.map(([t,n])=>({label:t,value:n,color:TYPE_COLOR[t]||'#888'})),{size:180,label:'概念',cls:'w-sm'});
@@ -509,8 +510,8 @@ const V=id=>el('v_'+id);
 /* ---------- 命题与缺口 ---------- */
 {const pt=['全部'].concat([...new Set(D.props.map(p=>p.type))].sort());
  V('prop').innerHTML='<h2>命题 / 定理 / 假设 / 构造 / 缺口</h2>'
- +'<div class="grid g2"><div class="card"><h3>类型 × 状态<em>63 条</em></h3><div id="pstack"></div></div>'
- +'<div class="card"><h3>缺口 24 条<em>状态原样保留</em></h3><div id="pgaps" class="chips"></div>'
+ +'<div class="grid g2"><div class="card"><h3>类型 × 状态<em>'+D.props.length+' 条</em></h3><div id="pstack"></div></div>'
+ +'<div class="card"><h3>缺口 '+D.props.filter(p=>p.type==='缺口').length+' 条<em>状态原样保留</em></h3><div id="pgaps" class="chips"></div>'
  +'<div class="note">缺口编号与状态照录权威源（C / G2–G8 / G9–G22 / N1–N4 / H3.1–H3.3），不作升级。</div></div></div>'
  +'<div class="card" style="margin-top:14px"><h3>缺口依赖链 · 状态分组<em>数据化自命题表.depends_on 与 缺口依赖闭包.md §二</em></h3>'
  +'<div id="gchain"></div>'
@@ -573,7 +574,7 @@ const V=id=>el('v_'+id);
 /* ---------- 关系与超边 ---------- */
 {const rt=['全部'].concat([...new Set(D.args.map(a=>a.type))].sort());
  V('rel').innerHTML='<h2>论证 / 关系</h2><div class="grid g2">'
- +'<div class="card"><h3>关系类型<em>69 条</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})+'</div>'
+ +'<div class="card"><h3>关系类型<em>'+Object.values(relHist).reduce((a,b)=>a+b,0)+' 条</em></h3>'+hbars(Object.entries(relHist).sort((a,b)=>b[1]-a[1]).map(([t,n])=>({label:t,value:n,color:REL_COLOR[t]||'#38bdf8'})),{lw:76})+'</div>'
  +'<div class="card"><h3>超边 ⇒ 明细<em>多因一果</em></h3><div class="scroll" style="max-height:260px"><table><thead><tr><th>ID</th><th>前件</th><th>后件</th></tr></thead><tbody>'
  +D.hypergraph.hyperedges.map(h=>'<tr><td><code>'+esc(h.id)+'</code></td><td>'+h.premises.map(p=>esc((CN[p]||{}).name||p)).join('、')+'</td><td>'+h.conclusion.map(c=>esc((CN[c]||{}).name||c)).join('、')+'</td></tr>').join('')
  +'</tbody></table></div></div></div>'
@@ -595,7 +596,7 @@ const V=id=>el('v_'+id);
  +'<div class="legend">'+kinds.map(([k,n])=>'<span><i style="background:'+(KIND_COLOR[k]||'#888')+'"></i>'+esc(k)+' '+n+'</span>').join('')+'</div></div>'
  +'<div class="card"><h3>声明最多的模块<em>Top 16</em></h3>'
  +hbars(D.lean_top_modules.map(m=>({label:m.module,value:m.total,color:'#a78bfa'})),{lw:150,lh:19,w:470})+'</div></div>'
- +'<h2>Lean ↔ 概念 ↔ 缺口（25 条）</h2><div class="scroll" style="max-height:44vh"><table><thead><tr><th>Lean 库</th><th>关键符号</th><th>概念</th><th>命题</th><th>缺口</th><th>说明</th></tr></thead><tbody>'
+ +'<h2>Lean ↔ 概念 ↔ 缺口（'+D.lean_map.length+' 条）</h2><div class="scroll" style="max-height:44vh"><table><thead><tr><th>Lean 库</th><th>关键符号</th><th>概念</th><th>命题</th><th>缺口</th><th>说明</th></tr></thead><tbody>'
  +D.lean_map.map(r=>{const gs=(r.gap_ids||'').split(';').filter(Boolean).map(g=>'<span class="tag t-gap">'+esc(g)+'</span>').join('')||'—';
    return '<tr><td><code>'+esc(r.lean_library)+'</code></td><td><code>'+esc(r.lean_symbol)+'</code></td><td>'+esc(r.concept_ids)+'</td><td>'+esc(r.prop_ids)+'</td><td>'+gs+'</td><td>'+esc(r.remark)+'</td></tr>';}).join('')
  +'</tbody></table></div>'
@@ -611,7 +612,7 @@ const V=id=>el('v_'+id);
  +logbars([['I','dlnGN/dlnI'],['λ_c','dlnGN/dlnlambda_c'],['𝔠₁','dlnGN/dlnc_1'],['m_p','dlnGN/dlnm_p'],['κ','dlnGN/dlnkappa'],['☯','dlnGN/dlntaiji']]
    .map(([lab,k])=>({label:lab,value:E[k],hot:k==='dlnGN/dlntaiji'})),{lw:56,w:470})
  +'<div class="note">☯ 弹性最大（≈88.6），是 G<sub>N</sub> 数值不确定性的瓶颈。构造后验数字校验，待独立复现。</div></div></div>'
- +'<h2>派生轨迹（49 条）</h2><div class="tbx"><select id="ds"><option value="">全部轮次</option>'
+ +'<h2>派生轨迹（'+D.meta.rules_fired+' 条）</h2><div class="tbx"><select id="ds"><option value="">全部轮次</option>'
  +D.cascade.map(c=>'<option value="'+c.step+'">第 '+c.step+' 轮（'+c.rules.length+' 条）</option>').join('')+'</select><span class="count" id="dcount"></span></div>'
  +'<div class="scroll"><table><thead><tr><th>序</th><th>轮</th><th>规则</th><th>关系</th><th>前件</th><th>后件</th><th>深度</th></tr></thead><tbody id="dtb"></tbody></table></div>';
  const all=D.cascade.flatMap(c=>c.rules);
@@ -1068,7 +1069,7 @@ function paint(){
   applyVisibility();
 }
 function narrate(){
-  if(!play.on){narr.innerHTML='点「派生回放」：44 个种子概念出发，按 <b>'+CASC.length+'</b> 轮重写逐轮点亮（数据取自 06 动态机制派生仿真）。';prog.style.width='0%';return;}
+  if(!play.on){narr.innerHTML='点「派生回放」：'+DYN.seed_concepts.length+' 个种子概念出发，按 <b>'+CASC.length+'</b> 轮重写逐轮点亮（数据取自 06 动态机制派生仿真）。';prog.style.width='0%';return;}
   if(play.step===0){narr.innerHTML='第 0 轮 · 种子 <b>'+play.active.size+'</b> 个概念（未点亮者表示尚未被派生）';prog.style.width='0%';return;}
   const c=CASC[play.step-1];
   narr.innerHTML='第 <b>'+c.step+'/'+CASC.length+'</b> 轮 · 触发 <b>'+c.rules.length+'</b> 条规则 · 新增 <b>'+c.new.length+'</b> 概念 · 累计可达 <b>'+c.cum+'/'+NODES.length+'</b>';

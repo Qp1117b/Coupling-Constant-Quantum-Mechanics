@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261015095557' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261015095557' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261015095557' }],
-    ['script', { src: '/cqm-glossary.js?v=20261015095557', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261015095557', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261015095557', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261015095557', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261015095557', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261015095557', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261015095557', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261024130627' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261024130627' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261024130627' }],
+    ['script', { src: '/cqm-glossary.js?v=20261024130627', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261024130627', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261024130627', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261024130627', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261024130627', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261024130627', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261024130627', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -119,6 +119,10 @@ export default defineConfig({
   {
     "text": "术语表",
     "link": "/TERMS_术语表"
+  },
+  {
+    "text": "文献",
+    "link": "/REFS_文献总览"
   },
   {
     "text": "检索台",
@@ -348,6 +352,19 @@ export default defineConfig({
     ]
   },
   {
+    "text": "功能页",
+    "items": [
+      {
+        "text": "文献总览",
+        "link": "/REFS_文献总览"
+      },
+      {
+        "text": "文献总览",
+        "link": "/REFS_文献总览"
+      }
+    ]
+  },
+  {
     "text": "可视化",
     "items": [
       {
@@ -385,21 +402,34 @@ export default defineConfig({
     "text": "术语表",
     "items": [
       {
-        "text": "术语总览（227 条）",
+        "text": "术语总览（411 条）",
         "link": "/TERMS_术语表"
       }
     ]
   },
   {
-    "text": "其它",
+    "text": "文献",
     "items": [
       {
-        "text": "CQM 超导材料设计器 - AI代理规则",
-        "link": "/F01_AGENTS"
+        "text": "文献总览（147 条）",
+        "link": "/REFS_文献总览"
+      }
+    ]
+  },
+  {
+    "text": "参考",
+    "items": [
+      {
+        "text": "耦合常数量子力学（CQM）形式化框架（项目根）",
+        "link": "/D001_项目说明与符号约定"
       },
       {
-        "text": "Godot AI",
-        "link": "/F02_README"
+        "text": "CQM 术语表（组织层）",
+        "link": "/D003_术语表"
+      },
+      {
+        "text": "CQM 缺口台账（组织层）",
+        "link": "/D004_缺口台账"
       }
     ]
   }

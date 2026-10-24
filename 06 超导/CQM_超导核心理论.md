@@ -57,11 +57,11 @@ $$\boxed{☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} = \frac{\xi'(1)}{\xi(1)} = 1 + \
 CQM 对关系量子力学（RQM）进行唯物主义重构——这是超导理论的本体论基石：
 
 1. **属性（物理上即自由度）随附于物质本体**：属性不是独立实体，而是有限本体的随附物。
-2. **属性在因果关系中实现自身**：属性的现实化发生于具体的因果关系中，因而属性自然**相对物理系统而言**——并非相对“观测者”，而是相对构成该系统的有限本体关系网络。
+2. **属性在因果关系中实现自身**：属性的现实化发生于具体的因果关系中，因而属性自然**相对物理系统而言**——即相对构成该系统的有限本体关系网络。
 3. **超导原理由此获得立足点**：大量有限本体（质子/中子）构成的关系网络，通过 FG 退相干机制对电子基础自由度进行操作，涌现超导态。
 4. **取消电子的本体特权**：电子不是独立本体，而是基态耦合常数 $\alpha$ 的对应——它是质子-中子关系网络历史拓扑路径的产物，但该产物在超导问题中已经“在场”：系统中已有电子，只是耦合常数停在 $\alpha$ 而未跃迁。CQM 将操作对象下移为“有限本体关系网络对电子基础自由度的操作”——电子自由度来自质子-中子关系网络的历史拓扑路径，而非先验存在；配对与否的区别仅在于耦合常数是否完成 $\alpha\to n^2\alpha$ 跃迁（由丛作用量竞争选出主导 $n$，见 §5.3 本体论分层）。
 
-由此，RQM 唯物化的涌现链为：**RQM（关系性实现前提）→ 主丛 $P(M,G)$（既是关系性实现前提又是其结果）→ 自组织（因果锚定，关系性实现过程）→ 属性（自由度）实现**。
+由此，RQM 唯物化的涌现链为：**RQM（关系性实现前提）→ 主丛 $P(M,G)$（既是关系性实现前提又是其结果）→ 自组织（关系性实现过程）→ 属性（自由度）实现**。
 
 ### 1.5 伴丛同步：超导的核心命题
 
@@ -135,7 +135,7 @@ $$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \le
 > 对角参数 $\varepsilon_{\text{vol}}(\delta)=\frac34(\delta^2-1)$ 在质子极限 $\delta=1+\eta$ 处展开：
 > $$\varepsilon_{\text{vol}}(1+\eta)=\tfrac32\eta+\tfrac34\eta^2,\qquad \det D(1+\eta)=5-6\eta-3\eta^2$$
 > 一阶系数 $3/2$、$-6$ 主导，二阶项同号增强。$\det D(\delta)$ 在 $\delta\ge 0$ 半轴严格单调递减（$\mathrm{d}/\mathrm{d}\delta=-6\delta<0$），故：
-> $$\delta>1\;\Rightarrow\;\det D(\delta)<5=\det A_4;\qquad 0\le\delta<1\;\Rightarrow\;\det D(\delta)>5$$
+> $$\delta>1\;\longrightarrow\;\det D(\delta)<5=\det A_4;\qquad 0\le\delta<1\;\longrightarrow\;\det D(\delta)>5$$
 > 中子缺陷对纯 A4 的偏离是**微扰级形变**（$|\varepsilon_{\text{vol}}|\ll 1$），支撑“同位素效应由主次结构谱间隙差驱动（G15）而缺陷本身为小量”的图景。$\delta(Z,N) = 1 - \varepsilon_0 \cdot N/(Z+N)$ 从 $SU(5)$ 重组实现动力学导出（见 `CQM_超导_专题与扩展.md` §11.8），数值上紧邻 1 表明缺陷是小量。
 
 ### 2.4 中子扇区作为精细引力的结构性来源
@@ -146,7 +146,7 @@ $$\mathcal{C}_{\text{element}} = \left(\bigoplus_{i=1}^{Z} A_4\right) \oplus \le
 
 元素内部的主次结构（§2.3）对应精细引力的角亏来源：中子扇区的末端缺陷 $\alpha_4$ 提供 Regge 铰链（见 `01 核心理论/CQM_核心_引力存在论前提.md` §二），是晶胞角亏 $\delta_v$ 的微观起源；纯主结构（无中子缺陷）则无角亏涨落——这是“有无角亏来源”的区别，不是“是否触发 FG”的区别。派生链为：
 
-$$\boxed{\text{有限本体粘合（中子缺陷 }\alpha_4\text{ 或质子-质子非平直二面角）} \;\Rightarrow\; \text{Regge 铰链} \;\Rightarrow\; \text{底空间 Regge 曲率（角亏）} \delta_v \;\Rightarrow\; \text{主丛 } P(M,G)\text{（直接给出，非触发）}}$$
+$$\boxed{\text{有限本体粘合（中子缺陷 }\alpha_4\text{ 或质子-质子非平直二面角）} \;\longrightarrow\; \text{Regge 铰链} \;\longrightarrow\; \text{底空间 Regge 曲率（角亏）} \delta_v \;\longrightarrow\; \text{主丛 } P(M,G)\text{（直接给出，非触发）}}$$
 
 **金属氢（Z=1, N=0）是纯主结构的极限**——氢核 = 单个质子，无中子扇区，晶格无 Regge 角亏涨落（$\Delta\delta_v=0$），故不超导。这与“金属氢相需含畸变/缺陷方提供角亏”一致（见 G18）。注意：此极限不排斥“质子-质子铰链在原理上可激活 FG”，只说明单质子氢核在元素尺度无铰链几何。
 
@@ -278,7 +278,7 @@ CQM 的耦合常数涨落需明确指定所属结构群：$u_G = \ln g_G$，$[u_
 
 耦合常数涨落作用在主丛结构群 $G$ 上，产生涨落伴丛——涨落伴丛是耦合常数涨落的**产物**，不是涨落作用的舞台。条件是分层的：
 
-$$\underbrace{[\hat{u},\hat{p}_u]=i}_{\substack{\text{条件}_1\\\text{海森堡一维性}}}\;\Rightarrow\;\underbrace{U(1)}_{\substack{\text{条件}_1\text{产物}\\\text{=条件}_2\text{对象}}}\;\xRightarrow{\;\mathbb{Z}_n\text{ 商}\;}\;\underbrace{U(1)//\mathbb{Z}_n}_{\substack{\text{条件}_2\text{产物}\\\text{=丛构造输入}}}\;\Rightarrow\;\underbrace{E_n}_{\text{产物}}$$
+$$\underbrace{[\hat{u},\hat{p}_u]=i}_{\substack{\text{条件}_1\\\text{海森堡一维性}}}\;\longrightarrow\;\underbrace{U(1)}_{\substack{\text{条件}_1\text{产物}\\\text{=条件}_2\text{对象}}}\;\xRightarrow{\;\mathbb{Z}_n\text{ 商}\;}\;\underbrace{U(1)//\mathbb{Z}_n}_{\substack{\text{条件}_2\text{产物}\\\text{=丛构造输入}}}\;\longrightarrow\;\underbrace{E_n}_{\text{产物}}$$
 
 - **条件$_1$**：海森堡代数一维性 → 结构群必须一维阿贝尔 → 产物 $U(1)$
 - **条件$_2$**：$\mathbb{Z}_n$（电荷量子化：权 $q$ 表示当且仅当 $n\mid q$ 时下降）商限定 $U(1)$ → 产物 $U(1)//\mathbb{Z}_n$
@@ -363,7 +363,7 @@ $$\frac{d\tau}{dt} = \sqrt{-g_{00}} = \sqrt{1 + 2\Phi/c^2} \approx 1 + \frac{\Ph
 
 （引力势 $\Phi<0$ 使 $\sqrt{-g_{00}}<1$：正曲率使时间变慢。CQM 中角亏 $\delta_v>0$ 扮演正曲率角色，故 $\sqrt{1-\beta\delta_v}<1$，固有时流速减慢；小角亏极限 $\sqrt{1-\beta\delta_v}\approx1-\beta\delta_v/2$。）
 
-> **$\beta$ 的微观来源**：$\beta$ 是离散拉普拉斯算符的格林函数，$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$，其中 $L$ 为系统尺寸，$a$ 为晶格常数。$\beta$ **对数依赖于系统尺寸**，不是材料常数。纳米颗粒 $\beta$ 减小 $\Rightarrow$ $T_c$ 降低（有限尺寸效应）。
+> **$\beta$ 的微观来源**：$\beta$ 是离散拉普拉斯算符的格林函数，$\beta = \frac{1}{4\pi}\ln\frac{L}{a}$，其中 $L$ 为系统尺寸，$a$ 为晶格常数。$\beta$ **对数依赖于系统尺寸**，不是材料常数。纳米颗粒 $\beta$ 减小 $\rightarrow$ $T_c$ 降低（有限尺寸效应）。
 
 ### 7.2 固有时 = 再生产周期
 
@@ -444,7 +444,7 @@ $$\text{实验测得 } h/ne \to \text{荷为 } ne \to \alpha\to n^2\alpha \to \D
 
 配对/相干这一整套过程**就是晶胞量子振荡本身**——晶胞量子振荡（声子 = 底空间 Regge 曲率量子）携带底空间 Regge 曲率涨落、主丛结构群上的耦合常数响应与和乐相位关联的全部信息。本节陈述这一**单一主丛几何-动力学过程**，其终态即伴丛同步（§1.5）：晶胞量子振荡是各顶点的局域因果过程，超导态作为晶胞量子振荡全局相干模式涌现（§12.2），即 主丛的伴丛全局同步截面（再锁定）的建立。
 
-$$\boxed{\text{晶胞量子振荡（声子=底空间 Regge 曲率量子）} \;\Rightarrow\; \delta_v(t)=\delta_v^{(0)}+\Delta\delta_v(t) \;\Rightarrow\; \text{不确定性 } \Delta u\cdot\Delta\delta_v\ge \frac{☯\sqrt{1-\beta\delta_v}}{\beta} \;\Rightarrow\; \text{资格条件筛出候选结构群族} \;\Rightarrow\; \text{结构群叠加态（= 同步算符）本征值交叉（§11.6）} \;\Rightarrow\; \text{丛作用量竞争选出主导群 } (\alpha\to n^2\alpha) \;\Rightarrow\; \text{超导态}}$$
+$$\boxed{\text{晶胞量子振荡（声子=底空间 Regge 曲率量子）} \;\longrightarrow\; \delta_v(t)=\delta_v^{(0)}+\Delta\delta_v(t) \;\longrightarrow\; \text{不确定性 } \Delta u\cdot\Delta\delta_v\ge \frac{☯\sqrt{1-\beta\delta_v}}{\beta} \;\longrightarrow\; \text{资格条件筛出候选结构群族} \;\longrightarrow\; \text{结构群叠加态（= 同步算符）本征值交叉（§11.6）} \;\longrightarrow\; \text{丛作用量竞争选出主导群 } (\alpha\to n^2\alpha) \;\longrightarrow\; \text{超导态}}$$
 
 **温度的统一作用**：温度通过改变晶胞量子振荡模式的声子数 $n_B(\omega_{\mathbf{q}})=(e^{\hbar\omega_{\mathbf{q}}/k_BT}-1)^{-1}$，改变底空间 Regge 曲率涨落 $\Delta\delta_v(t)$ 的幅度谱与和乐相位关联长度，从而**影响自组织——再生产（晶胞量子振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干**。所有温度效应都出自这一条声子数，自然体现在底空间 Regge 曲率涨落的统计分布中。临界温度 $T_c$ 对应 $\Delta\delta_v$ 的统计分布使资格条件在全局平均上归零的临界点（见 §12.3）。
 
@@ -761,7 +761,7 @@ $$\boxed{\begin{aligned}
 &\Downarrow \\
 &p_u = \frac{1}{☯}\frac{d\tau}{dt} = \frac{\sqrt{\,1-\beta\delta_v\,}}{☯}, \quad ☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \\
 &\Downarrow \\
-&[\hat{u}, \hat{p}_u] = i \;\Rightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta}
+&[\hat{u}, \hat{p}_u] = i \;\longrightarrow\; \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta}
 \end{aligned}}$$
 
 基础本体链止于耦合空间不确定性关系，为主丛结构群上的耦合常数动力学提供**动力学舞台**——耦合坐标 $u$ 与曲率涨落 $\Delta\delta_v$ 的量子对偶。配对/相干过程即晶胞量子振荡本身（见 §10），其展开即 §12.2 的单一因果链。
@@ -769,13 +769,13 @@ $$\boxed{\begin{aligned}
 ### 12.2 晶胞量子振荡中的主丛结构群上的耦合常数动力学（对应§10）
 
 $$\boxed{\begin{aligned}
-&\text{晶胞量子振荡（声子 = 底空间 Regge 曲率量子）} \Rightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
+&\text{晶胞量子振荡（声子 = 底空间 Regge 曲率量子）} \longrightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
 &\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
 &\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta} \\
 &\Downarrow \\
-&\Delta u_n = 2\ln n \text{ 跃迁 } u \to u+2\ln n \;\Rightarrow\; \alpha\to n^2\alpha \text{（跃迁耦级谱，} n=2,4,6,\ldots\text{）} \\
+&\Delta u_n = 2\ln n \text{ 跃迁 } u \to u+2\ln n \;\longrightarrow\; \alpha\to n^2\alpha \text{（跃迁耦级谱，} n=2,4,6,\ldots\text{）} \\
 &\Downarrow \;(\text{资格条件 } \Delta\delta_0 \ge \frac{☯\sqrt{1-\beta\delta_v}}{2\beta\ln n} \text{ 筛选候选群族；和乐平庸化条件 } \mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j})\approx 1 \text{ 在晶胞量子振荡中自然满足}) \\
-&\text{结构群叠加态（= 同步算符）本征值交叉 } \lambda_2(T_c)=\lambda_1(T_c) \text{（§11.6）} \;\Rightarrow\; \text{丛作用量竞争（热力学投影）选出主导群 } G_{\text{主导}} = \arg\min_n F_n \\
+&\text{结构群叠加态（= 同步算符）本征值交叉 } \lambda_2(T_c)=\lambda_1(T_c) \text{（§11.6）} \;\longrightarrow\; \text{丛作用量竞争（热力学投影）选出主导群 } G_{\text{主导}} = \arg\min_n F_n \\
 &\Downarrow \\
 &\text{超导态 } = \text{ 主丛的伴丛全局同步截面（晶胞量子振荡全局相干模式，同步再锁定）}
 \end{aligned}}$$
@@ -784,7 +784,7 @@ $$\boxed{\begin{aligned}
 
 资格条件 $\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$ 在晶胞量子振荡动力学中的**涌现位置**（与 §9.2 资格条件一致）：
 
-$$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \text{跃迁耦级 } \Delta u_n = 2\ln n \;\Rightarrow\; \text{资格条件 } \Delta\delta_0 \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n} \;\Rightarrow\; \text{候选群族} \;\Rightarrow\; \text{结构群叠加态（= 同步算符）本征值交叉} \;\Rightarrow\; \text{丛作用量竞争选出主导群}}$$
+$$\boxed{\text{不确定性 } \Delta u\cdot\Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta} \;+\; \text{跃迁耦级 } \Delta u_n = 2\ln n \;\longrightarrow\; \text{资格条件 } \Delta\delta_0 \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{2\beta\ln n} \;\longrightarrow\; \text{候选群族} \;\longrightarrow\; \text{结构群叠加态（= 同步算符）本征值交叉} \;\longrightarrow\; \text{丛作用量竞争选出主导群}}$$
 
 临界温度 $T_c$ 对应**结构群叠加态自身谱结构的本征值交叉**的临界点（§11.6，唯象表现为丛作用量交叉，见 §11.2）：
 
@@ -878,8 +878,8 @@ $$\boxed{
 \iff
 \frac{\sum_{\text{边界}}\delta_v}{\sum_{\text{体}}\delta_v}
 \begin{cases}
-\sim 1/L \ll 1 \Rightarrow \text{可忽略（体超导）} \\
-\sim O(1) \Rightarrow \text{必须处理（界面超导）}
+\sim 1/L \ll 1 \longrightarrow \text{可忽略（体超导）} \\
+\sim O(1) \longrightarrow \text{必须处理（界面超导）}
 \end{cases}
 }$$
 
@@ -1006,7 +1006,7 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 4. Drozdov et al. (2015). Conventional superconductivity at 203 K at high pressures in the sulfur hydride system. *Nature* 525, 73.
 5. Drozdov et al. (2019). Superconductivity at 250 K in lanthanum hydride under high pressures. *Nature* 569, 528.
 6. Errea et al. (2020). Quantum crystal structure in the 250-kelvin superconducting lanthanum hydride. *Nature* 578, 66–69.
-7. Szczęśniak, Durajski (2016). Migdal-Eliashberg equations — the effective model for superconducting state in H3S. arXiv:1609.06079.
+7. Durajski, Szczęśniak (2016). Migdal-Eliashberg equations — the effective model for superconducting state in H3S. arXiv:1609.06079.
 8. Liu et al. (2019). Microscopic mechanism of room-temperature superconductivity in compressed LaH10. *Phys. Rev. B* 99, 140501(R).
 9. Ashcroft (1968). Metallic Hydrogen: A High-Temperature Superconductor? *PRL* 21, 1748.
 10. ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380.

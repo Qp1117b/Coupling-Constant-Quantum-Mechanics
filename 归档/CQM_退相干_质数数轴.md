@@ -186,15 +186,15 @@ $\frac{dN}{d\tau} \to 0 \;\Leftrightarrow\; N(\tau) \to L \;\Leftrightarrow\; u(
 
 **证明概要**（概念性）：
 
-**(1) $\Rightarrow$ (2)**：由 $dN/d\tau \to 0$，积分得 $N(\tau)$ 趋于有限极限 $L$。
+**(1) $\rightarrow$ (2)**：由 $dN/d\tau \to 0$，积分得 $N(\tau)$ 趋于有限极限 $L$。
 
-**(2) $\Rightarrow$ (3)**：由 $u = \ln N$，直接得 $u(\tau) \to \ln L = u_{\text{max}}$。
+**(2) $\rightarrow$ (3)**：由 $u = \ln N$，直接得 $u(\tau) \to \ln L = u_{\text{max}}$。
 
-**(3) $\Rightarrow$ (4)**：Sprinkling 密度 $\rho(u)$ 在 $u \to u_{\text{max}}$ 时发散（由因果集几何的边界条件决定）。
+**(3) $\rightarrow$ (4)**：Sprinkling 密度 $\rho(u)$ 在 $u \to u_{\text{max}}$ 时发散（由因果集几何的边界条件决定）。
 
-**(4) $\Rightarrow$ (5)**：Sprinkling 密度发散意味着事件在边界处无限堆积。Sprinkling 的随机性是退相干的本体论基础；当密度发散，Sprinkling 的"更新"停止，双向干涉被截断，单向因果确立——这就是退相干。
+**(4) $\rightarrow$ (5)**：Sprinkling 密度发散意味着事件在边界处无限堆积。Sprinkling 的随机性是退相干的本体论基础；当密度发散，Sprinkling 的"更新"停止，双向干涉被截断，单向因果确立——这就是退相干。
 
-**(5) $\Rightarrow$ (1)**：退相干完成后，系统处于 Lindblad 稳态，$d\rho/d\tau = 0$，所有动力学变量冻结，特别地 $dN/d\tau = 0$。
+**(5) $\rightarrow$ (1)**：退相干完成后，系统处于 Lindblad 稳态，$d\rho/d\tau = 0$，所有动力学变量冻结，特别地 $dN/d\tau = 0$。
 
 ### 5.2 物理诠释
 

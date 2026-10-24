@@ -7,6 +7,7 @@
 生成的静态站（验收点：<meta name="generator" content="VitePress v1.6.4">，
 观感为顶部导航 + 左侧分组侧栏 + 右侧大纲 + 品牌靛蓝 #3451b2 + 首页 hero/特性卡）。
 """
+import csv
 import html
 import glob
 import json
@@ -35,6 +36,339 @@ for d in (VP_DOCS, VP_PUBLIC, VP_CFG_DIR):
 assert os.path.isdir(MK_SRC), "staged 源不存在：%s（请先运行 build_reader_site.py）" % MK_SRC
 md_files = sorted(f for f in os.listdir(MK_SRC) if f.endswith(".md"))
 assert md_files, "staged 源里没有 md 文件"
+# 清掉上一轮遗留、本轮 staging 已剔除的页面（如 06 超导/godot_project 的工程文档），
+# 否则它们既不在 sidebar/nav，又会触发可达性断言失败。
+for _f in sorted(os.listdir(VP_DOCS)):
+    if _f.endswith(".md") and _f not in md_files:
+        os.remove(os.path.join(VP_DOCS, _f))
+
+# ------------------------------------------------- 1a. 文献总览页（先生成到 staging，随正文一起过公式保护管线）
+# 为什么必须进 MK_SRC：直写 VP_DOCS 会绕过 protect_math → fix_cjk_bold，
+# markdown-it 会把公式里的 _ / * 当强调语法吃掉，MathJax 再也匹配不到定界符
+# ——文献页首版正是这样出现下标与符号裸露的。
+_REF_HEAD = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
+_REF_START = re.compile(r"参考文献|文献锚定|参考资料|^参考$|^文献$")
+_REF_ITEM = re.compile(r"^\s*(?:\d+[.)]|[-*+])\s+")
+_REF_TOKEN = re.compile(
+    r"arXiv[:\s]|DOI[:\s]|doi\.org|Phys\.\s*Rev\.|Phys\.Rev\.|Nature|Science|JHEP|"
+    r"Commun\.\s*Math\.\s*Phys|Annals of Mathematics|Invent\.\s*Math|SIAM|Proc\.\s*R\.\s*Soc\.")
+_REF_ID = re.compile(r"arXiv[:\s]*[\w\-./]+|10\.\d{4,9}/[^\s)）\]`，。；]+")
+
+
+def _ref_linkify(s):
+    """给文献条目里的 arXiv/DOI 标识加可点击外链（已有 markdown 链接则不动）。"""
+    if "](http" in s:
+        return s
+
+    def _ar(m):
+        aid = m.group(1)
+        return "[arXiv:%s](https://arxiv.org/abs/%s)" % (aid, aid)
+
+    def _doi(m):
+        d = m.group(1).rstrip(".,;")
+        return "[DOI:%s](https://doi.org/%s)" % (d, d)
+
+    s = re.sub(r"arXiv:\s*([A-Za-z\-]+/\d{7}|\d{4}\.\d{4,5})", _ar, s)
+    s = re.sub(r"DOI:\s*(10\.\d{4,9}/[^\s)）\]`，。；]+)", _doi, s)
+    return s
+
+
+def _plain_symbols(s):
+    """把文献条目里的数学字母/下标换成常见字符，避免站点字体缺字（SL₂(ℝ) → SL2(R)）。"""
+    table = {"₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4",
+             "₊": "+", "ℝ": "R", "ℂ": "C", "ℚ": "Q", "ℤ": "Z", "ℕ": "N"}
+    for a, b in table.items():
+        s = s.replace(a, b)
+    return s
+
+
+def _ref_items(buf):
+    """参考文献段落 → 条目列表（表格行按「·」拼接，列表项去序号；不改写文字）。"""
+    out, prev = [], None
+    for raw in buf:
+        s = raw.strip()
+        if not s or s.startswith("---") or s.startswith("***"):
+            continue
+        if s.startswith("|"):
+            cells = [c.strip() for c in s.strip("|").split("|")]
+            if cells and all(re.fullmatch(r":?-{2,}:?", c) for c in cells if c):
+                continue
+            cells = [c for c in cells if c]
+            if not cells:
+                continue
+            s = " · ".join(cells)
+        if s.startswith(">"):
+            s = s.lstrip("> ").strip()
+        m = _REF_ITEM.match(s)
+        if m:
+            out.append(_REF_ITEM.sub("", s, count=1).strip())
+            prev = len(out) - 1
+            continue
+        if _REF_TOKEN.search(s):
+            if prev is not None and out[prev].endswith(("，", "、", "（", "(")):
+                out[prev] += " " + s
+            else:
+                out.append(s)
+                prev = len(out) - 1
+        elif prev is not None and (raw.startswith(("  ", "\t")) or len(out[prev]) < 120):
+            out[prev] += " " + s
+    seen, res = set(), []
+    for x in out:
+        if not x or x in seen:
+            continue
+        # 文献 = 体系外引用：排除内部文档指针、自引（Zenodo CNT）与“参见本库”类条目
+        if ".md" in x or "核心文献参见" in x:
+            continue
+        if "ruster" in x.lower() or "10.5281/zenodo.20804380" in x:
+            continue
+        if re.match(r"^\s*(见|参见|相关文档|出处)", x):
+            continue
+        if ".lean" in x or "Lean源码" in x:
+            continue
+        # 必须带外部文献特征（arXiv/DOI/期刊/出版社/年份），否则视为内部条目
+        if not re.search(r"arXiv|DOI|doi\.org|Phys\.|Nature|Science|JHEP|Commun\.|Annals|"
+                         r"Invent\.|SIAM|Proc\.|Press|University|GTM|LNM|Cambridge|Springer|"
+                         r"Academic|World Scientific|\((?:19|20)\d{2}[a-z]?\)", x):
+            continue
+        seen.add(x)
+        res.append(_ref_linkify(_plain_symbols(x)))
+    return res
+
+
+def _extract_refs(txt):
+    """返回 (条目列表, 章节标题列表)。"""
+    lines = txt.splitlines()
+    items, heads, i = [], [], 0
+    while i < len(lines):
+        m = _REF_HEAD.match(lines[i])
+        if m and _REF_START.search(m.group(2).strip()):
+            lvl = len(m.group(1))
+            heads.append(m.group(2).strip())
+            j = i + 1
+            buf = []
+            while j < len(lines):
+                m2 = _REF_HEAD.match(lines[j])
+                if m2 and len(m2.group(1)) <= lvl:
+                    break
+                buf.append(lines[j])
+                j += 1
+            items.extend(_ref_items(buf))
+            i = j
+        else:
+            i += 1
+    return items, heads
+
+
+def _title_clean(s):
+    """标题纯文本化：简单数学（G_N、A_4）保留内容，含 LaTeX 命令的式子整体丢弃。"""
+    def _repl(m):
+        body = m.group(1)
+        return "" if "\\" in body else body
+    s = re.sub(r"\$([^$]*)\$", _repl, s)
+    s = re.sub(r"[：:]\s+", "：", s)
+    return re.sub(r"\s{2,}", " ", s).strip(" ：")
+
+
+def _brief_clean(t, limit=140):
+    t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)
+    t = re.sub(r"\*\*|`|^>\s*", "", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    m = re.search(r"^(.{20,}?[。！？])", t)
+    if m:
+        t = m.group(1)
+    return t[:limit] + ("…" if len(t) > limit else "")
+
+
+def _bad_brief(t):
+    """简介质量闸：LaTeX 残片、公式堆、指代开头、中文过少、非完整句一律不采用。"""
+    if "\\text{" in t or "\\begin{" in t or "CQMMATH" in t:
+        return True
+    if t.lstrip().startswith(("&", "\\", "和", "与", "但", "而", "即", "则",
+                              "因此", "两者", "该", "此", "隐含条件", "其中",
+                              "这里", "说明", "注：", "设")):
+        return True
+    if len(re.findall(r"[\u4e00-\u9fff]", t)) < 20:
+        return True
+    if len(re.findall(r"\$[^$]*\$", t)) > 2:
+        return True
+    if t.rstrip().endswith(("：", ":", "，", ",")):
+        return True
+    return not t.rstrip().endswith(("。", "！", "？", "…"))
+
+
+def _doc_brief(txt, limit=140):
+    """取文档简介：优先「定位 / 状态说明 / 摘要」引用块，否则首段正文。
+
+    跳过标题、代码围栏、表格、列表与 $$…$$ 公式块（避免从公式中段截断，
+    首版 D020 的简介曾截到 ``\\text{质量不是…``）。
+    """
+    lines = txt.splitlines()
+    h1 = next((k for k, ln in enumerate(lines) if ln.strip().startswith("# ")), -1)
+    if h1 >= 0:
+        # 只认文档开头（h1 后 40 行内）的「摘要 / 状态说明」块；「定位注」常是
+        # 正文深处的技术附注，不作简介。
+        for i in range(h1 + 1, min(len(lines), h1 + 41)):
+            s = lines[i].strip()
+            if s.startswith(">") and ("摘要" in s or "状态说明" in s):
+                buf, j = [], i
+                while j < len(lines) and lines[j].strip().startswith(">"):
+                    buf.append(lines[j].strip().lstrip(">").strip())
+                    j += 1
+                t = _brief_clean(" ".join(buf), limit)
+                if len(t) >= 20 and not _bad_brief(t):
+                    return t
+
+    started, paras, cur, in_math, in_fence = False, [], [], False, False
+    for ln in lines:
+        s = ln.strip()
+        if not started:
+            if s.startswith("# "):
+                started = True
+            continue
+        if s.startswith("```"):
+            in_fence = not in_fence
+            if cur:
+                paras.append(cur)
+                cur = []
+            continue
+        if in_fence:
+            continue
+        if s.startswith("$$"):
+            in_math = not in_math
+            if cur:
+                paras.append(cur)
+                cur = []
+            continue
+        if in_math:
+            continue
+        if not s or s.startswith(("#", "|", ">", "-", "*", "---")):
+            if cur:
+                paras.append(cur)
+                cur = []
+            continue
+        if s.startswith("**作者**") or len(s) < 8:
+            continue
+        cur.append(s)
+    if cur:
+        paras.append(cur)
+    for p in paras[:5]:
+        t = _brief_clean(" ".join(p), limit * 3)
+        if len(t) < 30 or t.rstrip().endswith(("：", ":", "，", ",")):
+            continue          # 定义引子 / 公式残片，继续找下一段
+        if _bad_brief(t):
+            continue
+        return _brief_clean(t, limit)
+    return ""
+
+
+def _ref_slug(h):
+    return re.sub(r"\s+", "-", re.sub(r"[`*$]", "", h).strip())
+
+
+def _sub_html(s):
+    """表格纯文本标题里的简单下标（G_N、A_4）→ <sub>，避免下划线看着像乱码。"""
+    return re.sub(r"([A-Za-z])_([A-Za-z0-9]+)", r"\1<sub>\2</sub>", s)
+
+
+ref_sections, ref_ids, ref_counts = [], set(), {}
+REF_SUM_PATH = os.path.join(ROOT08, "00_外部引用", "文献摘要.json")
+REF_SUM = {}
+if os.path.isfile(REF_SUM_PATH):
+    try:
+        with open(REF_SUM_PATH, "r", encoding="utf-8") as _fh:
+            REF_SUM = json.load(_fh).get("items", {})
+    except Exception as _e:
+        print("[vp][warn] 文献摘要缓存不可读：%s" % _e)
+
+
+def _norm_ref_key(s):
+    s = re.sub(r"arXiv:\s*", "arXiv:", s.strip())
+    s = re.sub(r"DOI:\s*", "DOI:", s)
+    s = s.rstrip(".,;")
+    if re.match(r"^10\.\d{4,9}/", s):
+        s = "DOI:" + s
+    return s
+for _f in list(md_files):
+    if _f == "index.md" or _f.startswith(("L", "V", "LEAN", "TERMS", "REFS")):
+        continue
+    _src = os.path.join(MK_SRC, _f)
+    if not os.path.isfile(_src):
+        continue
+    with open(_src, "r", encoding="utf-8") as _fh:
+        _txt = _fh.read()
+    _refs, _heads = _extract_refs(_txt)
+    if not _refs:
+        continue
+    _base = _f[:-3]
+    _title = _base
+    for _line in _txt.splitlines():
+        _mm = re.match(r"^#\s+(.+?)\s*$", _line)
+        if _mm:
+            _title = _title_clean(_mm.group(1))
+            break
+    ref_sections.append((_base, _title, _refs, _doc_brief(_txt),
+                         _ref_slug(_heads[0]) if _heads else ""))
+    for _r in _refs:
+        for _m in _REF_ID.finditer(_r):
+            _k = _norm_ref_key(_m.group(0))
+            ref_ids.add(_k)
+            ref_counts[_k] = ref_counts.get(_k, 0) + 1
+
+REF_TOTAL = sum(len(x[2]) for x in ref_sections)
+
+# ---- 文献摘要：按被引用次数排序的 arXiv/DOI 论文卡片（题录+中文概括+原链接）
+_sum_items = []
+for _key, _v in REF_SUM.items():
+    _n = ref_counts.get(_key, 0)
+    if _n > 0 and (_v.get("summary_zh") or "").strip():
+        _sum_items.append((_n, _key, _v))
+_sum_items.sort(key=lambda t: (-t[0], -(t[2].get("year") or 0), t[1]))
+
+# ---- 其他外部文献：无摘要，去重后只列题录与外链（不含任何站内跳转）
+_other, _seen_ref = [], set()
+for _base, _title, _refs, _brief, _anchor in ref_sections:
+    for _r in _refs:
+        _ids = [_norm_ref_key(m.group(0)) for m in _REF_ID.finditer(_r)]
+        if any(i in REF_SUM for i in _ids):
+            continue
+        _k = re.sub(r"\s+", " ", _r).strip()
+        if _k in _seen_ref:
+            continue
+        _seen_ref.add(_k)
+        _other.append(_r)
+_other.sort(key=lambda s: s.lower())
+
+REF_MD = ["---", "title: 文献总览", "---", "", "# 文献总览", "",
+          "本页只收录**体系外文献**（arXiv / DOI / 期刊论文 / 专著），不含本体系文档、Lean 源码与自引，"
+          "也不提供站内文档跳转。共整理 **%d 篇带摘要的论文** 与 **%d 条其他外部文献**。"
+          % (len(_sum_items), len(_other)), "",
+          "使用说明：点击每条下方的 arXiv / DOI 链接可打开原始文献页面；"
+          "概括据原文摘要转写，只作阅读定位，不替代原文。", ""]
+if _sum_items:
+    REF_MD += ["## 文献摘要（%d 篇）" % len(_sum_items), "",
+               "按被引用次数排序；题录与概括据 arXiv / Crossref 公开元数据与原文摘要转写。", ""]
+    for _n, _key, _v in _sum_items:
+        _auth = _v.get("authors") or []
+        _authors = "、".join(_auth[:3]) + (" 等" if len(_auth) > 3 else "")
+        REF_MD.append(
+            "<details open><summary><strong>%s</strong> · %s（%s）· 被 %d 条引用</summary>"
+            "<p>概括：%s</p><p><a href=\"%s\" target=\"_blank\" rel=\"noreferrer\">%s</a></p></details>"
+            % (html.escape(_v.get("title", ""), quote=False),
+               html.escape(_authors, quote=False), _v.get("year", ""), _n,
+               html.escape(_v.get("summary_zh", ""), quote=False),
+               _v.get("url", ""), html.escape(_key, quote=False)))
+        REF_MD.append("")
+if _other:
+    REF_MD += ["## 其他外部文献（%d 条，无摘要）" % len(_other), "",
+               "以下条目未取得公开摘要，仅列题录与原始链接。", ""]
+    REF_MD += ["- %s" % _r for _r in _other]
+    REF_MD.append("")
+
+with open(os.path.join(MK_SRC, "REFS_文献总览.md"), "w", encoding="utf-8") as fh:
+    fh.write("\n".join(REF_MD))
+md_files = sorted(md_files + ["REFS_文献总览.md"])
+print("[vp] 已写文献总览页（摘要 %d 篇 / 其他 %d 条 / 原引用 %d 条）"
+      % (len(_sum_items), len(_other), REF_TOTAL))
 
 # ---------------------------------------------------------------- 数学保护（构建期占位符）
 # 为什么不能只靠 markdown-it 规则：VitePress 把 markdown-it 打包进自身 bundle，
@@ -429,6 +763,130 @@ for f in md_files:
         fh.write(txt)
 print("[vp] 已复制 %d 个 markdown 页面（其中 %d 页套 v-pre，%d 个后续 h1 降为 h2）"
       % (len(md_files), wrapped, demoted_total))
+
+# ---------------------------------------------------------------- 1b. 构建期统计（全部实测）
+# 红线（不虚构 / 可复现）：首页特性卡、Lean 页、术语总览页与侧栏里出现的每一个计数，
+# 都必须在构建期从源文件实测读出——脚本正文不得再写死数字。口径与 _build/check_consistency.py
+# 完全一致（同源、同算法），避免两处漂移：
+#   01_结构化数据/{概念表,命题表,论证表,缺口编号对照}.csv
+#   09_桥接与翻译/符号对照表.csv · 00_外部引用/证据映射.csv
+#   03_超图与理论图/知识图谱.json · 04_Lean对接/{Lean结构提取/*,Lean↔概念映射.csv}
+S00 = os.path.join(ROOT08, "00_外部引用")
+S01 = os.path.join(ROOT08, "01_结构化数据")
+S03 = os.path.join(ROOT08, "03_超图与理论图")
+S04 = os.path.join(ROOT08, "04_Lean对接")
+S09 = os.path.join(ROOT08, "09_桥接与翻译")
+
+
+def _csv_rows(path):
+    """读源 CSV（utf-8-sig）：BOM 与引号内换行交给 csv 模块，不按物理行数偷懒。"""
+    if not os.path.isfile(path):
+        sys.exit("[vp][FATAL] 统计源缺失：%s（数字必须实测，不接受写死或默认值）" % path)
+    with open(path, "r", encoding="utf-8-sig", newline="") as fh:
+        return list(csv.DictReader(fh))
+
+
+def _json_read(path):
+    if not os.path.isfile(path):
+        sys.exit("[vp][FATAL] 统计源缺失：%s（数字必须实测，不接受写死或默认值）" % path)
+    with open(path, "r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def _thousands(n):
+    """1388 → '1 388'：沿用站内既有的「千位用空格」排版。"""
+    return "{:,}".format(n).replace(",", " ")
+
+
+_concepts = _csv_rows(os.path.join(S01, "概念表.csv"))
+_concept_ids = {(r.get("concept_id") or "").strip() for r in _concepts}
+_lean_map = _csv_rows(os.path.join(S04, "Lean↔概念映射.csv"))
+_lean_decls = _json_read(os.path.join(S04, "Lean结构提取", "declarations.json"))
+_kg_json = _json_read(os.path.join(S03, "知识图谱.json"))
+_covered = set()
+for _row in _lean_map:
+    for _cid in (_row.get("concept_ids") or "").split(";"):
+        _cid = _cid.strip()
+        if _cid in _concept_ids:
+            _covered.add(_cid)
+
+STATS = {
+    "concept": len(_concepts),
+    "prop": len(_csv_rows(os.path.join(S01, "命题表.csv"))),
+    "arg": len(_csv_rows(os.path.join(S01, "论证表.csv"))),
+    "gap": len([r for r in _csv_rows(os.path.join(S01, "缺口编号对照.csv"))
+                if (r.get("gap_code") or "").strip()]),
+    "symbol": len(_csv_rows(os.path.join(S09, "符号对照表.csv"))),
+    "evidence": len(_csv_rows(os.path.join(S00, "证据映射.csv"))),
+    "kg_node": len(_kg_json["nodes"]),
+    "kg_edge": len(_kg_json["edges"]),
+    "lean_module": len(_csv_rows(os.path.join(S04, "Lean结构提取", "模块清单.csv"))),
+    "lean_decl": len(_lean_decls),
+    "lean_axiom": len([d for d in _lean_decls if (d.get("kind") or "") == "axiom"]),
+    "lean_map": len(_lean_map),
+    "lean_cover": len(_covered),
+}
+STATS["lean_decl_txt"] = _thousands(STATS["lean_decl"])
+
+
+def _glossary_stats():
+    """术语总览的真实条数/分类：读 build_reader_site.py stage 出的 window.CQM_GLOSSARY
+    （index = 检索索引，terms = 悬浮卡，index 每项的 ty = 分类）。
+
+    取数顺序（前者是后者的复制源，避免读到上一轮留下的陈旧副本）：
+      1) _build/mkdocs_src/docs/assets/cqm-glossary.js —— 阅读站 stage 产物（唯一源）
+      2) docs/public/cqm-glossary.js                   —— 本脚本第 2 步复制出的副本
+      3) .vitepress/dist/cqm-glossary.js               —— 上一次构建的产物
+    三个都不存在时给出可执行报错（点名 build_reader_site.py），不抛裸栈。"""
+    cands = [os.path.join(MK_SRC, "assets", "cqm-glossary.js"),
+             os.path.join(VP_PUBLIC, "cqm-glossary.js"),
+             os.path.join(VP_CFG_DIR, "dist", "cqm-glossary.js")]
+    for path in cands:
+        if not os.path.isfile(path):
+            continue
+        with open(path, "r", encoding="utf-8") as fh:
+            txt = fh.read()
+        key = "window.CQM_GLOSSARY="
+        pos = txt.find(key)
+        if pos < 0:
+            sys.exit("[vp][FATAL] %s 里找不到 `window.CQM_GLOSSARY=`，无法实测术语条数" % path)
+        payload = txt[pos + len(key):].strip()
+        if payload.endswith(";"):
+            payload = payload[:-1]
+        try:
+            gl = json.loads(payload)
+        except ValueError as exc:
+            sys.exit("[vp][FATAL] %s 不是合法 JSON：%s" % (path, exc))
+        items = gl.get("index") or []
+        seen, first = {}, []
+        for it in items:
+            ty = (it or {}).get("ty") or ""
+            if not ty:
+                continue
+            if ty not in seen:
+                seen[ty] = 0
+                first.append(ty)
+            seen[ty] += 1
+        # 既有分类固定展示顺序，其余类别（日后新增的）按首次出现顺序追加——不会再漏类别
+        pref = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步", "讲稿"]
+        cats = [c for c in pref if c in seen] + [c for c in first if c not in pref]
+        return path, items, len(gl.get("terms") or {}), [(c, seen[c]) for c in cats]
+    sys.exit("[vp][FATAL] 未找到术语总览数据 cqm-glossary.js（候选：%s、%s、%s）——"
+             "请先在 _build/ 下运行 build_reader_site.py 生成悬浮卡与检索索引。"
+             % tuple(cands))
+
+
+_glossary_path, _glossary_index, _glossary_terms, _glossary_cats = _glossary_stats()
+STATS["glossary_index"] = len(_glossary_index)
+STATS["glossary_terms"] = _glossary_terms
+STATS["glossary_cats"] = " · ".join("%s %d" % (c, n) for c, n in _glossary_cats)
+
+print("[vp] 构建期实测：概念 %(concept)d · 命题 %(prop)d · 论证 %(arg)d · 缺口 %(gap)d · "
+      "符号 %(symbol)d · 证据 %(evidence)d · 图谱 %(kg_node)d 实体/%(kg_edge)d 边 · "
+      "Lean %(lean_module)d 模块/%(lean_decl)s 声明（axiom %(lean_axiom)d）· 映射 %(lean_map)d 条 · "
+      "覆盖 %(lean_cover)d/%(concept)d 概念 · 术语索引 %(glossary_index)d 条/悬浮卡 %(glossary_terms)d 张"
+      % STATS)
+print("[vp] 术语数据源：%s；分类：%s" % (_glossary_path, STATS["glossary_cats"]))
 
 # ---------------------------------------------------------------- 2. 静态资源 -> public/
 mk_assets = os.path.join(MK_SRC, "assets")
@@ -1607,7 +2065,7 @@ LEAN_PAGE_JS = r'''(function () {
           '<td>' + e(m.concept_ids) + '</td><td>' + e(m.prop_ids) + '</td><td>' + e(m.gap_ids) + '</td>' +
           '<td>' + e(m.remark) + '</td></tr>';
       }).join('') + '</tbody></table></div>' +
-      '<h4 style="margin:1.2em 0 .4em">axiom 待证清单（' + axioms.length + ' 条 · 物理假设的 Lean 承载，形式化覆盖 40/81 概念之外的诚实边界）</h4>' +
+      '<h4 style="margin:1.2em 0 .4em">axiom 待证清单（' + axioms.length + ' 条 · 物理假设的 Lean 承载，形式化覆盖 __LEAN_COVER__ 概念之外的诚实边界）</h4>' +
       '<div style="max-height:32vh;overflow:auto"><table><thead><tr><th>种类</th><th>名称</th><th>模块</th><th>行</th></tr></thead><tbody>' +
       axioms.map(function (d) {
         return '<tr><td>' + kindBadge(d.kind) + '</td><td><code>' + e(d.name) + '</code></td>' +
@@ -1641,15 +2099,22 @@ LEAN_PAGE_JS = r'''(function () {
 })();
 '''
 
+# 形式化覆盖数在构建期填入（不写死）：覆盖概念数 / 概念总数，来自 Lean↔概念映射.csv 实测
+LEAN_PAGE_JS = LEAN_PAGE_JS.replace(
+    "__LEAN_COVER__", "%d/%d" % (STATS["lean_cover"], STATS["concept"]))
+
 with open(os.path.join(VP_PUBLIC, "lean-page.js"), "w", encoding="utf-8") as fh:
     fh.write(LEAN_PAGE_JS)
 print("[vp] 已写 Lean 对接页脚本 public/lean-page.js")
 
-# ------------------------------------------------- 3c4. 术语总览页（227 张卡集中浏览）
+# ------------------------------------------------- 3c4. 术语总览页（悬浮卡集中浏览）
 # 数据直接用页面里已加载的 window.CQM_GLOSSARY（terms + index），无需再请求。
 # 点击卡片时创建临时 data-cqm 元素并派发 mouseover，复用全局悬浮卡。
 TERMS_APP_JS = r'''(function () {
-  var CATS = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步"];
+  /* 分类 chip：这里只固定「既有分类的展示顺序」，真实类别集合在 boot 里从 index 的
+     ty 字段实测推导——新增或此前漏掉的类别（如只能靠「全部」看到的「讲稿」）
+     会自动获得 chip，不会再被写死的清单落下。 */
+  var CATS_ORDER = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步", "讲稿"];
   function boot() {
     var app = document.getElementById("terms-app");
     if (!app || app.__done) return;
@@ -1657,6 +2122,13 @@ TERMS_APP_JS = r'''(function () {
     if (!G) return;
     app.__done = 1;
     var terms = G.terms || {}, index = G.index || [];
+    var _seen = {}, _first = [];
+    index.forEach(function (it) {
+      var ty = it && it.ty;
+      if (ty && !_seen[ty]) { _seen[ty] = 1; _first.push(ty); }
+    });
+    var CATS = CATS_ORDER.filter(function (c) { return _seen[c]; })
+      .concat(_first.filter(function (c) { return CATS_ORDER.indexOf(c) < 0; }));
     var style = document.createElement("style");
     style.textContent = ''
       + '.terms-app{font-size:14px}'
@@ -1796,7 +2268,7 @@ with open(os.path.join(VP_PUBLIC, "terms-app.js"), "w", encoding="utf-8") as fh:
     fh.write(TERMS_APP_JS)
 print("[vp] 已写术语总览页脚本 public/terms-app.js")
 
-# 术语总览页本体
+# 术语总览页本体（张数/索引条数/分类全部构建期实测，见上面 1b 与 _glossary_stats）
 TERMS_MD = """---
 title: 术语表
 ---
@@ -1805,7 +2277,8 @@ title: 术语表
 
 # 术语总览
 
-全部 **227 张**悬浮卡在此集中浏览：概念、缺口、论证、符号、命题、文档。
+全部 **%(glossary_terms)d 张**悬浮卡、**%(glossary_index)d 条**索引在此集中浏览，按实际类别划分：
+%(glossary_cats)s。
 悬停或点击任意卡片，即可弹出与正文一致的完整解释（含公式、原文引文与出处链接）；
 正文中遇到术语时也会有同样的悬浮解释。
 
@@ -1817,7 +2290,7 @@ title: 术语表
 </div>
 """
 with open(os.path.join(VP_DOCS, "TERMS_术语表.md"), "w", encoding="utf-8") as fh:
-    fh.write(TERMS_MD)
+    fh.write(TERMS_MD % STATS)
 print("[vp] 已写术语总览页 docs/TERMS_术语表.md")
 
 # ------------------------------------------------- 3d. 自定义主题（接路由 hook）
@@ -1866,6 +2339,8 @@ with open(os.path.join(theme_dir, "index.js"), "w", encoding="utf-8") as fh:
 print("[vp] 已写自定义主题 .vitepress/theme/index.js（路由切换后重跑增强）")
 
 # ---------------------------------------------------------------- 4. 首页（VitePress home 布局）
+# 四张特性卡的数字全部来自 1b 的构建期实测（%(concept)d/%(prop)d/%(arg)d/%(gap)d、
+# %(kg_node)d/%(kg_edge)d、%(evidence)d、%(lean_cover)d/%(concept)d），不得写死。
 HOME_MD = """---
 layout: home
 
@@ -1883,21 +2358,24 @@ hero:
 
 features:
   - title: 结构化数据（唯一源）
-    details: 概念 81 · 命题 63 · 论证 69 · 缺口 24
+    details: 概念 %(concept)d · 命题 %(prop)d · 论证 %(arg)d · 缺口 %(gap)d
   - title: 知识图谱与 SPARQL
-    details: 145 实体 / 359 边；在线只读 SPARQL（Jena 内存模型）
+    details: %(kg_node)d 实体 / %(kg_edge)d 边；在线只读 SPARQL（Jena 内存模型）
   - title: 证据层
-    details: 215 条断言，逐字引文 + 字符区间可回溯
+    details: %(evidence)d 条断言，逐字引文 + 字符区间可回溯
   - title: 形式化验证
-    details: Lean 覆盖 40/81 概念；SHACL / HermiT 一致性通过
+    details: Lean 覆盖 %(lean_cover)d/%(concept)d 概念；SHACL / HermiT 一致性通过
+  - title: 文献总览
+    details: 按文档汇总参考文献与文献锚定，条目逐字取自原文
 ---
 """
 with open(os.path.join(VP_DOCS, "index.md"), "w", encoding="utf-8") as fh:
-    fh.write(HOME_MD)
+    fh.write(HOME_MD % STATS)
 
 # ---------------------------------------------------------------- 4b. Lean 对接页
 # 数据与编译走研究站服务的 /api/lean/*；脚本 lean-page.js 由 head 全局加载，
 # 通过 MutationObserver 在容器出现时接管（SPA 路由切换后同样生效）。
+# 正文数字（模块/声明/映射/axiom/覆盖）全部取 1b 的构建期实测值。
 LEAN_MD = """---
 title: Lean 对接
 ---
@@ -1906,18 +2384,18 @@ title: Lean 对接
 
 # Lean 对接：形式化与研究站的统一视图
 
-Lean 4 形式化项目（**68 个模块 / 1 388 个声明**，`leanprover/lean4:v4.29.1`）与 CQM
+Lean 4 形式化项目（**%(lean_module)d 个模块 / %(lean_decl_txt)s 个声明**，`leanprover/lean4:v4.29.1`）与 CQM
 结构化层在这里打通：**模块与声明** 浏览源码与证明位置；**概念 ↔ Lean** 查看
-人工整理的映射（25 条）与 **axiom 待证清单**（28 条，物理假设的 Lean 承载，原样登记不升格）。
+人工整理的映射（%(lean_map)d 条）与 **axiom 待证清单**（%(lean_axiom)d 条，物理假设的 Lean 承载，原样登记不升格）。
 <div id="lean-app" class="lean-app">正在加载 Lean 对接数据…（需要研究站服务在运行）</div>
 
-呈现边界：形式化覆盖 **40/81 概念**——未覆盖概念不得视为已形式化；缺口状态、
+呈现边界：形式化覆盖 **%(lean_cover)d/%(concept)d 概念**——未覆盖概念不得视为已形式化；缺口状态、
 「待证」限定语保持权威源口径。
 
 </div>
 """
 with open(os.path.join(VP_DOCS, "LEAN_Lean对接.md"), "w", encoding="utf-8") as fh:
-    fh.write(LEAN_MD)
+    fh.write(LEAN_MD % STATS)
 print("[vp] 已写 Lean 对接页 docs/LEAN_Lean对接.md")
 
 
@@ -1964,7 +2442,7 @@ for f in md_files:
     item = {"text": plain_title(md_title(os.path.join(VP_DOCS, f), base)), "link": "/" + base}
     if f.startswith("L000"):
         overview.append(item)
-    elif f.startswith("LEAN") or f.startswith("TERMS"):
+    elif f.startswith("LEAN") or f.startswith("TERMS") or f.startswith("REFS"):
         # 专属功能页：进导航与侧栏专属组（见下方 sidebar 组装）
         by_top.setdefault("__app__", []).append(item)
     elif f.startswith("L"):
@@ -1996,9 +2474,30 @@ if os.path.isfile(os.path.join(VP_DOCS, "LEAN_Lean对接.md")):
         {"text": "Lean 对接 · 统一视图", "link": "/LEAN_Lean对接"}]})
 if os.path.isfile(os.path.join(VP_DOCS, "TERMS_术语表.md")):
     sidebar.append({"text": "术语表", "items": [
-        {"text": "术语总览（227 条）", "link": "/TERMS_术语表"}]})
+        {"text": "术语总览（%d 条）" % STATS["glossary_index"], "link": "/TERMS_术语表"}]})
+if os.path.isfile(os.path.join(VP_DOCS, "REFS_文献总览.md")):
+    sidebar.append({"text": "文献", "items": [
+        {"text": "文献总览（%d 条）" % REF_TOTAL, "link": "/REFS_文献总览"}]})
 if other:
     sidebar.append({"text": "其它", "items": other})
+
+# ---- 「参考」组：TOP_ORDER 之外的源顶层目录（项目根 README.md / AGENTS.md、08 组织层自身）
+# 原循环只输出 TOP_ORDER 里列出的分组，其余分组被静默丢弃——既不进 sidebar 也不进 nav，
+# D001（根 README.md）与 D003/D004（08/附录/术语表、缺口台账）因此成了零入链的孤立页，
+# 只能靠搜索到达。这里把剩余分组全部收进「参考」组，条目文字标出它来自哪一层。
+_TOP_KEYS = {t for t, _ in TOP_ORDER}
+_rest_tops = [k for k in by_top if k != "__app__" and k not in _TOP_KEYS]
+_REF_ORDER = ["README.md", "AGENTS.md", "08 理论组织和形式化框架"]
+_rest_tops.sort(key=lambda k: (_REF_ORDER.index(k) if k in _REF_ORDER else len(_REF_ORDER), k))
+REF_SRC = {"README.md": "项目根", "AGENTS.md": "项目根",
+           "08 理论组织和形式化框架": "组织层"}
+ref_items = []
+for _top in _rest_tops:
+    _src = REF_SRC.get(_top, _top)
+    for _it in by_top[_top]:
+        ref_items.append({"text": "%s（%s）" % (_it["text"], _src), "link": _it["link"]})
+if ref_items:
+    sidebar.append({"text": "参考", "items": ref_items})
 
 nav = [{"text": "首页", "link": "/"}]
 if overview:
@@ -2011,7 +2510,35 @@ if os.path.isfile(os.path.join(VP_DOCS, "LEAN_Lean对接.md")):
     nav.append({"text": "Lean 对接", "link": "/LEAN_Lean对接"})
 if os.path.isfile(os.path.join(VP_DOCS, "TERMS_术语表.md")):
     nav.append({"text": "术语表", "link": "/TERMS_术语表"})
+if os.path.isfile(os.path.join(VP_DOCS, "REFS_文献总览.md")):
+    nav.append({"text": "文献", "link": "/REFS_文献总览"})
 nav.append({"text": "检索台", "link": "/V003_检索台"})
+
+# ---- 断言：docs/ 下每个 .md（除 index.md）都必须出现在 sidebar 或 nav 中 ----
+# 背景：sidebar/nav 是页面的唯一入口，之前的分组丢弃让 D001/D003/D004 变成只能靠搜索
+# 到达的孤立页。把「每页可达」写成构建期硬断言：一旦再出现被丢弃的分组，构建直接失败
+# 并点名文件。（不查 dist/*.html：VitePress 的侧栏是客户端渲染，静态 HTML 里没有这些 <a>。）
+def _collect_links(node, acc):
+    if isinstance(node, dict):
+        _link = node.get("link")
+        if isinstance(_link, str):
+            acc.add(_link)
+        for _v in node.values():
+            _collect_links(_v, acc)
+    elif isinstance(node, list):
+        for _v in node:
+            _collect_links(_v, acc)
+
+
+_reachable = set()
+_collect_links(sidebar, _reachable)
+_collect_links(nav, _reachable)
+_pages = sorted(f for f in os.listdir(VP_DOCS) if f.endswith(".md") and f != "index.md")
+_orphan = [f for f in _pages if "/" + os.path.splitext(f)[0] not in _reachable]
+if _orphan:
+    sys.exit("[vp][FATAL] 以下页面既不在 sidebar 也不在 nav，只能靠搜索到达（零入链）：%s"
+             % "、".join(_orphan))
+print("[vp] 可达性断言通过：docs/ 下 %d 个页面全部出现在 sidebar 或 nav" % len(_pages))
 
 CONFIG_MTS = """import { defineConfig } from 'vitepress'
 
@@ -2273,6 +2800,53 @@ print("[vp] 锚点修复：%d 个页面 %d 处失配 href 已改写；未解决 
       % (anchor_fixed_pages, anchor_fixed_links, len(anchor_unresolved)))
 for f, h, n1, n2 in anchor_unresolved[:8]:
     print("    未解决: %s #%s（严格命中 %d / 宽松命中 %d）" % (f, h, n1, n2))
+
+# ---------------------------------------------------------------- 7c. 跨页锚点修复
+# 文献总览的「查看原文」链接指向 ./Dxxx.html#参考文献，而 VitePress 会给标题 id
+# 加编号前缀与标点归一（如 #13.-参考文献 → #_13-参考文献）。按「去标点归一化唯一匹配」
+# 改写目标页锚点，并同步到 chunk JS（SPA 导航用同一份链接）。
+_cp_fixes = {}
+for _f in sorted(os.listdir(dist)):
+    if not _f.endswith(".html"):
+        continue
+    with open(os.path.join(dist, _f), "r", encoding="utf-8") as _fh:
+        _t = _fh.read()
+    for _m in re.finditer(r'href="([^"#]+\.html)#([^"]+)"', _t):
+        _page, _anc = _m.group(1), _m.group(2)
+        _rel = _page[2:] if _page.startswith("./") else _page
+        _target = os.path.normpath(os.path.join(dist, _rel.replace("/", os.sep)))
+        if not os.path.isfile(_target):
+            continue
+        with open(_target, "r", encoding="utf-8") as _fh2:
+            _ids = set(re.findall(r'id="([^"]+)"', _fh2.read()))
+        if _anc in _ids:
+            continue
+        _norm = {}
+        for _i in _ids:
+            _norm.setdefault(_anchor_key(_i), []).append(_i)
+        _cand = _norm.get(_anchor_key(_anc), [])
+        if len(_cand) == 1:
+            _cp_fixes["%s#%s" % (_page, _anc)] = "%s#%s" % (_page, _cand[0])
+if _cp_fixes:
+    _cp_files = 0
+    for _dp, _dns, _fns in os.walk(dist):
+        for _fn in _fns:
+            if not _fn.endswith((".html", ".js")):
+                continue
+            _p = os.path.join(_dp, _fn)
+            try:
+                with open(_p, "r", encoding="utf-8") as _fh:
+                    _txt = _fh.read()
+            except (UnicodeDecodeError, OSError):
+                continue
+            _new = _txt
+            for _old, _rep in _cp_fixes.items():
+                _new = _new.replace(_old, _rep)
+            if _new != _txt:
+                with open(_p, "w", encoding="utf-8", newline="") as _fh:
+                    _fh.write(_new)
+                _cp_files += 1
+    print("[vp] 跨页锚点修复：%d 处 → %d 个产物文件" % (len(_cp_fixes), _cp_files))
 
 index_html = os.path.join(dist, "index.html")
 if os.path.isfile(index_html):

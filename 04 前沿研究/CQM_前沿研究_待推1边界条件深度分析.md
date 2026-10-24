@@ -113,7 +113,7 @@ Bohr 半径与 CQM 耦级谱**不是两个类比的对象**，而是同一个量
 
 耦合空间 $u=\ln r$，Dirichlet 盒长度 $L_{\rm box}$，往返一周：
 
-$$2\,|p_u|\,L_{\rm box}=2\pi n\quad\Longrightarrow\quad |p_u|=\frac{\pi n}{L_{\rm box}}$$
+$$2\,|p_u|\,L_{\rm box}=2\pi n\quad\longrightarrow\quad |p_u|=\frac{\pi n}{L_{\rm box}}$$
 
 而 $\hat H=\hat D^2+\frac14$ 中，$\hat D=-i(\partial_u-\frac12)$ 酉等价于 $-i\partial_u$，故 $\hat D$ 的本征值为 $\pm\gamma_n$，$\hat H$ 的本征值 $\mathfrak{c}_n=\gamma_n^2+\frac14$。
 
@@ -156,7 +156,7 @@ $$k L_n^{\rm Si}=\vartheta_n+2\pi n,\qquad L_n^{\rm Si}=\frac{2\pi n}{\gamma_n}\
 
 本文自洽方程用的是 **Dirichlet 盒 + Weyl 计数** $N=(L/\pi)T$：
 
-$$\gamma_n=\frac{\pi n}{L_{\rm box}}\qquad\Longrightarrow\qquad L_{\rm box}\approx\frac{\pi n}{\gamma_n}$$
+$$\gamma_n=\frac{\pi n}{L_{\rm box}}\qquad\longrightarrow\qquad L_{\rm box}\approx\frac{\pi n}{\gamma_n}$$
 
 | | Dirichlet 盒（本文） | Sierra 周期（主线定理） |
 |:---|:---|:---|
@@ -378,7 +378,7 @@ $$\theta(T)=\mathrm{Im}\ln\Gamma\!\left(\frac14+\frac{iT}2\right)-\frac T2\ln\pi
 
 **Sierra-CNT 定理骨架**（归档定理 10.2 = 现行定理 8.1/5.1）：
 
-$$L_n=\frac{2\pi n}{\gamma_n},\qquad \vartheta_n=-\theta(\mathcal E_n)\pmod\pi\ \Longrightarrow\ \text{共振位置（耦级）}=\Lambda^2\!\left(\tfrac14+\gamma_n^2\right)$$
+$$L_n=\frac{2\pi n}{\gamma_n},\qquad \vartheta_n=-\theta(\mathcal E_n)\pmod\pi\ \longrightarrow\ \text{共振位置（耦级）}=\Lambda^2\!\left(\tfrac14+\gamma_n^2\right)$$
 
 证明要点：周期本征函数 $\varphi_k(u)=e^{(1/2+ik)u}$，条件 $e^{ikL_n}=e^{i\vartheta_n}$ 给 $kL_n=\vartheta_n+2\pi m$；$|\vartheta_n|<\pi$ 有界时 $k=\gamma_n(1+O(1/n))$。
 
@@ -428,7 +428,7 @@ Sierra 的边界相位 $\vartheta_n$ 取的是 **$\theta$ 型平滑量**（但�
 
 > **数值核验（独立脚本复算，$n\le700$、30 位精度）**：
 > - $|z_n|-1=0$（$n=50$ 处 $-9.9\times10^{-32}$，即机器零）——临界线上 $z_n$ **严格**在单位圆上（与 §9（$\mathfrak{c}_n=\|\rho_n\|^2$）互为印证）。
-> - $\phi_n\gamma_n-1$：$n=1$ 时 $-4.2\times10^{-4}$、$n=100$ 时 $-1.5\times10^{-6}$、$n=500$ 时 $-1.3\times10^{-7}$ ⇒ $\phi_n\sim1/\gamma_n$，单调趋零。
+> - $\phi_n\gamma_n-1$：$n=1$ 时 $-4.2\times10^{-4}$、$n=100$ 时 $-1.5\times10^{-6}$、$n=500$ 时 $-1.3\times10^{-7}$ → $\phi_n\sim1/\gamma_n$，单调趋零。
 > - 闭式 $\phi_n=\arctan\!\big(\gamma_n/(\gamma_n^2-\tfrac14)\big)$ 与 $\arg(1-1/\rho_n)$ 直接值之差 $\le1.3\times10^{-32}$（三例核验）。
 > - RvM 阶梯：$N$ 在 $\gamma_n$ 处跳 $+1$、$\theta/\pi+1$ 连续 → $S$ 在 $\gamma_n$ 处跳 $+1$（右连续约定）。
 
@@ -491,7 +491,7 @@ $$\underbrace{n}_{\text{绕数}}\ \xrightarrow{\ n=e^{\tau}(\tau-1)+\tfrac78\ (\
 
 **RvM 反解**：记 $\tau:=\ln(T/2\pi)$，则 $T=\gamma_n$ 时
 
-$$n=N(\gamma_n)=\frac{T}{2\pi}\Big(\ln\frac{T}{2\pi}-1\Big)+\frac78+S(T)=e^{\tau}(\tau-1)+\frac78+S\ \Longrightarrow\ \tau=1+W\!\Big(\frac{n-\tfrac78-S}{e}\Big)$$
+$$n=N(\gamma_n)=\frac{T}{2\pi}\Big(\ln\frac{T}{2\pi}-1\Big)+\frac78+S(T)=e^{\tau}(\tau-1)+\frac78+S\ \longrightarrow\ \tau=1+W\!\Big(\frac{n-\tfrac78-S}{e}\Big)$$
 
 | n | $\tau=\ln(\gamma_n/2\pi)$（真值） | $1+W((n-\tfrac78)/e)$ | 偏差 | $W(n)$（粗糙形式） | 偏差 |
 |:---|:---|:---|:---|:---|:---|
@@ -600,7 +600,7 @@ $$\frac{m_p}{m_{\rm Pl}}=g_s^{\rm IR}\cdot\text{☯}\cdot\sqrt{\mathfrak{c}_1}\c
 
 复算：K11 给 $m_p/m_{\rm Pl}=7.594957\times10^{-20}$（实验 $7.685023\times10^{-20}$），**质量比偏差 −1.17%**；对应 $\ln(m_{\rm Pl}/m_p)=44.0242$（实验 $44.0124$），**$\ln$ 偏差 +0.027%**。两者不是同一百分比——−1.17% 属质量比、+0.027% 属对数。归档方向正确。
 
-$$\alpha_G=\left(\frac{m_p}{m_{\rm Pl}}\right)^2\ \Longrightarrow\ \exp(-2/\text{☯})=\big(\exp(-1/\text{☯})\big)^2$$
+$$\alpha_G=\left(\frac{m_p}{m_{\rm Pl}}\right)^2\ \longrightarrow\ \exp(-2/\text{☯})=\big(\exp(-1/\text{☯})\big)^2$$
 
 **$G_N$ 公式里的 $-2/\text{☯}$ 不是巧合**——因为 $\alpha_G$ 含 $m_p^2$，K11 就是 $G_N$ 公式的 $m_p/m_{\rm Pl}$ 版本。与 §7.3 三线汇合**完全一致**，且解释了「为何是 2 不是 1」。【数值复算 ✓ / 关系为代数恒等】
 

@@ -14,10 +14,10 @@
 
 ### 诊断 1：什么才算循环
 
-循环的定义是 $A \Longrightarrow B \Longrightarrow A$。真正构成循环的只有：
+循环的定义是 $A \longrightarrow B \longrightarrow A$。真正构成循环的只有：
 
 $$
-\gamma_n \Longrightarrow \text{边界条件} \Longrightarrow \text{谱} = \{\gamma_n^2 + 1/4\}
+\gamma_n \longrightarrow \text{边界条件} \longrightarrow \text{谱} = \{\gamma_n^2 + 1/4\}
 $$
 
 即用已知零点反推边界条件，再用边界条件“证明”零点——这才是循环。
@@ -40,7 +40,7 @@ $$
 $\sum_n \frac{1}{\gamma_n^2 + 1/4}$ **在 RH 成立时才严格成立**，方向是单向的：
 
 $$
-\text{RH} \Longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+\text{RH} \longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
 $$
 
 RH 推出该等式，但该等式不推出 RH。反过来用等式去“证明”RH 才是循环——CQM 没有这样做。下面给出从定义到“推论”的完整推导链条，以精确固定每一环是否依赖 RH。
@@ -192,7 +192,7 @@ $$
 CQM 框架以**共振谱**为组织框架——同步算符的**共振位置（耦级）** $\{\mathfrak{c}_n\}$（$\mathfrak{c}_n = \gamma_n^2 + 1/4$）即共振谱，GRH 实谱条件即共振稳定性条件——把黎曼猜想的证明转化为**物理-数学交叉的存在性证明**，由真实物理系统存在性保证：
 
 $$
-\boxed{\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\Longrightarrow\; \text{交叉RH成立}}
+\boxed{\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\longrightarrow\; \text{交叉RH成立}}
 $$
 
 - **3 个已知**：算符 $\hat{H}=\hat{D}^2+1/4$（$\hat{D}=-i(\partial_u-1/2)$）、不确定性关系（相变量子 $☯$）、带误差的谱带 $\mathfrak{c}_n=\gamma_n^2+1/4+O_n$。
@@ -209,7 +209,7 @@ $$
 
 $$
 \boxed{
-\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\Longrightarrow\; \text{交叉RH成立}
+\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\longrightarrow\; \text{交叉RH成立}
 }
 $$
 
@@ -230,7 +230,7 @@ $$
 + \\
 \text{经典化}
 \end{array}
-\;\Longrightarrow\;
+\;\longrightarrow\;
 \begin{array}{c}
 \text{满足不确定性关系的} \\
 \text{量子系统谱是零点}
@@ -280,7 +280,7 @@ $$
 | 连续谱 | ✅ 但恒为实数，**零信息** | 即本算符的自然谱 |
 | 共振（resonance） | ❌ **不约束**（在 resolvent 第二叶） | Sierra 2008 用此；Connes 1999 把共振归为**非临界**零点 |
 
-**因此**：§13.3 / §14.2 的“自伴 $\Longrightarrow$ 谱实 $\Longrightarrow$ RH”仅在**离散点谱**情形下有效；在当前声明的连续谱情形下是空洞的。把 $\{\mathfrak{c}_n\}$ 落实为何种载体，**属待推 1 的内容**，目前未定。
+**因此**：§13.3 / §14.2 的“自伴 $\longrightarrow$ 谱实 $\longrightarrow$ RH”仅在**离散点谱**情形下有效；在当前声明的连续谱情形下是空洞的。把 $\{\mathfrak{c}_n\}$ 落实为何种载体，**属待推 1 的内容**，目前未定。
 
 **自伴延拓**：
 
@@ -372,7 +372,7 @@ $$
 
 $$
 \mathfrak{c}_n=\rho_n(1-\rho_n)=\gamma_n^2+\beta_n(1-\beta_n)+i\,\gamma_n(1-2\beta_n)
-\;\Longrightarrow\;
+\;\longrightarrow\;
 O_n^I=\gamma_n(1-2\beta_n)=-2\gamma_n\delta_n
 $$
 
@@ -502,10 +502,10 @@ $$
 + \\
 \text{经典化（待推）}
 \end{array}
-\;\Longrightarrow\;
+\;\longrightarrow\;
 \begin{array}{c}
 \text{谱} = \{\gamma_n^2 + 1/4\} \\
-\Longrightarrow \text{交叉RH成立}
+\longrightarrow \text{交叉RH成立}
 \end{array}
 }
 $$
@@ -579,7 +579,7 @@ $$
 **$☯$ 的谱表示是推论，不是定义**：
 
 $$
-\text{RH} \Longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
+\text{RH} \longrightarrow ☯ = \sum_n \frac{1}{\gamma_n^2 + 1/4}
 $$
 
 RH 推出该等式，但该等式不推出 RH。$☯ = \sum 1/\mathfrak{c}_n$ 是 RH 的**推论**，不是 $☯$ 的定义。
@@ -622,7 +622,7 @@ $$
 \boxed{
 \begin{array}{ccc}
 \text{已知1：算符} & & \\
-\text{已知2：不确定性关系（☯）} & \Longrightarrow & \text{待推1：边界条件（素数）} \\
+\text{已知2：不确定性关系（☯）} & \longrightarrow & \text{待推1：边界条件（素数）} \\
 \text{已知3：带误差的谱带} & & \text{待推2：经典化} \\
  & & \text{物理存在性：退相干机制} \\
  & & \text{已知：☯（不循环）} \\
@@ -655,7 +655,7 @@ $$
 $$
 
 $$
-\text{退相干机制} \;\longrightarrow\; \text{物理存在性} \;\longrightarrow\; [\hat{u},\hat{p}_u]=i \;\longrightarrow\; ☯ \;\Longrightarrow\; \text{交叉RH成立}
+\text{退相干机制} \;\longrightarrow\; \text{物理存在性} \;\longrightarrow\; [\hat{u},\hat{p}_u]=i \;\longrightarrow\; ☯ \;\longrightarrow\; \text{交叉RH成立}
 $$
 
 ---
@@ -785,7 +785,7 @@ $$
 \text{CQM框架把黎曼猜想的证明转化为} \\
 \text{物理-数学交叉的存在性证明：} \\
 \text{3个已知} + \text{2个待推} + \text{物理存在性} + \text{☯（已知）} \\
-\Longrightarrow \text{交叉RH成立}
+\longrightarrow \text{交叉RH成立}
 \end{array}
 }
 $$
@@ -1185,7 +1185,7 @@ $$
 其对称轴为 $s \mapsto 1-s$，不动点是：
 
 $$
-s = 1-s \;\Longrightarrow\; \mathrm{Re}(s) = \tfrac12
+s = 1-s \;\longrightarrow\; \mathrm{Re}(s) = \tfrac12
 $$
 
 $$

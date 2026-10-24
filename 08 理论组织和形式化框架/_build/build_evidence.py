@@ -244,6 +244,31 @@ def _balance_end(text, st, en, limit=48):
     return k
 
 
+def _balance_start(text, st, en, limit=64):
+    """把引文左界退到 LaTeX 行内定界符 `$` 处（quote 仍逐字取自 text[st:en]）。
+
+    最长逐字片段以「去空白」后的定义串去匹配带空格的原文，公式首段可能匹配不上
+    （实测 C058：定义 `$\\kappa=(31+☯)/30$` 对原文 `$\\kappa = (31+☯)/30$`，
+    区间只截到 `(31+☯)/30$`），引文里只剩收尾 `$`，前端配对失败 → 公式裸露。
+    只在**同一行、邻近**、区间内 `$` 为奇数且以 `$` 收尾时，向左找最近的未转义 `$`；
+    找不到则原样返回（宁缺勿错）。
+    """
+    q = text[st:en]
+    if q.count("$") % 2 == 0 or not q.rstrip().endswith("$"):
+        return st
+    k = st
+    while k > 0 and (st - k) < limit:
+        k -= 1
+        ch = text[k]
+        if ch == "\n":
+            return st
+        if ch == "$" and (k == 0 or text[k - 1] != "\\"):
+            if k > 0 and text[k - 1] == "$":
+                k -= 1
+            return k
+    return st
+
+
 def is_weak(seg):
     """目录行 / 纯链接行 / 短标题行——不宜作为证据。"""
     if "](#" in seg or seg.count("](") >= 2:
@@ -489,6 +514,16 @@ def main():
                                quote_clean=clean_quote(raw[sec["body_start"]:be]), score=0.5)
                 else:
                     rec.update(loc_status=loc_status, confidence="unresolved")
+        # 引文左界补到同一行的公式定界符（$ 为奇数且以 $ 收尾时；不改逐字事实）
+        if rec["quote"]:
+            src = doc_text.get(rec["evidence_doc"])
+            if src:
+                st0, en0 = int(rec["char_start"]), int(rec["char_end"])
+                st1 = _balance_start(src, st0, en0)
+                if st1 != st0:
+                    rec["char_start"] = st1
+                    rec["quote"] = src[st1:en0]
+                    rec["quote_clean"] = clean_quote(src[st1:en0])
         ev_rows.append(rec)
         ev_json.append(dict(rec, candidates=cands))
         if it["loc"] == "" and rec["match_method"] in ("section", "doc"):

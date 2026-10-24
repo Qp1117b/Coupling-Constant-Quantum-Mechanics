@@ -187,8 +187,8 @@ def main():
     check("claim 级边 > 250（原为 0）", len(clm) > 250, str(len(clm)))
 
     kgj = jload(os.path.join(ROOT, "03_超图与理论图", "知识图谱.json"))
-    check("知识图谱 144 实体 / 358 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 358),
+    check("知识图谱 144 实体 / 359 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 359),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")

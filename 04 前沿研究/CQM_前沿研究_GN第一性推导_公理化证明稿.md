@@ -668,7 +668,7 @@ $$\ln\left(\prod_p \det(D_p)\right) = \frac{1}{☯} = 43.298086$$
 
 因此，结合定理 6.1：
 
-$$\ln \mathcal{J} = -\frac{2}{☯} \qquad \Longrightarrow \qquad \mathcal{J} = \exp\left(-\frac{2}{☯}\right)$$
+$$\ln \mathcal{J} = -\frac{2}{☯} \qquad \longrightarrow \qquad \mathcal{J} = \exp\left(-\frac{2}{☯}\right)$$
 
 **开放问题 10.1**。为何 p 进谱行列式的对数恰好等于 $1/☯$？这是最深层的缺口，涉及数论（Adele、L 函数）与物理（谱行列式、引力压制）的核心对应。
 
