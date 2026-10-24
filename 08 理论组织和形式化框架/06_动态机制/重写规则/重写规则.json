@@ -65,7 +65,7 @@
       "rhs": "C007",
       "premises_text": [
         "物质先在",
-        "再生产幂等μ²=μ"
+        "再生产幂等$\\mu^2=\\mu$"
       ],
       "conclusion_text": "物质自组织",
       "source_doc": [
@@ -86,7 +86,7 @@
         "物质自组织",
         "同步算符"
       ],
-      "conclusion_text": "SU(5)基态",
+      "conclusion_text": "$SU(5)$ 基态",
       "source_doc": [
         "D007",
         "D008"
@@ -123,7 +123,7 @@
         "前核子自组织",
         "粗粒化"
       ],
-      "conclusion_text": "禁闭边界A_4",
+      "conclusion_text": "禁闭边界 $A_4$",
       "source_doc": [
         "D005"
       ],
@@ -138,7 +138,7 @@
       "rhs": "C028",
       "premises_text": [
         "质子",
-        "中子缺陷α_4"
+        "中子缺陷 $\\alpha_4$"
       ],
       "conclusion_text": "Regge铰链/非零角亏",
       "source_doc": [
@@ -156,7 +156,7 @@
       "premises_text": [
         "物质晶胞分布内禀不均匀性"
       ],
-      "conclusion_text": "Regge角亏δ_v",
+      "conclusion_text": "Regge角亏 $\\delta_v$",
       "source_doc": [
         "D006"
       ],
@@ -171,10 +171,10 @@
       ],
       "rhs": "C030",
       "premises_text": [
-        "粒子A_4",
-        "中子D(δ)"
+        "粒子 $A_4$",
+        "中子 $D(\\delta)$"
       ],
-      "conclusion_text": "元素嘉当矩阵C_element",
+      "conclusion_text": "元素嘉当矩阵 $C_{\\text{element}}$",
       "source_doc": [
         "D006",
         "D030"
@@ -207,7 +207,7 @@
       "rhs": "C064",
       "premises_text": [
         "不确定性",
-        "跃迁耦级2ln_n"
+        "跃迁耦级 $2\\ln n$"
       ],
       "conclusion_text": "资格条件",
       "source_doc": [
@@ -223,9 +223,9 @@
       ],
       "rhs": "C067",
       "premises_text": [
-        "λ_2(T_c)=λ_1(T_c)"
+        "$\\lambda_2(T_c)=\\lambda_1(T_c)$"
       ],
-      "conclusion_text": "丛作用量交叉F_1=F_2",
+      "conclusion_text": "丛作用量交叉 $F_1=F_2$",
       "source_doc": [
         "D030"
       ],
@@ -258,9 +258,9 @@
       ],
       "rhs": "C013",
       "premises_text": [
-        "物质自组织基态同步SU(5)"
+        "物质自组织基态同步 $SU(5)$"
       ],
-      "conclusion_text": "各因子层GL(n)谱/残留",
+      "conclusion_text": "各因子层 $GL(n)$ 谱/残留",
       "source_doc": [
         "D029"
       ],
@@ -295,7 +295,7 @@
         "时间侧自守形式",
         "空间侧自守形式"
       ],
-      "conclusion_text": "c",
+      "conclusion_text": "$☯$",
       "source_doc": [
         "D009"
       ],
@@ -334,14 +334,14 @@
       ],
       "rhs": "C081",
       "premises_text": [
-        "I",
-        "λ_c",
-        "☯²",
-        "𝔠_1",
-        "exp(-2/☯)",
-        "(1+κ☯)"
+        "$I$",
+        "$\\lambda_c$",
+        "$☯^2$",
+        "$\\mathfrak c_1$",
+        "$\\exp(-2/☯)$",
+        "$(1+\\kappa☯)$"
       ],
-      "conclusion_text": "G_N",
+      "conclusion_text": "$G_N$",
       "source_doc": [
         "D019",
         "D014"
@@ -356,12 +356,12 @@
       ],
       "rhs": "C082",
       "premises_text": [
-        "四个基约束性h",
-        "r",
-        "|W(A_4)|",
-        "tr(A_4)"
+        "四个基约束性 $h$",
+        "$r$",
+        "$|W(A_4)|$",
+        "$\\operatorname{tr}(A_4)$"
       ],
-      "conclusion_text": "Wyler常数α_W",
+      "conclusion_text": "Wyler常数 $\\alpha_W$",
       "source_doc": [
         "D021"
       ],
@@ -439,9 +439,9 @@
       ],
       "rhs": "C066",
       "premises_text": [
-        "SU(5)紧致部分"
+        "$SU(5)$ 紧致部分"
       ],
-      "conclusion_text": "U(1)//Z_n商结构→α",
+      "conclusion_text": "$U(1)//Z_n$ 商结构 $\\to\\alpha$",
       "source_doc": [
         "D023"
       ],
@@ -455,9 +455,9 @@
       ],
       "rhs": "C022",
       "premises_text": [
-        "δ_v"
+        "$\\delta_v$"
       ],
-      "conclusion_text": "联络A_FG→伴丛曲率F",
+      "conclusion_text": "联络 $A_{FG}\\to$ 伴丛曲率 $F$",
       "source_doc": [
         "D028"
       ],
@@ -471,9 +471,9 @@
       ],
       "rhs": "C027",
       "premises_text": [
-        "δ_v"
+        "$\\delta_v$"
       ],
-      "conclusion_text": "固有时流速v_τ=√(1−βδ_v)",
+      "conclusion_text": "固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$",
       "source_doc": [
         "D015"
       ],
@@ -487,9 +487,9 @@
       ],
       "rhs": "C058",
       "premises_text": [
-        "ζ欧拉乘积"
+        "$\\zeta$ 欧拉乘积"
       ],
-      "conclusion_text": "局部耦合核κ_p",
+      "conclusion_text": "局部耦合核 $\\kappa_p$",
       "source_doc": [
         "D008"
       ],
@@ -505,7 +505,7 @@
       "premises_text": [
         "显式公式"
       ],
-      "conclusion_text": "同步格林函数ψ(e^u)",
+      "conclusion_text": "同步格林函数 $\\psi(e^u)$",
       "source_doc": [
         "D008"
       ],
@@ -519,9 +519,9 @@
       ],
       "rhs": "C046",
       "premises_text": [
-        "黎曼零点γ_n"
+        "黎曼零点 $\\gamma_n$"
       ],
-      "conclusion_text": "耦级𝔠_n=1/4+γ_n²",
+      "conclusion_text": "耦级 $\\mathfrak c_n=1/4+\\gamma_n^2$",
       "source_doc": [
         "D008"
       ],
@@ -535,7 +535,7 @@
       ],
       "rhs": "C051",
       "premises_text": [
-        "☯谱表示Σ1/(γ_n²+1/4)"
+        "$☯$ 谱表示 $\\Sigma 1/(\\gamma_n^2+1/4)$"
       ],
       "conclusion_text": "RH（单向推论）",
       "source_doc": [
@@ -554,7 +554,7 @@
         "没有质量尺子",
         "耦合锁死为纯数字"
       ],
-      "conclusion_text": "共形固定点β(g)=0",
+      "conclusion_text": "共形固定点 $\\beta(g)=0$",
       "source_doc": [
         "D012"
       ],
@@ -585,9 +585,9 @@
       ],
       "rhs": "C049",
       "premises_text": [
-        "母群G"
+        "母群 $G$"
       ],
-      "conclusion_text": "本征群R→群算符Ĥ",
+      "conclusion_text": "本征群 $R\\to$ 群算符 $\\hat H$",
       "source_doc": [
         "D010"
       ],
@@ -601,9 +601,9 @@
       ],
       "rhs": "C059",
       "premises_text": [
-        "GL(n)"
+        "$GL(n)$"
       ],
-      "conclusion_text": "Weyl群S_n",
+      "conclusion_text": "Weyl群 $S_n$",
       "source_doc": [
         "D010"
       ],

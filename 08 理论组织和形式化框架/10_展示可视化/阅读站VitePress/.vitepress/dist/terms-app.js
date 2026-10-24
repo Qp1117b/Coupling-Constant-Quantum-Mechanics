@@ -1,5 +1,8 @@
 (function () {
-  var CATS = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步"];
+  /* 分类 chip：这里只固定「既有分类的展示顺序」，真实类别集合在 boot 里从 index 的
+     ty 字段实测推导——新增或此前漏掉的类别（如只能靠「全部」看到的「讲稿」）
+     会自动获得 chip，不会再被写死的清单落下。 */
+  var CATS_ORDER = ["概念", "缺口", "论证", "符号", "命题", "文档", "链条步", "讲稿"];
   function boot() {
     var app = document.getElementById("terms-app");
     if (!app || app.__done) return;
@@ -7,6 +10,13 @@
     if (!G) return;
     app.__done = 1;
     var terms = G.terms || {}, index = G.index || [];
+    var _seen = {}, _first = [];
+    index.forEach(function (it) {
+      var ty = it && it.ty;
+      if (ty && !_seen[ty]) { _seen[ty] = 1; _first.push(ty); }
+    });
+    var CATS = CATS_ORDER.filter(function (c) { return _seen[c]; })
+      .concat(_first.filter(function (c) { return CATS_ORDER.indexOf(c) < 0; }));
     var style = document.createElement("style");
     style.textContent = ''
       + '.terms-app{font-size:14px}'

@@ -101,7 +101,7 @@ $$\boxed{\text{黎曼非平凡零点} \;\xrightarrow{\text{质数分布}}\; \tex
 
 **逻辑推演。** 从CQM基础前提逻辑推出：氢原子能级背后必然是同步算符。
 
-$$\boxed{\text{电子是关系产物（非独立本体）} \;\Rightarrow\; \text{能级非电子内禀性质} \;\Rightarrow\; \text{能级来自关系网络同步结构} \;\Rightarrow\; \text{能级背后是同步算符}}$$
+$$\boxed{\text{电子是关系产物（非独立本体）} \;\longrightarrow\; \text{能级非电子内禀性质} \;\longrightarrow\; \text{能级来自关系网络同步结构} \;\longrightarrow\; \text{能级背后是同步算符}}$$
 
 论证链：
 
@@ -125,7 +125,7 @@ $$\boxed{\text{电子是关系产物（非独立本体）} \;\Rightarrow\; \text
 
 **同步算符的谱实现在 GL(1) 电磁因子层是黎曼式的**（这是定义，不是构造）：$\hat{\mathcal{S}} |n\rangle = \gamma_n |n\rangle$，本征值 = 黎曼零点 = 同步模式的共振频率。从电子作为关系产物出发，经同步算符谱 $\{\gamma_n\}$ 直接推导能级：
 
-$$\text{电子是关系产物} \;\Rightarrow\; \hat{\mathcal{S}} \;\Rightarrow\; \gamma_n \;\Rightarrow\; n = N(\gamma_n) \;\Rightarrow\; a_n = n^2 a_0 \;\Rightarrow\; E_n = -R/n^2$$
+$$\text{电子是关系产物} \;\longrightarrow\; \hat{\mathcal{S}} \;\longrightarrow\; \gamma_n \;\longrightarrow\; n = N(\gamma_n) \;\longrightarrow\; a_n = n^2 a_0 \;\longrightarrow\; E_n = -R/n^2$$
 
 1. **谱序号**：$n = N(\gamma_n)$，其中 $N(T) = \frac{T}{2\pi}\ln\frac{T}{2\pi} - \frac{T}{2\pi} + \frac{7}{8} + O(1/T)$ 是黎曼零点计数函数（Riemann-von Mangoldt公式）。$n$ 是第 $n$ 个同步模式的编号。
 
@@ -387,7 +387,7 @@ $$D(\delta) = A_4 + (1-\delta) \cdot \Delta, \quad \Delta = \text{仅在 }(3,4)/
 8. Madelung规则：$E(n,l) \sim N(\gamma_n) + l = n + l$（黎曼式同步算符谱序号 + 轨道角动量）；
 9. $D(\delta) = A_4 + (1-\delta) \cdot \Delta$，微扰分析完成，一阶系数 $= 1/\sqrt{5}$；
 10. 氢原子（§11.6）是元素发生学特例（$Z=1$），超导是元素FG的显现；
-11. **壳层鲁棒性定理**（§11.8）：壳层结构 $\{2,6,10,14\}$ 对所有 $|\delta| < \sqrt{8/3}$ 鲁棒——$D(\delta)$ 正定 $\Rightarrow$ $A_4$ 型 $\Rightarrow$ 壳层不变。条件“壳层不破坏” $=$ G14 正定性条件，不唯一确定 $\delta$；
+11. **壳层鲁棒性定理**（§11.8）：壳层结构 $\{2,6,10,14\}$ 对所有 $|\delta| < \sqrt{8/3}$ 鲁棒——$D(\delta)$ 正定 $\longrightarrow$ $A_4$ 型 $\longrightarrow$ 壳层不变。条件“壳层不破坏” $=$ G14 正定性条件，不唯一确定 $\delta$；
 12. **$\delta(Z,N)$ 的函数形式**（§11.8）：$\delta(Z,N) = 1 - \varepsilon_0 \cdot N/(Z+N)$，$\varepsilon_0 = 0.0012$（中子比例模型，满足纯质子极限、自由中子锚点、同位素效应、正定性全部条件）；
 13. **同位素效应定量预测**（§11.8）：$T_c \propto M^{-\alpha}$，$\alpha \approx 0.0006$（来自 $\delta$，非声子）；
 14. **周期表推导框架内闭合（待第三方独立复现）**：从 $SU(5)$ + $SU(2)$ + 黎曼式同步算符导出全部壳层结构，不依赖 $\delta(Z,N)$ 精确值；
@@ -464,9 +464,9 @@ $$\boxed{\text{壳层结构 } \{2, 6, 10, 14\} \text{ 对所有 } |\delta| < \sq
 **证明**：
 
 1. $D(\delta)$ 正定 $\Leftrightarrow$ $|\delta| < \sqrt{8/3}$ $\Leftrightarrow$ $\det D(\delta) = 8 - 3\delta^2 > 0$；
-2. $D(\delta)$ 正定 $\Rightarrow$ $D(\delta)$ 是某半单李代数的嘉当矩阵；
-3. $D(\delta)$ 是 $4 \times 4$ 正定嘉当矩阵 $\Rightarrow$ $A_4$ 型（唯一 4 维正定嘉当矩阵类型）；
-4. $A_4$ 型 $\Rightarrow$ 壳层 $2, 6, 10, 14$（壳层标签由 SU(5) Dynkin图深度严格推导）；
+2. $D(\delta)$ 正定 $\longrightarrow$ $D(\delta)$ 是某半单李代数的嘉当矩阵；
+3. $D(\delta)$ 是 $4 \times 4$ 正定嘉当矩阵 $\longrightarrow$ $A_4$ 型（唯一 4 维正定嘉当矩阵类型）；
+4. $A_4$ 型 $\longrightarrow$ 壳层 $2, 6, 10, 14$（壳层标签由 SU(5) Dynkin图深度严格推导）；
 5. $\delta$ 只改变特征值位置（$\text{tr}\, D(\delta) = 8$ 不变），不改变代数类型。
 
 **数值验证**：对 1000 个随机 $\delta \in (-\sqrt{8/3}, \sqrt{8/3})$ 测试，壳层结构保持率 $= 100\%$。
@@ -525,9 +525,9 @@ $$\text{缺陷来源数} \propto N$$
 
 **同位素效应是缺陷源效应。**
 
-$$\boxed{\text{重同位素} \;\Rightarrow\; \text{更多中子} \;\Rightarrow\; \text{更多缺陷来源} \;\Rightarrow\; \text{更丰富的角亏涨落}}$$
+$$\boxed{\text{重同位素} \;\longrightarrow\; \text{更多中子} \;\longrightarrow\; \text{更多缺陷来源} \;\longrightarrow\; \text{更丰富的角亏涨落}}$$
 
-$$\boxed{\text{轻同位素} \;\Rightarrow\; \text{更少中子} \;\Rightarrow\; \text{更少缺陷来源} \;\Rightarrow\; \text{更弱的角亏涨落}}$$
+$$\boxed{\text{轻同位素} \;\longrightarrow\; \text{更少中子} \;\longrightarrow\; \text{更少缺陷来源} \;\longrightarrow\; \text{更弱的角亏涨落}}$$
 
 CQM 同位素效应的本质：**不是质量改变声子频率，而是中子数改变缺陷来源丰度。**
 
@@ -1482,7 +1482,7 @@ CQM 超导理论
 | 公式推导完成 | **从$V_{\text{element}}$到超导同步算符的显式连接与$T_c$闭式**（《核心理论》§11.10） | **公式已给出（前向验证未闭合）**：映射$\Phi$和$T_c=\frac{\theta_D}{2\,\mathrm{arccoth}(x)}$推导正确。**自由能公式构成第一性预测框架**（数值验证无可复核产物） |
 | 公式推导完成 | **完全第一性 $T_c$ 计算链**（§11.14）：10 环节计算链公式完整（元素→嘉当矩阵→...→$T_c$）。$\Delta\delta_0^2 = \frac{C^2}{l^2}\cdot\frac{3\hbar}{4\omega_D}\cdot(1-f)\cdot\sum_{\text{edges}}\left(\frac{1}{m_i}+\frac{1}{m_j}\right)$。 | **自由能公式构成第一性预测框架**（数值验证无可复核产物） |
 | 最高 | 中子 $D(\delta)$ 的代数类型（有限 / 仿射 / 双曲） | 决定核子→原子核组合算符的形式 |
-| 最高 | **同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现**：同步算符 $\hat{\mathcal{S}}$ 的本征态 = 结构群基矢 $\lvert U(1)//\mathbb{Z}_n\rangle$，本征值 = 相变有效谱 $\lambda_n(T)$（零温无角亏极限退化为黎曼零点虚部 $\gamma_n$，同步成本，非耦级 $1/4+\gamma_n^2$），Hilbert–Pólya 算符 $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$ 给出耦级。超导同步算符 = 结构群叠加态的谱算符 = 子结构经 FG 激活后的再现（§11.6）。相变 = 叠加态自身谱结构的本征值交叉 $\lambda_2(T_c)=\lambda_1(T_c)$，叠加态通过自组织退相干到本征值最低的分量，丛作用量交叉是其热力学投影。开放：(1) 热修正 $\hat{V}_{\text{热}}(T)$ 的显式形式；(2) 丛作用量与本征值的映射函数 $\Phi$ 的严格构造；(3) 黎曼猜想（GL(5) 固定层级的实谱条件）⟹ 唯一 $T_c$ 的严格证明（若不成立，本征值离开临界线，$T_c$ 不唯一）；(4) $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$ 的严格证明；(5) 本征值用 $\gamma_n$（非 $1/4+\gamma_n^2$）的严格推导 | 决定相变判据的谱结构根基，超导直接是子结构的再现；黎曼猜想（GL(5) 固定层级的实谱条件）是唯一 $T_c$ 的存在论前提 |
+| 最高 | **同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现**：同步算符 $\hat{\mathcal{S}}$ 的本征态 = 结构群基矢 $\lvert U(1)//\mathbb{Z}_n\rangle$，本征值 = 相变有效谱 $\lambda_n(T)$（零温无角亏极限退化为黎曼零点虚部 $\gamma_n$，同步成本，非耦级 $1/4+\gamma_n^2$），Hilbert–Pólya 算符 $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$ 给出耦级。超导同步算符 = 结构群叠加态的谱算符 = 子结构经 FG 激活后的再现（§11.6）。相变 = 叠加态自身谱结构的本征值交叉 $\lambda_2(T_c)=\lambda_1(T_c)$，叠加态通过自组织退相干到本征值最低的分量，丛作用量交叉是其热力学投影。开放：(1) 热修正 $\hat{V}_{\text{热}}(T)$ 的显式形式；(2) 丛作用量与本征值的映射函数 $\Phi$ 的严格构造；(3) 黎曼猜想（GL(5) 固定层级的实谱条件）→ 唯一 $T_c$ 的严格证明（若不成立，本征值离开临界线，$T_c$ 不唯一）；(4) $\hat{H}_{\text{HP}} = \hat{\mathcal{S}}^2 + 1/4$ 的严格证明；(5) 本征值用 $\gamma_n$（非 $1/4+\gamma_n^2$）的严格推导 | 决定相变判据的谱结构根基，超导直接是子结构的再现；黎曼猜想（GL(5) 固定层级的实谱条件）是唯一 $T_c$ 的存在论前提 |
 | 最高 | **共振机制：黎曼共振 → 同步共振 → 全局同步**（§11.6）。机制链：黎曼零点（质数分布共振频率）→ 同步算符本征值（共振体现）→ 叠加态拍频（退相干速率）→ 本征值交叉（拍频消失=同步共振）→ 共振诱导退相干（自组织到最低同步成本）→ Kuramoto 型共振传播（底空间联络传播相位相干）→ 全局同步超导相变。唯物主义条件：GL(5) 固定层级黎曼共振谱先在（前时空），FG激活+降温只利用先在规律，不创造新规律。开放：(1) 拍频与退相干速率的定量关系 $\tau \sim \hbar/\|\lambda_m-\lambda_n\|$；(2) Kuramoto 临界耦合 $K_c$ 与底空间联络的精确关系；(3) 共振传播的非线性“催化”效应微观机制；(4) 从局域共振到全局同步的时空标度分析 | 决定退相干——自组织的具体机制；共振传播解释相变突变性 |
 | 最高 | **黎曼零点的实验验证：能级是表现，同步算符是本质**。已有实验：He et al. 2020（Phys. Rev. A **101**, 043402）单量子比特 Floquet 实验、2021（npj Quantum Information **7**, 109）囚禁离子实验——首次实验观察到黎曼零点作为准能级出现（驱动参数与 ζ 零点重合时动力学冻结）。但实验观察到的是**能级（表现）**，尚未认识到能级背后的**同步算符（本质）**。超导直接关联：Sierra 2005（J. Stat. Mech. P12006）Russian doll 超导模型将黎曼零点嵌入超导谱（缺失态，循环 RG），但尚无实验验证。验证途径：(1) 超导系统中观察到黎曼零点能级（从能级表现深入到同步算符本质）；(2) 不同 $n$ 跃迁 $T_c^{(n)}$ 比值中黎曼零点结构显现——**本理论预言高阶跃迁需要更强角亏涨落（$\Delta\delta_c^{(n=4)} \approx 0.27$），$T_c(4)/T_c(2) \approx 0.13\text{–}0.27$**；(3) **临界角亏涨落 $\Delta\delta_c \approx 0.20$**（低于此不超导）；(4) GUE 统计在超导能谱数据中的体现 | 能级是同步算符的唯象表现；实验从能级深入到同步算符是验证本理论的关键 |
 | 最高 | **氢原子能级背后必然是同步算符**（§11.6）：RQM同时干掉电子实在论与庸俗反电子实在论 → 耦合常数涨落生效 → 能级非电子内禀性质而是关系网络同步结构。**从黎曼零点直接推导**：$E_n = -R/N(\gamma_n)^2 = -R/n^2$ （$N$=黎曼零点计数函数）。同步算符是黎曼式的（本征值=$\gamma_n$），SO(4)是显现不是算符本身。这是CQM基础前提的逻辑必然，不是假设。**可检验预言**：(1) 能级 $-R/n^2$ 验证（精度 $10^{-12}$）；(2) $\|E_n\|\cdot a_n = R\cdot a_0$ = 常数（不确定关系，验证）；(3) Rydberg态间距标准差 $\approx 0.61$ 接近GUE（$\approx 0.52$，黎曼零点间距Montgomery-Odlyzko定律）而非Poisson（$1.0$）；(4) 外场中SO(4)重组实现模式。开放：(1) $N(\gamma_n)$ 精确公式（RvM是渐近）；(2) 为什么氢原子用谱序号而超导用本征值直接函数；(3) 多电子原子/分子能级；(4) 库仑势从同步结构涌现 | 决定CQM本体论（电子关系产物）的实验检验；从黎曼零点直接推出能级 |

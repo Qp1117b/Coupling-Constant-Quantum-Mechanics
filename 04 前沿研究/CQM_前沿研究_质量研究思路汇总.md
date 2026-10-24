@@ -219,7 +219,7 @@ $☯$ 属于**谱面孔**。“质数是源”（$\zeta$ / 算术侧）和“$�
 
 $$
 \boxed{
-\text{普适 } ☯ \;+\; \text{质子特有 } \pi_p \;\Longrightarrow\; G_N
+\text{普适 } ☯ \;+\; \text{质子特有 } \pi_p \;\longrightarrow\; G_N
 }
 $$
 

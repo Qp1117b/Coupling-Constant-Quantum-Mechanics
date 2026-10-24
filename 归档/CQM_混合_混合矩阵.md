@@ -97,7 +97,7 @@ $$\boxed{\Sigma = \int \langle\zeta^2\rangle \,d\tau}$$
 
 **命题 4.2**（$\Sigma$ 的厄米性与全连接性）。由于 $\zeta$ 是全连接反厄米矩阵，$\zeta^2$ 是厄米矩阵，其非对角元 $\zeta^2_{ij}$（$i\neq j$）一般非零。因此 $\Sigma$ 是 $3\times 3$ 全连接厄米矩阵。
 
-*证明*。$\zeta$ 反厄米 $\Rightarrow$ $\zeta^2$ 厄米。对于全连接 $\zeta$，
+*证明*。$\zeta$ 反厄米 $\rightarrow$ $\zeta^2$ 厄米。对于全连接 $\zeta$，
 $$\zeta^2_{12} = -h_{12}(h_{11}+h_{22}) - h_{13} h_{23}^*$$
 一般非零（除非参数特殊取值）。$\square$
 

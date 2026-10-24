@@ -84,7 +84,10 @@ def collect():
         paths.append("README.md")
     for d in INCLUDE_DIRS:
         for p in sorted(glob.glob(os.path.join(ROOT, d, "**", "*.md"), recursive=True)):
-            paths.append(os.path.relpath(p, ROOT).replace("\\", "/"))
+            rel = os.path.relpath(p, ROOT).replace("\\", "/")
+            if "/godot_project/" in rel:
+                continue  # Godot 工程文档（AI 代理规则/插件说明），非理论文本
+            paths.append(rel)
     return paths
 
 

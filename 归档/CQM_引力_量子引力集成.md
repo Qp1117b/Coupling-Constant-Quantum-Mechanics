@@ -163,9 +163,9 @@ $$\frac{\Delta r}{\langle r \rangle} \cdot \Delta v_\tau \geq \frac{☯}{2}$$
 
 **在 CQM 中，这不是“背景量子涨落”，而是因果结构本身未稳定的数学签名。**
 
-- $\hat{u}$ 无确定本征值 $\to$ 耦合常数无确定值 $\Rightarrow$ Sprinkling 事件在耦合空间中无确定位置
-- $\hat{p}_u$ 无确定本征值 $\Rightarrow$ 固有时流速无确定值 $\Rightarrow$ 因果链的“步速”未固定
-- 两者不可同时对易 $\Rightarrow$ **因果序本身处于叠加态**
+- $\hat{u}$ 无确定本征值 $\to$ 耦合常数无确定值 $\rightarrow$ Sprinkling 事件在耦合空间中无确定位置
+- $\hat{p}_u$ 无确定本征值 $\rightarrow$ 固有时流速无确定值 $\rightarrow$ 因果链的“步速”未固定
+- 两者不可同时对易 $\rightarrow$ **因果序本身处于叠加态**
 
 ### 5.3 与标准 QM 的严格平行
 
@@ -282,7 +282,7 @@ $$\left(I + \frac{i c A_4^{(q)}}{2a}\right)\psi^{n+1} = \left(I - \frac{i c A_4^
 在禁闭边界（L2）：
 1. Sprinkling 密度发散，事件在边界处无限堆积
 2. 双向干涉被引力因果限制场截断
-3. 单向因果确立：$x \prec y \Rightarrow y \nprec x$
+3. 单向因果确立：$x \prec y \rightarrow y \nprec x$
 4. 非交换代数 $\to$ 交换代数（Gel'fand–Naimark 对偶）
 5. 经典度规 $g_{\mu\nu}$ 首次获得定义
 
@@ -540,7 +540,7 @@ $$\mathfrak{c}_1 \xrightarrow{G_N \text{ 公式}} G_N = \frac{\hbar c}{m_p^2} \c
 CQM 量子引力集成的核心结论：
 
 1. **量子引力的物理舞台在耦合常数空间**，而非时空。$☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$ 作为最小条件（相变量子），通过海森堡代数 $[\hat{u}, \hat{p}_u] = i$ 生成耦合常数的不确定性关系。
-2. **固有时流速涨落是时间量子性的来源**。$\hat{p}_u$ 无确定本征值 $\Rightarrow$ 固有时流速无确定值 $\Rightarrow$ 因果序本身处于叠加态。
+2. **固有时流速涨落是时间量子性的来源**。$\hat{p}_u$ 无确定本征值 $\rightarrow$ 固有时流速无确定值 $\rightarrow$ 因果序本身处于叠加态。
 3. **退相干是因果结构结晶**（§10）。从非交换几何到交换几何的粗粒化极限产生经典引力，传输方程从随机 SDE 退化为确定性方程。
 4. **夸克/QCD 是禁闭边界上的有效理论**（§11），不是 L1 内部实在。禁闭边界与全息原理相关，但全息原理是否成立未知，框架不采用全息原理（§12）。
 5. **$G_N$ 的常数性**（§15.4），耦级向外衍生为标准模型参数（§13.2）。
@@ -560,6 +560,6 @@ CQM 量子引力集成的核心结论：
 8. Maldacena, J. (1997). The large N limit of superconformal field theories and supergravity. *Adv. Theor. Math. Phys.*, 2, 231.
 9. Susskind, L. (1995). The world as a hologram. *J. Math. Phys.*, 36, 6377.
 10. 't Hooft, G. (1993). Dimensional reduction in quantum gravity. *arXiv:gr-qc/9310026*.
-11. Sorkin, R. D. (2009). Does locality fail at intermediate length-scales? *arXiv:0907.5398*.
+11. Sorkin, R. D. (2007). Does locality fail at intermediate length-scales? *arXiv:gr-qc/0703099*.
 12. Dowker, F., Henson, J., & Sorkin, R. D. (2010). Discreteness and the transmission of light from distant sources. *Phys. Rev. D*, 82, 104048.
 13. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.

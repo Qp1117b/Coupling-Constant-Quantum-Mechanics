@@ -35,9 +35,9 @@ java -jar target/cqm-station-1.0.0.jar --server.port=8080
 |:---|:---|
 | `/` | 静态阅读站（**VitePress v1.6.4** 产物：顶部导航 + 左侧分组侧栏 + 右侧大纲、品牌靛蓝 `#3451b2`、首页 hero + 特性卡；含展开链、两册讲稿、四件内嵌可视化） |
 | `/api` | 端点索引 |
-| `/api/status` | 状态读数：概念 82 / 命题 63 / 论证 70 / 缺口 24 / 证据 215 / 链条步 131、三元组数、站点文件数、待复核数 |
+| `/api/status` | 状态读数：概念 81 / 命题 63 / 论证 69 / 缺口 24 / 证据 213 / 链条步 131、三元组数、站点文件数、待复核数 |
 | `/api/search?q=&type=&limit=` | 结构化检索：概念 / 命题 / 论证 / 缺口 / 符号 / 链条步；CJK 一元+二元 + 拉丁词打分，可按 `type` 过滤 |
-| `/api/sparql?query=...` | **实时 SPARQL**（Apache Jena 内存模型载入 `知识图谱.ttl`，5,146 三元组）；默认只读，写操作返回 403 |
+| `/api/sparql?query=...` | **实时 SPARQL**（Apache Jena 内存模型载入 `知识图谱.ttl`，5,530 三元组）；默认只读，写操作返回 403 |
 | `/api/concepts` `/api/concepts/{id}` | 概念列表 / 详情（定义、别名、**证据引文**、语义近邻） |
 | `/api/props` `/api/gaps` | 命题表 / 缺口台账（状态、Lean 对应、分组） |
 | `/api/evidence/{structId}` | 断言 → 证据（引文、字符区间、置信度） |
@@ -57,10 +57,10 @@ java -jar target/cqm-station-1.0.0.jar --server.port=8080
 
 ## 已知边界（如实登记）
 
-- 检索为内存线性打分（321 条文档规模），未接专用检索引擎；规模增长后再评估。
+- 检索为内存线性打分（389 条文档规模），未接专用检索引擎；规模增长后再评估。
 - SPARQL 为内存模型，重启后回到文件状态；不做持久化写。
 - 站点的"服务已连接"徽标为**软探测**：服务缺席时静默降级，不报错。
-- VitePress 站的**交互增强已移植完成**（2026-10-13）：术语/缺口悬浮卡（138 张，含语义近邻）、四层深度滑杆、
+- VitePress 站的**交互增强已移植完成**（2026-10-13）：术语/缺口悬浮卡（231 张，含语义近邻）、四层深度滑杆、
   结构化高级检索、服务探测徽标。由 `public/cqm-enhance-vp.js`（VitePress 适配版）与
   `.vitepress/theme/index.js`（`enhanceApp` 内 `router.onAfterRouteChanged` 重跑增强并重排公式）提供。
   - 与 Material 版的差异：正文容器 `.vp-doc`（原 `article.md-content__inner`）、导航挂 `.VPNavBar`、
@@ -92,10 +92,10 @@ java -jar target/cqm-station-1.0.0.jar --server.port=8080
 
 ## 验证
 
-端到端验证脚本（27 项：静态站点 4 项、status 9 项、检索 2 项、SPARQL 3 项、条目 4 项、复核写回 5 项）：
+端到端验证脚本（29 项：静态站点 6 项、status 9 项、检索 2 项、SPARQL 3 项、chain 与条目 4 项、复核写回 5 项）：
 
 ```bash
 python ".workbuddy/tools/verify_station.py"     # 需服务已启动
 ```
 
-最近一次运行：**27/27 通过**（写回测试产生的 `复核结果.csv` 已在测试后清理）。
+最近一次运行：**29/29 通过**（写回测试产生的 `复核结果.csv` 已在测试后清理）。

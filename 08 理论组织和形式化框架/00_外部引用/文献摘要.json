@@ -1,0 +1,309 @@
+{
+  "retrieved_at": "2026-10-23",
+  "sources": [
+    "arXiv API export.arxiv.org/api/query",
+    "Crossref api.crossref.org/works"
+  ],
+  "note": "体系外文献的题录与中文概括。题录取自 arXiv/Crossref 公开元数据；中文概括据原文摘要转写，只作阅读定位，不替代原文。",
+  "items": {
+    "arXiv:0912.3183": {
+      "title": "The Berry–Keating operator on L²(R+, dx) and on compact quantum graphs",
+      "authors": [
+        "Sebastian Endres",
+        "Frank Steiner"
+      ],
+      "year": 2009,
+      "url": "https://arxiv.org/abs/0912.3183",
+      "summary_zh": "证明 Berry–Keating 算符在 L²(R+, dx) 上谱纯连续，因此该量子化不能给出以黎曼零点为本征值的 Hilbert–Pólya 算符；并完整分类紧量子图上的自伴扩张。"
+    },
+    "arXiv:math/9811068": {
+      "title": "Trace formula in noncommutative geometry and the zeros of the Riemann zeta function",
+      "authors": [
+        "Alain Connes"
+      ],
+      "year": 1998,
+      "url": "https://arxiv.org/abs/math/9811068",
+      "summary_zh": "把 ζ 的临界零点解释为吸收谱、非临界零点解释为共振；用 Adèle 类非交换空间上的迹公式几何地解释数论显式公式，并把黎曼猜想归约为该迹公式成立。"
+    },
+    "arXiv:1910.14368": {
+      "title": "The Scaling Hamiltonian",
+      "authors": [
+        "Alain Connes",
+        "Caterina Consani"
+      ],
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1910.14368",
+      "summary_zh": "阐明 Berry–Keating 哈密顿量与 ζ 零点谱实现的关系，说明 Connes 的「吸收」图景与 Berry–Keating 半经典「发射」计算不冲突（符号差体现在 Maslov 相位），并给出与黎曼猜想直接相关的算子论半局部框架。"
+    },
+    "arXiv:math/0603275": {
+      "title": "Quantum Knots and Riemann Hypothesis",
+      "authors": [
+        "Sze Kui Ng"
+      ],
+      "year": 2006,
+      "url": "https://arxiv.org/abs/math/0603275",
+      "summary_zh": "由量子规范系统构造量子纽结，建立纽结与整数、素纽结与素数的对应，并导出 von Mangoldt–Selberg–Gutzwiller 型迹公式，用以联系黎曼猜想。"
+    },
+    "arXiv:1104.1850": {
+      "title": "The Berry–Keating Hamiltonian and the Local Riemann Hypothesis",
+      "authors": [
+        "Mark Srednicki"
+      ],
+      "year": 2011,
+      "url": "https://arxiv.org/abs/1104.1850",
+      "summary_zh": "对实情形证明局部黎曼猜想：谐振子本征函数 Mellin 变换零点的虚部，是 Berry–Keating 哈密顿量投影到低能子空间的本征值；并讨论 p 进情形。"
+    },
+    "arXiv:2208.02259": {
+      "title": "Scalar Modular Bootstrap and Zeros of the Riemann Zeta Function",
+      "authors": [
+        "Nathan Benjamin",
+        "Cyuan-Han Chang"
+      ],
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2208.02259",
+      "summary_zh": "导出二维 U(1)^c 共形场论中标量原语算符的交叉方程并给出标量 gap 界；该方程包含 ζ 全部非平凡零点的信息，从而把黎曼猜想重述为某类二维共形场论标量算符渐近密度的命题。"
+    },
+    "arXiv:gr-qc/0703099": {
+      "title": "Does Locality Fail at Intermediate Length-Scales",
+      "authors": [
+        "Rafael D. Sorkin"
+      ],
+      "year": 2007,
+      "url": "https://arxiv.org/abs/gr-qc/0703099",
+      "summary_zh": "论证若量子引力导致基本时空离散、且运动律与洛伦兹变换相容，则物理不能保持定域；给出非定域性延伸至远低于离散尺度之证据（因果集上标量场的非定域运动方程）。"
+    },
+    "arXiv:hep-th/0312046": {
+      "title": "p-Adic and Adelic Quantum Mechanics",
+      "authors": [
+        "Branko Dragovich"
+      ],
+      "year": 2003,
+      "url": "https://arxiv.org/abs/hep-th/0312046",
+      "summary_zh": "综述 p 进与阿黛尔量子力学：p 进/阿黛尔波函数、Feynman 路径积分、迷你超空间宇宙模型及弦论应用；阿黛尔方法给出依赖量子态的时空离散性。"
+    },
+    "arXiv:0707.3876": {
+      "title": "Adeles in Mathematical Physics",
+      "authors": [
+        "Branko Dragovich"
+      ],
+      "year": 2007,
+      "url": "https://arxiv.org/abs/0707.3876",
+      "summary_zh": "简要综述阿黛尔在现代数学物理中的应用，重点介绍阿黛尔乘积。"
+    },
+    "arXiv:1801.05914": {
+      "title": "The De Bruijn–Newman constant is non-negative",
+      "authors": [
+        "Brad Rodgers",
+        "Terence Tao"
+      ],
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1801.05914",
+      "summary_zh": "证明 Newman 猜想 Λ≥0；结合 de Bruijn–Newman 常数的定义，黎曼猜想等价于 Λ≤0。"
+    },
+    "arXiv:1904.12438": {
+      "title": "Effective approximation of heat flow evolution of the Riemann ξ function, and a new upper bound for the de Bruijn–Newman constant",
+      "authors": [
+        "D. H. J. Polymath"
+      ],
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1904.12438",
+      "summary_zh": "研究 ζ 函数热流演化 H_t 的零点随 t 的动力学，并据此给出 de Bruijn–Newman 常数的新上界。"
+    },
+    "arXiv:1602.03292": {
+      "title": "Simplifications of the Keiper/Li approach to the Riemann Hypothesis",
+      "authors": [
+        "André Voros"
+      ],
+      "year": 2016,
+      "url": "https://arxiv.org/abs/1602.03292",
+      "summary_zh": "在 Keiper–Li 常数框架内提出更显式、更易解析分析与数值计算的变体序列。"
+    },
+    "arXiv:2406.01828": {
+      "title": "Spectral Flow for the Riemann zeros",
+      "authors": [
+        "André LeClair"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2406.01828",
+      "summary_zh": "研究单粒子与杂质散射模型中量子化能级随 Re(s) 的谱流；当 σ→1/2 时能级等于 ζ 零点，谱流给出黎曼猜想的判据，并可推广到广义与 Grand 黎曼猜想。"
+    },
+    "arXiv:2307.01254": {
+      "title": "Riemann zeros as quantized energies of scattering with impurities",
+      "authors": [
+        "André LeClair",
+        "Giuseppe Mussardo"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2307.01254",
+      "summary_zh": "构造圆上杂质散射的可积模型，其 Bethe Ansatz 方程的解对应 ζ 非平凡零点的虚部；简单推广后对应 Dirichlet L 函数的非平凡零点。"
+    },
+    "arXiv:0904.4154": {
+      "title": "Anomalous Hall effect",
+      "authors": [
+        "Naoto Nagaosa",
+        "Jairo Sinova",
+        "Shigeki Onoda",
+        "A. H. MacDonald"
+      ],
+      "year": 2009,
+      "url": "https://arxiv.org/abs/0904.4154",
+      "summary_zh": "综述反常霍尔效应的实验与理论进展，指出 Berry 相位把该效应与自旋轨道耦合所导致的霍尔电流的拓扑性质联系起来。"
+    },
+    "arXiv:1812.06193": {
+      "title": "Tullio Regge's legacy: Regge calculus and discrete gravity",
+      "authors": [
+        "John W. Barrett",
+        "Daniele Oriti",
+        "Ruth M. Williams"
+      ],
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1812.06193",
+      "summary_zh": "综述 Regge 微积分与离散引力自 2000 年以来的进展，重点介绍自旋泡沫模型与群场论。"
+    },
+    "arXiv:0907.4325": {
+      "title": "Regge calculus from a new angle",
+      "authors": [
+        "Benjamin Bahr",
+        "Bianca Dittrich"
+      ],
+      "year": 2009,
+      "url": "https://arxiv.org/abs/0907.4325",
+      "summary_zh": "用带宇宙常数的常截面曲率单纯形表述 Regge 微积分，以三维/四维二面角替代边长作为基本变量，并给出一阶表述。"
+    },
+    "arXiv:1211.4365": {
+      "title": "The Geometry of Massless Cosmic Strings",
+      "authors": [
+        "Maarten van de Meent"
+      ],
+      "year": 2012,
+      "url": "https://arxiv.org/abs/1211.4365",
+      "summary_zh": "无质量宇宙弦给出黎曼平坦、沿世界面锥奇异的时空；几何由绕奇异环的和乐（抛物洛伦兹变换）完全确定，并表明不存在伴随的引力冲击波。"
+    },
+    "arXiv:1610.00521": {
+      "title": "Black hole and Hawking radiation by type-II Weyl fermions",
+      "authors": [
+        "G. E. Volovik"
+      ],
+      "year": 2016,
+      "url": "https://arxiv.org/abs/1610.00521",
+      "summary_zh": "II 型 Weyl/Dirac 费米子可在黑洞视界内出现；用倾斜 Weyl 锥区域模拟黑洞，电子态填充伴随 Hawking 辐射，在足够小的黑洞区域可望达到室温。"
+    },
+    "arXiv:2211.14165": {
+      "title": "Emergent spacetime from a Berry-inspired dynamical gauge field coupled to electromagnetism",
+      "authors": [
+        "Patrick Copinger",
+        "Pablo Morales"
+      ],
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2211.14165",
+      "summary_zh": "动量空间 Abelian 相位与电磁场耦合，产生依赖动量规范的涌现时空；经典解给出由库仑场预测的涌现牛顿引力。"
+    },
+    "arXiv:physics/0305108": {
+      "title": "Neutron-gravity interferometry experiment: testing Earth's rotating frequency fluctuations via neutron Berry's phases",
+      "authors": [
+        "Jian-Qi Shen"
+      ],
+      "year": 2003,
+      "url": "https://arxiv.org/abs/physics/0305108",
+      "summary_zh": "提出利用中子自旋与地球自转耦合产生的 Berry 相位差，探测地球自转频率的时间变化。"
+    },
+    "arXiv:2305.01960": {
+      "title": "The Fröhlich–Morchio–Strocchi mechanism: An underestimated legacy",
+      "authors": [
+        "Axel Maas"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.01960",
+      "summary_zh": "讨论微扰论极为成功与基本场论给出相反理由之间的张力，指出 Fröhlich–Morchio–Strocchi 机制解决该张力，并阐述其对粒子本体论乃至量子引力的更广意义。"
+    },
+    "arXiv:2407.00311": {
+      "title": "Yang–Lee Zeros in Quantum Phase Transition: An Entanglement Perspective",
+      "authors": [
+        "Hongchao Li"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2407.00311",
+      "summary_zh": "从量子纠缠角度研究一维 SSH 与 XXZ 模型的 Yang–Lee 零点分布及其边缘奇异性，并用基态纠缠熵刻画量子相变。"
+    },
+    "arXiv:2306.02401": {
+      "title": "Proton decay",
+      "authors": [
+        "Tommy Ohlsson"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2306.02401",
+      "summary_zh": "综述质子衰变的实验现状与各类理论模型的预言（Neutrino 2022 会议报告）。"
+    },
+    "arXiv:math-ph/0412039": {
+      "title": "Lectures on Elliptic Functions and Modular Forms in Conformal Field Theory",
+      "authors": [
+        "Nikolay M. Nikolov",
+        "Ivan T. Todorov"
+      ],
+      "year": 2004,
+      "url": "https://arxiv.org/abs/math-ph/0412039",
+      "summary_zh": "简要综述椭圆函数、模形式与 theta 函数，并重点介绍其在公理化量子场论框架下的共形场论中的应用。"
+    },
+    "arXiv:1110.4547": {
+      "title": "Braided Subfactors, Spectral Measures, Planar Algebras and Calabi–Yau Algebras associated to SU(3) modular invariants",
+      "authors": [
+        "David E. Evans",
+        "Mathew Pugh"
+      ],
+      "year": 2011,
+      "url": "https://arxiv.org/abs/1110.4547",
+      "summary_zh": "综述辫子子因子框架下的 SU(3) 共形场论与模不变量，包括 nimrep 图谱的谱测度、A2 平面代数与近 Calabi–Yau 代数。"
+    },
+    "arXiv:2111.12716": {
+      "title": "Automorphic Spectra and the Conformal Bootstrap",
+      "authors": [
+        "Petr Kravchuk",
+        "Dalimil Mazáč",
+        "Sridip Pal"
+      ],
+      "year": 2021,
+      "url": "https://arxiv.org/abs/2111.12716",
+      "summary_zh": "利用自守形式四乘积谱分解的一致性、PSL2(R) 表示论与半定规划，给出双曲曲面与二维 orbifold 的 Laplace 谱隙严格上界。"
+    },
+    "arXiv:0712.0705": {
+      "title": "A quantum mechanical model of the Riemann zeros",
+      "authors": [
+        "Germán Sierra"
+      ],
+      "year": 2007,
+      "url": "https://arxiv.org/abs/0712.0705",
+      "summary_zh": "推广 Berry–Keating 的 xp 模型：引入相空间边界函数与依赖边界波函数的相互作用项并精确求解，得到连续谱中嵌入离散束缚态，边界波函数与 ζ 零点相关。"
+    },
+    "arXiv:1609.06079": {
+      "title": "Migdal–Eliashberg equations — the effective model for superconducting state in H3S",
+      "authors": [
+        "A. P. Durajski",
+        "R. Szczęśniak"
+      ],
+      "year": 2016,
+      "url": "https://arxiv.org/abs/1609.06079",
+      "summary_zh": "用非绝热、非谐 Migdal–Eliashberg 方程研究 H3S 超导；顶点修正降低库仑赝势，非谐效应反向移动 μ*，结果表明 Migdal–Eliashberg 方程可作为有效模型。"
+    },
+    "DOI:10.1007/BF01589495": {
+      "title": "Hecke algebras, type III factors and phase transitions with spontaneous symmetry breaking in number theory",
+      "authors": [
+        "Jean-Benoît Bost",
+        "Alain Connes"
+      ],
+      "year": 1995,
+      "url": "https://doi.org/10.1007/BF01589495",
+      "summary_zh": "构造量子统计系统，其配分函数为 ζ(β)，并在 β=1 处发生自发对称破缺相变。"
+    },
+    "DOI:10.1103/y9z4-v641": {
+      "title": "Proof of a Universal Speed Limit on Fast Scrambling in Quantum Systems",
+      "authors": [
+        "Vikram",
+        "Shou",
+        "Galitski"
+      ],
+      "year": 2026,
+      "url": "https://doi.org/10.1103/y9z4-v641",
+      "summary_zh": "证明量子系统中快速置乱存在普适速度上限。"
+    }
+  }
+}

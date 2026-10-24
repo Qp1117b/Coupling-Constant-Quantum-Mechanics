@@ -310,7 +310,7 @@ $$\text{上层同步算符谱} \;\longrightarrow\; \text{下层嘉当矩阵/几�
 |:---|:---|:---|:---|
 | Hilbert–Pólya | 1914+ | — | 自伴算符 H，本征值=黎曼零点虚部 |
 | Montgomery | 1973 | — | 对关联猜想=GUE |
-| Bost–Connes | 1995 | arXiv:1012.4665 | Z(β)=ζ(β)量子统计系统 |
+| Bost–Connes | 1995 | DOI:10.1007/BF01589495 | Z(β)=ζ(β)量子统计系统 |
 | Berry–Keating | 1999 | — | H=xp算符，semiclassical |
 | Connes | 2019 | arXiv:1910.14368 | 缩放哈密顿量，谱实现 |
 | Ng | 2006 | arXiv:math/0603275 | Virasoro c=1/2谱实现 |

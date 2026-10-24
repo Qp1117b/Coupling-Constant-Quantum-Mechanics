@@ -142,6 +142,16 @@ def main():
 
 
 def write_docs(seed_set, cname, rules, order, depth, available, step, ctype):
+    # 文档中的规模数字一律构建期从源文件读出（不写死），口径与各自数据源一致
+    props = read_csv(os.path.join(S01, "命题表.csv"))
+    n_concept = len(cname)                                   # 01_结构化数据/概念表.csv 行数
+    n_prop = len(props)                                      # 01_结构化数据/命题表.csv 行数
+    n_gap = sum(1 for p in props if p["type"] == "缺口")
+    lean_dir = os.path.join(ROOT, "04_Lean对接", "Lean结构提取")
+    n_lean_mod = len(read_csv(os.path.join(lean_dir, "模块清单.csv")))
+    with open(os.path.join(lean_dir, "declarations.json"), encoding="utf-8") as f:
+        n_lean_decl = len(json.load(f))
+
     with open(os.path.join(ROOT, "06_动态机制", "重写规则", "重写规则.md"), "w", encoding="utf-8") as f:
         f.write(f"""# CQM 重写系统（动态机制 · 重写规则）
 
@@ -191,10 +201,10 @@ $$s_t = \\bigl(\\mathcal K_t,\\ \\mathcal P_t,\\ \\mathcal G_t,\\ \\mathcal L_t\
 
 | 分量 | 含义 | 当前取值 | 数据源 |
 |:---|:---|:---|:---|
-| $\\mathcal K_t$ | 概念集 | 82 | `01_结构化数据/概念表.csv` |
-| $\\mathcal P_t$ | 命题集（含定理/假设/构造/猜想） | 63 | `01_结构化数据/命题表.csv` |
-| $\\mathcal G_t$ | 缺口集及其状态 | 24（含闭合/未闭合/axiom） | `01_结构化数据/缺口依赖闭包.md` |
-| $\\mathcal L_t$ | Lean 形式化状态 | 68 模块 / 1388 声明 | `04_Lean对接/Lean结构提取/` |
+| $\\mathcal K_t$ | 概念集 | {n_concept} | `01_结构化数据/概念表.csv` |
+| $\\mathcal P_t$ | 命题集（含定理/假设/构造/猜想） | {n_prop} | `01_结构化数据/命题表.csv` |
+| $\\mathcal G_t$ | 缺口集及其状态 | {n_gap}（含闭合/未闭合/axiom） | `01_结构化数据/缺口依赖闭包.md` |
+| $\\mathcal L_t$ | Lean 形式化状态 | {n_lean_mod} 模块 / {n_lean_decl} 声明 | `04_Lean对接/Lean结构提取/` |
 
 ## 二、转移算子（演化事件）
 
@@ -210,7 +220,7 @@ $$s_t = \\bigl(\\mathcal K_t,\\ \\mathcal P_t,\\ \\mathcal G_t,\\ \\mathcal L_t\
 
 ## 三、当前初始状态
 
-见 `初始状态.json`：种子概念 {len(seed_set)} 个（结构根），前向派生可达 {len(available)}/82 个概念。
+见 `初始状态.json`：种子概念 {len(seed_set)} 个（结构根），前向派生可达 {len(available)}/{n_concept} 个概念。
 
 ## 四、与重写系统的接口
 
@@ -236,7 +246,7 @@ python simulate.py            # 复算派生轨迹并校验与已生成 CSV 一�
 
 ## 三、结果
 
-- 派生轮数 {step}；触发规则 {len(order)} 条；可达概念 {len(available)}/82。
+- 派生轮数 {step}；触发规则 {len(order)} 条；可达概念 {len(available)}/{n_concept}。
 - 不可达概念（需理论外输入或为终端/接口概念）：见 `dynamic_hypergraph.json` → `dynamics.unreachable_concepts`。
 
 ## 四、产物

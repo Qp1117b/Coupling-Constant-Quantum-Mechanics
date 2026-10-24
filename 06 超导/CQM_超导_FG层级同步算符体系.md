@@ -289,7 +289,7 @@ $$\delta_v(\text{晶胞}) = \underbrace{\delta_{v,\text{intrinsic}}^{\text{mol}}
 
 ### 8.1 谱传递规则
 
-$$\boxed{\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩阵/几何的输入} \;\Longrightarrow\; \text{下层同步算符}}$$
+$$\boxed{\text{上层同步算符谱} \;\longrightarrow\; \text{下层嘉当矩阵/几何的输入} \;\longrightarrow\; \text{下层同步算符}}$$
 
 具体传递边：
 
@@ -302,9 +302,9 @@ $$\boxed{\text{上层同步算符谱} \;\Longrightarrow\; \text{下层嘉当矩�
 $$\boxed{
 \begin{aligned}
 &\text{① 质子 } A_4 + \text{中子 } D(\delta) \xrightarrow{\text{链B}} \mathcal{C}_{\text{el}} \\
-&\xrightarrow{\text{②}} \hat{\mathcal{S}}_{\text{el}} = V_0 + L_{\text{orbital}} \text{ 谱} \Rightarrow \text{Madelung 排布 / 价壳层}\\
+&\xrightarrow{\text{②}} \hat{\mathcal{S}}_{\text{el}} = V_0 + L_{\text{orbital}} \text{ 谱} \longrightarrow \text{Madelung 排布 / 价壳层}\\
 &\xrightarrow{\text{③}} \mathcal{C}_{\text{molecule}} = \bigoplus_k \mathcal{C}_{\text{el}}(k) + \sum_{i<j} T_{ij} \\
-&\xrightarrow{\text{④}} \hat{\mathcal{S}}_{\text{mol}} = V_0 + L_{\text{mol}} \text{ 谱} \Rightarrow \text{分子轨道 + 键几何}\\
+&\xrightarrow{\text{④}} \hat{\mathcal{S}}_{\text{mol}} = V_0 + L_{\text{mol}} \text{ 谱} \longrightarrow \text{分子轨道 + 键几何}\\
 &\xrightarrow{\text{⑤}} \delta_{v,\text{intrinsic}}^{\text{mol}} \text{（球面角亏，实际 vs 理想杂化）}\\
 &\xrightarrow{\text{⑥ 周期性凝聚}} \mathcal{C}_{\text{unit\_cell}} \text{（链B）} + \text{晶胞 Regge 几何（链A）}\\
 &\xrightarrow{\text{⑦}} \delta_v = \delta_{v,\text{intrinsic}}^{\text{mol}} + \Delta\delta_{\text{defect}}\\

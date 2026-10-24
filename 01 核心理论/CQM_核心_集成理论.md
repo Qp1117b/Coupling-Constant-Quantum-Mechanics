@@ -96,7 +96,7 @@ $\mu$ **不驱动动力学**，而是**存在论条件**——质子必须满足
 
 从因果集理论（Bombelli, Lee, Meyer & Sorkin, 1987）继承的公理：
 
-> **公理 I（本体论）**：物理实在由因果集 $C = (X, \prec)$ 构成，其中 $X$ 为事件集合，$\prec$ 为因果序关系，满足局部有限性（$|\text{Past}(x)| < \infty$）、反自反性（$x \nprec x$）、传递性（$x \prec y \prec z \Rightarrow x \prec z$）。
+> **公理 I（本体论）**：物理实在由因果集 $C = (X, \prec)$ 构成，其中 $X$ 为事件集合，$\prec$ 为因果序关系，满足局部有限性（$|\text{Past}(x)| < \infty$）、反自反性（$x \nprec x$）、传递性（$x \prec y \prec z \rightarrow x \prec z$）。
 >
 > **公理 II（Sprinkling，撒点测度）**：因果集通过泊松 Sprinkling 嵌入连续几何，密度 $\rho = l^{-d}$，$l$ 为基本长度，$d$ 为壳层维度。
 >
