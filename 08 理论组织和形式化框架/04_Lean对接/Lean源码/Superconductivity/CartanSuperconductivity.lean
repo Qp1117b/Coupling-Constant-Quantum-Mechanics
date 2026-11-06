@@ -347,7 +347,7 @@ theorem cartanA4Stack_trace_eq {n : ℕ} : Matrix.trace (cartanA4Stack n) = 8 * 
 
 /-- A₄ 的 Matrix.det（统一行列式入口）= 5（与显式公式 det4 一致）。 -/
 theorem cartanA4_det_matrix : (cartanA4 : Matrix (Fin 4) (Fin 4) ℤ).det = 5 := by
-  native_decide
+  decide
 
 /-- 行列式的拼接：det(⨁ₖ A₄) = 5ⁿ——每块仍为 det(A₄) = 5
     （正四单纯型"禁闭体积"尺度不因拼接稀释；n = 质子数）。 -/

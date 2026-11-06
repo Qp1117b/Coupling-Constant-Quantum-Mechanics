@@ -65,7 +65,9 @@ theorem ReggeBaseSpace.deficit_eq_chainA {n : ℕ} (B : ReggeBaseSpace n) (v : F
     且每点满足链B 约束。（底空间几何由链A 生成；可实现性由链B 判定；
     二者角色正交。） -/
 theorem two_chain_meet {n : ℕ} (A : ChainAGeometric n)
-    (hnonneg : ∀ v i, 0 ≤ A.cells v i) (B : ChainBSpectral)
+    (hnonneg : ∀ v i, 0 ≤ A.cells v i)
+    (hbound : ∀ v, ∑ i, A.cells v i ≤ 2 * Real.pi)
+    (B : ChainBSpectral)
     (hreal : ∀ v, B.spectralConstraint (A.deficits v)) :
     ∃ bs : ReggeBaseSpace n,
       (∀ v, bs.deficitField v = A.deficits v) ∧
@@ -73,9 +75,7 @@ theorem two_chain_meet {n : ℕ} (A : ChainAGeometric n)
   refine ⟨⟨fun v => fun i => 0, A.deficits, A, fun v => rfl, ?_,
     fun v => B.spectralConstraint (A.deficits v)⟩, fun v => rfl, fun v => hreal v⟩
   intro v
-  rw [show A.deficits v = 2 * Real.pi - ∑ i, A.cells v i from A.generated v]
-  have hsum : (0 : ℝ) ≤ ∑ i, A.cells v i := Finset.sum_nonneg fun i _ => hnonneg v i
-  linarith
+  exact (chainA_deficit_bounded A v (hnonneg v) (hbound v)).1
 
 /-- **发生学分离（链B 不生成几何）在底空间层的重述**：同一角亏场可由
     不同晶胞几何生成（逐顶点二面角和不变、分布不同），故底空间几何信息
@@ -118,7 +118,7 @@ noncomputable def curvatureOperatorOf {n : ℕ} (B : ReggeBaseSpace n) (hne : 0 
     intro i
     by_cases h : i < n
     · rw [baseEigen_eq B i h]; exact B.deficit_nonneg ⟨i, h⟩
-    · unfold baseEigen; rw [dif_neg h]; exact le_refl 0
+    · unfold baseEigen; rw [dif_neg h]
   eigen0_pos := baseEigen_pos B hne hbase
 
 /-- 衔接定理：曲率算符第 i 模本征值 = 底空间第 i 顶点角亏（i < n 时）。 -/

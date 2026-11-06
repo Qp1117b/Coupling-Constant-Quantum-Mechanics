@@ -36,7 +36,7 @@ noncomputable def properTimeFlow (beta delta : ℝ) : ℝ := Real.sqrt (1 - beta
 
 /- 固有时流速正性（在 $\beta>0, 0\le\delta<1/\beta$ 下）：根号内为正。 -/
 noncomputable def properTimeFlow_pos {beta delta : ℝ}
-    (hbeta : beta > 0) (hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) :
+    (hbeta : beta > 0) (_hdelta : 0 ≤ delta) (hbound : delta < 1 / beta) :
     properTimeFlow beta delta > 0 := by
   have h_beta_delta : beta * delta < 1 := by
     have h : beta * delta < beta * (1 / beta) := mul_lt_mul_of_pos_left hbound hbeta

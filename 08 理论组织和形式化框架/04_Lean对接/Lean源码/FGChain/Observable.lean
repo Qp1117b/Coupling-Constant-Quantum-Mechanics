@@ -48,9 +48,12 @@ noncomputable def hydrogenLevel (R : ℝ) (n : ℕ) : ℝ :=
 theorem hydrogenLevel_neg (R : ℝ) (hR : 0 < R) (n : ℕ) : hydrogenLevel R n < 0 := by
   unfold hydrogenLevel
   have hp : (0 : ℝ) < (((n + 1 : ℕ) : ℝ) ^ 2) := by
-    refine pow_pos (a := (((n + 1 : ℕ) : ℝ))) 2 ?_
-    exact_mod_cast Nat.succ_pos n
-  have := div_pos hR hp
+    have h : (0 : ℝ) < ((n + 1 : ℕ) : ℝ) := by exact_mod_cast Nat.succ_pos n
+    exact pow_pos h 2
+  have hpos : 0 < R / (((n + 1 : ℕ) : ℝ) ^ 2) := div_pos hR hp
+  have hneg : -R / (((n + 1 : ℕ) : ℝ) ^ 2) = -(R / (((n + 1 : ℕ) : ℝ) ^ 2)) := by
+    field_simp
+  rw [hneg]
   linarith
 
 /-- **基态能量**：E_0 = −R——基态结合能 = 里德伯常数。 -/
@@ -73,6 +76,9 @@ theorem hydrogenLevel_gap (R : ℝ) (n : ℕ) :
       = R * ((2 : ℝ) * n + 3) / ((((n + 1 : ℕ) : ℝ)) ^ 2 * (((n + 2 : ℕ) : ℝ)) ^ 2) := by
   unfold hydrogenLevel
   push_cast
+  have h1 : (((n + 1 : ℕ) : ℝ)) ≠ 0 := by positivity
+  have h2 : (((n + 2 : ℕ) : ℝ)) ≠ 0 := by positivity
+  field_simp
   ring
 
 /-- **能级单调上升**：E_n < E_{n+1}（n 越大结合越弱，趋近电离极限 0）。 -/
@@ -92,7 +98,7 @@ theorem hydrogenLevel_antitone (R : ℝ) (hR : 0 < R) (n : ℕ) :
 
 /-- **巴尔末系（跃迁能量）**：从第 m 激发态跃迁到第 n 能级（n < m）
     释放光子能量 E_m − E_n = R(1/N_n² − 1/N_m²)——氢光谱线系公式。 -/
-theorem balmerSeries (R : ℝ) (n m : ℕ) (hmn : n < m) :
+theorem balmerSeries (R : ℝ) (n m : ℕ) (_hmn : n < m) :
     hydrogenLevel R m - hydrogenLevel R n
       = R * (1 / (((n + 1 : ℕ) : ℝ)) ^ 2 - 1 / (((m + 1 : ℕ) : ℝ)) ^ 2) := by
   unfold hydrogenLevel
@@ -187,7 +193,7 @@ theorem transitionCoupling_n2 : transitionCoupling 2 = Real.log 4 := by
   unfold transitionCoupling
   have h4 : ((4 : ℝ)) = (2 : ℝ) ^ 2 := by norm_num
   rw [h4, Real.log_pow]
-  ring
+  ring_nf
 
 /-- **跃迁资格条件（一般形式）**：跃迁耦级 Δu_n = 2 ln n 所需的最小
     角亏涨落为 ☯√(1−βδ_v)/(2β ln n) > 0（n ≥ 2）——衔接
@@ -195,8 +201,8 @@ theorem transitionCoupling_n2 : transitionCoupling 2 = Real.log 4 := by
     （超导资格条件的链路级形式）。 -/
 theorem transitionCriterion_general (β δv C n : ℝ) (hβ : 0 < β) (hδ : 0 ≤ δv)
     (hbound : δv < 1 / β) (hC : 0 < C) (hn : 2 ≤ n) :
-    0 < C * Superconductivity.CQM.properTimeFlow β δv / (2 * β * Real.log n) :=
-  CurvatureOperator.transition_qualification_threshold_pos β δv C n hβ hδ hbound hC hn
+    0 < C * properTimeFlow β δv / (2 * β * Real.log n) :=
+  transition_qualification_threshold_pos β δv C n hβ hδ hbound hC hn
 
 /-! ## 4. BCS 临界温度（与既有库 G13 闭合的联结） -/
 
@@ -211,11 +217,14 @@ noncomputable def bcsTcFormula (omegaD lam : ℝ) : ℝ :=
     Real.exp (-1 / lam)
 
 /-- BCS 临界温度为正（ω_D > 0, λ > 0）：有序相可实现。 -/
-theorem bcsTcFormula_pos (omegaD lam : ℝ) (hω : 0 < omegaD) (hλ : 0 < λ) :
+theorem bcsTcFormula_pos (omegaD lam : ℝ) (hω : 0 < omegaD) (_hlam : 0 < lam) :
     0 < bcsTcFormula omegaD lam := by
   unfold bcsTcFormula
-  refine mul_pos (div_pos (mul_pos two_pos (Real.exp_pos _)) Real.pi_pos)
-    (mul_pos hω (Real.exp_pos _))
+  have h1 : 0 < 2 * Real.exp (Real.eulerMascheroniConstant) / Real.pi :=
+    div_pos (mul_pos two_pos (Real.exp_pos _)) Real.pi_pos
+  have h2 : 0 < (2 * Real.exp (Real.eulerMascheroniConstant) / Real.pi) * omegaD :=
+    mul_pos h1 hω
+  exact mul_pos h2 (Real.exp_pos _)
 
 /-! ## 5. 验收总链：FG 链路的端到端可观测预言 -/
 
@@ -241,6 +250,6 @@ theorem observable_chain_complete :
       cumulativeLength 4 = 32) ∧
     (∀ omegaD lam : ℝ, 0 < omegaD → 0 < lam → 0 < bcsTcFormula omegaD lam) := by
   refine ⟨fun R hR n => hydrogenLevel_neg R hR n, shellCapacity_values,
-    cumulativeLength_values, fun ω λ hω hλ => bcsTcFormula_pos ω λ hω hλ⟩
+    cumulativeLength_values, fun w l hw hl => bcsTcFormula_pos w l hw hl⟩
 
 end CQM.FGChain

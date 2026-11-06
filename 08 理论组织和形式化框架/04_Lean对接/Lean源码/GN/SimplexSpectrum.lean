@@ -117,7 +117,7 @@ theorem edgeFaceMatrix_symm : edgeFaceMatrixᵀ = edgeFaceMatrix := by
     对角元均为 3（每条边属于 3 个三角面），10 × 3 = 30。
     等价于边-面关联矩阵 `E` 中 1 的个数 = 10 个面 × 每面 3 边。 -/
 theorem edgeFaceMatrix_trace_eq_30 : edgeFaceMatrix.trace = 30 := by
-  native_decide
+  decide
 
 /-- [定理 2.1 的矩条件一] 迹 = 9·1 + 4·4 + 1·5（与谱重数一致）。 -/
 theorem trace_matches_spectrum_moments :
@@ -128,7 +128,7 @@ theorem trace_matches_spectrum_moments :
 /-- [定理 2.1 的矩条件二] `Tr(M²) = 150 = 9² + 4²·4 + 1²·5`。 -/
 theorem edgeFaceMatrix_trace_sq_eq_150 :
     (edgeFaceMatrix * edgeFaceMatrix).trace = 150 := by
-  native_decide
+  decide
 
 /-- 二阶矩与谱重数一致：`81 + 64 + 5 = 150`。 -/
 theorem trace_sq_matches_spectrum_moments :
@@ -149,7 +149,7 @@ def allOnesVec : Fin 10 → ℤ := fun _ => 1
 theorem edgeFaceMatrix_allOnes :
     ∀ i : Fin 10, ∑ j : Fin 10, edgeFaceMatrix i j * allOnesVec j = 9 := by
   intro i
-  fin_cases i <;> native_decide
+  fin_cases i <;> decide
 
 /-- 全一向量本征方程的矩阵形式：`M · 𝟙 = 9 · 𝟙`。 -/
 theorem edgeFaceMatrix_mul_allOnes :
@@ -172,7 +172,7 @@ theorem eigenvalue_nine_exists : ∃ v : Fin 10 → ℤ,
 
 直接构造 10 个本征向量（λ = 9, 4, 1 各一组），证线性无关，
 经 ℚ 上矩阵共轭把 `charpoly` 化为对角阵的特征多项式。
-避免对 10×10 `Matrix.det` 做 `native_decide`（会栈溢出）。 -/
+避免对 10×10 `Matrix.det` 做 `decide`（会栈溢出）。 -/
 
 /-- 本征值 4 的本征向量 `gᵢ(S) = 5·[i ∈ S] − 2`（按边枚举；仅需 i = 0…3）。 -/
 def gVec (i : Fin 4) : Fin 10 → ℤ := fun e =>
@@ -235,20 +235,20 @@ theorem eigValCol_cyc (l : Fin 5) : eigValCol ⟨l.val + 5, by omega⟩ = 1 := b
 
 /-- 各本征向量非零。 -/
 theorem colVec_ne_zero : ∀ j : Fin 10, colVec j ≠ 0 := by
-  native_decide
+  decide
 
 theorem gVec_ne_zero : ∀ k : Fin 4, gVec k ≠ 0 := by
-  native_decide
+  decide
 
 theorem cycVec_ne_zero : ∀ l : Fin 5, cycVec l ≠ 0 := by
-  native_decide
+  decide
 
 /-- 本征方程 `M · colVec j = eigValCol j · colVec j`（逐列）。 -/
 theorem edgeFaceMatrix_colVec_eigen :
     ∀ j i : Fin 10,
       ∑ k, edgeFaceMatrix i k * colVec j k = eigValCol j * colVec j i := by
   intro j i
-  fin_cases j <;> fin_cases i <;> native_decide
+  fin_cases j <;> fin_cases i <;> decide
 
 /-- 矩阵形式 `M · P = P · D`。 -/
 theorem edgeFaceMatrix_mul_eigBasis :
@@ -267,14 +267,15 @@ def gEvalMat : Matrix (Fin 4) (Fin 4) ℤ := fun k i =>
   gVec i ((![0, 1, 2, 4] : Fin 4 → Fin 10) k)
 
 theorem gEvalMat_det_ne_zero : gEvalMat.det ≠ 0 := by
-  native_decide
+  decide
 
 /-- λ=1 组：在边 0,1,2,5,6 上取值构成的 5×5 求值矩阵，行列式非零。 -/
 def cycEvalMat : Matrix (Fin 5) (Fin 5) ℤ := fun k i =>
   cycVec i ((![0, 1, 2, 5, 6] : Fin 5 → Fin 10) k)
 
+set_option maxRecDepth 8000 in
 theorem cycEvalMat_det_ne_zero : cycEvalMat.det ≠ 0 := by
-  native_decide
+  decide
 
 /-- g₀…g₃ 线性无关。 -/
 theorem gVec_linearIndependent : LinearIndependent ℤ (fun i : Fin 4 => gVec i) := by
@@ -410,7 +411,7 @@ theorem splitIdx_injective : Function.Injective splitIdx := by
 
 theorem colVec_eq_grouped : colVec = colGrouped ∘ splitIdx := by
   funext j i
-  fin_cases j <;> fin_cases i <;> native_decide
+  fin_cases j <;> fin_cases i <;> decide
 
 theorem colGrouped_linearIndependent : LinearIndependent ℤ colGrouped := by
   delta colGrouped

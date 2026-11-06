@@ -69,6 +69,7 @@ digraph LeanImports {
   "GN" -> "GN.SierraCQM";
   "GN" -> "GN.SimplexSpectrum";
   "GN" -> "GN.AdeleJacobian";
+  "GN" -> "GN.ModularTrace";
   "GN" -> "GN.Constructions";
   "GN.AdeleJacobian" -> "GN.Basic";
   "GN.Basic" -> "SpectralGeometry.Basic";
@@ -77,6 +78,7 @@ digraph LeanImports {
   "GN.Constructions" -> "GN.AdeleJacobian";
   "GN.Constructions" -> "SpectralGeometry.Basic";
   "GN.Constructions" -> "PhysicalConstants.Basic";
+  "GN.ModularTrace" -> "GN.AdeleJacobian";
   "GN.SierraCQM" -> "GN.Basic";
   "GN.SimplexSpectrum" -> "GN.Basic";
   "GN.SimplexSpectrum" -> "CartanAlgebra.Basic";
@@ -110,9 +112,11 @@ digraph LeanImports {
   "PrimeGeometry.WindingDensity" -> "PrimeGeometry.Basic";
   "SpectralGeometry" -> "SpectralGeometry.Basic";
   "SpectralGeometry" -> "SpectralGeometry.GLnTrivialSpectralQuantum";
+  "SpectralGeometry" -> "SpectralGeometry.Mathieu";
   "SpectralGeometry.Basic" -> "CartanAlgebra.Basic";
   "SpectralGeometry.Basic" -> "CouplingSpace.Basic";
   "SpectralGeometry.Basic" -> "SpectralGeometry.MathieuContinuedFraction";
+  "SpectralGeometry.GLnTrivialSpectralQuantum" -> "CartanAlgebra.Basic";
   "SpectralGeometry.GLnTrivialSpectralQuantum" -> "SpectralGeometry.Basic";
   "SpectralGeometry.GLnTrivialSpectralQuantum" -> "SpectralGeometry.RiemannXi";
   "SpectralGeometry.Mathieu" -> "CartanAlgebra.Basic";
@@ -126,6 +130,8 @@ digraph LeanImports {
   "Superconductivity" -> "Superconductivity.FirstPrinciples";
   "Superconductivity" -> "Superconductivity.SPAF";
   "Superconductivity" -> "Superconductivity.MolecularGeometry";
+  "Superconductivity" -> "Superconductivity.BridgeTheorems";
+  "Superconductivity" -> "Superconductivity.ElementCartan";
   "Superconductivity" -> "Superconductivity.FormalizationRigor";
   "Superconductivity" -> "Superconductivity.DeepConstruction";
   "Superconductivity" -> "Superconductivity.DeepResearch";

@@ -83,13 +83,16 @@ theorem SyncOperatorFull.nucleonPart_pos (s : SyncOperatorFull) :
   unfold nucleonPart
   have hsqrt : 0 < Real.sqrt (1 - s.beta * s.curvatureEigen) := by
     apply Real.sqrt_pos.mpr
+    have hb := s.curvature_bound
     linarith
-  have hden : 0 < 2 * Real.pi * s.C := by positivity
-  exact div_pos s.Lu_pos hden |>.mul_pos hsqrt
+  have hden : 0 < 2 * Real.pi * s.C := by
+    have hC := s.C_pos
+    positivity
+  exact mul_pos (div_pos s.Lu_pos hden) hsqrt
 
 /-- **Casimir 部分**：Ĉ₂(G_k) = C_k = l_k(l_k+1) + 3/4。
     从 `CartanToShell.casimirEigenvalue` 严格给出。 -/
-noncomputable def SyncOperatorFull.casimirPart (s : SyncOperatorFull) (k : ℕ) : ℝ :=
+noncomputable def SyncOperatorFull.casimirPart (_s : SyncOperatorFull) (k : ℕ) : ℝ :=
   casimirEigenvalue k
 
 /-- **同步算符完整本征值**：
@@ -136,11 +139,10 @@ theorem ConstraintEquation.couplingLevel_eq_casimir (s : SyncOperatorFull)
 noncomputable def syncEigenstate (Lu : ℝ) (n_k : ℝ) (u : ℝ) : ℂ :=
   (1 / Real.sqrt Lu) * Complex.exp (Complex.I * (2 * Real.pi * n_k / Lu) * u)
 
-/-- 本征态归一化（在 [0, L_u] 上）：
-    ∫₀^{L_u} |Ψ_k(u)|² du = 1（平面波正交归一化）。 -/
-theorem syncEigenstate_normalized (Lu n_k : ℝ) (hLu : 0 < Lu) :
-    True := by
-  trivial
+/-- 本征态归一化的目标命题（待证）：
+    ∫₀^{L_u} |Ψ_k(u)|² du = 1（平面波正交归一化）。
+    本 `def` 只登记命题，未给出证明；`Prop := True` 不构成证明。 -/
+def syncEigenstateNormalizationClaim (_Lu _n_k : ℝ) : Prop := True
 
 /-! ## 4. 同步成本 s_k = n_k + l_k（环节15c，续） -/
 
@@ -167,7 +169,14 @@ theorem syncCost_strictMono {k₁ k₂ : ℕ} (hk₁ : 1 ≤ k₁) (hk₂ : 1 �
   unfold syncCost shellLabel
   have h1 : casimirEigenvalue k₁ < casimirEigenvalue k₂ :=
     casimirEigenvalue_strictMono hk₁ hk₂ hlt
-  have h2 : (k₁ - 1 : ℝ) < k₂ - 1 := by exact_mod_cast hlt
+  have c₁ : ((k₁ - 1 : ℕ) : ℝ) = (k₁ : ℝ) - 1 := by
+    rw [Nat.cast_sub hk₁]
+    norm_num
+  have c₂ : ((k₂ - 1 : ℕ) : ℝ) = (k₂ : ℝ) - 1 := by
+    rw [Nat.cast_sub hk₂]
+    norm_num
+  rw [c₁, c₂]
+  have h2 : (k₁ : ℝ) < (k₂ : ℝ) := by exact_mod_cast hlt
   linarith
 
 /-- **Aufbau 填充顺序**：s₁ < s₂ < s₃ < s₄（s → p → d → f）。 -/
@@ -189,7 +198,7 @@ noncomputable def couplingHierarchy (alpha : ℝ) (k : ℕ) : ℝ :=
 /-- **基态耦合常数** g₁ = α（k = 1 时指数为零）。 -/
 theorem couplingHierarchy_ground (alpha : ℝ) : couplingHierarchy alpha 1 = alpha := by
   unfold couplingHierarchy
-  rw [sub_self, zero_div, Real.exp_zero, mul_one]
+  simp
 
 /-- **耦合常数层级递减**：k 越大，g_k 越小（α > 0 时）。
     高壳层耦合更弱（Casimir 阶梯从 U(1) 锚导出）。 -/
@@ -200,17 +209,10 @@ theorem couplingHierarchy_decreasing (alpha : ℝ) (halpha : 0 < alpha)
   have h1 : casimirEigenvalue 1 > 0 := casimirEigenvalue_pos 1 (by omega)
   have h2 : casimirEigenvalue k₁ < casimirEigenvalue k₂ :=
     casimirEigenvalue_strictMono hk₁ hk₂ hlt
-  have h3 : 0 < casimirEigenvalue k₂ - casimirEigenvalue k₁ := by linarith
-  have h4 : 0 < casimirEigenvalue k₂ - casimirEigenvalue 1 := by
-    have := casimirEigenvalue_strictMono (by omega) hk₂ (by omega)
-    linarith
-  have h5 : 0 < casimirEigenvalue k₁ - casimirEigenvalue 1 := by
-    have := casimirEigenvalue_strictMono (by omega) hk₁ (by omega)
-    linarith
-  have h6 : (casimirEigenvalue k₂ - casimirEigenvalue 1) / casimirEigenvalue 1 >
-    (casimirEigenvalue k₁ - casimirEigenvalue 1) / casimirEigenvalue 1 := by
-    rw [div_lt_div_iff h1 h1]
-    linarith
+  have h6 : (casimirEigenvalue k₁ - casimirEigenvalue 1) / casimirEigenvalue 1 <
+    (casimirEigenvalue k₂ - casimirEigenvalue 1) / casimirEigenvalue 1 := by
+    rw [div_lt_div_iff₀ h1 h1]
+    exact mul_lt_mul_of_pos_right (by linarith) h1
   have h7 : Real.exp (-((casimirEigenvalue k₂ - casimirEigenvalue 1) / casimirEigenvalue 1)) <
     Real.exp (-((casimirEigenvalue k₁ - casimirEigenvalue 1) / casimirEigenvalue 1)) := by
     apply Real.exp_strictMono
@@ -227,10 +229,8 @@ theorem couplingHierarchy_ratio_21 (alpha : ℝ) (halpha : 0 < alpha) :
     couplingHierarchy alpha 2 / couplingHierarchy alpha 1 = Real.exp (-(8 / 3)) := by
   rw [couplingHierarchy_ground, couplingHierarchy]
   unfold casimirEigenvalue shellLabel
-  push_cast
-  rw [mul_div_cancel₀ _ (ne_of_gt halpha)]
-  congr 1
-  norm_num
+  field_simp
+  ring_nf
 
 /-! ## 6. 谱分解 → 壳层结构（环节15e） -/
 
@@ -265,12 +265,12 @@ theorem syncOperator_to_observable_complete (s : SyncOperatorFull) :
     (shellCapacityFromCasimir 1 = 2 ∧ shellCapacityFromCasimir 2 = 6 ∧
       shellCapacityFromCasimir 3 = 10 ∧ shellCapacityFromCasimir 4 = 14) := by
   refine ⟨fun k hk => s.fullEigenvalue_pos k hk,
-    by unfold fullEigenvalue casimirPart casimirEigenvalue shellLabel; norm_num,
-    by unfold fullEigenvalue casimirPart casimirEigenvalue shellLabel; norm_num,
-    by unfold fullEigenvalue casimirPart casimirEigenvalue shellLabel; norm_num,
-    by unfold fullEigenvalue casimirPart casimirEigenvalue shellLabel; norm_num,
+    by unfold SyncOperatorFull.fullEigenvalue SyncOperatorFull.casimirPart casimirEigenvalue shellLabel; norm_num,
+    by unfold SyncOperatorFull.fullEigenvalue SyncOperatorFull.casimirPart casimirEigenvalue shellLabel; norm_num,
+    by unfold SyncOperatorFull.fullEigenvalue SyncOperatorFull.casimirPart casimirEigenvalue shellLabel; norm_num,
+    by unfold SyncOperatorFull.fullEigenvalue SyncOperatorFull.casimirPart casimirEigenvalue shellLabel; norm_num,
     aufbau_order,
-    by rw [couplingHierarchy_ground]; norm_num,
+    by rw [couplingHierarchy_ground],
     shellCapacityFromCasimir_values⟩
 
 end CQM.FGChain

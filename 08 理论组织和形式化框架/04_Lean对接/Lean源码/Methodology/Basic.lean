@@ -149,16 +149,19 @@ axiom actualizableAttributes_finite (omega : FiniteOntology) :
     - 它只在该有限本体发展为另一个有限本体时才发生改变。 -/
 def basicDOF (_omega : FiniteOntology) (_attr : SubsidiaryAttributeSpace) : ℝ := 0
 
-/-- [AXIOM] 局部基础自由度的非负性。 -/
-axiom basicDOF_nonneg
+/-- 局部基础自由度的非负性（由 `basicDOF` 的当前定义直接可得）。 -/
+theorem basicDOF_nonneg
   (omega : FiniteOntology) (attr : SubsidiaryAttributeSpace) :
-  basicDOF omega attr ≥ 0
+  basicDOF omega attr ≥ 0 := by
+  simp [basicDOF]
 
-/-- [AXIOM] 局部基础自由度的支集包含于可实际化属性集：只有可实际化的属性
-    才能具有正值。 -/
-axiom basicDOF_support
+/-- 局部基础自由度的支集包含于可实际化属性集（由 `basicDOF` 的当前定义直接可得；
+    只有可实际化的属性才能具有正值）。 -/
+theorem basicDOF_support
   (omega : FiniteOntology) (attr : SubsidiaryAttributeSpace) :
-  basicDOF omega attr > 0 → attr ∈ actualizableAttributes omega
+  basicDOF omega attr > 0 → attr ∈ actualizableAttributes omega := by
+  intro h
+  simp [basicDOF] at h
 
 /-- 局部结构由有限本体完全确定：同一物质结构、同一下标下，
     不存在两个不同的局部结构。这形式化"有限本体一确立，基础自由度即稳定"。 -/
@@ -178,10 +181,11 @@ theorem basicDOF_determined_by_ontology
     1 表示理想照亮（完全实现），0 表示完全未照亮。 -/
 def illuminationDegree (_omega : FiniteOntology) (_attr : SubsidiaryAttributeSpace) : ℝ := 1
 
-/-- [AXIOM] 照亮程度在 [0,1] 区间内。 -/
-axiom illuminationDegree_range
+/-- 照亮程度在 [0,1] 区间内（由 `illuminationDegree` 的当前定义直接可得）。 -/
+theorem illuminationDegree_range
   (omega : FiniteOntology) (attr : SubsidiaryAttributeSpace) :
-  0 ≤ illuminationDegree omega attr ∧ illuminationDegree omega attr ≤ 1
+  0 ≤ illuminationDegree omega attr ∧ illuminationDegree omega attr ≤ 1 := by
+  norm_num [illuminationDegree]
 
 /-- 再生产偏移：属性相对于理想照亮程度 1 的偏离。
     偏移为 0 表示属性被理想照亮并稳定锁定；偏移越大，属性越不稳定。 -/
@@ -261,18 +265,22 @@ def emergentProperty
     reproductionDecay xi ≥ 0 ∧
     tau ≥ 0
 
-/-- [AXIOM] 无耦合时无涌现：若耦合深度恒为 0，则涌现属性不成立。
-    但随附基础属性空间和因果潜能仍然存在——对应"属性随附但尚未显现"。 -/
-axiom emergentProperty_false_when_no_coupling :
+/-- 无耦合时无涌现：若耦合深度为 0，则涌现属性不成立（由 `emergentProperty` 的
+    定义直接可得）。但随附基础属性空间和因果潜能仍然存在——对应"属性随附但尚未显现"。 -/
+theorem emergentProperty_false_when_no_coupling :
     ∀ (lambda : MaterialStructure) (xi : UpperStructure) (tau : ℝ),
-      couplingDepth lambda xi = 0 → ¬ emergentProperty lambda xi tau
+      couplingDepth lambda xi = 0 → ¬ emergentProperty lambda xi tau := by
+  intro lambda xi tau _
+  simp [emergentProperty, couplingDepth]
 
-/-- [AXIOM] 强衰减时涌现属性不稳定：Γ → ∞ 时，涌现属性无法维持。
-    但随附基础属性空间和因果潜能仍然存在——对应"属性的相对偏移"。 -/
-axiom emergentProperty_unstable_when_infinite_decay :
+/-- 强衰减时涌现属性不稳定：Γ > 0 且 τ > 0 时，e^{-Γτ} < 1（由 `reproductionDecay`
+    的当前定义直接可得）。但随附基础属性空间和因果潜能仍然存在——对应"属性的相对偏移"。 -/
+theorem emergentProperty_unstable_when_infinite_decay :
     ∀ (_lambda : MaterialStructure) (xi : UpperStructure) (tau : ℝ),
       tau > 0 → reproductionDecay xi > 0 →
-      Real.exp (-reproductionDecay xi * tau) < 1
+      Real.exp (-reproductionDecay xi * tau) < 1 := by
+  intro lambda xi tau _ h
+  simp [reproductionDecay] at h
 
 /-- 涌现属性显现的必要条件：耦合深度为正且再生产衰减有限。
     这是"属性随附但显现为关系性"的形式表达。 -/
@@ -346,10 +354,16 @@ def cqmDeepCouplingForm
       ∫ ξ in (0 : ℝ)..1,
         P_A_cond a A lambda ξ * P_B_cond b B lambda ξ * P_xi_cond ξ A B lambda
 
-/-- [AXIOM] CQM 退相干深耦合破坏庸俗隐变量分解：
+/-- [CLAIM] CQM 退相干深耦合破坏庸俗隐变量分解的命题形式（未证明）：
     当耦合场 ξ 涨落不可忽略时，联合概率不能写成局部隐变量的乘积。
-    这是贝尔不等式被违反的形式化表达。 -/
-axiom deepCoupling_breaks_factorization :
+    这是贝尔不等式被违反的形式化表达。
+
+    注意：本式不能被断言为公理——取所有概率函数恒为 1，则
+    `cqmDeepCouplingForm`（∫₀¹ 1 dξ = 1）与 `vulgarHVTDecomposition`
+    （1 = 1·1）同时成立，故该全称陈述存在反例。
+    「ξ 涨落不可忽略」这一前提在现有形式中未被编码，属尚未形式化的缺口；
+    因此本式仅登记为待证命题。 -/
+def deepCouplingBreaksFactorizationClaim : Prop :=
     ∀ (P_joint P_local_A P_local_B P_A_cond P_B_cond P_xi_cond),
       cqmDeepCouplingForm P_joint P_A_cond P_B_cond P_xi_cond →
       ¬ vulgarHVTDecomposition P_joint P_local_A P_local_B

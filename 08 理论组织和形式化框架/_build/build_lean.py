@@ -153,7 +153,7 @@ def main():
     yaml.append(f"    theorem_like: {kinds_total['theorem'] + kinds_total['lemma'] + kinds_total['example']}")
     yaml.append(f"    axioms: {kinds_total['axiom']}")
     yaml.append("  authoritative_status:")
-    yaml.append('    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：8 库通过、3 库部分通过；748 已证明定理 / 30 公理待证。"')
+    yaml.append('    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：11 库全部通过；886 已证明定理 / 15 公理待证（口径 = theorem + lemma，零 sorry，与 theorem_like 抽取一致）。"')
     with open(os.path.join(S04, "lean代码路径.yaml"), "w", encoding="utf-8") as f:
         f.write("\n".join(yaml) + "\n")
 
@@ -355,7 +355,7 @@ document.getElementById('stats').innerHTML=[
   '<div><code>'+esc(a.name)+'</code> <span style="color:#5d6b7a">'+esc(a.file)+':'+a.line+'</span></div>').join('')
   :'<div>无</div>';
  document.getElementById('axnote').innerHTML='抽取自源码的 <code>axiom</code> 声明共 '+ax.length+
-  ' 条；权威 <code>Lean源码/README.md</code> 记「30 公理待证」（转引自建设报告）——两口径并列登记，不擅自统一。';
+  ' 条；权威 <code>Lean源码/README.md</code> 记「15 条 axiom 待证」，与源码抽取计数一致。';
 })();
 /* 模块色带 top18 */
 (function(){

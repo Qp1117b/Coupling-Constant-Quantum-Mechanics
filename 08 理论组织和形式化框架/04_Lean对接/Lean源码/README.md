@@ -6,9 +6,9 @@
 
 ## 编译状态（本次实测，Lean 4.29.1 = `lean-toolchain` 固定版本）
 
-**8 个库编译通过，3 个库部分模块不通过**（`lake build` 整体不成功）。逐模块实测结果：
+**11 个库全部编译通过**（`lake build` 成功，3576 jobs）。逐库实测结果：
 
-| 库 | 状态 | 不通过的模块 |
+| 库 | 状态 | 说明 |
 |:---|:---:|:---|
 | CausalSet | ✅ 通过 | — |
 | CouplingSpace | ✅ 通过 | — |
@@ -17,14 +17,12 @@
 | PhysicalConstants | ✅ 通过 | — |
 | PrimeGeometry | ✅ 通过 | — |
 | Methodology | ✅ 通过 | — |
-| GN | ✅ 通过 | —（v0.7.0 新增 `SimplexSpectrum`/`AdeleJacobian`/`Constructions`；101 定理，零 `sorry`、零新增 `axiom`） |
-| SpectralGeometry | ❌ 部分 | `RiemannXi.lean`（:151/:160 `HasDerivAt.mul` 单子不匹配、:209 类型不匹配）、`Mathieu.lean`、`GLnTrivialSpectralQuantum.lean`（坏导入 `Mathlib.Analysis.SpecialFunctions.Exp.Deriv`，该路径在 4.29.1 已不存在） |
-| Superconductivity | ❌ 部分 | `ElementCartan.lean`、`BridgeTheorems.lean`、`FormalizationRigor.lean`（坏导入 `Mathlib.Topology.Definitions.Filter`）、`DeepConstruction.lean`、`DeepResearch.lean`（后两者因 FormalizationRigor 连带失败） |
-| FGChain | ❌ 多数 | `QuantumOscillation.lean`（:107 正性证明失败）、`FiberBundle.lean`、`CurvatureOperator.lean`、`CurvatureDerivation.lean`、`ReggeBase.lean`、`SyncOperator.lean`、`Synchronization.lean`、`Observable.lean`、`BundleEOM.lean`、`Hierarchy.lean`（根模块 `FGChain.lean` 导入 12 个，其中 10 个不通过） |
+| GN | ✅ 通过 | 含 `SimplexSpectrum`/`AdeleJacobian`/`Constructions`/`ModularTrace`；107 定理，零 `sorry`、零新增 `axiom` |
+| SpectralGeometry | ✅ 通过 | 含 `RiemannXi`、`Mathieu`、`GLnTrivialSpectralQuantum`（`Mathieu` 已由库根 `import SpectralGeometry.Mathieu` 纳入构建） |
+| Superconductivity | ✅ 通过 | 16 模块全通过（含 `ElementCartan`、`BridgeTheorems`，两者均已由库根 import 纳入构建；另含 `FormalizationRigor`、`DeepConstruction`、`DeepResearch`） |
+| FGChain | ✅ 通过 | 12 模块全通过（`QuantumOscillation`、`FiberBundle`、`CurvatureOperator`、`CurvatureDerivation`、`ReggeBase`、`SyncOperator`、`Synchronization`、`Observable`、`BundleEOM`、`Hierarchy` 等）；114 定理，零 `sorry`、零新增 `axiom` |
 
-> **失败原因分类**：(1) **Mathlib 版本漂移**——`GLnTrivialSpectralQuantum.lean` 与 `FormalizationRigor.lean` 的导入路径在 4.29.1 中已改名/移除，属维护性失效；(2) **Mathlib API 变更**——`RiemannXi.lean` 的 `HasDerivAt.mul` 用法与当前 Mathlib 不匹配；(3) **证明本身未通过**——`QuantumOscillation.lean:107` 的正性目标未证出。三类均**先于本次审计存在**（已在 `HEAD` 的独立 worktree 中复现同一错误集）。
->
-> 另注：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题。
+> **构建提示**：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题；另有少量 `unused variable` / `unused simp argument` 提示，不影响通过。
 
 **`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：PrimeGeometry 的相应结论以定理给出；Methodology 以公理/假设层为主（见「定理统计」表）。
 
@@ -41,8 +39,8 @@
 | **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |
 | **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |
 | **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |
-| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块中 2 个通过（`Basic`、`CartanToShell`），10 个不通过，见上"编译状态"表** |
-| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean`, `SimplexSpectrum.lean`, `AdeleJacobian.lean`, `Constructions.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿，6 模块）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）；§2 4-单纯形组合谱——`SimplexSpectrum.lean`（57 定理）、§6 Adele Jacobian 因子 2——`AdeleJacobian.lean`（11 引理/定理）、§8–§11 可代数化构造——`Constructions.lean`（14 定理）——共 101 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
+| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\hbar\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\hat{u},\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\mathfrak{c}_n=1/4+\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\Delta u_n=2\ln n$、BCS $T_c$）——**12 个模块全部通过（`lake build` 全量成功）** |
+| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean`, `SimplexSpectrum.lean`, `AdeleJacobian.lean`, `Constructions.lean`, `ModularTrace.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿，7 模块）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\gamma_E/2-\frac12\ln(4\pi)=1+\gamma_E/2-\ln\pi/2-\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）；§2 4-单纯形组合谱——`SimplexSpectrum.lean`（57 定理）、§6 Adele Jacobian 因子 2——`AdeleJacobian.lean`（11 引理/定理）、§8–§11 可代数化构造——`Constructions.lean`（14 定理）、§十八 模流迹路线——`ModularTrace.lean`（6 定理）——共 107 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |
 
 ## 形式化推导链
 
@@ -83,7 +81,7 @@ Axioms
 │ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809
 │ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472
 │ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q - q²/8 + …）。λ_min 即标准 Mathieu 第一奇特征值 b₁（DLMF 记号），故本临界条件即 b₁(q_c) = 2q_c
-│ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块无导入者，不进入 λ_c/G_N 的取值链）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）
+│ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块现由库根 `SpectralGeometry.lean` 导入以纳入编译覆盖，但未被 λ_c/G_N 取值链引用）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）
 │ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)
 │ ├── Adele 周期 N_cycle = 30
 │ ├── 4-单纯形 f-向量和 = 30 = N_cycle
@@ -122,17 +120,48 @@ Axioms
 |:---|:---:|:---:|
 | CausalSet | 22 | 4 |
 | CouplingSpace | 21 | 0 |
-| CartanAlgebra | 30 | 0 |
-| SpectralGeometry | 114 | 4 |
-| PrimeGeometry | 79 | 4 |
-| Decoherence | 15 | 2 |
+| CartanAlgebra | 33 | 0 |
+| SpectralGeometry | 129 | 2 |
+| PrimeGeometry | 81 | 0 |
+| Decoherence | 15 | 0 |
 | PhysicalConstants | 20 | 0 |
-| Methodology | 6 | 11 |
-| Superconductivity | 340 | 5 |
-| GN | 101 | 0 |
-| **总计** | **748** | **30** |
+| Methodology | 13 | 4 |
+| Superconductivity | 331 | 5 |
+| GN | 107 | 0 |
+| FGChain | 114 | 0 |
+| **总计** | **886** | **15** |
 
-> 注：本表未计入 FGChain 库（12 模块）；其源码含 115 条 `theorem`/`lemma` 条目，与上表计数口径不一致，故未并入总计，口径待统一。
+> **计数口径**（全库统一）：`已证明定理` = 源码中 `theorem` 与 `lemma` 声明之和（零 `sorry`），按模块首段目录归属到库；`example` 当前为 0，不计入。口径与 `_build/build_lean.py` 的 `theorem_like` 抽取逐库一致（theorem 836 + lemma 50 = 886）。FGChain（12 模块）已并入本表，不再单列。
+> 注：「公理/待证」按源码 `axiom` 声明计数（15 条，分布：Superconductivity 5 · CausalSet 4 · SpectralGeometry 2 · Methodology 4）；不含 `def ... : Prop` 的命题位声明（`uniquenessByDeepCouplingClaim`、`layerNonReductionismClaim`、`windingDensityConvergenceClaim`、`deepCouplingBreaksFactorizationClaim`）。
+> 范围说明：886 为**源码声明行**计数。原未纳入 `lakefile.toml` `defaultTargets` 的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44）已全部修复并通过 `lake build`，并由库根 `SpectralGeometry.lean`（`import SpectralGeometry.Mathieu`）与 `Superconductivity.lean`（`import Superconductivity.BridgeTheorems`、`import Superconductivity.ElementCartan`）纳入构建；原 2 处跨模块同名声明已消除（`ElementCartan` 侧 `protonCartan_isPureA4` → `protonCartan_eq_neutronCartan_zero`、`molecularSuperCartan_symmetric` → `molecularSuperCartan_blockSymmetric`，`MolecularGeometry` 保留原名），故去重后唯一全限定名同为 886。11 个库根模块的构建状态均为全部通过。v1.9.56 已将原 `causalChainSelfClosure` 改为定义 `CausalLoop.ofSegment`（结构构造，不承载物理断言），故定理计数相应减 1、`def` 计数加 1，声明总数 1405 不变。v1.9.57 删除 `SpectralGeometry/RiemannXi` 中数值不成立的公理 `spectralQuantum_zeta_zeros_relation`（原式以 `γ₁+n` 近似第 n 个零点），声明总数 1405 → 1404。v1.9.58 将 `SpectralGeometry/Basic` 的 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`（用 Euler–Mascheroni 上下界序列 n = 2048、ln 2 十进制界与 ln π 的 Taylor 估计严格证明 0.02295 < ☯ < 0.02325）；声明总数 1404 不变（axiom 16 → 15、theorem 835 → 836），已证明定理 885 → 886。
+
+## 公理依赖分级（v1.9.58 · `#print axioms` 全量实测）
+
+**方法**：解析全部 `.lean` 文件的 `namespace`/`section`/`mutual` 栈求每条 `theorem`/`lemma` 的全限定名；按库根模块分批生成临时 `#print axioms` 探测文件，以 `lake env lean` 实测（Lean 4.29.1，`autoImplicit = false`；临时文件与脚本用后即删、不入库）；跨库不能同环境导入的声明按模块单独探测；`private` 声明在模块副本内按短名探测。分级判据：依赖集合中不含 15 条 CQM 自有 `axiom` 者记为「零 CQM 公理依赖」，即在 Lean 内核逻辑公理 `propext`、`Classical.choice`、`Quot.sound` 的三元组内取子集（`#print axioms` 给出传递闭包）。v1.9.58 另以 `Environment.find?` + `Expr.getUsedConstants` 的常量依赖传递闭包逐条判定原依赖 `spectralQuantum_numerical_bounds` 的定理归属（含类型与证明项），再按升级后的 `#print axioms` 归入子行。
+
+| 分级 | 条数 |
+|:---|:---:|
+| 零 CQM 公理依赖 | 883 |
+| 　· 不使用任何公理 | 45 |
+| 　· 仅 `propext` | 52 |
+| 　· `propext` + `Quot.sound` | 24 |
+| 　· `propext` + `Classical.choice` + `Quot.sound` | 762 |
+| 依赖 CQM 公理 | 3 |
+| **合计（去重全限定名）** | **886** |
+
+> 说明：v1.9.55 已把原未纳入实测的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44，共 86 条）全部纳入实测——其中 84 条为零 CQM 公理依赖（均落在 `propext` + `Classical.choice` + `Quot.sound` 三元组），2 条依赖 CQM 公理（见下）。原「未纳入实测 79」一行随之取消。v1.9.56 将 `causalChainSelfClosure`（原属三元组类）改为定义 `CausalLoop.ofSegment`，故「零 CQM 公理依赖」与三元组子行各减 1；本次改动不涉及任何 CQM 公理的使用状态。v1.9.57 删除的 `spectralQuantum_zeta_zeros_relation` 无任何已证定理依赖，故分级计数不变（零 CQM 公理依赖 851 / 依赖 CQM 公理 34，合计 885）。v1.9.58 把 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`：原依赖该公理的 31 条（SpectralGeometry 23 · GN 7 · PhysicalConstants 1）实测全部转为零 CQM 公理依赖且均落在三元组子行，新定理本身亦属三元组；故「零 CQM 公理依赖」851 → 883（三元组子行 730 → 762）、「依赖 CQM 公理」34 → 3，其余三子行不变。
+
+**依赖 CQM 公理的 3 条**（逐条实名可复现）：
+
+- `b1` 与 `b1_perturbation_lower_bound` — 同一 1 条：`b1_gt_2q_at_mathieuParameter`（`SpectralGeometry/Mathieu`）。
+- `actualizableAttributes` — 1 条：`basicDOF_support`。
+- `ontologyDevelopsInto` 与 `ontologyDevelopsInto_irreflexive` — 同一 1 条：`ontologyDevelopsInto_distinct`。
+
+> v1.9.58 变更归属：原 `spectralQuantum_numerical_bounds` 的 31 条使用者（SpectralGeometry 23〔`Basic` 16、`RiemannXi` 3、`GLnTrivialSpectralQuantum` 3、`Mathieu` 1〕、GN 7〔`Constructions` 4、`TripleIdentity` 3〕、PhysicalConstants 1〔`GN_spectral_formula_pos`〕）已随该陈述升级为定理而全部转为零 CQM 公理依赖（均落在三元组子行），不再列入本清单。
+
+**15 条 `axiom` 的使用状态**：5 条被已证定理依赖（`b1`、`b1_perturbation_lower_bound`、`actualizableAttributes`、`ontologyDevelopsInto`、`ontologyDevelopsInto_irreflexive`）；10 条当前无任何已证定理依赖——`physical_hypothesis`、`confinement_equiv_decoherence`、`noncommutative_to_commutative_phase_transition`、`decoherence_steady_state_is_4simplex`（CausalSet 4）、`proton_is_finite_ontology`、`neutron_is_defective_ontology`、`proton_confinement_geometry_is_4simplex`、`confinement_interior_is_quantum_gravity`、`electron_is_proton_neutron_product`（Superconductivity 5）、`actualizableAttributes_finite`（Methodology 1）。
+
+**待闭合项**：`b1`、`b1_perturbation_lower_bound` 已随 `SpectralGeometry/Mathieu` 纳入实测，使用者为 `b1_gt_2q_at_mathieuParameter`；两条 `axiom` 本身仍未闭合（Mathieu 函数理论待后续），此处只记录依赖关系，不改变其 `axiom` 状态。`spectralQuantum_numerical_bounds` 已于 v1.9.58 升级为定理（区间 `(0.02295, 0.02325)`，由 Euler–Mascheroni 上下界序列与 ln 2、ln π 标准界严格证明），不再计入待闭合公理。洞见仅限实测所得：0 条定理依赖 `physical_hypothesis` 体系。另：`spectralQuantum_zeta_zeros_relation` 已于 v1.9.57 删除（原式以 `γ₁+n` 近似第 n 个零点、数值不成立），☯ 的零点求和表示转登记为 Hadamard 积待形式化缺口（见下表）。
 
 ## 缺口与证明状态
 
@@ -144,11 +173,11 @@ Axioms
 | — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |
 | — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |
 | — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |
-| — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明 (`native_decide`) |
+| — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明（内核判定 `decide`） |
 | — | 相变量子 $☯ = \xi'(1)/\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |
 | — | 因果分辨率 → 引力场有效描述的尺度依赖 | `Superconductivity/ElementCartan` | `def` 占位（哲学立场） |
 | — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `Superconductivity/ElementCartan` | `def` 占位（需核物理/量子引力） |
-| — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 `SpectralGeometry.RiemannXi` 修复后形式化（Hadamard 乘积） |
+| — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\sum 1/(\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 Hadamard 乘积与真实零点枚举形式化（v1.9.57 已删除 `RiemannXi` 中数值不成立的占位公理） |
 | — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |
 
 ### 闭合缺口 (v0.5.8)
@@ -173,7 +202,7 @@ lake build CartanAlgebra # 编译嘉当代数库
 lake build SpectralGeometry # 编译谱几何库（含 Mathieu）
 lake build Superconductivity # 编译强引力超导库（16 模块）
 lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块
-lake build FGChain # 编译 FG 纤维丛理论链路库（12 模块，2 个通过、10 个不通过）
+lake build FGChain # 编译 FG 纤维丛理论链路库（12 模块，全部通过）
 lake build GN # 编译 G_N 第一性推导库（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造）
 lake build GN.TripleIdentity # 编译单模块
 lake build GN.SierraCQM # 编译单模块
@@ -188,20 +217,21 @@ lake build GN.Constructions # §8–§11 可代数化构造
 |:---|:---|:---:|
 | 因果集本体论 | `CausalSet` | 22 |
 | 耦合空间与不确定性 | `CouplingSpace` | 21 |
-| SU(5) 嘉当矩阵 | `CartanAlgebra` | 30 |
-| 谱几何与 Mathieu 方程 | `SpectralGeometry` | 114 |
-| 因果时几何 | `PrimeGeometry` | 79 |
+| SU(5) 嘉当矩阵 | `CartanAlgebra` | 33 |
+| 谱几何与 Mathieu 方程 | `SpectralGeometry` | 129 |
+| 因果时几何 | `PrimeGeometry` | 81 |
 | 禁闭-前核子自组织等价 | `Decoherence` | 15 |
 | G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |
-| 方法论基础 | `Methodology` | 6 |
-| 强引力超导涌现 | `Superconductivity` | 340 |
-| $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 101 |
+| 方法论基础 | `Methodology` | 13 |
+| 强引力超导涌现 | `Superconductivity` | 331 |
+| FG 纤维丛理论链路 | `FGChain` | 114 |
+| $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 107 |
 
-> 注：FG 纤维丛理论链路形式化（`FGChain`，12 模块）未计入本表；其源码含 115 条 `theorem`/`lemma` 条目，与上表计数口径不一致。
+> 注：本表与「定理统计」同口径（`theorem` + `lemma`，零 `sorry`），11 库合计 886。
 
 ## 本次更新亮点 (v0.7.0)
 
-- **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。10×10 `native_decide` 对 det 语句仍不可用，故采用显式基路线
+- **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。10×10 det 语句的直接判定超出默认递归深度，故采用显式基路线
 - **§6 Adele Jacobian 因子 2**：新增 `GN/AdeleJacobian.lean`（11 引理/定理），条件定理：自对偶 `det D∞ · ∏ det Dp = 1` ⇒ `ln 𝒥 = −2 ln(∏ det Dp)` ⇒ `𝒥 = exp(−2/☯)`；Tate 自对偶本身以 `placeholder` 如实标注
 - **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），$\kappa = (N_{\text{faces}} + ☯)/N_{\text{cycle}}$ 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 $\kappa = 31/30 + ☯/30$、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）
 - **GN 库统计**：3→6 模块，19→101 定理；全库定理总数 666→748
@@ -298,7 +328,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 
 ## 本次更新亮点 (v0.5.1)
 
-- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由 `native_decide` 直接证明的定理，消除一个不必要的公理
+- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由内核判定 `decide` 直接证明的定理，消除一个不必要的公理
 - **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意条件，且无任何定理引用）
 - **清理测试残留**：删除未加入 `lakefile.toml` 且含 `sorry` 的 `TestNum.lean`
 - **更新定理/公理统计**：按实际代码重新计数，当前 180 个定理 / 8 个公理（含物理假设与数值桥梁）

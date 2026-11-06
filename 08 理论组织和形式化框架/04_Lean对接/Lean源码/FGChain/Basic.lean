@@ -45,7 +45,7 @@ CFT 同步过程 → 全局同步（和乐平庸化）。
 
 ## 严格性声明
 
-- 已通过编译的模块（`Basic`、`CartanToShell`）内定理零 `sorry`。
+- 12 个模块全部通过 `lake build`，库内定理零 `sorry`。
 - 谐振子谱、本征值交叉（介值定理）、壳层计数为纯数学严格推导。
 - 参数化对象（曲率算符的具体算子实现、结构群的完整李群结构）按项目惯例
   以实参数 + 正性/代数关系形式化，具体算子实现与《CQM_超导核心理论》缺口表
@@ -96,7 +96,7 @@ structure ChainBSpectral where
     但几何分布不同。这说明链B 对链A 只有约束资格，无生成资格
     （《CQM_超导核心理论》§3.2 的形式化）。 -/
 theorem chain_separation (B : ChainBSpectral) (s : ℝ)
-    (hs : B.spectralConstraint s) :
+    (_hs : B.spectralConstraint s) :
     ∃ (c₁ c₂ : ChainAGeometric 1),
       (∀ v, c₁.deficits v = c₂.deficits v) ∧
       c₁.cells ⟨0, by omega⟩ ⟨0, by omega⟩ ≠ c₂.cells ⟨0, by omega⟩ ⟨0, by omega⟩ ∧

@@ -82,25 +82,21 @@ structure LevelEmbedding {n₁ n₂ : ℕ} (q₁ : FGBundleQuad n₁) (q₂ : FG
 /-- **电子 FG 嵌入元素 FG**：P_el ↪ P_elem。 -/
 theorem electron_embeds_element :
     FGLevel.electron ≤ FGLevel.element := by
-  unfold LE.le FGLevel.le
   trivial
 
 /-- **元素 FG 嵌入分子 FG**：P_elem ↪ P_mol。 -/
 theorem element_embeds_molecule :
     FGLevel.element ≤ FGLevel.molecule := by
-  unfold LE.le FGLevel.le
   trivial
 
 /-- **分子 FG 嵌入晶胞 FG**：P_mol ↪ P_cell。 -/
 theorem molecule_embeds_cell :
     FGLevel.molecule ≤ FGLevel.cell := by
-  unfold LE.le FGLevel.le
   trivial
 
 /-- **嵌套传递性**：P_el ↪ P_elem ↪ P_mol ↪ P_cell。 -/
 theorem embedding_transitive :
     FGLevel.electron ≤ FGLevel.cell := by
-  unfold LE.le FGLevel.le
   trivial
 
 /-! ## 4. 谱传递规则 -/

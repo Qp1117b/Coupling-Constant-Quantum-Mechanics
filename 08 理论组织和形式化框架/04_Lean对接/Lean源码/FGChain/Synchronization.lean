@@ -73,7 +73,7 @@ theorem syncLevel_pos (s : SyncSpectrum) (n : ℕ) : (0 : ℝ) < s.level n := by
 structure SchrodingerAnalogy where
   /-- 同步本征值（对应能量本征值 E） -/
   s : ℝ
-  /-- 类薛定谔同型性记录（结构层面对应，非数学等同） -/
+  /-- 类薛定谔同型性的**记录位**：字段类型为 `True`，不承载同型性证明 -/
   analogy : True
 
 /-- 同步谱数据的类薛定谔实例：第 n 模本征值。 -/
@@ -93,13 +93,15 @@ structure TemperatureSpectrum where
   Vact : ℝ → ℕ → ℝ
   /-- 激活项非负 -/
   Vact_nonneg : ∀ T n, 0 ≤ Vact T n
-  /-- 第 1 模与第 2 模本征值 -/
-  λ1 λ2 : ℝ → ℝ
+  /-- 第 1 模本征值 -/
+  lam1 : ℝ → ℝ
+  /-- 第 2 模本征值 -/
+  lam2 : ℝ → ℝ
   /-- 本征值由零点谱减激活项给出 -/
-  λ1_def : ∀ T, λ1 T = gamma 1 - Vact T 1
-  λ2_def : ∀ T, λ2 T = gamma 2 - Vact T 2
+  lam1_def : ∀ T, lam1 T = gamma 1 - Vact T 1
+  lam2_def : ∀ T, lam2 T = gamma 2 - Vact T 2
   /-- 交叉函数连续（相变判据的数学前提） -/
-  cont : Continuous (fun T => λ2 T - λ1 T)
+  cont : Continuous (fun T => lam2 T - lam1 T)
 
 /-- **本征值交叉存在性定理（环节16，IVT 严格证明）**：
     若交叉函数 Δ(T) = λ₂(T) − λ₁(T) 连续，且在 T₁ 处为正、T₂ 处为负
@@ -110,29 +112,27 @@ theorem eigenvalueCrossing_exists (f : ℝ → ℝ) (hcont : Continuous f) (a b 
     (hab : a < b) (hpos : 0 < f a) (hneg : f b < 0) :
     ∃ c, a < c ∧ c < b ∧ f c = 0 := by
   have hcon : ContinuousOn f (Set.Icc a b) := hcont.continuousOn
-  have h0 : (0 : ℝ) ∈ Set.Icc (min (f a) (f b)) (max (f a) (f b)) := by
+  have h0 : (0 : ℝ) ∈ Set.Icc (f b) (f a) := by
     constructor
-    · have h1 : min (f a) (f b) ≤ f b := min_le_right _ _
-      linarith
-    · have h2 : f a ≤ max (f a) (f b) := le_max_left _ _
-      linarith
+    · linarith
+    · linarith
   obtain ⟨c, hcimg, hcv⟩ := intermediate_value_Icc' (le_of_lt hab) hcon h0
   refine ⟨c, ?_, ?_, hcv⟩
   · obtain ⟨h1, _⟩ := Set.mem_Icc.mp hcimg
     refine lt_of_le_of_ne h1 fun heq => ?_
-    rw [heq] at hcv
+    rw [← heq] at hcv
     rw [hcv] at hpos
     linarith
   · obtain ⟨_, h2⟩ := Set.mem_Icc.mp hcimg
-    refine lt_of_le_of_ne (fun heq => ?_) h2
+    refine lt_of_le_of_ne h2 fun heq => ?_
     rw [heq] at hcv
     rw [hcv] at hneg
     linarith
 
 /-- **交叉点即临界温度**：交叉函数在 T_c 处为零 ⟹ λ₁(T_c) = λ₂(T_c)
     （两模本征值相等 = 相变临界点）。 -/
-theorem crossing_is_critical (λ1 λ2 : ℝ → ℝ) (Tc : ℝ) (h : λ2 Tc - λ1 Tc = 0) :
-    λ1 Tc = λ2 Tc := by
+theorem crossing_is_critical (lam1 lam2 : ℝ → ℝ) (Tc : ℝ) (h : lam2 Tc - lam1 Tc = 0) :
+    lam1 Tc = lam2 Tc := by
   linarith
 
 /-! ## 4. 有序相判据与同步相变（环节17） -/
@@ -151,12 +151,12 @@ structure PhaseCriterion where
   cross : delta Tc = 0
 
 /-- 有序相判定：低温侧（Δ(T) > 0）基模能量低于激发模。 -/
-theorem orderedPhase_of_positive_delta (λ1 λ2 : ℝ → ℝ) (T : ℝ)
-    (h : λ2 T - λ1 T > 0) : λ1 T < λ2 T := by linarith
+theorem orderedPhase_of_positive_delta (lam1 lam2 : ℝ → ℝ) (T : ℝ)
+    (h : lam2 T - lam1 T > 0) : lam1 T < lam2 T := by linarith
 
 /-- 无序相判定：高温侧（Δ(T) < 0）激发模能量低于基模。 -/
-theorem disorderedPhase_of_negative_delta (λ1 λ2 : ℝ → ℝ) (T : ℝ)
-    (h : λ2 T - λ1 T < 0) : λ2 T < λ1 T := by linarith
+theorem disorderedPhase_of_negative_delta (lam1 lam2 : ℝ → ℝ) (T : ℝ)
+    (h : lam2 T - lam1 T < 0) : lam2 T < lam1 T := by linarith
 
 /-! ## 5. 同步过程-CFT：幂律传播（环节18） -/
 
@@ -198,9 +198,9 @@ theorem CFTPowerLaw.twoPoint_antiMono (c : CFTPowerLaw) (r₁ r₂ : ℝ)
     (hr₁ : 0 < r₁) (hr₂ : 0 < r₂) (h₁ : r₁ ≤ r₂) :
     c.twoPoint r₂ ≤ c.twoPoint r₁ := by
   unfold CFTPowerLaw.twoPoint
-  rw [div_le_div_iff (pow_pos hr₂ _) (pow_pos hr₁ _)]
+  rw [div_le_div_iff₀ (pow_pos hr₂ _) (pow_pos hr₁ _)]
   refine mul_le_mul_of_nonneg_left ?_ c.hC0.le
-  exact pow_le_pow_left hr₁.le hr₂.le _
+  exact pow_le_pow_left₀ hr₁.le h₁ _
 
 /-- Madelung 排序：同主量子数下，角量子数越大共形维度越大
     （填充顺序 s → p → d → f 的数学根据）。 -/
@@ -233,7 +233,7 @@ inductive SyncStage
   | completion    -- 完成：状态跃迁（全局同步）
 
 /-- 完成阶段的判据即全局同步完成数据（阶段与判据的衔接）。 -/
-theorem completion_stage_criterion {n : ℕ} (g : GlobalSyncCompletion n) :
+theorem completion_stage_criterion {n : ℕ} (_g : GlobalSyncCompletion n) :
     ∃ (_ : SyncStage), True := ⟨SyncStage.completion, True.intro⟩
 
 end CQM.FGChain

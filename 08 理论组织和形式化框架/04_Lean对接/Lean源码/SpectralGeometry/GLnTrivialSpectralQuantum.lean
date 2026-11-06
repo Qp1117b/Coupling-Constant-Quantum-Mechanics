@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import CartanAlgebra.Basic
 import SpectralGeometry.Basic
 import SpectralGeometry.RiemannXi
 
@@ -44,7 +45,7 @@ open Real
 
 在 s=1 处 Λ_1(1) 有限非零（Gamma 极点与 ζ 极点抵消）。 -/
 noncomputable def completedL1 (s : ℝ) : ℝ :=
-  Real.pi ^ (-s/2) * Real.gamma (s/2) * RiemannXi.riemannXi s
+  Real.pi ^ (-s / 2) * Real.Gamma (s / 2) * (riemannXi (s : ℂ)).re
 
 /-- GL(n) 平凡表示的完成 L 函数 Λ_n(s) = Λ_1(s)^n -/
 noncomputable def completedLn (n : ℕ) (s : ℝ) : ℝ :=
@@ -80,7 +81,7 @@ theorem spectralQuantumGL1_eq_spectralQuantum (Λ1_val Λ1_deriv : ℝ)
 
 GL(n) 平凡自守表示的相变量子是 GL(1) 相变量子的 n 倍。 -/
 theorem spectralQuantumGLn_eq_n_times_C1 (n : ℕ) (Λ1_val Λ1_deriv : ℝ)
-    (h_Λ1_nezero : Λ1_val ≠ 0)
+    (_h_Λ1_nezero : Λ1_val ≠ 0)
     (h_C1 : Λ1_deriv / Λ1_val = spectralQuantum) :
     spectralQuantumGLn n Λ1_val Λ1_deriv = (n : ℝ) * spectralQuantum := by
   unfold spectralQuantumGLn
@@ -95,7 +96,8 @@ theorem normalized_spectralQuantum_universal (n : ℕ) (hn : n > 0)
     (h_C1 : Λ1_deriv / Λ1_val = spectralQuantum) :
     spectralQuantumGLn n Λ1_val Λ1_deriv / (n : ℝ) = spectralQuantum := by
   rw [spectralQuantumGLn_eq_n_times_C1 n Λ1_val Λ1_deriv h_Λ1_nezero h_C1]
-  exact mul_div_cancel_right spectralQuantum (ne_of_gt (Nat.cast_pos.mpr hn))
+  have hnpos : (0 : ℝ) < (n : ℝ) := Nat.cast_pos.mpr hn
+  exact mul_div_cancel_left₀ spectralQuantum (ne_of_gt hnpos)
 
 /-! ## 3. 层级因子缩放律
 
@@ -114,14 +116,17 @@ noncomputable def hierarchyFactorGLn (n : ℕ) : ℝ :=
 theorem hierarchyFactorGLn_scaling (n : ℕ) (hn : n > 0) :
     hierarchyFactorGLn n = Real.exp (-2 / spectralQuantum) ^ (1 / (n : ℝ)) := by
   unfold hierarchyFactorGLn
-  rw [Real.exp_div, Real.rpow_def]
-  · congr 1
+  have hnpos : (0 : ℝ) < (n : ℝ) := Nat.cast_pos.mpr hn
+  have hCpos : 0 < spectralQuantum := spectralQuantum_pos
+  have hbase : 0 < Real.exp (-2 / spectralQuantum) := Real.exp_pos _
+  rw [Real.rpow_def_of_pos hbase, Real.log_exp]
+  have harg : (-2) / spectralQuantum * (1 / (n : ℝ)) =
+      (-2) / ((n : ℝ) * spectralQuantum) := by
     field_simp
-    rw [div_div_eq_mul_div]
-  · exact ne_of_gt (Nat.cast_pos.mpr hn)
+  rw [harg]
 
 /-- GL(n) 层级因子严格为正 -/
-theorem hierarchyFactorGLn_pos (n : ℕ) (hn : n > 0) :
+theorem hierarchyFactorGLn_pos (n : ℕ) (_hn : n > 0) :
     hierarchyFactorGLn n > 0 := by
   unfold hierarchyFactorGLn
   exact Real.exp_pos _
@@ -131,22 +136,20 @@ theorem hierarchyFactorGLn_pos (n : ℕ) (hn : n > 0) :
 低层 GL(n) 的层级因子更小（抑制更强），故低层主导物理。 -/
 theorem lower_GLn_dominates (n₁ n₂ : ℕ) (h : n₁ < n₂) (hn₁ : n₁ > 0) :
     hierarchyFactorGLn n₁ < hierarchyFactorGLn n₂ := by
-  unfold hierarchyFactorGLn hierarchyFactorGLn
+  unfold hierarchyFactorGLn
   have hn₁_pos : (0 : ℝ) < (n₁ : ℝ) := Nat.cast_pos.mpr hn₁
   have hn₂_pos : (0 : ℝ) < (n₂ : ℝ) := Nat.cast_pos.mpr (lt_trans hn₁ h)
   have hC_pos : spectralQuantum > 0 := spectralQuantum_pos
   have h_n1C_pos : 0 < (n₁ : ℝ) * spectralQuantum := mul_pos hn₁_pos hC_pos
   have h_n2C_pos : 0 < (n₂ : ℝ) * spectralQuantum := mul_pos hn₂_pos hC_pos
-  have h_n1_lt_n2 : (n₁ : ℝ) < (n₂ : ℝ) := Nat.cast_strictMono h
+  have h_n1_lt_n2 : (n₁ : ℝ) < (n₂ : ℝ) := by exact_mod_cast h
   have h_n1C_lt_n2C : (n₁ : ℝ) * spectralQuantum < (n₂ : ℝ) * spectralQuantum :=
     mul_lt_mul_of_pos_right h_n1_lt_n2 hC_pos
-  have h_inv : -2 / ((n₂ : ℝ) * spectralQuantum) < -2 / ((n₁ : ℝ) * spectralQuantum) := by
-    have h1 : 0 < 2 := by norm_num
-    have h2 : ((n₁ : ℝ) * spectralQuantum) < ((n₂ : ℝ) * spectralQuantum) := h_n1C_lt_n2C
-    have h3 : 2 / ((n₂ : ℝ) * spectralQuantum) < 2 / ((n₁ : ℝ) * spectralQuantum) :=
-      div_lt_div_of_lt_left (by norm_num) h_n2C_pos h_n1C_pos h2
-    linarith
-  exact Real.strictMonoOn_exp _ _ h_inv
+  have h_inv : -2 / ((n₁ : ℝ) * spectralQuantum) <
+      -2 / ((n₂ : ℝ) * spectralQuantum) := by
+    rw [div_lt_div_iff₀ h_n1C_pos h_n2C_pos]
+    nlinarith [h_n1C_lt_n2C]
+  exact Real.exp_lt_exp.mpr h_inv
 
 /-! ## 4. GL(5) 特例：☯_5 = 5☯ 与 SU(5) 结构关联
 
@@ -170,9 +173,11 @@ theorem GL5_spectralQuantum_matches_SU5_structure
     (h_Λ1_nezero : Λ1_val ≠ 0)
     (h_C1 : Λ1_deriv / Λ1_val = spectralQuantum) :
     spectralQuantumGLn 5 Λ1_val Λ1_deriv / spectralQuantum =
-      (CartanAlgebra.rankSU5 : ℝ) + 1 := by
+      (rankSU5 : ℝ) + 1 := by
   rw [spectralQuantumGL5_eq_5C Λ1_val Λ1_deriv h_Λ1_nezero h_C1]
-  unfold CartanAlgebra.rankSU5
+  unfold rankSU5
+  have hC : spectralQuantum ≠ 0 := ne_of_gt spectralQuantum_pos
+  rw [div_eq_iff hC]
   ring
 
 /-! ## 5. 零点重数定理
@@ -190,13 +195,13 @@ def zeroMultiplicityGLn (n : ℕ) (multiplicity_GL1 : ℕ) : ℕ :=
   n * multiplicity_GL1
 
 /-- 平凡零点 s = -2k 在 GL(n) 中重数为 n（GL(1) 中重数为 1） -/
-theorem trivial_zero_multiplicity (n : ℕ) (k : ℕ) (hk : k > 0) :
+theorem trivial_zero_multiplicity (n : ℕ) (k : ℕ) (_hk : k > 0) :
     zeroMultiplicityGLn n 1 = n := by
   unfold zeroMultiplicityGLn
   rw [mul_one]
 
 /-- 非平凡零点 ρ = 1/2 + iγ_k 在 GL(n) 中重数为 n（假设 GRH 下 GL(1) 重数为 1） -/
-theorem nontrivial_zero_multiplicity (n : ℕ) (k : ℕ) (hk : k > 0) :
+theorem nontrivial_zero_multiplicity (n : ℕ) (k : ℕ) (_hk : k > 0) :
     zeroMultiplicityGLn n 1 = n := by
   unfold zeroMultiplicityGLn
   rw [mul_one]
@@ -207,17 +212,18 @@ theorem nontrivial_zero_multiplicity (n : ℕ) (k : ℕ) (hk : k > 0) :
 theorem zero_set_unchanged (n : ℕ) (hn : n > 0) :
     {s : ℂ | completedLn n s.re = 0} = {s : ℂ | completedL1 s.re = 0} := by
   ext s
+  simp only [Set.mem_setOf_eq]
   constructor
   · intro h
     unfold completedLn at h
     rcases Nat.eq_zero_or_pos n with hn0 | hnpos
     · rw [hn0, pow_zero] at h
       simp at h
-    · rw [pow_eq_zero_iff (ne_of_gt (Nat.cast_pos.mpr hnpos))] at h
+    · rw [pow_eq_zero_iff hnpos.ne'] at h
       exact h
   · intro h
     unfold completedLn
-    rw [pow_eq_zero_iff (ne_of_gt (Nat.cast_pos.mpr hn))]
+    rw [pow_eq_zero_iff hn.ne']
     exact h
 
 

@@ -108,7 +108,7 @@ theorem StructureGroupFluctuation.uG_welldefined (S : StructureGroupFluctuation)
     ☯√(1−βδ_v)/(β·Δu)（复用 `CurvatureOperator` 的阈值正性定理）。 -/
 theorem fluctuation_driven_by_curvature (β δv C Δu : ℝ)
     (hβ : 0 < β) (hδ : 0 ≤ δv) (hbound : δv < 1 / β) (hC : 0 < C) (hΔu : 0 < Δu) :
-    0 < C * Superconductivity.CQM.properTimeFlow β δv / (β * Δu) :=
+    0 < C * properTimeFlow β δv / (β * Δu) :=
   curvature_coupling_threshold_pos β δv C Δu hβ hδ hbound hC hΔu
 
 /-! ## 3. 重组实现 F = G ⇒ R = G ⇒ Ĥ（环节12–13，发生学修正③落实） -/

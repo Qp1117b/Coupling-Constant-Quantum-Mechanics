@@ -24,12 +24,22 @@ open scoped Real
 
 /-! ## 1. U(1) 群结构严格化 -/
 
-/-- **U(1) 群元素**：z * conj(z) = 1 的复数（即 |z|² = 1，等价于 |z| = 1）。 -/
+/-- **U(1) 群元素**：z * star z = 1 的复数（即 |z|² = 1，等价于 |z| = 1）。 -/
 structure UOne where
   /-- 复数 -/
   z : ℂ
-  /-- 模平方为 1：z * conj(z) = 1（等价于 |z| = 1，避免 Complex.abs API 差异） -/
-  normSq_one : z * Complex.conj z = 1
+  /-- 模平方为 1：z * star z = 1（等价于 |z| = 1，避免 Complex.abs API 差异） -/
+  normSq_one : z * star z = 1
+
+/-- U(1) 群元素的相等由 z 分量决定（第二个字段是命题，由证明无关性自动一致）。 -/
+theorem UOne.ext_z {a b : UOne} (h : a.z = b.z) : a = b := by
+  cases a with
+  | mk az ap =>
+    cases b with
+    | mk bz bp =>
+      have h' : az = bz := h
+      subst h'
+      exact congrArg (UOne.mk az) (Subsingleton.elim ap bp)
 
 /-- U(1) 单位元。 -/
 def UOne.one : UOne where
@@ -40,9 +50,8 @@ def UOne.one : UOne where
 def UOne.mul (a b : UOne) : UOne where
   z := a.z * b.z
   normSq_one := by
-    have h : Complex.conj (a.z * b.z) = Complex.conj a.z * Complex.conj b.z := by
-      simp [Complex.conj]
-    rw [h, mul_assoc, mul_comm b.z (Complex.conj a.z), ← mul_assoc, a.normSq_one, one_mul, b.normSq_one]
+    have h : star (a.z * b.z) = star a.z * star b.z := by simp
+    rw [h, mul_mul_mul_comm, a.normSq_one, b.normSq_one, one_mul]
 
 /-- **和乐作为 U(1) 群元素**：W_v = exp(i·δ_v·t) ∈ U(1)。
     严格化为 U(1) 群元素，不只是实数相位。
@@ -50,19 +59,22 @@ def UOne.mul (a b : UOne) : UOne where
 noncomputable def holonomyUOne {n : ℕ} (P : DiscretePrincipalBundle n) (v : Fin n) : UOne where
   z := Complex.exp (Complex.I * (holonomyPhase P v))
   normSq_one := by
-    let θ := holonomyPhase P v
-    have hconj : Complex.conj (Complex.I * θ) = -(Complex.I * θ) := by
-      have hI : Complex.conj Complex.I = -Complex.I := Complex.conj_I
-      have hmul : Complex.conj (Complex.I * θ) = Complex.conj Complex.I * Complex.conj θ := by
-        simp [Complex.conj]
-      rw [hmul, hI, Complex.conj_ofReal]
+    let θ : ℂ := (holonomyPhase P v : ℂ)
+    have hstarθ : star θ = θ := by
+      dsimp only [θ]
+      exact Complex.conj_ofReal _
+    have hconj : star (Complex.I * θ) = -(Complex.I * θ) := by
+      have hI : star Complex.I = -Complex.I := Complex.conj_I
+      have hmul : star (Complex.I * θ) = star Complex.I * star θ := by
+        simp
+      rw [hmul, hI, hstarθ]
       ring
-    have hconj_exp : Complex.conj (Complex.exp (Complex.I * θ)) = Complex.exp (-(Complex.I * θ)) := by
-      rw [← Complex.exp_conj, hconj]
+    have hconj_exp : star (Complex.exp (Complex.I * θ)) = Complex.exp (-(Complex.I * θ)) :=
+      (Complex.exp_conj (Complex.I * θ)).symm.trans (congrArg Complex.exp hconj)
     have hexp_add : Complex.exp (Complex.I * θ) * Complex.exp (-(Complex.I * θ)) = 1 := by
-      have : Complex.exp (Complex.I * θ + -(Complex.I * θ)) = Complex.exp (Complex.I * θ) * Complex.exp (-(Complex.I * θ)) :=
-        Complex.exp_add _ _
+      have := Complex.exp_add (Complex.I * θ) (-(Complex.I * θ))
       rw [← this, add_neg_cancel, Complex.exp_zero]
+    show Complex.exp (Complex.I * θ) * star (Complex.exp (Complex.I * θ)) = 1
     rw [hconj_exp, hexp_add]
 
 /-- 和乐平庸（U(1) 版）：W_v = 1（单位元）。 -/
@@ -72,41 +84,31 @@ def holonomyTrivialUOne {n : ℕ} (P : DiscretePrincipalBundle n) (v : Fin n) : 
 /-- 和乐平庸化等价于相位 ∈ 2πℤ。 -/
 theorem holonomyTrivialUOne_iff {n : ℕ} (P : DiscretePrincipalBundle n) (v : Fin n) :
     holonomyTrivialUOne P v ↔ ∃ k : ℤ, holonomyPhase P v = 2 * Real.pi * k := by
-  unfold holonomyTrivialUOne holonomyUOne UOne.one
+  unfold holonomyTrivialUOne
   constructor
   · intro h
-    have : Complex.exp (Complex.I * holonomyPhase P v) = 1 := by
-      have := congr_arg UOne.z h
-      exact this
-    rcases Complex.exp_eq_one_iff.mp this with ⟨k, hk⟩
+    have hz : Complex.exp (Complex.I * holonomyPhase P v) = 1 := congr_arg UOne.z h
+    rcases Complex.exp_eq_one_iff.mp hz with ⟨k, hk⟩
     refine ⟨k, ?_⟩
-    have : Complex.I * holonomyPhase P v = Complex.I * (2 * Real.pi * (k : ℝ)) := by
-      have h1 : Complex.I * (2 * Real.pi * (k : ℝ)) = k * (2 * Real.pi * Complex.I) := by
-        push_cast; ring
-      rw [← h1]; exact hk
-    have : holonomyPhase P v = 2 * Real.pi * (k : ℝ) := by
-      have hI : Complex.I ≠ 0 := by simp
-      exact (mul_left_inj' hI).mp this
-    exact_mod_cast this
+    have hI : Complex.I ≠ 0 := by simp
+    have hkey : Complex.I * (holonomyPhase P v : ℂ) =
+        Complex.I * (2 * (Real.pi : ℂ) * (k : ℂ)) := by
+      rw [hk]; ring
+    have hθC : (holonomyPhase P v : ℂ) = 2 * (Real.pi : ℂ) * (k : ℂ) :=
+      (mul_right_inj' hI).mp hkey
+    have hcast : ((2 * Real.pi * (k : ℝ) : ℝ) : ℂ) = 2 * (Real.pi : ℂ) * (k : ℂ) := by
+      push_cast; ring
+    exact Complex.ofReal_inj.mp (hθC.trans hcast.symm)
   · rintro ⟨k, hk⟩
-    simp only [UOne.mk.injEq]
-    refine ⟨?_, ?_⟩
-    · -- z 字段：exp(I * 2πk) = 1
-      rw [hk]
-      have h1 : Complex.I * (2 * Real.pi * (k : ℝ)) = k * (2 * Real.pi * Complex.I) := by
-        push_cast; ring
-      rw [h1, Complex.exp_eq_one_iff]
-      exact ⟨k, by push_cast; ring⟩
-    · -- normSq_one 字段：exp(I*2πk)*conj(exp(I*2πk)) = 1*conj(1)
-      rw [hk]
-      have h1 : Complex.I * (2 * Real.pi * (k : ℝ)) = k * (2 * Real.pi * Complex.I) := by
-        push_cast; ring
-      rw [h1]
-      have hexp : Complex.exp (k * (2 * Real.pi * Complex.I)) = 1 := by
-        rw [Complex.exp_eq_one_iff]
-        exact ⟨k, by push_cast; ring⟩
-      rw [hexp]
-      simp
+    apply UOne.ext_z
+    show Complex.exp (Complex.I * (holonomyPhase P v : ℂ)) = 1
+    have hx : Complex.I * (holonomyPhase P v : ℂ) =
+        (k : ℂ) * (2 * (Real.pi : ℂ) * Complex.I) := by
+      have h := Complex.ofReal_inj.mpr hk
+      rw [h]
+      push_cast
+      ring
+    exact Complex.exp_eq_one_iff.mpr ⟨k, hx⟩
 
 /-! ## 2. 伴丛曲率（离散版） -/
 
@@ -169,7 +171,7 @@ def BianchiIdentity {n : ℕ} (F : BundleCurvature n) : Prop :=
 theorem BianchiIdentity_of_zero_curvature {n : ℕ} (F : BundleCurvature n)
     (hzero : ∀ v, F.curvature v = 0) : BianchiIdentity F := by
   intro S
-  simp [show ∀ v ∈ S, F.curvature v = 0 from fun v _ => hzero v]
+  exact Finset.sum_eq_zero (fun v _ => hzero v)
 
 /-! ## 5. 同步方程 = 运动方程的谱分解 -/
 

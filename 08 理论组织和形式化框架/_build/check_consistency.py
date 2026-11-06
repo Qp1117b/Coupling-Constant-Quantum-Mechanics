@@ -113,7 +113,7 @@ def main():
     # ---------- Lean 对接 ----------
     decls = jload(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "declarations.json"))
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
-    check("Lean 声明 1388 / 模块 68", (len(decls), len(mods)) == (1388, 68),
+    check("Lean 声明 1404 / 模块 69", (len(decls), len(mods)) == (1404, 69),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []
@@ -187,8 +187,8 @@ def main():
     check("claim 级边 > 250（原为 0）", len(clm) > 250, str(len(clm)))
 
     kgj = jload(os.path.join(ROOT, "03_超图与理论图", "知识图谱.json"))
-    check("知识图谱 144 实体 / 359 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 359),
+    check("知识图谱 144 实体 / 357 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 357),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")

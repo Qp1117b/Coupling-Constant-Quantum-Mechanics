@@ -1157,77 +1157,77 @@
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 196,
-  "kind": "axiom",
-  "name": "uniquenessByDeepCoupling"
+  "line": 198,
+  "kind": "def",
+  "name": "uniquenessByDeepCouplingClaim"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 209,
+  "line": 211,
   "kind": "structure",
   "name": "Agency"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 215,
+  "line": 217,
   "kind": "theorem",
   "name": "agency_enables_uniqueness"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 241,
+  "line": 244,
   "kind": "structure",
   "name": "BootstrappedDeepCoupling"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 249,
+  "line": 252,
   "kind": "structure",
   "name": "SituationalDeepCoupling"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 253,
+  "line": 256,
   "kind": "theorem",
   "name": "bootstrapped_yields_uniqueness"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 260,
+  "line": 264,
   "kind": "theorem",
   "name": "situational_yields_uniqueness"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 273,
-  "kind": "axiom",
-  "name": "layerNonReductionism"
+  "line": 281,
+  "kind": "def",
+  "name": "layerNonReductionismClaim"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 299,
+  "line": 307,
   "kind": "inductive",
   "name": "UncertaintyForm"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 306,
+  "line": 314,
   "kind": "def",
   "name": "uncertaintyFromDecoherence"
  },
  {
   "module": "Decoherence.DeepCoupling",
   "file": "Decoherence/DeepCoupling.lean",
-  "line": 318,
+  "line": 326,
   "kind": "theorem",
   "name": "uncertainty_form_by_layer"
  },
@@ -1277,97 +1277,104 @@
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
   "line": 35,
+  "kind": "theorem",
+  "name": "UOne.ext_z"
+ },
+ {
+  "module": "FGChain.BundleEOM",
+  "file": "FGChain/BundleEOM.lean",
+  "line": 45,
   "kind": "def",
   "name": "UOne.one"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 40,
+  "line": 50,
   "kind": "def",
   "name": "UOne.mul"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 50,
+  "line": 59,
   "kind": "def",
   "name": "holonomyUOne"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 69,
+  "line": 81,
   "kind": "def",
   "name": "holonomyTrivialUOne"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 73,
+  "line": 85,
   "kind": "theorem",
   "name": "holonomyTrivialUOne_iff"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 115,
+  "line": 117,
   "kind": "structure",
   "name": "BundleCurvature"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 124,
+  "line": 126,
   "kind": "theorem",
   "name": "BundleCurvature.curvature_nonneg"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 134,
+  "line": 136,
   "kind": "structure",
   "name": "SyncCurrent"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 144,
+  "line": 146,
   "kind": "structure",
   "name": "BundleEOM"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 153,
+  "line": 155,
   "kind": "theorem",
   "name": "BundleEOM.self_consistency"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 165,
+  "line": 167,
   "kind": "def",
   "name": "BianchiIdentity"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 169,
+  "line": 171,
   "kind": "theorem",
   "name": "BianchiIdentity_of_zero_curvature"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 181,
+  "line": 183,
   "kind": "structure",
   "name": "SpectralDecomposition"
  },
  {
   "module": "FGChain.BundleEOM",
   "file": "FGChain/BundleEOM.lean",
-  "line": 191,
+  "line": 193,
   "kind": "theorem",
   "name": "spectral_decomposition_to_shell"
  },
@@ -1493,112 +1500,112 @@
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 140,
+  "line": 139,
   "kind": "theorem",
   "name": "casimirEigenvalue_pos"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 151,
+  "line": 150,
   "kind": "theorem",
   "name": "casimirEigenvalue_strictMono"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 168,
+  "line": 167,
   "kind": "def",
   "name": "shellCapacityFromCasimir"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 171,
+  "line": 170,
   "kind": "theorem",
   "name": "shellCapacity_from_casimir"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 175,
+  "line": 174,
   "kind": "theorem",
   "name": "shellCapacityFromCasimir_values"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 183,
+  "line": 182,
   "kind": "theorem",
   "name": "shellCapacityFromCasimir_strictMono"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 193,
+  "line": 192,
   "kind": "def",
   "name": "cumulativePeriodLength"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 198,
+  "line": 197,
   "kind": "theorem",
   "name": "cumulativePeriodLength_values"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 207,
+  "line": 206,
   "kind": "theorem",
   "name": "cumulativePeriodLength_strictMono"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 220,
+  "line": 219,
   "kind": "theorem",
   "name": "cartanA4_positive_definite_link"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 227,
+  "line": 226,
   "kind": "theorem",
   "name": "cartanA4_det_eq_coxeterNumber"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 233,
+  "line": 232,
   "kind": "theorem",
   "name": "dynkinIndex_link"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 241,
+  "line": 240,
   "kind": "def",
   "name": "madelungConformalDim"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 244,
+  "line": 243,
   "kind": "theorem",
   "name": "madelungConformalDim_pos"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 251,
+  "line": 250,
   "kind": "theorem",
   "name": "madelung_mono_in_shell"
  },
  {
   "module": "FGChain.CartanToShell",
   "file": "FGChain/CartanToShell.lean",
-  "line": 260,
+  "line": 259,
   "kind": "theorem",
   "name": "cartan_to_shell_complete"
  },
@@ -1641,76 +1648,76 @@
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
   "line": 93,
-  "kind": "theorem",
-  "name": "phonon_algebra_from_position_momentum"
+  "kind": "def",
+  "name": "phononAlgebraClaim"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 109,
+  "line": 106,
   "kind": "structure",
   "name": "CurvatureFluctuationOperator"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 129,
+  "line": 126,
   "kind": "theorem",
   "name": "CurvatureFluctuationOperator.eigenvalue_nonneg"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 146,
+  "line": 143,
   "kind": "theorem",
   "name": "CurvatureFluctuationOperator.eigenvalue_pos_of_nonzero"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 202,
+  "line": 195,
   "kind": "structure",
   "name": "TotalCurvatureOperator"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 213,
+  "line": 206,
   "kind": "theorem",
   "name": "TotalCurvatureOperator.eigenvalue_ge_classical"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 222,
+  "line": 215,
   "kind": "theorem",
   "name": "TotalCurvatureOperator.eigenvalue_nonneg"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 232,
+  "line": 225,
   "kind": "def",
   "name": "TotalCurvatureOperator.toCurvatureOperator"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 248,
+  "line": 241,
   "kind": "theorem",
   "name": "curvature_quantum_is_phonon"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 260,
+  "line": 253,
   "kind": "def",
   "name": "reggeBaseToTotalCurvature"
  },
  {
   "module": "FGChain.CurvatureDerivation",
   "file": "FGChain/CurvatureDerivation.lean",
-  "line": 270,
+  "line": 263,
   "kind": "theorem",
   "name": "reggeBaseToTotalCurvature_classical"
  },
@@ -1962,49 +1969,49 @@
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 89,
+  "line": 88,
   "kind": "theorem",
   "name": "element_embeds_molecule"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 95,
+  "line": 93,
   "kind": "theorem",
   "name": "molecule_embeds_cell"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 101,
+  "line": 98,
   "kind": "theorem",
   "name": "embedding_transitive"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 111,
+  "line": 107,
   "kind": "structure",
   "name": "SpectralTransfer"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 122,
+  "line": 118,
   "kind": "theorem",
   "name": "SpectralTransfer.positivity_preserved"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 139,
+  "line": 135,
   "kind": "def",
   "name": "FGLevel.observable"
  },
  {
   "module": "FGChain.Hierarchy",
   "file": "FGChain/Hierarchy.lean",
-  "line": 148,
+  "line": 144,
   "kind": "theorem",
   "name": "end_to_end_prediction_chain"
  },
@@ -2025,126 +2032,126 @@
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 57,
+  "line": 60,
   "kind": "theorem",
   "name": "hydrogenLevel_ground"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 65,
+  "line": 68,
   "kind": "theorem",
   "name": "hydrogenLevel_rydberg"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 71,
+  "line": 74,
   "kind": "theorem",
   "name": "hydrogenLevel_gap"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 79,
+  "line": 85,
   "kind": "theorem",
   "name": "hydrogenLevel_antitone"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 95,
+  "line": 101,
   "kind": "theorem",
   "name": "balmerSeries"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 118,
+  "line": 124,
   "kind": "def",
   "name": "shellCapacity"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 124,
+  "line": 130,
   "kind": "theorem",
   "name": "shellCapacity_eq_casimir"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 132,
+  "line": 138,
   "kind": "theorem",
   "name": "shellCapacity_values"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 145,
+  "line": 151,
   "kind": "def",
   "name": "cumulativeLength"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 151,
+  "line": 157,
   "kind": "theorem",
   "name": "cumulativeLength_eq_period"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 163,
+  "line": 169,
   "kind": "theorem",
   "name": "cumulativeLength_values"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 178,
+  "line": 184,
   "kind": "def",
   "name": "transitionCoupling"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 181,
+  "line": 187,
   "kind": "theorem",
   "name": "transitionCoupling_pos"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 186,
+  "line": 192,
   "kind": "theorem",
   "name": "transitionCoupling_n2"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 196,
+  "line": 202,
   "kind": "theorem",
   "name": "transitionCriterion_general"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 209,
+  "line": 215,
   "kind": "def",
   "name": "bcsTcFormula"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 214,
+  "line": 220,
   "kind": "theorem",
   "name": "bcsTcFormula_pos"
  },
  {
   "module": "FGChain.Observable",
   "file": "FGChain/Observable.lean",
-  "line": 236,
+  "line": 245,
   "kind": "theorem",
   "name": "observable_chain_complete"
  },
@@ -2333,119 +2340,119 @@
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 92,
+  "line": 95,
   "kind": "def",
   "name": "SyncOperatorFull.casimirPart"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 99,
+  "line": 102,
   "kind": "def",
   "name": "SyncOperatorFull.fullEigenvalue"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 103,
+  "line": 106,
   "kind": "theorem",
   "name": "SyncOperatorFull.fullEigenvalue_eq_syncCost"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 108,
+  "line": 111,
   "kind": "theorem",
   "name": "SyncOperatorFull.fullEigenvalue_pos"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 119,
+  "line": 122,
   "kind": "structure",
   "name": "ConstraintEquation"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 128,
+  "line": 131,
   "kind": "theorem",
   "name": "ConstraintEquation.couplingLevel_eq_casimir"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 136,
+  "line": 139,
   "kind": "def",
   "name": "syncEigenstate"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 141,
-  "kind": "theorem",
-  "name": "syncEigenstate_normalized"
+  "line": 145,
+  "kind": "def",
+  "name": "syncEigenstateNormalizationClaim"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 151,
+  "line": 153,
   "kind": "def",
   "name": "syncCost"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 155,
+  "line": 157,
   "kind": "theorem",
   "name": "syncCost_pos"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 165,
+  "line": 167,
   "kind": "theorem",
   "name": "syncCost_strictMono"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 174,
+  "line": 183,
   "kind": "theorem",
   "name": "aufbau_order"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 186,
+  "line": 195,
   "kind": "def",
   "name": "couplingHierarchy"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 190,
+  "line": 199,
   "kind": "theorem",
   "name": "couplingHierarchy_ground"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 196,
+  "line": 205,
   "kind": "theorem",
   "name": "couplingHierarchy_decreasing"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 221,
+  "line": 223,
   "kind": "theorem",
   "name": "inverse_ground_couplingLevel"
  },
  {
   "module": "FGChain.SyncOperator",
   "file": "FGChain/SyncOperator.lean",
-  "line": 226,
+  "line": 228,
   "kind": "theorem",
   "name": "couplingHierarchy_ratio_21"
  },
@@ -2508,7 +2515,7 @@
  {
   "module": "FGChain.Synchronization",
   "file": "FGChain/Synchronization.lean",
-  "line": 109,
+  "line": 111,
   "kind": "theorem",
   "name": "eigenvalueCrossing_exists"
  },
@@ -2835,6 +2842,69 @@
   "name": "gn_factors_all_pos"
  },
  {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 40,
+  "kind": "def",
+  "name": "kmsBeta"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 43,
+  "kind": "theorem",
+  "name": "kmsBeta_pos"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 48,
+  "kind": "def",
+  "name": "jacobianFromTrace"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 55,
+  "kind": "theorem",
+  "name": "jacobianFromTrace_sq"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 63,
+  "kind": "theorem",
+  "name": "jacobianFromTrace_pos"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 67,
+  "kind": "theorem",
+  "name": "log_jacobianFromTrace"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 75,
+  "kind": "def",
+  "name": "traceHinv_eq_spectralQuantum"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 78,
+  "kind": "theorem",
+  "name": "jacobianFromTrace_eq_of_trace_eq_qi"
+ },
+ {
+  "module": "GN.ModularTrace",
+  "file": "GN/ModularTrace.lean",
+  "line": 87,
+  "kind": "theorem",
+  "name": "adeleJacobian_eq_jacobianFromTrace"
+ },
+ {
   "module": "GN.SierraCQM",
   "file": "GN/SierraCQM.lean",
   "line": 49,
@@ -3159,266 +3229,266 @@
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 276,
+  "line": 277,
   "kind": "theorem",
   "name": "cycEvalMat_det_ne_zero"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 280,
+  "line": 281,
   "kind": "theorem",
   "name": "gVec_linearIndependent"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 312,
+  "line": 313,
   "kind": "theorem",
   "name": "cycVec_linearIndependent"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 344,
+  "line": 345,
   "kind": "theorem",
   "name": "mem_eigenspace_colVec"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 351,
+  "line": 352,
   "kind": "theorem",
   "name": "hasEigenvector_colVec"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 356,
+  "line": 357,
   "kind": "theorem",
   "name": "disjoint_eig_9_4"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 361,
+  "line": 362,
   "kind": "theorem",
   "name": "disjoint_eig_9_1"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 366,
+  "line": 367,
   "kind": "theorem",
   "name": "disjoint_eig_4_1"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 371,
+  "line": 372,
   "kind": "theorem",
   "name": "ones_in_eigenspace"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 376,
+  "line": 377,
   "kind": "theorem",
   "name": "g_in_eigenspace"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 381,
+  "line": 382,
   "kind": "theorem",
   "name": "cyc_in_eigenspace"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 388,
+  "line": 389,
   "kind": "def",
   "name": "splitIdxAux"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 395,
+  "line": 396,
   "kind": "def",
   "name": "splitIdx"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 399,
+  "line": 400,
   "kind": "def",
   "name": "colGrouped"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 402,
+  "line": 403,
   "kind": "theorem",
   "name": "allOnesVec_ne_zero"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 407,
+  "line": 408,
   "kind": "theorem",
   "name": "splitIdx_injective"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 411,
+  "line": 412,
   "kind": "theorem",
   "name": "colVec_eq_grouped"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 415,
+  "line": 416,
   "kind": "theorem",
   "name": "colGrouped_linearIndependent"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 483,
+  "line": 484,
   "kind": "theorem",
   "name": "colVec_linearIndependent"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 488,
+  "line": 489,
   "kind": "theorem",
   "name": "eigBasisMat_det_ne_zero"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 505,
+  "line": 506,
   "kind": "def",
   "name": "castQ"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 508,
+  "line": 509,
   "kind": "theorem",
   "name": "castQ_det_ne_zero"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 516,
+  "line": 517,
   "kind": "theorem",
   "name": "castQ_isUnit"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 519,
+  "line": 520,
   "kind": "theorem",
   "name": "castQ_eigDiag"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 523,
+  "line": 524,
   "kind": "theorem",
   "name": "castQ_conj"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 538,
+  "line": 539,
   "kind": "theorem",
   "name": "castQ_charpoly_eq"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 552,
+  "line": 553,
   "kind": "theorem",
   "name": "castQ_eigDiag_charpoly"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 557,
+  "line": 558,
   "kind": "theorem",
   "name": "eigVal_product_Q"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 601,
+  "line": 602,
   "kind": "theorem",
   "name": "edgeFaceMatrix_charpoly"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 625,
+  "line": 626,
   "kind": "theorem",
   "name": "simplex_face_counts"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 634,
+  "line": 635,
   "kind": "def",
   "name": "simplexNonemptyFaces"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 638,
+  "line": 639,
   "kind": "theorem",
   "name": "simplexNonemptyFaces_eq_31"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 643,
+  "line": 644,
   "kind": "theorem",
   "name": "simplexNonemptyFaces_eq_two_pow_sub_one"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 649,
+  "line": 650,
   "kind": "theorem",
   "name": "simplex_all_subsets"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 656,
+  "line": 657,
   "kind": "theorem",
   "name": "simplex_fVector_matches"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 663,
+  "line": 664,
   "kind": "theorem",
   "name": "nonemptyFaces_eq_fVector_sum_add_one"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 670,
+  "line": 671,
   "kind": "theorem",
   "name": "kappa_numerator_faces"
  },
  {
   "module": "GN.SimplexSpectrum",
   "file": "GN/SimplexSpectrum.lean",
-  "line": 676,
+  "line": 677,
   "kind": "theorem",
   "name": "kappa_denominator_trace"
  },
@@ -3594,202 +3664,202 @@
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
   "line": 153,
-  "kind": "axiom",
+  "kind": "theorem",
   "name": "basicDOF_nonneg"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 159,
-  "kind": "axiom",
+  "line": 160,
+  "kind": "theorem",
   "name": "basicDOF_support"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 165,
+  "line": 168,
   "kind": "theorem",
   "name": "basicDOF_determined_by_ontology"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 179,
+  "line": 182,
   "kind": "def",
   "name": "illuminationDegree"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 182,
-  "kind": "axiom",
+  "line": 185,
+  "kind": "theorem",
   "name": "illuminationDegree_range"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 188,
+  "line": 192,
   "kind": "def",
   "name": "reproductionOffset"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 192,
+  "line": 196,
   "kind": "theorem",
   "name": "reproductionOffset_zero_when_ideal"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 201,
+  "line": 205,
   "kind": "theorem",
   "name": "reproductionOffset_one_when_unlit"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 211,
+  "line": 215,
   "kind": "axiom",
   "name": "ontologyDevelopsInto"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 214,
+  "line": 218,
   "kind": "axiom",
   "name": "ontologyDevelopsInto_irreflexive"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 218,
+  "line": 222,
   "kind": "theorem",
   "name": "ontologyDevelopsInto_distinct"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 228,
+  "line": 232,
   "kind": "def",
   "name": "causalPotential"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 238,
+  "line": 242,
   "kind": "def",
   "name": "couplingDepth"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 243,
+  "line": 247,
   "kind": "def",
   "name": "reproductionDecay"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 256,
+  "line": 260,
   "kind": "def",
   "name": "emergentProperty"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 266,
-  "kind": "axiom",
+  "line": 270,
+  "kind": "theorem",
   "name": "emergentProperty_false_when_no_coupling"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 272,
-  "kind": "axiom",
+  "line": 278,
+  "kind": "theorem",
   "name": "emergentProperty_unstable_when_infinite_decay"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 279,
+  "line": 287,
   "kind": "theorem",
   "name": "emergentProperty_requires_coupling"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 293,
+  "line": 301,
   "kind": "theorem",
   "name": "basicDOF_contributes_to_emergence"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 316,
+  "line": 324,
   "kind": "abbrev",
   "name": "MeasurementOutcome"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 319,
+  "line": 327,
   "kind": "abbrev",
   "name": "MeasurementSetting"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 322,
+  "line": 330,
   "kind": "abbrev",
   "name": "HiddenVariable"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 325,
+  "line": 333,
   "kind": "abbrev",
   "name": "CouplingField"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 329,
+  "line": 337,
   "kind": "def",
   "name": "vulgarHVTDecomposition"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 339,
+  "line": 347,
   "kind": "def",
   "name": "cqmDeepCouplingForm"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 352,
-  "kind": "axiom",
-  "name": "deepCoupling_breaks_factorization"
+  "line": 366,
+  "kind": "def",
+  "name": "deepCouplingBreaksFactorizationClaim"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 369,
+  "line": 383,
   "kind": "lemma",
   "name": "exists_pos_mutualInformationChange"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 377,
+  "line": 391,
   "kind": "def",
   "name": "mutualInformationChange"
  },
  {
   "module": "Methodology.Basic",
   "file": "Methodology/Basic.lean",
-  "line": 383,
+  "line": 397,
   "kind": "theorem",
   "name": "mutualInformationChange_positive"
  },
@@ -4230,224 +4300,224 @@
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 59,
+  "line": 60,
   "kind": "structure",
   "name": "CausalLoop"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 64,
+  "line": 65,
   "kind": "def",
   "name": "CausalLoop.circumference"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 68,
+  "line": 69,
   "kind": "def",
   "name": "CausalLoop.reproductionFrequency"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 72,
+  "line": 73,
   "kind": "theorem",
   "name": "CausalLoop.reproductionFrequency_pos"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 83,
-  "kind": "axiom",
-  "name": "causalChainSelfClosure"
+  "line": 86,
+  "kind": "def",
+  "name": "CausalLoop.ofSegment"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 89,
+  "line": 93,
   "kind": "def",
   "name": "causalChainLength"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 92,
+  "line": 96,
   "kind": "theorem",
   "name": "causalChainLength_pos"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 104,
+  "line": 108,
   "kind": "def",
   "name": "comptonWavelength"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 107,
+  "line": 111,
   "kind": "theorem",
   "name": "comptonWavelength_pos"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 112,
+  "line": 116,
   "kind": "theorem",
   "name": "comptonWavelength_anti_monotone"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 126,
+  "line": 130,
   "kind": "def",
   "name": "massFromCausalChainLength"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 129,
+  "line": 133,
   "kind": "theorem",
   "name": "massFromCausalChainLength_pos"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 134,
+  "line": 138,
   "kind": "theorem",
   "name": "massFromCausalChainLength_anti_monotone"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 140,
+  "line": 144,
   "kind": "theorem",
   "name": "massFromCausalChainLength_eq_compton"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 149,
+  "line": 153,
   "kind": "theorem",
   "name": "massFromEquilateralTriangle"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 158,
+  "line": 162,
   "kind": "theorem",
   "name": "equilateralTriangle_masses_equal"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 177,
+  "line": 181,
   "kind": "theorem",
   "name": "probabilityMassInverse"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 184,
+  "line": 188,
   "kind": "theorem",
   "name": "probabilityMassInverse_triangle"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 193,
+  "line": 197,
   "kind": "theorem",
   "name": "stabilityFromProbability"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 222,
+  "line": 226,
   "kind": "def",
   "name": "decayRate"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 225,
+  "line": 229,
   "kind": "theorem",
   "name": "decayRate_pos"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 231,
+  "line": 235,
   "kind": "theorem",
   "name": "decayRate_mass_relation"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 237,
+  "line": 241,
   "kind": "theorem",
   "name": "decayRate_inverse_probability"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 243,
+  "line": 247,
   "kind": "theorem",
   "name": "decayRate_proportional_mass"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 260,
+  "line": 264,
   "kind": "def",
   "name": "electronMass"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 263,
+  "line": 267,
   "kind": "def",
   "name": "muonMass"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 266,
+  "line": 270,
   "kind": "def",
   "name": "tauMass"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 271,
-  "kind": "axiom",
-  "name": "leptonMassOrdering"
- },
- {
-  "module": "PrimeGeometry.Compton",
-  "file": "PrimeGeometry/Compton.lean",
-  "line": 274,
+  "line": 275,
   "kind": "theorem",
-  "name": "electron_is_lightest"
+  "name": "leptonMassOrdering"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
   "line": 279,
   "kind": "theorem",
-  "name": "tau_is_heaviest"
+  "name": "electron_is_lightest"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
   "line": 284,
   "kind": "theorem",
+  "name": "tau_is_heaviest"
+ },
+ {
+  "module": "PrimeGeometry.Compton",
+  "file": "PrimeGeometry/Compton.lean",
+  "line": 289,
+  "kind": "theorem",
   "name": "muon_electron_ratio"
  },
  {
   "module": "PrimeGeometry.Compton",
   "file": "PrimeGeometry/Compton.lean",
-  "line": 288,
+  "line": 293,
   "kind": "theorem",
   "name": "tau_electron_ratio"
  },
@@ -4769,966 +4839,966 @@
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 54,
+  "line": 55,
   "kind": "def",
   "name": "isIrreducibleReproduction"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 58,
+  "line": 59,
   "kind": "def",
   "name": "activePrimeSet"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 61,
+  "line": 62,
   "kind": "theorem",
   "name": "activePrimeSet_eq_activePrimes"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 64,
+  "line": 65,
   "kind": "theorem",
   "name": "activePrimeSet_card_eq_three"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 68,
+  "line": 69,
   "kind": "theorem",
   "name": "activePrimeSet_all_prime"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 78,
+  "line": 79,
   "kind": "theorem",
   "name": "activePrimeSet_prod_eq_30"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 108,
+  "line": 109,
   "kind": "def",
   "name": "globalWindingDensity"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 121,
+  "line": 122,
   "kind": "def",
   "name": "primeWindingDensity"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 133,
-  "kind": "axiom",
-  "name": "windingDensityConvergence"
+  "line": 139,
+  "kind": "def",
+  "name": "windingDensityConvergenceClaim"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 147,
+  "line": 154,
   "kind": "theorem",
   "name": "totalProbabilityConservation"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 160,
+  "line": 167,
   "kind": "theorem",
   "name": "totalProbabilityConservation_triangle"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 169,
+  "line": 176,
   "kind": "theorem",
   "name": "triangle_circumference_vs_sideLength"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 177,
+  "line": 184,
   "kind": "theorem",
   "name": "triangle_density_sum"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 193,
+  "line": 200,
   "kind": "theorem",
   "name": "triangle_sides_eq_activePrimes"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 198,
+  "line": 205,
   "kind": "theorem",
   "name": "windingDensity_agrees_with_activePrimes"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 204,
+  "line": 211,
   "kind": "theorem",
   "name": "frozenPrime_density_zero"
  },
  {
   "module": "PrimeGeometry.WindingDensity",
   "file": "PrimeGeometry/WindingDensity.lean",
-  "line": 212,
+  "line": 219,
   "kind": "theorem",
   "name": "activePrimes_irreducible"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 68,
+  "line": 69,
   "kind": "def",
   "name": "spectralQuantum"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 82,
-  "kind": "axiom",
+  "line": 83,
+  "kind": "theorem",
   "name": "spectralQuantum_numerical_bounds"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 86,
+  "line": 238,
   "kind": "theorem",
   "name": "spectralQuantum_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 91,
+  "line": 243,
   "kind": "theorem",
   "name": "spectralQuantum_lt_one"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 96,
+  "line": 248,
   "kind": "theorem",
   "name": "spectralQuantum_inv_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 102,
+  "line": 254,
   "kind": "theorem",
   "name": "spectralQuantum_inv_gt_40"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 115,
+  "line": 267,
   "kind": "theorem",
   "name": "spectralQuantum_lt_eigenvalue1"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 138,
+  "line": 290,
   "kind": "def",
   "name": "mathieuCritical"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 141,
+  "line": 293,
   "kind": "theorem",
   "name": "mathieuCritical_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 148,
+  "line": 300,
   "kind": "theorem",
   "name": "mathieuCritical_lt_132"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 153,
+  "line": 305,
   "kind": "theorem",
   "name": "mathieuCritical_gt_131"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 159,
+  "line": 311,
   "kind": "theorem",
   "name": "mathieuCritical_numerical_approx"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 165,
+  "line": 317,
   "kind": "theorem",
   "name": "mathieuCritical_vs_eigenvalue4"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 189,
+  "line": 341,
   "kind": "def",
   "name": "firstCoupling"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 192,
+  "line": 344,
   "kind": "theorem",
   "name": "firstCoupling_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 196,
+  "line": 348,
   "kind": "theorem",
   "name": "firstCoupling_gt_100"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 208,
+  "line": 360,
   "kind": "def",
   "name": "sierraCQMTheorem"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 212,
+  "line": 364,
   "kind": "def",
   "name": "riemannZero1"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 215,
+  "line": 367,
   "kind": "def",
   "name": "sierraCQM_n1"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 218,
+  "line": 370,
   "kind": "theorem",
   "name": "sierraCQM_n1_value"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 226,
+  "line": 378,
   "kind": "def",
   "name": "adeleCycle"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 229,
+  "line": 381,
   "kind": "theorem",
   "name": "adeleCycle_eq_30"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 234,
+  "line": 386,
   "kind": "def",
   "name": "simplexFVectorSum"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 237,
+  "line": 389,
   "kind": "theorem",
   "name": "simplexFVectorSum_eq_30"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 242,
+  "line": 394,
   "kind": "theorem",
   "name": "simplexFVectorSum_eq_adeleCycle"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 255,
+  "line": 407,
   "kind": "def",
   "name": "spectralCorrection"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 258,
+  "line": 410,
   "kind": "theorem",
   "name": "spectralCorrection_gt_one"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 264,
+  "line": 416,
   "kind": "theorem",
   "name": "spectralCorrection_expanded"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 269,
+  "line": 421,
   "kind": "theorem",
   "name": "spectralCorrection_formula"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 274,
+  "line": 426,
   "kind": "theorem",
   "name": "spectralCorrection_gt_one_strong"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 282,
+  "line": 434,
   "kind": "theorem",
   "name": "spectralCorrection_range"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 299,
+  "line": 451,
   "kind": "def",
   "name": "GNFactor"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 303,
+  "line": 455,
   "kind": "theorem",
   "name": "GNFactor_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 322,
+  "line": 474,
   "kind": "def",
   "name": "GNFactor_decomposed"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 327,
+  "line": 479,
   "kind": "def",
   "name": "GNFactor_log"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 331,
+  "line": 483,
   "kind": "def",
   "name": "GNFactor_at_C"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 336,
+  "line": 488,
   "kind": "theorem",
   "name": "GNFactor_at_C_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 357,
+  "line": 509,
   "kind": "theorem",
   "name": "spectralQuantum_vs_cartan_eigenvalues"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 363,
+  "line": 515,
   "kind": "theorem",
   "name": "spectralCorrection_numerator_decomposition"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 369,
+  "line": 521,
   "kind": "theorem",
   "name": "spectralCorrection_full_formula"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 381,
+  "line": 533,
   "kind": "theorem",
   "name": "spectralQuantum_pos_ref"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 428,
+  "line": 580,
   "kind": "def",
   "name": "riemannZero2"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 431,
+  "line": 583,
   "kind": "def",
   "name": "riemannZero3"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 434,
+  "line": 586,
   "kind": "theorem",
   "name": "riemannZero1_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 437,
+  "line": 589,
   "kind": "theorem",
   "name": "riemannZero2_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 440,
+  "line": 592,
   "kind": "theorem",
   "name": "riemannZero3_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 444,
+  "line": 596,
   "kind": "theorem",
   "name": "riemannZeros_ordered"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 478,
+  "line": 630,
   "kind": "def",
   "name": "firstCoupling_sierraCQM"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 486,
+  "line": 638,
   "kind": "theorem",
   "name": "firstCoupling_sierraCQM_deviation"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 492,
+  "line": 644,
   "kind": "theorem",
   "name": "couplingLevel_monotone"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 499,
+  "line": 651,
   "kind": "theorem",
   "name": "firstCouplingSierraCQM_gt_200"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 513,
+  "line": 665,
   "kind": "theorem",
   "name": "couplingLevel_difference"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 518,
+  "line": 670,
   "kind": "theorem",
   "name": "couplingLevel_difference_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 543,
+  "line": 695,
   "kind": "def",
   "name": "spectralProduct"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 546,
+  "line": 698,
   "kind": "theorem",
   "name": "spectralProduct_pos"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 554,
+  "line": 706,
   "kind": "theorem",
   "name": "spectralProduct_lt_ten"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 592,
+  "line": 744,
   "kind": "theorem",
   "name": "spectralProduct_gt_six"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 633,
+  "line": 785,
   "kind": "def",
   "name": "spectralQuantum_to_eigenvalue1_ratio"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 636,
+  "line": 788,
   "kind": "theorem",
   "name": "spectralQuantum_to_eigenvalue1_ratio_range"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 705,
+  "line": 857,
   "kind": "theorem",
   "name": "thirty_prime_factorization"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 709,
+  "line": 861,
   "kind": "def",
   "name": "activePrimes"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 712,
+  "line": 864,
   "kind": "theorem",
   "name": "activePrimes_product_eq_30"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 716,
+  "line": 868,
   "kind": "theorem",
   "name": "activePrimes_are_prime"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 735,
+  "line": 887,
   "kind": "theorem",
   "name": "activePrimes_count_eq_three"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 741,
+  "line": 893,
   "kind": "theorem",
   "name": "activePrimes_count_vs_rank"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 760,
+  "line": 912,
   "kind": "theorem",
   "name": "adeleCycle_eq_product_of_active_primes"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 787,
+  "line": 939,
   "kind": "def",
   "name": "primePotential"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 790,
+  "line": 942,
   "kind": "theorem",
   "name": "primePotential_active"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 794,
+  "line": 946,
   "kind": "theorem",
   "name": "primePotential_frozen"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 798,
+  "line": 950,
   "kind": "theorem",
   "name": "primePotential_2"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 801,
+  "line": 953,
   "kind": "theorem",
   "name": "primePotential_3"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 804,
+  "line": 956,
   "kind": "theorem",
   "name": "primePotential_5"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 808,
+  "line": 960,
   "kind": "theorem",
   "name": "primePotential_7"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 822,
+  "line": 974,
   "kind": "theorem",
   "name": "adeleConstraint"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 832,
+  "line": 984,
   "kind": "theorem",
   "name": "adeleConstraint_implies_Ncycle_30"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 840,
+  "line": 992,
   "kind": "theorem",
   "name": "adeleConstraint_implies_active_product_30"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 851,
+  "line": 1003,
   "kind": "theorem",
   "name": "adeleConstraint_finite_general"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 883,
+  "line": 1035,
   "kind": "theorem",
   "name": "primeFreezing_consequence"
  },
  {
   "module": "SpectralGeometry.Basic",
   "file": "SpectralGeometry/Basic.lean",
-  "line": 903,
+  "line": 1055,
   "kind": "theorem",
   "name": "activePrimeCount_vs_su5_rank"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 46,
+  "line": 47,
   "kind": "def",
   "name": "completedL1"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 50,
+  "line": 51,
   "kind": "def",
   "name": "completedLn"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 54,
+  "line": 55,
   "kind": "theorem",
   "name": "completedLn_eq_power"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 68,
+  "line": 69,
   "kind": "def",
   "name": "spectralQuantumGLn"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 72,
+  "line": 73,
   "kind": "theorem",
   "name": "spectralQuantumGL1_eq_spectralQuantum"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 82,
+  "line": 83,
   "kind": "theorem",
   "name": "spectralQuantumGLn_eq_n_times_C1"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 92,
+  "line": 93,
   "kind": "theorem",
   "name": "normalized_spectralQuantum_universal"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 110,
+  "line": 112,
   "kind": "def",
   "name": "hierarchyFactorGLn"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 114,
+  "line": 116,
   "kind": "theorem",
   "name": "hierarchyFactorGLn_scaling"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 124,
+  "line": 129,
   "kind": "theorem",
   "name": "hierarchyFactorGLn_pos"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 132,
+  "line": 137,
   "kind": "theorem",
   "name": "lower_GLn_dominates"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 161,
+  "line": 164,
   "kind": "theorem",
   "name": "spectralQuantumGL5_eq_5C"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 168,
+  "line": 171,
   "kind": "theorem",
   "name": "GL5_spectralQuantum_matches_SU5_structure"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 189,
+  "line": 194,
   "kind": "def",
   "name": "zeroMultiplicityGLn"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 193,
+  "line": 198,
   "kind": "theorem",
   "name": "trivial_zero_multiplicity"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 199,
+  "line": 204,
   "kind": "theorem",
   "name": "nontrivial_zero_multiplicity"
  },
  {
   "module": "SpectralGeometry.GLnTrivialSpectralQuantum",
   "file": "SpectralGeometry/GLnTrivialSpectralQuantum.lean",
-  "line": 207,
+  "line": 212,
   "kind": "theorem",
   "name": "zero_set_unchanged"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 39,
+  "line": 37,
   "kind": "def",
   "name": "goldenRatio"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 42,
+  "line": 40,
   "kind": "theorem",
   "name": "goldenRatio_sq_eq_add_one"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 48,
+  "line": 46,
   "kind": "theorem",
   "name": "goldenRatio_gt_one"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 57,
+  "line": 55,
   "kind": "theorem",
   "name": "goldenRatio_lt_two"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 63,
+  "line": 61,
   "kind": "theorem",
   "name": "goldenRatio_inv_eq_sub_one"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 70,
+  "line": 68,
   "kind": "theorem",
   "name": "goldenRatio_sqrt5"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 86,
+  "line": 84,
   "kind": "def",
   "name": "mathieuParameter"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 97,
+  "line": 95,
   "kind": "theorem",
   "name": "mathieuParameter_eq_half_goldenRatio"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 107,
+  "line": 105,
   "kind": "theorem",
   "name": "mathieuParameter_pos"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 113,
+  "line": 111,
   "kind": "theorem",
   "name": "mathieuParameter_lt_one"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 119,
+  "line": 117,
   "kind": "theorem",
   "name": "mathieuParameter_range"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 143,
+  "line": 141,
   "kind": "def",
   "name": "eigenvalueRatio4to1"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 146,
+  "line": 144,
   "kind": "theorem",
   "name": "eigenvalueRatio4to1_exact"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 156,
+  "line": 154,
   "kind": "theorem",
   "name": "eigenvalueRatio_gt_9"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 165,
+  "line": 163,
   "kind": "theorem",
   "name": "eigenvalueRatio_lt_10"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 175,
+  "line": 173,
   "kind": "theorem",
   "name": "mathieuParameter_from_ratio"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 205,
+  "line": 202,
   "kind": "theorem",
   "name": "mathieuParameter_lt_criticalValue"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 219,
+  "line": 216,
   "kind": "structure",
   "name": "MathieuEquation"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 250,
+  "line": 247,
   "kind": "axiom",
   "name": "b1"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 260,
+  "line": 257,
   "kind": "def",
   "name": "b1_truncated"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 278,
+  "line": 265,
   "kind": "theorem",
   "name": "b1_trunc_error_bound_safe"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 282,
+  "line": 278,
   "kind": "axiom",
   "name": "b1_perturbation_lower_bound"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 311,
+  "line": 307,
   "kind": "theorem",
   "name": "b1_gt_2q_at_mathieuParameter"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 385,
+  "line": 383,
   "kind": "def",
   "name": "spectralQuantum_Mathieu_relation"
  },
  {
   "module": "SpectralGeometry.Mathieu",
   "file": "SpectralGeometry/Mathieu.lean",
-  "line": 388,
+  "line": 386,
   "kind": "theorem",
   "name": "spectralQuantum_Mathieu_product_approx"
  },
@@ -6043,51 +6113,44 @@
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 196,
+  "line": 193,
   "kind": "theorem",
   "name": "spectralQuantum_xi_formula"
  },
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 201,
+  "line": 198,
   "kind": "theorem",
   "name": "spectralQuantum_eq_xi_log_derivative"
  },
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 209,
+  "line": 215,
   "kind": "theorem",
   "name": "spectralQuantum_xi_formula_consistent"
  },
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 214,
+  "line": 220,
   "kind": "theorem",
   "name": "spectralQuantum_xi_pos"
  },
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 218,
+  "line": 224,
   "kind": "theorem",
   "name": "spectralQuantum_xi_lt_one"
  },
  {
   "module": "SpectralGeometry.RiemannXi",
   "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 222,
+  "line": 228,
   "kind": "theorem",
   "name": "spectralQuantum_xi_range_consistent"
- },
- {
-  "module": "SpectralGeometry.RiemannXi",
-  "file": "SpectralGeometry/RiemannXi.lean",
-  "line": 259,
-  "kind": "axiom",
-  "name": "spectralQuantum_zeta_zeros_relation"
  },
  {
   "module": "Superconductivity.BCSIntegralAsymptotic",
@@ -6302,56 +6365,56 @@
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 307,
+  "line": 309,
   "kind": "lemma",
   "name": "blockDiagonal'_quadratic_form"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 325,
+  "line": 327,
   "kind": "lemma",
   "name": "blockDiagonal'_isHermitian"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 350,
+  "line": 352,
   "kind": "theorem",
   "name": "blockDiagonal_quadratic_lowerBound"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 390,
+  "line": 392,
   "kind": "theorem",
   "name": "blockDiagonal_spectralGap_min"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 442,
+  "line": 444,
   "kind": "theorem",
   "name": "twoProtonCoupling_eigenvalues_form"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 466,
+  "line": 468,
   "kind": "def",
   "name": "twoAtomCouplingMatrix"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 473,
+  "line": 475,
   "kind": "lemma",
   "name": "twoAtomCoupling_quadratic_expand"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 490,
+  "line": 491,
   "kind": "lemma",
   "name": "twoAtomCoupling_quadratic_abs_bound"
  },
@@ -6365,14 +6428,14 @@
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 626,
+  "line": 627,
   "kind": "theorem",
   "name": "twoAtomSuperCartan_posDef"
  },
  {
   "module": "Superconductivity.BridgeTheorems",
   "file": "Superconductivity/BridgeTheorems.lean",
-  "line": 715,
+  "line": 724,
   "kind": "theorem",
   "name": "cqm_superconductivity_end_to_end_chain"
  },
@@ -6806,196 +6869,196 @@
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 69,
+  "line": 68,
   "kind": "theorem",
   "name": "curvatureStiffness_pos"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 78,
+  "line": 77,
   "kind": "def",
   "name": "phononFrequency"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 81,
+  "line": 80,
   "kind": "theorem",
   "name": "phononFrequency_pos"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 88,
+  "line": 87,
   "kind": "theorem",
   "name": "curvatureStiffness_monotone_in_thetaD"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 100,
+  "line": 104,
   "kind": "def",
   "name": "reggeAction"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 106,
+  "line": 110,
   "kind": "def",
   "name": "yangMillsAction"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 112,
+  "line": 116,
   "kind": "def",
   "name": "ginzburgLandauPotential"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 116,
+  "line": 120,
   "kind": "def",
   "name": "glCriticalPoint"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 122,
+  "line": 126,
   "kind": "theorem",
   "name": "glPotential_derivative_zero_at_critical"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 145,
+  "line": 146,
   "kind": "def",
   "name": "fullAction"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 153,
+  "line": 154,
   "kind": "theorem",
   "name": "fullAction_decomposition"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 166,
+  "line": 167,
   "kind": "def",
   "name": "a5Order"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 169,
+  "line": 170,
   "kind": "def",
   "name": "a5NumClasses"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 172,
+  "line": 173,
   "kind": "theorem",
   "name": "a5_order_eq_5_times_a4"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 179,
+  "line": 180,
   "kind": "def",
   "name": "a5StructEnhancement"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 182,
+  "line": 183,
   "kind": "def",
   "name": "a4StructEnhancement"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 186,
+  "line": 187,
   "kind": "theorem",
   "name": "a5_structEnhancement_gt_a4"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 196,
+  "line": 197,
   "kind": "def",
   "name": "a5GammaM"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 199,
+  "line": 200,
   "kind": "def",
   "name": "a4GammaM"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 203,
+  "line": 204,
   "kind": "theorem",
   "name": "a5_gammaM_lt_a4"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 210,
+  "line": 211,
   "kind": "def",
   "name": "a5TransitionCoupling"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 213,
+  "line": 214,
   "kind": "def",
   "name": "a4TransitionCoupling"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 217,
+  "line": 218,
   "kind": "theorem",
   "name": "a5_transitionCoupling_lt_a4"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 226,
+  "line": 227,
   "kind": "def",
   "name": "a5EligibilityThreshold"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 229,
+  "line": 230,
   "kind": "def",
   "name": "a4EligibilityThreshold"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 236,
+  "line": 237,
   "kind": "theorem",
   "name": "a5_threshold_gt_a4"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 256,
+  "line": 265,
   "kind": "def",
   "name": "a5toA4_ratio"
  },
  {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
-  "line": 261,
+  "line": 270,
   "kind": "theorem",
   "name": "a5toA4_ratio_gt_one"
  },
@@ -7004,670 +7067,698 @@
   "file": "Superconductivity/DeepResearch.lean",
   "line": 57,
   "kind": "def",
-  "name": "goldenRatio"
- },
- {
-  "module": "Superconductivity.DeepResearch",
-  "file": "Superconductivity/DeepResearch.lean",
-  "line": 60,
-  "kind": "def",
   "name": "a4SpectralGap"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 63,
+  "line": 60,
   "kind": "theorem",
   "name": "a4SpectralGap_pos"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 73,
-  "kind": "theorem",
-  "name": "goldenRatio_pos"
- },
- {
-  "module": "Superconductivity.DeepResearch",
-  "file": "Superconductivity/DeepResearch.lean",
-  "line": 83,
+  "line": 72,
   "kind": "theorem",
   "name": "sqrt_a4SpectralGap_eq_inv_goldenRatio"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 98,
+  "line": 89,
   "kind": "theorem",
   "name": "sqrt_a4SpectralGap_eq_goldenRatio_minus_one"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 106,
+  "line": 101,
   "kind": "theorem",
   "name": "a4SpectralGap_eq_inv_goldenRatio_sq"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 115,
+  "line": 110,
   "kind": "def",
   "name": "bulkModulusA4"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 119,
+  "line": 114,
   "kind": "def",
   "name": "soundSpeedA4"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 123,
+  "line": 118,
   "kind": "def",
   "name": "debyeWaveVector"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 129,
+  "line": 124,
   "kind": "def",
   "name": "debyeTemperatureA4"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 134,
+  "line": 129,
   "kind": "theorem",
   "name": "debyeTemperatureA4_pos"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 143,
+  "line": 138,
   "kind": "theorem",
   "name": "debyeTemperatureA4_decreases_with_mass"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 163,
+  "line": 166,
   "kind": "def",
   "name": "a4DimStandard"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 166,
+  "line": 169,
   "kind": "def",
   "name": "electronPhononCouplingA4"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 170,
+  "line": 173,
   "kind": "theorem",
   "name": "electronPhononCouplingA4_pos"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 180,
+  "line": 183,
   "kind": "theorem",
   "name": "electronPhononCoupling_from_A4_representation"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 191,
+  "line": 194,
   "kind": "def",
   "name": "diagonalParameter"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 194,
+  "line": 197,
   "kind": "theorem",
   "name": "diagonalParameter_neutron_neg"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 201,
+  "line": 204,
   "kind": "def",
   "name": "n2MappingScale"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 206,
+  "line": 209,
   "kind": "def",
   "name": "n2AngleDeficitMapping"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 210,
+  "line": 213,
   "kind": "theorem",
   "name": "n2Mapping_pos"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 221,
+  "line": 230,
   "kind": "theorem",
   "name": "n2MappingScale_lt_half"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 229,
+  "line": 241,
   "kind": "structure",
   "name": "GroupConstraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 236,
+  "line": 248,
   "kind": "def",
   "name": "a4Constraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 243,
+  "line": 255,
   "kind": "def",
   "name": "s3Constraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 250,
+  "line": 262,
   "kind": "def",
   "name": "s4Constraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 257,
+  "line": 269,
   "kind": "def",
   "name": "a5Constraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 270,
+  "line": 282,
   "kind": "theorem",
   "name": "a4_unique_under_3_constraints"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 280,
+  "line": 292,
   "kind": "theorem",
   "name": "a4_order_bounded"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 285,
+  "line": 297,
   "kind": "theorem",
   "name": "a4_minimal_order_among_valid"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 339,
+  "line": 351,
   "kind": "def",
   "name": "fineStructureConstantTheory"
  },
  {
   "module": "Superconductivity.DeepResearch",
   "file": "Superconductivity/DeepResearch.lean",
-  "line": 343,
+  "line": 355,
   "kind": "theorem",
   "name": "fineStructureConstantTheory_pos"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 59,
+  "line": 60,
+  "kind": "def",
+  "name": "blockDiagProd"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 65,
+  "kind": "lemma",
+  "name": "blockDiagProd_apply"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 71,
+  "kind": "lemma",
+  "name": "blockDiagProd_trace"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 77,
+  "kind": "lemma",
+  "name": "blockDiagProd_quadratic"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 93,
+  "kind": "lemma",
+  "name": "blockDiagProd_isHermitian"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 107,
+  "kind": "lemma",
+  "name": "blockDiagProd_posDef"
+ },
+ {
+  "module": "Superconductivity.ElementCartan",
+  "file": "Superconductivity/ElementCartan.lean",
+  "line": 137,
   "kind": "def",
   "name": "protonCartan"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 63,
+  "line": 142,
   "kind": "theorem",
-  "name": "protonCartan_isPureA4"
+  "name": "protonCartan_eq_neutronCartan_zero"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 68,
+  "line": 147,
   "kind": "theorem",
   "name": "protonCartan_posDef"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 76,
+  "line": 155,
   "kind": "theorem",
   "name": "protonCartan_trace_eq_eight"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 87,
+  "line": 166,
   "kind": "def",
   "name": "neutronCartanMatrix"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 92,
+  "line": 171,
   "kind": "theorem",
   "name": "neutronCartan_isDefectiveA4"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 112,
+  "line": 195,
   "kind": "def",
   "name": "elementCartanIdeal"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 123,
+  "line": 206,
   "kind": "lemma",
   "name": "neutronCartan_quadratic_lowerBound"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 147,
+  "line": 231,
   "kind": "lemma",
   "name": "neutronCartanMatrix_trace"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 160,
+  "line": 244,
   "kind": "theorem",
   "name": "elementCartanIdeal_trace"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 220,
+  "line": 286,
   "kind": "theorem",
   "name": "elementCartanIdeal_posDef"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 246,
+  "line": 313,
   "kind": "theorem",
   "name": "elementCartanIdeal_spectralGap_lowerBound"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 285,
+  "line": 353,
   "kind": "theorem",
   "name": "elementCartanIdeal_posDef_of_lt_spectralGap"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 300,
+  "line": 368,
   "kind": "def",
   "name": "protonSector"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 312,
+  "line": 380,
   "kind": "def",
   "name": "neutronSector"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 316,
+  "line": 384,
   "kind": "theorem",
   "name": "protonSector_posDef"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 322,
+  "line": 391,
   "kind": "theorem",
   "name": "neutronSector_posDef"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 330,
+  "line": 400,
   "kind": "theorem",
   "name": "protonSector_trace"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 336,
+  "line": 408,
   "kind": "theorem",
   "name": "neutronSector_trace"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 344,
+  "line": 418,
   "kind": "theorem",
   "name": "elementCartan_trace_primarySecondary_split"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 360,
+  "line": 433,
   "kind": "theorem",
   "name": "elementSpectralGap_determinedByNeutronSector"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 401,
+  "line": 466,
   "kind": "def",
   "name": "isotopeDefectParameter"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 406,
+  "line": 471,
   "kind": "theorem",
   "name": "isotopeDefectParameter_monotone"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 420,
+  "line": 491,
   "kind": "theorem",
   "name": "isotopeSpectralGap_shift"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 434,
+  "line": 505,
   "kind": "theorem",
   "name": "bcsTc_ratio_formula"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 459,
+  "line": 534,
   "kind": "theorem",
   "name": "cqmIsotopeEffect_Tc_ratio_formula"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 487,
+  "line": 571,
   "kind": "theorem",
   "name": "isotopeEffect_from_neutronSector_only"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 508,
+  "line": 592,
   "kind": "def",
   "name": "nucleonCouplingHierarchy"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 518,
+  "line": 601,
   "kind": "theorem",
   "name": "nucleonCouplingHierarchy_stability"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 539,
+  "line": 617,
   "kind": "def",
   "name": "nucleonCoupling"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 552,
+  "line": 630,
   "kind": "theorem",
   "name": "nucleonCoupling_stabilityCondition"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 566,
+  "line": 644,
   "kind": "def",
   "name": "elementCouplingMatrix"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 570,
+  "line": 648,
   "kind": "theorem",
   "name": "elementCouplingMatrix_symmetric"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 590,
+  "line": 669,
   "kind": "def",
   "name": "molecularSuperCartan"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 600,
+  "line": 680,
   "kind": "theorem",
-  "name": "molecularSuperCartan_symmetric"
+  "name": "molecularSuperCartan_blockSymmetric"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 624,
+  "line": 714,
   "kind": "theorem",
   "name": "molecularSuperCartan_trace"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 656,
+  "line": 743,
   "kind": "theorem",
   "name": "molecularSuperCartan_posDef_weakCoupling"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 692,
+  "line": 780,
   "kind": "def",
   "name": "effectiveSpectralGap"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 696,
+  "line": 784,
   "kind": "theorem",
   "name": "effectiveSpectralGap_pos"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 702,
+  "line": 790,
   "kind": "theorem",
   "name": "effectiveSpectralGap_antitone"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 713,
+  "line": 801,
   "kind": "def",
   "name": "spectralGap_to_reggeEdgeLength"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 717,
+  "line": 805,
   "kind": "theorem",
   "name": "spectralGap_to_reggeEdgeLength_pos"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 723,
+  "line": 811,
   "kind": "theorem",
   "name": "spectralGap_to_reggeEdgeLength_antitone"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 740,
+  "line": 838,
   "kind": "def",
   "name": "spectralGap_to_deficitDensity"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 744,
+  "line": 842,
   "kind": "theorem",
   "name": "spectralGap_to_deficitDensity_pos"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 755,
+  "line": 853,
   "kind": "theorem",
   "name": "spectralGap_to_deficitDensity_antitone"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 773,
+  "line": 873,
   "kind": "def",
   "name": "spectralGap_to_effectiveMetric00"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 782,
+  "line": 882,
   "kind": "theorem",
   "name": "spectralGap_to_effectiveMetric00_lowerBound"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 797,
+  "line": 897,
   "kind": "def",
   "name": "newtonianPotential"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 803,
+  "line": 903,
   "kind": "def",
   "name": "effectiveMetric00_newtonian"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 819,
+  "line": 919,
   "kind": "def",
   "name": "newtonianGravity_degeneracy"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 835,
+  "line": 935,
   "kind": "def",
   "name": "causalResolution_gravity_details"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 846,
+  "line": 946,
   "kind": "def",
   "name": "neutronStarDensity"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 851,
+  "line": 951,
   "kind": "def",
   "name": "strongGravityParameter"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 860,
+  "line": 960,
   "kind": "def",
   "name": "neutronStar_exception_idealCartan_fails"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 874,
+  "line": 974,
   "kind": "def",
   "name": "strongGravity_exception_newtonianDegeneracy_fails"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 888,
+  "line": 988,
   "kind": "def",
   "name": "extremeGravity_causalResolution_enhancement"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 913,
+  "line": 1013,
   "kind": "theorem",
   "name": "cqm_element_to_newtonian_end_to_end_chain"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 969,
+  "line": 1072,
   "kind": "def",
   "name": "singleElementTc"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 973,
+  "line": 1076,
   "kind": "theorem",
   "name": "singleElementTc_pos"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 991,
+  "line": 1094,
   "kind": "theorem",
   "name": "singleElement_BCS_degeneracy"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 1004,
+  "line": 1107,
   "kind": "theorem",
   "name": "singleElement_isotopeTc_ratio"
  },
  {
   "module": "Superconductivity.ElementCartan",
   "file": "Superconductivity/ElementCartan.lean",
-  "line": 1035,
+  "line": 1138,
   "kind": "theorem",
   "name": "cqm_bcs_singleElement_bridge"
  },
@@ -7870,280 +7961,301 @@
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 53,
+  "line": 55,
   "kind": "structure",
   "name": "PhysicalParams"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 71,
+  "line": 63,
+  "kind": "theorem",
+  "name": "beta_mul_deltaV_lt_one"
+ },
+ {
+  "module": "Superconductivity.FormalizationRigor",
+  "file": "Superconductivity/FormalizationRigor.lean",
+  "line": 70,
+  "kind": "theorem",
+  "name": "one_minus_beta_deltaV_pos"
+ },
+ {
+  "module": "Superconductivity.FormalizationRigor",
+  "file": "Superconductivity/FormalizationRigor.lean",
+  "line": 84,
   "kind": "theorem",
   "name": "pathA_thresholdSquared_proportional_oneMinusBetaDelta"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 81,
+  "line": 92,
   "kind": "def",
   "name": "effectivePairingInteraction"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 85,
+  "line": 96,
   "kind": "theorem",
   "name": "pathB_effectivePairing_pos"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 95,
+  "line": 106,
   "kind": "theorem",
   "name": "condensationEnergy_proportional_properTimeFlow"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 111,
+  "line": 122,
   "kind": "def",
   "name": "modulationFactor"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 114,
+  "line": 125,
   "kind": "theorem",
   "name": "modulationFactor_weakCoupling"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 120,
+  "line": 131,
   "kind": "theorem",
   "name": "sqrt_firstOrder_expansion"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 159,
+  "line": 169,
   "kind": "theorem",
   "name": "modulation_realizes_eligibility_weakCoupling"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 174,
+  "line": 184,
   "kind": "def",
   "name": "kleinFourOrder"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 178,
+  "line": 188,
   "kind": "def",
   "name": "betaMicroscopic"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 182,
+  "line": 192,
   "kind": "def",
   "name": "betaGroupTheory"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 185,
+  "line": 195,
   "kind": "theorem",
   "name": "betaGroupTheory_eq"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 189,
+  "line": 199,
   "kind": "def",
   "name": "systemSizeRatio"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 193,
+  "line": 203,
   "kind": "theorem",
   "name": "beta_group_theory_eq_microscopic"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 201,
+  "line": 212,
   "kind": "theorem",
   "name": "betaMicroscopic_macro_limit_eq_betaGroupTheory"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 209,
+  "line": 224,
   "kind": "theorem",
   "name": "betaGroupTheory_pos"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 216,
+  "line": 231,
   "kind": "theorem",
   "name": "finiteSizeEffect_beta_decreases"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 232,
+  "line": 248,
   "kind": "def",
   "name": "entropyModel"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 236,
+  "line": 252,
   "kind": "theorem",
   "name": "entropy_thirdLaw"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 242,
+  "line": 258,
   "kind": "theorem",
   "name": "entropy_nonneg"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 257,
+  "line": 279,
   "kind": "theorem",
   "name": "entropyOriginal_nonzero_at_zero"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 277,
+  "line": 300,
   "kind": "def",
   "name": "transitionCouplingSpectrum"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 280,
+  "line": 303,
   "kind": "def",
   "name": "gaugeEnergyModel"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 284,
+  "line": 307,
   "kind": "theorem",
   "name": "gaugeEnergy_groundState_zero"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 290,
+  "line": 313,
   "kind": "theorem",
   "name": "gaugeEnergy_pos"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 301,
+  "line": 324,
   "kind": "theorem",
   "name": "transitionCoupling_n2_from_A4"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 322,
+  "line": 345,
   "kind": "def",
   "name": "reggeEnergy"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 326,
+  "line": 349,
   "kind": "def",
   "name": "orderParameter"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 330,
+  "line": 353,
   "kind": "def",
   "name": "pairingInteraction"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 333,
+  "line": 356,
   "kind": "def",
   "name": "condensationEnergy"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 338,
+  "line": 361,
   "kind": "def",
   "name": "freeEnergyModel"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 347,
+  "line": 370,
   "kind": "theorem",
   "name": "freeEnergy_realizes_CQM_structure"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 360,
+  "line": 383,
   "kind": "theorem",
   "name": "criticalTemperature_freeEnergyCrossing"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 389,
+  "line": 412,
   "kind": "def",
   "name": "topoTcCoefficient"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 395,
+  "line": 416,
+  "kind": "theorem",
+  "name": "topoTcCoefficient_bounds"
+ },
+ {
+  "module": "Superconductivity.FormalizationRigor",
+  "file": "Superconductivity/FormalizationRigor.lean",
+  "line": 440,
   "kind": "theorem",
   "name": "topoTc_freeEnergyCrossing_weakCoupling"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 466,
+  "line": 467,
   "kind": "def",
   "name": "lambdaEff"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 470,
+  "line": 471,
   "kind": "def",
   "name": "pairingTc"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 495,
+  "line": 496,
   "kind": "theorem",
   "name": "pairingTc_n2_standardMcMillan"
  },
  {
   "module": "Superconductivity.FormalizationRigor",
   "file": "Superconductivity/FormalizationRigor.lean",
-  "line": 514,
+  "line": 516,
   "kind": "theorem",
   "name": "tc_geometric_upperBound"
  },

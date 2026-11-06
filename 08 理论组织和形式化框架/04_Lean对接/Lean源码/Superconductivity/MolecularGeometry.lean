@@ -155,7 +155,7 @@ noncomputable def atomCartanDimension (atom : AtomConfig) : ℕ :=
 
 /-- 单原子嘉当矩阵：块对角 = (⊕_Z A₄) ⊕ (⊕_N C_n(ε))。
     使用 `Matrix.blockDiagonal` 构造块对角矩阵。 -/
-noncomputable def atomCartanMatrix (atom : AtomConfig) (eps_n : ℝ) :
+noncomputable def atomCartanMatrix (atom : AtomConfig) (_eps_n : ℝ) :
     Matrix (Fin (atomCartanDimension atom)) (Fin (atomCartanDimension atom)) ℝ :=
   -- 注意：Fin 类型构造需要具体维度，此处为伪代码级别的定义
   -- 实际实现依赖 `Matrix.blockDiagonal` 和 `Fin` 加法拆分
@@ -176,7 +176,7 @@ theorem neutronCartanBlock_posDef_of_lt_one {eps : ℝ} (heps : eps < 1) :
 
 /-- [定理] 中子寿命缺陷在 τ_n > τ_ref 时 ε < 1，正定保持。 -/
 theorem neutronLifetimeDefect_posDef {tau_n tau_ref : ℝ}
-    (htn : 0 < tau_n) (htr : 0 < tau_ref) (h_long : tau_ref < tau_n) :
+    (_htn : 0 < tau_n) (htr : 0 < tau_ref) (h_long : tau_ref < tau_n) :
     (neutronCartanBlock (neutronLifetimeDefect tau_n tau_ref)).PosDef := by
   have heps : neutronLifetimeDefect tau_n tau_ref < 1 := by
     unfold neutronLifetimeDefect
@@ -474,7 +474,7 @@ lemma a4Eigenvector1_quadratic :
     star a4Eigenvector1 ⬝ᵥ (cartanHamiltonian *ᵥ a4Eigenvector1) =
     spectralGap * (∑ i : Fin 4, a4Eigenvector1 i ^ 2) := by
   rw [a4Eigenvector1_isEigenvector]
-  simp [dotProduct, Pi.smul_apply, Finset.mul_sum, Finset.sum_mul, mul_assoc, mul_comm, mul_left_comm, pow_two]
+  simp [dotProduct, Pi.smul_apply, Finset.mul_sum, mul_left_comm, pow_two]
 
 /-- 耦合二次型的 u 部分：uᵀ(A+tI)u = uᵀAu + t·|u|²。 -/
 private lemma coupling_quadratic_u_add (t : ℝ) (u : Fin 4 → ℝ) :
@@ -485,7 +485,7 @@ private lemma coupling_quadratic_u_add (t : ℝ) (u : Fin 4 → ℝ) :
     simp [Matrix.add_mulVec, Matrix.smul_mulVec, Matrix.one_mulVec]
   rw [hlin, dotProduct_add]
   have hsc : star u ⬝ᵥ (t • u) = t * (∑ i : Fin 4, u i ^ 2) := by
-    simp [dotProduct, Pi.smul_apply, Finset.mul_sum, mul_assoc, mul_left_comm, mul_comm, pow_two]
+    simp [dotProduct, Pi.smul_apply, Finset.mul_sum, mul_left_comm, pow_two]
   rw [hsc]
 
 /-- 耦合二次型的 v 部分：vᵀ(A−tI)v = vᵀAv − t·|v|²。 -/
@@ -497,7 +497,7 @@ private lemma coupling_quadratic_v_sub (t : ℝ) (v : Fin 4 → ℝ) :
     simp [Matrix.sub_mulVec, Matrix.smul_mulVec, Matrix.one_mulVec]
   rw [hlin, dotProduct_sub]
   have hsc : star v ⬝ᵥ (t • v) = t * (∑ i : Fin 4, v i ^ 2) := by
-    simp [dotProduct, Pi.smul_apply, Finset.mul_sum, mul_assoc, mul_left_comm, mul_comm, pow_two]
+    simp [dotProduct, Pi.smul_apply, Finset.mul_sum, mul_left_comm, pow_two]
   rw [hsc]
 
 /-- [定理] 两质子耦合系统正定性精确阈值——反向：
@@ -708,7 +708,7 @@ theorem couplingStabilityCriterion {t : ℝ} (ht : spectralGap ≤ t) :
     4. 块对角拼接保持对称：blockDiagonalCartan_symmetric
     5. 对称矩阵之和仍对称：superCartan_symmetric
     综合：C_mol 实对称，可幺正对角化，谱均为实数。 -/
-theorem molecularSuperCartan_symmetric (mol : MoleculeConfig) (eps_n : ℝ) :
+theorem molecularSuperCartan_symmetric (_mol : MoleculeConfig) (_eps_n : ℝ) :
     -- 此处仅声明：C_mol 的对称性由上述五部分保证
     -- 实际构造 C_mol 需要类型级 blockDiagonal，
     -- 但各分量的对称性已全部严格形式化
@@ -924,7 +924,7 @@ noncomputable def grEffectiveMetric (delta : ℝ) : Matrix (Fin 4) (Fin 4) ℝ :
     注意：CQM 中精细引力不表现为几何吸引力/时空测地线约束，而是因果限制强度的体现，
     不走 Regge→GR 连续极限路径（见核心文档 §4.2）。 -/
 theorem grMetric_from_deficitDensity {deltaV tetVolume alpha : ℝ}
-    (hV : 0 < tetVolume) (halpha : 0 < alpha) :
+    (_hV : 0 < tetVolume) (_halpha : 0 < alpha) :
     grEffectiveMetric (alpha * deficitAngleDensity deltaV tetVolume) 0 0 =
     -1 + alpha * deficitAngleDensity deltaV tetVolume := by
   unfold grEffectiveMetric grEffectiveMetricPerturbation

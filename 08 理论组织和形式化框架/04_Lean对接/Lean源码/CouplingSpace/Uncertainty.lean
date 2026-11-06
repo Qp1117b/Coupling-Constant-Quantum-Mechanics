@@ -329,6 +329,6 @@ theorem cqm_uncertainty_conditional
 - **`cqm_uncertainty_conditional`**：条件性 CQM 不确定性关系（显式假设）✅
 
 ## 缺口状态
-- 缺口 U1（不确定性关系证明）：✅ 完全解决，无 `sorry` 招留
-- 缺口 U2：✅ 严格定理
+- 不确定性关系证明：无 `sorry`，`robertson_ccr_inequality` 为严格定理
+- 无量纲化与条件形式：`dimensionless_uncertainty`、`cqm_uncertainty_conditional` 为严格定理
 -/

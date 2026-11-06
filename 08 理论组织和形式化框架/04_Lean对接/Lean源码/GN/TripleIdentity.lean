@@ -93,9 +93,9 @@ theorem liCoeffOne_pos : liCoeffOne > 0 := by
   rw [liCoeffOne_eq_spectralQuantum]
   exact spectralQuantum_pos
 
-/-- λ₁ 继承 ☯ 的高精度数值界限（数值桥梁公理的推论）。 -/
+/-- λ₁ 继承 ☯ 的数值界限（数值界限定理的推论）。 -/
 theorem liCoeffOne_numerical_bounds :
-    (0.02309570896 : ℝ) < liCoeffOne ∧ liCoeffOne < 0.02309570898 := by
+    (0.02295 : ℝ) < liCoeffOne ∧ liCoeffOne < 0.02325 := by
   rw [liCoeffOne_eq_spectralQuantum]
   exact spectralQuantum_numerical_bounds
 

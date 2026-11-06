@@ -134,10 +134,9 @@ theorem casimirEigenvalue_values :
   all_goals first
     | rfl
     | norm_num
-    | push_cast; ring
 
 /-- Casimir 本征值严格为正。 -/
-theorem casimirEigenvalue_pos (k : ℕ) (hk : 1 ≤ k) : 0 < casimirEigenvalue k := by
+theorem casimirEigenvalue_pos (k : ℕ) (_hk : 1 ≤ k) : 0 < casimirEigenvalue k := by
   unfold casimirEigenvalue
   have hl : 0 ≤ (shellLabel k : ℝ) := by
     unfold shellLabel

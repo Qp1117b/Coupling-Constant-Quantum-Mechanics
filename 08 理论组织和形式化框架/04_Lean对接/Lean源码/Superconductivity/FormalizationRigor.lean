@@ -1,6 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.Complex.ExponentialBounds
+import Mathlib.Analysis.Real.Pi.Bounds
 import Mathlib.Order.Filter.Basic
 import Mathlib.Topology.Defs.Filter
 import Mathlib.Tactic
@@ -57,6 +59,17 @@ structure PhysicalParams where
   hdelta_nonneg : 0 ≤ deltaV
   hbound : deltaV < 1 / beta
 
+/-- 由 `δ_v < 1/β` 与 `β > 0` 得 `β·δ_v < 1`（`hbound` 两边乘 β）。 -/
+theorem beta_mul_deltaV_lt_one (p : PhysicalParams) : p.beta * p.deltaV < 1 := by
+  have h := mul_lt_mul_of_pos_left p.hbound p.hbeta_pos
+  have hb : p.beta * (1 / p.beta) = 1 := by
+    field_simp [p.hbeta_pos.ne']
+  linarith
+
+/-- `1 − β·δ_v > 0`（固有时流速根号内为正）。 -/
+theorem one_minus_beta_deltaV_pos (p : PhysicalParams) : 0 < 1 - p.beta * p.deltaV := by
+  linarith [beta_mul_deltaV_lt_one p]
+
 /-! ## 定理1：固有时流速在自由能中的体现
 
 CQM §7.1: dτ/dt = √(1−βδ_v)（固有时流速）
@@ -69,25 +82,23 @@ CQM §9.2: Δδ_0 ≥ ☯√(1−βδ_v)/(2β·ln n)（资格条件）
 /-- 路径A：序参量幅度通过资格条件继承 √(1−βδ_v) 因子。
     资格条件阈值² = ☯²·(1−βδ_v) / (2β·ln n)²，即阈值² ∝ (1−βδ_v)。 -/
 theorem pathA_thresholdSquared_proportional_oneMinusBetaDelta
-    (p : PhysicalParams) (C : ℝ) (hC : C > 0) (n : ℝ) (hn : n > 1) :
+    (p : PhysicalParams) (C : ℝ) (_hC : C > 0) (n : ℝ) (_hn : n > 1) :
     (C * Real.sqrt (1 - p.beta * p.deltaV) / (2 * p.beta * Real.log n))^2 =
     C^2 * (1 - p.beta * p.deltaV) / (2 * p.beta * Real.log n)^2 := by
-  have h_pos : 0 < 1 - p.beta * p.deltaV := by nlinarith [p.hbeta_pos, p.hdelta_nonneg, p.hbound]
-  have h_sqrt : Real.sqrt (1 - p.beta * p.deltaV) = Real.sqrt (1 - p.beta * p.deltaV) := rfl
-  field_simp
-  ring
+  have h_pos : 0 < 1 - p.beta * p.deltaV := one_minus_beta_deltaV_pos p
+  rw [div_pow, mul_pow, Real.sq_sqrt h_pos.le]
 
 /-- 路径B：有效配对相互作用 V_n^eff = λ·ln(n)·√(1−βδ_v) 继承固有时流速因子。 -/
-noncomputable def effectivePairingInteraction (lambda n : ℝ) (p : PhysicalParams) : ℝ :=
-  lambda * Real.log n * Real.sqrt (1 - p.beta * p.deltaV)
+noncomputable def effectivePairingInteraction (lam n : ℝ) (p : PhysicalParams) : ℝ :=
+  lam * Real.log n * Real.sqrt (1 - p.beta * p.deltaV)
 
 /-- 路径B：V_n^eff 为正（在 λ > 0, n > 1, 物理参数有效下）。 -/
-theorem pathB_effectivePairing_pos (lambda n : ℝ) (p : PhysicalParams)
-    (hlam : lambda > 0) (hn : n > 1) :
-    effectivePairingInteraction lambda n p > 0 := by
+theorem pathB_effectivePairing_pos (lam n : ℝ) (p : PhysicalParams)
+    (hlam : lam > 0) (hn : n > 1) :
+    effectivePairingInteraction lam n p > 0 := by
   unfold effectivePairingInteraction
-  have h_pos : 0 < 1 - p.beta * p.deltaV := by nlinarith [p.hbeta_pos, p.hdelta_nonneg, p.hbound]
-  exact mul_pos (mul_pos hlam (Real.log_pos hn)) (Real.sqrt_pos.mpr h_pos)
+  exact mul_pos (mul_pos hlam (Real.log_pos hn))
+    (Real.sqrt_pos.mpr (one_minus_beta_deltaV_pos p))
 
 /-- **定理1**：凝聚能净效应 E_cond ∝ √(1−βδ_v)。
     路径A给出 E_cond ∝ Δδ_0² ∝ (1−βδ_v)，路径B给出 E_cond ∝ 1/V_n^eff ∝ 1/√(1−βδ_v)，
@@ -95,10 +106,10 @@ theorem pathB_effectivePairing_pos (lambda n : ℝ) (p : PhysicalParams)
 theorem condensationEnergy_proportional_properTimeFlow (p : PhysicalParams) :
     (1 - p.beta * p.deltaV) / Real.sqrt (1 - p.beta * p.deltaV) =
     Real.sqrt (1 - p.beta * p.deltaV) := by
-  have h_pos : 0 < 1 - p.beta * p.deltaV := by nlinarith [p.hbeta_pos, p.hdelta_nonneg, p.hbound]
-  have h_sqrt_pos : Real.sqrt (1 - p.beta * p.deltaV) > 0 := Real.sqrt_pos.mpr h_pos
-  field_simp [h_sqrt_pos.ne']
-  rw [Real.sqrt_mul h_pos.le, Real.sqrt_sq h_sqrt_pos.le]
+  have h_pos : 0 < 1 - p.beta * p.deltaV := one_minus_beta_deltaV_pos p
+  have hsp : 0 < Real.sqrt (1 - p.beta * p.deltaV) := Real.sqrt_pos.mpr h_pos
+  rw [div_eq_iff hsp.ne']
+  exact (Real.mul_self_sqrt h_pos.le).symm
 
 /-! ## 定理2：资格条件与临界调制的等价性
 
@@ -108,7 +119,7 @@ CQM §9.2 资格条件: Δδ_0 ≥ ☯√(1−βδ_v)/(2β·ln n)
 弱耦合极限 (λ=1): mod=1, (1−βδ_v) ≈ √(1−βδ_v) 的一阶展开。                        -/
 
 /-- 调制因子 mod = 1 + α·(λ−1)。 -/
-noncomputable def modulationFactor (alpha lambda : ℝ) : ℝ := 1 + alpha * (lambda - 1)
+noncomputable def modulationFactor (alpha lam : ℝ) : ℝ := 1 + alpha * (lam - 1)
 
 /-- 弱耦合极限：λ=1 时 mod=1。 -/
 theorem modulationFactor_weakCoupling (alpha : ℝ) :
@@ -120,38 +131,37 @@ theorem modulationFactor_weakCoupling (alpha : ℝ) :
 theorem sqrt_firstOrder_expansion (x : ℝ) (hx : abs x < 1) :
     ∃ r : ℝ, abs r ≤ x^2 / (1 - abs x) ∧
     Real.sqrt (1 - x) = 1 - x/2 - r := by
-  -- 构造余项 r = 1 - x/2 - √(1-x)
-  set r := 1 - x/2 - Real.sqrt (1 - x)
-  use r
-  constructor
-  · -- 证明 |r| ≤ x²/(1-|x|)
-    -- 有理化：r = ((1-x/2)² - (1-x)) / ((1-x/2) + √(1-x)) = (x²/4) / ((1-x/2) + √(1-x))
-    have h1x : 1 - x > 0 := by linarith [abs_lt.mp hx]
-    have hsqrt : Real.sqrt (1 - x) ≥ 0 := Real.sqrt_nonneg _
-    have h1x2 : 1 - x/2 > 0 := by linarith [abs_lt.mp hx]
-    -- 分母 (1-x/2) + √(1-x) ≥ 1 - |x|
-    have hdenom_pos : (1 - x/2) + Real.sqrt (1 - x) > 0 := by linarith
-    -- |r| = |x²/4| / ((1-x/2) + √(1-x)) ≤ x²/4 / (1-|x|) ≤ x²/(1-|x|)
-    have hr_eq : r = (x^2/4) / ((1 - x/2) + Real.sqrt (1 - x)) := by
-      field_simp
-      ring_nf
-      have : Real.sqrt (1 - x) * Real.sqrt (1 - x) = 1 - x := by
-        rw [Real.mul_self_sqrt h1x.le]
-      linarith
-    -- 由于有理化证明在Lean中需要较多步骤，此处用不等式估计
-    have habs_r : abs r ≤ x^2 / (4 * ((1 - x/2) + Real.sqrt (1 - x))) := by
-      rw [hr_eq]
-      exact abs_div_le_of_le (by positivity) hdenom_pos
-    -- 4 * ((1-x/2) + √(1-x)) ≥ 1 - |x|
-    have hdenom_bound : 4 * ((1 - x/2) + Real.sqrt (1 - x)) ≥ 1 - abs x := by
-      have : Real.sqrt (1 - x) ≥ 1 - abs x := by
-        have : 1 - x ≥ (1 - abs x)^2 := by nlinarith [abs_mul_self_le x]
-        exact Real.sqrt_le_sqrt this
-      nlinarith [abs_lt.mp hx]
-    exact (div_le_div_iff₀ (by positivity) (by linarith [abs_lt.mp hx])).mpr
-      (le_trans habs_r (div_le_div_of_le_left (by positivity) hdenom_bound))
-  · -- 证明 √(1-x) = 1 - x/2 - r
-    simp [r]
+  have hx1 : -(1 : ℝ) < x ∧ x < 1 := abs_lt.mp hx
+  have h1x : 0 < 1 - x := by linarith [hx1.2]
+  have h1abs : 0 < 1 - abs x := by linarith [hx1.1, hx1.2]
+  have h1x2 : 0 < 1 - x / 2 := by linarith [hx1.2]
+  have hs : Real.sqrt (1 - x) * Real.sqrt (1 - x) = 1 - x :=
+    Real.mul_self_sqrt h1x.le
+  have hD : 0 < (1 - x/2) + Real.sqrt (1 - x) := by
+    have h0 : 0 ≤ Real.sqrt (1 - x) := Real.sqrt_nonneg _
+    linarith
+  have hprod : (1 - x/2 - Real.sqrt (1-x)) * (1 - x/2 + Real.sqrt (1-x)) = x^2/4 := by
+    nlinarith [hs]
+  have hr : 1 - x/2 - Real.sqrt (1 - x) =
+      (x^2/4) / ((1 - x/2) + Real.sqrt (1 - x)) := by
+    rw [eq_div_iff hD.ne']
+    exact hprod
+  refine ⟨1 - x/2 - Real.sqrt (1 - x), ?_, ?_⟩
+  · rw [hr, abs_div]
+    have hnum : abs (x^2/4) = x^2/4 := abs_of_nonneg (by positivity)
+    have hden : abs ((1 - x/2) + Real.sqrt (1 - x)) = (1 - x/2) + Real.sqrt (1 - x) :=
+      abs_of_pos hD
+    rw [hnum, hden, div_le_div_iff₀ hD h1abs]
+    have h4D : (1 : ℝ) - abs x ≤ 4 * ((1 - x/2) + Real.sqrt (1 - x)) := by
+      have h0 : 0 ≤ Real.sqrt (1 - x) := Real.sqrt_nonneg _
+      have hxle : x ≤ abs x := le_abs_self x
+      nlinarith
+    have hkey : (x^2/4) * (1 - abs x) ≤
+        x^2 * ((1 - x/2) + Real.sqrt (1 - x)) := by
+      have h := mul_le_mul_of_nonneg_left h4D (by positivity : (0:ℝ) ≤ x^2/4)
+      nlinarith [h]
+    exact hkey
+  · ring
 
 /-- **定理2**：弱耦合极限下，临界调制退化为 (1−βδ_v) 形式。
     λ=1 ⟹ mod=1 ⟹ Δδ_0 = δ_crit·(1−βδ_v)。
@@ -194,16 +204,21 @@ theorem beta_group_theory_eq_microscopic :
     systemSizeRatio betaGroupTheory = Real.exp (32 * Real.pi^2 + 4 * Real.pi) := by
   unfold systemSizeRatio betaGroupTheory kleinFourOrder
   push_cast
-  ring_nf
+  congr 1
+  ring
 
 /-- **基本定义验证**：betaMicroscopic(exp(32π²+4π), 1) = betaGroupTheory = 8π+1。
     即宏观极限下基本定义 β=(1/4π)ln(L/a) 给出 8π+1。 -/
 theorem betaMicroscopic_macro_limit_eq_betaGroupTheory :
     betaMicroscopic (Real.exp (32 * Real.pi^2 + 4 * Real.pi)) 1 = betaGroupTheory := by
   unfold betaMicroscopic betaGroupTheory kleinFourOrder
-  rw [Real.log_exp, div_eq_mul_inv]
+  rw [div_one, Real.log_exp]
   push_cast
-  ring_nf
+  have hpi : (4 : ℝ) * Real.pi ≠ 0 := by
+    have h0 : (0:ℝ) < 4 * Real.pi := by positivity
+    exact h0.ne'
+  field_simp [hpi]
+  ring
 
 /-- β > 0（8π+1 > 0）。 -/
 theorem betaGroupTheory_pos : betaGroupTheory > 0 := by
@@ -214,11 +229,12 @@ theorem betaGroupTheory_pos : betaGroupTheory > 0 := by
 /-- 有限尺寸效应：L → f·L 时 β 减小。
     β' = β + ln(f)/(4π) < β (当 0 < f < 1)。 -/
 theorem finiteSizeEffect_beta_decreases (f : ℝ) (hf : 0 < f) (hf1 : f < 1)
-    (beta : ℝ) (hbeta : beta > 0) :
+    (beta : ℝ) (_hbeta : beta > 0) :
     beta + Real.log f / (4 * Real.pi) < beta := by
   have h_log_neg : Real.log f < 0 := Real.log_neg hf hf1
   have h_pi_pos : (0 : ℝ) < 4 * Real.pi := by positivity
-  exact (lt_div_iff_of_pos h_pi_pos).mpr (by nlinarith)
+  have hq : Real.log f / (4 * Real.pi) < 0 := div_neg_of_neg_of_pos h_log_neg h_pi_pos
+  linarith
 
 /-! ## 定理4：熵的热力学一致性
 
@@ -233,37 +249,44 @@ noncomputable def entropyModel (n T thetaD : ℝ) : ℝ :=
   Real.log n * (1 + 1 / (2 * n^2)) * Real.tanh (T / thetaD)
 
 /-- **定理4a**：热力学第三定律 — T=0 时 S=0。 -/
-theorem entropy_thirdLaw (n thetaD : ℝ) (hn : n > 1) (hthetaD : thetaD > 0) :
+theorem entropy_thirdLaw (n thetaD : ℝ) (_hn : n > 1) (_hthetaD : thetaD > 0) :
     entropyModel n 0 thetaD = 0 := by
   unfold entropyModel
-  rw [div_zero, Real.tanh_zero, mul_zero]
+  rw [zero_div, Real.tanh_zero, mul_zero]
 
 /-- **定理4b**：熵非负（n > 1, T ≥ 0, θ_D > 0）。 -/
 theorem entropy_nonneg (n T thetaD : ℝ) (hn : n > 1) (hT : T ≥ 0) (hthetaD : thetaD > 0) :
     0 ≤ entropyModel n T thetaD := by
   unfold entropyModel
-  apply mul_nonneg
-  · apply mul_nonneg
-    · exact Real.log_nonneg (by linarith)
-    · have : 0 < 1 + 1 / (2 * n^2) := by
-        have : 0 < 1 / (2 * n^2) := one_div_pos.mpr (by positivity)
-        linarith
-      exact this.le
-  · exact Real.tanh_nonneg (div_nonneg hT hthetaD.le)
+  have hn0 : 0 < n := by linarith
+  have hln : 0 ≤ Real.log n := Real.log_nonneg (by linarith)
+  have hden : 0 < 2 * n ^ 2 := mul_pos (by norm_num) (pow_pos hn0 2)
+  have hfac : 0 ≤ 1 + 1 / (2 * n ^ 2) := by
+    have h : 0 ≤ 1 / (2 * n ^ 2) := le_of_lt (one_div_pos.mpr hden)
+    linarith
+  have hz : 0 ≤ T / thetaD := div_nonneg hT hthetaD.le
+  have htanh : 0 ≤ Real.tanh (T / thetaD) := by
+    rw [Real.tanh_eq]
+    refine div_nonneg ?_ ?_
+    · refine sub_nonneg.mpr ?_
+      exact Real.exp_le_exp.mpr (by linarith : -(T / thetaD) ≤ T / thetaD)
+    · exact le_of_lt (add_pos (Real.exp_pos _) (Real.exp_pos _))
+  exact mul_nonneg (mul_nonneg hln hfac) htanh
 
 /-- **定理4c**：原始熵在T=0时不为零（违反第三定律）。
     原始熵用coth(θ_D/(2T))，T→0时coth(∞)=1，故S(0)=λ·ln(n)·(1+1/(2n²))·1≠0。
     此处证明该非零值确实不为零。 -/
-theorem entropyOriginal_nonzero_at_zero (lambda n : ℝ)
-    (hlam : lambda > 0) (hn : n > 1) :
-    lambda * Real.log n * (1 + 1 / (2 * n^2)) * 1 ≠ 0 := by
-  have h_pos : lambda * Real.log n * (1 + 1 / (2 * n^2)) * 1 > 0 := by
-    have h1 : lambda > 0 := hlam
-    have h2 : Real.log n > 0 := Real.log_pos hn
-    have h3 : 0 < 1 + 1 / (2 * n^2) := by
-      have : 0 < 1 / (2 * n^2) := one_div_pos.mpr (by positivity)
-      linarith
-    positivity
+theorem entropyOriginal_nonzero_at_zero (lam n : ℝ)
+    (hlam : lam > 0) (hn : n > 1) :
+    lam * Real.log n * (1 + 1 / (2 * n^2)) * 1 ≠ 0 := by
+  have hn0 : 0 < n := by linarith
+  have hA : 0 < lam * Real.log n := mul_pos hlam (Real.log_pos hn)
+  have hden : 0 < 2 * n ^ 2 := mul_pos (by norm_num) (pow_pos hn0 2)
+  have hB : 0 < 1 + 1 / (2 * n^2) := by
+    have h : 0 < 1 / (2 * n ^ 2) := one_div_pos.mpr hden
+    linarith
+  have h_pos : 0 < lam * Real.log n * (1 + 1 / (2 * n^2)) * 1 :=
+    mul_pos (mul_pos hA hB) one_pos
   exact ne_of_gt h_pos
 
 /-! ## 定理5：规范场能的跃迁耦级形式
@@ -284,7 +307,7 @@ noncomputable def gaugeEnergyModel (n thetaD : ℝ) : ℝ :=
 theorem gaugeEnergy_groundState_zero (thetaD : ℝ) :
     gaugeEnergyModel 1 thetaD = 0 := by
   unfold gaugeEnergyModel transitionCouplingSpectrum
-  rw [Real.log_one, mul_zero, zero_pow two_pos, mul_zero, div_zero]
+  rw [Real.log_one, mul_zero, zero_pow (by norm_num : (2:ℕ) ≠ 0), mul_zero, zero_div]
 
 /-- **定理5b**：n>1 时 E_gauge > 0（有规范激发）。 -/
 theorem gaugeEnergy_pos (n thetaD : ℝ) (hn : n > 1) (hthetaD : thetaD > 0) :
@@ -319,37 +342,37 @@ CQM §11.2: F_n = E_角亏 + E_规范场 + E_序参量 − T·S_n
   S_n       ↔ S_n      = ln(n)·(1+1/(2n²))·tanh(T/θ_D) (拓扑简并, 定理4)          -/
 
 /-- 角亏能（Regge作用量）：E_regge = θ_D·λ·δ_v²·n²/(2π)²。 -/
-noncomputable def reggeEnergy (n thetaD lambda deltaV : ℝ) : ℝ :=
-  thetaD * lambda * deltaV^2 * n^2 / (2 * Real.pi)^2
+noncomputable def reggeEnergy (n thetaD lam deltaV : ℝ) : ℝ :=
+  thetaD * lam * deltaV^2 * n^2 / (2 * Real.pi)^2
 
 /-- 序参量：Δ_n(T) = Δδ_0·√(tanh(θ_D/(2T)))·ln(n)/ln(2)。 -/
 noncomputable def orderParameter (n T thetaD deltaDelta0 : ℝ) : ℝ :=
   deltaDelta0 * Real.sqrt (Real.tanh (thetaD / (2 * T))) * Real.log n / Real.log 2
 
 /-- 配对相互作用：V_n = λ·ln(n)。 -/
-noncomputable def pairingInteraction (n lambda : ℝ) : ℝ := lambda * Real.log n
+noncomputable def pairingInteraction (n lam : ℝ) : ℝ := lam * Real.log n
 
 /-- 凝聚能：E_cond = −θ_D·λ·Δ_n(T)²/(2·V_n)。 -/
-noncomputable def condensationEnergy (n T thetaD lambda deltaDelta0 : ℝ) : ℝ :=
-  -thetaD * lambda * (orderParameter n T thetaD deltaDelta0)^2 /
-    (2 * pairingInteraction n lambda)
+noncomputable def condensationEnergy (n T thetaD lam deltaDelta0 : ℝ) : ℝ :=
+  -thetaD * lam * (orderParameter n T thetaD deltaDelta0)^2 /
+    (2 * pairingInteraction n lam)
 
 /-- 总自由能：F_n = E_regge + E_gauge + E_cond − T·S_n。 -/
-noncomputable def freeEnergyModel (n T thetaD lambda deltaV deltaDelta0 : ℝ) : ℝ :=
-  reggeEnergy n thetaD lambda deltaV +
+noncomputable def freeEnergyModel (n T thetaD lam deltaV deltaDelta0 : ℝ) : ℝ :=
+  reggeEnergy n thetaD lam deltaV +
   gaugeEnergyModel n thetaD +
-  condensationEnergy n T thetaD lambda deltaDelta0 -
+  condensationEnergy n T thetaD lam deltaDelta0 -
   T * entropyModel n T thetaD
 
 /-- **定理6**：自由能四项严格对应CQM §11.2形式结构。
     F_n = E_regge + E_gauge + E_cond − T·S_n
         = E_角亏 + E_规范场 + E_序参量 − T·S_n                                    -/
 theorem freeEnergy_realizes_CQM_structure
-    (n T thetaD lambda deltaV deltaDelta0 : ℝ) :
-    freeEnergyModel n T thetaD lambda deltaV deltaDelta0 =
-    reggeEnergy n thetaD lambda deltaV +
+    (n T thetaD lam deltaV deltaDelta0 : ℝ) :
+    freeEnergyModel n T thetaD lam deltaV deltaDelta0 =
+    reggeEnergy n thetaD lam deltaV +
     gaugeEnergyModel n thetaD +
-    condensationEnergy n T thetaD lambda deltaDelta0 -
+    condensationEnergy n T thetaD lam deltaDelta0 -
     T * entropyModel n T thetaD := by
   unfold freeEnergyModel
   ring
@@ -358,14 +381,14 @@ theorem freeEnergy_realizes_CQM_structure
     F_1(Tc) = F_2(Tc) ⟹ Tc·(S_2−S_1) = (E₂)−(E₁)
     即 Tc = (E₂−E₁)/(S₂−S₁)（CQM §11.2, 公理A10）。 -/
 theorem criticalTemperature_freeEnergyCrossing
-    (Tc thetaD lambda deltaV deltaDelta0 : ℝ)
-    (h_cross : freeEnergyModel 1 Tc thetaD lambda deltaV deltaDelta0 =
-               freeEnergyModel 2 Tc thetaD lambda deltaV deltaDelta0) :
+    (Tc thetaD lam deltaV deltaDelta0 : ℝ)
+    (h_cross : freeEnergyModel 1 Tc thetaD lam deltaV deltaDelta0 =
+               freeEnergyModel 2 Tc thetaD lam deltaV deltaDelta0) :
     Tc * (entropyModel 2 Tc thetaD - entropyModel 1 Tc thetaD) =
-    (reggeEnergy 2 thetaD lambda deltaV + gaugeEnergyModel 2 thetaD +
-     condensationEnergy 2 Tc thetaD lambda deltaDelta0) -
-    (reggeEnergy 1 thetaD lambda deltaV + gaugeEnergyModel 1 thetaD +
-     condensationEnergy 1 Tc thetaD lambda deltaDelta0) := by
+    (reggeEnergy 2 thetaD lam deltaV + gaugeEnergyModel 2 thetaD +
+     condensationEnergy 2 Tc thetaD lam deltaDelta0) -
+    (reggeEnergy 1 thetaD lam deltaV + gaugeEnergyModel 1 thetaD +
+     condensationEnergy 1 Tc thetaD lam deltaDelta0) := by
   unfold freeEnergyModel at h_cross
   linarith
 
@@ -389,6 +412,28 @@ CQM自由能竞争 F_1(Tc) = F_2(Tc) 在弱耦合极限（δ_v→0, E_cond→0�
 noncomputable def topoTcCoefficient : ℝ :=
   Real.sqrt (8 * Real.log 2 / (9 * Real.pi^2))
 
+/-- 拓扑Tc系数的数值夹逼：0.24 < √(8ln2/(9π²)) < 0.25。 -/
+theorem topoTcCoefficient_bounds :
+    0.24 < topoTcCoefficient ∧ topoTcCoefficient < 0.25 := by
+  unfold topoTcCoefficient
+  have hpos : 0 < 8 * Real.log 2 / (9 * Real.pi ^ 2) := by
+    have h1 : 0 < Real.log 2 := Real.log_pos (by norm_num)
+    have h2 : 0 < 9 * Real.pi ^ 2 := by positivity
+    exact div_pos (mul_pos (by norm_num) h1) h2
+  constructor
+  · rw [Real.lt_sqrt (x := (0.24 : ℝ)) (by norm_num)]
+    rw [lt_div_iff₀ (by positivity : (0:ℝ) < 9 * Real.pi ^ 2)]
+    have hlog : (0.693 : ℝ) < Real.log 2 := by linarith [Real.log_two_gt_d9]
+    have hpi : Real.pi < 3.15 := Real.pi_lt_d2
+    have hpi2 : Real.pi ^ 2 < (3.15 : ℝ) ^ 2 := by nlinarith [Real.pi_pos, hpi]
+    nlinarith [hlog, hpi2]
+  · rw [Real.sqrt_lt' (by norm_num : (0:ℝ) < 0.25)]
+    rw [div_lt_iff₀ (by positivity : (0:ℝ) < 9 * Real.pi ^ 2)]
+    have hlog : Real.log 2 < 0.6932 := by linarith [Real.log_two_lt_d9]
+    have hpi : (3.14 : ℝ) < Real.pi := Real.pi_gt_d2
+    have hpi2 : (3.14 : ℝ) ^ 2 < Real.pi ^ 2 := by nlinarith [Real.pi_pos, hpi]
+    nlinarith [hlog, hpi2]
+
 /-- **定理7**：拓扑Tc = θ_D·√(8·ln(2)/(9·π²)) ≈ 0.2499·θ_D
     这是自由能竞争F_1=F_2在弱耦合极限下的解析解，
     不依赖电声耦合λ，是几何/拓扑相变Tc。 -/
@@ -399,58 +444,14 @@ theorem topoTc_freeEnergyCrossing_weakCoupling :
     -- Tc ≈ 0.2499·θ_D
     Tc / thetaD < 0.25 ∧ Tc / thetaD > 0.24 := by
   intro thetaD h_pos
-  let Tc := thetaD * topoTcCoefficient
-  refine ⟨Tc, ?_, ?_, ?_⟩
-  · -- Tc > 0
-    exact mul_pos h_pos (Real.sqrt_pos.mpr (by
-      div_pos (mul_pos (by linarith) (Real.log_pos (by linarith)))
-            (mul_pos (by linarith) (Real.pi_pos.trans_le (by norm_num)))))
-  · -- Tc = θ_D * topoTcCoefficient
-    rfl
-  · -- Tc/θ_D < 0.25 ∧ Tc/θ_D > 0.24
-    -- 数值验证: √(8·ln2/(9π²)) ≈ 0.2499
-    constructor
-    · -- < 0.25
-      rw [div_mul_cancel₀ _ (ne_of_gt h_pos)]
-      -- topoTcCoefficient < 0.25 ⟺ 8·ln2/(9π²) < 0.0625
-      -- 8·ln2 ≈ 5.545, 9π² ≈ 88.826, 比值 ≈ 0.0624 < 0.0625
-      have h : topoTcCoefficient < 0.25 := by
-        rw [topoTcCoefficient]
-        refine Real.sqrt_lt₀ ?_ (by norm_num)
-        rw [div_lt_iff₀ (by positivity)]
-        ring_nf
-        -- 8·ln2 < 9π²/16 = 0.5625π²
-        -- 数值: 5.545 < 5.552 ✓
-        have h1 : Real.log 2 < 0.694 := by
-          refine (Real.log_lt_iff_lt_exp (by linarith)).mpr ?_
-          norm_num [Real.exp]
-        have h2 : (8 : ℝ) * 0.694 < 9 * Real.pi^2 / 16 := by
-          have hpi : Real.pi > 3.14 := by
-            refine Real.pi_gt_three.trans_le (by norm_num)
-          calc 8 * 0.694 = 5.552 := by norm_num
-              _ < 9 * 3.14^2 / 16 := by nlinarith
-              _ ≤ 9 * Real.pi^2 / 16 := by nlinarith
-        linarith
-      linarith
-    · -- > 0.24
-      rw [div_mul_cancel₀ _ (ne_of_gt h_pos)]
-      have h : topoTcCoefficient > 0.24 := by
-        rw [topoTcCoefficient]
-        refine Real.sqrt_lt₀ ?_ (by norm_num) |>.symm |> Real.lt_of_sqrt_lt_sqrt ?_ ?_ |>.2
-        · positivity
-        · rw [div_lt_iff₀ (by positivity)]
-          -- 8·ln2/(9π²) > 0.0576
-          -- 8·ln2 ≈ 5.545, 9π²·0.0576 ≈ 5.117
-          have h1 : Real.log 2 > 0.693 := by
-            refine (Real.log_lt_iff_lt_exp (by linarith)).mpr ?_ |>.symm
-            norm_num [Real.exp]
-          have h2 : (8 : ℝ) * 0.693 > 9 * Real.pi^2 * 0.0576 := by
-            have hpi : Real.pi < 3.15 := Real.pi_lt_four.trans_le (by norm_num)
-            calc 8 * 0.693 = 5.544 := by norm_num
-                _ > 9 * 3.15^2 * 0.0576 := by norm_num
-                _ ≥ 9 * Real.pi^2 * 0.0576 := by nlinarith
-          linarith
-      linarith
+  have hb := topoTcCoefficient_bounds
+  have hcpos : 0 < topoTcCoefficient := by linarith [hb.1]
+  refine ⟨thetaD * topoTcCoefficient, ?_, rfl, ?_, ?_⟩
+  · exact mul_pos h_pos hcpos
+  · rw [mul_div_cancel_left₀ topoTcCoefficient h_pos.ne']
+    exact hb.2
+  · rw [mul_div_cancel_left₀ topoTcCoefficient h_pos.ne']
+    exact hb.1
 
 /-! ## 定理8：配对Tc — McMillan公式从CQM鞍点方程推导
 
@@ -463,14 +464,14 @@ CQM Ginzburg-Landau作用量的鞍点方程δS/δΔ=0就是BCS能隙方程。
   n=4: λ_eff = 2λ → 双库珀对                                    -/
 
 /-- 有效电声耦合：λ_eff(n) = λ·ln(n)/ln(2) -/
-noncomputable def lambdaEff (n lambda : ℝ) : ℝ :=
-  lambda * Real.log n / Real.log 2
+noncomputable def lambdaEff (n lam : ℝ) : ℝ :=
+  lam * Real.log n / Real.log 2
 
 /-- McMillan配对Tc: θ_D/1.45·exp(-1.04(1+λ_eff)/(λ_eff-μ*(1+0.62λ_eff))) -/
-noncomputable def pairingTc (thetaD lambda muStar : ℝ) : ℝ :=
+noncomputable def pairingTc (thetaD lam muStar : ℝ) : ℝ :=
   thetaD / 1.45 * Real.exp
-    (-1.04 * (1 + lambdaEff 2 lambda) /
-     (lambdaEff 2 lambda - muStar * (1 + 0.62 * lambdaEff 2 lambda)))
+    (-1.04 * (1 + lambdaEff 2 lam) /
+     (lambdaEff 2 lam - muStar * (1 + 0.62 * lambdaEff 2 lam)))
 
 /- **定理8（待修正）**：配对Tc在弱耦合极限λ→0时的行为。
 
@@ -492,10 +493,11 @@ noncomputable def pairingTc (thetaD lambda muStar : ℝ) : ℝ :=
     当前以注释形式记录此理论问题，待用户决议后补充严格证明。 -/
 
 /-- **定理8推论**：n=2时λ_eff=λ，配对Tc退化为标准McMillan -/
-theorem pairingTc_n2_standardMcMillan (thetaD lambda muStar : ℝ) :
-    lambdaEff 2 lambda = lambda := by
+theorem pairingTc_n2_standardMcMillan (_thetaD lam _muStar : ℝ) :
+    lambdaEff 2 lam = lam := by
   unfold lambdaEff
-  rw [Real.log_two, mul_div_cancel₀ lambda (by linarith [Real.log_pos (by norm_num : (0 : ℝ) < 2)])]
+  have hlog2 : Real.log 2 ≠ 0 := (Real.log_pos (by norm_num)).ne'
+  exact mul_div_cancel_right₀ lam hlog2
 
 /-! ## 定理9：拓扑Tc与配对Tc的竞争
 
@@ -512,14 +514,11 @@ CQM预测: 超导Tc有几何上限 ≈ θ_D/4                                   
 /-- **定理9**：Tc有几何上限 θ_D/4
     无论电声耦合λ多大, Tc ≤ 0.249·θ_D ≈ θ_D/4 -/
 theorem tc_geometric_upperBound :
-    ∀ (thetaD lambda : ℝ), thetaD > 0 → lambda > 0 →
+    ∀ (thetaD lam : ℝ), thetaD > 0 → lam > 0 →
     ∃ (Tc : ℝ), Tc > 0 ∧ Tc ≤ thetaD * topoTcCoefficient := by
-  intro thetaD lambda h_theta h_lambda
-  -- 实际Tc = min(Tc_pair, Tc_topo) ≤ Tc_topo = 0.249·θ_D
-  refine ⟨thetaD * topoTcCoefficient, ?_, le_refl _⟩
-  exact mul_pos h_theta (Real.sqrt_pos.mpr (by
-    div_pos (mul_pos (by linarith) (Real.log_pos (by linarith)))
-          (mul_pos (by linarith) (Real.pi_pos.trans_le (by norm_num)))))
+  intro thetaD lam h_theta h_lambda
+  have hcpos : 0 < topoTcCoefficient := by linarith [topoTcCoefficient_bounds.1]
+  exact ⟨thetaD * topoTcCoefficient, mul_pos h_theta hcpos, le_refl _⟩
 
 /-! ## G18 行内子项闭合状态
 

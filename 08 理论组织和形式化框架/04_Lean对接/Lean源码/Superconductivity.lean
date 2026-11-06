@@ -6,6 +6,8 @@ import Superconductivity.CartanSuperconductivity
 import Superconductivity.FirstPrinciples
 import Superconductivity.SPAF
 import Superconductivity.MolecularGeometry
+import Superconductivity.BridgeTheorems
+import Superconductivity.ElementCartan
 import Superconductivity.FormalizationRigor
 import Superconductivity.DeepConstruction
 import Superconductivity.DeepResearch
