@@ -57,7 +57,7 @@ theorem cartanA4_diag (i : Fin 4) : cartanA4 i i = 2 := by
 /-- A₄ 嘉当矩阵的迹 = 2+2+2+2 = 8（4 个对角元之和） -/
 theorem cartanA4_trace : (∑ i : Fin 4, cartanA4 i i) = 8 := by
   unfold cartanA4
-  native_decide
+  decide
 
 /-- A₄ 嘉当矩阵是对称矩阵：A₄_{ij} = A₄_{ji}。
     通过枚举全部 16 种 (i,j) 组合证明。 -/
@@ -87,11 +87,11 @@ def det4 (M : Matrix (Fin 4) (Fin 4) ℤ) : ℤ :=
   - M 0 3 * (M 1 0 * (M 2 1 * M 3 2 - M 2 2 * M 3 1) - M 1 1 * (M 2 0 * M 3 2 - M 2 2 * M 3 0) + M 1 2 * (M 2 0 * M 3 1 - M 2 1 * M 3 0))
 
 /-- [THEOREM] A₄ 嘉当矩阵的行列式 = 5。
-    通过显式行列式公式 `det4` 直接计算，由 `native_decide` 验证。
+    通过显式行列式公式 `det4` 直接计算，由内核判定 `decide` 验证。
     注意：对于 Aₙ 型嘉当矩阵，det(Aₙ) = n+1。
     A₄ 的 det = 5 = rank(SU(5)) + 1。 -/
 theorem cartanA4_det_eq_5 : det4 cartanA4 = 5 := by
-  native_decide
+  decide
 
 /-- A₄ 行列式 > 0（正定性的必要条件） -/
 theorem cartanA4_det_pos : (0 : ℤ) < det4 cartanA4 := by
@@ -103,9 +103,9 @@ theorem cartanA4_det_pos : (0 : ℤ) < det4 cartanA4 := by
 def cartanA1 : Matrix (Fin 1) (Fin 1) ℤ :=
   λ _ _ => 2
 
-/-- A₁ 行列式 = 2 = 1+1（通过 native_decide 计算） -/
+/-- A₁ 行列式 = 2 = 1+1（由 `decide` 计算） -/
 theorem cartanA1_det_eq_2 : det1 cartanA1 = 2 := by
-  native_decide
+  decide
 
 /-- A₂ 嘉当矩阵（2×2）：[[2, -1], [-1, 2]] -/
 def cartanA2 : Matrix (Fin 2) (Fin 2) ℤ :=
@@ -114,9 +114,9 @@ def cartanA2 : Matrix (Fin 2) (Fin 2) ℤ :=
     else if (i.val + 1 = j.val) ∨ (j.val + 1 = i.val) then -1
     else 0
 
-/-- A₂ 行列式 = 2·2 - (-1)·(-1) = 4 - 1 = 3（通过 native_decide 计算） -/
+/-- A₂ 行列式 = 2·2 - (-1)·(-1) = 4 - 1 = 3（由 `decide` 计算） -/
 theorem cartanA2_det_eq_3 : det2 cartanA2 = 3 := by
-  native_decide
+  decide
 
 /-- A₃ 嘉当矩阵（3×3）：[[2, -1, 0], [-1, 2, -1], [0, -1, 2]] -/
 def cartanA3 : Matrix (Fin 3) (Fin 3) ℤ :=
@@ -125,9 +125,9 @@ def cartanA3 : Matrix (Fin 3) (Fin 3) ℤ :=
     else if (i.val + 1 = j.val) ∨ (j.val + 1 = i.val) then -1
     else 0
 
-/-- A₃ 行列式 = 2·(2·2 - (-1)·(-1)) - (-1)·((-1)·2) = 2·3 - 2 = 4（通过 native_decide 计算） -/
+/-- A₃ 行列式 = 2·(2·2 - (-1)·(-1)) - (-1)·((-1)·2) = 2·3 - 2 = 4（由 `decide` 计算） -/
 theorem cartanA3_det_eq_4 : det3 cartanA3 = 4 := by
-  native_decide
+  decide
 
 /-- [THEOREM] Aₙ 行列式模式：det(Aₙ) = n+1。
     A₁: 2, A₂: 3, A₃: 4, A₄: 5。

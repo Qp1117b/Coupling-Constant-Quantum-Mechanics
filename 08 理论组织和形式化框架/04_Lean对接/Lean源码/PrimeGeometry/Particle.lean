@@ -95,7 +95,7 @@ theorem four_is_boson : isBoson 4 := by
   unfold isBoson
   constructor
   · omega
-  · native_decide
+  · decide
 
 /-- 真空的唯一性：只有 n = 1 是真空。 -/
 theorem vacuum_unique (n : ℕ) : isVacuum n ↔ n = 1 := by
@@ -113,7 +113,7 @@ theorem activePrimes_are_fermions : ∀ p ∈ activePrimeSet, isFermion p :=
     ≤ 5 的素数：2, 3, 5 → 恰好 3 个。 -/
 theorem activeFermions_count_three :
     ((Finset.range 6).filter (λ n => decide (Nat.Prime n))).card = 3 := by
-  native_decide
+  decide
 
 /-- 冻结素数（k > 5）不是活跃费米子，但仍是费米子。
     在 CQM 中，冻结素数的再生产潜力 Φ(k) = 0，
@@ -136,7 +136,7 @@ theorem six_is_boson : isBoson 6 := by
   unfold isBoson
   constructor
   · omega
-  · native_decide
+  · decide
 
 /-- 角点密度跳跃对应规范玻色子交换。
 

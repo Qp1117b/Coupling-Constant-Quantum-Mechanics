@@ -185,15 +185,17 @@ structure ClassicalProbability where
   hpos : ∀ i ∈ outcomes, weights i > 0
   hsum : ∑ i ∈ outcomes, weights i = 1
 
-/-- [POSTULATE] 唯一性通过退相干深耦合实现：当系统与足够深层的
-    因果结构耦合时，经典概率分布坍缩（在 CQM 意义上——
-    不是瞬时的波包坍缩，而是退相干连续谱的延伸）为唯一结果。
+/-- [CLAIM] 深耦合筛出唯一结果的命题形式（未证明）。
 
     物理意义：多世界理论是不必要的。唯一性不需要引入
     不可观测的平行分支，只需要更深的耦合。
 
-    此公设是 CQM 解决量子测量问题的核心声明。 -/
-axiom uniquenessByDeepCoupling :
+    注意：本式与当前 `ClassicalProbability` 的结构不相容——取
+    `outcomes = {0, 1}` 且两个权重均为 1/2 的分布，它满足结构的全部字段，
+    而 `isDeterministic` 只约束耦合深度，故结论（结果唯一）不成立。
+    因此本式不作为公理断言，仅登记为待证命题；其成立需要引入
+    「深耦合后的确定化分布 / 单一结果选择机制」，属尚未形式化的缺口。 -/
+def uniquenessByDeepCouplingClaim : Prop :=
     ∀ (c : DeepCrossLayerCoupling) (P : ClassicalProbability),
     c.isDeterministic → ∃! (i : ℕ), i ∈ P.outcomes
 
@@ -213,6 +215,7 @@ structure Agency where
     能动性的作用不是创造结果，而是提供足够的耦合深度
     让退相干连续谱延伸到确定阶段。 -/
 theorem agency_enables_uniqueness (a : Agency) (P : ClassicalProbability)
+    (hUniq : uniquenessByDeepCouplingClaim)
     (hd : a.chosenDepth > classicalCouplingThreshold) :
     ∃! (i : ℕ), i ∈ P.outcomes := by
   have hpos : a.chosenDepth > 0 := by
@@ -220,13 +223,13 @@ theorem agency_enables_uniqueness (a : Agency) (P : ClassicalProbability)
     linarith
   let c : DeepCrossLayerCoupling := { depth := a.chosenDepth, hpos := hpos }
   have h : c.isDeterministic := hd
-  exact uniquenessByDeepCoupling c P h
+  exact hUniq c P h
 
 -- 能动性选择浅耦合 → 只能得到经典概率，无法解决唯一性。
 -- 这解释了为什么某些测量/干预只能产生统计分布。
 --
 -- 注意：从浅耦合不能得到唯一性的严格证明需要
--- `uniquenessByDeepCoupling` 公理的逆否命题。当前公理只断言
+-- `uniquenessByDeepCouplingClaim` 的逆否命题。当前命题只断言
 -- 退相干深耦合 ⇒ 唯一性，未断言其逆否。因此此处不以定理形式
 -- 给出，而以概念注释保留，待后续公理化改进时完善。
 
@@ -249,28 +252,33 @@ structure BootstrappedDeepCoupling extends DeepCrossLayerCoupling where
 structure SituationalDeepCoupling extends DeepCrossLayerCoupling where
   hrequiresAgency : depth > classicalCouplingThreshold
 
-/-- 互耦退相干深耦合足以产生确定结果。 -/
-theorem bootstrapped_yields_uniqueness (b : BootstrappedDeepCoupling) (P : ClassicalProbability) :
+/-- 互耦退相干深耦合足以产生确定结果（以唯一性命题为前提）。 -/
+theorem bootstrapped_yields_uniqueness (b : BootstrappedDeepCoupling)
+    (P : ClassicalProbability) (hUniq : uniquenessByDeepCouplingClaim) :
     ∃! (i : ℕ), i ∈ P.outcomes := by
   let c : DeepCrossLayerCoupling := b.toDeepCrossLayerCoupling
   have h : c.isDeterministic := b.hself
-  exact uniquenessByDeepCoupling c P h
+  exact hUniq c P h
 
-/-- 情景退相干深耦合足以产生确定结果。 -/
-theorem situational_yields_uniqueness (s : SituationalDeepCoupling) (P : ClassicalProbability) :
+/-- 情景退相干深耦合足以产生确定结果（以唯一性命题为前提）。 -/
+theorem situational_yields_uniqueness (s : SituationalDeepCoupling)
+    (P : ClassicalProbability) (hUniq : uniquenessByDeepCouplingClaim) :
     ∃! (i : ℕ), i ∈ P.outcomes := by
   let c : DeepCrossLayerCoupling := s.toDeepCrossLayerCoupling
   have h : c.isDeterministic := s.hrequiresAgency
-  exact uniquenessByDeepCoupling c P h
+  exact hUniq c P h
 
 /-! ## 层级非还原论 -/
 
-/-- 层级非还原论：基础层级是约束层/条件层，不是决定层。
-    上层可以拥有相对独立的因果结构和本体论结构，只要
-    不违背基础约束。
+/-- [CLAIM] 层级非还原论的命题形式（未证明）。
 
-    这是 CQM 反对层级还原论的核心声明。 -/
-axiom layerNonReductionism :
+    物理意义：基础层级是约束层/条件层，不是决定层。上层可以拥有相对独立的
+    因果结构和本体论结构，只要不违背基础约束。
+
+    注意：本式的结论 `∃ (_causalUpper : upperLayer → upperLayer → Prop), True`
+    对任意类型平凡可满足（取常关系即可），因此它不承载「非还原论」的物理内容。
+    作为待证命题登记，不作为定理或公理。 -/
+def layerNonReductionismClaim : Prop :=
     ∀ (baseLayer upperLayer : Type),
     -- 基础层对上层施加了约束
     (∃ (constraint : baseLayer → upperLayer → Prop),
@@ -280,7 +288,7 @@ axiom layerNonReductionism :
 
 -- 上层因果结构的相对独立性：上层的具体因果规律不需要
 -- 从基础层逐层推导，只需要满足基础约束。
--- 此声明由 `layerNonReductionism` 公理形式给出，
+-- 此声明由 `layerNonReductionismClaim` 命题形式给出，
 -- 不用 `True := by trivial` 表述。
 
 /-! ## 物质内禀不确定性的层级表现 -/

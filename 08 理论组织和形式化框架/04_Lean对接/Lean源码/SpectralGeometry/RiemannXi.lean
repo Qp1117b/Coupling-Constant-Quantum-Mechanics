@@ -148,18 +148,15 @@ theorem xi_log_derivative_at_one :
         have h3 : HasDerivAt (fun s : ℂ => s * (s - 1) * completedRiemannZeta₀ s)
             (completedRiemannZeta₀ 1) 1 := by
           have h4 : HasDerivAt (fun s : ℂ => s * (s - 1)) 1 1 := by
-            apply HasDerivAt.mul
-            · exact hasDerivAt_id' 1
-            · apply HasDerivAt.sub
-              · exact hasDerivAt_id' 1
-              · exact hasDerivAt_const 1 (1 : ℂ)
+            have h := (hasDerivAt_id' (1 : ℂ)).mul
+              ((hasDerivAt_id' (1 : ℂ)).sub (hasDerivAt_const (1 : ℂ) (1 : ℂ)))
+            simpa using h
           have h5 : HasDerivAt completedRiemannZeta₀ (deriv completedRiemannZeta₀ 1) 1 :=
             differentiable_completedZeta₀.differentiableAt.hasDerivAt
           have h6 : HasDerivAt (fun s : ℂ => s * (s - 1) * completedRiemannZeta₀ s)
               (1 * completedRiemannZeta₀ 1 + 0 * deriv completedRiemannZeta₀ 1) 1 := by
-            apply HasDerivAt.mul
-            · exact h4
-            · exact h5
+            have h := h4.mul h5
+            simpa using h
           have h7 : (1 * completedRiemannZeta₀ 1 + 0 * deriv completedRiemannZeta₀ 1 : ℂ) =
               completedRiemannZeta₀ 1 := by simp
           rw [h7] at h6
@@ -201,7 +198,16 @@ theorem spectralQuantum_xi_formula :
 theorem spectralQuantum_eq_xi_log_derivative :
     spectralQuantum = deriv riemannXi 1 / riemannXi 1 := by
   rw [xi_log_derivative_at_one]
-  exact spectralQuantum_xi_formula.symm
+  have hlog : ((Real.log (4 * Real.pi) : ℝ) : ℂ) = Complex.log (4 * (Real.pi : ℂ)) := by
+    have hx : ((4 * Real.pi : ℝ) : ℂ) = 4 * (Real.pi : ℂ) := by
+      rw [Complex.ofReal_mul]; norm_num
+    rw [← hx, Complex.ofReal_log (by positivity : (0:ℝ) ≤ 4 * Real.pi)]
+  have h1 : (spectralQuantum : ℂ) =
+      1 + (Real.eulerMascheroniConstant : ℂ) / 2 - Complex.log (4 * (Real.pi : ℂ)) / 2 := by
+    rw [spectralQuantum_xi_formula]
+    push_cast
+    rw [hlog]
+  exact h1
 
 /-! ### 数值与解析一致性验证 -/
 
@@ -248,16 +254,22 @@ theorem spectralQuantum_xi_range_consistent : spectralQuantum > 0.02 ∧ spectra
 黎曼假设之间的重要桥梁。
 -/
 
-/-- [HYPOTHESIS] ☯ 与黎曼零点的关系（Hadamard 积形式）：
-    ☯ = ∑_{n=1}^∞ 1/(1/4 + γ_n²)
+/-! ### ☯ 与黎曼零点的关系（开放缺口，不作公理断言）
 
-    其中 γ_n 是第 n 个黎曼零点（假设 RH）。
+    目标恒等式（条件于 RH）：
 
-    此公式来自 ξ 函数的 Hadamard 积表示和
-    对数导数公式。当前以公理形式引入，
-    因 Hadamard 积的严格形式化在 Mathlib 中尚未完成。 -/
-axiom spectralQuantum_zeta_zeros_relation :
-    spectralQuantum = ∑' n : ℕ, 1 / ((1/4 : ℝ) + (riemannZero1 + (n : ℝ)) ^ 2)
+      ☯ = ∑_{n=1}^∞ 1/(1/4 + γ_n²)，其中 γ_n 是第 n 个黎曼零点。
+
+    此式来自 ξ 函数的 Hadamard 积表示与对数导数公式。当前不以此式
+    作为公理断言，原因有二：
+
+    1. Mathlib 尚未形式化 Hadamard 积，γ_n 的序号枚举也未形式化；
+    2. 曾以 `riemannZero1 + n` 近似第 n 个零点，但真实零点间距不是 1
+       （γ₁ ≈ 14.1347、γ₂ ≈ 21.0220、γ₃ ≈ 25.0109），该式数值上不成立
+       （按此枚举的部分和趋于 ≈ 0.0733，而 ☯ ≈ 0.0231）。
+
+    故本式登记为待形式化缺口（见 `Lean源码/README.md` 缺口表），
+    待 Hadamard 积与真实零点枚举形式化后再以定理给出。 -/
 
 /-! ## 总结
 
@@ -266,8 +278,8 @@ axiom spectralQuantum_zeta_zeros_relation :
 - **ξ(s) = ξ(1-s)** ← 泛函方程（已严格证明）
 - **ξ(0) = ξ(1) = ½** ← 边界值（已严格证明）
 - **ξ'(1)/ξ(1) = 1 + γ/2 - (1/2)ln(4π)** ← 对数导数（已严格证明）
-- **☯ = 1 + γ/2 - (1/2)ln(4π)** ← 相变量子闭式（解析推导完成，数值等式为公理）
-- ☯ = ∑' 1/(1/4 + γ_n²) ← 假设 RH（公理）
+- **☯ = 1 + γ/2 - (1/2)ln(4π)** ← 相变量子闭式（解析推导完成；小数近似由 `spectralQuantum_numerical_bounds` 数值桥梁给出）
+- ☯ = ∑' 1/(1/4 + γ_n²) ← 条件于 RH，待 Hadamard 积形式化（开放缺口）
 
 ### 已证明定理
 - `riemannXi_functional_equation`：ξ(s) = ξ(1-s) ✅
@@ -280,6 +292,6 @@ axiom spectralQuantum_zeta_zeros_relation :
 - `spectralQuantum_xi_range_consistent`：☯ ∈ (0.02, 0.03) ✅
 
 ### 公理/假设
-- `spectralQuantum_xi_formula`：☯ 的数值常量与解析表达式相等（定义性桥梁）
-- `spectralQuantum_zeta_zeros_relation`：☯ 与黎曼零点的关系（Hadamard 积，待形式化）
+- 本文件不含 `axiom` 声明：`spectralQuantum_xi_formula` 由定义直接成立（`rfl`）。
+- ☯ 与黎曼零点的求和表示（Hadamard 积，条件于 RH）登记为待形式化缺口，不以公理断言。
 -/

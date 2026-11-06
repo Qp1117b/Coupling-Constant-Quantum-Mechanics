@@ -296,9 +296,11 @@ lemma blockDiagonal'_mulVec_eq {n : ℕ}
     (Matrix.blockDiagonal' blocks *ᵥ x) ⟨i, j⟩ = (blocks i *ᵥ (fun j' => x ⟨i, j'⟩)) j := by
   simp only [Matrix.mulVec, dotProduct]
   rw [← Finset.univ_sigma_univ, Finset.sum_sigma]
-  apply Finset.sum_congr rfl
-  intro j'
-  simp [Matrix.blockDiagonal'_apply_eq]
+  rw [Fintype.sum_eq_single i]
+  · simp [Matrix.blockDiagonal'_apply_eq]
+  · intro k hk
+    refine Finset.sum_eq_zero (fun j' _ => ?_)
+    rw [Matrix.blockDiagonal'_apply_ne blocks j j' (Ne.symm hk), zero_mul]
 
 /-- 辅助引理：块对角矩阵的二次型分解。
     xᵀ(blockDiagonal' blocks)x = Σ_k x_kᵀ(blocks k)x_k。
@@ -326,15 +328,15 @@ lemma blockDiagonal'_isHermitian {n : ℕ}
     (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
     (h_symm : ∀ k, (blocks k).IsHermitian) :
     (Matrix.blockDiagonal' blocks).IsHermitian := by
-  have h := h_symm
-  unfold Matrix.IsHermitian
-  ext ⟨i, j⟩ ⟨i', j'⟩
+  refine Matrix.IsHermitian.ext ?_
+  intro ⟨i, j⟩ ⟨i', j'⟩
   by_cases h_eq : i = i'
   · subst h_eq
-    simp [Matrix.conjTranspose_apply, Matrix.blockDiagonal'_apply']
-    have hk := h_symm i
-    simp [hk]
-  · simp [Matrix.conjTranspose_apply, Matrix.blockDiagonal'_apply_ne, h_eq]
+    rw [Matrix.blockDiagonal'_apply_eq, Matrix.blockDiagonal'_apply_eq]
+    exact (h_symm i).apply j j'
+  · rw [Matrix.blockDiagonal'_apply_ne blocks j j' h_eq,
+      Matrix.blockDiagonal'_apply_ne blocks j' j (Ne.symm h_eq)]
+    simp
 
 /-- [定理] 块对角矩阵的本征值下界（由各块本征值下界保证）：
     若每个块 B_k 满足二次型下界 xᵀB_k x ≥ α_k·|x|²，
@@ -406,7 +408,7 @@ theorem blockDiagonal_spectralGap_min {n : ℕ}
       apply hx
       ext ⟨k, j⟩
       have hk := h_all k
-      exact congrFun hk ⟨j⟩
+      simpa using congrFun hk j
     rcases h_exists with ⟨k, hk⟩
     -- 对块 k，x_k ≠ 0，故 x_kᵀB_k x_k > 0
     have h_pos_k : 0 < star (fun j => x ⟨k, j⟩) ⬝ᵥ (blocks k *ᵥ (fun j => x ⟨k, j⟩)) :=
@@ -476,9 +478,8 @@ lemma twoAtomCoupling_quadratic_expand (t : ℝ) (x : Fin 2 × Fin 4 → ℝ) :
   unfold twoAtomCouplingMatrix
   -- 展开 dotProduct 和 mulVec
   simp only [Matrix.mulVec, dotProduct, Matrix.of_apply]
-  rw [Finset.sum_product, Fin.sum_univ_two]
-  simp [two_mul, mul_add, add_mul, mul_assoc, mul_left_comm, mul_comm]
-  ring
+  simp [Fintype.sum_prod_type, Fin.sum_univ_two, Fin.sum_univ_four]
+  ring_nf
 
 /-- [引理] 两原子耦合矩阵二次型绝对值上界：
     |xᵀB x| ≤ |t|·|x|²。
@@ -534,8 +535,7 @@ lemma twoAtomCoupling_quadratic_abs_bound (t : ℝ) (x : Fin 2 × Fin 4 → ℝ)
     have hsq1 : Real.sqrt s1 ^ 2 = s1 := Real.sq_sqrt h1
     nlinarith
   have h_total : (∑ p : Fin 2 × Fin 4, x p ^ 2) = s0 + s1 := by
-    rw [Finset.sum_product, Fin.sum_univ_two]
-    rw [hs0, hs1]
+    rw [Fintype.sum_prod_type, Fin.sum_univ_two]
   calc
     |2 * t * (∑ a : Fin 4, x (0, a) * x (1, a))|
         = 2 * |t| * |∑ a : Fin 4, x (0, a) * x (1, a)| := by
@@ -588,8 +588,8 @@ theorem twoAtomSuperCartan_quadratic_lowerBound
     -- xᵀ(reindex B)x = (x∘e)ᵀ B (x∘e)：换元到 Sigma 索引侧
     have h_inv : star x ⬝ᵥ (D *ᵥ x) =
         star (fun s => x (e s)) ⬝ᵥ (Matrix.blockDiagonal' blocks *ᵥ (fun s => x (e s))) := by
-      simp [D, Matrix.mulVec, dotProduct, Matrix.reindex_apply,
-        Finset.sum_product, ← Finset.univ_sigma_univ, Finset.sum_sigma]
+      simp only [D, Matrix.reindex_apply, Matrix.submatrix_mulVec_equiv, Equiv.symm_symm]
+      rfl
     rw [h_inv, blockDiagonal'_quadratic_form blocks (fun s => x (e s))]
     calc
       ∑ k : Fin 2, star (fun j => x (e ⟨k, j⟩)) ⬝ᵥ
@@ -600,10 +600,11 @@ theorem twoAtomSuperCartan_quadratic_lowerBound
         · simpa [blocks] using h_C1_bound (fun j => x (e ⟨0, j⟩))
         · simpa [blocks] using h_C2_bound (fun j => x (e ⟨1, j⟩))
       _ = lambda_min * (∑ k : Fin 2, ∑ j : Fin 4, x (e ⟨k, j⟩) ^ 2) := by
-        simp [Finset.mul_sum]
+        rw [← Finset.mul_sum]
       _ = lambda_min * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
-        rw [Finset.sum_product]
-        simp
+        congr 1
+        rw [← Equiv.sum_comp e (fun p : Fin 2 × Fin 4 => x p ^ 2)]
+        rw [← Finset.univ_sigma_univ, Finset.sum_sigma]
   -- 步骤 3：耦合部分的二次型下界
   have h_coup : star x ⬝ᵥ (twoAtomCouplingMatrix t *ᵥ x) ≥
       -|t| * (∑ p : Fin 2 × Fin 4, x p ^ 2) := by
@@ -639,28 +640,34 @@ theorem twoAtomSuperCartan_posDef
   rw [Matrix.posDef_iff_dotProduct_mulVec]
   constructor
   · -- Hermitian 性质：块对角 Hermitian（reindex 保持）+ 耦合矩阵 Hermitian
-    have hB_herm : (Matrix.blockDiagonal' (fun (k : Fin 2) =>
-        match k with | 0 => C1 | 1 => C2)).IsHermitian := by
-      exact blockDiagonal'_isHermitian (fun (k : Fin 2) =>
-        match k with | 0 => C1 | 1 => C2) (by
-          intro k
-          fin_cases k <;> simp
-          · exact h_C1_posDef.1
-          · exact h_C2_posDef.1)
+    have hB_herm : (Matrix.blockDiagonal' (m' := fun _ => Fin 4) (n' := fun _ => Fin 4)
+        (fun (k : Fin 2) => match k with | 0 => C1 | 1 => C2)).IsHermitian := by
+      apply blockDiagonal'_isHermitian
+      intro k
+      fin_cases k
+      · exact h_C1_posDef.1
+      · exact h_C2_posDef.1
     have h_block_herm : (Matrix.reindex (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
         (Equiv.sigmaEquivProd (Fin 2) (Fin 4))
-        (Matrix.blockDiagonal' (fun (k : Fin 2) =>
-          match k with | 0 => C1 | 1 => C2))).IsHermitian := by
-      unfold Matrix.IsHermitian
-      rw [Matrix.conjTranspose_reindex, hB_herm]
-      rfl
+        (Matrix.blockDiagonal' (m' := fun _ => Fin 4) (n' := fun _ => Fin 4)
+          (fun (k : Fin 2) => match k with | 0 => C1 | 1 => C2))).IsHermitian := by
+      refine Matrix.IsHermitian.ext ?_
+      intro i j
+      rw [Matrix.reindex_apply]
+      exact hB_herm.apply _ _
     have h_coup_herm : (twoAtomCouplingMatrix t).IsHermitian := by
+      refine Matrix.IsHermitian.ext ?_
+      intro ⟨i, a⟩ ⟨j, b⟩
       unfold twoAtomCouplingMatrix
-      ext ⟨i, a⟩ ⟨j, b⟩
-      simp [Matrix.of_apply, Matrix.conjTranspose_apply]
+      simp only [Matrix.of_apply]
       by_cases hij : i = j
-      · subst hij; simp
-      · simp [hij]
+      · subst hij
+        simp
+      · have hji : ¬ j = i := fun h => hij h.symm
+        by_cases hab : a = b
+        · simp [hij, hji, hab]
+        · have hba : ¬ b = a := fun h => hab h.symm
+          simp [hij, hji, hab, hba]
     -- 两个 Hermitian 矩阵之和仍为 Hermitian
     exact Matrix.IsHermitian.add h_block_herm h_coup_herm
   · -- 正定性：x ≠ 0 ⇒ xᵀC x > 0
@@ -676,10 +683,12 @@ theorem twoAtomSuperCartan_posDef
           have h_sum_zero : ∑ p : Fin 2 × Fin 4, x p ^ 2 ≤ 0 := h_nonpos
           -- 单个平方项 ≤ 总和 ≤ 0，故必须为 0
           have h_le_sum : x p ^ 2 ≤ ∑ p' : Fin 2 × Fin 4, x p' ^ 2 :=
-            Finset.single_le_sum (by intro; exact sq_nonneg _) (Finset.mem_univ p)
+            Finset.single_le_sum (s := Finset.univ) (f := fun p' => x p' ^ 2)
+              (fun i _ => sq_nonneg _) (Finset.mem_univ p)
           linarith
         have h_sq_nonneg : 0 ≤ x p ^ 2 := sq_nonneg _
-        nlinarith
+        have h_sq_zero : x p ^ 2 = 0 := le_antisymm h_sq h_sq_nonneg
+        exact eq_zero_of_pow_eq_zero h_sq_zero
       exact hx h_zero
     have h_coeff_pos : 0 < lambda_min - |t| := by linarith
     have h_pos : 0 < (lambda_min - |t|) * (∑ p : Fin 2 × Fin 4, x p ^ 2) :=

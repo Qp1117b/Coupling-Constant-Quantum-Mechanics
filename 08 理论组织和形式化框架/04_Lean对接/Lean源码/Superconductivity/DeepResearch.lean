@@ -53,9 +53,6 @@ open scoped Real
 
 /-! ## 1. 黄金比恒等式：√λ₁(A4) = 1/φ -/
 
-/-- 黄金比 φ = (1+√5)/2 -/
-noncomputable def goldenRatio : ℝ := (1 + Real.sqrt 5) / 2
-
 /-- A4谱间隙 λ₁ = (3-√5)/2 -/
 noncomputable def a4SpectralGap : ℝ := (3 - Real.sqrt 5) / 2
 
@@ -63,16 +60,8 @@ noncomputable def a4SpectralGap : ℝ := (3 - Real.sqrt 5) / 2
 theorem a4SpectralGap_pos : a4SpectralGap > 0 := by
   unfold a4SpectralGap
   have h_sqrt5 : Real.sqrt 5 < 3 := by
-    have h5 : (3 : ℝ)^2 = 9 := by norm_num
-    have h5' : (Real.sqrt 5)^2 = 5 := Real.sq_sqrt (by norm_num)
-    have h : 5 < 9 := by norm_num
-    exact Real.sqrt_lt'.mpr ⟨by norm_num, by norm_num⟩
-  linarith
-
-/-- **定理**：黄金比为正。 -/
-theorem goldenRatio_pos : goldenRatio > 0 := by
-  unfold goldenRatio
-  have h : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num)
+    have h_sq : (Real.sqrt 5)^2 = 5 := Real.sq_sqrt (by norm_num)
+    nlinarith [h_sq, Real.sqrt_nonneg 5]
   linarith
 
 /-- **定理（黄金比恒等式）**：√λ₁(A4) = 1/φ。
@@ -84,13 +73,15 @@ theorem sqrt_a4SpectralGap_eq_inv_goldenRatio :
     Real.sqrt a4SpectralGap = 1 / goldenRatio := by
   unfold a4SpectralGap goldenRatio
   have h_sqrt5_sq : (Real.sqrt 5)^2 = 5 := Real.sq_sqrt (by norm_num)
-  have h_phi_pos : 0 < (1 + Real.sqrt 5) / 2 := by linarith [Real.sqrt_pos.mpr (by norm_num)]
-  have h_lambda_pos : 0 < (3 - Real.sqrt 5) / 2 := by
-    have : Real.sqrt 5 < 3 := by
-      apply Real.sqrt_lt'.mpr
-      exact ⟨by norm_num, by norm_num⟩
+  have h_phi_pos : 0 < (1 + Real.sqrt 5) / 2 := by
+    have h5 : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num : (0 : ℝ) < 5)
     linarith
-  apply Real.sqrt_eq_iff_sq_eq h_lambda_pos (by positivity)
+  have h_lambda_pos : 0 < (3 - Real.sqrt 5) / 2 := by
+    have h_sqrt5 : Real.sqrt 5 < 3 := by
+      have h_sq : (Real.sqrt 5)^2 = 5 := Real.sq_sqrt (by norm_num)
+      nlinarith [h_sq, Real.sqrt_nonneg 5]
+    linarith
+  rw [Real.sqrt_eq_iff_eq_sq h_lambda_pos.le (by positivity : (0 : ℝ) ≤ 1 / ((1 + Real.sqrt 5) / 2))]
   field_simp
   nlinarith [h_sqrt5_sq, Real.sqrt_nonneg 5]
 
@@ -99,15 +90,19 @@ theorem sqrt_a4SpectralGap_eq_goldenRatio_minus_one :
     Real.sqrt a4SpectralGap = goldenRatio - 1 := by
   rw [sqrt_a4SpectralGap_eq_inv_goldenRatio]
   unfold goldenRatio
+  have hs2 : (Real.sqrt 5)^2 = 5 := Real.sq_sqrt (by norm_num)
+  have hden : (1 + Real.sqrt 5) / 2 ≠ 0 := by
+    have h5 : 0 < Real.sqrt 5 := Real.sqrt_pos.mpr (by norm_num : (0 : ℝ) < 5)
+    positivity
   field_simp
-  ring
+  nlinarith [hs2]
 
 /-- **推论**：λ₁(A4) = 1/φ² = (φ-1)² = 2-φ。 -/
 theorem a4SpectralGap_eq_inv_goldenRatio_sq :
     a4SpectralGap = 1 / goldenRatio^2 := by
-  rw [← Real.sq_sqrt a4SpectralGap_pos.le]
-  rw [sqrt_a4SpectralGap_eq_inv_goldenRatio]
-  ring
+  rw [← Real.sq_sqrt a4SpectralGap_pos.le, sqrt_a4SpectralGap_eq_inv_goldenRatio]
+  have hφ : goldenRatio ≠ 0 := ne_of_gt goldenRatio_pos
+  field_simp
 
 /-! ## 2. θ_D的A4群论推导 -/
 
@@ -151,10 +146,18 @@ theorem debyeTemperatureA4_decreases_with_mass
   have h_sqrt : Real.sqrt (lambda1 / (m_e * m₂ * a^4)) <
                 Real.sqrt (lambda1 / (m_e * m₁ * a^4)) := by
     apply Real.sqrt_lt_sqrt
-    all_goals positivity
-    rw [div_lt_div_iff_of_pos_left (by positivity)]
-    rw [div_lt_div_iff_of_pos_right (by positivity)]
-    nlinarith [he, hm₁, hm₂, ha, hm]
+    · positivity
+    · have hinner : m_e * m₁ * a^4 < m_e * m₂ * a^4 := by
+        have hpos : (0 : ℝ) < m_e * a^4 := by positivity
+        calc m_e * m₁ * a^4 = m₁ * (m_e * a^4) := by ring
+          _ < m₂ * (m_e * a^4) := mul_lt_mul_of_pos_right hm hpos
+          _ = m_e * m₂ * a^4 := by ring
+      have hprod : lambda1 * (m_e * m₁ * a^4) < lambda1 * (m_e * m₂ * a^4) := by
+        rw [mul_comm lambda1 (m_e * m₁ * a^4), mul_comm lambda1 (m_e * m₂ * a^4)]
+        exact mul_lt_mul_of_pos_right hinner hl
+      rw [div_lt_div_iff₀ (by positivity : (0 : ℝ) < m_e * m₂ * a^4)
+          (by positivity : (0 : ℝ) < m_e * m₁ * a^4)]
+      exact hprod
   exact mul_lt_mul_of_pos_left h_sqrt h_pref
 
 /-! ## 3. λ的A4群论推导 -/
@@ -171,7 +174,7 @@ theorem electronPhononCouplingA4_pos : electronPhononCouplingA4 > 0 := by
   unfold electronPhononCouplingA4 a4DimStandard
   exact div_pos (mul_pos (by norm_num) a4SpectralGap_pos) Real.pi_pos
 
-/-- 数值: λ ≈ 0.365 (Python验证: cqm_deep_research.py) -/
+/- 数值: λ ≈ 0.365 (Python验证: cqm_deep_research.py) -/
 
 /-- **定理**：λ与A4表示论的关系。
     4⊗4 = 10_s ⊕ 6_a → 配对通道数 = dim(T) = 3
@@ -182,17 +185,17 @@ theorem electronPhononCoupling_from_A4_representation :
 
 /-! ## 4. N2缺口：中子缺陷→Regge角亏映射 -/
 
-/-- 中子缺陷 δ(Z,N) 是依赖元素和同位素的变量 (CQM §2.2)。
+/- 中子缺陷 δ(Z,N) 是依赖元素和同位素的变量 (CQM §2.2)。
     δ(Z,N) 的完整函数形式与具体数值是未确认的开放问题，
     不假设具体定值，不采用质量反推。 -/
-variable (neutronDefect : ℝ)
+variable (defectNeutron : ℝ)
 
 /-- 对角参数 ε(δ) = (3/4)(δ²-1) (CQM §2.3补注) -/
 noncomputable def diagonalParameter (delta : ℝ) : ℝ := 3 / 4 * (delta^2 - 1)
 
 /-- **定理**：中子对角参数为负（微扰级形变，δ ∈ (0,1) 时 ε < 0）。 -/
-theorem diagonalParameter_neutron_neg (hδ : 0 < neutronDefect ∧ neutronDefect < 1) :
-    diagonalParameter neutronDefect < 0 := by
+theorem diagonalParameter_neutron_neg (hδ : 0 < defectNeutron ∧ defectNeutron < 1) :
+    diagonalParameter defectNeutron < 0 := by
   unfold diagonalParameter
   nlinarith [hδ.1, hδ.2]
 
@@ -204,28 +207,37 @@ noncomputable def n2MappingScale : ℝ := Real.log 2 / 2
     δ_v = (ln2/2)·N_hinge·|ε(δ_neutron)|·G(晶格)
     将中子缺陷δ映射到Regge角亏δ_v -/
 noncomputable def n2AngleDeficitMapping (N_hinge G : ℝ) : ℝ :=
-  n2MappingScale * N_hinge * abs (diagonalParameter neutronDefect) * G
+  n2MappingScale * N_hinge * abs (diagonalParameter defectNeutron) * G
 
 /-- **定理**：N2映射给出正角亏。 -/
-theorem n2Mapping_pos {N_hinge G : ℝ} (hN : N_hinge > 0) (hG : G > 0) :
-    n2AngleDeficitMapping N_hinge G > 0 := by
+theorem n2Mapping_pos {N_hinge G : ℝ} (hN : N_hinge > 0) (hG : G > 0)
+    (hε : diagonalParameter defectNeutron ≠ 0) :
+    n2AngleDeficitMapping defectNeutron N_hinge G > 0 := by
   unfold n2AngleDeficitMapping n2MappingScale
-  have h_log : Real.log 2 > 0 := Real.log_pos (by norm_num)
-  have h_eps : abs (diagonalParameter neutronDefect) > 0 := by
-    rw [abs_pos]
-    exact ne_of_lt diagonalParameter_neutron_neg
-  positivity
+  have h_scale : 0 < Real.log 2 / 2 := by
+    have h_log : Real.log 2 > 0 := Real.log_pos (by norm_num)
+    linarith
+  have h_eps : 0 < abs (diagonalParameter defectNeutron) := abs_pos.mpr hε
+  have h1 : 0 < Real.log 2 / 2 * N_hinge := mul_pos h_scale hN
+  have h2 : 0 < Real.log 2 / 2 * N_hinge * abs (diagonalParameter defectNeutron) :=
+    mul_pos h1 h_eps
+  have h3 : 0 < Real.log 2 / 2 * N_hinge * abs (diagonalParameter defectNeutron) * G :=
+    mul_pos h2 hG
+  exact h3
 
 /-- **定理**：N2映射标度因子 ln2/2 < 1/2。
     数值: ln2/2 ≈ 0.347, 实验C_N2 = 0.34, 误差1.8%。 -/
 theorem n2MappingScale_lt_half : n2MappingScale < 1 / 2 := by
   unfold n2MappingScale
-  have h_log : Real.log 2 < 1 := Real.log_lt_one_iff.mpr (by norm_num)
+  have h_log : Real.log 2 < 1 := by linarith [Real.log_two_lt_d9]
   linarith
 
 /-! ## 5. 缺口C：A4唯一性 -/
 
-/-- 候选群的物理约束检查 -/
+/-- 候选群的物理约束检查。
+
+    字段为手工判定的命题位（以 `True`/`False` 字面量填写），
+    只记录判定结果，不承载形式化证明。 -/
 structure GroupConstraints (G : Type) where
   has3dRep : Prop       -- 约束(1): 有3维标准表示
   hasNormalSubgroup : Prop  -- 约束(2): 有非平凡正规子群

@@ -25,10 +25,11 @@ import PrimeGeometry.Basic
 - **定理 1（光滑曲线）**：光滑闭曲线边界 → ρ(s) = 1/C（常数）
 - **定理 2（多边形）**：n 边形边界 → ρ_i 分段常数，角点处跳跃
 
-## 公理
+## 未证命题
 
-- **windingDensityConvergence** [AXIOM]: 当 N→∞ 时，素数缠绕密度在因果时 n 边形
-  各边上收敛为分段常数 ρ_i
+- **windingDensityConvergenceClaim** [CLAIM]: 素数缠绕密度收敛为分段常数
+  （当前主语 `primeWindingDensity` 仍是占位定义；原公理式只断言存在
+  落在 [0, 1/n] 的 ρ，可由 ρ = 0 满足，不承载收敛内容）
 
 ## 定理
 
@@ -62,7 +63,7 @@ theorem activePrimeSet_eq_activePrimes : activePrimeSet = {2, 3, 5} := rfl
 
 /-- 活跃素数集合的基数 = 3。 -/
 theorem activePrimeSet_card_eq_three : activePrimeSet.card = 3 := by
-  unfold activePrimeSet; native_decide
+  unfold activePrimeSet; decide
 
 /-- 活跃素数集合中的元素确实都是素数。 -/
 theorem activePrimeSet_all_prime : ∀ p ∈ activePrimeSet, Nat.Prime p := by
@@ -76,7 +77,7 @@ theorem activePrimeSet_all_prime : ∀ p ∈ activePrimeSet, Nat.Prime p := by
 
 /-- 活跃素数集合的乘积 = 30 = N_cycle。 -/
 theorem activePrimeSet_prod_eq_30 : activePrimeSet.prod id = 30 := by
-  unfold activePrimeSet; native_decide
+  unfold activePrimeSet; decide
 
 /-! ## 两种素数密度定义（论文第 2.2 节）
 
@@ -92,7 +93,7 @@ theorem activePrimeSet_prod_eq_30 : activePrimeSet.prod id = 30 := by
       数学基础：模 C 的单一算术级数中素数均匀分布。
     - **定理 2（多边形）**：若边界为 n 边形，第 i 边内部的
       点缠绕密度收敛到分段常数 ρ_i；在角点处左右极限不等，
-      产生密度跳跃。此定理对应下方的 `windingDensityConvergence` 公理。
+      产生密度跳跃。此定理对应下方的 `windingDensityConvergenceClaim` 命题。
 
     定理 1 的完整形式化需要解析数论中的素数定理和 Dirichlet L-函数理论，
     当前以注释形式记录，待 Mathlib 提供足够的解析数论基础设施后
@@ -121,16 +122,22 @@ noncomputable def globalWindingDensity (C : ℝ) (_hC : C > 0) (N : ℕ) (_hN : 
 noncomputable def primeWindingDensity (_p : CausalPolygon) (_k : ℕ) (_hk : _k < _p.n) (_N : ℕ) : ℝ :=
   0  -- 占位：完整定义需 Dirichlet 特征和 L-函数理论
 
-/-- [AXIOM] 素数缠绕密度收敛公理：当 N → ∞ 时，各段上的素数缠绕密度
-    收敛到分段常数 ρ_i。
+/-- [CLAIM] 素数缠绕密度收敛的命题形式（未证明）：各段上存在一个落在
+    [0, 1/n] 的密度常数 ρ。
 
     物理意义：在因果时多边形的各边上，质数的分布密度趋于一个稳定的
     分段常数。这些常数 ρ_i 编码了三代粒子的相对概率权重。
 
     数学基础：由 Dirichlet 定理，模 C 的算术级数中素数分布均匀。
     在因果时弯曲的框架下，不同边对应不同的 Dirichlet 特征，
-    其密度由 L(1,χ) 的值决定。 -/
-axiom windingDensityConvergence (p : CausalPolygon) (k : ℕ) (hk : k < p.n) :
+    其密度由 L(1,χ) 的值决定。
+
+    注意：本式只断言存在一个落在 [0, 1/n] 的实数，可由 ρ = 0 满足；
+    「当 N→∞ 时收敛到分段常数 ρ_i」的内容依赖占位定义
+    `primeWindingDensity`（恒为 0），尚未形式化。故本式不作为公理或定理，
+    仅登记为待证命题。 -/
+def windingDensityConvergenceClaim : Prop :=
+  ∀ (p : CausalPolygon) (k : ℕ), k < p.n →
     ∃ (ρ : ℝ), 0 ≤ ρ ∧ ρ ≤ 1 / (p.n : ℝ)
 
 /-- [THEOREM] 总概率守恒：正三角形各边加权密度之和为 1。
@@ -215,6 +222,6 @@ theorem activePrimes_irreducible : ∀ p ∈ activePrimeSet, Nat.Prime p :=
 -- 素数缠绕密度与因果时弯曲框架自洽。
 -- 在 CQM 中，质数分布不是空间中的统计规律，而是
 -- 再生产时间自我折叠的代数编码。此声明体现在
--- `primeWindingDensity` 的定义和 `windingDensityConvergence` 公理中。
+-- `primeWindingDensity` 的定义和 `windingDensityConvergenceClaim` 命题中。
 
 end CQM

@@ -1,3 +1,4 @@
 import SpectralGeometry.Basic
 
 import SpectralGeometry.GLnTrivialSpectralQuantum
+import SpectralGeometry.Mathieu

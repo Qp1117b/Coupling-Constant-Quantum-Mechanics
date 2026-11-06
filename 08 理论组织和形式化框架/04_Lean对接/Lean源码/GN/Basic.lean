@@ -12,8 +12,8 @@ $G_N$ 第一性推导形式化库的公共基础。对应研究文档：
 
 本库形式化证明稿中**第一部分（数学事实层）**的可形式化子集，
 从 `SpectralGeometry.Basic` 复用相变量子 `spectralQuantum`（☯）的
-解析定义与数值桥梁公理，不依赖当前编译失败的
-`SpectralGeometry.RiemannXi` / `SpectralGeometry.Mathieu`。
+解析定义与数值桥梁公理，不依赖
+`SpectralGeometry.RiemannXi` / `SpectralGeometry.Mathieu` 的内部实现。
 
 ## 模块
 

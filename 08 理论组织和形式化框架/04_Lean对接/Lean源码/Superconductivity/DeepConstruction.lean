@@ -56,13 +56,12 @@ noncomputable def curvatureStiffness (n thetaD lambda : ℝ) : ℝ :=
 /-- **定理**：K_eff 是 E_regge 对 δ_v 的二阶导数。
     ∂²E_regge/∂δ_v² = K_eff -/
 theorem curvatureStiffness_eq_second_derivative
-    (n thetaD lambda deltaV : ℝ) :
+    (n thetaD lambda _deltaV : ℝ) :
     -- 数值二阶导数: lim_{h→0} [E(δ+h) - 2E(δ) + E(δ-h)] / h² = K_eff
     -- 解析: ∂²/∂δ_v² [θ_D·λ·δ_v²·n²/(2π)²] = 2·θ_D·λ·n²/(2π)² = θ_D·λ·n²/(2π²)
     2 * thetaD * lambda * n^2 / (2 * Real.pi)^2 = curvatureStiffness n thetaD lambda := by
   unfold curvatureStiffness
   field_simp
-  ring
 
 /-- **定理**：K_eff > 0（在物理参数为正下）。
     θ_D > 0, λ > 0, n > 0 ⟹ K_eff > 0。 -/
@@ -91,7 +90,12 @@ theorem curvatureStiffness_monotone_in_thetaD
     curvatureStiffness n thetaD1 lambda < curvatureStiffness n thetaD2 lambda := by
   unfold curvatureStiffness
   have h_denom : 0 < 2 * Real.pi^2 := by positivity
-  exact div_pos (mul_pos (mul_pos htheta (mul_pos hlam (sq_pos_of_ne_zero hn.ne')))) h_denom
+  have hn2 : (0 : ℝ) < n ^ 2 := sq_pos_of_ne_zero hn.ne'
+  have hnum : thetaD1 * lambda * n ^ 2 < thetaD2 * lambda * n ^ 2 := by
+    have h1 : thetaD1 * lambda < thetaD2 * lambda := mul_lt_mul_of_pos_right htheta hlam
+    exact mul_lt_mul_of_pos_right h1 hn2
+  rw [div_lt_div_iff₀ h_denom h_denom]
+  exact mul_lt_mul_of_pos_right hnum h_denom
 
 /-! ## 2. S_{U(1)//Z_n} 完整作用量泛函 -/
 
@@ -120,7 +124,7 @@ noncomputable def glCriticalPoint (lambda Vn : ℝ) : ℝ :=
     V'(Δ) = -λ·Δ/V_n + Δ³/V_n = Δ·(Δ²-λ·V_n)/V_n
     V'(Δ_c) = 0 当 Δ_c² = λ·V_n。 -/
 theorem glPotential_derivative_zero_at_critical
-    (lambda Vn : ℝ) (hVn : Vn ≠ 0) :
+    (lambda Vn : ℝ) (_hVn : Vn ≠ 0) (hcrit : 0 ≤ lambda * Vn) :
     let Delta_c := Real.sqrt (glCriticalPoint lambda Vn)
     -- V'(Δ_c) = -λ·Δ_c/V_n + Δ_c³/V_n = Δ_c·(Δ_c²-λ·V_n)/V_n = 0
     -- （因为 Δ_c² = λ·V_n）
@@ -130,14 +134,11 @@ theorem glPotential_derivative_zero_at_critical
   -- Δ_c·(Δ_c² - λ·V_n)/V_n = Δ_c·0/V_n = 0
   have h_sq : Delta_c^2 = glCriticalPoint lambda Vn := by
     unfold Delta_c glCriticalPoint
-    exact Real.sqrt_sq (by linarith [mul_self_nonneg lambda, mul_self_nonneg Vn])
-    -- 需要λ·V_n ≥ 0，此处简化
-  rw [h_sq]
-  ring
+    exact Real.sq_sqrt hcrit
+  rw [h_sq, sub_self, mul_zero, zero_div]
 
-/-- **熵作用量**: S_entropy = k_B·ln(n)·(1+1/(2n²))·tanh(T/θ_D)。
-    即 entropyModel（来自 FormalizationRigor）。 -/
--- 已在 FormalizationRigor 中定义
+/- **熵作用量**: S_entropy = k_B·ln(n)·(1+1/(2n²))·tanh(T/θ_D)。
+    即 entropyModel（来自 FormalizationRigor），已在 FormalizationRigor 中定义。 -/
 
 /-- **完整作用量**: S_{U(1)//Z_n} = S_Regge + S_YM + S_GL - S_entropy。
     自由能 F_n = -k_B·T·ln(Z), Z = ∫D[A,ψ]·exp(-S_{U(1)//Z_n})。
@@ -190,13 +191,13 @@ theorem a5_structEnhancement_gt_a4 :
   have h3 : 0 < 3 + (1 + Real.sqrt 5) / 2 := by linarith
   have h2 : 0 < 2 + (1 + Real.sqrt 5) / 2 := by linarith
   have h_lt : 2 + (1 + Real.sqrt 5) / 2 < 3 + (1 + Real.sqrt 5) / 2 := by linarith
-  exact Real.sqrt_lt_sqrt h_lt
+  exact Real.sqrt_lt_sqrt h2.le h_lt
 
 /-- **A5 BCS抑制参数**: γ_m(A5) = 3/5 = dim(T₁)/|classes|。 -/
-def a5GammaM : ℝ := 3 / 5
+noncomputable def a5GammaM : ℝ := 3 / 5
 
 /-- **A4 BCS抑制参数**: γ_m(A4) = 3/4 = dim(T)/|classes|。 -/
-def a4GammaM : ℝ := 3 / 4
+noncomputable def a4GammaM : ℝ := 3 / 4
 
 /-- **定理**：A5的γ_m < A4的γ_m（BCS抑制减弱）。
     3/5 < 3/4 ⟹ A5的BCS抑制更弱 ⟹ Tc更高。 -/
@@ -234,19 +235,27 @@ noncomputable def a4EligibilityThreshold (C beta deltaV : ℝ) : ℝ :=
     但这意味着A5需要更大的角亏涨落——更难满足？
     不，物理上A5的单群性提供了更强的相干，补偿了更高的阈值。 -/
 theorem a5_threshold_gt_a4 {C beta deltaV : ℝ}
-    (hC : C > 0) (hbeta : beta > 0) (hdelta : 0 ≤ deltaV) (hbound : deltaV < 1 / beta) :
+    (hC : C > 0) (hbeta : beta > 0) (_hdelta : 0 ≤ deltaV) (hbound : deltaV < 1 / beta) :
     a4EligibilityThreshold C beta deltaV < a5EligibilityThreshold C beta deltaV := by
   unfold a5EligibilityThreshold a4EligibilityThreshold
     a5TransitionCoupling a4TransitionCoupling
-  have h_pos : 0 < 1 - beta * deltaV := by nlinarith
+  have h_pos : 0 < 1 - beta * deltaV := by
+    have hbd : beta * deltaV < 1 := by
+      have h := mul_lt_mul_of_pos_left hbound hbeta
+      have hb : beta * (1 / beta) = 1 := by field_simp [hbeta.ne']
+      linarith
+    linarith
   have h_sqrt : 0 < Real.sqrt (1 - beta * deltaV) := Real.sqrt_pos.mpr h_pos
   have h_log3 : 0 < Real.log 3 := Real.log_pos (by norm_num)
   have h_log4 : 0 < Real.log 4 := Real.log_pos (by norm_num)
   have h_log3_lt_log4 : Real.log 3 < Real.log 4 := Real.log_lt_log (by norm_num) (by norm_num)
-  -- C·√(1-βδ)/β > 0, 除以更小的ln(3) > 除以更大的ln(4)
-  have h_num : 0 < C * Real.sqrt (1 - beta * deltaV) / beta := by
-    exact div_pos (mul_pos hC h_sqrt) hbeta
-  exact div_lt_div_of_lt_right h_num h_log3 h_log3_lt_log4
+  have h_d3 : 0 < beta * Real.log 3 := mul_pos hbeta h_log3
+  have h_d4 : 0 < beta * Real.log 4 := mul_pos hbeta h_log4
+  have h_dlt : beta * Real.log 3 < beta * Real.log 4 :=
+    mul_lt_mul_of_pos_left h_log3_lt_log4 hbeta
+  have h_num : 0 < C * Real.sqrt (1 - beta * deltaV) := mul_pos hC h_sqrt
+  rw [div_lt_div_iff₀ h_d4 h_d3]
+  exact mul_lt_mul_of_pos_left h_dlt h_num
 
 /-- **A5对Tc的综合效应**:
     Tc(A5)/Tc(A4) = struct_enh(A5)/struct_enh(A4) × (BCS抑制减弱效应)
@@ -263,11 +272,11 @@ theorem a5toA4_ratio_gt_one : a5toA4_ratio > 1 := by
   have h_a4_pos : 0 < a4StructEnhancement := by
     unfold a4StructEnhancement
     exact Real.sqrt_pos.mpr (by positivity)
-  exact (div_lt_iff_of_pos h_a4_pos).mpr a5_structEnhancement_gt_a4
+  exact (lt_div_iff₀ h_a4_pos).mpr (by simpa using a5_structEnhancement_gt_a4)
 
 /-! ## 4. G18 行内子项闭合状态 -/
 
-/-- G18 行内子项闭合状态：
+/- G18 行内子项闭合状态：
 
     | G18子项                    | 之前状态   | 当前状态     | 闭合依据              |
     |---------------------------|-----------|------------|----------------------|

@@ -43,7 +43,7 @@ open scoped Real
 structure CurvatureOperator where
   /-- 算符作用于曲率涨落态的本征值（逐模式） -/
   eigen : ℕ → ℝ
-  /-- 自伴性 ⟹ 本征值实（角亏实值）——记录为自伴结构的谱后果字段 -/
+  /-- 自伴性的**记录位**：字段类型为 `True`，不承载自伴性证明 -/
   hermitian : True
   /-- 曲率-振荡衔接：第 n 模式角亏振幅为正（振荡振幅非退化）
       （曲率量子 = 声子：本征值对应 `OscillatorSpectrum` 占据态 |n⟩） -/
@@ -70,14 +70,14 @@ structure CouplingOperator where
   C_pos : 0 < C
 
 /-- 耦合坐标：u = ln r（对数耦合常数，无量纲）。 -/
-noncomputable def couplingCoordinate (r : ℝ) (hr : 0 < r) : ℝ := Real.log r
+noncomputable def couplingCoordinate (r : ℝ) (_hr : 0 < r) : ℝ := Real.log r
 
 /-- 耦合坐标的单调性：耦合强度越大，对数坐标越大（Baker–Campbell–Hausdorff
     一维性限定下的全局单坐标，定义域为 U(1) 阿贝尔扇区）。 -/
 theorem couplingCoordinate_mono {r₁ r₂ : ℝ} (hr₁ : 0 < r₁) (hr₂ : 0 < r₂)
     (hle : r₁ ≤ r₂) : couplingCoordinate r₁ hr₁ ≤ couplingCoordinate r₂ hr₂ := by
   unfold couplingCoordinate
-  exact Real.log_le_log hr₁ hr₂
+  exact Real.log_le_log hr₁ hle
 
 /-! ## 3. CQM-Robertson 不确定性衔接（环节7–8 连接） -/
 
@@ -92,7 +92,7 @@ theorem fg_uncertainty_link (Δu Δp Δr_div_r Δvτ C : ℝ) (hCpos : C > 0)
     (h_robertson : Δu * Δp ≥ 1 / 2)
     (h_id1 : Δr_div_r = Δu) (h_id2 : Δvτ = C * Δp) :
     Δr_div_r * Δvτ ≥ C / 2 :=
-  CouplingSpace.cqm_uncertainty_conditional Δu Δp Δr_div_r Δvτ C hCpos
+  cqm_uncertainty_conditional Δu Δp Δr_div_r Δvτ C hCpos
     h_robertson h_id1 h_id2
 
 /-- **曲率-耦合通道衔接定理**：曲率算符本征值（角亏涨落 δ_v）驱动固有时流速
@@ -100,8 +100,8 @@ theorem fg_uncertainty_link (Δu Δp Δr_div_r Δvτ C : ℝ) (hCpos : C > 0)
     的通道良定义（复用 `Superconductivity.CouplingSpace.properTimeFlow`）。 -/
 theorem curvature_to_properTimeFlow (β δv : ℝ) (hβ : 0 < β) (hδ : 0 ≤ δv)
     (hbound : δv < 1 / β) :
-    0 < Superconductivity.CQM.properTimeFlow β δv :=
-  Superconductivity.CQM.properTimeFlow_pos hβ hδ hbound
+    0 < properTimeFlow β δv :=
+  properTimeFlow_pos hβ hδ hbound
 
 /-- **曲率-耦合阈值衔接定理**：由不确定性关系，满足跃迁耦级 Δu 所需的
     最小角亏涨落阈值为 ☯√(1−βδ_v)/(β·Δu) > 0（复用
@@ -109,10 +109,10 @@ theorem curvature_to_properTimeFlow (β δv : ℝ) (hβ : 0 < β) (hδ : 0 ≤ �
     一般化跃迁幅度为 Δu > 0）。 -/
 theorem curvature_coupling_threshold_pos (β δv C Δu : ℝ)
     (hβ : 0 < β) (hδ : 0 ≤ δv) (hbound : δv < 1 / β) (hC : 0 < C) (hΔu : 0 < Δu) :
-    0 < C * Superconductivity.CQM.properTimeFlow β δv / (β * Δu) := by
-  have hflow : 0 < Superconductivity.CQM.properTimeFlow β δv :=
+    0 < C * properTimeFlow β δv / (β * Δu) := by
+  have hflow : 0 < properTimeFlow β δv :=
     curvature_to_properTimeFlow β δv hβ hδ hbound
-  have h1 : 0 < C * Superconductivity.CQM.properTimeFlow β δv := mul_pos hC hflow
+  have h1 : 0 < C * properTimeFlow β δv := mul_pos hC hflow
   have h2 : 0 < β * Δu := mul_pos hβ hΔu
   exact div_pos h1 h2
 
@@ -122,11 +122,11 @@ theorem curvature_coupling_threshold_pos (β δv C Δu : ℝ)
 theorem transition_qualification_threshold_pos (β δv C n : ℝ)
     (hβ : 0 < β) (hδ : 0 ≤ δv) (hbound : δv < 1 / β) (hC : 0 < C)
     (hn : 2 ≤ n) :
-    0 < C * Superconductivity.CQM.properTimeFlow β δv / (2 * β * Real.log n) := by
+    0 < C * properTimeFlow β δv / (2 * β * Real.log n) := by
   have hln : 0 < Real.log n := Real.log_pos (by linarith)
-  have hflow : 0 < Superconductivity.CQM.properTimeFlow β δv :=
+  have hflow : 0 < properTimeFlow β δv :=
     curvature_to_properTimeFlow β δv hβ hδ hbound
-  have h1 : 0 < C * Superconductivity.CQM.properTimeFlow β δv := mul_pos hC hflow
+  have h1 : 0 < C * properTimeFlow β δv := mul_pos hC hflow
   have h2 : 0 < (2 : ℝ) * β * Real.log n := by positivity
   exact div_pos h1 h2
 

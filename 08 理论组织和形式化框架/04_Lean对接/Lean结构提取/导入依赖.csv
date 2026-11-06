@@ -119,6 +119,7 @@ GN,GN.TripleIdentity
 GN,GN.SierraCQM
 GN,GN.SimplexSpectrum
 GN,GN.AdeleJacobian
+GN,GN.ModularTrace
 GN,GN.Constructions
 GN.AdeleJacobian,GN.Basic
 GN.Basic,SpectralGeometry.Basic
@@ -129,6 +130,8 @@ GN.Constructions,GN.SimplexSpectrum
 GN.Constructions,GN.AdeleJacobian
 GN.Constructions,SpectralGeometry.Basic
 GN.Constructions,PhysicalConstants.Basic
+GN.ModularTrace,GN.AdeleJacobian
+GN.ModularTrace,Mathlib.Analysis.SpecialFunctions.Log.Basic
 GN.SierraCQM,GN.Basic
 GN.SimplexSpectrum,GN.Basic
 GN.SimplexSpectrum,CartanAlgebra.Basic
@@ -195,11 +198,13 @@ PrimeGeometry.WindingDensity,SpectralGeometry.Basic
 PrimeGeometry.WindingDensity,PrimeGeometry.Basic
 SpectralGeometry,SpectralGeometry.Basic
 SpectralGeometry,SpectralGeometry.GLnTrivialSpectralQuantum
+SpectralGeometry,SpectralGeometry.Mathieu
 SpectralGeometry.Basic,Mathlib.Data.Real.Basic
 SpectralGeometry.Basic,Mathlib.Analysis.SpecialFunctions.Exp
 SpectralGeometry.Basic,Mathlib.Analysis.SpecialFunctions.Log.Basic
 SpectralGeometry.Basic,Mathlib.NumberTheory.Harmonic.EulerMascheroni
 SpectralGeometry.Basic,Mathlib.Analysis.Real.Pi.Bounds
+SpectralGeometry.Basic,Mathlib.Analysis.Complex.ExponentialBounds
 SpectralGeometry.Basic,Mathlib.Topology.Basic
 SpectralGeometry.Basic,Mathlib.Order.Filter.AtTopBot.Basic
 SpectralGeometry.Basic,Mathlib.Topology.Order.IntermediateValue
@@ -208,6 +213,7 @@ SpectralGeometry.Basic,CouplingSpace.Basic
 SpectralGeometry.Basic,SpectralGeometry.MathieuContinuedFraction
 SpectralGeometry.GLnTrivialSpectralQuantum,Mathlib.Data.Real.Basic
 SpectralGeometry.GLnTrivialSpectralQuantum,Mathlib.Analysis.SpecialFunctions.ExpDeriv
+SpectralGeometry.GLnTrivialSpectralQuantum,CartanAlgebra.Basic
 SpectralGeometry.GLnTrivialSpectralQuantum,SpectralGeometry.Basic
 SpectralGeometry.GLnTrivialSpectralQuantum,SpectralGeometry.RiemannXi
 SpectralGeometry.Mathieu,Mathlib.Data.Real.Basic
@@ -243,6 +249,8 @@ Superconductivity,Superconductivity.CartanSuperconductivity
 Superconductivity,Superconductivity.FirstPrinciples
 Superconductivity,Superconductivity.SPAF
 Superconductivity,Superconductivity.MolecularGeometry
+Superconductivity,Superconductivity.BridgeTheorems
+Superconductivity,Superconductivity.ElementCartan
 Superconductivity,Superconductivity.FormalizationRigor
 Superconductivity,Superconductivity.DeepConstruction
 Superconductivity,Superconductivity.DeepResearch
@@ -315,6 +323,8 @@ Superconductivity.FirstPrinciples,Superconductivity.SPAF
 Superconductivity.FormalizationRigor,Mathlib.Data.Real.Basic
 Superconductivity.FormalizationRigor,Mathlib.Analysis.SpecialFunctions.Log.Basic
 Superconductivity.FormalizationRigor,Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+Superconductivity.FormalizationRigor,Mathlib.Analysis.Complex.ExponentialBounds
+Superconductivity.FormalizationRigor,Mathlib.Analysis.Real.Pi.Bounds
 Superconductivity.FormalizationRigor,Mathlib.Order.Filter.Basic
 Superconductivity.FormalizationRigor,Mathlib.Topology.Defs.Filter
 Superconductivity.FormalizationRigor,Mathlib.Tactic

@@ -26,9 +26,10 @@ import PrimeGeometry.WindingDensity
 
     λ_C = h/(mc) = 因果环的再生产周期（等效空间标度）
 
-## 公理
+## 形式陈述
 
-- **causalChainSelfClosure** [POSTULATE]: 从母体断裂的因果链必自我闭合为因果环
+- **CausalLoop.ofSegment** [DEF]: 由因果线段的弧长构造因果环（`causalSteps := seg.arcLength`）；
+  属结构构造定义，不承载「断裂因果链必自我闭合」的物理内容
 
 ## 定理
 
@@ -73,14 +74,17 @@ theorem CausalLoop.reproductionFrequency_pos (cl : CausalLoop) : cl.reproduction
   unfold CausalLoop.reproductionFrequency
   refine div_pos (by norm_num) cl.hpos
 
-/-- [POSTULATE] 因果链自闭合公设：从 A₄ 母体断裂的因果链必须自我闭合
-    为因果环，否则因果末端悬空 → 粒子解体（无存在论基础）。
+/-- [DEF] 因果链自闭合的形式构造：按因果线段的弧长构造一个因果环
+    （`CausalLoop.ofSegment`），使环周长 = 线段弧长。
 
     物理图像：因果链的两端如果未连接，则因果信息流无法完成一个完整的
     再生产周期，粒子无法作为独立本体存在。自我闭合是存在论必然。
 
-    此公设是 CQM 中粒子起源的存在论基础。 -/
-axiom causalChainSelfClosure : ∀ (seg : CausalSegment), ∃ (cl : CausalLoop), cl.causalSteps = seg.arcLength
+    注意：上述存在论内容不由该定义承载——本定义只断言「按弧长定义一个因果环」，
+    是可构造的结构事实；「断裂因果链必须自我闭合」的物理命题仍属未形式化内容，
+    不能据此宣称该假设已降级为定理。 -/
+noncomputable def CausalLoop.ofSegment (seg : CausalSegment) : CausalLoop :=
+  ⟨seg.arcLength, seg.hpos⟩
 
 /-! ## 因果链长度 — 质量的反比量 -/
 
@@ -265,10 +269,11 @@ def muonMass : ℝ := 105.7
 /-- 陶子质量 (MeV)。 -/
 def tauMass : ℝ := 1777
 
-/-- [AXIOM] 三代轻子质量层级：m_e < m_μ < m_τ。
+/-- 三代轻子质量层级：m_e < m_μ < m_τ（由三处质量定义直接验算）。
     具体比值 m_e : m_μ : m_τ ≈ 1 : 206.8 : 3477。
     由康普顿波长猜想，因果链长度 a_i ∝ 1/m_i，故 a_e > a_μ > a_τ。 -/
-axiom leptonMassOrdering : electronMass < muonMass ∧ muonMass < tauMass
+theorem leptonMassOrdering : electronMass < muonMass ∧ muonMass < tauMass := by
+  norm_num [electronMass, muonMass, tauMass]
 
 /-- 电子是最轻的带电轻子，因此因果链最长，再生产概率最大。 -/
 theorem electron_is_lightest : electronMass < muonMass := by

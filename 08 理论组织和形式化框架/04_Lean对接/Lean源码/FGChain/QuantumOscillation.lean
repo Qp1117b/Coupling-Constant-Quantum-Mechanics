@@ -58,7 +58,7 @@ theorem CellOscillation.energyQuantum_pos (o : CellOscillation) :
 /-- 能量量子与周期的关系：ħω = 2πħ/T（T > 0，ω = 2π/T）。
     这是环节5 动量-位置-能量关系的定量表述之一。 -/
 theorem CellOscillation.energyQuantum_eq_period
-    (o : CellOscillation) (T : ℝ) (hT : 0 < T)
+    (o : CellOscillation) (T : ℝ) (_hT : 0 < T)
     (hωT : o.omega = 2 * Real.pi / T) :
     o.energyQuantum = 2 * Real.pi * o.hbar / T := by
   unfold CellOscillation.energyQuantum
@@ -143,7 +143,7 @@ theorem triangle_relation (p : PositionMomentumEnergy) (hbar : ℝ) (hh : 0 < hb
 
 /-- 能谱间距与刚度的单调性：刚度越大（曲率越硬），能级间距 ħω = ħ√(k/m) 越大。 -/
 theorem spectrum_spacing_mono_in_stiffness
-    (m k₁ k₂ hbar : ℝ) (hm : 0 < m) (hk₁ : 0 < k₁) (hk₂ : 0 < k₂) (hh : 0 < hbar)
+    (m k₁ k₂ hbar : ℝ) (hm : 0 < m) (_hk₁ : 0 < k₁) (_hk₂ : 0 < k₂) (hh : 0 < hbar)
     (h₁ : k₁ ≤ k₂) :
     hbar * Real.sqrt (k₁ / m) ≤ hbar * Real.sqrt (k₂ / m) := by
   have hdiv : k₁ / m ≤ k₂ / m := by

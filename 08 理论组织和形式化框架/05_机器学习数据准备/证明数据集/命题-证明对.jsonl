@@ -27,8 +27,8 @@
 {"prop_id": "P027", "statement": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表", "type": "命题", "status": "已陈述", "source_doc": "D031", "depends_on": ["D030", "D032", "D008", "D007"], "lean_witness": null}
 {"prop_id": "P028", "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口", "type": "命题", "status": "已陈述", "source_doc": "D032", "depends_on": ["D030", "D031"], "lean_witness": null}
 {"prop_id": "P029", "statement": "四层FG剖分方法论与统一计算链", "type": "命题", "status": "已陈述", "source_doc": "D033", "depends_on": ["D030", "D032"], "lean_witness": null}
-{"prop_id": "P030", "statement": "11库形式化验证状态 748定理/30公理待证 缺口闭合表", "type": "命题", "status": "已陈述", "source_doc": "D042", "depends_on": ["D019", "D030", "D004"], "lean_witness": null}
-{"prop_id": "P031", "statement": "GN库101定理 零sorry 零新增axiom", "type": "定理", "status": "已证明", "source_doc": "D043", "depends_on": ["D019"], "lean_witness": null}
+{"prop_id": "P030", "statement": "11库形式化验证状态 886定理/15公理待证 缺口闭合表", "type": "命题", "status": "已陈述", "source_doc": "D042", "depends_on": ["D019", "D030", "D004"], "lean_witness": null}
+{"prop_id": "P031", "statement": "GN库107定理 零sorry 零新增axiom", "type": "定理", "status": "已证明", "source_doc": "D043", "depends_on": ["D019"], "lean_witness": null}
 {"prop_id": "G001", "statement": "缺口C：退相干稳态为何恰好是A₄（正四单纯形）", "type": "缺口", "status": "未闭合", "source_doc": "D005", "depends_on": [], "lean_witness": null}
 {"prop_id": "G002", "statement": "缺口G2：耦合空间→双曲Laplacian的必要性", "type": "缺口", "status": "待证明", "source_doc": "D008", "depends_on": [], "lean_witness": null}
 {"prop_id": "G003", "statement": "缺口G3：D̂=-i(∂_u-1/2)的唯一性", "type": "缺口", "status": "待证明", "source_doc": "D008", "depends_on": ["G002"], "lean_witness": null}

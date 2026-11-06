@@ -4,8 +4,8 @@
 
 本库形式化证明稿中**第一部分（数学事实层）**的可形式化子集，从
 `SpectralGeometry.Basic` 复用相变量子 `spectralQuantum`（$☯$）的解析定义
-与数值桥梁公理，不依赖当前编译失败的 `SpectralGeometry.RiemannXi` /
-`SpectralGeometry.Mathieu`。
+与数值桥梁公理，不依赖 `SpectralGeometry.RiemannXi` / `SpectralGeometry.Mathieu`
+的内部实现。
 
 ## 编译状态
 
@@ -21,8 +21,9 @@
 | `GN/SimplexSpectrum.lean` | §2 4-单纯形组合谱（10×10 边-面关联矩阵、特征多项式、本征空间直和分解） | 57 |
 | `GN/AdeleJacobian.lean` | §6 Adele Jacobian 因子 2（条件定理，Tate 自对偶） | 11 |
 | `GN/Constructions.lean` | §8–§11 可代数化构造（κ 组合-谱、G_N 乘积核正性与对数形式） | 14 |
+| `GN/ModularTrace.lean` | §十八 模流迹路线（`Tr Ĥ⁻¹` 读作倒数指数；平方分解与对数形式为定理，`Tr Ĥ⁻¹ = ☯` 仍为待证命题） | 6 |
 
-**合计：101 定理/引理，零 `sorry`、零新增 `axiom`。**
+**合计：107 定理/引理，零 `sorry`、零新增 `axiom`。**
 
 ## 核心定理（§1 三重恒等）
 

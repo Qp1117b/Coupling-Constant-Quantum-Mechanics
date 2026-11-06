@@ -29,7 +29,7 @@ import Superconductivity.BridgeTheorems
 
 ## 关键定理
 
-- [protonCartan_isPureA4]：质子嘉当矩阵 = 纯 A₄（ε = 0）
+- [protonCartan_eq_neutronCartan_zero]：质子嘉当矩阵 = 中子嘉当矩阵在 ε = 0 的退化（纯 A₄）
 - [neutronCartan_isDefectiveA4]：中子嘉当矩阵 = 带缺陷的 A₄
 - [elementCartanIdeal_assembly]：理想元素嘉当矩阵 = 块对角 ⊕
 - [elementCartanIdeal_posDef]：理想元素嘉当矩阵正定条件
@@ -50,6 +50,84 @@ namespace CQM
 open scoped Matrix
 open Matrix
 
+/-! ### 乘积索引的块对角辅助工具
+
+    `Matrix.blockDiagonal'` 的索引类型为 `Σ k : Fin n, Fin 4`，而本模块的
+    元素 / 扇形 / 分子矩阵以 `Fin n × Fin 4`（块号在前、块内指标在后）为索引。
+    下列 `blockDiagProd` 与配套引理给出二者的等价桥接，供后续证明使用。 -/
+
+/-- 乘积索引块对角矩阵：按块号在前、块内指标在后的次序拼接各 4×4 块。 -/
+noncomputable def blockDiagProd {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ) :
+    Matrix (Fin n × Fin 4) (Fin n × Fin 4) ℝ :=
+  Matrix.of fun p q => if p.1 = q.1 then blocks p.1 p.2 q.2 else 0
+
+/-- 乘积索引块对角矩阵的元素公式。 -/
+lemma blockDiagProd_apply {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
+    {i j : Fin n} {a b : Fin 4} :
+    blockDiagProd blocks (i, a) (j, b) = if i = j then blocks i a b else 0 := by
+  simp only [blockDiagProd, Matrix.of_apply]
+
+/-- 乘积索引块对角矩阵的迹。 -/
+lemma blockDiagProd_trace {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ) :
+    (∑ p : Fin n × Fin 4, blockDiagProd blocks p p) = ∑ k : Fin n, ∑ j : Fin 4, blocks k j j := by
+  simp only [blockDiagProd, Matrix.of_apply, Fintype.sum_prod_type]
+  simp
+
+/-- 乘积索引块对角矩阵的二次型分解。 -/
+lemma blockDiagProd_quadratic {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
+    (x : Fin n × Fin 4 → ℝ) :
+    star x ⬝ᵥ (blockDiagProd blocks *ᵥ x) =
+      ∑ k : Fin n, star (fun j => x (k, j)) ⬝ᵥ (blocks k *ᵥ (fun j => x (k, j))) := by
+  simp only [blockDiagProd, Matrix.of_apply, dotProduct, Matrix.mulVec, Fintype.sum_prod_type]
+  refine Finset.sum_congr rfl (fun k _ => Finset.sum_congr rfl (fun a _ => ?_))
+  congr 1
+  rw [Finset.sum_eq_single k
+    (by
+      intro k' _ hk'
+      have hkk' : ¬ k = k' := fun h => hk' h.symm
+      simp [hkk'])
+    (by intro hk_notmem; exact absurd (Finset.mem_univ k) hk_notmem)]
+  simp
+
+/-- 乘积索引块对角矩阵的 Hermitian 性。 -/
+lemma blockDiagProd_isHermitian {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
+    (h : ∀ k, (blocks k).IsHermitian) : (blockDiagProd blocks).IsHermitian := by
+  refine Matrix.IsHermitian.ext ?_
+  rintro ⟨i, a⟩ ⟨j, b⟩
+  by_cases hij : i = j
+  · subst hij
+    have hsymm := congrArg (fun M : Matrix (Fin 4) (Fin 4) ℝ => M b a) (h i)
+    simp only [Matrix.conjTranspose_apply, star_trivial] at hsymm
+    simp [blockDiagProd, Matrix.of_apply]
+    exact hsymm.symm
+  · have hji : ¬ j = i := fun h' => hij h'.symm
+    simp [blockDiagProd, Matrix.of_apply, hij, hji]
+
+/-- 乘积索引块对角矩阵的正定性。 -/
+lemma blockDiagProd_posDef {n : ℕ} (blocks : Fin n → Matrix (Fin 4) (Fin 4) ℝ)
+    (h_posDef : ∀ k, (blocks k).PosDef) : (blockDiagProd blocks).PosDef := by
+  rw [Matrix.posDef_iff_dotProduct_mulVec]
+  constructor
+  · exact blockDiagProd_isHermitian blocks (fun k => (h_posDef k).isHermitian)
+  · intro x hx
+    rw [blockDiagProd_quadratic]
+    have h_exists : ∃ k : Fin n, (fun j : Fin 4 => x (k, j)) ≠ 0 := by
+      by_contra! h_all
+      apply hx
+      ext ⟨k, j⟩
+      have hk := h_all k
+      simpa using congrFun hk j
+    rcases h_exists with ⟨k, hk⟩
+    have h_pos_k : 0 < star (fun j => x (k, j)) ⬝ᵥ (blocks k *ᵥ (fun j => x (k, j))) :=
+      (Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k)).2 hk
+    have h_nonneg : ∀ k' : Fin n,
+        0 ≤ star (fun j => x (k', j)) ⬝ᵥ (blocks k' *ᵥ (fun j => x (k', j))) := by
+      intro k'
+      by_cases h_zero : (fun j : Fin 4 => x (k', j)) = 0
+      · simp [h_zero]
+      · exact le_of_lt ((Matrix.posDef_iff_dotProduct_mulVec.mp (h_posDef k')).2 h_zero)
+    exact Finset.sum_pos' (fun k' _ => h_nonneg k') ⟨k, Finset.mem_univ k, h_pos_k⟩
+
 /-! ## §1. 质子与中子嘉当矩阵（基本积木） -/
 
 /-- 质子嘉当矩阵：纯 A₄，无中子缺陷。
@@ -59,8 +137,9 @@ open Matrix
 noncomputable def protonCartan : Matrix (Fin 4) (Fin 4) ℝ := cartanHamiltonian
 
 /-- [定理] 质子嘉当矩阵 = 纯 A₄（ε = 0 时的中子嘉当矩阵）。
-    证明：`neutronCartan_zero_eq_proton`（SPAF.lean）已证 C_n(0) = C_p。 -/
-theorem protonCartan_isPureA4 : protonCartan = neutronCartan 0 := by
+    证明：`neutronCartan_zero_eq_proton`（SPAF.lean）已证 C_n(0) = C_p。
+    （与 `MolecularGeometry.lean` 的 `protonCartanBlock` 口径同名定理区分，此处采用别称。） -/
+theorem protonCartan_eq_neutronCartan_zero : protonCartan = neutronCartan 0 := by
   unfold protonCartan
   rw [neutronCartan_zero_eq_proton]
 
@@ -93,11 +172,15 @@ theorem neutronCartan_isDefectiveA4 {eps : ℝ} (heps : eps ≠ 0) :
     neutronCartanMatrix eps ≠ protonCartan := by
   intro h_eq
   have h00 : neutronCartanMatrix eps 0 0 = protonCartan 0 0 := by rw [h_eq]
-  unfold neutronCartanMatrix protonCartan cartanHamiltonian
-  rw [neutronCartan_diag00, cartanA4_diag] at h00
-  norm_num at h00
+  have h_lhs : neutronCartanMatrix eps 0 0 = 2 - eps := by
+    unfold neutronCartanMatrix
+    exact neutronCartan_diag00 eps
+  have h_rhs : protonCartan 0 0 = 2 := by
+    unfold protonCartan cartanHamiltonian
+    exact_mod_cast cartanA4_diag 0
+  rw [h_lhs, h_rhs] at h00
   -- 2 - eps = 2 ⇒ eps = 0，矛盾
-  linarith
+  exact heps (by linarith)
 
 /-! ## §2. 元素嘉当矩阵（理想拼接规则） -/
 
@@ -110,7 +193,7 @@ theorem neutronCartan_isDefectiveA4 {eps : ℝ} (heps : eps ≠ 0) :
     注意：理想拼接是**简化假设**，实际元素需要考虑核内耦合。
     核内耦合在 §3 中单独处理。 -/
 noncomputable def elementCartanIdeal (Z N : ℕ) (eps : ℝ) : Matrix (Fin (Z + N) × Fin 4) (Fin (Z + N) × Fin 4) ℝ :=
-  Matrix.blockDiagonal' (fun (k : Fin (Z + N)) =>
+  blockDiagProd (fun (k : Fin (Z + N)) =>
     if (k : ℕ) < Z then protonCartan else neutronCartanMatrix eps)
 
 /-- 辅助引理：中子嘉当矩阵的二次型下界（ε ≥ 0 时）。
@@ -118,7 +201,7 @@ noncomputable def elementCartanIdeal (Z N : ℕ) (eps : ℝ) : Matrix (Fin (Z + 
     
     证明：xᵀC_n(ε)x = xᵀA₄x − ε·x₀² ≥ λ₁·|x|² − ε·x₀² ≥ λ₁·|x|² − ε·|x|² = (λ₁−ε)·|x|²。
     第一步使用 `neutronCartan_quadratic` 的显式 SOS 分解，
-    第二步使用 `cartanA4_spectralGap_lowerBound`（G20-ext 闭合）。
+    第二步使用 `cartanA4_spectralGap_lower_bound`（G20-ext 闭合）。
     这是元素嘉当矩阵谱间隙下界证明的核心引理。 -/
 lemma neutronCartan_quadratic_lowerBound (eps : ℝ) (x : Fin 4 → ℝ) (heps_nonneg : 0 ≤ eps) :
     star x ⬝ᵥ (neutronCartanMatrix eps *ᵥ x) ≥ (spectralGap - eps) * (∑ i : Fin 4, x i ^ 2) := by
@@ -127,7 +210,7 @@ lemma neutronCartan_quadratic_lowerBound (eps : ℝ) (x : Fin 4 → ℝ) (heps_n
   -- 关键恒等式：neutronCartan 二次型 = cartanHamiltonian 二次型 − ε·x₀²
   have h_A4 : x 0 ^ 2 + x 3 ^ 2 + (x 0 - x 1) ^ 2 + (x 1 - x 2) ^ 2 + (x 2 - x 3) ^ 2 ≥
       spectralGap * (∑ i : Fin 4, x i ^ 2) := by
-    have h := cartanA4_spectralGap_lowerBound x
+    have h := cartanA4_spectralGap_lower_bound x
     rw [cartanHamiltonian_quadratic] at h
     exact h
   calc
@@ -137,16 +220,17 @@ lemma neutronCartan_quadratic_lowerBound (eps : ℝ) (x : Fin 4 → ℝ) (heps_n
     _ ≥ spectralGap * (∑ i : Fin 4, x i ^ 2) - eps * (∑ i : Fin 4, x i ^ 2) := by
       have h_x0_sq_le : x 0 ^ 2 ≤ ∑ i : Fin 4, x i ^ 2 := by
         calc
-          x 0 ^ 2 ≤ x 0 ^ 2 + (x 1 ^ 2 + x 2 ^ 2 + x 3 ^ 2) := by positivity
-          _ = ∑ i : Fin 4, x i ^ 2 := by simp [Fin.sum_univ_four]
+          x 0 ^ 2 ≤ x 0 ^ 2 + (x 1 ^ 2 + x 2 ^ 2 + x 3 ^ 2) := by
+            nlinarith [sq_nonneg (x 1), sq_nonneg (x 2), sq_nonneg (x 3)]
+          _ = ∑ i : Fin 4, x i ^ 2 := by rw [Fin.sum_univ_four]; ring
       nlinarith
     _ = (spectralGap - eps) * (∑ i : Fin 4, x i ^ 2) := by ring
 
 /-- 辅助引理：中子嘉当矩阵的迹 = 8 − ε。
     对角元：C_n[0,0] = 2 − ε，C_n[i,i] = 2（i ≠ 0），故迹 = 8 − ε。 -/
 lemma neutronCartanMatrix_trace (eps : ℝ) : (∑ j : Fin 4, neutronCartanMatrix eps j j) = 8 - eps := by
-  unfold neutronCartanMatrix neutronCartan
-  simp [neutronCartan_diag00, neutronCartan_diag_ne00, Fin.sum_univ_four]
+  unfold neutronCartanMatrix
+  exact neutronCartan_trace eps
 
 /-- [定理] 理想元素嘉当矩阵的迹 = 8Z + (8 − ε)N。
     每个质子贡献迹 8（A₄ 的迹），每个中子贡献迹 8 − ε
@@ -161,14 +245,7 @@ theorem elementCartanIdeal_trace (Z N : ℕ) (eps : ℝ) :
     (∑ i : Fin (Z + N) × Fin 4, elementCartanIdeal Z N eps i i) = 8 * (Z : ℝ) + (8 - eps) * (N : ℝ) := by
   unfold elementCartanIdeal
   -- Step 1: 块对角迹 = 各块迹之和
-  have h_diag_sum : (∑ p : Fin (Z + N) × Fin 4,
-      (Matrix.blockDiagonal' (fun (k : Fin (Z + N)) =>
-        if (k : ℕ) < Z then protonCartan else neutronCartanMatrix eps)) p p) =
-      (∑ i : Fin (Z + N), ∑ j : Fin 4,
-        ((fun (k : Fin (Z + N)) =>
-          if (k : ℕ) < Z then protonCartan else neutronCartanMatrix eps) i) j j) := by
-    simp [Matrix.blockDiagonal'_apply, Finset.sum_product]
-  rw [h_diag_sum]
+  rw [blockDiagProd_trace]
   -- Step 2: 各块迹 = 8（质子）或 8−ε（中子）
   have h_block_trace (i : Fin (Z + N)) :
       (∑ j : Fin 4, ((fun (k : Fin (Z + N)) =>
@@ -181,36 +258,25 @@ theorem elementCartanIdeal_trace (Z N : ℕ) (eps : ℝ) :
   -- Step 3: 拆分质子/中子计数（G22 闭合）
   -- 前 Z 个元素满足 (i:ℕ) < Z，后 N 个元素满足 (i:ℕ) ≥ Z
   -- 故和 = Z·8 + N·(8−ε) = 8Z + (8−ε)N
-  -- 使用 Fin 归纳法：Fin.sum_univ_succ 将 Fin (Z+N+1) 拆分为零号元素 + 剩余
-  induction' Z with Z ih generalizing N
-  · -- Z = 0：全部为中子块
-    simp
-  · -- Z → Z+1：重写 (Z.succ + N) = (Z + N).succ
-    have h_add : ((Z.succ : ℕ) + N) = ((Z + N).succ : ℕ) := by omega
-    rw [h_add]
-    rw [Fin.sum_univ_succ]
-    -- 第零项：0 < Z.succ 恒真，贡献为 8
-    have h0 : ((0 : Fin ((Z + N).succ)) : ℕ) < Z.succ := by
-      have h0_val : (0 : Fin ((Z + N).succ)).val = (0 : ℕ) := rfl
-      omega
-    simp [h0]
-    -- 剩余项 (Fin.succ i)：其 val = i.val + 1
-    -- 条件 (i.val + 1 < Z.succ) ↔ (i.val < Z)
-    have h_succ_val (i : Fin (Z + N)) : ((Fin.succ i : Fin ((Z + N).succ)) : ℕ) = (i : ℕ) + 1 := by
-      simp
-    have h_term (i : Fin (Z + N)) :
-        (if ((Fin.succ i : Fin ((Z + N).succ)) : ℕ) < Z.succ then (8 : ℝ) else (8 - eps)) =
-        (if (i : ℕ) < Z then (8 : ℝ) else (8 - eps)) := by
-      rw [h_succ_val i]
-      by_cases hi : (i : ℕ) < Z
-      · have hi' : (i : ℕ) + 1 < Z.succ := by omega
-        simp [hi, hi']
-      · have hi' : ¬(i : ℕ) + 1 < Z.succ := by omega
-        simp [hi, hi']
-    rw [Finset.sum_congr rfl (fun i _ => h_term i)]
-    rw [ih N]
-    push_cast
+  -- 先把 Fin 索引和换算为 range 和，再按 Z + N 拆分
+  rw [Fin.sum_univ_eq_sum_range (fun i : ℕ => if i < Z then (8 : ℝ) else (8 - eps))]
+  rw [Finset.sum_range_add]
+  -- 前 Z 项：条件 i < Z 恒真，每项贡献 8
+  have h_head : (∑ i ∈ Finset.range Z, (if i < Z then (8 : ℝ) else (8 - eps))) = 8 * (Z : ℝ) := by
+    have hcongr : (∑ i ∈ Finset.range Z, (if i < Z then (8 : ℝ) else (8 - eps)))
+        = ∑ _i ∈ Finset.range Z, (8 : ℝ) :=
+      Finset.sum_congr rfl (fun i hi => if_pos (Finset.mem_range.mp hi))
+    rw [hcongr, Finset.sum_const, Finset.card_range, nsmul_eq_mul]
     ring
+  -- 后 N 项：条件 Z + i < Z 恒假，每项贡献 8 − ε
+  have h_tail : (∑ i ∈ Finset.range N, (if Z + i < Z then (8 : ℝ) else (8 - eps))) =
+      (8 - eps) * (N : ℝ) := by
+    have hcongr : (∑ i ∈ Finset.range N, (if Z + i < Z then (8 : ℝ) else (8 - eps)))
+        = ∑ _i ∈ Finset.range N, (8 - eps) :=
+      Finset.sum_congr rfl (fun i _ => if_neg (by omega))
+    rw [hcongr, Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+    ring
+  rw [h_head, h_tail]
 
 /-- [定理] 理想元素嘉当矩阵正定条件：ε < 5/4。
     当 ε < 5/4 时，每个中子嘉当矩阵 C_n(ε) 正定（由 `neutronCartan_posDef_of_lt_five_fourths`），
@@ -219,15 +285,16 @@ theorem elementCartanIdeal_trace (Z N : ℕ) (eps : ℝ) :
     理想元素嘉当矩阵整体正定。 -/
 theorem elementCartanIdeal_posDef (Z N : ℕ) {eps : ℝ} (heps : eps < 5/4) :
     (elementCartanIdeal Z N eps).PosDef := by
-  apply blockDiagonal_spectralGap_min
+  unfold elementCartanIdeal
+  apply blockDiagProd_posDef
   intro k
   -- 判断 k 对应质子还是中子
   by_cases hk : (k : ℕ) < Z
   · -- 质子块：始终正定
-    simp [elementCartanIdeal, hk]
+    simp only [hk, if_true]
     exact protonCartan_posDef
   · -- 中子块：ε < 5/4 时正定
-    simp [elementCartanIdeal, hk]
+    simp only [hk, if_false]
     exact neutronCartan_posDef_of_lt_five_fourths heps
 
 /-- [定理] 理想元素嘉当矩阵的谱间隙下界（二次型版本）：
@@ -249,8 +316,7 @@ theorem elementCartanIdeal_spectralGap_lowerBound (Z N : ℕ) {eps : ℝ}
     star x ⬝ᵥ (elementCartanIdeal Z N eps *ᵥ x) ≥
     (spectralGap - eps) * (∑ i : Fin (Z + N) × Fin 4, x i ^ 2) := by
   unfold elementCartanIdeal
-  rw [blockDiagonal'_quadratic_form (fun (k : Fin (Z + N)) =>
-    if (k : ℕ) < Z then protonCartan else neutronCartanMatrix eps) x]
+  rw [blockDiagProd_quadratic]
   -- 各块二次型下界
   calc
     ∑ k : Fin (Z + N), star (fun j => x (k, j)) ⬝ᵥ
@@ -259,23 +325,25 @@ theorem elementCartanIdeal_spectralGap_lowerBound (Z N : ℕ) {eps : ℝ}
         (∑ j : Fin 4, x (k, j) ^ 2)) := by
       refine Finset.sum_le_sum (fun k _ => ?_)
       by_cases hk : (k : ℕ) < Z
-      · simp [hk]
-        have h := cartanA4_spectralGap_lowerBound (fun j => x (k, j))
+      · simp only [hk, if_true]
+        have h := cartanA4_spectralGap_lower_bound (fun j => x (k, j))
         unfold protonCartan at h
         simpa using h
-      · simp [hk]
+      · simp only [hk, if_false]
         exact neutronCartan_quadratic_lowerBound eps (fun j => x (k, j)) heps_nonneg
     _ ≥ ∑ k : Fin (Z + N), ((spectralGap - eps) * (∑ j : Fin 4, x (k, j) ^ 2)) := by
       refine Finset.sum_le_sum (fun k _ => ?_)
       by_cases hk : (k : ℕ) < Z
-      · simp [hk]
+      · simp only [hk, if_true]
         have h_sg_ge : spectralGap - eps ≤ spectralGap := by linarith
         exact mul_le_mul_of_nonneg_right h_sg_ge (Finset.sum_nonneg (fun j _ => sq_nonneg _))
-      · simp [hk]
+      · simp only [hk, if_false]
+        exact le_rfl
     _ = (spectralGap - eps) * (∑ k : Fin (Z + N), ∑ j : Fin 4, x (k, j) ^ 2) := by
-      simp [Finset.mul_sum]
+      rw [← Finset.mul_sum]
     _ = (spectralGap - eps) * (∑ i : Fin (Z + N) × Fin 4, x i ^ 2) := by
-      rw [Finset.sum_product]
+      congr 1
+      exact (Fintype.sum_prod_type (f := fun p : Fin (Z + N) × Fin 4 => x p ^ 2)).symm
 
 /-- [定理] 理想元素嘉当矩阵正定（谱间隙条件）：
     ε < λ₁ 时元素嘉当矩阵正定。
@@ -298,7 +366,7 @@ theorem elementCartanIdeal_posDef_of_lt_spectralGap (Z N : ℕ) {eps : ℝ}
     - 正定性始终成立（A₄ 正定）
     - 迹 = 8Z（每个质子贡献 8） -/
 noncomputable def protonSector (Z : ℕ) : Matrix (Fin Z × Fin 4) (Fin Z × Fin 4) ℝ :=
-  Matrix.blockDiagonal' (fun (_ : Fin Z) => protonCartan)
+  blockDiagProd (fun (_ : Fin Z) => protonCartan)
 
 /-- 中子扇区（次结构）：元素嘉当矩阵中后 N 个 4×4 块对应的子空间。
     中子扇区的嘉当矩阵 = ⊕^N C_n(ε)（带缺陷的 A₄）。
@@ -310,33 +378,39 @@ noncomputable def protonSector (Z : ℕ) : Matrix (Fin Z × Fin 4) (Fin Z × Fin
     - 正定性条件：ε < 5/4
     - 迹 = (8−ε)N（每个中子贡献 8−ε） -/
 noncomputable def neutronSector (N : ℕ) (eps : ℝ) : Matrix (Fin N × Fin 4) (Fin N × Fin 4) ℝ :=
-  Matrix.blockDiagonal' (fun (_ : Fin N) => neutronCartanMatrix eps)
+  blockDiagProd (fun (_ : Fin N) => neutronCartanMatrix eps)
 
 /-- [定理] 质子扇区正定：质子扇区始终正定（A₄ 正定 × Z 块）。 -/
 theorem protonSector_posDef (Z : ℕ) : (protonSector Z).PosDef := by
-  apply blockDiagonal_spectralGap_min
+  unfold protonSector
+  apply blockDiagProd_posDef
   intro k
-  simp [protonSector, protonCartan_posDef]
+  exact protonCartan_posDef
 
 /-- [定理] 中子扇区正定条件：ε < 5/4 时中子扇区正定。 -/
 theorem neutronSector_posDef (N : ℕ) {eps : ℝ} (heps : eps < 5/4) :
     (neutronSector N eps).PosDef := by
-  apply blockDiagonal_spectralGap_min
+  unfold neutronSector
+  apply blockDiagProd_posDef
   intro k
-  simp [neutronSector, neutronCartan_posDef_of_lt_five_fourths heps]
+  exact neutronCartan_posDef_of_lt_five_fourths heps
 
 /-- [定理] 质子扇区迹：Tr(protonSector Z) = 8Z。
     每个质子贡献迹 8（A₄ 的迹），Z 个质子总迹 = 8Z。 -/
 theorem protonSector_trace (Z : ℕ) : (∑ i : Fin Z × Fin 4, (protonSector Z) i i) = 8 * (Z : ℝ) := by
   unfold protonSector
-  simp [Matrix.blockDiagonal'_apply, Finset.sum_product, protonCartan_trace_eq_eight]
+  rw [blockDiagProd_trace]
+  simp [protonCartan_trace_eq_eight, Finset.sum_const, nsmul_eq_mul]
+  ring
 
 /-- [定理] 中子扇区迹：Tr(neutronSector N ε) = (8−ε)N。
     每个中子贡献迹 8−ε（缺陷位对角元为 2−ε 而非 2），N 个中子总迹 = (8−ε)N。 -/
 theorem neutronSector_trace (N : ℕ) (eps : ℝ) :
     (∑ i : Fin N × Fin 4, (neutronSector N eps) i i) = (8 - eps) * (N : ℝ) := by
-  unfold neutronSector neutronCartanMatrix
-  simp [Matrix.blockDiagonal'_apply, Finset.sum_product, neutronCartan_trace]
+  unfold neutronSector
+  rw [blockDiagProd_trace]
+  simp [neutronCartanMatrix_trace eps, Finset.sum_const, nsmul_eq_mul]
+  ring
 
 /-- [定理] 主次结构迹分解：Tr(C_el) = Tr(protonSector) + Tr(neutronSector)。
     元素的总迹 = 8Z + (8−ε)N，由主结构（质子）和次结构（中子）分别贡献。
@@ -345,7 +419,6 @@ theorem elementCartan_trace_primarySecondary_split (Z N : ℕ) (eps : ℝ) :
     (∑ i : Fin (Z + N) × Fin 4, elementCartanIdeal Z N eps i i) =
     (∑ i : Fin Z × Fin 4, (protonSector Z) i i) + (∑ i : Fin N × Fin 4, (neutronSector N eps) i i) := by
   rw [elementCartanIdeal_trace Z N eps, protonSector_trace Z, neutronSector_trace N eps]
-  ring
 
 /-- [定理] 主次结构谱间隙决定：
     元素的谱间隙 = min(质子扇区谱间隙, 中子扇区谱间隙) = λ₁ − ε（当 ε ≥ 0 时）。
@@ -358,18 +431,10 @@ theorem elementCartan_trace_primarySecondary_split (Z N : ℕ) (eps : ℝ) :
     （见 `isotopeDefectParameter`），谱间隙对同位素的整体变化
     由 `isotopeSpectralGap_shift` 刻画（重同位素谱间隙更大）。 -/
 theorem elementSpectralGap_determinedByNeutronSector {eps : ℝ}
-    (heps_nonneg : 0 ≤ eps) (heps_lt_sg : eps < spectralGap) :
+    (heps_pos : 0 < eps) (heps_lt_sg : eps < spectralGap) :
     spectralGap - eps < spectralGap := by
-  -- 当 ε > 0 时，λ₁ − ε < λ₁，严格不等式成立
-  -- 当 ε = 0 时，λ₁ − 0 = λ₁，但此时中子扇区 = 质子扇区
-  have h : 0 < eps ∨ eps = 0 := by
-    exact lt_or_eq_of_le heps_nonneg
-  rcases h with (hpos | hzero)
-  · -- ε > 0：λ₁ − ε < λ₁
-    linarith
-  · -- ε = 0：λ₁ = λ₁（中子扇区退化为质子扇区）
-    rw [hzero]
-    simp
+  -- 需 ε > 0：ε = 0 时中子扇区退化为质子扇区，λ₁ − 0 = λ₁ 不是严格不等式
+  linarith
 
 /-! ### 同位素效应（BCS 同位素效应在 CQM 中的根源）
 
@@ -410,9 +475,15 @@ theorem isotopeDefectParameter_monotone {eps0 beta N_ref N1 N2 : ℝ}
   have h_div : (N1 - N_ref) / N_ref ≤ (N2 - N_ref) / N_ref := by
     gcongr
   have hb' : 0 ≤ beta := le_of_lt hbeta
-  have hprod : 0 ≤ eps0 * beta := mul_nonneg heps0 hb'
-  have hlem := mul_le_mul_of_nonneg_left h_div hprod
-  nlinarith
+  -- beta 为正，故 beta·((N₁−N_ref)/N_ref) ≤ beta·((N₂−N_ref)/N_ref)
+  have hkey : beta * (N1 - N_ref) / N_ref ≤ beta * (N2 - N_ref) / N_ref := by
+    calc beta * (N1 - N_ref) / N_ref = beta * ((N1 - N_ref) / N_ref) := by ring
+      _ ≤ beta * ((N2 - N_ref) / N_ref) := mul_le_mul_of_nonneg_left h_div hb'
+      _ = beta * (N2 - N_ref) / N_ref := by ring
+  -- 由此 1 − beta·(N₂−N_ref)/N_ref ≤ 1 − beta·(N₁−N_ref)/N_ref
+  have h2 : 1 - beta * (N2 - N_ref) / N_ref ≤ 1 - beta * (N1 - N_ref) / N_ref := by
+    linarith
+  exact mul_le_mul_of_nonneg_left h2 heps0
 
 /-- [定理] 同位素谱间隙变化：两个同位素 (Z, N₁) 和 (Z, N₂) 的谱间隙差
     Δλ = λ(N₂) − λ(N₁) = −(ε(N₂) − ε(N₁)) = +ε₀·β·(N₂−N₁)/N_ref。
@@ -436,9 +507,13 @@ theorem bcsTc_ratio_formula {omegaD1 omegaD2 lam1 lam2 : ℝ}
     bcsCriticalTemperature omegaD1 lam1 / bcsCriticalTemperature omegaD2 lam2 =
     (omegaD1 / omegaD2) * Real.exp (1/lam2 - 1/lam1) := by
   unfold bcsCriticalTemperature
-  field_simp [bcsExactConstant_pos.ne', h_omegaD1.ne', h_omegaD2.ne', Real.exp_ne_zero _]
-  rw [← Real.exp_sub (-1 / lam1) (-1 / lam2)]
-  ring
+  have h1 : (bcsExactConstant * omegaD1 * Real.exp (-1 / lam1)) /
+      (bcsExactConstant * omegaD2 * Real.exp (-1 / lam2)) =
+      (omegaD1 / omegaD2) * (Real.exp (-1 / lam1) / Real.exp (-1 / lam2)) := by
+    field_simp [bcsExactConstant_pos.ne', h_omegaD1.ne', h_omegaD2.ne', Real.exp_ne_zero _]
+  rw [h1, ← Real.exp_sub]
+  have harg : (-1 / lam1) - (-1 / lam2) = 1 / lam2 - 1 / lam1 := by ring
+  rw [harg]
 
 /-- [定理] CQM 同位素 T_c 比值（含 CQM 缺陷修正）：
     对于两个同位素 (Z, N₁, M₁) 和 (Z, N₂, M₂)，
@@ -466,9 +541,18 @@ theorem cqmIsotopeEffect_Tc_ratio_formula {eps0 beta N_ref N1 N2 M1 M2 : ℝ}
       (spectralGap - isotopeDefectParameter eps0 beta N_ref N2) =
     Real.sqrt (M2 / M1) * Real.exp (1 / (spectralGap - isotopeDefectParameter eps0 beta N_ref N2) -
       1 / (spectralGap - isotopeDefectParameter eps0 beta N_ref N1)) := by
+  -- √(M₂/M₁) = √(1/M₁)/√(1/M₂)：先把右端的质量因子改写成德拜频率之比
+  have hsq : Real.sqrt (1 / M1) / Real.sqrt (1 / M2) = Real.sqrt (M2 / M1) := by
+    rw [Real.sqrt_div (by norm_num : (0:ℝ) ≤ 1) M1,
+        Real.sqrt_div (by norm_num : (0:ℝ) ≤ 1) M2,
+        Real.sqrt_div (le_of_lt hM2) M1, Real.sqrt_one]
+    have h1 : Real.sqrt M1 ≠ 0 := (Real.sqrt_pos.2 hM1).ne'
+    have h2 : Real.sqrt M2 ≠ 0 := (Real.sqrt_pos.2 hM2).ne'
+    field_simp
+  rw [← hsq]
   apply bcsTc_ratio_formula
-  · positivity
-  · positivity
+  · exact Real.sqrt_pos.2 (by positivity)
+  · exact Real.sqrt_pos.2 (by positivity)
   · linarith
   · linarith
 
@@ -509,25 +593,19 @@ noncomputable def nucleonCouplingHierarchy (t_pp t_pn t_nn : ℝ) : Prop :=
   t_pp ≥ t_pn ∧ t_pn ≥ t_nn ∧ t_pp > 0
 
 /-- [定理] 核内耦合层级保持正定性：
-    若 t_pp < λ₁（质子-质子耦合不破坏正定性），
-    则 t_pn < λ₁ − ε/2（质子-中子耦合的阈值更低），
-    且 t_nn < λ₁ − ε（中子-中子耦合的阈值最低）。
+    若 t_pp < λ₁ − ε（质子-质子耦合不越过分级后的谱间隙下界），
+    则 t_nn < λ₁ − ε（中子-中子耦合同样不越过该下界）。
     
     这反映了一个深层物理：缺陷越多的核子对，能承受的耦合越弱——
-    因果网络的"承载能力"随缺陷累积而递减。 -/
+    因果网络的"承载能力"随缺陷累积而递减（t_nn ≤ t_pn ≤ t_pp）。 -/
 theorem nucleonCouplingHierarchy_stability {t_pp t_pn t_nn eps : ℝ}
     (h_hierarchy : nucleonCouplingHierarchy t_pp t_pn t_nn)
-    (h_pp_stable : t_pp < spectralGap)
+    (h_pp_stable : t_pp < spectralGap - eps)
     (heps_nonneg : 0 ≤ eps) (heps_lt_sg : eps < spectralGap) :
     t_nn < spectralGap - eps := by
   rcases h_hierarchy with ⟨h_pp_pn, h_pn_nn, _⟩
-  have h_t_nn : t_nn ≤ t_pp := le_trans h_pn_nn h_pp_pn
-  have : t_nn < spectralGap := lt_of_le_of_lt h_t_nn h_pp_stable
-  -- t_nn < λ₁ 且 t_nn < λ₁ − ε 当 ε > 0
-  -- 由于 t_nn ≤ t_pn ≤ t_pp < λ₁，且 t_nn < λ₁ − ε 当 ε > 0
-  -- 但严格不等式需要 t_nn < λ₁ − ε，我们只能得到 t_nn < λ₁
-  -- 完整证明需要 δt_nn < λ₁ − ε 的论证
-  nlinarith
+  -- t_nn ≤ t_pn ≤ t_pp < λ₁ − ε
+  exact lt_of_le_of_lt (le_trans h_pn_nn h_pp_pn) h_pp_stable
 
 /-! ## §3. 核内耦合（超越理想拼接） -/
 
@@ -573,7 +651,8 @@ theorem elementCouplingMatrix_symmetric (t_ij : ℝ) :
   unfold elementCouplingMatrix
   by_cases h : i = j
   · subst h; simp
-  · simp [h]
+  · have h' : j ≠ i := fun hji => h hji.symm
+    simp [h, h']
 
 /-- 分子超嘉当矩阵（含元素间耦合）：C_mol = ⊕C_el(k) + ΣT_ij。
     分子级别的嘉当矩阵由各元素的嘉当矩阵（块对角）加上
@@ -591,32 +670,43 @@ noncomputable def molecularSuperCartan (nElements : ℕ)
     (elementCartans : Fin nElements → Matrix (Fin 4) (Fin 4) ℝ)
     (couplings : Fin nElements → Fin nElements → ℝ) :
     Matrix (Fin nElements × Fin 4) (Fin nElements × Fin 4) ℝ :=
-  Matrix.blockDiagonal' elementCartans +
-  Matrix.of (fun ⟨i, a⟩ ⟨j, b⟩ =>
-    if i = j then 0 else couplings i j * (if a = b then 1 else 0))
+  blockDiagProd elementCartans +
+  Matrix.of (fun p q => if p.1 = q.1 then 0
+    else couplings p.1 q.1 * (if p.2 = q.2 then 1 else 0))
 
 /-- [定理] 分子超嘉当矩阵对称性：若所有元素嘉当矩阵对称且耦合矩阵对称，
-    则分子超嘉当矩阵对称。这是幺正约束（Clmol† = Clmol）的严格形式。 -/
-theorem molecularSuperCartan_symmetric {nElements : ℕ}
+    则分子超嘉当矩阵对称。这是幺正约束（Clmol† = Clmol）的严格形式。
+    （与 `MolecularGeometry.lean` 的同名结果区分，此处采用别称。） -/
+theorem molecularSuperCartan_blockSymmetric {nElements : ℕ}
     (elementCartans : Fin nElements → Matrix (Fin 4) (Fin 4) ℝ)
     (couplings : Fin nElements → Fin nElements → ℝ)
     (h_elem_symm : ∀ k, ∀ a b, elementCartans k a b = elementCartans k b a)
     (h_coup_symm : ∀ i j, couplings i j = couplings j i) :
     ∀ a b : Fin nElements × Fin 4, molecularSuperCartan nElements elementCartans couplings a b =
       molecularSuperCartan nElements elementCartans couplings b a := by
-  intro ⟨i, a⟩ ⟨j, b⟩
-  unfold molecularSuperCartan
-  simp
-  -- 块对角部分对称
-  have h_block : (Matrix.blockDiagonal' elementCartans) (i, a) (j, b) =
-      (Matrix.blockDiagonal' elementCartans) (j, b) (i, a) := by
-    simp [Matrix.blockDiagonal'_apply, h_elem_symm]
-  -- 耦合部分对称
+  rintro ⟨i, a⟩ ⟨j, b⟩
+  -- 展开为「块对角项 + 耦合项」的显式形式
+  have hL : molecularSuperCartan nElements elementCartans couplings (i, a) (j, b) =
+      (if i = j then elementCartans i a b else 0) +
+        (if i = j then 0 else couplings i j * (if a = b then (1 : ℝ) else 0)) := by
+    unfold molecularSuperCartan
+    simp [blockDiagProd_apply, Matrix.add_apply, Matrix.of_apply]
+  have hR : molecularSuperCartan nElements elementCartans couplings (j, b) (i, a) =
+      (if j = i then elementCartans j b a else 0) +
+        (if j = i then 0 else couplings j i * (if b = a then (1 : ℝ) else 0)) := by
+    unfold molecularSuperCartan
+    simp [blockDiagProd_apply, Matrix.add_apply, Matrix.of_apply]
+  rw [hL, hR]
   by_cases hij : i = j
   · subst hij
-    simp
-  · have hji : j ≠ i := fun h => hij h.symm
-    simp [hij, hji, h_coup_symm i j, h_coup_symm j i]
+    simp [h_elem_symm i a b]
+  · have hji : ¬ j = i := fun h => hij h.symm
+    have hab : (if a = b then (1 : ℝ) else 0) = (if b = a then (1 : ℝ) else 0) := by
+      by_cases h : a = b
+      · subst h; simp
+      · have h' : ¬ b = a := fun h'' => h h''.symm
+        simp [h, h']
+    simp [hij, hji, hab, h_coup_symm i j]
 
 /-- [定理] 分子超嘉当矩阵迹 = Σ_k Tr(C_el(k))。
     跨元素耦合矩阵的对角块为零，不贡献迹。
@@ -630,16 +720,13 @@ theorem molecularSuperCartan_trace {nElements : ℕ}
   -- 迹的线性性：Tr(A+B) = Tr(A) + Tr(B)
   -- 块对角部分迹 = Σ_k Tr(elementCartans k)
   -- 耦合部分迹 = 0（对角块为零）
-  rw [Finset.sum_add_distrib]
-  have h_block : (∑ p : Fin nElements × Fin 4,
-      (Matrix.blockDiagonal' elementCartans) p p) =
-      (∑ k : Fin nElements, ∑ j : Fin 4, elementCartans k j j) := by
-    simp [Matrix.blockDiagonal'_apply, Finset.sum_product]
+  simp only [Matrix.add_apply]
+  rw [Finset.sum_add_distrib, blockDiagProd_trace]
   have h_coup : (∑ p : Fin nElements × Fin 4,
-      (Matrix.of (fun ⟨i, a⟩ ⟨j, b⟩ =>
-        if i = j then 0 else couplings i j * (if a = b then 1 else 0))) p p) = 0 := by
+      (Matrix.of (fun p q => if p.1 = q.1 then 0
+        else couplings p.1 q.1 * (if p.2 = q.2 then 1 else 0))) p p) = 0 := by
     simp [Matrix.of_apply]
-  rw [h_block, h_coup, add_zero]
+  rw [h_coup, add_zero]
 
 /-- [定理] 分子超嘉当矩阵正定性（弱耦合极限）：
     若所有元素嘉当矩阵正定，且最大跨元素耦合 t_max < λ_min，
@@ -661,11 +748,12 @@ theorem molecularSuperCartan_posDef_weakCoupling {nElements : ℕ}
   -- 在零耦合极限下，分子超嘉当矩阵 = 块对角 ⊕
   -- 此时 `blockDiagonal_spectralGap_min` 严格保证正定性
   have h_zero_coup : molecularSuperCartan nElements elementCartans (fun _ _ => 0) =
-      Matrix.blockDiagonal' elementCartans := by
+      blockDiagProd elementCartans := by
     unfold molecularSuperCartan
-    simp
+    ext p q
+    simp [Matrix.add_apply, Matrix.of_apply]
   rw [h_zero_coup]
-  exact blockDiagonal_spectralGap_min elementCartans h_posDef
+  exact blockDiagProd_posDef elementCartans h_posDef
 
 /-! ## §4.5. Weyl 嵌入与有效几何构型（谱间隙 → Regge 几何 → GR 度规）
 
@@ -724,10 +812,20 @@ theorem spectralGap_to_reggeEdgeLength_antitone {kappa eps1 eps2 : ℝ}
     (hk : 0 < kappa) (h : eps1 ≤ eps2) (heps1 : eps1 < spectralGap) (heps2 : eps2 < spectralGap) :
     spectralGap_to_reggeEdgeLength kappa eps1 ≤ spectralGap_to_reggeEdgeLength kappa eps2 := by
   unfold spectralGap_to_reggeEdgeLength
-  apply reggeEdgeLength_antitone_in_single_spectralGap hk
-  · exact effectiveSpectralGap_pos heps2
-  · exact effectiveSpectralGap_pos heps1
-  · exact effectiveSpectralGap_antitone h
+  have hp1 : 0 < effectiveSpectralGap eps1 := effectiveSpectralGap_pos heps1
+  have hp2 : 0 < effectiveSpectralGap eps2 := effectiveSpectralGap_pos heps2
+  have hle : effectiveSpectralGap eps2 ≤ effectiveSpectralGap eps1 := effectiveSpectralGap_antitone h
+  -- 边长对两个谱间隙槽均单调：先替换第一个槽，再用对称性替换第二个槽
+  have hsym : reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps2) (effectiveSpectralGap eps1)
+      = reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps1) (effectiveSpectralGap eps2) := by
+    unfold reggeTetrahedronEdgeLength
+    rw [mul_comm]
+  calc reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps1) (effectiveSpectralGap eps1)
+      ≤ reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps2) (effectiveSpectralGap eps1) :=
+        reggeEdgeLength_antitone_in_single_spectralGap hk hp2 hp1 hp1 hle
+    _ = reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps1) (effectiveSpectralGap eps2) := hsym
+    _ ≤ reggeTetrahedronEdgeLength kappa (effectiveSpectralGap eps2) (effectiveSpectralGap eps2) :=
+        reggeEdgeLength_antitone_in_single_spectralGap hk hp2 hp1 hp2 hle
 
 /-- [定理] 谱间隙 → 亏角密度（完整桥接）：
     给定元素参数 (Z, N, ε)，有效谱间隙 λ_eff = λ₁ − ε 决定：
@@ -757,12 +855,14 @@ theorem spectralGap_to_deficitDensity_antitone {kappa eps1 eps2 deltaV : ℝ}
     (heps1 : eps1 < spectralGap) (heps2 : eps2 < spectralGap) :
     spectralGap_to_deficitDensity kappa eps2 deltaV ≤
     spectralGap_to_deficitDensity kappa eps1 deltaV := by
-  unfold spectralGap_to_deficitDensity
-  apply deficitAngleDensity_scaling_from_spectralGap hk hdv
-  · exact effectiveSpectralGap_pos heps1
-  · exact effectiveSpectralGap_pos heps2
-  · exact effectiveSpectralGap_antitone h
-  · exact effectiveSpectralGap_antitone h
+  unfold spectralGap_to_deficitDensity spectralGap_to_reggeEdgeLength
+  -- 亏角密度 = (δV·6√2/κ³)·λ_eff³：两端都用缩放恒等式化到 λ_eff³
+  rw [deficitAngleDensity_scaling_from_spectralGap hk (effectiveSpectralGap_pos heps2) hdv,
+      deficitAngleDensity_scaling_from_spectralGap hk (effectiveSpectralGap_pos heps1) hdv]
+  have hC : 0 ≤ deltaV * 6 * Real.sqrt 2 / kappa ^ 3 := by positivity
+  have hcube : effectiveSpectralGap eps2 ^ 3 ≤ effectiveSpectralGap eps1 ^ 3 :=
+    pow_le_pow_left₀ (le_of_lt (effectiveSpectralGap_pos heps2)) (effectiveSpectralGap_antitone h) 3
+  exact mul_le_mul_of_nonneg_left hcube hC
 
 /-- [定理] 谱间隙 → GR 有效度规的 00 分量（完整桥接）：
     g_00^eff = 1 + α·δ_eff(λ_eff)。
@@ -921,7 +1021,10 @@ theorem cqm_element_to_newtonian_end_to_end_chain (Z N : ℕ) (eps G M r : ℝ)
   have h_newton_neg : newtonianPotential G M r < 0 := by
     unfold newtonianPotential
     have h_pos : 0 < G * M / r := div_pos (mul_pos hG hM) hr
-    linarith
+    -- −G·M/r = −(G·M/r)：分子展开为右结合的对偶形式后再取负
+    have heq : -G * M / r = -(G * M / r) := by ring
+    rw [heq]
+    exact neg_lt_zero.mpr h_pos
   exact ⟨h_posDef, h_newton_neg⟩
 
 /-! ## §9. 单元素材料 CQM→BCS 退化（同位素极限）

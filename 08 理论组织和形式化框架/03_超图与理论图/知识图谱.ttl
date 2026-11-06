@@ -100,8 +100,8 @@ cqm:A009 a cqm:Argument,
 
 cqm:A010 a cqm:Argument,
         owl:NamedIndividual ;
-    rdfs:label "函数方程 $\\xi(s)=\\xi(1-s)$ → 同步算符厄米性 $S=S^\\dagger$"^^xsd:string ;
-    cqm:conclusionText "同步算符厄米性 $S=S^\\dagger$"^^xsd:string ;
+    rdfs:label "函数方程 $\\xi(s)=\\xi(1-s)$ → 同步算符自伴性 $S=S^\\dagger$"^^xsd:string ;
+    cqm:conclusionText "同步算符自伴性 $S=S^\\dagger$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_A010 ;
     cqm:premisesText "函数方程 $\\xi(s)=\\xi(1-s)$"^^xsd:string ;
     cqm:relationType "等价"^^xsd:string ;
@@ -1562,7 +1562,7 @@ cqm:P029 a cqm:Statement,
 
 cqm:P030 a cqm:Statement,
         owl:NamedIndividual ;
-    rdfs:label "11库形式化验证状态 748定理/30公理待证 缺口闭合表"^^xsd:string ;
+    rdfs:label "11库形式化验证状态 886定理/15公理待证 缺口闭合表"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P030 ;
     cqm:sourceDoc "D042"^^xsd:string ;
     cqm:status "已陈述"^^xsd:string ;
@@ -1570,7 +1570,7 @@ cqm:P030 a cqm:Statement,
 
 cqm:P031 a cqm:Theorem,
         owl:NamedIndividual ;
-    rdfs:label "GN库101定理 零sorry 零新增axiom"^^xsd:string ;
+    rdfs:label "GN库107定理 零sorry 零新增axiom"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P031 ;
     cqm:sourceDoc "D043"^^xsd:string ;
     cqm:status "已证明"^^xsd:string ;
@@ -2174,7 +2174,7 @@ cqm:EV_A001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A001"^^xsd:string ;
-    cqm:evidenceConfidence "7.586"^^xsd:string ;
+    cqm:evidenceConfidence "7.611"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2190,7 +2190,7 @@ cqm:EV_A002 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A002"^^xsd:string ;
-    cqm:evidenceConfidence "8.555"^^xsd:string ;
+    cqm:evidenceConfidence "8.587"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2206,7 +2206,7 @@ cqm:EV_A003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A003"^^xsd:string ;
-    cqm:evidenceConfidence "8.019"^^xsd:string ;
+    cqm:evidenceConfidence "8.048"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2222,7 +2222,7 @@ cqm:EV_A004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A004"^^xsd:string ;
-    cqm:evidenceConfidence "3.358"^^xsd:string ;
+    cqm:evidenceConfidence "3.354"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -2238,7 +2238,7 @@ cqm:EV_A005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A005"^^xsd:string ;
-    cqm:evidenceConfidence "4.765"^^xsd:string ;
+    cqm:evidenceConfidence "4.767"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2254,7 +2254,7 @@ cqm:EV_A006 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A006"^^xsd:string ;
-    cqm:evidenceConfidence "4.655"^^xsd:string ;
+    cqm:evidenceConfidence "4.69"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2270,7 +2270,7 @@ cqm:EV_A007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A007"^^xsd:string ;
-    cqm:evidenceConfidence "9.697"^^xsd:string ;
+    cqm:evidenceConfidence "9.735"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2286,7 +2286,7 @@ cqm:EV_A008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A008"^^xsd:string ;
-    cqm:evidenceConfidence "4.47"^^xsd:string ;
+    cqm:evidenceConfidence "4.472"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2302,7 +2302,7 @@ cqm:EV_A009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A009"^^xsd:string ;
-    cqm:evidenceConfidence "3.621"^^xsd:string ;
+    cqm:evidenceConfidence "3.618"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2318,7 +2318,7 @@ cqm:EV_A010 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A010"^^xsd:string ;
-    cqm:evidenceConfidence "4.496"^^xsd:string ;
+    cqm:evidenceConfidence "4.509"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2334,7 +2334,7 @@ cqm:EV_A011 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A011"^^xsd:string ;
-    cqm:evidenceConfidence "5.631"^^xsd:string ;
+    cqm:evidenceConfidence "5.638"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2350,7 +2350,7 @@ cqm:EV_A012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A012"^^xsd:string ;
-    cqm:evidenceConfidence "5.931"^^xsd:string ;
+    cqm:evidenceConfidence "5.891"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2366,7 +2366,7 @@ cqm:EV_A013 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A013"^^xsd:string ;
-    cqm:evidenceConfidence "5.364"^^xsd:string ;
+    cqm:evidenceConfidence "5.408"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2382,7 +2382,7 @@ cqm:EV_A014 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A014"^^xsd:string ;
-    cqm:evidenceConfidence "5.49"^^xsd:string ;
+    cqm:evidenceConfidence "5.482"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2398,7 +2398,7 @@ cqm:EV_A015 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A015"^^xsd:string ;
-    cqm:evidenceConfidence "9.573"^^xsd:string ;
+    cqm:evidenceConfidence "9.592"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2414,7 +2414,7 @@ cqm:EV_A016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A016"^^xsd:string ;
-    cqm:evidenceConfidence "14.07"^^xsd:string ;
+    cqm:evidenceConfidence "14.091"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2430,7 +2430,7 @@ cqm:EV_A017 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A017"^^xsd:string ;
-    cqm:evidenceConfidence "6.909"^^xsd:string ;
+    cqm:evidenceConfidence "6.924"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2446,7 +2446,7 @@ cqm:EV_A018 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A018"^^xsd:string ;
-    cqm:evidenceConfidence "11.55"^^xsd:string ;
+    cqm:evidenceConfidence "11.589"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2462,7 +2462,7 @@ cqm:EV_A019 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A019"^^xsd:string ;
-    cqm:evidenceConfidence "9.529"^^xsd:string ;
+    cqm:evidenceConfidence "9.555"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2478,7 +2478,7 @@ cqm:EV_A020 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A020"^^xsd:string ;
-    cqm:evidenceConfidence "6.433"^^xsd:string ;
+    cqm:evidenceConfidence "6.461"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2494,7 +2494,7 @@ cqm:EV_A021 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A021"^^xsd:string ;
-    cqm:evidenceConfidence "9.519"^^xsd:string ;
+    cqm:evidenceConfidence "9.57"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2510,7 +2510,7 @@ cqm:EV_A022 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A022"^^xsd:string ;
-    cqm:evidenceConfidence "16.22"^^xsd:string ;
+    cqm:evidenceConfidence "16.29"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2526,7 +2526,7 @@ cqm:EV_A023 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A023"^^xsd:string ;
-    cqm:evidenceConfidence "9.693"^^xsd:string ;
+    cqm:evidenceConfidence "9.722"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2542,7 +2542,7 @@ cqm:EV_A024 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A024"^^xsd:string ;
-    cqm:evidenceConfidence "3.486"^^xsd:string ;
+    cqm:evidenceConfidence "3.497"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -2574,7 +2574,7 @@ cqm:EV_A026 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A026"^^xsd:string ;
-    cqm:evidenceConfidence "6.886"^^xsd:string ;
+    cqm:evidenceConfidence "6.905"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2590,7 +2590,7 @@ cqm:EV_A027 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A027"^^xsd:string ;
-    cqm:evidenceConfidence "2.391"^^xsd:string ;
+    cqm:evidenceConfidence "2.403"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -2606,23 +2606,23 @@ cqm:EV_A028 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A028"^^xsd:string ;
-    cqm:evidenceConfidence "5.997"^^xsd:string ;
+    cqm:evidenceConfidence "6.007"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "特征常数的性质——跨量纲特征常数：每个量纲转换有一个跨量纲特征常数（如长度层的 $K_L$、质量层的 $K_M$、电荷层的 $K_Q$）。"^^xsd:string ;
-    cqm:evidenceSpan "16153-16230"^^xsd:string ;
+    cqm:evidenceSpan "16585-16662"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "16153-16230" ;
+    prov:atLocation "16585-16662" ;
     prov:value "特征常数的性质——跨量纲特征常数：每个量纲转换有一个跨量纲特征常数（如长度层的 $K_L$、质量层的 $K_M$、电荷层的 $K_Q$）。"@zh .
 
 cqm:EV_A029 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A029"^^xsd:string ;
-    cqm:evidenceConfidence "6.818"^^xsd:string ;
+    cqm:evidenceConfidence "6.832"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2638,7 +2638,7 @@ cqm:EV_A030 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A030"^^xsd:string ;
-    cqm:evidenceConfidence "7.927"^^xsd:string ;
+    cqm:evidenceConfidence "7.948"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2654,7 +2654,7 @@ cqm:EV_A031 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A031"^^xsd:string ;
-    cqm:evidenceConfidence "6.194"^^xsd:string ;
+    cqm:evidenceConfidence "6.201"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2670,7 +2670,7 @@ cqm:EV_A032 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A032"^^xsd:string ;
-    cqm:evidenceConfidence "9.522"^^xsd:string ;
+    cqm:evidenceConfidence "9.553"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2686,7 +2686,7 @@ cqm:EV_A033 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A033"^^xsd:string ;
-    cqm:evidenceConfidence "5.857"^^xsd:string ;
+    cqm:evidenceConfidence "5.844"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2702,7 +2702,7 @@ cqm:EV_A034 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A034"^^xsd:string ;
-    cqm:evidenceConfidence "2.917"^^xsd:string ;
+    cqm:evidenceConfidence "2.856"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -2718,7 +2718,7 @@ cqm:EV_A035 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A035"^^xsd:string ;
-    cqm:evidenceConfidence "9.94"^^xsd:string ;
+    cqm:evidenceConfidence "9.947"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2734,7 +2734,7 @@ cqm:EV_A036 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A036"^^xsd:string ;
-    cqm:evidenceConfidence "11.213"^^xsd:string ;
+    cqm:evidenceConfidence "11.208"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2750,7 +2750,7 @@ cqm:EV_A037 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A037"^^xsd:string ;
-    cqm:evidenceConfidence "7.455"^^xsd:string ;
+    cqm:evidenceConfidence "7.474"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2766,7 +2766,7 @@ cqm:EV_A038 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A038"^^xsd:string ;
-    cqm:evidenceConfidence "7.361"^^xsd:string ;
+    cqm:evidenceConfidence "7.384"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2782,7 +2782,7 @@ cqm:EV_A039 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A039"^^xsd:string ;
-    cqm:evidenceConfidence "9.452"^^xsd:string ;
+    cqm:evidenceConfidence "9.481"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2798,7 +2798,7 @@ cqm:EV_A040 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A040"^^xsd:string ;
-    cqm:evidenceConfidence "5.498"^^xsd:string ;
+    cqm:evidenceConfidence "5.486"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2814,7 +2814,7 @@ cqm:EV_A041 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A041"^^xsd:string ;
-    cqm:evidenceConfidence "4.114"^^xsd:string ;
+    cqm:evidenceConfidence "4.137"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2830,7 +2830,7 @@ cqm:EV_A042 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A042"^^xsd:string ;
-    cqm:evidenceConfidence "7.706"^^xsd:string ;
+    cqm:evidenceConfidence "7.696"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2846,7 +2846,7 @@ cqm:EV_A044 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A044"^^xsd:string ;
-    cqm:evidenceConfidence "7.769"^^xsd:string ;
+    cqm:evidenceConfidence "7.787"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -2862,16 +2862,16 @@ cqm:EV_A045 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A045"^^xsd:string ;
-    cqm:evidenceConfidence "7.108"^^xsd:string ;
+    cqm:evidenceConfidence "7.124"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "自守形式的差异层级决定了量纲转换的性质："^^xsd:string ;
-    cqm:evidenceSpan "15215-15235"^^xsd:string ;
+    cqm:evidenceSpan "15641-15661"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "15215-15235" ;
+    prov:atLocation "15641-15661" ;
     prov:value "自守形式的差异层级决定了量纲转换的性质："@zh .
 
 cqm:EV_A046 a cqm:Evidence,
@@ -2894,7 +2894,7 @@ cqm:EV_A047 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A047"^^xsd:string ;
-    cqm:evidenceConfidence "9.71"^^xsd:string ;
+    cqm:evidenceConfidence "9.742"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -2910,103 +2910,103 @@ cqm:EV_A048 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A048"^^xsd:string ;
-    cqm:evidenceConfidence "7.863"^^xsd:string ;
+    cqm:evidenceConfidence "7.861"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $K_L$ 从无量纲耦合坐标直接生成（大差异），不经过时间。"^^xsd:string ;
-    cqm:evidenceSpan "14790-14856"^^xsd:string ;
+    cqm:evidenceSpan "15216-15282"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "14790-14856" ;
+    prov:atLocation "15216-15282" ;
     prov:value "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $K_L$ 从无量纲耦合坐标直接生成（大差异），不经过时间。"@zh .
 
 cqm:EV_A049 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A049"^^xsd:string ;
-    cqm:evidenceConfidence "7.514"^^xsd:string ;
+    cqm:evidenceConfidence "7.496"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "物理侧：时间量纲 $T$，固有时，可测量；"^^xsd:string ;
-    cqm:evidenceSpan "46760-46783"^^xsd:string ;
+    cqm:evidenceSpan "47361-47384"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "46760-46783" ;
+    prov:atLocation "47361-47384" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A050 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A050"^^xsd:string ;
-    cqm:evidenceConfidence "7.514"^^xsd:string ;
+    cqm:evidenceConfidence "7.496"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "物理侧：时间量纲 $T$，固有时，可测量；"^^xsd:string ;
-    cqm:evidenceSpan "46760-46783"^^xsd:string ;
+    cqm:evidenceSpan "47361-47384"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "46760-46783" ;
+    prov:atLocation "47361-47384" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A051 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A051"^^xsd:string ;
-    cqm:evidenceConfidence "7.514"^^xsd:string ;
+    cqm:evidenceConfidence "7.496"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "物理侧：时间量纲 $T$，固有时，可测量；"^^xsd:string ;
-    cqm:evidenceSpan "46760-46783"^^xsd:string ;
+    cqm:evidenceSpan "47361-47384"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "46760-46783" ;
+    prov:atLocation "47361-47384" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A052 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A052"^^xsd:string ;
-    cqm:evidenceConfidence "7.514"^^xsd:string ;
+    cqm:evidenceConfidence "7.496"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "物理侧：时间量纲 $T$，固有时，可测量；"^^xsd:string ;
-    cqm:evidenceSpan "46760-46783"^^xsd:string ;
+    cqm:evidenceSpan "47361-47384"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "46760-46783" ;
+    prov:atLocation "47361-47384" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A053 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "A053"^^xsd:string ;
-    cqm:evidenceConfidence "7.514"^^xsd:string ;
+    cqm:evidenceConfidence "7.496"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "物理侧：时间量纲 $T$，固有时，可测量；"^^xsd:string ;
-    cqm:evidenceSpan "46760-46783"^^xsd:string ;
+    cqm:evidenceSpan "47361-47384"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "46760-46783" ;
+    prov:atLocation "47361-47384" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_C001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C001"^^xsd:string ;
-    cqm:evidenceConfidence "7.413"^^xsd:string ;
+    cqm:evidenceConfidence "7.385"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3022,7 +3022,7 @@ cqm:EV_C002 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C002"^^xsd:string ;
-    cqm:evidenceConfidence "6.442"^^xsd:string ;
+    cqm:evidenceConfidence "6.427"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3038,7 +3038,7 @@ cqm:EV_C003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C003"^^xsd:string ;
-    cqm:evidenceConfidence "4.508"^^xsd:string ;
+    cqm:evidenceConfidence "4.518"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3054,7 +3054,7 @@ cqm:EV_C004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C004"^^xsd:string ;
-    cqm:evidenceConfidence "3.682"^^xsd:string ;
+    cqm:evidenceConfidence "3.688"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3070,7 +3070,7 @@ cqm:EV_C005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C005"^^xsd:string ;
-    cqm:evidenceConfidence "7.054"^^xsd:string ;
+    cqm:evidenceConfidence "7.036"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3086,7 +3086,7 @@ cqm:EV_C006 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C006"^^xsd:string ;
-    cqm:evidenceConfidence "5.761"^^xsd:string ;
+    cqm:evidenceConfidence "5.772"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3102,10 +3102,10 @@ cqm:EV_C007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C007"^^xsd:string ;
-    cqm:evidenceConfidence "5.0"^^xsd:string ;
+    cqm:evidenceConfidence "4.979"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
-    cqm:evidenceMethod "name/high"^^xsd:string,
-        "name/high" ;
+    cqm:evidenceMethod "name/medium"^^xsd:string,
+        "name/medium" ;
     cqm:evidenceQuote "CQM（耦合常数量子力学）提出了一个更激进的立场：数学结构本身是物质自组织的化石。"^^xsd:string ;
     cqm:evidenceSpan "1927-1972"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
@@ -3118,7 +3118,7 @@ cqm:EV_C008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C008"^^xsd:string ;
-    cqm:evidenceConfidence "3.844"^^xsd:string ;
+    cqm:evidenceConfidence "3.85"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3134,7 +3134,7 @@ cqm:EV_C009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C009"^^xsd:string ;
-    cqm:evidenceConfidence "13.557"^^xsd:string ;
+    cqm:evidenceConfidence "13.577"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3150,7 +3150,7 @@ cqm:EV_C011 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C011"^^xsd:string ;
-    cqm:evidenceConfidence "1.752"^^xsd:string ;
+    cqm:evidenceConfidence "1.761"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/low"^^xsd:string,
         "section/low" ;
@@ -3166,7 +3166,7 @@ cqm:EV_C012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C012"^^xsd:string ;
-    cqm:evidenceConfidence "4.83"^^xsd:string ;
+    cqm:evidenceConfidence "4.84"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3182,7 +3182,7 @@ cqm:EV_C013 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C013"^^xsd:string ;
-    cqm:evidenceConfidence "5.053"^^xsd:string ;
+    cqm:evidenceConfidence "5.085"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
@@ -3198,7 +3198,7 @@ cqm:EV_C014 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C014"^^xsd:string ;
-    cqm:evidenceConfidence "5.722"^^xsd:string ;
+    cqm:evidenceConfidence "5.707"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
@@ -3214,7 +3214,7 @@ cqm:EV_C015 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C015"^^xsd:string ;
-    cqm:evidenceConfidence "6.031"^^xsd:string ;
+    cqm:evidenceConfidence "6.044"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3230,7 +3230,7 @@ cqm:EV_C016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C016"^^xsd:string ;
-    cqm:evidenceConfidence "5.605"^^xsd:string ;
+    cqm:evidenceConfidence "5.604"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3246,7 +3246,7 @@ cqm:EV_C017 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C017"^^xsd:string ;
-    cqm:evidenceConfidence "7.814"^^xsd:string ;
+    cqm:evidenceConfidence "7.846"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3278,7 +3278,7 @@ cqm:EV_C019 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C019"^^xsd:string ;
-    cqm:evidenceConfidence "6.097"^^xsd:string ;
+    cqm:evidenceConfidence "6.09"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3294,7 +3294,7 @@ cqm:EV_C020 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C020"^^xsd:string ;
-    cqm:evidenceConfidence "4.352"^^xsd:string ;
+    cqm:evidenceConfidence "4.361"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3310,7 +3310,7 @@ cqm:EV_C021 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C021"^^xsd:string ;
-    cqm:evidenceConfidence "4.395"^^xsd:string ;
+    cqm:evidenceConfidence "4.404"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3326,7 +3326,7 @@ cqm:EV_C022 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C022"^^xsd:string ;
-    cqm:evidenceConfidence "4.397"^^xsd:string ;
+    cqm:evidenceConfidence "4.407"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3342,7 +3342,7 @@ cqm:EV_C023 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C023"^^xsd:string ;
-    cqm:evidenceConfidence "4.08"^^xsd:string ;
+    cqm:evidenceConfidence "4.09"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3363,34 +3363,34 @@ cqm:EV_C024 a cqm:Evidence,
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
     cqm:evidenceQuote "FG 贝里曲率与Regge曲率的关联 ｜ 文献调研研究论文：贝里曲率（Berry curvature）文献谱系（奠基理论→能带物理→超导量子几何→第一性原理计算）；与Regge曲率的共同数学骨架（联络—曲率—和乐，Wilson环同构$W_v=\\exp(i\\delta_v\\hat{T}_\\ell)$，陈数/离散Gauss–Bonnet平行）；确定物理交点（锥形时空亏角和乐）；直接连接文献缺失的说明（关联是结构性的，非文献性的）；δintrinsic断链的量子几何启示（超流刚度由量子度规决定）"^^xsd:string ;
-    cqm:evidenceSpan "10808-11383"^^xsd:string ;
+    cqm:evidenceSpan "10824-11399"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "10808-11383" ;
+    prov:atLocation "10824-11399" ;
     prov:value "FG 贝里曲率与Regge曲率的关联 ｜ 文献调研研究论文：贝里曲率（Berry curvature）文献谱系（奠基理论→能带物理→超导量子几何→第一性原理计算）；与Regge曲率的共同数学骨架（联络—曲率—和乐，Wilson环同构$W_v=\\exp(i\\delta_v\\hat{T}_\\ell)$，陈数/离散Gauss–Bonnet平行）；确定物理交点（锥形时空亏角和乐）；直接连接文献缺失的说明（关联是结构性的，非文献性的）；δintrinsic断链的量子几何启示（超流刚度由量子度规决定）"@zh .
 
 cqm:EV_C025 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C025"^^xsd:string ;
-    cqm:evidenceConfidence "4.526"^^xsd:string ;
+    cqm:evidenceConfidence "4.537"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
     cqm:evidenceQuote "CQM 超导 统一方法论 ｜ 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\\theta_D/(2\\,\\mathrm{arccoth}(x))$"^^xsd:string ;
-    cqm:evidenceSpan "17262-17458"^^xsd:string ;
+    cqm:evidenceSpan "17936-18132"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "17262-17458" ;
+    prov:atLocation "17936-18132" ;
     prov:value "CQM 超导 统一方法论 ｜ 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\\theta_D/(2\\,\\mathrm{arccoth}(x))$"@zh .
 
 cqm:EV_C026 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C026"^^xsd:string ;
-    cqm:evidenceConfidence "5.223"^^xsd:string ;
+    cqm:evidenceConfidence "5.24"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3406,7 +3406,7 @@ cqm:EV_C027 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C027"^^xsd:string ;
-    cqm:evidenceConfidence "4.772"^^xsd:string ;
+    cqm:evidenceConfidence "4.782"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3422,7 +3422,7 @@ cqm:EV_C028 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C028"^^xsd:string ;
-    cqm:evidenceConfidence "4.973"^^xsd:string ;
+    cqm:evidenceConfidence "4.995"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
@@ -3454,16 +3454,16 @@ cqm:EV_C030 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C030"^^xsd:string ;
-    cqm:evidenceConfidence "5.757"^^xsd:string ;
+    cqm:evidenceConfidence "5.767"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "06 超导/超导材料设计器/ — 元素超导材料设计工具文档（系统架构、元素同位素数据库、超导判定算法、应用场景、元素嘉当矩阵参数化、文献调研、目标超导搜索策略，共 8 篇；"^^xsd:string ;
-    cqm:evidenceSpan "17710-17800"^^xsd:string ;
+    cqm:evidenceSpan "18384-18474"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "17710-17800" ;
+    prov:atLocation "18384-18474" ;
     prov:value "06 超导/超导材料设计器/ — 元素超导材料设计工具文档（系统架构、元素同位素数据库、超导判定算法、应用场景、元素嘉当矩阵参数化、文献调研、目标超导搜索策略，共 8 篇；"@zh .
 
 cqm:EV_C031 a cqm:Evidence,
@@ -3486,64 +3486,64 @@ cqm:EV_C032 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C032"^^xsd:string ;
-    cqm:evidenceConfidence "5.1"^^xsd:string ;
+    cqm:evidenceConfidence "5.764"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
-    cqm:evidenceQuote "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $K_L$ 从无量纲耦合坐标直接生成（大差异），不经过时间。"^^xsd:string ;
-    cqm:evidenceSpan "14790-14856"^^xsd:string ;
+    cqm:evidenceQuote "无量纲→时间 ｜ 时间 $T$ ｜ $K_T$ ｜ 事件计数→时间量纲的实现关系（锚点，§6.0.2）"^^xsd:string ;
+    cqm:evidenceSpan "11730-11797"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "14790-14856" ;
-    prov:value "关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $K_L$ 从无量纲耦合坐标直接生成（大差异），不经过时间。"@zh .
+    prov:atLocation "11730-11797" ;
+    prov:value "无量纲→时间 ｜ 时间 $T$ ｜ $K_T$ ｜ 事件计数→时间量纲的实现关系（锚点，§6.0.2）"@zh .
 
 cqm:EV_C033 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C033"^^xsd:string ;
-    cqm:evidenceConfidence "6.155"^^xsd:string ;
+    cqm:evidenceConfidence "6.166"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "故自守侧若输出一个“带长度量纲的数”，应读作 $K_L$ 而非 $c$。"^^xsd:string ;
-    cqm:evidenceSpan "52765-52801"^^xsd:string ;
+    cqm:evidenceSpan "53410-53446"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "52765-52801" ;
+    prov:atLocation "53410-53446" ;
     prov:value "故自守侧若输出一个“带长度量纲的数”，应读作 $K_L$ 而非 $c$。"@zh .
 
 cqm:EV_C034 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C034"^^xsd:string ;
-    cqm:evidenceConfidence "5.706"^^xsd:string ;
+    cqm:evidenceConfidence "5.704"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。"^^xsd:string ;
-    cqm:evidenceSpan "65235-65297"^^xsd:string ;
+    cqm:evidenceSpan "65891-65953"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "65235-65297" ;
+    prov:atLocation "65891-65953" ;
     prov:value "$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。"@zh .
 
 cqm:EV_C035 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C035"^^xsd:string ;
-    cqm:evidenceConfidence "5.613"^^xsd:string ;
+    cqm:evidenceConfidence "5.618"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "电荷量纲 $Q$ 不是预先存在的，而是由真正的特征常数从力学量纲中生成。"^^xsd:string ;
-    cqm:evidenceSpan "4215-4255"^^xsd:string ;
+    cqm:evidenceSpan "4273-4313"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "4215-4255" ;
+    prov:atLocation "4273-4313" ;
     prov:value "电荷量纲 $Q$ 不是预先存在的，而是由真正的特征常数从力学量纲中生成。"@zh .
 
 cqm:EV_C036 a cqm:Evidence,
@@ -3555,66 +3555,66 @@ cqm:EV_C036 a cqm:Evidence,
     cqm:evidenceMethod "exact/medium"^^xsd:string,
         "exact/medium" ;
     cqm:evidenceQuote "$\\Theta$"^^xsd:string ;
-    cqm:evidenceSpan "5526-5534"^^xsd:string ;
+    cqm:evidenceSpan "5584-5592"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "5526-5534" ;
+    prov:atLocation "5584-5592" ;
     prov:value "$\\Theta$"@zh .
 
 cqm:EV_C037 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C037"^^xsd:string ;
-    cqm:evidenceConfidence "3.229"^^xsd:string ;
+    cqm:evidenceConfidence "3.199"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/low"^^xsd:string,
         "section/low" ;
     cqm:evidenceQuote "无量纲→物质的量 ｜ 摩尔 $N$ ｜ $K_N$ ｜ 无量纲计数→物质的量的实现关系"^^xsd:string ;
-    cqm:evidenceSpan "11612-11671"^^xsd:string ;
+    cqm:evidenceSpan "12038-12097"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "11612-11671" ;
+    prov:atLocation "12038-12097" ;
     prov:value "无量纲→物质的量 ｜ 摩尔 $N$ ｜ $K_N$ ｜ 无量纲计数→物质的量的实现关系"@zh .
 
 cqm:EV_C038 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C038"^^xsd:string ;
-    cqm:evidenceConfidence "4.803"^^xsd:string ;
+    cqm:evidenceConfidence "4.818"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
     cqm:evidenceQuote "功率→发光强度 ｜ 坎德拉 $J$ ｜ $K_J$ ｜ 功率→发光强度的实现关系"^^xsd:string ;
-    cqm:evidenceSpan "11672-11731"^^xsd:string ;
+    cqm:evidenceSpan "12098-12157"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "11672-11731" ;
+    prov:atLocation "12098-12157" ;
     prov:value "功率→发光强度 ｜ 坎德拉 $J$ ｜ $K_J$ ｜ 功率→发光强度的实现关系"@zh .
 
 cqm:EV_C039 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C039"^^xsd:string ;
-    cqm:evidenceConfidence "4.354"^^xsd:string ;
+    cqm:evidenceConfidence "4.363"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
     cqm:evidenceQuote "$c$：时空同步前沿速度（信息传播前沿速率），$[c]=L/T$，不承担量纲转换。"^^xsd:string ;
-    cqm:evidenceSpan "17762-17809"^^xsd:string ;
+    cqm:evidenceSpan "18287-18334"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "17762-17809" ;
+    prov:atLocation "18287-18334" ;
     prov:value "$c$：时空同步前沿速度（信息传播前沿速率），$[c]=L/T$，不承担量纲转换。"@zh .
 
 cqm:EV_C040 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C040"^^xsd:string ;
-    cqm:evidenceConfidence "8.372"^^xsd:string ;
+    cqm:evidenceConfidence "8.384"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3630,16 +3630,16 @@ cqm:EV_C041 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C041"^^xsd:string ;
-    cqm:evidenceConfidence "4.724"^^xsd:string ;
+    cqm:evidenceConfidence "4.721"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
     cqm:evidenceQuote "② ｜ 各形式（实现）各带具体值（数值 $\\times$ 量纲） ｜ 表面层——表面值不一定一样；“原形式 → 新形式”由自守因子联系 $f(\\gamma x)=j(\\gamma,x)f(x)$（$j\\not\\equiv1$ 时二者不等）"^^xsd:string ;
-    cqm:evidenceSpan "22419-22554"^^xsd:string ;
+    cqm:evidenceSpan "22975-23110"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "22419-22554" ;
+    prov:atLocation "22975-23110" ;
     prov:value "② ｜ 各形式（实现）各带具体值（数值 $\\times$ 量纲） ｜ 表面层——表面值不一定一样；“原形式 → 新形式”由自守因子联系 $f(\\gamma x)=j(\\gamma,x)f(x)$（$j\\not\\equiv1$ 时二者不等）"@zh .
 
 cqm:EV_C042 a cqm:Evidence,
@@ -3651,11 +3651,11 @@ cqm:EV_C042 a cqm:Evidence,
     cqm:evidenceMethod "exact/high"^^xsd:string,
         "exact/high" ;
     cqm:evidenceQuote "$G_{\\max}(f)$"^^xsd:string ;
-    cqm:evidenceSpan "6659-6672"^^xsd:string ;
+    cqm:evidenceSpan "6717-6730"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "6659-6672" ;
+    prov:atLocation "6717-6730" ;
     prov:value "$G_{\\max}(f)$"@zh .
 
 cqm:EV_C043 a cqm:Evidence,
@@ -3710,39 +3710,39 @@ cqm:EV_C046 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C046"^^xsd:string ;
-    cqm:evidenceConfidence "3.565"^^xsd:string ;
+    cqm:evidenceConfidence "3.569"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
     cqm:evidenceQuote "CQM 超导核心理论 ｜ 超导涌现的完整框架（因果网络同步理论）：引力存在论前提（前时空〔先于引力〕+ GR/FG 两种引力，FG≠GR）、核子层（质子 $A_4$ + 中子 $D(\\delta)$ 缺陷矩阵、元素嘉当矩阵）、两条独立链（几何/嘉当）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、界面超导与边"^^xsd:string ;
-    cqm:evidenceSpan "16253-16624"^^xsd:string ;
+    cqm:evidenceSpan "16927-17298"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "16253-16624" ;
+    prov:atLocation "16927-17298" ;
     prov:value "CQM 超导核心理论 ｜ 超导涌现的完整框架（因果网络同步理论）：引力存在论前提（前时空〔先于引力〕+ GR/FG 两种引力，FG≠GR）、核子层（质子 $A_4$ + 中子 $D(\\delta)$ 缺陷矩阵、元素嘉当矩阵）、两条独立链（几何/嘉当）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、界面超导与边"@zh .
 
 cqm:EV_C047 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C047"^^xsd:string ;
-    cqm:evidenceConfidence "12.071"^^xsd:string ;
+    cqm:evidenceConfidence "12.114"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "第一耦级 ｜ $\\mathfrak{c}_1$ ｜ $200.04045483$ ｜ $1/4 + \\gamma_1^2$"^^xsd:string ;
-    cqm:evidenceSpan "20717-20782"^^xsd:string ;
+    cqm:evidenceSpan "21391-21456"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "20717-20782" ;
+    prov:atLocation "21391-21456" ;
     prov:value "第一耦级 ｜ $\\mathfrak{c}_1$ ｜ $200.04045483$ ｜ $1/4 + \\gamma_1^2$"@zh .
 
 cqm:EV_C048 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C048"^^xsd:string ;
-    cqm:evidenceConfidence "5.533"^^xsd:string ;
+    cqm:evidenceConfidence "5.549"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3758,7 +3758,7 @@ cqm:EV_C049 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C049"^^xsd:string ;
-    cqm:evidenceConfidence "6.523"^^xsd:string ;
+    cqm:evidenceConfidence "6.541"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3790,7 +3790,7 @@ cqm:EV_C051 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C051"^^xsd:string ;
-    cqm:evidenceConfidence "4.521"^^xsd:string ;
+    cqm:evidenceConfidence "4.531"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3806,7 +3806,7 @@ cqm:EV_C052 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C052"^^xsd:string ;
-    cqm:evidenceConfidence "8.603"^^xsd:string ;
+    cqm:evidenceConfidence "8.634"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3822,7 +3822,7 @@ cqm:EV_C053 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C053"^^xsd:string ;
-    cqm:evidenceConfidence "4.144"^^xsd:string ;
+    cqm:evidenceConfidence "4.133"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3838,7 +3838,7 @@ cqm:EV_C054 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C054"^^xsd:string ;
-    cqm:evidenceConfidence "8.239"^^xsd:string ;
+    cqm:evidenceConfidence "8.255"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3854,7 +3854,7 @@ cqm:EV_C055 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C055"^^xsd:string ;
-    cqm:evidenceConfidence "1.597"^^xsd:string ;
+    cqm:evidenceConfidence "1.603"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/low"^^xsd:string,
         "section/low" ;
@@ -3886,7 +3886,7 @@ cqm:EV_C057 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C057"^^xsd:string ;
-    cqm:evidenceConfidence "1.695"^^xsd:string ;
+    cqm:evidenceConfidence "1.705"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/low"^^xsd:string,
         "section/low" ;
@@ -3918,7 +3918,7 @@ cqm:EV_C059 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C059"^^xsd:string ;
-    cqm:evidenceConfidence "4.617"^^xsd:string ;
+    cqm:evidenceConfidence "4.626"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3934,7 +3934,7 @@ cqm:EV_C060 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C060"^^xsd:string ;
-    cqm:evidenceConfidence "5.882"^^xsd:string ;
+    cqm:evidenceConfidence "5.888"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3950,7 +3950,7 @@ cqm:EV_C061 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C061"^^xsd:string ;
-    cqm:evidenceConfidence "5.253"^^xsd:string ;
+    cqm:evidenceConfidence "5.254"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -3966,7 +3966,7 @@ cqm:EV_C062 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C062"^^xsd:string ;
-    cqm:evidenceConfidence "4.19"^^xsd:string ;
+    cqm:evidenceConfidence "4.194"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -3982,7 +3982,7 @@ cqm:EV_C063 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C063"^^xsd:string ;
-    cqm:evidenceConfidence "5.18"^^xsd:string ;
+    cqm:evidenceConfidence "5.195"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4030,7 +4030,7 @@ cqm:EV_C066 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C066"^^xsd:string ;
-    cqm:evidenceConfidence "5.399"^^xsd:string ;
+    cqm:evidenceConfidence "5.396"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4046,7 +4046,7 @@ cqm:EV_C067 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C067"^^xsd:string ;
-    cqm:evidenceConfidence "3.527"^^xsd:string ;
+    cqm:evidenceConfidence "3.528"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -4062,7 +4062,7 @@ cqm:EV_C068 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C068"^^xsd:string ;
-    cqm:evidenceConfidence "4.019"^^xsd:string ;
+    cqm:evidenceConfidence "4.022"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/medium"^^xsd:string,
         "name/medium" ;
@@ -4078,7 +4078,7 @@ cqm:EV_C069 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C069"^^xsd:string ;
-    cqm:evidenceConfidence "5.968"^^xsd:string ;
+    cqm:evidenceConfidence "5.987"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4094,7 +4094,7 @@ cqm:EV_C070 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C070"^^xsd:string ;
-    cqm:evidenceConfidence "5.029"^^xsd:string ;
+    cqm:evidenceConfidence "5.038"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4126,7 +4126,7 @@ cqm:EV_C072 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C072"^^xsd:string ;
-    cqm:evidenceConfidence "5.843"^^xsd:string ;
+    cqm:evidenceConfidence "5.855"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4142,7 +4142,7 @@ cqm:EV_C073 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C073"^^xsd:string ;
-    cqm:evidenceConfidence "4.216"^^xsd:string ;
+    cqm:evidenceConfidence "4.244"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "section/medium"^^xsd:string,
         "section/medium" ;
@@ -4174,7 +4174,7 @@ cqm:EV_C075 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C075"^^xsd:string ;
-    cqm:evidenceConfidence "7.173"^^xsd:string ;
+    cqm:evidenceConfidence "7.199"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4190,7 +4190,7 @@ cqm:EV_C076 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C076"^^xsd:string ;
-    cqm:evidenceConfidence "6.107"^^xsd:string ;
+    cqm:evidenceConfidence "6.127"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4222,7 +4222,7 @@ cqm:EV_C078 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C078"^^xsd:string ;
-    cqm:evidenceConfidence "5.108"^^xsd:string ;
+    cqm:evidenceConfidence "5.118"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4238,7 +4238,7 @@ cqm:EV_C079 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C079"^^xsd:string ;
-    cqm:evidenceConfidence "6.572"^^xsd:string ;
+    cqm:evidenceConfidence "6.592"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4254,7 +4254,7 @@ cqm:EV_C080 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C080"^^xsd:string ;
-    cqm:evidenceConfidence "7.357"^^xsd:string ;
+    cqm:evidenceConfidence "7.375"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
@@ -4286,23 +4286,23 @@ cqm:EV_C082 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "C082"^^xsd:string ;
-    cqm:evidenceConfidence "7.53"^^xsd:string ;
+    cqm:evidenceConfidence "7.533"^^xsd:string ;
     cqm:evidenceKind "概念"^^xsd:string ;
     cqm:evidenceMethod "name/high"^^xsd:string,
         "name/high" ;
     cqm:evidenceQuote "Wyler常数 A4群论分解与CQM框架嵌入 ｜ 核心发现：Wyler常数（1969）可完全用$A_4$群论不变量表达"^^xsd:string ;
-    cqm:evidenceSpan "12574-13149"^^xsd:string ;
+    cqm:evidenceSpan "12590-13165"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "12574-13149" ;
+    prov:atLocation "12590-13165" ;
     prov:value "Wyler常数 A4群论分解与CQM框架嵌入 ｜ 核心发现：Wyler常数（1969）可完全用$A_4$群论不变量表达"@zh .
 
 cqm:EV_G001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G001"^^xsd:string ;
-    cqm:evidenceConfidence "11.256"^^xsd:string ;
+    cqm:evidenceConfidence "11.201"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4318,7 +4318,7 @@ cqm:EV_G002 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G002"^^xsd:string ;
-    cqm:evidenceConfidence "2.29"^^xsd:string ;
+    cqm:evidenceConfidence "2.283"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4334,7 +4334,7 @@ cqm:EV_G003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G003"^^xsd:string ;
-    cqm:evidenceConfidence "1.191"^^xsd:string ;
+    cqm:evidenceConfidence "1.162"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4350,7 +4350,7 @@ cqm:EV_G004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G004"^^xsd:string ;
-    cqm:evidenceConfidence "1.867"^^xsd:string ;
+    cqm:evidenceConfidence "1.877"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4366,7 +4366,7 @@ cqm:EV_G005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G005"^^xsd:string ;
-    cqm:evidenceConfidence "3.281"^^xsd:string ;
+    cqm:evidenceConfidence "3.248"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4382,7 +4382,7 @@ cqm:EV_G006 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G006"^^xsd:string ;
-    cqm:evidenceConfidence "2.828"^^xsd:string ;
+    cqm:evidenceConfidence "2.774"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4398,7 +4398,7 @@ cqm:EV_G007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G007"^^xsd:string ;
-    cqm:evidenceConfidence "3.852"^^xsd:string ;
+    cqm:evidenceConfidence "3.831"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4414,7 +4414,7 @@ cqm:EV_G008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G008"^^xsd:string ;
-    cqm:evidenceConfidence "5.343"^^xsd:string ;
+    cqm:evidenceConfidence "5.15"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4430,7 +4430,7 @@ cqm:EV_G009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G009"^^xsd:string ;
-    cqm:evidenceConfidence "12.56"^^xsd:string ;
+    cqm:evidenceConfidence "12.585"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4462,7 +4462,7 @@ cqm:EV_G011 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G011"^^xsd:string ;
-    cqm:evidenceConfidence "11.359"^^xsd:string ;
+    cqm:evidenceConfidence "11.309"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4478,7 +4478,7 @@ cqm:EV_G012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G012"^^xsd:string ;
-    cqm:evidenceConfidence "12.409"^^xsd:string ;
+    cqm:evidenceConfidence "12.391"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4494,7 +4494,7 @@ cqm:EV_G013 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G013"^^xsd:string ;
-    cqm:evidenceConfidence "11.219"^^xsd:string ;
+    cqm:evidenceConfidence "11.274"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4510,7 +4510,7 @@ cqm:EV_G014 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G014"^^xsd:string ;
-    cqm:evidenceConfidence "4.97"^^xsd:string ;
+    cqm:evidenceConfidence "5.001"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4542,7 +4542,7 @@ cqm:EV_G016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G016"^^xsd:string ;
-    cqm:evidenceConfidence "15.493"^^xsd:string ;
+    cqm:evidenceConfidence "15.512"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4558,7 +4558,7 @@ cqm:EV_G017 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G017"^^xsd:string ;
-    cqm:evidenceConfidence "5.306"^^xsd:string ;
+    cqm:evidenceConfidence "5.251"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4574,7 +4574,7 @@ cqm:EV_G018 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G018"^^xsd:string ;
-    cqm:evidenceConfidence "6.28"^^xsd:string ;
+    cqm:evidenceConfidence "6.276"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4590,7 +4590,7 @@ cqm:EV_G019 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G019"^^xsd:string ;
-    cqm:evidenceConfidence "8.753"^^xsd:string ;
+    cqm:evidenceConfidence "8.79"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4606,7 +4606,7 @@ cqm:EV_G020 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G020"^^xsd:string ;
-    cqm:evidenceConfidence "4.654"^^xsd:string ;
+    cqm:evidenceConfidence "4.665"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4622,7 +4622,7 @@ cqm:EV_G021 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G021"^^xsd:string ;
-    cqm:evidenceConfidence "8.923"^^xsd:string ;
+    cqm:evidenceConfidence "8.912"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4638,7 +4638,7 @@ cqm:EV_G022 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G022"^^xsd:string ;
-    cqm:evidenceConfidence "8.351"^^xsd:string ;
+    cqm:evidenceConfidence "8.337"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4654,7 +4654,7 @@ cqm:EV_G023 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G023"^^xsd:string ;
-    cqm:evidenceConfidence "6.672"^^xsd:string ;
+    cqm:evidenceConfidence "6.64"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4670,7 +4670,7 @@ cqm:EV_G024 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G024"^^xsd:string ;
-    cqm:evidenceConfidence "9.347"^^xsd:string ;
+    cqm:evidenceConfidence "9.38"^^xsd:string ;
     cqm:evidenceKind "缺口"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4686,7 +4686,7 @@ cqm:EV_G025 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G025"^^xsd:string ;
-    cqm:evidenceConfidence "2.563"^^xsd:string ;
+    cqm:evidenceConfidence "2.552"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4702,7 +4702,7 @@ cqm:EV_G026 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G026"^^xsd:string ;
-    cqm:evidenceConfidence "2.563"^^xsd:string ;
+    cqm:evidenceConfidence "2.552"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4718,7 +4718,7 @@ cqm:EV_G027 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G027"^^xsd:string ;
-    cqm:evidenceConfidence "2.563"^^xsd:string ;
+    cqm:evidenceConfidence "2.552"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4734,7 +4734,7 @@ cqm:EV_G028 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G028"^^xsd:string ;
-    cqm:evidenceConfidence "8.049"^^xsd:string ;
+    cqm:evidenceConfidence "8.073"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4750,7 +4750,7 @@ cqm:EV_G029 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G029"^^xsd:string ;
-    cqm:evidenceConfidence "7.357"^^xsd:string ;
+    cqm:evidenceConfidence "7.332"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4766,7 +4766,7 @@ cqm:EV_G030 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G030"^^xsd:string ;
-    cqm:evidenceConfidence "1.933"^^xsd:string ;
+    cqm:evidenceConfidence "1.907"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4782,7 +4782,7 @@ cqm:EV_G031 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G031"^^xsd:string ;
-    cqm:evidenceConfidence "1.785"^^xsd:string ;
+    cqm:evidenceConfidence "1.791"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4798,7 +4798,7 @@ cqm:EV_G032 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "G032"^^xsd:string ;
-    cqm:evidenceConfidence "3.43"^^xsd:string ;
+    cqm:evidenceConfidence "3.413"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/low"^^xsd:string,
         "doc/low" ;
@@ -4814,7 +4814,7 @@ cqm:EV_H001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H001"^^xsd:string ;
-    cqm:evidenceConfidence "7.429"^^xsd:string ;
+    cqm:evidenceConfidence "7.399"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4830,7 +4830,7 @@ cqm:EV_H002 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H002"^^xsd:string ;
-    cqm:evidenceConfidence "7.265"^^xsd:string ;
+    cqm:evidenceConfidence "7.283"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4846,7 +4846,7 @@ cqm:EV_H003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H003"^^xsd:string ;
-    cqm:evidenceConfidence "8.393"^^xsd:string ;
+    cqm:evidenceConfidence "8.428"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4862,7 +4862,7 @@ cqm:EV_H004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H004"^^xsd:string ;
-    cqm:evidenceConfidence "8.44"^^xsd:string ;
+    cqm:evidenceConfidence "8.441"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4878,7 +4878,7 @@ cqm:EV_H005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H005"^^xsd:string ;
-    cqm:evidenceConfidence "8.517"^^xsd:string ;
+    cqm:evidenceConfidence "8.554"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4894,7 +4894,7 @@ cqm:EV_H006 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H006"^^xsd:string ;
-    cqm:evidenceConfidence "11.344"^^xsd:string ;
+    cqm:evidenceConfidence "11.35"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4910,7 +4910,7 @@ cqm:EV_H007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H007"^^xsd:string ;
-    cqm:evidenceConfidence "4.483"^^xsd:string ;
+    cqm:evidenceConfidence "4.495"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4926,7 +4926,7 @@ cqm:EV_H008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H008"^^xsd:string ;
-    cqm:evidenceConfidence "7.86"^^xsd:string ;
+    cqm:evidenceConfidence "7.901"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4942,7 +4942,7 @@ cqm:EV_H009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H009"^^xsd:string ;
-    cqm:evidenceConfidence "10.312"^^xsd:string ;
+    cqm:evidenceConfidence "10.348"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -4974,7 +4974,7 @@ cqm:EV_H011 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H011"^^xsd:string ;
-    cqm:evidenceConfidence "8.565"^^xsd:string ;
+    cqm:evidenceConfidence "8.611"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -4990,7 +4990,7 @@ cqm:EV_H012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H012"^^xsd:string ;
-    cqm:evidenceConfidence "14.0"^^xsd:string ;
+    cqm:evidenceConfidence "14.029"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5006,7 +5006,7 @@ cqm:EV_H013 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H013"^^xsd:string ;
-    cqm:evidenceConfidence "11.036"^^xsd:string ;
+    cqm:evidenceConfidence "11.049"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5022,23 +5022,23 @@ cqm:EV_H014 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H014"^^xsd:string ;
-    cqm:evidenceConfidence "4.145"^^xsd:string ;
+    cqm:evidenceConfidence "4.134"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "自守形式 ｜ 社会必要劳动时间"^^xsd:string ;
-    cqm:evidenceSpan "62050-62069"^^xsd:string ;
+    cqm:evidenceSpan "62692-62711"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "62050-62069" ;
+    prov:atLocation "62692-62711" ;
     prov:value "自守形式 ｜ 社会必要劳动时间"@zh .
 
 cqm:EV_H015 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H015"^^xsd:string ;
-    cqm:evidenceConfidence "12.114"^^xsd:string ;
+    cqm:evidenceConfidence "12.1"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5054,7 +5054,7 @@ cqm:EV_H016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H016"^^xsd:string ;
-    cqm:evidenceConfidence "8.235"^^xsd:string ;
+    cqm:evidenceConfidence "8.243"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5070,7 +5070,7 @@ cqm:EV_H017 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "H017"^^xsd:string ;
-    cqm:evidenceConfidence "7.435"^^xsd:string ;
+    cqm:evidenceConfidence "7.442"^^xsd:string ;
     cqm:evidenceKind "论证"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5086,7 +5086,7 @@ cqm:EV_P001 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P001"^^xsd:string ;
-    cqm:evidenceConfidence "11.579"^^xsd:string ;
+    cqm:evidenceConfidence "11.55"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5102,7 +5102,7 @@ cqm:EV_P002 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P002"^^xsd:string ;
-    cqm:evidenceConfidence "9.824"^^xsd:string ;
+    cqm:evidenceConfidence "9.862"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5118,7 +5118,7 @@ cqm:EV_P003 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P003"^^xsd:string ;
-    cqm:evidenceConfidence "7.853"^^xsd:string ;
+    cqm:evidenceConfidence "7.858"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5134,7 +5134,7 @@ cqm:EV_P004 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P004"^^xsd:string ;
-    cqm:evidenceConfidence "15.62"^^xsd:string ;
+    cqm:evidenceConfidence "15.613"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5150,23 +5150,23 @@ cqm:EV_P005 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P005"^^xsd:string ;
-    cqm:evidenceConfidence "10.412"^^xsd:string ;
+    cqm:evidenceConfidence "10.415"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
     cqm:evidenceQuote "量纲发生学 ｜ 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” ｜ 定性（哪些常数有量纲、$K$ 是什么） ｜ §6.1、§6.4.1"^^xsd:string ;
-    cqm:evidenceSpan "47954-48037"^^xsd:string ;
+    cqm:evidenceSpan "48582-48665"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "47954-48037" ;
+    prov:atLocation "48582-48665" ;
     prov:value "量纲发生学 ｜ 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” ｜ 定性（哪些常数有量纲、$K$ 是什么） ｜ §6.1、§6.4.1"@zh .
 
 cqm:EV_P006 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P006"^^xsd:string ;
-    cqm:evidenceConfidence "5.049"^^xsd:string ;
+    cqm:evidenceConfidence "5.047"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5182,7 +5182,7 @@ cqm:EV_P007 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P007"^^xsd:string ;
-    cqm:evidenceConfidence "13.523"^^xsd:string ;
+    cqm:evidenceConfidence "13.584"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5198,7 +5198,7 @@ cqm:EV_P008 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P008"^^xsd:string ;
-    cqm:evidenceConfidence "15.71"^^xsd:string ;
+    cqm:evidenceConfidence "15.732"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5214,7 +5214,7 @@ cqm:EV_P009 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P009"^^xsd:string ;
-    cqm:evidenceConfidence "9.651"^^xsd:string ;
+    cqm:evidenceConfidence "9.67"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5230,7 +5230,7 @@ cqm:EV_P010 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P010"^^xsd:string ;
-    cqm:evidenceConfidence "9.053"^^xsd:string ;
+    cqm:evidenceConfidence "9.07"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5246,7 +5246,7 @@ cqm:EV_P011 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P011"^^xsd:string ;
-    cqm:evidenceConfidence "10.166"^^xsd:string ;
+    cqm:evidenceConfidence "10.182"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5262,7 +5262,7 @@ cqm:EV_P012 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P012"^^xsd:string ;
-    cqm:evidenceConfidence "13.469"^^xsd:string ;
+    cqm:evidenceConfidence "13.455"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5278,7 +5278,7 @@ cqm:EV_P013 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P013"^^xsd:string ;
-    cqm:evidenceConfidence "9.987"^^xsd:string ;
+    cqm:evidenceConfidence "9.981"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5294,7 +5294,7 @@ cqm:EV_P014 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P014"^^xsd:string ;
-    cqm:evidenceConfidence "9.376"^^xsd:string ;
+    cqm:evidenceConfidence "9.356"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5310,7 +5310,7 @@ cqm:EV_P015 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P015"^^xsd:string ;
-    cqm:evidenceConfidence "7.855"^^xsd:string ;
+    cqm:evidenceConfidence "7.846"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5326,7 +5326,7 @@ cqm:EV_P016 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P016"^^xsd:string ;
-    cqm:evidenceConfidence "10.195"^^xsd:string ;
+    cqm:evidenceConfidence "10.215"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5342,7 +5342,7 @@ cqm:EV_P017 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P017"^^xsd:string ;
-    cqm:evidenceConfidence "9.262"^^xsd:string ;
+    cqm:evidenceConfidence "9.275"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5358,7 +5358,7 @@ cqm:EV_P018 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P018"^^xsd:string ;
-    cqm:evidenceConfidence "11.457"^^xsd:string ;
+    cqm:evidenceConfidence "11.45"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5374,7 +5374,7 @@ cqm:EV_P019 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P019"^^xsd:string ;
-    cqm:evidenceConfidence "7.504"^^xsd:string ;
+    cqm:evidenceConfidence "7.508"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5406,7 +5406,7 @@ cqm:EV_P021 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P021"^^xsd:string ;
-    cqm:evidenceConfidence "8.767"^^xsd:string ;
+    cqm:evidenceConfidence "8.77"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5422,23 +5422,23 @@ cqm:EV_P022 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P022"^^xsd:string ;
-    cqm:evidenceConfidence "11.011"^^xsd:string ;
+    cqm:evidenceConfidence "10.981"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
-    cqm:evidenceQuote "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“厄米算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。"^^xsd:string ;
+    cqm:evidenceQuote "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“自伴算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。"^^xsd:string ;
     cqm:evidenceSpan "276-388"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D026"^^xsd:string,
         "D026" ;
     prov:atLocation "276-388" ;
-    prov:value "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“厄米算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。"@zh .
+    prov:value "在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“自伴算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。"@zh .
 
 cqm:EV_P023 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P023"^^xsd:string ;
-    cqm:evidenceConfidence "6.364"^^xsd:string ;
+    cqm:evidenceConfidence "6.388"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5454,7 +5454,7 @@ cqm:EV_P024 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P024"^^xsd:string ;
-    cqm:evidenceConfidence "11.021"^^xsd:string ;
+    cqm:evidenceConfidence "11.092"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5470,7 +5470,7 @@ cqm:EV_P025 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P025"^^xsd:string ;
-    cqm:evidenceConfidence "8.64"^^xsd:string ;
+    cqm:evidenceConfidence "8.607"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5486,7 +5486,7 @@ cqm:EV_P026 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P026"^^xsd:string ;
-    cqm:evidenceConfidence "11.296"^^xsd:string ;
+    cqm:evidenceConfidence "11.368"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
@@ -5502,7 +5502,7 @@ cqm:EV_P027 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P027"^^xsd:string ;
-    cqm:evidenceConfidence "6.867"^^xsd:string ;
+    cqm:evidenceConfidence "6.883"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5518,7 +5518,7 @@ cqm:EV_P028 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P028"^^xsd:string ;
-    cqm:evidenceConfidence "7.724"^^xsd:string ;
+    cqm:evidenceConfidence "7.776"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5534,7 +5534,7 @@ cqm:EV_P029 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P029"^^xsd:string ;
-    cqm:evidenceConfidence "7.51"^^xsd:string ;
+    cqm:evidenceConfidence "7.517"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
@@ -5550,33 +5550,33 @@ cqm:EV_P030 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P030"^^xsd:string ;
-    cqm:evidenceConfidence "8.643"^^xsd:string ;
+    cqm:evidenceConfidence "8.461"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/medium"^^xsd:string,
         "doc/medium" ;
     cqm:evidenceQuote "库 ｜ 已证明定理 ｜ 公理/待证"^^xsd:string ;
-    cqm:evidenceSpan "7416-7437"^^xsd:string ;
+    cqm:evidenceSpan "7036-7057"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D042"^^xsd:string,
         "D042" ;
-    prov:atLocation "7416-7437" ;
+    prov:atLocation "7036-7057" ;
     prov:value "库 ｜ 已证明定理 ｜ 公理/待证"@zh .
 
 cqm:EV_P031 a cqm:Evidence,
         owl:NamedIndividual,
         prov:Entity ;
     rdfs:label "P031"^^xsd:string ;
-    cqm:evidenceConfidence "9.8"^^xsd:string ;
+    cqm:evidenceConfidence "9.582"^^xsd:string ;
     cqm:evidenceKind "命题"^^xsd:string ;
     cqm:evidenceMethod "doc/high"^^xsd:string,
         "doc/high" ;
-    cqm:evidenceQuote "合计：101 定理/引理，零 sorry、零新增 axiom。"^^xsd:string ;
-    cqm:evidenceSpan "751-788"^^xsd:string ;
+    cqm:evidenceQuote "合计：107 定理/引理，零 sorry、零新增 axiom。"^^xsd:string ;
+    cqm:evidenceSpan "843-880"^^xsd:string ;
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D043"^^xsd:string,
         "D043" ;
-    prov:atLocation "751-788" ;
-    prov:value "合计：101 定理/引理，零 sorry、零新增 axiom。"@zh .
+    prov:atLocation "843-880" ;
+    prov:value "合计：107 定理/引理，零 sorry、零新增 axiom。"@zh .
 
 cqm:FrameworkConcept a owl:Class ;
     rdfs:subClassOf cqm:Concept .
@@ -5911,7 +5911,7 @@ cqm:C012 a cqm:MathStructureConcept,
     cqm:sourceDoc "D008"^^xsd:string ;
     cqm:sourceLoc "§9"^^xsd:string ;
     cqm:synonyms "紧化算符"^^xsd:string ;
-    skos:altLabel "同步算符厄米性 $S=S^\\dagger$"@zh,
+    skos:altLabel "同步算符自伴性 $S=S^\\dagger$"@zh,
         "紧化算符"@zh ;
     skos:definition "$\\hat{S}_0$ 紧化算符 描述同步"@zh ;
     skos:prefLabel "同步算符"@zh ;

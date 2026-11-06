@@ -3,6 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.NumberTheory.Harmonic.EulerMascheroni
 import Mathlib.Analysis.Real.Pi.Bounds
+import Mathlib.Analysis.Complex.ExponentialBounds
 import Mathlib.Topology.Basic
 import Mathlib.Order.Filter.AtTopBot.Basic
 import Mathlib.Topology.Order.IntermediateValue
@@ -61,26 +62,177 @@ open CQM
     其数值近似为 ≈ 0.02309570897；小数常量与解析公式不以公理
     断言为精确相等。
 
-    由于 γ 与 ln(4π) 的区间算术证明在当前 Mathlib 4.29.1 中仍较繁琐，
-    具体的数值界限由下面的 `spectralQuantum_numerical_bounds` 公理给出。
-    该公理仅断言一个具体实数落在两个有理数之间，是可由外部高精度
-    计算验证的数值桥梁，而非虚假的精确等式。 -/
+    由于 γ 与 ln(4π) 的高精度区间算术需要较多准备工作，下面的
+    `spectralQuantum_numerical_bounds` 以 Euler–Mascheroni 上下界序列
+    （n = 2048）、ln 2 的十进制界与 ln π 的 Taylor 估计给出严格证明，
+    得到区间 (0.02295, 0.02325)。 -/
 noncomputable def spectralQuantum : ℝ :=
   1 + Real.eulerMascheroniConstant / 2 - Real.log (4 * Real.pi) / 2
 
-/-- [BRIDGE] 相变量子 ☯ 的高精度数值界限。
+set_option maxHeartbeats 8000000 in
+set_option maxRecDepth 5000 in
+/-- [THEOREM] 相变量子 ☯ 的数值界限（严格证明，非公理）。
 
-    断言 0.02309570896 < ☯ < 0.02309570898。
-    这与 ☯ 的常用数值近似 0.02309570897 一致。
+    断言 0.02295 < ☯ < 0.02325，与常用数值近似 0.02309570897 相容。
 
-    此公理是可由外部高精度计算验证的数值桥梁：☯ 的解析表达式
-    只涉及 γ 与 ln(4π)，二者均有成熟的数值算法。
-    它不是一个“欺骗性证明”，而是明确标注的数值近似声明。
-
-    在 Mathlib 提供更完善的区间算术之前，保留此公理以避免
-    手工证明大量繁琐的超越数不等式。 -/
-axiom spectralQuantum_numerical_bounds :
-    (0.02309570896 : ℝ) < spectralQuantum ∧ spectralQuantum < (0.02309570898 : ℝ)
+    证明路径：把 ☯ 改写为 1 + γ/2 − ln 2 − (ln π)/2；
+    γ 由 `eulerMascheroniSeq` / `eulerMascheroniSeq'` 在 n = 2048 处的
+    上下界夹住（harmonic 2048 的四段 512 项有理求和由 `norm_num` 逐段估值），
+    ln 2 用 `Real.log_two_gt_d9` / `Real.log_two_lt_d9`，
+    ln π 用 π 的二十位十进制界经指数 Taylor 展开估计，最后线性算术收尾。 -/
+theorem spectralQuantum_numerical_bounds :
+    (0.02295 : ℝ) < spectralQuantum ∧ spectralQuantum < (0.02325 : ℝ) := by
+  -- (1) harmonic 2048 ∈ (8.2020786, 8.2020790)，四段 512 项拆分
+  have h1024 : (harmonic 1024 : ℚ)
+      = (harmonic 512 : ℚ) + ∑ x ∈ Finset.range 512, (((512 + x + 1 : ℕ) : ℚ))⁻¹ := by
+    have hf := Finset.sum_range_add (fun x : ℕ => (((x + 1 : ℕ) : ℚ))⁻¹) 512 512
+    simp only [harmonic]
+    rw [show (1024 : ℕ) = 512 + 512 by norm_num]
+    simpa using hf
+  have h2048a : (harmonic 2048 : ℚ)
+      = (harmonic 1024 : ℚ) + ∑ x ∈ Finset.range 1024, (((1024 + x + 1 : ℕ) : ℚ))⁻¹ := by
+    have hf := Finset.sum_range_add (fun x : ℕ => (((x + 1 : ℕ) : ℚ))⁻¹) 1024 1024
+    simp only [harmonic]
+    rw [show (2048 : ℕ) = 1024 + 1024 by norm_num]
+    simpa using hf
+  have htail : (∑ x ∈ Finset.range 1024, (((1024 + x + 1 : ℕ) : ℚ))⁻¹)
+      = (∑ x ∈ Finset.range 512, (((1024 + x + 1 : ℕ) : ℚ))⁻¹)
+        + (∑ x ∈ Finset.range 512, (((1024 + (512 + x) + 1 : ℕ) : ℚ))⁻¹) := by
+    have hf := Finset.sum_range_add (fun x : ℕ => (((1024 + x + 1 : ℕ) : ℚ))⁻¹) 512 512
+    rw [show (1024 : ℕ) = 512 + 512 by norm_num]
+    simpa using hf
+  have bH512 : (6.8165165 : ℚ) < harmonic 512 ∧ (harmonic 512 : ℚ) < 6.8165166 := by
+    constructor
+    · simp only [harmonic, Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+    · simp only [harmonic, Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+  have bS1 : (0.6926591 : ℚ) < (∑ x ∈ Finset.range 512, (((512 + x + 1 : ℕ) : ℚ))⁻¹) ∧
+      (∑ x ∈ Finset.range 512, (((512 + x + 1 : ℕ) : ℚ))⁻¹) < 0.6926592 := by
+    constructor
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+  have bS2 : (0.4053023 : ℚ) < (∑ x ∈ Finset.range 512, (((1024 + x + 1 : ℕ) : ℚ))⁻¹) ∧
+      (∑ x ∈ Finset.range 512, (((1024 + x + 1 : ℕ) : ℚ))⁻¹) < 0.4053024 := by
+    constructor
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+  have bS3 : (0.2876007 : ℚ) < (∑ x ∈ Finset.range 512, (((1024 + (512 + x) + 1 : ℕ) : ℚ))⁻¹) ∧
+      (∑ x ∈ Finset.range 512, (((1024 + (512 + x) + 1 : ℕ) : ℚ))⁻¹) < 0.2876008 := by
+    constructor
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+    · simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+      norm_num
+  have hHq_lo : (8.2020786 : ℚ) < harmonic 2048 := by
+    rw [h2048a, htail, h1024]
+    linarith [bH512.1, bS1.1, bS2.1, bS3.1]
+  have hHq_hi : (harmonic 2048 : ℚ) < 8.2020790 := by
+    rw [h2048a, htail, h1024]
+    linarith [bH512.2, bS1.2, bS2.2, bS3.2]
+  have hH_lo : (8.2020786 : ℝ) < (harmonic 2048 : ℝ) := by
+    have h := (Rat.cast_lt (K := ℝ)).2 hHq_lo
+    have h1 : ((8.2020786 : ℚ) : ℝ) = (8.2020786 : ℝ) := by norm_num
+    rwa [h1] at h
+  have hH_hi : (harmonic 2048 : ℝ) < 8.2020790 := by
+    have h := (Rat.cast_lt (K := ℝ)).2 hHq_hi
+    have h1 : ((8.2020790 : ℚ) : ℝ) = (8.2020790 : ℝ) := by norm_num
+    rwa [h1] at h
+  -- (2) log 2、log 2048、log 2049
+  have hlog2lo : (0.6931471803 : ℝ) < Real.log 2 := Real.log_two_gt_d9
+  have hlog2hi : Real.log 2 < (0.6931471808 : ℝ) := Real.log_two_lt_d9
+  have hlog2048_lo : (7.6246189833 : ℝ) ≤ Real.log 2048 := by
+    have h2 : (2048 : ℝ) = 2 ^ 11 := by norm_num
+    rw [h2, Real.log_pow]
+    push_cast
+    linarith [hlog2lo]
+  have hlog2048_hi : Real.log 2048 < (7.6246189888 : ℝ) := by
+    have h2 : (2048 : ℝ) = 2 ^ 11 := by norm_num
+    rw [h2, Real.log_pow]
+    push_cast
+    linarith [hlog2hi]
+  have hlog2049 : Real.log 2049 ≤ (7.62510727005 : ℝ) := by
+    have hmul : Real.log 2049 = Real.log 2048 + Real.log ((2049 : ℝ) / 2048) := by
+      conv_lhs => rw [show (2049 : ℝ) = 2048 * ((2049 : ℝ) / 2048) by norm_num]
+      rw [Real.log_mul (by norm_num) (by norm_num)]
+    have hsub : Real.log ((2049 : ℝ) / 2048) ≤ (2049 : ℝ) / 2048 - 1 :=
+      Real.log_le_sub_one_of_pos (by norm_num)
+    have hval : Real.log 2048 = 11 * Real.log 2 := by
+      have h2 : (2048 : ℝ) = 2 ^ 11 := by norm_num
+      rw [h2, Real.log_pow]
+      push_cast
+      ring
+    linarith [hmul, hsub, hval, hlog2hi]
+  -- (3) γ 的上下界
+  have hγ_lo : (harmonic 2048 : ℝ) - Real.log 2049 < Real.eulerMascheroniConstant := by
+    have h := Real.eulerMascheroniSeq_lt_eulerMascheroniConstant 2048
+    rw [Real.eulerMascheroniSeq] at h
+    rw [show ((2048 : ℕ) : ℝ) + 1 = (2049 : ℝ) by norm_num] at h
+    exact h
+  have hγ_hi : Real.eulerMascheroniConstant < (harmonic 2048 : ℝ) - Real.log 2048 := by
+    have h := Real.eulerMascheroniConstant_lt_eulerMascheroniSeq' 2048
+    rw [Real.eulerMascheroniSeq'] at h
+    rw [if_neg (show ¬((2048 : ℕ) = 0) by norm_num)] at h
+    exact h
+  -- (4) ln π 的上下界
+  have hpi_lo : (1.1447 : ℝ) < Real.log Real.pi := by
+    rw [Real.lt_log_iff_exp_lt Real.pi_pos]
+    have hsplit : Real.exp (1.1447 : ℝ) = Real.exp 1 * Real.exp (0.1447 : ℝ) := by
+      rw [← Real.exp_add]
+      norm_num
+    rw [hsplit]
+    have hupper : Real.exp (0.1447 : ℝ) ≤
+        (∑ m ∈ Finset.range 6, (0.1447 : ℝ) ^ m / m.factorial) + 0.00000002 := by
+      have h := Real.exp_bound' (x := (0.1447 : ℝ)) (by norm_num) (by norm_num) (n := 6) (by norm_num)
+      have hb : (0.1447 : ℝ) ^ 6 * ((6 : ℝ) + 1) / (((6 : ℕ).factorial : ℝ) * (6 : ℝ)) ≤ 0.00000002 := by
+        norm_num
+      linarith [h, hb]
+    have he : Real.exp 1 ≤ (2.7182818286 : ℝ) := by linarith [Real.exp_one_lt_d9]
+    have hbase : 2.7182818286 * ((∑ m ∈ Finset.range 6, (0.1447 : ℝ) ^ m / m.factorial) + 0.00000002) <
+        (3.14159265358979323846 : ℝ) := by
+      norm_num [Finset.sum_range_succ, Finset.sum_range_zero]
+    have hmul : Real.exp 1 * Real.exp 0.1447 ≤
+        2.7182818286 * ((∑ m ∈ Finset.range 6, (0.1447 : ℝ) ^ m / m.factorial) + 0.00000002) :=
+      mul_le_mul he hupper (by positivity) (by positivity)
+    linarith [Real.pi_gt_d20, hbase, hmul]
+  have hpi_hi : Real.log Real.pi < (1.14476 : ℝ) := by
+    have hmain : Real.pi < Real.exp 1.14476 := by
+      have hsplit : Real.exp (1.14476 : ℝ) = Real.exp 1 * Real.exp (0.14476 : ℝ) := by
+        rw [← Real.exp_add]
+        norm_num
+      rw [hsplit]
+      have hlower : (∑ m ∈ Finset.range 6, (0.14476 : ℝ) ^ m / m.factorial) ≤ Real.exp (0.14476 : ℝ) :=
+        Real.sum_le_exp_of_nonneg (by norm_num) 6
+      have he : (2.7182818283 : ℝ) ≤ Real.exp 1 := by linarith [Real.exp_one_gt_d9]
+      have hbase : (3.14159265358979323847 : ℝ) <
+          2.7182818283 * (∑ m ∈ Finset.range 6, (0.14476 : ℝ) ^ m / m.factorial) := by
+        norm_num [Finset.sum_range_succ, Finset.sum_range_zero]
+      have hmul : 2.7182818283 * (∑ m ∈ Finset.range 6, (0.14476 : ℝ) ^ m / m.factorial) ≤
+          Real.exp 1 * Real.exp 0.14476 :=
+        mul_le_mul he hlower (by positivity) (by positivity)
+      linarith [Real.pi_lt_d20, hbase, hmul]
+    have := Real.log_lt_log Real.pi_pos hmain
+    rwa [Real.log_exp] at this
+  -- (5) ☯ 改写为 ln 2 + (ln π)/2 的形式
+  have hsq : spectralQuantum =
+      1 + Real.eulerMascheroniConstant / 2 - Real.log 2 - Real.log Real.pi / 2 := by
+    unfold spectralQuantum
+    have hmul : Real.log (4 * Real.pi) = Real.log 4 + Real.log Real.pi :=
+      Real.log_mul (by norm_num) Real.pi_pos.ne'
+    have h4 : Real.log 4 = 2 * Real.log 2 := by
+      rw [show (4 : ℝ) = 2 ^ 2 by norm_num, Real.log_pow]
+      norm_num
+    rw [hmul, h4]
+    ring
+  constructor
+  · rw [hsq]
+    linarith [hH_lo, hγ_lo, hlog2049, hlog2hi, hpi_hi]
+  · rw [hsq]
+    linarith [hH_hi, hγ_hi, hlog2048_lo, hlog2lo, hpi_lo]
 
 /-- 相变量子严格为正 -/
 theorem spectralQuantum_pos : spectralQuantum > 0 := by
@@ -98,7 +250,7 @@ theorem spectralQuantum_inv_pos : 1 / spectralQuantum > 0 := by
   exact div_pos (by norm_num) h
 
 /-- 相变量子的倒数 1/☯ 的数值范围：1/☯ > 40 ↔ ☯ < 1/40 = 0.025。
-    由 `spectralQuantum_numerical_bounds` 得 ☯ < 0.02309570898 < 0.025。 -/
+    由 `spectralQuantum_numerical_bounds` 得 ☯ < 0.02325 < 0.025。 -/
 theorem spectralQuantum_inv_gt_40 : 1 / spectralQuantum > 40 := by
   have hC : spectralQuantum < (0.025 : ℝ) := by
     have h := spectralQuantum_numerical_bounds.right
@@ -277,8 +429,8 @@ theorem spectralCorrection_gt_one_strong : spectralCorrection > 1 := by
   nlinarith
 
 /-- κ 的范围：1 < κ < 1.1。
-    由 ☯ ∈ (0.02309570896, 0.02309570898) 得
-    κ = (31+☯)/30 ∈ (31.02309570896/30, 31.02309570898/30) ⊂ (1, 1.1)。 -/
+    由 ☯ ∈ (0.02295, 0.02325) 得
+    κ = (31+☯)/30 ∈ (31.02295/30, 31.02325/30) ⊂ (1, 1.1)。 -/
 theorem spectralCorrection_range : spectralCorrection > 1 ∧ spectralCorrection < 1.1 := by
   rw [spectralCorrection_formula]
   constructor
@@ -591,33 +743,33 @@ theorem spectralProduct_lt_ten : spectralProduct < 10 := by
 /-- 谱常数乘积 > 6（实际值 ≈ 6.08） -/
 theorem spectralProduct_gt_six : spectralProduct > 6 := by
   unfold spectralProduct
-  have hC : spectralQuantum > 0.023 := by
+  have hC : spectralQuantum > 0.02295 := by
     have h := spectralQuantum_numerical_bounds.left
     linarith
   have hmc := mathieuCritical_gt_131
   have hfc : firstCoupling > 200 := by
     unfold firstCoupling; norm_num
-  -- Step 1: 𝓒 * λ_c > 0.023 * 1.31
-  have h_step1 : spectralQuantum * mathieuCritical > 0.023 * 1.31 := by
+  -- Step 1: 𝓒 * λ_c > 0.02295 * 1.31
+  have h_step1 : spectralQuantum * mathieuCritical > 0.02295 * 1.31 := by
     have hCpos : spectralQuantum > 0 := spectralQuantum_pos
     have hmcpos : mathieuCritical > 0 := mathieuCritical_pos
-    have h_023pos : (0.023 : ℝ) > 0 := by norm_num
-    have h_a : spectralQuantum * mathieuCritical > 0.023 * mathieuCritical :=
+    have h_023pos : (0.02295 : ℝ) > 0 := by norm_num
+    have h_a : spectralQuantum * mathieuCritical > 0.02295 * mathieuCritical :=
       mul_lt_mul_of_pos_right hC hmcpos
-    have h_b : 0.023 * mathieuCritical > 0.023 * 1.31 :=
+    have h_b : 0.02295 * mathieuCritical > 0.02295 * 1.31 :=
       mul_lt_mul_of_pos_left hmc h_023pos
     linarith
-  -- Step 2: (𝓒 * λ_c) * 𝔠₁ > (0.023 * 1.31) * 200
-  have h_step2 : (spectralQuantum * mathieuCritical) * firstCoupling > (0.023 * 1.31) * 200 := by
-    have hpos1 : (0 : ℝ) < 0.023 * 1.31 := by norm_num
+  -- Step 2: (𝓒 * λ_c) * 𝔠₁ > (0.02295 * 1.31) * 200
+  have h_step2 : (spectralQuantum * mathieuCritical) * firstCoupling > (0.02295 * 1.31) * 200 := by
+    have hpos1 : (0 : ℝ) < 0.02295 * 1.31 := by norm_num
     have hpos2 : firstCoupling > 0 := firstCoupling_pos
-    have h_a : (spectralQuantum * mathieuCritical) * firstCoupling > (0.023 * 1.31) * firstCoupling :=
+    have h_a : (spectralQuantum * mathieuCritical) * firstCoupling > (0.02295 * 1.31) * firstCoupling :=
       mul_lt_mul_of_pos_right h_step1 hpos2
-    have h_b : (0.023 * 1.31) * firstCoupling > (0.023 * 1.31) * 200 :=
+    have h_b : (0.02295 * 1.31) * firstCoupling > (0.02295 * 1.31) * 200 :=
       mul_lt_mul_of_pos_left hfc hpos1
     linarith
-  -- Step 3: (0.023 * 1.31) * 200 > 6
-  have h_bound : (0.023 * 1.31 : ℝ) * 200 > 6 := by norm_num
+  -- Step 3: (0.02295 * 1.31) * 200 > 6
+  have h_bound : (0.02295 * 1.31 : ℝ) * 200 > 6 := by norm_num
   -- Ring normalization
   have h_ring : (spectralQuantum * mathieuCritical) * firstCoupling = spectralQuantum * mathieuCritical * firstCoupling := by ring
   rw [h_ring] at h_step2
@@ -817,10 +969,10 @@ theorem primePotential_7 : primePotential 7 = 0 := primePotential_frozen 7 (by
     N_cycle = 2¹·3¹·5¹ = 30
 
     此约束是 CQM 耦合空间全局一致性的核心条件。
-    这里的表述是有限计算可验证的等式，由 `native_decide` 直接严格证明，
+    这里的表述是有限计算可验证的等式，由 `decide` 直接严格证明，
     不作为公理引入。 -/
 theorem adeleConstraint : (Finset.filter Nat.Prime (Finset.range 100)).prod (λ p => p ^ (primePotential p : ℕ)) = adeleCycle := by
-  native_decide
+  decide
 
 /-- [THEOREM] Adele 约束 → N_cycle = 30。
 
@@ -831,7 +983,7 @@ theorem adeleConstraint : (Finset.filter Nat.Prime (Finset.range 100)).prod (λ 
     只有 2, 3, 5 的势函数为 1，它们的乘积为 30。 -/
 theorem adeleConstraint_implies_Ncycle_30 : adeleCycle = 30 := by
   rw [← adeleConstraint]
-  native_decide
+  decide
 
 /-- [THEOREM] Adele 约束 → 活跃素数乘积 = 30。
 
@@ -967,9 +1119,11 @@ theorem activePrimeCount_vs_su5_rank : activePrimes.length = 3 :=
 - 相变量子 ☯ 从 ξ'(1)/ξ(1) 的严格推导（待解析数论）
 
 ### 形式化状态（本文件）
-- 本文件当前包含 55 个已证明定理，以及 `spectralQuantum_numerical_bounds` 一个显式数值桥梁公理。
+- 本文件当前包含 59 个已证明定理，不含显式数值桥梁公理
+  （`spectralQuantum_numerical_bounds` 已由 Euler–Mascheroni 上下界序列与
+  ln 2、ln π 的标准界严格证明）。
 - 项目整体统计与剩余缺口请参见 `README.md`。
-- `adeleConstraint` 由 `native_decide` 严格证明。
+- `adeleConstraint` 由 `decide` 严格证明。
 - `mathieu_critical_condition`（未使用）不在 `Mathieu.lean` 中。
 - 未注册测试文件 `TestNum.lean` 不在本项目中。
 -/

@@ -48,13 +48,13 @@ structure ClassicalCurvature (n : ℕ) where
   /-- 逐顶点经典角亏 -/
   deficit : Fin n → ℝ
   /-- 经典角亏由 Regge 剖分给出（复用 `reggeDeficitAngle`：δ̄_v = 2π − Σθ_v） -/
-  from_regge : ∀ v, deficit v = 2 * Real.pi - ∑ i, (0 : ℝ)
+  from_regge : ∀ v, deficit v = 2 * Real.pi - ∑ _ : Fin n, (0 : ℝ)
 
 /-- 经典曲率可取零（理想平坦，质子 4-单纯形）。 -/
-def ClassicalCurvature.flat (n : ℕ) : ClassicalCurvature n where
+noncomputable def ClassicalCurvature.flat (n : ℕ) : ClassicalCurvature n where
   deficit := fun _ => 2 * Real.pi
   from_regge := fun v => by
-    have hsum : ∑ i, (0 : ℝ) = 0 := by simp
+    have hsum : ∑ i : Fin n, (0 : ℝ) = 0 := by simp
     rw [hsum]
     ring
 
@@ -88,13 +88,10 @@ structure NormalMode (n : ℕ) where
   /-- 归一化条件：Σ_v |v_k(v)|² = 1（模式归一化） -/
   normalized : ∀ k, ∑ v, amplitude k v ^ 2 = 1
 
-/-- **声子代数从位置-动量代数导出**：[Q̂_k, Π̂_k'] = iħ δ_kk'
-    是 [X̂_v, P̂_v] = iħ 经简正模式对角化的直接后果。 -/
-theorem phonon_algebra_from_position_momentum (alg : PositionMomentumAlgebra)
-    (n : ℕ) (mode : NormalMode n) (k k' : Fin n) :
-    k = k' → True := by
-  intro h
-  trivial
+/-- **声子代数（待证命题）**：`[Q̂_k, Π̂_k'] = iħ δ_kk'` 的目标位置。
+    本 `def` 只登记命题，未给出证明；`Prop := True` 不构成证明。 -/
+def phononAlgebraClaim (_alg : PositionMomentumAlgebra) (n : ℕ) (_mode : NormalMode n)
+    (_k _k' : Fin n) : Prop := True
 
 /-! ## 3. 曲率涨落算符 δ̂_v^(1)（环节3，严格推导） -/
 
@@ -133,18 +130,18 @@ theorem CurvatureFluctuationOperator.eigenvalue_nonneg {n : ℕ}
   apply Finset.sum_nonneg
   intro k _
   have h1 : 0 ≤ op.algebra.hbar * op.modes.omega k := by
-    exact mul_nonneg op.algebra.hbar_pos.le op.modes.omega_pos k |>.le
+    exact mul_nonneg op.algebra.hbar_pos.le (op.modes.omega_pos k).le
   have h2 : 0 ≤ op.algebra.hbar * op.modes.omega k / op.E_bind := by
     exact div_nonneg h1 op.E_bind_pos.le
   have h3 : 0 ≤ op.modes.amplitude k v ^ 2 := sq_nonneg _
   have h4 : 0 ≤ ((op.occupation k : ℝ) + 1 / 2 : ℝ) := by
-    exact_mod_cast (by omega : (0 : ℝ) ≤ op.occupation k)
+    have : (0 : ℝ) ≤ (op.occupation k : ℝ) := by positivity
     linarith
   exact mul_nonneg (mul_nonneg h2 h3) h4
 
 /-- **涨落本征值正性**：至少一个模式有非零振幅且占据数非负时，涨落 > 0。 -/
 theorem CurvatureFluctuationOperator.eigenvalue_pos_of_nonzero {n : ℕ}
-    (op : CurvatureFluctuationOperator n) (v : Fin n) (hne : 0 < n)
+    (op : CurvatureFluctuationOperator n) (v : Fin n) (_hne : 0 < n)
     (hamp : ∃ k, op.modes.amplitude k v ≠ 0) :
     0 < op.eigenvalue v := by
   rw [op.eigenvalue_def v]
@@ -155,9 +152,7 @@ theorem CurvatureFluctuationOperator.eigenvalue_pos_of_nonzero {n : ℕ}
       mul_pos op.algebra.hbar_pos (op.modes.omega_pos k₀)
     have h2 : 0 < op.algebra.hbar * op.modes.omega k₀ / op.E_bind :=
       div_pos h1 op.E_bind_pos
-    have h3 : 0 < op.modes.amplitude k₀ v ^ 2 := by
-      refine pow_pos (lt_of_le_of_ne (sq_nonneg _) ?_) 2
-      exact fun heq => hk₀ (by rw [heq]; exact pow_eq_zero_iff two_ne_zero |>.mp rfl)
+    have h3 : 0 < op.modes.amplitude k₀ v ^ 2 := sq_pos_of_ne_zero hk₀
     have h4 : 0 < ((op.occupation k₀ : ℝ) + 1 / 2 : ℝ) := by
       have : (0 : ℝ) ≤ op.occupation k₀ := by exact_mod_cast (by omega : (0 : ℕ) ≤ op.occupation k₀)
       linarith
@@ -175,13 +170,11 @@ theorem CurvatureFluctuationOperator.eigenvalue_pos_of_nonzero {n : ℕ}
       have : (0 : ℝ) ≤ op.occupation k := by exact_mod_cast (by omega : (0 : ℕ) ≤ op.occupation k)
       linarith
     exact mul_nonneg (mul_nonneg h2 h3) h4
-  have : (0 : ℝ) < (op.algebra.hbar * op.modes.omega k₀ / op.E_bind) *
+  have hle : (op.algebra.hbar * op.modes.omega k₀ / op.E_bind) *
       op.modes.amplitude k₀ v ^ 2 * ((op.occupation k₀ : ℝ) + 1 / 2) ≤
     ∑ k, (op.algebra.hbar * op.modes.omega k / op.E_bind) *
       op.modes.amplitude k v ^ 2 * ((op.occupation k : ℝ) + 1 / 2) := by
-    constructor
-    · exact hterm
-    · exact Finset.single_le_sum (by
+    exact Finset.single_le_sum (by
         intro j _
         have h1 : 0 ≤ op.algebra.hbar * op.modes.omega j :=
           mul_nonneg op.algebra.hbar_pos.le (op.modes.omega_pos j).le
@@ -192,7 +185,7 @@ theorem CurvatureFluctuationOperator.eigenvalue_pos_of_nonzero {n : ℕ}
           have : (0 : ℝ) ≤ op.occupation j := by exact_mod_cast (by omega : (0 : ℕ) ≤ op.occupation j)
           linarith
         exact mul_nonneg (mul_nonneg h2 h3) h4) (Finset.mem_univ _)
-  linarith
+  linarith [hterm, hle]
 
 /-! ## 4. 总曲率 δ̂_v = δ̄_v + δ̂_v^(1)（环节4） -/
 
@@ -246,7 +239,7 @@ noncomputable def TotalCurvatureOperator.toCurvatureOperator {n : ℕ}
 /-- **曲率量子 = 声子**：总曲率算符的量子涨落部分本征值是声子占据态 |n⟩ 上的
     角亏振幅谱——衔接环节 3–4（`QuantumOscillation.OscillatorSpectrum`）。 -/
 theorem curvature_quantum_is_phonon {n : ℕ} (op : TotalCurvatureOperator n)
-    (v : Fin n) (k : Fin n) :
+    (v : Fin n) (_k : Fin n) :
     op.fluctuation.eigenvalue v =
       ∑ j, (op.fluctuation.algebra.hbar * op.fluctuation.modes.omega j /
         op.fluctuation.E_bind) * op.fluctuation.modes.amplitude j v ^ 2
@@ -259,17 +252,17 @@ theorem curvature_quantum_is_phonon {n : ℕ} (op : TotalCurvatureOperator n)
     量子涨落算符，总曲率算符的经典背景由底空间角亏场给出。 -/
 noncomputable def reggeBaseToTotalCurvature {n : ℕ}
     (base : ReggeBaseSpace n) (fluct : CurvatureFluctuationOperator n)
-    (hclass : ∀ v, base.deficitField v = 2 * Real.pi - ∑ i, (0 : ℝ)) :
+    (hclass : ∀ v, base.deficitField v = 2 * Real.pi - ∑ _ : Fin n, (0 : ℝ)) :
     TotalCurvatureOperator n where
   classical := ⟨base.deficitField, hclass⟩
   fluctuation := fluct
   totalEigenvalue := fun v => base.deficitField v + fluct.eigenvalue v
-  decomposition := fun v => rfl
+  decomposition := fun _ => rfl
 
 /-- 衔接定理：Regge 底空间 → 总曲率算符的经典背景 = 底空间角亏场。 -/
 theorem reggeBaseToTotalCurvature_classical {n : ℕ}
     (base : ReggeBaseSpace n) (fluct : CurvatureFluctuationOperator n)
-    (hclass : ∀ v, base.deficitField v = 2 * Real.pi - ∑ i, (0 : ℝ))
+    (hclass : ∀ v, base.deficitField v = 2 * Real.pi - ∑ _ : Fin n, (0 : ℝ))
     (v : Fin n) :
     (reggeBaseToTotalCurvature base fluct hclass).classical.deficit v =
       base.deficitField v := by

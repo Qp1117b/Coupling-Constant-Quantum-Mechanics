@@ -378,7 +378,7 @@ noncomputable def cqmIsotopeExponent (f1 f2 m1 m2 : ℝ) : ℝ :=
 
 /-- 几何因子为常数时，CQM 同位素指数精确回到 BCS 的 1/2。
     这是 CQM 退化到 BCS 的同位素侧：f(H) = f(D) ⇒ α = 1/2。 -/
-theorem cqmIsotopeExponent_constant_f {f m1 m2 : ℝ} (hm : m1 ≠ m2) (hf : f > 0) :
+theorem cqmIsotopeExponent_constant_f {f m1 m2 : ℝ} (_hm : m1 ≠ m2) (hf : f > 0) :
     cqmIsotopeExponent f f m1 m2 = 1/2 := by
   unfold cqmIsotopeExponent
   have h_div : f / f = 1 := by field_simp [ne_of_gt hf]
@@ -389,7 +389,7 @@ theorem cqmIsotopeExponent_constant_f {f m1 m2 : ℝ} (hm : m1 ≠ m2) (hf : f >
     第一因子为 BCS 谐波预言（ω_D ∝ M^(−1/2)），
     第二因子为 CQM 几何修正（有效质量 = 离子质量 × 几何因子）。 -/
 theorem cqmIsotopeTcRatio (m1 m2 f1 f2 : ℝ) (hm1 : 0 < m1) (hm2 : 0 < m2)
-    (hf1 : 0 < f1) (hf2 : 0 < f2) :
+    (_hf1 : 0 < f1) (_hf2 : 0 < f2) :
     Real.sqrt ((m1 * f1) / (m2 * f2)) = Real.sqrt (m1 / m2) * Real.sqrt (f1 / f2) := by
   calc
     Real.sqrt ((m1 * f1) / (m2 * f2))

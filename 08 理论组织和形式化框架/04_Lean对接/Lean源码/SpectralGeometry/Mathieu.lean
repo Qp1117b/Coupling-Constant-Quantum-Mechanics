@@ -29,8 +29,6 @@ Mathieu 方程描述了耦合空间中的周期结构。
 - McLachlan, N.W. (1947). Theory and Application of Mathieu Functions.
 -/
 
-open CartanAlgebra
-
 /-! ## 黄金比例 φ — A₄ 本征值结构中的核心常数 -/
 
 /-- 黄金比例 φ = (1+√5)/2 ≈ 1.618。
@@ -123,10 +121,10 @@ theorem mathieuParameter_range : mathieuParameter > 0.8 ∧ mathieuParameter < 0
     calc
       Real.sqrt 5 > Real.sqrt (2.23^2) := Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
       _ = 2.23 := Real.sqrt_sq (by norm_num : 0 ≤ (2.23 : ℝ))
-  have hsqrt5_lt_2361 : Real.sqrt 5 < 2.361 := by
+  have hsqrt5_lt_224 : Real.sqrt 5 < 2.24 := by
     calc
-      Real.sqrt 5 < Real.sqrt (2.361^2) := Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
-      _ = 2.361 := Real.sqrt_sq (by norm_num : 0 ≤ (2.361 : ℝ))
+      Real.sqrt 5 < Real.sqrt (2.24^2) := Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
+      _ = 2.24 := Real.sqrt_sq (by norm_num : 0 ≤ (2.24 : ℝ))
   constructor
   · nlinarith
   · nlinarith
@@ -146,11 +144,11 @@ noncomputable def eigenvalueRatio4to1 : ℝ := eigenvalue4 / eigenvalue1
 theorem eigenvalueRatio4to1_exact : eigenvalueRatio4to1 = 5 + 2 * Real.sqrt 5 := by
   unfold eigenvalueRatio4to1 eigenvalue4 eigenvalue1 sqrt5
   have hsq5 : (Real.sqrt 5) ^ 2 = 5 := Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 5)
-  field_simp [show eigenvalue1 ≠ 0 from by
-    unfold eigenvalue1 sqrt5
+  have hden : (3 : ℝ) - Real.sqrt 5 ≠ 0 := by
     have h : Real.sqrt 5 < 3 := sqrt5_lt_3
-    nlinarith]
-  nlinarith
+    linarith
+  field_simp
+  nlinarith [hsq5]
 
 /-- λ₄/λ₁ > 9（强下界） -/
 theorem eigenvalueRatio_gt_9 : eigenvalueRatio4to1 > 9 := by
@@ -176,7 +174,6 @@ theorem mathieuParameter_from_ratio : mathieuParameter = (eigenvalueRatio4to1 - 
   unfold mathieuParameter eigenvalueRatio4to1
   have hpos : eigenvalue1 > 0 := eigenvalue1_pos
   field_simp [hpos.ne']
-  ring
 
 /-! ## Mathieu 临界值 λ_c — 退相干相变边界
 
@@ -257,17 +254,7 @@ axiom b1 : ℝ → ℝ
     a₁(q) = 1 + q - q²/8 - q³/64 - q⁴/1536 + O(q⁵)
 
     参考文献：McLachlan (1947), §2.16, p.18. -/
-def b1_truncated (q : ℝ) : ℝ := 1 + q - q^2/8 - q^3/64 - q^4/1536
-
-/-- [HYPOTHESIS] b₁(q) 的微扰展开下界（来自 Mathieu 函数理论）：
-
-    对于 0 ≤ q ≤ 1，b₁(q) ≥ b₁_trunc(q) - q⁵/3000。
-
-    此不等式来自 Mathieu 特征值微扰级数的标准误差估计。
-    系数 -11/36864 ≈ -0.000298 > -1/3000 ≈ -0.000333，
-    因此 q⁵/3000 是截断误差 |R₅(q)| 的安全上界。
-
-    对于 q ≤ 1，级数绝对收敛，且 |R₅(q)| ≤ (11/36864)·q⁵/(1-q/4) < q⁵/3000。 -/
+noncomputable def b1_truncated (q : ℝ) : ℝ := 1 + q - q^2/8 - q^3/64 - q^4/1536
 
 /-- [辅助定理] 截断误差安全上界的严格化：11/36864 < 1/3000。
 
@@ -279,6 +266,15 @@ theorem b1_trunc_error_bound_safe : (11 : ℝ) / 36864 < 1 / 3000 := by
   field_simp
   norm_num
 
+/-- [HYPOTHESIS] b₁(q) 的微扰展开下界（来自 Mathieu 函数理论）：
+
+    对于 0 ≤ q ≤ 1，b₁(q) ≥ b₁_trunc(q) - q⁵/3000。
+
+    此不等式来自 Mathieu 特征值微扰级数的标准误差估计。
+    系数 -11/36864 ≈ -0.000298 > -1/3000 ≈ -0.000333，
+    因此 q⁵/3000 是截断误差 |R₅(q)| 的安全上界。
+
+    对于 q ≤ 1，级数绝对收敛，且 |R₅(q)| ≤ (11/36864)·q⁵/(1-q/4) < q⁵/3000。 -/
 axiom b1_perturbation_lower_bound (q : ℝ) (hq0 : 0 ≤ q) (hq1 : q ≤ 1) :
     b1 q ≥ b1_truncated q - q^5/3000
 
@@ -330,15 +326,17 @@ theorem b1_gt_2q_at_mathieuParameter : b1 mathieuParameter > 2 * mathieuParamete
       calc
         Real.sqrt 5 < Real.sqrt (2.361^2) := Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
         _ = 2.361 := Real.sqrt_sq (by norm_num : 0 ≤ (2.361 : ℝ))
-    -- 设 q = (1+√5)/4
-    set q := (1 + Real.sqrt 5) / 4 with hq
+    -- 设 q = (1+√5)/4（先把 `/2/2` 归一为 `/4`，使 set 能匹配目标）
+    have hq_def : (1 + Real.sqrt 5) / 2 / 2 = (1 + Real.sqrt 5) / 4 := by ring
+    rw [hq_def]
+    set q : ℝ := (1 + Real.sqrt 5) / 4 with hq
     -- 计算 f(q) = 1 - q - q²/8 - q³/64 - q⁴/1536 - q⁵/3000
     -- 使用 q 的上下界：q_low < q < q_high
     have hq_low : q > 0.8075 := by
-      unfold q
+      rw [hq]
       nlinarith
     have hq_high : q < 0.8404 := by
-      unfold q
+      rw [hq]
       nlinarith
     -- 对于 f(q) = 1 - q - q²/8 - q³/64 - q⁴/1536 - q⁵/3000
     -- 使用 q < 0.8404 对 -q, -q², -q³, -q⁴, -q⁵ 项给出下界
@@ -387,13 +385,25 @@ noncomputable def spectralQuantum_Mathieu_relation : ℝ := spectralQuantum * ma
 /-- ☯ · λ_c ≈ 0.03039（数值验证） -/
 theorem spectralQuantum_Mathieu_product_approx : spectralQuantum * mathieuCritical > 0.03 ∧
     spectralQuantum * mathieuCritical < 0.031 := by
+  have hCpos : spectralQuantum > 0 := spectralQuantum_pos
+  have hmcpos : mathieuCritical > 0 := mathieuCritical_pos
   constructor
   · have hC := spectralQuantum_numerical_bounds.left
     have hmc := mathieuCritical_gt_131
-    nlinarith
+    calc spectralQuantum * mathieuCritical
+        > (0.02295 : ℝ) * mathieuCritical :=
+          mul_lt_mul_of_pos_right hC hmcpos
+      _ > (0.02295 : ℝ) * 1.31 :=
+          mul_lt_mul_of_pos_left hmc (by norm_num : (0 : ℝ) < 0.02295)
+      _ > 0.03 := by norm_num
   · have hC := spectralQuantum_numerical_bounds.right
     have hmc := mathieuCritical_lt_132
-    nlinarith
+    calc spectralQuantum * mathieuCritical
+        < (0.02325 : ℝ) * mathieuCritical :=
+          mul_lt_mul_of_pos_right hC hmcpos
+      _ < (0.02325 : ℝ) * 1.32 :=
+          mul_lt_mul_of_pos_left hmc (by norm_num : (0 : ℝ) < 0.02325)
+      _ < 0.031 := by norm_num
 
 /-! ## 总结：已严格证明的定理
 

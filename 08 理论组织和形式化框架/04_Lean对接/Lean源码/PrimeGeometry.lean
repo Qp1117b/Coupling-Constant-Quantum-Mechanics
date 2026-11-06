@@ -34,14 +34,14 @@ import PrimeGeometry.Particle
 | 空间地位 | 次级涌现（退相干产物） | 与时间一起预设 |
 | "长度" | 因果步数（再生产次数） | 空间距离（米） |
 
-## 公理/假设清单
+## 公理/定理/命题清单
 
 | 名称 | 类型 | 文件 | 说明 |
 |:-----|:-----|:-----|:-----|
-| `windingDensityConvergence` | AXIOM | WindingDensity.lean | 素数缠绕密度收敛为分段常数 |
+| `windingDensityConvergenceClaim` | CLAIM | WindingDensity.lean | 待证命题：素数缠绕密度收敛为分段常数（主语为占位定义） |
 | `totalProbabilityConservation` | THEOREM | WindingDensity.lean | 总概率守恒 Σ a_i·ρ_i = 1（由密度赋值假设证明） |
-| `causalChainSelfClosure` | POSTULATE | Compton.lean | 因果链从母体断裂后自我闭合为因果环 |
-| `leptonMassOrdering` | AXIOM | Compton.lean | 三代轻子质量层级 m_e < m_μ < m_τ |
+| `CausalLoop.ofSegment` | DEF | Compton.lean | 由因果线段弧长构造因果环（结构构造；不承载「必自闭合」的物理内容） |
+| `leptonMassOrdering` | THEOREM | Compton.lean | 三代轻子质量层级 m_e < m_μ < m_τ |
 
 ## 与 CQM 其他模块的衔接
 

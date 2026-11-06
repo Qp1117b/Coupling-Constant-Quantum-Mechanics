@@ -25,7 +25,7 @@ A006,映射,$\delta_v$,C026,1,1,不对齐,联络 $A_{FG}\to$ 伴丛曲率 $F$,C0
 A007,映射,$\delta_v$,C026,1,1,不对齐,固有时流速 $v_\tau=\sqrt{1-\beta\delta_v}$,C027,含规范名,True,D015,high
 A008,映射,$\zeta$ 欧拉乘积,C043,1,1,不对齐,局部耦合核 $\kappa_p$,C058,不对齐,True,D008,medium
 A009,映射,显式公式,C044,1,1,不对齐,同步格林函数 $\psi(e^u)$,C060,不对齐,True,D008,medium
-A010,等价,函数方程 $\xi(s)=\xi(1-s)$,C044,1,1,不对齐,同步算符厄米性 $S=S^\dagger$,C012,含规范名,True,D008,medium
+A010,等价,函数方程 $\xi(s)=\xi(1-s)$,C044,1,1,不对齐,同步算符自伴性 $S=S^\dagger$,C012,含规范名,True,D008,medium
 A011,等价,耦级 $\mathfrak c_n$ 为实,C046,1,1,含规范名,$L$ 函数零点位于临界线,C051,不对齐,True,D008,medium
 A012,等价,RH,C051,1,1,精确,$GL(5)$ 固定层级实谱条件,C013,含规范名,True,D008,medium
 A013,映射,黎曼零点 $\gamma_n$,C045,1,1,含规范名,耦级 $\mathfrak c_n=1/4+\gamma_n^2$,C046,含规范名,True,D008,medium
