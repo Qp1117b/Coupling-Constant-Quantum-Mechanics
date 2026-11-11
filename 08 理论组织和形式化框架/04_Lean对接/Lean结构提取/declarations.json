@@ -3864,6 +3864,251 @@
   "name": "mutualInformationChange_positive"
  },
  {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 38,
+  "kind": "abbrev",
+  "name": "Sedimentation"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 42,
+  "kind": "abbrev",
+  "name": "FutureLaw"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 45,
+  "kind": "def",
+  "name": "project"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 50,
+  "kind": "def",
+  "name": "Sufficient"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 55,
+  "kind": "def",
+  "name": "Insufficient"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 60,
+  "kind": "theorem",
+  "name": "sufficient_of_injective"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 68,
+  "kind": "theorem",
+  "name": "insufficient_imp_not_injective"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 75,
+  "kind": "theorem",
+  "name": "insufficient_iff_fiber"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 93,
+  "kind": "theorem",
+  "name": "sufficient_of_factor"
+ },
+ {
+  "module": "NonMarkovianity.Basic",
+  "file": "NonMarkovianity/Basic.lean",
+  "line": 112,
+  "kind": "theorem",
+  "name": "noninjectivity_not_implying_insufficiency"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 27,
+  "kind": "abbrev",
+  "name": "GraphDistance"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 30,
+  "kind": "abbrev",
+  "name": "SingleTimeStatistic"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 36,
+  "kind": "def",
+  "name": "LocalAt"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 42,
+  "kind": "theorem",
+  "name": "localAt_mono"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 53,
+  "kind": "def",
+  "name": "OnticMarkovizable"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 57,
+  "kind": "theorem",
+  "name": "onticMarkovizable_iff_sufficient"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 62,
+  "kind": "theorem",
+  "name": "onticMarkovizable_of_injective"
+ },
+ {
+  "module": "NonMarkovianity.Markovization",
+  "file": "NonMarkovianity/Markovization.lean",
+  "line": 69,
+  "kind": "theorem",
+  "name": "not_onticMarkovizable_of_fiber"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 32,
+  "kind": "def",
+  "name": "relaxationTime"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 36,
+  "kind": "theorem",
+  "name": "relaxationTime_eq_inv_properTimeFlow"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 42,
+  "kind": "theorem",
+  "name": "relaxationTime_eq_inv_sqrt"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 48,
+  "kind": "theorem",
+  "name": "relaxationTime_pos"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 54,
+  "kind": "theorem",
+  "name": "relaxationTime_at_zero"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 61,
+  "kind": "theorem",
+  "name": "relaxationTime_monotone"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 73,
+  "kind": "theorem",
+  "name": "relaxationTime_strictMono"
+ },
+ {
+  "module": "NonMarkovianity.ProperTimeRelaxation",
+  "file": "NonMarkovianity/ProperTimeRelaxation.lean",
+  "line": 86,
+  "kind": "theorem",
+  "name": "relaxationTime_gt_one"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 29,
+  "kind": "abbrev",
+  "name": "SufficiencyProfile"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 38,
+  "kind": "theorem",
+  "name": "threshold_of_antitone_sufficiency"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 55,
+  "kind": "structure",
+  "name": "ScaleFamily"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 67,
+  "kind": "def",
+  "name": "SufficientStat"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 71,
+  "kind": "theorem",
+  "name": "sufficientStat_of_factor"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 79,
+  "kind": "def",
+  "name": "scaleSufficiency"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 85,
+  "kind": "theorem",
+  "name": "scaleSufficiency_antitone"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 102,
+  "kind": "theorem",
+  "name": "scale_threshold"
+ },
+ {
+  "module": "NonMarkovianity.ScaleThreshold",
+  "file": "NonMarkovianity/ScaleThreshold.lean",
+  "line": 114,
+  "kind": "theorem",
+  "name": "threshold_instance"
+ },
+ {
   "module": "PhysicalConstants.Basic",
   "file": "PhysicalConstants/Basic.lean",
   "line": 42,

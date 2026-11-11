@@ -18,6 +18,7 @@ project:
     - name: Superconductivity
     - name: FGChain
     - name: GN
+    - name: NonMarkovianity
   modules:
     - {module: "Audit", file: "Audit.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "CartanAlgebra", file: "CartanAlgebra.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
@@ -56,6 +57,11 @@ project:
     - {module: "GN.TripleIdentity", file: "GN/TripleIdentity.lean", theorem_like: 13, def_like: 3, axiom: 0, total_decl: 16}
     - {module: "Methodology", file: "Methodology.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "Methodology.Basic", file: "Methodology/Basic.lean", theorem_like: 13, def_like: 19, axiom: 4, total_decl: 37}
+    - {module: "NonMarkovianity", file: "NonMarkovianity.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
+    - {module: "NonMarkovianity.Basic", file: "NonMarkovianity/Basic.lean", theorem_like: 5, def_like: 5, axiom: 0, total_decl: 10}
+    - {module: "NonMarkovianity.Markovization", file: "NonMarkovianity/Markovization.lean", theorem_like: 4, def_like: 4, axiom: 0, total_decl: 8}
+    - {module: "NonMarkovianity.ProperTimeRelaxation", file: "NonMarkovianity/ProperTimeRelaxation.lean", theorem_like: 7, def_like: 1, axiom: 0, total_decl: 8}
+    - {module: "NonMarkovianity.ScaleThreshold", file: "NonMarkovianity/ScaleThreshold.lean", theorem_like: 5, def_like: 3, axiom: 0, total_decl: 9}
     - {module: "PhysicalConstants", file: "PhysicalConstants.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "PhysicalConstants.Basic", file: "PhysicalConstants/Basic.lean", theorem_like: 20, def_like: 15, axiom: 0, total_decl: 35}
     - {module: "PrimeGeometry", file: "PrimeGeometry.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
@@ -89,18 +95,18 @@ project:
     - {module: "Superconductivity.TransitionTemperature", file: "Superconductivity/TransitionTemperature.lean", theorem_like: 3, def_like: 2, axiom: 0, total_decl: 5}
     - {module: "Superconductivity.TransitionTemperatureCQM", file: "Superconductivity/TransitionTemperatureCQM.lean", theorem_like: 3, def_like: 6, axiom: 0, total_decl: 9}
   declaration_histogram:
-    theorem: 836
+    theorem: 857
     lemma: 50
-    def: 429
-    abbrev: 10
+    def: 437
+    abbrev: 15
     axiom: 15
-    structure: 53
+    structure: 54
     inductive: 7
     class: 4
   totals:
-    modules: 69
-    declarations: 1404
-    theorem_like: 886
+    modules: 74
+    declarations: 1439
+    theorem_like: 907
     axioms: 15
   authoritative_status:
     note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：11 库全部通过；886 已证明定理 / 15 公理待证（口径 = theorem + lemma，零 sorry，与 theorem_like 抽取一致）。"

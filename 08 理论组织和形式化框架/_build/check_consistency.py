@@ -113,7 +113,7 @@ def main():
     # ---------- Lean 对接 ----------
     decls = jload(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "declarations.json"))
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
-    check("Lean 声明 1404 / 模块 69", (len(decls), len(mods)) == (1404, 69),
+    check("Lean 声明 1439 / 模块 74", (len(decls), len(mods)) == (1439, 74),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []

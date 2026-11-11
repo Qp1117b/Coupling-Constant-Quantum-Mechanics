@@ -1,6 +1,6 @@
 name = "CQMFormal"
 version = "0.7.0"
-defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "Superconductivity", "FGChain", "GN"]
+defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "Superconductivity", "FGChain", "GN", "NonMarkovianity"]
 
 [[lean_lib]]
 name = "CausalSet"
@@ -44,6 +44,10 @@ leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 
 [[lean_lib]]
 name = "GN"
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+
+[[lean_lib]]
+name = "NonMarkovianity"
 leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 
 [[require]]

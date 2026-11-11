@@ -84,6 +84,14 @@ digraph LeanImports {
   "GN.SimplexSpectrum" -> "CartanAlgebra.Basic";
   "GN.TripleIdentity" -> "GN.Basic";
   "Methodology" -> "Methodology.Basic";
+  "NonMarkovianity" -> "NonMarkovianity.Basic";
+  "NonMarkovianity" -> "NonMarkovianity.Markovization";
+  "NonMarkovianity" -> "NonMarkovianity.ScaleThreshold";
+  "NonMarkovianity" -> "NonMarkovianity.ProperTimeRelaxation";
+  "NonMarkovianity.Markovization" -> "NonMarkovianity.Basic";
+  "NonMarkovianity.ProperTimeRelaxation" -> "NonMarkovianity.Basic";
+  "NonMarkovianity.ProperTimeRelaxation" -> "Superconductivity.CouplingSpace";
+  "NonMarkovianity.ScaleThreshold" -> "NonMarkovianity.Markovization";
   "PhysicalConstants" -> "PhysicalConstants.Basic";
   "PhysicalConstants.Basic" -> "CartanAlgebra.Basic";
   "PhysicalConstants.Basic" -> "SpectralGeometry.Basic";
