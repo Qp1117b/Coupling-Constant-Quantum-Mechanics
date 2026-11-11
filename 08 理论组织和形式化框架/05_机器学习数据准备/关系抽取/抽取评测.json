@@ -1,17 +1,17 @@
 {
   "gold_edges": 77,
   "gold_pairs": 77,
-  "candidates": 915,
-  "pattern_candidates": 258,
+  "candidates": 917,
+  "pattern_candidates": 260,
   "cooccur_only_candidates": 657,
   "pair_hits": 32,
   "pattern_pair_hits": 18,
   "precision_pair": 0.035,
-  "precision_pattern": 0.07,
+  "precision_pattern": 0.069,
   "recall_pair": 0.416,
   "recall_pair_unordered": 0.481,
   "recall_pattern": 0.234,
-  "f1_pair": 0.065,
+  "f1_pair": 0.064,
   "relation_type_accuracy": 0.111,
   "typed_candidates_on_gold_pairs": 18,
   "recall_ceiling_sentence_cooccurrence": 0.506,
@@ -23,7 +23,7 @@
       "pair_hits": 0
     },
     "映射": {
-      "candidates": 59,
+      "candidates": 60,
       "pair_hits": 5
     },
     "等价": {

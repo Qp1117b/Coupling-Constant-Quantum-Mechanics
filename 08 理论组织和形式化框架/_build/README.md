@@ -6,6 +6,8 @@
 ## 运行环境
 
 - Python 3.14（`C:/Python314/python.exe`，已装 `numpy`、`networkx`、`matplotlib`、`owlready2`、`scipy`、`PIL`）。
+  **务必用绝对路径调用该解释器**：PATH 里的 `python` 若是别的版本（如 3.13），`jieba/rdflib/owlready2/numpy/pyshacl` 全部缺失，
+  脚本不会报错而是**静默降级**（分词退回正则、TF-IDF 与近邻结果偏斜），实测可让证据覆盖从 213/213 掉到 201/213。
 - 无外部 Graphviz `dot` 二进制（静态图由 networkx+matplotlib 渲染）。
 
 ## 执行顺序
