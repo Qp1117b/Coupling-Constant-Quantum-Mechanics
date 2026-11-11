@@ -148,6 +148,16 @@ Methodology.Basic,Mathlib.Data.Real.Basic
 Methodology.Basic,Mathlib.Data.Nat.Basic
 Methodology.Basic,Mathlib.Data.Set.Finite.Basic
 Methodology.Basic,Mathlib.Tactic
+NonMarkovianity,NonMarkovianity.Basic
+NonMarkovianity,NonMarkovianity.Markovization
+NonMarkovianity,NonMarkovianity.ScaleThreshold
+NonMarkovianity,NonMarkovianity.ProperTimeRelaxation
+NonMarkovianity.Basic,Mathlib.Data.Real.Basic
+NonMarkovianity.Basic,Mathlib.Tactic
+NonMarkovianity.Markovization,NonMarkovianity.Basic
+NonMarkovianity.ProperTimeRelaxation,NonMarkovianity.Basic
+NonMarkovianity.ProperTimeRelaxation,Superconductivity.CouplingSpace
+NonMarkovianity.ScaleThreshold,NonMarkovianity.Markovization
 PhysicalConstants,PhysicalConstants.Basic
 PhysicalConstants.Basic,Mathlib.Data.Real.Basic
 PhysicalConstants.Basic,Mathlib.Analysis.SpecialFunctions.Exp
