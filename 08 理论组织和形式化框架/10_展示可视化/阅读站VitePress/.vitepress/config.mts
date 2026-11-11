@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261112050612' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261112050612' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261112050612' }],
-    ['script', { src: '/cqm-glossary.js?v=20261112050612', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261112050612', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261112050612', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261112050612', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261112050612', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261112050612', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261112050612', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261112054107' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261112054107' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261112054107' }],
+    ['script', { src: '/cqm-glossary.js?v=20261112054107', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261112054107', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261112054107', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261112054107', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261112054107', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261112054107', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261112054107', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -356,6 +356,10 @@ export default defineConfig({
       {
         "text": "FG纤维丛理论",
         "link": "/D029_FG纤维丛理论"
+      },
+      {
+        "text": "LQG 到 Regge 的显式映射：自旋—面积—角—角亏",
+        "link": "/D055_LQG到Regge显式映射"
       }
     ]
   },
@@ -410,7 +414,7 @@ export default defineConfig({
     "text": "术语表",
     "items": [
       {
-        "text": "术语总览（420 条）",
+        "text": "术语总览（421 条）",
         "link": "/TERMS_术语表"
       }
     ]
@@ -421,15 +425,6 @@ export default defineConfig({
       {
         "text": "文献总览（189 条）",
         "link": "/REFS_文献总览"
-      }
-    ]
-  },
-  {
-    "text": "其它",
-    "items": [
-      {
-        "text": "LQG 到 Regge 的显式映射：自旋—面积—角—角亏",
-        "link": "/F01_FG_LQG-Regge显式映射"
       }
     ]
   },

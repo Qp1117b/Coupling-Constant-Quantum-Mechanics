@@ -77,168 +77,169 @@
 {"doc_id": "D001", "sid": 76, "start": 19286, "end": 19583, "kind": "table", "text": "| :---------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |"}
 {"doc_id": "D001", "sid": 77, "start": 19584, "end": 19881, "kind": "table", "text": "| [FG 核心理论](07 精细引力（FG）/FG_核心理论.md)   | FG核心理论：SU(5)重组实现⇒$A_4$嘉当矩阵⇒4紧致本征群$\\{SU(2)_k\\}_{k=1}^{4}$（全紧致）⇒4耦合常数，$\\alpha^{-1}$电磁群耦合常数，是GL(5)整体的反映                                                                                                                                                            |"}
 {"doc_id": "D001", "sid": 78, "start": 19882, "end": 20179, "kind": "table", "text": "| [FG 纤维丛理论](07 精细引力（FG）/FG_纤维丛理论.md) | FG纤维丛数学结构：SU(5)重组实现链条、双空间同步算符、GL(5)单层表示。§1.5纤维丛双框架（运动学容器与动力学重组相互关联）。§2.0主丛结构关系$F=G\\Rightarrow R=G\\Rightarrow\\hat{H}$（$\\Rightarrow$表示重组实现，描述规范相变物理，类薛定谔方程，四层结构）。§9纤维丛与CFT严格对应（截面=primary、联络=Virasoro、曲率=对易子、和乐=monodromy、同步算符=mode算符、Dirac条件=共形自举）；§9.9局域分析足够性原理 |"}
-{"doc_id": "D001", "sid": 79, "start": 20182, "end": 20199, "kind": "heading", "text": "### 08 理论组织和形式化框架"}
-{"doc_id": "D001", "sid": 80, "start": 20201, "end": 20212, "kind": "table", "text": "| 文档 | 内容 |"}
-{"doc_id": "D001", "sid": 81, "start": 20213, "end": 20224, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 82, "start": 20225, "end": 20389, "kind": "table", "text": "| [理论组织和形式化框架总览](08 理论组织和形式化框架/README.md) | 结构化/形式化组织层（七维度）：结构化数据、概念本体（OWL）、超图与理论图、Lean 对接、机器学习数据准备、动态机制、经验检验、元理论反思、桥接与翻译、展示可视化、元数据。外部理论文本不动，产物由 `_build/` 脚本可重复生成 |"}
-{"doc_id": "D001", "sid": 83, "start": 20390, "end": 20843, "kind": "table", "text": "| [Lean 4 形式化验证项目](08 理论组织和形式化框架/04_Lean对接/Lean源码/) | CQM 的 Lean 4 形式化验证项目。11 库（8 库编译通过，3 库部分模块不通过）：CausalSet、CouplingSpace、CartanAlgebra、SpectralGeometry、Decoherence、PhysicalConstants、PrimeGeometry、Methodology、Superconductivity（模块，涵盖：本体论、BCS 退化与还原、嘉当张量超导方程、推导链、元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$ 谱公式与三重恒等形式化：6 模块、101 定理） |"}
-{"doc_id": "D001", "sid": 84, "start": 20846, "end": 20852, "kind": "heading", "text": "### 归档"}
-{"doc_id": "D001", "sid": 85, "start": 20854, "end": 20865, "kind": "table", "text": "| 文档 | 内容 |"}
-{"doc_id": "D001", "sid": 86, "start": 20866, "end": 20877, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 87, "start": 20878, "end": 21079, "kind": "table", "text": "| [CQM 引力 量子引力集成](归档/CQM_引力_量子引力集成.md) | 已归档：量子引力＝禁闭内部（L1）叠加态因果结构的完整表述（五个等价方面：$[\\hat u,\\hat p_u]=i$、$\\Delta v_\\tau\\neq0$、$[x^\\mu,x^\\nu]\\neq0$、$A_4^{(q)}$ 非对角、因果序方向叠加）。现行讨论见 `02 量子引力/CQM_引力_量子引力讨论.md` |"}
-{"doc_id": "D001", "sid": 88, "start": 21080, "end": 21186, "kind": "table", "text": "| [CQM 框架路线与理论纪要](归档/CQM_框架路线与理论纪要.md) | 已归档：CQM 理论框架路线图与研究纪要（完整理论结构、层级递进、FG 层级同步算符体系、超导统一方法论、关键缺口与开放问题） |"}
-{"doc_id": "D001", "sid": 89, "start": 21187, "end": 21309, "kind": "table", "text": "| [CQM 混合 混合矩阵](归档/CQM_混合_混合矩阵.md) | 已归档：混合矩阵来源的随机传输方程推导（反厄米性约束+再生产幂等性系综平均→CKM/PMNS 为 $\\Sigma$ 本征矢量矩阵，Lindblad 结构，味守恒涌现） |"}
-{"doc_id": "D001", "sid": 90, "start": 21310, "end": 21476, "kind": "table", "text": "| [CQM 退相干 质数数轴](归档/CQM_退相干_质数数轴.md) | 已归档：禁闭退相干——质数数轴模型概念框架（禁闭=退相干=Sprinkling 密度边界发散相变，$\\frac{dN}{d\\tau}\\to0 \\Leftrightarrow \\rho(u)\\to\\infty \\Leftrightarrow$ 退相干） |"}
-{"doc_id": "D001", "sid": 91, "start": 21477, "end": 21632, "kind": "table", "text": "| [FG 自守形式 从SU5到壳层结构的完整条件链](归档/FG_自守形式_从SU5到壳层结构的完整条件链.md) | 已归档：从 SU(5) 到自守形式的完整 6 条件链（嘉当矩阵+数域+紧化+轨道+中心特征+Hecke 代数→壳层结构 $s/p/d/f$ 唯一确定，强多重性一+newform 理论） |"}
-{"doc_id": "D001", "sid": 92, "start": 21634, "end": 21644, "kind": "heading", "text": "### 归档 CNT"}
-{"doc_id": "D001", "sid": 93, "start": 21646, "end": 21657, "kind": "table", "text": "| 文档 | 内容 |"}
-{"doc_id": "D001", "sid": 94, "start": 21658, "end": 21669, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 95, "start": 21670, "end": 21739, "kind": "table", "text": "| [归档 CNT/](归档/归档 CNT/) | CNT（闭合核理论）阶段（2025-2026）的全部历史研究文档。只读归档，不维护 |"}
-{"doc_id": "D001", "sid": 96, "start": 21741, "end": 21744, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 97, "start": 21746, "end": 21755, "kind": "heading", "text": "## 核心数值结果"}
-{"doc_id": "D001", "sid": 98, "start": 21757, "end": 21778, "kind": "table", "text": "| 参数 | 符号 | 数值 | 来源 |"}
-{"doc_id": "D001", "sid": 99, "start": 21779, "end": 21802, "kind": "table", "text": "|:---|:---:|:---:|:---|"}
-{"doc_id": "D001", "sid": 100, "start": 21803, "end": 21872, "kind": "table", "text": "| 相变量子 | $☯$ | $0.02309570897$ | $\\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1}$ |"}
-{"doc_id": "D001", "sid": 101, "start": 21873, "end": 21938, "kind": "table", "text": "| 第一耦级 | $\\mathfrak{c}_1$ | $200.04045483$ | $1/4 + \\gamma_1^2$ |"}
-{"doc_id": "D001", "sid": 102, "start": 21939, "end": 22044, "kind": "table", "text": "| Mathieu 临界 | $\\lambda_c$ | $1.316022911$ | 临界方程 $\\lambda_{\\min}(q_c) = 2q_c$ 的唯一根（$\\lambda_c = 4q_c$） |"}
-{"doc_id": "D001", "sid": 103, "start": 22045, "end": 22133, "kind": "table", "text": "| Dynkin 指数比 | $I$ | $T(\\mathbf{24})/T(\\mathbf{8}) = 5/3$ | SU(5) 群论（SU(3) ⊂ SU(5) 嵌入） |"}
-{"doc_id": "D001", "sid": 104, "start": 22134, "end": 22183, "kind": "table", "text": "| 谱修正 | $\\kappa$ | $(31+☯)/30$ | 4-单纯形/Adele 周期 |"}
-{"doc_id": "D001", "sid": 105, "start": 22184, "end": 22289, "kind": "table", "text": "| **$G_N$ (理论公式值)** | | $\\mathbf{6.708811657 \\times 10^{-39}}$ GeV$^{-2}$ | CQM 推导（乘以 $\\hbar c$ 恢复完整量纲） |"}
-{"doc_id": "D001", "sid": 106, "start": 22290, "end": 22386, "kind": "table", "text": "| **$G_N$ (SI)** | | $\\mathbf{6.6742810045 \\times 10^{-11}}$ m$^3$ kg$^{-1}$ s$^{-2}$ | CQM 推导 |"}
-{"doc_id": "D001", "sid": 107, "start": 22387, "end": 22477, "kind": "table", "text": "| **偏差 vs CODATA** | | $\\mathbf{-3}$ **ppm** | 构造后验数字校验，待独立复现（α、$G_N$ 在标准物理中仍为实验参数/基本输入） |"}
-{"doc_id": "D001", "sid": 108, "start": 22478, "end": 22581, "kind": "table", "text": "| $\\alpha^{-1}_{\\text{SU(5)}}$ | | $16384\\pi/375 \\approx 137.2583$ | 启发式近似，与实验 $137.035999$ 偏差≈0.162% |"}
-{"doc_id": "D001", "sid": 109, "start": 22582, "end": 22844, "kind": "table", "text": "| **$\\alpha^{-1}_{\\text{Wyler}}$** | | $\\frac{16}{9}\\pi^{11/4}(5!)^{1/4} \\approx 137.0361$ | **Wyler常数**：$A_4$全部群论不变量（$h=5, r=4, \\lvert W\\rvert=120, \\text{tr}=8$），偏差仅**0.61 ppm**（粗表达式偏差 0.162%，两者之比约 2659；该比值是 ppm 的相对精度之比，不构成独立精度证据——Wyler 式本身在实验精度内，未提供超出实验的新信息） |"}
-{"doc_id": "D001", "sid": 110, "start": 22846, "end": 22849, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 111, "start": 22851, "end": 22858, "kind": "heading", "text": "## 核心公式"}
-{"doc_id": "D001", "sid": 112, "start": 22860, "end": 22874, "kind": "heading", "text": "### 耦合空间不确定性关系"}
-{"doc_id": "D001", "sid": 113, "start": 22876, "end": 22983, "kind": "prose", "text": "$$[\\hat{u}, \\hat{p}_u] = i, \\quad \\frac{\\Delta r}{\\langle r \\rangle} \\cdot \\Delta v_\\tau \\geq \\frac{☯}{2}$$"}
-{"doc_id": "D001", "sid": 114, "start": 22985, "end": 22999, "kind": "heading", "text": "### 牛顿引力常数可能公式"}
-{"doc_id": "D001", "sid": 115, "start": 23001, "end": 23144, "kind": "prose", "text": "$$G_N = \\frac{\\hbar c}{m_p^2} \\cdot I \\cdot \\lambda_c \\cdot ☯^2 \\cdot \\mathfrak{c}_1 \\cdot \\exp\\left(-\\frac{2}{☯}\\right) \\cdot (1 + \\kappa ☯)$$"}
-{"doc_id": "D001", "sid": 116, "start": 23146, "end": 23165, "kind": "heading", "text": "### Sierra-CQM 耦谱定理"}
-{"doc_id": "D001", "sid": 117, "start": 23167, "end": 23218, "kind": "prose", "text": "$$\\mathfrak{c}_n^{(R)} = \\frac{1}{4} + \\gamma_n^2$$"}
-{"doc_id": "D001", "sid": 118, "start": 23220, "end": 23367, "kind": "quote", "text": "> **注（渐近 + 构造）**：此处 $\\mathfrak{c}_n^{(R)}=1/4+\\gamma_n^2$ 为**渐近定理**的精确形写（渐近式为 $\\mathfrak{c}_n^{(R)}=1/4+\\gamma_n^2+O(\\gamma_n^2/n)$，相对误差 $O(1/n)$）；"}
-{"doc_id": "D001", "sid": 119, "start": 23367, "end": 23405, "kind": "quote", "text": "有限 $n$ 的**精确等同属 CQM 框架自建构造**，超出渐近定理范围。"}
-{"doc_id": "D001", "sid": 120, "start": 23405, "end": 23490, "kind": "quote", "text": "算符形式借自 Berry–Keating/Sierra，**非 Sierra 2008/2011 原文的直接结果**（原文给出的是连续谱嵌入离散共振/与平均零点谱一致）。"}
-{"doc_id": "D001", "sid": 121, "start": 23492, "end": 23511, "kind": "heading", "text": "### 等价链：禁闭 = 前核子自组织"}
-{"doc_id": "D001", "sid": 122, "start": 23513, "end": 23689, "kind": "prose", "text": "$$\\frac{dN}{d\\tau} \\to 0 \\;\\Leftrightarrow\\; N(\\tau) \\to L \\;\\Leftrightarrow\\; u(\\tau) \\to \\ln L \\;\\Leftrightarrow\\; \\rho(u) \\to \\infty \\;\\Leftrightarrow\\; \\text{Decoherence}$$"}
-{"doc_id": "D001", "sid": 123, "start": 23691, "end": 23694, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 124, "start": 23696, "end": 23703, "kind": "heading", "text": "## 关键术语"}
-{"doc_id": "D001", "sid": 125, "start": 23705, "end": 23716, "kind": "table", "text": "| 术语 | 定义 |"}
-{"doc_id": "D001", "sid": 126, "start": 23717, "end": 23728, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 127, "start": 23729, "end": 23776, "kind": "table", "text": "| **耦合空间** | $u = \\ln r$，$r$ 为总耦合强度。量子力学的基本舞台 |"}
-{"doc_id": "D001", "sid": 128, "start": 23777, "end": 23817, "kind": "table", "text": "| **因果集** | $(X, \\prec)$，再生产事件的离散因果序结构 |"}
-{"doc_id": "D001", "sid": 129, "start": 23818, "end": 23871, "kind": "table", "text": "| **再生产** | $\\hat{\\mu}^2 = \\hat{\\mu}$，有限本体维持自身存在的操作 |"}
-{"doc_id": "D001", "sid": 130, "start": 23872, "end": 23934, "kind": "table", "text": "| **嘉当矩阵** | $A_4 = \\text{Cartan}(\\text{SU}(5))$，禁闭边界涌现的代数结构 |"}
-{"doc_id": "D001", "sid": 131, "start": 23935, "end": 23977, "kind": "table", "text": "| **L1 / L2 / L3+** | 禁闭内部 / 禁闭边界 / 外部时空 |"}
-{"doc_id": "D001", "sid": 132, "start": 23978, "end": 24017, "kind": "table", "text": "| **退相干** | 双向干涉 → 单向因果，非交换 → 交换几何的相变 |"}
-{"doc_id": "D001", "sid": 133, "start": 24018, "end": 24051, "kind": "table", "text": "| **条件性幺正** | 系统内部幺正演化依赖于边界持续存在 |"}
-{"doc_id": "D001", "sid": 134, "start": 24052, "end": 24120, "kind": "table", "text": "| **属性锚点** | $GL(n)$ 的矩阵元素 $g_{ij}$——属性先在的基点（本体论纲领：属性先在，关系潜在-显现化它） |"}
-{"doc_id": "D001", "sid": 135, "start": 24121, "end": 24189, "kind": "table", "text": "| **量纲谱系** | 基本自守量纲（极大关系群定义）／子自守量纲（子群定义，量纲内细分）／派生量纲（无自守形式对应，如物质的量） |"}
-{"doc_id": "D001", "sid": 136, "start": 24191, "end": 24194, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 137, "start": 24196, "end": 24204, "kind": "heading", "text": "## 严格性缺口"}
-{"doc_id": "D001", "sid": 138, "start": 24206, "end": 24223, "kind": "table", "text": "| 缺口 | 内容 | 优先级 |"}
-{"doc_id": "D001", "sid": 139, "start": 24224, "end": 24240, "kind": "table", "text": "|:---|:---|---:|"}
-{"doc_id": "D001", "sid": 140, "start": 24241, "end": 24285, "kind": "table", "text": "| **缺口 C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |"}
-{"doc_id": "D001", "sid": 141, "start": 24286, "end": 24329, "kind": "table", "text": "| **G2** | 耦合空间 $\\to$ 双曲 Laplacian 的必要性 | |"}
-{"doc_id": "D001", "sid": 142, "start": 24330, "end": 24382, "kind": "table", "text": "| **G3** | $\\hat{D} = -i(\\partial_u - 1/2)$ 的唯一性 | |"}
-{"doc_id": "D001", "sid": 143, "start": 24383, "end": 24441, "kind": "table", "text": "| **G4** | $\\hat{D} \\to \\hat{H} = \\hat{D}^2 + 1/4$ 的涌现 | |"}
-{"doc_id": "D001", "sid": 144, "start": 24442, "end": 24488, "kind": "table", "text": "| **G5** | 退相干 $\\to$ 边界条件 $\\vartheta_n$ 锁定 | |"}
-{"doc_id": "D001", "sid": 145, "start": 24489, "end": 24526, "kind": "table", "text": "| **G7** | $\\Sigma_{ij}$ 的第一性数值来源 | |"}
-{"doc_id": "D001", "sid": 146, "start": 24527, "end": 24564, "kind": "table", "text": "| **G8** | CP 破坏相位 $\\delta$ 的严格来源 | |"}
-{"doc_id": "D001", "sid": 147, "start": 24566, "end": 24579, "kind": "heading", "text": "### 缺口编号的权威划分"}
-{"doc_id": "D001", "sid": 148, "start": 24581, "end": 24610, "kind": "prose", "text": "体系内有**三套独立编号**，作用域不同，引用时不得混用："}
-{"doc_id": "D001", "sid": 149, "start": 24612, "end": 24633, "kind": "table", "text": "| 编号系 | 作用域 | 权威定义处 |"}
-{"doc_id": "D001", "sid": 150, "start": 24634, "end": 24650, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D001", "sid": 151, "start": 24651, "end": 24754, "kind": "table", "text": "| **C / G2–G8**（现行定义覆盖 C 与 G2–G5、G7、G8；G6 未定义） | 核心理论（退相干、耦合空间、CP 相位） | 本表 + `01 核心理论/CQM_核心_集成理论.md` |"}
-{"doc_id": "D001", "sid": 152, "start": 24755, "end": 24811, "kind": "table", "text": "| **G9–G22** | 超导涌现链 | `06 超导/CQM_超导_专题与扩展.md` §13 缺口表 |"}
-{"doc_id": "D001", "sid": 153, "start": 24812, "end": 24876, "kind": "table", "text": "| **N1–N4** | 中子缺陷矩阵与 FG 角亏 | `01 核心理论/CQM_核心_引力存在论前提.md` §二.5 |"}
-{"doc_id": "D001", "sid": 154, "start": 24878, "end": 25031, "kind": "prose", "text": "**集成理论结论章的局部编号**：`CQM_核心_集成理论.md` 结论缺口表使用该章局部编号 A–E（A=二阶层在禁闭边界严格退相干为一阶层、B=非交换粗粒化极限、C=核心缺口 C、D=Lindblad 稳态→边-面关联矩阵、E=$\\lambda_c$ 方程是退相干的必然结果），不与 G2–G8 混用。"}
-{"doc_id": "D001", "sid": 155, "start": 25033, "end": 25072, "kind": "prose", "text": "**跨文档歧义登记**（同一记号在不同文档被赋予不同内容，引用时须指明出处）："}
-{"doc_id": "D001", "sid": 156, "start": 25074, "end": 25114, "kind": "table", "text": "| 记号 | 本 README / 超导 §13 的定义 | 其他文档的定义 |"}
-{"doc_id": "D001", "sid": 157, "start": 25115, "end": 25131, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D001", "sid": 158, "start": 25132, "end": 25236, "kind": "table", "text": "| **C** | 退相干稳态为何恰好是 $A_4$（正四单纯形） | `CQM_核心_因果网络同步理论.md:243` 记为“退相干稳态是 $\\{5,4\\}$ 镶嵌”——同一问题的不同表述，指向同一缺口 |"}
-{"doc_id": "D001", "sid": 159, "start": 25237, "end": 25325, "kind": "table", "text": "| **G19** | 和乐相位闭合条件“$\\approx 1$”的容差标定 | `CQM_核心_因果网络同步理论.md:243` 记为“自由能 $F_n$ 可计算作用量” |"}
-{"doc_id": "D001", "sid": 160, "start": 25326, "end": 25403, "kind": "table", "text": "| **G21** | 赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论.md:243` 记为“和乐容差标定” |"}
-{"doc_id": "D001", "sid": 161, "start": 25404, "end": 25516, "kind": "table", "text": "| **N2** | 角亏-$\\delta$ 显式几何公式未写出 | `CQM_超导核心理论.md` §2.3 补注（对应 `SPAF.lean` N2 节）以 N2 指“微扰质量/行列式匹配”（该支已在 G14 闭合） |"}
-{"doc_id": "D001", "sid": 162, "start": 25517, "end": 25636, "kind": "table", "text": "| **G17 / G20** | 不属缺口表编号（G17 = FG→GR 连续极限退化定理，G20-ext = 两质子耦合阈值，二者均已闭合） | `08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md` |"}
-{"doc_id": "D001", "sid": 163, "start": 25638, "end": 25854, "kind": "prose", "text": "**G18 与 G22 的状态补充**：`专题与扩展.md` §13 的 G18/G22 行同时包含“已闭合环节”与“待办环节”（G18 行内含 $\\beta$、$C^2$、$\\Delta\\delta_0$ 的闭合推导，末尾列出 $q\\approx0$ 的理论解释、$E_2-E_1=\\Delta\\delta_0^2K_{\\text{eff}}$ 的严格证明、$S_{U(1)//\\mathbb{Z}_n}$ 的显式构造等未闭合项；"}
-{"doc_id": "D001", "sid": 164, "start": 25854, "end": 25879, "kind": "prose", "text": "G22 行的自由能 $F_n$ 停留在形式定义）。"}
-{"doc_id": "D001", "sid": 165, "start": 25879, "end": 25924, "kind": "prose", "text": "引用时须区分**行内已闭合项**与**行内未闭合项**，不得整行引作“闭合”或“未闭合”。"}
-{"doc_id": "D001", "sid": 166, "start": 25926, "end": 25929, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 167, "start": 25931, "end": 25938, "kind": "heading", "text": "## 目录结构"}
-{"doc_id": "D001", "sid": 168, "start": 25940, "end": 25943, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 169, "start": 25944, "end": 25954, "kind": "code", "text": "CQMFormal/"}
-{"doc_id": "D001", "sid": 170, "start": 25955, "end": 25974, "kind": "code", "text": "├── README.md ← 本文件"}
-{"doc_id": "D001", "sid": 171, "start": 25975, "end": 25975, "kind": "code", "text": ""}
-{"doc_id": "D001", "sid": 172, "start": 25976, "end": 25995, "kind": "code", "text": "├── 01 核心理论/ ← 理论主干"}
-{"doc_id": "D001", "sid": 173, "start": 25996, "end": 26016, "kind": "code", "text": "│ ├── CQM_核心_集成理论.md"}
-{"doc_id": "D001", "sid": 174, "start": 26017, "end": 26040, "kind": "code", "text": "│ ├── CQM_核心_引力存在论前提.md"}
-{"doc_id": "D001", "sid": 175, "start": 26041, "end": 26065, "kind": "code", "text": "│ ├── CQM_核心_因果网络同步理论.md"}
-{"doc_id": "D001", "sid": 176, "start": 26066, "end": 26094, "kind": "code", "text": "│ ├── CQM_核心_朗兰兹分层共振与相变量子.md"}
-{"doc_id": "D001", "sid": 177, "start": 26095, "end": 26119, "kind": "code", "text": "│ ├── CQM_核心_共形场论与OPE.md"}
-{"doc_id": "D001", "sid": 178, "start": 26120, "end": 26140, "kind": "code", "text": "│ ├── CQM_核心_声子理论.md"}
-{"doc_id": "D001", "sid": 179, "start": 26141, "end": 26162, "kind": "code", "text": "│ ├── CQM_核心_量纲与群论.md"}
-{"doc_id": "D001", "sid": 180, "start": 26163, "end": 26185, "kind": "code", "text": "│ └── CQM_核心_唯物主义群论.md"}
-{"doc_id": "D001", "sid": 181, "start": 26186, "end": 26198, "kind": "code", "text": "├── 02 量子引力/"}
-{"doc_id": "D001", "sid": 182, "start": 26199, "end": 26221, "kind": "code", "text": "│ └── CQM_引力_量子引力讨论.md"}
-{"doc_id": "D001", "sid": 183, "start": 26222, "end": 26236, "kind": "code", "text": "├── 03 引力与退相干/"}
-{"doc_id": "D001", "sid": 184, "start": 26237, "end": 26259, "kind": "code", "text": "│ ├── CQM_引力_GN可能公式.md"}
-{"doc_id": "D001", "sid": 185, "start": 26260, "end": 26282, "kind": "code", "text": "│ ├── CQM_退相干_引力因果场.md"}
-{"doc_id": "D001", "sid": 186, "start": 26283, "end": 26312, "kind": "code", "text": "│ └── CQM_退相干_跨层级深耦合与唯一性难题.md"}
-{"doc_id": "D001", "sid": 187, "start": 26313, "end": 26341, "kind": "code", "text": "├── 04 前沿研究/ ← 前沿交叉文献调研与研究论文"}
-{"doc_id": "D001", "sid": 188, "start": 26342, "end": 26371, "kind": "code", "text": "│ ├── CQM_前沿研究_量子快置乱普适速率极限.md"}
-{"doc_id": "D001", "sid": 189, "start": 26372, "end": 26407, "kind": "code", "text": "│ ├── CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md"}
-{"doc_id": "D001", "sid": 190, "start": 26408, "end": 26440, "kind": "code", "text": "│ ├── CQM_前沿研究_GN第一性推导_公理化证明稿.md"}
-{"doc_id": "D001", "sid": 191, "start": 26441, "end": 26467, "kind": "code", "text": "│ ├── CQM_前沿研究_质量研究思路汇总.md"}
-{"doc_id": "D001", "sid": 192, "start": 26468, "end": 26497, "kind": "code", "text": "│ ├── CQM_前沿研究_待推1边界条件深度分析.md"}
-{"doc_id": "D001", "sid": 193, "start": 26498, "end": 26530, "kind": "code", "text": "│ ├── FG_贝里曲率与Regge曲率的关联_研究论文.md"}
-{"doc_id": "D001", "sid": 194, "start": 26531, "end": 26554, "kind": "code", "text": "│ ├── Wyler常数_A4群论分解.md"}
-{"doc_id": "D001", "sid": 195, "start": 26555, "end": 26581, "kind": "code", "text": "│ ├── CQM_前沿研究_黎曼猜想证明思路.md"}
-{"doc_id": "D001", "sid": 196, "start": 26582, "end": 26611, "kind": "code", "text": "│ └── CQM_前沿研究_相变弧线与自守形式同步.md"}
-{"doc_id": "D001", "sid": 197, "start": 26612, "end": 26626, "kind": "code", "text": "├── 05 方法论与批判/"}
-{"doc_id": "D001", "sid": 198, "start": 26627, "end": 26658, "kind": "code", "text": "│ ├── CQM_方法论_HilbertPolya批判.md"}
-{"doc_id": "D001", "sid": 199, "start": 26659, "end": 26692, "kind": "code", "text": "│ └── CQM_方法论_资本主义-旧物理-层级还原论批判.md"}
-{"doc_id": "D001", "sid": 200, "start": 26693, "end": 26711, "kind": "code", "text": "├── 06 超导/ ← 超导涌现论"}
-{"doc_id": "D001", "sid": 201, "start": 26712, "end": 26769, "kind": "code", "text": "│ ├── CQM_超导核心理论.md ← 完整超导理论（§1-§12、§17、§18.1/18.3，纯理论主线）"}
-{"doc_id": "D001", "sid": 202, "start": 26770, "end": 26820, "kind": "code", "text": "│ ├── CQM_超导_专题与扩展.md ← 精简移出的材料/应用、推导/数值细节与进展/状态内容"}
-{"doc_id": "D001", "sid": 203, "start": 26821, "end": 26860, "kind": "code", "text": "│ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理"}
-{"doc_id": "D001", "sid": 204, "start": 26861, "end": 26900, "kind": "code", "text": "│ ├── CQM_超导_统一方法论.md ← 四层FG剖分方法论与统一计算链"}
-{"doc_id": "D001", "sid": 205, "start": 26901, "end": 26947, "kind": "code", "text": "│ ├── 超导材料设计器/ ← 元素超导材料设计工具文档（8 篇）与配套 Godot 项目"}
-{"doc_id": "D001", "sid": 206, "start": 26948, "end": 26985, "kind": "code", "text": "│ ├── cqm_analysis/ ← 数据（无 Tc 预测结果文件）"}
-{"doc_id": "D001", "sid": 207, "start": 26986, "end": 27047, "kind": "code", "text": "│ │ ├── superconductors_deduplicated.csv ← 超导材料实验数据库（226 条记录）"}
-{"doc_id": "D001", "sid": 208, "start": 27048, "end": 27094, "kind": "code", "text": "│ │ └── element_fg_table.json ← 元素FG表（118 个元素）"}
-{"doc_id": "D001", "sid": 209, "start": 27095, "end": 27124, "kind": "code", "text": "│ └── cqm_framework/ ← 纯CQM实现"}
-{"doc_id": "D001", "sid": 210, "start": 27125, "end": 27161, "kind": "code", "text": "│   ├── atom_db.py ← 共享原子数据库（118个元素）"}
-{"doc_id": "D001", "sid": 211, "start": 27162, "end": 27193, "kind": "code", "text": "│   └── crystal_db.py ← 晶体结构数据库"}
-{"doc_id": "D001", "sid": 212, "start": 27194, "end": 27222, "kind": "code", "text": "├── 07 精细引力（FG）/ ← 精细引力纤维丛理论"}
-{"doc_id": "D001", "sid": 213, "start": 27223, "end": 27239, "kind": "code", "text": "│ ├── FG_核心理论.md"}
-{"doc_id": "D001", "sid": 214, "start": 27240, "end": 27257, "kind": "code", "text": "│ └── FG_纤维丛理论.md"}
-{"doc_id": "D001", "sid": 215, "start": 27258, "end": 27303, "kind": "code", "text": "├── 08 理论组织和形式化框架/ ← 结构化/形式化组织层（七维度；外部理论文本不动）"}
-{"doc_id": "D001", "sid": 216, "start": 27304, "end": 27337, "kind": "code", "text": "│ ├── AGENTS.md ← 七维度运行手册（研究闭环判据）"}
-{"doc_id": "D001", "sid": 217, "start": 27338, "end": 27358, "kind": "code", "text": "│ ├── README.md ← 总览"}
-{"doc_id": "D001", "sid": 218, "start": 27359, "end": 27409, "kind": "code", "text": "│ ├── 00_外部引用/ · 01_结构化数据/ · 02_概念本体/ · 03_超图与理论图/"}
-{"doc_id": "D001", "sid": 219, "start": 27410, "end": 27436, "kind": "code", "text": "│ ├── 04_Lean对接/ ← Lean 对接"}
-{"doc_id": "D001", "sid": 220, "start": 27437, "end": 27476, "kind": "code", "text": "│ │ ├── Lean源码/ ← Lean 4 项目（11 库；8 库通过）"}
-{"doc_id": "D001", "sid": 221, "start": 27477, "end": 27507, "kind": "code", "text": "│ │ ├── Lean结构提取/ ← 声明、模块、导入依赖"}
-{"doc_id": "D001", "sid": 222, "start": 27508, "end": 27551, "kind": "code", "text": "│ │ └── Lean↔概念映射.csv · lean代码路径.yaml · 蓝图/"}
-{"doc_id": "D001", "sid": 223, "start": 27552, "end": 27604, "kind": "code", "text": "│ ├── 05_机器学习数据准备/ · 06_动态机制/ · 07_经验检验/ · 08_元理论反思/"}
-{"doc_id": "D001", "sid": 224, "start": 27605, "end": 27642, "kind": "code", "text": "│ ├── 09_桥接与翻译/ · 10_展示可视化/ · 11_元数据/"}
-{"doc_id": "D001", "sid": 225, "start": 27643, "end": 27666, "kind": "code", "text": "│ └── _build/ ← 可重复生成脚本"}
-{"doc_id": "D001", "sid": 226, "start": 27667, "end": 27667, "kind": "code", "text": ""}
-{"doc_id": "D001", "sid": 227, "start": 27668, "end": 27692, "kind": "code", "text": "├── 一体化研究/文献/ ← 参考文献 PDF"}
-{"doc_id": "D001", "sid": 228, "start": 27693, "end": 27694, "kind": "code", "text": "│"}
-{"doc_id": "D001", "sid": 229, "start": 27695, "end": 27710, "kind": "code", "text": "├── 归档/ ← 已归档文档"}
-{"doc_id": "D001", "sid": 230, "start": 27711, "end": 27735, "kind": "code", "text": "│   ├── CQM_引力_量子引力集成.md"}
-{"doc_id": "D001", "sid": 231, "start": 27736, "end": 27760, "kind": "code", "text": "│   ├── CQM_框架路线与理论纪要.md"}
-{"doc_id": "D001", "sid": 232, "start": 27761, "end": 27783, "kind": "code", "text": "│   ├── CQM_混合_混合矩阵.md"}
-{"doc_id": "D001", "sid": 233, "start": 27784, "end": 27807, "kind": "code", "text": "│   ├── CQM_退相干_质数数轴.md"}
-{"doc_id": "D001", "sid": 234, "start": 27808, "end": 27842, "kind": "code", "text": "│   ├── FG_自守形式_从SU5到壳层结构的完整条件链.md"}
-{"doc_id": "D001", "sid": 235, "start": 27843, "end": 27875, "kind": "code", "text": "│   └── 归档 CNT/ ← CNT 阶段历史文档（只读）"}
-{"doc_id": "D001", "sid": 236, "start": 27876, "end": 27879, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 237, "start": 27881, "end": 27884, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 238, "start": 27886, "end": 27893, "kind": "heading", "text": "## 参考文献"}
-{"doc_id": "D001", "sid": 239, "start": 27895, "end": 27914, "kind": "prose", "text": "核心文献参见各专题文档的参考文献章节。"}
-{"doc_id": "D001", "sid": 240, "start": 27914, "end": 27964, "kind": "prose", "text": "CNT 完整研究已发布于 Zenodo: DOI: 10.5281/zenodo.20804380。"}
+{"doc_id": "D001", "sid": 79, "start": 20180, "end": 20406, "kind": "table", "text": "| [LQG 到 Regge 显式映射](07 精细引力（FG）/FG_LQG-Regge显式映射.md) | LQG→Regge 局部映射：边自旋$j_e$→对偶三角形面积（面积谱$A_e=8\\pi\\gamma\\ell_P^2\\sqrt{j_e(j_e+1)}$）、顶点交织子→4-单纯形边长、$\\{j_e\\}$→角亏$\\delta_v$。给出单 4-单纯形条件性显式映射$\\Phi$的公式、算法与成立条件；多单纯形粘合与自旋泡沫动力学属【待推】 |"}
+{"doc_id": "D001", "sid": 80, "start": 20409, "end": 20426, "kind": "heading", "text": "### 08 理论组织和形式化框架"}
+{"doc_id": "D001", "sid": 81, "start": 20428, "end": 20439, "kind": "table", "text": "| 文档 | 内容 |"}
+{"doc_id": "D001", "sid": 82, "start": 20440, "end": 20451, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 83, "start": 20452, "end": 20616, "kind": "table", "text": "| [理论组织和形式化框架总览](08 理论组织和形式化框架/README.md) | 结构化/形式化组织层（七维度）：结构化数据、概念本体（OWL）、超图与理论图、Lean 对接、机器学习数据准备、动态机制、经验检验、元理论反思、桥接与翻译、展示可视化、元数据。外部理论文本不动，产物由 `_build/` 脚本可重复生成 |"}
+{"doc_id": "D001", "sid": 84, "start": 20617, "end": 21070, "kind": "table", "text": "| [Lean 4 形式化验证项目](08 理论组织和形式化框架/04_Lean对接/Lean源码/) | CQM 的 Lean 4 形式化验证项目。11 库（8 库编译通过，3 库部分模块不通过）：CausalSet、CouplingSpace、CartanAlgebra、SpectralGeometry、Decoherence、PhysicalConstants、PrimeGeometry、Methodology、Superconductivity（模块，涵盖：本体论、BCS 退化与还原、嘉当张量超导方程、推导链、元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$ 谱公式与三重恒等形式化：6 模块、101 定理） |"}
+{"doc_id": "D001", "sid": 85, "start": 21073, "end": 21079, "kind": "heading", "text": "### 归档"}
+{"doc_id": "D001", "sid": 86, "start": 21081, "end": 21092, "kind": "table", "text": "| 文档 | 内容 |"}
+{"doc_id": "D001", "sid": 87, "start": 21093, "end": 21104, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 88, "start": 21105, "end": 21306, "kind": "table", "text": "| [CQM 引力 量子引力集成](归档/CQM_引力_量子引力集成.md) | 已归档：量子引力＝禁闭内部（L1）叠加态因果结构的完整表述（五个等价方面：$[\\hat u,\\hat p_u]=i$、$\\Delta v_\\tau\\neq0$、$[x^\\mu,x^\\nu]\\neq0$、$A_4^{(q)}$ 非对角、因果序方向叠加）。现行讨论见 `02 量子引力/CQM_引力_量子引力讨论.md` |"}
+{"doc_id": "D001", "sid": 89, "start": 21307, "end": 21413, "kind": "table", "text": "| [CQM 框架路线与理论纪要](归档/CQM_框架路线与理论纪要.md) | 已归档：CQM 理论框架路线图与研究纪要（完整理论结构、层级递进、FG 层级同步算符体系、超导统一方法论、关键缺口与开放问题） |"}
+{"doc_id": "D001", "sid": 90, "start": 21414, "end": 21536, "kind": "table", "text": "| [CQM 混合 混合矩阵](归档/CQM_混合_混合矩阵.md) | 已归档：混合矩阵来源的随机传输方程推导（反厄米性约束+再生产幂等性系综平均→CKM/PMNS 为 $\\Sigma$ 本征矢量矩阵，Lindblad 结构，味守恒涌现） |"}
+{"doc_id": "D001", "sid": 91, "start": 21537, "end": 21703, "kind": "table", "text": "| [CQM 退相干 质数数轴](归档/CQM_退相干_质数数轴.md) | 已归档：禁闭退相干——质数数轴模型概念框架（禁闭=退相干=Sprinkling 密度边界发散相变，$\\frac{dN}{d\\tau}\\to0 \\Leftrightarrow \\rho(u)\\to\\infty \\Leftrightarrow$ 退相干） |"}
+{"doc_id": "D001", "sid": 92, "start": 21704, "end": 21859, "kind": "table", "text": "| [FG 自守形式 从SU5到壳层结构的完整条件链](归档/FG_自守形式_从SU5到壳层结构的完整条件链.md) | 已归档：从 SU(5) 到自守形式的完整 6 条件链（嘉当矩阵+数域+紧化+轨道+中心特征+Hecke 代数→壳层结构 $s/p/d/f$ 唯一确定，强多重性一+newform 理论） |"}
+{"doc_id": "D001", "sid": 93, "start": 21861, "end": 21871, "kind": "heading", "text": "### 归档 CNT"}
+{"doc_id": "D001", "sid": 94, "start": 21873, "end": 21884, "kind": "table", "text": "| 文档 | 内容 |"}
+{"doc_id": "D001", "sid": 95, "start": 21885, "end": 21896, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 96, "start": 21897, "end": 21966, "kind": "table", "text": "| [归档 CNT/](归档/归档 CNT/) | CNT（闭合核理论）阶段（2025-2026）的全部历史研究文档。只读归档，不维护 |"}
+{"doc_id": "D001", "sid": 97, "start": 21968, "end": 21971, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 98, "start": 21973, "end": 21982, "kind": "heading", "text": "## 核心数值结果"}
+{"doc_id": "D001", "sid": 99, "start": 21984, "end": 22005, "kind": "table", "text": "| 参数 | 符号 | 数值 | 来源 |"}
+{"doc_id": "D001", "sid": 100, "start": 22006, "end": 22029, "kind": "table", "text": "|:---|:---:|:---:|:---|"}
+{"doc_id": "D001", "sid": 101, "start": 22030, "end": 22099, "kind": "table", "text": "| 相变量子 | $☯$ | $0.02309570897$ | $\\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1}$ |"}
+{"doc_id": "D001", "sid": 102, "start": 22100, "end": 22165, "kind": "table", "text": "| 第一耦级 | $\\mathfrak{c}_1$ | $200.04045483$ | $1/4 + \\gamma_1^2$ |"}
+{"doc_id": "D001", "sid": 103, "start": 22166, "end": 22271, "kind": "table", "text": "| Mathieu 临界 | $\\lambda_c$ | $1.316022911$ | 临界方程 $\\lambda_{\\min}(q_c) = 2q_c$ 的唯一根（$\\lambda_c = 4q_c$） |"}
+{"doc_id": "D001", "sid": 104, "start": 22272, "end": 22360, "kind": "table", "text": "| Dynkin 指数比 | $I$ | $T(\\mathbf{24})/T(\\mathbf{8}) = 5/3$ | SU(5) 群论（SU(3) ⊂ SU(5) 嵌入） |"}
+{"doc_id": "D001", "sid": 105, "start": 22361, "end": 22410, "kind": "table", "text": "| 谱修正 | $\\kappa$ | $(31+☯)/30$ | 4-单纯形/Adele 周期 |"}
+{"doc_id": "D001", "sid": 106, "start": 22411, "end": 22516, "kind": "table", "text": "| **$G_N$ (理论公式值)** | | $\\mathbf{6.708811657 \\times 10^{-39}}$ GeV$^{-2}$ | CQM 推导（乘以 $\\hbar c$ 恢复完整量纲） |"}
+{"doc_id": "D001", "sid": 107, "start": 22517, "end": 22613, "kind": "table", "text": "| **$G_N$ (SI)** | | $\\mathbf{6.6742810045 \\times 10^{-11}}$ m$^3$ kg$^{-1}$ s$^{-2}$ | CQM 推导 |"}
+{"doc_id": "D001", "sid": 108, "start": 22614, "end": 22704, "kind": "table", "text": "| **偏差 vs CODATA** | | $\\mathbf{-3}$ **ppm** | 构造后验数字校验，待独立复现（α、$G_N$ 在标准物理中仍为实验参数/基本输入） |"}
+{"doc_id": "D001", "sid": 109, "start": 22705, "end": 22808, "kind": "table", "text": "| $\\alpha^{-1}_{\\text{SU(5)}}$ | | $16384\\pi/375 \\approx 137.2583$ | 启发式近似，与实验 $137.035999$ 偏差≈0.162% |"}
+{"doc_id": "D001", "sid": 110, "start": 22809, "end": 23071, "kind": "table", "text": "| **$\\alpha^{-1}_{\\text{Wyler}}$** | | $\\frac{16}{9}\\pi^{11/4}(5!)^{1/4} \\approx 137.0361$ | **Wyler常数**：$A_4$全部群论不变量（$h=5, r=4, \\lvert W\\rvert=120, \\text{tr}=8$），偏差仅**0.61 ppm**（粗表达式偏差 0.162%，两者之比约 2659；该比值是 ppm 的相对精度之比，不构成独立精度证据——Wyler 式本身在实验精度内，未提供超出实验的新信息） |"}
+{"doc_id": "D001", "sid": 111, "start": 23073, "end": 23076, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 112, "start": 23078, "end": 23085, "kind": "heading", "text": "## 核心公式"}
+{"doc_id": "D001", "sid": 113, "start": 23087, "end": 23101, "kind": "heading", "text": "### 耦合空间不确定性关系"}
+{"doc_id": "D001", "sid": 114, "start": 23103, "end": 23210, "kind": "prose", "text": "$$[\\hat{u}, \\hat{p}_u] = i, \\quad \\frac{\\Delta r}{\\langle r \\rangle} \\cdot \\Delta v_\\tau \\geq \\frac{☯}{2}$$"}
+{"doc_id": "D001", "sid": 115, "start": 23212, "end": 23226, "kind": "heading", "text": "### 牛顿引力常数可能公式"}
+{"doc_id": "D001", "sid": 116, "start": 23228, "end": 23371, "kind": "prose", "text": "$$G_N = \\frac{\\hbar c}{m_p^2} \\cdot I \\cdot \\lambda_c \\cdot ☯^2 \\cdot \\mathfrak{c}_1 \\cdot \\exp\\left(-\\frac{2}{☯}\\right) \\cdot (1 + \\kappa ☯)$$"}
+{"doc_id": "D001", "sid": 117, "start": 23373, "end": 23392, "kind": "heading", "text": "### Sierra-CQM 耦谱定理"}
+{"doc_id": "D001", "sid": 118, "start": 23394, "end": 23445, "kind": "prose", "text": "$$\\mathfrak{c}_n^{(R)} = \\frac{1}{4} + \\gamma_n^2$$"}
+{"doc_id": "D001", "sid": 119, "start": 23447, "end": 23594, "kind": "quote", "text": "> **注（渐近 + 构造）**：此处 $\\mathfrak{c}_n^{(R)}=1/4+\\gamma_n^2$ 为**渐近定理**的精确形写（渐近式为 $\\mathfrak{c}_n^{(R)}=1/4+\\gamma_n^2+O(\\gamma_n^2/n)$，相对误差 $O(1/n)$）；"}
+{"doc_id": "D001", "sid": 120, "start": 23594, "end": 23632, "kind": "quote", "text": "有限 $n$ 的**精确等同属 CQM 框架自建构造**，超出渐近定理范围。"}
+{"doc_id": "D001", "sid": 121, "start": 23632, "end": 23717, "kind": "quote", "text": "算符形式借自 Berry–Keating/Sierra，**非 Sierra 2008/2011 原文的直接结果**（原文给出的是连续谱嵌入离散共振/与平均零点谱一致）。"}
+{"doc_id": "D001", "sid": 122, "start": 23719, "end": 23738, "kind": "heading", "text": "### 等价链：禁闭 = 前核子自组织"}
+{"doc_id": "D001", "sid": 123, "start": 23740, "end": 23916, "kind": "prose", "text": "$$\\frac{dN}{d\\tau} \\to 0 \\;\\Leftrightarrow\\; N(\\tau) \\to L \\;\\Leftrightarrow\\; u(\\tau) \\to \\ln L \\;\\Leftrightarrow\\; \\rho(u) \\to \\infty \\;\\Leftrightarrow\\; \\text{Decoherence}$$"}
+{"doc_id": "D001", "sid": 124, "start": 23918, "end": 23921, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 125, "start": 23923, "end": 23930, "kind": "heading", "text": "## 关键术语"}
+{"doc_id": "D001", "sid": 126, "start": 23932, "end": 23943, "kind": "table", "text": "| 术语 | 定义 |"}
+{"doc_id": "D001", "sid": 127, "start": 23944, "end": 23955, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 128, "start": 23956, "end": 24003, "kind": "table", "text": "| **耦合空间** | $u = \\ln r$，$r$ 为总耦合强度。量子力学的基本舞台 |"}
+{"doc_id": "D001", "sid": 129, "start": 24004, "end": 24044, "kind": "table", "text": "| **因果集** | $(X, \\prec)$，再生产事件的离散因果序结构 |"}
+{"doc_id": "D001", "sid": 130, "start": 24045, "end": 24098, "kind": "table", "text": "| **再生产** | $\\hat{\\mu}^2 = \\hat{\\mu}$，有限本体维持自身存在的操作 |"}
+{"doc_id": "D001", "sid": 131, "start": 24099, "end": 24161, "kind": "table", "text": "| **嘉当矩阵** | $A_4 = \\text{Cartan}(\\text{SU}(5))$，禁闭边界涌现的代数结构 |"}
+{"doc_id": "D001", "sid": 132, "start": 24162, "end": 24204, "kind": "table", "text": "| **L1 / L2 / L3+** | 禁闭内部 / 禁闭边界 / 外部时空 |"}
+{"doc_id": "D001", "sid": 133, "start": 24205, "end": 24244, "kind": "table", "text": "| **退相干** | 双向干涉 → 单向因果，非交换 → 交换几何的相变 |"}
+{"doc_id": "D001", "sid": 134, "start": 24245, "end": 24278, "kind": "table", "text": "| **条件性幺正** | 系统内部幺正演化依赖于边界持续存在 |"}
+{"doc_id": "D001", "sid": 135, "start": 24279, "end": 24347, "kind": "table", "text": "| **属性锚点** | $GL(n)$ 的矩阵元素 $g_{ij}$——属性先在的基点（本体论纲领：属性先在，关系潜在-显现化它） |"}
+{"doc_id": "D001", "sid": 136, "start": 24348, "end": 24416, "kind": "table", "text": "| **量纲谱系** | 基本自守量纲（极大关系群定义）／子自守量纲（子群定义，量纲内细分）／派生量纲（无自守形式对应，如物质的量） |"}
+{"doc_id": "D001", "sid": 137, "start": 24418, "end": 24421, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 138, "start": 24423, "end": 24431, "kind": "heading", "text": "## 严格性缺口"}
+{"doc_id": "D001", "sid": 139, "start": 24433, "end": 24450, "kind": "table", "text": "| 缺口 | 内容 | 优先级 |"}
+{"doc_id": "D001", "sid": 140, "start": 24451, "end": 24467, "kind": "table", "text": "|:---|:---|---:|"}
+{"doc_id": "D001", "sid": 141, "start": 24468, "end": 24512, "kind": "table", "text": "| **缺口 C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |"}
+{"doc_id": "D001", "sid": 142, "start": 24513, "end": 24556, "kind": "table", "text": "| **G2** | 耦合空间 $\\to$ 双曲 Laplacian 的必要性 | |"}
+{"doc_id": "D001", "sid": 143, "start": 24557, "end": 24609, "kind": "table", "text": "| **G3** | $\\hat{D} = -i(\\partial_u - 1/2)$ 的唯一性 | |"}
+{"doc_id": "D001", "sid": 144, "start": 24610, "end": 24668, "kind": "table", "text": "| **G4** | $\\hat{D} \\to \\hat{H} = \\hat{D}^2 + 1/4$ 的涌现 | |"}
+{"doc_id": "D001", "sid": 145, "start": 24669, "end": 24715, "kind": "table", "text": "| **G5** | 退相干 $\\to$ 边界条件 $\\vartheta_n$ 锁定 | |"}
+{"doc_id": "D001", "sid": 146, "start": 24716, "end": 24753, "kind": "table", "text": "| **G7** | $\\Sigma_{ij}$ 的第一性数值来源 | |"}
+{"doc_id": "D001", "sid": 147, "start": 24754, "end": 24791, "kind": "table", "text": "| **G8** | CP 破坏相位 $\\delta$ 的严格来源 | |"}
+{"doc_id": "D001", "sid": 148, "start": 24793, "end": 24806, "kind": "heading", "text": "### 缺口编号的权威划分"}
+{"doc_id": "D001", "sid": 149, "start": 24808, "end": 24837, "kind": "prose", "text": "体系内有**三套独立编号**，作用域不同，引用时不得混用："}
+{"doc_id": "D001", "sid": 150, "start": 24839, "end": 24860, "kind": "table", "text": "| 编号系 | 作用域 | 权威定义处 |"}
+{"doc_id": "D001", "sid": 151, "start": 24861, "end": 24877, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D001", "sid": 152, "start": 24878, "end": 24981, "kind": "table", "text": "| **C / G2–G8**（现行定义覆盖 C 与 G2–G5、G7、G8；G6 未定义） | 核心理论（退相干、耦合空间、CP 相位） | 本表 + `01 核心理论/CQM_核心_集成理论.md` |"}
+{"doc_id": "D001", "sid": 153, "start": 24982, "end": 25038, "kind": "table", "text": "| **G9–G22** | 超导涌现链 | `06 超导/CQM_超导_专题与扩展.md` §13 缺口表 |"}
+{"doc_id": "D001", "sid": 154, "start": 25039, "end": 25103, "kind": "table", "text": "| **N1–N4** | 中子缺陷矩阵与 FG 角亏 | `01 核心理论/CQM_核心_引力存在论前提.md` §二.5 |"}
+{"doc_id": "D001", "sid": 155, "start": 25105, "end": 25258, "kind": "prose", "text": "**集成理论结论章的局部编号**：`CQM_核心_集成理论.md` 结论缺口表使用该章局部编号 A–E（A=二阶层在禁闭边界严格退相干为一阶层、B=非交换粗粒化极限、C=核心缺口 C、D=Lindblad 稳态→边-面关联矩阵、E=$\\lambda_c$ 方程是退相干的必然结果），不与 G2–G8 混用。"}
+{"doc_id": "D001", "sid": 156, "start": 25260, "end": 25299, "kind": "prose", "text": "**跨文档歧义登记**（同一记号在不同文档被赋予不同内容，引用时须指明出处）："}
+{"doc_id": "D001", "sid": 157, "start": 25301, "end": 25341, "kind": "table", "text": "| 记号 | 本 README / 超导 §13 的定义 | 其他文档的定义 |"}
+{"doc_id": "D001", "sid": 158, "start": 25342, "end": 25358, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D001", "sid": 159, "start": 25359, "end": 25463, "kind": "table", "text": "| **C** | 退相干稳态为何恰好是 $A_4$（正四单纯形） | `CQM_核心_因果网络同步理论.md:243` 记为“退相干稳态是 $\\{5,4\\}$ 镶嵌”——同一问题的不同表述，指向同一缺口 |"}
+{"doc_id": "D001", "sid": 160, "start": 25464, "end": 25552, "kind": "table", "text": "| **G19** | 和乐相位闭合条件“$\\approx 1$”的容差标定 | `CQM_核心_因果网络同步理论.md:243` 记为“自由能 $F_n$ 可计算作用量” |"}
+{"doc_id": "D001", "sid": 161, "start": 25553, "end": 25630, "kind": "table", "text": "| **G21** | 赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论.md:243` 记为“和乐容差标定” |"}
+{"doc_id": "D001", "sid": 162, "start": 25631, "end": 25743, "kind": "table", "text": "| **N2** | 角亏-$\\delta$ 显式几何公式未写出 | `CQM_超导核心理论.md` §2.3 补注（对应 `SPAF.lean` N2 节）以 N2 指“微扰质量/行列式匹配”（该支已在 G14 闭合） |"}
+{"doc_id": "D001", "sid": 163, "start": 25744, "end": 25863, "kind": "table", "text": "| **G17 / G20** | 不属缺口表编号（G17 = FG→GR 连续极限退化定理，G20-ext = 两质子耦合阈值，二者均已闭合） | `08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md` |"}
+{"doc_id": "D001", "sid": 164, "start": 25865, "end": 26081, "kind": "prose", "text": "**G18 与 G22 的状态补充**：`专题与扩展.md` §13 的 G18/G22 行同时包含“已闭合环节”与“待办环节”（G18 行内含 $\\beta$、$C^2$、$\\Delta\\delta_0$ 的闭合推导，末尾列出 $q\\approx0$ 的理论解释、$E_2-E_1=\\Delta\\delta_0^2K_{\\text{eff}}$ 的严格证明、$S_{U(1)//\\mathbb{Z}_n}$ 的显式构造等未闭合项；"}
+{"doc_id": "D001", "sid": 165, "start": 26081, "end": 26106, "kind": "prose", "text": "G22 行的自由能 $F_n$ 停留在形式定义）。"}
+{"doc_id": "D001", "sid": 166, "start": 26106, "end": 26151, "kind": "prose", "text": "引用时须区分**行内已闭合项**与**行内未闭合项**，不得整行引作“闭合”或“未闭合”。"}
+{"doc_id": "D001", "sid": 167, "start": 26153, "end": 26156, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 168, "start": 26158, "end": 26165, "kind": "heading", "text": "## 目录结构"}
+{"doc_id": "D001", "sid": 169, "start": 26167, "end": 26170, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 170, "start": 26171, "end": 26181, "kind": "code", "text": "CQMFormal/"}
+{"doc_id": "D001", "sid": 171, "start": 26182, "end": 26201, "kind": "code", "text": "├── README.md ← 本文件"}
+{"doc_id": "D001", "sid": 172, "start": 26202, "end": 26202, "kind": "code", "text": ""}
+{"doc_id": "D001", "sid": 173, "start": 26203, "end": 26222, "kind": "code", "text": "├── 01 核心理论/ ← 理论主干"}
+{"doc_id": "D001", "sid": 174, "start": 26223, "end": 26243, "kind": "code", "text": "│ ├── CQM_核心_集成理论.md"}
+{"doc_id": "D001", "sid": 175, "start": 26244, "end": 26267, "kind": "code", "text": "│ ├── CQM_核心_引力存在论前提.md"}
+{"doc_id": "D001", "sid": 176, "start": 26268, "end": 26292, "kind": "code", "text": "│ ├── CQM_核心_因果网络同步理论.md"}
+{"doc_id": "D001", "sid": 177, "start": 26293, "end": 26321, "kind": "code", "text": "│ ├── CQM_核心_朗兰兹分层共振与相变量子.md"}
+{"doc_id": "D001", "sid": 178, "start": 26322, "end": 26346, "kind": "code", "text": "│ ├── CQM_核心_共形场论与OPE.md"}
+{"doc_id": "D001", "sid": 179, "start": 26347, "end": 26367, "kind": "code", "text": "│ ├── CQM_核心_声子理论.md"}
+{"doc_id": "D001", "sid": 180, "start": 26368, "end": 26389, "kind": "code", "text": "│ ├── CQM_核心_量纲与群论.md"}
+{"doc_id": "D001", "sid": 181, "start": 26390, "end": 26412, "kind": "code", "text": "│ └── CQM_核心_唯物主义群论.md"}
+{"doc_id": "D001", "sid": 182, "start": 26413, "end": 26425, "kind": "code", "text": "├── 02 量子引力/"}
+{"doc_id": "D001", "sid": 183, "start": 26426, "end": 26448, "kind": "code", "text": "│ └── CQM_引力_量子引力讨论.md"}
+{"doc_id": "D001", "sid": 184, "start": 26449, "end": 26463, "kind": "code", "text": "├── 03 引力与退相干/"}
+{"doc_id": "D001", "sid": 185, "start": 26464, "end": 26486, "kind": "code", "text": "│ ├── CQM_引力_GN可能公式.md"}
+{"doc_id": "D001", "sid": 186, "start": 26487, "end": 26509, "kind": "code", "text": "│ ├── CQM_退相干_引力因果场.md"}
+{"doc_id": "D001", "sid": 187, "start": 26510, "end": 26539, "kind": "code", "text": "│ └── CQM_退相干_跨层级深耦合与唯一性难题.md"}
+{"doc_id": "D001", "sid": 188, "start": 26540, "end": 26568, "kind": "code", "text": "├── 04 前沿研究/ ← 前沿交叉文献调研与研究论文"}
+{"doc_id": "D001", "sid": 189, "start": 26569, "end": 26598, "kind": "code", "text": "│ ├── CQM_前沿研究_量子快置乱普适速率极限.md"}
+{"doc_id": "D001", "sid": 190, "start": 26599, "end": 26634, "kind": "code", "text": "│ ├── CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md"}
+{"doc_id": "D001", "sid": 191, "start": 26635, "end": 26667, "kind": "code", "text": "│ ├── CQM_前沿研究_GN第一性推导_公理化证明稿.md"}
+{"doc_id": "D001", "sid": 192, "start": 26668, "end": 26694, "kind": "code", "text": "│ ├── CQM_前沿研究_质量研究思路汇总.md"}
+{"doc_id": "D001", "sid": 193, "start": 26695, "end": 26724, "kind": "code", "text": "│ ├── CQM_前沿研究_待推1边界条件深度分析.md"}
+{"doc_id": "D001", "sid": 194, "start": 26725, "end": 26757, "kind": "code", "text": "│ ├── FG_贝里曲率与Regge曲率的关联_研究论文.md"}
+{"doc_id": "D001", "sid": 195, "start": 26758, "end": 26781, "kind": "code", "text": "│ ├── Wyler常数_A4群论分解.md"}
+{"doc_id": "D001", "sid": 196, "start": 26782, "end": 26808, "kind": "code", "text": "│ ├── CQM_前沿研究_黎曼猜想证明思路.md"}
+{"doc_id": "D001", "sid": 197, "start": 26809, "end": 26838, "kind": "code", "text": "│ └── CQM_前沿研究_相变弧线与自守形式同步.md"}
+{"doc_id": "D001", "sid": 198, "start": 26839, "end": 26853, "kind": "code", "text": "├── 05 方法论与批判/"}
+{"doc_id": "D001", "sid": 199, "start": 26854, "end": 26885, "kind": "code", "text": "│ ├── CQM_方法论_HilbertPolya批判.md"}
+{"doc_id": "D001", "sid": 200, "start": 26886, "end": 26919, "kind": "code", "text": "│ └── CQM_方法论_资本主义-旧物理-层级还原论批判.md"}
+{"doc_id": "D001", "sid": 201, "start": 26920, "end": 26938, "kind": "code", "text": "├── 06 超导/ ← 超导涌现论"}
+{"doc_id": "D001", "sid": 202, "start": 26939, "end": 26996, "kind": "code", "text": "│ ├── CQM_超导核心理论.md ← 完整超导理论（§1-§12、§17、§18.1/18.3，纯理论主线）"}
+{"doc_id": "D001", "sid": 203, "start": 26997, "end": 27047, "kind": "code", "text": "│ ├── CQM_超导_专题与扩展.md ← 精简移出的材料/应用、推导/数值细节与进展/状态内容"}
+{"doc_id": "D001", "sid": 204, "start": 27048, "end": 27087, "kind": "code", "text": "│ ├── CQM_超导_FG层级同步算符体系.md ← FG层级同步算符公理"}
+{"doc_id": "D001", "sid": 205, "start": 27088, "end": 27127, "kind": "code", "text": "│ ├── CQM_超导_统一方法论.md ← 四层FG剖分方法论与统一计算链"}
+{"doc_id": "D001", "sid": 206, "start": 27128, "end": 27174, "kind": "code", "text": "│ ├── 超导材料设计器/ ← 元素超导材料设计工具文档（8 篇）与配套 Godot 项目"}
+{"doc_id": "D001", "sid": 207, "start": 27175, "end": 27212, "kind": "code", "text": "│ ├── cqm_analysis/ ← 数据（无 Tc 预测结果文件）"}
+{"doc_id": "D001", "sid": 208, "start": 27213, "end": 27274, "kind": "code", "text": "│ │ ├── superconductors_deduplicated.csv ← 超导材料实验数据库（226 条记录）"}
+{"doc_id": "D001", "sid": 209, "start": 27275, "end": 27321, "kind": "code", "text": "│ │ └── element_fg_table.json ← 元素FG表（118 个元素）"}
+{"doc_id": "D001", "sid": 210, "start": 27322, "end": 27351, "kind": "code", "text": "│ └── cqm_framework/ ← 纯CQM实现"}
+{"doc_id": "D001", "sid": 211, "start": 27352, "end": 27388, "kind": "code", "text": "│   ├── atom_db.py ← 共享原子数据库（118个元素）"}
+{"doc_id": "D001", "sid": 212, "start": 27389, "end": 27420, "kind": "code", "text": "│   └── crystal_db.py ← 晶体结构数据库"}
+{"doc_id": "D001", "sid": 213, "start": 27421, "end": 27449, "kind": "code", "text": "├── 07 精细引力（FG）/ ← 精细引力纤维丛理论"}
+{"doc_id": "D001", "sid": 214, "start": 27450, "end": 27466, "kind": "code", "text": "│ ├── FG_核心理论.md"}
+{"doc_id": "D001", "sid": 215, "start": 27467, "end": 27484, "kind": "code", "text": "│ └── FG_纤维丛理论.md"}
+{"doc_id": "D001", "sid": 216, "start": 27485, "end": 27530, "kind": "code", "text": "├── 08 理论组织和形式化框架/ ← 结构化/形式化组织层（七维度；外部理论文本不动）"}
+{"doc_id": "D001", "sid": 217, "start": 27531, "end": 27564, "kind": "code", "text": "│ ├── AGENTS.md ← 七维度运行手册（研究闭环判据）"}
+{"doc_id": "D001", "sid": 218, "start": 27565, "end": 27585, "kind": "code", "text": "│ ├── README.md ← 总览"}
+{"doc_id": "D001", "sid": 219, "start": 27586, "end": 27636, "kind": "code", "text": "│ ├── 00_外部引用/ · 01_结构化数据/ · 02_概念本体/ · 03_超图与理论图/"}
+{"doc_id": "D001", "sid": 220, "start": 27637, "end": 27663, "kind": "code", "text": "│ ├── 04_Lean对接/ ← Lean 对接"}
+{"doc_id": "D001", "sid": 221, "start": 27664, "end": 27703, "kind": "code", "text": "│ │ ├── Lean源码/ ← Lean 4 项目（11 库；8 库通过）"}
+{"doc_id": "D001", "sid": 222, "start": 27704, "end": 27734, "kind": "code", "text": "│ │ ├── Lean结构提取/ ← 声明、模块、导入依赖"}
+{"doc_id": "D001", "sid": 223, "start": 27735, "end": 27778, "kind": "code", "text": "│ │ └── Lean↔概念映射.csv · lean代码路径.yaml · 蓝图/"}
+{"doc_id": "D001", "sid": 224, "start": 27779, "end": 27831, "kind": "code", "text": "│ ├── 05_机器学习数据准备/ · 06_动态机制/ · 07_经验检验/ · 08_元理论反思/"}
+{"doc_id": "D001", "sid": 225, "start": 27832, "end": 27869, "kind": "code", "text": "│ ├── 09_桥接与翻译/ · 10_展示可视化/ · 11_元数据/"}
+{"doc_id": "D001", "sid": 226, "start": 27870, "end": 27893, "kind": "code", "text": "│ └── _build/ ← 可重复生成脚本"}
+{"doc_id": "D001", "sid": 227, "start": 27894, "end": 27894, "kind": "code", "text": ""}
+{"doc_id": "D001", "sid": 228, "start": 27895, "end": 27919, "kind": "code", "text": "├── 一体化研究/文献/ ← 参考文献 PDF"}
+{"doc_id": "D001", "sid": 229, "start": 27920, "end": 27921, "kind": "code", "text": "│"}
+{"doc_id": "D001", "sid": 230, "start": 27922, "end": 27937, "kind": "code", "text": "├── 归档/ ← 已归档文档"}
+{"doc_id": "D001", "sid": 231, "start": 27938, "end": 27962, "kind": "code", "text": "│   ├── CQM_引力_量子引力集成.md"}
+{"doc_id": "D001", "sid": 232, "start": 27963, "end": 27987, "kind": "code", "text": "│   ├── CQM_框架路线与理论纪要.md"}
+{"doc_id": "D001", "sid": 233, "start": 27988, "end": 28010, "kind": "code", "text": "│   ├── CQM_混合_混合矩阵.md"}
+{"doc_id": "D001", "sid": 234, "start": 28011, "end": 28034, "kind": "code", "text": "│   ├── CQM_退相干_质数数轴.md"}
+{"doc_id": "D001", "sid": 235, "start": 28035, "end": 28069, "kind": "code", "text": "│   ├── FG_自守形式_从SU5到壳层结构的完整条件链.md"}
+{"doc_id": "D001", "sid": 236, "start": 28070, "end": 28102, "kind": "code", "text": "│   └── 归档 CNT/ ← CNT 阶段历史文档（只读）"}
+{"doc_id": "D001", "sid": 237, "start": 28103, "end": 28106, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 238, "start": 28108, "end": 28111, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 239, "start": 28113, "end": 28120, "kind": "heading", "text": "## 参考文献"}
+{"doc_id": "D001", "sid": 240, "start": 28122, "end": 28141, "kind": "prose", "text": "核心文献参见各专题文档的参考文献章节。"}
+{"doc_id": "D001", "sid": 241, "start": 28141, "end": 28191, "kind": "prose", "text": "CNT 完整研究已发布于 Zenodo: DOI: 10.5281/zenodo.20804380。"}
 {"doc_id": "D002", "sid": 0, "start": 0, "end": 16, "kind": "heading", "text": "# CQMFormal 项目规范"}
 {"doc_id": "D002", "sid": 1, "start": 18, "end": 65, "kind": "quote", "text": "> 本文件是 AI 协作代理的项目级规范，对齐 `归档/一体化研究/科研AI全栈方案.md`。"}
 {"doc_id": "D002", "sid": 2, "start": 65, "end": 78, "kind": "quote", "text": "所有 Agent 须遵守。"}
@@ -16079,364 +16080,365 @@
 {"doc_id": "D042", "sid": 1, "start": 34, "end": 47, "kind": "prose", "text": "**作者**：ruster"}
 {"doc_id": "D042", "sid": 2, "start": 49, "end": 88, "kind": "prose", "text": "本目录包含**耦合常数量子力学（CQM）**的 Lean 4 形式化验证项目。"}
 {"doc_id": "D042", "sid": 3, "start": 90, "end": 139, "kind": "heading", "text": "## 编译状态（本次实测，Lean 4.29.1 = `lean-toolchain` 固定版本）"}
-{"doc_id": "D042", "sid": 4, "start": 141, "end": 184, "kind": "prose", "text": "**11 个库全部编译通过**（`lake build` 成功，3576 jobs）。"}
-{"doc_id": "D042", "sid": 5, "start": 184, "end": 191, "kind": "prose", "text": "逐库实测结果："}
-{"doc_id": "D042", "sid": 6, "start": 193, "end": 208, "kind": "table", "text": "| 库 | 状态 | 说明 |"}
-{"doc_id": "D042", "sid": 7, "start": 209, "end": 226, "kind": "table", "text": "|:---|:---:|:---|"}
-{"doc_id": "D042", "sid": 8, "start": 227, "end": 251, "kind": "table", "text": "| CausalSet | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 9, "start": 252, "end": 280, "kind": "table", "text": "| CouplingSpace | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 10, "start": 281, "end": 309, "kind": "table", "text": "| CartanAlgebra | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 11, "start": 310, "end": 336, "kind": "table", "text": "| Decoherence | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 12, "start": 337, "end": 369, "kind": "table", "text": "| PhysicalConstants | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 13, "start": 370, "end": 398, "kind": "table", "text": "| PrimeGeometry | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 14, "start": 399, "end": 425, "kind": "table", "text": "| Methodology | ✅ 通过 | — |"}
-{"doc_id": "D042", "sid": 15, "start": 426, "end": 537, "kind": "table", "text": "| GN | ✅ 通过 | 含 `SimplexSpectrum`/`AdeleJacobian`/`Constructions`/`ModularTrace`；107 定理，零 `sorry`、零新增 `axiom` |"}
-{"doc_id": "D042", "sid": 16, "start": 538, "end": 674, "kind": "table", "text": "| SpectralGeometry | ✅ 通过 | 含 `RiemannXi`、`Mathieu`、`GLnTrivialSpectralQuantum`（`Mathieu` 已由库根 `import SpectralGeometry.Mathieu` 纳入构建） |"}
-{"doc_id": "D042", "sid": 17, "start": 675, "end": 828, "kind": "table", "text": "| Superconductivity | ✅ 通过 | 16 模块全通过（含 `ElementCartan`、`BridgeTheorems`，两者均已由库根 import 纳入构建；另含 `FormalizationRigor`、`DeepConstruction`、`DeepResearch`） |"}
-{"doc_id": "D042", "sid": 18, "start": 829, "end": 1049, "kind": "table", "text": "| FGChain | ✅ 通过 | 12 模块全通过（`QuantumOscillation`、`FiberBundle`、`CurvatureOperator`、`CurvatureDerivation`、`ReggeBase`、`SyncOperator`、`Synchronization`、`Observable`、`BundleEOM`、`Hierarchy` 等）；114 定理，零 `sorry`、零新增 `axiom` |"}
-{"doc_id": "D042", "sid": 19, "start": 1051, "end": 1136, "kind": "quote", "text": "> **构建提示**：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题；"}
-{"doc_id": "D042", "sid": 20, "start": 1136, "end": 1193, "kind": "quote", "text": "另有少量 `unused variable` / `unused simp argument` 提示，不影响通过。"}
-{"doc_id": "D042", "sid": 21, "start": 1195, "end": 1297, "kind": "prose", "text": "**`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：PrimeGeometry 的相应结论以定理给出；"}
-{"doc_id": "D042", "sid": 22, "start": 1297, "end": 1329, "kind": "prose", "text": "Methodology 以公理/假设层为主（见「定理统计」表）。"}
-{"doc_id": "D042", "sid": 23, "start": 1331, "end": 1337, "kind": "heading", "text": "## 库结构"}
-{"doc_id": "D042", "sid": 24, "start": 1339, "end": 1359, "kind": "table", "text": "| 库 | 文件 | 关键类型/定理 |"}
-{"doc_id": "D042", "sid": 25, "start": 1360, "end": 1376, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D042", "sid": 26, "start": 1377, "end": 1529, "kind": "table", "text": "| **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |"}
-{"doc_id": "D042", "sid": 27, "start": 1530, "end": 1657, "kind": "table", "text": "| **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |"}
-{"doc_id": "D042", "sid": 28, "start": 1658, "end": 1749, "kind": "table", "text": "| **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |"}
-{"doc_id": "D042", "sid": 29, "start": 1750, "end": 2024, "kind": "table", "text": "| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 $☯_n=n\\cdot☯_1$ 缩放律与归一化普适性** |"}
-{"doc_id": "D042", "sid": 30, "start": 2025, "end": 2188, "kind": "table", "text": "| **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |"}
-{"doc_id": "D042", "sid": 31, "start": 2189, "end": 2298, "kind": "table", "text": "| **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |"}
-{"doc_id": "D042", "sid": 32, "start": 2299, "end": 2393, "kind": "table", "text": "| **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |"}
-{"doc_id": "D042", "sid": 33, "start": 2394, "end": 2455, "kind": "table", "text": "| **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |"}
-{"doc_id": "D042", "sid": 34, "start": 2456, "end": 3148, "kind": "table", "text": "| **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |"}
-{"doc_id": "D042", "sid": 35, "start": 3149, "end": 3771, "kind": "table", "text": "| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\\hbar\\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\\hat{u},\\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G \\Rightarrow R=G \\Rightarrow \\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\\mathfrak{c}_n=1/4+\\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\\Delta u_n=2\\ln n$、BCS $T_c$）——**12 个模块全部通过（`lake build` 全量成功）** |"}
-{"doc_id": "D042", "sid": 36, "start": 3772, "end": 4616, "kind": "table", "text": "| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean`, `SimplexSpectrum.lean`, `AdeleJacobian.lean`, `Constructions.lean`, `ModularTrace.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿，7 模块）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\\gamma_E/2-\\frac12\\ln(4\\pi)=1+\\gamma_E/2-\\ln\\pi/2-\\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）；§2 4-单纯形组合谱——`SimplexSpectrum.lean`（57 定理）、§6 Adele Jacobian 因子 2——`AdeleJacobian.lean`（11 引理/定理）、§8–§11 可代数化构造——`Constructions.lean`（14 定理）、§十八 模流迹路线——`ModularTrace.lean`（6 定理）——共 107 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |"}
-{"doc_id": "D042", "sid": 37, "start": 4618, "end": 4627, "kind": "heading", "text": "## 形式化推导链"}
-{"doc_id": "D042", "sid": 38, "start": 4629, "end": 4632, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 39, "start": 4633, "end": 4639, "kind": "code", "text": "Axioms"}
-{"doc_id": "D042", "sid": 40, "start": 4640, "end": 4663, "kind": "code", "text": "├── A0.1-3: 因果集 + 再生产算符"}
-{"doc_id": "D042", "sid": 41, "start": 4664, "end": 4686, "kind": "code", "text": "│ ├── 因果偏序非对称性 (asymm)"}
-{"doc_id": "D042", "sid": 42, "start": 4687, "end": 4727, "kind": "code", "text": "│ ├── Alexandrov 区间有限性 (interval_finite)"}
-{"doc_id": "D042", "sid": 43, "start": 4728, "end": 4759, "kind": "code", "text": "│ ├── 再生产幂等性 (muHat_idempotent)"}
-{"doc_id": "D042", "sid": 44, "start": 4760, "end": 4790, "kind": "code", "text": "│ └── Sprinkling → 耦合空间 (u, τ)"}
-{"doc_id": "D042", "sid": 45, "start": 4791, "end": 4824, "kind": "code", "text": "│ ├── Sprinkling 密度 ρ(u) = exp(u)"}
-{"doc_id": "D042", "sid": 46, "start": 4825, "end": 4843, "kind": "code", "text": "│ ├── 耦合速度 c = 1/ρ"}
-{"doc_id": "D042", "sid": 47, "start": 4844, "end": 4883, "kind": "code", "text": "│ └── 保序嵌入 (sprinkling_preserves_order)"}
-{"doc_id": "D042", "sid": 48, "start": 4884, "end": 4885, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 49, "start": 4886, "end": 4916, "kind": "code", "text": "├── A1.1: 正则对易关系 [û, p̂_u] = i"}
-{"doc_id": "D042", "sid": 50, "start": 4917, "end": 4942, "kind": "code", "text": "│ ├── 耦合强度 r = exp(u) > 0"}
-{"doc_id": "D042", "sid": 51, "start": 4943, "end": 4962, "kind": "code", "text": "│ ├── 耦合坐标 u = ln r"}
-{"doc_id": "D042", "sid": 52, "start": 4963, "end": 5011, "kind": "code", "text": "│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ ☯/2 (Robertson 不等式)"}
-{"doc_id": "D042", "sid": 53, "start": 5012, "end": 5049, "kind": "code", "text": "│ └── 14 个辅助定理（中心化算符、方差、Hermitian 性等）"}
-{"doc_id": "D042", "sid": 54, "start": 5050, "end": 5051, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 55, "start": 5052, "end": 5092, "kind": "code", "text": "├── H3.3 + A2.1: 退相干稳态 = 正四单纯形 → A₄ 嘉当矩阵"}
-{"doc_id": "D042", "sid": 56, "start": 5093, "end": 5121, "kind": "code", "text": "│ ├── 对称性: A₄_{ij} = A₄_{ji}"}
-{"doc_id": "D042", "sid": 57, "start": 5122, "end": 5142, "kind": "code", "text": "│ ├── 迹 = 8, 行列式 = 5"}
-{"doc_id": "D042", "sid": 58, "start": 5143, "end": 5186, "kind": "code", "text": "│ ├── Aₙ 行列式 = n+1 (A₁:2, A₂:3, A₃:4, A₄:5)"}
-{"doc_id": "D042", "sid": 59, "start": 5187, "end": 5202, "kind": "code", "text": "│ ├── 本征值精确表达式:"}
-{"doc_id": "D042", "sid": 60, "start": 5203, "end": 5235, "kind": "code", "text": "│ │ λ₁ = (3-√5)/2, λ₂ = (5-√5)/2"}
-{"doc_id": "D042", "sid": 61, "start": 5236, "end": 5268, "kind": "code", "text": "│ │ λ₃ = (3+√5)/2, λ₄ = (5+√5)/2"}
-{"doc_id": "D042", "sid": 62, "start": 5269, "end": 5292, "kind": "code", "text": "│ ├── 本征值之和 = 8, 之积 = 5"}
-{"doc_id": "D042", "sid": 63, "start": 5293, "end": 5314, "kind": "code", "text": "│ ├── 逆嘉当矩阵 A₄⁻¹ 显式条目"}
-{"doc_id": "D042", "sid": 64, "start": 5315, "end": 5335, "kind": "code", "text": "│ ├── 正定性: 所有主子式 > 0"}
-{"doc_id": "D042", "sid": 65, "start": 5336, "end": 5367, "kind": "code", "text": "│ ├── 4-单纯形 f-向量回文性 (5,10,10,5)"}
-{"doc_id": "D042", "sid": 66, "start": 5368, "end": 5402, "kind": "code", "text": "│ ├── SU(5) Weyl 群 = S₅ = 4-单纯形对称群"}
-{"doc_id": "D042", "sid": 67, "start": 5403, "end": 5440, "kind": "code", "text": "│ └── Dynkin 指数比 I = T(24)/T(8) = 5/3"}
-{"doc_id": "D042", "sid": 68, "start": 5441, "end": 5442, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 69, "start": 5443, "end": 5472, "kind": "code", "text": "├── A2.2: 相变量子 ☯ = ξ'(1)/ξ(1)"}
-{"doc_id": "D042", "sid": 70, "start": 5473, "end": 5564, "kind": "code", "text": "│ ├── Mathieu 参数 q = φ/2（黄金比例一半；由代码中定义的 A₄ 本征值字面量按 (λ₄-λ₁)/(λ₄+λ₁) 算出，属定义展开，不是从 A₄ 矩阵推出的定理）"}
-{"doc_id": "D042", "sid": 71, "start": 5565, "end": 5597, "kind": "code", "text": "│ │ ├── φ = (1+√5)/2, φ² = φ + 1"}
-{"doc_id": "D042", "sid": 72, "start": 5598, "end": 5639, "kind": "code", "text": "│ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809"}
-{"doc_id": "D042", "sid": 73, "start": 5640, "end": 5669, "kind": "code", "text": "│ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472"}
-{"doc_id": "D042", "sid": 74, "start": 5670, "end": 5981, "kind": "code", "text": "│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q - q²/8 + …）。λ_min 即标准 Mathieu 第一奇特征值 b₁（DLMF 记号），故本临界条件即 b₁(q_c) = 2q_c"}
-{"doc_id": "D042", "sid": 75, "start": 5982, "end": 6246, "kind": "code", "text": "│ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块现由库根 `SpectralGeometry.lean` 导入以纳入编译覆盖，但未被 λ_c/G_N 取值链引用）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）"}
-{"doc_id": "D042", "sid": 76, "start": 6247, "end": 6291, "kind": "code", "text": "│ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)"}
-{"doc_id": "D042", "sid": 77, "start": 6292, "end": 6319, "kind": "code", "text": "│ ├── Adele 周期 N_cycle = 30"}
-{"doc_id": "D042", "sid": 78, "start": 6320, "end": 6352, "kind": "code", "text": "│ ├── 4-单纯形 f-向量和 = 30 = N_cycle"}
-{"doc_id": "D042", "sid": 79, "start": 6353, "end": 6378, "kind": "code", "text": "│ ├── 谱修正因子 κ = (31+☯)/30"}
-{"doc_id": "D042", "sid": 80, "start": 6379, "end": 6421, "kind": "code", "text": "│ ├── G_N 因子 F(☯) = ☯²·𝔠₁·exp(-2/☯)·(1+κ☯)"}
-{"doc_id": "D042", "sid": 81, "start": 6422, "end": 6437, "kind": "code", "text": "│ ├── F(☯) 严格为正"}
-{"doc_id": "D042", "sid": 82, "start": 6438, "end": 6469, "kind": "code", "text": "│ └── 谱常数网络: ☯·λ_c·𝔠₁ ∈ (6, 10)"}
-{"doc_id": "D042", "sid": 83, "start": 6470, "end": 6471, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 84, "start": 6472, "end": 6480, "kind": "code", "text": "├── 素数结构"}
-{"doc_id": "D042", "sid": 85, "start": 6481, "end": 6516, "kind": "code", "text": "│ ├── 活跃素数 {2, 3, 5}：Φ(k) > 0 的唯一素数"}
-{"doc_id": "D042", "sid": 86, "start": 6517, "end": 6555, "kind": "code", "text": "│ ├── 素数冻结定理：∀ k > 5, Φ(k) = 0 (axiom)"}
-{"doc_id": "D042", "sid": 87, "start": 6556, "end": 6590, "kind": "code", "text": "│ ├── N_cycle = 2·3·5 = 30 = 活跃素数积"}
-{"doc_id": "D042", "sid": 88, "start": 6591, "end": 6623, "kind": "code", "text": "│ └── 活跃素数个数 3 = rank(SU(5)) - 1"}
-{"doc_id": "D042", "sid": 89, "start": 6624, "end": 6625, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 90, "start": 6626, "end": 6647, "kind": "code", "text": "├── 退相干三层结构 L1/L2/L3+"}
-{"doc_id": "D042", "sid": 91, "start": 6648, "end": 6664, "kind": "code", "text": "│ ├── 禁闭标度 L = 1"}
-{"doc_id": "D042", "sid": 92, "start": 6665, "end": 6685, "kind": "code", "text": "│ ├── 退相干条件 ρ(u) ≥ L"}
-{"doc_id": "D042", "sid": 93, "start": 6686, "end": 6709, "kind": "code", "text": "│ └── 退相干速率 Γ(u) = ρ(u)"}
-{"doc_id": "D042", "sid": 94, "start": 6710, "end": 6711, "kind": "code", "text": "│"}
-{"doc_id": "D042", "sid": 95, "start": 6712, "end": 6725, "kind": "code", "text": "└── m_p（实验输入）"}
-{"doc_id": "D042", "sid": 96, "start": 6726, "end": 6772, "kind": "code", "text": " └── G_N = I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) / m_p²"}
-{"doc_id": "D042", "sid": 97, "start": 6773, "end": 6791, "kind": "code", "text": " ├── G_N > 0（严格正性）"}
-{"doc_id": "D042", "sid": 98, "start": 6792, "end": 6805, "kind": "code", "text": " ├── G_N 因子分解"}
-{"doc_id": "D042", "sid": 99, "start": 6806, "end": 6833, "kind": "code", "text": " ├── 层级因子 exp(-2/☯) ≈ 10⁻³⁸"}
-{"doc_id": "D042", "sid": 100, "start": 6834, "end": 6873, "kind": "code", "text": " ├── CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）"}
-{"doc_id": "D042", "sid": 101, "start": 6874, "end": 6912, "kind": "code", "text": " └── α⁻¹_SU(5) = 16384π/375 ≈ 137.2583"}
-{"doc_id": "D042", "sid": 102, "start": 6913, "end": 6939, "kind": "code", "text": " ├── 137 < α⁻¹_SU(5) < 138"}
-{"doc_id": "D042", "sid": 103, "start": 6940, "end": 6976, "kind": "code", "text": " ├── 群论因子 = 2^14/(3×5^3) = 16384/375"}
-{"doc_id": "D042", "sid": 104, "start": 6977, "end": 6993, "kind": "code", "text": " ├── α_SU(5) > 0"}
-{"doc_id": "D042", "sid": 105, "start": 6994, "end": 7021, "kind": "code", "text": " └── 0.007 < α_SU(5) < 0.01"}
-{"doc_id": "D042", "sid": 106, "start": 7022, "end": 7025, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 107, "start": 7027, "end": 7034, "kind": "heading", "text": "## 定理统计"}
-{"doc_id": "D042", "sid": 108, "start": 7036, "end": 7057, "kind": "table", "text": "| 库 | 已证明定理 | 公理/待证 |"}
-{"doc_id": "D042", "sid": 109, "start": 7058, "end": 7076, "kind": "table", "text": "|:---|:---:|:---:|"}
-{"doc_id": "D042", "sid": 110, "start": 7077, "end": 7099, "kind": "table", "text": "| CausalSet | 22 | 4 |"}
-{"doc_id": "D042", "sid": 111, "start": 7100, "end": 7126, "kind": "table", "text": "| CouplingSpace | 21 | 0 |"}
-{"doc_id": "D042", "sid": 112, "start": 7127, "end": 7153, "kind": "table", "text": "| CartanAlgebra | 33 | 0 |"}
-{"doc_id": "D042", "sid": 113, "start": 7154, "end": 7184, "kind": "table", "text": "| SpectralGeometry | 129 | 2 |"}
-{"doc_id": "D042", "sid": 114, "start": 7185, "end": 7211, "kind": "table", "text": "| PrimeGeometry | 81 | 0 |"}
-{"doc_id": "D042", "sid": 115, "start": 7212, "end": 7236, "kind": "table", "text": "| Decoherence | 15 | 0 |"}
-{"doc_id": "D042", "sid": 116, "start": 7237, "end": 7267, "kind": "table", "text": "| PhysicalConstants | 20 | 0 |"}
-{"doc_id": "D042", "sid": 117, "start": 7268, "end": 7292, "kind": "table", "text": "| Methodology | 13 | 4 |"}
-{"doc_id": "D042", "sid": 118, "start": 7293, "end": 7324, "kind": "table", "text": "| Superconductivity | 331 | 5 |"}
-{"doc_id": "D042", "sid": 119, "start": 7325, "end": 7341, "kind": "table", "text": "| GN | 107 | 0 |"}
-{"doc_id": "D042", "sid": 120, "start": 7342, "end": 7363, "kind": "table", "text": "| FGChain | 114 | 0 |"}
-{"doc_id": "D042", "sid": 121, "start": 7364, "end": 7393, "kind": "table", "text": "| **总计** | **886** | **15** |"}
-{"doc_id": "D042", "sid": 122, "start": 7395, "end": 7474, "kind": "quote", "text": "> **计数口径**（全库统一）：`已证明定理` = 源码中 `theorem` 与 `lemma` 声明之和（零 `sorry`），按模块首段目录归属到库；"}
-{"doc_id": "D042", "sid": 123, "start": 7474, "end": 7494, "kind": "quote", "text": "`example` 当前为 0，不计入。"}
-{"doc_id": "D042", "sid": 124, "start": 7494, "end": 7575, "kind": "quote", "text": "口径与 `_build/build_lean.py` 的 `theorem_like` 抽取逐库一致（theorem 836 + lemma 50 = 886）。"}
-{"doc_id": "D042", "sid": 125, "start": 7575, "end": 7600, "kind": "quote", "text": "FGChain（12 模块）已并入本表，不再单列。"}
-{"doc_id": "D042", "sid": 126, "start": 7601, "end": 7709, "kind": "quote", "text": "> 注：「公理/待证」按源码 `axiom` 声明计数（15 条，分布：Superconductivity 5 · CausalSet 4 · SpectralGeometry 2 · Methodology 4）；"}
-{"doc_id": "D042", "sid": 127, "start": 7709, "end": 7869, "kind": "quote", "text": "不含 `def ... : Prop` 的命题位声明（`uniquenessByDeepCouplingClaim`、`layerNonReductionismClaim`、`windingDensityConvergenceClaim`、`deepCouplingBreaksFactorizationClaim`）。"}
-{"doc_id": "D042", "sid": 128, "start": 7870, "end": 7894, "kind": "quote", "text": "> 范围说明：886 为**源码声明行**计数。"}
-{"doc_id": "D042", "sid": 129, "start": 7894, "end": 8243, "kind": "quote", "text": "原未纳入 `lakefile.toml` `defaultTargets` 的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44）已全部修复并通过 `lake build`，并由库根 `SpectralGeometry.lean`（`import SpectralGeometry.Mathieu`）与 `Superconductivity.lean`（`import Superconductivity.BridgeTheorems`、`import Superconductivity.ElementCartan`）纳入构建；"}
-{"doc_id": "D042", "sid": 130, "start": 8243, "end": 8456, "kind": "quote", "text": "原 2 处跨模块同名声明已消除（`ElementCartan` 侧 `protonCartan_isPureA4` → `protonCartan_eq_neutronCartan_zero`、`molecularSuperCartan_symmetric` → `molecularSuperCartan_blockSymmetric`，`MolecularGeometry` 保留原名），故去重后唯一全限定名同为 886。"}
-{"doc_id": "D042", "sid": 131, "start": 8456, "end": 8476, "kind": "quote", "text": "11 个库根模块的构建状态均为全部通过。"}
-{"doc_id": "D042", "sid": 132, "start": 8476, "end": 8591, "kind": "quote", "text": "v1.9.56 已将原 `causalChainSelfClosure` 改为定义 `CausalLoop.ofSegment`（结构构造，不承载物理断言），故定理计数相应减 1、`def` 计数加 1，声明总数 1405 不变。"}
-{"doc_id": "D042", "sid": 133, "start": 8591, "end": 8718, "kind": "quote", "text": "v1.9.57 删除 `SpectralGeometry/RiemannXi` 中数值不成立的公理 `spectralQuantum_zeta_zeros_relation`（原式以 `γ₁+n` 近似第 n 个零点），声明总数 1405 → 1404。"}
-{"doc_id": "D042", "sid": 134, "start": 8718, "end": 8903, "kind": "quote", "text": "v1.9.58 将 `SpectralGeometry/Basic` 的 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`（用 Euler–Mascheroni 上下界序列 n = 2048、ln 2 十进制界与 ln π 的 Taylor 估计严格证明 0.02295 < ☯ < 0.02325）；"}
-{"doc_id": "D042", "sid": 135, "start": 8903, "end": 8965, "kind": "quote", "text": "声明总数 1404 不变（axiom 16 → 15、theorem 835 → 836），已证明定理 885 → 886。"}
-{"doc_id": "D042", "sid": 136, "start": 8967, "end": 9008, "kind": "heading", "text": "## 公理依赖分级（v1.9.58 · `#print axioms` 全量实测）"}
-{"doc_id": "D042", "sid": 137, "start": 9010, "end": 9094, "kind": "prose", "text": "**方法**：解析全部 `.lean` 文件的 `namespace`/`section`/`mutual` 栈求每条 `theorem`/`lemma` 的全限定名；"}
-{"doc_id": "D042", "sid": 138, "start": 9094, "end": 9183, "kind": "prose", "text": "按库根模块分批生成临时 `#print axioms` 探测文件，以 `lake env lean` 实测（Lean 4.29.1，`autoImplicit = false`；"}
-{"doc_id": "D042", "sid": 139, "start": 9183, "end": 9244, "kind": "prose", "text": "临时文件与脚本用后即删、不入库）；跨库不能同环境导入的声明按模块单独探测；`private` 声明在模块副本内按短名探测。"}
-{"doc_id": "D042", "sid": 140, "start": 9244, "end": 9383, "kind": "prose", "text": "分级判据：依赖集合中不含 15 条 CQM 自有 `axiom` 者记为「零 CQM 公理依赖」，即在 Lean 内核逻辑公理 `propext`、`Classical.choice`、`Quot.sound` 的三元组内取子集（`#print axioms` 给出传递闭包）。"}
-{"doc_id": "D042", "sid": 141, "start": 9383, "end": 9535, "kind": "prose", "text": "v1.9.58 另以 `Environment.find?` + `Expr.getUsedConstants` 的常量依赖传递闭包逐条判定原依赖 `spectralQuantum_numerical_bounds` 的定理归属（含类型与证明项），再按升级后的 `#print axioms` 归入子行。"}
-{"doc_id": "D042", "sid": 142, "start": 9537, "end": 9548, "kind": "table", "text": "| 分级 | 条数 |"}
-{"doc_id": "D042", "sid": 143, "start": 9549, "end": 9561, "kind": "table", "text": "|:---|:---:|"}
-{"doc_id": "D042", "sid": 144, "start": 9562, "end": 9582, "kind": "table", "text": "| 零 CQM 公理依赖 | 883 |"}
-{"doc_id": "D042", "sid": 145, "start": 9583, "end": 9602, "kind": "table", "text": "| 　· 不使用任何公理 | 45 |"}
-{"doc_id": "D042", "sid": 146, "start": 9603, "end": 9626, "kind": "table", "text": "| 　· 仅 `propext` | 52 |"}
-{"doc_id": "D042", "sid": 147, "start": 9627, "end": 9663, "kind": "table", "text": "| 　· `propext` + `Quot.sound` | 24 |"}
-{"doc_id": "D042", "sid": 148, "start": 9664, "end": 9722, "kind": "table", "text": "| 　· `propext` + `Classical.choice` + `Quot.sound` | 762 |"}
-{"doc_id": "D042", "sid": 149, "start": 9723, "end": 9740, "kind": "table", "text": "| 依赖 CQM 公理 | 3 |"}
-{"doc_id": "D042", "sid": 150, "start": 9741, "end": 9769, "kind": "table", "text": "| **合计（去重全限定名）** | **886** |"}
-{"doc_id": "D042", "sid": 151, "start": 9771, "end": 10009, "kind": "quote", "text": "> 说明：v1.9.55 已把原未纳入实测的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44，共 86 条）全部纳入实测——其中 84 条为零 CQM 公理依赖（均落在 `propext` + `Classical.choice` + `Quot.sound` 三元组），2 条依赖 CQM 公理（见下）。"}
-{"doc_id": "D042", "sid": 152, "start": 10009, "end": 10027, "kind": "quote", "text": "原「未纳入实测 79」一行随之取消。"}
-{"doc_id": "D042", "sid": 153, "start": 10027, "end": 10121, "kind": "quote", "text": "v1.9.56 将 `causalChainSelfClosure`（原属三元组类）改为定义 `CausalLoop.ofSegment`，故「零 CQM 公理依赖」与三元组子行各减 1；"}
-{"doc_id": "D042", "sid": 154, "start": 10121, "end": 10143, "kind": "quote", "text": "本次改动不涉及任何 CQM 公理的使用状态。"}
-{"doc_id": "D042", "sid": 155, "start": 10143, "end": 10249, "kind": "quote", "text": "v1.9.57 删除的 `spectralQuantum_zeta_zeros_relation` 无任何已证定理依赖，故分级计数不变（零 CQM 公理依赖 851 / 依赖 CQM 公理 34，合计 885）。"}
-{"doc_id": "D042", "sid": 156, "start": 10249, "end": 10417, "kind": "quote", "text": "v1.9.58 把 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`：原依赖该公理的 31 条（SpectralGeometry 23 · GN 7 · PhysicalConstants 1）实测全部转为零 CQM 公理依赖且均落在三元组子行，新定理本身亦属三元组；"}
-{"doc_id": "D042", "sid": 157, "start": 10417, "end": 10483, "kind": "quote", "text": "故「零 CQM 公理依赖」851 → 883（三元组子行 730 → 762）、「依赖 CQM 公理」34 → 3，其余三子行不变。"}
-{"doc_id": "D042", "sid": 158, "start": 10485, "end": 10513, "kind": "prose", "text": "**依赖 CQM 公理的 3 条**（逐条实名可复现）："}
-{"doc_id": "D042", "sid": 159, "start": 10515, "end": 10622, "kind": "list", "text": "- `b1` 与 `b1_perturbation_lower_bound` — 同一 1 条：`b1_gt_2q_at_mathieuParameter`（`SpectralGeometry/Mathieu`）。"}
-{"doc_id": "D042", "sid": 160, "start": 10623, "end": 10675, "kind": "list", "text": "- `actualizableAttributes` — 1 条：`basicDOF_support`。"}
-{"doc_id": "D042", "sid": 161, "start": 10676, "end": 10779, "kind": "list", "text": "- `ontologyDevelopsInto` 与 `ontologyDevelopsInto_irreflexive` — 同一 1 条：`ontologyDevelopsInto_distinct`。"}
-{"doc_id": "D042", "sid": 162, "start": 10781, "end": 11065, "kind": "quote", "text": "> v1.9.58 变更归属：原 `spectralQuantum_numerical_bounds` 的 31 条使用者（SpectralGeometry 23〔`Basic` 16、`RiemannXi` 3、`GLnTrivialSpectralQuantum` 3、`Mathieu` 1〕、GN 7〔`Constructions` 4、`TripleIdentity` 3〕、PhysicalConstants 1〔`GN_spectral_formula_pos`〕）已随该陈述升级为定理而全部转为零 CQM 公理依赖（均落在三元组子行），不再列入本清单。"}
-{"doc_id": "D042", "sid": 163, "start": 11067, "end": 11220, "kind": "prose", "text": "**15 条 `axiom` 的使用状态**：5 条被已证定理依赖（`b1`、`b1_perturbation_lower_bound`、`actualizableAttributes`、`ontologyDevelopsInto`、`ontologyDevelopsInto_irreflexive`）；"}
-{"doc_id": "D042", "sid": 164, "start": 11220, "end": 11641, "kind": "prose", "text": "10 条当前无任何已证定理依赖——`physical_hypothesis`、`confinement_equiv_decoherence`、`noncommutative_to_commutative_phase_transition`、`decoherence_steady_state_is_4simplex`（CausalSet 4）、`proton_is_finite_ontology`、`neutron_is_defective_ontology`、`proton_confinement_geometry_is_4simplex`、`confinement_interior_is_quantum_gravity`、`electron_is_proton_neutron_product`（Superconductivity 5）、`actualizableAttributes_finite`（Methodology 1）。"}
-{"doc_id": "D042", "sid": 165, "start": 11643, "end": 11758, "kind": "prose", "text": "**待闭合项**：`b1`、`b1_perturbation_lower_bound` 已随 `SpectralGeometry/Mathieu` 纳入实测，使用者为 `b1_gt_2q_at_mathieuParameter`；"}
-{"doc_id": "D042", "sid": 166, "start": 11758, "end": 11819, "kind": "prose", "text": "两条 `axiom` 本身仍未闭合（Mathieu 函数理论待后续），此处只记录依赖关系，不改变其 `axiom` 状态。"}
-{"doc_id": "D042", "sid": 167, "start": 11819, "end": 11950, "kind": "prose", "text": "`spectralQuantum_numerical_bounds` 已于 v1.9.58 升级为定理（区间 `(0.02295, 0.02325)`，由 Euler–Mascheroni 上下界序列与 ln 2、ln π 标准界严格证明），不再计入待闭合公理。"}
-{"doc_id": "D042", "sid": 168, "start": 11950, "end": 11992, "kind": "prose", "text": "洞见仅限实测所得：0 条定理依赖 `physical_hypothesis` 体系。"}
-{"doc_id": "D042", "sid": 169, "start": 11992, "end": 12110, "kind": "prose", "text": "另：`spectralQuantum_zeta_zeros_relation` 已于 v1.9.57 删除（原式以 `γ₁+n` 近似第 n 个零点、数值不成立），☯ 的零点求和表示转登记为 Hadamard 积待形式化缺口（见下表）。"}
-{"doc_id": "D042", "sid": 170, "start": 12112, "end": 12122, "kind": "heading", "text": "## 缺口与证明状态"}
-{"doc_id": "D042", "sid": 171, "start": 12124, "end": 12146, "kind": "table", "text": "| 缺口 | 描述 | 涉及库 | 状态 |"}
-{"doc_id": "D042", "sid": 172, "start": 12147, "end": 12169, "kind": "table", "text": "|:---|:---|:---|:---:|"}
-{"doc_id": "D042", "sid": 173, "start": 12170, "end": 12235, "kind": "table", "text": "| H3.1 | 前核子自组织 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |"}
-{"doc_id": "D042", "sid": 174, "start": 12236, "end": 12297, "kind": "table", "text": "| H3.2 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |"}
-{"doc_id": "D042", "sid": 175, "start": 12298, "end": 12381, "kind": "table", "text": "| C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | 以 Lean 公理 H3.3 承载（缺口编号 C，与 H3.3 为两套编号） |"}
-{"doc_id": "D042", "sid": 176, "start": 12382, "end": 12449, "kind": "table", "text": "| — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |"}
-{"doc_id": "D042", "sid": 177, "start": 12450, "end": 12525, "kind": "table", "text": "| — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |"}
-{"doc_id": "D042", "sid": 178, "start": 12526, "end": 12583, "kind": "table", "text": "| — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |"}
-{"doc_id": "D042", "sid": 179, "start": 12584, "end": 12665, "kind": "table", "text": "| — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明（内核判定 `decide`） |"}
-{"doc_id": "D042", "sid": 180, "start": 12666, "end": 12735, "kind": "table", "text": "| — | 相变量子 $☯ = \\xi'(1)/\\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |"}
-{"doc_id": "D042", "sid": 181, "start": 12736, "end": 12817, "kind": "table", "text": "| — | 因果分辨率 → 引力场有效描述的尺度依赖 | `Superconductivity/ElementCartan` | `def` 占位（哲学立场） |"}
-{"doc_id": "D042", "sid": 182, "start": 12818, "end": 12909, "kind": "table", "text": "| — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `Superconductivity/ElementCartan` | `def` 占位（需核物理/量子引力） |"}
-{"doc_id": "D042", "sid": 183, "start": 12910, "end": 13050, "kind": "table", "text": "| — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\\sum 1/(\\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 Hadamard 乘积与真实零点枚举形式化（v1.9.57 已删除 `RiemannXi` 中数值不成立的占位公理） |"}
-{"doc_id": "D042", "sid": 184, "start": 13051, "end": 13141, "kind": "table", "text": "| — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |"}
-{"doc_id": "D042", "sid": 185, "start": 13143, "end": 13160, "kind": "heading", "text": "### 闭合缺口 (v0.5.8)"}
-{"doc_id": "D042", "sid": 186, "start": 13162, "end": 13180, "kind": "table", "text": "| 缺口 | 描述 | 闭合方式 |"}
-{"doc_id": "D042", "sid": 187, "start": 13181, "end": 13197, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D042", "sid": 188, "start": 13198, "end": 13329, "kind": "table", "text": "| G13 | BCS 积分方程 tanh→对数渐近 | `BCSIntegralAsymptotic.lean`：`bcsTcFromIntegral_solved` 严格证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程的唯一正解 |"}
-{"doc_id": "D042", "sid": 189, "start": 13330, "end": 13447, "kind": "table", "text": "| G20-ext | 两质子耦合精确阈值 | `MolecularGeometry.lean`：`twoProtonCoupling_exactThreshold` 用 SOS 分解 + 黄金比例恒等式证明 t < λ₁ 时正定 |"}
-{"doc_id": "D042", "sid": 190, "start": 13448, "end": 13560, "kind": "table", "text": "| — | `bcsConstant_gt_one`（2e^γ/π > 1） | 从 `axiom` 升级为 `theorem`：利用 Mathlib 的 γ>1/2、exp(1)>2.718、π<3.1416 严格证明 |"}
-{"doc_id": "D042", "sid": 191, "start": 13561, "end": 13676, "kind": "table", "text": "| — | 分子超嘉当矩阵谱间隙界 | `BridgeTheorems.lean`：`twoAtomSuperCartan_quadratic_lowerBound` 用 Cauchy-Schwarz + AM-GM 严格证明 |"}
-{"doc_id": "D042", "sid": 192, "start": 13677, "end": 13754, "kind": "table", "text": "| — | 元素嘉当矩阵 5 个 `True` 占位公理 | 转为诚实 `def ... : Prop := True` 声明，明确标注“不构成证明” |"}
-{"doc_id": "D042", "sid": 193, "start": 13756, "end": 13820, "kind": "quote", "text": "> 注：G17（FG→GR 连续极限退化定理）与 G20-ext 均已闭合，且**不属缺口表编号**（见 v0.6.0 亮点）。"}
-{"doc_id": "D042", "sid": 194, "start": 13822, "end": 13829, "kind": "heading", "text": "## 编译命令"}
-{"doc_id": "D042", "sid": 195, "start": 13831, "end": 13838, "kind": "code", "text": "```bash"}
-{"doc_id": "D042", "sid": 196, "start": 13839, "end": 13874, "kind": "code", "text": "cd \"08 理论组织和形式化框架/04_Lean对接/Lean源码\""}
-{"doc_id": "D042", "sid": 197, "start": 13875, "end": 13892, "kind": "code", "text": "lake build # 编译全部"}
-{"doc_id": "D042", "sid": 198, "start": 13893, "end": 13921, "kind": "code", "text": "lake build CausalSet # 编译单个库"}
-{"doc_id": "D042", "sid": 199, "start": 13922, "end": 13956, "kind": "code", "text": "lake build CartanAlgebra # 编译嘉当代数库"}
-{"doc_id": "D042", "sid": 200, "start": 13957, "end": 14004, "kind": "code", "text": "lake build SpectralGeometry # 编译谱几何库（含 Mathieu）"}
-{"doc_id": "D042", "sid": 201, "start": 14005, "end": 14051, "kind": "code", "text": "lake build Superconductivity # 编译强引力超导库（16 模块）"}
-{"doc_id": "D042", "sid": 202, "start": 14052, "end": 14103, "kind": "code", "text": "lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块"}
-{"doc_id": "D042", "sid": 203, "start": 14104, "end": 14151, "kind": "code", "text": "lake build FGChain # 编译 FG 纤维丛理论链路库（12 模块，全部通过）"}
-{"doc_id": "D042", "sid": 204, "start": 14152, "end": 14247, "kind": "code", "text": "lake build GN # 编译 G_N 第一性推导库（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造）"}
-{"doc_id": "D042", "sid": 205, "start": 14248, "end": 14284, "kind": "code", "text": "lake build GN.TripleIdentity # 编译单模块"}
-{"doc_id": "D042", "sid": 206, "start": 14285, "end": 14316, "kind": "code", "text": "lake build GN.SierraCQM # 编译单模块"}
-{"doc_id": "D042", "sid": 207, "start": 14317, "end": 14360, "kind": "code", "text": "lake build GN.SimplexSpectrum # §2 4-单纯形组合谱"}
-{"doc_id": "D042", "sid": 208, "start": 14361, "end": 14413, "kind": "code", "text": "lake build GN.AdeleJacobian # §6 Adele Jacobian 因子 2"}
-{"doc_id": "D042", "sid": 209, "start": 14414, "end": 14457, "kind": "code", "text": "lake build GN.Constructions # §8–§11 可代数化构造"}
-{"doc_id": "D042", "sid": 210, "start": 14458, "end": 14461, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 211, "start": 14463, "end": 14470, "kind": "heading", "text": "## 理论对应"}
-{"doc_id": "D042", "sid": 212, "start": 14472, "end": 14499, "kind": "table", "text": "| CQM 理论 | Lean 库 | 核心定理数 |"}
-{"doc_id": "D042", "sid": 213, "start": 14500, "end": 14517, "kind": "table", "text": "|:---|:---|:---:|"}
-{"doc_id": "D042", "sid": 214, "start": 14518, "end": 14547, "kind": "table", "text": "| 因果集本体论 | `CausalSet` | 22 |"}
-{"doc_id": "D042", "sid": 215, "start": 14548, "end": 14584, "kind": "table", "text": "| 耦合空间与不确定性 | `CouplingSpace` | 21 |"}
-{"doc_id": "D042", "sid": 216, "start": 14585, "end": 14622, "kind": "table", "text": "| SU(5) 嘉当矩阵 | `CartanAlgebra` | 33 |"}
-{"doc_id": "D042", "sid": 217, "start": 14623, "end": 14669, "kind": "table", "text": "| 谱几何与 Mathieu 方程 | `SpectralGeometry` | 129 |"}
-{"doc_id": "D042", "sid": 218, "start": 14670, "end": 14702, "kind": "table", "text": "| 因果时几何 | `PrimeGeometry` | 81 |"}
-{"doc_id": "D042", "sid": 219, "start": 14703, "end": 14739, "kind": "table", "text": "| 禁闭-前核子自组织等价 | `Decoherence` | 15 |"}
-{"doc_id": "D042", "sid": 220, "start": 14740, "end": 14784, "kind": "table", "text": "| G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |"}
-{"doc_id": "D042", "sid": 221, "start": 14785, "end": 14815, "kind": "table", "text": "| 方法论基础 | `Methodology` | 13 |"}
-{"doc_id": "D042", "sid": 222, "start": 14816, "end": 14855, "kind": "table", "text": "| 强引力超导涌现 | `Superconductivity` | 331 |"}
-{"doc_id": "D042", "sid": 223, "start": 14856, "end": 14888, "kind": "table", "text": "| FG 纤维丛理论链路 | `FGChain` | 114 |"}
-{"doc_id": "D042", "sid": 224, "start": 14889, "end": 14983, "kind": "table", "text": "| $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 107 |"}
-{"doc_id": "D042", "sid": 225, "start": 14985, "end": 15044, "kind": "quote", "text": "> 注：本表与「定理统计」同口径（`theorem` + `lemma`，零 `sorry`），11 库合计 886。"}
-{"doc_id": "D042", "sid": 226, "start": 15046, "end": 15064, "kind": "heading", "text": "## 本次更新亮点 (v0.7.0)"}
-{"doc_id": "D042", "sid": 227, "start": 15066, "end": 15354, "kind": "list", "text": "- **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。"}
-{"doc_id": "D042", "sid": 228, "start": 15354, "end": 15388, "kind": "list", "text": "10×10 det 语句的直接判定超出默认递归深度，故采用显式基路线"}
-{"doc_id": "D042", "sid": 229, "start": 15389, "end": 15533, "kind": "list", "text": "- **§6 Adele Jacobian 因子 2**：新增 `GN/AdeleJacobian.lean`（11 引理/定理），条件定理：自对偶 `det D∞ · ∏ det Dp = 1` ⇒ `ln 𝒥 = −2 ln(∏ det Dp)` ⇒ `𝒥 = exp(−2/☯)`；"}
-{"doc_id": "D042", "sid": 230, "start": 15533, "end": 15563, "kind": "list", "text": "Tate 自对偶本身以 `placeholder` 如实标注"}
-{"doc_id": "D042", "sid": 231, "start": 15564, "end": 15850, "kind": "list", "text": "- **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），$\\kappa = (N_{\\text{faces}} + ☯)/N_{\\text{cycle}}$ 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 $\\kappa = 31/30 + ☯/30$、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）"}
-{"doc_id": "D042", "sid": 232, "start": 15851, "end": 15895, "kind": "list", "text": "- **GN 库统计**：3→6 模块，19→101 定理；全库定理总数 666→748"}
-{"doc_id": "D042", "sid": 233, "start": 15897, "end": 15915, "kind": "heading", "text": "## 本次更新亮点 (v0.6.2)"}
-{"doc_id": "D042", "sid": 234, "start": 15917, "end": 16276, "kind": "list", "text": "- **§5 Sierra-CQM 形式化闭合（代数核心）**：新增 `GN/SierraCQM.lean`（6 定理，零 `sorry`、零新增 `axiom`），把证明稿定理 5.1 的 Floquet 量子化代数链严格化——零点匹配 `floquetMomentum_eq`（$k_n=\\gamma_n(1+\\theta_n/(2\\pi n))$）、偏差界 `floquetMomentum_deviation_lt`（$|k_n-\\gamma_n|<\\gamma_n/(2n)$）、耦级绝对误差 `floquet_level_deviation_le`（$|k_n^2-\\gamma_n^2|\\le\\gamma_n^2(1/n+1/(4n^2))$）、相对误差两形式（含见证常数 $5/4$，$n\\ge1$）。"}
-{"doc_id": "D042", "sid": 235, "start": 16276, "end": 16320, "kind": "list", "text": "`L_n=2\\pi n/\\gamma_n` 与 `m=n` 以显式假设出现（条件定理）；"}
-{"doc_id": "D042", "sid": 236, "start": 16320, "end": 16344, "kind": "list", "text": "步骤 1–2（酉等价、广义本征函数）如实列入缺口"}
-{"doc_id": "D042", "sid": 237, "start": 16345, "end": 16412, "kind": "list", "text": "- **GN 库统计**：2→3 模块（`Basic`/`TripleIdentity`/`SierraCQM`），13→19 定理；"}
-{"doc_id": "D042", "sid": 238, "start": 16412, "end": 16426, "kind": "list", "text": "全库定理总数 660→666"}
-{"doc_id": "D042", "sid": 239, "start": 16428, "end": 16446, "kind": "heading", "text": "## 本次更新亮点 (v0.6.1)"}
-{"doc_id": "D042", "sid": 240, "start": 16448, "end": 16687, "kind": "list", "text": "- **GN 库新增**：`GN`（2 模块，13 定理，零 `sorry`、零新增 `axiom`），形式化 $G_N$ 第一性推导公理化证明稿 §1——三重恒等 $☯ = \\xi'(1)/\\xi(1) = \\lambda_1 = -B$ 的代数层：闭式等价变形（定理 1.2）、$\\lambda_1 = ☯$（定理 1.3）、$B = -☯$（定理 1.4）、三重恒等合成（定理 1.5）、Li 判据 n=1（$\\lambda_1 > 0$）、$B < 0$、数值桥梁推论。"}
-{"doc_id": "D042", "sid": 241, "start": 16687, "end": 16745, "kind": "list", "text": "依赖 `SpectralGeometry.Basic`，避开编译失败的 `RiemannXi`/`Mathieu`；"}
-{"doc_id": "D042", "sid": 242, "start": 16745, "end": 16788, "kind": "list", "text": "缺口（零点求和表示、§5 渐近定理）如实列入缺口表，详见 `GN/README.md`"}
-{"doc_id": "D042", "sid": 243, "start": 16789, "end": 16921, "kind": "list", "text": "- **证明稿严格性清理**：公理化证明稿 §1（定理 1.1 因子 2 错误）、§2 定理 2.1（补全二阶矩求解 + 有理根定理排除，消除不完整推导）、§3 定理 3.1（重组为四步结构，消除自我对话）、§5 步骤 5（消除自我对话，统一绝对/相对误差表述）；"}
-{"doc_id": "D042", "sid": 244, "start": 16921, "end": 16963, "kind": "list", "text": "参考文献修正 LM 论文 arXiv 号（2307.01254）与真实标题，编号去重"}
-{"doc_id": "D042", "sid": 245, "start": 16965, "end": 16983, "kind": "heading", "text": "## 本次更新亮点 (v0.6.0)"}
-{"doc_id": "D042", "sid": 246, "start": 16985, "end": 17039, "kind": "list", "text": "- **落后形式化的清理**：`MultiComponent.lean` 与最新研究文档不一致，已不在库中；"}
-{"doc_id": "D042", "sid": 247, "start": 17039, "end": 17103, "kind": "list", "text": "主入口 `Superconductivity.lean` 的章节映射同步更新（§13→§20、§7/§10 对应文档章节精简）；"}
-{"doc_id": "D042", "sid": 248, "start": 17103, "end": 17150, "kind": "list", "text": "§3.6 公式取与代码一致的 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$；"}
-{"doc_id": "D042", "sid": 249, "start": 17150, "end": 17257, "kind": "list", "text": "G13 状态为闭合；FG→GR 连续极限退化定理（编号 G17）不作为缺口；`Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用改为“方向锚定保留”。"}
-{"doc_id": "D042", "sid": 250, "start": 17257, "end": 17263, "kind": "list", "text": "模块数 16"}
-{"doc_id": "D042", "sid": 251, "start": 17264, "end": 17336, "kind": "list", "text": "- **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除）"}
-{"doc_id": "D042", "sid": 252, "start": 17338, "end": 17356, "kind": "heading", "text": "## 本次更新亮点 (v0.5.9)"}
-{"doc_id": "D042", "sid": 253, "start": 17358, "end": 17407, "kind": "list", "text": "- **RQM 唯物化文档化**：将关系量子力学的唯物化操作正式纳入 SPAF 框架文档（§0）。"}
-{"doc_id": "D042", "sid": 254, "start": 17407, "end": 17437, "kind": "list", "text": "三条原则：属性随附本体、因果自组织、观测者相对性的自然消解。"}
-{"doc_id": "D042", "sid": 255, "start": 17437, "end": 17497, "kind": "list", "text": "推论：电子去特权化——取消电子的本体特权，使嘉当矩阵拼接理论得以统一处理超导问题，与 BCS 历史实践（晶格是关键）一致"}
-{"doc_id": "D042", "sid": 256, "start": 17498, "end": 17658, "kind": "list", "text": "- **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 角亏→FG 退相干场强度）→ 层级 VI（因果分辨率）"}
-{"doc_id": "D042", "sid": 257, "start": 17659, "end": 17730, "kind": "list", "text": "- **元素主次结构**：BCS 同位素效应揭示元素内部存在主次结构——质子扇区（纯 A4 块对角）为主、中子扇区（缺陷 A4 块对角）为次。"}
-{"doc_id": "D042", "sid": 258, "start": 17730, "end": 17815, "kind": "list", "text": "主次结构直接指向 BCS 退化方向（往单元素材料退化），并揭示拼接规则（同种元素同位素之间 $\\epsilon(N)$ 连续变化，跨元素种类需要 $t_{ij}$ 参数）"}
-{"doc_id": "D042", "sid": 259, "start": 17816, "end": 17894, "kind": "list", "text": "- **阶段 0：元素层级**：新增计算管线步骤 0a–0d（质子/中子分配→元素嘉当矩阵组装→主次结构识别→BCS 退化验证），使元素层级计算先于分子层级"}
-{"doc_id": "D042", "sid": 260, "start": 17895, "end": 18002, "kind": "list", "text": "- **SPAF 框架新增五项待办（含 G17 说明，不作为缺口）**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、FG→GR 连续极限退化定理（G17，不作为缺口）、单元素拼接规则特殊性"}
-{"doc_id": "D042", "sid": 261, "start": 18003, "end": 18071, "kind": "list", "text": "- **文档总数**：SPAF 框架文档从 355 行扩展至约 500 行，新增 §0、§2.5、§5 阶段 0、§10.5 共四个章节"}
-{"doc_id": "D042", "sid": 262, "start": 18072, "end": 18123, "kind": "list", "text": "- **定理总数**：保持不变（624），本次更新为文档架构与概念框架的深化，非 Lean 代码层变更"}
-{"doc_id": "D042", "sid": 263, "start": 18125, "end": 18143, "kind": "heading", "text": "## 本次更新亮点 (v0.5.8)"}
-{"doc_id": "D042", "sid": 264, "start": 18145, "end": 18228, "kind": "list", "text": "- **BCS 渐近分析（G13 闭合）**：新增 `BCSIntegralAsymptotic.lean`（9 定理），将 BCS 积分方程从第一性推导为对数方程。"}
-{"doc_id": "D042", "sid": 265, "start": 18228, "end": 18300, "kind": "list", "text": "`bcsTcFromIntegral_solved` 严格证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程的唯一正解；"}
-{"doc_id": "D042", "sid": 266, "start": 18300, "end": 18342, "kind": "list", "text": "`bcsTcFromIntegral_exists_unique` 证明存在唯一性。"}
-{"doc_id": "D042", "sid": 267, "start": 18342, "end": 18374, "kind": "list", "text": "积分方程 ⟺ 对数方程 ⟺ 闭式 T_c 的完整推导链全部严格化"}
-{"doc_id": "D042", "sid": 268, "start": 18375, "end": 18445, "kind": "list", "text": "- **`bcsConstant_gt_one` 公理→定理**：`2e^γ/π > 1` 从 `axiom` 升级为 `theorem`。"}
-{"doc_id": "D042", "sid": 269, "start": 18445, "end": 18598, "kind": "list", "text": "证明链：γ > 1/2（Mathlib `one_half_lt_eulerMascheroniConstant`）→ exp(γ) > exp(1/2) → 平方差因式分解证明 2·exp(1/2) > π（利用 π < 3.1416 和 exp(1) > 2.718）→ 2·exp(γ)/π > 1。"}
-{"doc_id": "D042", "sid": 270, "start": 18598, "end": 18641, "kind": "list", "text": "BCS 理论中前因子 > 1 的\"数值事实\"首次从 Mathlib 已知数值界严格证明"}
-{"doc_id": "D042", "sid": 271, "start": 18642, "end": 18946, "kind": "list", "text": "- **桥接定理（跨模块因果链）**：新增 `BridgeTheorems.lean`（23 定理），将 CQM 各模块严格连接：`spectralGap_bcsTc_bound`（A₄ 谱间隙→BCS T_c 上限）、`gapChannelTc_exact`（谱间隙通道 T_c 闭式）、`spectralGap_to_ricciScalar_chain`（谱间隙→角亏密度→Ricci 标量）、`twoAtomSuperCartan_quadratic_lowerBound`（双原子耦合正定性）——用 Cauchy-Schwarz + AM-GM 严格证明 |t| < λ_min 时分子超嘉当矩阵正定"}
-{"doc_id": "D042", "sid": 272, "start": 18947, "end": 19029, "kind": "list", "text": "- **元素嘉当矩阵（质/中子层级）**：新增 `ElementCartan.lean`（39 定理），从质子/中子基本嘉当矩阵出发，按 Z/N 组装元素嘉当矩阵。"}
-{"doc_id": "D042", "sid": 273, "start": 19029, "end": 19244, "kind": "list", "text": "包含：质子扇区（纯 A₄ 块对角）、中子扇区（缺陷 A₄，参数 ε(N)）、同位素效应（ε(N) = ε₀·(1−β·(N−N_ref)/N_ref)）、**单元素材料 CQM→BCS 退化**（§9：ε→0 时 T_c→bcsCriticalTemperature(ω_D, λ₁)，BCS 是 CQM 在单元素、无中子缺陷极限下的特例）、极端引力例外（中子星/强引力/黑洞视界，5 个 `True` 占位转为诚实 `def`）"}
-{"doc_id": "D042", "sid": 274, "start": 19245, "end": 19444, "kind": "list", "text": "- **分子几何→FG 退相干场管线**：新增 `MolecularGeometry.lean`（62 定理），完整形式化从分子构型到 FG 退相干场的管线：原子嘉当矩阵 → 分子超嘉当矩阵（块对角 + 跨原子耦合 t_ij）→ Weyl 嵌入（对角化提取谱间隙）→ Regge 角亏（δ_v = 2π − Σθ_tet）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限）。"}
-{"doc_id": "D042", "sid": 275, "start": 19444, "end": 19527, "kind": "list", "text": "`twoProtonCoupling_exactThreshold`（G20-ext 闭合）用 SOS 分解 + 黄金比例恒等式证明两质子耦合在 t < λ₁ 时正定"}
-{"doc_id": "D042", "sid": 276, "start": 19528, "end": 19681, "kind": "list", "text": "- **SPAF 压强-温度几何构型**：已合并入 `SPAF.lean`，将压强和温度转化为 A₄ 几何效应：几何压缩因子 χ(P) = (P/P_ref)^(1/3)、桥接定理（χ(P)→ω_D(P)、χ(P)→λ(P)）、再生产因子 R(T) = exp(−Γ_eff(T)·τ)、自洽 T_c 方程"}
-{"doc_id": "D042", "sid": 277, "start": 19682, "end": 19791, "kind": "list", "text": "- **消除所有 `True` 占位公理和 `sorry`**：`ElementCartan.lean` 中 5 个返回 `True` 的占位公理转为诚实 `def` 声明，明确标注\"不构成证明，仅标记命题声明位置\"。"}
-{"doc_id": "D042", "sid": 278, "start": 19791, "end": 19875, "kind": "list", "text": "全部 12 个 Superconductivity 模块零 `sorry`、零 `axiom`（除 `Ontology.lean` 中 5 条本体论公理，为框架出发点）"}
-{"doc_id": "D042", "sid": 279, "start": 19876, "end": 19950, "kind": "list", "text": "- **定理总数**：从 426 → 624（+198 个严格证明的定理），Superconductivity 库从 119 → 317（+198）"}
-{"doc_id": "D042", "sid": 280, "start": 19952, "end": 19970, "kind": "heading", "text": "## 本次更新亮点 (v0.5.7)"}
-{"doc_id": "D042", "sid": 281, "start": 19972, "end": 20105, "kind": "list", "text": "- **室温可行域量化判据（第三步）**：`roomTemperature_iff_debyeLowerBound`——T_c(ω_D, λ) ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}，把「室温方向」从文字叙述落成严格不等式；"}
-{"doc_id": "D042", "sid": 282, "start": 20105, "end": 20223, "kind": "list", "text": "`roomTemperatureDebyeLowerBound_antitone_in_coupling`——所需 ω_D 下界反单调于 λ（强耦合系统性降低所需 ω_D），与双单调骨架合读：两大室温杠杆（轻晶格/高压 → 高 ω_D；"}
-{"doc_id": "D042", "sid": 283, "start": 20223, "end": 20244, "kind": "list", "text": "强耦合 → 高 λ）可沿等值下界互换/叠加"}
-{"doc_id": "D042", "sid": 284, "start": 20245, "end": 20464, "kind": "list", "text": "- **SPAF 半唯像应用框架（可严格证明部分）**：新增 `SPAF.lean`（17 定理 + 4 引理），严格化框架文档 §3–§5 的可证子集——因果耦合族 t_ij = t₀·e^{−d_ij/λ}·Θ(d_cut−d_ij)（截断内正性、截断外恒零、对距离单调衰减、全局非负：`causalCoupling_pos`/`_zero_of_cutoff`/`_antitone_in_distance`/`_nonneg`）；"}
-{"doc_id": "D042", "sid": 285, "start": 20464, "end": 20569, "kind": "list", "text": "组装对称性（对称矩阵叠加保对称、A₄ 直接拼接保实对称：`superCartan_symmetric`/`identityBlock_symmetric`/`cartanA4Stack_symmetric`）；"}
-{"doc_id": "D042", "sid": 286, "start": 20569, "end": 20747, "kind": "list", "text": "中子缺陷 C_n = A₄ − ε·diag(1,0,0,0)（对称、ε=0 退化 `cartanHamiltonian`、缺陷位对角元 2−ε、非缺陷位保持 2、ε<2 时缺陷位对角元为正：`neutronCartan_symmetric`/`_zero_eq_proton`/`_diag00`/`_diag_ne00`/`_diag00_pos`）；"}
-{"doc_id": "D042", "sid": 287, "start": 20747, "end": 20828, "kind": "list", "text": "味概率流 Γ_rel ≥ 0 与 Regge 边长 l_e > 0（`flavorFlowRate_nonneg`/`reggeEdgeLength_pos`）。"}
-{"doc_id": "D042", "sid": 288, "start": 20828, "end": 21040, "kind": "list", "text": "**中子缺陷谱判据正方向（SOS 版本）**：`neutronCartan_quadratic` 给出二次型分解 xᴴC_nx = (1−ε)x₀² + x₃² + (x₀−x₁)² + (x₁−x₂)² + (x₂−x₃)²，`neutronCartan_posDef_of_lt_one`/`_of_lt_spectralGap` 证明 ε < 1（更宽）与 ε < spectralGap（判据原文）⟹ C_n 正定；"}
-{"doc_id": "D042", "sid": 289, "start": 21040, "end": 21193, "kind": "list", "text": "`neutronCartan_not_posDef_of_five_fourths_le` 给出反方向构造：ε ≥ 5/4 时非正定（见证向量 (4,3,2,1)，xᴴC_nx = 20 − 16ε ≤ 0）——同时修正文档原述「ε ≥ γ_min 即丧失正定」（0.699 ≤ ε < 5/4 仍正定）。"}
-{"doc_id": "D042", "sid": 290, "start": 21193, "end": 21246, "kind": "list", "text": "唯一残留缺口：区间 [1, 5/4) 的正定保持（Sylvester 余子式族）与 γ_min 的阈值认证"}
-{"doc_id": "D042", "sid": 291, "start": 21248, "end": 21266, "kind": "heading", "text": "## 本次更新亮点 (v0.5.6)"}
-{"doc_id": "D042", "sid": 292, "start": 21268, "end": 21479, "kind": "list", "text": "- **金属氢能隙闭式（第二步计算框架）**：`hydrogenBcsGap` = ω_D^H/sinh(1/λ)，`hydrogen_bcs_gap_equation_solved` 证明该闭式**精确满足能隙积分方程** 1 = λ·arsinh(ω_D^H/Δ_H)——第一性解链在氢材料上的直接实例，无需经验参数：氢 = 单质子有限本体 → A₄ 谱间隙 → 晶格刚度 → 德拜频率 → 能隙闭式全部由第一性量决定"}
-{"doc_id": "D042", "sid": 293, "start": 21480, "end": 21613, "kind": "list", "text": "- **金属氢同位素方向**：`hydrogen_phonon_higher_than_deuterium`——氘（2·m_p）晶格的声子截止 ≤ 氢晶格（最轻有限本体给出最高 T_c 上限），对应 H3S/D3S 同位素位移 T_c(D) < T_c(H) 的家系"}
-{"doc_id": "D042", "sid": 294, "start": 21614, "end": 21792, "kind": "list", "text": "- **室温方向骨架（第三步）**：`bcsCriticalTemperature_mono_in_debye` / `bcsCriticalTemperature_mono_in_coupling`——T_c = 常·ω_D·e^{−1/λ} 对 ω_D 与 λ 均单调不减，室温路线的两大坐标：轻晶格 + 高压（高 ω_D）与强电子-声子耦合（高 λ）"}
-{"doc_id": "D042", "sid": 295, "start": 21793, "end": 21874, "kind": "list", "text": "- **第一性数值例链（主流输入标定）**：`stiffnessRefCalibrated` 由目标 ω_D 反解 A₄ 刚度 k₀ = ω_D²·M_p/λ₁；"}
-{"doc_id": "D042", "sid": 296, "start": 21874, "end": 22103, "kind": "list", "text": "`hydrogenPhononFrequency_calibrated_eq` / `hydrogenBcsGap_calibrated_eq` / `hydrogenCriticalTemperature_calibrated_eq` 证明金属氢链（A₄ 标度 → 刚度 → 声子 → 能隙/T_c）精确还原主流输入 ω_D 与 BCS 闭式——H₃S/LaH10 数值例链的记号还原锚点（数值本身以文献 α²F(ω)/λ 为输入，见 06 超导 计算器）"}
-{"doc_id": "D042", "sid": 297, "start": 22104, "end": 22171, "kind": "list", "text": "- **A₄ 直接拼接（大量金属氢）**：`cartanA4Stack` = n 份 A₄ 块对角拼接（Fin 4 × Fin n）；"}
-{"doc_id": "D042", "sid": 298, "start": 22171, "end": 22391, "kind": "list", "text": "`cartanA4Stack_zero_of_proton_ne`（跨质子零耦合）、`cartanA4Stack_block_eq`（块内仍为 A₄）、`cartanA4Stack_diag`（2-自环保持）、`cartanA4Stack_trace_eq`（Tr = 8n）、`cartanA4Stack_det_eq`（det = 5ⁿ）——禁闭几何尺度按质子数线性累加、不因拼接稀释，\"大量金属氢 = 单质子 A₄ 直接拼接\"已严格化"}
-{"doc_id": "D042", "sid": 299, "start": 22393, "end": 22411, "kind": "heading", "text": "## 本次更新亮点 (v0.5.5)"}
-{"doc_id": "D042", "sid": 300, "start": 22413, "end": 22620, "kind": "list", "text": "- **第一性推导链**：新增 `FirstPrinciples.lean`（18 定理 + 1 引理），把超导推导起点从文献公式**下沉到物理第一原理**，全链一次铺开：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙 `spectralGap` 标定）→ 电子-声子耦合 λ = N(0)·V（N(0) 按主流研究结果采用，不重新推导）→ BCS 能隙积分方程 → 能隙闭式"}
-{"doc_id": "D042", "sid": 301, "start": 22621, "end": 22864, "kind": "list", "text": "- **严格积分恒等式（第一性严格步）**：`gapIntegral_pr` 用 `Real.hasDerivAt_arsinh`（d/dx arsinh x = 1/√(1+x²)）+ 链式法则 + 微积分基本定理（`intervalIntegral.integral_eq_sub_of_hasDerivAt`）**严格证明** ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)——把 BCS 能隙方程\"积分 → arsinh\"的台阶从文献输入升格为可证定理"}
-{"doc_id": "D042", "sid": 302, "start": 22865, "end": 22942, "kind": "list", "text": "- **积分能隙方程 ⟺ arsinh 方程、第一性解**：`bcsGapIntegralEquation_iff_arsinh` 直接把积分恒等式代入；"}
-{"doc_id": "D042", "sid": 303, "start": 22942, "end": 23044, "kind": "list", "text": "`bcsGapIntegralEquation_solved` 证明积分方程的解 = ω_D/sinh(1/λ)（复用 Reduction 的 `bcs_gap_equation_unique` 唯一性）"}
-{"doc_id": "D042", "sid": 304, "start": 23045, "end": 23179, "kind": "list", "text": "- **A₄ 谱间隙标定晶格**：`latticeStiffnessFromA4_pos` / `phononFrequencyFromA4_pos` / `phononFrequencyFromA4_mono_in_stiffness`（A₄ 循环越强声子频率越高）"}
-{"doc_id": "D042", "sid": 305, "start": 23180, "end": 23282, "kind": "list", "text": "- **弱耦合消失**：`bcsCriticalTemperature_tendsto_zero` 证明 λ → 0⁺ 时 T_c → 0（`Tendsto`，e^{−1/λ} 严格闭式导致，非经验截断）"}
-{"doc_id": "D042", "sid": 306, "start": 23283, "end": 23355, "kind": "list", "text": "- **端到端正性链**：`firstPrinciples_chain_pos`——声子频率、耦合 λ、能隙闭式、张量超导序参量沿第一性链同为正"}
-{"doc_id": "D042", "sid": 307, "start": 23356, "end": 23486, "kind": "list", "text": "- **再生产维持（坍缩难题②的解答）**：`phaseLockingFactor_tendsto_zero`——锁定因子 e^{−Γ|τ|} 随再生产间隔趋于 0：涌现态的确定性不能一次获得、必须被反复耦合事件再生产维持（涌现逻辑结构再生产锁定的必要性定理）"}
-{"doc_id": "D042", "sid": 308, "start": 23487, "end": 23603, "kind": "list", "text": "- **金属氢实例（第二步计算起点）**：`hydrogenPhononFrequency_pos`——氢 = 单质子有限本体，禁闭几何直接是 A₄，德拜频率由谱间隙 λ₁ × 质子质量完全决定（A₄ 直接拼接，无需跨种类有限本体）"}
-{"doc_id": "D042", "sid": 309, "start": 23604, "end": 23670, "kind": "list", "text": "- **输入与非推导声明**：A₄ 本征向量显式构造、晶格刚度参考标度、配对强度 V、费米面态密度 N(0) 均为理想化/主流输入；"}
-{"doc_id": "D042", "sid": 310, "start": 23670, "end": 23703, "kind": "list", "text": "G13（T_c 方程 tanh→对数渐近）如实列入缺口，不冒充定理"}
-{"doc_id": "D042", "sid": 311, "start": 23705, "end": 23723, "kind": "heading", "text": "## 本次更新亮点 (v0.5.4)"}
-{"doc_id": "D042", "sid": 312, "start": 23725, "end": 23919, "kind": "list", "text": "- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（$\\text{Tr}_☯$ 理想化）"}
-{"doc_id": "D042", "sid": 313, "start": 23920, "end": 24112, "kind": "list", "text": "- **A₄ 双重角色（哈密顿量 = 能动张量）**：`cartanHamiltonian`（A₄ 作为离散 Laplacian，07 嘉当结构 §2.1）与 `stressEnergyTrace`（A₄ 谱和 = 8）一致性定理 `cartanHamiltonian_trace_eq_stressEnergyTrace`——同一谱 {λ₁..λ₄} 同时充当哈密顿量迹与能动张量迹"}
-{"doc_id": "D042", "sid": 314, "start": 24113, "end": 24270, "kind": "list", "text": "- **张量序参量正性**：`superconductingOrderComponent_pos` / `superconductingOrderTensor_pos` / `superconductingOrderTensor_cartanWeights_pos`——A₄ 正定谱下超导序参量逐通道与全体严格为正"}
-{"doc_id": "D042", "sid": 315, "start": 24271, "end": 24321, "kind": "list", "text": "- **谱间隙退化到 BCS**：谱间隙 λ₁ = (3−√5)/2 的强大 >0/<1/最小定理；"}
-{"doc_id": "D042", "sid": 316, "start": 24321, "end": 24380, "kind": "list", "text": "`bcsGapInGapChannel`/`bcsTcInGapChannel` 表现谱间隙同时缩放 Δ 与 T_c；"}
-{"doc_id": "D042", "sid": 317, "start": 24380, "end": 24428, "kind": "list", "text": "`gapChannel_gapRatio_invariant` 说明普适能隙比不受谱间隙缩放影响"}
-{"doc_id": "D042", "sid": 318, "start": 24429, "end": 24485, "kind": "list", "text": "- **Tr(A₄⁻¹) 勘误**：`cartanInvTrace_eq_four` 证明 Tr(A⁻¹)=4；"}
-{"doc_id": "D042", "sid": 319, "start": 24485, "end": 24548, "kind": "list", "text": "07 嘉当结构文档 §4.2 的 2 与直接计算不符，修正后 1/Tr(A⁻¹)=1/4 恰为谱间隙 E₀=1/4 的自洽输入"}
-{"doc_id": "D042", "sid": 320, "start": 24549, "end": 24642, "kind": "list", "text": "- **公理性说明**：A₄ 本征结构的根 charpoly 验证沿用 CartanAlgebra 既有定位（本征向量显式构造为待办），模块以谱为输入，全部定理按理想化/退化约定严格证明"}
-{"doc_id": "D042", "sid": 321, "start": 24644, "end": 24662, "kind": "heading", "text": "## 本次更新亮点 (v0.5.3)"}
-{"doc_id": "D042", "sid": 322, "start": 24664, "end": 24714, "kind": "list", "text": "- **BCS 退化与还原**：新增 `Reduction.lean`（22 定理 + 2 引理）；"}
-{"doc_id": "D042", "sid": 323, "start": 24714, "end": 24768, "kind": "list", "text": "`cqm_reduces_to_bcs` / `cqm_debye_reduction` 为记号对应层定理；"}
-{"doc_id": "D042", "sid": 324, "start": 24768, "end": 24843, "kind": "list", "text": "`criticalTemperature` 改用精确 BCS 常数 2e^γ/π（`bcsExactConstant`，文献 1.13 是其三位近似）"}
-{"doc_id": "D042", "sid": 325, "start": 24844, "end": 24964, "kind": "list", "text": "- **能隙方程的严格推导**：`bcs_gap_equation` / `bcs_gap_equation_unique` 从 T=0 能隙方程 1 = λ·arsinh(ω_D/Δ) 导出唯一闭式解 Δ = ω_D/sinh(1/λ)；"}
-{"doc_id": "D042", "sid": 326, "start": 24964, "end": 25046, "kind": "list", "text": "`bcs_gap_weak_coupling_limit` 证明 λ→0⁺ 时闭式解渐近于 BCS 标准式 2ω_D·e^{−1/λ}（极限定理，非有限 λ 等式）"}
-{"doc_id": "D042", "sid": 327, "start": 25047, "end": 25217, "kind": "list", "text": "- **T_c 方程的严格推导**：`bcsTcEquation_solved`（T_c = (2e^γ/π)·ω_D·e^{−1/λ} 精确满足弱耦合 T_c 方程 1 = λ·ln((2e^γ/π)·ω_D/k_B T_c)）、`bcsTcEquation_unique`（该方程唯一正解）——T_c 公式是方程的**解**而非任意定义"}
-{"doc_id": "D042", "sid": 328, "start": 25218, "end": 25457, "kind": "list", "text": "- **普适能隙比（弱耦合极限定理）**：2Δ₀/k_BT_c → 2πe^{−γ} ≈ 3.5278（文献 3.53、旧公式 4/1.13 均为数值近似）——`bcs_universal_gap_ratio` 为 λ→0⁺ 极限定理（`Tendsto`）、`bcs_gap_ratio_closed_form` 为有限 λ 闭式恒等式、`bcs_gap_ratio_strong_coupling_excess` 证明有限 λ 下能隙比恒大于弱耦合极限（强耦合偏离 3.53）"}
-{"doc_id": "D042", "sid": 329, "start": 25458, "end": 25575, "kind": "list", "text": "- **同位素定律**：α = 1/2（`criticalTemperature_isotope_shift`）、氢/氘位移 T_c(D) = T_c(H)/√2（`hydrogen_deuterium_isotope_shift`）"}
-{"doc_id": "D042", "sid": 330, "start": 25576, "end": 25653, "kind": "list", "text": "- **朴素 CQM 异常（条件定理）**：`naive_cqm_isotope_anomaly` 只证明朴素替换下 T_c 随质量单调不减、与实验相反；"}
-{"doc_id": "D042", "sid": 331, "start": 25653, "end": 25667, "kind": "list", "text": "它标示、而非证明退化的必要性"}
-{"doc_id": "D042", "sid": 332, "start": 25668, "end": 25713, "kind": "list", "text": "- **严格性整治**：消除 4/1.13 循环论证；能隙公式从凭空定义改为能隙方程推导；"}
-{"doc_id": "D042", "sid": 333, "start": 25713, "end": 25764, "kind": "list", "text": "所有数值近似（1.13、3.53、0.707、1.2、1.04）在文档字符串中如实标注，不冒充定理结论"}
-{"doc_id": "D042", "sid": 334, "start": 25765, "end": 26095, "kind": "list", "text": "- **公理依赖审计（`#print axioms`）**：`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation(_unique)`、`bcs_gap_weak_coupling_limit`、同位素三定理、`emergenceIntegral_pos`、`strong_gravity_keeps_pairing_channels` 等全部只依赖 Lean 内核逻辑公理（`propext`、`Classical.choice`、`Quot.sound`），**不依赖任何 `physical_hypothesis` 本体论公理**——物理假设仅作公理存在、未冒充定理结论"}
-{"doc_id": "D042", "sid": 335, "start": 26096, "end": 26235, "kind": "list", "text": "- **金属氢机制验证**：H3S 203 K / LaH10 250 K / MgB2 39 K 验证数据已并入《CQM 超导核心理论》（06 超导），BCS/McMillan–Dynes/同位素计算对应 `TransitionTemperature.lean` 中的严格定理"}
-{"doc_id": "D042", "sid": 336, "start": 26236, "end": 26299, "kind": "list", "text": "- **室温方向**：三条路线 + 同位素指数 α(P) 判别性实验已并入《CQM 超导核心理论》（06 超导）§20-§21"}
-{"doc_id": "D042", "sid": 337, "start": 26301, "end": 26319, "kind": "heading", "text": "## 本次更新亮点 (v0.5.2)"}
-{"doc_id": "D042", "sid": 338, "start": 26321, "end": 26395, "kind": "list", "text": "- **超导形式化库**：`Superconductivity`（12 模块），对应 [06 超导](../../../06%20超导/) 两卷文档"}
-{"doc_id": "D042", "sid": 339, "start": 26396, "end": 26658, "kind": "list", "text": "- **分层映射**：Ontology（第 1–2 层有限本体论）→ TransitionTemperature（T_c）→ TransitionTemperatureCQM（G22 闭合）→ Reduction（BCS 退化与还原）→ CartanSuperconductivity（嘉当张量超导方程）→ FirstPrinciples（第一性推导链）→ SPAF（半唯像框架）→ MolecularGeometry（分子→晶胞→Regge→FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱与自由能竞争）"}
-{"doc_id": "D042", "sid": 340, "start": 26659, "end": 26916, "kind": "list", "text": "- **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`"}
-{"doc_id": "D042", "sid": 341, "start": 26917, "end": 27006, "kind": "list", "text": "- **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部前时空/电子封装），沿用 CausalSet.Axioms 不透明公理模式"}
-{"doc_id": "D042", "sid": 342, "start": 27008, "end": 27026, "kind": "heading", "text": "## 本次更新亮点 (v0.5.1)"}
-{"doc_id": "D042", "sid": 343, "start": 27028, "end": 27104, "kind": "list", "text": "- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由内核判定 `decide` 直接证明的定理，消除一个不必要的公理"}
-{"doc_id": "D042", "sid": 344, "start": 27105, "end": 27177, "kind": "list", "text": "- **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意条件，且无任何定理引用）"}
-{"doc_id": "D042", "sid": 345, "start": 27178, "end": 27240, "kind": "list", "text": "- **清理测试残留**：删除未加入 `lakefile.toml` 且含 `sorry` 的 `TestNum.lean`"}
-{"doc_id": "D042", "sid": 346, "start": 27241, "end": 27297, "kind": "list", "text": "- **更新定理/公理统计**：按实际代码重新计数，当前 180 个定理 / 8 个公理（含物理假设与数值桥梁）"}
-{"doc_id": "D042", "sid": 347, "start": 27298, "end": 27365, "kind": "list", "text": "- **消除虚假精确等式**：相变量子 `☯` 严格定义为 `1 + γ/2 - (1/2)ln(4π)`，数值近似以区间公理显式标注"}
-{"doc_id": "D042", "sid": 348, "start": 27367, "end": 27385, "kind": "heading", "text": "## 本次更新亮点 (v0.5.0)"}
-{"doc_id": "D042", "sid": 349, "start": 27387, "end": 27422, "kind": "list", "text": "- **消除所有 CQM 警告**：零 CQM 代码警告，构建完全清洁"}
-{"doc_id": "D042", "sid": 350, "start": 27423, "end": 27522, "kind": "list", "text": "- **修复 Mathieu.lean 矛盾公理**：`b1` 从占位符 `def ... := 0` 改为不透明 `axiom`，消除与 `mathieu_stable_region` 的逻辑矛盾"}
-{"doc_id": "D042", "sid": 351, "start": 27523, "end": 27662, "kind": "list", "text": "- **移除 4 个未使用的裸 `Prop` 公理**：`sierra_cqm_coupling_spectrum`、`prime_freezing_theorem`、`adele_constraint`、`coupling_formula_pi_factor` 替换为文档注释"}
-{"doc_id": "D042", "sid": 352, "start": 27663, "end": 27799, "kind": "list", "text": "- **修复文档错误**：`firstCoupling_sierraCQM_matches` → `firstCoupling_sierraCQM_deviation`、`spectralProduct_lt_one` → `spectralProduct_lt_ten`"}
-{"doc_id": "D042", "sid": 353, "start": 27800, "end": 27843, "kind": "list", "text": "- **定理总数**：从 96 → 160（+64 个严格证明的定理，得益于完整计数）"}
-{"doc_id": "D042", "sid": 354, "start": 27844, "end": 27881, "kind": "list", "text": "- **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）"}
-{"doc_id": "D042", "sid": 355, "start": 27882, "end": 27932, "kind": "list", "text": "- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）"}
-{"doc_id": "D042", "sid": 356, "start": 27933, "end": 27992, "kind": "list", "text": "- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138"}
-{"doc_id": "D042", "sid": 357, "start": 27993, "end": 28049, "kind": "list", "text": "- **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）"}
-{"doc_id": "D042", "sid": 358, "start": 28051, "end": 28056, "kind": "heading", "text": "## 版本"}
-{"doc_id": "D042", "sid": 359, "start": 28058, "end": 28075, "kind": "list", "text": "- **项目版本**: 0.7.0"}
-{"doc_id": "D042", "sid": 360, "start": 28076, "end": 28097, "kind": "list", "text": "- **Lean 版本**: 4.29.1"}
-{"doc_id": "D042", "sid": 361, "start": 28098, "end": 28124, "kind": "list", "text": "- **依赖**: mathlib, physlib"}
+{"doc_id": "D042", "sid": 4, "start": 141, "end": 174, "kind": "prose", "text": "**12 个库全部编译通过**（`lake build` 成功）。"}
+{"doc_id": "D042", "sid": 5, "start": 174, "end": 181, "kind": "prose", "text": "逐库实测结果："}
+{"doc_id": "D042", "sid": 6, "start": 183, "end": 198, "kind": "table", "text": "| 库 | 状态 | 说明 |"}
+{"doc_id": "D042", "sid": 7, "start": 199, "end": 216, "kind": "table", "text": "|:---|:---:|:---|"}
+{"doc_id": "D042", "sid": 8, "start": 217, "end": 241, "kind": "table", "text": "| CausalSet | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 9, "start": 242, "end": 270, "kind": "table", "text": "| CouplingSpace | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 10, "start": 271, "end": 299, "kind": "table", "text": "| CartanAlgebra | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 11, "start": 300, "end": 326, "kind": "table", "text": "| Decoherence | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 12, "start": 327, "end": 359, "kind": "table", "text": "| PhysicalConstants | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 13, "start": 360, "end": 388, "kind": "table", "text": "| PrimeGeometry | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 14, "start": 389, "end": 415, "kind": "table", "text": "| Methodology | ✅ 通过 | — |"}
+{"doc_id": "D042", "sid": 15, "start": 416, "end": 527, "kind": "table", "text": "| GN | ✅ 通过 | 含 `SimplexSpectrum`/`AdeleJacobian`/`Constructions`/`ModularTrace`；107 定理，零 `sorry`、零新增 `axiom` |"}
+{"doc_id": "D042", "sid": 16, "start": 528, "end": 664, "kind": "table", "text": "| SpectralGeometry | ✅ 通过 | 含 `RiemannXi`、`Mathieu`、`GLnTrivialSpectralQuantum`（`Mathieu` 已由库根 `import SpectralGeometry.Mathieu` 纳入构建） |"}
+{"doc_id": "D042", "sid": 17, "start": 665, "end": 818, "kind": "table", "text": "| Superconductivity | ✅ 通过 | 16 模块全通过（含 `ElementCartan`、`BridgeTheorems`，两者均已由库根 import 纳入构建；另含 `FormalizationRigor`、`DeepConstruction`、`DeepResearch`） |"}
+{"doc_id": "D042", "sid": 18, "start": 819, "end": 1039, "kind": "table", "text": "| FGChain | ✅ 通过 | 12 模块全通过（`QuantumOscillation`、`FiberBundle`、`CurvatureOperator`、`CurvatureDerivation`、`ReggeBase`、`SyncOperator`、`Synchronization`、`Observable`、`BundleEOM`、`Hierarchy` 等）；114 定理，零 `sorry`、零新增 `axiom` |"}
+{"doc_id": "D042", "sid": 19, "start": 1041, "end": 1126, "kind": "quote", "text": "> **构建提示**：构建过程中 8 条 Mathlib 内部 ProofWidgets 模块重复注册警告来自 Mathlib 4.29.1 上游，非 CQM 代码问题；"}
+{"doc_id": "D042", "sid": 20, "start": 1126, "end": 1183, "kind": "quote", "text": "另有少量 `unused variable` / `unused simp argument` 提示，不影响通过。"}
+{"doc_id": "D042", "sid": 21, "start": 1185, "end": 1287, "kind": "prose", "text": "**`PrimeGeometry`、`Methodology` 均 `Build completed successfully` 且无 CQM 警告**：PrimeGeometry 的相应结论以定理给出；"}
+{"doc_id": "D042", "sid": 22, "start": 1287, "end": 1319, "kind": "prose", "text": "Methodology 以公理/假设层为主（见「定理统计」表）。"}
+{"doc_id": "D042", "sid": 23, "start": 1321, "end": 1327, "kind": "heading", "text": "## 库结构"}
+{"doc_id": "D042", "sid": 24, "start": 1329, "end": 1349, "kind": "table", "text": "| 库 | 文件 | 关键类型/定理 |"}
+{"doc_id": "D042", "sid": 25, "start": 1350, "end": 1366, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D042", "sid": 26, "start": 1367, "end": 1519, "kind": "table", "text": "| **CausalSet** | `Basic.lean`, `Reproduction.lean`, `Sprinkling.lean`, `Axioms.lean` | `CausalSet`、`ReproductionOperator`、`asymm`、`sprinklingDensity` |"}
+{"doc_id": "D042", "sid": 27, "start": 1520, "end": 1647, "kind": "table", "text": "| **CouplingSpace** | `Basic.lean`, `Uncertainty.lean` | `couplingStrength`、`CanonicalCommutation`、`robertson_ccr_inequality` |"}
+{"doc_id": "D042", "sid": 28, "start": 1648, "end": 1739, "kind": "table", "text": "| **CartanAlgebra** | `Basic.lean` | `cartanA4`、本征值精确表达式、`dynkinIndex`、`simplexEulerChar` |"}
+{"doc_id": "D042", "sid": 29, "start": 1740, "end": 2014, "kind": "table", "text": "| **SpectralGeometry** | `Basic.lean`, `Mathieu.lean`, `MathieuContinuedFraction.lean`, `RiemannXi.lean`, `GLnTrivialSpectralQuantum.lean` | `spectralQuantum`、`mathieuParameter`、`goldenRatio`、`adeleCycle`、Sierra-CQM 耦谱、黎曼 ξ 函数、**GL(n) 平凡表示相变量子 $☯_n=n\\cdot☯_1$ 缩放律与归一化普适性** |"}
+{"doc_id": "D042", "sid": 30, "start": 2015, "end": 2178, "kind": "table", "text": "| **PrimeGeometry** | `Basic.lean`, `Compton.lean`, `Generation.lean`, `Particle.lean`, `Spin.lean`, `WindingDensity.lean` | 因果时几何：多边形/弧段/位置结构、粒子谱、自旋、康普顿、代际、绕数密度 |"}
+{"doc_id": "D042", "sid": 31, "start": 2179, "end": 2288, "kind": "table", "text": "| **Decoherence** | `Basic.lean`, `DeepCoupling.lean` | `confinementScale`、`CausalLayer`、三层结构、跨层级退相干深耦合与唯一性 |"}
+{"doc_id": "D042", "sid": 32, "start": 2289, "end": 2383, "kind": "table", "text": "| **PhysicalConstants** | `Basic.lean` | `GN_spectral_formula`、`alpha_inverse_SU5`、CODATA 偏差 |"}
+{"doc_id": "D042", "sid": 33, "start": 2384, "end": 2445, "kind": "table", "text": "| **Methodology** | `Basic.lean` | 涌现逻辑结构表达、庸俗隐变量分解对比（公理为主） |"}
+{"doc_id": "D042", "sid": 34, "start": 2446, "end": 3138, "kind": "table", "text": "| **Superconductivity** | `Ontology.lean`, `TransitionTemperature.lean`, `TransitionTemperatureCQM.lean`, `Reduction.lean`, `CartanSuperconductivity.lean`, `FirstPrinciples.lean`, `SPAF.lean`, `BCSIntegralAsymptotic.lean`, `BridgeTheorems.lean`, `ElementCartan.lean`, `MolecularGeometry.lean`, `CouplingSpace.lean`, `FormalizationRigor.lean`, `DeepConstruction.lean`, `DeepResearch.lean`, `TestDet.lean` | 超导形式化（16 模块）：有限本体论、T_c、**CQM 临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱与自由能竞争）**、**形式化严谨化**、**深入构建（K_eff微观推导/A5群理论）**、**深入研究（θ_D/λ群论推导/缺口C/G15）**、**中子缺陷嘉当矩阵行列式测试** |"}
+{"doc_id": "D042", "sid": 35, "start": 3139, "end": 3761, "kind": "table", "text": "| **FGChain** | `Basic.lean`, `CartanToShell.lean`, `QuantumOscillation.lean`, `CurvatureOperator.lean`, `CurvatureDerivation.lean`, `ReggeBase.lean`, `FiberBundle.lean`, `SyncOperator.lean`, `Synchronization.lean`, `Observable.lean`, `BundleEOM.lean`, `Hierarchy.lean` | FG纤维丛理论链路形式化（12 模块）：两链发生学分离、晶胞量子振荡（谐振子谱 $E_n=\\hbar\\omega(n+1/2)$）、曲率算符（CQM海森堡对 $[\\hat{u},\\hat{p}_u]=i$）、Regge底空间（两链交汇）、离散主丛（重组实现 $F=G \\Rightarrow R=G \\Rightarrow \\hat{H}$、和乐平庸化、子群重组）、同步算符（零点谱经紧化条件进入 $\\mathfrak{c}_n=1/4+\\gamma_n^2$、本征值交叉 IVT、CFT幂律）、实验可观测结果（氢原子能级、壳层容量 2/6/10/14、跃迁耦级谱 $\\Delta u_n=2\\ln n$、BCS $T_c$）——**12 个模块全部通过（`lake build` 全量成功）** |"}
+{"doc_id": "D042", "sid": 36, "start": 3762, "end": 4606, "kind": "table", "text": "| **GN** | `Basic.lean`, `TripleIdentity.lean`, `SierraCQM.lean`, `SimplexSpectrum.lean`, `AdeleJacobian.lean`, `Constructions.lean`, `ModularTrace.lean` | $G_N$ 第一性推导形式化（对应 04 前沿研究 公理化证明稿，7 模块）：§1 三重恒等的代数层——`spectralQuantum_closedForm`（闭式 $1+\\gamma_E/2-\\frac12\\ln(4\\pi)=1+\\gamma_E/2-\\ln\\pi/2-\\ln2$，定理 1.2）、`liCoeffOne_eq_spectralQuantum`（$\\lambda_1=☯$，定理 1.3）、`leclairConstant_eq_neg_spectralQuantum`（$B=-☯$，定理 1.4）、`spectralQuantum_triple_identity`（三重恒等，定理 1.5）、Li 判据 n=1（$\\lambda_1>0$）、B<0、数值桥梁推论（13 定理）；§5 Sierra-CQM 条件性渐近——零点匹配 `floquetMomentum_eq`、偏差界 `floquetMomentum_deviation_lt`、耦级绝对/相对误差（见证常数 5/4）（6 定理）；§2 4-单纯形组合谱——`SimplexSpectrum.lean`（57 定理）、§6 Adele Jacobian 因子 2——`AdeleJacobian.lean`（11 引理/定理）、§8–§11 可代数化构造——`Constructions.lean`（14 定理）、§十八 模流迹路线——`ModularTrace.lean`（6 定理）——共 107 定理，零 `sorry`、零新增 `axiom`；详见 `GN/README.md` |"}
+{"doc_id": "D042", "sid": 37, "start": 4608, "end": 4617, "kind": "heading", "text": "## 形式化推导链"}
+{"doc_id": "D042", "sid": 38, "start": 4619, "end": 4622, "kind": "code", "text": "```"}
+{"doc_id": "D042", "sid": 39, "start": 4623, "end": 4629, "kind": "code", "text": "Axioms"}
+{"doc_id": "D042", "sid": 40, "start": 4630, "end": 4653, "kind": "code", "text": "├── A0.1-3: 因果集 + 再生产算符"}
+{"doc_id": "D042", "sid": 41, "start": 4654, "end": 4676, "kind": "code", "text": "│ ├── 因果偏序非对称性 (asymm)"}
+{"doc_id": "D042", "sid": 42, "start": 4677, "end": 4717, "kind": "code", "text": "│ ├── Alexandrov 区间有限性 (interval_finite)"}
+{"doc_id": "D042", "sid": 43, "start": 4718, "end": 4749, "kind": "code", "text": "│ ├── 再生产幂等性 (muHat_idempotent)"}
+{"doc_id": "D042", "sid": 44, "start": 4750, "end": 4780, "kind": "code", "text": "│ └── Sprinkling → 耦合空间 (u, τ)"}
+{"doc_id": "D042", "sid": 45, "start": 4781, "end": 4814, "kind": "code", "text": "│ ├── Sprinkling 密度 ρ(u) = exp(u)"}
+{"doc_id": "D042", "sid": 46, "start": 4815, "end": 4833, "kind": "code", "text": "│ ├── 耦合速度 c = 1/ρ"}
+{"doc_id": "D042", "sid": 47, "start": 4834, "end": 4873, "kind": "code", "text": "│ └── 保序嵌入 (sprinkling_preserves_order)"}
+{"doc_id": "D042", "sid": 48, "start": 4874, "end": 4875, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 49, "start": 4876, "end": 4906, "kind": "code", "text": "├── A1.1: 正则对易关系 [û, p̂_u] = i"}
+{"doc_id": "D042", "sid": 50, "start": 4907, "end": 4932, "kind": "code", "text": "│ ├── 耦合强度 r = exp(u) > 0"}
+{"doc_id": "D042", "sid": 51, "start": 4933, "end": 4952, "kind": "code", "text": "│ ├── 耦合坐标 u = ln r"}
+{"doc_id": "D042", "sid": 52, "start": 4953, "end": 5001, "kind": "code", "text": "│ ├── 不确定性关系 Δr/⟨r⟩ · Δv_τ ≥ ☯/2 (Robertson 不等式)"}
+{"doc_id": "D042", "sid": 53, "start": 5002, "end": 5039, "kind": "code", "text": "│ └── 14 个辅助定理（中心化算符、方差、Hermitian 性等）"}
+{"doc_id": "D042", "sid": 54, "start": 5040, "end": 5041, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 55, "start": 5042, "end": 5082, "kind": "code", "text": "├── H3.3 + A2.1: 退相干稳态 = 正四单纯形 → A₄ 嘉当矩阵"}
+{"doc_id": "D042", "sid": 56, "start": 5083, "end": 5111, "kind": "code", "text": "│ ├── 对称性: A₄_{ij} = A₄_{ji}"}
+{"doc_id": "D042", "sid": 57, "start": 5112, "end": 5132, "kind": "code", "text": "│ ├── 迹 = 8, 行列式 = 5"}
+{"doc_id": "D042", "sid": 58, "start": 5133, "end": 5176, "kind": "code", "text": "│ ├── Aₙ 行列式 = n+1 (A₁:2, A₂:3, A₃:4, A₄:5)"}
+{"doc_id": "D042", "sid": 59, "start": 5177, "end": 5192, "kind": "code", "text": "│ ├── 本征值精确表达式:"}
+{"doc_id": "D042", "sid": 60, "start": 5193, "end": 5225, "kind": "code", "text": "│ │ λ₁ = (3-√5)/2, λ₂ = (5-√5)/2"}
+{"doc_id": "D042", "sid": 61, "start": 5226, "end": 5258, "kind": "code", "text": "│ │ λ₃ = (3+√5)/2, λ₄ = (5+√5)/2"}
+{"doc_id": "D042", "sid": 62, "start": 5259, "end": 5282, "kind": "code", "text": "│ ├── 本征值之和 = 8, 之积 = 5"}
+{"doc_id": "D042", "sid": 63, "start": 5283, "end": 5304, "kind": "code", "text": "│ ├── 逆嘉当矩阵 A₄⁻¹ 显式条目"}
+{"doc_id": "D042", "sid": 64, "start": 5305, "end": 5325, "kind": "code", "text": "│ ├── 正定性: 所有主子式 > 0"}
+{"doc_id": "D042", "sid": 65, "start": 5326, "end": 5357, "kind": "code", "text": "│ ├── 4-单纯形 f-向量回文性 (5,10,10,5)"}
+{"doc_id": "D042", "sid": 66, "start": 5358, "end": 5392, "kind": "code", "text": "│ ├── SU(5) Weyl 群 = S₅ = 4-单纯形对称群"}
+{"doc_id": "D042", "sid": 67, "start": 5393, "end": 5430, "kind": "code", "text": "│ └── Dynkin 指数比 I = T(24)/T(8) = 5/3"}
+{"doc_id": "D042", "sid": 68, "start": 5431, "end": 5432, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 69, "start": 5433, "end": 5462, "kind": "code", "text": "├── A2.2: 相变量子 ☯ = ξ'(1)/ξ(1)"}
+{"doc_id": "D042", "sid": 70, "start": 5463, "end": 5554, "kind": "code", "text": "│ ├── Mathieu 参数 q = φ/2（黄金比例一半；由代码中定义的 A₄ 本征值字面量按 (λ₄-λ₁)/(λ₄+λ₁) 算出，属定义展开，不是从 A₄ 矩阵推出的定理）"}
+{"doc_id": "D042", "sid": 71, "start": 5555, "end": 5587, "kind": "code", "text": "│ │ ├── φ = (1+√5)/2, φ² = φ + 1"}
+{"doc_id": "D042", "sid": 72, "start": 5588, "end": 5629, "kind": "code", "text": "│ │ ├── q = (λ₄-λ₁)/(λ₄+λ₁) = φ/2 ≈ 0.809"}
+{"doc_id": "D042", "sid": 73, "start": 5630, "end": 5659, "kind": "code", "text": "│ │ └── λ₄/λ₁ = 5+2√5 ≈ 9.472"}
+{"doc_id": "D042", "sid": 74, "start": 5660, "end": 5971, "kind": "code", "text": "│ ├── Mathieu 临界值 λ_c：由连分数方程 1-3q-T₁(2q,q)=0 的唯一根 q_c 给出 λ_c = 4q_c（`MathieuContinuedFraction.lean`，IVT + 严格单调 + 唯一性为真数学）。该方程等价于临界条件 λ_min(q_c) = 2q_c，其中 λ_min(q) 是算子 -(d²/dz²)+2q·cos2z 在 sin((2k+1)z) 基下的最小本征值（λ_min(0) = 1，λ_min(q) = 1 - q - q²/8 + …）。λ_min 即标准 Mathieu 第一奇特征值 b₁（DLMF 记号），故本临界条件即 b₁(q_c) = 2q_c"}
+{"doc_id": "D042", "sid": 75, "start": 5972, "end": 6236, "kind": "code", "text": "│ ├── 注：库内有两个不同的 q，须区分——`Mathieu.lean` 的 `mathieuParameter = φ/2 ≈ 0.809`（由本征值比定义，属定义展开；该模块现由库根 `SpectralGeometry.lean` 导入以纳入编译覆盖，但未被 λ_c/G_N 取值链引用）与 `MathieuContinuedFraction.lean` 的 `mathieuCriticalParameter ≈ 0.329`（λ_c 的取值来源，被 `SpectralGeometry/Basic.lean` 使用）"}
+{"doc_id": "D042", "sid": 76, "start": 6237, "end": 6281, "kind": "code", "text": "│ ├── 第一耦级 𝔠₁ (Sierra-CQM: 𝔠_n = 1/4 + γ_n²)"}
+{"doc_id": "D042", "sid": 77, "start": 6282, "end": 6309, "kind": "code", "text": "│ ├── Adele 周期 N_cycle = 30"}
+{"doc_id": "D042", "sid": 78, "start": 6310, "end": 6342, "kind": "code", "text": "│ ├── 4-单纯形 f-向量和 = 30 = N_cycle"}
+{"doc_id": "D042", "sid": 79, "start": 6343, "end": 6368, "kind": "code", "text": "│ ├── 谱修正因子 κ = (31+☯)/30"}
+{"doc_id": "D042", "sid": 80, "start": 6369, "end": 6411, "kind": "code", "text": "│ ├── G_N 因子 F(☯) = ☯²·𝔠₁·exp(-2/☯)·(1+κ☯)"}
+{"doc_id": "D042", "sid": 81, "start": 6412, "end": 6427, "kind": "code", "text": "│ ├── F(☯) 严格为正"}
+{"doc_id": "D042", "sid": 82, "start": 6428, "end": 6459, "kind": "code", "text": "│ └── 谱常数网络: ☯·λ_c·𝔠₁ ∈ (6, 10)"}
+{"doc_id": "D042", "sid": 83, "start": 6460, "end": 6461, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 84, "start": 6462, "end": 6470, "kind": "code", "text": "├── 素数结构"}
+{"doc_id": "D042", "sid": 85, "start": 6471, "end": 6506, "kind": "code", "text": "│ ├── 活跃素数 {2, 3, 5}：Φ(k) > 0 的唯一素数"}
+{"doc_id": "D042", "sid": 86, "start": 6507, "end": 6545, "kind": "code", "text": "│ ├── 素数冻结定理：∀ k > 5, Φ(k) = 0 (axiom)"}
+{"doc_id": "D042", "sid": 87, "start": 6546, "end": 6580, "kind": "code", "text": "│ ├── N_cycle = 2·3·5 = 30 = 活跃素数积"}
+{"doc_id": "D042", "sid": 88, "start": 6581, "end": 6613, "kind": "code", "text": "│ └── 活跃素数个数 3 = rank(SU(5)) - 1"}
+{"doc_id": "D042", "sid": 89, "start": 6614, "end": 6615, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 90, "start": 6616, "end": 6637, "kind": "code", "text": "├── 退相干三层结构 L1/L2/L3+"}
+{"doc_id": "D042", "sid": 91, "start": 6638, "end": 6654, "kind": "code", "text": "│ ├── 禁闭标度 L = 1"}
+{"doc_id": "D042", "sid": 92, "start": 6655, "end": 6675, "kind": "code", "text": "│ ├── 退相干条件 ρ(u) ≥ L"}
+{"doc_id": "D042", "sid": 93, "start": 6676, "end": 6699, "kind": "code", "text": "│ └── 退相干速率 Γ(u) = ρ(u)"}
+{"doc_id": "D042", "sid": 94, "start": 6700, "end": 6701, "kind": "code", "text": "│"}
+{"doc_id": "D042", "sid": 95, "start": 6702, "end": 6715, "kind": "code", "text": "└── m_p（实验输入）"}
+{"doc_id": "D042", "sid": 96, "start": 6716, "end": 6762, "kind": "code", "text": " └── G_N = I·λ_c·☯²·𝔠₁·exp(-2/☯)·(1+κ☯) / m_p²"}
+{"doc_id": "D042", "sid": 97, "start": 6763, "end": 6781, "kind": "code", "text": " ├── G_N > 0（严格正性）"}
+{"doc_id": "D042", "sid": 98, "start": 6782, "end": 6795, "kind": "code", "text": " ├── G_N 因子分解"}
+{"doc_id": "D042", "sid": 99, "start": 6796, "end": 6823, "kind": "code", "text": " ├── 层级因子 exp(-2/☯) ≈ 10⁻³⁸"}
+{"doc_id": "D042", "sid": 100, "start": 6824, "end": 6863, "kind": "code", "text": " ├── CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）"}
+{"doc_id": "D042", "sid": 101, "start": 6864, "end": 6902, "kind": "code", "text": " └── α⁻¹_SU(5) = 16384π/375 ≈ 137.2583"}
+{"doc_id": "D042", "sid": 102, "start": 6903, "end": 6929, "kind": "code", "text": " ├── 137 < α⁻¹_SU(5) < 138"}
+{"doc_id": "D042", "sid": 103, "start": 6930, "end": 6966, "kind": "code", "text": " ├── 群论因子 = 2^14/(3×5^3) = 16384/375"}
+{"doc_id": "D042", "sid": 104, "start": 6967, "end": 6983, "kind": "code", "text": " ├── α_SU(5) > 0"}
+{"doc_id": "D042", "sid": 105, "start": 6984, "end": 7011, "kind": "code", "text": " └── 0.007 < α_SU(5) < 0.01"}
+{"doc_id": "D042", "sid": 106, "start": 7012, "end": 7015, "kind": "code", "text": "```"}
+{"doc_id": "D042", "sid": 107, "start": 7017, "end": 7024, "kind": "heading", "text": "## 定理统计"}
+{"doc_id": "D042", "sid": 108, "start": 7026, "end": 7047, "kind": "table", "text": "| 库 | 已证明定理 | 公理/待证 |"}
+{"doc_id": "D042", "sid": 109, "start": 7048, "end": 7066, "kind": "table", "text": "|:---|:---:|:---:|"}
+{"doc_id": "D042", "sid": 110, "start": 7067, "end": 7089, "kind": "table", "text": "| CausalSet | 22 | 4 |"}
+{"doc_id": "D042", "sid": 111, "start": 7090, "end": 7116, "kind": "table", "text": "| CouplingSpace | 21 | 0 |"}
+{"doc_id": "D042", "sid": 112, "start": 7117, "end": 7143, "kind": "table", "text": "| CartanAlgebra | 33 | 0 |"}
+{"doc_id": "D042", "sid": 113, "start": 7144, "end": 7174, "kind": "table", "text": "| SpectralGeometry | 129 | 2 |"}
+{"doc_id": "D042", "sid": 114, "start": 7175, "end": 7201, "kind": "table", "text": "| PrimeGeometry | 81 | 0 |"}
+{"doc_id": "D042", "sid": 115, "start": 7202, "end": 7226, "kind": "table", "text": "| Decoherence | 15 | 0 |"}
+{"doc_id": "D042", "sid": 116, "start": 7227, "end": 7257, "kind": "table", "text": "| PhysicalConstants | 20 | 0 |"}
+{"doc_id": "D042", "sid": 117, "start": 7258, "end": 7282, "kind": "table", "text": "| Methodology | 13 | 4 |"}
+{"doc_id": "D042", "sid": 118, "start": 7283, "end": 7314, "kind": "table", "text": "| Superconductivity | 331 | 5 |"}
+{"doc_id": "D042", "sid": 119, "start": 7315, "end": 7331, "kind": "table", "text": "| GN | 107 | 0 |"}
+{"doc_id": "D042", "sid": 120, "start": 7332, "end": 7353, "kind": "table", "text": "| FGChain | 114 | 0 |"}
+{"doc_id": "D042", "sid": 121, "start": 7354, "end": 7382, "kind": "table", "text": "| NonMarkovianity | 21 | 0 |"}
+{"doc_id": "D042", "sid": 122, "start": 7383, "end": 7412, "kind": "table", "text": "| **总计** | **907** | **15** |"}
+{"doc_id": "D042", "sid": 123, "start": 7414, "end": 7493, "kind": "quote", "text": "> **计数口径**（全库统一）：`已证明定理` = 源码中 `theorem` 与 `lemma` 声明之和（零 `sorry`），按模块首段目录归属到库；"}
+{"doc_id": "D042", "sid": 124, "start": 7493, "end": 7513, "kind": "quote", "text": "`example` 当前为 0，不计入。"}
+{"doc_id": "D042", "sid": 125, "start": 7513, "end": 7594, "kind": "quote", "text": "口径与 `_build/build_lean.py` 的 `theorem_like` 抽取逐库一致（theorem 857 + lemma 50 = 907）。"}
+{"doc_id": "D042", "sid": 126, "start": 7594, "end": 7619, "kind": "quote", "text": "FGChain（12 模块）已并入本表，不再单列。"}
+{"doc_id": "D042", "sid": 127, "start": 7620, "end": 7728, "kind": "quote", "text": "> 注：「公理/待证」按源码 `axiom` 声明计数（15 条，分布：Superconductivity 5 · CausalSet 4 · SpectralGeometry 2 · Methodology 4）；"}
+{"doc_id": "D042", "sid": 128, "start": 7728, "end": 7888, "kind": "quote", "text": "不含 `def ... : Prop` 的命题位声明（`uniquenessByDeepCouplingClaim`、`layerNonReductionismClaim`、`windingDensityConvergenceClaim`、`deepCouplingBreaksFactorizationClaim`）。"}
+{"doc_id": "D042", "sid": 129, "start": 7889, "end": 7913, "kind": "quote", "text": "> 范围说明：907 为**源码声明行**计数。"}
+{"doc_id": "D042", "sid": 130, "start": 7913, "end": 8262, "kind": "quote", "text": "原未纳入 `lakefile.toml` `defaultTargets` 的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44）已全部修复并通过 `lake build`，并由库根 `SpectralGeometry.lean`（`import SpectralGeometry.Mathieu`）与 `Superconductivity.lean`（`import Superconductivity.BridgeTheorems`、`import Superconductivity.ElementCartan`）纳入构建；"}
+{"doc_id": "D042", "sid": 131, "start": 8262, "end": 8475, "kind": "quote", "text": "原 2 处跨模块同名声明已消除（`ElementCartan` 侧 `protonCartan_isPureA4` → `protonCartan_eq_neutronCartan_zero`、`molecularSuperCartan_symmetric` → `molecularSuperCartan_blockSymmetric`，`MolecularGeometry` 保留原名），故去重后唯一全限定名同为 907。"}
+{"doc_id": "D042", "sid": 132, "start": 8475, "end": 8495, "kind": "quote", "text": "12 个库根模块的构建状态均为全部通过。"}
+{"doc_id": "D042", "sid": 133, "start": 8495, "end": 8610, "kind": "quote", "text": "v1.9.56 已将原 `causalChainSelfClosure` 改为定义 `CausalLoop.ofSegment`（结构构造，不承载物理断言），故定理计数相应减 1、`def` 计数加 1，声明总数 1405 不变。"}
+{"doc_id": "D042", "sid": 134, "start": 8610, "end": 8737, "kind": "quote", "text": "v1.9.57 删除 `SpectralGeometry/RiemannXi` 中数值不成立的公理 `spectralQuantum_zeta_zeros_relation`（原式以 `γ₁+n` 近似第 n 个零点），声明总数 1405 → 1404。"}
+{"doc_id": "D042", "sid": 135, "start": 8737, "end": 8922, "kind": "quote", "text": "v1.9.58 将 `SpectralGeometry/Basic` 的 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`（用 Euler–Mascheroni 上下界序列 n = 2048、ln 2 十进制界与 ln π 的 Taylor 估计严格证明 0.02295 < ☯ < 0.02325）；"}
+{"doc_id": "D042", "sid": 136, "start": 8922, "end": 8984, "kind": "quote", "text": "声明总数 1404 不变（axiom 16 → 15、theorem 835 → 836），已证明定理 885 → 886。"}
+{"doc_id": "D042", "sid": 137, "start": 8986, "end": 9027, "kind": "heading", "text": "## 公理依赖分级（v1.9.58 · `#print axioms` 全量实测）"}
+{"doc_id": "D042", "sid": 138, "start": 9029, "end": 9113, "kind": "prose", "text": "**方法**：解析全部 `.lean` 文件的 `namespace`/`section`/`mutual` 栈求每条 `theorem`/`lemma` 的全限定名；"}
+{"doc_id": "D042", "sid": 139, "start": 9113, "end": 9202, "kind": "prose", "text": "按库根模块分批生成临时 `#print axioms` 探测文件，以 `lake env lean` 实测（Lean 4.29.1，`autoImplicit = false`；"}
+{"doc_id": "D042", "sid": 140, "start": 9202, "end": 9263, "kind": "prose", "text": "临时文件与脚本用后即删、不入库）；跨库不能同环境导入的声明按模块单独探测；`private` 声明在模块副本内按短名探测。"}
+{"doc_id": "D042", "sid": 141, "start": 9263, "end": 9402, "kind": "prose", "text": "分级判据：依赖集合中不含 15 条 CQM 自有 `axiom` 者记为「零 CQM 公理依赖」，即在 Lean 内核逻辑公理 `propext`、`Classical.choice`、`Quot.sound` 的三元组内取子集（`#print axioms` 给出传递闭包）。"}
+{"doc_id": "D042", "sid": 142, "start": 9402, "end": 9554, "kind": "prose", "text": "v1.9.58 另以 `Environment.find?` + `Expr.getUsedConstants` 的常量依赖传递闭包逐条判定原依赖 `spectralQuantum_numerical_bounds` 的定理归属（含类型与证明项），再按升级后的 `#print axioms` 归入子行。"}
+{"doc_id": "D042", "sid": 143, "start": 9556, "end": 9567, "kind": "table", "text": "| 分级 | 条数 |"}
+{"doc_id": "D042", "sid": 144, "start": 9568, "end": 9580, "kind": "table", "text": "|:---|:---:|"}
+{"doc_id": "D042", "sid": 145, "start": 9581, "end": 9601, "kind": "table", "text": "| 零 CQM 公理依赖 | 883 |"}
+{"doc_id": "D042", "sid": 146, "start": 9602, "end": 9621, "kind": "table", "text": "| 　· 不使用任何公理 | 45 |"}
+{"doc_id": "D042", "sid": 147, "start": 9622, "end": 9645, "kind": "table", "text": "| 　· 仅 `propext` | 52 |"}
+{"doc_id": "D042", "sid": 148, "start": 9646, "end": 9682, "kind": "table", "text": "| 　· `propext` + `Quot.sound` | 24 |"}
+{"doc_id": "D042", "sid": 149, "start": 9683, "end": 9741, "kind": "table", "text": "| 　· `propext` + `Classical.choice` + `Quot.sound` | 762 |"}
+{"doc_id": "D042", "sid": 150, "start": 9742, "end": 9759, "kind": "table", "text": "| 依赖 CQM 公理 | 3 |"}
+{"doc_id": "D042", "sid": 151, "start": 9760, "end": 9788, "kind": "table", "text": "| **合计（去重全限定名）** | **907** |"}
+{"doc_id": "D042", "sid": 152, "start": 9790, "end": 10028, "kind": "quote", "text": "> 说明：v1.9.55 已把原未纳入实测的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44，共 86 条）全部纳入实测——其中 84 条为零 CQM 公理依赖（均落在 `propext` + `Classical.choice` + `Quot.sound` 三元组），2 条依赖 CQM 公理（见下）。"}
+{"doc_id": "D042", "sid": 153, "start": 10028, "end": 10046, "kind": "quote", "text": "原「未纳入实测 79」一行随之取消。"}
+{"doc_id": "D042", "sid": 154, "start": 10046, "end": 10140, "kind": "quote", "text": "v1.9.56 将 `causalChainSelfClosure`（原属三元组类）改为定义 `CausalLoop.ofSegment`，故「零 CQM 公理依赖」与三元组子行各减 1；"}
+{"doc_id": "D042", "sid": 155, "start": 10140, "end": 10162, "kind": "quote", "text": "本次改动不涉及任何 CQM 公理的使用状态。"}
+{"doc_id": "D042", "sid": 156, "start": 10162, "end": 10268, "kind": "quote", "text": "v1.9.57 删除的 `spectralQuantum_zeta_zeros_relation` 无任何已证定理依赖，故分级计数不变（零 CQM 公理依赖 851 / 依赖 CQM 公理 34，合计 885）。"}
+{"doc_id": "D042", "sid": 157, "start": 10268, "end": 10436, "kind": "quote", "text": "v1.9.58 把 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`：原依赖该公理的 31 条（SpectralGeometry 23 · GN 7 · PhysicalConstants 1）实测全部转为零 CQM 公理依赖且均落在三元组子行，新定理本身亦属三元组；"}
+{"doc_id": "D042", "sid": 158, "start": 10436, "end": 10502, "kind": "quote", "text": "故「零 CQM 公理依赖」851 → 883（三元组子行 730 → 762）、「依赖 CQM 公理」34 → 3，其余三子行不变。"}
+{"doc_id": "D042", "sid": 159, "start": 10504, "end": 10532, "kind": "prose", "text": "**依赖 CQM 公理的 3 条**（逐条实名可复现）："}
+{"doc_id": "D042", "sid": 160, "start": 10534, "end": 10641, "kind": "list", "text": "- `b1` 与 `b1_perturbation_lower_bound` — 同一 1 条：`b1_gt_2q_at_mathieuParameter`（`SpectralGeometry/Mathieu`）。"}
+{"doc_id": "D042", "sid": 161, "start": 10642, "end": 10694, "kind": "list", "text": "- `actualizableAttributes` — 1 条：`basicDOF_support`。"}
+{"doc_id": "D042", "sid": 162, "start": 10695, "end": 10798, "kind": "list", "text": "- `ontologyDevelopsInto` 与 `ontologyDevelopsInto_irreflexive` — 同一 1 条：`ontologyDevelopsInto_distinct`。"}
+{"doc_id": "D042", "sid": 163, "start": 10800, "end": 11084, "kind": "quote", "text": "> v1.9.58 变更归属：原 `spectralQuantum_numerical_bounds` 的 31 条使用者（SpectralGeometry 23〔`Basic` 16、`RiemannXi` 3、`GLnTrivialSpectralQuantum` 3、`Mathieu` 1〕、GN 7〔`Constructions` 4、`TripleIdentity` 3〕、PhysicalConstants 1〔`GN_spectral_formula_pos`〕）已随该陈述升级为定理而全部转为零 CQM 公理依赖（均落在三元组子行），不再列入本清单。"}
+{"doc_id": "D042", "sid": 164, "start": 11086, "end": 11239, "kind": "prose", "text": "**15 条 `axiom` 的使用状态**：5 条被已证定理依赖（`b1`、`b1_perturbation_lower_bound`、`actualizableAttributes`、`ontologyDevelopsInto`、`ontologyDevelopsInto_irreflexive`）；"}
+{"doc_id": "D042", "sid": 165, "start": 11239, "end": 11660, "kind": "prose", "text": "10 条当前无任何已证定理依赖——`physical_hypothesis`、`confinement_equiv_decoherence`、`noncommutative_to_commutative_phase_transition`、`decoherence_steady_state_is_4simplex`（CausalSet 4）、`proton_is_finite_ontology`、`neutron_is_defective_ontology`、`proton_confinement_geometry_is_4simplex`、`confinement_interior_is_quantum_gravity`、`electron_is_proton_neutron_product`（Superconductivity 5）、`actualizableAttributes_finite`（Methodology 1）。"}
+{"doc_id": "D042", "sid": 166, "start": 11662, "end": 11777, "kind": "prose", "text": "**待闭合项**：`b1`、`b1_perturbation_lower_bound` 已随 `SpectralGeometry/Mathieu` 纳入实测，使用者为 `b1_gt_2q_at_mathieuParameter`；"}
+{"doc_id": "D042", "sid": 167, "start": 11777, "end": 11838, "kind": "prose", "text": "两条 `axiom` 本身仍未闭合（Mathieu 函数理论待后续），此处只记录依赖关系，不改变其 `axiom` 状态。"}
+{"doc_id": "D042", "sid": 168, "start": 11838, "end": 11969, "kind": "prose", "text": "`spectralQuantum_numerical_bounds` 已于 v1.9.58 升级为定理（区间 `(0.02295, 0.02325)`，由 Euler–Mascheroni 上下界序列与 ln 2、ln π 标准界严格证明），不再计入待闭合公理。"}
+{"doc_id": "D042", "sid": 169, "start": 11969, "end": 12011, "kind": "prose", "text": "洞见仅限实测所得：0 条定理依赖 `physical_hypothesis` 体系。"}
+{"doc_id": "D042", "sid": 170, "start": 12011, "end": 12129, "kind": "prose", "text": "另：`spectralQuantum_zeta_zeros_relation` 已于 v1.9.57 删除（原式以 `γ₁+n` 近似第 n 个零点、数值不成立），☯ 的零点求和表示转登记为 Hadamard 积待形式化缺口（见下表）。"}
+{"doc_id": "D042", "sid": 171, "start": 12131, "end": 12141, "kind": "heading", "text": "## 缺口与证明状态"}
+{"doc_id": "D042", "sid": 172, "start": 12143, "end": 12165, "kind": "table", "text": "| 缺口 | 描述 | 涉及库 | 状态 |"}
+{"doc_id": "D042", "sid": 173, "start": 12166, "end": 12188, "kind": "table", "text": "|:---|:---|:---|:---:|"}
+{"doc_id": "D042", "sid": 174, "start": 12189, "end": 12254, "kind": "table", "text": "| H3.1 | 前核子自组织 = 禁闭的严格推导 | `CausalSet/Axioms` | `axiom` (H3.1) |"}
+{"doc_id": "D042", "sid": 175, "start": 12255, "end": 12316, "kind": "table", "text": "| H3.2 | 非交换 → 交换几何相变 | `CausalSet/Axioms` | `axiom` (H3.2) |"}
+{"doc_id": "D042", "sid": 176, "start": 12317, "end": 12400, "kind": "table", "text": "| C | 退相干稳态 = 正四单纯形 | `CausalSet/Axioms` | 以 Lean 公理 H3.3 承载（缺口编号 C，与 H3.3 为两套编号） |"}
+{"doc_id": "D042", "sid": 177, "start": 12401, "end": 12468, "kind": "table", "text": "| — | Sierra-CQM 耦谱定理严格证明 | `SpectralGeometry` | 数值验证 (偏差 < 1e-8) |"}
+{"doc_id": "D042", "sid": 178, "start": 12469, "end": 12544, "kind": "table", "text": "| — | Mathieu 第一特征值 b₁(q) | `SpectralGeometry` | `axiom` (待 Mathieu 函数理论) |"}
+{"doc_id": "D042", "sid": 179, "start": 12545, "end": 12602, "kind": "table", "text": "| — | 素数冻结定理严格证明 | `SpectralGeometry` | 数值验证 (100% 成功率) |"}
+{"doc_id": "D042", "sid": 180, "start": 12603, "end": 12684, "kind": "table", "text": "| — | Adele 条件 ∏_p ℤ_p = 1/30（有限乘积形式） | `SpectralGeometry` | 已证明（内核判定 `decide`） |"}
+{"doc_id": "D042", "sid": 181, "start": 12685, "end": 12754, "kind": "table", "text": "| — | 相变量子 $☯ = \\xi'(1)/\\xi(1)$ 的闭式表达式 | `SpectralGeometry` | 已严格证明 |"}
+{"doc_id": "D042", "sid": 182, "start": 12755, "end": 12836, "kind": "table", "text": "| — | 因果分辨率 → 引力场有效描述的尺度依赖 | `Superconductivity/ElementCartan` | `def` 占位（哲学立场） |"}
+{"doc_id": "D042", "sid": 183, "start": 12837, "end": 12928, "kind": "table", "text": "| — | 中子星/强引力例外（理想块对角失效、牛顿退化失效） | `Superconductivity/ElementCartan` | `def` 占位（需核物理/量子引力） |"}
+{"doc_id": "D042", "sid": 184, "start": 12929, "end": 13069, "kind": "table", "text": "| — | $☯$ 的零点求和表示（谱表示，条件于 RH）$\\sum 1/(\\gamma_n^2+1/4)$（公理化证明稿定理 1.1） | `GN` | 待 Hadamard 乘积与真实零点枚举形式化（v1.9.57 已删除 `RiemannXi` 中数值不成立的占位公理） |"}
+{"doc_id": "D042", "sid": 185, "start": 13070, "end": 13160, "kind": "table", "text": "| — | §5 Sierra-CQM 步骤 1–2（酉等价、平面波广义本征函数） | `GN` | 代数核心已在 `SierraCQM.lean`；算子/分布谱论分析学待后续 |"}
+{"doc_id": "D042", "sid": 186, "start": 13162, "end": 13179, "kind": "heading", "text": "### 闭合缺口 (v0.5.8)"}
+{"doc_id": "D042", "sid": 187, "start": 13181, "end": 13199, "kind": "table", "text": "| 缺口 | 描述 | 闭合方式 |"}
+{"doc_id": "D042", "sid": 188, "start": 13200, "end": 13216, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D042", "sid": 189, "start": 13217, "end": 13348, "kind": "table", "text": "| G13 | BCS 积分方程 tanh→对数渐近 | `BCSIntegralAsymptotic.lean`：`bcsTcFromIntegral_solved` 严格证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程的唯一正解 |"}
+{"doc_id": "D042", "sid": 190, "start": 13349, "end": 13466, "kind": "table", "text": "| G20-ext | 两质子耦合精确阈值 | `MolecularGeometry.lean`：`twoProtonCoupling_exactThreshold` 用 SOS 分解 + 黄金比例恒等式证明 t < λ₁ 时正定 |"}
+{"doc_id": "D042", "sid": 191, "start": 13467, "end": 13579, "kind": "table", "text": "| — | `bcsConstant_gt_one`（2e^γ/π > 1） | 从 `axiom` 升级为 `theorem`：利用 Mathlib 的 γ>1/2、exp(1)>2.718、π<3.1416 严格证明 |"}
+{"doc_id": "D042", "sid": 192, "start": 13580, "end": 13695, "kind": "table", "text": "| — | 分子超嘉当矩阵谱间隙界 | `BridgeTheorems.lean`：`twoAtomSuperCartan_quadratic_lowerBound` 用 Cauchy-Schwarz + AM-GM 严格证明 |"}
+{"doc_id": "D042", "sid": 193, "start": 13696, "end": 13773, "kind": "table", "text": "| — | 元素嘉当矩阵 5 个 `True` 占位公理 | 转为诚实 `def ... : Prop := True` 声明，明确标注“不构成证明” |"}
+{"doc_id": "D042", "sid": 194, "start": 13775, "end": 13839, "kind": "quote", "text": "> 注：G17（FG→GR 连续极限退化定理）与 G20-ext 均已闭合，且**不属缺口表编号**（见 v0.6.0 亮点）。"}
+{"doc_id": "D042", "sid": 195, "start": 13841, "end": 13848, "kind": "heading", "text": "## 编译命令"}
+{"doc_id": "D042", "sid": 196, "start": 13850, "end": 13857, "kind": "code", "text": "```bash"}
+{"doc_id": "D042", "sid": 197, "start": 13858, "end": 13893, "kind": "code", "text": "cd \"08 理论组织和形式化框架/04_Lean对接/Lean源码\""}
+{"doc_id": "D042", "sid": 198, "start": 13894, "end": 13911, "kind": "code", "text": "lake build # 编译全部"}
+{"doc_id": "D042", "sid": 199, "start": 13912, "end": 13940, "kind": "code", "text": "lake build CausalSet # 编译单个库"}
+{"doc_id": "D042", "sid": 200, "start": 13941, "end": 13975, "kind": "code", "text": "lake build CartanAlgebra # 编译嘉当代数库"}
+{"doc_id": "D042", "sid": 201, "start": 13976, "end": 14023, "kind": "code", "text": "lake build SpectralGeometry # 编译谱几何库（含 Mathieu）"}
+{"doc_id": "D042", "sid": 202, "start": 14024, "end": 14070, "kind": "code", "text": "lake build Superconductivity # 编译强引力超导库（16 模块）"}
+{"doc_id": "D042", "sid": 203, "start": 14071, "end": 14122, "kind": "code", "text": "lake build Superconductivity.SPAF # 编译 SPAF 半唯像框架模块"}
+{"doc_id": "D042", "sid": 204, "start": 14123, "end": 14170, "kind": "code", "text": "lake build FGChain # 编译 FG 纤维丛理论链路库（12 模块，全部通过）"}
+{"doc_id": "D042", "sid": 205, "start": 14171, "end": 14266, "kind": "code", "text": "lake build GN # 编译 G_N 第一性推导库（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造）"}
+{"doc_id": "D042", "sid": 206, "start": 14267, "end": 14303, "kind": "code", "text": "lake build GN.TripleIdentity # 编译单模块"}
+{"doc_id": "D042", "sid": 207, "start": 14304, "end": 14335, "kind": "code", "text": "lake build GN.SierraCQM # 编译单模块"}
+{"doc_id": "D042", "sid": 208, "start": 14336, "end": 14379, "kind": "code", "text": "lake build GN.SimplexSpectrum # §2 4-单纯形组合谱"}
+{"doc_id": "D042", "sid": 209, "start": 14380, "end": 14432, "kind": "code", "text": "lake build GN.AdeleJacobian # §6 Adele Jacobian 因子 2"}
+{"doc_id": "D042", "sid": 210, "start": 14433, "end": 14476, "kind": "code", "text": "lake build GN.Constructions # §8–§11 可代数化构造"}
+{"doc_id": "D042", "sid": 211, "start": 14477, "end": 14480, "kind": "code", "text": "```"}
+{"doc_id": "D042", "sid": 212, "start": 14482, "end": 14489, "kind": "heading", "text": "## 理论对应"}
+{"doc_id": "D042", "sid": 213, "start": 14491, "end": 14518, "kind": "table", "text": "| CQM 理论 | Lean 库 | 核心定理数 |"}
+{"doc_id": "D042", "sid": 214, "start": 14519, "end": 14536, "kind": "table", "text": "|:---|:---|:---:|"}
+{"doc_id": "D042", "sid": 215, "start": 14537, "end": 14566, "kind": "table", "text": "| 因果集本体论 | `CausalSet` | 22 |"}
+{"doc_id": "D042", "sid": 216, "start": 14567, "end": 14603, "kind": "table", "text": "| 耦合空间与不确定性 | `CouplingSpace` | 21 |"}
+{"doc_id": "D042", "sid": 217, "start": 14604, "end": 14641, "kind": "table", "text": "| SU(5) 嘉当矩阵 | `CartanAlgebra` | 33 |"}
+{"doc_id": "D042", "sid": 218, "start": 14642, "end": 14688, "kind": "table", "text": "| 谱几何与 Mathieu 方程 | `SpectralGeometry` | 129 |"}
+{"doc_id": "D042", "sid": 219, "start": 14689, "end": 14721, "kind": "table", "text": "| 因果时几何 | `PrimeGeometry` | 81 |"}
+{"doc_id": "D042", "sid": 220, "start": 14722, "end": 14758, "kind": "table", "text": "| 禁闭-前核子自组织等价 | `Decoherence` | 15 |"}
+{"doc_id": "D042", "sid": 221, "start": 14759, "end": 14803, "kind": "table", "text": "| G_N 可能公式与 α⁻¹ | `PhysicalConstants` | 20 |"}
+{"doc_id": "D042", "sid": 222, "start": 14804, "end": 14834, "kind": "table", "text": "| 方法论基础 | `Methodology` | 13 |"}
+{"doc_id": "D042", "sid": 223, "start": 14835, "end": 14874, "kind": "table", "text": "| 强引力超导涌现 | `Superconductivity` | 331 |"}
+{"doc_id": "D042", "sid": 224, "start": 14875, "end": 14907, "kind": "table", "text": "| FG 纤维丛理论链路 | `FGChain` | 114 |"}
+{"doc_id": "D042", "sid": 225, "start": 14908, "end": 15002, "kind": "table", "text": "| $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 107 |"}
+{"doc_id": "D042", "sid": 226, "start": 15004, "end": 15063, "kind": "quote", "text": "> 注：本表与「定理统计」同口径（`theorem` + `lemma`，零 `sorry`），12 库合计 907。"}
+{"doc_id": "D042", "sid": 227, "start": 15065, "end": 15083, "kind": "heading", "text": "## 本次更新亮点 (v0.7.0)"}
+{"doc_id": "D042", "sid": 228, "start": 15085, "end": 15373, "kind": "list", "text": "- **§2 4-单纯形组合谱闭合**：新增 `GN/SimplexSpectrum.lean`（57 定理），把 10×10 边-面关联矩阵 `edgeFaceMatrix` 的谱 {9(×1), 4(×4), 1(×5)} 严格化——迹 30、Tr(M²)=150 的谱矩匹配、`M * P = P * D` 显式特征向量对角化、ℚ 上共轭回传 ℤ 特征多项式 `(X−9)·(X−4)⁴·(X−1)⁵`、本征空间两两 `Disjoint`（特征方程 5y+8z=0 ⇒ 15y=0 ⇒ y=z=0）、`LinearIndependent` 列向量与 `det ≠ 0`。"}
+{"doc_id": "D042", "sid": 229, "start": 15373, "end": 15407, "kind": "list", "text": "10×10 det 语句的直接判定超出默认递归深度，故采用显式基路线"}
+{"doc_id": "D042", "sid": 230, "start": 15408, "end": 15552, "kind": "list", "text": "- **§6 Adele Jacobian 因子 2**：新增 `GN/AdeleJacobian.lean`（11 引理/定理），条件定理：自对偶 `det D∞ · ∏ det Dp = 1` ⇒ `ln 𝒥 = −2 ln(∏ det Dp)` ⇒ `𝒥 = exp(−2/☯)`；"}
+{"doc_id": "D042", "sid": 231, "start": 15552, "end": 15582, "kind": "list", "text": "Tate 自对偶本身以 `placeholder` 如实标注"}
+{"doc_id": "D042", "sid": 232, "start": 15583, "end": 15869, "kind": "list", "text": "- **§8–§11 构造**：新增 `GN/Constructions.lean`（14 定理），$\\kappa = (N_{\\text{faces}} + ☯)/N_{\\text{cycle}}$ 的组合-谱连接（`N_faces = 31`、`N_cycle = Tr(M) = 30`）、分解 $\\kappa = 31/30 + ☯/30$、乘积核 `gnProductCore` 与 `GNFactor_at_C` 等同及正性、对数形式 `ln F = 2 ln ☯ + ln 𝔠₁ − 2/☯ + ln(1+κ☯)`、全因子正性（含 `protonMass`）"}
+{"doc_id": "D042", "sid": 233, "start": 15870, "end": 15914, "kind": "list", "text": "- **GN 库统计**：3→6 模块，19→101 定理；全库定理总数 666→748"}
+{"doc_id": "D042", "sid": 234, "start": 15916, "end": 15934, "kind": "heading", "text": "## 本次更新亮点 (v0.6.2)"}
+{"doc_id": "D042", "sid": 235, "start": 15936, "end": 16295, "kind": "list", "text": "- **§5 Sierra-CQM 形式化闭合（代数核心）**：新增 `GN/SierraCQM.lean`（6 定理，零 `sorry`、零新增 `axiom`），把证明稿定理 5.1 的 Floquet 量子化代数链严格化——零点匹配 `floquetMomentum_eq`（$k_n=\\gamma_n(1+\\theta_n/(2\\pi n))$）、偏差界 `floquetMomentum_deviation_lt`（$|k_n-\\gamma_n|<\\gamma_n/(2n)$）、耦级绝对误差 `floquet_level_deviation_le`（$|k_n^2-\\gamma_n^2|\\le\\gamma_n^2(1/n+1/(4n^2))$）、相对误差两形式（含见证常数 $5/4$，$n\\ge1$）。"}
+{"doc_id": "D042", "sid": 236, "start": 16295, "end": 16339, "kind": "list", "text": "`L_n=2\\pi n/\\gamma_n` 与 `m=n` 以显式假设出现（条件定理）；"}
+{"doc_id": "D042", "sid": 237, "start": 16339, "end": 16363, "kind": "list", "text": "步骤 1–2（酉等价、广义本征函数）如实列入缺口"}
+{"doc_id": "D042", "sid": 238, "start": 16364, "end": 16431, "kind": "list", "text": "- **GN 库统计**：2→3 模块（`Basic`/`TripleIdentity`/`SierraCQM`），13→19 定理；"}
+{"doc_id": "D042", "sid": 239, "start": 16431, "end": 16445, "kind": "list", "text": "全库定理总数 660→666"}
+{"doc_id": "D042", "sid": 240, "start": 16447, "end": 16465, "kind": "heading", "text": "## 本次更新亮点 (v0.6.1)"}
+{"doc_id": "D042", "sid": 241, "start": 16467, "end": 16706, "kind": "list", "text": "- **GN 库新增**：`GN`（2 模块，13 定理，零 `sorry`、零新增 `axiom`），形式化 $G_N$ 第一性推导公理化证明稿 §1——三重恒等 $☯ = \\xi'(1)/\\xi(1) = \\lambda_1 = -B$ 的代数层：闭式等价变形（定理 1.2）、$\\lambda_1 = ☯$（定理 1.3）、$B = -☯$（定理 1.4）、三重恒等合成（定理 1.5）、Li 判据 n=1（$\\lambda_1 > 0$）、$B < 0$、数值桥梁推论。"}
+{"doc_id": "D042", "sid": 242, "start": 16706, "end": 16764, "kind": "list", "text": "依赖 `SpectralGeometry.Basic`，避开编译失败的 `RiemannXi`/`Mathieu`；"}
+{"doc_id": "D042", "sid": 243, "start": 16764, "end": 16807, "kind": "list", "text": "缺口（零点求和表示、§5 渐近定理）如实列入缺口表，详见 `GN/README.md`"}
+{"doc_id": "D042", "sid": 244, "start": 16808, "end": 16940, "kind": "list", "text": "- **证明稿严格性清理**：公理化证明稿 §1（定理 1.1 因子 2 错误）、§2 定理 2.1（补全二阶矩求解 + 有理根定理排除，消除不完整推导）、§3 定理 3.1（重组为四步结构，消除自我对话）、§5 步骤 5（消除自我对话，统一绝对/相对误差表述）；"}
+{"doc_id": "D042", "sid": 245, "start": 16940, "end": 16982, "kind": "list", "text": "参考文献修正 LM 论文 arXiv 号（2307.01254）与真实标题，编号去重"}
+{"doc_id": "D042", "sid": 246, "start": 16984, "end": 17002, "kind": "heading", "text": "## 本次更新亮点 (v0.6.0)"}
+{"doc_id": "D042", "sid": 247, "start": 17004, "end": 17058, "kind": "list", "text": "- **落后形式化的清理**：`MultiComponent.lean` 与最新研究文档不一致，已不在库中；"}
+{"doc_id": "D042", "sid": 248, "start": 17058, "end": 17122, "kind": "list", "text": "主入口 `Superconductivity.lean` 的章节映射同步更新（§13→§20、§7/§10 对应文档章节精简）；"}
+{"doc_id": "D042", "sid": 249, "start": 17122, "end": 17169, "kind": "list", "text": "§3.6 公式取与代码一致的 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$；"}
+{"doc_id": "D042", "sid": 250, "start": 17169, "end": 17276, "kind": "list", "text": "G13 状态为闭合；FG→GR 连续极限退化定理（编号 G17）不作为缺口；`Reduction.lean`/`CartanSuperconductivity.lean` 模块头对文档名的引用改为“方向锚定保留”。"}
+{"doc_id": "D042", "sid": 251, "start": 17276, "end": 17282, "kind": "list", "text": "模块数 16"}
+{"doc_id": "D042", "sid": 252, "start": 17283, "end": 17355, "kind": "list", "text": "- **定理总数**：647（Superconductivity 库 340；`MultiComponent` 的 23 定理随模块删除而移除）"}
+{"doc_id": "D042", "sid": 253, "start": 17357, "end": 17375, "kind": "heading", "text": "## 本次更新亮点 (v0.5.9)"}
+{"doc_id": "D042", "sid": 254, "start": 17377, "end": 17426, "kind": "list", "text": "- **RQM 唯物化文档化**：将关系量子力学的唯物化操作正式纳入 SPAF 框架文档（§0）。"}
+{"doc_id": "D042", "sid": 255, "start": 17426, "end": 17456, "kind": "list", "text": "三条原则：属性随附本体、因果自组织、观测者相对性的自然消解。"}
+{"doc_id": "D042", "sid": 256, "start": 17456, "end": 17516, "kind": "list", "text": "推论：电子去特权化——取消电子的本体特权，使嘉当矩阵拼接理论得以统一处理超导问题，与 BCS 历史实践（晶格是关键）一致"}
+{"doc_id": "D042", "sid": 257, "start": 17517, "end": 17677, "kind": "list", "text": "- **六层探索架构**：SPAF 半唯像框架路径从四阶段扩展为六层架构——层级 I（质子/中子嘉当矩阵）→ 层级 II（元素嘉当矩阵，理想积木）→ 层级 III（单元素 BCS 退化）→ 层级 IV（分子超嘉当矩阵→Weyl 嵌入）→ 层级 V（宏观 Regge 角亏→FG 退相干场强度）→ 层级 VI（因果分辨率）"}
+{"doc_id": "D042", "sid": 258, "start": 17678, "end": 17749, "kind": "list", "text": "- **元素主次结构**：BCS 同位素效应揭示元素内部存在主次结构——质子扇区（纯 A4 块对角）为主、中子扇区（缺陷 A4 块对角）为次。"}
+{"doc_id": "D042", "sid": 259, "start": 17749, "end": 17834, "kind": "list", "text": "主次结构直接指向 BCS 退化方向（往单元素材料退化），并揭示拼接规则（同种元素同位素之间 $\\epsilon(N)$ 连续变化，跨元素种类需要 $t_{ij}$ 参数）"}
+{"doc_id": "D042", "sid": 260, "start": 17835, "end": 17913, "kind": "list", "text": "- **阶段 0：元素层级**：新增计算管线步骤 0a–0d（质子/中子分配→元素嘉当矩阵组装→主次结构识别→BCS 退化验证），使元素层级计算先于分子层级"}
+{"doc_id": "D042", "sid": 261, "start": 17914, "end": 18021, "kind": "list", "text": "- **SPAF 框架新增五项待办（含 G17 说明，不作为缺口）**：次结构谱间隙闭式、主次结构谱间隙差→同位素效应映射、因果分辨率形式化、FG→GR 连续极限退化定理（G17，不作为缺口）、单元素拼接规则特殊性"}
+{"doc_id": "D042", "sid": 262, "start": 18022, "end": 18090, "kind": "list", "text": "- **文档总数**：SPAF 框架文档从 355 行扩展至约 500 行，新增 §0、§2.5、§5 阶段 0、§10.5 共四个章节"}
+{"doc_id": "D042", "sid": 263, "start": 18091, "end": 18142, "kind": "list", "text": "- **定理总数**：保持不变（624），本次更新为文档架构与概念框架的深化，非 Lean 代码层变更"}
+{"doc_id": "D042", "sid": 264, "start": 18144, "end": 18162, "kind": "heading", "text": "## 本次更新亮点 (v0.5.8)"}
+{"doc_id": "D042", "sid": 265, "start": 18164, "end": 18247, "kind": "list", "text": "- **BCS 渐近分析（G13 闭合）**：新增 `BCSIntegralAsymptotic.lean`（9 定理），将 BCS 积分方程从第一性推导为对数方程。"}
+{"doc_id": "D042", "sid": 266, "start": 18247, "end": 18319, "kind": "list", "text": "`bcsTcFromIntegral_solved` 严格证明 T_c = (2e^γ/π)·ω_D·exp(−1/λ) 是积分方程的唯一正解；"}
+{"doc_id": "D042", "sid": 267, "start": 18319, "end": 18361, "kind": "list", "text": "`bcsTcFromIntegral_exists_unique` 证明存在唯一性。"}
+{"doc_id": "D042", "sid": 268, "start": 18361, "end": 18393, "kind": "list", "text": "积分方程 ⟺ 对数方程 ⟺ 闭式 T_c 的完整推导链全部严格化"}
+{"doc_id": "D042", "sid": 269, "start": 18394, "end": 18464, "kind": "list", "text": "- **`bcsConstant_gt_one` 公理→定理**：`2e^γ/π > 1` 从 `axiom` 升级为 `theorem`。"}
+{"doc_id": "D042", "sid": 270, "start": 18464, "end": 18617, "kind": "list", "text": "证明链：γ > 1/2（Mathlib `one_half_lt_eulerMascheroniConstant`）→ exp(γ) > exp(1/2) → 平方差因式分解证明 2·exp(1/2) > π（利用 π < 3.1416 和 exp(1) > 2.718）→ 2·exp(γ)/π > 1。"}
+{"doc_id": "D042", "sid": 271, "start": 18617, "end": 18660, "kind": "list", "text": "BCS 理论中前因子 > 1 的\"数值事实\"首次从 Mathlib 已知数值界严格证明"}
+{"doc_id": "D042", "sid": 272, "start": 18661, "end": 18965, "kind": "list", "text": "- **桥接定理（跨模块因果链）**：新增 `BridgeTheorems.lean`（23 定理），将 CQM 各模块严格连接：`spectralGap_bcsTc_bound`（A₄ 谱间隙→BCS T_c 上限）、`gapChannelTc_exact`（谱间隙通道 T_c 闭式）、`spectralGap_to_ricciScalar_chain`（谱间隙→角亏密度→Ricci 标量）、`twoAtomSuperCartan_quadratic_lowerBound`（双原子耦合正定性）——用 Cauchy-Schwarz + AM-GM 严格证明 |t| < λ_min 时分子超嘉当矩阵正定"}
+{"doc_id": "D042", "sid": 273, "start": 18966, "end": 19048, "kind": "list", "text": "- **元素嘉当矩阵（质/中子层级）**：新增 `ElementCartan.lean`（39 定理），从质子/中子基本嘉当矩阵出发，按 Z/N 组装元素嘉当矩阵。"}
+{"doc_id": "D042", "sid": 274, "start": 19048, "end": 19263, "kind": "list", "text": "包含：质子扇区（纯 A₄ 块对角）、中子扇区（缺陷 A₄，参数 ε(N)）、同位素效应（ε(N) = ε₀·(1−β·(N−N_ref)/N_ref)）、**单元素材料 CQM→BCS 退化**（§9：ε→0 时 T_c→bcsCriticalTemperature(ω_D, λ₁)，BCS 是 CQM 在单元素、无中子缺陷极限下的特例）、极端引力例外（中子星/强引力/黑洞视界，5 个 `True` 占位转为诚实 `def`）"}
+{"doc_id": "D042", "sid": 275, "start": 19264, "end": 19463, "kind": "list", "text": "- **分子几何→FG 退相干场管线**：新增 `MolecularGeometry.lean`（62 定理），完整形式化从分子构型到 FG 退相干场的管线：原子嘉当矩阵 → 分子超嘉当矩阵（块对角 + 跨原子耦合 t_ij）→ Weyl 嵌入（对角化提取谱间隙）→ Regge 角亏（δ_v = 2π − Σθ_tet）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限）。"}
+{"doc_id": "D042", "sid": 276, "start": 19463, "end": 19546, "kind": "list", "text": "`twoProtonCoupling_exactThreshold`（G20-ext 闭合）用 SOS 分解 + 黄金比例恒等式证明两质子耦合在 t < λ₁ 时正定"}
+{"doc_id": "D042", "sid": 277, "start": 19547, "end": 19700, "kind": "list", "text": "- **SPAF 压强-温度几何构型**：已合并入 `SPAF.lean`，将压强和温度转化为 A₄ 几何效应：几何压缩因子 χ(P) = (P/P_ref)^(1/3)、桥接定理（χ(P)→ω_D(P)、χ(P)→λ(P)）、再生产因子 R(T) = exp(−Γ_eff(T)·τ)、自洽 T_c 方程"}
+{"doc_id": "D042", "sid": 278, "start": 19701, "end": 19810, "kind": "list", "text": "- **消除所有 `True` 占位公理和 `sorry`**：`ElementCartan.lean` 中 5 个返回 `True` 的占位公理转为诚实 `def` 声明，明确标注\"不构成证明，仅标记命题声明位置\"。"}
+{"doc_id": "D042", "sid": 279, "start": 19810, "end": 19894, "kind": "list", "text": "全部 12 个 Superconductivity 模块零 `sorry`、零 `axiom`（除 `Ontology.lean` 中 5 条本体论公理，为框架出发点）"}
+{"doc_id": "D042", "sid": 280, "start": 19895, "end": 19969, "kind": "list", "text": "- **定理总数**：从 426 → 624（+198 个严格证明的定理），Superconductivity 库从 119 → 317（+198）"}
+{"doc_id": "D042", "sid": 281, "start": 19971, "end": 19989, "kind": "heading", "text": "## 本次更新亮点 (v0.5.7)"}
+{"doc_id": "D042", "sid": 282, "start": 19991, "end": 20124, "kind": "list", "text": "- **室温可行域量化判据（第三步）**：`roomTemperature_iff_debyeLowerBound`——T_c(ω_D, λ) ≥ T_room ⟺ ω_D ≥ (T_room/2e^γ/π)·e^{1/λ}，把「室温方向」从文字叙述落成严格不等式；"}
+{"doc_id": "D042", "sid": 283, "start": 20124, "end": 20242, "kind": "list", "text": "`roomTemperatureDebyeLowerBound_antitone_in_coupling`——所需 ω_D 下界反单调于 λ（强耦合系统性降低所需 ω_D），与双单调骨架合读：两大室温杠杆（轻晶格/高压 → 高 ω_D；"}
+{"doc_id": "D042", "sid": 284, "start": 20242, "end": 20263, "kind": "list", "text": "强耦合 → 高 λ）可沿等值下界互换/叠加"}
+{"doc_id": "D042", "sid": 285, "start": 20264, "end": 20483, "kind": "list", "text": "- **SPAF 半唯像应用框架（可严格证明部分）**：新增 `SPAF.lean`（17 定理 + 4 引理），严格化框架文档 §3–§5 的可证子集——因果耦合族 t_ij = t₀·e^{−d_ij/λ}·Θ(d_cut−d_ij)（截断内正性、截断外恒零、对距离单调衰减、全局非负：`causalCoupling_pos`/`_zero_of_cutoff`/`_antitone_in_distance`/`_nonneg`）；"}
+{"doc_id": "D042", "sid": 286, "start": 20483, "end": 20588, "kind": "list", "text": "组装对称性（对称矩阵叠加保对称、A₄ 直接拼接保实对称：`superCartan_symmetric`/`identityBlock_symmetric`/`cartanA4Stack_symmetric`）；"}
+{"doc_id": "D042", "sid": 287, "start": 20588, "end": 20766, "kind": "list", "text": "中子缺陷 C_n = A₄ − ε·diag(1,0,0,0)（对称、ε=0 退化 `cartanHamiltonian`、缺陷位对角元 2−ε、非缺陷位保持 2、ε<2 时缺陷位对角元为正：`neutronCartan_symmetric`/`_zero_eq_proton`/`_diag00`/`_diag_ne00`/`_diag00_pos`）；"}
+{"doc_id": "D042", "sid": 288, "start": 20766, "end": 20847, "kind": "list", "text": "味概率流 Γ_rel ≥ 0 与 Regge 边长 l_e > 0（`flavorFlowRate_nonneg`/`reggeEdgeLength_pos`）。"}
+{"doc_id": "D042", "sid": 289, "start": 20847, "end": 21059, "kind": "list", "text": "**中子缺陷谱判据正方向（SOS 版本）**：`neutronCartan_quadratic` 给出二次型分解 xᴴC_nx = (1−ε)x₀² + x₃² + (x₀−x₁)² + (x₁−x₂)² + (x₂−x₃)²，`neutronCartan_posDef_of_lt_one`/`_of_lt_spectralGap` 证明 ε < 1（更宽）与 ε < spectralGap（判据原文）⟹ C_n 正定；"}
+{"doc_id": "D042", "sid": 290, "start": 21059, "end": 21212, "kind": "list", "text": "`neutronCartan_not_posDef_of_five_fourths_le` 给出反方向构造：ε ≥ 5/4 时非正定（见证向量 (4,3,2,1)，xᴴC_nx = 20 − 16ε ≤ 0）——同时修正文档原述「ε ≥ γ_min 即丧失正定」（0.699 ≤ ε < 5/4 仍正定）。"}
+{"doc_id": "D042", "sid": 291, "start": 21212, "end": 21265, "kind": "list", "text": "唯一残留缺口：区间 [1, 5/4) 的正定保持（Sylvester 余子式族）与 γ_min 的阈值认证"}
+{"doc_id": "D042", "sid": 292, "start": 21267, "end": 21285, "kind": "heading", "text": "## 本次更新亮点 (v0.5.6)"}
+{"doc_id": "D042", "sid": 293, "start": 21287, "end": 21498, "kind": "list", "text": "- **金属氢能隙闭式（第二步计算框架）**：`hydrogenBcsGap` = ω_D^H/sinh(1/λ)，`hydrogen_bcs_gap_equation_solved` 证明该闭式**精确满足能隙积分方程** 1 = λ·arsinh(ω_D^H/Δ_H)——第一性解链在氢材料上的直接实例，无需经验参数：氢 = 单质子有限本体 → A₄ 谱间隙 → 晶格刚度 → 德拜频率 → 能隙闭式全部由第一性量决定"}
+{"doc_id": "D042", "sid": 294, "start": 21499, "end": 21632, "kind": "list", "text": "- **金属氢同位素方向**：`hydrogen_phonon_higher_than_deuterium`——氘（2·m_p）晶格的声子截止 ≤ 氢晶格（最轻有限本体给出最高 T_c 上限），对应 H3S/D3S 同位素位移 T_c(D) < T_c(H) 的家系"}
+{"doc_id": "D042", "sid": 295, "start": 21633, "end": 21811, "kind": "list", "text": "- **室温方向骨架（第三步）**：`bcsCriticalTemperature_mono_in_debye` / `bcsCriticalTemperature_mono_in_coupling`——T_c = 常·ω_D·e^{−1/λ} 对 ω_D 与 λ 均单调不减，室温路线的两大坐标：轻晶格 + 高压（高 ω_D）与强电子-声子耦合（高 λ）"}
+{"doc_id": "D042", "sid": 296, "start": 21812, "end": 21893, "kind": "list", "text": "- **第一性数值例链（主流输入标定）**：`stiffnessRefCalibrated` 由目标 ω_D 反解 A₄ 刚度 k₀ = ω_D²·M_p/λ₁；"}
+{"doc_id": "D042", "sid": 297, "start": 21893, "end": 22122, "kind": "list", "text": "`hydrogenPhononFrequency_calibrated_eq` / `hydrogenBcsGap_calibrated_eq` / `hydrogenCriticalTemperature_calibrated_eq` 证明金属氢链（A₄ 标度 → 刚度 → 声子 → 能隙/T_c）精确还原主流输入 ω_D 与 BCS 闭式——H₃S/LaH10 数值例链的记号还原锚点（数值本身以文献 α²F(ω)/λ 为输入，见 06 超导 计算器）"}
+{"doc_id": "D042", "sid": 298, "start": 22123, "end": 22190, "kind": "list", "text": "- **A₄ 直接拼接（大量金属氢）**：`cartanA4Stack` = n 份 A₄ 块对角拼接（Fin 4 × Fin n）；"}
+{"doc_id": "D042", "sid": 299, "start": 22190, "end": 22410, "kind": "list", "text": "`cartanA4Stack_zero_of_proton_ne`（跨质子零耦合）、`cartanA4Stack_block_eq`（块内仍为 A₄）、`cartanA4Stack_diag`（2-自环保持）、`cartanA4Stack_trace_eq`（Tr = 8n）、`cartanA4Stack_det_eq`（det = 5ⁿ）——禁闭几何尺度按质子数线性累加、不因拼接稀释，\"大量金属氢 = 单质子 A₄ 直接拼接\"已严格化"}
+{"doc_id": "D042", "sid": 300, "start": 22412, "end": 22430, "kind": "heading", "text": "## 本次更新亮点 (v0.5.5)"}
+{"doc_id": "D042", "sid": 301, "start": 22432, "end": 22639, "kind": "list", "text": "- **第一性推导链**：新增 `FirstPrinciples.lean`（18 定理 + 1 引理），把超导推导起点从文献公式**下沉到物理第一原理**，全链一次铺开：质子 A₄ 循环相空间 → 晶格声子（ω_D = √(k/M)，k 由 A₄ 谱间隙 `spectralGap` 标定）→ 电子-声子耦合 λ = N(0)·V（N(0) 按主流研究结果采用，不重新推导）→ BCS 能隙积分方程 → 能隙闭式"}
+{"doc_id": "D042", "sid": 302, "start": 22640, "end": 22883, "kind": "list", "text": "- **严格积分恒等式（第一性严格步）**：`gapIntegral_pr` 用 `Real.hasDerivAt_arsinh`（d/dx arsinh x = 1/√(1+x²)）+ 链式法则 + 微积分基本定理（`intervalIntegral.integral_eq_sub_of_hasDerivAt`）**严格证明** ∫₀^{ω_D} dξ/√(ξ²+Δ²) = arsinh(ω_D/Δ)——把 BCS 能隙方程\"积分 → arsinh\"的台阶从文献输入升格为可证定理"}
+{"doc_id": "D042", "sid": 303, "start": 22884, "end": 22961, "kind": "list", "text": "- **积分能隙方程 ⟺ arsinh 方程、第一性解**：`bcsGapIntegralEquation_iff_arsinh` 直接把积分恒等式代入；"}
+{"doc_id": "D042", "sid": 304, "start": 22961, "end": 23063, "kind": "list", "text": "`bcsGapIntegralEquation_solved` 证明积分方程的解 = ω_D/sinh(1/λ)（复用 Reduction 的 `bcs_gap_equation_unique` 唯一性）"}
+{"doc_id": "D042", "sid": 305, "start": 23064, "end": 23198, "kind": "list", "text": "- **A₄ 谱间隙标定晶格**：`latticeStiffnessFromA4_pos` / `phononFrequencyFromA4_pos` / `phononFrequencyFromA4_mono_in_stiffness`（A₄ 循环越强声子频率越高）"}
+{"doc_id": "D042", "sid": 306, "start": 23199, "end": 23301, "kind": "list", "text": "- **弱耦合消失**：`bcsCriticalTemperature_tendsto_zero` 证明 λ → 0⁺ 时 T_c → 0（`Tendsto`，e^{−1/λ} 严格闭式导致，非经验截断）"}
+{"doc_id": "D042", "sid": 307, "start": 23302, "end": 23374, "kind": "list", "text": "- **端到端正性链**：`firstPrinciples_chain_pos`——声子频率、耦合 λ、能隙闭式、张量超导序参量沿第一性链同为正"}
+{"doc_id": "D042", "sid": 308, "start": 23375, "end": 23505, "kind": "list", "text": "- **再生产维持（坍缩难题②的解答）**：`phaseLockingFactor_tendsto_zero`——锁定因子 e^{−Γ|τ|} 随再生产间隔趋于 0：涌现态的确定性不能一次获得、必须被反复耦合事件再生产维持（涌现逻辑结构再生产锁定的必要性定理）"}
+{"doc_id": "D042", "sid": 309, "start": 23506, "end": 23622, "kind": "list", "text": "- **金属氢实例（第二步计算起点）**：`hydrogenPhononFrequency_pos`——氢 = 单质子有限本体，禁闭几何直接是 A₄，德拜频率由谱间隙 λ₁ × 质子质量完全决定（A₄ 直接拼接，无需跨种类有限本体）"}
+{"doc_id": "D042", "sid": 310, "start": 23623, "end": 23689, "kind": "list", "text": "- **输入与非推导声明**：A₄ 本征向量显式构造、晶格刚度参考标度、配对强度 V、费米面态密度 N(0) 均为理想化/主流输入；"}
+{"doc_id": "D042", "sid": 311, "start": 23689, "end": 23722, "kind": "list", "text": "G13（T_c 方程 tanh→对数渐近）如实列入缺口，不冒充定理"}
+{"doc_id": "D042", "sid": 312, "start": 23724, "end": 23742, "kind": "heading", "text": "## 本次更新亮点 (v0.5.4)"}
+{"doc_id": "D042", "sid": 313, "start": 23744, "end": 23938, "kind": "list", "text": "- **嘉当张量超导方程**：新增 `CartanSuperconductivity.lean`（15 定理 + 1 引理），把 §6.8 涌现逻辑结构理想化应用于超导序参量的 A₄ 本征谱分解——谱权重 [cartanEigenvalue]（因果潜能）× 谱系数（基础自由度）× 锁定因子 e^{−Γτ}，可观测序参量 = 对全部 4 通道的张量迹（$\\text{Tr}_☯$ 理想化）"}
+{"doc_id": "D042", "sid": 314, "start": 23939, "end": 24131, "kind": "list", "text": "- **A₄ 双重角色（哈密顿量 = 能动张量）**：`cartanHamiltonian`（A₄ 作为离散 Laplacian，07 嘉当结构 §2.1）与 `stressEnergyTrace`（A₄ 谱和 = 8）一致性定理 `cartanHamiltonian_trace_eq_stressEnergyTrace`——同一谱 {λ₁..λ₄} 同时充当哈密顿量迹与能动张量迹"}
+{"doc_id": "D042", "sid": 315, "start": 24132, "end": 24289, "kind": "list", "text": "- **张量序参量正性**：`superconductingOrderComponent_pos` / `superconductingOrderTensor_pos` / `superconductingOrderTensor_cartanWeights_pos`——A₄ 正定谱下超导序参量逐通道与全体严格为正"}
+{"doc_id": "D042", "sid": 316, "start": 24290, "end": 24340, "kind": "list", "text": "- **谱间隙退化到 BCS**：谱间隙 λ₁ = (3−√5)/2 的强大 >0/<1/最小定理；"}
+{"doc_id": "D042", "sid": 317, "start": 24340, "end": 24399, "kind": "list", "text": "`bcsGapInGapChannel`/`bcsTcInGapChannel` 表现谱间隙同时缩放 Δ 与 T_c；"}
+{"doc_id": "D042", "sid": 318, "start": 24399, "end": 24447, "kind": "list", "text": "`gapChannel_gapRatio_invariant` 说明普适能隙比不受谱间隙缩放影响"}
+{"doc_id": "D042", "sid": 319, "start": 24448, "end": 24504, "kind": "list", "text": "- **Tr(A₄⁻¹) 勘误**：`cartanInvTrace_eq_four` 证明 Tr(A⁻¹)=4；"}
+{"doc_id": "D042", "sid": 320, "start": 24504, "end": 24567, "kind": "list", "text": "07 嘉当结构文档 §4.2 的 2 与直接计算不符，修正后 1/Tr(A⁻¹)=1/4 恰为谱间隙 E₀=1/4 的自洽输入"}
+{"doc_id": "D042", "sid": 321, "start": 24568, "end": 24661, "kind": "list", "text": "- **公理性说明**：A₄ 本征结构的根 charpoly 验证沿用 CartanAlgebra 既有定位（本征向量显式构造为待办），模块以谱为输入，全部定理按理想化/退化约定严格证明"}
+{"doc_id": "D042", "sid": 322, "start": 24663, "end": 24681, "kind": "heading", "text": "## 本次更新亮点 (v0.5.3)"}
+{"doc_id": "D042", "sid": 323, "start": 24683, "end": 24733, "kind": "list", "text": "- **BCS 退化与还原**：新增 `Reduction.lean`（22 定理 + 2 引理）；"}
+{"doc_id": "D042", "sid": 324, "start": 24733, "end": 24787, "kind": "list", "text": "`cqm_reduces_to_bcs` / `cqm_debye_reduction` 为记号对应层定理；"}
+{"doc_id": "D042", "sid": 325, "start": 24787, "end": 24862, "kind": "list", "text": "`criticalTemperature` 改用精确 BCS 常数 2e^γ/π（`bcsExactConstant`，文献 1.13 是其三位近似）"}
+{"doc_id": "D042", "sid": 326, "start": 24863, "end": 24983, "kind": "list", "text": "- **能隙方程的严格推导**：`bcs_gap_equation` / `bcs_gap_equation_unique` 从 T=0 能隙方程 1 = λ·arsinh(ω_D/Δ) 导出唯一闭式解 Δ = ω_D/sinh(1/λ)；"}
+{"doc_id": "D042", "sid": 327, "start": 24983, "end": 25065, "kind": "list", "text": "`bcs_gap_weak_coupling_limit` 证明 λ→0⁺ 时闭式解渐近于 BCS 标准式 2ω_D·e^{−1/λ}（极限定理，非有限 λ 等式）"}
+{"doc_id": "D042", "sid": 328, "start": 25066, "end": 25236, "kind": "list", "text": "- **T_c 方程的严格推导**：`bcsTcEquation_solved`（T_c = (2e^γ/π)·ω_D·e^{−1/λ} 精确满足弱耦合 T_c 方程 1 = λ·ln((2e^γ/π)·ω_D/k_B T_c)）、`bcsTcEquation_unique`（该方程唯一正解）——T_c 公式是方程的**解**而非任意定义"}
+{"doc_id": "D042", "sid": 329, "start": 25237, "end": 25476, "kind": "list", "text": "- **普适能隙比（弱耦合极限定理）**：2Δ₀/k_BT_c → 2πe^{−γ} ≈ 3.5278（文献 3.53、旧公式 4/1.13 均为数值近似）——`bcs_universal_gap_ratio` 为 λ→0⁺ 极限定理（`Tendsto`）、`bcs_gap_ratio_closed_form` 为有限 λ 闭式恒等式、`bcs_gap_ratio_strong_coupling_excess` 证明有限 λ 下能隙比恒大于弱耦合极限（强耦合偏离 3.53）"}
+{"doc_id": "D042", "sid": 330, "start": 25477, "end": 25594, "kind": "list", "text": "- **同位素定律**：α = 1/2（`criticalTemperature_isotope_shift`）、氢/氘位移 T_c(D) = T_c(H)/√2（`hydrogen_deuterium_isotope_shift`）"}
+{"doc_id": "D042", "sid": 331, "start": 25595, "end": 25672, "kind": "list", "text": "- **朴素 CQM 异常（条件定理）**：`naive_cqm_isotope_anomaly` 只证明朴素替换下 T_c 随质量单调不减、与实验相反；"}
+{"doc_id": "D042", "sid": 332, "start": 25672, "end": 25686, "kind": "list", "text": "它标示、而非证明退化的必要性"}
+{"doc_id": "D042", "sid": 333, "start": 25687, "end": 25732, "kind": "list", "text": "- **严格性整治**：消除 4/1.13 循环论证；能隙公式从凭空定义改为能隙方程推导；"}
+{"doc_id": "D042", "sid": 334, "start": 25732, "end": 25783, "kind": "list", "text": "所有数值近似（1.13、3.53、0.707、1.2、1.04）在文档字符串中如实标注，不冒充定理结论"}
+{"doc_id": "D042", "sid": 335, "start": 25784, "end": 26114, "kind": "list", "text": "- **公理依赖审计（`#print axioms`）**：`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation(_unique)`、`bcs_gap_weak_coupling_limit`、同位素三定理、`emergenceIntegral_pos`、`strong_gravity_keeps_pairing_channels` 等全部只依赖 Lean 内核逻辑公理（`propext`、`Classical.choice`、`Quot.sound`），**不依赖任何 `physical_hypothesis` 本体论公理**——物理假设仅作公理存在、未冒充定理结论"}
+{"doc_id": "D042", "sid": 336, "start": 26115, "end": 26254, "kind": "list", "text": "- **金属氢机制验证**：H3S 203 K / LaH10 250 K / MgB2 39 K 验证数据已并入《CQM 超导核心理论》（06 超导），BCS/McMillan–Dynes/同位素计算对应 `TransitionTemperature.lean` 中的严格定理"}
+{"doc_id": "D042", "sid": 337, "start": 26255, "end": 26318, "kind": "list", "text": "- **室温方向**：三条路线 + 同位素指数 α(P) 判别性实验已并入《CQM 超导核心理论》（06 超导）§20-§21"}
+{"doc_id": "D042", "sid": 338, "start": 26320, "end": 26338, "kind": "heading", "text": "## 本次更新亮点 (v0.5.2)"}
+{"doc_id": "D042", "sid": 339, "start": 26340, "end": 26414, "kind": "list", "text": "- **超导形式化库**：`Superconductivity`（12 模块），对应 [06 超导](../../../06%20超导/) 两卷文档"}
+{"doc_id": "D042", "sid": 340, "start": 26415, "end": 26677, "kind": "list", "text": "- **分层映射**：Ontology（第 1–2 层有限本体论）→ TransitionTemperature（T_c）→ TransitionTemperatureCQM（G22 闭合）→ Reduction（BCS 退化与还原）→ CartanSuperconductivity（嘉当张量超导方程）→ FirstPrinciples（第一性推导链）→ SPAF（半唯像框架）→ MolecularGeometry（分子→晶胞→Regge→FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱与自由能竞争）"}
+{"doc_id": "D042", "sid": 341, "start": 26678, "end": 26935, "kind": "list", "text": "- **核心定理**：`fourSimplex_euler_char_zero`、`criticalTemperature_pos`、`bcs_universal_gap_ratio`、`bcs_gap_equation_solved`、`curvatureFluctuationThreshold_pos`、`superconductivityCriterion`、`pureHydrogenNotSuperconducting`、`neutronCartan_posDef_of_lt_spectralGap`"}
+{"doc_id": "D042", "sid": 342, "start": 26936, "end": 27025, "kind": "list", "text": "- **新公理**：5 条 `physical_hypothesis`（有限本体/缺陷体/禁闭几何/内部前时空/电子封装），沿用 CausalSet.Axioms 不透明公理模式"}
+{"doc_id": "D042", "sid": 343, "start": 27027, "end": 27045, "kind": "heading", "text": "## 本次更新亮点 (v0.5.1)"}
+{"doc_id": "D042", "sid": 344, "start": 27047, "end": 27123, "kind": "list", "text": "- **Adele 条件严格化**：将 `adeleConstraint` 从公理改为由内核判定 `decide` 直接证明的定理，消除一个不必要的公理"}
+{"doc_id": "D042", "sid": 345, "start": 27124, "end": 27196, "kind": "list", "text": "- **删除未使用公理**：移除 `mathieu_critical_condition`（对占位函数 `b1` 的任意条件，且无任何定理引用）"}
+{"doc_id": "D042", "sid": 346, "start": 27197, "end": 27259, "kind": "list", "text": "- **清理测试残留**：删除未加入 `lakefile.toml` 且含 `sorry` 的 `TestNum.lean`"}
+{"doc_id": "D042", "sid": 347, "start": 27260, "end": 27316, "kind": "list", "text": "- **更新定理/公理统计**：按实际代码重新计数，当前 180 个定理 / 8 个公理（含物理假设与数值桥梁）"}
+{"doc_id": "D042", "sid": 348, "start": 27317, "end": 27384, "kind": "list", "text": "- **消除虚假精确等式**：相变量子 `☯` 严格定义为 `1 + γ/2 - (1/2)ln(4π)`，数值近似以区间公理显式标注"}
+{"doc_id": "D042", "sid": 349, "start": 27386, "end": 27404, "kind": "heading", "text": "## 本次更新亮点 (v0.5.0)"}
+{"doc_id": "D042", "sid": 350, "start": 27406, "end": 27441, "kind": "list", "text": "- **消除所有 CQM 警告**：零 CQM 代码警告，构建完全清洁"}
+{"doc_id": "D042", "sid": 351, "start": 27442, "end": 27541, "kind": "list", "text": "- **修复 Mathieu.lean 矛盾公理**：`b1` 从占位符 `def ... := 0` 改为不透明 `axiom`，消除与 `mathieu_stable_region` 的逻辑矛盾"}
+{"doc_id": "D042", "sid": 352, "start": 27542, "end": 27681, "kind": "list", "text": "- **移除 4 个未使用的裸 `Prop` 公理**：`sierra_cqm_coupling_spectrum`、`prime_freezing_theorem`、`adele_constraint`、`coupling_formula_pi_factor` 替换为文档注释"}
+{"doc_id": "D042", "sid": 353, "start": 27682, "end": 27818, "kind": "list", "text": "- **修复文档错误**：`firstCoupling_sierraCQM_matches` → `firstCoupling_sierraCQM_deviation`、`spectralProduct_lt_one` → `spectralProduct_lt_ten`"}
+{"doc_id": "D042", "sid": 354, "start": 27819, "end": 27862, "kind": "list", "text": "- **定理总数**：从 96 → 160（+64 个严格证明的定理，得益于完整计数）"}
+{"doc_id": "D042", "sid": 355, "start": 27863, "end": 27900, "kind": "list", "text": "- **公理数**：从 14 → 7（减少 50%，消除所有未使用的声明）"}
+{"doc_id": "D042", "sid": 356, "start": 27901, "end": 27951, "kind": "list", "text": "- **Robertson 不等式**：从 CCR 严格推导（14 个辅助定理，无 `sorry`）"}
+{"doc_id": "D042", "sid": 357, "start": 27952, "end": 28011, "kind": "list", "text": "- **α⁻¹_SU(5) = 16384π/375**：从 A₄ 群论不变量严格证明 137 < α⁻¹ < 138"}
+{"doc_id": "D042", "sid": 358, "start": 28012, "end": 28068, "kind": "list", "text": "- **G_N 可能公式**：严格正性 + CODATA 偏差 < 10 ppm（构造后验数字校验，待独立复现）"}
+{"doc_id": "D042", "sid": 359, "start": 28070, "end": 28075, "kind": "heading", "text": "## 版本"}
+{"doc_id": "D042", "sid": 360, "start": 28077, "end": 28094, "kind": "list", "text": "- **项目版本**: 0.7.0"}
+{"doc_id": "D042", "sid": 361, "start": 28095, "end": 28116, "kind": "list", "text": "- **Lean 版本**: 4.29.1"}
+{"doc_id": "D042", "sid": 362, "start": 28117, "end": 28143, "kind": "list", "text": "- **依赖**: mathlib, physlib"}
 {"doc_id": "D043", "sid": 0, "start": 0, "end": 22, "kind": "heading", "text": "# GN — $G_N$ 第一性推导形式化库"}
 {"doc_id": "D043", "sid": 1, "start": 24, "end": 67, "kind": "prose", "text": "对应研究文档：`04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md`"}
 {"doc_id": "D043", "sid": 2, "start": 69, "end": 102, "kind": "prose", "text": "本库形式化证明稿中**第一部分（数学事实层）**的可形式化子集，从"}
@@ -18446,3 +18448,160 @@
 {"doc_id": "D054", "sid": 317, "start": 13933, "end": 14052, "kind": "prose", "text": "[14] Memory-Dominated Quantum Criticality as a Universal Route to High-Temperature Superconductivity. arXiv:2602.22626."}
 {"doc_id": "D054", "sid": 318, "start": 14054, "end": 14173, "kind": "prose", "text": "[15] Evidence of the Cooper-Pair Field with Gaussian Memory Kernel in Unconventional Superconductors. arXiv:2607.03937."}
 {"doc_id": "D054", "sid": 319, "start": 14175, "end": 14319, "kind": "prose", "text": "[16] Separating pairing from quantum phase coherence dynamics above the superconducting transition by femtosecond spectroscopy. arXiv:1404.2707."}
+{"doc_id": "D055", "sid": 0, "start": 0, "end": 30, "kind": "heading", "text": "# LQG 到 Regge 的显式映射：自旋—面积—角—角亏"}
+{"doc_id": "D055", "sid": 1, "start": 32, "end": 82, "kind": "quote", "text": "> **推导定位**：本文是“LQG → Regge → 超导”五步链的第一步，属 FG 基础推导。"}
+{"doc_id": "D055", "sid": 2, "start": 82, "end": 197, "kind": "quote", "text": "标注沿用前沿文档体例：**【标准数学】**（几何／组合事实）、**【文献确立】**（外部结果，附 arXiv 编号）、**【框架基础】**（CQM 既有结论，附原文位置）、**【分析】**（本文推演）、**【待推】**（未完成）。"}
+{"doc_id": "D055", "sid": 3, "start": 197, "end": 266, "kind": "quote", "text": "本文不新增概念、不改动既有数值与缺口状态；单 4-单纯形映射为**条件性显式**，全局粘合与自旋泡沫动力学的 CQM 内推导仍属【待推】。"}
+{"doc_id": "D055", "sid": 4, "start": 268, "end": 271, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 5, "start": 273, "end": 281, "kind": "heading", "text": "## 1. 目标"}
+{"doc_id": "D055", "sid": 6, "start": 283, "end": 290, "kind": "prose", "text": "要给出的映射是"}
+{"doc_id": "D055", "sid": 7, "start": 292, "end": 395, "kind": "prose", "text": "$$\\Phi:\\ \\bigl(\\Gamma,\\{j_e\\},\\{\\iota_v\\}\\bigr)\\ \\longrightarrow\\ \\bigl(\\{L_e\\},\\{\\delta_v\\},E\\bigr),$$"}
+{"doc_id": "D055", "sid": 8, "start": 397, "end": 470, "kind": "prose", "text": "其中左侧是 LQG 边界数据（自旋网络图、边自旋、顶点交织子），右侧是 CQM 的 Regge 数据（4-单纯形边长、顶点角亏、边-面关联矩阵）。"}
+{"doc_id": "D055", "sid": 9, "start": 470, "end": 498, "kind": "prose", "text": "“显式”指同时给出公式、算法与成立条件，而不只是存在性。"}
+{"doc_id": "D055", "sid": 10, "start": 500, "end": 518, "kind": "prose", "text": "本文只处理**单个 4-单纯形**。"}
+{"doc_id": "D055", "sid": 11, "start": 518, "end": 558, "kind": "prose", "text": "多个 4-单纯形的粘合、以及自旋泡沫振幅如何在全球上选择同一套边长，属【待推】。"}
+{"doc_id": "D055", "sid": 12, "start": 560, "end": 563, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 13, "start": 565, "end": 575, "kind": "heading", "text": "## 2. 两侧对象"}
+{"doc_id": "D055", "sid": 14, "start": 577, "end": 590, "kind": "heading", "text": "### 2.1 LQG 侧"}
+{"doc_id": "D055", "sid": 15, "start": 592, "end": 619, "kind": "prose", "text": "【文献确立】面积算符在自旋网络边 $e$ 上的本征值为"}
+{"doc_id": "D055", "sid": 16, "start": 621, "end": 673, "kind": "prose", "text": "$$A_e^{(P)} = 8\\pi\\gamma\\ell_P^2\\sqrt{j_e(j_e+1)},$$"}
+{"doc_id": "D055", "sid": 17, "start": 675, "end": 735, "kind": "prose", "text": "大自旋极限为 $A_e^{(P)}\\simeq 8\\pi\\gamma\\ell_P^2\\,(j_e+\\tfrac12)$；"}
+{"doc_id": "D055", "sid": 18, "start": 735, "end": 907, "kind": "prose", "text": "原始结果见 Rovelli–Smolin（1995）与 Ashtekar–Lewandowski（1997），综述与公式见 [arXiv:gr-qc/9710008](https://arxiv.org/abs/gr-qc/9710008)、[arXiv:0705.4398](https://arxiv.org/abs/0705.4398)。"}
+{"doc_id": "D055", "sid": 19, "start": 909, "end": 985, "kind": "prose", "text": "【分析】面积谱的自然单位是 $\\ell_P^2$，而 FG 的 4-单纯形是层级 $\\ell$ 的晶胞，其边长由该层级的物质分布设定，二者不是同一尺度。"}
+{"doc_id": "D055", "sid": 20, "start": 985, "end": 996, "kind": "prose", "text": "映射因此应带层级重标："}
+{"doc_id": "D055", "sid": 21, "start": 998, "end": 1080, "kind": "prose", "text": "$$A_e=\\lambda_\\ell\\,A_e^{(P)}=\\lambda_\\ell\\,8\\pi\\gamma\\ell_P^2\\sqrt{j_e(j_e+1)},$$"}
+{"doc_id": "D055", "sid": 22, "start": 1082, "end": 1142, "kind": "prose", "text": "$\\lambda_\\ell$ 为层级 $\\ell$ 的面积重标因子（等价地把 $\\ell_P$ 换成该层级的长度单位）。"}
+{"doc_id": "D055", "sid": 23, "start": 1142, "end": 1191, "kind": "prose", "text": "这不是把 Planck 面积直接当作晶胞面积，而是把自旋标签当作相对面积数据，整体尺度由层级设定；"}
+{"doc_id": "D055", "sid": 24, "start": 1191, "end": 1231, "kind": "prose", "text": "因此 $\\delta_v$ 只依赖角度，与 $\\lambda_\\ell$ 无关。"}
+{"doc_id": "D055", "sid": 25, "start": 1231, "end": 1258, "kind": "prose", "text": "$\\lambda_\\ell$ 的第一性确定属【待推】。"}
+{"doc_id": "D055", "sid": 26, "start": 1260, "end": 1320, "kind": "prose", "text": "【文献确立】在 4 维自旋泡沫中，2-复形与剖分对偶：面 $f$ 对偶于三角形，边对偶于四面体，顶点对偶于 4-单纯形。"}
+{"doc_id": "D055", "sid": 27, "start": 1320, "end": 1330, "kind": "prose", "text": "顶点振幅在大自旋下呈"}
+{"doc_id": "D055", "sid": 28, "start": 1332, "end": 1359, "kind": "prose", "text": "$$A_v\\ \\sim\\ N\\,e^{iS_R},$$"}
+{"doc_id": "D055", "sid": 29, "start": 1361, "end": 1418, "kind": "prose", "text": "$S_R$ 为临界 4-单纯形的 Regge 作用量（不同约定下相位带 Immirzi 因子 $\\gamma$）；"}
+{"doc_id": "D055", "sid": 30, "start": 1418, "end": 1625, "kind": "prose", "text": "路径积分表示与渐近分析见 [arXiv:1304.5626](https://arxiv.org/abs/1304.5626)，Lorentzian EPRL 的数值检验见 [arXiv:1903.12624](https://arxiv.org/abs/1903.12624)，含宇宙学常数时的角亏分析见 [arXiv:2401.14643](https://arxiv.org/abs/2401.14643)。"}
+{"doc_id": "D055", "sid": 31, "start": 1627, "end": 1646, "kind": "heading", "text": "### 2.2 CQM／Regge 侧"}
+{"doc_id": "D055", "sid": 32, "start": 1648, "end": 1714, "kind": "prose", "text": "【框架基础】FG 的 Regge 剖分为 $\\mathcal{R}=(V,E,F,\\{\\bar L_{ij}\\})$，经典角亏定义为"}
+{"doc_id": "D055", "sid": 33, "start": 1716, "end": 1779, "kind": "prose", "text": "$$\\bar\\delta_v = 2\\pi-\\sum_{\\Delta\\ni v}\\bar\\theta_v(\\Delta),$$"}
+{"doc_id": "D055", "sid": 34, "start": 1781, "end": 1880, "kind": "prose", "text": "由经典边长通过余弦定律确定；质子（理想 4-单纯形）$\\bar\\delta_v=0$，中子 $D(\\delta)$ 的 $\\bar\\delta_v\\neq0$（`FG_核心理论.md` §3.1）。"}
+{"doc_id": "D055", "sid": 35, "start": 1882, "end": 1915, "kind": "prose", "text": "【框架基础】4-单纯形有 5 个顶点、10 条边、10 个三角形。"}
+{"doc_id": "D055", "sid": 36, "start": 1915, "end": 1980, "kind": "prose", "text": "边-面关联矩阵 $E\\in\\{0,1\\}^{10\\times10}$ 满足 $E_{f,e}=1\\iff e\\subset f$；"}
+{"doc_id": "D055", "sid": 37, "start": 1980, "end": 2059, "kind": "prose", "text": "$M=E^{\\mathsf T}E$ 的本征值为 $\\{9,4^{(4)},1^{(5)}\\}$，迹为 $30$（`CQM_引力_GN可能公式.md` §2；"}
+{"doc_id": "D055", "sid": 38, "start": 2059, "end": 2091, "kind": "prose", "text": "Lean `GN/SimplexSpectrum.lean`）。"}
+{"doc_id": "D055", "sid": 39, "start": 2093, "end": 2241, "kind": "prose", "text": "【框架基础】$A_4^{++}$ 是 $A_4$ 的双曲过扩张，Weyl 群同构于 $\\mathrm{PSL}_2^{(0)}(\\mathcal{I})$，给出双曲镶嵌 $\\{5,4\\}$，并与 4-单纯形的组合结构匹配（`CQM_前沿研究_GN第一性推导_公理化证明稿.md` 定理 7.1）。"}
+{"doc_id": "D055", "sid": 40, "start": 2243, "end": 2294, "kind": "prose", "text": "【标准数学】正 4-单纯形每个顶点恰有 $6$ 个三角形，每个三角形在该顶点的角为 $\\pi/3$，故"}
+{"doc_id": "D055", "sid": 41, "start": 2296, "end": 2355, "kind": "prose", "text": "$$6\\cdot\\frac{\\pi}{3}=2\\pi,\\quad\\text{即}\\quad \\delta_v=0,$$"}
+{"doc_id": "D055", "sid": 42, "start": 2357, "end": 2367, "kind": "prose", "text": "与“质子平坦”一致。"}
+{"doc_id": "D055", "sid": 43, "start": 2367, "end": 2409, "kind": "prose", "text": "一般 4-单纯形的 6 个角之和偏离 $2\\pi$，$\\delta_v\\neq0$。"}
+{"doc_id": "D055", "sid": 44, "start": 2411, "end": 2414, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 45, "start": 2416, "end": 2435, "kind": "heading", "text": "## 3. 显式映射（单 4-单纯形）"}
+{"doc_id": "D055", "sid": 46, "start": 2437, "end": 2449, "kind": "heading", "text": "### 3.1 对偶词典"}
+{"doc_id": "D055", "sid": 47, "start": 2451, "end": 2475, "kind": "table", "text": "| LQG／自旋泡沫 | Regge／CQM |"}
+{"doc_id": "D055", "sid": 48, "start": 2476, "end": 2487, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D055", "sid": 49, "start": 2488, "end": 2539, "kind": "table", "text": "| 边界自旋网络图 $\\Gamma$ | 边界剖分的对偶 1-骨架（4-单纯形边界为 $K_5$） |"}
+{"doc_id": "D055", "sid": 50, "start": 2540, "end": 2591, "kind": "table", "text": "| $\\Gamma$ 的边 $e$，自旋 $j_e$ | 4-单纯形的三角形 $\\Delta_e$ |"}
+{"doc_id": "D055", "sid": 51, "start": 2592, "end": 2649, "kind": "table", "text": "| $\\Gamma$ 的顶点 $v$，交织子 $\\iota_v$ | 4-单纯形的四面体 $T_v$（4 价） |"}
+{"doc_id": "D055", "sid": 52, "start": 2650, "end": 2670, "kind": "table", "text": "| 2-复形的面 $f$ | 三角形 |"}
+{"doc_id": "D055", "sid": 53, "start": 2671, "end": 2687, "kind": "table", "text": "| 2-复形的边 | 四面体 |"}
+{"doc_id": "D055", "sid": 54, "start": 2688, "end": 2707, "kind": "table", "text": "| 2-复形的顶点 | 4-单纯形 |"}
+{"doc_id": "D055", "sid": 55, "start": 2709, "end": 2752, "kind": "prose", "text": "4-单纯形边界由 5 个四面体组成，对偶图有 5 个顶点、10 条边，即 $K_5$；"}
+{"doc_id": "D055", "sid": 56, "start": 2752, "end": 2772, "kind": "prose", "text": "每个顶点度数为 4，对应 4 价交织子。"}
+{"doc_id": "D055", "sid": 57, "start": 2774, "end": 2793, "kind": "heading", "text": "### 3.2 第一步：自旋 → 面积"}
+{"doc_id": "D055", "sid": 58, "start": 2795, "end": 2871, "kind": "prose", "text": "$$j_e\\ \\longmapsto\\ A_e=\\lambda_\\ell\\,8\\pi\\gamma\\ell_P^2\\sqrt{j_e(j_e+1)},$$"}
+{"doc_id": "D055", "sid": 59, "start": 2873, "end": 2909, "kind": "prose", "text": "其中 $A_e$ 是边 $e$ 对偶三角形在层级 $\\ell$ 的面积。"}
+{"doc_id": "D055", "sid": 60, "start": 2909, "end": 2928, "kind": "prose", "text": "10 个自旋给出 10 个三角形面积。"}
+{"doc_id": "D055", "sid": 61, "start": 2930, "end": 2951, "kind": "heading", "text": "### 3.3 第二步：交织子 → 角数据"}
+{"doc_id": "D055", "sid": 62, "start": 2953, "end": 3063, "kind": "prose", "text": "【文献确立】仅凭 10 个面积不能唯一确定 4-单纯形：给定 10 个三角形面积，最多可有 $64$ 组边长解（[arXiv:2402.17080](https://arxiv.org/abs/2402.17080)）。"}
+{"doc_id": "D055", "sid": 63, "start": 3063, "end": 3074, "kind": "prose", "text": "因此映射不能只用面积。"}
+{"doc_id": "D055", "sid": 64, "start": 3076, "end": 3208, "kind": "prose", "text": "【文献确立】面积-角变量给出修正：10 个面积加上 30 个角变量（共 40 个变量），满足 30 个独立约束，可完全确定 4-单纯形及其 5 个四面体的几何（[arXiv:0802.0864](https://arxiv.org/abs/0802.0864)）。"}
+{"doc_id": "D055", "sid": 65, "start": 3208, "end": 3269, "kind": "prose", "text": "在自旋泡沫中，这些角数据由交织子 $\\iota_v$ 提供；临界点（saddle point）在同一组约束上选出一个分支。"}
+{"doc_id": "D055", "sid": 66, "start": 3271, "end": 3277, "kind": "prose", "text": "于是第二步是"}
+{"doc_id": "D055", "sid": 67, "start": 3279, "end": 3360, "kind": "prose", "text": "$$\\bigl(\\{A_e\\},\\{\\iota_v\\}\\bigr)\\ \\longmapsto\\ \\bigl(\\{A_e\\},\\{\\theta\\}\\bigr),$$"}
+{"doc_id": "D055", "sid": 68, "start": 3362, "end": 3388, "kind": "prose", "text": "其中 $\\{\\theta\\}$ 是各四面体的形状角。"}
+{"doc_id": "D055", "sid": 69, "start": 3388, "end": 3414, "kind": "prose", "text": "若只输入面积，则保留多分支；交织子／临界点负责选支。"}
+{"doc_id": "D055", "sid": 70, "start": 3416, "end": 3437, "kind": "heading", "text": "### 3.4 第三步：面积-角 → 边长"}
+{"doc_id": "D055", "sid": 71, "start": 3439, "end": 3468, "kind": "prose", "text": "对每个三角形 $\\Delta=(v,a,b)$，由余弦定律"}
+{"doc_id": "D055", "sid": 72, "start": 3470, "end": 3535, "kind": "prose", "text": "$$L_{ab}^2=L_{va}^2+L_{vb}^2-2L_{va}L_{vb}\\cos\\theta_v(\\Delta).$$"}
+{"doc_id": "D055", "sid": 73, "start": 3537, "end": 3573, "kind": "prose", "text": "10 个三角形面积与角数据联立，解出 10 条边长 $\\{L_e\\}$。"}
+{"doc_id": "D055", "sid": 74, "start": 3573, "end": 3600, "kind": "prose", "text": "非退化条件由 Cayley–Menger 行列式给出："}
+{"doc_id": "D055", "sid": 75, "start": 3602, "end": 3630, "kind": "prose", "text": "$$\\det G_{\\text{CM}}\\neq0,$$"}
+{"doc_id": "D055", "sid": 76, "start": 3632, "end": 3674, "kind": "prose", "text": "$G_{\\text{CM}}$ 为 4-单纯形的 Cayley–Menger 矩阵。"}
+{"doc_id": "D055", "sid": 77, "start": 3674, "end": 3695, "kind": "prose", "text": "退化构型（共面、零体积）不在映射定义域内。"}
+{"doc_id": "D055", "sid": 78, "start": 3697, "end": 3718, "kind": "heading", "text": "### 3.5 第四步：边长 → 顶点角亏"}
+{"doc_id": "D055", "sid": 79, "start": 3720, "end": 3749, "kind": "prose", "text": "对每个顶点 $v$，取包含 $v$ 的 6 个三角形，计算"}
+{"doc_id": "D055", "sid": 80, "start": 3751, "end": 3834, "kind": "prose", "text": "$$\\theta_v(\\Delta_{vab})=\\arccos\\frac{L_{va}^2+L_{vb}^2-L_{ab}^2}{2L_{va}L_{vb}},$$"}
+{"doc_id": "D055", "sid": 81, "start": 3836, "end": 3889, "kind": "prose", "text": "$$\\delta_v=2\\pi-\\sum_{\\Delta\\ni v}\\theta_v(\\Delta).$$"}
+{"doc_id": "D055", "sid": 82, "start": 3891, "end": 3907, "kind": "prose", "text": "这正是 CQM 的顶点角亏定义。"}
+{"doc_id": "D055", "sid": 83, "start": 3907, "end": 3951, "kind": "prose", "text": "正 4-单纯形给出 $\\delta_v=0$；形变给出 $\\delta_v\\neq0$。"}
+{"doc_id": "D055", "sid": 84, "start": 3953, "end": 4048, "kind": "prose", "text": "【分析】单个 4-单纯形在欧氏 4-空间中本身是平坦的；这里的 $\\delta_v$ 度量的是顶点周围 6 个面角之和相对 $2\\pi$ 的组合偏离，不是标准 4 维 Regge 的骨亏格。"}
+{"doc_id": "D055", "sid": 85, "start": 4048, "end": 4083, "kind": "prose", "text": "这个区别是下文“顶点角亏 vs 骨亏格”一行所记的【待推】换算的来源。"}
+{"doc_id": "D055", "sid": 86, "start": 4085, "end": 4145, "kind": "prose", "text": "【分析】这一步的输出是 CQM 定义下的**顶点角亏**，不是 4 维 Regge 的标准**骨亏格**（三角形骨亏）。"}
+{"doc_id": "D055", "sid": 87, "start": 4145, "end": 4218, "kind": "prose", "text": "两者关系属【待推】：标准骨亏格是绕三角形的二面角亏，顶点角亏是绕顶点的面角和；在单 4-单纯形上后者由前者与组合结构共同决定，但显式换算尚未写出。"}
+{"doc_id": "D055", "sid": 88, "start": 4218, "end": 4227, "kind": "prose", "text": "本文不把两者混同。"}
+{"doc_id": "D055", "sid": 89, "start": 4229, "end": 4260, "kind": "heading", "text": "### 3.6 第五步：组合桥 $E$ 与 Cartan 矩阵"}
+{"doc_id": "D055", "sid": 90, "start": 4262, "end": 4299, "kind": "prose", "text": "【框架基础】4-单纯形的边-面关联矩阵 $E$ 记录每条边属于哪些三角形。"}
+{"doc_id": "D055", "sid": 91, "start": 4299, "end": 4322, "kind": "prose", "text": "10 个面积由 10 条边通过 $E$ 组合："}
+{"doc_id": "D055", "sid": 92, "start": 4324, "end": 4371, "kind": "prose", "text": "$$A_e=A_e\\bigl(\\{L_{e'}\\}_{e'\\in t(e)}\\bigr),$$"}
+{"doc_id": "D055", "sid": 93, "start": 4373, "end": 4410, "kind": "prose", "text": "$t(e)$ 为边 $e$ 对偶的三角形，$E$ 正是这组方程的稀疏结构。"}
+{"doc_id": "D055", "sid": 94, "start": 4410, "end": 4514, "kind": "prose", "text": "$M=E^{\\mathsf T}E$ 承担离散拉普拉斯（嘉当矩阵）的角色，其本征值 $\\{9,4^{(4)},1^{(5)}\\}$ 给出声子谱的代数骨架（`GN/SimplexSpectrum.lean`）。"}
+{"doc_id": "D055", "sid": 95, "start": 4516, "end": 4523, "kind": "prose", "text": "映射链条因此是"}
+{"doc_id": "D055", "sid": 96, "start": 4525, "end": 4692, "kind": "prose", "text": "$$\\{j_e\\}\\ \\xrightarrow{\\text{面积}}\\ \\{A_e\\}\\ \\xrightarrow{\\ E\\ }\\ \\{L_e\\}\\ \\xrightarrow{\\text{余弦定律}}\\ \\{\\theta_v(\\Delta)\\}\\ \\xrightarrow{\\ \\delta_v\\ }\\ \\{\\delta_v\\}.$$"}
+{"doc_id": "D055", "sid": 97, "start": 4694, "end": 4720, "kind": "heading", "text": "### 3.7 第六步：临界点与 Regge 作用量"}
+{"doc_id": "D055", "sid": 98, "start": 4722, "end": 4766, "kind": "prose", "text": "【文献确立】EPRL／FK 顶点振幅的渐近相位是临界 4-单纯形的 Regge 作用量；"}
+{"doc_id": "D055", "sid": 99, "start": 4766, "end": 4783, "kind": "prose", "text": "临界点由边界面积与交织子数据确定。"}
+{"doc_id": "D055", "sid": 100, "start": 4783, "end": 4812, "kind": "prose", "text": "因此，第 3.3–3.5 节重建出的几何若与临界点一致，则"}
+{"doc_id": "D055", "sid": 101, "start": 4814, "end": 4843, "kind": "prose", "text": "$$S_R=\\sum_{e}A_e\\,\\delta_e$$"}
+{"doc_id": "D055", "sid": 102, "start": 4845, "end": 4895, "kind": "prose", "text": "与自旋泡沫相位匹配（$e$ 标记边 $e$ 对偶的三角形骨，$\\delta_e$ 为该骨上的角亏）。"}
+{"doc_id": "D055", "sid": 103, "start": 4895, "end": 4942, "kind": "prose", "text": "这一步是把几何映射接到作用量的关键，但它是**外部渐近结果**，不是在 CQM 内重新证明的。"}
+{"doc_id": "D055", "sid": 104, "start": 4944, "end": 4956, "kind": "prose", "text": "【分析】映射的完整表述是"}
+{"doc_id": "D055", "sid": 105, "start": 4958, "end": 5057, "kind": "prose", "text": "$$\\Phi:\\ \\bigl(\\Gamma,\\{j_e\\},\\{\\iota_v\\}\\bigr)\\ \\longmapsto\\ \\bigl(\\{L_e\\},\\{\\delta_v\\},E\\bigr),$$"}
+{"doc_id": "D055", "sid": 106, "start": 5059, "end": 5085, "kind": "prose", "text": "并附带条件：非退化、选支一致、临界点与重建几何一致。"}
+{"doc_id": "D055", "sid": 107, "start": 5087, "end": 5090, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 108, "start": 5092, "end": 5109, "kind": "heading", "text": "## 4. 与 CQM 链条的对接"}
+{"doc_id": "D055", "sid": 109, "start": 5111, "end": 5220, "kind": "list", "text": "1. $\\{\\delta_v\\}$ 直接进入 FG 的因果条件链：$v_\\tau=\\sqrt{1-\\beta\\delta_v}$，再经 $p_u=v_\\tau/☯$ 进入耦合空间（`FG_核心理论.md` §3.1）。"}
+{"doc_id": "D055", "sid": 110, "start": 5221, "end": 5305, "kind": "list", "text": "2. $E$ 与 $M=E^{\\mathsf T}E$ 进入嘉当矩阵—声子链；4-单纯形的组合结构与 `GN/SimplexSpectrum` 使用的是同一个 $E$。"}
+{"doc_id": "D055", "sid": 111, "start": 5306, "end": 5384, "kind": "list", "text": "3. 正 4-单纯形的对称群为 $S_5$，其根系为 $A_4$；全球粘合要求自旋泡沫 2-复形与 $A_4^{++}$ 的 $\\{5,4\\}$ 镶嵌相容。"}
+{"doc_id": "D055", "sid": 112, "start": 5384, "end": 5405, "kind": "list", "text": "这一步属【待推】，不能由局部映射自动得到。"}
+{"doc_id": "D055", "sid": 113, "start": 5406, "end": 5475, "kind": "list", "text": "4. 映射是**几何／运动学**的：它把 LQG 边界数据送到 Regge 几何，但不产生自旋泡沫的完整动力学，也不产生声子谱的定量色散。"}
+{"doc_id": "D055", "sid": 114, "start": 5475, "end": 5485, "kind": "list", "text": "后者是第二步的任务。"}
+{"doc_id": "D055", "sid": 115, "start": 5487, "end": 5490, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 116, "start": 5492, "end": 5507, "kind": "heading", "text": "## 5. 成立条件与方案依赖"}
+{"doc_id": "D055", "sid": 117, "start": 5509, "end": 5525, "kind": "table", "text": "| 条件 | 内容 | 状态 |"}
+{"doc_id": "D055", "sid": 118, "start": 5526, "end": 5542, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D055", "sid": 119, "start": 5543, "end": 5601, "kind": "table", "text": "| 多值性 | 10 个面积最多对应 64 组边长；必须由交织子／临界点选支 | 【文献确立】＋【待推】选支规则 |"}
+{"doc_id": "D055", "sid": 120, "start": 5602, "end": 5648, "kind": "table", "text": "| 非退化 | Cayley–Menger 行列式非零；零体积构型排除 | 【标准数学】 |"}
+{"doc_id": "D055", "sid": 121, "start": 5649, "end": 5735, "kind": "table", "text": "| Immirzi 参数 | 面积谱与 EPRL 相位含 $\\gamma$；CQM 无 $\\gamma$ | 【待推】取 $\\gamma=1$ 或并入 $\\ell_P$ |"}
+{"doc_id": "D055", "sid": 122, "start": 5736, "end": 5806, "kind": "table", "text": "| 尺度重标 | LQG 面积单位 $\\ell_P^2$ 与 FG 晶胞尺度不同 | 【待推】$\\lambda_\\ell$ 的第一性确定 |"}
+{"doc_id": "D055", "sid": 123, "start": 5807, "end": 5854, "kind": "table", "text": "| 签名 | Euclidean 与 Lorentzian 的临界点结构不同 | 【待推】 |"}
+{"doc_id": "D055", "sid": 124, "start": 5855, "end": 5912, "kind": "table", "text": "| 顶点角亏 vs 骨亏格 | CQM 用顶点面角和，4 维 Regge 用三角形骨亏格 | 【待推】显式换算 |"}
+{"doc_id": "D055", "sid": 125, "start": 5913, "end": 5952, "kind": "table", "text": "| 全局粘合 | 共享三角形的自旋与共享四面体的边长必须匹配 | 【待推】 |"}
+{"doc_id": "D055", "sid": 126, "start": 5953, "end": 5995, "kind": "table", "text": "| 半经典极限 | 渐近式是大自旋极限，量子修正未含 | 【文献确立】＋【待推】 |"}
+{"doc_id": "D055", "sid": 127, "start": 5997, "end": 6000, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 128, "start": 6002, "end": 6018, "kind": "heading", "text": "## 6. 可检验与可形式化部分"}
+{"doc_id": "D055", "sid": 129, "start": 6020, "end": 6087, "kind": "list", "text": "1. **组合部分可直接核对**：$E$、$M$、本征值 $\\{9,4^{(4)},1^{(5)}\\}$ 在 Lean 中已有形式化；"}
+{"doc_id": "D055", "sid": 130, "start": 6087, "end": 6130, "kind": "list", "text": "正 4-单纯形 $\\delta_v=0$ 可直接由 6 个 $\\pi/3$ 角和验证。"}
+{"doc_id": "D055", "sid": 131, "start": 6131, "end": 6187, "kind": "list", "text": "2. **代数部分可形式化**：余弦定律、面积-角约束、Cayley–Menger 非退化条件是标准实代数几何；"}
+{"doc_id": "D055", "sid": 132, "start": 6187, "end": 6202, "kind": "list", "text": "完整形式化工作量大，当前未做。"}
+{"doc_id": "D055", "sid": 133, "start": 6203, "end": 6279, "kind": "list", "text": "3. **一致性检验**：以正 4-单纯形为输入（10 个三角形面积相等、角数据为 $\\pi/3$），映射应回到 $\\delta_v=0$（质子平坦）；"}
+{"doc_id": "D055", "sid": 134, "start": 6279, "end": 6314, "kind": "list", "text": "以形变构型为输入，应给出 $\\delta_v\\neq0$（中子缺陷）。"}
+{"doc_id": "D055", "sid": 135, "start": 6314, "end": 6349, "kind": "list", "text": "这是映射是否成立的第一个可执行检验，不是“等面积必正则”的唯一性命题。"}
+{"doc_id": "D055", "sid": 136, "start": 6350, "end": 6419, "kind": "list", "text": "4. **否证条件**：若 EPRL／FK 临界点重建出的 $\\delta_v$ 与 CQM 定义在任何非退化分支上都不一致，则映射失败；"}
+{"doc_id": "D055", "sid": 137, "start": 6419, "end": 6458, "kind": "list", "text": "若只在特定 $\\gamma$ 下一致，则映射是方案依赖的，不能作为第一性推导。"}
+{"doc_id": "D055", "sid": 138, "start": 6460, "end": 6463, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 139, "start": 6465, "end": 6476, "kind": "heading", "text": "## 7. 结论与待推"}
+{"doc_id": "D055", "sid": 140, "start": 6478, "end": 6561, "kind": "list", "text": "1. 单 4-单纯形上，LQG 边界数据到 CQM Regge 数据的显式映射可以写出：自旋 → 面积 →（交织子提供角数据）→ 边长 → 顶点角亏 → $E/M$。"}
+{"doc_id": "D055", "sid": 141, "start": 6562, "end": 6625, "kind": "list", "text": "2. 该映射是**条件性**的：面积多值性需要选支，Immirzi 参数需要约定，顶点角亏与骨亏格需要换算，全局粘合尚未证明。"}
+{"doc_id": "D055", "sid": 142, "start": 6626, "end": 6705, "kind": "list", "text": "3. 它完成了五步链的第一步中“局部几何映射”的部分；**没有**完成“自旋泡沫振幅 → Regge 作用量”的 CQM 内推导，也**没有**完成全球粘合。"}
+{"doc_id": "D055", "sid": 143, "start": 6706, "end": 6762, "kind": "list", "text": "4. 下一步是第二步：由 Regge 作用量与 $\\delta_v$ 的涨落谱导出声子谱，再进入配对场与记忆核。"}
+{"doc_id": "D055", "sid": 144, "start": 6764, "end": 6827, "kind": "prose", "text": "**边界**：本文不新开缺口编号，不改变 G9–G22、N1–N4 的状态；文中所有“闭合”均限于单 4-单纯形的条件性映射。"}
+{"doc_id": "D055", "sid": 145, "start": 6829, "end": 6832, "kind": "prose", "text": "---"}
+{"doc_id": "D055", "sid": 146, "start": 6834, "end": 6841, "kind": "heading", "text": "## 参考文献"}
+{"doc_id": "D055", "sid": 147, "start": 6843, "end": 6917, "kind": "list", "text": "- [arXiv:gr-qc/9710008](https://arxiv.org/abs/gr-qc/9710008)：LQG 面积／体积谱综述。"}
+{"doc_id": "D055", "sid": 148, "start": 6918, "end": 6981, "kind": "list", "text": "- [arXiv:0705.4398](https://arxiv.org/abs/0705.4398)：面积算符本征值公式。"}
+{"doc_id": "D055", "sid": 149, "start": 6982, "end": 7053, "kind": "list", "text": "- [arXiv:1304.5626](https://arxiv.org/abs/1304.5626)：自旋泡沫路径积分、渐近与单纯形几何。"}
+{"doc_id": "D055", "sid": 150, "start": 7054, "end": 7135, "kind": "list", "text": "- [arXiv:1903.12624](https://arxiv.org/abs/1903.12624)：Lorentzian EPRL 顶点振幅的数值检验。"}
+{"doc_id": "D055", "sid": 151, "start": 7136, "end": 7209, "kind": "list", "text": "- [arXiv:2401.14643](https://arxiv.org/abs/2401.14643)：4 维自旋泡沫中的角亏与宇宙学常数。"}
+{"doc_id": "D055", "sid": 152, "start": 7210, "end": 7279, "kind": "list", "text": "- [arXiv:0802.0864](https://arxiv.org/abs/0802.0864)：面积-角变量与 4-单纯形几何。"}
+{"doc_id": "D055", "sid": 153, "start": 7280, "end": 7354, "kind": "list", "text": "- [arXiv:2402.17080](https://arxiv.org/abs/2402.17080)：面积-边长系统的多值性与同伦延拓求解。"}
+{"doc_id": "D055", "sid": 154, "start": 7355, "end": 7422, "kind": "list", "text": "- 内部依据：`01 核心理论/CQM_核心_集成理论.md` §2.1；`07 精细引力（FG）/FG_核心理论.md` §3.1；"}
+{"doc_id": "D055", "sid": 155, "start": 7422, "end": 7498, "kind": "list", "text": "`03 引力与退相干/CQM_引力_GN可能公式.md` §2；`04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md` 定理 7.1；"}
+{"doc_id": "D055", "sid": 156, "start": 7498, "end": 7529, "kind": "list", "text": "Lean `GN/SimplexSpectrum.lean`。"}

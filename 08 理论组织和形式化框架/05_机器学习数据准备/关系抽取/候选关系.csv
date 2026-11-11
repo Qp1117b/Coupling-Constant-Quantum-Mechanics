@@ -22,13 +22,15 @@ C071,C026,未定,→,pattern,D001,66,声子频率→角亏,True,True,重组实�
 C018,C012,重组实现|未定|等价|映射,重组实现,pattern,D001,78,FG 纤维丛理论](07 精细引力（FG）/FG_纤维丛理论.md) | FG纤维丛数学结构：SU(5)重组实现链条、双空间同步算符,False,False,,False
 C015,C022,映射|未定,对应,pattern,D001,78,重组实现，描述规范相变物理，类薛定谔方程，四层结构）。§9纤维丛与CFT严格对应（截面=primary、联络,False,False,,False
 C015,C023,映射|未定,对应,pattern,D001,78,重组实现，描述规范相变物理，类薛定谔方程，四层结构）。§9纤维丛与CFT严格对应（截面=primary、联络=Virasoro、曲率,False,False,,False
-C030,C018,未定,→,pattern,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG,False,False,,False
-C030,C008,未定,→,pattern,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干,False,False,,False
-C020,C081,重组实现|映射,重组实现,pattern,D001,83,主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
-C024,C081,重组实现,重组实现,pattern,D001,83,和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
-C072,C009,未定,→,pattern,D001,160,赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论,False,False,,False
-C072,C024,未定,→,pattern,D001,160,赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论.md:243` 记为“和乐,False,False,,False
-C018,C017,未定|映射|等价,→,pattern,D001,162,FG→GR,False,True,,False
+C053,C026,未定,→,pattern,D001,79,4-单纯形边长、$\{j_e\}$→角亏,False,False,,False
+C026,C053,映射|未定,给出,pattern,D001,79,角亏$\delta_v$。给出单 4-单纯形,False,False,,False
+C030,C018,未定,→,pattern,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG,False,False,,False
+C030,C008,未定,→,pattern,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干,False,False,,False
+C020,C081,重组实现|映射,重组实现,pattern,D001,84,主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
+C024,C081,重组实现,重组实现,pattern,D001,84,和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
+C072,C009,未定,→,pattern,D001,161,赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论,False,False,,False
+C072,C024,未定,→,pattern,D001,161,赝能隙相图 → 可观测量（ARPES/STM）映射 | `CQM_核心_因果网络同步理论.md:243` 记为“和乐,False,False,,False
+C018,C017,未定|映射|等价,→,pattern,D001,163,FG→GR,False,True,,False
 C050,C003,映射,对应,pattern,D005,24,耦谱定理**——黎曼零点对应再生产,False,False,,False
 C050,C017,映射|未定,对应,pattern,D005,24,耦谱定理**——黎曼零点对应再生产过程的共振模式；（6）**两种引力**——GR,False,False,,False
 C050,C018,映射|未定,对应,pattern,D005,24,耦谱定理**——黎曼零点对应再生产过程的共振模式；（6）**两种引力**——GR（广度前提，平庸因果网络 = 时空）/FG,False,False,,False
@@ -255,7 +257,7 @@ C018,C025,未定,→,pattern,D033,190,FG表组合+跨原子联络→分子纤维
 C022,C025,未定,→,pattern,D033,190,联络→分子纤维丛→Regge剖分,False,False,,False
 C030,C026,未定,→,pattern,D042,34,元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏,False,False,,False
 C020,C012,重组实现|未定,重组实现,pattern,D042,35,主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符,False,False,,False
-C018,C063,未定,→,pattern,D042,339,FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱,False,False,,False
+C018,C063,未定,→,pattern,D042,340,FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱,False,False,,False
 C006,C005,层级含于|未定,属于,pattern,D052,20,禁闭内部只是 QCD），且明确「夸克不属于禁闭边界,True,True,映射,False
 C048,C065,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态,False,False,,False
 C048,C008,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态退相干,False,False,,False
@@ -515,26 +517,27 @@ C023,C075,未定,,cooccur,D001,78,曲率=对易子、和乐=monodromy、同步�
 C024,C012,未定,,cooccur,D001,78,和乐=monodromy、同步算符,False,False,,False
 C024,C079,未定,,cooccur,D001,78,和乐=monodromy、同步算符=mode算符、Dirac条件,False,False,,False
 C024,C075,未定,,cooccur,D001,78,和乐=monodromy、同步算符=mode算符、Dirac条件=共形自举,True,True,等价,False
-C030,C020,未定,,cooccur,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛,False,False,,False
-C030,C024,未定,,cooccur,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐,False,False,,False
-C030,C015,未定,,cooccur,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现,False,False,,False
-C030,C081,未定,,cooccur,D001,83,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
-C018,C008,未定,,cooccur,D001,83,FG 退相干,False,False,,False
-C018,C081,未定,,cooccur,D001,83,FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
-C008,C020,未定,,cooccur,D001,83,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛,False,False,,False
-C008,C024,未定,,cooccur,D001,83,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐,False,False,,False
-C008,C015,未定,,cooccur,D001,83,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现,True,True,映射,False
-C024,C015,未定,,cooccur,D001,83,和乐平庸化、结构群涨落、重组实现,False,False,,False
-C015,C081,未定,,cooccur,D001,83,重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
-C018,C040,未定,,cooccur,D001,91,FG 自守形式,False,False,,False
-C040,C018,未定,,cooccur,D001,91,自守形式 从SU5到壳层结构的完整条件链](归档/FG,False,False,,False
-C058,C053,未定,,cooccur,D001,104,谱修正 | $\kappa$ | $(31+☯)/30$ | 4-单纯形,False,False,,False
-C004,C003,未定,,cooccur,D001,128,"因果集** | $(X, \prec)$，再生产",False,False,,False
-C029,C018,未定,,cooccur,D001,153,中子缺陷矩阵与 FG,False,False,,False
-C029,C026,未定,,cooccur,D001,153,中子缺陷矩阵与 FG 角亏,False,False,,False
-C008,C009,未定,,cooccur,D001,158,退相干稳态为何恰好是 $A_4$（正四单纯形） | `CQM_核心_因果网络同步理论,False,False,,False
-C024,C009,未定,,cooccur,D001,159,和乐相位闭合条件“$\approx 1$”的容差标定 | `CQM_核心_因果网络同步理论,False,False,,False
-C009,C024,未定,,cooccur,D001,160,因果网络同步理论.md:243` 记为“和乐,False,False,,False
+C018,C053,未定,,cooccur,D001,79,FG）/FG_LQG-Regge显式映射.md) | LQG→Regge 局部映射：边自旋$j_e$→对偶三角形面积（面积谱$A_e=8\pi\gamma\ell_P^2\sqrt{j_e(j_e+1)}$）、顶点交织子→4-单纯形,False,False,,False
+C030,C020,未定,,cooccur,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛,False,False,,False
+C030,C024,未定,,cooccur,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐,False,False,,False
+C030,C015,未定,,cooccur,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现,False,False,,False
+C030,C081,未定,,cooccur,D001,84,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
+C018,C008,未定,,cooccur,D001,84,FG 退相干,False,False,,False
+C018,C081,未定,,cooccur,D001,84,FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
+C008,C020,未定,,cooccur,D001,84,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛,False,False,,False
+C008,C024,未定,,cooccur,D001,84,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐,False,False,,False
+C008,C015,未定,,cooccur,D001,84,退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现,True,True,映射,False
+C024,C015,未定,,cooccur,D001,84,和乐平庸化、结构群涨落、重组实现,False,False,,False
+C015,C081,未定,,cooccur,D001,84,重组实现、表示、物质场，12 模块中 2 个通过、10 个不通过）、GN（$G_N$,False,False,,False
+C018,C040,未定,,cooccur,D001,92,FG 自守形式,False,False,,False
+C040,C018,未定,,cooccur,D001,92,自守形式 从SU5到壳层结构的完整条件链](归档/FG,False,False,,False
+C058,C053,未定,,cooccur,D001,105,谱修正 | $\kappa$ | $(31+☯)/30$ | 4-单纯形,False,False,,False
+C004,C003,未定,,cooccur,D001,129,"因果集** | $(X, \prec)$，再生产",False,False,,False
+C029,C018,未定,,cooccur,D001,154,中子缺陷矩阵与 FG,False,False,,False
+C029,C026,未定,,cooccur,D001,154,中子缺陷矩阵与 FG 角亏,False,False,,False
+C008,C009,未定,,cooccur,D001,159,退相干稳态为何恰好是 $A_4$（正四单纯形） | `CQM_核心_因果网络同步理论,False,False,,False
+C024,C009,未定,,cooccur,D001,160,和乐相位闭合条件“$\approx 1$”的容差标定 | `CQM_核心_因果网络同步理论,False,False,,False
+C009,C024,未定,,cooccur,D001,161,因果网络同步理论.md:243` 记为“和乐,False,False,,False
 C019,C018,未定,,cooccur,D003,57,引力因果限制场（FG,True,True,层级含于,False
 C027,C062,未定,,cooccur,D005,18,固有时流速共轭动量，满足标准海森堡代数,False,False,,False
 C005,C063,未定,,cooccur,D005,19,禁闭边界、两种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱,False,False,,False
@@ -704,8 +707,6 @@ C007,C026,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏
 C007,C021,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏是其度量形式（兼发生学入口），伴丛,False,False,,False
 C007,C023,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏是其度量形式（兼发生学入口），伴丛曲率,False,False,,False
 C007,C022,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏是其度量形式（兼发生学入口），伴丛曲率是响应形式——“一个联络,False,False,,False
-C018,C053,未定,,cooccur,D022,279,FG）/FG_LQG-Regge显式映射.md`：它把自旋网络数据送到 4-单纯形,False,False,,False
-C053,C026,未定,,cooccur,D022,279,4-单纯形角亏,False,False,,False
 C021,C012,未定,,cooccur,D022,286,伴丛和乐唯象近似”定位（`06 超导/CQM_超导_FG层级同步算符,False,False,,False
 C026,C040,未定,,cooccur,D022,289,角亏总和 = 欧拉示性数）与陈数（贝里曲率积分）的平行，是否可在“Regge 底空间几何指定自守形式,False,False,,False
 C078,C048,未定,,cooccur,D023,58,共形维度、算符乘积展开、相变量子,False,False,,False
@@ -914,3 +915,4 @@ C048,C058,未定,,cooccur,D049,8,相变量子）、$\mathfrak{c}_1$（耦级）�
 C046,C058,未定,,cooccur,D049,8,耦级）、$\kappa$（谱修正,False,False,,False
 C045,C051,未定,,cooccur,D049,91,黎曼零点模平方 \|ρ₁\|² | ✅ 严格（条件 RH,False,False,,False
 C048,C082,未定,,cooccur,D051,6,相变量子.md` 附录 B；`04 前沿研究/Wyler常数,False,False,,False
+C071,C053,未定,,cooccur,D055,110,声子链；4-单纯形,False,False,,False
