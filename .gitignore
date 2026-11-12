@@ -34,3 +34,6 @@ mcp_filesystem.log
 08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/docs/
 09 研究站服务/upload-ftp.ps1
 .vitepress
+
+# Netlify CLI 本地站点缓存与自动生成的 netlify.toml（含本机绝对路径）不入库
+.netlify/
