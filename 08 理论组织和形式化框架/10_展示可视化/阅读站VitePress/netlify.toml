@@ -1,0 +1,28 @@
+# Netlify 部署配置（CQM 研究站 · VitePress）
+#
+# 关键约束：研究站的 dist 是 **prebuilt 产物**，由
+#   08 理论组织和形式化框架/_build/build_vitepress_site.py
+# 生成，并在生成后做数学公式占位保护与还原、锚点修复、悬浮卡与
+# 术语/检索数据注入（cqm-glossary.js / cqm-depth.js / cqm-enhance.js /
+# math-config.js / backlink-inject.js 等）。
+#
+# 因此：
+#   - publish 必须钉死为 .vitepress/dist（否则 Netlify 会按 cwd 解析，
+#     历史上曾因此把仓库根目录当作发布目录）；
+#   - command 必须留空转（no-op），**禁止** Netlify 自行运行 VitePress 的
+#     `vitepress build`——那会覆盖 prebuilt 产物、丢失上述后处理步骤。
+#
+# 部署方式（在本目录下）：
+#   netlify deploy --prod
+# 若遇 Netlify API 拒绝 production deploy（403），改用
+#   netlify deploy            # preview
+# 再把该 draft deploy promote 为 production（restoreSiteDeploy）。
+
+[build]
+  publish = ".vitepress/dist"
+  command = "echo 'prebuilt dist: use _build/build_vitepress_site.py'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
