@@ -118,11 +118,74 @@ def write_version(manifest, by_dir):
 """)
 
 
+def _changelog_sections(text):
+    """把变更日志正文切成 {版本标题: 该版本全文}。"""
+    import re
+    idxs = [m.start() for m in re.finditer(r"(?m)^## v", text)]
+    out = {}
+    for i, s in enumerate(idxs):
+        e = idxs[i + 1] if i + 1 < len(idxs) else len(text)
+        out[text[s:e].split("\n", 1)[0].strip()] = text[s:e]
+    return out
+
+
+def _restore_missing_versions(path, old):
+    """把旧文件里、模板中缺失的版本段落补回文件顶部。
+
+    变更日志的条目是人写的、模板是脚本内嵌的；若模板漏写某版本，
+    全量覆盖会静默丢掉该条目。此处取并集，保证历史条目不丢。
+    """
+    import re
+    with open(path, encoding="utf-8") as fh:
+        cur = fh.read()
+    cur_secs = _changelog_sections(cur)
+    old_secs = _changelog_sections(old)
+    missing = [v for k, v in old_secs.items() if k not in cur_secs]
+    if not missing:
+        return
+    m = re.search(r"(?m)^## v", cur)
+    at = m.start() if m else len(cur)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(cur[:at] + "".join(missing) + cur[at:])
+
+
 def write_changelog():
-    with open(os.path.join(S11, "变更日志.md"), "w", encoding="utf-8") as f:
+    path = os.path.join(S11, "变更日志.md")
+    old = ""
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            old = fh.read()
+    with open(path, "w", encoding="utf-8") as f:
         f.write("""# 元数据 · 变更日志
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
+
+## v1.9.69 — 量纲论第六轮修订：「专属实现」标识精确为 [(G_max(f), rho)]、判据改用属性族 · 同一群不同 rho 与独立性的关系
+
+- **缘起**：对话追问「一个群的不同 rho 可以是独立属性？」「专属实现是指 (G,rho)？」——两点都击中了 v1.9.67 的一处不精确。
+- **核心修订一（`01` §6.5.3 定义 3 注）**：「专属实现」的标识精确为 **[(G_max(f), rho)]**，不是裸 (G, rho)——同一 (G, rho) 下不同的 f 可给出不同的 G_max（左乘作用下 f1=Tr 的稳定子为标量群、f2=det 的稳定子为 SL(n)）。且排他性判的是 f **实际生成的属性族**（f 及其在 G_max 不变量环中的闭包），**不是**整个不变量环（后者含大量与该实现无关的属性）。v1.9.67 写作整个不变量环，属不精确，本轮改正。
+- **核心修订二（同处新增）**：**同一群的不同作用未必给出独立属性**——时间与温度的模群都李同构于 (R,+)（平移作用于时间轴 vs 对角伸缩作用于 (E,S)），给出两个不同的物理量纲；而 PSL(2,R) 作用于射影直线所得的射影不变量是长度那套几何的**边界投影**，故非独立属性。**独立性不由 rho 决定**：rho 只决定给出哪一族不变量，是否独立另由三条件判定。
+- **同步**：`08` 术语表「专属实现」条；`10 探索` 判据新增 13、14（原 13–15 顺延为 15–17，编号已重排无重复）。
+- **红线核对**：未新增 `axiom`、零 `sorry`；`G_N` 数值未改，仍带「构造后验数字校验，待独立复现」；缺口编号与状态未动，缺口台账未收新编号；`10 探索` 两份超导文档按指示保持未跟踪。
+- **验收**：全链 17 脚本重跑；`check_provenance` 10/10；`check_consistency` 41/41；`consistency_probe` 0 问题。
+
+## v1.9.68 — N-18 检验完成（温度的专属实现通过三条件）· C-5 的物理判据 · 修 Netlify 自动构建覆盖 prebuilt dist
+
+- **N-18 检验**（`10 探索/CQM_探索_超导的非马尔可夫基础.md` §13.1）：温度的专属实现取「声子模式的玻色占据数结构」——靶空间＝模式占据数格，作用＝相位 U(1) 与数目模 Z_n（即 `06` §9.1/§11.6 的既有结构群）。三条件逐条通过：①排他（与 C1–C5 诸族不同族）②非派生（占据数由先在的纯计数 Omega 决定，不依赖 T）③内在性（温度的属性锚点＝热平衡态族，其载体即占据数配置）。限定 L1–L4：理想玻色气设定（外部物理输入）／绝对标度仍外借 theta_D／检验属物理层／待独立复现。
+- **副产品（C-5 裁决的物理判据）**：由 `06` §11.10 的 x=2 n_c+1 把 §9.2 的 x 换算为临界玻色占据数——**U1 单位给出 n_c 上限 -0.4375（负玻色占据数，物理不可能）**，U2 给出上限 116.67（可容许）；有意义物理区（T_c 远小于 theta_D）对应 n_c 远小于 1（如 103.1 K 时 0.058），正落在 Debye 低温区，与 `06` §11.3 的低温近似自洽；T_c/theta_D 由 x 反算与 §9.2 表值吻合到 1e-5，唯 x=1.0001 行差 3.9e-3（arccoth 在存在性下界附近放大）。这使 C-5 的裁决从「数值不足」升级为「**物理不可实现**」。
+- **两轴分类**：轴 A（量纲发生学／自守化途径）温度仍属借链型；轴 B（实现层）温度有专属实现；§6.5.13 的三支划分应标注每支的判据轴。
+- **修 Netlify 部署口径（重要）**：新增 `08 理论组织和形式化框架/10_展示可视化/阅读站VitePress/netlify.toml`——publish 钉死为 .vitepress/dist（历史上曾因 publish 被按 cwd 解析为仓库根而险些公开整个仓库），command 设为 no-op 以禁止 Netlify 自行运行 VitePress 原生 build（该构建会覆盖 `_build/build_vitepress_site.py` 的公式占位保护与还原、锚点修复与 cqm-* 后处理注入，导致线上缺后处理脚本）。验证：部署后 dist 的 mtime 未变，且只上传变化文件。
+- **修变更日志机制（根治）**：`build_meta.py` 的 `write_changelog()` 由全量覆盖改为**取并集**（先备份旧文件、写模板、再把旧文件中模板缺失的版本段落补回），使模板漏写某版本不再静默丢失历史条目；v1.9.67/68/69 三条已补入模板。
+- **红线核对**：未新增 `axiom`、零 `sorry`；缺口编号与状态未动，缺口台账未收新编号；`10 探索` 两份超导文档按指示保持未跟踪（两次误提交已撤回）。
+- **验收**：全链 17 脚本重跑；`check_provenance` 10/10；`check_consistency` 41/41；`consistency_probe` 0 问题。
+
+## v1.9.67 — 量纲论第五轮修订：「专属实现」三条件定义 · C2 循环性核算 · 温度专属候选方向
+
+- **`01` §6.5.3 定义 3 注新增「专属实现」判据（三条件）**：①排他（不被别的量纲同族重写）②非派生（不从上游既有实现机械导出）③内在性（作用由该量纲自身属性锚点诱导，而非安置到别人的几何里），依次排除共享／组合／外借；并加「实现不同 ≠ 专属」注。§6.5.13 借链支判据注引用三条件，并加范围限定：温度的无专属实现否证在量纲论层成立，若要有专属实现须由物理层的具体结构给出。
+- **`08` 术语表**新增「专属实现」一条；并修既有裸竖线（列数误报来源）。
+- **`10 探索`**：N-15（三条件定义）、N-16（C2 循环性——S 取状态等式 E/T 时 E/S 与 T 恒等，须取定义式 S=k_B ln(Omega) 才非循环且量纲为温度，故温度作用空间候选只能是态空间／微观态计数结构）、N-17（C3 内在性缺失——射影轴是双曲几何的边界，温度被安置而非内含）、N-18（温度专属候选：声子模式玻色占据数，未检验）；判据新增 12–14。
+- **红线核对**：未新增 `axiom`、零 `sorry`；缺口编号与状态未动，缺口台账未收新编号。
+- **验收**：全链 17 脚本重跑；`check_provenance` 10/10；`check_consistency` 41/41；`consistency_probe` 0 问题。
 
 ## v1.9.66 — 量纲论第四轮修订：模形式判准的范围限定 · 温度「有自守形式但不专属」
 
@@ -1002,6 +1065,8 @@ def write_changelog():
 - 修复源 CSV 6 行未转义逗号（概念表 C004/C020/C062，论证表 H003/A004/A020）导致的字段错位；
 - 以标准 CSV 解析重建 `03_超图与理论图/超图数据.json`；超边计数校正为 **19 超边 ⇒ / 51 有向边 →**。
 """)
+    if old.strip():
+        _restore_missing_versions(path, old)
 
 
 def write_validation():
