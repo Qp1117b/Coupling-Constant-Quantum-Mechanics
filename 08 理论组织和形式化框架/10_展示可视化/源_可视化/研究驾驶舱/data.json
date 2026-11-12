@@ -6412,8 +6412,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "6.1 特征常数的生成作用",
-   "char_start": 59715,
-   "char_end": 59751,
+   "char_start": 59726,
+   "char_end": 59762,
    "quote_clean": "故自守侧若输出一个“带长度量纲的数”，应读作 $K_L$ 而非 $c$。",
    "match_method": "name",
    "confidence": "high",
@@ -6431,8 +6431,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "6.1 特征常数的生成作用",
-   "char_start": 72921,
-   "char_end": 72983,
+   "char_start": 72932,
+   "char_end": 72994,
    "quote_clean": "$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。",
    "match_method": "name",
    "confidence": "high",
@@ -7438,8 +7438,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 54877,
-   "char_end": 54960,
+   "char_start": 54888,
+   "char_end": 54971,
    "quote_clean": "量纲发生学 ｜ 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” ｜ 定性（哪些常数有量纲、$K$ 是什么） ｜ §6.1、§6.4.1",
    "match_method": "doc",
    "confidence": "high",
@@ -8806,8 +8806,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 69722,
-   "char_end": 69741,
+   "char_start": 69733,
+   "char_end": 69752,
    "quote_clean": "自守形式 ｜ 社会必要劳动时间",
    "match_method": "doc",
    "confidence": "medium",
@@ -9775,8 +9775,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 53656,
-   "char_end": 53679,
+   "char_start": 53667,
+   "char_end": 53690,
    "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
    "match_method": "doc",
    "confidence": "medium",
@@ -9794,8 +9794,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 53656,
-   "char_end": 53679,
+   "char_start": 53667,
+   "char_end": 53690,
    "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
    "match_method": "doc",
    "confidence": "medium",
@@ -9813,8 +9813,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 53656,
-   "char_end": 53679,
+   "char_start": 53667,
+   "char_end": 53690,
    "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
    "match_method": "doc",
    "confidence": "medium",
@@ -9832,8 +9832,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 53656,
-   "char_end": 53679,
+   "char_start": 53667,
+   "char_end": 53690,
    "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
    "match_method": "doc",
    "confidence": "medium",
@@ -9851,8 +9851,8 @@
    "doc_id": "D009",
    "evidence_doc": "D009",
    "sec_title": "",
-   "char_start": 53656,
-   "char_end": 53679,
+   "char_start": 53667,
+   "char_end": 53690,
    "quote_clean": "物理侧：时间量纲 $T$，固有时，可测量；",
    "match_method": "doc",
    "confidence": "medium",
@@ -9931,7 +9931,7 @@
    }
   },
   "terms": {
-   "candidates_after_threshold": 1257,
+   "candidates_after_threshold": 1256,
    "kept_top_n": 800,
    "already_in_concept_table": 0,
    "new_candidates_kept": 800,
@@ -9960,9 +9960,9 @@
     "嘉当矩阵",
     "矩阵",
     "动力学",
-    "独立",
     "标准",
     "特征常数",
+    "独立",
     "机制",
     "无量纲",
     "结构群",
@@ -10112,8 +10112,8 @@
     "match_method": "doc",
     "confidence": "high",
     "evidence_doc": "D009",
-    "char_start": 54877,
-    "char_end": 54960,
+    "char_start": 54888,
+    "char_end": 54971,
     "sec_title": ""
    }
   },
@@ -12319,13 +12319,13 @@
    "confidence": "medium"
   },
   {
-   "id": "P027~G009~提及缺口",
+   "id": "P027~G020~提及缺口",
    "kind": "claim",
    "src": [
     "P027"
    ],
    "dst": [
-    "G009"
+    "G020"
    ],
    "rel": "提及缺口",
    "doc": "",
@@ -12334,13 +12334,13 @@
    "confidence": "medium"
   },
   {
-   "id": "P027~G020~提及缺口",
+   "id": "P027~G009~提及缺口",
    "kind": "claim",
    "src": [
     "P027"
    ],
    "dst": [
-    "G020"
+    "G009"
    ],
    "rel": "提及缺口",
    "doc": "",
