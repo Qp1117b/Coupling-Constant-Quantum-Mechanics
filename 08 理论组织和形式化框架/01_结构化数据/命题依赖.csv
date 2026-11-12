@@ -1,12 +1,9 @@
 ﻿src_id,dst_id,relation,method,verified,confidence,note
-G001,G005,同证据句,D005#337,False,medium,
 G001,C008,提及概念,命题表.statement 含概念名,True,high,
 G001,C008,证据句提及概念,证据句 D005#337,False,medium,
 G001,D005,证据文档,证据层(doc),False,high,
-G001,G005,语义近邻（候选）,TF-IDF 余弦 0.62,False,low,
 G001,G011,语义近邻（候选）,TF-IDF 余弦 0.22,False,low,
 G005,C008,提及概念,命题表.statement 含概念名,True,high,
-G005,G001,语义近邻（候选）,TF-IDF 余弦 0.62,False,low,
 G007,D005,证据文档,证据层(doc),False,medium,
 G008,D005,证据文档,证据层(doc),False,medium,
 G009,C023,提及概念,命题表.statement 含概念名,True,high,
