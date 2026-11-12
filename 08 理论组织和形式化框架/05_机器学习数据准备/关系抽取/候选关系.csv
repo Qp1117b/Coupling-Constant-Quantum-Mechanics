@@ -83,12 +83,13 @@ C001,C012,未定|重组实现,→,pattern,D007,447,前时空→ 同步算符,Fal
 C052,C012,未定,→,pattern,D007,538,GRH 是 GL(5) 固定层级的实谱条件**：质数分布 → 共振 → GRH 保证零点在临界线上 → 实共振谱 → 同步算符,False,False,,False
 C012,C015,重组实现|未定,⇒,pattern,D008,294,同步算符 Ŝ₀ → SU(5) ⇒ 重组实现,False,False,,False
 C042,C040,未定,→,pattern,D009,178,极大关系群作为稳定化子把处在潜在态的属性切割为实例属性类别）→ **实例化**（§6.2、§七：自守形式,False,False,,False
-C007,C015,等价|映射|未定|重组实现,即,pattern,D009,850,物质自组织对自己施加的条件（群约束性口径）；「实例化」——物理稳定即重组实现,False,False,,False
-C007,C040,重组实现|未定,重组实现,pattern,D009,850,物质自组织对自己施加的条件（群约束性口径）；「实例化」——物理稳定即重组实现（见下注），稳定下来的标志是建立起自守形式,False,False,,False
-C041,C040,等价|未定,即,pattern,D009,910,自守因子即量纲因子，§7.6）；锚点（无量纲→时间）先于自守形式,True,True,层级含于,False
-C040,C003,映射|等价|未定,给出,pattern,D009,1058,自守形式相容结合的产物**：时间侧给出一个自守形式（周期／再生产,False,False,,False
+C040,C041,映射|未定,给出,pattern,D009,567,自守形式本身**给出（§6.5.13 纲领：具体化＝对自守因子,False,True,,False
+C007,C015,等价|映射|未定|重组实现,即,pattern,D009,862,物质自组织对自己施加的条件（群约束性口径）；「实例化」——物理稳定即重组实现,False,False,,False
+C007,C040,重组实现|未定,重组实现,pattern,D009,862,物质自组织对自己施加的条件（群约束性口径）；「实例化」——物理稳定即重组实现（见下注），稳定下来的标志是建立起自守形式,False,False,,False
+C041,C040,等价|未定,即,pattern,D009,930,自守因子即量纲因子，§7.6）；锚点（无量纲→时间）先于自守形式,True,True,层级含于,False
+C040,C003,映射|等价|未定,给出,pattern,D009,1078,自守形式相容结合的产物**：时间侧给出一个自守形式（周期／再生产,False,False,,False
 C040,C007,重组实现|未定,重组实现,pattern,D010,26,自守形式）与“群**如何被实现**”（§6.3 的（约束下的）重组实现）合为**同一对象的两面**，而**发生学侧（物质自组织,False,False,,False
-C026,C021,未定,→,pattern,D010,411,角亏涨落 → 扇区耦合涨落 → 条件伴丛,False,False,,False
+C026,C021,未定,→,pattern,D010,412,角亏涨落 → 扇区耦合涨落 → 条件伴丛,False,False,,False
 C018,C015,重组实现|等价|映射|未定,⇒,pattern,D011,128,FG层的，描述核子分布的离散几何），而是**GL(5) ⇒ SU(5)重组实现,False,False,,False
 C071,C022,未定,→,pattern,D011,148,声子通过晶胞量子振荡→角亏涨落→联络,False,False,,False
 C026,C022,未定,→,pattern,D011,148,角亏涨落→联络,True,True,映射,False
@@ -126,7 +127,6 @@ C040,C009,依赖|未定,条件是,pattern,D023,187,自守形式”在框架中**
 C071,C040,未定,→,pattern,D023,271,声子→量子曲率→不确定关系→L 函数→自守形式,False,False,,False
 C023,C040,未定,→,pattern,D023,271,曲率→不确定关系→L 函数→自守形式,False,False,,False
 C016,C027,映射|未定,对应,pattern,D023,276,内禀时间 | 秩 4 与时空 4 维数值巧合（非群论对应）、5=秩+1、前质子/前中子发生学、固有时流速,False,False,,False
-C040,C041,未定,→,pattern,D024,3,自守形式）→ **自守因子,False,True,,False
 C018,C024,映射|未定,对应,pattern,D024,157,FG）/FG_纤维丛理论.md` §9.4「和乐 = OPE monodromy」严格对应：和乐,False,False,,False
 C024,C078,映射|未定,对应,pattern,D024,157,和乐 = OPE monodromy」严格对应：和乐本征值与共形维度,False,False,,False
 C024,C023,映射|未定,给出,pattern,D024,157,和乐本征值与共形维度的定量映射 $h=\delta_v\lambda_k/(2\pi)$ 给出局部曲率,False,False,,False
@@ -639,12 +639,12 @@ C040,C042,未定,,cooccur,D009,178,自守形式、量纲），「潜在-显现�
 C032,C060,未定,,cooccur,D009,294,时间量纲，长度由 $K_L$ 从无量纲耦合坐标,False,False,,False
 C027,C009,未定,,cooccur,D009,356,固有时流速 $v_\tau=d\tau/dt$ 见 `CQM_核心_因果网络同步理论,False,False,,False
 C007,C042,未定,,cooccur,D009,530,物质自组织} \to \text{约束} \to \text{极大关系群,False,False,,False
-C015,C040,未定,,cooccur,D009,850,重组实现（见下注），稳定下来的标志是建立起自守形式,False,False,,False
-C040,C015,未定,,cooccur,D009,900,自守形式——规范对称性情形走**重组实现,False,False,,False
-C003,C040,未定,,cooccur,D009,944,再生产循环使时间获得**自守化起点**，自守形式,False,False,,False
-C040,C023,未定,,cooccur,D009,957,自守形式的输入参数为纯数（无量纲）时，输出为纯数；当输入参数带有物理量纲（如曲率,False,False,,False
-C035,C041,未定,,cooccur,D009,1071,电荷量纲、$O/U/Sp$ 保持的结构、协变律形式、$\pi$ 定理的群论形式）＋【CQM 构造假设】（自守因子,False,False,,False
-C042,C041,未定,,cooccur,D009,1391,极大关系群分化属性与不变量，自守形式体现稳定性，自守因子,False,False,,False
+C015,C040,未定,,cooccur,D009,862,重组实现（见下注），稳定下来的标志是建立起自守形式,False,False,,False
+C040,C015,未定,,cooccur,D009,920,自守形式——规范对称性情形走**重组实现,False,False,,False
+C003,C040,未定,,cooccur,D009,964,再生产循环使时间获得**自守化起点**，自守形式,False,False,,False
+C040,C023,未定,,cooccur,D009,977,自守形式的输入参数为纯数（无量纲）时，输出为纯数；当输入参数带有物理量纲（如曲率,False,False,,False
+C035,C041,未定,,cooccur,D009,1091,电荷量纲、$O/U/Sp$ 保持的结构、协变律形式、$\pi$ 定理的群论形式）＋【CQM 构造假设】（自守因子,False,False,,False
+C042,C041,未定,,cooccur,D009,1417,极大关系群分化属性与不变量，自守形式体现稳定性，自守因子,False,False,,False
 C003,C016,未定,,cooccur,D010,25,再生产能力的数学影像”（`04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间,False,False,,False
 C015,C007,未定,,cooccur,D010,26,重组实现）合为**同一对象的两面**，而**发生学侧（物质自组织,False,False,,False
 C012,C009,未定,,cooccur,D011,86,同步算符 = 紧化算符，同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ 的完整理论详见 `CQM_核心_因果网络同步理论,False,False,,False
