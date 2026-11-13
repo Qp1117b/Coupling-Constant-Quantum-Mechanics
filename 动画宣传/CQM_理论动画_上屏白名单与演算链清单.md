@@ -135,7 +135,7 @@
 | $2h-1=2\times5-1=9$ | 代入 $h=5$ | 青 |
 | $\lambda_k=2-2\cos(k\pi/5)$，$k=1,2,3,4$ | 解特征方程（精确式） | 青 |
 | $\lambda_1=\frac{3-\sqrt5}2\approx0.382$，$\lambda_2\approx1.382$，$\lambda_3\approx2.618$，$\lambda_4\approx3.618$ | 代入 $\cos(\pi/5)=\frac{1+\sqrt5}4$ 化简 | 青 |
-| $\|W(A_4)\|=5!=120$ | 阶乘 | 青 |
+| $\lvert W(A_4)\rvert=5!=120$ | 阶乘 | 青 |
 
 **不可上屏**：Wyler 常数的「群论分解」式 $\alpha_W=\frac{2h-1}{\operatorname{tr}(A_4)}\pi^{-r}\left(\frac{\pi^h}{2^r|W|}\right)^{1/r}$ ——文件自认「**代数恒等式的改写与群论不变量的重新标注，非物理推导**」。
 
