@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261113111132' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261113111132' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261113111132' }],
-    ['script', { src: '/cqm-glossary.js?v=20261113111132', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261113111132', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261113111132', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261113111132', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261113111132', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261113111132', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261113111132', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261113121455' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261113121455' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261113121455' }],
+    ['script', { src: '/cqm-glossary.js?v=20261113121455', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261113121455', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261113121455', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261113121455', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261113121455', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261113121455', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261113121455', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -275,7 +275,7 @@ export default defineConfig({
         "link": "/D053_反物质引力与宇宙学边界"
       },
       {
-        "text": "分布式不对易关系（DNR）与非马尔可夫性：结构审计、CQM 内化与可检验接口（前沿研究）",
+        "text": "分布式不对易关系：非马尔可夫性的结构起源（理论构造）",
         "link": "/D054_分布式不对易关系与非马尔可夫性"
       }
     ]
@@ -419,7 +419,7 @@ export default defineConfig({
     "text": "文献",
     "items": [
       {
-        "text": "文献总览（203 条）",
+        "text": "文献总览（194 条）",
         "link": "/REFS_文献总览"
       }
     ]

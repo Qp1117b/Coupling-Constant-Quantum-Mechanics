@@ -4,7 +4,7 @@ import Superconductivity.CouplingSpace
 /-!
 # N1：角亏—固有时流速—弛豫时标 (ProperTimeRelaxation)
 
-对应研究文档 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §5.7。
+对应研究文档 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §6.6。
 
 文档的【待推】命题 N1 提出：记忆核的空间不均匀性可写为局域弛豫时标
 

@@ -143,7 +143,7 @@ FG 的曲率作用是**自组织**：物质通过角亏—联络—曲率机制*
 
 $$\boxed{\frac{d\tau}{dt} = \sqrt{1 - \beta \,\delta_v}} \quad \textbf{(FG 因果假设)}$$
 
-其中 $\beta$ 是 FG 几何耦合参数（不同于网络刚度 $\beta_{\text{sync}}$），$\delta_v$ 是局域角亏。角亏 $\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\tau/dt<1$）；小角亏极限 $\sqrt{1-\beta\delta_v}\approx 1-\beta\delta_v/2$；平直极限 $\delta_v=0$ 时 $d\tau/dt=1$。此公式是 FG 核心机制的核心**假设**（形式化见 `CouplingSpace.properTimeFlow`）。由同一接口，记忆核的空间不均匀性可写为局域弛豫时标 $\tau_{\text{relax}} \propto (d\tau/dt)^{-1} = (1-\beta\delta_v)^{-1/2}$；系数来源属【待推】，见 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §5.7（形式化见 `NonMarkovianity.relaxationTime`）。
+其中 $\beta$ 是 FG 几何耦合参数（不同于网络刚度 $\beta_{\text{sync}}$），$\delta_v$ 是局域角亏。角亏 $\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\tau/dt<1$）；小角亏极限 $\sqrt{1-\beta\delta_v}\approx 1-\beta\delta_v/2$；平直极限 $\delta_v=0$ 时 $d\tau/dt=1$。此公式是 FG 核心机制的核心**假设**（形式化见 `CouplingSpace.properTimeFlow`）。由同一接口，记忆核的空间不均匀性可写为局域弛豫时标 $\tau_{\text{relax}} \propto (d\tau/dt)^{-1} = (1-\beta\delta_v)^{-1/2}$；系数来源属【待推】，见 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §6.6（形式化见 `NonMarkovianity.relaxationTime`）。
 
 这与 GR 中固有时由引力势决定的公式结构完全对应（弱场极限）：
 
