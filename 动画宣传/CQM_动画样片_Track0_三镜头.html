@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CQM 理论动画 · Track 0 三镜头样片</title>
+<style>
+  html,body{margin:0;height:100%;background:#05070d;overflow:hidden;
+    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;}
+  #wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  svg{width:100%;height:100%;display:block;}
+  .bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:#0d1220;}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#35E0FF,#F5C542);}
+  .hint{position:fixed;left:16px;bottom:14px;color:#4a5570;font-size:12px;letter-spacing:.06em;}
+</style>
+</head>
+<body>
+<div id="wrap">
+<svg id="stage" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#0b1020"/><stop offset="100%" stop-color="#05070d"/>
+    </radialGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5C542" stop-opacity=".15"/>
+      <stop offset="50%" stop-color="#F5C542" stop-opacity=".65"/>
+      <stop offset="100%" stop-color="#F5C542" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#35E0FF" stop-opacity=".1"/>
+      <stop offset="50%" stop-color="#35E0FF" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#35E0FF" stop-opacity=".1"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="wedgeGrad" cx="18%" cy="46%" r="82%">
+      <stop offset="0%" stop-color="#F5C542" stop-opacity=".55"/>
+      <stop offset="65%" stop-color="#F5C542" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#F5C542" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  <g id="shot"></g>
+
+  <!-- HUD -->
+  <g id="hud">
+    <text id="cap" x="800" y="806" text-anchor="middle" fill="#E8EEF9"
+          font-size="30" letter-spacing="1.2" opacity="0">　</text>
+    <g id="badge" opacity="0"></g>
+    <g id="deep" opacity="0" font-family="JetBrains Mono,Consolas,monospace"></g>
+  </g>
+</svg>
+</div>
+<div class="bar"><i id="prog"></i></div>
+<div class="hint">空格 播放/暂停 · ←→ 逐镜 · D 深度层 · ?t=秒 定格</div>
+
+<script>
+(function(){
+"use strict";
+const NS="http://www.w3.org/2000/svg";
+const shotG=document.getElementById("shot");
+const capEl=document.getElementById("cap");
+const badgeEl=document.getElementById("badge");
+const deepEl=document.getElementById("deep");
+const progEl=document.getElementById("prog");
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const clamp=(x,a,b)=>x<a?a:x>b?b:x;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<0?0:t>1?1:1-Math.pow(1-t,3);
+const easeIO=t=>t<0?0:t>1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const rnd=(s)=>{let x=Math.sin(s*127.1)*43758.5453;return x-Math.floor(x);};
+
+/* ---------------- 镜头 1：拆除舞台 ---------------- */
+function buildS01(g){
+  const grid=el("g",{opacity:".9"}), nodes=el("g",{opacity:"0"});
+  for(let i=0;i<=20;i++){
+    grid.appendChild(el("line",{x1:80+i*72,y1:70,x2:80+i*72,y2:700,stroke:"#35E0FF","stroke-opacity":".10","stroke-width":"1"}));
+  }
+  for(let j=0;j<=9;j++){
+    grid.appendChild(el("line",{x1:80,y1:70+j*70,x2:1520,y2:70+j*70,stroke:"#35E0FF","stroke-opacity":".10","stroke-width":"1"}));
+  }
+  const pts=[];
+  for(let k=0;k<44;k++){
+    const x=120+rnd(k*3.1)*1360, y=110+rnd(k*7.7)*540;
+    pts.push([x,y]);
+    const c=el("circle",{cx:x,cy:y,r:2.6+2.6*rnd(k*5.3),fill:"#35E0FF","fill-opacity":".85"});
+    c.dataset.bx=x;c.dataset.by=y;c.dataset.ph=rnd(k*2.9)*6.28;
+    nodes.appendChild(c);
+  }
+  for(let k=0;k<58;k++){
+    const a=Math.floor(rnd(k*11.3)*pts.length), b=Math.floor(rnd(k*13.7)*pts.length);
+    if(a===b)continue;
+    const d=Math.hypot(pts[a][0]-pts[b][0],pts[a][1]-pts[b][1]);
+    if(d>330)continue;
+    nodes.appendChild(el("line",{x1:pts[a][0],y1:pts[a][1],x2:pts[b][0],y2:pts[b][1],
+      stroke:"url(#cyanLine)","stroke-width":"1.1"}));
+  }
+  g.appendChild(grid);g.appendChild(nodes);
+  return {grid,nodes,pts};
+}
+function updS01(s,t,dur){
+  const a=ease(clamp((t-1.6)/2.2,0,1));
+  s.grid.setAttribute("opacity",String(0.9*(1-a)+0.05));
+  s.nodes.setAttribute("opacity",String(a));
+  const zoom=1-0.10*ease(clamp((t-3.6)/2.2,0,1));
+  shotG.setAttribute("transform",`translate(800,360) scale(${zoom.toFixed(4)}) translate(-800,-360)`);
+  s.nodes.querySelectorAll("circle").forEach((c,i)=>{
+    const ph=+c.dataset.ph, dr=2.2*Math.sin(t*0.9+ph);
+    c.setAttribute("cx",(+c.dataset.bx+dr*0.6).toFixed(1));
+    c.setAttribute("cy",(+c.dataset.by+dr).toFixed(1));
+  });
+}
+
+/* ---------------- 镜头 2：耦合空间 ---------------- */
+function buildS02(g){
+  const hill=el("g",{opacity:"1"});
+  for(let k=0;k<9;k++){
+    const off=k*34-140;
+    let d=`M 220 ${560+off*0.42}`;
+    for(let x=220;x<=1380;x+=40){
+      const y=560+off*0.42+Math.sin((x+off*6)/210)*40+Math.cos(x/340+k)*16;
+      d+=` L ${x} ${y.toFixed(1)}`;
+    }
+    hill.appendChild(el("path",{d,fill:"none",stroke:"url(#goldLine)","stroke-width":"1.1","stroke-opacity":String(0.30+0.05*k)}));
+  }
+  const dots=el("g"), ring=el("g",{opacity:"0"}), glyph=el("text",{
+    x:800,y:556,"text-anchor":"middle","font-size":"74",fill:"#F5C542",opacity:"0",
+    filter:"url(#glow)","font-family":"Segoe UI Symbol,serif"});
+  glyph.textContent="☯";
+  for(let k=0;k<14;k++){
+    const c=el("circle",{cx:200+rnd(k*3.7)*1200,cy:-40,r:3.2+1.8*rnd(k*9.1),fill:"#F5C542","fill-opacity":".9",filter:"url(#glow)"});
+    c.dataset.tx=240+rnd(k*5.5)*1120; if(Math.abs(+c.dataset.tx-800)<170) c.dataset.tx=+c.dataset.tx<800?+c.dataset.tx-190:+c.dataset.tx+190; c.dataset.ph=rnd(k*4.3)*6.28;
+    dots.appendChild(c);
+  }
+  // 相位环
+  ring.appendChild(el("circle",{cx:800,cy:556,r:118,fill:"none",stroke:"#F5C542","stroke-opacity":".38","stroke-width":"1.6"}));
+  ring.appendChild(el("circle",{cx:800,cy:556,r:96,fill:"none",stroke:"#F5C542","stroke-opacity":".18","stroke-width":"1"}));
+  for(let k=0;k<24;k++){
+    const a=k/24*Math.PI*2, r1=k%6===0?100:108;
+    ring.appendChild(el("line",{x1:800+Math.cos(a)*r1,y1:556+Math.sin(a)*r1,
+      x2:800+Math.cos(a)*118,y2:556+Math.sin(a)*118,
+      stroke:"#F5C542","stroke-opacity":k%6===0?".7":".3","stroke-width":k%6===0?"1.8":"1"}));
+  }
+  ring.appendChild(glyph);
+  g.appendChild(hill);g.appendChild(dots);g.appendChild(ring);
+  return {hill,dots,ring,glyph};
+}
+function updS02(s,t,dur){
+  shotG.setAttribute("transform","");
+  const fall=ease(clamp(t/2.6,0,1));
+  s.dots.querySelectorAll("circle").forEach((c,i)=>{
+    const tx=+c.dataset.tx, ph=+c.dataset.ph;
+    const ty=560+Math.sin((tx)/210)*40+Math.cos(tx/340+ (i%9))*16 - 10;
+    c.setAttribute("cx",lerp(+c.getAttribute("cx"),tx,0.06).toFixed(1));
+    c.setAttribute("cy",lerp(-40,ty,fall).toFixed(1));
+    c.setAttribute("opacity",String(0.35+0.65*fall*(0.7+0.3*Math.sin(t*2.4+ph))));
+  });
+  const rv=clamp((t-2.2)/1.1,0,1);
+  s.ring.setAttribute("opacity",String(rv));
+  s.ring.setAttribute("transform",`rotate(${(t*14).toFixed(2)} 800 556)`);
+  const gv=clamp((t-4.4)/1.4,0,1);
+  s.glyph.setAttribute("opacity",String(gv*(0.78+0.22*Math.sin(t*3))));
+  s.glyph.setAttribute("font-size",String(74+6*Math.sin(t*2.2)));
+}
+
+/* ---------------- 镜头 3：锁定与角亏 ---------------- */
+function buildS03(g){
+  const rings=el("g"), pulseG=el("g"), simG=el("g",{opacity:"0"}), clockG=el("g",{opacity:"0"});
+  // 八个相位环
+  const pos=[[300,300],[520,220],[740,260],[980,220],[1200,300],[420,470],[1080,470],[760,420]];
+  const rs=[];
+  pos.forEach(([x,y],i)=>{
+    const gg=el("g");
+    gg.appendChild(el("circle",{cx:x,cy:y,r:30,fill:"none",stroke:"#35E0FF","stroke-opacity":".5","stroke-width":"1.4"}));
+    const hand=el("line",{x1:x,y1:y,x2:x+26,y2:y,stroke:"#35E0FF","stroke-width":"2","stroke-linecap":"round"});
+    gg.appendChild(hand);
+    rings.appendChild(gg); rs.push({hand,x,y,ph:rnd(i*7.3)*6.28,sp:0.9+rnd(i*3.1)*1.6});
+  });
+  // 4-单纯形（5 顶点示意投影 + 10 边）
+  const V=[[800,330],[1010,470],[930,715],[670,715],[590,470]];
+  const E=[[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]];
+  E.forEach(([a,b])=>{
+    simG.appendChild(el("line",{x1:V[a][0],y1:V[a][1],x2:V[b][0],y2:V[b][1],
+      stroke:"url(#cyanLine)","stroke-width":"1.9"}));
+  });
+  V.forEach(([x,y],i)=>{
+    simG.appendChild(el("circle",{cx:x,cy:y,r:6,fill:"#35E0FF",filter:"url(#glow)"}));
+  });
+  // 角亏楔形（顶点 0 处）
+  const wedge=el("path",{d:"M 800 330 L 694 292 A 122 122 0 0 1 686 378 Z",
+    fill:"url(#wedgeGrad)","fill-opacity":".0",stroke:"#F5C542","stroke-opacity":".0","stroke-width":"1.4"});
+  simG.appendChild(wedge);
+  // 时钟
+  clockG.appendChild(el("circle",{cx:1330,cy:690,r:64,fill:"none",stroke:"#8A7CFF","stroke-opacity":".78","stroke-width":"1.6"}));
+  for(let k=0;k<12;k++){const a=k/12*6.283;
+    clockG.appendChild(el("line",{x1:1330+Math.cos(a)*54,y1:690+Math.sin(a)*54,
+      x2:1330+Math.cos(a)*60,y2:690+Math.sin(a)*60,stroke:"#8A7CFF","stroke-opacity":".62","stroke-width":"1.1"}));}
+  const hourHand=el("line",{x1:1330,y1:690,x2:1330,y2:646,stroke:"#8A7CFF","stroke-width":"2.8","stroke-linecap":"round",filter:"url(#glow)"});
+  const minHand=el("line",{x1:1330,y1:690,x2:1330,y2:640,stroke:"#8A7CFF","stroke-opacity":".8","stroke-width":"1.6","stroke-linecap":"round"});
+  clockG.appendChild(hourHand);clockG.appendChild(minHand);
+  g.appendChild(rings);g.appendChild(pulseG);g.appendChild(simG);g.appendChild(clockG);
+  return {rings,rs,pulseG,simG,clockG,wedge,hourHand,minHand,V,E};
+}
+function updS03(s,t,dur){
+  shotG.setAttribute("transform","");
+  const lockT=2.0, locked=t>lockT;
+  // 环：乱相位 → 锁定
+  s.rs.forEach((r,i)=>{
+    const a=locked? 0 : r.ph+t*r.sp;
+    r.hand.setAttribute("transform",`rotate(${(a*57.2958).toFixed(2)} ${r.x} ${r.y})`);
+  });
+  // 锁定光脉冲
+  s.pulseG.innerHTML="";
+  const lp=(t-lockT)/0.9;
+  if(lp>0&&lp<1){
+    const rr=46+ease(lp)*176;
+    s.pulseG.appendChild(el("circle",{cx:800,cy:452,r:rr,fill:"none",
+      stroke:"#F5C542","stroke-opacity":String(0.60*(1-lp)),"stroke-width":"1.5"}));
+  }
+  // 脉冲沿边传播
+  if(t>lockT+0.8&&t<lockT+3.0){
+    const k=(t-lockT-0.8)/2.2;
+    s.E.forEach(([a,b],idx)=>{
+      const off=clamp(k*1.6-idx*0.06,0,1);
+      const x=lerp(s.V[a][0],s.V[b][0],off), y=lerp(s.V[a][1],s.V[b][1],off);
+      s.pulseG.appendChild(el("circle",{cx:x,cy:y,r:3.2,fill:"#35E0FF","fill-opacity":String(0.85*(1-off*0.5)),filter:"url(#glow)"}));
+    });
+  }
+  // 单纯形淡入
+  const sv=clamp((t-2.4)/1.4,0,1);
+  s.simG.setAttribute("opacity",String(sv*0.95));
+  s.rings.setAttribute("opacity",String(1-0.88*sv));
+  s.rings.setAttribute("transform",`translate(800 470) scale(${(1-0.22*sv).toFixed(3)}) translate(-800 -470)`);
+  // 角亏与时钟
+  const dv=clamp((t-5.0)/1.6,0,1);
+  s.wedge.setAttribute("fill-opacity",String(0.30*dv));
+  s.wedge.setAttribute("stroke-opacity",String(0.85*dv));
+  s.clockG.setAttribute("opacity",String(clamp((t-5.2)/1.2,0,1)));
+  const slow=1-0.72*dv;                 // 固有时流速变慢
+  const ha=t*slow*0.9, ma=t*slow*5.4;
+  s.hourHand.setAttribute("transform",`rotate(${(ha*57.2958).toFixed(2)} 1330 690)`);
+  s.minHand.setAttribute("transform",`rotate(${(ma*57.2958).toFixed(2)} 1330 690)`);
+}
+
+/* ---------------- 时间轴 ---------------- */
+const SHOTS=[
+  {id:"S01",dur:6.0,build:buildS01,upd:updS01,
+   cap:"我们习惯把时间、空间、常数，当作世界的舞台。",
+   badge:{shape:"square",color:"#F2F5FA",label:"外部直觉"},
+   deep:"前提：舞台是给定的时空与常数。"},
+  {id:"S02",dur:7.5,build:buildS02,upd:updS02,
+   cap:"第一步：常数不是给定的数字，而是耦合空间里的坐标。",
+   badge:{shape:"ring",color:"#F5C542",label:"框架公理"},
+   deep:"☯ 相位量子 = d/ds·ln ξ(s) |s=1　（框架内定义）"},
+  {id:"S03",dur:9.0,build:buildS03,upd:updS03,
+   cap:"起初，每个节点的相位各走各的。",
+   badge:{shape:"tri",color:"#35E0FF",label:"框架内推导"},
+   sub:[
+     {t:0.0,cap:"起初，每个节点的相位各走各的。",
+      badge:{shape:"tri",color:"#35E0FF",label:"框架内推导"}},
+     {t:2.0,cap:"同步不是平滑演化，而是一次事件：相位锁定。",
+      badge:{shape:"tri",color:"#35E0FF",label:"框架内推导"}},
+     {t:5.0,cap:"角亏让固有时变慢——不是力，而是几何的凹凸。",
+      badge:{shape:"ring",color:"#F5C542",label:"框架公理"}}
+   ],
+   deep:"v_τ = dτ/dt = √(1 − β·δ_v)　（FG 侧固有时流速）"}
+];
+let total=0; SHOTS.forEach(s=>{s.t0=total;total+=s.dur;s.t1=total;});
+
+let cur=null, curIdx=-1, tFrozen=null, lastBadge=null;
+const url=new URLSearchParams(location.search);
+if(url.has("shot")){
+  document.querySelector(".bar").style.display="none";
+  document.querySelector(".hint").style.display="none";
+}
+if(url.has("t")) tFrozen=parseFloat(url.get("t"))||0;
+let t=tFrozen!==null?tFrozen:0, playing=tFrozen===null, last=performance.now();
+
+function mount(i){
+  if(curIdx===i) return;
+  curIdx=i;
+  shotG.innerHTML=""; shotG.setAttribute("transform","");
+  cur=SHOTS[i].build(shotG);
+  drawBadge(SHOTS[i].badge); lastBadge=(SHOTS[i].sub?SHOTS[i].sub[0].badge.label:SHOTS[i].badge.label);
+  deepEl.innerHTML="";
+  const dt=el("text",{x:1580,y:112,"text-anchor":"end",fill:"#8A7CFF","font-size":"20",opacity:".85"});
+  dt.textContent=SHOTS[i].deep;
+  deepEl.appendChild(dt);
+}
+function drawBadge(b){
+  badgeEl.innerHTML="";
+  const x=1500,y=124,g=badgeEl;
+  const mk=(tag,a)=>{const e=el(tag,Object.assign({},a,{stroke:b.color,fill:"none","stroke-width":"1.6"}));g.appendChild(e);return e;};
+  if(b.shape==="square") mk("rect",{x:x-11,y:y-11,width:22,height:22,rx:2});
+  if(b.shape==="ring") mk("circle",{cx:x,cy:y,r:11});
+  if(b.shape==="tri") mk("path",{d:`M ${x} ${y-12} L ${x+11} ${y+8} L ${x-11} ${y+8} Z`});
+  const t=el("text",{x:x-20,y:y+5,"text-anchor":"end",fill:b.color,"font-size":"19","letter-spacing":".08em"});
+  t.textContent=b.label; g.appendChild(t);
+  badgeEl.setAttribute("opacity","0.9");
+}
+function renderAt(tt){
+  let idx=0; for(let i=0;i<SHOTS.length;i++){ if(tt>=SHOTS[i].t0 && tt<SHOTS[i].t1) idx=i; }
+  if(tt>=total) idx=SHOTS.length-1;
+  mount(idx);
+  const s=SHOTS[idx], lt=tt-s.t0;
+  s.upd(cur,lt,s.dur);
+  let cap=s.cap, bg=s.badge, bgKey="";
+  if(s.sub){
+    let seg=s.sub[0];
+    for(const x of s.sub){ if(lt>=x.t) seg=x; }
+    cap=seg.cap; bg=seg.badge; bgKey=seg.badge.label;
+  }
+  if(bgKey!==lastBadge){ lastBadge=bgKey; drawBadge(bg); }
+  capEl.textContent=cap;
+  capEl.setAttribute("opacity",String(ease(clamp(lt/0.7,0,1))));
+  progEl.style.width=(tt/total*100).toFixed(2)+"%";
+}
+
+function loop(now){
+  const dt=(now-last)/1000; last=now;
+  if(playing && tFrozen===null){
+    t+=dt;
+    if(t>=total) t=0;
+  }
+  renderAt(t);
+  requestAnimationFrame(loop);
+}
+addEventListener("keydown",e=>{
+  if(e.code==="Space"){playing=!playing;tFrozen=null;e.preventDefault();}
+  if(e.code==="ArrowRight"){t=Math.min(total-0.01,SHOTS[Math.min(curIdx+1,SHOTS.length-1)].t0);playing=false;tFrozen=null;}
+  if(e.code==="ArrowLeft"){t=SHOTS[Math.max(curIdx-1,0)].t0;playing=false;tFrozen=null;}
+  if(e.key==="d"||e.key==="D"){deepEl.setAttribute("opacity",deepEl.getAttribute("opacity")==="0"?"0.8":"0");}
+});
+window.__renderAt=renderAt;
+window.__total=total;
+window.__fps=60;
+window.__ready=true;
+// 渲染模式（?shot=1）下不启动自主时钟，画面只由 __renderAt 驱动，避免与逐帧渲染争抢
+if(!url.has("shot")) requestAnimationFrame(loop); else renderAt(0);
+})();
+</script>
+</body>
+</html>

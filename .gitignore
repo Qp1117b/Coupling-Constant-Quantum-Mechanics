@@ -37,3 +37,6 @@ mcp_filesystem.log
 
 # Netlify CLI 本地站点缓存与自动生成的 netlify.toml（含本机绝对路径）不入库
 .netlify/
+
+# 动画宣传：成片 mp4 不入库（体积大、可由片源重渲）；方案文档与封面入库
+动画宣传/输出/*.mp4

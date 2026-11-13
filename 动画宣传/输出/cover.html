@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;width:1146px;height:717px;overflow:hidden;background:#05070d;
+    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;}
+  svg{display:block;width:1146px;height:717px;}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1146 717" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="72%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#101a30"/><stop offset="100%" stop-color="#05070d"/>
+    </radialGradient>
+    <radialGradient id="wg" cx="30%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#F5C542" stop-opacity=".62"/>
+      <stop offset="70%" stop-color="#F5C542" stop-opacity=".14"/>
+      <stop offset="100%" stop-color="#F5C542" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#35E0FF" stop-opacity=".08"/>
+      <stop offset="50%" stop-color="#35E0FF" stop-opacity=".62"/>
+      <stop offset="100%" stop-color="#35E0FF" stop-opacity=".08"/>
+    </linearGradient>
+    <filter id="g" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1146" height="717" fill="url(#bg)"/>
+
+  <!-- 左侧文字 -->
+  <text x="88" y="268" fill="#E8EEF9" font-size="72" font-weight="700" letter-spacing="2">时空不是舞台</text>
+  <text x="90" y="326" fill="#F5C542" font-size="26" letter-spacing="6">CQM 理论动画 · TRACK 0 样片</text>
+  <line x1="90" y1="366" x2="470" y2="366" stroke="#F5C542" stroke-opacity=".45" stroke-width="1.2"/>
+  <text x="90" y="410" fill="#8A93A8" font-size="21" letter-spacing="1.2">耦合常数量子力学：关系先于实体</text>
+  <text x="90" y="444" fill="#5F6880" font-size="18" letter-spacing="1">常数是坐标 · 时间是同步的节拍 · 引力是固有时场的几何</text>
+
+  <!-- 右侧图形：4-单纯形 + 角亏楔形 -->
+  <g transform="translate(792,338) scale(1.02)">
+    <path d="M 0 -196 L -150 -60 L -108 172 L 108 172 L 150 -60 Z"
+          fill="none" stroke="url(#cl)" stroke-width="1.6"/>
+    <line x1="0" y1="-196" x2="-108" y2="172" stroke="url(#cl)" stroke-width="1.2"/>
+    <line x1="0" y1="-196" x2="108" y2="172" stroke="url(#cl)" stroke-width="1.2"/>
+    <line x1="-150" y1="-60" x2="108" y2="172" stroke="url(#cl)" stroke-width="1.2"/>
+    <line x1="150" y1="-60" x2="-108" y2="172" stroke="url(#cl)" stroke-width="1.2"/>
+    <line x1="-150" y1="-60" x2="150" y2="-60" stroke="url(#cl)" stroke-width="1.2"/>
+    <path d="M 0 -196 L -132 -230 A 152 152 0 0 1 -146 -158 Z" fill="url(#wg)"/>
+    <path d="M 0 -196 L -132 -230" stroke="#F5C542" stroke-opacity=".8" stroke-width="1.4"/>
+    <path d="M 0 -196 L -146 -158" stroke="#F5C542" stroke-opacity=".8" stroke-width="1.4"/>
+    <circle cx="0" cy="-196" r="7" fill="#F5C542" filter="url(#g)"/>
+    <circle cx="-150" cy="-60" r="5" fill="#35E0FF" filter="url(#g)"/>
+    <circle cx="150" cy="-60" r="5" fill="#35E0FF" filter="url(#g)"/>
+    <circle cx="-108" cy="172" r="5" fill="#35E0FF" filter="url(#g)"/>
+    <circle cx="108" cy="172" r="5" fill="#35E0FF" filter="url(#g)"/>
+    <text x="-176" y="-246" fill="#F5C542" font-size="17" letter-spacing="1.5">角亏 δ<tspan font-size="12" dy="4">v</tspan></text>
+    <text x="176" y="24" fill="#35E0FF" font-size="15" letter-spacing="1" opacity=".75">4-单纯形</text>
+  </g>
+
+  <!-- 右下角标注 -->
+  <text x="1060" y="686" text-anchor="end" fill="#3E465C" font-size="15" letter-spacing="2">CQM · 研究站样片</text>
+</svg>
+</body>
+</html>
