@@ -32,7 +32,7 @@ PUNCT = re.compile(r"[\s\W_]+")
 CUE = re.compile(r"因此|所以|故(?![乡事])|由此|从而|导致|推出|给出了|源于|来自于|依赖|前提|等价|对应|即(?=[^是])|由此可知")
 GAPCODE = re.compile(r"缺口\s*([CGN]\d*|C)\b")
 GAPTOK = re.compile(r"(?<![A-Za-z])([CGN]\d+)(?![A-Za-z0-9])")
-STATUS_KEY = re.compile(r"未闭合|部分闭合|闭合|待证明|待严格化|占位|axiom|猜想|数值验证|公式推导完成")
+STATUS_KEY = re.compile(r"未闭合|部分闭合|闭合|待证明|待严格化|占位|axiom|猜想|数值验证|公式推导完成|代数推导完成")
 
 
 def canon_gap(x):
