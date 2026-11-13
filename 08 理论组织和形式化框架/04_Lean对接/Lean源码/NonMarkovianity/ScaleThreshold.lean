@@ -3,7 +3,7 @@ import NonMarkovianity.Markovization
 /-!
 # 尺度阈值命题 (ScaleThreshold)
 
-对应研究文档 `04 前沿研究/CQM_前沿研究_非马尔可夫性的分布式关系载体.md` §3.6。
+对应研究文档 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §3.3。
 
 原文结论“单点共时态不充分”在文档中收紧为阈值命题：
 
@@ -19,7 +19,7 @@ $$\exists\,\ell_*:\quad \ell<\ell_* \text{ 时 } \mathcal{S}_\ell \text{ 充分}
 - `threshold_instance`：给出满足前提的具体剖面，说明阈值定理不是空转。
 
 阈值 $\ell_*$ 的存在性本身不依赖 CQM；它是否有限、取值多少，
-属文档 §8 的 T6【待推】，本模块不给出数值。
+属文档 §9.1 的 T6【待推】，本模块不给出数值。
 -/
 
 namespace CQM
@@ -98,7 +98,7 @@ theorem scaleSufficiency_antitone {V α β Ω : Type} (F : ScaleFamily V α β)
   exact sufficientStat_of_factor coarse fine G law hfactor hcoarse
 
 /-- 尺度阈值：若细端（尺度 0）充分、某个粗端失效，则存在失效阈值 `ℓ*`。
-这就是文档 §3.6 的阈值命题。 -/
+这就是文档 §3.3 的阈值命题。 -/
 theorem scale_threshold {V α β Ω : Type} (F : ScaleFamily V α β)
     (law : FutureLaw V α Ω) (h0 : scaleSufficiency F law 0)
     (hN : ∃ N : ℕ, ¬ scaleSufficiency F law N) :
