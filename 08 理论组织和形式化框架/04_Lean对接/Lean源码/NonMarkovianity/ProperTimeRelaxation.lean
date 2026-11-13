@@ -4,7 +4,7 @@ import Superconductivity.CouplingSpace
 /-!
 # N1：角亏—固有时流速—弛豫时标 (ProperTimeRelaxation)
 
-对应研究文档 `04 前沿研究/CQM_前沿研究_非马尔可夫性的分布式关系载体.md` §5.5。
+对应研究文档 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §5.7。
 
 文档的【待推】命题 N1 提出：记忆核的空间不均匀性可写为局域弛豫时标
 
@@ -20,14 +20,14 @@ $$\tau_{\mathrm{relax}}(v)\ \propto\ \left(\frac{d\tau}{dt}\right)^{-1}_{v}
 ## 边界（如实标注）
 
 比例系数的来源、以及“弛豫时标”与因果截断不等式
-$\Delta\tau\ge\tau_{\mathrm{res}}=\hbar/(Mc^2)$ 的衔接，属文档 §8 的【待推】N1，
+$\Delta\tau\ge\tau_{\mathrm{res}}=\hbar/(Mc^2)$ 的衔接，属文档 §9.1 的【待推】N1，
 **未在此证明**，也没有用 `axiom` 冒充。本模块不含任何数值校验。
 -/
 
 namespace CQM
 namespace NonMarkovianity
 
-/-- 局域弛豫时标（文档 §5.5 命题 N1 的接口形式）：
+/-- 局域弛豫时标（文档 §5.7 命题 N1 的接口形式）：
 $$\tau_{\mathrm{relax}}=\frac{1}{v_\tau},\qquad v_\tau=\sqrt{1-\beta\,\delta}.$$ -/
 noncomputable def relaxationTime (β δ : ℝ) : ℝ :=
   1 / CQM.properTimeFlow β δ

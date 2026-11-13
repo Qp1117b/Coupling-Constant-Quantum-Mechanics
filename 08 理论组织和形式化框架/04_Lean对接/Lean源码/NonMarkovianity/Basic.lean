@@ -2,18 +2,18 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
-# 非马尔可夫性的分布式关系载体：基础定义 (Basic)
+# 分布式不对易关系与非马尔可夫性：基础定义 (Basic)
 
-对应研究文档：`04 前沿研究/CQM_前沿研究_非马尔可夫性的分布式关系载体.md`。
+对应研究文档：`04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md`。
 
 本模块把该文的四个基础概念写成类型与谓词：
 
-- 历史沉淀 `D : V → α`（§2.1）：历史演化在节点上沉淀的局域关系数据；
-- 单点共时投影 `π : α → β`（§2.2）：把局域关系数据压成单点共时观测量；
+- 历史沉淀 `D : V → α`（§3.1）：历史演化在节点上沉淀的局域关系数据；
+- 单点共时投影 `π : α → β`（§3.1）：把局域关系数据压成单点共时观测量；
 - 未来法则 `law : (V → α) → Ω`（§2.3）：由历史决定的未来统计对象；
 - 充分性 `Sufficient π law`（§2.3）：投影相同的两个历史给出相同的未来法则。
 
-## 检验结论（对应原文 §3.2）
+## 检验结论（对应原文 §3.1）
 
 原文由“`π` 非单射”推出“单点共时态不充分”。本模块给出：
 
@@ -28,7 +28,7 @@ import Mathlib.Tactic
 ## 与阈值命题的关系
 
 `sufficient_of_factor`：充分性可以从粗统计量传递到细统计量。
-这是文档 §3.6 尺度阈值命题的单调性来源（见 `NonMarkovianity.ScaleThreshold`）。
+这是文档 §3.3 尺度阈值命题的单调性来源（见 `NonMarkovianity.ScaleThreshold`）。
 -/
 
 namespace CQM
@@ -107,7 +107,7 @@ theorem sufficient_of_factor {V α β γ Ω : Type} (φ : α → γ) (ψ : α �
 `π` 显然非单射（`(true, false)` 与 `(true, true)` 同像），
 但投影相同 ⇒ 第一分量相同 ⇒ 未来法则相同，故充分。
 
-结论：非单射不能推出不充分。原文 §3.2 的推理步骤不成立，
+结论：非单射不能推出不充分。原文 §3.1 的推理步骤不成立，
 判据只能是纤维条件（`insufficient_iff_fiber`）。 -/
 theorem noninjectivity_not_implying_insufficiency :
     ∃ (π : Bool × Bool → Bool) (law : FutureLaw Unit (Bool × Bool) Bool),

@@ -4,9 +4,9 @@ import NonMarkovianity.ScaleThreshold
 import NonMarkovianity.ProperTimeRelaxation
 
 /-!
-# 非马尔可夫性的分布式关系载体 (NonMarkovianity)
+# 分布式不对易关系与非马尔可夫性 (NonMarkovianity)
 
-对应研究文档 `04 前沿研究/CQM_前沿研究_非马尔可夫性的分布式关系载体.md`。
+对应研究文档 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md`。
 
 ## 模块结构
 
@@ -20,7 +20,7 @@ import NonMarkovianity.ProperTimeRelaxation
 ## 状态标注
 
 - 定义与定理均不含 `sorry`、`admit`、`native_decide`、`unsafe`、新增 `axiom`；
-- N1 的系数来源未确定，属文档 §8【待推】，本库只形式化接口结构与
+- N1 的系数来源未确定，属文档 §9【待推】，本库只形式化接口结构与
   由定义直接可得的不等式；
 - 阈值 `ℓ*` 的存在性已证，具体值与是否存在有限上界属【待推】T6。
 -/
