@@ -188,9 +188,9 @@ def main():
 
     kgj = jload(os.path.join(ROOT, "03_超图与理论图", "知识图谱.json"))
     # 边数随语料变化浮动：低置信「语义近邻（候选）」边低于阈值时消失，属合法派生变化
-    # （先例：v1.9.61 357→354；v1.9.65 357→354）。断言按实际值同步，非数据损坏。
-    check("知识图谱 144 实体 / 352 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 352),
+    # （先例：v1.9.61 357→354；v1.9.65 357→354；D056 新增语料 352→355）。
+    check("知识图谱 144 实体 / 355 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 355),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
