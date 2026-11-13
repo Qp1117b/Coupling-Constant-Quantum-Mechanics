@@ -48,7 +48,7 @@
 {"prop_id": "G017", "statement": "缺口G18：主丛曲率机制关键参数第一性提取", "type": "缺口", "status": "部分闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
 {"prop_id": "G018", "statement": "缺口G19：和乐相位闭合≈1容差标定", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
 {"prop_id": "G019", "statement": "缺口G21：赝能隙相图→ARPES/STM映射", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G020", "statement": "缺口G22：T_c丛作用量交叉构造推导", "type": "缺口", "status": "公式推导完成严格性待提升", "source_doc": "D031", "depends_on": [], "lean_witness": null}
+{"prop_id": "G020", "statement": "缺口G22：T_c丛作用量交叉构造推导", "type": "缺口", "status": "代数推导完成物理基座待建立", "source_doc": "D031", "depends_on": [], "lean_witness": null}
 {"prop_id": "G021", "statement": "缺口N1：质量-谱映射m∝λ_min待严格化", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": ["D043"], "lean_witness": null}
 {"prop_id": "G022", "statement": "缺口N2：角亏-δ显式几何公式ϵ(δ)缺失", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": [], "lean_witness": null}
 {"prop_id": "G023", "statement": "缺口N3：β衰变动力学条件缺失", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": [], "lean_witness": null}

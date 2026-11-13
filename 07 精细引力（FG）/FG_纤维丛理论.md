@@ -469,7 +469,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
 
-**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的严格定量映射，消除“Dirac 条件=共形自举方程”仅一行陈述的缺口。
+**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的**候选定量映射**（§9.1–§9.6 各对应目前为陈述式，映射未构造；§9.4 的定量映射 $h=\delta_v\lambda_k/(2\pi)$ 完全依赖未证的「和乐本征值 = monodromy 本征值」）。
 
 CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`。
 
