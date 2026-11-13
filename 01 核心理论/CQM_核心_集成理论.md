@@ -804,7 +804,7 @@ $$\boxed{\begin{aligned}
 
 $$\boxed{\begin{aligned}
 &\text{晶胞量子振荡（声子 = 曲率量子）} \to \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
-&\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
+&\Downarrow \;(\text{平衡态下温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布；非平衡态下该调制不再由 } T \text{ 唯一给定，见 §11.4}) \\
 &\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{1 - \beta\delta_v}}{\beta} \\
 &\Downarrow \\
 &\Delta u_n = 2\ln n \text{ 跃迁 } u \to u + 2\ln n \;\to\; \alpha \to n^2\alpha \text{（耦级谱，} n=2,4,6,\ldots\text{）} \\
@@ -904,6 +904,8 @@ $$\Delta\delta_v(T) = \Delta\delta_0\sqrt{\tanh\frac{\hbar\Omega_0}{2k_BT}}$$
 
 零温 $T \to 0$：$\Delta\delta_v \to \Delta\delta_0$；高温 $T \to \infty$：$\Delta\delta_v \to 0$（涨落被声子热噪声完全抑制）。
 
+**平衡态限定**：上式的声子占据数取玻色-爱因斯坦平衡分布，由温度 $T$ 唯一给定——这是平衡态的定理，不是近似。体系未处于平衡态时（制备历史未退火、淬火之后、老化之中），声子占据数不再由 $T$ 唯一给定。
+
 **第二步：候选群族与自由能竞争。** 资格条件筛选出候选群族 $\mathcal{G} = \{U(1)//\mathbb{Z}_n \mid n\text{ 偶},\;\Delta\delta_0 \ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)\}$。路径积分 $Z = \sum_{U(1)//\mathbb{Z}_n \in \mathcal{G}} \int D[A,\psi]\,e^{-S}$ 在候选群族上选出自由能最小的主导群。
 
 **第三步：临界温度 = 自由能交叉。**
@@ -917,6 +919,8 @@ $$\boxed{F_1(T_c) = F_2(T_c),\qquad T_c = \frac{E_2 - E_1}{S_2 - S_1}}$$
 温度不是“能量注入破坏超导”，而是**通过改变晶胞量子振荡模式的声子数，影响自组织**——再生产（晶胞量子振荡的维持）是自组织的一个环节，声子数变化首先作用于这一环节——进而影响配对与相干。
 
 所有温度效应都出自这一条声子数 $n_B(\omega_{\mathbf{q}}) = (e^{\hbar\omega_{\mathbf{q}}/k_BT} - 1)^{-1}$，自然体现在角亏涨落的统计分布中。临界温度 $T_c$ 对应**正常态与超导态自由能交叉**的临界点。
+
+**平衡态限定**：上述「温度统一进入」是平衡态的统一——平衡态下温度唯一给定声子数，因而唯一给定涨落分布；非平衡态下温度只是控制量之一，涨落分布还依赖制备历史（$T_c$ 闭式的状态依赖接口见 `06 超导/CQM_超导核心理论.md` §11.10）。
 
 **外参量分工**：温度是同步的主要控制参量（直接抑制相干涨落影响跃迁资格 + 熵项调节自由能竞争），压强是量子振荡几何的控制参量（直接改变 $\delta_v$、$\Delta\delta_0$、$\Omega_0$ 影响跃迁资格，高压氢化物超导由此途径），磁场是规范场/拓扑的控制参量（改变自由能差影响同步 + 磁通量子化 $\Phi_n = h/(ne)$ 给出多组临界场 $H_{c1}^{(n)}$、$H_{c2}^{(n)}$）。完整展开见 `06 超导/CQM_超导_专题与扩展.md` §11.5。
 

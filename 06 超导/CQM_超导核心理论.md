@@ -486,6 +486,8 @@ $$\Delta\delta_v(T) = \Delta\delta_0 \sqrt{\frac{1}{1 + 2n_B(\Omega_0)}}$$
 
 其中 $n_B(\Omega_0) = 1/(e^{\hbar\Omega_0/k_BT}-1)$ 是 Bose-Einstein 分布给出的平均声子数，$\Omega_0$ 是主导曲率量子振荡模式频率，$\Delta\delta_0$ 是零温曲率涨落幅度。
 
+**适用边界（平衡态）**：上式的声子占据数取玻色-爱因斯坦平衡分布，它由温度 $T$ **唯一**给定——这是平衡态的定理，不是近似。故本式的前提是体系处在热力学平衡态。若体系未处于平衡态（制备历史未退火、淬火之后、老化之中），声子占据数不再由 $T$ 唯一给定；此时本式中的 $\Delta\delta_0$ 应读作**该状态下**的零温曲率涨落幅度，其取值随制备历史而定（见 §11.10）。$\Delta\delta_0$ 的平衡态值由晶格结构第一性给出（`CQM_超导_专题与扩展.md` §11.14）。
+
 ### 11.2 临界温度（丛作用量竞争，G22 公式推导完成、严格性待提升）
 
 **第一步：涨落幅度的温度依赖闭式。** §11.1 中 $n_B(\Omega_0) = 1/(e^{\hbar\Omega_0/k_BT}-1)$ 满足恒等式：
@@ -724,6 +726,16 @@ $$\boxed{T_c = \frac{\theta_D}{2 \cdot \mathrm{arccoth}(x)}, \quad x = \frac{3\b
 
 > **定位注（arccoth 的统计身份）**：$\mathrm{arccoth}$ 不是任意数学形式，它是玻色-爱因斯坦统计的反函数——声子平均占据数 $\bar{n}=1/(e^{\hbar\omega/k_BT}-1)$ 满足 $\coth(\hbar\omega/2k_BT)=2\bar{n}+1$，故 $T=\hbar\omega/(2k_B\,\mathrm{arccoth}(2\bar{n}+1))$。与本闭式逐项对照：$\theta_D$ 即曲率涨落模式的声子能量标度，$x=2\bar{n}_c+1$，临界占据数 $\bar{n}_c=(x-1)/2=\frac{1}{2}\left(\frac{3\beta^2\Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}-1\right)$，即**曲率涨落强度与谱隙之比**。$T_c$ 的物理含义：曲率涨落模式的玻色-爱因斯坦占据数达到临界值 $\bar{n}_c$ 的温度；超导条件 $x>1$ 即 $\bar{n}_c>0$（占据数非负），与 §9.2 资格条件同向。谱隙分母 $\gamma_2-\gamma_1$ 为黎曼零点差（$\approx 6.887315$）。临界占据数对曲率涨落的平方依赖（$x\propto\Delta\delta_0^2$）是临界现象的本性（对照 BCS 的 $T_c\sim e^{-1/\lambda}$ 指数敏感），$\delta_v$ 的高精度要求由此是物理特征而非缺陷。
 
+#### $\Delta\delta_0$ 的状态依赖与平衡态限定
+
+本闭式是**平衡态闭式**：$\Delta\delta_0$ 取该材料的平衡态零温曲率涨落幅度（由晶格结构第一性给出，`CQM_超导_专题与扩展.md` §11.14），$T$ 取平衡态温度。
+
+**结构性事实**：由 $x\propto\Delta\delta_0^2$ 且 $\mathrm{arccoth}$ 单调减，本闭式对 $\Delta\delta_0$ **单调**——涨落幅度增大 → $x$ 增大 → $T_c$ 升高。这使 $\Delta\delta_0$ 成为闭式中**唯一的状态型输入**：$\theta_D$（声子标度）、$\delta_v$（底空间几何量）、$\gamma_n$（谱常量）都不是状态型的。
+
+**制备历史依赖（开放接口）**：实测量上 $T_c$ 带有制备历史记忆——同一材料经不同制备给出不同 $T_c$，充分退火后收敛（附录 B 文献 [15]–[18]）。本闭式按平衡态取值，故**在结构上无法表达**该依赖：若把 $\Delta\delta_0$ 换为制备依赖值 $\Delta\delta_0[m]$（$m$ 为制备量），闭式的**代数形式不变**，$T_c$ 随之单调移动，且平衡极限（$m\to0$）必须回到本式。
+
+**当前状态**：制备量到 $\Delta\delta_0$ 的定量映射**尚未建立**——本框架未给出制备量与涨落幅度之间的关系式。这是 $T_c$ 闭式的一处未闭合项，记入 G22 的未闭合项（`CQM_超导_专题与扩展.md` §13）。在映射建立之前，不得由本闭式给出任何制备历史相关的数值预言。
+
 #### 元素 vs 超导：同步算符的两种语境
 
 | | 元素语境 | 超导语境 |
@@ -770,7 +782,7 @@ $$\boxed{\begin{aligned}
 
 $$\boxed{\begin{aligned}
 &\text{晶胞量子振荡（声子 = 底空间 Regge 曲率量子）} \longrightarrow \delta_v(t) = \delta_v^{(0)} + \Delta\delta_v(t) \\
-&\Downarrow \;(\text{温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布}) \\
+&\Downarrow \;(\text{平衡态下温度只改变 Bose 分布给出的声子数 } n_B(\omega_{\mathbf{q}})\text{，统一调制 } \Delta\delta_v \text{ 统计分布；非平衡态下该调制不再由 } T \text{ 唯一给定，见 §11.1}) \\
 &\text{不确定性 } \Delta u \cdot \Delta\delta_v \ge \frac{☯\sqrt{\,1-\beta\delta_v\,}}{\beta} \\
 &\Downarrow \\
 &\Delta u_n = 2\ln n \text{ 跃迁 } u \to u+2\ln n \;\longrightarrow\; \alpha\to n^2\alpha \text{（跃迁耦级谱，} n=2,4,6,\ldots\text{）} \\
@@ -799,7 +811,8 @@ $$\boxed{F_1(T_c) = F_2(T_c),\qquad T_c = \frac{E_2 - E_1}{S_2 - S_1}}$$
 “晶胞量子振荡 → $d\tau/dt$ → 不确定性 → 跃迁耦级谱 → 资格条件 → 结构群叠加态（= 同步算符）本征值交叉 → 丛作用量竞争 → 超导”是不可再拆解的单一几何-动力学过程，其结构要点：
 1. **和乐平庸化条件是瓶颈**——并非所有跃迁都成功，条件 $\mathcal{H}_{ij}\approx 1$ 是晶胞量子振荡过程中必须满足的单值性条件；
 2. **空间不均匀性是一阶效应**——赝能隙是条件通过率的空间梯度直接产物；
-3. **温度统一进入**——温度只通过晶胞量子振荡模式的声子数进入角亏涨落统计分布，再生产是自组织的一个环节。
+3. **温度统一进入**——温度只通过晶胞量子振荡模式的声子数进入角亏涨落统计分布，再生产是自组织的一个环节。**该统一是平衡态的统一**：平衡态下温度唯一给定声子数，因而唯一给定涨落分布；非平衡态下温度只是控制量之一，涨落分布还依赖制备历史（§11.1、§11.10）。
+4. **逐事件判据是唯一可容纳历史依赖的环节**——链中的资格条件与和乐平庸化条件都是**逐事件**判据（「本次跃迁能否通过」），而本链把它们用作**静态筛选条件**（筛候选群族），平衡态处理中因此不含通过率的时间结构。制备历史若要进入本链，只能经由这两类判据上的时间结构，或经由 §11.10 的 $\Delta\delta_0$ 状态值；两者都是尚未建立的接口。
 
 > **编号说明**：本文档保留 §13–§16 编号空缺——材料/应用、推导/数值细节与进展/状态内容收录于 `CQM_超导_专题与扩展.md` 对应节（§13 缺口表、§16 状态）。
 
@@ -1014,6 +1027,10 @@ $$\boxed{\text{同步} = \text{全局相位相干} \;\neq\; \text{结构群统�
 12. He et al. (2021). *npj Quantum Information* **7**, 109.（囚禁离子实验：高精度测量最低非平凡黎曼零点）
 13. Sierra (2005). *J. Stat. Mech.* P12006（cond-mat.supr-con）.（Russian doll 超导模型：黎曼零点嵌入超导谱）
 14. Sierra, Townsend (2008). *PRL* **101**, 110201.（Landau 能级与黎曼零点）
+15. Zhang, Zhou, Zhou (2013). Memory effect in the high-temperature superconducting bulks. *Physica C* **495**, 44–47. DOI: 10.1016/j.physc.2013.07.013.（超导块材的 $T_c$ 记忆效应：同一材料经不同制备给出不同 $T_c$，充分退火后收敛）
+16. Ortlepp, Volkmann, Yamanashi (2014). Memory effect in balanced Josephson comparators. *Physica C* **500**, 20–24. DOI: 10.1016/j.physc.2014.02.003.
+17. Uspenskaya, Egorov (2011). Memory effects in permalloy-niobium hybrid structures. arXiv:1112.2359.
+18. Evidence of the Cooper-Pair Field with Gaussian Memory Kernel in Unconventional Superconductors. arXiv:2607.03937.（高斯记忆核作为超导的现象学对象）
 
 ---
 

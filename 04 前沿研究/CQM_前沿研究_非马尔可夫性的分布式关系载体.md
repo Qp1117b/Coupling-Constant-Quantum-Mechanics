@@ -326,6 +326,8 @@ $$K(t)=\bigl\langle e^{-i\omega(v)t}\bigr\rangle_{P(\delta_v)}.$$
 
 每个区域由 $\delta_v(v)$ 给出局域固有时流速 $v_\tau$ 与弛豫时标 $\tau_{\text{relax}}$，从而给出局域频率 $\omega(v)$；对 Regge 角亏分布 $P(\delta_v)$ 平均，得到配对场的记忆因子。若 $P(\delta_v)$ 在相关变量上近似高斯，则 $K(t)\propto e^{-t^2/(2\tau_g^2)}$，核宽 $\tau_g$ 由 $\delta_v$ 的方差与 $\tau_{\text{relax}}$ 共同决定。$\tau_{\text{relax}}$ 是核的特征宽度，不是核本身；完整核仍需声子谱与配对场耦合。
 
+【标准数学】**核的马尔可夫性判定**：平稳高斯过程的协方差 $R(\tau)$ 满足马尔可夫性质，当且仅当 $R(a+b)R(0)=R(a)R(b)$（$a,b>0$）；其连续解为**指数型** $R(\tau)=R(0)e^{-\alpha|\tau|}$，即 Ornstein–Uhlenbeck 型（[17]）。本框架的高斯形核 $R(\tau)=e^{-t^2/(2\tau_g^2)}$ 不满足该条件（两边相差 $ab$），故**在形状上已是非马尔可夫的**；马尔可夫极限是指数形（连续时间）或 $\delta(t)$（理想瞬时），不是高斯形。这与文献 [15] 以高斯记忆核为超导现象学对象一致。**注意**：CQM 的 $K(t)$ 是配对场的**退相干因子**（相位系综平均），不是涨落量自身的相关函数；上述判据用于说明「记忆核」这一对象在数学上天然携带非马尔可夫结构，不用于断言 $\delta_v$ 涨落过程的马尔可夫性。
+
 【旁证】外部工作已把记忆核作为超导的现象学对象：记忆主导的量子临界被视为高温超导的普适路径，慢耗散配对模式同时控制配对增强与动力学响应（[14]）；非常规超导体中给出高斯记忆核的库珀对场证据，并把赝能隙连续谱的重组与相位锁定联系起来（[15]）；飞秒光谱把配对振幅涨落与相位弛豫分开（[16]）。这些结果只作对照，不构成 CQM 的证明；它们说明“记忆核”是实验对象，而 CQM 要补的是它的几何来源。
 
 【分析】**涨落—记忆乘积关系**：在超导核心理论的资格边界上，把资格条件
@@ -428,3 +430,4 @@ $n=2$ 时为 $☯/(2\beta\ln 2)$。其含义是：要在局域驱动 $\Delta u_n
 [15] Evidence of the Cooper-Pair Field with Gaussian Memory Kernel in Unconventional Superconductors. arXiv:2607.03937.
 
 [16] Separating pairing from quantum phase coherence dynamics above the superconducting transition by femtosecond spectroscopy. arXiv:1404.2707.
+[17] Geodakov, B. A. (1980). A Local Markov Property for Gaussian Stationary Processes. *Theory of Probability & Its Applications* **24**, 852–856. DOI: 10.1137/1124100.（平稳高斯过程的马尔可夫判据：马尔可夫 ⟺ 指数型协方差，即 Ornstein–Uhlenbeck 型；另见 Chow, *Ann. Math. Statist.* **40** (1969) 197–202, DOI: 10.1214/aoms/1177697816；Hsu–Park, *Encyclopedia of Statistical Sciences*, DOI: 10.1002/0471667196.ess1883）
