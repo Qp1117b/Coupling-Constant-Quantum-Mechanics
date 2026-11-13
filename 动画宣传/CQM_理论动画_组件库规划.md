@@ -122,10 +122,23 @@ claimIds: [C05]
 | `NumberSpectrum` | 黎曼零点、临界线（仅短片） | `zeros`、`criticalLine`、`highlight` | SVG／Manim | P2 |
 | `CosmologyBoundary` | 反物质引力实验边界（仅短片） | `experiments`、`bounds`、`labels` | SVG | P2 |
 | `CodeStream` | Lean 代码流 | `lines`、`highlight`、`speed` | SVG／HTML | P2 |
+| **`DerivationChain`** | **一条推导链的容器**（串起锚点→代入→中间量→落定→设定／缺口） | `steps`、`state`、`highlight`、`speed` | SVG／R3F／Manim | **P0** |
+| **`AnchorFrame`** | 锚点框：上一步的依据（公理／定义／已证式），**双线金框** | `latex`、`source`、`role` | SVG／Manim／HTML | **P0** |
+| **`SubstArrow`** | 代入箭头：虚线 ＋ 逐项替换高亮 | `from`、`to`、`terms`、`progress` | SVG／R3F | **P0** |
+| **`InterimBox`** | 中间量：演算中新出现的量，白字细框，落在等号右侧 | `latex`、`role` | SVG／Manim | **P0** |
+| **`SettleFrame`** | 落定框：实线青框 ＋ 数字逐位落定 | `latex`、`digits`、`sound` | SVG／Manim | **P0** |
+| **`AssumptionTag`** | **设定标记**：这一步**没有**推导（框架设定）——琥珀虚框 ＋ 角标「设定」 | `latex`、`role`、`note` | SVG／Manim／HTML | **P0** |
+| **`GapBreak`** | 缺口标记：链的终点仍缺一步——琥珀断环 ＋ 角标「缺：⋯」 | `missing`、`note` | SVG／Manim | **P0** |
 
-**MVP 只做 8 个 P0 组件**：`NodeGraph`、`PhaseRing`、`Simplex4D`、`LayerStack`、`StatusBadge`、`FormulaCard`、`CameraRig`、`CaptionSystem`。P1／P2 在分镜锁定后再做，避免过度工程。v0.2 的第六幕依赖 `DecoherenceFork`、`CartanLattice`、`TcCurve`，这三个 P1 应优先于其他 P1。
+**MVP 的 15 个 P0 组件**：`NodeGraph`、`PhaseRing`、`Simplex4D`、`LayerStack`、`StatusBadge`、`FormulaCard`、`CameraRig`、`CaptionSystem` ＋ **演算链族 7 个**（`DerivationChain`、`AnchorFrame`、`SubstArrow`、`InterimBox`、`SettleFrame`、`AssumptionTag`、`GapBreak`）。
 
-### 幕—组件映射
+**演算链族是 v3.0 的核心**：v3.0 §三 要求「演算链上镜」，故这 7 个组件不是可选项——**没有它们，全片只能退回成环节图**。其中 `AssumptionTag` 与 `GapBreak` 承担**诚实性**：观众必须能在每一刻分辨「推导」与「设定」。
+
+P1／P2 在分镜锁定后再做，避免过度工程。原 v0.2 第六幕依赖的 `DecoherenceFork`、`CartanLattice`、`TcCurve` 三个 P1 仍优先于其他 P1。
+
+### 部—章—组件映射
+
+> **本表已按 v3.0 的 2 部 / 12 章重排**；逐章的上屏公式与推导链见 `CQM_理论动画_上屏白名单与演算链清单.md`，本表只给主组件。**所有章都用到演算链族 7 个组件**。
 
 | 幕 | 主组件 | 备注 |
 |:---|:---|:---|
