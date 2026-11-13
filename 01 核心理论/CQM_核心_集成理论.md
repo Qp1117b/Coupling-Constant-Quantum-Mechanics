@@ -1277,3 +1277,9 @@ CQM 的核心创新始终只有一点：**把量子力学的共轭对从 $(\hat{
 21. Particle Data Group (2022). Review of Particle Physics. *Prog. Theor. Exp. Phys.*, 083C01.
 22. Tiesinga, E., et al. (2021). CODATA Recommended Values of the Fundamental Physical Constants: 2018. *Rev. Mod. Phys.*, 93, 025010.（正文所引 $G_N$ 与 $\alpha$ 数值与 CODATA 2022 收敛值一致）
 23. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
+
+---
+
+## 延伸阅读：关系性本体论与 Symm/TO
+
+`04 前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md` §5.3、§6.2 把 §11.5 的 $2e/4e$ 与 $U(1)//Z_n$ 读成关系整体重组与 SymTFT 边界凝聚；该卷不改变本节公式、数值与 $T_c$ 口径，只提供本体论与群论／拓扑层的解释。
