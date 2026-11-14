@@ -47,7 +47,7 @@
 {"id": "A030", "relation": "依赖", "premises": ["GRH"], "conclusion": "RH", "premise_concept_ids": ["C052"], "conclusion_concept_id": "C051", "source_doc": ["D028"], "is_recomposition": false}
 {"id": "A031", "relation": "依赖", "premises": ["朗兰兹函子性"], "conclusion": "自守形式", "premise_concept_ids": ["C080"], "conclusion_concept_id": "C040", "source_doc": ["D020"], "is_recomposition": false}
 {"id": "A032", "relation": "层级含于", "premises": ["超导同步算符"], "conclusion": "同步算符", "premise_concept_ids": ["C069"], "conclusion_concept_id": "C012", "source_doc": ["D030"], "is_recomposition": false}
-{"id": "A033", "relation": "依赖", "premises": ["赝能隙"], "conclusion": "临界温度", "premise_concept_ids": ["C072"], "conclusion_concept_id": "C070", "source_doc": ["D031"], "is_recomposition": false}
+{"id": "A033", "relation": "依赖", "premises": ["赝能隙"], "conclusion": "临界温度", "premise_concept_ids": ["C072"], "conclusion_concept_id": "C070", "source_doc": ["D030"], "is_recomposition": false}
 {"id": "A034", "relation": "依赖", "premises": ["海森堡代数"], "conclusion": "耦合动量", "premise_concept_ids": ["C062"], "conclusion_concept_id": "C061", "source_doc": ["D008"], "is_recomposition": false}
 {"id": "A035", "relation": "依赖", "premises": ["结构群叠加态"], "conclusion": "候选群族", "premise_concept_ids": ["C065"], "conclusion_concept_id": "C066", "source_doc": ["D030"], "is_recomposition": false}
 {"id": "A036", "relation": "依赖", "premises": ["主导群"], "conclusion": "候选群族", "premise_concept_ids": ["C068"], "conclusion_concept_id": "C066", "source_doc": ["D030"], "is_recomposition": false}
