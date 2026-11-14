@@ -1516,358 +1516,358 @@
 {"doc_id": "D005", "sid": 1039, "start": 55708, "end": 55731, "kind": "heading", "text": "## 延伸阅读：关系性本体论与 Symm/TO"}
 {"doc_id": "D005", "sid": 1040, "start": 55733, "end": 55832, "kind": "prose", "text": "`04 前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md` §5.3、§6.2 把 §11.5 的 $2e/4e$ 与 $U(1)//Z_n$ 读成关系整体重组与 SymTFT 边界凝聚；"}
 {"doc_id": "D005", "sid": 1041, "start": 55832, "end": 55872, "kind": "prose", "text": "该卷不改变本节公式、数值与 $T_c$ 口径，只提供本体论与群论／拓扑层的解释。"}
-{"doc_id": "D006", "sid": 0, "start": 0, "end": 25, "kind": "heading", "text": "# CQM 核心：两种引力存在论前提与中子缺陷矩阵"}
-{"doc_id": "D006", "sid": 1, "start": 27, "end": 40, "kind": "prose", "text": "**作者**：ruster"}
-{"doc_id": "D006", "sid": 2, "start": 42, "end": 191, "kind": "quote", "text": "> CQM 的核心论断：**引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果条件**，并按因果结构的不同深度与广度分化：**FG 与 GR 是引力的两种形态**，前置于其上的**前时空**是引力的前层（不属引力）。"}
-{"doc_id": "D006", "sid": 3, "start": 191, "end": 215, "kind": "quote", "text": "三者同源，都是退相干机制在不同存在论层级的表现。"}
-{"doc_id": "D006", "sid": 4, "start": 215, "end": 271, "kind": "quote", "text": "**引力是因果同步的必要前提**——有引力才有可能发生因果同步，但引力本身不充分，因果同步的发生还需要其他条件。"}
-{"doc_id": "D006", "sid": 5, "start": 272, "end": 560, "kind": "quote", "text": "> 相关 Lean 形式化见 `08 理论组织和形式化框架/04_Lean对接/Lean源码/GN`（`GN/TripleIdentity` 的 $☯$ 谱参数、`GN/Constructions` 的 $G_N$ 谱公式）与 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity`：`SPAF`（中子缺陷矩阵 `neutronDefect`）、`MolecularGeometry`（Regge 角亏 `deficitAngleDensity`、自由/束缚中子缺陷）、`BridgeTheorems`（角亏—Ricci 关系）。"}
-{"doc_id": "D006", "sid": 6, "start": 560, "end": 588, "kind": "quote", "text": "超导机制见 `06 超导/CQM_超导核心理论.md`。"}
-{"doc_id": "D006", "sid": 7, "start": 588, "end": 659, "kind": "quote", "text": "缺口编号 N1–N4 为本文独立编号系，不可与 G 系混用（G9–G22 的权威定义见 `06 超导/CQM_超导核心理论.md` §13）。"}
-{"doc_id": "D006", "sid": 8, "start": 661, "end": 664, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 9, "start": 666, "end": 697, "kind": "heading", "text": "## 一、前时空与两种引力：同一种因果场在三个存在论层级的分化"}
-{"doc_id": "D006", "sid": 10, "start": 699, "end": 733, "kind": "prose", "text": "CQM 的核心论断是：**引力不是一种力，而是物质自组织的因果条件。"}
-{"doc_id": "D006", "sid": 11, "start": 733, "end": 794, "kind": "prose", "text": "** 它根据因果结构的不同深度和广度分化：**FG 与 GR 是引力的两种形态**，**前时空**在引力之前（不属引力）。"}
-{"doc_id": "D006", "sid": 12, "start": 794, "end": 825, "kind": "prose", "text": "三者不是三种不同的力，而是同一种因果场在不同因果层级上的表现。"}
-{"doc_id": "D006", "sid": 13, "start": 827, "end": 848, "kind": "heading", "text": "### 1. 前时空：物质处于前时空的状态"}
-{"doc_id": "D006", "sid": 14, "start": 850, "end": 861, "kind": "heading", "text": "#### 1.1 定位"}
-{"doc_id": "D006", "sid": 15, "start": 863, "end": 904, "kind": "prose", "text": "前时空就是**物质处于前时空的状态**（先于引力），是全部后续层级展开的逻辑地基。"}
-{"doc_id": "D006", "sid": 16, "start": 904, "end": 936, "kind": "prose", "text": "它是关于**物质如何从无限的“质”中自组织为有限本体**的理论。"}
-{"doc_id": "D006", "sid": 17, "start": 938, "end": 951, "kind": "heading", "text": "#### 1.2 物理本质"}
-{"doc_id": "D006", "sid": 18, "start": 953, "end": 1004, "kind": "prose", "text": "前时空层的物理实在不在普朗克尺度的“时空泡沫”中，也不在质子／中子的禁闭内部——禁闭内部只是 QCD。"}
-{"doc_id": "D006", "sid": 19, "start": 1004, "end": 1068, "kind": "prose", "text": "无量纲不确定性关系、固有时流速涨落、角亏量子涨落与同步算符的紧化作用，就是 **FG** 的内容（CQM 不设独立的量子引力层；"}
-{"doc_id": "D006", "sid": 20, "start": 1068, "end": 1096, "kind": "prose", "text": "`02 量子引力/CQM_引力_量子引力讨论.md`）。"}
-{"doc_id": "D006", "sid": 21, "start": 1096, "end": 1114, "kind": "prose", "text": "它的核心是**耦合常数的量子化**。"}
-{"doc_id": "D006", "sid": 22, "start": 1116, "end": 1129, "kind": "heading", "text": "#### 1.3 数学结构"}
-{"doc_id": "D006", "sid": 23, "start": 1131, "end": 1146, "kind": "prose", "text": "前时空对应**物质自组织**。"}
-{"doc_id": "D006", "sid": 24, "start": 1146, "end": 1173, "kind": "prose", "text": "其谱结构经 GL(5) 紧化投影与黎曼非平凡零点有关："}
-{"doc_id": "D006", "sid": 25, "start": 1175, "end": 1255, "kind": "prose", "text": "$$\\boxed{\\text{黎曼零点 } \\gamma_n \\quad \\Longleftrightarrow \\quad \\text{物质自组织模式}}$$"}
-{"doc_id": "D006", "sid": 26, "start": 1257, "end": 1358, "kind": "prose", "text": "黎曼零点谱是 GL(5) 固定层级经紧化投影 $\\hat{\\mathcal{S}}_0$ 给出的谱（前时空层，自组织的最原始形式）——作为“资格审查”的原始形态，它决定物质能否以有限本体形式自组织出来。"}
-{"doc_id": "D006", "sid": 27, "start": 1360, "end": 1365, "kind": "prose", "text": "核心参数："}
-{"doc_id": "D006", "sid": 28, "start": 1367, "end": 1429, "kind": "prose", "text": "$$☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1} \\approx 0.02309570897$$"}
-{"doc_id": "D006", "sid": 29, "start": 1431, "end": 1476, "kind": "prose", "text": "$$\\mathfrak{c}_n = \\frac{1}{4} + \\gamma_n^2$$"}
-{"doc_id": "D006", "sid": 30, "start": 1478, "end": 1546, "kind": "prose", "text": "其中 $\\mathfrak{c}_1 = \\frac{1}{4} + \\gamma_1^2 = 200.04045483$ 是第一耦级。"}
-{"doc_id": "D006", "sid": 31, "start": 1548, "end": 1571, "kind": "prose", "text": "这些参数都是无量纲数学纯数，直接来自解析数论。"}
-{"doc_id": "D006", "sid": 32, "start": 1573, "end": 1584, "kind": "heading", "text": "#### 1.4 功能"}
-{"doc_id": "D006", "sid": 33, "start": 1586, "end": 1608, "kind": "prose", "text": "前时空使物质能以**有限本体**的形式展开。"}
-{"doc_id": "D006", "sid": 34, "start": 1608, "end": 1744, "kind": "prose", "text": "它是最原始的自组织：将无限的“质”（质数是其生成元）组织成有限的可再生物理系统（质子／中子）——**有限本体的形成以禁闭边界的形成为标志**：前质子／前中子**已经处于 $SU(5)$**，禁闭形成时才组织出 $U(1)\\times SU(2)\\times SU(3)$。"}
-{"doc_id": "D006", "sid": 35, "start": 1746, "end": 1784, "kind": "prose", "text": "$$\\text{pre} = \\text{物质对无限的“质”进行自组织}$$"}
-{"doc_id": "D006", "sid": 36, "start": 1786, "end": 1799, "kind": "heading", "text": "#### 1.5 关键性质"}
-{"doc_id": "D006", "sid": 37, "start": 1801, "end": 1823, "kind": "list", "text": "- **基底幺正**：禁闭内部演化是幺正的。"}
-{"doc_id": "D006", "sid": 38, "start": 1824, "end": 1843, "kind": "list", "text": "- **因果序尚未展开**：尚未分化。"}
-{"doc_id": "D006", "sid": 39, "start": 1844, "end": 1894, "kind": "list", "text": "- **规范前结构**：U(1)×SU(2)×SU(3) 处于潜在/未分化状态，等待退相干后的涌现。"}
-{"doc_id": "D006", "sid": 40, "start": 1895, "end": 1929, "kind": "list", "text": "- **前源**：能动张量、角亏、电荷等概念尚未分化（无内外之分）。"}
-{"doc_id": "D006", "sid": 41, "start": 1930, "end": 1958, "kind": "list", "text": "- **基础性**：它是全部层级中最底层的（先于引力）。"}
-{"doc_id": "D006", "sid": 42, "start": 1960, "end": 1983, "kind": "heading", "text": "### 2. 经典引力（GR）：广度存在论前提"}
-{"doc_id": "D006", "sid": 43, "start": 1985, "end": 1996, "kind": "heading", "text": "#### 2.1 定位"}
-{"doc_id": "D006", "sid": 44, "start": 1998, "end": 2069, "kind": "prose", "text": "经典引力是前时空退相干后涌现的**平庸因果网络**（时空本身），是两种引力中的**广度前提（平滑展开）**，覆盖从核子到可观测宇宙的最大尺度。"}
-{"doc_id": "D006", "sid": 45, "start": 2069, "end": 2131, "kind": "prose", "text": "在因果网络状态的分类中，GR 是**基态（平庸态）**：双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。"}
-{"doc_id": "D006", "sid": 46, "start": 2131, "end": 2164, "kind": "prose", "text": "此处“基态”是因果网络状态的存在论分类，不是量子力学真空态的意义。"}
-{"doc_id": "D006", "sid": 47, "start": 2166, "end": 2179, "kind": "heading", "text": "#### 2.2 物理本质"}
-{"doc_id": "D006", "sid": 48, "start": 2181, "end": 2214, "kind": "prose", "text": "经典引力不是独立的力，而是**退相干后的平庸因果网络**（基态）。"}
-{"doc_id": "D006", "sid": 49, "start": 2214, "end": 2229, "kind": "prose", "text": "这个平庸因果网络就是时空本身。"}
-{"doc_id": "D006", "sid": 50, "start": 2229, "end": 2305, "kind": "prose", "text": "其本体根基是质子/中子的平庸关系网络：GR 是物质复杂关系网络被平滑化后的形态——微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量。"}
-{"doc_id": "D006", "sid": 51, "start": 2305, "end": 2342, "kind": "prose", "text": "物质由此被统计为能量密度，在背景中被动运动，失去了作为网络构成者的主体性。"}
-{"doc_id": "D006", "sid": 52, "start": 2344, "end": 2392, "kind": "prose", "text": "$$\\text{GR} = \\text{前时空退相干后涌现的平庸因果网络（时空 = 基态）}$$"}
-{"doc_id": "D006", "sid": 53, "start": 2394, "end": 2407, "kind": "heading", "text": "#### 2.3 数学结构"}
-{"doc_id": "D006", "sid": 54, "start": 2409, "end": 2459, "kind": "prose", "text": "经典引力对应**伪黎曼流形** $(M,g_{\\mu\\nu})$——时空流形是平滑化的物质分布抽象。"}
-{"doc_id": "D006", "sid": 55, "start": 2459, "end": 2475, "kind": "prose", "text": "其核心是测地线限制和狭义相对论。"}
-{"doc_id": "D006", "sid": 56, "start": 2477, "end": 2504, "kind": "list", "text": "- **底空间**：时空流形（物质分布的平滑化抽象）。"}
-{"doc_id": "D006", "sid": 57, "start": 2504, "end": 2591, "kind": "list", "text": "规范/纤维结构为 U(1)×SU(2)×SU(3) 三丛在平庸底空间上的平滑展开——U(1)×SU(2)×SU(3) 与三维空间相关，切空间是三维空间的线性化、同质化的表现；"}
-{"doc_id": "D006", "sid": 58, "start": 2592, "end": 2664, "kind": "list", "text": "- **源**：能动张量 $T_{\\mu\\nu}$，源的位置是外部的（表现）——源作为内容作用于背景，但 GR 实际上并无独立于物质的先验背景；"}
-{"doc_id": "D006", "sid": 59, "start": 2665, "end": 2774, "kind": "list", "text": "- **联络与曲率**：引力场由 Levi-Civita 联络描述，曲率是黎曼曲率张量 $R^\\rho_{\\sigma\\mu\\nu}$，其作用是测地线限制——决定已有经典实体在平庸背景中的运动轨迹，不参与新层级的创生；"}
-{"doc_id": "D006", "sid": 60, "start": 2775, "end": 2783, "kind": "list", "text": "- 测地线方程："}
-{"doc_id": "D006", "sid": 61, "start": 2785, "end": 2889, "kind": "prose", "text": "$$\\frac{d^2x^\\mu}{d\\tau^2} + \\Gamma^\\mu_{\\alpha\\beta}\\frac{dx^\\alpha}{d\\tau}\\frac{dx^\\beta}{d\\tau} = 0$$"}
-{"doc_id": "D006", "sid": 62, "start": 2891, "end": 2904, "kind": "heading", "text": "#### 2.4 核心公式"}
-{"doc_id": "D006", "sid": 63, "start": 2906, "end": 2924, "kind": "prose", "text": "CQM 给出牛顿引力常数的可能公式："}
-{"doc_id": "D006", "sid": 64, "start": 2926, "end": 3077, "kind": "prose", "text": "$$\\boxed{G_N = \\frac{\\hbar c}{m_p^2} \\cdot I \\cdot \\lambda_c \\cdot ☯^2 \\cdot \\mathfrak{c}_1 \\cdot \\exp\\left(-\\frac{2}{☯}\\right) \\cdot (1 + \\kappa ☯)}$$"}
-{"doc_id": "D006", "sid": 65, "start": 3079, "end": 3082, "kind": "prose", "text": "其中："}
-{"doc_id": "D006", "sid": 66, "start": 3083, "end": 3145, "kind": "list", "text": "- $I = 5/3$ 是 SU(5) Dynkin 指数比 $T(\\mathbf{24})/T(\\mathbf{8})$；"}
-{"doc_id": "D006", "sid": 67, "start": 3146, "end": 3243, "kind": "list", "text": "- $\\lambda_c = 1.316022911$ 是 Mathieu 临界方程 $\\lambda_{\\min}(q_c) = 2q_c$ 的唯一根（$\\lambda_c = 4q_c$）；"}
-{"doc_id": "D006", "sid": 68, "start": 3244, "end": 3285, "kind": "list", "text": "- $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1}$；"}
-{"doc_id": "D006", "sid": 69, "start": 3286, "end": 3324, "kind": "list", "text": "- $\\mathfrak{c}_1 = 1/4 + \\gamma_1^2$；"}
-{"doc_id": "D006", "sid": 70, "start": 3325, "end": 3348, "kind": "list", "text": "- $\\kappa = (31+☯)/30$。"}
-{"doc_id": "D006", "sid": 71, "start": 3350, "end": 3441, "kind": "prose", "text": "该公式与实验值偏差约 -3 ppm（构造后验数字校验，待第三方独立复现；该构造式为框架内构造公式（七因子乘积在本文档内**无推导链路**），未被主流学界接受为公认的独立第一性推导）。"}
-{"doc_id": "D006", "sid": 72, "start": 3443, "end": 3454, "kind": "heading", "text": "#### 2.5 功能"}
-{"doc_id": "D006", "sid": 73, "start": 3456, "end": 3497, "kind": "prose", "text": "经典引力覆盖整个可观测宇宙，使物质能够聚集成星体、星系，时空得以弯曲成宇宙学结构。"}
-{"doc_id": "D006", "sid": 74, "start": 3497, "end": 3572, "kind": "prose", "text": "它是平庸因果网络（时空）——物质关系网络平滑化后的背景表现；FG 的底空间不是这个平滑流形，而是物质晶胞分布的 Regge 抽象本身（见 §3.3）。"}
-{"doc_id": "D006", "sid": 75, "start": 3574, "end": 3587, "kind": "heading", "text": "#### 2.6 关键性质"}
-{"doc_id": "D006", "sid": 76, "start": 3589, "end": 3623, "kind": "list", "text": "- **受 $G_N$ 限制**：在凝聚态尺度，经典引力完全可忽略。"}
-{"doc_id": "D006", "sid": 77, "start": 3624, "end": 3666, "kind": "list", "text": "- **平庸性**：它是退相干后的“背景”（基态），是精细引力（激发态）存在的前提。"}
-{"doc_id": "D006", "sid": 78, "start": 3666, "end": 3678, "kind": "list", "text": "GR 对应平庸因果网络。"}
-{"doc_id": "D006", "sid": 79, "start": 3679, "end": 3709, "kind": "list", "text": "- **广度性**：从核子到宇宙，经典引力在最大尺度上有效。"}
-{"doc_id": "D006", "sid": 80, "start": 3710, "end": 3780, "kind": "list", "text": "- **无层级创生**：物质始终停留在经典质点/场层级，无法解释电子、库珀对等如何从更基本组分中涌现——层级创生属于 FG（见 §3.6）。"}
-{"doc_id": "D006", "sid": 81, "start": 3782, "end": 3805, "kind": "heading", "text": "### 3. 精细引力（FG）：深度存在论前提"}
-{"doc_id": "D006", "sid": 82, "start": 3807, "end": 3818, "kind": "heading", "text": "#### 3.1 定位"}
-{"doc_id": "D006", "sid": 83, "start": 3820, "end": 3930, "kind": "prose", "text": "精细引力是两种引力中的**深度前提（层级激发）**：它**不是独立的“第三种力”，而是 GR 基态的非平庸激发态**——物质在凝聚态内部层级上通过自组织构造出的非平庸因果网络，是连接前时空与 GR（平滑时空）的关键中介。"}
-{"doc_id": "D006", "sid": 84, "start": 3930, "end": 3983, "kind": "prose", "text": "“非平庸”指相对于 GR 的平庸因果网络（时空），FG 在 Regge 铰链几何上引入了非零曲率（角亏）；"}
-{"doc_id": "D006", "sid": 85, "start": 3983, "end": 4030, "kind": "prose", "text": "“激发态”按因果网络状态定义（物质自组织构造的层级态/非平庸态），不是量子力学真空激发的意义。"}
-{"doc_id": "D006", "sid": 86, "start": 4032, "end": 4045, "kind": "heading", "text": "#### 3.2 物理本质"}
-{"doc_id": "D006", "sid": 87, "start": 4047, "end": 4082, "kind": "prose", "text": "精细引力的本体根基是**物质晶胞**——原子/分子构成的实际物质实体。"}
-{"doc_id": "D006", "sid": 88, "start": 4082, "end": 4135, "kind": "prose", "text": "物质晶胞抽象为 **Regge 晶胞**（离散几何：顶点、边、二面角、角亏），构成 FG 的非平庸底空间。"}
-{"doc_id": "D006", "sid": 89, "start": 4135, "end": 4167, "kind": "prose", "text": "**物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同。"}
-{"doc_id": "D006", "sid": 90, "start": 4167, "end": 4235, "kind": "prose", "text": "** FG 的因果网络状态是**激发态（层级态/非平庸态）**：物质在自身内部构造出的非平庸因果网络，具有内禀的离散几何结构和层级深度。"}
-{"doc_id": "D006", "sid": 91, "start": 4237, "end": 4256, "kind": "prose", "text": "精细引力不是测地线限制，也不是吸引力。"}
-{"doc_id": "D006", "sid": 92, "start": 4256, "end": 4351, "kind": "prose", "text": "它的动力学表现是双曲率通道（§3.3）：**耦合空间中的固有时流速效应**——Regge 曲率进入不确定性关系的通道（§3.4），以及伴丛曲率参与的伴丛运动方程 $D*F=*J_\\Phi$。"}
-{"doc_id": "D006", "sid": 93, "start": 4351, "end": 4383, "kind": "prose", "text": "二者均由物质晶胞分布的内禀不均匀性（Regge 角亏）直接产生。"}
-{"doc_id": "D006", "sid": 94, "start": 4385, "end": 4442, "kind": "prose", "text": "$$\\text{FG} = \\text{GR 基态（平庸因果网络）的非平庸激发态（层级因果网络 = 纤维丛）}$$"}
-{"doc_id": "D006", "sid": 95, "start": 4444, "end": 4457, "kind": "heading", "text": "#### 3.3 数学结构"}
-{"doc_id": "D006", "sid": 96, "start": 4459, "end": 4499, "kind": "prose", "text": "精细引力对应 **双曲率结构**（底空间 Regge 离散曲率 + 伴丛曲率）。"}
-{"doc_id": "D006", "sid": 97, "start": 4501, "end": 4554, "kind": "list", "text": "- **底空间**：物质晶胞分布（实际物质布局）→ Regge 晶胞分布（离散几何抽象）→ FG 底空间。"}
-{"doc_id": "D006", "sid": 98, "start": 4554, "end": 4573, "kind": "list", "text": "**底空间是物质自组织的空间形态本身。"}
-{"doc_id": "D006", "sid": 99, "start": 4573, "end": 4575, "kind": "list", "text": "**"}
-{"doc_id": "D006", "sid": 100, "start": 4576, "end": 4628, "kind": "list", "text": "- **规范/纤维结构**：先在的 U(1)×SU(2)×SU(3) × 物质自组织展开（无限/未定）。"}
-{"doc_id": "D006", "sid": 101, "start": 4628, "end": 4727, "kind": "list", "text": "这三个规范丛不是 FG 创造的，而是物质自组织在内部层级上内禀的基态结构；在此基础之上，物质可进一步自组织出更复杂的内部层级（如 $A_4$ 根空间、SU(4) 内部对称性等），展开方向无限、未定。"}
-{"doc_id": "D006", "sid": 102, "start": 4727, "end": 4826, "kind": "list", "text": "耦合坐标 $u = \\ln r$（$r$ 为总耦合强度，在超导问题中 $r$ 即精细结构常数 $\\alpha$，见 `06 超导/CQM_超导核心理论.md` §8.1）是自组织展开方向的坐标实现。"}
-{"doc_id": "D006", "sid": 103, "start": 4827, "end": 4882, "kind": "list", "text": "- **三维空间关联**：U(1)×SU(2)×SU(3) 三个规范丛在 FG 底空间上的展开与三维空间相关。"}
-{"doc_id": "D006", "sid": 104, "start": 4882, "end": 4934, "kind": "list", "text": "这三个丛是先在的基态结构，在物质晶胞构成的非平庸底空间上展开；物质自组织可在此基础上进一步展开额外结构。"}
-{"doc_id": "D006", "sid": 105, "start": 4935, "end": 4984, "kind": "list", "text": "- **源**：物质晶胞分布的内禀不均匀性，由 Regge 角亏 $\\delta_v$ 几何度量。"}
-{"doc_id": "D006", "sid": 106, "start": 4984, "end": 4999, "kind": "list", "text": "角亏是物质组织形态的缺陷度量。"}
-{"doc_id": "D006", "sid": 107, "start": 4999, "end": 5023, "kind": "list", "text": "源的位置是**内禀的：源即底空间自身的结构**。"}
-{"doc_id": "D006", "sid": 108, "start": 5024, "end": 5121, "kind": "list", "text": "- **联络**：$\\mathcal{A}_{\\text{FG}}$，由 Regge 晶胞分步生成——物质晶胞分布的不均匀性直接构成角亏 $\\delta_v$，Regge 晶胞据此逐步构造联络。"}
-{"doc_id": "D006", "sid": 109, "start": 5122, "end": 5265, "kind": "list", "text": "- **双曲率**：**Regge 曲率**（离散角亏 $\\delta_v$，底空间几何缺陷）与**伴丛曲率** $F = d\\mathcal{A} + \\mathcal{A}\\wedge\\mathcal{A}$（和乐 $W_v = \\exp(i\\delta_v \\hat{T})$）。"}
-{"doc_id": "D006", "sid": 110, "start": 5265, "end": 5323, "kind": "list", "text": "联络 $\\mathcal{A}_{\\text{FG}}$ 由 Regge 曲率生成，但伴丛曲率按规范场规则独立定义。"}
-{"doc_id": "D006", "sid": 111, "start": 5323, "end": 5457, "kind": "list", "text": "**二者共用一个联络，但遵循不同的数学规则**：Regge 曲率参与不确定性关系（$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$，§3.4），伴丛曲率参与伴丛运动方程（$D*F=*J_\\Phi$）。"}
-{"doc_id": "D006", "sid": 112, "start": 5459, "end": 5464, "kind": "prose", "text": "顶点角亏："}
-{"doc_id": "D006", "sid": 113, "start": 5466, "end": 5533, "kind": "prose", "text": "$$\\boxed{\\delta_v = 2\\pi - \\sum_{\\Delta\\ni v}\\theta_v^{(\\Delta)}}$$"}
-{"doc_id": "D006", "sid": 114, "start": 5535, "end": 5602, "kind": "prose", "text": "这是底空间（Regge 晶胞分布）的几何缺陷，度量物质晶胞分布的内禀不均匀性，**不受 $G_N$ 限制**，量级可达 $O(1)$。"}
-{"doc_id": "D006", "sid": 115, "start": 5604, "end": 5633, "kind": "heading", "text": "#### 3.4 核心机制：曲率的自我展开与固有时流速效应"}
-{"doc_id": "D006", "sid": 116, "start": 5635, "end": 5715, "kind": "prose", "text": "FG 的曲率作用是**自组织**：物质通过角亏—联络—曲率机制**自我展开**——晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对。"}
-{"doc_id": "D006", "sid": 117, "start": 5715, "end": 5733, "kind": "prose", "text": "曲率是物质自组织过程的内禀因果条件。"}
-{"doc_id": "D006", "sid": 118, "start": 5733, "end": 5784, "kind": "prose", "text": "在此链条中，物质同时是网络构成者（晶胞构造底空间）与曲率源（角亏生成联络），新层级在此网络中持续涌现。"}
-{"doc_id": "D006", "sid": 119, "start": 5786, "end": 5815, "kind": "prose", "text": "固有时流速效应是 Regge 曲率进入不确定性关系的通道。"}
-{"doc_id": "D006", "sid": 120, "start": 5815, "end": 5838, "kind": "prose", "text": "固有时 = 再生产周期 = 因果时的几何化身。"}
-{"doc_id": "D006", "sid": 121, "start": 5840, "end": 5877, "kind": "prose", "text": "在弯曲的耦合空间中，固有时流速（固有时与坐标时之比，基准 1）由角亏调制："}
-{"doc_id": "D006", "sid": 122, "start": 5879, "end": 5962, "kind": "prose", "text": "$$\\boxed{\\frac{d\\tau}{dt} = \\sqrt{1 - \\beta \\,\\delta_v}} \\quad \\textbf{(FG 因果假设)}$$"}
-{"doc_id": "D006", "sid": 123, "start": 5964, "end": 6035, "kind": "prose", "text": "其中 $\\beta$ 是 FG 几何耦合参数（不同于网络刚度 $\\beta_{\\text{sync}}$），$\\delta_v$ 是局域角亏。"}
-{"doc_id": "D006", "sid": 124, "start": 6035, "end": 6082, "kind": "prose", "text": "角亏 $\\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\\tau/dt<1$）；"}
-{"doc_id": "D006", "sid": 125, "start": 6082, "end": 6138, "kind": "prose", "text": "小角亏极限 $\\sqrt{1-\\beta\\delta_v}\\approx 1-\\beta\\delta_v/2$；"}
-{"doc_id": "D006", "sid": 126, "start": 6138, "end": 6171, "kind": "prose", "text": "平直极限 $\\delta_v=0$ 时 $d\\tau/dt=1$。"}
-{"doc_id": "D006", "sid": 127, "start": 6171, "end": 6230, "kind": "prose", "text": "此公式是 FG 核心机制的核心**假设**（形式化见 `CouplingSpace.properTimeFlow`）。"}
-{"doc_id": "D006", "sid": 128, "start": 6230, "end": 6329, "kind": "prose", "text": "由同一接口，记忆核的空间不均匀性可写为局域弛豫时标 $\\tau_{\\text{relax}} \\propto (d\\tau/dt)^{-1} = (1-\\beta\\delta_v)^{-1/2}$；"}
-{"doc_id": "D006", "sid": 129, "start": 6329, "end": 6423, "kind": "prose", "text": "系数来源属【待推】，见 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §6.6（形式化见 `NonMarkovianity.relaxationTime`）。"}
-{"doc_id": "D006", "sid": 130, "start": 6425, "end": 6457, "kind": "prose", "text": "这与 GR 中固有时由引力势决定的公式结构完全对应（弱场极限）："}
-{"doc_id": "D006", "sid": 131, "start": 6459, "end": 6525, "kind": "prose", "text": "$$\\frac{d\\tau}{dt} = \\sqrt{-g_{00}} \\approx 1 + \\frac{\\Phi}{c^2}$$"}
-{"doc_id": "D006", "sid": 132, "start": 6527, "end": 6711, "kind": "prose", "text": "Regge 曲率由此进入不确定性关系：$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$——角亏涨落经固有时流速涨落 $\\Delta v_\\tau$，强制总耦合强度 $r$ 产生相对涨落 $\\Delta r/\\langle r\\rangle \\simeq \\Delta u$（$u = \\ln r$）。"}
-{"doc_id": "D006", "sid": 133, "start": 6711, "end": 6816, "kind": "prose", "text": "曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\\Delta u \\cdot \\Delta\\delta_v \\ge ☯\\sqrt{1-\\beta\\delta_v}/\\beta$ 见超导文档 §8。"}
-{"doc_id": "D006", "sid": 134, "start": 6816, "end": 6934, "kind": "prose", "text": "**不确定性关系 $\\Delta u \\cdot \\Delta v_\\tau \\geq ☯/2$（$\\Delta u \\simeq \\Delta r/\\langle r\\rangle$，$u = \\ln r$），$☯$ 为相变量子**。"}
-{"doc_id": "D006", "sid": 135, "start": 6934, "end": 7081, "kind": "prose", "text": "这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\\Phi$——与第一通道共用联络 $\\mathcal{A}_{\\text{FG}}$，但遵循规范场规则（§3.3）。"}
-{"doc_id": "D006", "sid": 136, "start": 7083, "end": 7166, "kind": "quote", "text": "> 注意：CQM 的精细引力**不表现为几何吸引**，也**不表现为时空测地线限制**——它是 FG 纤维丛上的因果限制/退相干场强度，由 Regge 角亏直接给出。"}
-{"doc_id": "D006", "sid": 137, "start": 7166, "end": 7201, "kind": "quote", "text": "经典牛顿引力极限（$G_N$ 项）仍按 GR 保留，二者不同层、同源。"}
-{"doc_id": "D006", "sid": 138, "start": 7203, "end": 7220, "kind": "heading", "text": "#### 3.5 声子作为曲率量子"}
-{"doc_id": "D006", "sid": 139, "start": 7222, "end": 7278, "kind": "quote", "text": "> **声子的系统理论**：声子是 CQM 的核心量子媒介——振荡的量子、曲率涨落的源、同步的前提、时空的前提。"}
-{"doc_id": "D006", "sid": 140, "start": 7278, "end": 7344, "kind": "quote", "text": "声子的三层结构（前时空/GR/FG）、与同步和时空的关系、时空同步前沿速度等详见 `01 核心理论/CQM_核心_声子理论.md`。"}
-{"doc_id": "D006", "sid": 141, "start": 7346, "end": 7359, "kind": "prose", "text": "晶胞量子振荡导致角亏涨落："}
-{"doc_id": "D006", "sid": 142, "start": 7361, "end": 7413, "kind": "prose", "text": "$$\\delta_v(t) = \\delta_v^{(0)} + \\Delta\\delta_v(t)$$"}
-{"doc_id": "D006", "sid": 143, "start": 7415, "end": 7442, "kind": "prose", "text": "量子化后，$\\Delta\\delta_v$ 就是声子。"}
-{"doc_id": "D006", "sid": 144, "start": 7442, "end": 7470, "kind": "prose", "text": "声子是 FG Regge 曲率（底空间角亏）的量子涨落。"}
-{"doc_id": "D006", "sid": 145, "start": 7472, "end": 7477, "kind": "prose", "text": "声子频率："}
-{"doc_id": "D006", "sid": 146, "start": 7479, "end": 7544, "kind": "prose", "text": "$$\\hbar\\omega_{\\text{ph}} \\sim K_{\\text{eff}}(\\Delta\\delta_v)^2$$"}
-{"doc_id": "D006", "sid": 147, "start": 7546, "end": 7559, "kind": "heading", "text": "#### 3.6 关键性质"}
-{"doc_id": "D006", "sid": 148, "start": 7561, "end": 7610, "kind": "list", "text": "- **无 $G_N$ 限制**：直接由 Regge 角亏决定，量级 $O(1)$，在凝聚态可测。"}
-{"doc_id": "D006", "sid": 149, "start": 7611, "end": 7637, "kind": "list", "text": "- **不提供能量**：FG 是条件，不是组织本身。"}
-{"doc_id": "D006", "sid": 150, "start": 7637, "end": 7653, "kind": "list", "text": "组织本身是声子（动态曲率量子）。"}
-{"doc_id": "D006", "sid": 151, "start": 7654, "end": 7711, "kind": "list", "text": "- **非平庸性（激发态）**：FG 对应非平庸因果网络（纤维丛），是 GR 基态（平庸因果网络）的非平庸激发态。"}
-{"doc_id": "D006", "sid": 152, "start": 7711, "end": 7738, "kind": "list", "text": "“激发态”按因果网络状态定义，非量子力学真空激发意义。"}
-{"doc_id": "D006", "sid": 153, "start": 7739, "end": 7817, "kind": "list", "text": "- **深度性（中介）**：它向内穿透核子/晶格层级，是连接前时空与 GR（平滑时空）的关键中介——GR 的平滑时空正是 FG 层级物质网络平滑化后的表现。"}
-{"doc_id": "D006", "sid": 154, "start": 7818, "end": 7850, "kind": "list", "text": "- **层级创生**：从核子到晶胞到电子到配对，新层级持续涌现。"}
-{"doc_id": "D006", "sid": 155, "start": 7850, "end": 7913, "kind": "list", "text": "每一次耦合常数跃迁（如 $\\alpha \\to n^2\\alpha$）都是网络内部结构的重组，创造出前一层级不具备的组织形式。"}
-{"doc_id": "D006", "sid": 156, "start": 7915, "end": 7942, "kind": "heading", "text": "#### 3.7 同步方程的定态性与 Dirac 条件"}
-{"doc_id": "D006", "sid": 157, "start": 7944, "end": 7977, "kind": "prose", "text": "**定态性**：同步方程是**条件本征值问题**，不是动力学方程。"}
-{"doc_id": "D006", "sid": 158, "start": 7977, "end": 8054, "kind": "prose", "text": "同步是**退相干事件**（紧化条件 $p_u = 2\\pi n/L_u$ 与 FG 条件 $p_u = v_\\tau/☯$ 的联立解），不是时间演化过程。"}
-{"doc_id": "D006", "sid": 159, "start": 8054, "end": 8082, "kind": "prose", "text": "固有时方程是**层级结构的静态RG参数化**，非动力学。"}
-{"doc_id": "D006", "sid": 160, "start": 8084, "end": 8112, "kind": "prose", "text": "**Dirac 条件**（缝合核子空间与耦合常数空间）："}
-{"doc_id": "D006", "sid": 161, "start": 8114, "end": 8200, "kind": "prose", "text": "$$\\boxed{\\hat{\\phi} = \\hat{p}_u - \\frac{1}{☯}\\sqrt{1-\\beta\\hat{\\delta}_v} \\approx 0}$$"}
-{"doc_id": "D006", "sid": 162, "start": 8202, "end": 8285, "kind": "prose", "text": "此条件将 FG 因果（核子空间的曲率算符）与耦合常数空间（$U(1)$ 紧化动量）作为**约束**设定（$\\hat{p}_u$ 的本征值「完全由核子曲率决定」待证）。"}
-{"doc_id": "D006", "sid": 163, "start": 8287, "end": 8307, "kind": "heading", "text": "### 4. 前时空与两种引力的层级关系"}
-{"doc_id": "D006", "sid": 164, "start": 8309, "end": 8455, "kind": "prose", "text": "$$\\boxed{\\text{前时空（物质自组织）} \\xrightarrow{\\text{退相干}} \\text{GR（基态：平庸因果网络 = 时空）} \\xrightarrow{\\text{物质在内部层级的非平庸再自组织}} \\text{FG（激发态：非平庸因果网络 = 纤维丛）}}$$"}
-{"doc_id": "D006", "sid": 165, "start": 8457, "end": 8487, "kind": "list", "text": "- **前时空是基础**：没有它，物质无法自组织为有限本体。"}
-{"doc_id": "D006", "sid": 166, "start": 8488, "end": 8516, "kind": "list", "text": "- **GR 是广度**：没有它，没有空间上的宏观展开。"}
-{"doc_id": "D006", "sid": 167, "start": 8516, "end": 8532, "kind": "list", "text": "GR 对应平庸因果网络（基态）。"}
-{"doc_id": "D006", "sid": 168, "start": 8533, "end": 8566, "kind": "list", "text": "- **FG 是深度**：没有它，没有物质结构内部的层级因果条件。"}
-{"doc_id": "D006", "sid": 169, "start": 8566, "end": 8616, "kind": "list", "text": "FG 对应非平庸因果网络（纤维丛），是 GR 基态的非平庸激发态、GR 在深度层级上的非吸引力效应。"}
-{"doc_id": "D006", "sid": 170, "start": 8617, "end": 8717, "kind": "list", "text": "- **FG 是中介**：FG 连接前时空与 GR（平滑时空）——物质在 FG 层级（晶胞网络、角亏、内部层级）保留并发展前时空的自组织方式，而 GR 的平滑时空正是这一层级网络被平滑化后的平庸表现。"}
-{"doc_id": "D006", "sid": 171, "start": 8717, "end": 8736, "kind": "list", "text": "理解 GR 的微观来源必须经过 FG。"}
-{"doc_id": "D006", "sid": 172, "start": 8738, "end": 8762, "kind": "prose", "text": "三者同源，都是退相干机制在不同层级的存在论效果。"}
-{"doc_id": "D006", "sid": 173, "start": 8762, "end": 8812, "kind": "prose", "text": "**FG 不是与 GR 平等的“另一面”，也不是独立的“第三种力”，而是 GR 基态的非平庸激发态。"}
-{"doc_id": "D006", "sid": 174, "start": 8812, "end": 8824, "kind": "prose", "text": "GR 比 FG 更基础。"}
-{"doc_id": "D006", "sid": 175, "start": 8824, "end": 8826, "kind": "prose", "text": "**"}
-{"doc_id": "D006", "sid": 176, "start": 8828, "end": 8837, "kind": "heading", "text": "### 数学对应表"}
-{"doc_id": "D006", "sid": 177, "start": 8839, "end": 8878, "kind": "table", "text": "| 层次 | 因果网络 | 底空间 | 规范/纤维结构 | 联络 | 曲率 |"}
-{"doc_id": "D006", "sid": 178, "start": 8879, "end": 8928, "kind": "table", "text": "|------|----------|--------|------|------|------|"}
-{"doc_id": "D006", "sid": 179, "start": 8929, "end": 9033, "kind": "table", "text": "| 前时空 | 物质处于前时空的状态 | — | 前结构（尚未层级化）：U(1)×SU(2)×SU(3) 潜在/未分化 | —（尚未分化） | 谱经GL(5)紧化投影与黎曼零点 $\\gamma_n$ 有关 |"}
-{"doc_id": "D006", "sid": 180, "start": 9034, "end": 9167, "kind": "table", "text": "| GR | 平庸因果网络（时空，基态） | 伪黎曼流形（平滑化的物质分布抽象） | 三丛 U(1)×SU(2)×SU(3) 平滑展开（切空间为其线性化/同质化表现） | Levi-Civita 联络 | 黎曼曲率 $R^\\rho_{\\sigma\\mu\\nu}$ |"}
-{"doc_id": "D006", "sid": 181, "start": 9168, "end": 9388, "kind": "table", "text": "| FG | 非平庸因果网络（纤维丛，GR 基态的激发态） | 物质晶胞分布 → Regge 晶胞分布 | 先在三丛 × 自组织展开（$A_4$ 根空间等；$u=\\ln r$ 为展开方向的坐标实现） | $\\mathcal{A}_{\\text{FG}}$（由 Regge 角亏分步生成） | Regge 角亏 $\\delta_v$ ＋ 伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$ |"}
-{"doc_id": "D006", "sid": 182, "start": 9390, "end": 9414, "kind": "heading", "text": "### 前时空 vs FG vs GR：对比总表"}
-{"doc_id": "D006", "sid": 183, "start": 9416, "end": 9457, "kind": "table", "text": "| | **前时空** | **精细引力 FG** | **经典引力 GR** |"}
-{"doc_id": "D006", "sid": 184, "start": 9458, "end": 9938, "kind": "table", "text": "| ----------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |"}
-{"doc_id": "D006", "sid": 185, "start": 9939, "end": 10156, "kind": "table", "text": "| **存在论地位** | 物质处于前时空的状态。物质从无限的“质”中自组织为有限本体（质子／中子），是全部后续层级展开的逻辑地基。 | 深度前提（层级激发）。**不是独立的“第三种力”，而是 GR 基态的非平庸激发态。** 物质在凝聚态内部层级上通过自组织构造出的非平庸因果网络，是连接前时空与 GR（平滑时空）的关键中介。 | 广度前提（平滑展开）。退相干后的平庸因果网络——即“时空”本身。覆盖从核子到可观测宇宙的最大尺度。 |"}
-{"doc_id": "D006", "sid": 186, "start": 10157, "end": 10425, "kind": "table", "text": "| **本体根基** | 终极物质关系网络。物理实在不在禁闭内部（禁闭内部只是 QCD），而是 **FG**；谱结构经 GL(5) 紧化投影与黎曼非平凡零点有关。 | **物质晶胞**（原子/分子构成的实际物质实体）→ 抽象为 **Regge 晶胞**（离散几何：顶点、边、二面角、角亏）→ 构成 FG 非平庸底空间。**物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同。** | 质子/中子的平庸关系网络。GR 是物质复杂关系网络被平滑化后的形态——微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量。 |"}
-{"doc_id": "D006", "sid": 187, "start": 10426, "end": 10610, "kind": "table", "text": "| **因果网络状态** | 物质处于前时空的状态：尚未分化。禁闭内部演化幺正；时空尚未涌现，只有因果序 $\\prec$。 | **展开性同步前提 / 层级态 / 非平庸态。** 物质在自身内部构造出的非平庸因果网络，具有内禀的离散几何结构和层级深度。 | **基底性同步前提 / 平庸态。** 双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。 |"}
-{"doc_id": "D006", "sid": 188, "start": 10611, "end": 10752, "kind": "table", "text": "| **底空间** | 前时空（尚未分化）。不存在连续底空间、维度或流形。 | **物质晶胞分布**（实际物质布局）→ **Regge 晶胞分布**（离散几何抽象）→ FG 底空间。**底空间是物质自组织的空间形态本身。** | 时空流形（平滑化的物质分布抽象）——伪黎曼流形。 |"}
-{"doc_id": "D006", "sid": 189, "start": 10753, "end": 11046, "kind": "table", "text": "| **规范/纤维结构** | 前结构（尚未层级化）。U(1)×SU(2)×SU(3) 处于潜在/未分化状态，等待退相干后的涌现。 | **先在的 U(1)×SU(2)×SU(3) × 物质自组织展开（无限/未定）。** 这三个规范丛不是 FG 创造的，而是物质自组织在内部层级上内禀的基态结构；在此基础之上，物质可进一步自组织出更复杂的内部层级（如 $A_4$ 根空间、SU(4) 内部对称性等），展开方向无限、未定。 | U(1)×SU(2)×SU(3) 在平庸底空间上的平滑展开。**U(1)×SU(2)×SU(3) 与三维空间相关**，切空间是三维空间的线性化、同质化表现。 |"}
-{"doc_id": "D006", "sid": 190, "start": 11047, "end": 11170, "kind": "table", "text": "| **源** | 前源（尚未显现）。能动张量、角亏、电荷等概念尚未分化。 | **物质晶胞分布的内禀不均匀性**，由 Regge 角亏 $\\delta_v$ 几何度量。角亏是物质组织形态的缺陷度量。 | 能动张量 $T_{\\mu\\nu}$。 |"}
-{"doc_id": "D006", "sid": 191, "start": 11171, "end": 11559, "kind": "table", "text": "| **源的位置** | —（尚未分化，无内外之分）。 | **内禀：源即底空间自身的结构。** 物质晶胞分布的不均匀性直接构成 Regge 角亏 $\\delta_v$；Regge 晶胞分步生成联络 $\\mathcal{A}_{\\text{FG}}$；联络 $\\mathcal{A}_{\\text{FG}}$ 按规范场规则生成伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$；Regge 曲率参与不确定性关系（$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$），伴丛曲率参与伴丛运动方程（$D*F=*J_\\Phi$）。二者共用一个联络，但遵循不同的数学规则。 | **外部：源作为内容作用于先验背景（表现）。** GR 实际上并无独立于物质的先验背景。 |"}
-{"doc_id": "D006", "sid": 192, "start": 11560, "end": 11846, "kind": "table", "text": "| **曲率结构** | 谱经 GL(5) 紧化投影与黎曼零点 $\\gamma_n$ 有关（前时空层）。决定物质能否以有限本体形式自组织出来。 | **Regge 曲率**：离散角亏 $\\delta_v$（底空间几何缺陷）；**伴丛曲率**：$F = d\\mathcal{A} + \\mathcal{A}\\wedge\\mathcal{A}$，和乐 $W_v = \\exp(i\\delta_v \\hat{T})$。联络 $\\mathcal{A}$ 由 Regge 曲率生成，但伴丛曲率按规范场规则独立定义。 | 黎曼曲率 $R^\\rho_{\\sigma\\mu\\nu}$。 |"}
-{"doc_id": "D006", "sid": 193, "start": 11847, "end": 12042, "kind": "table", "text": "| **曲率作用** | 前组织条件（自组织的最原始形式）。黎曼零点谱作为“资格审查”的原始形态，决定物质有限化是否可能。 | **自组织。** 物质通过角亏-联络-曲率机制**自我展开**：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织过程的内禀因果条件。 | 测地线限制。决定已有经典实体在平庸背景中的运动轨迹，不参与新层级的创生。 |"}
-{"doc_id": "D006", "sid": 194, "start": 12043, "end": 12198, "kind": "table", "text": "| **关系网络性质** | 前展开：物质对无限“质”的自组织。 | **自我展开：** 物质同时是网络构成者（晶胞构造底空间）又是曲率源（角亏生成联络），在此网络中持续涌现新层级（电子、库珀对）。 | **前时空退相干后的表现：** 物质被统计为能量密度，在背景中被动运动，失去了作为网络构成者的主体性。 |"}
-{"doc_id": "D006", "sid": 195, "start": 12199, "end": 12381, "kind": "table", "text": "| **层级创生** | 尚未分化。只存在最基础的有限本体（质子/中子）。 | **有：** 从核子到晶胞到电子到配对，新层级持续涌现。每一次耦合常数跃迁（如 $\\alpha \\to n^2\\alpha$）都是网络内部结构的重组，创造出前一层级不具备的组织形式。 | **无：** 物质始终停留在经典质点/场层级，无法解释电子、库珀对等如何从更基本组分中涌现。 |"}
-{"doc_id": "D006", "sid": 196, "start": 12382, "end": 12602, "kind": "table", "text": "| **空间生成** | 维度尚未涌现。空间、时间、内部自由度处于前分化状态。 | **U(1)×SU(2)×SU(3) 三个规范丛在 FG 底空间上的展开与三维空间相关。** 这三个丛是先在的基态结构，它们在物质晶胞构成的非平庸底空间上展开；物质自组织可在此基础上进一步展开额外结构。 | **U(1)×SU(2)×SU(3) 在平庸底空间上的平滑展开与三维空间相关。** 切空间是三维空间的同质化、线性化表现，已抹去了物质内部层级。 |"}
-{"doc_id": "D006", "sid": 197, "start": 12604, "end": 12703, "kind": "quote", "text": "> 注：表中“基态/激发态”按**因果网络状态**定义：基态 = 退相干冻结的平庸因果网络（GR），激发态 = 物质自组织构造的非平庸因果网络（FG）——这是存在论分类，不是量子力学真空激发的类比。"}
-{"doc_id": "D006", "sid": 198, "start": 12703, "end": 12804, "kind": "quote", "text": "三列完整对应 §4 层级关系：**前时空是基础**（物质自组织），**GR 是广度**（平滑展开的平庸时空背景 = 基态），**FG 是深度**（GR 基态的非平庸激发态，物质结构内部的层级因果条件）；"}
-{"doc_id": "D006", "sid": 199, "start": 12804, "end": 12818, "kind": "quote", "text": "三者同源（见 §4 公式）。"}
-{"doc_id": "D006", "sid": 200, "start": 12819, "end": 12867, "kind": "quote", "text": "> **专论对应（对比总表）**：本表是「前时空／FG／GR」对比的**基准表**（12 行）。"}
-{"doc_id": "D006", "sid": 201, "start": 12867, "end": 12914, "kind": "quote", "text": "同步副本：`06 超导/CQM_超导核心理论.md` §5.5（12 行，供超导卷自足阅读）；"}
-{"doc_id": "D006", "sid": 202, "start": 12914, "end": 12964, "kind": "quote", "text": "集成纲要版：`01 核心理论/CQM_核心_集成理论.md` §9.5（10 行，集成卷压缩表述）；"}
-{"doc_id": "D006", "sid": 203, "start": 12964, "end": 13045, "kind": "quote", "text": "局部表：`07 精细引力（FG）/FG_核心理论.md` §1.1、`07 精细引力（FG）/FG_纤维丛理论.md` §1（各 3 行，只取 FG 定位所需）。"}
-{"doc_id": "D006", "sid": 204, "start": 13045, "end": 13060, "kind": "quote", "text": "任一改动须同步全部副本与本表。"}
-{"doc_id": "D006", "sid": 205, "start": 13061, "end": 13118, "kind": "quote", "text": "> 关于“纤维”的层次结构：**先在的 U(1)×SU(2)×SU(3) 三丛**是物质自组织内禀的基态规范结构；"}
-{"doc_id": "D006", "sid": 206, "start": 13118, "end": 13253, "kind": "quote", "text": "**自组织展开方向**由耦合坐标 $u=\\ln r$ 参数化（本文件 §3.3），已展开的内部结构包括 **$A_4$ 根空间 $\\simeq\\mathbb{C}^4$**（超导文档 §5.1，物质层级涌现的载体）——展开方向无限、未定（见对比表“规范/纤维结构”行）。"}
-{"doc_id": "D006", "sid": 207, "start": 13255, "end": 13271, "kind": "heading", "text": "### 5. 与物质自组织的关系"}
-{"doc_id": "D006", "sid": 208, "start": 13273, "end": 13288, "kind": "prose", "text": "**退相干是子类自组织的表现。"}
-{"doc_id": "D006", "sid": 209, "start": 13288, "end": 13305, "kind": "prose", "text": "所有引力过程都直接反映自组织过程。"}
-{"doc_id": "D006", "sid": 210, "start": 13305, "end": 13307, "kind": "prose", "text": "**"}
-{"doc_id": "D006", "sid": 211, "start": 13309, "end": 13330, "kind": "table", "text": "| 引力层次 | 自组织阶段 | 功能 |"}
-{"doc_id": "D006", "sid": 212, "start": 13331, "end": 13363, "kind": "table", "text": "|----------|------------|------|"}
-{"doc_id": "D006", "sid": 213, "start": 13364, "end": 13395, "kind": "table", "text": "| 前时空 | 原始自组织（从无限到有限） | 物质自组织 |"}
-{"doc_id": "D006", "sid": 214, "start": 13396, "end": 13429, "kind": "table", "text": "| GR | 退相干自组织的平庸基态 | 平庸因果网络（时空） |"}
-{"doc_id": "D006", "sid": 215, "start": 13430, "end": 13484, "kind": "table", "text": "| FG | GR 基态（平庸因果网络）中的非平庸再自组织（激发态） | 非平庸因果网络（物质结构条件） |"}
-{"doc_id": "D006", "sid": 216, "start": 13486, "end": 13560, "kind": "prose", "text": "$$\\boxed{\\text{退相干} = \\text{子类自组织的表现} \\quad \\text{引力} = \\text{自组织的因果条件}}$$"}
-{"doc_id": "D006", "sid": 217, "start": 13562, "end": 13565, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 218, "start": 13567, "end": 13591, "kind": "heading", "text": "## 二、中子缺陷矩阵：精细引力角亏的结构性来源"}
-{"doc_id": "D006", "sid": 219, "start": 13593, "end": 13604, "kind": "heading", "text": "### 1. 物理条件"}
-{"doc_id": "D006", "sid": 220, "start": 13606, "end": 13619, "kind": "prose", "text": "中子必须同时满足三个条件："}
-{"doc_id": "D006", "sid": 221, "start": 13621, "end": 13676, "kind": "list", "text": "- **强相互作用保留**：SU(3) 色对称性完整，因此 $\\alpha_1,\\alpha_2$ 不能改动；"}
-{"doc_id": "D006", "sid": 222, "start": 13677, "end": 13722, "kind": "list", "text": "- **U(1) 电荷缺失**：缺陷必须影响电荷方向，即 $\\alpha_4$ 所在扇区；"}
-{"doc_id": "D006", "sid": 223, "start": 13723, "end": 13755, "kind": "list", "text": "- **Regge 铰链需求**：缺陷必须在末端，以提供开放面。"}
-{"doc_id": "D006", "sid": 224, "start": 13757, "end": 13809, "kind": "prose", "text": "$A_4$ Dynkin 图：$\\alpha_1-\\alpha_2-\\alpha_3-\\alpha_4$"}
-{"doc_id": "D006", "sid": 225, "start": 13811, "end": 13822, "kind": "heading", "text": "### 2. 位置锁定"}
-{"doc_id": "D006", "sid": 226, "start": 13824, "end": 13829, "kind": "prose", "text": "逐一排除："}
-{"doc_id": "D006", "sid": 227, "start": 13831, "end": 13851, "kind": "table", "text": "| 缺陷位置 | 后果 | 是否符合 |"}
-{"doc_id": "D006", "sid": 228, "start": 13852, "end": 13882, "kind": "table", "text": "|----------|------|----------|"}
-{"doc_id": "D006", "sid": 229, "start": 13883, "end": 13926, "kind": "table", "text": "| $\\alpha_1$ 或 $\\alpha_2$ | SU(3) 色破坏 | 否 |"}
-{"doc_id": "D006", "sid": 230, "start": 13927, "end": 13960, "kind": "table", "text": "| $\\alpha_3$（中心） | 过度破坏且非末端 | 否 |"}
-{"doc_id": "D006", "sid": 231, "start": 13961, "end": 14008, "kind": "table", "text": "| $\\alpha_4$（末端） | SU(3) 完整，U(1) 退耦，提供开放面 | 是 |"}
-{"doc_id": "D006", "sid": 232, "start": 14010, "end": 14039, "kind": "prose", "text": "**结论**：缺陷唯一锁定在 $\\alpha_4$ 末端。"}
-{"doc_id": "D006", "sid": 233, "start": 14041, "end": 14052, "kind": "heading", "text": "### 3. 矩阵形式"}
-{"doc_id": "D006", "sid": 234, "start": 14054, "end": 14103, "kind": "prose", "text": "采用修改非对角元的形式（保持根长度不变，改变 $\\alpha_3$-$\\alpha_4$ 夹角）："}
-{"doc_id": "D006", "sid": 235, "start": 14105, "end": 14252, "kind": "prose", "text": "$$\\boxed{D = \\begin{pmatrix} 2 & -1 & 0 & 0 \\\\ -1 & 2 & -1 & 0 \\\\ 0 & -1 & 2 & -\\delta \\\\ 0 & 0 & -\\delta & 2 \\end{pmatrix}, \\quad \\delta \\neq 1}$$"}
-{"doc_id": "D006", "sid": 236, "start": 14254, "end": 14282, "kind": "prose", "text": "当 $\\delta=1$ 时，$D=A_4$，恢复质子。"}
-{"doc_id": "D006", "sid": 237, "start": 14284, "end": 14298, "kind": "heading", "text": "### 4. δ 的开放问题"}
-{"doc_id": "D006", "sid": 238, "start": 14300, "end": 14360, "kind": "prose", "text": "$\\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 $A_4$ 的偏离。"}
-{"doc_id": "D006", "sid": 239, "start": 14360, "end": 14415, "kind": "prose", "text": "其函数形式取**满足全部物理条件的最简候选形式**（`06 超导/CQM_超导核心理论.md` §11.8）；"}
-{"doc_id": "D006", "sid": 240, "start": 14415, "end": 14450, "kind": "prose", "text": "从 $SU(5)$ 重组实现动力学导出这一环节尚未给出（缺口 N1）："}
-{"doc_id": "D006", "sid": 241, "start": 14452, "end": 14538, "kind": "prose", "text": "$$\\delta(Z,N) = 1 - \\varepsilon_0 \\cdot \\frac{N}{Z+N}, \\qquad \\varepsilon_0 = 0.0012$$"}
-{"doc_id": "D006", "sid": 242, "start": 14540, "end": 14591, "kind": "prose", "text": "其中 $\\varepsilon_0$ 由自由中子锚点 $\\delta(0,1)=0.9988$ 确定；"}
-{"doc_id": "D006", "sid": 243, "start": 14591, "end": 14621, "kind": "prose", "text": "该形式满足纯质子极限、自由中子锚点、同位素效应与正定性条件。"}
-{"doc_id": "D006", "sid": 244, "start": 14621, "end": 14646, "kind": "prose", "text": "质量-谱映射的严格第一性推导仍开放（缺口 N1）。"}
-{"doc_id": "D006", "sid": 245, "start": 14646, "end": 14686, "kind": "prose", "text": "`SPAF.neutronDefect` 形式化 $D(\\delta)$ 矩阵。"}
-{"doc_id": "D006", "sid": 246, "start": 14688, "end": 14699, "kind": "heading", "text": "### 5. 推导缺口"}
-{"doc_id": "D006", "sid": 247, "start": 14701, "end": 14731, "kind": "table", "text": "| 编号 | 缺口 | 内容 | 对应 Lean 形式化 |"}
-{"doc_id": "D006", "sid": 248, "start": 14732, "end": 14773, "kind": "table", "text": "|------|------|------|------------------|"}
-{"doc_id": "D006", "sid": 249, "start": 14774, "end": 15100, "kind": "table", "text": "| **N1** | 质量-谱映射待严格化 | $\\delta(Z,N)$ 函数形式取满足全部物理条件的最简候选形式（$\\delta(Z,N) = 1 - \\varepsilon_0 N/(Z+N)$，`06 超导/CQM_超导核心理论.md` §11.8），非动力学导出；质量差 $\\Delta m/m_p$ 与 $\\delta$ 的定量比例及 $\\varepsilon_0$ 的第一性来源待严格推导 | `GN/TripleIdentity.lean`（$☯$ 谱参数）、`GN/Constructions.lean`（$\\mathfrak{c}_1$ 与 $G_N$）；`SPAF.neutronDefect` 形式化 $D(\\delta)$ |"}
-{"doc_id": "D006", "sid": 250, "start": 15101, "end": 15329, "kind": "table", "text": "| **N2** | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\\epsilon(\\delta)$ 的具体公式 | `SPAF.neutronDefect` 定义 $D(\\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 建立角亏-曲率关系，但 $\\epsilon(\\delta)$ 显式几何公式未写 |"}
-{"doc_id": "D006", "sid": 251, "start": 15330, "end": 15468, "kind": "table", "text": "| **N3** | β 衰变动力学条件未引入 | 孤立中子不稳定，束缚中子稳定的机制未定量 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` 已区分自由/束缚缺陷，但 β 衰变稳定性动力学未定量 |"}
-{"doc_id": "D006", "sid": 252, "start": 15469, "end": 15512, "kind": "table", "text": "| **N4** | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |"}
-{"doc_id": "D006", "sid": 253, "start": 15514, "end": 15587, "kind": "prose", "text": "**当前状态**：$\\delta(Z,N)$ 函数形式为满足全部物理条件的最简候选形式（见 §二.4），非由 $SU(5)$ 重组实现动力学导出；"}
-{"doc_id": "D006", "sid": 254, "start": 15587, "end": 15630, "kind": "prose", "text": "质量-谱映射与 $\\varepsilon_0$ 的第一性来源待严格推导（缺口 N1）。"}
-{"doc_id": "D006", "sid": 255, "start": 15632, "end": 15635, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 256, "start": 15637, "end": 15652, "kind": "heading", "text": "## 三、中子与两种引力的交织"}
-{"doc_id": "D006", "sid": 257, "start": 15654, "end": 15668, "kind": "heading", "text": "### 1. 中子和精细引力"}
-{"doc_id": "D006", "sid": 258, "start": 15670, "end": 15709, "kind": "prose", "text": "质子是完整 $A_4$，内部平坦，单个质子无 Regge 铰链，不激活 FG。"}
-{"doc_id": "D006", "sid": 259, "start": 15709, "end": 15764, "kind": "prose", "text": "**中子-质子对**是元素的精细引力存在论前提：中子作为末端缺陷，与质子粘合时产生非零角亏，形成最小铰链单元："}
-{"doc_id": "D006", "sid": 260, "start": 15766, "end": 15812, "kind": "prose", "text": "$$A_4 + D \\to \\delta \\neq 0 \\to \\text{FG 激活}$$"}
-{"doc_id": "D006", "sid": 261, "start": 15814, "end": 15889, "kind": "prose", "text": "质子-质子对**也能**形成 Regge 铰链并激活 FG——两个完整 $A_4$ 通过单纯复形粘合时，若共享三角面且二面角非平直，同样产生非零角亏。"}
-{"doc_id": "D006", "sid": 262, "start": 15889, "end": 15944, "kind": "prose", "text": "只是一般情况下质子-质子对难以形成铰链：纯质子系统中质子间库仑排斥强，难以达到形成内部铰链所需的紧密几何构型。"}
-{"doc_id": "D006", "sid": 263, "start": 15944, "end": 16018, "kind": "prose", "text": "中子-质子对之所以成为**元素的** FG 存在论前提，是因为中子的电中性允许紧密粘合，且 $\\delta \\neq 1$ 的缺陷使铰链更容易形成。"}
-{"doc_id": "D006", "sid": 264, "start": 16020, "end": 16039, "kind": "heading", "text": "### 2. 中子质量差与缺陷参数 δ"}
-{"doc_id": "D006", "sid": 265, "start": 16041, "end": 16075, "kind": "prose", "text": "中子-质子质量差 $\\Delta m$ 直接编码在缺陷参数 δ 中："}
-{"doc_id": "D006", "sid": 266, "start": 16077, "end": 16147, "kind": "prose", "text": "$$\\frac{\\Delta m}{m_p} \\approx \\frac{\\delta_{\\min} - 1}{\\text{几何因子}}$$"}
-{"doc_id": "D006", "sid": 267, "start": 16149, "end": 16169, "kind": "prose", "text": "但目前比例关系未严格导出（缺口 N1）。"}
-{"doc_id": "D006", "sid": 268, "start": 16171, "end": 16188, "kind": "heading", "text": "### 3. 两种引力中的中子角色"}
-{"doc_id": "D006", "sid": 269, "start": 16190, "end": 16206, "kind": "table", "text": "| 引力层次 | 中子的角色 |"}
-{"doc_id": "D006", "sid": 270, "start": 16207, "end": 16232, "kind": "table", "text": "|----------|------------|"}
-{"doc_id": "D006", "sid": 271, "start": 16233, "end": 16260, "kind": "table", "text": "| 前时空 | 中子作为有限本体，由物质自组织产生 |"}
-{"doc_id": "D006", "sid": 272, "start": 16261, "end": 16321, "kind": "table", "text": "| FG | 中子-质子对提供 $A_4$ 末端缺陷，形成 Regge 铰链（质子-质子对也能形成铰链，但一般较难） |"}
-{"doc_id": "D006", "sid": 273, "start": 16322, "end": 16351, "kind": "table", "text": "| GR | 中子与质子共同构成宏观物质，产生经典引力 |"}
-{"doc_id": "D006", "sid": 274, "start": 16353, "end": 16356, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 275, "start": 16358, "end": 16391, "kind": "heading", "text": "## 四、依赖关系图（含缺口；各环箭头为**断言关系**，非推导）"}
-{"doc_id": "D006", "sid": 276, "start": 16393, "end": 16508, "kind": "prose", "text": "$$\\boxed{\\text{黎曼零点 } \\gamma_n \\to \\mathfrak{c}_n \\to ☯ \\to \\text{中子缺陷参数 } \\delta \\quad (\\text{缺口 N1：质量-谱映射未导出})}$$"}
-{"doc_id": "D006", "sid": 277, "start": 16510, "end": 16596, "kind": "prose", "text": "$$\\boxed{\\delta \\to \\text{Regge 角亏 } \\epsilon(\\delta) \\quad (\\text{缺口 N2：显式几何公式未写})}$$"}
-{"doc_id": "D006", "sid": 278, "start": 16598, "end": 16949, "kind": "prose", "text": "$$\\boxed{\\epsilon(\\delta) \\to \\text{FG 曲率} \\to \\text{晶胞角亏 } \\delta_v \\to \\text{联络 } \\mathcal{A}_{\\text{FG}} \\to \\begin{cases} \\text{不确定性关系通道：固有时流速涨落 } \\Delta v_\\tau \\to \\Delta u \\\\ \\text{伴丛曲率通道：} F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A},\\; D*F=*J_\\Phi \\end{cases} \\to \\text{资格条件筛出候选群族} \\to \\text{自由能竞争选出主导群 } \\alpha \\to n^2\\alpha \\to \\text{超导}}$$"}
-{"doc_id": "D006", "sid": 279, "start": 16951, "end": 17003, "kind": "prose", "text": "$$\\boxed{\\text{FG 不受 } G_N \\text{ 限制，与 GR 同源但不同层}}$$"}
-{"doc_id": "D006", "sid": 280, "start": 17005, "end": 17101, "kind": "quote", "text": "> 末端箭头（$\\epsilon(\\delta) \\to$ 超导）由 `CouplingSpace.lean` 形式化，完整超导机制见 `06 超导/CQM_超导核心理论.md` §7-12。"}
-{"doc_id": "D006", "sid": 281, "start": 17103, "end": 17106, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 282, "start": 17108, "end": 17118, "kind": "heading", "text": "## 五、核心公式表"}
-{"doc_id": "D006", "sid": 283, "start": 17120, "end": 17136, "kind": "table", "text": "| 对象 | 公式 | 状态 |"}
-{"doc_id": "D006", "sid": 284, "start": 17137, "end": 17159, "kind": "table", "text": "|------|------|------|"}
-{"doc_id": "D006", "sid": 285, "start": 17160, "end": 17189, "kind": "table", "text": "| 质子 Cartan 矩阵 | $A_4$ | 严格 |"}
-{"doc_id": "D006", "sid": 286, "start": 17190, "end": 17243, "kind": "table", "text": "| 中子缺陷矩阵 | $D(\\delta)$ | 形式锁定（`SPAF.neutronDefect`） |"}
-{"doc_id": "D006", "sid": 287, "start": 17244, "end": 17371, "kind": "table", "text": "| δ 函数形式 | $\\delta(Z,N) = 1 - \\varepsilon_0 N/(Z+N)$，$\\varepsilon_0 = 0.0012$ | 最简候选形式（非动力学导出）；$\\varepsilon_0$ 第一性来源待严格推导（N1） |"}
-{"doc_id": "D006", "sid": 288, "start": 17372, "end": 17398, "kind": "table", "text": "| 质量差 | 1.293 MeV | 实验输入 |"}
-{"doc_id": "D006", "sid": 289, "start": 17399, "end": 17495, "kind": "table", "text": "| 前时空谱参数 | $☯, \\mathfrak{c}_1$ | 解析数论（`08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/TripleIdentity.lean`） |"}
-{"doc_id": "D006", "sid": 290, "start": 17496, "end": 17546, "kind": "table", "text": "| $G_N$ | 可能公式 | 框架内构造后验数字校验，偏差约 −3 ppm，待第三方独立复现 |"}
-{"doc_id": "D006", "sid": 291, "start": 17547, "end": 17623, "kind": "table", "text": "| FG Regge 曲率 | $\\delta_v$ | 定义明确（`MolecularGeometry.deficitAngleDensity`） |"}
-{"doc_id": "D006", "sid": 292, "start": 17624, "end": 17693, "kind": "table", "text": "| FG 联络 | $\\mathcal{A}_{\\text{FG}}$（由 $\\delta_v$ 分步生成） | 框架定义（未形式化） |"}
-{"doc_id": "D006", "sid": 293, "start": 17694, "end": 17796, "kind": "table", "text": "| FG 伴丛曲率 | $F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$，$W_v=\\exp(i\\delta_v\\hat T)$ | 框架定义（未形式化） |"}
-{"doc_id": "D006", "sid": 294, "start": 17797, "end": 17839, "kind": "table", "text": "| FG 伴丛运动方程 | $D*F=*J_\\Phi$ | 框架性（机制待展开） |"}
-{"doc_id": "D006", "sid": 295, "start": 17840, "end": 17944, "kind": "table", "text": "| FG 固有时流速 | $d\\tau/dt = \\sqrt{1-\\beta\\delta_v}$ | **假设**（FG 核心机制，形式化见 `CouplingSpace.properTimeFlow`） |"}
-{"doc_id": "D006", "sid": 296, "start": 17945, "end": 18114, "kind": "table", "text": "| 超导条件 | $\\Delta u_n = 2\\ln n$（$n=2,4,6,\\ldots$），资格条件 $\\Delta\\delta_0 \\ge ☯\\sqrt{1-\\beta\\delta_v}/(2\\beta\\ln n)$ | 见超导文档 §9（`CouplingSpace.transitionCouplingSpectrum`） |"}
-{"doc_id": "D006", "sid": 297, "start": 18116, "end": 18119, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 298, "start": 18121, "end": 18128, "kind": "heading", "text": "## 六、结论"}
-{"doc_id": "D006", "sid": 299, "start": 18130, "end": 18158, "kind": "prose", "text": "**中子缺陷 + 两种引力**构成 CQM 的完整骨架："}
-{"doc_id": "D006", "sid": 300, "start": 18160, "end": 18223, "kind": "list", "text": "- 中子-质子对作为元素的 FG 存在论前提，提供了 Regge 铰链，激活精细引力（质子-质子对也能形成铰链，但一般较难）；"}
-{"doc_id": "D006", "sid": 301, "start": 18224, "end": 18264, "kind": "list", "text": "- 精细引力不受 $G_N$ 限制，直接由物质晶胞分布的 Regge 角亏决定；"}
-{"doc_id": "D006", "sid": 302, "start": 18265, "end": 18293, "kind": "list", "text": "- 两种引力同源，都是退相干机制在不同层级的存在论表现；"}
-{"doc_id": "D006", "sid": 303, "start": 18294, "end": 18365, "kind": "list", "text": "- **平庸与非平庸（基态/激发态）**：GR 对应平庸因果网络（时空，基态），FG 对应非平庸因果网络（纤维丛，GR 基态的非平庸激发态）；"}
-{"doc_id": "D006", "sid": 304, "start": 18365, "end": 18395, "kind": "list", "text": "“基态/激发态”按因果网络状态定义，非量子力学真空激发意义；"}
-{"doc_id": "D006", "sid": 305, "start": 18396, "end": 18440, "kind": "list", "text": "- **本体与几何映射**：物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同；"}
-{"doc_id": "D006", "sid": 306, "start": 18440, "end": 18457, "kind": "list", "text": "底空间是物质自组织的空间形态本身；"}
-{"doc_id": "D006", "sid": 307, "start": 18458, "end": 18619, "kind": "list", "text": "- **双曲率结构**：Regge 曲率（角亏 $\\delta_v$，进入不确定性关系）与伴丛曲率（$F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$，进入伴丛运动方程 $D*F=*J_\\Phi$）共用联络 $\\mathcal{A}_{\\text{FG}}$，但遵循不同的数学规则；"}
-{"doc_id": "D006", "sid": 308, "start": 18620, "end": 18684, "kind": "list", "text": "- **自我展开**：物质同时是网络构成者（晶胞构造底空间）与曲率源（角亏生成联络），新层级（电子、库珀对）在此网络中持续涌现；"}
-{"doc_id": "D006", "sid": 309, "start": 18684, "end": 18723, "kind": "list", "text": "三维空间与先在的 U(1)×SU(2)×SU(3) 三丛在底空间上的展开相关；"}
-{"doc_id": "D006", "sid": 310, "start": 18724, "end": 18774, "kind": "list", "text": "- $\\delta(Z,N)$ 函数形式为满足物理条件的最简候选形式（见 §二.4），非动力学导出；"}
-{"doc_id": "D006", "sid": 311, "start": 18774, "end": 18815, "kind": "list", "text": "$\\varepsilon_0$ 第一性来源与质量-谱映射待严格推导（缺口 N1）；"}
-{"doc_id": "D006", "sid": 312, "start": 18816, "end": 18873, "kind": "list", "text": "- 核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；"}
-{"doc_id": "D006", "sid": 313, "start": 18873, "end": 18932, "kind": "list", "text": "联络 $\\mathcal{A}_{\\text{FG}}$、伴丛曲率 $F$ 与伴丛运动方程的显式构造与形式化尚未完成。"}
-{"doc_id": "D006", "sid": 314, "start": 18934, "end": 18990, "kind": "prose", "text": "下一步若能用第一性原理推导出 δ，并同时预言质量差、氘核结合能、超导临界温度，CQM 将从逻辑闭环走向定量理论。"}
-{"doc_id": "D006", "sid": 315, "start": 18992, "end": 18995, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 316, "start": 18997, "end": 19017, "kind": "heading", "text": "## 七、Lean 形式化对应与交叉引用"}
-{"doc_id": "D006", "sid": 317, "start": 19019, "end": 19078, "kind": "prose", "text": "与 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity` 的对应关系："}
-{"doc_id": "D006", "sid": 318, "start": 19080, "end": 19108, "kind": "table", "text": "| 文档对象 | Lean 文件 / 定义 | 状态 |"}
-{"doc_id": "D006", "sid": 319, "start": 19109, "end": 19147, "kind": "table", "text": "|----------|------------------|------|"}
-{"doc_id": "D006", "sid": 320, "start": 19148, "end": 19216, "kind": "table", "text": "| 前时空谱参数 $☯, \\mathfrak{c}_1$ | `GN/TripleIdentity.lean`（ξ 相关谱参数） | |"}
-{"doc_id": "D006", "sid": 321, "start": 19217, "end": 19292, "kind": "table", "text": "| $G_N$ 可能公式 | `GN/Constructions.lean`（`G_N` 相关定义） | 数值吻合（构造后验数字校验，待独立复现） |"}
-{"doc_id": "D006", "sid": 322, "start": 19293, "end": 19345, "kind": "table", "text": "| 中子缺陷矩阵 $D(\\delta)$ | `SPAF.neutronDefect` | 形式锁定 |"}
-{"doc_id": "D006", "sid": 323, "start": 19346, "end": 19441, "kind": "table", "text": "| 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |"}
-{"doc_id": "D006", "sid": 324, "start": 19442, "end": 19508, "kind": "table", "text": "| FG 顶点角亏 $\\delta_v$ | `MolecularGeometry.deficitAngleDensity` | |"}
-{"doc_id": "D006", "sid": 325, "start": 19509, "end": 19572, "kind": "table", "text": "| 角亏—Ricci 关系 | `BridgeTheorems.reggeDeficit_ricciScalar_*` | |"}
-{"doc_id": "D006", "sid": 326, "start": 19573, "end": 19704, "kind": "table", "text": "| FG 联络 $\\mathcal{A}_{\\text{FG}}$、伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$、伴丛运动方程 $D*F=*J_\\Phi$ | 暂无 | 待形式化（框架定义见 §3.3） |"}
-{"doc_id": "D006", "sid": 327, "start": 19705, "end": 19764, "kind": "table", "text": "| FG 固有时流速 | `CouplingSpace.properTimeFlow` | （超导机制见超导文档） |"}
-{"doc_id": "D006", "sid": 328, "start": 19766, "end": 19889, "kind": "prose", "text": "缺口编号体系（本文独立编号系，不可与 G 系混用；G9–G22 见 `06 超导/CQM_超导核心理论.md` §13）：**N1** 质量-谱映射、 **N2** 角亏-δ 显式公式、 **N3** β 衰变动力学、 **N4** 氘核结合能。"}
-{"doc_id": "D006", "sid": 329, "start": 19891, "end": 19976, "kind": "prose", "text": "交叉引用：超导完整机制见 `06 超导/CQM_超导核心理论.md` §7-12；两种引力的退相干本体论基础见 `03 引力与退相干/CQM_退相干_引力因果场.md`；"}
-{"doc_id": "D006", "sid": 330, "start": 19976, "end": 20040, "kind": "prose", "text": "前时空谱与黎曼零点见 `01 核心理论/CQM_核心_集成理论.md` §9.2 与第八部分（Sierra-CQM 耦谱定理）。"}
-{"doc_id": "D006", "sid": 331, "start": 20042, "end": 20045, "kind": "prose", "text": "---"}
-{"doc_id": "D006", "sid": 332, "start": 20047, "end": 20057, "kind": "heading", "text": "## 八、数学严格化"}
-{"doc_id": "D006", "sid": 333, "start": 20059, "end": 20087, "kind": "heading", "text": "### 8.1 中子 $D(\\delta)$ 的代数类型"}
-{"doc_id": "D006", "sid": 334, "start": 20089, "end": 20113, "kind": "prose", "text": "**定理**：$D(\\delta)$ 的行列式为"}
-{"doc_id": "D006", "sid": 335, "start": 20115, "end": 20149, "kind": "prose", "text": "$$\\det D(\\delta) = 8 - 3\\delta^2$$"}
-{"doc_id": "D006", "sid": 336, "start": 20151, "end": 20350, "kind": "prose", "text": "**证明**：记 $\\Delta_k$ 为 $k$ 阶顺序主子式，由 $\\Delta_k = 2\\Delta_{k-1} - c_{k-1}^2\\Delta_{k-2}$（$c=1,1,\\delta$）得 $\\Delta_1,\\Delta_2,\\Delta_3,\\Delta_4 = 2, 3, 4, 8-3\\delta^2$，故 $\\det D(\\delta) = 8 - 3\\delta^2$。"}
-{"doc_id": "D006", "sid": 337, "start": 20350, "end": 20359, "kind": "prose", "text": "$\\square$"}
-{"doc_id": "D006", "sid": 338, "start": 20361, "end": 20368, "kind": "prose", "text": "**推论**："}
-{"doc_id": "D006", "sid": 339, "start": 20370, "end": 20409, "kind": "table", "text": "| 条件 | $\\det D(\\delta)$ | 代数类型 | 物理意义 |"}
-{"doc_id": "D006", "sid": 340, "start": 20410, "end": 20458, "kind": "table", "text": "|------|-------------------|---------|---------|"}
-{"doc_id": "D006", "sid": 341, "start": 20459, "end": 20542, "kind": "table", "text": "| $\\|\\delta\\| < \\sqrt{8/3} \\approx 1.633$ | $> 0$ | **有限型**（正定） | 有限维表示，中子内部自由度有限 |"}
-{"doc_id": "D006", "sid": 342, "start": 20543, "end": 20613, "kind": "table", "text": "| $\\|\\delta\\| = \\sqrt{8/3}$ | $= 0$ | **仿射型** $\\hat{A}_4$ | 无穷维，环面代数 |"}
-{"doc_id": "D006", "sid": 343, "start": 20614, "end": 20685, "kind": "table", "text": "| $\\|\\delta\\| > \\sqrt{8/3}$ | $< 0$ | **不定型**（双曲/Kac-Moody） | 无穷维，非物理 |"}
-{"doc_id": "D006", "sid": 344, "start": 20687, "end": 20822, "kind": "prose", "text": "**结论**：当 $\\delta(Z,N)$ 紧邻 1（微扰级形变 $\\varepsilon = 1-\\delta = \\varepsilon_0 N/(Z+N)$，$|\\varepsilon|\\ll 1$）时，$\\det D > 0$，所有主子式为正，所有特征值为正。"}
-{"doc_id": "D006", "sid": 345, "start": 20822, "end": 20861, "kind": "prose", "text": "**$D(\\delta)$ 仍然是有限型广义嘉当矩阵**，不是仿射型或双曲型。"}
-{"doc_id": "D006", "sid": 346, "start": 20861, "end": 20908, "kind": "prose", "text": "中子通过 $\\delta \\neq 1$ 对 $A_4$ 进行微小形变，但保持在有限型区域内。"}
-{"doc_id": "D006", "sid": 347, "start": 20910, "end": 20940, "kind": "prose", "text": "特征值对比（$\\delta$ 紧邻 1 的微扰情形）待推导。"}
-{"doc_id": "D006", "sid": 348, "start": 20942, "end": 20962, "kind": "prose", "text": "形变极微小，中子内部仍是有限维代数结构。"}
-{"doc_id": "D006", "sid": 349, "start": 20964, "end": 20978, "kind": "heading", "text": "### 8.2 超导机制参数"}
-{"doc_id": "D006", "sid": 350, "start": 20980, "end": 21086, "kind": "prose", "text": "超导理论中所需的跃迁耦级谱 $2\\ln n$（$n=2,4,6,\\ldots$）、资格条件、$\\beta$ 微观来源、$T_c$ 自由能交叉等数学结果，见 `06 超导/CQM_超导核心理论.md` §7-12。"}
-{"doc_id": "D006", "sid": 351, "start": 21086, "end": 21109, "kind": "prose", "text": "此处从略，以保持两种引力文档与超导文档的分离。"}
+{"doc_id": "D006", "sid": 0, "start": 0, "end": 41, "kind": "heading", "text": "# CQM 核心：两种引力的存在论前提——中子缺陷矩阵作为精细引力角亏的结构性来源"}
+{"doc_id": "D006", "sid": 1, "start": 43, "end": 56, "kind": "prose", "text": "**作者**：ruster"}
+{"doc_id": "D006", "sid": 2, "start": 58, "end": 207, "kind": "quote", "text": "> CQM 的核心论断：**引力不是一种力，而是物质自组织（=自发组织，spontaneous self-organization——无外部组织指令驱动）的因果条件**，并按因果结构的不同深度与广度分化：**FG 与 GR 是引力的两种形态**，前置于其上的**前时空**是引力的前层（不属引力）。"}
+{"doc_id": "D006", "sid": 3, "start": 207, "end": 231, "kind": "quote", "text": "三者同源，都是退相干机制在不同存在论层级的表现。"}
+{"doc_id": "D006", "sid": 4, "start": 231, "end": 287, "kind": "quote", "text": "**引力是因果同步的必要前提**——有引力才有可能发生因果同步，但引力本身不充分，因果同步的发生还需要其他条件。"}
+{"doc_id": "D006", "sid": 5, "start": 288, "end": 576, "kind": "quote", "text": "> 相关 Lean 形式化见 `08 理论组织和形式化框架/04_Lean对接/Lean源码/GN`（`GN/TripleIdentity` 的 $☯$ 谱参数、`GN/Constructions` 的 $G_N$ 谱公式）与 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity`：`SPAF`（中子缺陷矩阵 `neutronDefect`）、`MolecularGeometry`（Regge 角亏 `deficitAngleDensity`、自由/束缚中子缺陷）、`BridgeTheorems`（角亏—Ricci 关系）。"}
+{"doc_id": "D006", "sid": 6, "start": 576, "end": 604, "kind": "quote", "text": "超导机制见 `06 超导/CQM_超导核心理论.md`。"}
+{"doc_id": "D006", "sid": 7, "start": 604, "end": 675, "kind": "quote", "text": "缺口编号 N1–N4 为本文独立编号系，不可与 G 系混用（G9–G22 的权威定义见 `06 超导/CQM_超导核心理论.md` §13）。"}
+{"doc_id": "D006", "sid": 8, "start": 677, "end": 680, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 9, "start": 682, "end": 713, "kind": "heading", "text": "## 一、前时空与两种引力：同一种因果场在三个存在论层级的分化"}
+{"doc_id": "D006", "sid": 10, "start": 715, "end": 749, "kind": "prose", "text": "CQM 的核心论断是：**引力不是一种力，而是物质自组织的因果条件。"}
+{"doc_id": "D006", "sid": 11, "start": 749, "end": 810, "kind": "prose", "text": "** 它根据因果结构的不同深度和广度分化：**FG 与 GR 是引力的两种形态**，**前时空**在引力之前（不属引力）。"}
+{"doc_id": "D006", "sid": 12, "start": 810, "end": 841, "kind": "prose", "text": "三者不是三种不同的力，而是同一种因果场在不同因果层级上的表现。"}
+{"doc_id": "D006", "sid": 13, "start": 843, "end": 864, "kind": "heading", "text": "### 1. 前时空：物质处于前时空的状态"}
+{"doc_id": "D006", "sid": 14, "start": 866, "end": 877, "kind": "heading", "text": "#### 1.1 定位"}
+{"doc_id": "D006", "sid": 15, "start": 879, "end": 920, "kind": "prose", "text": "前时空就是**物质处于前时空的状态**（先于引力），是全部后续层级展开的逻辑地基。"}
+{"doc_id": "D006", "sid": 16, "start": 920, "end": 952, "kind": "prose", "text": "它是关于**物质如何从无限的“质”中自组织为有限本体**的理论。"}
+{"doc_id": "D006", "sid": 17, "start": 954, "end": 967, "kind": "heading", "text": "#### 1.2 物理本质"}
+{"doc_id": "D006", "sid": 18, "start": 969, "end": 1020, "kind": "prose", "text": "前时空层的物理实在不在普朗克尺度的“时空泡沫”中，也不在质子／中子的禁闭内部——禁闭内部只是 QCD。"}
+{"doc_id": "D006", "sid": 19, "start": 1020, "end": 1084, "kind": "prose", "text": "无量纲不确定性关系、固有时流速涨落、角亏量子涨落与同步算符的紧化作用，就是 **FG** 的内容（CQM 不设独立的量子引力层；"}
+{"doc_id": "D006", "sid": 20, "start": 1084, "end": 1112, "kind": "prose", "text": "`02 量子引力/CQM_引力_量子引力讨论.md`）。"}
+{"doc_id": "D006", "sid": 21, "start": 1112, "end": 1130, "kind": "prose", "text": "它的核心是**耦合常数的量子化**。"}
+{"doc_id": "D006", "sid": 22, "start": 1132, "end": 1145, "kind": "heading", "text": "#### 1.3 数学结构"}
+{"doc_id": "D006", "sid": 23, "start": 1147, "end": 1162, "kind": "prose", "text": "前时空对应**物质自组织**。"}
+{"doc_id": "D006", "sid": 24, "start": 1162, "end": 1189, "kind": "prose", "text": "其谱结构经 GL(5) 紧化投影与黎曼非平凡零点有关："}
+{"doc_id": "D006", "sid": 25, "start": 1191, "end": 1271, "kind": "prose", "text": "$$\\boxed{\\text{黎曼零点 } \\gamma_n \\quad \\Longleftrightarrow \\quad \\text{物质自组织模式}}$$"}
+{"doc_id": "D006", "sid": 26, "start": 1273, "end": 1374, "kind": "prose", "text": "黎曼零点谱是 GL(5) 固定层级经紧化投影 $\\hat{\\mathcal{S}}_0$ 给出的谱（前时空层，自组织的最原始形式）——作为“资格审查”的原始形态，它决定物质能否以有限本体形式自组织出来。"}
+{"doc_id": "D006", "sid": 27, "start": 1376, "end": 1381, "kind": "prose", "text": "核心参数："}
+{"doc_id": "D006", "sid": 28, "start": 1383, "end": 1445, "kind": "prose", "text": "$$☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1} \\approx 0.02309570897$$"}
+{"doc_id": "D006", "sid": 29, "start": 1447, "end": 1492, "kind": "prose", "text": "$$\\mathfrak{c}_n = \\frac{1}{4} + \\gamma_n^2$$"}
+{"doc_id": "D006", "sid": 30, "start": 1494, "end": 1562, "kind": "prose", "text": "其中 $\\mathfrak{c}_1 = \\frac{1}{4} + \\gamma_1^2 = 200.04045483$ 是第一耦级。"}
+{"doc_id": "D006", "sid": 31, "start": 1564, "end": 1587, "kind": "prose", "text": "这些参数都是无量纲数学纯数，直接来自解析数论。"}
+{"doc_id": "D006", "sid": 32, "start": 1589, "end": 1600, "kind": "heading", "text": "#### 1.4 功能"}
+{"doc_id": "D006", "sid": 33, "start": 1602, "end": 1624, "kind": "prose", "text": "前时空使物质能以**有限本体**的形式展开。"}
+{"doc_id": "D006", "sid": 34, "start": 1624, "end": 1760, "kind": "prose", "text": "它是最原始的自组织：将无限的“质”（质数是其生成元）组织成有限的可再生物理系统（质子／中子）——**有限本体的形成以禁闭边界的形成为标志**：前质子／前中子**已经处于 $SU(5)$**，禁闭形成时才组织出 $U(1)\\times SU(2)\\times SU(3)$。"}
+{"doc_id": "D006", "sid": 35, "start": 1762, "end": 1800, "kind": "prose", "text": "$$\\text{pre} = \\text{物质对无限的“质”进行自组织}$$"}
+{"doc_id": "D006", "sid": 36, "start": 1802, "end": 1815, "kind": "heading", "text": "#### 1.5 关键性质"}
+{"doc_id": "D006", "sid": 37, "start": 1817, "end": 1839, "kind": "list", "text": "- **基底幺正**：禁闭内部演化是幺正的。"}
+{"doc_id": "D006", "sid": 38, "start": 1840, "end": 1859, "kind": "list", "text": "- **因果序尚未展开**：尚未分化。"}
+{"doc_id": "D006", "sid": 39, "start": 1860, "end": 1910, "kind": "list", "text": "- **规范前结构**：U(1)×SU(2)×SU(3) 处于潜在/未分化状态，等待退相干后的涌现。"}
+{"doc_id": "D006", "sid": 40, "start": 1911, "end": 1945, "kind": "list", "text": "- **前源**：能动张量、角亏、电荷等概念尚未分化（无内外之分）。"}
+{"doc_id": "D006", "sid": 41, "start": 1946, "end": 1974, "kind": "list", "text": "- **基础性**：它是全部层级中最底层的（先于引力）。"}
+{"doc_id": "D006", "sid": 42, "start": 1976, "end": 1999, "kind": "heading", "text": "### 2. 经典引力（GR）：广度存在论前提"}
+{"doc_id": "D006", "sid": 43, "start": 2001, "end": 2012, "kind": "heading", "text": "#### 2.1 定位"}
+{"doc_id": "D006", "sid": 44, "start": 2014, "end": 2085, "kind": "prose", "text": "经典引力是前时空退相干后涌现的**平庸因果网络**（时空本身），是两种引力中的**广度前提（平滑展开）**，覆盖从核子到可观测宇宙的最大尺度。"}
+{"doc_id": "D006", "sid": 45, "start": 2085, "end": 2147, "kind": "prose", "text": "在因果网络状态的分类中，GR 是**基态（平庸态）**：双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。"}
+{"doc_id": "D006", "sid": 46, "start": 2147, "end": 2180, "kind": "prose", "text": "此处“基态”是因果网络状态的存在论分类，不是量子力学真空态的意义。"}
+{"doc_id": "D006", "sid": 47, "start": 2182, "end": 2195, "kind": "heading", "text": "#### 2.2 物理本质"}
+{"doc_id": "D006", "sid": 48, "start": 2197, "end": 2230, "kind": "prose", "text": "经典引力不是独立的力，而是**退相干后的平庸因果网络**（基态）。"}
+{"doc_id": "D006", "sid": 49, "start": 2230, "end": 2245, "kind": "prose", "text": "这个平庸因果网络就是时空本身。"}
+{"doc_id": "D006", "sid": 50, "start": 2245, "end": 2321, "kind": "prose", "text": "其本体根基是质子/中子的平庸关系网络：GR 是物质复杂关系网络被平滑化后的形态——微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量。"}
+{"doc_id": "D006", "sid": 51, "start": 2321, "end": 2358, "kind": "prose", "text": "物质由此被统计为能量密度，在背景中被动运动，失去了作为网络构成者的主体性。"}
+{"doc_id": "D006", "sid": 52, "start": 2360, "end": 2408, "kind": "prose", "text": "$$\\text{GR} = \\text{前时空退相干后涌现的平庸因果网络（时空 = 基态）}$$"}
+{"doc_id": "D006", "sid": 53, "start": 2410, "end": 2423, "kind": "heading", "text": "#### 2.3 数学结构"}
+{"doc_id": "D006", "sid": 54, "start": 2425, "end": 2475, "kind": "prose", "text": "经典引力对应**伪黎曼流形** $(M,g_{\\mu\\nu})$——时空流形是平滑化的物质分布抽象。"}
+{"doc_id": "D006", "sid": 55, "start": 2475, "end": 2491, "kind": "prose", "text": "其核心是测地线限制和狭义相对论。"}
+{"doc_id": "D006", "sid": 56, "start": 2493, "end": 2520, "kind": "list", "text": "- **底空间**：时空流形（物质分布的平滑化抽象）。"}
+{"doc_id": "D006", "sid": 57, "start": 2520, "end": 2607, "kind": "list", "text": "规范/纤维结构为 U(1)×SU(2)×SU(3) 三丛在平庸底空间上的平滑展开——U(1)×SU(2)×SU(3) 与三维空间相关，切空间是三维空间的线性化、同质化的表现；"}
+{"doc_id": "D006", "sid": 58, "start": 2608, "end": 2680, "kind": "list", "text": "- **源**：能动张量 $T_{\\mu\\nu}$，源的位置是外部的（表现）——源作为内容作用于背景，但 GR 实际上并无独立于物质的先验背景；"}
+{"doc_id": "D006", "sid": 59, "start": 2681, "end": 2790, "kind": "list", "text": "- **联络与曲率**：引力场由 Levi-Civita 联络描述，曲率是黎曼曲率张量 $R^\\rho_{\\sigma\\mu\\nu}$，其作用是测地线限制——决定已有经典实体在平庸背景中的运动轨迹，不参与新层级的创生；"}
+{"doc_id": "D006", "sid": 60, "start": 2791, "end": 2799, "kind": "list", "text": "- 测地线方程："}
+{"doc_id": "D006", "sid": 61, "start": 2801, "end": 2905, "kind": "prose", "text": "$$\\frac{d^2x^\\mu}{d\\tau^2} + \\Gamma^\\mu_{\\alpha\\beta}\\frac{dx^\\alpha}{d\\tau}\\frac{dx^\\beta}{d\\tau} = 0$$"}
+{"doc_id": "D006", "sid": 62, "start": 2907, "end": 2920, "kind": "heading", "text": "#### 2.4 核心公式"}
+{"doc_id": "D006", "sid": 63, "start": 2922, "end": 2940, "kind": "prose", "text": "CQM 给出牛顿引力常数的可能公式："}
+{"doc_id": "D006", "sid": 64, "start": 2942, "end": 3093, "kind": "prose", "text": "$$\\boxed{G_N = \\frac{\\hbar c}{m_p^2} \\cdot I \\cdot \\lambda_c \\cdot ☯^2 \\cdot \\mathfrak{c}_1 \\cdot \\exp\\left(-\\frac{2}{☯}\\right) \\cdot (1 + \\kappa ☯)}$$"}
+{"doc_id": "D006", "sid": 65, "start": 3095, "end": 3098, "kind": "prose", "text": "其中："}
+{"doc_id": "D006", "sid": 66, "start": 3099, "end": 3161, "kind": "list", "text": "- $I = 5/3$ 是 SU(5) Dynkin 指数比 $T(\\mathbf{24})/T(\\mathbf{8})$；"}
+{"doc_id": "D006", "sid": 67, "start": 3162, "end": 3259, "kind": "list", "text": "- $\\lambda_c = 1.316022911$ 是 Mathieu 临界方程 $\\lambda_{\\min}(q_c) = 2q_c$ 的唯一根（$\\lambda_c = 4q_c$）；"}
+{"doc_id": "D006", "sid": 68, "start": 3260, "end": 3301, "kind": "list", "text": "- $☯ = \\frac{d}{ds}\\ln\\xi(s)\\big|_{s=1}$；"}
+{"doc_id": "D006", "sid": 69, "start": 3302, "end": 3340, "kind": "list", "text": "- $\\mathfrak{c}_1 = 1/4 + \\gamma_1^2$；"}
+{"doc_id": "D006", "sid": 70, "start": 3341, "end": 3364, "kind": "list", "text": "- $\\kappa = (31+☯)/30$。"}
+{"doc_id": "D006", "sid": 71, "start": 3366, "end": 3457, "kind": "prose", "text": "该公式与实验值偏差约 -3 ppm（构造后验数字校验，待第三方独立复现；该构造式为框架内构造公式（七因子乘积在本文档内**无推导链路**），未被主流学界接受为公认的独立第一性推导）。"}
+{"doc_id": "D006", "sid": 72, "start": 3459, "end": 3470, "kind": "heading", "text": "#### 2.5 功能"}
+{"doc_id": "D006", "sid": 73, "start": 3472, "end": 3513, "kind": "prose", "text": "经典引力覆盖整个可观测宇宙，使物质能够聚集成星体、星系，时空得以弯曲成宇宙学结构。"}
+{"doc_id": "D006", "sid": 74, "start": 3513, "end": 3588, "kind": "prose", "text": "它是平庸因果网络（时空）——物质关系网络平滑化后的背景表现；FG 的底空间不是这个平滑流形，而是物质晶胞分布的 Regge 抽象本身（见 §3.3）。"}
+{"doc_id": "D006", "sid": 75, "start": 3590, "end": 3603, "kind": "heading", "text": "#### 2.6 关键性质"}
+{"doc_id": "D006", "sid": 76, "start": 3605, "end": 3639, "kind": "list", "text": "- **受 $G_N$ 限制**：在凝聚态尺度，经典引力完全可忽略。"}
+{"doc_id": "D006", "sid": 77, "start": 3640, "end": 3682, "kind": "list", "text": "- **平庸性**：它是退相干后的“背景”（基态），是精细引力（激发态）存在的前提。"}
+{"doc_id": "D006", "sid": 78, "start": 3682, "end": 3694, "kind": "list", "text": "GR 对应平庸因果网络。"}
+{"doc_id": "D006", "sid": 79, "start": 3695, "end": 3725, "kind": "list", "text": "- **广度性**：从核子到宇宙，经典引力在最大尺度上有效。"}
+{"doc_id": "D006", "sid": 80, "start": 3726, "end": 3796, "kind": "list", "text": "- **无层级创生**：物质始终停留在经典质点/场层级，无法解释电子、库珀对等如何从更基本组分中涌现——层级创生属于 FG（见 §3.6）。"}
+{"doc_id": "D006", "sid": 81, "start": 3798, "end": 3821, "kind": "heading", "text": "### 3. 精细引力（FG）：深度存在论前提"}
+{"doc_id": "D006", "sid": 82, "start": 3823, "end": 3834, "kind": "heading", "text": "#### 3.1 定位"}
+{"doc_id": "D006", "sid": 83, "start": 3836, "end": 3946, "kind": "prose", "text": "精细引力是两种引力中的**深度前提（层级激发）**：它**不是独立的“第三种力”，而是 GR 基态的非平庸激发态**——物质在凝聚态内部层级上通过自组织构造出的非平庸因果网络，是连接前时空与 GR（平滑时空）的关键中介。"}
+{"doc_id": "D006", "sid": 84, "start": 3946, "end": 3999, "kind": "prose", "text": "“非平庸”指相对于 GR 的平庸因果网络（时空），FG 在 Regge 铰链几何上引入了非零曲率（角亏）；"}
+{"doc_id": "D006", "sid": 85, "start": 3999, "end": 4046, "kind": "prose", "text": "“激发态”按因果网络状态定义（物质自组织构造的层级态/非平庸态），不是量子力学真空激发的意义。"}
+{"doc_id": "D006", "sid": 86, "start": 4048, "end": 4061, "kind": "heading", "text": "#### 3.2 物理本质"}
+{"doc_id": "D006", "sid": 87, "start": 4063, "end": 4098, "kind": "prose", "text": "精细引力的本体根基是**物质晶胞**——原子/分子构成的实际物质实体。"}
+{"doc_id": "D006", "sid": 88, "start": 4098, "end": 4151, "kind": "prose", "text": "物质晶胞抽象为 **Regge 晶胞**（离散几何：顶点、边、二面角、角亏），构成 FG 的非平庸底空间。"}
+{"doc_id": "D006", "sid": 89, "start": 4151, "end": 4183, "kind": "prose", "text": "**物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同。"}
+{"doc_id": "D006", "sid": 90, "start": 4183, "end": 4251, "kind": "prose", "text": "** FG 的因果网络状态是**激发态（层级态/非平庸态）**：物质在自身内部构造出的非平庸因果网络，具有内禀的离散几何结构和层级深度。"}
+{"doc_id": "D006", "sid": 91, "start": 4253, "end": 4272, "kind": "prose", "text": "精细引力不是测地线限制，也不是吸引力。"}
+{"doc_id": "D006", "sid": 92, "start": 4272, "end": 4367, "kind": "prose", "text": "它的动力学表现是双曲率通道（§3.3）：**耦合空间中的固有时流速效应**——Regge 曲率进入不确定性关系的通道（§3.4），以及伴丛曲率参与的伴丛运动方程 $D*F=*J_\\Phi$。"}
+{"doc_id": "D006", "sid": 93, "start": 4367, "end": 4399, "kind": "prose", "text": "二者均由物质晶胞分布的内禀不均匀性（Regge 角亏）直接产生。"}
+{"doc_id": "D006", "sid": 94, "start": 4401, "end": 4458, "kind": "prose", "text": "$$\\text{FG} = \\text{GR 基态（平庸因果网络）的非平庸激发态（层级因果网络 = 纤维丛）}$$"}
+{"doc_id": "D006", "sid": 95, "start": 4460, "end": 4473, "kind": "heading", "text": "#### 3.3 数学结构"}
+{"doc_id": "D006", "sid": 96, "start": 4475, "end": 4515, "kind": "prose", "text": "精细引力对应 **双曲率结构**（底空间 Regge 离散曲率 + 伴丛曲率）。"}
+{"doc_id": "D006", "sid": 97, "start": 4517, "end": 4570, "kind": "list", "text": "- **底空间**：物质晶胞分布（实际物质布局）→ Regge 晶胞分布（离散几何抽象）→ FG 底空间。"}
+{"doc_id": "D006", "sid": 98, "start": 4570, "end": 4589, "kind": "list", "text": "**底空间是物质自组织的空间形态本身。"}
+{"doc_id": "D006", "sid": 99, "start": 4589, "end": 4591, "kind": "list", "text": "**"}
+{"doc_id": "D006", "sid": 100, "start": 4592, "end": 4644, "kind": "list", "text": "- **规范/纤维结构**：先在的 U(1)×SU(2)×SU(3) × 物质自组织展开（无限/未定）。"}
+{"doc_id": "D006", "sid": 101, "start": 4644, "end": 4743, "kind": "list", "text": "这三个规范丛不是 FG 创造的，而是物质自组织在内部层级上内禀的基态结构；在此基础之上，物质可进一步自组织出更复杂的内部层级（如 $A_4$ 根空间、SU(4) 内部对称性等），展开方向无限、未定。"}
+{"doc_id": "D006", "sid": 102, "start": 4743, "end": 4842, "kind": "list", "text": "耦合坐标 $u = \\ln r$（$r$ 为总耦合强度，在超导问题中 $r$ 即精细结构常数 $\\alpha$，见 `06 超导/CQM_超导核心理论.md` §8.1）是自组织展开方向的坐标实现。"}
+{"doc_id": "D006", "sid": 103, "start": 4843, "end": 4898, "kind": "list", "text": "- **三维空间关联**：U(1)×SU(2)×SU(3) 三个规范丛在 FG 底空间上的展开与三维空间相关。"}
+{"doc_id": "D006", "sid": 104, "start": 4898, "end": 4950, "kind": "list", "text": "这三个丛是先在的基态结构，在物质晶胞构成的非平庸底空间上展开；物质自组织可在此基础上进一步展开额外结构。"}
+{"doc_id": "D006", "sid": 105, "start": 4951, "end": 5000, "kind": "list", "text": "- **源**：物质晶胞分布的内禀不均匀性，由 Regge 角亏 $\\delta_v$ 几何度量。"}
+{"doc_id": "D006", "sid": 106, "start": 5000, "end": 5015, "kind": "list", "text": "角亏是物质组织形态的缺陷度量。"}
+{"doc_id": "D006", "sid": 107, "start": 5015, "end": 5039, "kind": "list", "text": "源的位置是**内禀的：源即底空间自身的结构**。"}
+{"doc_id": "D006", "sid": 108, "start": 5040, "end": 5137, "kind": "list", "text": "- **联络**：$\\mathcal{A}_{\\text{FG}}$，由 Regge 晶胞分步生成——物质晶胞分布的不均匀性直接构成角亏 $\\delta_v$，Regge 晶胞据此逐步构造联络。"}
+{"doc_id": "D006", "sid": 109, "start": 5138, "end": 5281, "kind": "list", "text": "- **双曲率**：**Regge 曲率**（离散角亏 $\\delta_v$，底空间几何缺陷）与**伴丛曲率** $F = d\\mathcal{A} + \\mathcal{A}\\wedge\\mathcal{A}$（和乐 $W_v = \\exp(i\\delta_v \\hat{T})$）。"}
+{"doc_id": "D006", "sid": 110, "start": 5281, "end": 5339, "kind": "list", "text": "联络 $\\mathcal{A}_{\\text{FG}}$ 由 Regge 曲率生成，但伴丛曲率按规范场规则独立定义。"}
+{"doc_id": "D006", "sid": 111, "start": 5339, "end": 5473, "kind": "list", "text": "**二者共用一个联络，但遵循不同的数学规则**：Regge 曲率参与不确定性关系（$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$，§3.4），伴丛曲率参与伴丛运动方程（$D*F=*J_\\Phi$）。"}
+{"doc_id": "D006", "sid": 112, "start": 5475, "end": 5480, "kind": "prose", "text": "顶点角亏："}
+{"doc_id": "D006", "sid": 113, "start": 5482, "end": 5549, "kind": "prose", "text": "$$\\boxed{\\delta_v = 2\\pi - \\sum_{\\Delta\\ni v}\\theta_v^{(\\Delta)}}$$"}
+{"doc_id": "D006", "sid": 114, "start": 5551, "end": 5618, "kind": "prose", "text": "这是底空间（Regge 晶胞分布）的几何缺陷，度量物质晶胞分布的内禀不均匀性，**不受 $G_N$ 限制**，量级可达 $O(1)$。"}
+{"doc_id": "D006", "sid": 115, "start": 5620, "end": 5649, "kind": "heading", "text": "#### 3.4 核心机制：曲率的自我展开与固有时流速效应"}
+{"doc_id": "D006", "sid": 116, "start": 5651, "end": 5731, "kind": "prose", "text": "FG 的曲率作用是**自组织**：物质通过角亏—联络—曲率机制**自我展开**——晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对。"}
+{"doc_id": "D006", "sid": 117, "start": 5731, "end": 5749, "kind": "prose", "text": "曲率是物质自组织过程的内禀因果条件。"}
+{"doc_id": "D006", "sid": 118, "start": 5749, "end": 5800, "kind": "prose", "text": "在此链条中，物质同时是网络构成者（晶胞构造底空间）与曲率源（角亏生成联络），新层级在此网络中持续涌现。"}
+{"doc_id": "D006", "sid": 119, "start": 5802, "end": 5831, "kind": "prose", "text": "固有时流速效应是 Regge 曲率进入不确定性关系的通道。"}
+{"doc_id": "D006", "sid": 120, "start": 5831, "end": 5854, "kind": "prose", "text": "固有时 = 再生产周期 = 因果时的几何化身。"}
+{"doc_id": "D006", "sid": 121, "start": 5856, "end": 5893, "kind": "prose", "text": "在弯曲的耦合空间中，固有时流速（固有时与坐标时之比，基准 1）由角亏调制："}
+{"doc_id": "D006", "sid": 122, "start": 5895, "end": 5978, "kind": "prose", "text": "$$\\boxed{\\frac{d\\tau}{dt} = \\sqrt{1 - \\beta \\,\\delta_v}} \\quad \\textbf{(FG 因果假设)}$$"}
+{"doc_id": "D006", "sid": 123, "start": 5980, "end": 6051, "kind": "prose", "text": "其中 $\\beta$ 是 FG 几何耦合参数（不同于网络刚度 $\\beta_{\\text{sync}}$），$\\delta_v$ 是局域角亏。"}
+{"doc_id": "D006", "sid": 124, "start": 6051, "end": 6098, "kind": "prose", "text": "角亏 $\\delta_v>0$ 扮演正曲率角色，使固有时流速减慢（$d\\tau/dt<1$）；"}
+{"doc_id": "D006", "sid": 125, "start": 6098, "end": 6154, "kind": "prose", "text": "小角亏极限 $\\sqrt{1-\\beta\\delta_v}\\approx 1-\\beta\\delta_v/2$；"}
+{"doc_id": "D006", "sid": 126, "start": 6154, "end": 6187, "kind": "prose", "text": "平直极限 $\\delta_v=0$ 时 $d\\tau/dt=1$。"}
+{"doc_id": "D006", "sid": 127, "start": 6187, "end": 6246, "kind": "prose", "text": "此公式是 FG 核心机制的核心**假设**（形式化见 `CouplingSpace.properTimeFlow`）。"}
+{"doc_id": "D006", "sid": 128, "start": 6246, "end": 6345, "kind": "prose", "text": "由同一接口，记忆核的空间不均匀性可写为局域弛豫时标 $\\tau_{\\text{relax}} \\propto (d\\tau/dt)^{-1} = (1-\\beta\\delta_v)^{-1/2}$；"}
+{"doc_id": "D006", "sid": 129, "start": 6345, "end": 6439, "kind": "prose", "text": "系数来源属【待推】，见 `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §6.6（形式化见 `NonMarkovianity.relaxationTime`）。"}
+{"doc_id": "D006", "sid": 130, "start": 6441, "end": 6473, "kind": "prose", "text": "这与 GR 中固有时由引力势决定的公式结构完全对应（弱场极限）："}
+{"doc_id": "D006", "sid": 131, "start": 6475, "end": 6541, "kind": "prose", "text": "$$\\frac{d\\tau}{dt} = \\sqrt{-g_{00}} \\approx 1 + \\frac{\\Phi}{c^2}$$"}
+{"doc_id": "D006", "sid": 132, "start": 6543, "end": 6727, "kind": "prose", "text": "Regge 曲率由此进入不确定性关系：$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$——角亏涨落经固有时流速涨落 $\\Delta v_\\tau$，强制总耦合强度 $r$ 产生相对涨落 $\\Delta r/\\langle r\\rangle \\simeq \\Delta u$（$u = \\ln r$）。"}
+{"doc_id": "D006", "sid": 133, "start": 6727, "end": 6832, "kind": "prose", "text": "曲率涨落通过固有时流速涨落锁定耦合常数的量子涨落，定量关系 $\\Delta u \\cdot \\Delta\\delta_v \\ge ☯\\sqrt{1-\\beta\\delta_v}/\\beta$ 见超导文档 §8。"}
+{"doc_id": "D006", "sid": 134, "start": 6832, "end": 6950, "kind": "prose", "text": "**不确定性关系 $\\Delta u \\cdot \\Delta v_\\tau \\geq ☯/2$（$\\Delta u \\simeq \\Delta r/\\langle r\\rangle$，$u = \\ln r$），$☯$ 为相变量子**。"}
+{"doc_id": "D006", "sid": 135, "start": 6950, "end": 7097, "kind": "prose", "text": "这是双曲率结构的第一通道；第二通道——伴丛曲率 $F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\\Phi$——与第一通道共用联络 $\\mathcal{A}_{\\text{FG}}$，但遵循规范场规则（§3.3）。"}
+{"doc_id": "D006", "sid": 136, "start": 7099, "end": 7182, "kind": "quote", "text": "> 注意：CQM 的精细引力**不表现为几何吸引**，也**不表现为时空测地线限制**——它是 FG 纤维丛上的因果限制/退相干场强度，由 Regge 角亏直接给出。"}
+{"doc_id": "D006", "sid": 137, "start": 7182, "end": 7217, "kind": "quote", "text": "经典牛顿引力极限（$G_N$ 项）仍按 GR 保留，二者不同层、同源。"}
+{"doc_id": "D006", "sid": 138, "start": 7219, "end": 7236, "kind": "heading", "text": "#### 3.5 声子作为曲率量子"}
+{"doc_id": "D006", "sid": 139, "start": 7238, "end": 7294, "kind": "quote", "text": "> **声子的系统理论**：声子是 CQM 的核心量子媒介——振荡的量子、曲率涨落的源、同步的前提、时空的前提。"}
+{"doc_id": "D006", "sid": 140, "start": 7294, "end": 7360, "kind": "quote", "text": "声子的三层结构（前时空/GR/FG）、与同步和时空的关系、时空同步前沿速度等详见 `01 核心理论/CQM_核心_声子理论.md`。"}
+{"doc_id": "D006", "sid": 141, "start": 7362, "end": 7375, "kind": "prose", "text": "晶胞量子振荡导致角亏涨落："}
+{"doc_id": "D006", "sid": 142, "start": 7377, "end": 7429, "kind": "prose", "text": "$$\\delta_v(t) = \\delta_v^{(0)} + \\Delta\\delta_v(t)$$"}
+{"doc_id": "D006", "sid": 143, "start": 7431, "end": 7458, "kind": "prose", "text": "量子化后，$\\Delta\\delta_v$ 就是声子。"}
+{"doc_id": "D006", "sid": 144, "start": 7458, "end": 7486, "kind": "prose", "text": "声子是 FG Regge 曲率（底空间角亏）的量子涨落。"}
+{"doc_id": "D006", "sid": 145, "start": 7488, "end": 7493, "kind": "prose", "text": "声子频率："}
+{"doc_id": "D006", "sid": 146, "start": 7495, "end": 7560, "kind": "prose", "text": "$$\\hbar\\omega_{\\text{ph}} \\sim K_{\\text{eff}}(\\Delta\\delta_v)^2$$"}
+{"doc_id": "D006", "sid": 147, "start": 7562, "end": 7575, "kind": "heading", "text": "#### 3.6 关键性质"}
+{"doc_id": "D006", "sid": 148, "start": 7577, "end": 7626, "kind": "list", "text": "- **无 $G_N$ 限制**：直接由 Regge 角亏决定，量级 $O(1)$，在凝聚态可测。"}
+{"doc_id": "D006", "sid": 149, "start": 7627, "end": 7653, "kind": "list", "text": "- **不提供能量**：FG 是条件，不是组织本身。"}
+{"doc_id": "D006", "sid": 150, "start": 7653, "end": 7669, "kind": "list", "text": "组织本身是声子（动态曲率量子）。"}
+{"doc_id": "D006", "sid": 151, "start": 7670, "end": 7727, "kind": "list", "text": "- **非平庸性（激发态）**：FG 对应非平庸因果网络（纤维丛），是 GR 基态（平庸因果网络）的非平庸激发态。"}
+{"doc_id": "D006", "sid": 152, "start": 7727, "end": 7754, "kind": "list", "text": "“激发态”按因果网络状态定义，非量子力学真空激发意义。"}
+{"doc_id": "D006", "sid": 153, "start": 7755, "end": 7833, "kind": "list", "text": "- **深度性（中介）**：它向内穿透核子/晶格层级，是连接前时空与 GR（平滑时空）的关键中介——GR 的平滑时空正是 FG 层级物质网络平滑化后的表现。"}
+{"doc_id": "D006", "sid": 154, "start": 7834, "end": 7866, "kind": "list", "text": "- **层级创生**：从核子到晶胞到电子到配对，新层级持续涌现。"}
+{"doc_id": "D006", "sid": 155, "start": 7866, "end": 7929, "kind": "list", "text": "每一次耦合常数跃迁（如 $\\alpha \\to n^2\\alpha$）都是网络内部结构的重组，创造出前一层级不具备的组织形式。"}
+{"doc_id": "D006", "sid": 156, "start": 7931, "end": 7958, "kind": "heading", "text": "#### 3.7 同步方程的定态性与 Dirac 条件"}
+{"doc_id": "D006", "sid": 157, "start": 7960, "end": 7993, "kind": "prose", "text": "**定态性**：同步方程是**条件本征值问题**，不是动力学方程。"}
+{"doc_id": "D006", "sid": 158, "start": 7993, "end": 8070, "kind": "prose", "text": "同步是**退相干事件**（紧化条件 $p_u = 2\\pi n/L_u$ 与 FG 条件 $p_u = v_\\tau/☯$ 的联立解），不是时间演化过程。"}
+{"doc_id": "D006", "sid": 159, "start": 8070, "end": 8098, "kind": "prose", "text": "固有时方程是**层级结构的静态RG参数化**，非动力学。"}
+{"doc_id": "D006", "sid": 160, "start": 8100, "end": 8128, "kind": "prose", "text": "**Dirac 条件**（缝合核子空间与耦合常数空间）："}
+{"doc_id": "D006", "sid": 161, "start": 8130, "end": 8216, "kind": "prose", "text": "$$\\boxed{\\hat{\\phi} = \\hat{p}_u - \\frac{1}{☯}\\sqrt{1-\\beta\\hat{\\delta}_v} \\approx 0}$$"}
+{"doc_id": "D006", "sid": 162, "start": 8218, "end": 8301, "kind": "prose", "text": "此条件将 FG 因果（核子空间的曲率算符）与耦合常数空间（$U(1)$ 紧化动量）作为**约束**设定（$\\hat{p}_u$ 的本征值「完全由核子曲率决定」待证）。"}
+{"doc_id": "D006", "sid": 163, "start": 8303, "end": 8323, "kind": "heading", "text": "### 4. 前时空与两种引力的层级关系"}
+{"doc_id": "D006", "sid": 164, "start": 8325, "end": 8471, "kind": "prose", "text": "$$\\boxed{\\text{前时空（物质自组织）} \\xrightarrow{\\text{退相干}} \\text{GR（基态：平庸因果网络 = 时空）} \\xrightarrow{\\text{物质在内部层级的非平庸再自组织}} \\text{FG（激发态：非平庸因果网络 = 纤维丛）}}$$"}
+{"doc_id": "D006", "sid": 165, "start": 8473, "end": 8503, "kind": "list", "text": "- **前时空是基础**：没有它，物质无法自组织为有限本体。"}
+{"doc_id": "D006", "sid": 166, "start": 8504, "end": 8532, "kind": "list", "text": "- **GR 是广度**：没有它，没有空间上的宏观展开。"}
+{"doc_id": "D006", "sid": 167, "start": 8532, "end": 8548, "kind": "list", "text": "GR 对应平庸因果网络（基态）。"}
+{"doc_id": "D006", "sid": 168, "start": 8549, "end": 8582, "kind": "list", "text": "- **FG 是深度**：没有它，没有物质结构内部的层级因果条件。"}
+{"doc_id": "D006", "sid": 169, "start": 8582, "end": 8632, "kind": "list", "text": "FG 对应非平庸因果网络（纤维丛），是 GR 基态的非平庸激发态、GR 在深度层级上的非吸引力效应。"}
+{"doc_id": "D006", "sid": 170, "start": 8633, "end": 8733, "kind": "list", "text": "- **FG 是中介**：FG 连接前时空与 GR（平滑时空）——物质在 FG 层级（晶胞网络、角亏、内部层级）保留并发展前时空的自组织方式，而 GR 的平滑时空正是这一层级网络被平滑化后的平庸表现。"}
+{"doc_id": "D006", "sid": 171, "start": 8733, "end": 8752, "kind": "list", "text": "理解 GR 的微观来源必须经过 FG。"}
+{"doc_id": "D006", "sid": 172, "start": 8754, "end": 8778, "kind": "prose", "text": "三者同源，都是退相干机制在不同层级的存在论效果。"}
+{"doc_id": "D006", "sid": 173, "start": 8778, "end": 8828, "kind": "prose", "text": "**FG 不是与 GR 平等的“另一面”，也不是独立的“第三种力”，而是 GR 基态的非平庸激发态。"}
+{"doc_id": "D006", "sid": 174, "start": 8828, "end": 8840, "kind": "prose", "text": "GR 比 FG 更基础。"}
+{"doc_id": "D006", "sid": 175, "start": 8840, "end": 8842, "kind": "prose", "text": "**"}
+{"doc_id": "D006", "sid": 176, "start": 8844, "end": 8853, "kind": "heading", "text": "### 数学对应表"}
+{"doc_id": "D006", "sid": 177, "start": 8855, "end": 8894, "kind": "table", "text": "| 层次 | 因果网络 | 底空间 | 规范/纤维结构 | 联络 | 曲率 |"}
+{"doc_id": "D006", "sid": 178, "start": 8895, "end": 8944, "kind": "table", "text": "|------|----------|--------|------|------|------|"}
+{"doc_id": "D006", "sid": 179, "start": 8945, "end": 9049, "kind": "table", "text": "| 前时空 | 物质处于前时空的状态 | — | 前结构（尚未层级化）：U(1)×SU(2)×SU(3) 潜在/未分化 | —（尚未分化） | 谱经GL(5)紧化投影与黎曼零点 $\\gamma_n$ 有关 |"}
+{"doc_id": "D006", "sid": 180, "start": 9050, "end": 9183, "kind": "table", "text": "| GR | 平庸因果网络（时空，基态） | 伪黎曼流形（平滑化的物质分布抽象） | 三丛 U(1)×SU(2)×SU(3) 平滑展开（切空间为其线性化/同质化表现） | Levi-Civita 联络 | 黎曼曲率 $R^\\rho_{\\sigma\\mu\\nu}$ |"}
+{"doc_id": "D006", "sid": 181, "start": 9184, "end": 9404, "kind": "table", "text": "| FG | 非平庸因果网络（纤维丛，GR 基态的激发态） | 物质晶胞分布 → Regge 晶胞分布 | 先在三丛 × 自组织展开（$A_4$ 根空间等；$u=\\ln r$ 为展开方向的坐标实现） | $\\mathcal{A}_{\\text{FG}}$（由 Regge 角亏分步生成） | Regge 角亏 $\\delta_v$ ＋ 伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$ |"}
+{"doc_id": "D006", "sid": 182, "start": 9406, "end": 9430, "kind": "heading", "text": "### 前时空 vs FG vs GR：对比总表"}
+{"doc_id": "D006", "sid": 183, "start": 9432, "end": 9473, "kind": "table", "text": "| | **前时空** | **精细引力 FG** | **经典引力 GR** |"}
+{"doc_id": "D006", "sid": 184, "start": 9474, "end": 9954, "kind": "table", "text": "| ----------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |"}
+{"doc_id": "D006", "sid": 185, "start": 9955, "end": 10172, "kind": "table", "text": "| **存在论地位** | 物质处于前时空的状态。物质从无限的“质”中自组织为有限本体（质子／中子），是全部后续层级展开的逻辑地基。 | 深度前提（层级激发）。**不是独立的“第三种力”，而是 GR 基态的非平庸激发态。** 物质在凝聚态内部层级上通过自组织构造出的非平庸因果网络，是连接前时空与 GR（平滑时空）的关键中介。 | 广度前提（平滑展开）。退相干后的平庸因果网络——即“时空”本身。覆盖从核子到可观测宇宙的最大尺度。 |"}
+{"doc_id": "D006", "sid": 186, "start": 10173, "end": 10441, "kind": "table", "text": "| **本体根基** | 终极物质关系网络。物理实在不在禁闭内部（禁闭内部只是 QCD），而是 **FG**；谱结构经 GL(5) 紧化投影与黎曼非平凡零点有关。 | **物质晶胞**（原子/分子构成的实际物质实体）→ 抽象为 **Regge 晶胞**（离散几何：顶点、边、二面角、角亏）→ 构成 FG 非平庸底空间。**物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同。** | 质子/中子的平庸关系网络。GR 是物质复杂关系网络被平滑化后的形态——微观的关系网络结构（晶胞、角亏、内部层级）被完全抹去，只留下能动张量。 |"}
+{"doc_id": "D006", "sid": 187, "start": 10442, "end": 10626, "kind": "table", "text": "| **因果网络状态** | 物质处于前时空的状态：尚未分化。禁闭内部演化幺正；时空尚未涌现，只有因果序 $\\prec$。 | **展开性同步前提 / 层级态 / 非平庸态。** 物质在自身内部构造出的非平庸因果网络，具有内禀的离散几何结构和层级深度。 | **基底性同步前提 / 平庸态。** 双向干涉冻结，量子叠加退化为经典混合态，非交换代数粗粒化为交换几何。 |"}
+{"doc_id": "D006", "sid": 188, "start": 10627, "end": 10768, "kind": "table", "text": "| **底空间** | 前时空（尚未分化）。不存在连续底空间、维度或流形。 | **物质晶胞分布**（实际物质布局）→ **Regge 晶胞分布**（离散几何抽象）→ FG 底空间。**底空间是物质自组织的空间形态本身。** | 时空流形（平滑化的物质分布抽象）——伪黎曼流形。 |"}
+{"doc_id": "D006", "sid": 189, "start": 10769, "end": 11062, "kind": "table", "text": "| **规范/纤维结构** | 前结构（尚未层级化）。U(1)×SU(2)×SU(3) 处于潜在/未分化状态，等待退相干后的涌现。 | **先在的 U(1)×SU(2)×SU(3) × 物质自组织展开（无限/未定）。** 这三个规范丛不是 FG 创造的，而是物质自组织在内部层级上内禀的基态结构；在此基础之上，物质可进一步自组织出更复杂的内部层级（如 $A_4$ 根空间、SU(4) 内部对称性等），展开方向无限、未定。 | U(1)×SU(2)×SU(3) 在平庸底空间上的平滑展开。**U(1)×SU(2)×SU(3) 与三维空间相关**，切空间是三维空间的线性化、同质化表现。 |"}
+{"doc_id": "D006", "sid": 190, "start": 11063, "end": 11186, "kind": "table", "text": "| **源** | 前源（尚未显现）。能动张量、角亏、电荷等概念尚未分化。 | **物质晶胞分布的内禀不均匀性**，由 Regge 角亏 $\\delta_v$ 几何度量。角亏是物质组织形态的缺陷度量。 | 能动张量 $T_{\\mu\\nu}$。 |"}
+{"doc_id": "D006", "sid": 191, "start": 11187, "end": 11575, "kind": "table", "text": "| **源的位置** | —（尚未分化，无内外之分）。 | **内禀：源即底空间自身的结构。** 物质晶胞分布的不均匀性直接构成 Regge 角亏 $\\delta_v$；Regge 晶胞分步生成联络 $\\mathcal{A}_{\\text{FG}}$；联络 $\\mathcal{A}_{\\text{FG}}$ 按规范场规则生成伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$；Regge 曲率参与不确定性关系（$\\delta_v \\to \\Delta v_\\tau \\to \\Delta r/\\langle r\\rangle$），伴丛曲率参与伴丛运动方程（$D*F=*J_\\Phi$）。二者共用一个联络，但遵循不同的数学规则。 | **外部：源作为内容作用于先验背景（表现）。** GR 实际上并无独立于物质的先验背景。 |"}
+{"doc_id": "D006", "sid": 192, "start": 11576, "end": 11862, "kind": "table", "text": "| **曲率结构** | 谱经 GL(5) 紧化投影与黎曼零点 $\\gamma_n$ 有关（前时空层）。决定物质能否以有限本体形式自组织出来。 | **Regge 曲率**：离散角亏 $\\delta_v$（底空间几何缺陷）；**伴丛曲率**：$F = d\\mathcal{A} + \\mathcal{A}\\wedge\\mathcal{A}$，和乐 $W_v = \\exp(i\\delta_v \\hat{T})$。联络 $\\mathcal{A}$ 由 Regge 曲率生成，但伴丛曲率按规范场规则独立定义。 | 黎曼曲率 $R^\\rho_{\\sigma\\mu\\nu}$。 |"}
+{"doc_id": "D006", "sid": 193, "start": 11863, "end": 12058, "kind": "table", "text": "| **曲率作用** | 前组织条件（自组织的最原始形式）。黎曼零点谱作为“资格审查”的原始形态，决定物质有限化是否可能。 | **自组织。** 物质通过角亏-联络-曲率机制**自我展开**：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织过程的内禀因果条件。 | 测地线限制。决定已有经典实体在平庸背景中的运动轨迹，不参与新层级的创生。 |"}
+{"doc_id": "D006", "sid": 194, "start": 12059, "end": 12214, "kind": "table", "text": "| **关系网络性质** | 前展开：物质对无限“质”的自组织。 | **自我展开：** 物质同时是网络构成者（晶胞构造底空间）又是曲率源（角亏生成联络），在此网络中持续涌现新层级（电子、库珀对）。 | **前时空退相干后的表现：** 物质被统计为能量密度，在背景中被动运动，失去了作为网络构成者的主体性。 |"}
+{"doc_id": "D006", "sid": 195, "start": 12215, "end": 12397, "kind": "table", "text": "| **层级创生** | 尚未分化。只存在最基础的有限本体（质子/中子）。 | **有：** 从核子到晶胞到电子到配对，新层级持续涌现。每一次耦合常数跃迁（如 $\\alpha \\to n^2\\alpha$）都是网络内部结构的重组，创造出前一层级不具备的组织形式。 | **无：** 物质始终停留在经典质点/场层级，无法解释电子、库珀对等如何从更基本组分中涌现。 |"}
+{"doc_id": "D006", "sid": 196, "start": 12398, "end": 12618, "kind": "table", "text": "| **空间生成** | 维度尚未涌现。空间、时间、内部自由度处于前分化状态。 | **U(1)×SU(2)×SU(3) 三个规范丛在 FG 底空间上的展开与三维空间相关。** 这三个丛是先在的基态结构，它们在物质晶胞构成的非平庸底空间上展开；物质自组织可在此基础上进一步展开额外结构。 | **U(1)×SU(2)×SU(3) 在平庸底空间上的平滑展开与三维空间相关。** 切空间是三维空间的同质化、线性化表现，已抹去了物质内部层级。 |"}
+{"doc_id": "D006", "sid": 197, "start": 12620, "end": 12719, "kind": "quote", "text": "> 注：表中“基态/激发态”按**因果网络状态**定义：基态 = 退相干冻结的平庸因果网络（GR），激发态 = 物质自组织构造的非平庸因果网络（FG）——这是存在论分类，不是量子力学真空激发的类比。"}
+{"doc_id": "D006", "sid": 198, "start": 12719, "end": 12820, "kind": "quote", "text": "三列完整对应 §4 层级关系：**前时空是基础**（物质自组织），**GR 是广度**（平滑展开的平庸时空背景 = 基态），**FG 是深度**（GR 基态的非平庸激发态，物质结构内部的层级因果条件）；"}
+{"doc_id": "D006", "sid": 199, "start": 12820, "end": 12834, "kind": "quote", "text": "三者同源（见 §4 公式）。"}
+{"doc_id": "D006", "sid": 200, "start": 12835, "end": 12883, "kind": "quote", "text": "> **专论对应（对比总表）**：本表是「前时空／FG／GR」对比的**基准表**（12 行）。"}
+{"doc_id": "D006", "sid": 201, "start": 12883, "end": 12930, "kind": "quote", "text": "同步副本：`06 超导/CQM_超导核心理论.md` §5.5（12 行，供超导卷自足阅读）；"}
+{"doc_id": "D006", "sid": 202, "start": 12930, "end": 12980, "kind": "quote", "text": "集成纲要版：`01 核心理论/CQM_核心_集成理论.md` §9.5（10 行，集成卷压缩表述）；"}
+{"doc_id": "D006", "sid": 203, "start": 12980, "end": 13061, "kind": "quote", "text": "局部表：`07 精细引力（FG）/FG_核心理论.md` §1.1、`07 精细引力（FG）/FG_纤维丛理论.md` §1（各 3 行，只取 FG 定位所需）。"}
+{"doc_id": "D006", "sid": 204, "start": 13061, "end": 13076, "kind": "quote", "text": "任一改动须同步全部副本与本表。"}
+{"doc_id": "D006", "sid": 205, "start": 13077, "end": 13134, "kind": "quote", "text": "> 关于“纤维”的层次结构：**先在的 U(1)×SU(2)×SU(3) 三丛**是物质自组织内禀的基态规范结构；"}
+{"doc_id": "D006", "sid": 206, "start": 13134, "end": 13269, "kind": "quote", "text": "**自组织展开方向**由耦合坐标 $u=\\ln r$ 参数化（本文件 §3.3），已展开的内部结构包括 **$A_4$ 根空间 $\\simeq\\mathbb{C}^4$**（超导文档 §5.1，物质层级涌现的载体）——展开方向无限、未定（见对比表“规范/纤维结构”行）。"}
+{"doc_id": "D006", "sid": 207, "start": 13271, "end": 13287, "kind": "heading", "text": "### 5. 与物质自组织的关系"}
+{"doc_id": "D006", "sid": 208, "start": 13289, "end": 13304, "kind": "prose", "text": "**退相干是子类自组织的表现。"}
+{"doc_id": "D006", "sid": 209, "start": 13304, "end": 13321, "kind": "prose", "text": "所有引力过程都直接反映自组织过程。"}
+{"doc_id": "D006", "sid": 210, "start": 13321, "end": 13323, "kind": "prose", "text": "**"}
+{"doc_id": "D006", "sid": 211, "start": 13325, "end": 13346, "kind": "table", "text": "| 引力层次 | 自组织阶段 | 功能 |"}
+{"doc_id": "D006", "sid": 212, "start": 13347, "end": 13379, "kind": "table", "text": "|----------|------------|------|"}
+{"doc_id": "D006", "sid": 213, "start": 13380, "end": 13411, "kind": "table", "text": "| 前时空 | 原始自组织（从无限到有限） | 物质自组织 |"}
+{"doc_id": "D006", "sid": 214, "start": 13412, "end": 13445, "kind": "table", "text": "| GR | 退相干自组织的平庸基态 | 平庸因果网络（时空） |"}
+{"doc_id": "D006", "sid": 215, "start": 13446, "end": 13500, "kind": "table", "text": "| FG | GR 基态（平庸因果网络）中的非平庸再自组织（激发态） | 非平庸因果网络（物质结构条件） |"}
+{"doc_id": "D006", "sid": 216, "start": 13502, "end": 13576, "kind": "prose", "text": "$$\\boxed{\\text{退相干} = \\text{子类自组织的表现} \\quad \\text{引力} = \\text{自组织的因果条件}}$$"}
+{"doc_id": "D006", "sid": 217, "start": 13578, "end": 13581, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 218, "start": 13583, "end": 13607, "kind": "heading", "text": "## 二、中子缺陷矩阵：精细引力角亏的结构性来源"}
+{"doc_id": "D006", "sid": 219, "start": 13609, "end": 13620, "kind": "heading", "text": "### 1. 物理条件"}
+{"doc_id": "D006", "sid": 220, "start": 13622, "end": 13635, "kind": "prose", "text": "中子必须同时满足三个条件："}
+{"doc_id": "D006", "sid": 221, "start": 13637, "end": 13692, "kind": "list", "text": "- **强相互作用保留**：SU(3) 色对称性完整，因此 $\\alpha_1,\\alpha_2$ 不能改动；"}
+{"doc_id": "D006", "sid": 222, "start": 13693, "end": 13738, "kind": "list", "text": "- **U(1) 电荷缺失**：缺陷必须影响电荷方向，即 $\\alpha_4$ 所在扇区；"}
+{"doc_id": "D006", "sid": 223, "start": 13739, "end": 13771, "kind": "list", "text": "- **Regge 铰链需求**：缺陷必须在末端，以提供开放面。"}
+{"doc_id": "D006", "sid": 224, "start": 13773, "end": 13825, "kind": "prose", "text": "$A_4$ Dynkin 图：$\\alpha_1-\\alpha_2-\\alpha_3-\\alpha_4$"}
+{"doc_id": "D006", "sid": 225, "start": 13827, "end": 13838, "kind": "heading", "text": "### 2. 位置锁定"}
+{"doc_id": "D006", "sid": 226, "start": 13840, "end": 13845, "kind": "prose", "text": "逐一排除："}
+{"doc_id": "D006", "sid": 227, "start": 13847, "end": 13867, "kind": "table", "text": "| 缺陷位置 | 后果 | 是否符合 |"}
+{"doc_id": "D006", "sid": 228, "start": 13868, "end": 13898, "kind": "table", "text": "|----------|------|----------|"}
+{"doc_id": "D006", "sid": 229, "start": 13899, "end": 13942, "kind": "table", "text": "| $\\alpha_1$ 或 $\\alpha_2$ | SU(3) 色破坏 | 否 |"}
+{"doc_id": "D006", "sid": 230, "start": 13943, "end": 13976, "kind": "table", "text": "| $\\alpha_3$（中心） | 过度破坏且非末端 | 否 |"}
+{"doc_id": "D006", "sid": 231, "start": 13977, "end": 14024, "kind": "table", "text": "| $\\alpha_4$（末端） | SU(3) 完整，U(1) 退耦，提供开放面 | 是 |"}
+{"doc_id": "D006", "sid": 232, "start": 14026, "end": 14055, "kind": "prose", "text": "**结论**：缺陷唯一锁定在 $\\alpha_4$ 末端。"}
+{"doc_id": "D006", "sid": 233, "start": 14057, "end": 14068, "kind": "heading", "text": "### 3. 矩阵形式"}
+{"doc_id": "D006", "sid": 234, "start": 14070, "end": 14119, "kind": "prose", "text": "采用修改非对角元的形式（保持根长度不变，改变 $\\alpha_3$-$\\alpha_4$ 夹角）："}
+{"doc_id": "D006", "sid": 235, "start": 14121, "end": 14268, "kind": "prose", "text": "$$\\boxed{D = \\begin{pmatrix} 2 & -1 & 0 & 0 \\\\ -1 & 2 & -1 & 0 \\\\ 0 & -1 & 2 & -\\delta \\\\ 0 & 0 & -\\delta & 2 \\end{pmatrix}, \\quad \\delta \\neq 1}$$"}
+{"doc_id": "D006", "sid": 236, "start": 14270, "end": 14298, "kind": "prose", "text": "当 $\\delta=1$ 时，$D=A_4$，恢复质子。"}
+{"doc_id": "D006", "sid": 237, "start": 14300, "end": 14314, "kind": "heading", "text": "### 4. δ 的开放问题"}
+{"doc_id": "D006", "sid": 238, "start": 14316, "end": 14376, "kind": "prose", "text": "$\\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 $A_4$ 的偏离。"}
+{"doc_id": "D006", "sid": 239, "start": 14376, "end": 14431, "kind": "prose", "text": "其函数形式取**满足全部物理条件的最简候选形式**（`06 超导/CQM_超导核心理论.md` §11.8）；"}
+{"doc_id": "D006", "sid": 240, "start": 14431, "end": 14466, "kind": "prose", "text": "从 $SU(5)$ 重组实现动力学导出这一环节尚未给出（缺口 N1）："}
+{"doc_id": "D006", "sid": 241, "start": 14468, "end": 14554, "kind": "prose", "text": "$$\\delta(Z,N) = 1 - \\varepsilon_0 \\cdot \\frac{N}{Z+N}, \\qquad \\varepsilon_0 = 0.0012$$"}
+{"doc_id": "D006", "sid": 242, "start": 14556, "end": 14607, "kind": "prose", "text": "其中 $\\varepsilon_0$ 由自由中子锚点 $\\delta(0,1)=0.9988$ 确定；"}
+{"doc_id": "D006", "sid": 243, "start": 14607, "end": 14637, "kind": "prose", "text": "该形式满足纯质子极限、自由中子锚点、同位素效应与正定性条件。"}
+{"doc_id": "D006", "sid": 244, "start": 14637, "end": 14662, "kind": "prose", "text": "质量-谱映射的严格第一性推导仍开放（缺口 N1）。"}
+{"doc_id": "D006", "sid": 245, "start": 14662, "end": 14702, "kind": "prose", "text": "`SPAF.neutronDefect` 形式化 $D(\\delta)$ 矩阵。"}
+{"doc_id": "D006", "sid": 246, "start": 14704, "end": 14715, "kind": "heading", "text": "### 5. 推导缺口"}
+{"doc_id": "D006", "sid": 247, "start": 14717, "end": 14747, "kind": "table", "text": "| 编号 | 缺口 | 内容 | 对应 Lean 形式化 |"}
+{"doc_id": "D006", "sid": 248, "start": 14748, "end": 14789, "kind": "table", "text": "|------|------|------|------------------|"}
+{"doc_id": "D006", "sid": 249, "start": 14790, "end": 15116, "kind": "table", "text": "| **N1** | 质量-谱映射待严格化 | $\\delta(Z,N)$ 函数形式取满足全部物理条件的最简候选形式（$\\delta(Z,N) = 1 - \\varepsilon_0 N/(Z+N)$，`06 超导/CQM_超导核心理论.md` §11.8），非动力学导出；质量差 $\\Delta m/m_p$ 与 $\\delta$ 的定量比例及 $\\varepsilon_0$ 的第一性来源待严格推导 | `GN/TripleIdentity.lean`（$☯$ 谱参数）、`GN/Constructions.lean`（$\\mathfrak{c}_1$ 与 $G_N$）；`SPAF.neutronDefect` 形式化 $D(\\delta)$ |"}
+{"doc_id": "D006", "sid": 250, "start": 15117, "end": 15345, "kind": "table", "text": "| **N2** | Regge 角亏与 δ 的显式关系缺失 | 尚未写出 $\\epsilon(\\delta)$ 的具体公式 | `SPAF.neutronDefect` 定义 $D(\\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 建立角亏-曲率关系，但 $\\epsilon(\\delta)$ 显式几何公式未写 |"}
+{"doc_id": "D006", "sid": 251, "start": 15346, "end": 15484, "kind": "table", "text": "| **N3** | β 衰变动力学条件未引入 | 孤立中子不稳定，束缚中子稳定的机制未定量 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` 已区分自由/束缚缺陷，但 β 衰变稳定性动力学未定量 |"}
+{"doc_id": "D006", "sid": 252, "start": 15485, "end": 15528, "kind": "table", "text": "| **N4** | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |"}
+{"doc_id": "D006", "sid": 253, "start": 15530, "end": 15603, "kind": "prose", "text": "**当前状态**：$\\delta(Z,N)$ 函数形式为满足全部物理条件的最简候选形式（见 §二.4），非由 $SU(5)$ 重组实现动力学导出；"}
+{"doc_id": "D006", "sid": 254, "start": 15603, "end": 15646, "kind": "prose", "text": "质量-谱映射与 $\\varepsilon_0$ 的第一性来源待严格推导（缺口 N1）。"}
+{"doc_id": "D006", "sid": 255, "start": 15648, "end": 15651, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 256, "start": 15653, "end": 15668, "kind": "heading", "text": "## 三、中子与两种引力的交织"}
+{"doc_id": "D006", "sid": 257, "start": 15670, "end": 15684, "kind": "heading", "text": "### 1. 中子和精细引力"}
+{"doc_id": "D006", "sid": 258, "start": 15686, "end": 15725, "kind": "prose", "text": "质子是完整 $A_4$，内部平坦，单个质子无 Regge 铰链，不激活 FG。"}
+{"doc_id": "D006", "sid": 259, "start": 15725, "end": 15780, "kind": "prose", "text": "**中子-质子对**是元素的精细引力存在论前提：中子作为末端缺陷，与质子粘合时产生非零角亏，形成最小铰链单元："}
+{"doc_id": "D006", "sid": 260, "start": 15782, "end": 15828, "kind": "prose", "text": "$$A_4 + D \\to \\delta \\neq 0 \\to \\text{FG 激活}$$"}
+{"doc_id": "D006", "sid": 261, "start": 15830, "end": 15905, "kind": "prose", "text": "质子-质子对**也能**形成 Regge 铰链并激活 FG——两个完整 $A_4$ 通过单纯复形粘合时，若共享三角面且二面角非平直，同样产生非零角亏。"}
+{"doc_id": "D006", "sid": 262, "start": 15905, "end": 15960, "kind": "prose", "text": "只是一般情况下质子-质子对难以形成铰链：纯质子系统中质子间库仑排斥强，难以达到形成内部铰链所需的紧密几何构型。"}
+{"doc_id": "D006", "sid": 263, "start": 15960, "end": 16034, "kind": "prose", "text": "中子-质子对之所以成为**元素的** FG 存在论前提，是因为中子的电中性允许紧密粘合，且 $\\delta \\neq 1$ 的缺陷使铰链更容易形成。"}
+{"doc_id": "D006", "sid": 264, "start": 16036, "end": 16055, "kind": "heading", "text": "### 2. 中子质量差与缺陷参数 δ"}
+{"doc_id": "D006", "sid": 265, "start": 16057, "end": 16091, "kind": "prose", "text": "中子-质子质量差 $\\Delta m$ 直接编码在缺陷参数 δ 中："}
+{"doc_id": "D006", "sid": 266, "start": 16093, "end": 16163, "kind": "prose", "text": "$$\\frac{\\Delta m}{m_p} \\approx \\frac{\\delta_{\\min} - 1}{\\text{几何因子}}$$"}
+{"doc_id": "D006", "sid": 267, "start": 16165, "end": 16185, "kind": "prose", "text": "但目前比例关系未严格导出（缺口 N1）。"}
+{"doc_id": "D006", "sid": 268, "start": 16187, "end": 16204, "kind": "heading", "text": "### 3. 两种引力中的中子角色"}
+{"doc_id": "D006", "sid": 269, "start": 16206, "end": 16222, "kind": "table", "text": "| 引力层次 | 中子的角色 |"}
+{"doc_id": "D006", "sid": 270, "start": 16223, "end": 16248, "kind": "table", "text": "|----------|------------|"}
+{"doc_id": "D006", "sid": 271, "start": 16249, "end": 16276, "kind": "table", "text": "| 前时空 | 中子作为有限本体，由物质自组织产生 |"}
+{"doc_id": "D006", "sid": 272, "start": 16277, "end": 16337, "kind": "table", "text": "| FG | 中子-质子对提供 $A_4$ 末端缺陷，形成 Regge 铰链（质子-质子对也能形成铰链，但一般较难） |"}
+{"doc_id": "D006", "sid": 273, "start": 16338, "end": 16367, "kind": "table", "text": "| GR | 中子与质子共同构成宏观物质，产生经典引力 |"}
+{"doc_id": "D006", "sid": 274, "start": 16369, "end": 16372, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 275, "start": 16374, "end": 16407, "kind": "heading", "text": "## 四、依赖关系图（含缺口；各环箭头为**断言关系**，非推导）"}
+{"doc_id": "D006", "sid": 276, "start": 16409, "end": 16524, "kind": "prose", "text": "$$\\boxed{\\text{黎曼零点 } \\gamma_n \\to \\mathfrak{c}_n \\to ☯ \\to \\text{中子缺陷参数 } \\delta \\quad (\\text{缺口 N1：质量-谱映射未导出})}$$"}
+{"doc_id": "D006", "sid": 277, "start": 16526, "end": 16612, "kind": "prose", "text": "$$\\boxed{\\delta \\to \\text{Regge 角亏 } \\epsilon(\\delta) \\quad (\\text{缺口 N2：显式几何公式未写})}$$"}
+{"doc_id": "D006", "sid": 278, "start": 16614, "end": 16965, "kind": "prose", "text": "$$\\boxed{\\epsilon(\\delta) \\to \\text{FG 曲率} \\to \\text{晶胞角亏 } \\delta_v \\to \\text{联络 } \\mathcal{A}_{\\text{FG}} \\to \\begin{cases} \\text{不确定性关系通道：固有时流速涨落 } \\Delta v_\\tau \\to \\Delta u \\\\ \\text{伴丛曲率通道：} F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A},\\; D*F=*J_\\Phi \\end{cases} \\to \\text{资格条件筛出候选群族} \\to \\text{自由能竞争选出主导群 } \\alpha \\to n^2\\alpha \\to \\text{超导}}$$"}
+{"doc_id": "D006", "sid": 279, "start": 16967, "end": 17019, "kind": "prose", "text": "$$\\boxed{\\text{FG 不受 } G_N \\text{ 限制，与 GR 同源但不同层}}$$"}
+{"doc_id": "D006", "sid": 280, "start": 17021, "end": 17117, "kind": "quote", "text": "> 末端箭头（$\\epsilon(\\delta) \\to$ 超导）由 `CouplingSpace.lean` 形式化，完整超导机制见 `06 超导/CQM_超导核心理论.md` §7-12。"}
+{"doc_id": "D006", "sid": 281, "start": 17119, "end": 17122, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 282, "start": 17124, "end": 17134, "kind": "heading", "text": "## 五、核心公式表"}
+{"doc_id": "D006", "sid": 283, "start": 17136, "end": 17152, "kind": "table", "text": "| 对象 | 公式 | 状态 |"}
+{"doc_id": "D006", "sid": 284, "start": 17153, "end": 17175, "kind": "table", "text": "|------|------|------|"}
+{"doc_id": "D006", "sid": 285, "start": 17176, "end": 17205, "kind": "table", "text": "| 质子 Cartan 矩阵 | $A_4$ | 严格 |"}
+{"doc_id": "D006", "sid": 286, "start": 17206, "end": 17259, "kind": "table", "text": "| 中子缺陷矩阵 | $D(\\delta)$ | 形式锁定（`SPAF.neutronDefect`） |"}
+{"doc_id": "D006", "sid": 287, "start": 17260, "end": 17387, "kind": "table", "text": "| δ 函数形式 | $\\delta(Z,N) = 1 - \\varepsilon_0 N/(Z+N)$，$\\varepsilon_0 = 0.0012$ | 最简候选形式（非动力学导出）；$\\varepsilon_0$ 第一性来源待严格推导（N1） |"}
+{"doc_id": "D006", "sid": 288, "start": 17388, "end": 17414, "kind": "table", "text": "| 质量差 | 1.293 MeV | 实验输入 |"}
+{"doc_id": "D006", "sid": 289, "start": 17415, "end": 17511, "kind": "table", "text": "| 前时空谱参数 | $☯, \\mathfrak{c}_1$ | 解析数论（`08 理论组织和形式化框架/04_Lean对接/Lean源码/GN/TripleIdentity.lean`） |"}
+{"doc_id": "D006", "sid": 290, "start": 17512, "end": 17562, "kind": "table", "text": "| $G_N$ | 可能公式 | 框架内构造后验数字校验，偏差约 −3 ppm，待第三方独立复现 |"}
+{"doc_id": "D006", "sid": 291, "start": 17563, "end": 17639, "kind": "table", "text": "| FG Regge 曲率 | $\\delta_v$ | 定义明确（`MolecularGeometry.deficitAngleDensity`） |"}
+{"doc_id": "D006", "sid": 292, "start": 17640, "end": 17709, "kind": "table", "text": "| FG 联络 | $\\mathcal{A}_{\\text{FG}}$（由 $\\delta_v$ 分步生成） | 框架定义（未形式化） |"}
+{"doc_id": "D006", "sid": 293, "start": 17710, "end": 17812, "kind": "table", "text": "| FG 伴丛曲率 | $F = d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$，$W_v=\\exp(i\\delta_v\\hat T)$ | 框架定义（未形式化） |"}
+{"doc_id": "D006", "sid": 294, "start": 17813, "end": 17855, "kind": "table", "text": "| FG 伴丛运动方程 | $D*F=*J_\\Phi$ | 框架性（机制待展开） |"}
+{"doc_id": "D006", "sid": 295, "start": 17856, "end": 17960, "kind": "table", "text": "| FG 固有时流速 | $d\\tau/dt = \\sqrt{1-\\beta\\delta_v}$ | **假设**（FG 核心机制，形式化见 `CouplingSpace.properTimeFlow`） |"}
+{"doc_id": "D006", "sid": 296, "start": 17961, "end": 18130, "kind": "table", "text": "| 超导条件 | $\\Delta u_n = 2\\ln n$（$n=2,4,6,\\ldots$），资格条件 $\\Delta\\delta_0 \\ge ☯\\sqrt{1-\\beta\\delta_v}/(2\\beta\\ln n)$ | 见超导文档 §9（`CouplingSpace.transitionCouplingSpectrum`） |"}
+{"doc_id": "D006", "sid": 297, "start": 18132, "end": 18135, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 298, "start": 18137, "end": 18144, "kind": "heading", "text": "## 六、结论"}
+{"doc_id": "D006", "sid": 299, "start": 18146, "end": 18174, "kind": "prose", "text": "**中子缺陷 + 两种引力**构成 CQM 的完整骨架："}
+{"doc_id": "D006", "sid": 300, "start": 18176, "end": 18239, "kind": "list", "text": "- 中子-质子对作为元素的 FG 存在论前提，提供了 Regge 铰链，激活精细引力（质子-质子对也能形成铰链，但一般较难）；"}
+{"doc_id": "D006", "sid": 301, "start": 18240, "end": 18280, "kind": "list", "text": "- 精细引力不受 $G_N$ 限制，直接由物质晶胞分布的 Regge 角亏决定；"}
+{"doc_id": "D006", "sid": 302, "start": 18281, "end": 18309, "kind": "list", "text": "- 两种引力同源，都是退相干机制在不同层级的存在论表现；"}
+{"doc_id": "D006", "sid": 303, "start": 18310, "end": 18381, "kind": "list", "text": "- **平庸与非平庸（基态/激发态）**：GR 对应平庸因果网络（时空，基态），FG 对应非平庸因果网络（纤维丛，GR 基态的非平庸激发态）；"}
+{"doc_id": "D006", "sid": 304, "start": 18381, "end": 18411, "kind": "list", "text": "“基态/激发态”按因果网络状态定义，非量子力学真空激发意义；"}
+{"doc_id": "D006", "sid": 305, "start": 18412, "end": 18456, "kind": "list", "text": "- **本体与几何映射**：物质晶胞是本体，Regge 晶胞是其几何映射，二者不可混同；"}
+{"doc_id": "D006", "sid": 306, "start": 18456, "end": 18473, "kind": "list", "text": "底空间是物质自组织的空间形态本身；"}
+{"doc_id": "D006", "sid": 307, "start": 18474, "end": 18635, "kind": "list", "text": "- **双曲率结构**：Regge 曲率（角亏 $\\delta_v$，进入不确定性关系）与伴丛曲率（$F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$，进入伴丛运动方程 $D*F=*J_\\Phi$）共用联络 $\\mathcal{A}_{\\text{FG}}$，但遵循不同的数学规则；"}
+{"doc_id": "D006", "sid": 308, "start": 18636, "end": 18700, "kind": "list", "text": "- **自我展开**：物质同时是网络构成者（晶胞构造底空间）与曲率源（角亏生成联络），新层级（电子、库珀对）在此网络中持续涌现；"}
+{"doc_id": "D006", "sid": 309, "start": 18700, "end": 18739, "kind": "list", "text": "三维空间与先在的 U(1)×SU(2)×SU(3) 三丛在底空间上的展开相关；"}
+{"doc_id": "D006", "sid": 310, "start": 18740, "end": 18790, "kind": "list", "text": "- $\\delta(Z,N)$ 函数形式为满足物理条件的最简候选形式（见 §二.4），非动力学导出；"}
+{"doc_id": "D006", "sid": 311, "start": 18790, "end": 18831, "kind": "list", "text": "$\\varepsilon_0$ 第一性来源与质量-谱映射待严格推导（缺口 N1）；"}
+{"doc_id": "D006", "sid": 312, "start": 18832, "end": 18889, "kind": "list", "text": "- 核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；"}
+{"doc_id": "D006", "sid": 313, "start": 18889, "end": 18948, "kind": "list", "text": "联络 $\\mathcal{A}_{\\text{FG}}$、伴丛曲率 $F$ 与伴丛运动方程的显式构造与形式化尚未完成。"}
+{"doc_id": "D006", "sid": 314, "start": 18950, "end": 19006, "kind": "prose", "text": "下一步若能用第一性原理推导出 δ，并同时预言质量差、氘核结合能、超导临界温度，CQM 将从逻辑闭环走向定量理论。"}
+{"doc_id": "D006", "sid": 315, "start": 19008, "end": 19011, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 316, "start": 19013, "end": 19033, "kind": "heading", "text": "## 七、Lean 形式化对应与交叉引用"}
+{"doc_id": "D006", "sid": 317, "start": 19035, "end": 19094, "kind": "prose", "text": "与 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity` 的对应关系："}
+{"doc_id": "D006", "sid": 318, "start": 19096, "end": 19124, "kind": "table", "text": "| 文档对象 | Lean 文件 / 定义 | 状态 |"}
+{"doc_id": "D006", "sid": 319, "start": 19125, "end": 19163, "kind": "table", "text": "|----------|------------------|------|"}
+{"doc_id": "D006", "sid": 320, "start": 19164, "end": 19232, "kind": "table", "text": "| 前时空谱参数 $☯, \\mathfrak{c}_1$ | `GN/TripleIdentity.lean`（ξ 相关谱参数） | |"}
+{"doc_id": "D006", "sid": 321, "start": 19233, "end": 19308, "kind": "table", "text": "| $G_N$ 可能公式 | `GN/Constructions.lean`（`G_N` 相关定义） | 数值吻合（构造后验数字校验，待独立复现） |"}
+{"doc_id": "D006", "sid": 322, "start": 19309, "end": 19361, "kind": "table", "text": "| 中子缺陷矩阵 $D(\\delta)$ | `SPAF.neutronDefect` | 形式锁定 |"}
+{"doc_id": "D006", "sid": 323, "start": 19362, "end": 19457, "kind": "table", "text": "| 自由/束缚中子缺陷 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` | （β 衰变动力学 N3 未定量） |"}
+{"doc_id": "D006", "sid": 324, "start": 19458, "end": 19524, "kind": "table", "text": "| FG 顶点角亏 $\\delta_v$ | `MolecularGeometry.deficitAngleDensity` | |"}
+{"doc_id": "D006", "sid": 325, "start": 19525, "end": 19588, "kind": "table", "text": "| 角亏—Ricci 关系 | `BridgeTheorems.reggeDeficit_ricciScalar_*` | |"}
+{"doc_id": "D006", "sid": 326, "start": 19589, "end": 19720, "kind": "table", "text": "| FG 联络 $\\mathcal{A}_{\\text{FG}}$、伴丛曲率 $F=d\\mathcal{A}+\\mathcal{A}\\wedge\\mathcal{A}$、伴丛运动方程 $D*F=*J_\\Phi$ | 暂无 | 待形式化（框架定义见 §3.3） |"}
+{"doc_id": "D006", "sid": 327, "start": 19721, "end": 19780, "kind": "table", "text": "| FG 固有时流速 | `CouplingSpace.properTimeFlow` | （超导机制见超导文档） |"}
+{"doc_id": "D006", "sid": 328, "start": 19782, "end": 19905, "kind": "prose", "text": "缺口编号体系（本文独立编号系，不可与 G 系混用；G9–G22 见 `06 超导/CQM_超导核心理论.md` §13）：**N1** 质量-谱映射、 **N2** 角亏-δ 显式公式、 **N3** β 衰变动力学、 **N4** 氘核结合能。"}
+{"doc_id": "D006", "sid": 329, "start": 19907, "end": 19992, "kind": "prose", "text": "交叉引用：超导完整机制见 `06 超导/CQM_超导核心理论.md` §7-12；两种引力的退相干本体论基础见 `03 引力与退相干/CQM_退相干_引力因果场.md`；"}
+{"doc_id": "D006", "sid": 330, "start": 19992, "end": 20056, "kind": "prose", "text": "前时空谱与黎曼零点见 `01 核心理论/CQM_核心_集成理论.md` §9.2 与第八部分（Sierra-CQM 耦谱定理）。"}
+{"doc_id": "D006", "sid": 331, "start": 20058, "end": 20061, "kind": "prose", "text": "---"}
+{"doc_id": "D006", "sid": 332, "start": 20063, "end": 20073, "kind": "heading", "text": "## 八、数学严格化"}
+{"doc_id": "D006", "sid": 333, "start": 20075, "end": 20103, "kind": "heading", "text": "### 8.1 中子 $D(\\delta)$ 的代数类型"}
+{"doc_id": "D006", "sid": 334, "start": 20105, "end": 20129, "kind": "prose", "text": "**定理**：$D(\\delta)$ 的行列式为"}
+{"doc_id": "D006", "sid": 335, "start": 20131, "end": 20165, "kind": "prose", "text": "$$\\det D(\\delta) = 8 - 3\\delta^2$$"}
+{"doc_id": "D006", "sid": 336, "start": 20167, "end": 20366, "kind": "prose", "text": "**证明**：记 $\\Delta_k$ 为 $k$ 阶顺序主子式，由 $\\Delta_k = 2\\Delta_{k-1} - c_{k-1}^2\\Delta_{k-2}$（$c=1,1,\\delta$）得 $\\Delta_1,\\Delta_2,\\Delta_3,\\Delta_4 = 2, 3, 4, 8-3\\delta^2$，故 $\\det D(\\delta) = 8 - 3\\delta^2$。"}
+{"doc_id": "D006", "sid": 337, "start": 20366, "end": 20375, "kind": "prose", "text": "$\\square$"}
+{"doc_id": "D006", "sid": 338, "start": 20377, "end": 20384, "kind": "prose", "text": "**推论**："}
+{"doc_id": "D006", "sid": 339, "start": 20386, "end": 20425, "kind": "table", "text": "| 条件 | $\\det D(\\delta)$ | 代数类型 | 物理意义 |"}
+{"doc_id": "D006", "sid": 340, "start": 20426, "end": 20474, "kind": "table", "text": "|------|-------------------|---------|---------|"}
+{"doc_id": "D006", "sid": 341, "start": 20475, "end": 20558, "kind": "table", "text": "| $\\|\\delta\\| < \\sqrt{8/3} \\approx 1.633$ | $> 0$ | **有限型**（正定） | 有限维表示，中子内部自由度有限 |"}
+{"doc_id": "D006", "sid": 342, "start": 20559, "end": 20629, "kind": "table", "text": "| $\\|\\delta\\| = \\sqrt{8/3}$ | $= 0$ | **仿射型** $\\hat{A}_4$ | 无穷维，环面代数 |"}
+{"doc_id": "D006", "sid": 343, "start": 20630, "end": 20701, "kind": "table", "text": "| $\\|\\delta\\| > \\sqrt{8/3}$ | $< 0$ | **不定型**（双曲/Kac-Moody） | 无穷维，非物理 |"}
+{"doc_id": "D006", "sid": 344, "start": 20703, "end": 20838, "kind": "prose", "text": "**结论**：当 $\\delta(Z,N)$ 紧邻 1（微扰级形变 $\\varepsilon = 1-\\delta = \\varepsilon_0 N/(Z+N)$，$|\\varepsilon|\\ll 1$）时，$\\det D > 0$，所有主子式为正，所有特征值为正。"}
+{"doc_id": "D006", "sid": 345, "start": 20838, "end": 20877, "kind": "prose", "text": "**$D(\\delta)$ 仍然是有限型广义嘉当矩阵**，不是仿射型或双曲型。"}
+{"doc_id": "D006", "sid": 346, "start": 20877, "end": 20924, "kind": "prose", "text": "中子通过 $\\delta \\neq 1$ 对 $A_4$ 进行微小形变，但保持在有限型区域内。"}
+{"doc_id": "D006", "sid": 347, "start": 20926, "end": 20956, "kind": "prose", "text": "特征值对比（$\\delta$ 紧邻 1 的微扰情形）待推导。"}
+{"doc_id": "D006", "sid": 348, "start": 20958, "end": 20978, "kind": "prose", "text": "形变极微小，中子内部仍是有限维代数结构。"}
+{"doc_id": "D006", "sid": 349, "start": 20980, "end": 20994, "kind": "heading", "text": "### 8.2 超导机制参数"}
+{"doc_id": "D006", "sid": 350, "start": 20996, "end": 21102, "kind": "prose", "text": "超导理论中所需的跃迁耦级谱 $2\\ln n$（$n=2,4,6,\\ldots$）、资格条件、$\\beta$ 微观来源、$T_c$ 自由能交叉等数学结果，见 `06 超导/CQM_超导核心理论.md` §7-12。"}
+{"doc_id": "D006", "sid": 351, "start": 21102, "end": 21125, "kind": "prose", "text": "此处从略，以保持两种引力文档与超导文档的分离。"}
 {"doc_id": "D007", "sid": 0, "start": 0, "end": 21, "kind": "heading", "text": "# 因果网络同步理论：从黎曼结构到物理涌现"}
 {"doc_id": "D007", "sid": 1, "start": 23, "end": 110, "kind": "prose", "text": "**Causal Network Synchronization Theory: From Riemann Structure to Physical Emergence**"}
 {"doc_id": "D007", "sid": 2, "start": 112, "end": 187, "kind": "quote", "text": "> 因果网络同步理论（CNST）是耦合常数量子力学（CQM）的存在论基底，是一个**因果动力学理论**——描述引力如何使具体的因果结构/关系成为可能。"}
