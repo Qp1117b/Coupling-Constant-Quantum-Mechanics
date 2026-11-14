@@ -162,7 +162,7 @@ theorem casimirEigenvalue_strictMono {k₁ k₂ : ℕ} (hk₁ : 1 ≤ k₁) (hk�
 
 /-- **壳层容量** N_k^max = 2(2l_k + 1)。
     来源：自旋 2 态 × 磁量子数 (2l+1) 个取值。
-    《CQM_超导_专题与扩展》§11.7 壳层饱和数 2, 6, 10, 14。
+    《CQM 超导核心理论》§11.7 壳层饱和数 2, 6, 10, 14。
     **从 Casimir 严格推导**：给定 l_k，容量 = 2(2l_k+1)。 -/
 def shellCapacityFromCasimir (k : ℕ) : ℕ := 2 * (2 * shellLabel k + 1)
 

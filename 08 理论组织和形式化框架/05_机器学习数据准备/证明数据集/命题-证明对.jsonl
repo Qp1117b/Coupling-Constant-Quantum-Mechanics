@@ -24,8 +24,8 @@
 {"prop_id": "P024", "statement": "FG=GR基态非平庸激发 底空间主丛上的联络 完整同步谱 $\\iff$ RH $\\wedge$ GRH", "type": "定理", "status": "已陈述", "source_doc": "D028", "depends_on": ["D008", "D005", "D030", "D007"], "lean_witness": null}
 {"prop_id": "P025", "statement": "纤维丛数学 $\\leftrightarrow$ CFT结构严格定量映射 同一数学两种诠释", "type": "定理", "status": "已陈述", "source_doc": "D029", "depends_on": ["D028", "D011", "D012", "D007"], "lean_witness": null}
 {"prop_id": "P026", "statement": "超导=FG底空间主丛伴丛的全局同步截面（同步再锁定）", "type": "命题", "status": "已陈述", "source_doc": "D030", "depends_on": ["D006", "D007", "D011", "D005", "D028"], "lean_witness": null}
-{"prop_id": "P027", "statement": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表", "type": "命题", "status": "已陈述", "source_doc": "D031", "depends_on": ["D030", "D032", "D008", "D007"], "lean_witness": null}
-{"prop_id": "P028", "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口", "type": "命题", "status": "已陈述", "source_doc": "D032", "depends_on": ["D030", "D031"], "lean_witness": null}
+{"prop_id": "P027", "statement": "元素周期表可导出 $T_c$ 自由能框架 缺口G9-G22权威表", "type": "命题", "status": "已陈述", "source_doc": "D030", "depends_on": ["D030", "D032", "D008", "D007"], "lean_witness": null}
+{"prop_id": "P028", "statement": "每个FG层级都有自己的同步算符 补入分子FG闭合 $\\delta_{\\text{intrinsic}}$ 缺口", "type": "命题", "status": "已陈述", "source_doc": "D032", "depends_on": ["D030", "D030"], "lean_witness": null}
 {"prop_id": "P029", "statement": "四层FG剖分方法论与统一计算链", "type": "命题", "status": "已陈述", "source_doc": "D033", "depends_on": ["D030", "D032"], "lean_witness": null}
 {"prop_id": "P030", "statement": "11库形式化验证状态 886定理/15公理待证 缺口闭合表", "type": "命题", "status": "已陈述", "source_doc": "D042", "depends_on": ["D019", "D030", "D004"], "lean_witness": null}
 {"prop_id": "P031", "statement": "GN库107定理 零sorry 零新增axiom", "type": "定理", "status": "已证明", "source_doc": "D043", "depends_on": ["D019"], "lean_witness": null}
@@ -37,18 +37,18 @@
 {"prop_id": "G006", "statement": "缺口G6：未定义（占位）", "type": "缺口", "status": "占位", "source_doc": "D005", "depends_on": [], "lean_witness": null}
 {"prop_id": "G007", "statement": "缺口G7：Σ_ij的第一性数值来源", "type": "缺口", "status": "待证明", "source_doc": "D005", "depends_on": [], "lean_witness": null}
 {"prop_id": "G008", "statement": "缺口G8：CP破坏相位δ的严格来源", "type": "缺口", "status": "待证明", "source_doc": "D005", "depends_on": [], "lean_witness": null}
-{"prop_id": "G009", "statement": "缺口G9：曲率截断共振窗口σ来源与标定", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G010", "statement": "缺口G10：闭环条件函数的动力学形式", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G011", "statement": "缺口G11：D_lattice正四单纯形组合构型→声子谱", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G012", "statement": "缺口G12：引力拓扑因子T_grav度规依赖", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G013", "statement": "缺口G13：BCS积分tanh→对数渐近", "type": "缺口", "status": "闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G014", "statement": "缺口G14：中子缺陷谱判据detD=8-3δ²", "type": "缺口", "status": "闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G015", "statement": "缺口G15：主次结构谱间隙差→同位素效应映射", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G016", "statement": "缺口G16：因果分辨率形式化（角亏密度→Ricci标量）", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G017", "statement": "缺口G18：主丛曲率机制关键参数第一性提取", "type": "缺口", "status": "部分闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G018", "statement": "缺口G19：和乐相位闭合≈1容差标定", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G019", "statement": "缺口G21：赝能隙相图→ARPES/STM映射", "type": "缺口", "status": "未闭合", "source_doc": "D031", "depends_on": [], "lean_witness": null}
-{"prop_id": "G020", "statement": "缺口G22：T_c丛作用量交叉构造推导", "type": "缺口", "status": "代数推导完成物理基座待建立", "source_doc": "D031", "depends_on": [], "lean_witness": null}
+{"prop_id": "G009", "statement": "缺口G9：曲率截断共振窗口σ来源与标定", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G010", "statement": "缺口G10：闭环条件函数的动力学形式", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G011", "statement": "缺口G11：D_lattice正四单纯形组合构型→声子谱", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G012", "statement": "缺口G12：引力拓扑因子T_grav度规依赖", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G013", "statement": "缺口G13：BCS积分tanh→对数渐近", "type": "缺口", "status": "闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G014", "statement": "缺口G14：中子缺陷谱判据detD=8-3δ²", "type": "缺口", "status": "闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G015", "statement": "缺口G15：主次结构谱间隙差→同位素效应映射", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G016", "statement": "缺口G16：因果分辨率形式化（角亏密度→Ricci标量）", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G017", "statement": "缺口G18：主丛曲率机制关键参数第一性提取", "type": "缺口", "status": "部分闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G018", "statement": "缺口G19：和乐相位闭合≈1容差标定", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G019", "statement": "缺口G21：赝能隙相图→ARPES/STM映射", "type": "缺口", "status": "未闭合", "source_doc": "D030", "depends_on": [], "lean_witness": null}
+{"prop_id": "G020", "statement": "缺口G22：T_c丛作用量交叉构造推导", "type": "缺口", "status": "代数推导完成物理基座待建立", "source_doc": "D030", "depends_on": [], "lean_witness": null}
 {"prop_id": "G021", "statement": "缺口N1：质量-谱映射m∝λ_min待严格化", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": ["D043"], "lean_witness": null}
 {"prop_id": "G022", "statement": "缺口N2：角亏-δ显式几何公式ϵ(δ)缺失", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": [], "lean_witness": null}
 {"prop_id": "G023", "statement": "缺口N3：β衰变动力学条件缺失", "type": "缺口", "status": "待证明", "source_doc": "D006", "depends_on": [], "lean_witness": null}

@@ -13,7 +13,7 @@ import FGChain.CartanToShell
 
 | 可观测量 | 公式 | 状态 | 实验对应 |
 |:---|:---|:---|:---|
-| 氢原子能级 | E_n = −R/N(γ_n)²，N(γ_n) = 谱序号 | 本模块严格推导 | 里德伯公式（E_1 = −13.6 eV，精度 10⁻¹²，见《CQM_超导_专题与扩展》） |
+| 氢原子能级 | E_n = −R/N(γ_n)²，N(γ_n) = 谱序号 | 本模块严格推导 | 里德伯公式（E_1 = −13.6 eV，精度 10⁻¹²，见《CQM 超导核心理论》） |
 | 巴尔末系 | E_m − E_n = R(1/N_n² − 1/N_m²) | 本模块严格推导 | 氢光谱线系 |
 | 电子壳层容量 | 2(2l+1)：2, 6, 10, 14 | 本模块桥接 + `CartanToShell` Casimir 严格推导 | 元素周期表壳层结构 |
 | 周期长度（累积） | 2, 8, 18, 32 | 本模块桥接 + `CartanToShell` Casimir 严格推导 | Madelung 规则 |
@@ -39,7 +39,7 @@ open scoped Real
 /-- **氢原子能级（CQM 谱实现）**：同步算符谱 {γ_n} 经谱序号给出
     E_n = −R/N(γ_n)²，其中 N(γ_n) = n + 1 为谱序号（n = 0 为基态），
     R 为里德伯常数（由基态结合能锁定，见 `hydrogenLevel_rydberg`）。
-    理论出处：《CQM_超导_专题与扩展》"同步机制与氢原子能级推导"——
+    理论出处：《CQM 超导核心理论》"同步机制与氢原子能级推导"——
     电子 FG 同步算符谱经谱序号映射给出氢原子能级（精度 10⁻¹²）。 -/
 noncomputable def hydrogenLevel (R : ℝ) (n : ℕ) : ℝ :=
   -R / (((n + 1 : ℕ) : ℝ) ^ 2)
@@ -120,7 +120,7 @@ Casimir C_k = l_k(l_k+1) + 3/4 → 壳层容量 N_k = 2(2l_k+1)。
     严格推导见 `FGChain.CartanToShell.shellCapacityFromCasimir`，
     桥接定理 `shellCapacity_eq_casimir` 确认两者一致。
     出处：《CQM_核心_共形场论与OPE》"$A_4$结合律锁定s,p,d,f，禁戒g"、
-    `CQM_超导_专题与扩展.md` §11.7 壳层饱和数 2,6,10,14。 -/
+    `CQM_超导核心理论.md` §11.7 壳层饱和数 2,6,10,14。 -/
 def shellCapacity (l : ℕ) : ℕ := 2 * (2 * l + 1)
 
 /-- **Casimir 桥接定理**：以角量子数 l 为参数的 `shellCapacity l`
