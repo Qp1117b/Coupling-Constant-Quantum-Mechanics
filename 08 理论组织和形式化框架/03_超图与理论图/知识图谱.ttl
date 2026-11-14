@@ -2662,7 +2662,7 @@ cqm:EV_A031 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D020"^^xsd:string,
         "D020" ;
-    prov:atLocation "12097-12204" ;
+    prov:atLocation "12101-12208" ;
     prov:value "§3.2/§3.3（自守关联、$f_L,f_T\\in\\pi_p$） ｜ 本汇总新增（对应发生学分层：自守形式 → L 函数 → 朗兰兹；见 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md）"@zh .
 
 cqm:EV_A032 a cqm:Evidence,
@@ -2934,7 +2934,7 @@ cqm:EV_A049 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "54177-54200" ;
+    prov:atLocation "54181-54204" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A050 a cqm:Evidence,
@@ -2950,7 +2950,7 @@ cqm:EV_A050 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "54177-54200" ;
+    prov:atLocation "54181-54204" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A051 a cqm:Evidence,
@@ -2966,7 +2966,7 @@ cqm:EV_A051 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "54177-54200" ;
+    prov:atLocation "54181-54204" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A052 a cqm:Evidence,
@@ -2982,7 +2982,7 @@ cqm:EV_A052 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "54177-54200" ;
+    prov:atLocation "54181-54204" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_A053 a cqm:Evidence,
@@ -2998,7 +2998,7 @@ cqm:EV_A053 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "54177-54200" ;
+    prov:atLocation "54181-54204" ;
     prov:value "物理侧：时间量纲 $T$，固有时，可测量；"@zh .
 
 cqm:EV_C001 a cqm:Evidence,
@@ -3382,7 +3382,7 @@ cqm:EV_C025 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "19454-19650" ;
+    prov:atLocation "19470-19666" ;
     prov:value "CQM 超导 统一方法论 ｜ 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\\theta_D/(2\\,\\mathrm{arccoth}(x))$"@zh .
 
 cqm:EV_C026 a cqm:Evidence,
@@ -3462,7 +3462,7 @@ cqm:EV_C030 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "20086-20176" ;
+    prov:atLocation "20102-20192" ;
     prov:value "06 超导/超导材料设计器/ — 元素超导材料设计工具文档（系统架构、元素同位素数据库、超导判定算法、应用场景、元素嘉当矩阵参数化、文献调研、目标超导搜索策略，共 8 篇；"@zh .
 
 cqm:EV_C031 a cqm:Evidence,
@@ -3510,7 +3510,7 @@ cqm:EV_C033 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "60236-60272" ;
+    prov:atLocation "60240-60276" ;
     prov:value "故自守侧若输出一个“带长度量纲的数”，应读作 $K_L$ 而非 $c$。"@zh .
 
 cqm:EV_C034 a cqm:Evidence,
@@ -3526,7 +3526,7 @@ cqm:EV_C034 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "73442-73504" ;
+    prov:atLocation "73446-73508" ;
     prov:value "$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。"@zh .
 
 cqm:EV_C035 a cqm:Evidence,
@@ -3606,7 +3606,7 @@ cqm:EV_C039 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "18294-18341" ;
+    prov:atLocation "18295-18342" ;
     prov:value "$c$：时空同步前沿速度（信息传播前沿速率），$[c]=L/T$，不承担量纲转换。"@zh .
 
 cqm:EV_C040 a cqm:Evidence,
@@ -3638,7 +3638,7 @@ cqm:EV_C041 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "22982-23117" ;
+    prov:atLocation "22986-23121" ;
     prov:value "② ｜ 各形式（实现）各带具体值（数值 $\\times$ 量纲） ｜ 表面层——表面值不一定一样；“原形式 → 新形式”由自守因子联系 $f(\\gamma x)=j(\\gamma,x)f(x)$（$j\\not\\equiv1$ 时二者不等）"@zh .
 
 cqm:EV_C042 a cqm:Evidence,
@@ -3718,7 +3718,7 @@ cqm:EV_C046 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "18644-19064" ;
+    prov:atLocation "18660-19080" ;
     prov:value "CQM 超导核心理论 ｜ 超导涌现的完整框架（因果网络同步理论）：引力存在论前提（前时空〔先于引力〕+ GR/FG 两种引力，FG≠GR）、核子层（质子 $A_4$ + 中子 $D(\\delta)$ 缺陷矩阵、元素嘉当矩阵）、两条独立链（几何/嘉当）、Regge 几何→精细引力纤维丛、声子 = 曲率量子、固有时流速、耦合空间不确定性、跃迁耦级谱 $2\\ln n$ 与资格条件、自由能竞争选出主导群、因果网络同步（正常态/赝能隙/超导态 = 未同步/局域条件满足全局相位同步未完成/全局相位同步跃迁=再锁定，同步=相位相干不要求群统一，允许多群超导）、临界温度自由能交叉推导、完整因果链、界面超导与边"@zh .
 
 cqm:EV_C047 a cqm:Evidence,
@@ -3734,7 +3734,7 @@ cqm:EV_C047 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D001"^^xsd:string,
         "D001" ;
-    prov:atLocation "24283-24348" ;
+    prov:atLocation "24299-24364" ;
     prov:value "第一耦级 ｜ $\\mathfrak{c}_1$ ｜ $200.04045483$ ｜ $1/4 + \\gamma_1^2$"@zh .
 
 cqm:EV_C048 a cqm:Evidence,
@@ -3798,7 +3798,7 @@ cqm:EV_C051 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D017"^^xsd:string,
         "D017" ;
-    prov:atLocation "1434-1495" ;
+    prov:atLocation "1435-1496" ;
     prov:value "$\\sum_n \\frac{1}{\\gamma_n^2 + 1/4}$ 在 RH 成立时才严格成立，方向是单向的："@zh .
 
 cqm:EV_C052 a cqm:Evidence,
@@ -4262,7 +4262,7 @@ cqm:EV_C080 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D020"^^xsd:string,
         "D020" ;
-    prov:atLocation "185-223" ;
+    prov:atLocation "189-227" ;
     prov:value "\\text{其他粒子是 } \\pi_p \\text{ 的朗兰兹函子性分化。}"@zh .
 
 cqm:EV_C081 a cqm:Evidence,
@@ -4742,7 +4742,7 @@ cqm:EV_G028 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D017"^^xsd:string,
         "D017" ;
-    prov:atLocation "20118-20140" ;
+    prov:atLocation "20121-20143" ;
     prov:value "历史上对黎曼猜想的分解通常是二分的："@zh .
 
 cqm:EV_G029 a cqm:Evidence,
@@ -5030,7 +5030,7 @@ cqm:EV_H014 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "70243-70262" ;
+    prov:atLocation "70247-70266" ;
     prov:value "自守形式 ｜ 社会必要劳动时间"@zh .
 
 cqm:EV_H015 a cqm:Evidence,
@@ -5046,7 +5046,7 @@ cqm:EV_H015 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D017"^^xsd:string,
         "D017" ;
-    prov:atLocation "5523-5597" ;
+    prov:atLocation "5524-5598" ;
     prov:value "\\text{3个已知} + \\text{2个待推} + \\text{物理存在性} \\;\\longrightarrow\\; \\text{交叉RH成立}"@zh .
 
 cqm:EV_H016 a cqm:Evidence,
@@ -5158,7 +5158,7 @@ cqm:EV_P005 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D009"^^xsd:string,
         "D009" ;
-    prov:atLocation "55398-55481" ;
+    prov:atLocation "55402-55485" ;
     prov:value "量纲发生学 ｜ 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” ｜ 定性（哪些常数有量纲、$K$ 是什么） ｜ §6.1、§6.4.1"@zh .
 
 cqm:EV_P006 a cqm:Evidence,
@@ -5286,7 +5286,7 @@ cqm:EV_P013 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D017"^^xsd:string,
         "D017" ;
-    prov:atLocation "5523-5597" ;
+    prov:atLocation "5524-5598" ;
     prov:value "\\text{3个已知} + \\text{2个待推} + \\text{物理存在性} \\;\\longrightarrow\\; \\text{交叉RH成立}"@zh .
 
 cqm:EV_P014 a cqm:Evidence,
@@ -5302,7 +5302,7 @@ cqm:EV_P014 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D018"^^xsd:string,
         "D018" ;
-    prov:atLocation "690-771" ;
+    prov:atLocation "680-761" ;
     prov:value "「待推 1：边界条件」经解剖与归档回捞，结论是：长度半已由 RvM 非循环解出，相位半 $S(T)$ 仍是唯一实质缺口，且五重联系可统一到一个自洽方程上。"@zh .
 
 cqm:EV_P015 a cqm:Evidence,
@@ -5334,7 +5334,7 @@ cqm:EV_P016 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D020"^^xsd:string,
         "D020" ;
-    prov:atLocation "11433-11471" ;
+    prov:atLocation "11437-11475" ;
     prov:value "\\text{其他粒子是 } \\pi_p \\text{ 的朗兰兹函子性分化。}"@zh .
 
 cqm:EV_P017 a cqm:Evidence,

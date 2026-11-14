@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261114111653' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261114111653' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261114111653' }],
-    ['script', { src: '/cqm-glossary.js?v=20261114111653', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261114111653', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261114111653', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261114111653', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261114111653', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261114111653', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261114111653', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261114112836' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261114112836' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261114112836' }],
+    ['script', { src: '/cqm-glossary.js?v=20261114112836', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261114112836', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261114112836', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261114112836', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261114112836', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261114112836', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261114112836', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -239,16 +239,16 @@ export default defineConfig({
         "link": "/D017_黎曼猜想证明思路"
       },
       {
-        "text": "CQM 待推 1（边界条件）深度分析 —— 五重联系整合版",
-        "link": "/D018_待推1边界条件"
+        "text": "CQM 待推 1（边界条件）的五重联系",
+        "link": "/D018_待推1边界条件的五重联系"
       },
       {
         "text": "G_N 第一性推导：公理化证明稿",
         "link": "/D019_GN第一性推导公理化"
       },
       {
-        "text": "CQM 质量研究思路汇总",
-        "link": "/D020_质量研究思路汇总"
+        "text": "CQM 质量的量纲地位与自守来源",
+        "link": "/D020_质量的量纲地位与自守来源"
       },
       {
         "text": "Wyler 常数的 A_4 群论分解与 CQM 框架嵌入",
@@ -271,8 +271,8 @@ export default defineConfig({
         "link": "/D025_量子快置乱普适速率极限"
       },
       {
-        "text": "反物质引力、马克思主义哲学契合与宇宙学常数／G_N 推导边界（前沿研究）",
-        "link": "/D053_反物质引力与宇宙学边界"
+        "text": "反物质引力：CQM 对照、马克思主义哲学契合与宇宙学常数／G_N 推导边界（前沿研究）",
+        "link": "/D053_反物质引力与GN推导边界"
       },
       {
         "text": "分布式不对易关系：非马尔可夫性的结构起源（理论构造）",
