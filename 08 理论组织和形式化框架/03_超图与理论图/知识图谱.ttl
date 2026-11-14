@@ -2182,7 +2182,7 @@ cqm:EV_A001 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "9416-9457" ;
+    prov:atLocation "9432-9473" ;
     prov:value "前时空 ｜ 精细引力 FG ｜ 经典引力 GR"@zh .
 
 cqm:EV_A002 a cqm:Evidence,
@@ -2198,7 +2198,7 @@ cqm:EV_A002 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "8812-8824" ;
+    prov:atLocation "8828-8840" ;
     prov:value "GR 比 FG 更基础。"@zh .
 
 cqm:EV_A003 a cqm:Evidence,
@@ -2774,7 +2774,7 @@ cqm:EV_A038 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "7442-7470" ;
+    prov:atLocation "7458-7486" ;
     prov:value "声子是 FG Regge 曲率（底空间角亏）的量子涨落。"@zh .
 
 cqm:EV_A039 a cqm:Evidence,
@@ -3014,7 +3014,7 @@ cqm:EV_C001 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "733-794" ;
+    prov:atLocation "749-810" ;
     prov:value "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。"@zh .
 
 cqm:EV_C002 a cqm:Evidence,
@@ -3254,7 +3254,7 @@ cqm:EV_C017 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "733-794" ;
+    prov:atLocation "749-810" ;
     prov:value "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。"@zh .
 
 cqm:EV_C018 a cqm:Evidence,
@@ -3270,7 +3270,7 @@ cqm:EV_C018 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "3867-3875" ;
+    prov:atLocation "3883-3891" ;
     prov:value "基态的非平庸激发"@zh .
 
 cqm:EV_C019 a cqm:Evidence,
@@ -3398,7 +3398,7 @@ cqm:EV_C026 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "15101-15329" ;
+    prov:atLocation "15117-15345" ;
     prov:value "N2 ｜ Regge 角亏与 δ 的显式关系缺失 ｜ 尚未写出 $\\epsilon(\\delta)$ 的具体公式 ｜ SPAF.neutronDefect 定义 $D(\\delta)$；MolecularGeometry.deficitAngleDensity 与 BridgeTheorems.reggeDeficit_ricciScalar_* 建立角亏-曲率关系，但 $\\epsilon(\\delta)$ 显式几何公式未写"@zh .
 
 cqm:EV_C027 a cqm:Evidence,
@@ -3430,7 +3430,7 @@ cqm:EV_C028 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "13723-13755" ;
+    prov:atLocation "13739-13771" ;
     prov:value "Regge 铰链需求：缺陷必须在末端，以提供开放面。"@zh .
 
 cqm:EV_C029 a cqm:Evidence,
@@ -3446,7 +3446,7 @@ cqm:EV_C029 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "14671-14682" ;
+    prov:atLocation "14687-14698" ;
     prov:value "$D(\\delta)$"@zh .
 
 cqm:EV_C030 a cqm:Evidence,
@@ -4630,7 +4630,7 @@ cqm:EV_G021 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "14621-14646" ;
+    prov:atLocation "14637-14662" ;
     prov:value "质量-谱映射的严格第一性推导仍开放（缺口 N1）。"@zh .
 
 cqm:EV_G022 a cqm:Evidence,
@@ -4646,7 +4646,7 @@ cqm:EV_G022 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "16510-16596" ;
+    prov:atLocation "16526-16612" ;
     prov:value "$$\\boxed{\\delta \\to \\text{Regge 角亏 } \\epsilon(\\delta) \\quad (\\text{缺口 N2：显式几何公式未写})}$$"@zh .
 
 cqm:EV_G023 a cqm:Evidence,
@@ -4662,7 +4662,7 @@ cqm:EV_G023 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "18816-18873" ;
+    prov:atLocation "18832-18889" ;
     prov:value "核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；"@zh .
 
 cqm:EV_G024 a cqm:Evidence,
@@ -4678,7 +4678,7 @@ cqm:EV_G024 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "15469-15512" ;
+    prov:atLocation "15485-15528" ;
     prov:value "N4 ｜ 氘核结合能未精确推导 ｜ 只有数量级估计 ｜ 暂无对应形式化"@zh .
 
 cqm:EV_G025 a cqm:Evidence,
@@ -4886,7 +4886,7 @@ cqm:EV_H005 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "16261-16321" ;
+    prov:atLocation "16277-16337" ;
     prov:value "FG ｜ 中子-质子对提供 $A_4$ 末端缺陷，形成 Regge 铰链（质子-质子对也能形成铰链，但一般较难）"@zh .
 
 cqm:EV_H006 a cqm:Evidence,
@@ -4902,7 +4902,7 @@ cqm:EV_H006 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "4935-4984" ;
+    prov:atLocation "4951-5000" ;
     prov:value "源：物质晶胞分布的内禀不均匀性，由 Regge 角亏 $\\delta_v$ 几何度量。"@zh .
 
 cqm:EV_H007 a cqm:Evidence,
@@ -4918,7 +4918,7 @@ cqm:EV_H007 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "20822-20861" ;
+    prov:atLocation "20838-20877" ;
     prov:value "$D(\\delta)$ 仍然是有限型广义嘉当矩阵，不是仿射型或双曲型。"@zh .
 
 cqm:EV_H008 a cqm:Evidence,
@@ -5110,7 +5110,7 @@ cqm:EV_P002 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D006"^^xsd:string,
         "D006" ;
-    prov:atLocation "733-794" ;
+    prov:atLocation "749-810" ;
     prov:value "它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。"@zh .
 
 cqm:EV_P003 a cqm:Evidence,
@@ -5978,11 +5978,11 @@ cqm:Hyperedge a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass cqm:Concept ;
-            owl:onProperty cqm:hasPremise ],
+            owl:onProperty cqm:hasConclusion ],
         [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass cqm:Concept ;
-            owl:onProperty cqm:hasConclusion ],
+            owl:onProperty cqm:hasPremise ],
         owl:Thing .
 
 cqm:Statement a owl:Class ;

@@ -83,16 +83,16 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261114110530' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261114110530' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261114110530' }],
-    ['script', { src: '/cqm-glossary.js?v=20261114110530', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261114110530', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261114110530', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261114110530', defer: true }],
-    ['script', { src: '/tex-svg.js?v=20261114110530', defer: true }],
-    ['script', { src: '/lean-page.js?v=20261114110530', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261114110530', defer: true }]
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261114111653' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261114111653' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261114111653' }],
+    ['script', { src: '/cqm-glossary.js?v=20261114111653', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261114111653', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261114111653', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261114111653', defer: true }],
+    ['script', { src: '/tex-svg.js?v=20261114111653', defer: true }],
+    ['script', { src: '/lean-page.js?v=20261114111653', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261114111653', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -176,7 +176,7 @@ export default defineConfig({
         "link": "/D005_集成理论_总纲"
       },
       {
-        "text": "CQM 核心：两种引力存在论前提与中子缺陷矩阵",
+        "text": "CQM 核心：两种引力的存在论前提——中子缺陷矩阵作为精细引力角亏的结构性来源",
         "link": "/D006_引力存在论前提"
       },
       {
