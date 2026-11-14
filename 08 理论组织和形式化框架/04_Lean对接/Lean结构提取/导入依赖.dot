@@ -88,6 +88,9 @@ digraph LeanImports {
   "NonMarkovianity" -> "NonMarkovianity.Markovization";
   "NonMarkovianity" -> "NonMarkovianity.ScaleThreshold";
   "NonMarkovianity" -> "NonMarkovianity.ProperTimeRelaxation";
+  "NonMarkovianity" -> "NonMarkovianity.DistributedCommutation";
+  "NonMarkovianity.DistributedCommutation" -> "NonMarkovianity.Basic";
+  "NonMarkovianity.DistributedCommutation" -> "CouplingSpace.Uncertainty";
   "NonMarkovianity.Markovization" -> "NonMarkovianity.Basic";
   "NonMarkovianity.ProperTimeRelaxation" -> "NonMarkovianity.Basic";
   "NonMarkovianity.ProperTimeRelaxation" -> "Superconductivity.CouplingSpace";

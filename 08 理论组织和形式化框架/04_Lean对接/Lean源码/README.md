@@ -119,7 +119,7 @@ Axioms
 | 库 | 已证明定理 | 公理/待证 |
 |:---|:---:|:---:|
 | CausalSet | 22 | 4 |
-| CouplingSpace | 21 | 0 |
+| CouplingSpace | 22 | 0 |
 | CartanAlgebra | 33 | 0 |
 | SpectralGeometry | 129 | 2 |
 | PrimeGeometry | 81 | 0 |
@@ -129,10 +129,10 @@ Axioms
 | Superconductivity | 331 | 5 |
 | GN | 107 | 0 |
 | FGChain | 114 | 0 |
-| NonMarkovianity | 21 | 0 |
-| **总计** | **907** | **15** |
+| NonMarkovianity | 43 | 0 |
+| **总计** | **930** | **15** |
 
-> **计数口径**（全库统一）：`已证明定理` = 源码中 `theorem` 与 `lemma` 声明之和（零 `sorry`），按模块首段目录归属到库；`example` 当前为 0，不计入。口径与 `_build/build_lean.py` 的 `theorem_like` 抽取逐库一致（theorem 857 + lemma 50 = 907）。FGChain（12 模块）已并入本表，不再单列。
+> **计数口径**（全库统一）：`已证明定理` = 源码中 `theorem` 与 `lemma` 声明之和（零 `sorry`），按模块首段目录归属到库；`example` 当前为 0，不计入。口径与 `_build/build_lean.py` 的 `theorem_like` 抽取逐库一致（theorem 880 + lemma 50 = 930）。FGChain（12 模块）已并入本表，不再单列。
 > 注：「公理/待证」按源码 `axiom` 声明计数（15 条，分布：Superconductivity 5 · CausalSet 4 · SpectralGeometry 2 · Methodology 4）；不含 `def ... : Prop` 的命题位声明（`uniquenessByDeepCouplingClaim`、`layerNonReductionismClaim`、`windingDensityConvergenceClaim`、`deepCouplingBreaksFactorizationClaim`）。
 > 范围说明：907 为**源码声明行**计数。原未纳入 `lakefile.toml` `defaultTargets` 的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44）已全部修复并通过 `lake build`，并由库根 `SpectralGeometry.lean`（`import SpectralGeometry.Mathieu`）与 `Superconductivity.lean`（`import Superconductivity.BridgeTheorems`、`import Superconductivity.ElementCartan`）纳入构建；原 2 处跨模块同名声明已消除（`ElementCartan` 侧 `protonCartan_isPureA4` → `protonCartan_eq_neutronCartan_zero`、`molecularSuperCartan_symmetric` → `molecularSuperCartan_blockSymmetric`，`MolecularGeometry` 保留原名），故去重后唯一全限定名同为 907。12 个库根模块的构建状态均为全部通过。v1.9.56 已将原 `causalChainSelfClosure` 改为定义 `CausalLoop.ofSegment`（结构构造，不承载物理断言），故定理计数相应减 1、`def` 计数加 1，声明总数 1405 不变。v1.9.57 删除 `SpectralGeometry/RiemannXi` 中数值不成立的公理 `spectralQuantum_zeta_zeros_relation`（原式以 `γ₁+n` 近似第 n 个零点），声明总数 1405 → 1404。v1.9.58 将 `SpectralGeometry/Basic` 的 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`（用 Euler–Mascheroni 上下界序列 n = 2048、ln 2 十进制界与 ln π 的 Taylor 估计严格证明 0.02295 < ☯ < 0.02325）；声明总数 1404 不变（axiom 16 → 15、theorem 835 → 836），已证明定理 885 → 886。
 
@@ -142,15 +142,15 @@ Axioms
 
 | 分级 | 条数 |
 |:---|:---:|
-| 零 CQM 公理依赖 | 883 |
+| 零 CQM 公理依赖 | 906 |
 | 　· 不使用任何公理 | 45 |
 | 　· 仅 `propext` | 52 |
 | 　· `propext` + `Quot.sound` | 24 |
-| 　· `propext` + `Classical.choice` + `Quot.sound` | 762 |
+| 　· `propext` + `Classical.choice` + `Quot.sound` | 785 |
 | 依赖 CQM 公理 | 3 |
-| **合计（去重全限定名）** | **907** |
+| **合计（去重全限定名）** | **930** |
 
-> 说明：v1.9.55 已把原未纳入实测的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44，共 86 条）全部纳入实测——其中 84 条为零 CQM 公理依赖（均落在 `propext` + `Classical.choice` + `Quot.sound` 三元组），2 条依赖 CQM 公理（见下）。原「未纳入实测 79」一行随之取消。v1.9.56 将 `causalChainSelfClosure`（原属三元组类）改为定义 `CausalLoop.ofSegment`，故「零 CQM 公理依赖」与三元组子行各减 1；本次改动不涉及任何 CQM 公理的使用状态。v1.9.57 删除的 `spectralQuantum_zeta_zeros_relation` 无任何已证定理依赖，故分级计数不变（零 CQM 公理依赖 851 / 依赖 CQM 公理 34，合计 885）。v1.9.58 把 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`：原依赖该公理的 31 条（SpectralGeometry 23 · GN 7 · PhysicalConstants 1）实测全部转为零 CQM 公理依赖且均落在三元组子行，新定理本身亦属三元组；故「零 CQM 公理依赖」851 → 883（三元组子行 730 → 762）、「依赖 CQM 公理」34 → 3，其余三子行不变。
+> 说明：v1.9.55 已把原未纳入实测的三个模块（`SpectralGeometry/Mathieu` 17、`Superconductivity/BridgeTheorems` 25、`Superconductivity/ElementCartan` 44，共 86 条）全部纳入实测——其中 84 条为零 CQM 公理依赖（均落在 `propext` + `Classical.choice` + `Quot.sound` 三元组），2 条依赖 CQM 公理（见下）。原「未纳入实测 79」一行随之取消。v1.9.56 将 `causalChainSelfClosure`（原属三元组类）改为定义 `CausalLoop.ofSegment`，故「零 CQM 公理依赖」与三元组子行各减 1；本次改动不涉及任何 CQM 公理的使用状态。v1.9.57 删除的 `spectralQuantum_zeta_zeros_relation` 无任何已证定理依赖，故分级计数不变（零 CQM 公理依赖 851 / 依赖 CQM 公理 34，合计 885）。v1.9.58 把 `spectralQuantum_numerical_bounds` 由 `axiom` 升级为 `theorem`：原依赖该公理的 31 条（SpectralGeometry 23 · GN 7 · PhysicalConstants 1）实测全部转为零 CQM 公理依赖且均落在三元组子行，新定理本身亦属三元组；故「零 CQM 公理依赖」851 → 883（三元组子行 730 → 762）、「依赖 CQM 公理」34 → 3，其余三子行不变。v1.9.89 新增的 23 条定理（CouplingSpace 1 + NonMarkovianity 22）经 `#print axioms` 实测全部依赖 `propext`、`Classical.choice`、`Quot.sound` 三元组，故「零 CQM 公理依赖」883 → 906、三元组子行 762 → 785、合计 907 → 930。
 
 **依赖 CQM 公理的 3 条**（逐条实名可复现）：
 
@@ -228,7 +228,7 @@ lake build GN.Constructions # §8–§11 可代数化构造
 | FG 纤维丛理论链路 | `FGChain` | 114 |
 | $G_N$ 第一性推导（§1 三重恒等 + §5 Sierra-CQM + §2 组合谱 + §6 Adele Jacobian + §8–§11 构造） | `GN` | 107 |
 
-> 注：本表与「定理统计」同口径（`theorem` + `lemma`，零 `sorry`），12 库合计 907。
+> 注：本表与「定理统计」同口径（`theorem` + `lemma`，零 `sorry`），12 库合计 930。
 
 ## 本次更新亮点 (v0.7.0)
 

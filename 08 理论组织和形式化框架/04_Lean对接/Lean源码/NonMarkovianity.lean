@@ -2,6 +2,7 @@ import NonMarkovianity.Basic
 import NonMarkovianity.Markovization
 import NonMarkovianity.ScaleThreshold
 import NonMarkovianity.ProperTimeRelaxation
+import NonMarkovianity.DistributedCommutation
 
 /-!
 # 分布式不对易关系与非马尔可夫性 (NonMarkovianity)
@@ -16,6 +17,7 @@ import NonMarkovianity.ProperTimeRelaxation
 | `NonMarkovianity.Markovization` | 单点本体论马尔可夫化与单时刻有界状态类（`LocalAt`） |
 | `NonMarkovianity.ScaleThreshold` | 尺度阈值命题：存在最小失效尺度 `ℓ*` |
 | `NonMarkovianity.ProperTimeRelaxation` | N1 接口：角亏—固有时流速—弛豫时标 |
+| `NonMarkovianity.DistributedCommutation` | 分布式对易关系：`[û_G, Σv̂] = i☯ I` 与 `Δû_G·Δ(Σv̂) ≥ ☯/2` |
 
 ## 状态标注
 

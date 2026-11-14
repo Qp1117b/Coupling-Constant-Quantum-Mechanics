@@ -328,7 +328,7 @@ $$\Delta u_G\cdot\Delta\Bigl(\sum_{i=1}^N\sqrt{1-\beta\,\delta_v^{(i)}}\Bigr)\ \
 
 $$\text{LQG}\ \rightarrow\ \text{Regge}\ \rightarrow\ \delta_v\text{ 涨落}\ \rightarrow\ \text{声子谱}\ \rightarrow\ \text{配对场记忆核}\ \rightarrow\ T_c/\text{赝能隙},$$
 
-第一环的局部映射已写出（`07 精细引力（FG）/FG_LQG-Regge显式映射.md`）：自旋网络边 $e$ 的自旋 $j_e$ 给出面积 $A_e=\lambda_\ell\,8\pi\gamma\ell_P^2\sqrt{j_e(j_e+1)}$，交织子给角数据，解出 4-单纯形边长，按 $\delta_v=2\pi-\sum_{\Delta\ni v}\theta_v(\Delta)$ 得顶点角亏。
+第一环「LQG → Regge」是**形式对应**（运动学词典／一致性读出），不是物理输入：物理输入是凝聚态晶格（晶胞几何分布＋晶胞嘉当矩阵，见 `06 超导/CQM_超导核心理论.md` §3 两条链），物理生成方向是晶胞 → Regge 数据。其局部映射已写出（`07 精细引力（FG）/FG_LQG-Regge显式映射.md`）：自旋网络边 $e$ 的自旋 $j_e$ 给出面积 $A_e=\lambda_\ell\,8\pi\gamma\ell_P^2\sqrt{j_e(j_e+1)}$，交织子给角数据，解出 4-单纯形边长，按 $\delta_v=2\pi-\sum_{\Delta\ni v}\theta_v(\Delta)$ 得顶点角亏。
 
 记忆核在第 4 至第 5 环之间显现，机制是局域频率分布的系综平均：
 
@@ -336,7 +336,7 @@ $$K(t)=\bigl\langle \mathrm e^{-\mathrm i\omega(v)t}\bigr\rangle_{P(\delta_v)}.$
 
 按本文分类（§4.4），这是**载体 ①（谱分布）**：记忆来自 $\delta_v$ 的空间分布，而非来自跨节点协方差。其非马尔可夫性是形状性的：若 $P(\delta_v)$ 近似高斯，则 $K(t)\propto \mathrm e^{-t^2/2\tau_g^2}$；而【标准数学】平稳高斯过程的协方差满足马尔可夫性质，当且仅当 $R(a+b)R(0)=R(a)R(b)$，其连续解为指数型 $R(\tau)=R(0)\mathrm e^{-\alpha|\tau|}$（Ornstein–Uhlenbeck 型）[13]。高斯核不满足该条件，故在形状上已非马尔可夫；马尔可夫极限是指数型或 $\delta(t)$，不是高斯型。
 
-**映射的条件性**：该映射只局部落成，不构成全球粘合——10 个面积最多对应 64 组边长，须由交织子或临界点选支；CQM 的顶点角亏不是 4 维 Regge 的三角形骨亏；LQG 面积单位与 FG 晶胞尺度之间需层级重标 $\lambda_\ell$；全球粘合与自旋泡沫动力学仍未闭合。记忆核在这条链的**第 4 环到第 5 环之间**显现，而不是从 LQG 顶点直接给出：每个区域由 $\delta_v(v)$ 给出 $v_\tau$ 与 $\tau_{\rm relax}$，从而给出局域频率 $\omega(v)$；对 $P(\delta_v)$ 平均得到配对场的记忆因子。若 $P(\delta_v)$ 在相关变量上近似高斯，核宽 $\tau_g$ 由 $\delta_v$ 的方差与 $\tau_{\rm relax}$ 共同决定。$\tau_{\rm relax}$ 是核的特征宽度，不是核本身；完整核仍需声子谱与配对场耦合。
+**映射的条件性**：该映射只局部落成，不构成全球粘合——10 个面积最多对应 64 组边长，须由交织子或临界点选支；CQM 的顶点角亏不是 4 维 Regge 的三角形骨亏；LQG 面积单位与 FG 晶胞尺度之间需层级重标 $\lambda_\ell$；全球粘合与自旋泡沫动力学仍未闭合；按形式对应定位，这些未闭合项属对应自身的开放问题，不构成超导链的前置条件。记忆核在这条链的**第 4 环到第 5 环之间**显现，而不是从 LQG 顶点直接给出：每个区域由 $\delta_v(v)$ 给出 $v_\tau$ 与 $\tau_{\rm relax}$，从而给出局域频率 $\omega(v)$；对 $P(\delta_v)$ 平均得到配对场的记忆因子。若 $P(\delta_v)$ 在相关变量上近似高斯，核宽 $\tau_g$ 由 $\delta_v$ 的方差与 $\tau_{\rm relax}$ 共同决定。$\tau_{\rm relax}$ 是核的特征宽度，不是核本身；完整核仍需声子谱与配对场耦合。
 
 **与 DNR 的关系**：五步链给核的**几何来源**（载体 ①），DNR 给核的**跨节点权重**（载体 ②）。两者相加不重复计数：前者决定核的时间形状，后者决定核在阵列上的分配。这一分工是本文对“框架已有记忆机制”与“DNR 新增机制”的划界，也是避免把两者混为“同一件事的两种说法”的关键。
 
