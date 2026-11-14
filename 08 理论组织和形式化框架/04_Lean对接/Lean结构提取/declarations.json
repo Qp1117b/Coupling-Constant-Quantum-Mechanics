@@ -956,33 +956,40 @@
   "file": "CouplingSpace/Uncertainty.lean",
   "line": 156,
   "kind": "theorem",
+  "name": "robertson_ccr_inequality_general"
+ },
+ {
+  "module": "CouplingSpace.Uncertainty",
+  "file": "CouplingSpace/Uncertainty.lean",
+  "line": 234,
+  "kind": "theorem",
   "name": "robertson_ccr_inequality"
  },
  {
   "module": "CouplingSpace.Uncertainty",
   "file": "CouplingSpace/Uncertainty.lean",
-  "line": 232,
+  "line": 251,
   "kind": "theorem",
   "name": "cqm_uncertainty_from_robertson"
  },
  {
   "module": "CouplingSpace.Uncertainty",
   "file": "CouplingSpace/Uncertainty.lean",
-  "line": 243,
+  "line": 262,
   "kind": "theorem",
   "name": "dimensionless_uncertainty"
  },
  {
   "module": "CouplingSpace.Uncertainty",
   "file": "CouplingSpace/Uncertainty.lean",
-  "line": 282,
+  "line": 301,
   "kind": "structure",
   "name": "CouplingIdentification"
  },
  {
   "module": "CouplingSpace.Uncertainty",
   "file": "CouplingSpace/Uncertainty.lean",
-  "line": 294,
+  "line": 313,
   "kind": "theorem",
   "name": "cqm_uncertainty_conditional"
  },
@@ -3932,6 +3939,181 @@
   "line": 112,
   "kind": "theorem",
   "name": "noninjectivity_not_implying_insufficiency"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 47,
+  "kind": "theorem",
+  "name": "commutatorOp_zero_left"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 52,
+  "kind": "theorem",
+  "name": "commutatorOp_add_left"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 60,
+  "kind": "theorem",
+  "name": "commutatorOp_smul_left"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 68,
+  "kind": "theorem",
+  "name": "commutatorOp_add_right"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 76,
+  "kind": "theorem",
+  "name": "commutatorOp_smul_right"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 84,
+  "kind": "theorem",
+  "name": "commutatorOp_smul_smul"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 91,
+  "kind": "theorem",
+  "name": "commutatorOp_sum_left"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 101,
+  "kind": "theorem",
+  "name": "commutatorOp_sum_right"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 112,
+  "kind": "theorem",
+  "name": "commutatorOp_sum_sum"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 120,
+  "kind": "theorem",
+  "name": "commutatorOp_sum_fin"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 132,
+  "kind": "theorem",
+  "name": "distributed_commutation_general"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 143,
+  "kind": "def",
+  "name": "collectiveCoupling"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 148,
+  "kind": "def",
+  "name": "totalProperTimeFlow"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 153,
+  "kind": "def",
+  "name": "CanonicalNodePair"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 159,
+  "kind": "theorem",
+  "name": "commutatorOp_canonical_sum"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 180,
+  "kind": "theorem",
+  "name": "distributed_commutation_relation"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 202,
+  "kind": "theorem",
+  "name": "isHermitian_add"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 209,
+  "kind": "theorem",
+  "name": "isHermitian_smul_ofReal"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 217,
+  "kind": "theorem",
+  "name": "isHermitian_sum"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 230,
+  "kind": "theorem",
+  "name": "isHermitian_collectiveCoupling"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 244,
+  "kind": "theorem",
+  "name": "isHermitian_totalProperTimeFlow"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 256,
+  "kind": "theorem",
+  "name": "distributed_uncertainty"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 271,
+  "kind": "theorem",
+  "name": "collectiveCoupling_one"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 278,
+  "kind": "theorem",
+  "name": "totalProperTimeFlow_one"
+ },
+ {
+  "module": "NonMarkovianity.DistributedCommutation",
+  "file": "NonMarkovianity/DistributedCommutation.lean",
+  "line": 284,
+  "kind": "theorem",
+  "name": "distributed_commutation_one"
  },
  {
   "module": "NonMarkovianity.Markovization",

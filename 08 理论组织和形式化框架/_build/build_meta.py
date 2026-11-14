@@ -160,6 +160,22 @@ def write_changelog():
 
 > 记录 `08 理论组织和形式化框架/` 的建设事件。仅记结构性变更，不记临时工具与中间产物。
 
+## v1.9.90 — LQG 角色降级：形式对应，非物理输入（五步链第一环定位收口）
+
+- **缘起**：作者裁定「Regge 晶胞直接对接凝聚态晶格，不从原始 LQG 考虑」，并指令「把 LQG 角色降级为形式对应而非物理输入」。五步链第一环「LQG → Regge」由「推导第一步／FG 基础推导」收口为**形式对应**（运动学词典／一致性读出）；物理输入是凝聚态晶格（晶胞几何分布＋晶胞嘉当矩阵，`06 超导/CQM_超导核心理论.md` §3 两条链），物理生成方向是晶胞 → Regge 数据。
+- **理论文档（5 文件，句级替换）**：`04 DNR` §6.5（链定位句＋条件性段补「未闭合项属对应自身的开放问题，不构成超导链的前置条件」）；`07 FG_LQG-Regge显式映射` 定位句、§4 第 4 条、§7 第 3 条；`04 规范重组超导` §2.3 当前状态句；`README` 文档表映射行；`专题档案` 07 表映射行。
+- **登记**：`02_概念本体/术语符号一致清单.md` §一权威约定补「LQG 角色（超导链）」行。
+- **未改**：不新增概念、术语、数值、文献、编号；G9–G22、N1–N4 状态不变；映射自身未闭合项（选支、Immirzi、顶点角亏 vs 骨亏格、全球粘合、自旋泡沫动力学、半经典极限）原样保留，只是不再作为超导链前置；01/03 一般理论参照（三大理论基底、Immirzi 对比）与 GN 证明稿、贝里曲率、关系性实在论的交叉引用不承载该口径，未动；动画宣传本就带「不说 LQG→Regge 已完全导出」禁语，未动；归档未动。
+- **同步**：全链重跑 fix_csv → build_base → build_evidence（语料 55 篇 / 1,041,559 字符 / 19,359 句 / 证据 213 条）→ build_claims → build_ontology → build_kg → build_lean → build_ml → build_extract → llm_extract（无 CQM_LLM_* 环境变量，跳过并登记）→ build_dynamics → build_causal → build_bridge → build_site → build_search → build_reader_site（staging 45 篇）→ build_vitepress_site（60 页可达；14877 处公式 → 115 个产物文件还原；锚点失配 49 处修复、未解决 0）→ build_meta。build_vitepress_site 首跑在构建后还原步骤遇瞬时文件锁（EINVAL），重试通过。
+- **核查**：`check_consistency` 41/41、`check_provenance` 10/10（证据 213/213）、`consistency_probe` 0 问题。
+
+## v1.9.89 — Robertson 不确定性关系推广至一般 c 数对易子；新增 NonMarkovianity.DistributedCommutation 模块（补登记）
+
+- **内容**：`CouplingSpace/Uncertainty.lean` 的 `robertson_ccr_inequality`（$[A,B] = i·I$，$ΔA·ΔB ≥ 1/2$）推广为 `robertson_ccr_inequality_general`（$[A,B] = i·c·I$，$c ∈ ℝ$，$ΔA·ΔB ≥ |c|/2$），证明同步重写（Cauchy–Schwarz＋三角不等式，$|z−z̄| = |c|$）；新增 `NonMarkovianity/DistributedCommutation.lean`（分布式对易关系 $[û_G, Σv̂] = i☯I$ 与 $Δû_G·Δ(Σv̂) ≥ ☯/2$，对接 DNR 文档 §6.3 的 CQM 关联），`NonMarkovianity.lean` 根模块纳入。
+- **计数**：声明 1439→1465、模块 74→75；已证明定理 907→930（CouplingSpace 21→22、NonMarkovianity 21→43；theorem 880＋lemma 50）；axiom 15 不变。新增 23 条定理经 `#print axioms` 实测全部落在 propext＋Classical.choice＋Quot.sound 三元组，零 CQM 公理依赖 883→906（Lean README 已先行标注 v1.9.89）。
+- **同步**：Lean结构提取、蓝图、lean声明.jsonl、`check_consistency` 计数基线（1439/74→1465/75）随全链重建更新。本条为补登记：改动在上一会话完成并留待提交，本次与 v1.9.90 一并收尾。
+- **验证**：`lake build` 全量通过（3583 jobs，Lean 4.29.1／Lake 5.0.0）；新模块无 sorry／admit／axiom 禁止项。
+
 ## v1.9.88 — 推翻 v1.9.87 的「H1 公式不渲染」误判；MathJax 引擎改按地址分流取源
 
 - **缘起**：v1.9.87 登记「H1 内行内公式不渲染，站点按字面显示 `$G_N$`，实测 8 处」。该判定**不成立**，据以成立的证据只是 `curl` 到的 HTML 源码：源码里本来就是公式原文（MathJax 在浏览器里才运行），而 `<title>` 不能排版公式，显示纯文本 `G_N` 是设计使然。改用真浏览器（Edge 无头 + CDP）实测后，8 篇含公式 H1 的 `mjx-container` 计数均为 1、标题文本无残留定界符，排版正常。

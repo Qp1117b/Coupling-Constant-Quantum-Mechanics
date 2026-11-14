@@ -256,7 +256,7 @@ C018,C025,未定,→,pattern,D033,191,FG表组合+跨原子联络→分子纤维
 C022,C025,未定,→,pattern,D033,191,联络→分子纤维丛→Regge剖分,False,False,,False
 C030,C026,未定,→,pattern,D042,34,元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏,False,False,,False
 C020,C012,重组实现|未定,重组实现,pattern,D042,35,主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符,False,False,,False
-C018,C063,未定,→,pattern,D042,340,FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱,False,False,,False
+C018,C063,未定,→,pattern,D042,341,FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱,False,False,,False
 C006,C005,层级含于|未定,属于,pattern,D052,20,禁闭内部只是 QCD），且明确「夸克不属于禁闭边界,True,True,映射,False
 C048,C065,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态,False,False,,False
 C048,C008,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态退相干,False,False,,False
@@ -519,7 +519,7 @@ C023,C075,未定,,cooccur,D001,80,曲率=对易子、和乐=monodromy、同步�
 C024,C012,未定,,cooccur,D001,80,和乐=monodromy、同步算符,False,False,,False
 C024,C079,未定,,cooccur,D001,80,和乐=monodromy、同步算符=mode算符、Dirac条件,False,False,,False
 C024,C075,未定,,cooccur,D001,80,和乐=monodromy、同步算符=mode算符、Dirac条件=共形自举,True,True,等价,False
-C018,C053,未定,,cooccur,D001,81,FG）/FG_LQG-Regge显式映射.md) | LQG→Regge 局部映射：边自旋$j_e$→对偶三角形面积（面积谱$A_e=8\pi\gamma\ell_P^2\sqrt{j_e(j_e+1)}$）、顶点交织子→4-单纯形,False,False,,False
+C018,C053,未定,,cooccur,D001,81,FG）/FG_LQG-Regge显式映射.md) | LQG→Regge 局部形式对应（运动学词典，非物理输入）：边自旋$j_e$→对偶三角形面积（面积谱$A_e=8\pi\gamma\ell_P^2\sqrt{j_e(j_e+1)}$）、顶点交织子→4-单纯形,False,False,,False
 C030,C020,未定,,cooccur,D001,86,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛,False,False,,False
 C030,C024,未定,,cooccur,D001,86,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐,False,False,,False
 C030,C015,未定,,cooccur,D001,86,元素嘉当矩阵 CQM→BCS 退化、分子→晶胞嘉当矩阵（链B条件）/Regge晶胞（链A生成）→FG 退相干场、桥接定理、压强-温度几何构型、BCS 渐近分析 G13 闭合）、FGChain（纤维丛链路形式化：离散主丛、和乐平庸化、结构群涨落、重组实现,False,False,,False
@@ -916,4 +916,4 @@ C048,C058,未定,,cooccur,D049,8,相变量子）、$\mathfrak{c}_1$（耦级）�
 C046,C058,未定,,cooccur,D049,8,耦级）、$\kappa$（谱修正,False,False,,False
 C045,C051,未定,,cooccur,D049,91,黎曼零点模平方 \|ρ₁\|² | ✅ 严格（条件 RH,False,False,,False
 C048,C082,未定,,cooccur,D051,6,相变量子.md` 附录 B；`04 前沿研究/Wyler常数,False,False,,False
-C071,C053,未定,,cooccur,D055,110,声子链；4-单纯形,False,False,,False
+C071,C053,未定,,cooccur,D055,112,声子链；4-单纯形,False,False,,False

@@ -152,8 +152,11 @@ NonMarkovianity,NonMarkovianity.Basic
 NonMarkovianity,NonMarkovianity.Markovization
 NonMarkovianity,NonMarkovianity.ScaleThreshold
 NonMarkovianity,NonMarkovianity.ProperTimeRelaxation
+NonMarkovianity,NonMarkovianity.DistributedCommutation
 NonMarkovianity.Basic,Mathlib.Data.Real.Basic
 NonMarkovianity.Basic,Mathlib.Tactic
+NonMarkovianity.DistributedCommutation,NonMarkovianity.Basic
+NonMarkovianity.DistributedCommutation,CouplingSpace.Uncertainty
 NonMarkovianity.Markovization,NonMarkovianity.Basic
 NonMarkovianity.ProperTimeRelaxation,NonMarkovianity.Basic
 NonMarkovianity.ProperTimeRelaxation,Superconductivity.CouplingSpace

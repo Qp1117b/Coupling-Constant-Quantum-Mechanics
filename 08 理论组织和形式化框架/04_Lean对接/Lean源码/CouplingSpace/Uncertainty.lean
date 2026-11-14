@@ -142,6 +142,84 @@ theorem IsHermitian_centeredOp (ψ : H) (A : H →ₗ[ℂ] H) (hA : IsHermitian 
 
 /-! ## Robertson 不确定性关系 — 核心定理 -/
 
+/-- [THEOREM] Robertson 不确定性关系（一般 `c` 数对易子）：
+    对于满足 [A, B] = i·c·I（c ∈ ℝ）的自伴算子 A, B，
+    和任意归一化态 ψ（‖ψ‖ = 1），有：
+    ΔA · ΔB ≥ |c|/2
+
+    证明方法：Cauchy-Schwarz + 三角不等式。
+    1. 构造中心化算子 A₀, B₀（其期望值为零，方差不变）
+    2. 令 z = ⟨A₀ψ, B₀ψ⟩，由 CCR 得 z - z̄ = i·c
+    3. 三角不等式：|z - z̄| ≤ 2|z| → |z| ≥ |c|/2
+    4. Cauchy-Schwarz：|z| ≤ ‖A₀ψ‖·‖B₀ψ‖ = σ_A·σ_B
+    5. 因此 σ_A·σ_B ≥ |c|/2 -/
+theorem robertson_ccr_inequality_general (ψ : H) (hψ : ‖ψ‖ = 1) (A B : H →ₗ[ℂ] H)
+    (hA : IsHermitian A) (hB : IsHermitian B) (c : ℝ)
+    (hCCR : commutatorOp A B = (Complex.I * (c : ℂ)) • idOp) :
+    stdDev ψ A * stdDev ψ B ≥ |c| / 2 := by
+  -- 中心化算子
+  let A₀ := centeredOp ψ A
+  let B₀ := centeredOp ψ B
+  have hA₀ : IsHermitian A₀ := IsHermitian_centeredOp ψ A hA
+  have hB₀ : IsHermitian B₀ := IsHermitian_centeredOp ψ B hB
+  have hCCR₀ : commutatorOp A₀ B₀ = (Complex.I * (c : ℂ)) • idOp := by
+    rw [commutatorOp_centeredOp_eq ψ A B, hCCR]
+  have h_inner_self : ⟪ψ, ψ⟫_ℂ = (1 : ℂ) := inner_self_one_of_norm_one ψ hψ
+
+  -- 令 z = ⟨A₀ψ, B₀ψ⟩
+  set z := ⟪A₀ ψ, B₀ ψ⟫_ℂ with hz
+
+  -- 步骤 1：z - z̄ = i·c（从 CCR 导出）
+  have h_conj_eq : star (⟪A₀ ψ, B₀ ψ⟫_ℂ) = ⟪B₀ ψ, A₀ ψ⟫_ℂ := by
+    simp
+
+  have h_z_sub_conj : z - star z = (Complex.I * (c : ℂ)) := by
+    calc
+      z - star z = ⟪A₀ ψ, B₀ ψ⟫_ℂ - star (⟪A₀ ψ, B₀ ψ⟫_ℂ) := rfl
+      _ = ⟪A₀ ψ, B₀ ψ⟫_ℂ - ⟪B₀ ψ, A₀ ψ⟫_ℂ := by rw [h_conj_eq]
+      _ = ⟪ψ, A₀ (B₀ ψ)⟫_ℂ - ⟪ψ, B₀ (A₀ ψ)⟫_ℂ := by rw [hA₀, hB₀]
+      _ = ⟪ψ, (A₀ ∘ₗ B₀) ψ⟫_ℂ - ⟪ψ, (B₀ ∘ₗ A₀) ψ⟫_ℂ := by simp
+      _ = ⟪ψ, ((A₀ ∘ₗ B₀) - (B₀ ∘ₗ A₀)) ψ⟫_ℂ := by
+        rw [LinearMap.sub_apply, inner_sub_right]
+      _ = ⟪ψ, (commutatorOp A₀ B₀) ψ⟫_ℂ := rfl
+      _ = ⟪ψ, ((Complex.I * (c : ℂ)) • idOp) ψ⟫_ℂ := by rw [hCCR₀]
+      _ = ⟪ψ, (Complex.I * (c : ℂ)) • ψ⟫_ℂ := by simp [idOp]
+      _ = (Complex.I * (c : ℂ)) * ⟪ψ, ψ⟫_ℂ := by rw [inner_smul_right]
+      _ = (Complex.I * (c : ℂ)) * (1 : ℂ) := by rw [h_inner_self]
+      _ = (Complex.I * (c : ℂ)) := by simp
+
+  -- 步骤 2：|z - z̄| = |i·c| = |c|
+  have h_norm_diff : ‖z - star z‖ = |c| := by
+    rw [h_z_sub_conj, norm_mul, Complex.norm_I, one_mul]
+    exact RCLike.norm_ofReal c
+
+  -- 步骤 3：三角不等式 |z - z̄| ≤ |z| + |z̄| = 2|z|
+  have h_norm_conj : ‖star z‖ = ‖z‖ := by simp
+  have h_triangle : ‖z - star z‖ ≤ ‖z‖ + ‖star z‖ := norm_sub_le _ _
+  rw [h_norm_conj, h_norm_diff] at h_triangle
+
+  -- 步骤 4：|z| ≥ |c|/2
+  have h_abs_z_ge_half : |c| / 2 ≤ ‖z‖ := by linarith
+
+  -- 步骤 5：Cauchy-Schwarz: |z| ≤ ‖A₀ψ‖·‖B₀ψ‖
+  have h_cauchy : ‖z‖ ≤ ‖A₀ ψ‖ * ‖B₀ ψ‖ := by
+    rw [hz]; exact norm_inner_le_norm (𝕜 := ℂ) (A₀ ψ) (B₀ ψ)
+
+  -- 步骤 6：‖A₀ψ‖·‖B₀ψ‖ ≥ |c|/2
+  have h_norm_prod : ‖A₀ ψ‖ * ‖B₀ ψ‖ ≥ |c| / 2 := by linarith
+
+  -- 步骤 7：联系方差和标准差
+  have h_varA : variance ψ A = ‖A₀ ψ‖ ^ 2 := by
+    dsimp [A₀, variance, centeredOp, idOp, expectation]
+  have h_varB : variance ψ B = ‖B₀ ψ‖ ^ 2 := by
+    dsimp [B₀, variance, centeredOp, idOp, expectation]
+  have h_stdA : stdDev ψ A = ‖A₀ ψ‖ := by
+    unfold stdDev; rw [h_varA, Real.sqrt_sq (norm_nonneg _)]
+  have h_stdB : stdDev ψ B = ‖B₀ ψ‖ := by
+    unfold stdDev; rw [h_varB, Real.sqrt_sq (norm_nonneg _)]
+  rw [h_stdA, h_stdB]
+  exact h_norm_prod
+
 /-- [THEOREM] Robertson 不确定性关系（CCR 特例）：
     对于满足正则对易关系 [A, B] = i·I 的 Hermitian 算子 A, B，
     和任意归一化态 ψ（‖ψ‖ = 1），有：
@@ -157,67 +235,8 @@ theorem robertson_ccr_inequality (ψ : H) (hψ : ‖ψ‖ = 1) (A B : H →ₗ[�
     (hA : IsHermitian A) (hB : IsHermitian B)
     (hCCR : commutatorOp A B = (Complex.I : ℂ) • idOp) :
     stdDev ψ A * stdDev ψ B ≥ (1/2 : ℝ) := by
-  -- 中心化算子
-  let A₀ := centeredOp ψ A
-  let B₀ := centeredOp ψ B
-  have hA₀ : IsHermitian A₀ := IsHermitian_centeredOp ψ A hA
-  have hB₀ : IsHermitian B₀ := IsHermitian_centeredOp ψ B hB
-  have hCCR₀ : commutatorOp A₀ B₀ = (Complex.I : ℂ) • idOp := by
-    rw [commutatorOp_centeredOp_eq ψ A B, hCCR]
-  have h_inner_self : ⟪ψ, ψ⟫_ℂ = (1 : ℂ) := inner_self_one_of_norm_one ψ hψ
-
-  -- 令 z = ⟨A₀ψ, B₀ψ⟩
-  set z := ⟪A₀ ψ, B₀ ψ⟫_ℂ with hz
-
-  -- 步骤 1：z - z̄ = i（从 CCR 导出）
-  have h_conj_eq : star (⟪A₀ ψ, B₀ ψ⟫_ℂ) = ⟪B₀ ψ, A₀ ψ⟫_ℂ := by
-    simp
-
-  have h_z_sub_conj : z - star z = (Complex.I : ℂ) := by
-    calc
-      z - star z = ⟪A₀ ψ, B₀ ψ⟫_ℂ - star (⟪A₀ ψ, B₀ ψ⟫_ℂ) := rfl
-      _ = ⟪A₀ ψ, B₀ ψ⟫_ℂ - ⟪B₀ ψ, A₀ ψ⟫_ℂ := by rw [h_conj_eq]
-      _ = ⟪ψ, A₀ (B₀ ψ)⟫_ℂ - ⟪ψ, B₀ (A₀ ψ)⟫_ℂ := by rw [hA₀, hB₀]
-      _ = ⟪ψ, (A₀ ∘ₗ B₀) ψ⟫_ℂ - ⟪ψ, (B₀ ∘ₗ A₀) ψ⟫_ℂ := by simp
-      _ = ⟪ψ, ((A₀ ∘ₗ B₀) - (B₀ ∘ₗ A₀)) ψ⟫_ℂ := by
-        rw [LinearMap.sub_apply, inner_sub_right]
-      _ = ⟪ψ, (commutatorOp A₀ B₀) ψ⟫_ℂ := rfl
-      _ = ⟪ψ, ((Complex.I : ℂ) • idOp) ψ⟫_ℂ := by rw [hCCR₀]
-      _ = ⟪ψ, (Complex.I : ℂ) • ψ⟫_ℂ := by simp [idOp]
-      _ = (Complex.I : ℂ) * ⟪ψ, ψ⟫_ℂ := by rw [inner_smul_right]
-      _ = (Complex.I : ℂ) * (1 : ℂ) := by rw [h_inner_self]
-      _ = (Complex.I : ℂ) := by simp
-
-  -- 步骤 2：|z - z̄| = |i| = 1
-  have h_norm_diff : ‖z - star z‖ = (1 : ℝ) := by
-    rw [h_z_sub_conj]; simp
-
-  -- 步骤 3：三角不等式 |z - z̄| ≤ |z| + |z̄| = 2|z|
-  have h_norm_conj : ‖star z‖ = ‖z‖ := by simp
-  have h_triangle : ‖z - star z‖ ≤ ‖z‖ + ‖star z‖ := norm_sub_le _ _
-  rw [h_norm_conj, h_norm_diff] at h_triangle
-
-  -- 步骤 4：|z| ≥ 1/2
-  have h_abs_z_ge_half : (1/2 : ℝ) ≤ ‖z‖ := by linarith
-
-  -- 步骤 5：Cauchy-Schwarz: |z| ≤ ‖A₀ψ‖·‖B₀ψ‖
-  have h_cauchy : ‖z‖ ≤ ‖A₀ ψ‖ * ‖B₀ ψ‖ := by
-    rw [hz]; exact norm_inner_le_norm (𝕜 := ℂ) (A₀ ψ) (B₀ ψ)
-
-  -- 步骤 6：‖A₀ψ‖·‖B₀ψ‖ ≥ 1/2
-  have h_norm_prod : ‖A₀ ψ‖ * ‖B₀ ψ‖ ≥ (1/2 : ℝ) := by linarith
-
-  -- 步骤 7：联系方差和标准差
-  have h_varA : variance ψ A = ‖A₀ ψ‖ ^ 2 := by
-    dsimp [A₀, variance, centeredOp, idOp, expectation]
-  have h_varB : variance ψ B = ‖B₀ ψ‖ ^ 2 := by
-    dsimp [B₀, variance, centeredOp, idOp, expectation]
-  have h_stdA : stdDev ψ A = ‖A₀ ψ‖ := by
-    unfold stdDev; rw [h_varA, Real.sqrt_sq (norm_nonneg _)]
-  have h_stdB : stdDev ψ B = ‖B₀ ψ‖ := by
-    unfold stdDev; rw [h_varB, Real.sqrt_sq (norm_nonneg _)]
-  rw [h_stdA, h_stdB]
-  exact h_norm_prod
+  have h := robertson_ccr_inequality_general ψ hψ A B hA hB 1 (by simpa using hCCR)
+  simpa using h
 
 /-! ## CQM 耦合空间不确定性关系 -/
 
