@@ -1291,7 +1291,6 @@
 <owl:NamedIndividual rdf:about="#P029">
   <rdf:type rdf:resource="#Statement"/>
   <mentionedIn rdf:resource="#C018"/>
-  <mentionedIn rdf:resource="#C025"/>
   <derivedFrom rdf:resource="#EV_P029"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四层FG剖分方法论与统一计算链</rdfs:label>
   <status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">已陈述</status>
@@ -1616,8 +1615,8 @@
 
 <owl:NamedIndividual rdf:about="#H001">
   <rdf:type rdf:resource="#Hyperedge"/>
-  <hasPremise rdf:resource="#C003"/>
   <hasPremise rdf:resource="#C002"/>
+  <hasPremise rdf:resource="#C003"/>
   <hasConclusion rdf:resource="#C007"/>
   <derivedFrom rdf:resource="#EV_H001"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质先在;再生产幂等$\mu^2=\mu$ ⇒ 物质自组织</rdfs:label>
@@ -1628,8 +1627,8 @@
 
 <owl:NamedIndividual rdf:about="#H002">
   <rdf:type rdf:resource="#Hyperedge"/>
-  <hasPremise rdf:resource="#C012"/>
   <hasPremise rdf:resource="#C007"/>
+  <hasPremise rdf:resource="#C012"/>
   <hasConclusion rdf:resource="#C014"/>
   <derivedFrom rdf:resource="#EV_H002"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织;同步算符 ⇒ $SU(5)$ 基态</rdfs:label>
@@ -1785,10 +1784,10 @@
 
 <owl:NamedIndividual rdf:about="#H016">
   <rdf:type rdf:resource="#Hyperedge"/>
-  <hasPremise rdf:resource="#C058"/>
-  <hasPremise rdf:resource="#C057"/>
-  <hasPremise rdf:resource="#C056"/>
   <hasPremise rdf:resource="#C048"/>
+  <hasPremise rdf:resource="#C058"/>
+  <hasPremise rdf:resource="#C056"/>
+  <hasPremise rdf:resource="#C057"/>
   <hasPremise rdf:resource="#C047"/>
   <hasConclusion rdf:resource="#C081"/>
   <derivedFrom rdf:resource="#EV_H016"/>
@@ -2340,7 +2339,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">749-810</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.423</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.425</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2349,10 +2348,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C002</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1187-1255</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1206-1274</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">理论主线：（1）物质先在，存在先于过程——质子/中子作为有限本体先于再生产闭环，再生产 $\mu^2=\mu$ 是维持而非生成；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.476</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.478</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2361,10 +2360,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C003</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3993-4032</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4012-4051</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">再生产是有限本体（质子/中子）维持自身存在的操作，而非创造自身的操作。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.551</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.552</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2385,10 +2384,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C005</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17000-17202</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17019-17221</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.969</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.972</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2400,7 +2399,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">907-938</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">内容：量子引力的物理实在位于单个质子／中子的禁闭内部。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.811</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.813</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2412,7 +2411,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1927-1972</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM（耦合常数量子力学）提出了一个更激进的立场：数学结构本身是物质自组织的化石。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.018</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.019</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2424,7 +2423,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1456-1541</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zurek 等人提出的环境诱导退相干理论（Environment-Induced Decoherence, EID）试图通过系统与环境的纠缠来解释经典世界的涌现。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.868</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.869</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2436,7 +2435,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">967-1040</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">因果网络同步理论（CNST）是耦合常数量子力学（CQM）的存在论基底，是一个因果动力学理论——描述引力如何使具体的因果结构/关系成为可能。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.643</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.638</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2445,10 +2444,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C011</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21637-21710</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21817-21890</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">承担零点谱的谱算符 $\hat{H}_{\text{HP}}$（固定层级谱实现）在谱论类型上即波利亚算符，其物理铸造是 CQM 独有主张。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.784</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.783</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2460,7 +2459,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27-76</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">——质数是源，GL(5) 是谐振腔，GRH 是实谱条件，同步算符是换能器，物理规范群是输出</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.883</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.88</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2472,7 +2471,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1491-1508</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\text{GL(5) 潜能先在}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.169</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.172</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2484,7 +2483,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1893-1959</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U(1)×SU(2)×SU(3) ｜ 标准模型规范群（重组实现的直接输出，不与 GL(n) 层级挂钩） ｜ 物理现实</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.677</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.671</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2493,10 +2492,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C015</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19364-19406</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19383-19425</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">来源：SU(5) 重组实现 ⇒ $U(1)$ 电磁群 → $\alpha$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.043</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.03</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2505,10 +2504,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C016</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10557-10623</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11278-11344</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">前沿论点：SU(5) 的五重态是四维时空坐标 + 内禀时间动力学坐标；内禀时间是自维持（再生产）——固有时，每一步都是扬弃；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.599</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.597</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2520,7 +2519,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">749-810</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.912</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.914</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2544,7 +2543,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2653-2708</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在此基础上，提出引力因果限制场退相干理论，将退相干重新定义为关系性因果截断，而非本体性态缩减。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.102</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.104</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2556,7 +2555,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3386-3437</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理主丛不能反向指定 $GL(n)$：主丛结构群（紧群）是紧化投影的输出，以输出指定输入构成循环论证；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.417</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.418</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2568,7 +2567,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3437-3470</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.445</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.441</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2580,7 +2579,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5496-5564</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">位置-动量代数：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.451</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.45</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2592,7 +2591,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5415-5495</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质子（4-单纯形）：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.126</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.127</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2613,10 +2612,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C025</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19573-19769</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 超导 统一方法论 ｜ 四层FG剖分方法论与统一计算链：元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落→Tc闭式）。Tc从本征值交叉严格导出：$T_c=\theta_D/(2\,\mathrm{arccoth}(x))$</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19665-19908</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 超导 统一方法论 ｜ 统一计算链的实现层/幅度通道：四层FG剖分方法论与统一计算步骤（元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据；Regge剖分→角亏→动力学矩阵→声子频率→角亏涨落），给出两阶段判据所需核与耦合参数的几何来源；旧 $T_c$ 闭式 $T_c=\theta_D/(2\,\mathrm{arccoth}(x))$ 为旧框架承接，与新核心 $T^*/T_c$ 的映射未建立（M8）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.543</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.381</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2628,7 +2627,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15117-15345</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N2 ｜ Regge 角亏与 δ 的显式关系缺失 ｜ 尚未写出 $\epsilon(\delta)$ 的具体公式 ｜ SPAF.neutronDefect 定义 $D(\delta)$；MolecularGeometry.deficitAngleDensity 与 BridgeTheorems.reggeDeficit_ricciScalar_* 建立角亏-曲率关系，但 $\epsilon(\delta)$ 显式几何公式未写</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.234</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.225</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2640,7 +2639,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3621-3718</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">退相干理论所讨论的“因果截断”，正是这一限制场在具体质子集体（原子、分子、探测器）上的关系性实现：一个质子集体的引力因果限制结构，通过其固有时流速差异，对非本体粒子的可能性空间施加筛选。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.775</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.776</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2652,7 +2651,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13739-13771</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regge 铰链需求：缺陷必须在末端，以提供开放面。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.026</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.027</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2673,10 +2672,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C030</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20211-20301</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20449-20539</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06 超导/超导材料设计器/ — 元素超导材料设计工具文档（系统架构、元素同位素数据库、超导判定算法、应用场景、元素嘉当矩阵参数化、文献调研、目标超导搜索策略，共 8 篇；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.847</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.85</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2700,7 +2699,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11737-11804</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">无量纲→时间 ｜ 时间 $T$ ｜ $K_T$ ｜ 事件计数→时间量纲的实现关系（锚点，§6.0.2）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.744</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.742</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2712,7 +2711,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">60346-60382</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">故自守侧若输出一个“带长度量纲的数”，应读作 $K_L$ 而非 $c$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.168</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.171</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2724,7 +2723,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">73552-73614</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$c^2$（$E=mc^2$）是质量↔能量的特征常数，但 $[c^2]$ 不含 $M$，不消除质量量纲，故不是量纲特征常数。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.729</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.731</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2736,7 +2735,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4273-4313</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">电荷量纲 $Q$ 不是预先存在的，而是由真正的特征常数从力学量纲中生成。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.612</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.613</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2760,7 +2759,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12045-12104</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">无量纲→物质的量 ｜ 摩尔 $N$ ｜ $K_N$ ｜ 无量纲计数→物质的量的实现关系</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.225</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.226</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2772,7 +2771,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12105-12164</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">功率→发光强度 ｜ 坎德拉 $J$ ｜ $K_J$ ｜ 功率→发光强度的实现关系</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.737</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.738</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2784,7 +2783,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18295-18342</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$c$：时空同步前沿速度（信息传播前沿速率），$[c]=L/T$，不承担量纲转换。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.39</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.391</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2796,7 +2795,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2283-2328</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">传统表述把相变读作时序序列：先有局部共形对称性，再「传播」到全局，最后「显现」为自守形式。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.343</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.339</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2808,7 +2807,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22986-23121</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">② ｜ 各形式（实现）各带具体值（数值 $\times$ 量纲） ｜ 表面层——表面值不一定一样；“原形式 → 新形式”由自守因子联系 $f(\gamma x)=j(\gamma,x)f(x)$（$j\not\equiv1$ 时二者不等）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.731</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.733</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2841,7 +2840,7 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C044</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28787-28804</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28914-28931</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\xi(s)=\xi(1-s)$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exact/high</evidenceMethod>
   <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.68</evidenceConfidence>
@@ -2865,10 +2864,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C046</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18705-19086</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18780-19161</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 超导核心理论 ｜ 差异-记忆核超导理论（两阶段 + 记忆核四阶段）：差异 $C_{ij}=f(\delta_i-\delta_j)$ → 两体核 $\mathcal K_{ij}$ → 局域配对（$T^*$）→ 三体环路核/键刚度 → 全局相位渗流（$T_c$）；赝能隙 = 锚点预形成，四阶段边界未精确；BCS 退化为条件命题（不宣称已从 CQM 公设推出 BCS）。旧框架（因果网络同步：前时空/GR/FG、核子层、两条链、Regge 几何、主丛、声子、固有时流速、耦合空间不确定性、跃迁耦级谱、结构群叠加态、丛作用量竞争、$T_c$ 闭式、G9–G22、Lean 映射、界面超导）作为实</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.092</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.087</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2877,10 +2876,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C047</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24418-24483</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24656-24721</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">第一耦级 ｜ $\mathfrak{c}_1$ ｜ $200.04045483$ ｜ $1/4 + \gamma_1^2$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.223</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.222</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2892,7 +2891,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6535-6683</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ζ 零点谱（相变量子 $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$、零点虚部 $\gamma_n$、零点差 $\gamma_2-\gamma_1$）属 GL(1) 电磁因子层，直接作为该因子层下使用的谱（GL(1) 是 SU(5) 破缺后电磁因子的自守对偶残留）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.584</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.586</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2928,7 +2927,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1435-1496</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\sum_n \frac{1}{\gamma_n^2 + 1/4}$ 在 RH 成立时才严格成立，方向是单向的：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.548</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.549</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2940,7 +2939,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9619-9659</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FG的完整数学对象是朗兰兹纲领的GL(n)各层+广义黎曼猜想（GRH）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.719</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.722</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2949,10 +2948,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C053</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17000-17202</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17019-17221</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.085</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.086</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2961,10 +2960,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C054</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17570-17685</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17589-17704</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">一证七联框架：4-单纯形/SU(5) 结构是“一证七联”框架的核心对象——核心定理（未证明）：前核子自组织在禁闭边界的稳态是正四单纯形，代数签名 $A_4 = \text{Cartan}(\text{SU}(5))$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.028</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.029</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -2973,10 +2972,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C055</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17000-17202</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17019-17221</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.62</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.614</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3000,7 +2999,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19921-20000</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">步骤 4 中 $L_n = 2\pi n / \gamma_n$ 的选择是构造性的——它被设计为使 $k_n \approx \gamma_n$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.744</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.745</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3024,7 +3023,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">86710-86794</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理推导：$1 - \beta\delta_v \propto \exp(-c/\Delta\delta_0)$ 的微观机制从Weyl群分类和谱间隙第一性推导。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.657</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.658</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3033,10 +3032,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C060</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10312-10350</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10331-10369</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">关键：这是因果集 Sprinkling 在耦合坐标下的严格几何效应。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.903</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.897</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3048,7 +3047,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9703-9821</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">相变量子 $☯$ ｜ $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ ｜ GL(5)固定层级（黎曼 $\xi$ 函数） ｜ 耦合动量条件的相变量子</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.277</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.273</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3057,7 +3056,7 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C062</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2451-3248</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2467-3264</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 核心 集成理论 ｜ CQM 完整理论框架（十三部分）：哲学与本体论（物质先在、存在先于过程、再生产）、理论定位与关系、海森堡代数与相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导；§7.1 含“一证七联”框架：核心定理退相干稳态是正四单纯形 $A_4$，七大关联为其推论，缺口 C 未闭合）、谱方程与黎曼零点（Sierra-CQM 耦谱定理）、前时空与两种引力（GR/FG 同源分</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
   <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.187</evidenceConfidence>
@@ -3072,7 +3071,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9546-9609</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§1–§9 承接旧框架的本体论、核子层、两条链、Regge 几何、FG 主丛、声子、固有时流速、耦合空间不确定性与跃迁耦级谱；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.412</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.413</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3105,10 +3104,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C066</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2521-2712</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2636-2827</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导侧的框架基础同样完整：超导核心理论 §5.6 给出 $U(1) \xRightarrow{\mathbb{Z}_n \text{商}} U(1)//\mathbb{Z}_n \Rightarrow E_n$ 与候选群族 $\mathcal{G}=\{U(1)//\mathbb{Z}_n \mid n \text{偶}\}$（n 为偶数由泡利统计选择定则决定，§9.1；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.39</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.385</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3120,7 +3119,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23650-23725</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">主导伴丛由丛作用量最小决定；跃迁条件（两个伴丛作用量相等）给出 $T_c$；离散子群保留（如 $U(1)//\mathbb Z_2$）决定磁通量子化。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.966</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.967</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3132,7 +3131,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23935-23947</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">路径积分自动选出主导群：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.434</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.435</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3144,7 +3143,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">38481-38528</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导同步算符不是外在于结构群叠加态的选择机制——它就是结构群叠加态自身的谱算符。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.042</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.044</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3156,7 +3155,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30375-30438</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">临界温度 $T_c$ 对应 $\Delta\delta_v$ 的统计分布使资格条件在全局平均上归零的临界点（见 §12.3）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.358</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.306</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3180,7 +3179,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6674-6687</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">赝能隙是“锚点的预形成”。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.347</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.295</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3189,10 +3188,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C073</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4473-4496</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5129-5152</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">层级特异性编码在结构项 $V_\ell$ 中。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">section/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.194</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.195</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3216,7 +3215,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">309-344</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">共形自举（Conformal Bootstrap）本质是共形自洽。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.266</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.268</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3228,7 +3227,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3790-3897</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{G_k \;\xrightarrow{\text{共形固定点}}\; \hat{G}_k \text{ (Kac–Moody代数)} \;\oplus\; \text{Virasoro代数}}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.098</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.099</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3252,7 +3251,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1063-1170</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">元素FG的周期表第一性推导（Casimir→壳层容量、共形维度 $h_{\rm shell}=n_{\rm pr}+l$→Madelung规则、$A_4$→$Z_{\max}=118$）是CFT框架的三大应用成果。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.143</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.144</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3264,7 +3263,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">538-571</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在CQM中，这就是OPE的相容性条件，也就是Dirac条件的来源。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.625</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.623</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3276,7 +3275,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">189-227</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\text{其他粒子是 } \pi_p \text{ 的朗兰兹函子性分化。}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.426</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.429</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3297,10 +3296,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C082</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">概念</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D001</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12600-13175</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12616-13191</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler常数 A4群论分解与CQM框架嵌入 ｜ 核心发现：Wyler常数（1969）可完全用$A_4$群论不变量表达</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.541</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.544</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3309,7 +3308,7 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P001</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7082-7111</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7101-7130</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">时空与标准模型都是耦合常数量子力学在禁闭边界上涌现。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
   <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.51</evidenceConfidence>
@@ -3324,7 +3323,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">749-810</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">它根据因果结构的不同深度和广度分化：FG 与 GR 是引力的两种形态，前时空在引力之前（不属引力）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.001</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.005</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3336,7 +3335,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1040-1100</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNST 的核心命题是：物质先在，物理实在不是先验地存在于时空之中，而是通过物质的自组织（表现为退相干）同步展开为时空。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.911</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.914</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3360,7 +3359,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">55508-55591</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">量纲发生学 ｜ 量纲类别；“每压掉一个量纲就冒出一个特征常数 $K$” ｜ 定性（哪些常数有量纲、$K$ 是什么） ｜ §6.1、§6.4.1</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.498</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.503</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3372,7 +3371,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4222-4273</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">只看结论：§2.1（群约束性定义）＋ §3.1（四条基约束性）＋ §6.1（不变性）；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.114</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.117</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3384,7 +3383,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51-82</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">声子是CQM的核心量子媒介，贯穿前时空、GR、FG 三个层级。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.592</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.565</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3396,7 +3395,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15706-15738</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CFT描述了临界自组织态扩大的机制，同时也是同步的过程机制。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.835</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.839</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3408,7 +3407,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">160-210</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">体系采用候选二（禁闭内部只是 QCD），故这些内容落在 FG，而不在禁闭内部（§三、§四）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.752</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.755</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3420,7 +3419,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8190-8341</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.106</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.107</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3432,7 +3431,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21801-21853</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">引力因果限制场退相干理论将退相干重新定义为质子集体引力因果限制结构对非本体粒子经典波函数的截断。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.211</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.216</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3444,7 +3443,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">935-995</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 提出一种“跨层级退相干深耦合”机制，在概念层面给出唯一性难题的机制，并将整个退相干过程统一起来；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.52</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.518</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3456,7 +3455,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5524-5598</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\longrightarrow\; \text{交叉RH成立}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.013</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.018</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3468,7 +3467,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">680-761</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">「待推 1：边界条件」经解剖与归档回捞，结论是：长度半已由 RvM 非循环解出，相位半 $S(T)$ 仍是唯一实质缺口，且五重联系可统一到一个自洽方程上。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.245</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.239</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3480,7 +3479,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7752-7775</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">定理 1.5（相变量子三重恒等定理）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.881</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.885</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3492,7 +3491,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11437-11475</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\text{其他粒子是 } \pi_p \text{ 的朗兰兹函子性分化。}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.326</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.332</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3504,7 +3503,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3351-3389</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wyler 常数完全由 $A_4$ 的群论不变量决定，因此自然嵌入这个链条：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.308</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.312</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3516,7 +3515,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10544-10619</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">贝里曲率与 Regge 曲率的关联是结构性的——共享 §4.1 的数学骨架（联络—曲率—和乐、曲率测度→拓扑不变量），这是范畴级严格事实；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.496</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.499</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3525,10 +3524,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P019</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22783-22804</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23655-23676</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">规范对称性重组（埃利泽定理与后续）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.508</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.511</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3564,7 +3563,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">276-388</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在耦合常数量子力学（CQM）框架下，对 Hilbert–Pólya 猜想的扬弃（Aufheben）：保留其“自伴算符—离散实谱”的合理内核，否定其柏拉图主义的本体论预设，超越至“物理过程必然铸造算符”的唯物主义路径。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.022</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.029</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3576,7 +3575,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14439-14475</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CQM 作为新层级涌现论，是这个否定之否定的合题。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.469</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.473</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3588,7 +3587,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">452-551</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{\text{FG} = \text{GR基态的非平庸激发} = \text{主丛 } P(M,G) \text{ 上的联络 } \mathcal{A}_{\text{FG}}}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.346</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.349</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3612,7 +3611,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1669-1713</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">两阶段层：超导 = 局域配对（$T^*$）+ 全局相位渗流（$T_c$）；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.216</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.954</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3624,7 +3623,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">122933-122954</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">框架中 G9–G22 环节的闭合状态一览：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.631</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.616</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3633,10 +3632,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P028</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15489-15549</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17186-17246</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\delta_{\text{intrinsic}}$ 的第一性来源是分子 FG 同步算符谱的几何显现（§9.2）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.917</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.908</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3645,10 +3644,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P029</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D033</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">46-135</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">该文档用统一纤维丛语言严格描述CQM超导预测的方法论：四层FG（元素/分子/晶胞/超导）各自是不同的纤维丛，剖分对象不同，但从Regge剖分到Tc的计算步骤完全统一且第一性。</evidenceQuote>
-  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.55</evidenceConfidence>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">137-173</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">四层FG剖分与第一性计算链给出两阶段判据所需几何核与耦合参数的几何来源。</evidenceQuote>
+  <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.712</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3660,7 +3659,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7026-7047</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">库 ｜ 已证明定理 ｜ 公理/待证</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.473</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.478</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3672,7 +3671,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">843-880</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">合计：107 定理/引理，零 sorry、零新增 axiom。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.622</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.627</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3681,10 +3680,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G001</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17817-17844</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17836-17863</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口 C（未闭合）：退相干稳态为何恰好是 $A_4$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.277</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.284</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3696,7 +3695,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9380-9413</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\;\xrightarrow{\text{U(1)耦合常数}}\;</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.283</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.273</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3708,7 +3707,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11988-12062</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口标注：$☯$ 与 $\gamma_n$ 谱在 GL(1) 电磁因子层的严格谱实现（波利亚类型谱算符的物理铸造）待严格推导，见 §9。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.146</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.147</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3729,10 +3728,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G005</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25178-25213</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">步骤 5：映射回 $L^2(e^{-u}du)$ 的边界条件。</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17836-17863</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口 C（未闭合）：退相干稳态为何恰好是 $A_4$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.256</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.258</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3741,10 +3740,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G006</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">33814-33826</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">33833-33845</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">其显式推导为未决缺口）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.745</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.746</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3753,10 +3752,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G007</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2057-2116</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2076-2135</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">每一部分标注严格性状态；关键缺口（如中子缺陷 $\delta$、几何耦合 $\beta$ 的第一性来源）在结论中审计。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.828</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.83</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3765,10 +3764,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G008</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缺口</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53579-53614</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53918-53953</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">未严格建立（关键缺口，本章局部编号 A–E，不与 G2–G8 混用）：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.155</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.159</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3780,7 +3779,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">122991-123034</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G9 ｜ 曲率截断共振窗口 $\sigma$ 的来源与标定 ｜ 未闭合</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.468</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.457</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3804,7 +3803,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">123068-123138</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G11 ｜ $\mathcal{D}_{\text{lattice}}$ 从正四单纯形组合构型到声子谱的具体推导 ｜ 未闭合</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.274</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.272</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3816,7 +3815,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">123139-123203</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G12 ｜ 引力拓扑因子 $\mathcal{T}_{\text{grav}}$ 的完整度规依赖形式 ｜ 未闭合</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.397</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.401</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3828,7 +3827,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">123204-123287</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G13 ｜ BCS 积分方程 $\tanh\to$ 对数渐近（“积分→$T_c$”） ｜ 闭合（bcsTcFromIntegral_solved）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.101</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.1</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3864,7 +3863,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">123887-123937</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G16 ｜ 因果分辨率的形式化（Regge 角亏密度→Ricci 标量） ｜ 未闭合</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.505</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.504</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3876,7 +3875,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">128500-128525</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">耦合参数第一性化缺口仍开放（该文档 §11.2）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.265</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.273</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3888,7 +3887,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">127159-127399</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G19 ｜ §10.1 和乐相位闭合条件 $\mathcal{H}_{ij} = \exp(i\oint_C \omega_{\alpha_i\alpha_j}) \approx 1$ 中“$\approx 1$”的容差标定：容差与温度、向错芯曲率 $\delta_v$、相干长度 $\xi_{coher}$ 的定量关系；有效窗口宽度 $\delta_v \xi_{coher} - \Delta\phi_{thermal}(T)$ 的严格推导 ｜ 未闭合</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.22</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.214</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3900,7 +3899,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">141646-141696</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G21（赝能隙→ARPES/STM 谱函数）、G22（旧 $T_c$ 丛作用量交叉的物理基座）；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.62</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.604</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3912,7 +3911,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">34407-34427</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">第三步：临界温度 = 丛作用量交叉。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.919</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.922</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3924,7 +3923,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14637-14662</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质量-谱映射的严格第一性推导仍开放（缺口 N1）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.753</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.72</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3936,7 +3935,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16526-16612</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{\delta \to \text{Regge 角亏 } \epsilon(\delta) \quad (\text{缺口 N2：显式几何公式未写})}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.314</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.302</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3948,7 +3947,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18832-18889</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">核心缺口是：质量-谱映射（N1）、角亏-δ 显式公式（N2）、β 衰变动力学条件（N3）、氘核结合能（N4）；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.645</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.646</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3960,7 +3959,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15485-15528</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N4 ｜ 氘核结合能未精确推导 ｜ 只有数量级估计 ｜ 暂无对应形式化</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.409</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.414</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3969,10 +3968,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G025</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18436-18483</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">层级谱传递 ｜ 上层谱 → 下层输入 ｜ 第一性链 ｜ 框架性假设（②→③ 部分构造）</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4512-4526</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">为什么必须有层级化实现？</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.541</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.256</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3981,10 +3980,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G026</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18436-18483</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">层级谱传递 ｜ 上层谱 → 下层输入 ｜ 第一性链 ｜ 框架性假设（②→③ 部分构造）</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4512-4526</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">为什么必须有层级化实现？</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.541</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.256</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -3993,10 +3992,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G027</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18436-18483</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">层级谱传递 ｜ 上层谱 → 下层输入 ｜ 第一性链 ｜ 框架性假设（②→③ 部分构造）</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4512-4526</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">为什么必须有层级化实现？</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.541</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.256</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4008,7 +4007,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20121-20143</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">历史上对黎曼猜想的分解通常是二分的：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.13</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.132</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4020,7 +4019,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12637-12660</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">定义 3.1（Mathieu 算符）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.371</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.372</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4029,10 +4028,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G030</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">命题</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21884-21904</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22064-22084</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">同步算符紧化投影 ｜ 构造性假设</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.871</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.872</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4044,7 +4043,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6535-6683</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ζ 零点谱（相变量子 $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1}$、零点虚部 $\gamma_n$、零点差 $\gamma_2-\gamma_1$）属 GL(1) 电磁因子层，直接作为该因子层下使用的谱（GL(1) 是 SU(5) 破缺后电磁因子的自守对偶残留）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.776</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.777</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4056,7 +4055,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17644-17701</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$G_N$ 作为物理系统普适因果背景场的组织参数，其严格稳定性是等效原理的基石，也是 CQM 最核心的可检验预言。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.45</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.451</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4065,10 +4064,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H001</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">47688-47707</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">48003-48022</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">是物质自组织的基态规范骨架，不可还原。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.454</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.456</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4077,10 +4076,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H002</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D007</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22734-22920</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22926-23112</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GL(5) ｜ 基态伽罗瓦表示；ζ(s) 欧拉乘积属 GL(1) 电磁因子层（破缺后残留），在该层下直接使用 ｜ $L(s,\Pi)$ ｜ 基态零点/黎曼零点 $\gamma_n$ ｜ 广义黎曼猜想（黎曼猜想为其 GL(1) 特例） ｜ $\hat{\mathcal{S}}_0$ ｜ $SU(5)$ 统一 ⇒ 重组实现 ｜ $☯ = 0.02309570897$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.316</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.311</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4089,10 +4088,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H003</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19406-19463</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19425-19482</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">具体地，$M$ 本征值 $\{9,4,1\}$ 通过 $S_5$ 表示论与 SU(5) 规范群结构锁定组合不变量：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.527</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.518</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4101,10 +4100,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H004</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53640-53680</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53979-54019</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ｜ 二阶层方程在禁闭边界（前核子自组织关键实现区）严格退相干为一阶层</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.438</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.43</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4116,7 +4115,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16277-16337</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FG ｜ 中子-质子对提供 $A_4$ 末端缺陷，形成 Regge 铰链（质子-质子对也能形成铰链，但一般较难）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.705</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.707</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4128,7 +4127,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4951-5000</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">源：物质晶胞分布的内禀不均匀性，由 Regge 角亏 $\delta_v$ 几何度量。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.321</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.293</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4140,7 +4139,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20838-20877</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$D(\delta)$ 仍然是有限型广义嘉当矩阵，不是仿射型或双曲型。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.548</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.544</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4152,7 +4151,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">971-991</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">晶胞量子振荡导致底空间曲率（角亏）涨落：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.996</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.973</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4164,7 +4163,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21263-21394</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导扇区为 $U(1)_{\rm em}$，涨落 $u_{U(1)}$，跃迁耦级谱 $2\ln n$（$n=2,4,6,\ldots$），资格条件 $\Delta\delta_0\ge☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.441</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.436</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4185,10 +4184,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H011</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D032</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3472-3606</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4128-4262</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">精细引力 FG 的每个物质组织层级 $\ell \in \{\text{电子}, \text{元素}, \text{分子}, \text{晶胞}\}$ 都拥有自己的同步算符 $\hat{\mathcal{S}}_\ell$——它是紧化算符在该层级主丛截面空间上的实现：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.753</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.745</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4200,7 +4199,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18290-18335</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物质自组织基态同步是SU(5)（GL(5)自守谱），重组实现后各因子层GL(n)谱是残留：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14.228</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14.223</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4212,7 +4211,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">585-646</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{\text{自守形式在共形场论中的显现，是相变弧线上局部共形对称性与全局模对称性同步实现的数学结晶。}}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.003</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.989</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4224,7 +4223,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">70353-70372</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">自守形式 ｜ 社会必要劳动时间</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.081</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.078</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4236,7 +4235,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5524-5598</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\text{3个已知} + \text{2个待推} + \text{物理存在性} \;\longrightarrow\; \text{交叉RH成立}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.105</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.109</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4248,7 +4247,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23683-23826</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$G_N = \frac{\hbar c}{m_p^2} \cdot I \cdot \lambda_c \cdot ☯^2 \cdot \mathfrak{c}_1 \cdot \exp\left(-\frac{2}{☯}\right) \cdot (1 + \kappa ☯)$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.265</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.264</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4260,7 +4259,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6353-6433</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在 CQM 的 SU(5) 重组实现框架中，Wyler 常数有可能是 $\alpha$ 的正确表达式，而 $16384\pi/375$ 只是其粗略近似。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.492</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.486</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4272,7 +4271,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9432-9473</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">前时空 ｜ 精细引力 FG ｜ 经典引力 GR</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.672</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.674</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4296,7 +4295,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17277-17292</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在超导机制中，FG 的角色是：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.101</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.107</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4305,10 +4304,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A004</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17000-17202</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17019-17221</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{离散自由度（因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形）} \xrightarrow{\text{边-面关联}} M = E^T E \xrightarrow{\text{本征值分析}} \{9,4,1\} \xrightarrow{S_5 \text{表示论}} \text{SU(5) 规范群结构}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.33</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.324</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4317,10 +4316,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A005</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1963-2082</evidenceSpan>
-  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">精确表述：U(1) 重组实现 $\mathbb{Z}_n$ 且 U(1) 保留——即商群结构 $U(1)//\mathbb{Z}_n$：U(1) 是保留的基底，$\mathbb{Z}_n$ 是其上的等价类识别结构【标准数学】。</evidenceQuote>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3175-3243</evidenceSpan>
+  <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$T_c$ 的高低由两阶段判据给出，$U(1)//\mathbb{Z}_n$ 商结构决定磁通量子化单位（核心 §5.6 两阶段读法注）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.775</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.407</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4332,7 +4331,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">952-1043</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">一个联络生成两种曲率：底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.797</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.787</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4344,7 +4343,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3359-3406</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">固有时流速 $v_\tau$ 无法被精确锚定，导致 $\Delta v_\tau$ 内禀放大。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.672</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.669</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4353,10 +4352,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A008</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14036-14071</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14147-14182</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质数共振 → ζ 零点谱 ｜ 严格 ｜ 欧拉乘积 + 显式公式</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.483</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.485</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4365,10 +4364,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A009</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14036-14071</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14147-14182</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">质数共振 → ζ 零点谱 ｜ 严格 ｜ 欧拉乘积 + 显式公式</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.555</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.558</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4380,7 +4379,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6484-6529</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\;\xrightarrow{\text{实共振谱}}\; \text{同步算符执行紧化}</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.565</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.561</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4392,7 +4391,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10320-10421</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\zeta$ 与 $\xi$ 是同一 $\mathrm{GL}(1)$ $L$ 函数的算术面孔与谱面孔——“质数是源”（$\zeta$ 侧）与“$☯$ 是全局谱权重”（$\xi$ 侧）分别对应两张脸。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.644</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.645</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4401,10 +4400,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A012</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14600-14644</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14711-14755</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GRH（GL(5) 固定层级实谱条件） ｜ 未证明 ｜ 超导完整理论的存在论前提</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.966</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.967</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4413,10 +4412,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A013</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12984-13014</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12991-13021</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\gamma_2 - \gamma_1$：黎曼零点差；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.5</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.497</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4425,10 +4424,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A014</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D008</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13049-13234</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13160-13345</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$\lambda_c$ 方程的值（$q_c = 0.3290057278\ldots$，$\lambda_c = 1.3160229113\ldots$）与 $\mathfrak{c}_1 = 1/4 + \gamma_1^2$ 均为可复算的纯数学数值，见 03 引力与退相干/CQM_引力_GN可能公式.md §8.2 与 README.md 核心数值结果表。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.482</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.479</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4440,7 +4439,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10464-10483</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">其谱表示是 RH 的单向推论。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.616</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.618</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4464,7 +4463,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9449-9502</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">精细结构常数 $\alpha$ 是SU(5)重组实现的输出——$U(1)$电磁群本征群的耦合常数。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.946</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.932</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4476,7 +4475,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21135-21237</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CFT primary operator：primary operator $\phi(z)$ 是复平面上的共形场，满足Virasoro最高权条件 $\hat{L}_{n&gt;0}\phi = 0$。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.664</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.668</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4488,7 +4487,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22874-22921</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">其中 $\mathcal{A}_n$ 对应 Virasoro 生成元 $\hat{L}_n$；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.529</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.531</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4500,7 +4499,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30486-30582</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">曲率 $F$ ｜ 对易子 $[\hat{L}_m, \hat{L}_n]$ ｜ $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ ｜ §9.3</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.388</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.389</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4512,7 +4511,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30625-30707</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">和乐 $W(\gamma)$ ｜ monodromy $e^{2\pi ih}$ ｜ $h = \delta_v\hat{T}/(2\pi)$ ｜ §9.4</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.63</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.629</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4536,7 +4535,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24793-24911</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">结构群 $G$（如 $GL(5)$／$SU(5)$）经重组实现为本征群 $R$（如 $U(1)\times SU(2)\times SU(3)$、壳层本征群 $SU(2)_{k}$），等价地重组为群算符 $\hat{H}$；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.77</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.76</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4548,7 +4547,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13465-13518</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">单纯的时间平移 $\mathbb{R}$（$t\mapsto t+a$）属仿射层（§3.3），含于庞加莱。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.525</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.526</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4569,10 +4568,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A026</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D005</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35650-35702</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35669-35721</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导的组织学定位（因果网络同步）见 11.6 与 CQM_核心_因果网络同步理论.md（CNST）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.954</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.955</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4584,7 +4583,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12785-12800</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">三类退相干的核心区分：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.442</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.444</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4596,7 +4595,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16592-16669</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">特征常数的性质——跨量纲特征常数：每个量纲转换有一个跨量纲特征常数（如长度层的 $K_L$、质量层的 $K_M$、电荷层的 $K_Q$）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.053</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.055</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4608,7 +4607,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22901-22923</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">构造 9.1（第一耦级的精确等同）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.881</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.882</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4620,7 +4619,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14359-14446</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\boxed{\text{完整同步谱} \iff \text{RH} \land \text{GRH(GL(4))} \land \text{GRH(GL(5))}}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.991</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.993</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4632,7 +4631,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12101-12208</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">§3.2/§3.3（自守关联、$f_L,f_T\in\pi_p$） ｜ 本汇总新增（对应发生学分层：自守形式 → L 函数 → 朗兰兹；见 01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md）</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.205</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.206</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4644,7 +4643,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">43876-43885</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">超导同步算符形式：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.645</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.648</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4656,7 +4655,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">34407-34427</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">第三步：临界温度 = 丛作用量交叉。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.069</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.997</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4668,7 +4667,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10536-10572</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$☯$ 出现在海森堡对易关系中，扮演类似 $\hbar$ 的角色：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/low</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.837</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.838</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4680,7 +4679,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">43390-43442</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">资格条件筛出候选群族后，候选群族张成 Hilbert 空间，同步算符 = 此空间上结构群叠加态的谱算符。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.973</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.971</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4692,7 +4691,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">33271-33287</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">路径积分在候选群族上选择主导群：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.294</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.285</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4704,7 +4703,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3437-3470</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">主丛与伴丛的全部作用在紧化之后的物理层，对算术层只有后验校验资格。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.575</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.572</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4716,7 +4715,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7458-7486</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">声子是 FG Regge 曲率（底空间角亏）的量子涨落。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.387</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.378</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4728,7 +4727,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18338-18356</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">因此固有时流速退化为 1：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.46</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.463</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4740,7 +4739,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3060-3089</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">在 CQM 中，引力因果限制场 = 引力固有时场。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.505</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.508</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4749,10 +4748,10 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A041</rdfs:label>
   <evidenceKind rdf:datatype="http://www.w3.org/2001/XMLSchema#string">论证</evidenceKind>
   <sourceDoc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D023</sourceDoc>
-  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7193-7227</evidenceSpan>
+  <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7908-7942</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">该链不改变本文的规范重组主链，只为其提供时间域与几何上游的补充读法。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.719</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.718</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4764,7 +4763,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3196-3243</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$A_4$ 嘉当矩阵 ｜ 量子嘉当矩阵 $A_4^{(q)}$ ｜ 禁闭边界的代数结构</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.633</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.636</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4776,7 +4775,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4823-4840</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">基态同步算符（紧化算符）。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.861</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.855</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4788,7 +4787,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15648-15668</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">自守形式的差异层级决定了量纲转换的性质：</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.129</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.131</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4812,7 +4811,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6671-6700</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$$\text{共形自举} = \text{共形自洽}$$</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/high</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.825</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9.827</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4824,7 +4823,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15223-15289</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">关键区分：坐标时 $T$ 是量纲发生学中的基本时间量纲，长度由 $K_L$ 从无量纲耦合坐标直接生成（大差异），不经过时间。</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.845</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.844</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4836,7 +4835,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54287-54310</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理侧：时间量纲 $T$，固有时，可测量；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.471</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.468</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4848,7 +4847,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54287-54310</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理侧：时间量纲 $T$，固有时，可测量；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.471</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.468</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4860,7 +4859,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54287-54310</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理侧：时间量纲 $T$，固有时，可测量；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.471</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.468</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4872,7 +4871,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54287-54310</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理侧：时间量纲 $T$，固有时，可测量；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.471</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.468</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 
@@ -4884,7 +4883,7 @@
   <evidenceSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54287-54310</evidenceSpan>
   <evidenceQuote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">物理侧：时间量纲 $T$，固有时，可测量；</evidenceQuote>
   <evidenceMethod rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc/medium</evidenceMethod>
-  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.471</evidenceConfidence>
+  <evidenceConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7.468</evidenceConfidence>
   <humanVerified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</humanVerified>
 </owl:NamedIndividual>
 

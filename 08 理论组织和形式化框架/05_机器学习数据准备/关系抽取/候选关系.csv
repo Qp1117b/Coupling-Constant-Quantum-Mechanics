@@ -9,8 +9,8 @@ C015,C017,重组实现|未定,⇒,pattern,D001,26,重组实现 ⇒ U(1)×SU(2)×
 C018,C006,等价|未定,就是,pattern,D001,34,FG 就是 FG**。比较两个候选：**候选一**（禁闭内部,False,False,,False
 C018,C027,等价|未定,就是,pattern,D001,34,FG 就是 FG**。比较两个候选：**候选一**（禁闭内部＝量子引力，无量纲不确定性关系读作因果序）在 ①固有时流速,False,False,,False
 C008,C019,映射|层级含于|未定,给出,pattern,D001,55,退相干“全局幺正性编码、局部不可接入”（§6.5），由此给出记忆的载体定义；④引力因果限制场,False,False,,False
-C018,C026,未定|等价|重组实现,→,pattern,D001,67,FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏,True,True,演化,False
-C018,C071,未定,→,pattern,D001,67,FG/晶胞FG需外部结构数据，从剖分到Tc的步骤统一且第一性（Regge剖分→角亏→动力学矩阵→声子,False,False,,False
+C018,C026,未定|等价|重组实现|映射,→,pattern,D001,67,FG剖分方法论与统一计算步骤（元素FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据；Regge剖分→角亏,True,True,演化,False
+C018,C071,未定|映射,→,pattern,D001,67,FG可穷尽列举（118个元素），分子FG/晶胞FG需外部结构数据；Regge剖分→角亏→动力学矩阵→声子,False,False,,False
 C025,C026,未定,→,pattern,D001,67,Regge剖分→角亏,True,True,映射,False
 C025,C071,未定,→,pattern,D001,67,Regge剖分→角亏→动力学矩阵→声子,False,False,,False
 C026,C071,未定,→,pattern,D001,67,角亏→动力学矩阵→声子,False,True,,False
@@ -47,8 +47,8 @@ C017,C018,未定|映射,→,pattern,D005,536,GR 连续极限→Poisson 方程路
 C017,C026,未定,→,pattern,D005,536,GR 连续极限→Poisson 方程路径——FG 直接由 Regge 角亏,False,False,,False
 C026,C018,未定|映射|等价,→,pattern,D005,555,角亏）→ 构成 FG,False,True,,False
 C026,C023,未定|映射,→,pattern,D005,633,角亏各向异性 → 底空间曲率,False,False,,False
-C062,C063,映射,给出,pattern,D005,650,海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱,False,False,,False
-C015,C008,映射|未定,给出,pattern,D005,935,重组实现给出标准模型因子（结构群叠加退相干,False,True,,False
+C062,C063,映射,给出,pattern,D005,652,海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱,False,False,,False
+C015,C008,映射|未定,给出,pattern,D005,940,重组实现给出标准模型因子（结构群叠加退相干,False,True,,False
 C027,C018,等价|未定,就是,pattern,D006,19,固有时流速涨落、角亏量子涨落与同步算符的紧化作用，就是 **FG,False,False,,False
 C012,C018,等价|未定,就是,pattern,D006,19,同步算符的紧化作用，就是 **FG,False,False,,False
 C001,C007,映射|未定,对应,pattern,D006,23,前时空对应**物质自组织,False,False,,False
@@ -61,16 +61,16 @@ C008,C007,未定,→,pattern,D007,141,退相干）→ GR →（物质自组织,F
 C008,C018,未定,→,pattern,D007,141,退相干）→ GR →（物质自组织）→ FG,False,False,,False
 C017,C007,未定,→,pattern,D007,141,GR →（物质自组织,False,False,,False
 C007,C018,未定,→,pattern,D007,141,物质自组织）→ FG,False,False,,False
-C026,C063,映射|未定,给出,pattern,D007,147,角亏涨落给出跃迁耦级谱,False,False,,False
-C026,C064,映射|未定,给出,pattern,D007,147,"角亏涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的**资格条件",False,False,,False
-C045,C075,未定,→,pattern,D007,214,黎曼零点（Hadamard 乘积）、OPE 同步⊗耦合→群本征态、共形自举,False,False,,False
-C007,C053,未定,→,pattern,D007,398,物质自组织 → 4-单纯形,False,False,,False
-C007,C008,未定,→,pattern,D007,398,物质自组织 → 4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
-C053,C008,未定,→,pattern,D007,398,4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
-C012,C053,演化,退化为,pattern,D007,421,同步算符在此阶段退化为 4-单纯形,False,False,,False
-C001,C012,未定|重组实现,→,pattern,D007,448,前时空→ 同步算符,False,False,,False
-C052,C012,未定,→,pattern,D007,539,GRH 是 GL(5) 固定层级的实谱条件**：质数分布 → 共振 → GRH 保证零点在临界线上 → 实共振谱 → 同步算符,False,False,,False
-C012,C015,重组实现|未定,⇒,pattern,D008,294,同步算符 Ŝ₀ → SU(5) ⇒ 重组实现,False,False,,False
+C026,C063,映射|未定,给出,pattern,D007,148,角亏涨落给出跃迁耦级谱,False,False,,False
+C026,C064,映射|未定,给出,pattern,D007,148,"角亏涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的**资格条件",False,False,,False
+C045,C075,未定,→,pattern,D007,215,黎曼零点（Hadamard 乘积）、OPE 同步⊗耦合→群本征态、共形自举,False,False,,False
+C007,C053,未定,→,pattern,D007,399,物质自组织 → 4-单纯形,False,False,,False
+C007,C008,未定,→,pattern,D007,399,物质自组织 → 4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
+C053,C008,未定,→,pattern,D007,399,4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
+C012,C053,演化,退化为,pattern,D007,422,同步算符在此阶段退化为 4-单纯形,False,False,,False
+C001,C012,未定|重组实现,→,pattern,D007,449,前时空→ 同步算符,False,False,,False
+C052,C012,未定,→,pattern,D007,541,GRH 是 GL(5) 固定层级的实谱条件**：质数分布 → 共振 → GRH 保证零点在临界线上 → 实共振谱 → 同步算符,False,False,,False
+C012,C015,重组实现|未定,⇒,pattern,D008,295,同步算符 Ŝ₀ → SU(5) ⇒ 重组实现,False,False,,False
 C042,C040,未定,→,pattern,D009,178,极大关系群作为稳定化子把处在潜在态的属性切割为实例属性类别）→ **实例化**（§6.2、§七：自守形式,False,False,,False
 C040,C041,映射|未定,给出,pattern,D009,570,自守形式本身**给出（§6.5.13 纲领：具体化＝对自守因子,False,True,,False
 C007,C015,等价|映射|未定,即,pattern,D009,895,物质自组织对自己施加的条件（群约束性口径）；「实例化」——物理稳定即重组实现,False,False,,False
@@ -111,10 +111,10 @@ C023,C024,等价|未定,就是,pattern,D022,229,曲率本身就是非阿贝尔�
 C024,C018,映射|等价|未定,给出,pattern,D022,283,和乐结构给出：绕锥形交叉类简并点的 Mead–Truhlar 型和乐[39][40]能否在分子 FG,False,False,,False
 C024,C026,映射|等价|未定,给出,pattern,D022,283,和乐结构给出：绕锥形交叉类简并点的 Mead–Truhlar 型和乐[39][40]能否在分子 FG 层级谱中表现为内禀角亏,False,False,,False
 C069,C045,演化|未定,退化为,pattern,D023,42,超导同步算符作用于 GL(5) 固定层级结构群空间，本征值 $\lambda_n(T)$ 为相变有效谱，零温极限退化为黎曼零点,False,False,,False
-C040,C009,依赖|未定,条件是,pattern,D023,187,自守形式”在框架中**不成立**：底空间几何对自守形式的条件是“非唯一”的（因果网络同步理论,False,False,,False
-C071,C040,未定,→,pattern,D023,271,声子→量子曲率→不确定关系→L 函数→自守形式,False,False,,False
-C023,C040,未定,→,pattern,D023,271,曲率→不确定关系→L 函数→自守形式,False,False,,False
-C016,C027,映射|未定,对应,pattern,D023,276,内禀时间 | 秩 4 与时空 4 维数值巧合（非群论对应）、5=秩+1、前质子/前中子发生学、固有时流速,False,False,,False
+C040,C009,依赖|未定,条件是,pattern,D023,195,自守形式”在框架中**不成立**：底空间几何对自守形式的条件是“非唯一”的（因果网络同步理论,False,False,,False
+C071,C040,未定,→,pattern,D023,279,声子→量子曲率→不确定关系→L 函数→自守形式,False,False,,False
+C023,C040,未定,→,pattern,D023,279,曲率→不确定关系→L 函数→自守形式,False,False,,False
+C016,C027,映射|未定,对应,pattern,D023,284,内禀时间 | 秩 4 与时空 4 维数值巧合（非群论对应）、5=秩+1、前质子/前中子发生学、固有时流速,False,False,,False
 C018,C024,映射|未定,对应,pattern,D024,157,FG）/FG_纤维丛理论.md` §9.4「和乐 = OPE monodromy」严格对应：和乐,False,False,,False
 C024,C078,映射|未定,对应,pattern,D024,157,和乐 = OPE monodromy」严格对应：和乐本征值与共形维度,False,False,,False
 C024,C023,映射|未定,给出,pattern,D024,157,和乐本征值与共形维度的定量映射 $h=\delta_v\lambda_k/(2\pi)$ 给出局部曲率,False,False,,False
@@ -162,7 +162,7 @@ C045,C012,映射|未定,给出,pattern,D030,699,黎曼零点谱的候选实现�
 C012,C045,演化|未定,退化为,pattern,D030,707,同步算符的本征值谱 = 叠加的结构群的相变有效谱** $\{\lambda_n(T)\}$（零温极限退化为黎曼零点,False,False,,False
 C018,C001,等价|未定,就是,pattern,D030,719,FG 本来就是激活前时空,False,False,,False
 C001,C026,重组实现|未定,重组实现,pattern,D030,817,前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构经 FG 激活后的再现——FG 的角亏,False,False,,False
-C012,C026,未定,→,pattern,D030,833,同步算符 → 叠加态的超导结构群**：温度和角亏,False,False,,False
+C012,C026,未定|映射,→,pattern,D030,833,同步算符 → 叠加态的超导结构群**：温度和角亏,False,False,,False
 C071,C012,未定,→,pattern,D030,1427,声子频率高 → $T_c$ 高），但 CQM 图像更直接：氢轻 → $\Delta\delta_0$ 大 → 同步算符,False,False,,False
 C070,C065,映射|未定,对应,pattern,D030,2064,临界温度 $T_c$ 对应**结构群叠加态,False,False,,False
 C070,C067,映射|未定,对应,pattern,D030,2064,临界温度 $T_c$ 对应**结构群叠加态自身谱结构的本征值交叉**的临界点（§11.6，唯象表现为丛作用量,True,True,重组实现,False
@@ -196,20 +196,20 @@ C067,C064,映射|未定,给出,pattern,D030,2163,丛作用量交叉 $F_1(T_c)=F_
 C026,C068,映射|未定,给出,pattern,D030,2163,角亏涨落给出资格条件，路径积分选出主导群,False,False,,False
 C026,C067,映射|未定,给出,pattern,D030,2163,角亏涨落给出资格条件，路径积分选出主导群。**深化（§11.6）**：丛作用量,False,False,,False
 C026,C065,映射|未定,给出,pattern,D030,2163,角亏涨落给出资格条件，路径积分选出主导群。**深化（§11.6）**：丛作用量交叉是结构群叠加态,False,False,,False
-C026,C024,未定,→,pattern,D032,110,角亏**：理想构型（和乐平庸）→ 实际构型（和乐,False,False,,False
-C018,C030,未定,→,pattern,D032,213,FG → 元素 FG**：氢原子谱结构（$n = N(\gamma_n)$，$l$ 分裂）→ 电子轨道量子数 → 元素嘉当矩阵,False,False,,False
-C012,C023,映射|未定,给出,pattern,D032,268,同步算符谱给出，不需要外部贝里曲率,False,False,,False
-C018,C025,未定,→,pattern,D033,195,FG表组合+跨原子联络→分子纤维丛→Regge剖分,False,False,,False
-C022,C025,未定,→,pattern,D033,195,联络→分子纤维丛→Regge剖分,False,False,,False
+C012,C071,映射|未定,给出,pattern,D032,6,同步算符的输入，直到晶胞 FG 同步算符给出角亏谱 $\delta_v$、涨落幅度 $\Delta\delta_0$ 与声子,False,False,,False
+C024,C072,映射|未定,对应,pattern,D032,113,和乐平庸化对应配对岛（阶段一），全局同步对应相位网络渗流（阶段二），条件满足率的空间梯度即赝能隙,False,False,,False
+C026,C024,未定,→,pattern,D032,114,角亏**：理想构型（和乐平庸）→ 实际构型（和乐,False,False,,False
+C018,C030,未定,→,pattern,D032,219,FG → 元素 FG**：氢原子谱结构（$n = N(\gamma_n)$，$l$ 分裂）→ 电子轨道量子数 → 元素嘉当矩阵,False,False,,False
+C012,C023,映射|未定,给出,pattern,D032,277,同步算符谱给出，不需要外部贝里曲率,False,False,,False
+C012,C070,映射,给出,pattern,D033,100,同步算符本征值交叉给出旧框架的临界温度,False,False,,False
+C018,C025,未定,→,pattern,D033,209,FG表组合+跨原子联络→分子纤维丛→Regge剖分,False,False,,False
+C022,C025,未定,→,pattern,D033,209,联络→分子纤维丛→Regge剖分,False,False,,False
 C030,C026,未定,→,pattern,D042,34,元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏,False,False,,False
 C030,C023,未定,→,pattern,D042,34,元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率,False,False,,False
 C030,C063,未定,→,pattern,D042,34,元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干场**、**耦合空间曲率机制（跃迁耦级谱,False,False,,False
 C020,C012,重组实现|未定,重组实现,pattern,D042,35,主丛（重组实现 $F=G \Rightarrow R=G \Rightarrow \hat{H}$、和乐平庸化、子群重组）、同步算符,False,False,,False
 C018,C063,未定,→,pattern,D042,341,FG）→ CouplingSpace（耦合空间曲率机制，跃迁耦级谱,False,False,,False
 C006,C005,层级含于|未定,属于,pattern,D052,20,禁闭内部只是 QCD），且明确「夸克不属于禁闭边界,True,True,映射,False
-C048,C065,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态,False,False,,False
-C048,C008,未定,,cooccur,D001,3,相变量子的主符号为 **$☯$**（太极符号，取辩证、转化、相变之义——太极图的阴阳二分、互根、S形临界线、圆的整体性与 CQM 的“相变=结构群叠加态退相干,False,False,,False
-C065,C008,未定,,cooccur,D001,3,结构群叠加态退相干,False,False,,False
 C002,C003,未定,,cooccur,D001,23,物质先在、存在先于过程、再生产,False,False,,False
 C002,C062,未定,,cooccur,D001,23,物质先在、存在先于过程、再生产）、理论定位与关系、海森堡代数,False,False,,False
 C002,C048,未定,,cooccur,D001,23,物质先在、存在先于过程、再生产）、理论定位与关系、海森堡代数与相变量子,False,False,,False
@@ -249,6 +249,7 @@ C062,C029,未定,,cooccur,D001,23,海森堡代数与相变量子 $☯$、耦合�
 C048,C005,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界,False,False,,False
 C048,C053,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形,False,False,,False
 C048,C081,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$,True,True,重组实现,False
+C048,C008,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导；§7.1 含“一证七联”框架：核心定理退相干,False,False,,False
 C048,C045,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导；§7.1 含“一证七联”框架：核心定理退相干稳态是正四单纯形 $A_4$，七大关联为其推论，缺口 C 未闭合）、谱方程与黎曼零点,False,False,,False
 C048,C050,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导；§7.1 含“一证七联”框架：核心定理退相干稳态是正四单纯形 $A_4$，七大关联为其推论，缺口 C 未闭合）、谱方程与黎曼零点（Sier,False,False,,False
 C048,C001,未定,,cooccur,D001,23,相变量子 $☯$、耦合空间与 Hilbert 空间（Sprinkling 测度）、动力学（一阶层/二阶层、Berry–Keating 对应）、前核子自组织 = 禁闭边界（条件性幺正）、SU(5) 涌现与谱结构（4-单纯形、$\alpha$ 与 $G_N$ 推导；§7.1 含“一证七联”框架：核心定理退相干稳态是正四单纯形 $A_4$，七大关联为其推论，缺口 C 未闭合）、谱方程与黎曼零点（Sier,False,False,,False
@@ -396,8 +397,7 @@ C081,C048,未定,,cooccur,D001,51,$G_N$ 第一性推导公理化证明稿（严�
 C040,C074,未定,,cooccur,D001,52,自守形式同步](04 前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md) | 在相变弧线（旧尺度失效—新尺度形成，核心阶段＝重整化群不动点＝共形固定点,False,True,,False
 C074,C040,未定,,cooccur,D001,52,共形固定点）上，论证自守形式,True,True,重组实现,False
 C074,C041,未定,,cooccur,D001,52,共形固定点）上，论证自守形式是局部共形对称性与全局模对称性**同步实现的数学结晶**：四层同步框架（局部种子＝自守因子,False,False,,False
-C004,C065,未定,,cooccur,D001,54,因果集事件/质数节点/Regge 顶点 vs 晶格顶点）、连通（相位相干 vs 路径连通）、相变（结构群叠加态,False,False,,False
-C004,C008,未定,,cooccur,D001,54,因果集事件/质数节点/Regge 顶点 vs 晶格顶点）、连通（相位相干 vs 路径连通）、相变（结构群叠加态退相干,False,False,,False
+C004,C012,未定,,cooccur,D001,54,因果集事件/质数节点/Regge 顶点 vs 晶格顶点）、连通（相位相干 vs 路径连通）、相变（两阶段判据与渗流阈值 $p_{\rm sync}=p_c$（核心 §0.5 式 DM.11–DM.12） vs 几何连通阈值；同步算符,False,False,,False
 C008,C026,未定,,cooccur,D001,55,退相干“全局幺正性编码、局部不可接入”（§6.5），由此给出记忆的载体定义；④引力因果限制场“限定而非改写、子系统不能被一套微分方程组贯穿”（§6.3、§2.0），给出无全局马尔可夫生成元的几何来源。判据为约束类 $\mathcal{S}_\ell$ 下的尺度阈值 $\ell_*$，而非“能否马尔可夫化”；记忆核分解 $K=K_{\rm cl}+C K_{\rm nc}$ 定位为高阶累积量层的展开,False,False,,False
 C019,C026,未定,,cooccur,D001,55,引力因果限制场“限定而非改写、子系统不能被一套微分方程组贯穿”（§6.3、§2.0），给出无全局马尔可夫生成元的几何来源。判据为约束类 $\mathcal{S}_\ell$ 下的尺度阈值 $\ell_*$，而非“能否马尔可夫化”；记忆核分解 $K=K_{\rm cl}+C K_{\rm nc}$ 定位为高阶累积量层的展开（双线性高斯层 $K_{\rm nc}=0$）；耦合接口按 $\hat u=\,False,False,,False
 C019,C027,未定,,cooccur,D001,55,引力因果限制场“限定而非改写、子系统不能被一套微分方程组贯穿”（§6.3、§2.0），给出无全局马尔可夫生成元的几何来源。判据为约束类 $\mathcal{S}_\ell$ 下的尺度阈值 $\ell_*$，而非“能否马尔可夫化”；记忆核分解 $K=K_{\rm cl}+C K_{\rm nc}$ 定位为高阶累积量层的展开（双线性高斯层 $K_{\rm nc}=0$）；耦合接口按 $\hat u=\,False,False,,False
@@ -478,11 +478,12 @@ C024,C009,未定,,cooccur,D001,171,和乐相位闭合条件“$\approx 1$”的�
 C009,C024,未定,,cooccur,D001,172,因果网络同步理论.md:243` 记为“和乐,False,False,,False
 C019,C018,未定,,cooccur,D003,61,引力因果限制场（FG,True,True,层级含于,False
 C027,C062,未定,,cooccur,D005,18,固有时流速共轭动量，满足标准海森堡代数,False,False,,False
-C005,C063,未定,,cooccur,D005,19,禁闭边界、两种引力的同源分化、黎曼零点谱、超导的跃迁耦级谱,False,False,,False
-C045,C063,未定,,cooccur,D005,19,黎曼零点谱、超导的跃迁耦级谱,False,False,,False
+C005,C063,未定,,cooccur,D005,19,禁闭边界、两种引力的同源分化、黎曼零点谱、超导的局域配对与全局相位渗流（跃迁耦级谱,False,False,,False
+C045,C063,未定,,cooccur,D005,19,黎曼零点谱、超导的局域配对与全局相位渗流（跃迁耦级谱,False,False,,False
 C050,C045,未定,,cooccur,D005,24,耦谱定理**——黎曼零点,False,False,,False
 C012,C049,未定,,cooccur,D005,34,"同步算符（= 紧化算符的层级实现）体系分两类谱论对象（见该文档 §4）：紧化投影（谱 ⊆ {0,1}）不是、也不可能是波利亚算符，承担黎曼零点谱的谱算符",False,False,,False
 C045,C049,未定,,cooccur,D005,34,黎曼零点谱的谱算符,False,False,,False
+C004,C008,未定,,cooccur,D005,39,因果集；关系量子力学；圈量子引力；引力参与的退相干,False,False,,False
 C006,C004,未定,,cooccur,D005,109,禁闭内部（夸克/胶子） | 因果集,False,False,,False
 C006,C008,未定,,cooccur,D005,121,禁闭内部）及其退相干,False,False,,False
 C004,C006,未定,,cooccur,D005,128,因果集** | 非交换几何、离散动力学 | 禁闭内部,False,False,,False
@@ -521,36 +522,37 @@ C024,C021,未定,,cooccur,D005,561,和乐 $W_v = \exp(i\delta_v \hat{T})$。联�
 C023,C007,未定,,cooccur,D005,562,曲率作用** | 前组织条件（自组织的最原始形式）。GL(5) 自守零点谱作为“资格审查”的原始形态，决定物质有限化是否可能 | **自组织。** 物质通过角亏-联络-曲率机制**自我展开**：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织,False,False,,False
 C026,C007,未定,,cooccur,D005,562,角亏-联络-曲率机制**自我展开**：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织,False,True,,False
 C022,C007,未定,,cooccur,D005,562,联络-曲率机制**自我展开**：晶胞量子振荡改变角亏，角亏改变联络，联络限定耦合常数，耦合常数跃迁生成库珀对——曲率是物质自组织,False,False,,False
-C023,C062,未定,,cooccur,D005,650,曲率驱动固有时流速涨落，流速涨落通过海森堡代数,False,False,,False
-C023,C066,未定,,cooccur,D005,650,"曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
-C023,C068,未定,,cooccur,D005,650,"曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
-C027,C066,未定,,cooccur,D005,650,"固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
-C027,C068,未定,,cooccur,D005,650,"固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
-C062,C064,未定,,cooccur,D005,650,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件",False,False,,False
-C062,C066,未定,,cooccur,D005,650,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
-C062,C068,未定,,cooccur,D005,650,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
-C063,C066,未定,,cooccur,D005,650,"跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
-C063,C068,未定,,cooccur,D005,650,"跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
-C064,C068,未定,,cooccur,D005,650,资格条件，候选群族在路径积分中通过自由能竞争选出主导群,False,False,,False
-C064,C026,未定,,cooccur,D005,713,资格条件**（角亏,False,False,,False
-C072,C023,未定,,cooccur,D005,743,赝能隙 = 高曲率,False,False,,False
-C003,C071,未定,,cooccur,D005,767,再生产（晶胞量子振荡的维持）是自组织的一个环节，声子,False,False,,False
-C009,C018,未定,,cooccur,D005,777,因果网络同步理论.md`（CNST）：超导相变是 FG,False,False,,False
-C027,C022,未定,,cooccur,D005,783,固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络,False,False,,False
-C027,C024,未定,,cooccur,D005,783,固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络与和乐,False,False,,False
-C012,C069,未定,,cooccur,D005,785,同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符,False,True,,False
-C012,C065,未定,,cooccur,D005,785,同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符 = 结构群叠加态,False,False,,False
-C069,C001,未定,,cooccur,D005,785,超导同步算符 = 结构群叠加态 = 前时空,False,False,,False
-C069,C015,未定,,cooccur,D005,785,超导同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现,False,False,,False
-C065,C001,未定,,cooccur,D005,785,结构群叠加态 = 前时空,False,False,,False
-C065,C015,未定,,cooccur,D005,785,结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现,False,False,,False
-C046,C064,未定,,cooccur,D005,853,"耦级 $2\ln n$（$n=2,4,6,\ldots$），资格条件",False,False,,False
-C027,C021,未定,,cooccur,D005,882,固有时流速、耦合空间涨落，展开出具体层级的伴丛,False,False,,False
-C021,C008,未定,,cooccur,D005,950,伴丛叠加} \to \text{退相干,False,False,,False
-C052,C026,未定,,cooccur,D005,964,GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3,False,False,,False
-C052,C065,未定,,cooccur,D005,964,GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3,False,False,,False
-C015,C026,未定,,cooccur,D005,964,重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏,False,False,,False
-C015,C065,未定,,cooccur,D005,964,重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏涨落}} \text{结构群叠加态,False,False,,False
+C023,C062,未定,,cooccur,D005,652,曲率驱动固有时流速涨落，流速涨落通过海森堡代数,False,False,,False
+C023,C066,未定,,cooccur,D005,652,"曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
+C023,C068,未定,,cooccur,D005,652,"曲率驱动固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
+C027,C066,未定,,cooccur,D005,652,"固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
+C027,C068,未定,,cooccur,D005,652,"固有时流速涨落，流速涨落通过海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
+C062,C064,未定,,cooccur,D005,652,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件",False,False,,False
+C062,C066,未定,,cooccur,D005,652,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
+C062,C068,未定,,cooccur,D005,652,"海森堡代数锁定精细结构常数的量子涨落，涨落给出跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
+C063,C066,未定,,cooccur,D005,652,"跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族",False,False,,False
+C063,C068,未定,,cooccur,D005,652,"跃迁耦级谱 $\Delta u_n = 2\ln n$（$n=2,4,6,\ldots$）的资格条件，候选群族在路径积分中通过自由能竞争选出主导群",False,False,,False
+C064,C068,未定,,cooccur,D005,652,资格条件，候选群族在路径积分中通过自由能竞争选出主导群,False,False,,False
+C064,C026,未定,,cooccur,D005,716,资格条件**（角亏,False,False,,False
+C072,C023,未定,,cooccur,D005,746,赝能隙 = 高曲率,False,False,,False
+C003,C071,未定,,cooccur,D005,770,再生产（晶胞量子振荡的维持）是自组织的一个环节，声子,False,False,,False
+C009,C018,未定,,cooccur,D005,780,因果网络同步理论.md`（CNST）：超导相变是 FG,False,False,,False
+C027,C022,未定,,cooccur,D005,786,固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络,False,False,,False
+C027,C024,未定,,cooccur,D005,786,固有时流速 $\frac{d\tau}{dt}=\sqrt{1-\beta\delta_v}$ 是局域节律，FG 纤维丛联络与和乐,False,False,,False
+C012,C069,未定,,cooccur,D005,788,同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符,False,True,,False
+C012,C065,未定,,cooccur,D005,788,同步算符本征值交叉 $\lambda_1(T_c)=\lambda_2(T_c)$，超导同步算符 = 结构群叠加态,False,False,,False
+C069,C001,未定,,cooccur,D005,788,超导同步算符 = 结构群叠加态 = 前时空,False,False,,False
+C069,C015,未定,,cooccur,D005,788,超导同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现,False,False,,False
+C065,C001,未定,,cooccur,D005,788,结构群叠加态 = 前时空,False,False,,False
+C065,C015,未定,,cooccur,D005,788,结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现,False,False,,False
+C046,C064,未定,,cooccur,D005,858,"耦级 $2\ln n$（$n=2,4,6,\ldots$），资格条件",False,False,,False
+C027,C021,未定,,cooccur,D005,887,固有时流速、耦合空间涨落，展开出具体层级的伴丛,False,False,,False
+C065,C008,未定,,cooccur,D005,934,结构群叠加态的退相干,False,False,,False
+C021,C008,未定,,cooccur,D005,955,伴丛叠加} \to \text{退相干,False,False,,False
+C052,C026,未定,,cooccur,D005,969,GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3,False,False,,False
+C052,C065,未定,,cooccur,D005,969,GRH）}} SU(5)\text{ 基态同步} \xRightarrow{\text{重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3,False,False,,False
+C015,C026,未定,,cooccur,D005,969,重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏,False,False,,False
+C015,C065,未定,,cooccur,D005,969,重组实现}} U(1)\times SU(2)\times SU(3)\text{ 规范群} \xrightarrow{\text{有限化}} \text{质子/中子 } A_4 \xrightarrow{\text{表示论}} \text{先在规范群 } U(1)\times SU(2)\times SU(3) \xrightarrow{\text{角亏涨落}} \text{结构群叠加态,False,False,,False
 C001,C006,未定,,cooccur,D006,18,前时空层的物理实在不在普朗克尺度的“时空泡沫”中，也不在质子／中子的禁闭内部,False,False,,False
 C045,C007,未定,,cooccur,D006,25,黎曼零点 } \gamma_n \quad \Longleftrightarrow \quad \text{物质自组织,False,False,,False
 C021,C018,未定,,cooccur,D006,135,伴丛曲率 $F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ 参与伴丛运动方程 $D*F=*J_\Phi$——与第一通道共用联络 $\mathcal{A}_{\text{FG,False,False,,False
@@ -577,20 +579,21 @@ C021,C064,未定,,cooccur,D006,278,"伴丛曲率通道：} F = d\mathcal{A}+\mat
 C021,C066,未定,,cooccur,D006,278,"伴丛曲率通道：} F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A},\; D*F=*J_\Phi \end{cases} \to \text{资格条件筛出候选群族",False,False,,False
 C021,C068,未定,,cooccur,D006,278,"伴丛曲率通道：} F = d\mathcal{A}+\mathcal{A}\wedge\mathcal{A},\; D*F=*J_\Phi \end{cases} \to \text{资格条件筛出候选群族} \to \text{自由能竞争选出主导群",False,False,,False
 C001,C050,未定,,cooccur,D006,330,前时空谱与黎曼零点见 `01 核心理论/CQM_核心_集成理论.md` §9.2 与第八部分（Sierra-CQM 耦谱定理,False,False,,False
+C064,C063,未定,,cooccur,D006,350,资格条件、$\beta$ 微观来源、$T_c$ 自由能交叉等数学结果，见 `06 超导/CQM_超导核心理论.md` §9.1–§9.2（跃迁耦级谱,False,True,,False
 C081,C058,未定,,cooccur,D007,70,$G_N$ 公式中的谱修正,False,True,,False
 C008,C049,未定,,cooccur,D007,97,退相干物理铸造这一谱算符,False,False,,False
 C012,C040,未定,,cooccur,D007,99,同步算符 $\hat{\mathcal{S}}_0$ 是从 GL(5) 自守形式,False,False,,False
 C027,C017,未定,,cooccur,D007,137,固有时流速减慢）与 GR,False,False,,False
-C065,C045,未定,,cooccur,D007,158,结构群叠加态的谱算符，其本征态 = 结构群基矢 $|U(1)//\mathbb{Z}_n\rangle$，本征值是相变有效谱 $\lambda_n(T)$（与黎曼零点,False,False,,False
-C007,C009,未定,,cooccur,D007,343,物质自组织的动力学（退相干为其表现）= 确立配对不变量 $\mathfrak{c}_n$ 为实数的纯代数判据 = 建立因果网络同步理论,False,True,,False
-C008,C053,未定,,cooccur,D007,398,退相干稳态恰为 4-单纯形,False,False,,False
-C018,C045,未定,,cooccur,D007,514,FG 激活后：作用于电磁扇区结构群空间，本征态为 |U(1)//ℤ_n⟩，本征值是相变有效谱 λ_n(T)，黎曼零点,False,False,,False
-C045,C015,未定,,cooccur,D007,537,黎曼零点 $\gamma_n$ | 广义黎曼猜想（黎曼猜想为其 GL(1) 特例） | $\hat{\mathcal{S}}_0$ | $SU(5)$ 统一 ⇒ 重组实现,False,False,,False
+C065,C045,未定,,cooccur,D007,159,结构群叠加态的谱算符，其本征态 = 结构群基矢 $|U(1)//\mathbb{Z}_n\rangle$，本征值是相变有效谱 $\lambda_n(T)$（与黎曼零点,False,False,,False
+C007,C009,未定,,cooccur,D007,344,物质自组织的动力学（退相干为其表现）= 确立配对不变量 $\mathfrak{c}_n$ 为实数的纯代数判据 = 建立因果网络同步理论,False,True,,False
+C008,C053,未定,,cooccur,D007,399,退相干稳态恰为 4-单纯形,False,False,,False
+C018,C045,未定,,cooccur,D007,516,FG 激活后：作用于电磁扇区结构群空间，本征态为 |U(1)//ℤ_n⟩，本征值是相变有效谱 λ_n(T)，黎曼零点,False,False,,False
+C045,C015,未定,,cooccur,D007,539,黎曼零点 $\gamma_n$ | 广义黎曼猜想（黎曼猜想为其 GL(1) 特例） | $\hat{\mathcal{S}}_0$ | $SU(5)$ 统一 ⇒ 重组实现,False,False,,False
 C040,C045,未定,,cooccur,D008,73,自守形式是这一层的朗兰兹原始结构，黎曼零点,False,False,,False
 C018,C082,未定,,cooccur,D008,134,FG）/FG_核心理论.md` §5.1.1（GL(5) 大统一框架）、`07 精细引力（FG）/FG_纤维丛理论.md` §2.0（主丛结构关系与规范相变）、`04 前沿研究/Wyler常数,False,False,,False
 C020,C082,未定,,cooccur,D008,134,主丛结构关系与规范相变）、`04 前沿研究/Wyler常数,False,False,,False
 C064,C081,未定,,cooccur,D008,238,资格条件进入超导 $T_c$ 链条（闭式显式依赖 $\theta_D$、$\beta$、$\Delta\delta_0$、$\delta_v$ 与 $\gamma_2-\gamma_1$）、$G_N$,False,False,,False
-C045,C048,未定,,cooccur,D008,615,黎曼零点 $\gamma_n$，相变量子,False,False,,False
+C045,C048,未定,,cooccur,D008,616,黎曼零点 $\gamma_n$，相变量子,False,False,,False
 C040,C042,未定,,cooccur,D009,178,自守形式、量纲），「潜在-显现化」沿三环节展开——**属性先在**（§6.4.3 独立属性、§6.5.2 完备属性矩阵）→ **关系分化**（§6.4.7、§6.5：极大关系群,False,False,,False
 C032,C060,未定,,cooccur,D009,294,时间量纲，长度由 $K_L$ 从无量纲耦合坐标,False,False,,False
 C027,C009,未定,,cooccur,D009,356,固有时流速 $v_\tau=d\tau/dt$ 见 `CQM_核心_因果网络同步理论,False,False,,False
@@ -605,7 +608,6 @@ C003,C016,未定,,cooccur,D010,25,再生产能力的数学影像”（`04 前沿
 C015,C007,未定,,cooccur,D010,26,重组实现）合为**同一对象的两面**，而**发生学侧（物质自组织,False,False,,False
 C025,C023,未定,,cooccur,D011,79,Regge剖分 + 经典边长 | c-数 | 经典背景曲率,False,False,,False
 C012,C009,未定,,cooccur,D011,86,同步算符 = 紧化算符，同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ 的完整理论详见 `CQM_核心_因果网络同步理论,False,False,,False
-C012,C071,未定,,cooccur,D011,93,同步算符通过曲率算符 $\hat{\delta}_v$ 作用于声子,False,False,,False
 C071,C045,未定,,cooccur,D011,120,声子以前时空量子涨落的形式存在于其中，其谱结构经GL(5)紧化投影与黎曼零点,False,False,,False
 C071,C081,未定,,cooccur,D011,149,声子不受 $G_N$,False,False,,False
 C025,C021,未定,,cooccur,D011,152,Regge剖分，嘉当矩阵，Regge角亏 $\delta_v$ + 伴丛,False,False,,False
@@ -670,18 +672,18 @@ C007,C023,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏
 C007,C022,未定,,cooccur,D022,277,物质自组织的因果结构，Regge 角亏是其度量形式（兼发生学入口），伴丛曲率是响应形式——“一个联络,False,False,,False
 C021,C012,未定,,cooccur,D022,286,伴丛和乐唯象近似”定位（`06 超导/CQM_超导_FG层级同步算符,False,False,,False
 C026,C040,未定,,cooccur,D022,289,角亏总和 = 欧拉示性数）与陈数（贝里曲率积分）的平行，是否可在“Regge 底空间几何指定自守形式,False,False,,False
-C078,C048,未定,,cooccur,D023,58,共形维度、算符乘积展开、相变量子,False,False,,False
-C078,C077,未定,,cooccur,D023,58,共形维度、算符乘积展开、相变量子 $☯$ 与中央荷,False,False,,False
-C053,C071,未定,,cooccur,D023,71,4-单纯形}\to\delta_v\text{ 涨落}\to\text{声子,False,False,,False
-C053,C072,未定,,cooccur,D023,71,4-单纯形}\to\delta_v\text{ 涨落}\to\text{声子谱}\to\text{配对场记忆核}\to T_c/\text{赝能隙,False,False,,False
-C071,C072,未定,,cooccur,D023,71,声子谱}\to\text{配对场记忆核}\to T_c/\text{赝能隙,False,False,,False
-C008,C065,未定,,cooccur,D023,111,退相干链条（结构群叠加态,False,False,,False
-C016,C003,未定,,cooccur,D023,126,内禀时间动力学坐标**；内禀时间是自维持（再生产,False,False,,False
-C015,C009,未定,,cooccur,D023,131,重组实现**”（`01 核心理论/CQM_核心_因果网络同步理论,False,False,,False
-C015,C071,未定,,cooccur,D023,231,重组实现的直接结果（`01 核心理论/CQM_核心_声子,False,False,,False
-C053,C007,未定,,cooccur,D023,246,4-单纯形（物质自组织,False,False,,False
-C071,C009,未定,,cooccur,D023,271,声子→量子曲率→不确定关系→L 函数→自守形式→GL(5)→共形同步→多实现） | 超导核心理论 §6/§8.3/§10/§11.6/§12.2；因果网络同步理论,False,False,,False
-C023,C009,未定,,cooccur,D023,271,曲率→不确定关系→L 函数→自守形式→GL(5)→共形同步→多实现） | 超导核心理论 §6/§8.3/§10/§11.6/§12.2；因果网络同步理论,False,False,,False
+C078,C048,未定,,cooccur,D023,64,共形维度、算符乘积展开、相变量子,False,False,,False
+C078,C077,未定,,cooccur,D023,64,共形维度、算符乘积展开、相变量子 $☯$ 与中央荷,False,False,,False
+C053,C071,未定,,cooccur,D023,77,4-单纯形}\to\delta_v\text{ 涨落}\to\text{声子,False,False,,False
+C053,C072,未定,,cooccur,D023,77,4-单纯形}\to\delta_v\text{ 涨落}\to\text{声子谱}\to\text{配对场记忆核}\to T_c/\text{赝能隙,False,False,,False
+C071,C072,未定,,cooccur,D023,77,声子谱}\to\text{配对场记忆核}\to T_c/\text{赝能隙,False,False,,False
+C008,C065,未定,,cooccur,D023,117,退相干链条（结构群叠加态,False,False,,False
+C016,C003,未定,,cooccur,D023,132,内禀时间动力学坐标**；内禀时间是自维持（再生产,False,False,,False
+C015,C009,未定,,cooccur,D023,137,重组实现**”（`01 核心理论/CQM_核心_因果网络同步理论,False,False,,False
+C015,C071,未定,,cooccur,D023,239,重组实现的直接结果（`01 核心理论/CQM_核心_声子,False,False,,False
+C053,C007,未定,,cooccur,D023,254,4-单纯形（物质自组织,False,False,,False
+C071,C009,未定,,cooccur,D023,279,声子→量子曲率→不确定关系→L 函数→自守形式→GL(5)→共形同步→多实现） | 超导核心理论 §6/§8.3/§10/§11.6/§12.2；因果网络同步理论,False,False,,False
+C023,C009,未定,,cooccur,D023,279,曲率→不确定关系→L 函数→自守形式→GL(5)→共形同步→多实现） | 超导核心理论 §6/§8.3/§10/§11.6/§12.2；因果网络同步理论,False,False,,False
 C022,C041,未定,,cooccur,D024,87,联络，其单值化表示正是自守因子,False,False,,False
 C041,C022,未定,,cooccur,D024,87,自守因子在共形块空间上的作用：**局部 KZ 方程与全局模变换不是两个独立条件，而是同一平坦联络,False,False,,False
 C022,C078,未定,,cooccur,D024,157,联络的两个面向**——这一表述与 `07 精细引力（FG）/FG_纤维丛理论.md` §9.4「和乐 = OPE monodromy」严格对应：和乐本征值与共形维度,False,False,,False
@@ -838,10 +840,13 @@ C068,C065,未定,,cooccur,D030,2163,主导群。**深化（§11.6）**：丛作�
 C068,C012,未定,,cooccur,D030,2163,主导群。**深化（§11.6）**：丛作用量交叉是结构群叠加态（= 同步算符,False,False,,False
 C007,C024,未定,,cooccur,D030,2345,物质自组织的**过程**——局域和乐,False,False,,False
 C008,C068,未定,,cooccur,D030,2348,退相干完成”与“同步≠结构群统一”并不冲突：前者说的是过程归属，后者说的是终态不要求单一主导群,False,False,,False
-C009,C020,未定,,cooccur,D032,4,因果网络同步理论.md` §4、§9）在各 FG 层级主丛,False,False,,False
-C017,C024,未定,,cooccur,D032,35,GR 基态的非平庸激发态：底空间 $M$ 由物质晶胞分布经 Regge 剖分给出（链 A），结构群 $G_{\text{FG}}$ 由嘉当矩阵链给出（链 B），联络 $\mathcal{A}_{\text{FG}}$ 由 Regge 晶胞分步生成，产生两种曲率（底空间角亏 $\delta_v$ 与伴丛曲率 $F$），和乐,False,False,,False
-C012,C007,未定,,cooccur,D032,311,同步算符（紧化算符）在每个 FG 层级实现，正如各层级零点猜想是物质自组织,False,False,,False
-C020,C049,未定,,cooccur,D033,80,主丛谱算符,False,False,,False
+C009,C020,未定,,cooccur,D032,5,因果网络同步理论.md` §4、§9）在各 FG 层级主丛,False,False,,False
+C020,C072,未定,,cooccur,D032,12,主丛）、§10（伴丛同步与赝能隙,False,False,,False
+C072,C012,未定,,cooccur,D032,12,赝能隙的两阶段几何实现）、§11.6/§11.10（同步算符,False,False,,False
+C017,C024,未定,,cooccur,D032,36,GR 基态的非平庸激发态：底空间 $M$ 由物质晶胞分布经 Regge 剖分给出（链 A），结构群 $G_{\text{FG}}$ 由嘉当矩阵链给出（链 B），联络 $\mathcal{A}_{\text{FG}}$ 由 Regge 晶胞分步生成，产生两种曲率（底空间角亏 $\delta_v$ 与伴丛曲率 $F$），和乐,False,False,,False
+C018,C072,未定,,cooccur,D032,113,FG 层级：和乐平庸化 = 超导凝聚（全局相位相干）——两阶段读法：局域和乐平庸化对应配对岛（阶段一），全局同步对应相位网络渗流（阶段二），条件满足率的空间梯度即赝能隙,False,False,,False
+C012,C007,未定,,cooccur,D032,322,同步算符（紧化算符）在每个 FG 层级实现，正如各层级零点猜想是物质自组织,False,False,,False
+C020,C049,未定,,cooccur,D033,87,主丛谱算符,False,False,,False
 C070,C030,未定,,cooccur,D042,34,临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵,False,False,,False
 C070,C018,未定,,cooccur,D042,34,临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG,False,False,,False
 C070,C008,未定,,cooccur,D042,34,临界温度严格推导（G22 闭合）**、**BCS 退化与还原**、**嘉当张量超导方程**、**第一性推导链**、**SPAF 半唯像框架**、**BCS 渐近分析（G13 闭合）**、**桥接定理**、**元素嘉当矩阵**、**分子几何→晶胞嘉当矩阵→Regge晶胞/角亏→FG退相干,False,False,,False
