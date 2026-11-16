@@ -83,11 +83,14 @@ project:
     - {module: "Superconductivity.BridgeTheorems", file: "Superconductivity/BridgeTheorems.lean", theorem_like: 25, def_like: 4, axiom: 0, total_decl: 29}
     - {module: "Superconductivity.CartanSuperconductivity", file: "Superconductivity/CartanSuperconductivity.lean", theorem_like: 25, def_like: 12, axiom: 0, total_decl: 37}
     - {module: "Superconductivity.CouplingSpace", file: "Superconductivity/CouplingSpace.lean", theorem_like: 0, def_like: 20, axiom: 0, total_decl: 21}
+    - {module: "Superconductivity.CrossingParadigm", file: "Superconductivity/CrossingParadigm.lean", theorem_like: 12, def_like: 2, axiom: 0, total_decl: 14}
+    - {module: "Superconductivity.DNRLink", file: "Superconductivity/DNRLink.lean", theorem_like: 9, def_like: 5, axiom: 0, total_decl: 14}
     - {module: "Superconductivity.DeepConstruction", file: "Superconductivity/DeepConstruction.lean", theorem_like: 12, def_like: 19, axiom: 0, total_decl: 31}
     - {module: "Superconductivity.DeepResearch", file: "Superconductivity/DeepResearch.lean", theorem_like: 15, def_like: 15, axiom: 0, total_decl: 31}
     - {module: "Superconductivity.ElementCartan", file: "Superconductivity/ElementCartan.lean", theorem_like: 44, def_like: 25, axiom: 0, total_decl: 69}
     - {module: "Superconductivity.FirstPrinciples", file: "Superconductivity/FirstPrinciples.lean", theorem_like: 20, def_like: 8, axiom: 0, total_decl: 28}
     - {module: "Superconductivity.FormalizationRigor", file: "Superconductivity/FormalizationRigor.lean", theorem_like: 25, def_like: 17, axiom: 0, total_decl: 43}
+    - {module: "Superconductivity.GLUnified", file: "Superconductivity/GLUnified.lean", theorem_like: 4, def_like: 3, axiom: 0, total_decl: 7}
     - {module: "Superconductivity.MolecularGeometry", file: "Superconductivity/MolecularGeometry.lean", theorem_like: 50, def_like: 23, axiom: 0, total_decl: 77}
     - {module: "Superconductivity.Ontology", file: "Superconductivity/Ontology.lean", theorem_like: 7, def_like: 3, axiom: 5, total_decl: 15}
     - {module: "Superconductivity.Reduction", file: "Superconductivity/Reduction.lean", theorem_like: 23, def_like: 8, axiom: 0, total_decl: 31}
@@ -96,18 +99,18 @@ project:
     - {module: "Superconductivity.TransitionTemperature", file: "Superconductivity/TransitionTemperature.lean", theorem_like: 3, def_like: 2, axiom: 0, total_decl: 5}
     - {module: "Superconductivity.TransitionTemperatureCQM", file: "Superconductivity/TransitionTemperatureCQM.lean", theorem_like: 3, def_like: 6, axiom: 0, total_decl: 9}
   declaration_histogram:
-    theorem: 880
+    theorem: 905
     lemma: 50
-    def: 440
+    def: 450
     abbrev: 15
     axiom: 15
     structure: 54
     inductive: 7
     class: 4
   totals:
-    modules: 75
-    declarations: 1465
-    theorem_like: 930
+    modules: 78
+    declarations: 1500
+    theorem_like: 955
     axioms: 15
   authoritative_status:
     note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：11 库全部通过；886 已证明定理 / 15 公理待证（口径 = theorem + lemma，零 sorry，与 theorem_like 抽取一致）。"

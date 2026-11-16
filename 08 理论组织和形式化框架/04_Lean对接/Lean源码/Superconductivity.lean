@@ -11,6 +11,9 @@ import Superconductivity.ElementCartan
 import Superconductivity.FormalizationRigor
 import Superconductivity.DeepConstruction
 import Superconductivity.DeepResearch
+import Superconductivity.CrossingParadigm
+import Superconductivity.DNRLink
+import Superconductivity.GLUnified
 
 /-!
 # CQM 超导形式化 (Superconductivity)
@@ -43,8 +46,10 @@ CQM 超导理论的完整形式化框架。理论文档见
 | `Superconductivity.SPAF` | §2.5 晶胞路线 | **元素嘉当矩阵与因果几何**：因果耦合 t_ij = t₀·e^{−d/λ}·Θ(d_cut−d)；组装对称性；中子缺陷谱判据——对角线化形式（§3.2，SOS 正方向 + 反方向见证 + Sylvester 闭合）与非对角元形式（§2.2，G14 闭合：det D = 8−3δ²、正定 ⟺ \|δ\| < √(8/3)、N2 行列式匹配）；N2 微扰质量（δ=1 附近谱体积展开）；Regge 边长正性 |
 | `Superconductivity.MolecularGeometry` | §2.5 晶胞路线 | **分子→晶胞嘉当矩阵（链B约束）→ Regge 晶胞/角亏（链A生成）→ FG 退相干场**：原子嘉当矩阵 → C_mol 块对角 + 跨原子耦合 → 晶胞嘉当矩阵（仅约束可实现谱，不直接生成 Regge 晶胞，见 §3.2）→ 亏角 δ_v = 2π − Σθ_tet（链A晶胞几何分布）→ FG 退相干场强度（由角亏直接给出，不走 Regge→GR 连续极限） |
 | `Superconductivity.CouplingSpace` | §12 耦合空间曲率机制 | **超导 = 耦合空间曲率驱动的精细结构常数量子跃迁**：Regge 角亏 δ_v → 固有时流速 v_τ = dτ/dt = √(1-βδ_v) → 耦合动量 p_u = v_τ/☯ → 不确定性 Δu·Δδ_v ≥ ☯√(1-βδ_v)/β → 跃迁 u→u+ln4（α→4α）→ 超导判据 Δδ_v ≥ ☯√(1-βδ_v)/(βln4)；ζ(s) 母积分与费米统计投影；纯氢不超导（阈值正性） |
+| `Superconductivity.CrossingParadigm` | 交叉判别范式（探索层） | **交叉判别的第一性演绎**（对应 `10 探索/CQM_探索_自能支Tc交叉判别计算.md` 与 `06 超导/CQM_超导_非马尔可夫对接_方案.md`）：统一谱方程 λ_n = γ_n − V₀·w_n 下两种权重（ansatz 解耦型 / 自能耦合型）；权重差闭式 (m²−n²)/(n²m²)；P0 范式定理（解耦权重交叉点核宽 τ_g² = (w_m−w_n)/Δγ 与材料参数无关）；特例 τ_g² = 3/(4Δγ)；交叉需求量 n²m²Δγ/(m²−n²)；自能谱谱序不变性（SE-A 无交叉与 §9.2 分支零交叉公共根源）；交叉方程显式根代数验证。定义引入（权重、Λ、γ_n 不作断言）；无数值校验 |
+| `Superconductivity.DNRLink` | DNR 接口层（探索层） | **DNR 代数到超导链的第一性接口**（对应 `10 探索/CQM_探索_DNR超导第一性推导.md`）：无联合本征态（节点定位的代数内核）；单节点只分到 1/N 对易强度（局域不可能跃迁）；资格条件重写为最小允许跃迁级 n*=exp(1/λ_DNR) 的纯代数恒等式；x_I=(ln n/ln n*)²。定义引入（λ_DNR、n*、资格谓词、x_I 不作断言）；无数值校验 |
 
-> 说明：本表按理论层级列出对应模块；库内实有 16 个模块，另有 `BCSIntegralAsymptotic`、`BridgeTheorems`、`ElementCartan`、`FormalizationRigor`、`DeepConstruction`、`DeepResearch`、`TestDet` 未在本表逐行列出。
+> 说明：本表按理论层级列出对应模块；库内实有 18 个模块，另有 `BCSIntegralAsymptotic`、`BridgeTheorems`、`ElementCartan`、`FormalizationRigor`、`DeepConstruction`、`DeepResearch`、`TestDet` 未在本表逐行列出。
 
 ## 核心定理
 
@@ -65,6 +70,48 @@ CQM 超导理论的完整形式化框架。理论文档见
 - `curvatureFluctuationThreshold` / `curvatureFluctuationThreshold_pos` / `superconductivityCriterion`：资格条件 $\Delta\delta_0\ge ☯\sqrt{1-\beta\delta_v}/(2\beta\ln n)$（$n=2$ 特例）与超导判据；主导群由自由能竞争选出
 - `fermiIntegralFactor` / `fermiIntegral3` / `fermiIntegral2`：费米积分母积分因子 $(1-2^{1-s})\zeta(s)$；三维 $s=3$ 得 $\frac{3}{2}\zeta(3)$，二维 $s=2$ 得 $\frac{1}{2}\zeta(2)$
 - `pureHydrogenNotSuperconducting`：预言 1——纯氢（角亏涨落 $\Delta\delta_v=0$）不超导（由判据 $\Delta\delta_v\ge\text{阈值}>0$ 直接得 ¬判据）
+
+
+### 交叉判别范式（CrossingParadigm，探索层）
+
+对应 `10 探索/CQM_探索_自能支Tc交叉判别计算.md`；定义引入（不作断言）＋纯代数演绎，无数值校验：
+
+- `weightAnsatz_diff`：`w_m − w_n = (m²−n²)/(n²m²)`（n<m，权重单调递增）
+- `weightAnsatz_adjacent_diff`：相邻对差 `(2n+1)/(n²(n+1)²)`（幂律截断公式的代数起点）
+- `crossingWidth_P0`：**P0 范式定理**——解耦权重下交叉点核宽 `τ_g² = (w_m−w_n)/Δγ`，与 β、δ_v、Δδ₀ 全部无关（探索文档 §10.2）
+- `crossingWidth_P0_ansatz12`：特例 `τ_g² = 3/(4Δγ)`（探索文档 §2 恒等式的定理化）
+- `crossingDemand_ansatz`：交叉需求量 `V₀ = n²m²(γ_m−γ_n)/(m²−n²)`（探索文档 §9.1）
+- `selfEnergy_factor_lt` / `selfEnergySpectrum_lt_of_lt`：自能因子严格递减 ⟹ 谱序不变（SE-A 无交叉与 §9.2 分支零交叉的公共代数根源）
+- `spectralOrder_robust`：**类型 II 谱方程谱序不变性（核形状鲁棒性）**——抽象 φ 严格减 + A>0 ⟹ 谱序不变，单极核与精确高斯核同为特例（探索文档 §12.1）
+- `weightAnsatz_eq_one_minus_exp_neg_two_log`：**u 坐标权重恒等式**——`w(n) = 1 − e^(−u_n)`，`u_n = 2·ln n`（跃迁耦级量子化），统一 §11.10 n-表示与 §11.6 u-表示（总装文档 §1.2）
+- `selfEnergy_noCrossing`：全分支同浴时 `λ₁ = λ₂` 无解（探索文档 §3 结构性排除）
+- `selfEnergy_crossing_root_add`：自能交叉方程显式高温根满足方程（探索文档 §4 第一层的代数部分）
+
+### DNR 接口层（DNRLink，探索层）
+
+对应 `10 探索/CQM_探索_DNR超导第一性推导.md`；定义引入（不作断言）＋纯代数演绎，无数值校验：
+
+- `no_common_eigenstate`：**无联合本征态**——`[A,B] = c•I`、`c ≠ 0` 时不存在同时本征向量（DNR 定理 1 的代数内核；节点定位的依据）
+- `commutatorOp_collective_single`：**单节点只分到 1/N 对易强度**——`[û_G, p̂_j] = (i/N)•I`（局域不可能跃迁的代数表述）
+- `minTransitionLevel_eq_exp_inv`：**桥接恒等式**——`n* = exp(1/λ_DNR)`，`λ_DNR = 2βΔδ₀/(☯√(1−βδ_v))`
+- `qualification_iff_level_ge`：**资格条件重写**——正参数窗口内，资格条件 ⟺ `n* ≤ n`（`n > 1`）
+- `qualification_at_min_level`：门槛在 `n = n*` 处取等
+- `xIChannel_eq_ratio_sq`：**两通道标度**——`x_I = (ln n / ln n*)²`
+- `percolationCriterion_iff`：**渗流判据的序论内核**——合格分数严格递减且 `p(T_c)=p_c` 时，`p(T) ≥ p_c ↔ T ≤ T_c`（探索文档《选择机制与三接口》§2.1）
+- `percolationThreshold_unique`：**渗流门槛唯一性**——严格递减下 `p(T)=p_c` 至多一解
+- `effectiveCutoff` / `effectiveCutoff_pos`：**非马尔可夫有效截断**`ω_D^eff = θ_D·β·Δδ₀/(2√(1−βδ_v))`（定义引入，不作断言；正性）
+
+### 统一 GL 泛函（GLUnified，探索层）
+
+对应 `10 探索/CQM_探索_超导统一GL理论.md`；定义引入（不作断言）＋纯代数演绎，无数值校验：
+
+- `aCoefficient`：GL 二次系数 `a(T)=a₀(p_c−p)`（定义引入）
+- `condensateFraction`：凝聚分数 `|ψ₀|²=max(0,p−p_c)`（定义引入）
+- `glFreeEnergy`：均匀态 `F=aψ²+(b/2)ψ⁴`（定义引入）
+- `glMinimum`：`a<0`、`b>0` 时最小自由能 `−a²/(2b)`，对应 `ψ²=−a/b`
+- `aCoefficient_eq_zero_iff`：**判据与 GL 系数合并**——`a₀≠0` 时 `a(T)=0 ↔ p=p_c`
+- `kappa_independent`：**κ 温度无关性**——`λ=C/√q`、`ξ=D/√q` 时 `λ/ξ=C/D`
+- `coherenceLength_sq`：`ξ²=ℏ²/(2m*a₀q)` 的平方根自洽
 
 
 ### BCS 还原与公式（对应文档 §19 模块：Reduction，对应章节已精简，作为方向锚定保留）

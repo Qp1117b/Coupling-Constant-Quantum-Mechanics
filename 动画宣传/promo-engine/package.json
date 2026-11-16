@@ -1,0 +1,21 @@
+{
+  "name": "cqm-promo-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CQM 理论宣传动画 · Remotion 引擎工程",
+  "scripts": {
+    "studio": "remotion studio src/index.js",
+    "extract": "C:/Python314/python.exe tools/extract_kernel.py",
+    "gate": "node tools/gate.mjs",
+    "probe": "node tools/probe.mjs",
+    "render": "node tools/gate.mjs && remotion render src/index.js CQMPromo out/promo-v3.mp4 --browser-executable=\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --concurrency=8 --codec h264 --audio-codec aac --color-space=bt709 --overwrite --log=error",
+    "verify": "C:/Python314/python.exe tools/verify.py",
+    "release": "node tools/gate.mjs && remotion render src/index.js CQMPromo out/promo-v3.mp4 --browser-executable=\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --concurrency=8 --codec h264 --audio-codec aac --color-space=bt709 --overwrite --log=error && C:/Python314/python.exe tools/verify.py"
+  },
+  "dependencies": {
+    "remotion": "4.0.543",
+    "@remotion/cli": "4.0.543",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

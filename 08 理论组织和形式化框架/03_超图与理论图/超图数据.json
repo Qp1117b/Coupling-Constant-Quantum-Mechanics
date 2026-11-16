@@ -639,18 +639,18 @@
       "id": "C069",
       "label": "超导同步算符",
       "type": "物理",
-      "definition": "$\\hat{S}_{\\text{super}}$ 超导同步算符",
+      "definition": "$\\hat{S}_{\\text{super}}$ 旧框架同步算符（实现层）",
       "source_doc": "D030",
-      "source_loc": "§2",
+      "source_loc": "§11.6",
       "synonyms": []
     },
     {
       "id": "C070",
       "label": "临界温度",
       "type": "物理",
-      "definition": "$T_c$ 超导临界温度",
+      "definition": "$T_c$ 全局相位渗流温度（两阶段）",
       "source_doc": "D030",
-      "source_loc": "§2",
+      "source_loc": "§0.5",
       "synonyms": []
     },
     {
@@ -666,9 +666,9 @@
       "id": "C072",
       "label": "赝能隙",
       "type": "物理",
-      "definition": "超导赝能隙相图",
+      "definition": "配对岛已存在、相位网络未渗流 锚点预形成",
       "source_doc": "D030",
-      "source_loc": "§11",
+      "source_loc": "§0.6",
       "synonyms": []
     },
     {

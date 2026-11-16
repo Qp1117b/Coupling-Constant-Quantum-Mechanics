@@ -83,17 +83,17 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261114152826' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261114152826' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261114152826' }],
-    ['script', { src: '/cqm-glossary.js?v=20261114152826', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261114152826', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261114152826', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261114152826', defer: true }],
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261116114155' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261116114155' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261116114155' }],
+    ['script', { src: '/cqm-glossary.js?v=20261116114155', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261116114155', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261116114155', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261116114155', defer: true }],
     // tex-svg.js 不在此列：引擎的注入由 vp-math.js 负责（配置必须先于引擎执行，
     // 且公网部署走国内 CDN、内网走随站文件，见 build 脚本 3b 节）。
-    ['script', { src: '/lean-page.js?v=20261114152826', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261114152826', defer: true }]
+    ['script', { src: '/lean-page.js?v=20261116114155', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261116114155', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -302,7 +302,7 @@ export default defineConfig({
     "text": "超导",
     "items": [
       {
-        "text": "CQM 超导核心理论",
+        "text": "差异-记忆核超导理论（CQM 超导核心理论）",
         "link": "/D030_超导核心理论"
       },
       {
@@ -370,10 +370,6 @@ export default defineConfig({
       {
         "text": "文献总览",
         "link": "/REFS_文献总览"
-      },
-      {
-        "text": "文献总览",
-        "link": "/REFS_文献总览"
       }
     ]
   },
@@ -415,7 +411,7 @@ export default defineConfig({
     "text": "术语表",
     "items": [
       {
-        "text": "术语总览（426 条）",
+        "text": "术语总览（420 条）",
         "link": "/TERMS_术语表"
       }
     ]
@@ -424,7 +420,7 @@ export default defineConfig({
     "text": "文献",
     "items": [
       {
-        "text": "文献总览（223 条）",
+        "text": "文献总览（242 条）",
         "link": "/REFS_文献总览"
       }
     ]

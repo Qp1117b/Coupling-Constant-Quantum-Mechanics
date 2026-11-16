@@ -146,6 +146,9 @@ digraph LeanImports {
   "Superconductivity" -> "Superconductivity.FormalizationRigor";
   "Superconductivity" -> "Superconductivity.DeepConstruction";
   "Superconductivity" -> "Superconductivity.DeepResearch";
+  "Superconductivity" -> "Superconductivity.CrossingParadigm";
+  "Superconductivity" -> "Superconductivity.DNRLink";
+  "Superconductivity" -> "Superconductivity.GLUnified";
   "Superconductivity.BCSIntegralAsymptotic" -> "Superconductivity.Reduction";
   "Superconductivity.BCSIntegralAsymptotic" -> "Superconductivity.CartanSuperconductivity";
   "Superconductivity.BridgeTheorems" -> "Superconductivity.CartanSuperconductivity";
@@ -157,6 +160,7 @@ digraph LeanImports {
   "Superconductivity.CartanSuperconductivity" -> "CartanAlgebra.Basic";
   "Superconductivity.CartanSuperconductivity" -> "Superconductivity.Reduction";
   "Superconductivity.CouplingSpace" -> "Superconductivity.MolecularGeometry";
+  "Superconductivity.DNRLink" -> "NonMarkovianity.DistributedCommutation";
   "Superconductivity.DeepConstruction" -> "Superconductivity.FormalizationRigor";
   "Superconductivity.DeepResearch" -> "Superconductivity.FormalizationRigor";
   "Superconductivity.DeepResearch" -> "Superconductivity.DeepConstruction";

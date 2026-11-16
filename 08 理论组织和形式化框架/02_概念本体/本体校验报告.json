@@ -1,8 +1,8 @@
 {
   "generated_by": "_build/build_kg.py",
   "rdf": {
-    "triples_in_owl": 3957,
-    "triples_exported": 5529,
+    "triples_in_owl": 3954,
+    "triples_exported": 5526,
     "added": {
       "alt_labels": 36,
       "pref_labels": 81,
@@ -173,11 +173,11 @@
           ],
           [
             "http://cqm.local/ontology#H001",
-            "物质先在,再生产"
+            "再生产,物质先在"
           ],
           [
             "http://cqm.local/ontology#H002",
-            "物质自组织,同步算符"
+            "同步算符,物质自组织"
           ],
           [
             "http://cqm.local/ontology#H003",
@@ -217,7 +217,7 @@
           ],
           [
             "http://cqm.local/ontology#H013",
-            "共形固定点,共形自举"
+            "共形自举,共形固定点"
           ],
           [
             "http://cqm.local/ontology#H014",
@@ -229,7 +229,7 @@
           ],
           [
             "http://cqm.local/ontology#H016",
-            "相变量子,谱修正,Mathieu临界,Dynkin指数比,第一耦级"
+            "谱修正,Mathieu临界,Dynkin指数比,相变量子,第一耦级"
           ],
           [
             "http://cqm.local/ontology#H017",
@@ -274,15 +274,11 @@
         "sparql": "SELECT ?name (COUNT(?s) AS ?n) WHERE { ?s cqm:mentionedIn ?c . ?c skos:prefLabel ?name } GROUP BY ?name ORDER BY DESC(?n) LIMIT 8",
         "rows": [
           [
-            "FG",
-            "7"
-          ],
-          [
             "退相干",
             "6"
           ],
           [
-            "曲率",
+            "FG",
             "6"
           ],
           [
@@ -290,19 +286,23 @@
             "5"
           ],
           [
+            "曲率",
+            "5"
+          ],
+          [
             "RH",
             "4"
           ],
           [
-            "主丛",
-            "3"
-          ],
-          [
-            "和乐",
-            "3"
-          ],
-          [
             "角亏",
+            "3"
+          ],
+          [
+            "GRH",
+            "3"
+          ],
+          [
+            "$G_N$",
             "3"
           ]
         ],
@@ -475,7 +475,7 @@
         "rows": [
           [
             "D030",
-            "62"
+            "61"
           ],
           [
             "D008",
@@ -487,7 +487,7 @@
           ],
           [
             "D005",
-            "37"
+            "38"
           ],
           [
             "D006",
@@ -495,7 +495,7 @@
           ],
           [
             "D030",
-            "32"
+            "31"
           ],
           [
             "D012",
@@ -510,7 +510,7 @@
             "20"
           ],
           [
-            "D009",
+            "D005",
             "20"
           ]
         ],

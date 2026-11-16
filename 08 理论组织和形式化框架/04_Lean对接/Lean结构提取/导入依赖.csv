@@ -267,6 +267,9 @@ Superconductivity,Superconductivity.ElementCartan
 Superconductivity,Superconductivity.FormalizationRigor
 Superconductivity,Superconductivity.DeepConstruction
 Superconductivity,Superconductivity.DeepResearch
+Superconductivity,Superconductivity.CrossingParadigm
+Superconductivity,Superconductivity.DNRLink
+Superconductivity,Superconductivity.GLUnified
 Superconductivity.BCSIntegralAsymptotic,Mathlib.Data.Real.Basic
 Superconductivity.BCSIntegralAsymptotic,Mathlib.Analysis.SpecialFunctions.Exp
 Superconductivity.BCSIntegralAsymptotic,Mathlib.Analysis.SpecialFunctions.Log.Basic
@@ -300,6 +303,13 @@ Superconductivity.CouplingSpace,Mathlib.Analysis.SpecialFunctions.Log.Basic
 Superconductivity.CouplingSpace,Mathlib.NumberTheory.LSeries.RiemannZeta
 Superconductivity.CouplingSpace,Mathlib.Tactic
 Superconductivity.CouplingSpace,Superconductivity.MolecularGeometry
+Superconductivity.CrossingParadigm,Mathlib.Data.Real.Basic
+Superconductivity.CrossingParadigm,Mathlib.Tactic
+Superconductivity.DNRLink,NonMarkovianity.DistributedCommutation
+Superconductivity.DNRLink,Mathlib.Analysis.SpecialFunctions.Log.Basic
+Superconductivity.DNRLink,Mathlib.Analysis.SpecialFunctions.Exp
+Superconductivity.DNRLink,Mathlib.Order.Basic
+Superconductivity.DNRLink,Mathlib.Tactic
 Superconductivity.DeepConstruction,Mathlib.Data.Real.Basic
 Superconductivity.DeepConstruction,Mathlib.Analysis.SpecialFunctions.Log.Basic
 Superconductivity.DeepConstruction,Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
@@ -343,6 +353,9 @@ Superconductivity.FormalizationRigor,Mathlib.Topology.Defs.Filter
 Superconductivity.FormalizationRigor,Mathlib.Tactic
 Superconductivity.FormalizationRigor,Superconductivity.CouplingSpace
 Superconductivity.FormalizationRigor,Superconductivity.TransitionTemperatureCQM
+Superconductivity.GLUnified,Mathlib.Data.Real.Basic
+Superconductivity.GLUnified,Mathlib.Analysis.SpecialFunctions.Pow.Real
+Superconductivity.GLUnified,Mathlib.Tactic
 Superconductivity.MolecularGeometry,Mathlib.Data.Real.Basic
 Superconductivity.MolecularGeometry,Mathlib.Data.Matrix.Basic
 Superconductivity.MolecularGeometry,Mathlib.Data.Matrix.Block
