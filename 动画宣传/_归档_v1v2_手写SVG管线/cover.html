@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;width:1146px;height:717px;overflow:hidden;background:#05070d;
+    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;}
+  svg{display:block;width:1146px;height:717px;}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1146 717" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="44%" r="68%">
+      <stop offset="0%" stop-color="#101a30"/><stop offset="100%" stop-color="#05070d"/>
+    </radialGradient>
+    <linearGradient id="cl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#35E0FF" stop-opacity=".06"/>
+      <stop offset="50%" stop-color="#35E0FF" stop-opacity=".58"/>
+      <stop offset="100%" stop-color="#35E0FF" stop-opacity=".06"/>
+    </linearGradient>
+    <filter id="g" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1146" height="717" fill="url(#bg)"/>
+
+  <!-- 左侧文字 -->
+  <text x="86" y="252" fill="#E8EEF9" font-size="70" font-weight="700" letter-spacing="1">什么才该被量子化</text>
+  <text x="90" y="312" fill="#F5C542" font-size="25" letter-spacing="5">CQM 理论宣传动画 · 180 s</text>
+  <line x1="90" y1="352" x2="490" y2="352" stroke="#F5C542" stroke-opacity=".45" stroke-width="1.2"/>
+  <text x="90" y="398" fill="#8A93A8" font-size="21" letter-spacing="1.2">五次替换 · 一条可复算的演算链</text>
+  <text x="90" y="434" fill="#5F6880" font-size="18" letter-spacing="0.8">常数是坐标 · 谱定耦合 · 引力是角亏 · 缺口保留断口</text>
+
+  <!-- 状态双编码图例 -->
+  <g transform="translate(90,500)">
+    <circle cx="8" cy="0" r="7" fill="none" stroke="#F5C542" stroke-width="1.4"/>
+    <text x="24" y="5" fill="#7A869C" font-size="15">框架公理</text>
+    <path d="M 148 -8 L 158 9 L 138 9 Z" fill="none" stroke="#35E0FF" stroke-width="1.4"/>
+    <text x="168" y="5" fill="#7A869C" font-size="15">框架内推导</text>
+    <path d="M 306 7 A 8 8 0 1 1 299 -6" fill="none" stroke="#FFB020" stroke-width="1.5"/>
+    <text x="324" y="5" fill="#7A869C" font-size="15">待推 · 缺口</text>
+  </g>
+
+  <!-- 右侧图形：ξ 切线 + 谱带 -->
+  <g transform="translate(650,0)">
+    <text x="10" y="112" fill="#4A5570" font-size="15" letter-spacing="2">ξ 的切线 · 斜率就是量子</text>
+    <path d="M 20 300 C 110 292 200 268 280 226 C 350 190 400 150 440 108"
+          fill="none" stroke="url(#cl)" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M 20 300 L 440 260" fill="none" stroke="#F5C542" stroke-width="2" stroke-opacity=".9"/>
+    <path d="M 20 300 L 440 300" fill="none" stroke="#F5C542" stroke-opacity=".45"
+          stroke-width="1.2" stroke-dasharray="5 5"/>
+    <path d="M 440 300 L 440 260" fill="none" stroke="#F5C542" stroke-width="1.6"/>
+    <circle cx="20" cy="300" r="4.5" fill="#F5C542" filter="url(#g)"/>
+    <text x="230" y="326" fill="#4A5570" font-size="13" letter-spacing="1">run = 1.0</text>
+    <text x="452" y="284" fill="#F5C542" font-size="13" letter-spacing="1">rise</text>
+
+    <text x="10" y="406" fill="#4A5570" font-size="15" letter-spacing="2">一张谱 · 重数是平行线数</text>
+    <line x1="20" y1="590" x2="440" y2="590" stroke="#2A3448" stroke-width="1"/>
+    <!-- 9 重数 1 -->
+    <line x1="70" y1="590" x2="70" y2="450" stroke="#F5C542" stroke-width="3"/>
+    <text x="70" y="612" fill="#5F6880" font-size="13" text-anchor="middle">9</text>
+    <!-- 4 重数 4 -->
+    <g stroke="#35E0FF" stroke-width="3">
+      <line x1="200" y1="590" x2="200" y2="528"/><line x1="211" y1="590" x2="211" y2="528"/>
+      <line x1="222" y1="590" x2="222" y2="528"/><line x1="233" y1="590" x2="233" y2="528"/>
+    </g>
+    <text x="216" y="612" fill="#5F6880" font-size="13" text-anchor="middle">4</text>
+    <!-- 1 重数 5 -->
+    <g stroke="#B98CFF" stroke-width="3">
+      <line x1="340" y1="590" x2="340" y2="574"/><line x1="351" y1="590" x2="351" y2="574"/>
+      <line x1="362" y1="590" x2="362" y2="574"/><line x1="373" y1="590" x2="373" y2="574"/>
+      <line x1="384" y1="590" x2="384" y2="574"/>
+    </g>
+    <text x="362" y="612" fill="#5F6880" font-size="13" text-anchor="middle">1</text>
+  </g>
+
+  <text x="1058" y="686" text-anchor="end" fill="#3E465C" font-size="15" letter-spacing="2">CQM · 构造后验数字校验，待独立复现</text>
+</svg>
+</body>
+</html>

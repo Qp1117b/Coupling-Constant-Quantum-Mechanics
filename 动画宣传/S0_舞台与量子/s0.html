@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CQM S0 · 舞台与量子</title>
+<style>
+  html,body{margin:0;padding:0;width:1920px;height:1080px;background:#070A12;overflow:hidden}
+  svg{display:block;width:1920px;height:1080px}
+  text{text-rendering:geometricPrecision}
+</style>
+</head>
+<body>
+<svg id="stage" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="46%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#0A0F1A"/>
+      <stop offset="100%" stop-color="#070A12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- 舞台：时空网格 -->
+  <g id="stageGrid"></g>
+
+  <!-- 新舞台：耦合常数轴 -->
+  <g id="uAxis"></g>
+
+  <!-- ξ 曲线 -->
+  <g id="plot"></g>
+
+  <!-- 公式区 -->
+  <g id="formulas"></g>
+
+  <!-- 目标式：始终挂在右侧 -->
+  <g id="target"></g>
+
+  <!-- 左侧演算刻度尺 -->
+  <g id="rail"></g>
+
+  <!-- 字幕与徽章 -->
+  <line x1="150" y1="966" x2="1500" y2="966" stroke="#1A2233" stroke-width="1"/>
+  <text id="caption" x="150" y="1018" font-family="Microsoft YaHei, Noto Sans SC, sans-serif"
+        font-size="34" fill="#E8EEF9" letter-spacing="0.4"></text>
+  <g id="badge"></g>
+  <text id="railLabel" x="60" y="400" font-family="Consolas, monospace" font-size="15"
+        fill="#4A5570" letter-spacing="0.18em">OPS 29</text>
+</svg>
+
+<script>
+(function(){
+"use strict";
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("stage");
+const stageGrid=document.getElementById("stageGrid");
+const uAxis=document.getElementById("uAxis");
+const plotG=document.getElementById("plot");
+const formulaG=document.getElementById("formulas");
+const targetG=document.getElementById("target");
+const railG=document.getElementById("rail");
+const badgeG=document.getElementById("badge");
+const capEl=document.getElementById("caption");
+
+const C={bg:"#070A12",text:"#E8EEF9",dim:"#7A869C",faint:"#2A3448",
+  cyan:"#35E0FF",gold:"#F5C542",amber:"#FFB020",purple:"#8A7CFF",white:"#F2F5FA"};
+const MATH="Cambria Math, Times New Roman, serif";
+const MONO="Consolas, monospace";
+const ZH="Microsoft YaHei, Noto Sans SC, sans-serif";
+
+const clamp=(x,a,b)=>x<a?a:x>b?b:x;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeOut=t=>1-Math.pow(1-clamp(t,0,1),3);
+const easeIO=t=>{t=clamp(t,0,1);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};
+const easeOutBack=t=>{t=clamp(t,0,1);const c=1.70158;return 1+ (c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2);};
+const rnd=s=>{let x=Math.sin(s*127.1+311.7)*43758.5453;return x-Math.floor(x);};
+
+function E(tag,attrs,parent){
+  const e=document.createElementNS(NS,tag);
+  if(attrs)for(const k in attrs)e.setAttribute(k,attrs[k]);
+  if(parent)parent.appendChild(e);
+  return e;
+}
+function T(parent,x,y,size,color,str,opts){
+  opts=opts||{};
+  const t=E("text",{x:x,y:y,"font-size":size,fill:color,
+    "font-family":opts.font||ZH,"font-weight":opts.weight||"normal"},parent);
+  if(opts.anchor)t.setAttribute("text-anchor",opts.anchor);
+  if(opts.opacity!=null)t.setAttribute("opacity",opts.opacity);
+  if(opts.spacing)t.setAttribute("letter-spacing",opts.spacing);
+  t.textContent=str;
+  return t;
+}
+// 一行公式：parts = [{t,it,sup,font}]
+function FT(parent,x,y,size,color,parts){
+  const t=E("text",{x:x,y:y,"font-size":size,fill:color,"font-family":MATH},parent);
+  parts.forEach(p=>{
+    const s=E("tspan",{},t);
+    if(p.sup){ s.setAttribute("baseline-shift","super"); s.setAttribute("font-size",(size*0.62).toFixed(1)); }
+    if(p.sub){ s.setAttribute("baseline-shift","sub"); s.setAttribute("font-size",(size*0.62).toFixed(1)); }
+    if(p.it){ s.setAttribute("font-style","italic"); s.setAttribute("font-family",MATH); }
+    if(p.font){ s.setAttribute("font-family",p.font); }
+    if(p.color){ s.setAttribute("fill",p.color); }
+    s.textContent=p.t;
+  });
+  return t;
+}
+function vis(g,t,a,b,fin,out){
+  fin=fin==null?0.22:fin; out=out==null?0.22:out;
+  let o=0;
+  if(t>=a&&t<=b){ o=1; if(t<a+fin)o=easeOut((t-a)/fin); if(t>b-out)o=1-easeOut((t-(b-out))/out); }
+  g.setAttribute("opacity",o.toFixed(3));
+  return o;
+}
+
+/* ================= 舞台网格 ================= */
+const gridLines=[];
+(function(){
+  for(let i=0;i<=16;i++){
+    const x=240+i*90;
+    gridLines.push(E("line",{x1:x,y1:290,x2:x,y2:860,stroke:C.cyan,"stroke-opacity":".085","stroke-width":"1"},stageGrid));
+  }
+  for(let j=0;j<=8;j++){
+    const y=290+j*71.25;
+    gridLines.push(E("line",{x1:240,y1:y,x2:1680,y2:y,stroke:C.cyan,"stroke-opacity":".085","stroke-width":"1"},stageGrid));
+  }
+  E("line",{x1:240,y1:880,x2:1680,y2:880,stroke:C.cyan,"stroke-opacity":".28","stroke-width":"1"},stageGrid);
+  E("line",{x1:240,y1:860,x2:240,y2:290,stroke:C.cyan,"stroke-opacity":".28","stroke-width":"1"},stageGrid);
+  T(stageGrid,1700,892,24,C.dim,"x",{font:MONO});
+  T(stageGrid,206,282,24,C.dim,"t",{font:MONO});
+  // 事件点
+  const px=1080,py=520;
+  E("circle",{cx:px,cy:py,r:5.5,fill:C.white},stageGrid).setAttribute("id","evtDot");
+  E("line",{x1:px-16,y1:py,x2:px+16,y2:py,stroke:C.white,"stroke-opacity":".34","stroke-width":"1"},stageGrid);
+  E("line",{x1:px,y1:py-16,x2:px,y2:py+16,stroke:C.white,"stroke-opacity":".34","stroke-width":"1"},stageGrid);
+  T(stageGrid,1100,512,19,C.dim,"事件",{font:ZH});
+})();
+const strikeG=E("g",{});
+svg.insertBefore(strikeG,uAxis);
+const s1=E("line",{x1:250,y1:320,x2:1610,y2:840,stroke:C.amber,"stroke-opacity":".72","stroke-width":"5"},strikeG);
+const s2=E("line",{x1:250,y1:840,x2:1610,y2:320,stroke:C.white,"stroke-opacity":".38","stroke-width":"4"},strikeG);
+const L1=s1.getTotalLength(), L2=s2.getTotalLength();
+s1.setAttribute("stroke-dasharray",L1); s1.setAttribute("stroke-dashoffset",L1);
+s2.setAttribute("stroke-dasharray",L2); s2.setAttribute("stroke-dashoffset",L2);
+strikeG.setAttribute("opacity","0");
+
+/* ================= 耦合常数轴 ================= */
+const AX={x0:280,x1:1660,y:710,u0:960,du:280};
+const axisLine=E("line",{x1:AX.x0,y1:AX.y,x2:AX.x1,y2:AX.y,stroke:C.gold,"stroke-opacity":".52","stroke-width":"1.6"},uAxis);
+const AL=axisLine.getTotalLength();
+axisLine.setAttribute("stroke-dasharray",AL); axisLine.setAttribute("stroke-dashoffset",AL);
+T(uAxis,290,668,26,C.gold,"u = ln r",{font:MONO,opacity:".82"});
+[-2,-1,0,1,2].forEach(u=>{
+  const x=AX.u0+u*AX.du;
+  E("line",{x1:x,y1:AX.y-10,x2:x,y2:AX.y+10,stroke:C.gold,"stroke-opacity":".45","stroke-width":"1"},uAxis);
+  T(uAxis,x,752,21,C.dim,String(u),{font:MONO,anchor:"middle"});
+});
+const ptG=E("g",{},uAxis);
+const pt=E("circle",{cx:AX.u0,cy:AX.y,r:7.5,fill:C.gold},ptG);
+T(ptG,AX.u0+18,AX.y-16,20,C.gold,"常数",{font:ZH});
+const band=E("line",{x1:AX.u0,y1:AX.y,x2:AX.u0,y2:AX.y,stroke:C.cyan,"stroke-opacity":".55","stroke-width":"2","stroke-dasharray":"6 7"},uAxis);
+const bandCapL=E("line",{x1:AX.u0,y1:AX.y-12,x2:AX.u0,y2:AX.y+12,stroke:C.cyan,"stroke-opacity":".55","stroke-width":"1.6"},uAxis);
+const bandCapR=E("line",{x1:AX.u0,y1:AX.y-12,x2:AX.u0,y2:AX.y+12,stroke:C.cyan,"stroke-opacity":".55","stroke-width":"1.6"},uAxis);
+const bandLabel=T(uAxis,AX.u0,784,19,C.cyan,"Δu",{font:MONO,anchor:"middle"});
+uAxis.setAttribute("opacity","0");
+
+/* ================= ξ 曲线 ================= */
+// 数值：Γ（Lanczos）与 ζ（Euler–Maclaurin），仅为画曲线与数值校验
+const G_C=[0.99999999999980993,676.5203681218851,-1259.1392167224028,
+  771.32342877765313,-176.61502916214059,12.507343278686905,
+  -0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+function gamma(z){
+  if(z<0.5)return Math.PI/(Math.sin(Math.PI*z)*gamma(1-z));
+  z-=1; let x=G_C[0];
+  for(let i=1;i<9;i++)x+=G_C[i]/(z+i);
+  const t=z+7.5;
+  return Math.sqrt(2*Math.PI)*Math.pow(t,z+0.5)*Math.exp(-t)*x;
+}
+function zeta(s){
+  if(Math.abs(s-1)<1e-9)return NaN;
+  const N=24; let sum=0;
+  for(let n=1;n<N;n++)sum+=Math.pow(n,-s);
+  sum+=Math.pow(N,1-s)/(s-1)+0.5*Math.pow(N,-s);
+  const p=Math.pow(N,-s);
+  sum+=(1/12)*s*Math.pow(N,-s-1);
+  sum+=(-1/720)*s*(s+1)*(s+2)*Math.pow(N,-s-3);
+  sum+=(1/30240)*s*(s+1)*(s+2)*(s+3)*(s+4)*Math.pow(N,-s-5);
+  sum+=(-1/1209600)*s*(s+1)*(s+2)*(s+3)*(s+4)*(s+5)*(s+6)*Math.pow(N,-s-7);
+  return sum;
+}
+function xi(s){
+  if(Math.abs(s-1)<1e-7)return 0.5;
+  return 0.5*s*(s-1)*Math.pow(Math.PI,-s/2)*gamma(s/2)*zeta(s);
+}
+const PSI=0.023095708966; // 解析值，用于切线
+const LNXI1=Math.log(xi(1));
+const lnxi=s=>Math.log(xi(s));
+const NUM=(lnxi(1+1e-4)-lnxi(1-1e-4))/(2e-4);
+const DIFF=Math.abs(NUM-PSI);
+window.__checks={num:NUM,diff:DIFF};
+const XMIN=1.0, XMAX=2.0;
+const PX0=340, PX1=1300, PY0=540, PY1=860;
+const VMIN=-0.702, VMAX=-0.640;
+const sx=s=>PX0+(s-XMIN)/(XMAX-XMIN)*(PX1-PX0);
+const vy=v=>PY1-(v-VMIN)/(VMAX-VMIN)*(PY1-PY0);
+// 坐标轴
+E("line",{x1:PX0,y1:PY1,x2:PX1,y2:PY1,stroke:C.faint,"stroke-width":"1"},plotG);
+E("line",{x1:PX0,y1:PY0,x2:PX0,y2:PY1,stroke:C.faint,"stroke-width":"1"},plotG);
+for(let s=1.0;s<=2.001;s+=0.2){
+  const x=sx(s);
+  E("line",{x1:x,y1:PY1,x2:x,y2:PY1+8,stroke:C.faint,"stroke-width":"1"},plotG);
+  T(plotG,x,PY1+32,18,C.dim,s.toFixed(1),{font:MONO,anchor:"middle"});
+}
+[-0.69,-0.67,-0.65].forEach(v=>{
+  const y=vy(v);
+  E("line",{x1:PX0-8,y1:y,x2:PX0,y2:y,stroke:C.faint,"stroke-width":"1"},plotG);
+  T(plotG,PX0-14,y+6,17,C.dim,v.toFixed(2),{font:MONO,anchor:"end"});
+});
+T(plotG,PX1+30,PY1+54,20,C.dim,"s",{font:MONO});
+T(plotG,PX0-14,PY0-18,20,C.dim,"ln ξ(s)",{font:MONO,anchor:"end"});
+// 曲线
+let d="", first=true;
+for(let i=0;i<=240;i++){
+  const s=XMIN+(XMAX-XMIN)*i/240, v=Math.log(xi(s));
+  const x=sx(s), y=vy(v);
+  if(!isFinite(v))continue;
+  d+= (first?"M ":" L ")+x.toFixed(2)+" "+y.toFixed(2);
+  first=false;
+}
+const curve=E("path",{d:d,fill:"none",stroke:C.cyan,"stroke-width":"2.2","stroke-linecap":"round"},plotG);
+const CL=curve.getTotalLength();
+curve.setAttribute("stroke-dasharray",CL); curve.setAttribute("stroke-dashoffset",CL);
+// 切线
+const tanPts=[];
+for(let i=0;i<=80;i++){
+  const s=XMIN+(XMAX-XMIN)*i/80, v=LNXI1+PSI*(s-1);
+  tanPts.push([sx(s),vy(v)]);
+}
+const tan=E("polyline",{points:tanPts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" "),
+  fill:"none",stroke:C.gold,"stroke-width":"2","stroke-linecap":"round"},plotG);
+const TL=tan.getTotalLength(); tan.setAttribute("stroke-dasharray",TL); tan.setAttribute("stroke-dashoffset",TL);
+// 斜率三角形
+const triG=E("g",{},plotG);
+const tx1=sx(1),tx2=sx(2),ty1=vy(LNXI1),ty2=vy(LNXI1+PSI);
+E("line",{x1:tx1,y1:ty1,x2:tx2,y2:ty1,stroke:C.gold,"stroke-opacity":".55","stroke-width":"1.4",
+  "stroke-dasharray":"5 5"},triG);
+E("line",{x1:tx2,y1:ty1,x2:tx2,y2:ty2,stroke:C.gold,"stroke-opacity":".75","stroke-width":"1.6"},triG);
+T(triG,(tx1+tx2)/2,ty1+28,18,C.gold,"run = 1.0",{font:MONO,anchor:"middle",opacity:".85"});
+T(triG,tx2+12,(ty1+ty2)/2+6,18,C.gold,"rise = 0.0231",{font:MONO,opacity:".95"});
+triG.setAttribute("opacity","0");
+// 校验插页
+const chkG=E("g",{},plotG);
+T(chkG,1340,590,19,C.dim,"数值微分",{font:MONO});
+T(chkG,1340,620,19,C.text,NUM.toFixed(12),{font:MONO});
+T(chkG,1340,660,19,C.dim,"解析值",{font:MONO});
+T(chkG,1340,690,19,C.text,"0.023095708966",{font:MONO});
+T(chkG,1340,720,19,C.cyan,"差 = "+DIFF.toExponential(1),{font:MONO});
+chkG.setAttribute("opacity","0");
+plotG.setAttribute("opacity","0");
+
+/* ================= 公式 ================= */
+function fgroup(label,y,size){
+  const g=E("g",{},formulaG);
+  T(g,150,y-58,18,C.dim,label,{font:ZH,spacing:"0.12em"});
+  return g;
+}
+// F1
+const F1=fgroup("公理",250,54);
+FT(F1,150,250,54,C.gold,[{t:"[",},{t:"û",it:1},{t:", "},{t:"p̂",it:1},{t:"u",sub:1},{t:"] = "},{t:"i"}]);
+// F2
+const F2=fgroup("标准代数",250,54);
+FT(F2,150,250,54,C.white,[{t:"Δ"},{t:"u"},{t:" · Δ"},{t:"p",it:1},{t:"u",sub:1},{t:" ≥ 1/2"}]);
+// F3
+const F3=fgroup("代入：动量换成固有时流速 / 相变量子",250,50);
+const f3a=FT(F3,150,250,50,C.white,[{t:"Δ"},{t:"r"},{t:"/⟨"},{t:"r"},{t:"⟩ · Δ"},{t:"v",it:1},{t:"τ",sub:1},{t:" ≥ "}]);
+const f3w=f3a.getComputedTextLength();
+const slotX=150+f3w+18;
+const slotG=E("g",{},F3);
+const slotRect=E("rect",{x:slotX,y:212,width:44,height:50,rx:3,fill:"none",stroke:C.amber,
+  "stroke-width":"1.6","stroke-dasharray":"6 5"},slotG);
+T(slotG,slotX+22,248,30,C.amber,"?",{font:MATH,anchor:"middle"});
+const slotQ=slotG.lastChild;
+FT(F3,slotX+58,250,50,C.white,[{t:"/2"}]);
+// F4
+const F4=fgroup("定义",250,50);
+FT(F4,150,250,50,C.white,[{t:"ξ("},{t:"s",it:1},{t:") = ½ "},{t:"s",it:1},{t:"("},{t:"s",it:1},{t:"−1) "},
+  {t:"π",it:1},{t:"−s/2",sup:1},{t:" Γ("},{t:"s",it:1},{t:"/2) "},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+// F5 两行
+const F5=fgroup("取对数",240,42);
+FT(F5,150,240,42,C.white,[{t:"ln ξ("},{t:"s",it:1},{t:") = ln ½ + ln "},{t:"s",it:1},{t:" + ln("},{t:"s",it:1},{t:"−1)"}]);
+FT(F5,200,306,42,C.white,[{t:"− ("},{t:"s",it:1},{t:"/2) ln "},{t:"π",it:1},{t:" + ln Γ("},{t:"s",it:1},{t:"/2) + ln "},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+// F6 两行
+const F6=fgroup("逐项求导",240,40);
+FT(F6,150,240,40,C.white,[{t:"ξ′("},{t:"s",it:1},{t:")/ξ("},{t:"s",it:1},{t:") = 1/"},{t:"s",it:1},{t:" + 1/("},{t:"s",it:1},{t:"−1) − ½ ln "},{t:"π",it:1}]);
+FT(F6,200,304,40,C.white,[{t:"+ ½ ψ("},{t:"s",it:1},{t:"/2) + "},{t:"ζ",it:1},{t:"′("},{t:"s",it:1},{t:")/"},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+// F6b 极点相消
+const F6b=E("g",{},formulaG);
+T(F6b,150,348,17,C.dim,"s → 1 的极点项",{font:ZH,spacing:"0.1em"});
+FT(F6b,150,388,30,C.white,[{t:"ζ′/ζ("},{t:"s",it:1},{t:") = "},{t:"−1/(s−1)",color:C.amber},{t:" + "},{t:"γ",it:1,color:C.cyan},{t:" + O("},{t:"s",it:1},{t:"−1)"}]);
+const f6bL2=FT(F6b,150,432,30,C.white,[{t:"1/(s−1)",color:C.amber},{t:" + ζ′/ζ("},{t:"s",it:1},{t:") = "},{t:"γ",it:1,color:C.cyan},{t:" + O("},{t:"s",it:1},{t:"−1)"}]);
+f6bL2.setAttribute("opacity","0");
+// F7
+const F7=fgroup("代入 ψ(1/2)",250,46);
+FT(F7,150,250,46,C.white,[{t:"ψ(1/2) = −"},{t:"γ",it:1},{t:" − 2 ln 2"}]);
+// F7b 代入与化简
+const F7b=E("g",{},formulaG);
+FT(F7b,150,334,34,C.white,[{t:"ξ′/ξ(1) = 1 + 0 − ½ ln "},{t:"π",it:1},{t:" + "},{t:"½ ψ(1/2)",color:C.amber},{t:" + "},{t:"γ",it:1}]);
+const f7bL2=FT(F7b,150,388,34,C.white,[{t:"= 1 − ½ ln "},{t:"π",it:1},{t:" − ½ "},{t:"γ",it:1},{t:" − ln 2 + "},{t:"γ",it:1}]);
+f7bL2.setAttribute("opacity","0");
+const f7bL3=FT(F7b,150,442,34,C.cyan,[{t:"= 1 + "},{t:"γ",it:1},{t:"/2 − ln(2√"},{t:"π",it:1},{t:")"}]);
+f7bL3.setAttribute("opacity","0");
+// F8
+const F8=fgroup("落定",250,52);
+const f8a=FT(F8,150,250,52,C.gold,[{t:"☯",font:"Segoe UI Symbol"},{t:" = 1 + "},{t:"γ",it:1},{t:"/2 − ln(2√"},{t:"π",it:1},{t:") = "}]);
+const f8w=f8a.getComputedTextLength();
+const f8x=150+f8w+8;
+FT(F8,f8x,250,52,C.cyan,[{t:"0.023095708966",font:MONO}]);
+E("rect",{x:f8x-10,y:204,width:470,height:64,rx:2,fill:C.cyan,"fill-opacity":".06",stroke:C.cyan,"stroke-opacity":".55","stroke-width":"1.2"},F8);
+// F9 校验
+const F9=fgroup("校验",230,32);
+const f9a=FT(F9,150,230,32,C.white,[{t:"☯ = "}]);
+const f9w=f9a.getComputedTextLength();
+FT(F9,150+f9w+10,230,32,C.gold,[{t:"0.023095708966",font:MONO}]);
+FT(F9,700,230,32,C.dim,[{t:"数值微分 "+NUM.toFixed(12)+"　差 "+DIFF.toExponential(1)}]);
+FT(F9,150,288,32,C.dim,[{t:"切线的斜率 = 相变量子"}]);
+[F1,F2,F3,F4,F5,F6,F6b,F7,F7b,F8,F9].forEach(g=>g.setAttribute("opacity","0"));
+
+/* 目标式（右侧常驻） */
+(function(){
+  const g=E("g",{},targetG);
+  T(g,1360,466,17,C.dim,"目标",{font:ZH,spacing:"0.12em"});
+  const a=FT(g,1360,506,24,C.dim,[{t:"Δ"},{t:"r"},{t:"/⟨"},{t:"r"},{t:"⟩ · Δ"},{t:"v",it:1},{t:"τ",sub:1},{t:" ≥ "}]);
+  const w=a.getComputedTextLength();
+  const boxX=1360+w+14;
+  const box=E("rect",{x:boxX,y:484,width:26,height:28,rx:2,fill:"none",stroke:C.amber,
+    "stroke-width":"1.2","stroke-dasharray":"5 4"},g);
+  const q=T(g,boxX+13,505,19,C.amber,"?",{font:MATH,anchor:"middle"});
+  FT(g,boxX+36,506,24,C.dim,[{t:"/2"}]);
+  targetG._box=box; targetG._q=q;
+})();
+
+/* ================= 刻度尺 ================= */
+const RAIL={x:60,y0:430,y1:930,n:29};
+const ticks=[];
+for(let i=0;i<RAIL.n;i++){
+  const y=RAIL.y0+i*(RAIL.y1-RAIL.y0)/(RAIL.n-1);
+  ticks.push(E("rect",{x:RAIL.x,y:y,width:5,height:9,fill:C.faint},railG));
+}
+
+/* ================= 徽章 ================= */
+let badgeKey="";
+function setBadge(shape,color,label){
+  const key=shape+"|"+color+"|"+label;
+  if(key===badgeKey)return;
+  badgeKey=key;
+  badgeG.innerHTML="";
+  const x=1782,y=1006;
+  if(shape==="ring")E("circle",{cx:x,cy:y,r:10,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  if(shape==="tri")E("path",{d:`M ${x} ${y-11} L ${x+10} ${y+8} L ${x-10} ${y+8} Z`,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  if(shape==="square")E("rect",{x:x-9,y:y-9,width:18,height:18,rx:2,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  T(badgeG,x-18,y+6,20,color,label,{font:ZH,anchor:"end"});
+}
+const cap=t=>{
+  if(t<7)return"标准量子力学：量子化位置与动量。";
+  if(t<12)return"CQM：量子化耦合常数本身。";
+  if(t<20)return"舞台不是时空，是耦合常数空间。";
+  if(t<24.5)return"在 u 轴上，位置与动量不能同时测准。";
+  if(t<32)return"耦合常数与固有时流速，不能同时测准。";
+  if(t<38)return"这个量子是多少？";
+  if(t<45)return"它就是 ξ 对数导数在 s = 1 的值。";
+  if(t<52)return"取对数，拆成六项。";
+  if(t<58)return"逐项求导，五项相加。";
+  if(t<66)return"极点相消，只剩 γ。";
+  if(t<76)return"代入 ψ(1/2)，得到一个纯数。";
+  if(t<84)return"这条切线的斜率，就是相变量子。";
+  return"解析值与数值微分一致。";
+};
+
+/* ================= 渲染 ================= */
+function renderAt(t){
+  // 背景网格
+  const gin=easeOut(clamp(t/1.1,0,1));
+  let gOp=gin;
+  if(t>7)gOp=Math.max(0.10,0.92*(1-easeOut(clamp((t-7)/1.6,0,1))));
+  if(t>12)gOp=Math.max(0.0,0.10*(1-easeOut(clamp((t-12)/1.2,0,1))));
+  stageGrid.setAttribute("opacity",gOp.toFixed(3));
+  const gz=1.035-0.035*easeOut(clamp(t/7,0,1));
+  stageGrid.setAttribute("transform",`translate(960 575) scale(${gz.toFixed(4)}) translate(-960 -575)`);
+  // 划掉
+  const sp=clamp((t-7.0)/0.28,0,1);
+  strikeG.setAttribute("opacity",sp>0?String(0.95*(1-clamp((t-10.6)/1.2,0,1))):"0");
+  s1.setAttribute("stroke-dashoffset",(L1*(1-easeOut(sp))).toFixed(1));
+  s2.setAttribute("stroke-dashoffset",(L2*(1-easeOut(clamp((t-7.14)/0.28,0,1)))).toFixed(1));
+  // 耦合轴
+  const ain=clamp((t-12)/1.0,0,1);
+  const aout=t>32?1-easeOut(clamp((t-32)/3.0,0,1)):1;
+  uAxis.setAttribute("opacity",(ain*aout).toFixed(3));
+  axisLine.setAttribute("stroke-dashoffset",(AL*(1-easeOut(ain))).toFixed(1));
+  // 点落
+  const pl=clamp((t-13.0)/1.25,0,1);
+  const drop=lerp(250,AX.y,easeOut(pl));
+  pt.setAttribute("cy",drop.toFixed(2));
+  pt.setAttribute("opacity",String(clamp(pl*1.6,0,1)));
+  const pulse=t>14.2&&t<15.0?(1-(t-14.2)/0.8):0;
+  pt.setAttribute("r",(7.5+6*pulse).toFixed(2));
+  // 不确定带
+  const bin=clamp((t-21.5)/0.7,0,1);
+  const halfw=60*easeOut(bin);
+  band.setAttribute("x1",(AX.u0-halfw).toFixed(1));
+  band.setAttribute("x2",(AX.u0+halfw).toFixed(1));
+  bandCapL.setAttribute("x1",(AX.u0-halfw).toFixed(1)); bandCapL.setAttribute("x2",(AX.u0-halfw).toFixed(1));
+  bandCapR.setAttribute("x1",(AX.u0+halfw).toFixed(1)); bandCapR.setAttribute("x2",(AX.u0+halfw).toFixed(1));
+  const bpulse=t>31.6&&t<32.2?Math.sin((t-31.6)/0.6*Math.PI):0;
+  band.setAttribute("stroke-opacity",(0.55+0.35*bpulse).toFixed(2));
+  bandCapL.setAttribute("stroke-opacity",(0.55+0.35*bpulse).toFixed(2));
+  bandCapR.setAttribute("stroke-opacity",(0.55+0.35*bpulse).toFixed(2));
+  band.setAttribute("opacity",String(bin));
+  bandCapL.setAttribute("opacity",String(bin));
+  bandCapR.setAttribute("opacity",String(bin));
+  bandLabel.setAttribute("opacity",String(bin));
+  // ξ 图
+  const pin=clamp((t-38)/0.8,0,1);
+  plotG.setAttribute("opacity",String(pin));
+  const cd=clamp((t-39.0)/4.0,0,1);
+  curve.setAttribute("stroke-dashoffset",(CL*(1-easeOut(cd))).toFixed(1));
+  const td=clamp((t-75.6)/1.3,0,1);
+  tan.setAttribute("opacity",String(td));
+  tan.setAttribute("stroke-dashoffset",(TL*(1-easeOut(td))).toFixed(1));
+  const tri=clamp((t-77.0)/1.6,0,1);
+  triG.setAttribute("opacity",String(tri));
+  chkG.setAttribute("opacity",String(clamp((t-84.0)/0.7,0,1)));
+  // 公式
+  vis(F1,t,12.0,20.0);
+  vis(F2,t,20.0,24.5);
+  vis(F3,t,24.5,37.6,0.22,0.4);
+  const qpulse=Math.max(
+    (t>33.0&&t<33.7)?Math.sin((t-33.0)/0.7*Math.PI):0,
+    (t>34.8&&t<35.5)?Math.sin((t-34.8)/0.7*Math.PI):0
+  );
+  slotRect.setAttribute("stroke-opacity",(0.55+0.45*qpulse).toFixed(2));
+  slotQ.setAttribute("opacity",(0.70+0.30*qpulse).toFixed(2));
+  vis(F4,t,38.0,45.0);
+  vis(F5,t,45.0,52.6);
+  vis(F6,t,52.6,66.2);
+  vis(F6b,t,56.6,65.0);
+  f6bL2.setAttribute("opacity",String(clamp((t-58.2)/0.4,0,1)));
+  vis(F7,t,66.2,76.2);
+  vis(F7b,t,66.4,76.0);
+  f7bL2.setAttribute("opacity",String(clamp((t-69.2)/0.4,0,1)));
+  f7bL3.setAttribute("opacity",String(clamp((t-71.0)/0.4,0,1)));
+  vis(F8,t,76.2,84.2);
+  vis(F9,t,84.2,95.0);
+  // 目标式
+  const tg=clamp((t-21.5)/0.8,0,1);
+  targetG.setAttribute("opacity",String(0.5*tg*(t>84?1.7:1)));
+  if(t>84){
+    targetG._box.setAttribute("stroke",C.cyan);
+    targetG._box.setAttribute("stroke-dasharray","none");
+    targetG._box.setAttribute("fill",C.cyan);
+    targetG._box.setAttribute("fill-opacity",".08");
+    targetG._q.textContent="☯";
+    targetG._q.setAttribute("font-family","Segoe UI Symbol");
+    targetG._q.setAttribute("font-size","17");
+    targetG._q.setAttribute("fill",C.cyan);
+  }else{
+    targetG._box.setAttribute("stroke",C.amber);
+    targetG._box.setAttribute("stroke-dasharray","5 4");
+    targetG._box.setAttribute("fill","none");
+    targetG._box.setAttribute("fill-opacity","0");
+    targetG._q.textContent="?";
+    targetG._q.setAttribute("font-family",MATH);
+    targetG._q.setAttribute("font-size","19");
+    targetG._q.setAttribute("fill",C.amber);
+  }
+  // 刻度尺
+  const ops=[7.0,12.0,14.2,20.0,24.5,45.0,52.6,57.5,66.2,74.0,84.0];
+  let lit=0; ops.forEach(o=>{if(t>=o)lit++;});
+  ticks.forEach((r,i)=>{
+    r.setAttribute("fill",i<lit?C.cyan:C.faint);
+    r.setAttribute("opacity",i<lit?"1":".55");
+  });
+  // 徽章与字幕
+  if(t<7)setBadge("square",C.white,"外部直觉");
+  else if(t<32)setBadge("ring",C.gold,"框架公理");
+  else if(t<38)setBadge("ring",C.gold,"框架公理");
+  else if(t<52)setBadge("ring",C.gold,"定义");
+  else if(t<84)setBadge("tri",C.cyan,"框架内推导");
+  else setBadge("tri",C.cyan,"可复算");
+  capEl.textContent=cap(t);
+  capEl.setAttribute("opacity",String(easeOut(clamp(t/0.5,0,1))));
+}
+window.renderAt=renderAt;
+window.__total=90;
+window.__fps=60;
+window.__ready=true;
+
+/* ================= 声场（OfflineAudioContext） ================= */
+function makeNoise(ctx,dur,seed){
+  const n=Math.floor(ctx.sampleRate*dur);
+  const b=ctx.createBuffer(1,n,ctx.sampleRate);
+  const d=b.getChannelData(0);
+  let s=seed||1;
+  for(let i=0;i<n;i++){ s=(s*1664525+1013904223)>>>0; d[i]=(s/4294967296)*2-1; }
+  return b;
+}
+function makeIR(ctx,dur){
+  const n=Math.floor(ctx.sampleRate*dur);
+  const b=ctx.createBuffer(2,n,ctx.sampleRate);
+  for(let c=0;c<2;c++){
+    const d=b.getChannelData(c);
+    let s=12345+c*777;
+    for(let i=0;i<n;i++){
+      s=(s*1664525+1013904223)>>>0;
+      const x=i/ctx.sampleRate;
+      let v=(s/4294967296)*2-1;
+      v*=Math.exp(-x/0.62);
+      if(i===Math.floor(0.05*ctx.sampleRate))v+=0.35;
+      if(i===Math.floor(0.12*ctx.sampleRate))v+=0.22;
+      if(i===Math.floor(0.21*ctx.sampleRate))v+=0.12;
+      d[i]=v*0.55;
+    }
+  }
+  return b;
+}
+async function renderAudio(){
+  const SR=48000,DUR=90;
+  const ctx=new OfflineAudioContext(2,SR*DUR,SR);
+  const master=ctx.createGain(); master.gain.value=1;
+  const comp=ctx.createDynamicsCompressor();
+  comp.threshold.value=-20; comp.knee.value=14; comp.ratio.value=3.2;
+  comp.attack.value=0.006; comp.release.value=0.18;
+  master.connect(comp);
+  const gapGain=ctx.createGain(); gapGain.gain.value=1;
+  comp.connect(gapGain); gapGain.connect(ctx.destination);
+  gapGain.gain.setValueAtTime(1,31.98);
+  gapGain.gain.linearRampToValueAtTime(0.0001,32.0);
+  gapGain.gain.setValueAtTime(0.0001,32.33);
+  gapGain.gain.linearRampToValueAtTime(1,32.36);
+  // 轻微软削（丰富音色的“胶水”）
+  const shaper=ctx.createWaveShaper();
+  const curve=new Float32Array(1024);
+  for(let i=0;i<1024;i++){const x=i/512-1; curve[i]=Math.tanh(x*1.35)*0.92;}
+  shaper.curve=curve; shaper.oversample="2x";
+  master.disconnect(); master.connect(shaper); shaper.connect(comp);
+  // 混响
+  const conv=ctx.createConvolver(); conv.buffer=makeIR(ctx,2.4);
+  const rev=ctx.createGain(); rev.gain.value=0.30;
+  conv.connect(rev); rev.connect(master);
+  const bus=ctx.createGain(); bus.gain.value=1;
+  bus.connect(master); bus.connect(conv);
+  const noiseBuf=makeNoise(ctx,4,7);
+  const noise2=makeNoise(ctx,4,19);
+
+  const P=ctx.createStereoPanner ? (p)=>{const n=ctx.createStereoPanner();n.pan.value=p;return n;} : ()=>({connect(){}});
+  function env(dest,t,dur,peak,atk){
+    const g=ctx.createGain();
+    atk=atk==null?0.006:atk;
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(peak,t+atk);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(dur,atk+0.01));
+    g.connect(dest);
+    return g;
+  }
+  function tone(type,f,t,dur,peak,pan,opt){
+    opt=opt||{};
+    const o=ctx.createOscillator(); o.type=type; o.frequency.setValueAtTime(f,t);
+    if(opt.glide)o.frequency.exponentialRampToValueAtTime(opt.glide,t+dur);
+    if(opt.detune)o.detune.setValueAtTime(opt.detune,t);
+    const g=env(opt.dest||bus,t,dur,peak,opt.atk);
+    let node=o;
+    if(opt.filter){
+      const bq=ctx.createBiquadFilter(); bq.type=opt.filter; bq.frequency.value=opt.fc||1000; bq.Q.value=opt.q||1;
+      node.connect(bq); node=bq;
+    }
+    node.connect(g);
+    if(pan){const p=P(pan); g.disconnect(); g.connect(p); p.connect(opt.dest||bus);}
+    o.start(t); o.stop(t+dur+0.02);
+    return o;
+  }
+  function noise(t,dur,peak,pan,opt){
+    opt=opt||{};
+    const src=ctx.createBufferSource(); src.buffer=(opt.buf||noiseBuf); src.loop=true;
+    const bq=ctx.createBiquadFilter(); bq.type=opt.type||"bandpass";
+    bq.frequency.value=opt.fc||1500; bq.Q.value=opt.q||1;
+    src.connect(bq);
+    const g=env(opt.dest||bus,t,dur,peak,opt.atk);
+    bq.connect(g);
+    if(pan){const p=P(pan); g.disconnect(); g.connect(p); p.connect(opt.dest||bus);}
+    src.start(t); src.stop(t+dur+0.02);
+  }
+  function bell(t,f0,peak,pan,durScale){
+    durScale=durScale||1;
+    const parts=[[1,1,1.35],[2.38,.52,.95],[3.86,.34,.72],[5.62,.20,.52],[7.14,.12,.38]];
+    parts.forEach(([r,a,d])=>{
+      tone("sine",f0*r,t,d*durScale,peak*a,pan,{atk:0.004});
+    });
+    noise(t,0.012,peak*0.25,pan,{type:"highpass",fc:4000,q:0.7});
+  }
+  function pluck(t,f,peak,pan){
+    tone("triangle",f,t,0.14,peak,pan,{atk:0.003,glide:f*0.985});
+    tone("sine",f*2,t,0.07,peak*0.35,pan,{atk:0.002});
+    noise(t,0.008,peak*0.4,pan,{type:"bandpass",fc:f*2.2,q:1.2});
+  }
+  function thud(t,f,peak,pan){
+    tone("sine",f,t,0.26,peak,pan,{atk:0.004,glide:f*0.62,filter:"lowpass",fc:f*4,q:0.8});
+    noise(t,0.03,peak*0.35,pan,{type:"lowpass",fc:f*3,q:0.6});
+  }
+  function cancel(t){
+    tone("sawtooth",620,t,0.10,0.055,0,{atk:0.003,glide:175,filter:"lowpass",fc:900,q:0.9});
+    noise(t,0.13,0.05,0,{type:"bandpass",fc:1900,q:0.7});
+    noise(t,0.09,0.028,0,{type:"highpass",fc:4200,q:0.5});
+    thud(t+0.02,92,0.05,0);
+  }
+  function sub(t,f,peak){
+    noise(t,0.031,0.045,0,{type:"bandpass",fc:1500,q:1.1});
+    tone("sine",f,t,0.055,peak||0.06,0,{atk:0.003,glide:f*0.86});
+    tone("triangle",f*2.05,t,0.03,(peak||0.06)*0.4,0,{atk:0.002});
+    thud(t,86,(peak||0.06)*0.55,0);
+  }
+  function expand(t,f1,f2,dur,peak){
+    tone("sawtooth",f1,t,dur,peak||0.035,0,{atk:0.08,glide:f2,filter:"bandpass",fc:(f1+f2)/2,q:0.9});
+    noise(t,dur,0.012,0,{type:"bandpass",fc:(f1+f2)/2,q:0.5,atk:0.12});
+  }
+  function glass(t,f,peak,pan){
+    tone("sine",f,t,0.18,peak,pan,{atk:0.002});
+    tone("sine",f*1.008,t,0.16,peak*0.6,pan,{atk:0.002});
+    noise(t,0.006,peak*0.5,pan,{type:"highpass",fc:6000,q:0.6});
+  }
+
+  /* 底床 */
+  (function(){
+    const g=ctx.createGain();
+    g.gain.setValueAtTime(0,0);
+    g.gain.linearRampToValueAtTime(0.014,1.6);
+    g.gain.setValueAtTime(0.014,37.0);
+    g.gain.linearRampToValueAtTime(0.0085,40.0);
+    g.gain.setValueAtTime(0.0085,86.0);
+    g.gain.linearRampToValueAtTime(0.0,89.4);
+    const lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=420; lp.Q.value=0.4;
+    g.connect(lp); lp.connect(bus);
+    const o=ctx.createOscillator(); o.type="sine"; o.frequency.value=55;
+    o.connect(g); o.start(0); o.stop(90);
+    const n=ctx.createBufferSource(); n.buffer=noise2; n.loop=true;
+    const ng=ctx.createGain(); ng.gain.value=0.006;
+    let p=P(-0.15); n.connect(ng); ng.connect(p); p.connect(g);
+    n.start(0); n.stop(90);
+  })();
+
+  /* 事件 */
+  expand(0.0,520,1180,1.1,0.03);
+  pluck(2.6,520,0.02,0.1);
+  cancel(7.0);
+  thud(7.28,72,0.045,0);
+  expand(12.0,600,1000,0.7,0.028);
+  sub(14.15,118,0.065);
+  sub(20.05,110,0.06);
+  sub(24.5,104,0.052);
+  glass(31.6,1560,0.012,0);
+  // 提问：低音与静默
+  tone("sine",98,32.45,0.55,0.035,0,{atk:0.04,glide:92});
+  pluck(33.45,392,0.012,-0.2);
+  // ξ 定义逐项
+  expand(38.0,640,1280,0.95,0.032);
+  pluck(40.0,660,0.028,-0.25);
+  pluck(41.5,700,0.026,-0.15);
+  pluck(43.0,742,0.026,-0.05);
+  pluck(44.5,620,0.024,0.05);
+  sub(45.0,132,0.045);
+  pluck(46.0,782,0.026,0.15);
+  pluck(47.5,824,0.026,0.25);
+  // 求导六拍
+  [0,1,2,3,4,5].forEach(i=>{
+    const f=[920,860,800,740,680,620][i];
+    pluck(52.6+i*0.55,f,0.018,-0.2+i*0.08);
+  });
+  // 极点相消
+  cancel(57.5);
+  thud(58.3,64,0.05,0);
+  expand(58.5,300,900,0.5,0.012);
+  // 代入
+  sub(66.2,120,0.06);
+  glass(68.8,1240,0.016,-0.2);
+  glass(70.8,1210,0.016,0.2);
+  // 结果钟
+  bell(76.2,880,0.052,0,1.0);
+  thud(76.25,58,0.05,0);
+  noise(76.2,0.25,0.012,0,{type:"highpass",fc:5200,q:0.5});
+  // 切线
+  expand(75.8,260,760,0.9,0.014);
+  pluck(78.6,1320,0.022,0.1);
+  // 校验
+  glass(84.0,1200,0.018,-0.1);
+  glass(84.35,1210,0.018,0.1);
+  // 收束
+  tone("sine",46,86.0,3.0,0.012,0,{atk:0.2,glide:44});
+  noise(88.0,1.6,0.004,0,{type:"lowpass",fc:300,q:0.4});
+
+  const buf=await ctx.startRendering();
+  const sr=buf.sampleRate, len=buf.length;
+  const d0=buf.getChannelData(0), d1=buf.getChannelData(1);
+  let mean=0;
+  for(let i=0;i<len;i++)mean+=d0[i]+d1[i];
+  mean/=(2*len);
+  // 归一化到 -1 dB（先去直流）
+  let peak=0;
+  for(let i=0;i<len;i++){
+    const a=Math.abs(d0[i]-mean), b=Math.abs(d1[i]-mean);
+    if(a>peak)peak=a; if(b>peak)peak=b;
+  }
+  const gain=peak>0?0.891/peak:1;
+  const bytes=new Uint8Array(44+len*4);
+  function wstr(o,s){for(let i=0;i<s.length;i++)bytes[o+i]=s.charCodeAt(i);}
+  wstr(0,"RIFF"); wstr(8,"WAVE"); wstr(12,"fmt "); wstr(36,"data");
+  const dv=new DataView(bytes.buffer);
+  dv.setUint32(4,36+len*4,true);
+  dv.setUint16(16,16,true); dv.setUint16(20,1,true); dv.setUint16(22,2,true);
+  dv.setUint32(24,sr,true); dv.setUint32(28,sr*4,true);
+  dv.setUint16(32,4,true); dv.setUint16(34,16,true);
+  dv.setUint32(40,len*4,true);
+  let o=44;
+  for(let i=0;i<len;i++){
+    const l=Math.max(-1,Math.min(1,(d0[i]-mean)*gain));
+    const r=Math.max(-1,Math.min(1,(d1[i]-mean)*gain));
+    bytes[o++]=Math.round(l*32767)&255; bytes[o++]=Math.round(l*32767)>>8&255;
+    bytes[o++]=Math.round(r*32767)&255; bytes[o++]=Math.round(r*32767)>>8&255;
+  }
+  window.__wavBytes=bytes;
+  window.__wavChunkCount=Math.ceil(90);
+  window.__wavChunk=(i)=>{
+    const per=sr*4; // 1 s, stereo 16-bit
+    const part=bytes.subarray(44+i*per,44+Math.min((i+1)*per,len*4));
+    let s="";
+    const cs=0x8000;
+    for(let k=0;k<part.length;k+=cs)s+=String.fromCharCode.apply(null,part.subarray(k,k+cs));
+    return btoa(s);
+  };
+  window.__readyAudio=true;
+  return {peak:peak, gain:gain, sr:sr, len:len};
+}
+window.__renderAudio=renderAudio;
+
+// 初始帧
+renderAt(0);
+})();
+</script>
+</body>
+</html>

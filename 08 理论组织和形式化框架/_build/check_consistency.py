@@ -113,7 +113,7 @@ def main():
     # ---------- Lean 对接 ----------
     decls = jload(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "declarations.json"))
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
-    check("Lean 声明 1465 / 模块 75", (len(decls), len(mods)) == (1465, 75),
+    check("Lean 声明 1500 / 模块 78", (len(decls), len(mods)) == (1500, 78),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []
@@ -193,8 +193,10 @@ def main():
     # 确认漂移发生在本轮之前（语料已改而派生物未同步），与 δ(Z,N) 口径修正无关。
     # 2026-11-14（v1.9.85）：06 超导两篇并为一篇（语料 51→50，句 19,368→19,353），
     # 「语义近邻（候选）」边随段界变化由 18 降至 16，故 352→350；144 实体与概念节点未变。
-    check("知识图谱 144 实体 / 350 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 350),
+    # 2026-11-16（v1.9.160）：`06 超导核心理论` 改为差异-记忆核口径（语料 55 篇，句 19,379→19,556），
+    # 证据句重匹配使 claim 级边 281→275，dir 50 / hyper 19 未变，故 350→344；144 实体未变。
+    check("知识图谱 144 实体 / 344 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 344),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")

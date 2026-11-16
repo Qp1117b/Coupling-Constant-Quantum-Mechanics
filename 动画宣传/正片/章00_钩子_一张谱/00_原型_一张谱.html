@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>章 0 · 一张谱</title>
+<style>
+  :root{ --ink:#E8EEF4; --dim:#7E8D99; }
+  html,body{margin:0;height:100%;background:#030405;color:var(--ink);
+    font-family:"Inter","Segoe UI","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+  #stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  #cv{width:100%;height:100%;object-fit:contain;display:block}
+  #ui{position:absolute;left:0;right:0;bottom:0;padding:0 28px 18px;
+    background:linear-gradient(to top,rgba(3,4,5,.92),rgba(3,4,5,0));user-select:none}
+  #hud{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  #tc{font:500 15px "Consolas","SF Mono",ui-monospace,monospace;color:var(--dim)}
+  #lab{font:400 14px "Inter","Segoe UI","Microsoft YaHei",sans-serif;color:#4E5C68;letter-spacing:.06em}
+  #scrub{width:100%;height:22px;-webkit-appearance:none;background:transparent;cursor:pointer}
+  #scrub::-webkit-slider-runnable-track{height:2px;background:#212A32}
+  #scrub::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;margin-top:-5px;
+    border-radius:50%;background:#E8EEF4;box-shadow:0 0 0 1px #030405}
+  #chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .chip{font:400 12px "Inter","Segoe UI","Microsoft YaHei",sans-serif;color:#6D7C88;
+    background:#0C1116;border:1px solid #171E25;border-radius:3px;padding:3px 8px;cursor:pointer;
+    letter-spacing:.04em}
+  .chip.on{color:#E8EEF4;border-color:#2C3943;background:#121920}
+  .hint{position:absolute;right:24px;bottom:96px;font:400 12px "Inter",sans-serif;color:#38434D;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="cv" width="1920" height="1080"></canvas></div>
+<div class="hint">空格 播放　← → 逐帧　Shift ±1s</div>
+<div id="ui">
+  <div id="hud"><span id="tc">0.00</span><span id="lab">—</span></div>
+  <input id="scrub" type="range" min="0" max="90" step="0.02" value="0">
+  <div id="chips"></div>
+</div>
+<script>
+"use strict";
+const cv=document.getElementById('cv'), cx=cv.getContext('2d',{alpha:false});
+const W=1920,H=1080,CX=W/2,CY=H/2,DUR=90;
+const P=new URLSearchParams(location.search);
+
+/* ---------- 色彩（只用三类：墨白=数据，青=结构，琥珀=边界） ---------- */
+const INK=(a)=>`rgba(232,238,244,${a})`;
+const CY_=(a)=>`rgba(91,200,196,${a})`;
+const AM=(a)=>`rgba(229,164,74,${a})`;
+const RD=(a)=>`rgba(217,105,74,${a})`;
+const HAIR=0.09;
+
+/* ---------- 缓动与工具 ---------- */
+const cl=x=>x<0?0:x>1?1:x;
+const eOut=x=>1-Math.pow(1-x,3);
+const eIO=x=>x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eOutBack=x=>{const c=1.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
+const seg=(t,a,b)=>cl((t-a)/(b-a));
+const clD=v=>Math.min(DUR,Math.max(0,Number(v)||0));
+const lerp=(a,b,u)=>a+(b-a)*u;
+
+/* ---------- 字体 ---------- */
+const SANS='"Inter","Segoe UI","Microsoft YaHei",system-ui,sans-serif';
+const MONO='"Segoe UI","Segoe UI Variable","Microsoft YaHei",system-ui,sans-serif';
+function T(s,x,y,sz,col,opt){
+  opt=opt||{};
+  cx.save();
+  cx.font=(opt.w||400)+' '+sz+'px '+(opt.mono?MONO:SANS);
+  if(opt.ls&&cx.letterSpacing!==undefined) cx.letterSpacing=opt.ls;
+  cx.fillStyle=col; cx.textAlign=opt.align||'left'; cx.textBaseline=opt.base||'alphabetic';
+  const w=cx.measureText(s).width;
+  cx.fillText(s,x,y);
+  cx.restore();
+  return w;
+}
+function measure(s,sz,opt){
+  opt=opt||{};
+  cx.save(); cx.font=(opt.w||400)+' '+sz+'px '+(opt.mono?MONO:SANS);
+  if(opt.ls&&cx.letterSpacing!==undefined) cx.letterSpacing=opt.ls;
+  const w=cx.measureText(s).width; cx.restore(); return w;
+}
+function cam(z,fx,fy){
+  cx.translate(CX,CY); cx.scale(z,z); cx.translate(-fx,-fy);
+}
+function line(x1,y1,x2,y2,col,w){
+  cx.strokeStyle=col; cx.lineWidth=w||1;
+  cx.beginPath(); cx.moveTo(x1,y1); cx.lineTo(x2,y2); cx.stroke();
+}
+function hairRect(x,y,w,h,a){
+  cx.strokeStyle=INK(a===undefined?HAIR:a); cx.lineWidth=1;
+  cx.strokeRect(x+.5,y+.5,w-1,h-1);
+}
+function dot(x,y,r,col){ cx.fillStyle=col; cx.beginPath(); cx.arc(x,y,r,0,6.2832); cx.fill(); }
+
+/* ---------- 背景：不是纯黑，是暗场 ---------- */
+const gridLayer=(()=>{
+  return null;
+})();
+function bg(){
+  const g=cx.createRadialGradient(CX,CY-70,40,CX,CY,1250);
+  g.addColorStop(0,'#0B1117'); g.addColorStop(.5,'#070A0D'); g.addColorStop(1,'#030405');
+  cx.fillStyle=g; cx.fillRect(0,0,W,H);
+  cx.strokeStyle='rgba(120,160,180,0.035)'; cx.lineWidth=1;
+  for(let x=40;x<W;x+=80){cx.beginPath();cx.moveTo(x+.5,0);cx.lineTo(x+.5,H);cx.stroke();}
+  for(let y=40;y<H;y+=80){cx.beginPath();cx.moveTo(0,y+.5);cx.lineTo(W,y+.5);cx.stroke();}
+  // 暗角
+  const v=cx.createRadialGradient(CX,CY,620,CX,CY,1180);
+  v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(0,0,0,0.55)');
+  cx.fillStyle=v; cx.fillRect(0,0,W,H);
+}
+function mark(){ // 常驻角标
+  T('CQM',64,H-52,17,INK(.22),{ls:'.22em',mono:true});
+  T('章 0 ／ 一张谱',108,H-52,17,INK(.13),{ls:'.14em'});
+}
+
+/* ---------- 数据 ---------- */
+const M=[
+  [3,1,1,1,1,0,1,1,0,0],
+  [1,3,1,1,0,1,1,0,1,0],
+  [1,1,3,0,1,1,0,1,1,0],
+  [1,1,0,3,1,1,1,0,0,1],
+  [1,0,1,1,3,1,0,1,0,1],
+  [0,1,1,1,1,3,0,0,1,1],
+  [1,1,0,1,0,0,3,1,1,1],
+  [1,0,1,0,1,0,1,3,1,1],
+  [0,1,1,0,0,1,1,1,3,1],
+  [0,0,0,1,1,1,1,1,1,3]
+];
+const N=10, CELL=66;
+const GX=CX-N*CELL/2, GY=CY-N*CELL/2;
+
+// 点亮顺序：对角线波（i+j），同波内按 i
+const ORD=(()=>{const o=[];for(let k=0;k<=2*N-2;k++)for(let i=0;i<N;i++){const j=k-i;if(j>=0&&j<N)o.push([i,j]);}return o;})();
+const IDX=new Array(N*N);
+ORD.forEach((c,n)=>IDX[c[0]*N+c[1]]=n);
+
+/* ---------- 矩阵层 ---------- */
+function drawMat(t,o){
+  o=o||{};
+  const x0=o.x0===undefined?GX:o.x0, y0=o.y0===undefined?GY:o.y0, s=o.s||1;
+  const cell=CELL*s;
+  // 外框
+  cx.strokeStyle=INK(o.frame===undefined?0.14:o.frame); cx.lineWidth=1;
+  cx.strokeRect(x0-.5,y0-.5,cell*N+1,cell*N+1);
+  for(let i=0;i<N;i++)for(let j=0;j<N;j++){
+    const v=M[i][j];
+    let a=o.alpha?o.alpha(i,j,v):1;
+    if(a<=0.001) continue;
+    const fl=o.flash?o.flash(i,j):0;
+    const base=v===3?0.72:v===1?0.20:0.02;
+    const fill=cl(base*a+fl*0.5);
+    if(fill>0){ cx.fillStyle=INK(fill); cx.fillRect(x0+j*cell,y0+i*cell,cell,cell); }
+    if(o.nums){
+      const na=cl((fl*0.8)+(v===3?0.92:v===1?0.46:0.13))*a;
+      if(na>0.02){
+        T(String(v),x0+j*cell+cell/2,y0+i*cell+cell/2+(o.numSize||22)*0.36,
+          o.numSize||22,INK(na),{mono:true,align:'center'});
+      }
+    }
+  }
+  // 分格线
+  if(o.grid!==false){
+    for(let k=1;k<N;k++){
+      line(x0+k*cell,y0,x0+k*cell,y0+cell*N,INK(HAIR),1);
+      line(x0,y0+k*cell,x0+cell*N,y0+k*cell,INK(HAIR),1);
+    }
+  }
+}
+
+/* ---------- 谱轴 ---------- */
+function specX(v,c){ return c.x0+v*c.u; }
+
+/* =================== 分镜 =================== */
+const SHOTS=[
+ {t0:0,  t1:6,    n:'黑场',    f:S0},
+ {t0:6,  t1:16,   n:'格阵',    f:S1},
+ {t0:16, t1:22,   n:'定义式',  f:S2},
+ {t0:22, t1:28,   n:'行和',    f:S3},
+ {t0:28, t1:32,   n:'陈述卡',  f:S4},
+ {t0:32, t1:42,   n:'λ₁',      f:S5},
+ {t0:42, t1:50,   n:'Tr M',    f:S6},
+ {t0:50, t1:56,   n:'Tr M²',   f:S7},
+ {t0:56, t1:66,   n:'联立',    f:S8},
+ {t0:66, t1:76,   n:'谱轴',    f:S9},
+ {t0:76, t1:84,   n:'扇区',    f:S10},
+ {t0:84, t1:89.4, n:'比对',    f:S11},
+ {t0:89.4,t1:90,  n:'收',      f:S12}
+];
+
+/* --- S0 0–6：一条线，一个点 --- */
+function S0(t){
+  const a=seg(t,2.2,3.4);
+  if(a>0){
+    const len=lerp(0,720,eOut(a));
+    line(CX-len/2,CY,CX+len/2,CY,INK(0.20*a),1);
+  }
+  const b=seg(t,4.2,5.1);
+  if(b>0){
+    dot(CX,CY,2.4*b,INK(0.55*b));
+    const r=lerp(0,90,eOut(b));
+    cx.strokeStyle=INK(0.10*(1-b*0.4)); cx.lineWidth=1;
+    cx.beginPath(); cx.arc(CX,CY,r,0,6.2832); cx.stroke();
+  }
+}
+
+/* --- S1 6–16：一百格，对角波点亮 --- */
+const V4=[3,4]; // 占位，不用
+function S1(t){
+  const z=lerp(1.0,1.06,eIO(seg(t,6,16)));
+  cx.save(); cam(z,CX,CY);
+  const lead=seg(t,6,16);
+  drawMat(t,{
+    grid:true, frame:0.13,
+    alpha:(i,j,v)=>{
+      const n=IDX[i*N+j];
+      const tn=6+n*0.1;
+      const on=seg(t,tn,tn+0.10);
+      const settle2=1-0.15*seg(t,tn+0.3,tn+1.2);
+      return 0.26+0.74*eOut(seg(t,tn,tn+0.30))*settle2;
+    },
+    flash:(i,j)=>{
+      const n=IDX[i*N+j];
+      const tn=6+n*0.1;
+      return (seg(t,tn,tn+0.04))*(1-seg(t,tn+0.05,tn+0.40));
+    }
+  });
+  // 波前高度提示：底部一条进度刻度
+  const w=lerp(0,660,lead);
+  line(GX,GY+CELL*N+26,GX+w,GY+CELL*N+26,INK(0.10),1);
+  cx.restore();
+  const c=seg(t,14.4,15.6);
+  if(c>0){
+    T('边—面关联矩阵  M',CX,GY-64,30,INK(0.42*c),{align:'center',ls:'.02em'});
+    T('10 条边 × 10 个三角形',CX,GY-30,20,INK(0.24*c),{align:'center'});
+  }
+}
+
+/* --- S2 16–22：定义式 --- */
+function S2(t){
+  const k=eOut(seg(t,16,17.8));
+  const zm=lerp(1,0.66,k);
+  const mx=lerp(GX,CX+140,k), my=lerp(GY,CY-120,k);
+  cx.save(); cam(lerp(1.06,1.0,k),CX,CY);
+  drawMat(t,{x0:mx,y0:my,s:zm,grid:true,frame:0.10,
+    alpha:(i,j,v)=>{const n=IDX[i*N+j];const on=seg(t,6+n*0.1,6+n*0.1+0.1);return 0.16+0.5*on;}});
+  cx.restore();
+
+  const a=seg(t,17.2,18.6);
+  if(a>0){
+    const x=CX-800, y=CY-30, SZ=128;
+    cx.save(); cx.globalAlpha=a;
+    let px=x;
+    px+=T('M',px,y,SZ,INK(.97),{mono:true})+18;
+    T('=',px,y,SZ,INK(.34),{mono:true}); px+=measure('=',SZ,{mono:true})+22;
+    px+=T('E',px,y,SZ,INK(.97),{mono:true});
+    T('T',px-16,y-SZ*0.46,SZ*0.44,INK(.62),{mono:true});
+    px+=SZ*0.42;
+    T('E',px,y,SZ,INK(.97),{mono:true});
+    cx.restore();
+    const b=seg(t,18.4,19.6);
+    if(b>0){
+      T('10 × 10，元素只有 0 / 1 / 3',x,y+76,24,INK(0.42*b));
+      line(x,y+100,x+536,y+100,INK(0.10*b),1);
+      T('共边为 1，否则为 0；对角为 3',x,y+134,20,INK(0.26*b));
+    }
+    const c=eOut(seg(t,18.8,19.8));
+    if(c>0){
+      // 只在矩阵左上角画一个极细的角标，不横贯画面
+      const ex=mx-10, ey=my+50;
+      cx.strokeStyle=CY_(0.14*c); cx.lineWidth=1;
+      cx.beginPath(); cx.moveTo(ex-46,ey); cx.lineTo(ex,ey); cx.lineTo(ex,ey-34); cx.stroke();
+    }
+  }
+  const d=seg(t,19.4,20.6);
+  if(d>0){
+    T('三角形 × 三角形：两个三角形共几条边',mx,my+zm*CELL*N+46,20,INK(0.28*d));
+  }
+}
+
+/* --- S3 22–28：行和恒为 9 --- */
+function S3(t){
+  const k=eIO(seg(t,22,23.8));
+  const row=4;
+  const z=lerp(1,1.30,k);
+  const fy=lerp(CY,GY+row*CELL+CELL/2,k);
+  cx.save(); cam(z,CX,fy);
+  const sweep=seg(t,23.6,25.0);
+  drawMat(t,{
+    grid:true, frame:0.16, nums:true, numSize:26,
+    alpha:(i,j,v)=> i===row?1:lerp(1,0.20,k),
+    flash:(i,j)=> i===row? (seg(t,23.6+j*0.12,23.7+j*0.12))*(1-seg(t,24.2+j*0.1,25.2))*0.7 : 0
+  });
+  // 扫过的竖线
+  if(sweep>0&&sweep<1.15){
+    const sx=GX+ (sweep*1.05)*CELL*N;
+    line(sx,GY+row*CELL-8,sx,GY+(row+1)*CELL+8,CY_(0.5),1.5);
+  }
+  cx.restore();
+
+  // 右侧：九个 9
+  const c=seg(t,24.4,26.4);
+  if(c>0){
+    const x=1560, yTop=CY-190;
+    T('M · 1 = 9 · 1',x-40,yTop-64,42,INK(0.55*seg(t,25.4,26.6)),{mono:true});
+    for(let n=0;n<9;n++){
+      const a=seg(t,24.4+n*0.22,24.7+n*0.22);
+      if(a<=0) continue;
+      const y=yTop+n*44;
+      T('9',x,y,44,INK(0.28+0.62*a),{mono:true});
+      line(x+34,y-12,x+34+lerp(0,60,eOut(a)),y-12,INK(0.10*a),1);
+    }
+  }
+  const d=seg(t,26.2,27.4);
+  if(d>0){
+    T('每一行：对角 3 ＋ 6 个共边邻接 = 9',CX,GY+68,24,INK(0.34*d),{align:'center'});
+  }
+}
+
+/* --- S4 28–32：陈述卡（表示论分解，不是坐标分块） --- */
+function S4(t){
+  const k=eOut(seg(t,28,29.4));
+  cx.save(); cam(1,CX,CY);
+  drawMat(t,{x0:CX-820,y0:CY+120,s:0.40,frame:0.10,grid:true,
+    alpha:(i,j,v)=>{const n=IDX[i*N+j];return 0.30*(0.4+0.6*seg(t,6+n*0.1,6+n*0.1+0.1));}});
+  cx.restore();
+
+  // 上下细线
+  const a=seg(t,28.4,29.6);
+  if(a>0){
+    const w=lerp(0,760,eOut(a));
+    line(CX-w/2,CY-118,CX+w/2,CY-118,INK(0.14),1);
+    line(CX-w/2,CY+92,CX+w/2,CY+92,INK(0.14),1);
+  }
+  const b=seg(t,29.0,30.2);
+  if(b>0){
+    cx.save(); cx.globalAlpha=b;
+    T('10 = 1 ⊕ 4 ⊕ 5',CX,CY+18,104,INK(.92),{mono:true,align:'center'});
+    cx.restore();
+  }
+  const c=seg(t,30.0,31.0);
+  if(c>0){
+    T('重数 1 / 4 / 5 —— 由谱轴验证，不在矩阵上分块',CX,CY+60,24,INK(0.42*c),{align:'center'});
+  }
+  // 外部标准数学徽章
+  const d=seg(t,28.3,29.0);
+  if(d>0){
+    const w=182,h=34,x=CX-91,y=CY-206;
+    hairRect(x,y,w,h,0.26*d);
+    T('外部标准数学',x+w/2,y+23,15,CY_(0.62*d),{align:'center',ls:'.10em'});
+  }
+}
+
+/* --- S5 32–42：λ₁ = 9 --- */
+function S5(t){
+  const k=eOut(seg(t,32,33.6));
+  // 轴
+  const ax=CX-520, ay=CY+300, u=82;
+  const axisA=seg(t,32.4,34.2)*0.9;
+  line(ax,ay,ax+9*u+80,ay,INK(0.14*axisA),1);
+  for(let v=1;v<=9;v++){
+    const x=ax+v*u;
+    line(x,ay,x,ay+7,INK(0.12*axisA),1);
+    if(v%1===0&&v<=9) T(String(v),x,ay+32,18,INK(0.30*axisA),{mono:true,align:'center'});
+  }
+  // λ1 柱
+  const b=seg(t,33.4,35.4);
+  if(b>0){
+    const x=ax+9*u, h=lerp(0,9*40,eOut(b));
+    line(x,ay,x,ay-h,INK(0.9*b),2);
+    line(x,ay,x,ay-h,CY_(0.25*b),6);
+    dot(x,ay-h,3.2,INK(0.9*b));
+    T('λ₁',x+16,ay-h+18,26,INK(0.42*b),{mono:true});
+  }
+  // 数字滚动
+  const c=seg(t,35.0,37.2);
+  if(c>0){
+    const val=lerp(8.2,9,eOut(c));
+    const s=val.toFixed(6);
+    T(s,ax+180,ay-300,88,INK(0.86*c),{mono:true,ls:'.02em'});
+    T('行和锁定：M·1 = 9·1 ⟹ 最大特征值 = 9',ax+180,ay-240,22,INK(0.30*c));
+  }
+  const d=seg(t,38.2,39.6);
+  if(d>0){
+    T('不是估计，是行和的直接推论',ax+180,ay-190,26,INK(0.52*d));
+  }
+}
+
+/* --- S6 42–50：Tr M = 30 --- */
+function S6(t){
+  const k=eOut(seg(t,42,43.2));
+  cx.save(); cam(lerp(1,1.0,k),CX,CY);
+  cx.restore();
+  const bx=CX-560, by=CY-210, bw=3*82;
+  const cnt=lerp(0,30,eOut(seg(t,43.2,45.4)));
+  for(let i=0;i<10;i++){
+    const a=seg(t,42.6+i*0.16,43.2+i*0.16);
+    if(a<=0) continue;
+    const y=by+i*38;
+    cx.fillStyle=INK(0.10); cx.fillRect(bx,y,bw,16);
+    cx.fillStyle=INK(0.62*a); cx.fillRect(bx,y,bw*eOut(a),16);
+    T('3',bx-16,y+13,18,INK(0.30*a),{mono:true,align:'right'});
+  }
+  T('10 个对角元',bx,by-26,24,INK(0.38*seg(t,42.6,43.6)));
+
+  const c=seg(t,43.4,45.6);
+  if(c>0){
+    T(String(Math.round(cnt)),CX+430,CY+40,168,INK(0.94*c),{mono:true,align:'right'});
+    T('Tr M',CX+430,CY-70,40,INK(0.5*c),{mono:true,align:'right'});
+  }
+  const d=seg(t,46.0,47.4);
+  if(d>0){
+    T('10 × 3 = 30',CX+430,CY+110,34,INK(0.42*d),{mono:true,align:'right'});
+    T('对角元 = 每条边所属三角形数',CX+430,CY+150,20,INK(0.26*d),{align:'right'});
+  }
+}
+
+/* --- S7 50–56：Tr M² = 150 = Σλ² --- */
+function S7(t){
+  const base=CY+236, uu=3.4;
+  const bx=CX-460, gap=196;
+  const bars=[[81,'9² × 1'],[64,'4² × 4'],[5,'1² × 5']];
+  bars.forEach((b,idx)=>{
+    const a=eOut(seg(t,50.4+idx*0.5,51.8+idx*0.5));
+    const x=bx+idx*gap, h=b[0]*uu*a;
+    cx.fillStyle=INK(idx===2?0.30:0.62); cx.fillRect(x,base-h,86,h);
+    cx.fillStyle=INK(0.10); cx.fillRect(x,base-h,86,2);
+    T(String(b[0]),x+43,base-h-14,30,INK(0.7*a),{mono:true,align:'center'});
+    T(b[1],x+43,base+30,20,INK(0.34*a),{mono:true,align:'center'});
+  });
+  const c=seg(t,52.4,54.2);
+  if(c>0){
+    T('150',CX+560,base-40,120,INK(0.9*c),{mono:true,align:'right'});
+    T('Tr M² = Σ λ²',CX+560,base+30,26,INK(0.42*c),{mono:true,align:'right'});
+  }
+  const d=seg(t,54.4,55.6);
+  if(d>0) T('迹平方已提前把谱的形状说出来',CX,base-330,26,INK(0.46*d),{align:'center'});
+}
+
+/* --- S8 56–66：联立，两根取舍 --- */
+function S8(t){
+  const y0=CY-160;
+  const a=seg(t,56.2,57.4);
+  if(a>0){
+    T('4a + 5b = 30 − 9 = 21',CX-620,y0,46,INK(0.62*a),{mono:true});
+  }
+  const b=seg(t,57.4,58.6);
+  if(b>0){
+    T('4a² + 5b² = 150 − 81 = 69',CX-620,y0+72,46,INK(0.62*b),{mono:true});
+  }
+  // 消元箭头
+  const c=eOut(seg(t,58.8,60.0));
+  if(c>0){
+    line(CX-620,y0+104,CX-620+lerp(0,520,c),y0+104,CY_(0.22),1);
+    T('消去 a',CX-620+520+16,y0+112,18,CY_(0.34*c));
+  }
+  const d=seg(t,59.6,61.2);
+  if(d>0){
+    T('3b² − 14b + 11 = 0',CX-620,y0+190,46,INK(0.62*d),{mono:true});
+    T('b = 1 或 11/3 —— 只留整数',CX-620,y0+240,22,INK(0.34*seg(t,61,62.2)));
+  }
+  const e=seg(t,61.6,63.0);
+  if(e>0){
+    T('a = 4 ， b = 1',CX+300,y0+90,64,eOut(e)*1*0+INK(0.90*e),{mono:true,align:'right'});
+  }
+  const f=seg(t,63.4,64.6);
+  if(f>0){
+    T('λ = { 9 , 4 , 4 , 4 , 4 , 1 , 1 , 1 , 1 , 1 }',CX,y0+300,34,INK(0.46*f),{mono:true,align:'center'});
+  }
+}
+
+/* --- S9 66–76：谱轴，十根线 --- */
+function S9(t){
+  const ax=CX-470, ay=CY+250, u=92;
+  const a0=seg(t,66.0,67.2);
+  line(ax-40,ay,ax+9*u+90,ay,INK(0.16*a0),1);
+  const groups=[{v:9,ms:1,col:a=>AM(a)},{v:4,ms:4,col:a=>INK(a)},{v:1,ms:5,col:a=>INK(a*0.65)}];
+  const unit=26;
+  let n=0;
+  groups.forEach(g=>{
+    for(let k=0;k<g.ms;k++,n++){
+      const tt=66.6+n*0.36;
+      const p=eOut(seg(t,tt,tt+0.7));
+      if(p<=0) continue;
+      const x=ax+g.v*u-(g.ms-1)*7+k*14;
+      const h=g.v*unit*p;
+      line(x,ay,x,ay-h,g.col(0.9*p),2);
+      line(x,ay,x,ay-h,g.col(0.16*p),8);
+      dot(x,ay-h,2.6,g.col(0.9*p));
+    }
+  });
+  // 刻标
+  [1,4,9].forEach(v=>{
+    const x=ax+v*u;
+    T(String(v),x,ay+40,34,INK(0.62),{mono:true,align:'center'});
+  });
+  T('×5',ax+1*u,ay+72,18,INK(0.28),{mono:true,align:'center'});
+  T('×4',ax+4*u,ay+72,18,INK(0.28),{mono:true,align:'center'});
+  T('×1',ax+9*u,ay+72,18,INK(0.28),{mono:true,align:'center'});
+  // 9 的参考虚线
+  const ref=eOut(seg(t,70.6,72.0));
+  if(ref>0){
+    const y=ay-9*unit;
+    cx.setLineDash([6,10]); line(ax-60,y,ax+9*u+70,y,INK(0.12*ref),1); cx.setLineDash([]);
+    T('9',ax-96,y+8,26,INK(0.30*ref),{mono:true});
+  }
+  const b=seg(t,72.4,74.0);
+  if(b>0){
+    T('十根线，三个值',CX,CY-300,40,INK(0.62*b),{align:'center'});
+    T('重数不是标出来的，是数出来的',CX,CY-244,24,INK(0.32*b),{align:'center'});
+  }
+}
+
+/* --- S10 76–84：扇区只给比例 --- */
+function S10(t){
+  const bx=CX-620, u=68;
+  const rows=[[9,'色'],[4,'弱'],[1,'电磁']];
+  const a0=seg(t,76.4,77.2);
+  if(a0>0){
+    T('比例 9 : 4 : 1',bx,CY-240,42,INK(0.60*a0),{mono:true});
+  }
+  let acc=0;
+  rows.forEach((r,i)=>{
+    const p=eOut(seg(t,77.0+i*0.6,78.4+i*0.6));
+    if(p<=0) return;
+    const y=CY-150+i*104;
+    const w=r[0]*u*p;
+    cx.fillStyle=INK(i===0?0.52:i===1?0.40:0.30);
+    cx.fillRect(bx,y,w,54);
+    T(String(r[0]),bx+14,y+37,30,INK(0.95),{mono:true});
+    T(r[1],bx+w+18,y+37,26,INK(0.40),{});
+    line(bx+w+60,y+27,bx+w+190,y+27,INK(0.10),1);
+  });
+  const b=seg(t,79.6,81.0);
+  if(b>0){
+    T('扇区归属要群论输入，本片不裁',CX,CY+250,24,INK(0.34*b),{align:'center'});
+  }
+}
+
+/* --- S11 84–89.4：逐位比对 --- */
+const A1='137.2583', B1='137.0360';
+function S11(t){
+  const x0=CX-540, y1=CY-120, y2=CY-20, cw=62, sz=64;
+  const a=seg(t,84.2,85.0);
+  if(a>0){
+    T('16384π/375',x0,y1-42,22,INK(0.34*a));
+    T('实验值',x0,y2-42,22,INK(0.34*a));
+  }
+  for(let i=0;i<8;i++){
+    const p=seg(t,84.4+i*0.30,84.6+i*0.30);
+    if(p<=0) continue;
+    const same=A1[i]===B1[i];
+    const col=same?INK(0.92*p):AM(0.92*p);
+    T(A1[i],x0+i*cw,y1,sz,col,{mono:true,align:'center'});
+    T(B1[i],x0+i*cw,y2,sz,col,{mono:true,align:'center'});
+    if(same){
+      cx.strokeStyle=INK(0.10*p); cx.lineWidth=1;
+      cx.strokeRect(x0+i*cw-26,y1-30,52,42);
+      cx.strokeRect(x0+i*cw-26,y2-30,52,42);
+    }
+  }
+  // 分叉竖线
+  const d=seg(t,86.4,87.2);
+  if(d>0){
+    const x=x0+3.5*cw;
+    line(x,y1-56,x,y2+46,AM(0.34*d),1);
+    T('小数第一位起分叉',x+14,y1-66,20,AM(0.6*d));
+  }
+  const e=seg(t,87.0,88.2);
+  if(e>0){
+    T('137 与小数点重合',x0,y2+96,20,INK(0.34*e));
+    T('相对差 0.16%',CX+430,y1+10,84,AM(0.9*e),{mono:true,align:'right'});
+    T('|Δ| = 0.2223',CX+430,y2+56,30,INK(0.42*e),{mono:true,align:'right'});
+  }
+  const f=seg(t,88.4,89.2);
+  if(f>0){
+    const w=430,h=38,x=CX+430-430,y=CY+150;
+    hairRect(x,y,w,h,0.22*f);
+    T('π 因子待从谱方程严格推',x+18,y+26,17,AM(0.62*f),{ls:'.04em'});
+  }
+}
+
+/* --- S12 89.4–90：收 --- */
+function S12(t){
+  const a=seg(t,89.4,90);
+  cx.fillStyle=`rgba(3,4,5,${0.55*a})`; cx.fillRect(0,0,W,H);
+}
+
+/* =================== 渲染 =================== */
+function renderAt(t){
+  t=clD(t);
+  cx.setTransform(1,0,0,1,0,0);
+  cx.clearRect(0,0,W,H);
+  bg();
+  const s=SHOTS.find(k=>t>=k.t0&&t<k.t1)||SHOTS[SHOTS.length-1];
+  cx.save(); s.f(t); cx.restore();
+  mark();
+}
+
+/* =================== 音轨 =================== */
+function build(c){
+  const SR=48000;
+  const master=c.createGain(); master.gain.value=1; master.connect(c.destination);
+  // ---------- 底床：55 Hz 哼声 + 极低噪 ----------
+  const hum=c.createOscillator(); hum.type='sine'; hum.frequency.value=55;
+  const humG=c.createGain(); humG.gain.value=0.020;
+  const lp=c.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=140;
+  hum.connect(lp).connect(humG).connect(master);
+  hum.start(0);
+  const nb=c.createBufferSource(); nb.buffer=noiseBuf(c,4);
+  const nf=c.createBiquadFilter(); nf.type='bandpass'; nf.frequency.value=220; nf.Q.value=0.6;
+  const ng=c.createGain(); ng.gain.value=0.012;
+  nb.loop=true; nb.connect(nf).connect(ng).connect(master); nb.start(0);
+
+  const tone=(t0,dur,f,g,type)=>{
+    const o=c.createOscillator(); o.type=type||'sine'; o.frequency.value=f;
+    const gn=c.createGain();
+    gn.gain.setValueAtTime(0,t0);
+    gn.gain.linearRampToValueAtTime(g,t0+0.008);
+    gn.gain.exponentialRampToValueAtTime(0.0001,t0+dur);
+    o.connect(gn).connect(master); o.start(t0); o.stop(t0+dur+0.02);
+  };
+  const click=(t0,g,hp)=>{
+    const o=c.createOscillator(); o.type='triangle'; o.frequency.value=1400;
+    const f=c.createBiquadFilter(); f.type='highpass'; f.frequency.value=hp||600;
+    const gn=c.createGain();
+    gn.gain.setValueAtTime(0,t0); gn.gain.linearRampToValueAtTime(g,t0+0.003);
+    gn.gain.exponentialRampToValueAtTime(0.0001,t0+0.05);
+    o.connect(f).connect(gn).connect(master); o.start(t0); o.stop(t0+0.08);
+  };
+
+  // S0
+  tone(2.2,0.9,110,0.05,'sine'); tone(4.2,1.2,220,0.04,'sine');
+  // S1 一百格（每格极短击）
+  for(let n=0;n<100;n++){ const t0=6+n*0.1; click(t0,0.006+0.004*(n<3?1:0),2400); }
+  // S2 定义式
+  tone(17.2,0.5,440,0.05,'sine'); tone(17.5,0.6,660,0.05,'sine');
+  // S3 行和：九次
+  tone(23.6,0.25,880,0.05,'sine');
+  for(let n=0;n<9;n++) click(24.4+n*0.22,0.030,900);
+  tone(26.4,1.2,440,0.05,'sine');
+  // S4 陈述卡
+  tone(29.0,0.9,330,0.06,'sine'); tone(29.4,0.9,495,0.05,'sine');
+  // S5 λ1
+  tone(33.4,1.6,220,0.05,'sine');
+  for(let n=0;n<7;n++) click(35.0+n*0.16,0.012,1600);
+  tone(37.2,0.8,880,0.045,'sine');
+  // S6 Tr
+  for(let i=0;i<10;i++){ click(42.6+i*0.16,0.016,700); }
+  tone(43.4,1.4,110,0.05,'sine');
+  // S7 Tr2
+  tone(50.4,0.6,660,0.05,'sine'); tone(50.9,0.5,520,0.05,'sine'); tone(51.4,0.5,180,0.06,'sine');
+  // S8 联立
+  tone(56.2,0.4,392,0.05,'sine'); tone(57.4,0.4,392,0.05,'sine');
+  tone(59.8,0.7,294,0.05,'sine'); tone(61.8,0.8,588,0.06,'sine');
+  tone(63.4,1.0,784,0.05,'sine');
+  // S9 谱：十次，按值定音高
+  const pitch={9:880,4:415,1:196};
+  const seq=[9,4,4,4,4,1,1,1,1,1];
+  seq.forEach((v,n)=>{ tone(66.6+n*0.36,0.5,pitch[v],0.042,'sine'); });
+  // S10 扇区
+  tone(77.0,0.5,262,0.05,'sine'); tone(77.6,0.5,349,0.05,'sine'); tone(78.2,0.5,523,0.05,'sine');
+  // S11 比对：四声重合 + 四声失谐
+  for(let i=0;i<4;i++) click(84.4+i*0.30,0.020,1200);
+  for(let i=0;i<4;i++) tone(85.6+i*0.30,0.14,1246,0.034,'sine');
+  tone(87.2,0.8,174,0.05,'sine');
+  // 收
+  tone(89.4,0.5,110,0.04,'sine');
+}
+function noiseBuf(c,sec){
+  const n=c.sampleRate*sec, b=c.createBuffer(1,n,c.sampleRate), d=b.getChannelData(0);
+  let last=0;
+  for(let i=0;i<n;i++){ const w=Math.random()*2-1; last=0.97*last+0.03*w; d[i]=last*4; }
+  return b;
+}
+function buildBuffer(){ return new Promise((res,rej)=>{
+  const c=new OfflineAudioContext(2,DUR*48000,48000);
+  try{ build(c); }catch(e){ return rej(e); }
+  c.startRendering().then(res).catch(rej);
+});}
+
+/* =================== 播放与交互 =================== */
+let CUR=P.has('t')?parseFloat(P.get('t')):0;
+let PLAYING=false, t0=0, ctxStart=0, AC=null, SRC=null, BUF=null, bufReady=null;
+
+function setT(v){ CUR=clD(v); document.getElementById('scrub').value=CUR; hud(); renderAt(CUR); }
+function hud(){
+  document.getElementById('tc').textContent=CUR.toFixed(2)+' s / 90';
+  const s=SHOTS.find(k=>CUR>=k.t0&&CUR<k.t1)||SHOTS[SHOTS.length-1];
+  document.getElementById('lab').textContent=s.n+'　'+s.t0.toFixed(0)+'–'+s.t1.toFixed(0)+' s';
+  document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('on',SHOTS[i]===s));
+}
+
+const chips=document.getElementById('chips');
+SHOTS.forEach((s,i)=>{
+  const b=document.createElement('button');
+  b.className='chip'; b.textContent=String(i)+' · '+s.n;
+  b.onclick=()=>{ stop(); setT(s.t0); };
+  chips.appendChild(b);
+});
+
+document.getElementById('scrub').addEventListener('input',e=>{ stop(); setT(parseFloat(e.target.value)); });
+
+function stop(){
+  PLAYING=false;
+  if(SRC){ try{SRC.stop();}catch(e){} SRC=null; }
+  if(AC){ try{AC.close();}catch(e){} AC=null; }
+}
+async function play(){
+  if(PLAYING) return;
+  if(CUR>=DUR-0.05) CUR=0;
+  if(!bufReady) bufReady=buildBuffer().then(b=>{BUF=b;return b;});
+  const buf=await bufReady;
+  AC=new AudioContext();
+  SRC=AC.createBufferSource(); SRC.buffer=BUF; SRC.connect(AC.destination);
+  const off=CUR;
+  SRC.start(0, off);
+  ctxStart=AC.currentTime; t0=performance.now()-off*1000; PLAYING=true;
+  SRC.onended=()=>{ if(PLAYING){ PLAYING=false; CUR=DUR; setT(DUR);} };
+  const tick=()=>{
+    if(!PLAYING) return;
+    const t=off+(AC.currentTime-ctxStart);
+    if(t>=DUR){ setT(DUR); PLAYING=false; return; }
+    CUR=t; document.getElementById('scrub').value=t; hud(); renderAt(t);
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+document.addEventListener('keydown',e=>{
+  if(e.code==='Space'){ e.preventDefault(); PLAYING?stop():play(); }
+  else if(e.code==='ArrowRight'){ stop(); setT(CUR+(e.shiftKey?1:0.1)); }
+  else if(e.code==='ArrowLeft'){ stop(); setT(CUR-(e.shiftKey?1:0.1)); }
+  else if(e.code==='KeyR'){ stop(); setT(0); }
+});
+
+if(P.has('raw')){
+  document.getElementById('ui').style.display='none';
+  document.querySelector('.hint').style.display='none';
+  cv.style.width='1920px'; cv.style.height='1080px';
+  cv.style.objectFit='fill';
+  document.body.style.background='#030405';
+}
+if(P.has('probe')){
+  const say=(s,col)=>{ cx.save(); cx.fillStyle='#05080B'; cx.fillRect(0,0,1100,70);
+    T(s,20,46,30,col||INK(.9),{}); cx.restore(); };
+  try{
+    const off=new OfflineAudioContext(2,DUR*48000,48000); build(off);
+    say('GRAPH_OK  duration='+DUR+'s  sr=48000  ch=2');
+  }catch(e){ say('GRAPH_FAIL '+e.message,RD(1)); }
+}
+
+window.__renderAt=renderAt;
+setT(CUR);
+</script>
+</body>
+</html>

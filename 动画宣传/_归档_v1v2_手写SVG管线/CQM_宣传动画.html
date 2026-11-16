@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CQM 宣传动画 · 什么才该被量子化</title>
+<style>
+  html,body{margin:0;padding:0;width:1920px;height:1080px;background:#070A12;overflow:hidden}
+  svg{display:block;width:1920px;height:1080px}
+  text{text-rendering:geometricPrecision}
+  #ui{position:fixed;left:0;bottom:0;width:1920px;height:36px;background:rgba(7,10,18,.92);
+      border-top:1px solid #1A2233;font:13px Consolas,monospace;color:#7A869C;display:flex;
+      align-items:center;gap:14px;padding:0 20px;box-sizing:border-box;user-select:none}
+  #ui .bar{flex:1;height:4px;background:#1A2233;position:relative;cursor:pointer}
+  #ui .fill{height:4px;background:#35E0FF;width:0%}
+  #ui .seg{height:4px;position:absolute;top:0;opacity:.55}
+  #ui .hint{white-space:nowrap}
+  #ui b{color:#E8EEF9;font-weight:normal}
+</style>
+</head>
+<body>
+<svg id="stage" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="46%" cy="40%" r="76%">
+      <stop offset="0%" stop-color="#0A0F1A"/>
+      <stop offset="100%" stop-color="#070A12"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <line x1="150" y1="100" x2="1770" y2="100" stroke="#1A2233" stroke-width="1"/>
+  <text id="segLabel" x="150" y="76" font-family="Microsoft YaHei, Noto Sans SC, sans-serif"
+        font-size="20" fill="#7A869C" letter-spacing="0.14em"></text>
+
+  <g id="s1"></g><g id="s2"></g><g id="s3"></g>
+  <g id="s4"></g><g id="s5"></g><g id="s6"></g>
+  <g id="carry"></g>
+  <g id="rail"></g>
+
+  <line x1="150" y1="930" x2="1770" y2="930" stroke="#1A2233" stroke-width="1"/>
+  <text id="capMain" x="150" y="984" font-family="Microsoft YaHei, Noto Sans SC, sans-serif"
+        font-size="33" fill="#E8EEF9" letter-spacing="0.4"></text>
+  <text id="capSub" x="150" y="1022" font-family="Microsoft YaHei, Noto Sans SC, sans-serif"
+        font-size="19" fill="#FFB020" letter-spacing="0.3"></text>
+  <g id="badge"></g>
+  <text id="railLabel" x="60" y="352" font-family="Consolas, monospace" font-size="15"
+        fill="#4A5570" letter-spacing="0.18em">OPS 24</text>
+</svg>
+
+<div id="ui">
+  <span class="hint">空格 <b>播放/暂停</b>　←→ <b>±0.1s</b>　Shift+←→ <b>±1s</b></span>
+  <div class="bar" id="bar"><div class="fill" id="fill"></div></div>
+  <span class="hint" id="clock">0:00.0 / 3:00</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("stage");
+const G=[1,2,3,4,5,6].map(i=>document.getElementById("s"+i));
+const carryG=document.getElementById("carry");
+const railG=document.getElementById("rail");
+const badgeG=document.getElementById("badge");
+const capMain=document.getElementById("capMain"), capSub=document.getElementById("capSub");
+const segLabel=document.getElementById("segLabel");
+const ui=document.getElementById("ui"), fill=document.getElementById("fill"), clockEl=document.getElementById("clock");
+const bar=document.getElementById("bar");
+
+const C={bg:"#070A12",text:"#E8EEF9",dim:"#7A869C",faint:"#2A3448",
+  cyan:"#35E0FF",gold:"#F5C542",amber:"#FFB020",purple:"#B98CFF",white:"#F2F5FA"};
+const MATH="Cambria Math, Times New Roman, serif";
+const MONO="Consolas, monospace";
+const ZH="Microsoft YaHei, Noto Sans SC, sans-serif";
+const SYM="Segoe UI Symbol";
+const TOTAL=180;
+
+const clamp=(x,a,b)=>x<a?a:x>b?b:x;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeOut=t=>1-Math.pow(1-clamp(t,0,1),3);
+const easeIO=t=>{t=clamp(t,0,1);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};
+
+function E(tag,attrs,parent){
+  const e=document.createElementNS(NS,tag);
+  if(attrs)for(const k in attrs)e.setAttribute(k,attrs[k]);
+  if(parent)parent.appendChild(e);
+  return e;
+}
+function T(parent,x,y,size,color,str,opts){
+  opts=opts||{};
+  const t=E("text",{x:x,y:y,"font-size":size,fill:color,
+    "font-family":opts.font||ZH,"font-weight":opts.weight||"normal"},parent);
+  if(opts.anchor)t.setAttribute("text-anchor",opts.anchor);
+  if(opts.opacity!=null)t.setAttribute("opacity",opts.opacity);
+  if(opts.spacing)t.setAttribute("letter-spacing",opts.spacing);
+  t.textContent=str;
+  return t;
+}
+// 公式行：parts = [{t, it, sup, sub, font, color}]
+function FT(parent,x,y,size,color,parts){
+  const t=E("text",{x:x,y:y,"font-size":size,fill:color,"font-family":MATH},parent);
+  parts.forEach(p=>{
+    const s=E("tspan",{},t);
+    if(p.sup){s.setAttribute("baseline-shift","super");s.setAttribute("font-size",(size*0.62).toFixed(1));}
+    if(p.sub){s.setAttribute("baseline-shift","sub");s.setAttribute("font-size",(size*0.62).toFixed(1));}
+    if(p.it)s.setAttribute("font-style","italic");
+    if(p.font)s.setAttribute("font-family",p.font);
+    if(p.color)s.setAttribute("fill",p.color);
+    s.textContent=p.t;
+  });
+  return t;
+}
+function vis(g,t,a,b,fin,out){
+  fin=fin==null?0.25:fin; out=out==null?0.25:out;
+  let o=0;
+  if(t>=a&&t<=b){o=1;if(t<a+fin)o=easeOut((t-a)/fin);if(t>b-out)o=1-easeOut((t-(b-out))/out);}
+  g.setAttribute("opacity",o.toFixed(3));
+  return o;
+}
+function group(parent,x,y,w,h,opts){
+  opts=opts||{};
+  const g=E("g",{},parent);
+  const r=E("rect",{x:x,y:y,width:w,height:h,rx:opts.rx==null?3:opts.rx,
+    fill:opts.fill||"none","fill-opacity":opts.fillOp||"1",
+    stroke:opts.stroke||C.faint,"stroke-width":opts.sw||1.2,
+    "stroke-dasharray":opts.dash||"none"},g);
+  g._rect=r;
+  return g;
+}
+function smallLabel(parent,x,y,str,color){return T(parent,x,y,17,color||C.dim,str,{font:ZH,spacing:"0.1em"});}
+
+/* ============================================================
+   段 1 · 0–26 s  反演：什么才该被量子化
+   ============================================================ */
+const S1=(function(){
+  const p=G[0];
+  const grid=E("g",{},p),strike=E("g",{},p),axis=E("g",{},p);
+  // 时空网格
+  for(let i=0;i<=16;i++)E("line",{x1:270+i*84,y1:370,x2:270+i*84,y2:820,stroke:C.cyan,"stroke-opacity":".075","stroke-width":"1"},grid);
+  for(let j=0;j<=8;j++)E("line",{x1:270,y1:370+j*56.25,x2:1614,y2:370+j*56.25,stroke:C.cyan,"stroke-opacity":".075","stroke-width":"1"},grid);
+  E("line",{x1:270,y1:838,x2:1614,y2:838,stroke:C.cyan,"stroke-opacity":".26","stroke-width":"1"},grid);
+  E("line",{x1:270,y1:838,x2:270,y2:370,stroke:C.cyan,"stroke-opacity":".26","stroke-width":"1"},grid);
+  T(grid,1632,850,20,C.dim,"x",{font:MONO});T(grid,242,362,20,C.dim,"t",{font:MONO});
+  T(grid,1050,560,22,C.dim,"事件",{font:ZH});
+  E("circle",{cx:1030,cy:568,r:5,fill:C.white},grid);
+  // 划掉
+  const a=E("line",{x1:280,y1:380,x2:1600,y2:820,stroke:C.amber,"stroke-opacity":".72","stroke-width":"4.5"},strike);
+  const b=E("line",{x1:280,y1:820,x2:1600,y2:380,stroke:C.white,"stroke-opacity":".34","stroke-width":"3.5"},strike);
+  const la=a.getTotalLength(),lb=b.getTotalLength();
+  a.setAttribute("stroke-dasharray",la);a.setAttribute("stroke-dashoffset",la);
+  b.setAttribute("stroke-dasharray",lb);b.setAttribute("stroke-dashoffset",lb);
+  // 耦合常数轴
+  const AX={x0:300,x1:1620,y:690,u0:960,du:270};
+  const ln=E("line",{x1:AX.x0,y1:AX.y,x2:AX.x1,y2:AX.y,stroke:C.gold,"stroke-opacity":".5","stroke-width":"1.6"},axis);
+  const LL=ln.getTotalLength();ln.setAttribute("stroke-dasharray",LL);ln.setAttribute("stroke-dashoffset",LL);
+  T(axis,310,646,25,C.gold,"u = ln r",{font:MONO});
+  [-2,-1,0,1,2].forEach(u=>{const x=AX.u0+u*AX.du;
+    E("line",{x1:x,y1:AX.y-10,x2:x,y2:AX.y+10,stroke:C.gold,"stroke-opacity":".42","stroke-width":"1"},axis);
+    T(axis,x,732,19,C.dim,String(u),{font:MONO,anchor:"middle"});});
+  const dot=E("circle",{cx:AX.u0,cy:AX.y,r:7,fill:C.gold},axis);
+  T(axis,AX.u0+18,AX.y-16,19,C.gold,"常数",{font:ZH});
+  const band=E("line",{x1:AX.u0,y1:AX.y,x2:AX.u0,y2:AX.y,stroke:C.cyan,"stroke-width":"2","stroke-dasharray":"6 7"},axis);
+  T(axis,AX.u0,772,18,C.cyan,"Δu",{font:MONO,anchor:"middle"});
+  // 公式
+  const f1=E("g",{},p),f2=E("g",{},p),f3=E("g",{},p),f4=E("g",{},p);
+  FT(f1,150,210,50,C.white,[{t:"["},{t:"x̂",it:1},{t:", "},{t:"p̂",it:1},{t:"x",sub:1},{t:"] = i"},{t:"ℏ",it:1}]);
+  smallLabel(f1,150,158,"外部标准 · 标准量子力学",C.white);
+  FT(f2,150,210,50,C.gold,[{t:"["},{t:"û",it:1},{t:", "},{t:"p̂",it:1},{t:"u",sub:1},{t:"] = i"}]);
+  smallLabel(f2,150,158,"框架公理 · 耦合空间",C.gold);
+  FT(f3,150,210,50,C.white,[{t:"Δ"},{t:"u"},{t:" · Δ"},{t:"p",it:1},{t:"u",sub:1},{t:" ≥ 1/2"}]);
+  smallLabel(f3,150,158,"标准代数",C.white);
+  const f4a=FT(f4,150,210,48,C.white,[{t:"Δ"},{t:"r"},{t:"/⟨"},{t:"r"},{t:"⟩ · Δ"},{t:"v",it:1},{t:"τ",sub:1},{t:" ≥ "}]);
+  const w4=f4a.getComputedTextLength(),sx=150+w4+16;
+  const slot=group(f4,sx,170,74,56,{stroke:C.amber,dash:"6 5",sw:1.8});
+  const slotQ=T(f4,sx+37,209,30,C.amber,"?",{font:MATH,anchor:"middle"});
+  FT(f4,sx+90,210,48,C.white,[{t:"/2"}]);
+  smallLabel(f4,150,158,"代入  p̂u = v̂τ / ☯",C.cyan);
+  // 右侧演算链：四步逐步点亮，避免钩子段只剩一行公式
+  const chain=E("g",{},p),chainRows=[];
+  smallLabel(chain,1060,370,"演算链 · 每一步都能在原文找到",C.dim);
+  const chainDefs=[
+    {p:[{t:"["},{t:"û",it:1},{t:", "},{t:"p̂",it:1},{t:"u",sub:1},{t:"] = i"}],c:C.gold,s:"框架公理"},
+    {p:[{t:"Δ"},{t:"u"},{t:" · Δ"},{t:"p",it:1},{t:"u",sub:1},{t:" ≥ 1/2"}],c:C.white,s:"标准代数"},
+    {p:[{t:"p̂",it:1},{t:"u",sub:1},{t:" = "},{t:"v̂",it:1},{t:"τ",sub:1},{t:" / "},{t:"☯",font:SYM}],c:C.cyan,s:"代入"},
+    {p:[{t:"Δ"},{t:"r"},{t:"/⟨"},{t:"r"},{t:"⟩ · Δ"},{t:"v",it:1},{t:"τ",sub:1},{t:" ≥ "},{t:"☯",font:SYM},{t:"/2"}],c:C.cyan,s:"待求的数"}
+  ];
+  chainDefs.forEach((r,i)=>{
+    const y=414+i*68;
+    const g=group(chain,1060,y,680,54,{stroke:r.c,sw:1.1,fill:r.c,fillOp:".035"});
+    T(g,1080,y+35,19,r.c,String(i+1).padStart(2,"0"),{font:MONO});
+    FT(g,1130,y+36,25,C.text,r.p);
+    T(g,1718,y+34,16,r.c,r.s,{font:ZH,anchor:"end"});
+    g.setAttribute("opacity","0");chainRows.push(g);
+  });
+  chain.setAttribute("opacity","0");
+  [f1,f2,f3,f4].forEach(g=>g.setAttribute("opacity","0"));
+  grid.setAttribute("opacity","0");strike.setAttribute("opacity","0");axis.setAttribute("opacity","0");
+  return {grid:grid,strike:strike,a:a,b:b,la:la,lb:lb,axis:axis,ln:ln,LL:LL,
+    AX:AX,dot:dot,band:band,f1:f1,f2:f2,f3:f3,f4:f4,slot:slot._rect,slotQ:slotQ,
+    chain:chain,chainRows:chainRows};
+})();
+
+/* ============================================================
+   段 2 · 26–60 s  ☯ 是多少（ξ 五步 + 切线 hero）
+   ============================================================ */
+const S2=(function(){
+  const p=G[1];
+  // 真实数值：Γ（Lanczos）与 ζ（Euler–Maclaurin），用于画 ξ 与数值微分互验
+  const GC=[0.99999999999980993,676.5203681218851,-1259.1392167224028,
+    771.32342877765313,-176.61502916214059,12.507343278686905,
+    -0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+  function gamma(z){if(z<0.5)return Math.PI/(Math.sin(Math.PI*z)*gamma(1-z));
+    z-=1;let x=GC[0];for(let i=1;i<9;i++)x+=GC[i]/(z+i);
+    const t=z+7.5;return Math.sqrt(2*Math.PI)*Math.pow(t,z+0.5)*Math.exp(-t)*x;}
+  function zeta(s){if(Math.abs(s-1)<1e-9)return NaN;
+    const N=24;let sum=0;for(let n=1;n<N;n++)sum+=Math.pow(n,-s);
+    sum+=Math.pow(N,1-s)/(s-1)+0.5*Math.pow(N,-s);
+    sum+=(1/12)*s*Math.pow(N,-s-1);
+    sum+=(-1/720)*s*(s+1)*(s+2)*Math.pow(N,-s-3);
+    sum+=(1/30240)*s*(s+1)*(s+2)*(s+3)*(s+4)*Math.pow(N,-s-5);
+    sum+=(-1/1209600)*s*(s+1)*(s+2)*(s+3)*(s+4)*(s+5)*(s+6)*Math.pow(N,-s-7);
+    return sum;}
+  function xi(s){if(Math.abs(s-1)<1e-7)return 0.5;
+    return 0.5*s*(s-1)*Math.pow(Math.PI,-s/2)*gamma(s/2)*zeta(s);}
+  const PSI=0.023095708966;
+  const LN1=Math.log(xi(1));
+  const NUM=(Math.log(xi(1+1e-4))-Math.log(xi(1-1e-4)))/(2e-4);
+  const DIFF=Math.abs(NUM-PSI);
+  window.__checks={xi_num:NUM,xi_analytic:PSI,xi_diff:DIFF};
+  // 公式组
+  const F={};
+  ["a","b","c","d","e","f"].forEach(k=>{F[k]=E("g",{},p);F[k].setAttribute("opacity","0");});
+  FT(F.a,150,210,44,C.white,[{t:"ξ("},{t:"s",it:1},{t:") = ½ "},{t:"s",it:1},{t:"("},{t:"s",it:1},{t:"−1) "},
+    {t:"π",it:1},{t:"−s/2",sup:1},{t:" Γ("},{t:"s",it:1},{t:"/2) "},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+  smallLabel(F.a,150,158,"定义式锚点 · ξ 函数",C.gold);
+  FT(F.b,150,196,38,C.white,[{t:"ln ξ("},{t:"s",it:1},{t:") = ln ½ + ln "},{t:"s",it:1},{t:" + ln("},{t:"s",it:1},{t:"−1)"}]);
+  FT(F.b,200,250,38,C.white,[{t:"− ("},{t:"s",it:1},{t:"/2) ln "},{t:"π",it:1},{t:" + ln Γ("},{t:"s",it:1},{t:"/2) + ln "},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+  smallLabel(F.b,150,158,"取对数 · 六项拆开",C.cyan);
+  FT(F.c,150,196,36,C.white,[{t:"ξ′("},{t:"s",it:1},{t:")/ξ("},{t:"s",it:1},{t:") = 1/"},{t:"s",it:1},{t:" + 1/("},{t:"s",it:1},{t:"−1) − ½ ln "},{t:"π",it:1}]);
+  FT(F.c,200,248,36,C.white,[{t:"+ ½ ψ("},{t:"s",it:1},{t:"/2) + "},{t:"ζ",it:1},{t:"′("},{t:"s",it:1},{t:")/"},{t:"ζ",it:1},{t:"("},{t:"s",it:1},{t:")"}]);
+  smallLabel(F.c,150,158,"逐项求导",C.cyan);
+  FT(F.d,150,196,34,C.white,[{t:"ζ′/ζ("},{t:"s",it:1},{t:") = "},{t:"−1/(s−1)",color:C.amber},{t:" + "},{t:"γ",it:1,color:C.cyan},{t:" + O("},{t:"s",it:1},{t:"−1)"}]);
+  const d2=FT(F.d,150,250,34,C.white,[{t:"1/(s−1)",color:C.amber},{t:" + ζ′/ζ("},{t:"s",it:1},{t:") = "},{t:"γ",it:1,color:C.cyan},{t:" + O("},{t:"s",it:1},{t:"−1)"}]);
+  smallLabel(F.d,150,158,"s → 1 · 极点项相消",C.cyan);
+  FT(F.e,150,210,42,C.white,[{t:"ψ(1/2) = −"},{t:"γ",it:1},{t:" − 2 ln 2"}]);
+  smallLabel(F.e,150,158,"代入",C.cyan);
+  const fa=FT(F.f,150,210,48,C.gold,[{t:"☯",font:SYM},{t:" = 1 + "},{t:"γ",it:1},{t:"/2 − ln(2√"},{t:"π",it:1},{t:") = "}]);
+  const fw=fa.getComputedTextLength();
+  const box=group(F.f,150+fw+4,166,360,60,{stroke:C.cyan,sw:1.4,fill:C.cyan,fillOp:".07"});
+  T(F.f,150+fw+22,208,40,C.cyan,"0.023095708966",{font:MONO});
+  smallLabel(F.f,150,158,"闭式落定",C.cyan);
+  // ξ 曲线
+  const plot=E("g",{},p);
+  const PX0=360,PX1=1240,PY0=430,PY1=830,VMIN=-0.702,VMAX=-0.640;
+  const sx=s=>PX0+(s-1)*(PX1-PX0);
+  const vy=v=>PY1-(v-VMIN)/(VMAX-VMIN)*(PY1-PY0);
+  E("line",{x1:PX0,y1:PY1,x2:PX1,y2:PY1,stroke:C.faint,"stroke-width":"1"},plot);
+  E("line",{x1:PX0,y1:PY0,x2:PX0,y2:PY1,stroke:C.faint,"stroke-width":"1"},plot);
+  for(let s=1;s<=2.001;s+=0.2){const x=sx(s);
+    E("line",{x1:x,y1:PY1,x2:x,y2:PY1+8,stroke:C.faint,"stroke-width":"1"},plot);
+    T(plot,x,PY1+30,17,C.dim,s.toFixed(1),{font:MONO,anchor:"middle"});}
+  [-0.69,-0.67,-0.65].forEach(v=>{const y=vy(v);
+    E("line",{x1:PX0-8,y1:y,x2:PX0,y2:y,stroke:C.faint,"stroke-width":"1"},plot);
+    T(plot,PX0-14,y+6,16,C.dim,v.toFixed(2),{font:MONO,anchor:"end"});});
+  T(plot,PX1+22,PY1+50,19,C.dim,"s",{font:MONO});
+  T(plot,PX0-14,PY0-16,19,C.dim,"ln ξ(s)",{font:MONO,anchor:"end"});
+  let d="";for(let i=0;i<=240;i++){const s=1+i/240,v=Math.log(xi(s));
+    if(!isFinite(v))continue;d+=(i===0?"M ":" L ")+sx(s).toFixed(2)+" "+vy(v).toFixed(2);}
+  const curve=E("path",{d:d,fill:"none",stroke:C.cyan,"stroke-width":"2.2","stroke-linecap":"round"},plot);
+  const CL=curve.getTotalLength();curve.setAttribute("stroke-dasharray",CL);curve.setAttribute("stroke-dashoffset",CL);
+  const pts=[];for(let i=0;i<=80;i++){const s=1+i/80;pts.push(sx(s).toFixed(1)+","+vy(LN1+PSI*(s-1)).toFixed(1));}
+  const tan=E("polyline",{points:pts.join(" "),fill:"none",stroke:C.gold,"stroke-width":"2"},plot);
+  const TL=tan.getTotalLength();tan.setAttribute("stroke-dasharray",TL);tan.setAttribute("stroke-dashoffset",TL);
+  const tri=E("g",{},plot);
+  const tx1=sx(1),tx2=sx(2),ty1=vy(LN1),ty2=vy(LN1+PSI);
+  E("line",{x1:tx1,y1:ty1,x2:tx2,y2:ty1,stroke:C.gold,"stroke-opacity":".52","stroke-dasharray":"5 5","stroke-width":"1.4"},tri);
+  E("line",{x1:tx2,y1:ty1,x2:tx2,y2:ty2,stroke:C.gold,"stroke-width":"1.6"},tri);
+  T(tri,(tx1+tx2)/2,ty1+28,17,C.gold,"run = 1.0",{font:MONO,anchor:"middle"});
+  T(tri,tx2+12,(ty1+ty2)/2+6,17,C.gold,"rise = 0.0231",{font:MONO});
+  const chk=E("g",{},plot);
+  T(chk,1320,470,18,C.dim,"数值微分",{font:MONO});
+  T(chk,1320,500,19,C.text,NUM.toFixed(12),{font:MONO});
+  T(chk,1320,548,18,C.dim,"解析值",{font:MONO});
+  T(chk,1320,578,19,C.text,"0.023095708966",{font:MONO});
+  T(chk,1320,626,19,C.cyan,"差 = "+DIFF.toExponential(1),{font:MONO});
+  smallLabel(chk,1320,430,"切线斜率 = 相变量子",C.gold);
+  plot.setAttribute("opacity","0");
+  F.f._box=box._rect;
+  return {F:F,d2:d2,plot:plot,curve:curve,CL:CL,tan:tan,TL:TL,tri:tri,chk:chk,NUM:NUM,DIFF:DIFF};
+})();
+
+/* ============================================================
+   段 3 · 60–96 s  常数是坐标（七因子乘积 · 琥珀）
+   ============================================================ */
+const S3=(function(){
+  const p=G[2];
+  const vals=[
+    {n:"☯",v:"0.02309570897",s:"ξ 对数导数"},
+    {n:"𝔠₁",v:"200.04045483",s:"¼ + γ₁²"},
+    {n:"λc",v:"1.316022911",s:"Mathieu 临界"},
+    {n:"I",v:"5/3",s:"Dynkin 指数比"},
+    {n:"κ",v:"1.034103190",s:"(31+☯)/30"},
+    {n:"mp",v:"0.9382720882",s:"质子质量 · 实验输入"},
+    {n:"ℏc",v:"换算因子",s:"恢复量纲"}
+  ];
+  const slots=E("g",{},p),cells=[];
+  vals.forEach((v,i)=>{
+    const x=160+i*226,w=206;
+    const g=group(slots,x,410,w,116,{stroke:i===5?C.amber:C.faint,sw:i===5?1.8:1.1});
+    T(g,x+14,448,22,i===5?C.amber:C.gold,v.n,{font:MATH});
+    T(g,x+14,486,23,C.text,v.v,{font:MONO});
+    T(g,x+14,514,15,C.dim,v.s,{font:ZH});
+    if(i===5)T(g,x+14,388,15,C.amber,"唯一实验输入",{font:ZH});
+    g.setAttribute("opacity","0");cells.push(g);
+  });
+  smallLabel(slots,160,370,"七个位置 · 六个组合-谱不变量 ＋ 一个实验输入",C.dim);
+  // 乘积式三块
+  const prod=E("g",{},p);
+  const a=FT(prod,160,620,34,C.white,[{t:"I · λ"},{t:"c",sub:1},{t:" · ☯² · 𝔠₁ / "},{t:"m",it:1},{t:"p",sub:1},{t:"²"}]);
+  const aw=a.getComputedTextLength();
+  T(prod,160+aw+30,620,32,C.cyan,"= 2.658490028 × 10",{font:MONO});
+  const aw2=prod.lastChild.getComputedTextLength();
+  T(prod,160+aw+30+aw2-2,606,20,C.cyan,"−1",{font:MONO});
+  const b=FT(prod,160,682,34,C.white,[{t:"exp(−2/☯) = exp(−86.596)"}]);
+  T(prod,1020,682,32,C.cyan,"= 2.464677412 × 10",{font:MONO});
+  T(prod,1020,666,20,C.cyan,"−38",{font:MONO});
+  const c=FT(prod,160,744,34,C.white,[{t:"(1 + "},{t:"κ",it:1},{t:"☯) = 1.023883346"}]);
+  // 量级塌缩
+  const fall=E("g",{},p);
+  E("line",{x1:1400,y1:390,x2:1400,y2:800,stroke:C.faint,"stroke-width":"1"},fall);
+  T(fall,1420,406,18,C.dim,"10⁰",{font:MONO});
+  const fallDot=E("circle",{cx:1400,cy:400,r:7,fill:C.cyan},fall);
+  T(fall,1420,800,18,C.cyan,"10⁻³⁸",{font:MONO});
+  smallLabel(fall,1300,352,"量级塌缩",C.cyan);
+  // 结果框
+  const res=group(p,160,762,900,84,{stroke:C.cyan,sw:1.6,fill:C.cyan,fillOp:".06"});
+  FT(res,182,818,36,C.gold,[{t:"G",it:1},{t:"N",sub:1},{t:" = "}]);
+  const rt=T(res,270,818,34,C.cyan,"6.708811657 × 10",{font:MONO});
+  const rw=rt.getComputedTextLength();
+  T(res,270+rw+2,802,21,C.cyan,"−39",{font:MONO});
+  T(res,270+rw+44,818,27,C.dim,"GeV⁻²",{font:MONO});
+  // 比对条
+  const cmp=E("g",{},p);
+  smallLabel(cmp,1120,410,"与实验值逐位比对",C.dim);
+  T(cmp,1120,462,26,C.cyan,"6.708811657",{font:MONO});
+  T(cmp,1120,504,26,C.white,"6.708832159",{font:MONO});
+  T(cmp,1120,548,20,C.dim,"比值 0.9999969439",{font:MONO});
+  const ppm=group(cmp,1120,580,360,70,{stroke:C.amber,dash:"6 5",sw:1.6});
+  T(ppm,1140,626,28,C.amber,"偏差 −3 ppm",{font:MONO});
+  T(cmp,1120,690,20,C.amber,"乘积结构为框架内构造",{font:ZH});
+  // SI
+  const si=E("g",{},p);
+  smallLabel(si,1120,740,"乘以 ℏc 恢复 SI 单位",C.dim);
+  T(si,1120,786,25,C.text,"6.6742810045 × 10⁻¹¹ m³kg⁻¹s⁻²",{font:MONO});
+  // 空框（开场）
+  const empty=group(p,160,762,900,84,{stroke:C.amber,dash:"8 6",sw:1.6});
+  FT(empty,182,818,36,C.dim,[{t:"G",it:1},{t:"N",sub:1},{t:" = ?"}]);
+  smallLabel(empty,160,744,"乘积结构：框架内构造，无统一变分原理",C.amber);
+  return {cells:cells,slots:slots,prod:prod,fall:fall,fallDot:fallDot,
+    res:res,cmp:cmp,si:si,empty:empty};
+})();
+
+/* ============================================================
+   段 4 · 96–128 s  一张谱定三种耦合（矩阵长谱 hero）
+   ============================================================ */
+const S4=(function(){
+  const p=G[3];
+  const M=[
+    [3,1,1,1,1,0,1,1,0,0],[1,3,1,1,0,1,1,0,1,0],[1,1,3,0,1,1,0,1,1,0],
+    [1,1,0,3,1,1,1,0,0,1],[1,0,1,1,3,1,0,1,0,1],[0,1,1,1,1,3,0,0,1,1],
+    [1,1,0,1,0,0,3,1,1,1],[1,0,1,0,1,0,1,3,1,1],[0,1,1,0,0,1,1,1,3,1],
+    [0,0,0,1,1,1,1,1,1,3]];
+  const mat=E("g",{},p),cells=[];
+  const MX=170,MY=380,CS=34;
+  for(let i=0;i<10;i++)for(let j=0;j<10;j++){
+    const x=MX+j*CS,y=MY+i*CS;
+    E("rect",{x:x,y:y,width:CS-2,height:CS-2,rx:1,fill:"#0E1522",stroke:C.faint,"stroke-width":".7"},mat);
+    const t=T(mat,x+(CS-2)/2,y+CS-9,17,M[i][j]===3?C.gold:(M[i][j]===1?C.text:C.dim),
+      String(M[i][j]),{font:MONO,anchor:"middle",opacity:"0"});
+    cells.push(t);
+  }
+  smallLabel(mat,MX,352,"M = EᵀE  ·  10 × 10  ·  元素只取 0 / 1 / 3",C.cyan);
+  const rowSum=E("g",{},mat);
+  T(rowSum,MX+10*CS+26,MY+18,20,C.cyan,"行和 = 9",{font:MONO});
+  // 单纯形骨架（右上角，作几何来源提示）
+  const sk=E("g",{},p);
+  const cxp=1480,cyp=560,R=128,verts=[];
+  for(let i=0;i<5;i++){const a=-Math.PI/2+i*2*Math.PI/5;
+    verts.push([cxp+R*Math.cos(a),cyp+R*Math.sin(a)]);}
+  for(let i=0;i<5;i++)for(let j=i+1;j<5;j++)
+    E("line",{x1:verts[i][0],y1:verts[i][1],x2:verts[j][0],y2:verts[j][1],
+      stroke:C.cyan,"stroke-opacity":".26","stroke-width":"1.2"},sk);
+  verts.forEach(v=>E("circle",{cx:v[0],cy:v[1],r:4.5,fill:C.gold},sk));
+  T(sk,cxp,720,17,C.dim,"5 顶点 · 10 边 · 10 三角形",{font:ZH,anchor:"middle"});
+  // 陈述卡 / 迹条件 / 联立
+  const schur=group(p,1100,380,660,62,{stroke:C.white,sw:1.2});
+  T(schur,1120,422,26,C.white,"10 = 1 ⊕ 4 ⊕ 5",{font:MONO});
+  T(schur,1120,462,17,C.dim,"Schur 引理 · 外部标准表示论",{font:ZH});
+  const tr=E("g",{},p);
+  FT(tr,1100,540,30,C.white,[{t:"Tr "},{t:"M",it:1},{t:" = 30"}]);
+  FT(tr,1100,586,30,C.white,[{t:"Tr "},{t:"M",it:1},{t:"² = 150"}]);
+  smallLabel(tr,1100,506,"计数 · 10 × 3 / 度数计数",C.cyan);
+  const eqs=E("g",{},p);
+  FT(eqs,1100,540,28,C.white,[{t:"9 + 4"},{t:"λ",it:1},{t:"₄ + 5"},{t:"λ",it:1},{t:"₅ = 30"}]);
+  FT(eqs,1100,586,28,C.white,[{t:"81 + 4"},{t:"λ",it:1},{t:"₄² + 5"},{t:"λ",it:1},{t:"₅² = 150"}]);
+  smallLabel(eqs,1100,506,"联立求根",C.cyan);
+  // 谱轴（三条谱带，平行线数＝重数）
+  const spec=E("g",{},p);
+  E("line",{x1:170,y1:800,x2:840,y2:800,stroke:C.faint,"stroke-width":"1"},spec);
+  E("line",{x1:170,y1:800,x2:170,y2:390,stroke:C.faint,"stroke-width":"1"},spec);
+  T(spec,170,836,17,C.dim,"谱轴 σ(M)",{font:MONO});
+  const bands=[{v:9,mult:1,x:300,c:C.gold,label:"9  → SU(3)"},
+               {v:4,mult:4,x:490,c:C.cyan,label:"4  → SU(2)"},
+               {v:1,mult:5,x:680,c:C.purple,label:"1  → U(1)"}];
+  const bandEls=[];
+  bands.forEach(bd=>{
+    const g=E("g",{},spec);
+    const h=bd.v/9*330;
+    for(let k=0;k<bd.mult;k++){
+      const ln=E("line",{x1:bd.x+k*9,y1:800,x2:bd.x+k*9,y2:800-h,
+        stroke:bd.c,"stroke-width":"3","stroke-linecap":"round"},g);
+      const L=ln.getTotalLength();ln.setAttribute("stroke-dasharray",L);ln.setAttribute("stroke-dashoffset",L);
+      g._lines=g._lines||[];g._lines.push({el:ln,L:L});
+    }
+    T(g,bd.x-14,800-h-18,20,bd.c,String(bd.v),{font:MONO});
+    T(g,bd.x-30,862,16,C.dim,bd.label,{font:MONO});
+    g.setAttribute("opacity","0");bandEls.push(g);
+  });
+  const roots=E("g",{},p);
+  const rb=group(roots,1090,640,660,76,{stroke:C.cyan,sw:1.6,fill:C.cyan,fillOp:".07"});
+  FT(rb,1110,690,32,C.cyan,[{t:"σ("},{t:"M",it:1},{t:") = {9⁽¹⁾, 4⁽⁴⁾, 1⁽⁵⁾}"}]);
+  smallLabel(roots,1090,620,"精确解 · 重数 1 + 4 + 5 = 10",C.cyan);
+  // α 并排（待推，不得演成从谱导出）
+  const alpha=group(p,1090,742,660,112,{stroke:C.amber,dash:"7 6",sw:1.6,fill:C.amber,fillOp:".05"});
+  T(alpha,1110,780,22,C.amber,"待推 · 从谱到 π 因子的那一步没有推导",{font:ZH});
+  T(alpha,1110,818,21,C.text,"16384π/375 = 137.2583",{font:MONO});
+  T(alpha,1110,846,19,C.dim,"实验 137.035999 · 差 0.162%",{font:MONO});
+  return {mat:mat,cells:cells,rowSum:rowSum,sk:sk,schur:schur,tr:tr,eqs:eqs,
+    spec:spec,bandEls:bandEls,roots:roots,alpha:alpha};
+})();
+
+/* ============================================================
+   段 5 · 128–156 s  时间与引力（角亏的钟 hero）
+   ============================================================ */
+const S5=(function(){
+  const p=G[4];
+  const f={};
+  ["a","b","c","d"].forEach(k=>{f[k]=E("g",{},p);f[k].setAttribute("opacity","0");});
+  FT(f.a,150,210,38,C.white,[{t:"L",it:1},{t:"ab",sub:1},{t:"² = "},{t:"L",it:1},{t:"va",sub:1},{t:"² + "},{t:"L",it:1},{t:"vb",sub:1},
+    {t:"² − 2"},{t:"L",it:1},{t:"va",sub:1},{t:"L",it:1},{t:"vb",sub:1},{t:" cos "},{t:"θ",it:1},{t:"v",sub:1}]);
+  smallLabel(f.a,150,158,"余弦定律 · 外部标准",C.white);
+  FT(f.b,150,210,38,C.white,[{t:"θ",it:1},{t:"v",sub:1},{t:" = arccos("},{t:")"}]);
+  T(f.b,410,210,26,C.dim,"(Lva² + Lvb² − Lab²) / 2LvaLvb",{font:MONO});
+  smallLabel(f.b,150,158,"反解",C.cyan);
+  FT(f.c,150,210,44,C.white,[{t:"δ",it:1},{t:"v",sub:1},{t:" = 2"},{t:"π",it:1},{t:" − Σ "},{t:"θ",it:1},{t:"v",sub:1},{t:"(Δ)"}]);
+  smallLabel(f.c,150,158,"对 6 个三角形求和",C.cyan);
+  // 顶点与六个三角形
+  const geo=E("g",{},p);
+  const vx=620,vy=600,R=180;
+  const wedges=E("g",{},geo),wedgeLabels=[];
+  for(let i=0;i<6;i++){
+    const a0=-Math.PI/2+i*Math.PI/3, a1=a0+Math.PI/3;
+    const g=E("path",{d:`M ${vx} ${vy} L ${vx+R*Math.cos(a0)} ${vy+R*Math.sin(a0)} A ${R} ${R} 0 0 1 ${vx+R*Math.cos(a1)} ${vy+R*Math.sin(a1)} Z`,
+      fill:C.cyan,"fill-opacity":".045",stroke:C.cyan,"stroke-opacity":".32","stroke-width":"1.2"},wedges);
+    const lt=T(wedges,vx+125*Math.cos(a0+Math.PI/6),vy+125*Math.sin(a0+Math.PI/6),16,C.dim,"π/3",
+      {font:MATH,anchor:"middle",opacity:"0"});
+    wedgeLabels.push(lt);
+  }
+  E("circle",{cx:vx,cy:vy,r:6,fill:C.gold},geo);
+  T(geo,vx,380,18,C.dim,"理想正 4-单纯形：6 × π/3 = 2π  ⇒  δv = 0",{font:MATH,anchor:"middle"});
+  const gapArc=E("path",{d:`M ${vx} ${vy} L ${vx+R*Math.cos(-Math.PI/2)} ${vy+R*Math.sin(-Math.PI/2)} A ${R} ${R} 0 0 1 ${vx+R*Math.cos(-Math.PI/2+0.02*Math.PI)} ${vy+R*Math.sin(-Math.PI/2+0.02*Math.PI)} Z`,
+    fill:C.amber,"fill-opacity":".5",stroke:C.amber,"stroke-width":"1.5"},geo);
+  gapArc.setAttribute("opacity","0");
+  T(geo,vx+40,460,19,C.amber,"δv > 0",{font:MATH,opacity:"0"}).setAttribute("id","gapLabel");
+  const gapLabel=geo.lastChild;
+  smallLabel(geo,150,860,"示意形变：Σθv = 1.98π ⇒ δv = 0.02π（示意值，不是理论预言）",C.amber);
+  // 琥珀虚框：FG 因果假设
+  const hyp=group(p,1080,150,700,140,{stroke:C.amber,dash:"7 6",sw:1.8,fill:C.amber,fillOp:".06"});
+  FT(hyp,1100,210,38,C.white,[{t:"d"},{t:"τ",it:1},{t:"/"},{t:"dt",it:1},{t:" = √(1 − "},{t:"β",it:1},{t:"δ",it:1},{t:"v",sub:1},{t:")"}]);
+  T(hyp,1100,246,19,C.amber,"FG 的因果假设 · 无推导 · β 的微观来源属待推",{font:ZH});
+  T(hyp,1100,276,17,C.dim,"GR 弱场对照：dτ/dt ≈ 1 + Φ/c²（外部标准）",{font:ZH});
+  // 钟
+  const clk=E("g",{},p);
+  const cx=1420,cy=690,cr=132;
+  E("circle",{cx:cx,cy:cy,r:cr,fill:"none",stroke:C.faint,"stroke-width":"1.5"},clk);
+  for(let i=0;i<12;i++){const a=-Math.PI/2+i*Math.PI/6;
+    E("line",{x1:cx+(cr-14)*Math.cos(a),y1:cy+(cr-14)*Math.sin(a),
+      x2:cx+cr*Math.cos(a),y2:cy+cr*Math.sin(a),stroke:C.dim,"stroke-width":"1.4"},clk);}
+  const hand=E("line",{x1:cx,y1:cy,x2:cx,y2:cy-cr+34,stroke:C.gold,"stroke-width":"2.6","stroke-linecap":"round"},clk);
+  const t1=E("line",{x1:cx-16,y1:cy-30,x2:cx+16,y2:cy-30,stroke:C.cyan,"stroke-width":"1.6"},clk);
+  T(clk,cx,cy+cr+40,19,C.dim,"间隔 1.000 s → 1.020 s（β 取示意值）",{font:MONO,anchor:"middle"});
+  smallLabel(clk,1080,560,"同一枚钟 · 锁定次数变少",C.gold);
+  return {f:f,geo:geo,wedges:wedges,wedgeLabels:wedgeLabels,gapArc:gapArc,gapLabel:gapLabel,
+    hyp:hyp,clk:clk,hand:hand,cx:cx,cy:cy,cr:cr};
+})();
+
+/* ============================================================
+   段 6 · 156–180 s  下潜与边界
+   ============================================================ */
+const S6=(function(){
+  const p=G[5];
+  // 四层叠片
+  const layers=E("g",{},p),layerEls=[];
+  ["电子 FG","元素 FG","分子 FG","晶胞 FG"].forEach((s,i)=>{
+    const y=380+i*66;
+    const g=E("g",{},layers);
+    E("path",{d:`M 170 ${y} L 600 ${y} L 640 ${y+34} L 210 ${y+34} Z`,
+      fill:C.cyan,"fill-opacity":".045",stroke:C.cyan,"stroke-opacity":".4","stroke-width":"1.2"},g);
+    T(g,190,y+25,19,C.text,s,{font:ZH});
+    g.setAttribute("opacity","0");layerEls.push(g);
+  });
+  smallLabel(layers,170,352,"同一套链往下走一层",C.cyan);
+  // 设定虚框
+  const setg=group(p,170,660,660,96,{stroke:C.amber,dash:"7 6",sw:1.8,fill:C.amber,fillOp:".06"});
+  FT(setg,190,706,30,C.white,[{t:"λ",it:1},{t:"n",sub:1},{t:"(T) = "},{t:"γ",it:1},{t:"n",sub:1},{t:" − "},{t:"V",it:1},{t:"(n, T)"}]);
+  T(setg,190,740,18,C.amber,"V 的形式：框架设定 · 无推导",{font:ZH});
+  T(setg,600,690,16,C.amber,"设定",{font:ZH});
+  // 交叉曲线
+  const cross=E("g",{},p);
+  const X0=940,X1=1700,Y0=410,Y1=780,u=x=>X0+x*(X1-X0),v=y=>Y1-y*(Y1-Y0);
+  E("line",{x1:X0,y1:Y1,x2:X1,y2:Y1,stroke:C.faint,"stroke-width":"1"},cross);
+  E("line",{x1:X0,y1:Y0,x2:X0,y2:Y1,stroke:C.faint,"stroke-width":"1"},cross);
+  T(cross,X1+10,Y1+30,17,C.dim,"T",{font:MATH});
+  T(cross,X0-30,Y0-12,17,C.dim,"λn",{font:MATH});
+  const tc=0.70/1.02, yc=0.86-0.62*tc;
+  const l1=E("line",{x1:u(0),y1:v(0.86),x2:u(1),y2:v(0.86-0.62),stroke:C.cyan,"stroke-width":"2.4"},cross);
+  const l2=E("line",{x1:u(0),y1:v(0.16),x2:u(1),y2:v(0.16+0.40),stroke:C.gold,"stroke-width":"2.4"},cross);
+  [l1,l2].forEach(l=>{const L=l.getTotalLength();l.setAttribute("stroke-dasharray",L);l.setAttribute("stroke-dashoffset",L);});
+  const vl=E("line",{x1:u(tc),y1:Y1,x2:u(tc),y2:v(yc),stroke:C.white,"stroke-dasharray":"5 5","stroke-width":"1.3"},cross);
+  const dot=E("circle",{cx:u(tc),cy:v(yc),r:7,fill:C.white},cross);
+  T(cross,u(tc),Y1+30,18,C.white,"Tc",{font:MATH,anchor:"middle"});
+  smallLabel(cross,X0,370,"本征值交叉 · 机制形状，不是材料承诺",C.cyan);
+  const tcF=group(p,940,806,760,62,{stroke:C.cyan,sw:1.3});
+  FT(tcF,960,848,29,C.cyan,[{t:"T",it:1},{t:"c",sub:1},{t:" = "},{t:"θ",it:1},{t:"D",sub:1},{t:" / (2 arccoth "},{t:"x",it:1},{t:") · "},{t:"x",it:1},{t:" > 1"}]);
+  // 边界计数
+  const bound=E("g",{},p);
+  smallLabel(bound,170,352,"边界 · 能算到这里，不等于已经证完",C.amber);
+  const nums=[["74","模块"],["1439","声明"],["857","theorem"],["15","axiom"]];
+  nums.forEach((n,i)=>{
+    const x=170+i*180;
+    const g=group(bound,x,410,158,96,{stroke:C.faint,sw:1.1});
+    T(g,x+79,462,30,C.cyan,n[0],{font:MONO,anchor:"middle"});
+    T(g,x+79,492,17,C.dim,n[1],{font:ZH,anchor:"middle"});
+  });
+  T(bound,170,556,19,C.dim,"缺口编号：C · G2–G8 · G9–G22 · N1–N4 · H3.1–H3.3",{font:MONO});
+  const neq=group(bound,170,586,700,64,{stroke:C.amber,dash:"7 6",sw:1.7,fill:C.amber,fillOp:".05"});
+  T(neq,192,630,25,C.amber,"编译通过数  ≠  缺口闭合数",{font:ZH});
+  const finalG=E("g",{},p);
+  T(finalG,960,700,52,C.text,"能算到这里，不等于已经证完。",{font:ZH,anchor:"middle"});
+  T(finalG,960,752,20,C.dim,"框架内构造 · 待推 · 构造后验数字校验，待独立复现",{font:ZH,anchor:"middle"});
+  // 断边 4-单纯形轮廓（保留断口）
+  const brk=E("g",{},p);
+  const bv=[[1300,430],[1560,430],[1640,600],[1440,710],[1240,600]];
+  for(let i=0;i<5;i++){
+    if(i===2)continue;
+    const a=bv[i],b=bv[(i+1)%5];
+    if(i===1||i===3)continue;
+    E("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:C.amber,"stroke-opacity":".55","stroke-width":"1.6"},brk);
+  }
+  E("line",{x1:bv[1][0],y1:bv[1][1],x2:bv[2][0]-26,y2:bv[2][1]-18,stroke:C.amber,"stroke-opacity":".55","stroke-width":"1.6"},brk);
+  E("line",{x1:bv[3][0],y1:bv[3][1],x2:bv[2][0]-26,y2:bv[2][1]+18,stroke:C.amber,"stroke-opacity":".55","stroke-width":"1.6"},brk);
+  T(brk,1440,760,17,C.amber,"断口保留",{font:ZH,anchor:"middle"});
+  return {layers:layers,layerEls:layerEls,setg:setg,cross:cross,l1:l1,l2:l2,vl:vl,dot:dot,
+    tcF:tcF,bound:bound,finalG:finalG,brk:brk,u:u,tc:tc};
+})();
+
+/* ============ 跨段共享元素：☯ 常驻小标记 ============ */
+const carryBox=group(carryG,1480,44,290,42,{stroke:C.gold,sw:1.1,fill:C.gold,fillOp:".05"});
+T(carryG,1498,72,20,C.gold,"☯ = 0.023095708966",{font:MONO});
+carryG.setAttribute("opacity","0");
+
+/* ============ 演算刻度尺 ============ */
+const RAIL={x:60,y0:400,y1:880,n:24};
+const ticks=[];
+for(let i=0;i<RAIL.n;i++){
+  const y=RAIL.y0+i*(RAIL.y1-RAIL.y0)/(RAIL.n-1);
+  ticks.push(E("rect",{x:RAIL.x,y:y,width:5,height:9,fill:C.faint},railG));
+}
+const OPS=[5.0,9.5,12.5,15.0,21.0,28.0,32.0,36.0,40.0,44.0,48.0,51.0,
+  63.0,70.0,74.0,82.0,85.0,96.0,105.0,112.0,116.0,124.0,138.0,163.0];
+
+/* ============ 字幕 / 徽章 / 段标 ============ */
+const SEGS=[
+  {a:0,b:26,label:"01  反演 · 什么才该被量子化"},
+  {a:26,b:60,label:"02  相变量子 · ξ 的切线"},
+  {a:60,b:96,label:"03  常数是坐标 · 七个位置的乘积"},
+  {a:96,b:128,label:"04  一张谱定三种耦合"},
+  {a:128,b:156,label:"05  时间与引力 · 角亏的钟"},
+  {a:156,b:180,label:"06  下潜与边界"}
+];
+const B={ring:C.gold,tri:C.cyan,broken:C.amber,square:C.white,purple:C.purple};
+const CAPS=[
+  {a:0,b:4.5,m:"标准量子力学：量子化位置与动量。",s:"",g:["square",C.white,"外部标准"]},
+  {a:4.5,b:7,m:"CQM 的判断：该被量子化的不是位置。",s:"",g:["ring",C.gold,"框架公理"]},
+  {a:7,b:9.5,m:"舞台换成耦合常数空间 u = ln r。",s:"",g:["ring",C.gold,"框架公理"]},
+  {a:9.5,b:12.5,m:"在这个空间里，常数是坐标，不是随时间的漂移。",s:"",g:["ring",C.gold,"框架公理"]},
+  {a:12.5,b:15,m:"位置与动量不能同时测准。",s:"",g:["square",C.white,"外部标准"]},
+  {a:15,b:21,m:"把动量换成固有时流速，量子浮现为一个待定的数。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:21,b:26,m:"量子化的对象是耦合常数本身。",s:"",g:["ring",C.gold,"框架公理"]},
+  {a:26,b:28,m:"这个数是多少？",s:"",g:["ring",C.gold,"定义"]},
+  {a:28,b:32,m:"它就是 ξ 的对数导数在 s = 1 的值。",s:"",g:["ring",C.gold,"定义式锚点"]},
+  {a:32,b:36,m:"取对数，把六项拆开。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:36,b:40,m:"逐项求导。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:40,b:44,m:"s → 1 的极点项相消，只剩 γ。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:44,b:48,m:"代入 ψ(1/2) = −γ − 2ln2。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:48,b:51,m:"得到一个纯数：0.023095708966。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:51,b:55.5,m:"把切线画出来，斜率就是它。",s:"",g:["tri",C.cyan,"可复算"]},
+  {a:55.5,b:60,m:"数值微分与解析值一致；充当量子的是这个数，不是 ℏ。",s:"",g:["tri",C.cyan,"可复算"]},
+  {a:60,b:63,m:"七个位置：六个组合-谱不变量，一个实验输入。",s:"乘积结构为框架内构造，无推导",g:["broken",C.amber,"框架内构造"]},
+  {a:63,b:70,m:"逐个给定值，槽位被真正填满。",s:"乘积结构为框架内构造，无推导",g:["broken",C.amber,"框架内构造"]},
+  {a:70,b:74,m:"第一次相乘：无量纲预因子 2.658490028 × 10⁻¹。",s:"乘积结构为框架内构造，无推导",g:["broken",C.amber,"框架内构造"]},
+  {a:74,b:79,m:"exp(−2/☯) 让量级塌到 10⁻³⁸。",s:"乘积结构为框架内构造，无推导",g:["broken",C.amber,"框架内构造"]},
+  {a:79,b:82,m:"再乘修正项 1.023883346。",s:"乘积结构为框架内构造，无推导",g:["broken",C.amber,"框架内构造"]},
+  {a:82,b:85,m:"七个数相乘，得到一个数。",s:"构造后验数字校验，待独立复现",g:["broken",C.amber,"框架内构造"]},
+  {a:85,b:92,m:"与实验值逐位比对，偏差 −3 ppm。",s:"构造后验数字校验，待独立复现",g:["broken",C.amber,"框架内构造"]},
+  {a:92,b:96,m:"Gₙ 像是乘积的结果，不是自由输入；乘积本身是框架内构造。",s:"构造后验数字校验，待独立复现 · 唯一实验输入是 mₚ",g:["broken",C.amber,"框架内构造"]},
+  {a:96,b:100,m:"边—面关联矩阵 M = EᵀE，元素只有 0 / 1 / 3。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:100,b:105,m:"逐行点亮；每一行的和都等于 9。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:105,b:108,m:"Schur 引理给出表示论分解。",s:"",g:["square",C.white,"外部标准"]},
+  {a:108,b:112,m:"两条计数：Tr M = 30，Tr M² = 150。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:112,b:116,m:"联立两个方程，求三个特征值。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:116,b:121,m:"谱是 {9¹, 4⁴, 1⁵}；重数用平行线数读出来。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:121,b:124,m:"三条谱带，对应三种规范群。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:124,b:128,m:"到 π 因子的那一步没有推导：137.2583 与实验并排，标待推。",s:"启发式近似，非从谱导出",g:["broken",C.amber,"待推"]},
+  {a:128,b:131,m:"余弦定律：从边长反解顶点处的角。",s:"",g:["square",C.white,"外部标准"]},
+  {a:131,b:134,m:"对六个三角形求和，定义角亏 δv。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:134,b:138,m:"理想正 4-单纯形：6 × π/3 = 2π，δv = 0。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:138,b:141,m:"拉开一个顶点，围不满的那一块就是角亏。",s:"示意值，不是理论预言",g:["tri",C.cyan,"框架内推导"]},
+  {a:141,b:145,m:"dτ/dt = √(1−βδv) 是 FG 的因果假设，无推导。",s:"假设 · 不是推导；β 微观来源属待推",g:["broken",C.amber,"待推／假设"]},
+  {a:145,b:150,m:"钟的间隔被拉长：1.000 s → 1.020 s。",s:"β 取示意值，微观来源属待推",g:["broken",C.amber,"待推／假设"]},
+  {a:150,b:156,m:"时间不是坐标，是锁定的次数；引力不是力，是角亏。",s:"",g:["purple",C.purple,"哲学诠释"]},
+  {a:156,b:159,m:"同一套链往下走一层：电子／元素／分子／晶胞。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:159,b:163,m:"V 的形式在这里被设定，不是被推导出来。",s:"框架设定 · 无推导",g:["broken",C.amber,"设定"]},
+  {a:163,b:167,m:"两条本征值曲线交叉，交点定义 Tc。",s:"机制形状，不是材料承诺",g:["tri",C.cyan,"框架内推导"]},
+  {a:167,b:170,m:"解出 Tc = θD / (2 arccoth x)，x > 1 给出窗口。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:170,b:174,m:"Lean 证到哪里，缺口还剩哪些。",s:"",g:["tri",C.cyan,"框架内推导"]},
+  {a:174,b:177,m:"编译通过数 ≠ 缺口闭合数。",s:"",g:["broken",C.amber,"缺口"]},
+  {a:177,b:180,m:"所有琥珀标记，都保留着未闭合的断口。",s:"",g:["broken",C.amber,"待推／缺口"]}
+];
+let badgeKey="";
+function setBadge(shape,color,label){
+  const key=shape+"|"+color+"|"+label;
+  if(key===badgeKey)return;badgeKey=key;badgeG.innerHTML="";
+  const x=1782,y=980;
+  if(shape==="ring")E("circle",{cx:x,cy:y,r:10,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  if(shape==="tri")E("path",{d:`M ${x} ${y-11} L ${x+10} ${y+8} L ${x-10} ${y+8} Z`,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  if(shape==="square")E("rect",{x:x-9,y:y-9,width:18,height:18,rx:2,fill:"none",stroke:color,"stroke-width":"1.6"},badgeG);
+  if(shape==="purple")E("circle",{cx:x,cy:y,r:10,fill:"none",stroke:color,"stroke-width":"1.6","stroke-dasharray":"4 3"},badgeG);
+  if(shape==="broken"){
+    E("path",{d:`M ${x+10} ${y} A 10 10 0 1 1 ${x+2} ${y-9.8}`,fill:"none",stroke:color,"stroke-width":"1.7"},badgeG);
+  }
+  T(badgeG,x-20,y+6,19,color,label,{font:ZH,anchor:"end"});
+}
+
+/* ============ 确定性渲染 ============ */
+function segOp(i,t){
+  const s=SEGS[i];
+  if(t<s.a||t>s.b)return 0;
+  let o=1;
+  if(i>0&&t<s.a+0.55)o=easeOut((t-s.a)/0.55);
+  if(t>s.b-0.35)o=Math.min(o,1-easeOut((t-(s.b-0.35))/0.35));
+  return o;
+}
+function renderAt(t){
+  t=clamp(t,0,TOTAL);
+  for(let i=0;i<6;i++)G[i].setAttribute("opacity",segOp(i,t).toFixed(3));
+
+  /* --- 段 1 --- */
+  {
+    const s=S1;
+    const gi=easeOut(clamp(t/1.1,0,1));
+    let g=gi;
+    if(t>4.5)g=Math.max(0.08,0.92*(1-easeOut(clamp((t-4.5)/1.4,0,1))));
+    if(t>7)g=Math.max(0,0.08*(1-easeOut(clamp((t-7)/1.0,0,1))));
+    s.grid.setAttribute("opacity",g.toFixed(3));
+    const sp=clamp((t-4.8)/0.3,0,1);
+    s.strike.setAttribute("opacity",sp>0?String(0.95*(1-clamp((t-6.6)/1.2,0,1))):"0");
+    s.a.setAttribute("stroke-dashoffset",(s.la*(1-easeOut(sp))).toFixed(1));
+    s.b.setAttribute("stroke-dashoffset",(s.lb*(1-easeOut(clamp((t-4.94)/0.3,0,1)))).toFixed(1));
+    const ai=clamp((t-7)/0.9,0,1);
+    s.axis.setAttribute("opacity",ai.toFixed(3));
+    s.ln.setAttribute("stroke-dashoffset",(s.LL*(1-easeOut(ai))).toFixed(1));
+    const dp=clamp((t-7.6)/1.1,0,1);
+    s.dot.setAttribute("cy",lerp(300,s.AX.y,easeOut(dp)).toFixed(2));
+    s.dot.setAttribute("opacity",dp.toFixed(2));
+    const bw=58*easeOut(clamp((t-12.6)/0.7,0,1));
+    s.band.setAttribute("x1",(s.AX.u0-bw).toFixed(1));s.band.setAttribute("x2",(s.AX.u0+bw).toFixed(1));
+    vis(s.f1,t,1.2,4.5);vis(s.f2,t,9.2,12.5);vis(s.f3,t,12.5,15.0);vis(s.f4,t,15.0,26.0);
+    s.chain.setAttribute("opacity",easeOut(clamp((t-9.2)/0.5,0,1)).toFixed(2));
+    [9.5,12.5,15.0,21.0].forEach((a,i)=>s.chainRows[i].setAttribute("opacity",
+      easeOut(clamp((t-a)/0.5,0,1)).toFixed(2)));
+    const qp=t>15.2&&t<16.0?Math.sin((t-15.2)/0.8*Math.PI):0;
+    s.slot.setAttribute("stroke-opacity",(0.55+0.45*qp).toFixed(2));
+    if(t>=21){s.slotQ.textContent="☯";s.slotQ.setAttribute("font-family",SYM);
+      s.slotQ.setAttribute("font-size","26");s.slotQ.setAttribute("fill",C.cyan);}
+    else{s.slotQ.textContent="?";s.slotQ.setAttribute("font-family",MATH);
+      s.slotQ.setAttribute("font-size","30");s.slotQ.setAttribute("fill",C.amber);}
+  }
+  /* --- 段 2 --- */
+  {
+    const s=S2,F=s.F;
+    vis(F.a,t,28.0,32.0);vis(F.b,t,32.0,36.0);vis(F.c,t,36.0,40.0);
+    vis(F.d,t,40.0,44.0);vis(F.e,t,44.0,48.0);vis(F.f,t,48.0,60.0);
+    s.d2.setAttribute("opacity",clamp((t-41.2)/0.4,0,1).toFixed(2));
+    const pi=easeOut(clamp((t-50.6)/0.6,0,1));
+    s.plot.setAttribute("opacity",pi.toFixed(3));
+    const cd=clamp((t-51.0)/3.0,0,1);
+    s.curve.setAttribute("stroke-dashoffset",(s.CL*(1-easeOut(cd))).toFixed(1));
+    const td=clamp((t-52.2)/1.2,0,1);
+    s.tan.setAttribute("opacity",td.toFixed(2));
+    s.tan.setAttribute("stroke-dashoffset",(s.TL*(1-easeOut(td))).toFixed(1));
+    s.tri.setAttribute("opacity",clamp((t-53.0)/0.9,0,1).toFixed(2));
+    s.chk.setAttribute("opacity",clamp((t-55.4)/0.7,0,1).toFixed(2));
+  }
+  /* --- carry ☯ --- */
+  carryG.setAttribute("opacity",(easeOut(clamp((t-48.0)/0.6,0,1))*(1-easeOut(clamp((t-95.0)/1.0,0,1)))).toFixed(3));
+  /* --- 段 3 --- */
+  {
+    const s=S3;
+    s.cells.forEach((c,i)=>{
+      const a=62.4+i*1.05;
+      c.setAttribute("opacity",easeOut(clamp((t-a)/0.45,0,1)).toFixed(3));
+    });
+    vis(s.slots,t,60.6,82.0,0.3,0.7);
+    vis(s.empty,t,60.2,68.0,0.4,0.4);
+    vis(s.prod,t,69.5,82.0,0.35,0.35);
+    vis(s.fall,t,73.5,80.0,0.3,0.35);
+    const fp=clamp((t-74.2)/2.2,0,1);
+    s.fallDot.setAttribute("cy",lerp(400,800,easeIO(fp)).toFixed(1));
+    vis(s.res,t,81.6,96.0,0.35,0.35);
+    vis(s.cmp,t,84.4,96.0,0.3,0.35);
+    vis(s.si,t,91.0,96.0,0.3,0.35);
+  }
+  /* --- 段 4 --- */
+  {
+    const s=S4;
+    const matOut=1-easeOut(clamp((t-115.0)/1.0,0,1));
+    s.mat.setAttribute("opacity",(easeOut(clamp((t-96.2)/0.6,0,1))*matOut).toFixed(3));
+    s.cells.forEach((c,i)=>{
+      const row=Math.floor(i/10),a=99.0+row*0.52;
+      c.setAttribute("opacity",(easeOut(clamp((t-a)/0.22,0,1))*0.92*matOut).toFixed(2));
+    });
+    s.rowSum.setAttribute("opacity",(clamp((t-103.0)/0.5,0,1)*matOut).toFixed(2));
+    const skOut=1-easeOut(clamp((t-118.4)/1.0,0,1));
+    s.sk.setAttribute("opacity",(0.75*easeOut(clamp((t-96.4)/0.8,0,1))*skOut).toFixed(2));
+    vis(s.schur,t,104.6,108.4,0.3,0.3);
+    vis(s.tr,t,108.4,112.2,0.3,0.3);
+    vis(s.eqs,t,112.2,116.2,0.3,0.3);
+    vis(s.spec,t,115.4,128.0,0.35,0.35);
+    s.bandEls.forEach((g,i)=>{
+      const a=116.0+i*1.5;
+      g.setAttribute("opacity",easeOut(clamp((t-a)/0.4,0,1)).toFixed(2));
+      const pr=clamp((t-a)/1.0,0,1);
+      g._lines.forEach((ln,k)=>{
+        const p=clamp((pr-k*0.08)/0.55,0,1);
+        ln.el.setAttribute("stroke-dashoffset",(ln.L*(1-easeOut(p))).toFixed(1));
+      });
+    });
+    vis(s.roots,t,116.8,124.0,0.3,0.3);
+    vis(s.alpha,t,123.6,128.0,0.3,0.35);
+  }
+  /* --- 段 5 --- */
+  {
+    const s=S5;
+    vis(s.f.a,t,128.2,131.2,0.3,0.3);
+    vis(s.f.b,t,131.2,134.2,0.3,0.3);
+    vis(s.f.c,t,134.2,141.0,0.3,0.3);
+    vis(s.geo,t,133.8,156.0,0.35,0.35);
+    s.wedgeLabels.forEach((lt,i)=>lt.setAttribute("opacity",
+      easeOut(clamp((t-(133.9+i*0.32))/0.3,0,1)).toFixed(2)));
+    const gp=clamp((t-138.0)/0.8,0,1);
+    s.gapArc.setAttribute("opacity",gp.toFixed(2));
+    s.gapLabel.setAttribute("opacity",gp.toFixed(2));
+    wedgesShift(s.wedges,t);
+    vis(s.hyp,t,140.8,156.0,0.3,0.35);
+    vis(s.clk,t,144.4,156.0,0.35,0.35);
+    // 钟：间隔由 dτ/dt 决定（示意），两段时间刻度不同
+    const slowed=t>=147.0;
+    const rate=slowed?1/1.020:1/1.000;
+    const ang=(t-144.4)*rate*2*Math.PI/4-Math.PI/2;
+    s.hand.setAttribute("x2",(s.cx+(s.cr-34)*Math.cos(ang)).toFixed(2));
+    s.hand.setAttribute("y2",(s.cy+(s.cr-34)*Math.sin(ang)).toFixed(2));
+  }
+  /* --- 段 6 --- */
+  {
+    const s=S6;
+    vis(s.layers,t,156.2,169.4,0.3,0.35);
+    s.layerEls.forEach((g,i)=>g.setAttribute("opacity",
+      easeOut(clamp((t-(156.3+i*0.8))/0.5,0,1)).toFixed(2)));
+    vis(s.setg,t,158.6,169.4,0.3,0.35);
+    vis(s.cross,t,162.4,169.4,0.35,0.35);
+    const cd=clamp((t-162.6)/2.4,0,1);
+    [s.l1,s.l2].forEach(l=>{const L=l.getTotalLength();
+      l.setAttribute("stroke-dashoffset",(L*(1-easeOut(cd))).toFixed(1));});
+    const dp=clamp((t-165.0)/0.5,0,1);
+    s.vl.setAttribute("opacity",dp.toFixed(2));s.dot.setAttribute("opacity",dp.toFixed(2));
+    vis(s.tcF,t,166.6,169.4,0.3,0.35);
+    vis(s.bound,t,169.6,177.0,0.3,0.35);
+    vis(s.brk,t,169.8,177.0,0.4,0.35);
+    vis(s.finalG,t,176.6,180.0,0.45,0.2);
+  }
+  /* --- 刻度尺 / 字幕 / 徽章 --- */
+  let lit=0;OPS.forEach(o=>{if(t>=o)lit++;});
+  ticks.forEach((r,i)=>{r.setAttribute("fill",i<lit?C.cyan:C.faint);
+    r.setAttribute("opacity",i<lit?"1":".55");});
+  let seg=0;for(let i=0;i<6;i++)if(t>=SEGS[i].a)seg=i;
+  segLabel.textContent=SEGS[seg].label;
+  let c=CAPS[CAPS.length-1];
+  for(let i=0;i<CAPS.length;i++)if(t>=CAPS[i].a&&t<CAPS[i].b){c=CAPS[i];break;}
+  capMain.textContent=c.m;
+  capSub.textContent=c.s;
+  capSub.setAttribute("opacity",c.s?"1":"0");
+  setBadge(c.g[0],c.g[1],c.g[2]);
+  // 进度 UI
+  if(!RAW){fill.style.width=(t/TOTAL*100).toFixed(3)+"%";
+    const mm=Math.floor(t/60),ss=t-mm*60;
+    clockEl.textContent=mm+":"+(ss<10?"0":"")+ss.toFixed(1)+" / 3:00";}
+}
+// 顶点拉开：六个三角形整体做一个可见的位移（示意形变）
+function wedgesShift(g,t){
+  const p=clamp((t-138.0)/0.8,0,1);
+  g.setAttribute("transform",`translate(${(p*16).toFixed(2)} ${(-p*10).toFixed(2)})`);
+}
+window.renderAt=renderAt;
+window.__total=TOTAL;window.__fps=60;
+
+/* ============================================================
+   声场：score → OfflineAudioContext（无人声、无旋律、种子噪声）
+   ============================================================ */
+const SCORE=[
+  {t:0.0,op:"bed"},{t:0.0,op:"expand",a:520,b:1180,d:1.1},
+  {t:2.0,op:"pluck",f:520},{t:4.8,op:"cancel"},{t:5.1,op:"thud",f:72},
+  {t:7.0,op:"expand",a:600,b:1000,d:0.7},{t:7.6,op:"sub",f:118},
+  {t:9.5,op:"sub",f:110},{t:12.5,op:"sub",f:104},{t:15.0,op:"sub",f:120},
+  {t:18.0,op:"glass",f:1320},{t:21.0,op:"bell",f:660},
+  {t:23.0,op:"sub",f:96},{t:25.2,op:"silence"},
+  {t:26.4,op:"tone",f:98,d:0.5},{t:28.0,op:"expand",a:640,b:1280,d:0.9},
+  {t:32.0,op:"count",n:5},
+  {t:36.0,op:"count",n:5},{t:40.0,op:"cancel"},{t:41.2,op:"thud",f:64},
+  {t:44.0,op:"sub",f:112},{t:48.0,op:"bell",f:880},{t:48.0,op:"thud",f:58},
+  {t:51.0,op:"expand",a:260,b:760,d:0.9},{t:53.0,op:"pluck",f:1320},
+  {t:55.5,op:"glass",f:1200},{t:55.9,op:"glass",f:1210},
+  {t:58.6,op:"silence"},
+  {t:60.0,op:"expand",a:420,b:900,d:0.8},
+  {t:62.4,op:"slot",i:0},{t:63.45,op:"slot",i:1},{t:64.5,op:"slot",i:2},
+  {t:65.55,op:"slot",i:3},{t:66.6,op:"slot",i:4},{t:67.65,op:"slot",i:5},{t:68.7,op:"slot",i:6},
+  {t:70.0,op:"compare",n:4},{t:74.0,op:"deficit"},{t:74.2,op:"expand",a:900,b:180,d:2.0},
+  {t:79.0,op:"sub",f:132},{t:82.0,op:"bell",f:740},{t:82.0,op:"thud",f:56},
+  {t:85.0,op:"compare",n:8},{t:89.0,op:"gap"},{t:91.0,op:"sub",f:100},{t:94.6,op:"silence"},
+  {t:96.0,op:"expand",a:500,b:1100,d:0.9},
+  {t:99.0,op:"gran",n:10},{t:103.0,op:"glass",f:1180},
+  {t:105.0,op:"pluck",f:620},{t:108.0,op:"count",n:2},
+  {t:112.0,op:"count",n:2},{t:116.0,op:"solve",n:3},
+  {t:121.0,op:"count",n:10},{t:124.0,op:"gap"},{t:126.8,op:"silence"},
+  {t:128.0,op:"expand",a:480,b:960,d:0.8},{t:131.0,op:"pluck",f:700},
+  {t:134.0,op:"count",n:6},{t:138.0,op:"deficit"},{t:138.4,op:"lock"},
+  {t:141.0,op:"gap"},{t:145.0,op:"clock",n:5},{t:150.0,op:"glass",f:880},{t:154.8,op:"silence"},
+  {t:156.0,op:"expand",a:440,b:820,d:0.9},{t:156.3,op:"layer",i:0},{t:157.1,op:"layer",i:1},
+  {t:157.9,op:"layer",i:2},{t:158.7,op:"layer",i:3},
+  {t:159.0,op:"set"},{t:163.0,op:"cross"},{t:167.0,op:"bell",f:660},
+  {t:170.0,op:"count",n:4},{t:174.0,op:"gap"},{t:177.0,op:"gap"},
+  {t:178.6,op:"silence"}
+];
+function makeNoise(ctx,dur,seed){
+  const n=Math.floor(ctx.sampleRate*dur),b=ctx.createBuffer(1,n,ctx.sampleRate),d=b.getChannelData(0);
+  let s=seed||1;for(let i=0;i<n;i++){s=(s*1664525+1013904223)>>>0;d[i]=(s/4294967296)*2-1;}
+  return b;
+}
+function makeIR(ctx,dur){
+  const n=Math.floor(ctx.sampleRate*dur),b=ctx.createBuffer(2,n,ctx.sampleRate);
+  for(let c=0;c<2;c++){const d=b.getChannelData(c);let s=12345+c*777;
+    for(let i=0;i<n;i++){s=(s*1664525+1013904223)>>>0;const x=i/ctx.sampleRate;
+      let v=(s/4294967296)*2-1;v*=Math.exp(-x/0.62);
+      if(i===Math.floor(0.05*ctx.sampleRate))v+=0.35;
+      if(i===Math.floor(0.12*ctx.sampleRate))v+=0.22;
+      if(i===Math.floor(0.21*ctx.sampleRate))v+=0.12;
+      d[i]=v*0.55;}}
+  return b;
+}
+async function renderAudio(){
+  const SR=48000,DUR=TOTAL;
+  const ctx=new OfflineAudioContext(2,SR*DUR,SR);
+  const master=ctx.createGain();master.gain.value=1;
+  const comp=ctx.createDynamicsCompressor();
+  comp.threshold.value=-20;comp.knee.value=14;comp.ratio.value=3.2;
+  comp.attack.value=0.006;comp.release.value=0.18;
+  const shaper=ctx.createWaveShaper();const curve=new Float32Array(1024);
+  for(let i=0;i<1024;i++){const x=i/512-1;curve[i]=Math.tanh(x*1.35)*0.92;}
+  shaper.curve=curve;shaper.oversample="2x";
+  master.connect(shaper);shaper.connect(comp);
+  const gapGain=ctx.createGain();gapGain.gain.value=1;
+  comp.connect(gapGain);gapGain.connect(ctx.destination);
+  // 静默窗：F 音型后的留白与段末呼吸
+  [[31.96,32.36],[58.5,58.9],[94.5,94.9],[126.7,127.1],[154.7,155.1],[178.5,180.0]].forEach(([a,b])=>{
+    gapGain.gain.setValueAtTime(1,a);
+    gapGain.gain.linearRampToValueAtTime(0.0001,a+0.03);
+    gapGain.gain.setValueAtTime(0.0001,b-0.03);
+    gapGain.gain.linearRampToValueAtTime(1,b);
+  });
+  const conv=ctx.createConvolver();conv.buffer=makeIR(ctx,2.4);
+  const rev=ctx.createGain();rev.gain.value=0.28;conv.connect(rev);rev.connect(master);
+  const bus=ctx.createGain();bus.gain.value=1;bus.connect(master);bus.connect(conv);
+  const noiseBuf=makeNoise(ctx,4,7),noise2=makeNoise(ctx,4,19);
+  const P=ctx.createStereoPanner?(p)=>{const n=ctx.createStereoPanner();n.pan.value=p;return n;}:()=>({connect(){}});
+  function env(dest,t,dur,peak,atk){
+    const g=ctx.createGain();atk=atk==null?0.006:atk;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+atk);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+Math.max(dur,atk+0.01));
+    g.connect(dest);return g;
+  }
+  function tone(type,f,t,dur,peak,pan,opt){
+    opt=opt||{};const o=ctx.createOscillator();o.type=type;o.frequency.setValueAtTime(f,t);
+    if(opt.glide)o.frequency.exponentialRampToValueAtTime(opt.glide,t+dur);
+    const g=env(opt.dest||bus,t,dur,peak,opt.atk);
+    let node=o;
+    if(opt.filter){const bq=ctx.createBiquadFilter();bq.type=opt.filter;bq.frequency.value=opt.fc||1000;bq.Q.value=opt.q||1;
+      node.connect(bq);node=bq;}
+    node.connect(g);
+    if(pan){const p=P(pan);g.disconnect();g.connect(p);p.connect(opt.dest||bus);}
+    o.start(t);o.stop(t+dur+0.02);return o;
+  }
+  function noise(t,dur,peak,pan,opt){
+    opt=opt||{};const src=ctx.createBufferSource();src.buffer=(opt.buf||noiseBuf);src.loop=true;
+    const bq=ctx.createBiquadFilter();bq.type=opt.type||"bandpass";bq.frequency.value=opt.fc||1500;bq.Q.value=opt.q||1;
+    src.connect(bq);const g=env(opt.dest||bus,t,dur,peak,opt.atk);bq.connect(g);
+    if(pan){const p=P(pan);g.disconnect();g.connect(p);p.connect(opt.dest||bus);}
+    src.start(t);src.stop(t+dur+0.02);
+  }
+  function bell(t,f0,peak,pan,ds){
+    ds=ds||1;[[1,1,1.35],[2.38,.52,.95],[3.86,.34,.72],[5.62,.20,.52],[7.14,.12,.38]].forEach(([r,a,d])=>{
+      tone("sine",f0*r,t,d*ds,peak*a,pan,{atk:0.004});});
+    noise(t,0.012,peak*0.25,pan,{type:"highpass",fc:4000,q:0.7});
+  }
+  function pluck(t,f,peak,pan){
+    tone("triangle",f,t,0.14,peak,pan,{atk:0.003,glide:f*0.985});
+    tone("sine",f*2,t,0.07,peak*0.35,pan,{atk:0.002});
+    noise(t,0.008,peak*0.4,pan,{type:"bandpass",fc:f*2.2,q:1.2});
+  }
+  function thud(t,f,peak,pan){
+    tone("sine",f,t,0.26,peak,pan,{atk:0.004,glide:f*0.62,filter:"lowpass",fc:f*4,q:0.8});
+    noise(t,0.03,peak*0.35,pan,{type:"lowpass",fc:f*3,q:0.6});
+  }
+  function cancel(t){
+    tone("sawtooth",620,t,0.10,0.055,0,{atk:0.003,glide:175,filter:"lowpass",fc:900,q:0.9});
+    noise(t,0.13,0.05,0,{type:"bandpass",fc:1900,q:0.7});
+    noise(t,0.09,0.028,0,{type:"highpass",fc:4200,q:0.5});
+    thud(t+0.02,92,0.05,0);
+  }
+  function sub(t,f,peak){
+    noise(t,0.031,0.045,0,{type:"bandpass",fc:1500,q:1.1});
+    tone("sine",f,t,0.055,peak||0.06,0,{atk:0.003,glide:f*0.86});
+    tone("triangle",f*2.05,t,0.03,(peak||0.06)*0.4,0,{atk:0.002});
+    thud(t,86,(peak||0.06)*0.55,0);
+  }
+  function expand(t,f1,f2,dur,peak){
+    tone("sawtooth",f1,t,dur,peak||0.035,0,{atk:0.08,glide:f2,filter:"bandpass",fc:(f1+f2)/2,q:0.9});
+    noise(t,dur,0.012,0,{type:"bandpass",fc:(f1+f2)/2,q:0.5,atk:0.12});
+  }
+  function glass(t,f,peak,pan){
+    tone("sine",f,t,0.18,peak,pan,{atk:0.002});
+    tone("sine",f*1.008,t,0.16,peak*0.6,pan,{atk:0.002});
+    noise(t,0.006,peak*0.5,pan,{type:"highpass",fc:6000,q:0.6});
+  }
+  function count(t,n,f0){for(let i=0;i<n;i++)pluck(t+i*0.16,(f0||660)+i*40,0.015,-0.2+i*0.06);}
+  function gran(t,n){for(let i=0;i<n;i++)noise(t+i*0.05,0.02,0.009,0,{type:"bandpass",fc:900+i*90,q:1.4});}
+  function compare(t,n){for(let i=0;i<n;i++){
+    const off=(i>=4&&n>4)?3:0;
+    glass(t+i*0.19,1200+off*36,0.013,i%2?0.12:-0.12);}}
+  function solve(t,n){[9,4,1].forEach((v,i)=>{
+    const f=440*Math.pow(2,Math.log10(v)/3);
+    const rep=[1,4,5][i];
+    for(let k=0;k<rep;k++)bell(t+i*1.4+k*0.11,f,0.020,0,0.28);});}
+  function gap(t){
+    [110,130.81,164.81,174.61].forEach((f,i)=>tone("sine",f,t,3.6,0.012,i%2?0.15:-0.15,{atk:0.05}));
+  }
+  function lock(t){thud(t,74,0.06,0);noise(t,0.02,0.05,0,{type:"highpass",fc:3600,q:0.6});}
+  function deficit(t){tone("sine",60,t,1.2,0.03,0,{atk:0.03});
+    tone("sine",58,t,1.2,0.03,0,{atk:0.03});}
+  function clockTicks(t,n){for(let i=0;i<n;i++){
+    const dt=i<2?i*1.0:2+(i-2)*1.020;
+    glass(t+dt,1200,0.016,i%2?0.1:-0.1);}}
+  function cross(t){
+    tone("sine",440,t,2.0,0.024,-0.15,{atk:0.05,glide:445});
+    tone("sine",445,t,2.0,0.024,0.15,{atk:0.05,glide:440});
+    bell(t+2.0,880,0.03,0,0.8);
+  }
+  /* 底床：段 1–5 = 55 Hz，段 6 下潜到 41.2 Hz */
+  (function(){
+    const g=ctx.createGain();
+    g.gain.setValueAtTime(0,0);g.gain.linearRampToValueAtTime(0.014,1.6);
+    g.gain.setValueAtTime(0.014,155.0);g.gain.linearRampToValueAtTime(0.010,157.0);
+    g.gain.setValueAtTime(0.010,177.0);g.gain.linearRampToValueAtTime(0,179.4);
+    const lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=420;lp.Q.value=0.4;
+    g.connect(lp);lp.connect(bus);
+    const o1=ctx.createOscillator();o1.type="sine";o1.frequency.value=55;o1.connect(g);o1.start(0);o1.stop(156);
+    const o2=ctx.createOscillator();o2.type="sine";o2.frequency.value=41.2;o2.connect(g);o2.start(156);o2.stop(180);
+    const n=ctx.createBufferSource();n.buffer=noise2;n.loop=true;
+    const ng=ctx.createGain();ng.gain.value=0.006;
+    const p=P(-0.15);n.connect(ng);ng.connect(p);p.connect(g);n.start(0);n.stop(180);
+  })();
+  /* score → 声音 */
+  SCORE.forEach(ev=>{
+    const t=ev.t;
+    switch(ev.op){
+      case "expand":expand(t,ev.a,ev.b,ev.d);break;
+      case "pluck":pluck(t,ev.f||660,0.024,0);break;
+      case "cancel":cancel(t);break;
+      case "thud":thud(t,ev.f||80,0.05,0);break;
+      case "sub":sub(t,ev.f||110,0.06);break;
+      case "glass":glass(t,ev.f||1200,0.016,0);break;
+      case "bell":bell(t,ev.f||880,0.05,0,1.0);break;
+      case "tone":tone("sine",ev.f,t,ev.d||0.5,0.03,0,{atk:0.04,glide:ev.f*0.94});break;
+      case "count":count(t,ev.n,660);break;
+      case "gran":gran(t,ev.n);break;
+      case "compare":compare(t,ev.n);break;
+      case "solve":solve(t,ev.n);break;
+      case "gap":gap(t);break;
+      case "lock":lock(t);break;
+      case "deficit":deficit(t);break;
+      case "clock":clockTicks(t,ev.n);break;
+      case "cross":cross(t);break;
+      case "slot":sub(t,90+ev.i*13,0.045);glass(t+0.10,780+ev.i*70,0.012,0);break;
+      case "layer":thud(t,62+ev.i*7,0.035,0);break;
+      case "set":tone("sine",1800,t,0.06,0.012,0,{atk:0.001});break;
+      default:break;
+    }
+  });
+  const buf=await ctx.startRendering();
+  const sr=buf.sampleRate,len=buf.length;
+  const d0=buf.getChannelData(0),d1=buf.getChannelData(1);
+  let mean=0;for(let i=0;i<len;i++)mean+=d0[i]+d1[i];mean/=(2*len);
+  let peak=0;for(let i=0;i<len;i++){
+    const a=Math.abs(d0[i]-mean),b=Math.abs(d1[i]-mean);
+    if(a>peak)peak=a;if(b>peak)peak=b;}
+  const gain=peak>0?0.891/peak:1;
+  window.__pcm={l:new Float32Array(len),r:new Float32Array(len),sr:sr};
+  const bytes=new Uint8Array(44+len*4);
+  function wstr(o,s){for(let i=0;i<s.length;i++)bytes[o+i]=s.charCodeAt(i);}
+  wstr(0,"RIFF");wstr(8,"WAVE");wstr(12,"fmt ");wstr(36,"data");
+  const dv=new DataView(bytes.buffer);
+  dv.setUint32(4,36+len*4,true);dv.setUint16(16,16,true);dv.setUint16(20,1,true);
+  dv.setUint16(22,2,true);dv.setUint32(24,sr,true);dv.setUint32(28,sr*4,true);
+  dv.setUint16(32,4,true);dv.setUint16(34,16,true);dv.setUint32(40,len*4,true);
+  let o=44;
+  for(let i=0;i<len;i++){
+    const l=Math.max(-1,Math.min(1,(d0[i]-mean)*gain));
+    const r=Math.max(-1,Math.min(1,(d1[i]-mean)*gain));
+    window.__pcm.l[i]=l;window.__pcm.r[i]=r;
+    const li=Math.round(l*32767),ri=Math.round(r*32767);
+    bytes[o++]=li&255;bytes[o++]=li>>8&255;bytes[o++]=ri&255;bytes[o++]=ri>>8&255;
+  }
+  window.__wavBytes=bytes;
+  window.__wavChunkCount=Math.ceil(len/sr);
+  window.__wavChunk=(i)=>{
+    const per=sr*4;
+    const part=bytes.subarray(44+i*per,44+Math.min((i+1)*per,len*4));
+    let s="";const cs=0x8000;
+    for(let k=0;k<part.length;k+=cs)s+=String.fromCharCode.apply(null,part.subarray(k,k+cs));
+    return btoa(s);
+  };
+  window.__readyAudio=true;
+  return {peak:peak,gain:gain,sr:sr,len:len};
+}
+window.__renderAudio=renderAudio;
+
+/* ============================================================
+   播放控制（自主 rAF 仅在非 shot 模式启用）
+   ============================================================ */
+const Q=new URLSearchParams(location.search);
+const RAW=Q.has("raw")||Q.has("shot");
+const SHOT=Q.has("shot");
+if(RAW)ui.style.display="none";
+let curT=parseFloat(Q.get("t")||"0")||0;
+let playing=false,lastTs=0,audioCtx=null,audioBuf=null,srcNode=null,audioBusy=false;
+
+function fmt(){const mm=Math.floor(curT/60),ss=curT-mm*60;
+  return mm+":"+(ss<10?"0":"")+ss.toFixed(1);}
+async function ensureAudio(){
+  if(audioBuf||audioBusy)return;
+  audioBusy=true;
+  if(!RAW)clockEl.textContent="合成 180 s 音轨…";
+  try{
+    await renderAudio();
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)({sampleRate:48000});
+    const p=window.__pcm;
+    audioBuf=audioCtx.createBuffer(2,p.l.length,p.sr);
+    audioBuf.copyToChannel(p.l,0);audioBuf.copyToChannel(p.r,1);
+  }catch(e){
+    // 无音频设备时仍保证画面可播（成片音轨由 render-audio.js 单独产出）
+    console.warn("AUDIO_UNAVAILABLE",e.message);
+  }finally{
+    audioBusy=false;
+  }
+}
+function startAudioAt(t){
+  if(!audioBuf)return;
+  if(srcNode){try{srcNode.stop();}catch(e){}srcNode.disconnect();srcNode=null;}
+  srcNode=audioCtx.createBufferSource();srcNode.buffer=audioBuf;
+  srcNode.connect(audioCtx.destination);srcNode.start(0,clamp(t,0,TOTAL-0.01));
+}
+function stopAudio(){if(srcNode){try{srcNode.stop();}catch(e){}srcNode.disconnect();srcNode=null;}}
+async function play(){
+  if(playing)return;
+  await ensureAudio();
+  // resume 不阻塞：无用户手势或无音频设备时，画面循环照常推进
+  if(audioCtx&&audioCtx.state==="suspended"){
+    try{audioCtx.resume();}catch(e){}
+  }
+  startAudioAt(curT);
+  playing=true;lastTs=0;requestAnimationFrame(loop);
+}
+function pause(){playing=false;stopAudio();}
+function loop(ts){
+  if(!playing)return;
+  if(!lastTs)lastTs=ts;
+  curT+=Math.min((ts-lastTs)/1000,0.25);lastTs=ts;
+  if(curT>=TOTAL){curT=TOTAL;renderAt(curT);pause();return;}
+  renderAt(curT);requestAnimationFrame(loop);
+}
+function seek(t){curT=clamp(t,0,TOTAL);renderAt(curT);
+  if(playing)startAudioAt(curT);}
+document.addEventListener("keydown",e=>{
+  if(SHOT)return;
+  if(e.code==="Space"){e.preventDefault();playing?pause():play();}
+  else if(e.code==="ArrowRight"||e.code==="ArrowLeft"){
+    e.preventDefault();seek(curT+(e.code==="ArrowRight"?1:-1)*(e.shiftKey?1:0.1));}
+});
+bar.addEventListener("click",e=>{
+  const r=bar.getBoundingClientRect();
+  seek(clamp((e.clientX-r.left)/r.width,0,1)*TOTAL);
+});
+// 段色块（仅非 raw 模式）
+if(!RAW){
+  const cols=[C.gold,C.cyan,C.amber,C.cyan,C.amber,C.amber];
+  SEGS.forEach((s,i)=>{
+    const d=document.createElement("div");d.className="seg";
+    d.style.left=(s.a/TOTAL*100)+"%";d.style.width=((s.b-s.a)/TOTAL*100)+"%";
+    d.style.background=cols[i];bar.appendChild(d);
+  });
+}
+if(Q.has("probe")){
+  renderAudio().then(r=>console.log("GRAPH_OK",JSON.stringify(r))).catch(e=>console.log("GRAPH_FAIL",e.message));
+}
+renderAt(curT);
+window.__ready=true;
+window.__seek=seek;
+window.__play=play;
+window.__pause=pause;
+})();
+</script>
+</body>
+</html>

@@ -7273,6 +7273,202 @@
   "name": "pureHydrogenNotSuperconducting"
  },
  {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 53,
+  "kind": "def",
+  "name": "weightAnsatz"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 59,
+  "kind": "def",
+  "name": "selfEnergySpectrum"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 66,
+  "kind": "theorem",
+  "name": "weightAnsatz_diff"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 76,
+  "kind": "theorem",
+  "name": "weightAnsatz_adjacent_diff"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 85,
+  "kind": "theorem",
+  "name": "weightAnsatz_diff_pos"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 107,
+  "kind": "theorem",
+  "name": "weightAnsatz_eq_one_minus_exp_neg_two_log"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 131,
+  "kind": "theorem",
+  "name": "crossingWidth_P0"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 151,
+  "kind": "theorem",
+  "name": "crossingWidth_P0_ansatz12"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 176,
+  "kind": "theorem",
+  "name": "crossingDemand_ansatz"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 209,
+  "kind": "theorem",
+  "name": "selfEnergy_factor_lt"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 228,
+  "kind": "theorem",
+  "name": "selfEnergySpectrum_lt_of_lt"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 241,
+  "kind": "theorem",
+  "name": "selfEnergy_noCrossing"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 252,
+  "kind": "theorem",
+  "name": "spectralOrder_robust"
+ },
+ {
+  "module": "Superconductivity.CrossingParadigm",
+  "file": "Superconductivity/CrossingParadigm.lean",
+  "line": 269,
+  "kind": "theorem",
+  "name": "selfEnergy_crossing_root_add"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 56,
+  "kind": "theorem",
+  "name": "no_common_eigenstate"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 79,
+  "kind": "theorem",
+  "name": "commutatorOp_collective_single"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 101,
+  "kind": "def",
+  "name": "dnrCoupling"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 106,
+  "kind": "def",
+  "name": "minTransitionLevel"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 110,
+  "kind": "def",
+  "name": "pairingQualification"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 115,
+  "kind": "theorem",
+  "name": "minTransitionLevel_eq_exp_inv"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 130,
+  "kind": "theorem",
+  "name": "qualification_iff_level_ge"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 154,
+  "kind": "theorem",
+  "name": "qualification_at_min_level"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 173,
+  "kind": "def",
+  "name": "xIChannel"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 179,
+  "kind": "theorem",
+  "name": "xIChannel_eq_ratio_sq"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 208,
+  "kind": "theorem",
+  "name": "percolationCriterion_iff"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 219,
+  "kind": "theorem",
+  "name": "percolationThreshold_unique"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 227,
+  "kind": "def",
+  "name": "effectiveCutoff"
+ },
+ {
+  "module": "Superconductivity.DNRLink",
+  "file": "Superconductivity/DNRLink.lean",
+  "line": 231,
+  "kind": "theorem",
+  "name": "effectiveCutoff_pos"
+ },
+ {
   "module": "Superconductivity.DeepConstruction",
   "file": "Superconductivity/DeepConstruction.lean",
   "line": 46,
@@ -8685,6 +8881,55 @@
   "line": 516,
   "kind": "theorem",
   "name": "tc_geometric_upperBound"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 36,
+  "kind": "def",
+  "name": "aCoefficient"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 39,
+  "kind": "def",
+  "name": "condensateFraction"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 42,
+  "kind": "def",
+  "name": "glFreeEnergy"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 47,
+  "kind": "theorem",
+  "name": "glMinimum"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 66,
+  "kind": "theorem",
+  "name": "aCoefficient_eq_zero_iff"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 82,
+  "kind": "theorem",
+  "name": "kappa_independent"
+ },
+ {
+  "module": "Superconductivity.GLUnified",
+  "file": "Superconductivity/GLUnified.lean",
+  "line": 90,
+  "kind": "theorem",
+  "name": "coherenceLength_sq"
  },
  {
   "module": "Superconductivity.MolecularGeometry",
