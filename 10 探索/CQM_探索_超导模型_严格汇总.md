@@ -5,7 +5,7 @@
 > **边界**：本文的“严格”指在所列公设/定义内的代数或群论结果；“构造”指显式函数、系数或映射未定；“条件严格”指在注明近似下成立、近似外不成立。凡涉及数值的断言均为构造后验数字校验，待独立复现；本文未给出 $T_c$ 绝对数值。
 > **调研记录**：外部文献检索与核对于 2026-11-16 完成，逐条见附录 A；外部文献结论与 CQM 构造分栏标注，不把外部结论当作 CQM 已证内容。内部核对覆盖 `06 超导/CQM_超导核心理论.md` §11–§13、`04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §3/§6.3、`01 核心理论/CQM_核心_集成理论.md` §11.5–§11.6。
 > **复核**：正文保留原推导的公式与分级；本次复核的可判定项集中在附录 B，正文只在相应位置标注 R1–R6（R1 为方向核对通过，R2–R6 为待核项），不替作者改写公式。
-> **后续推进**：两阶段模型的读法见 `10 探索/CQM_探索_超导两阶段模型_BCS退化.md`——式 (8) 读作均值关系、式 (10) 的 $K_{123}$ 读作相位刚度/阻挫核、式 (11) 补频率标度 $\omega_0$ 后作阶段二条件；正文公式与分级未改。
+> **后续推进**：两阶段模型的读法见 `06 超导/CQM_超导核心理论.md` §0（两阶段方程）——式 (8) 读作均值关系、式 (10) 的 $K_{123}$ 读作相位刚度/阻挫核、式 (11) 补频率标度 $\omega_0$ 后作阶段二条件；正文公式与分级未改。
 > **统一汇总**：差异-记忆核超导理论的层次汇总见 `10 探索/CQM_探索_差异丰富度_历史深度_记忆核_相变_统一汇总.md`；该文只做层次整理，不改本文公式与分级。
 
 ---
@@ -22,10 +22,10 @@
 | 符号 | 含义 | 备注 |
 |:---|:---|:---|
 | $☯$ | 相变量子，$☯\approx0.02309570897$ | 只由 P1/A12 定标，不用于拟合常数；后文 $K$、$n^*$ 中的 $☯$ 是代数传递 |
-| $\beta$ | FG 几何耦合，$\beta=8\pi+1\approx26.1327$ | 既有文档口径；本文不把它当拟合参数 |
-| $\delta_i$ | 顶点角亏 | 与既有文档 $\delta_v$ 同指；$i$ 为格点/顶点指标 |
+| $\beta$ | FG 几何耦合，$\beta=\frac{1}{4\pi}\ln\frac{L}{a}$ | 形式定义；具体角色待 W-3 |
+| $\varepsilon_i$ | LQG 亏角（挂节点 $i$） | $i$ 为格点/顶点指标 |
 | $\alpha$ | 精细结构常数，实验输入 | $\alpha_q,\alpha_i$ 是几何投影系数；C2 的 $\alpha$ 是同位素指数——三者在定稿时需改名区分 |
-| $\kappa$ | §7 为 $f$ 的线性斜率；§11 为角亏涨落幅度 | 两处不是同一量；建议改为 $\kappa_f$ 与 $\kappa_\delta$ |
+| $\kappa$ | §7 为 $f$ 的线性斜率；§11 为亏角涨落幅度 | 两处不是同一量；建议改为 $\kappa_f$ 与 $\kappa_\delta$ |
 | $\gamma_1$ | §20 指统计偏度 | 与既有文档的黎曼零点 $\gamma_1=14.1347$ 同名不同义；建议改为 $\mathrm{skew}_1$ |
 | $\mathcal H$ | §10 的三体乘积相位 | 与既有文档的和乐相位 $\mathcal H_{ij}$ 不是同一量；建议改为 $\mathcal H_3$ |
 | $n$ | 跃迁级，$n$ 偶 | $Z_n$ 为循环群 |
@@ -40,7 +40,7 @@
 | # | 公设 | 内容 | 状态 |
 |:---|:---|:---|:---|
 | **P2** | 位置-动量 | $[\hat r_i^\alpha,\hat p_j^\beta]=i\hbar\delta_{ij}\delta^{\alpha\beta}$ | 标准量子力学【严格】 |
-| **P1** | 固有时流速-耦合常数 | $[\hat u_i,\hat v_{\tau,i}]=i☯$，$v_{\tau,i}=\sqrt{1-\beta\delta_i}$ | CQM 公设【严格】 |
+| **P1** | 固有时流速-耦合常数 | $[\hat u_i,\hat v_{\tau,i}]=i☯$，$v_{\tau,i}=\sqrt{1-\varepsilon_i/(2\pi)}$ | CQM 公设【严格】 |
 | **T** | 跃迁谱 | $\Delta u_n=2\ln n$（$n$ 偶） | CQM 硬结果【严格】 |
 | **A12** | 分布式对易 | $[\hat u_G,\hat V]=i☯$，$\hat u_G=\frac1N\sum_i\hat u_i$，$\hat V=\sum_i\hat v_{\tau,i}$ | CQM 构造假设【构造】 |
 
@@ -52,17 +52,17 @@
 
 ## 第二部分：几何结构
 
-### §2 Regge 复形与角亏
+### §2 Regge 复形与亏角
 
 **$N$ 格点单纯复形**：$V=N$，$E$ 条棱，$F$ 个三角形面。
 
-**角亏**（3D 棱角亏或 2D 顶点角亏）：
+**亏角**（3D 棱亏角或 2D 顶点角亏）：
 
-$$\delta_i=2\pi-\sum_{t\ni i}\theta_i^{(t)}.\tag{1}$$
+$$\varepsilon_i=2\pi-\sum_{t\ni i}\theta_i^{(t)}.\tag{1}$$
 
-**平衡值**：完美晶格 $\delta_i^{(0)}=0$（平坦空间必然）。
+**平衡值**：完美晶格 $\varepsilon_i^{(0)}=0$（平坦空间必然）。
 
-> 本文 $\delta_i$ 与既有文档的 $\delta_v$ 同指顶点角亏；$i$ 为格点/顶点指标，不回写既有定义。
+> $i$ 为格点/顶点指标；$\varepsilon_i$ 即 LQG 亏角 $\varepsilon=2\pi-\sum\theta$ 在节点 $i$ 处的取值。
 
 ### §3 位置涨落到曲率涨落【严格】
 
@@ -76,7 +76,7 @@ $$\langle\Delta\delta^2\rangle_T=\sum_q|\alpha_q|^2\langle\Delta x_q^2\rangle_T.
 
 **【严格：一阶几何线性化 + 群论（定理 3.1–3.2）】**
 
-**$C_{3v}$ 结构**：呼吸模对 $\delta_i-\delta_j$ 零贡献，剪切模贡献 $3\alpha_2^2$。
+**$C_{3v}$ 结构**：呼吸模对 $\varepsilon_i-\varepsilon_j$ 零贡献，剪切模贡献 $3\alpha_2^2$。
 
 > 定理 3.1–3.2 未在本文展开；“严格”限于一阶线性化与 $C_{3v}$ 表示论；显式 $\alpha_q,\omega_q$ 未定（见 §24 断点 3）。
 
@@ -84,15 +84,15 @@ $$\langle\Delta\delta^2\rangle_T=\sum_q|\alpha_q|^2\langle\Delta x_q^2\rangle_T.
 
 由链式法则和 P1：
 
-$$\frac{\partial v_\tau}{\partial\delta_i}\sum_{k,\alpha}\frac{\partial\delta_i}{\partial x_k^\alpha}[\hat u_i,\hat x_k^\alpha]=i☯.\tag{4}$$
+$$\frac{\partial v_\tau}{\partial\varepsilon_i}\sum_{k,\alpha}\frac{\partial\varepsilon_i}{\partial x_k^\alpha}[\hat u_i,\hat x_k^\alpha]=i☯.\tag{4}$$
 
-**最自然实现**（$\hat u_i$ 与声子模共轭）：$\alpha_i\partial v_\tau/\partial\delta_i=1$，给出：
+**最自然实现**（$\hat u_i$ 与声子模共轭）：$\alpha_i\partial v_\tau/\partial\varepsilon_i=1$，给出：
 
-$$\boxed{\alpha_i=-\frac{2\sqrt{1-\beta\delta_i}}{\beta}.}\tag{5}$$
+$$\boxed{\alpha_i=4\pi\sqrt{1-\varepsilon_i/(2\pi)}.}\tag{5}$$
 
 **【严格：给定兼容性条件和 $v_\tau(\delta)$】**
 
-> 式 (4) 中的 $\alpha_i$ 由 $\sum_{k,\alpha}\frac{\partial\delta_i}{\partial x_k^\alpha}[\hat u_i,\hat x_k^\alpha]=i☯\alpha_i$ 定义；若不采用该归一，式 (5) 的系数会随模式计数改变。
+> 式 (4) 中的 $\alpha_i$ 由 $\sum_{k,\alpha}\frac{\partial\varepsilon_i}{\partial x_k^\alpha}[\hat u_i,\hat x_k^\alpha]=i☯\alpha_i$ 定义；若不采用该归一，式 (5) 的系数会随模式计数改变。
 
 ---
 
@@ -116,14 +116,14 @@ $$[\hat u_G,\hat V]=\frac{i☯}{N}\sum_{i,j}C_{ij}=i☯\ \Longrightarrow\ \sum_{
 
 ### §7 关系差异的结构【构造】
 
-$$C_{ij}=f(\delta_i-\delta_j),\qquad f\ \text{奇},\ f(0)=0,\ f(x)=\kappa x+O(x^3).\tag{8}$$
+$$C_{ij}=f(\varepsilon_i-\varepsilon_j),\qquad f\ \text{奇},\ f(0)=0,\ f(x)=\kappa x+O(x^3).\tag{8}$$
 
 **A12 自动满足**（奇函数 + 反对称）。
 
 **对称性判据**：
 
-- 对称单元（$\delta_i$ 全等）：$C_{ij}=0$，无记忆核；
-- 不对称单元（$\delta_i$ 不全等）：$C_{ij}\ne0$，记忆核可能出现。
+- 对称单元（$\varepsilon_i$ 全等）：$C_{ij}=0$，无记忆核；
+- 不对称单元（$\varepsilon_i$ 不全等）：$C_{ij}\ne0$，记忆核可能出现。
 
 **【构造：$f$ 的显式形式未定；领头阶 $\kappa x$】**
 
@@ -171,7 +171,7 @@ $$\boxed{\Gamma(T_c)=K_{123}(0)\big(1-\cos\mathcal H\big),}\tag{11}$$
 
 $$\Gamma=\frac{k_B\theta_D}{\hbar}v_\tau(\kappa^2-\Delta\gamma),\qquad\kappa^2\propto\langle\Delta\delta^2\rangle_{T_c}.\tag{12}$$
 
-> 此处 $\kappa^2$ 是角亏涨落幅度，不是 §7 的 $f$ 斜率；$\Delta\gamma=\gamma_2-\gamma_1\approx6.8873$ 为既有谱隙差。式 (11) 还要求 $\Gamma\ge0$，即 $\kappa^2\ge\Delta\gamma$；否则应写“无解”分支，见附录 B.3。
+> 此处 $\kappa^2$ 是亏角涨落幅度，不是 §7 的 $f$ 斜率；$\Delta\gamma=\gamma_2-\gamma_1\approx6.8873$ 为既有谱隙差。式 (11) 还要求 $\Gamma\ge0$，即 $\kappa^2\ge\Delta\gamma$；否则应写“无解”分支，见附录 B.3。
 
 ---
 
@@ -316,10 +316,10 @@ $$p_{\rm sync}(T_c)=p_c.\tag{20}$$
 | 6 | $Z_{\gcd}$ 同步子群 | 循环群子群结构 |
 | 7 | 孤岛效应（$\gcd=1$） | 群论 |
 | 8 | 三格点最小性 | 几何 + 代数 |
-| 9 | 横向模驱动角亏（定理 3.1–3.2） | 几何线性化 |
+| 9 | 横向模驱动亏角（定理 3.1–3.2） | 几何线性化 |
 | 10 | 同相模 $s_+=\Gamma+K(e^{i\mathcal H}-1)$ | 线性代数 |
 | 11 | 高斯定理 $\mathcal H=0$（高斯涨落） | 高斯三阶矩为零 |
-| 12 | $\alpha_i=-2\sqrt{1-\beta\delta_i}/\beta$ | 兼容性条件 |
+| 12 | $\alpha_i=4\pi\sqrt{1-\varepsilon_i/(2\pi)}$ | 兼容性条件 |
 
 > 表中第 9 项“定理 3.1–3.2”、第 10 项 $s_+$ 未在正文展开；第 3 项定理 6.1 的措辞按附录 B.2 修正；第 11 项“高斯三阶矩为零”应精确为“三阶累积量/连通三阶矩为零”。见附录 B.6。
 > “严格”均指给定公设/定义内，不含 $f,\alpha_q,\omega_q,\mathcal H(T),\mathcal S_c$ 的显式形式。
@@ -328,7 +328,7 @@ $$p_{\rm sync}(T_c)=p_c.\tag{20}$$
 
 | # | 构造 | 未证 |
 |:---|:---|:---|
-| 1 | $C_{ij}=f(\delta_i-\delta_j)$，$f$ 奇 | $f$ 显式形式 |
+| 1 | $C_{ij}=f(\varepsilon_i-\varepsilon_j)$，$f$ 奇 | $f$ 显式形式 |
 | 2 | $K_{123}=i☯\langle C_{12}C_{23}C_{31}\rangle e^{i\mathcal H}$ | 三体乘积形式 |
 | 3 | 同步场方程（SF） | 现象学组装 |
 | 4 | 信噪比判据 $\mathcal S=\mathcal S_c$ | $\mathcal S_c$ 未定 |
@@ -439,7 +439,7 @@ $$p_{\rm sync}(T_c)=p_c.\tag{20}$$
 | L11 | Strogatz, *Physica D* **143**, 1 (2000), DOI:10.1016/S0167-2789(00)00094-4 | Kuramoto 模型在 $N\to\infty$ 的同步相变 | 作为 §26 的 Kuramoto 极限；本文的 $Z_n$ 同步不是 Kuramoto 模型的直接特例 |
 | L12 | Broadbent, Hammersley, *Proc. Cambridge Philos. Soc.* **53**, 629 (1957), DOI:10.1017/S0305004100032680 | 渗流模型的临界概率 $p_c$ | 作为 §18 的标准渗流背景；$p_{\rm sync}=p_c$ 的等价性是构造，未证 |
 | L13 | Pelissetto, Vicari, *Phys. Rept.* **368**, 549 (2002), DOI:10.1016/S0370-1573(02)00219-3；Campostrini et al., *Phys. Rev. B* **63**, 214503 (2001), DOI:10.1103/PhysRevB.63.214503 | 3D XY 临界指数 $\nu=0.67155(27)$、$\alpha=-0.0146(8)$；3D Ising 属另一普适类 | 作为 §26 的 CFT 临界指数对照；本文未把 $Z_{\gcd}$ 同步映射到某一普适类 |
-| L14 | Regge, *Nuovo Cimento* **19**, 558 (1961), DOI:10.1007/BF02733251 | 离散曲率以顶点角亏表示 | 角亏定义的几何出处；CQM 的 $\delta_i$ 用法是自建构 |
+| L14 | Regge, *Nuovo Cimento* **19**, 558 (1961), DOI:10.1007/BF02733251 | 离散曲率以顶点角亏表示 | 亏角定义的几何出处；CQM 的 $\varepsilon_i$ 用法是自建构 |
 
 **未取到的外部依据**：
 
@@ -488,7 +488,7 @@ $$\coth\frac{\hbar\omega}{2k_BT_c}=\left(\frac{|f(\mu_{ij})|}{|f'(\mu_{ij})|\,\s
 
 **可保留的读法**：把“不能同时对角化”改为“不能分解为局域对的直和”。即 $C_{ij}\ne0$（$i\ne j$）当且仅当代数 $\{ \hat u_i,\hat v_i\}_{i=1}^N$ 不是各局域 Heisenberg 代数的直和；等价地，全局对 $(\hat u_G,\hat V)$ 在局域张量积中不是块对角的。这个读法与 A12 展开 (7) 相容，也不影响 §5–§7 的代数。
 
-**§8 的“非平凡 A12”问题**：在 §7 的奇函数假设下，$C_{ij}=f(\delta_i-\delta_j)$ 反对称，故
+**§8 的“非平凡 A12”问题**：在 §7 的奇函数假设下，$C_{ij}=f(\varepsilon_i-\varepsilon_j)$ 反对称，故
 
 $$\sum_{i,j}C_{ij}=0$$
 
@@ -521,10 +521,10 @@ $$\sum_{i,j}C_{ij}=0$$
 | 符号 | 出现处 | 冲突 | 建议 |
 |:---|:---|:---|:---|
 | $\alpha$ | §1 精细结构常数；§3/§4 几何投影 $\alpha_q,\alpha_i$；§21 C2 同位素指数；§9 $\alpha_n$ | 四个不同量同名 | $\alpha_{\rm fs}$、$a_q/a_i$、$\alpha_{\rm iso}$、$\alpha_n$ |
-| $\kappa$ | §7 的 $f$ 斜率；§11 的角亏涨落幅度 $\kappa^2$ | 两个不同量同名 | $\kappa_f$、$\kappa_\delta$ |
+| $\kappa$ | §7 的 $f$ 斜率；§11 的亏角涨落幅度 $\kappa^2$ | 两个不同量同名 | $\kappa_f$、$\kappa_\delta$ |
 | $\gamma_1$ | §20 的统计偏度；既有文档的黎曼零点 $\gamma_1=14.1347$ | 同名不同义 | $\mathrm{skew}_1$ |
 | $\mathcal H$ | §10 的三体相位；既有文档的和乐相位 $\mathcal H_{ij}$ | 同名不同义 | $\mathcal H_3$ 或 $\varphi_3$ |
-| $\delta_i$ | 本文；既有文档 $\delta_v$ | 同一量、不同指标 | 统一为 $\delta_v$ 或在首现处注明同指 |
+| $\varepsilon_i$ | 本文；既有文档 $\varepsilon$ | 同一量、不同指标 | 统一为 $\varepsilon$ 或在首现处注明同指 |
 
 这些是编辑问题，不改物理；但在“严格汇总”中不注明会直接导致误读，尤其是 C2 的 $\alpha$ 与 C3 的 $\alpha$ 同在 §21。
 
@@ -544,8 +544,8 @@ $$\sum_{i,j}C_{ij}=0$$
 | P1：$[\hat u_i,\hat v_{\tau,i}]=i☯$ | `04 前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md` §3/§6.3；`01 核心理论/CQM_核心_集成理论.md` §11.5 | 同一 Heisenberg 对；本文用 $v_\tau$ 记共轭动量，既有文档用 $p_u=v_\tau/☯$ |
 | A12：$[\hat u_G,\hat V]=i☯$ | 同上 §6.3 | 同一分布式对易；本文把逐节点形式写成矩阵 $C_{ij}$ |
 | T：$\Delta u_n=2\ln n$ | `06 超导/CQM_超导核心理论.md` §9/§11；`01 核心理论/CQM_核心_集成理论.md` §11.5 | 同一跃迁谱；本文的 $\alpha_n=n^2\alpha$ 是其指数代数推论 |
-| $\delta_i$ | `06 超导/CQM_超导核心理论.md` §2/§11；`01 核心理论/CQM_核心_引力存在论前提.md` §3.4 | 同一顶点角亏；本文用格点指标 $i$，既有文档多用 $v$ |
-| $v_\tau=\sqrt{1-\beta\delta}$ | `01 核心理论/CQM_核心_引力存在论前提.md` §3.4；`06 超导/CQM_超导核心理论.md` §12.1 | 同一 FG 因果条件；本文不重新定义 $\beta$ |
+| $\varepsilon_i$ | `06 超导/CQM_超导核心理论.md` §0.2；`01 核心理论/CQM_核心_引力存在论前提.md` §3.4 | 同一 LQG 亏角；本文用格点指标 $i$ |
+| $v_\tau=\sqrt{1-\varepsilon/(2\pi)}$ | `01 核心理论/CQM_核心_引力存在论前提.md` §3.4；`06 超导/CQM_超导核心理论.md` §12.1 | 同一 FG 因果条件；本文不重新定义 $\beta$ |
 | $\Gamma(T_c)=K(1-\cos\mathcal H)$ | `06 超导/CQM_超导核心理论.md` §11.10 的 $\lambda_n(T)=\gamma_n-V_\delta(n,T)$ | **不是同一方程**；本文是频率/记忆核参数化，既有文档是本征值交叉参数化。二者之间缺少字典（见 B.3），不能直接等同 |
 | $p_{\rm sync}=p_c$ | `06 超导/CQM_超导核心理论.md` §11.13/§18；`04 前沿研究` 渗流接口 | 同一渗流判据的现象学组装；等价性未证 |
 | $Z_n$ 同步 / $Z_{\gcd}$ | `04 前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md` §1；`01 核心理论/CQM_核心_集成理论.md` §11.5 | 同一 $U(1)//Z_n$ 群族；本文新增多单元公共子群的同步规则（构造） |

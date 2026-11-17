@@ -85,7 +85,7 @@ narration: "质量让角亏出现——不是力，而是几何的凹凸。"
 captions:
   zh: "质量让角亏出现——不是力，而是几何的凹凸。"
   en: "Mass creates a deficit angle — not a force, but a dent in geometry."
-formula: "\\delta_v"
+formula: "\\varepsilon"
 claimIds: [C05]
 ```
 

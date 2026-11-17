@@ -17,8 +17,8 @@
 $$\boxed{\text{FG} \neq \text{GR}}$$
 
 - GR是时空曲率，受 $G_N$ 限制，基本时标 $\sim 10^{-43}$ s（闭环固有时标度；$G_N$ 理论值与偏差属构造后验数字校验，待独立复现，见 `03 引力与退相干/CQM_引力_GN可能公式.md`）
-- FG是一个联络生成两种曲率——底空间Regge角亏 $\delta_v$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 限制**，量级 $O(1)$
-- FG是GR基态的非平庸激发态，直接由底空间Regge角亏给出
+- FG是一个联络生成两种曲率——底空间Regge亏角 $\varepsilon$ + 伴丛曲率 $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$——**不受 $G_N$ 限制**，量级 $O(1)$
+- FG是GR基态的非平庸激发态，直接由底空间Regge亏角给出
 
 ## 1.5 纤维丛双框架：运动学（容器）与动力学（重组）的相互关联
 
@@ -225,7 +225,7 @@ $$P_{\text{el}} \hookrightarrow P_{\text{element}} \hookrightarrow P_{\text{mol}
 
 ## 3. 联络：一个联络生成两种曲率
 
-$$\mathcal{A}_\ell \longrightarrow \begin{cases} \text{底空间曲率：Regge角亏 } \delta_v^{(\ell)} = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta \\ \text{伴丛曲率：} F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell \end{cases}$$
+$$\mathcal{A}_\ell \longrightarrow \begin{cases} \text{底空间曲率：Regge亏角 } \varepsilon^{(\ell)} = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta \\ \text{伴丛曲率：} F_\ell = d\mathcal{A}_\ell + \mathcal{A}_\ell \wedge \mathcal{A}_\ell \end{cases}$$
 
 - 底空间曲率进入不确定性关系与谱调制
 - 伴丛曲率进入运动方程 $D * F = *J_\Phi$
@@ -233,7 +233,7 @@ $$\mathcal{A}_\ell \longrightarrow \begin{cases} \text{底空间曲率：Regge�
 
 ### 3.1 和乐
 
-$$W_v^{(\ell)} = \exp(i\delta_v^{(\ell)} \hat{T}_\ell) \in G_\ell$$
+$$W_v^{(\ell)} = \exp(i\varepsilon^{(\ell)} \hat{T}_\ell) \in G_\ell$$
 
 其中 $\hat{T}_\ell$ 是层级结构群 $G_\ell$ 的生成元。
 
@@ -242,11 +242,11 @@ $$W_v^{(\ell)} = \exp(i\delta_v^{(\ell)} \hat{T}_\ell) \in G_\ell$$
 - 分子FG：和乐平庸化 = 稳定杂化几何（理想键角）
 - 晶胞FG：和乐平庸化 = 稳定晶格构型
 
-### 3.2 层级角亏传递
+### 3.2 层级亏角传递
 
-$$\delta_v^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\text{defect}}^{(\ell+1)}$$
+$$\varepsilon^{(\ell+1)} = \delta_{v,\text{intrinsic}}^{(\ell)} + \Delta\delta_{\text{defect}}^{(\ell+1)}$$
 
-上层内禀角亏是下层角亏的组成部分。
+上层内禀亏角是下层亏角的组成部分。
 
 ### 3.3 伴丛运动方程形式化
 
@@ -291,7 +291,7 @@ $$D F = 0 \quad \iff \quad [\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} =
 | **角色** | 曲率-物质自洽关系 | 谱分解（本征群分类） |
 | **关系** | 运动方程的解给出允许的曲率配置 | 本征值方程对解空间做谱分解 |
 
-同步方程是伴丛运动方程的**谱分解**：运动方程确定允许的曲率配置，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1 - \beta \hat{\delta}_v^{(k)}}$ 对这些配置做本征值分解，本征值 $n_k$ 分类本征群 $R_k$。
+同步方程是伴丛运动方程的**谱分解**：运动方程确定允许的曲率配置，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1 - \hat{\varepsilon}^{(k)}/(2\pi)}$ 对这些配置做本征值分解，本征值 $n_k$ 分类本征群 $R_k$。
 
 ## 4. 同步算符：纤维丛的谱算符
 
@@ -307,19 +307,19 @@ $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_
 
 推导链：
 
-$$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\delta}_v \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k \xrightarrow{\text{同步方程}} G_k$$
+$$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变导数}} \text{嘉当矩阵} \xrightarrow{\text{对角化}} \text{声子} \xrightarrow{\text{几何非线性}} \hat{\varepsilon} \xrightarrow{\text{FG因果}} v_\tau \xrightarrow{\text{定义}} p_u \xrightarrow{[\hat{u},\hat{p}_u]=i} \text{紧化U(1)} \xrightarrow{\text{玻尔-索末菲}} n_k \xrightarrow{\text{同步方程}} G_k$$
 
-- **Regge剖分重组**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典角亏 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
+- **Regge剖分重组**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典亏角 $\bar{\delta}_v = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定。质子 $A_4$：$\bar{\delta}_v=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}_v\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
 - **嘉当矩阵 = 图拉普拉斯**：离散协变导数的矩阵形式，是Regge剖分的必然结果
 - **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（前时空/GR中子-质子振荡/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
-- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
-- **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
-- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\beta\delta_v^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
-- **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ 由条件严格确定
+- **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\varepsilon}^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
+- **总曲率 = 经典背景 + 量子涨落**：$\hat{\varepsilon} = \bar{\delta}_v + \hat{\varepsilon}^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\varepsilon}^{(1)}$ 是算符（量子涨落）
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\varepsilon/(2\pi)^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
+- **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)}$ 由条件严格确定
 - **本征群**：$R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
-- **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$（锁定声子占据数 $N_k$；基态 $n=0$ 下完整本征值 $n+C_k$ 退化为 $C_k=n_k$，与 §9.5.1 一致）
+- **等价关系**：$\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)} \right\rangle = C_k$（锁定声子占据数 $N_k$；基态 $n=0$ 下完整本征值 $n+C_k$ 退化为 $C_k=n_k$，与 §9.5.1 一致）
 - **CFT OPE**：同步本征态 $\otimes$ 耦合本征态 $\to$ 群本征态（共形固定点，Dirac 条件=共形自举方程的 CQM 具体化）
 - **耦合常数**：$g_k = \alpha^{-1}\exp(-(n_k-n_1)/n_1)$——是同步方程的**输出**，不是输入参数
 
@@ -357,9 +357,9 @@ $$\boxed{\hat{\mathcal{S}} = \hat{\mathcal{S}}_{\text{nucleon}} \otimes \hat{\ma
 
 **核子部分**（由FG因果严格确定）：
 
-$$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v}$$
+$$\hat{\mathcal{S}}_{\text{nucleon}} = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}/(2\pi)}$$
 
-其中曲率算符 $\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$ 严格来自 **Regge剖分重组** + **$[\hat{X},\hat{P}]=i\hbar$**：经典背景曲率 + 位置涨落平方的量子期望 + Regge几何非线性，不是唯象假设。
+其中曲率算符 $\hat{\varepsilon} = \bar{\delta}_v + \hat{\varepsilon}^{(1)}$ 严格来自 **Regge剖分重组** + **$[\hat{X},\hat{P}]=i\hbar$**：经典背景曲率 + 位置涨落平方的量子期望 + Regge几何非线性，不是唯象假设。
 
 **耦合常数部分**：
 
@@ -368,13 +368,13 @@ $$\hat{\mathcal{S}}_{U(1)}(\hat{u}) = \sum_p \frac{\ln p}{\sqrt{p}}\delta(\hat{u
 质数势是**投影算符的叠加**，在耦合常数空间选择 $u = \ln p$ 的离散点。
 
 - 本征态 $\Psi_k(u) = \frac{1}{\sqrt{L_u}}e^{i\frac{2\pi n_k}{L_u}u}$（紧化U(1)基矢）
-- 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），等价关系 $\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \right\rangle = C_k$ 锁定 $N_k$
+- 本征值 = 耦级 $n_k \equiv C_k = l_k(l_k+1) + 3/4$（定义），等价关系 $\left\langle \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)} \right\rangle = C_k$ 锁定 $N_k$
 - $☯ = \frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$（Riemann xi函数）
 - 紧化 = $\hat{u}$ 的**谱边界条件** $\psi(u+L_u) = \psi(u)$，与核子声子态联立
 
 ### 4.3 同步算符的完整形式（含 Casimir）
 
-$$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}} \cdot \hat{\mathbb{I}}_{G_k} + \hat{C}_2(G_k)}$$
+$$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)} \cdot \hat{\mathbb{I}}_{G_k} + \hat{C}_2(G_k)}$$
 
 - 耦级项：U(1)紧化的同步成本（径向）
 - Casimir项：$G_k$ 内部对称的同步成本（角向）
@@ -439,13 +439,13 @@ $$R_2(s) = 1 - \left(\frac{\sin(\pi s)}{\pi s}\right)^2$$
 - **边** = 联络 $\mathcal{A}_\ell$ 的离散化（连接顶点的路径，给出平移规则）
 - **面** = 曲率 $\mathcal{F}_\ell$ 的离散化（绕回路的和乐）
 
-### 6.1 角亏作为底空间曲率集中
+### 6.1 亏角作为底空间曲率集中
 
-$$\delta_v = 2\pi - \sum_i \theta_i \quad \text{（角亏定义，Gauss–Bonnet 局部量）}$$
+$$\varepsilon = 2\pi - \sum_i \theta_i \quad \text{（亏角定义，Gauss–Bonnet 局部量）}$$
 
 ### 6.2 曲率量子涨落
 
-$$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
+$$\Delta\varepsilon_0^2 = \sum_q \left|\frac{\partial \varepsilon}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
 
 其中 $\omega_q$ 是纤维上的量子谐振子本征频率（声子频率）。
 
@@ -456,10 +456,10 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 | 步骤 | 内容 | 公式 |
 |:---|:---|:---|
 | A. Regge剖分 | 对底空间三角剖分 | 顶点+边+面 |
-| B. 角亏 | 逐顶点曲率集中 | $\delta_v = 2\pi - \sum_i \theta_i$ |
+| B. 亏角 | 逐顶点曲率集中 | $\varepsilon = 2\pi - \sum_i \theta_i$ |
 | C. 动力学矩阵 | 联络离散化 | $D_{ij} = K_{ij}/\sqrt{m_i m_j}$ |
 | D. 声子谱 | 纤维上量子谐振子 | $\omega_q = \sqrt{\text{eig}(D)}$ |
-| E. 角亏涨落 | 曲率零温量子涨落 | $\Delta\delta_0^2 = \sum_q \|\partial\delta_v/\partial u_q\|^2 \cdot \hbar/(2\omega_q)$ |
+| E. 亏角涨落 | 曲率零温量子涨落 | $\Delta\varepsilon_0^2 = \sum_q \|\partial\varepsilon/\partial u_q\|^2 \cdot \hbar/(2\omega_q)$ |
 
 每步都是CQM方程严格导出，无经验拟合参数。
 
@@ -473,7 +473,7 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
 
-**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的**候选定量映射**（§9.1–§9.6 各对应目前为陈述式，映射未构造；§9.4 的定量映射 $h=\delta_v\lambda_k/(2\pi)$ 完全依赖未证的「和乐本征值 = monodromy 本征值」）。
+**目标**：建立纤维丛结构（联络、曲率、和乐、截面）与CFT结构（Virasoro代数、共形块、OPE、primary operator）之间的**候选定量映射**（§9.1–§9.6 各对应目前为陈述式，映射未构造；§9.4 的定量映射 $h=\varepsilon\lambda_k/(2\pi)$ 完全依赖未证的「和乐本征值 = monodromy 本征值」）。
 
 CFT一般理论见 `01 核心理论/CQM_核心_共形场论与OPE.md`。
 
@@ -555,9 +555,9 @@ Jacobi恒等式 $[\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} = 0$ 是Vir
 
 **纤维丛和乐**：绕回路 $\gamma$ 的平行移动：
 
-$$W(\gamma) = \mathcal{P}\exp\oint_\gamma \mathcal{A} = \exp(i\delta_v\,\hat{T})$$
+$$W(\gamma) = \mathcal{P}\exp\oint_\gamma \mathcal{A} = \exp(i\varepsilon\,\hat{T})$$
 
-其中 $\delta_v$ 是回路包围的角亏（底空间曲率集中），$\hat{T}$ 是结构群生成元。
+其中 $\varepsilon$ 是回路包围的亏角（底空间曲率集中），$\hat{T}$ 是结构群生成元。
 
 **CFT monodromy**：共形块绕 $z = 0$ 的monodromy：
 
@@ -567,29 +567,29 @@ $$\mathcal{F}(z\,e^{2\pi i}) = e^{2\pi i h}\,\mathcal{F}(z)$$
 
 **严格对应**：
 
-$$\boxed{W(\gamma) = e^{i\delta_v\,\hat{T}} \;\longleftrightarrow\; \text{monodromy} = e^{2\pi i h}}$$
+$$\boxed{W(\gamma) = e^{i\varepsilon\,\hat{T}} \;\longleftrightarrow\; \text{monodromy} = e^{2\pi i h}}$$
 
 **定量映射**：和乐本征值 = monodromy本征值给出：
 
-$$i\,\delta_v\,\lambda_k = 2\pi i\,h \quad \longrightarrow \quad \boxed{h = \frac{\delta_v\,\lambda_k}{2\pi}}$$
+$$i\,\varepsilon\,\lambda_k = 2\pi i\,h \quad \longrightarrow \quad \boxed{h = \frac{\varepsilon\,\lambda_k}{2\pi}}$$
 
 **$A_4$ 系统的显式计算**：
 
 对 $A_4$ 嘉当矩阵的第 $k$ 个本征模式：
-- 曲率涨落 $\delta_v^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(N_k + \frac{1}{2})$（来自§4.0推导链，$N_k$ 为声子占据数）
+- 曲率涨落 $\varepsilon^{(k)} = \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(N_k + \frac{1}{2})$（来自§4.0推导链，$N_k$ 为声子占据数）
 
-- 共形维度 $h_k = \frac{\delta_v^{(k)}\,\lambda_k}{2\pi}$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值）
+- 共形维度 $h_k = \frac{\varepsilon^{(k)}\,\lambda_k}{2\pi}$（$\lambda_k$ 为结构群生成元 $\hat{T}$ 的本征值）
 
 primary共形维度 $h_l = l_k$（壳层角动量，$l_k = k-1$ 由 SU(5) Dynkin图深度严格推导），descendant共形维度 $h = n + l$（Madelung规则）。
 
 **和乐平庸化 = 闭壳层稳定**：
 
-和乐平庸化 $W(\gamma) = 1$（$\delta_v = 0$）对应：
+和乐平庸化 $W(\gamma) = 1$（$\varepsilon = 0$）对应：
 - 纤维丛：平坦联络，无曲率集中
 - CFT：monodromy平凡，共形块单值
 - 物理：闭壳层稳定构型（稀有气体）
 
-和乐非平庸化 $W(\gamma) \neq 1$（$\delta_v \neq 0$）对应：
+和乐非平庸化 $W(\gamma) \neq 1$（$\varepsilon \neq 0$）对应：
 - 纤维丛：曲率集中，非平坦联络
 - CFT：monodromy非平凡，共形块多值
 - 物理：开壳层，化学活性
@@ -598,7 +598,7 @@ primary共形维度 $h_l = l_k$（壳层角动量，$l_k = k-1$ 由 SU(5) Dynkin
 
 **同步算符**（§4.2-§4.3）：
 
-$$\hat{\mathcal{S}}_k^{\text{(full)}} = \underbrace{\frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}}_{\text{核子部分（径向）}} \cdot \hat{\mathbb{I}}_{G_k} + \underbrace{\hat{C}_2(G_k)}_{\text{Casimir部分（角向）}}$$
+$$\hat{\mathcal{S}}_k^{\text{(full)}} = \underbrace{\frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)}}_{\text{核子部分（径向）}} \cdot \hat{\mathbb{I}}_{G_k} + \underbrace{\hat{C}_2(G_k)}_{\text{Casimir部分（角向）}}$$
 
 **CFT mode算符**：
 
@@ -610,7 +610,7 @@ $$\boxed{\hat{\mathcal{S}}_k^{\text{(full)}} \;\longleftrightarrow\; \hat{L}_0 +
 
 | 同步算符 | CFT mode算符 | 对应机制 |
 |:---|:---|:---|
-| 核子部分 $\frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$ | $\hat{L}_0$（descendant level） | 径向量子数 $n$ |
+| 核子部分 $\frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)}$ | $\hat{L}_0$（descendant level） | 径向量子数 $n$ |
 | Casimir部分 $\hat{C}_2(G_k)$ | $\hat{C}_2(G_k)$（角动量Casimir） | 壳层角动量 $l$ |
 | 本征值 = 耦级 $n_k = C_k$（角向+自旋） | 本征值 = $l_k(l_k+1)+\tfrac34$（径向 $n$ 对应 descendant level） | §9.5.1严格推导 |
 | 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | §9.5.2严格对应 |
@@ -710,7 +710,7 @@ $$\boxed{D\psi = 0 \;\xrightarrow{\text{零模}}\; \hat{L}_{n>0}\phi = 0 \;\xrig
 $$\underbrace{\hat{\mathcal{S}}_0}_{\text{前时空层：GL(5)\to SU(5)}} \;\xRightarrow{\text{SU(5)重组实现}}\; \underbrace{\hat{\mathcal{S}}_\ell}_{\text{FG纤维丛层：截面空间}} \;\xrightarrow{\text{取GL(5)固定层级}}\; \underbrace{\hat{\mathcal{S}}_{\text{FG}}}_{\text{FG核心层：GL(5)固定层级}}$$
 
 - **前时空层**：紧化投影 $\hat{\mathcal{S}}_0$ 将非紧GL(5)自守形式投影到紧SU(5)表示。配对不变量 $\mathfrak{c}_n$ 为实 $\Leftrightarrow$ 紧化条件可解 $\Leftrightarrow$ 各层L函数零点在临界线上（GRH）。
-- **FG纤维丛层**：SU(5)（$A_4$ 根系）经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(\ell)}}$。
+- **FG纤维丛层**：SU(5)（$A_4$ 根系）经重组实现 $\Rightarrow U(1)\times SU(2)\times SU(3)$，紧化算符下放到每层纤维丛的截面空间 $\Gamma(P_\ell)$，实现为 $\hat{\mathcal{S}}_\ell = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(\ell)}/(2\pi)}$。
 - **FG核心层**：取GL(5)固定层级，紧化算符再现为 $\hat{u}$ 的谱边界条件 $\psi(u+L_u) = \psi(u)$（紧化U(1)玻尔-索末菲量子化），给出物理可观测的耦合常数 $g_k$。
 
 **与CFT的对应**（§9.5）：三层同步算符均对应CFT的mode算符 $\hat{L}_0 + \hat{C}_2$，但所处层级不同——前时空层对应GL(5) Kac-Moody代数，FG纤维丛层对应SU(2) Kac-Moody代数（重组实现后），FG核心层对应U(1)自由玻色子（GL(5)固定层级）。
@@ -723,16 +723,16 @@ $$\underbrace{\hat{\mathcal{S}}_0}_{\text{前时空层：GL(5)\to SU(5)}} \;\xRi
 | 联络 $\mathcal{A}$ | Virasoro $\{\hat{L}_n\}$ | 模展开 | §9.2 |
 | 曲率 $F$ | 对易子 $[\hat{L}_m, \hat{L}_n]$ | $F=d\mathcal{A}+\mathcal{A}\wedge\mathcal{A}$ | §9.3 |
 | Bianchi恒等式 | Jacobi恒等式 | 代数自洽性 | §9.3 |
-| 和乐 $W(\gamma)$ | monodromy $e^{2\pi ih}$ | $h = \delta_v\hat{T}/(2\pi)$ | §9.4 |
+| 和乐 $W(\gamma)$ | monodromy $e^{2\pi ih}$ | $h = \varepsilon\hat{T}/(2\pi)$ | §9.4 |
 | 同步算符 $\hat{\mathcal{S}}$ | mode算符 $\hat{L}_0 + \hat{C}_2$ | 本征值=共形维度 | §9.5 |
 | 同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ | 最高权条件 $\hat{L}_0\phi = h\phi$ | 重组→离散谱 | §9.5 |
 | Dirac条件 $D\psi = 0$ | 共形自举方程（OPE 结合律） | 零模→primary→结合律 | §9.6 |
 | 紧化算符 | CFT mode算符 | 三层统一 | §9.7 |
-| 和乐平庸化 | 闭壳层稳定 | $\delta_v = 0 \Leftrightarrow$ 稀有气体 | §9.4 |
+| 和乐平庸化 | 闭壳层稳定 | $\varepsilon = 0 \Leftrightarrow$ 稀有气体 | §9.4 |
 
 ### 9.9 局域分析足够性原理
 
-**问题**：底空间 $M_\ell$ 上有大量Regge顶点 $\{v\}$，每个顶点有不同的曲率涨落态 $\hat{\delta}_v|0\rangle$。为什么只需要取**一个**能体现底空间分布性质的代表性局域来分析，即可得到整个纤维丛的同步谱？
+**问题**：底空间 $M_\ell$ 上有大量Regge顶点 $\{v\}$，每个顶点有不同的曲率涨落态 $\hat{\varepsilon}|0\rangle$。为什么只需要取**一个**能体现底空间分布性质的代表性局域来分析，即可得到整个纤维丛的同步谱？
 
 **回答**：CFT算符插入生成局域态，但同步算符是整体定义的——其本征值谱由代数结构固定，不依赖于插入点。因此局域分析足够。
 
@@ -742,13 +742,13 @@ $$\underbrace{\hat{\mathcal{S}}_0}_{\text{前时空层：GL(5)\to SU(5)}} \;\xRi
 
 $$\mathcal{O}(z)|0\rangle = |\mathcal{O}(z)\rangle$$
 
-在CQM中，局域算符是曲率算符 $\hat{\delta}_v$，插入到Regge顶点 $v$ 生成局域态：
+在CQM中，局域算符是曲率算符 $\hat{\varepsilon}$，插入到Regge顶点 $v$ 生成局域态：
 
-$$\hat{\delta}_v |0\rangle = |\delta_v\rangle$$
+$$\hat{\varepsilon} |0\rangle = |\varepsilon\rangle$$
 
 **同步算符的普适性**（§9.5, §9.7）：
 
-$$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
+$$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)}$$
 
 同步算符 $\hat{\mathcal{S}}_k$ 的本征值谱 $\{n_k\}$ 由 SU(5) 简单根的 Dynkin 图深度严格推导（$l_k = k-1$）：
 
@@ -760,8 +760,8 @@ $$\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\beta\hat{\delta}_v^{(k)}}$$
 
 | 层面 | 局域 | 整体 |
 |:---|:---|:---|
-| **态** | 每个顶点 $v$ 有不同的曲率涨落态 $\lvert\delta_v\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
-| **算符** | 曲率算符 $\hat{\delta}_v$ 是局域的（定义在单个顶点） | 同步算符 $\hat{\mathcal{S}}$ 是整体的（定义在整个截面空间 $\Gamma(P_\ell)$） |
+| **态** | 每个顶点 $v$ 有不同的曲率涨落态 $\lvert\varepsilon\rangle$（离散态多） | 所有态遵守同一套同步方程 $\hat{\mathcal{S}}\Psi = n\Psi$ |
+| **算符** | 曲率算符 $\hat{\varepsilon}$ 是局域的（定义在单个顶点） | 同步算符 $\hat{\mathcal{S}}$ 是整体的（定义在整个截面空间 $\Gamma(P_\ell)$） |
 | **谱** | 局域态携带顶点的曲率信息 | 同步本征值 $\{n_k\}$ 由 SU(5) Dynkin图深度严格推导（$l_k = k-1$），与顶点无关 |
 | **CFT对应** | 算符插入 $\mathcal{O}(z)\lvert0\rangle$ 生成局域态 | OPE系数 $C_{ij}^k$ 由共形对称性固定，不依赖插入点 $z$ |
 

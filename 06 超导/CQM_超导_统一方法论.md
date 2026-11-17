@@ -6,11 +6,11 @@
 >
 > **层级命名对照**：本文的“四层FG”指参与 Regge 剖分的四个物质组织层级（元素/分子/晶胞/超导）；框架的 FG 同步算符层级为电子/元素/分子/晶胞四个（见 `CQM_超导_FG层级同步算符体系.md` §2）。电子 FG 的同步算符为 $V_0$（自由库仑场，无独立剖分，故不列入剖分层）；本文的“超导”层即晶胞 FG 的同步实现（结构群 $U(1)//\mathbb{Z}_n$）。
 >
-> **定位**：核心文档《差异-记忆核超导理论》（`CQM_超导核心理论.md`）的权威判据是其 §0 的两阶段方程——局域配对 $T^*$（两体核 $\mathcal K_{ij}$，式 DM.5）＋全局相位渗流 $T_c$（三体环路核 $K_{123}$、键刚度 $J_{ij}$、渗流阈值 $p_c$），合成判据 $T_c=\min(T^*,T_\theta)$，赝能隙宽度 $\Delta T_{\rm pg}=T^*-T_c$（式 DM.13）。本文档是同一框架的实现层/幅度通道：回答“核与耦合参数从哪里来、如何计算”，不替代 §0 判据。计算链产出（角亏 $\delta_v$、涨落幅度 $\Delta\delta_0$、声子标度 $\theta_D$）进入式 DM.6（配对耦合 $\lambda_i$）与式 DM.9（键刚度 $J_{ij}$）的几何输入；旧 $T_c$ 闭式（§3、§4 步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8），引用时注明“旧框架承接”。
+> **定位**：核心文档《差异-记忆核超导理论》（`CQM_超导核心理论.md`）的权威判据是其 §0 的两阶段方程——局域配对 $T^*$（两体核 $\mathcal K_{ij}$，式 DM.5）＋全局相位渗流 $T_c$（三体环路核 $K_{123}$、键刚度 $J_{ij}$、渗流阈值 $p_c$），合成判据 $T_c=\min(T^*,T_\theta)$，赝能隙宽度 $\Delta T_{\rm pg}=T^*-T_c$（式 DM.13）。本文档是同一框架的实现层/幅度通道：回答“核与耦合参数从哪里来、如何计算”，不替代 §0 判据。计算链产出（亏角 $\varepsilon$、涨落幅度 $\Delta\varepsilon_0$、声子标度 $\theta_D$）进入式 DM.6（配对耦合 $\lambda_i$）与式 DM.9（键刚度 $J_{ij}$）的几何输入；旧 $T_c$ 闭式（§3、§4 步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8），引用时注明“旧框架承接”。
 
 ## 1. 四层FG的纤维丛定义
 
-四层FG纤维丛是实现层计算链的几何载体：每层的底空间、结构群与联络确定该层的剖分对象；角亏 $\delta_v$ 与涨落幅度 $\Delta\delta_0$ 的几何来源沿元素→分子→晶胞→超导逐层给出，进入核心文档两阶段判据（式 DM.6/DM.9）的几何输入。
+四层FG纤维丛是实现层计算链的几何载体：每层的底空间、结构群与联络确定该层的剖分对象；亏角 $\varepsilon$ 与涨落幅度 $\Delta\varepsilon_0$ 的几何来源沿元素→分子→晶胞→超导逐层给出，进入核心文档两阶段判据（式 DM.6/DM.9）的几何输入。
 
 ### 1.1 主丛四元组
 
@@ -86,7 +86,7 @@ $$P_{\text{el}} \hookrightarrow P_{\text{mol}} \hookrightarrow P_{\text{cell}} \
 
 ## 2. Regge剖分与纤维丛的对应
 
-Regge剖分把每层底空间的几何离散化：角亏 $\delta_v$（§2.2）与其零温涨落幅度 $\Delta\delta_0$（§2.4）由此给出，作为核心文档两阶段判据（式 DM.6/DM.9）中几何核与涨落幅度的来源。
+Regge剖分把每层底空间的几何离散化：亏角 $\varepsilon$（§2.2）与其零温涨落幅度 $\Delta\varepsilon_0$（§2.4）由此给出，作为核心文档两阶段判据（式 DM.6/DM.9）中几何核与涨落幅度的来源。
 
 ### 2.1 Regge剖分作为底空间的三角剖分
 
@@ -96,15 +96,15 @@ Regge剖分把每层底空间的几何离散化：角亏 $\delta_v$（§2.2）�
 - **边** = 联络 $\mathcal{A}_\ell$ 的离散化（连接顶点的路径，给出平移规则）
 - **面** = 曲率 $F_\ell$ 的离散化（绕回路的和乐）
 
-### 2.2 角亏作为底空间曲率集中
+### 2.2 亏角作为底空间曲率集中
 
-顶点 $v$ 处的角亏 $\delta_v$ 是底空间曲率在该点的集中：
+顶点 $v$ 处的亏角 $\varepsilon$ 是底空间曲率在该点的集中：
 
-$$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta \quad \text{(2D, Gauss-Bonnet)}$$
+$$\varepsilon = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta \quad \text{(2D, Gauss-Bonnet)}$$
 
 等价于绕顶点 $v$ 的和乐：
 
-$$W_v = \exp(i \delta_v \hat{T}) \in G_\ell$$
+$$W_v = \exp(i \varepsilon \hat{T}) \in G_\ell$$
 
 其中 $\hat{T}$ 是结构群 $G_\ell$ 的生成元。
 
@@ -118,11 +118,11 @@ $$K_{ij} = \frac{\partial^2 V}{\partial u_i \partial u_j}$$
 
 $$D_{ij} = \frac{K_{ij}}{\sqrt{m_i m_j}}$$
 
-### 2.4 曲率量子涨落为角亏涨落
+### 2.4 曲率量子涨落为亏角涨落
 
-底空间曲率的零温量子涨落给出角亏涨落：
+底空间曲率的零温量子涨落给出亏角涨落：
 
-$$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
+$$\Delta\varepsilon_0^2 = \sum_q \left|\frac{\partial \varepsilon}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
 
 其中 $\omega_q$ 是纤维上的量子谐振子本征频率（声子频率）。
 
@@ -136,19 +136,18 @@ $$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^
 
 $$\hat{\mathcal{S}}_\ell = V_0 + V_\ell$$
 
-其中 $V_0$ 是质数势（从前时空基态紧化结构继承，各层级共享），$V_\ell$ 是层级结构项（元素层级 $L_{\text{orbital}}$、分子层级 $L_{\text{mol}}$、晶胞层级 $V_{\text{角亏激活}}(T)$），从该层主丛对称性与底空间曲率涨落给出。
+其中 $V_0$ 是质数势（从前时空基态紧化结构继承，各层级共享），$V_\ell$ 是层级结构项（元素层级 $L_{\text{orbital}}$、分子层级 $L_{\text{mol}}$、晶胞层级 $V_{\text{亏角激活}}(T)$），从该层主丛对称性与底空间曲率涨落给出。
 
 ### 3.2 本征值与温度依赖
 
 同步算符本征值：
 
-$$\lambda_n(T) = \gamma_n - \frac{\beta^2 \Delta\delta_v(T)^2 (n^2-1)}{4n^2 (1-\beta\delta_v)}$$
 
 其中：
 - $\gamma_n$：第 $n$ 个黎曼零点虚部（零温极限，从S1谱方程给出）
 - $\beta = \frac{1}{4\pi}\ln\frac{L}{a}$：系统尺寸严格确定（$L$系统尺寸，$a$晶格常数）
-- $\delta_v$：底空间角亏（从Regge剖分计算）
-- $\Delta\delta_v(T) = \Delta\delta_0 \sqrt{\tanh(\hbar\Omega_0 / 2k_B T)}$：温度依赖的角亏涨落
+- $\varepsilon$：底空间亏角（从Regge剖分计算）
+- $\Delta\varepsilon(T) = \Delta\varepsilon_0 \sqrt{\tanh(\hbar\Omega_0 / 2k_B T)}$：温度依赖的亏角涨落
 
 ### 3.3 Tc从本征值交叉导出
 
@@ -158,13 +157,11 @@ $$\lambda_2(T_c) = \lambda_1(T_c)$$
 
 解出Tc闭式：
 
-$$T_c = \frac{\theta_D}{2\,\mathrm{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
 
 超导条件 $x > 1$ 等价于：
 
-$$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
-> **旧框架承接（幅度通道）**：本节闭式在 $x>1$ 域内随涨落幅度 $\Delta\delta_0$ 单调升高（$x\propto\Delta\delta_0^2$，$\mathrm{arccoth}$ 单调减；核心文档 §11.10），属标度层的幅度通道结果；它与 $T^*/T_c$ 的映射未建立（M8），不直接给出核心判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）。
+> **旧框架承接（幅度通道）**：定量 $T_c$ 闭式待推 W-3。幅度通道属标度层，与 $T^*/T_c$ 的映射未建立（M8），不直接给出核心判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）。
 
 ## 4. 统一计算步骤（纤维丛语言）
 
@@ -172,17 +169,17 @@ $$\beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 **步骤A：Regge剖分** — 对底空间 $M_\ell$ 进行三角剖分 $T_\ell$（顶点+边+面）
 
-**步骤B：角亏** — 逐顶点计算底空间曲率集中：$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$（Gauss-Bonnet定理）
+**步骤B：亏角** — 逐顶点计算底空间曲率集中：$\varepsilon = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$（Gauss-Bonnet定理）
 
 **步骤C：动力学矩阵** — 联络 $\mathcal{A}_\ell$ 离散化为力常数矩阵 $K_{ij}$，动力学矩阵 $D_{ij} = K_{ij}/\sqrt{m_i m_j}$（Regge作用量变分）
 
 **步骤D：声子谱** — 纤维上量子谐振子本征频率：$\omega_q = \sqrt{\text{eig}(D)}$，Debye频率 $\omega_D = \max(\omega_q)$（量子谐振子对角化）
 
-**步骤E：角亏涨落** — 底空间曲率零温量子涨落：$\Delta\delta_0^2 = \sum_q |\partial\delta_v/\partial u_q|^2 \cdot \hbar/(2\omega_q)$
+**步骤E：亏角涨落** — 底空间曲率零温量子涨落：$\Delta\varepsilon_0^2 = \sum_q |\partial\varepsilon/\partial u_q|^2 \cdot \hbar/(2\omega_q)$
 
-**步骤F：Tc闭式（旧框架承接，幅度通道）** — 主丛结构群上同步算符本征值交叉：$T_c = \theta_D / (2\,\mathrm{arccoth}(x))$；与 $T^*/T_c$ 的映射未建立（M8）
+**步骤F：Tc闭式（旧框架承接，幅度通道）** — 主丛结构群上同步算符本征值交叉：$T_c（定量待推 W-3）$；与 $T^*/T_c$ 的映射未建立（M8）
 
-除耦合参数化缺口（$t_0,\lambda$，见 `CQM_超导_FG层级同步算符体系.md` §8.3）外，步骤 A–C 为定义式构造；步骤 D–F 的公式为**框架内断言**，无推导链路（$V_{\text{角亏激活}}$ 为 ansatz，见 `CQM_超导_非马尔可夫对接_方案.md` §一）。
+除耦合参数化缺口（$t_0,\lambda$，见 `CQM_超导_FG层级同步算符体系.md` §8.3）外，步骤 A–C 为定义式构造；步骤 D–F 的公式为**框架内断言**，无推导链路（$V_{\text{亏角激活}}$ 为 ansatz，见 `CQM_超导_非马尔可夫对接_方案.md` §一）。
 
 ## 5. 相对第一性的界定
 
@@ -205,7 +202,7 @@ CQM超导预测是相对第一性：
 - 但从纤维丛到计算链产出的步骤为**框架内构造**（步骤 D–F 无推导链路）（无经验拟合）
 - 元素FG底空间完全第一性（可穷尽列举）
 - 分子FG/晶胞FG/超导底空间需要外部数据，但计算步骤统一
-- **两阶段读法**：计算链产出（角亏 $\delta_v$、涨落幅度 $\Delta\delta_0$、Debye频率 $\omega_D$ 与闭式中的 $\theta_D$）是核心文档 §0 两阶段判据的几何输入——经两体核 $\mathcal K_{ij}$ 进入配对耦合 $\lambda_i$（式 DM.6，决定局域配对 $T^*$），经键刚度 $J_{ij}$ 进入相位刚度 $T_\theta$（式 DM.9，决定全局相位渗流）；核心临界温度由合成判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）给出，不由本链直接产出。旧 $T_c$ 闭式（步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。
+- **两阶段读法**：计算链产出（亏角 $\varepsilon$、涨落幅度 $\Delta\varepsilon_0$、Debye频率 $\omega_D$ 与闭式中的 $\theta_D$）是核心文档 §0 两阶段判据的几何输入——经两体核 $\mathcal K_{ij}$ 进入配对耦合 $\lambda_i$（式 DM.6，决定局域配对 $T^*$），经键刚度 $J_{ij}$ 进入相位刚度 $T_\theta$（式 DM.9，决定全局相位渗流）；核心临界温度由合成判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）给出，不由本链直接产出。旧 $T_c$ 闭式（步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。
 
 对比BCS：BCS需要电声耦合 $\lambda$ 和库仑赝势 $\mu^*$（经验参数），CQM不需要这些——CQM只需要晶体结构（实验输入确定底空间），从纤维丛到计算链产出的步骤为**框架内构造**（步骤 D–F 无推导链路）（耦合参数化缺口除外，见 `CQM_超导_FG层级同步算符体系.md` §8.3）。
 
@@ -240,7 +237,7 @@ CQM超导预测是相对第一性：
 3. Dynkin图（顶点+边）
 4. 2D Regge剖分（补三角形面）
 5. 顶点位置（从核子分布对称性）
-6. 角亏 $\delta_v$（从剖分计算）
+6. 亏角 $\varepsilon$（从剖分计算）
 
 存储为元素FG纤维丛表，供分子FG和晶胞FG查用。
 
@@ -272,7 +269,7 @@ CQM超导预测是相对第一性：
 2. 应用空间群操作生成周期结构
 3. 取一个晶胞的底空间 $M_{\text{cell}}$
 4. 晶胞联络 $\mathcal{A}_{\text{cell}}$ 从晶格结构给出
-5. 计算晶胞Regge剖分和角亏 $\delta_v$
+5. 计算晶胞Regge剖分和亏角 $\varepsilon$
 
 ### 8.2 外部数据需求
 
@@ -285,14 +282,14 @@ CQM超导预测是相对第一性：
 ### 9.1 单位分布的选取
 
 从晶胞FG底空间 $M_{\text{cell}}$ 中选取单位分布——能体现全局分布的局域单元：
-- 单位分布是最小结构单元，其角亏能代表全局角亏
+- 单位分布是最小结构单元，其亏角能代表全局亏角
 - 超导底空间 $M_{\text{super}}$ = 单位分布
 - 超导联络 $\mathcal{A}_{\text{super}}$ 从晶胞FG联络诱导
 - N在Debye积分中消去（局域量），不需处理宏观材料
 
 ### 9.2 从单位分布到计算链产出
 
-对超导纤维丛 $(M_{\text{super}}, P_{\text{super}}, \pi_{\text{super}}, G_{\text{super}})$ 执行统一步骤A-F（§4），得到计算链产出（角亏 $\delta_v$、涨落幅度 $\Delta\delta_0$、声子标度 $\theta_D$），作为核心文档两阶段判据（式 DM.6/DM.9）的几何输入；步骤 F 的旧 $T_c$ 闭式承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。
+对超导纤维丛 $(M_{\text{super}}, P_{\text{super}}, \pi_{\text{super}}, G_{\text{super}})$ 执行统一步骤A-F（§4），得到计算链产出（亏角 $\varepsilon$、涨落幅度 $\Delta\varepsilon_0$、声子标度 $\theta_D$），作为核心文档两阶段判据（式 DM.6/DM.9）的几何输入；步骤 F 的旧 $T_c$ 闭式承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。
 
 ## 10. 实现路线
 
@@ -300,11 +297,11 @@ CQM超导预测是相对第一性：
 
 Phase 1: 元素FG穷尽列举（完全第一性）
 - 118个元素→核子分布→纤维丛→嘉当矩阵→Dynkin图→Regge剖分
-- 预计算元素FG纤维丛表（顶点位置+边+面+角亏）
+- 预计算元素FG纤维丛表（顶点位置+边+面+亏角）
 
 Phase 2: 统一从纤维丛到计算链产出的步骤（框架内构造，步骤 D–F 无推导链路）
 - 输入：Regge剖分（顶点位置+边+面）+原子质量
-- 步骤A-F：剖分→角亏→动力学矩阵→声子频率→角亏涨落→计算链产出（步骤 F 的旧 Tc 闭式承接为幅度通道，M8）
+- 步骤A-F：剖分→亏角→动力学矩阵→声子频率→亏角涨落→计算链产出（步骤 F 的旧 Tc 闭式承接为幅度通道，M8）
 
 Phase 3: 分子FG构造（需化学数据）
 - 输入：化学式+分子结构（键长/键角）
@@ -323,10 +320,10 @@ Phase 4: 晶胞FG构造（需晶体数据）
 |:---|:---|:---|
 | 数学框架 | 无统一框架 | 四层FG纤维丛 $(M_\ell, P_\ell, \pi_\ell, G_\ell)$ |
 | 剖分对象 | 不区分层级 | 元素=核子分布，分子=原子分布，晶胞=原子/分子分布，超导=单位分布 |
-| 角亏 $\delta_v$ | 经验近似0.01 | 底空间曲率集中（Gauss-Bonnet） |
+| 亏角 $\varepsilon$ | 经验近似0.01 | 底空间曲率集中（Gauss-Bonnet） |
 | 动力学矩阵 | 不构造 | 联络 $\mathcal{A}_\ell$ 离散化 |
 | 声子频率 | 从数据库取 | 纤维上量子谐振子本征频率 |
-| 角亏涨落 | 闭式公式跳步 | 底空间曲率量子涨落 |
+| 亏角涨落 | 闭式公式跳步 | 底空间曲率量子涨落 |
 | Tc | 自由能公式 | 同步算符本征值交叉（主丛谱算符；旧框架承接，幅度通道） |
 | 严格性 | 含数值拟合 | 从纤维丛到计算链产出为框架内构造（D–F 无推导链路） |
 
@@ -336,15 +333,14 @@ Phase 4: 晶胞FG构造（需晶体数据）
 
 **Tc闭式**（同步算符本征值交叉 $\lambda_2(T_c) = \lambda_1(T_c)$；旧框架承接（幅度通道），与 $T^*/T_c$ 的映射未建立（M8））：
 
-$$T_c = \frac{\theta_D}{2\,\mathrm{arccoth}(x)}, \quad x = \frac{3\beta^2 \Delta\delta_0^2}{16(1-\beta\delta_v)(\gamma_2-\gamma_1)}$$
 
-**角亏**（底空间曲率集中，Gauss-Bonnet）：
+**亏角**（底空间曲率集中，Gauss-Bonnet）：
 
-$$\delta_v = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$$
+$$\varepsilon = 2\pi - \sum_{\Delta \ni v} \alpha_\Delta$$
 
 **和乐**（绕顶点 $v$ 的结构群元素）：
 
-$$W_v = \exp(i \delta_v \hat{T}) \in G_\ell$$
+$$W_v = \exp(i \varepsilon \hat{T}) \in G_\ell$$
 
 **动力学矩阵**（联络离散化）：
 
@@ -354,18 +350,16 @@ $$D_{ij} = \frac{K_{ij}}{\sqrt{m_i m_j}}, \quad K_{ij} = \frac{\partial^2 V_{\te
 
 $$\omega_q^2 = \text{eig}(D)$$
 
-**角亏涨落**（底空间曲率零温量子涨落）：
+**亏角涨落**（底空间曲率零温量子涨落）：
 
-$$\Delta\delta_0^2 = \sum_q \left|\frac{\partial \delta_v}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
+$$\Delta\varepsilon_0^2 = \sum_q \left|\frac{\partial \varepsilon}{\partial u_q}\right|^2 \cdot \frac{\hbar}{2\omega_q}$$
 
 **同步算符**（主丛谱算符）：
 
-$$\hat{\mathcal{S}}_\ell = V_0 + V_\ell, \quad \lambda_n(T) = \gamma_n - \frac{\beta^2 \Delta\delta_v(T)^2 (n^2-1)}{4n^2 (1-\beta\delta_v)}$$
 
 **超导条件**（幅度通道，旧框架承接）：
 
-$$x > 1 \iff \beta\delta_v + \frac{3\beta^2}{16(\gamma_2-\gamma_1)} \Delta\delta_0^2 > 1$$
 
 ---
 
-**实现层收束**：本链产出——角亏 $\delta_v$（底空间曲率集中，Gauss-Bonnet）、涨落幅度 $\Delta\delta_0$（底空间曲率零温量子涨落）、声子标度（Debye频率 $\omega_D=\max(\omega_q)$，闭式中的 $\theta_D$）——是核心文档 §0 两阶段判据的几何输入：经两体核 $\mathcal K_{ij}$（式 DM.5）给出配对耦合 $\lambda_i$（式 DM.6，决定局域配对 $T^*$），经键刚度 $J_{ij}$ 给出相位刚度 $T_\theta$（式 DM.9，决定全局相位渗流）；核心临界温度由合成判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）给出，不由本链直接产出。旧 $T_c$ 闭式（§3、§4 步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。
+**实现层收束**：本链产出——亏角 $\varepsilon$（底空间曲率集中，Gauss-Bonnet）、涨落幅度 $\Delta\varepsilon_0$（底空间曲率零温量子涨落）、声子标度（Debye频率 $\omega_D=\max(\omega_q)$，闭式中的 $\theta_D$）——是核心文档 §0 两阶段判据的几何输入：经两体核 $\mathcal K_{ij}$（式 DM.5）给出配对耦合 $\lambda_i$（式 DM.6，决定局域配对 $T^*$），经键刚度 $J_{ij}$ 给出相位刚度 $T_\theta$（式 DM.9，决定全局相位渗流）；核心临界温度由合成判据 $T_c=\min(T^*,T_\theta)$（式 DM.13）给出，不由本链直接产出。旧 $T_c$ 闭式（§3、§4 步骤 F）承接为幅度通道，与 $T^*/T_c$ 的映射未建立（M8）。

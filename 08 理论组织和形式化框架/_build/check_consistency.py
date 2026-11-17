@@ -113,7 +113,10 @@ def main():
     # ---------- Lean 对接 ----------
     decls = jload(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "declarations.json"))
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
-    check("Lean 声明 1500 / 模块 78", (len(decls), len(mods)) == (1500, 78),
+    # 2026-11-17（v1.9.210）：删除旧口径 v_τ=√(1−βδ_v) 的 Lean 簇（顶点角亏载体，
+    # 传递依赖闭包 24 文件：FGChain/Superconductivity/NonMarkovianity 主簇），
+    # 剩余 54 个纯数学/其他主题源码。声明 1500→993、模块 78→54；axiom 15 保留（非旧口径）。
+    check("Lean 声明 993 / 模块 54", (len(decls), len(mods)) == (993, 54),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []
@@ -197,8 +200,16 @@ def main():
     # 证据句重匹配使 claim 级边 281→275，dir 50 / hyper 19 未变，故 350→344；144 实体未变。
     # 2026-11-16（v1.9.161）：T1–T7 文本落地后证据句重匹配使 claim 级边 275→277，
     # dir 50 / hyper 19 未变，故 344→346；144 实体未变。
-    check("知识图谱 144 实体 / 346 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 346),
+    # 2026-11-17（v1.9.209）：曲率载体口径重构——超导核心 §0.2 改写、删跨材料指针块、
+    # 五份权威源 δ_v 语义改为归一化亏角，致证据句重匹配使 claim 级边 277→274，
+    # dir 50 / hyper 19 未变，故 346→343；144 实体未变（C026 定义文本随原文档同步）。
+    # 2026-11-17（v1.9.210）：术语统一（角亏→亏角，456 处）致证据句再重匹配，
+    # claim 级边 274→271，dir 50 / hyper 19 未变，故 343→340；144 实体未变。
+    # 2026-11-17（v1.9.216）：删除基于顶点角亏的定量内容（C²=2/3、Δε₀ 计算链、
+    # 自由能 T_c 链）致证据句重匹配，claim 级边 271→274，dir 50 / hyper 19 未变，
+    # 故 340→343；144 实体未变。
+    check("知识图谱 144 实体 / 343 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 343),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
