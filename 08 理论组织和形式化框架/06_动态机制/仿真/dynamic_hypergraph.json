@@ -292,9 +292,9 @@
       "id": "C026",
       "label": "角亏",
       "type": "几何",
-      "definition": "$\\delta_v$ Regge剖分顶点角亏",
+      "definition": "归一化亏角 $\\varepsilon_h/(2\\pi)$（$\\varepsilon_h$ 为 Regge/LQG 铰链亏角、曲率载体；$\\delta_v$ 即此量，非顶点角亏）",
       "source_doc": "D006",
-      "source_loc": "§二.5",
+      "source_loc": "§3.4",
       "synonyms": [],
       "derive_depth": 1,
       "reachable_from_seed": true
