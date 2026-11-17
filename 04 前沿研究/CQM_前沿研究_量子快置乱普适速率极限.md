@@ -204,7 +204,6 @@ $$N_\beta(E) = \frac{D_E^{1/2}}{f_\beta D} \sum_n \langle E_n | \hat{\rho}_{\bet
 
 **式(17) — 谱形状因子与傅里叶变换的关系：**
 
-$$K_\beta(t) = f_\beta^2 \left|\tilde{N}_\beta(t)\right|^2$$
 
 **物理意义**：
 - $\tilde{N}_\beta(t)$：正则化态密度的傅里叶变换（归一化到 $\tilde{N}_\beta(0) = 1$）
@@ -267,7 +266,6 @@ $$\Lambda_\ell = \frac{(2+\ell)}{\ell} \cdot \frac{2(\pi^2 + 8) \ln\left(\frac{Z
 
 **式(8) — 精确形式：**
 
-$$t_s \geq \frac{c\beta}{\pi} \ln\left(\frac{1}{\Lambda_{\mathrm{eff}}} \ln\left(\frac{f_\beta^2 Z_{\mathrm{max}}^2}{P_{\mathrm{scr}}}\right)\right)$$
 
 **物理意义**：这是论文的核心结果——持续置乱时间 $t_s$ 的普适下界。
 

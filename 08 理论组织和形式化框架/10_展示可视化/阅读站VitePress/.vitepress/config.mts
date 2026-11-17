@@ -83,17 +83,17 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261116131338' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261116131338' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261116131338' }],
-    ['script', { src: '/cqm-glossary.js?v=20261116131338', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261116131338', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261116131338', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261116131338', defer: true }],
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261117175855' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261117175855' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261117175855' }],
+    ['script', { src: '/cqm-glossary.js?v=20261117175855', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261117175855', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261117175855', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261117175855', defer: true }],
     // tex-svg.js 不在此列：引擎的注入由 vp-math.js 负责（配置必须先于引擎执行，
     // 且公网部署走国内 CDN、内网走随站文件，见 build 脚本 3b 节）。
-    ['script', { src: '/lean-page.js?v=20261116131338', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261116131338', defer: true }]
+    ['script', { src: '/lean-page.js?v=20261117175855', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261117175855', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -177,7 +177,7 @@ export default defineConfig({
         "link": "/D005_集成理论_总纲"
       },
       {
-        "text": "CQM 核心：两种引力的存在论前提——中子缺陷矩阵作为精细引力角亏的结构性来源",
+        "text": "CQM 核心：两种引力的存在论前提——中子缺陷矩阵作为精细引力亏角的结构性来源",
         "link": "/D006_引力存在论前提"
       },
       {
@@ -359,7 +359,7 @@ export default defineConfig({
         "link": "/D029_FG纤维丛理论"
       },
       {
-        "text": "LQG 到 Regge 的显式映射：自旋—面积—角—角亏",
+        "text": "LQG 到 Regge 的显式映射：自旋—面积—角—亏角",
         "link": "/D055_LQG到Regge显式映射"
       }
     ]
@@ -367,6 +367,10 @@ export default defineConfig({
   {
     "text": "功能页",
     "items": [
+      {
+        "text": "文献总览",
+        "link": "/REFS_文献总览"
+      },
       {
         "text": "文献总览",
         "link": "/REFS_文献总览"
@@ -411,7 +415,7 @@ export default defineConfig({
     "text": "术语表",
     "items": [
       {
-        "text": "术语总览（422 条）",
+        "text": "术语总览（416 条）",
         "link": "/TERMS_术语表"
       }
     ]
