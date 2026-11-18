@@ -581,7 +581,7 @@ $$k_BT_\theta=2.2017\,J_{\rm eff}.$$
 $$T_c=\min\{T^*,\ T_{\rm BKT},\ T_\theta\},\qquad \Delta T_{\rm pg}=T^*-T_c .$$
 
 - 配对限制（$T^*<T_{\rm BKT},T_\theta$）：$T_c=T^*$，$\Delta T_{\rm pg}=0$，BCS 型；
-- 相位限制（$T_{\rm BKT}$ 或 $T_\theta<T^*$）：$T_c=T_{\rm BKT}$ 或 $T_\theta$，$\Delta T_{\rm pg}>0$，赝能隙型；
+- 相位限制（$T_{\rm BKT}$ 或 $T_\theta<T^*$）：$T_c=T_{\rm BKT}$ 或 $T_\theta$，$\Delta T_{\rm pg}>0$，相位限制型；
 - 渗流不独立定义 $T_c$（见第五步）。
 
 **第五步：渗流的正确角色（定义域/乘子，不是独立 $T_c$）。**

@@ -230,8 +230,8 @@ $$p(T)=\Phi\!\left(\frac{\delta-\ell^{(0)}}{\sigma(T)}\right)-\Phi\!\left(\frac{
 
 | 情形 | $\sigma\to0$（高温） | $\sigma\to\infty$（低温） | $p(T)$ 走向 | 与 $p_c$ 的交点 |
 |:---|:---:|:---:|:---|:---|
-| $|\ell^{(0)}|<\delta$ | $p\to1$ | $p\to0$ | **随降温下降** | 与"降温凝聚"方向相反 |
-| $|\ell^{(0)}|>\delta$ | $p\to0$ | $p\to0$ | 中间有**极大值** | 一般**两个**交点，$T_c$ 不唯一 |
+| $\lvert\ell^{(0)}\rvert<\delta$ | $p\to1$ | $p\to0$ | **随降温下降** | 与"降温凝聚"方向相反 |
+| $\lvert\ell^{(0)}\rvert>\delta$ | $p\to0$ | $p\to0$ | 中间有**极大值** | 一般**两个**交点，$T_c$ 不唯一 |
 
 **两种情形都不可用**：第一种给出"降温破坏锁定"的反向转变；第二种给出双重 $T_c$。
 
@@ -326,8 +326,8 @@ $$\text{若 M1 成立且 }A_\tau=\varnothing\ \Longrightarrow\ \text{无超导};
 
 | 几何计算结果 | 结论 |
 |:---|:---|
-| $A_\tau\ne\varnothing$（存在零亏角子复形） | M1 可保留，$A_\tau$ 是硬前提；M2 的锚判据有意义 |
-| $A_\tau=\varnothing$ | **M1 的强形式被否证**；$A_\tau$ 必须改为容差集 $\max_e|\ell^{(0)}_e|<\delta$，此时 §5.2 的单调性问题重新成为核心矛盾 |
+| $A_\tau\ne\varnothing$（存在零亏角子复形） | M1 可保留，$A_\tau$ 是硬前提；M2 的锚读出有意义 |
+| $A_\tau=\varnothing$ | **M1 的强形式被否证**；$A_\tau$ 必须改为容差集 $\max_e\lvert\ell^{(0)}_e\rvert<\delta$，此时 §5.2 的单调性问题重新成为核心矛盾 |
 
 这是本文给出的、唯一能把"前提 / 体现"问题变成"算一个几何量"的路径。**建议把它列为 M2 的第一项计算。**
 
@@ -484,7 +484,7 @@ $$\sum_{e\in C}\ln r_e=0\ \ \forall C\iff r\ \text{是上边界}\ (r_e=v_j/v_i)\
 | | DM.12 的容差窗 | 闭环 holonomy（本节） |
 |:---|:---|:---|
 | 随机变量 | 单边 $\ell_e$ | 环和 $S_C=\sum_{e\in C}\ell_e$ |
-| 条件 | $|\ell_e|<\delta$（对 $0$ 对称） | $|S_C|<4\pi\epsilon$ |
+| 条件 | $\lvert\ell_e\rvert<\delta$（对 $0$ 对称） | $\lvert S_C\rvert<4\pi\epsilon$ |
 | 均值 | $0$（围绕零对称） | $m_C=\sum_{C}\ell^{(0)}_e>0$（Delaunay 给 $\ell\ge0$，见 06 第 615 行） |
 | 事件类型 | 对称窗 | **左尾** |
 | $T\downarrow$（$\sigma_\ell\uparrow$） | 窗内概率**下降** → 反向 | 左尾**变肥** → 概率**上升** ✔ |
