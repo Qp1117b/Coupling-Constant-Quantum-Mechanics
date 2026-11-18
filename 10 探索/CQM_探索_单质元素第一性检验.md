@@ -2,11 +2,17 @@
 
 
 > **定位**：探索稿，非权威源。不改动 `06` 的任何定义、数值与缺口状态。
+>
 > **标注**：【文档显式】= 06 原文口径；【代数改写】= 纯代数变形；【本文推导】= 本文新增推理；【构造】= 本文新增假设；【外部】= 外部实验/理论，只作对照；【未证】= 缺口。
+>
 > **任务**：把"$T_c$ 第一性主线"放到 19 个单质元素的真实数据上做判决。
+>
 > **rev.1（§〇–§九）**：判据 ① 与声子支 $W$-3′+DM.6+DM.8 被否证。
+>
 > **rev.2（§3.3、§4.5–4.6、§5.1、§6.1 及 §七–§九修订）**：补上"静态亏角读法""裸 DOS 自洽""强耦合反演""零模型对照"四项修正。结论更严格：**链条即便加上全部可辩护的修正，仍比"令 $T_c$ 为常数"更差**；但同一几何变量 $L$ 配上指数 $-0.2$ 的幂律就把 $R^2$ 提到 0.58——错的是**指数**，不是变量。
+>
 > **脚本**：`10 探索/cqm_element_sc/`（`geom2.py`、`g_table.py`、`element_test.py`、`analyze.py`、`figures.py`、`dynamic_range.py`、`eps_req.py`、`final.py`、`final_figure.py`）
+>
 > **图**：`figs/element_sc_verdict.png`、`figs/element_lambda_range.png`、`figs/element_chain_vs_null.png`、`figs/element_criterion1_static_deficit.png`
 
 ---

@@ -468,7 +468,7 @@ $$\Delta\varepsilon_0^2 = \sum_q \left|\frac{\partial \varepsilon}{\partial u_q}
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
 | $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸给出公式，牛顿极限定值尚待完善 |
-| $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
+| $☯$ | $\frac{d}{ds}\ln\xi(s)\big\rvert_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 
 ## 9. 纤维丛与CFT的严格对应：联络→曲率→同步→共形
