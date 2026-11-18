@@ -8,7 +8,7 @@
 {"id": "H008", "relation": "重组实现", "premises": ["晶胞量子振荡"], "conclusion": "声子/角亏涨落", "premise_concept_ids": ["C071"], "conclusion_concept_id": "C026", "source_doc": ["D011", "D030"], "is_recomposition": true}
 {"id": "H009", "relation": "重组实现", "premises": ["不确定性", "跃迁耦级 $2\\ln n$"], "conclusion": "资格条件", "premise_concept_ids": ["C063"], "conclusion_concept_id": "C064", "source_doc": ["D030"], "is_recomposition": true}
 {"id": "H010", "relation": "重组实现", "premises": ["$\\lambda_2(T_c)=\\lambda_1(T_c)$"], "conclusion": "丛作用量交叉 $F_1=F_2$", "premise_concept_ids": ["C070"], "conclusion_concept_id": "C067", "source_doc": ["D030"], "is_recomposition": true}
-{"id": "H011", "relation": "重组实现", "premises": ["电子FG", "元素FG", "分子FG", "晶胞FG"], "conclusion": "紧化算符层级化实现", "premise_concept_ids": ["C073"], "conclusion_concept_id": "C012", "source_doc": ["D032"], "is_recomposition": true}
+{"id": "H011", "relation": "重组实现", "premises": ["电子FG", "元素FG", "分子FG", "晶胞FG"], "conclusion": "紧化算符层级化实现", "premise_concept_ids": ["C073"], "conclusion_concept_id": "C012", "source_doc": ["D028"], "is_recomposition": true}
 {"id": "H012", "relation": "重组实现", "premises": ["物质自组织基态同步 $SU(5)$"], "conclusion": "各因子层 $GL(n)$ 谱/残留", "premise_concept_ids": ["C014"], "conclusion_concept_id": "C013", "source_doc": ["D029"], "is_recomposition": true}
 {"id": "H013", "relation": "重组实现", "premises": ["局部共形对称性", "全局模对称性"], "conclusion": "自守形式", "premise_concept_ids": ["C074", "C075"], "conclusion_concept_id": "C040", "source_doc": ["D024"], "is_recomposition": true}
 {"id": "H014", "relation": "重组实现", "premises": ["时间侧自守形式", "空间侧自守形式"], "conclusion": "$☯$", "premise_concept_ids": ["C040"], "conclusion_concept_id": "C048", "source_doc": ["D009"], "is_recomposition": true}

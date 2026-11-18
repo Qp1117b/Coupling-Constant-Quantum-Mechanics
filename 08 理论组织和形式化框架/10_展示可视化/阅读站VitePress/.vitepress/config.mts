@@ -83,17 +83,17 @@ export default defineConfig({
   head: [
     // 这些资源文件名不带内容哈希，必须挂版本串：否则重建后浏览器仍用旧脚本，
     // 现象是「明明修好了、页面上却还是老样子」。
-    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261117231617' }],
-    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261117231617' }],
-    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261117231617' }],
-    ['script', { src: '/cqm-glossary.js?v=20261117231617', defer: true }],
-    ['script', { src: '/cqm-depth.js?v=20261117231617', defer: true }],
-    ['script', { src: '/cqm-enhance-vp.js?v=20261117231617', defer: true }],
-    ['script', { src: '/vp-math.js?v=20261117231617', defer: true }],
+    ['link', { rel: 'stylesheet', href: '/vp-brand.css?v=20261118170809' }],
+    ['link', { rel: 'stylesheet', href: '/vp-read.css?v=20261118170809' }],
+    ['link', { rel: 'stylesheet', href: '/stylesheets/cqm-enhance.css?v=20261118170809' }],
+    ['script', { src: '/cqm-glossary.js?v=20261118170809', defer: true }],
+    ['script', { src: '/cqm-depth.js?v=20261118170809', defer: true }],
+    ['script', { src: '/cqm-enhance-vp.js?v=20261118170809', defer: true }],
+    ['script', { src: '/vp-math.js?v=20261118170809', defer: true }],
     // tex-svg.js 不在此列：引擎的注入由 vp-math.js 负责（配置必须先于引擎执行，
     // 且公网部署走国内 CDN、内网走随站文件，见 build 脚本 3b 节）。
-    ['script', { src: '/lean-page.js?v=20261117231617', defer: true }],
-    ['script', { src: '/terms-app.js?v=20261117231617', defer: true }]
+    ['script', { src: '/lean-page.js?v=20261118170809', defer: true }],
+    ['script', { src: '/terms-app.js?v=20261118170809', defer: true }]
   ],
   themeConfig: {
     nav: [
@@ -156,7 +156,7 @@ export default defineConfig({
         "link": "/L003_第三分册_谱方程与黎曼零点"
       },
       {
-        "text": "展开链讲稿 · 第四分册：超导涌现链（两阶段读法：局域配对与全局相位渗流）",
+        "text": "展开链讲稿 · 第四分册：超导涌现链（两阶段读法：局域配对与全局相位刚度）",
         "link": "/L004_第四分册_超导涌现链"
       },
       {
@@ -306,14 +306,6 @@ export default defineConfig({
         "link": "/D030_超导核心理论"
       },
       {
-        "text": "FG 层级同步算符体系：层级谱传递的实现层与幅度通道",
-        "link": "/D032_FG层级同步算符体系"
-      },
-      {
-        "text": "CQM超导统一方法论：四层FG纤维丛与相对第一性计算链",
-        "link": "/D033_统一方法论"
-      },
-      {
         "text": "CQM 3D专业引力超导实验软件",
         "link": "/D034_材料设计器总览"
       },
@@ -411,7 +403,7 @@ export default defineConfig({
     "text": "术语表",
     "items": [
       {
-        "text": "术语总览（420 条）",
+        "text": "术语总览（407 条）",
         "link": "/TERMS_术语表"
       }
     ]
@@ -433,12 +425,8 @@ export default defineConfig({
         "link": "/F01_CQM_前沿研究_渗流连通性与临界同步"
       },
       {
-        "text": "超导理论与非马尔可夫性的对接方案（实现层：记忆核与 §11.10 谱线的对接）",
-        "link": "/F02_CQM_超导_非马尔可夫对接_方案"
-      },
-      {
         "text": "cqm_analysis 数据与脚本资产清单",
-        "link": "/F03_README"
+        "link": "/F02_README"
       }
     ]
   },

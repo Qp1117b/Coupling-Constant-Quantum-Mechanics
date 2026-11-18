@@ -703,7 +703,7 @@ const V=id=>el('v_'+id);
  +'<div class="hint">源 CSV / JSON / OWL 见各维度目录；本页为派生呈现，源为唯一事实。</div></div></div>'
  +'<h2>快照</h2><div class="kpis">'+[['概念',m.nodes],['命题',m.props],['论证',m.args],['Lean 模块',m.modules],['Lean 声明',m.decls],['可达概念',m.reached+'/'+m.nodes]]
    .map(([k,v])=>'<div class="kpi"><b>'+v+'</b><span>'+k+'</span></div>').join('')+'</div>'
- +'<div class="note">形式化覆盖 F 仅 40/81（49.4%）；未覆盖概念不得视为已形式化。缺口状态未改动；贝叶斯 CPT 为占位。</div>';}
+ +'<div class="note">形式化覆盖 F 仅 40/83（48.2%）；未覆盖概念不得视为已形式化。缺口状态未改动；贝叶斯 CPT 为占位。</div>';}
 /* ---------- 全局检索 ---------- */
 {const box=el('gres'),inp=el('gq');
  function search(){
