@@ -72,7 +72,7 @@ $$\underbrace{\{\varepsilon_e\}}_{\rm Regge}\xrightarrow[\ A_{ek}\ ]{\rm W\text{
 
 第三条是一条**方法性警告**：任何直接对理想高对称格子做 Delaunay 再算 $A_{ek}$ 的做法，若不剔除 sliver，会得到纯噪声。本轮全部结果都在剔除后。
 
-### 2.3 $G$ 近乎普适
+### 2.3 G 近乎普适
 
 $$G\equiv\sum_kA_{ek}^2\left(\frac{l_0}{l_k}\right)^2,\qquad \Delta\varepsilon_0^2=\frac{3\hbar(1-f)}{2m\omega_D\,l_0^2}\,G .$$
 
@@ -133,7 +133,7 @@ $N>1$ 只会把这些数字推得更高、并把 (ii) 里的 16 个"解禁"后�
 
 **图 (a)**：横轴实测、纵轴 ① 预言，虚线为完美线、点线为 $\pm10^2,\pm10^4$。三个点全部落在 $10^2$–$10^4$ 上方。**图 (b)**：$\Delta\varepsilon_0$ 与 $T_c$ 的散点，绿带是 ① 的窗口——$T_c$ 在 $r_0$ 处**没有任何门槛结构**（$T_c$ 从 $1.8\times10^{-5}$ 连续铺到 $6.9\times10^{-2}$，跨过窗口边界毫无变化）。
 
-### 3.3 rev.2：把 $\delta_{\rm intrinsic}$ 当成静态亏角时，① 会怎样（§九 悬案的判决）
+### 3.3 rev.2：把 δ_intrinsic 当成静态亏角时，① 会怎样（§九 悬案的判决）
 
 §九 留下的问题："若 $\Delta\varepsilon$ 的主控量换成 $\delta_{\rm intrinsic}$，① 需重算。"本节给出结果。
 
@@ -165,7 +165,7 @@ $$\Theta_{\rm req}=\tanh\frac{\theta_D}{2T_c},\qquad
 
 ---
 
-## 四、$W$-3′ + DM.6 + DM.8 的判决
+## 四、W-3′ + DM.6 + DM.8 的判决
 
 $$\lambda=\frac{N_0\,g^2\,z\,\langle w\rangle}{\hbar\omega_D},\qquad \langle w\rangle=\frac{\Delta\varepsilon_0^2}{\Delta\varepsilon_{\rm ref}^2},\qquad \frac{T_c}{\theta_D}=1.13\,e^{-1/\lambda}$$
 
@@ -241,7 +241,7 @@ $$N_0^{\rm bare}=\frac{N_0^{\rm exp}}{1+\lambda}\ \Longrightarrow\
 
 **结论：§4.2 的"数据只要 4×"不是 BCS 反演的假象**，换强耦合公式后跨度几乎不变（3.95→4.24）。作为旁证，AD 反演给 Al 0.372、Zn 0.369、Cd 0.367、Be 0.234、Pb 0.990，与文献 $\lambda_{ep}$（Al≈0.43、Zn≈0.38、Cd≈0.38、Be≈0.24、Pb≈1.5）同量级；差异主要来自把 $\omega_{\log}$ 等同于 $\theta_D$（Pb 尤甚），属 M4 未闭合项。
 
-### 4.6 rev.2：零模型对照——链条连常数 $T_c$ 都打不过
+### 4.6 rev.2：零模型对照——链条连常数 T_c 都打不过
 
 **误差度量必须统一**：取 $r_i=\ln(T_{c,i}^{\rm pred}/T_{c,i}^{\rm obs})$，报 $\exp\sqrt{\langle r^2\rangle}$ 与 $R^2=1-\langle r^2\rangle/{\rm Var}(\ln T_c)$。**不扣均值**——平移就是误差，不能当第二个免费参数（这是 rev.1 的 §4 诊断里容易误算的地方）。每个模型的参数列在表末。
 
@@ -318,7 +318,7 @@ $$\frac{d\ln\lambda}{d\ln m}\bigg|_{\rm iso}=-\frac{1-a/2}{1+2\lambda},\qquad
 
 **这不是为失败找台阶，而是判决本身指向 06 已有的分支。** 登记为：元素支的主控量是 $\delta_{\rm intrinsic}$，$W$-3′ 降为元素支的次级修正。
 
-### 6.1 rev.2 重要限定：$\delta_{\rm intrinsic}$ 管的是阈值，不是 $\lambda$
+### 6.1 rev.2 重要限定：δ_intrinsic 管的是阈值，不是 λ
 
 上面的第 3 句写得过强，必须按 06 §4 收窄：
 
@@ -333,7 +333,7 @@ $$\frac{d\ln\lambda}{d\ln m}\bigg|_{\rm iso}=-\frac{1-a/2}{1+2\lambda},\qquad
 
 > **重排理由**：rev.1 把"$\delta_{\rm intrinsic}$ 的 Fermi 面角亏定义"列为首要目标。rev.2 证明它是**静态阈值量**（§6.1），而 ① 即便在静态读法下也不能承担 $T_c$（§3.3）。因此降为次要；首要目标改为**§4.6 定量定位的幂次缺口**。
 
-### 7.1【首要】$\lambda\propto L^{1/5}$ 的第一性来源（N-19 升级）
+### 7.1【首要】λ ∝ L^(1/5) 的第一性来源（N-19 升级）
 
 目标不是再拟合指数，而是从 CQM 已有结构推出它。已经排除的路：
 
@@ -348,7 +348,7 @@ $$\frac{d\ln\lambda}{d\ln m}\bigg|_{\rm iso}=-\frac{1-a/2}{1+2\lambda},\qquad
 
 **最低验收标准**：在 §4.6 的同一张表上，$R^2>0.22$（超过两参数纯 $\theta_D$ 幂律）且 RMS < ×4.8，否则不算推进。
 
-### 7.2【次要】$\delta_{\rm intrinsic}$ 的几何定义（N-16 降级但保留）
+### 7.2【次要】δ_intrinsic 的几何定义（N-16 降级但保留）
 
 候选（需推导+数值，不是结论）：把 Fermi 面当闭合分片曲面 $\Sigma_F$，角亏测度满足 Gauss–Bonnet $\int\mu_F=4\pi$，分布由形状定：
 

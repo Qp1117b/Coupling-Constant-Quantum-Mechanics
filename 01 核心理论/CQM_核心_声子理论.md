@@ -288,7 +288,7 @@ $$\text{前时空声子（前时空）} \xrightarrow{\text{退相干}} \text{GR�
 
 ## 7. 时空同步前沿速度
 
-### 7.1 $c = \gamma_1\ell_{\text{pre}}$：时空同步前沿速度的结构公式
+### 7.1 c = γ_1ℓ_pre：时空同步前沿速度的结构公式
 
 **构造命题（量纲分析级；$\ell_{\rm pre}$ 的第一性表达式未闭合）**：同步过程沿四个独立方向展开——引力轴（时间）+ 三维空间（与 U(1)×SU(2)×SU(3) 相关）。$c$ 是时空同步前沿速度——同步前沿的涌现速率：
 
@@ -344,7 +344,7 @@ $$\hat{\varepsilon}^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|
 
 声子频率待推。声子频率的**绝对值**（$\omega_0$）通过量纲恢复从 $m_p$ 标度导出。
 
-### 8.3 声子与 $m_e/m_p$ 涌现
+### 8.3 声子与 m_e/m_p 涌现
 
 声子频率 $\omega_0$ 进入无量纲比值 $\eta = \hbar\omega_0/E_{\text{bind}}$，$\eta$ 从 $A_4$ 代数严格确定。通过 Bohr 半径关系 $a_0 = \hbar/(m_e c\alpha)$ 和 $a_0 = \lambda_p L_u/(2\pi ☯\alpha)$（$\lambda_p = \hbar/(m_p c)$ 为质子约化康普顿波长），导出 $m_e/m_p = 2\pi ☯/L_u$。声子是 $m_e/m_p$ 代数涌现的关键环节。
 
