@@ -7,7 +7,7 @@
 
 从节点定义可严格推出一条结构链：
 
-$$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（同步判据）}}
+$$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（相变体现）}}
 \;\longrightarrow\;
 \underbrace{\tau_i-\tau_j=\mathcal H_{ij}\ \text{冻结}}_{\text{T1 相位差}}
 \;\longrightarrow\;
