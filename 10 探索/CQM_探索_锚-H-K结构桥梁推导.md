@@ -1,4 +1,4 @@
-# CQM 锚—$\mathcal H_{ij}$—$K(t)$ 结构桥梁：从节点出发的完整推导
+# CQM 锚—H_ij—K(t) 结构桥梁：从节点出发的完整推导
 
 
 ---
@@ -48,7 +48,7 @@ $$t\;\equiv\;\tau_i .$$
 
 ---
 
-## 3. 从节点到 $\mathcal H_{ij}$（严格）
+## 3. 从节点到 H_ij（严格）
 
 **Step 1（定义恒等式）**：由 $\tau_i=\int_0^t v_{\tau,i}dt'$，
 
@@ -62,7 +62,7 @@ $\mathcal H_{ij}$ 由流速差异累积而成，是**本体对象**；平均漂�
 
 ---
 
-## 4. 从显式公式到 $K$ 的谱侧（严格数论）
+## 4. 从显式公式到 K 的谱侧（严格数论）
 
 von Mangoldt 显式公式（1895；MathWorld "Explicit Formula"/"Mangoldt Summatory Function"）：
 
@@ -76,7 +76,7 @@ RH 下 $\rho=\tfrac12+i\gamma_n$，$e^{(\rho-1/2)t}=e^{i\gamma_n t}$，权重为
 
 ---
 
-## 5. DM.25 桥梁：$H\leftrightarrow K$（代数严格）
+## 5. DM.25 桥梁：H ↔ K（代数严格）
 
 代入识别 $t=\tau_i$ 与 T1 的 $e^{i\gamma_n\tau_i}=e^{i\Phi_{n,i}}$：
 
@@ -90,7 +90,7 @@ $$\boxed{\;K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\bigl(e^{i\gamma_n\ma
 
 ---
 
-## 6. 涨落：去相干因子自然进入（不必消除 $\sigma_v$）
+## 6. 涨落：去相干因子自然进入（不必消除 σ_v）
 
 令 $\tau_i(t)=\langle\tau_i\rangle+\delta\tau_i$，$\delta v$ 为 OU 过程 $\langle\delta v(s)\delta v(s')\rangle=\sigma_v^2e^{-|s-s'|/\tau_g}$（06 §0.6 环节⑥）。积分 OU 的方差：
 
