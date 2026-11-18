@@ -1,6 +1,6 @@
 # CQM 锚—$\mathcal H_{ij}$—$K(t)$ 结构桥梁：从节点出发的完整推导
 
-> **定位**：探索层推演记录（**非权威源，待第三方复现**）。本文把"同步锚 $A_\tau$、固有时流速差异历史总和 $\mathcal H_{ij}(t)$、记忆核 $K(t)$"三者的关系，从节点定义出发逐步推导成一条结构链，是 `06 超导核心理论` §0.6 DM.23、§0.7 M9、§0.8 R30 的**独立推演展开**。本文只引述权威源、不改写 01–07、不新增数值与缺口编号；严格段／构造识别／外部对照分栏标注。
+> **定位**：探索层推演记录（**非权威源，待第三方复现**）。本文把"同步锚 $A_\tau$、固有时流速差异历史总和 $\mathcal H_{ij}(t)$、记忆核 $K(t)$"三者的关系，从节点定义出发逐步推导成一条结构链，是 `06 超导核心理论` §0.6 DM.25、§0.7 M9、§0.8 R30 的**独立推演展开**。本文只引述权威源、不改写 01–07、不新增数值与缺口编号；严格段／构造识别／外部对照分栏标注。
 >
 > **日期**：2026-11-18（对应权威层 v1.9.225/226）。
 >
@@ -16,9 +16,9 @@ $$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（前提）}}
 \;\longrightarrow\;
 \underbrace{\tau_i-\tau_j=\mathcal H_{ij}\ \text{冻结}}_{\text{T1 相位差}}
 \;\longrightarrow\;
-\underbrace{K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)}{\rho_n}}_{\text{DM.23：}H\leftrightarrow K\ \text{桥梁}}$$
+\underbrace{K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)}{\rho_n}}_{\text{DM.25：}H\leftrightarrow K\ \text{桥梁}}$$
 
-- **能严格推出**（第 1–4 节）：$\mathcal H_{ij}=\tau_i-\tau_j$、T1 相位差、$K$ 谱侧、DM.23 代数桥梁、锚冻结相位差 ⇒ 共享 $K$。
+- **能严格推出**（第 1–4 节）：$\mathcal H_{ij}=\tau_i-\tau_j$、T1 相位差、$K$ 谱侧、DM.25 代数桥梁、锚冻结相位差 ⇒ 共享 $K$。
 - **构造识别**（第 2 节，唯一跳跃）：$K$ 的自变量 $t$ ≡ 固有时 $\tau_i$（本框架固有时只有一个概念）。
 - **未闭合**（第 6 节）：M9 数值同一、M10 定量映射、R30 谱系数读数待独立复现——只做结构层贯通，不写 $\mathcal I_K=\mathcal H_{ij}$。
 
@@ -81,7 +81,7 @@ RH 下 $\rho=\tfrac12+i\gamma_n$，$e^{(\rho-1/2)t}=e^{i\gamma_n t}$，权重为
 
 ---
 
-## 5. DM.23 桥梁：$H\leftrightarrow K$（代数严格）
+## 5. DM.25 桥梁：$H\leftrightarrow K$（代数严格）
 
 代入识别 $t=\tau_i$ 与 T1 的 $e^{i\gamma_n\tau_i}=e^{i\Phi_{n,i}}$：
 
@@ -89,7 +89,7 @@ $$K(\tau_i)=-\sum_n\frac{e^{i\Phi_{n,i}}}{\rho_n}+O(e^{-\tau_i/2}).$$
 
 **即 $K$ 的第 $n$ 模是节点相位 $e^{i\Phi_{n,i}}$ 的留数 $1/\rho_n$ 加权和。** 对节点对 $(i,j)$ 作差，用 $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$：
 
-$$\boxed{\;K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\bigl(e^{i\gamma_n\mathcal H_{ij}}-1\bigr)}{\rho_n}+O(e^{-\tau/2}).\;}\tag{DM.23}$$
+$$\boxed{\;K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\bigl(e^{i\gamma_n\mathcal H_{ij}}-1\bigr)}{\rho_n}+O(e^{-\tau/2}).\;}\tag{DM.25}$$
 
 解释：$\mathcal H_{ij}$ 作为相位差 $\gamma_n\mathcal H_{ij}$ 直接生成 $K$ 的模差 $(e^{i\gamma_n\mathcal H_{ij}}-1)$；当 $\mathcal H_{ij}=0$，模差为零，$K(\tau_i)=K(\tau_j)$。权重 $1/\rho_n$ 由 $K$ 的定义自带，**不是节点几何新造的自由参数**。这是 $\mathcal H_{ij}$ 与 $K$ 的严格结构对应（谱位置／代数层）。
 
@@ -111,11 +111,11 @@ $$\langle e^{i\Phi_{n,i}}\rangle=e^{i\gamma_n\langle\tau_i\rangle}\exp\!\Big(-\t
 
 ## 7. 锚如何进入（M9 结构桥梁）
 
-锚内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结（常数）$\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1$。代入 DM.23：
+锚内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结（常数）$\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1$。代入 DM.25：
 
 $$K(\tau_i)-K(\tau_j)=0\quad\Rightarrow\quad K(\tau_i)=K(\tau_j).$$
 
-即**空间锚 $A_\tau$ 内的节点共享同一 $K(\tau)$**。这正是 06 §0.7 占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$ 的代数实现：锚之所以能约束记忆侧平台，在于它冻结了生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$。锚外 $\mathcal H_{ij}\neq$ const，模差按 DM.23 生成。
+即**空间锚 $A_\tau$ 内的节点共享同一 $K(\tau)$**。这正是 06 §0.7 占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$ 的代数实现：锚之所以能约束记忆侧平台，在于它冻结了生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$。锚外 $\mathcal H_{ij}\neq$ const，模差按 DM.25 生成。
 
 ---
 
@@ -139,18 +139,18 @@ $$K(\tau_i)-K(\tau_j)=0\quad\Rightarrow\quad K(\tau_i)=K(\tau_j).$$
 | 2 | $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ | 文档 T1（严格） |
 | 3 | $K$ 谱侧、留数 $1/\rho_n$ | 数论严格（显式公式） |
 | 4 | **识别 $t\equiv\tau_i$** | **构造识别（唯一跳跃）** |
-| 5 | DM.23 模差桥梁 | 代数严格（给定识别） |
+| 5 | DM.25 模差桥梁 | 代数严格（给定识别） |
 | 6 | $\Gamma_n$ 退相干 | 严格（给定 OU） |
-| 7 | 锚内共享 $K$ | 代数严格（给定 DM.23） |
+| 7 | 锚内共享 $K$ | 代数严格（给定 DM.25） |
 
 **边界（缺口不升级）**：
-- **M9**：DM.23 给出"共享"的结构层，$A_\tau$ 与 $K^{\rm SC}$ 的**数值同一**待独立复现（编号不变）。
-- **M10**：DM.23 建立结构桥梁，但不写 $\mathcal I_K=\mathcal H_{ij}$、不宣称振幅物理同一；精确数值映射待独立复现（编号不变）。
-- **R30**：DM.23 把节点相位振幅权重定为留数 $1/\rho_n$（谱系数读数），原判决的 $C_n\sim\gamma_n^{+0.45}$ 是导数斜率读数，二者是同一 $K$ 的不同函数；谱系数读数待独立复现（判据保留为历史）。
+- **M9**：DM.25 给出"共享"的结构层，$A_\tau$ 与 $K^{\rm SC}$ 的**数值同一**待独立复现（编号不变）。
+- **M10**：DM.25 建立结构桥梁，但不写 $\mathcal I_K=\mathcal H_{ij}$、不宣称振幅物理同一；精确数值映射待独立复现（编号不变）。
+- **R30**：DM.25 把节点相位振幅权重定为留数 $1/\rho_n$（谱系数读数），原判决的 $C_n\sim\gamma_n^{+0.45}$ 是导数斜率读数，二者是同一 $K$ 的不同函数；谱系数读数待独立复现（判据保留为历史）。
 - **M1**：零点虚部与节点模式频率的物理同一仍是识别，本文不宣称 M1 已证。
 
 ---
 
 ## 10. 结论
 
-从节点定义出发，**锚—$\mathcal H_{ij}$—$K$** 的结构桥梁可在一条链上贯通：亏角→固有时→T1 相位差→显式公式谱侧→DM.23 模差→锚内共享 $K$。全链只用 CQM 已有定义与一个构造识别（固有时同一性），未新增概念、数值、缺口编号；涨落以固有退相干因子自然进入，无需消除。未闭合的是数值层（M9/M10/R30 待独立复现），不是结构层——本文不把结构对应写成数值相等，符合"不绕过"红线。
+从节点定义出发，**锚—$\mathcal H_{ij}$—$K$** 的结构桥梁可在一条链上贯通：亏角→固有时→T1 相位差→显式公式谱侧→DM.25 模差→锚内共享 $K$。全链只用 CQM 已有定义与一个构造识别（固有时同一性），未新增概念、数值、缺口编号；涨落以固有退相干因子自然进入，无需消除。未闭合的是数值层（M9/M10/R30 待独立复现），不是结构层——本文不把结构对应写成数值相等，符合"不绕过"红线。

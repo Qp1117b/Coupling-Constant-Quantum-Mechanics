@@ -251,9 +251,9 @@ $\mathcal I_K(t)$ 是固有时流速差异历史总和（各节点对的 $\mathc
 
 **$H\leftrightarrow K$ 的结构桥梁（2026-11-18，v1.9.225）**：上述"体现"现落到一条代数桥梁。识别 $K(t)$ 的自变量与 §0.4 的固有时 $\tau_i$ 为同一坐标（本框架固有时只有一个概念）；则由 DM.20 的谱侧 $K(\tau)=-\sum_n e^{i\gamma_n\tau}/\rho_n+O(e^{-\tau/2})$ 与 T1 的 $\Phi_{n,i}=\gamma_n\tau_i$，得
 
-$$K(\tau_i)=-\sum_n\frac{e^{i\Phi_{n,i}}}{\rho_n}+O(e^{-\tau_i/2}),\qquad K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\big(e^{i\gamma_n\mathcal H_{ij}}-1\big)}{\rho_n}+O(e^{-\tau/2}).\tag{DM.23}$$
+$$K(\tau_i)=-\sum_n\frac{e^{i\Phi_{n,i}}}{\rho_n}+O(e^{-\tau_i/2}),\qquad K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\big(e^{i\gamma_n\mathcal H_{ij}}-1\big)}{\rho_n}+O(e^{-\tau/2}).\tag{DM.25}$$
 
-即 $K$ 的第 $n$ 模是节点相位 $e^{i\Phi_{n,i}}$ 的留数 $1/\rho_n$ 加权和，而相位差 $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ 直接生成 $K$ 的模差——这是 $\mathcal H_{ij}$ 与 $K$ 的**严格结构对应**。固有时涨落 $\tau_i=\langle\tau_i\rangle+\delta\tau_i$ 的扩散 $\mathrm{Var}[\delta\tau_i]\to2\sigma_v^2\tau_gt$ 给出固有退相干因子 $\langle e^{i\Phi_{n,i}}\rangle=e^{i\gamma_n\langle\tau_i\rangle}e^{-\Gamma_n t}$（$\Gamma_n=\gamma_n^2\sigma_v^2\tau_g$，环节⑥），无需消除涨落。权重 $1/\rho_n$ 由 $K$ 的定义自带，不是节点几何新造的自由参数（R30 判据见 §0.8）。**边界**：DM.23 只建立谱位置/结构层对应，不写 $\mathcal I_K=\mathcal H_{ij}$、不宣称振幅物理同一；$K$ 与 $\mathcal H_{ij}$ 的精确数值映射仍为 M10（状态由"未证"精化为"结构桥梁已建立、定量映射待独立复现"，编号不变）。
+即 $K$ 的第 $n$ 模是节点相位 $e^{i\Phi_{n,i}}$ 的留数 $1/\rho_n$ 加权和，而相位差 $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ 直接生成 $K$ 的模差——这是 $\mathcal H_{ij}$ 与 $K$ 的**严格结构对应**。固有时涨落 $\tau_i=\langle\tau_i\rangle+\delta\tau_i$ 的扩散 $\mathrm{Var}[\delta\tau_i]\to2\sigma_v^2\tau_gt$ 给出固有退相干因子 $\langle e^{i\Phi_{n,i}}\rangle=e^{i\gamma_n\langle\tau_i\rangle}e^{-\Gamma_n t}$（$\Gamma_n=\gamma_n^2\sigma_v^2\tau_g$，环节⑥），无需消除涨落。权重 $1/\rho_n$ 由 $K$ 的定义自带，不是节点几何新造的自由参数（R30 判据见 §0.8）。**边界**：DM.25 只建立谱位置/结构层对应，不写 $\mathcal I_K=\mathcal H_{ij}$、不宣称振幅物理同一；$K$ 与 $\mathcal H_{ij}$ 的精确数值映射仍为 M10（状态由"未证"精化为"结构桥梁已建立、定量映射待独立复现"，编号不变）。
 
 **历史深度的双重来源**（【构造】）：
 
@@ -305,7 +305,7 @@ $\mathcal S_c,N_c,\kappa_c$ 均未定；“$\kappa_3\ne0$ → $\mathcal H\ne0$ �
 
 **锚点描述**（【构造】）：$T>T_c$ 无锚点，记忆核自由变化；$T<T_c$ 有锚点 $K^{\rm SC}$，记忆核围绕锚点偏离。$K^{\rm SC}$ 在 $T_c$ 处从零变为非零，像序参量一样经历相变。$K^{\rm SC}$ 与旧框架结构群序参量之间的映射未建立（M9）。空间侧的对应物是 §7.3 的固有时流速同步锚 $A_\tau$（同步已精确成立的零亏角子复形）；时间锚 $K^{\rm SC}$ 与空间锚 $A_\tau$ 的同一性同属 M9。**量变与质变的区分**：$\mathcal I_K$ 与 $K^{\rm SC}$ 平台是记忆侧的**体现**（量变）；$T_c$ 是刚度/软模事件（质变）——$T_c$ 的位置由刚度条件定，不由 $\mathcal I_K$ 的某个临界值 $D_c$ 定（$D_c$ 未定义）。
 
-**锚—记忆平台共享机制（M9 的结构桥梁，v1.9.225）**：由 §0.6 DM.23，锚内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结（常数）$\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1\Rightarrow K(\tau_i)=K(\tau_j)$。故空间锚 $A_\tau$ 内的节点**共享同一 $K(\tau)$**，这正是占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$（line 270）的代数实现：锚为何能约束记忆侧平台，在于它冻结了生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$。此机制只解释"共享"的结构层，不证明 $A_\tau$ 与 $K^{\rm SC}$ 的数值同一——M9 编号不变，状态由"未证"精化为"结构桥梁已建立、数值同一待独立复现"。
+**锚—记忆平台共享机制（M9 的结构桥梁，v1.9.225）**：由 §0.6 DM.25，锚内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结（常数）$\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1\Rightarrow K(\tau_i)=K(\tau_j)$。故空间锚 $A_\tau$ 内的节点**共享同一 $K(\tau)$**，这正是占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$（line 270）的代数实现：锚为何能约束记忆侧平台，在于它冻结了生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$。此机制只解释"共享"的结构层，不证明 $A_\tau$ 与 $K^{\rm SC}$ 的数值同一——M9 编号不变，状态由"未证"精化为"结构桥梁已建立、数值同一待独立复现"。
 
 ### 0.8 黎曼零点连接（条件严格）
 
@@ -323,7 +323,7 @@ $u\leftrightarrow t$：式 (DM.20) 即 §0.6 记忆核的谱侧（取 $K(t)=e^{-
 
 > **【第十四轮振幅对偶判决指针 2026-11-17】**：振幅对偶已作为**可证伪定量判决**处理（与谱位置识别 M1 相互独立）：质数侧振幅 $b_n=1/|\rho_n|\sim\gamma_n^{-1}$（显式公式，指数 −0.9998，严格）；记忆核侧经第十三轮锁定缓变权重后，深度斜率 $C_n=|\zeta'(\rho_n)|/|\zeta(1/2+i\tau_m)|\sim\gamma_n^{+0.45}$（前 100 零点，各窗口恒正 +0.43~+0.80，稳健）。**两者符号相反、不同构**：$1/|\rho|$ 是极点留数位置倒数、$C_n$ 是零点导数斜率，属同一 ζ 在不同点的局部数据。故"频率集相同"只能是谱位置识别（Sierra-CQM/M1），**不能推广为振幅物理同一**。新增 R30（振幅-深度不同构判据）：测 $C_n$ 的频率标度，$q<0$ 支持振幅同一、$q\ge0$ 支持本轮判决。（原推导探索稿已删除，判决结构的独立依据待第一性重建）本段原文保留。
 >
-> **【第一性重建注 2026-11-18 / v1.9.225】**（承接上段"待第一性重建"，不删原判决）：由 §0.6 DM.23，$K(\tau_i)=-\sum_ne^{i\Phi_{n,i}}/\rho_n$ 把节点相位的振幅权重**直接定为留数 $1/\rho_n$**——即 $K$ 侧的振幅读数应取 $b_n=1/|\rho_n|$（$\sim\gamma_n^{-1}$），而非 $|ζ'(\rho_n)|$ 导数斜率。原判决的 $C_n\sim\gamma_n^{+0.45}$ 把"深度斜率"（记忆核积分对频率的导数响应，环节⑧）误当成"振幅"，两者是同一 $K$ 的不同函数（$b_n$ 是谱系数、$C_n$ 是 $\partial_\gamma\mathcal I_K$ 类导数），标度反号不构成物理矛盾。据此 R30 从"否决振幅同一"精化为"区分谱系数 $1/\rho_n$ 与导数斜率 $C_n$ 两种读数"：**节点—记忆核的谱系数读数一致（均 $1/\rho_n$，DM.23），R30 不再否决该读数的同一性**；导数斜率读数仍按原文保留。R30 判据作为历史判决保留，本注为其第一性重建结果；不宣称 M1 已证、不升级缺口。
+> **【第一性重建注 2026-11-18 / v1.9.225】**（承接上段"待第一性重建"，不删原判决）：由 §0.6 DM.25，$K(\tau_i)=-\sum_ne^{i\Phi_{n,i}}/\rho_n$ 把节点相位的振幅权重**直接定为留数 $1/\rho_n$**——即 $K$ 侧的振幅读数应取 $b_n=1/|\rho_n|$（$\sim\gamma_n^{-1}$），而非 $|ζ'(\rho_n)|$ 导数斜率。原判决的 $C_n\sim\gamma_n^{+0.45}$ 把"深度斜率"（记忆核积分对频率的导数响应，环节⑧）误当成"振幅"，两者是同一 $K$ 的不同函数（$b_n$ 是谱系数、$C_n$ 是 $\partial_\gamma\mathcal I_K$ 类导数），标度反号不构成物理矛盾。据此 R30 从"否决振幅同一"精化为"区分谱系数 $1/\rho_n$ 与导数斜率 $C_n$ 两种读数"：**节点—记忆核的谱系数读数一致（均 $1/\rho_n$，DM.25），R30 不再否决该读数的同一性**；导数斜率读数仍按原文保留。R30 判据作为历史判决保留，本注为其第一性重建结果；不宣称 M1 已证、不升级缺口。
 
 **零点计数**（不是材料 $N_{\rm eff}$）：
 
@@ -2571,7 +2571,7 @@ $$\boxed{\begin{aligned}
 &\text{超导态：锚定平台 }K^{\rm SC}+\text{围绕锚点的慢偏离}
 \end{aligned}}$$
 
-**状态**：声子严格段【严格】；差异方差的代数形式在给定 A12 后【条件严格】；$J_{ij}$ 是【构造】（M6）；渗流只作锚全局一致性与刚度乘子，不作独立 $T_c$（M8）；记忆核积分 $\mathcal I_K$ 与 $\mathcal H_{ij}$ 的映射结构桥梁已建立（DM.23）、定量映射待独立复现（M10，§0.6）；锚点 $K^{\rm SC}$ 与旧框架序参量的映射结构桥梁已建立（§0.7 共享机制）、数值同一待独立复现（M9）。**四阶段边界未精确**；赝能隙是“锚点的预形成”，不是独立的对称破缺相。
+**状态**：声子严格段【严格】；差异方差的代数形式在给定 A12 后【条件严格】；$J_{ij}$ 是【构造】（M6）；渗流只作锚全局一致性与刚度乘子，不作独立 $T_c$（M8）；记忆核积分 $\mathcal I_K$ 与 $\mathcal H_{ij}$ 的映射结构桥梁已建立（DM.25）、定量映射待独立复现（M10，§0.6）；锚点 $K^{\rm SC}$ 与旧框架序参量的映射结构桥梁已建立（§0.7 共享机制）、数值同一待独立复现（M9）。**四阶段边界未精确**；赝能隙是“锚点的预形成”，不是独立的对称破缺相。
 
 ## 13. 严格性缺口表（G 类）
 
@@ -2611,7 +2611,7 @@ $$\boxed{\begin{aligned}
 | **M7** | 非高斯—相位阻挫识别：$\kappa_3\ne0$ → $\mathcal H\ne0$ → $K_{\rm global}\ne0$ 未给出 | 未证；式 (DM.19) 只是构造，不是判据 |
 | **M8** | 两阶段合成：$p_{\rm sync}=p_c$ 未证；$p(T),t,p_c$ 的材料依赖未算；旧 $T_c$ 闭式与 $T^*/T_c$ 的映射未建立 | 未证；旧 §11 闭式只作幅度通道 |
 | **M9** | 锚点—序参量映射：$K^{\rm SC}$ 与旧结构群序参量/同步算符本征值 $\lambda_n(T)$ 的映射未建立 | 结构桥梁已建立（§0.7：锚冻结 $\gamma_n\mathcal H_{ij}\Rightarrow$ 节点共享 $K$）、数值同一待独立复现；§0.7 锚点描述仍是构造 |
-| **M10** | 固有时流速差异历史总和—记忆核积分映射：$\mathcal I_K=\int K\,dt$ 是 $\mathcal H_{ij}=\int(v_{\tau,i}-v_{\tau,j})dt'$ 的记忆侧体现/读数，二者是体现/识别关系，不是数值相等；不得写成 $\mathcal I_K=\mathcal H_{ij}$ | 结构桥梁已建立（§0.6 DM.23：$K(\tau_i)-K(\tau_j)=-\sum_n e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)/\rho_n$）、定量映射待独立复现；§0.6 环节⑧ |
+| **M10** | 固有时流速差异历史总和—记忆核积分映射：$\mathcal I_K=\int K\,dt$ 是 $\mathcal H_{ij}=\int(v_{\tau,i}-v_{\tau,j})dt'$ 的记忆侧体现/读数，二者是体现/识别关系，不是数值相等；不得写成 $\mathcal I_K=\mathcal H_{ij}$ | 结构桥梁已建立（§0.6 DM.25：$K(\tau_i)-K(\tau_j)=-\sum_n e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)/\rho_n$）、定量映射待独立复现；§0.6 环节⑧ |
 
 > **表注**：M1–M4、M7–M10 在 §0 已逐处引用；M5、M6 为 §0 构造环节的显式编号，登记目的是避免把“方差给出核”“核给出刚度”读成推导。M 表不替代 G 表：G21（赝能隙→谱函数）与 G22（旧 $T_c$ 丛作用量交叉）仍按原状态保留。
 
