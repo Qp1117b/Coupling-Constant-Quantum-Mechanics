@@ -307,7 +307,7 @@ $$\Delta u \cdot \Delta v_\tau \geq \frac{☯}{2}$$
 
 | 谱对象 | 定义 | 物理作用 |
 |:---|:---|:---|
-| 相变量子 $☯$ | $\frac{d}{ds}\ln\xi(s)\big|_{s=1} = \sum_\rho 1/(1-\rho) \approx 0.02309570897$（谱表示 $\sum 1/(\gamma_n^2+1/4)$ 条件于 RH） | 耦合空间不确定性关系下界 $☯/2$ |
+| 相变量子 $☯$ | $\frac{d}{ds}\ln\xi(s)\big\rvert_{s=1} = \sum_\rho 1/(1-\rho) \approx 0.02309570897$（谱表示 $\sum 1/(\gamma_n^2+1/4)$ 条件于 RH） | 耦合空间不确定性关系下界 $☯/2$ |
 | 零点虚部 $\gamma_n$ | $\rho = 1/2 + i\gamma_n$ | 共振频率 |
 | 零点差 $\gamma_2-\gamma_1$ | $\gamma_2-\gamma_1 \approx 6.887315$ | 超导 $T_c$ 公式 |
 
