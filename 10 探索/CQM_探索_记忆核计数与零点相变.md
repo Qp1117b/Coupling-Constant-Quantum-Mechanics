@@ -294,7 +294,7 @@ $$r_*\sim\Bigl(\frac{\delta}{\sigma_\ell}\Bigr)^{2},$$
 | 1 | 质数 → $\zeta$ | 欧拉乘积 $\zeta(\beta)=\prod_p(1-p^{-\beta})^{-1}$ | 【严格】 |
 | 2 | $\zeta$ → 奇点与谱 | 极点在 $\beta=1$；零点 $\{\rho_n=\sigma_n+i\gamma_n\}$ | 【严格】 |
 | 3 | 显式公式 | $\psi(e^t)=e^t-\sum_\rho e^{\rho t}/\rho+O(1)$：主项与振荡是同一函数的两半 | 【严格】 |
-| 4 | 记忆核 | $K=e^{-t/2}(\psi(e^t)-e^t)$，谱侧即第 3 步的振荡项 | 【构造】：记忆 = 计数减主项 |
+| 4 | 记忆核（超导态形式） | $K=e^{-t/2}(\psi(e^t)-e^t)$，谱侧即第 3 步的振荡项；正常态 $K$ 非质数形式 | 【构造】：记忆 = 计数减主项 |
 | 5 | 节点相位 | 节点 $i$ 看到的振荡相位为 $\gamma_n h_i$（$h_i=-\ln v_{\tau,i}$） | 【构造】：时钟重标定 $\tau=\int v_\tau dt$ |
 | 6 | 等速 ⟺ 锁定 | $v_{\tau,i}=v_{\tau,j}\iff$ 相位差 $\gamma_n\!\int(v_i-v_j)dt$ 与 $t$ 无关 $\iff$ 锚 $A$ | 【严格】（定义级） |
 | 7 | RH 的物理读法 | $\sigma_n\equiv\frac12\iff K$ 有界 $\iff$ 无单一模指数垄断振荡 | 【标准等价】＋物理解读（构造） |

@@ -73,7 +73,7 @@ $$A_\tau\ \xrightarrow{\ \text{静态吸引子结构}\ }\ \mathcal A(t)\ \xright
 
 ## 五、质数震荡的角色：时间窗口 $t_{\rm coh}$
 
-记忆核 $K(t)=e^{-t/2}(\psi(e^t)-e^t)=-\sum_\rho e^{(\rho-1/2)t}/\rho+\cdots$（【文档显式】），谱由零点 $\gamma_n$ 给。质数震荡进入记忆的**唯一通道**是相干窗口（§9.3）：
+记忆核超导态形式 $K(t)=e^{-t/2}(\psi(e^t)-e^t)=-\sum_\rho e^{(\rho-1/2)t}/\rho+\cdots$（【文档显式】，正常态 $K$ 非质数形式），谱由零点 $\gamma_n$ 给。质数震荡进入记忆的**唯一通道**是相干窗口（§9.3）：
 
 $$t_{\rm coh}=\frac{1}{2\gamma_1^2\sigma_v^2\tau_g}.$$
 
