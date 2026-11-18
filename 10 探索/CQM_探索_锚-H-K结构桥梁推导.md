@@ -27,7 +27,7 @@ $$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（同步判据）}
 | 节点固有时 | $\tau_i(t)=\int_0^t v_{\tau,i}\,dt'$ | 06 §0.4 |
 | 历史总和（本体） | $\mathcal H_{ij}(t)=\int_0^t(v_{\tau,i}-v_{\tau,j})\,dt'=\tau_i-\tau_j$ | 06 §0.4/§0.6 |
 | 漂移定理 T1 | $\Phi_{n,i}=\gamma_n\tau_i$，$\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ | 06 §0.4 |
-| 记忆核（计数定义） | $K(t)=e^{-t/2}\bigl(\psi(e^t)-e^t\bigr)$，$\psi(x)=\sum_{p^m\le x}\ln p$ | 06 §0.6（【构造】） |
+| 记忆核（超导态质数形式） | $K(t)=e^{-t/2}\bigl(\psi(e^t)-e^t\bigr)$，$\psi(x)=\sum_{p^m\le x}\ln p$；正常态 $K$ 为非质数涨落关联 | 06 §0.0/§0.6（【构造】） |
 | 谱侧（显式公式） | $K(t)=-\sum_\rho e^{(\rho-1/2)t}/\rho+O(e^{-t/2})$ | 06 §0.6 DM.20（严格数论） |
 | 同步锚 | $A_\tau$＝零亏角边极大连通子图；判据"相位差冻结（等速）" | 06 §7.3/§0.3 |
 | 记忆平台 | $K^{\rm SC}$（$T<T_c$ 稳定平台）；$A_\tau\to K^{\rm SC}$ 占据–读出 | 06 §0.7 |
@@ -68,7 +68,7 @@ von Mangoldt 显式公式（1895；MathWorld "Explicit Formula"/"Mangoldt Summat
 
 $$\psi(x)=x-\sum_\rho\frac{x^\rho}{\rho}-\ln2\pi-\tfrac12\ln(1-x^{-2}).$$
 
-取 $x=e^t$ 并乘 $e^{-t/2}$：
+取 $x=e^t$ 并乘 $e^{-t/2}$（此为超导态 $K$ 的质数形式；正常态 $K$ 非质数形式）：
 
 $$K(t)=e^{-t/2}(\psi(e^t)-e^t)=-\sum_\rho\frac{e^{(\rho-1/2)t}}{\rho}+O(e^{-t/2}).\tag{DM.20}$$
 
