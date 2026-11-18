@@ -27,7 +27,8 @@ def main():
     args = read_csv("论证表.csv")
 
     # ---- 断言预检 ----
-    assert len(concepts) == 81, f"概念表应为 81 行，实为 {len(concepts)}"
+    # 2026-11-18 九环节链重构：概念表新增 C083（记忆核积分）/C084（固有时流速差异历史总和），81→83
+    assert len(concepts) == 83, f"概念表应为 83 行，实为 {len(concepts)}"
     assert len(props) == 63, f"命题表应为 63 行，实为 {len(props)}"
     assert len(args) == 69, f"论证表应为 69 行，实为 {len(args)}"
     # 概念 id 连续无重

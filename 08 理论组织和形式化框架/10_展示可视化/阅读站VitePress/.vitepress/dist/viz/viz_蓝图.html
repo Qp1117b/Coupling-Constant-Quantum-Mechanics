@@ -147,11 +147,11 @@ const mappedN=D.mapped_concepts.length,gapsN=new Set(D.mapping.flatMap(m=>gapSpl
 document.getElementById('stats').innerHTML=[
  ['模块数',D.modules.length],['声明总数',totalOf],
  ['theorem/lemma',thLike],['axiom（抽取）',D.kind_hist.axiom||0],
- ['映射概念',mappedN+'/81'],['缺口映射',gapsN+'/24']
+ ['映射概念',mappedN+'/83'],['缺口映射',gapsN+'/24']
 ].map(([k,v])=>'<div class="stat"><b>'+v+'</b><span>'+k+'</span></div>').join('');
 /* 覆盖率环 */
 (function(){
- const pct=mappedN/81,r=54,cx=74,cy=74,C=2*Math.PI*r,off=C*(1-mappedN/81);
+ const pct=mappedN/83,r=54,cx=74,cy=74,C=2*Math.PI*r,off=C*(1-mappedN/83);
  document.getElementById('ring').innerHTML=
  '<svg width="148" height="148" viewBox="0 0 148 148">'+
  '<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6fb5"/>'+
@@ -159,10 +159,10 @@ document.getElementById('stats').innerHTML=[
  '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="#e8eef6" stroke-width="16"/>'+
  '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="url(#g1)" stroke-width="16" stroke-linecap="round"'+
  ' stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'" transform="rotate(-90 '+cx+' '+cy+')">'+
- '<title>映射概念 '+mappedN+'/81</title></circle>'+
- '<text x="'+cx+'" y="'+(cy+2)+'" text-anchor="middle" font-size="24" font-weight="600" fill="#2f6fb5" class="num">'+mappedN+'/81</text>'+
+ '<title>映射概念 '+mappedN+'/83</title></circle>'+
+ '<text x="'+cx+'" y="'+(cy+2)+'" text-anchor="middle" font-size="24" font-weight="600" fill="#2f6fb5" class="num">'+mappedN+'/83</text>'+
  '<text x="'+cx+'" y="'+(cy+22)+'" text-anchor="middle" font-size="11.5" fill="#5d6b7a">概念已映射 · '+(pct*100).toFixed(1)+'%</text></svg>'+
- '<div class="hint">映射源：<code>04_Lean对接/Lean↔概念映射.csv</code>（25 条）；<b>'+(mappedN===40?'计算值 40/81 与组织层 README 权威口径 40/81（49.4%）一致':'计算值 '+mappedN+'/81 与权威口径 40/81 不一致——以权威源为准')+'</b>。</div>';
+ '<div class="hint">映射源：<code>04_Lean对接/Lean↔概念映射.csv</code>（25 条）；<b>'+(mappedN===40?'计算值 40/83 与实测口径 40/83（48.2%）一致':'计算值 '+mappedN+'/83 与实测口径 40/83 不一致——以权威源为准')+'</b>。</div>';
 })();
 /* 声明构成条 */
 (function(){

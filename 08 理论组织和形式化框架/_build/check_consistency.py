@@ -54,19 +54,19 @@ def main():
     args = rd(os.path.join(ROOT, "01_结构化数据", "论证表.csv"))
     cids = {c["concept_id"] for c in concepts}
     pids = {p["prop_id"] for p in props}
-    check("源 CSV 行数 81/63/69",
-          (len(concepts), len(props), len(args)) == (81, 63, 69),
+    check("源 CSV 行数 83/63/69",
+          (len(concepts), len(props), len(args)) == (83, 63, 69),
           f"实为 {len(concepts)}/{len(props)}/{len(args)}")
 
     # ---------- 超图 ----------
     hg = jload(os.path.join(ROOT, "03_超图与理论图", "超图数据.json"))
     he, de = hg["hyperedges"], hg["directed_edges"]
-    check("超图 JSON 节点 81", len(hg["nodes"]) == 81, str(len(hg["nodes"])))
+    check("超图 JSON 节点 83", len(hg["nodes"]) == 83, str(len(hg["nodes"])))
     check("超图 JSON 超边 19 / 有向边 50", (len(he), len(de)) == (19, 50),
           f"{len(he)}/{len(de)}")
     check("metadata 计数与实体一致",
           (hg["metadata"]["node_count"], hg["metadata"]["hyperedge_count"],
-           hg["metadata"]["directed_edge_count"]) == (81, 19, 50))
+           hg["metadata"]["directed_edge_count"]) == (83, 19, 50))
     check("超边全为『重组实现』", all(h["premises"] and h["conclusion"] for h in he))
     check("有向边不含『重组实现』",
           all(d.get("type") != "重组实现" for d in de))
@@ -79,12 +79,12 @@ def main():
     nG = len(set(re.findall(r'rdf:about="#(G\d{3})"', owl)))
     nH = len(set(re.findall(r'rdf:about="#(H\d{3})"', owl)))
     nA = len(set(re.findall(r'rdf:about="#(A\d{3})"', owl)))
-    check("本体个体 概念81/命题63/论证69",
-          (nC, nP + nG, nH + nA) == (81, 63, 69), f"{nC}/{nP+nG}/{nH+nA}")
+    check("本体个体 概念83/命题63/论证69",
+          (nC, nP + nG, nH + nA) == (83, 63, 69), f"{nC}/{nP+nG}/{nH+nA}")
 
     # ---------- ML ----------
     nf = rd(os.path.join(ROOT, "05_机器学习数据准备", "超图导出", "node_features.csv"))
-    check("ML 节点特征 81 行", len(nf) == 81, str(len(nf)))
+    check("ML 节点特征 83 行", len(nf) == 83, str(len(nf)))
     hei = rd(os.path.join(ROOT, "05_机器学习数据准备", "超图导出", "hyperedge_index.csv"))
     dei = rd(os.path.join(ROOT, "05_机器学习数据准备", "超图导出", "directed_edge_index.csv"))
     check("ML 超图关联 = 47", len(hei) == 47, str(len(hei)))
@@ -92,8 +92,8 @@ def main():
     try:
         import numpy as np
         z = np.load(os.path.join(ROOT, "05_机器学习数据准备", "超图导出", "hypergraph_index.npz"))
-        check("npz 形状 (81,15)/超边索引/边索引",
-              z["x"].shape == (81, 15) and z["hyperedge_index"].shape[1] == 47
+        check("npz 形状 (83,15)/超边索引/边索引",
+              z["x"].shape == (83, 15) and z["hyperedge_index"].shape[1] == 47
               and z["edge_index"].shape[1] == 50,
               f"{z['x'].shape},{z['hyperedge_index'].shape},{z['edge_index'].shape}")
     except Exception as e:  # noqa
@@ -101,12 +101,15 @@ def main():
 
     # ---------- 动态机制 ----------
     dyn = jload(os.path.join(ROOT, "06_动态机制", "仿真", "dynamic_hypergraph.json"))["dynamics"]
-    check("动态：种子 44 / 可达 80 / 不可达 1",
-          (len(dyn["seed_concepts"]), dyn["reachable_concepts"], len(dyn["unreachable_concepts"])) == (44, 80, 1))
+    # 2026-11-18（v1.9.224）：新增 C083「记忆核积分」/C084「固有时流速差异历史总和」
+    # （概念 81→83，权威源 06 超导 §0.3/§0.6），重写规则与种子按新概念重算
+    # 44→46、可达 80→82；不可达仍为 C074（前向派生不可达 1，红线如实登记）。
+    check("动态：种子 46 / 可达 82 / 不可达 1",
+          (len(dyn["seed_concepts"]), dyn["reachable_concepts"], len(dyn["unreachable_concepts"])) == (46, 82, 1))
 
     # ---------- 桥接 ----------
     b1 = rd(os.path.join(ROOT, "09_桥接与翻译", "概念Lean物理映射.csv"))
-    check("桥接：概念映射 81 行", len(b1) == 81, str(len(b1)))
+    check("桥接：概念映射 83 行", len(b1) == 83, str(len(b1)))
     check("桥接：符号对照 21 条",
           len(rd(os.path.join(ROOT, "09_桥接与翻译", "符号对照表.csv"))) == 21)
 
@@ -146,7 +149,7 @@ def main():
     # ---------- 前端数据一致 ----------
     site = jload(os.path.join(ROOT, "10_展示可视化", "源_可视化", "研究驾驶舱", "data.json"))
     check("网站 data.json 与源一致",
-          (len(site["concepts"]), len(site["props"]), len(site["args"])) == (81, 63, 69)
+          (len(site["concepts"]), len(site["props"]), len(site["args"])) == (83, 63, 69)
           and site["meta"]["hyperedges"] == 19 and site["meta"]["edges"] == 50,
           str(site["meta"]))
 
@@ -154,7 +157,7 @@ def main():
     ev = rd(os.path.join(ROOT, "00_外部引用", "证据映射.csv"))
     ev_by_id = {r["struct_id"]: r for r in ev}
     want_ev = cids | pids | {a["arg_id"] for a in args}
-    check("证据层覆盖 81+63+69 条断言", set(ev_by_id) == want_ev and len(ev) == len(want_ev),
+    check("证据层覆盖 83+63+69 条断言", set(ev_by_id) == want_ev and len(ev) == len(want_ev),
           f"{len(ev)} 条 / 期望 {len(want_ev)}")
     corpus_txt = {}
     bad_quote = 0
@@ -212,8 +215,13 @@ def main():
     # 证据句重匹配使 claim 级边 343→346；dir 50 / hyper 19、144 实体与概念节点未变。
     # 2026-11-17（v1.9.221 续）：新增九主题综合文档 + README 文档表加一行，证据句再重匹配，
     # claim 级边 346→343；dir 50 / hyper 19、144 实体与概念节点未变。
-    check("知识图谱 144 实体 / 343 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (144, 343),
+    # 2026-11-18（v1.9.222）：`06 超导` 三篇副文档（FG层级同步算符体系/统一方法论/非马尔可夫对接方案）
+    # 退役，C073/P028/P029/H011 改挂 D028、G025–G027 改挂 D042；轴心正文按稳定稿修正（§0.2/§0.3/§4.1/§6/§7.3）
+    # 后证据句重匹配，知识图谱边 343→339；144 实体、dir 50 / hyper 19 未变。
+    # 2026-11-18（v1.9.224）：新增 C083/C084 两概念（144→146 实体）与证据 213→215，
+    # 证据句重匹配使 claim 级边浮动，知识图谱边 339→336；dir 50 / hyper 19 未变。
+    check("知识图谱 146 实体 / 336 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 336),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
@@ -224,15 +232,16 @@ def main():
     check("HermiT 推理一致且无不可满足类",
           ost["reasoner"]["consistent"] is True and not ost["reasoner"]["unsatisfiable_classes"],
           str(ost["reasoner"]["unsatisfiable_classes"]))
-    check("本体公理层：25 类 / 426 个体 / 16 对象属性",
-          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 426, 16),
+    # 2026-11-18（v1.9.224）：概念 81→83、证据 213→215，本体个体 426→430；类/对象属性未变。
+    check("本体公理层：25 类 / 430 个体 / 16 对象属性",
+          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 430, 16),
           f"{ost['owl_classes']}/{ost['owl_individuals']}/{ost['owl_object_properties']}")
     ext = jload(os.path.join(ROOT, "05_机器学习数据准备", "关系抽取", "抽取评测.json"))
     check("抽取评测含召回上界（诚实边界）",
           "recall_ceiling_sentence_cooccurrence" in ext and ext["gold_pairs"] > 0,
           f"上界 {ext.get('recall_ceiling_sentence_cooccurrence')}")
     tpool = jload(os.path.join(ROOT, "05_机器学习数据准备", "术语候选", "术语候选统计.json"))
-    check("术语候选池存在且未写入概念表", tpool["new_candidates_kept"] > 0 and len(concepts) == 81,
+    check("术语候选池存在且未写入概念表", tpool["new_candidates_kept"] > 0 and len(concepts) == 83,
           f"候选 {tpool['new_candidates_kept']}")
     for rel in ("10_展示可视化/源_可视化/检索台/index.html", "10_展示可视化/源_可视化/研究驾驶舱/index.html",
                 "10_展示可视化/源_可视化/超图交互.html", "03_超图与理论图/知识图谱.ttl",

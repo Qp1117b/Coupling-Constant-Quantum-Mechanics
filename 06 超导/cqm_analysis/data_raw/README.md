@@ -19,7 +19,7 @@
 | `../lattice_regge_model.py` | 一般 3D 晶格几何剖分建模：Delaunay 四面体化→二面角→亏角→cot 权重拉普拉斯（＝Regge 二阶变分矩阵／图拉普拉斯），验证对称/零行和/半正定/单一零模 | `python ../lattice_regge_model.py`（含 BCC-Nb/FCC-Al/HCP-Tc）|
 | `../vtau_coupling_chain.py` | 声子→亏角→参考标定固有时流速→DNR→全局耦合常数关系链：验证参考点 v_tau=1、A12=0、C_ij 反对称、alpha→n²alpha 跃迁 | `python ../vtau_coupling_chain.py`（含 BCC-Nb/FCC-Al/HCP-Tc）|
 | `../chain_1d_flow.py` | 一维开链固有时流速序列：参考节点 v_o（变量），沿相邻节点用边亏角(曲率载体)经 LQG 接口 v=√(1-y/2π) **乘积关系**（非加和）递推，验证比值关系/无阻挫 | `python ../chain_1d_flow.py`（含 BCC-Nb/FCC-Al）|
-| `../global_coupling_constraint.py` | 全局耦合约束的代数验证：u_G 与每个节点流速都不对易 [u_G,v_j]=i☯/N、求和回 DNR=i☯、U(1)//Z_n 子群跃迁 | `python ../global_coupling_constraint.py` |
+| `../global_coupling_constraint.py` | 全局耦合约束的代数验证：u_G 与每个节点流速都不对易 [u_G,v_j]=i☯/N、附加假设下求和得 i☯、U(1)//Z_n 子群跃迁 | `python ../global_coupling_constraint.py` |
 | `../ring_1d_flow.py` | 一维闭环节点链：首尾相接节点环 + 乘积递推 v_(k+1)=v_k√(1-ε/2π)，绕环 v_o'=prod(r)·v_o，反馈约束 prod r=1 自然推出 | `python ../ring_1d_flow.py` |
 | `../flow_sync_probability.py` | 节点固有时流速相等(某时刻所有 v 相等)的几率：v 单调⇒相等⇔各亏角涨落相等；几率随涨落幅度减小(低温)升高 | `python ../flow_sync_probability.py` |
 | `../sync_phase_transition.py` | 稳定固有时流速同步=相变：Kuramoto 型序参量 R 随耦合从无序→锁定，临界 K_c≈1.8（外部对照模型） | `python ../sync_phase_transition.py` |

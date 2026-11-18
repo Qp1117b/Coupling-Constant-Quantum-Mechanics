@@ -3,7 +3,7 @@
     "project": "CQMFormal",
     "format": "XGI-compatible",
     "note": "由 _build/build_base.py 从 01_结构化数据/*.csv 标准 CSV 解析重建；⇒ 仅表重组实现（有向超边），其余为普通有向边。",
-    "node_count": 81,
+    "node_count": 83,
     "hyperedge_count": 19,
     "directed_edge_count": 50,
     "relation_type_histogram": {
@@ -303,7 +303,7 @@
       "id": "C027",
       "label": "固有时流速",
       "type": "几何",
-      "definition": "$v_\\tau=\\sqrt{1-\\beta\\delta_v}$ 固有时流速",
+      "definition": "$v_\\tau=\\sqrt{1-\\varepsilon/(2\\pi)}$ 固有时流速 FG接口 铰链亏角口径",
       "source_doc": "D015",
       "source_loc": "§三",
       "synonyms": [],
@@ -818,8 +818,8 @@
       "label": "FG层级四元组",
       "type": "纤维丛",
       "definition": "$(M_\\ell\\, P(M_\\ell,G_\\ell)\\, A_\\ell\\, \\hat{S}_\\ell)$",
-      "source_doc": "D032",
-      "source_loc": "§2",
+      "source_doc": "D028",
+      "source_loc": "§6.1",
       "synonyms": [],
       "derive_depth": 0,
       "reachable_from_seed": true
@@ -921,6 +921,28 @@
       "source_loc": "标题",
       "synonyms": [],
       "derive_depth": 1,
+      "reachable_from_seed": true
+    },
+    {
+      "id": "C083",
+      "label": "记忆核积分",
+      "type": "物理",
+      "definition": "$\\mathcal I_K$ 记忆核 $K(t)$ 从0到t的时间积分 固有时流速差异历史总和的记忆侧体现 映射未证M10",
+      "source_doc": "D030",
+      "source_loc": "§0.6",
+      "synonyms": [],
+      "derive_depth": 0,
+      "reachable_from_seed": true
+    },
+    {
+      "id": "C084",
+      "label": "固有时流速差异历史总和",
+      "type": "物理",
+      "definition": "$\\mathcal H_{ij}$ 节点 i 与 j 的固有时流速差异的时间积分 本体对象 环节④漂移定理T1",
+      "source_doc": "D030",
+      "source_loc": "§0.3",
+      "synonyms": [],
+      "derive_depth": 0,
       "reachable_from_seed": true
     }
   ],
@@ -1120,7 +1142,7 @@
       "conclusion_label": "紧化算符层级化实现",
       "type": "重组实现",
       "source_doc": [
-        "D032"
+        "D028"
       ],
       "source_concept": "C073→C012"
     },
@@ -1857,11 +1879,13 @@
       "C077",
       "C078",
       "C079",
-      "C080"
+      "C080",
+      "C083",
+      "C084"
     ],
     "steps": 4,
     "fired_rules": 48,
-    "reachable_concepts": 80,
+    "reachable_concepts": 82,
     "unreachable_concepts": [
       "C074"
     ],

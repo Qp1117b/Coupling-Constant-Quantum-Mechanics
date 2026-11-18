@@ -1,5 +1,5 @@
 {
-  "concept_count": 81,
+  "concept_count": 83,
   "proposition_count": 63,
   "argument_count": 69,
   "concept_types": [
@@ -40,7 +40,7 @@
     "数学结构": 3,
     "数论": 16,
     "本体论": 8,
-    "物理": 12,
+    "物理": 14,
     "理论框架": 1,
     "纤维丛": 6,
     "群论": 9,
@@ -63,7 +63,7 @@
     "重组实现": 19
   },
   "owl_classes": 25,
-  "owl_individuals": 426,
+  "owl_individuals": 430,
   "owl_object_properties": 16,
   "owl_annotation_properties": 15,
   "owl_disjoint_type_classes": 12,
@@ -71,8 +71,8 @@
   "cross_type_edges": 69,
   "axiom_layer": {
     "gap_precedes_edges": 3,
-    "mentioned_in_edges": 65,
-    "evidence_individuals": 213
+    "mentioned_in_edges": 63,
+    "evidence_individuals": 215
   },
   "reasoner": {
     "engine": "HermiT (owlready2 sync_reasoner, 内存推理)",

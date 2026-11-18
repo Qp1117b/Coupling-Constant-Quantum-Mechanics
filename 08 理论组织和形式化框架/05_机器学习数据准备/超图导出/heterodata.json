@@ -2,7 +2,7 @@
   "schema": "PyG HeteroData / HypergraphData（见 build_pyg.py 的构造约定）",
   "node_types": {
     "concept": {
-      "num_nodes": 81,
+      "num_nodes": 83,
       "feature_dim": 15,
       "type_vocab": [
         "共形场论",
@@ -31,7 +31,7 @@
   },
   "features": {
     "x_shape": [
-      81,
+      83,
       15
     ],
     "type_onehot_dim": 12,
@@ -123,7 +123,9 @@
       "C079": 77,
       "C080": 78,
       "C081": 79,
-      "C082": 80
+      "C082": 80,
+      "C083": 81,
+      "C084": 82
     },
     "type_to_col": {
       "共形场论": 0,

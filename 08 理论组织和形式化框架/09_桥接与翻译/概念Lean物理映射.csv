@@ -70,7 +70,7 @@ C069,超导同步算符,物理,Superconductivity,TransitionTemperatureCQM,物理
 C070,临界温度,物理,Superconductivity,TransitionTemperatureCQM,物理量/可观测量,D030
 C071,声子,物理,,,物理量/可观测量,D011
 C072,赝能隙,物理,,,物理量/可观测量,D030
-C073,FG层级四元组,纤维丛,FGChain,Hierarchy,丛结构,D032
+C073,FG层级四元组,纤维丛,FGChain,Hierarchy,丛结构,D028
 C074,共形固定点,共形场论,,,结构概念,D012
 C075,共形自举,共形场论,,,结构概念,D012
 C076,Virasoro代数,共形场论,,,结构概念,D012
@@ -80,3 +80,5 @@ C079,Dirac条件,共形场论,,,结构概念,D012
 C080,朗兰兹函子性,数论,,,数论谱量,D020
 C081,$G_N$,物理,PhysicalConstants,gn_spectral_formula,物理量/可观测量,D014
 C082,Wyler常数,数论,,,数论谱量,D021
+C083,记忆核积分,物理,,,物理量/可观测量,D030
+C084,固有时流速差异历史总和,物理,,,物理量/可观测量,D030
