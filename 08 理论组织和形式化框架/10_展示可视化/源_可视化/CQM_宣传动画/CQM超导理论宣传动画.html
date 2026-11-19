@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CQM 超导理论 · 宣传动画</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0d11'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23d9a441' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%2374a8bd'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0a0d11;
+    --ink:#e9e6e0;
+    --dim:#8a929c;
+    --gold:#d9a441;
+    --cold:#74a8bd;
+    --line:#1c232b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:var(--bg);overflow:hidden}
+  body{
+    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;
+    color:var(--ink);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:80px 80px;
+    background-position:center;
+  }
+  #stage{position:fixed;inset:0}
+  canvas{display:block;width:100%;height:100%}
+
+  .hud{position:fixed;left:0;top:0;right:0;padding:26px 38px;display:flex;justify-content:space-between;align-items:baseline;pointer-events:none}
+  .brand{font-family:"Noto Serif SC","Songti SC",serif;letter-spacing:.16em;font-size:13px;color:var(--dim)}
+  .brand b{color:var(--ink);font-weight:600}
+  .count{font-family:"Noto Serif SC","Songti SC",serif;font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
+  .count em{font-style:normal;color:var(--gold)}
+
+  .caption{position:fixed;left:38px;bottom:104px;max-width:min(760px,72vw);pointer-events:none}
+  .caption .t{
+    font-family:"Noto Serif SC","Songti SC",serif;
+    font-size:clamp(28px,3.6vw,52px);
+    line-height:1.24;letter-spacing:.02em;
+    color:var(--ink);
+    text-wrap:balance;
+    opacity:0;transform:translateY(10px);
+    transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);
+  }
+  .caption .s{
+    margin-top:14px;
+    font-size:clamp(13px,1.25vw,17px);
+    line-height:1.7;color:var(--dim);
+    max-width:44em;
+    opacity:0;transform:translateY(8px);
+    transition:opacity .8s .1s cubic-bezier(.22,1,.36,1),transform .8s .1s cubic-bezier(.22,1,.36,1);
+  }
+  .caption .f{
+    margin-top:18px;
+    font-family:"Noto Serif SC","Songti SC",serif;
+    font-size:clamp(15px,1.5vw,21px);
+    color:var(--cold);letter-spacing:.04em;
+    opacity:0;transition:opacity .9s .2s ease;
+  }
+  .caption.on .t,.caption.on .s,.caption.on .f{opacity:1;transform:none}
+
+  .foot{position:fixed;left:0;right:0;bottom:0;padding:0 38px 26px;display:flex;flex-direction:column;gap:14px}
+  .bar{height:1px;background:#20262e;position:relative}
+  .bar i{position:absolute;left:0;top:-1px;height:3px;background:var(--gold);width:0}
+  .ticks{display:flex;gap:10px;align-items:center}
+  .ticks button{
+    all:unset;cursor:pointer;
+    font-size:11px;letter-spacing:.1em;color:var(--dim);
+    padding:4px 0;
+  }
+  .ticks button:hover{color:var(--ink)}
+  .ticks .sep{flex:1}
+  .dots{display:flex;gap:7px}
+  .dots b{width:5px;height:5px;border-radius:50%;background:#2b333d;cursor:pointer;transition:background .3s,transform .3s}
+  .dots b.now{background:var(--gold);transform:scale(1.5)}
+
+  .note{position:fixed;right:38px;bottom:104px;text-align:right;font-size:11px;line-height:1.9;color:#5d666f;letter-spacing:.06em;pointer-events:none}
+
+  @media (max-width:720px){
+    .hud{padding:18px 20px}
+    .caption{left:20px;right:20px;bottom:96px;max-width:none}
+    .foot{padding:0 20px 18px}
+    .note{display:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .caption .t,.caption .s,.caption .f{transition:none}
+  }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="cv"></canvas></div>
+
+<div class="hud">
+  <div class="brand"><b>CQM</b> ｜ 差异—记忆核超导理论</div>
+  <div class="count"><em id="no">01</em> / 09</div>
+</div>
+
+<div class="caption" id="cap">
+  <div class="t" id="ct"></div>
+  <div class="s" id="cs"></div>
+  <div class="f" id="cf"></div>
+</div>
+
+<div class="note">非权威源 · 探索稿<br>示意波形，非数值结果</div>
+
+<div class="foot">
+  <div class="bar"><i id="prog"></i></div>
+  <div class="ticks">
+    <button id="toggle">暂停</button>
+    <button id="restart">重播</button>
+    <div class="sep"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+</div>
+
+<script>
+/* ============ 舞台与世界坐标 ============ */
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+const W = 1600, H = 900;
+let scale = 1, ox = 0, oy = 0;
+
+function fit(){
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const vw = window.innerWidth, vh = window.innerHeight;
+  cv.width = Math.round(vw * dpr);
+  cv.height = Math.round(vh * dpr);
+  cv.style.width = vw + 'px';
+  cv.style.height = vh + 'px';
+  const s = Math.max(vw / W, vh / H);
+  scale = s * dpr;
+  ox = (vw - W * s) / 2 * dpr;
+  oy = (vh - H * s) / 2 * dpr;
+}
+fit();
+window.addEventListener('resize', fit);
+
+/* ============ 工具 ============ */
+const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
+const easeOut = t=>1-Math.pow(1-clamp(t,0,1),3);
+const easeInOut = t=>{ t=clamp(t,0,1); return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2; };
+const lerp = (a,b,t)=>a+(b-a)*t;
+const TAU = Math.PI*2;
+
+/* ============ 晶格 ============ */
+const COLS = 22, ROWS = 12, SP = 58;
+const GX = (W - (COLS-1)*SP)/2;
+const GY = (H - (ROWS-1)*SP)/2 - 30;
+const pt = (i,j)=>({ x: GX + i*SP, y: GY + j*SP });
+
+/* 确定性伪随机：保证拖动/重播时画面一致 */
+function rnd(n){ const x = Math.sin(n*127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+
+/* ============ 基础笔触 ============ */
+function gridLines(alpha=0.16){
+  ctx.strokeStyle = `rgba(120,140,160,${alpha})`;
+  ctx.lineWidth = 1;
+  for(let i=0;i<COLS;i++){
+    for(let j=0;j<ROWS-1;j++){
+      const a = pt(i,j), b = pt(i,j+1);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+  }
+  for(let j=0;j<ROWS;j++){
+    for(let i=0;i<COLS-1;i++){
+      const a = pt(i,j), b = pt(i+1,j);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+  }
+}
+
+function dot(x,y,r,color,alpha){
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = color;
+  ctx.beginPath(); ctx.arc(x,y,r,0,TAU); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+/* ============ 九幕 ============ */
+const SCENES = [
+
+/* 01 · 均匀晶格 */
+{
+  dur: 6.2,
+  t: '一块均匀的晶格',
+  s: '均匀指平均均匀：每一处平均亏角相同；差异只能来自涨落。若把均匀读成无差异，后面全部不会发生。',
+  f: '[ X, P ] = i ☯',
+  draw(t,p){
+    const k = easeOut(p*1.15);
+    for(let j=0;j<ROWS;j++){
+      for(let i=0;i<COLS;i++){
+        const a = clamp(p*1.9 - (i+j)*0.022, 0, 1);
+        const q = pt(i,j);
+        dot(q.x, q.y, 1.7, '#8fa6b8', 0.55*a);
+      }
+    }
+    ctx.globalAlpha = 0.30*k;
+    gridLines();
+    ctx.globalAlpha = 1;
+    /* 扫描线 */
+    const sy = lerp(GY-40, GY+(ROWS-1)*SP+40, (t/6.2));
+    const g = ctx.createLinearGradient(0, sy-26, 0, sy+26);
+    g.addColorStop(0,'rgba(217,164,65,0)');
+    g.addColorStop(.5,'rgba(217,164,65,0.20)');
+    g.addColorStop(1,'rgba(217,164,65,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(GX-60, sy-26, (COLS-1)*SP+120, 52);
+  }
+},
+
+/* 02 · 声子 */
+{
+  dur: 6.4,
+  t: '声子：曲率的量子',
+  s: '晶格的量子振荡就是亏角在振荡。三维声学支线性，二维弯曲支是二次的——这不是装饰，是后面能量阶梯的形状来源。',
+  f: 'ω ∝ q （三维）　　ω ∝ q² （二维弯曲）',
+  draw(t,p){
+    const A = 13 * easeOut(p*1.3);
+    const q = 0.013, w = 2.1;
+    for(let j=0;j<ROWS;j++){
+      for(let i=0;i<COLS;i++){
+        const base = pt(i,j);
+        const dy = A * Math.sin(q*base.x - w*t) * Math.cos(0.06*base.y);
+        const hot = Math.abs(dy)/ (A+0.01);
+        const col = hot > 0.55 ? '#d9a441' : '#8fa6b8';
+        dot(base.x, base.y + dy, 1.7 + hot*1.4, col, 0.4 + hot*0.55);
+      }
+    }
+    /* 波前 */
+    const wx = lerp(GX-80, GX+(COLS-1)*SP+80, ((t*0.35)%1));
+    ctx.strokeStyle = 'rgba(116,168,189,0.35)';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    for(let y=GY-20;y<=GY+(ROWS-1)*SP+20;y+=8){
+      const x = wx + 10*Math.sin(y*0.03);
+      (y===GY-20? ctx.moveTo(x,y): ctx.lineTo(x,y));
+    }
+    ctx.stroke();
+  }
+},
+
+/* 03 · 亏角 */
+{
+  dur: 7.2,
+  t: '亏角：差异挂在边上',
+  s: '亏角是边上（铰链）的量，共维为二，属于两节点之间。它不是节点的角亏，也不能加在单个节点上。',
+  f: 'ε = 2π − Σ θ　　 ε ∈ [0, 2π)',
+  draw(t,p){
+    ctx.globalAlpha = 0.22;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const picks = [[3,4],[7,3],[10,7],[14,5],[17,8],[11,2]];
+    picks.forEach(([i,j],k)=>{
+      const a = pt(i,j), b = pt(i+1,j);
+      const ap = easeOut(clamp(p*2.2 - k*0.22, 0, 1));
+      const mx = (a.x+b.x)/2, my = (a.y+b.y)/2;
+      ctx.strokeStyle = `rgba(217,164,65,${0.85*ap})`;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      /* 缺口扇形 */
+      const ang = -0.9 + 0.5*Math.sin(t*1.4 + k);
+      ctx.strokeStyle = `rgba(116,168,189,${0.9*ap})`;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.arc(mx, my, 22, ang, ang + (TAU - 1.24));
+      ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(mx,my); ctx.lineTo(mx+22*Math.cos(ang), my+22*Math.sin(ang)); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(mx,my); ctx.lineTo(mx+22*Math.cos(ang+(TAU-1.24)), my+22*Math.sin(ang+(TAU-1.24))); ctx.stroke();
+      /* 标注 */
+      ctx.fillStyle = `rgba(233,230,224,${0.9*ap})`;
+      ctx.font = '15px "Noto Serif SC", serif';
+      ctx.fillText('ε', mx+26, my-16);
+    });
+  }
+},
+
+/* 04 · 固有时流速 */
+{
+  dur: 7.4,
+  t: '固有时流速：逐跳乘积',
+  s: '相邻节点的钟速不是相加，是相乘：每一跳乘一个由亏角决定的比值。环上要闭合，就必须全零亏角。',
+  f: 'v_j = v_i · r_ij　　r_ij = √(1 − ℓ_ij / 2π)',
+  draw(t,p){
+    ctx.globalAlpha = 0.18;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const front = lerp(-2, COLS+2, easeInOut(p));
+    for(let i=0;i<COLS;i++){
+      const on = i <= front;
+      const shade = on ? clamp(1 - i/COLS*0.55, 0.25, 1) : 0.18;
+      for(let j=0;j<ROWS;j++){
+        const q = pt(i,j);
+        dot(q.x,q.y, on?2.6:1.7, on?'#d9a441':'#8fa6b8', shade * (on?0.9:0.4));
+      }
+      if(on && i<COLS-1){
+        ctx.strokeStyle = 'rgba(116,168,189,0.55)';
+        ctx.lineWidth = 1.2;
+        for(let j=0;j<ROWS;j++){
+          const a = pt(i,j), b = pt(i+1,j);
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    /* 乘法链 */
+    const base = pt(0, ROWS-1);
+    ctx.font = '16px "Noto Serif SC", serif';
+    ctx.fillStyle = 'rgba(233,230,224,0.85)';
+    ctx.fillText('v₀', base.x-8, base.y+46);
+    for(let k=0;k<4;k++){
+      const x = base.x + 58 + k*128;
+      ctx.fillStyle = `rgba(116,168,189,${0.6})`;
+      ctx.fillText('× r', x, base.y+46);
+      ctx.fillStyle = 'rgba(233,230,224,0.55)';
+      ctx.fillText(String(k+1), x+34, base.y+40);
+    }
+    /* 闭环提示 */
+    if(p>0.62){
+      const a = (p-0.62)/0.38;
+      ctx.globalAlpha = a;
+      ctx.strokeStyle = 'rgba(217,164,65,0.9)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.arc(GX+(COLS-1)*SP+120, GY+120, 34, 0, TAU);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(217,164,65,0.95)';
+      ctx.font = '15px "Noto Serif SC", serif';
+      ctx.fillText('∏ r = 1', GX+(COLS-1)*SP+92, GY+76);
+      ctx.fillText('⇔ ℓ = 0', GX+(COLS-1)*SP+96, GY+178);
+      ctx.globalAlpha = 1;
+    }
+  }
+},
+
+/* 05 · 配对与平凡零点 */
+{
+  dur: 7.2,
+  t: '配对：平凡零点给出允许通道',
+  s: 'ζ 的平凡零点只允许偶数通道：2、4、6…… 它决定"哪几档可以配对"，不决定配对发生率。',
+  f: 'ζ(−n) = 0 ⇔ n = 2, 4, 6 …',
+  draw(t,p){
+    ctx.globalAlpha = 0.20;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const pairs = [[5,5],[8,4],[11,7],[14,5],[17,8],[9,10],[13,2],[19,6]];
+    pairs.forEach(([i,j],k)=>{
+      const a = pt(i,j), b = pt(i+1,j);
+      const ap = easeOut(clamp(p*2.4 - k*0.26, 0, 1));
+      ctx.strokeStyle = `rgba(116,168,189,${0.95*ap})`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(a.x,a.y);
+      ctx.quadraticCurveTo((a.x+b.x)/2, a.y-30, b.x, b.y);
+      ctx.stroke();
+      dot(a.x,a.y,3.2,'#d9a441',ap);
+      dot(b.x,b.y,3.2,'#d9a441',ap);
+      if(ap>0.85 && k<6){
+        ctx.fillStyle = 'rgba(217,164,65,0.85)';
+        ctx.font = '14px "Noto Serif SC", serif';
+        ctx.fillText('n = 2', (a.x+b.x)/2 - 16, a.y - 42);
+      }
+    });
+  }
+},
+
+/* 06 · 渗流 */
+{
+  dur: 7.0,
+  t: '渗流：连成无限簇',
+  s: '配对岛先散在各处，占据比例跨过阈值时才连成一片。二维方格恰好卡在 1/2：单层自己不够，要靠层间。',
+  f: 'p_c = 1/2 （2D 方格键渗流）',
+  draw(t,p){
+    ctx.globalAlpha = 0.16;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const N = COLS*ROWS;
+    /* 确定性生长顺序：由中心向外 + 抖动 */
+    const order = [];
+    for(let j=0;j<ROWS;j++) for(let i=0;i<COLS;i++){
+      const dx = (i-(COLS-1)/2)/COLS, dy = (j-(ROWS-1)/2)/ROWS;
+      order.push({i,j,key: Math.hypot(dx,dy) + rnd(i*31+j*17)*0.28});
+    }
+    order.sort((A,B)=>A.key-B.key);
+    const n = Math.floor(easeInOut(p) * N * 1.02);
+    const on = new Set();
+    for(let k=0;k<n && k<order.length;k++) on.add(order[k].i+','+order[k].j);
+    const frac = on.size / N;
+    const big = frac > 0.5;
+    for(let j=0;j<ROWS;j++) for(let i=0;i<COLS;i++){
+      const q = pt(i,j), key = i+','+j, yes = on.has(key);
+      dot(q.x,q.y, yes?2.8:1.5, yes?(big?'#d9a441':'#74a8bd'):'#4a5560', yes?0.9:0.3);
+    }
+    if(big){
+      ctx.strokeStyle = 'rgba(217,164,65,0.32)';
+      ctx.lineWidth = 1.4;
+      for(let j=0;j<ROWS;j++) for(let i=0;i<COLS-1;i++){
+        if(on.has(i+','+j) && on.has((i+1)+','+j)){
+          const a=pt(i,j), b=pt(i+1,j);
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+      for(let j=0;j<ROWS-1;j++) for(let i=0;i<COLS;i++){
+        if(on.has(i+','+j) && on.has(i+','+(j+1))){
+          const a=pt(i,j), b=pt(i,j+1);
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+  }
+},
+
+/* 07 · 相变与锚 */
+{
+  dur: 7.0,
+  t: '相变与锚',
+  s: '降温到临界，零亏角边连成的子复形亮起来。请注意因果：锚是相变在空间侧的体现，不是相变的前提。',
+  f: 'ℓ_e = 0 的极大连通子图 = A_τ',
+  draw(t,p){
+    ctx.globalAlpha = 0.20;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const path = [];
+    let j = 6;
+    for(let i=0;i<COLS;i++){
+      if(i%4===1) j += (i%8===1? -1: 1);
+      j = clamp(j, 1, ROWS-2);
+      path.push([i,j]);
+    }
+    const grow = easeInOut(p*1.05);
+    const upto = Math.floor(grow * path.length);
+    /* 暗化全图 */
+    for(let jj=0;jj<ROWS;jj++) for(let ii=0;ii<COLS;ii++){
+      const q=pt(ii,jj); dot(q.x,q.y,1.5,'#4a5560',0.3);
+    }
+    /* 锚路径 */
+    for(let k=0;k<upto;k++){
+      const [i,jj] = path[k];
+      const q = pt(i,jj);
+      dot(q.x,q.y,3.4,'#d9a441',0.95);
+      if(k>0){
+        const [pi,pj] = path[k-1];
+        const a = pt(pi,pj), b = pt(i,jj);
+        ctx.strokeStyle = 'rgba(217,164,65,0.9)';
+        ctx.lineWidth = 3.4;
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      }
+    }
+    if(p>0.72){
+      ctx.globalAlpha = (p-0.72)/0.28;
+      ctx.font = '16px "Noto Serif SC", serif';
+      ctx.fillStyle = 'rgba(217,164,65,0.9)';
+      const last = path[Math.min(upto,path.length-1)];
+      ctx.fillText('A_τ', pt(last[0],last[1]).x + 16, pt(last[0],last[1]).y - 14);
+      ctx.globalAlpha = 1;
+    }
+  }
+},
+
+/* 08 · 记忆核 */
+{
+  dur: 8.2,
+  t: '记忆核：质数振荡',
+  s: '超导态里，记忆核取质数振荡的形式：每个零点给一个模式，衰减率就是零点的实部。正常态没有这个形式。',
+  f: 'K(t) = e^(−t/2) ( ψ(e^t) − e^t )',
+  draw(t,p){
+    ctx.globalAlpha = 0.14;
+    gridLines();
+    ctx.globalAlpha = 1;
+    const boxX = 760, boxY = 150, boxW = 720, boxH = 330;
+    /* 边框 */
+    ctx.strokeStyle = 'rgba(120,140,160,0.25)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(boxX, boxY, boxW, boxH);
+    /* 轴 */
+    ctx.strokeStyle = 'rgba(120,140,160,0.18)';
+    ctx.beginPath(); ctx.moveTo(boxX+50, boxY+boxH-40); ctx.lineTo(boxX+boxW-30, boxY+boxH-40); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(boxX+50, boxY+20); ctx.lineTo(boxX+50, boxY+boxH-40); ctx.stroke();
+    /* 曲线：示意波形（六模叠加，非数值） */
+    const gammas = [14.13,21.02,25.01,30.42,32.93,37.59];
+    const span = 9.0;
+    const drawC = easeOut(clamp(p*1.25,0,1));
+    ctx.strokeStyle = '#d9a441';
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    const steps = 420;
+    for(let k=0;k<=steps*drawC;k++){
+      const tt = span * k/steps;
+      let v = 0;
+      for(let n=0;n<gammas.length;n++){
+        v += Math.exp(-tt/2) * Math.cos(gammas[n]*tt/6) / (n+1);
+      }
+      v *= 0.42;
+      const x = boxX+50 + (boxW-80) * (tt/span);
+      const y = boxY+boxH-40 - v*180;
+      (k===0? ctx.moveTo(x,y): ctx.lineTo(x,y));
+    }
+    ctx.stroke();
+    /* 阶梯 ψ */
+    ctx.strokeStyle = 'rgba(116,168,189,0.85)';
+    ctx.lineWidth = 1.8;
+    ctx.beginPath();
+    const steps2 = 300;
+    let lastY = null;
+    const primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
+    for(let k=0;k<=steps2;k++){
+      const tt = 8.6 * k/steps2;
+      const xv = Math.exp(tt);
+      let psi = 0;
+      for(const q of primes){ if(q <= xv) psi += Math.log(q); }
+      psi = psi * 0.62;
+      const x = boxX+50 + (boxW-80) * (tt/8.6);
+      const y = boxY+boxH-40 - psi*7;
+      (k===0? ctx.moveTo(x,y): ctx.lineTo(x,y));
+    }
+    ctx.stroke();
+    /* 标注 */
+    ctx.font = '13px "Noto Serif SC", serif';
+    ctx.fillStyle = 'rgba(217,164,65,0.8)';
+    ctx.fillText('K(t)', boxX+58, boxY+boxH-54);
+    ctx.fillStyle = 'rgba(116,168,189,0.8)';
+    ctx.fillText('ψ(e^t)', boxX+58, boxY+boxH-72);
+    ctx.fillStyle = 'rgba(138,146,156,0.8)';
+    ctx.fillText('t', boxX+boxW-40, boxY+boxH-24);
+    /* 封底说明 */
+    if(p>0.8){
+      ctx.globalAlpha = (p-0.8)/0.2;
+      ctx.fillStyle = 'rgba(138,146,156,0.9)';
+      ctx.font = '13px "Noto Serif SC", serif';
+      ctx.fillText('示意：零点模式叠加，非数值结果', boxX+58, boxY+30);
+      ctx.globalAlpha = 1;
+    }
+  }
+},
+
+/* 09 · 收束 */
+{
+  dur: 7.0,
+  t: '从不确定，到相变',
+  s: '位置与动量不能同时定到零；亏角把差异挂到边上；配对给出允许通道；渗流连通；相变显形；记忆核写下形式。链止于此，未证之处一律标出。',
+  f: '①②③ ⇒ 形式对上　·　不证明猜想',
+  draw(t,p){
+    const fade = easeOut(p*1.2);
+    for(let j=0;j<ROWS;j++) for(let i=0;i<COLS;i++){
+      const q = pt(i,j);
+      const d = Math.hypot(q.x-W/2, q.y-(H/2-30))/900;
+      const a = 0.55 * clamp(1 - d*1.6, 0, 1) * fade;
+      dot(q.x,q.y,1.6,'#8fa6b8',a);
+    }
+    ctx.globalAlpha = 0.12*fade;
+    gridLines();
+    ctx.globalAlpha = 1;
+    /* 中心环 */
+    const r = 120 + 8*Math.sin(t*0.9);
+    ctx.strokeStyle = `rgba(217,164,65,${0.35*fade})`;
+    ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.arc(W/2, H/2-30, r, 0, TAU); ctx.stroke();
+    ctx.beginPath(); ctx.arc(W/2, H/2-30, r*1.35, 0, TAU); ctx.stroke();
+    dot(W/2, H/2-30, 4, '#74a8bd', fade*0.9);
+  }
+}
+
+];
+
+/* ============ 播放控制 ============ */
+const total = SCENES.reduce((a,b)=>a+b.dur, 0);
+let elapsed = 0, last = null, playing = true, cur = -1;
+
+const capEl = document.getElementById('cap');
+const ctEl = document.getElementById('ct');
+const csEl = document.getElementById('cs');
+const cfEl = document.getElementById('cf');
+const noEl = document.getElementById('no');
+const progEl = document.getElementById('prog');
+const toggleEl = document.getElementById('toggle');
+const dotsEl = document.getElementById('dots');
+
+SCENES.forEach((s,i)=>{
+  const b = document.createElement('b');
+  b.addEventListener('click', ()=>{ elapsed = SCENES.slice(0,i).reduce((a,c)=>a+c.dur,0); last=null; cur=-1; });
+  dotsEl.appendChild(b);
+});
+
+function sceneAt(time){
+  let acc = 0;
+  for(let i=0;i<SCENES.length;i++){
+    if(time < acc + SCENES[i].dur) return { i, local: time - acc, p: (time-acc)/SCENES[i].dur };
+    acc += SCENES[i].dur;
+  }
+  const i = SCENES.length-1;
+  return { i, local: SCENES[i].dur, p: 1 };
+}
+
+function applyCaption(i){
+  const s = SCENES[i];
+  capEl.classList.remove('on');
+  ctEl.textContent = s.t;
+  csEl.textContent = s.s;
+  cfEl.textContent = s.f;
+  noEl.textContent = String(i+1).padStart(2,'0');
+  requestAnimationFrame(()=> requestAnimationFrame(()=> capEl.classList.add('on')));
+  [...dotsEl.children].forEach((b,k)=> b.classList.toggle('now', k===i));
+}
+
+function render(){
+  ctx.setTransform(scale,0,0,scale,ox,oy);
+  ctx.clearRect(0,0,W,H);
+  const sc = sceneAt(elapsed);
+  if(sc.i !== cur){ cur = sc.i; applyCaption(cur); }
+  SCENES[sc.i].draw(sc.local, sc.p);
+  progEl.style.width = (elapsed/total*100).toFixed(2) + '%';
+}
+
+function tick(now){
+  if(last === null) last = now;
+  const dt = Math.min((now-last)/1000, 0.06);
+  last = now;
+  if(playing && elapsed < total){
+    elapsed = Math.min(elapsed + dt, total);
+    if(elapsed >= total){ playing = false; toggleEl.textContent = '重播'; }
+  }
+  render();
+  requestAnimationFrame(tick);
+}
+
+toggleEl.addEventListener('click', ()=>{
+  if(elapsed >= total){ elapsed = 0; last = null; cur = -1; playing = true; toggleEl.textContent = '暂停'; return; }
+  playing = !playing;
+  toggleEl.textContent = playing ? '暂停' : '继续';
+});
+
+document.getElementById('restart').addEventListener('click', ()=>{
+  elapsed = 0; last = null; cur = -1; playing = true; toggleEl.textContent = '暂停';
+});
+
+cv.addEventListener('click', ()=>{
+  if(elapsed >= total){ elapsed = 0; last = null; cur = -1; playing = true; toggleEl.textContent = '暂停'; return; }
+  playing = !playing;
+  toggleEl.textContent = playing ? '暂停' : '继续';
+});
+
+window.addEventListener('keydown', (e)=>{
+  if(e.code === 'Space'){ e.preventDefault(); cv.click(); }
+  if(e.code === 'ArrowRight'){
+    const sc = sceneAt(elapsed);
+    elapsed = Math.min(total-0.01, SCENES.slice(0, Math.min(sc.i+1, SCENES.length-1)).reduce((a,c)=>a+c.dur,0));
+    last=null; cur=-1;
+  }
+  if(e.code === 'ArrowLeft'){
+    const sc = sceneAt(elapsed);
+    elapsed = SCENES.slice(0, Math.max(sc.i-1,0)).reduce((a,c)=>a+c.dur,0);
+    last=null; cur=-1;
+  }
+});
+
+/* reduced motion：停在开场静态 */
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  playing = false;
+  toggleEl.textContent = '播放';
+  elapsed = 0.6;
+}
+
+applyCaption(0);
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
