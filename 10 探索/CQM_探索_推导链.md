@@ -129,25 +129,6 @@ $$\bigl(\dot{\mathcal H}_{ij}=0\ \forall(i,j)\in\mathcal P_t\bigr)\ \wedge\ \Gam
 
 **要素分布**：构造项集中在"方差→配对"（环 9–10）、"渗流→容量"（环 15–16）、"占据集→读数"（环 22–25）三段，三段也正是断口所在。
 
-### 0.6 形式化对应
-
-`lake env lean CQM_Mechanism.lean` 编译通过（exit 0）：`08 理论组织和形式化框架/04_Lean对接/Lean源码/CQM_Mechanism.lean`——22 定理、16 定义、0 自定义 axiom，主定理仅依赖 `propext`／`Quot.sound`。全对本体形式化为 `Hpair`（$\mathcal H_{ij}=\tau_i-\tau_j$）、`PairFreeze`（所有节点对冻结）、`StepEq`（全对每步增量相等），并有 `pairFreeze_iff_stepEq` 与 `pair_freeze_gives_form` 把全对冻结接到形式结论；原 `HFreeze` 保留为**标量投影层**的冻结。
-
-| Lean 名                                            | 对上的链环                                            |
-| :------------------------------------------------ | :----------------------------------------------- |
-| `vs_const`                                        | 环 5（闭环 $r_k=1$ ⇒ 全网同流）                           |
-| `plaquette_compatibility`、`compatibility_fails_unsigned`、`plaquette_count_matches_cycle_rank` | 环 5（(5.3a)–(5.3c)：和乐相容、有向约定、最小环计数） |
-| `HFreeze`、`freeze_history` | 标量投影层的冻结；本体为 `Hpair`／`PairFreeze`（环 6） |
-| `Hpair`、`Hpair_self`、`Hpair_antisym`、`Hpair_cocycle`、`PairFreeze`、`StepEq`、`pairFreeze_iff_stepEq` | 环 6 全对族：零对角、反对称、上闭链、全对冻结 ⇔ 全对等速 |
-| `pairFreeze_projection`、`pair_freeze_gives_form` | 环 6 全对冻结 → 环 20 → 环 26（逐对投影仍落形式） |
-| `weight_eq_one_of_freeze`、`amp_from_freeze`       | 环 20＋环 12（冻结 ⇒ 权重恒等 ⇒ 幅 $\Phi/n$）                |
-| `log_ladder`                                      | 环 12（$E_n=n^2E_1$ ＋ $\ln$ 可加 ⇒ $u_n=u_1+2\ln n$） |
-| `mechanism_prime_osc`、`step_dotH_zero_gives_form` | 环 20 → 环 26                                      |
-| `freeze_gives_uniform`                            | 环 22（(22.3) 的代数形式）                               |
-| `peak_unique`、`three_conditions_deliver`          | 目标区（要素合取）                                            |
-
-**完成度判定**：**形式侧闭合，物理侧未闭合**。形式侧闭合的是条件式（"若冻结、泛函、约束函数同时成立，则 $K$ 呈留数和形式"），这是条件结论，**不当推导用**；物理侧缺三处——`临-8`（$K$ 是否等于 (26.2) 右端）、`临-22`（$\beta_n$ 无模型出处）、`审-14`（泛函无第一性来源）。该条件结论的状态与环 26／27 相同，不升格。
-
 ---
 
 ## 1. 阶段：再生产（环 1）
@@ -264,7 +245,7 @@ $$t\ \text{只经}\ d\tau_i=v_{\tau,i}\,dt\ \text{进入物理，不直接作记
 
 **后件**：各格点自有**节点固有时** $\tau_i$；同几何、不同钟速——这是后面所有差异的唯一来源。
 
-**状态**：【假设】（FG 接口）；传递关系为乘积非加和；(5.3a)–(5.3c)【严格】（Lean 对应见 0.6 `plaquette_compatibility`、`compatibility_fails_unsigned`、`plaquette_count_matches_cycle_rank`）；(5.4) 属【定义澄清】。
+**状态**：【假设】（FG 接口）；传递关系为乘积非加和；(5.3a)–(5.3c)【严格】；(5.4) 属【定义澄清】。
 
 **缺口**：FG 接口属【假设】，未由 (1.2) 推出；`E4`；漂移率**均值**零 $\iff\ell^{(0)}_{ij}=0$，但均值零不等于涨落零（M9 相关限定）；**积分下限未钉**，$\tau_i$ 的零点自由（环 13 才钉）；`审-13`——(5.3b) 的"最小环生成"只在**单连通平面**成立：材料带孔（多连通）时 $\pi_1$ 非平凡，最小环不再张成整个环路空间，须补环绕生成元的和乐；三维的面数账也未核；有限样品（0.2 的读数层）下 $\partial D_i$ 是开的，"闭环"定义本身要改。
 
