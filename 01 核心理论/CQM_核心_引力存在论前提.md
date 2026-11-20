@@ -275,7 +275,7 @@ $$\boxed{D = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -
 
 ### 4. δ 的开放问题
 
-$\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 $A_4$ 的偏离。其函数形式取**满足全部物理条件的最简候选形式**（`06 超导/CQM_超导核心理论.md` §11.8）；从 $SU(5)$ 重组实现动力学导出这一环节尚未给出（缺口 N1）：
+$\delta(Z,N)$ 是**依赖元素（$Z$）和同位素（$N$）的变量**，描述中子扇区对纯 $A_4$ 的偏离。其函数形式取**满足全部物理条件的最简候选形式**（`06 超导/CQM_超导核心理论_材料与界面卷.md` §11.8）；从 $SU(5)$ 重组实现动力学导出这一环节尚未给出（缺口 N1）：
 
 $$\delta(Z,N) = 1 - \varepsilon_0 \cdot \frac{N}{Z+N}, \qquad \varepsilon_0 = 0.0012$$
 
@@ -285,7 +285,7 @@ $$\delta(Z,N) = 1 - \varepsilon_0 \cdot \frac{N}{Z+N}, \qquad \varepsilon_0 = 0.
 
 | 编号 | 缺口 | 内容 | 对应 Lean 形式化 |
 |------|------|------|------------------|
-| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式取满足全部物理条件的最简候选形式（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`06 超导/CQM_超导核心理论.md` §11.8），非动力学导出；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `GN/TripleIdentity.lean`（$☯$ 谱参数）、`GN/Constructions.lean`（$\mathfrak{c}_1$ 与 $G_N$）；`SPAF.neutronDefect` 形式化 $D(\delta)$ |
+| **N1** | 质量-谱映射待严格化 | $\delta(Z,N)$ 函数形式取满足全部物理条件的最简候选形式（$\delta(Z,N) = 1 - \varepsilon_0 N/(Z+N)$，`06 超导/CQM_超导核心理论_材料与界面卷.md` §11.8），非动力学导出；质量差 $\Delta m/m_p$ 与 $\delta$ 的定量比例及 $\varepsilon_0$ 的第一性来源待严格推导 | `GN/TripleIdentity.lean`（$☯$ 谱参数）、`GN/Constructions.lean`（$\mathfrak{c}_1$ 与 $G_N$）；`SPAF.neutronDefect` 形式化 $D(\delta)$ |
 | **N2** | Regge 亏角与 δ 的显式关系缺失 | 尚未写出 $\epsilon(\delta)$ 的具体公式 | `SPAF.neutronDefect` 定义 $D(\delta)$；`MolecularGeometry.deficitAngleDensity` 与 `BridgeTheorems.reggeDeficit_ricciScalar_*` 建立亏角-曲率关系，但 $\epsilon(\delta)$ 显式几何公式未写 |
 | **N3** | β 衰变动力学条件未引入 | 孤立中子不稳定，束缚中子稳定的机制未定量 | `MolecularGeometry.freeNeutronDefect` / `boundNeutronDefect` 已区分自由/束缚缺陷，但 β 衰变稳定性动力学未定量 |
 | **N4** | 氘核结合能未精确推导 | 只有数量级估计 | 暂无对应形式化 |
