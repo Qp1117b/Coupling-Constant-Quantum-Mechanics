@@ -149,7 +149,7 @@
 | 2 | $\Delta p_u=\dfrac{\Delta\varepsilon}{4\pi\,☯\sqrt{1-\varepsilon/2\pi}}$ | 固有时流速求导 | 代数（严格） | 青 |
 | 3 | $\Delta u\cdot\Delta\varepsilon\ge2\pi\,☯\sqrt{1-\varepsilon/2\pi}$ | $[\hat u,\hat p_u]=i$ | 不确定性（严格） | 青 |
 | 4 | $\Delta\varepsilon_0\ge\dfrac{\pi\,☯\sqrt{1-\varepsilon/2\pi}}{\ln n}$ | 代入 $\Delta u_n=2\ln n$ | 资格条件（严格） | 青 |
-| 5 | $T_c=\min(T^*,T_\theta)$（两阶段定性判据） | `06` §0.5 | 定性骨架 | 琥珀 |
+| 5 | $T_c=\min(T^*,T_{\rm BKT},T_\theta)$（两阶段定性判据；渗流只给连通域，M8） | `06` §0.5 | 定性骨架 | 琥珀 |
 
 **演法强制（本章是「不空洞」的关键样本）**：
 - 步 1–4 是无 $\beta$ 严格链——固有时流速载于 LQG 亏角 $\varepsilon$，每一步可由 $p_u=v_\tau/☯$ 与正则对易严格推出，上屏演给观众看。
