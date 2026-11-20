@@ -938,7 +938,7 @@
       "id": "C084",
       "label": "固有时流速差异历史总和",
       "type": "物理",
-      "definition": "$\\mathcal H_{ij}$ 节点 i 与 j 的固有时流速差异的时间积分 本体对象 环节④漂移定理T1",
+      "definition": "$\\mathsf H=(\\mathcal H_{ij})$ 当前同步域内所有节点对的固有时流速差异时间积分族 对角元零 反对称 上闭链 本体对象 环节④漂移定理T1 强度投影为历史分化度 $\\mathcal D$",
       "source_doc": "D030",
       "source_loc": "§0.3",
       "synonyms": [],

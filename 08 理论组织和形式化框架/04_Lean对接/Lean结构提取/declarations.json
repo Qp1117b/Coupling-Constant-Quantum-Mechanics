@@ -1,5 +1,271 @@
 [
  {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 21,
+  "kind": "def",
+  "name": "prodd"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 25,
+  "kind": "def",
+  "name": "vs"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 29,
+  "kind": "def",
+  "name": "sumN"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 33,
+  "kind": "theorem",
+  "name": "vs_succ"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 38,
+  "kind": "theorem",
+  "name": "vs_const"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 50,
+  "kind": "def",
+  "name": "WindowsUniform"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 52,
+  "kind": "def",
+  "name": "WeightLinear"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 54,
+  "kind": "theorem",
+  "name": "weight_eq_one_of_freeze"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 68,
+  "kind": "def",
+  "name": "Atomized"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 70,
+  "kind": "theorem",
+  "name": "atomization_breaks_uniform"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 77,
+  "kind": "def",
+  "name": "AmpLadder"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 80,
+  "kind": "theorem",
+  "name": "amp_from_freeze"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 89,
+  "kind": "def",
+  "name": "E"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 91,
+  "kind": "theorem",
+  "name": "log_ladder"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 100,
+  "kind": "def",
+  "name": "Kfun"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 103,
+  "kind": "def",
+  "name": "PrimeOscForm"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 111,
+  "kind": "theorem",
+  "name": "mechanism_prime_osc"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 134,
+  "kind": "def",
+  "name": "HFreeze"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 136,
+  "kind": "theorem",
+  "name": "freeze_history"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 143,
+  "kind": "theorem",
+  "name": "freeze_gives_uniform"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 149,
+  "kind": "theorem",
+  "name": "step_dotH_zero_gives_form"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 164,
+  "kind": "def",
+  "name": "Hpair"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 167,
+  "kind": "theorem",
+  "name": "Hpair_self"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 172,
+  "kind": "theorem",
+  "name": "Hpair_antisym"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 178,
+  "kind": "theorem",
+  "name": "Hpair_cocycle"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 184,
+  "kind": "def",
+  "name": "PairFreeze"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 188,
+  "kind": "def",
+  "name": "StepEq"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 192,
+  "kind": "theorem",
+  "name": "pairFreeze_iff_stepEq"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 205,
+  "kind": "theorem",
+  "name": "pairFreeze_projection"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 212,
+  "kind": "theorem",
+  "name": "pair_freeze_gives_form"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 229,
+  "kind": "theorem",
+  "name": "cluster_sum"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 241,
+  "kind": "theorem",
+  "name": "game_order_irrelevant"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 247,
+  "kind": "theorem",
+  "name": "six_elements_deliver"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 268,
+  "kind": "def",
+  "name": "PeakAt"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 270,
+  "kind": "theorem",
+  "name": "pow_eq_pow_inj"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 279,
+  "kind": "theorem",
+  "name": "peak_unique"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 297,
+  "kind": "def",
+  "name": "PhaseTransition"
+ },
+ {
+  "module": "CQM_Mechanism",
+  "file": "CQM_Mechanism.lean",
+  "line": 301,
+  "kind": "theorem",
+  "name": "three_conditions_deliver"
+ },
+ {
   "module": "CartanAlgebra.Basic",
   "file": "CartanAlgebra/Basic.lean",
   "line": 45,
@@ -581,256 +847,60 @@
   "name": "image_eq_existenceSubspace"
  },
  {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 35,
-  "kind": "def",
-  "name": "sprinklingDensity"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 38,
-  "kind": "theorem",
-  "name": "sprinklingDensity_pos"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 42,
-  "kind": "theorem",
-  "name": "sprinklingDensity_strictMono"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 48,
-  "kind": "theorem",
-  "name": "sprinklingDensity_tendsto_infty"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 63,
-  "kind": "structure",
-  "name": "SprinklingEmbedding"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 75,
-  "kind": "theorem",
-  "name": "u_inj_on_comparable"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 79,
-  "kind": "theorem",
-  "name": "not_prec_of_u_ge"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 86,
-  "kind": "theorem",
-  "name": "u_trans"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 93,
-  "kind": "theorem",
-  "name": "u_image_of_interval_bounded"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 109,
-  "kind": "theorem",
-  "name": "u_spacelike_indeterminate"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 119,
-  "kind": "def",
-  "name": "couplingSpeed"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 124,
-  "kind": "def",
-  "name": "chainToPathLength"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 130,
-  "kind": "def",
-  "name": "reproductionTime"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 135,
-  "kind": "def",
-  "name": "isLink"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 139,
-  "kind": "theorem",
-  "name": "isLink_imp_prec"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 143,
-  "kind": "theorem",
-  "name": "isLink_no_intermediate"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 150,
-  "kind": "def",
-  "name": "couplingMetric"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 158,
-  "kind": "def",
-  "name": "embeddingToCouplingCoordinate"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 164,
-  "kind": "theorem",
-  "name": "embeddingDensityRelation"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 171,
-  "kind": "def",
-  "name": "couplingCoordinateDistance"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 176,
-  "kind": "theorem",
-  "name": "couplingCoordinateDistance_nonneg"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 181,
-  "kind": "theorem",
-  "name": "couplingCoordinateDistance_of_prec"
- },
- {
-  "module": "CausalSet.Sprinkling",
-  "file": "CausalSet/Sprinkling.lean",
-  "line": 190,
-  "kind": "theorem",
-  "name": "couplingCoordinateDistance_pos_of_prec"
- },
- {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 34,
-  "kind": "def",
-  "name": "couplingStrength"
- },
- {
-  "module": "CouplingSpace.Basic",
-  "file": "CouplingSpace/Basic.lean",
-  "line": 38,
-  "kind": "def",
-  "name": "couplingCoordinate"
- },
- {
-  "module": "CouplingSpace.Basic",
-  "file": "CouplingSpace/Basic.lean",
-  "line": 41,
-  "kind": "theorem",
-  "name": "couplingStrength_eq_exp"
- },
- {
-  "module": "CouplingSpace.Basic",
-  "file": "CouplingSpace/Basic.lean",
-  "line": 44,
-  "kind": "theorem",
-  "name": "couplingStrength_pos"
- },
- {
-  "module": "CouplingSpace.Basic",
-  "file": "CouplingSpace/Basic.lean",
-  "line": 48,
+  "line": 5,
   "kind": "theorem",
   "name": "coupling_log_exp"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 53,
+  "line": 10,
   "kind": "theorem",
   "name": "coupling_exp_log"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 60,
+  "line": 17,
   "kind": "def",
   "name": "isCouplingSpeed"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 64,
+  "line": 21,
   "kind": "def",
   "name": "dimensionless"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 71,
+  "line": 28,
   "kind": "class",
   "name": "CanonicalCommutation"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 81,
+  "line": 38,
   "kind": "def",
   "name": "uncertaintyRelation"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 88,
+  "line": 45,
   "kind": "theorem",
   "name": "uncertaintyRelation_nontrivial_bound"
  },
  {
   "module": "CouplingSpace.Basic",
   "file": "CouplingSpace/Basic.lean",
-  "line": 100,
+  "line": 57,
   "kind": "theorem",
   "name": "couplingCoordinate_eq_ln_sprinkling"
- },
- {
-  "module": "CouplingSpace.Basic",
-  "file": "CouplingSpace/Basic.lean",
-  "line": 107,
-  "kind": "theorem",
-  "name": "sprinklingDensity_eq_couplingStrength"
  },
  {
   "module": "CouplingSpace.Uncertainty",

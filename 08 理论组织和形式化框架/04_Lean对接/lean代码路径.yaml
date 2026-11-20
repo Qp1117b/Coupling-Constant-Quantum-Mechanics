@@ -17,15 +17,16 @@ project:
     - name: Methodology
     - name: GN
   modules:
+    - {module: "CQM_Mechanism", file: "CQM_Mechanism.lean", theorem_like: 22, def_like: 16, axiom: 0, total_decl: 38}
     - {module: "CartanAlgebra", file: "CartanAlgebra.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "CartanAlgebra.Basic", file: "CartanAlgebra/Basic.lean", theorem_like: 33, def_like: 29, axiom: 0, total_decl: 62}
     - {module: "CausalSet", file: "CausalSet.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "CausalSet.Axioms", file: "CausalSet/Axioms.lean", theorem_like: 0, def_like: 0, axiom: 4, total_decl: 4}
     - {module: "CausalSet.Basic", file: "CausalSet/Basic.lean", theorem_like: 3, def_like: 4, axiom: 0, total_decl: 9}
     - {module: "CausalSet.Reproduction", file: "CausalSet/Reproduction.lean", theorem_like: 5, def_like: 2, axiom: 0, total_decl: 8}
-    - {module: "CausalSet.Sprinkling", file: "CausalSet/Sprinkling.lean", theorem_like: 14, def_like: 8, axiom: 0, total_decl: 23}
+    - {module: "CausalSet.Sprinkling", file: "CausalSet/Sprinkling.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "CouplingSpace", file: "CouplingSpace.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "CouplingSpace.Basic", file: "CouplingSpace/Basic.lean", theorem_like: 7, def_like: 5, axiom: 0, total_decl: 13}
+    - {module: "CouplingSpace.Basic", file: "CouplingSpace/Basic.lean", theorem_like: 4, def_like: 3, axiom: 0, total_decl: 8}
     - {module: "CouplingSpace.Uncertainty", file: "CouplingSpace/Uncertainty.lean", theorem_like: 15, def_like: 7, axiom: 0, total_decl: 23}
     - {module: "Decoherence", file: "Decoherence.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
     - {module: "Decoherence.Basic", file: "Decoherence/Basic.lean", theorem_like: 6, def_like: 5, axiom: 0, total_decl: 12}
@@ -72,18 +73,18 @@ project:
     - {module: "Superconductivity.TransitionTemperature", file: "Superconductivity/TransitionTemperature.lean", theorem_like: 3, def_like: 2, axiom: 0, total_decl: 5}
     - {module: "Superconductivity.TransitionTemperatureCQM", file: "Superconductivity/TransitionTemperatureCQM.lean", theorem_like: 3, def_like: 6, axiom: 0, total_decl: 9}
   declaration_histogram:
-    theorem: 644
+    theorem: 649
     lemma: 19
-    def: 278
+    def: 284
     abbrev: 15
     axiom: 15
-    structure: 13
+    structure: 12
     inductive: 5
     class: 4
   totals:
-    modules: 54
-    declarations: 993
-    theorem_like: 663
+    modules: 55
+    declarations: 1003
+    theorem_like: 668
     axioms: 15
   authoritative_status:
     note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：11 库全部通过；886 已证明定理 / 15 公理待证（口径 = theorem + lemma，零 sorry，与 theorem_like 抽取一致）。"
