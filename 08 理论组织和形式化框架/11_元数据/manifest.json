@@ -1,10 +1,10 @@
 {
   "project": "CQMFormal",
   "unit": "08 理论组织和形式化框架",
-  "generated_at": "2026-11-20 14:50:52",
+  "generated_at": "2026-11-20 15:25:58",
   "totals": {
     "files": 441,
-    "bytes": 46606666
+    "bytes": 46616781
   },
   "by_directory": {
     ".cache": {
@@ -13,7 +13,7 @@
     },
     "00_外部引用": {
       "files": 9,
-      "bytes": 4199779
+      "bytes": 4201728
     },
     "01_结构化数据": {
       "files": 10,
@@ -53,7 +53,7 @@
     },
     "10_展示可视化": {
       "files": 331,
-      "bytes": 35338612
+      "bytes": 35346353
     },
     "11_元数据": {
       "files": 4,
@@ -65,7 +65,7 @@
     },
     "附录": {
       "files": 2,
-      "bytes": 14161
+      "bytes": 14586
     }
   },
   "build_scripts": [
@@ -129,9 +129,9 @@
       "path": "00_外部引用/句索引/句索引.jsonl",
       "dir": "00_外部引用",
       "ext": ".jsonl",
-      "bytes": 3644267,
-      "mtime": "2026-11-20 14:50:19",
-      "sha256": "775e504ac3a77683"
+      "bytes": 3646217,
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "08646b141cc3b87f"
     },
     {
       "path": "00_外部引用/引用清单.yaml",
@@ -153,33 +153,33 @@
       "path": "00_外部引用/章节索引.csv",
       "dir": "00_外部引用",
       "ext": ".csv",
-      "bytes": 122933,
-      "mtime": "2026-11-20 14:50:18",
-      "sha256": "a00ce8fb48201298"
+      "bytes": 122954,
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "5e4a269f00faf290"
     },
     {
       "path": "00_外部引用/证据映射.csv",
       "dir": "00_外部引用",
       "ext": ".csv",
-      "bytes": 89395,
-      "mtime": "2026-11-20 14:50:18",
-      "sha256": "b334f3997bb0bd32"
+      "bytes": 89406,
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "de1aff22637a26e4"
     },
     {
       "path": "00_外部引用/证据映射.json",
       "dir": "00_外部引用",
       "ext": ".json",
-      "bytes": 308466,
-      "mtime": "2026-11-20 14:50:19",
-      "sha256": "2ca3a8d9f5cb00bd"
+      "bytes": 308433,
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "acd9861f63d2a0bc"
     },
     {
       "path": "00_外部引用/语料清单.csv",
       "dir": "00_外部引用",
       "ext": ".csv",
       "bytes": 7005,
-      "mtime": "2026-11-20 14:50:18",
-      "sha256": "090a2d1ed7c6054e"
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "a03b2fe11c8164a4"
     },
     {
       "path": "00_外部引用/锚点映射.csv",
@@ -202,8 +202,8 @@
       "dir": "01_结构化数据",
       "ext": ".csv",
       "bytes": 16570,
-      "mtime": "2026-11-20 14:50:19",
-      "sha256": "69727014152a18f5"
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "15134002476aadab"
     },
     {
       "path": "01_结构化数据/命题表.csv",
@@ -218,7 +218,7 @@
       "dir": "01_结构化数据",
       "ext": ".csv",
       "bytes": 2984,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:25",
       "sha256": "13e9247a0a94be16"
     },
     {
@@ -234,7 +234,7 @@
       "dir": "01_结构化数据",
       "ext": ".csv",
       "bytes": 237,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:25",
       "sha256": "ed352dfe66e2a80c"
     },
     {
@@ -250,7 +250,7 @@
       "dir": "01_结构化数据",
       "ext": ".csv",
       "bytes": 5232,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:25",
       "sha256": "0c8531bb7e4b2b9e"
     },
     {
@@ -258,7 +258,7 @@
       "dir": "01_结构化数据",
       "ext": ".csv",
       "bytes": 7742,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:25",
       "sha256": "63ce20d2e19f0406"
     },
     {
@@ -392,8 +392,8 @@
       "dir": "03_超图与理论图",
       "ext": ".json",
       "bytes": 87243,
-      "mtime": "2026-11-20 14:50:19",
-      "sha256": "91c994771aeed0b6"
+      "mtime": "2026-11-20 15:25:25",
+      "sha256": "b380d9e1052a7b4a"
     },
     {
       "path": "03_超图与理论图/知识图谱.ttl",
@@ -872,7 +872,7 @@
       "dir": "09_桥接与翻译",
       "ext": ".csv",
       "bytes": 1824,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:26",
       "sha256": "feb4c8990311cb4c"
     },
     {
@@ -880,7 +880,7 @@
       "dir": "09_桥接与翻译",
       "ext": ".csv",
       "bytes": 5164,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:26",
       "sha256": "4c98b53817ad7857"
     },
     {
@@ -888,7 +888,7 @@
       "dir": "09_桥接与翻译",
       "ext": ".csv",
       "bytes": 1926,
-      "mtime": "2026-11-20 14:50:19",
+      "mtime": "2026-11-20 15:25:26",
       "sha256": "6e918d9cfd867e08"
     },
     {
@@ -943,9 +943,9 @@
       "path": "10_展示可视化/源_可视化/检索台/index.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 1511454,
-      "mtime": "2026-11-20 14:50:20",
-      "sha256": "952d870e0b1c1625"
+      "bytes": 1512381,
+      "mtime": "2026-11-20 15:25:26",
+      "sha256": "b83b1f3256d98c73"
     },
     {
       "path": "10_展示可视化/源_可视化/研究驾驶舱/data.json",
@@ -999,9 +999,9 @@
       "path": "10_展示可视化/讲稿/第五分册_与标准理论的关系与涨落伴丛.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 24749,
-      "mtime": "2026-11-18 21:42:43",
-      "sha256": "3dae5e214eacd9d4"
+      "bytes": 24743,
+      "mtime": "2026-11-20 15:22:10",
+      "sha256": "4f80cd31285f57f0"
     },
     {
       "path": "10_展示可视化/讲稿/第六分册_量纲发生学专章.md",
@@ -1015,9 +1015,9 @@
       "path": "10_展示可视化/讲稿/第四分册_超导涌现链.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 36207,
-      "mtime": "2026-11-18 21:42:43",
-      "sha256": "7370f556e0da2aef"
+      "bytes": 36200,
+      "mtime": "2026-11-20 15:22:11",
+      "sha256": "3260fb14e997940e"
     },
     {
       "path": "10_展示可视化/讲解文档/01_相变量子与三重恒等.md",
@@ -1072,711 +1072,711 @@
       "dir": "10_展示可视化",
       "ext": ".mts",
       "bytes": 16473,
-      "mtime": "2026-11-20 14:50:23",
-      "sha256": "bc89fff4feb0ec66"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "4d7effca6922f826"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/404.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 14468,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "e6398db582c0ac82"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "fad72fb2fe642429"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D001_项目说明与符号约定.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 116983,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "20316c430c15780c"
+      "bytes": 116709,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "ed81e0b098edaab1"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D003_术语表.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 68767,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "6ef6efb3efa5d91c"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "2187be6d416382b0"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D004_缺口台账.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 67981,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "65a8450aafdbb4b1"
+      "bytes": 68424,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e87a27ea934e1d29"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D005_集成理论_总纲.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 204063,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "ae6fe08de57f0072"
+      "bytes": 204054,
+      "mtime": "2026-11-20 15:25:57",
+      "sha256": "cd230e7913e11862"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D006_引力存在论前提.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 108026,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "d4aa709833728e63"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "be576a00a6571692"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D007_因果网络同步理论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 129300,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "abd688e138c2393a"
+      "bytes": 129307,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "a794ad4dc1471c86"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D008_朗兰兹分层共振与相变量子.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 141998,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "98bfbd854330844e"
+      "mtime": "2026-11-20 15:25:57",
+      "sha256": "e9e2bbd1266f3a80"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D009_量纲与群论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 253250,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "bb4292f62e4524cf"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "fa448745ccd2ad3b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D010_唯物主义群论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 173001,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "c1ee7bd4975a77f8"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "d42823496e71a92f"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D011_声子理论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 99276,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "96e2cb70e652789c"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "19081a7b16d008bf"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D012_共形场论与OPE.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 129399,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "a3035d1f2a74c0a8"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "de83a0b3e8c14a82"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D013_量子引力讨论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 65536,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "771029cd7dcdd164"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "cec1d93d04621e05"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D014_GN可能公式.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 103062,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "ca257d6a2ebf8d90"
+      "mtime": "2026-11-20 15:25:57",
+      "sha256": "6ce1c90f40572c9e"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D015_引力因果场_退相干.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 140546,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "4b9021d080f2ef67"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "862f762b1bff5efd"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D016_跨层级深耦合与唯一性难题.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 61726,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "5b995306d9995678"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "922edaf5479042b6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D017_黎曼猜想证明思路.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 166337,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "be71ce20463dad94"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "a0dd2cdeb787f29b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D018_待推1边界条件的五重联系.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 148617,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "77dca738893cf101"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e790d90452f42575"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D019_GN第一性推导公理化.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 108856,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "2199148dadf615e4"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "dc67ed87413cf6fb"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D020_质量的量纲地位与自守来源.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 100165,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "3743d8aa416acfee"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "527ef01788cec1ca"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D021_Wyler常数.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 78437,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "f31707fcc4ffe4be"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "bd1524a9af897957"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D022_贝里曲率与Regge曲率.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 120417,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "912bbd23d9bc2dc2"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "6c15c25105ad38e7"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D023_规范重组超导与SU5五重态.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 132209,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "915c37ed6e4e8db4"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e786d75bfcfe8355"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D024_相变弧线与自守形式同步.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 96951,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "a89b2e565285f9bf"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "d83f1b5f5db1cdd2"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D025_量子快置乱普适速率极限.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 114833,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "816a88bc88ba478c"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "347f78985a33180e"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D026_HilbertPolya批判.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 75453,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "e98ff3907398c59d"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "cef03636ee7e30e9"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D027_资本主义-旧物理-层级还原论批判.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 123069,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "b0b8fcdc9fda69a2"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "f1f6da65c3c4c8ca"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D028_FG核心理论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 99803,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "d8acc0e7bc80bd2a"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "2e3af0b2edb65a25"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D029_FG纤维丛理论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 133228,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "19e2e7c9ca2fd556"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "5edeb49444b79862"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D030_超导核心理论.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 483815,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "49d6169021250219"
+      "bytes": 484910,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "9902033bfa4fce23"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D034_材料设计器总览.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 60281,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "2f7e5abd2201cd92"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "8614e3c133d117c7"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D035_系统架构设计.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 56657,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "12b6a040e2f392b4"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "cfe21e7da1e144d2"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D036_元素同位素数据库.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 55801,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "eb06eb4171446362"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "392365c3300acc0d"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D037_超导判定算法.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 60368,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "7f6c670fcbff554e"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "2c93c51478adfe14"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D038_应用场景与对比分析.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 55358,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "d3cc9d5ecd978350"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "df40cb4dde586682"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D039_元素嘉当矩阵参数化设计.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 59224,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "083fd838bc12814b"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "3e8a92458e365fde"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D040_文献调研与专业化路线.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 55566,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "468fe3a2ee699ca7"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "0a6c40ca7e5908b2"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D041_目标超导搜索策略.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 56869,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "d524cfc3470fa6de"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "89f1854daf12f4b1"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D053_反物质引力与GN推导边界.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 137145,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "eba3760369a4a878"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "8816d4dcec19ef5e"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D054_分布式不对易关系与非马尔可夫性.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 111266,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "98391663d670e6b8"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "632c0751c631310b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D055_LQG到Regge显式映射.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 73928,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "9954c1d6183ee193"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "304baa24bd16d838"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/D056_关系性实在论与对称性重组.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 110917,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "6c2647171ee312ca"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "ac93c15f523a7881"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/F01_CQM_核心_历史唯物主义与超导发生学.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 116927,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "c82ac30ca5820578"
+      "bytes": 116843,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "9307a8469d984035"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/F02_CQM_前沿研究_渗流连通性与临界同步.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 122560,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "6234870dd00963c1"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "9591396c827c99fb"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/F03_README.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 59336,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "10ff057f7140d0a9"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e3eefd65c451171a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L000_展开链.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 166631,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "b69fc060bfed8dbc"
+      "bytes": 165911,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "56b2540020d1ace4"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L001_第一分册_从问题到链条.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 94184,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "652d9dbeb0b308ce"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e1be926750b60ed9"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L002_第二分册_统一体自组装与α.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 83072,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "03ae7f5f84fbf451"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "021ed2d039577e5b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L003_第三分册_谱方程与黎曼零点.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 81274,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "170d448f68ba7aab"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "dc9e4d8078bb99f1"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L004_第四分册_超导涌现链.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 105383,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "e5bfbdd657cd5981"
+      "bytes": 105376,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "54fa545d245fc603"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L005_第五分册_与标准理论的关系与涨落伴丛.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 93970,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "fdf546f91e259105"
+      "bytes": 93964,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "9e00077aeab38bed"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/L006_第六分册_量纲发生学专章.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 117018,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "788d8811c9858dcd"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "4b7585fc52434014"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/LEAN_Lean对接.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53949,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "b807e90726643553"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "8be3292fc91a7af8"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/REFS_文献总览.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 118197,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "a70b18d41d7c9181"
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "3a8e041d3ffca0b5"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/TERMS_术语表.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53965,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "5589d0bdb2a9cf7c"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "1e3d60c453156ff6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/V000_可视化总览.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 55758,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "b2a83668e26ca198"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "cd7f4c979259a0d2"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/V001_可推演超图.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53583,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "c746d3097a2357da"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "f0dc6d6e2245aa9f"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/V002_研究驾驶舱.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53541,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "944df41b58d45362"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "c75ceed92a5d1f6b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/V003_检索台.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53522,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "f389dc15e050b18e"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "96a0b8190951fe18"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/V004_形式化蓝图.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 53516,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "fb64db7e6db31c8a"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "272b3b85ea176275"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D001_项目说明与符号约定.md.Czc_NfE8.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D001_项目说明与符号约定.md.YueCZw6M.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 69211,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "e5ebf7a2caebdb67"
+      "bytes": 68976,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e927569f878e2a9b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D001_项目说明与符号约定.md.Czc_NfE8.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D001_项目说明与符号约定.md.YueCZw6M.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 69211,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "e5ebf7a2caebdb67"
+      "bytes": 68976,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "e927569f878e2a9b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D003_术语表.md.Bn0KvtMX.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D003_术语表.md.Bo_616Th.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 16186,
-      "mtime": "2026-11-20 14:50:49",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "eca10f93b62c0b29"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D003_术语表.md.Bn0KvtMX.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D003_术语表.md.Bo_616Th.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 406,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "19fca2f8108e8dc7"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D004_缺口台账.md.Durcf0HU.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D004_缺口台账.md.NyQaRW9u.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 15666,
-      "mtime": "2026-11-20 14:50:49",
-      "sha256": "74fbc6531f07e840"
+      "bytes": 16120,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "3ecc882f9f862515"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D004_缺口台账.md.Durcf0HU.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D004_缺口台账.md.NyQaRW9u.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 418,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "1d02dda861992ea2"
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "d6e0234d545324cc"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D005_集成理论_总纲.md.JMP3kPpO.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D005_集成理论_总纲.md.C3qL-f1v.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 152861,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "dd522f78addac78a"
+      "bytes": 152852,
+      "mtime": "2026-11-20 15:25:57",
+      "sha256": "c85bbacfa08a8452"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D005_集成理论_总纲.md.JMP3kPpO.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D005_集成理论_总纲.md.C3qL-f1v.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 474,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "6278c6a61fd68d15"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D006_引力存在论前提.md.CbI8PkiH.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D006_引力存在论前提.md.DcUBYmXe.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 55786,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "e5d2af33f988dfd5"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D006_引力存在论前提.md.CbI8PkiH.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D006_引力存在论前提.md.DcUBYmXe.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 533,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "3d7bd93994d5a424"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D007_因果网络同步理论.md.BYmK0pik.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D007_因果网络同步理论.md.EsiyG4Ms.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 83470,
-      "mtime": "2026-11-20 14:50:50",
-      "sha256": "7cc2f85710b04daf"
+      "bytes": 83477,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "fd159ea37ccbe725"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D007_因果网络同步理论.md.BYmK0pik.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D007_因果网络同步理论.md.EsiyG4Ms.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 83470,
-      "mtime": "2026-11-20 14:50:50",
-      "sha256": "7cc2f85710b04daf"
+      "bytes": 83477,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "fd159ea37ccbe725"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D008_朗兰兹分层共振与相变量子.md.CQYABfVL.js",
-      "dir": "10_展示可视化",
-      "ext": ".js",
-      "bytes": 97946,
-      "mtime": "2026-11-20 14:50:50",
-      "sha256": "7c72513716865872"
-    },
-    {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D008_朗兰兹分层共振与相变量子.md.CQYABfVL.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D008_朗兰兹分层共振与相变量子.md.41sOQNI2.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 97946,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "7c72513716865872"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D009_量纲与群论.md._U1apaaa.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D008_朗兰兹分层共振与相变量子.md.41sOQNI2.lean.js",
+      "dir": "10_展示可视化",
+      "ext": ".js",
+      "bytes": 97946,
+      "mtime": "2026-11-20 15:25:55",
+      "sha256": "7c72513716865872"
+    },
+    {
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D009_量纲与群论.md.b0n8C1Y9.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 222591,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "5b0c0d8486387dcc"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D009_量纲与群论.md._U1apaaa.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D009_量纲与群论.md.b0n8C1Y9.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 222591,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "5b0c0d8486387dcc"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D010_唯物主义群论.md.BThTdBO0.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D010_唯物主义群论.md.DNfaKipT.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 121281,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "92d56c929c4efe1a"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D010_唯物主义群论.md.BThTdBO0.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D010_唯物主义群论.md.DNfaKipT.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 511,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "a2db22e08d518900"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D011_声子理论.md.B44qflQK.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D011_声子理论.md.BSXSemgb.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 50601,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:55",
       "sha256": "ab261d69e8af1fd8"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D011_声子理论.md.B44qflQK.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D011_声子理论.md.BSXSemgb.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 50601,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "ab261d69e8af1fd8"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D012_共形场论与OPE.md.BkofJfUz.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D012_共形场论与OPE.md.BpkWUpH8.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 84718,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "857bc7e384f40efa"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D012_共形场论与OPE.md.BkofJfUz.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D012_共形场论与OPE.md.BpkWUpH8.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 84718,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "857bc7e384f40efa"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D013_量子引力讨论.md.SKguuapj.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D013_量子引力讨论.md.DnrF1bMD.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 12932,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "8457be133408d78f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D013_量子引力讨论.md.SKguuapj.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D013_量子引力讨论.md.DnrF1bMD.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 463,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "90e2cd8b0d1d7644"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D014_GN可能公式.md.DSH8bzOS.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D014_GN可能公式.md.Dd6qRSHa.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 50940,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:57",
       "sha256": "552c6ec932d91653"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D014_GN可能公式.md.DSH8bzOS.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D014_GN可能公式.md.Dd6qRSHa.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 450,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "36cfc7668e6ff517"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D015_引力因果场_退相干.md.Dm3y1Rrw.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D015_引力因果场_退相干.md.BUFbRft5.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 95552,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "12182aeddff64c07"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D015_引力因果场_退相干.md.Dm3y1Rrw.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D015_引力因果场_退相干.md.BUFbRft5.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 95552,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "12182aeddff64c07"
     },
     {
@@ -1784,7 +1784,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 9060,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "64f8bd5da4ff3478"
     },
     {
@@ -1792,247 +1792,247 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 526,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "382a468a0a44b795"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D017_黎曼猜想证明思路.md.9SqVJ0lh.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D017_黎曼猜想证明思路.md.BpMXGNxb.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 115027,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "8946415db1f787fb"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D017_黎曼猜想证明思路.md.9SqVJ0lh.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D017_黎曼猜想证明思路.md.BpMXGNxb.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 472,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "f0eb21a4b65bddf6"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D018_待推1边界条件的五重联系.md.DwaepO-Y.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D018_待推1边界条件的五重联系.md.BHeC4oYV.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 107633,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "77e8f8e7b4d81876"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D018_待推1边界条件的五重联系.md.DwaepO-Y.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D018_待推1边界条件的五重联系.md.BHeC4oYV.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 107633,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "77e8f8e7b4d81876"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D019_GN第一性推导公理化.md.W1h-iVyR.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D019_GN第一性推导公理化.md.D-QIgCdT.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 62307,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "5de5cd6900da632e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D019_GN第一性推导公理化.md.W1h-iVyR.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D019_GN第一性推导公理化.md.D-QIgCdT.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 62307,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "5de5cd6900da632e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D020_质量的量纲地位与自守来源.md.DPO5uHTF.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D020_质量的量纲地位与自守来源.md.BcxrsLrn.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 48184,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "024512bf2f44fc64"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D020_质量的量纲地位与自守来源.md.DPO5uHTF.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D020_质量的量纲地位与自守来源.md.BcxrsLrn.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 514,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "55f6219076225307"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D021_Wyler常数.md.C8HsWq0c.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D021_Wyler常数.md.BVAM9PUI.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 25897,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "d2e3e8d46f0700af"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D021_Wyler常数.md.C8HsWq0c.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D021_Wyler常数.md.BVAM9PUI.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 451,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "74c1ad6a71039e67"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D022_贝里曲率与Regge曲率.md.B1D2-k3O.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D022_贝里曲率与Regge曲率.md.BXY6Ojh8.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 68118,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "129d7df30bed0b95"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D022_贝里曲率与Regge曲率.md.B1D2-k3O.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D022_贝里曲率与Regge曲率.md.BXY6Ojh8.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 511,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "2ddfd1b768d28e5b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D023_规范重组超导与SU5五重态.md.0Nz-zvVx.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D023_规范重组超导与SU5五重态.md.B9ab8nUA.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 79676,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "4d3867f016e13464"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D023_规范重组超导与SU5五重态.md.0Nz-zvVx.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D023_规范重组超导与SU5五重态.md.B9ab8nUA.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 574,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e7d87bd6d9b8d978"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D024_相变弧线与自守形式同步.md.C5dTdaHA.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D024_相变弧线与自守形式同步.md.CbvstXs-.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 48058,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "4cecc5cfad29615e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D024_相变弧线与自守形式同步.md.C5dTdaHA.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D024_相变弧线与自守形式同步.md.CbvstXs-.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 48058,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "4cecc5cfad29615e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D025_量子快置乱普适速率极限.md.B0OQuK2L.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D025_量子快置乱普适速率极限.md.Y01OUULC.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 67405,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "bbfdacbca548e8ec"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D025_量子快置乱普适速率极限.md.B0OQuK2L.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D025_量子快置乱普适速率极限.md.Y01OUULC.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 67405,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "bbfdacbca548e8ec"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D026_HilbertPolya批判.md.DXT3CLl2.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D026_HilbertPolya批判.md.BLsGIn5z.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 22648,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e37b181b1238f103"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D026_HilbertPolya批判.md.DXT3CLl2.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D026_HilbertPolya批判.md.BLsGIn5z.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 456,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e725706046da9459"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D027_资本主义-旧物理-层级还原论批判.md.c1J1qpK1.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D027_资本主义-旧物理-层级还原论批判.md.Cmy_t5h6.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 76746,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e250870c7d273ec6"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D027_资本主义-旧物理-层级还原论批判.md.c1J1qpK1.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D027_资本主义-旧物理-层级还原论批判.md.Cmy_t5h6.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 76746,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e250870c7d273ec6"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D028_FG核心理论.md.D5aJtqzF.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D028_FG核心理论.md.6MKi3u_5.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 47808,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "c9618bbfd245e68f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D028_FG核心理论.md.D5aJtqzF.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D028_FG核心理论.md.6MKi3u_5.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 422,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "cb0f7f4e3de67924"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D029_FG纤维丛理论.md.DmC8jTFI.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D029_FG纤维丛理论.md.bCq0nDWn.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 81926,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "4cda2abb6615998f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D029_FG纤维丛理论.md.DmC8jTFI.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D029_FG纤维丛理论.md.bCq0nDWn.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 434,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e6c4b1356262d42e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D030_超导核心理论.md.CRYbUe_U.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D030_超导核心理论.md.7iXCvj7n.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 473981,
-      "mtime": "2026-11-20 14:50:50",
-      "sha256": "3004e45fd2a29d3e"
+      "bytes": 475103,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "c6deb7a45c52c625"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D030_超导核心理论.md.CRYbUe_U.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D030_超导核心理论.md.7iXCvj7n.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 473981,
-      "mtime": "2026-11-20 14:50:50",
-      "sha256": "3004e45fd2a29d3e"
+      "bytes": 475103,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "c6deb7a45c52c625"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D034_材料设计器总览.md.F2lafIFt.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D034_材料设计器总览.md.CPfufzvx.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 7642,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "5c464d5f66e88150"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D034_材料设计器总览.md.F2lafIFt.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D034_材料设计器总览.md.CPfufzvx.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 465,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "ede7d81902b6cbb7"
     },
     {
@@ -2040,7 +2040,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 4404,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "5974dc11140366e9"
     },
     {
@@ -2048,7 +2048,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 4404,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "5974dc11140366e9"
     },
     {
@@ -2056,7 +2056,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 3194,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "724bb94cb6a41513"
     },
     {
@@ -2064,311 +2064,311 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 468,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "40366c87c481ad57"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D037_超导判定算法.md.CTCEhhei.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D037_超导判定算法.md.DUJHoAcJ.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 8441,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "7e00aa75ccb5728b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D037_超导判定算法.md.CTCEhhei.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D037_超导判定算法.md.DUJHoAcJ.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 8441,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "7e00aa75ccb5728b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D038_应用场景与对比分析.md.xw-9wfZ4.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D038_应用场景与对比分析.md.ftOmXCbk.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2657,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "835bd5d79a6d6304"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D038_应用场景与对比分析.md.xw-9wfZ4.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D038_应用场景与对比分析.md.ftOmXCbk.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 471,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "b49cf4dd1d4e982d"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D039_元素嘉当矩阵参数化设计.md.CUIbFNYs.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D039_元素嘉当矩阵参数化设计.md.x2LjdwKY.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 6509,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "9660d011105a4593"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D039_元素嘉当矩阵参数化设计.md.CUIbFNYs.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D039_元素嘉当矩阵参数化设计.md.x2LjdwKY.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 501,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "821fdd27761a6189"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D040_文献调研与专业化路线.md.HPUtOy03.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D040_文献调研与专业化路线.md.CaR1PeT7.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2889,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "c7a848b89b64dc35"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D040_文献调研与专业化路线.md.HPUtOy03.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D040_文献调研与专业化路线.md.CaR1PeT7.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 489,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "fd6da4f84096ac87"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D041_目标超导搜索策略.md.CkA72jFy.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D041_目标超导搜索策略.md.1VLreRcm.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 4253,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "a11e301b767ea48b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D041_目标超导搜索策略.md.CkA72jFy.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D041_目标超导搜索策略.md.1VLreRcm.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 465,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "2fe382dbc64c44da"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D053_反物质引力与GN推导边界.md.6DBdVVUI.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D053_反物质引力与GN推导边界.md.C3y3NlUJ.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 84630,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "0a1d2a1c49069235"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D053_反物质引力与GN推导边界.md.6DBdVVUI.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D053_反物质引力与GN推导边界.md.C3y3NlUJ.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 575,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e78b08917a6b3062"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D054_分布式不对易关系与非马尔可夫性.md.BRhR6fRt.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D054_分布式不对易关系与非马尔可夫性.md.B4nBBsW4.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 59262,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "905a855c388dae9f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D054_分布式不对易关系与非马尔可夫性.md.BRhR6fRt.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D054_分布式不对易关系与非马尔可夫性.md.B4nBBsW4.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 579,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "2ef8be6f2ff56503"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D055_LQG到Regge显式映射.md.F_RlFAgD.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D055_LQG到Regge显式映射.md.VeecsUZ0.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 21633,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "4c60df4f487a449b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D055_LQG到Regge显式映射.md.F_RlFAgD.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D055_LQG到Regge显式映射.md.VeecsUZ0.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 497,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e4f3f3d5dcb74a1b"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D056_关系性实在论与对称性重组.md.vQw_6he3.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D056_关系性实在论与对称性重组.md.CsaajgKy.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 58481,
-      "mtime": "2026-11-20 14:50:50",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "8cca5f05dde1a202"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D056_关系性实在论与对称性重组.md.vQw_6he3.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/D056_关系性实在论与对称性重组.md.CsaajgKy.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 567,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "4c0abd34e323caff"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F01_CQM_核心_历史唯物主义与超导发生学.md.CeqvP2lR.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F01_CQM_核心_历史唯物主义与超导发生学.md.Cm_Na80A.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 64397,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "6af5171a258a0a23"
+      "bytes": 64313,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "f8d66dc19dfa0cc9"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F01_CQM_核心_历史唯物主义与超导发生学.md.CeqvP2lR.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F01_CQM_核心_历史唯物主义与超导发生学.md.Cm_Na80A.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 584,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "3ef8d0bdb027df73"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F02_CQM_前沿研究_渗流连通性与临界同步.md.BKJvKF8H.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F02_CQM_前沿研究_渗流连通性与临界同步.md.DWkn5IvR.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 70048,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "6baae4fc05561bd1"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F02_CQM_前沿研究_渗流连通性与临界同步.md.BKJvKF8H.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F02_CQM_前沿研究_渗流连通性与临界同步.md.DWkn5IvR.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 581,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "16464ad5a26650a4"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F03_README.md.Dwe2izVU.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F03_README.md.BOTTdKEa.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 6549,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "3ca68e4c66281e48"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F03_README.md.Dwe2izVU.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/F03_README.md.BOTTdKEa.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 421,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "f2b840b3970e3eca"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L000_展开链.md.oib6nd90.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L000_展开链.md.BkRnqDNF.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 114419,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "d4a812887ec258f7"
+      "bytes": 113694,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "31158104fdb05c6f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L000_展开链.md.oib6nd90.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L000_展开链.md.BkRnqDNF.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 420,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "45870cd39a43bca6"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L001_第一分册_从问题到链条.md.EkJtzJGq.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L001_第一分册_从问题到链条.md.24q1W5sZ.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 41665,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "51ac10cff6d0830a"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L001_第一分册_从问题到链条.md.EkJtzJGq.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L001_第一分册_从问题到链条.md.24q1W5sZ.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 511,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "854a9bc0a6547a6e"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L002_第二分册_统一体自组装与α.md.CMTC2G4U.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L002_第二分册_统一体自组装与α.md.DEVfoK49.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 30418,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e349ee877beb8e7f"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L002_第二分册_统一体自组装与α.md.CMTC2G4U.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L002_第二分册_统一体自组装与α.md.DEVfoK49.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 550,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "bc47595702c1e64d"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L003_第三分册_谱方程与黎曼零点.md.CmKu49Uj.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L003_第三分册_谱方程与黎曼零点.md.LZi0IhFK.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 28594,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "2e5ae6faa42d9e83"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L003_第三分册_谱方程与黎曼零点.md.CmKu49Uj.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L003_第三分册_谱方程与黎曼零点.md.LZi0IhFK.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 564,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "9088961bae477941"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L004_第四分册_超导涌现链.md.D51p8JHC.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L004_第四分册_超导涌现链.md.DoaEnW6A.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 53023,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "6191e8bb4cc03962"
+      "bytes": 53016,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "e9da9cd72d2029dd"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L004_第四分册_超导涌现链.md.D51p8JHC.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L004_第四分册_超导涌现链.md.DoaEnW6A.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 556,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "5c4d3beae21b93f6"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L005_第五分册_与标准理论的关系与涨落伴丛.md.DFhcU65F.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L005_第五分册_与标准理论的关系与涨落伴丛.md.DtawCw2w.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 41357,
-      "mtime": "2026-11-20 14:50:51",
-      "sha256": "9a30827a1bacaddd"
+      "bytes": 41351,
+      "mtime": "2026-11-20 15:25:56",
+      "sha256": "30b660ef539b00df"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L005_第五分册_与标准理论的关系与涨落伴丛.md.DFhcU65F.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L005_第五分册_与标准理论的关系与涨落伴丛.md.DtawCw2w.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 595,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "4cc70db6c181a199"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L006_第六分册_量纲发生学专章.md.BGyWVDAU.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L006_第六分册_量纲发生学专章.md.BUa7kH2Z.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 69933,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e067c107a8b01b1a"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L006_第六分册_量纲发生学专章.md.BGyWVDAU.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/L006_第六分册_量纲发生学专章.md.BUa7kH2Z.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 69933,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "e067c107a8b01b1a"
     },
     {
@@ -2376,7 +2376,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1436,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "9b78a79e086df51e"
     },
     {
@@ -2384,39 +2384,39 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 428,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "49ee251cfb5bb288"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/REFS_文献总览.md.DqDNLpNn.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/REFS_文献总览.md.CDEpUArn.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 65616,
-      "mtime": "2026-11-20 14:50:51",
+      "mtime": "2026-11-20 15:25:56",
       "sha256": "899660f55ad00871"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/REFS_文献总览.md.DqDNLpNn.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/REFS_文献总览.md.CDEpUArn.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 436,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "a341a061aab93d4a"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/TERMS_术语表.md.CbFvhRy2.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/TERMS_术语表.md.C0fytR41.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1298,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "b658fb38c0129399"
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "dbc79571db0c8106"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/TERMS_术语表.md.CbFvhRy2.lean.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/TERMS_术语表.md.C0fytR41.lean.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 424,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "71312e448158b624"
     },
     {
@@ -2424,7 +2424,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 3216,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "6b850c9222777a83"
     },
     {
@@ -2432,7 +2432,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 426,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "b09bd67fbd17859e"
     },
     {
@@ -2440,7 +2440,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1036,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "cfabc16ab2366a7f"
     },
     {
@@ -2448,7 +2448,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 426,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "a3d03991e88e8467"
     },
     {
@@ -2456,7 +2456,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1018,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "65b3cdf2dd5667b8"
     },
     {
@@ -2464,7 +2464,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 426,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e5a826c4d7a5c436"
     },
     {
@@ -2472,7 +2472,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 974,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "68c71dc462151029"
     },
     {
@@ -2480,7 +2480,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 402,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "f29f679b62421e21"
     },
     {
@@ -2488,7 +2488,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1004,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "28aa27af50be824f"
     },
     {
@@ -2496,55 +2496,55 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 426,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "9f7e4072d4fe28ce"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/app.BVZQqPiV.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/app.Bls5rxST.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1352,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "46d7dada034cbfa0"
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "f071f8f37dcce012"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/@localSearchIndexroot.DGslbZOD.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/@localSearchIndexroot.BXoxrOox.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 6733997,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "b6e5397f4ecfbfd7"
+      "bytes": 6738803,
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "3452468cd89e29c4"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/VPLocalSearchBox.M6D7ONh2.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/VPLocalSearchBox.CjCkQVE4.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 64029,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "ea19075d054a49f2"
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "8abd858275274340"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/framework.D66Xq0Kv.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 113668,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "e606572491523f76"
     },
     {
-      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/theme.BYMFtZPm.js",
+      "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/chunks/theme.k7ZHQnvY.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 54264,
-      "mtime": "2026-11-20 14:50:38",
-      "sha256": "2f8af579b3123c0c"
+      "mtime": "2026-11-20 15:25:44",
+      "sha256": "775880258b83dff0"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/assets/index.md.CKW7ZDB6.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1182,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "084b99d4daaf3264"
     },
     {
@@ -2552,7 +2552,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1182,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "084b99d4daaf3264"
     },
     {
@@ -2560,7 +2560,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 43112,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "3f2ea09e148441f8"
     },
     {
@@ -2568,7 +2568,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 31300,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "2a1c3126375078cd"
     },
     {
@@ -2576,7 +2576,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 17404,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "bae39b1cc79168c9"
     },
     {
@@ -2584,7 +2584,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 32564,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "138cf731e5a284e2"
     },
     {
@@ -2592,7 +2592,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 120840,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "3e166de9aeff2d6a"
     },
     {
@@ -2600,7 +2600,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 74784,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "3570e65005ccd9ec"
     },
     {
@@ -2608,7 +2608,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 14884,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "a0aae13c473b99b6"
     },
     {
@@ -2616,7 +2616,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 40488,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "a49e47fb34f94acf"
     },
     {
@@ -2624,7 +2624,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 29164,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "d888610b6342164a"
     },
     {
@@ -2632,7 +2632,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 16272,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "7b7519f21aff6b3a"
     },
     {
@@ -2640,7 +2640,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 29920,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "1a1997dfdcd7a9e0"
     },
     {
@@ -2648,7 +2648,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 110160,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "539d139f99942e93"
     },
     {
@@ -2656,7 +2656,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 67792,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "f7ab715caa2c78fa"
     },
     {
@@ -2664,7 +2664,7 @@
       "dir": "10_展示可视化",
       "ext": ".woff2",
       "bytes": 14072,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "b315417b28ce251a"
     },
     {
@@ -2672,7 +2672,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 112811,
-      "mtime": "2026-11-20 14:50:38",
+      "mtime": "2026-11-20 15:25:44",
       "sha256": "0c15bc3ae24fb4f1"
     },
     {
@@ -2680,7 +2680,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1163,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "679d2de78d5a0925"
     },
     {
@@ -2688,7 +2688,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 7500,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "a96f6368d10f87fa"
     },
     {
@@ -2696,7 +2696,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 446,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "9d7f52bbbc926e48"
     },
     {
@@ -2704,7 +2704,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 35049,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "ad52a6636530b598"
     },
     {
@@ -2712,39 +2712,39 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 16971,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "956126967e5433a6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/cqm-glossary.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 375615,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "4cdcc61050fdc63d"
+      "bytes": 374432,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "e99f4650ff0d18da"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/hashmap.json",
       "dir": "10_展示可视化",
       "ext": ".json",
       "bytes": 2749,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "817bfb5b23dfc4ec"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "8ab50ce10a81b805"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/index.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 23175,
-      "mtime": "2026-11-20 14:50:48",
-      "sha256": "6cedfd2feb5053b4"
+      "mtime": "2026-11-20 15:25:54",
+      "sha256": "fb755e77857b1286"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/lean-page.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 11365,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "59723fb100a3be18"
     },
     {
@@ -2752,7 +2752,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 334,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "b39a21d5482c92d9"
     },
     {
@@ -2760,7 +2760,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 5579,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "8543bd5fc034744f"
     },
     {
@@ -2768,7 +2768,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 2828,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "0d7911cfce1752cf"
     },
     {
@@ -2776,7 +2776,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 7608,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "b2c203b9a14d9b3e"
     },
     {
@@ -2784,7 +2784,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2108588,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "396ffefb7e242d86"
     },
     {
@@ -2792,23 +2792,23 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 435503,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "5f3b5b529546d5af"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/viz/viz_检索台.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 1514900,
-      "mtime": "2026-11-20 14:50:23",
-      "sha256": "0f1793bd8c88271a"
+      "bytes": 1515827,
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "dd602ed931850448"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/.vitepress/dist/viz/viz_研究驾驶舱.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 316922,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "054cf55ef0b61c5b"
     },
     {
@@ -2816,7 +2816,7 @@
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 30114,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "7c6e1dd9c63e37e9"
     },
     {
@@ -2824,7 +2824,7 @@
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 127294,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "107662cfca465bfd"
     },
     {
@@ -2832,7 +2832,7 @@
       "dir": "10_展示可视化",
       "ext": ".json",
       "bytes": 325957,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "33a9659372d71d52"
     },
     {
@@ -2840,7 +2840,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 525,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "e209cd8d127cd872"
     },
     {
@@ -2848,7 +2848,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 0,
-      "mtime": "2026-11-20 14:50:48",
+      "mtime": "2026-11-20 15:25:54",
       "sha256": "e3b0c44298fc1c14"
     },
     {
@@ -2856,7 +2856,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2564,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "e1e3a487a48c9a05"
     },
     {
@@ -2864,7 +2864,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 5007,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "560c7861c3cb505a"
     },
     {
@@ -2872,127 +2872,127 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1332,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "edeb2da63305d0dd"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D001_项目说明与符号约定.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 55786,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "58244100151248e7"
+      "bytes": 55472,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "c35670961107cb33"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D003_术语表.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 8378,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "0f5ce433db927e00"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "fd449249d54295c6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D004_缺口台账.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 7040,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "c6809886f32add65"
+      "bytes": 7499,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "b1128a1787af37b7"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D005_集成理论_总纲.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 109978,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "f87d0816edf3666c"
+      "bytes": 109955,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "d142e54af4592285"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D006_引力存在论前提.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 42558,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "35b1af957155a5d1"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "b797baa3da31e4f8"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D007_因果网络同步理论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 51003,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "e55d529451098bcc"
+      "bytes": 50992,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "199826c0b2de2a3e"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D008_朗兰兹分层共振与相变量子.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 59657,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "d3a2c238af89113c"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "bd418f31c152d6fb"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D009_量纲与群论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 162143,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "a7a74e1168a3514f"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "16d72caf1e0fe28a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D010_唯物主义群论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 93340,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "a9009bc0ebb6aee2"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "a3f0f07f1f36cd10"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D011_声子理论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 25854,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "8c9493ae673fd83e"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "4fd21b948fcf1b1e"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D012_共形场论与OPE.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 47339,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "b58f94c268e96af3"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "f713048129f2eb0f"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D013_量子引力讨论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 8564,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "886d02816bc2069c"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "c39e542d66f8c483"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D014_GN可能公式.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 32114,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "9a55ac95129459f1"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "3682025ab29cb46b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D015_引力因果场_退相干.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 63410,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "87408255da42abb3"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "d9b46600773b6a0b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D016_跨层级深耦合与唯一性难题.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 6644,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "52fa006f18191cba"
     },
     {
@@ -3000,127 +3000,127 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 71967,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "9bc862573c18e042"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "198f209f7533b8b2"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D018_待推1边界条件的五重联系.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 65282,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "80277c96542a1cb0"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "c882b3985dfccf61"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D019_GN第一性推导公理化.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 42123,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "c9d80eb87f89ba39"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "c0f80a8d83d8d086"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D020_质量的量纲地位与自守来源.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 29571,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "eacd18f0f1315f77"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "5e404a2ad3887fa9"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D021_Wyler常数.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 15712,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "5cca0caec5d6346a"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "a35609e8e1ef939c"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D022_贝里曲率与Regge曲率.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 49681,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "51e509c666f4beef"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "61ecf746d56d1f81"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D023_规范重组超导与SU5五重态.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 61649,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "7c77f66535cdf6ef"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "1b91a41e660f03b7"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D024_相变弧线与自守形式同步.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 29609,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "e3be839424a632f2"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "ef7ec32ff69763e8"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D025_量子快置乱普适速率极限.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 43821,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "6c216e50b5e9cb60"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "ee6d95c5382b1e0b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D026_HilbertPolya批判.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 15922,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "24430790152f3255"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "601dffd1b88a283d"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D027_资本主义-旧物理-层级还原论批判.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 54003,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "8675335165bd99f0"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "16c8924be1c4871d"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D028_FG核心理论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 32641,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "1913983d55e4784a"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "eb843aef2fa6bc16"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D029_FG纤维丛理论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 53593,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "fe76c93576ef96ac"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "3171bc7060443aa5"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D030_超导核心理论.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 330024,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "29ac539abf9c427b"
+      "bytes": 331220,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "3bd45ec81739a23a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D034_材料设计器总览.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 3108,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "97a3467efb7abeca"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "10337a67eaffaa23"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D035_系统架构设计.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 1686,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "35cd0f49d80af1d8"
     },
     {
@@ -3128,7 +3128,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 955,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "f5059407c6a60325"
     },
     {
@@ -3136,159 +3136,159 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 3006,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "24c700a54c0337ee"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "1400b9e14afa9505"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D038_应用场景与对比分析.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 1040,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "53628c548d15c480"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "fda8a2e9e4700c6a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D039_元素嘉当矩阵参数化设计.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 2932,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "9e4aedc3adbcae84"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "4b6451c3a670d72f"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D040_文献调研与专业化路线.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 1184,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "f659eef70e9efbdd"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "2231325872e22e3a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D041_目标超导搜索策略.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 2329,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "1e9a8aa48e4aae4b"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "3a75a8058fe6f2a6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D053_反物质引力与GN推导边界.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 59619,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "df9a1c66ad23507c"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "7dffd2211b974a9d"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D054_分布式不对易关系与非马尔可夫性.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 43943,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "a873c4a86b19383f"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "5c1affea45d0af67"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D055_LQG到Regge显式映射.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 15423,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "aac99787f0232836"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "2ec6ac38b7b22756"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/D056_关系性实在论与对称性重组.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 44319,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "084918d05284d9c1"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "e5d3175073153aa9"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/F01_CQM_核心_历史唯物主义与超导发生学.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 46974,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "dd879b2ac859ea02"
+      "bytes": 46912,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "46ae03ba5c0e02a1"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/F02_CQM_前沿研究_渗流连通性与临界同步.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 43367,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "f63b3f7f531efc98"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "80ab10dfd671d658"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/F03_README.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 3612,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "341b37d3437146b5"
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "a978a5d63edaa24b"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L000_展开链.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 66112,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "520f30d286d6bbaa"
+      "bytes": 65557,
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "f4723675761403f5"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L001_第一分册_从问题到链条.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 26690,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "36d824ad9c3c50e3"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "9dbcba20c237caa7"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L002_第二分册_统一体自组装与α.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 18915,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "3e7523fa37bb9d46"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "324fc22417d96e10"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L003_第三分册_谱方程与黎曼零点.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 19248,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "5d9c86eaeff8d87d"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "439093c0a9d41c9a"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L004_第四分册_超导涌现链.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 36148,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "3a2e130815c73ba1"
+      "bytes": 36141,
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "4ce23c4b11e8113f"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L005_第五分册_与标准理论的关系与涨落伴丛.md",
       "dir": "10_展示可视化",
       "ext": ".md",
-      "bytes": 26159,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "5b538b64e4f21e50"
+      "bytes": 26153,
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "dd38264afa01e4bd"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/L006_第六分册_量纲发生学专章.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 47438,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "0d740f199329647e"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "ad7f4c72ca1470c3"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/LEAN_Lean对接.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 725,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "38e1d324debff0a0"
     },
     {
@@ -3296,23 +3296,23 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 55405,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "c3ce39075c5e1b4d"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "da71c7a36ba01f73"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/TERMS_术语表.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 730,
-      "mtime": "2026-11-20 14:50:23",
-      "sha256": "6f937c1245552264"
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "21ff65173c2b8d61"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/V000_可视化总览.md",
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 1805,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "8ebced0867e9f605"
     },
     {
@@ -3320,7 +3320,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 480,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "5b2501b4c6388d73"
     },
     {
@@ -3328,7 +3328,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 462,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "bb84d460f05863a2"
     },
     {
@@ -3336,7 +3336,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 460,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "533d5a8f185d6750"
     },
     {
@@ -3344,7 +3344,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 448,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "58fc1052e330c27e"
     },
     {
@@ -3352,7 +3352,7 @@
       "dir": "10_展示可视化",
       "ext": ".md",
       "bytes": 900,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "088c099102b326dc"
     },
     {
@@ -3360,7 +3360,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 1163,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "679d2de78d5a0925"
     },
     {
@@ -3368,7 +3368,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 7500,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "a96f6368d10f87fa"
     },
     {
@@ -3376,7 +3376,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 446,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "9d7f52bbbc926e48"
     },
     {
@@ -3384,7 +3384,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 35049,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "ad52a6636530b598"
     },
     {
@@ -3392,23 +3392,23 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 16971,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "956126967e5433a6"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/public/cqm-glossary.js",
       "dir": "10_展示可视化",
       "ext": ".js",
-      "bytes": 375615,
-      "mtime": "2026-11-20 14:50:22",
-      "sha256": "4cdcc61050fdc63d"
+      "bytes": 374432,
+      "mtime": "2026-11-20 15:25:28",
+      "sha256": "e99f4650ff0d18da"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/public/lean-page.js",
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 11365,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "59723fb100a3be18"
     },
     {
@@ -3416,7 +3416,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 334,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "b39a21d5482c92d9"
     },
     {
@@ -3424,7 +3424,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 5579,
-      "mtime": "2026-11-20 14:50:22",
+      "mtime": "2026-11-20 15:25:28",
       "sha256": "8543bd5fc034744f"
     },
     {
@@ -3432,7 +3432,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 2828,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "0d7911cfce1752cf"
     },
     {
@@ -3440,7 +3440,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 7608,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "b2c203b9a14d9b3e"
     },
     {
@@ -3448,7 +3448,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2108588,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "396ffefb7e242d86"
     },
     {
@@ -3456,23 +3456,23 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 435503,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "5f3b5b529546d5af"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/public/viz/viz_检索台.html",
       "dir": "10_展示可视化",
       "ext": ".html",
-      "bytes": 1514900,
-      "mtime": "2026-11-20 14:50:23",
-      "sha256": "0f1793bd8c88271a"
+      "bytes": 1515827,
+      "mtime": "2026-11-20 15:25:29",
+      "sha256": "dd602ed931850448"
     },
     {
       "path": "10_展示可视化/阅读站VitePress/docs/public/viz/viz_研究驾驶舱.html",
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 316922,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "054cf55ef0b61c5b"
     },
     {
@@ -3480,7 +3480,7 @@
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 30114,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "7c6e1dd9c63e37e9"
     },
     {
@@ -3488,7 +3488,7 @@
       "dir": "10_展示可视化",
       "ext": ".html",
       "bytes": 127294,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "107662cfca465bfd"
     },
     {
@@ -3496,7 +3496,7 @@
       "dir": "10_展示可视化",
       "ext": ".json",
       "bytes": 325957,
-      "mtime": "2026-11-20 14:50:21",
+      "mtime": "2026-11-20 15:25:27",
       "sha256": "33a9659372d71d52"
     },
     {
@@ -3504,7 +3504,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 525,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "e209cd8d127cd872"
     },
     {
@@ -3512,7 +3512,7 @@
       "dir": "10_展示可视化",
       "ext": ".js",
       "bytes": 2564,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "e1e3a487a48c9a05"
     },
     {
@@ -3520,7 +3520,7 @@
       "dir": "10_展示可视化",
       "ext": ".css",
       "bytes": 5007,
-      "mtime": "2026-11-20 14:50:23",
+      "mtime": "2026-11-20 15:25:29",
       "sha256": "560c7861c3cb505a"
     },
     {
@@ -3552,15 +3552,15 @@
       "dir": "11_元数据",
       "ext": ".json",
       "bytes": 119050,
-      "mtime": "2026-11-20 14:39:31",
-      "sha256": "0eaffc3c4937fd4c"
+      "mtime": "2026-11-20 15:23:32",
+      "sha256": "0f3019844f90ac9b"
     },
     {
       "path": "11_元数据/变更日志.md",
       "dir": "11_元数据",
       "ext": ".md",
       "bytes": 516326,
-      "mtime": "2026-11-20 14:39:31",
+      "mtime": "2026-11-20 15:23:32",
       "sha256": "0fa2b253660f8644"
     },
     {
@@ -3568,15 +3568,15 @@
       "dir": "11_元数据",
       "ext": ".md",
       "bytes": 2121,
-      "mtime": "2026-11-20 14:39:31",
-      "sha256": "b2488f619f0337a8"
+      "mtime": "2026-11-20 15:23:32",
+      "sha256": "6e2afc634e489066"
     },
     {
       "path": "11_元数据/验证状态.md",
       "dir": "11_元数据",
       "ext": ".md",
       "bytes": 10773,
-      "mtime": "2026-11-20 14:39:31",
+      "mtime": "2026-11-20 15:23:32",
       "sha256": "82110a5ab9c7c05d"
     },
     {
@@ -3615,9 +3615,9 @@
       "path": "附录/缺口台账.md",
       "dir": "附录",
       "ext": ".md",
-      "bytes": 6418,
-      "mtime": "2026-11-20 14:49:45",
-      "sha256": "f051c2ea0b17051b"
+      "bytes": 6843,
+      "mtime": "2026-11-20 15:18:12",
+      "sha256": "fee66364ad9c8cf1"
     }
   ]
 }
