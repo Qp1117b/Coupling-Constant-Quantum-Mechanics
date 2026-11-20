@@ -119,7 +119,9 @@ def main():
     # 2026-11-17（v1.9.210）：删除旧口径 v_τ=√(1−βδ_v) 的 Lean 簇（顶点角亏载体，
     # 传递依赖闭包 24 文件：FGChain/Superconductivity/NonMarkovianity 主簇），
     # 剩余 54 个纯数学/其他主题源码。声明 1500→993、模块 78→54；axiom 15 保留（非旧口径）。
-    check("Lean 声明 993 / 模块 54", (len(decls), len(mods)) == (993, 54),
+    # 2026-11-20（v1.9.238）：CQM_Mechanism.lean 纳入全对族形式化（Hpair/PairFreeze/StepEq
+    # 与 6 条定理），模块 54→55、声明 993→1003。该模块此前已在源码树但未入派生清单。
+    check("Lean 声明 1003 / 模块 55", (len(decls), len(mods)) == (1003, 55),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []

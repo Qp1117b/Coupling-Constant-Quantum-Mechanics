@@ -5,12 +5,12 @@
 
 1. **固有时流速乘积传递 + 亏角**——相邻节点 $v_{\tau,j}=v_{\tau,i}r_{ij}$，沿链累积，闭环要求 $\prod r_k=1$；
 2. **节点质数原子化**——每节点持自己的钟，窗口平均不可能均匀；
-3. **差异-扩大-平均动力学**——扩大使平均窗口趋于均匀（冻结）；
+3. **差异-扩大-平均动力学**——全对历史族 $\mathcal H_{ij}=\tau_i-\tau_j$ 的冻结（所有节点对同时等速）使平均窗口趋于均匀；
 4. **渗流**——簇求和只给前因子；
 5. **量子递归博弈论**——博弈次序不影响终态；
 6. **平凡零点形式配对**——配对数上界由平凡零点位置给出。
 
-在「冻结」条件（$\dot{\mathcal H}\to 0$ 的代数形式：窗口平均均匀）下，幅度被压成 $\Phi/n$，
+在「全对冻结」（$\dot{\mathcal H}_{ij}=0\ \forall i<j$ 的代数形式：所有节点对每个时刻的增量相等）下，幅度被压成 $\Phi/n$，
 频率阶梯被压成 $u_1+2\ln n$，于是 $K(t)$ 落入 `PrimeOscForm`。
 
 不证明黎曼猜想；只对上形式。仅依赖 Lean 核心库（无 Mathlib）。
@@ -128,8 +128,9 @@ theorem mechanism_prime_osc
       omega
     exact Eq.trans (congrArg (fun x : Nat => (x : Int)) h2) h3
 
-/-! ## §7 条件①：$\dot{\mathcal H}\to0$ 的代数形式 -/
+/-! ## §7 条件①：冻结的代数形式（标量投影与全对族） -/
 
+/-- 标量投影层的冻结（某个历史序列不再变化）。本体是全对族，见 §7.1。 -/
 def HFreeze (H : Nat → Int) : Prop := ∀ t, H (t + 1) = H t
 
 theorem freeze_history (H : Nat → Int) (hh : HFreeze H) : ∀ t, H t = H 0 := by
@@ -156,6 +157,72 @@ theorem step_dotH_zero_gives_form
       Φ (lnE E1 : Int) lnE N :=
   mechanism_prime_osc cosF lnE hadd E1 Φ H w amp N
     (freeze_gives_uniform H hh) hlin h1 hA
+
+/-! ## §7.1 全对历史 $\mathcal H_{ij}=\tau_i-\tau_j$：本体与冻结 -/
+
+/-- 节点固有时 $\tau_i(t)$；全对历史由它生成，$\mathcal H_{ij}(t)=\tau_i(t)-\tau_j(t)$。 -/
+def Hpair (tau : Nat → Nat → Int) (i j t : Nat) : Int :=
+  tau i t - tau j t
+
+theorem Hpair_self (tau : Nat → Nat → Int) (i t : Nat) :
+    Hpair tau i i t = 0 := by
+  unfold Hpair
+  omega
+
+theorem Hpair_antisym (tau : Nat → Nat → Int) (i j t : Nat) :
+    Hpair tau i j t = - Hpair tau j i t := by
+  unfold Hpair
+  omega
+
+/-- 上闭链：$\mathcal H_{ij}+\mathcal H_{jk}=\mathcal H_{ik}$。 -/
+theorem Hpair_cocycle (tau : Nat → Nat → Int) (i j k t : Nat) :
+    Hpair tau i j t + Hpair tau j k t = Hpair tau i k t := by
+  unfold Hpair
+  omega
+
+/-- 全对冻结：所有节点对的历史每一步都不变。 -/
+def PairFreeze (tau : Nat → Nat → Int) (N : Nat) : Prop :=
+  ∀ i j t, i < N → j < N → Hpair tau i j (t + 1) = Hpair tau i j t
+
+/-- 节点固有时每步增量相等：$\dot{\mathcal H}_{ij}=0\ \forall i<j$ 的离散形式。 -/
+def StepEq (tau : Nat → Nat → Int) (N : Nat) : Prop :=
+  ∀ i j t, i < N → j < N →
+    tau i (t + 1) - tau i t = tau j (t + 1) - tau j t
+
+theorem pairFreeze_iff_stepEq (tau : Nat → Nat → Int) (N : Nat) :
+    PairFreeze tau N ↔ StepEq tau N := by
+  constructor
+  · intro h i j t hi hj
+    have hp := h i j t hi hj
+    unfold Hpair at hp
+    omega
+  · intro h i j t hi hj
+    have hs := h i j t hi hj
+    unfold Hpair
+    omega
+
+/-- 全对冻结 ⇒ 任一节点对投影的 HFreeze（故标量形式结论仍可用）。 -/
+theorem pairFreeze_projection (tau : Nat → Nat → Int) (N i j : Nat)
+    (hi : i < N) (hj : j < N) (h : PairFreeze tau N) :
+    HFreeze (fun t => Hpair tau i j t) := by
+  intro t
+  exact h i j t hi hj
+
+/-- 全对冻结 ⇒ 每个节点对投影都落入质数振荡形式。 -/
+theorem pair_freeze_gives_form
+    (cosF : Int → Int) (lnE : Nat → Nat)
+    (hadd : ∀ a b : Nat, lnE (a * b) = lnE a + lnE b)
+    (E1 : Nat) (Φ : Int) (tau : Nat → Nat → Int) (N i j : Nat)
+    (w amp : Nat → Int)
+    (hi : i < N) (hj : j < N)
+    (h : PairFreeze tau N) (hlin : WeightLinear (fun t => Hpair tau i j t) w)
+    (h1 : w 1 = 1) (hA : AmpLadder Φ w amp) :
+    PrimeOscForm cosF
+      (fun t => Kfun cosF amp (fun n => lnE (E E1 n)) N t)
+      Φ (lnE E1 : Int) lnE N :=
+  step_dotH_zero_gives_form cosF lnE hadd E1 Φ
+    (fun t => Hpair tau i j t) w amp N
+    (pairFreeze_projection tau N i j hi hj h) hlin h1 hA
 
 /-! ## §8 渗流与博弈：只给前因子与次序无关 -/
 
@@ -220,6 +287,8 @@ theorem peak_unique (n : Nat) (hn : n ≠ 0) (m1 m2 : Nat)
 
 #print axioms mechanism_prime_osc
 #print axioms step_dotH_zero_gives_form
+#print axioms pairFreeze_iff_stepEq
+#print axioms pair_freeze_gives_form
 #print axioms six_elements_deliver
 #print axioms peak_unique
 /-! ## §12 ①②③ 合取：形式 ∧ 唯一（相变稳定） -/

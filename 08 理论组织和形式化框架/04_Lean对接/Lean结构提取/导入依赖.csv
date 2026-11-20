@@ -16,17 +16,8 @@ CausalSet.Basic,Mathlib.Data.Set.Finite.Basic
 CausalSet.Basic,Mathlib.Data.Set.Countable
 CausalSet.Reproduction,Mathlib.Data.Real.Basic
 CausalSet.Reproduction,Mathlib.Algebra.Module.LinearMap.Basic
-CausalSet.Sprinkling,Mathlib.Data.Real.Basic
-CausalSet.Sprinkling,Mathlib.Analysis.SpecialFunctions.Exp
-CausalSet.Sprinkling,Mathlib.Order.Interval.Set.Defs
-CausalSet.Sprinkling,CausalSet.Axioms
 CouplingSpace,CouplingSpace.Basic
 CouplingSpace,CouplingSpace.Uncertainty
-CouplingSpace.Basic,Mathlib.Data.Real.Basic
-CouplingSpace.Basic,Mathlib.Analysis.SpecialFunctions.Exp
-CouplingSpace.Basic,Mathlib.Analysis.SpecialFunctions.Log.Basic
-CouplingSpace.Basic,CausalSet.Axioms
-CouplingSpace.Basic,CausalSet.Sprinkling
 CouplingSpace.Uncertainty,Mathlib.Analysis.InnerProductSpace.Basic
 CouplingSpace.Uncertainty,Mathlib.Data.Complex.Basic
 CouplingSpace.Uncertainty,Mathlib.Tactic

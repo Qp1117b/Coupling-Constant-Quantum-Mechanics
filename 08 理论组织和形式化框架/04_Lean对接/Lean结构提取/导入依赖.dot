@@ -8,11 +8,8 @@ digraph LeanImports {
   "CausalSet" -> "CausalSet.Sprinkling";
   "CausalSet.Axioms" -> "CausalSet.Basic";
   "CausalSet.Axioms" -> "CausalSet.Reproduction";
-  "CausalSet.Sprinkling" -> "CausalSet.Axioms";
   "CouplingSpace" -> "CouplingSpace.Basic";
   "CouplingSpace" -> "CouplingSpace.Uncertainty";
-  "CouplingSpace.Basic" -> "CausalSet.Axioms";
-  "CouplingSpace.Basic" -> "CausalSet.Sprinkling";
   "Decoherence" -> "Decoherence.Basic";
   "Decoherence" -> "Decoherence.DeepCoupling";
   "Decoherence.Basic" -> "CausalSet.Axioms";

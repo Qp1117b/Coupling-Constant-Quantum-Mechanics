@@ -108,7 +108,7 @@ $$v_{k+1}=v_k\sqrt{1-\frac{\varepsilon_{k,k+1}}{2\pi}}=v_k\,r_k .$$
 **推导**：
 - 绕环一周 $v_o'=\big(\prod_{k=1}^N r_k\big)v_o$；单值性（同一节点流速唯一）$\Rightarrow$ **反馈约束** $\prod_{k=1}^N r_k=1$（自然推出，非预设）。Delaunay 亏角 $\varepsilon\ge0$ ⇒ 一般 $\prod r<1$（绕环衰减），严格单值需亏角正负抵消；
 - 亏角涨落 $\varepsilon_i(t)=\varepsilon_i^{(0)}+\Delta\varepsilon_i(t)$ ⇒ 流速涨落。**节点固有时流速同步**（所有 $v_\tau^{(i)}$ 相等）：因 $v=\sqrt{1-\varepsilon/2\pi}$ 单调，相等 $\Leftrightarrow$ 各 $\Delta\varepsilon_i$ 相等；几率随低温（$\Delta\varepsilon\to0$）、长程相位关联升高；
-- **同步锚** $A_\tau$：同步已精确成立的位置＝零亏角边的极大连通子图（$|A_\tau|\ge2$，维度 $d=1,2$；无 0 维锚，权威定义见 `06 超导` §7.3）。环上三种结局：整环 $\ell=0$ ⇒ 整环锚；环上含零边 ⇒ 1 维弧；**全非零 ⇒ 无锚**。判据是**相位差冻结**（$v$ 相等），不是相位相同；锚固定的是均值，涨落仍在；
+- **相变锚核** $A_\tau$：零亏角边的极大连通子图（$|A_\tau|\ge2$，维度 $d=1,2$；无 0 维核，权威定义见 `06 超导` §7.3，相变锚本身见同节）。环上三种结局：整环 $\ell=0$ ⇒ 整环核；环上含零边 ⇒ 1 维弧；**全非零 ⇒ 无核**。判据是**相位差冻结**（$v$ 相等），不是相位相同；锚固定的是均值，涨落仍在；
 - 闭环反馈（$\sum\Delta\varepsilon=0$）是必要非充分条件（和为 0 ≠ 彼此相等）。
 
 **输出**：反馈约束 + 同步几率机制。**严格性**：单值性／单调性【严格】；几率依赖涨落模型示例（成果 R1–R5，一维闭环／同步概率脚本）。
@@ -135,7 +135,7 @@ $$v_{k+1}=v_k\sqrt{1-\frac{\varepsilon_{k,k+1}}{2\pi}}=v_k\,r_k .$$
 
   $K$ 的第 $n$ 模是节点相位 $e^{i\Phi_{n,i}}$ 的留数 $1/\rho_n$ 加权和；相位差 $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ 直接生成 $K$ 的模差。这是 $\mathcal H_{ij}$ 与 $K$ 的**严格结构对应**（谱位置／结构层）。涨落扩散 $\mathrm{Var}[\delta\tau_i]\to2\sigma_v^2\tau_g t$ 给出固有退相干 $e^{-\Gamma_n t}$（$\Gamma_n=\gamma_n^2\sigma_v^2\tau_g$，环节⑥），无需消除涨落。权重 $1/\rho_n$ 由 $K$ 定义自带，非节点几何新造的自由参数。
 
-- **M9（锚—记忆平台共享机制）**：锚内 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结 $\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1\Rightarrow K(\tau_i)=K(\tau_j)$。故 $A_\tau$ 内节点**共享同一 $K(\tau)$**，这是权威 §0.7 占据–读出 $A_\tau\to K^{\rm SC}$ 的代数实现——解释锚为何能约束记忆侧平台。状态由"未证"精化为"结构桥梁已建立、数值同一待独立复现"，编号不变。
+- **M9（锚—记忆平台共享机制）**：锚核内 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\mathcal H_{ij}=c_{ij}$ 全对冻结（常数不必为零）$\Rightarrow e^{i\gamma_nc_{ij}}\ne1$（一般）$\Rightarrow K(\tau_i)=K(\tau_j+c_{ij})$。故 $A_\tau$ 内节点**共享同一谱阶梯与同一斜率、等高不等位**，不是同一 $K(\tau)$；全对相干由 $\hat\mu_t$、$R_n$ 读。这是权威 §0.7 占据–读出 $A_\tau\to K^{\rm SC}$ 的代数实现——解释锚为何能约束记忆侧平台的"等高"；"同位"需全对 $c_{ij}=0$（`临-16`），不是锚的推论。状态由"未证"精化为"结构桥梁已建立、数值同一待独立复现"，编号不变。
 
 - **M10（$\mathcal I_K$—$\mathcal H_{ij}$ 映射）**：DM.25 建立结构桥梁，但不写 $\mathcal I_K=\mathcal H_{ij}$、不宣称振幅物理同一；精确数值映射待独立复现，编号不变。
 
@@ -154,7 +154,7 @@ $$v_{k+1}=v_k\sqrt{1-\frac{\varepsilon_{k,k+1}}{2\pi}}=v_k\,r_k .$$
 | ③ | 声子-亏角方程组 E1–E7 | 【严格＋条件严格】| $c_0$、$\partial\varepsilon/\partial l$（W-3）|
 | ④ | FG 接口、乘积递推、$v_o$ 变量、T1 | 【假设＋代数严格】| FG 接口假设、$v_o$ 一维不定 |
 | ⑤ | DNR 逐节点不对易、子群跃迁 | 【代数严格】条件于胚 | DNR 构造性待 E4、$u_i$ 量子化 W-3 |
-| ⑥ | 闭环反馈 $\prod r=1$、同步几率、同步锚 $A_\tau$（零亏角极大连通子图，$d=1,2$） | 【严格＋几率＋几何】| 涨落模型、和乐相位关系、M9 数值同一 |
+| ⑥ | 闭环反馈 $\prod r=1$、同步几率、相变锚核 $A_\tau$（零亏角极大连通子图，$d=1,2$） | 【严格＋几率＋几何】| 涨落模型、和乐相位关系、M9 数值同一 |
 | ⑦ | 稳定同步＝相变的**结构诠释** | 【结构对应】| 相变方程／$T_c$ 未推、$K$ 微观定义、G10/G19 |
 | 桥梁 | DM.25：$H\leftrightarrow K$；M9：锚共享 $K$ | 【结构严格】（代数）| M10 定量映射、R30 谱系数读数待复现 |
 

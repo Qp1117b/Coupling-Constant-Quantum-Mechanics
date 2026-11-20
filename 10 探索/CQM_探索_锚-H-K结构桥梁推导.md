@@ -9,13 +9,27 @@
 
 $$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（相变体现）}}
 \;\longrightarrow\;
-\underbrace{\tau_i-\tau_j=\mathcal H_{ij}\ \text{冻结}}_{\text{T1 相位差}}
+\underbrace{\mathsf H=(\mathcal H_{ij}=\tau_i-\tau_j)\ \text{全对冻结为}\ c_{ij}}_{\text{T1 相位差（等高不等位）}}
 \;\longrightarrow\;
-\underbrace{K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)}{\rho_n}}_{\text{DM.25：}H\leftrightarrow K\ \text{桥梁}}$$
+\underbrace{K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}(e^{i\gamma_n\mathcal H_{ij}}-1)}{\rho_n}}_{\text{DM.25：逐对 }H\leftrightarrow K\ \text{桥梁}}$$
 
-- **能严格推出**（第 1–4 节）：$\mathcal H_{ij}=\tau_i-\tau_j$、T1 相位差、$K$ 谱侧、DM.25 代数桥梁、锚冻结相位差 ⇒ 共享 $K$。
+- **能严格推出**（第 1–4 节）：$\mathcal H_{ij}=\tau_i-\tau_j$ 与全对族 $\mathsf H$、T1 相位差、$K$ 谱侧、DM.25 代数桥梁、锚冻结全对相位差 ⇒ 各点 $K$ 差固定平移（**等高不等位**，不是同一平台）。
 - **构造识别**（第 2 节，唯一跳跃）：$K$ 的自变量 $t$ ≡ 固有时 $\tau_i$（本框架固有时只有一个概念）。
-- **未闭合**（第 6 节）：M9 数值同一、M10 定量映射、R30 谱系数读数待独立复现——只做结构层贯通，不写 $\mathcal I_K=\mathcal H_{ij}$。
+- **未闭合**（第 6 节）：M9 数值同一、M10 定量映射、R30 谱系数读数待独立复现——只做结构层贯通，不写 $\mathcal I_K=\mathcal H_{ij}$。全局平台须全对 $c_{ij}=0$（`临-16`），不是锚的推论。
+
+---
+
+## 0.1 判定与适用范围
+
+第 7 节那条"相变锚 ⇒ 共享"的链条须分三层读，且主语是**核** $A_\tau$：
+
+| 层 | 命题 | 判定 |
+|:---|:---|:---|
+| 代数层 | 核内 $\dot{\mathcal H}_{ij}=0\Rightarrow K(\tau_i)=K(\tau_j+c_{ij})$ | **成立**（第 3–5 节已给，与改名无关） |
+| 因果层 | "相变锚（$\mathfrak A(T)$）给出共享" | **不成立**：共享由零亏角几何（$\ell_e=0$）给出，相变锚是空间载体与读出 |
+| 平台层 | "核内共享 ⇒ 同一平台" | **不成立**：需全对 $c_{ij}=0$（`临-16`）；数值同一属 M9 |
+
+**适用范围**：$\dot{\mathcal H}=0$ 与 $T$ 无关，故"等高不等位"在**整核**成立（含未被 $\mathcal A(T)$ 占据的边），只能用 $A_\tau$ 表述。逐对共享**不需**全局单值条件（核内 $\prod_kr_k=1$ 由 $\ell^{(0)}=0$ 给）；"全样品单一平台"才需 $[r]=0$ 与 $c_{ij}=0$ 两件不同的事。$\dot{\mathcal H}=0$ 是冻结判据、平凡必要（条件于 T1／M1），不能当相变判据。
 
 ---
 
@@ -25,11 +39,11 @@ $$\underbrace{A_\tau\ (\text{零亏角边约束})}_{\text{锚（相变体现）}
 |:---|:---|:---|
 | 固有时流速接口 | $v_\tau=\sqrt{1-\varepsilon/2\pi}$（假设） | FG_核心理论 §3.1；06 §0.4 |
 | 节点固有时 | $\tau_i(t)=\int_0^t v_{\tau,i}\,dt'$ | 06 §0.4 |
-| 历史总和（本体） | $\mathcal H_{ij}(t)=\int_0^t(v_{\tau,i}-v_{\tau,j})\,dt'=\tau_i-\tau_j$ | 06 §0.4/§0.6 |
+| 历史总和（本体） | $\mathsf H(t)=(\mathcal H_{ij}(t))_{i,j\in V_t}$，分量 $\mathcal H_{ij}(t)=\int_0^t(v_{\tau,i}-v_{\tau,j})dt'=\tau_i-\tau_j$；投影 $\mathcal D=\frac{2}{N-1}\sum_i(\tau_i-\bar\tau)^2$（06 §0.3/§0.6） | 06 §0.4/§0.6 |
 | 漂移定理 T1 | $\Phi_{n,i}=\gamma_n\tau_i$，$\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ | 06 §0.4 |
 | 记忆核（超导态质数形式） | $K(t)=e^{-t/2}\bigl(\psi(e^t)-e^t\bigr)$，$\psi(x)=\sum_{p^m\le x}\ln p$；正常态 $K$ 为非质数涨落关联 | 06 §0.0/§0.6（【构造】） |
 | 谱侧（显式公式） | $K(t)=-\sum_\rho e^{(\rho-1/2)t}/\rho+O(e^{-t/2})$ | 06 §0.6 DM.20（严格数论） |
-| 同步锚 | $A_\tau$＝零亏角边极大连通子图；判据"相位差冻结（等速）" | 06 §7.3/§0.3 |
+| 相变锚核 | $A_\tau$＝零亏角边极大连通子图；判据"相位差冻结（等速）"；相变锚见 06 §7.3 | 06 §7.3/§0.3 |
 | 记忆平台 | $K^{\rm SC}$（$T<T_c$ 稳定平台）；$A_\tau\to K^{\rm SC}$ 占据–读出 | 06 §0.7 |
 
 ---
@@ -52,7 +66,9 @@ $$t\;\equiv\;\tau_i .$$
 
 **Step 1（定义恒等式）**：由 $\tau_i=\int_0^t v_{\tau,i}dt'$，
 
-$$\tau_i-\tau_j=\int_0^t(v_{\tau,i}-v_{\tau,j})\,dt'=\mathcal H_{ij}(t).$$
+$$\tau_i-\tau_j=\int_0^t(v_{\tau,i}-v_{\tau,j})\,dt'=\mathcal H_{ij}(t),\qquad \mathsf H(t)=(\mathcal H_{ij}(t))_{i,j\in V_t}.$$
+
+全对族满足 $\mathcal H_{ii}=0$、$\mathcal H_{ij}=-\mathcal H_{ji}$、$\mathcal H_{ij}+\mathcal H_{jk}=\mathcal H_{ik}$；$\binom{N}{2}$ 个分量只有 $N-1$ 个独立，故"所有节点对"不是把 $\mathcal H_{ij}$ 逐对相加，而是族及其对称投影（06 §0.6）。
 
 **Step 2（T1，文档严格）**：$\Phi_{n,i}=\gamma_n\tau_i$，故
 
@@ -88,6 +104,15 @@ $$\boxed{\;K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\bigl(e^{i\gamma_n\ma
 
 解释：$\mathcal H_{ij}$ 作为相位差 $\gamma_n\mathcal H_{ij}$ 直接生成 $K$ 的模差 $(e^{i\gamma_n\mathcal H_{ij}}-1)$；当 $\mathcal H_{ij}=0$，模差为零，$K(\tau_i)=K(\tau_j)$。权重 $1/\rho_n$ 由 $K$ 的定义自带，**不是节点几何新造的自由参数**。这是 $\mathcal H_{ij}$ 与 $K$ 的严格结构对应（谱位置／代数层）。
 
+### 5.1 全对版：从逐对差到测度与相干度
+
+DM.25 是**一对节点的差**，不能把全局 $K$ 归给单对。记 $\mathcal P_t=\{(i,j):i<j,\ i,j\in V_t\}$、$M_t=\binom{|V_t|}{2}$，全对历史进模幅的接口是节点对测度的傅里叶变换：
+
+$$\hat\mu_t(\gamma_n)=\frac{1}{|V_t|(|V_t|-1)}\sum_{i\ne j}e^{i\gamma_n\mathcal H_{ij}(t)}=\frac{1}{M_t}\sum_{(i,j)\in\mathcal P_t}\cos\bigl(\gamma_n\mathcal H_{ij}(t)\bigr)\in\mathbb R,\qquad$$
+R_n^2(t)=\left|\frac1{|V_t|}\sum_{i\in V_t}e^{i\gamma_n\tau_i(t)}\right|^2=\frac1{|V_t|}+\frac{|V_t|-1}{|V_t|}\hat\mu_t(\gamma_n).$$
+
+$N=2$ 时 $R_n^2=\cos^2(\gamma_n\mathcal H_{12}/2)$，即 DM.25 的单对写法正是两节点截断；一般 $N$ 下每对权重只有 $2/N^2$。若要全局标量，候选为节点平均 $K_{\rm glob}=\frac1N\sum_iK(\tau_i)=-\sum_n\frac{1}{\rho_n}\bigl(\frac1N\sum_ie^{i\gamma_n\tau_i}\bigr)+O(e^{-\tau/2})$，第 $n$ 模幅由 $R_n/|\rho_n|$ 读出（【构造】，不是已证）。$\mathcal D$ 的三项平衡与全对冻结判据见 06 §0.6、推导链环 6。
+
 ---
 
 ## 6. 涨落：去相干因子自然进入（不必消除 σ_v）
@@ -106,11 +131,16 @@ $$\langle e^{i\Phi_{n,i}}\rangle=e^{i\gamma_n\langle\tau_i\rangle}\exp\!\Big(-\t
 
 ## 7. 锚如何进入（M9 结构桥梁）
 
-锚内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\tau_i-\tau_j=\mathcal H_{ij}$ 冻结（常数）$\Rightarrow e^{i\gamma_n\mathcal H_{ij}}=1$。代入 DM.25：
+锚核内边 $\ell_e=0\Rightarrow v_{\tau,i}=v_{\tau,j}\Rightarrow\mathcal H_{ij}=\tau_i-\tau_j=c_{ij}$（**全对冻结，常数不必为零**）。于是
 
-$$K(\tau_i)-K(\tau_j)=0\quad\Rightarrow\quad K(\tau_i)=K(\tau_j).$$
+$$e^{i\gamma_n c_{ij}}\ne1\ \ (\text{一般}),\qquad
+K(\tau_i)-K(\tau_j)=-\sum_n\frac{e^{i\Phi_{n,j}}\bigl(e^{i\gamma_nc_{ij}}-1\bigr)}{\rho_n},$$
 
-即**空间锚 $A_\tau$ 内的节点共享同一 $K(\tau)$**。这正是 06 §0.7 占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$ 的代数实现：锚之所以能约束记忆侧平台，在于它冻结了生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$。锚外 $\mathcal H_{ij}\neq$ const，模差按 DM.25 生成。
+即 $K(\tau_i)=K(\tau_j+c_{ij})$：锚核内节点共享**同一谱阶梯与同一斜率**，但各自带固定相位偏移——**等高不等位**，不是同一 $K(\tau)$。只有全对 $c_{ij}=0$ 才给 $K(\tau_i)=K(\tau_j)$，而 $c_{ij}=0$ 不能由 $\ell_e=0$ 推出（起点 $t_{0,i}$ 是物理事件，`临-16`）。
+
+这正是 06 §0.7 占据–读出 $A_\tau\xrightarrow{\text{占据}}\mathcal A(t)\subseteq A_\tau\xrightarrow{\text{读出}}K^{\rm SC}$ 的代数实现：锚之所以能约束记忆侧平台，在于它把生成 $K$ 模差的相位差 $\gamma_n\mathcal H_{ij}$ 冻成常数偏移。全对相干由 §5.1 的 $\hat\mu_t(\gamma_n)$、$R_n$ 读；$K^{\rm SC}$ 的"等高"由冻结保证，"同位"另需全对 $c_{ij}=0$（`临-17`）。
+
+**边界**：这里只给结构层，不证明 $A_\tau$ 与 $K^{\rm SC}$ 的数值同一（M9）；不写 $\mathcal I_K=\mathcal H_{ij}$（M10）。锚外 $\mathcal H_{ij}\ne\text{const}$，模差按 DM.25 持续生成。
 
 ---
 
@@ -130,13 +160,14 @@ $$K(\tau_i)-K(\tau_j)=0\quad\Rightarrow\quad K(\tau_i)=K(\tau_j).$$
 
 | 步骤 | 内容 | 等级 |
 |:---:|:---|:---|
-| 1 | $\mathcal H_{ij}=\tau_i-\tau_j$ | 定义恒等式（严格） |
+| 1 | $\mathcal H_{ij}=\tau_i-\tau_j$ 与全对族 $\mathsf H$ | 定义恒等式（严格） |
 | 2 | $\Phi_{n,i}-\Phi_{n,j}=\gamma_n\mathcal H_{ij}$ | 文档 T1（严格） |
 | 3 | $K$ 谱侧、留数 $1/\rho_n$ | 数论严格（显式公式） |
 | 4 | **识别 $t\equiv\tau_i$** | **构造识别（唯一跳跃）** |
-| 5 | DM.25 模差桥梁 | 代数严格（给定识别） |
+| 5 | DM.25 模差桥梁（逐对）与 §5.1 全对测度、$R_n$ | 代数严格（给定识别） |
 | 6 | $\Gamma_n$ 退相干 | 严格（给定 OU） |
-| 7 | 锚内共享 $K$ | 代数严格（给定 DM.25） |
+| 7 | 锚核内各点 $K$ 等高不等位；全对相干由 $\hat\mu_t$、$R_n$ 读 | 代数严格（给定 DM.25） |
+| 8 | 共享的适用范围：核内逐对（$\ell_e=0$ 自动）／单一平台需 $[r]=0$ 且 $c_{ij}=0$ | 判定（条件式，见 §0.1） |
 
 **边界（缺口不升级）**：
 - **M9**：DM.25 给出"共享"的结构层，$A_\tau$ 与 $K^{\rm SC}$ 的**数值同一**待独立复现（编号不变）。
@@ -148,4 +179,4 @@ $$K(\tau_i)-K(\tau_j)=0\quad\Rightarrow\quad K(\tau_i)=K(\tau_j).$$
 
 ## 10. 结论
 
-从节点定义出发，**锚—$\mathcal H_{ij}$—$K$** 的结构桥梁可在一条链上贯通：亏角→固有时→T1 相位差→显式公式谱侧→DM.25 模差→锚内共享 $K$。全链只用 CQM 已有定义与一个构造识别（固有时同一性），未新增概念、数值、缺口编号；涨落以固有退相干因子自然进入，无需消除。未闭合的是数值层（M9/M10/R30 待独立复现），不是结构层——本文不把结构对应写成数值相等，符合"不绕过"红线。
+从节点定义出发，**锚—全对 $\mathcal H_{ij}$—$K$** 的结构桥梁可在一条链上贯通：亏角→固有时→T1 相位差→显式公式谱侧→DM.25 逐对模差→全对测度 $\hat\mu_t$、$R_n$→锚核内等高不等位（各点共享谱阶梯与斜率）。全链只用 CQM 已有定义与一个构造识别（固有时同一性），未新增概念、数值、缺口编号；涨落以固有退相干因子自然进入，无需消除。全对平台单一需 $c_{ij}=0\ \forall i<j$（`临-16`、`临-17`），不是锚的推论。未闭合的是数值层（M9/M10/R30 待独立复现），不是结构层——本文不把结构对应写成数值相等，符合"不绕过"红线。
