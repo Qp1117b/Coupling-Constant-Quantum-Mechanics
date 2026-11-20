@@ -158,9 +158,11 @@ $$\bigl(\dot{\mathcal H}_{ij}=0\ \forall(i,j)\in\mathcal P_t\bigr)\ \wedge\ \Gam
 
 $$\text{一次再生产}\ \equiv\ \text{一次"自定位—自测动"的最小操作} \tag{1.1}$$
 
-$$[\hat X_i,\hat P_j]=i☯\,\delta_{ij},\qquad \Delta X_i\Delta P_j\ge\frac{☯}{2}\delta_{ij} \tag{1.2}$$
+$$[\hat X_i,\hat P_j]=i\hbar\,\delta_{ij},\qquad \Delta X_i\Delta P_j\ge\frac{\hbar}{2}\delta_{ij} \tag{1.2}$$
 
-$$\text{二次型基态}\ \Rightarrow\ \langle X_i^2\rangle_0=\frac{☯}{2m\omega} \tag{1.3}$$
+$$\text{二次型基态}\ \Rightarrow\ \langle X_i^2\rangle_0=\frac{\hbar}{2m\omega} \tag{1.3}$$
+
+**符号边界**：`(1.2)` 的作用量子是 $\hbar$；$☯$ 是 $\xi$ 函数的无量纲谱常数（README 的“相变量子”），只在 `(8.1)` 的 $(u,p_u)$ 对中经 $p_u=v_\tau/☯$ 进入，不替代 $\hbar$。
 
 **依据**：存在者维持自身须每刻重定"我在哪／我将去哪"；(1.2) 说二者不可同时定到零，故 (1.2) 是再生产的最小代价。
 
@@ -180,9 +182,9 @@ $$\text{二次型基态}\ \Rightarrow\ \langle X_i^2\rangle_0=\frac{☯}{2m\omeg
 
 **前件**：环 1 的后件——基态方差 (1.3) 已含一个频率 $\omega$，需被"某种集体模式"承担。
 
-$$\Delta\varepsilon(\mathbf r,t)=\sum_{\mathbf q}\sqrt{\frac{☯}{2\rho_m\omega_{\mathbf q}}}\bigl(b_{\mathbf q}+b^\dagger_{-\mathbf q}\bigr)e^{i\mathbf q\cdot\mathbf r} \tag{2.1}$$
+$$\Delta\varepsilon(\mathbf r,t)=\sum_{\mathbf q}\sqrt{\frac{\hbar}{2\rho_m\omega_{\mathbf q}}}\bigl(b_{\mathbf q}+b^\dagger_{-\mathbf q}\bigr)e^{i\mathbf q\cdot\mathbf r} \tag{2.1}$$
 
-**依据**：根号内 $\sqrt{☯/2\rho_m\omega}$ 与 (1.3) **逐位相同**，不是另设系数。
+**依据**：根号内 $\sqrt{\hbar/2\rho_m\omega}$ 与 (1.3) **逐位相同**，不是另设系数。
 
 **后件**：几何自由度；没有它，环 3 的"角"没有载体。
 
@@ -216,9 +218,9 @@ $$\text{只有梯度生产差异}:\ \nabla P=0\ \Rightarrow\ \varepsilon\ \text{
 
 **前件**：环 3 给的 $\varepsilon$ 是确定值；若它真是常数，环 5 的钟速全同，后面全部不发生。
 
-$$\varepsilon_e=\varepsilon^{(0)}_e+\Delta\varepsilon_e,\qquad \langle(\Delta\varepsilon_e)^2\rangle_T=\sum_k G_{ek}^2\frac{☯}{2\rho_m\omega_k}\Bigl[1+2n_B(\omega_k)\Bigr],\quad n_B=\frac{1}{e^{☯\omega_k/k_BT}-1} \tag{4.1}$$
+$$\varepsilon_e=\varepsilon^{(0)}_e+\Delta\varepsilon_e,\qquad \langle(\Delta\varepsilon_e)^2\rangle_T=\sum_k G_{ek}^2\frac{\hbar}{2\rho_m\omega_k}\Bigl[1+2n_B(\omega_k)\Bigr],\quad n_B=\frac{1}{e^{\hbar\omega_k/k_BT}-1} \tag{4.1}$$
 
-**依据**：$G_{ek}$ 是"简正坐标 → 亏角"的几何投影，不含 $☯$。**全链 $☯$ 的唯一进入点。**方括号里的 $[1+2n_B]$ 是零点项加热占据项：$T\to0$ 时退回 $\frac{☯}{2\rho_m\omega}$，$T$ 升高时涨落随占据数增长。**全链只有这里含 $T$**——判据的一切温度依赖都由此进入。
+**依据**：$G_{ek}$ 是"简正坐标 → 亏角"的几何投影，不含 $\hbar$。**全链 $\hbar$ 在 (1.2) 进入、在此承接。**方括号里的 $[1+2n_B]$ 是零点项加热占据项：$T\to0$ 时退回 $\frac{\hbar}{2\rho_m\omega}$，$T$ 升高时涨落随占据数增长。**全链只有这里含 $T$**——判据的一切温度依赖都由此进入。
 
 **后件**：$\varepsilon$ 有方差 ⇒ 钟速有差 ⇒ 环 5 能发生；方差随 $T$ 单调增 ⇒ 判据随 $T$ 变 ⇒ $T_c$ 有来源。
 
@@ -356,7 +358,7 @@ $$\Delta u_i\cdot\Delta v_{\tau,j}\ \ge\ \frac{☯}{2}\,|C_{ij}| \tag{8.3}$$
 
 $$[\hat u_G,\textstyle\sum_j v_\tau^{(j)}]=i☯,\qquad [\hat u_G,v_\tau^{(j)}]=i☯/N \tag{8.4}$$
 
-**依据**：(1.2) 从单点分到节点对；(8.3) 由 Robertson 不等式直接代入。
+**依据**：单点 $[\hat u_i,\hat p_{u,j}]=i\delta_{ij}$ 与 $p_u=v_\tau/☯$ 给 (8.1) 的逐点形式（DNR 为【构造假设】）；(8.3) 由 Robertson 不等式直接代入。
 
 **后件**：关联矩阵 $C_{ij}$，且 (8.2) 保证"均匀模是精确本征"——环 9 的方差归零由此成立。
 
@@ -392,7 +394,7 @@ $$\langle(\delta C_{ij})^2\rangle=2\kappa_f^2\sigma^2\bigl(1-\rho_{ij}\bigr) \ta
 
 $$H_{\rm int}=g\sum_{\langle ij\rangle}\hat n_{ij}\,\Delta\varepsilon_{ij},\quad \Delta\varepsilon^*=-\frac{g\,n}{\kappa}\ \Rightarrow\ V_{ij}=-\frac{g^2}{\kappa_{ij}} \tag{10.1}$$
 
-$$\kappa_{ij}=\frac{☯\omega_{ij}}{2\langle(\Delta\ell_{ij})^2\rangle_0}\ \Longrightarrow\ |V_{ij}|=\frac{4g^2\sigma^2(1-\rho_{ij})}{☯\omega_{ij}} \tag{10.2}$$
+$$\kappa_{ij}=\frac{\hbar\omega_{ij}}{2\langle(\Delta\ell_{ij})^2\rangle_0}\ \Longrightarrow\ |V_{ij}|=\frac{4g^2\sigma^2(1-\rho_{ij})}{\hbar\omega_{ij}} \tag{10.2}$$
 
 $$\lambda_i=N(0)\sum_j|V_{ij}| \tag{10.3}$$
 
@@ -1278,7 +1280,7 @@ $$\text{危机}\ \Longrightarrow\ \text{三条抹平通道全封}\ \Longrightarr
 
 ## 10. 推论
 
-**推 1（$☯$ 进出三次，最终线性）**：(4.1) 进入、(10.2) 相消、(目标.2) 以 $\hbar\omega_{\log}$ 重现 → $T_c$ 线性于作用量子，非本质奇点。**限定**：末段引的 (目标.2) 是外来式（06 DM.8），故本推论属**目标级**，不是链内推论；它成立的前提是那一步推出来。
+**推 1（$\hbar$ 进出三次，最终线性）**：(4.1) 进入、(10.2) 相消、(目标.2) 以 $\hbar\omega_{\log}$ 重现 → $T_c$ 线性于作用量子，非本质奇点。**限定**：末段引的 (目标.2) 是外来式（06 DM.8），故本推论属**目标级**，不是链内推论；它成立的前提是那一步推出来。
 
 **推 2（绝对标度只缺一个频率）**：全链唯一带量纲对象是 $\omega_{\log}$；缺的是一个频率，不是一类公设。**限定**：$\omega_{\log}$ 的定义在目标区（(目标.3)），故本推论同属目标级。
 
@@ -1325,7 +1327,7 @@ $$\bigl(\exists D_i:\ \ell_e^{(D_i)}=0\bigr)\ \wedge\ \bigl(p_{\rm sync}<p_{\rm 
 | 审-5 | 环 18 | 两个上限被混用：几何上限（键渗流 $p_c=1/2$，仅 2D）与资源上限（电子密度被分完，全维度）。3D 无几何饱和，若以几何上限充当无处可扩，扩大在 3D 无法终止 | 口径混用 |
 | 审-6 | 环 17 | 环 15 给 $p_{\rm pair}(T)$，环 17 要 $p(t)$；符号相同、物理不同（降温路径与体系自身扩大） | 变量错位 |
 | 审-7 | 环 11 | 把电子密度当作配对荷的来源，会把三处来源不同的"2"（$2e$、$\zeta(-2)$、$N(0)$）压成同一个数 | 假连接 |
-| 审-10 | 环 4 | (4.1) 若只保留零点项 $\frac{☯}{2\rho_m\omega}$，则它与 $T$ 无关 ⇒ 判据全都不随 $T$ 变 ⇒ $T_c$ 只有符号、无来源；补入热占据 $[1+2n_B(\omega_k)]$ 后 $T$ 才有唯一入口；但被占据的模谱截断位置未定，数值仍不可算 | 缺口已补、数值仍空 |
+| 审-10 | 环 4 | (4.1) 若只保留零点项 $\frac{\hbar}{2\rho_m\omega}$，则它与 $T$ 无关 ⇒ 判据全都不随 $T$ 变 ⇒ $T_c$ 只有符号、无来源；补入热占据 $[1+2n_B(\omega_k)]$ 后 $T$ 才有唯一入口；但被占据的模谱截断位置未定，数值仍不可算 | 缺口已补、数值仍空 |
 | 审-11 | 环 19／目标区 | **相变的热力学身份未写**：链给的锚（$\ell_e=0$、$\mathcal H$ 冻结）是几何与动力学条件，不是自由能非解析点；有序参量 $\varphi$ 与 $f(T,P,B;\varphi)$ 均无。故"外参影响相变"目前只能落成"外参影响判据"，$T_c(P,B,E)$ 只到形状与方向。**无测度的后果**：以 $\Delta F^\ddagger$ 或约束熵写的相变概率（成核型／约束满足型）只有形式没有数，不能作 $T_c$ 判据（§9.A(七)）；渗流型概率只给 $T^{\rm perc}_{\rm anch}$（`M8`） | 层级错位 |
 | 审-13 | 环 5／环 23 | (5.3b) 的"最小环生成整个环路空间"只在**单连通平面**成立；材料带孔时 $\pi_1$ 非平凡，须补环绕生成元的和乐；三维的面数账未核；有限样品（0.2 的读数层）下 $\partial D_i$ 为开，"闭环"定义要改 | 适用范围未划 |
 | 审-12 | 环 22／环 19 | **局域锚与全局渗流的并存性未证**：$\ell_e^{(D_i)}=0$ 是逐域条件（尺度 $n_{\rm eff}$），$p_{\rm sync}>p_{\rm c}$ 是全局条件（尺度 $L^2$）；二者能否同时满足，决定"未扩完即相变"这条途径是否成立。缺它，推 11 只能给方向与可检验判断，给不出概率 | 尺度错位 |
