@@ -24,7 +24,7 @@ S07 = os.path.join(ROOT, "07_经验检验")
 TAIJI = 0.02309570897           # ☯ = ξ'(1)/ξ(1)，D008 §3 / D005 §7.1
 LAM_C = 1.316022911308          # Mathieu 临界 λ_c，D019 §5
 I_DYN = 5.0 / 3.0               # Dynkin 指数比 I=5/3，D014 §5
-KAPPA = (31 + TAIJI) / 30.0     # κ=(31+☯)/30，D030 §11.9
+KAPPA = (31 + TAIJI) / 30.0     # κ=(31+☯)/30，D057 §11.9
 
 
 def causal_dag():
@@ -33,7 +33,7 @@ def causal_dag():
         {"id": "lambda_c", "label": "Mathieu 临界 λ_c", "role": "谱因子", "source": "D019 §5"},
         {"id": "taiji", "label": "相变量子 ☯", "role": "谱因子", "source": "D008 §3"},
         {"id": "c_1", "label": "第一耦级 𝔠₁=1/4+γ₁²", "role": "谱因子", "source": "D008 §3"},
-        {"id": "kappa", "label": "谱修正 κ=(31+☯)/30", "role": "谱修正", "source": "D030 §11.9"},
+        {"id": "kappa", "label": "谱修正 κ=(31+☯)/30", "role": "谱修正", "source": "D057 §11.9"},
         {"id": "m_p", "label": "质子质量 m_p", "role": "实验输入", "source": "D019"},
         {"id": "h", "label": "ℏc", "role": "常数", "source": "D019"},
         {"id": "GN", "label": "牛顿引力常数 G_N", "role": "结果", "source": "D014 §5"},
@@ -285,17 +285,17 @@ if __name__ == "__main__":
         w = csv.writer(f)
         w.writerow(["exp_id", "target_gap", "phenomenon", "independent_variable", "dependent_variable",
                     "cm_prediction_source", "control", "data_source", "status"])
-        w.writerow(["E1", "G15", "同位素效应", "同位素质量 M", "主/次结构谱间隙差 ΔE", "D030 §11（未闭合）",
+        w.writerow(["E1", "G15", "同位素效应", "同位素质量 M", "主/次结构谱间隙差 ΔE", "D057 §11（未闭合）",
                     "同族非同位素样品", "ARPES/比热/穿透深度", "未闭合"])
-        w.writerow(["E2", "G21", "赝能隙相图", "掺杂/温度 (p,T)", "赝能隙 Δ_pg", "D030 §11（未闭合）",
+        w.writerow(["E2", "G21", "赝能隙相图", "掺杂/温度 (p,T)", "赝能隙 Δ_pg", "D057 §11（未闭合）",
                     "正常态拟合外推", "ARPES/STM", "未闭合"])
-        w.writerow(["E3", "G19", "和乐相位闭合", "晶胞构型", "和乐相位 φ_H≈1", "D030 §11（未闭合）",
+        w.writerow(["E3", "G19", "和乐相位闭合", "晶胞构型", "和乐相位 φ_H≈1", "D057 §11（未闭合）",
                     "平凡晶胞", "第一性/数值", "未闭合"])
         w.writerow(["E4", "G13", "BCS 渐近", "耦合 λ、德拜频率 ω_D", "T_c", "D030 §13（闭合）",
                     "弱/强耦合极限", "LeClair 型积分", "闭合（Lean 见证）"])
         w.writerow(["E5", "G22", "T_c 丛作用量交叉", "群指数 n", "T_c(n)", "D030 §2（公式完成）",
                     "单一群限制", "比热/磁穿透", "推导完成待严格化"])
-        w.writerow(["E6", "G16", "因果分辨率", "角亏密度 ρ_δ", "有效 Ricci 标量", "D030 §11（未闭合）",
+        w.writerow(["E6", "G16", "因果分辨率", "角亏密度 ρ_δ", "有效 Ricci 标量", "D057 §11（未闭合）",
                     "均匀剖分", "数值相对论类比", "未闭合"])
 
     with open(os.path.join(S07, "实验设计", "isotope_effect_protocol.md"), "w", encoding="utf-8") as f:
