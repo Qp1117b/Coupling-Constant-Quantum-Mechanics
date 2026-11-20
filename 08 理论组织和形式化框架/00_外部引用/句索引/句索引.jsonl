@@ -15891,431 +15891,431 @@
 {"doc_id": "D030", "sid": 2496, "start": 151834, "end": 151862, "kind": "prose", "text": "扩大是渗流达标后的后件，不是渗流本身（推导链环 17）。"}
 {"doc_id": "D030", "sid": 2497, "start": 151862, "end": 151938, "kind": "prose", "text": "一个可核查的结构提示是：二维闭环判据 $p_{\\rm loop}(T)$ 饱和于 $1/2$，而二维键渗流阈值 $p_c=1/2$ 恰好临界（§0.5；"}
 {"doc_id": "D030", "sid": 2498, "start": 151938, "end": 152008, "kind": "prose", "text": "座渗流 $p_c\\approx0.592746$，两者不可互换，`审-4`）——“扩大化有天花板”在模型中确有其影子，但不能外推为一般定理。"}
-{"doc_id": "D030", "sid": 2499, "start": 152010, "end": 152037, "kind": "prose", "text": "**命题⑦ 反馈越强，差异化增速越低；无处可扩时相变。"}
-{"doc_id": "D030", "sid": 2500, "start": 152037, "end": 152100, "kind": "prose", "text": "** CQM 侧可写出如下链条【分析】：反馈闭环的几何条件与相变末端的读数要求 $\\ell_e$ 趋于零（平均等速，§7.3；"}
-{"doc_id": "D030", "sid": 2501, "start": 152100, "end": 152180, "kind": "prose", "text": "推导链环 22），节点间差异方差 $\\sigma_\\ell^2$ 随之收窄；而配对强度正比于差异方差（式 DM.5–DM.6），故同一配对机制随差异枯竭而减弱；"}
-{"doc_id": "D030", "sid": 2502, "start": 152180, "end": 152257, "kind": "prose", "text": "体系要维持自身，只能把差异生产推向新节点、新尺度（扩大化）；当可接入节点耗尽（渗流饱和）、差异增速趋于零，同一机制失效，只能以相变（层级跃迁）重建差异源。"}
-{"doc_id": "D030", "sid": 2503, "start": 152259, "end": 152313, "kind": "quote", "text": "> **必须保留的限定**：CQM 现有模型里锚核只固定固有时流速的**静态均值**，不冻结涨落的空间差异；"}
-{"doc_id": "D030", "sid": 2504, "start": 152313, "end": 152344, "kind": "quote", "text": "“反馈抹平全部差异”是一个**极限情形**，不是现有方程的解。"}
-{"doc_id": "D030", "sid": 2505, "start": 152344, "end": 152373, "kind": "quote", "text": "因此⑦是研究纲领性的读法，不是已推出的动力学定理【待推】。"}
-{"doc_id": "D030", "sid": 2506, "start": 152375, "end": 152460, "kind": "prose", "text": "社会侧的对照只作外部参照：马克思关于利润率趋向下降、资本有机构成提高与危机问题的分析（《资本论》第三卷第三篇），与本条共享“反馈增强—差异收窄—扩大化—危机”的叙述骨架；"}
-{"doc_id": "D030", "sid": 2507, "start": 152460, "end": 152505, "kind": "prose", "text": "这是**结构同构**，不是同一机制，也不能用经济学命题替代 $T_c$ 判据【外部对照】。"}
-{"doc_id": "D030", "sid": 2508, "start": 152507, "end": 152517, "kind": "prose", "text": "**危机 ≠ 相变。"}
-{"doc_id": "D030", "sid": 2509, "start": 152517, "end": 152598, "kind": "prose", "text": "** 无处可扩只标志旧机制失效、体系开始瓦解—重组，是 L1 位上的必要条件（$\\dot{\\mathcal H}\\to0$，残余仍在），不是相变本身，也不是门槛。"}
-{"doc_id": "D030", "sid": 2510, "start": 152598, "end": 152678, "kind": "prose", "text": "相变以原子化、先锋队、同步振荡为条件（各自必要、合起来仍不充分），且仍具几率性：同步是几率事件（§7.3），$p_{\\rm sync}=p_c$ 的等价性未证。"}
-{"doc_id": "D030", "sid": 2511, "start": 152678, "end": 152717, "kind": "prose", "text": "必然性在于——若相变发生，这些环节必须已经具备；偶然性在于——齐备也未必发生。"}
-{"doc_id": "D030", "sid": 2512, "start": 152717, "end": 152740, "kind": "prose", "text": "据此排除机械唯物主义式的“必然相变”【分析】。"}
-{"doc_id": "D030", "sid": 2513, "start": 152742, "end": 152767, "kind": "heading", "text": "### 12.7.4 存在分化与数论极限（⑧–⑨）"}
-{"doc_id": "D030", "sid": 2514, "start": 152769, "end": 152782, "kind": "prose", "text": "**⑧ 引力是存在论前提。"}
-{"doc_id": "D030", "sid": 2515, "start": 152782, "end": 152848, "kind": "prose", "text": "** 这与 `01 核心/引力存在论前提`、§1.1“两种引力”、§4.2“亏角不受 $G_N$ 限制”的既有口径一致【框架基础】。"}
-{"doc_id": "D030", "sid": 2516, "start": 152848, "end": 152894, "kind": "prose", "text": "限定：此处的“前提”是因果限制场/存在论条件，不是第五种力；超导链不引入 $G_N$ 数值。"}
-{"doc_id": "D030", "sid": 2517, "start": 152896, "end": 152942, "kind": "prose", "text": "**⑨ 固有时流速差异的历史总和度量分化程度；分化的极限是质数关联；同步振荡与黎曼零点出现；"}
-{"doc_id": "D030", "sid": 2518, "start": 152942, "end": 152956, "kind": "prose", "text": "量变质变在超导处到达临界点。"}
-{"doc_id": "D030", "sid": 2519, "start": 152956, "end": 152958, "kind": "prose", "text": "**"}
-{"doc_id": "D030", "sid": 2520, "start": 152960, "end": 152980, "kind": "table", "text": "| 环节 | CQM 对象 | 状态 |"}
-{"doc_id": "D030", "sid": 2521, "start": 152981, "end": 152997, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2522, "start": 152998, "end": 153196, "kind": "table", "text": "| 历史总和 | $\\mathsf H(t)=(\\mathcal H_{ij}(t))_{i,j\\in V_t}$，$\\mathcal H_{ij}(t)=\\int_0^t(v_{\\tau,i}-v_{\\tau,j})dt'$（§0.3 漂移定理 T1）是全对本体对象；投影 $\\mathcal T$、$\\mathcal D$、$\\hat\\mu_t$、$R_n$（§0.6） | 【框架基础】 |"}
-{"doc_id": "D030", "sid": 2523, "start": 153197, "end": 153298, "kind": "table", "text": "| 记忆侧读数 | $\\mathcal I_K(t)=\\int_0^tK\\,dt'$ 是全对族 $\\mathsf H$ 经测度 $\\mu_t$ 的体现/读数，不是数值相等 | 【构造】；M10 未证 |"}
-{"doc_id": "D030", "sid": 2524, "start": 153299, "end": 153400, "kind": "table", "text": "| 质数形式 | 超导态 $K(t)=e^{-t/2}(\\psi(e^t)-e^t)$，谱侧为零点 $\\{e^{i\\gamma_n t}/\\rho_n\\}$（式 DM.20） | 【构造】；条件严格 |"}
-{"doc_id": "D030", "sid": 2525, "start": 153401, "end": 153461, "kind": "table", "text": "| 同步振荡 | 零点模式 $e^{i\\gamma_n t}$ 的等速率振荡 | 【框架基础（谱表示条件于 RH）】 |"}
-{"doc_id": "D030", "sid": 2526, "start": 153462, "end": 153546, "kind": "table", "text": "| 量变质变 | $T_c$ 是刚度/软模事件；$\\mathcal I_K$ 与 $K^{\\rm SC}$ 平台是量变侧的体现 | 【框架基础】；$D_c$ 未定义 |"}
-{"doc_id": "D030", "sid": 2527, "start": 153548, "end": 153597, "kind": "prose", "text": "读法：差异的历史总和越大，存在的分化越深；分化的不可再分单元是质数（数论原子）；其谱侧读数是零点；"}
-{"doc_id": "D030", "sid": 2528, "start": 153597, "end": 153681, "kind": "prose", "text": "“量变”是全对族 $\\mathsf H$ 与 $\\mathcal I_K$ 的累积（$\\mathcal D$ 的三项平衡），“质变”是 $T_c$ 处的刚度/软模事件。"}
-{"doc_id": "D030", "sid": 2529, "start": 153683, "end": 153710, "kind": "quote", "text": "> **硬限定**：不能写“黎曼零点就是相变临界点”。"}
-{"doc_id": "D030", "sid": 2530, "start": 153710, "end": 153780, "kind": "quote", "text": "正确链路是“GL(5) 固定层级的 L 函数非平凡零点谱经紧化约束方程进入同步算符谱”（`04` 规范重组 §5.3 的 Lean 判定）；"}
-{"doc_id": "D030", "sid": 2531, "start": 153780, "end": 153856, "kind": "quote", "text": "“质变的位置”由刚度条件定，不由 $\\mathcal I_K$ 的某个临界值 $D_c$ 定（$D_c$ 未定义，§0.6）【框架基础 + 哲学诠释】。"}
-{"doc_id": "D030", "sid": 2532, "start": 153856, "end": 153880, "kind": "quote", "text": "黎曼猜想本身仍是未证命题，本读法不改变这一状态。"}
-{"doc_id": "D030", "sid": 2533, "start": 153882, "end": 153903, "kind": "heading", "text": "### 12.7.5 相变传播与共享（⑫）"}
-{"doc_id": "D030", "sid": 2534, "start": 153905, "end": 153917, "kind": "prose", "text": "**局域相变向全局传播。"}
-{"doc_id": "D030", "sid": 2535, "start": 153917, "end": 153972, "kind": "prose", "text": "** 框架已有最精确的一句话：**“局域不可能跃迁，局域只能满足条件，跃迁是全局同步事件”**（§10.2）。"}
-{"doc_id": "D030", "sid": 2536, "start": 153972, "end": 154039, "kind": "prose", "text": "赝能隙被读作“局域和乐平庸化已满足、全局同步尚未完成”的中间态（$K^{\\rm mid}$，§0.6），即“已经预备、尚未统一行动”。"}
-{"doc_id": "D030", "sid": 2537, "start": 154039, "end": 154107, "kind": "prose", "text": "外部文献中基布尔–祖雷克机制给出同样的因果结构：穿越连续相变时，因果关联区域外的子系统独立选择有序组态（附录 B.3 的 P5、P6）。"}
-{"doc_id": "D030", "sid": 2538, "start": 154107, "end": 154168, "kind": "prose", "text": "“一国革命输出”在此只对应“局域条件满足不等于全局跃迁”这一结构；它是一个政治比喻，CQM 不提供社会动力学【哲学诠释】。"}
-{"doc_id": "D030", "sid": 2539, "start": 154170, "end": 154244, "kind": "prose", "text": "**先锋队（组织学类比）**：若把先满足局域条件、并连接其他区域的高曲率区/晶界骨干读作“先锋队”，则赝能隙是“先锋队已形成、全局未锁定”的中间态；"}
-{"doc_id": "D030", "sid": 2540, "start": 154244, "end": 154325, "kind": "prose", "text": "先锋队的作用是提供无限簇骨架与相位相干路径、降低全局协同条件数，但不能替代全局相位刚度条件 $T_{\\rm BKT}/T_\\theta$（渗流只给连通域，M8）。"}
-{"doc_id": "D030", "sid": 2541, "start": 154325, "end": 154361, "kind": "prose", "text": "原子化—先锋队—同步振荡是相变的条件集合：三者各自必要，合起来仍不充分。"}
-{"doc_id": "D030", "sid": 2542, "start": 154361, "end": 154399, "kind": "prose", "text": "CQM 不含政治理论；此读法只作结构类比【哲学诠释】，不指任何具体政治组织。"}
-{"doc_id": "D030", "sid": 2543, "start": 154399, "end": 154452, "kind": "prose", "text": "对应推论 H6 见专论 `01 核心理论/CQM_核心_历史唯物主义与超导发生学.md` §5.2、§6。"}
-{"doc_id": "D030", "sid": 2544, "start": 154452, "end": 154512, "kind": "prose", "text": "另有提案把先锋队读作“先配对的岛”（平凡零点），把锚的形成读作动态锚的形成；该提案属待推、D1 未闭合，不改变本节口径。"}
-{"doc_id": "D030", "sid": 2545, "start": 154514, "end": 154526, "kind": "prose", "text": "**共享差异的历史总和。"}
-{"doc_id": "D030", "sid": 2546, "start": 154526, "end": 154719, "kind": "prose", "text": "** 物理侧已有结构桥梁：锚核内 $\\ell_e=0\\to v_{\\tau,i}=v_{\\tau,j}\\to\\mathcal H_{ij}=c_{ij}$ 全对冻结（常数不必为零）$\\to K(\\tau_i)=K(\\tau_j+c_{ij})$（式 DM.25、§0.7），即锚核内节点**共享同一谱阶梯与同一斜率**（等高不等位），$K^{\\rm SC}$ 是共享的**历史记录**；"}
-{"doc_id": "D030", "sid": 2547, "start": 154719, "end": 154754, "kind": "prose", "text": "单一平台要全对 $c_{ij}=0$，不可由锚核推出（`临-16`）。"}
-{"doc_id": "D030", "sid": 2548, "start": 154754, "end": 154815, "kind": "prose", "text": "关键限定：共享不是把差异平均掉——锚核只固定静态均值与斜率，不冻结涨落；差异本身仍是配对通道的载体（§0.3、§0.4）。"}
-{"doc_id": "D030", "sid": 2549, "start": 154815, "end": 154878, "kind": "prose", "text": "社会学中的“生产资料公有制”与人工智能中的“共享”在此只作**结构类比**：共享的是差异的历史总和，不是取消差异【哲学诠释】。"}
-{"doc_id": "D030", "sid": 2550, "start": 154878, "end": 154919, "kind": "prose", "text": "AI 侧的具体对应物尚未确定，不得以“权重共享”“数据共享”等未加论证的说法冒充。"}
-{"doc_id": "D030", "sid": 2551, "start": 154921, "end": 154943, "kind": "heading", "text": "### 12.7.6 对超导研究的可操作推论"}
-{"doc_id": "D030", "sid": 2552, "start": 154945, "end": 154980, "kind": "table", "text": "| 编号 | 推论 | 对应现有结构/缺口 | 检验方向 | 状态 |"}
-{"doc_id": "D030", "sid": 2553, "start": 154981, "end": 155007, "kind": "table", "text": "|:---|:---|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2554, "start": 155008, "end": 155119, "kind": "table", "text": "| H1 | 相变的空间不均匀性应表现为多平台/多能隙谱特征 | §0.6 $N_{\\rm comp}$、六类谱特征；G21 | 局域谱（STM/ARPES）与宏观比热、多探针记忆效应联合 | 【分析】；G21 未闭合 |"}
-{"doc_id": "D030", "sid": 2555, "start": 155120, "end": 155226, "kind": "table", "text": "| H2 | 若样品被处理到差异方差趋于零（过度均匀或强反馈），配对强度应下降 | 式 DM.5–DM.6 | 退火/均匀化系列的 $T^*$ 与 $\\Delta_0$ 对比 | 【待推】；不宣称已有数据支持 |"}
-{"doc_id": "D030", "sid": 2556, "start": 155227, "end": 155356, "kind": "table", "text": "| H3 | 赝能隙温区 $\\Delta T_{\\rm pg}=T^*-T_c$ 随不均匀度增大 | 式 DM.13；§0.6 四阶段 | 同一材料不同无序度的 $T^*$、$T_c$、$K^{\\rm mid}$ 联合测量 | 【分析】；四阶段边界未精确 |"}
-{"doc_id": "D030", "sid": 2557, "start": 155357, "end": 155444, "kind": "table", "text": "| H4 | 相变锚连通度越高，不同局域探针读出的 $K$ 平台一致性越高 | 式 DM.25；M9、M10 | 多探针记忆效应的空间关联长度 | 【待推】；数值同一未证 |"}
-{"doc_id": "D030", "sid": 2558, "start": 155445, "end": 155521, "kind": "table", "text": "| H5 | 过掺杂区差异生产饱和，$T_c$ 转入相位支并出现下降支 | 式 DM.13 的两阶段合成 | 已有相图对照 | 【分析】；不新增公式 |"}
-{"doc_id": "D030", "sid": 2559, "start": 155522, "end": 155639, "kind": "table", "text": "| H6 | 若高曲率区/晶界骨干网络被切断或稀释，局域配对与赝能隙可保留，但全局相位锁定与 $T_c$ 应被抑制 | §10.2、§0.5；M8、G21 | 颗粒超导/双晶样品的晶界连通性对照 | 【分析／待推】；不宣称已有数据 |"}
-{"doc_id": "D030", "sid": 2560, "start": 155641, "end": 155704, "kind": "prose", "text": "H2、H4 与 H6 是这张表里仅有的三个**可能被判伪**的方向；H1、H3、H5 主要是既有结构的重新表述，不构成新预言。"}
-{"doc_id": "D030", "sid": 2561, "start": 155704, "end": 155729, "kind": "prose", "text": "完整的探索方向 D1–D8 与优先级见专论 §9。"}
-{"doc_id": "D030", "sid": 2562, "start": 155731, "end": 155746, "kind": "heading", "text": "### 12.7.7 禁止写法"}
-{"doc_id": "D030", "sid": 2563, "start": 155748, "end": 155783, "kind": "list", "text": "1. 不能写“历史唯物主义证明了超导机制”；只能写“提供发生学诠释”。"}
-{"doc_id": "D030", "sid": 2564, "start": 155784, "end": 155816, "kind": "list", "text": "2. 不能写“阶级/分工决定 $T_c$”；社会范畴不是物理量。"}
-{"doc_id": "D030", "sid": 2565, "start": 155817, "end": 155849, "kind": "list", "text": "3. 不能写“黎曼零点 = 相变临界点”；须经紧化约束方程链路。"}
-{"doc_id": "D030", "sid": 2566, "start": 155850, "end": 155909, "kind": "list", "text": "4. 不能写“大模型参数必须无限增加”；外部文献只给幂律经验，且存在度量依赖的争议（附录 B.3 的 P9–P11）。"}
-{"doc_id": "D030", "sid": 2567, "start": 155910, "end": 155939, "kind": "list", "text": "5. 不能写“公有制 = 超导”；这是结构类比，不是同一。"}
-{"doc_id": "D030", "sid": 2568, "start": 155940, "end": 155971, "kind": "list", "text": "6. 不升级 M1/M9/M10/G21/G22 的任何状态。"}
-{"doc_id": "D030", "sid": 2569, "start": 155972, "end": 156024, "kind": "list", "text": "7. 不能写“无处可扩必然相变”；危机只是瓦解—重组的开始，原子化—先锋队—同步振荡的条件集合仍不充分。"}
-{"doc_id": "D030", "sid": 2570, "start": 156026, "end": 156044, "kind": "heading", "text": "## 13. 严格性缺口表（G 类）"}
-{"doc_id": "D030", "sid": 2571, "start": 156046, "end": 156067, "kind": "prose", "text": "框架中 G9–G22 环节的闭合状态一览："}
-{"doc_id": "D030", "sid": 2572, "start": 156069, "end": 156085, "kind": "table", "text": "| 缺口 | 内容 | 状态 |"}
-{"doc_id": "D030", "sid": 2573, "start": 156086, "end": 156103, "kind": "table", "text": "|:---|:---|:---:|"}
-{"doc_id": "D030", "sid": 2574, "start": 156104, "end": 156147, "kind": "table", "text": "| **G9** | 曲率截断共振窗口 $\\sigma$ 的来源与标定 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2575, "start": 156148, "end": 156243, "kind": "table", "text": "| **G10** | 闭环条件函数的动力学形式。几何侧约束已由单值性给出：$\\prod_kr_k=1$（§7.3）；动力学形式（$r_k$ 随时间演化如何满足该约束）未闭合 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2576, "start": 156244, "end": 156314, "kind": "table", "text": "| **G11** | $\\mathcal{D}_{\\text{lattice}}$ 从正四单纯形组合构型到声子谱的具体推导 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2577, "start": 156315, "end": 156379, "kind": "table", "text": "| **G12** | 引力拓扑因子 $\\mathcal{T}_{\\text{grav}}$ 的完整度规依赖形式 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2578, "start": 156380, "end": 156463, "kind": "table", "text": "| **G13** | BCS 积分方程 $\\tanh\\to$ 对数渐近（“积分→$T_c$”） | 闭合（`bcsTcFromIntegral_solved`） |"}
-{"doc_id": "D030", "sid": 2579, "start": 156464, "end": 156874, "kind": "table", "text": "| **G14** | 中子缺陷谱判据的完整闭合——**非对角元形式**：$D(\\delta)$ 的 $(3,4)/(4,3)$ 元（$\\alpha_4$ 末端）为 $-\\delta$，$\\det D = 8 - 3\\delta^2$，正定条件 $\\lvert\\delta\\rvert < \\sqrt{8/3}$。Lean 形式化全部完成（`SPAF.lean` G14 节）：对称性/Hermite/δ=1 退化、LDL 二次型分解、det 闭式、正向/反向/双向正定判据（`neutronDefectCartan_posDef_iff_abs_lt_sqrt_eight_thirds`）、正定窗口 $\\lvert\\delta\\rvert<\\sqrt{8/3}$、行列式匹配（$\\det C_n(\\varepsilon(\\delta)) = \\det D(\\delta)$）；微扰质量见 §2.3 补注 | 闭合 |"}
-{"doc_id": "D030", "sid": 2580, "start": 156875, "end": 157082, "kind": "table", "text": "| **G15** | 主次结构谱间隙差→同位素效应映射 | 未闭合（行内未闭合项）：$\\delta(Z,N)$ 函数形式的来源（现取「满足全部物理条件的最简候选形式」，**非**从 $SU(5)$ 重组实现动力学导出，§11.8）；$T_c\\propto M^{-\\alpha}$ 中「$T_c$ 的质量敏感度 = $\\delta$ 的敏感度」与 $Z\\approx M/2$ 两处未给出（专题 §11.8） |"}
-{"doc_id": "D030", "sid": 2581, "start": 157083, "end": 157133, "kind": "table", "text": "| **G16** | 因果分辨率的形式化（Regge 亏角密度→Ricci 标量） | 未闭合 |"}
-{"doc_id": "D030", "sid": 2582, "start": 157134, "end": 157309, "kind": "table", "text": "| **G18** | §12 主丛曲率机制关键参数的第一性提取。曲率载体切换为 LQG 铰链亏角后，原基于顶点角亏的定量参数（$C^2=2/3$、$\\Delta\\varepsilon_0$ 计算链、$K_{\\text{eff}}$、$K_0$ 前置因子、自由能 $T_c$ 链）失效，整体待推 W-3。定性两阶段判据不受影响。 | 待推 W-3 |"}
-{"doc_id": "D030", "sid": 2583, "start": 157310, "end": 157556, "kind": "table", "text": "| **G19** | §10.1 和乐相位闭合条件 $\\mathcal{H}_{ij} = \\exp(i\\oint_C \\omega_{\\alpha_i\\alpha_j}) \\approx 1$ 中“$\\approx 1$”的**容差标定**：容差与温度、向错芯曲率 $\\varepsilon$、相干长度 $\\xi_{coher}$ 的定量关系；有效窗口宽度 $\\varepsilon \\xi_{coher} - \\Delta\\phi_{thermal}(T)$ 的严格推导 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2584, "start": 157557, "end": 157695, "kind": "table", "text": "| **G21** | §10.2 赝能隙相图：和乐平庸化条件空间不均匀满足率到可观测量（ARPES 谱 $A(\\mathbf{k},\\omega)$、STM 局域态密度）的**映射关系**。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |"}
-{"doc_id": "D030", "sid": 2585, "start": 157696, "end": 157944, "kind": "table", "text": "| **G22** | §12.3 临界温度 $T_c$ 作为“正常态与超导态丛作用量交叉”的构造推导。定性结构（涨落温度依赖 tanh 律、资格条件、丛作用量竞争）保留；定量 $T_c$ 闭式及其物理基座（$V_{\\text{亏角激活}}$ 形式、映射 $\\Phi$、自由能 $F_n$ 显式作用量、制备历史依赖）随载体切换为铰链亏角而待推 W-3；Lean 侧 `TransitionTemperatureCQM` 只给条件闭式（给定配对阈值，不作 G22 物理闭合）。 | 待推 W-3 |"}
-{"doc_id": "D030", "sid": 2586, "start": 157946, "end": 158029, "kind": "quote", "text": "> **表注**：本表编号 G9–G22 连号列出；G17（FG→GR 连续极限退化定理）与 G20-ext（两质子耦合阈值）均已闭合、不属缺口表编号，故不列于本表。"}
-{"doc_id": "D030", "sid": 2587, "start": 158031, "end": 158266, "kind": "quote", "text": "> **G18 补注**：缺口 G18 中“$\\delta_{\\text{intrinsic}}$ 需 DFT 贝里曲率”的前提，其层级基础是四层 FG 剖分与分子同步算符 $\\hat{\\mathcal{S}}_{\\text{mol}} = V_0 + L_{\\text{mol}}$（`07 精细引力（FG）/FG_核心理论.md` §6.1，分子 FG 谱的可观测含内禀亏角）：分子 FG 谱把这部分几何量吸收为自身谱结构，逻辑上消除对 DFT 贝里曲率的外部依赖。"}
-{"doc_id": "D030", "sid": 2588, "start": 158266, "end": 158295, "kind": "quote", "text": "耦合参数第一性化缺口仍开放（G18 本体，待推 W-3）。"}
-{"doc_id": "D030", "sid": 2589, "start": 158297, "end": 158319, "kind": "heading", "text": "### 13.1 差异-记忆核断点（M 类）"}
-{"doc_id": "D030", "sid": 2590, "start": 158321, "end": 158373, "kind": "prose", "text": "新核心理论（§0）的未证环节单列如下；它们不改变 G9–G22 的编号与状态，也不把任何构造升级为已证。"}
-{"doc_id": "D030", "sid": 2591, "start": 158375, "end": 158391, "kind": "table", "text": "| 断点 | 内容 | 状态 |"}
-{"doc_id": "D030", "sid": 2592, "start": 158392, "end": 158408, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2593, "start": 158409, "end": 158600, "kind": "table", "text": "| **M1** | Sierra-CQM 物理同一：$L_n=2\\pi n/\\gamma_n$ 能否从 P1/P2/A12 推出；记忆核 $K(t)$ 与同步算符本征值 $\\lambda_n(T)$ 的频率集合是否同一（零温极限是否为 $\\{\\gamma_n\\}$） | 未证；旧 §11.6 的 $\\lambda_n(T)$ 通道与 §0.8 的 $K(t)$ 通道不得互替 |"}
-{"doc_id": "D030", "sid": 2594, "start": 158601, "end": 158693, "kind": "table", "text": "| **M2** | 配对通道识别：节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ 与声子配对通道的识别 | 未证；§0.9 条件退化的三步之一 |"}
-{"doc_id": "D030", "sid": 2595, "start": 158694, "end": 158748, "kind": "table", "text": "| **M3** | 态密度识别：$N_i(0)$ 与电子态密度 | 未证；§0.9 条件退化的三步之一 |"}
-{"doc_id": "D030", "sid": 2596, "start": 158749, "end": 158815, "kind": "table", "text": "| **M4** | 频率识别：$\\omega_i$ 与 $\\omega_D$/声子频率 | 未证；§0.9 条件退化的三步之一 |"}
-{"doc_id": "D030", "sid": 2597, "start": 158816, "end": 158912, "kind": "table", "text": "| **M5** | 差异函数：$C_{ij}=f(\\varepsilon_i-\\varepsilon_j)$ 的 $f$ 只取领头阶，显式形式未定 | 未定；不改变代数结构，影响定量预测 |"}
-{"doc_id": "D030", "sid": 2598, "start": 158913, "end": 159065, "kind": "table", "text": "| **M6** | 键刚度：$J_{ij}=J_0(\\langle(\\delta C_{ij})^2\\rangle/\\langle(\\delta C)^2\\rangle_{\\rm ref})\\cos\\mathcal H_{ij}$ 是构造组装，未从几何第一性推出 | 未证；式 (DM.9) 是构造 |"}
-{"doc_id": "D030", "sid": 2599, "start": 159066, "end": 159175, "kind": "table", "text": "| **M7** | 非高斯—相位阻挫识别：$\\kappa_3\\ne0$ → $\\mathcal H\\ne0$ → $K_{\\rm global}\\ne0$ 未给出 | 未证；式 (DM.19) 只是构造，不是判据 |"}
-{"doc_id": "D030", "sid": 2600, "start": 159176, "end": 159294, "kind": "table", "text": "| **M8** | 两阶段合成：$p_{\\rm sync}=p_c$ 未证；$p_{\\rm pair},t,p_c$ 的材料依赖未算；§11 $T_c$ 闭式与 $T^*/T_c$ 的映射未建立 | 未证；§11 闭式只作幅度通道 |"}
-{"doc_id": "D030", "sid": 2601, "start": 159295, "end": 159437, "kind": "table", "text": "| **M9** | 锚点—序参量映射：$K^{\\rm SC}$ 与旧结构群序参量/同步算符本征值 $\\lambda_n(T)$ 的映射未建立 | 结构桥梁已建立（§0.7：锚核内全对冻结 ⇒ 各点 $K$ 等高不等位、共享谱阶梯）、数值同一待独立复现；§0.7 锚点描述仍是构造 |"}
-{"doc_id": "D030", "sid": 2602, "start": 159438, "end": 159731, "kind": "table", "text": "| **M10** | 全对历史—记忆核积分映射：$\\mathcal I_K=\\int K\\,dt$ 是全对族 $\\mathsf H=(\\mathcal H_{ij})$ 经节点对测度 $\\mu_t$ 的**记忆侧读数**，二者是体现/识别关系，不是数值相等；不得写成 $\\mathcal I_K=\\mathcal H_{ij}$，也不得把全体 $\\mathcal H_{ij}$ 逐对相加当 $\\mathcal I_K$ | 结构桥梁已建立（§0.6 DM.25 逐对式＋§0.6 全对测度 $\\hat\\mu_t$、$R_n$）、定量映射待独立复现；§0.6 环节⑧；`临-24` |"}
-{"doc_id": "D030", "sid": 2603, "start": 159733, "end": 159814, "kind": "quote", "text": "> **表注**：M1–M4、M7–M10 在 §0 已逐处引用；M5、M6 为 §0 构造环节的显式编号，登记目的是避免把“方差给出核”“核给出刚度”读成推导。"}
-{"doc_id": "D030", "sid": 2604, "start": 159814, "end": 159866, "kind": "quote", "text": "M 表不替代 G 表：G21（赝能隙→谱函数）与 G22（旧 $T_c$ 丛作用量交叉）仍按原状态保留。"}
-{"doc_id": "D030", "sid": 2605, "start": 159868, "end": 159888, "kind": "heading", "text": "## 14. 与 Lean 形式化的对应"}
-{"doc_id": "D030", "sid": 2606, "start": 159890, "end": 159951, "kind": "prose", "text": "超导形式化库位于 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/`。"}
-{"doc_id": "D030", "sid": 2607, "start": 159951, "end": 159963, "kind": "prose", "text": "涉及的形式化对象与模块："}
-{"doc_id": "D030", "sid": 2608, "start": 159965, "end": 159984, "kind": "table", "text": "| 模块 | 对应层 | 关键对象 |"}
-{"doc_id": "D030", "sid": 2609, "start": 159985, "end": 160001, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2610, "start": 160002, "end": 160053, "kind": "table", "text": "| `Ontology` | §1 本体论 | 有限本体公理、RQM 唯物化、电子作为基态耦合对应 |"}
-{"doc_id": "D030", "sid": 2611, "start": 160054, "end": 160128, "kind": "table", "text": "| `TransitionTemperature` | §11.2 $T_c$ | `criticalTemperature`、BCS 精确常数 |"}
-{"doc_id": "D030", "sid": 2612, "start": 160129, "end": 160295, "kind": "table", "text": "| `TransitionTemperatureCQM` | §11.2 $T_c$（条件闭式；不作 G22 物理闭合） | 相变量子 $☯$、玻色恒等式、阈值交叉给 $T_c=\\Omega_0/(2\\,\\mathrm{artanh}\\,\\mathrm{ratio}^2)$；丛作用量交叉 $F_1=F_2$ 仍是待推的物理基座 |"}
-{"doc_id": "D030", "sid": 2613, "start": 160296, "end": 160372, "kind": "table", "text": "| `Reduction` | §11 温度依赖（BCS 退化与还原） | 能隙方程、$T_c$ 方程、普适能隙比、同位素 $\\alpha=1/2$ |"}
-{"doc_id": "D030", "sid": 2614, "start": 160373, "end": 160474, "kind": "table", "text": "| `CartanSuperconductivity` | §9 库珀对跃迁（A4 谱分解与序参量） | A4 谱分解、序参量正性（`superconductingOrderTensor_pos`） |"}
-{"doc_id": "D030", "sid": 2615, "start": 160475, "end": 160562, "kind": "table", "text": "| `FirstPrinciples` | §11.3 统计极限 | A4→晶格声子→耦合→能隙→$T_c$；`gapIntegral_pr`；再生产维持（锁定因子衰减） |"}
-{"doc_id": "D030", "sid": 2616, "start": 160563, "end": 160621, "kind": "table", "text": "| `ElementCartan` | §2 元素层级 | 质/中子主次结构、同位素效应 $\\delta(N)$ |"}
-{"doc_id": "D030", "sid": 2617, "start": 160622, "end": 160684, "kind": "table", "text": "| `SPAF` | §2.5 晶胞路线 | 元素嘉当矩阵、因果耦合 $t_{ij}$、Regge 边长、中子缺陷谱判据 |"}
-{"doc_id": "D030", "sid": 2618, "start": 160685, "end": 160768, "kind": "table", "text": "| `MolecularGeometry` | §2.5 晶胞路线 | 分子→晶胞嘉当矩阵（链B条件）→ Regge 晶胞/亏角（链A生成）→ FG 退相干场强度 |"}
-{"doc_id": "D030", "sid": 2619, "start": 160769, "end": 160840, "kind": "table", "text": "| `BCSIntegralAsymptotic` | §11.3 | G13 闭合：`bcsTcFromIntegral_solved` |"}
-{"doc_id": "D030", "sid": 2620, "start": 160841, "end": 160976, "kind": "table", "text": "| `CouplingSpace` | §12 主丛曲率机制 | 亏角→固有时流速→耦合动量 $p_u$→不确定性 $\\Delta u\\cdot\\Delta\\varepsilon$→跃迁耦级谱 $2\\ln n$ 与资格条件→丛作用量竞争；$\\zeta(s)$ 母积分 |"}
-{"doc_id": "D030", "sid": 2621, "start": 160977, "end": 161032, "kind": "table", "text": "| `BridgeTheorems` | 跨模块桥接 | 谱间隙↔BCS↔Regge 亏角↔FG 退相干场 |"}
-{"doc_id": "D030", "sid": 2622, "start": 161034, "end": 161173, "kind": "quote", "text": "> **差异-记忆核新增模块（承接登记）**：`CrossingParadigm`（自能支 $T_c$ 交叉范式）、`DNRLink`（DNR 接口）、`GLUnified`（统一 GL 泛函）与顶层 `Superconductivity.lean` 已登记于 Lean 源码；"}
-{"doc_id": "D030", "sid": 2623, "start": 161173, "end": 161221, "kind": "quote", "text": "它们对应原探索层推导（探索稿已于 2026-11-17 全量删除），不改变本表旧映射的缺口状态。"}
-{"doc_id": "D030", "sid": 2624, "start": 161223, "end": 161232, "kind": "heading", "text": "## 15. 路线"}
-{"doc_id": "D030", "sid": 2625, "start": 161234, "end": 161242, "kind": "prose", "text": "CQM 超导理论"}
-{"doc_id": "D030", "sid": 2626, "start": 161244, "end": 161290, "kind": "quote", "text": "> 由于禁闭边界的严格化需同构黎曼猜想的证明而遥遥无期，$G_N$ 实验提升精度也遥遥无期；"}
-{"doc_id": "D030", "sid": 2627, "start": 161290, "end": 161344, "kind": "quote", "text": "超导作为最活跃的实验对象且属于涌现对象，反而是 CQM 当前最值得投入、且相对于前两者明显能够形式化的方向。"}
-{"doc_id": "D030", "sid": 2628, "start": 161346, "end": 161359, "kind": "heading", "text": "## 16. 当前开放问题"}
-{"doc_id": "D030", "sid": 2629, "start": 161361, "end": 161442, "kind": "quote", "text": "> **承接定位**：本表为旧框架的开放问题清单；其中“从黎曼零点直接推导”“必然是同步算符”等强断言为旧框架口径，当前状态以 §0 与 §13 的 M 表为准。"}
-{"doc_id": "D030", "sid": 2630, "start": 161444, "end": 161461, "kind": "table", "text": "| 优先级 | 问题 | 影响 |"}
-{"doc_id": "D030", "sid": 2631, "start": 161462, "end": 161486, "kind": "table", "text": "|--------|------|------|"}
-{"doc_id": "D030", "sid": 2632, "start": 161487, "end": 161585, "kind": "table", "text": "| 闭合 | $\\beta$ 的微观来源（离散拉普拉斯格林函数 / A4 群论） | 基本定义 $\\beta = \\frac{1}{4\\pi}\\ln\\frac{L}{a}$（系统尺寸严格确定） |"}
-{"doc_id": "D030", "sid": 2633, "start": 161586, "end": 161758, "kind": "table", "text": "| 代数推导完成、物理基座待建立 | **从$V_{\\text{element}}$到超导同步算符的显式连接**（§11.10） | 映射 $\\Phi$ 以断言式给出（$\\Phi(L_{\\text{orbital}})$ 侧无代数对应步骤）；$V_{\\text{亏角激活}}$ 的形式与涨落比例关系未推导。定量 $T_c$ 闭式待推 W-3 |"}
-{"doc_id": "D030", "sid": 2634, "start": 161759, "end": 161878, "kind": "table", "text": "| 公式齐备、推导链路多处缺失 | **完全第一性 $T_c$ 计算链**（§11.14）：曲率载体切换为铰链亏角后，原基于顶点角亏的计算链（含 $\\Delta\\varepsilon_0$ 公式）失效，待推 W-3。 | 待推 W-3 |"}
-{"doc_id": "D030", "sid": 2635, "start": 161879, "end": 162464, "kind": "table", "text": "| 高 | **$T_c$ 的制备历史依赖（记忆效应）**（§11.10）：本闭式按平衡态取值，$T_c$ 只由 $\\theta_D$、$\\varepsilon$、$\\gamma_n$、$\\Delta\\varepsilon_0$ 决定，其中 $\\Delta\\varepsilon_0$ 是唯一的状态型输入（$T_c$ 随其单调增）。实测量上同材料经不同制备给出不同 $T_c$，充分退火后收敛（Zhang–Zhou–Zhou, *Physica C* **495** (2013) 44–47, doi:10.1016/j.physc.2013.07.013；Ortlepp–Volkmann–Yamanashi, *Physica C* **500** (2014) 20–24, doi:10.1016/j.physc.2014.02.003）。代数形式在 $\\Delta\\varepsilon_0\\to\\Delta\\varepsilon_0[m]$ 下不变，平衡极限须回到原式。开放：(1) 制备量到 $\\Delta\\varepsilon_0$ 的定量映射；(2) 平衡极限的收敛判据；(3) 制备历史进入资格条件与和乐平庸化条件的时间结构 | 决定 $T_c$ 闭式的适用范围：实测量已见制备历史记忆，而该闭式在结构上无法表达该依赖（记入 G22 未闭合项） |"}
-{"doc_id": "D030", "sid": 2636, "start": 162465, "end": 162526, "kind": "table", "text": "| 最高 | 中子 $D(\\delta)$ 的代数类型（有限 / 仿射 / 双曲） | 决定核子→原子核组合算符的形式 |"}
-{"doc_id": "D030", "sid": 2637, "start": 162527, "end": 163256, "kind": "table", "text": "| 最高 | **同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现**：同步算符 $\\hat{\\mathcal{S}}$ 的本征态 = 结构群基矢 $\\lvert U(1)//\\mathbb{Z}_n\\rangle$，本征值 = 相变有效谱 $\\lambda_n(T)$（零温无亏角极限退化为黎曼零点虚部 $\\gamma_n$，同步成本，非耦级 $1/4+\\gamma_n^2$），Hilbert–Pólya 算符 $\\hat{H}_{\\text{HP}} = \\hat{\\mathcal{S}}^2 + 1/4$ 给出耦级。超导同步算符 = 结构群叠加态的谱算符 = 子结构经 FG 激活后的再现（§11.6）。相变 = 叠加态自身谱结构的本征值交叉 $\\lambda_2(T_c)=\\lambda_1(T_c)$，叠加态通过自组织退相干到本征值最低的分量，丛作用量交叉是其热力学投影。开放：(1) 热修正 $\\hat{V}_{\\text{热}}(T)$ 的显式形式；(2) 丛作用量与本征值的映射函数 $\\Phi$ 的严格构造；(3) 黎曼猜想（GL(5) 固定层级的实谱条件）→ 唯一 $T_c$ 的严格证明（若不成立，本征值离开临界线，$T_c$ 不唯一）；(4) $\\hat{H}_{\\text{HP}} = \\hat{\\mathcal{S}}^2 + 1/4$ 的严格证明；(5) 本征值用 $\\gamma_n$（非 $1/4+\\gamma_n^2$）的严格推导 | 决定相变判据的谱结构根基，超导直接是子结构的再现；黎曼猜想（GL(5) 固定层级的实谱条件）是唯一 $T_c$ 的存在论前提 |"}
-{"doc_id": "D030", "sid": 2638, "start": 163257, "end": 163654, "kind": "table", "text": "| 最高 | **共振机制：黎曼共振 → 同步共振 → 全局同步**（§11.6.1）。机制链：黎曼零点（质数分布共振频率）→ 同步算符本征值（共振体现）→ 叠加态拍频（退相干速率）→ 本征值交叉（拍频消失=同步共振）→ 共振诱导退相干（自组织到最低同步成本）→ Kuramoto 型共振传播（底空间联络传播相位相干）→ 全局同步超导相变。唯物主义条件：GL(5) 固定层级黎曼共振谱先在（前时空），FG激活+降温只利用先在规律，不创造新规律。开放：(1) 拍频与退相干速率的定量关系 $\\tau \\sim \\hbar/\\|\\lambda_m-\\lambda_n\\|$；(2) Kuramoto 临界耦合 $K_c$ 与底空间联络的精确关系；(3) 共振传播的非线性“催化”效应微观机制；(4) 从局域共振到全局同步的时空标度分析 | 决定退相干——自组织的具体机制；共振传播解释相变突变性 |"}
-{"doc_id": "D030", "sid": 2639, "start": 163655, "end": 164267, "kind": "table", "text": "| 最高 | **黎曼零点的实验验证：能级是表现，同步算符是本质**。已有实验：He et al. 2020（Phys. Rev. A **101**, 043402）单量子比特 Floquet 实验、2021（npj Quantum Information **7**, 109）囚禁离子实验——首次实验观察到黎曼零点作为准能级出现（驱动参数与 ζ 零点重合时动力学冻结）。但实验观察到的是**能级（表现）**，尚未认识到能级背后的**同步算符（本质）**。超导直接关联：Sierra 2005（J. Stat. Mech. P12006）Russian doll 超导模型将黎曼零点嵌入超导谱（缺失态，循环 RG），但尚无实验验证。验证途径：(1) 超导系统中观察到黎曼零点能级（从能级表现深入到同步算符本质）；(2) 不同 $n$ 跃迁 $T_c^{(n)}$ 比值中黎曼零点结构显现——**本理论预言高阶跃迁需要更强亏角涨落（$\\Delta\\delta_c^{(n=4)} \\approx 0.27$），$T_c(4)/T_c(2) \\approx 0.13\\text{–}0.27$**；(3) **临界亏角涨落 $\\Delta\\delta_c \\approx 0.20$**（低于此不超导）；(4) GUE 统计在超导能谱数据中的体现 | 能级是同步算符的唯象表现；实验从能级深入到同步算符是验证本理论的关键 |"}
-{"doc_id": "D030", "sid": 2640, "start": 164268, "end": 164821, "kind": "table", "text": "| 最高 | **氢原子能级背后必然是同步算符**（§11.6.2）：RQM同时干掉电子实在论与庸俗反电子实在论 → 耦合常数涨落生效 → 能级非电子内禀性质而是关系网络同步结构。**从黎曼零点直接推导**：$E_n = -R/N(\\gamma_n)^2 = -R/n^2$ （$N$=黎曼零点计数函数）。同步算符是黎曼式的（本征值=$\\gamma_n$），SO(4)是显现不是算符本身。这是CQM基础前提的逻辑必然，不是假设。**可检验预言**：(1) 能级 $-R/n^2$ 验证（精度 $10^{-12}$）；(2) $\\|E_n\\|\\cdot a_n = R\\cdot a_0$ = 常数（不确定关系，验证）；(3) Rydberg态间距标准差 $\\approx 0.61$ 接近GUE（$\\approx 0.52$，黎曼零点间距Montgomery-Odlyzko定律）而非Poisson（$1.0$）；(4) 外场中SO(4)重组实现模式。开放：(1) $N(\\gamma_n)$ 精确公式（RvM是渐近）；(2) 为什么氢原子用谱序号而超导用本征值直接函数；(3) 多电子原子/分子能级；(4) 库仑势从同步结构涌现 | 决定CQM本体论（电子关系产物）的实验检验；从黎曼零点直接推出能级 |"}
-{"doc_id": "D030", "sid": 2641, "start": 164822, "end": 164881, "kind": "table", "text": "| 高 | 电子费米统计的严格来源（$SU(4)\\simeq Spin(6)$ 旋量表示？） | 决定主丛的表示论 |"}
-{"doc_id": "D030", "sid": 2642, "start": 164882, "end": 165104, "kind": "table", "text": "| 代数推导完成、物理基座待建立 | $T_c$ 丛作用量竞争机制（不含独立“跃迁能级”假设） | 公式已给出（前向验证未闭合）（G22 行内已闭合项/§11.2）：$T_c$ 由丛作用量交叉 $F_1(T_c)=F_2(T_c)$ 给出，亏角涨落给出资格条件，路径积分选出主导群。**深化（§11.6）**：丛作用量交叉是结构群叠加态（= 同步算符）本征值交叉 $\\lambda_1(T_c)=\\lambda_2(T_c)$ 的热力学投影 |"}
-{"doc_id": "D030", "sid": 2643, "start": 165105, "end": 165161, "kind": "table", "text": "| 中 | 跃迁耦级谱 $\\Delta u_n = 2\\ln n$ 的表示论严格证明 | 决定跃迁的群论根基 |"}
-{"doc_id": "D030", "sid": 2644, "start": 165162, "end": 165199, "kind": "table", "text": "| 中 | 具体材料数值验证（二维超导体） | 决定框架的实验可检验性 |"}
-{"doc_id": "D030", "sid": 2645, "start": 165200, "end": 165889, "kind": "table", "text": "| 闭合 | **元素周期表推导**（§11.7）：CQM本体论内在要求能推周期表和电子壳层分布（否则本体论不一致）。**框架内构造性推导**：$SU(5)$发生学→电子/核子形成；$A_4$型($SU(5)$)→壳层$l=0,1,2,3$（由SU(5) Dynkin图深度严格推导）；$SU(5)\\supset SU(4)$→$4\\otimes4=10\\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$重组实现产物→$\\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\\sim N(\\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间；壳层鲁棒性定理（§11.8）；$\\delta(Z,N)=1-\\varepsilon_0 N/(Z+N)$（§11.8）；$V_{\\text{element}}=V_0+L_{\\text{orbital}}$显式构造（$\\varphi_l=(l/\\lambda_l)\\Pi_l$，$Y_l^m$从$SU(4)\\to SO(3)$涌现），填充顺序与周期表一致；洪特规则三条定量解释（$E_{\\text{sync}}=\\text{const}-\\frac{\\lambda_{\\text{spin}}}{2}S(S+1)-\\frac{\\lambda_{\\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致） | 框架内构造性推导给出，严格证明待独立复现 |"}
-{"doc_id": "D030", "sid": 2646, "start": 165890, "end": 166319, "kind": "table", "text": "| 闭合 | **中子缺陷 $\\delta(Z,N)$ 的谱条件求解**（§11.8）：壳层鲁棒性定理——壳层结构$\\{2,6,10,14\\}$对所有$\\lvert\\delta\\rvert<\\sqrt{8/3}$鲁棒（$D(\\delta)$正定→$A_4$型→壳层不变，1000次随机验证100%）。条件“壳层不破坏”=G14正定性条件，不唯一确定$\\delta$。$\\delta(Z,N)=1-\\varepsilon_0 N/(Z+N)$（中子比例模型，$\\varepsilon_0=0.0012$），满足纯质子极限$\\delta(Z,0)=1$、自由中子锚点$\\delta(0,1)=0.9988$、同位素效应$\\partial\\delta/\\partial N<0$、正定性。同位素效应预测$T_c\\propto M^{-\\alpha}$，$\\alpha\\approx0.0006$ | $\\delta(Z,N)$函数形式确定，同位素效应第一性导出 |"}
-{"doc_id": "D030", "sid": 2647, "start": 166320, "end": 166632, "kind": "table", "text": "| 高 | **同位素效应：缺陷来源丰度**（§11.9）：同位素 = 不同中子数 $N$ = 不同数量的缺陷来源，缺陷来源数 $\\propto N$。$\\Delta\\varepsilon^{\\text{total}} = \\Delta\\varepsilon^{\\text{组合几何}} + \\kappa_N \\cdot N$。重同位素缺陷来源多→更丰富亏角涨落→更高 $T_c$ 潜力（非单调：过多破坏全局相干）。同位素效应 = 缺陷来源丰度效应（非BCS质量效应）。开放：(1) $\\kappa_N$ 的微观来源；(2) 组合几何缺陷的定量计算；(3) 非单调行为的定量条件 | 同位素效应的CQM机制；超导潜力预测 |"}
-{"doc_id": "D030", "sid": 2648, "start": 166634, "end": 166650, "kind": "heading", "text": "## 17. 界面超导与边界定理"}
-{"doc_id": "D030", "sid": 2649, "start": 166652, "end": 166699, "kind": "quote", "text": "> **两阶段读法**：界面/边界改变的是局域配对与相位刚度的空间分布（渗流给连通域，M8）；"}
-{"doc_id": "D030", "sid": 2650, "start": 166699, "end": 166741, "kind": "quote", "text": "旧框架的亏角几何处理作为实现层保留，不替代 §0.5 的 $T^*/T_c$ 判据。"}
-{"doc_id": "D030", "sid": 2651, "start": 166743, "end": 166764, "kind": "heading", "text": "### 17.1 广义斯托克斯定理与边界项"}
-{"doc_id": "D030", "sid": 2652, "start": 166766, "end": 166783, "kind": "prose", "text": "在带边流形上应用广义斯托克斯定理："}
-{"doc_id": "D030", "sid": 2653, "start": 166785, "end": 166830, "kind": "prose", "text": "$$\\int_M d\\omega = \\int_{\\partial M} \\omega$$"}
-{"doc_id": "D030", "sid": 2654, "start": 166832, "end": 166844, "kind": "prose", "text": "边界项可忽略的五种情形："}
-{"doc_id": "D030", "sid": 2655, "start": 166846, "end": 166857, "kind": "table", "text": "| 情形 | 条件 |"}
-{"doc_id": "D030", "sid": 2656, "start": 166858, "end": 166869, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D030", "sid": 2657, "start": 166870, "end": 166933, "kind": "table", "text": "| 形式在边界上为零 | $\\omega\\vert_{\\partial M}=0$（紧支撑、Dirichlet 边界条件） |"}
-{"doc_id": "D030", "sid": 2658, "start": 166934, "end": 166980, "kind": "table", "text": "| 流形本身无边 | $\\partial M=\\varnothing$（闭曲面，如环面） |"}
-{"doc_id": "D030", "sid": 2659, "start": 166981, "end": 167020, "kind": "table", "text": "| 积分区域是闭链 | 链复形意义下 $\\partial M=0$（闭链） |"}
-{"doc_id": "D030", "sid": 2660, "start": 167021, "end": 167046, "kind": "table", "text": "| 边界项互相抵消 | 物理设定使边界贡献相消 |"}
-{"doc_id": "D030", "sid": 2661, "start": 167047, "end": 167074, "kind": "table", "text": "| 只关心局部行为 | 局域计算不涉及全局边界积分 |"}
-{"doc_id": "D030", "sid": 2662, "start": 167076, "end": 167094, "kind": "heading", "text": "### 17.2 体超导中边界可忽略"}
-{"doc_id": "D030", "sid": 2663, "start": 167096, "end": 167158, "kind": "prose", "text": "常规体超导有两个特征长度：相干长度 $\\xi$（序参量显著变化的尺度）和穿透深度 $\\lambda_L$（磁场穿透的深度）。"}
-{"doc_id": "D030", "sid": 2664, "start": 167158, "end": 167241, "kind": "prose", "text": "宏观样品 $L \\gg \\xi, \\lambda_L$，序参量只在表面 $\\sim \\xi$ 薄层内变化，磁场只在表面 $\\sim \\lambda_L$ 薄层内穿透。"}
-{"doc_id": "D030", "sid": 2665, "start": 167243, "end": 167280, "kind": "prose", "text": "边界贡献 $\\propto$ 表面积，体积贡献 $\\propto$ 体积："}
-{"doc_id": "D030", "sid": 2666, "start": 167282, "end": 167355, "kind": "prose", "text": "$$\\frac{\\text{表面积}}{\\text{体积}} \\sim \\frac{L^2}{L^3} = \\frac{1}{L} \\to 0$$"}
-{"doc_id": "D030", "sid": 2667, "start": 167357, "end": 167379, "kind": "prose", "text": "CQM 中边界贡献同样按 $1/L$ 压低："}
-{"doc_id": "D030", "sid": 2668, "start": 167381, "end": 167478, "kind": "prose", "text": "$$\\frac{\\sum_{v\\in\\text{边界}}\\varepsilon}{\\sum_{v\\in\\text{体}}\\varepsilon} \\sim \\frac{1}{L} \\to 0$$"}
-{"doc_id": "D030", "sid": 2669, "start": 167480, "end": 167582, "kind": "prose", "text": "体超导的 CQM 核心机制（亏角涨落 $\\Delta\\varepsilon$、固有时流速调制、耦合跃迁 $\\alpha\\to n^2\\alpha$、同步算符本征值交叉）均在体内局域/全局发生，不需要边界。"}
-{"doc_id": "D030", "sid": 2670, "start": 167584, "end": 167604, "kind": "heading", "text": "### 17.3 界面超导：边界成为主角"}
-{"doc_id": "D030", "sid": 2671, "start": 167606, "end": 167618, "kind": "prose", "text": "边界不能忽略的四种情形："}
-{"doc_id": "D030", "sid": 2672, "start": 167620, "end": 167631, "kind": "table", "text": "| 情形 | 原因 |"}
-{"doc_id": "D030", "sid": 2673, "start": 167632, "end": 167643, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D030", "sid": 2674, "start": 167644, "end": 167672, "kind": "table", "text": "| 纳米超导 | $L\\sim\\xi$，量子尺寸效应 |"}
-{"doc_id": "D030", "sid": 2675, "start": 167673, "end": 167694, "kind": "table", "text": "| 界面超导 | 超导只存在于界面附近 |"}
-{"doc_id": "D030", "sid": 2676, "start": 167695, "end": 167720, "kind": "table", "text": "| 拓扑超导 | 边界态（马约拉纳零模）是核心 |"}
-{"doc_id": "D030", "sid": 2677, "start": 167721, "end": 167745, "kind": "table", "text": "| 超导/磁性界面 | 界面自旋极化破坏配对 |"}
-{"doc_id": "D030", "sid": 2678, "start": 167747, "end": 167811, "kind": "prose", "text": "界面超导的物理特征：超导性集中在二维界面薄层，界面两侧晶格失配产生巨大亏角，缺陷密度高（向错、位错），二维各向异性远强于三维体。"}
-{"doc_id": "D030", "sid": 2679, "start": 167813, "end": 167836, "kind": "heading", "text": "### 17.4 CQM 中界面超导的边界处理"}
-{"doc_id": "D030", "sid": 2680, "start": 167838, "end": 167856, "kind": "prose", "text": "界面处 Regge 亏角远大于体内："}
-{"doc_id": "D030", "sid": 2681, "start": 167858, "end": 167955, "kind": "prose", "text": "$\\varepsilon^{\\text{界面}} \\gg \\varepsilon^{\\text{体}}$，因此 $\\Delta\\varepsilon^{\\text{界面}}$ 主导 $T_c$。"}
-{"doc_id": "D030", "sid": 2682, "start": 167957, "end": 167971, "kind": "table", "text": "| 体超导 | 界面超导 |"}
-{"doc_id": "D030", "sid": 2683, "start": 167972, "end": 167983, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D030", "sid": 2684, "start": 167984, "end": 168002, "kind": "table", "text": "| 体亏角主导 | 界面亏角主导 |"}
-{"doc_id": "D030", "sid": 2685, "start": 168003, "end": 168039, "kind": "table", "text": "| 边界项 $\\sim 1/L$ | 边界项 $\\sim O(1)$ |"}
-{"doc_id": "D030", "sid": 2686, "start": 168040, "end": 168065, "kind": "table", "text": "| 斯托克斯边界可忽略 | 边界项必须显式处理 |"}
-{"doc_id": "D030", "sid": 2687, "start": 168067, "end": 168095, "kind": "heading", "text": "### 17.5 界面超导中的 GL(5) 固定层级结构"}
-{"doc_id": "D030", "sid": 2688, "start": 168097, "end": 168121, "kind": "prose", "text": "界面的二维性改变了 GL(5) 固定层级的实现："}
-{"doc_id": "D030", "sid": 2689, "start": 168123, "end": 168142, "kind": "table", "text": "| 层级 | 三维体 | 二维界面 |"}
-{"doc_id": "D030", "sid": 2690, "start": 168143, "end": 168159, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2691, "start": 168160, "end": 168191, "kind": "table", "text": "| GL(5) 固定层级 | 体电磁跃迁 | 界面电磁跃迁 |"}
-{"doc_id": "D030", "sid": 2692, "start": 168192, "end": 168243, "kind": "table", "text": "| SU(2) | 自旋配对（SU(5)重组实现的输出） | 自旋配对（SU(5)重组实现的输出） |"}
-{"doc_id": "D030", "sid": 2693, "start": 168245, "end": 168265, "kind": "prose", "text": "界面超导的二维性使非常规配对更容易出现。"}
-{"doc_id": "D030", "sid": 2694, "start": 168267, "end": 168283, "kind": "heading", "text": "### 17.6 边界重要性判据"}
-{"doc_id": "D030", "sid": 2695, "start": 168285, "end": 168294, "kind": "prose", "text": "$$\\boxed{"}
-{"doc_id": "D030", "sid": 2696, "start": 168295, "end": 168308, "kind": "prose", "text": "\\text{边界是否重要}"}
-{"doc_id": "D030", "sid": 2697, "start": 168309, "end": 168313, "kind": "prose", "text": "\\iff"}
-{"doc_id": "D030", "sid": 2698, "start": 168314, "end": 168376, "kind": "prose", "text": "\\frac{\\sum_{\\text{边界}}\\varepsilon}{\\sum_{\\text{体}}\\varepsilon}"}
-{"doc_id": "D030", "sid": 2699, "start": 168377, "end": 168390, "kind": "prose", "text": "\\begin{cases}"}
-{"doc_id": "D030", "sid": 2700, "start": 168391, "end": 168440, "kind": "prose", "text": "\\sim 1/L \\ll 1 \\longrightarrow \\text{可忽略（体超导）} \\\\"}
-{"doc_id": "D030", "sid": 2701, "start": 168441, "end": 168484, "kind": "prose", "text": "\\sim O(1) \\longrightarrow \\text{必须处理（界面超导）}"}
-{"doc_id": "D030", "sid": 2702, "start": 168485, "end": 168496, "kind": "prose", "text": "\\end{cases}"}
-{"doc_id": "D030", "sid": 2703, "start": 168497, "end": 168500, "kind": "prose", "text": "}$$"}
-{"doc_id": "D030", "sid": 2704, "start": 168502, "end": 168539, "kind": "prose", "text": "**边界不是固定变量，而是由 Regge 几何的亏角分布动态决定其重要性。"}
-{"doc_id": "D030", "sid": 2705, "start": 168539, "end": 168607, "kind": "prose", "text": "** CQM 统一了体超导与界面超导两种情形：边界的重要性取决于 Regge 亏角在几何中何处集中——体超导中在体内，界面超导中在边界。"}
-{"doc_id": "D030", "sid": 2706, "start": 168609, "end": 168612, "kind": "prose", "text": "---"}
-{"doc_id": "D030", "sid": 2707, "start": 168614, "end": 168623, "kind": "heading", "text": "## 18. 结论"}
-{"doc_id": "D030", "sid": 2708, "start": 168625, "end": 168664, "kind": "prose", "text": "**当前权威口径**：CQM 超导核心理论 = 差异-记忆核超导理论（§0）。"}
-{"doc_id": "D030", "sid": 2709, "start": 168664, "end": 168737, "kind": "prose", "text": "旧框架的几何-同步实现（§1–§17 中标“承接”的部分）回答“核从哪里来、如何计算”，不替代新理论的两阶段条件（未推、暂时未定）与四阶段记忆核。"}
-{"doc_id": "D030", "sid": 2710, "start": 168737, "end": 168776, "kind": "prose", "text": "旧文的公式、数值与缺口按 §11–§14、§17 承接，缺口状态不因改写升级。"}
-{"doc_id": "D030", "sid": 2711, "start": 168778, "end": 168799, "kind": "heading", "text": "### 18.1 核心结论（差异-记忆核）"}
-{"doc_id": "D030", "sid": 2712, "start": 168801, "end": 168909, "kind": "list", "text": "1. **差异的代数表示**：$C_{ij}=[\\hat u_i,\\hat v_{\\tau,j}]/(i☯)=f(\\varepsilon_i-\\varepsilon_j)$（$i\\ne j$），$C_{ii}=1$；"}
-{"doc_id": "D030", "sid": 2713, "start": 168909, "end": 168940, "kind": "list", "text": "A12 约束 $\\sum_{i\\ne j}C_{ij}=0$。"}
-{"doc_id": "D030", "sid": 2714, "start": 168940, "end": 168985, "kind": "list", "text": "给定 A12 后，式 (DM.2)–(DM.3) 是【条件严格】；A12 本身是【构造】。"}
-{"doc_id": "D030", "sid": 2715, "start": 168985, "end": 169037, "kind": "list", "text": "差异的大小由节点间亏角不均匀给定；全局-局域不对易是非马尔可夫性与差异丰富度的来源之一，不是差异的来源。"}
-{"doc_id": "D030", "sid": 2716, "start": 169038, "end": 169172, "kind": "list", "text": "2. **差异方差给出局域配对强度**：$\\langle(\\delta C_{ij})^2\\rangle=\\kappa_f^2\\langle(\\Delta\\varepsilon_i-\\Delta\\varepsilon_j)^2\\rangle\\ge0$（式 DM.5）。"}
-{"doc_id": "D030", "sid": 2717, "start": 169172, "end": 169211, "kind": "list", "text": "均匀极限使均值消失，但不抹掉方差；这是“均匀但无关联”与“局域关联强”的分野。"}
-{"doc_id": "D030", "sid": 2718, "start": 169212, "end": 169326, "kind": "list", "text": "3. **绕环和乐给出相位阻挫/刚度**：和乐 $\\mathcal H_{ijk}=\\exp(i\\oint_C\\omega)$（§10.1）非平庸时 $\\operatorname{Re}\\mathcal H<1$，削弱相位链接；"}
-{"doc_id": "D030", "sid": 2719, "start": 169326, "end": 169421, "kind": "list", "text": "键刚度 $J_{ij}\\propto\\cos\\mathcal H_{ij}$（DM.9）、渗流刚度 $\\propto\\langle\\cos\\mathcal H\\rangle$（DM.11）。"}
-{"doc_id": "D030", "sid": 2720, "start": 169421, "end": 169461, "kind": "list", "text": "高斯态使连通三阶累积量为零，非高斯结构与和乐相位阻挫的定量识别仍是缺口（M7）。"}
-{"doc_id": "D030", "sid": 2721, "start": 169462, "end": 169576, "kind": "list", "text": "4. **超导是两阶段事件（相变方程与 $T_c$ 未推、暂时未定）**：局域配对（$T^*$，差异方差，平凡零点）与全局相位刚度（$T_{\\rm BKT}$/$T_\\theta$，和乐相位阻挫、$J_{ij}$，非平凡零点）。"}
-{"doc_id": "D030", "sid": 2722, "start": 169576, "end": 169657, "kind": "list", "text": "$T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$，两阶段温差 $\\Delta T_{\\rm pg}=T^*-T_c$（式 DM.13；"}
-{"doc_id": "D030", "sid": 2723, "start": 169657, "end": 169707, "kind": "list", "text": "实验赝能隙的对应属构造，G21）；渗流给全局连通域与刚度乘子（L2），不作独立 $T_c$（M8）；"}
-{"doc_id": "D030", "sid": 2724, "start": 169707, "end": 169743, "kind": "list", "text": "软模方程与刚度判据是同一临界点的两种标准读法，$V$ 的微观定义属缺口。"}
-{"doc_id": "D030", "sid": 2725, "start": 169743, "end": 169760, "kind": "list", "text": "BCS 型、相位限制型是两种极限。"}
-{"doc_id": "D030", "sid": 2726, "start": 169761, "end": 169924, "kind": "list", "text": "5. **记忆核四阶段**（【构造】）：自由变化（$T\\gg T^*$，无锚点）→ 赝能隙（$T^*>T>T_c$，锚点预形成，中间平台 $K^{\\rm mid}$）→ 相变（$T=T_c$，锚点出现，临界值 $K^{\\rm crit}$）→ 偏离（$T<T_c$，锚点锁定，稳定平台 $K^{\\rm SC}$ + 慢偏离）。"}
-{"doc_id": "D030", "sid": 2727, "start": 169924, "end": 169974, "kind": "list", "text": "正常态不是“衰退”，是自由变化；超导态不是“衰退”，是围绕锚点的偏离；**赝能隙是锚点的预形成**。"}
-{"doc_id": "D030", "sid": 2728, "start": 169974, "end": 170012, "kind": "list", "text": "四阶段边界未精确；$T^*$ 与 $T_c$ 的口径见 §0.2、§0.5。"}
-{"doc_id": "D030", "sid": 2729, "start": 170013, "end": 170056, "kind": "list", "text": "6. **锚点像序参量**：$K^{\\rm SC}$ 在 $T_c$ 处从零变为非零；"}
-{"doc_id": "D030", "sid": 2730, "start": 170056, "end": 170122, "kind": "list", "text": "但 $K^{\\rm SC}$ 与旧框架结构群序参量/同步算符本征值的映射未建立（M9），不得把“像序参量”读成“已等同于旧序参量”。"}
-{"doc_id": "D030", "sid": 2731, "start": 170123, "end": 170166, "kind": "list", "text": "7. **黎曼零点连接是候选而非已证**：$☯=\\xi'(1)/\\xi(1)$ 严格；"}
-{"doc_id": "D030", "sid": 2732, "start": 170166, "end": 170225, "kind": "list", "text": "谱表示条件于 RH；Sierra-CQM 的 $L_n=2\\pi n/\\gamma_n$ 是渐近定理加 CQM 构造；"}
-{"doc_id": "D030", "sid": 2733, "start": 170225, "end": 170263, "kind": "list", "text": "记忆核与质数计数由显式公式同一（严格），它与同步算符谱的物理同一依赖 M1。"}
-{"doc_id": "D030", "sid": 2734, "start": 170264, "end": 170392, "kind": "list", "text": "8. **BCS 退化是条件命题**：在均匀、强相位刚度、弱耦合、单带 $s$ 波极限，两阶段方程退化为 BCS 的能隙方程、$k_BT_c=1.13\\hbar\\omega_De^{-1/\\lambda}$、$2\\Delta_0/k_BT_c=3.53$。"}
-{"doc_id": "D030", "sid": 2735, "start": 170392, "end": 170441, "kind": "list", "text": "代数部分【严格】，条件 1–5 的物理实现属【构造】；核、态密度、频率三步识别未证（M2–M4）。"}
-{"doc_id": "D030", "sid": 2736, "start": 170441, "end": 170459, "kind": "list", "text": "不得写成“CQM 已推出 BCS”。"}
-{"doc_id": "D030", "sid": 2737, "start": 170460, "end": 170582, "kind": "list", "text": "9. **旧框架不被否定**：Regge 几何、主丛、声子、固有时流速、耦合空间不确定性、跃迁耦级谱、结构群叠加态、丛作用量竞争、$T_c$ 闭式、数值表、G9–G22、Lean 映射与界面超导边界，均作为“核从哪里来、如何计算”的实现层承接。"}
-{"doc_id": "D030", "sid": 2738, "start": 170583, "end": 170710, "kind": "list", "text": "10. **八环节链与记忆核积分的体现口径**：链条从 $[\\hat X,\\hat P]=i\\hbar$ 经声子（①）、晶格剖分（②）、亏角涨落（③）、固有时流速（④）、全局耦合（⑤）、去相干（⑥）、记忆核（⑦）止于记忆核积分（⑧）（§0.1 环节表）；"}
-{"doc_id": "D030", "sid": 2739, "start": 170710, "end": 170741, "kind": "list", "text": "环节⑨（相变方程／$T_c$）未推、暂时未定，不列为链条终点。"}
-{"doc_id": "D030", "sid": 2740, "start": 170741, "end": 170837, "kind": "list", "text": "固有时流速差异的历史总和 $\\mathsf H=(\\mathcal H_{ij})_{i,j\\in V_t}$（投影 $\\mathcal D$、$\\hat\\mu_t$、$R_n$）是本体对象；"}
-{"doc_id": "D030", "sid": 2741, "start": 170837, "end": 170916, "kind": "list", "text": "记忆核积分 $\\mathcal I_K=\\int K\\,dt$ 是它的记忆侧体现/读数，不是历史总和本身（映射未证，M10），也不是独立的 $T_c$ 判据；"}
-{"doc_id": "D030", "sid": 2742, "start": 170916, "end": 170951, "kind": "list", "text": "判据①（配对荷可分辨单一判据）已被单质元素第一性检验排除，不进入本链。"}
-{"doc_id": "D030", "sid": 2743, "start": 170953, "end": 170968, "kind": "heading", "text": "### 18.2 实际计算路线"}
-{"doc_id": "D030", "sid": 2744, "start": 170970, "end": 171122, "kind": "list", "text": "1. **确定几何输入**：由材料结构（链 A/链 B）给出边亏角分布 $\\{\\varepsilon_{ij}\\}$、节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$、环路相位 $\\mathcal H_{ij}$（旧 §11.12–§11.14 的数值链可作幅度通道）。"}
-{"doc_id": "D030", "sid": 2745, "start": 171123, "end": 171177, "kind": "list", "text": "2. **算局域配对**：由式 (DM.6)–(DM.8) 得 $\\lambda_i$ 与 $T_i^*$；"}
-{"doc_id": "D030", "sid": 2746, "start": 171177, "end": 171193, "kind": "list", "text": "弱耦合单带极限用 BCS 闭式。"}
-{"doc_id": "D030", "sid": 2747, "start": 171194, "end": 171249, "kind": "list", "text": "3. **算相位网络**：由式 (DM.9)–(DM.10) 得 $J_{ij}$ 与 $T_\\theta$；"}
-{"doc_id": "D030", "sid": 2748, "start": 171249, "end": 171279, "kind": "list", "text": "不均匀样品用式 (DM.11)–(DM.12) 的渗流判据。"}
-{"doc_id": "D030", "sid": 2749, "start": 171280, "end": 171401, "kind": "list", "text": "4. **合成 $T_c$**：$T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$（单层用 BKT 判据 $\\Upsilon(T_{\\rm BKT})=2k_BT_{\\rm BKT}/\\pi$，堆叠用 3D XY）；"}
-{"doc_id": "D030", "sid": 2750, "start": 171401, "end": 171430, "kind": "list", "text": "渗流给全局连通域与刚度乘子（L2），不作独立 $T_c$。"}
-{"doc_id": "D030", "sid": 2751, "start": 171431, "end": 171536, "kind": "list", "text": "5. **判赝能隙**：赝能隙区的记忆核读作“锚点预形成”，不是独立对称破缺相；两阶段温差记为 $\\Delta T_{\\rm pg}=T^*-T_c$（实验赝能隙 onset 与 $T^*$ 不等同，G21）。"}
-{"doc_id": "D030", "sid": 2752, "start": 171537, "end": 171609, "kind": "list", "text": "6. **接旧闭式**：需要旧框架的 $T_c$ 闭式、$\\beta$、$\\Delta\\varepsilon_0$、材料表时，按 §11 承接；"}
-{"doc_id": "D030", "sid": 2753, "start": 171609, "end": 171649, "kind": "list", "text": "但旧闭式与 $T^*/T_c$ 的映射未建立（M8），不得混用两套 $T_c$。"}
-{"doc_id": "D030", "sid": 2754, "start": 171651, "end": 171669, "kind": "heading", "text": "### 18.3 与 BCS 的关系"}
-{"doc_id": "D030", "sid": 2755, "start": 171671, "end": 171694, "kind": "table", "text": "| | BCS | 差异-记忆核（CQM） |"}
-{"doc_id": "D030", "sid": 2756, "start": 171695, "end": 171711, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2757, "start": 171712, "end": 171792, "kind": "table", "text": "| 配对 | 电子-声子吸引 | 节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ 给出局域配对通道（核的识别未证，M2） |"}
-{"doc_id": "D030", "sid": 2758, "start": 171793, "end": 171840, "kind": "table", "text": "| 相位 | 全局相位刚性 | 和乐相位阻挫 + 键刚度 + 渗流乘子（等价性未证，M8） |"}
-{"doc_id": "D030", "sid": 2759, "start": 171841, "end": 171929, "kind": "table", "text": "| $T_c$ | 单一 $T_c$ | 两阶段：$T^*$（局域配对）与 $T_c$（全局相位刚度，$\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$） |"}
-{"doc_id": "D030", "sid": 2760, "start": 171930, "end": 171977, "kind": "table", "text": "| 赝能隙 | 不进入 BCS 骨架 | 赝能隙 = 锚点预形成（$T_c<T<T^*$） |"}
-{"doc_id": "D030", "sid": 2761, "start": 171978, "end": 172024, "kind": "table", "text": "| 退化 | — | 均匀、强刚度、弱耦合、单带 $s$ 波极限退回 BCS（条件命题） |"}
-{"doc_id": "D030", "sid": 2762, "start": 172026, "end": 172091, "kind": "prose", "text": "**关系本质**：BCS 是差异-记忆核理论在特定极限下的退化，不是两套并列理论；退化是条件命题，不是“CQM 已推出 BCS”。"}
-{"doc_id": "D030", "sid": 2763, "start": 172093, "end": 172108, "kind": "heading", "text": "### 18.4 确立与未解决"}
-{"doc_id": "D030", "sid": 2764, "start": 172110, "end": 172127, "kind": "prose", "text": "**新理论中已确立（按标注）**："}
-{"doc_id": "D030", "sid": 2765, "start": 172129, "end": 172168, "kind": "list", "text": "- 式 (DM.2)–(DM.3) 在给定 A12 后的代数展开【条件严格】；"}
-{"doc_id": "D030", "sid": 2766, "start": 172169, "end": 172204, "kind": "list", "text": "- 差异方差方差结构式 (DM.5)【条件严格：给定领头阶 $f$】；"}
-{"doc_id": "D030", "sid": 2767, "start": 172205, "end": 172246, "kind": "list", "text": "- BCS 退化代数式 (DM.23)–(DM.24)【条件严格：条件 1–5】；"}
-{"doc_id": "D030", "sid": 2768, "start": 172247, "end": 172312, "kind": "list", "text": "- 3D XY 标定 $k_BT_c/J\\approx2.2017$（外部事实，Gottlob–Hasenbusch 1993）。"}
-{"doc_id": "D030", "sid": 2769, "start": 172314, "end": 172326, "kind": "prose", "text": "**新理论中的构造**："}
-{"doc_id": "D030", "sid": 2770, "start": 172328, "end": 172440, "kind": "list", "text": "- 两阶段合成 $T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$（未推、暂时未定）、$J_{ij}$、渗流判据、记忆核四阶段、锚点窗口式 (DM.19)、丰富度三度量、历史深度式 (DM.18)。"}
-{"doc_id": "D030", "sid": 2771, "start": 172442, "end": 172461, "kind": "prose", "text": "**未解决（M 表 + G 表）**："}
-{"doc_id": "D030", "sid": 2772, "start": 172463, "end": 172479, "kind": "list", "text": "- M1–M10（§13.1）；"}
-{"doc_id": "D030", "sid": 2773, "start": 172480, "end": 172530, "kind": "list", "text": "- G21（赝能隙→ARPES/STM 谱函数）、G22（旧 $T_c$ 丛作用量交叉的物理基座）；"}
-{"doc_id": "D030", "sid": 2774, "start": 172531, "end": 172569, "kind": "list", "text": "- $T^*$ 与实验赝能隙 onset 的操作定义不同；把二者等同属构造；"}
-{"doc_id": "D030", "sid": 2775, "start": 172570, "end": 172605, "kind": "list", "text": "- 记忆核 $K(t)$ 的材料谱、四阶段边界、锚点与旧序参量的映射。"}
-{"doc_id": "D030", "sid": 2776, "start": 172607, "end": 172701, "kind": "prose", "text": "**旧框架承接的闭合/部分闭合项**：$\\beta$、$C^2$、$\\Delta\\varepsilon_0$ 公式、G13/G14、周期表构造性推导、同位素效应等，见 §11 与 §13；"}
-{"doc_id": "D030", "sid": 2777, "start": 172701, "end": 172720, "kind": "prose", "text": "它们不因新理论升级，也不被新理论否定。"}
-{"doc_id": "D030", "sid": 2778, "start": 172722, "end": 172746, "kind": "heading", "text": "### 18.5 同步 ≠ 群统一（旧框架承接）"}
-{"doc_id": "D030", "sid": 2779, "start": 172748, "end": 172776, "kind": "prose", "text": "**全局同步指相位相干，不等于所有区域选择同一个结构群。"}
-{"doc_id": "D030", "sid": 2780, "start": 172776, "end": 172861, "kind": "prose", "text": "** 在阶段二，不同 $n$ 的配对岛只要共享同一整体相位，就能相干叠加；$U(1)//\\mathbb Z_n$ 的商结构决定磁通量子化单位，不决定 $T_c$ 的高低。"}
-{"doc_id": "D030", "sid": 2781, "start": 172861, "end": 172913, "kind": "prose", "text": "多群超导、多能隙、宽转变、非普适 $2\\Delta/k_BT_c$ 等按旧框架 §18.1（归档）解释；"}
-{"doc_id": "D030", "sid": 2782, "start": 172913, "end": 173025, "kind": "prose", "text": "在新理论中这些多配对谱特征源于相变的空间不均匀性（相变时或配对前的不均匀），不是相变前的多个相变锚——相变前 $\\mathcal A(T)=\\varnothing$、相变中可有多个瞬时局域锚、理论研究取相变单锚（§0.6）。"}
-{"doc_id": "D030", "sid": 2783, "start": 173025, "end": 173074, "kind": "prose", "text": "本结论是两阶段模型的相位层读法，不替代 $T^*/T_c$ 判据，也不把群统一当成超导的必要条件。"}
-{"doc_id": "D030", "sid": 2784, "start": 173076, "end": 173089, "kind": "heading", "text": "### 18.6 最终目标"}
-{"doc_id": "D030", "sid": 2785, "start": 173091, "end": 173120, "kind": "prose", "text": "$$\\boxed{\\text{常压室温第二类超导体}}$$"}
-{"doc_id": "D030", "sid": 2786, "start": 173122, "end": 173161, "kind": "prose", "text": "只有在该目标实现后，CQM 超导理论才能从理论框架变成被物质实践证明的物理学。"}
-{"doc_id": "D030", "sid": 2787, "start": 173163, "end": 173166, "kind": "prose", "text": "---"}
-{"doc_id": "D030", "sid": 2788, "start": 173168, "end": 173179, "kind": "heading", "text": "## 附录 A：符号表"}
-{"doc_id": "D030", "sid": 2789, "start": 173181, "end": 173199, "kind": "table", "text": "| 符号 | 含义 | 数学类型 |"}
-{"doc_id": "D030", "sid": 2790, "start": 173200, "end": 173225, "kind": "table", "text": "|------|------|---------|"}
-{"doc_id": "D030", "sid": 2791, "start": 173226, "end": 173257, "kind": "table", "text": "| $A_4$ | 质子嘉当矩阵 | 4 × 4 整数矩阵 |"}
-{"doc_id": "D030", "sid": 2792, "start": 173258, "end": 173300, "kind": "table", "text": "| $D(\\delta)$ | 中子嘉当矩阵（缺陷形变） | 4 × 4 实矩阵 |"}
-{"doc_id": "D030", "sid": 2793, "start": 173301, "end": 173369, "kind": "table", "text": "| $\\mathcal{C}_{\\text{element}}$ | 元素嘉当矩阵 | $4(Z+N)$ × $4(Z+N)$ 矩阵 |"}
-{"doc_id": "D030", "sid": 2794, "start": 173370, "end": 173420, "kind": "table", "text": "| $\\mathcal{C}_{\\text{mol}}$ | 分子有效超级嘉当矩阵 | 大方矩阵 |"}
-{"doc_id": "D030", "sid": 2795, "start": 173421, "end": 173529, "kind": "table", "text": "| $\\varepsilon$ | 归一化亏角 $\\varepsilon_h/(2\\pi)$（$\\varepsilon_h$ 为 Regge/LQG 铰链亏角，曲率载体；与顶点角亏无关） | 实数 $[0,1)$ |"}
-{"doc_id": "D030", "sid": 2796, "start": 173530, "end": 173599, "kind": "table", "text": "| $\\varepsilon_{ij}$ | 节点 $i,j$ 之间铰链（边）上的亏角本体（§0.2） | 实数 $[0,2\\pi)$ |"}
-{"doc_id": "D030", "sid": 2797, "start": 173600, "end": 173647, "kind": "table", "text": "| $\\Delta\\varepsilon$ | 归一化亏角涨落（声子，曲率涨落） | 实数 |"}
-{"doc_id": "D030", "sid": 2798, "start": 173648, "end": 173762, "kind": "table", "text": "| $☯$ | 相变量子 $\\frac{d}{ds}\\ln\\xi(s)\\big\\rvert_{s=1} = 1+\\gamma/2-\\ln(2\\sqrt{\\pi}) \\approx 0.02309570897$ | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2799, "start": 173763, "end": 173841, "kind": "table", "text": "| $\\beta$ | 几何耦合参数 $\\frac{1}{4\\pi}\\ln\\frac{L}{a}$（$L$ 系统尺寸，$a$ 晶格常数） | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2800, "start": 173842, "end": 173876, "kind": "table", "text": "| $u$ | 耦合坐标 $\\ln\\alpha$ | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2801, "start": 173877, "end": 173919, "kind": "table", "text": "| $p_u$ | 耦合动量 $(1/☯)(d\\tau/dt)$ | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2802, "start": 173920, "end": 173978, "kind": "table", "text": "| $v_\\tau$ | 固有时流速 $\\sqrt{1-\\varepsilon/(2\\pi)}$ | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2803, "start": 173979, "end": 174056, "kind": "table", "text": "| $r_{ij}$ | 边比值因子 $\\sqrt{1-\\varepsilon_{ij}/(2\\pi)}$，沿路径乘积传递（§7.3） | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2804, "start": 174057, "end": 174099, "kind": "table", "text": "| $v_o$ | 参考节点流速（变量，不是常数 1；§0.2） | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2805, "start": 174100, "end": 174156, "kind": "table", "text": "| $A_\\tau$ | 相变锚核（几何核）：零亏角边的极大连通子图（$d=1,2$，§7.3） | 子复形 |"}
-{"doc_id": "D030", "sid": 2806, "start": 174157, "end": 174271, "kind": "table", "text": "| $\\mathfrak A(T)$ | 相变锚：$({\\mathcal A}(T),\\Upsilon_{\\!\\mathcal A}(T))$，是相变在空间侧的体现（§7.3） | 映射 $T\\mapsto$（子复形，刚度） |"}
-{"doc_id": "D030", "sid": 2807, "start": 174272, "end": 174358, "kind": "table", "text": "| $\\mathcal A(T)$ | 相变锚的占据集：核内已过局域刚度判据 $J_e(T)\\ge k_BT/c_d$ 的边所成极大连通子复形（§7.3） | 子复形族 |"}
-{"doc_id": "D030", "sid": 2808, "start": 174359, "end": 174380, "kind": "table", "text": "| $\\tau$ | 固有时 | 时间 |"}
-{"doc_id": "D030", "sid": 2809, "start": 174381, "end": 174399, "kind": "table", "text": "| $t$ | 坐标时 | 时间 |"}
-{"doc_id": "D030", "sid": 2810, "start": 174400, "end": 174426, "kind": "table", "text": "| $\\omega_D$ | 德拜频率 | 频率 |"}
-{"doc_id": "D030", "sid": 2811, "start": 174427, "end": 174497, "kind": "table", "text": "| $\\theta_D$ | 德拜温度 $\\hbar\\omega_D/k_B$（§11.10 $T_c$ 闭式的声子能量标度） | 温度 |"}
-{"doc_id": "D030", "sid": 2812, "start": 174498, "end": 174532, "kind": "table", "text": "| $\\Omega_0$ | 主导曲率量子振荡模式频率 | 频率 |"}
-{"doc_id": "D030", "sid": 2813, "start": 174533, "end": 174577, "kind": "table", "text": "| $\\Delta\\varepsilon_0$ | 零温曲率涨落幅度 | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2814, "start": 174578, "end": 174607, "kind": "table", "text": "| $\\lambda_L$ | 伦敦穿透深度 | 长度 |"}
-{"doc_id": "D030", "sid": 2815, "start": 174608, "end": 174660, "kind": "table", "text": "| $\\Delta_{\\alpha\\beta}$ | A4 根系多分量序参量 | 4 × 4 复矩阵 |"}
-{"doc_id": "D030", "sid": 2816, "start": 174661, "end": 174754, "kind": "table", "text": "| $C_{ij}$ | 差异对易子 $[\\hat u_i,\\hat v_{\\tau,j}]/(i☯)=f(\\varepsilon_i-\\varepsilon_j)$ | 无量纲实数 |"}
-{"doc_id": "D030", "sid": 2817, "start": 174755, "end": 174790, "kind": "table", "text": "| $f$ | 差异函数（奇函数，显式形式未定，M5） | 实函数 |"}
-{"doc_id": "D030", "sid": 2818, "start": 174791, "end": 174881, "kind": "table", "text": "| $\\langle(\\delta C_{ij})^2\\rangle$ | 差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ | 无量纲实数（非负） |"}
-{"doc_id": "D030", "sid": 2819, "start": 174882, "end": 174924, "kind": "table", "text": "| $\\mathcal H$ | 和乐相位（绕环闭合条件，§10.1） | 相位 |"}
-{"doc_id": "D030", "sid": 2820, "start": 174925, "end": 175170, "kind": "table", "text": "| $\\mathsf H=(\\mathcal H_{ij})_{i,j\\in V_t}$ | 全对固有时流速差异历史总和；分量 $\\mathcal H_{ij}=\\int_0^t(v_{\\tau,i}-v_{\\tau,j})dt'$（§0.3 环节④，本体对象；与和乐相位 $\\mathcal H$/$\\mathcal H_{ijk}$ 是不同对象，按语境区分）；投影 $\\mathcal D$、$\\mathcal T$、$\\hat\\mu_t$、$R_n$（§0.6） | 时间（实数） |"}
-{"doc_id": "D030", "sid": 2821, "start": 175171, "end": 175266, "kind": "table", "text": "| $\\mathcal I_K$ | 记忆核积分 $\\int_0^tK(t')dt'$（§0.6 环节⑧；$\\mathcal H_{ij}$ 的记忆侧体现，映射未证 M10） | 无量纲 |"}
-{"doc_id": "D030", "sid": 2822, "start": 175267, "end": 175341, "kind": "table", "text": "| $\\Gamma_n$ | 单节点-单模式去相干率 $\\gamma_n^2\\sigma_v^2\\tau_g$（§0.6 环节⑥） | 1/时间 |"}
-{"doc_id": "D030", "sid": 2823, "start": 175342, "end": 175417, "kind": "table", "text": "| $\\sigma_v^2$ | 固有时流速差异的方差 $\\mathrm{Var}[\\Delta v_\\tau]$（§0.6 环节⑥） | 无量纲 |"}
-{"doc_id": "D030", "sid": 2824, "start": 175418, "end": 175506, "kind": "table", "text": "| $\\Upsilon$ | 相位刚度 $\\frac{1}{2A}\\sum_{\\langle ij\\rangle}J_{ij}r_{ij}^2$（§0.5） | 能量/面积 |"}
-{"doc_id": "D030", "sid": 2825, "start": 175507, "end": 175593, "kind": "table", "text": "| $T_{\\rm BKT}$ | 单层 BKT 相变温度（$\\Upsilon(T_{\\rm BKT})=2k_BT_{\\rm BKT}/\\pi$，§0.5） | 温度 |"}
-{"doc_id": "D030", "sid": 2826, "start": 175594, "end": 175622, "kind": "table", "text": "| $J_{ij}$ | 约瑟夫森型键刚度 | 能量 |"}
-{"doc_id": "D030", "sid": 2827, "start": 175623, "end": 175645, "kind": "table", "text": "| $J_0$ | 键刚度标度 | 能量 |"}
-{"doc_id": "D030", "sid": 2828, "start": 175646, "end": 175721, "kind": "table", "text": "| $p_{\\rm pair}(T)$ | 配对格点比例（座渗流；闭环判据另用激活边比例 $p_{\\rm loop}$，两者不可互换） | 无量纲 |"}
-{"doc_id": "D030", "sid": 2829, "start": 175722, "end": 175744, "kind": "table", "text": "| $p_c$ | 渗流阈值 | 无量纲 |"}
-{"doc_id": "D030", "sid": 2830, "start": 175745, "end": 175789, "kind": "table", "text": "| $T^*$ | 局域配对完成温度（本文定义，非标准赝能隙 onset） | 温度 |"}
-{"doc_id": "D030", "sid": 2831, "start": 175790, "end": 175860, "kind": "table", "text": "| $T_c$ | 相变温度（两阶段取小：$T^*$／$T_{\\rm BKT}$／$T_\\theta$；渗流只给连通域，M8） | 温度 |"}
-{"doc_id": "D030", "sid": 2832, "start": 175861, "end": 175893, "kind": "table", "text": "| $T_\\theta$ | 均匀网络相位有序温度 | 温度 |"}
-{"doc_id": "D030", "sid": 2833, "start": 175894, "end": 175957, "kind": "table", "text": "| $\\Delta T_{\\rm pg}$ | 两阶段温差 $T^*-T_c$（实验赝能隙的对应属构造，G21） | 温度 |"}
-{"doc_id": "D030", "sid": 2834, "start": 175958, "end": 176051, "kind": "table", "text": "| $K(t)$ | 记忆核：正常态为涨落关联（非质数形式），超导态 $e^{-t/2}\\bigl(\\psi(e^{t})-e^{t}\\bigr)$（§0.0/§0.6） | 无量纲 |"}
-{"doc_id": "D030", "sid": 2835, "start": 176052, "end": 176085, "kind": "table", "text": "| $K^{\\rm mid}$ | 赝能隙中间平台 | 无量纲 |"}
-{"doc_id": "D030", "sid": 2836, "start": 176086, "end": 176118, "kind": "table", "text": "| $K^{\\rm crit}$ | 相变临界值 | 无量纲 |"}
-{"doc_id": "D030", "sid": 2837, "start": 176119, "end": 176150, "kind": "table", "text": "| $K^{\\rm SC}$ | 超导锚定平台 | 无量纲 |"}
-{"doc_id": "D030", "sid": 2838, "start": 176151, "end": 176183, "kind": "table", "text": "| $N_{\\rm eff}$ | 不可公度频率数 | 整数 |"}
-{"doc_id": "D030", "sid": 2839, "start": 176184, "end": 176233, "kind": "table", "text": "| $S_{\\rm spec}$ | 谱熵 $-\\sum_qp_q\\ln p_q$ | 无量纲 |"}
-{"doc_id": "D030", "sid": 2840, "start": 176234, "end": 176274, "kind": "table", "text": "| $\\kappa_3,\\kappa_4$ | 三阶/四阶累积量 | 无量纲 |"}
-{"doc_id": "D030", "sid": 2841, "start": 176275, "end": 176308, "kind": "table", "text": "| $D$ | 历史深度（时间深度 + 结构深度） | 无量纲 |"}
-{"doc_id": "D030", "sid": 2842, "start": 176309, "end": 176345, "kind": "table", "text": "| $\\mathcal S_c$ | 信噪比阈值 | 无量纲（未定） |"}
-{"doc_id": "D030", "sid": 2843, "start": 176346, "end": 176382, "kind": "table", "text": "| $N_c,\\kappa_c$ | 丰富度阈值 | 无量纲（未定） |"}
-{"doc_id": "D030", "sid": 2844, "start": 176384, "end": 176432, "kind": "prose", "text": "**术语约定（“同步”的两义）**：本文档中“同步”承担两个层次的含义，须按语境区分，不可互换："}
-{"doc_id": "D030", "sid": 2845, "start": 176434, "end": 176457, "kind": "table", "text": "| 用法 | 含义 | 所在层次 | 判据 |"}
-{"doc_id": "D030", "sid": 2846, "start": 176458, "end": 176479, "kind": "table", "text": "|:---|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2847, "start": 176480, "end": 176585, "kind": "table", "text": "| **退相干意义的同步** | 物质自组织的**过程**——局域和乐平庸化、结构群进入叠加态（§1.5 三相表的前两态） | 过程层 | 和乐 $\\mathcal{H}_{ij}\\approx1$（局域） |"}
-{"doc_id": "D030", "sid": 2848, "start": 176586, "end": 176682, "kind": "table", "text": "| **相位相干意义的同步** | 多区域序参量共享同一整体**相位**的**状态**——超导的充分条件（§18.5“同步 ≠ 群统一”） | 状态层 | 伴丛存在全局相位相干截面（全局） |"}
-{"doc_id": "D030", "sid": 2849, "start": 176684, "end": 176763, "kind": "prose", "text": "包含关系：相位相干意义的同步**实现**了退相干意义的同步（前者是后者在全局尺度上的完成态），但**不要求**结构群统一——多群超导即为此情形（§18.5）。"}
-{"doc_id": "D030", "sid": 2850, "start": 176763, "end": 176816, "kind": "prose", "text": "故“同步=退相干完成”与“同步≠结构群统一”并不冲突：前者说的是过程归属，后者说的是终态不要求单一主导群。"}
-{"doc_id": "D030", "sid": 2851, "start": 176816, "end": 176845, "kind": "prose", "text": "行文中凡涉及资格条件处，“同步”一律取**相位相干**义。"}
-{"doc_id": "D030", "sid": 2852, "start": 176847, "end": 176850, "kind": "prose", "text": "---"}
-{"doc_id": "D030", "sid": 2853, "start": 176852, "end": 176864, "kind": "heading", "text": "## 附录 B：参考文献"}
-{"doc_id": "D030", "sid": 2854, "start": 176866, "end": 176881, "kind": "heading", "text": "### B.1 旧框架承接文献"}
-{"doc_id": "D030", "sid": 2855, "start": 176883, "end": 176974, "kind": "list", "text": "1. Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity. *Phys. Rev.* 108, 1175."}
-{"doc_id": "D030", "sid": 2856, "start": 176975, "end": 177075, "kind": "list", "text": "2. McMillan (1968). Transition Temperature of Strong-Coupled Superconductors. *Phys. Rev.* 167, 331."}
-{"doc_id": "D030", "sid": 2857, "start": 177076, "end": 177123, "kind": "list", "text": "3. Allen, Dynes (1975). *Phys. Rev. B* 12, 905."}
-{"doc_id": "D030", "sid": 2858, "start": 177124, "end": 177255, "kind": "list", "text": "4. Drozdov et al. (2015). Conventional superconductivity at 203 K at high pressures in the sulfur hydride system. *Nature* 525, 73."}
-{"doc_id": "D030", "sid": 2859, "start": 177256, "end": 177370, "kind": "list", "text": "5. Drozdov et al. (2019). Superconductivity at 250 K in lanthanum hydride under high pressures. *Nature* 569, 528."}
-{"doc_id": "D030", "sid": 2860, "start": 177371, "end": 177494, "kind": "list", "text": "6. Errea et al. (2020). Quantum crystal structure in the 250-kelvin superconducting lanthanum hydride. *Nature* 578, 66–69."}
-{"doc_id": "D030", "sid": 2861, "start": 177495, "end": 177628, "kind": "list", "text": "7. Durajski, Szczęśniak (2016). Migdal-Eliashberg equations — the effective model for superconducting state in H3S. arXiv:1609.06079."}
-{"doc_id": "D030", "sid": 2862, "start": 177629, "end": 177761, "kind": "list", "text": "8. Liu et al. (2019). Microscopic mechanism of room-temperature superconductivity in compressed LaH10. *Phys. Rev. B* 99, 140501(R)."}
-{"doc_id": "D030", "sid": 2863, "start": 177762, "end": 177835, "kind": "list", "text": "9. Ashcroft (1968). Metallic Hydrogen: A High-Temperature Superconductor?"}
-{"doc_id": "D030", "sid": 2864, "start": 177835, "end": 177851, "kind": "list", "text": " *PRL* 21, 1748."}
-{"doc_id": "D030", "sid": 2865, "start": 177852, "end": 177918, "kind": "list", "text": "10. ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380."}
-{"doc_id": "D030", "sid": 2866, "start": 177919, "end": 178009, "kind": "list", "text": "11. He et al. (2020). *Phys. Rev. A* **101**, 043402.（单量子比特 Floquet 实验：驱动参数与 ζ 零点重合时动力学冻结）"}
-{"doc_id": "D030", "sid": 2867, "start": 178010, "end": 178092, "kind": "list", "text": "12. He et al. (2021). *npj Quantum Information* **7**, 109.（囚禁离子实验：高精度测量最低非平凡黎曼零点）"}
-{"doc_id": "D030", "sid": 2868, "start": 178093, "end": 178184, "kind": "list", "text": "13. Sierra (2005). *J. Stat. Mech.* P12006（cond-mat.supr-con）.（Russian doll 超导模型：黎曼零点嵌入超导谱）"}
-{"doc_id": "D030", "sid": 2869, "start": 178185, "end": 178252, "kind": "list", "text": "14. Sierra, Townsend (2008). *PRL* **101**, 110201.（Landau 能级与黎曼零点）"}
-{"doc_id": "D030", "sid": 2870, "start": 178253, "end": 178405, "kind": "list", "text": "15. Zhang, Zhou, Zhou (2013). Memory effect in the high-temperature superconducting bulks. *Physica C* **495**, 44–47. DOI: 10.1016/j.physc.2013.07.013."}
-{"doc_id": "D030", "sid": 2871, "start": 178406, "end": 178557, "kind": "list", "text": "16. Ortlepp, Volkmann, Yamanashi (2014). Memory effect in balanced Josephson comparators. *Physica C* **500**, 20–24. DOI: 10.1016/j.physc.2014.02.003."}
-{"doc_id": "D030", "sid": 2872, "start": 178558, "end": 178660, "kind": "list", "text": "17. Uspenskaya, Egorov (2011). Memory effects in permalloy-niobium hybrid structures. arXiv:1112.2359."}
-{"doc_id": "D030", "sid": 2873, "start": 178661, "end": 178779, "kind": "list", "text": "18. Evidence of the Cooper-Pair Field with Gaussian Memory Kernel in Unconventional Superconductors. arXiv:2607.03937."}
-{"doc_id": "D030", "sid": 2874, "start": 178781, "end": 178816, "kind": "heading", "text": "### B.2 差异-记忆核外部对照（检索日期 2026-11-16）"}
-{"doc_id": "D030", "sid": 2875, "start": 178818, "end": 178870, "kind": "quote", "text": "> 编号 L1–L19 仅作外部对照，不构成 CQM 已证内容；外部结论不替代 §0 的构造与条件命题。"}
-{"doc_id": "D030", "sid": 2876, "start": 178872, "end": 178899, "kind": "table", "text": "| 编号 | 出处 | 外部结论 | 与本文的关系 |"}
-{"doc_id": "D030", "sid": 2877, "start": 178900, "end": 178921, "kind": "table", "text": "|:---|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2878, "start": 178922, "end": 179119, "kind": "table", "text": "| L1 | Bardeen, Cooper, Schrieffer, *Phys. Rev.* **108**, 1175 (1957), DOI:10.1103/PhysRev.108.1175 | BCS 能隙方程；$k_BT_c=1.13\\hbar\\omega_D e^{-1/\\lambda}$；$2\\Delta_0/k_BT_c=3.53$ | §0.9 退化目标；只做条件退化 |"}
-{"doc_id": "D030", "sid": 2879, "start": 179120, "end": 179232, "kind": "table", "text": "| L2 | Wada, *Phys. Rev.* **135**, A1481 (1964), DOI:10.1103/PhysRev.135.A1481 | Pb/Hg 能隙比偏离 3.53 | 强耦合偏离的外部事实 |"}
-{"doc_id": "D030", "sid": 2880, "start": 179233, "end": 179360, "kind": "table", "text": "| L3 | McMillan, *Phys. Rev.* **167**, 331 (1968), DOI:10.1103/PhysRev.167.331 | 强耦合 $T_c$ 公式；Pb/Hg 的 $\\lambda$ 较大 | 强耦合修正的对照 |"}
-{"doc_id": "D030", "sid": 2881, "start": 179361, "end": 179471, "kind": "table", "text": "| L4 | Emery, Kivelson, *Nature* **374**, 434 (1995), DOI:10.1038/374434a0 | 小超流密度下相位涨落决定 $T_c$ | 相位限制支的外部依据 |"}
-{"doc_id": "D030", "sid": 2882, "start": 179472, "end": 179607, "kind": "table", "text": "| L5 | Uemura et al., *Phys. Rev. Lett.* **62**, 2317 (1989), DOI:10.1103/PhysRevLett.62.2317 | 铜氧化物 $T_c\\propto n_s/m^*$ | Uemura 标度 |"}
-{"doc_id": "D030", "sid": 2883, "start": 179608, "end": 179702, "kind": "table", "text": "| L6 | Carlson, Emery, Kivelson, Orgad, arXiv:cond-mat/0206217 | 预配对/赝能隙/相位涨落综述 | 赝能隙图像的外部对照 |"}
-{"doc_id": "D030", "sid": 2884, "start": 179703, "end": 179888, "kind": "table", "text": "| L7 | Randeria, Taylor, *Annu. Rev. Condens. Matter Phys.* **5**, 209 (2014), DOI:10.1146/annurev-conmatphys-031113-133829；arXiv:1306.5785 | BCS–BEC crossover；预配对 | 两阶段图像的外部对照；不采用其机制 |"}
-{"doc_id": "D030", "sid": 2885, "start": 179889, "end": 180025, "kind": "table", "text": "| L8 | Deutscher, Entin-Wohlman, Fishman, Shapira, *Phys. Rev. B* **21**, 5041 (1980), DOI:10.1103/PhysRevB.21.5041 | 颗粒超导的渗流描述 | 渗流图像 |"}
-{"doc_id": "D030", "sid": 2886, "start": 180026, "end": 180140, "kind": "table", "text": "| L9 | Janssen, Stenull, *Phys. Rev. E* **67**, 046115 (2003), DOI:10.1103/PhysRevE.67.046115 | 渗流颗粒超导的场论 | 渗流标度 |"}
-{"doc_id": "D030", "sid": 2887, "start": 180141, "end": 180258, "kind": "table", "text": "| L10 | Timusk, Statt, *Rep. Prog. Phys.* **62**, 61 (1999), DOI:10.1088/0034-4885/62/1/002 | 铜氧化物赝能隙实验综述 | 赝能隙外部事实 |"}
-{"doc_id": "D030", "sid": 2888, "start": 180259, "end": 180364, "kind": "table", "text": "| L11 | Nagamatsu et al., *Nature* **410**, 63 (2001), DOI:10.1038/35065039 | MgB$_2$ 的 $T_c=39$ K | 数据 |"}
-{"doc_id": "D030", "sid": 2889, "start": 180365, "end": 180488, "kind": "table", "text": "| L12 | Tsuda et al., *Phys. Rev. Lett.* **91**, 127001 (2003), DOI:10.1103/PhysRevLett.91.127001 | MgB$_2$ 双能隙 | 双能隙外部事实 |"}
-{"doc_id": "D030", "sid": 2890, "start": 180489, "end": 180605, "kind": "table", "text": "| L13 | Hinks, Claus, Jorgensen, *Nature* **411**, 457 (2001), DOI:10.1038/35078037 | MgB$_2$ 总同位素指数约 0.32 | 同位素偏离 |"}
-{"doc_id": "D030", "sid": 2891, "start": 180606, "end": 180725, "kind": "table", "text": "| L14 | Drozdov et al., *Nature* **525**, 73 (2015), DOI:10.1038/nature14964 | H$_3$S 的 bcc 结构，$T_c\\approx203$ K | 数据 |"}
-{"doc_id": "D030", "sid": 2892, "start": 180726, "end": 180856, "kind": "table", "text": "| L15 | Drozdov et al., *Nature* **569**, 528 (2019), DOI:10.1038/s41586-019-1201-8 | LaH$_{10}$ 的 fcc 结构，$T_c\\approx250$ K | 数据 |"}
-{"doc_id": "D030", "sid": 2893, "start": 180857, "end": 181044, "kind": "table", "text": "| L16 | Gottlob, Hasenbusch, *Physica A* **201**, 593 (1993), DOI:10.1016/0378-4371(93)90131-M；arXiv:cond-mat/9305020 | 3D XY 简立方 $K_c=0.45420(2)$，$k_BT_c/J\\approx2.2017$ | §0.5 $c$ 的标定 |"}
-{"doc_id": "D030", "sid": 2894, "start": 181045, "end": 181164, "kind": "table", "text": "| L17 | Pelissetto, Vicari, *Phys. Rep.* **368**, 549 (2002), DOI:10.1016/S0370-1573(02)00219-3 | 3D XY 临界指数 | 临界指数对照 |"}
-{"doc_id": "D030", "sid": 2895, "start": 181165, "end": 181304, "kind": "table", "text": "| L18 | Leggett, *Prog. Theor. Phys.* **36**, 901 (1966), DOI:10.1143/PTP.36.901 | 相位刚度与超流密度 | $J_{\\rm eff}\\leftrightarrow n_s/m^*$ 的外部依据 |"}
-{"doc_id": "D030", "sid": 2896, "start": 181305, "end": 181473, "kind": "table", "text": "| L19 | Campostrini, Hasenbusch, Pelissetto, Rossi, Vicari, *Phys. Rev. B* **63**, 214503 (2001), DOI:10.1103/PhysRevB.63.214503 | 3D XY 临界指数的高精度 Monte Carlo | 临界指数对照 |"}
-{"doc_id": "D030", "sid": 2897, "start": 181475, "end": 181488, "kind": "prose", "text": "**未取到的外部依据**："}
-{"doc_id": "D030", "sid": 2898, "start": 181490, "end": 181537, "kind": "list", "text": "- “节点间差异方差等于声子配对通道”没有外部文献可援引；这是 CQM 构造，本文不替它补证。"}
-{"doc_id": "D030", "sid": 2899, "start": 181538, "end": 181596, "kind": "list", "text": "- $T^*$ 作为“局域配对温度”的操作定义没有外部标准；标准文献的 $T^*$ 是赝能隙 onset，二者不同。"}
-{"doc_id": "D030", "sid": 2900, "start": 181597, "end": 181653, "kind": "list", "text": "- 两阶段模型把相位刚度支 $T_\\theta$ 读作相位限制支（渗流只给连通域，M8），这一对应没有外部先例；"}
-{"doc_id": "D030", "sid": 2901, "start": 181653, "end": 181661, "kind": "list", "text": "它是构造性读法。"}
-{"doc_id": "D030", "sid": 2902, "start": 181663, "end": 181701, "kind": "heading", "text": "### B.3 历史唯物主义诠释的外部对照（检索日期 2026-11-19）"}
-{"doc_id": "D030", "sid": 2903, "start": 181703, "end": 181771, "kind": "quote", "text": "> 编号 P1–P13 仅作外部对照，不构成 CQM 已证内容；经典文本给出命题出处，现代文献给出可核实的 arXiv 编号或 DOI。"}
-{"doc_id": "D030", "sid": 2904, "start": 181771, "end": 181800, "kind": "quote", "text": "第 12.7 节的类比不得反向用作这些文献的“物理证明”。"}
-{"doc_id": "D030", "sid": 2905, "start": 181802, "end": 181834, "kind": "table", "text": "| 编号 | 出处 | 外部内容 | 与 §12.7 的关系 |"}
-{"doc_id": "D030", "sid": 2906, "start": 181835, "end": 181856, "kind": "table", "text": "|:---|:---|:---|:---|"}
-{"doc_id": "D030", "sid": 2907, "start": 181857, "end": 181959, "kind": "table", "text": "| P1 | 马克思《资本论》第三卷，第三篇（利润率趋向下降规律），Penguin, 1991 | 资本有机构成提高、利润率趋向下降规律及其反趋势（扩大市场等） | ⑦ 的社会侧结构同构；不是物理机制 |"}
-{"doc_id": "D030", "sid": 2908, "start": 181960, "end": 182077, "kind": "table", "text": "| P2 | 马克思《政治经济学批判大纲》（Grundrisse），Penguin, 1973, pp. 704–706 | “一般智力”（general intellect）对象化为固定资本 | ⑪ 的思想史背景；不作大模型理论 |"}
-{"doc_id": "D030", "sid": 2909, "start": 182078, "end": 182143, "kind": "table", "text": "| P3 | 马克思《关于费尔巴哈的提纲》第六条，1845 | “人的本质……是一切社会关系的总和” | ②、⑩ 的本体论语法 |"}
-{"doc_id": "D030", "sid": 2910, "start": 182144, "end": 182286, "kind": "table", "text": "| P4 | Burkett, *Marx and Nature: A Red and Green Perspective*, Palgrave, 1999, DOI:10.1057/9780312299651 | 历史唯物主义与自然代谢、热力学的相容性 | ⑤–⑦ 的方法论对照 |"}
-{"doc_id": "D030", "sid": 2911, "start": 182287, "end": 182403, "kind": "table", "text": "| P5 | Kibble, *J. Phys. A* **9**, 1387 (1976), DOI:10.1088/0305-4470/9/8/029 | 宇宙学畴结构与弦；因果视界外的独立选择 | ⑫ 的局域—全局传播对照 |"}
-{"doc_id": "D030", "sid": 2912, "start": 182404, "end": 182494, "kind": "table", "text": "| P6 | Zurek, *Nature* **317**, 505 (1985), DOI:10.1038/317505a0 | 凝聚态系统中的基布尔–祖雷克标度 | 同上 |"}
-{"doc_id": "D030", "sid": 2913, "start": 182495, "end": 182613, "kind": "table", "text": "| P7 | Berry, Keating, *SIAM Rev.* **41**, 236 (1999), DOI:10.1137/S0036144598347497 | 黎曼零点的谱/半经典解释 | ⑨ 的谱侧背景；不证明 RH |"}
-{"doc_id": "D030", "sid": 2914, "start": 182614, "end": 182696, "kind": "table", "text": "| P8 | Sierra, arXiv:1601.01797 | 黎曼零点作为 $xp$ 模型谱与 RH 的综述 | ⑨ 的外部对照；框架内物理同一仍属 M1 |"}
-{"doc_id": "D030", "sid": 2915, "start": 182697, "end": 182773, "kind": "table", "text": "| P9 | Kaplan et al., arXiv:2001.08361 | 神经语言模型的幂律标度 | ⑪ 的经验规律；不蕴含“必须无限扩大” |"}
-{"doc_id": "D030", "sid": 2916, "start": 182774, "end": 182861, "kind": "table", "text": "| P10 | Hoffmann et al., arXiv:2203.15556 | 计算最优训练：参数与数据按比例扩展 | ⑪ 的定量修正；否定“只堆参数”的简单读法 |"}
-{"doc_id": "D030", "sid": 2917, "start": 182862, "end": 182957, "kind": "table", "text": "| P11 | Schaeffer, Miranda, Koyejo, arXiv:2304.15004 | “涌现能力”可能是度量选择造成的假象 | ⑪ 的争议边界；不得把相变读成必然 |"}
-{"doc_id": "D030", "sid": 2918, "start": 182958, "end": 183084, "kind": "table", "text": "| P12 | Scheffer et al., *Nature* **461**, 53 (2009), DOI:10.1038/nature08227 | 临界转变前的临界慢化与早期预警信号 | ⑦ 的“增速趋于零→相变”对照；社会系统只作类比 |"}
-{"doc_id": "D030", "sid": 2919, "start": 183085, "end": 183211, "kind": "table", "text": "| P13 | 颗粒超导渗流：arXiv:1301.3282；arXiv:cond-mat/9906254；arXiv:cond-mat/0204082 | 颗粒/网络超导的渗流阈值与临界指数 | ⑥ 的外部事实对照；不替代 DM.11–DM.12 |"}
-{"doc_id": "D030", "sid": 2920, "start": 183213, "end": 183216, "kind": "prose", "text": "---"}
-{"doc_id": "D030", "sid": 2921, "start": 183218, "end": 183249, "kind": "prose", "text": "*该文档为 CQM 超导核心理论框架（差异-记忆核超导理论）。"}
-{"doc_id": "D030", "sid": 2922, "start": 183249, "end": 183324, "kind": "prose", "text": "旧框架的主丛曲率机制、完整因果链与第一性数值例链已在 Lean 中部分形式化；新理论的记忆核、两阶段与锚点仍属框架构造，数值预言与实验检验待后续验证。"}
-{"doc_id": "D030", "sid": 2923, "start": 183324, "end": 183325, "kind": "prose", "text": "*"}
+{"doc_id": "D030", "sid": 2499, "start": 152010, "end": 152041, "kind": "prose", "text": "**命题⑦ 反馈越强，差异收窄越快；收窄停止且无处可扩时相变。"}
+{"doc_id": "D030", "sid": 2500, "start": 152041, "end": 152104, "kind": "prose", "text": "** CQM 侧可写出如下链条【分析】：反馈闭环的几何条件与相变末端的读数要求 $\\ell_e$ 趋于零（平均等速，§7.3；"}
+{"doc_id": "D030", "sid": 2501, "start": 152104, "end": 152215, "kind": "prose", "text": "推导链环 22）；平均项占优（$\\mathcal B^-$ 压过 $\\mathcal B^+$）时，节点间差异方差 $\\sigma_\\ell^2$ 收窄，配对强度随之减弱——这是平均化阶段的效应（式 DM.5–DM.6）；"}
+{"doc_id": "D030", "sid": 2502, "start": 152215, "end": 152356, "kind": "prose", "text": "体系要维持自身，只能把差异生产推向新节点、新尺度（扩大化）；当可接入节点耗尽（$\\dot M_t=0$）且 $\\mathcal B\\ge0$，$\\dot{\\mathcal D}=\\mathcal B\\ge0$：差异不再收窄、只累积，平均化机制失效，只能以相变（层级跃迁）重建差异源。"}
+{"doc_id": "D030", "sid": 2503, "start": 152358, "end": 152412, "kind": "quote", "text": "> **必须保留的限定**：CQM 现有模型里锚核只固定固有时流速的**静态均值**，不冻结涨落的空间差异；"}
+{"doc_id": "D030", "sid": 2504, "start": 152412, "end": 152443, "kind": "quote", "text": "“反馈抹平全部差异”是一个**极限情形**，不是现有方程的解。"}
+{"doc_id": "D030", "sid": 2505, "start": 152443, "end": 152472, "kind": "quote", "text": "因此⑦是研究纲领性的读法，不是已推出的动力学定理【待推】。"}
+{"doc_id": "D030", "sid": 2506, "start": 152474, "end": 152559, "kind": "prose", "text": "社会侧的对照只作外部参照：马克思关于利润率趋向下降、资本有机构成提高与危机问题的分析（《资本论》第三卷第三篇），与本条共享“反馈增强—差异收窄—扩大化—危机”的叙述骨架；"}
+{"doc_id": "D030", "sid": 2507, "start": 152559, "end": 152604, "kind": "prose", "text": "这是**结构同构**，不是同一机制，也不能用经济学命题替代 $T_c$ 判据【外部对照】。"}
+{"doc_id": "D030", "sid": 2508, "start": 152606, "end": 152616, "kind": "prose", "text": "**危机 ≠ 相变。"}
+{"doc_id": "D030", "sid": 2509, "start": 152616, "end": 152697, "kind": "prose", "text": "** 无处可扩只标志旧机制失效、体系开始瓦解—重组，是 L1 位上的必要条件（$\\dot{\\mathcal H}\\to0$，残余仍在），不是相变本身，也不是门槛。"}
+{"doc_id": "D030", "sid": 2510, "start": 152697, "end": 152777, "kind": "prose", "text": "相变以原子化、先锋队、同步振荡为条件（各自必要、合起来仍不充分），且仍具几率性：同步是几率事件（§7.3），$p_{\\rm sync}=p_c$ 的等价性未证。"}
+{"doc_id": "D030", "sid": 2511, "start": 152777, "end": 152816, "kind": "prose", "text": "必然性在于——若相变发生，这些环节必须已经具备；偶然性在于——齐备也未必发生。"}
+{"doc_id": "D030", "sid": 2512, "start": 152816, "end": 152839, "kind": "prose", "text": "据此排除机械唯物主义式的“必然相变”【分析】。"}
+{"doc_id": "D030", "sid": 2513, "start": 152841, "end": 152866, "kind": "heading", "text": "### 12.7.4 存在分化与数论极限（⑧–⑨）"}
+{"doc_id": "D030", "sid": 2514, "start": 152868, "end": 152881, "kind": "prose", "text": "**⑧ 引力是存在论前提。"}
+{"doc_id": "D030", "sid": 2515, "start": 152881, "end": 152947, "kind": "prose", "text": "** 这与 `01 核心/引力存在论前提`、§1.1“两种引力”、§4.2“亏角不受 $G_N$ 限制”的既有口径一致【框架基础】。"}
+{"doc_id": "D030", "sid": 2516, "start": 152947, "end": 152993, "kind": "prose", "text": "限定：此处的“前提”是因果限制场/存在论条件，不是第五种力；超导链不引入 $G_N$ 数值。"}
+{"doc_id": "D030", "sid": 2517, "start": 152995, "end": 153041, "kind": "prose", "text": "**⑨ 固有时流速差异的历史总和度量分化程度；分化的极限是质数关联；同步振荡与黎曼零点出现；"}
+{"doc_id": "D030", "sid": 2518, "start": 153041, "end": 153055, "kind": "prose", "text": "量变质变在超导处到达临界点。"}
+{"doc_id": "D030", "sid": 2519, "start": 153055, "end": 153057, "kind": "prose", "text": "**"}
+{"doc_id": "D030", "sid": 2520, "start": 153059, "end": 153079, "kind": "table", "text": "| 环节 | CQM 对象 | 状态 |"}
+{"doc_id": "D030", "sid": 2521, "start": 153080, "end": 153096, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2522, "start": 153097, "end": 153295, "kind": "table", "text": "| 历史总和 | $\\mathsf H(t)=(\\mathcal H_{ij}(t))_{i,j\\in V_t}$，$\\mathcal H_{ij}(t)=\\int_0^t(v_{\\tau,i}-v_{\\tau,j})dt'$（§0.3 漂移定理 T1）是全对本体对象；投影 $\\mathcal T$、$\\mathcal D$、$\\hat\\mu_t$、$R_n$（§0.6） | 【框架基础】 |"}
+{"doc_id": "D030", "sid": 2523, "start": 153296, "end": 153397, "kind": "table", "text": "| 记忆侧读数 | $\\mathcal I_K(t)=\\int_0^tK\\,dt'$ 是全对族 $\\mathsf H$ 经测度 $\\mu_t$ 的体现/读数，不是数值相等 | 【构造】；M10 未证 |"}
+{"doc_id": "D030", "sid": 2524, "start": 153398, "end": 153499, "kind": "table", "text": "| 质数形式 | 超导态 $K(t)=e^{-t/2}(\\psi(e^t)-e^t)$，谱侧为零点 $\\{e^{i\\gamma_n t}/\\rho_n\\}$（式 DM.20） | 【构造】；条件严格 |"}
+{"doc_id": "D030", "sid": 2525, "start": 153500, "end": 153560, "kind": "table", "text": "| 同步振荡 | 零点模式 $e^{i\\gamma_n t}$ 的等速率振荡 | 【框架基础（谱表示条件于 RH）】 |"}
+{"doc_id": "D030", "sid": 2526, "start": 153561, "end": 153645, "kind": "table", "text": "| 量变质变 | $T_c$ 是刚度/软模事件；$\\mathcal I_K$ 与 $K^{\\rm SC}$ 平台是量变侧的体现 | 【框架基础】；$D_c$ 未定义 |"}
+{"doc_id": "D030", "sid": 2527, "start": 153647, "end": 153696, "kind": "prose", "text": "读法：差异的历史总和越大，存在的分化越深；分化的不可再分单元是质数（数论原子）；其谱侧读数是零点；"}
+{"doc_id": "D030", "sid": 2528, "start": 153696, "end": 153780, "kind": "prose", "text": "“量变”是全对族 $\\mathsf H$ 与 $\\mathcal I_K$ 的累积（$\\mathcal D$ 的三项平衡），“质变”是 $T_c$ 处的刚度/软模事件。"}
+{"doc_id": "D030", "sid": 2529, "start": 153782, "end": 153809, "kind": "quote", "text": "> **硬限定**：不能写“黎曼零点就是相变临界点”。"}
+{"doc_id": "D030", "sid": 2530, "start": 153809, "end": 153879, "kind": "quote", "text": "正确链路是“GL(5) 固定层级的 L 函数非平凡零点谱经紧化约束方程进入同步算符谱”（`04` 规范重组 §5.3 的 Lean 判定）；"}
+{"doc_id": "D030", "sid": 2531, "start": 153879, "end": 153955, "kind": "quote", "text": "“质变的位置”由刚度条件定，不由 $\\mathcal I_K$ 的某个临界值 $D_c$ 定（$D_c$ 未定义，§0.6）【框架基础 + 哲学诠释】。"}
+{"doc_id": "D030", "sid": 2532, "start": 153955, "end": 153979, "kind": "quote", "text": "黎曼猜想本身仍是未证命题，本读法不改变这一状态。"}
+{"doc_id": "D030", "sid": 2533, "start": 153981, "end": 154002, "kind": "heading", "text": "### 12.7.5 相变传播与共享（⑫）"}
+{"doc_id": "D030", "sid": 2534, "start": 154004, "end": 154016, "kind": "prose", "text": "**局域相变向全局传播。"}
+{"doc_id": "D030", "sid": 2535, "start": 154016, "end": 154071, "kind": "prose", "text": "** 框架已有最精确的一句话：**“局域不可能跃迁，局域只能满足条件，跃迁是全局同步事件”**（§10.2）。"}
+{"doc_id": "D030", "sid": 2536, "start": 154071, "end": 154138, "kind": "prose", "text": "赝能隙被读作“局域和乐平庸化已满足、全局同步尚未完成”的中间态（$K^{\\rm mid}$，§0.6），即“已经预备、尚未统一行动”。"}
+{"doc_id": "D030", "sid": 2537, "start": 154138, "end": 154206, "kind": "prose", "text": "外部文献中基布尔–祖雷克机制给出同样的因果结构：穿越连续相变时，因果关联区域外的子系统独立选择有序组态（附录 B.3 的 P5、P6）。"}
+{"doc_id": "D030", "sid": 2538, "start": 154206, "end": 154267, "kind": "prose", "text": "“一国革命输出”在此只对应“局域条件满足不等于全局跃迁”这一结构；它是一个政治比喻，CQM 不提供社会动力学【哲学诠释】。"}
+{"doc_id": "D030", "sid": 2539, "start": 154269, "end": 154343, "kind": "prose", "text": "**先锋队（组织学类比）**：若把先满足局域条件、并连接其他区域的高曲率区/晶界骨干读作“先锋队”，则赝能隙是“先锋队已形成、全局未锁定”的中间态；"}
+{"doc_id": "D030", "sid": 2540, "start": 154343, "end": 154424, "kind": "prose", "text": "先锋队的作用是提供无限簇骨架与相位相干路径、降低全局协同条件数，但不能替代全局相位刚度条件 $T_{\\rm BKT}/T_\\theta$（渗流只给连通域，M8）。"}
+{"doc_id": "D030", "sid": 2541, "start": 154424, "end": 154460, "kind": "prose", "text": "原子化—先锋队—同步振荡是相变的条件集合：三者各自必要，合起来仍不充分。"}
+{"doc_id": "D030", "sid": 2542, "start": 154460, "end": 154498, "kind": "prose", "text": "CQM 不含政治理论；此读法只作结构类比【哲学诠释】，不指任何具体政治组织。"}
+{"doc_id": "D030", "sid": 2543, "start": 154498, "end": 154551, "kind": "prose", "text": "对应推论 H6 见专论 `01 核心理论/CQM_核心_历史唯物主义与超导发生学.md` §5.2、§6。"}
+{"doc_id": "D030", "sid": 2544, "start": 154551, "end": 154611, "kind": "prose", "text": "另有提案把先锋队读作“先配对的岛”（平凡零点），把锚的形成读作动态锚的形成；该提案属待推、D1 未闭合，不改变本节口径。"}
+{"doc_id": "D030", "sid": 2545, "start": 154613, "end": 154625, "kind": "prose", "text": "**共享差异的历史总和。"}
+{"doc_id": "D030", "sid": 2546, "start": 154625, "end": 154818, "kind": "prose", "text": "** 物理侧已有结构桥梁：锚核内 $\\ell_e=0\\to v_{\\tau,i}=v_{\\tau,j}\\to\\mathcal H_{ij}=c_{ij}$ 全对冻结（常数不必为零）$\\to K(\\tau_i)=K(\\tau_j+c_{ij})$（式 DM.25、§0.7），即锚核内节点**共享同一谱阶梯与同一斜率**（等高不等位），$K^{\\rm SC}$ 是共享的**历史记录**；"}
+{"doc_id": "D030", "sid": 2547, "start": 154818, "end": 154853, "kind": "prose", "text": "单一平台要全对 $c_{ij}=0$，不可由锚核推出（`临-16`）。"}
+{"doc_id": "D030", "sid": 2548, "start": 154853, "end": 154914, "kind": "prose", "text": "关键限定：共享不是把差异平均掉——锚核只固定静态均值与斜率，不冻结涨落；差异本身仍是配对通道的载体（§0.3、§0.4）。"}
+{"doc_id": "D030", "sid": 2549, "start": 154914, "end": 154977, "kind": "prose", "text": "社会学中的“生产资料公有制”与人工智能中的“共享”在此只作**结构类比**：共享的是差异的历史总和，不是取消差异【哲学诠释】。"}
+{"doc_id": "D030", "sid": 2550, "start": 154977, "end": 155018, "kind": "prose", "text": "AI 侧的具体对应物尚未确定，不得以“权重共享”“数据共享”等未加论证的说法冒充。"}
+{"doc_id": "D030", "sid": 2551, "start": 155020, "end": 155042, "kind": "heading", "text": "### 12.7.6 对超导研究的可操作推论"}
+{"doc_id": "D030", "sid": 2552, "start": 155044, "end": 155079, "kind": "table", "text": "| 编号 | 推论 | 对应现有结构/缺口 | 检验方向 | 状态 |"}
+{"doc_id": "D030", "sid": 2553, "start": 155080, "end": 155106, "kind": "table", "text": "|:---|:---|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2554, "start": 155107, "end": 155218, "kind": "table", "text": "| H1 | 相变的空间不均匀性应表现为多平台/多能隙谱特征 | §0.6 $N_{\\rm comp}$、六类谱特征；G21 | 局域谱（STM/ARPES）与宏观比热、多探针记忆效应联合 | 【分析】；G21 未闭合 |"}
+{"doc_id": "D030", "sid": 2555, "start": 155219, "end": 155325, "kind": "table", "text": "| H2 | 若样品被处理到差异方差趋于零（过度均匀或强反馈），配对强度应下降 | 式 DM.5–DM.6 | 退火/均匀化系列的 $T^*$ 与 $\\Delta_0$ 对比 | 【待推】；不宣称已有数据支持 |"}
+{"doc_id": "D030", "sid": 2556, "start": 155326, "end": 155455, "kind": "table", "text": "| H3 | 赝能隙温区 $\\Delta T_{\\rm pg}=T^*-T_c$ 随不均匀度增大 | 式 DM.13；§0.6 四阶段 | 同一材料不同无序度的 $T^*$、$T_c$、$K^{\\rm mid}$ 联合测量 | 【分析】；四阶段边界未精确 |"}
+{"doc_id": "D030", "sid": 2557, "start": 155456, "end": 155543, "kind": "table", "text": "| H4 | 相变锚连通度越高，不同局域探针读出的 $K$ 平台一致性越高 | 式 DM.25；M9、M10 | 多探针记忆效应的空间关联长度 | 【待推】；数值同一未证 |"}
+{"doc_id": "D030", "sid": 2558, "start": 155544, "end": 155620, "kind": "table", "text": "| H5 | 过掺杂区差异生产饱和，$T_c$ 转入相位支并出现下降支 | 式 DM.13 的两阶段合成 | 已有相图对照 | 【分析】；不新增公式 |"}
+{"doc_id": "D030", "sid": 2559, "start": 155621, "end": 155738, "kind": "table", "text": "| H6 | 若高曲率区/晶界骨干网络被切断或稀释，局域配对与赝能隙可保留，但全局相位锁定与 $T_c$ 应被抑制 | §10.2、§0.5；M8、G21 | 颗粒超导/双晶样品的晶界连通性对照 | 【分析／待推】；不宣称已有数据 |"}
+{"doc_id": "D030", "sid": 2560, "start": 155740, "end": 155803, "kind": "prose", "text": "H2、H4 与 H6 是这张表里仅有的三个**可能被判伪**的方向；H1、H3、H5 主要是既有结构的重新表述，不构成新预言。"}
+{"doc_id": "D030", "sid": 2561, "start": 155803, "end": 155828, "kind": "prose", "text": "完整的探索方向 D1–D8 与优先级见专论 §9。"}
+{"doc_id": "D030", "sid": 2562, "start": 155830, "end": 155845, "kind": "heading", "text": "### 12.7.7 禁止写法"}
+{"doc_id": "D030", "sid": 2563, "start": 155847, "end": 155882, "kind": "list", "text": "1. 不能写“历史唯物主义证明了超导机制”；只能写“提供发生学诠释”。"}
+{"doc_id": "D030", "sid": 2564, "start": 155883, "end": 155915, "kind": "list", "text": "2. 不能写“阶级/分工决定 $T_c$”；社会范畴不是物理量。"}
+{"doc_id": "D030", "sid": 2565, "start": 155916, "end": 155948, "kind": "list", "text": "3. 不能写“黎曼零点 = 相变临界点”；须经紧化约束方程链路。"}
+{"doc_id": "D030", "sid": 2566, "start": 155949, "end": 156008, "kind": "list", "text": "4. 不能写“大模型参数必须无限增加”；外部文献只给幂律经验，且存在度量依赖的争议（附录 B.3 的 P9–P11）。"}
+{"doc_id": "D030", "sid": 2567, "start": 156009, "end": 156038, "kind": "list", "text": "5. 不能写“公有制 = 超导”；这是结构类比，不是同一。"}
+{"doc_id": "D030", "sid": 2568, "start": 156039, "end": 156070, "kind": "list", "text": "6. 不升级 M1/M9/M10/G21/G22 的任何状态。"}
+{"doc_id": "D030", "sid": 2569, "start": 156071, "end": 156123, "kind": "list", "text": "7. 不能写“无处可扩必然相变”；危机只是瓦解—重组的开始，原子化—先锋队—同步振荡的条件集合仍不充分。"}
+{"doc_id": "D030", "sid": 2570, "start": 156125, "end": 156143, "kind": "heading", "text": "## 13. 严格性缺口表（G 类）"}
+{"doc_id": "D030", "sid": 2571, "start": 156145, "end": 156166, "kind": "prose", "text": "框架中 G9–G22 环节的闭合状态一览："}
+{"doc_id": "D030", "sid": 2572, "start": 156168, "end": 156184, "kind": "table", "text": "| 缺口 | 内容 | 状态 |"}
+{"doc_id": "D030", "sid": 2573, "start": 156185, "end": 156202, "kind": "table", "text": "|:---|:---|:---:|"}
+{"doc_id": "D030", "sid": 2574, "start": 156203, "end": 156246, "kind": "table", "text": "| **G9** | 曲率截断共振窗口 $\\sigma$ 的来源与标定 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2575, "start": 156247, "end": 156342, "kind": "table", "text": "| **G10** | 闭环条件函数的动力学形式。几何侧约束已由单值性给出：$\\prod_kr_k=1$（§7.3）；动力学形式（$r_k$ 随时间演化如何满足该约束）未闭合 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2576, "start": 156343, "end": 156413, "kind": "table", "text": "| **G11** | $\\mathcal{D}_{\\text{lattice}}$ 从正四单纯形组合构型到声子谱的具体推导 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2577, "start": 156414, "end": 156478, "kind": "table", "text": "| **G12** | 引力拓扑因子 $\\mathcal{T}_{\\text{grav}}$ 的完整度规依赖形式 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2578, "start": 156479, "end": 156562, "kind": "table", "text": "| **G13** | BCS 积分方程 $\\tanh\\to$ 对数渐近（“积分→$T_c$”） | 闭合（`bcsTcFromIntegral_solved`） |"}
+{"doc_id": "D030", "sid": 2579, "start": 156563, "end": 156973, "kind": "table", "text": "| **G14** | 中子缺陷谱判据的完整闭合——**非对角元形式**：$D(\\delta)$ 的 $(3,4)/(4,3)$ 元（$\\alpha_4$ 末端）为 $-\\delta$，$\\det D = 8 - 3\\delta^2$，正定条件 $\\lvert\\delta\\rvert < \\sqrt{8/3}$。Lean 形式化全部完成（`SPAF.lean` G14 节）：对称性/Hermite/δ=1 退化、LDL 二次型分解、det 闭式、正向/反向/双向正定判据（`neutronDefectCartan_posDef_iff_abs_lt_sqrt_eight_thirds`）、正定窗口 $\\lvert\\delta\\rvert<\\sqrt{8/3}$、行列式匹配（$\\det C_n(\\varepsilon(\\delta)) = \\det D(\\delta)$）；微扰质量见 §2.3 补注 | 闭合 |"}
+{"doc_id": "D030", "sid": 2580, "start": 156974, "end": 157181, "kind": "table", "text": "| **G15** | 主次结构谱间隙差→同位素效应映射 | 未闭合（行内未闭合项）：$\\delta(Z,N)$ 函数形式的来源（现取「满足全部物理条件的最简候选形式」，**非**从 $SU(5)$ 重组实现动力学导出，§11.8）；$T_c\\propto M^{-\\alpha}$ 中「$T_c$ 的质量敏感度 = $\\delta$ 的敏感度」与 $Z\\approx M/2$ 两处未给出（专题 §11.8） |"}
+{"doc_id": "D030", "sid": 2581, "start": 157182, "end": 157232, "kind": "table", "text": "| **G16** | 因果分辨率的形式化（Regge 亏角密度→Ricci 标量） | 未闭合 |"}
+{"doc_id": "D030", "sid": 2582, "start": 157233, "end": 157408, "kind": "table", "text": "| **G18** | §12 主丛曲率机制关键参数的第一性提取。曲率载体切换为 LQG 铰链亏角后，原基于顶点角亏的定量参数（$C^2=2/3$、$\\Delta\\varepsilon_0$ 计算链、$K_{\\text{eff}}$、$K_0$ 前置因子、自由能 $T_c$ 链）失效，整体待推 W-3。定性两阶段判据不受影响。 | 待推 W-3 |"}
+{"doc_id": "D030", "sid": 2583, "start": 157409, "end": 157655, "kind": "table", "text": "| **G19** | §10.1 和乐相位闭合条件 $\\mathcal{H}_{ij} = \\exp(i\\oint_C \\omega_{\\alpha_i\\alpha_j}) \\approx 1$ 中“$\\approx 1$”的**容差标定**：容差与温度、向错芯曲率 $\\varepsilon$、相干长度 $\\xi_{coher}$ 的定量关系；有效窗口宽度 $\\varepsilon \\xi_{coher} - \\Delta\\phi_{thermal}(T)$ 的严格推导 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2584, "start": 157656, "end": 157794, "kind": "table", "text": "| **G21** | §10.2 赝能隙相图：和乐平庸化条件空间不均匀满足率到可观测量（ARPES 谱 $A(\\mathbf{k},\\omega)$、STM 局域态密度）的**映射关系**。当前仅给出定性解释（高曲率区满足/低曲率区不满足），缺定量谱函数推导 | 未闭合 |"}
+{"doc_id": "D030", "sid": 2585, "start": 157795, "end": 158043, "kind": "table", "text": "| **G22** | §12.3 临界温度 $T_c$ 作为“正常态与超导态丛作用量交叉”的构造推导。定性结构（涨落温度依赖 tanh 律、资格条件、丛作用量竞争）保留；定量 $T_c$ 闭式及其物理基座（$V_{\\text{亏角激活}}$ 形式、映射 $\\Phi$、自由能 $F_n$ 显式作用量、制备历史依赖）随载体切换为铰链亏角而待推 W-3；Lean 侧 `TransitionTemperatureCQM` 只给条件闭式（给定配对阈值，不作 G22 物理闭合）。 | 待推 W-3 |"}
+{"doc_id": "D030", "sid": 2586, "start": 158045, "end": 158128, "kind": "quote", "text": "> **表注**：本表编号 G9–G22 连号列出；G17（FG→GR 连续极限退化定理）与 G20-ext（两质子耦合阈值）均已闭合、不属缺口表编号，故不列于本表。"}
+{"doc_id": "D030", "sid": 2587, "start": 158130, "end": 158365, "kind": "quote", "text": "> **G18 补注**：缺口 G18 中“$\\delta_{\\text{intrinsic}}$ 需 DFT 贝里曲率”的前提，其层级基础是四层 FG 剖分与分子同步算符 $\\hat{\\mathcal{S}}_{\\text{mol}} = V_0 + L_{\\text{mol}}$（`07 精细引力（FG）/FG_核心理论.md` §6.1，分子 FG 谱的可观测含内禀亏角）：分子 FG 谱把这部分几何量吸收为自身谱结构，逻辑上消除对 DFT 贝里曲率的外部依赖。"}
+{"doc_id": "D030", "sid": 2588, "start": 158365, "end": 158394, "kind": "quote", "text": "耦合参数第一性化缺口仍开放（G18 本体，待推 W-3）。"}
+{"doc_id": "D030", "sid": 2589, "start": 158396, "end": 158418, "kind": "heading", "text": "### 13.1 差异-记忆核断点（M 类）"}
+{"doc_id": "D030", "sid": 2590, "start": 158420, "end": 158472, "kind": "prose", "text": "新核心理论（§0）的未证环节单列如下；它们不改变 G9–G22 的编号与状态，也不把任何构造升级为已证。"}
+{"doc_id": "D030", "sid": 2591, "start": 158474, "end": 158490, "kind": "table", "text": "| 断点 | 内容 | 状态 |"}
+{"doc_id": "D030", "sid": 2592, "start": 158491, "end": 158507, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2593, "start": 158508, "end": 158699, "kind": "table", "text": "| **M1** | Sierra-CQM 物理同一：$L_n=2\\pi n/\\gamma_n$ 能否从 P1/P2/A12 推出；记忆核 $K(t)$ 与同步算符本征值 $\\lambda_n(T)$ 的频率集合是否同一（零温极限是否为 $\\{\\gamma_n\\}$） | 未证；旧 §11.6 的 $\\lambda_n(T)$ 通道与 §0.8 的 $K(t)$ 通道不得互替 |"}
+{"doc_id": "D030", "sid": 2594, "start": 158700, "end": 158792, "kind": "table", "text": "| **M2** | 配对通道识别：节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ 与声子配对通道的识别 | 未证；§0.9 条件退化的三步之一 |"}
+{"doc_id": "D030", "sid": 2595, "start": 158793, "end": 158847, "kind": "table", "text": "| **M3** | 态密度识别：$N_i(0)$ 与电子态密度 | 未证；§0.9 条件退化的三步之一 |"}
+{"doc_id": "D030", "sid": 2596, "start": 158848, "end": 158914, "kind": "table", "text": "| **M4** | 频率识别：$\\omega_i$ 与 $\\omega_D$/声子频率 | 未证；§0.9 条件退化的三步之一 |"}
+{"doc_id": "D030", "sid": 2597, "start": 158915, "end": 159011, "kind": "table", "text": "| **M5** | 差异函数：$C_{ij}=f(\\varepsilon_i-\\varepsilon_j)$ 的 $f$ 只取领头阶，显式形式未定 | 未定；不改变代数结构，影响定量预测 |"}
+{"doc_id": "D030", "sid": 2598, "start": 159012, "end": 159164, "kind": "table", "text": "| **M6** | 键刚度：$J_{ij}=J_0(\\langle(\\delta C_{ij})^2\\rangle/\\langle(\\delta C)^2\\rangle_{\\rm ref})\\cos\\mathcal H_{ij}$ 是构造组装，未从几何第一性推出 | 未证；式 (DM.9) 是构造 |"}
+{"doc_id": "D030", "sid": 2599, "start": 159165, "end": 159274, "kind": "table", "text": "| **M7** | 非高斯—相位阻挫识别：$\\kappa_3\\ne0$ → $\\mathcal H\\ne0$ → $K_{\\rm global}\\ne0$ 未给出 | 未证；式 (DM.19) 只是构造，不是判据 |"}
+{"doc_id": "D030", "sid": 2600, "start": 159275, "end": 159393, "kind": "table", "text": "| **M8** | 两阶段合成：$p_{\\rm sync}=p_c$ 未证；$p_{\\rm pair},t,p_c$ 的材料依赖未算；§11 $T_c$ 闭式与 $T^*/T_c$ 的映射未建立 | 未证；§11 闭式只作幅度通道 |"}
+{"doc_id": "D030", "sid": 2601, "start": 159394, "end": 159536, "kind": "table", "text": "| **M9** | 锚点—序参量映射：$K^{\\rm SC}$ 与旧结构群序参量/同步算符本征值 $\\lambda_n(T)$ 的映射未建立 | 结构桥梁已建立（§0.7：锚核内全对冻结 ⇒ 各点 $K$ 等高不等位、共享谱阶梯）、数值同一待独立复现；§0.7 锚点描述仍是构造 |"}
+{"doc_id": "D030", "sid": 2602, "start": 159537, "end": 159830, "kind": "table", "text": "| **M10** | 全对历史—记忆核积分映射：$\\mathcal I_K=\\int K\\,dt$ 是全对族 $\\mathsf H=(\\mathcal H_{ij})$ 经节点对测度 $\\mu_t$ 的**记忆侧读数**，二者是体现/识别关系，不是数值相等；不得写成 $\\mathcal I_K=\\mathcal H_{ij}$，也不得把全体 $\\mathcal H_{ij}$ 逐对相加当 $\\mathcal I_K$ | 结构桥梁已建立（§0.6 DM.25 逐对式＋§0.6 全对测度 $\\hat\\mu_t$、$R_n$）、定量映射待独立复现；§0.6 环节⑧；`临-24` |"}
+{"doc_id": "D030", "sid": 2603, "start": 159832, "end": 159913, "kind": "quote", "text": "> **表注**：M1–M4、M7–M10 在 §0 已逐处引用；M5、M6 为 §0 构造环节的显式编号，登记目的是避免把“方差给出核”“核给出刚度”读成推导。"}
+{"doc_id": "D030", "sid": 2604, "start": 159913, "end": 159965, "kind": "quote", "text": "M 表不替代 G 表：G21（赝能隙→谱函数）与 G22（旧 $T_c$ 丛作用量交叉）仍按原状态保留。"}
+{"doc_id": "D030", "sid": 2605, "start": 159967, "end": 159987, "kind": "heading", "text": "## 14. 与 Lean 形式化的对应"}
+{"doc_id": "D030", "sid": 2606, "start": 159989, "end": 160050, "kind": "prose", "text": "超导形式化库位于 `08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/`。"}
+{"doc_id": "D030", "sid": 2607, "start": 160050, "end": 160062, "kind": "prose", "text": "涉及的形式化对象与模块："}
+{"doc_id": "D030", "sid": 2608, "start": 160064, "end": 160083, "kind": "table", "text": "| 模块 | 对应层 | 关键对象 |"}
+{"doc_id": "D030", "sid": 2609, "start": 160084, "end": 160100, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2610, "start": 160101, "end": 160152, "kind": "table", "text": "| `Ontology` | §1 本体论 | 有限本体公理、RQM 唯物化、电子作为基态耦合对应 |"}
+{"doc_id": "D030", "sid": 2611, "start": 160153, "end": 160227, "kind": "table", "text": "| `TransitionTemperature` | §11.2 $T_c$ | `criticalTemperature`、BCS 精确常数 |"}
+{"doc_id": "D030", "sid": 2612, "start": 160228, "end": 160394, "kind": "table", "text": "| `TransitionTemperatureCQM` | §11.2 $T_c$（条件闭式；不作 G22 物理闭合） | 相变量子 $☯$、玻色恒等式、阈值交叉给 $T_c=\\Omega_0/(2\\,\\mathrm{artanh}\\,\\mathrm{ratio}^2)$；丛作用量交叉 $F_1=F_2$ 仍是待推的物理基座 |"}
+{"doc_id": "D030", "sid": 2613, "start": 160395, "end": 160471, "kind": "table", "text": "| `Reduction` | §11 温度依赖（BCS 退化与还原） | 能隙方程、$T_c$ 方程、普适能隙比、同位素 $\\alpha=1/2$ |"}
+{"doc_id": "D030", "sid": 2614, "start": 160472, "end": 160573, "kind": "table", "text": "| `CartanSuperconductivity` | §9 库珀对跃迁（A4 谱分解与序参量） | A4 谱分解、序参量正性（`superconductingOrderTensor_pos`） |"}
+{"doc_id": "D030", "sid": 2615, "start": 160574, "end": 160661, "kind": "table", "text": "| `FirstPrinciples` | §11.3 统计极限 | A4→晶格声子→耦合→能隙→$T_c$；`gapIntegral_pr`；再生产维持（锁定因子衰减） |"}
+{"doc_id": "D030", "sid": 2616, "start": 160662, "end": 160720, "kind": "table", "text": "| `ElementCartan` | §2 元素层级 | 质/中子主次结构、同位素效应 $\\delta(N)$ |"}
+{"doc_id": "D030", "sid": 2617, "start": 160721, "end": 160783, "kind": "table", "text": "| `SPAF` | §2.5 晶胞路线 | 元素嘉当矩阵、因果耦合 $t_{ij}$、Regge 边长、中子缺陷谱判据 |"}
+{"doc_id": "D030", "sid": 2618, "start": 160784, "end": 160867, "kind": "table", "text": "| `MolecularGeometry` | §2.5 晶胞路线 | 分子→晶胞嘉当矩阵（链B条件）→ Regge 晶胞/亏角（链A生成）→ FG 退相干场强度 |"}
+{"doc_id": "D030", "sid": 2619, "start": 160868, "end": 160939, "kind": "table", "text": "| `BCSIntegralAsymptotic` | §11.3 | G13 闭合：`bcsTcFromIntegral_solved` |"}
+{"doc_id": "D030", "sid": 2620, "start": 160940, "end": 161075, "kind": "table", "text": "| `CouplingSpace` | §12 主丛曲率机制 | 亏角→固有时流速→耦合动量 $p_u$→不确定性 $\\Delta u\\cdot\\Delta\\varepsilon$→跃迁耦级谱 $2\\ln n$ 与资格条件→丛作用量竞争；$\\zeta(s)$ 母积分 |"}
+{"doc_id": "D030", "sid": 2621, "start": 161076, "end": 161131, "kind": "table", "text": "| `BridgeTheorems` | 跨模块桥接 | 谱间隙↔BCS↔Regge 亏角↔FG 退相干场 |"}
+{"doc_id": "D030", "sid": 2622, "start": 161133, "end": 161272, "kind": "quote", "text": "> **差异-记忆核新增模块（承接登记）**：`CrossingParadigm`（自能支 $T_c$ 交叉范式）、`DNRLink`（DNR 接口）、`GLUnified`（统一 GL 泛函）与顶层 `Superconductivity.lean` 已登记于 Lean 源码；"}
+{"doc_id": "D030", "sid": 2623, "start": 161272, "end": 161320, "kind": "quote", "text": "它们对应原探索层推导（探索稿已于 2026-11-17 全量删除），不改变本表旧映射的缺口状态。"}
+{"doc_id": "D030", "sid": 2624, "start": 161322, "end": 161331, "kind": "heading", "text": "## 15. 路线"}
+{"doc_id": "D030", "sid": 2625, "start": 161333, "end": 161341, "kind": "prose", "text": "CQM 超导理论"}
+{"doc_id": "D030", "sid": 2626, "start": 161343, "end": 161389, "kind": "quote", "text": "> 由于禁闭边界的严格化需同构黎曼猜想的证明而遥遥无期，$G_N$ 实验提升精度也遥遥无期；"}
+{"doc_id": "D030", "sid": 2627, "start": 161389, "end": 161443, "kind": "quote", "text": "超导作为最活跃的实验对象且属于涌现对象，反而是 CQM 当前最值得投入、且相对于前两者明显能够形式化的方向。"}
+{"doc_id": "D030", "sid": 2628, "start": 161445, "end": 161458, "kind": "heading", "text": "## 16. 当前开放问题"}
+{"doc_id": "D030", "sid": 2629, "start": 161460, "end": 161541, "kind": "quote", "text": "> **承接定位**：本表为旧框架的开放问题清单；其中“从黎曼零点直接推导”“必然是同步算符”等强断言为旧框架口径，当前状态以 §0 与 §13 的 M 表为准。"}
+{"doc_id": "D030", "sid": 2630, "start": 161543, "end": 161560, "kind": "table", "text": "| 优先级 | 问题 | 影响 |"}
+{"doc_id": "D030", "sid": 2631, "start": 161561, "end": 161585, "kind": "table", "text": "|--------|------|------|"}
+{"doc_id": "D030", "sid": 2632, "start": 161586, "end": 161684, "kind": "table", "text": "| 闭合 | $\\beta$ 的微观来源（离散拉普拉斯格林函数 / A4 群论） | 基本定义 $\\beta = \\frac{1}{4\\pi}\\ln\\frac{L}{a}$（系统尺寸严格确定） |"}
+{"doc_id": "D030", "sid": 2633, "start": 161685, "end": 161857, "kind": "table", "text": "| 代数推导完成、物理基座待建立 | **从$V_{\\text{element}}$到超导同步算符的显式连接**（§11.10） | 映射 $\\Phi$ 以断言式给出（$\\Phi(L_{\\text{orbital}})$ 侧无代数对应步骤）；$V_{\\text{亏角激活}}$ 的形式与涨落比例关系未推导。定量 $T_c$ 闭式待推 W-3 |"}
+{"doc_id": "D030", "sid": 2634, "start": 161858, "end": 161977, "kind": "table", "text": "| 公式齐备、推导链路多处缺失 | **完全第一性 $T_c$ 计算链**（§11.14）：曲率载体切换为铰链亏角后，原基于顶点角亏的计算链（含 $\\Delta\\varepsilon_0$ 公式）失效，待推 W-3。 | 待推 W-3 |"}
+{"doc_id": "D030", "sid": 2635, "start": 161978, "end": 162563, "kind": "table", "text": "| 高 | **$T_c$ 的制备历史依赖（记忆效应）**（§11.10）：本闭式按平衡态取值，$T_c$ 只由 $\\theta_D$、$\\varepsilon$、$\\gamma_n$、$\\Delta\\varepsilon_0$ 决定，其中 $\\Delta\\varepsilon_0$ 是唯一的状态型输入（$T_c$ 随其单调增）。实测量上同材料经不同制备给出不同 $T_c$，充分退火后收敛（Zhang–Zhou–Zhou, *Physica C* **495** (2013) 44–47, doi:10.1016/j.physc.2013.07.013；Ortlepp–Volkmann–Yamanashi, *Physica C* **500** (2014) 20–24, doi:10.1016/j.physc.2014.02.003）。代数形式在 $\\Delta\\varepsilon_0\\to\\Delta\\varepsilon_0[m]$ 下不变，平衡极限须回到原式。开放：(1) 制备量到 $\\Delta\\varepsilon_0$ 的定量映射；(2) 平衡极限的收敛判据；(3) 制备历史进入资格条件与和乐平庸化条件的时间结构 | 决定 $T_c$ 闭式的适用范围：实测量已见制备历史记忆，而该闭式在结构上无法表达该依赖（记入 G22 未闭合项） |"}
+{"doc_id": "D030", "sid": 2636, "start": 162564, "end": 162625, "kind": "table", "text": "| 最高 | 中子 $D(\\delta)$ 的代数类型（有限 / 仿射 / 双曲） | 决定核子→原子核组合算符的形式 |"}
+{"doc_id": "D030", "sid": 2637, "start": 162626, "end": 163355, "kind": "table", "text": "| 最高 | **同步算符 = 结构群叠加态 = 前时空基态紧化结构（GL(5)/SU(5)）重组实现后子结构的再现**：同步算符 $\\hat{\\mathcal{S}}$ 的本征态 = 结构群基矢 $\\lvert U(1)//\\mathbb{Z}_n\\rangle$，本征值 = 相变有效谱 $\\lambda_n(T)$（零温无亏角极限退化为黎曼零点虚部 $\\gamma_n$，同步成本，非耦级 $1/4+\\gamma_n^2$），Hilbert–Pólya 算符 $\\hat{H}_{\\text{HP}} = \\hat{\\mathcal{S}}^2 + 1/4$ 给出耦级。超导同步算符 = 结构群叠加态的谱算符 = 子结构经 FG 激活后的再现（§11.6）。相变 = 叠加态自身谱结构的本征值交叉 $\\lambda_2(T_c)=\\lambda_1(T_c)$，叠加态通过自组织退相干到本征值最低的分量，丛作用量交叉是其热力学投影。开放：(1) 热修正 $\\hat{V}_{\\text{热}}(T)$ 的显式形式；(2) 丛作用量与本征值的映射函数 $\\Phi$ 的严格构造；(3) 黎曼猜想（GL(5) 固定层级的实谱条件）→ 唯一 $T_c$ 的严格证明（若不成立，本征值离开临界线，$T_c$ 不唯一）；(4) $\\hat{H}_{\\text{HP}} = \\hat{\\mathcal{S}}^2 + 1/4$ 的严格证明；(5) 本征值用 $\\gamma_n$（非 $1/4+\\gamma_n^2$）的严格推导 | 决定相变判据的谱结构根基，超导直接是子结构的再现；黎曼猜想（GL(5) 固定层级的实谱条件）是唯一 $T_c$ 的存在论前提 |"}
+{"doc_id": "D030", "sid": 2638, "start": 163356, "end": 163753, "kind": "table", "text": "| 最高 | **共振机制：黎曼共振 → 同步共振 → 全局同步**（§11.6.1）。机制链：黎曼零点（质数分布共振频率）→ 同步算符本征值（共振体现）→ 叠加态拍频（退相干速率）→ 本征值交叉（拍频消失=同步共振）→ 共振诱导退相干（自组织到最低同步成本）→ Kuramoto 型共振传播（底空间联络传播相位相干）→ 全局同步超导相变。唯物主义条件：GL(5) 固定层级黎曼共振谱先在（前时空），FG激活+降温只利用先在规律，不创造新规律。开放：(1) 拍频与退相干速率的定量关系 $\\tau \\sim \\hbar/\\|\\lambda_m-\\lambda_n\\|$；(2) Kuramoto 临界耦合 $K_c$ 与底空间联络的精确关系；(3) 共振传播的非线性“催化”效应微观机制；(4) 从局域共振到全局同步的时空标度分析 | 决定退相干——自组织的具体机制；共振传播解释相变突变性 |"}
+{"doc_id": "D030", "sid": 2639, "start": 163754, "end": 164366, "kind": "table", "text": "| 最高 | **黎曼零点的实验验证：能级是表现，同步算符是本质**。已有实验：He et al. 2020（Phys. Rev. A **101**, 043402）单量子比特 Floquet 实验、2021（npj Quantum Information **7**, 109）囚禁离子实验——首次实验观察到黎曼零点作为准能级出现（驱动参数与 ζ 零点重合时动力学冻结）。但实验观察到的是**能级（表现）**，尚未认识到能级背后的**同步算符（本质）**。超导直接关联：Sierra 2005（J. Stat. Mech. P12006）Russian doll 超导模型将黎曼零点嵌入超导谱（缺失态，循环 RG），但尚无实验验证。验证途径：(1) 超导系统中观察到黎曼零点能级（从能级表现深入到同步算符本质）；(2) 不同 $n$ 跃迁 $T_c^{(n)}$ 比值中黎曼零点结构显现——**本理论预言高阶跃迁需要更强亏角涨落（$\\Delta\\delta_c^{(n=4)} \\approx 0.27$），$T_c(4)/T_c(2) \\approx 0.13\\text{–}0.27$**；(3) **临界亏角涨落 $\\Delta\\delta_c \\approx 0.20$**（低于此不超导）；(4) GUE 统计在超导能谱数据中的体现 | 能级是同步算符的唯象表现；实验从能级深入到同步算符是验证本理论的关键 |"}
+{"doc_id": "D030", "sid": 2640, "start": 164367, "end": 164920, "kind": "table", "text": "| 最高 | **氢原子能级背后必然是同步算符**（§11.6.2）：RQM同时干掉电子实在论与庸俗反电子实在论 → 耦合常数涨落生效 → 能级非电子内禀性质而是关系网络同步结构。**从黎曼零点直接推导**：$E_n = -R/N(\\gamma_n)^2 = -R/n^2$ （$N$=黎曼零点计数函数）。同步算符是黎曼式的（本征值=$\\gamma_n$），SO(4)是显现不是算符本身。这是CQM基础前提的逻辑必然，不是假设。**可检验预言**：(1) 能级 $-R/n^2$ 验证（精度 $10^{-12}$）；(2) $\\|E_n\\|\\cdot a_n = R\\cdot a_0$ = 常数（不确定关系，验证）；(3) Rydberg态间距标准差 $\\approx 0.61$ 接近GUE（$\\approx 0.52$，黎曼零点间距Montgomery-Odlyzko定律）而非Poisson（$1.0$）；(4) 外场中SO(4)重组实现模式。开放：(1) $N(\\gamma_n)$ 精确公式（RvM是渐近）；(2) 为什么氢原子用谱序号而超导用本征值直接函数；(3) 多电子原子/分子能级；(4) 库仑势从同步结构涌现 | 决定CQM本体论（电子关系产物）的实验检验；从黎曼零点直接推出能级 |"}
+{"doc_id": "D030", "sid": 2641, "start": 164921, "end": 164980, "kind": "table", "text": "| 高 | 电子费米统计的严格来源（$SU(4)\\simeq Spin(6)$ 旋量表示？） | 决定主丛的表示论 |"}
+{"doc_id": "D030", "sid": 2642, "start": 164981, "end": 165203, "kind": "table", "text": "| 代数推导完成、物理基座待建立 | $T_c$ 丛作用量竞争机制（不含独立“跃迁能级”假设） | 公式已给出（前向验证未闭合）（G22 行内已闭合项/§11.2）：$T_c$ 由丛作用量交叉 $F_1(T_c)=F_2(T_c)$ 给出，亏角涨落给出资格条件，路径积分选出主导群。**深化（§11.6）**：丛作用量交叉是结构群叠加态（= 同步算符）本征值交叉 $\\lambda_1(T_c)=\\lambda_2(T_c)$ 的热力学投影 |"}
+{"doc_id": "D030", "sid": 2643, "start": 165204, "end": 165260, "kind": "table", "text": "| 中 | 跃迁耦级谱 $\\Delta u_n = 2\\ln n$ 的表示论严格证明 | 决定跃迁的群论根基 |"}
+{"doc_id": "D030", "sid": 2644, "start": 165261, "end": 165298, "kind": "table", "text": "| 中 | 具体材料数值验证（二维超导体） | 决定框架的实验可检验性 |"}
+{"doc_id": "D030", "sid": 2645, "start": 165299, "end": 165988, "kind": "table", "text": "| 闭合 | **元素周期表推导**（§11.7）：CQM本体论内在要求能推周期表和电子壳层分布（否则本体论不一致）。**框架内构造性推导**：$SU(5)$发生学→电子/核子形成；$A_4$型($SU(5)$)→壳层$l=0,1,2,3$（由SU(5) Dynkin图深度严格推导）；$SU(5)\\supset SU(4)$→$4\\otimes4=10\\oplus6$→p=6,d=10；$SU(2)$自旋=$SU(5)$重组实现产物→$\\times2$；壳层饱和数$2,6,10,14$（不需要$G_2$）；周期长度$2,8,18,32$；Madelung规则$E(n,l)\\sim N(\\gamma_n)+l=n+l$（黎曼式同步算符）；电子FG=前中子-前质子底空间；壳层鲁棒性定理（§11.8）；$\\delta(Z,N)=1-\\varepsilon_0 N/(Z+N)$（§11.8）；$V_{\\text{element}}=V_0+L_{\\text{orbital}}$显式构造（$\\varphi_l=(l/\\lambda_l)\\Pi_l$，$Y_l^m$从$SU(4)\\to SO(3)$涌现），填充顺序与周期表一致；洪特规则三条定量解释（$E_{\\text{sync}}=\\text{const}-\\frac{\\lambda_{\\text{spin}}}{2}S(S+1)-\\frac{\\lambda_{\\text{orb}}}{2}L(L+1)$，$p^1$–$p^6$、$d^1$–$d^{10}$验证一致） | 框架内构造性推导给出，严格证明待独立复现 |"}
+{"doc_id": "D030", "sid": 2646, "start": 165989, "end": 166418, "kind": "table", "text": "| 闭合 | **中子缺陷 $\\delta(Z,N)$ 的谱条件求解**（§11.8）：壳层鲁棒性定理——壳层结构$\\{2,6,10,14\\}$对所有$\\lvert\\delta\\rvert<\\sqrt{8/3}$鲁棒（$D(\\delta)$正定→$A_4$型→壳层不变，1000次随机验证100%）。条件“壳层不破坏”=G14正定性条件，不唯一确定$\\delta$。$\\delta(Z,N)=1-\\varepsilon_0 N/(Z+N)$（中子比例模型，$\\varepsilon_0=0.0012$），满足纯质子极限$\\delta(Z,0)=1$、自由中子锚点$\\delta(0,1)=0.9988$、同位素效应$\\partial\\delta/\\partial N<0$、正定性。同位素效应预测$T_c\\propto M^{-\\alpha}$，$\\alpha\\approx0.0006$ | $\\delta(Z,N)$函数形式确定，同位素效应第一性导出 |"}
+{"doc_id": "D030", "sid": 2647, "start": 166419, "end": 166731, "kind": "table", "text": "| 高 | **同位素效应：缺陷来源丰度**（§11.9）：同位素 = 不同中子数 $N$ = 不同数量的缺陷来源，缺陷来源数 $\\propto N$。$\\Delta\\varepsilon^{\\text{total}} = \\Delta\\varepsilon^{\\text{组合几何}} + \\kappa_N \\cdot N$。重同位素缺陷来源多→更丰富亏角涨落→更高 $T_c$ 潜力（非单调：过多破坏全局相干）。同位素效应 = 缺陷来源丰度效应（非BCS质量效应）。开放：(1) $\\kappa_N$ 的微观来源；(2) 组合几何缺陷的定量计算；(3) 非单调行为的定量条件 | 同位素效应的CQM机制；超导潜力预测 |"}
+{"doc_id": "D030", "sid": 2648, "start": 166733, "end": 166749, "kind": "heading", "text": "## 17. 界面超导与边界定理"}
+{"doc_id": "D030", "sid": 2649, "start": 166751, "end": 166798, "kind": "quote", "text": "> **两阶段读法**：界面/边界改变的是局域配对与相位刚度的空间分布（渗流给连通域，M8）；"}
+{"doc_id": "D030", "sid": 2650, "start": 166798, "end": 166840, "kind": "quote", "text": "旧框架的亏角几何处理作为实现层保留，不替代 §0.5 的 $T^*/T_c$ 判据。"}
+{"doc_id": "D030", "sid": 2651, "start": 166842, "end": 166863, "kind": "heading", "text": "### 17.1 广义斯托克斯定理与边界项"}
+{"doc_id": "D030", "sid": 2652, "start": 166865, "end": 166882, "kind": "prose", "text": "在带边流形上应用广义斯托克斯定理："}
+{"doc_id": "D030", "sid": 2653, "start": 166884, "end": 166929, "kind": "prose", "text": "$$\\int_M d\\omega = \\int_{\\partial M} \\omega$$"}
+{"doc_id": "D030", "sid": 2654, "start": 166931, "end": 166943, "kind": "prose", "text": "边界项可忽略的五种情形："}
+{"doc_id": "D030", "sid": 2655, "start": 166945, "end": 166956, "kind": "table", "text": "| 情形 | 条件 |"}
+{"doc_id": "D030", "sid": 2656, "start": 166957, "end": 166968, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D030", "sid": 2657, "start": 166969, "end": 167032, "kind": "table", "text": "| 形式在边界上为零 | $\\omega\\vert_{\\partial M}=0$（紧支撑、Dirichlet 边界条件） |"}
+{"doc_id": "D030", "sid": 2658, "start": 167033, "end": 167079, "kind": "table", "text": "| 流形本身无边 | $\\partial M=\\varnothing$（闭曲面，如环面） |"}
+{"doc_id": "D030", "sid": 2659, "start": 167080, "end": 167119, "kind": "table", "text": "| 积分区域是闭链 | 链复形意义下 $\\partial M=0$（闭链） |"}
+{"doc_id": "D030", "sid": 2660, "start": 167120, "end": 167145, "kind": "table", "text": "| 边界项互相抵消 | 物理设定使边界贡献相消 |"}
+{"doc_id": "D030", "sid": 2661, "start": 167146, "end": 167173, "kind": "table", "text": "| 只关心局部行为 | 局域计算不涉及全局边界积分 |"}
+{"doc_id": "D030", "sid": 2662, "start": 167175, "end": 167193, "kind": "heading", "text": "### 17.2 体超导中边界可忽略"}
+{"doc_id": "D030", "sid": 2663, "start": 167195, "end": 167257, "kind": "prose", "text": "常规体超导有两个特征长度：相干长度 $\\xi$（序参量显著变化的尺度）和穿透深度 $\\lambda_L$（磁场穿透的深度）。"}
+{"doc_id": "D030", "sid": 2664, "start": 167257, "end": 167340, "kind": "prose", "text": "宏观样品 $L \\gg \\xi, \\lambda_L$，序参量只在表面 $\\sim \\xi$ 薄层内变化，磁场只在表面 $\\sim \\lambda_L$ 薄层内穿透。"}
+{"doc_id": "D030", "sid": 2665, "start": 167342, "end": 167379, "kind": "prose", "text": "边界贡献 $\\propto$ 表面积，体积贡献 $\\propto$ 体积："}
+{"doc_id": "D030", "sid": 2666, "start": 167381, "end": 167454, "kind": "prose", "text": "$$\\frac{\\text{表面积}}{\\text{体积}} \\sim \\frac{L^2}{L^3} = \\frac{1}{L} \\to 0$$"}
+{"doc_id": "D030", "sid": 2667, "start": 167456, "end": 167478, "kind": "prose", "text": "CQM 中边界贡献同样按 $1/L$ 压低："}
+{"doc_id": "D030", "sid": 2668, "start": 167480, "end": 167577, "kind": "prose", "text": "$$\\frac{\\sum_{v\\in\\text{边界}}\\varepsilon}{\\sum_{v\\in\\text{体}}\\varepsilon} \\sim \\frac{1}{L} \\to 0$$"}
+{"doc_id": "D030", "sid": 2669, "start": 167579, "end": 167681, "kind": "prose", "text": "体超导的 CQM 核心机制（亏角涨落 $\\Delta\\varepsilon$、固有时流速调制、耦合跃迁 $\\alpha\\to n^2\\alpha$、同步算符本征值交叉）均在体内局域/全局发生，不需要边界。"}
+{"doc_id": "D030", "sid": 2670, "start": 167683, "end": 167703, "kind": "heading", "text": "### 17.3 界面超导：边界成为主角"}
+{"doc_id": "D030", "sid": 2671, "start": 167705, "end": 167717, "kind": "prose", "text": "边界不能忽略的四种情形："}
+{"doc_id": "D030", "sid": 2672, "start": 167719, "end": 167730, "kind": "table", "text": "| 情形 | 原因 |"}
+{"doc_id": "D030", "sid": 2673, "start": 167731, "end": 167742, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D030", "sid": 2674, "start": 167743, "end": 167771, "kind": "table", "text": "| 纳米超导 | $L\\sim\\xi$，量子尺寸效应 |"}
+{"doc_id": "D030", "sid": 2675, "start": 167772, "end": 167793, "kind": "table", "text": "| 界面超导 | 超导只存在于界面附近 |"}
+{"doc_id": "D030", "sid": 2676, "start": 167794, "end": 167819, "kind": "table", "text": "| 拓扑超导 | 边界态（马约拉纳零模）是核心 |"}
+{"doc_id": "D030", "sid": 2677, "start": 167820, "end": 167844, "kind": "table", "text": "| 超导/磁性界面 | 界面自旋极化破坏配对 |"}
+{"doc_id": "D030", "sid": 2678, "start": 167846, "end": 167910, "kind": "prose", "text": "界面超导的物理特征：超导性集中在二维界面薄层，界面两侧晶格失配产生巨大亏角，缺陷密度高（向错、位错），二维各向异性远强于三维体。"}
+{"doc_id": "D030", "sid": 2679, "start": 167912, "end": 167935, "kind": "heading", "text": "### 17.4 CQM 中界面超导的边界处理"}
+{"doc_id": "D030", "sid": 2680, "start": 167937, "end": 167955, "kind": "prose", "text": "界面处 Regge 亏角远大于体内："}
+{"doc_id": "D030", "sid": 2681, "start": 167957, "end": 168054, "kind": "prose", "text": "$\\varepsilon^{\\text{界面}} \\gg \\varepsilon^{\\text{体}}$，因此 $\\Delta\\varepsilon^{\\text{界面}}$ 主导 $T_c$。"}
+{"doc_id": "D030", "sid": 2682, "start": 168056, "end": 168070, "kind": "table", "text": "| 体超导 | 界面超导 |"}
+{"doc_id": "D030", "sid": 2683, "start": 168071, "end": 168082, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D030", "sid": 2684, "start": 168083, "end": 168101, "kind": "table", "text": "| 体亏角主导 | 界面亏角主导 |"}
+{"doc_id": "D030", "sid": 2685, "start": 168102, "end": 168138, "kind": "table", "text": "| 边界项 $\\sim 1/L$ | 边界项 $\\sim O(1)$ |"}
+{"doc_id": "D030", "sid": 2686, "start": 168139, "end": 168164, "kind": "table", "text": "| 斯托克斯边界可忽略 | 边界项必须显式处理 |"}
+{"doc_id": "D030", "sid": 2687, "start": 168166, "end": 168194, "kind": "heading", "text": "### 17.5 界面超导中的 GL(5) 固定层级结构"}
+{"doc_id": "D030", "sid": 2688, "start": 168196, "end": 168220, "kind": "prose", "text": "界面的二维性改变了 GL(5) 固定层级的实现："}
+{"doc_id": "D030", "sid": 2689, "start": 168222, "end": 168241, "kind": "table", "text": "| 层级 | 三维体 | 二维界面 |"}
+{"doc_id": "D030", "sid": 2690, "start": 168242, "end": 168258, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2691, "start": 168259, "end": 168290, "kind": "table", "text": "| GL(5) 固定层级 | 体电磁跃迁 | 界面电磁跃迁 |"}
+{"doc_id": "D030", "sid": 2692, "start": 168291, "end": 168342, "kind": "table", "text": "| SU(2) | 自旋配对（SU(5)重组实现的输出） | 自旋配对（SU(5)重组实现的输出） |"}
+{"doc_id": "D030", "sid": 2693, "start": 168344, "end": 168364, "kind": "prose", "text": "界面超导的二维性使非常规配对更容易出现。"}
+{"doc_id": "D030", "sid": 2694, "start": 168366, "end": 168382, "kind": "heading", "text": "### 17.6 边界重要性判据"}
+{"doc_id": "D030", "sid": 2695, "start": 168384, "end": 168393, "kind": "prose", "text": "$$\\boxed{"}
+{"doc_id": "D030", "sid": 2696, "start": 168394, "end": 168407, "kind": "prose", "text": "\\text{边界是否重要}"}
+{"doc_id": "D030", "sid": 2697, "start": 168408, "end": 168412, "kind": "prose", "text": "\\iff"}
+{"doc_id": "D030", "sid": 2698, "start": 168413, "end": 168475, "kind": "prose", "text": "\\frac{\\sum_{\\text{边界}}\\varepsilon}{\\sum_{\\text{体}}\\varepsilon}"}
+{"doc_id": "D030", "sid": 2699, "start": 168476, "end": 168489, "kind": "prose", "text": "\\begin{cases}"}
+{"doc_id": "D030", "sid": 2700, "start": 168490, "end": 168539, "kind": "prose", "text": "\\sim 1/L \\ll 1 \\longrightarrow \\text{可忽略（体超导）} \\\\"}
+{"doc_id": "D030", "sid": 2701, "start": 168540, "end": 168583, "kind": "prose", "text": "\\sim O(1) \\longrightarrow \\text{必须处理（界面超导）}"}
+{"doc_id": "D030", "sid": 2702, "start": 168584, "end": 168595, "kind": "prose", "text": "\\end{cases}"}
+{"doc_id": "D030", "sid": 2703, "start": 168596, "end": 168599, "kind": "prose", "text": "}$$"}
+{"doc_id": "D030", "sid": 2704, "start": 168601, "end": 168638, "kind": "prose", "text": "**边界不是固定变量，而是由 Regge 几何的亏角分布动态决定其重要性。"}
+{"doc_id": "D030", "sid": 2705, "start": 168638, "end": 168706, "kind": "prose", "text": "** CQM 统一了体超导与界面超导两种情形：边界的重要性取决于 Regge 亏角在几何中何处集中——体超导中在体内，界面超导中在边界。"}
+{"doc_id": "D030", "sid": 2706, "start": 168708, "end": 168711, "kind": "prose", "text": "---"}
+{"doc_id": "D030", "sid": 2707, "start": 168713, "end": 168722, "kind": "heading", "text": "## 18. 结论"}
+{"doc_id": "D030", "sid": 2708, "start": 168724, "end": 168763, "kind": "prose", "text": "**当前权威口径**：CQM 超导核心理论 = 差异-记忆核超导理论（§0）。"}
+{"doc_id": "D030", "sid": 2709, "start": 168763, "end": 168836, "kind": "prose", "text": "旧框架的几何-同步实现（§1–§17 中标“承接”的部分）回答“核从哪里来、如何计算”，不替代新理论的两阶段条件（未推、暂时未定）与四阶段记忆核。"}
+{"doc_id": "D030", "sid": 2710, "start": 168836, "end": 168875, "kind": "prose", "text": "旧文的公式、数值与缺口按 §11–§14、§17 承接，缺口状态不因改写升级。"}
+{"doc_id": "D030", "sid": 2711, "start": 168877, "end": 168898, "kind": "heading", "text": "### 18.1 核心结论（差异-记忆核）"}
+{"doc_id": "D030", "sid": 2712, "start": 168900, "end": 169008, "kind": "list", "text": "1. **差异的代数表示**：$C_{ij}=[\\hat u_i,\\hat v_{\\tau,j}]/(i☯)=f(\\varepsilon_i-\\varepsilon_j)$（$i\\ne j$），$C_{ii}=1$；"}
+{"doc_id": "D030", "sid": 2713, "start": 169008, "end": 169039, "kind": "list", "text": "A12 约束 $\\sum_{i\\ne j}C_{ij}=0$。"}
+{"doc_id": "D030", "sid": 2714, "start": 169039, "end": 169084, "kind": "list", "text": "给定 A12 后，式 (DM.2)–(DM.3) 是【条件严格】；A12 本身是【构造】。"}
+{"doc_id": "D030", "sid": 2715, "start": 169084, "end": 169136, "kind": "list", "text": "差异的大小由节点间亏角不均匀给定；全局-局域不对易是非马尔可夫性与差异丰富度的来源之一，不是差异的来源。"}
+{"doc_id": "D030", "sid": 2716, "start": 169137, "end": 169271, "kind": "list", "text": "2. **差异方差给出局域配对强度**：$\\langle(\\delta C_{ij})^2\\rangle=\\kappa_f^2\\langle(\\Delta\\varepsilon_i-\\Delta\\varepsilon_j)^2\\rangle\\ge0$（式 DM.5）。"}
+{"doc_id": "D030", "sid": 2717, "start": 169271, "end": 169310, "kind": "list", "text": "均匀极限使均值消失，但不抹掉方差；这是“均匀但无关联”与“局域关联强”的分野。"}
+{"doc_id": "D030", "sid": 2718, "start": 169311, "end": 169425, "kind": "list", "text": "3. **绕环和乐给出相位阻挫/刚度**：和乐 $\\mathcal H_{ijk}=\\exp(i\\oint_C\\omega)$（§10.1）非平庸时 $\\operatorname{Re}\\mathcal H<1$，削弱相位链接；"}
+{"doc_id": "D030", "sid": 2719, "start": 169425, "end": 169520, "kind": "list", "text": "键刚度 $J_{ij}\\propto\\cos\\mathcal H_{ij}$（DM.9）、渗流刚度 $\\propto\\langle\\cos\\mathcal H\\rangle$（DM.11）。"}
+{"doc_id": "D030", "sid": 2720, "start": 169520, "end": 169560, "kind": "list", "text": "高斯态使连通三阶累积量为零，非高斯结构与和乐相位阻挫的定量识别仍是缺口（M7）。"}
+{"doc_id": "D030", "sid": 2721, "start": 169561, "end": 169675, "kind": "list", "text": "4. **超导是两阶段事件（相变方程与 $T_c$ 未推、暂时未定）**：局域配对（$T^*$，差异方差，平凡零点）与全局相位刚度（$T_{\\rm BKT}$/$T_\\theta$，和乐相位阻挫、$J_{ij}$，非平凡零点）。"}
+{"doc_id": "D030", "sid": 2722, "start": 169675, "end": 169756, "kind": "list", "text": "$T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$，两阶段温差 $\\Delta T_{\\rm pg}=T^*-T_c$（式 DM.13；"}
+{"doc_id": "D030", "sid": 2723, "start": 169756, "end": 169806, "kind": "list", "text": "实验赝能隙的对应属构造，G21）；渗流给全局连通域与刚度乘子（L2），不作独立 $T_c$（M8）；"}
+{"doc_id": "D030", "sid": 2724, "start": 169806, "end": 169842, "kind": "list", "text": "软模方程与刚度判据是同一临界点的两种标准读法，$V$ 的微观定义属缺口。"}
+{"doc_id": "D030", "sid": 2725, "start": 169842, "end": 169859, "kind": "list", "text": "BCS 型、相位限制型是两种极限。"}
+{"doc_id": "D030", "sid": 2726, "start": 169860, "end": 170023, "kind": "list", "text": "5. **记忆核四阶段**（【构造】）：自由变化（$T\\gg T^*$，无锚点）→ 赝能隙（$T^*>T>T_c$，锚点预形成，中间平台 $K^{\\rm mid}$）→ 相变（$T=T_c$，锚点出现，临界值 $K^{\\rm crit}$）→ 偏离（$T<T_c$，锚点锁定，稳定平台 $K^{\\rm SC}$ + 慢偏离）。"}
+{"doc_id": "D030", "sid": 2727, "start": 170023, "end": 170073, "kind": "list", "text": "正常态不是“衰退”，是自由变化；超导态不是“衰退”，是围绕锚点的偏离；**赝能隙是锚点的预形成**。"}
+{"doc_id": "D030", "sid": 2728, "start": 170073, "end": 170111, "kind": "list", "text": "四阶段边界未精确；$T^*$ 与 $T_c$ 的口径见 §0.2、§0.5。"}
+{"doc_id": "D030", "sid": 2729, "start": 170112, "end": 170155, "kind": "list", "text": "6. **锚点像序参量**：$K^{\\rm SC}$ 在 $T_c$ 处从零变为非零；"}
+{"doc_id": "D030", "sid": 2730, "start": 170155, "end": 170221, "kind": "list", "text": "但 $K^{\\rm SC}$ 与旧框架结构群序参量/同步算符本征值的映射未建立（M9），不得把“像序参量”读成“已等同于旧序参量”。"}
+{"doc_id": "D030", "sid": 2731, "start": 170222, "end": 170265, "kind": "list", "text": "7. **黎曼零点连接是候选而非已证**：$☯=\\xi'(1)/\\xi(1)$ 严格；"}
+{"doc_id": "D030", "sid": 2732, "start": 170265, "end": 170324, "kind": "list", "text": "谱表示条件于 RH；Sierra-CQM 的 $L_n=2\\pi n/\\gamma_n$ 是渐近定理加 CQM 构造；"}
+{"doc_id": "D030", "sid": 2733, "start": 170324, "end": 170362, "kind": "list", "text": "记忆核与质数计数由显式公式同一（严格），它与同步算符谱的物理同一依赖 M1。"}
+{"doc_id": "D030", "sid": 2734, "start": 170363, "end": 170491, "kind": "list", "text": "8. **BCS 退化是条件命题**：在均匀、强相位刚度、弱耦合、单带 $s$ 波极限，两阶段方程退化为 BCS 的能隙方程、$k_BT_c=1.13\\hbar\\omega_De^{-1/\\lambda}$、$2\\Delta_0/k_BT_c=3.53$。"}
+{"doc_id": "D030", "sid": 2735, "start": 170491, "end": 170540, "kind": "list", "text": "代数部分【严格】，条件 1–5 的物理实现属【构造】；核、态密度、频率三步识别未证（M2–M4）。"}
+{"doc_id": "D030", "sid": 2736, "start": 170540, "end": 170558, "kind": "list", "text": "不得写成“CQM 已推出 BCS”。"}
+{"doc_id": "D030", "sid": 2737, "start": 170559, "end": 170681, "kind": "list", "text": "9. **旧框架不被否定**：Regge 几何、主丛、声子、固有时流速、耦合空间不确定性、跃迁耦级谱、结构群叠加态、丛作用量竞争、$T_c$ 闭式、数值表、G9–G22、Lean 映射与界面超导边界，均作为“核从哪里来、如何计算”的实现层承接。"}
+{"doc_id": "D030", "sid": 2738, "start": 170682, "end": 170809, "kind": "list", "text": "10. **八环节链与记忆核积分的体现口径**：链条从 $[\\hat X,\\hat P]=i\\hbar$ 经声子（①）、晶格剖分（②）、亏角涨落（③）、固有时流速（④）、全局耦合（⑤）、去相干（⑥）、记忆核（⑦）止于记忆核积分（⑧）（§0.1 环节表）；"}
+{"doc_id": "D030", "sid": 2739, "start": 170809, "end": 170840, "kind": "list", "text": "环节⑨（相变方程／$T_c$）未推、暂时未定，不列为链条终点。"}
+{"doc_id": "D030", "sid": 2740, "start": 170840, "end": 170936, "kind": "list", "text": "固有时流速差异的历史总和 $\\mathsf H=(\\mathcal H_{ij})_{i,j\\in V_t}$（投影 $\\mathcal D$、$\\hat\\mu_t$、$R_n$）是本体对象；"}
+{"doc_id": "D030", "sid": 2741, "start": 170936, "end": 171015, "kind": "list", "text": "记忆核积分 $\\mathcal I_K=\\int K\\,dt$ 是它的记忆侧体现/读数，不是历史总和本身（映射未证，M10），也不是独立的 $T_c$ 判据；"}
+{"doc_id": "D030", "sid": 2742, "start": 171015, "end": 171050, "kind": "list", "text": "判据①（配对荷可分辨单一判据）已被单质元素第一性检验排除，不进入本链。"}
+{"doc_id": "D030", "sid": 2743, "start": 171052, "end": 171067, "kind": "heading", "text": "### 18.2 实际计算路线"}
+{"doc_id": "D030", "sid": 2744, "start": 171069, "end": 171221, "kind": "list", "text": "1. **确定几何输入**：由材料结构（链 A/链 B）给出边亏角分布 $\\{\\varepsilon_{ij}\\}$、节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$、环路相位 $\\mathcal H_{ij}$（旧 §11.12–§11.14 的数值链可作幅度通道）。"}
+{"doc_id": "D030", "sid": 2745, "start": 171222, "end": 171276, "kind": "list", "text": "2. **算局域配对**：由式 (DM.6)–(DM.8) 得 $\\lambda_i$ 与 $T_i^*$；"}
+{"doc_id": "D030", "sid": 2746, "start": 171276, "end": 171292, "kind": "list", "text": "弱耦合单带极限用 BCS 闭式。"}
+{"doc_id": "D030", "sid": 2747, "start": 171293, "end": 171348, "kind": "list", "text": "3. **算相位网络**：由式 (DM.9)–(DM.10) 得 $J_{ij}$ 与 $T_\\theta$；"}
+{"doc_id": "D030", "sid": 2748, "start": 171348, "end": 171378, "kind": "list", "text": "不均匀样品用式 (DM.11)–(DM.12) 的渗流判据。"}
+{"doc_id": "D030", "sid": 2749, "start": 171379, "end": 171500, "kind": "list", "text": "4. **合成 $T_c$**：$T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$（单层用 BKT 判据 $\\Upsilon(T_{\\rm BKT})=2k_BT_{\\rm BKT}/\\pi$，堆叠用 3D XY）；"}
+{"doc_id": "D030", "sid": 2750, "start": 171500, "end": 171529, "kind": "list", "text": "渗流给全局连通域与刚度乘子（L2），不作独立 $T_c$。"}
+{"doc_id": "D030", "sid": 2751, "start": 171530, "end": 171635, "kind": "list", "text": "5. **判赝能隙**：赝能隙区的记忆核读作“锚点预形成”，不是独立对称破缺相；两阶段温差记为 $\\Delta T_{\\rm pg}=T^*-T_c$（实验赝能隙 onset 与 $T^*$ 不等同，G21）。"}
+{"doc_id": "D030", "sid": 2752, "start": 171636, "end": 171708, "kind": "list", "text": "6. **接旧闭式**：需要旧框架的 $T_c$ 闭式、$\\beta$、$\\Delta\\varepsilon_0$、材料表时，按 §11 承接；"}
+{"doc_id": "D030", "sid": 2753, "start": 171708, "end": 171748, "kind": "list", "text": "但旧闭式与 $T^*/T_c$ 的映射未建立（M8），不得混用两套 $T_c$。"}
+{"doc_id": "D030", "sid": 2754, "start": 171750, "end": 171768, "kind": "heading", "text": "### 18.3 与 BCS 的关系"}
+{"doc_id": "D030", "sid": 2755, "start": 171770, "end": 171793, "kind": "table", "text": "| | BCS | 差异-记忆核（CQM） |"}
+{"doc_id": "D030", "sid": 2756, "start": 171794, "end": 171810, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2757, "start": 171811, "end": 171891, "kind": "table", "text": "| 配对 | 电子-声子吸引 | 节点间差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ 给出局域配对通道（核的识别未证，M2） |"}
+{"doc_id": "D030", "sid": 2758, "start": 171892, "end": 171939, "kind": "table", "text": "| 相位 | 全局相位刚性 | 和乐相位阻挫 + 键刚度 + 渗流乘子（等价性未证，M8） |"}
+{"doc_id": "D030", "sid": 2759, "start": 171940, "end": 172028, "kind": "table", "text": "| $T_c$ | 单一 $T_c$ | 两阶段：$T^*$（局域配对）与 $T_c$（全局相位刚度，$\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$） |"}
+{"doc_id": "D030", "sid": 2760, "start": 172029, "end": 172076, "kind": "table", "text": "| 赝能隙 | 不进入 BCS 骨架 | 赝能隙 = 锚点预形成（$T_c<T<T^*$） |"}
+{"doc_id": "D030", "sid": 2761, "start": 172077, "end": 172123, "kind": "table", "text": "| 退化 | — | 均匀、强刚度、弱耦合、单带 $s$ 波极限退回 BCS（条件命题） |"}
+{"doc_id": "D030", "sid": 2762, "start": 172125, "end": 172190, "kind": "prose", "text": "**关系本质**：BCS 是差异-记忆核理论在特定极限下的退化，不是两套并列理论；退化是条件命题，不是“CQM 已推出 BCS”。"}
+{"doc_id": "D030", "sid": 2763, "start": 172192, "end": 172207, "kind": "heading", "text": "### 18.4 确立与未解决"}
+{"doc_id": "D030", "sid": 2764, "start": 172209, "end": 172226, "kind": "prose", "text": "**新理论中已确立（按标注）**："}
+{"doc_id": "D030", "sid": 2765, "start": 172228, "end": 172267, "kind": "list", "text": "- 式 (DM.2)–(DM.3) 在给定 A12 后的代数展开【条件严格】；"}
+{"doc_id": "D030", "sid": 2766, "start": 172268, "end": 172303, "kind": "list", "text": "- 差异方差方差结构式 (DM.5)【条件严格：给定领头阶 $f$】；"}
+{"doc_id": "D030", "sid": 2767, "start": 172304, "end": 172345, "kind": "list", "text": "- BCS 退化代数式 (DM.23)–(DM.24)【条件严格：条件 1–5】；"}
+{"doc_id": "D030", "sid": 2768, "start": 172346, "end": 172411, "kind": "list", "text": "- 3D XY 标定 $k_BT_c/J\\approx2.2017$（外部事实，Gottlob–Hasenbusch 1993）。"}
+{"doc_id": "D030", "sid": 2769, "start": 172413, "end": 172425, "kind": "prose", "text": "**新理论中的构造**："}
+{"doc_id": "D030", "sid": 2770, "start": 172427, "end": 172539, "kind": "list", "text": "- 两阶段合成 $T_c=\\min\\{T^*,T_{\\rm BKT},T_\\theta\\}$（未推、暂时未定）、$J_{ij}$、渗流判据、记忆核四阶段、锚点窗口式 (DM.19)、丰富度三度量、历史深度式 (DM.18)。"}
+{"doc_id": "D030", "sid": 2771, "start": 172541, "end": 172560, "kind": "prose", "text": "**未解决（M 表 + G 表）**："}
+{"doc_id": "D030", "sid": 2772, "start": 172562, "end": 172578, "kind": "list", "text": "- M1–M10（§13.1）；"}
+{"doc_id": "D030", "sid": 2773, "start": 172579, "end": 172629, "kind": "list", "text": "- G21（赝能隙→ARPES/STM 谱函数）、G22（旧 $T_c$ 丛作用量交叉的物理基座）；"}
+{"doc_id": "D030", "sid": 2774, "start": 172630, "end": 172668, "kind": "list", "text": "- $T^*$ 与实验赝能隙 onset 的操作定义不同；把二者等同属构造；"}
+{"doc_id": "D030", "sid": 2775, "start": 172669, "end": 172704, "kind": "list", "text": "- 记忆核 $K(t)$ 的材料谱、四阶段边界、锚点与旧序参量的映射。"}
+{"doc_id": "D030", "sid": 2776, "start": 172706, "end": 172800, "kind": "prose", "text": "**旧框架承接的闭合/部分闭合项**：$\\beta$、$C^2$、$\\Delta\\varepsilon_0$ 公式、G13/G14、周期表构造性推导、同位素效应等，见 §11 与 §13；"}
+{"doc_id": "D030", "sid": 2777, "start": 172800, "end": 172819, "kind": "prose", "text": "它们不因新理论升级，也不被新理论否定。"}
+{"doc_id": "D030", "sid": 2778, "start": 172821, "end": 172845, "kind": "heading", "text": "### 18.5 同步 ≠ 群统一（旧框架承接）"}
+{"doc_id": "D030", "sid": 2779, "start": 172847, "end": 172875, "kind": "prose", "text": "**全局同步指相位相干，不等于所有区域选择同一个结构群。"}
+{"doc_id": "D030", "sid": 2780, "start": 172875, "end": 172960, "kind": "prose", "text": "** 在阶段二，不同 $n$ 的配对岛只要共享同一整体相位，就能相干叠加；$U(1)//\\mathbb Z_n$ 的商结构决定磁通量子化单位，不决定 $T_c$ 的高低。"}
+{"doc_id": "D030", "sid": 2781, "start": 172960, "end": 173012, "kind": "prose", "text": "多群超导、多能隙、宽转变、非普适 $2\\Delta/k_BT_c$ 等按旧框架 §18.1（归档）解释；"}
+{"doc_id": "D030", "sid": 2782, "start": 173012, "end": 173124, "kind": "prose", "text": "在新理论中这些多配对谱特征源于相变的空间不均匀性（相变时或配对前的不均匀），不是相变前的多个相变锚——相变前 $\\mathcal A(T)=\\varnothing$、相变中可有多个瞬时局域锚、理论研究取相变单锚（§0.6）。"}
+{"doc_id": "D030", "sid": 2783, "start": 173124, "end": 173173, "kind": "prose", "text": "本结论是两阶段模型的相位层读法，不替代 $T^*/T_c$ 判据，也不把群统一当成超导的必要条件。"}
+{"doc_id": "D030", "sid": 2784, "start": 173175, "end": 173188, "kind": "heading", "text": "### 18.6 最终目标"}
+{"doc_id": "D030", "sid": 2785, "start": 173190, "end": 173219, "kind": "prose", "text": "$$\\boxed{\\text{常压室温第二类超导体}}$$"}
+{"doc_id": "D030", "sid": 2786, "start": 173221, "end": 173260, "kind": "prose", "text": "只有在该目标实现后，CQM 超导理论才能从理论框架变成被物质实践证明的物理学。"}
+{"doc_id": "D030", "sid": 2787, "start": 173262, "end": 173265, "kind": "prose", "text": "---"}
+{"doc_id": "D030", "sid": 2788, "start": 173267, "end": 173278, "kind": "heading", "text": "## 附录 A：符号表"}
+{"doc_id": "D030", "sid": 2789, "start": 173280, "end": 173298, "kind": "table", "text": "| 符号 | 含义 | 数学类型 |"}
+{"doc_id": "D030", "sid": 2790, "start": 173299, "end": 173324, "kind": "table", "text": "|------|------|---------|"}
+{"doc_id": "D030", "sid": 2791, "start": 173325, "end": 173356, "kind": "table", "text": "| $A_4$ | 质子嘉当矩阵 | 4 × 4 整数矩阵 |"}
+{"doc_id": "D030", "sid": 2792, "start": 173357, "end": 173399, "kind": "table", "text": "| $D(\\delta)$ | 中子嘉当矩阵（缺陷形变） | 4 × 4 实矩阵 |"}
+{"doc_id": "D030", "sid": 2793, "start": 173400, "end": 173468, "kind": "table", "text": "| $\\mathcal{C}_{\\text{element}}$ | 元素嘉当矩阵 | $4(Z+N)$ × $4(Z+N)$ 矩阵 |"}
+{"doc_id": "D030", "sid": 2794, "start": 173469, "end": 173519, "kind": "table", "text": "| $\\mathcal{C}_{\\text{mol}}$ | 分子有效超级嘉当矩阵 | 大方矩阵 |"}
+{"doc_id": "D030", "sid": 2795, "start": 173520, "end": 173628, "kind": "table", "text": "| $\\varepsilon$ | 归一化亏角 $\\varepsilon_h/(2\\pi)$（$\\varepsilon_h$ 为 Regge/LQG 铰链亏角，曲率载体；与顶点角亏无关） | 实数 $[0,1)$ |"}
+{"doc_id": "D030", "sid": 2796, "start": 173629, "end": 173698, "kind": "table", "text": "| $\\varepsilon_{ij}$ | 节点 $i,j$ 之间铰链（边）上的亏角本体（§0.2） | 实数 $[0,2\\pi)$ |"}
+{"doc_id": "D030", "sid": 2797, "start": 173699, "end": 173746, "kind": "table", "text": "| $\\Delta\\varepsilon$ | 归一化亏角涨落（声子，曲率涨落） | 实数 |"}
+{"doc_id": "D030", "sid": 2798, "start": 173747, "end": 173861, "kind": "table", "text": "| $☯$ | 相变量子 $\\frac{d}{ds}\\ln\\xi(s)\\big\\rvert_{s=1} = 1+\\gamma/2-\\ln(2\\sqrt{\\pi}) \\approx 0.02309570897$ | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2799, "start": 173862, "end": 173940, "kind": "table", "text": "| $\\beta$ | 几何耦合参数 $\\frac{1}{4\\pi}\\ln\\frac{L}{a}$（$L$ 系统尺寸，$a$ 晶格常数） | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2800, "start": 173941, "end": 173975, "kind": "table", "text": "| $u$ | 耦合坐标 $\\ln\\alpha$ | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2801, "start": 173976, "end": 174018, "kind": "table", "text": "| $p_u$ | 耦合动量 $(1/☯)(d\\tau/dt)$ | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2802, "start": 174019, "end": 174077, "kind": "table", "text": "| $v_\\tau$ | 固有时流速 $\\sqrt{1-\\varepsilon/(2\\pi)}$ | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2803, "start": 174078, "end": 174155, "kind": "table", "text": "| $r_{ij}$ | 边比值因子 $\\sqrt{1-\\varepsilon_{ij}/(2\\pi)}$，沿路径乘积传递（§7.3） | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2804, "start": 174156, "end": 174198, "kind": "table", "text": "| $v_o$ | 参考节点流速（变量，不是常数 1；§0.2） | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2805, "start": 174199, "end": 174255, "kind": "table", "text": "| $A_\\tau$ | 相变锚核（几何核）：零亏角边的极大连通子图（$d=1,2$，§7.3） | 子复形 |"}
+{"doc_id": "D030", "sid": 2806, "start": 174256, "end": 174370, "kind": "table", "text": "| $\\mathfrak A(T)$ | 相变锚：$({\\mathcal A}(T),\\Upsilon_{\\!\\mathcal A}(T))$，是相变在空间侧的体现（§7.3） | 映射 $T\\mapsto$（子复形，刚度） |"}
+{"doc_id": "D030", "sid": 2807, "start": 174371, "end": 174457, "kind": "table", "text": "| $\\mathcal A(T)$ | 相变锚的占据集：核内已过局域刚度判据 $J_e(T)\\ge k_BT/c_d$ 的边所成极大连通子复形（§7.3） | 子复形族 |"}
+{"doc_id": "D030", "sid": 2808, "start": 174458, "end": 174479, "kind": "table", "text": "| $\\tau$ | 固有时 | 时间 |"}
+{"doc_id": "D030", "sid": 2809, "start": 174480, "end": 174498, "kind": "table", "text": "| $t$ | 坐标时 | 时间 |"}
+{"doc_id": "D030", "sid": 2810, "start": 174499, "end": 174525, "kind": "table", "text": "| $\\omega_D$ | 德拜频率 | 频率 |"}
+{"doc_id": "D030", "sid": 2811, "start": 174526, "end": 174596, "kind": "table", "text": "| $\\theta_D$ | 德拜温度 $\\hbar\\omega_D/k_B$（§11.10 $T_c$ 闭式的声子能量标度） | 温度 |"}
+{"doc_id": "D030", "sid": 2812, "start": 174597, "end": 174631, "kind": "table", "text": "| $\\Omega_0$ | 主导曲率量子振荡模式频率 | 频率 |"}
+{"doc_id": "D030", "sid": 2813, "start": 174632, "end": 174676, "kind": "table", "text": "| $\\Delta\\varepsilon_0$ | 零温曲率涨落幅度 | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2814, "start": 174677, "end": 174706, "kind": "table", "text": "| $\\lambda_L$ | 伦敦穿透深度 | 长度 |"}
+{"doc_id": "D030", "sid": 2815, "start": 174707, "end": 174759, "kind": "table", "text": "| $\\Delta_{\\alpha\\beta}$ | A4 根系多分量序参量 | 4 × 4 复矩阵 |"}
+{"doc_id": "D030", "sid": 2816, "start": 174760, "end": 174853, "kind": "table", "text": "| $C_{ij}$ | 差异对易子 $[\\hat u_i,\\hat v_{\\tau,j}]/(i☯)=f(\\varepsilon_i-\\varepsilon_j)$ | 无量纲实数 |"}
+{"doc_id": "D030", "sid": 2817, "start": 174854, "end": 174889, "kind": "table", "text": "| $f$ | 差异函数（奇函数，显式形式未定，M5） | 实函数 |"}
+{"doc_id": "D030", "sid": 2818, "start": 174890, "end": 174980, "kind": "table", "text": "| $\\langle(\\delta C_{ij})^2\\rangle$ | 差异方差 $\\langle(\\delta C_{ij})^2\\rangle$ | 无量纲实数（非负） |"}
+{"doc_id": "D030", "sid": 2819, "start": 174981, "end": 175023, "kind": "table", "text": "| $\\mathcal H$ | 和乐相位（绕环闭合条件，§10.1） | 相位 |"}
+{"doc_id": "D030", "sid": 2820, "start": 175024, "end": 175269, "kind": "table", "text": "| $\\mathsf H=(\\mathcal H_{ij})_{i,j\\in V_t}$ | 全对固有时流速差异历史总和；分量 $\\mathcal H_{ij}=\\int_0^t(v_{\\tau,i}-v_{\\tau,j})dt'$（§0.3 环节④，本体对象；与和乐相位 $\\mathcal H$/$\\mathcal H_{ijk}$ 是不同对象，按语境区分）；投影 $\\mathcal D$、$\\mathcal T$、$\\hat\\mu_t$、$R_n$（§0.6） | 时间（实数） |"}
+{"doc_id": "D030", "sid": 2821, "start": 175270, "end": 175365, "kind": "table", "text": "| $\\mathcal I_K$ | 记忆核积分 $\\int_0^tK(t')dt'$（§0.6 环节⑧；$\\mathcal H_{ij}$ 的记忆侧体现，映射未证 M10） | 无量纲 |"}
+{"doc_id": "D030", "sid": 2822, "start": 175366, "end": 175440, "kind": "table", "text": "| $\\Gamma_n$ | 单节点-单模式去相干率 $\\gamma_n^2\\sigma_v^2\\tau_g$（§0.6 环节⑥） | 1/时间 |"}
+{"doc_id": "D030", "sid": 2823, "start": 175441, "end": 175516, "kind": "table", "text": "| $\\sigma_v^2$ | 固有时流速差异的方差 $\\mathrm{Var}[\\Delta v_\\tau]$（§0.6 环节⑥） | 无量纲 |"}
+{"doc_id": "D030", "sid": 2824, "start": 175517, "end": 175605, "kind": "table", "text": "| $\\Upsilon$ | 相位刚度 $\\frac{1}{2A}\\sum_{\\langle ij\\rangle}J_{ij}r_{ij}^2$（§0.5） | 能量/面积 |"}
+{"doc_id": "D030", "sid": 2825, "start": 175606, "end": 175692, "kind": "table", "text": "| $T_{\\rm BKT}$ | 单层 BKT 相变温度（$\\Upsilon(T_{\\rm BKT})=2k_BT_{\\rm BKT}/\\pi$，§0.5） | 温度 |"}
+{"doc_id": "D030", "sid": 2826, "start": 175693, "end": 175721, "kind": "table", "text": "| $J_{ij}$ | 约瑟夫森型键刚度 | 能量 |"}
+{"doc_id": "D030", "sid": 2827, "start": 175722, "end": 175744, "kind": "table", "text": "| $J_0$ | 键刚度标度 | 能量 |"}
+{"doc_id": "D030", "sid": 2828, "start": 175745, "end": 175820, "kind": "table", "text": "| $p_{\\rm pair}(T)$ | 配对格点比例（座渗流；闭环判据另用激活边比例 $p_{\\rm loop}$，两者不可互换） | 无量纲 |"}
+{"doc_id": "D030", "sid": 2829, "start": 175821, "end": 175843, "kind": "table", "text": "| $p_c$ | 渗流阈值 | 无量纲 |"}
+{"doc_id": "D030", "sid": 2830, "start": 175844, "end": 175888, "kind": "table", "text": "| $T^*$ | 局域配对完成温度（本文定义，非标准赝能隙 onset） | 温度 |"}
+{"doc_id": "D030", "sid": 2831, "start": 175889, "end": 175959, "kind": "table", "text": "| $T_c$ | 相变温度（两阶段取小：$T^*$／$T_{\\rm BKT}$／$T_\\theta$；渗流只给连通域，M8） | 温度 |"}
+{"doc_id": "D030", "sid": 2832, "start": 175960, "end": 175992, "kind": "table", "text": "| $T_\\theta$ | 均匀网络相位有序温度 | 温度 |"}
+{"doc_id": "D030", "sid": 2833, "start": 175993, "end": 176056, "kind": "table", "text": "| $\\Delta T_{\\rm pg}$ | 两阶段温差 $T^*-T_c$（实验赝能隙的对应属构造，G21） | 温度 |"}
+{"doc_id": "D030", "sid": 2834, "start": 176057, "end": 176150, "kind": "table", "text": "| $K(t)$ | 记忆核：正常态为涨落关联（非质数形式），超导态 $e^{-t/2}\\bigl(\\psi(e^{t})-e^{t}\\bigr)$（§0.0/§0.6） | 无量纲 |"}
+{"doc_id": "D030", "sid": 2835, "start": 176151, "end": 176184, "kind": "table", "text": "| $K^{\\rm mid}$ | 赝能隙中间平台 | 无量纲 |"}
+{"doc_id": "D030", "sid": 2836, "start": 176185, "end": 176217, "kind": "table", "text": "| $K^{\\rm crit}$ | 相变临界值 | 无量纲 |"}
+{"doc_id": "D030", "sid": 2837, "start": 176218, "end": 176249, "kind": "table", "text": "| $K^{\\rm SC}$ | 超导锚定平台 | 无量纲 |"}
+{"doc_id": "D030", "sid": 2838, "start": 176250, "end": 176282, "kind": "table", "text": "| $N_{\\rm eff}$ | 不可公度频率数 | 整数 |"}
+{"doc_id": "D030", "sid": 2839, "start": 176283, "end": 176332, "kind": "table", "text": "| $S_{\\rm spec}$ | 谱熵 $-\\sum_qp_q\\ln p_q$ | 无量纲 |"}
+{"doc_id": "D030", "sid": 2840, "start": 176333, "end": 176373, "kind": "table", "text": "| $\\kappa_3,\\kappa_4$ | 三阶/四阶累积量 | 无量纲 |"}
+{"doc_id": "D030", "sid": 2841, "start": 176374, "end": 176407, "kind": "table", "text": "| $D$ | 历史深度（时间深度 + 结构深度） | 无量纲 |"}
+{"doc_id": "D030", "sid": 2842, "start": 176408, "end": 176444, "kind": "table", "text": "| $\\mathcal S_c$ | 信噪比阈值 | 无量纲（未定） |"}
+{"doc_id": "D030", "sid": 2843, "start": 176445, "end": 176481, "kind": "table", "text": "| $N_c,\\kappa_c$ | 丰富度阈值 | 无量纲（未定） |"}
+{"doc_id": "D030", "sid": 2844, "start": 176483, "end": 176531, "kind": "prose", "text": "**术语约定（“同步”的两义）**：本文档中“同步”承担两个层次的含义，须按语境区分，不可互换："}
+{"doc_id": "D030", "sid": 2845, "start": 176533, "end": 176556, "kind": "table", "text": "| 用法 | 含义 | 所在层次 | 判据 |"}
+{"doc_id": "D030", "sid": 2846, "start": 176557, "end": 176578, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2847, "start": 176579, "end": 176684, "kind": "table", "text": "| **退相干意义的同步** | 物质自组织的**过程**——局域和乐平庸化、结构群进入叠加态（§1.5 三相表的前两态） | 过程层 | 和乐 $\\mathcal{H}_{ij}\\approx1$（局域） |"}
+{"doc_id": "D030", "sid": 2848, "start": 176685, "end": 176781, "kind": "table", "text": "| **相位相干意义的同步** | 多区域序参量共享同一整体**相位**的**状态**——超导的充分条件（§18.5“同步 ≠ 群统一”） | 状态层 | 伴丛存在全局相位相干截面（全局） |"}
+{"doc_id": "D030", "sid": 2849, "start": 176783, "end": 176862, "kind": "prose", "text": "包含关系：相位相干意义的同步**实现**了退相干意义的同步（前者是后者在全局尺度上的完成态），但**不要求**结构群统一——多群超导即为此情形（§18.5）。"}
+{"doc_id": "D030", "sid": 2850, "start": 176862, "end": 176915, "kind": "prose", "text": "故“同步=退相干完成”与“同步≠结构群统一”并不冲突：前者说的是过程归属，后者说的是终态不要求单一主导群。"}
+{"doc_id": "D030", "sid": 2851, "start": 176915, "end": 176944, "kind": "prose", "text": "行文中凡涉及资格条件处，“同步”一律取**相位相干**义。"}
+{"doc_id": "D030", "sid": 2852, "start": 176946, "end": 176949, "kind": "prose", "text": "---"}
+{"doc_id": "D030", "sid": 2853, "start": 176951, "end": 176963, "kind": "heading", "text": "## 附录 B：参考文献"}
+{"doc_id": "D030", "sid": 2854, "start": 176965, "end": 176980, "kind": "heading", "text": "### B.1 旧框架承接文献"}
+{"doc_id": "D030", "sid": 2855, "start": 176982, "end": 177073, "kind": "list", "text": "1. Bardeen, Cooper, Schrieffer (1957). Theory of Superconductivity. *Phys. Rev.* 108, 1175."}
+{"doc_id": "D030", "sid": 2856, "start": 177074, "end": 177174, "kind": "list", "text": "2. McMillan (1968). Transition Temperature of Strong-Coupled Superconductors. *Phys. Rev.* 167, 331."}
+{"doc_id": "D030", "sid": 2857, "start": 177175, "end": 177222, "kind": "list", "text": "3. Allen, Dynes (1975). *Phys. Rev. B* 12, 905."}
+{"doc_id": "D030", "sid": 2858, "start": 177223, "end": 177354, "kind": "list", "text": "4. Drozdov et al. (2015). Conventional superconductivity at 203 K at high pressures in the sulfur hydride system. *Nature* 525, 73."}
+{"doc_id": "D030", "sid": 2859, "start": 177355, "end": 177469, "kind": "list", "text": "5. Drozdov et al. (2019). Superconductivity at 250 K in lanthanum hydride under high pressures. *Nature* 569, 528."}
+{"doc_id": "D030", "sid": 2860, "start": 177470, "end": 177593, "kind": "list", "text": "6. Errea et al. (2020). Quantum crystal structure in the 250-kelvin superconducting lanthanum hydride. *Nature* 578, 66–69."}
+{"doc_id": "D030", "sid": 2861, "start": 177594, "end": 177727, "kind": "list", "text": "7. Durajski, Szczęśniak (2016). Migdal-Eliashberg equations — the effective model for superconducting state in H3S. arXiv:1609.06079."}
+{"doc_id": "D030", "sid": 2862, "start": 177728, "end": 177860, "kind": "list", "text": "8. Liu et al. (2019). Microscopic mechanism of room-temperature superconductivity in compressed LaH10. *Phys. Rev. B* 99, 140501(R)."}
+{"doc_id": "D030", "sid": 2863, "start": 177861, "end": 177934, "kind": "list", "text": "9. Ashcroft (1968). Metallic Hydrogen: A High-Temperature Superconductor?"}
+{"doc_id": "D030", "sid": 2864, "start": 177934, "end": 177950, "kind": "list", "text": " *PRL* 21, 1748."}
+{"doc_id": "D030", "sid": 2865, "start": 177951, "end": 178017, "kind": "list", "text": "10. ruster (2026). CNT 完整研究. Zenodo. DOI: 10.5281/zenodo.20804380."}
+{"doc_id": "D030", "sid": 2866, "start": 178018, "end": 178108, "kind": "list", "text": "11. He et al. (2020). *Phys. Rev. A* **101**, 043402.（单量子比特 Floquet 实验：驱动参数与 ζ 零点重合时动力学冻结）"}
+{"doc_id": "D030", "sid": 2867, "start": 178109, "end": 178191, "kind": "list", "text": "12. He et al. (2021). *npj Quantum Information* **7**, 109.（囚禁离子实验：高精度测量最低非平凡黎曼零点）"}
+{"doc_id": "D030", "sid": 2868, "start": 178192, "end": 178283, "kind": "list", "text": "13. Sierra (2005). *J. Stat. Mech.* P12006（cond-mat.supr-con）.（Russian doll 超导模型：黎曼零点嵌入超导谱）"}
+{"doc_id": "D030", "sid": 2869, "start": 178284, "end": 178351, "kind": "list", "text": "14. Sierra, Townsend (2008). *PRL* **101**, 110201.（Landau 能级与黎曼零点）"}
+{"doc_id": "D030", "sid": 2870, "start": 178352, "end": 178504, "kind": "list", "text": "15. Zhang, Zhou, Zhou (2013). Memory effect in the high-temperature superconducting bulks. *Physica C* **495**, 44–47. DOI: 10.1016/j.physc.2013.07.013."}
+{"doc_id": "D030", "sid": 2871, "start": 178505, "end": 178656, "kind": "list", "text": "16. Ortlepp, Volkmann, Yamanashi (2014). Memory effect in balanced Josephson comparators. *Physica C* **500**, 20–24. DOI: 10.1016/j.physc.2014.02.003."}
+{"doc_id": "D030", "sid": 2872, "start": 178657, "end": 178759, "kind": "list", "text": "17. Uspenskaya, Egorov (2011). Memory effects in permalloy-niobium hybrid structures. arXiv:1112.2359."}
+{"doc_id": "D030", "sid": 2873, "start": 178760, "end": 178878, "kind": "list", "text": "18. Evidence of the Cooper-Pair Field with Gaussian Memory Kernel in Unconventional Superconductors. arXiv:2607.03937."}
+{"doc_id": "D030", "sid": 2874, "start": 178880, "end": 178915, "kind": "heading", "text": "### B.2 差异-记忆核外部对照（检索日期 2026-11-16）"}
+{"doc_id": "D030", "sid": 2875, "start": 178917, "end": 178969, "kind": "quote", "text": "> 编号 L1–L19 仅作外部对照，不构成 CQM 已证内容；外部结论不替代 §0 的构造与条件命题。"}
+{"doc_id": "D030", "sid": 2876, "start": 178971, "end": 178998, "kind": "table", "text": "| 编号 | 出处 | 外部结论 | 与本文的关系 |"}
+{"doc_id": "D030", "sid": 2877, "start": 178999, "end": 179020, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2878, "start": 179021, "end": 179218, "kind": "table", "text": "| L1 | Bardeen, Cooper, Schrieffer, *Phys. Rev.* **108**, 1175 (1957), DOI:10.1103/PhysRev.108.1175 | BCS 能隙方程；$k_BT_c=1.13\\hbar\\omega_D e^{-1/\\lambda}$；$2\\Delta_0/k_BT_c=3.53$ | §0.9 退化目标；只做条件退化 |"}
+{"doc_id": "D030", "sid": 2879, "start": 179219, "end": 179331, "kind": "table", "text": "| L2 | Wada, *Phys. Rev.* **135**, A1481 (1964), DOI:10.1103/PhysRev.135.A1481 | Pb/Hg 能隙比偏离 3.53 | 强耦合偏离的外部事实 |"}
+{"doc_id": "D030", "sid": 2880, "start": 179332, "end": 179459, "kind": "table", "text": "| L3 | McMillan, *Phys. Rev.* **167**, 331 (1968), DOI:10.1103/PhysRev.167.331 | 强耦合 $T_c$ 公式；Pb/Hg 的 $\\lambda$ 较大 | 强耦合修正的对照 |"}
+{"doc_id": "D030", "sid": 2881, "start": 179460, "end": 179570, "kind": "table", "text": "| L4 | Emery, Kivelson, *Nature* **374**, 434 (1995), DOI:10.1038/374434a0 | 小超流密度下相位涨落决定 $T_c$ | 相位限制支的外部依据 |"}
+{"doc_id": "D030", "sid": 2882, "start": 179571, "end": 179706, "kind": "table", "text": "| L5 | Uemura et al., *Phys. Rev. Lett.* **62**, 2317 (1989), DOI:10.1103/PhysRevLett.62.2317 | 铜氧化物 $T_c\\propto n_s/m^*$ | Uemura 标度 |"}
+{"doc_id": "D030", "sid": 2883, "start": 179707, "end": 179801, "kind": "table", "text": "| L6 | Carlson, Emery, Kivelson, Orgad, arXiv:cond-mat/0206217 | 预配对/赝能隙/相位涨落综述 | 赝能隙图像的外部对照 |"}
+{"doc_id": "D030", "sid": 2884, "start": 179802, "end": 179987, "kind": "table", "text": "| L7 | Randeria, Taylor, *Annu. Rev. Condens. Matter Phys.* **5**, 209 (2014), DOI:10.1146/annurev-conmatphys-031113-133829；arXiv:1306.5785 | BCS–BEC crossover；预配对 | 两阶段图像的外部对照；不采用其机制 |"}
+{"doc_id": "D030", "sid": 2885, "start": 179988, "end": 180124, "kind": "table", "text": "| L8 | Deutscher, Entin-Wohlman, Fishman, Shapira, *Phys. Rev. B* **21**, 5041 (1980), DOI:10.1103/PhysRevB.21.5041 | 颗粒超导的渗流描述 | 渗流图像 |"}
+{"doc_id": "D030", "sid": 2886, "start": 180125, "end": 180239, "kind": "table", "text": "| L9 | Janssen, Stenull, *Phys. Rev. E* **67**, 046115 (2003), DOI:10.1103/PhysRevE.67.046115 | 渗流颗粒超导的场论 | 渗流标度 |"}
+{"doc_id": "D030", "sid": 2887, "start": 180240, "end": 180357, "kind": "table", "text": "| L10 | Timusk, Statt, *Rep. Prog. Phys.* **62**, 61 (1999), DOI:10.1088/0034-4885/62/1/002 | 铜氧化物赝能隙实验综述 | 赝能隙外部事实 |"}
+{"doc_id": "D030", "sid": 2888, "start": 180358, "end": 180463, "kind": "table", "text": "| L11 | Nagamatsu et al., *Nature* **410**, 63 (2001), DOI:10.1038/35065039 | MgB$_2$ 的 $T_c=39$ K | 数据 |"}
+{"doc_id": "D030", "sid": 2889, "start": 180464, "end": 180587, "kind": "table", "text": "| L12 | Tsuda et al., *Phys. Rev. Lett.* **91**, 127001 (2003), DOI:10.1103/PhysRevLett.91.127001 | MgB$_2$ 双能隙 | 双能隙外部事实 |"}
+{"doc_id": "D030", "sid": 2890, "start": 180588, "end": 180704, "kind": "table", "text": "| L13 | Hinks, Claus, Jorgensen, *Nature* **411**, 457 (2001), DOI:10.1038/35078037 | MgB$_2$ 总同位素指数约 0.32 | 同位素偏离 |"}
+{"doc_id": "D030", "sid": 2891, "start": 180705, "end": 180824, "kind": "table", "text": "| L14 | Drozdov et al., *Nature* **525**, 73 (2015), DOI:10.1038/nature14964 | H$_3$S 的 bcc 结构，$T_c\\approx203$ K | 数据 |"}
+{"doc_id": "D030", "sid": 2892, "start": 180825, "end": 180955, "kind": "table", "text": "| L15 | Drozdov et al., *Nature* **569**, 528 (2019), DOI:10.1038/s41586-019-1201-8 | LaH$_{10}$ 的 fcc 结构，$T_c\\approx250$ K | 数据 |"}
+{"doc_id": "D030", "sid": 2893, "start": 180956, "end": 181143, "kind": "table", "text": "| L16 | Gottlob, Hasenbusch, *Physica A* **201**, 593 (1993), DOI:10.1016/0378-4371(93)90131-M；arXiv:cond-mat/9305020 | 3D XY 简立方 $K_c=0.45420(2)$，$k_BT_c/J\\approx2.2017$ | §0.5 $c$ 的标定 |"}
+{"doc_id": "D030", "sid": 2894, "start": 181144, "end": 181263, "kind": "table", "text": "| L17 | Pelissetto, Vicari, *Phys. Rep.* **368**, 549 (2002), DOI:10.1016/S0370-1573(02)00219-3 | 3D XY 临界指数 | 临界指数对照 |"}
+{"doc_id": "D030", "sid": 2895, "start": 181264, "end": 181403, "kind": "table", "text": "| L18 | Leggett, *Prog. Theor. Phys.* **36**, 901 (1966), DOI:10.1143/PTP.36.901 | 相位刚度与超流密度 | $J_{\\rm eff}\\leftrightarrow n_s/m^*$ 的外部依据 |"}
+{"doc_id": "D030", "sid": 2896, "start": 181404, "end": 181572, "kind": "table", "text": "| L19 | Campostrini, Hasenbusch, Pelissetto, Rossi, Vicari, *Phys. Rev. B* **63**, 214503 (2001), DOI:10.1103/PhysRevB.63.214503 | 3D XY 临界指数的高精度 Monte Carlo | 临界指数对照 |"}
+{"doc_id": "D030", "sid": 2897, "start": 181574, "end": 181587, "kind": "prose", "text": "**未取到的外部依据**："}
+{"doc_id": "D030", "sid": 2898, "start": 181589, "end": 181636, "kind": "list", "text": "- “节点间差异方差等于声子配对通道”没有外部文献可援引；这是 CQM 构造，本文不替它补证。"}
+{"doc_id": "D030", "sid": 2899, "start": 181637, "end": 181695, "kind": "list", "text": "- $T^*$ 作为“局域配对温度”的操作定义没有外部标准；标准文献的 $T^*$ 是赝能隙 onset，二者不同。"}
+{"doc_id": "D030", "sid": 2900, "start": 181696, "end": 181752, "kind": "list", "text": "- 两阶段模型把相位刚度支 $T_\\theta$ 读作相位限制支（渗流只给连通域，M8），这一对应没有外部先例；"}
+{"doc_id": "D030", "sid": 2901, "start": 181752, "end": 181760, "kind": "list", "text": "它是构造性读法。"}
+{"doc_id": "D030", "sid": 2902, "start": 181762, "end": 181800, "kind": "heading", "text": "### B.3 历史唯物主义诠释的外部对照（检索日期 2026-11-19）"}
+{"doc_id": "D030", "sid": 2903, "start": 181802, "end": 181870, "kind": "quote", "text": "> 编号 P1–P13 仅作外部对照，不构成 CQM 已证内容；经典文本给出命题出处，现代文献给出可核实的 arXiv 编号或 DOI。"}
+{"doc_id": "D030", "sid": 2904, "start": 181870, "end": 181899, "kind": "quote", "text": "第 12.7 节的类比不得反向用作这些文献的“物理证明”。"}
+{"doc_id": "D030", "sid": 2905, "start": 181901, "end": 181933, "kind": "table", "text": "| 编号 | 出处 | 外部内容 | 与 §12.7 的关系 |"}
+{"doc_id": "D030", "sid": 2906, "start": 181934, "end": 181955, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D030", "sid": 2907, "start": 181956, "end": 182058, "kind": "table", "text": "| P1 | 马克思《资本论》第三卷，第三篇（利润率趋向下降规律），Penguin, 1991 | 资本有机构成提高、利润率趋向下降规律及其反趋势（扩大市场等） | ⑦ 的社会侧结构同构；不是物理机制 |"}
+{"doc_id": "D030", "sid": 2908, "start": 182059, "end": 182176, "kind": "table", "text": "| P2 | 马克思《政治经济学批判大纲》（Grundrisse），Penguin, 1973, pp. 704–706 | “一般智力”（general intellect）对象化为固定资本 | ⑪ 的思想史背景；不作大模型理论 |"}
+{"doc_id": "D030", "sid": 2909, "start": 182177, "end": 182242, "kind": "table", "text": "| P3 | 马克思《关于费尔巴哈的提纲》第六条，1845 | “人的本质……是一切社会关系的总和” | ②、⑩ 的本体论语法 |"}
+{"doc_id": "D030", "sid": 2910, "start": 182243, "end": 182385, "kind": "table", "text": "| P4 | Burkett, *Marx and Nature: A Red and Green Perspective*, Palgrave, 1999, DOI:10.1057/9780312299651 | 历史唯物主义与自然代谢、热力学的相容性 | ⑤–⑦ 的方法论对照 |"}
+{"doc_id": "D030", "sid": 2911, "start": 182386, "end": 182502, "kind": "table", "text": "| P5 | Kibble, *J. Phys. A* **9**, 1387 (1976), DOI:10.1088/0305-4470/9/8/029 | 宇宙学畴结构与弦；因果视界外的独立选择 | ⑫ 的局域—全局传播对照 |"}
+{"doc_id": "D030", "sid": 2912, "start": 182503, "end": 182593, "kind": "table", "text": "| P6 | Zurek, *Nature* **317**, 505 (1985), DOI:10.1038/317505a0 | 凝聚态系统中的基布尔–祖雷克标度 | 同上 |"}
+{"doc_id": "D030", "sid": 2913, "start": 182594, "end": 182712, "kind": "table", "text": "| P7 | Berry, Keating, *SIAM Rev.* **41**, 236 (1999), DOI:10.1137/S0036144598347497 | 黎曼零点的谱/半经典解释 | ⑨ 的谱侧背景；不证明 RH |"}
+{"doc_id": "D030", "sid": 2914, "start": 182713, "end": 182795, "kind": "table", "text": "| P8 | Sierra, arXiv:1601.01797 | 黎曼零点作为 $xp$ 模型谱与 RH 的综述 | ⑨ 的外部对照；框架内物理同一仍属 M1 |"}
+{"doc_id": "D030", "sid": 2915, "start": 182796, "end": 182872, "kind": "table", "text": "| P9 | Kaplan et al., arXiv:2001.08361 | 神经语言模型的幂律标度 | ⑪ 的经验规律；不蕴含“必须无限扩大” |"}
+{"doc_id": "D030", "sid": 2916, "start": 182873, "end": 182960, "kind": "table", "text": "| P10 | Hoffmann et al., arXiv:2203.15556 | 计算最优训练：参数与数据按比例扩展 | ⑪ 的定量修正；否定“只堆参数”的简单读法 |"}
+{"doc_id": "D030", "sid": 2917, "start": 182961, "end": 183056, "kind": "table", "text": "| P11 | Schaeffer, Miranda, Koyejo, arXiv:2304.15004 | “涌现能力”可能是度量选择造成的假象 | ⑪ 的争议边界；不得把相变读成必然 |"}
+{"doc_id": "D030", "sid": 2918, "start": 183057, "end": 183191, "kind": "table", "text": "| P12 | Scheffer et al., *Nature* **461**, 53 (2009), DOI:10.1038/nature08227 | 临界转变前的临界慢化与早期预警信号 | ⑦ 的“收窄速率趋于零（临界慢化）→危机”对照；社会系统只作类比 |"}
+{"doc_id": "D030", "sid": 2919, "start": 183192, "end": 183318, "kind": "table", "text": "| P13 | 颗粒超导渗流：arXiv:1301.3282；arXiv:cond-mat/9906254；arXiv:cond-mat/0204082 | 颗粒/网络超导的渗流阈值与临界指数 | ⑥ 的外部事实对照；不替代 DM.11–DM.12 |"}
+{"doc_id": "D030", "sid": 2920, "start": 183320, "end": 183323, "kind": "prose", "text": "---"}
+{"doc_id": "D030", "sid": 2921, "start": 183325, "end": 183356, "kind": "prose", "text": "*该文档为 CQM 超导核心理论框架（差异-记忆核超导理论）。"}
+{"doc_id": "D030", "sid": 2922, "start": 183356, "end": 183431, "kind": "prose", "text": "旧框架的主丛曲率机制、完整因果链与第一性数值例链已在 Lean 中部分形式化；新理论的记忆核、两阶段与锚点仍属框架构造，数值预言与实验检验待后续验证。"}
+{"doc_id": "D030", "sid": 2923, "start": 183431, "end": 183432, "kind": "prose", "text": "*"}
 {"doc_id": "D034", "sid": 0, "start": 0, "end": 18, "kind": "heading", "text": "# CQM 3D专业引力超导实验软件"}
 {"doc_id": "D034", "sid": 1, "start": 20, "end": 90, "kind": "quote", "text": "> 基于 Godot 引擎的3D超导材料设计器，从质子 $A_4$ 嘉当矩阵出发，经五环节展开至晶胞分布结构，实现CQM超导理论的交互式计算"}
 {"doc_id": "D034", "sid": 2, "start": 92, "end": 127, "kind": "prose", "text": "**理论基底**：CQM 超导核心理论（耦合常数量子力学超导涌现框架）"}
