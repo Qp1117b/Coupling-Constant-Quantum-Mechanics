@@ -5,9 +5,9 @@
 
 ---
 
-## 0. 与权威八环节链的关系（先定坐标）
+## 0. 与权威 27 环发生学的关系（先定坐标）
 
-权威层 `06 超导` §0.1 的**八环节全链路**是：
+权威层 `06 超导` §0.1 的**27 环发生学**（八环节为骨架投影）是：
 
 $$[\hat X,\hat P]=i\hbar\xrightarrow{①}\hat a_k\xrightarrow{②}\varepsilon_e,L\xrightarrow{③}\Delta\hat\varepsilon\xrightarrow{④}v_\tau,A_\tau\xrightarrow{⑤}u_G\xrightarrow{⑥}\sigma_v^2,\Gamma_n\xrightarrow{⑦}K(t)\xrightarrow{⑧}\mathcal I_K=\int K\,dt$$
 

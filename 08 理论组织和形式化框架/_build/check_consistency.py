@@ -222,8 +222,10 @@ def main():
     # 后证据句重匹配，知识图谱边 343→339；144 实体、dir 50 / hyper 19 未变。
     # 2026-11-20（v1.9.225）：06 拆为理论卷/材料卷，语料变化使 claim 级边 336→337；
     # 实体 146 不变，dir 50 / hyper 19 未变。
-    check("知识图谱 146 实体 / 337 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 337),
+    # 2026-11-21（v1.9.240）：27 环/相变等效/BCS 提升/关系性实在论落笔，P026 新增“电子”
+    # 概念提及边 1 条（证据句重匹配另换 8 条旧边），故 337→338；实体 146 不变。
+    check("知识图谱 146 实体 / 338 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 338),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
