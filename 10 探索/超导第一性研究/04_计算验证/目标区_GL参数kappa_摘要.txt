@@ -1,0 +1,17 @@
+=== B 类接口（外部 London + CQM 链内量）===
+kappa_c = 1/sqrt(2) = 0.707107（外部判据，不作 CQM 结论）
+
+=== [A] Debye 权重 w(T) 与 lambda_L ∝ 1/sqrt(w) ===
+w(T=0.01)=0.999997, w(T=0.99)=0.967756（随 T 升而降）
+lambda_L 随 T 升而增：True
+
+=== [B] kappa(T) ∝ |T0-T|^{1/2}/sqrt(w) 温度标度 ===
+kappa(T=0.01)=0.9950, kappa(T=0.99)=0.1017
+降温（T↓）kappa 上升：True
+临界区 T→T0^- kappa→0：1.02e-01
+
+=== [C] kappa_c 参考线（绝对值外生，链外-B 未闭合）===
+低温 kappa_abs=1.0607 (>kappa_c? True)
+临界区 kappa_abs=0.1084 (<kappa_c? True)
+示意交叉温度 T≈0.566（绝对值依赖外生 A，非 CQM 预言）
+边界：kappa 绝对值、材料第一/第二类归属均属链外-B，本轮只给温度形状

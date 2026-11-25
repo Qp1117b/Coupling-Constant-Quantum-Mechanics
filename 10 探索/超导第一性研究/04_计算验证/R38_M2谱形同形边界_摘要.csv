@@ -1,0 +1,7 @@
+﻿判据,数值,判定
+P1,"原文 {'M2识别': True, 'M2未证': True, '链内alpha2F': True}",通过
+P2,lambda=2∫alpha^2F/omega（B 类）,外部标准
+P3,omega_log=e^{-1/s}omega_D；s=2 给 e^{-1/2},通过
+P4,g/N(0) 无链内载体,M2 不闭合
+P5,代数恒等式（Lean）,由 Lean 承载
+结论,谱形同形+矩可算；识别仍缺,状态不动

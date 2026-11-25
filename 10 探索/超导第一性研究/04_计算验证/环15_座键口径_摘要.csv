@@ -1,0 +1,11 @@
+﻿quantity,value,note
+p_c_site,0.5927460507921,"external, square lattice"
+p_c_bond,0.5,"exact, Kesten"
+naive_sqrt_half,0.7071067811865476,p_pair^2 >= 1/2 would require this
+threshold_error,0.11436073039444761,absolute
+relative_error,0.19293377027417521,relative
+q_at_site_threshold,0.35134788072963075,induced bond fraction
+q_gap_to_bond_threshold,0.14865211927036925,positive
+MC_mean_pc_L16,0.5864420572916667,first top-bottom spanning
+MC_mean_pc_L24,0.5927951388888888,first top-bottom spanning
+MC_mean_pc_L32,0.5937459309895833,first top-bottom spanning

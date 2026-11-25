@@ -1,0 +1,19 @@
+{
+  "T_c": 0.3,
+  "T_break": 0.7304390098936776,
+  "T_end_used": 0.7294390098936776,
+  "m_note": "ρ 与 m 无关（Δt = m·S/N，S 不含 m）；故判据对 m=1,2 同结论",
+  "y_criterion_true_all": true,
+  "rho_min": 0.018878085663851556,
+  "rho_mean": 0.23129327494137145,
+  "rho_max": 0.30912537665640133,
+  "rho_at_Tc": 0.11349560389702319,
+  "T_at_rho_max": 0.5834297465298273,
+  "t_Tc_m1": 1.0142041069825518,
+  "t_end_m1": 9.205335083534234,
+  "t_Tc_m2": 1.0284082139651034,
+  "t_end_m2": 17.410670167068467,
+  "t_strict_increasing_m1": true,
+  "t_strict_increasing_m2": true,
+  "note": "判据 Δt>0 ⟺ S>0 在工作域 [T_c,T_break) 全程成立，余量 ρ≤max<1；但这是逐点数值核对，不是链内证明——证明只覆盖'判据本身'（TargetPropTChanCriterion）与'判据成立即 t 增'（TargetPropTChanDominate）。"
+}

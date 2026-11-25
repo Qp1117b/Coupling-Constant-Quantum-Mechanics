@@ -1,0 +1,64 @@
+{
+  "P1_alphas": {
+    "Cd": 0.5,
+    "Pb": 0.48,
+    "Hg": 0.5,
+    "Mo": 0.37,
+    "Ta": 0.35,
+    "Tl": 0.5,
+    "Sn": 0.46,
+    "V": 0.15,
+    "Zn": 0.3
+  },
+  "P1_violations": [],
+  "P1_pass": true,
+  "P2_rows": [
+    {
+      "system": "Mo2NF2_CDW",
+      "lambda": 0.4,
+      "omega_log_K": 219.0,
+      "Tc_exp_K": 1.0,
+      "Tstar_K": 6.325712622614389,
+      "ratio": 6.325712622614389
+    },
+    {
+      "system": "Mo2NF2_strain",
+      "lambda": 0.53,
+      "omega_log_K": 272.0,
+      "Tc_exp_K": 4.0,
+      "Tstar_K": 14.50597421679988,
+      "ratio": 3.62649355419997
+    },
+    {
+      "system": "MgB2",
+      "lambda": 0.61,
+      "omega_log_K": 737.0,
+      "Tc_exp_K": 39.0,
+      "Tstar_K": 50.339728479088805,
+      "ratio": 1.2907622686945848
+    }
+  ],
+  "P2_pass": true,
+  "P3_sorted": [
+    [
+      "Mo2NF2_CDW",
+      0.4,
+      6.325712622614389
+    ],
+    [
+      "Mo2NF2_strain",
+      0.53,
+      3.62649355419997
+    ],
+    [
+      "MgB2",
+      0.61,
+      1.2907622686945848
+    ]
+  ],
+  "P3_monotone_decrease": true,
+  "P3_spearman": -1.0,
+  "P3_pass": true,
+  "P4_endpoint_count": 3,
+  "P4_MgB2_alpha_external": 0.3
+}

@@ -1,0 +1,1 @@
+| 181 | 把 $\delta\lambda=\kappa_f\delta\varepsilon$ 的一阶线性化当成锁概率的**精确**输入 | 映射 $r=\sqrt{1-\varepsilon/2\pi}$ 是凹、有界的，二阶项给方差相对修正 $c=\sigma_\theta^2/(2\pi^2s^2)$；$\lvert s\rvert{=}1/2$ 时 $c=6.9\%$、工作点 $y$ 翻倍、$T_{\rm sync}$ 降 1.3–2.0% | 本轮 §14.1–14.3；$f''=-1/(2(2\pi-e)^2)\neq0$ |

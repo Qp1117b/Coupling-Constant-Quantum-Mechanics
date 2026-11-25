@@ -1,0 +1,8 @@
+# 独立材料参数集（非从 Tc 反解）——用于端到端 Tc 判定
+# 来源：公开第一性 Eliashberg 计算论文，逐行标源
+# 更新（第73轮）：MgB2 omega_log 由假设670K修正为全文独立值63.5meV=737K
+system,lambda,mu_star,omega_log_K,Tc_iso_K,Tc_aniso_K,Tc_exp_K,two_gap,source,note
+Mo2NF2_CDW,0.40,0.10(assumed),219,,,~1,no,arXiv:2603.06284,mu* not stated; implied 0.0964; L2
+Mo2NF2_strain,0.53,0.10(assumed),272,,,~4,no,arXiv:2603.06284,mu* not stated; implied 0.1023; L2
+MgB2,0.61,0.12,737(63.5meV),19,39,39,YES,arXiv:cond-mat/0111182,FULL INDEPENDENT SET: lambda=0.61 mu*=0.12 wlog=63.5meV; iso Eliashberg 19K aniso 39K
+BP3_monolayer,1.59,(not given),(not given),,,9.7,YES,arXiv:2604.10026,two gaps 2.25/1.74 meV; omega_log not in abstract

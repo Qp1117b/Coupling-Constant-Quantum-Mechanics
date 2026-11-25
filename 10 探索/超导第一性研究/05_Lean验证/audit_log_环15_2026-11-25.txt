@@ -1,0 +1,282 @@
+# 环 15 A 闸审计日志（2026-11-25，第 162 轮）
+
+## 一、工具链与路径
+- Lean 4.29.1（D:\DevTools\.elan\toolchains\leanprover--lean4---v4.29.1\bin\lean.exe）
+- 直接以 lean 驱动（lake env 因缺 git 无法刷新 manifest；LEAN_PATH 指向 .lake/build/lib/lean 与各包 lib/lean）
+
+## 二、逐定理 #print axioms（第 162 轮实测输出）
+LockIntegerAndCore（5 条，全部 [propext, Classical.choice, Quot.sound]）：
+- lock_le_pair / threshold_uplift / core_from_inversion / renormalized_core_identity / t_ge_one
+HolonomyLockMap（5 条，全部 [propext, Classical.choice, Quot.sound]）：
+- phase_variance / exponent_match / K_sigma_identity / upsilon0_structure / push6_bound
+Ring15LockMult（3 条，全部 [propext, Quot.sound]，无 Classical.choice）：
+- targetProp / mLock_eq_one / lockMult_eq_one_iff
+- 类型核对：CQM.Ring15.LockMult.targetProp : TargetProp（与 Ring15Spec 的 TargetProp 同一 Prop，非同名重定义）
+
+## 三、token 级卫生扫描
+- 231 个 .lean 文件（去掉注释行与块注释）中 sorry / admit / native_decide / unsafe / axiom 命中 0 条。
+
+## 四、结论
+- A 闸（本环模块）：通过。无 sorryAx、无自造 axiom；两条独立路径（Spec 只含定义 / 证明模块 import Spec）成立。
+- 限制：尚未接入 CI；本次为手工逐条执行，非固化脚本。
+
+## 五、第 163 轮追加（Ring15LockProbability）
+- targetPropLock : TargetPropLock —— axioms [propext, Classical.choice, Quot.sound]
+- rpow_m2 —— axioms [propext, Classical.choice, Quot.sound]
+- 双路径仍成立：Ring15Spec（只含定义）先出 .olean，证明模块仅 import 该模块。
+- 备注：Spec 新增 pLock / tEffM / TargetPropLock 三个定义，需 `noncomputable section` 与 Pow.Real 基线导入。
+
+## 六、第 173 轮追加（Ring15Spec v3 + Ring15LockLayer）
+- 命令序列（cwd = 05_Lean验证）：
+  `lean -o .\olean_tmp\Ring15Spec.olean .\Ring15Spec.lean` → exit 0
+  `lean -o .\olean_tmp\Ring15LockLayer.olean .\Ring15LockLayer.lean` → exit 0
+  `lean -o .\olean_tmp\Ring15LockProbability.olean .\Ring15LockProbability.lean` → exit 0（旧模块在新 Spec 上回退兼容）
+- `CQM.Ring15.LockLayer.targetPropLayer` —— axioms [propext, Classical.choice, Quot.sound]
+- `CQM.Ring15.LockLayer.cond_eq_pLock` —— axioms [propext, Classical.choice, Quot.sound]
+- 类型逐项对齐：`#check (targetPropLayer : CQM.Ring15.Spec.TargetPropLayer)` 通过（同一 Prop，非同名重定义）
+- 回退兼容复核：`targetPropLock`／`rpow_m2` 仍为 [propext, Classical.choice, Quot.sound]
+- token 卫生：Ring15Spec／Ring15LockLayer／Ring15LockProbability 去注释后 sorry／admit／native_decide／unsafe／axiom 命中 0
+- 过程记录：首版 `hqpow` 归纳因 `ih` 携带依赖 `m` 的 `hcond` 而报类型不匹配；改为把 `hqpow` 先于 `hcond` 证明（不补尾部、不改结论），随后一次通过。
+- 临时审计文件 `_audit_tmp_layer.lean` 已删除（不入库）。
+
+## 七、第 174 轮追加（A 闸固化：a_gate.ps1）
+- 脚本：`05_Lean验证/a_gate.ps1`（一键：出 olean → 只 import Spec → axioms 白名单 → 类型强制标注 → token 卫生；非零退出码）
+- 首次运行输出：四模块编译全 `[ ok ]`；7 条 axioms 全在白名单（3 条 `propext, Quot.sound`；4 条 `propext, Classical.choice, Quot.sound`）；3 条类型标注通过；token 扫描 233 文件命中 0
+- 结论：`A 闸 PASS（限环 15 四模块）`，exit 0
+- 覆盖界定：仅环 15 四模块＋本目录顶层 `.lean`；未覆盖其余环与全目录，不能据此宣称全目录 A 闸通过
+
+## 八、第 176 轮追加（Ring15LockCorr：rho=-1/2 算术核）
+- 新增：`Ring15Spec` v5 的 `TargetPropAdjCorr`（∀ v>0, (-v)/sqrt(2v*2v) = -1/2）；证明模块 `Ring15LockCorr.lean`
+- 过程记录（一次 A 闸真实失败）：首版在 `field_simp` 之后仍写 `ring`，Lean 报 `Ring15LockCorr.lean:19:2: error: No goals to be solved` ⇒ 编译 FAIL；删多余一步后 exit 0。属"多推一步"，非方向性错误。
+- a_gate 扩到六模块：编译全 `[ ok ]`；10 条 axioms 全落 propext / Classical.choice / Quot.sound；6 条 `#check` 类型标注对齐 `CQM.Ring15.Spec.*`；token 扫描 235 文件命中 0
+- 结论：`A 闸 PASS（限环 15 六模块）`，exit 0
+- 数值侧：`04_计算验证/环15共点键相位相关_双变量高斯修正.py` 改一维积分（绕开 scipy 1.18 无 `upper_limit` 关键字），并做 4e6 样本 MC 复核；工作点 C_lock-1 = 2.93e-6
+- 仍未覆盖：本目录其余环与全目录
+
+## 九、第 177 轮追加（Ring15LockCorrGen / Ring15LockCorrNear：rho 的一般化与完整化）
+- Spec v6：`adjCorrGen`（rv=ρ_v 相邻相关）+ `TargetPropAdjCorrGen`；Spec v7：`adjCorrNear`（ρ₁、ρ₂ 两个距离）+ `TargetPropAdjCorrNear`
+- 过程记录（一次 A 闸真实失败）：首版 `Ring15LockCorrGen` 的 `Real.sqrt_sq` 期望 `√((a)^2)=a` 而目标写的是 `√(a*a)`，报 `Type mismatch: √((2*v*(1-rv))^2) ... but expected √(2*v*(1-rv)*(2*v*(1-rv)))`；补 `rw [show a*a = a^2 by ring]` 后 exit 0
+- 另一次脚本侧失败（非 Lean）：`-replace` 用单引号里的 `` `n `` 当换行，插进 a_gate.ps1 成了字面反引号 n、破坏数组语法；改用 Edit 修好后再跑
+- a_gate 扩到八模块：编译全 `[ ok ]`；12 条 axioms 全白名单；8 条 `#check` 类型对齐；token 扫描 237 文件命中 0；`A 闸 PASS（限环 15 八模块）`，exit 0
+- 仍未覆盖：本目录其余环与全目录
+
+## 十、第 178 轮追加（Ring15LockScale：ρ_XY 的尺度不变性）
+- Spec v8：`TargetPropAdjCorrScale`（∀ r1 r2 v, 0<v → r1<1 → adjCorrNear r1 r2 v = adjCorrNear r1 r2 1）；模块 `Ring15LockScale.lean`（private `near_val` + 主定理）
+- 语义：公共线性因子（κ_f）不改变相关系数 ⇒ ε 层与 λ 层共用同一 ρ（一阶）；O(σ²) 与非线性映射未算，已在卡内登记为残留
+- a_gate 扩到九模块：编译全 `[ ok ]`；13 条 axioms 全白名单；9 条 `#check` 类型对齐；token 扫描 238 文件命中 0；`A 闸 PASS（限环 15 九模块）`，exit 0
+- 数值：`04_计算验证/环15锁定概率_相位聚集修正.py`（θ_c=π ⇒ a(T)，m=2 修正：T_sync 0.6092298 → 0.6107161）
+- 仍未覆盖：本目录其余环与全目录
+
+## 十一、第 179 轮追加（ρ 载体核审计：无新引理，闸状态复核）
+- Spec 未改（保持 v8）：本轮结论是"ρ 的取值未定"，把任一支写进 Spec 都会把未定当已定，故不新增形式陈述
+- a_gate 重跑：九模块编译全 `[ ok ]`；13 条 axioms 全白名单；9 条 `#check` 类型对齐；token 238 文件命中 0；exit 0
+- 判定：B 闸判"$\rho_1=0.048930$ 是链内定值"为跑偏（跨层＋跨核），已改口径并对四支并列；量级结论（$C_{\rm lock}-1\le2.5\times10^{-6}$）不受影响
+
+## 十二、第 180 轮
+
+- 内容：ρ 取值按权威源定支（口径表 §一第 86 轮维数定律、§符号表"3D j₀ 核"）⇒ j₀ + m_eff=3；给出闭式 ρ₁=4(π²−4)/π⁴、ρ₂=−1/π²。**无新增引理、Spec 保持 v8**。
+- `a_gate.ps1` 重跑：九模块编译 PASS、13 条 `#print axioms` 全在白名单、9 条 `#check` 类型对齐、token 扫描 238 文件 0 命中，exit 0。
+- 口径：`审-6` 状态仍"未闭合"；闭合数仍 0；唯一编号仍 37。
+
+## 十三、第 181 轮
+
+- 内容：Spec **v9**（`lockLam`／`TargetPropLockLamDeriv`／`…Anti`／`…Exp`）；模块 `Ring15LockNonlin.lean` 三条（`lockLam_deriv`、`lockLam_anti`、`lockLam_exp`）。
+- `a_gate.ps1` 扩到**十模块**：编译 PASS、13＋3＝16 条 `#print axioms` 全在白名单（propext／Classical.choice／Quot.sound）、12 条 `#check` 类型对齐、token 扫描 239 文件 0 命中，exit 0。末行文案已同步为"十模块"。
+- 依赖注记：Spec 新 import `Mathlib.Analysis.Calculus.Deriv.Basic`／`…Deriv.Mul`／`Mathlib.Analysis.SpecialFunctions.Log.Deriv`（仍在 Mathlib 基线内）。
+- 口径：`审-6` 仍"未闭合"；闭合数仍 0；唯一编号仍 37。
+
+## 十四、第 182 轮
+
+- 内容：Spec **v10**（`TargetPropLockRatio`）；模块 `Ring15LockRatio.lean`（`lock_ratio` 一条）。
+- `a_gate.ps1` 扩到**十一模块**：编译 PASS、17 条 `#print axioms` 全在白名单、13 条 `#check` 类型对齐、token 扫描 240 文件 0 命中，exit 0；末行文案"十一模块"已同步。
+- **数值更正留痕**：本轮初稿曾用门槛 $2\pi(1-e^{-1/|s|})$，正确式为 $2\pi(1-e^{-1/(2|s|)})$（由 $R=r_1^2/r_2^2>e^{1/(2|s|)}$ 解出）。旧值 $5.433/4.65/1.7\times10^{-6}$ 已全部改为 $3.972/3.400/3.4\times10^{-4}$（卡 §十五、PROGRESS 182、DISCARD 182 三处同步）。这是本轮自己的记账错误，非链内数值。
+- 口径：`审-6` 仍"未闭合"；闭合数仍 0；唯一编号仍 37。
+
+## 十五、第 183 轮
+
+- 内容：Spec **v11**（`epsVarFromTheta`／`TargetPropVarBridge`，$\leftrightarrow$ 两方向）；模块 `Ring15LockBridge.lean`（`var_bridge`）。
+- `a_gate.ps1` 扩到**十二模块**：编译 PASS、全部 `#print axioms` 在白名单、全部 `#check` 类型对齐、token 扫描 241 文件 0 命中，exit 0；末行文案"十二模块"已同步。
+- 口径：`审-6` 仍"未闭合"；闭合数仍 0；唯一编号仍 37。
+
+## 十六、第 184 轮
+
+- 内容：统计来源审计（同名 $E_c$ 拆开 + 热/非热分岔）。**无新引理、Spec 保持 v11**；B 闸判跑偏式，指向 (161.1) 第二个等号。
+- 闸：沿用第 183 轮十二模块 PASS（本轮未改 Spec/模块，未重跑）。
+- 口径：`审-6` 仍"未闭合"，且失配点前移到 $\varepsilon$ 的定义授权层；闭合数仍 0；唯一编号仍 37。
+
+## 十七、第 185 轮
+
+- **Spec：v11 → v12。** 删 `epsVarFromTheta`／`TargetPropVarBridge`；增 `fugOfK`／`TargetPropFugStiff`／`TargetPropFugBound`／`TargetPropUpsLower`。旧模块 `Ring15LockBridge.lean` 已删（DISCARD 第 185 轮行）。
+- **新模块**：`Ring15LockStiff.lean`（3 条定理，只 import Spec）。`$mods` 十二项：Spec→LockMult→LockLayer→LockMono→LockCorr→LockCorrGen→LockCorrNear→LockScale→LockProbability→LockNonlin→LockRatio→**LockStiff**。
+- **实跑**：`A 闸 PASS（限环 15 十二模块 v12）`——12/12 编译 ok，`#print axioms` 20 条全为 `{propext, Classical.choice, Quot.sound}`（`TargetPropUpsLower` 等仅 `propext, Quot.sound`），15 条 `#check` 类型对齐分别为 `TargetProp…` 原类型，token `{"files": 241, "hits": []}`，exit 0。
+- **B 闸**：新版判**定义式**（`fugOfK` 逐条 `unfold`，量词为任意 $({\Upsilon,T})$ 与任意 $\beta>0$，不钉数值）；旧版判**跑偏式**，指向 (161.4) 第二等号。
+- **数值**：`04_计算验证/环15锁定概率_逸度归刚度的温度依赖.py`（`y_Tc_wp=1.8862e-3`、`K_Tc_wp=1.64365`、`Upsilon0_lower=0.442819`、`T_sync_window_m1=[0.50665,0.42603]`、`T_sync_window_m2=[0.47071,0.38821]`、`T_break=0.73044`）。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 十八、第 186 轮
+
+- **Spec：v12 → v13。** 只加两条命题 `TargetPropTEffMMono`、`TargetPropTEffMGeOne`，不改既有定义（`tEffM` 为 v12 前已有）。
+- **新模块**：`Ring15LockT.lean`（2 条定理 + 私有 `tEffM_sub` 差商引理，只 import Spec）。`$mods` 十三项：Spec→LockMult→LockLayer→LockMono→LockCorr→LockCorrGen→LockCorrNear→LockScale→LockProbability→LockNonlin→LockRatio→LockStiff→**LockT**。
+- **实跑**：`A 闸 PASS（限环 15 十三模块 v13）`——13/13 编译 ok，`#print axioms` 22 条全为 `{propext, Classical.choice, Quot.sound}`，17 条 `#check` 类型对齐，token `{"files": 242, "hits": []}`，exit 0。
+- **过程失败**：`targetPropTEffMMono` 初版把 `div_pos_iff` 写成 `rcases … with h | h` 并留了 `?_` 洞，编译直接拒；改 `.mpr (Or.inr ⟨hnum, hlogp⟩)` 通过。`tEffM_sub` 最初带未用参数 `hp`，触发 unused-variable warning，去参后零 warning。
+- **B 闸**：判**定义式**。最可能跑偏的一行是 `div_pos_iff` 的 `Or.inr ⟨hnum, hlogp⟩`——符号翻转全赖 `hlogp : Real.log p < 0`；若漏掉该侧条件，方向会静默反过来而类型仍过。量词未被特例偷换（$p$ 任意 $(0,1)$、$y$ 任意 $[0,1)$、$m$ 任意 $\ge1$）。
+- **数值**：`04_计算验证/环15粗粒化指数t_方向与下界.py`（`t_at_Tc_m1=1.01420`、`t_at_Tc_m2=1.02841`、`t_m1_strict_increasing=true`、`t_ge_one_all=true`、`cases` 表给 $\nu=8/9$ 的 $x_\ast,\epsilon_\nu$）。基线两行与登记值逐位一致（$7.4271/2.5929$、$6.4879/2.4293$），确认交接公式未走样。
+- **失配与撤销**：前卡 (15M.5)（$t\le1.0509$ 贯穿同步区）的前提 $y(T_{\rm sync})=y_{\rm crit}=0.025007$ 在 185 轮 y 律下为 $0.1847$；$t$ 在 $T=0.34299/0.34506$ 即越界，$y$ 越 $y_{\rm crit}$ 于 $T=0.38607$。进 DISCARD 第 186 轮行；(15L.6) 保留为 $T_c$ 端点界。
+- **口径**：`审-6` 仍「未闭合」；新增 **G-186**（$t$ 在 $T$ 上的严格增只有数值证据）与"$t$ 在同步区无上界"；闭合数 0、唯一编号 37 不动。
+
+## 十九、第 187 轮
+
+- **Spec：v13 → v14。** 增 `pPairThr`（阈值定义）、`TargetPropThrLog`、`TargetPropThrRpow`；不改既有定义。
+- **新模块**：`Ring15LockThr.lean`（2 条定理 + 私有 `log_pPairThr`，只 import Spec）。`$mods` 十四项（`Ring15LockThr` 接在 `Ring15LockT` 后）。
+- **实跑**：`A 闸 PASS（限环 15 十四模块 v14）`——14/14 编译 ok，`#print axioms` 24 条全为 `{propext, Classical.choice, Quot.sound}`，19 条 `#check` 类型对齐，token `{"files": 243, "hits": []}`，exit 0。
+- **过程失败三处**：`Real.log_pow` 首参是 `(x : ℝ)`（不是正性证明），`Real.log_pow hy` 报类型不匹配；跨模块调用 `LockT.targetPropTEffMGeOne` 不可行（本模块只 import Spec），改为由 $t=\ln p_c/\ln p_{\rm pair}^{\rm thr}$ 负/负直接给 $t>0$；`div_pos` 不能吃两个负数证明，用 `neg_div_neg_eq` 化成正/正。
+- **B 闸**：判**定义式**。最可能跑偏行 `Real.log_pow (1-y) m`——Lean 的 `log` 对负底数也满足该恒等式（取 $\ln|x|$），故前件 `0 ≤ y`、`y < 1` 必须显式留下，否则会连病态域一起证过去。
+- **数值**：`04_计算验证/环15配对阈值与t两写法.py`（`two_writings_diff_m1=3.3e-16`、`p_sync_check_m1=0.592746`、`y_deg_m1=0.407254`、`y_deg_m2=0.230100`、`T_ydeg_m1=0.58607`、`T_ydeg_m2=0.52594`、`y_margin_to_ydeg_m1=0.2225`、`y_margin_to_ydeg_m2=0.1146`、`T_tc_mismatch_m1=[0.597104, 0.593866]`）。
+- **口径**：`审-6` 仍「未闭合」；新增域上限 $y_{\deg}=1-p_c^{1/m}$（比 $T_{\rm break}$ 更紧的同步必要条件）；G-186 仍在；闭合数 0、唯一编号 37 不动。
+
+## 二十、第 188 轮
+
+- **Spec：v14 → v15。** 增 `rOfW alphaV w w' eps := 2*alphaV*w/(3*eps*|w'|)`、`sOfLock C1 aLam r := 2/(C1*(aLam-r))`、`TargetPropROfEps`、`TargetPropSFail`；不改既有定义。命名说明：`aλ` 不能作 Lean 标识符（`λ` 是 lambda 关键字），故用 `aLam`。
+- **新模块**：`Ring15LockR.lean`（2 条定理 + 私有 `rOfW_eq` 化 `k/eps` 形，只 import Spec）。`$mods` 十五项（`Ring15LockR` 接在 `Ring15LockThr` 后）。
+- **实跑**：`A 闸 PASS（限环 15 十五模块 v15）`——15/15 编译 ok，`#print axioms` 26 条全为 `{propext, Classical.choice, Quot.sound}`，21 条 `#check` 类型对齐，token `{"files": 244, "hits": []}`，exit 0。
+- **过程失败三处**：① `aλ` 触发 `unexpected token 'λ'`（λ 是关键字）→ 改 `aLam`；② `div_lt_div_iff` 不存在（Mathlib 只有 Rat 版弃用别名 `div_lt_div_iff_mul_lt_mul`），正确名为 `div_lt_div_iff₀ (hb hd) : a/b < c/d ↔ a*d < c*b`；③ `le_of_not_lt` 不存在，`not_lt.mp` 已直接给 `≤`。
+- **B 闸**：判**定义式**。最可能跑偏行是 `rOfW_eq` 的 `field_simp`——它同时清掉 `|w'|` 与 `eps` 两个分母，若前件漏 `w' ≠ 0` 或 `0 < eps`，Lean 的 `1/0 = 0` 约定会让等式照样成立而失效面语义归零；次风险是 `div_lt_div_iff₀` 的两条正性（`0 < b`、`0 < d`）缺一即翻号。量词对任意 `(alphaV,w,w',e1,e2)`、`(C1,aLam,r)` 成立，不钉 `ν`、`m`、`T`。
+- **数值**：`04_计算验证/环15锁定失效面r的epsilon反比结构.py`（`r_rel_at_Tsync_m1_nu8=1.62283`、`m2=1.75873`、`w_factor_min_m1=0.98866@T=0.34452`、`r_rel_min_m1=0.999597@T=0.30575`（`dip_depth=4.03e-4`）、`r_rel_strict_increasing_m1=false`、`m2=true`、`r_rel_at_domain_end_m1=9.2200`、`m2=16.4063`、`near_break` 给 `0.7261` 处 `eps_nu8=0.43764`、`r_rel=7.1934`）。反比项 `1.0120/1.528/1.723` 与 186 表逐位一致。
+- **失配与撤销（两条，进 DISCARD 第 188 轮行）**：① "$r(T)$ 随 $T$ 单调上移" —— 形状项 $w/|w'|$ 在 $T_c$ 邻域反向（$m{=}1$ 凹陷 $4.03\times10^{-4}$）；② "高温 $r\propto T$ 贯穿到 $T_{\rm break}$" —— 前提是 $t$ 有界，$T\to T_{\rm break}$ 时 $1/\epsilon_\nu$ 发散主导。
+- **口径**：`审-6` 仍「未闭合」；新增 **G-188**（$r$ 的整体单调仅数值且为假，形状项未进 Lean）；"高温 $r\propto T$"加适用边界；$b\,n_d(T_c)$、$s$、$\Phi$、$\Upsilon_0$ 下界、$T>T_{\rm break}$ 的 $p_{\rm lock}$ 写法、G-186 均不变；闭合数 0、唯一编号 37 不动。
+
+## 二十一、第 189 轮
+
+- **Spec：v15 → v16。** 增 `phiBkt T U0 w := 2*T/(π*U0*w)`、`phiMin T U0 w yc := (2*T/(π^2*U0*w))*log(2π/yc)`、`TargetPropPhiMono`、`TargetPropPhiBktVal`、`TargetPropPhiMinEq`、`TargetPropPhiConflict`；不改既有定义。
+- **新模块**：`Ring15LockPhi.lean`（4 条定理 + 私有 `bkt_K`，只 import Spec）。`$mods` 十六项（`Ring15LockPhi` 接在 `Ring15LockR` 后）。
+- **实跑**：`A 闸 PASS（限环 15 十六模块 v16）`——16/16 编译 ok，`#print axioms` 30 条全为 `{propext, Classical.choice, Quot.sound}`，25 条 `#check` 类型对齐，token `{"files": 245, "hits": []}`，exit 0。
+- **过程失败三处**：`div_le_div_of_nonneg_left`／`div_lt_div_of_pos_left` 的参数形状与目标不符（改 `mul_le_mul_of_nonneg_left`＋`linarith`）；`simpa using hbpi` 在 `div_lt_div_iff₀` 后仍要 $2b<\pi$ 形（改 `linarith`）；多处 `field_simp` 已闭合、后面又跟 `ring`，报 `No goals to be solved`。
+- **B 闸**：判**定义式**。最可能跑偏行 `Real.log_inv`＋`Real.exp_log`（$e^{-\log q}=1/q$，需 $0<q=2\pi/y_{\rm crit}$）；若漏 `0 < ycrit`，Lean 的 `log` 取 `log|q|`，恒等式照样成立而"$y$ 是概率"的语义归零。次风险 `field_simp` 清分母时漏 `π≠0`／`U0,w,T` 正性。
+- **数值**：`04_计算验证/环15锁定概率_Φ授权域与BKT钉住冲突.py`（`phi_min=0.6813472`、`phi_bkt_kappa=0.3873208`、`ratio=0.5684633=2β/π`、`y_at_phi_min=0.0250073=y_crit`、`y_at_phi_bkt=0.2715211=y_R`、`no_go_holds=true`、`Tsync_Phi_min=[0.42603,0.38821]`、`Tsync_Phi_1=[0.50665,0.47071]`、`y_strict_decreasing_in_Phi=true`）。
+- **判定与撤销（进 DISCARD 第 189 轮两行）**：① $\Phi$ 不进 (15L.3) ⇒ 185 (ii) 的 $\Phi$ 窗口塌成点；② 185 撤销 (161.4) 的第二条理由（"与 (19W.8) 冲突"）撤销，判决本身（$w$ 通道）保持。
+- **口径**：`审-6` 仍「未闭合」；新增 **G-189**（判据依赖 (15L.5) 与 (19P.24) 两条 A 类）；$\Phi_c$ 数值仍外生；$b\,n_d(T_c)$、$s$、$\Upsilon_0$ 下界、$T>T_{\rm break}$ 的 $p_{\rm lock}$ 写法、G-186、G-188 均不变；闭合数 0、唯一编号 37 不动。
+
+## 二十二、第 190 轮
+
+- **Spec：v16 → v17。** 新增两条基线 import（`Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic`、`Mathlib.Analysis.Complex.Trigonometric`）与 `open MeasureTheory`／`open scoped Interval`；增 `wGap T := ∫ u in (0:ℝ)..1, 2*u*Real.tanh (u/(2*T))`、`TargetPropWGapPos`、`TargetPropWGapAnti`、`TargetPropWGapLeOne`。
+- **新模块**：`Ring15LockW.lean`（3 条定理 + 4 个私有引理：`continuous_tanh`、`hasDerivAt_tanh`、`tanh_strictMono`、`tanh_pos_of_pos`／`tanh_nonneg_of_nonneg`／`tanh_le_tanh`／`cont_integrand`），只 import Spec 与基线分析库。
+- **实跑**：`A 闸 PASS（限环 15 十七模块 v17）`——17/17 编译 ok，`#print axioms` 33 条全为 `{propext, Classical.choice, Quot.sound}`，31 条 `#check` 类型对齐，token `{"files": 249, "hits": []}`，exit 0。
+- **过程失败三处**：① `import Ring15Spec` 因 LEAN_PATH 里 `$PSScriptRoot` 在交互式命令里为空而解析失败（改用绝对路径拼 LEAN_PATH）；② `intervalIntegral.integral_eq_sub_of_hasDerivAt` 只有 `(hderiv) (hint)` 两个参数（多传 `hcont` 报类型不匹配）；③ 目标 `2*x ≤ 2*x*1` 形状差一步 `mul_one`，`exact` 失败改 `simpa`。
+- **B 闸**：判**定义式**。最可能跑偏行 `hasDerivAt_tanh` 内 `field_simp` 后的 `nlinarith [Real.cosh_sq x]`（$\cosh^2-\sinh^2=1$ 一步并入清分母等式）；$\cosh x\ne0$ 由 `Real.cosh_pos` 给，若漏则在总除法下等式仍成立而导数符号翻。次风险：`wGap 0` 在总除法下等于 0，任何把 $w(0)=1$ 当定义值的读法都会跑偏（已登记 G-190a 并进 DISCARD 第 190 轮行）。
+- **数值**：`04_计算验证/环15_w结构_单调与上界.py`（`w_at_Tc=0.75870465`、`dev_at_Tc=3.5e-7`、`monotone_nonincreasing_on_grid=true`、`min_adjacent_drop=4.67e-4`、`w_le_one=true`、`w_max_on_grid=0.99868`、`limit_small_T`：$1-w(0.01)=3.290\times10^{-4}$、$1-w(0.001)=3.290\times10^{-6}$）。
+- **口径**：`审-6` 仍「未闭合」；新增 **G-190a/b/c**；$b\,n_d(T_c)$、$s$、$\Upsilon_0$ 下界、$T>T_{\rm break}$ 的 $p_{\rm lock}$ 写法、G-186／188／189 均不变；闭合数 0、唯一编号 37 不动。
+
+
+## 二十三、第 191 轮
+
+- **Spec：v17 → v18。** 增 `TargetPropSolSurj`（$\forall y>0$，$\exists C_1,a\lambda,r$：$0<C_1$、$0<a\lambda$、$r<a\lambda$、$s_{\rm sol}=y$）与 `TargetPropSolNeg`（$\exists$ 参数使 $s_{\rm sol}<0$）。无新 import。
+- **新模块**：`Ring15LockS.lean`（2 条定理，只 import Spec）。
+- **实跑**：`A 闸 PASS（限环 15 十八模块 v18）`——18/18 编译 ok，`#print axioms` 35 条全为 `{propext, Classical.choice, Quot.sound}`，33 条 `#check` 类型对齐，token `{"files": 247, "hits": []}`，exit 0。
+- **过程失败**：本轮 Lean 一次通过（无编译失败）；仅记账时有两次字符串转义把 `$` 写成字面反引号，已用整行重写修正（不入库为代码缺陷）。
+- **B 闸**：判**定义式**。最可能跑偏行 `targetPropSolSurj` 的 `field_simp`（漏 $y\ne0$ 时 $s_{\rm sol}=y$ 仍"成立"，但值域论证退化）；已显式取 `hyne : y ≠ 0`。
+- **判定**：$s_{\rm rep}$（表示权，$\frac12\mathbb Z$）与 $s_{\rm sol}$（可解性因子，$\mathbb R$）**同名不同义**；$s_{\rm sol}$ 值域 $(0,\infty)$ 正向取遍并可取负 ⇒ 不能加载整性。
+- **改挂**：$s_{\rm sol}$ 归乙类（$C$ 材料量）；$s_{\rm rep}$ 的选档缺口迁至环 26／`临-26`；环 15 甲类残余收窄为 $T>T_{\rm break}$ 的 $p_{\rm lock}$ 写法、G-186、G-188、G-189、G-190b、G-190c。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十四、第 192 轮
+
+- **Spec：v18 → v19。** 增 `TargetPropWGapStrictAnti`（$\forall T_1T_2,\ 0<T_1\to T_1<T_2\to w(T_2)<w(T_1)$）。无新 import（v17 已有的 `IntervalIntegral.Basic`／`Complex.Trigonometric` 足够）。
+- **新模块**：`Ring15LockWStr.lean`（1 条定理＋复用 190 轮的四个私有引理，只 import Spec；另 import `IntervalIntegral.FundThmCalculus`、`Deriv.MeanValue`、`Trigonometric.DerivHyp`）。
+- **实跑**：`A 闸 PASS（限环 15 十九模块 v19）`——19/19 编译 ok，`#print axioms` 36 条全为 `{propext, Classical.choice, Quot.sound}`，34 条 `#check` 类型对齐，token 扫描 0 命中，exit 0。
+- **过程失败（三次，均已修正，全部为写法而非物理）**：①`intervalIntegral.integral_sub` 只传两条 `IntervalIntegrable`，度量隐式元变量未赋值，报 `∂?m` 与 `volume` 不匹配 ⇒ 改显式 `(μ := volume)` 并同时命名 `f`、`g`；②其返回式右端 `(∫f) - ∫g` 与目标 `∫f - ∫g` 被 `linarith` 当成两个原子 ⇒ 加 `simp only [sub_eq_add_neg] at hpos hsub ⊢`；③多行 `have h : (∫ u in (0:ℝ)..1,` 被解析成绑定列表，报 `unexpected token ':='` ⇒ 该等式改单行。另实测 Mathlib **无** `integral_lt_integral_of_le_of_lt`／`integral_pos_of_pos` 一类严格性机器。
+- **B 闸**：判**定义式**。最可能跑偏行是 `integral_pos` 第二个子目标的见证点：取 $u=0$ 时 $f(0)-g(0)=0$，严格性退化为非严格而类型检查照样通过；本轮固定取 $u=1$。
+- **判定**：$w$ 对 $T$ **严格减**；G-190b 收口。186 的 $t$ 方向可用上严格性（G-186 降为"待复合"：$y$ 严格减、$p_{\rm pair}$ 严格增两条尚未各自进 Lean）。
+- **口径**：G-190a（$w(0)=1$ 仅作极限）、G-190c（$|w'|$ 的导数表示）不变；`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十五、第 193 轮
+
+- **Spec：v19 → v20。** 增 `yOfT ups0 T := fugOfK (ups0*wGap T/T)` 与 `TargetPropKStrictAnti`／`TargetPropYStrictMono`／`TargetPropTStrictMono`。无新 import。
+- **新模块**：`Ring15LockTStrict.lean`（3 条定理＋私有引理：$w$ 严格性自足重证五条、`fugOfK_strictAnti`、`fugOfK_pos`、`tEffM_sub`；只 import Spec，另加三条基线 import）。
+- **实跑**：`A 闸 PASS（限环 15 二十模块 v20）`——20/20 编译 ok，`#print axioms` 39 条全为 `{propext, Classical.choice, Quot.sound}`，37 条 `#check` 类型对齐，token 扫描 0 命中，exit 0。
+- **过程失败（一次，已修正，属写法而非物理）**：`TargetPropKStrictAnti` 是 `def … : Prop`，直接 `targetPropKStrictAnti h0 …` 会让 Lean 把 `h0 : 0 < ups0` 当作首个显式参数 `ups0 : ℝ`，报类型不匹配；改命名参数 `(ups0 := …) (T1 := …) (T2 := …)` 后通过（两处）。
+- **B 闸**：判**定义式**。最可能跑偏行是 ①的 `calc`＋`ring`（`(ups0*w)/T = ups0*(w/T)`）：若把除法当乘法逆元而对 $T\ne0$ 无感，等式在总除法下仍成立，但"分母变大"的链语义丢失。
+- **判定**：$K$ 对 $T$ 严格减、$y$ 对 $T$ 严格增、$p$ 固定时 $t$ 对 $T$ 严格增；G-186 的 $w\to K\to y\to t$ 通道收口。
+- **拆分**：新增 **G-186p**（$p_{\rm pair}(T)$ 通道，$F_\nu$ 链内无定义授权）。
+- **口径**：G-190a／G-190c／G-188／G-189／$T>T_{\rm break}$ 写法不变；`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十六、第 194 轮
+
+- **Spec：v20 → v21。** 增 `TargetPropTEffMPMono`（$t$ 对 $p$ 严格增）与 `TargetPropTChanSplit`（$\Delta t$ 的 $y$ 项 $>0$、$p$ 项 $<0$ 的反号分解，两项符号作为合取项写进命题）。无新 import。
+- **新模块**：`Ring15LockTChan.lean`（2 条定理＋私有 `tEffM_diff_p`／`tEffM_split`；只 import Spec）。
+- **实跑**：`A 闸 PASS（限环 15 二十一模块 v21）`——21/21 编译 ok，`#print axioms` 41 条全为 `{propext, Classical.choice, Quot.sound}`，39 条 `#check` 类型对齐，token 扫描 250 文件 0 命中，exit 0。
+- **过程失败（两次同源，属写法而非物理）**：①`field_simp` 后仍写 `ring`，在 `(Real.log p₁)⁻¹`、`(Real.log p₂)⁻¹` 原子前止步（`unsolved goals`）；须显式给 $\ln p_1\ne0$、$\ln p_2\ne0$（`ne_of_lt` 由 $\ln p<0$ 供）后 `field_simp [h1,h2]`＋`ring`。②`have := Real.log_lt_log …` 的匿名 `this` 在 `linarith` 里不稳，改 `have h := …` 命名＋`linarith`（或 `linarith [Real.log_lt_log …]`）。
+- **B 闸**：判**定义式**。最可能跑偏行是 ②的 `ring` 收口——纯恒等式对任何符号都 PASS，$\delta_1$、$\delta_2$ 的正负会被同一化；故把两条符号不等式作为合取项写进 Spec，逼 Lean 分别证。
+- **判定**：$p_{\rm pair}$ 随 $T$ **降**（$w$ 降 ⇒ 自变量升 ⇒ CDF 升，外部 χ² CDF 单调）、$t$ 对 $p$ **严格增** ⇒ $p$ 通道**压 $t$**，与 $y$ 通道**反号**。
+- **纠正**：193 轮"等 $F_\nu$ 授权即可复合"**作废**；$t$ 随 $T$ 严格增的净方向须主导项比较 ⇒ 新增 **G-186c**（甲类，195 立条件式）。
+- **拆分**：G-186p 方向收口；余 $\chi^2$ 尾函数的链内定义授权归乙类（与 `文献基线:212` 的 $\bar F_\nu^{-1}$ 注记同性质）。
+- **口径**：G-190a／G-190c／G-188／G-189／$T>T_{\rm break}$ 写法不变；`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十七、第 195 轮
+
+- **Spec：v21 → v22。** 增 `TargetPropTChanDominate`（充分闸：$\delta_1+\delta_2>0\Rightarrow t$ 增）与 `TargetPropTChanCriterion`（充要判据 $\Delta t>0\iff\delta_1+\delta_2>0$）。无新 import。
+- **新模块**：`Ring15LockTDom.lean`（2 条定理＋私有 `tEffM_split`／`one_le_nat_cast_pos`；只 import Spec）。
+- **实跑**：`A 闸 PASS（限环 15 二十二模块 v22）`——22/22 编译 ok，`#print axioms` 43 条全为 `{propext, Classical.choice, Quot.sound}`，41 条 `#check` 类型对齐，token 扫描 251 文件 0 命中，exit 0。
+- **过程失败（一次，属写法而非物理）**：`div_pos_iff` 的第二支 `absurd hN hNneg` 报 Application type mismatch（`hNneg : N<0` 不等于 `¬0<N`）；改 `exact absurd hNneg (not_lt.mpr (le_of_lt hN))` 后通过。
+- **B 闸**：判**定义式**。最可能跑偏行即上述反向分支——若把 `div_pos_iff` 的第二支直接丢弃（不与前件 $N>0$ 对撞），就会证出对 $N<0$ 也成立的假判据；本轮显式排除。
+- **判定**：$\Delta t$ 的符号只由 $\delta_1+\delta_2$ 决定；G-186c 判据部分收口，无条件净方向仍是逐点域核（$\rho\in[0.0189,0.3091]$，非证明）。
+- **口径**：G-190a／G-190c／G-188／G-189／$T>T_{\rm break}$ 写法不变；G-186p 方向收口（余乙类）；`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十八、第 196 轮
+
+- **Spec：v22 → v23。** 增 `sechSq x := 1/Real.cosh x ^ 2`、`wGapDeriv T := -(1/T^2)*∫ u in 0..1, u^2*sechSq(u/(2*T))`、`TargetPropWGapDeriv`（$\forall T>0$, `HasDerivAt wGap (wGapDeriv T) T`）、`TargetPropWGapDerivNeg`（$\forall T>0$, `wGapDeriv T < 0`）。无新 import（`HasDerivAt`／`nhds` 已在 Spec 基线内）。
+- **新模块**：`Ring15LockWD.lean`（2 条定理＋私有 `continuous_tanh`／`hasDerivAt_tanh'`／`cont_F`／`cont_F'`／`cont_sechSq`／`sechSq_pos`／`sechSq_le_one`／`deriv_F`；只 import Spec ＋ `ParametricIntervalIntegral`／`Deriv.Inv`／`Trigonometric.DerivHyp`）。
+- **实跑**：`A 闸 PASS（限环 15 二十三模块 v23）`——23/23 编译 ok，`#print axioms` 45 条全为 `{propext, Classical.choice, Quot.sound}`，43 条 `#check` 类型对齐（含 `targetPropWGapDeriv : Spec.TargetPropWGapDeriv`、`targetPropWGapDerivNeg : Spec.TargetPropWGapDerivNeg`），token 扫描 252 文件 0 命中，exit 0。
+- **过程失败（六处，全属写法）**：`𝓝` 不可用→`nhds`；`Ι 0 1` 的 `min/max` 未归约→`Set.uIoc_of_le` rw；beta-未归约目标→`show`；`HasDerivAt.comp` 的 `∘` 形→`simpa [Function.comp]`；`field_simp` 已闭合后多写 `ring`（两处 `No goals`）；`integral_pos` 的见证项要把 `⟨c, hmem, hpos⟩` 的 `hmem` 再包一层 `⟨·,·⟩`。
+- **B 闸**：判**定义式**。最可能跑偏行 `show ‖-(t^2/x^2)*sechSq(t/(2x))‖ ≤ 4/T^2*t^2`——范数吃掉符号，控制函数论证对 $\pm F'$ 同真，故符号另立 `TargetPropWGapDerivNeg` 单证。
+- **判定**：G-190c 收口（$|w'|=-w'$ 可用）；`wGapDeriv` 的数值大小不进入 $r$ 的形状判定，188 仍须另立形状判据。
+- **口径**：G-190c 移入丙类；G-190a／G-188／G-189／G-186c 域核／$T>T_{\rm break}$ 写法不变；`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动。
+
+## 二十九、第 197 轮
+
+- **Spec：v23 → v24。** 增 `TargetPropWGapIbp`（$w=\tanh\frac{1}{2T}+\frac T2w'$）、`TargetPropShapeSplit`（形状项＝端点商−半温）、`TargetPropShapeEnd`（$\frac T2|w'|=\tanh\frac{1}{2T}-w$）、`TargetPropShapeEndGt`（$\tanh\frac{1}{2T}>w$）。无新 import。
+- **新模块**：`Ring15LockIbp.lean`（4 条定理＋私有 `continuous_tanh`／`hasDerivAt_tanh'`／`cont_sechSq`／`cont_A`／`cont_B`；`import Ring15Spec`＋`Ring15LockWD`＋`Trigonometric.DerivHyp`＋`IntervalIntegral.FundThmCalculus`）。
+- **实跑**：`A 闸 PASS（限环 15 二十四模块 v24）`——24/24 编译 ok，`#print axioms` 49 条全为 `{propext, Classical.choice, Quot.sound}`，47 条 `#check` 类型对齐（含 `targetPropWGapIbp : Spec.TargetPropWGapIbp` 等四条），token 扫描 254 文件 0 命中，exit 0。
+- **过程失败（六处，全属写法）**：`ne_of_lt` 方向（`ne_of_gt`）；`integral_const_mul` 参数名 `r` 且 `μ` 须显式；FTC 引理需显式 import `FundThmCalculus`；`Continuous` 括号少一层致 `exact` 吞行；`rw [← hf]` 方向；形状项 `field_simp` 需 `d≠0`。
+- **B 闸**：判**定义式**。最可能跑偏行 `rw [habs, hibp]`——`habs : |w'| = -w'` 若方向用反，$\tanh-w=\frac T2w'<0$ 与"端点高于平均"矛盾，但等式本身仍"成立"；故另立 `TargetPropShapeEndGt` 把正性独立成命题。
+- **判定**：G-188a 收口（形状项分解、端点亏损、端点正性进链）；新拆出 **G-188b**（$w''$ 的链内表示、形状项极小编址与 $r$ 非单调判据）。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动；G-186c 域核／G-189／G-190a／$T>T_{\rm break}$ 写法不变。
+
+## 三十、第 198 轮
+
+- **Spec：v24 → v25。** 增 `wGapDeriv2 T := -(2/T)*wGapDeriv T - (1/T^4)*∫_0^1 u^3 sechSq(u/(2T)) tanh(u/(2T)) du`、`shapeDeriv T := (wGap T*wGapDeriv2 T - wGapDeriv T^2)/wGapDeriv T^2`、`TargetPropWGapDeriv2`（$\forall T>0$，`HasDerivAt wGapDeriv (wGapDeriv2 T) T`）、`TargetPropShapeDeriv`（$\forall T>0$，`HasDerivAt (fun T => wGap T/|wGapDeriv T|) (shapeDeriv T) T`）。无新 import。
+- **新模块**：`Ring15LockWD2.lean`（2 条定理＋私有 `continuous_tanh`／`cont_sechSq`／`sechSq_pos`／`sechSq_le_one`／`tanh_pos_of_pos`／`cont_F`／`cont_F'`／`deriv_F`；`import Ring15Spec`＋`Ring15LockWD`＋`ParametricIntervalIntegral`＋`Trigonometric.DerivHyp`）。
+- **实跑**：`A 闸 PASS（限环 15 二十五模块 v25）`——25/25 编译 ok，`#print axioms` 51 条全为 `{propext, Classical.choice, Quot.sound}`，46 条 `#check` 类型对齐（含 `targetPropWGapDeriv2 : Spec.TargetPropWGapDeriv2`、`targetPropShapeDeriv : Spec.TargetPropShapeDeriv`），token 扫描 257 文件 0 命中，exit 0。
+- **过程失败（五类，全属写法/推断）**：①`cont_F'` 括号失衡；②`deriv_F` 的 $\cosh$ 链式导数漏乘 $-\frac{t}{2x^2}$（残差差 $-2x^2$）；③五处 `field_simp` 已闭合后多写 `ring`（`No goals`），`rw [integral_const_mul]` 后 `rfl` 多余；④`hinvneg` 差一层 `one_div`（`simpa [one_div]`）；⑤`filter_upwards [Ioo_mem_nhds …]` 端点成元变量（改显式 `show Set.Ioo (0:ℝ) (2*T) ∈ nhds T from …`）。
+- **B 闸**：判**定义式**。下游消费点：`hBval`（$\int u^2\mathrm{sech}^2=-T^2w'$）由定义 `field_simp` 自证、非命名带过；`hcongr`（$-\frac{1}{x^2}B(x)=w'(x)$）由 `funext`＋`simp [hBfun, wGapDeriv]` 逐点展开；`TargetPropShapeDeriv` 只消费 `TargetPropWGapDerivNeg` 的"严格负"，且用 `abs_of_neg` 限制在 $(0,2T)$ 上。**最可能跑偏行**：`hval` 中 `unfold wGapDeriv2; field_simp`——若 `hBval` 的 $-T^2$ 因子记错，`field_simp` 仍能凑出"像样"的式子，故令 `hBval` 由定义自证、符号由定义强制。
+- **防抵消**：$w''$ 的两项反号（$-\frac2Tw'>0$、$-\frac{1}{T^4}\int u^3\mathrm{sech}^2\tanh<0$），若只核"两项之和"就被抵消掩盖；本轮**不宣称** $w''>0$，符号判据单列 G-188b 第二步。
+- **判定**：G-188b **只完成第一步**（$w''$ 与 $S'$ 的结构进链）；$w''>0$、$S'$ 分段符号、极小 $T_{\min}$ 的链内编址均**未证**。
+- **数值旁证（约束层）**：61 点 $T\in[0.30,0.730439]$；$w''$ 相对偏差 $\le4.02\times10^{-7}$、$S'$ $\le2.06\times10^{-5}$；$w''>0$ 61/61；$S'$ 单次变号于 $[0.343711,0.343927]$；极小 $T=0.343858$／$S=0.6526189$（与 197 的 $0.652621$ 一致）；极小处 $w\,w''-(w')^2=2.2\times10^{-16}$；$w''(T_{\rm break})=0.999943$（趋 1）。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动；甲类残余＝G-188b 第二步、G-186c 域核、G-189、G-190a、$T>T_{\rm break}$ 写法。
+- **注**：token 扫描的 257 文件含本轮三个探针（_p198.lean／_p198b.lean／_p198c.lean）；三探针已于记账后删除，清理后目录 .lean 共 254 个，模块集合不变（二十五模块 + Spec + 既有序言文件）。门禁结论不改。
+
+## 三十一、第 199 轮
+
+- **Spec：v25 → v26。** 增 `wGapDeriv2Alt T := wGapDeriv T / T + sechSq (1/(2*T)) / T^3`、`TargetPropWGapDeriv2Alt`（$\forall T>0$，`wGapDeriv2 T = wGapDeriv2Alt T`）、`TargetPropWGapDeriv2Pos`（$\forall T>0$，`T^2*|wGapDeriv T| < sechSq (1/(2*T)) → 0 < wGapDeriv2 T`）、`TargetPropShapeDerivSign`（$\forall T>0$，`shapeDeriv T < 0 ↔ wGap T * wGapDeriv2 T < (wGapDeriv T)^2`）。无新 import。
+- **新模块**：`Ring15LockWD3.lean`（3 条定理＋私有 `continuous_tanh`／`cont_sechSq`／`hasDerivAt_tanh'`／`hasDerivAt_tanh_inv`；`import Ring15Spec`＋`Ring15LockWD`＋`Ring15LockWD2`＋`Ring15LockIbp`＋`Deriv.Inv`＋`Trigonometric.DerivHyp`）。
+- **实跑**：`A 闸 PASS（限环 15 二十六模块 v26）`——26/26 编译 ok，`#print axioms` 54 条全为 `{propext, Classical.choice, Quot.sound}`，49 条 `#check` 类型对齐（含 `targetPropWGapDeriv2Alt : Spec.TargetPropWGapDeriv2Alt`、`targetPropWGapDeriv2Pos : Spec.TargetPropWGapDeriv2Pos`、`targetPropShapeDerivSign : Spec.TargetPropShapeDerivSign`），token 扫描 256 文件 0 命中，exit 0。
+- **过程失败（五类，全属写法）**：①`CQM.Ring15.Spec.TargetPropWGapIbp` 是 `def … : Prop`，须 import `Ring15LockIbp` 取 `LockIbp.targetPropWGapIbp`；②`HasDerivAt.congr_of_eventuallyEq` 方向反，须 `.symm`；③`field_simp` 已闭合后多写 `ring`（`No goals`，一处）；④`congrArg` 后残留 beta-项，`rw` 找不到模式，先 `simp only [] at hmul`；⑤在 $|w'|$ 内部 `rw [hwabs]` 得 $|-|w'||$，改用 `congrArg (fun x => T^2*x) hwabs`；`pow_pos (abs_pos …) 2` 与 $w'^2$ 差 `sq_abs`，用 `by simpa [sq_abs] using …`。
+- **B 闸**：判**定义式**。下游消费点——`hAlt` 由 197 恒等式的逐项求导与 v25 的 `HasDerivAt wGapDeriv` 经 `HasDerivAt.unique` 得同值，非命名带过；`hPos` 由 `lt_div_iff₀` 与 `w'=-|w'|` 逐项展开，尺度 $T^2,T^3$ 显式为正、不藏 tactic；`hSign` 由 `div_lt_iff₀ ((w')^2>0)` 把 $S'<0$ 线性化为 $w\,w''<(w')^2$，等价式未被偷换成近似。**最可能跑偏行**：`hwabs` 在绝对值内部改动为 $|-|w'||$——句法仍"看起来对"，却把符号判据的宿主表达式换掉；本轮用 `congrArg` 限定改动位置。
+- **防抵消**：端点闭式两项反号（$\frac{w'}{T}<0$、$\frac{\mathrm{sech}^2}{T^3}>0$），若只核"和"就被抵消掩盖符号；故**不宣称** $w''>0$，而把它写成带前提的条件式（`TargetPropWGapDeriv2Pos`），全域断言已记入 DISCARD 的 199 第一条。
+- **判定**：G-188b **第二步只完成判据层**（端点闭式＋精确判据＋充分条件＋$S'$ 代数等价）；**无条件凸性不成立**（判据比仅在 $T\gtrsim0.2555$ 小于 1）；$S'$ 的分段符号、极小 $T_{\min}$ 的链内编址**未证**。
+- **数值旁证（约束层）**：61 点 $T\in[0.30,0.730439]$ 上端点闭式 vs v25 积分式相对偏差 $\le2.18\times10^{-8}$；判据比 $r$：$T_c$ 0.777563、$T_{\rm break}$ 0.397341；$r=1$ 仅一处穿越 $T=0.255525$，成立区间 $[0.2562,1.20]$；$w''$ 小 $T$ 实测 $-6.376$（0.1）／$-2.264$（0.2）／$-0.180$（0.25）；$w''(T_c)=1.095997$、$w''(T_{\rm break})=0.999943$；$S'(T_c)=-0.370544$、极小 $T=0.343858$／$S=0.652619$。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动；甲类残余＝G-188b-2（分段符号与极小位置）、G-186c 域核、G-189、G-190a、$T>T_{\rm break}$ 写法。
+- **注**：token 扫描的 256 文件含本轮探针 `_p199.lean`；探针与 `_agate199.log` 已于记账后作废（目录 .lean 计 255 个：二十六模块＋Spec＋既有序言文件），模块集合不变，门禁结论不改。
+
+## 三十二、第 200 轮
+
+- **Spec：v26 → v27。** 增 `shapePhi T := wGap T / Real.tanh (1/(2*T))`（形状比）、`ratioR T := T^2*|wGapDeriv T| / sechSq (1/(2*T))`（判据比）、`TargetPropShapeSignRatio`（$\forall T>0$，`shapeDeriv T < 0 ↔ shapePhi T*(1+ratioR T) < 2*ratioR T`）、`TargetPropShapeNegOfRatioGeOne`（$\forall T>0$，`1 ≤ ratioR T → shapeDeriv T < 0`）。无新 import。
+- **新模块**：`Ring15LockWD4.lean`（2 条定理＋私有 `tanhPos`／`sechSqPos`／`wSub`；`import Ring15Spec`＋`Ring15LockWD`＋`Ring15LockWD2`＋`Ring15LockWD3`＋`Ring15LockIbp`）。
+- **链内恒等式（私有 `wSub`）**：$w\,w''-(w')^2=\dfrac{\tanh\frac{1}{2T}\mathrm{sech}^2\frac{1}{2T}}{T^3}\bigl(\Phi(1+r)-2r\bigr)$，只用 197 端点亏损（$Ta=2\tanh(1-\Phi)$）、v26 端点闭式、v23 $w'<0$ 与两条定义式。
+- **实跑**：`A 闸 PASS（限环 15 二十七模块 v27）`——27/27 编译 ok，`#print axioms` 56 条全为 `{propext, Classical.choice, Quot.sound}`，51 条 `#check` 类型对齐（含 `targetPropShapeSignRatio : Spec.TargetPropShapeSignRatio`、`targetPropShapeNegOfRatioGeOne : Spec.TargetPropShapeNegOfRatioGeOne`），token 扫描 256 文件 0 命中，错误流为空。
+- **过程失败（四轮，全属写法）**：① `Real.tanh_pos`／`Real.sinh_pos_of_pos` 在此基线不存在（仅 `Real.sinh_pos_iff`），须 `tanh_eq_sinh_div_cosh`＋`div_pos`；② `set a := |w'|` 后 `field_simp` 会把 $a$ 展开并留下 `|w'|*S/S=|w'|`，改 `div_mul_cancel₀` 给 $rS=T^2a$；③ `rw [haT]` 之后再 `unfold ratioR`＋`rw [← ha]`，新引入的 $a$ 不被覆盖，须补一次 `rw [haT]`；④ `push_neg` 弃用（`push Not`），结果形为 $2r\le\Phi(1+r)$，须 `linarith` 转形后喂 `mul_nonneg`。
+- **B 闸**：判**定义式**。下游消费点——`wSub` 的每一步都由已证恒等式代入（$w=h\Phi$ 来自 `TargetPropWGapIbp` 与 $h\ne0$；$Ta=2h(1-\Phi)$ 来自 `TargetPropShapeEnd`；$rS=T^2a$ 来自 `ratioR` 定义与 `sechSq>0`），非命名带过；`TargetPropShapeSignRatio` 的正因子 $\tanh\cdot\mathrm{sech}^2/T^3>0$ 显式给出，符号翻转靠 `mul_neg_iff` 类推理而非"看起来"。**最可能跑偏行**：`wSub` 里 `field_simp` 若把 $a$ 展开，$r$ 的定义式会退化成数值恒等式（两侧都化到同一代数式，恒等式"成立"但不含 $r$ 语义）；本轮以 `div_mul_cancel₀` 显式保留 $rS$ 与 $T^2a$，并在 `rw [← ha]` 后补 `rw [haT]`，使 $a$ 不残留。
+- **防抵消**：比值判据把 199 的两项反号"藏"进一个差量，若只核 $w\,w''$ 或只核 $(w')^2$ 就看不出符号；本轮让恒等式整块替换，`linarith [h, hid]` 同时消费两条，避免单侧估计掩盖反号。
+- **判定**：G-188b-2 **判据层闭合（换元完成）**；$r\ge1$（$w''\le0$）段 $S'<0$ 为无条件命题；$r<1$ 段（$T\in[0.256,0.3438]$）与 $T>0.3438$ 的 $S'>0$ **未证**，须 $r$ 的上下夹逼与 $\Phi$ 单调性。
+- **数值旁证（约束层）**：240 点 $T\in[0.05,1.2]$；恒等式相对残差 $\le5.12\times10^{-9}$；判据与 $S'$ 同号不一致 0 处；$\Phi(T_c)=0.814716$、$r(T_c)=0.776810$、差量 $-0.106024$；$\Phi(T_{\rm break})=0.704322$、$r(T_{\rm break})=0.397700$、差量 $+0.189031$；$r$ 实测最小 $0.356680$（$T=1.2$，向 $1/3$ 逼近）；$r\ge1$ 段 43 点至 $T=0.252092$、$S'$ 全负；$S'$ 单次变号括号 $[0.3435,0.3483]$（240 点粗网格）。
+- **口径**：`审-6` 仍「未闭合」；闭合数 0、唯一编号 37 不动；甲类残余＝G-188b-2（$r$ 的夹逼与 $\Phi$ 单调性）、G-186c 域核、G-189、G-190a、$T>T_{\rm break}$ 写法。
+

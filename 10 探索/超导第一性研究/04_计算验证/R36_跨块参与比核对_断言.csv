@@ -1,0 +1,19 @@
+﻿assertion,value
+geom_inverse_n1.5,True
+geom_inverse_n3.0,True
+geom_inverse_n10.0,True
+q_range,True
+p1_formula,True
+harm_exact_n10,31
+K_harm_asym_n10,57.7
+harm_exact_n50,4872
+K_harm_asym_n50,8681.9
+harm_exact_n200,
+K_harm_asym_n200,75375560.0
+asym_rel_err_n10,0.3237
+asym_rel_err_n200,0.0647
+asym_improves_with_n,True
+separation_ratios_exact,"[1.33, 1.33, 3.1, 97.44]"
+small_n_indistinguishable,True
+large_n_separable,True
+separation_monotone_large_n,True

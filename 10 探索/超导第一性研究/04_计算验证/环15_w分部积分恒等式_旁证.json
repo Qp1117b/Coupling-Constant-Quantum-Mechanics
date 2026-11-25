@@ -1,0 +1,21 @@
+{
+  "T_c": 0.3,
+  "T_break": 0.730439,
+  "n_points": 61,
+  "ibp_resid_max": 5.503980049503809e-10,
+  "ibp_resid_rel_max": 1.2936753792524156e-09,
+  "endpoint_deficit_resid_max": 5.503980327059566e-10,
+  "endpoint_deficit_positive_all": true,
+  "endpoint_deficit_min": 0.17240495999349192,
+  "endpoint_deficit_max": 0.2000460013296803,
+  "shape_split_resid_max": 1.1244685182987268e-09,
+  "shape_min": 0.6526210594770828,
+  "shape_max": 0.8692045443672205,
+  "shape_at_T_c": 0.6601068613222157,
+  "shape_at_T_break": 0.8692045443672205,
+  "T_at_shape_min": 0.34304389999999996,
+  "w_Tc": 0.7587046486740857,
+  "w_Tcut": 0.4185746185748952,
+  "tanh_half_Tc": 0.9311096086675776,
+  "tanh_half_Tcut": 0.5944499213774481
+}

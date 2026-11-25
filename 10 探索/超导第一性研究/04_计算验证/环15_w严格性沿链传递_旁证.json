@@ -1,0 +1,24 @@
+{
+  "Tc": 0.3,
+  "Upsilon0": 0.649917,
+  "w_Tc": 0.758704648194939,
+  "K_Tc": 1.643650162803034,
+  "y_Tc": 0.0018861616764604154,
+  "t_Tc_p_fixed": 1.0142040736458053,
+  "grid": [
+    0.3,
+    0.386,
+    173
+  ],
+  "K_strict_decreasing_on_grid": true,
+  "K_max_step_up": -0.002305905569918165,
+  "y_strict_increasing_on_grid": true,
+  "y_min_step_down": 3.738743058500477e-05,
+  "t_strict_increasing_on_grid_p_fixed": true,
+  "t_min_step_down": 0.0002818238728319322,
+  "y_cross_y_crit_T": null,
+  "K_end": 1.1202012082675508,
+  "y_end": 0.024969646764100954,
+  "t_end_p_fixed": 1.1902461435455836,
+  "note": "只作旁证：K/y/t 三环方向与 192/185 登记一致；不含 p_pair(T) 通道（G-186p）"
+}

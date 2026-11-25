@@ -1,0 +1,19 @@
+id,name,pass,detail
+R43a,偏振权重 1+2eta_t ~ 5.59,True,= 5.5949
+R43b,S_rho=1/6 与偏振无关,True,= 0.166667
+R44a,t>1 恒成立,True,min=1.0003
+R44b,t 随 p_thr 单调增,True,
+R44c,t != t_Upsilon（不同普适类）,True,序参量类 vs 刚度类
+R45a,容量标度指数 -8/3,True,slope=-2.666667
+R45b,R1 与 L 无关,True,
+R45c,R2 随 L 发散,True,
+R46a,xi_GL 指数 -1/2（平均场）,True,slope=-0.500000
+R46b,梯度系数 c=Upsilon0/2 正定,True,
+R46c,降温 xi_GL 增（发散）,True,
+R47a,kappa 降温上升（tv 增大 kappa 增）,True,lowT=0.316 > crit=0.010
+R47b,临界区 kappa→0,True,crit=0.010
+R48a,t_G 指数 -6,True,slope=-6.000000
+R48b,上临界维 d_c=4,True,d_c≈3.980
+R49a,<prod r> < 1 恒成立,True,max=0.999987
+R49b,<prod r> 随 n 递减,True,
+R49c,翻转分支需 S>1，链内 1/6 不可达,True,

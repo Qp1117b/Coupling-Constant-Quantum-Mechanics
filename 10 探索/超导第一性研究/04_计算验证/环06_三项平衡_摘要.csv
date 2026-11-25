@@ -1,0 +1,9 @@
+﻿quantity,value,note
+three_point_D,2.0,"tau=(1,-1,0)"
+three_point_W,0.6666666666666667,"vel=(0,0,1), W>0"
+three_point_B,0.0,must be 0
+three_point_B_pair,0.0,(6.7) unordered-pair sum
+max_identity_error,3.552713678800501e-15,B_cov - B_pair
+max_B2_over_4DW,0.9999990669725631,must be <= 1
+expansion_offset,-0.3333333333333333,"Mdot=1, M=3, Dnew=0, D=1"
+B_star,0.3333333333333333,Ddot=0 crossing

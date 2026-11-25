@@ -1,0 +1,18 @@
+﻿检查项,数值,说明
+复形,n=3 V=54 E=257 内部=148,BCC Delaunay
+A_任意位移降 eps,max=6.525e-11,24 次随机 dot x；||At@B@x||/(||At|| ||Bx||)
+B_径向 mu,1.000000000000,dot x_i=x_i ⇒ dot ell=ell（1% 精度内）
+B_A仿射,4.810252e-02,2*mu*s^2>0；s^2=2.405126e-02
+B_dot_eps,9.033e-11,径向驱动下 eps 瞬时静止
+C_ell在imB,2.003e-15,ell=B@P（径向位移），故 ell∈im(B)
+C_delta在imB,2.229e-15,delta ell=dot ell-mu ell 仍在 im(B)
+C_At_delta,5.988e-11,上一轮 dot eps=tilde L delta ell 在链内恒零
+D_量纲(16),"[0, 0, 0, 0, -1]",1/[点数]
+D_量纲(17),"[0, 0, -1, 0, 0]",1/[时间]
+E_alpha300,2.6063e-05,K^-1；gamma*Cv/(KT*V)
+E_mu热膨胀,8.6878e-06,s^-1；=alpha*dotT/3
+E_有限差分,8.6877e-06,与解析式逐点一致 <1e-4（二阶截断）
+F_Debye斜率,3.0000,log mu vs log T 低温段 → 3
+G_p0,0.592743,chi2_9 上尾在 x=7.4271
+G_绝对阈值,0.5927→0.8203,应变 0→20%，p 单调上升
+G_相对阈值,0.5927→0.5927,sigma_c∝ell，p 不变

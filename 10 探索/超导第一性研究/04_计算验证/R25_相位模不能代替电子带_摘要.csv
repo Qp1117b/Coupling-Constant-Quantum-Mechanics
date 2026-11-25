@@ -1,0 +1,7 @@
+﻿判据,数值,判定
+P1,"n_F<=1, n_B(1e-7)=1.00e+07",通过
+P2,(T/theta_D)^2 at 0.1 = 1.00e-02,通过
+P3,"K_F spread 1.06e-08, err 1.06e-08; K_B ratio 3862.6",通过
+P4,"hbar*Omega_p=3.71 eV, ratio 3713",通过
+P5,循环性（链序）,由 Lean PhaseVsBand 承载
+结论,相位模带不能代替电子 Bloch 带,链外-D 未闭合

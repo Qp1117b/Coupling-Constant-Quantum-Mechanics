@@ -1,0 +1,9 @@
+﻿量,值,说明
+干净极限 Upsilon0(rho=0),2.0000,=2J0
+强关联 Upsilon0(rho=1),0.0000,=0
+单减断言,PASS,Upsilon0 对 rho 严格单减
+Uemura 上界,PASS,Tc<= (pi/kB) J0 (1-rho)
+干净 XY Tc 裸估计,1.5708,=(pi/2)J
+数值 BKT Tc,0.8929,=0.8929J（文献）
+重整化因子 g_ren,0.5684,<1（链不取普适 pi/2）
+eta-刚度同向,1.0000,>0.999

@@ -1,0 +1,25 @@
+{
+  "identity_rel_err_max": 5.124763152945451e-09,
+  "sign_mismatch_count": 0,
+  "phi_at_Tc": 0.814716,
+  "ratio_at_Tc": 0.77681,
+  "crit_at_Tc": -0.106024,
+  "Sp_at_Tc": -0.368317,
+  "phi_at_Tbreak": 0.704322,
+  "ratio_at_Tbreak": 0.3977,
+  "crit_at_Tbreak": 0.189031,
+  "Sp_at_Tbreak": 0.803762,
+  "r_min": 0.35668,
+  "r_min_T": 1.2,
+  "r_lower_bound": 0.3333333,
+  "r_ge_one_count": 43,
+  "r_ge_one_all_Sp_neg": true,
+  "r_ge_one_T_max": 0.252092,
+  "Sp_sign_changes": [
+    [
+      0.343515,
+      0.348326
+    ]
+  ],
+  "Sp_at_min": 0.0022861911
+}

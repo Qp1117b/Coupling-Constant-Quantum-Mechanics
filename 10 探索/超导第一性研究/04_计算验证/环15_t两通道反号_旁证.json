@@ -1,0 +1,23 @@
+{
+  "T_c": 0.3,
+  "T_sync_m1": 0.5066509607326937,
+  "T_break": 0.7304390098936776,
+  "m": 1.0,
+  "y_Tc": 0.001886165689428183,
+  "p_Tc": 0.8755390252983378,
+  "t_Tc": 1.0142041069825518,
+  "y_sync": 0.18471384164336907,
+  "p_sync": 0.727040431049138,
+  "t_sync": 1.6406313942950939,
+  "y_strict_increasing_on_grid": true,
+  "p_strict_decreasing_on_grid": true,
+  "t_strict_increasing_on_grid": true,
+  "y_channel_positive_all": true,
+  "p_channel_negative_all": true,
+  "delta_t_positive_all": true,
+  "min_abs_ratio_p_over_y": 0.11355943362554609,
+  "mean_abs_ratio_p_over_y": 0.20098947974339942,
+  "max_abs_ratio_p_over_y": 0.28282206919497255,
+  "t_total_increase": 0.626427287312542,
+  "note": "t 的上升全部来自 y 通道；p 通道全程反号抵消一部分，故不能由两条单调性直接复合出 t 随 T 严格增，须主导项比较（G-186c）。"
+}
