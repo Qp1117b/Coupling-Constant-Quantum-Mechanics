@@ -1,4 +1,9 @@
--- Spec.lean（v26，第 199 轮 2026-11-26）：本环目标陈述（只 import 依赖基线，不 import 任何证明模块）
+-- Spec.lean（v28，第 201 轮 2026-11-26）：本环目标陈述（只 import 依赖基线，不 import 任何证明模块）
+-- v28 变更（第 201 轮）：增 `shapeH`（端点核值 h=tanh(1/2T)）、`TargetPropRatioPhiForm`
+--   （$r=2Th(1-\Phi)/(1-h^2)$）、`shapeG`（判据函数 $G=2Th(1-\Phi)(2-\Phi)-\Phi(1-h^2)$）与
+--   `TargetPropShapeSignUnary`（$S'<0\iff 0<G$：判据由二元 $(\Phi,r)$ 消成一元 $\Phi$）。
+-- v27 变更（第 200 轮）：增 `shapePhi`／`ratioR` 与 `TargetPropShapeSignRatio`（$S'<0\iff\Phi(1+r)<2r$）、
+--   `TargetPropShapeNegOfRatioGeOne`（$r\ge1\Rightarrow S'<0$）。
 -- v26 变更（第 199 轮）：增 `wGapDeriv2Alt`（$w''=w'/T+\mathrm{sech}^2\frac1{2T}/T^3$ 端点闭式）与
 --   `TargetPropWGapDeriv2Alt`（两式恒等）、`TargetPropWGapDeriv2Pos`（条件式正性）、`TargetPropShapeDerivSign`（$S'$ 符号判据）。
 -- v25 变更（第 198 轮）：增 `wGapDeriv2`／`shapeDeriv` 与 `TargetPropWGapDeriv2`（$w$ 的二阶导数表示）、
@@ -520,6 +525,29 @@ $1\le r$ 恰是 $w''\le0$（判据 $r<1$ 的反面），故"$w''\le0$ 段形状�
 $r<1$ 段（$w''>0$）的符号仍须更锐的界，留下一步。 -/
 def TargetPropShapeNegOfRatioGeOne : Prop :=
   ∀ (T : ℝ), 0 < T → 1 ≤ ratioR T → shapeDeriv T < 0
+
+/- ===== v28（第 201 轮）：$r$ 的 $\Phi$ 闭式与判据的一元化（G-188b-2f） ===== -/
+
+/-- 端点核值 $h(T):=\tanh\dfrac{1}{2T}$：与 `shapePhi` 共用同一端点；$T>0$ 时 $h\in(0,1)$。 -/
+noncomputable def shapeH (T : ℝ) : ℝ := Real.tanh (1 / (2 * T))
+
+/-- **$r$ 的 $\Phi$ 闭式（G-188b-2f-1）**：$r(T)=\dfrac{2T\,h(T)\,(1-\Phi(T))}{1-h(T)^2}$（$T>0$）。
+来源只有两条已证关系：端点亏损恒等式（v24）$T\,|w'|=2h\,(1-\Phi)$ 与勾股恒等式
+$\mathrm{sech}^2\dfrac{1}{2T}=1-\tanh^2\dfrac{1}{2T}$；不引新假设、不引可调项。 -/
+def TargetPropRatioPhiForm : Prop :=
+  ∀ (T : ℝ), 0 < T →
+    ratioR T = 2 * T * shapeH T * (1 - shapePhi T) / (1 - shapeH T ^ 2)
+
+/-- 判据函数 $G(T):=2T\,h\,(1-\Phi)(2-\Phi)-\Phi\,(1-h^2)$：$S'$ 的符号只由 $G$ 的正负决定，
+且 $G$ 只依赖 $\Phi(T)$ 与 $h(T)$ 两个链内量，不再含 $|w'|$、不再含 $r$。 -/
+noncomputable def shapeG (T : ℝ) : ℝ :=
+  2 * T * shapeH T * (1 - shapePhi T) * (2 - shapePhi T) - shapePhi T * (1 - shapeH T ^ 2)
+
+/-- **判据的一元化（G-188b-2f-2）**：$S'(T)<0\iff 0<G(T)$（$T>0$）。
+把 v27 的二元比较 $(\Phi,r)$ 消成 $\Phi$ 的一元不等式：$r<1$ 段要判的只剩 $G$ 的符号，
+而 $G$ 只读 $\Phi$ 与 $h$；下一步只需 $\Phi$ 的界与单调性，不再需要 $r$ 的上下夹逼。 -/
+def TargetPropShapeSignUnary : Prop :=
+  ∀ (T : ℝ), 0 < T → (shapeDeriv T < 0 ↔ 0 < shapeG T)
 
 end
 

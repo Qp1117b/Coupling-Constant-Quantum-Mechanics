@@ -2,7 +2,7 @@
 # 用途：每次新增/修改环 15 引理后一键重放"出 olean → 只 import Spec → axioms → 类型对齐 → token 卫生"。
 # 不通过（任一模块非零退出、出现 sorryAx / 自造 axiom、类型不对齐、token 命中）则 exit 1。
 # 用法：pwsh -File .\a_gate.ps1   （工作目录会自动切到本脚本所在目录）
-# 说明：仅覆盖环 15 的二十七个模块（v12 起 Bridge 撤销、由 LockStiff 接替；v13 加 LockT；v14 加 LockThr；v15 加 LockR；v16 加 LockPhi；v17 加 LockW；v18 加 LockS；v19 加 LockWStr；v20 加 LockTStrict；v21 加 LockTChan；v22 加 LockTDom；v23 加 LockWD；v24 加 LockIbp；v25 加 LockWD2；v26 加 LockWD3；v27 加 LockWD4）；全目录尚未纳入，故不能据此宣称"全目录 A 闸通过"。
+# 说明：仅覆盖环 15 的二十八个模块（v12 起 Bridge 撤销、由 LockStiff 接替；v13 加 LockT；v14 加 LockThr；v15 加 LockR；v16 加 LockPhi；v17 加 LockW；v18 加 LockS；v19 加 LockWStr；v20 加 LockTStrict；v21 加 LockTChan；v22 加 LockTDom；v23 加 LockWD；v24 加 LockIbp；v25 加 LockWD2；v26 加 LockWD3；v27 加 LockWD4；v28 加 LockUnary）；全目录尚未纳入，故不能据此宣称"全目录 A 闸通过"。
 
 $ErrorActionPreference = "Continue"
 $LeanExe = "D:\DevTools\.elan\toolchains\leanprover--lean4---v4.29.1\bin\lean.exe"
@@ -22,10 +22,10 @@ if (-not (Test-Path -LiteralPath ".\olean_tmp")) { New-Item -ItemType Directory 
 $fail = @()
 
 # ---- 1. 出 olean（Spec 先，证明模块只 import Spec）----
-$mods = @("Ring15Spec", "Ring15LockMult", "Ring15LockLayer", "Ring15LockMono", "Ring15LockCorr", "Ring15LockCorrGen", "Ring15LockCorrNear", "Ring15LockScale", "Ring15LockProbability", "Ring15LockNonlin", "Ring15LockRatio", "Ring15LockStiff", "Ring15LockT", "Ring15LockThr", "Ring15LockR", "Ring15LockPhi", "Ring15LockW", "Ring15LockS", "Ring15LockWStr", "Ring15LockTStrict", "Ring15LockTChan", "Ring15LockTDom", "Ring15LockWD", "Ring15LockIbp", "Ring15LockWD2", "Ring15LockWD3", "Ring15LockWD4")
+$mods = @("Ring15Spec", "Ring15LockMult", "Ring15LockLayer", "Ring15LockMono", "Ring15LockCorr", "Ring15LockCorrGen", "Ring15LockCorrNear", "Ring15LockScale", "Ring15LockProbability", "Ring15LockNonlin", "Ring15LockRatio", "Ring15LockStiff", "Ring15LockT", "Ring15LockThr", "Ring15LockR", "Ring15LockPhi", "Ring15LockW", "Ring15LockS", "Ring15LockWStr", "Ring15LockTStrict", "Ring15LockTChan", "Ring15LockTDom", "Ring15LockWD", "Ring15LockIbp", "Ring15LockWD2", "Ring15LockWD3", "Ring15LockWD4", "Ring15LockUnary")
 foreach ($m in $mods) {
-    & $LeanExe -o ".\olean_tmp\$m.olean" ".\$m.lean" 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) { $fail += "compile:$m" ; Write-Output "[FAIL] compile $m" }
+    & $LeanExe -o ".\olean_tmp\$m.olean" ".\$m.lean" > ".\_gate_compile.out" 2>&1
+    if ($LASTEXITCODE -ne 0) { $fail += "compile:$m" ; Write-Output "[FAIL] compile $m"; Get-Content ".\_gate_compile.out" | Select-Object -First 25 }
     else { Write-Output "[ ok ] compile $m" }
 }
 if ($fail.Count -gt 0) { Write-Output "A 闸 FAIL（编译）"; exit 1 }
@@ -59,6 +59,7 @@ $check = @(
     "import Ring15LockWD2",
     "import Ring15LockWD3",
     "import Ring15LockWD4",
+    "import Ring15LockUnary",
     "#print axioms CQM.Ring15.LockMult.targetProp",
     "#print axioms CQM.Ring15.LockMult.mLock_eq_one",
     "#print axioms CQM.Ring15.LockMult.lockMult_eq_one_iff",
@@ -165,11 +166,16 @@ $check = @(
     "#print axioms CQM.Ring15.LockWD4.targetPropShapeSignRatio",
     "#print axioms CQM.Ring15.LockWD4.targetPropShapeNegOfRatioGeOne",
     "#check (CQM.Ring15.LockWD4.targetPropShapeSignRatio : CQM.Ring15.Spec.TargetPropShapeSignRatio)",
-    "#check (CQM.Ring15.LockWD4.targetPropShapeNegOfRatioGeOne : CQM.Ring15.Spec.TargetPropShapeNegOfRatioGeOne)"
+    "#check (CQM.Ring15.LockWD4.targetPropShapeNegOfRatioGeOne : CQM.Ring15.Spec.TargetPropShapeNegOfRatioGeOne)",
+    "#print axioms CQM.Ring15.LockUnary.targetPropRatioPhiForm",
+    "#print axioms CQM.Ring15.LockUnary.targetPropShapeSignUnary",
+    "#check (CQM.Ring15.LockUnary.targetPropRatioPhiForm : CQM.Ring15.Spec.TargetPropRatioPhiForm)",
+    "#check (CQM.Ring15.LockUnary.targetPropShapeSignUnary : CQM.Ring15.Spec.TargetPropShapeSignUnary)"
 ) -join "`n"
 $checkFile = ".\_a_gate_check.lean"
 Set-Content -LiteralPath $checkFile -Value $check -Encoding UTF8
-$out = & $LeanExe $checkFile 2>&1
+& $LeanExe $checkFile > ".\_a_gate_out.txt" 2>&1
+$out = Get-Content ".\_a_gate_out.txt"
 if ($LASTEXITCODE -ne 0) { $fail += "axioms-run"; Write-Output "[FAIL] axioms/type 检查执行失败"; $out }
 Remove-Item -LiteralPath $checkFile -Force
 
@@ -208,7 +214,8 @@ sys.exit(1 if hits else 0)
 '@
 $scanFile = ".\_a_gate_scan.py"
 Set-Content -LiteralPath $scanFile -Value $scan -Encoding UTF8
-$scanOut = & $Py $scanFile 2>&1
+& $Py $scanFile > ".\_a_gate_scan.txt" 2>&1
+$scanOut = Get-Content ".\_a_gate_scan.txt"
 $scanCode = $LASTEXITCODE
 Remove-Item -LiteralPath $scanFile -Force
 Write-Output "token: $scanOut"
@@ -221,7 +228,7 @@ if ($fail.Count -gt 0) {
     exit 1
 }
 Write-Output ""
-Write-Output "A 闸 PASS（限环 15 二十七模块 v27：编译 + axioms 白名单 + 类型对齐 + token 卫生）"
+Write-Output "A 闸 PASS（限环 15 二十八模块 v28：编译 + axioms 白名单 + 类型对齐 + token 卫生）"
 exit 0
 
 

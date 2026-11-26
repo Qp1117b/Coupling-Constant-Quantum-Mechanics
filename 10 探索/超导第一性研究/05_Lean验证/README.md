@@ -1058,3 +1058,13 @@ Set-Location "D:\WorkSpace\物理\CQMFormal\08 理论组织和形式化框架\04
 - `a_gate.ps1`：`$mods` 二十七项，56 条 `#print axioms`、51 条 `#check`；实跑 `A 闸 PASS（限环 15 二十七模块 v27）`——27/27 编译 ok、axioms 白名单、256 文件 token 0 命中、错误流为空。
 - 写法坑（四条）：此基线无 `Real.tanh_pos`／`Real.sinh_pos_of_pos`（用 `Real.sinh_pos_iff`＋`div_pos`）；`set` 的 $a$ 会被 `field_simp` 展开（改用 `div_mul_cancel₀` 给 $rS=T^2a$）；`rw [haT]` 后 `unfold ratioR`＋`rw [← ha]` 会漏掉新引入的 $a$（补一次 `rw [haT]`）；`push_neg` 弃用，`push Not` 后须 `linarith` 转形。
 - 判定：**G-188b-2 判据层闭合（换元完成）**，$r\ge1$ 段 $S'<0$ 无条件；$r<1$ 段与 $T>0.3438$ 的 $S'>0$ **未证**。最易跑偏处：`wSub` 的 `field_simp` 把 $r$ 的定义式化掉（恒等式仍成立但不含 $r$ 语义），故显式保留 $rS=T^2a$。
+
+### 第 201 轮（$r$ 的 $\Phi$ 闭式与判据一元化 G-188b-2f）
+
+- `Ring15Spec.lean` → **v28**：增 `shapeH T := Real.tanh (1/(2*T))`、`TargetPropRatioPhiForm`（$\forall T>0$，`ratioR T = 2*T*shapeH T*(1-shapePhi T)/(1-shapeH T^2)`）、`shapeG T := 2*T*shapeH T*(1-shapePhi T)*(2-shapePhi T) - shapePhi T*(1-shapeH T^2)`、`TargetPropShapeSignUnary`（$\forall T>0$，`shapeDeriv T < 0 ↔ 0 < shapeG T`）；无新 import。
+- `Ring15LockUnary.lean`：两条定理（＋私有 `tanhPos`／`sechSq_eq_one_sub_tanh_sq`／`ratioCriterion`），`import Ring15Spec`＋`Ring15LockWD`＋`Ring15LockWD2`＋`Ring15LockWD3`＋`Ring15LockWD4`＋`Ring15LockIbp`。
+- 证法要点：闭式的分子由 197 端点亏损 $T|w'|=2h(1-\Phi)$ 经 `nlinarith` 推到 $T^2|w'|=2Th(1-\Phi)$，分母由勾股恒等式 $\mathrm{sech}^2\frac{1}{2T}=1-h^2$ 单独展开（来源不混）；一元化只做"整块乘正分母 $D=1-h^2>0$"的代数换元（`ratioCriterion`），$r$ 被消掉，$G$ 只含 $\Phi$ 与 $h$。
+- `a_gate.ps1`：`$mods` 二十八项，58 条 `#print axioms`、53 条 `#check`；实跑 `A 闸 PASS（限环 15 二十八模块 v28）`——28/28 编译 ok、axioms 全白名单、257 文件 token 0 命中、exit 0。
+- 写法坑（五条）：`field_simp` 已闭合后多写 `ring` 报 `No goals`；pwsh 里 `lean … 2>&1 | Select-Object -Last` 会挂死，须重定向到文件再读；`Set-Content -Encoding UTF8` 的临时 `.lean` 带 BOM（Lean 报 `expected token` 于 1:0）；改 Spec 使全部下游 olean 失效，须按依赖序重编（Spec≈85 s、模块≈35 s）；`shapeH` 与 `shapePhi` 的分母同式，是耦合点，改一处必须同步。
+- 判定：**G-188b-2f 判据一元化完成**；$G$ 的符号**未证**（缺 $\Phi$ 的单调性）。最易跑偏处：`rw [hT2, hS]`——分子分母任一写错，`rw` 仍能对上"形似式"，故分子只走 `nlinarith [hp]`、分母只走勾股恒等式。
+- 口径：200 的"$r$ 的上下夹逼是必要入口"**撤销**（记入 `DISCARD.md` 第 201 轮），$r$ 的界降为可选旁证。
