@@ -194,318 +194,318 @@
 {"doc_id": "D001", "sid": 193, "start": 7482, "end": 7528, "kind": "prose", "text": "$\\alpha^{-1}=16384\\pi/375$ 是启发式近似（偏差约 0.162%）；"}
 {"doc_id": "D001", "sid": 194, "start": 7528, "end": 7594, "kind": "prose", "text": "Wyler 式给出与 CODATA 偏差 0.61 ppm 的符合，但那是**构造后验数字校验，待独立复现**，不构成独立精度证据。"}
 {"doc_id": "D001", "sid": 195, "start": 7596, "end": 7618, "kind": "prose", "text": "**状态**：【框架/待推】；GRH 未证。"}
-{"doc_id": "D001", "sid": 196, "start": 7618, "end": 7760, "kind": "prose", "text": "→ [朗兰兹分层共振与相变量子](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md)、[黎曼猜想证明思路](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md)、[相变弧线与自守形式同步](04%20前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md)"}
-{"doc_id": "D001", "sid": 197, "start": 7762, "end": 7782, "kind": "heading", "text": "### 4.6 两种引力：GR 与 FG"}
-{"doc_id": "D001", "sid": 198, "start": 7784, "end": 7825, "kind": "prose", "text": "**是什么**：CQM 的核心论断是「引力不是一种力，而是物质自组织的因果条件」。"}
-{"doc_id": "D001", "sid": 199, "start": 7825, "end": 7840, "kind": "prose", "text": "它按因果结构的深度与广度分化："}
-{"doc_id": "D001", "sid": 200, "start": 7842, "end": 7868, "kind": "table", "text": "| 层级 | 存在论地位 | 数学结构 | 特征 |"}
-{"doc_id": "D001", "sid": 201, "start": 7869, "end": 7890, "kind": "table", "text": "|:---|:---|:---|:---|"}
-{"doc_id": "D001", "sid": 202, "start": 7891, "end": 7945, "kind": "table", "text": "| **前时空** | 先于引力 | 谱经 GL(5) 紧化投影与黎曼零点相关 | 物质处于前时空的状态 |"}
-{"doc_id": "D001", "sid": 203, "start": 7946, "end": 7999, "kind": "table", "text": "| **GR** | 基底性同步前提 | 伪黎曼流形 | 平庸因果网络=基态时空，受 $G_N$ 限制 |"}
-{"doc_id": "D001", "sid": 204, "start": 8000, "end": 8096, "kind": "table", "text": "| **FG** | 展开性同步前提 | 主丛 $P(M,G)$ 上的联络 $\\mathcal A_{\\rm FG}$ | 层级因果网络，**不受 $G_N$ 限制**，量级 $O(1)$ |"}
-{"doc_id": "D001", "sid": 205, "start": 8098, "end": 8151, "kind": "prose", "text": "**FG 是什么**：精细引力是 GR 基态的非平庸激发，是主丛上的因果限制/退相干场，不表现为几何吸引。"}
-{"doc_id": "D001", "sid": 206, "start": 8151, "end": 8243, "kind": "prose", "text": "**一个联络生成两种曲率**：底空间 Regge 亏角 $\\varepsilon$ + 伴丛曲率 $F=d\\mathcal A+\\mathcal A\\wedge\\mathcal A$。"}
-{"doc_id": "D001", "sid": 207, "start": 8243, "end": 8271, "kind": "prose", "text": "它在电子、元素、分子、晶胞等不同物质组织层级有不同实现。"}
-{"doc_id": "D001", "sid": 208, "start": 8273, "end": 8351, "kind": "prose", "text": "**CQM 不另立「量子引力」层**：无量纲不确定性关系、固有时流速涨落、亏角量子涨落与同步算符的紧化作用，就是 FG 的内容——**FG 就是 FG**。"}
-{"doc_id": "D001", "sid": 209, "start": 8353, "end": 8374, "kind": "prose", "text": "**状态**：【框架】；N1–N4 开放。"}
-{"doc_id": "D001", "sid": 210, "start": 8374, "end": 8488, "kind": "prose", "text": "→ [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md)、[FG 核心理论](07%20精细引力（FG）/FG_核心理论.md)、[FG 纤维丛理论](07%20精细引力（FG）/FG_纤维丛理论.md)"}
-{"doc_id": "D001", "sid": 211, "start": 8490, "end": 8517, "kind": "heading", "text": "### 4.7 常数：$\\alpha$ 与 $G_N$"}
-{"doc_id": "D001", "sid": 212, "start": 8519, "end": 8556, "kind": "prose", "text": "CQM 最受检验、也最需要谨慎阅读的部分，是把两个「实验输入」写成谱组合："}
-{"doc_id": "D001", "sid": 213, "start": 8558, "end": 8560, "kind": "prose", "text": "$$"}
-{"doc_id": "D001", "sid": 214, "start": 8561, "end": 8639, "kind": "prose", "text": "G_N=\\frac{\\hbar c}{m_p^2}\\cdot I\\cdot\\lambda_c\\cdot ☯^2\\cdot\\mathfrak c_1\\cdot"}
-{"doc_id": "D001", "sid": 215, "start": 8640, "end": 8687, "kind": "prose", "text": "\\exp\\left(-\\frac{2}{☯}\\right)\\cdot(1+\\kappa ☯)."}
-{"doc_id": "D001", "sid": 216, "start": 8688, "end": 8690, "kind": "prose", "text": "$$"}
-{"doc_id": "D001", "sid": 217, "start": 8692, "end": 8716, "kind": "table", "text": "| 参数 | 符号 | 数值 | 来源/状态 |"}
-{"doc_id": "D001", "sid": 218, "start": 8717, "end": 8740, "kind": "table", "text": "|:---|:---:|:---:|:---|"}
-{"doc_id": "D001", "sid": 219, "start": 8741, "end": 8818, "kind": "table", "text": "| 相变量子 | $☯$ | $0.02309570897$ | $\\frac{d}{ds}\\ln\\xi(s)\\big\\vert_{s=1}$（严格） |"}
-{"doc_id": "D001", "sid": 220, "start": 8819, "end": 8885, "kind": "table", "text": "| 第一耦级 | $\\mathfrak c_1$ | $200.04045483$ | $1/4+\\gamma_1^2$（严格） |"}
-{"doc_id": "D001", "sid": 221, "start": 8886, "end": 8947, "kind": "table", "text": "| Mathieu 临界 | $\\lambda_c$ | $1.316022911$ | 临界方程唯一根（框架内构造） |"}
-{"doc_id": "D001", "sid": 222, "start": 8948, "end": 8998, "kind": "table", "text": "| Dynkin 指数比 | $I$ | $5/3$ | $\\mathrm{SU}(5)$ 群论 |"}
-{"doc_id": "D001", "sid": 223, "start": 8999, "end": 9052, "kind": "table", "text": "| 谱修正 | $\\kappa$ | $(31+☯)/30$ | 4-单纯形/Adele 周期（构造） |"}
-{"doc_id": "D001", "sid": 224, "start": 9053, "end": 9139, "kind": "table", "text": "| $G_N$（公式值） | | $6.708811657\\times10^{-39}\\ \\mathrm{GeV}^{-2}$ | **构造后验数字校验，待独立复现** |"}
-{"doc_id": "D001", "sid": 225, "start": 9140, "end": 9260, "kind": "table", "text": "| $G_N$（SI） | | $6.6742810045\\times10^{-11}\\ \\mathrm{m^3\\,kg^{-1}\\,s^{-2}}$ | 与 CODATA 偏差约 $-3$ ppm；**构造后验数字校验，待独立复现** |"}
-{"doc_id": "D001", "sid": 226, "start": 9261, "end": 9348, "kind": "table", "text": "| $\\alpha^{-1}_{\\mathrm{SU}(5)}$ | | $16384\\pi/375\\approx137.2583$ | 启发式近似，偏差约 0.162% |"}
-{"doc_id": "D001", "sid": 227, "start": 9349, "end": 9488, "kind": "table", "text": "| $\\alpha^{-1}_{\\mathrm{Wyler}}$ | | $\\frac{16}{9}\\pi^{11/4}(5!)^{1/4}\\approx137.0361$ | Wyler 常数；$A_4$ 群论不变量；0.61 ppm；**构造后验数字校验，待独立复现** |"}
-{"doc_id": "D001", "sid": 228, "start": 9490, "end": 9541, "kind": "prose", "text": "**怎么读这张表**：$☯$、$\\mathfrak c_1$ 是由 $\\xi$ 函数定义的严格数学量；"}
-{"doc_id": "D001", "sid": 229, "start": 9541, "end": 9601, "kind": "prose", "text": "$G_N$ 的 ppm 级符合是**框架内构造 + 构造后验数字校验，待独立复现**，不是主流学界接受的独立第一性推导。"}
-{"doc_id": "D001", "sid": 230, "start": 9601, "end": 9662, "kind": "prose", "text": "历史上「无参数闭合公式」多次被证伪，因此这里的态度是：公式内部自洽、可被第三方复现检验，但不把数值符合当作理论已证的证据。"}
-{"doc_id": "D001", "sid": 231, "start": 9664, "end": 9800, "kind": "prose", "text": "→ [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md)、[GN 第一性推导公理化证明稿](04%20前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md)、[Wyler 常数](04%20前沿研究/Wyler常数_A4群论分解.md)"}
-{"doc_id": "D001", "sid": 232, "start": 9802, "end": 9823, "kind": "heading", "text": "### 4.8 退相干、测量与关系性实在论"}
-{"doc_id": "D001", "sid": 233, "start": 9825, "end": 9894, "kind": "prose", "text": "**是什么**：引力因果限制场退相干理论把退相干重新定义为「质子集体引力因果限制结构对非本体粒子经典波函数的截断」，并给出因果截断不等式："}
-{"doc_id": "D001", "sid": 234, "start": 9896, "end": 9898, "kind": "prose", "text": "$$"}
-{"doc_id": "D001", "sid": 235, "start": 9899, "end": 9950, "kind": "prose", "text": "\\Delta\\tau\\ \\ge\\ \\tau_{\\rm res}=\\frac{\\hbar}{Mc^2}."}
-{"doc_id": "D001", "sid": 236, "start": 9951, "end": 9953, "kind": "prose", "text": "$$"}
-{"doc_id": "D001", "sid": 237, "start": 9955, "end": 9987, "kind": "prose", "text": "四层结构是**截断 → 相容性 → 可能性空间 → 唯一性**。"}
-{"doc_id": "D001", "sid": 238, "start": 9989, "end": 10037, "kind": "prose", "text": "**关键区分**：退相干解决**唯一性**（可能性空间压缩到唯一分支），但不解决**确定性**；"}
-{"doc_id": "D001", "sid": 239, "start": 10037, "end": 10047, "kind": "prose", "text": "确定性由再生产锁定。"}
-{"doc_id": "D001", "sid": 240, "start": 10047, "end": 10082, "kind": "prose", "text": "全局演化保持幺正，子系统边界处的局部描述非幺正（**条件性幺正**）。"}
-{"doc_id": "D001", "sid": 241, "start": 10082, "end": 10098, "kind": "prose", "text": "因此不需要坍缩，也不需要多世界。"}
-{"doc_id": "D001", "sid": 242, "start": 10100, "end": 10166, "kind": "prose", "text": "**贝尔不等式**：作为实验事实仍被违反；改变的是本体论解读——属性随附、关系显现，隐变量的位置由因果结构占据，而不是预先存在的值。"}
-{"doc_id": "D001", "sid": 243, "start": 10166, "end": 10192, "kind": "prose", "text": "CQM 不提出新的局部隐变量模型，也没有新实验预言。"}
-{"doc_id": "D001", "sid": 244, "start": 10194, "end": 10240, "kind": "prose", "text": "**状态**：【框架】+【构造假设】；唯一性难题的严格化（闭环相容子空间一维性猜想）仍开放。"}
-{"doc_id": "D001", "sid": 245, "start": 10240, "end": 10382, "kind": "prose", "text": "→ [引力因果场](03%20引力与退相干/CQM_退相干_引力因果场.md)、[跨层级深耦合与唯一性难题](03%20引力与退相干/CQM_退相干_跨层级深耦合与唯一性难题.md)、[关系性实在论与对称性重组](04%20前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md)"}
-{"doc_id": "D001", "sid": 246, "start": 10384, "end": 10387, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 247, "start": 10389, "end": 10405, "kind": "heading", "text": "## 5 哲学基础：历史唯物主义"}
-{"doc_id": "D001", "sid": 248, "start": 10407, "end": 10428, "kind": "prose", "text": "CQM 的哲学基础是**历史唯物主义**。"}
-{"doc_id": "D001", "sid": 249, "start": 10428, "end": 10464, "kind": "prose", "text": "它不是装饰性前言，而是三条本体论承诺，直接决定理论允许什么、不允许什么："}
-{"doc_id": "D001", "sid": 250, "start": 10466, "end": 10485, "kind": "table", "text": "| 承诺 | 在 CQM 中的落点 |"}
-{"doc_id": "D001", "sid": 251, "start": 10486, "end": 10497, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 252, "start": 10498, "end": 10566, "kind": "table", "text": "| **物质先在，存在先于过程** | 质子/中子是有限本体，先于再生产闭环；再生产 $\\mu^2=\\mu$ 是**维持**而非生成 |"}
-{"doc_id": "D001", "sid": 253, "start": 10567, "end": 10638, "kind": "table", "text": "| **对称性不是先验形式** | 群被读作物质自组织中的组织约束；$\\mathrm{SU}(5)$ 不是预设，而是第一稳定构型被自然锁定 |"}
-{"doc_id": "D001", "sid": 254, "start": 10639, "end": 10702, "kind": "table", "text": "| **数学结构是物质自组织的化石** | 自守形式、黎曼零点谱、量纲，都是自组织留下的结构印记，而非独立自存的柏拉图对象 |"}
-{"doc_id": "D001", "sid": 255, "start": 10704, "end": 10725, "kind": "prose", "text": "再加一条方法论承诺：**层级不是还原**。"}
-{"doc_id": "D001", "sid": 256, "start": 10725, "end": 10773, "kind": "prose", "text": "基础层级是边界层、条件层、原料层，**不是决定层**；高层受低层物质条件限定，但不能从低层推导。"}
-{"doc_id": "D001", "sid": 257, "start": 10773, "end": 10825, "kind": "prose", "text": "这使 CQM 同时拒绝「上层可完全还原」与「上层凭空涌现」两种片面立场，而采取「条件—展开」的横向结构。"}
-{"doc_id": "D001", "sid": 258, "start": 10827, "end": 10932, "kind": "prose", "text": "历史唯物主义的「有限本体—再生产—分化—阈值—重组」语法，与差异-记忆核超导链逐环对应：再生产给出固有时，固有时给出节点间节律差异，差异给出配对通道，配对经渗流给出连通域，刚度判据界定相变，相变留下记忆核平台。"}
-{"doc_id": "D001", "sid": 259, "start": 10934, "end": 11011, "kind": "prose", "text": "**边界（必须保留）**：这是**结构同构**，不是把社会范畴还原为物理量；哲学层只提供本体论定位，**不构成物理证明**，也不改变任何缺口的严格性状态。"}
-{"doc_id": "D001", "sid": 260, "start": 11011, "end": 11039, "kind": "prose", "text": "社会与 AI 的类比只作结构类比，不构成超导机制的证据。"}
-{"doc_id": "D001", "sid": 261, "start": 11041, "end": 11152, "kind": "prose", "text": "→ [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md)、[资本主义、旧物理学与层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md)"}
-{"doc_id": "D001", "sid": 262, "start": 11154, "end": 11157, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 263, "start": 11159, "end": 11175, "kind": "heading", "text": "## 6 严格性、缺口与可检验性"}
-{"doc_id": "D001", "sid": 264, "start": 11177, "end": 11191, "kind": "heading", "text": "### 6.1 状态词的含义"}
-{"doc_id": "D001", "sid": 265, "start": 11193, "end": 11204, "kind": "table", "text": "| 标记 | 含义 |"}
-{"doc_id": "D001", "sid": 266, "start": 11205, "end": 11216, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 267, "start": 11217, "end": 11240, "kind": "table", "text": "| **【严格】** | 框架内已给出证明 |"}
-{"doc_id": "D001", "sid": 268, "start": 11241, "end": 11266, "kind": "table", "text": "| **【条件严格】** | 在明确条件下成立 |"}
-{"doc_id": "D001", "sid": 269, "start": 11267, "end": 11290, "kind": "table", "text": "| **【构造】** | 框架内构造，未证 |"}
-{"doc_id": "D001", "sid": 270, "start": 11291, "end": 11325, "kind": "table", "text": "| **【构造假设】** | 研究线的新构造，未证，登记待推编号 |"}
-{"doc_id": "D001", "sid": 271, "start": 11326, "end": 11345, "kind": "table", "text": "| **【待推】** | 未完成项 |"}
-{"doc_id": "D001", "sid": 272, "start": 11346, "end": 11385, "kind": "table", "text": "| **【文献对照】** | 外部文献结论，只作对照，不并入 CQM 口径 |"}
-{"doc_id": "D001", "sid": 273, "start": 11386, "end": 11417, "kind": "table", "text": "| **【哲学诠释】** | 本体论定位，非物理/数学命题 |"}
-{"doc_id": "D001", "sid": 274, "start": 11419, "end": 11431, "kind": "heading", "text": "### 6.2 核心缺口"}
-{"doc_id": "D001", "sid": 275, "start": 11433, "end": 11450, "kind": "table", "text": "| 缺口 | 内容 | 优先级 |"}
-{"doc_id": "D001", "sid": 276, "start": 11451, "end": 11468, "kind": "table", "text": "|:---|:---|:---:|"}
-{"doc_id": "D001", "sid": 277, "start": 11469, "end": 11510, "kind": "table", "text": "| **C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |"}
-{"doc_id": "D001", "sid": 278, "start": 11511, "end": 11550, "kind": "table", "text": "| **G2** | 耦合空间 → 双曲 Laplacian 的必要性 | |"}
-{"doc_id": "D001", "sid": 279, "start": 11551, "end": 11598, "kind": "table", "text": "| **G3** | $\\hat D=-i(\\partial_u-1/2)$ 的唯一性 | |"}
-{"doc_id": "D001", "sid": 280, "start": 11599, "end": 11648, "kind": "table", "text": "| **G4** | $\\hat D\\to\\hat H=\\hat D^2+1/4$ 的涌现 | |"}
-{"doc_id": "D001", "sid": 281, "start": 11649, "end": 11691, "kind": "table", "text": "| **G5** | 退相干 → 边界条件 $\\vartheta_n$ 锁定 | |"}
-{"doc_id": "D001", "sid": 282, "start": 11692, "end": 11729, "kind": "table", "text": "| **G7** | $\\Sigma_{ij}$ 的第一性数值来源 | |"}
-{"doc_id": "D001", "sid": 283, "start": 11730, "end": 11767, "kind": "table", "text": "| **G8** | CP 破坏相位 $\\delta$ 的严格来源 | |"}
-{"doc_id": "D001", "sid": 284, "start": 11769, "end": 11906, "kind": "prose", "text": "另有 **G9–G22**（超导涌现链，权威处在 [超导核心理论](06%20超导/CQM_超导核心理论.md) §13）与 **N1–N4**（中子缺陷矩阵与 FG 角亏，权威处在 [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md) §二.5）。"}
-{"doc_id": "D001", "sid": 285, "start": 11906, "end": 12066, "kind": "prose", "text": "三套编号作用域不同，引用时不得混用；G6 未定义（编号保留，不得填补）；链层另有 `审-1…审-15`、`临-1…临-26`、`链外-A…F`、`M1–M10` 等约 62 项，权威处为 [推导链](10%20探索/CQM_探索_推导链.md) 与 [缺口台账](08%20理论组织和形式化框架/附录/缺口台账.md)。"}
-{"doc_id": "D001", "sid": 286, "start": 12068, "end": 12112, "kind": "prose", "text": "**P 编号三系**（同名不同物，引用须指出出处）：渗流篇 P1–P6 是外部对照缺口；"}
-{"doc_id": "D001", "sid": 287, "start": 12112, "end": 12159, "kind": "prose", "text": "关系性实在论篇 P1–P7 是可检验候选；反物质引力篇 P1–P3 是结构层 null 预测。"}
-{"doc_id": "D001", "sid": 288, "start": 12159, "end": 12183, "kind": "prose", "text": "三系不并入 C/G/N 编号，也不升级既有缺口。"}
-{"doc_id": "D001", "sid": 289, "start": 12185, "end": 12206, "kind": "heading", "text": "### 6.3 哪些地方可以被检验、被反驳"}
-{"doc_id": "D001", "sid": 290, "start": 12208, "end": 12224, "kind": "prose", "text": "CQM 不是「什么都对」的框架。"}
-{"doc_id": "D001", "sid": 291, "start": 12224, "end": 12238, "kind": "prose", "text": "它给出三类可操作的判别接口："}
-{"doc_id": "D001", "sid": 292, "start": 12240, "end": 12332, "kind": "list", "text": "1. **反物质引力 null 预测**：$G_N$ 公式只含实谱不变量，因此结构层预测 $G_{++}=G_{--}=G_{+-}=G_N$（$+$/$-$ 分别标记物质/反物质）。"}
-{"doc_id": "D001", "sid": 293, "start": 12332, "end": 12477, "kind": "list", "text": "这与 ALPHA-g、MICROSCOPE 等实验直接对照；若观测到三组耦合不等，该 null 预测即被违反，公式或其「单一 $m_p$ 锚点」前提须修改并新增缺口（详见 [反物质引力与 GN 推导边界](04%20前沿研究/CQM_前沿研究_反物质引力与GN推导边界.md) §5.5）。"}
-{"doc_id": "D001", "sid": 294, "start": 12478, "end": 12546, "kind": "list", "text": "2. **超导的尺度判据**：$\\ell_*$（联合协方差关联长度）与 $R_{\\rm DNR}$（同切片、异协方差的响应差）是可算量；"}
-{"doc_id": "D001", "sid": 295, "start": 12546, "end": 12577, "kind": "list", "text": "赝能隙到 ARPES/STM 的映射登记为 G21，尚未闭合。"}
-{"doc_id": "D001", "sid": 296, "start": 12578, "end": 12643, "kind": "list", "text": "3. **贝尔与测量**：贝尔不等式作为实验事实仍被违反；CQM 只改本体论解读，**不提出新预言**——这是必须如实写明的边界。"}
-{"doc_id": "D001", "sid": 297, "start": 12645, "end": 12728, "kind": "prose", "text": "**没有给出的东西**：$T_c$ 的定量预测（未推、暂时未定）、$G_N$ 的独立第一性证明（构造后验）、RH 的证明（路线图）、以及任何超出标准模型的新实验信号。"}
-{"doc_id": "D001", "sid": 298, "start": 12728, "end": 12761, "kind": "prose", "text": "把这些写成「已证」会违反本仓库的三条红线：不欺骗、不绕过、不虚构。"}
-{"doc_id": "D001", "sid": 299, "start": 12763, "end": 12780, "kind": "heading", "text": "### 6.4 常见问题（FAQ）"}
-{"doc_id": "D001", "sid": 300, "start": 12782, "end": 12805, "kind": "prose", "text": "**Q：CQM 是一个已完成的「万物理论」吗？"}
-{"doc_id": "D001", "sid": 301, "start": 12805, "end": 12807, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 302, "start": 12808, "end": 12811, "kind": "prose", "text": "不是。"}
-{"doc_id": "D001", "sid": 303, "start": 12811, "end": 12866, "kind": "prose", "text": "它是研究框架，主要研究物理系统的费米—强子尺度（质子/中子内部与禁闭边界）；核/原子、分子、宇宙尺度尚未定论。"}
-{"doc_id": "D001", "sid": 304, "start": 12866, "end": 12889, "kind": "prose", "text": "核心代数在框架内严格，但涌现链与关键缺口开放。"}
-{"doc_id": "D001", "sid": 305, "start": 12891, "end": 12920, "kind": "prose", "text": "**Q：它和 1970 年代的 SU(5) 大统一一样吗？"}
-{"doc_id": "D001", "sid": 306, "start": 12920, "end": 12922, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 307, "start": 12923, "end": 12927, "kind": "prose", "text": "不一样。"}
-{"doc_id": "D001", "sid": 308, "start": 12927, "end": 12978, "kind": "prose", "text": "CQM 的 SU(5) 是禁闭边界的基态同步结构，不是把标准模型直接嵌入 SU(5) 的质子衰变模型；"}
-{"doc_id": "D001", "sid": 309, "start": 12978, "end": 13015, "kind": "prose", "text": "最小 SU(5) 大统一模型已被 Super-Kamiokande 排除。"}
-{"doc_id": "D001", "sid": 310, "start": 13015, "end": 13057, "kind": "prose", "text": "CQM 的标准模型规范群由「规范重组」输出，重子数守恒（质子不衰变）属框架构造假设。"}
-{"doc_id": "D001", "sid": 311, "start": 13059, "end": 13073, "kind": "prose", "text": "**Q：黎曼猜想被证明了吗？"}
-{"doc_id": "D001", "sid": 312, "start": 13073, "end": 13075, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 313, "start": 13076, "end": 13079, "kind": "prose", "text": "没有。"}
-{"doc_id": "D001", "sid": 314, "start": 13079, "end": 13132, "kind": "prose", "text": "仓库里是**证明路线图**与循环性诊断，不是证明本身：3 个已知环节 + 2 个待推环节 + 物理存在性；"}
-{"doc_id": "D001", "sid": 315, "start": 13132, "end": 13145, "kind": "prose", "text": "待推 1 的相位半仍未解。"}
-{"doc_id": "D001", "sid": 316, "start": 13147, "end": 13167, "kind": "prose", "text": "**Q：超导的 $T_c$ 能算出来吗？"}
-{"doc_id": "D001", "sid": 317, "start": 13167, "end": 13169, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 318, "start": 13170, "end": 13175, "kind": "prose", "text": "目前不能。"}
-{"doc_id": "D001", "sid": 319, "start": 13175, "end": 13253, "kind": "prose", "text": "相变条件与 $T_c$ **未推、暂时未定**；均匀、弱耦合、单带 $s$ 波极限退化为 BCS 表达式是条件命题，不是「已从 CQM 公设推出 BCS」。"}
-{"doc_id": "D001", "sid": 320, "start": 13255, "end": 13287, "kind": "prose", "text": "**Q：$G_N$ 偏差 $-3$ ppm 说明理论被验证了吗？"}
-{"doc_id": "D001", "sid": 321, "start": 13287, "end": 13289, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 322, "start": 13290, "end": 13296, "kind": "prose", "text": "不能这样读。"}
-{"doc_id": "D001", "sid": 323, "start": 13296, "end": 13336, "kind": "prose", "text": "这是**构造后验数字校验，待独立复现**；标准物理中 $G_N$ 仍是实验参数。"}
-{"doc_id": "D001", "sid": 324, "start": 13336, "end": 13368, "kind": "prose", "text": "仓库明确区分「框架内自洽」与「被主流学界接受的独立第一性推导」。"}
-{"doc_id": "D001", "sid": 325, "start": 13370, "end": 13398, "kind": "prose", "text": "**Q：它和圈量子引力、因果集、关系量子力学是什么关系？"}
-{"doc_id": "D001", "sid": 326, "start": 13398, "end": 13400, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 327, "start": 13401, "end": 13446, "kind": "prose", "text": "CQM 直接建立在这三者之上，但重构其本体论：量子化的对象不是场或时空，而是耦合常数本身；"}
-{"doc_id": "D001", "sid": 328, "start": 13446, "end": 13498, "kind": "prose", "text": "LQG 提供 Regge/自旋网络工具，因果集提供离散因果序，RQM 提供关系性实在与引力参与的退相干。"}
-{"doc_id": "D001", "sid": 329, "start": 13500, "end": 13520, "kind": "prose", "text": "**Q：为什么用历史唯物主义作哲学基础？"}
-{"doc_id": "D001", "sid": 330, "start": 13520, "end": 13522, "kind": "prose", "text": "**"}
-{"doc_id": "D001", "sid": 331, "start": 13523, "end": 13578, "kind": "prose", "text": "因为它提供三条本体论承诺（物质先在、对称性非先验、数学结构是自组织的化石），并使「层级不是还原」有了明确表述。"}
-{"doc_id": "D001", "sid": 332, "start": 13578, "end": 13612, "kind": "prose", "text": "这是**结构同构**与本体论定位，不构成物理证明，也不改变缺口状态。"}
-{"doc_id": "D001", "sid": 333, "start": 13614, "end": 13617, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 334, "start": 13619, "end": 13630, "kind": "heading", "text": "## 7 形式化与验证"}
-{"doc_id": "D001", "sid": 335, "start": 13632, "end": 13679, "kind": "prose", "text": "CQM 的数学结构配有 Lean 4 形式化、结构化数据、概念本体、超图与可重复构建的组织层。"}
-{"doc_id": "D001", "sid": 336, "start": 13681, "end": 13695, "kind": "heading", "text": "### 7.1 Lean 4"}
-{"doc_id": "D001", "sid": 337, "start": 13697, "end": 13713, "kind": "table", "text": "| 项目 | 位置 | 现状 |"}
-{"doc_id": "D001", "sid": 338, "start": 13714, "end": 13730, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D001", "sid": 339, "start": 13731, "end": 13937, "kind": "table", "text": "| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 仅 `require mathlib`；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |"}
-{"doc_id": "D001", "sid": 340, "start": 13938, "end": 14087, "kind": "table", "text": "| 形式化权威 | [`10 探索/超导第一性研究/05_Lean验证/`](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` v52 + 52 个在闸证明模块（`Ring15Lock*` 等），另有审计/探索模块；目录共 280+ 个 `.lean` 文件 |"}
-{"doc_id": "D001", "sid": 341, "start": 14088, "end": 14226, "kind": "table", "text": "| 一键闸 | `05_Lean验证/a_gate.ps1` | 编译 → `#print axioms` 白名单 → `#check` 类型对齐 → token 卫生；第 235 轮实测 52/52 编译、124 条公理、101 条 `#check` 对齐，FAIL 0 |"}
-{"doc_id": "D001", "sid": 342, "start": 14228, "end": 14261, "kind": "quote", "text": "> 形式化覆盖的是**已陈述的代数与结构命题**，不覆盖开放缺口。"}
-{"doc_id": "D001", "sid": 343, "start": 14261, "end": 14296, "kind": "quote", "text": "`axiom` 与 `sorry` 按缺口台账登记，不得读作已证结论。"}
-{"doc_id": "D001", "sid": 344, "start": 14296, "end": 14350, "kind": "quote", "text": "A 闸的公理白名单仅为 `propext`、`Classical.choice`、`Quot.sound`。"}
-{"doc_id": "D001", "sid": 345, "start": 14352, "end": 14363, "kind": "heading", "text": "### 7.2 组织层"}
-{"doc_id": "D001", "sid": 346, "start": 14365, "end": 14435, "kind": "prose", "text": "[`08 理论组织和形式化框架/`](08%20理论组织和形式化框架/) 把自然语言理论重构为可计算、可推理、可验证的结构化系统（七维度）："}
-{"doc_id": "D001", "sid": 347, "start": 14437, "end": 14470, "kind": "list", "text": "- **结构化数据**：83 个概念、63 条命题、69 条论证；"}
-{"doc_id": "D001", "sid": 348, "start": 14471, "end": 14513, "kind": "list", "text": "- **概念本体**：OWL 本体 25 类 / 427 个体 / 16 对象属性；"}
-{"doc_id": "D001", "sid": 349, "start": 14514, "end": 14561, "kind": "list", "text": "- **超图与知识图谱**：83 节点 / 19 超边 / 50 有向边；5,461 三元组；"}
-{"doc_id": "D001", "sid": 350, "start": 14562, "end": 14595, "kind": "list", "text": "- **语料与证据**：18,607 句索引、213 条证据映射；"}
-{"doc_id": "D001", "sid": 351, "start": 14596, "end": 14630, "kind": "list", "text": "- **展示可视化**：VitePress 阅读站、检索台、驾驶舱。"}
-{"doc_id": "D001", "sid": 352, "start": 14632, "end": 14644, "kind": "heading", "text": "### 7.3 复现命令"}
-{"doc_id": "D001", "sid": 353, "start": 14646, "end": 14659, "kind": "code", "text": "```powershell"}
-{"doc_id": "D001", "sid": 354, "start": 14660, "end": 14676, "kind": "code", "text": "# 组织层一致性（在仓库根目录）"}
-{"doc_id": "D001", "sid": 355, "start": 14677, "end": 14727, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_consistency.py\""}
-{"doc_id": "D001", "sid": 356, "start": 14728, "end": 14777, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_provenance.py\""}
-{"doc_id": "D001", "sid": 357, "start": 14778, "end": 14778, "kind": "code", "text": ""}
-{"doc_id": "D001", "sid": 358, "start": 14779, "end": 14820, "kind": "code", "text": "# Lean 单文件编译（在 Lean源码 目录执行，提供 Mathlib 基线）"}
-{"doc_id": "D001", "sid": 359, "start": 14821, "end": 14885, "kind": "code", "text": "lake env lean \"../../../10 探索/超导第一性研究/05_Lean验证/Ring15Spec.lean\""}
-{"doc_id": "D001", "sid": 360, "start": 14886, "end": 14886, "kind": "code", "text": ""}
-{"doc_id": "D001", "sid": 361, "start": 14887, "end": 14917, "kind": "code", "text": "# Lean 一键闸（A 闸；在 05_Lean验证 目录）"}
-{"doc_id": "D001", "sid": 362, "start": 14918, "end": 14954, "kind": "code", "text": "pwsh -NoProfile -File \".\\a_gate.ps1\""}
-{"doc_id": "D001", "sid": 363, "start": 14955, "end": 14958, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 364, "start": 14960, "end": 14963, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 365, "start": 14965, "end": 14974, "kind": "heading", "text": "## 8 仓库结构"}
-{"doc_id": "D001", "sid": 366, "start": 14976, "end": 14979, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 367, "start": 14980, "end": 14990, "kind": "code", "text": "CQMFormal/"}
-{"doc_id": "D001", "sid": 368, "start": 14991, "end": 15010, "kind": "code", "text": "├── README.md ← 本文件"}
-{"doc_id": "D001", "sid": 369, "start": 15011, "end": 15041, "kind": "code", "text": "├── 专题档案.md ← 专题/论证链登记（文档体系结构）"}
-{"doc_id": "D001", "sid": 370, "start": 15042, "end": 15072, "kind": "code", "text": "├── AGENTS.md ← 项目规范（红线、同步、验证）"}
-{"doc_id": "D001", "sid": 371, "start": 15073, "end": 15074, "kind": "code", "text": "│"}
-{"doc_id": "D001", "sid": 372, "start": 15075, "end": 15119, "kind": "code", "text": "├── 01 核心理论/ ← 理论主干（集成理论、量纲与群论、朗兰兹分层、唯物主义群论、"}
-{"doc_id": "D001", "sid": 373, "start": 15120, "end": 15166, "kind": "code", "text": "│                  共形场论与OPE、声子、引力存在论前提、历史唯物主义）"}
-{"doc_id": "D001", "sid": 374, "start": 15167, "end": 15214, "kind": "code", "text": "├── 02 量子引力/ ← 量子引力的层级归属讨论（结论：不另立量子引力层，由 FG 承担）"}
-{"doc_id": "D001", "sid": 375, "start": 15215, "end": 15251, "kind": "code", "text": "├── 03 引力与退相干/ ← G_N 公式、引力因果场、跨层级深耦合"}
-{"doc_id": "D001", "sid": 376, "start": 15252, "end": 15294, "kind": "code", "text": "├── 04 前沿研究/ ← DNR、自守形式、黎曼猜想路线、规范重组、反物质引力、"}
-{"doc_id": "D001", "sid": 377, "start": 15295, "end": 15352, "kind": "code", "text": "│                  Theta 对应、量子快置乱、渗流、Wyler 常数、Berry–Regge"}
-{"doc_id": "D001", "sid": 378, "start": 15353, "end": 15394, "kind": "code", "text": "├── 05 方法论与批判/ ← Hilbert–Pólya 批判、层级还原论批判"}
-{"doc_id": "D001", "sid": 379, "start": 15395, "end": 15441, "kind": "code", "text": "├── 06 超导/ ← 差异-记忆核超导（理论卷 + 材料与界面卷 + 数据 + 设计器）"}
-{"doc_id": "D001", "sid": 380, "start": 15442, "end": 15487, "kind": "code", "text": "├── 07 精细引力（FG）/ ← FG 核心理论、纤维丛理论、LQG–Regge 映射"}
-{"doc_id": "D001", "sid": 381, "start": 15488, "end": 15535, "kind": "code", "text": "├── 08 理论组织和形式化框架/ ← 结构化数据、OWL、超图、Lean 对接、展示可视化"}
-{"doc_id": "D001", "sid": 382, "start": 15536, "end": 15590, "kind": "code", "text": "├── 09 研究站服务/ ← 本地 Spring Boot 服务（阅读站 + SPARQL + 证据复核）"}
-{"doc_id": "D001", "sid": 383, "start": 15591, "end": 15636, "kind": "code", "text": "├── 10 探索/ ← 27 环推导链、相变锚、锚–H–K 桥梁、Lean 验证、稳定稿"}
-{"doc_id": "D001", "sid": 384, "start": 15637, "end": 15676, "kind": "code", "text": "└── 归档/ ← 历史文档与参考文献 PDF（只读；归档 CNT/ 不修改）"}
-{"doc_id": "D001", "sid": 385, "start": 15677, "end": 15680, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 386, "start": 15682, "end": 15685, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 387, "start": 15687, "end": 15696, "kind": "heading", "text": "## 9 阅读路径"}
-{"doc_id": "D001", "sid": 388, "start": 15698, "end": 15713, "kind": "table", "text": "| 你的目的 | 建议路径 |"}
-{"doc_id": "D001", "sid": 389, "start": 15714, "end": 15725, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 390, "start": 15726, "end": 15785, "kind": "table", "text": "| **先看全貌** | 本文件 §1–§4 → [集成理论](01%20核心理论/CQM_核心_集成理论.md) |"}
-{"doc_id": "D001", "sid": 391, "start": 15786, "end": 15899, "kind": "table", "text": "| **理解「量子化耦合常数」** | [集成理论](01%20核心理论/CQM_核心_集成理论.md) §3–§4 → [DNR](04%20前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md) §3、§6 |"}
-{"doc_id": "D001", "sid": 392, "start": 15900, "end": 16031, "kind": "table", "text": "| **理解超导** | [超导核心理论](06%20超导/CQM_超导核心理论.md) §0 → [推导链](10%20探索/CQM_探索_推导链.md) → [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) |"}
-{"doc_id": "D001", "sid": 393, "start": 16032, "end": 16135, "kind": "table", "text": "| **理解量纲与常数** | [量纲与群论](01%20核心理论/CQM_核心_量纲与群论.md) §一、§六、§七 → [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md) |"}
-{"doc_id": "D001", "sid": 394, "start": 16136, "end": 16286, "kind": "table", "text": "| **理解自守形式与 RH** | [朗兰兹分层](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md) → [RH 路线图](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md) → [待推 1](04%20前沿研究/CQM_前沿研究_待推1边界条件的五重联系.md) |"}
-{"doc_id": "D001", "sid": 395, "start": 16287, "end": 16379, "kind": "table", "text": "| **看形式化与验证** | [Lean 验证](10%20探索/超导第一性研究/05_Lean验证/) → [组织层总览](08%20理论组织和形式化框架/README.md) |"}
-{"doc_id": "D001", "sid": 396, "start": 16380, "end": 16499, "kind": "table", "text": "| **看哲学与方法论** | [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) → [层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md) |"}
-{"doc_id": "D001", "sid": 397, "start": 16501, "end": 16510, "kind": "prose", "text": "<details>"}
-{"doc_id": "D001", "sid": 398, "start": 16511, "end": 16550, "kind": "prose", "text": "<summary><b>完整文档索引（40+ 篇）</b></summary>"}
-{"doc_id": "D001", "sid": 399, "start": 16552, "end": 16563, "kind": "prose", "text": "**01 核心理论**"}
-{"doc_id": "D001", "sid": 400, "start": 16565, "end": 16577, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 401, "start": 16578, "end": 16589, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 402, "start": 16590, "end": 16693, "kind": "table", "text": "| [集成理论](01%20核心理论/CQM_核心_集成理论.md) | 十三部分总框架：本体论、耦合空间、动力学、禁闭、$\\mathrm{SU}(5)$ 谱、零点谱、两种引力、核子层级、超导、标准理论 |"}
-{"doc_id": "D001", "sid": 403, "start": 16694, "end": 16767, "kind": "table", "text": "| [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md) | 前时空/GR/FG 三层、中子缺陷矩阵、缺口 N1–N4 |"}
-{"doc_id": "D001", "sid": 404, "start": 16768, "end": 16844, "kind": "table", "text": "| [因果网络同步理论](01%20核心理论/CQM_核心_因果网络同步理论.md) | CNST：从黎曼结构提取同步理论；引力是因果同步的必要前提 |"}
-{"doc_id": "D001", "sid": 405, "start": 16845, "end": 16967, "kind": "table", "text": "| [朗兰兹分层共振与相变量子](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md) | 质数 → $\\mathrm{GL}(5)$ → $\\mathrm{SU}(5)$ → 规范群；$\\alpha$ 与 $☯$ 的统一位置 |"}
-{"doc_id": "D001", "sid": 406, "start": 16968, "end": 17057, "kind": "table", "text": "| [共形场论与 OPE](01%20核心理论/CQM_核心_共形场论与OPE.md) | CFT＝同步过程机制；共形自举＝OPE 结合律；$A_4$ 锁 $s,p,d,f$ |"}
-{"doc_id": "D001", "sid": 407, "start": 17058, "end": 17114, "kind": "table", "text": "| [声子理论](01%20核心理论/CQM_核心_声子理论.md) | 声子＝曲率量子，是同步与时空的前提 |"}
-{"doc_id": "D001", "sid": 408, "start": 17115, "end": 17190, "kind": "table", "text": "| [量纲与群论](01%20核心理论/CQM_核心_量纲与群论.md) | 量纲发生学、$K_T/K_L/K_M$、自然单位制批判、自守形式猜想 |"}
-{"doc_id": "D001", "sid": 409, "start": 17191, "end": 17296, "kind": "table", "text": "| [唯物主义群论](01%20核心理论/CQM_核心_唯物主义群论.md) | $\\mathrm{Sym}\\supset\\mathrm{Diff}\\supset GL$、群约束性、不变性、$S_n$ 谱系 |"}
-{"doc_id": "D001", "sid": 410, "start": 17297, "end": 17381, "kind": "table", "text": "| [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) | 哲学专论：发生学语法的逐环对照、结构同构的边界、H1–H6 |"}
-{"doc_id": "D001", "sid": 411, "start": 17383, "end": 17404, "kind": "prose", "text": "**02–03 量子引力、引力与退相干**"}
-{"doc_id": "D001", "sid": 412, "start": 17406, "end": 17418, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 413, "start": 17419, "end": 17430, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 414, "start": 17431, "end": 17507, "kind": "table", "text": "| [量子引力讨论](02%20量子引力/CQM_引力_量子引力讨论.md) | 两个候选；体系采用「禁闭内部只是 QCD，FG 承担量子引力内容」 |"}
-{"doc_id": "D001", "sid": 415, "start": 17508, "end": 17585, "kind": "table", "text": "| [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md) | $G_N$ 的谱公式与十位数值（构造后验数字校验，待独立复现） |"}
-{"doc_id": "D001", "sid": 416, "start": 17586, "end": 17654, "kind": "table", "text": "| [引力因果场](03%20引力与退相干/CQM_退相干_引力因果场.md) | 因果截断不等式、互耦/观测/自耦退相干、四层结构 |"}
-{"doc_id": "D001", "sid": 417, "start": 17655, "end": 17740, "kind": "table", "text": "| [跨层级深耦合与唯一性难题](03%20引力与退相干/CQM_退相干_跨层级深耦合与唯一性难题.md) | 唯一性难题的层级还原论诊断；基础层是边界/条件/原料层 |"}
-{"doc_id": "D001", "sid": 418, "start": 17742, "end": 17753, "kind": "prose", "text": "**04 前沿研究**"}
-{"doc_id": "D001", "sid": 419, "start": 17755, "end": 17767, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 420, "start": 17768, "end": 17779, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 421, "start": 17780, "end": 17890, "kind": "table", "text": "| [分布式不对易关系与非马尔可夫性](04%20前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md) | DNR 理论构造卷：约束代数、记忆核奇偶通道、$\\ell_*$ 与 $R_{\\rm DNR}$ |"}
-{"doc_id": "D001", "sid": 422, "start": 17891, "end": 17980, "kind": "table", "text": "| [关系性实在论与对称性重组](04%20前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md) | 五层链：本体论→代数→群论→拓扑→解释；P1–P7、E6–E12 |"}
-{"doc_id": "D001", "sid": 423, "start": 17981, "end": 18115, "kind": "table", "text": "| [规范重组超导与 SU5 五重态内禀时间](04%20前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md) | Elitzur/FMS/Fradkin–Shenker 支撑「重组非破缺」；$\\mathrm{SU}(5)$ 五重态与质子衰变边界 |"}
-{"doc_id": "D001", "sid": 424, "start": 18116, "end": 18214, "kind": "table", "text": "| [量子快置乱普适速率极限](04%20前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md) | PRL 2026 证明链条精读；$\\mathrm{GL}(5)$ 谱形状因子与置乱交叉 |"}
-{"doc_id": "D001", "sid": 425, "start": 18215, "end": 18300, "kind": "table", "text": "| [渗流连通性与临界同步](04%20前沿研究/CQM_前沿研究_渗流连通性与临界同步.md) | 外部对照：局域随机连通 vs 局域关系→全局相位相干；P1–P6 |"}
-{"doc_id": "D001", "sid": 426, "start": 18301, "end": 18378, "kind": "table", "text": "| [相变弧线与自守形式同步](04%20前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md) | 自守因子的第五重身份「同步桥」；四层同步框架 |"}
-{"doc_id": "D001", "sid": 427, "start": 18379, "end": 18456, "kind": "table", "text": "| [质量的量纲地位与自守来源](04%20前沿研究/CQM_前沿研究_质量的量纲地位与自守来源.md) | 质量不是基本输入，而是自守关联的涌现结果 |"}
-{"doc_id": "D001", "sid": 428, "start": 18457, "end": 18535, "kind": "table", "text": "| [黎曼猜想证明思路](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md) | 路线图与循环性诊断：3 已知 + 2 待推 + 物理存在性 |"}
-{"doc_id": "D001", "sid": 429, "start": 18536, "end": 18617, "kind": "table", "text": "| [待推 1 边界条件的五重联系](04%20前沿研究/CQM_前沿研究_待推1边界条件的五重联系.md) | 长度半已由 RvM 反解、相位半仍是实质缺口 |"}
-{"doc_id": "D001", "sid": 430, "start": 18618, "end": 18707, "kind": "table", "text": "| [GN 第一性推导公理化证明稿](04%20前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md) | 定义—公理—引理—定理—证明；数学事实层与物理构造层分开 |"}
-{"doc_id": "D001", "sid": 431, "start": 18708, "end": 18812, "kind": "table", "text": "| [反物质引力与 GN 推导边界](04%20前沿研究/CQM_前沿研究_反物质引力与GN推导边界.md) | 结构层 null 预测 $G_{++}=G_{--}=G_{+-}=G_N$；G8 未闭合 |"}
-{"doc_id": "D001", "sid": 432, "start": 18813, "end": 18924, "kind": "table", "text": "| [Theta 对应与 GRH 新证明对照](04%20前沿研究/CQM_前沿研究_Theta对应与GRH新证明对照.md) | 外部文献对照：Theta lift 与 322 页 GRH 证明，不并入 CQM 口径 |"}
-{"doc_id": "D001", "sid": 433, "start": 18925, "end": 19017, "kind": "table", "text": "| [Wyler 常数 A4 群论分解](04%20前沿研究/Wyler常数_A4群论分解.md) | Wyler 常数的 $A_4$ 群论不变量表达（0.61 ppm，构造后验） |"}
-{"doc_id": "D001", "sid": 434, "start": 19018, "end": 19106, "kind": "table", "text": "| [贝里曲率与 Regge 曲率关联](04%20前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md) | 文献调研：联络—曲率—和乐的共同骨架与量子几何启示 |"}
-{"doc_id": "D001", "sid": 435, "start": 19108, "end": 19121, "kind": "prose", "text": "**05 方法论与批判**"}
-{"doc_id": "D001", "sid": 436, "start": 19123, "end": 19135, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 437, "start": 19136, "end": 19147, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 438, "start": 19148, "end": 19237, "kind": "table", "text": "| [Hilbert–Pólya 批判](05%20方法论与批判/CQM_方法论_HilbertPolya批判.md) | 保留「自伴算符—实谱」，超越至「物理过程铸造算符」 |"}
-{"doc_id": "D001", "sid": 439, "start": 19238, "end": 19326, "kind": "table", "text": "| [资本主义、旧物理学与层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md) | 正题—反题—合题：CQM 作为新层级涌现论 |"}
-{"doc_id": "D001", "sid": 440, "start": 19328, "end": 19337, "kind": "prose", "text": "**06 超导**"}
-{"doc_id": "D001", "sid": 441, "start": 19339, "end": 19351, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 442, "start": 19352, "end": 19363, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 443, "start": 19364, "end": 19445, "kind": "table", "text": "| [超导核心理论（理论卷）](06%20超导/CQM_超导核心理论.md) | 差异-记忆核理论：27 环发生学、八环节骨架、$T_c$ 未推、G9–G22 |"}
-{"doc_id": "D001", "sid": 444, "start": 19446, "end": 19537, "kind": "table", "text": "| [超导核心理论（材料与界面卷）](06%20超导/CQM_超导核心理论_材料与界面卷.md) | §11.7–§11.14、§17：元素周期表、同位素效应、材料数值、界面超导 |"}
-{"doc_id": "D001", "sid": 445, "start": 19538, "end": 19604, "kind": "table", "text": "| [超导材料设计器](06%20超导/超导材料设计器/) | 元素同位素数据库、超导判定算法、嘉当矩阵参数化、Godot 项目 |"}
-{"doc_id": "D001", "sid": 446, "start": 19605, "end": 19702, "kind": "table", "text": "| [实验数据库](06%20超导/cqm_analysis/superconductors_deduplicated.csv) | 226 条超导材料实验记录（不含 $T_c$ 预测结果） |"}
-{"doc_id": "D001", "sid": 447, "start": 19704, "end": 19719, "kind": "prose", "text": "**07 精细引力（FG）**"}
-{"doc_id": "D001", "sid": 448, "start": 19721, "end": 19733, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 449, "start": 19734, "end": 19745, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 450, "start": 19746, "end": 19817, "kind": "table", "text": "| [FG 核心理论](07%20精细引力（FG）/FG_核心理论.md) | FG 物理机制层：本体论、发生学、同步算符、群谱、物理常数 |"}
-{"doc_id": "D001", "sid": 451, "start": 19818, "end": 19896, "kind": "table", "text": "| [FG 纤维丛理论](07%20精细引力（FG）/FG_纤维丛理论.md) | FG 丛几何层：主丛、联络与和乐、Regge 对应、CFT 严格对应 |"}
-{"doc_id": "D001", "sid": 452, "start": 19897, "end": 19980, "kind": "table", "text": "| [LQG–Regge 显式映射](07%20精细引力（FG）/FG_LQG-Regge显式映射.md) | 自旋—面积—角—亏角的运动学词典（条件性显式映射） |"}
-{"doc_id": "D001", "sid": 453, "start": 19982, "end": 20001, "kind": "prose", "text": "**08 组织层、10 探索与归档**"}
-{"doc_id": "D001", "sid": 454, "start": 20003, "end": 20015, "kind": "table", "text": "| 文档 | 一句话 |"}
-{"doc_id": "D001", "sid": 455, "start": 20016, "end": 20027, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D001", "sid": 456, "start": 20028, "end": 20097, "kind": "table", "text": "| [组织层总览](08%20理论组织和形式化框架/README.md) | 七维度：结构化、ML 数据准备、形式化验证、展示可视化等 |"}
-{"doc_id": "D001", "sid": 457, "start": 20098, "end": 20185, "kind": "table", "text": "| [术语表](08%20理论组织和形式化框架/附录/术语表.md) / [缺口台账](08%20理论组织和形式化框架/附录/缺口台账.md) | 术语权威口径与缺口登记 |"}
-{"doc_id": "D001", "sid": 458, "start": 20186, "end": 20242, "kind": "table", "text": "| [推导链](10%20探索/CQM_探索_推导链.md) | 环 1–27 推导链与缺口登记（非权威源） |"}
-{"doc_id": "D001", "sid": 459, "start": 20243, "end": 20305, "kind": "table", "text": "| [相变锚与相变判据](10%20探索/CQM_探索_相变锚与相变判据.md) | 相变锚三层定义、判据提炼（过程稿） |"}
-{"doc_id": "D001", "sid": 460, "start": 20306, "end": 20388, "kind": "table", "text": "| [锚–H–K 结构桥梁](10%20探索/CQM_探索_锚-H-K结构桥梁推导.md) | 锚、历史总和 $\\mathsf H$、记忆核 $K$ 的结构桥梁 |"}
-{"doc_id": "D001", "sid": 461, "start": 20389, "end": 20494, "kind": "table", "text": "| [二维晶格超导全链路](10%20探索/稳定/CQM_二维晶格超导_全链路整合.md) / [一维闭环节点链](10%20探索/稳定/CQM_一维闭环节点链.md) | 稳定稿（非权威源，待第三方复现） |"}
-{"doc_id": "D001", "sid": 462, "start": 20495, "end": 20561, "kind": "table", "text": "| [Lean 验证](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` 与 A 闸证明模块 |"}
-{"doc_id": "D001", "sid": 463, "start": 20562, "end": 20621, "kind": "table", "text": "| [归档](归档/) | 量子引力集成、框架路线纪要、混合矩阵、质数数轴、超导旧框架承接卷、FG 自守形式条件链 |"}
-{"doc_id": "D001", "sid": 464, "start": 20622, "end": 20669, "kind": "table", "text": "| [归档 CNT](归档/归档%20CNT/) | CNT 阶段历史文档（只读，不修改） |"}
-{"doc_id": "D001", "sid": 465, "start": 20671, "end": 20681, "kind": "prose", "text": "</details>"}
-{"doc_id": "D001", "sid": 466, "start": 20683, "end": 20686, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 467, "start": 20688, "end": 20699, "kind": "heading", "text": "## 10 引用与许可"}
-{"doc_id": "D001", "sid": 468, "start": 20701, "end": 20767, "kind": "prose", "text": "引用本仓库时，请注明仓库地址与所引文档的标题、章节；引用具体数值时，请一并保留该处的状态标注（如「构造后验数字校验，待独立复现」）。"}
-{"doc_id": "D001", "sid": 469, "start": 20769, "end": 20778, "kind": "code", "text": "```bibtex"}
-{"doc_id": "D001", "sid": 470, "start": 20779, "end": 20799, "kind": "code", "text": "@misc{cqmformal2026,"}
-{"doc_id": "D001", "sid": 471, "start": 20800, "end": 20820, "kind": "code", "text": "  author = {ruster},"}
-{"doc_id": "D001", "sid": 472, "start": 20821, "end": 20864, "kind": "code", "text": "  title  = {CQMFormal: 耦合常数量子力学（CQM）形式化框架},"}
-{"doc_id": "D001", "sid": 473, "start": 20865, "end": 20883, "kind": "code", "text": "  year   = {2026},"}
-{"doc_id": "D001", "sid": 474, "start": 20884, "end": 20960, "kind": "code", "text": "  note   = {GitHub repository: Qp1117b/Coupling-Constant-Quantum-Mechanics},"}
-{"doc_id": "D001", "sid": 475, "start": 20961, "end": 21036, "kind": "code", "text": "  url    = {https://github.com/Qp1117b/Coupling-Constant-Quantum-Mechanics}"}
-{"doc_id": "D001", "sid": 476, "start": 21037, "end": 21038, "kind": "code", "text": "}"}
-{"doc_id": "D001", "sid": 477, "start": 21039, "end": 21039, "kind": "code", "text": ""}
-{"doc_id": "D001", "sid": 478, "start": 21040, "end": 21054, "kind": "code", "text": "@misc{cnt2026,"}
-{"doc_id": "D001", "sid": 479, "start": 21055, "end": 21075, "kind": "code", "text": "  author = {ruster},"}
-{"doc_id": "D001", "sid": 480, "start": 21076, "end": 21098, "kind": "code", "text": "  title  = {CNT 完整研究},"}
-{"doc_id": "D001", "sid": 481, "start": 21099, "end": 21117, "kind": "code", "text": "  year   = {2026},"}
-{"doc_id": "D001", "sid": 482, "start": 21118, "end": 21154, "kind": "code", "text": "  doi    = {10.5281/zenodo.20804380}"}
-{"doc_id": "D001", "sid": 483, "start": 21155, "end": 21156, "kind": "code", "text": "}"}
-{"doc_id": "D001", "sid": 484, "start": 21157, "end": 21160, "kind": "code", "text": "```"}
-{"doc_id": "D001", "sid": 485, "start": 21162, "end": 21205, "kind": "prose", "text": "外部文献 PDF 存于 [`归档/一体化研究/文献/`](归档/一体化研究/文献/)；"}
-{"doc_id": "D001", "sid": 486, "start": 21205, "end": 21296, "kind": "prose", "text": "CNT 完整研究已发布于 Zenodo：DOI [10.5281/zenodo.20804380](https://doi.org/10.5281/zenodo.20804380)。"}
-{"doc_id": "D001", "sid": 487, "start": 21298, "end": 21334, "kind": "prose", "text": "**许可**：本仓库暂未附许可证文件；在补充许可证前，默认保留所有权利。"}
-{"doc_id": "D001", "sid": 488, "start": 21334, "end": 21348, "kind": "prose", "text": "转载、引用或合作请联系作者。"}
-{"doc_id": "D001", "sid": 489, "start": 21350, "end": 21353, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 490, "start": 21355, "end": 21366, "kind": "heading", "text": "## 11 参与与反馈"}
-{"doc_id": "D001", "sid": 491, "start": 21368, "end": 21429, "kind": "list", "text": "- **指出错误**：推导、文献出处、术语口径、相对链接、`$` 配对、缺口标注——欢迎开 Issue，附文档路径与行号。"}
-{"doc_id": "D001", "sid": 492, "start": 21430, "end": 21481, "kind": "list", "text": "- **可复现性**：若你复现（或复现失败）某个数值，请附环境、命令与输出；这正是本仓库最需要的反馈。"}
-{"doc_id": "D001", "sid": 493, "start": 21482, "end": 21543, "kind": "list", "text": "- **不接受**：绕过缺口把「构造」写成「已证」、把外部文献结论写成 CQM 既有口径、新开缺口编号或升级既有缺口状态。"}
-{"doc_id": "D001", "sid": 494, "start": 21544, "end": 21624, "kind": "list", "text": "- **提交前**：请先读 [`AGENTS.md`](AGENTS.md) 与 [`.trae/skills/`](.trae/skills/) 的审校规则；"}
-{"doc_id": "D001", "sid": 495, "start": 21624, "end": 21682, "kind": "list", "text": "改动理论文档须同步派生产物并跑通 `check_consistency` 与 `check_provenance`。"}
-{"doc_id": "D001", "sid": 496, "start": 21683, "end": 21699, "kind": "list", "text": "- **讨论语言**：简体中文。"}
-{"doc_id": "D001", "sid": 497, "start": 21701, "end": 21704, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 498, "start": 21706, "end": 21712, "kind": "heading", "text": "## 关键词"}
-{"doc_id": "D001", "sid": 499, "start": 21714, "end": 21901, "kind": "prose", "text": "**中文**：耦合常数量子力学 · 大统一理论 · 量子化耦合常数 · 因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子"}
-{"doc_id": "D001", "sid": 500, "start": 21903, "end": 22428, "kind": "prose", "text": "**English**: Coupling Constant Quantum Mechanics · CQM · grand unified theory · quantized coupling constant · causal set · relational quantum mechanics · loop quantum gravity · dimensional genesis · automorphic forms · Langlands program · generalized Riemann hypothesis · Riemann hypothesis · fine-structure constant · Newtonian gravitational constant · proper-time flow · distributed noncommutativity · difference–memory-kernel superconductivity · fine gravity · historical materialism · confinement boundary · SU(5) · GL(5)"}
-{"doc_id": "D001", "sid": 501, "start": 22430, "end": 22433, "kind": "prose", "text": "---"}
-{"doc_id": "D001", "sid": 502, "start": 22435, "end": 22454, "kind": "heading", "text": "## English Abstract"}
-{"doc_id": "D001", "sid": 503, "start": 22456, "end": 23189, "kind": "prose", "text": "**CQMFormal** is a research framework for a *grand-unified* description of physics built on a single substitution: quantize the coupling constant itself. Instead of the position–momentum pair, CQM takes the logarithmic coupling $\\hat u=\\ln\\hat r$ and the proper-time-flow momentum $\\hat p_u=\\hat v_\\tau/\\mathscr{C}$ as canonical conjugates, with $[\\hat u,\\hat p_u]=i$; here $\\mathscr{C}$ is the English notation for the phase quantum $☯$. The framework is constructed on causal sets, relational quantum mechanics, and loop quantum gravity, but repositions their ontology: spacetime, gauge interactions, Standard-Model parameters, and superconductivity are treated as emergent consequences of this algebra at the confinement boundary."}
-{"doc_id": "D001", "sid": 504, "start": 23191, "end": 23871, "kind": "prose", "text": "The programme is organized around five connected lines: (1) proper-time–coupling noncommutativity, $\\Delta u\\,\\Delta v_\\tau\\ge\\mathscr{C}/2$; (2) distributed noncommutativity, $[\\hat u_G,v_\\tau^{(i)}]=i\\mathscr{C}/N$, which supplies an algebraic origin for non-Markovianity; (3) a difference–memory-kernel theory of superconductivity with a 27-ring genesis chain; (4) dimensional genesis, in which time is the first dimension and $K_L$, $K_M=G_N^{-1}$ are implementation constants; and (5) automorphic/Langlands stratification, $\\mathrm{GL}(5)\\to\\mathrm{SU}(5)\\Rightarrow U(1)\\times SU(2)\\times SU(3)$, where GRH is the real-spectrum condition at the fixed $\\mathrm{GL}(5)$ level."}
-{"doc_id": "D001", "sid": 505, "start": 23873, "end": 24153, "kind": "prose", "text": "Its philosophical foundation is historical materialism: matter is primary, symmetry is an organizational constraint rather than a prior form, and mathematical structure is a fossil of material self-organization. This foundation is an ontological positioning, not a physical proof."}
-{"doc_id": "D001", "sid": 506, "start": 24155, "end": 24541, "kind": "prose", "text": "**Status**: core algebra is proved within the framework; the emergence chain and key gaps (C, G2–G8, G9–G22, N1–N4) remain open. Numerical agreements (e.g. $G_N$ at the ppm level, $\\alpha^{-1}$ via $A_4$ invariants) are **post-hoc numerical checks awaiting independent reproduction**, not accepted first-principles derivations. The Riemann-hypothesis document is a roadmap, not a proof."}
-{"doc_id": "D001", "sid": 507, "start": 24543, "end": 24773, "kind": "prose", "text": "**Keywords**: grand unified theory, quantized coupling constant, causal sets, loop quantum gravity, automorphic forms, Langlands program, Riemann hypothesis, superconductivity, dimensional analysis, Lean 4, historical materialism."}
+{"doc_id": "D001", "sid": 196, "start": 7618, "end": 7805, "kind": "prose", "text": "→ [朗兰兹分层共振与相变量子](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md)、[黎曼猜想证明思路](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md)、[相变弧线与自守形式同步](04%20前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md)、[相变量子的双重身份](04%20前沿研究/CQM_前沿研究_相变量子的双重身份.md)"}
+{"doc_id": "D001", "sid": 197, "start": 7807, "end": 7827, "kind": "heading", "text": "### 4.6 两种引力：GR 与 FG"}
+{"doc_id": "D001", "sid": 198, "start": 7829, "end": 7870, "kind": "prose", "text": "**是什么**：CQM 的核心论断是「引力不是一种力，而是物质自组织的因果条件」。"}
+{"doc_id": "D001", "sid": 199, "start": 7870, "end": 7885, "kind": "prose", "text": "它按因果结构的深度与广度分化："}
+{"doc_id": "D001", "sid": 200, "start": 7887, "end": 7913, "kind": "table", "text": "| 层级 | 存在论地位 | 数学结构 | 特征 |"}
+{"doc_id": "D001", "sid": 201, "start": 7914, "end": 7935, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D001", "sid": 202, "start": 7936, "end": 7990, "kind": "table", "text": "| **前时空** | 先于引力 | 谱经 GL(5) 紧化投影与黎曼零点相关 | 物质处于前时空的状态 |"}
+{"doc_id": "D001", "sid": 203, "start": 7991, "end": 8044, "kind": "table", "text": "| **GR** | 基底性同步前提 | 伪黎曼流形 | 平庸因果网络=基态时空，受 $G_N$ 限制 |"}
+{"doc_id": "D001", "sid": 204, "start": 8045, "end": 8141, "kind": "table", "text": "| **FG** | 展开性同步前提 | 主丛 $P(M,G)$ 上的联络 $\\mathcal A_{\\rm FG}$ | 层级因果网络，**不受 $G_N$ 限制**，量级 $O(1)$ |"}
+{"doc_id": "D001", "sid": 205, "start": 8143, "end": 8196, "kind": "prose", "text": "**FG 是什么**：精细引力是 GR 基态的非平庸激发，是主丛上的因果限制/退相干场，不表现为几何吸引。"}
+{"doc_id": "D001", "sid": 206, "start": 8196, "end": 8288, "kind": "prose", "text": "**一个联络生成两种曲率**：底空间 Regge 亏角 $\\varepsilon$ + 伴丛曲率 $F=d\\mathcal A+\\mathcal A\\wedge\\mathcal A$。"}
+{"doc_id": "D001", "sid": 207, "start": 8288, "end": 8316, "kind": "prose", "text": "它在电子、元素、分子、晶胞等不同物质组织层级有不同实现。"}
+{"doc_id": "D001", "sid": 208, "start": 8318, "end": 8396, "kind": "prose", "text": "**CQM 不另立「量子引力」层**：无量纲不确定性关系、固有时流速涨落、亏角量子涨落与同步算符的紧化作用，就是 FG 的内容——**FG 就是 FG**。"}
+{"doc_id": "D001", "sid": 209, "start": 8398, "end": 8419, "kind": "prose", "text": "**状态**：【框架】；N1–N4 开放。"}
+{"doc_id": "D001", "sid": 210, "start": 8419, "end": 8533, "kind": "prose", "text": "→ [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md)、[FG 核心理论](07%20精细引力（FG）/FG_核心理论.md)、[FG 纤维丛理论](07%20精细引力（FG）/FG_纤维丛理论.md)"}
+{"doc_id": "D001", "sid": 211, "start": 8535, "end": 8562, "kind": "heading", "text": "### 4.7 常数：$\\alpha$ 与 $G_N$"}
+{"doc_id": "D001", "sid": 212, "start": 8564, "end": 8601, "kind": "prose", "text": "CQM 最受检验、也最需要谨慎阅读的部分，是把两个「实验输入」写成谱组合："}
+{"doc_id": "D001", "sid": 213, "start": 8603, "end": 8605, "kind": "prose", "text": "$$"}
+{"doc_id": "D001", "sid": 214, "start": 8606, "end": 8684, "kind": "prose", "text": "G_N=\\frac{\\hbar c}{m_p^2}\\cdot I\\cdot\\lambda_c\\cdot ☯^2\\cdot\\mathfrak c_1\\cdot"}
+{"doc_id": "D001", "sid": 215, "start": 8685, "end": 8732, "kind": "prose", "text": "\\exp\\left(-\\frac{2}{☯}\\right)\\cdot(1+\\kappa ☯)."}
+{"doc_id": "D001", "sid": 216, "start": 8733, "end": 8735, "kind": "prose", "text": "$$"}
+{"doc_id": "D001", "sid": 217, "start": 8737, "end": 8761, "kind": "table", "text": "| 参数 | 符号 | 数值 | 来源/状态 |"}
+{"doc_id": "D001", "sid": 218, "start": 8762, "end": 8785, "kind": "table", "text": "|:---|:---:|:---:|:---|"}
+{"doc_id": "D001", "sid": 219, "start": 8786, "end": 8863, "kind": "table", "text": "| 相变量子 | $☯$ | $0.02309570897$ | $\\frac{d}{ds}\\ln\\xi(s)\\big\\vert_{s=1}$（严格） |"}
+{"doc_id": "D001", "sid": 220, "start": 8864, "end": 8930, "kind": "table", "text": "| 第一耦级 | $\\mathfrak c_1$ | $200.04045483$ | $1/4+\\gamma_1^2$（严格） |"}
+{"doc_id": "D001", "sid": 221, "start": 8931, "end": 8992, "kind": "table", "text": "| Mathieu 临界 | $\\lambda_c$ | $1.316022911$ | 临界方程唯一根（框架内构造） |"}
+{"doc_id": "D001", "sid": 222, "start": 8993, "end": 9043, "kind": "table", "text": "| Dynkin 指数比 | $I$ | $5/3$ | $\\mathrm{SU}(5)$ 群论 |"}
+{"doc_id": "D001", "sid": 223, "start": 9044, "end": 9097, "kind": "table", "text": "| 谱修正 | $\\kappa$ | $(31+☯)/30$ | 4-单纯形/Adele 周期（构造） |"}
+{"doc_id": "D001", "sid": 224, "start": 9098, "end": 9184, "kind": "table", "text": "| $G_N$（公式值） | | $6.708811657\\times10^{-39}\\ \\mathrm{GeV}^{-2}$ | **构造后验数字校验，待独立复现** |"}
+{"doc_id": "D001", "sid": 225, "start": 9185, "end": 9305, "kind": "table", "text": "| $G_N$（SI） | | $6.6742810045\\times10^{-11}\\ \\mathrm{m^3\\,kg^{-1}\\,s^{-2}}$ | 与 CODATA 偏差约 $-3$ ppm；**构造后验数字校验，待独立复现** |"}
+{"doc_id": "D001", "sid": 226, "start": 9306, "end": 9393, "kind": "table", "text": "| $\\alpha^{-1}_{\\mathrm{SU}(5)}$ | | $16384\\pi/375\\approx137.2583$ | 启发式近似，偏差约 0.162% |"}
+{"doc_id": "D001", "sid": 227, "start": 9394, "end": 9533, "kind": "table", "text": "| $\\alpha^{-1}_{\\mathrm{Wyler}}$ | | $\\frac{16}{9}\\pi^{11/4}(5!)^{1/4}\\approx137.0361$ | Wyler 常数；$A_4$ 群论不变量；0.61 ppm；**构造后验数字校验，待独立复现** |"}
+{"doc_id": "D001", "sid": 228, "start": 9535, "end": 9586, "kind": "prose", "text": "**怎么读这张表**：$☯$、$\\mathfrak c_1$ 是由 $\\xi$ 函数定义的严格数学量；"}
+{"doc_id": "D001", "sid": 229, "start": 9586, "end": 9646, "kind": "prose", "text": "$G_N$ 的 ppm 级符合是**框架内构造 + 构造后验数字校验，待独立复现**，不是主流学界接受的独立第一性推导。"}
+{"doc_id": "D001", "sid": 230, "start": 9646, "end": 9707, "kind": "prose", "text": "历史上「无参数闭合公式」多次被证伪，因此这里的态度是：公式内部自洽、可被第三方复现检验，但不把数值符合当作理论已证的证据。"}
+{"doc_id": "D001", "sid": 231, "start": 9709, "end": 9845, "kind": "prose", "text": "→ [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md)、[GN 第一性推导公理化证明稿](04%20前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md)、[Wyler 常数](04%20前沿研究/Wyler常数_A4群论分解.md)"}
+{"doc_id": "D001", "sid": 232, "start": 9847, "end": 9868, "kind": "heading", "text": "### 4.8 退相干、测量与关系性实在论"}
+{"doc_id": "D001", "sid": 233, "start": 9870, "end": 9939, "kind": "prose", "text": "**是什么**：引力因果限制场退相干理论把退相干重新定义为「质子集体引力因果限制结构对非本体粒子经典波函数的截断」，并给出因果截断不等式："}
+{"doc_id": "D001", "sid": 234, "start": 9941, "end": 9943, "kind": "prose", "text": "$$"}
+{"doc_id": "D001", "sid": 235, "start": 9944, "end": 9995, "kind": "prose", "text": "\\Delta\\tau\\ \\ge\\ \\tau_{\\rm res}=\\frac{\\hbar}{Mc^2}."}
+{"doc_id": "D001", "sid": 236, "start": 9996, "end": 9998, "kind": "prose", "text": "$$"}
+{"doc_id": "D001", "sid": 237, "start": 10000, "end": 10032, "kind": "prose", "text": "四层结构是**截断 → 相容性 → 可能性空间 → 唯一性**。"}
+{"doc_id": "D001", "sid": 238, "start": 10034, "end": 10082, "kind": "prose", "text": "**关键区分**：退相干解决**唯一性**（可能性空间压缩到唯一分支），但不解决**确定性**；"}
+{"doc_id": "D001", "sid": 239, "start": 10082, "end": 10092, "kind": "prose", "text": "确定性由再生产锁定。"}
+{"doc_id": "D001", "sid": 240, "start": 10092, "end": 10127, "kind": "prose", "text": "全局演化保持幺正，子系统边界处的局部描述非幺正（**条件性幺正**）。"}
+{"doc_id": "D001", "sid": 241, "start": 10127, "end": 10143, "kind": "prose", "text": "因此不需要坍缩，也不需要多世界。"}
+{"doc_id": "D001", "sid": 242, "start": 10145, "end": 10211, "kind": "prose", "text": "**贝尔不等式**：作为实验事实仍被违反；改变的是本体论解读——属性随附、关系显现，隐变量的位置由因果结构占据，而不是预先存在的值。"}
+{"doc_id": "D001", "sid": 243, "start": 10211, "end": 10237, "kind": "prose", "text": "CQM 不提出新的局部隐变量模型，也没有新实验预言。"}
+{"doc_id": "D001", "sid": 244, "start": 10239, "end": 10285, "kind": "prose", "text": "**状态**：【框架】+【构造假设】；唯一性难题的严格化（闭环相容子空间一维性猜想）仍开放。"}
+{"doc_id": "D001", "sid": 245, "start": 10285, "end": 10427, "kind": "prose", "text": "→ [引力因果场](03%20引力与退相干/CQM_退相干_引力因果场.md)、[跨层级深耦合与唯一性难题](03%20引力与退相干/CQM_退相干_跨层级深耦合与唯一性难题.md)、[关系性实在论与对称性重组](04%20前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md)"}
+{"doc_id": "D001", "sid": 246, "start": 10429, "end": 10432, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 247, "start": 10434, "end": 10450, "kind": "heading", "text": "## 5 哲学基础：历史唯物主义"}
+{"doc_id": "D001", "sid": 248, "start": 10452, "end": 10473, "kind": "prose", "text": "CQM 的哲学基础是**历史唯物主义**。"}
+{"doc_id": "D001", "sid": 249, "start": 10473, "end": 10509, "kind": "prose", "text": "它不是装饰性前言，而是三条本体论承诺，直接决定理论允许什么、不允许什么："}
+{"doc_id": "D001", "sid": 250, "start": 10511, "end": 10530, "kind": "table", "text": "| 承诺 | 在 CQM 中的落点 |"}
+{"doc_id": "D001", "sid": 251, "start": 10531, "end": 10542, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 252, "start": 10543, "end": 10611, "kind": "table", "text": "| **物质先在，存在先于过程** | 质子/中子是有限本体，先于再生产闭环；再生产 $\\mu^2=\\mu$ 是**维持**而非生成 |"}
+{"doc_id": "D001", "sid": 253, "start": 10612, "end": 10683, "kind": "table", "text": "| **对称性不是先验形式** | 群被读作物质自组织中的组织约束；$\\mathrm{SU}(5)$ 不是预设，而是第一稳定构型被自然锁定 |"}
+{"doc_id": "D001", "sid": 254, "start": 10684, "end": 10747, "kind": "table", "text": "| **数学结构是物质自组织的化石** | 自守形式、黎曼零点谱、量纲，都是自组织留下的结构印记，而非独立自存的柏拉图对象 |"}
+{"doc_id": "D001", "sid": 255, "start": 10749, "end": 10770, "kind": "prose", "text": "再加一条方法论承诺：**层级不是还原**。"}
+{"doc_id": "D001", "sid": 256, "start": 10770, "end": 10818, "kind": "prose", "text": "基础层级是边界层、条件层、原料层，**不是决定层**；高层受低层物质条件限定，但不能从低层推导。"}
+{"doc_id": "D001", "sid": 257, "start": 10818, "end": 10870, "kind": "prose", "text": "这使 CQM 同时拒绝「上层可完全还原」与「上层凭空涌现」两种片面立场，而采取「条件—展开」的横向结构。"}
+{"doc_id": "D001", "sid": 258, "start": 10872, "end": 10977, "kind": "prose", "text": "历史唯物主义的「有限本体—再生产—分化—阈值—重组」语法，与差异-记忆核超导链逐环对应：再生产给出固有时，固有时给出节点间节律差异，差异给出配对通道，配对经渗流给出连通域，刚度判据界定相变，相变留下记忆核平台。"}
+{"doc_id": "D001", "sid": 259, "start": 10979, "end": 11056, "kind": "prose", "text": "**边界（必须保留）**：这是**结构同构**，不是把社会范畴还原为物理量；哲学层只提供本体论定位，**不构成物理证明**，也不改变任何缺口的严格性状态。"}
+{"doc_id": "D001", "sid": 260, "start": 11056, "end": 11084, "kind": "prose", "text": "社会与 AI 的类比只作结构类比，不构成超导机制的证据。"}
+{"doc_id": "D001", "sid": 261, "start": 11086, "end": 11197, "kind": "prose", "text": "→ [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md)、[资本主义、旧物理学与层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md)"}
+{"doc_id": "D001", "sid": 262, "start": 11199, "end": 11202, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 263, "start": 11204, "end": 11220, "kind": "heading", "text": "## 6 严格性、缺口与可检验性"}
+{"doc_id": "D001", "sid": 264, "start": 11222, "end": 11236, "kind": "heading", "text": "### 6.1 状态词的含义"}
+{"doc_id": "D001", "sid": 265, "start": 11238, "end": 11249, "kind": "table", "text": "| 标记 | 含义 |"}
+{"doc_id": "D001", "sid": 266, "start": 11250, "end": 11261, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 267, "start": 11262, "end": 11285, "kind": "table", "text": "| **【严格】** | 框架内已给出证明 |"}
+{"doc_id": "D001", "sid": 268, "start": 11286, "end": 11311, "kind": "table", "text": "| **【条件严格】** | 在明确条件下成立 |"}
+{"doc_id": "D001", "sid": 269, "start": 11312, "end": 11335, "kind": "table", "text": "| **【构造】** | 框架内构造，未证 |"}
+{"doc_id": "D001", "sid": 270, "start": 11336, "end": 11370, "kind": "table", "text": "| **【构造假设】** | 研究线的新构造，未证，登记待推编号 |"}
+{"doc_id": "D001", "sid": 271, "start": 11371, "end": 11390, "kind": "table", "text": "| **【待推】** | 未完成项 |"}
+{"doc_id": "D001", "sid": 272, "start": 11391, "end": 11430, "kind": "table", "text": "| **【文献对照】** | 外部文献结论，只作对照，不并入 CQM 口径 |"}
+{"doc_id": "D001", "sid": 273, "start": 11431, "end": 11462, "kind": "table", "text": "| **【哲学诠释】** | 本体论定位，非物理/数学命题 |"}
+{"doc_id": "D001", "sid": 274, "start": 11464, "end": 11476, "kind": "heading", "text": "### 6.2 核心缺口"}
+{"doc_id": "D001", "sid": 275, "start": 11478, "end": 11495, "kind": "table", "text": "| 缺口 | 内容 | 优先级 |"}
+{"doc_id": "D001", "sid": 276, "start": 11496, "end": 11513, "kind": "table", "text": "|:---|:---|:---:|"}
+{"doc_id": "D001", "sid": 277, "start": 11514, "end": 11555, "kind": "table", "text": "| **C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |"}
+{"doc_id": "D001", "sid": 278, "start": 11556, "end": 11595, "kind": "table", "text": "| **G2** | 耦合空间 → 双曲 Laplacian 的必要性 | |"}
+{"doc_id": "D001", "sid": 279, "start": 11596, "end": 11643, "kind": "table", "text": "| **G3** | $\\hat D=-i(\\partial_u-1/2)$ 的唯一性 | |"}
+{"doc_id": "D001", "sid": 280, "start": 11644, "end": 11693, "kind": "table", "text": "| **G4** | $\\hat D\\to\\hat H=\\hat D^2+1/4$ 的涌现 | |"}
+{"doc_id": "D001", "sid": 281, "start": 11694, "end": 11736, "kind": "table", "text": "| **G5** | 退相干 → 边界条件 $\\vartheta_n$ 锁定 | |"}
+{"doc_id": "D001", "sid": 282, "start": 11737, "end": 11774, "kind": "table", "text": "| **G7** | $\\Sigma_{ij}$ 的第一性数值来源 | |"}
+{"doc_id": "D001", "sid": 283, "start": 11775, "end": 11812, "kind": "table", "text": "| **G8** | CP 破坏相位 $\\delta$ 的严格来源 | |"}
+{"doc_id": "D001", "sid": 284, "start": 11814, "end": 11951, "kind": "prose", "text": "另有 **G9–G22**（超导涌现链，权威处在 [超导核心理论](06%20超导/CQM_超导核心理论.md) §13）与 **N1–N4**（中子缺陷矩阵与 FG 角亏，权威处在 [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md) §二.5）。"}
+{"doc_id": "D001", "sid": 285, "start": 11951, "end": 12111, "kind": "prose", "text": "三套编号作用域不同，引用时不得混用；G6 未定义（编号保留，不得填补）；链层另有 `审-1…审-15`、`临-1…临-26`、`链外-A…F`、`M1–M10` 等约 62 项，权威处为 [推导链](10%20探索/CQM_探索_推导链.md) 与 [缺口台账](08%20理论组织和形式化框架/附录/缺口台账.md)。"}
+{"doc_id": "D001", "sid": 286, "start": 12113, "end": 12157, "kind": "prose", "text": "**P 编号三系**（同名不同物，引用须指出出处）：渗流篇 P1–P6 是外部对照缺口；"}
+{"doc_id": "D001", "sid": 287, "start": 12157, "end": 12204, "kind": "prose", "text": "关系性实在论篇 P1–P7 是可检验候选；反物质引力篇 P1–P3 是结构层 null 预测。"}
+{"doc_id": "D001", "sid": 288, "start": 12204, "end": 12228, "kind": "prose", "text": "三系不并入 C/G/N 编号，也不升级既有缺口。"}
+{"doc_id": "D001", "sid": 289, "start": 12230, "end": 12251, "kind": "heading", "text": "### 6.3 哪些地方可以被检验、被反驳"}
+{"doc_id": "D001", "sid": 290, "start": 12253, "end": 12269, "kind": "prose", "text": "CQM 不是「什么都对」的框架。"}
+{"doc_id": "D001", "sid": 291, "start": 12269, "end": 12283, "kind": "prose", "text": "它给出三类可操作的判别接口："}
+{"doc_id": "D001", "sid": 292, "start": 12285, "end": 12377, "kind": "list", "text": "1. **反物质引力 null 预测**：$G_N$ 公式只含实谱不变量，因此结构层预测 $G_{++}=G_{--}=G_{+-}=G_N$（$+$/$-$ 分别标记物质/反物质）。"}
+{"doc_id": "D001", "sid": 293, "start": 12377, "end": 12522, "kind": "list", "text": "这与 ALPHA-g、MICROSCOPE 等实验直接对照；若观测到三组耦合不等，该 null 预测即被违反，公式或其「单一 $m_p$ 锚点」前提须修改并新增缺口（详见 [反物质引力与 GN 推导边界](04%20前沿研究/CQM_前沿研究_反物质引力与GN推导边界.md) §5.5）。"}
+{"doc_id": "D001", "sid": 294, "start": 12523, "end": 12591, "kind": "list", "text": "2. **超导的尺度判据**：$\\ell_*$（联合协方差关联长度）与 $R_{\\rm DNR}$（同切片、异协方差的响应差）是可算量；"}
+{"doc_id": "D001", "sid": 295, "start": 12591, "end": 12622, "kind": "list", "text": "赝能隙到 ARPES/STM 的映射登记为 G21，尚未闭合。"}
+{"doc_id": "D001", "sid": 296, "start": 12623, "end": 12688, "kind": "list", "text": "3. **贝尔与测量**：贝尔不等式作为实验事实仍被违反；CQM 只改本体论解读，**不提出新预言**——这是必须如实写明的边界。"}
+{"doc_id": "D001", "sid": 297, "start": 12690, "end": 12773, "kind": "prose", "text": "**没有给出的东西**：$T_c$ 的定量预测（未推、暂时未定）、$G_N$ 的独立第一性证明（构造后验）、RH 的证明（路线图）、以及任何超出标准模型的新实验信号。"}
+{"doc_id": "D001", "sid": 298, "start": 12773, "end": 12806, "kind": "prose", "text": "把这些写成「已证」会违反本仓库的三条红线：不欺骗、不绕过、不虚构。"}
+{"doc_id": "D001", "sid": 299, "start": 12808, "end": 12825, "kind": "heading", "text": "### 6.4 常见问题（FAQ）"}
+{"doc_id": "D001", "sid": 300, "start": 12827, "end": 12850, "kind": "prose", "text": "**Q：CQM 是一个已完成的「万物理论」吗？"}
+{"doc_id": "D001", "sid": 301, "start": 12850, "end": 12852, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 302, "start": 12853, "end": 12856, "kind": "prose", "text": "不是。"}
+{"doc_id": "D001", "sid": 303, "start": 12856, "end": 12911, "kind": "prose", "text": "它是研究框架，主要研究物理系统的费米—强子尺度（质子/中子内部与禁闭边界）；核/原子、分子、宇宙尺度尚未定论。"}
+{"doc_id": "D001", "sid": 304, "start": 12911, "end": 12934, "kind": "prose", "text": "核心代数在框架内严格，但涌现链与关键缺口开放。"}
+{"doc_id": "D001", "sid": 305, "start": 12936, "end": 12965, "kind": "prose", "text": "**Q：它和 1970 年代的 SU(5) 大统一一样吗？"}
+{"doc_id": "D001", "sid": 306, "start": 12965, "end": 12967, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 307, "start": 12968, "end": 12972, "kind": "prose", "text": "不一样。"}
+{"doc_id": "D001", "sid": 308, "start": 12972, "end": 13023, "kind": "prose", "text": "CQM 的 SU(5) 是禁闭边界的基态同步结构，不是把标准模型直接嵌入 SU(5) 的质子衰变模型；"}
+{"doc_id": "D001", "sid": 309, "start": 13023, "end": 13060, "kind": "prose", "text": "最小 SU(5) 大统一模型已被 Super-Kamiokande 排除。"}
+{"doc_id": "D001", "sid": 310, "start": 13060, "end": 13102, "kind": "prose", "text": "CQM 的标准模型规范群由「规范重组」输出，重子数守恒（质子不衰变）属框架构造假设。"}
+{"doc_id": "D001", "sid": 311, "start": 13104, "end": 13118, "kind": "prose", "text": "**Q：黎曼猜想被证明了吗？"}
+{"doc_id": "D001", "sid": 312, "start": 13118, "end": 13120, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 313, "start": 13121, "end": 13124, "kind": "prose", "text": "没有。"}
+{"doc_id": "D001", "sid": 314, "start": 13124, "end": 13177, "kind": "prose", "text": "仓库里是**证明路线图**与循环性诊断，不是证明本身：3 个已知环节 + 2 个待推环节 + 物理存在性；"}
+{"doc_id": "D001", "sid": 315, "start": 13177, "end": 13190, "kind": "prose", "text": "待推 1 的相位半仍未解。"}
+{"doc_id": "D001", "sid": 316, "start": 13192, "end": 13212, "kind": "prose", "text": "**Q：超导的 $T_c$ 能算出来吗？"}
+{"doc_id": "D001", "sid": 317, "start": 13212, "end": 13214, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 318, "start": 13215, "end": 13220, "kind": "prose", "text": "目前不能。"}
+{"doc_id": "D001", "sid": 319, "start": 13220, "end": 13298, "kind": "prose", "text": "相变条件与 $T_c$ **未推、暂时未定**；均匀、弱耦合、单带 $s$ 波极限退化为 BCS 表达式是条件命题，不是「已从 CQM 公设推出 BCS」。"}
+{"doc_id": "D001", "sid": 320, "start": 13300, "end": 13332, "kind": "prose", "text": "**Q：$G_N$ 偏差 $-3$ ppm 说明理论被验证了吗？"}
+{"doc_id": "D001", "sid": 321, "start": 13332, "end": 13334, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 322, "start": 13335, "end": 13341, "kind": "prose", "text": "不能这样读。"}
+{"doc_id": "D001", "sid": 323, "start": 13341, "end": 13381, "kind": "prose", "text": "这是**构造后验数字校验，待独立复现**；标准物理中 $G_N$ 仍是实验参数。"}
+{"doc_id": "D001", "sid": 324, "start": 13381, "end": 13413, "kind": "prose", "text": "仓库明确区分「框架内自洽」与「被主流学界接受的独立第一性推导」。"}
+{"doc_id": "D001", "sid": 325, "start": 13415, "end": 13443, "kind": "prose", "text": "**Q：它和圈量子引力、因果集、关系量子力学是什么关系？"}
+{"doc_id": "D001", "sid": 326, "start": 13443, "end": 13445, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 327, "start": 13446, "end": 13491, "kind": "prose", "text": "CQM 直接建立在这三者之上，但重构其本体论：量子化的对象不是场或时空，而是耦合常数本身；"}
+{"doc_id": "D001", "sid": 328, "start": 13491, "end": 13543, "kind": "prose", "text": "LQG 提供 Regge/自旋网络工具，因果集提供离散因果序，RQM 提供关系性实在与引力参与的退相干。"}
+{"doc_id": "D001", "sid": 329, "start": 13545, "end": 13565, "kind": "prose", "text": "**Q：为什么用历史唯物主义作哲学基础？"}
+{"doc_id": "D001", "sid": 330, "start": 13565, "end": 13567, "kind": "prose", "text": "**"}
+{"doc_id": "D001", "sid": 331, "start": 13568, "end": 13623, "kind": "prose", "text": "因为它提供三条本体论承诺（物质先在、对称性非先验、数学结构是自组织的化石），并使「层级不是还原」有了明确表述。"}
+{"doc_id": "D001", "sid": 332, "start": 13623, "end": 13657, "kind": "prose", "text": "这是**结构同构**与本体论定位，不构成物理证明，也不改变缺口状态。"}
+{"doc_id": "D001", "sid": 333, "start": 13659, "end": 13662, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 334, "start": 13664, "end": 13675, "kind": "heading", "text": "## 7 形式化与验证"}
+{"doc_id": "D001", "sid": 335, "start": 13677, "end": 13724, "kind": "prose", "text": "CQM 的数学结构配有 Lean 4 形式化、结构化数据、概念本体、超图与可重复构建的组织层。"}
+{"doc_id": "D001", "sid": 336, "start": 13726, "end": 13740, "kind": "heading", "text": "### 7.1 Lean 4"}
+{"doc_id": "D001", "sid": 337, "start": 13742, "end": 13758, "kind": "table", "text": "| 项目 | 位置 | 现状 |"}
+{"doc_id": "D001", "sid": 338, "start": 13759, "end": 13775, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D001", "sid": 339, "start": 13776, "end": 13982, "kind": "table", "text": "| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 仅 `require mathlib`；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |"}
+{"doc_id": "D001", "sid": 340, "start": 13983, "end": 14132, "kind": "table", "text": "| 形式化权威 | [`10 探索/超导第一性研究/05_Lean验证/`](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` v52 + 52 个在闸证明模块（`Ring15Lock*` 等），另有审计/探索模块；目录共 280+ 个 `.lean` 文件 |"}
+{"doc_id": "D001", "sid": 341, "start": 14133, "end": 14271, "kind": "table", "text": "| 一键闸 | `05_Lean验证/a_gate.ps1` | 编译 → `#print axioms` 白名单 → `#check` 类型对齐 → token 卫生；第 235 轮实测 52/52 编译、124 条公理、101 条 `#check` 对齐，FAIL 0 |"}
+{"doc_id": "D001", "sid": 342, "start": 14273, "end": 14306, "kind": "quote", "text": "> 形式化覆盖的是**已陈述的代数与结构命题**，不覆盖开放缺口。"}
+{"doc_id": "D001", "sid": 343, "start": 14306, "end": 14341, "kind": "quote", "text": "`axiom` 与 `sorry` 按缺口台账登记，不得读作已证结论。"}
+{"doc_id": "D001", "sid": 344, "start": 14341, "end": 14395, "kind": "quote", "text": "A 闸的公理白名单仅为 `propext`、`Classical.choice`、`Quot.sound`。"}
+{"doc_id": "D001", "sid": 345, "start": 14397, "end": 14408, "kind": "heading", "text": "### 7.2 组织层"}
+{"doc_id": "D001", "sid": 346, "start": 14410, "end": 14480, "kind": "prose", "text": "[`08 理论组织和形式化框架/`](08%20理论组织和形式化框架/) 把自然语言理论重构为可计算、可推理、可验证的结构化系统（七维度）："}
+{"doc_id": "D001", "sid": 347, "start": 14482, "end": 14515, "kind": "list", "text": "- **结构化数据**：83 个概念、63 条命题、69 条论证；"}
+{"doc_id": "D001", "sid": 348, "start": 14516, "end": 14558, "kind": "list", "text": "- **概念本体**：OWL 本体 25 类 / 427 个体 / 16 对象属性；"}
+{"doc_id": "D001", "sid": 349, "start": 14559, "end": 14606, "kind": "list", "text": "- **超图与知识图谱**：83 节点 / 19 超边 / 50 有向边；5,461 三元组；"}
+{"doc_id": "D001", "sid": 350, "start": 14607, "end": 14640, "kind": "list", "text": "- **语料与证据**：18,607 句索引、213 条证据映射；"}
+{"doc_id": "D001", "sid": 351, "start": 14641, "end": 14675, "kind": "list", "text": "- **展示可视化**：VitePress 阅读站、检索台、驾驶舱。"}
+{"doc_id": "D001", "sid": 352, "start": 14677, "end": 14689, "kind": "heading", "text": "### 7.3 复现命令"}
+{"doc_id": "D001", "sid": 353, "start": 14691, "end": 14704, "kind": "code", "text": "```powershell"}
+{"doc_id": "D001", "sid": 354, "start": 14705, "end": 14721, "kind": "code", "text": "# 组织层一致性（在仓库根目录）"}
+{"doc_id": "D001", "sid": 355, "start": 14722, "end": 14772, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_consistency.py\""}
+{"doc_id": "D001", "sid": 356, "start": 14773, "end": 14822, "kind": "code", "text": "python \"08 理论组织和形式化框架/_build/check_provenance.py\""}
+{"doc_id": "D001", "sid": 357, "start": 14823, "end": 14823, "kind": "code", "text": ""}
+{"doc_id": "D001", "sid": 358, "start": 14824, "end": 14865, "kind": "code", "text": "# Lean 单文件编译（在 Lean源码 目录执行，提供 Mathlib 基线）"}
+{"doc_id": "D001", "sid": 359, "start": 14866, "end": 14930, "kind": "code", "text": "lake env lean \"../../../10 探索/超导第一性研究/05_Lean验证/Ring15Spec.lean\""}
+{"doc_id": "D001", "sid": 360, "start": 14931, "end": 14931, "kind": "code", "text": ""}
+{"doc_id": "D001", "sid": 361, "start": 14932, "end": 14962, "kind": "code", "text": "# Lean 一键闸（A 闸；在 05_Lean验证 目录）"}
+{"doc_id": "D001", "sid": 362, "start": 14963, "end": 14999, "kind": "code", "text": "pwsh -NoProfile -File \".\\a_gate.ps1\""}
+{"doc_id": "D001", "sid": 363, "start": 15000, "end": 15003, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 364, "start": 15005, "end": 15008, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 365, "start": 15010, "end": 15019, "kind": "heading", "text": "## 8 仓库结构"}
+{"doc_id": "D001", "sid": 366, "start": 15021, "end": 15024, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 367, "start": 15025, "end": 15035, "kind": "code", "text": "CQMFormal/"}
+{"doc_id": "D001", "sid": 368, "start": 15036, "end": 15055, "kind": "code", "text": "├── README.md ← 本文件"}
+{"doc_id": "D001", "sid": 369, "start": 15056, "end": 15086, "kind": "code", "text": "├── 专题档案.md ← 专题/论证链登记（文档体系结构）"}
+{"doc_id": "D001", "sid": 370, "start": 15087, "end": 15117, "kind": "code", "text": "├── AGENTS.md ← 项目规范（红线、同步、验证）"}
+{"doc_id": "D001", "sid": 371, "start": 15118, "end": 15119, "kind": "code", "text": "│"}
+{"doc_id": "D001", "sid": 372, "start": 15120, "end": 15164, "kind": "code", "text": "├── 01 核心理论/ ← 理论主干（集成理论、量纲与群论、朗兰兹分层、唯物主义群论、"}
+{"doc_id": "D001", "sid": 373, "start": 15165, "end": 15211, "kind": "code", "text": "│                  共形场论与OPE、声子、引力存在论前提、历史唯物主义）"}
+{"doc_id": "D001", "sid": 374, "start": 15212, "end": 15259, "kind": "code", "text": "├── 02 量子引力/ ← 量子引力的层级归属讨论（结论：不另立量子引力层，由 FG 承担）"}
+{"doc_id": "D001", "sid": 375, "start": 15260, "end": 15296, "kind": "code", "text": "├── 03 引力与退相干/ ← G_N 公式、引力因果场、跨层级深耦合"}
+{"doc_id": "D001", "sid": 376, "start": 15297, "end": 15339, "kind": "code", "text": "├── 04 前沿研究/ ← DNR、自守形式、黎曼猜想路线、规范重组、反物质引力、"}
+{"doc_id": "D001", "sid": 377, "start": 15340, "end": 15397, "kind": "code", "text": "│                  Theta 对应、量子快置乱、渗流、Wyler 常数、Berry–Regge"}
+{"doc_id": "D001", "sid": 378, "start": 15398, "end": 15439, "kind": "code", "text": "├── 05 方法论与批判/ ← Hilbert–Pólya 批判、层级还原论批判"}
+{"doc_id": "D001", "sid": 379, "start": 15440, "end": 15486, "kind": "code", "text": "├── 06 超导/ ← 差异-记忆核超导（理论卷 + 材料与界面卷 + 数据 + 设计器）"}
+{"doc_id": "D001", "sid": 380, "start": 15487, "end": 15532, "kind": "code", "text": "├── 07 精细引力（FG）/ ← FG 核心理论、纤维丛理论、LQG–Regge 映射"}
+{"doc_id": "D001", "sid": 381, "start": 15533, "end": 15580, "kind": "code", "text": "├── 08 理论组织和形式化框架/ ← 结构化数据、OWL、超图、Lean 对接、展示可视化"}
+{"doc_id": "D001", "sid": 382, "start": 15581, "end": 15635, "kind": "code", "text": "├── 09 研究站服务/ ← 本地 Spring Boot 服务（阅读站 + SPARQL + 证据复核）"}
+{"doc_id": "D001", "sid": 383, "start": 15636, "end": 15681, "kind": "code", "text": "├── 10 探索/ ← 27 环推导链、相变锚、锚–H–K 桥梁、Lean 验证、稳定稿"}
+{"doc_id": "D001", "sid": 384, "start": 15682, "end": 15721, "kind": "code", "text": "└── 归档/ ← 历史文档与参考文献 PDF（只读；归档 CNT/ 不修改）"}
+{"doc_id": "D001", "sid": 385, "start": 15722, "end": 15725, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 386, "start": 15727, "end": 15730, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 387, "start": 15732, "end": 15741, "kind": "heading", "text": "## 9 阅读路径"}
+{"doc_id": "D001", "sid": 388, "start": 15743, "end": 15758, "kind": "table", "text": "| 你的目的 | 建议路径 |"}
+{"doc_id": "D001", "sid": 389, "start": 15759, "end": 15770, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 390, "start": 15771, "end": 15830, "kind": "table", "text": "| **先看全貌** | 本文件 §1–§4 → [集成理论](01%20核心理论/CQM_核心_集成理论.md) |"}
+{"doc_id": "D001", "sid": 391, "start": 15831, "end": 15944, "kind": "table", "text": "| **理解「量子化耦合常数」** | [集成理论](01%20核心理论/CQM_核心_集成理论.md) §3–§4 → [DNR](04%20前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md) §3、§6 |"}
+{"doc_id": "D001", "sid": 392, "start": 15945, "end": 16076, "kind": "table", "text": "| **理解超导** | [超导核心理论](06%20超导/CQM_超导核心理论.md) §0 → [推导链](10%20探索/CQM_探索_推导链.md) → [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) |"}
+{"doc_id": "D001", "sid": 393, "start": 16077, "end": 16180, "kind": "table", "text": "| **理解量纲与常数** | [量纲与群论](01%20核心理论/CQM_核心_量纲与群论.md) §一、§六、§七 → [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md) |"}
+{"doc_id": "D001", "sid": 394, "start": 16181, "end": 16331, "kind": "table", "text": "| **理解自守形式与 RH** | [朗兰兹分层](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md) → [RH 路线图](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md) → [待推 1](04%20前沿研究/CQM_前沿研究_待推1边界条件的五重联系.md) |"}
+{"doc_id": "D001", "sid": 395, "start": 16332, "end": 16424, "kind": "table", "text": "| **看形式化与验证** | [Lean 验证](10%20探索/超导第一性研究/05_Lean验证/) → [组织层总览](08%20理论组织和形式化框架/README.md) |"}
+{"doc_id": "D001", "sid": 396, "start": 16425, "end": 16544, "kind": "table", "text": "| **看哲学与方法论** | [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) → [层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md) |"}
+{"doc_id": "D001", "sid": 397, "start": 16546, "end": 16555, "kind": "prose", "text": "<details>"}
+{"doc_id": "D001", "sid": 398, "start": 16556, "end": 16595, "kind": "prose", "text": "<summary><b>完整文档索引（40+ 篇）</b></summary>"}
+{"doc_id": "D001", "sid": 399, "start": 16597, "end": 16608, "kind": "prose", "text": "**01 核心理论**"}
+{"doc_id": "D001", "sid": 400, "start": 16610, "end": 16622, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 401, "start": 16623, "end": 16634, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 402, "start": 16635, "end": 16738, "kind": "table", "text": "| [集成理论](01%20核心理论/CQM_核心_集成理论.md) | 十三部分总框架：本体论、耦合空间、动力学、禁闭、$\\mathrm{SU}(5)$ 谱、零点谱、两种引力、核子层级、超导、标准理论 |"}
+{"doc_id": "D001", "sid": 403, "start": 16739, "end": 16812, "kind": "table", "text": "| [引力存在论前提](01%20核心理论/CQM_核心_引力存在论前提.md) | 前时空/GR/FG 三层、中子缺陷矩阵、缺口 N1–N4 |"}
+{"doc_id": "D001", "sid": 404, "start": 16813, "end": 16889, "kind": "table", "text": "| [因果网络同步理论](01%20核心理论/CQM_核心_因果网络同步理论.md) | CNST：从黎曼结构提取同步理论；引力是因果同步的必要前提 |"}
+{"doc_id": "D001", "sid": 405, "start": 16890, "end": 17012, "kind": "table", "text": "| [朗兰兹分层共振与相变量子](01%20核心理论/CQM_核心_朗兰兹分层共振与相变量子.md) | 质数 → $\\mathrm{GL}(5)$ → $\\mathrm{SU}(5)$ → 规范群；$\\alpha$ 与 $☯$ 的统一位置 |"}
+{"doc_id": "D001", "sid": 406, "start": 17013, "end": 17102, "kind": "table", "text": "| [共形场论与 OPE](01%20核心理论/CQM_核心_共形场论与OPE.md) | CFT＝同步过程机制；共形自举＝OPE 结合律；$A_4$ 锁 $s,p,d,f$ |"}
+{"doc_id": "D001", "sid": 407, "start": 17103, "end": 17159, "kind": "table", "text": "| [声子理论](01%20核心理论/CQM_核心_声子理论.md) | 声子＝曲率量子，是同步与时空的前提 |"}
+{"doc_id": "D001", "sid": 408, "start": 17160, "end": 17235, "kind": "table", "text": "| [量纲与群论](01%20核心理论/CQM_核心_量纲与群论.md) | 量纲发生学、$K_T/K_L/K_M$、自然单位制批判、自守形式猜想 |"}
+{"doc_id": "D001", "sid": 409, "start": 17236, "end": 17341, "kind": "table", "text": "| [唯物主义群论](01%20核心理论/CQM_核心_唯物主义群论.md) | $\\mathrm{Sym}\\supset\\mathrm{Diff}\\supset GL$、群约束性、不变性、$S_n$ 谱系 |"}
+{"doc_id": "D001", "sid": 410, "start": 17342, "end": 17426, "kind": "table", "text": "| [历史唯物主义与超导发生学](01%20核心理论/CQM_核心_历史唯物主义与超导发生学.md) | 哲学专论：发生学语法的逐环对照、结构同构的边界、H1–H6 |"}
+{"doc_id": "D001", "sid": 411, "start": 17428, "end": 17449, "kind": "prose", "text": "**02–03 量子引力、引力与退相干**"}
+{"doc_id": "D001", "sid": 412, "start": 17451, "end": 17463, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 413, "start": 17464, "end": 17475, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 414, "start": 17476, "end": 17552, "kind": "table", "text": "| [量子引力讨论](02%20量子引力/CQM_引力_量子引力讨论.md) | 两个候选；体系采用「禁闭内部只是 QCD，FG 承担量子引力内容」 |"}
+{"doc_id": "D001", "sid": 415, "start": 17553, "end": 17630, "kind": "table", "text": "| [GN 可能公式](03%20引力与退相干/CQM_引力_GN可能公式.md) | $G_N$ 的谱公式与十位数值（构造后验数字校验，待独立复现） |"}
+{"doc_id": "D001", "sid": 416, "start": 17631, "end": 17699, "kind": "table", "text": "| [引力因果场](03%20引力与退相干/CQM_退相干_引力因果场.md) | 因果截断不等式、互耦/观测/自耦退相干、四层结构 |"}
+{"doc_id": "D001", "sid": 417, "start": 17700, "end": 17785, "kind": "table", "text": "| [跨层级深耦合与唯一性难题](03%20引力与退相干/CQM_退相干_跨层级深耦合与唯一性难题.md) | 唯一性难题的层级还原论诊断；基础层是边界/条件/原料层 |"}
+{"doc_id": "D001", "sid": 418, "start": 17787, "end": 17798, "kind": "prose", "text": "**04 前沿研究**"}
+{"doc_id": "D001", "sid": 419, "start": 17800, "end": 17812, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 420, "start": 17813, "end": 17824, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 421, "start": 17825, "end": 17935, "kind": "table", "text": "| [分布式不对易关系与非马尔可夫性](04%20前沿研究/CQM_前沿研究_分布式不对易关系与非马尔可夫性.md) | DNR 理论构造卷：约束代数、记忆核奇偶通道、$\\ell_*$ 与 $R_{\\rm DNR}$ |"}
+{"doc_id": "D001", "sid": 422, "start": 17936, "end": 18025, "kind": "table", "text": "| [关系性实在论与对称性重组](04%20前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md) | 五层链：本体论→代数→群论→拓扑→解释；P1–P7、E6–E12 |"}
+{"doc_id": "D001", "sid": 423, "start": 18026, "end": 18160, "kind": "table", "text": "| [规范重组超导与 SU5 五重态内禀时间](04%20前沿研究/CQM_前沿研究_规范重组超导与SU5五重态内禀时间.md) | Elitzur/FMS/Fradkin–Shenker 支撑「重组非破缺」；$\\mathrm{SU}(5)$ 五重态与质子衰变边界 |"}
+{"doc_id": "D001", "sid": 424, "start": 18161, "end": 18259, "kind": "table", "text": "| [量子快置乱普适速率极限](04%20前沿研究/CQM_前沿研究_量子快置乱普适速率极限.md) | PRL 2026 证明链条精读；$\\mathrm{GL}(5)$ 谱形状因子与置乱交叉 |"}
+{"doc_id": "D001", "sid": 425, "start": 18260, "end": 18345, "kind": "table", "text": "| [渗流连通性与临界同步](04%20前沿研究/CQM_前沿研究_渗流连通性与临界同步.md) | 外部对照：局域随机连通 vs 局域关系→全局相位相干；P1–P6 |"}
+{"doc_id": "D001", "sid": 426, "start": 18346, "end": 18423, "kind": "table", "text": "| [相变弧线与自守形式同步](04%20前沿研究/CQM_前沿研究_相变弧线与自守形式同步.md) | 自守因子的第五重身份「同步桥」；四层同步框架 |"}
+{"doc_id": "D001", "sid": 427, "start": 18424, "end": 18501, "kind": "table", "text": "| [质量的量纲地位与自守来源](04%20前沿研究/CQM_前沿研究_质量的量纲地位与自守来源.md) | 质量不是基本输入，而是自守关联的涌现结果 |"}
+{"doc_id": "D001", "sid": 428, "start": 18502, "end": 18580, "kind": "table", "text": "| [黎曼猜想证明思路](04%20前沿研究/CQM_前沿研究_黎曼猜想证明思路.md) | 路线图与循环性诊断：3 已知 + 2 待推 + 物理存在性 |"}
+{"doc_id": "D001", "sid": 429, "start": 18581, "end": 18662, "kind": "table", "text": "| [待推 1 边界条件的五重联系](04%20前沿研究/CQM_前沿研究_待推1边界条件的五重联系.md) | 长度半已由 RvM 反解、相位半仍是实质缺口 |"}
+{"doc_id": "D001", "sid": 430, "start": 18663, "end": 18752, "kind": "table", "text": "| [GN 第一性推导公理化证明稿](04%20前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md) | 定义—公理—引理—定理—证明；数学事实层与物理构造层分开 |"}
+{"doc_id": "D001", "sid": 431, "start": 18753, "end": 18857, "kind": "table", "text": "| [反物质引力与 GN 推导边界](04%20前沿研究/CQM_前沿研究_反物质引力与GN推导边界.md) | 结构层 null 预测 $G_{++}=G_{--}=G_{+-}=G_N$；G8 未闭合 |"}
+{"doc_id": "D001", "sid": 432, "start": 18858, "end": 18969, "kind": "table", "text": "| [Theta 对应与 GRH 新证明对照](04%20前沿研究/CQM_前沿研究_Theta对应与GRH新证明对照.md) | 外部文献对照：Theta lift 与 322 页 GRH 证明，不并入 CQM 口径 |"}
+{"doc_id": "D001", "sid": 433, "start": 18970, "end": 19062, "kind": "table", "text": "| [Wyler 常数 A4 群论分解](04%20前沿研究/Wyler常数_A4群论分解.md) | Wyler 常数的 $A_4$ 群论不变量表达（0.61 ppm，构造后验） |"}
+{"doc_id": "D001", "sid": 434, "start": 19063, "end": 19151, "kind": "table", "text": "| [贝里曲率与 Regge 曲率关联](04%20前沿研究/FG_贝里曲率与Regge曲率的关联_研究论文.md) | 文献调研：联络—曲率—和乐的共同骨架与量子几何启示 |"}
+{"doc_id": "D001", "sid": 435, "start": 19153, "end": 19166, "kind": "prose", "text": "**05 方法论与批判**"}
+{"doc_id": "D001", "sid": 436, "start": 19168, "end": 19180, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 437, "start": 19181, "end": 19192, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 438, "start": 19193, "end": 19282, "kind": "table", "text": "| [Hilbert–Pólya 批判](05%20方法论与批判/CQM_方法论_HilbertPolya批判.md) | 保留「自伴算符—实谱」，超越至「物理过程铸造算符」 |"}
+{"doc_id": "D001", "sid": 439, "start": 19283, "end": 19371, "kind": "table", "text": "| [资本主义、旧物理学与层级还原论批判](05%20方法论与批判/CQM_方法论_资本主义-旧物理-层级还原论批判.md) | 正题—反题—合题：CQM 作为新层级涌现论 |"}
+{"doc_id": "D001", "sid": 440, "start": 19373, "end": 19382, "kind": "prose", "text": "**06 超导**"}
+{"doc_id": "D001", "sid": 441, "start": 19384, "end": 19396, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 442, "start": 19397, "end": 19408, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 443, "start": 19409, "end": 19490, "kind": "table", "text": "| [超导核心理论（理论卷）](06%20超导/CQM_超导核心理论.md) | 差异-记忆核理论：27 环发生学、八环节骨架、$T_c$ 未推、G9–G22 |"}
+{"doc_id": "D001", "sid": 444, "start": 19491, "end": 19582, "kind": "table", "text": "| [超导核心理论（材料与界面卷）](06%20超导/CQM_超导核心理论_材料与界面卷.md) | §11.7–§11.14、§17：元素周期表、同位素效应、材料数值、界面超导 |"}
+{"doc_id": "D001", "sid": 445, "start": 19583, "end": 19649, "kind": "table", "text": "| [超导材料设计器](06%20超导/超导材料设计器/) | 元素同位素数据库、超导判定算法、嘉当矩阵参数化、Godot 项目 |"}
+{"doc_id": "D001", "sid": 446, "start": 19650, "end": 19747, "kind": "table", "text": "| [实验数据库](06%20超导/cqm_analysis/superconductors_deduplicated.csv) | 226 条超导材料实验记录（不含 $T_c$ 预测结果） |"}
+{"doc_id": "D001", "sid": 447, "start": 19749, "end": 19764, "kind": "prose", "text": "**07 精细引力（FG）**"}
+{"doc_id": "D001", "sid": 448, "start": 19766, "end": 19778, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 449, "start": 19779, "end": 19790, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 450, "start": 19791, "end": 19862, "kind": "table", "text": "| [FG 核心理论](07%20精细引力（FG）/FG_核心理论.md) | FG 物理机制层：本体论、发生学、同步算符、群谱、物理常数 |"}
+{"doc_id": "D001", "sid": 451, "start": 19863, "end": 19941, "kind": "table", "text": "| [FG 纤维丛理论](07%20精细引力（FG）/FG_纤维丛理论.md) | FG 丛几何层：主丛、联络与和乐、Regge 对应、CFT 严格对应 |"}
+{"doc_id": "D001", "sid": 452, "start": 19942, "end": 20025, "kind": "table", "text": "| [LQG–Regge 显式映射](07%20精细引力（FG）/FG_LQG-Regge显式映射.md) | 自旋—面积—角—亏角的运动学词典（条件性显式映射） |"}
+{"doc_id": "D001", "sid": 453, "start": 20027, "end": 20046, "kind": "prose", "text": "**08 组织层、10 探索与归档**"}
+{"doc_id": "D001", "sid": 454, "start": 20048, "end": 20060, "kind": "table", "text": "| 文档 | 一句话 |"}
+{"doc_id": "D001", "sid": 455, "start": 20061, "end": 20072, "kind": "table", "text": "|:---|:---|"}
+{"doc_id": "D001", "sid": 456, "start": 20073, "end": 20142, "kind": "table", "text": "| [组织层总览](08%20理论组织和形式化框架/README.md) | 七维度：结构化、ML 数据准备、形式化验证、展示可视化等 |"}
+{"doc_id": "D001", "sid": 457, "start": 20143, "end": 20230, "kind": "table", "text": "| [术语表](08%20理论组织和形式化框架/附录/术语表.md) / [缺口台账](08%20理论组织和形式化框架/附录/缺口台账.md) | 术语权威口径与缺口登记 |"}
+{"doc_id": "D001", "sid": 458, "start": 20231, "end": 20287, "kind": "table", "text": "| [推导链](10%20探索/CQM_探索_推导链.md) | 环 1–27 推导链与缺口登记（非权威源） |"}
+{"doc_id": "D001", "sid": 459, "start": 20288, "end": 20350, "kind": "table", "text": "| [相变锚与相变判据](10%20探索/CQM_探索_相变锚与相变判据.md) | 相变锚三层定义、判据提炼（过程稿） |"}
+{"doc_id": "D001", "sid": 460, "start": 20351, "end": 20433, "kind": "table", "text": "| [锚–H–K 结构桥梁](10%20探索/CQM_探索_锚-H-K结构桥梁推导.md) | 锚、历史总和 $\\mathsf H$、记忆核 $K$ 的结构桥梁 |"}
+{"doc_id": "D001", "sid": 461, "start": 20434, "end": 20539, "kind": "table", "text": "| [二维晶格超导全链路](10%20探索/稳定/CQM_二维晶格超导_全链路整合.md) / [一维闭环节点链](10%20探索/稳定/CQM_一维闭环节点链.md) | 稳定稿（非权威源，待第三方复现） |"}
+{"doc_id": "D001", "sid": 462, "start": 20540, "end": 20606, "kind": "table", "text": "| [Lean 验证](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` 与 A 闸证明模块 |"}
+{"doc_id": "D001", "sid": 463, "start": 20607, "end": 20666, "kind": "table", "text": "| [归档](归档/) | 量子引力集成、框架路线纪要、混合矩阵、质数数轴、超导旧框架承接卷、FG 自守形式条件链 |"}
+{"doc_id": "D001", "sid": 464, "start": 20667, "end": 20714, "kind": "table", "text": "| [归档 CNT](归档/归档%20CNT/) | CNT 阶段历史文档（只读，不修改） |"}
+{"doc_id": "D001", "sid": 465, "start": 20716, "end": 20726, "kind": "prose", "text": "</details>"}
+{"doc_id": "D001", "sid": 466, "start": 20728, "end": 20731, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 467, "start": 20733, "end": 20744, "kind": "heading", "text": "## 10 引用与许可"}
+{"doc_id": "D001", "sid": 468, "start": 20746, "end": 20812, "kind": "prose", "text": "引用本仓库时，请注明仓库地址与所引文档的标题、章节；引用具体数值时，请一并保留该处的状态标注（如「构造后验数字校验，待独立复现」）。"}
+{"doc_id": "D001", "sid": 469, "start": 20814, "end": 20823, "kind": "code", "text": "```bibtex"}
+{"doc_id": "D001", "sid": 470, "start": 20824, "end": 20844, "kind": "code", "text": "@misc{cqmformal2026,"}
+{"doc_id": "D001", "sid": 471, "start": 20845, "end": 20865, "kind": "code", "text": "  author = {ruster},"}
+{"doc_id": "D001", "sid": 472, "start": 20866, "end": 20909, "kind": "code", "text": "  title  = {CQMFormal: 耦合常数量子力学（CQM）形式化框架},"}
+{"doc_id": "D001", "sid": 473, "start": 20910, "end": 20928, "kind": "code", "text": "  year   = {2026},"}
+{"doc_id": "D001", "sid": 474, "start": 20929, "end": 21005, "kind": "code", "text": "  note   = {GitHub repository: Qp1117b/Coupling-Constant-Quantum-Mechanics},"}
+{"doc_id": "D001", "sid": 475, "start": 21006, "end": 21081, "kind": "code", "text": "  url    = {https://github.com/Qp1117b/Coupling-Constant-Quantum-Mechanics}"}
+{"doc_id": "D001", "sid": 476, "start": 21082, "end": 21083, "kind": "code", "text": "}"}
+{"doc_id": "D001", "sid": 477, "start": 21084, "end": 21084, "kind": "code", "text": ""}
+{"doc_id": "D001", "sid": 478, "start": 21085, "end": 21099, "kind": "code", "text": "@misc{cnt2026,"}
+{"doc_id": "D001", "sid": 479, "start": 21100, "end": 21120, "kind": "code", "text": "  author = {ruster},"}
+{"doc_id": "D001", "sid": 480, "start": 21121, "end": 21143, "kind": "code", "text": "  title  = {CNT 完整研究},"}
+{"doc_id": "D001", "sid": 481, "start": 21144, "end": 21162, "kind": "code", "text": "  year   = {2026},"}
+{"doc_id": "D001", "sid": 482, "start": 21163, "end": 21199, "kind": "code", "text": "  doi    = {10.5281/zenodo.20804380}"}
+{"doc_id": "D001", "sid": 483, "start": 21200, "end": 21201, "kind": "code", "text": "}"}
+{"doc_id": "D001", "sid": 484, "start": 21202, "end": 21205, "kind": "code", "text": "```"}
+{"doc_id": "D001", "sid": 485, "start": 21207, "end": 21250, "kind": "prose", "text": "外部文献 PDF 存于 [`归档/一体化研究/文献/`](归档/一体化研究/文献/)；"}
+{"doc_id": "D001", "sid": 486, "start": 21250, "end": 21341, "kind": "prose", "text": "CNT 完整研究已发布于 Zenodo：DOI [10.5281/zenodo.20804380](https://doi.org/10.5281/zenodo.20804380)。"}
+{"doc_id": "D001", "sid": 487, "start": 21343, "end": 21379, "kind": "prose", "text": "**许可**：本仓库暂未附许可证文件；在补充许可证前，默认保留所有权利。"}
+{"doc_id": "D001", "sid": 488, "start": 21379, "end": 21393, "kind": "prose", "text": "转载、引用或合作请联系作者。"}
+{"doc_id": "D001", "sid": 489, "start": 21395, "end": 21398, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 490, "start": 21400, "end": 21411, "kind": "heading", "text": "## 11 参与与反馈"}
+{"doc_id": "D001", "sid": 491, "start": 21413, "end": 21474, "kind": "list", "text": "- **指出错误**：推导、文献出处、术语口径、相对链接、`$` 配对、缺口标注——欢迎开 Issue，附文档路径与行号。"}
+{"doc_id": "D001", "sid": 492, "start": 21475, "end": 21526, "kind": "list", "text": "- **可复现性**：若你复现（或复现失败）某个数值，请附环境、命令与输出；这正是本仓库最需要的反馈。"}
+{"doc_id": "D001", "sid": 493, "start": 21527, "end": 21588, "kind": "list", "text": "- **不接受**：绕过缺口把「构造」写成「已证」、把外部文献结论写成 CQM 既有口径、新开缺口编号或升级既有缺口状态。"}
+{"doc_id": "D001", "sid": 494, "start": 21589, "end": 21669, "kind": "list", "text": "- **提交前**：请先读 [`AGENTS.md`](AGENTS.md) 与 [`.trae/skills/`](.trae/skills/) 的审校规则；"}
+{"doc_id": "D001", "sid": 495, "start": 21669, "end": 21727, "kind": "list", "text": "改动理论文档须同步派生产物并跑通 `check_consistency` 与 `check_provenance`。"}
+{"doc_id": "D001", "sid": 496, "start": 21728, "end": 21744, "kind": "list", "text": "- **讨论语言**：简体中文。"}
+{"doc_id": "D001", "sid": 497, "start": 21746, "end": 21749, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 498, "start": 21751, "end": 21757, "kind": "heading", "text": "## 关键词"}
+{"doc_id": "D001", "sid": 499, "start": 21759, "end": 21946, "kind": "prose", "text": "**中文**：耦合常数量子力学 · 大统一理论 · 量子化耦合常数 · 因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子"}
+{"doc_id": "D001", "sid": 500, "start": 21948, "end": 22473, "kind": "prose", "text": "**English**: Coupling Constant Quantum Mechanics · CQM · grand unified theory · quantized coupling constant · causal set · relational quantum mechanics · loop quantum gravity · dimensional genesis · automorphic forms · Langlands program · generalized Riemann hypothesis · Riemann hypothesis · fine-structure constant · Newtonian gravitational constant · proper-time flow · distributed noncommutativity · difference–memory-kernel superconductivity · fine gravity · historical materialism · confinement boundary · SU(5) · GL(5)"}
+{"doc_id": "D001", "sid": 501, "start": 22475, "end": 22478, "kind": "prose", "text": "---"}
+{"doc_id": "D001", "sid": 502, "start": 22480, "end": 22499, "kind": "heading", "text": "## English Abstract"}
+{"doc_id": "D001", "sid": 503, "start": 22501, "end": 23234, "kind": "prose", "text": "**CQMFormal** is a research framework for a *grand-unified* description of physics built on a single substitution: quantize the coupling constant itself. Instead of the position–momentum pair, CQM takes the logarithmic coupling $\\hat u=\\ln\\hat r$ and the proper-time-flow momentum $\\hat p_u=\\hat v_\\tau/\\mathscr{C}$ as canonical conjugates, with $[\\hat u,\\hat p_u]=i$; here $\\mathscr{C}$ is the English notation for the phase quantum $☯$. The framework is constructed on causal sets, relational quantum mechanics, and loop quantum gravity, but repositions their ontology: spacetime, gauge interactions, Standard-Model parameters, and superconductivity are treated as emergent consequences of this algebra at the confinement boundary."}
+{"doc_id": "D001", "sid": 504, "start": 23236, "end": 23916, "kind": "prose", "text": "The programme is organized around five connected lines: (1) proper-time–coupling noncommutativity, $\\Delta u\\,\\Delta v_\\tau\\ge\\mathscr{C}/2$; (2) distributed noncommutativity, $[\\hat u_G,v_\\tau^{(i)}]=i\\mathscr{C}/N$, which supplies an algebraic origin for non-Markovianity; (3) a difference–memory-kernel theory of superconductivity with a 27-ring genesis chain; (4) dimensional genesis, in which time is the first dimension and $K_L$, $K_M=G_N^{-1}$ are implementation constants; and (5) automorphic/Langlands stratification, $\\mathrm{GL}(5)\\to\\mathrm{SU}(5)\\Rightarrow U(1)\\times SU(2)\\times SU(3)$, where GRH is the real-spectrum condition at the fixed $\\mathrm{GL}(5)$ level."}
+{"doc_id": "D001", "sid": 505, "start": 23918, "end": 24198, "kind": "prose", "text": "Its philosophical foundation is historical materialism: matter is primary, symmetry is an organizational constraint rather than a prior form, and mathematical structure is a fossil of material self-organization. This foundation is an ontological positioning, not a physical proof."}
+{"doc_id": "D001", "sid": 506, "start": 24200, "end": 24586, "kind": "prose", "text": "**Status**: core algebra is proved within the framework; the emergence chain and key gaps (C, G2–G8, G9–G22, N1–N4) remain open. Numerical agreements (e.g. $G_N$ at the ppm level, $\\alpha^{-1}$ via $A_4$ invariants) are **post-hoc numerical checks awaiting independent reproduction**, not accepted first-principles derivations. The Riemann-hypothesis document is a roadmap, not a proof."}
+{"doc_id": "D001", "sid": 507, "start": 24588, "end": 24818, "kind": "prose", "text": "**Keywords**: grand unified theory, quantized coupling constant, causal sets, loop quantum gravity, automorphic forms, Langlands program, Riemann hypothesis, superconductivity, dimensional analysis, Lean 4, historical materialism."}
 {"doc_id": "D002", "sid": 0, "start": 0, "end": 16, "kind": "heading", "text": "# CQMFormal 项目规范"}
 {"doc_id": "D002", "sid": 1, "start": 18, "end": 65, "kind": "quote", "text": "> 本文件是 AI 协作代理的项目级规范，对齐 `归档/一体化研究/科研AI全栈方案.md`。"}
 {"doc_id": "D002", "sid": 2, "start": 65, "end": 78, "kind": "quote", "text": "所有 Agent 须遵守。"}
@@ -19596,3 +19596,160 @@
 {"doc_id": "D056", "sid": 404, "start": 20452, "end": 20562, "kind": "list", "text": "15. A. Perez, *The Spin Foam Approach to Quantum Gravity*, Living Rev. Rel. **16**, 3 (2013). arXiv:1205.2019."}
 {"doc_id": "D056", "sid": 405, "start": 20563, "end": 20635, "kind": "list", "text": "16. K. Marx, *Thesen über Feuerbach*, 1845, These VI. 中译：《关于费尔巴哈的提纲》第六条。"}
 {"doc_id": "D056", "sid": 406, "start": 20637, "end": 20779, "kind": "quote", "text": "> **引用边界**：以上外部文献的结论只作对照与工具；CQM 的 $[G,L_i]=i☯/N$、$\\mathcal{G}\\Rightarrow\\mathcal{H}$ 自由度读法、$Z_N$ 字典、2e/4e 关系性配对、因果结构替代隐变量，均为本文构造或诠释，不因引用而变成已证。"}
+{"doc_id": "D057", "sid": 0, "start": 0, "end": 35, "kind": "heading", "text": "# 相变量子的双重身份：Keiper–Li 首项与耦合空间的作用量量子"}
+{"doc_id": "D057", "sid": 1, "start": 37, "end": 50, "kind": "prose", "text": "**作者**：ruster"}
+{"doc_id": "D057", "sid": 2, "start": 52, "end": 111, "kind": "quote", "text": "> **定位**：本文属 `04 前沿研究`，是**符号与结构讨论**，不新增物理机制、不改动任何既有定义与缺口状态。"}
+{"doc_id": "D057", "sid": 3, "start": 111, "end": 191, "kind": "quote", "text": "任务只有一件：把 $☯=\\xi'(1)/\\xi(1)$ 的数论身份与 CQM 物理身份并置，逐层标出哪些是外部数学事实、哪些是 CQM 构造、哪些条件于 RH；"}
+{"doc_id": "D057", "sid": 4, "start": 191, "end": 222, "kind": "quote", "text": "再核对「相变量子」命名、太极符号与共轭不对易之间的解释一致性。"}
+{"doc_id": "D057", "sid": 5, "start": 223, "end": 224, "kind": "quote", "text": ">"}
+{"doc_id": "D057", "sid": 6, "start": 225, "end": 280, "kind": "quote", "text": "> **与既有文档的分工**：定义与来源以 `01 核心理论/CQM_核心_集成理论.md` §3.4 为准；"}
+{"doc_id": "D057", "sid": 7, "start": 280, "end": 342, "kind": "quote", "text": "$\\mathrm{GL}(n)$ 分层以 `01 核心理论/CQM_核心_朗兰兹分层共振与相变量子.md` §5.4 为准；"}
+{"doc_id": "D057", "sid": 8, "start": 342, "end": 431, "kind": "quote", "text": "超导中的归一化用法以 `06 超导/CQM_超导核心理论.md` §11 为准；$G_N$ 数值链以 `03 引力与退相干/CQM_引力_GN可能公式.md` §7–§8 为准。"}
+{"doc_id": "D057", "sid": 9, "start": 431, "end": 442, "kind": "quote", "text": "本文只并置、不改口径。"}
+{"doc_id": "D057", "sid": 10, "start": 443, "end": 444, "kind": "quote", "text": ">"}
+{"doc_id": "D057", "sid": 11, "start": 445, "end": 501, "kind": "quote", "text": "> **状态标注**：【标准数学】外部教科书级事实；【文献确立】外部文献结果；【CQM 框架基础】框架既有表述；"}
+{"doc_id": "D057", "sid": 12, "start": 501, "end": 539, "kind": "quote", "text": "【CQM 构造假设】框架内命名与诠释；【条件于 RH】以黎曼猜想成立为前提。"}
+{"doc_id": "D057", "sid": 13, "start": 541, "end": 544, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 14, "start": 546, "end": 553, "kind": "heading", "text": "## 核心命题"}
+{"doc_id": "D057", "sid": 15, "start": 555, "end": 680, "kind": "prose", "text": "$$\\boxed{\\;☯=\\frac{\\xi'(1)}{\\xi(1)}=\\sum_{\\rho}\\frac{1}{1-\\rho}=1+\\frac{\\gamma}{2}-\\ln(2\\sqrt{\\pi})\\approx 0.02309570897\\;}$$"}
+{"doc_id": "D057", "sid": 16, "start": 682, "end": 735, "kind": "prose", "text": "同一个实数在两个结构里各占一个位置：数论侧，它是 Keiper–Li 序列的首项 $\\lambda_1$；"}
+{"doc_id": "D057", "sid": 17, "start": 735, "end": 811, "kind": "prose", "text": "物理侧，它是耦合空间的「作用量量子」，设定 $\\hat u=\\ln\\hat r$ 与 $\\hat p_u=\\hat v_\\tau/☯$ 的不确定性下限。"}
+{"doc_id": "D057", "sid": 18, "start": 811, "end": 849, "kind": "prose", "text": "两重身份不是比喻的叠加，而是同一个 $\\xi$ 对数导数在两套语言中的读法。"}
+{"doc_id": "D057", "sid": 19, "start": 851, "end": 874, "kind": "table", "text": "| 侧面 | 身份 | 定义位置 | 状态 |"}
+{"doc_id": "D057", "sid": 20, "start": 875, "end": 896, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D057", "sid": 21, "start": 897, "end": 995, "kind": "table", "text": "| 数论 | Keiper–Li 首项 $\\lambda_1$ | $\\lambda_n=\\sum_\\rho\\bigl[1-(1-1/\\rho)^n\\bigr]$，$n=1$ | 【标准数学】 |"}
+{"doc_id": "D057", "sid": 22, "start": 996, "end": 1077, "kind": "table", "text": "| 物理 | 相变量子，作用量量子 | $[\\hat u,\\hat p_u]=i$，$\\hat p_u=\\hat v_\\tau/☯$ | 【CQM 框架基础】 |"}
+{"doc_id": "D057", "sid": 23, "start": 1078, "end": 1135, "kind": "table", "text": "| 谱 | 零点集体权重 | $☯=\\sum_n 1/(\\gamma_n^2+1/4)$ | 【条件于 RH】 |"}
+{"doc_id": "D057", "sid": 24, "start": 1136, "end": 1227, "kind": "table", "text": "| 层级 | $\\mathrm{GL}(n)$ 基准的 $n$ 倍 | $☯_n=n\\,☯_1$ | 【标准数学】＋【CQM 构造假设】（$\\mathrm{GL}(5)$ 固定） |"}
+{"doc_id": "D057", "sid": 25, "start": 1229, "end": 1232, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 26, "start": 1234, "end": 1252, "kind": "heading", "text": "## 1. 数论身份：序列的绝对起点"}
+{"doc_id": "D057", "sid": 27, "start": 1254, "end": 1269, "kind": "heading", "text": "### 1.1 定义与判据位置"}
+{"doc_id": "D057", "sid": 28, "start": 1271, "end": 1330, "kind": "prose", "text": "Keiper 与 Li 证明：黎曼猜想等价于实数列 $\\{\\lambda_n\\}_{n\\ge1}$ 的全部非负性，其中"}
+{"doc_id": "D057", "sid": 29, "start": 1332, "end": 1423, "kind": "prose", "text": "$$\\lambda_n=\\sum_{\\rho}\\Bigl[1-\\Bigl(1-\\frac{1}{\\rho}\\Bigr)^{n}\\Bigr],\\qquad n=1,2,\\ldots$$"}
+{"doc_id": "D057", "sid": 30, "start": 1425, "end": 1485, "kind": "prose", "text": "求和遍历非平凡零点，按对称主值理解（配对 $\\rho$ 与 $1-\\rho$、$\\rho$ 与 $\\bar\\rho$）。"}
+{"doc_id": "D057", "sid": 31, "start": 1485, "end": 1492, "kind": "prose", "text": "$n=1$ 时"}
+{"doc_id": "D057", "sid": 32, "start": 1494, "end": 1558, "kind": "prose", "text": "$$\\lambda_1=\\sum_\\rho\\frac{1}{\\rho}=\\sum_\\rho\\frac{1}{1-\\rho},$$"}
+{"doc_id": "D057", "sid": 33, "start": 1560, "end": 1595, "kind": "prose", "text": "后一个等号由 $\\rho\\mapsto1-\\rho$ 的零点置换给出。"}
+{"doc_id": "D057", "sid": 34, "start": 1595, "end": 1673, "kind": "prose", "text": "$\\lambda_1$ 是判据中第一个需要被检验为非负的量：它的正性已知，但 RH 要求**所有** $\\lambda_n$ 非负，首项只是入口，不是终点。"}
+{"doc_id": "D057", "sid": 35, "start": 1673, "end": 1679, "kind": "prose", "text": "【文献确立】"}
+{"doc_id": "D057", "sid": 36, "start": 1681, "end": 1694, "kind": "heading", "text": "### 1.2 闭式与数值"}
+{"doc_id": "D057", "sid": 37, "start": 1696, "end": 1780, "kind": "prose", "text": "由 $\\xi(s)=\\tfrac12 s(s-1)\\pi^{-s/2}\\Gamma(s/2)\\zeta(s)$ 与 $\\psi(1/2)=-\\gamma-2\\ln2$，"}
+{"doc_id": "D057", "sid": 38, "start": 1782, "end": 1916, "kind": "prose", "text": "$$☯=\\frac{\\xi'(1)}{\\xi(1)}=1+\\frac{\\gamma}{2}-\\ln(2\\sqrt{\\pi})=1+\\frac{\\gamma}{2}-\\ln 2-\\frac{\\ln\\pi}{2}\\approx 0.023095708966\\ldots$$"}
+{"doc_id": "D057", "sid": 39, "start": 1918, "end": 1973, "kind": "prose", "text": "该值与数值微分互验到 $10^{-7}$ 量级（`01 核心理论/CQM_核心_集成理论.md` §3.4）。"}
+{"doc_id": "D057", "sid": 40, "start": 1973, "end": 2048, "kind": "prose", "text": "同族后项作对照：$\\lambda_2\\approx0.0923457352$、$\\lambda_3\\approx0.2076389206$，严格递增。"}
+{"doc_id": "D057", "sid": 41, "start": 2048, "end": 2064, "kind": "prose", "text": "数值出处见文末 [1]–[3]。"}
+{"doc_id": "D057", "sid": 42, "start": 2066, "end": 2084, "kind": "heading", "text": "### 1.3 无条件表示与条件表示"}
+{"doc_id": "D057", "sid": 43, "start": 2086, "end": 2110, "kind": "prose", "text": "**Hadamard 表示**（不依赖 RH）："}
+{"doc_id": "D057", "sid": 44, "start": 2112, "end": 2181, "kind": "prose", "text": "$$☯=\\frac{d}{ds}\\ln\\xi(s)\\Big\\vert_{s=1}=\\sum_\\rho\\frac{1}{1-\\rho}.$$"}
+{"doc_id": "D057", "sid": 45, "start": 2183, "end": 2220, "kind": "prose", "text": "$\\xi$ 的 Hadamard 乘积直接给出，零点在不在临界线上都成立。"}
+{"doc_id": "D057", "sid": 46, "start": 2220, "end": 2226, "kind": "prose", "text": "【标准数学】"}
+{"doc_id": "D057", "sid": 47, "start": 2228, "end": 2279, "kind": "prose", "text": "**谱表示**（条件于 RH）：若 $\\rho=\\tfrac12+i\\gamma_n$，配对共轭零点后"}
+{"doc_id": "D057", "sid": 48, "start": 2281, "end": 2336, "kind": "prose", "text": "$$☯=\\sum_{n=1}^{\\infty}\\frac{1}{\\gamma_n^2+\\tfrac14}.$$"}
+{"doc_id": "D057", "sid": 49, "start": 2338, "end": 2380, "kind": "prose", "text": "这不是另一个定义，而是同一常数在临界线锁定后的谱写法；RH 未证，故只能作条件陈述。"}
+{"doc_id": "D057", "sid": 50, "start": 2380, "end": 2388, "kind": "prose", "text": "【条件于 RH】"}
+{"doc_id": "D057", "sid": 51, "start": 2390, "end": 2417, "kind": "heading", "text": "### 1.4 与 Hilbert–Pólya 的接口"}
+{"doc_id": "D057", "sid": 52, "start": 2419, "end": 2541, "kind": "prose", "text": "CQM 把 $\\gamma_n^2+\\tfrac14$ 读作 $\\hat H_{\\mathrm{HP}}=\\hat{\\mathcal S}^2+\\tfrac14$ 的本征值（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4）。"}
+{"doc_id": "D057", "sid": 53, "start": 2541, "end": 2595, "kind": "prose", "text": "这一步是**框架内的谱诠释**，不是数学定理：Hilbert–Pólya 猜想本身仍未构造出所需的自伴算符。"}
+{"doc_id": "D057", "sid": 54, "start": 2595, "end": 2630, "kind": "prose", "text": "$☯$ 的稳定性因此条件于两件事——RH 成立，且该谱实现被铸造出来。"}
+{"doc_id": "D057", "sid": 55, "start": 2630, "end": 2640, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 56, "start": 2642, "end": 2645, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 57, "start": 2647, "end": 2668, "kind": "heading", "text": "## 2. 物理身份：耦合空间的作用量量子"}
+{"doc_id": "D057", "sid": 58, "start": 2670, "end": 2686, "kind": "heading", "text": "### 2.1 共轭对与不确定性"}
+{"doc_id": "D057", "sid": 59, "start": 2688, "end": 2786, "kind": "prose", "text": "CQM 只替换一个共轭对：$(\\hat x,\\hat p)\\to(\\hat u,\\hat p_u)$，其中 $\\hat u=\\ln\\hat r$、$\\hat p_u=\\hat v_\\tau/☯$。"}
+{"doc_id": "D057", "sid": 60, "start": 2786, "end": 2811, "kind": "prose", "text": "由 $[\\hat u,\\hat p_u]=i$ 得"}
+{"doc_id": "D057", "sid": 61, "start": 2813, "end": 2858, "kind": "prose", "text": "$$\\Delta u\\cdot\\Delta v_\\tau\\ge\\frac{☯}{2}.$$"}
+{"doc_id": "D057", "sid": 62, "start": 2860, "end": 2899, "kind": "prose", "text": "耦合常数的相对不确定度与固有时流速的不确定度互斥：一侧越精确，另一侧越不确定。"}
+{"doc_id": "D057", "sid": 63, "start": 2899, "end": 2960, "kind": "prose", "text": "$☯$ 在这里的角色与 $\\hbar$ 在作用量量子化中的角色同构——一个跨层级不变的基准单位，而不是某个具体系统的参数。"}
+{"doc_id": "D057", "sid": 64, "start": 2960, "end": 2970, "kind": "prose", "text": "【CQM 框架基础】"}
+{"doc_id": "D057", "sid": 65, "start": 2972, "end": 2985, "kind": "heading", "text": "### 2.2 层级整数倍"}
+{"doc_id": "D057", "sid": 66, "start": 2987, "end": 3159, "kind": "prose", "text": "对 $\\mathrm{GL}(n)$ 的 Eisenstein 诱导表示 $\\pi=\\mathrm{Ind}_{\\mathrm{GL}(1)^n}^{\\mathrm{GL}(n)}(\\chi_1,\\ldots,\\chi_n)$，完成 $L$ 函数满足 $\\xi(s,\\pi)=\\prod_k\\xi(s,\\chi_k)$，对数导数可加，平凡特征下"}
+{"doc_id": "D057", "sid": 67, "start": 3161, "end": 3176, "kind": "prose", "text": "$$☯_n=n\\,☯_1.$$"}
+{"doc_id": "D057", "sid": 68, "start": 3178, "end": 3202, "kind": "prose", "text": "这是 $L$ 函数对数导数的可加性，属数学事实。"}
+{"doc_id": "D057", "sid": 69, "start": 3202, "end": 3254, "kind": "prose", "text": "物理系统固定在 $\\mathrm{GL}(5)$ 层级、使用 $☯=☯_1$，则是 CQM 的构造选择；"}
+{"doc_id": "D057", "sid": 70, "start": 3254, "end": 3270, "kind": "prose", "text": "$n>5$ 的层级不主导物理谱。"}
+{"doc_id": "D057", "sid": 71, "start": 3270, "end": 3287, "kind": "prose", "text": "【标准数学】＋【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 72, "start": 3289, "end": 3306, "kind": "heading", "text": "### 2.3 超导中的归一化角色"}
+{"doc_id": "D057", "sid": 73, "start": 3308, "end": 3342, "kind": "prose", "text": "在差异–记忆核超导中，$☯$ 不是外加参数，而是对易子的归一化单位："}
+{"doc_id": "D057", "sid": 74, "start": 3344, "end": 3445, "kind": "prose", "text": "$$C_{ij}\\equiv\\frac{[\\hat u_i,\\hat v_{\\tau,j}]}{i☯}=f(\\varepsilon_i-\\varepsilon_j),\\qquad C_{ii}=1.$$"}
+{"doc_id": "D057", "sid": 75, "start": 3447, "end": 3529, "kind": "prose", "text": "旧框架的资格条件 $\\Delta\\varepsilon_0\\ge\\pi☯\\sqrt{1-\\varepsilon/(2\\pi)}/\\ln n$ 也以 $☯$ 为尺度。"}
+{"doc_id": "D057", "sid": 76, "start": 3529, "end": 3590, "kind": "prose", "text": "$☯$ 的数值因此直接进入 $T_c$ 链的阈值，而非停留在命名层（`06 超导/CQM_超导核心理论.md` §11）。"}
+{"doc_id": "D057", "sid": 77, "start": 3590, "end": 3600, "kind": "prose", "text": "【CQM 框架基础】"}
+{"doc_id": "D057", "sid": 78, "start": 3602, "end": 3623, "kind": "heading", "text": "### 2.4 $G_N$ 数值链中的位置"}
+{"doc_id": "D057", "sid": 79, "start": 3625, "end": 3654, "kind": "prose", "text": "$G_N$ 的候选闭式把 $☯$ 放在指数与线性修正两处："}
+{"doc_id": "D057", "sid": 80, "start": 3656, "end": 3814, "kind": "prose", "text": "$$G_N=\\frac{\\hbar c}{m_p^2}\\cdot I\\cdot\\lambda_c\\cdot ☯^2\\cdot\\mathfrak{c}_1\\cdot\\exp\\Bigl(-\\frac{2}{☯}\\Bigr)\\cdot(1+\\kappa☯),\\qquad \\kappa=\\frac{31+☯}{30}.$$"}
+{"doc_id": "D057", "sid": 81, "start": 3816, "end": 3884, "kind": "prose", "text": "$\\kappa$ 的 $+☯$ 项来自离散因果集到连续几何的函子映射（`03 引力与退相干/CQM_引力_GN可能公式.md` §7）。"}
+{"doc_id": "D057", "sid": 82, "start": 3884, "end": 3952, "kind": "prose", "text": "$☯$ 同时出现在 $☯^2$、$e^{-2/☯}$ 与 $(1+\\kappa☯)$ 三处，说明它在数值链中是结构变量，不是装饰性符号。"}
+{"doc_id": "D057", "sid": 83, "start": 3952, "end": 3993, "kind": "prose", "text": "该式为**构造后验数字校验，待独立复现**；$G_N$ 在标准物理中仍是实验参数。"}
+{"doc_id": "D057", "sid": 84, "start": 3993, "end": 4003, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 85, "start": 4005, "end": 4035, "kind": "heading", "text": "### 2.5 与 $\\zeta$ 正则化、中央荷的结构对应"}
+{"doc_id": "D057", "sid": 86, "start": 4037, "end": 4136, "kind": "prose", "text": "$\\xi$ 对数导数是无穷模经 $\\zeta$ 正则化后的有限剩余，这与共形场论中中央荷衡量有效自由度数的角色形成结构对应（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4.3）。"}
+{"doc_id": "D057", "sid": 87, "start": 4136, "end": 4191, "kind": "prose", "text": "对应停在结构层：$☯$ 通过 OPE 系数与同步成本进入物理，不通过中央荷数值；$\\eta=0$ 是构造假设。"}
+{"doc_id": "D057", "sid": 88, "start": 4191, "end": 4213, "kind": "prose", "text": "把这一对应读成「$☯$ 就是中央荷」会越界。"}
+{"doc_id": "D057", "sid": 89, "start": 4213, "end": 4223, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 90, "start": 4225, "end": 4228, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 91, "start": 4230, "end": 4248, "kind": "heading", "text": "## 3. 符号层：命名、太极与共轭"}
+{"doc_id": "D057", "sid": 92, "start": 4250, "end": 4270, "kind": "heading", "text": "### 3.1 阴阳互补 ↔ 共轭不对易"}
+{"doc_id": "D057", "sid": 93, "start": 4272, "end": 4337, "kind": "prose", "text": "太极图不是静态的对称分割，而是旋转中的动态平衡；$☯$ 设定的也不是一个固定值，而是一个**下限**——不允许两侧同时归零的约束。"}
+{"doc_id": "D057", "sid": 94, "start": 4337, "end": 4419, "kind": "prose", "text": "符号的「阴阳互为消长」与 $\\Delta u\\cdot\\Delta v_\\tau\\ge☯/2$ 在结构上同型：两个共轭面向彼此定义，一侧的精确以另一侧的模糊为代价。"}
+{"doc_id": "D057", "sid": 95, "start": 4421, "end": 4438, "kind": "heading", "text": "### 3.2 「相变」的双重指向"}
+{"doc_id": "D057", "sid": 96, "start": 4440, "end": 4515, "kind": "prose", "text": "「相变量子」至少承载两层含义，且两层落在同一结构上：其一，相空间中的共轭变量，$☯$ 是 $(\\hat u,\\hat p_u)$ 这一对的作用量量子；"}
+{"doc_id": "D057", "sid": 97, "start": 4515, "end": 4548, "kind": "prose", "text": "其二，耦合强度在不同「相」之间的跃迁，以 $☯$ 为基本单位组织。"}
+{"doc_id": "D057", "sid": 98, "start": 4548, "end": 4617, "kind": "prose", "text": "符号约定写明「太极，表辩证与相变」（`01 核心理论/CQM_核心_集成理论.md` §0），命名的「相变」与符号的「阴阳消长」在此汇合。"}
+{"doc_id": "D057", "sid": 99, "start": 4619, "end": 4636, "kind": "heading", "text": "### 3.3 玻尔先例与它的边界"}
+{"doc_id": "D057", "sid": 100, "start": 4638, "end": 4716, "kind": "prose", "text": "玻尔 1947 年受丹麦「宝象勋章」时自绘族徽，中心为太极图，铭文 *Contraria sunt complementa*（对立即互补），以象征波粒二象。"}
+{"doc_id": "D057", "sid": 101, "start": 4716, "end": 4761, "kind": "prose", "text": "CQM 与这一先例的关系是结构性的，但位置不同：玻尔用太极图**诠释**一个已成熟的原理；"}
+{"doc_id": "D057", "sid": 102, "start": 4761, "end": 4790, "kind": "prose", "text": "CQM 让太极符号**承载**一个尚未独立检验的框架常数。"}
+{"doc_id": "D057", "sid": 103, "start": 4790, "end": 4806, "kind": "prose", "text": "前者是哲学象征，后者是理论徽标。"}
+{"doc_id": "D057", "sid": 104, "start": 4806, "end": 4860, "kind": "prose", "text": "这一区别划出 $☯$ 当前的位置：意义、内涵、文化三者一致，但一致属于叙事层与构造层，不是数学定理层的事实。"}
+{"doc_id": "D057", "sid": 105, "start": 4860, "end": 4866, "kind": "prose", "text": "【哲学诠释】"}
+{"doc_id": "D057", "sid": 106, "start": 4868, "end": 4871, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 107, "start": 4873, "end": 4893, "kind": "heading", "text": "## 4. 四重结构辨识：不是唯一性定理"}
+{"doc_id": "D057", "sid": 108, "start": 4895, "end": 4950, "kind": "prose", "text": "把四个「位置」当作结构判据来检索已知常数，$☯$ 的辨识度来自**同时占据四席**，而不是任一维度的不可替代。"}
+{"doc_id": "D057", "sid": 109, "start": 4952, "end": 4971, "kind": "table", "text": "| 位置 | 数学锚点 | 条件性 |"}
+{"doc_id": "D057", "sid": 110, "start": 4972, "end": 4988, "kind": "table", "text": "|:---|:---|:---|"}
+{"doc_id": "D057", "sid": 111, "start": 4989, "end": 5039, "kind": "table", "text": "| **首项性** | Keiper–Li 序列 $\\lambda_1$ | 无条件（定义位置） |"}
+{"doc_id": "D057", "sid": 112, "start": 5040, "end": 5106, "kind": "table", "text": "| **谱刚性** | RH 下 $1/2$ 临界线锁定，$\\gamma_n\\in\\mathbb R$ | **条件于 RH** |"}
+{"doc_id": "D057", "sid": 113, "start": 5107, "end": 5157, "kind": "table", "text": "| **压缩性** | Hadamard 和把全部零点谱压进一个实常数 | 无条件（需对称主值） |"}
+{"doc_id": "D057", "sid": 114, "start": 5158, "end": 5226, "kind": "table", "text": "| **层级量子性** | $☯_n=n☯_1$ 的整数倍构造 | 数学事实；$\\mathrm{GL}(5)$ 固定为 CQM 构造 |"}
+{"doc_id": "D057", "sid": 115, "start": 5228, "end": 5271, "kind": "prose", "text": "前三席锚在 $\\lambda_1$ 的纯数学身份上，第四席是 CQM 赋予的结构外衣。"}
+{"doc_id": "D057", "sid": 116, "start": 5271, "end": 5324, "kind": "prose", "text": "这不是缺陷，而是 $☯$ 理论身份的真实分层：数论侧有坚实的「肉身」，物理侧在肉身上嫁接了一层量子化解释。"}
+{"doc_id": "D057", "sid": 117, "start": 5326, "end": 5335, "kind": "prose", "text": "**对照对象**："}
+{"doc_id": "D057", "sid": 118, "start": 5337, "end": 5391, "kind": "list", "text": "- 后项 $\\lambda_n\\,(n>1)$ 有压缩性与谱刚性，但不是首项；判据的逻辑起点无法由后项替代。"}
+{"doc_id": "D057", "sid": 119, "start": 5392, "end": 5533, "kind": "list", "text": "- Selberg 第一特征值 $\\lambda_1(\\Gamma\\backslash\\mathbb H)$ 是另一领域最接近的类比：它是 Laplace 谱的首个非零本征值（首项性），受 Selberg $1/4$ 猜想约束（谱刚性），并由迹公式与本原闭测地线求和绑定（压缩性）。"}
+{"doc_id": "D057", "sid": 120, "start": 5533, "end": 5559, "kind": "list", "text": "但它随曲面与群变化，没有跨层级的普适值，第四席缺失。"}
+{"doc_id": "D057", "sid": 121, "start": 5559, "end": 5609, "kind": "list", "text": "Selberg 已证 $3/16$，$1/4$ 仍未决，最佳下界 $975/4096$【文献确立】。"}
+{"doc_id": "D057", "sid": 122, "start": 5610, "end": 5708, "kind": "list", "text": "- 广义 Li 系数 $\\lambda_1(\\pi)$ 在「首项＋猜想约束＋零点求和」的三角结构上与 $☯$ 的前三席同构，但它依赖表示 $\\pi$，不是一个单一普适标量，「一个常数」的身份丢失。"}
+{"doc_id": "D057", "sid": 123, "start": 5710, "end": 5759, "kind": "prose", "text": "于是结论只能写成：**在「已知常数＋CQM 构造」的联合标准下，四席的交集目前只指向 $☯$**。"}
+{"doc_id": "D057", "sid": 124, "start": 5759, "end": 5785, "kind": "prose", "text": "这证明的是结构位置的独占性，不是物理有效性的必然性。"}
+{"doc_id": "D057", "sid": 125, "start": 5785, "end": 5816, "kind": "prose", "text": "换一套判据，结论可以不同；判据本身的可接受度，也不由本文决定。"}
+{"doc_id": "D057", "sid": 126, "start": 5818, "end": 5821, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 127, "start": 5823, "end": 5836, "kind": "heading", "text": "## 5. 缺口与可检验性"}
+{"doc_id": "D057", "sid": 128, "start": 5838, "end": 5886, "kind": "list", "text": "- **RH 未证**：谱表示、$1/2$ 锁定、Hilbert–Pólya 接口全部条件于此。"}
+{"doc_id": "D057", "sid": 129, "start": 5886, "end": 5909, "kind": "list", "text": "$☯$ 的「谱刚性」是条件性的，不是已证事实。"}
+{"doc_id": "D057", "sid": 130, "start": 5910, "end": 5970, "kind": "list", "text": "- **$[\\hat u,\\hat p_u]=i$ 无独立实验**：共轭不对易是框架公设，尚无以 $☯$ 为下限的测量。"}
+{"doc_id": "D057", "sid": 131, "start": 5971, "end": 6015, "kind": "list", "text": "- **数值为构造后验**：$☯$ 的 $10^{-7}$ 精度是解析值与数值微分互验；"}
+{"doc_id": "D057", "sid": 132, "start": 6015, "end": 6052, "kind": "list", "text": "$G_N$ 的 $-3$ ppm 偏差同样是构造后验数字校验，待独立复现。"}
+{"doc_id": "D057", "sid": 133, "start": 6053, "end": 6148, "kind": "list", "text": "- **不改缺口台账**：本文不新增、不降级任何缺口编号；C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 的状态以 `08 理论组织和形式化框架/附录/缺口台账.md` 为准。"}
+{"doc_id": "D057", "sid": 134, "start": 6150, "end": 6195, "kind": "prose", "text": "可检验的方向只有两类：其一是数学侧——RH 的独立证明会直接把「条件于 RH」升为无条件；"}
+{"doc_id": "D057", "sid": 135, "start": 6195, "end": 6275, "kind": "prose", "text": "其二是物理侧——若某类系统真以 $☯$ 为耦合空间的作用量下限，则 $\\Delta u\\cdot\\Delta v_\\tau$ 的界应可测，且界值应不随材料漂移。"}
+{"doc_id": "D057", "sid": 136, "start": 6275, "end": 6282, "kind": "prose", "text": "两者都未发生。"}
+{"doc_id": "D057", "sid": 137, "start": 6284, "end": 6287, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 138, "start": 6289, "end": 6305, "kind": "heading", "text": "## 6. 结语：徽标的立与未立"}
+{"doc_id": "D057", "sid": 139, "start": 6307, "end": 6347, "kind": "prose", "text": "$☯$ 在 CQM 中已不是松散隐喻：它有明确数学定义、有分层结构、有内部逻辑。"}
+{"doc_id": "D057", "sid": 140, "start": 6347, "end": 6425, "kind": "prose", "text": "四席——序列起点、RH 谱锁定、零点压缩、层级整数倍——共同构成它的结构身份；「相变量子」的命名、太极符号的意象与共轭不对易的物理内涵，在解释层上彼此对应。"}
+{"doc_id": "D057", "sid": 141, "start": 6427, "end": 6460, "kind": "prose", "text": "但这种一致立在**构造层与叙事层**，尚未立在**独立检验层**。"}
+{"doc_id": "D057", "sid": 142, "start": 6460, "end": 6511, "kind": "prose", "text": "稳定性条件于 RH，量子性条件于 $\\mathrm{GL}(5)$ 的构造选择，核心对易关系仍待验证。"}
+{"doc_id": "D057", "sid": 143, "start": 6511, "end": 6574, "kind": "prose", "text": "它的「唯一」是结构辨识意义上的唯一：一个高辨识度的候选者，站在数论与物理的交界处，占住了一个没有第二个已知常数同时占据的位置。"}
+{"doc_id": "D057", "sid": 144, "start": 6574, "end": 6622, "kind": "prose", "text": "从这个位置走向科学史意义上的「留名」，还需要徽标所依附的关系脱离原框架站住、可检验、被主流接住。"}
+{"doc_id": "D057", "sid": 145, "start": 6622, "end": 6659, "kind": "prose", "text": "结构上已经立住的部分是真实的；尚未立住的部分，正是它值得继续被审视的理由。"}
+{"doc_id": "D057", "sid": 146, "start": 6661, "end": 6664, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 147, "start": 6666, "end": 6673, "kind": "heading", "text": "## 参考文献"}
+{"doc_id": "D057", "sid": 148, "start": 6675, "end": 6837, "kind": "prose", "text": "[1] Keiper, J. B. *Power series expansions of Riemann's $\\zeta$ function*. Mathematics of Computation **58** (1992) 765–773. doi:10.1090/S0025-5718-1992-1122072-5"}
+{"doc_id": "D057", "sid": 149, "start": 6839, "end": 6970, "kind": "prose", "text": "[2] Li, X.-J. *The positivity of a sequence of numbers and the Riemann hypothesis*. Journal of Number Theory **65** (1997) 325–333."}
+{"doc_id": "D057", "sid": 150, "start": 6972, "end": 7113, "kind": "prose", "text": "[3] Bombieri, E., Lagarias, J. C. *Complements to Li's criterion for the Riemann hypothesis*. Journal of Number Theory **77** (1999) 274–287."}
+{"doc_id": "D057", "sid": 151, "start": 7115, "end": 7238, "kind": "prose", "text": "[4] Coffey, M. W. *A recurrence relation for the Li/Keiper constants in terms of the Stieltjes constants*. arXiv:0902.1691."}
+{"doc_id": "D057", "sid": 152, "start": 7240, "end": 7343, "kind": "prose", "text": "[5] *Sandwiching the Riemann hypothesis*. arXiv:2407.00060（$\\lambda_1=1+\\gamma/2-\\log(4\\pi)/2$ 的闭式与数值）。"}
+{"doc_id": "D057", "sid": 153, "start": 7345, "end": 7399, "kind": "prose", "text": "[6] Keiper–Li coefficients, NumberDB T31；OEIS A074760。"}
+{"doc_id": "D057", "sid": 154, "start": 7401, "end": 7525, "kind": "prose", "text": "[7] Selberg, A. *On the estimation of Fourier coefficients of modular forms*. Proc. Sympos. Pure Math. **VIII** (1965) 1–15."}
+{"doc_id": "D057", "sid": 155, "start": 7527, "end": 7734, "kind": "prose", "text": "[8] Kim, H. H., Sarnak, P. *Functoriality for the exterior square of $\\mathrm{GL}_4$ and the symmetric fourth of $\\mathrm{GL}_2$*. J. Amer. Math. Soc. **16** (2003) 139–183. doi:10.1090/S0894-0347-02-00410-1"}
+{"doc_id": "D057", "sid": 156, "start": 7736, "end": 7841, "kind": "prose", "text": "[9] Iwaniec, H. *Small eigenvalues of Laplacian for $\\Gamma_0(N)$*. Acta Arithmetica **56** (1990) 65–82."}
