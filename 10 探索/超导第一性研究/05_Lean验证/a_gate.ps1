@@ -2,7 +2,7 @@
 # 用途：每次新增/修改环 15 引理后一键重放"出 olean → 只 import Spec → axioms → 类型对齐 → token 卫生"。
 # 不通过（任一模块非零退出、出现 sorryAx / 自造 axiom、类型不对齐、token 命中）则 exit 1。
 # 用法：pwsh -File .\a_gate.ps1   （工作目录会自动切到本脚本所在目录）
-# 说明：仅覆盖环 15 的二十八个模块（v12 起 Bridge 撤销、由 LockStiff 接替；v13 加 LockT；v14 加 LockThr；v15 加 LockR；v16 加 LockPhi；v17 加 LockW；v18 加 LockS；v19 加 LockWStr；v20 加 LockTStrict；v21 加 LockTChan；v22 加 LockTDom；v23 加 LockWD；v24 加 LockIbp；v25 加 LockWD2；v26 加 LockWD3；v27 加 LockWD4；v28 加 LockUnary）；全目录尚未纳入，故不能据此宣称"全目录 A 闸通过"。
+# 说明：仅覆盖环 15 的四十六模块（v12 起 Bridge 撤销、由 LockStiff 接替；v13 加 LockT；v14 加 LockThr；v15 加 LockR；v16 加 LockPhi；v17 加 LockW；v18 加 LockS；v19 加 LockWStr；v20 加 LockTStrict；v21 加 LockTChan；v22 加 LockTDom；v23 加 LockWD；v24 加 LockIbp；v25 加 LockWD2；v26 加 LockWD3；v27 加 LockWD4；v28 加 LockUnary；v29 加 LockDeficit；v30 加 LockLambda；v31 加 LockDeficitMono；v32 加 LockGapDeriv；v33 加 LockTail；v34 加 LockTailRatio；v35 加 LockSecant；v36 加 LockNearZero；v37 加 LockZeroExists；v38 加 LockZeroUnique；v39 加 LockRatioForm；v40 加 LockDeficitUb；v41 加 LockTanhTools；v42 加 LockTanhQuintic；v43 加 LockDeficitSq；v44 加 LockTanhSeptic；v45 加 LockTanhSepticUb；v46 加 LockWGapSeptic）；全目录尚未纳入，故不能据此宣称"全目录 A 闸通过"。
 
 $ErrorActionPreference = "Continue"
 $LeanExe = "D:\DevTools\.elan\toolchains\leanprover--lean4---v4.29.1\bin\lean.exe"
@@ -22,7 +22,7 @@ if (-not (Test-Path -LiteralPath ".\olean_tmp")) { New-Item -ItemType Directory 
 $fail = @()
 
 # ---- 1. 出 olean（Spec 先，证明模块只 import Spec）----
-$mods = @("Ring15Spec", "Ring15LockMult", "Ring15LockLayer", "Ring15LockMono", "Ring15LockCorr", "Ring15LockCorrGen", "Ring15LockCorrNear", "Ring15LockScale", "Ring15LockProbability", "Ring15LockNonlin", "Ring15LockRatio", "Ring15LockStiff", "Ring15LockT", "Ring15LockThr", "Ring15LockR", "Ring15LockPhi", "Ring15LockW", "Ring15LockS", "Ring15LockWStr", "Ring15LockTStrict", "Ring15LockTChan", "Ring15LockTDom", "Ring15LockWD", "Ring15LockIbp", "Ring15LockWD2", "Ring15LockWD3", "Ring15LockWD4", "Ring15LockUnary")
+$mods = @("Ring15Spec", "Ring15LockMult", "Ring15LockLayer", "Ring15LockMono", "Ring15LockCorr", "Ring15LockCorrGen", "Ring15LockCorrNear", "Ring15LockScale", "Ring15LockProbability", "Ring15LockNonlin", "Ring15LockRatio", "Ring15LockStiff", "Ring15LockT", "Ring15LockThr", "Ring15LockR", "Ring15LockPhi", "Ring15LockW", "Ring15LockS", "Ring15LockWStr", "Ring15LockTStrict", "Ring15LockTChan", "Ring15LockTDom", "Ring15LockWD", "Ring15LockIbp", "Ring15LockWD2", "Ring15LockWD3", "Ring15LockWD4", "Ring15LockUnary", "Ring15LockDeficit", "Ring15LockLambda", "Ring15LockDeficitMono", "Ring15LockGapDeriv", "Ring15LockTail", "Ring15LockTailRatio", "Ring15LockSecant", "Ring15LockNearZero", "Ring15LockZeroExists", "Ring15LockZeroUnique", "Ring15LockRatioForm", "Ring15LockDeficitUb", "Ring15LockTanhTools", "Ring15LockTanhQuintic", "Ring15LockDeficitSq", "Ring15LockTanhSeptic", "Ring15LockTanhSepticUb", "Ring15LockWGapSeptic")
 foreach ($m in $mods) {
     & $LeanExe -o ".\olean_tmp\$m.olean" ".\$m.lean" > ".\_gate_compile.out" 2>&1
     if ($LASTEXITCODE -ne 0) { $fail += "compile:$m" ; Write-Output "[FAIL] compile $m"; Get-Content ".\_gate_compile.out" | Select-Object -First 25 }
@@ -60,6 +60,24 @@ $check = @(
     "import Ring15LockWD3",
     "import Ring15LockWD4",
     "import Ring15LockUnary",
+    "import Ring15LockDeficit",
+    "import Ring15LockLambda",
+    "import Ring15LockDeficitMono",
+    "import Ring15LockGapDeriv",
+    "import Ring15LockTail",
+    "import Ring15LockTailRatio",
+    "import Ring15LockSecant",
+    "import Ring15LockNearZero",
+    "import Ring15LockZeroExists",
+    "import Ring15LockZeroUnique",
+    "import Ring15LockRatioForm",
+    "import Ring15LockDeficitUb",
+    "import Ring15LockTanhTools",
+    "import Ring15LockTanhQuintic",
+    "import Ring15LockDeficitSq",
+"import Ring15LockTanhSeptic",
+"import Ring15LockTanhSepticUb",
+"import Ring15LockWGapSeptic",
     "#print axioms CQM.Ring15.LockMult.targetProp",
     "#print axioms CQM.Ring15.LockMult.mLock_eq_one",
     "#print axioms CQM.Ring15.LockMult.lockMult_eq_one_iff",
@@ -170,28 +188,120 @@ $check = @(
     "#print axioms CQM.Ring15.LockUnary.targetPropRatioPhiForm",
     "#print axioms CQM.Ring15.LockUnary.targetPropShapeSignUnary",
     "#check (CQM.Ring15.LockUnary.targetPropRatioPhiForm : CQM.Ring15.Spec.TargetPropRatioPhiForm)",
-    "#check (CQM.Ring15.LockUnary.targetPropShapeSignUnary : CQM.Ring15.Spec.TargetPropShapeSignUnary)"
+    "#check (CQM.Ring15.LockUnary.targetPropShapeSignUnary : CQM.Ring15.Spec.TargetPropShapeSignUnary)",
+    "#print axioms CQM.Ring15.LockDeficit.targetPropRatioBracketLow",
+    "#print axioms CQM.Ring15.LockDeficit.targetPropRatioBracketHigh",
+    "#print axioms CQM.Ring15.LockDeficit.targetPropLambdaForm",
+    "#print axioms CQM.Ring15.LockDeficit.targetPropShapeSignDeficit",
+    "#check (CQM.Ring15.LockDeficit.targetPropRatioBracketLow : CQM.Ring15.Spec.TargetPropRatioBracketLow)",
+    "#check (CQM.Ring15.LockDeficit.targetPropRatioBracketHigh : CQM.Ring15.Spec.TargetPropRatioBracketHigh)",
+    "#check (CQM.Ring15.LockDeficit.targetPropLambdaForm : CQM.Ring15.Spec.TargetPropLambdaForm)",
+    "#check (CQM.Ring15.LockDeficit.targetPropShapeSignDeficit : CQM.Ring15.Spec.TargetPropShapeSignDeficit)",
+    "#print axioms CQM.Ring15.LockLambda.targetPropDeficitRatioMono",
+    "#print axioms CQM.Ring15.LockLambda.targetPropLambdaStrictMono",
+    "#print axioms CQM.Ring15.LockLambda.targetPropLambdaBounds",
+    "#print axioms CQM.Ring15.LockDeficitMono.targetPropDeficitDeriv",
+    "#print axioms CQM.Ring15.LockDeficitMono.targetPropDeficitDerivPos",
+    "#print axioms CQM.Ring15.LockDeficitMono.targetPropDeficitStrictMono",
+    "#print axioms CQM.Ring15.LockDeficitMono.targetPropDeficitRatioStrictMonoT",
+    "#print axioms CQM.Ring15.LockGapDeriv.targetPropLambdaDeriv",
+    "#print axioms CQM.Ring15.LockGapDeriv.targetPropRatioFunDeriv",
+    "#print axioms CQM.Ring15.LockGapDeriv.targetPropCriterionGapDeriv",
+    "#check (CQM.Ring15.LockLambda.targetPropDeficitRatioMono : CQM.Ring15.Spec.TargetPropDeficitRatioMono)",
+    "#check (CQM.Ring15.LockLambda.targetPropLambdaStrictMono : CQM.Ring15.Spec.TargetPropLambdaStrictMono)",
+    "#check (CQM.Ring15.LockLambda.targetPropLambdaBounds : CQM.Ring15.Spec.TargetPropLambdaBounds)",
+    "#check (CQM.Ring15.LockDeficitMono.targetPropDeficitDeriv : CQM.Ring15.Spec.TargetPropDeficitDeriv)",
+    "#check (CQM.Ring15.LockDeficitMono.targetPropDeficitDerivPos : CQM.Ring15.Spec.TargetPropDeficitDerivPos)",
+    "#check (CQM.Ring15.LockDeficitMono.targetPropDeficitStrictMono : CQM.Ring15.Spec.TargetPropDeficitStrictMono)",
+    "#check (CQM.Ring15.LockDeficitMono.targetPropDeficitRatioStrictMonoT : CQM.Ring15.Spec.TargetPropDeficitRatioStrictMonoT)"
+    "#check (CQM.Ring15.LockGapDeriv.targetPropLambdaDeriv : CQM.Ring15.Spec.TargetPropLambdaDeriv)",
+    "#check (CQM.Ring15.LockGapDeriv.targetPropRatioFunDeriv : CQM.Ring15.Spec.TargetPropRatioFunDeriv)",
+    "#check (CQM.Ring15.LockGapDeriv.targetPropCriterionGapDeriv : CQM.Ring15.Spec.TargetPropCriterionGapDeriv)",
+    "#print axioms CQM.Ring15.LockTail.targetPropSinhOneLt",
+    "#print axioms CQM.Ring15.LockTail.targetPropLambdaOne",
+    "#print axioms CQM.Ring15.LockTail.targetPropLambdaTailGt",
+    "#check (CQM.Ring15.LockTail.targetPropSinhOneLt : CQM.Ring15.Spec.TargetPropSinhOneLt)",
+    "#check (CQM.Ring15.LockTail.targetPropLambdaOne : CQM.Ring15.Spec.TargetPropLambdaOne)",
+    "#check (CQM.Ring15.LockTail.targetPropLambdaTailGt : CQM.Ring15.Spec.TargetPropLambdaTailGt)"
+    "#print axioms CQM.Ring15.LockTailRatio.targetPropRatioLeOfLeThird",
+    "#print axioms CQM.Ring15.LockTailRatio.targetPropGapNegOfDeficitLeThird",
+    "#check (CQM.Ring15.LockTailRatio.targetPropRatioLeOfLeThird : CQM.Ring15.Spec.TargetPropRatioLeOfLeThird)",
+    "#check (CQM.Ring15.LockTailRatio.targetPropGapNegOfDeficitLeThird : CQM.Ring15.Spec.TargetPropGapNegOfDeficitLeThird)"
+    "#print axioms CQM.Ring15.LockSecant.targetPropTanhSecant",
+    "#print axioms CQM.Ring15.LockSecant.targetPropDeficitLeThird",
+    "#print axioms CQM.Ring15.LockSecant.targetPropGapNegTail",
+    "#check (CQM.Ring15.LockSecant.targetPropTanhSecant : CQM.Ring15.Spec.TargetPropTanhSecant)",
+    "#check (CQM.Ring15.LockSecant.targetPropDeficitLeThird : CQM.Ring15.Spec.TargetPropDeficitLeThird)",
+    "#check (CQM.Ring15.LockSecant.targetPropGapNegTail : CQM.Ring15.Spec.TargetPropGapNegTail)",
+    "#print axioms CQM.Ring15.LockNearZero.targetPropDeficitGeSq",
+    "#print axioms CQM.Ring15.LockNearZero.targetPropLambdaLeSq",
+    "#print axioms CQM.Ring15.LockNearZero.targetPropGapPosNearZero",
+    "#check (CQM.Ring15.LockNearZero.targetPropDeficitGeSq : CQM.Ring15.Spec.TargetPropDeficitGeSq)",
+    "#check (CQM.Ring15.LockNearZero.targetPropLambdaLeSq : CQM.Ring15.Spec.TargetPropLambdaLeSq)",
+    "#check (CQM.Ring15.LockNearZero.targetPropGapPosNearZero : CQM.Ring15.Spec.TargetPropGapPosNearZero)",
+    "#print axioms CQM.Ring15.LockZeroExists.targetPropGapZeroExists",
+    "#check (CQM.Ring15.LockZeroExists.targetPropGapZeroExists : CQM.Ring15.Spec.TargetPropGapZeroExists)",
+    "#print axioms CQM.Ring15.LockZeroUnique.targetPropGapZeroUniqueOfRatioMono",
+    "#check (CQM.Ring15.LockZeroUnique.targetPropGapZeroUniqueOfRatioMono : CQM.Ring15.Spec.TargetPropGapZeroUniqueOfRatioMono)",
+    "#print axioms CQM.Ring15.LockRatioForm.targetPropDeficitRatioPos",
+    "#print axioms CQM.Ring15.LockRatioForm.targetPropRatioOverLambdaPos",
+    "#check (CQM.Ring15.LockRatioForm.targetPropDeficitRatioPos : CQM.Ring15.Spec.TargetPropDeficitRatioPos)",
+    "#print axioms CQM.Ring15.LockDeficitUb.targetPropDeficitDerivAlt",
+    "#print axioms CQM.Ring15.LockDeficitUb.targetPropDeficitDerivLtTwoDelta",
+    "#print axioms CQM.Ring15.LockDeficitUb.targetPropDeficitDerivLtTwoThird",
+    "#check (CQM.Ring15.LockDeficitUb.targetPropDeficitDerivAlt : CQM.Ring15.Spec.TargetPropDeficitDerivAlt)",
+    "#check (CQM.Ring15.LockDeficitUb.targetPropDeficitDerivLtTwoDelta : CQM.Ring15.Spec.TargetPropDeficitDerivLtTwoDelta)",
+    "#check (CQM.Ring15.LockDeficitUb.targetPropDeficitDerivLtTwoThird : CQM.Ring15.Spec.TargetPropDeficitDerivLtTwoThird)",
+    "#check (CQM.Ring15.LockRatioForm.targetPropRatioOverLambdaPos : CQM.Ring15.Spec.TargetPropRatioOverLambdaPos)",
+    "#print axioms CQM.Ring15.LockTanhTools.continuous_tanh",
+    "#print axioms CQM.Ring15.LockTanhTools.cont_sechSq",
+    "#print axioms CQM.Ring15.LockTanhTools.sechSq_pos",
+    "#print axioms CQM.Ring15.LockTanhTools.sechSq_le_one",
+    "#print axioms CQM.Ring15.LockTanhTools.tanhHasDerivAt",
+    "#print axioms CQM.Ring15.LockTanhTools.sechSq_eq_one_sub_tanh_sq",
+    "#print axioms CQM.Ring15.LockTanhTools.tanh_pos_of_pos",
+    "#print axioms CQM.Ring15.LockTanhTools.tanhLtSelf",
+    "#print axioms CQM.Ring15.LockTanhTools.targetPropTanhCubic",
+    "#check (CQM.Ring15.LockTanhTools.targetPropTanhCubic : CQM.Ring15.Spec.TargetPropTanhCubic)",
+    "#print axioms CQM.Ring15.LockTanhQuintic.tanhQuintic",
+    "#print axioms CQM.Ring15.LockTanhQuintic.targetPropTanhQuintic",
+    "#check (CQM.Ring15.LockTanhQuintic.targetPropTanhQuintic : CQM.Ring15.Spec.TargetPropTanhQuintic)",
+    "#print axioms CQM.Ring15.LockDeficitSq.deficitLeThirdSubSq",
+    "#print axioms CQM.Ring15.LockDeficitSq.targetPropDeficitLeThirdSubSq",
+    "#check (CQM.Ring15.LockDeficitSq.targetPropDeficitLeThirdSubSq : CQM.Ring15.Spec.TargetPropDeficitLeThirdSubSq)
+#print axioms CQM.Ring15.LockTanhSeptic.tanhSepticLower
+#print axioms CQM.Ring15.LockTanhSeptic.targetPropTanhSepticLower
+#check (CQM.Ring15.LockTanhSeptic.targetPropTanhSepticLower : CQM.Ring15.Spec.TargetPropTanhSepticLower)
+#print axioms CQM.Ring15.LockTanhSepticUb.tanhSepticUpper
+#print axioms CQM.Ring15.LockTanhSepticUb.targetPropTanhSeptic
+#check (CQM.Ring15.LockTanhSepticUb.targetPropTanhSeptic : CQM.Ring15.Spec.TargetPropTanhSeptic)",
+    "#print axioms CQM.Ring15.LockWGapSeptic.wGapLowerBound",
+    "#print axioms CQM.Ring15.LockWGapSeptic.targetPropWGapUpperBound",
+    "#check (CQM.Ring15.LockWGapSeptic.targetPropWGapUpperBound : CQM.Ring15.Spec.TargetPropWGapUpperBound)"
 ) -join "`n"
 $checkFile = ".\_a_gate_check.lean"
 Set-Content -LiteralPath $checkFile -Value $check -Encoding UTF8
 & $LeanExe $checkFile > ".\_a_gate_out.txt" 2>&1
-$out = Get-Content ".\_a_gate_out.txt"
+# 215 修：Lean 的 #print axioms 在 80 列处折行（续行以空格开头），
+# 原逐行解析会把折行条目整条丢掉（静默漏检）。先把续行拼回单行。
+$outRaw = ((Get-Content ".\_a_gate_out.txt") -join "`n") -replace "`n ", ""
+$out = $outRaw -split "`n"
 if ($LASTEXITCODE -ne 0) { $fail += "axioms-run"; Write-Output "[FAIL] axioms/type 检查执行失败"; $out }
 Remove-Item -LiteralPath $checkFile -Force
 
 $allowed = @("propext", "Classical.choice", "Quot.sound")
 foreach ($line in $out) {
     $s = "$line"
-    if ($s -match "depends on axioms: \[(.+)\]") {
+    if ($s -match "depends on axioms: \[(.*)\]") {
         $names = $Matches[1] -split "," | ForEach-Object { $_.Trim() }
         $bad = $names | Where-Object { $allowed -notcontains $_ }
         if ($bad) { $fail += "axiom:$s"; Write-Output "[FAIL] 非白名单公理：$s" }
         else { Write-Output "[ ok ] axioms: $($Matches[1])" }
     }
+    elseif ($s -match "^\S+ : ") { Write-Output "[ ok ] type: $s" }
     elseif ($s -match "sorryAx") { $fail += "sorryAx"; Write-Output "[FAIL] 命中 sorryAx" }
     elseif ($s -match "error") { $fail += "lean-error"; Write-Output "[FAIL] $s" }
-    elseif ($s -match "^\S+ : ") { Write-Output "[ ok ] type: $s" }
-}
+    }
 
 # ---- 3. token 卫生（去注释后扫描）----
 $scan = @'
@@ -228,12 +338,8 @@ if ($fail.Count -gt 0) {
     exit 1
 }
 Write-Output ""
-Write-Output "A 闸 PASS（限环 15 二十八模块 v28：编译 + axioms 白名单 + 类型对齐 + token 卫生）"
+Write-Output "A 闸 PASS（限环 15 四十六模块 v46：编译 + axioms 白名单 + 类型对齐 + token 卫生）"
 exit 0
-
-
-
-
 
 
 

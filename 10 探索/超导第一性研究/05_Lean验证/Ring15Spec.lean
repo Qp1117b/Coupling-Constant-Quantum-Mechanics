@@ -549,9 +549,289 @@ noncomputable def shapeG (T : ℝ) : ℝ :=
 def TargetPropShapeSignUnary : Prop :=
   ∀ (T : ℝ), 0 < T → (shapeDeriv T < 0 ↔ 0 < shapeG T)
 
+/- ===== v29（第 202 轮）：判据的 δ／λ 形式与判据比 r 的双侧夹逼（G-188b-2g） ===== -/
+
+/-- 亏损分数 $\delta(T):=1-\Phi(T)\in(0,1)$：窗口平均相对端点上界 $h$ 的相对亏损。 -/
+noncomputable def deficitFrac (T : ℝ) : ℝ := 1 - shapePhi T
+
+/-- 端点尺度
+$\lambda(T):=\dfrac{\mathrm{sech}^2\frac{1}{2T}}{2T\tanh\frac{1}{2T}}$，
+即 $\lambda=-T\dfrac{d}{dT}\ln h$（$\frac{d}{dT}\ln\tanh\frac{1}{2T}=-\frac{\mathrm{sech}^2\frac{1}{2T}}{2T^2\tanh\frac{1}{2T}}$）。
+$T>0$ 时 $\lambda=1/(T\sinh\frac1T)$。 -/
+noncomputable def endpointLambda (T : ℝ) : ℝ :=
+  sechSq (1 / (2 * T)) / (2 * T * shapeH T)
+
+/-- **判据比双侧夹逼（下界，G-188b-2g-1）**：$1/3\le r(T)$（$T>0$）。
+$T^2|w'|=\int_0^1u^2\mathrm{sech}^2\frac{u}{2T}\ge \mathrm{sech}^2\frac{1}{2T}\int_0^1u^2$；
+$r$ 的下界只需 $\mathrm{sech}^2$ 在本窗口上的**单点**值，与 $\Phi$ 无关。 -/
+def TargetPropRatioBracketLow : Prop := ∀ (T : ℝ), 0 < T → 1 / 3 ≤ ratioR T
+
+/-- **判据比双侧夹逼（上界，G-188b-2g-2）**：$r(T)\le 1/(3\,\mathrm{sech}^2\frac{1}{2T})$（$T>0$）。
+$T^2|w'|\le\int_0^1u^2=1/3$（$\mathrm{sech}^2\le1$），故 $r\le\frac{1}{3\mathrm{sech}^2\frac{1}{2T}}$。 -/
+def TargetPropRatioBracketHigh : Prop :=
+  ∀ (T : ℝ), 0 < T → ratioR T ≤ 1 / (3 * sechSq (1 / (2 * T)))
+
+/-- **端点尺度的初等形式（G-188b-2g-3）**：$\lambda(T)=1/(T\sinh\frac1T)$（$T>0$）。
+把 $\lambda$ 从"读窗口两个量的商"降为**纯 $T$ 的一元显式函数**，其单调性可独立论证。 -/
+def TargetPropLambdaForm : Prop :=
+  ∀ (T : ℝ), 0 < T → endpointLambda T = 1 / (T * Real.sinh (1 / T))
+
+/-- **判据的 δ／λ 形式（G-188b-2g-4）**：$S'(T)<0\iff\lambda(T)<\dfrac{\delta(1+\delta)}{1-\delta}$，
+$\delta=1-\Phi$、$\lambda$ 见 `endpointLambda`。
+判据从此只比两个**可单调读**的量：亏损分数 $\delta\in(0,1)$（窗口信息的全部残留）与端点尺度
+$\lambda(T)=1/(T\sinh\frac1T)$（纯 $T$ 函数）。$G>0$ 的符号判定被彻底改写为"$\lambda$ 是否低于
+$\delta$ 的显式阈值曲线"；201 的 $G$ 一元式退为中间物。 -/
+def TargetPropShapeSignDeficit : Prop :=
+  ∀ (T : ℝ), 0 < T →
+    (shapeDeriv T < 0 ↔
+      endpointLambda T < deficitFrac T * (1 + deficitFrac T) / (1 - deficitFrac T))
+
+/- ===== v30（第 203 轮）：判据两侧的单调性——λ 的单增与 R 的单增（G-188b-2h 前件） ===== -/
+
+/-- 判据阈值 $R(\delta):=\dfrac{\delta(1+\delta)}{1-\delta}$，$\delta=1-\Phi$；定义域 $\delta\in(0,1)$。 -/
+noncomputable def deficitRatio (T : ℝ) : ℝ :=
+  deficitFrac T * (1 + deficitFrac T) / (1 - deficitFrac T)
+
+/-- **阈值 $R$ 的单增（G-188b-2h-1）**：$\forall a\,b,\ 0<a<b<1\Rightarrow
+\dfrac{a(1+a)}{1-a}<\dfrac{b(1+b)}{1-b}$。
+纯代数：差 $=\dfrac{(b-a)(1+a+b-ab)}{(1-a)(1-b)}$，两个因子皆正——故**判据右端随亏损分数 δ 严格增**，
+不依赖 $\Phi$ 的导数。 -/
+def TargetPropDeficitRatioMono : Prop :=
+  ∀ (a b : ℝ), 0 < a → a < b → b < 1 →
+    a * (1 + a) / (1 - a) < b * (1 + b) / (1 - b)
+
+/-- **端点尺度的严格单增（G-188b-2h-2）**：$\forall T_1\,T_2,\ 0<T_1<T_2\Rightarrow
+\lambda(T_1)<\lambda(T_2)$。
+$\lambda(T)=F(1/T)$，$F(s)=s/\sinh s$ 在 $(0,\infty)$ 上严格减（$F'=\frac{\sinh s-s\cosh s}{\sinh^2s}<0
+\iff\tanh s<s$），$1/T$ 严格减，复合得严格增。 -/
+def TargetPropLambdaStrictMono : Prop :=
+  ∀ (T₁ T₂ : ℝ), 0 < T₁ → T₁ < T₂ → endpointLambda T₁ < endpointLambda T₂
+
+/-- **端点尺度的值域（G-188b-2h-3）**：$\forall T>0,\ 0<\lambda(T)<1$。
+$\lambda=s/\sinh s$（$s=1/T$），$\sinh s>s>0$ 给出 $0<s/\sinh s<1$；故 $\lambda$ 的值域在 $(0,1)$ 内，
+**判据右端 $R(\delta)$ 可超过 1 而左端不可**——这是远区比较的第一条硬界。 -/
+def TargetPropLambdaBounds : Prop :=
+  ∀ (T : ℝ), 0 < T → 0 < endpointLambda T ∧ endpointLambda T < 1
+
+/- ===== v31（第 204 轮）：δ 的导数闭式、严格单增与右端随 T 的单增（G-188b-2i 前件） ===== -/
+
+/-- δ 的导数闭式：$\delta'(T)=-\dfrac{w'(T)h(T)+w(T)\,\mathrm{sech}^2\frac1{2T}/(2T^2)}{h(T)^2}$
+（由 $h'=-\mathrm{sech}^2\frac{1}{2T}/(2T^2)$ 与商法则）。 -/
+noncomputable def deficitDeriv (T : ℝ) : ℝ :=
+  -(wGapDeriv T * shapeH T + wGap T * sechSq (1 / (2 * T)) / (2 * T ^ 2)) / shapeH T ^ 2
+
+/-- **δ 的导数（G-188b-2i-1）**：$\forall T>0$，`HasDerivAt deficitFrac (deficitDeriv T) T`。 -/
+def TargetPropDeficitDeriv : Prop :=
+  ∀ (T : ℝ), 0 < T → HasDerivAt (fun T => deficitFrac T) (deficitDeriv T) T
+
+/-- **δ 的导数正（G-188b-2i-2）**：$\forall T>0$，$\delta'(T)>0$。
+由窗口点位的严格比较 $2\tanh\frac1{2T}u^2\mathrm{sech}^2\frac{u}{2T}
+\ge 2\mathrm{sech}^2\frac1{2T}u\tanh\frac{u}{2T}$（$u\in(0,1)$）积分得
+$\mathrm{sech}^2\frac1{2T}w<2T^2\tanh\frac1{2T}|w'|$，即分子为负。 -/
+def TargetPropDeficitDerivPos : Prop := ∀ (T : ℝ), 0 < T → 0 < deficitDeriv T
+
+/-- **δ 严格单增（G-188b-2i-3）**：$\forall T_1\,T_2,\ 0<T_1<T_2\Rightarrow
+\delta(T_1)<\delta(T_2)$；等价地 $\Phi$ 在 $(0,\infty)$ 上严格减。 -/
+def TargetPropDeficitStrictMono : Prop :=
+  ∀ (T₁ T₂ : ℝ), 0 < T₁ → T₁ < T₂ → deficitFrac T₁ < deficitFrac T₂
+
+/-- **判据右端随 $T$ 严格单增（G-188b-2i-4）**：$\forall T_1\,T_2,\ 0<T_1<T_2\Rightarrow
+R(\delta(T_1))<R(\delta(T_2))$——由 $\delta$ 严格单增与 $R$ 在 $(0,1)$ 单增复合。 -/
+def TargetPropDeficitRatioStrictMonoT : Prop :=
+  ∀ (T₁ T₂ : ℝ), 0 < T₁ → T₁ < T₂ → deficitRatio T₁ < deficitRatio T₂
+
+/- ===== v32（第 205 轮）：判据差的导数结构——λ 的导数闭式与 D 的导数（G-188b-2j 前件） ===== -/
+
+/-- λ 的导数闭式：$\lambda'(T)=\dfrac{\cosh\frac1T/T-\sinh\frac1T}{\left(T\sinh\frac1T\right)^2}$。
+由 $\lambda=1/(T\sinh\frac1T)$、商法则与 $\frac{d}{dT}\sinh\frac1T=-\cosh\frac1T/T^2$ 给出；
+正性等价于 $\tanh\frac1T<\frac1T$（即 203 的 `tanh_lt_self`）。 -/
+noncomputable def lambdaDeriv (T : ℝ) : ℝ :=
+  (Real.cosh (1 / T) / T - Real.sinh (1 / T)) / (T * Real.sinh (1 / T)) ^ 2
+
+/-- **λ 的导数（G-188b-2j-1）**：$\forall T>0$，`HasDerivAt endpointLambda (lambdaDeriv T) T`。 -/
+def TargetPropLambdaDeriv : Prop :=
+  ∀ (T : ℝ), 0 < T → HasDerivAt (fun T => endpointLambda T) (lambdaDeriv T) T
+
+/-- 阈值函数的一元形式：$x\mapsto\dfrac{x(1+x)}{1-x}$（$x=\delta$）；`deficitRatio` 是其与
+`deficitFrac` 的复合。 -/
+noncomputable def ratioFun (x : ℝ) : ℝ := x * (1 + x) / (1 - x)
+
+/-- 阈值函数的导数闭式：$R'(x)=\dfrac{1+2x-x^2}{(1-x)^2}$（商法则，分子
+$(1+2x)(1-x)+(x+x^2)=1+2x-x^2$）。 -/
+noncomputable def ratioFunDeriv (x : ℝ) : ℝ := (1 + 2 * x - x ^ 2) / (1 - x) ^ 2
+
+/-- **阈值函数的导数（G-188b-2j-2）**：$\forall x\neq1$，`HasDerivAt ratioFun (ratioFunDeriv x) x`。 -/
+def TargetPropRatioFunDeriv : Prop :=
+  ∀ (x : ℝ), x ≠ 1 → HasDerivAt ratioFun (ratioFunDeriv x) x
+
+/-- 判据差 $D(T):=R(\delta(T))-\lambda(T)$：$S'<0\iff\lambda<R(\delta)$ 即 $D>0$。 -/
+noncomputable def criterionGap (T : ℝ) : ℝ := deficitRatio T - endpointLambda T
+
+/-- 判据差的导数闭式：$D'(T)=R'(\delta)\delta'(T)-\lambda'(T)$
+（`ratioFunDeriv`∘`deficitFrac` 的导数乘 `deficitDeriv`，再减 `lambdaDeriv`）。 -/
+noncomputable def criterionGapDeriv (T : ℝ) : ℝ :=
+  ratioFunDeriv (deficitFrac T) * deficitDeriv T - lambdaDeriv T
+
+/-- **判据差的导数（G-188b-2j-3）**：$\forall T>0$，`HasDerivAt criterionGap (criterionGapDeriv T) T`。 -/
+def TargetPropCriterionGapDeriv : Prop :=
+  ∀ (T : ℝ), 0 < T → HasDerivAt criterionGap (criterionGapDeriv T) T
+
+/-- **$\sinh1<3/2$（G-188b-2k 前件-1）**：$\sinh1=\frac{e-e^{-1}}2<\frac e2<\frac32$（$e<3$、$e^{-1}>0$）。
+这是尾段界里唯一需要数值锚的一步，且锚是**上界**而非等式，故可只用 $e<3$ 与正性。 -/
+def TargetPropSinhOneLt : Prop := Real.sinh 1 < 3 / 2
+
+/-- **$\lambda(1)=1/\sinh1$（G-188b-2k 前件-2）**：把 `endpointLambda` 在 $T=1$ 的值降到初等形式
+（由 `TargetPropLambdaForm` 在 $T=1$ 处取值），使尾段下界只依赖 $T$ 的一元显式函数。 -/
+def TargetPropLambdaOne : Prop := endpointLambda 1 = 1 / Real.sinh 1
+
+/-- **尾段下界（G-188b-2k 前件-3）**：$T\ge1\Rightarrow\frac23<\lambda(T)$。
+由 `TargetPropLambdaStrictMono`（$\lambda$ 严格单增）与前件-1、前件-2 合成；
+它只是"$T\ge1\Rightarrow D<0$"里 $\lambda$ 一侧的值域分离，**不含** $R(\delta)<\frac23$ 那一侧。 -/
+def TargetPropLambdaTailGt : Prop := ∀ (T : ℝ), 1 ≤ T → 2 / 3 < endpointLambda T
+
+/-- **判据比的代数上界（G-188b-2k 前件-4）**：$0<x\le\frac13\Rightarrow R(x)\le\frac23$。
+$R(x)\le\frac23\iff3x(1+x)\le2(1-x)\iff3x^2+5x-2\le0\iff(3x-1)(x+2)\le0$。 -/
+def TargetPropRatioLeOfLeThird : Prop :=
+  ∀ (x : ℝ), 0 < x → x ≤ 1 / 3 → ratioFun x ≤ 2 / 3
+
+/-- **尾段排除的合成（G-188b-2k 前件-5）**：$0<T$、$\delta(T)\le\frac13$、$T\ge1$ $\Rightarrow D(T)<0$。
+$\delta$ 侧只消费代数上界 $R(\delta)\le\frac23$（前件-4），$\lambda$ 侧只消费 `TargetPropLambdaTailGt`；
+**不含** $\delta\le\frac13$ 本身的证明（那是 $\tanh$ 凹性的活）。 -/
+def TargetPropGapNegOfDeficitLeThird : Prop :=
+  ∀ (T : ℝ), 0 < T → deficitFrac T ≤ 1 / 3 → 1 ≤ T → criterionGap T < 0
+
+/-- **$\tanh$ 的割线不等式（G-188b-2k 前件-6）**：$a>0$、$u\in[0,1]$ ⇒ $u\tanh a\le\tanh(au)$。
+等价说法：$g(u)=\tanh(au)/u$ 在 $(0,\infty)$ 上单调不增（$g'$ 的分子符号 $\iff2au<\sinh(2au)$）。 -/
+def TargetPropTanhSecant : Prop :=
+  ∀ (a u : ℝ), 0 < a → u ∈ Set.Icc (0 : ℝ) 1 → u * Real.tanh a ≤ Real.tanh (a * u)
+
+/-- **$\delta$ 的上界（G-188b-2k 前件-7）**：$\forall T>0,\ \delta(T)\le\frac13$。
+由割线不等式逐点积分：$w\ge\frac23h$。 -/
+def TargetPropDeficitLeThird : Prop := ∀ (T : ℝ), 0 < T → deficitFrac T ≤ 1 / 3
+
+/-- **尾段的最终排除（G-188b-2k 尾段）**：$\forall T>0,\ 1\le T\Rightarrow D(T)<0$。
+只消费前件-4（$R\le\frac23$）、前件-5（条件合成）、前件-7（$\delta\le\frac13$）；**不含**近零端与区间内零点唯一。 -/
+def TargetPropGapNegTail : Prop := ∀ (T : ℝ), 0 < T → 1 ≤ T → criterionGap T < 0
+
+/-- **近零端 $\delta$ 的平方下界（G-188b-2k 近零端前件-1）**：$0<T\le\frac1{10}\Rightarrow\frac8{15}T^2\le\delta(T)$。
+由 $h-w=\frac T2|w'|$ 与 $|w'|\ge\frac{16}{15}T$（$\mathrm{sech}^2\ge1-z^2$ 在 $z\le1$ 段）给出。 -/
+def TargetPropDeficitGeSq : Prop :=
+  ∀ (T : ℝ), 0 < T → T ≤ 1 / 10 → (8 / 15) * T ^ 2 ≤ deficitFrac T
+
+/-- **近零端 $\lambda$ 的平方上界（G-188b-2k 近零端前件-2）**：$0<T\le\frac1{10}\Rightarrow\lambda(T)\le\frac{T^2}{3}$。
+由 $\lambda=1/(T\sinh\frac1T)$ 与 $\sinh s\ge3s^3$（$s\ge10$）给出。 -/
+def TargetPropLambdaLeSq : Prop :=
+  ∀ (T : ℝ), 0 < T → T ≤ 1 / 10 → endpointLambda T ≤ T ^ 2 / 3
+
+/-- **近零端正性（G-188b-2k 近零端）**：$0<T\le\frac1{10}\Rightarrow0<D(T)$。
+只消费前件-1（$\delta\ge\frac8{15}T^2$）、前件-2（$\lambda\le\frac{T^2}{3}$）与 $R(\delta)\ge\delta$；**不含** $(0,1)$ 内零点唯一。 -/
+def TargetPropGapPosNearZero : Prop :=
+  ∀ (T : ℝ), 0 < T → T ≤ 1 / 10 → 0 < criterionGap T
+
+/-- **零点存在（G-188b-2k 存在性前段）**：$D$ 在 $(\frac1{10},1)$ 内至少有一个零点。
+由 211（$0<T\le\frac1{10}\Rightarrow D>0$，取 $T=\frac1{10}$）、210（$T\ge1\Rightarrow D<0$，取 $T=1$）
+与 205 的 `TargetPropCriterionGapDeriv`（$D$ 在 $T>0$ 上可微）经介值定理给出。
+**只给存在**，不含唯一性。 -/
+def TargetPropGapZeroExists : Prop :=
+  ∃ T : ℝ, 1 / 10 < T ∧ T < 1 ∧ criterionGap T = 0
+
+/- ===== v38（第 213 轮）：零点唯一性的条件合成（$Q=\lambda/R$ 单调 ⇒ 至多一解） ===== -/
+
+/-- $Q=\lambda/R(\delta)$：把判据差写成 $D=R(\delta)-\lambda$ 后，$D=0\iff Q=1$（$R>0$ 时）。 -/
+noncomputable def ratioOverLambda (T : ℝ) : ℝ :=
+  endpointLambda T / deficitRatio T
+
+/-- **零点唯一性（条件形态，G-188b-2k 唯一性前段）**：若 $Q$ 在 $[\frac1{10},1]$ 上严格单增，
+则 $D$ 在该区间内**恰有一个**零点（存在取自 212，唯一性由 $Q$ 的单射性给出）。
+前件「$Q$ 严格单增」**未证**，故本条是条件形态，不得当作唯一性已闭。 -/
+def TargetPropGapZeroUniqueOfRatioMono : Prop :=
+  (∀ T1 T2 : ℝ, 1 / 10 ≤ T1 → T1 < T2 → T2 ≤ 1 → ratioOverLambda T1 < ratioOverLambda T2) →
+  ∃! T : ℝ, 1 / 10 < T ∧ T < 1 ∧ criterionGap T = 0
+
+/- ===== v39（第 214 轮）：$Q$ 的结构正性（唯一性前件的形式准备） ===== -/
+
+/-- **$R(\delta)>0$**：$\forall T>0,\ 0<R(\delta(T))$。由 $\delta\in(0,1)$（190 的 $w>0$、197 的 $w<h$）与
+$R=\delta(1+\delta)/(1-\delta)$ 的符号读出。 -/
+def TargetPropDeficitRatioPos : Prop :=
+  ∀ (T : ℝ), 0 < T → 0 < deficitRatio T
+
+/-- **$Q$ 的正性**：$\forall T>0,\ 0<Q(T)$。由 202 的 $\lambda>0$ 与本环的 $R>0$ 直接给出。 -/
+def TargetPropRatioOverLambdaPos : Prop :=
+  ∀ (T : ℝ), 0 < T → 0 < ratioOverLambda T
+
+/- ===== v40（第 215 轮）：$\delta'$ 去 $|w'|$ 的闭式与严格上界 ===== -/
+
+/-- **$\delta'$ 去 $|w'|$ 的闭式**：由 197 的分部积分恒等式 $w=h+\frac T2w'$ 消去 $w'$，
+$\delta'(T)=\dfrac{2(h-w)}{T\,h}-\dfrac{w\,\mathrm{sech}^2\frac1{2T}}{2T^2h^2}$（$h=\tanh\frac1{2T}$），
+即 $\dfrac{2\delta}{T}-\dfrac{\Phi\,\mathrm{sech}^2\frac1{2T}}{2T^2h}$。 -/
+noncomputable def deficitDerivAlt (T : ℝ) : ℝ :=
+  2 * (shapeH T - wGap T) / (T * shapeH T) -
+    wGap T * sechSq (1 / (2 * T)) / (2 * T ^ 2 * shapeH T ^ 2)
+
+/-- **闭式对齐**：$\forall T>0$，`deficitDeriv T = deficitDerivAlt T`。 -/
+def TargetPropDeficitDerivAlt : Prop :=
+  ∀ (T : ℝ), 0 < T → deficitDeriv T = deficitDerivAlt T
+
+/-- **$\delta'$ 的严格上界（一）**：$\forall T>0,\ \delta'(T)<\dfrac{2\delta(T)}{T}$
+（闭式的减项 $\Phi\,\mathrm{sech}^2/(2T^2h)$ 严格为正）。 -/
+def TargetPropDeficitDerivLtTwoDelta : Prop :=
+  ∀ (T : ℝ), 0 < T → deficitDeriv T < 2 * deficitFrac T / T
+
+/-- **$\delta'$ 的严格上界（二）**：$\forall T>0,\ \delta'(T)<\dfrac{2}{3T}$（再消费 210 的 $\delta\le\frac13$）。 -/
+def TargetPropDeficitDerivLtTwoThird : Prop :=
+  ∀ (T : ℝ), 0 < T → deficitDeriv T < 2 / (3 * T)
+
+/-- **$\tanh$ 的三阶下界（v41，第 217 轮的工具命题）**：$\forall x\ge0,\ x-\dfrac{x^3}{3}\le\tanh x$。
+由 $\tanh x=x-\int_0^x(1-\mathrm{sech}^2)$ 与 $1-\mathrm{sech}^2=\tanh^2\le t^2$ 得；
+它是把 $\delta\le\frac13$ 收紧为 $\delta\le\frac13-\frac{c}{T^2}$ 的第一步入口（216 停点）。 -/
+def TargetPropTanhCubic : Prop :=
+  ∀ (x : ℝ), 0 ≤ x → x - x ^ 3 / 3 ≤ Real.tanh x
+
+/-- **$\tanh$ 的五阶上界（v42，第 218 轮）**：$\forall 0\le s\le1,\ \tanh s\le s-\dfrac{s^3}{3}+\dfrac{2s^5}{15}$。
+由三阶下界平方后积分得到（$\tanh^2t\ge(t-\frac{t^3}{3})^2\ge t^2-\frac{2t^4}{3}$）；
+它负责把 $h=\tanh\frac1{2T}$ 压到 $s-\frac{s^3}{3}+\frac{2s^5}{15}$ 以下。 -/
+def TargetPropTanhQuintic : Prop :=
+  ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → Real.tanh s ≤ s - s ^ 3 / 3 + 2 * s ^ 5 / 15
+
+/-- **$\delta$ 的三阶减平方界（v43，第 219 轮）**：$\forall T\ge1,\ \delta(T)\le\frac13-\frac{9}{500\,T^2}$。
+由 $w\ge\frac{1}{3T}-\frac{1}{60T^3}$（三阶界积分）与 $h\le\frac{1}{2T}-\frac{1}{24T^3}+\frac{1}{240T^5}$（五阶界）合成，
+再把 $T\ge1$ 上的代数余量 $1.52T^4-1.46T^2-0.054>0$ 算出。常数 $\frac{9}{500}$ 是 $T=1$ 处的余量（数值 $0.018018$）的保守取整。 -/
+def TargetPropDeficitLeThirdSubSq : Prop :=
+  ∀ (T : ℝ), 1 ≤ T → deficitFrac T ≤ 1 / 3 - (9 : ℝ) / 500 / T ^ 2
+
+/-- **$\tanh$ 的七阶下界（v44，第 221 轮）**：$\forall 0\le s\le1,\ s-\frac{s^3}{3}+\frac{2s^5}{15}-\frac{17s^7}{315}\le\tanh s$。
+由五阶上界（v42）平方后积分：$\tanh s=s-\int_0^s\tanh^2\ge s-\int_0^s\bigl(t-\frac{t^3}{3}+\frac{2t^5}{15}\bigr)^2$，
+再把 $s^9,s^{11}$ 两项整体判号（$s\le1$ 时其和 $\le0$）。 -/
+def TargetPropTanhSepticLower : Prop :=
+  ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → s - s ^ 3 / 3 + 2 * s ^ 5 / 15 - 17 * s ^ 7 / 315 ≤ Real.tanh s
+
+/-- **$\tanh$ 的七阶上界（v45，第 222 轮）**：$\forall 0\le s\le1,\ \tanh s\le s-\frac{s^3}{3}+\frac{2s^5}{15}-\frac{17s^7}{315}+\frac{62s^9}{2835}$。
+由 v44 七阶下界平方后积分：$\tanh^2\ge P^2$、$\tanh s=s-\int_0^s\tanh^2$，且 $P^2\ge S_2^2-\frac{34t^8}{315}$
+（$S_2$＝五阶上界、$P$＝七阶下界，$S_2\le t$），积分即得 -/
+def TargetPropTanhSeptic : Prop :=
+  ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → Real.tanh s ≤ s - s ^ 3 / 3 + 2 * s ^ 5 / 15 - 17 * s ^ 7 / 315 + 62 * s ^ 9 / 2835
+
+/-- **$w$ 的七阶下界多项式（v46，第 223 轮）**：由七阶下界 $S_3$ 在 $u\in[0,1]$ 上逐点积分
+$\int_0^1 2u\,S_3\bigl(\frac{u}{2T}\bigr)du=\frac{1}{3T}-\frac{1}{60T^3}+\frac{1}{840T^5}-\frac{17}{181440T^7}$。 -/
+def wGapLowerSeptic (T : ℝ) : ℝ :=
+  1 / (3 * T) - 1 / (60 * T ^ 3) + 1 / (840 * T ^ 5) - 17 / (181440 * T ^ 7)
+
+/-- **$w$ 的七阶上界多项式（v46）**：$S_4$ 逐点积分的九阶补项 $+\frac{31}{3991680T^9}$。 -/
+def wGapUpperSeptic (T : ℝ) : ℝ :=
+  wGapLowerSeptic T + 31 / (3991680 * T ^ 9)
+
+/-- **（v46）$w$ 的下界**：$\forall T\ge\frac12,\ w_{\rm lb}(T)\le w(T)$。侧条件 $T\ge\frac12$ 不可去（需 $\frac{u}{2T}\le1$）。 -/
+def TargetPropWGapLowerBound : Prop :=
+  ∀ (T : ℝ), 1 / 2 ≤ T → wGapLowerSeptic T ≤ wGap T
+
+/-- **（v46）$w$ 的上界**：$\forall T\ge\frac12,\ w(T)\le w_{\rm ub}(T)$。 -/
+def TargetPropWGapUpperBound : Prop :=
+  ∀ (T : ℝ), 1 / 2 ≤ T → wGap T ≤ wGapUpperSeptic T
+
 end
 
 end CQM.Ring15.Spec
+
 
 
 

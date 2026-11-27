@@ -1068,3 +1068,208 @@ Set-Location "D:\WorkSpace\物理\CQMFormal\08 理论组织和形式化框架\04
 - 写法坑（五条）：`field_simp` 已闭合后多写 `ring` 报 `No goals`；pwsh 里 `lean … 2>&1 | Select-Object -Last` 会挂死，须重定向到文件再读；`Set-Content -Encoding UTF8` 的临时 `.lean` 带 BOM（Lean 报 `expected token` 于 1:0）；改 Spec 使全部下游 olean 失效，须按依赖序重编（Spec≈85 s、模块≈35 s）；`shapeH` 与 `shapePhi` 的分母同式，是耦合点，改一处必须同步。
 - 判定：**G-188b-2f 判据一元化完成**；$G$ 的符号**未证**（缺 $\Phi$ 的单调性）。最易跑偏处：`rw [hT2, hS]`——分子分母任一写错，`rw` 仍能对上"形似式"，故分子只走 `nlinarith [hp]`、分母只走勾股恒等式。
 - 口径：200 的"$r$ 的上下夹逼是必要入口"**撤销**（记入 `DISCARD.md` 第 201 轮），$r$ 的界降为可选旁证。
+
+## 第 202 轮（2026-11-26）：Spec v29 与 `Ring15LockDeficit`
+
+- `Ring15Spec.lean` → **v29**（597 行／37 056 B，编译 exit 0）：新增 `deficitFrac T := 1 - shapePhi T`、`endpointLambda T := sechSq(1/(2*T))/(2*T*shapeH T)`，与四条 `Prop`：`TargetPropRatioBracketLow`（$\forall T>0$, $1/3\le r$）、`TargetPropRatioBracketHigh`（$\forall T>0$, $r\le1/(3\mathrm{sech}^2\frac{1}{2T})$）、`TargetPropLambdaForm`（$\forall T>0$, $\lambda=1/(T\sinh\frac1T)$）、`TargetPropShapeSignDeficit`（$\forall T>0$, $S'<0\iff\lambda<\delta(1+\delta)/(1-\delta)$）。
+- `Ring15LockDeficit.lean`（233 行，编译 exit 0）：四条定理（与上述同名同类型）＋私有 `cont_sechSq`／`sechSq_pos`／`sechSq_le_one`／`sechSq_anti`／`tanhPos`／`sechSq_eq_one_sub_tanh_sq`／`int_u_sq`／`abs_deriv`／`ratio_integral`／`criterionPhi`。import 基线：`Ring15Spec`＋`Ring15LockW`＋`Ring15LockWD`＋`Ring15LockIbp`＋`Ring15LockUnary`＋`Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp`。
+- 证法要点：两条夹逼都走"逐点界＋`integral_mono_on`"——$\mathrm{sech}^2\frac{u}{2T}\in[S,1]$（$u\in[0,1]$，$\cosh$ 单增、$\mathrm{sech}^2\le1$），乘 $u^2\ge0$ 后积分，$\int_0^1u^2=\frac13$ 由 FTC（原函数 $u^3/3$）自证；$\lambda$ 的闭式只用 $\sinh$ 二倍角；δ／λ 判据是"整块除以 $2Th>0$ 与 $\Phi=1-\delta>0$"的纯代数（`criterionPhi`）。
+- `a_gate.ps1`：`$mods` 二十九项（末项 `Ring15LockDeficit`），62 条 `#print axioms`、57 条 `#check`；实跑 `A 闸 PASS（限环 15 二十九模块 v29）`——29/29 编译 ok、axioms 全白名单、258 文件 token 0 命中、exit 0（约 21 分钟）。
+- 写法坑（五条）：`refine` 里未加括号的 `hcont.intervalIntegrable 0 1` 会被拆成三个参数（报 "numerals are data…"）；`pow_le_pow_left` 在本基线不存在（平方保序用 `nlinarith`）；分式不等式引理名带下标 ₀（`div_le_div_iff₀`／`div_lt_div_iff₀`）；`field_simp` 已闭合后多写 `ring` 报 `No goals`（两处）；`unfold shapePhi` 后分母是 `Real.tanh (1/(2*T))` 而非 `shapeH T`，须先 `have hΦeq : shapePhi T = wGap T / shapeH T := rfl`。
+- 判定：**G-188b-2g 判据改写完成**（$r$ 夹逼定理化、$\lambda$ 闭式、δ／λ 判据）；$G$ 的符号**未证**（现等价于 $\lambda$ 与 $R(\delta)$ 的比较）。最易跑偏处：`sechSq_anti` 的 `Real.cosh_le_cosh.mpr` 与绝对值化——若略去 $u\ge0$，$u<0$ 段会给出反向不等式。
+- 口径："$\Phi$ 的单调性可判 $G$"**撤销**（记入 `DISCARD.md` 第 202 轮），改判为"判 $\delta$ 与 $\lambda$"；余项收窄为 **G-188b-2h**（$\lambda$ 单调、$R(\delta)$ 单增、$T_{\min}$ 编址）。
+- `Ring15Spec.lean` → **v30**（624 行／38 693 B，编译 exit 0）：新增 `deficitRatio T := deficitFrac T*(1+deficitFrac T)/(1-deficitFrac T)` 与三条 `Prop`：`TargetPropDeficitRatioMono`（$\forall a\,b$, $0<a<b<1$ ⇒ $\frac{a(1+a)}{1-a}<\frac{b(1+b)}{1-b}$）、`TargetPropLambdaStrictMono`（$\forall T_1\,T_2$, $0<T_1<T_2$ ⇒ $\lambda(T_1)<\lambda(T_2)$）、`TargetPropLambdaBounds`（$\forall T>0$, $0<\lambda(T)<1$）。
+- `Ring15LockLambda.lean`（180 行，编译 exit 0）：三条定理（与上述同名同类型）＋私有 `cont_sechSq`／`sechSq_pos`／`sechSq_le_one`／`hasDerivAt_tanh`／`tanh_lt_self`／`self_lt_sinh`／`shapeF`／`F_deriv`／`F_strictAnti`。import 基线：`Ring15Spec`＋`Ring15LockDeficit`＋`Mathlib.Analysis.Calculus.Deriv.MeanValue`＋`Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus`＋`Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp`。
+- 证法要点：$R$ 的单增是"差 $\frac{(b-a)(1+a+b-ab)}{(1-a)(1-b)}$ 分子三因子正"的纯代数（`div_lt_div_iff₀`＋`nlinarith`）；$\lambda$ 的单增走 $\lambda=F(1/T)$、$F'<0\iff\tanh s<s$（`tanh_lt_self`，由 FTC $\tanh s=\int_0^s\mathrm{sech}^2$ 与 $s-\tanh s=\int_0^s\tanh^2>0$），再用 `strictAntiOn_of_hasDerivWithinAt_neg` 得 $F$ 严格减、与 $T\mapsto1/T$ 严格减复合；$\lambda<1$ 走 `self_lt_sinh`。
+- `a_gate.ps1`：`$mods` 三十项（末项 `Ring15LockLambda`），65 条 `#print axioms`、60 条 `#check`；实跑 `A 闸 PASS（限环 15 三十模块 v30）`——30/30 编译 ok、axioms 全白名单、259 文件 token 0 命中、exit 0（约 20–25 分钟）。
+- 写法坑（七条）：`intervalIntegral.integral_pos` 首参须 `0<b`（`hx.le` 报 "expected 0<x"）；证 $\mathrm{sech}^2\frac{x}{2}<1$ 的旧法（`Real.abs_tanh_lt_one`＋`sq_abs`）失败，改 `div_lt_one`＋`Real.cosh_sq`＋`nlinarith`；`strictAntiOn_of_hasDerivWithinAt_neg` 的 `f'` 须显式命名；`StrictAntiOn` 参数序 $(x)(y)(x<y)\Rightarrow f\,y<f\,x$（须传 $x=1/T_2$、$y=1/T_1$）；`positivity` 证 `0<1/T` 失效改 `one_div_pos.mpr`；`div_lt_one` 须在未化简分式上重写；`Set.interior (Set.Ioi 0)` 成员须 `simpa` 转 $0<x$。
+- 判定：**G-188b-2h 的 (i)(ii)＋值域闭合成三条定理**；**撤销"两侧单调性可直接编址 $T_{\min}$"**（两侧同增只保证交点唯一、不定位；须比 $d\lambda/dT$ 与 $dR/dT$，而 $\Phi'$ 未进 Lean），记入 `DISCARD.md` 第 203 轮。最易跑偏处：`tanh_lt_self` 的严格性交代——只写 $\tanh s\le s$ 会证出"$\lambda$ 不增"这一近似命题。
+- 口径：余项转 **G-188b-2i**（交点编址：增速比较或 $\delta(T)$ 单调＋显式包络）；`审-6` 仍未闭合、闭合数 0、唯一编号 37。
+## 第 204 轮：$\delta$ 的导数闭式与严格单增（`Ring15LockDeficitMono.lean`，Spec v31）
+
+- `Ring15Spec.lean` → **v31**（编译 exit 0）：新增 `deficitDeriv T := -((wGapDeriv T)*(shapeH T) + (wGap T)*sechSq(1/(2*T))/(2*T^2))/(shapeH T)^2`，并新增四条 `def … : Prop`：`TargetPropDeficitDeriv`（$\forall T>0$, `HasDerivAt (fun T => deficitFrac T) (deficitDeriv T) T`）、`TargetPropDeficitDerivPos`（$\forall T>0$, $0<\delta'(T)$）、`TargetPropDeficitStrictMono`（$\forall T_1T_2$, $0<T_1<T_2\Rightarrow\delta(T_1)<\delta(T_2)$）、`TargetPropDeficitRatioStrictMonoT`（$\forall T_1T_2$, $0<T_1<T_2\Rightarrow R(\delta(T_1))<R(\delta(T_2))$）。末段仍落在 `end CQM.Ring15.Spec` 之前；Spec 只 import 基线子模块，不 import 任何证明模块。
+- `Ring15LockDeficitMono.lean`（389 行，编译 exit 0、零告警）：4 条主定理＋21 条私有引理——`continuous_tanh`／`cont_sechSq`／`sechSq_pos`／`sechSq_le_one`／`hasDerivAt_tanh`／`tanh_lt_self`／`sinh_ratio_deriv`／`sinh_ratio_strictMono`／`sinh_smul_lt`／`sinh_smul_le`／`point_gt_core`／`point_ge_core`／`point_gt_T`／`point_ge_T`／`key_integral`／`shapeH_pos`／`deficit_eq`／`deficit_pos`／`deficit_lt_one`／`hasDerivAt_shapeH`／`hasDerivAt_deficit`。import 基线：`Ring15Spec`＋`Ring15LockLambda`＋`Ring15LockWD`＋`Ring15LockIbp`＋`Ring15LockW`＋`Mathlib.Analysis.Calculus.Deriv.MeanValue`＋`Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic`＋`…FundThmCalculus`＋`Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp`。
+- 证法要点：①$\delta'$ 闭式走商法则（`hw.div hh hhne`）＋`hasDerivAt_shapeH`（$\tanh\frac1{2T}$ 经 `hasDerivAt_inv`＋`HasDerivAt.const_mul (1/2)`＋`.comp`），再用 `hone.add hq.neg` 与 `congr_of_eventuallyEq`（`deficit_eq`）把函数换到 `deficitFrac`；值恒等 `0 + -(q) = deficitDeriv` 由 `field_simp; try ring`（须给 `hh2 : shapeH T ^ 2 ≠ 0`）。②$\delta'>0$ 走 `key_integral`：核不等式两端写成积分，`integral_pos` 的非负前提用非严格点位不等式（`point_ge_T`，论域 `Ioc` 含 $u=1$，该处逐点差为 0），严格见证点取 $u=1/2$（`point_gt_T`）。③点位比较走 `sinh_ratio_strictMono`（$F(s)=\sinh s/s$，$F'>0\iff\tanh s<s$，`tanh_lt_self` 的自证与 203 同法但本模块内独立重写）＋`sinh_smul_lt`／`sinh_smul_le`（后者用 `lt_or_eq_of_le` 分 $u<1$ 与 $u=1$，$u=1$ 处 `norm_num`）。④严格单增走 `strictMonoOn_of_deriv_pos`（需 `DifferentiableOn.continuousOn`＋`HasDerivAt.deriv`），应用 `StrictMonoOn` 时须 `@hmono a ha b hb hlt`，且 $T_2$ 的成员证明要 `lt_trans h1 h2`。⑤右端随 $T$ 单增走 203 的 `targetPropDeficitRatioMono` 复合，$\delta$ 落入 $(0,1)$ 由 `targetPropShapeEndGt`／`targetPropWGapPos`。
+- `a_gate.ps1`：`$mods` 三十一项（末项 `Ring15LockDeficitMono`），69 条 `#print axioms`、64 条 `#check`，头注 v31、末行"三十一模块 v31"；实跑 `A 闸 PASS（限环 15 三十一模块 v31）`——31/31 编译 ok、axioms 全白名单、`[FAIL` 0、`token: {"files": 260, "hits": []}`、exit 0（约 25 分钟）。
+- 写法坑（六条）：`intervalIntegral.integral_pos` 裸名不可见（须全名，且论域 `Ioc`＋`∃ c ∈ Icc`）；`convert` 不在内核（改 `have hfun`／`hval`＋`rw … at h`）；`HasDerivAt.const_mul` 首参是常数（方法式会把假设塞进常数位）；`StrictMonoOn` 的 $a,b$ 隐式（普通应用报 `0 < ?m`）；成员证明不能用 $T_1<T_2$ 顶 $0<T_2$；`field_simp` 已闭合后多写 `ring` 报 `No goals`（统一 `field_simp` 后 `try ring`）。
+- 判定：**G-188b-2i 的 $\delta$ 侧收口**（闭式＋正性＋$\delta$ 严格单增＋$R(\delta(\cdot))$ 严格单增），"$\Phi'$ 未进 Lean"**消解**（$\Phi'=-\delta'$，记入 `DISCARD.md` 第 204 轮）；最易跑偏处＝`hasDerivAt_deficit` 的 `hval`（漏 $h^2\ne0$ 会凑出差号等式）。余项：交点编址（比 $\delta'$ 与 $\lambda'$）；`审-6` 仍未闭合、闭合数 0、唯一编号 37。
+## 第 205 轮：判据差的导数结构（`Ring15LockGapDeriv.lean`，Spec v32）
+
+- `Ring15Spec.lean` → **v32**（编译 exit 0）：新增 `lambdaDeriv T := (Real.cosh (1/T)/T - Real.sinh (1/T))/(T*Real.sinh (1/T))^2`；`ratioFun x := x*(1+x)/(1-x)`；`ratioFunDeriv x := (1+2*x-x^2)/(1-x)^2`；`criterionGap T := deficitRatio T - endpointLambda T`；`criterionGapDeriv T := ratioFunDeriv (deficitFrac T) * deficitDeriv T - lambdaDeriv T`；三条 `def … : Prop`：`TargetPropLambdaDeriv`（$\forall T>0$, `HasDerivAt endpointLambda (lambdaDeriv T) T`）、`TargetPropRatioFunDeriv`（$\forall x\ne1$, `HasDerivAt ratioFun (ratioFunDeriv x) x`）、`TargetPropCriterionGapDeriv`（$\forall T>0$, `HasDerivAt criterionGap (criterionGapDeriv T) T`）。三条 Prop 仍未 import 任何证明模块。
+- `Ring15LockGapDeriv.lean`（156 行，编译 exit 0、零告警）：3 条主定理＋7 条私有引理——`shapeH_pos'`／`deficit_eq'`／`hasDerivAt_lambdaVal`／`hasDerivAt_endpointLambda`／`hasDerivAt_ratioFun`／`hasDerivAt_deficitRatio`／`hasDerivAt_criterionGap`。import 基线：`Ring15Spec`＋`Ring15LockDeficitMono`＋`Ring15LockLambda`＋`Ring15LockDeficit`＋`Mathlib.Analysis.Calculus.Deriv.MeanValue`＋`Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp`。
+- 证法要点：①`endpointLambda` 的求导先经 202 的 `TargetPropLambdaForm` 转成 $1/(T\sinh\frac1T)$；转置只在 $(0,\infty)$ 上成立，故用 `Ioi_mem_nhds`＋`Filter.Eventually.mono` 造最终相等，交给 `HasDerivAt.congr_of_eventuallyEq`（方向是"新函数 =ᶠ 旧函数"）。②$\lambda$ 的商法则：$g=T\sinh\frac1T$、$g'=\sinh\frac1T-\cosh\frac1T/T$（`Real.hasDerivAt_sinh (T⁻¹)`＋`hasDerivAt_inv`＋`HasDerivAt.mul`），$\lambda=1/g$ ⇒ $\lambda'=-g'/g^2$。③`ratioFun` 的商法则：分子 $x+x^2$、分母 $1-x$，得 $(1+2x-x^2)/(1-x)^2$；`HasDerivAt.add`／`.sub` 的"函数和"形态须 `funext`＋`norm_num` 改写，`id x` 须 `simp only [id_eq]`。④`deficitRatio` 的导数走 `(hasDerivAt_ratioFun hδne).comp T (targetPropDeficitDeriv T hT)`，`ratioFun ∘ deficitFrac = fun T => deficitRatio T` 用 `rfl` 显式给；$\delta(T)\ne1$ 由 `TargetPropWGapPos`＋本模块自证的 $h>0$ 给出。⑤`criterionGap` 的导数 `hR.sub hl`。
+- `a_gate.ps1`：`$mods` 三十二项（末项 `Ring15LockGapDeriv`），72 条 `#print axioms`、67 条 `#check`，头注 v32、末行"三十二模块 v32"；实跑 `A 闸 PASS（限环 15 三十二模块 v32）`——32/32 编译 ok、71 条 `[ ok ] axioms`（第 72 条因三元组换行未计入）、`[FAIL` 0、`token: {"files": 261, "hits": []}`、exit 0（约 30 分钟）。
+- 写法坑（六条）：`1/T` 与 `T⁻¹` 非 defeq，`HasDerivAt.comp` 会把内函数猜成 `fun x => 1/x` 而报 type mismatch（统一 `T⁻¹`、末尾 `one_div` 换回）；`HasDerivAt.add/sub` 给函数和形态与 `0±1` 值（须 `funext`＋`norm_num`）；`HasDerivAt.mul` 值内 `id x` 须 `simp only [id_eq]`；`comp` 值保留 `((fun s => sinh s) ∘ Inv.inv) T` 原样；跨模块 `private` 不可见（`'` 后缀本地重证）；`congr_of_eventuallyEq` 勿 `.symm`。
+- 判定：**G-188b-2j 的"导数结构"收口**为三条定理（$\lambda'$ 闭式、$R'$ 闭式、$D'=R'\delta'-\lambda'$ 闭式），204 停点写的"$\delta'$ 与 $\lambda'$ 的显式比较"前进到"两条闭式都在链内"。最易跑偏处＝`hasDerivAt_lambdaVal` 的 `hval`（$\lambda'$ 的符号会静默翻转）；次危险＝`hasDerivAt_deficitRatio` 的 `hfun`（`rfl` 是定义漂移探测器）。余项：**G-188b-2k**（$D'$ 的符号结构／$D$ 单峰）；`审-6` 仍未闭合、闭合数 0、唯一编号 37。
+## 206　第 206 轮：无 Lean 动作（停在第 0–1 步）
+
+- **Spec**：保持 **v32**（687 行／42 504 B，编译 exit 0），**未升级**。
+- **模块**：保持**三十二个**，`Ring15LockGapDeriv.lean` 不变（156 行，3 定理＋7 私有引理）。
+- **闸**：**未跑** A 闸／B 闸。理由：意图命题"$D'$ 严格单减"被数值否证（$D'$ 为 U 形、$D''$ 两次变号，见 `04_计算验证/环15_判据差二阶_输出.txt`），弱命题"$D'$ 恰一零点"未证；不写未证 `Prop`，故无闸可跑。
+- **对既有闸的影响**：无。v32 三条定理只断言闭式存在，不涉符号。
+- **下一轮若立项**：Spec 升 v33（新增 `P` 峰位／次序命题）＋新模块＋A 闸扩到三十三模块；跑闸仍按 273 行 `a_gate.ps1` 的既有流程（后台 `Start-Process`＋log，约 30 分钟，跑完清 `_a_gate_*`／`_gate_compile.out`）。
+- **口径**：本轮不得记为"已过闸"；`审-6` 未闭合、闭合数 0、唯一编号 37。
+## 207　第 207 轮：纸面环，Spec 未动、闸未跑
+
+- **Spec／模块**：v32（687 行）／三十二模块，均**未变**。
+- **本轮结论（纸面，未经 Lean）**：$\tanh(au)\ge u\tanh a$ ⇒ $w>\frac23h$ ⇒ $\delta<\frac13$；$R(\delta)<\frac23$；$\lambda(T)\ge\frac1{\sinh1}>\frac23$（$T\ge1$）⇒ **$T\ge1\Rightarrow D<0$**、$\{D=0\}\subseteq(0,1)$。
+- **为何不进 Spec**：缺 Mathlib 三件（`tanh` 凹性、`ConcaveOn`⇒割线、`sinh 1 < 3/2`）；未落地前写 `Prop` 只能靠 `sorry`／自造 `axiom`，触红线。
+- **闸**：A／B 均未跑；不得记为已过闸。
+- **208 顺序**：凹性 → 割线 → 三界 → 尾段排除；Spec v33、三十三模块、A 闸实跑（后台约 30 分钟，跑完清 `_a_gate_*`）。
+## 208　第 208 轮：Spec v33 ＋ `Ring15LockTail` ＋ A 闸三十三模块 PASS
+
+- **Spec v33**：700 行 / 43 478 B，exit 0。新增三条 `def … : Prop`：`TargetPropSinhOneLt`（$\sinh1<\frac32$）、`TargetPropLambdaOne`（$\lambda(1)=\frac1{\sinh1}$）、`TargetPropLambdaTailGt`（$\forall T\ge1,\ \frac23<\lambda(T)$）。
+- **新模块**：`Ring15LockTail.lean` 50 行 / 1 950 B，3 定理、无私有引理。证明要点：`Real.sinh_eq`＋`Real.exp_one_lt_three`＋`Real.exp_pos (-1)`＋`linarith`；`LockDeficit.targetPropLambdaForm 1` 取值＋`simpa`；`div_lt_div_iff₀` 交叉相乘＋`LockLambda.targetPropLambdaStrictMono`＋`lt_or_eq_of_le` 端点分支。
+- **写法坑（新增）**：① 两处定理分别位于 `CQM.Ring15.LockDeficit`／`CQM.Ring15.LockLambda`，不 `open` 就须写全限定名；② `div_lt_div_iff₀` 的首参是**左式分母**（$3$）的正性，次参是**右式分母**（$\sinh1$）的正性，写反会报"未找到模式"；③ `1/(1*sinh 1)` 到 `1/sinh 1` 用 `simpa` 即可，不必手拆 `one_mul`。
+- **A 闸**：脚本 280 行、33 模块、74 axioms、70 `#check`；实跑 33/33 编译 ok、axioms 全白名单、`[FAIL` 0、token 262 文件 0 命中、exit 0（约 27 分钟）。
+- **未闭合**：$\delta<\frac13$、$R<\frac23$、尾段合成、近零端、$(0,1)$ 内零点唯一；G-188b-2k 未闭。
+## 209　第 209 轮：Spec v34 ＋ `Ring15LockTailRatio`（尾段代数合成）
+
+- **Spec v34**：v33 之上新增两条 `def … : Prop`：`TargetPropRatioLeOfLeThird`（$\forall x,\ 0<x\le\frac13\Rightarrow R(x)\le\frac23$）、`TargetPropGapNegOfDeficitLeThird`（$\forall T>0,\ \delta(T)\le\frac13\Rightarrow1\le T\Rightarrow D(T)<0$）。Spec 编译 39.7 s、exit 0。
+- **新模块**：`Ring15LockTailRatio.lean`，import `Ring15Spec`＋`Ring15LockIbp`＋`Ring15LockTail`＋`DerivHyp`；2 条目标定理＋2 条 `private`（`shapeH_pos`、`deficit_pos`）。exit 0、零告警。
+- **证明要点**：
+  - `deficit_pos`：`TargetPropShapeEndGt` 给 $w<h$，`shapeH_pos` 给 $h>0$，`div_lt_iff₀ hh` 把 $\frac wh<1$ 化成 $w<1\cdot h$，再 `linarith`；收尾 `have hlt' : wGap T / Real.tanh (1/(2*T)) < 1 := by simpa [shapeH] using hlt` 把 `shapeH` 展开后交给 `linarith`（`unfold deficitFrac shapePhi` 后目标里的分母是**展开式**，不是 `shapeH T`）。
+  - `targetPropRatioLeOfLeThird`：`unfold ratioFun` → `div_le_iff₀ (by linarith : 0 < 1 - x)` → `have hsq : 3*x^2 ≤ x := by nlinarith [hx, hx3]` → `have hpoly : 3*x^2 + 5*x - 2 ≤ 0 := by nlinarith [hsq, hx3]` → `nlinarith [hpoly]`。
+  - `targetPropGapNegOfDeficitLeThird`：`have h := targetPropRatioLeOfLeThird (deficitFrac T) hδpos hδ`，`simpa [deficitRatio, ratioFun] using h` 得 $R\le\frac23$；`CQM.Ring15.LockTail.targetPropLambdaTailGt T hT1` 给 $\frac23<\lambda$；`unfold criterionGap; linarith`。
+- **写法坑（新增／复用）**：① `λ` 是 Lean 的保留记号，局部假设名写 `hλ` 会被切成 `h`＋`λ` 报 `unexpected token 'λ'`——改 `hlam`；② 跨模块引用须全限定名（`CQM.Ring15.LockIbp.targetPropShapeEndGt`）；③ `unfold shapePhi` 之后分母已是 `Real.tanh (1/(2*T))`，若假设写成 `shapeH T` 形，`linarith` 对不上原子，须先 `simpa [shapeH]`；④ Spec 变更使下游 olean 失效，按依赖序 `LockW→LockWD→LockIbp→LockUnary→LockDeficit→LockLambda→LockTail` 重编后再全闸。
+- **A 闸**：脚本扩到 **34 模块**（`$mods` 末项 `Ring15LockTailRatio`、imports 段加一行、`#print axioms` 76 条、`#check` 72 条、头注与末行 v34）。实跑 **PASS**：34/34 编译 ok、76 条 axioms 全白名单、72 条类型 ok、`[FAIL` 0、`token: {"files": 263, "hits": []}`、exit 0（约 30 分钟）。
+- **未闭合**：$\delta\le\frac13$（$\tanh$ 凹性／割线）仍未证，故 ② 只是**条件形态**；$T\ge1\Rightarrow D<0$ 的无条件版、$D(0^+)>0$、$(0,1)$ 内零点唯一均缺；G-188b-2k 未闭、闭合数 0。
+## 210　第 210 轮：Spec v35 ＋ `Ring15LockSecant`（割线 + 尾段无条件排除）
+
+- **Spec v35**：v34 之上新增三条 `def … : Prop`：`TargetPropTanhSecant`（$\forall a>0,\ u\in[0,1]\Rightarrow u\tanh a\le\tanh(au)$）、`TargetPropDeficitLeThird`（$\forall T>0,\ \delta(T)\le\frac13$）、`TargetPropGapNegTail`（$\forall T>0,\ 1\le T\Rightarrow D(T)<0$）。Spec exit 0。
+- **新模块**：`Ring15LockSecant.lean`，import `Ring15Spec`＋`LockIbp`＋`LockDeficit`＋`LockTailRatio`＋`Deriv.MeanValue`＋`SpecialFunctions.Integrals.Basic`＋`DerivHyp`＋`Complex.ExponentialBounds`＋`Complex.Trigonometric`；4 条 `private`＋3 条目标定理；exit 0 零告警。
+- **证明要点**：
+  - `tanh_secant_core`：$g(u)=\tanh(au)/u$；`hmono` 用 `(hasDerivAt_tanh (a*x)).comp x ((hasDerivAt_id x).const_mul a)` ＋ `HasDerivAt.div`，值取 `(sechSq (a*x)*a*x - tanh(a*x))/x^2`；`hneg` 令 $y=ax$，用 `Real.sinh_two_mul`＋`Real.sinh_sub_id_strictMono` 得 $2y<\sinh(2y)$，于是 $y\mathrm{sech}^2y<\tanh y$；`strictAntiOn_of_hasDerivWithinAt_neg` 要求 `interior (Ioi 0)`，用 `isOpen_Ioi.interior_eq` 把三项换到 `Ioi 0` 后取 $g(1)<g(u)$。
+  - `targetPropDeficitLeThird`：`unfold shapeH` 后先证 `hsec'`（把 $u/(2T)$ 用 `rw [← harg]` 换回 $(1/(2T))u$，否则 `exact hsec` 的类型对不上）；`mul_le_mul_of_nonneg_left`（$0\le2u$）；`integral_mono_on` 的逐点条件是 **`Icc 0 1`**（不是 `Ioc`），故 `hpt` 用 `Icc`；`integral_pow` 后 `ring_nf` 收 $2h\cdot\frac13=\frac23h$。
+  - `targetPropGapNegTail`：209 的条件定理一次实例化。
+- **写法坑（新增）**：① `strictAntiOn_of_hasDerivWithinAt_neg` 的 `f'` 是**函数参数**，须显式 `(f' := fun x => …)` 给出，否则报 "don't know how to synthesize implicit argument `f'`"；② 该引理的导数是 `HasDerivWithinAt f (f' x) (interior D) x`，而 `Ioi 0` 的 interior 只经 `isOpen_Ioi.interior_eq` 才与 `Ioi 0` 同型；③ `HasDerivAt.comp` 的值是 `f' * (a*1)`，`simpa` 才能化成 `sechSq(a*x) * a`；④ `integral_mono_on` 的逐点前提是 `Icc`；⑤ `field_simp` 已闭合时再写 `ring` 会报 `No goals`（用 `try ring`）；⑥ `hcalc ▸ hmono` 才是"左端替换"，`hmono.trans_eq hcalc` 的类型方向相反。
+- **A 闸**：脚本扩到 **35 模块**（79 axioms、75 `#check`、头注与末行 v35）。实跑 **PASS**：35/35 编译 ok、79 条 axioms 全白名单、75 条类型 ok、`[FAIL` 0、`token: {"files": 264, "hits": []}`、exit 0；末行 `A 闸 PASS（限环 15 三十五模块 v35）`。
+- **尾段状态**：$T\ge1\Rightarrow D<0$ 已无条件成立，$\{D=0\}\subseteq(0,1)$；仍缺近零端 $D>0$ 与 $(0,1)$ 内零点唯一；G-188b-2k 尾段闭合、整体未闭，闭合数 0。## 211　第 211 轮：Spec v36 ＋ `Ring15LockNearZero`（近零端 D>0）
+
+- **Spec v36**：v35 之上新增三条 `def … : Prop`：`TargetPropDeficitGeSq`（$\forall T,\ 0<T\le\frac1{10}\Rightarrow\frac8{15}T^2\le\delta(T)$）、`TargetPropLambdaLeSq`（$\forall T,\ 0<T\le\frac1{10}\Rightarrow\lambda(T)\le\frac{T^2}{3}$）、`TargetPropGapPosNearZero`（$\forall T,\ 0<T\le\frac1{10}\Rightarrow0<D(T)$）。Spec exit 0。
+- **新模块**：`Ring15LockNearZero.lean`，import `Ring15Spec`＋`LockIbp`＋`LockDeficit`＋`LockWD`＋`LockSecant`＋`Deriv.MeanValue`＋`SpecialFunctions.Integrals.Basic`＋`DerivHyp`＋`Complex.ExponentialBounds`＋`Complex.Trigonometric`；11 条 `private`＋3 条目标定理；exit 0 零告警。
+- **证明要点**：
+  - `integral_u_sq_sechSq_ge`：$T\le\frac1{10}\Rightarrow2T\le1$，断 `[0,1]=[0,2T]∪[2T,1]`；左段 $z=u/(2T)\le1$ 上 $\mathrm{sech}^2z\ge1-z^2$（`sechSq_ge_one_sub_sq`，需 `tanh_le_self`：$y-\tanh y$ 在 `Ici 0` 上由 `monotoneOn_of_hasDerivWithinAt_nonneg` 单增）；$\int_0^{2T}u^2(1-u^2/(4T^2))du=\frac{16}{15}T^3$。
+  - `targetPropDeficitGeSq`：$-w'=\frac1{T^2}I\ge\frac{16}{15}T$；197 `TargetPropShapeEnd` 给 $h-w=\frac T2|w'|$；$h\le1$ ⇒ $\delta\ge h-w\ge\frac8{15}T^2$。
+  - `targetPropLambdaLeSq`：$\varphi(s)=e^s/s^3$ 在 `Ici 10` 单增、$\varphi(10)>12$（`exp_one_gt_d9`＋`exp_nat_mul`＋`pow_lt_pow_left₀`）⇒ $e^s\ge12s^3$；$e^{-s}\le e^s/2$ ⇒ $\sinh s\ge e^s/4\ge3s^3$；代回 $\lambda\le T^2/3$。
+  - `targetPropGapPosNearZero`：$R(\delta)-\delta=\frac{2\delta^2}{1-\delta}\ge0$（$\delta\le\frac13$）⇒ $D\ge\delta-\frac{T^2}{3}\ge\frac{T^2}{5}>0$。
+- **写法坑（新增）**：①`intervalIntegral.integral_mono_interval` 参数次序 `(hca : c ≤ a) (hab : a ≤ b) (hbd : b ≤ d)`（内区间在前、外区间在后）；②`integral_add_adjacent_intervals` 的绑定名与目标不同（引理 `x`、目标 `u`）时 `rw`／`simpa` 会失败，改用区间单调性引理；③`div_le_iff₀` 对 `(exp s)⁻¹` 不匹配，须 `rw [← one_div]`；④`field_simp` 已闭合时再 `ring` 报 `No goals`；⑤`field_simp` 处理 `(1-δ)⁻¹` 须显式非零（`field_simp [hne]`）；⑥`pow_lt_pow_left₀`（$\mathbb R$ 版）的第三参是 `n ≠ 0`。
+- **A 闸**：脚本扩到 **36 模块**（82 axioms、78 `#check`、头注与末行 v36）。实跑 **PASS**：36/36 编译 ok、82 条 axioms 全白名单、78 条类型 ok、`[FAIL` 0、`token: {"files": 265, "hits": []}`、exit 0；末行 `A 闸 PASS（限环 15 三十六模块 v36）`。
+- **近零端状态**：$0<T\le\frac1{10}\Rightarrow D>0$ 成立，与 210 合得 $\{D=0\}\subseteq[\frac1{10},1]$；仍缺 $(0,1)$ 内零点唯一（$D'$ 恰一零点）与 $T\downarrow0$ 渐近常数；G-188b-2k 尾段＋近零端两段已闭、整体未闭，闭合数 0。
+
+## 212　第 212 轮：Spec v37 ＋ `Ring15LockZeroExists`（零点存在性）
+
+- **Spec v37**：v36 之上只新增一条 `def … : Prop`：`TargetPropGapZeroExists`（$\exists T,\ \frac1{10}<T\wedge T<1\wedge D(T)=0$）；v36／v35／v34／v33／v32 段与全部定义不动；Spec 仍只 import 基线、不 import 任何证明模块。
+- **新模块**：`Ring15LockZeroExists.lean`（约 45 行、1 条目标定理），import `Ring15Spec`＋`LockGapDeriv`＋`LockSecant`＋`LockNearZero`＋`Mathlib.Topology.Order.IntermediateValue`。
+- **证明要点**：
+  - 连续：`ContinuousOn criterionGap (Icc (1/10) 1)` 由 205 `TargetPropCriterionGapDeriv` 逐点取 `HasDerivAt.continuousAt.continuousWithinAt`，用 `continuousOn_iff_continuousAt.2` 逐点落实。
+  - 端点：`hpos := LockNearZero.targetPropGapPosNearZero (1/10) ⟨by norm_num, le_refl _⟩`；`hneg := LockSecant.targetPropGapNegTail 1 ⟨by norm_num, le_refl _⟩`。
+  - 介值：`intermediate_value_Icc' (a := 1/10) (b := 1) hcont hmem`，`hmem : 0 ∈ Icc (criterionGap 1) (criterionGap (1/10))`（降序形态）。
+  - 端点排除：`rcases lt_or_eq_of_le hxmem.1`＋`rcases le_or_gt hxmem.2`；端点支分别以 `linarith [hpos]`／`linarith [hneg]` 矛盾，余支给开区间与 `D x = 0`。
+- **写法坑（新增）**：①`rw [heq]` 方向——`heq : x = 1/10` 时须 `rw [heq.symm] at hval` 才能把 `x` 换成 `1/10` 并让 `hpos` 生效；②`intermediate_value_Icc'` 的像集是 `Icc (f b) (f a)`（降序），`0` 必须落在 `Icc (D 1) (D (1/10))`；③`ContinuousAt.continuousWithinAt` 无 `Within` 参数，`ContinuousOn` 逐点用 `continuousOn_iff_continuousAt`；④`1/10` 与 `0.1` 不同型，`norm_num` 证 `0 < (1/10:ℝ)`、`(1/10:ℝ) ≤ 1`。
+- **A 闸**：脚本扩到 **37 模块**（83 axioms、79 `#check`、头注与末行 v37）。实跑 **PASS**：37/37 编译 ok、83 条 axioms 全白名单（其中 3 条为 `{propext, Quot.sound}` 子集）、79 条类型 ok、`[FAIL` 0、`token: {"files": 266, "hits": []}`、exit 0；末行 `A 闸 PASS（限环 15 三十七模块 v37）`。
+- **存在性状态**：$\varnothing\neq\{D=0\}\subseteq(\frac1{10},1)$；仍缺零点唯一（"至多一个"，$D'$ 恰一零点）与 $T\downarrow0$ 渐近常数；G-188b-2k 尾段＋近零端＋存在性三段已闭、整体未闭，闭合数 0。
+
+## 213　第 213 轮：Spec v38 ＋ `Ring15LockZeroUnique`（唯一性条件句）
+
+- **Spec v38**：v37 之上新增 `ratioOverLambda T := endpointLambda T / deficitRatio T`（$Q=\lambda/R(\delta)$）与条件 `def TargetPropGapZeroUniqueOfRatioMono`（$Q$ 在 $[\frac1{10},1]$ 严格单增 $\Rightarrow$ $\exists!\,T,\frac1{10}<T<1\wedge D(T)=0$）；v37 及以前各段不动。
+- **新模块**：`Ring15LockZeroUnique.lean`（约 50 行、1 定理＋1 私有），import `Ring15Spec`／`LockZeroExists`／`LockLambda`。
+- **证明要点**：私有引理用 `unfold criterionGap` ＋ `linarith` 从 $D=0$ 得 $\lambda=R$，`targetPropLambdaBounds` 给 $\lambda>0$ 故 $R\ne0$，`div_self` 得 $Q=1$；主定理取 212 存在见证 $T_0$，对任意同谓词的 $y$ 用 `lt_trichotomy` 三支，两支由 `hmono` 的严格不等与 $Q(y)=Q(T_0)=1$ 冲突。
+- **写法坑（新增）**：①目标是蕴含式 Prop 时不能把前件写成定理参数（`⟨…⟩` 报 "not an inductive type"），须 `intro h`；②`∃!` 需两层匿名构造；③`deficitRatio T` 自带 $\delta$，写成 `deficitRatio (deficitFrac T)` 会让 `linarith` 找不到矛盾；④`div_self` 的分母非零须由 $\lambda>0$ 与 $\lambda=R$ 转写。
+- **A 闸**：脚本扩到 **38 模块**（`#print axioms` 85 条指令、80 `#check`、头注与末行 v38）。实跑 **PASS**：38/38 编译 ok、公理行 83 条（80 主＋3 子集）、80 条类型 ok、`[FAIL` 0、`token: {"files": 267, "hits": []}`、exit 0；末行 `A 闸 PASS（限环 15 三十八模块 v38）`。
+- **唯一性状态**：唯一性已压成**条件句**（前件 $Q$ 严格单增未证，新缺口 **G-188b-2k-u**）；G-188b-2k 尾段＋近零端＋存在性三段已闭、唯一性未闭，闭合数 0。
+## 214　第 214 轮：Spec v39 ＋ `Ring15LockRatioForm`（$R(\delta)$ 与 $Q$ 的正性）
+
+- **Spec v39**：v38 之上新增 `def TargetPropDeficitRatioPos`（$\forall T>0,\ 0<R(\delta(T))$）与 `def TargetPropRatioOverLambdaPos`（$\forall T>0,\ 0<Q(T)$）。**未**新增乘法闭式（见下条）。
+- **新模块**：`Ring15LockRatioForm.lean`（约 55 行、2 定理＋1 私有 `tanh_pos_of_pos`），import `Ring15Spec`／`LockW`／`LockIbp`／`LockLambda`。
+- **证明要点**：$h>0$ 走 `tanh_eq_sinh_div_cosh`＋`sinh_pos_iff`＋`cosh_pos`＋`div_pos`；$w>0$ 用 `LockW.targetPropWGapPos`、$w<h$ 用 `LockIbp.targetPropShapeEndGt`；$\delta>0$ 由 `div_lt_one`＋`linarith`；$1-\delta>0$ 由 `simp only [deficitFrac]`＋`linarith`；$R>0$ 用 `div_pos (mul_pos hd hd1) hack`；$Q>0$ 用 `div_pos` 合 `targetPropLambdaBounds`。
+- **写法坑（新增）**：①无 `Real.tanh_pos`；②`targetPropWGapPos` 在 `LockW` 不在 `LockWD`；③`div_lt_one hb : a/b<1 ↔ a<b`；④`simp only [deficitFrac, shapePhi]` 会把 `shapeH` 一并展开成 `tanh`，`linarith` 前提须用 `tanh` 形态；⑤`0 < 1 + δ` 的加数顺序须与 `mul_pos` 目标一致；⑥同一 goal 只写一次 `simp only`（写两遍报 "made no progress"）。
+- **未入 Spec**：$Q$ 的乘法闭式 $Q=\mathrm{sech}^2\frac1{2T}w/(2T(h-w)(2h-w))$。`field_simp` 后残式含 `(2tanh−w)⁻¹`，`ring`／`ring_nf`／`sub_div`＋`div_eq_iff`／`mul_right_cancel₀` 均不闭合；按 DISCARD 214-1 记账，判为证明路径限制而非命题为假。
+- **A 闸**：脚本扩到 **39 模块**（`#print axioms` 87 条指令、82 `#check`、头注与末行 v39）；实跑 **PASS**：39/39 编译 ok、87 条公理行全在白名单（82 条 `{propext, Classical.choice, Quot.sound}`＋5 条 `{propext, Quot.sound}`）、82 条类型全 ok、`[FAIL` 0、token 268 文件 0 命中、exit 0；末行 `A 闸 PASS（限环 15 三十九模块 v39）`。闸日志按 `[ ok ]` 前缀计得 85 条公理行（两条因三元组拼接换行未计入），另以独立 `_chk214.lean` 重放复核为 87/87。
+- **状态**：正性两条进链，但 $Q$ 严格单增（**G-188b-2k-u**）仍未证，唯一性仍只到条件句；闭合数 0。
+## 215　第 215 轮：Spec v40 ＋ `Ring15LockDeficitUb`（$\delta'$ 去 $|w'|$ 的闭式与上界）
+
+- **Spec v40**：v39 之上新增 `noncomputable def deficitDerivAlt`（$\delta'=\frac{2(h-w)}{Th}-\frac{w\,\mathrm{sech}^2}{2T^2h^2}$）与三条 `Prop`：`TargetPropDeficitDerivAlt`、`TargetPropDeficitDerivLtTwoDelta`（$\delta'<2\delta/T$）、`TargetPropDeficitDerivLtTwoThird`（$\delta'<2/(3T)$）。
+- **新模块**：`Ring15LockDeficitUb.lean`（约 100 行、3 定理＋5 私有 `tanh_pos_of_pos`／`sechSq_pos'`／`shapeH_pos'`／`tanh_norm_ne`／`wderiv_eq`／`twoDelta_eq`），import `Ring15Spec`／`LockIbp`／`LockW`／`LockSecant`／`LockDeficitMono`。
+- **证明要点**：$w'=\frac{2(w-h)}{T}$ 由 `eq_div_iff`＋`nlinarith`；代入后 `field_simp [tanh_norm_ne hT, hT.ne']`＋`ring`；减项严格正 ⇒ 两条上界。
+- **写法坑（新增）**：①`unfold` 递归展开定义体内的定义（`shapePhi`→`shapeH`→`tanh`），与未展开的一侧形态不一致；用 `change` 或只展开最外层。②`field_simp` 的归一形态是 `T⁻¹ * (1/2)`，非零假设必须按归一形态给。③`one_sub_div` 是 $1-b/a=(a-b)/a$ 的最短收尾。④`eq_div_iff` 把 `x = c/b` 转成 `x*b = c`，比 `field_simp` 干净。
+- **A 闸**：脚本扩到 **40 模块**（39 证明模块＋Spec）（`#print axioms` 90 条指令、85 `#check`、头注与末行 v40）；实跑结果见 PROGRESS §五。
+- **状态**：$\delta'$ 的上界进链（$1/T$ 级）；但 $Q$ 严格单增仍缺 $1/T^2$ 级界（新子缺口 **G-188b-2k-u-1**），唯一性仍只到条件句；闭合数 0。
+## 217　第 217 轮：Spec v41 ＋ `Ring15LockTanhTools`（$\tanh$ 工具公开化与三阶下界）
+
+- **Spec v41**：`TargetPropTanhCubic`（$\forall x\ge0,\ x-x^3/3\le\tanh x$），只加 `def`，不 import 证明模块。
+- **新模块**：`Ring15LockTanhTools.lean`（约 150 行、9 条定理），把原先私有的 `hasDerivAt_tanh`／`tanh_lt_self` 等提升为跨模块可用的公开定理，并新增 `sechSq_eq_one_sub_tanh_sq`（把 $G$ 化成 $(T,h)$ 有理式的关键）。
+- **证明要点**：$\tanh x=x-\int_0^x\tanh^2$（FTC）＋$\tanh^2t\le t^2$＋`integral_pow`（$\int_0^xt^2=x^3/3$）。**不走级数**（Bernoulli 系数不在链内）。
+- **定量结论**：三阶代入只给 $\delta\le\frac13+\frac{1}{30T^2}$（方向错）；218 需补 $h$ 的五阶上界才可能得 $\delta\le\frac13-\frac{c}{T^2}$。
+- **写法坑**：`integral_pow` 是全局名；`integral_mono_on` 参数序 `(hab)(hfi)(hgi)(h)`；`integral_deriv_eq_sub` 吃 `deriv f`。
+- **状态**：A 闸脚本 41 模块 v41（axioms 99、`#check` 86），实跑见 PROGRESS §五；闭合数 0。
+
+### 第 218 轮：`Ring15LockTanhQuintic`（Spec v42）
+
+- 新增 `Ring15LockTanhQuintic.lean`：`tanhQuintic`（$\tanh s\le s-\frac{s^3}{3}+\frac{2s^5}{15}$，$0\le s\le1$）＋ `targetPropTanhQuintic`（对齐 `Spec.TargetPropTanhQuintic`）。
+- 路线：$\tanh s=s-\int_0^s\tanh^2$（`tanhHasDerivAt`＋FTC）→ $\tanh^2t\ge(t-\frac{t^3}{3})^2$（217 三阶下界，底数非负由 $t^2\le1$ 显式证出）→ 丢 $t^6/9$ → $\int_0^s(t^2-\frac{2t^4}{3})$（`integral_pow` 两用）→ 五阶上界。**不走 Taylor 余项符号**。
+- 编译：`Ring15Spec`（v42）、`Ring15LockTanhTools`（复编）、`Ring15LockTanhQuintic` 均 exit 0。
+- 公理：两条定理均 `[propext, Classical.choice, Quot.sound]`。
+- 类型：`#check` 对 `Spec.TargetPropTanhQuintic` 逐字符一致。
+- `a_gate.ps1`：42 模块／101 axioms／87 `#check`／v42 头注末行；语法解析 0 错误。
+- 状态：A 闸 PASS（数字见 `PROGRESS.md` §五）；$Q$ 严格单增仍未证，闭合数 0。
+
+### 第 219 轮：`Ring15LockDeficitSq`（Spec v43）
+
+- 新增 `Ring15LockDeficitSq.lean`：`wGapLowerPoly`／`shapeHUpperPoly`／`hubNumPos`／`hubPos`／`wlbPos`／`ratioLower`／`deficitLeThirdSubSq`／`targetPropDeficitLeThirdSubSq`。
+- 路线：217 三阶界逐点（$x=\frac u{2T}$）→ 积分保序 → $w\ge\frac1{3T}-\frac1{60T^3}$；218 五阶界取 $s=\frac1{2T}$ → $h\le\frac1{2T}-\frac1{24T^3}+\frac1{240T^5}$；交叉相乘 $1.52T^4-1.46T^2-0.054\ge0$（$T\ge1$，$T=1$ 余量 $0.006$，单增）。
+- 编译：Spec（v43）与模块均 exit 0；公理两条均 `[propext, Classical.choice, Quot.sound]`；`#check` 对 `Spec.TargetPropDeficitLeThirdSubSq` 一致。
+- `a_gate.ps1`：43 模块／103 axioms／88 `#check`／v43 头注末行；语法解析 0 错误。
+- 状态：A 闸 PASS（数字见 `PROGRESS.md` §五）；$Q$ 严格单增仍未证，闭合数 0。
+
+### 第 220 轮：判据 $h$-闭式（纸面环）
+
+- 本轮不改 Spec、不建模块（Spec 仍 v43／四十三模块），只做代数恒等与精度定量化。
+- 恒等式：$\lambda=\frac{1-h^2}{2Th}$、$\lambda'=\frac{(1-h^2)(1+h^2-2Th)}{4T^3h^2}$、$(\ln Q)'=\frac{1+h^2-2Th}{2T^2h}-\delta'W$（$W=\frac1\delta+\frac1{1+\delta}+\frac1{1-\delta}$）。
+- 副产品：$\lambda$ 严格增化为 $h\le\frac1{2T}$ 的推论；判号只剩"分子与 $\delta'$ 比较"。
+- 下一步（221）：七阶 $\tanh$ 双界（$s-\frac{s^3}{3}+\frac{2s^5}{15}-\frac{17s^7}{315}\le\tanh s\le s-\frac{s^3}{3}+\frac{2s^5}{15}-\frac{17s^7}{315}+\frac{62s^9}{2835}$，$s\in[0,1]$），目标 $w,h$ 到 $O(T^{-7})$。
+### 第 221 轮：Spec v44（七阶 $\tanh$ 下界）＋ 模块 `Ring15LockTanhSeptic`（四十四模块）
+
+- **Spec v44**：尾部新增
+  `def TargetPropTanhSepticLower : Prop := ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → s - s ^ 3 / 3 + 2 * s ^ 5 / 15 - 17 * s ^ 7 / 315 ≤ Real.tanh s`。
+  v43 及以前全部条目保留；Spec import 仍只接基线（不 import 任何证明模块），单独编译 exit 0。
+- **新模块 `Ring15LockTanhSeptic.lean`**（四条定理，无私有引理）：
+  1. `tanhEqSubIntegral (s) : Real.tanh s = s - ∫ t in (0)..s, Real.tanh t ^ 2`——217 的 FTC 路线（`tanhHasDerivAt`＋`integral_eq_sub_of_hasDerivAt`，再用 `sechSq_eq_one_sub_tanh_sq` 把 `∫tanh²` 换成 `s−tanh s`）；
+  2. `integralTrunc (s) : ∫ t in 0..s, (t^2 - 2*t^4/3 + 17*t^6/45) = s^3/3 - 2*s^5/15 + 17*s^7/315`——`integral_add`／`integral_sub`／`integral_pow` 三单项；
+  3. `tanhSepticLower (s) (hs0 : 0 ≤ s) (hs1 : s ≤ 1) : s - s^3/3 + 2*s^5/15 - 17*s^7/315 ≤ Real.tanh s`——`integral_mono_on`＋点态 `mul_self_le_mul_self`（`tanh ≤ 五阶上界`，v42）＋代数恒等
+     `(t - t^3/3 + 2*t^5/15)^2 = (t^2 - 2*t^4/3 + 17*t^6/45) + 4*t^8/45*(t^2/5 - 1)`（末项在 `t ≤ 1` 时非正）；
+  4. `targetPropTanhSepticLower : Spec.TargetPropTanhSepticLower`——Spec 对齐版，`intro s hs0 hs1; exact tanhSepticLower s hs0 hs1`。
+- **编译**：模块 exit 0（仅一条 unused-variable 类提醒，无 sorry/admit）；`#print axioms` 两条均 `[propext, Classical.choice, Quot.sound]`；`#check (targetPropTanhSepticLower : Spec.TargetPropTanhSepticLower)` 通过。
+- **`a_gate.ps1`（四十四模块 v44）**：`$mods` 末项加 `"Ring15LockTanhSeptic"`、imports 加一条、`#print axioms` 103→**105**、`#check` 88→**89**、头注加"v44 加 LockTanhSeptic"、末行改"四十四模块 v44"。
+- **方向口径（重要）**：$S_3:=s-\frac{s^3}{3}+\frac{2s^5}{15}-\frac{17s^7}{315}$ 是 $\tanh$ 的**下界**；上界为 $S_3+\frac{62s^9}{2835}$（222 待证）。第 220 轮账本曾把两支的上下写反，已在 `DISCARD.md` 221-1 与口径表 §220 修正。
+- **域限制**：本模块全部结论只在 $0\le s\le1$（即 $T\ge\frac12$ 处可用）；$T<\frac12$ 时 $s>1$，不得引用。
+- 状态：A 闸 PASS（44/44 编译、105/105 公理白名单、89/89 `#check`、FAIL 0、exit 0；数字见 `PROGRESS.md` §五）；$Q$ 严格单增仍未证，闭合数 0、编号 37。
+### 第 222 轮：Spec v45（七阶 $\tanh$ 上界）＋ 模块 `Ring15LockTanhSepticUb`（四十五模块）
+
+- **Spec v45**：`def TargetPropTanhSeptic : Prop := ∀ (s : ℝ), 0 ≤ s → s ≤ 1 → Real.tanh s ≤ s - s ^ 3 / 3 + 2 * s ^ 5 / 15 - 17 * s ^ 7 / 315 + 62 * s ^ 9 / 2835`。
+- **新模块 `Ring15LockTanhSepticUb.lean`**（三条定理）：
+  1. `integralFive (s) : ∫ t in 0..s, (t^2 - 2*t^4/3 + 17*t^6/45 - 4*t^8/45 + 4*t^10/225) = s^3/3 - 2*s^5/15 + 17*s^7/315 - 4*s^9/405 + 4*s^11/2475`——四步 `integral_add`／`integral_sub`＋五项 `integral_pow`；
+  2. `tanhSepticUpper (s) (hs0 : 0 ≤ s) (hs1 : s ≤ 1) : Real.tanh s ≤ s - s^3/3 + 2*s^5/15 - 17*s^7/315 + 62*s^9/2835`——`integral_mono_on`＋点态
+     $P^2\ge S_2^2-\frac{34t^8}{315}$（`hexp` 展开 $P=S_2-C$、`hmon` 用 `mul_le_mul_of_nonneg_right` 放大交叉项、`hsq` 记 $C^2\ge0$）＋ `hsplit` 拆 $\int(S_2^2-\frac{34t^8}{315})$；
+  3. `targetPropTanhSeptic : Spec.TargetPropTanhSeptic`——对齐版。
+- **关键常数**：$\int_0^s\frac{34t^8}{315}=\frac{34s^9}{2835}$（首版误写 $\frac{34s^9}{315}$，`ring` 报 9 倍差，见 `DISCARD.md` 222-1）；s⁹ 合成 $-\frac{4}{405}-\frac{34}{2835}=-\frac{62}{2835}$ 与级数第 5 项对齐。
+- **`a_gate.ps1`（四十五模块 v45）**：`$mods` 末项 `"Ring15LockTanhSepticUb"`、imports +1、`#print axioms` 105→**107**、`#check` 89→**90**、头注"v45 加 LockTanhSepticUb"、末行"四十五模块 v45"。
+- **链内状态**：七阶双界完整——$S_3\le\tanh s\le S_4$（$0\le s\le1$），$S_3$ 在 221 模块、$S_4$ 在本模块，互不 import 对方私有引理。
+- 状态：A 闸 PASS（45/45 编译、107/107 公理白名单、90/90 `#check`、FAIL 0、exit 0）；$Q$ 严格单增仍未证，闭合数 0、编号 37。### 第 223 轮：Spec v46（$w$ 双侧界）＋ 模块 `Ring15LockWGapSeptic`（四十六模块）
+
+- **Spec v46**：两条新 def 与两条新 Prop——
+  `def wGapLowerSeptic T := 1/(3*T) - 1/(60*T^3) + 1/(840*T^5) - 17/(181440*T^7)`；
+  `def wGapUpperSeptic T := wGapLowerSeptic T + 31/(3991680*T^9)`；
+  `def TargetPropWGapLowerBound : Prop := ∀ T, 1/2 ≤ T → wGapLowerSeptic T ≤ wGap T`；
+  `def TargetPropWGapUpperBound : Prop := ∀ T, 1/2 ≤ T → wGap T ≤ wGapUpperSeptic T`。
+- **新模块 `Ring15LockWGapSeptic.lean`**（六条定理）：
+  1. `integralS3 (T) (hT : 0 < T) : ∫ u in 0..1, 2*u*S_3(u/(2T)) = 1/(3T) - 1/(60T³) + 1/(840T⁵) - 17/(181440T⁷)`——先 `integral_congr` 化成 $\frac{u^2}{T}-\frac{u^4}{12T^3}+\frac{u^6}{120T^5}-\frac{17u^8}{20160T^7}$，再四步 `integral_sub`／`integral_add`＋四项 `integral_pow`；
+  2. `integralS4 (T) (hT : 0 < T)`——加第五项 $\frac{31u^{10}}{362880T^9}$，五项 `integral_pow`；
+  3. `wGapLowerBound (T) (hT : 1/2 ≤ T) : wGapLowerSeptic T ≤ wGap T`——点态 $S_3\le\tanh$＋`mul_le_mul_of_nonneg_left`＋`integral_mono_on`，再 `rw [hval, ← hcongr]`（顺序不可颠倒）；
+  4. `wGapUpperBound (T) (hT : 1/2 ≤ T) : wGap T ≤ wGapUpperSeptic T`——同上用 `tanhSepticUpper`；
+  5. `targetPropWGapLowerBound`／6. `targetPropWGapUpperBound`——两条 Spec 对齐版。
+- **关键系数**：$\frac{2}{(2T)^{2k+1}(2k+1)}$（$k=1..5$）⇒ $\frac13,\frac{1}{60},\frac{1}{840},\frac{17}{181440},\frac{31}{3991680}$；全部由 `ring` 精确闭合，无近似、无拟合。
+- **侧条件**：$T\ge\frac12$ 由 `div_le_one` 推出 $\frac{u}{2T}\le1$；`T<\frac12` 时七阶界不可用，**禁止**引用本对命题。
+- **`a_gate.ps1`（四十六模块 v46）**：`$mods` 末项 `"Ring15LockWGapSeptic"`、imports +1、`#print axioms` 107→**109**、`#check` 90→**91**、头注"v46 加 LockWGapSeptic"、末行"四十六模块 v46"。本轮另修复了扩闸时被误覆盖的 `elseif ($s -match "^\S+ : ")` 分支（见 `DISCARD.md` 223-2）。
+- **链内状态**：$w$ 双侧七阶界已在链内；与 $h$ 双界合成 $\delta$、$\delta'$ 的侧向界后，$(G>0)$ 于 $T\ge\frac12$ 达"数值可判"（最小余量比值 $1.08009$），但**未成定理**。
+- 状态：A 闸 PASS（46/46 编译、109/109 公理白名单、91/91 `#check`、FAIL 0、exit 0）；$Q$ 严格单增仍未证，闭合数 0、编号 37。
