@@ -287,9 +287,9 @@ $$
 
 ### 8.3 介子的正确公式
 
-$$L(s, \pi_p \times \pi_p^\vee) = \frac{\zeta(s)}{\zeta(s+1)} \cdot L(s, \mathrm{Sym}^2 \pi_p)$$
+$$L(s, \pi_p \times \pi_p^\vee) = \zeta(s) \cdot L(s, \mathrm{Sym}^2 \pi_p)$$
 
-（该恒等式为 GL(2) 输入的 $\pi \otimes \tilde{\pi} \cong 1 \boxplus \mathrm{Sym}^2 \pi$ 的 L 函数形式，已证仅限 GL(2) 输入；对 GL(5) 输入 $\pi_p$ 该分解不适用，见附 B 注 2。含 $\zeta(s+1)$ 分母为框架内表述。）
+（该恒等式为 GL(2) 输入的 $\pi \otimes \tilde{\pi} \cong 1 \boxplus \mathrm{Sym}^2 \pi$ 的 L 函数形式，已证仅限 GL(2) 输入；对 GL(5) 输入 $\pi_p$ 该分解不适用，见附 B 注 2。此处按附 B 标准恒等式书写，为框架内表述。）
 
 极点来自 $\zeta(s)$，但 $\mathrm{Sym}^2 \pi_p$ 部分是有限的。所以：
 

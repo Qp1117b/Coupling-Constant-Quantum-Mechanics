@@ -116,12 +116,9 @@ def main():
     # ---------- Lean 对接 ----------
     decls = jload(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "declarations.json"))
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
-    # 2026-11-17（v1.9.210）：删除旧口径 v_τ=√(1−βδ_v) 的 Lean 簇（顶点角亏载体，
-    # 传递依赖闭包 24 文件：FGChain/Superconductivity/NonMarkovianity 主簇），
-    # 剩余 54 个纯数学/其他主题源码。声明 1500→993、模块 78→54；axiom 15 保留（非旧口径）。
-    # 2026-11-20（v1.9.238）：CQM_Mechanism.lean 纳入全对族形式化（Hpair/PairFreeze/StepEq
-    # 与 6 条定理），模块 54→55、声明 993→1003。该模块此前已在源码树但未入派生清单。
-    check("Lean 声明 1003 / 模块 55", (len(decls), len(mods)) == (1003, 55),
+    # 2026-11-21（v1.9.247）：Ring 23/27 补基数与非负性引理，声明 116→118、定理 54→56。
+    # 2026-11-21（v1.9.248）：RH/Goldbach 以显式外部假设接入，声明 118→124、定理 56→60。
+    check("Lean 声明 124 / 模块 12", (len(decls), len(mods)) == (124, 12),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []
@@ -223,9 +220,10 @@ def main():
     # 2026-11-20（v1.9.225）：06 拆为理论卷/材料卷，语料变化使 claim 级边 336→337；
     # 实体 146 不变，dir 50 / hyper 19 未变。
     # 2026-11-21（v1.9.240）：27 环/相变等效/BCS 提升/关系性实在论落笔，P026 新增“电子”
-    # 概念提及边 1 条（证据句重匹配另换 8 条旧边），故 337→338；实体 146 不变。
-    check("知识图谱 146 实体 / 338 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 338),
+    # 概念提及边 1 条（证据句重匹配另换 8 条旧边），再随本轮句索引重排净减 5 条；实体 146 不变。
+    # 2026-11-21（v1.9.248）：RH/Goldbach 外部假设写入文档，kg 新增 3 条边；实体 146 不变。
+    check("知识图谱 146 实体 / 336 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 336),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")

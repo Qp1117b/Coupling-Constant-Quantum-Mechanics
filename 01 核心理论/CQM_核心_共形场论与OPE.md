@@ -204,7 +204,7 @@ $$\boxed{\hat{\phi} = \hat{p}_u - \frac{1}{☯}\sqrt{1-\hat{\varepsilon}/(2\pi)}
 
 将Dirac条件具体化（代入耦合层级定义 $n_k \equiv C_k$）：
 
-$$\frac{L_u}{2\pi ☯}\sqrt{1-\varepsilon/(2\pi)^{(k)}} = C_k = l_k(l_k+1) + \frac{3}{4}$$
+$$\frac{L_u}{2\pi ☯}\sqrt{1-\varepsilon^{(k)}/(2\pi)} = C_k = l_k(l_k+1) + \frac{3}{4}$$
 
 此等价关系锁定声子占据数 $N_k$（Bohr–Sommerfeld量子化条件），消除动力学自由度。
 
@@ -214,7 +214,7 @@ $$\frac{L_u}{2\pi ☯}\sqrt{1-\varepsilon/(2\pi)^{(k)}} = C_k = l_k(l_k+1) + \fr
 |:---|:---|:---|
 | **OPE** | $\|\{n_k\}\rangle \otimes \|u_k\rangle \sim \sum C_k \|G_k\rangle$ | 基本代数结构 |
 | **Dirac条件** | $\hat{p}_u = \frac{1}{☯}\sqrt{1-\hat{\varepsilon}/(2\pi)}$ | 共形自举方程的CQM具体化 |
-| **等价关系** | $\frac{L_u}{2\pi ☯}\sqrt{1-\varepsilon/(2\pi)^{(k)}} = C_k$ | 锁定 $N_k$ |
+| **等价关系** | $\frac{L_u}{2\pi ☯}\sqrt{1-\varepsilon^{(k)}/(2\pi)} = C_k$ | 锁定 $N_k$ |
 
 ## 5. Kac–Moody代数与Virasoro代数
 
@@ -549,7 +549,7 @@ CFT视角：GL(n)分层是**Kac–Moody代数的水平分层**，每个本征群
 
 **态扩大视角**：朗兰兹对应在物理侧的动力学实现——质数是触发点，$L$函数零点是态扩大的共振频率，GRH（零点在临界线）等价于态扩大无衰减（关联长度发散）。
 
-> **【口径】** 本段的"共振频率"读作**谱峰的间距形态**，不读成特征。特征是允许通道在谱侧的落点：$U(1)\to\mathbb{Z}_n$ 给加性特征，经高斯和／Mellin 才转成模 $q$ 的乘法特征（nebentypus）；零点间距才决定是算术 $L$（$\{\log p\}$，不等距）还是离散标度不变（等距 $\ln$）。载体与三处未定参数（导子、二次型、权）见推导链 26.B。
+> **【口径】** 本段的"共振频率"读作**谱峰的间距形态**，不读成特征。特征是**配对算符模式集**在谱侧的落点：$U(1)\to\mathbb{Z}_n$ 给加性特征，经高斯和／Mellin 才转成模 $q$ 的乘法特征（nebentypus）；零点间距才决定是算术 $L$（$\{\log p\}$，不等距）还是离散标度不变（等距 $\ln$）。载体与三处未定参数（导子、二次型、权）见推导链 26.B。
 
 ### 9.3 与FG纤维丛理论的关系
 
@@ -630,7 +630,7 @@ CQM核心理论
 
 | 环节 | 文献 | 备注 |
 |:---|:---|:---|
-| 共形场论基础 | Belavin–Polyakov–Zamolodchikov (1984) | BPZ共形自举 |
+| 共形场论基础 | Belavin–Polyakov–Zamolodchikov (1984)，*Nucl. Phys. B* **241** (1984) 333–380 | BPZ共形自举 |
 | Kac–Moody代数 | Kac (1985) | 仿射Lie代数 |
 | Sugawara构造 | Sugawara (1968) | Virasoro从Kac–Moody构造 |
 | OPE | Wilson (1969) + W. Zimmermann | 算符乘积展开 |
@@ -640,7 +640,7 @@ CQM核心理论
 | Verlinde公式 | Verlinde (1988) | fusion coefficients from modular S-matrix |
 | 三点函数 | Dotsenko–Fateev (1984) | 积分表示 |
 | 共形自举 | Rattazzi et al. (2008) | 数值共形自举方法 |
-| 态-算符对应 | Belavin–Polyakov–Zamolodchikov (1984) | CFT第一性原理 |
+| 态-算符对应 | Belavin–Polyakov–Zamolodchikov (1984)，*Nucl. Phys. B* **241** (1984) 333–380 | CFT第一性原理 |
 | 临界现象 | Wilson–Kogut (1974) | 重正化群与临界不动点 |
 
 ## 12. 核心图像
@@ -672,8 +672,8 @@ CFT = 描述临界自组织态扩大的机制，同时也是同步的过程机�
  │ └── A4结合律 → 锁定s,p,d,f，禁戒g
  │
  └── Dirac条件 = 共形自举方程的CQM具体化
-  ├── p̂_u = (1/☯)√(1-βδ̂_v)
-  └── (L_u/2π☯)√(1-βδ_v^(k)) = C_k
+  ├── p̂_u = (1/☯)√(1-ε̂/(2π))
+  └── (L_u/2π☯)√(1-ε^(k)/(2π)) = C_k
  └── 锁定声子占据数 N_k
 
  同步四阶段：预备（赝状态）→发生（共振量子化）→过程（CFT扩大）→完成（状态跃迁）

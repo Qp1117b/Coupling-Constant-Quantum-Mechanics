@@ -9,7 +9,7 @@
 | 冲突项 | 裁决顺序 |
 |:---|:---|
 | 规范优先级 | 根 `AGENTS.md` > 本文件 > `README.md` > `设计方案.md` |
-| 数据权威 | `README.md` 符号约定与数值表 > `一体化研究/附录/术语表.md` > `一体化研究/附录/缺口台账.md` > 各文档概念权威定义处 |
+| 数据权威 | `README.md` 符号约定与数值表 > `08 理论组织和形式化框架/附录/术语表.md` > `08 理论组织和形式化框架/附录/缺口台账.md` > 各文档概念权威定义处 |
 | 结构权威 | `01_结构化数据/*.csv` 为**唯一源**；其余产物（JSON/OWL/HTML/PNG/映射）皆为其派生 |
 
 ## 二、三条不可违反的边界（承袭根 AGENTS 三条红线）
@@ -65,7 +65,7 @@ python ".workbuddy/tools/consistency_probe.py"                # 派生一致性�
 1. **箭头**：`⇒` **仅**表重组实现（`Hyperedge`，多元）；演化/映射/极限/依赖/层级含于一律 `→`；等价用 `↔`。`⇒` 与 `→` 不得合并为同一张简单图。
 2. **缺口编号三套不混用**：C/G2–G8、G9–G22、N1–N4（另 H3.1–H3.3 axiom、集成理论 A–E 局部编号）。
 3. **$G_N$ 限定语**：凡 $G_N$、$\alpha$ 类数值或偏差，必须带"构造后验数字校验，待独立复现"。
-4. **术语表"不得擅自统一"项**：$\Delta\delta_v$ 与 $\Delta\delta_0$、$K_{\text{eff}}$ 与量纲转换常数族、$\kappa$ 多语义、缺口 G5 归属——保持原样并逐处登记。
+4. **术语表"不得擅自统一"项**：$\Delta\delta_v$ 与 $\Delta\delta_0$、$K_{\text{eff}}$ 与量纲转换常数族、$\kappa$ 多语义——保持原样并逐处登记。
 5. **物质的量 $N$**：人为定义的计量量，与自守量纲无关。
 6. **禁用词**（根 AGENTS §三）：`已删除`、`已澄清`、`已修正`、`已解决`、`旧版`、`已废弃`、`现已统一`、`早期形式`、`本版` 等过程性表述，不得用于理论文档；本组织层同样避免（负向引用除外）。
 7. **形式化覆盖**：`F` 仅覆盖部分概念（当前 40/81），未覆盖者**不得**谎报为已形式化。
@@ -79,7 +79,7 @@ python ".workbuddy/tools/consistency_probe.py"                # 派生一致性�
 ## 六、构建与复现
 
 - 全部产物由 `_build/` 脚本从源 CSV 与外部 Lean 源码生成；脚本含断言预检。
-- 执行顺序：`fix_csv → build_base → build_evidence → build_claims → build_ontology → build_kg → build_lean → build_ml → build_extract → build_dynamics → build_causal → build_bridge → build_site → build_search → build_reader_site → build_meta`。
+- 执行顺序：`fix_csv → build_base → build_evidence → build_claims → build_ontology → build_kg → build_lean → build_ml → build_extract → build_dynamics → build_causal → build_bridge → build_site → build_search → build_reader_site → build_vitepress → build_meta`。
 - 证据层规则：任何断言都必须能回溯到 `00_外部引用/证据映射.csv` 的一条记录（含字符区间与引文）；`verified` 仅人工复核后可置 `True`。
 - 抽取层规则：术语候选 / 关系候选 / 语义近邻**只能进候选池**，不得直接写入概念表；抽取只做定位与归一，不推断、不补全。
 - `fix_csv.py` 为一次性修复脚本（幂等）。

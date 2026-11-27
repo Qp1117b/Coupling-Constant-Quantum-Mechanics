@@ -147,7 +147,7 @@ $$\hat{\mathcal{S}}_k\Psi_k = n_k\Psi_k$$
 
 等价关系（同步方程 + 曲率涨落代入）：
 
-$$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2 \beta}\left(1 - \left(\frac{2\pi ☯ \cdot C_k}{L_u}\right)^2\right) - \frac{1}{2}$$
+$$N_k = \frac{E_{\text{bind}}}{\hbar\omega_k |v_k(4)|^2}\,\varepsilon^{(k)} - \frac{1}{2},\qquad \frac{\varepsilon^{(k)}}{2\pi} = 1 - \left(\frac{2\pi ☯ \cdot C_k}{L_u}\right)^2$$
 
 此式**声称**由 Bohr–Sommerfeld 量子化条件联立得到（紧致 U(1) 的周期性边界条件与 FG 因果条件），选出离散的声子占据数——但**联立与求解步骤未写出**（$C_k$、$v_k(4)$ 亦未在本节定义）。**声子占据数由同步方程锁定**，不是自由参数。
 
@@ -357,9 +357,9 @@ $$\hat{\varepsilon}^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|
 ```
 晶胞量子振荡（声子 = 曲率量子）
  ↓
-δ_v(t) = δ_v⁽⁰⁾ + Δδ_v(t) [亏角涨落]
+ε(t) = ε⁽⁰⁾ + Δε(t) [亏角涨落]
  ↓
-Δδ_v 满足资格条件 → 候选群族筛出
+Δε 满足资格条件 → 候选群族筛出
  ↓
 路径积分选出主导群 → 耦合常数跃迁 α → n²α [再锁定]
  ↓

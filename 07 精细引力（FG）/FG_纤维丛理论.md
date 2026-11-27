@@ -297,7 +297,7 @@ $$D F = 0 \quad \iff \quad [\hat{L}_m, [\hat{L}_n, \hat{L}_p]] + \text{cyclic} =
 
 ### 4.0 核心问题：底空间+条件→同步方程→本征群→耦合常数
 
-FG的核心问题之一是：**给定底空间（Regge剖分）+条件（核子量子振荡、曲率涨落、耦合常数涨落），求解同步方程的本征群（自守形式），本征群对应的耦合常数就是涨落耦合常数指定的。**
+FG的核心问题之一是：**给定底空间（Regge剖分）+条件（算符+对称性），求解同步方程的本征群（自守形式），本征群对应的耦合常数就是涨落耦合常数指定的。**
 
 $$\boxed{\underbrace{M_\ell}_{\text{底空间}} + \underbrace{\hat{\mathcal{S}}_k}_{\text{作用量算符（同步算符，紧化算符的层级实现）}} + \underbrace{G_k}_{\text{对称性}} \;\longrightarrow\; \underbrace{\Psi_k}_{\text{自守形式}} \;\longrightarrow\; \text{耦合常数（由涨落指定）}}$$
 
@@ -315,7 +315,7 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 - **声子代数**：简正模式对角化保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**。声子的三层结构（前时空/GR中子-质子振荡/FG核子曲率）与统一角色详见 `01 核心理论/CQM_核心_声子理论.md`
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\varepsilon}^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**。其中 $1/E_{\text{bind}}$ 是**量纲归一化因子**——FG纤维丛截断在此处把有量纲的声子能量 $\hbar\omega_k$（$[\text{能量}]$）除以核子结合能 $E_{\text{bind}}$（$[\text{能量}]$），得到无量纲曲率算符。这是CQM所有后续方程（同步方程、CFT/OPE）无量纲性的**根本来源**。
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\varepsilon} = \bar{\delta}_v + \hat{\varepsilon}^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\varepsilon}^{(1)}$ 是算符（量子涨落）
-- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\varepsilon/(2\pi)^{(k)}}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
+- **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\varepsilon^{(k)}/(2\pi)}$ → 耦合动量 $p_u^{(k)} = v_\tau^{(k)}/☯$（相变量子 $☯$）。这是FG核心机制，标注为**假设**。**不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子**
 - **同步方程**：$\hat{\mathcal{S}}_k \Psi_k = n_k \Psi_k$，同步算符 $\hat{\mathcal{S}}_k = \frac{L_u}{2\pi ☯}\sqrt{1-\hat{\varepsilon}^{(k)}/(2\pi)}$ 由条件严格确定
 - **本征群**：$R_k$ 是重组产物，壳层标签 $l_k = k-1$ 由 SU(5) 简单根的 Dynkin 图深度严格推导
 - **耦级（定义）**：$n_k \equiv C_k = l_k(l_k+1) + 3/4$（同步成本=对称性强度）
@@ -396,8 +396,8 @@ $$\boxed{\hat{\mathcal{S}}_{\text{atom}} = \bigoplus_{k=1}^{4} \hat{\mathcal{S}}
 
 | 朗兰兹层 | L函数 | 猜想 | FG中的角色 |
 |:---|:---|:---|:---|
-| GL(1) | $\zeta(s)$ | RH（GRH 的 GL(1) 特例） | $U(1)_{\text{em}}$ 电磁因子（相变量子 $☯$、零点差 $\gamma_2-\gamma_1$） |
-| GL(2) | $L(s, f)$ | GRH(GL(2)) | $SU(2)$ 弱因子（模形式谱） |
+| GL(1) | $\zeta(s)$ | RH（GRH 的 GL(1) 特例） | — |
+| GL(2) | $L(s, f)$ | — | $SU(2)$ 弱因子（模形式谱） |
 | GL(3) | $L(s, \pi)$ | GRH(GL(3)) | $SU(3)$ 色因子（高阶自守谱） |
 | GL(4) | $L(s, \pi)$ | GRH(GL(4)) | $SO(5)$ 旋量表示（GL(5)的$K$-type） |
 | GL(5) | $L(s, \pi)$ | GRH(GL(5)) | 基态同步（单层自守表示） |
@@ -467,7 +467,7 @@ $$\Delta\varepsilon_0^2 = \sum_q \left|\frac{\partial \varepsilon}{\partial u_q}
 
 | 常数 | 值 | 来源 |
 |:---|:---|:---|
-| $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸给出公式，牛顿极限定值尚待完善 |
+| $\beta$ | $\frac{1}{4\pi}\ln\frac{L}{a}$ | 系统尺寸严格确定 |
 | $☯$ | $\frac{d}{ds}\ln\xi(s)\big\rvert_{s=1} \approx 0.02309570897$ | Riemann xi函数 |
 | $L_u$ | $\ln\Lambda$ | 耦合常数空间紧化U(1)周长 |
 

@@ -653,8 +653,8 @@
       "label": "谱修正",
       "type": "数论",
       "definition": "$\\kappa=(31+☯)/30$",
-      "source_doc": "D030",
-      "source_loc": "§11",
+      "source_doc": "D057",
+      "source_loc": "§11.9",
       "synonyms": [],
       "derive_depth": 1,
       "reachable_from_seed": true
@@ -1065,7 +1065,7 @@
       "type": "重组实现",
       "source_doc": [
         "D006",
-        "D030"
+        "D057"
       ],
       "source_concept": "C054;C029→C030"
     },

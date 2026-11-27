@@ -1,25 +1,12 @@
 ﻿lean_library,lean_symbol,concept_ids,prop_ids,gap_ids,remark
-CausalSet,CausalSet/Axioms,C004;C002;C003,P002,H3.1;H3.2;C,因果集公理；缺口 C 以 Lean 公理 H3.3 承载
-CouplingSpace,Basis,C060;C061;C062,P005,,耦合空间 u=ln r 与正则对易关系
-CartanAlgebra,cartanA4,C053;C054;C055;C056,P001;P017,,A₄ 嘉当矩阵、本征值精确表达式、Dynkin 指数比
-SpectralGeometry,spectralQuantum,C048;C047;C043;C044;C045;C046;C049,P004;P015,G002;G003;G004,相变量子 ☯、Sierra-CQM 耦谱、黎曼 ξ、谱算符
-SpectralGeometry,MathieuContinuedFraction,C057,P010,G005,Mathieu 临界 λ_c（连分数唯一根）
-Decoherence,Basic;DeepCoupling,C008;C005;C006;C019,P009;P011;P012,,退相干三层结构、跨层级深耦合与唯一性
-PhysicalConstants,gn_spectral_formula,C081,P010;P032,,G_N 谱公式与 α⁻¹_SU(5)（构造后验数字校验，待独立复现）
-Methodology,Basic,C007,P009;P022;P023,,涌现逻辑结构、庸俗隐变量分解对比（公理为主）
-Superconductivity,TransitionTemperatureCQM,C070;C069;C067,P026;P027,G22,CQM 临界温度严格推导
-Superconductivity,BCSIntegralAsymptotic,C070,P027,G13,BCS 积分 tanh→对数渐近（G13 闭合）
-Superconductivity,MolecularGeometry,C028;C026;C029,P028,G20-ext;N2;N3,分子几何→晶胞嘉当矩阵→Regge 角亏
-Superconductivity,ElementCartan,C030;C026,P028;P029,G16,元素嘉当矩阵；因果分辨率形式化为 def 占位
-Superconductivity,TestDet,C029,P027,G14,中子缺陷谱判据 det D=8-3δ²（G14 闭合）
-Superconductivity,SPAF,C029;C026,P011,N1;N2,SPAF 半唯像框架（neutronDefect）
-FGChain,FiberBundle,C020;C021;C022;C023;C024,P024,,离散主丛（重组实现 F=G⇒R=G⇒Ĥ、和乐平庸化）
-FGChain,SyncOperator,C012;C046,P024,G002;G003;G004,同步算符→零点谱→耦级 𝔠_n
-FGChain,CurvatureOperator,C060;C061;C062,P007,,"曲率算符（海森堡对 [û,p̂_u]=i）"
-FGChain,Observable,C063;C070,P007;P026,,实验可观测：壳层容量、跃迁耦级谱 Δu_n=2ln n、BCS T_c
-FGChain,Hierarchy,C073;C012,P028,H3.1;H3.2;H3.3,FG 层级化与紧化算符
-GN,TripleIdentity,C048;C047,P015,,三重恒等 ☯=λ_1=-B、闭式表达式
-GN,SierraCQM,C057;C046,P010,,Sierra-CQM 条件性渐近、零点匹配、偏差界
-GN,SimplexSpectrum,C055;C053,P001,,4-单纯形边-面矩阵谱 {9¹4⁴1⁵} 严格化（57 定理）
-GN,AdeleJacobian,C058,P010,,Adele Jacobian 因子 2、exp(-2/☯)
-GN,Constructions,C058;C081,P010,,κ=(31+☯)/30 组合-谱连接、全因子正性
+SuperconductivityChain,Basic,,,,27 环索引、阶段与状态；不映射具体概念
+SuperconductivityChain,Gaps,,,审-1…审-15;临-1…临-26;链外-A…F;M1–M10;E4;A12;W-3;G19;G22,62 条链层缺口登记；gaps_length 只校验登记完整
+SuperconductivityChain,Stage1,C026;C027,P026,W-3;临-18;审-10,环 1–4：基态方差、声子幅度、Bose 占据数、亏角方差、固有时流速几何、Regge 刚度；热截断不证
+SuperconductivityChain,Stage2,C084,P026,审-1;M5;G19;临-24;临-25,环 5–7：H_ij 反对称/上闭链、冻结、方差非负、速度冻结等价；驱动方程不证
+SuperconductivityChain,Stage3,,,E4;A12;审-2;审-3;链外-A;M2–M4,环 8–10：C_ij 反对称、配对势负性、λ 非负；f、κ_f、σ² 不证
+SuperconductivityChain,Stage4,,,临-5;临-6;临-7;审-7;M1;G22,环 11–12：配对荷单位、配对算符骨架、2/n 模式权重、2ln n 阶梯；ζ 零点对应不证
+SuperconductivityChain,Stage5,,,临-10;临-11;临-13;临-22;临-26;临-5;链外-D;G22,环 13/13.A：域、配对算符的节点质数化实现、阶梯谓词与单调性、Goldbach 显式假设供给、2 配对基准概率归一与单点上界、高模式重标度、DFT 四项容器与参考节点；相变等效不证
+SuperconductivityChain,Stage6,,,M9;审-9;审-15;临-8;临-12;临-14;临-15;M1,环 14/14.A：相位核与固定平移；BCS 同刻度不证
+SuperconductivityChain,Stage7,,,M8;审-4;审-5;审-6;临-2;临-3;临-21;临-24;临-25,环 15–18：渗流/容量/扩大数据结构、资源饱和终止；阈值等价不证
+SuperconductivityChain,Stage8,,,审-8;审-11;审-12;审-13;M9;临-16;临-17;G22,环 19–24：危机三条件、全对冻结、锚开关算术核、锚区等速、Z_n 相位标签与基数；锚与序参量不证
+SuperconductivityChain,Stage9,C083,P026;P027,M10;临-8;临-17;临-22;临-23;临-24;G22,环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥；零点谱与 RH 不证

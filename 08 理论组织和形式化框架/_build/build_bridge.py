@@ -39,6 +39,14 @@ SYMBOLS = [
     ("Ĥ_HP", "Hilbert–Pólya 谱算符", r"\hat H_{\mathrm{HP}}=\hat D^2+1/4", "算符", "——", "D008 §4"),
 ]
 
+# 概念级精确符号：只列新库中真实存在的声明，不从模块级映射猜符号。
+CONCEPT_SYMBOL = {
+    "C026": ("SuperconductivityChain", "Stage1.deficitAngle"),
+    "C027": ("SuperconductivityChain", "Stage1.deficitSpeed"),
+    "C083": ("SuperconductivityChain", "Stage9.IK"),
+    "C084": ("SuperconductivityChain", "Stage2.Hpair"),
+}
+
 
 def main():
     os.makedirs(S09, exist_ok=True)
@@ -85,7 +93,9 @@ def main():
         w.writerow(["concept_id", "name", "type", "lean_library", "lean_symbol", "physics_role", "source_doc"])
         for c in concepts:
             ll, ls = "", ""
-            if c["concept_id"] in lean_by_concept:
+            if c["concept_id"] in CONCEPT_SYMBOL:
+                ll, ls = CONCEPT_SYMBOL[c["concept_id"]]
+            elif c["concept_id"] in lean_by_concept:
                 ll, ls = lean_by_concept[c["concept_id"]][0]
             role = {"量纲": "量纲/单位", "物理": "物理量/可观测量", "数论": "数论谱量",
                     "群论": "群结构", "几何": "几何量", "纤维丛": "丛结构"}.get(c["type"], "结构概念")

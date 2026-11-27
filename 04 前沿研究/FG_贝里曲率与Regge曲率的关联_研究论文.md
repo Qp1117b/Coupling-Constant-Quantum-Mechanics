@@ -113,7 +113,7 @@ $$S_R = \frac{1}{8\pi G}\sum_h A_h\,\delta_h$$
 
 对边长变分给出 Einstein–Regge 方程【文献确立】[21][23][24]。
 
-在二维情形（本框架底空间三角剖分的情形），铰链退化为顶点 $v$，亏角 $\varepsilon = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$ 正是顶点处的**离散高斯曲率测度**：$\varepsilon = \iint_{A_v^*} K\,dA$（$A_v^*$ 为对偶胞面积），因此 $K_v = \varepsilon/A_v^*$、有效里奇标量 $R_v = 2\varepsilon/A_v^*$【标准数学】。这与本框架 Lean 形式化中的桥接公式 $R_{\text{eff}} = 2\varepsilon/A_{\text{dual}}$（`08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean`）一致——该公式是标准二维 Regge 曲率密度关系的实现。
+在二维情形（本框架底空间三角剖分的情形），铰链退化为顶点 $v$，顶点面角和之亏 $\delta_v^{\rm vert} = 2\pi - \sum_{\Delta\ni v}\theta_v^{(\Delta)}$ 正是顶点处的**离散高斯曲率测度**：$\delta_v^{\rm vert} = \iint_{A_v^*} K\,dA$（$A_v^*$ 为对偶胞面积），因此 $K_v = \delta_v^{\rm vert}/A_v^*$、有效里奇标量 $R_v = 2\delta_v^{\rm vert}/A_v^*$【标准数学】。此处 $\delta_v^{\rm vert}$ 是二维顶点面角和之亏，与 FG 固有时流速 $v_\tau=\sqrt{1-\varepsilon/(2\pi)}$ 的曲率载体 $\varepsilon$（LQG 铰链亏角、共维 2）不同，二者换算【待推 E6】；二维顶点亏角须记为 $\delta_v^{\rm vert}$，不得写作 $\varepsilon$。这与本框架 Lean 形式化中的桥接公式 $R_{\text{eff}} = 2\varepsilon/A_{\text{dual}}$（`08 理论组织和形式化框架/04_Lean对接/Lean源码/Superconductivity/BridgeTheorems.lean`）在标准二维 Regge 曲率密度关系上形式对应——该公式中的 $\varepsilon$ 取铰链亏角口径，与 $\delta_v^{\rm vert}$ 的换算同属【待推 E6】。
 
 **单纯形夹角符号约定**（本节据此统一）：
 

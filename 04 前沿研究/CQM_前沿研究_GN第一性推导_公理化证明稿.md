@@ -720,7 +720,7 @@ CQM 公理层（接受 A1-A6）
 
 启发式构造层（未证明）
 ├── 构造 9.1：𝔠₁ = 1/4 + γ₁²（精确等同）
-│   └── 数值权重：𝔠₁ ≈ 200.04 单独贡献 **2.30 个数量级**；exp(-2/☯) 贡献 10⁻³⁸（38 个数量级）。未闭合项合计承载约 **40 个数量级**，已闭合项（I、λ_c、☯²）合计约 10⁻³。
+│   └── 数值权重（乘积口径：分别标注的「数量级」是因子指数，净效应按乘积计）：𝔠₁ ≈ 200.04 贡献因子 10^2.30（**2.30 个数量级**）；exp(-2/☯) 贡献因子 10⁻³⁸（38 个数量级）；未闭合项两因子的指数绝对值合计约 **40**，按乘积计净因子约 $10^{-35.7}$，已闭合项（I、λ_c、☯²）合计约 10⁻³。
 ├── 构造 10.1：ln(∏ det(Dₚ)) = 1/☯
 │   └── → exp(-2/☯)
 ├── 构造 8.1：κ = (31+☯)/30
@@ -783,3 +783,4 @@ CQM 公理层（接受 A1-A6）
 11. Tate, J. (1950). Fourier analysis in number fields and Hecke's zeta-functions. *Thesis*, Princeton.
 12. Horak, D. & Jost, J. (2013). Spectra of combinatorial Laplace operators on simplicial complexes. *Adv. Math.*, 244, 303–336.
 13. Duval, A. & Reiner, V. (2002). Shifted simplicial complexes are Laplacian integral. *Trans. AMS*, 354, 4313–4344.
+14. Abramowitz, M. & Stegun, I. A. (1964). *Handbook of Mathematical Functions*（引理 1.4 的 digamma 特殊值，§6.3）。

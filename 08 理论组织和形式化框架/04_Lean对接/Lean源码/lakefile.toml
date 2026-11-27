@@ -1,47 +1,11 @@
 name = "CQMFormal"
-version = "0.7.0"
-defaultTargets = ["CausalSet", "CouplingSpace", "CartanAlgebra", "SpectralGeometry", "Decoherence", "PhysicalConstants", "PrimeGeometry", "Methodology", "GN"]
+version = "0.8.0"
+defaultTargets = ["SuperconductivityChain"]
 
 [[lean_lib]]
-name = "CausalSet"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "CouplingSpace"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "CartanAlgebra"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "SpectralGeometry"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "Decoherence"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "PhysicalConstants"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "PrimeGeometry"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "Methodology"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
-
-[[lean_lib]]
-name = "GN"
+name = "SuperconductivityChain"
 leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 
 [[require]]
 name = "mathlib"
 path = ".lake/packages/mathlib"
-
-[[require]]
-name = "physlib"
-path = ".lake/packages/physlib"

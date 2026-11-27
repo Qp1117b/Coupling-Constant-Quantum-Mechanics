@@ -3,88 +3,34 @@
 project:
   name: CQMFormal
   root: "08 理论组织和形式化框架/04_Lean对接/Lean源码"
-  version: "0.7.0"
+  version: "0.8.0"
   toolchain: "leanprover/lean4:v4.29.1"
   build_command: lake build
   libraries:
-    - name: CausalSet
-    - name: CouplingSpace
-    - name: CartanAlgebra
-    - name: SpectralGeometry
-    - name: Decoherence
-    - name: PhysicalConstants
-    - name: PrimeGeometry
-    - name: Methodology
-    - name: GN
+    - name: SuperconductivityChain
   modules:
-    - {module: "CQM_Mechanism", file: "CQM_Mechanism.lean", theorem_like: 22, def_like: 16, axiom: 0, total_decl: 38}
-    - {module: "CartanAlgebra", file: "CartanAlgebra.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "CartanAlgebra.Basic", file: "CartanAlgebra/Basic.lean", theorem_like: 33, def_like: 29, axiom: 0, total_decl: 62}
-    - {module: "CausalSet", file: "CausalSet.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "CausalSet.Axioms", file: "CausalSet/Axioms.lean", theorem_like: 0, def_like: 0, axiom: 4, total_decl: 4}
-    - {module: "CausalSet.Basic", file: "CausalSet/Basic.lean", theorem_like: 3, def_like: 4, axiom: 0, total_decl: 9}
-    - {module: "CausalSet.Reproduction", file: "CausalSet/Reproduction.lean", theorem_like: 5, def_like: 2, axiom: 0, total_decl: 8}
-    - {module: "CausalSet.Sprinkling", file: "CausalSet/Sprinkling.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "CouplingSpace", file: "CouplingSpace.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "CouplingSpace.Basic", file: "CouplingSpace/Basic.lean", theorem_like: 4, def_like: 3, axiom: 0, total_decl: 8}
-    - {module: "CouplingSpace.Uncertainty", file: "CouplingSpace/Uncertainty.lean", theorem_like: 15, def_like: 7, axiom: 0, total_decl: 23}
-    - {module: "Decoherence", file: "Decoherence.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "Decoherence.Basic", file: "Decoherence/Basic.lean", theorem_like: 6, def_like: 5, axiom: 0, total_decl: 12}
-    - {module: "Decoherence.DeepCoupling", file: "Decoherence/DeepCoupling.lean", theorem_like: 9, def_like: 7, axiom: 0, total_decl: 23}
-    - {module: "GN", file: "GN.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "GN.AdeleJacobian", file: "GN/AdeleJacobian.lean", theorem_like: 11, def_like: 5, axiom: 0, total_decl: 16}
-    - {module: "GN.Basic", file: "GN/Basic.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "GN.Constructions", file: "GN/Constructions.lean", theorem_like: 14, def_like: 2, axiom: 0, total_decl: 16}
-    - {module: "GN.ModularTrace", file: "GN/ModularTrace.lean", theorem_like: 6, def_like: 3, axiom: 0, total_decl: 9}
-    - {module: "GN.SierraCQM", file: "GN/SierraCQM.lean", theorem_like: 6, def_like: 3, axiom: 0, total_decl: 9}
-    - {module: "GN.SimplexSpectrum", file: "GN/SimplexSpectrum.lean", theorem_like: 57, def_like: 18, axiom: 0, total_decl: 75}
-    - {module: "GN.TripleIdentity", file: "GN/TripleIdentity.lean", theorem_like: 13, def_like: 3, axiom: 0, total_decl: 16}
-    - {module: "Methodology", file: "Methodology.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "Methodology.Basic", file: "Methodology/Basic.lean", theorem_like: 13, def_like: 19, axiom: 4, total_decl: 37}
-    - {module: "NonMarkovianity.Basic", file: "NonMarkovianity/Basic.lean", theorem_like: 5, def_like: 5, axiom: 0, total_decl: 10}
-    - {module: "NonMarkovianity.DistributedCommutation", file: "NonMarkovianity/DistributedCommutation.lean", theorem_like: 22, def_like: 3, axiom: 0, total_decl: 25}
-    - {module: "NonMarkovianity.Markovization", file: "NonMarkovianity/Markovization.lean", theorem_like: 4, def_like: 4, axiom: 0, total_decl: 8}
-    - {module: "NonMarkovianity.ScaleThreshold", file: "NonMarkovianity/ScaleThreshold.lean", theorem_like: 5, def_like: 3, axiom: 0, total_decl: 9}
-    - {module: "PhysicalConstants", file: "PhysicalConstants.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "PhysicalConstants.Basic", file: "PhysicalConstants/Basic.lean", theorem_like: 20, def_like: 15, axiom: 0, total_decl: 35}
-    - {module: "PrimeGeometry", file: "PrimeGeometry.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "PrimeGeometry.Basic", file: "PrimeGeometry/Basic.lean", theorem_like: 16, def_like: 9, axiom: 0, total_decl: 27}
-    - {module: "PrimeGeometry.Compton", file: "PrimeGeometry/Compton.lean", theorem_like: 21, def_like: 10, axiom: 0, total_decl: 32}
-    - {module: "PrimeGeometry.Generation", file: "PrimeGeometry/Generation.lean", theorem_like: 10, def_like: 1, axiom: 0, total_decl: 11}
-    - {module: "PrimeGeometry.Particle", file: "PrimeGeometry/Particle.lean", theorem_like: 10, def_like: 4, axiom: 0, total_decl: 14}
-    - {module: "PrimeGeometry.Spin", file: "PrimeGeometry/Spin.lean", theorem_like: 12, def_like: 7, axiom: 0, total_decl: 20}
-    - {module: "PrimeGeometry.WindingDensity", file: "PrimeGeometry/WindingDensity.lean", theorem_like: 12, def_like: 5, axiom: 0, total_decl: 17}
-    - {module: "SpectralGeometry", file: "SpectralGeometry.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "SpectralGeometry.Basic", file: "SpectralGeometry/Basic.lean", theorem_like: 59, def_like: 20, axiom: 0, total_decl: 79}
-    - {module: "SpectralGeometry.GLnTrivialSpectralQuantum", file: "SpectralGeometry/GLnTrivialSpectralQuantum.lean", theorem_like: 12, def_like: 5, axiom: 0, total_decl: 17}
-    - {module: "SpectralGeometry.Mathieu", file: "SpectralGeometry/Mathieu.lean", theorem_like: 17, def_like: 5, axiom: 2, total_decl: 25}
-    - {module: "SpectralGeometry.MathieuContinuedFraction", file: "SpectralGeometry/MathieuContinuedFraction.lean", theorem_like: 31, def_like: 8, axiom: 0, total_decl: 39}
-    - {module: "SpectralGeometry.RiemannXi", file: "SpectralGeometry/RiemannXi.lean", theorem_like: 10, def_like: 1, axiom: 0, total_decl: 11}
-    - {module: "Superconductivity.BCSIntegralAsymptotic", file: "Superconductivity/BCSIntegralAsymptotic.lean", theorem_like: 10, def_like: 2, axiom: 0, total_decl: 12}
-    - {module: "Superconductivity.CartanSuperconductivity", file: "Superconductivity/CartanSuperconductivity.lean", theorem_like: 25, def_like: 12, axiom: 0, total_decl: 37}
-    - {module: "Superconductivity.CrossingParadigm", file: "Superconductivity/CrossingParadigm.lean", theorem_like: 12, def_like: 2, axiom: 0, total_decl: 14}
-    - {module: "Superconductivity.DNRLink", file: "Superconductivity/DNRLink.lean", theorem_like: 9, def_like: 5, axiom: 0, total_decl: 14}
-    - {module: "Superconductivity.FirstPrinciples", file: "Superconductivity/FirstPrinciples.lean", theorem_like: 20, def_like: 8, axiom: 0, total_decl: 28}
-    - {module: "Superconductivity.GLUnified", file: "Superconductivity/GLUnified.lean", theorem_like: 4, def_like: 3, axiom: 0, total_decl: 7}
-    - {module: "Superconductivity.Ontology", file: "Superconductivity/Ontology.lean", theorem_like: 7, def_like: 3, axiom: 5, total_decl: 15}
-    - {module: "Superconductivity.Reduction", file: "Superconductivity/Reduction.lean", theorem_like: 23, def_like: 8, axiom: 0, total_decl: 31}
-    - {module: "Superconductivity.SPAF", file: "Superconductivity/SPAF.lean", theorem_like: 60, def_like: 15, axiom: 0, total_decl: 76}
-    - {module: "Superconductivity.TestDet", file: "Superconductivity/TestDet.lean", theorem_like: 9, def_like: 2, axiom: 0, total_decl: 11}
-    - {module: "Superconductivity.TransitionTemperature", file: "Superconductivity/TransitionTemperature.lean", theorem_like: 3, def_like: 2, axiom: 0, total_decl: 5}
-    - {module: "Superconductivity.TransitionTemperatureCQM", file: "Superconductivity/TransitionTemperatureCQM.lean", theorem_like: 3, def_like: 6, axiom: 0, total_decl: 9}
+    - {module: "SuperconductivityChain", file: "SuperconductivityChain.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
+    - {module: "SuperconductivityChain.Basic", file: "SuperconductivityChain/Basic.lean", theorem_like: 1, def_like: 5, axiom: 0, total_decl: 9}
+    - {module: "SuperconductivityChain.Gaps", file: "SuperconductivityChain/Gaps.lean", theorem_like: 1, def_like: 2, axiom: 0, total_decl: 5}
+    - {module: "SuperconductivityChain.Stage1", file: "SuperconductivityChain/Stage1.lean", theorem_like: 9, def_like: 6, axiom: 0, total_decl: 16}
+    - {module: "SuperconductivityChain.Stage2", file: "SuperconductivityChain/Stage2.lean", theorem_like: 7, def_like: 5, axiom: 0, total_decl: 12}
+    - {module: "SuperconductivityChain.Stage3", file: "SuperconductivityChain/Stage3.lean", theorem_like: 4, def_like: 4, axiom: 0, total_decl: 8}
+    - {module: "SuperconductivityChain.Stage4", file: "SuperconductivityChain/Stage4.lean", theorem_like: 7, def_like: 5, axiom: 0, total_decl: 13}
+    - {module: "SuperconductivityChain.Stage5", file: "SuperconductivityChain/Stage5.lean", theorem_like: 9, def_like: 10, axiom: 0, total_decl: 23}
+    - {module: "SuperconductivityChain.Stage6", file: "SuperconductivityChain/Stage6.lean", theorem_like: 2, def_like: 2, axiom: 0, total_decl: 4}
+    - {module: "SuperconductivityChain.Stage7", file: "SuperconductivityChain/Stage7.lean", theorem_like: 5, def_like: 2, axiom: 0, total_decl: 9}
+    - {module: "SuperconductivityChain.Stage8", file: "SuperconductivityChain/Stage8.lean", theorem_like: 7, def_like: 3, axiom: 0, total_decl: 11}
+    - {module: "SuperconductivityChain.Stage9", file: "SuperconductivityChain/Stage9.lean", theorem_like: 8, def_like: 5, axiom: 0, total_decl: 14}
   declaration_histogram:
-    theorem: 649
-    lemma: 19
-    def: 284
-    abbrev: 15
-    axiom: 15
-    structure: 12
-    inductive: 5
-    class: 4
+    theorem: 60
+    def: 44
+    abbrev: 5
+    structure: 11
+    inductive: 4
   totals:
-    modules: 55
-    declarations: 1003
-    theorem_like: 668
-    axioms: 15
+    modules: 12
+    declarations: 124
+    theorem_like: 60
+    axioms: 0
   authoritative_status:
-    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：11 库全部通过；886 已证明定理 / 15 公理待证（口径 = theorem + lemma，零 sorry，与 theorem_like 抽取一致）。"
+    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：单库 SuperconductivityChain；零 sorry、零 axiom；计数以 build_lean 实际抽取为准。"

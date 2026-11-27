@@ -72,13 +72,13 @@ $$\text{Regge剖分} + [\hat{X},\hat{P}]=i\hbar \xrightarrow{\text{离散协变�
 
 条件不是外加的，而是从**Regge剖分**和**位置-动量对易关系** $[\hat{X},\hat{P}]=i\hbar$ 第一性严格导出：
 
-- **Regge剖分条件**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典顶点角亏 $\bar{\delta}^{\rm vert} = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定（此为顶点面角和之亏、挂在顶点，与固有时流速载体 $\varepsilon$ 不同，见 §3.1）。质子（4-单纯形）：$\bar{\delta}^{\rm vert}=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}^{\rm vert}\neq 0$（经典背景曲率）
+- **Regge剖分条件**：$\mathcal{R}=(V,E,F,\{\bar{L}_{ij}\})$，经典顶点角亏 $\bar{\delta}^{\rm vert} = 2\pi - \sum_{\Delta\ni v}\bar{\theta}_v(\Delta)$ 由经典边长通过余弦定律严格确定（此为顶点面角和之亏、挂在顶点，与固有时流速载体 $\varepsilon$ 不同）。质子（4-单纯形）：$\bar{\delta}^{\rm vert}=0$（理想平坦）；中子 $D(\delta)$：$\bar{\delta}^{\rm vert}\neq 0$（经典背景曲率）
 - **位置-动量代数**：每个顶点 $v$ 上 $[\hat{X}_v,\hat{P}_v]=i\hbar$（预量子化线丛的联络曲率）
 - **声子代数**：简正模式对角化 $\hat{Q}_k = \sum_v v_k(v)\hat{X}_v$ 保持对易子 $[\hat{Q}_k,\hat{\Pi}_{k'}]=i\hbar\delta_{kk'}$，声子来自 $[\hat{X},\hat{P}]=i\hbar$，**不是额外假设**
 - **曲率涨落算符（严格推导）**：位置涨落平方 + Regge几何非线性 → $\hat{\delta}_v^{(1)} = \sum_k \frac{\hbar\omega_k}{E_{\text{bind}}}|v_k(v)|^2(\hat{a}_k^\dagger\hat{a}_k + \frac{1}{2})$，**不是唯象假设**
 - **总曲率 = 经典背景 + 量子涨落**：$\hat{\delta}_v = \bar{\delta}_v + \hat{\delta}_v^{(1)}$，$\bar{\delta}_v$ 是c-数（经典背景曲率），$\hat{\delta}_v^{(1)}$ 是算符（量子涨落）
 - **FG因果条件（假设）**：固有时流速 $v_\tau^{(k)} = \sqrt{1-\varepsilon^{(k)}/(2\pi)}$，亏角≠几何吸引，而是固有时流速的因果条件。这是FG核心机制，标注为**假设**。其数学结构是引力时间膨胀的Regge版本：广义相对论牛顿极限下 $g_{00}=1+2\phi/c^2$，固有时流速 $d\tau/dt=\sqrt{g_{00}}$；Regge剖分中曲率集中于铰链亏角（铰链处二面角和相对 $2\pi$ 的偏离；细剖分极限下亏角/对偶体积 $\to R$），对应 $\varepsilon/(2\pi) \leftrightarrow -2\phi/c^2$。固有时流速用**标准 Regge/LQG 的亏角符号** $\varepsilon$，语义一致：**二面角** $\theta_{\sigma,h}$ 是两单纯形沿公共铰链 $h$ 的夹角（普通几何角、构成亏角的原料、本身不是亏）；**亏角（骨亏）** $\varepsilon=2\pi-\sum_{\sigma\supset h}\theta_{\sigma,h}$ 是绕铰链的二面角和之亏，挂在铰链（共维 2），取值范围 $[0,2\pi)$——这就是标准 Regge/LQG 的曲率，也是本框架固有时流速的曲率载体。
-- **固有时流速公式**：$v_\tau=\sqrt{1-\varepsilon/(2\pi)}$，$\varepsilon$ 即上式 LQG 亏角本体（未另乘耦合常数）。由 $\varepsilon\in[0,2\pi)$ 得 $\varepsilon/(2\pi)\in[0,1)$，根号内恒正、定义域恒实；平直极限 $\varepsilon\to0\Rightarrow v_\tau\to1$，尖点极限 $\varepsilon\to2\pi\Rightarrow v_\tau\to0$（与黑洞冻结一致）。归一化分母 $2\pi$ 把亏角映射到 $[0,1)$。
+- **固有时流速公式**：$v_\tau=\sqrt{1-\varepsilon/(2\pi)}$，$\varepsilon$ 即上式 LQG 亏角本体（未另乘耦合常数）。由 $\varepsilon\in[0,2\pi)$ 得 $\varepsilon/(2\pi)\in[0,1)$，根号内恒正、定义域恒实；平直极限 $\varepsilon\to0\to v_\tau\to1$，尖点极限 $\varepsilon\to2\pi\to v_\tau\to0$（与黑洞冻结一致）。归一化分母 $2\pi$ 把亏角映射到 $[0,1)$。
 - **顶点角亏（与固有时流速无关）** $\delta_v^{\rm vert}=2\pi-\sum_{\Delta\ni v}\theta_v(\Delta)$：绕顶点 $v$ 的面角和之亏，挂在顶点，是纯几何派生量——**与固有时流速无直接关系**，不进入 $v_\tau$。它不同于铰链亏角 $\varepsilon$（余维不同），二者换算 $\delta_v^{\rm vert}=\sum_{h\supset v}w_{v,h}\varepsilon_h$ 属【待推】（权重 $w_{v,h}$ 未定，见 `04 前沿研究/CQM_前沿研究_关系性实在论与对称性重组.md` E6）。
 
 **曲率载体口径**：$v_\tau$ 的载体是 LQG 标准亏角 $\varepsilon=2\pi-\sum\theta$，与 LQG 语义一致；顶点角亏 $\delta_v^{\rm vert}$ 与固有时流速无直接关系。二者不可混淆——把顶点角亏当作 $v_\tau$ 的源头即是把顶点角亏与亏角混淆。**耦合动量 $p_u = v_\tau/☯$（相变量子 $☯$）。不确定性关系 $\Delta u \cdot \Delta v_\tau \geq ☯/2$，$☯$ 为相变量子。注意：勿将相变量子 $☯$ 与 §3.2 耦级定义中的 Casimir 本征值 $C_k = l_k(l_k+1)+3/4$ 混同。**

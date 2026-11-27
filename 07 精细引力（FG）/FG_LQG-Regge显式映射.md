@@ -46,7 +46,7 @@ $$\bar\delta^{\rm vert} = 2\pi-\sum_{\Delta\ni v}\bar\theta_v(\Delta),$$
 
 由经典边长通过余弦定律确定；质子（理想 4-单纯形）$\bar\delta^{\rm vert}=0$，中子 $D(\delta)$ 的 $\bar\delta^{\rm vert}\neq0$（`FG_核心理论.md` §3.1）。
 
-【框架基础】4-单纯形有 5 个顶点、10 条边、10 个三角形。边-面关联矩阵 $E\in\{0,1\}^{10\times10}$ 满足 $E_{f,e}=1\iff e\subset f$；$M=E^{\mathsf T}E$ 的本征值为 $\{9,4^{(4)},1^{(5)}\}$，迹为 $30$（`CQM_引力_GN可能公式.md` §2；Lean `GN/SimplexSpectrum.lean`）。
+【框架基础】4-单纯形有 5 个顶点、10 条边、10 个三角形。边-面关联矩阵 $E\in\{0,1\}^{10\times10}$ 满足 $E_{f,e}=1\iff e\subset f$；$M=E^{\mathsf T}E$ 的本征值为 $\{9,4^{(4)},1^{(5)}\}$，迹为 $30$（`CQM_引力_GN可能公式.md` §4.3；Lean `GN/SimplexSpectrum.lean`）。
 
 【框架基础】$A_4^{++}$ 是 $A_4$ 的双曲过扩张，Weyl 群同构于 $\mathrm{PSL}_2^{(0)}(\mathcal{I})$，给出双曲镶嵌 $\{5,4\}$，并与 4-单纯形的组合结构匹配（`CQM_前沿研究_GN第一性推导_公理化证明稿.md` 定理 7.1）。
 
@@ -198,4 +198,4 @@ $$\Phi:\ \bigl(\Gamma,\{j_e\},\{\iota_v\}\bigr)\ \longmapsto\ \bigl(\{L_e\},\{\v
 - [arXiv:2401.14643](https://arxiv.org/abs/2401.14643)：4 维自旋泡沫中的亏角与宇宙学常数。
 - [arXiv:0802.0864](https://arxiv.org/abs/0802.0864)：面积-角变量与 4-单纯形几何。
 - [arXiv:2402.17080](https://arxiv.org/abs/2402.17080)：面积-边长系统的多值性与同伦延拓求解。
-- 内部依据：`01 核心理论/CQM_核心_集成理论.md` §2.1；`07 精细引力（FG）/FG_核心理论.md` §3.1；`03 引力与退相干/CQM_引力_GN可能公式.md` §2；`04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md` 定理 7.1；Lean `GN/SimplexSpectrum.lean`。
+- 内部依据：`01 核心理论/CQM_核心_集成理论.md` §2.1；`07 精细引力（FG）/FG_核心理论.md` §3.1；`03 引力与退相干/CQM_引力_GN可能公式.md` §4.3；`04 前沿研究/CQM_前沿研究_GN第一性推导_公理化证明稿.md` 定理 7.1；Lean `GN/SimplexSpectrum.lean`。

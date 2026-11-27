@@ -563,16 +563,6 @@ $$\text{光子} \rightarrow \text{视网膜感光细胞质子集体（观测退�
 
 ---
 
-## 参考文献 References
-
-1. Penrose, R. (1996). On Gravity's Role in Quantum State Reduction. *General Relativity and Gravitation*, 28(5), 581-600.
-2. Diósi, L. (1987). A Universal Master Equation for the Gravitational Violation of Quantum Mechanics. *Physics Letters A*, 120(8), 377-380.
-3. Zurek, W. H. (2003). Decoherence, Einselection, and the Quantum Origins of the Classical. *Reviews of Modern Physics*, 75(3), 715-775.
-4. Rovelli, C. (1996). Relational Quantum Mechanics. *International Journal of Theoretical Physics*, 35(8), 1637-1678.
-5. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
-
----
-
 ## 十、术语标准与全局幺正性基准
 
 > **说明**：本节定义“表观截断”的术语和全局幺正性条件。
@@ -760,4 +750,9 @@ $$\mathcal C[x] = \lim_{\tau \to \tau_{\text{close}}} \oint_{\gamma(\tau)} \Psi_
 4. Zurek, W. H. “Decoherence, einselection, and the quantum origins of the classical.” Rev. Mod. Phys. 75, 715 (2003).
 5. Bassi, A. et al. “Models of wave-function collapse, underlying theories, and experimental tests.” Rev. Mod. Phys. 85, 471–527 (2013).
 6. Stinespring, W. F. “Positive functions on C*-algebras.” Proc. Amer. Math. Soc. 6, 211 (1955).
+7. Penrose, R. (1996). On Gravity's Role in Quantum State Reduction. *General Relativity and Gravitation*, 28(5), 581-600.
+8. Diósi, L. (1987). A Universal Master Equation for the Gravitational Violation of Quantum Mechanics. *Physics Letters A*, 120(8), 377-380.
+9. Zurek, W. H. (2003). Decoherence, Einselection, and the Quantum Origins of the Classical. *Reviews of Modern Physics*, 75(3), 715-775.
+10. Rovelli, C. (1996). Relational Quantum Mechanics. *International Journal of Theoretical Physics*, 35(8), 1637-1678.
+11. ruster. (2026). *CNT 完整研究*. Zenodo. DOI: 10.5281/zenodo.20804380.
 
