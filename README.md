@@ -40,7 +40,7 @@
 | 理论基础 | 提供的工具 | 在 CQM 中的实现 |
 |:---|:---|:---|
 | **因果集**（Causal Sets） | 非交换几何、离散动力学、Sprinkling 测度 | 禁闭内部 $[x^\mu,x^\nu]\neq0$、$e^{-u}du$ 撒点、嘉当方程离散演化 |
-| **关系量子力学**（RQM） | 关系性实在、引力因果退相干 | 双向干涉 → 单向因果、Lindblad 方程、$\lambda_c$ 作为退相干临界条件 |
+| **关系量子力学**（RQM） | 关系性实在、引力因果退相干 | 电子读作基态耦合常数 $\alpha$ 的对应、库珀对读作 $4\alpha$ 的对应，属性在耦合常数–电子配对关系中实现（关系性实在，不取消基底）；配对是 $\alpha\to n^2\alpha$ 的跃迁而非两电子结合成实体；并给出双向干涉 → 单向因果、Lindblad 方程、$\lambda_c$ 临界 |
 | **圈量子引力**（LQG） | Regge–GR 联系、网络理论、自旋泡沫 | 4-单纯形 Regge 骨架、边–面关联矩阵 $E$、$A_4^{++}$ Weyl 群循环（镶嵌 $\{5,4\}$） |
 
 **读法边界**：这三行列的是 CQM 从三大理论**继承的工具**，不是它们的本体论承诺。因果集在 CQM 中被降为物质的属性而非本体（[集成理论](01%20核心理论/CQM_核心_集成理论.md) §1.4），RQM 只提供关系性诠释，LQG 只提供离散几何骨架；三者在 CQM 中的位置由耦合常数量子化重新指派，不能读作三大理论原本的主张。
@@ -554,12 +554,12 @@ CQMFormal/
       <sub>理论提出 · 推导 · 审校</sub>
     </td>
     <td align="center" width="140">
-      <img src="assets/contributors/deepseek.svg" width="72" alt="DeepSeek"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.svg" width="72" alt="DeepSeek"><br>
       <sub><b>DeepSeek</b></sub><br>
       <sub>文档组织 · 一致性核查 · 形式化对接</sub>
     </td>
     <td align="center" width="140">
-      <img src="assets/contributors/anonymous.svg" width="72" alt="佚名"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/anonymous.svg" width="72" alt="佚名"><br>
       <sub><b>佚名</b></sub><br>
       <sub>理论贡献</sub>
     </td>
