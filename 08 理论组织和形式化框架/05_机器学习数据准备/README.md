@@ -4,7 +4,7 @@
 
 | 目录 | 文件 | 内容 |
 |:---|:---|:---|
-| `超图导出/` | `node_features.csv` | 81 节点 × (12 类型 one-hot + 3 度数) |
+| `超图导出/` | `node_features.csv` | 83 节点 × (12 类型 one-hot + 3 度数) |
 | | `hyperedge_index.csv` | 节点↔超边关联（47 次） |
 | | `directed_edge_index.csv` | 有向边（50 条） |
 | | `hypergraph_index.npz` | `x` / `hyperedge_index` / `edge_index` 张量 |

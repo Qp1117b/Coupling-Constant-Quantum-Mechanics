@@ -65,7 +65,7 @@ $$\boxed{\ \lambda_{ij}=f^{-1}(C_{ij}-\delta_{ij})=v_\tau^2(C_{ij}-\delta_{ij})+
 |:---|:---|
 | 量纲 | $u=C-I$ 无量纲（$C_{ii}=1$、$C$ 无量纲）；$\lambda=\ln r$ 无量纲；$c,d$ 无量纲（$v_\tau$ 归一化） |
 | 锚极限 | $\lambda\to0$：$f^{-1}(u)\to -u/c$，$u\to0$ ⇒ $\lambda\to0$，与 $\varepsilon=0$⇔$r=1$ 一致 |
-| 单调性 | $f'=-c+3d\lambda^2<0$ 当 $|\lambda|<\sqrt{c/(3|d|)}$ ⇒ 邻域严格单减、可逆 |
+| 单调性 | $f'=-c+3d\lambda^2<0$ 当 $\vert \lambda\vert <\sqrt{c/(3\vert d\vert )}$ ⇒ 邻域严格单减、可逆 |
 | 高阶 | 三次项相对 $\le3.2\times10^{-4}$，链精度下不可见 |
 | **可证伪** | 若测到 $C-I$ 与 $\lambda$ 的映射在锚邻域非单调、或三次修正 $>10^{-2}$，本轮局部可逆判定被否证 |
 

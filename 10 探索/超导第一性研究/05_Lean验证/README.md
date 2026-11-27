@@ -414,7 +414,7 @@
 | `pair_charge_excludes_e` | theorem | $q=e$ 会加倍 $\Phi_0$，链排除 | 模式集 |
 | `bc2_formula` | theorem | $B_{c2}=h/(4\pi e\xi^2)$ | GL 外部 |
 | `fLinear` / `f_linear_zero` / `low_field_slope` | 定义＋theorem | $f=1-a x$、$f(0)=1$、$a>0$ ⇒ 递减 | 低场 |
-| `normalized_slope` | theorem | $dT_c/dB|_0=-a T_{c0}/B_{c2}$ | 代数 |
+| `normalized_slope` | theorem | $dT_c/dB\vert _0=-a T_{c0}/B_{c2}$ | 代数 |
 
 **边界**：本文件只承载场依赖的代数核；GL 关系、$a$ 的 RG 计算、$\xi$ 的第一性值属外部。
 
@@ -434,7 +434,7 @@
 | 名称 | 类型 | 内容 | 边界 |
 |:---|:---|:---|:---|
 | `varMean` | 定义 | $(n\sigma^2+C)/n^2$ | 协方差和 $C$ |
-| `independent_var` / `variance_ratio` | theorem | $C=0\Rightarrow\sigma^2/n$、比值 $m/n$ | $|D_i|^{-1/2}$ 来源 |
+| `independent_var` / `variance_ratio` | theorem | $C=0\Rightarrow\sigma^2/n$、比值 $m/n$ | $\vert D_i\vert ^{-1/2}$ 来源 |
 | `correlated_floor` | theorem | 正协方差给方差平台 $\bar c$ | 自平均失效 |
 | `self_avg_condition` | theorem | $C\le kn\Rightarrow\operatorname{Var}\le(\sigma^2+k)/n$ | 成立条件 |
 
@@ -619,7 +619,7 @@
 
 | 名称 | 类型 | 内容 | 边界 |
 |:---|:---|:---|:---|
-| `rho_abs_ge_gamma` / `tail_term_bound` | theorem | $|\rho_n|\ge\gamma_n$、尾部单项界（截断误差） | 代数 |
+| `rho_abs_ge_gamma` / `tail_term_bound` | theorem | $\vert \rho_n\vert \ge\gamma_n$、尾部单项界（截断误差） | 代数 |
 | `tail_bound_two` / `truncation_error_decomp` | theorem | 三角不等式与截断分解的代数核 | 代数 |
 | `weight_decreasing_in_rate` | theorem | 率越大权重越小（窗口单调） | 指数 |
 | `nogo_two_modes` | theorem | 恒等焊接仍不可能（no-go 保持） | 代数 |

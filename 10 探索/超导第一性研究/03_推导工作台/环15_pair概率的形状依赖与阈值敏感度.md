@@ -120,7 +120,7 @@ $$\frac{\partial p}{\partial\gamma_1}=-\frac{(z^2-1)\phi(z)}{6}\tag{15D.1}$$
 | 定理 | 内容 |
 |:--|:--|
 | `cantelli` | 有限分布版 Cantelli：$E[z]=0$、$E[z^2]=v>0$ ⇒ $\Pr[z\ge k\sqrt v]\le1/(1+k^2)$（取 $\lambda=\sqrt v/k$，用 $E[(z+\lambda)^2]=v+\lambda^2$） |
-| `shape_tolerance` | $|c\gamma_1|\le\epsilon\iff|\gamma_1|\le\epsilon/|c|$——形状容差的线性换算 |
+| `shape_tolerance` | $\vert c\gamma_1\vert \le\epsilon\iff\vert \gamma_1\vert \le\epsilon/\vert c\vert $——形状容差的线性换算 |
 
 ---
 

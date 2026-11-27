@@ -1,41 +1,41 @@
 {
   "gold_edges": 77,
   "gold_pairs": 77,
-  "candidates": 799,
-  "pattern_candidates": 170,
-  "cooccur_only_candidates": 629,
-  "pair_hits": 27,
-  "pattern_pair_hits": 12,
-  "precision_pair": 0.034,
-  "precision_pattern": 0.071,
-  "recall_pair": 0.351,
-  "recall_pair_unordered": 0.429,
-  "recall_pattern": 0.156,
-  "f1_pair": 0.062,
-  "relation_type_accuracy": 0.167,
-  "typed_candidates_on_gold_pairs": 12,
-  "recall_ceiling_sentence_cooccurrence": 0.455,
-  "recall_vs_ceiling": 0.943,
+  "candidates": 646,
+  "pattern_candidates": 161,
+  "cooccur_only_candidates": 485,
+  "pair_hits": 24,
+  "pattern_pair_hits": 13,
+  "precision_pair": 0.037,
+  "precision_pattern": 0.081,
+  "recall_pair": 0.312,
+  "recall_pair_unordered": 0.39,
+  "recall_pattern": 0.169,
+  "f1_pair": 0.066,
+  "relation_type_accuracy": 0.154,
+  "typed_candidates_on_gold_pairs": 13,
+  "recall_ceiling_sentence_cooccurrence": 0.416,
+  "recall_vs_ceiling": 0.938,
   "note": "金标准 = 人工论证表（69 条，含多前件超边展开）。**分层候选**：pattern 层（两端间有关系线索词，类型可推断）与 cooccur 层（仅同句共现，类型标『未定』，交人工/LLM 定型）。配对召回的物理上界 = 金标准两端在原文同句共现的比例；cooccur 层按无向配对计的召回 / 上界 = 94%。『未定』类型的候选不得直接入库——类型定型须经人工或 LLM（span 校验后）。",
   "by_rel": {
     "重组实现": {
-      "candidates": 15,
+      "candidates": 13,
       "pair_hits": 0
     },
     "映射": {
-      "candidates": 49,
+      "candidates": 44,
       "pair_hits": 5
     },
     "等价": {
-      "candidates": 26,
+      "candidates": 25,
       "pair_hits": 3
     },
     "依赖": {
-      "candidates": 2,
+      "candidates": 1,
       "pair_hits": 0
     },
     "层级含于": {
-      "candidates": 1,
+      "candidates": 2,
       "pair_hits": 1
     },
     "演化": {

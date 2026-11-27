@@ -73,11 +73,11 @@ $$\frac{\partial}{\partial T}\langle(\Delta\varepsilon_e)^2\rangle_T>0,\qquad T\
 
 | 检查 | 结果 | 判据 |
 |:---|:---|:---|
-| 零点极限 $T\to0$ | $\sum_k|A\cdot v_k|^2c_k^0>0$（有限） | 否证 R73 前"恒为零" |
+| 零点极限 $T\to0$ | $\sum_k\vert A\cdot v_k\vert ^2c_k^0>0$（有限） | 否证 R73 前"恒为零" |
 | 高温极限 $T\to\infty$ | $\langle(\Delta\varepsilon)^2\rangle_T\propto T$（古典等分） | 与 (4.1) 同向；升温涨落增 |
 | 单调性 | $\partial\langle(\Delta\varepsilon)^2\rangle_T/\partial T>0$（$c_k^0>0$） | 升温利于配对前夜（与 `审-3` 方向一致） |
 | **可证伪** | 若实验测到亏角相关涨落随 $T$ **下降**或与 $T$ 无关，则载体判定被否证 | 需独立测内禀亏角涨落（FG 侧），当前链内无此读数 |
-| 零模排除 | 位移模权重 $|A\cdot Y_I|^2=0$，不进 (4.1′) | 数值已在 R73 验证（$\le1.8\times10^{-15}$） |
+| 零模排除 | 位移模权重 $\vert A\cdot Y_I\vert ^2=0$，不进 (4.1′) | 数值已在 R73 验证（$\le1.8\times10^{-15}$） |
 
 ---
 

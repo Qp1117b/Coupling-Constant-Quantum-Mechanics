@@ -37,7 +37,7 @@ java -jar target/cqm-station-1.0.0.jar --server.port=8080
 | `/api` | 端点索引 |
 | `/api/status` | 状态读数：概念 81 / 命题 63 / 论证 69 / 缺口 24 / 证据 213 / 链条步 131、三元组数、站点文件数、待复核数 |
 | `/api/search?q=&type=&limit=` | 结构化检索：概念 / 命题 / 论证 / 缺口 / 符号 / 链条步；CJK 一元+二元 + 拉丁词打分，可按 `type` 过滤 |
-| `/api/sparql?query=...` | **实时 SPARQL**（Apache Jena 内存模型载入 `知识图谱.ttl`，5,530 三元组）；默认只读，写操作返回 403 |
+| `/api/sparql?query=...` | **实时 SPARQL**（Apache Jena 内存模型载入 `知识图谱.ttl`，5,461 三元组）；默认只读，写操作返回 403 |
 | `/api/concepts` `/api/concepts/{id}` | 概念列表 / 详情（定义、别名、**证据引文**、语义近邻） |
 | `/api/props` `/api/gaps` | 命题表 / 缺口台账（状态、Lean 对应、分组） |
 | `/api/evidence/{structId}` | 断言 → 证据（引文、字符区间、置信度） |

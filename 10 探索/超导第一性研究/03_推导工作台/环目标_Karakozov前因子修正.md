@@ -61,7 +61,7 @@ Karakozov 因子是常数前因子，对 $T^*$ 与 $\Delta(0)$ 同乘：
 |:---|:---|:---|:---|
 | 前因子 | $1.13e^{-1/6}\hbar\omega_{\log}$ | $1.13e^{-1/2}\hbar\omega_E$ | 是（K.1） |
 | 指数 | $-(1+\lambda)/\lambda$ | $-(1+\lambda)/\lambda$ | 是（第56轮） |
-| 耦合 | $N(0)\sum|V|$ (10.3) | $g_{\epsilon_F}|V|$ | 同类 bare |
+| 耦合 | $N(0)\sum\vert V\vert $ (10.3) | $g_{\epsilon_F}\vert V\vert $ | 同类 bare |
 
 **P4 唯一剩余**：$\mu^\ast$（Coulomb 赝势）——CQM 无此符号位（`审-14`）。Webb/Marsiglio 均明确 $\mu^\ast$ 是真实材料的必需输入（Al 的 $\mu^\ast\approx0.1$–$0.2$）。这是**链外材料输入**，不是链内缺口。故 **P4 由"不判定（缺 $\mu^\ast$＋刻度）"收紧为"链内形状/刻度已全对齐，绝对精度仅剩材料 $\mu^\ast$ 外生"**——不能再收紧（红线：不能凭空造 $\mu^\ast$ 链内来源）。
 

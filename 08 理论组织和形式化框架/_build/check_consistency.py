@@ -226,8 +226,9 @@ def main():
     # 2026-11-21（v1.9.248）：RH/Goldbach 外部假设写入文档，kg 新增 3 条边；实体 146 不变。
     # 2026-11-27：08 移除 Lean 库并以当前语料重跑证据层（build_extract → build_evidence → build_kg），
     # 证据句重匹配使 claim 级边 336→334（实体 146、dir 50 / hyper 19 未变）。
-    check("知识图谱 146 实体 / 334 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 334),
+    # 2026-11-28：旧 GN 库证据重定向后 claim 级边 334→336（实体 146 未变）。
+    check("知识图谱 146 实体 / 336 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 336),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
@@ -239,8 +240,9 @@ def main():
           ost["reasoner"]["consistent"] is True and not ost["reasoner"]["unsatisfiable_classes"],
           str(ost["reasoner"]["unsatisfiable_classes"]))
     # 2026-11-18（v1.9.224）：概念 81→83、证据 213→215，本体个体 426→430；类/对象属性未变。
-    check("本体公理层：25 类 / 430 个体 / 16 对象属性",
-          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 430, 16),
+    # 2026-11-28：3 条证据 unresolved，证据个体 215→212，本体个体 430→427；类/对象属性未变。
+    check("本体公理层：25 类 / 427 个体 / 16 对象属性",
+          (ost["owl_classes"], ost["owl_individuals"], ost["owl_object_properties"]) == (25, 427, 16),
           f"{ost['owl_classes']}/{ost['owl_individuals']}/{ost['owl_object_properties']}")
     ext = jload(os.path.join(ROOT, "05_机器学习数据准备", "关系抽取", "抽取评测.json"))
     check("抽取评测含召回上界（诚实边界）",
