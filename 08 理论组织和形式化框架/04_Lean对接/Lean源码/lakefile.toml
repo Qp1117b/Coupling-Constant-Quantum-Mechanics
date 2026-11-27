@@ -4,9 +4,6 @@ version = "0.8.0"
 # 08 的 Lean 库已移除（原 SuperconductivityChain 12 模块）。
 # 当前形式化在 10 探索/超导第一性研究/05_Lean验证：Ring15Spec v52 + 52 个证明模块，
 # 由 a_gate.ps1 一键编译、#print axioms 白名单与 #check 类型比对。
-# CI（.github/workflows/lean.yml）以本目录为 lake-package-directory，只验证工具链与依赖可复现；
-# 52 个模块的 A 闸由本地 a_gate.ps1 执行。
-
-[[require]]
-name = "mathlib"
-path = ".lake/packages/mathlib"
+# CI（.github/workflows/lean.yml）以本目录为 lake-package-directory，只验证 Lean 工具链与
+# Lake 工程骨架可复现；mathlib 的 olean 由本地 .lake/packages/mathlib 提供，A 闸脚本以
+# LEAN_PATH 引用，CI 不拉取 mathlib。
