@@ -554,8 +554,8 @@ CQMFormal/
       <sub>理论提出 · 推导 · 审校</sub>
     </td>
     <td align="center" width="140">
-      <img src="assets/contributors/doubao.svg" width="72" alt="豆包"><br>
-      <sub><b>豆包（Doubao）</b></sub><br>
+      <img src="assets/contributors/deepseek.svg" width="72" alt="DeepSeek"><br>
+      <sub><b>DeepSeek</b></sub><br>
       <sub>文档组织 · 一致性核查 · 形式化对接</sub>
     </td>
   </tr>
