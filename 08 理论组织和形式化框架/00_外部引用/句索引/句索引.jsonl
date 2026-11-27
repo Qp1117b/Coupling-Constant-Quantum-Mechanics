@@ -19631,125 +19631,130 @@
 {"doc_id": "D057", "sid": 32, "start": 1494, "end": 1558, "kind": "prose", "text": "$$\\lambda_1=\\sum_\\rho\\frac{1}{\\rho}=\\sum_\\rho\\frac{1}{1-\\rho},$$"}
 {"doc_id": "D057", "sid": 33, "start": 1560, "end": 1595, "kind": "prose", "text": "后一个等号由 $\\rho\\mapsto1-\\rho$ 的零点置换给出。"}
 {"doc_id": "D057", "sid": 34, "start": 1595, "end": 1673, "kind": "prose", "text": "$\\lambda_1$ 是判据中第一个需要被检验为非负的量：它的正性已知，但 RH 要求**所有** $\\lambda_n$ 非负，首项只是入口，不是终点。"}
-{"doc_id": "D057", "sid": 35, "start": 1673, "end": 1679, "kind": "prose", "text": "【文献确立】"}
-{"doc_id": "D057", "sid": 36, "start": 1681, "end": 1694, "kind": "heading", "text": "### 1.2 闭式与数值"}
-{"doc_id": "D057", "sid": 37, "start": 1696, "end": 1780, "kind": "prose", "text": "由 $\\xi(s)=\\tfrac12 s(s-1)\\pi^{-s/2}\\Gamma(s/2)\\zeta(s)$ 与 $\\psi(1/2)=-\\gamma-2\\ln2$，"}
-{"doc_id": "D057", "sid": 38, "start": 1782, "end": 1916, "kind": "prose", "text": "$$☯=\\frac{\\xi'(1)}{\\xi(1)}=1+\\frac{\\gamma}{2}-\\ln(2\\sqrt{\\pi})=1+\\frac{\\gamma}{2}-\\ln 2-\\frac{\\ln\\pi}{2}\\approx 0.023095708966\\ldots$$"}
-{"doc_id": "D057", "sid": 39, "start": 1918, "end": 1973, "kind": "prose", "text": "该值与数值微分互验到 $10^{-7}$ 量级（`01 核心理论/CQM_核心_集成理论.md` §3.4）。"}
-{"doc_id": "D057", "sid": 40, "start": 1973, "end": 2048, "kind": "prose", "text": "同族后项作对照：$\\lambda_2\\approx0.0923457352$、$\\lambda_3\\approx0.2076389206$，严格递增。"}
-{"doc_id": "D057", "sid": 41, "start": 2048, "end": 2064, "kind": "prose", "text": "数值出处见文末 [1]–[3]。"}
-{"doc_id": "D057", "sid": 42, "start": 2066, "end": 2084, "kind": "heading", "text": "### 1.3 无条件表示与条件表示"}
-{"doc_id": "D057", "sid": 43, "start": 2086, "end": 2110, "kind": "prose", "text": "**Hadamard 表示**（不依赖 RH）："}
-{"doc_id": "D057", "sid": 44, "start": 2112, "end": 2181, "kind": "prose", "text": "$$☯=\\frac{d}{ds}\\ln\\xi(s)\\Big\\vert_{s=1}=\\sum_\\rho\\frac{1}{1-\\rho}.$$"}
-{"doc_id": "D057", "sid": 45, "start": 2183, "end": 2220, "kind": "prose", "text": "$\\xi$ 的 Hadamard 乘积直接给出，零点在不在临界线上都成立。"}
-{"doc_id": "D057", "sid": 46, "start": 2220, "end": 2226, "kind": "prose", "text": "【标准数学】"}
-{"doc_id": "D057", "sid": 47, "start": 2228, "end": 2279, "kind": "prose", "text": "**谱表示**（条件于 RH）：若 $\\rho=\\tfrac12+i\\gamma_n$，配对共轭零点后"}
-{"doc_id": "D057", "sid": 48, "start": 2281, "end": 2336, "kind": "prose", "text": "$$☯=\\sum_{n=1}^{\\infty}\\frac{1}{\\gamma_n^2+\\tfrac14}.$$"}
-{"doc_id": "D057", "sid": 49, "start": 2338, "end": 2380, "kind": "prose", "text": "这不是另一个定义，而是同一常数在临界线锁定后的谱写法；RH 未证，故只能作条件陈述。"}
-{"doc_id": "D057", "sid": 50, "start": 2380, "end": 2388, "kind": "prose", "text": "【条件于 RH】"}
-{"doc_id": "D057", "sid": 51, "start": 2390, "end": 2417, "kind": "heading", "text": "### 1.4 与 Hilbert–Pólya 的接口"}
-{"doc_id": "D057", "sid": 52, "start": 2419, "end": 2541, "kind": "prose", "text": "CQM 把 $\\gamma_n^2+\\tfrac14$ 读作 $\\hat H_{\\mathrm{HP}}=\\hat{\\mathcal S}^2+\\tfrac14$ 的本征值（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4）。"}
-{"doc_id": "D057", "sid": 53, "start": 2541, "end": 2595, "kind": "prose", "text": "这一步是**框架内的谱诠释**，不是数学定理：Hilbert–Pólya 猜想本身仍未构造出所需的自伴算符。"}
-{"doc_id": "D057", "sid": 54, "start": 2595, "end": 2630, "kind": "prose", "text": "$☯$ 的稳定性因此条件于两件事——RH 成立，且该谱实现被铸造出来。"}
-{"doc_id": "D057", "sid": 55, "start": 2630, "end": 2640, "kind": "prose", "text": "【CQM 构造假设】"}
-{"doc_id": "D057", "sid": 56, "start": 2642, "end": 2645, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 57, "start": 2647, "end": 2668, "kind": "heading", "text": "## 2. 物理身份：耦合空间的作用量量子"}
-{"doc_id": "D057", "sid": 58, "start": 2670, "end": 2686, "kind": "heading", "text": "### 2.1 共轭对与不确定性"}
-{"doc_id": "D057", "sid": 59, "start": 2688, "end": 2786, "kind": "prose", "text": "CQM 只替换一个共轭对：$(\\hat x,\\hat p)\\to(\\hat u,\\hat p_u)$，其中 $\\hat u=\\ln\\hat r$、$\\hat p_u=\\hat v_\\tau/☯$。"}
-{"doc_id": "D057", "sid": 60, "start": 2786, "end": 2811, "kind": "prose", "text": "由 $[\\hat u,\\hat p_u]=i$ 得"}
-{"doc_id": "D057", "sid": 61, "start": 2813, "end": 2858, "kind": "prose", "text": "$$\\Delta u\\cdot\\Delta v_\\tau\\ge\\frac{☯}{2}.$$"}
-{"doc_id": "D057", "sid": 62, "start": 2860, "end": 2899, "kind": "prose", "text": "耦合常数的相对不确定度与固有时流速的不确定度互斥：一侧越精确，另一侧越不确定。"}
-{"doc_id": "D057", "sid": 63, "start": 2899, "end": 2960, "kind": "prose", "text": "$☯$ 在这里的角色与 $\\hbar$ 在作用量量子化中的角色同构——一个跨层级不变的基准单位，而不是某个具体系统的参数。"}
-{"doc_id": "D057", "sid": 64, "start": 2960, "end": 2970, "kind": "prose", "text": "【CQM 框架基础】"}
-{"doc_id": "D057", "sid": 65, "start": 2972, "end": 2985, "kind": "heading", "text": "### 2.2 层级整数倍"}
-{"doc_id": "D057", "sid": 66, "start": 2987, "end": 3159, "kind": "prose", "text": "对 $\\mathrm{GL}(n)$ 的 Eisenstein 诱导表示 $\\pi=\\mathrm{Ind}_{\\mathrm{GL}(1)^n}^{\\mathrm{GL}(n)}(\\chi_1,\\ldots,\\chi_n)$，完成 $L$ 函数满足 $\\xi(s,\\pi)=\\prod_k\\xi(s,\\chi_k)$，对数导数可加，平凡特征下"}
-{"doc_id": "D057", "sid": 67, "start": 3161, "end": 3176, "kind": "prose", "text": "$$☯_n=n\\,☯_1.$$"}
-{"doc_id": "D057", "sid": 68, "start": 3178, "end": 3202, "kind": "prose", "text": "这是 $L$ 函数对数导数的可加性，属数学事实。"}
-{"doc_id": "D057", "sid": 69, "start": 3202, "end": 3254, "kind": "prose", "text": "物理系统固定在 $\\mathrm{GL}(5)$ 层级、使用 $☯=☯_1$，则是 CQM 的构造选择；"}
-{"doc_id": "D057", "sid": 70, "start": 3254, "end": 3270, "kind": "prose", "text": "$n>5$ 的层级不主导物理谱。"}
-{"doc_id": "D057", "sid": 71, "start": 3270, "end": 3287, "kind": "prose", "text": "【标准数学】＋【CQM 构造假设】"}
-{"doc_id": "D057", "sid": 72, "start": 3289, "end": 3306, "kind": "heading", "text": "### 2.3 超导中的归一化角色"}
-{"doc_id": "D057", "sid": 73, "start": 3308, "end": 3342, "kind": "prose", "text": "在差异–记忆核超导中，$☯$ 不是外加参数，而是对易子的归一化单位："}
-{"doc_id": "D057", "sid": 74, "start": 3344, "end": 3445, "kind": "prose", "text": "$$C_{ij}\\equiv\\frac{[\\hat u_i,\\hat v_{\\tau,j}]}{i☯}=f(\\varepsilon_i-\\varepsilon_j),\\qquad C_{ii}=1.$$"}
-{"doc_id": "D057", "sid": 75, "start": 3447, "end": 3529, "kind": "prose", "text": "旧框架的资格条件 $\\Delta\\varepsilon_0\\ge\\pi☯\\sqrt{1-\\varepsilon/(2\\pi)}/\\ln n$ 也以 $☯$ 为尺度。"}
-{"doc_id": "D057", "sid": 76, "start": 3529, "end": 3590, "kind": "prose", "text": "$☯$ 的数值因此直接进入 $T_c$ 链的阈值，而非停留在命名层（`06 超导/CQM_超导核心理论.md` §11）。"}
-{"doc_id": "D057", "sid": 77, "start": 3590, "end": 3600, "kind": "prose", "text": "【CQM 框架基础】"}
-{"doc_id": "D057", "sid": 78, "start": 3602, "end": 3623, "kind": "heading", "text": "### 2.4 $G_N$ 数值链中的位置"}
-{"doc_id": "D057", "sid": 79, "start": 3625, "end": 3654, "kind": "prose", "text": "$G_N$ 的候选闭式把 $☯$ 放在指数与线性修正两处："}
-{"doc_id": "D057", "sid": 80, "start": 3656, "end": 3814, "kind": "prose", "text": "$$G_N=\\frac{\\hbar c}{m_p^2}\\cdot I\\cdot\\lambda_c\\cdot ☯^2\\cdot\\mathfrak{c}_1\\cdot\\exp\\Bigl(-\\frac{2}{☯}\\Bigr)\\cdot(1+\\kappa☯),\\qquad \\kappa=\\frac{31+☯}{30}.$$"}
-{"doc_id": "D057", "sid": 81, "start": 3816, "end": 3884, "kind": "prose", "text": "$\\kappa$ 的 $+☯$ 项来自离散因果集到连续几何的函子映射（`03 引力与退相干/CQM_引力_GN可能公式.md` §7）。"}
-{"doc_id": "D057", "sid": 82, "start": 3884, "end": 3952, "kind": "prose", "text": "$☯$ 同时出现在 $☯^2$、$e^{-2/☯}$ 与 $(1+\\kappa☯)$ 三处，说明它在数值链中是结构变量，不是装饰性符号。"}
-{"doc_id": "D057", "sid": 83, "start": 3952, "end": 3993, "kind": "prose", "text": "该式为**构造后验数字校验，待独立复现**；$G_N$ 在标准物理中仍是实验参数。"}
-{"doc_id": "D057", "sid": 84, "start": 3993, "end": 4003, "kind": "prose", "text": "【CQM 构造假设】"}
-{"doc_id": "D057", "sid": 85, "start": 4005, "end": 4035, "kind": "heading", "text": "### 2.5 与 $\\zeta$ 正则化、中央荷的结构对应"}
-{"doc_id": "D057", "sid": 86, "start": 4037, "end": 4136, "kind": "prose", "text": "$\\xi$ 对数导数是无穷模经 $\\zeta$ 正则化后的有限剩余，这与共形场论中中央荷衡量有效自由度数的角色形成结构对应（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4.3）。"}
-{"doc_id": "D057", "sid": 87, "start": 4136, "end": 4191, "kind": "prose", "text": "对应停在结构层：$☯$ 通过 OPE 系数与同步成本进入物理，不通过中央荷数值；$\\eta=0$ 是构造假设。"}
-{"doc_id": "D057", "sid": 88, "start": 4191, "end": 4213, "kind": "prose", "text": "把这一对应读成「$☯$ 就是中央荷」会越界。"}
-{"doc_id": "D057", "sid": 89, "start": 4213, "end": 4223, "kind": "prose", "text": "【CQM 构造假设】"}
-{"doc_id": "D057", "sid": 90, "start": 4225, "end": 4228, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 91, "start": 4230, "end": 4248, "kind": "heading", "text": "## 3. 符号层：命名、太极与共轭"}
-{"doc_id": "D057", "sid": 92, "start": 4250, "end": 4270, "kind": "heading", "text": "### 3.1 阴阳互补 ↔ 共轭不对易"}
-{"doc_id": "D057", "sid": 93, "start": 4272, "end": 4337, "kind": "prose", "text": "太极图不是静态的对称分割，而是旋转中的动态平衡；$☯$ 设定的也不是一个固定值，而是一个**下限**——不允许两侧同时归零的约束。"}
-{"doc_id": "D057", "sid": 94, "start": 4337, "end": 4419, "kind": "prose", "text": "符号的「阴阳互为消长」与 $\\Delta u\\cdot\\Delta v_\\tau\\ge☯/2$ 在结构上同型：两个共轭面向彼此定义，一侧的精确以另一侧的模糊为代价。"}
-{"doc_id": "D057", "sid": 95, "start": 4421, "end": 4438, "kind": "heading", "text": "### 3.2 「相变」的双重指向"}
-{"doc_id": "D057", "sid": 96, "start": 4440, "end": 4515, "kind": "prose", "text": "「相变量子」至少承载两层含义，且两层落在同一结构上：其一，相空间中的共轭变量，$☯$ 是 $(\\hat u,\\hat p_u)$ 这一对的作用量量子；"}
-{"doc_id": "D057", "sid": 97, "start": 4515, "end": 4548, "kind": "prose", "text": "其二，耦合强度在不同「相」之间的跃迁，以 $☯$ 为基本单位组织。"}
-{"doc_id": "D057", "sid": 98, "start": 4548, "end": 4617, "kind": "prose", "text": "符号约定写明「太极，表辩证与相变」（`01 核心理论/CQM_核心_集成理论.md` §0），命名的「相变」与符号的「阴阳消长」在此汇合。"}
-{"doc_id": "D057", "sid": 99, "start": 4619, "end": 4636, "kind": "heading", "text": "### 3.3 玻尔先例与它的边界"}
-{"doc_id": "D057", "sid": 100, "start": 4638, "end": 4716, "kind": "prose", "text": "玻尔 1947 年受丹麦「宝象勋章」时自绘族徽，中心为太极图，铭文 *Contraria sunt complementa*（对立即互补），以象征波粒二象。"}
-{"doc_id": "D057", "sid": 101, "start": 4716, "end": 4761, "kind": "prose", "text": "CQM 与这一先例的关系是结构性的，但位置不同：玻尔用太极图**诠释**一个已成熟的原理；"}
-{"doc_id": "D057", "sid": 102, "start": 4761, "end": 4790, "kind": "prose", "text": "CQM 让太极符号**承载**一个尚未独立检验的框架常数。"}
-{"doc_id": "D057", "sid": 103, "start": 4790, "end": 4806, "kind": "prose", "text": "前者是哲学象征，后者是理论徽标。"}
-{"doc_id": "D057", "sid": 104, "start": 4806, "end": 4860, "kind": "prose", "text": "这一区别划出 $☯$ 当前的位置：意义、内涵、文化三者一致，但一致属于叙事层与构造层，不是数学定理层的事实。"}
-{"doc_id": "D057", "sid": 105, "start": 4860, "end": 4866, "kind": "prose", "text": "【哲学诠释】"}
-{"doc_id": "D057", "sid": 106, "start": 4868, "end": 4871, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 107, "start": 4873, "end": 4893, "kind": "heading", "text": "## 4. 四重结构辨识：不是唯一性定理"}
-{"doc_id": "D057", "sid": 108, "start": 4895, "end": 4950, "kind": "prose", "text": "把四个「位置」当作结构判据来检索已知常数，$☯$ 的辨识度来自**同时占据四席**，而不是任一维度的不可替代。"}
-{"doc_id": "D057", "sid": 109, "start": 4952, "end": 4971, "kind": "table", "text": "| 位置 | 数学锚点 | 条件性 |"}
-{"doc_id": "D057", "sid": 110, "start": 4972, "end": 4988, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D057", "sid": 111, "start": 4989, "end": 5039, "kind": "table", "text": "| **首项性** | Keiper–Li 序列 $\\lambda_1$ | 无条件（定义位置） |"}
-{"doc_id": "D057", "sid": 112, "start": 5040, "end": 5106, "kind": "table", "text": "| **谱刚性** | RH 下 $1/2$ 临界线锁定，$\\gamma_n\\in\\mathbb R$ | **条件于 RH** |"}
-{"doc_id": "D057", "sid": 113, "start": 5107, "end": 5157, "kind": "table", "text": "| **压缩性** | Hadamard 和把全部零点谱压进一个实常数 | 无条件（需对称主值） |"}
-{"doc_id": "D057", "sid": 114, "start": 5158, "end": 5226, "kind": "table", "text": "| **层级量子性** | $☯_n=n☯_1$ 的整数倍构造 | 数学事实；$\\mathrm{GL}(5)$ 固定为 CQM 构造 |"}
-{"doc_id": "D057", "sid": 115, "start": 5228, "end": 5271, "kind": "prose", "text": "前三席锚在 $\\lambda_1$ 的纯数学身份上，第四席是 CQM 赋予的结构外衣。"}
-{"doc_id": "D057", "sid": 116, "start": 5271, "end": 5324, "kind": "prose", "text": "这不是缺陷，而是 $☯$ 理论身份的真实分层：数论侧有坚实的「肉身」，物理侧在肉身上嫁接了一层量子化解释。"}
-{"doc_id": "D057", "sid": 117, "start": 5326, "end": 5335, "kind": "prose", "text": "**对照对象**："}
-{"doc_id": "D057", "sid": 118, "start": 5337, "end": 5391, "kind": "list", "text": "- 后项 $\\lambda_n\\,(n>1)$ 有压缩性与谱刚性，但不是首项；判据的逻辑起点无法由后项替代。"}
-{"doc_id": "D057", "sid": 119, "start": 5392, "end": 5533, "kind": "list", "text": "- Selberg 第一特征值 $\\lambda_1(\\Gamma\\backslash\\mathbb H)$ 是另一领域最接近的类比：它是 Laplace 谱的首个非零本征值（首项性），受 Selberg $1/4$ 猜想约束（谱刚性），并由迹公式与本原闭测地线求和绑定（压缩性）。"}
-{"doc_id": "D057", "sid": 120, "start": 5533, "end": 5559, "kind": "list", "text": "但它随曲面与群变化，没有跨层级的普适值，第四席缺失。"}
-{"doc_id": "D057", "sid": 121, "start": 5559, "end": 5609, "kind": "list", "text": "Selberg 已证 $3/16$，$1/4$ 仍未决，最佳下界 $975/4096$【文献确立】。"}
-{"doc_id": "D057", "sid": 122, "start": 5610, "end": 5708, "kind": "list", "text": "- 广义 Li 系数 $\\lambda_1(\\pi)$ 在「首项＋猜想约束＋零点求和」的三角结构上与 $☯$ 的前三席同构，但它依赖表示 $\\pi$，不是一个单一普适标量，「一个常数」的身份丢失。"}
-{"doc_id": "D057", "sid": 123, "start": 5710, "end": 5759, "kind": "prose", "text": "于是结论只能写成：**在「已知常数＋CQM 构造」的联合标准下，四席的交集目前只指向 $☯$**。"}
-{"doc_id": "D057", "sid": 124, "start": 5759, "end": 5785, "kind": "prose", "text": "这证明的是结构位置的独占性，不是物理有效性的必然性。"}
-{"doc_id": "D057", "sid": 125, "start": 5785, "end": 5816, "kind": "prose", "text": "换一套判据，结论可以不同；判据本身的可接受度，也不由本文决定。"}
-{"doc_id": "D057", "sid": 126, "start": 5818, "end": 5821, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 127, "start": 5823, "end": 5836, "kind": "heading", "text": "## 5. 缺口与可检验性"}
-{"doc_id": "D057", "sid": 128, "start": 5838, "end": 5886, "kind": "list", "text": "- **RH 未证**：谱表示、$1/2$ 锁定、Hilbert–Pólya 接口全部条件于此。"}
-{"doc_id": "D057", "sid": 129, "start": 5886, "end": 5909, "kind": "list", "text": "$☯$ 的「谱刚性」是条件性的，不是已证事实。"}
-{"doc_id": "D057", "sid": 130, "start": 5910, "end": 5970, "kind": "list", "text": "- **$[\\hat u,\\hat p_u]=i$ 无独立实验**：共轭不对易是框架公设，尚无以 $☯$ 为下限的测量。"}
-{"doc_id": "D057", "sid": 131, "start": 5971, "end": 6015, "kind": "list", "text": "- **数值为构造后验**：$☯$ 的 $10^{-7}$ 精度是解析值与数值微分互验；"}
-{"doc_id": "D057", "sid": 132, "start": 6015, "end": 6052, "kind": "list", "text": "$G_N$ 的 $-3$ ppm 偏差同样是构造后验数字校验，待独立复现。"}
-{"doc_id": "D057", "sid": 133, "start": 6053, "end": 6148, "kind": "list", "text": "- **不改缺口台账**：本文不新增、不降级任何缺口编号；C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 的状态以 `08 理论组织和形式化框架/附录/缺口台账.md` 为准。"}
-{"doc_id": "D057", "sid": 134, "start": 6150, "end": 6195, "kind": "prose", "text": "可检验的方向只有两类：其一是数学侧——RH 的独立证明会直接把「条件于 RH」升为无条件；"}
-{"doc_id": "D057", "sid": 135, "start": 6195, "end": 6275, "kind": "prose", "text": "其二是物理侧——若某类系统真以 $☯$ 为耦合空间的作用量下限，则 $\\Delta u\\cdot\\Delta v_\\tau$ 的界应可测，且界值应不随材料漂移。"}
-{"doc_id": "D057", "sid": 136, "start": 6275, "end": 6282, "kind": "prose", "text": "两者都未发生。"}
-{"doc_id": "D057", "sid": 137, "start": 6284, "end": 6287, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 138, "start": 6289, "end": 6305, "kind": "heading", "text": "## 6. 结语：徽标的立与未立"}
-{"doc_id": "D057", "sid": 139, "start": 6307, "end": 6347, "kind": "prose", "text": "$☯$ 在 CQM 中已不是松散隐喻：它有明确数学定义、有分层结构、有内部逻辑。"}
-{"doc_id": "D057", "sid": 140, "start": 6347, "end": 6425, "kind": "prose", "text": "四席——序列起点、RH 谱锁定、零点压缩、层级整数倍——共同构成它的结构身份；「相变量子」的命名、太极符号的意象与共轭不对易的物理内涵，在解释层上彼此对应。"}
-{"doc_id": "D057", "sid": 141, "start": 6427, "end": 6460, "kind": "prose", "text": "但这种一致立在**构造层与叙事层**，尚未立在**独立检验层**。"}
-{"doc_id": "D057", "sid": 142, "start": 6460, "end": 6511, "kind": "prose", "text": "稳定性条件于 RH，量子性条件于 $\\mathrm{GL}(5)$ 的构造选择，核心对易关系仍待验证。"}
-{"doc_id": "D057", "sid": 143, "start": 6511, "end": 6574, "kind": "prose", "text": "它的「唯一」是结构辨识意义上的唯一：一个高辨识度的候选者，站在数论与物理的交界处，占住了一个没有第二个已知常数同时占据的位置。"}
-{"doc_id": "D057", "sid": 144, "start": 6574, "end": 6622, "kind": "prose", "text": "从这个位置走向科学史意义上的「留名」，还需要徽标所依附的关系脱离原框架站住、可检验、被主流接住。"}
-{"doc_id": "D057", "sid": 145, "start": 6622, "end": 6659, "kind": "prose", "text": "结构上已经立住的部分是真实的；尚未立住的部分，正是它值得继续被审视的理由。"}
-{"doc_id": "D057", "sid": 146, "start": 6661, "end": 6664, "kind": "prose", "text": "---"}
-{"doc_id": "D057", "sid": 147, "start": 6666, "end": 6673, "kind": "heading", "text": "## 参考文献"}
-{"doc_id": "D057", "sid": 148, "start": 6675, "end": 6837, "kind": "prose", "text": "[1] Keiper, J. B. *Power series expansions of Riemann's $\\zeta$ function*. Mathematics of Computation **58** (1992) 765–773. doi:10.1090/S0025-5718-1992-1122072-5"}
-{"doc_id": "D057", "sid": 149, "start": 6839, "end": 6970, "kind": "prose", "text": "[2] Li, X.-J. *The positivity of a sequence of numbers and the Riemann hypothesis*. Journal of Number Theory **65** (1997) 325–333."}
-{"doc_id": "D057", "sid": 150, "start": 6972, "end": 7113, "kind": "prose", "text": "[3] Bombieri, E., Lagarias, J. C. *Complements to Li's criterion for the Riemann hypothesis*. Journal of Number Theory **77** (1999) 274–287."}
-{"doc_id": "D057", "sid": 151, "start": 7115, "end": 7238, "kind": "prose", "text": "[4] Coffey, M. W. *A recurrence relation for the Li/Keiper constants in terms of the Stieltjes constants*. arXiv:0902.1691."}
-{"doc_id": "D057", "sid": 152, "start": 7240, "end": 7343, "kind": "prose", "text": "[5] *Sandwiching the Riemann hypothesis*. arXiv:2407.00060（$\\lambda_1=1+\\gamma/2-\\log(4\\pi)/2$ 的闭式与数值）。"}
-{"doc_id": "D057", "sid": 153, "start": 7345, "end": 7399, "kind": "prose", "text": "[6] Keiper–Li coefficients, NumberDB T31；OEIS A074760。"}
-{"doc_id": "D057", "sid": 154, "start": 7401, "end": 7525, "kind": "prose", "text": "[7] Selberg, A. *On the estimation of Fourier coefficients of modular forms*. Proc. Sympos. Pure Math. **VIII** (1965) 1–15."}
-{"doc_id": "D057", "sid": 155, "start": 7527, "end": 7734, "kind": "prose", "text": "[8] Kim, H. H., Sarnak, P. *Functoriality for the exterior square of $\\mathrm{GL}_4$ and the symmetric fourth of $\\mathrm{GL}_2$*. J. Amer. Math. Soc. **16** (2003) 139–183. doi:10.1090/S0894-0347-02-00410-1"}
-{"doc_id": "D057", "sid": 156, "start": 7736, "end": 7841, "kind": "prose", "text": "[9] Iwaniec, H. *Small eigenvalues of Laplacian for $\\Gamma_0(N)$*. Acta Arithmetica **56** (1990) 65–82."}
+{"doc_id": "D057", "sid": 35, "start": 1673, "end": 1725, "kind": "prose", "text": "【文献确立】判据把「第一性」落在 $\\lambda_1$ 的位置上：不是数值上最重要，而是逻辑上第一个。"}
+{"doc_id": "D057", "sid": 36, "start": 1727, "end": 1740, "kind": "heading", "text": "### 1.2 闭式与数值"}
+{"doc_id": "D057", "sid": 37, "start": 1742, "end": 1826, "kind": "prose", "text": "由 $\\xi(s)=\\tfrac12 s(s-1)\\pi^{-s/2}\\Gamma(s/2)\\zeta(s)$ 与 $\\psi(1/2)=-\\gamma-2\\ln2$，"}
+{"doc_id": "D057", "sid": 38, "start": 1828, "end": 1962, "kind": "prose", "text": "$$☯=\\frac{\\xi'(1)}{\\xi(1)}=1+\\frac{\\gamma}{2}-\\ln(2\\sqrt{\\pi})=1+\\frac{\\gamma}{2}-\\ln 2-\\frac{\\ln\\pi}{2}\\approx 0.023095708966\\ldots$$"}
+{"doc_id": "D057", "sid": 39, "start": 1964, "end": 2019, "kind": "prose", "text": "该值与数值微分互验到 $10^{-7}$ 量级（`01 核心理论/CQM_核心_集成理论.md` §3.4）。"}
+{"doc_id": "D057", "sid": 40, "start": 2019, "end": 2094, "kind": "prose", "text": "同族后项作对照：$\\lambda_2\\approx0.0923457352$、$\\lambda_3\\approx0.2076389206$，严格递增。"}
+{"doc_id": "D057", "sid": 41, "start": 2094, "end": 2110, "kind": "prose", "text": "数值出处见文末 [1]–[3]。"}
+{"doc_id": "D057", "sid": 42, "start": 2112, "end": 2130, "kind": "heading", "text": "### 1.3 无条件表示与条件表示"}
+{"doc_id": "D057", "sid": 43, "start": 2132, "end": 2156, "kind": "prose", "text": "**Hadamard 表示**（不依赖 RH）："}
+{"doc_id": "D057", "sid": 44, "start": 2158, "end": 2227, "kind": "prose", "text": "$$☯=\\frac{d}{ds}\\ln\\xi(s)\\Big\\vert_{s=1}=\\sum_\\rho\\frac{1}{1-\\rho}.$$"}
+{"doc_id": "D057", "sid": 45, "start": 2229, "end": 2266, "kind": "prose", "text": "$\\xi$ 的 Hadamard 乘积直接给出，零点在不在临界线上都成立。"}
+{"doc_id": "D057", "sid": 46, "start": 2266, "end": 2327, "kind": "prose", "text": "【标准数学】这一步给出原稿所称的**历史性**：整套零点谱无论落在何处，都被同一个求和压进一个实常数，常数携带全谱的记忆。"}
+{"doc_id": "D057", "sid": 47, "start": 2329, "end": 2380, "kind": "prose", "text": "**谱表示**（条件于 RH）：若 $\\rho=\\tfrac12+i\\gamma_n$，配对共轭零点后"}
+{"doc_id": "D057", "sid": 48, "start": 2382, "end": 2437, "kind": "prose", "text": "$$☯=\\sum_{n=1}^{\\infty}\\frac{1}{\\gamma_n^2+\\tfrac14}.$$"}
+{"doc_id": "D057", "sid": 49, "start": 2439, "end": 2481, "kind": "prose", "text": "这不是另一个定义，而是同一常数在临界线锁定后的谱写法；RH 未证，故只能作条件陈述。"}
+{"doc_id": "D057", "sid": 50, "start": 2481, "end": 2552, "kind": "prose", "text": "【条件于 RH】这就是原稿所说的**稳定性**：零点实部被函数方程的对称中心钉住，$\\gamma_n$ 才成为实谱，$☯$ 的谱刚性条件于此。"}
+{"doc_id": "D057", "sid": 51, "start": 2554, "end": 2581, "kind": "heading", "text": "### 1.4 与 Hilbert–Pólya 的接口"}
+{"doc_id": "D057", "sid": 52, "start": 2583, "end": 2705, "kind": "prose", "text": "CQM 把 $\\gamma_n^2+\\tfrac14$ 读作 $\\hat H_{\\mathrm{HP}}=\\hat{\\mathcal S}^2+\\tfrac14$ 的本征值（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4）。"}
+{"doc_id": "D057", "sid": 53, "start": 2705, "end": 2759, "kind": "prose", "text": "这一步是**框架内的谱诠释**，不是数学定理：Hilbert–Pólya 猜想本身仍未构造出所需的自伴算符。"}
+{"doc_id": "D057", "sid": 54, "start": 2759, "end": 2794, "kind": "prose", "text": "$☯$ 的稳定性因此条件于两件事——RH 成立，且该谱实现被铸造出来。"}
+{"doc_id": "D057", "sid": 55, "start": 2794, "end": 2804, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 56, "start": 2806, "end": 2809, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 57, "start": 2811, "end": 2832, "kind": "heading", "text": "## 2. 物理身份：耦合空间的作用量量子"}
+{"doc_id": "D057", "sid": 58, "start": 2834, "end": 2850, "kind": "heading", "text": "### 2.1 共轭对与不确定性"}
+{"doc_id": "D057", "sid": 59, "start": 2852, "end": 2950, "kind": "prose", "text": "CQM 只替换一个共轭对：$(\\hat x,\\hat p)\\to(\\hat u,\\hat p_u)$，其中 $\\hat u=\\ln\\hat r$、$\\hat p_u=\\hat v_\\tau/☯$。"}
+{"doc_id": "D057", "sid": 60, "start": 2950, "end": 2975, "kind": "prose", "text": "由 $[\\hat u,\\hat p_u]=i$ 得"}
+{"doc_id": "D057", "sid": 61, "start": 2977, "end": 3022, "kind": "prose", "text": "$$\\Delta u\\cdot\\Delta v_\\tau\\ge\\frac{☯}{2}.$$"}
+{"doc_id": "D057", "sid": 62, "start": 3024, "end": 3063, "kind": "prose", "text": "耦合常数的相对不确定度与固有时流速的不确定度互斥：一侧越精确，另一侧越不确定。"}
+{"doc_id": "D057", "sid": 63, "start": 3063, "end": 3124, "kind": "prose", "text": "$☯$ 在这里的角色与 $\\hbar$ 在作用量量子化中的角色同构——一个跨层级不变的基准单位，而不是某个具体系统的参数。"}
+{"doc_id": "D057", "sid": 64, "start": 3124, "end": 3134, "kind": "prose", "text": "【CQM 框架基础】"}
+{"doc_id": "D057", "sid": 65, "start": 3136, "end": 3149, "kind": "heading", "text": "### 2.2 层级整数倍"}
+{"doc_id": "D057", "sid": 66, "start": 3151, "end": 3323, "kind": "prose", "text": "对 $\\mathrm{GL}(n)$ 的 Eisenstein 诱导表示 $\\pi=\\mathrm{Ind}_{\\mathrm{GL}(1)^n}^{\\mathrm{GL}(n)}(\\chi_1,\\ldots,\\chi_n)$，完成 $L$ 函数满足 $\\xi(s,\\pi)=\\prod_k\\xi(s,\\chi_k)$，对数导数可加，平凡特征下"}
+{"doc_id": "D057", "sid": 67, "start": 3325, "end": 3340, "kind": "prose", "text": "$$☯_n=n\\,☯_1.$$"}
+{"doc_id": "D057", "sid": 68, "start": 3342, "end": 3366, "kind": "prose", "text": "这是 $L$ 函数对数导数的可加性，属数学事实。"}
+{"doc_id": "D057", "sid": 69, "start": 3366, "end": 3418, "kind": "prose", "text": "物理系统固定在 $\\mathrm{GL}(5)$ 层级、使用 $☯=☯_1$，则是 CQM 的构造选择；"}
+{"doc_id": "D057", "sid": 70, "start": 3418, "end": 3434, "kind": "prose", "text": "$n>5$ 的层级不主导物理谱。"}
+{"doc_id": "D057", "sid": 71, "start": 3434, "end": 3503, "kind": "prose", "text": "【标准数学】＋【CQM 构造假设】这一步给出原稿所称的**量子性**：$☯$ 像 $\\hbar$ 一样充当跨层级基准，不同层级只取整数倍。"}
+{"doc_id": "D057", "sid": 72, "start": 3505, "end": 3522, "kind": "heading", "text": "### 2.3 超导中的归一化角色"}
+{"doc_id": "D057", "sid": 73, "start": 3524, "end": 3558, "kind": "prose", "text": "在差异–记忆核超导中，$☯$ 不是外加参数，而是对易子的归一化单位："}
+{"doc_id": "D057", "sid": 74, "start": 3560, "end": 3661, "kind": "prose", "text": "$$C_{ij}\\equiv\\frac{[\\hat u_i,\\hat v_{\\tau,j}]}{i☯}=f(\\varepsilon_i-\\varepsilon_j),\\qquad C_{ii}=1.$$"}
+{"doc_id": "D057", "sid": 75, "start": 3663, "end": 3745, "kind": "prose", "text": "旧框架的资格条件 $\\Delta\\varepsilon_0\\ge\\pi☯\\sqrt{1-\\varepsilon/(2\\pi)}/\\ln n$ 也以 $☯$ 为尺度。"}
+{"doc_id": "D057", "sid": 76, "start": 3745, "end": 3806, "kind": "prose", "text": "$☯$ 的数值因此直接进入 $T_c$ 链的阈值，而非停留在命名层（`06 超导/CQM_超导核心理论.md` §11）。"}
+{"doc_id": "D057", "sid": 77, "start": 3806, "end": 3816, "kind": "prose", "text": "【CQM 框架基础】"}
+{"doc_id": "D057", "sid": 78, "start": 3818, "end": 3839, "kind": "heading", "text": "### 2.4 $G_N$ 数值链中的位置"}
+{"doc_id": "D057", "sid": 79, "start": 3841, "end": 3870, "kind": "prose", "text": "$G_N$ 的候选闭式把 $☯$ 放在指数与线性修正两处："}
+{"doc_id": "D057", "sid": 80, "start": 3872, "end": 4030, "kind": "prose", "text": "$$G_N=\\frac{\\hbar c}{m_p^2}\\cdot I\\cdot\\lambda_c\\cdot ☯^2\\cdot\\mathfrak{c}_1\\cdot\\exp\\Bigl(-\\frac{2}{☯}\\Bigr)\\cdot(1+\\kappa☯),\\qquad \\kappa=\\frac{31+☯}{30}.$$"}
+{"doc_id": "D057", "sid": 81, "start": 4032, "end": 4100, "kind": "prose", "text": "$\\kappa$ 的 $+☯$ 项来自离散因果集到连续几何的函子映射（`03 引力与退相干/CQM_引力_GN可能公式.md` §7）。"}
+{"doc_id": "D057", "sid": 82, "start": 4100, "end": 4168, "kind": "prose", "text": "$☯$ 同时出现在 $☯^2$、$e^{-2/☯}$ 与 $(1+\\kappa☯)$ 三处，说明它在数值链中是结构变量，不是装饰性符号。"}
+{"doc_id": "D057", "sid": 83, "start": 4168, "end": 4209, "kind": "prose", "text": "该式为**构造后验数字校验，待独立复现**；$G_N$ 在标准物理中仍是实验参数。"}
+{"doc_id": "D057", "sid": 84, "start": 4209, "end": 4219, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 85, "start": 4221, "end": 4251, "kind": "heading", "text": "### 2.5 与 $\\zeta$ 正则化、中央荷的结构对应"}
+{"doc_id": "D057", "sid": 86, "start": 4253, "end": 4352, "kind": "prose", "text": "$\\xi$ 对数导数是无穷模经 $\\zeta$ 正则化后的有限剩余，这与共形场论中中央荷衡量有效自由度数的角色形成结构对应（`01 核心理论/CQM_核心_共形场论与OPE.md` §5.4.3）。"}
+{"doc_id": "D057", "sid": 87, "start": 4352, "end": 4407, "kind": "prose", "text": "对应停在结构层：$☯$ 通过 OPE 系数与同步成本进入物理，不通过中央荷数值；$\\eta=0$ 是构造假设。"}
+{"doc_id": "D057", "sid": 88, "start": 4407, "end": 4429, "kind": "prose", "text": "把这一对应读成「$☯$ 就是中央荷」会越界。"}
+{"doc_id": "D057", "sid": 89, "start": 4429, "end": 4439, "kind": "prose", "text": "【CQM 构造假设】"}
+{"doc_id": "D057", "sid": 90, "start": 4441, "end": 4444, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 91, "start": 4446, "end": 4464, "kind": "heading", "text": "## 3. 符号层：命名、太极与共轭"}
+{"doc_id": "D057", "sid": 92, "start": 4466, "end": 4486, "kind": "heading", "text": "### 3.1 阴阳互补 ↔ 共轭不对易"}
+{"doc_id": "D057", "sid": 93, "start": 4488, "end": 4553, "kind": "prose", "text": "太极图不是静态的对称分割，而是旋转中的动态平衡；$☯$ 设定的也不是一个固定值，而是一个**下限**——不允许两侧同时归零的约束。"}
+{"doc_id": "D057", "sid": 94, "start": 4553, "end": 4635, "kind": "prose", "text": "符号的「阴阳互为消长」与 $\\Delta u\\cdot\\Delta v_\\tau\\ge☯/2$ 在结构上同型：两个共轭面向彼此定义，一侧的精确以另一侧的模糊为代价。"}
+{"doc_id": "D057", "sid": 95, "start": 4637, "end": 4654, "kind": "heading", "text": "### 3.2 「相变」的双重指向"}
+{"doc_id": "D057", "sid": 96, "start": 4656, "end": 4731, "kind": "prose", "text": "「相变量子」至少承载两层含义，且两层落在同一结构上：其一，相空间中的共轭变量，$☯$ 是 $(\\hat u,\\hat p_u)$ 这一对的作用量量子；"}
+{"doc_id": "D057", "sid": 97, "start": 4731, "end": 4764, "kind": "prose", "text": "其二，耦合强度在不同「相」之间的跃迁，以 $☯$ 为基本单位组织。"}
+{"doc_id": "D057", "sid": 98, "start": 4764, "end": 4833, "kind": "prose", "text": "符号约定写明「太极，表辩证与相变」（`01 核心理论/CQM_核心_集成理论.md` §0），命名的「相变」与符号的「阴阳消长」在此汇合。"}
+{"doc_id": "D057", "sid": 99, "start": 4835, "end": 4852, "kind": "heading", "text": "### 3.3 玻尔先例与它的边界"}
+{"doc_id": "D057", "sid": 100, "start": 4854, "end": 4932, "kind": "prose", "text": "玻尔 1947 年受丹麦「宝象勋章」时自绘族徽，中心为太极图，铭文 *Contraria sunt complementa*（对立即互补），以象征波粒二象。"}
+{"doc_id": "D057", "sid": 101, "start": 4932, "end": 4977, "kind": "prose", "text": "CQM 与这一先例的关系是结构性的，但位置不同：玻尔用太极图**诠释**一个已成熟的原理；"}
+{"doc_id": "D057", "sid": 102, "start": 4977, "end": 5006, "kind": "prose", "text": "CQM 让太极符号**承载**一个尚未独立检验的框架常数。"}
+{"doc_id": "D057", "sid": 103, "start": 5006, "end": 5022, "kind": "prose", "text": "前者是哲学象征，后者是理论徽标。"}
+{"doc_id": "D057", "sid": 104, "start": 5022, "end": 5076, "kind": "prose", "text": "这一区别划出 $☯$ 当前的位置：意义、内涵、文化三者一致，但一致属于叙事层与构造层，不是数学定理层的事实。"}
+{"doc_id": "D057", "sid": 105, "start": 5076, "end": 5082, "kind": "prose", "text": "【哲学诠释】"}
+{"doc_id": "D057", "sid": 106, "start": 5084, "end": 5087, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 107, "start": 5089, "end": 5109, "kind": "heading", "text": "## 4. 四重结构辨识：不是唯一性定理"}
+{"doc_id": "D057", "sid": 108, "start": 5111, "end": 5166, "kind": "prose", "text": "把四个「位置」当作结构判据来检索已知常数，$☯$ 的辨识度来自**同时占据四席**，而不是任一维度的不可替代。"}
+{"doc_id": "D057", "sid": 109, "start": 5166, "end": 5242, "kind": "prose", "text": "原稿给四席的命名是**第一性、稳定性、历史性、量子性**；本文在结构分析中用**首项性、谱刚性、压缩性、层级量子性**，两套名称指同一组位置，下表并列。"}
+{"doc_id": "D057", "sid": 110, "start": 5244, "end": 5273, "kind": "table", "text": "| 位置（本文） | 原稿名 | 数学锚点 | 条件性 |"}
+{"doc_id": "D057", "sid": 111, "start": 5274, "end": 5295, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D057", "sid": 112, "start": 5296, "end": 5352, "kind": "table", "text": "| **首项性** | 第一性 | Keiper–Li 序列 $\\lambda_1$ | 无条件（定义位置） |"}
+{"doc_id": "D057", "sid": 113, "start": 5353, "end": 5425, "kind": "table", "text": "| **谱刚性** | 稳定性 | RH 下 $1/2$ 临界线锁定，$\\gamma_n\\in\\mathbb R$ | **条件于 RH** |"}
+{"doc_id": "D057", "sid": 114, "start": 5426, "end": 5482, "kind": "table", "text": "| **压缩性** | 历史性 | Hadamard 和把全部零点谱压进一个实常数 | 无条件（需对称主值） |"}
+{"doc_id": "D057", "sid": 115, "start": 5483, "end": 5557, "kind": "table", "text": "| **层级量子性** | 量子性 | $☯_n=n☯_1$ 的整数倍构造 | 数学事实；$\\mathrm{GL}(5)$ 固定为 CQM 构造 |"}
+{"doc_id": "D057", "sid": 116, "start": 5559, "end": 5630, "kind": "prose", "text": "**关于「历史性」**：这里的「历史」指全部零点谱被 Hadamard 和压缩进一个实常数——谱对自身全部成员的记忆，不含时间演化或实践过程。"}
+{"doc_id": "D057", "sid": 117, "start": 5630, "end": 5704, "kind": "prose", "text": "它与历史唯物主义的「历史性」（以实践为轴的社会过程）同词不同指；与 CQM 差异–记忆核中的「历史」（节点差异的累积）也只是结构类比，不是同一机制。"}
+{"doc_id": "D057", "sid": 118, "start": 5704, "end": 5737, "kind": "prose", "text": "正文用「压缩性」行文，原稿名保留在表中，避免读者把两件事读成一件。"}
+{"doc_id": "D057", "sid": 119, "start": 5739, "end": 5782, "kind": "prose", "text": "前三席锚在 $\\lambda_1$ 的纯数学身份上，第四席是 CQM 赋予的结构外衣。"}
+{"doc_id": "D057", "sid": 120, "start": 5782, "end": 5835, "kind": "prose", "text": "这不是缺陷，而是 $☯$ 理论身份的真实分层：数论侧有坚实的「肉身」，物理侧在肉身上嫁接了一层量子化解释。"}
+{"doc_id": "D057", "sid": 121, "start": 5837, "end": 5846, "kind": "prose", "text": "**对照对象**："}
+{"doc_id": "D057", "sid": 122, "start": 5848, "end": 5902, "kind": "list", "text": "- 后项 $\\lambda_n\\,(n>1)$ 有压缩性与谱刚性，但不是首项；判据的逻辑起点无法由后项替代。"}
+{"doc_id": "D057", "sid": 123, "start": 5903, "end": 6044, "kind": "list", "text": "- Selberg 第一特征值 $\\lambda_1(\\Gamma\\backslash\\mathbb H)$ 是另一领域最接近的类比：它是 Laplace 谱的首个非零本征值（首项性），受 Selberg $1/4$ 猜想约束（谱刚性），并由迹公式与本原闭测地线求和绑定（压缩性）。"}
+{"doc_id": "D057", "sid": 124, "start": 6044, "end": 6070, "kind": "list", "text": "但它随曲面与群变化，没有跨层级的普适值，第四席缺失。"}
+{"doc_id": "D057", "sid": 125, "start": 6070, "end": 6120, "kind": "list", "text": "Selberg 已证 $3/16$，$1/4$ 仍未决，最佳下界 $975/4096$【文献确立】。"}
+{"doc_id": "D057", "sid": 126, "start": 6121, "end": 6219, "kind": "list", "text": "- 广义 Li 系数 $\\lambda_1(\\pi)$ 在「首项＋猜想约束＋零点求和」的三角结构上与 $☯$ 的前三席同构，但它依赖表示 $\\pi$，不是一个单一普适标量，「一个常数」的身份丢失。"}
+{"doc_id": "D057", "sid": 127, "start": 6221, "end": 6270, "kind": "prose", "text": "于是结论只能写成：**在「已知常数＋CQM 构造」的联合标准下，四席的交集目前只指向 $☯$**。"}
+{"doc_id": "D057", "sid": 128, "start": 6270, "end": 6296, "kind": "prose", "text": "这证明的是结构位置的独占性，不是物理有效性的必然性。"}
+{"doc_id": "D057", "sid": 129, "start": 6296, "end": 6327, "kind": "prose", "text": "换一套判据，结论可以不同；判据本身的可接受度，也不由本文决定。"}
+{"doc_id": "D057", "sid": 130, "start": 6329, "end": 6332, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 131, "start": 6334, "end": 6347, "kind": "heading", "text": "## 5. 缺口与可检验性"}
+{"doc_id": "D057", "sid": 132, "start": 6349, "end": 6397, "kind": "list", "text": "- **RH 未证**：谱表示、$1/2$ 锁定、Hilbert–Pólya 接口全部条件于此。"}
+{"doc_id": "D057", "sid": 133, "start": 6397, "end": 6420, "kind": "list", "text": "$☯$ 的「谱刚性」是条件性的，不是已证事实。"}
+{"doc_id": "D057", "sid": 134, "start": 6421, "end": 6481, "kind": "list", "text": "- **$[\\hat u,\\hat p_u]=i$ 无独立实验**：共轭不对易是框架公设，尚无以 $☯$ 为下限的测量。"}
+{"doc_id": "D057", "sid": 135, "start": 6482, "end": 6526, "kind": "list", "text": "- **数值为构造后验**：$☯$ 的 $10^{-7}$ 精度是解析值与数值微分互验；"}
+{"doc_id": "D057", "sid": 136, "start": 6526, "end": 6563, "kind": "list", "text": "$G_N$ 的 $-3$ ppm 偏差同样是构造后验数字校验，待独立复现。"}
+{"doc_id": "D057", "sid": 137, "start": 6564, "end": 6659, "kind": "list", "text": "- **不改缺口台账**：本文不新增、不降级任何缺口编号；C、G2–G8、G9–G22、N1–N4、H3.1–H3.3 的状态以 `08 理论组织和形式化框架/附录/缺口台账.md` 为准。"}
+{"doc_id": "D057", "sid": 138, "start": 6661, "end": 6706, "kind": "prose", "text": "可检验的方向只有两类：其一是数学侧——RH 的独立证明会直接把「条件于 RH」升为无条件；"}
+{"doc_id": "D057", "sid": 139, "start": 6706, "end": 6786, "kind": "prose", "text": "其二是物理侧——若某类系统真以 $☯$ 为耦合空间的作用量下限，则 $\\Delta u\\cdot\\Delta v_\\tau$ 的界应可测，且界值应不随材料漂移。"}
+{"doc_id": "D057", "sid": 140, "start": 6786, "end": 6793, "kind": "prose", "text": "两者都未发生。"}
+{"doc_id": "D057", "sid": 141, "start": 6795, "end": 6798, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 142, "start": 6800, "end": 6816, "kind": "heading", "text": "## 6. 结语：徽标的立与未立"}
+{"doc_id": "D057", "sid": 143, "start": 6818, "end": 6858, "kind": "prose", "text": "$☯$ 在 CQM 中已不是松散隐喻：它有明确数学定义、有分层结构、有内部逻辑。"}
+{"doc_id": "D057", "sid": 144, "start": 6858, "end": 6917, "kind": "prose", "text": "四席——第一性（序列起点）、稳定性（RH 谱锁定）、历史性（零点压缩）、量子性（层级整数倍）——共同构成它的结构身份；"}
+{"doc_id": "D057", "sid": 145, "start": 6917, "end": 6956, "kind": "prose", "text": "「相变量子」的命名、太极符号的意象与共轭不对易的物理内涵，在解释层上彼此对应。"}
+{"doc_id": "D057", "sid": 146, "start": 6958, "end": 6991, "kind": "prose", "text": "但这种一致立在**构造层与叙事层**，尚未立在**独立检验层**。"}
+{"doc_id": "D057", "sid": 147, "start": 6991, "end": 7042, "kind": "prose", "text": "稳定性条件于 RH，量子性条件于 $\\mathrm{GL}(5)$ 的构造选择，核心对易关系仍待验证。"}
+{"doc_id": "D057", "sid": 148, "start": 7042, "end": 7105, "kind": "prose", "text": "它的「唯一」是结构辨识意义上的唯一：一个高辨识度的候选者，站在数论与物理的交界处，占住了一个没有第二个已知常数同时占据的位置。"}
+{"doc_id": "D057", "sid": 149, "start": 7105, "end": 7153, "kind": "prose", "text": "从这个位置走向科学史意义上的「留名」，还需要徽标所依附的关系脱离原框架站住、可检验、被主流接住。"}
+{"doc_id": "D057", "sid": 150, "start": 7153, "end": 7190, "kind": "prose", "text": "结构上已经立住的部分是真实的；尚未立住的部分，正是它值得继续被审视的理由。"}
+{"doc_id": "D057", "sid": 151, "start": 7192, "end": 7195, "kind": "prose", "text": "---"}
+{"doc_id": "D057", "sid": 152, "start": 7197, "end": 7204, "kind": "heading", "text": "## 参考文献"}
+{"doc_id": "D057", "sid": 153, "start": 7206, "end": 7368, "kind": "prose", "text": "[1] Keiper, J. B. *Power series expansions of Riemann's $\\zeta$ function*. Mathematics of Computation **58** (1992) 765–773. doi:10.1090/S0025-5718-1992-1122072-5"}
+{"doc_id": "D057", "sid": 154, "start": 7370, "end": 7501, "kind": "prose", "text": "[2] Li, X.-J. *The positivity of a sequence of numbers and the Riemann hypothesis*. Journal of Number Theory **65** (1997) 325–333."}
+{"doc_id": "D057", "sid": 155, "start": 7503, "end": 7644, "kind": "prose", "text": "[3] Bombieri, E., Lagarias, J. C. *Complements to Li's criterion for the Riemann hypothesis*. Journal of Number Theory **77** (1999) 274–287."}
+{"doc_id": "D057", "sid": 156, "start": 7646, "end": 7769, "kind": "prose", "text": "[4] Coffey, M. W. *A recurrence relation for the Li/Keiper constants in terms of the Stieltjes constants*. arXiv:0902.1691."}
+{"doc_id": "D057", "sid": 157, "start": 7771, "end": 7874, "kind": "prose", "text": "[5] *Sandwiching the Riemann hypothesis*. arXiv:2407.00060（$\\lambda_1=1+\\gamma/2-\\log(4\\pi)/2$ 的闭式与数值）。"}
+{"doc_id": "D057", "sid": 158, "start": 7876, "end": 7930, "kind": "prose", "text": "[6] Keiper–Li coefficients, NumberDB T31；OEIS A074760。"}
+{"doc_id": "D057", "sid": 159, "start": 7932, "end": 8056, "kind": "prose", "text": "[7] Selberg, A. *On the estimation of Fourier coefficients of modular forms*. Proc. Sympos. Pure Math. **VIII** (1965) 1–15."}
+{"doc_id": "D057", "sid": 160, "start": 8058, "end": 8265, "kind": "prose", "text": "[8] Kim, H. H., Sarnak, P. *Functoriality for the exterior square of $\\mathrm{GL}_4$ and the symmetric fourth of $\\mathrm{GL}_2$*. J. Amer. Math. Soc. **16** (2003) 139–183. doi:10.1090/S0894-0347-02-00410-1"}
+{"doc_id": "D057", "sid": 161, "start": 8267, "end": 8372, "kind": "prose", "text": "[9] Iwaniec, H. *Small eigenvalues of Laplacian for $\\Gamma_0(N)$*. Acta Arithmetica **56** (1990) 65–82."}
