@@ -1,10 +1,9 @@
 name = "CQMFormal"
 version = "0.8.0"
-defaultTargets = ["SuperconductivityChain"]
 
-[[lean_lib]]
-name = "SuperconductivityChain"
-leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+# 08 的 Lean 库已移除（原 SuperconductivityChain 12 模块）。
+# 当前形式化在 10 探索/超导第一性研究/05_Lean验证：Ring15Spec v46 + 46 个证明模块，
+# 由 a_gate.ps1 一键编译、#print axioms 白名单与 #check 类型比对。
 
 [[require]]
 name = "mathlib"

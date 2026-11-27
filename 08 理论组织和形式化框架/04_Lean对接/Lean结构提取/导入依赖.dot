@@ -1,26 +1,3 @@
 digraph LeanImports {
   rankdir=LR; node [shape=box, style=rounded, fontname="Consolas", fontsize=9];
-  "SuperconductivityChain" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain" -> "SuperconductivityChain.Gaps";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage1";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage2";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage3";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage4";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage5";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage6";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage7";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage8";
-  "SuperconductivityChain" -> "SuperconductivityChain.Stage9";
-  "SuperconductivityChain.Gaps" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage1" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage2" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage3" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage4" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage5" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage5" -> "SuperconductivityChain.Stage4";
-  "SuperconductivityChain.Stage6" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage7" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage8" -> "SuperconductivityChain.Basic";
-  "SuperconductivityChain.Stage8" -> "SuperconductivityChain.Stage2";
-  "SuperconductivityChain.Stage9" -> "SuperconductivityChain.Basic";
 }

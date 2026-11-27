@@ -7,30 +7,12 @@ project:
   toolchain: "leanprover/lean4:v4.29.1"
   build_command: lake build
   libraries:
-    - name: SuperconductivityChain
   modules:
-    - {module: "SuperconductivityChain", file: "SuperconductivityChain.lean", theorem_like: 0, def_like: 0, axiom: 0, total_decl: 0}
-    - {module: "SuperconductivityChain.Basic", file: "SuperconductivityChain/Basic.lean", theorem_like: 1, def_like: 5, axiom: 0, total_decl: 9}
-    - {module: "SuperconductivityChain.Gaps", file: "SuperconductivityChain/Gaps.lean", theorem_like: 1, def_like: 2, axiom: 0, total_decl: 5}
-    - {module: "SuperconductivityChain.Stage1", file: "SuperconductivityChain/Stage1.lean", theorem_like: 9, def_like: 6, axiom: 0, total_decl: 16}
-    - {module: "SuperconductivityChain.Stage2", file: "SuperconductivityChain/Stage2.lean", theorem_like: 7, def_like: 5, axiom: 0, total_decl: 12}
-    - {module: "SuperconductivityChain.Stage3", file: "SuperconductivityChain/Stage3.lean", theorem_like: 4, def_like: 4, axiom: 0, total_decl: 8}
-    - {module: "SuperconductivityChain.Stage4", file: "SuperconductivityChain/Stage4.lean", theorem_like: 7, def_like: 5, axiom: 0, total_decl: 13}
-    - {module: "SuperconductivityChain.Stage5", file: "SuperconductivityChain/Stage5.lean", theorem_like: 9, def_like: 10, axiom: 0, total_decl: 23}
-    - {module: "SuperconductivityChain.Stage6", file: "SuperconductivityChain/Stage6.lean", theorem_like: 2, def_like: 2, axiom: 0, total_decl: 4}
-    - {module: "SuperconductivityChain.Stage7", file: "SuperconductivityChain/Stage7.lean", theorem_like: 5, def_like: 2, axiom: 0, total_decl: 9}
-    - {module: "SuperconductivityChain.Stage8", file: "SuperconductivityChain/Stage8.lean", theorem_like: 7, def_like: 3, axiom: 0, total_decl: 11}
-    - {module: "SuperconductivityChain.Stage9", file: "SuperconductivityChain/Stage9.lean", theorem_like: 8, def_like: 5, axiom: 0, total_decl: 14}
   declaration_histogram:
-    theorem: 60
-    def: 44
-    abbrev: 5
-    structure: 11
-    inductive: 4
   totals:
-    modules: 12
-    declarations: 124
-    theorem_like: 60
+    modules: 0
+    declarations: 0
+    theorem_like: 0
     axioms: 0
   authoritative_status:
-    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：单库 SuperconductivityChain；零 sorry、零 axiom；计数以 build_lean 实际抽取为准。"
+    note: "08 不再保留 Lean 库（原 SuperconductivityChain 12 模块已移除）；形式化权威在 10 探索/超导第一性研究/05_Lean验证：Ring15Spec v46 + 46 个证明模块，由 a_gate.ps1 编译、#print axioms 与 #check 校验。"

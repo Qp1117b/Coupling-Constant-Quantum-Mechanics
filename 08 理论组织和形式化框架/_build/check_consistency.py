@@ -118,7 +118,9 @@ def main():
     mods = rd(os.path.join(ROOT, "04_Lean对接", "Lean结构提取", "模块清单.csv"))
     # 2026-11-21（v1.9.247）：Ring 23/27 补基数与非负性引理，声明 116→118、定理 54→56。
     # 2026-11-21（v1.9.248）：RH/Goldbach 以显式外部假设接入，声明 118→124、定理 56→60。
-    check("Lean 声明 124 / 模块 12", (len(decls), len(mods)) == (124, 12),
+    # 2026-11-27：08 移除 SuperconductivityChain 库（形式化权威转 10 探索/超导第一性研究/05_Lean验证），
+    # 抽取结果为空集，故此处基线改为 0 声明 / 0 模块。
+    check("Lean 声明 0 / 模块 0（08 已无库）", (len(decls), len(mods)) == (0, 0),
           f"{len(decls)}/{len(mods)}")
     lmap = rd(os.path.join(ROOT, "04_Lean对接", "Lean↔概念映射.csv"))
     bad = []
@@ -222,8 +224,10 @@ def main():
     # 2026-11-21（v1.9.240）：27 环/相变等效/BCS 提升/关系性实在论落笔，P026 新增“电子”
     # 概念提及边 1 条（证据句重匹配另换 8 条旧边），再随本轮句索引重排净减 5 条；实体 146 不变。
     # 2026-11-21（v1.9.248）：RH/Goldbach 外部假设写入文档，kg 新增 3 条边；实体 146 不变。
-    check("知识图谱 146 实体 / 336 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 336),
+    # 2026-11-27：08 移除 Lean 库并以当前语料重跑证据层（build_extract → build_evidence → build_kg），
+    # 证据句重匹配使 claim 级边 336→334（实体 146、dir 50 / hyper 19 未变）。
+    check("知识图谱 146 实体 / 334 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 334),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")

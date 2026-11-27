@@ -12,7 +12,7 @@
 | | `build_pyg.py` | PyG/DGL 装配脚本（依赖 torch，未安装时以 npz 为准） |
 | `证明数据集/` | `前提-结论对.jsonl` | 69 条论证（含概念 id 链） |
 | | `命题-证明对.jsonl` | 63 条命题 + Lean 见证 |
-| | `lean声明.jsonl` | 新库 `SuperconductivityChain` 的 Lean 声明（计数由 build_lean 重算） |
+| | `lean声明.jsonl` | 08 已无 Lean 库，故为空集（原 `SuperconductivityChain` 的声明已随库移除） |
 | `嵌入就绪/` | `节点特征矩阵.csv`、`README.md` | 特征矩阵、推荐方法（AllSet/HyperGCN/HGNN） |
 
 **约定**：`⇒` 与 `→` 不得合并为同一张简单图（超边 vs 二元边）。构建：`_build/build_ml.py`。

@@ -2,12 +2,12 @@
   "generated_by": "_build/build_kg.py",
   "rdf": {
     "triples_in_owl": 3987,
-    "triples_exported": 5496,
+    "triples_exported": 5455,
     "added": {
       "alt_labels": 36,
       "pref_labels": 83,
-      "prov_links": 215,
-      "lean_links": 4
+      "prov_links": 211,
+      "lean_links": 0
     },
     "turtle": "03_超图与理论图/知识图谱.ttl"
   },
@@ -152,8 +152,21 @@
       {
         "question": "CQ2 缺证据的断言（应为空）",
         "sparql": "SELECT ?s WHERE { { ?s a ?c1 . ?c1 rdfs:subClassOf* cqm:Concept } UNION { ?s a ?c2 . ?c2 rdfs:subClassOf* cqm:Proposition } UNION { ?s a cqm:Hyperedge } UNION { ?s a cqm:Argument } FILTER NOT EXISTS { ?s prov:wasDerivedFrom ?e } }",
-        "rows": [],
-        "row_count": 0
+        "rows": [
+          [
+            "http://cqm.local/ontology#G025"
+          ],
+          [
+            "http://cqm.local/ontology#G026"
+          ],
+          [
+            "http://cqm.local/ontology#G027"
+          ],
+          [
+            "http://cqm.local/ontology#P031"
+          ]
+        ],
+        "row_count": 4
       },
       {
         "question": "CQ3 超边的前件闭包（一跳）",
@@ -313,7 +326,7 @@
         "sparql": "SELECT (COUNT(DISTINCT ?c) AS ?formalized) WHERE { ?c cqm:formalizedIn ?lib }",
         "rows": [
           [
-            "4"
+            "0"
           ]
         ],
         "row_count": 1

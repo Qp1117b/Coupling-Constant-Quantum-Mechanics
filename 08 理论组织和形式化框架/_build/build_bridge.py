@@ -39,13 +39,8 @@ SYMBOLS = [
     ("Ĥ_HP", "Hilbert–Pólya 谱算符", r"\hat H_{\mathrm{HP}}=\hat D^2+1/4", "算符", "——", "D008 §4"),
 ]
 
-# 概念级精确符号：只列新库中真实存在的声明，不从模块级映射猜符号。
-CONCEPT_SYMBOL = {
-    "C026": ("SuperconductivityChain", "Stage1.deficitAngle"),
-    "C027": ("SuperconductivityChain", "Stage1.deficitSpeed"),
-    "C083": ("SuperconductivityChain", "Stage9.IK"),
-    "C084": ("SuperconductivityChain", "Stage2.Hpair"),
-}
+# 概念级精确符号：08 已无 Lean 库，无可确证声明，故为空。
+CONCEPT_SYMBOL = {}
 
 
 def main():

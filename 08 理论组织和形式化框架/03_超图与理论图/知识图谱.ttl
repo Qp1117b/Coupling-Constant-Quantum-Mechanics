@@ -830,7 +830,6 @@ cqm:C083 a cqm:PhysicsConcept,
     rdfs:label "记忆核积分"^^xsd:string ;
     cqm:definition "$\\mathcal I_K$ 记忆核 $K(t)$ 从0到t的时间积分 固有时流速差异历史总和的记忆侧体现 映射结构桥梁已建立定量待复现M10"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C083 ;
-    cqm:formalizedIn <http://cqm.local/lean#SuperconductivityChain> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§0.6"^^xsd:string ;
     skos:definition "$\\mathcal I_K$ 记忆核 $K(t)$ 从0到t的时间积分 固有时流速差异历史总和的记忆侧体现 映射结构桥梁已建立定量待复现M10"@zh ;
@@ -842,7 +841,6 @@ cqm:C084 a cqm:PhysicsConcept,
     rdfs:label "固有时流速差异历史总和"^^xsd:string ;
     cqm:definition "$\\mathsf H=(\\mathcal H_{ij})$ 当前同步域内所有节点对的固有时流速差异时间积分族 对角元零 反对称 上闭链 本体对象 环节④漂移定理T1 强度投影为历史分化度 $\\mathcal D$"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C084 ;
-    cqm:formalizedIn <http://cqm.local/lean#SuperconductivityChain> ;
     cqm:sourceDoc "D030"^^xsd:string ;
     cqm:sourceLoc "§0.3"^^xsd:string ;
     skos:definition "$\\mathsf H=(\\mathcal H_{ij})$ 当前同步域内所有节点对的固有时流速差异时间积分族 对角元零 反对称 上闭链 本体对象 环节④漂移定理T1 强度投影为历史分化度 $\\mathcal D$"@zh ;
@@ -1057,24 +1055,21 @@ cqm:G025 a cqm:Hypothesis,
     rdfs:label "层级假设H3.1"^^xsd:string ;
     cqm:derivedFrom cqm:EV_G025 ;
     cqm:sourceDoc "D042"^^xsd:string ;
-    cqm:status "axiom"^^xsd:string ;
-    prov:wasDerivedFrom cqm:EV_G025 .
+    cqm:status "axiom"^^xsd:string .
 
 cqm:G026 a cqm:Hypothesis,
         owl:NamedIndividual ;
     rdfs:label "层级假设H3.2"^^xsd:string ;
     cqm:derivedFrom cqm:EV_G026 ;
     cqm:sourceDoc "D042"^^xsd:string ;
-    cqm:status "axiom"^^xsd:string ;
-    prov:wasDerivedFrom cqm:EV_G026 .
+    cqm:status "axiom"^^xsd:string .
 
 cqm:G027 a cqm:Hypothesis,
         owl:NamedIndividual ;
     rdfs:label "层级假设H3.3"^^xsd:string ;
     cqm:derivedFrom cqm:EV_G027 ;
     cqm:sourceDoc "D042"^^xsd:string ;
-    cqm:status "axiom"^^xsd:string ;
-    prov:wasDerivedFrom cqm:EV_G027 .
+    cqm:status "axiom"^^xsd:string .
 
 cqm:G028 a cqm:Conjecture,
         owl:NamedIndividual ;
@@ -1607,8 +1602,7 @@ cqm:P031 a cqm:Theorem,
     rdfs:label "GN库107定理 零sorry 零新增axiom"^^xsd:string ;
     cqm:derivedFrom cqm:EV_P031 ;
     cqm:sourceDoc "D043"^^xsd:string ;
-    cqm:status "已证明"^^xsd:string ;
-    prov:wasDerivedFrom cqm:EV_P031 .
+    cqm:status "已证明"^^xsd:string .
 
 cqm:RelationType a owl:Class ;
     rdfs:subClassOf owl:Thing .
@@ -1848,6 +1842,50 @@ cqm:C080 a cqm:NumberTheoryConcept,
 cqm:Conjecture a owl:Class ;
     rdfs:subClassOf cqm:Proposition .
 
+cqm:EV_G025 a cqm:Evidence,
+        owl:NamedIndividual ;
+    rdfs:label "G025"^^xsd:string ;
+    cqm:evidenceConfidence "1.073"^^xsd:string ;
+    cqm:evidenceKind "命题"^^xsd:string ;
+    cqm:evidenceMethod "doc/low"^^xsd:string ;
+    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
+    cqm:evidenceSpan "1511-1637"^^xsd:string ;
+    cqm:humanVerified "False"^^xsd:string ;
+    cqm:sourceDoc "D042"^^xsd:string .
+
+cqm:EV_G026 a cqm:Evidence,
+        owl:NamedIndividual ;
+    rdfs:label "G026"^^xsd:string ;
+    cqm:evidenceConfidence "1.073"^^xsd:string ;
+    cqm:evidenceKind "命题"^^xsd:string ;
+    cqm:evidenceMethod "doc/low"^^xsd:string ;
+    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
+    cqm:evidenceSpan "1511-1637"^^xsd:string ;
+    cqm:humanVerified "False"^^xsd:string ;
+    cqm:sourceDoc "D042"^^xsd:string .
+
+cqm:EV_G027 a cqm:Evidence,
+        owl:NamedIndividual ;
+    rdfs:label "G027"^^xsd:string ;
+    cqm:evidenceConfidence "1.073"^^xsd:string ;
+    cqm:evidenceKind "命题"^^xsd:string ;
+    cqm:evidenceMethod "doc/low"^^xsd:string ;
+    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
+    cqm:evidenceSpan "1511-1637"^^xsd:string ;
+    cqm:humanVerified "False"^^xsd:string ;
+    cqm:sourceDoc "D042"^^xsd:string .
+
+cqm:EV_P031 a cqm:Evidence,
+        owl:NamedIndividual ;
+    rdfs:label "P031"^^xsd:string ;
+    cqm:evidenceConfidence "4.831"^^xsd:string ;
+    cqm:evidenceKind "命题"^^xsd:string ;
+    cqm:evidenceMethod "doc/medium"^^xsd:string ;
+    cqm:evidenceQuote "不绕过 ｜ 不用 axiom、sorry、admit、native_decide、unsafe"^^xsd:string ;
+    cqm:evidenceSpan "228-289"^^xsd:string ;
+    cqm:humanVerified "False"^^xsd:string ;
+    cqm:sourceDoc "D043"^^xsd:string .
+
 cqm:G003 a cqm:GapItem,
         owl:NamedIndividual ;
     rdfs:label "缺口G3：D̂=-i(∂_u-1/2)的唯一性"^^xsd:string ;
@@ -2006,7 +2044,6 @@ cqm:C027 a cqm:GeometryConcept,
     rdfs:label "固有时流速"^^xsd:string ;
     cqm:definition "$v_\\tau=\\sqrt{1-\\varepsilon/(2\\pi)}$ 固有时流速 FG接口 铰链亏角口径"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C027 ;
-    cqm:formalizedIn <http://cqm.local/lean#SuperconductivityChain> ;
     cqm:sourceDoc "D015"^^xsd:string ;
     cqm:sourceLoc "§三"^^xsd:string ;
     skos:altLabel "固有时流速 $v_\\tau=\\sqrt{1-\\beta\\delta_v}$"@zh ;
@@ -4382,8 +4419,8 @@ cqm:EV_G005 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D005"^^xsd:string,
         "D005" ;
-    prov:atLocation "25597-25632" ;
-    prov:value "步骤 5：映射回 $L^2(e^{-u}du)$ 的边界条件。"@zh .
+    prov:atLocation "18228-18255" ;
+    prov:value "缺口 C（未闭合）：退相干稳态为何恰好是 $A_4$。"@zh .
 
 cqm:EV_G006 a cqm:Evidence,
         owl:NamedIndividual,
@@ -4688,54 +4725,6 @@ cqm:EV_G024 a cqm:Evidence,
         "D006" ;
     prov:atLocation "15826-15869" ;
     prov:value "N4 ｜ 氘核结合能未精确推导 ｜ 只有数量级估计 ｜ 暂无对应形式化"@zh .
-
-cqm:EV_G025 a cqm:Evidence,
-        owl:NamedIndividual,
-        prov:Entity ;
-    rdfs:label "G025"^^xsd:string ;
-    cqm:evidenceConfidence "1.073"^^xsd:string ;
-    cqm:evidenceKind "命题"^^xsd:string ;
-    cqm:evidenceMethod "doc/low"^^xsd:string,
-        "doc/low" ;
-    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
-    cqm:evidenceSpan "1511-1637"^^xsd:string ;
-    cqm:humanVerified "False"^^xsd:string ;
-    cqm:sourceDoc "D042"^^xsd:string,
-        "D042" ;
-    prov:atLocation "1511-1637" ;
-    prov:value "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"@zh .
-
-cqm:EV_G026 a cqm:Evidence,
-        owl:NamedIndividual,
-        prov:Entity ;
-    rdfs:label "G026"^^xsd:string ;
-    cqm:evidenceConfidence "1.073"^^xsd:string ;
-    cqm:evidenceKind "命题"^^xsd:string ;
-    cqm:evidenceMethod "doc/low"^^xsd:string,
-        "doc/low" ;
-    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
-    cqm:evidenceSpan "1511-1637"^^xsd:string ;
-    cqm:humanVerified "False"^^xsd:string ;
-    cqm:sourceDoc "D042"^^xsd:string,
-        "D042" ;
-    prov:atLocation "1511-1637" ;
-    prov:value "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"@zh .
-
-cqm:EV_G027 a cqm:Evidence,
-        owl:NamedIndividual,
-        prov:Entity ;
-    rdfs:label "G027"^^xsd:string ;
-    cqm:evidenceConfidence "1.073"^^xsd:string ;
-    cqm:evidenceKind "命题"^^xsd:string ;
-    cqm:evidenceMethod "doc/low"^^xsd:string,
-        "doc/low" ;
-    cqm:evidenceQuote "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"^^xsd:string ;
-    cqm:evidenceSpan "1511-1637"^^xsd:string ;
-    cqm:humanVerified "False"^^xsd:string ;
-    cqm:sourceDoc "D042"^^xsd:string,
-        "D042" ;
-    prov:atLocation "1511-1637" ;
-    prov:value "SuperconductivityChain/Stage9.lean ｜ 环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥"@zh .
 
 cqm:EV_G028 a cqm:Evidence,
         owl:NamedIndividual,
@@ -5566,24 +5555,8 @@ cqm:EV_P030 a cqm:Evidence,
     cqm:humanVerified "False"^^xsd:string ;
     cqm:sourceDoc "D042"^^xsd:string,
         "D042" ;
-    prov:atLocation "333-386" ;
-    prov:value "构建通过后，本节的计数以实际 lake build 与 build_lean.py 抽取为准；"@zh .
-
-cqm:EV_P031 a cqm:Evidence,
-        owl:NamedIndividual,
-        prov:Entity ;
-    rdfs:label "P031"^^xsd:string ;
-    cqm:evidenceConfidence "4.831"^^xsd:string ;
-    cqm:evidenceKind "命题"^^xsd:string ;
-    cqm:evidenceMethod "doc/medium"^^xsd:string,
-        "doc/medium" ;
-    cqm:evidenceQuote "不绕过 ｜ 不用 axiom、sorry、admit、native_decide、unsafe"^^xsd:string ;
-    cqm:evidenceSpan "228-289"^^xsd:string ;
-    cqm:humanVerified "False"^^xsd:string ;
-    cqm:sourceDoc "D043"^^xsd:string,
-        "D043" ;
-    prov:atLocation "228-289" ;
-    prov:value "不绕过 ｜ 不用 axiom、sorry、admit、native_decide、unsafe"@zh .
+    prov:atLocation "427-464" ;
+    prov:value "_build/build_lean.py 仍可运行，但抽取结果为空集。"@zh .
 
 cqm:FrameworkConcept a owl:Class ;
     rdfs:subClassOf cqm:Concept .
@@ -5701,20 +5674,6 @@ cqm:Construction a owl:Class ;
 
 cqm:Gap a owl:Class ;
     rdfs:subClassOf cqm:Proposition .
-
-<http://cqm.local/lean#SuperconductivityChain> a cqm:LeanLibrary ;
-    rdfs:label "SuperconductivityChain" ;
-    cqm:leanSymbol "Basic",
-        "Gaps",
-        "Stage1",
-        "Stage2",
-        "Stage3",
-        "Stage4",
-        "Stage5",
-        "Stage6",
-        "Stage7",
-        "Stage8",
-        "Stage9" .
 
 cqm:C014 a cqm:GroupTheoryConcept,
         owl:NamedIndividual ;
@@ -5840,7 +5799,6 @@ cqm:C026 a cqm:GeometryConcept,
     rdfs:label "角亏"^^xsd:string ;
     cqm:definition "归一化亏角 $\\varepsilon_h/(2\\pi)$（$\\varepsilon_h$ 为 Regge/LQG 铰链亏角、曲率载体；$\\delta_v$ 即此量，非顶点角亏）"^^xsd:string ;
     cqm:derivedFrom cqm:EV_C026 ;
-    cqm:formalizedIn <http://cqm.local/lean#SuperconductivityChain> ;
     cqm:mapsTo cqm:C027 ;
     cqm:sourceDoc "D006"^^xsd:string ;
     cqm:sourceLoc "§3.4"^^xsd:string ;

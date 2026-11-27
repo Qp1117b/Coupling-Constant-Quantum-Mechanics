@@ -103,7 +103,8 @@ def main():
     with open(os.path.join(S04, "Lean结构提取", "declarations.json"), "w", encoding="utf-8") as f:
         json.dump(decls, f, ensure_ascii=False, indent=1)
     with open(os.path.join(S04, "Lean结构提取", "模块清单.csv"), "w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(modules[0].keys()))
+        # 08 已无 Lean 库时 modules 为空，必须给表头而不是取 modules[0]
+        w = csv.DictWriter(f, fieldnames=["module", "file", "theorem_like", "def_like", "axiom", "total_decl"])
         w.writeheader()
         w.writerows(modules)
     with open(os.path.join(S04, "Lean结构提取", "导入依赖.csv"), "w", encoding="utf-8-sig", newline="") as f:
@@ -153,25 +154,14 @@ def main():
     yaml.append(f"    theorem_like: {kinds_total['theorem'] + kinds_total['lemma'] + kinds_total['example']}")
     yaml.append(f"    axioms: {kinds_total['axiom']}")
     yaml.append("  authoritative_status:")
-    yaml.append('    note: "编译状态与定理计数以 08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md 为权威：单库 SuperconductivityChain；零 sorry、零 axiom；计数以 build_lean 实际抽取为准。"')
+    yaml.append('    note: "08 不再保留 Lean 库（原 SuperconductivityChain 12 模块已移除）；形式化权威在 10 探索/超导第一性研究/05_Lean验证：Ring15Spec v46 + 46 个证明模块，由 a_gate.ps1 编译、#print axioms 与 #check 校验。"')
     with open(os.path.join(S04, "lean代码路径.yaml"), "w", encoding="utf-8") as f:
         f.write("\n".join(yaml) + "\n")
 
-    # ---- Lean↔概念映射（人工审定，仅映射新库） ----
-    MAPPING = [
-        # lean_module, lean_symbol, concept_ids, prop_ids, gap_ids, note
-        ("SuperconductivityChain", "Basic", "", "", "", "27 环索引、阶段与状态；不映射具体概念"),
-        ("SuperconductivityChain", "Gaps", "", "", "审-1…审-15;临-1…临-26;链外-A…F;M1–M10;E4;A12;W-3;G19;G22", "62 条链层缺口登记；gaps_length 只校验登记完整"),
-        ("SuperconductivityChain", "Stage1", "C026;C027", "P026", "W-3;临-18;审-10", "环 1–4：基态方差、声子幅度、Bose 占据数、亏角方差、固有时流速几何、Regge 刚度；热截断不证"),
-        ("SuperconductivityChain", "Stage2", "C084", "P026", "审-1;M5;G19;临-24;临-25", "环 5–7：H_ij 反对称/上闭链、冻结、方差非负、速度冻结等价；驱动方程不证"),
-        ("SuperconductivityChain", "Stage3", "", "", "E4;A12;审-2;审-3;链外-A;M2–M4", "环 8–10：C_ij 反对称、配对势负性、λ 非负；f、κ_f、σ² 不证"),
-        ("SuperconductivityChain", "Stage4", "", "", "临-5;临-6;临-7;审-7;M1;G22", "环 11–12：配对荷单位、配对算符骨架、2/n 模式权重、2ln n 阶梯；ζ 零点对应不证"),
-        ("SuperconductivityChain", "Stage5", "", "", "临-10;临-11;临-13;临-22;临-26;临-5;链外-D;G22", "环 13/13.A：域、配对算符的节点质数化实现、阶梯谓词与单调性、Goldbach 显式假设供给、2 配对基准概率归一与单点上界、高模式重标度、DFT 四项容器与参考节点；相变等效不证"),
-        ("SuperconductivityChain", "Stage6", "", "", "M9;审-9;审-15;临-8;临-12;临-14;临-15;M1", "环 14/14.A：相位核与固定平移；BCS 同刻度不证"),
-        ("SuperconductivityChain", "Stage7", "", "", "M8;审-4;审-5;审-6;临-2;临-3;临-21;临-24;临-25", "环 15–18：渗流/容量/扩大数据结构、资源饱和终止；阈值等价不证"),
-        ("SuperconductivityChain", "Stage8", "", "", "审-8;审-11;审-12;审-13;M9;临-16;临-17;G22", "环 19–24：危机三条件、全对冻结、锚开关算术核、锚区等速、Z_n 相位标签与基数；锚与序参量不证"),
-        ("SuperconductivityChain", "Stage9", "C083", "P026;P027", "M10;临-8;临-17;临-22;临-23;临-24;G22", "环 25–27：I_K 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 DampingReading 零点实部→统一阻尼桥；零点谱与 RH 不证"),
-    ]
+    # ---- Lean↔概念映射（08 已无 Lean 库，此处留空） ----
+    # 原映射（Basic/Gaps/Stage1–Stage9）随 SuperconductivityChain 一起移除；
+    # 当前形式化在 10 探索/超导第一性研究/05_Lean验证，映射若需要请从研究侧 A 闸产物补。
+    MAPPING = []
     with open(os.path.join(S04, "Lean↔概念映射.csv"), "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["lean_library", "lean_symbol", "concept_ids", "prop_ids", "gap_ids", "remark"])
@@ -189,9 +179,9 @@ def main():
         bp_md.append(f"| `{lib}` | `{sym}` | {cs} | {ps} | {gs or '—'} | {note} |")
     bp_md += ["", "## 二、缺口 ↔ Lean 状态", "",
               "| 缺口 | Lean 对应 | 状态 |", "|:---|:---|:---|",
-              "| 链层 62 条 | `SuperconductivityChain/Gaps.lean` | 全登记；未证明 |",
-              "| C／G2–G8／G9–G22／N1–N4 | — | 旧库不在工作树，新库不承载；权威状态见缺口台账 |",
-              "| H3.1–H3.3 | — | 旧公理承载不在工作树；新库不声明公理 |", "",
+              "| 链层 62 条（审-1…审-15;临-1…临-26;链外-A…F;M1–M10;E4;A12;W-3;G19;G22） | — | 08 已无 Lean 库；登记与状态见缺口台账 |",
+              "| C／G2–G8／G9–G22／N1–N4 | — | 08 不承载；权威状态见缺口台账 |",
+              "| H3.1–H3.3 | — | 08 不承载；历史上无公理声明 |", "",
               "## 三、声明统计（自动抽取）", "",
               f"- 模块数：{len(modules)}；声明总数：{len(decls)}",
               f"- theorem/lemma/example：{kinds_total['theorem'] + kinds_total['lemma'] + kinds_total['example']}",

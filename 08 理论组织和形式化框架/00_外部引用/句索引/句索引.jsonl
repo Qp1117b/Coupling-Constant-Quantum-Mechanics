@@ -462,73 +462,74 @@
 {"doc_id": "D004", "sid": 27, "start": 1039, "end": 1089, "kind": "table", "text": "| G6 | —— | `未定义（占位）` | —— | README：G6 未定义，此行为占位 |"}
 {"doc_id": "D004", "sid": 28, "start": 1090, "end": 1119, "kind": "table", "text": "| G7 | —— | `待证明` | —— | —— |"}
 {"doc_id": "D004", "sid": 29, "start": 1120, "end": 1149, "kind": "table", "text": "| G8 | —— | `待证明` | —— | —— |"}
-{"doc_id": "D004", "sid": 30, "start": 1150, "end": 1240, "kind": "table", "text": "| G9–G22 | 超导涌现链 | `待证明` | `SuperconductivityChain/Gaps.lean`（仅登记） | 旧超导模块不在工作树；新库不声称已证明 |"}
-{"doc_id": "D004", "sid": 31, "start": 1241, "end": 1286, "kind": "table", "text": "| N1 | 中子缺陷矩阵 | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
-{"doc_id": "D004", "sid": 32, "start": 1287, "end": 1328, "kind": "table", "text": "| N2 | —— | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
-{"doc_id": "D004", "sid": 33, "start": 1329, "end": 1370, "kind": "table", "text": "| N3 | —— | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
-{"doc_id": "D004", "sid": 34, "start": 1371, "end": 1419, "kind": "table", "text": "| N4 | FG 角亏 | `待证明` | —— | 旧 `FGChain/` 不在工作树 |"}
-{"doc_id": "D004", "sid": 35, "start": 1420, "end": 1464, "kind": "table", "text": "| H3.1 | 层级假设 3.1 | `axiom` | —— | 新库不声明公理 |"}
-{"doc_id": "D004", "sid": 36, "start": 1465, "end": 1509, "kind": "table", "text": "| H3.2 | 层级假设 3.2 | `axiom` | —— | 新库不声明公理 |"}
-{"doc_id": "D004", "sid": 37, "start": 1510, "end": 1576, "kind": "table", "text": "| H3.3 | 层级假设 3.3 | `axiom` | —— | 旧 `CausalSet` 公理不在工作树；新库不声明公理 |"}
-{"doc_id": "D004", "sid": 38, "start": 1577, "end": 1767, "kind": "table", "text": "| 黎曼 | 黎曼猜想 | `外部假设`（仍为猜想） | Stage9 `rh_nontrivial_zero_re` / `dampingUniform_of_RH`（显式 `hRH` 与 `DampingReading`） | 按用户口径假设成立使用；本链不证明，只消费非平凡零点实部；`DampingReading` 的 `β_n=Re ρ_n` 读法仍归 `临-22` |"}
-{"doc_id": "D004", "sid": 39, "start": 1768, "end": 1880, "kind": "table", "text": "| Goldbach | 强 Goldbach 猜想 | `外部假设`（仍为猜想） | Stage5 `goldbach_supply_all`（`h : Goldbach`） | 按用户口径假设成立使用；不写成已证定理 |"}
-{"doc_id": "D004", "sid": 40, "start": 1881, "end": 1957, "kind": "table", "text": "| Mathieu | Mathieu 临界 | `数值验证` | —— | 旧 `SpectralGeometry` 不在工作树；构造后验数字校验 |"}
-{"doc_id": "D004", "sid": 41, "start": 1958, "end": 2014, "kind": "table", "text": "| 素数冻结 | 素数冻结假设 | `axiom` | —— | 旧库不在工作树；数值验证 100% 成功率 |"}
-{"doc_id": "D004", "sid": 42, "start": 2015, "end": 2069, "kind": "table", "text": "| Tate 自对偶 | Tate 自对偶 | `axiom` | —— | 旧库不在工作树；新库不承载 |"}
-{"doc_id": "D004", "sid": 43, "start": 2070, "end": 2140, "kind": "table", "text": "| $G_N$ 变分 | $G_N$ 变分原理 | `数值验证` | —— | 旧 `GN/` 不在工作树；构造后验数字校验，待独立复现 |"}
-{"doc_id": "D004", "sid": 44, "start": 2142, "end": 2158, "kind": "heading", "text": "## 三、Lean 模块编译状态"}
-{"doc_id": "D004", "sid": 45, "start": 2160, "end": 2184, "kind": "table", "text": "| 库 | 编译 | 关联缺口 | 主要问题 |"}
-{"doc_id": "D004", "sid": 46, "start": 2185, "end": 2207, "kind": "table", "text": "|:---|:---:|:---|:---|"}
-{"doc_id": "D004", "sid": 47, "start": 2208, "end": 2392, "kind": "table", "text": "| `SuperconductivityChain` | 2026-11-21 实测全量通过（2902 jobs）；12 模块 / 124 声明 / 60 定理；零 `axiom`、零 `sorry`（待独立复现） | 链层 62 条（`Gaps.lean`） | 27 环骨架；零 `axiom`、零 `sorry` 目标；物理同一/数值/表示论/热力学身份不证 |"}
-{"doc_id": "D004", "sid": 48, "start": 2393, "end": 2596, "kind": "table", "text": "| 旧库（CausalSet／CouplingSpace／CartanAlgebra／SpectralGeometry／Decoherence／PhysicalConstants／PrimeGeometry／Methodology／GN／Superconductivity／FGChain） | 无源文件 | —— | 当前 `.lean` 源文件只有 `SuperconductivityChain` |"}
-{"doc_id": "D004", "sid": 49, "start": 2598, "end": 2619, "kind": "heading", "text": "## 四、修复优先级（对齐方案 §4.1）"}
-{"doc_id": "D004", "sid": 50, "start": 2621, "end": 2638, "kind": "table", "text": "| 优先级 | 目标 | 动作 |"}
-{"doc_id": "D004", "sid": 51, "start": 2639, "end": 2656, "kind": "table", "text": "|:---:|:---|:---|"}
-{"doc_id": "D004", "sid": 52, "start": 2657, "end": 2719, "kind": "table", "text": "| P0 | 新库可编译 | 修 `lake build` 错误；审计 `sorry`/`axiom`/`unsafe` |"}
-{"doc_id": "D004", "sid": 53, "start": 2720, "end": 2764, "kind": "table", "text": "| P1 | 缺口登记完整 | `Gaps.lean` 的 62 条与推导链逐条对账 |"}
-{"doc_id": "D004", "sid": 54, "start": 2765, "end": 2815, "kind": "table", "text": "| P2 | 派生同步 | `build_lean` 重算声明/模块，更新本表与 08 核查断言 |"}
-{"doc_id": "D004", "sid": 55, "start": 2816, "end": 2855, "kind": "table", "text": "| P3 | 条件命题补强 | 只补有载体的代数/定义层命题，不填物理同一 |"}
-{"doc_id": "D004", "sid": 56, "start": 2857, "end": 2866, "kind": "heading", "text": "## 五、联动规则"}
-{"doc_id": "D004", "sid": 57, "start": 2868, "end": 2901, "kind": "list", "text": "1. 台账中标记\"已证明\"的项，对应模块不得报出 `axiom`。"}
-{"doc_id": "D004", "sid": 58, "start": 2902, "end": 2930, "kind": "list", "text": "2. 缺口闭合须同时更新本台账状态列与 Lean 模块。"}
-{"doc_id": "D004", "sid": 59, "start": 2931, "end": 2967, "kind": "list", "text": "3. **禁止**将\"未解决\"/\"待证明\"改写为\"已解决\"而不提供证明。"}
-{"doc_id": "D004", "sid": 60, "start": 2969, "end": 2972, "kind": "prose", "text": "---"}
-{"doc_id": "D004", "sid": 61, "start": 2974, "end": 2996, "kind": "heading", "text": "## 六、链路缺口（超导链，以推导链为权威）"}
-{"doc_id": "D004", "sid": 62, "start": 2998, "end": 3052, "kind": "quote", "text": "> 链内（`审-*`、`临-*`）与链外（`M*`、`E4`、`G19`、`W-3` 等）编号由推导链登记；"}
-{"doc_id": "D004", "sid": 63, "start": 3052, "end": 3074, "kind": "quote", "text": "本台账只给族与权威指针，不重复抄录逐条描述。"}
-{"doc_id": "D004", "sid": 64, "start": 3076, "end": 3098, "kind": "table", "text": "| 族 | 覆盖 | 权威处 | 典型项 |"}
-{"doc_id": "D004", "sid": 65, "start": 3099, "end": 3120, "kind": "table", "text": "|:---|:---|:---|:---|"}
-{"doc_id": "D004", "sid": 66, "start": 3121, "end": 3337, "kind": "table", "text": "| 链内不严谨 | 环 6–27（差异→配对→记忆核→锁定→读出） | 推导链 §11 | 审-1（$\\mathcal H\\to C$ 无 $f$）、审-2（$\\kappa_f$）、审-10（$T$ 入口截断）、审-11（自由能）、临-4（(20.2) 充分性）、临-16（$c_{ij}=0$ 不可由锚推出）、临-17（$\\{c_{ij}\\}$ 分布）、临-25（扩大项动力学）、临-26（配对算符实现／质数化／DFT 分解） |"}
-{"doc_id": "D004", "sid": 67, "start": 3338, "end": 3485, "kind": "table", "text": "| 链外（实际超导要求） | 配对、电磁响应与 DFT | 推导链 §12 | 链外-A（$\\mu^*$）、链外-B（$\\lambda_L$／$\\xi$／$H_{c2}$）、链外-C（$d$ 波）、链外-D（能带与 DOS；DFT 的局域配对密度还原）、链外-E（赝能隙）、链外-F（输运） |"}
-{"doc_id": "D004", "sid": 68, "start": 3486, "end": 3618, "kind": "table", "text": "| M 类断点 | 实现层识别与映射 | 06 §13.1；环 8、10、14、22 | M1（谱同一）、M2–M4（BCS 提升／退化三步识别）、M5（$f$ 显式）、M8（渗流非独立 $T_c$）、M9（锚—序参量）、M10（$\\mathcal I_K$） |"}
-{"doc_id": "D004", "sid": 69, "start": 3619, "end": 3749, "kind": "table", "text": "| 结构前提 | 代数与几何接口 | 06／环 8、22 | E4（DNR 代数地位）、A12 未从 Regge 推出、M5（$f$ 显式）、M8（渗流非独立 $T_c$）、M9（锚—序参量）、M10（$\\mathcal I_K$）、G19、G22、W-3 |"}
-{"doc_id": "D004", "sid": 70, "start": 3751, "end": 3844, "kind": "prose", "text": "**逐项总量（链层）**：审-1…审-15（15）、临-1…临-26（26）、链外-A…F（6）、M1–M10（10）、结构前提 E4／A12／W-3／G19／G22（5），合计 62。"}
-{"doc_id": "D004", "sid": 71, "start": 3844, "end": 3888, "kind": "prose", "text": "与“27 环、约 60 个缺口”对齐；`临-26` 是唯一新增编号，既有编号与状态不变。"}
-{"doc_id": "D004", "sid": 72, "start": 3888, "end": 4014, "kind": "prose", "text": "`临-26` 覆盖：配对算符化／概率化到节点质数化的实现次序、$\\delta v_\\tau/\\bar v_\\tau$ 与 $\\{2\\ln n\\}$ 阶梯对齐、2 配对基准密度的物理归一、参考节点扩大化／距离关联与危机动力学的接口、DFT 四项分解未证。"}
-{"doc_id": "D004", "sid": 73, "start": 4016, "end": 4076, "kind": "prose", "text": "**质数化接口（环 13.A）**：次序是先配对算符化／概率化，后节点质数化；质数化是配对算符的**实现**，不是前提。"}
-{"doc_id": "D004", "sid": 74, "start": 4076, "end": 4135, "kind": "prose", "text": "平均化的是固有时流速，不是节点标签；节点在 $\\bar v_\\tau$ 附近的涨落按 $\\{2\\ln n\\}$ 分档。"}
-{"doc_id": "D004", "sid": 75, "start": 4135, "end": 4221, "kind": "prose", "text": "**相变等效原理**在判据层严格、读数层不成立；**配对等效原理**保留为配对算符完成节点质数化实现后的派生提法（条件于 13.A4），配对与参考节点无关，但不作最高原理。"}
-{"doc_id": "D004", "sid": 76, "start": 4221, "end": 4276, "kind": "prose", "text": "若强 Goldbach 成立，偶数配对名额可由一对质数化节点或一对孤狼节点提供，质数化实现后配对相容并可渗流；"}
-{"doc_id": "D004", "sid": 77, "start": 4276, "end": 4312, "kind": "prose", "text": "Goldbach 按外部假设使用，在假设下实例化，不把猜想写成已证定理。"}
-{"doc_id": "D004", "sid": 78, "start": 4312, "end": 4458, "kind": "prose", "text": "电子是关系性实在，配对不是两个电子结合成实体；DFT 读作“平凡零点形式配对＋危机下的配对算符＋以 2 配对为基准的配对密度＋以参考节点为中心的扩大化与距离关联（危机动力学）”，$\\rho_{\\rm pair}^{(n)}=\\frac{2}{n}\\rho_{\\rm pair}^{(2)}$；"}
-{"doc_id": "D004", "sid": 79, "start": 4458, "end": 4508, "kind": "prose", "text": "该分解是结构读法，不是已证等式，均匀弱耦合极限的还原仍是条件命题（归 `链外-D`、`临-26`）。"}
-{"doc_id": "D004", "sid": 80, "start": 4510, "end": 4588, "kind": "prose", "text": "**定位**：$J_0$、$\\theta_D$ 外生（06 §4 量纲指针；命题 Z2），故超导链的闭合范围是\"形状＋相变条件\"，不含 $T_c$ 绝对值；"}
-{"doc_id": "D004", "sid": 81, "start": 4588, "end": 4613, "kind": "prose", "text": "要绝对值须新增带量纲公设（框架扩展，不是补缺口）。"}
-{"doc_id": "D004", "sid": 82, "start": 4615, "end": 4688, "kind": "prose", "text": "**三层刻度**：局域配对概率（$a$）→ 配对密度场（$n_{\\rm eff}$）→ 连通性判定（$L^2$）→ 质变，四段是尺度换算而非时序；"}
-{"doc_id": "D004", "sid": 83, "start": 4688, "end": 4747, "kind": "prose", "text": "其换算的不严谨归链内族（`审-4` 阈值口径、`临-11` 自平均、`临-24` 聚合归一），权威仍在推导链 §11。"}
-{"doc_id": "D004", "sid": 84, "start": 4749, "end": 4798, "kind": "prose", "text": "**谱侧接口**：$K$ 是记忆核，也是差异的**总效应**，相变后由锚核在全局共享（等高不等位；"}
-{"doc_id": "D004", "sid": 85, "start": 4798, "end": 4817, "kind": "prose", "text": "单一平台另需 $c_{ij}=0$）。"}
-{"doc_id": "D004", "sid": 86, "start": 4817, "end": 4888, "kind": "prose", "text": "自守形式–$L$ 是它的谱侧读出器，二者是体现关系而非同一（$\\operatorname{spec}K$ 与某个 $L$ 零点集的对应待证）。"}
-{"doc_id": "D004", "sid": 87, "start": 4888, "end": 5013, "kind": "prose", "text": "按 L1–L3 三层必要条件（L1 危机／L2 配对渗流／L3 外参）的各子要素对账，结构件 5/6 齐：位势与自变量、Euler 积骨架、level（`临-5`）、特征（`临-5`／`G22`）、权（`审-14` 与 `临-22` 两候选未对齐）；"}
-{"doc_id": "D004", "sid": 88, "start": 5013, "end": 5051, "kind": "prose", "text": "**缺函数方程**（反演 $S$），载体在环 8 的 DNR，不在三层之内。"}
-{"doc_id": "D004", "sid": 89, "start": 5051, "end": 5154, "kind": "prose", "text": "耦合常数涨落对应 $U(1)\\to\\mathbb Z_n$；$\\mathbb Z_n$ 是离散子群，给 level／特征，$n=4,6,\\ldots$ 不是缺失，而是高模式待填（`临-5`／`临-26`）。"}
-{"doc_id": "D004", "sid": 90, "start": 5154, "end": 5193, "kind": "prose", "text": "判别：谱峰不等距（$\\{\\log p\\}$）才是算术 $L$，等距属 DSI。"}
-{"doc_id": "D004", "sid": 91, "start": 5193, "end": 5206, "kind": "prose", "text": "权威仍在推导链 26.B。"}
-{"doc_id": "D004", "sid": 92, "start": 5208, "end": 5363, "kind": "prose", "text": "**体积三层**：结构层用理想无限（$p_c$、BKT、$\\ell_e=0$ 只在无限体积严格）、容量层用 $n_{\\rm eff}=(\\xi/a)^2$（不得用晶格总点数）、读数层用截断＋有限尺寸标度（$\\Delta p\\sim L^{-3/4}$、$T_{\\rm BKT}(L)\\sim1/\\ln L$）。"}
-{"doc_id": "D004", "sid": 93, "start": 5363, "end": 5420, "kind": "prose", "text": "与刻度三层（$a\\to n_{\\rm eff}\\to L^2$）和必要条件的 L1–L3 是三套不同编号，不共用；"}
-{"doc_id": "D004", "sid": 94, "start": 5420, "end": 5431, "kind": "prose", "text": "权威见推导链 0.2。"}
-{"doc_id": "D004", "sid": 95, "start": 5433, "end": 5436, "kind": "prose", "text": "---"}
-{"doc_id": "D004", "sid": 96, "start": 5438, "end": 5522, "kind": "prose", "text": "*依据：`00_修订基准与准则.md` §一、`08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md` · 生成时间：2026-10-05*"}
+{"doc_id": "D004", "sid": 30, "start": 1150, "end": 1263, "kind": "table", "text": "| G9–G22 | 超导涌现链 | `待证明` | ——（08 已无 Lean 库；原 `Gaps.lean` 仅登记，随库移除） | 08 不声称已证明；形式化状态见 `10 探索/超导第一性研究/05_Lean验证` |"}
+{"doc_id": "D004", "sid": 31, "start": 1264, "end": 1309, "kind": "table", "text": "| N1 | 中子缺陷矩阵 | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
+{"doc_id": "D004", "sid": 32, "start": 1310, "end": 1351, "kind": "table", "text": "| N2 | —— | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
+{"doc_id": "D004", "sid": 33, "start": 1352, "end": 1393, "kind": "table", "text": "| N3 | —— | `待证明` | —— | 旧 Lean 载体不在工作树 |"}
+{"doc_id": "D004", "sid": 34, "start": 1394, "end": 1442, "kind": "table", "text": "| N4 | FG 角亏 | `待证明` | —— | 旧 `FGChain/` 不在工作树 |"}
+{"doc_id": "D004", "sid": 35, "start": 1443, "end": 1487, "kind": "table", "text": "| H3.1 | 层级假设 3.1 | `axiom` | —— | 新库不声明公理 |"}
+{"doc_id": "D004", "sid": 36, "start": 1488, "end": 1532, "kind": "table", "text": "| H3.2 | 层级假设 3.2 | `axiom` | —— | 新库不声明公理 |"}
+{"doc_id": "D004", "sid": 37, "start": 1533, "end": 1599, "kind": "table", "text": "| H3.3 | 层级假设 3.3 | `axiom` | —— | 旧 `CausalSet` 公理不在工作树；新库不声明公理 |"}
+{"doc_id": "D004", "sid": 38, "start": 1600, "end": 1790, "kind": "table", "text": "| 黎曼 | 黎曼猜想 | `外部假设`（仍为猜想） | Stage9 `rh_nontrivial_zero_re` / `dampingUniform_of_RH`（显式 `hRH` 与 `DampingReading`） | 按用户口径假设成立使用；本链不证明，只消费非平凡零点实部；`DampingReading` 的 `β_n=Re ρ_n` 读法仍归 `临-22` |"}
+{"doc_id": "D004", "sid": 39, "start": 1791, "end": 1903, "kind": "table", "text": "| Goldbach | 强 Goldbach 猜想 | `外部假设`（仍为猜想） | Stage5 `goldbach_supply_all`（`h : Goldbach`） | 按用户口径假设成立使用；不写成已证定理 |"}
+{"doc_id": "D004", "sid": 40, "start": 1904, "end": 1980, "kind": "table", "text": "| Mathieu | Mathieu 临界 | `数值验证` | —— | 旧 `SpectralGeometry` 不在工作树；构造后验数字校验 |"}
+{"doc_id": "D004", "sid": 41, "start": 1981, "end": 2037, "kind": "table", "text": "| 素数冻结 | 素数冻结假设 | `axiom` | —— | 旧库不在工作树；数值验证 100% 成功率 |"}
+{"doc_id": "D004", "sid": 42, "start": 2038, "end": 2092, "kind": "table", "text": "| Tate 自对偶 | Tate 自对偶 | `axiom` | —— | 旧库不在工作树；新库不承载 |"}
+{"doc_id": "D004", "sid": 43, "start": 2093, "end": 2163, "kind": "table", "text": "| $G_N$ 变分 | $G_N$ 变分原理 | `数值验证` | —— | 旧 `GN/` 不在工作树；构造后验数字校验，待独立复现 |"}
+{"doc_id": "D004", "sid": 44, "start": 2165, "end": 2181, "kind": "heading", "text": "## 三、Lean 模块编译状态"}
+{"doc_id": "D004", "sid": 45, "start": 2183, "end": 2207, "kind": "table", "text": "| 库 | 编译 | 关联缺口 | 主要问题 |"}
+{"doc_id": "D004", "sid": 46, "start": 2208, "end": 2230, "kind": "table", "text": "|:---|:---:|:---|:---|"}
+{"doc_id": "D004", "sid": 47, "start": 2231, "end": 2427, "kind": "table", "text": "| `SuperconductivityChain`（已于 2026-11-27 移除） | 历史实测：2026-11-21 全量通过（2902 jobs）；12 模块 / 124 声明 / 60 定理；零 `axiom`、零 `sorry`（待独立复现） | 链层 62 条（原 `Gaps.lean`） | 该库未被研究侧 import，按决定删除；源码可从 `fe37c3b` 取回 |"}
+{"doc_id": "D004", "sid": 48, "start": 2428, "end": 2604, "kind": "table", "text": "| 当前形式化：`10 探索/超导第一性研究/05_Lean验证` | `Ring15Spec` v46 + 46 模块；A 闸实跑 46/46 编译、109/109 axioms、91/91 `#check`、FAIL 0 | 环15 判据链（G-188b-2k 系列等） | 不等同于 08 组织层；公理白名单见研究侧 `a_gate.ps1` |"}
+{"doc_id": "D004", "sid": 49, "start": 2605, "end": 2785, "kind": "table", "text": "| 旧库（CausalSet／CouplingSpace／CartanAlgebra／SpectralGeometry／Decoherence／PhysicalConstants／PrimeGeometry／Methodology／GN／Superconductivity／FGChain） | 无源文件 | —— | 08 当前无 `.lean` 源文件 |"}
+{"doc_id": "D004", "sid": 50, "start": 2787, "end": 2808, "kind": "heading", "text": "## 四、修复优先级（对齐方案 §4.1）"}
+{"doc_id": "D004", "sid": 51, "start": 2810, "end": 2827, "kind": "table", "text": "| 优先级 | 目标 | 动作 |"}
+{"doc_id": "D004", "sid": 52, "start": 2828, "end": 2845, "kind": "table", "text": "|:---:|:---|:---|"}
+{"doc_id": "D004", "sid": 53, "start": 2846, "end": 2908, "kind": "table", "text": "| P0 | 新库可编译 | 修 `lake build` 错误；审计 `sorry`/`axiom`/`unsafe` |"}
+{"doc_id": "D004", "sid": 54, "start": 2909, "end": 2953, "kind": "table", "text": "| P1 | 缺口登记完整 | `Gaps.lean` 的 62 条与推导链逐条对账 |"}
+{"doc_id": "D004", "sid": 55, "start": 2954, "end": 3004, "kind": "table", "text": "| P2 | 派生同步 | `build_lean` 重算声明/模块，更新本表与 08 核查断言 |"}
+{"doc_id": "D004", "sid": 56, "start": 3005, "end": 3044, "kind": "table", "text": "| P3 | 条件命题补强 | 只补有载体的代数/定义层命题，不填物理同一 |"}
+{"doc_id": "D004", "sid": 57, "start": 3046, "end": 3055, "kind": "heading", "text": "## 五、联动规则"}
+{"doc_id": "D004", "sid": 58, "start": 3057, "end": 3090, "kind": "list", "text": "1. 台账中标记\"已证明\"的项，对应模块不得报出 `axiom`。"}
+{"doc_id": "D004", "sid": 59, "start": 3091, "end": 3119, "kind": "list", "text": "2. 缺口闭合须同时更新本台账状态列与 Lean 模块。"}
+{"doc_id": "D004", "sid": 60, "start": 3120, "end": 3156, "kind": "list", "text": "3. **禁止**将\"未解决\"/\"待证明\"改写为\"已解决\"而不提供证明。"}
+{"doc_id": "D004", "sid": 61, "start": 3158, "end": 3161, "kind": "prose", "text": "---"}
+{"doc_id": "D004", "sid": 62, "start": 3163, "end": 3185, "kind": "heading", "text": "## 六、链路缺口（超导链，以推导链为权威）"}
+{"doc_id": "D004", "sid": 63, "start": 3187, "end": 3241, "kind": "quote", "text": "> 链内（`审-*`、`临-*`）与链外（`M*`、`E4`、`G19`、`W-3` 等）编号由推导链登记；"}
+{"doc_id": "D004", "sid": 64, "start": 3241, "end": 3263, "kind": "quote", "text": "本台账只给族与权威指针，不重复抄录逐条描述。"}
+{"doc_id": "D004", "sid": 65, "start": 3265, "end": 3287, "kind": "table", "text": "| 族 | 覆盖 | 权威处 | 典型项 |"}
+{"doc_id": "D004", "sid": 66, "start": 3288, "end": 3309, "kind": "table", "text": "|:---|:---|:---|:---|"}
+{"doc_id": "D004", "sid": 67, "start": 3310, "end": 3526, "kind": "table", "text": "| 链内不严谨 | 环 6–27（差异→配对→记忆核→锁定→读出） | 推导链 §11 | 审-1（$\\mathcal H\\to C$ 无 $f$）、审-2（$\\kappa_f$）、审-10（$T$ 入口截断）、审-11（自由能）、临-4（(20.2) 充分性）、临-16（$c_{ij}=0$ 不可由锚推出）、临-17（$\\{c_{ij}\\}$ 分布）、临-25（扩大项动力学）、临-26（配对算符实现／质数化／DFT 分解） |"}
+{"doc_id": "D004", "sid": 68, "start": 3527, "end": 3674, "kind": "table", "text": "| 链外（实际超导要求） | 配对、电磁响应与 DFT | 推导链 §12 | 链外-A（$\\mu^*$）、链外-B（$\\lambda_L$／$\\xi$／$H_{c2}$）、链外-C（$d$ 波）、链外-D（能带与 DOS；DFT 的局域配对密度还原）、链外-E（赝能隙）、链外-F（输运） |"}
+{"doc_id": "D004", "sid": 69, "start": 3675, "end": 3807, "kind": "table", "text": "| M 类断点 | 实现层识别与映射 | 06 §13.1；环 8、10、14、22 | M1（谱同一）、M2–M4（BCS 提升／退化三步识别）、M5（$f$ 显式）、M8（渗流非独立 $T_c$）、M9（锚—序参量）、M10（$\\mathcal I_K$） |"}
+{"doc_id": "D004", "sid": 70, "start": 3808, "end": 3938, "kind": "table", "text": "| 结构前提 | 代数与几何接口 | 06／环 8、22 | E4（DNR 代数地位）、A12 未从 Regge 推出、M5（$f$ 显式）、M8（渗流非独立 $T_c$）、M9（锚—序参量）、M10（$\\mathcal I_K$）、G19、G22、W-3 |"}
+{"doc_id": "D004", "sid": 71, "start": 3940, "end": 4033, "kind": "prose", "text": "**逐项总量（链层）**：审-1…审-15（15）、临-1…临-26（26）、链外-A…F（6）、M1–M10（10）、结构前提 E4／A12／W-3／G19／G22（5），合计 62。"}
+{"doc_id": "D004", "sid": 72, "start": 4033, "end": 4077, "kind": "prose", "text": "与“27 环、约 60 个缺口”对齐；`临-26` 是唯一新增编号，既有编号与状态不变。"}
+{"doc_id": "D004", "sid": 73, "start": 4077, "end": 4203, "kind": "prose", "text": "`临-26` 覆盖：配对算符化／概率化到节点质数化的实现次序、$\\delta v_\\tau/\\bar v_\\tau$ 与 $\\{2\\ln n\\}$ 阶梯对齐、2 配对基准密度的物理归一、参考节点扩大化／距离关联与危机动力学的接口、DFT 四项分解未证。"}
+{"doc_id": "D004", "sid": 74, "start": 4205, "end": 4265, "kind": "prose", "text": "**质数化接口（环 13.A）**：次序是先配对算符化／概率化，后节点质数化；质数化是配对算符的**实现**，不是前提。"}
+{"doc_id": "D004", "sid": 75, "start": 4265, "end": 4324, "kind": "prose", "text": "平均化的是固有时流速，不是节点标签；节点在 $\\bar v_\\tau$ 附近的涨落按 $\\{2\\ln n\\}$ 分档。"}
+{"doc_id": "D004", "sid": 76, "start": 4324, "end": 4410, "kind": "prose", "text": "**相变等效原理**在判据层严格、读数层不成立；**配对等效原理**保留为配对算符完成节点质数化实现后的派生提法（条件于 13.A4），配对与参考节点无关，但不作最高原理。"}
+{"doc_id": "D004", "sid": 77, "start": 4410, "end": 4465, "kind": "prose", "text": "若强 Goldbach 成立，偶数配对名额可由一对质数化节点或一对孤狼节点提供，质数化实现后配对相容并可渗流；"}
+{"doc_id": "D004", "sid": 78, "start": 4465, "end": 4501, "kind": "prose", "text": "Goldbach 按外部假设使用，在假设下实例化，不把猜想写成已证定理。"}
+{"doc_id": "D004", "sid": 79, "start": 4501, "end": 4647, "kind": "prose", "text": "电子是关系性实在，配对不是两个电子结合成实体；DFT 读作“平凡零点形式配对＋危机下的配对算符＋以 2 配对为基准的配对密度＋以参考节点为中心的扩大化与距离关联（危机动力学）”，$\\rho_{\\rm pair}^{(n)}=\\frac{2}{n}\\rho_{\\rm pair}^{(2)}$；"}
+{"doc_id": "D004", "sid": 80, "start": 4647, "end": 4697, "kind": "prose", "text": "该分解是结构读法，不是已证等式，均匀弱耦合极限的还原仍是条件命题（归 `链外-D`、`临-26`）。"}
+{"doc_id": "D004", "sid": 81, "start": 4699, "end": 4777, "kind": "prose", "text": "**定位**：$J_0$、$\\theta_D$ 外生（06 §4 量纲指针；命题 Z2），故超导链的闭合范围是\"形状＋相变条件\"，不含 $T_c$ 绝对值；"}
+{"doc_id": "D004", "sid": 82, "start": 4777, "end": 4802, "kind": "prose", "text": "要绝对值须新增带量纲公设（框架扩展，不是补缺口）。"}
+{"doc_id": "D004", "sid": 83, "start": 4804, "end": 4877, "kind": "prose", "text": "**三层刻度**：局域配对概率（$a$）→ 配对密度场（$n_{\\rm eff}$）→ 连通性判定（$L^2$）→ 质变，四段是尺度换算而非时序；"}
+{"doc_id": "D004", "sid": 84, "start": 4877, "end": 4936, "kind": "prose", "text": "其换算的不严谨归链内族（`审-4` 阈值口径、`临-11` 自平均、`临-24` 聚合归一），权威仍在推导链 §11。"}
+{"doc_id": "D004", "sid": 85, "start": 4938, "end": 4987, "kind": "prose", "text": "**谱侧接口**：$K$ 是记忆核，也是差异的**总效应**，相变后由锚核在全局共享（等高不等位；"}
+{"doc_id": "D004", "sid": 86, "start": 4987, "end": 5006, "kind": "prose", "text": "单一平台另需 $c_{ij}=0$）。"}
+{"doc_id": "D004", "sid": 87, "start": 5006, "end": 5077, "kind": "prose", "text": "自守形式–$L$ 是它的谱侧读出器，二者是体现关系而非同一（$\\operatorname{spec}K$ 与某个 $L$ 零点集的对应待证）。"}
+{"doc_id": "D004", "sid": 88, "start": 5077, "end": 5202, "kind": "prose", "text": "按 L1–L3 三层必要条件（L1 危机／L2 配对渗流／L3 外参）的各子要素对账，结构件 5/6 齐：位势与自变量、Euler 积骨架、level（`临-5`）、特征（`临-5`／`G22`）、权（`审-14` 与 `临-22` 两候选未对齐）；"}
+{"doc_id": "D004", "sid": 89, "start": 5202, "end": 5240, "kind": "prose", "text": "**缺函数方程**（反演 $S$），载体在环 8 的 DNR，不在三层之内。"}
+{"doc_id": "D004", "sid": 90, "start": 5240, "end": 5343, "kind": "prose", "text": "耦合常数涨落对应 $U(1)\\to\\mathbb Z_n$；$\\mathbb Z_n$ 是离散子群，给 level／特征，$n=4,6,\\ldots$ 不是缺失，而是高模式待填（`临-5`／`临-26`）。"}
+{"doc_id": "D004", "sid": 91, "start": 5343, "end": 5382, "kind": "prose", "text": "判别：谱峰不等距（$\\{\\log p\\}$）才是算术 $L$，等距属 DSI。"}
+{"doc_id": "D004", "sid": 92, "start": 5382, "end": 5395, "kind": "prose", "text": "权威仍在推导链 26.B。"}
+{"doc_id": "D004", "sid": 93, "start": 5397, "end": 5552, "kind": "prose", "text": "**体积三层**：结构层用理想无限（$p_c$、BKT、$\\ell_e=0$ 只在无限体积严格）、容量层用 $n_{\\rm eff}=(\\xi/a)^2$（不得用晶格总点数）、读数层用截断＋有限尺寸标度（$\\Delta p\\sim L^{-3/4}$、$T_{\\rm BKT}(L)\\sim1/\\ln L$）。"}
+{"doc_id": "D004", "sid": 94, "start": 5552, "end": 5609, "kind": "prose", "text": "与刻度三层（$a\\to n_{\\rm eff}\\to L^2$）和必要条件的 L1–L3 是三套不同编号，不共用；"}
+{"doc_id": "D004", "sid": 95, "start": 5609, "end": 5620, "kind": "prose", "text": "权威见推导链 0.2。"}
+{"doc_id": "D004", "sid": 96, "start": 5622, "end": 5625, "kind": "prose", "text": "---"}
+{"doc_id": "D004", "sid": 97, "start": 5627, "end": 5711, "kind": "prose", "text": "*依据：`00_修订基准与准则.md` §一、`08 理论组织和形式化框架/04_Lean对接/Lean源码/README.md` · 生成时间：2026-10-05*"}
 {"doc_id": "D005", "sid": 0, "start": 0, "end": 21, "kind": "heading", "text": "# 耦合常数量子力学（CQM）——集成理论"}
 {"doc_id": "D005", "sid": 1, "start": 23, "end": 36, "kind": "prose", "text": "**作者**：ruster"}
 {"doc_id": "D005", "sid": 2, "start": 38, "end": 121, "kind": "quote", "text": "> **符号约定**：相变量子主符号为 **$☯$**（太极，表辩证与相变）；英文符号为 $\\mathscr{C}$（花体 C，script C），用于国际交流语境。"}
@@ -16719,103 +16720,23 @@
 {"doc_id": "D041", "sid": 26, "start": 1110, "end": 1143, "kind": "list", "text": "2. **高 $N(E_F)$**：平带工程（镍酸盐、魔角石墨烯）"}
 {"doc_id": "D041", "sid": 27, "start": 1144, "end": 1174, "kind": "list", "text": "3. **强耦合**：大 λ（H 声子主导、d/p 波配对）"}
 {"doc_id": "D041", "sid": 28, "start": 1175, "end": 1268, "kind": "list", "text": "4. **CQM 判据**：$\\Delta\\varepsilon_0 \\ge \\frac{\\pi\\,☯\\sqrt{1-\\varepsilon/(2\\pi)}}{\\ln n}$（资格条件）"}
-{"doc_id": "D042", "sid": 0, "start": 0, "end": 30, "kind": "heading", "text": "# CQMFormal — 超导发生学的 Lean 4 重建"}
-{"doc_id": "D042", "sid": 1, "start": 32, "end": 45, "kind": "prose", "text": "**作者**：ruster"}
-{"doc_id": "D042", "sid": 2, "start": 47, "end": 73, "kind": "prose", "text": "本目录按“从零重建”只保留新库源文件，现只有一个库："}
-{"doc_id": "D042", "sid": 3, "start": 75, "end": 78, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 4, "start": 79, "end": 101, "kind": "code", "text": "SuperconductivityChain"}
-{"doc_id": "D042", "sid": 5, "start": 102, "end": 105, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 6, "start": 107, "end": 192, "kind": "prose", "text": "它只承载 `10 探索/CQM_探索_推导链.md` 的 **27 环发生学**，不引用旧 `Superconductivity/`、`FGChain/` 或任何旧定义。"}
-{"doc_id": "D042", "sid": 7, "start": 194, "end": 201, "kind": "heading", "text": "## 编译状态"}
-{"doc_id": "D042", "sid": 8, "start": 203, "end": 247, "kind": "list", "text": "- Lean 4.29.1（`lean-toolchain` 固定 `v4.29.1`）"}
-{"doc_id": "D042", "sid": 9, "start": 248, "end": 267, "kind": "list", "text": "- 构建命令：`lake build`"}
-{"doc_id": "D042", "sid": 10, "start": 268, "end": 331, "kind": "list", "text": "- 目标：零 `sorry`、零 `admit`、零 `native_decide`、零 `unsafe`、零 `axiom`"}
-{"doc_id": "D042", "sid": 11, "start": 333, "end": 386, "kind": "quote", "text": "> 构建通过后，本节的计数以实际 `lake build` 与 `build_lean.py` 抽取为准；"}
-{"doc_id": "D042", "sid": 12, "start": 386, "end": 395, "kind": "quote", "text": "不预填“已通过”。"}
-{"doc_id": "D042", "sid": 13, "start": 396, "end": 397, "kind": "quote", "text": ">"}
-{"doc_id": "D042", "sid": 14, "start": 398, "end": 446, "kind": "quote", "text": "> 当前实测（2026-11-21）：`lake build` 全量通过（2902 jobs）；"}
-{"doc_id": "D042", "sid": 15, "start": 446, "end": 528, "kind": "quote", "text": "12 模块 / 124 声明 / 60 定理；零 `axiom`、零 `sorry`、零 `admit`、零 `native_decide`、零 `unsafe`。"}
-{"doc_id": "D042", "sid": 16, "start": 529, "end": 530, "kind": "quote", "text": ">"}
-{"doc_id": "D042", "sid": 17, "start": 531, "end": 603, "kind": "quote", "text": "> 覆盖：27/27 环有专用声明且至少一条定理；`r23` 只到 `ZMod` 标签基数，`r27` 到统一阻尼率的符号后果与 RH 显式桥。"}
-{"doc_id": "D042", "sid": 18, "start": 603, "end": 648, "kind": "quote", "text": "RH 与 Goldbach 以显式前提接入（`hRH`、`h`），不新增 `axiom`。"}
-{"doc_id": "D042", "sid": 19, "start": 650, "end": 655, "kind": "heading", "text": "## 目录"}
-{"doc_id": "D042", "sid": 20, "start": 657, "end": 668, "kind": "table", "text": "| 文件 | 内容 |"}
-{"doc_id": "D042", "sid": 21, "start": 669, "end": 680, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D042", "sid": 22, "start": 681, "end": 724, "kind": "table", "text": "| `SuperconductivityChain.lean` | 库根，汇总导入 |"}
-{"doc_id": "D042", "sid": 23, "start": 725, "end": 784, "kind": "table", "text": "| `SuperconductivityChain/Basic.lean` | 27 环索引、阶段、状态、缺口性质 |"}
-{"doc_id": "D042", "sid": 24, "start": 785, "end": 841, "kind": "table", "text": "| `SuperconductivityChain/Gaps.lean` | 62 条链层缺口登记与数量校验 |"}
-{"doc_id": "D042", "sid": 25, "start": 842, "end": 931, "kind": "table", "text": "| `SuperconductivityChain/Stage1.lean` | 环 1–4：基态方差、声子幅度、Bose 占据数、亏角方差、固有时流速、Regge 刚度结构 |"}
-{"doc_id": "D042", "sid": 26, "start": 932, "end": 1001, "kind": "table", "text": "| `SuperconductivityChain/Stage2.lean` | 环 5–7：`H_ij` 反对称/上闭链、冻结、方差 |"}
-{"doc_id": "D042", "sid": 27, "start": 1002, "end": 1070, "kind": "table", "text": "| `SuperconductivityChain/Stage3.lean` | 环 8–10：`C_ij` 反对称、配对势、`λ` |"}
-{"doc_id": "D042", "sid": 28, "start": 1071, "end": 1152, "kind": "table", "text": "| `SuperconductivityChain/Stage4.lean` | 环 11–12：配对荷、配对算符骨架、`2/n` 模式权重、`2 ln n` |"}
-{"doc_id": "D042", "sid": 29, "start": 1153, "end": 1291, "kind": "table", "text": "| `SuperconductivityChain/Stage5.lean` | 环 13／13.A：域、配对算符的节点质数化实现、`2 ln n` 阶梯谓词与单调性、Goldbach 显式假设供给、2 配对基准概率归一与单点上界、高模式重标度、DFT 四项容器与参考节点 |"}
-{"doc_id": "D042", "sid": 30, "start": 1292, "end": 1353, "kind": "table", "text": "| `SuperconductivityChain/Stage6.lean` | 环 14／14.A：相位核与固定平移 |"}
-{"doc_id": "D042", "sid": 31, "start": 1354, "end": 1422, "kind": "table", "text": "| `SuperconductivityChain/Stage7.lean` | 环 15–18：渗流/容量/扩大结构、资源饱和终止 |"}
-{"doc_id": "D042", "sid": 32, "start": 1423, "end": 1510, "kind": "table", "text": "| `SuperconductivityChain/Stage8.lean` | 环 19–24：危机三条件、全对冻结、锚开关算术核、锚区等速、`Z_n` 相位标签与基数 |"}
-{"doc_id": "D042", "sid": 33, "start": 1511, "end": 1637, "kind": "table", "text": "| `SuperconductivityChain/Stage9.lean` | 环 25–27：`I_K` 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 `DampingReading` 零点实部→统一阻尼桥 |"}
-{"doc_id": "D042", "sid": 34, "start": 1639, "end": 1647, "kind": "heading", "text": "## 形式化边界"}
-{"doc_id": "D042", "sid": 35, "start": 1649, "end": 1705, "kind": "list", "text": "- **只定义**：对象、结构、命题形式（如局域域、配对算符骨架、质数实现、Goldbach 条件、资源约束）。"}
-{"doc_id": "D042", "sid": 36, "start": 1706, "end": 1782, "kind": "list", "text": "- **只证明**：代数恒等式、定义层不等式、固定平移关系（如 `H_ij` 上闭链、`C_ij` 反对称、`deficitSpeed` 平方恒等式）。"}
-{"doc_id": "D042", "sid": 37, "start": 1783, "end": 1884, "kind": "list", "text": "- **不证明**：BCS 物理同一、相变等效的读数/抽样、Goldbach（按外部假设使用）、DFT 还原、`M9` 数值同一、自守形式函数方程、RH（按外部假设使用）、`T_c` 数值与自由能身份。"}
-{"doc_id": "D042", "sid": 38, "start": 1885, "end": 1953, "kind": "list", "text": "- **缺口**：62 条链层缺口全部登记在 `Gaps.lean`；`gaps_length` 只校验“登记完整”，不校验“已解决”。"}
-{"doc_id": "D042", "sid": 39, "start": 1955, "end": 1963, "kind": "heading", "text": "## 构建与审计"}
-{"doc_id": "D042", "sid": 40, "start": 1965, "end": 1978, "kind": "code", "text": "```powershell"}
-{"doc_id": "D042", "sid": 41, "start": 1979, "end": 2050, "kind": "code", "text": "Set-Location 'D:\\WorkSpace\\物理\\CQMFormal\\08 理论组织和形式化框架\\04_Lean对接\\Lean源码'"}
-{"doc_id": "D042", "sid": 42, "start": 2051, "end": 2130, "kind": "code", "text": "& 'D:\\DevTools\\.elan\\toolchains\\leanprover--lean4---v4.29.1\\bin\\lake.exe' build"}
-{"doc_id": "D042", "sid": 43, "start": 2131, "end": 2131, "kind": "code", "text": ""}
-{"doc_id": "D042", "sid": 44, "start": 2132, "end": 2229, "kind": "code", "text": "rg -n 'sorry|admit|native_decide|unsafe|axiom' SuperconductivityChain SuperconductivityChain.lean"}
-{"doc_id": "D042", "sid": 45, "start": 2230, "end": 2233, "kind": "code", "text": "```"}
-{"doc_id": "D042", "sid": 46, "start": 2235, "end": 2270, "kind": "prose", "text": "`rg` 命中 `axiom` 必须为零；命中注释中的缺口名不算声明。"}
-{"doc_id": "D042", "sid": 47, "start": 2272, "end": 2279, "kind": "heading", "text": "## 相关文档"}
-{"doc_id": "D042", "sid": 48, "start": 2281, "end": 2308, "kind": "list", "text": "- 推导链：`10 探索/CQM_探索_推导链.md`"}
-{"doc_id": "D042", "sid": 49, "start": 2309, "end": 2342, "kind": "list", "text": "- 缺口台账：`08 理论组织和形式化框架/附录/缺口台账.md`"}
-{"doc_id": "D042", "sid": 50, "start": 2343, "end": 2384, "kind": "list", "text": "- 目录说明：`SuperconductivityChain/README.md`"}
-{"doc_id": "D043", "sid": 0, "start": 0, "end": 43, "kind": "heading", "text": "# SuperconductivityChain — 27 环发生学的 Lean 骨架"}
-{"doc_id": "D043", "sid": 1, "start": 45, "end": 102, "kind": "prose", "text": "本目录是**从零重建**的超导理论形式化，只承载《`10 探索/CQM_探索_推导链.md`》的 27 环发生学。"}
-{"doc_id": "D043", "sid": 2, "start": 103, "end": 156, "kind": "prose", "text": "旧 `Superconductivity/`、`FGChain/` 及全部旧 Lean 源文件不在工作树；"}
-{"doc_id": "D043", "sid": 3, "start": 156, "end": 167, "kind": "prose", "text": "本库不引用任何旧定义。"}
-{"doc_id": "D043", "sid": 4, "start": 169, "end": 174, "kind": "heading", "text": "## 原则"}
-{"doc_id": "D043", "sid": 5, "start": 176, "end": 187, "kind": "table", "text": "| 原则 | 落实 |"}
-{"doc_id": "D043", "sid": 6, "start": 188, "end": 199, "kind": "table", "text": "|:---|:---|"}
-{"doc_id": "D043", "sid": 7, "start": 200, "end": 227, "kind": "table", "text": "| 不虚构 | 不引入推导链之外的术语、数值、机制 |"}
-{"doc_id": "D043", "sid": 8, "start": 228, "end": 289, "kind": "table", "text": "| 不绕过 | 不用 `axiom`、`sorry`、`admit`、`native_decide`、`unsafe` |"}
-{"doc_id": "D043", "sid": 9, "start": 290, "end": 332, "kind": "table", "text": "| 不定义式绕过 | 物理同一、数值、热力学身份不写成 `def`；只登记为缺口 |"}
-{"doc_id": "D043", "sid": 10, "start": 333, "end": 388, "kind": "table", "text": "| 缺口明确 | 62 条链层缺口在 `Gaps.lean` 全登记，`gaps_length` 校验数量 |"}
-{"doc_id": "D043", "sid": 11, "start": 389, "end": 425, "kind": "table", "text": "| 精悍 | 每个阶段只保留可定义对象与可证代数命题；不重复既有结论 |"}
-{"doc_id": "D043", "sid": 12, "start": 427, "end": 434, "kind": "heading", "text": "## 模块与环"}
-{"doc_id": "D043", "sid": 13, "start": 436, "end": 454, "kind": "table", "text": "| 模块 | 环 | 形式化内容 |"}
-{"doc_id": "D043", "sid": 14, "start": 455, "end": 471, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D043", "sid": 15, "start": 472, "end": 513, "kind": "table", "text": "| `Basic.lean` | 索引 | 27 环索引、阶段、状态、缺口性质 |"}
-{"doc_id": "D043", "sid": 16, "start": 514, "end": 549, "kind": "table", "text": "| `Gaps.lean` | 全链 | 62 条缺口编号与所属环 |"}
-{"doc_id": "D043", "sid": 17, "start": 550, "end": 620, "kind": "table", "text": "| `Stage1.lean` | 1–4 | 基态方差、声子幅度、Bose 占据数、亏角方差、固有时流速几何定义、Regge 刚度结构 |"}
-{"doc_id": "D043", "sid": 18, "start": 621, "end": 671, "kind": "table", "text": "| `Stage2.lean` | 5–7 | `H_ij` 反对称/上闭链、冻结判据、方差非负 |"}
-{"doc_id": "D043", "sid": 19, "start": 672, "end": 722, "kind": "table", "text": "| `Stage3.lean` | 8–10 | `C_ij` 反对称、配对势负性、`λ` 非负 |"}
-{"doc_id": "D043", "sid": 20, "start": 723, "end": 786, "kind": "table", "text": "| `Stage4.lean` | 11–12 | 配对荷单位、配对算符骨架、`2/n` 模式权重、`2 ln n` 阶梯 |"}
-{"doc_id": "D043", "sid": 21, "start": 787, "end": 908, "kind": "table", "text": "| `Stage5.lean` | 13 / 13.A | 局域域、配对算符的节点质数化实现、`2 ln n` 阶梯谓词与单调性、Goldbach 显式假设供给、2 配对基准概率归一与单点上界、高模式数学重标度、DFT 四项容器与参考节点 |"}
-{"doc_id": "D043", "sid": 22, "start": 909, "end": 949, "kind": "table", "text": "| `Stage6.lean` | 14 / 14.A | 相位核与固定平移 |"}
-{"doc_id": "D043", "sid": 23, "start": 950, "end": 997, "kind": "table", "text": "| `Stage7.lean` | 15–18 | 渗流/容量/扩大数据结构、资源饱和终止 |"}
-{"doc_id": "D043", "sid": 24, "start": 998, "end": 1062, "kind": "table", "text": "| `Stage8.lean` | 19–24 | 危机三条件、全对冻结、锚开关算术核、锚区等速、`Z_n` 相位标签与基数 |"}
-{"doc_id": "D043", "sid": 25, "start": 1063, "end": 1166, "kind": "table", "text": "| `Stage9.lean` | 25–27 | `I_K` 区间积分骨架、退相干率、相位相干模界、阻尼率统一命题与非负性、RH 显式假设接口与 `DampingReading` 零点实部→统一阻尼桥 |"}
-{"doc_id": "D043", "sid": 26, "start": 1167, "end": 1214, "kind": "table", "text": "| `../SuperconductivityChain.lean` | 根 | 汇总导入 |"}
-{"doc_id": "D043", "sid": 27, "start": 1216, "end": 1277, "kind": "prose", "text": "13.A、14.A、25.A、26.B 是环内补充，不另设环号；`Gaps.lean` 的 `ring` 字段仍归其母环。"}
-{"doc_id": "D043", "sid": 28, "start": 1279, "end": 1352, "kind": "prose", "text": "27/27 环有专用 Lean 声明且至少一条定理；`r23` 只到 `ZMod` 标签基数，`r27` 到统一阻尼率的符号后果与 RH 显式桥。"}
-{"doc_id": "D043", "sid": 29, "start": 1354, "end": 1366, "kind": "heading", "text": "## 明确不形式化的部分"}
-{"doc_id": "D043", "sid": 30, "start": 1368, "end": 1402, "kind": "list", "text": "- BCS 延迟配对的物理同一与同刻度（`审-15`、`临-8`）；"}
-{"doc_id": "D043", "sid": 31, "start": 1403, "end": 1433, "kind": "list", "text": "- 相变等效的读数/抽样等效（`临-10`、`临-11`）；"}
-{"doc_id": "D043", "sid": 32, "start": 1434, "end": 1481, "kind": "list", "text": "- Goldbach 本身（按外部假设使用）与配对算符→节点质数化的实现次序（`临-26`）；"}
-{"doc_id": "D043", "sid": 33, "start": 1482, "end": 1508, "kind": "list", "text": "- DFT 四项分解的均匀极限还原（`链外-D`）；"}
-{"doc_id": "D043", "sid": 34, "start": 1509, "end": 1542, "kind": "list", "text": "- 相变锚 `A_τ` 与 `K^SC` 的数值同一（`M9`）；"}
-{"doc_id": "D043", "sid": 35, "start": 1543, "end": 1571, "kind": "list", "text": "- 自守形式–`L` 的函数方程与表示论（`G22`）；"}
-{"doc_id": "D043", "sid": 36, "start": 1572, "end": 1593, "kind": "list", "text": "- 黎曼猜想与阻尼率统一（`临-22`）；"}
-{"doc_id": "D043", "sid": 37, "start": 1594, "end": 1626, "kind": "list", "text": "- `T_c` 数值与自由能身份（`审-11`、`审-14`）。"}
-{"doc_id": "D043", "sid": 38, "start": 1628, "end": 1677, "kind": "prose", "text": "这些不是“待补的定理”，而是当前没有载体、没有方程或没有证明的缺口；形式化只给条件命题或结构定义。"}
-{"doc_id": "D043", "sid": 39, "start": 1679, "end": 1684, "kind": "heading", "text": "## 构建"}
-{"doc_id": "D043", "sid": 40, "start": 1686, "end": 1699, "kind": "code", "text": "```powershell"}
-{"doc_id": "D043", "sid": 41, "start": 1700, "end": 1771, "kind": "code", "text": "Set-Location 'D:\\WorkSpace\\物理\\CQMFormal\\08 理论组织和形式化框架\\04_Lean对接\\Lean源码'"}
-{"doc_id": "D043", "sid": 42, "start": 1772, "end": 1851, "kind": "code", "text": "& 'D:\\DevTools\\.elan\\toolchains\\leanprover--lean4---v4.29.1\\bin\\lake.exe' build"}
-{"doc_id": "D043", "sid": 43, "start": 1852, "end": 1855, "kind": "code", "text": "```"}
-{"doc_id": "D043", "sid": 44, "start": 1857, "end": 1959, "kind": "prose", "text": "审计：`rg -n 'sorry|admit|native_decide|unsafe|axiom' SuperconductivityChain SuperconductivityChain.lean`"}
-{"doc_id": "D043", "sid": 45, "start": 1960, "end": 1985, "kind": "prose", "text": "（`axiom` 命中只允许为零；本库目标为零）。"}
+{"doc_id": "D042", "sid": 0, "start": 0, "end": 32, "kind": "heading", "text": "# CQMFormal — Lean 源码目录（08 已清空库）"}
+{"doc_id": "D042", "sid": 1, "start": 34, "end": 226, "kind": "prose", "text": "**状态更新（2026-11-27）**：本目录原有的唯一库 `SuperconductivityChain`（`Basic`／`Gaps`／`Stage1`–`Stage9`，12 模块 / 124 声明 / 60 定理，2026-11-21 `lake build` 2902 jobs 通过）**已移除**，连同 `lakefile.toml` 的 `lean_lib` 声明。"}
+{"doc_id": "D042", "sid": 2, "start": 226, "end": 314, "kind": "prose", "text": "删除理由：该库从未被研究侧 import——`10 探索/超导第一性研究/05_Lean验证` 的 46 个模块只 `import Ring15Spec`，两套形式化互不接线。"}
+{"doc_id": "D042", "sid": 3, "start": 316, "end": 427, "kind": "prose", "text": "保留内容：`lakefile.toml`（仅 `require mathlib`）、`lean-toolchain`（`v4.29.1`）、`lake-manifest.json`、本 README、`.github/`。"}
+{"doc_id": "D042", "sid": 4, "start": 427, "end": 464, "kind": "prose", "text": "`_build/build_lean.py` 仍可运行，但抽取结果为空集。"}
+{"doc_id": "D042", "sid": 5, "start": 466, "end": 476, "kind": "heading", "text": "## 当前形式化在哪"}
+{"doc_id": "D042", "sid": 6, "start": 478, "end": 505, "kind": "prose", "text": "`10 探索/超导第一性研究/05_Lean验证/`："}
+{"doc_id": "D042", "sid": 7, "start": 507, "end": 573, "kind": "list", "text": "- `Ring15Spec.lean` — Spec v46（840 行），只 import Mathlib 基线，不含任何证明模块"}
+{"doc_id": "D042", "sid": 8, "start": 574, "end": 622, "kind": "list", "text": "- 46 个证明模块（`Ring15Lock*`），统一 `import Ring15Spec`"}
+{"doc_id": "D042", "sid": 9, "start": 623, "end": 715, "kind": "list", "text": "- `a_gate.ps1` — 一键闸：编译 46 模块 → `#print axioms` 109 条白名单 → `#check` 91 条类型 ≡ Spec → token 卫生"}
+{"doc_id": "D042", "sid": 10, "start": 716, "end": 764, "kind": "list", "text": "- 实测口径：46/46 编译、109/109 axioms、91/91 type、FAIL 0"}
+{"doc_id": "D042", "sid": 11, "start": 766, "end": 771, "kind": "heading", "text": "## 历史"}
+{"doc_id": "D042", "sid": 12, "start": 773, "end": 873, "kind": "prose", "text": "移除前的 12 模块源码与映射在 git 历史 `fe37c3b`（`08 理论组织和形式化框架/04_Lean对接/Lean源码/SuperconductivityChain*`），需要可从中取回。"}
+{"doc_id": "D042", "sid": 13, "start": 875, "end": 882, "kind": "heading", "text": "## 相关文档"}
+{"doc_id": "D042", "sid": 14, "start": 884, "end": 948, "kind": "list", "text": "- 研究侧口径：`10 探索/超导第一性研究/PROGRESS.md`、`DISCARD.md`、`00_当前有效口径表.md`"}
+{"doc_id": "D042", "sid": 15, "start": 949, "end": 982, "kind": "list", "text": "- 缺口台账：`08 理论组织和形式化框架/附录/缺口台账.md`"}
+{"doc_id": "D042", "sid": 16, "start": 983, "end": 1011, "kind": "list", "text": "- 本层说明：`04_Lean对接/README.md`"}
 {"doc_id": "D044", "sid": 0, "start": 0, "end": 22, "kind": "heading", "text": "# CQMFormal 科研 AI 全栈方案"}
 {"doc_id": "D044", "sid": 1, "start": 24, "end": 87, "kind": "quote", "text": "> 面向「耦合常数量子力学（CQM）」项目的 Agent / MCP / 工具 / 计算 / Lean 形式化一体化科研方案。"}
 {"doc_id": "D044", "sid": 2, "start": 88, "end": 89, "kind": "quote", "text": ">"}
