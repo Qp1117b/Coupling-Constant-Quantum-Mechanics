@@ -37,11 +37,13 @@
 
 **耦合常数量子力学**（Coupling Constant Quantum Mechanics, CQM）是一个以「量子化耦合常数」为起点的大统一研究框架。它直接建立在三大理论之上，但做了一次根本的本体论重构：
 
-| 理论来源 | 提供的工具 | 在 CQM 中的角色 |
+| 理论基础 | 提供的工具 | 在 CQM 中的实现 |
 |:---|:---|:---|
-| **因果集**（Causal Sets） | 离散因果序、Sprinkling 测度 | 禁闭内部的非交换几何与因果结构 |
-| **关系量子力学**（RQM） | 关系性实在、引力参与的退相干 | 「双向干涉 → 单向因果」的边界相变 |
-| **圈量子引力**（LQG） | Regge 几何、自旋网络、亏角 | 4-单纯形骨架与曲率量子（声子） |
+| **因果集**（Causal Sets） | 非交换几何、离散动力学、Sprinkling 测度 | 禁闭内部 $[x^\mu,x^\nu]\neq0$、$e^{-u}du$ 撒点、嘉当方程离散演化 |
+| **关系量子力学**（RQM） | 关系性实在、引力因果退相干 | 双向干涉 → 单向因果、Lindblad 方程、$\lambda_c$ 作为退相干临界条件 |
+| **圈量子引力**（LQG） | Regge–GR 联系、网络理论、自旋泡沫 | 4-单纯形 Regge 骨架、边–面关联矩阵 $E$、$A_4^{++}$ Weyl 群循环（镶嵌 $\{5,4\}$） |
+
+**读法边界**：这三行列的是 CQM 从三大理论**继承的工具**，不是它们的本体论承诺。因果集在 CQM 中被降为物质的属性而非本体（[集成理论](01%20核心理论/CQM_核心_集成理论.md) §1.4），RQM 只提供关系性诠释，LQG 只提供离散几何骨架；三者在 CQM 中的位置由耦合常数量子化重新指派，不能读作三大理论原本的主张。
 
 关键差别在于：**CQM 量子化的对象不是某个场，也不是时空本身，而是耦合常数本身**。由此，时空、规范群、标准模型参数与超导相变不再是彼此独立的输入，而是同一套代数在禁闭边界上退相干涌现的不同侧面。
 
@@ -359,7 +361,7 @@ CQM 的数学结构配有 Lean 4 形式化、结构化数据、概念本体、�
 
 | 项目 | 位置 | 现状 |
 |:---|:---|:---|
-| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 仅 `require mathlib`；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |
+| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 不声明外部依赖（mathlib olean 由本地 `.lake/packages` 提供，CI 只验证工程骨架）；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |
 | 形式化权威 | [`10 探索/超导第一性研究/05_Lean验证/`](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` v52 + 52 个在闸证明模块（`Ring15Lock*` 等），另有审计/探索模块；目录共 280+ 个 `.lean` 文件 |
 | 一键闸 | `05_Lean验证/a_gate.ps1` | 编译 → `#print axioms` 白名单 → `#check` 类型对齐 → token 卫生；第 235 轮实测 52/52 编译、124 条公理、101 条 `#check` 对齐，FAIL 0 |
 
@@ -539,6 +541,27 @@ CQMFormal/
 外部文献 PDF 存于 [`归档/一体化研究/文献/`](归档/一体化研究/文献/)；CNT 完整研究已发布于 Zenodo：DOI [10.5281/zenodo.20804380](https://doi.org/10.5281/zenodo.20804380)。
 
 **许可**：本仓库暂未附许可证文件；在补充许可证前，默认保留所有权利。转载、引用或合作请联系作者。
+
+---
+
+## 贡献者
+
+<table>
+  <tr>
+    <td align="center" width="140">
+      <a href="https://github.com/Qp1117b"><img src="https://github.com/Qp1117b.png" width="72" alt="大肥鱼"></a><br>
+      <sub><b>大肥鱼</b>（Qp1117b）</sub><br>
+      <sub>理论提出 · 推导 · 审校</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="assets/contributors/doubao.svg" width="72" alt="豆包"><br>
+      <sub><b>豆包（Doubao）</b></sub><br>
+      <sub>文档组织 · 一致性核查 · 形式化对接</sub>
+    </td>
+  </tr>
+</table>
+
+> 贡献者只列实际参与构建的人与工具。
 
 ---
 
