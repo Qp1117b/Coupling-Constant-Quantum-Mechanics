@@ -21,12 +21,12 @@
       <sub>理论提出 · 推导 · 审校</sub>
     </td>
     <td align="center" width="110">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.png" width="44" alt="DeepSeek"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/%E5%BD%92%E6%A1%A3/assets/contributors/deepseek.png" width="44" alt="DeepSeek"><br>
       <sub><b>DeepSeek</b></sub><br>
       <sub>文档组织 · 核查 · 形式化</sub>
     </td>
     <td align="center" width="110">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/steve.png" width="44" alt="佚名"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/%E5%BD%92%E6%A1%A3/assets/contributors/steve.png" width="44" alt="佚名"><br>
       <sub><b>佚名</b></sub><br>
       <sub>理论贡献</sub>
     </td>

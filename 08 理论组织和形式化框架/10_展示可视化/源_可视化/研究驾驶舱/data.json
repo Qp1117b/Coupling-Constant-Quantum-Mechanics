@@ -5689,8 +5689,8 @@
    "doc_id": "D008",
    "evidence_doc": "D001",
    "sec_title": "3. 紧化算符：从共振到物理的转换器",
-   "char_start": 10260,
-   "char_end": 10326,
+   "char_start": 10298,
+   "char_end": 10364,
    "quote_clean": "第一耦级 ｜ $\\mathfrak c_1$ ｜ $200.04045483$ ｜ $1/4+\\gamma_1^2$（严格）",
    "match_method": "name",
    "confidence": "high",
@@ -5708,8 +5708,8 @@
    "doc_id": "D008",
    "evidence_doc": "D001",
    "sec_title": "3. 紧化算符：从共振到物理的转换器",
-   "char_start": 10260,
-   "char_end": 10326,
+   "char_start": 10298,
+   "char_end": 10364,
    "quote_clean": "第一耦级 ｜ $\\mathfrak c_1$ ｜ $200.04045483$ ｜ $1/4+\\gamma_1^2$（严格）",
    "match_method": "name",
    "confidence": "high",
@@ -5917,8 +5917,8 @@
    "doc_id": "D057",
    "evidence_doc": "D001",
    "sec_title": "",
-   "char_start": 10440,
-   "char_end": 10493,
+   "char_start": 10478,
+   "char_end": 10531,
    "quote_clean": "谱修正 ｜ $\\kappa$ ｜ $(31+☯)/30$ ｜ 4-单纯形/Adele 周期（构造）",
    "match_method": "name",
    "confidence": "high",
@@ -6373,8 +6373,8 @@
    "doc_id": "D021",
    "evidence_doc": "D001",
    "sec_title": "",
-   "char_start": 11105,
-   "char_end": 11241,
+   "char_start": 11143,
+   "char_end": 11279,
    "quote_clean": "→ GN 可能公式、GN 第一性推导公理化证明稿、Wyler 常数",
    "match_method": "name",
    "confidence": "high",
@@ -11312,13 +11312,13 @@
    "confidence": "medium"
   },
   {
-   "id": "P027~G020~提及缺口",
+   "id": "P027~G009~提及缺口",
    "kind": "claim",
    "src": [
     "P027"
    ],
    "dst": [
-    "G020"
+    "G009"
    ],
    "rel": "提及缺口",
    "doc": "",
@@ -11327,13 +11327,13 @@
    "confidence": "medium"
   },
   {
-   "id": "P027~G009~提及缺口",
+   "id": "P027~G020~提及缺口",
    "kind": "claim",
    "src": [
     "P027"
    ],
    "dst": [
-    "G009"
+    "G020"
    ],
    "rel": "提及缺口",
    "doc": "",
