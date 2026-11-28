@@ -1,4 +1,4 @@
-# CQMFormal · 耦合常数量子力学（CQM）
+# CQM · 耦合常数量子力学
 
 **一个把「耦合常数本身」量子化的大统一框架**
 *A grand-unified framework built on a quantized coupling constant*
@@ -33,7 +33,7 @@
   </tr>
 </table>
 
-> **一句话**：CQM 只替换一个共轭对——把 $(\hat x,\hat p)$ 换成 $(\hat u,\hat p_u)$。$\hat u=\ln\hat r$ 是对数耦合常数，$\hat p_u=\hat v_\tau/☯$ 是固有时流速的共轭动量。时空、规范相互作用、标准模型参数与超导相变，都被读作这套代数在**禁闭边界**上退相干涌现的结果。
+> **一句话**：CQM 只替换一个共轭对——把 $(\hat x,\hat p)$ 换成 $(\hat u,\hat p_u)$。$\hat u=\ln\hat r$ 是对数耦合常数，$\hat p_u=\hat v_\tau/☯$ 是固有时流速的共轭动量。时空、规范相互作用、标准模型参数与超导相变，都被读作这套代数在**禁闭边界**上以 $A_4$ 几何涌现的结果。
 
 > **阅读提示（诚实声明）**：这是一个进行中的研究框架，不是已被主流学界接受的完成理论。文中「严格」指**框架内已给出证明**；与实验的数值符合属于**构造后验数字校验，待独立复现**。标准物理中，精细结构常数与牛顿引力常数仍是实验参数或基本输入。
 
@@ -67,7 +67,7 @@
 
 **读法边界**：这三行列的是 CQM 从三大理论**继承的工具**，不是它们的本体论承诺。因果集在 CQM 中被降为物质的属性而非本体（[集成理论](01%20核心理论/CQM_核心_集成理论.md) §1.4），RQM 只提供关系性诠释，LQG 只提供离散几何骨架；三者在 CQM 中的位置由耦合常数量子化重新指派，不能读作三大理论原本的主张。
 
-关键差别在于：**CQM 量子化的对象不是某个场，也不是时空本身，而是耦合常数本身**。由此，时空、规范群、标准模型参数与超导相变不再是彼此独立的输入，而是同一套代数在禁闭边界上退相干涌现的不同侧面。
+关键差别在于：**CQM 量子化的对象不是某个场，也不是时空本身，而是耦合常数本身**。由此，时空、规范群、标准模型参数与超导相变不再是彼此独立的输入，而是同一套代数在禁闭边界上以 $A_4$ 几何涌现的不同侧面。
 
 **研究范围**：物理系统的费米—强子尺度——单个质子/中子内部（L1，禁闭内部）及其边界（L2，禁闭边界）。核/原子尺度的多体物理、分子尺度的化学键、宇宙尺度的大尺度结构**尚未定论**，只受质子再生产闭环的物质条件限定。CQM 因此不是「已完成的万物理论」，而是一张以强子尺度为锚点的发生学蓝图。
 
@@ -124,7 +124,7 @@ $$
 | 质数自组织 | 质数是物质自组织最原始的生成元 | 前时空 |
 | 前核子自组织 | 前中子／前质子先在强子尺度组织为有限本体，禁闭边界随之形成 | 前时空 → 边界 |
 | $\mathrm{GL}(5)$ 潜能 | 伽罗瓦表示/自守形式作为可能性，先于物理存在 | 算术潜能 |
-| $\mathrm{SU}(5)$ 基态 | $\mathrm{GL}(5)$ 自守谱经紧化，在禁闭边界形成后锁定为第一稳定构型；$A_4$ 是边界代数结构，不是禁闭内部退相干的产物 | 基态锁定 |
+| $\mathrm{SU}(5)$ 基态 | $\mathrm{GL}(5)$ 自守谱经紧化，在禁闭边界形成后锁定为第一稳定构型；$A_4$ 是边界代数结构，不是禁闭内部代数的产物 | 基态锁定 |
 | 强力出现 | 禁闭边界形成之后，强力（$\mathrm{SU}(3)$ 色）由规范重组出现；先有前核子，后有强力 | 物理现实 |
 | 规范重组 | $p$ 进大小耦合层级分化（嘉当矩阵分化，由中子缺陷驱动），输出标准模型规范群 | 物理现实 |
 
@@ -332,7 +332,7 @@ CQM 的哲学基础是**历史唯物主义**。它不是装饰性前言，而是
 
 | 缺口 | 内容 | 优先级 |
 |:---|:---|:---:|
-| **C** | 退相干稳态为何恰好是 $A_4$（正四单纯形）？ | 核心 |
+| **C** | 禁闭边界几何为何恰好是 $A_4$（正四单纯形）？ | 核心 |
 | **G2** | 耦合空间 → 双曲 Laplacian 的必要性 | |
 | **G3** | $\hat D=-i(\partial_u-1/2)$ 的唯一性 | |
 | **G4** | $\hat D\to\hat H=\hat D^2+1/4$ 的涌现 | |
@@ -422,7 +422,7 @@ pwsh -NoProfile -File ".\a_gate.ps1"
 ## 8 仓库结构
 
 ```
-CQMFormal/
+CQM/
 ├── README.md ← 本文件
 ├── 专题档案.md ← 专题/论证链登记（文档体系结构）
 ├── AGENTS.md ← 项目规范（红线、同步、验证）
@@ -439,7 +439,7 @@ CQMFormal/
 ├── 08 理论组织和形式化框架/ ← 结构化数据、OWL、超图、Lean 对接、展示可视化
 ├── 09 研究站服务/ ← 本地 Spring Boot 服务（阅读站 + SPARQL + 证据复核）
 ├── 10 探索/ ← 27 环推导链、相变锚、锚–H–K 桥梁、Lean 验证、稳定稿
-└── 归档/ ← 历史文档与参考文献 PDF（只读；归档 CNT/ 不修改）
+└── 归档/ ← 历史文档与参考文献 PDF（只读，不修改）
 ```
 
 ---
@@ -537,7 +537,6 @@ CQMFormal/
 | [二维晶格超导全链路](10%20探索/稳定/CQM_二维晶格超导_全链路整合.md) / [一维闭环节点链](10%20探索/稳定/CQM_一维闭环节点链.md) | 稳定稿（非权威源，待第三方复现） |
 | [Lean 验证](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` 与 A 闸证明模块 |
 | [归档](归档/) | 量子引力集成、框架路线纪要、混合矩阵、质数数轴、超导旧框架承接卷、FG 自守形式条件链 |
-| [归档 CNT](归档/归档%20CNT/) | CNT 阶段历史文档（只读，不修改） |
 
 </details>
 
@@ -548,23 +547,16 @@ CQMFormal/
 引用本仓库时，请注明仓库地址与所引文档的标题、章节；引用具体数值时，请一并保留该处的状态标注（如「构造后验数字校验，待独立复现」）。
 
 ```bibtex
-@misc{cqmformal2026,
+@misc{cqm2026,
   author = {ruster},
-  title  = {CQMFormal: 耦合常数量子力学（CQM）形式化框架},
+  title  = {CQM: 耦合常数量子力学形式化框架},
   year   = {2026},
   note   = {GitHub repository: Qp1117b/Coupling-Constant-Quantum-Mechanics},
   url    = {https://github.com/Qp1117b/Coupling-Constant-Quantum-Mechanics}
 }
-
-@misc{cnt2026,
-  author = {ruster},
-  title  = {CNT 完整研究},
-  year   = {2026},
-  doi    = {10.5281/zenodo.20804380}
-}
 ```
 
-外部文献 PDF 存于 [`归档/一体化研究/文献/`](归档/一体化研究/文献/)；CNT 完整研究已发布于 Zenodo：DOI [10.5281/zenodo.20804380](https://doi.org/10.5281/zenodo.20804380)。
+外部文献 PDF 存于 [`归档/一体化研究/文献/`](归档/一体化研究/文献/)。
 
 **许可**：本仓库暂未附许可证文件；在补充许可证前，默认保留所有权利。转载、引用或合作请联系作者。
 
@@ -590,7 +582,7 @@ CQMFormal/
 
 ## English Abstract
 
-**CQMFormal** is a research framework for a *grand-unified* description of physics built on a single substitution: quantize the coupling constant itself. Instead of the position–momentum pair, CQM takes the logarithmic coupling $\hat u=\ln\hat r$ and the proper-time-flow momentum $\hat p_u=\hat v_\tau/\mathscr{C}$ as canonical conjugates, with $[\hat u,\hat p_u]=i$; here $\mathscr{C}$ is the English notation for the phase quantum $☯$. The framework is constructed on causal sets, relational quantum mechanics, and loop quantum gravity, but repositions their ontology: spacetime, gauge interactions, Standard-Model parameters, and superconductivity are treated as emergent consequences of this algebra at the confinement boundary.
+**CQM** is a research framework for a *grand-unified* description of physics built on a single substitution: quantize the coupling constant itself. Instead of the position–momentum pair, CQM takes the logarithmic coupling $\hat u=\ln\hat r$ and the proper-time-flow momentum $\hat p_u=\hat v_\tau/\mathscr{C}$ as canonical conjugates, with $[\hat u,\hat p_u]=i$; here $\mathscr{C}$ is the English notation for the phase quantum $☯$. The framework is constructed on causal sets, relational quantum mechanics, and loop quantum gravity, but repositions their ontology: spacetime, gauge interactions, Standard-Model parameters, and superconductivity are treated as emergent consequences of this algebra at the confinement boundary.
 
 The programme is organized around five connected lines: (1) proper-time–coupling noncommutativity, $\Delta u\,\Delta v_\tau\ge\mathscr{C}/2$; (2) distributed noncommutativity, $[\hat u_G,v_\tau^{(i)}]=i\mathscr{C}/N$, which supplies an algebraic origin for non-Markovianity; (3) a difference–memory-kernel theory of superconductivity with a 27-ring genesis chain; (4) dimensional genesis, in which time is the first dimension and $K_L$, $K_M=G_N^{-1}$ are implementation constants; and (5) automorphic/Langlands stratification, $\mathrm{GL}(5)\to\mathrm{SU}(5)\Rightarrow U(1)\times SU(2)\times SU(3)$, where GRH is the real-spectrum condition at the fixed $\mathrm{GL}(5)$ level.
 

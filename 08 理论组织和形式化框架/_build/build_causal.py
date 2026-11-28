@@ -262,7 +262,7 @@ if __name__ == "__main__":
 | `G3` | $\hat D=-i(\partial_u-1/2)$ 唯一性 | `G2` |
 | `G4` | $\hat D\to\hat H=\hat D^2+1/4$ 涌现 | `G3` |
 | `G5` | 退相干 → 边界条件 $\vartheta_n$ 锁定（归属待裁定） | `G4` |
-| `C_gap` / `C_core` | 缺口 C（退相干稳态＝$A_4$）及其被依赖 | 根 → 汇聚 |
+| `C_gap` / `C_core` | 缺口 C（禁闭边界几何＝$A_4$）及其被依赖 | 根 → 汇聚 |
 | `G13` / `G14` | BCS 渐近（闭合）/ 中子缺陷谱判据（闭合） | 根 |
 | `SC_chain` | 超导涌现链整体闭合 | `G13`,`G14` |
 | `Formal_status` | 形式化整体状态 | `C_core`,`SC_chain` |

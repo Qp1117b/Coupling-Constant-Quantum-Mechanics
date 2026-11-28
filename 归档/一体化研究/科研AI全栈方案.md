@@ -1,4 +1,4 @@
-# CQMFormal 科研 AI 全栈方案
+# CQM 科研 AI 全栈方案
 
 > 面向「耦合常数量子力学（CQM）」项目的 Agent / MCP / 工具 / 计算 / Lean 形式化一体化科研方案。
 >
@@ -309,7 +309,7 @@ grep -rc --include=*.lean -E '^\s*(theorem|lemma)\s' . 2>/dev/null | grep -v ':0
 ### 6.2 目录约定（增量，不改动现有结构）
 
 ```
-CQMFormal/
+CQM/
 ├── 一体化研究/附录/                     # 新增：术语表.md、缺口台账.md
 ├── .github/workflows/        # 新增：lean.yml
 ├── .workbuddy/               # 既有：审校基准、变更日志、记忆
@@ -406,4 +406,4 @@ lake exe cache get              # 预取 mathlib 缓存
 
 ---
 
-*生成时间：2026-10-05 · 适用版本：`CQMFormal v0.7.0`（Lean v4.29.1）*
+*生成时间：2026-10-05 · 适用版本：`CQM v0.7.0`（Lean v4.29.1）*

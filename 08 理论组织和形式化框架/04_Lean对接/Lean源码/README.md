@@ -1,4 +1,4 @@
-# CQMFormal — Lean 源码目录（工具链基线）
+# CQM — Lean 源码目录（工具链基线）
 
 **当前状态（2026-11-27）**：本目录当前工作树不含 `SuperconductivityChain` 库（`Basic`／`Gaps`／`Stage1`–`Stage9`，12 模块 / 124 声明 / 60 定理，2026-11-21 `lake build` 2902 jobs 通过），`lakefile.toml` 也不再声明 `lean_lib`。原因：该库从未被研究侧 import——`10 探索/超导第一性研究/05_Lean验证` 的证明模块只 `import Ring15Spec`，两套形式化互不接线。
 

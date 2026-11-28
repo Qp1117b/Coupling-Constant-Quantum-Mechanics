@@ -284,12 +284,12 @@
         "sparql": "SELECT ?name (COUNT(?s) AS ?n) WHERE { ?s cqm:mentionedIn ?c . ?c skos:prefLabel ?name } GROUP BY ?name ORDER BY DESC(?n) LIMIT 8",
         "rows": [
           [
-            "退相干",
+            "FG",
             "6"
           ],
           [
-            "FG",
-            "6"
+            "退相干",
+            "5"
           ],
           [
             "GR",

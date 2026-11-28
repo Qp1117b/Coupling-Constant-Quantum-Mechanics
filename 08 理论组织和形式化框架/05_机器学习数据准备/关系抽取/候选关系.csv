@@ -38,8 +38,8 @@ C017,C007,未定,→,pattern,D007,144,GR →（物质自组织,False,False,,Fals
 C007,C018,未定,→,pattern,D007,144,物质自组织）→ FG,False,False,,False
 C045,C075,未定,→,pattern,D007,219,黎曼零点（Hadamard 乘积）、OPE 同步⊗耦合→群本征态、共形自举,False,False,,False
 C007,C053,未定,→,pattern,D007,403,物质自组织 → 4-单纯形,False,False,,False
-C007,C008,未定,→,pattern,D007,403,物质自组织 → 4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
-C053,C008,未定,→,pattern,D007,403,4-单纯形 → SU(5) 基态（组合/表示论支撑；“退相干,False,False,,False
+C007,C005,未定,→,pattern,D007,403,物质自组织 → 4-单纯形 → SU(5) 基态（组合/表示论支撑；“禁闭边界,True,True,重组实现,False
+C053,C005,未定,→,pattern,D007,403,4-单纯形 → SU(5) 基态（组合/表示论支撑；“禁闭边界,False,False,,False
 C015,C001,重组实现|未定,⇒,pattern,D008,7,重组实现 ⇒ 规范群），并确立“前时空,False,False,,False
 C015,C018,重组实现|未定,⇒,pattern,D008,7,重组实现 ⇒ 规范群），并确立“前时空、FG,False,False,,False
 C015,C017,重组实现|未定,⇒,pattern,D008,7,重组实现 ⇒ 规范群），并确立“前时空、FG 与朗兰兹纲领相关，GR,False,False,,False
@@ -143,7 +143,6 @@ C004,C006,未定,,cooccur,D001,59,因果集**（Causal Sets） | 非交换几何
 C017,C053,未定,,cooccur,D001,61,GR 联系、网络理论、自旋泡沫 | 4-单纯形,False,False,,False
 C007,C001,未定,,cooccur,D001,111,物质自组织最原始的生成元 | 前时空,False,False,,False
 C005,C001,未定,,cooccur,D001,112,禁闭边界随之形成 | 前时空,False,False,,False
-C006,C008,未定,,cooccur,D001,114,禁闭内部退相干,False,False,,False
 C041,C022,未定,,cooccur,D001,213,自守因子有**五重身份**——分析（自守性）、几何（联络,False,False,,False
 C041,C024,未定,,cooccur,D001,213,自守因子有**五重身份**——分析（自守性）、几何（联络/和乐,False,False,,False
 C022,C024,未定,,cooccur,D001,213,联络/和乐,False,False,,False
@@ -177,15 +176,15 @@ C018,C029,未定,,cooccur,D001,429,FG 三层、中子缺陷矩阵,False,False,,F
 C006,C018,未定,,cooccur,D001,440,禁闭内部只是 QCD，FG,False,False,,False
 C023,C018,未定,,cooccur,D001,460,曲率与 Regge 曲率关联](04%20前沿研究/FG,False,False,,False
 C018,C040,未定,,cooccur,D001,489,FG 自守形式,False,False,,False
-C004,C040,未定,,cooccur,D001,525,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式,False,False,,False
-C004,C027,未定,,cooccur,D001,525,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速,False,False,,False
-C004,C005,未定,,cooccur,D001,525,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
-C004,C048,未定,,cooccur,D001,525,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
-C040,C027,未定,,cooccur,D001,525,自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速,False,False,,False
-C040,C005,未定,,cooccur,D001,525,自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
-C027,C005,未定,,cooccur,D001,525,固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
-C027,C048,未定,,cooccur,D001,525,固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
-C005,C048,未定,,cooccur,D001,525,禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
+C004,C040,未定,,cooccur,D001,516,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式,False,False,,False
+C004,C027,未定,,cooccur,D001,516,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速,False,False,,False
+C004,C005,未定,,cooccur,D001,516,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
+C004,C048,未定,,cooccur,D001,516,因果集 · 关系量子力学 · 圈量子引力 · 量纲发生学 · 自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
+C040,C027,未定,,cooccur,D001,516,自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速,False,False,,False
+C040,C005,未定,,cooccur,D001,516,自守形式 · 朗兰兹纲领 · 广义黎曼猜想 · 黎曼猜想 · 精细结构常数 · 牛顿引力常数 · 固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
+C027,C005,未定,,cooccur,D001,516,固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界,False,False,,False
+C027,C048,未定,,cooccur,D001,516,固有时流速 · 分布式不对易 · 差异-记忆核超导 · 精细引力 · 历史唯物主义 · 禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
+C005,C048,未定,,cooccur,D001,516,禁闭边界 · SU(5) · GL(5) · 相变量子,False,False,,False
 C019,C018,未定,,cooccur,D003,62,引力因果限制场（FG,True,True,层级含于,False
 C026,C018,未定,,cooccur,D004,34,角亏 | `待证明` | —— | 旧 `FG,False,True,,False
 C027,C062,未定,,cooccur,D005,18,固有时流速共轭动量，满足标准海森堡代数,False,False,,False
@@ -204,13 +203,13 @@ C045,C049,未定,,cooccur,D005,35,黎曼零点谱的谱算符,False,False,,False
 C045,C050,未定,,cooccur,D005,52,黎曼零点（Sierra-CQM 耦谱定理,False,False,,False
 C004,C003,未定,,cooccur,D005,100,因果集；但有质子，必然有其再生产,False,False,,False
 C006,C004,未定,,cooccur,D005,110,禁闭内部（夸克/胶子） | 因果集,False,False,,False
+C006,C008,未定,,cooccur,D005,122,禁闭内部）及其退相干,False,False,,False
 C048,C027,未定,,cooccur,D005,191,相变量子”，设定了耦合常数与固有时流速,False,False,,False
 C004,C060,未定,,cooccur,D005,217,因果集 Sprinkling 在耦合坐标,False,False,,False
 C006,C049,未定,,cooccur,D005,304,禁闭内部谱算符,False,False,,False
 C049,C008,未定,,cooccur,D005,304,谱算符的泛函演算所生成的 C*-代数为 $\mathcal A_{\mathrm{in}}$，构造 $\Phi$，确定其非单方向（相干自由度）与退相干,False,False,,False
 C004,C053,未定,,cooccur,D005,339,因果集事件）} \xrightarrow{\text{前核子自组织 + 粗粒化}} \text{禁闭边界组合结构（4-单纯形,False,False,,False
 C005,C053,未定,,cooccur,D005,339,禁闭边界组合结构（4-单纯形,False,False,,False
-C053,C005,未定,,cooccur,D005,351,4-单纯形/SU(5) 结构是“一证七联”框架的核心对象——核心定理（未证明）：前核子自组织在禁闭边界,False,False,,False
 C081,C008,未定,,cooccur,D005,413,$G_N$（构造与校验见 `03 引力与退相干,False,False,,False
 C081,C023,未定,,cooccur,D005,422,$G_N$ 由 SU(5) 几何给定**：有效曲率,False,False,,False
 C006,C023,未定,,cooccur,D005,423,禁闭内部为非交换几何，不提供经典曲率,False,False,,False
@@ -219,6 +218,7 @@ C081,C005,未定,,cooccur,D005,433,$G_N$：$m_p$ 是量纲锚点而非“引力�
 C081,C053,未定,,cooccur,D005,433,$G_N$：$m_p$ 是量纲锚点而非“引力源质量”，质子和中子共享相同的禁闭边界（4-单纯形,False,False,,False
 C023,C071,未定,,cooccur,D005,434,曲率算符 $\hat{\varepsilon}$ 的转换中，$\hbar$ 被声子,False,False,,False
 C071,C018,未定,,cooccur,D005,437,声子理论.md` §8.3，曲率算符归一化核心见 `07 精细引力（FG,False,False,,False
+C007,C008,未定,,cooccur,D005,486,物质自组织）} \xrightarrow{\text{退相干,False,False,,False
 C007,C017,未定,,cooccur,D005,486,物质自组织）} \xrightarrow{\text{退相干}} \text{GR,False,False,,False
 C001,C040,未定,,cooccur,D005,495,前时空的基态锁定是 SU(5)（来自 GL(5) 自守形式,False,False,,False
 C027,C023,未定,,cooccur,D005,524,固有时流速效应**，由物质结构（晶胞网络）的 Regge 曲率,False,False,,False
@@ -305,11 +305,11 @@ C027,C017,未定,,cooccur,D007,140,固有时流速减慢）与 GR,False,False,,F
 C051,C064,未定,,cooccur,D007,151,RH，锚不是相变的前提），本节资格条件,False,False,,False
 C065,C045,未定,,cooccur,D007,163,结构群叠加态的谱算符，其本征态 = 结构群基矢 $|U(1)//\mathbb{Z}_n\rangle$，本征值是相变有效谱 $\lambda_n(T)$（与黎曼零点,False,False,,False
 C018,C065,未定,,cooccur,D007,203,FG 展开性同步下信息剧烈扩散）、相图复杂（多群竞争、结构群叠加态,False,False,,False
-C008,C024,未定,,cooccur,D007,221,"退相干、非交换粗粒化极限、核心缺口 C（退相干稳态是 $\{5,4\}$ 镶嵌——与 README 缺口 C“退相干稳态为何恰好是 $A_4$（正四单纯形）”指向同一缺口）、Lindblad 稳态→边-面关联矩阵、$\lambda_c$ 方程、N1/N2（中子质量-谱映射、亏角显式公式）、G18/G19/G21（依次为 $\beta$ 与 $K_{\text{eff}}$ 微观来源、自由能 $F_",False,False,,False
+C008,C024,未定,,cooccur,D007,221,"退相干、非交换粗粒化极限、核心缺口 C（禁闭边界几何是 $\{5,4\}$ 镶嵌——与 README 缺口 C“禁闭边界几何为何恰好是 $A_4$（正四单纯形）”指向同一缺口）、Lindblad 稳态→边-面关联矩阵、$\lambda_c$ 方程、N1/N2（中子质量-谱映射、亏角显式公式）、G18/G19/G21（依次为 $\beta$ 与 $K_{\text{eff}}$ 微观来源、自由能 $",False,False,,False
+C005,C024,未定,,cooccur,D007,221,"禁闭边界几何是 $\{5,4\}$ 镶嵌——与 README 缺口 C“禁闭边界几何为何恰好是 $A_4$（正四单纯形）”指向同一缺口）、Lindblad 稳态→边-面关联矩阵、$\lambda_c$ 方程、N1/N2（中子质量-谱映射、亏角显式公式）、G18/G19/G21（依次为 $\beta$ 与 $K_{\text{eff}}$ 微观来源、自由能 $F_n$ 可计算作用量、和乐",False,False,,False
 C017,C027,未定,,cooccur,D007,285,GR 场强度影响 GR 侧固有时流速,False,False,,False
 C007,C009,未定,,cooccur,D007,348,物质自组织的动力学（退相干为其表现）= 确立配对不变量 $\mathfrak{c}_n$ 为实数的纯代数判据 = 建立因果网络同步理论,False,True,,False
 C008,C009,未定,,cooccur,D007,348,退相干为其表现）= 确立配对不变量 $\mathfrak{c}_n$ 为实数的纯代数判据 = 建立因果网络同步理论,False,False,,False
-C008,C053,未定,,cooccur,D007,403,退相干稳态恰为 4-单纯形,False,False,,False
 C018,C045,未定,,cooccur,D007,520,FG 激活后：作用于电磁扇区结构群空间，本征态为 |U(1)//ℤ_n⟩，本征值是相变有效谱 λ_n(T)，黎曼零点,False,False,,False
 C045,C015,未定,,cooccur,D007,543,黎曼零点 $\gamma_n$ | 广义黎曼猜想（黎曼猜想为其 GL(1) 特例） | $\hat{\mathcal{S}}_0$ | $SU(5)$ 统一 ⇒ 重组实现,False,False,,False
 C048,C045,未定,,cooccur,D007,550,相变量子 $☯$ 和黎曼零点,False,False,,False
@@ -393,6 +393,7 @@ C051,C046,未定,,cooccur,D017,1014,RH 本身——从耦级,False,True,,False
 C050,C046,未定,,cooccur,D017,1037,耦谱定理（§二 已知3；**构造性对应**——谱对应 $\{\gamma_n^2+1/4\}$ 非严格点谱对应，Endres–Steiner (2010) 已否证 $H_{\mathrm{BK}}$、$H_{\mathrm{BK}}^2$ 给出离散零点谱，见 §二 已知1 严格性边界），耦级,True,True,依赖,False
 C052,C046,未定,,cooccur,D017,1106,GRH 层级阐明了临界线 $1/2$ 的来源，§十四-§十五从耦级,False,False,,False
 C081,C045,未定,,cooccur,D017,1108,$G_N$ 的第一性推导——一个物理目标——倒逼出了自守形式与黎曼零点,False,False,,False
+C008,C053,未定,,cooccur,D019,389,退相干的稳态是 4-单纯形,False,False,,False
 C049,C046,未定,,cooccur,D019,399,"谱算符 $\hat{H} = \hat{D}^2 + 1/4$ 在区间 $[0, L_n]$ 上的第 $n$ 个共振位置（耦级",False,False,,False
 C047,C045,未定,,cooccur,D019,539,第一耦级精确等于第一黎曼零点,False,False,,False
 C048,C046,未定,,cooccur,D020,170,相变量子”命名有据**：$☯$ 从 $\xi$ 提取，$\xi$ 提纯非平凡零点 $\{\gamma_n\}$（消去平凡零点），而 $\mathfrak{c}_n=\gamma_n^2+1/4$ 是 CQM 共振位置（耦级,False,False,,False
@@ -568,6 +569,7 @@ C048,C058,未定,,cooccur,D049,8,相变量子）、$\mathfrak{c}_1$（耦级）�
 C046,C058,未定,,cooccur,D049,8,耦级）、$\kappa$（谱修正,False,False,,False
 C048,C082,未定,,cooccur,D051,6,相变量子.md` 附录 B；`04 前沿研究/Wyler常数,False,False,,False
 C002,C081,未定,,cooccur,D053,3,物质先在、重子数守恒、$G_N$,False,False,,False
+C053,C008,未定,,cooccur,D053,360,4-单纯形），因此 $G_N^{(p)}=G_N^{(n)}$（`03 引力与退相干,False,False,,False
 C002,C007,未定,,cooccur,D053,450,物质先在、对称性非先验、数学结构是物质自组织,True,True,重组实现,False
 C053,C026,未定,,cooccur,D055,10,4-单纯形边长、顶点角亏,False,False,,False
 C053,C018,未定,,cooccur,D055,36,4-单纯形）$\bar\delta^{\rm vert}=0$，中子 $D(\delta)$ 的 $\bar\delta^{\rm vert}\neq0$（`FG,False,False,,False

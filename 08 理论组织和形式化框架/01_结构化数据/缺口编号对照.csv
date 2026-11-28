@@ -1,5 +1,5 @@
 ﻿prop_id,gap_code,status_prop,statement,depends_on,id_prefix_conflict,status_closure,lean,desc_closure,status_consistent,section
-G001,C,未闭合,缺口C：退相干稳态为何恰好是A₄（正四单纯形）,,,未闭合,——,退相干稳态为何恰好是 $A_4$（正四单纯形）,True,二、核心理论缺口（C / G2–G8）
+G001,C,未闭合,缺口C：禁闭边界几何为何恰好是A₄（正四单纯形）,,,未闭合,——,禁闭边界几何为何恰好是 $A_4$（正四单纯形）,True,二、核心理论缺口（C / G2–G8）
 G002,G2,待证明,缺口G2：耦合空间→双曲Laplacian的必要性,,,待证明,——,耦合空间 $\to$ 双曲 Laplacian 的必要性,True,二、核心理论缺口（C / G2–G8）
 G003,G3,待证明,缺口G3：D̂=-i(∂_u-1/2)的唯一性,G002,,待证明,——,$\hat D=-i(\partial_u-1/2)$ 的唯一性,True,二、核心理论缺口（C / G2–G8）
 G004,G4,待证明,缺口G4：D̂→Ĥ=D̂²+1/4的涌现,G003,,待证明,——,$\hat D\to\hat H=\hat D^2+1/4$ 的涌现,True,二、核心理论缺口（C / G2–G8）
