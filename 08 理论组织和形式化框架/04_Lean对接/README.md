@@ -15,6 +15,6 @@
 
 **口径**：08 不承载 Lean 证明，不复制研究侧结论，也不把缺口写成公理。形式化的编译状态、公理白名单、模块计数一律以 `10 探索/超导第一性研究/05_Lean验证/` 的 A 闸实跑结果为准。
 
-**历史**：`fe37c3b` 之前 08 曾有一套 `SuperconductivityChain`（`Basic`／`Gaps`／`Stage1`–`Stage9`），该库未被研究侧 import；按“删除 08 内超导库并清理引用”的决定于本次移除，可从 git 历史取回。
+**历史**：`53af525` 之前 08 曾有一套 `SuperconductivityChain`（`Basic`／`Gaps`／`Stage1`–`Stage9`），该库未被研究侧 import；按“删除 08 内超导库并清理引用”的决定于本次移除，可从 git 历史取回。
 
 构建：`_build/build_lean.py`（现产出空集与空映射）。

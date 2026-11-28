@@ -344,7 +344,7 @@
 {"doc_id": "D001", "sid": 343, "start": 14320, "end": 14334, "kind": "heading", "text": "### 7.1 Lean 4"}
 {"doc_id": "D001", "sid": 344, "start": 14336, "end": 14352, "kind": "table", "text": "| 项目 | 位置 | 现状 |"}
 {"doc_id": "D001", "sid": 345, "start": 14353, "end": 14369, "kind": "table", "text": "|:---|:---|:---|"}
-{"doc_id": "D001", "sid": 346, "start": 14370, "end": 14614, "kind": "table", "text": "| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 不声明外部依赖（mathlib olean 由本地 `.lake/packages` 提供，CI 只验证工程骨架）；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |"}
+{"doc_id": "D001", "sid": 346, "start": 14370, "end": 14614, "kind": "table", "text": "| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 不声明外部依赖（mathlib olean 由本地 `.lake/packages` 提供，CI 只验证工程骨架）；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `53af525`） |"}
 {"doc_id": "D001", "sid": 347, "start": 14615, "end": 14764, "kind": "table", "text": "| 形式化权威 | [`10 探索/超导第一性研究/05_Lean验证/`](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` v52 + 52 个在闸证明模块（`Ring15Lock*` 等），另有审计/探索模块；目录共 280+ 个 `.lean` 文件 |"}
 {"doc_id": "D001", "sid": 348, "start": 14765, "end": 14903, "kind": "table", "text": "| 一键闸 | `05_Lean验证/a_gate.ps1` | 编译 → `#print axioms` 白名单 → `#check` 类型对齐 → token 卫生；第 235 轮实测 52/52 编译、124 条公理、101 条 `#check` 对齐，FAIL 0 |"}
 {"doc_id": "D001", "sid": 349, "start": 14905, "end": 14938, "kind": "quote", "text": "> 形式化覆盖的是**已陈述的代数与结构命题**，不覆盖开放缺口。"}
@@ -751,7 +751,7 @@
 {"doc_id": "D004", "sid": 44, "start": 2165, "end": 2181, "kind": "heading", "text": "## 三、Lean 模块编译状态"}
 {"doc_id": "D004", "sid": 45, "start": 2183, "end": 2207, "kind": "table", "text": "| 库 | 编译 | 关联缺口 | 主要问题 |"}
 {"doc_id": "D004", "sid": 46, "start": 2208, "end": 2230, "kind": "table", "text": "|:---|:---:|:---|:---|"}
-{"doc_id": "D004", "sid": 47, "start": 2231, "end": 2427, "kind": "table", "text": "| `SuperconductivityChain`（已于 2026-11-27 移除） | 历史实测：2026-11-21 全量通过（2902 jobs）；12 模块 / 124 声明 / 60 定理；零 `axiom`、零 `sorry`（待独立复现） | 链层 62 条（原 `Gaps.lean`） | 该库未被研究侧 import，按决定删除；源码可从 `fe37c3b` 取回 |"}
+{"doc_id": "D004", "sid": 47, "start": 2231, "end": 2427, "kind": "table", "text": "| `SuperconductivityChain`（已于 2026-11-27 移除） | 历史实测：2026-11-21 全量通过（2902 jobs）；12 模块 / 124 声明 / 60 定理；零 `axiom`、零 `sorry`（待独立复现） | 链层 62 条（原 `Gaps.lean`） | 该库未被研究侧 import，按决定删除；源码可从 `53af525` 取回 |"}
 {"doc_id": "D004", "sid": 48, "start": 2428, "end": 2604, "kind": "table", "text": "| 当前形式化：`10 探索/超导第一性研究/05_Lean验证` | `Ring15Spec` v46 + 46 模块；A 闸实跑 46/46 编译、109/109 axioms、91/91 `#check`、FAIL 0 | 环15 判据链（G-188b-2k 系列等） | 不等同于 08 组织层；公理白名单见研究侧 `a_gate.ps1` |"}
 {"doc_id": "D004", "sid": 49, "start": 2605, "end": 2785, "kind": "table", "text": "| 旧库（CausalSet／CouplingSpace／CartanAlgebra／SpectralGeometry／Decoherence／PhysicalConstants／PrimeGeometry／Methodology／GN／Superconductivity／FGChain） | 无源文件 | —— | 08 当前无 `.lean` 源文件 |"}
 {"doc_id": "D004", "sid": 50, "start": 2787, "end": 2808, "kind": "heading", "text": "## 四、修复优先级（对齐方案 §4.1）"}
@@ -17001,7 +17001,7 @@
 {"doc_id": "D042", "sid": 9, "start": 607, "end": 690, "kind": "list", "text": "- `a_gate.ps1` — 一键闸：编译 52 模块 → `#print axioms` 白名单 → `#check` 类型 ≡ Spec → token 卫生"}
 {"doc_id": "D042", "sid": 10, "start": 691, "end": 750, "kind": "list", "text": "- 实测口径（第 235 轮）：52/52 编译、124/124 axioms、101/101 type、FAIL 0"}
 {"doc_id": "D042", "sid": 11, "start": 752, "end": 757, "kind": "heading", "text": "## 历史"}
-{"doc_id": "D042", "sid": 12, "start": 759, "end": 860, "kind": "prose", "text": "本目录旧库 12 模块源码与映射在 git 历史 `fe37c3b`（`08 理论组织和形式化框架/04_Lean对接/Lean源码/SuperconductivityChain*`），需要可从中取回。"}
+{"doc_id": "D042", "sid": 12, "start": 759, "end": 860, "kind": "prose", "text": "本目录旧库 12 模块源码与映射在 git 历史 `53af525`（`08 理论组织和形式化框架/04_Lean对接/Lean源码/SuperconductivityChain*`），需要可从中取回。"}
 {"doc_id": "D042", "sid": 13, "start": 860, "end": 918, "kind": "prose", "text": "旧库内 GN 库 107 定理（零 `sorry`、零新增 `axiom`）的审计记录随库退役，原始证据文档不可读；"}
 {"doc_id": "D042", "sid": 14, "start": 918, "end": 948, "kind": "prose", "text": "记录见变更日志 v1.9.46（GN 101 → 107）。"}
 {"doc_id": "D042", "sid": 15, "start": 950, "end": 957, "kind": "heading", "text": "## 相关文档"}
@@ -17020,7 +17020,7 @@
 {"doc_id": "D043", "sid": 9, "start": 607, "end": 690, "kind": "list", "text": "- `a_gate.ps1` — 一键闸：编译 52 模块 → `#print axioms` 白名单 → `#check` 类型 ≡ Spec → token 卫生"}
 {"doc_id": "D043", "sid": 10, "start": 691, "end": 750, "kind": "list", "text": "- 实测口径（第 235 轮）：52/52 编译、124/124 axioms、101/101 type、FAIL 0"}
 {"doc_id": "D043", "sid": 11, "start": 752, "end": 757, "kind": "heading", "text": "## 历史"}
-{"doc_id": "D043", "sid": 12, "start": 759, "end": 860, "kind": "prose", "text": "本目录旧库 12 模块源码与映射在 git 历史 `fe37c3b`（`08 理论组织和形式化框架/04_Lean对接/Lean源码/SuperconductivityChain*`），需要可从中取回。"}
+{"doc_id": "D043", "sid": 12, "start": 759, "end": 860, "kind": "prose", "text": "本目录旧库 12 模块源码与映射在 git 历史 `53af525`（`08 理论组织和形式化框架/04_Lean对接/Lean源码/SuperconductivityChain*`），需要可从中取回。"}
 {"doc_id": "D043", "sid": 13, "start": 860, "end": 918, "kind": "prose", "text": "旧库内 GN 库 107 定理（零 `sorry`、零新增 `axiom`）的审计记录随库退役，原始证据文档不可读；"}
 {"doc_id": "D043", "sid": 14, "start": 918, "end": 948, "kind": "prose", "text": "记录见变更日志 v1.9.46（GN 101 → 107）。"}
 {"doc_id": "D043", "sid": 15, "start": 950, "end": 957, "kind": "heading", "text": "## 相关文档"}

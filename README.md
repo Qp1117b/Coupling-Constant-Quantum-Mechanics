@@ -365,7 +365,7 @@ CQM 的数学结构配有 Lean 4 形式化、结构化数据、概念本体、�
 
 | 项目 | 位置 | 现状 |
 |:---|:---|:---|
-| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 不声明外部依赖（mathlib olean 由本地 `.lake/packages` 提供，CI 只验证工程骨架）；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `fe37c3b`） |
+| Lean 工具链与 Mathlib 基线 | [`08 理论组织和形式化框架/04_Lean对接/Lean源码/`](08%20理论组织和形式化框架/04_Lean对接/Lean源码/) | Lean 4.29.1；`lakefile.toml` 不声明外部依赖（mathlib olean 由本地 `.lake/packages` 提供，CI 只验证工程骨架）；当前工作树不含 `SuperconductivityChain` 库（源码保留于 git 历史 `53af525`） |
 | 形式化权威 | [`10 探索/超导第一性研究/05_Lean验证/`](10%20探索/超导第一性研究/05_Lean验证/) | `Ring15Spec` v52 + 52 个在闸证明模块（`Ring15Lock*` 等），另有审计/探索模块；目录共 280+ 个 `.lean` 文件 |
 | 一键闸 | `05_Lean验证/a_gate.ps1` | 编译 → `#print axioms` 白名单 → `#check` 类型对齐 → token 卫生；第 235 轮实测 52/52 编译、124 条公理、101 条 `#check` 对齐，FAIL 0 |
 
