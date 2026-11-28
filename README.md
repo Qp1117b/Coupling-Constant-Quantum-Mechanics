@@ -558,12 +558,12 @@ CQMFormal/
       <sub>理论提出 · 推导 · 审校</sub>
     </td>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.svg" width="72" alt="DeepSeek"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.png" width="72" alt="DeepSeek"><br>
       <sub><b>DeepSeek</b></sub><br>
       <sub>文档组织 · 一致性核查 · 形式化对接</sub>
     </td>
     <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/anonymous.svg" width="72" alt="佚名"><br>
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/steve.png" width="72" alt="佚名"><br>
       <sub><b>佚名</b></sub><br>
       <sub>理论贡献</sub>
     </td>
