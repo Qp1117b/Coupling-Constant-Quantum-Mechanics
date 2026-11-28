@@ -227,8 +227,10 @@ def main():
     # 2026-11-27：08 移除 Lean 库并以当前语料重跑证据层（build_extract → build_evidence → build_kg），
     # 证据句重匹配使 claim 级边 336→334（实体 146、dir 50 / hyper 19 未变）。
     # 2026-11-28：旧 GN 库证据重定向后 claim 级边 334→336（实体 146 未变）。
-    check("知识图谱 146 实体 / 336 边",
-          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 336),
+    # 2026-11-28：术语统一（同步算符 → 紧化算符，全库 411 处替换）使两条同义 claim
+    # 边合并去重，claim 级边 336→335（实体 146、dir 50 / hyper 19 未变）。
+    check("知识图谱 146 实体 / 335 边",
+          (len(kgj["nodes"]), len(kgj["edges"])) == (146, 335),
           f"{len(kgj['nodes'])}/{len(kgj['edges'])}")
     ttl = open(os.path.join(ROOT, "03_超图与理论图", "知识图谱.ttl"), encoding="utf-8").read()
     check("RDF 导出 > 5000 行", ttl.count("\n") > 5000, f"{ttl.count(chr(10))} 行")
