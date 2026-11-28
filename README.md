@@ -3,13 +3,35 @@
 **一个把「耦合常数本身」量子化的大统一框架**
 *A grand-unified framework built on a quantized coupling constant*
 
-**作者**：ruster ｜ **语言**：简体中文（附英文摘要）｜ **状态**：理论框架（核心代数严格；涌现链与关键缺口开放）
+**语言**：简体中文（附英文摘要）｜ **状态**：理论框架（核心代数严格；涌现链与关键缺口开放）
 
 [![Lean 4](https://img.shields.io/badge/Lean-4.29.1-6f42c1)](https://github.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/tree/main/10%20%E6%8E%A2%E7%B4%A2/%E8%B6%85%E5%AF%BC%E7%AC%AC%E4%B8%80%E6%80%A7%E7%A0%94%E7%A9%B6/05_Lean%E9%AA%8C%E8%AF%81)
 [![Docs](https://img.shields.io/badge/docs-40%2B%20articles-blue)](https://github.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/blob/main/%E4%B8%93%E9%A2%98%E6%A1%A3%E6%A1%88.md)
 [![Status](https://img.shields.io/badge/status-research%20framework-orange)](#6-严格性缺口与可检验性)
 [![Language](https://img.shields.io/badge/language-Chinese-red)](#关键词)
 [![License](https://img.shields.io/badge/license-all%20rights%20reserved-lightgrey)](#10-引用与许可)
+
+## 作者与贡献者
+
+<table>
+  <tr>
+    <td align="center" width="110">
+      <a href="https://github.com/Qp1117b"><img src="https://github.com/Qp1117b.png" width="44" alt="ruster"></a><br>
+      <sub><b>ruster</b>（Qp1117b）</sub><br>
+      <sub>理论提出 · 推导 · 审校</sub>
+    </td>
+    <td align="center" width="110">
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.png" width="44" alt="DeepSeek"><br>
+      <sub><b>DeepSeek</b></sub><br>
+      <sub>文档组织 · 核查 · 形式化</sub>
+    </td>
+    <td align="center" width="110">
+      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/steve.png" width="44" alt="佚名"><br>
+      <sub><b>佚名</b></sub><br>
+      <sub>理论贡献</sub>
+    </td>
+  </tr>
+</table>
 
 > **一句话**：CQM 只替换一个共轭对——把 $(\hat x,\hat p)$ 换成 $(\hat u,\hat p_u)$。$\hat u=\ln\hat r$ 是对数耦合常数，$\hat p_u=\hat v_\tau/☯$ 是固有时流速的共轭动量。时空、规范相互作用、标准模型参数与超导相变，都被读作这套代数在**禁闭边界**上退相干涌现的结果。
 
@@ -548,38 +570,12 @@ CQMFormal/
 
 ---
 
-## 贡献者
-
-<table>
-  <tr>
-    <td align="center" width="140">
-      <a href="https://github.com/Qp1117b"><img src="https://github.com/Qp1117b.png" width="72" alt="ruster"></a><br>
-      <sub><b>ruster</b>（Qp1117b）</sub><br>
-      <sub>理论提出 · 推导 · 审校</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/deepseek.png" width="72" alt="DeepSeek"><br>
-      <sub><b>DeepSeek</b></sub><br>
-      <sub>文档组织 · 一致性核查 · 形式化对接</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://raw.githubusercontent.com/Qp1117b/Coupling-Constant-Quantum-Mechanics/main/assets/contributors/steve.png" width="72" alt="佚名"><br>
-      <sub><b>佚名</b></sub><br>
-      <sub>理论贡献</sub>
-    </td>
-  </tr>
-</table>
-
-> 贡献者只列实际参与构建的人与工具。
-
----
-
 ## 11 参与与反馈
 
 - **指出错误**：推导、文献出处、术语口径、相对链接、`$` 配对、缺口标注——欢迎开 Issue，附文档路径与行号。
 - **可复现性**：若你复现（或复现失败）某个数值，请附环境、命令与输出；这正是本仓库最需要的反馈。
 - **不接受**：绕过缺口把「构造」写成「已证」、把外部文献结论写成 CQM 既有口径、新开缺口编号或升级既有缺口状态。
-- **提交前**：请先读 [`AGENTS.md`](AGENTS.md) 与 [`.trae/skills/`](.trae/skills/) 的审校规则；改动理论文档须同步派生产物并跑通 `check_consistency` 与 `check_provenance`。
+- **提交前**：请先读 [`AGENTS.md`](AGENTS.md) 的审校规则；改动理论文档须同步派生产物并跑通 `check_consistency` 与 `check_provenance`。
 - **讨论语言**：简体中文。
 
 ---
